@@ -9,12 +9,6 @@
         "paths": [
           "AGENTS.md",
           "README.md",
-          "CODE_OF_CONDUCT.md",
-          "CONTRIBUTING.md",
-          "SECURITY.md",
-          "LICENSE",
-          "docs/**",
-          "roadmap/**",
           "skills/**",
           "system/**"
         ],
@@ -26,6 +20,12 @@
       },
       "exclude": {
         "paths": [
+          "docs/**",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "SECURITY.md",
+          "LICENSE",
+          "roadmap/**",
           ".cache/**",
           ".pytest_cache/**",
           ".venv/**"
