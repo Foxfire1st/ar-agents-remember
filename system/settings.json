@@ -4,7 +4,41 @@
     "storage": {
       "mode": "memory-repo"
     },
-    "pathRules": []
+    "pathRules": {
+      "include": {
+        "paths": [
+          "AGENTS.md",
+          "README.md",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "SECURITY.md",
+          "LICENSE",
+          "docs/**",
+          "roadmap/**",
+          "skills/**",
+          "system/**"
+        ],
+        "fileTypes": [
+          ".json",
+          ".md",
+          ".py"
+        ]
+      },
+      "exclude": {
+        "paths": [
+          ".cache/**",
+          ".pytest_cache/**",
+          ".venv/**"
+        ],
+        "fileTypes": [
+          ".gif",
+          ".jpeg",
+          ".jpg",
+          ".png",
+          ".zip"
+        ]
+      }
+    }
   },
   "crossRepo": {
     "allow": []
