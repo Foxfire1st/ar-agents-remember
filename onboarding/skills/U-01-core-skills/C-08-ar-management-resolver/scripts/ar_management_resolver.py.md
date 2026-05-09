@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T22:57                           |
+| lastUpdated            | 2026-05-09T23:22                           |
 | lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
 | lastVerifiedCommitDate | 2026-05-09T22:15                           |
 
@@ -17,11 +17,11 @@
 
 ### Logic
 
-The script defines dataclasses for storage, cross-repo entries, management selection, and management context; parses JSON-first settings and Markdown fallback content; detects internal or shared selection; resolves memory and coordination roots; preserves legacy shared-onboarding fallback during migration; loads task contract facts when present; resolves branch-gated cross-repo entries; and exposes a CLI.
+The script defines dataclasses for storage, cross-repo entries, management selection, and management context; parses JSON-first settings and Markdown fallback content; detects internal or shared selection; resolves memory, coordination, and temporary artifact roots; preserves legacy shared-onboarding fallback during migration; loads task contract facts when present; resolves branch-gated cross-repo entries; and exposes a CLI.
 
 ### Conventions
 
-All paths are normalized for portable output. The helper prefers explicit inputs, then shared settings, then internal fallback. It keeps path eligibility and storage mode separate, and keeps `management_root` as a compatibility alias for `coordination_root`.
+All paths are normalized for portable output. The helper prefers explicit inputs, then shared settings, then internal fallback. It keeps path eligibility and storage mode separate, keeps `management_root` as a compatibility alias for `coordination_root`, and exposes `temp_root` as the coordination-local place for non-durable work artifacts.
 
 ### Invariants And Boundaries
 
@@ -45,11 +45,11 @@ The implementation is the authoritative source for current resolver behavior.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `ManagementContext` records topology, target repo, coordination root, memory root, onboarding root, settings paths, task/docs/system roots, storage, path rules, cross-repo data, worktree fields, and ledger path. | L81-L104 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
+| `ManagementContext` records topology, target repo, coordination root, memory root, onboarding root, settings paths, task/temp/docs/system roots, storage, path rules, cross-repo data, worktree fields, and ledger path. | L81-L105 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
 | JSON settings parsing extracts storage mode, path rules, and `crossRepo.allow` from the same settings document. | L368-L396 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
 | Context resolution prefers memory-repo onboarding when present, preserves legacy onboarding fallback during migration, and then builds the final context. | L1048-L1073 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
-| Final context construction derives task roots, worktree fields, ledger path, effective memory/docs/onboarding roots, sources, tools, and resolved cross-repo settings. | L1076-L1147 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
-| CLI JSON output serializes the current context including memory mode, ledger path, storage, path rules, and cross-repo settings. | L1202-L1226 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
+| Final context construction derives task and temp roots, worktree fields, ledger path, effective memory/docs/onboarding roots, sources, tools, and resolved cross-repo settings. | L1091-L1148 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
+| CLI JSON and text output serialize `temp_root` alongside the other resolved context paths. | L1205-L1218; L1234-L1247 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
 
 ## Cross-Repo References
 
@@ -61,6 +61,7 @@ The helper can resolve sibling repositories selected by shared settings, but cur
 
 ## Update History
 
+- 2026-05-09T23:22: Updated after C-08 added `temp_root` for coordination-local temporary artifacts.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the C-08 helper implementation.
 - 2026-05-09T21:59: Updated after C-08 gained memory/coordination roots, contract fields, ledger path, and cross-repo v2 result parsing.
 - 2026-05-09T22:57: Refreshed verification metadata and updated citations for the expanded resolver implementation.

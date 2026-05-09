@@ -27,10 +27,13 @@ agents-remember-md/
 
 shared ar-management/
   memory-repos/ar-agents-remember-md/
+    memory.md
     onboarding/
       current onboarding baseline for this repo
   tasks/
     durable planning artifacts for worktree-support rollout
+  temp/
+    temporary generated artifacts such as drift reports
 ```
 
 ## Code Structure
@@ -53,7 +56,7 @@ shared ar-management/
 
 ### Core Resolver And Drift Gate
 
-C-08 resolves the active management context: topology, target repo, `coordination_root`, `memory_root`, onboarding/docs/system roots, settings paths, task root, contract path, worktree group, ledger path, storage settings, path rules, and branch-gated cross-repo allowances. C-02 consumes that context and verifies file-level onboarding metadata against the current source state.
+C-08 resolves the active management context: topology, target repo, `coordination_root`, `memory_root`, onboarding/docs/system roots, settings paths, task root, temporary artifact root, contract path, worktree group, ledger path, storage settings, path rules, and branch-gated cross-repo allowances. C-02 consumes that context and verifies file-level onboarding metadata against the current source state.
 
 ### Onboarding Maintenance
 
@@ -86,7 +89,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 
 - Onboarding should describe current repository state; task files describe planned or in-progress future work.
 - C-08 owns topology and path resolution facts; it must not perform Git worktree operations.
-- C-02 detects drift and writes reports; it must not update onboarding itself.
+- C-02 detects drift and writes reports under the resolved temporary artifact root; it must not update onboarding itself.
 - C-05 creates and maintains onboarding artifacts; it must use actual evidence sources rather than citing source registries as proof.
 - Task workflows must stop for developer approval before implementation.
 - C-09 wraps task workflows with worktree lifecycle state; it does not replace W-02 or commit/cleanup without explicit closeout approval.
@@ -97,9 +100,9 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 | Term | Meaning | Notes |
 | --- | --- | --- |
 | onboarding unit | A deterministic documentation unit for one source file or one repo-level entity catalog. | File-level units mirror source paths and carry verification metadata. |
-| management context | The resolved root/path/settings facts returned by C-08 for a target repository. | Current implementation exposes `memory_root` and `coordination_root`; `management_root` remains only as a compatibility alias. |
+| management context | The resolved root/path/settings facts returned by C-08 for a target repository. | Current implementation exposes `memory_root`, `coordination_root`, and `temp_root`; `management_root` remains only as a compatibility alias. |
 | pathRules | Include/exclude eligibility rules that decide which source paths and file types are managed. | Storage and eligibility are separate concepts. |
-| drift report | A C-02 maintenance artifact that classifies onboarding trust. | It is task-local evidence, not durable repo behavior. |
+| drift report | A C-02 maintenance artifact that classifies onboarding trust. | It is temporary evidence under `temp/drift-reports`, not durable repo behavior. |
 | worktree contract | Local runtime state file for worktree-backed tasks. | The parser/writer lives in `_shared/agents_remember/worktree_contract.py`; C-09 creates and consumes contracts. |
 | memory baseline adoption | The one-time action of turning current shared-memory onboarding into the first ledgered `memory.md` baseline. | C-10 checks drift first, requires explicit drift acceptance when needed, and delegates ledger creation to C-09. |
 
@@ -115,8 +118,7 @@ No relevant external domain documentation was found for this repository's own wo
 
 | Priority | Area / Path | Why Next |
 | --- | --- | --- |
-| high | [skills/U-01-core-skills/C-09-git-worktree-manager](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager) | Real Git fixture coverage should be added around compatible shared-memory start and approved closeout. |
-| high | [skills/U-01-core-skills/C-10-adopt-memory-baseline](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline) | Use against existing shared-memory onboarding when a developer wants to intentionally create the first ledgered baseline. |
+| high | [skills/U-01-core-skills/C-09-git-worktree-manager](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager) | Approved closeout should be exercised with code and shared-memory changes together. |
 | medium | [skills/W-01-heavy-task-workflow](agents-remember-md/skills/W-01-heavy-task-workflow) | Heavy workflow docs may need a separate onboarding pass if worktree-backed task folders become common outside W-02. |
 | medium | [system](agents-remember-md/system) | Add richer settings fixtures if cross-repo v2 behavior needs more than the current example files. |
 
@@ -124,8 +126,8 @@ No relevant external domain documentation was found for this repository's own wo
 
 - The shared `ar-management/system/tools.md` currently lists checks for `resolve_auto_editor`, not this repo.
 - The current source registry is useful as a discovery index but has no direct external domain evidence for this repo's own skill/workflow mechanics.
-- The current workspace has shared-memory onboarding for `agents-remember-md` but no ledger yet; C-10 status currently reports drift that must be refreshed with C-05 or explicitly accepted before adoption.
+- Shared-memory onboarding for `agents-remember-md` is ledgered; future closeouts must keep the code-to-memory mapping current.
 
 ## Last Verified
 
-Updated 2026-05-09T22:46 after adding C-10 baseline adoption onboarding.
+Updated 2026-05-09T23:22 after adding C-08 `temp_root` and routing C-02/C-10 drift reports under `temp/drift-reports`.

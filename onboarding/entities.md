@@ -4,7 +4,7 @@
 | ----------- | --------------------- |
 | repository  | agents-remember-md    |
 | doc_type    | `repo-entity-catalog` |
-| lastUpdated | 2026-05-09T22:46      |
+| lastUpdated | 2026-05-09T23:22      |
 | status      | active                |
 
 ## Purpose
@@ -37,10 +37,10 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Description                  | C-08 produces this context so downstream skills do not rebuild topology rules. |
 | Canonical Source Of Truth    | `C-08-ar-management-resolver` skill docs and helper output. |
 | Current Naming Drift         | `management_root` remains as a compatibility alias for `coordination_root`. |
-| Key Identifiers              | `topology`, `repo_name`, `target_repo`, `coordination_root`, `memory_root`, `management_root`, `onboarding_root`, `settings_path`, `path_settings_path`, `task_root`, `pathRules`, `contract_path`, `worktree_group`, `ledger_path`. |
+| Key Identifiers              | `topology`, `repo_name`, `target_repo`, `coordination_root`, `memory_root`, `management_root`, `onboarding_root`, `settings_path`, `path_settings_path`, `task_root`, `temp_root`, `pathRules`, `contract_path`, `worktree_group`, `ledger_path`. |
 | Parent / Child Relationships | Consumed by C-02, C-05, C-03, and task workflows. |
 | Often Confused With          | The onboarding root itself or the worktree task contract. |
-| Source References            | [C-08 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/SKILL.md) L24-L42; [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) L46-L60; L785-L800 |
+| Source References            | [C-08 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/SKILL.md) L24-L43; [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) L81-L105; L1091-L1148; L1205-L1247 |
 | Migration Notes              | C-08 is now worktree-contract-aware but remains facts-only; C-09 owns mutation. |
 
 ### Path Rule
@@ -64,13 +64,13 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | ---------------------------- | ----- |
 | Category                     | Maintenance artifact |
 | Represents In Reality        | C-02's report of onboarding trust against source-file verification metadata. |
-| Description                  | Drift reports classify onboarding units as up to date, drifted, missing verification, missing, orphaned, disabled, or unsupported. |
+| Description                  | Drift reports classify onboarding units as up to date, drifted, missing verification, missing, orphaned, disabled, or unsupported and are written under the resolved temporary artifact root by default. |
 | Canonical Source Of Truth    | C-02 skill docs and `check_onboarding_drift.py`. |
-| Current Naming Drift         | The report is sometimes treated as durable documentation, but C-02 describes it as a maintenance artifact. |
-| Key Identifiers              | `classification`, `trust`, onboarding file path, source file path, affected sections, note. |
+| Current Naming Drift         | The report used to default into task folders; current C-02 output places generated drift reports under `temp/drift-reports/<repo-name>/`. |
+| Key Identifiers              | report path, `classification`, `trust`, onboarding file path, source file path, affected sections, note. |
 | Parent / Child Relationships | Uses the C-08 context and hands actionable maintenance work to C-05. |
 | Often Confused With          | Onboarding content itself. |
-| Source References            | [C-02 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md) L16-L21; L112-L130; [check_onboarding_drift.py](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) L62-L70; L562-L615 |
+| Source References            | [C-02 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md) L16-L21; L41-L52; L112-L130; [check_onboarding_drift.py](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) L62-L70; L106-L111; L570-L636 |
 | Migration Notes              | Worktree support should preserve C-02 as detection/routing, not content writing. |
 
 ### File-Level Onboarding Content Model
@@ -181,7 +181,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Settings | `system/settings.md` plus JSON-first `system/settings.json` when present. |
 | Resolver code | `ManagementContext` dataclass and JSON/text output. |
 | Consumer skills | C-02, C-03, C-05, and task workflows consume resolved roots instead of guessing. |
-| Worktree support | Explicit memory, coordination, task, worktree, contract, and ledger facts. |
+| Worktree support | Explicit memory, coordination, task, temp, worktree, contract, and ledger facts. |
 
 ### Light Task Artifact
 
@@ -218,6 +218,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 ## Update History
 
+- 2026-05-09T23:22: Updated management context and drift report entities after C-08 added `temp_root` and C-02 moved reports under `temp/drift-reports`.
 - 2026-05-09T21:15: Created first `agents-remember-md` entity catalog for the preliminary onboarding baseline.
 - 2026-05-09T22:10: Refreshed entity wording so ledger, contract, C-09, and cross-repo v2 are described as implemented current state.
 - 2026-05-09T22:46: Added memory baseline adoption as the current-state entity introduced by C-10.

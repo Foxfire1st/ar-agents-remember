@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T22:46                           |
+| lastUpdated            | 2026-05-09T23:22                           |
 | lastVerifiedCommitHash | `9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e` |
 | lastVerifiedCommitDate | 2026-05-09T22:43                           |
 
@@ -17,11 +17,11 @@
 
 ### Logic
 
-The script dynamically loads C-08, C-02, and C-09 so it can reuse the active resolver, drift classifier, and bootstrap behavior without duplicating their logic. `status` resolves context, runs drift, writes a report under the repo-scoped task area by default, and prints a JSON payload with topology, roots, drift counts, and ledger status. `adopt` requires shared topology, stops when a ledger already exists, exits with code 2 when actionable drift is present without `--accept-drift`, supports `--dry-run`, and otherwise creates a default adoption contract before calling C-09 `bootstrap_memory_repo`.
+The script dynamically loads C-08, C-02, and C-09 so it can reuse the active resolver, drift classifier, and bootstrap behavior without duplicating their logic. `status` resolves context, runs drift, writes a report through C-02's `temp_root`-based report resolver by default, and prints a JSON payload with topology, roots, drift counts, and ledger status. `adopt` requires shared topology, stops when a ledger already exists, exits with code 2 when actionable drift is present without `--accept-drift`, supports `--dry-run`, and otherwise creates a default adoption contract before calling C-09 `bootstrap_memory_repo`.
 
 ### Conventions
 
-The JSON payload is designed for both humans and wrappers: every path is serialized as POSIX text, `state` carries the control decision, and `accepted_drift` is included only for adoption paths. The default report path is `tasks/<repo>/<repo>_<branch>_drift-report.md`, so adoption reports do not fall back into the flat task root.
+The JSON payload is designed for both humans and wrappers: every path is serialized as POSIX text, `state` carries the control decision, and `accepted_drift` is included only for adoption paths. C-10 does not invent a separate report path convention; it delegates report path handling to C-02 so adoption drift reports land under the resolved temporary artifact root by default.
 
 ### Invariants And Boundaries
 
@@ -46,7 +46,7 @@ The helper coordinates three existing core packages instead of becoming a fourth
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The script loads the resolver, drift checker, worktree manager, memory ledger helper, and worktree contract helper directly from the core skill tree. | L16-L25; L28-L40 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
-| Drift classification writes a report and contributes counts/actionable rows to the state payload. | L53-L78; L106-L123 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
+| Drift classification writes a report through C-02's path resolver and contributes counts/actionable rows to the state payload. | L53-L67; L103-L123 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
 | Adoption requires shared topology, blocks actionable drift unless accepted, supports dry run, and delegates baseline creation to C-09. | L138-L176; L199-L205 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
 | C-09 bootstrap refuses to overwrite an existing ledger, initializes Git identity when needed, preserves empty docs with `.gitkeep`, and writes the initial ledger. | L83-L87; L297-L359 | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
 
@@ -60,4 +60,5 @@ No sibling repository evidence is needed for the helper itself.
 
 ## Update History
 
+- 2026-05-09T23:22: Updated after C-10 delegated drift report placement to C-02's temp-root report resolver.
 - 2026-05-09T22:46: Created onboarding for the C-10 adoption command helper.

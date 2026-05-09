@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T21:45                           |
+| lastUpdated            | 2026-05-09T23:22                           |
 | lastVerifiedCommitHash | `5514f3412e46123337b842232dc0fd2c1d6ba82c` |
 | lastVerifiedCommitDate | 2026-05-07T13:52                           |
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The script imports C-08 resolver helpers, discovers file-level onboarding files by metadata, classifies sidecar and inline onboarding, compares recorded verification commits to current HEAD, and writes a Markdown report constrained to the management root.
+The script imports C-08 resolver helpers, discovers file-level onboarding files by metadata, classifies sidecar and inline onboarding, compares recorded verification commits to current HEAD, and writes a Markdown report under the resolved temporary artifact root by default.
 
 ### Conventions
 
@@ -25,11 +25,11 @@ External file-level onboarding is detected through a Markdown table with `doc_ty
 
 ### Invariants And Boundaries
 
-The script should never update onboarding content. It can create or overwrite the drift report, but the report is a maintenance artifact that should not be treated as stable current-state documentation.
+The script should never update onboarding content. It can create or overwrite the drift report under C-08's coordination-local temp area, but the report is a maintenance artifact that should not be treated as stable current-state documentation.
 
 ### Todos
 
-When worktree-aware roots are implemented, verify that report path constraints and onboarding discovery still use the intended local coordinator and memory roots.
+No current implementation todo is recorded.
 
 ### Docs References
 
@@ -50,7 +50,8 @@ The script is the current executable implementation of drift checking.
 | External onboarding classification checks source path, verification hash, source existence, commit existence, diff to HEAD, and local changes. | L191-L289 | [check_onboarding_drift.py](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 | Missing sidecar onboarding is classified when a managed source lacks the mirrored file. | L299-L315 | [check_onboarding_drift.py](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 | Markdown reports are generated with summary counts and actionable rows. | L562-L615 | [check_onboarding_drift.py](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
-| CLI resolution uses C-08 context and writes the report under the resolved management root. | L693-L760 | [check_onboarding_drift.py](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
+| Default drift report helpers place reports under `<temp_root>/drift-reports/<repo-name>/`; `resolve_report_path` keeps explicit absolute paths inside the coordination root while keeping relative paths inside `temp_root`. | L100-L111; L626-L636 | [check_onboarding_drift.py](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
+| CLI resolution uses C-08 context and writes the report through the resolved `coordination_root` and `temp_root`. | L721-L771 | [check_onboarding_drift.py](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 
 ## Cross-Repo References
 
@@ -62,4 +63,5 @@ No sibling repository evidence is needed for the helper's current logic.
 
 ## Update History
 
+- 2026-05-09T23:22: Updated after drift reports moved from task folders to C-08's temporary artifact root.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the C-02 helper implementation.

@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T22:46                           |
+| lastUpdated            | 2026-05-09T23:22                           |
 | lastVerifiedCommitHash | `82d7bbbb2cb222f168efd16d894aba260d7dfe75` |
 | lastVerifiedCommitDate | 2026-05-09T22:42                           |
 
@@ -17,7 +17,7 @@ This skill documents the ergonomic adoption path for existing shared-memory onbo
 
 ### Logic
 
-The skill routes users through `status` before `adopt`. The workflow resolves the repository with C-08, runs C-02 drift classification, checks for an existing ledger, blocks actionable drift unless `--accept-drift` is present, and then delegates the actual shared-memory bootstrap and `memory.md` creation to C-09.
+The skill routes users through `status` before `adopt`. The workflow resolves the repository with C-08, runs C-02 drift classification with the reusable report under C-08's resolved temp root by default, checks for an existing ledger, blocks actionable drift unless `--accept-drift` is present, and then delegates the actual shared-memory bootstrap and `memory.md` creation to C-09.
 
 ### Conventions
 
@@ -47,6 +47,7 @@ The skill is the human-facing contract for the adoption script and its trust bou
 | --- | --- | --- |
 | The skill defines the adoption use case and makes C-02 drift plus explicit acceptance the central trust boundary. | L8-L10; L21-L28; L38-L43 | [C-10 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md) |
 | The adoption script implements the documented states and delegates baseline creation to C-09. | L106-L123; L138-L176 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
+| C-10's drift run delegates report path resolution to C-02 with the resolved `coordination_root` and `temp_root`. | L53-L67 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
 
 ## Cross-Repo References
 
@@ -58,4 +59,5 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-09T23:22: Updated after C-10 documented temp-root drift report placement.
 - 2026-05-09T22:46: Created onboarding for the C-10 adoption skill.

@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T22:57                           |
+| lastUpdated            | 2026-05-09T23:22                           |
 | lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
 | lastVerifiedCommitDate | 2026-05-09T22:15                           |
 
@@ -21,7 +21,7 @@ The skill instructs agents to use C-08 for memory/coordination context resolutio
 
 ### Conventions
 
-C-02 reports trust state; it does not rewrite onboarding. It supports sidecar and inline storage models under the resolved onboarding root and writes Markdown reports as local coordination artifacts under the resolved coordination root.
+C-02 reports trust state; it does not rewrite onboarding. It supports sidecar and inline storage models under the resolved onboarding root and writes Markdown reports as local coordination artifacts under C-08's resolved `temp_root` by default.
 
 ### Invariants And Boundaries
 
@@ -46,7 +46,7 @@ C-02 is the trust gate used before implementation and after onboarding maintenan
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The skill outputs classifications and a C-05 handoff worklist. | L16-L21 | [C-02 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md) |
-| The helper writes a report and supports JSON, CSV, and text output. | L34-L54 | [C-02 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md) |
+| The helper writes a report under `<coordination_root>/temp/drift-reports/<repo-name>/` by default and supports JSON, CSV, and text output. | L34-L54 | [C-02 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md) |
 | Resolution must use C-08 and handle sidecar or inline storage. | L58-L64 | [C-02 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md) |
 | Metadata comparison and classification rules establish which onboarding can be trusted. | L66-L93 | [C-02 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md) |
 | C-02 hands content maintenance to C-05 rather than editing onboarding directly. | L132-L154 | [C-02 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md) |
@@ -61,6 +61,7 @@ No cross-repo evidence is needed for the current skill contract.
 
 ## Update History
 
+- 2026-05-09T23:22: Updated after C-02 moved default drift reports under C-08's temporary artifact root.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for C-02 skill documentation.
 - 2026-05-09T21:59: Updated after C-08 split memory roots from coordination roots.
 - 2026-05-09T22:57: Refreshed verification metadata and clarified that reports are coordination artifacts.
