@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:55                           |
-| lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
-| lastVerifiedCommitDate | 2026-05-09T22:15                           |
+| lastUpdated            | 2026-05-10T00:36                           |
+| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
+| lastVerifiedCommitDate | 2026-05-09T23:54                           |
 
 ## Purpose
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the helper itself.
 
 ## Update History
 
+- 2026-05-10T00:36: Refreshed verification metadata after integration contract fields landed on main.
 - 2026-05-09T23:55: Updated after contracts gained integration status, landed commit fields, and integration-scoped cleanup.
 - 2026-05-09T21:59: Created onboarding for the new worktree contract helper.
 - 2026-05-09T22:57: Refreshed verification metadata and replaced task-file citation with current helper evidence.

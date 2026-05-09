@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:55                           |
-| lastVerifiedCommitHash | `9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e` |
-| lastVerifiedCommitDate | 2026-05-09T22:43                           |
+| lastUpdated            | 2026-05-10T00:36                           |
+| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
+| lastVerifiedCommitDate | 2026-05-09T23:54                           |
 
 ## Purpose
 
@@ -43,7 +43,6 @@ No external documentation is needed for this standard-library test.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Tasks 02, 04, 05, 06, 07, and 08 require focused validation for resolver, ledger, contract, C-09, and cross-repo behavior. | n/a | [master plan](tasks/agents-remember-md/260508_00_worktree-memory-program-master-plan.md) |
 | The test module imports the C-10 helper beside the C-09 helper and creates minimal file-level onboarding fixtures for adoption checks. | L37-L49; L80-L85 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 | The shared integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests. | L104-L165 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 | C-09 integration tests cover ff-only source fast-forwarding, replay after parallel non-overlapping changes with a fresh ledger mapping, and code conflict blocking before main moves. | L307-L377 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
@@ -60,6 +59,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-05-10T00:36: Refreshed verification metadata after integration tests landed on main and removed a stale task-artifact reference.
 - 2026-05-09T23:55: Updated coverage summary after adding C-09 integration fast-forward, replay, and conflict-blocking tests.
 - 2026-05-09T23:22: Updated coverage summary after adding temp-root drift report path assertions.
 - 2026-05-09T21:59: Created onboarding for the worktree-support smoke tests.

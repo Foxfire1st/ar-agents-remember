@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:55                           |
-| lastVerifiedCommitHash | `82d7bbbb2cb222f168efd16d894aba260d7dfe75` |
-| lastVerifiedCommitDate | 2026-05-09T22:42                           |
+| lastUpdated            | 2026-05-10T00:36                           |
+| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
+| lastVerifiedCommitDate | 2026-05-09T23:54                           |
 
 ## Purpose
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for the helper itself.
 
 ## Update History
 
+- 2026-05-10T00:36: Refreshed verification metadata after the integration command landed on main.
 - 2026-05-09T23:55: Updated after adding approval-gated integration with ff-only, replay, conflict blocking, and cleanup prompt behavior.
 - 2026-05-09T21:59: Created onboarding for the new C-09 helper implementation.
 - 2026-05-09T22:10: Updated behavior notes for clean-start worktree preparation, disabled-memory contract conversion, and closeout source-branch checks.

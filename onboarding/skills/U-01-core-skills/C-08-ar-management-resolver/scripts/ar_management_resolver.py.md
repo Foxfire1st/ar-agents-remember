@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:22                           |
-| lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
-| lastVerifiedCommitDate | 2026-05-09T22:15                           |
+| lastUpdated            | 2026-05-10T00:36                           |
+| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
+| lastVerifiedCommitDate | 2026-05-09T23:54                           |
 
 ## Purpose
 
@@ -61,6 +61,7 @@ The helper can resolve sibling repositories selected by shared settings, but cur
 
 ## Update History
 
+- 2026-05-10T00:36: Refreshed verification metadata after the `temp_root` implementation landed on main.
 - 2026-05-09T23:22: Updated after C-08 added `temp_root` for coordination-local temporary artifacts.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the C-08 helper implementation.
 - 2026-05-09T21:59: Updated after C-08 gained memory/coordination roots, contract fields, ledger path, and cross-repo v2 result parsing.

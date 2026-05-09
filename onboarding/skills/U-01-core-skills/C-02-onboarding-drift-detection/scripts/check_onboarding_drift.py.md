@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:22                           |
-| lastVerifiedCommitHash | `5514f3412e46123337b842232dc0fd2c1d6ba82c` |
-| lastVerifiedCommitDate | 2026-05-07T13:52                           |
+| lastUpdated            | 2026-05-10T00:36                           |
+| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
+| lastVerifiedCommitDate | 2026-05-09T23:54                           |
 
 ## Purpose
 
@@ -63,5 +63,6 @@ No sibling repository evidence is needed for the helper's current logic.
 
 ## Update History
 
+- 2026-05-10T00:36: Refreshed verification metadata after the temp-root drift report helpers landed on main.
 - 2026-05-09T23:22: Updated after drift reports moved from task folders to C-08's temporary artifact root.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the C-02 helper implementation.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:22                           |
-| lastVerifiedCommitHash | `9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e` |
-| lastVerifiedCommitDate | 2026-05-09T22:43                           |
+| lastUpdated            | 2026-05-10T00:36                           |
+| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
+| lastVerifiedCommitDate | 2026-05-09T23:54                           |
 
 ## Purpose
 
@@ -60,5 +60,6 @@ No sibling repository evidence is needed for the helper itself.
 
 ## Update History
 
+- 2026-05-10T00:36: Refreshed verification metadata after C-10 delegated report placement to the temp-root resolver path on main.
 - 2026-05-09T23:22: Updated after C-10 delegated drift report placement to C-02's temp-root report resolver.
 - 2026-05-09T22:46: Created onboarding for the C-10 adoption command helper.

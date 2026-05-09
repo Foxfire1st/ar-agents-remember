@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:55                           |
-| lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
-| lastVerifiedCommitDate | 2026-05-09T22:15                           |
+| lastUpdated            | 2026-05-10T00:36                           |
+| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
+| lastVerifiedCommitDate | 2026-05-09T23:54                           |
 
 ## Purpose
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-10T00:36: Refreshed verification metadata after approval-gated integration landed on main.
 - 2026-05-09T23:55: Updated after documenting the C-09 integration phase and replay/conflict rules.
 - 2026-05-09T21:59: Created onboarding for the new C-09 skill.
 - 2026-05-09T22:10: Updated closeout boundary to include source-branch movement checks.

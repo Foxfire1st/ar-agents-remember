@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:22                           |
-| lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
-| lastVerifiedCommitDate | 2026-05-09T22:15                           |
+| lastUpdated            | 2026-05-10T00:36                           |
+| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
+| lastVerifiedCommitDate | 2026-05-09T23:54                           |
 
 ## Purpose
 
@@ -61,6 +61,7 @@ No cross-repo evidence is needed for the current skill contract.
 
 ## Update History
 
+- 2026-05-10T00:36: Refreshed verification metadata after the temp-root drift report behavior landed on main.
 - 2026-05-09T23:22: Updated after C-02 moved default drift reports under C-08's temporary artifact root.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for C-02 skill documentation.
 - 2026-05-09T21:59: Updated after C-08 split memory roots from coordination roots.
