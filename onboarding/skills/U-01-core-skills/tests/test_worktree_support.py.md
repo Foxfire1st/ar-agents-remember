@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T23:22                           |
+| lastUpdated            | 2026-05-09T23:55                           |
 | lastVerifiedCommitHash | `9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e` |
 | lastVerifiedCommitDate | 2026-05-09T22:43                           |
 
@@ -17,7 +17,7 @@ This unittest file validates the first worktree-support helper slice.
 
 ### Logic
 
-The tests cover memory ledger roundtrip/prepend behavior, malformed ledger metadata, invalid ledger top-row detection, branch-mismatched shared-memory start blocking, compatible shared-memory start reporting, internal memory start reporting, worktree contract roundtrip, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root`, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching branch/ledger metadata, and C-10 adoption status/block/adopt behavior.
+The tests cover memory ledger roundtrip/prepend behavior, malformed ledger metadata, invalid ledger top-row detection, branch-mismatched shared-memory start blocking, compatible shared-memory start reporting, internal memory start reporting, worktree contract roundtrip, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root`, C-09 integration fast-forward/replay/conflict behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching branch/ledger metadata, and C-10 adoption status/block/adopt behavior.
 
 ### Conventions
 
@@ -25,11 +25,11 @@ The test imports helper modules directly from the repo path and uses only Python
 
 ### Invariants And Boundaries
 
-These tests are focused smoke coverage, not exhaustive C-09 lifecycle integration tests. The C-10 coverage uses temporary code and memory repos, writes minimal verified onboarding, captures command output when exercising the CLI-style entry point, checks that adoption drift reports stay out of task folders, and checks that adoption writes `memory.md` plus the bootstrap `.gitkeep`.
+These tests are focused smoke coverage, not exhaustive C-09 lifecycle integration tests. The C-09 integration coverage uses real temporary Git repos and worktrees, checks fast-forward integration, checks replay integration after parallel non-overlapping source changes, and checks conflict blocking before source branches move. The C-10 coverage uses temporary code and memory repos, writes minimal verified onboarding, captures command output when exercising the CLI-style entry point, checks that adoption drift reports stay out of task folders, and checks that adoption writes `memory.md` plus the bootstrap `.gitkeep`.
 
 ### Todos
 
-Add fuller Git fixture tests for compatible shared-memory worktree start and closeout ordering. C-10 now has initial command-level coverage, but wrapper UX around its JSON output is not covered here.
+Add fuller Git fixture tests for compatible shared-memory start and cleanup removal. C-10 now has initial command-level coverage, but wrapper UX around its JSON output is not covered here.
 
 ### Docs References
 
@@ -45,8 +45,10 @@ No external documentation is needed for this standard-library test.
 | --- | --- | --- |
 | Tasks 02, 04, 05, 06, 07, and 08 require focused validation for resolver, ledger, contract, C-09, and cross-repo behavior. | n/a | [master plan](tasks/agents-remember-md/260508_00_worktree-memory-program-master-plan.md) |
 | The test module imports the C-10 helper beside the C-09 helper and creates minimal file-level onboarding fixtures for adoption checks. | L37-L49; L80-L85 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
-| Resolver and drift-report path tests check `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, and absolute-path containment. | L247-L285 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
-| C-10 tests cover ready status without a ledger, drift report placement outside task folders, drift blocking without explicit acceptance, and initial ledger creation with docs `.gitkeep`. | L322-L393 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
+| The shared integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests. | L104-L165 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
+| C-09 integration tests cover ff-only source fast-forwarding, replay after parallel non-overlapping changes with a fresh ledger mapping, and code conflict blocking before main moves. | L307-L377 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
+| Resolver and drift-report path tests check `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, and absolute-path containment. | L379-L420 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
+| C-10 tests cover ready status without a ledger, drift report placement outside task folders, drift blocking without explicit acceptance, and initial ledger creation with docs `.gitkeep`. | L460-L536 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 
@@ -58,6 +60,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-05-09T23:55: Updated coverage summary after adding C-09 integration fast-forward, replay, and conflict-blocking tests.
 - 2026-05-09T23:22: Updated coverage summary after adding temp-root drift report path assertions.
 - 2026-05-09T21:59: Created onboarding for the worktree-support smoke tests.
 - 2026-05-09T22:10: Updated test coverage summary for malformed metadata, branch-mismatch blocking, compatible shared-memory reporting, internal memory reporting, and cross-repo v2 include states.

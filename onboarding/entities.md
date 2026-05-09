@@ -4,7 +4,7 @@
 | ----------- | --------------------- |
 | repository  | agents-remember-md    |
 | doc_type    | `repo-entity-catalog` |
-| lastUpdated | 2026-05-09T23:22      |
+| lastUpdated | 2026-05-09T23:55      |
 | status      | active                |
 
 ## Purpose
@@ -138,15 +138,30 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Field                        | Value |
 | ---------------------------- | ----- |
 | Category                     | Runtime coordination artifact |
-| Represents In Reality        | A local record of task identity, workflow artifact, worktree group, code worktree, memory worktree, ledger path, review state, and closeout commits. |
+| Represents In Reality        | A local record of task identity, workflow artifact, worktree group, code worktree, memory worktree, ledger path, review state, closeout commits, integration commits, and cleanup state. |
 | Description                  | The helper locates contracts under `ar-management/tasks/<repo-name>/<task-name>-ar/contract.md` and keeps them out of memory repos and worktrees. |
 | Canonical Source Of Truth    | `_shared/agents_remember/worktree_contract.py` plus C-09. |
 | Current Naming Drift         | The parser/writer exists in `_shared/agents_remember/worktree_contract.py`; it is not the same entity as a W-02 task file. |
-| Key Identifiers              | `contract.md`, task id/name, worktree group, code worktree, memory worktree, ledger path, human review state. |
+| Key Identifiers              | `contract.md`, task id/name, worktree group, code worktree, memory worktree, ledger path, human review state, closeout commits, integration commits, cleanup state. |
 | Parent / Child Relationships | Owned by local coordinator and consumed by C-08/C-09 worktree-aware flows. |
 | Often Confused With          | Task artifact, onboarding unit, or memory ledger. |
-| Source References            | [worktree design spec](agents-remember-md/roadmap/agents-remember-worktree-memory-final-design-spec.md) L692-L783; L1368-L1371 |
-| Migration Notes              | Task files should remain planning artifacts; contracts should record operational state. |
+| Source References            | [worktree_contract.py](agents-remember-md/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py) L16-L58; L211-L225; [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) L560-L654 |
+| Migration Notes              | Task files should remain planning artifacts; contracts should record operational state. Closeout commits and integration commits are separate because replay can change landed SHAs. |
+
+### Worktree Integration
+
+| Field                        | Value |
+| ---------------------------- | ----- |
+| Category                     | Worktree lifecycle phase |
+| Represents In Reality        | The approved landing of closed task work from code and memory worktrees back onto their source branches. |
+| Description                  | C-09 `integrate` requires completed closeout and clean checkouts, supports `ff-only` for unchanged source ancestry, supports `replay` for parallel non-overlapping source movement, regenerates the memory ledger row for landed commits, and blocks conflicts before moving main. |
+| Canonical Source Of Truth    | C-09 skill docs and `git_worktree_manager.py`. |
+| Current Naming Drift         | Integration is not cleanup. Cleanup is asked after successful integration and remains pending until explicitly approved. |
+| Key Identifiers              | `integrate`, `--strategy ff-only`, `--strategy replay`, `integration.status`, `integrated_code_commit`, `integrated_memory_content_commit`, `integrated_ledger_commit`, `cleanup`. |
+| Parent / Child Relationships | Consumes the worktree contract closeout commits and writes integration result fields back to the same contract. |
+| Often Confused With          | Closeout commits, manual merge, push, or worktree deletion. |
+| Source References            | [C-09 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md) L53-L70; [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) L560-L654 |
+| Migration Notes              | Replay integration preserves parallel work support by producing new landed SHAs instead of pretending the closeout SHAs are still the source branch tips. |
 
 ### Branch-Gated Cross-Repo Source
 
@@ -210,6 +225,15 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | C-08 | Facts-only contract reader. |
 | C-09 | Creator/updater and lifecycle owner. |
 
+### Worktree Integration
+
+| Layer | Representation |
+| --- | --- |
+| Closeout snapshot | Reviewed code, memory content, and ledger commits recorded in `closeout`. |
+| Integration replay | Optional code rebase and memory-content replay when source branches moved. |
+| Source branches | Fast-forward only after integrated code and memory ledger commits are ready. |
+| Cleanup | Asked after success; not automatic. |
+
 ## Ownership Notes
 
 - This catalog intentionally excludes the eight worktree task files as onboarding subjects.
@@ -218,6 +242,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 ## Update History
 
+- 2026-05-09T23:55: Added worktree integration as a current lifecycle entity and updated contract fields for integration commits.
 - 2026-05-09T23:22: Updated management context and drift report entities after C-08 added `temp_root` and C-02 moved reports under `temp/drift-reports`.
 - 2026-05-09T21:15: Created first `agents-remember-md` entity catalog for the preliminary onboarding baseline.
 - 2026-05-09T22:10: Refreshed entity wording so ledger, contract, C-09, and cross-repo v2 are described as implemented current state.

@@ -6,7 +6,7 @@
 
 `agents-remember-md` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, helper scripts, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. The core idea is one-to-one onboarding: source files have deterministic onboarding units that can be verified against Git history before an agent relies on them.
 
-The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-management/` as local coordination. C-08 exposes that split through `memory_root` and `coordination_root`, C-09 owns worktree lifecycle mutation, and C-10 provides the adoption path for existing shared-memory onboarding that needs an initial `memory.md` ledger.
+The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-management/` as local coordination. C-08 exposes that split through `memory_root` and `coordination_root`, C-09 owns worktree lifecycle mutation plus integration back to source branches, and C-10 provides the adoption path for existing shared-memory onboarding that needs an initial `memory.md` ledger.
 
 ## Architecture At A Glance
 
@@ -68,7 +68,7 @@ W-02 is the compact durable-task workflow used by the current worktree-support t
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: shared ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, and `closeout` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing shared-memory onboarding.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: shared ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, `closeout`, and `integrate` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing shared-memory onboarding.
 
 ## Cross-Repo References
 
@@ -92,7 +92,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 - C-02 detects drift and writes reports under the resolved temporary artifact root; it must not update onboarding itself.
 - C-05 creates and maintains onboarding artifacts; it must use actual evidence sources rather than citing source registries as proof.
 - Task workflows must stop for developer approval before implementation.
-- C-09 wraps task workflows with worktree lifecycle state; it does not replace W-02 or commit/cleanup without explicit closeout approval.
+- C-09 wraps task workflows with worktree lifecycle state; it does not replace W-02, does not integrate without explicit approval, and asks before cleanup after successful integration.
 - C-10 is an adoption wrapper for existing shared-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
 
 ## Glossary Terms
@@ -104,6 +104,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 | pathRules | Include/exclude eligibility rules that decide which source paths and file types are managed. | Storage and eligibility are separate concepts. |
 | drift report | A C-02 maintenance artifact that classifies onboarding trust. | It is temporary evidence under `temp/drift-reports`, not durable repo behavior. |
 | worktree contract | Local runtime state file for worktree-backed tasks. | The parser/writer lives in `_shared/agents_remember/worktree_contract.py`; C-09 creates and consumes contracts. |
+| worktree integration | The approved C-09 phase that lands closed task work back onto source branches. | `ff-only` requires unchanged source ancestry; `replay` supports parallel non-overlapping work and blocks conflicts before main moves. |
 | memory baseline adoption | The one-time action of turning current shared-memory onboarding into the first ledgered `memory.md` baseline. | C-10 checks drift first, requires explicit drift acceptance when needed, and delegates ledger creation to C-09. |
 
 ## Docs References
@@ -118,7 +119,7 @@ No relevant external domain documentation was found for this repository's own wo
 
 | Priority | Area / Path | Why Next |
 | --- | --- | --- |
-| high | [skills/U-01-core-skills/C-09-git-worktree-manager](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager) | Approved closeout should be exercised with code and shared-memory changes together. |
+| high | [skills/U-01-core-skills/C-09-git-worktree-manager](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager) | Cleanup removal after successful integration still needs a helper path. |
 | medium | [skills/W-01-heavy-task-workflow](agents-remember-md/skills/W-01-heavy-task-workflow) | Heavy workflow docs may need a separate onboarding pass if worktree-backed task folders become common outside W-02. |
 | medium | [system](agents-remember-md/system) | Add richer settings fixtures if cross-repo v2 behavior needs more than the current example files. |
 
@@ -130,4 +131,4 @@ No relevant external domain documentation was found for this repository's own wo
 
 ## Last Verified
 
-Updated 2026-05-09T23:22 after adding C-08 `temp_root` and routing C-02/C-10 drift reports under `temp/drift-reports`.
+Updated 2026-05-09T23:55 after adding C-09 integration for ff-only and replay landing of closed worktrees.
