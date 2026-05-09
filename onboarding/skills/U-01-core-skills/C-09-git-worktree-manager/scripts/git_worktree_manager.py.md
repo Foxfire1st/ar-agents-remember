@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-10T01:01                           |
-| lastVerifiedCommitHash | `b6a5c21f9309642125a468e63c8aad1a3f3beb88` |
-| lastVerifiedCommitDate | 2026-05-10T01:01                           |
+| lastUpdated            | 2026-05-10T01:04                           |
+| lastVerifiedCommitHash | `d7da2fc7d98f30b83dcfea1ad90789bfe613c5af` |
+| lastVerifiedCommitDate | 2026-05-10T01:04                           |
 
 ## Purpose
 
@@ -23,7 +23,7 @@ The script loads C-08, resolves context, creates or loads worktree contracts, dr
 
 ### Conventions
 
-`start` creates the code worktree first. Shared memory is prepared only when the source memory repo is clean and a compatible ledger exists, or when the user selects an explicit recovery path. Clean-start bootstraps the shared memory repo, prepares the recorded memory worktree, and records the new memory base commit. Baseline adoption can also call the bootstrap path directly through C-10. If the human selects disabled memory, the persisted contract is converted to disabled mode instead of retaining fake shared-memory paths. `status` emits phase, summary, next action, next command, and dirty worktree flags. `closeout`, `integrate`, and `cleanup` all refuse to run without `--approved`; cleanup also refuses to run before integration has completed.
+`start` creates the code worktree first. Shared memory is prepared only when the source memory repo is clean and a compatible ledger exists, or when the user selects an explicit recovery path. Clean-start bootstraps the shared memory repo, prepares the recorded memory worktree, and records the new memory base commit. Baseline adoption can also call the bootstrap path directly through C-10. If the human selects disabled memory, the persisted contract is converted to disabled mode instead of retaining fake shared-memory paths. `status` and `attach` can load a direct `--contract-path` without requiring repo-name resolution; task-name lookup still goes through C-08. `status` emits phase, summary, next action, next command, and dirty worktree flags. `closeout`, `integrate`, and `cleanup` all refuse to run without `--approved`; cleanup also refuses to run before integration has completed.
 
 ### Invariants And Boundaries
 
@@ -47,9 +47,10 @@ No external documentation is needed for this standard-library helper.
 | --- | --- | --- |
 | The worktree design spec defines start flow, memory compatibility, and closeout sequencing. | L995-L1098 | [worktree design spec](agents-remember-md/roadmap/agents-remember-worktree-memory-final-design-spec.md) |
 | C-09 must wrap workflows without replacing them. | L1081-L1098; L1107-L1153 | [worktree design spec](agents-remember-md/roadmap/agents-remember-worktree-memory-final-design-spec.md) |
-| The bootstrap helper configures missing local Git identity, refuses to overwrite an existing ledger, preserves empty docs with `.gitkeep`, and writes the initial ledger. | L83-L87; L297-L359 | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
+| The bootstrap helper configures missing local Git identity, refuses to overwrite an existing ledger, preserves empty docs with `.gitkeep`, and writes the initial ledger. | L97-L105; L385-L458 | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
 | C-10 adoption delegates initial baseline creation to C-09 rather than duplicating Git mutation behavior. | L157-L176 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
 | Lifecycle status reports phase, summary, next action, next command, and dirty flags. | L83-L84; L140-L203 | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
+| Direct contract-path status and attach load the contract without requiring C-08 repo-name resolution. | L211-L226 | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
 | Shared-memory start blocks a dirty source memory repo so refreshed onboarding and ledger updates must be committed before worktree creation. | L305-L344 | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
 | Integration validates completed closeout state, clean source/worktree checkouts, and matching closeout heads before source branches can move. | L554-L584 | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
 | Replay integration stops on code or memory conflicts before moving source branches, records blocked integration state, and memory replay creates a fresh ledger row for the integrated code and memory content commits. | L539-L549; L586-L646 | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
@@ -65,6 +66,7 @@ No sibling repository evidence is needed for the helper itself.
 
 ## Update History
 
+- 2026-05-10T01:04: Updated after direct contract-path status/attach stopped requiring repo-name context.
 - 2026-05-10T00:56: Updated after shared-memory start began blocking dirty memory repos and integration blocks became contract-visible.
 - 2026-05-10T00:47: Updated after adding wrapper-aware contract resolution, lifecycle status guidance, richer command summaries, and cleanup command behavior.
 - 2026-05-10T00:36: Refreshed verification metadata after the integration command landed on main.

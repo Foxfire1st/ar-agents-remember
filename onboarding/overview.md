@@ -131,4 +131,4 @@ No relevant external domain documentation was found for this repository's own wo
 
 ## Last Verified
 
-Updated 2026-05-10T01:01 against implementation commit `b6a5c21f9309642125a468e63c8aad1a3f3beb88` after adding the committed shared-memory baseline gate before C-09 worktree start.
+Updated 2026-05-10T01:04 against implementation commit `d7da2fc7d98f30b83dcfea1ad90789bfe613c5af` after adding the committed shared-memory baseline gate and direct contract-path status handling.
