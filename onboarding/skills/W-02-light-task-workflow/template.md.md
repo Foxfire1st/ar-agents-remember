@@ -5,19 +5,19 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/W-02-light-task-workflow/template.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T22:57                           |
-| lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
-| lastVerifiedCommitDate | 2026-05-09T22:15                           |
+| lastUpdated            | 2026-05-10T01:01                           |
+| lastVerifiedCommitHash | `b6a5c21f9309642125a468e63c8aad1a3f3beb88` |
+| lastVerifiedCommitDate | 2026-05-10T01:01                           |
 
 ## Purpose
 
-This template defines the required shape of W-02 task artifacts.
+This template defines the required shape of W-02 `task.md` artifacts inside task wrapper folders.
 
 ## Code Commentary
 
 ### Logic
 
-The template includes status, repo, type, objective, design philosophy, requirements, implementation steps, examples, decision log, open questions, and references. Usage rules include resolved C-08 paths and the worktree-backed task artifact location beside `contract.md`.
+The template includes status, repo, type, objective, design philosophy, requirements, implementation steps, examples, decision log, open questions, and references. Usage rules include resolved C-08 paths and the wrapper location `<task-root>/<task-slug>/task.md`; when worktrees are created, C-09 places `contract.md` beside that file.
 
 ### Conventions
 
@@ -46,7 +46,7 @@ The template is the stable artifact shape for W-02.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The template requires status metadata, objective, design philosophy, requirements, implementation steps, examples, decision log, open questions, and references. | L8-L86 | [W-02 template.md](agents-remember-md/skills/W-02-light-task-workflow/template.md) |
-| Usage rules require C-08 resolved paths, worktree-backed task placement beside `contract.md`, checklist progress, status changes, and append-only decisions. | L91-L105 | [W-02 template.md](agents-remember-md/skills/W-02-light-task-workflow/template.md) |
+| Usage rules require C-08 resolved paths, wrapper-folder task placement, checklist progress, status changes, and append-only decisions. | L91-L105 | [W-02 template.md](agents-remember-md/skills/W-02-light-task-workflow/template.md) |
 
 ## Cross-Repo References
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for the current template file.
 
 ## Update History
 
+- 2026-05-10T00:47: Updated after the W-02 template became the `task.md` file inside task wrapper folders.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for W-02 task template.
 - 2026-05-09T21:59: Updated after worktree task contracts became part of the light-task artifact placement rules.
 - 2026-05-09T22:57: Refreshed verification metadata and tightened template citations.

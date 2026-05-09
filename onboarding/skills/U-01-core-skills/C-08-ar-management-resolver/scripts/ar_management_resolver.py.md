@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-10T00:36                           |
-| lastVerifiedCommitHash | `5f71bd68f78f8ac3e3e02df8e45086eb2a37c678` |
-| lastVerifiedCommitDate | 2026-05-09T23:54                           |
+| lastUpdated            | 2026-05-10T01:01                           |
+| lastVerifiedCommitHash | `b6a5c21f9309642125a468e63c8aad1a3f3beb88` |
+| lastVerifiedCommitDate | 2026-05-10T01:01                           |
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The script defines dataclasses for storage, cross-repo entries, management selection, and management context; parses JSON-first settings and Markdown fallback content; detects internal or shared selection; resolves memory, coordination, and temporary artifact roots; preserves legacy shared-onboarding fallback during migration; loads task contract facts when present; resolves branch-gated cross-repo entries; and exposes a CLI.
+The script defines dataclasses for storage, cross-repo entries, management selection, and management context; parses JSON-first settings and Markdown fallback content; detects internal or shared selection; resolves memory, coordination, and temporary artifact roots; preserves legacy shared-onboarding fallback during migration; loads task contract facts when present; checks current wrapper task roots before legacy `*-ar` roots when resolving by task name; resolves branch-gated cross-repo entries; and exposes a CLI.
 
 ### Conventions
 
@@ -48,7 +48,8 @@ The implementation is the authoritative source for current resolver behavior.
 | `ManagementContext` records topology, target repo, coordination root, memory root, onboarding root, settings paths, task/temp/docs/system roots, storage, path rules, cross-repo data, worktree fields, and ledger path. | L81-L105 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
 | JSON settings parsing extracts storage mode, path rules, and `crossRepo.allow` from the same settings document. | L368-L396 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
 | Context resolution prefers memory-repo onboarding when present, preserves legacy onboarding fallback during migration, and then builds the final context. | L1048-L1073 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
-| Final context construction derives task and temp roots, worktree fields, ledger path, effective memory/docs/onboarding roots, sources, tools, and resolved cross-repo settings. | L1091-L1148 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
+| Contract resolution checks current wrapper task roots first and legacy `*-ar` roots second when only a task name is supplied. | L24-L40; L808-L825 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
+| Final context construction derives task and temp roots, worktree fields, ledger path, effective memory/docs/onboarding roots, sources, tools, and resolved cross-repo settings. | L1099-L1156 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
 | CLI JSON and text output serialize `temp_root` alongside the other resolved context paths. | L1205-L1218; L1234-L1247 | [ar_management_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-management-resolver/scripts/ar_management_resolver.py) |
 
 ## Cross-Repo References
@@ -61,6 +62,7 @@ The helper can resolve sibling repositories selected by shared settings, but cur
 
 ## Update History
 
+- 2026-05-10T00:47: Updated after resolver task-name lookup gained wrapper-folder first behavior with legacy fallback.
 - 2026-05-10T00:36: Refreshed verification metadata after the `temp_root` implementation landed on main.
 - 2026-05-09T23:22: Updated after C-08 added `temp_root` for coordination-local temporary artifacts.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the C-08 helper implementation.
