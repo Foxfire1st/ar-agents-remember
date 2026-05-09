@@ -5,19 +5,19 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/W-02-light-task-workflow/workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-10T01:01                           |
-| lastVerifiedCommitHash | `b6a5c21f9309642125a468e63c8aad1a3f3beb88` |
-| lastVerifiedCommitDate | 2026-05-10T01:01                           |
+| lastUpdated            | 2026-05-10T01:19                           |
+| lastVerifiedCommitHash | `584f15fb1393d32728daff6e3ceef7a15ac99d6e` |
+| lastVerifiedCommitDate | 2026-05-10T01:36                           |
 
 ## Purpose
 
-This workflow file gives the step-by-step W-02 procedure for creating a task wrapper, planning in `task.md`, approving, implementing, validating, and closing a light durable task.
+This workflow file gives the step-by-step W-02 procedure for creating a task wrapper, planning in `task.md`, approving implementation, implementing, validating, requesting separate commit approval for worktree-backed closeout, and closing a light durable task.
 
 ## Code Commentary
 
 ### Logic
 
-The workflow starts with context resolution and drift checks, creates or reuses a task wrapper folder, writes `task.md` from the template, stops for approval, then executes checklist items while keeping the task artifact current. The wrapper folder is created before C-09 worktrees; refreshed shared-memory onboarding and ledger changes are committed before worktree start; worktree-backed light tasks later keep `contract.md` beside `task.md` under the C-08 resolved task root.
+The workflow starts with context resolution and drift checks, creates or reuses a task wrapper folder, writes `task.md` from the template, stops for approval, then executes checklist items while keeping the task artifact current. The wrapper folder is created before C-09 worktrees; refreshed shared-memory onboarding and ledger changes are committed before worktree start; worktree-backed light tasks later keep `contract.md` beside `task.md` under the C-08 resolved task root. After implementation, worktree-backed tasks prepare a C-09 closeout dry-run and stop for explicit commit approval before any closeout commits are created.
 
 ### Conventions
 
@@ -25,7 +25,7 @@ The workflow treats `task.md` as active state inside the wrapper folder. It uses
 
 ### Invariants And Boundaries
 
-Implementation cannot begin until the task artifact is approved. Drift detection must happen before planning if onboarding exists, and onboarding changes must be handled through C-05.
+Implementation cannot begin until the task artifact is approved. Drift detection must happen before planning if onboarding exists, and onboarding changes must be handled through C-05. Worktree-backed closeout commits cannot be created until the developer approves the closeout preview.
 
 ### Todos
 
@@ -49,7 +49,7 @@ The workflow defines the concrete process behind the W-02 skill.
 | Drift-gated planning now records that refreshed shared-memory onboarding and ledger changes must be committed before any C-09 worktree starts. | L45-L52 | [W-02 workflow.md](agents-remember-md/skills/W-02-light-task-workflow/workflow.md) |
 | Drift detection is part of task planning before the durable plan is finalized. | L45-L51 | [W-02 workflow.md](agents-remember-md/skills/W-02-light-task-workflow/workflow.md) |
 | Planning checks C-08 resolved docs, sources, and onboarding roots before writing the approval artifact. | L53-L64; L88-L105 | [W-02 workflow.md](agents-remember-md/skills/W-02-light-task-workflow/workflow.md) |
-| Implementation, validation, onboarding propagation, and closeout are one checklist-driven cycle. | L107-L151 | [W-02 workflow.md](agents-remember-md/skills/W-02-light-task-workflow/workflow.md) |
+| Implementation, validation, onboarding propagation, closeout preview, and commit approval handoff are one checklist-driven cycle. | L107-L164 | [W-02 workflow.md](agents-remember-md/skills/W-02-light-task-workflow/workflow.md) |
 
 ## Cross-Repo References
 
@@ -61,6 +61,7 @@ No sibling repository evidence is needed for the current workflow file.
 
 ## Update History
 
+- 2026-05-10T01:19: Updated after Phase 2 gained the closeout dry-run and explicit commit approval handoff for worktree-backed tasks.
 - 2026-05-10T00:56: Updated the C-09 handoff rule so refreshed shared-memory onboarding and ledger changes are committed before worktree start.
 - 2026-05-10T00:47: Updated W-02 phase language so task wrapper folders are created before any C-09 worktree.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for W-02 workflow steps.

@@ -64,11 +64,11 @@ C-05 owns file-level onboarding and repo-level entity catalogs. It is the mainte
 
 ### Task Workflows
 
-W-02 is the compact durable-task workflow used by the current worktree-support task stack. It creates a task wrapper folder and `task.md` once task class and naming are clear, stops for approval, then treats the checklist, onboarding propagation, and checks as one implementation cycle. When refreshed shared-memory onboarding is part of intake, the memory content and ledger are committed before C-09 starts worktrees.
+W-02 is the compact durable-task workflow used by the current worktree-support task stack. It creates a task wrapper folder and `task.md` once task class and naming are clear, stops for implementation approval, then treats the checklist, onboarding propagation, checks, and worktree-backed commit approval handoff as one implementation cycle. When refreshed shared-memory onboarding is part of intake, the memory content and ledger are committed before C-09 starts worktrees.
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: shared ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, `closeout`, `integrate`, and `cleanup` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing shared-memory onboarding. C-09 shared-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: shared ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, `closeout`, `integrate`, and `cleanup` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing shared-memory onboarding. C-09 shared-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline, and C-09 closeout dry-run is the non-mutating preview path before explicit commit approval.
 
 ## Cross-Repo References
 
@@ -92,7 +92,8 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 - C-02 detects drift and writes reports under the resolved temporary artifact root; it must not update onboarding itself.
 - C-05 creates and maintains onboarding artifacts; it must use actual evidence sources rather than citing source registries as proof.
 - Task workflows must stop for developer approval before implementation.
-- C-09 wraps task workflows with worktree lifecycle state; it does not replace W-02, starts shared-memory worktrees only from a clean committed memory baseline, does not integrate or clean up without explicit approval, and runs cleanup only after successful integration.
+- Worktree-backed task workflows must stop again for explicit commit approval before C-09 closeout creates commits.
+- C-09 wraps task workflows with worktree lifecycle state; it does not replace W-02, starts shared-memory worktrees only from a clean committed memory baseline, does not commit, integrate, or clean up without the relevant explicit approval, and runs cleanup only after successful integration.
 - C-10 is an adoption wrapper for existing shared-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
 
 ## Glossary Terms
@@ -131,4 +132,4 @@ No relevant external domain documentation was found for this repository's own wo
 
 ## Last Verified
 
-Updated 2026-05-10T01:04 against implementation commit `d7da2fc7d98f30b83dcfea1ad90789bfe613c5af` after adding the committed shared-memory baseline gate and direct contract-path status handling.
+Updated 2026-05-10T01:19 after adding the closeout dry-run and explicit commit approval handoff to the current worktree state. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
