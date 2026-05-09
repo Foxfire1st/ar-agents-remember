@@ -1,0 +1,63 @@
+# C-09-git-worktree-manager/SKILL.md
+
+| Field                  | Value                                      |
+| ---------------------- | ------------------------------------------ |
+| repository             | agents-remember-md                         |
+| path                   | `skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
+| doc_type               | `file-level-onboarding`                    |
+| lastUpdated            | 2026-05-09T22:57                           |
+| lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
+| lastVerifiedCommitDate | 2026-05-09T22:15                           |
+
+## Purpose
+
+This skill documents C-09, the Git worktree manager that wraps existing task workflows with code/memory worktree setup, status, and human-approved closeout.
+
+## Code Commentary
+
+### Logic
+
+The skill defines `start`, `attach`, `status`, `bootstrap-memory`, and `closeout` helper commands. It states that C-09 uses C-08 for facts, shared helpers for ledgers/contracts, and human approval before commit or cleanup.
+
+### Conventions
+
+C-09 is a wrapper, not a replacement workflow. Shared memory incompatibility is interactive and offers reconciliation, clean start, disabled memory, or custom handling.
+
+### Invariants And Boundaries
+
+C-09 must not use divergent memory as trusted reference context and must not auto-commit at workflow finish. Closeout requires explicit approval and stops when recorded source branches moved since task start.
+
+### Todos
+
+Add richer smoke fixtures for compatible shared-memory start and approved closeout once a real memory repo fixture exists.
+
+### Docs References
+
+No external documentation is needed for this repository-local skill.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| C-09 wraps existing workflows, owns worktree state and shared-memory compatibility, and exposes `start`, `attach`, `status`, `bootstrap-memory`, and `closeout`. | L10-L21 | [C-09 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md) |
+| Shared memory start validates `memory.md` and reports explicit choices when no compatible memory state exists. | L26-L35 | [C-09 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md) |
+| Closeout is human-gated and the shared-memory closeout order commits code, commits memory content, prepends `memory.md`, commits the ledger, and updates the contract. | L39-L47 | [C-09 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md) |
+| The worktree design spec defines the same wrapper/non-replacement boundary and C-09 ownership model. | L1218-L1248 | [worktree design spec](agents-remember-md/roadmap/agents-remember-worktree-memory-final-design-spec.md) |
+
+## Cross-Repo References
+
+No sibling repository evidence is needed for the skill itself.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
+
+## Update History
+
+- 2026-05-09T21:59: Created onboarding for the new C-09 skill.
+- 2026-05-09T22:10: Updated closeout boundary to include source-branch movement checks.
+- 2026-05-09T22:57: Refreshed verification metadata and replaced task-artifact citations with current skill/spec evidence.

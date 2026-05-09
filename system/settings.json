@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "onboarding": {
+    "storage": {
+      "mode": "memory-repo"
+    },
+    "pathRules": []
+  },
+  "crossRepo": {
+    "allow": []
+  }
+}
