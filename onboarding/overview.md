@@ -68,7 +68,7 @@ W-02 is the compact durable-task workflow used by the current worktree-support t
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: shared ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, `closeout`, `integrate`, and `cleanup` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing shared-memory onboarding. C-09 shared-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline, and C-09 closeout dry-run is the non-mutating preview path before explicit commit approval.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: shared ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, `closeout`, `integrate`, and `cleanup` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing shared-memory onboarding. C-09 shared-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. C-09 closeout dry-run is the non-mutating preview path before explicit commit approval, and real shared-memory closeout commits code first, refreshes affected onboarding verification metadata to that new code commit, then commits memory content and ledger.
 
 ## Cross-Repo References
 
@@ -93,7 +93,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 - C-05 creates and maintains onboarding artifacts; it must use actual evidence sources rather than citing source registries as proof.
 - Task workflows must stop for developer approval before implementation.
 - Worktree-backed task workflows must stop again for explicit commit approval before C-09 closeout creates commits.
-- C-09 wraps task workflows with worktree lifecycle state; it does not replace W-02, starts shared-memory worktrees only from a clean committed memory baseline, does not commit, integrate, or clean up without the relevant explicit approval, and runs cleanup only after successful integration.
+- C-09 wraps task workflows with worktree lifecycle state; it does not replace W-02, starts shared-memory worktrees only from a clean committed memory baseline, does not commit, integrate, or clean up without the relevant explicit approval, refreshes affected onboarding metadata between code and memory commits during shared-memory closeout, and runs cleanup only after successful integration.
 - C-10 is an adoption wrapper for existing shared-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
 
 ## Glossary Terms
@@ -132,4 +132,4 @@ No relevant external domain documentation was found for this repository's own wo
 
 ## Last Verified
 
-Updated 2026-05-10T01:19 after adding the closeout dry-run and explicit commit approval handoff to the current worktree state. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-10T01:55 after adding code-commit-first onboarding metadata refresh to C-09 shared-memory closeout. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
