@@ -6,7 +6,7 @@
 
 `agents-remember-md` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, helper scripts, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. The core idea is one-to-one onboarding: source files have deterministic onboarding units that can be verified against Git history before an agent relies on them.
 
-The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-management/` as local coordination. C-08 exposes that split through `memory_root` and `coordination_root`, C-09 owns worktree lifecycle mutation plus integration back to source branches, and C-10 provides the adoption path for existing shared-memory onboarding that needs an initial `memory.md` ledger.
+The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-management/` as local coordination. C-08 exposes that split through `memory_root` and `coordination_root`, C-09 owns worktree lifecycle mutation, direct current-checkout closeout for approved micro edits, and integration back to source branches, and C-10 provides the adoption path for existing shared-memory onboarding that needs an initial `memory.md` ledger.
 
 ## Architecture At A Glance
 
@@ -52,7 +52,7 @@ shared ar-management/
 
 ### Repository Doctrine
 
-`AGENTS.md` is the authoritative behavioral contract for agents operating in this repository. It requires explicit framing for non-trivial work, C-08 resolution plus C-02 drift detection before relying on onboarding, and C-05 propagation when durable current-state knowledge changes.
+`AGENTS.md` is the authoritative behavioral contract for agents operating in this repository. It requires explicit framing for non-trivial work, C-08 resolution plus C-02 drift detection before relying on onboarding, C-05 propagation when durable current-state knowledge changes, and C-09 direct closeout for approved small current-checkout edits in shared-memory mode.
 
 ### Core Resolver And Drift Gate
 
@@ -68,7 +68,7 @@ W-02 is the compact durable-task workflow used by the current worktree-support t
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: shared ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, `closeout`, `integrate`, and `cleanup` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing shared-memory onboarding. C-09 shared-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. C-09 closeout dry-run is the non-mutating preview path before explicit commit approval, and real shared-memory closeout commits code first, refreshes affected onboarding verification metadata to that new code commit, then commits memory content and ledger.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: shared ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, `closeout`, `direct-closeout`, `integrate`, and `cleanup` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing shared-memory onboarding. C-09 shared-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. C-09 closeout dry-run is the non-mutating preview path before explicit commit approval, and real shared-memory closeout commits code first, refreshes affected onboarding verification metadata to that new code commit, then commits memory content and ledger. Direct closeout applies that same code-then-memory-then-ledger order to approved current-checkout micro edits without creating worktree contracts.
 
 ## Cross-Repo References
 
@@ -76,7 +76,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Workspace rules require C-08 resolution and C-02 drift detection before relying on onboarding, and C-05 handles onboarding refresh when needed. | L332-L336; L397-L410 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Workspace rules require C-08 resolution and C-02 drift detection before relying on onboarding, C-05 handles onboarding refresh when needed, and C-09 `direct-closeout` handles approved current-checkout micro-edit closeout. | L332-L338; L397-L410 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | The README presents C-08 as the active context resolver and C-02 as the drift classifier rather than the topology resolver. | L424-L430 | [README.md](agents-remember-md/README.md) |
 
 ## Build & Dev
@@ -93,7 +93,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 - C-05 creates and maintains onboarding artifacts; it must use actual evidence sources rather than citing source registries as proof.
 - Task workflows must stop for developer approval before implementation.
 - Worktree-backed task workflows must stop again for explicit commit approval before C-09 closeout creates commits.
-- C-09 wraps task workflows with worktree lifecycle state; it does not replace W-02, starts shared-memory worktrees only from a clean committed memory baseline, does not commit, integrate, or clean up without the relevant explicit approval, refreshes affected onboarding metadata between code and memory commits during shared-memory closeout, and runs cleanup only after successful integration.
+- C-09 wraps task workflows with worktree lifecycle state and also owns direct closeout for approved current-checkout micro edits; it does not replace W-02, starts shared-memory worktrees only from a clean committed memory baseline, does not commit, integrate, or clean up without the relevant explicit approval, refreshes affected onboarding metadata between code and memory commits during shared-memory closeout, and runs cleanup only after successful integration.
 - C-10 is an adoption wrapper for existing shared-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
 
 ## Glossary Terms
@@ -106,6 +106,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 | drift report | A C-02 maintenance artifact that classifies onboarding trust. | It is temporary evidence under `temp/drift-reports`, not durable repo behavior. |
 | worktree contract | Local runtime state file for worktree-backed tasks. | The parser/writer lives in `_shared/agents_remember/worktree_contract.py`; C-09 creates and consumes contracts beside the task wrapper's `task.md`. |
 | worktree integration | The approved C-09 phase that lands closed task work back onto source branches. | `ff-only` requires unchanged source ancestry; `replay` supports parallel non-overlapping work and blocks conflicts before main moves. |
+| direct closeout | The C-09 current-checkout closeout path for approved small shared-memory edits. | It dry-runs first, then commits code, refreshes onboarding metadata, commits memory, and commits the ledger without creating worktree contracts. |
 | memory baseline adoption | The one-time action of turning current shared-memory onboarding into the first ledgered `memory.md` baseline. | C-10 checks drift first, requires explicit drift acceptance when needed, and delegates ledger creation to C-09. |
 
 ## Docs References
@@ -132,4 +133,4 @@ No relevant external domain documentation was found for this repository's own wo
 
 ## Last Verified
 
-Updated 2026-05-10T01:55 after adding code-commit-first onboarding metadata refresh to C-09 shared-memory closeout. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-10T03:01 after adding C-09 direct closeout for approved current-checkout micro edits. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.

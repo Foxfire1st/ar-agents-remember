@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-10T02:20                           |
-| lastVerifiedCommitHash | `6f439b24b0c2cb0420352c0a9a889fef91e4f29c` |
-| lastVerifiedCommitDate | 2026-05-10T02:45:03+02:00                  |
+| lastUpdated            | 2026-05-10T03:01                           |
+| lastVerifiedCommitHash | `bcbce243bfe1dbc58077affa9973cff8ee3c00aa` |
+| lastVerifiedCommitDate | 2026-05-10T03:06:44+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The README introduces the memory model first, then explains setup, storage decisions, shared workspace behavior, worktree support, and the available skill families. Its early "What This Looks Like" section now shows both the default repo-local onboarding sidecar and the working shared-memory repo example, linking to the public code repo and inspectable memory repo. It teaches `ar-memory/` for durable internal memory, `ar-management/` for local coordination, and lists C-10 as the adoption path that turns existing shared-memory onboarding into the first ledgered `memory.md` baseline after drift review.
+The README introduces the memory model first, then explains setup, storage decisions, shared workspace behavior, chat/worktree closeout behavior, and the available skill families. Its early "What This Looks Like" section shows both the default repo-local onboarding sidecar and the working shared-memory repo example, using clickable Markdown links to the public code repo and inspectable memory repo. It teaches `ar-memory/` for durable internal memory, `ar-management/` for local coordination, names C-09 `direct-closeout` as the approved current-checkout commit sequence for small shared-memory chat-mode edits, and lists C-10 as the adoption path that turns existing shared-memory onboarding into the first ledgered `memory.md` baseline after drift review.
 
 ### Conventions
 
@@ -50,9 +50,10 @@ The README establishes the conceptual map future tasks will repeatedly cite.
 | C-00 creates memory and coordination scaffolds, while C-03 owns initial repo onboarding. | L130-L160 | [README.md](agents-remember-md/README.md) |
 | Storage mode and path rules are separate concepts. | L151-L164 | [README.md](agents-remember-md/README.md) |
 | Inline storage reuses the same file-level onboarding model, and agents are wired through W-02/W-01 escalation. | L187-L199 | [README.md](agents-remember-md/README.md) |
-| C-08 resolves the active context and C-02 classifies stale onboarding. | L453-L459 | [README.md](agents-remember-md/README.md) |
+| The three modes section now notes that small chat-mode shared-memory edits can use C-09 `direct-closeout` for code-first onboarding metadata refresh and ledger sequencing, while larger or parallel work should use C-09 worktrees. | L323-L325 | [README.md](agents-remember-md/README.md) |
+| C-08 resolves the active context and C-02 classifies stale onboarding. | L456-L462 | [README.md](agents-remember-md/README.md) |
 | The repository contains core skills, workflows, roadmap material, and system examples. | L463-L473 | [README.md](agents-remember-md/README.md) |
-| The README lists C-10 as the helper for converting existing shared-memory onboarding into the first ledgered baseline after drift review. | L478-L483 | [README.md](agents-remember-md/README.md) |
+| The README lists C-09 as the helper for worktree-backed tasks and direct closeout of approved current-checkout edits, and C-10 as the helper for converting existing shared-memory onboarding into the first ledgered baseline after drift review. | L486-L492 | [README.md](agents-remember-md/README.md) |
 
 ## Cross-Repo References
 
@@ -66,5 +67,6 @@ The README explains shared workspace use, but this file-level onboarding does no
 
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the public repository overview.
 - 2026-05-09T21:59: Updated for ar-memory/ar-management split, C-09, and resolver contract changes.
+- 2026-05-10T03:01: Updated after the README added C-09 direct-closeout as the lightweight current-checkout path for approved shared-memory micro edits.
 - 2026-05-10T02:20: Updated after the README added a working shared-memory repo example and links to the code and memory repositories.
 - 2026-05-09T22:46: Updated for the C-10 adoption skill entry.

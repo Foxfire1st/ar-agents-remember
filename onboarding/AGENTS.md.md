@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T22:57                           |
-| lastVerifiedCommitHash | `bb95b9956d55c70555bbbbcd236ca9ab62cd7261` |
-| lastVerifiedCommitDate | 2026-05-09T22:15                           |
+| lastUpdated            | 2026-05-10T03:01                           |
+| lastVerifiedCommitHash | `bcbce243bfe1dbc58077affa9973cff8ee3c00aa` |
+| lastVerifiedCommitDate | 2026-05-10T03:06:44+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The file starts with collaboration doctrine and then routes work into Chat, W-02, W-01, or P-* workflows by size and risk. The coding workflow requires C-08 context resolution and C-02 drift detection before relying on onboarding. It treats `memory_root` and `coordination_root` as separate resolved facts and defines a six-gate start-of-task onboarding gate before planning against existing onboarding.
+The file starts with collaboration doctrine and then routes work into Chat, W-02, W-01, or P-* workflows by size and risk. The coding workflow requires C-08 context resolution and C-02 drift detection before relying on onboarding, requires paired source/onboarding reads before planning, requires approval before code edits, and now routes small approved chat-mode current-checkout edits through C-09 `direct-closeout` for shared-memory commit sequencing. It treats `memory_root` and `coordination_root` as separate resolved facts and defines a six-gate start-of-task onboarding gate before planning against existing onboarding.
 
 ### Conventions
 
@@ -25,7 +25,7 @@ Workflow names are treated as stable contracts. C-* skills are core support skil
 
 ### Invariants And Boundaries
 
-Agents must not start source-code implementation before approval on non-trivial work. Onboarding updates are allowed after approval or as standalone onboarding maintenance. C-08 owns context resolution, C-02 owns drift detection, C-05 owns onboarding creation or update, and C-09 owns worktree lifecycle mutation.
+Agents must not start source-code implementation before approval on non-trivial work. Onboarding updates are allowed after approval or as standalone onboarding maintenance. C-08 owns context resolution, C-02 owns drift detection, C-05 owns onboarding creation or update, and C-09 owns Git lifecycle mutation for worktree-backed tasks and direct current-checkout closeout.
 
 ### Todos
 
@@ -46,7 +46,7 @@ The active repo behavior depends on the task routing and onboarding gates in thi
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Task format routing assigns Chat, W-02, W-01, and heavy workflows by scope and risk. | L307-L323 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Chat coding workflow starts by resolving context with C-08, checking onboarding drift with C-02, and propagating durable onboarding updates through C-05. | L330-L336 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Chat coding workflow starts by resolving context with C-08, checking onboarding drift with C-02, propagating durable onboarding updates through C-05, and routing approved small current-checkout edits through C-09 `direct-closeout` for code/memory/ledger commits. | L330-L338 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Memory system rules distinguish memory roots, coordination roots, onboarding roots, task roots, and shared topology behavior. | L349-L379 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | The hard onboarding gate binds task start to C-08 resolution, C-02 drift detection, C-05 refresh when requested, verification rerun, reporting, and drift report cleanup. | L386-L414 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Implementation rules require C-05 onboarding propagation before an implementation phase is considered done. | L439-L451 | [AGENTS.md](agents-remember-md/AGENTS.md) |
@@ -61,6 +61,7 @@ The file applies as workspace instruction when `C:\ew\AGENTS.md` points sibling 
 
 ## Update History
 
+- 2026-05-10T03:01: Updated after chat-mode closeout guidance routed approved micro edits through C-09 `direct-closeout`.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the agent operating contract.
 - 2026-05-09T21:59: Updated for split memory/coordination terminology and C-09 worktree context.
 - 2026-05-09T22:57: Refreshed against commit `bb95b99` and tightened references around the six-gate onboarding workflow.
