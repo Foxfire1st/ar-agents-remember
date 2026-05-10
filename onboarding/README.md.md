@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-09T22:46                           |
-| lastVerifiedCommitHash | `9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e` |
-| lastVerifiedCommitDate | 2026-05-09T22:43                           |
+| lastUpdated            | 2026-05-10T02:20                           |
+| lastVerifiedCommitHash | `6f439b24b0c2cb0420352c0a9a889fef91e4f29c` |
+| lastVerifiedCommitDate | 2026-05-10T02:45:03+02:00                  |
 
 ## Purpose
 
@@ -17,11 +17,11 @@
 
 ### Logic
 
-The README introduces the memory model first, then explains setup, storage decisions, shared workspace behavior, worktree support, and the available skill families. It teaches `ar-memory/` for durable internal memory, `ar-management/` for local coordination, and lists C-10 as the adoption path that turns existing shared-memory onboarding into the first ledgered `memory.md` baseline after drift review.
+The README introduces the memory model first, then explains setup, storage decisions, shared workspace behavior, worktree support, and the available skill families. Its early "What This Looks Like" section now shows both the default repo-local onboarding sidecar and the working shared-memory repo example, linking to the public code repo and inspectable memory repo. It teaches `ar-memory/` for durable internal memory, `ar-management/` for local coordination, and lists C-10 as the adoption path that turns existing shared-memory onboarding into the first ledgered `memory.md` baseline after drift review.
 
 ### Conventions
 
-The README distinguishes source files, onboarding files, generated maintenance artifacts, and task workflow artifacts. It treats C-08 as the resolver and C-02 as the drift classifier.
+The README distinguishes source files, onboarding files, generated maintenance artifacts, task workflow artifacts, shared memory repos, and the `memory.md` ledger. It treats C-08 as the resolver and C-02 as the drift classifier.
 
 ### Invariants And Boundaries
 
@@ -45,13 +45,14 @@ The README establishes the conceptual map future tasks will repeatedly cite.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| One-to-one onboarding means source files have matching onboarding files. | L57-L61 | [README.md](agents-remember-md/README.md) |
-| C-00 creates memory and coordination scaffolds, while C-03 owns initial repo onboarding. | L101-L131 | [README.md](agents-remember-md/README.md) |
-| Storage mode and path rules are separate concepts. | L122-L135 | [README.md](agents-remember-md/README.md) |
-| Inline storage reuses the same file-level onboarding model, and agents are wired through W-02/W-01 escalation. | L158-L170 | [README.md](agents-remember-md/README.md) |
-| C-08 resolves the active context and C-02 classifies stale onboarding. | L424-L430 | [README.md](agents-remember-md/README.md) |
-| The repository contains core skills, workflows, roadmap material, and system examples. | L434-L444 | [README.md](agents-remember-md/README.md) |
-| The README lists C-10 as the helper for converting existing shared-memory onboarding into the first ledgered baseline after drift review. | L449-L454 | [README.md](agents-remember-md/README.md) |
+| One-to-one onboarding means source files have matching onboarding files. | L91-L93 | [README.md](agents-remember-md/README.md) |
+| The working shared-memory example links to the code repo, the inspectable memory repo, the memory repo layout, and the `memory.md` code-to-memory ledger concept. | L43-L77 | [README.md](agents-remember-md/README.md) |
+| C-00 creates memory and coordination scaffolds, while C-03 owns initial repo onboarding. | L130-L160 | [README.md](agents-remember-md/README.md) |
+| Storage mode and path rules are separate concepts. | L151-L164 | [README.md](agents-remember-md/README.md) |
+| Inline storage reuses the same file-level onboarding model, and agents are wired through W-02/W-01 escalation. | L187-L199 | [README.md](agents-remember-md/README.md) |
+| C-08 resolves the active context and C-02 classifies stale onboarding. | L453-L459 | [README.md](agents-remember-md/README.md) |
+| The repository contains core skills, workflows, roadmap material, and system examples. | L463-L473 | [README.md](agents-remember-md/README.md) |
+| The README lists C-10 as the helper for converting existing shared-memory onboarding into the first ledgered baseline after drift review. | L478-L483 | [README.md](agents-remember-md/README.md) |
 
 ## Cross-Repo References
 
@@ -65,4 +66,5 @@ The README explains shared workspace use, but this file-level onboarding does no
 
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the public repository overview.
 - 2026-05-09T21:59: Updated for ar-memory/ar-management split, C-09, and resolver contract changes.
+- 2026-05-10T02:20: Updated after the README added a working shared-memory repo example and links to the code and memory repositories.
 - 2026-05-09T22:46: Updated for the C-10 adoption skill entry.
