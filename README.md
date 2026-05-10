@@ -2,10 +2,9 @@
 
 This repository is the shared memory layer for the `agents-remember-md` code repository.
 
-It is meant to be read beside the code, not instead of it. The code lives in:
+It is meant to be read beside the code, not instead of it. The code lives at:
 
-- Local checkout: `C:/ew/agents-remember-md`
-- Remote repository: https://github.com/Foxfire1st/ai-context-system
+- https://github.com/Foxfire1st/agents-remember-md
 
 ## What This Repository Shows
 
@@ -29,7 +28,7 @@ Start with:
 For example, source file:
 
 ```text
-C:/ew/agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md
+skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md
 ```
 
 has memory documentation at:
