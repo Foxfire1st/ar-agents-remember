@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/U-01-core-skills/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-10T03:01                           |
-| lastVerifiedCommitHash | `bcbce243bfe1dbc58077affa9973cff8ee3c00aa` |
-| lastVerifiedCommitDate | 2026-05-10T03:06:44+02:00|
+| lastUpdated            | 2026-05-10T03:11                           |
+| lastVerifiedCommitHash | `d4843af1edfb808a95072504577289ae9dda40bd` |
+| lastVerifiedCommitDate | 2026-05-10T03:14:28+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This unittest file validates the first worktree-support helper slice.
 
 ### Logic
 
-The tests cover memory ledger roundtrip/prepend behavior, malformed ledger metadata, invalid ledger top-row detection, branch-mismatched and dirty shared-memory start blocking, compatible shared-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview, approval-note, onboarding metadata refresh, missing-onboarding blocking behavior, direct checkout closeout dry-run/success/missing-onboarding behavior, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root`, C-09 integration fast-forward/replay/conflict behavior, C-09 cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching branch/ledger metadata, and C-10 adoption status/block/adopt behavior.
+The tests cover memory ledger roundtrip/prepend behavior, malformed ledger metadata, invalid ledger top-row detection, branch-mismatched and dirty shared-memory start blocking, compatible shared-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview, approval-note, onboarding metadata refresh, missing-onboarding blocking behavior, direct checkout closeout dry-run/success/missing-onboarding behavior, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, C-09 integration fast-forward/replay/conflict behavior, C-09 cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching branch/ledger metadata, and C-10 adoption status/block/adopt behavior.
 
 ### Conventions
 
@@ -50,7 +50,7 @@ No external documentation is needed for this standard-library test.
 | Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, missing onboarding blocking, and dirty closed contracts reporting `commit-approval-pending`. | L397-L518 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 | Direct closeout tests create real current-branch code and memory repos, check dry-run preview without mutation, check code-first onboarding metadata refresh and ledger update, and verify missing onboarding blocks before the code commit. | L167-L192; L531-L624 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 | C-09 integration and cleanup tests cover ff-only source fast-forwarding, cleanup-pending status, cleanup removal, idempotent cleanup, cleanup blocking before integration, replay after parallel non-overlapping changes with a fresh ledger mapping, and code conflict blocking before main moves. | L465-L567 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
-| Resolver and drift-report path tests check `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, and absolute-path containment. | L566-L607 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
+| Resolver and drift-report path tests check `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, absolute-path containment, and explicit memory-root report redirection back to temp. | L737-L779 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 | C-10 tests cover ready status without a ledger, drift report placement outside task folders, drift blocking without explicit acceptance, and initial ledger creation with docs `.gitkeep`. | L647-L722 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
@@ -63,6 +63,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-05-10T03:11: Updated after drift report path coverage began asserting explicit memory-root paths are redirected to coordination temp.
 - 2026-05-10T03:01: Updated after adding C-09 direct checkout closeout fixture and dry-run/success/missing-onboarding tests.
 - 2026-05-10T01:55: Updated after adding closeout metadata refresh and missing-onboarding regression coverage.
 - 2026-05-10T01:19: Updated after adding closeout commit-approval preview and approval-note tests.

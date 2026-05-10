@@ -56,7 +56,7 @@ shared ar-management/
 
 ### Core Resolver And Drift Gate
 
-C-08 resolves the active management context: topology, target repo, `coordination_root`, `memory_root`, onboarding/docs/system roots, settings paths, task root, temporary artifact root, contract path, worktree group, ledger path, storage settings, path rules, and branch-gated cross-repo allowances. For worktree-backed task names, it resolves current wrapper folders first and legacy `*-ar` task folders second. C-02 consumes that context and verifies file-level onboarding metadata against the current source state.
+C-08 resolves the active management context: topology, target repo, `coordination_root`, `memory_root`, onboarding/docs/system roots, settings paths, task root, temporary artifact root, contract path, worktree group, ledger path, storage settings, path rules, and branch-gated cross-repo allowances. For worktree-backed task names, it resolves current wrapper folders first and legacy `*-ar` task folders second. C-02 consumes that context and verifies file-level onboarding metadata against the current source state. Drift reports are temporary coordination artifacts under `temp_root`; even explicit report paths inside the durable memory repo should be redirected back to coordination temp.
 
 ### Onboarding Maintenance
 
@@ -89,7 +89,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 
 - Onboarding should describe current repository state; task files describe planned or in-progress future work.
 - C-08 owns topology and path resolution facts; it must not perform Git worktree operations.
-- C-02 detects drift and writes reports under the resolved temporary artifact root; it must not update onboarding itself.
+- C-02 detects drift and writes reports under the resolved temporary artifact root; it must not update onboarding itself or write temporary reports into durable memory repos.
 - C-05 creates and maintains onboarding artifacts; it must use actual evidence sources rather than citing source registries as proof.
 - Task workflows must stop for developer approval before implementation.
 - Worktree-backed task workflows must stop again for explicit commit approval before C-09 closeout creates commits.
@@ -103,7 +103,7 @@ This repository is currently selected into the shared `C:\ew\ar-management` coor
 | onboarding unit | A deterministic documentation unit for one source file or one repo-level entity catalog. | File-level units mirror source paths and carry verification metadata. |
 | management context | The resolved root/path/settings facts returned by C-08 for a target repository. | Current implementation exposes `memory_root`, `coordination_root`, and `temp_root`; `management_root` remains only as a compatibility alias. |
 | pathRules | Include/exclude eligibility rules that decide which source paths and file types are managed. | Storage and eligibility are separate concepts. |
-| drift report | A C-02 maintenance artifact that classifies onboarding trust. | It is temporary evidence under `temp/drift-reports`, not durable repo behavior. |
+| drift report | A C-02 maintenance artifact that classifies onboarding trust. | It is temporary evidence under `temp/drift-reports`, not durable repo behavior; explicit memory-root report paths are redirected to temp. |
 | worktree contract | Local runtime state file for worktree-backed tasks. | The parser/writer lives in `_shared/agents_remember/worktree_contract.py`; C-09 creates and consumes contracts beside the task wrapper's `task.md`. |
 | worktree integration | The approved C-09 phase that lands closed task work back onto source branches. | `ff-only` requires unchanged source ancestry; `replay` supports parallel non-overlapping work and blocks conflicts before main moves. |
 | direct closeout | The C-09 current-checkout closeout path for approved small shared-memory edits. | It dry-runs first, then commits code, refreshes onboarding metadata, commits memory, and commits the ledger without creating worktree contracts. |
@@ -133,4 +133,4 @@ No relevant external domain documentation was found for this repository's own wo
 
 ## Last Verified
 
-Updated 2026-05-10T03:01 after adding C-09 direct closeout for approved current-checkout micro edits. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-10T03:11 after tightening C-02 drift report placement so explicit memory-root report paths are redirected to coordination temp. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
