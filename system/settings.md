@@ -6,7 +6,7 @@ This is the committed memory settings file for the `agents-remember-md` shared m
 
 The sibling `settings.json` is the machine-readable source for onboarding storage, path eligibility, and cross-repo policy for this memory repo.
 
-This memory repo is selected by the local coordinator at `C:\ew\ar-management`, but durable repo policy belongs here, not in the untracked coordinator settings.
+This memory repo is selected by the local coordinator at `C:\ew\ar-coordination`, but durable repo policy belongs here, not in the untracked coordinator settings.
 
 ## Storage
 

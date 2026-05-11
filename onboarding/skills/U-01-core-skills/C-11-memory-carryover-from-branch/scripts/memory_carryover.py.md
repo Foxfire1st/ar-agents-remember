@@ -1,13 +1,13 @@
 # memory_carryover.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| Field                  | Value                                                                                   |
+| ---------------------- | --------------------------------------------------------------------------------------- |
+| repository             | agents-remember-md                                                                      |
 | path                   | `skills/U-01-core-skills/C-11-memory-carryover-from-branch/scripts/memory_carryover.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-11T03:00                           |
-| lastVerifiedCommitHash | `65e91dc05628e0652647be8d3bed865b195ad6e1`                         |
-| lastVerifiedCommitDate | 2026-05-11T03:15:36+02:00|
+| doc_type               | `file-level-onboarding`                                                                 |
+| lastUpdated            | 2026-05-11T19:42                                                                        |
+| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`                                              |
+| lastVerifiedCommitDate | 2026-05-11T19:32                                                                        |
 
 ## Purpose
 
@@ -17,11 +17,11 @@
 
 ### Logic
 
-The helper exposes `plan` and `apply` subcommands. `plan` resolves the official/source-branch/old-base refs, lists paths changed on the source branch, compares them to official changes, builds carryover candidates, and emits a JSON report with decisions. Candidate evidence is derived from exact landed commit ancestry, patch-id equivalence, final content equality, same-path ambiguity, or not-landed absence. `apply` requires `--approved` plus an approval note, requires official memory to be clean, copies selected onboarding from source branch memory into official memory, refreshes `lastVerifiedCommitHash` and `lastVerifiedCommitDate` to the official code commit/date, commits official memory content, prepends a new official memory ledger mapping, and commits the ledger.
+The helper exposes `plan` and `apply` subcommands. `plan` resolves the explicit `code_repository_root`, official/source-branch/old-base refs, lists paths changed on the source branch, compares them to official changes, builds carryover candidates, and emits a JSON report with decisions plus `code_repository_name` and `code_repository_root`. Candidate evidence is derived from exact landed commit ancestry, patch-id equivalence, final content equality, same-path ambiguity, or not-landed absence. `apply` requires `--approved` plus an approval note, requires official memory to be clean, copies selected onboarding from source branch memory into official memory, refreshes `lastVerifiedCommitHash` and `lastVerifiedCommitDate` to the official code commit/date, commits official memory content, prepends a new official memory ledger mapping, and commits the ledger.
 
 ### Conventions
 
-The script uses explicit paths and refs rather than resolving project context through C-08, because C-11 needs to compare two code refs and two memory locations that may not be the active checkout. Output paths are serialized as POSIX strings. Only proven evidence tiers are auto-carry by default; same-path candidates can be included through explicit review-required selection.
+The script uses explicit paths and refs rather than resolving project context through C-08, because C-11 needs to compare two code refs and two memory locations that may not be the active checkout. The public path flag is `--code-repository-root`; output paths are serialized as POSIX strings. Only proven evidence tiers are auto-carry by default; same-path candidates can be included through explicit review-required selection.
 
 ### Invariants And Boundaries
 
@@ -35,25 +35,27 @@ Future iterations can add structural onboarding merge strategies and a manifest-
 
 No external documentation is needed for this standard-library helper.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+| Finding                                   | Citations | Source Path |
+| ----------------------------------------- | --------- | ----------- |
+| No relevant external documentation found. | n/a       | n/a         |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The helper defines Git wrappers, evidence classification, onboarding path mapping, candidate planning, metadata refresh, selected candidate application, official memory content commit, and official ledger commit behavior. | current | [memory_carryover.py](agents-remember-md/skills/U-01-core-skills/C-11-memory-carryover-from-branch/scripts/memory_carryover.py) |
-| The test suite covers landed carryover, same-path ambiguity, and not-landed rejection against temporary Git repos. | current | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
+| Finding                                                                                                                                                                                                                       | Citations | Source Path                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| The helper defines Git wrappers, evidence classification, onboarding path mapping, candidate planning, metadata refresh, selected candidate application, official memory content commit, and official ledger commit behavior. | L39-L83; L127-L231; L237-L299; L302-L338 | [memory_carryover.py](agents-remember-md/skills/U-01-core-skills/C-11-memory-carryover-from-branch/scripts/memory_carryover.py) |
+| The test suite covers landed carryover, same-path ambiguity, and not-landed rejection against temporary Git repos.                                                                                                            | L907-L1023 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py)                           |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this helper.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| Finding                                    | Citations | Source Path |
+| ------------------------------------------ | --------- | ----------- |
+| No meaningful cross-repo references found. | n/a       | n/a         |
 
 ## Update History
 
+- 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and replaced placeholder citations with current source line ranges.
+- 2026-05-11T18:34: Updated after C-11 renamed its command inputs and JSON identity fields to `code_repository_name` and `code_repository_root`.
 - 2026-05-11T03:00: Created onboarding for the C-11 memory carryover command helper and generalized its public inputs from workbench-only to source branches.
