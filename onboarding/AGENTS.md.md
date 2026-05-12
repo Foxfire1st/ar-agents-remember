@@ -5,31 +5,31 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-11T19:52                           |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8` |
-| lastVerifiedCommitDate | 2026-05-11T19:32                           |
+| lastUpdated            | 2026-05-12T11:30                           |
+| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07` |
+| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
 
 ## Purpose
 
-`AGENTS.md` is the repo's operating contract for agents. It defines how work is classified, when durable task files are required, when approval is required, and how onboarding must be resolved, checked, and refreshed before it is trusted.
+`AGENTS.md` is the repo's operating contract for agents. It defines the three task/work formats, the workflow-before-code rule, and the memory/context resolver entry point agents must use before relying on onboarding or task artifacts.
 
 ## Code Commentary
 
 ### Logic
 
-The file starts with collaboration doctrine and then routes work into Chat, W-02, W-01, or P-\* workflows by size and risk. The coding workflow requires C-08 context resolution with `code_repository_name` or `code_repository_root` and C-02 drift detection before relying on onboarding, requires paired source/onboarding reads before planning, requires approval before code edits, and now routes small approved chat-mode current-checkout edits through C-09 `direct-closeout` for shared-memory commit sequencing. It treats `memory_root` and `coordination_root` as separate resolved facts, names shared topology by shared memory, and defines a six-gate start-of-task onboarding gate before planning against existing onboarding.
+The file routes work into Chat, W-02 Light Task, or W-01 Heavy Task based on task size and explicit developer intent. It adds a hard workflow discipline line before the memory system section, then tells agents that onboarding is companion context for source files and that C-08 must resolve `code_repository_name` or `code_repository_root` into the active memory and coordination context before onboarding, tasks, docs, or tools are trusted.
 
 ### Conventions
 
-Workflow names are treated as stable contracts. C-* skills are core support skills, W-* skills are task workflows, and P-* skills are heavy workflow phases. The file uses directive language because it is meant to constrain agent behavior rather than merely describe it.
+Workflow names are treated as stable contracts. C-* skills are core support skills, and W-* skills are task workflows. The file uses directive language because it is meant to constrain agent behavior rather than merely describe it.
 
 ### Invariants And Boundaries
 
-Agents must not start source-code implementation before approval on non-trivial work. Onboarding updates are allowed after approval or as standalone onboarding maintenance. C-08 owns context resolution, C-02 owns drift detection, C-05 owns onboarding creation or update, and C-09 owns Git lifecycle mutation for worktree-backed tasks and direct current-checkout closeout.
+Agents must choose one of the three workflow formats before changing code. C-08 owns context resolution and returns the memory, coordination, onboarding, task, docs, tools, and ledger facts that downstream workflows consume.
 
 ### Todos
 
-No standalone TODO is recorded in this onboarding pass. Future worktree-support changes may need to update this file when the implemented workflow roots change.
+No standalone TODO is recorded in this onboarding pass.
 
 ### Docs References
 
@@ -41,15 +41,13 @@ No external domain documentation is needed to prove this repository-local agent 
 
 ## Repo-Internal References
 
-The active repo behavior depends on the task routing and onboarding gates in this file.
+The active repo behavior depends on the task routing and resolver contract in this file.
 
-| Finding                                                                                                                                                                                                                                                                | Citations | Source Path                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| Task format routing assigns Chat, W-02, W-01, and heavy workflows by scope and risk.                                                                                                                                                                                   | L330-L348 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Chat coding workflow starts by resolving context with C-08, checking onboarding drift with C-02, propagating durable onboarding updates through C-05, and routing approved small current-checkout edits through C-09 `direct-closeout` for code/memory/ledger commits. | L353-L365 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Memory system rules distinguish code repository inputs, memory roots, coordination roots, onboarding roots, task roots, and shared topology behavior.                                                                                                                  | L374-L407 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| The hard onboarding gate binds task start to C-08 resolution, C-02 drift detection, C-05 refresh when requested, verification rerun, reporting, and drift report cleanup.                                                                                              | L411-L459 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Implementation rules require C-05 onboarding propagation before an implementation phase is considered done.                                                                                                                                                            | L464-L476 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Finding                                                                                                                      | Citations | Source Path                               |
+| ---------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
+| Task format routing assigns Chat, W-02 Light Task, and W-01 Heavy Task by task size and explicit developer request.          | L1-L22    | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The file explicitly forbids code changes outside one of the named workflows.                                                  | L24-L24   | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Memory system rules define onboarding as companion context and require C-08 resolution through `code_repository_name` or root. | L26-L40   | [AGENTS.md](agents-remember-md/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -61,6 +59,7 @@ The file applies as workspace instruction when `C:\ew\AGENTS.md` points sibling 
 
 ## Update History
 
+- 2026-05-12T11:30: Updated after AGENTS.md was shortened to the three workflow formats, workflow-before-code rule, and C-08 resolver contract.
 - 2026-05-11T19:52: Corrected escaped workflow wildcard wording introduced during the verification refresh.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
 - 2026-05-11T18:34: Updated after the memory system rules switched fallback resolver language to `code_repository_name` and `code_repository_root`.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                       |
 | path                   | `skills/U-01-core-skills/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-05-11T19:42                                         |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`               |
-| lastVerifiedCommitDate | 2026-05-11T19:32                                         |
+| lastUpdated            | 2026-05-12T10:59                                         |
+| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07`               |
+| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This unittest file validates the first worktree-support helper slice.
 
 ### Logic
 
-The tests cover memory ledger roundtrip/prepend behavior, malformed ledger metadata, invalid ledger top-row detection, branch-mismatched and dirty shared-memory start blocking, compatible shared-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview, approval-note, onboarding metadata refresh, missing-onboarding blocking behavior, direct checkout closeout dry-run/success/missing-onboarding behavior with `code_repository_name`/`code_repository_root` resolver args, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, C-09 integration fast-forward/replay/conflict behavior, C-09 cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching branch/ledger metadata, C-10 adoption status/block/adopt behavior, and C-11 memory carryover plan/apply behavior.
+The tests cover memory ledger roundtrip/prepend behavior, branchless canonical ledger output, legacy branch-metadata ledger parsing without branch-metadata blocking, malformed ledger metadata, invalid ledger top-row detection, dirty shared-memory start blocking, compatible shared-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview, approval-note, onboarding metadata refresh, missing-onboarding blocking behavior, direct checkout closeout dry-run/success/missing-onboarding behavior with `code_repository_name`/`code_repository_root` resolver args, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, C-09 integration fast-forward/replay/conflict behavior, C-09 cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching checkout branches and ledger commit metadata, C-10 adoption status/block/adopt behavior, and C-11 memory carryover plan/apply behavior.
 
 ### Conventions
 
@@ -64,6 +64,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-05-12T10:59: Updated coverage summary after branch fields were removed from canonical ledgers and legacy branch metadata became non-blocking.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and corrected stale/placeholder test citation ranges after source verification.
 - 2026-05-11T18:34: Updated after resolver-facing and C-11 test namespaces switched from ambiguous repo args to `code_repository_name` and `code_repository_root`.
 - 2026-05-10T03:11: Updated after drift report path coverage began asserting explicit memory-root paths are redirected to coordination temp.

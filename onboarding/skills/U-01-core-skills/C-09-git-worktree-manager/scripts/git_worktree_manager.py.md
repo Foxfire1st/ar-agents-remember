@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                                  |
 | path                   | `skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                                                             |
-| lastUpdated            | 2026-05-11T19:42                                                                    |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`                                          |
-| lastVerifiedCommitDate | 2026-05-11T19:32                                                                    |
+| lastUpdated            | 2026-05-12T10:59                                                                    |
+| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07`                                          |
+| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
 
 ## Purpose
 
@@ -19,7 +19,7 @@
 
 The script loads C-08, resolves context using `code_repository_name`/`code_repository_root`, creates or loads worktree contracts, dry-runs or creates code worktrees, validates shared memory via `memory.md`, blocks dirty or incompatible memory with explicit choices, bootstraps clean-start shared memory repos, reports lifecycle-aware status, prepares non-mutating closeout previews, performs commit-approval-gated closeout with source-branch movement checks and code-commit-first onboarding metadata refresh, performs approval-gated direct checkout closeout for small approved current-branch edits, performs approval-gated integration back to source branches, and performs approval-gated cleanup after integration.
 
-`bootstrap_memory_repo` treats an existing `memory.md` as authoritative and returns `already-ledgered` instead of overwriting it. For new baselines it initializes the memory repo if needed, configures a local Git identity when one is absent, creates the standard `onboarding`, `docs`, and `system` directories, adds `docs/.gitkeep` when `docs/` would otherwise be empty, commits memory content, then writes and commits the initial ledger. Shared-memory closeout computes changed code paths, plans required sidecar onboarding metadata refreshes from a C-08 context, blocks before committing if required onboarding or verification metadata is missing, commits code, captures the code commit date, rewrites affected onboarding metadata to that exact code commit, commits memory content, then writes and commits the ledger. Direct closeout uses the same metadata planning helpers without a task contract, requires shared memory with matching code/memory branches and matching `memory.md` branch metadata, and follows the same code-then-memory-then-ledger sequence. Integration supports `ff-only` and `replay`: replay rebases code when parallel work already moved main, replays memory content without replaying the old ledger commit, and writes a fresh ledger mapping for the final landed commits. Cleanup removes registered worktrees, deletes local branches only when `git branch -d` proves they are merged, prunes empty worktree group folders, and marks the contract complete.
+`bootstrap_memory_repo` treats an existing `memory.md` as authoritative and returns `already-ledgered` instead of overwriting it. For new baselines it initializes the memory repo if needed, configures a local Git identity when one is absent, creates the standard `onboarding`, `docs`, and `system` directories, adds `docs/.gitkeep` when `docs/` would otherwise be empty, commits memory content, then writes and commits the initial ledger. Shared-memory closeout computes changed code paths, plans required sidecar onboarding metadata refreshes from a C-08 context, blocks before committing if required onboarding or verification metadata is missing, commits code, captures the code commit date, rewrites affected onboarding metadata to that exact code commit, commits memory content, then writes and commits the ledger. Direct closeout uses the same metadata planning helpers without a task contract, requires shared memory with matching code/memory checkout branches, and follows the same code-then-memory-then-ledger sequence. Ledger compatibility is checked through commit mappings rather than stored branch names. Integration supports `ff-only` and `replay`: replay rebases code when parallel work already moved main, replays memory content without replaying the old ledger commit, and writes a fresh ledger mapping for the final landed commits. Cleanup removes registered worktrees, deletes local branches only when `git branch -d` proves they are merged, prunes empty worktree group folders, and marks the contract complete.
 
 ### Conventions
 
@@ -27,7 +27,7 @@ The script loads C-08, resolves context using `code_repository_name`/`code_repos
 
 ### Invariants And Boundaries
 
-The script does not push. Shared-memory worktree closeout and direct closeout both commit code first, refresh affected onboarding verification metadata to the created code commit, commit memory content second, and commit ledger updates third only after explicit commit approval. Neither path may create a memory content commit whose affected onboarding metadata still points at pre-closeout code, and both block before the code commit when required sidecar onboarding or verification metadata is missing. Direct closeout also blocks when shared memory is not resolved, code and memory branches differ, ledger branch metadata differs, or no code/memory changes exist. Integration must not move source branches until both code and memory commits are fast-forwardable. If replay conflicts, it stops before moving main and reports that a developer decision is required. Cleanup may remove worktrees and merged local branches only after integration completion and approval.
+The script does not push. Shared-memory worktree closeout and direct closeout both commit code first, refresh affected onboarding verification metadata to the created code commit, commit memory content second, and commit ledger updates third only after explicit commit approval. Neither path may create a memory content commit whose affected onboarding metadata still points at pre-closeout code, and both block before the code commit when required sidecar onboarding or verification metadata is missing. Direct closeout also blocks when shared memory is not resolved, code and memory checkout branches differ, or no code/memory changes exist. Integration must not move source branches until both code and memory commits are fast-forwardable. If replay conflicts, it stops before moving main and reports that a developer decision is required. Cleanup may remove worktrees and merged local branches only after integration completion and approval.
 
 ### Todos
 
@@ -69,6 +69,7 @@ No sibling repository evidence is needed for the helper itself.
 
 ## Update History
 
+- 2026-05-12T10:59: Updated after C-09 stopped treating legacy ledger branch metadata as a compatibility gate.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and repaired stale helper citation ranges after verifying the coordination rename behavior.
 - 2026-05-11T18:34: Updated after C-09 switched its resolver-facing CLI, context calls, and direct closeout payloads to `code_repository_name` and `code_repository_root`.
 - 2026-05-10T03:01: Updated after C-09 added direct checkout closeout for approved micro edits while preserving the code-then-memory-then-ledger invariant.

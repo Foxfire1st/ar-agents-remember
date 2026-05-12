@@ -4,7 +4,7 @@
 | ----------- | --------------------- |
 | repository  | agents-remember-md    |
 | doc_type    | `repo-entity-catalog` |
-| lastUpdated | 2026-05-11T18:34      |
+| lastUpdated | 2026-05-12T10:59      |
 | status      | active                |
 
 ## Purpose
@@ -30,33 +30,33 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 ### Coordination Context
 
-| Field                        | Value                                                                                                                                                                                                                                                                                                  |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Category                     | Resolver output contract                                                                                                                                                                                                                                                                               |
-| Represents In Reality        | The resolved topology, roots, settings, storage rules, path rules, and cross-repo allowances for one code repository.                                                                                                                                                                                  |
-| Description                  | C-08 produces this context so downstream skills do not rebuild topology rules.                                                                                                                                                                                                                         |
-| Canonical Source Of Truth    | `C-08-ar-coordination-context-resolver` skill docs and helper output.                                                                                                                                                                                                                                            |
-| Current Naming Drift         | None recorded for the C-08 resolver output contract.                                                                                                                                                                                                                                                   |
-| Key Identifiers              | `topology`, `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `onboarding_root`, `settings_path`, `path_settings_path`, `task_root`, `temp_root`, `pathRules`, `contract_path`, `worktree_group`, `ledger_path`.                                                     |
-| Parent / Child Relationships | Consumed by C-02, C-05, C-03, and task workflows.                                                                                                                                                                                                                                                      |
-| Often Confused With          | The onboarding root itself or the worktree task contract.                                                                                                                                                                                                                                              |
+| Field                        | Value                                                                                                                                                                                                                                                                                                                      |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Category                     | Resolver output contract                                                                                                                                                                                                                                                                                                   |
+| Represents In Reality        | The resolved topology, roots, settings, storage rules, path rules, and cross-repo allowances for one code repository.                                                                                                                                                                                                      |
+| Description                  | C-08 produces this context so downstream skills do not rebuild topology rules.                                                                                                                                                                                                                                             |
+| Canonical Source Of Truth    | `C-08-ar-coordination-context-resolver` skill docs and helper output.                                                                                                                                                                                                                                                      |
+| Current Naming Drift         | None recorded for the C-08 resolver output contract.                                                                                                                                                                                                                                                                       |
+| Key Identifiers              | `topology`, `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `onboarding_root`, `settings_path`, `path_settings_path`, `task_root`, `temp_root`, `pathRules`, `contract_path`, `worktree_group`, `ledger_path`.                                                                         |
+| Parent / Child Relationships | Consumed by C-02, C-05, C-03, and task workflows.                                                                                                                                                                                                                                                                          |
+| Often Confused With          | The onboarding root itself or the worktree task contract.                                                                                                                                                                                                                                                                  |
 | Source References            | [C-08 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) L24-L43; [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) L87-L111; L1087-L1147; L1216-L1264 |
-| Migration Notes              | C-08 is now worktree-contract-aware but remains facts-only; C-09 owns mutation.                                                                                                                                                                                                                        |
+| Migration Notes              | C-08 is now worktree-contract-aware but remains facts-only; C-09 owns mutation.                                                                                                                                                                                                                                            |
 
 ### Path Rule
 
-| Field                        | Value                                                                                                                                                                                                                               |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Category                     | Settings and eligibility rule                                                                                                                                                                                                       |
-| Represents In Reality        | Include/exclude rules that decide which source paths and file types are eligible for onboarding.                                                                                                                                    |
-| Description                  | Path rules are parsed from JSON-first settings where possible and are evaluated separately from storage mode.                                                                                                                       |
-| Canonical Source Of Truth    | C-08 settings parser plus README storage guidance.                                                                                                                                                                                  |
-| Current Naming Drift         | Shared settings scope path rules per repository; unscoped rules can accidentally read as global defaults.                                                                                                                           |
-| Key Identifiers              | `path`, `include.paths`, `include.fileTypes`, `exclude.paths`, `exclude.fileTypes`, `storage`.                                                                                                                                      |
-| Parent / Child Relationships | Belongs to coordination context storage settings and influences C-02 classification.                                                                                                                                                |
-| Often Confused With          | Storage mode; storage decides where artifacts live, path rules decide eligibility.                                                                                                                                                  |
+| Field                        | Value                                                                                                                                                                                                                                         |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Category                     | Settings and eligibility rule                                                                                                                                                                                                                 |
+| Represents In Reality        | Include/exclude rules that decide which source paths and file types are eligible for onboarding.                                                                                                                                              |
+| Description                  | Path rules are parsed from JSON-first settings where possible and are evaluated separately from storage mode.                                                                                                                                 |
+| Canonical Source Of Truth    | C-08 settings parser plus README storage guidance.                                                                                                                                                                                            |
+| Current Naming Drift         | Shared settings scope path rules per repository; unscoped rules can accidentally read as global defaults.                                                                                                                                     |
+| Key Identifiers              | `path`, `include.paths`, `include.fileTypes`, `exclude.paths`, `exclude.fileTypes`, `storage`.                                                                                                                                                |
+| Parent / Child Relationships | Belongs to coordination context storage settings and influences C-02 classification.                                                                                                                                                          |
+| Often Confused With          | Storage mode; storage decides where artifacts live, path rules decide eligibility.                                                                                                                                                            |
 | Source References            | [README.md](agents-remember-md/README.md) L122-L135; [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) L249-L259; L585-L610 |
-| Migration Notes              | Cross-repo/worktree changes should not replace path rules; they remain an eligibility layer.                                                                                                                                        |
+| Migration Notes              | Cross-repo/worktree changes should not replace path rules; they remain an eligibility layer.                                                                                                                                                  |
 
 ### Drift Report
 
@@ -105,18 +105,18 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 ### Shared Memory Ledger
 
-| Field                        | Value                                                                                                                                                          |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Category                     | Memory compatibility artifact                                                                                                                                  |
-| Represents In Reality        | The `memory.md` mapping between code commits and shared memory commits.                                                                                        |
-| Description                  | The implemented helper parses and writes a fenced `json ar-memory-ledger` metadata block plus newest-first two-column commit table for shared memory branches. |
-| Canonical Source Of Truth    | `_shared/agents_remember/memory_ledger.py` plus the worktree/shared-memory design spec.                                                                        |
-| Current Naming Drift         | The parser/writer exists in `_shared/agents_remember/memory_ledger.py`; real shared memory repo bootstraps are still operationally new.                        |
-| Key Identifiers              | `schema`, `trackedCodeBranch`, `memoryBranch`, `lastVerifiedCodeCommit`, `lastMemoryContentCommit`, table rows.                                                |
-| Parent / Child Relationships | Belongs to one shared memory repo branch and is consumed by C-09 and cross-repo resolution.                                                                    |
-| Often Confused With          | Drift report or task contract.                                                                                                                                 |
-| Source References            | [worktree design spec](agents-remember-md/roadmap/agents-remember-worktree-memory-final-design-spec.md) L451-L557                                              |
-| Migration Notes              | Git fixture coverage is still needed for full bootstrap and closeout integration beyond parser-level tests.                                                    |
+| Field                        | Value                                                                                                                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Category                     | Memory compatibility artifact                                                                                                                                           |
+| Represents In Reality        | The `memory.md` mapping between code commits and shared memory commits.                                                                                                 |
+| Description                  | The implemented helper parses and writes a fenced `json ar-memory-ledger` metadata block plus a newest-first two-column table that maps code commits to memory commits. |
+| Canonical Source Of Truth    | `_shared/agents_remember/memory_ledger.py` plus the worktree/shared-memory design spec.                                                                                 |
+| Current Naming Drift         | The parser/writer exists in `_shared/agents_remember/memory_ledger.py`; real shared memory repo bootstraps are still operationally new.                                 |
+| Key Identifiers              | `schema`, `repoName`, `lastVerifiedCodeCommit`, `lastMemoryContentCommit`, table rows.                                                                                  |
+| Parent / Child Relationships | Belongs to one shared memory repo and is consumed by C-09 and cross-repo resolution.                                                                                    |
+| Often Confused With          | Drift report or task contract.                                                                                                                                          |
+| Source References            | [worktree design spec](agents-remember-md/roadmap/agents-remember-worktree-memory-final-design-spec.md) L451-L557                                                       |
+| Migration Notes              | Git fixture coverage is still needed for full bootstrap and closeout integration beyond parser-level tests.                                                             |
 
 ### Memory Baseline Adoption
 
@@ -139,7 +139,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Category                     | Runtime coordination artifact                                                                                                                                                                                                                                                 |
 | Represents In Reality        | A local record of task identity, workflow artifact, worktree group, code worktree, memory worktree, ledger path, review state, closeout commits, integration commits, and cleanup state.                                                                                      |
-| Description                  | The helper locates contracts under `ar-coordination/tasks/<repo-name>/<task-name>-ar/contract.md` and keeps them out of memory repos and worktrees.                                                                                                                             |
+| Description                  | The helper locates contracts under `ar-coordination/tasks/<repo-name>/<task-name>-ar/contract.md` and keeps them out of memory repos and worktrees.                                                                                                                           |
 | Canonical Source Of Truth    | `_shared/agents_remember/worktree_contract.py` plus C-09.                                                                                                                                                                                                                     |
 | Current Naming Drift         | The parser/writer exists in `_shared/agents_remember/worktree_contract.py`; it is not the same entity as a W-02 task file.                                                                                                                                                    |
 | Key Identifiers              | `contract.md`, task id/name, worktree group, code worktree, memory worktree, ledger path, human review state, closeout commits, integration commits, cleanup state.                                                                                                           |
@@ -218,12 +218,12 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 ### Worktree Contract
 
-| Layer             | Representation                                                |
-| ----------------- | ------------------------------------------------------------- |
-| Current repo      | Shared parser/writer and C-09 command consumer.               |
+| Layer             | Representation                                                  |
+| ----------------- | --------------------------------------------------------------- |
+| Current repo      | Shared parser/writer and C-09 command consumer.                 |
 | Local coordinator | `ar-coordination/tasks/<repo-name>/<task-name>-ar/contract.md`. |
-| C-08              | Facts-only contract reader.                                   |
-| C-09              | Creator/updater and lifecycle owner.                          |
+| C-08              | Facts-only contract reader.                                     |
+| C-09              | Creator/updater and lifecycle owner.                            |
 
 ### Worktree Integration
 
@@ -242,6 +242,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 ## Update History
 
+- 2026-05-12T10:59: Updated the shared memory ledger entity after branch fields were removed from canonical ledger metadata.
 - 2026-05-09T23:55: Added worktree integration as a current lifecycle entity and updated contract fields for integration commits.
 - 2026-05-11T19:01: Renamed the resolver entity to coordination context after C-08 moved its semantic API to coordination terminology.
 - 2026-05-09T23:22: Updated coordination context and drift report entities after C-08 added `temp_root` and C-02 moved reports under `temp/drift-reports`.

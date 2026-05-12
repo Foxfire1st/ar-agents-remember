@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                                    |
 | path                   | `skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py` |
 | doc_type               | `file-level-onboarding`                                                               |
-| lastUpdated            | 2026-05-11T19:42                                                                      |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`                                            |
-| lastVerifiedCommitDate | 2026-05-11T19:32                                                                      |
+| lastUpdated            | 2026-05-12T10:59                                                                      |
+| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07`                                            |
+| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
 
 ## Purpose
 
@@ -21,7 +21,7 @@ The script dynamically loads C-08, C-02, and C-09 so it can reuse the active res
 
 ### Conventions
 
-The JSON payload is designed for both humans and wrappers: every path is serialized as POSIX text, `code_repository_name` and `code_repository_root` identify the code checkout explicitly, `state` carries the control decision, and `accepted_drift` is included only for adoption paths. C-10 does not invent a separate report path convention; it delegates report path handling to C-02 so adoption drift reports land under the resolved temporary artifact root by default and stay out of durable memory.
+The JSON payload is designed for both humans and wrappers: every path is serialized as POSIX text, `code_repository_name` and `code_repository_root` identify the code checkout explicitly, `state` carries the control decision, existing ledger status reports commit mapping metadata, and `accepted_drift` is included only for adoption paths. C-10 does not invent a separate report path convention; it delegates report path handling to C-02 so adoption drift reports land under the resolved temporary artifact root by default and stay out of durable memory.
 
 ### Invariants And Boundaries
 
@@ -60,6 +60,7 @@ No sibling repository evidence is needed for the helper itself.
 
 ## Update History
 
+- 2026-05-12T10:59: Updated ledger-status notes after branch fields were removed from canonical ledger metadata and C-10 payloads.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and corrected same-repo citation ranges after verifying the C-10 coordination rename behavior.
 - 2026-05-11T18:34: Updated after C-10 switched resolver arguments, CLI flags, and status payload keys to `code_repository_name` and `code_repository_root`.
 - 2026-05-10T03:11: Updated after C-10 passed `memory_root` into C-02 report path resolution so adoption reports cannot land in durable memory.

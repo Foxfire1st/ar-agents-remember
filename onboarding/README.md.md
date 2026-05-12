@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-11T19:42                           |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8` |
-| lastVerifiedCommitDate | 2026-05-11T19:32                           |
+| lastUpdated            | 2026-05-12T11:30                           |
+| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07` |
+| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The README introduces the memory model first, then explains setup, storage decisions, shared workspace behavior, active coordination context resolution, chat/worktree closeout behavior, and the available skill families. Its early "What This Looks Like" section shows both the default repo-local onboarding sidecar and the working shared-memory repo example, using clickable Markdown links to the public code repo and inspectable memory repo. It teaches `ar-memory/` for durable internal memory, `ar-coordination/` for local coordination, names C-09 `direct-closeout` as the approved current-checkout commit sequence for small shared-memory chat-mode edits, and lists C-10 as the adoption path that turns existing shared-memory onboarding into the first ledgered `memory.md` baseline after drift review.
+The README introduces the memory model first, then explains setup, storage decisions, shared workspace behavior, active coordination context resolution, chat/worktree closeout behavior, and the available skill families. Its early "What This Looks Like" section shows the default repo-local onboarding sidecar and points to this repo's inspectable shared-memory layer as an example, while `memory.md` is explained as the code-commit to memory-commit ledger. It teaches `ar-memory/` for durable internal memory, `ar-coordination/` for local coordination, names C-09 `direct-closeout` as the approved current-checkout commit sequence for small shared-memory chat-mode edits, and lists C-10 as the adoption path that turns existing shared-memory onboarding into the first ledgered `memory.md` baseline after drift review.
 
 ### Conventions
 
@@ -46,7 +46,7 @@ The README establishes the conceptual map future tasks will repeatedly cite.
 | Finding                                                                                                                                                                                                                                            | Citations | Source Path                               |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
 | One-to-one onboarding means source files have matching onboarding files.                                                                                                                                                                           | L89       | [README.md](agents-remember-md/README.md) |
-| The working shared-memory example links to the code repo, the inspectable memory repo, the memory repo layout, and the `memory.md` code-to-memory ledger concept.                                                                                  | L43-L73   | [README.md](agents-remember-md/README.md) |
+| The working shared-memory example links to the inspectable memory repo, shows the memory repo layout, and explains the `memory.md` code-to-memory ledger concept.                                                                                   | L43-L73   | [README.md](agents-remember-md/README.md) |
 | C-00 creates memory and coordination scaffolds, while C-03 owns initial repo onboarding.                                                                                                                                                           | L137-L163 | [README.md](agents-remember-md/README.md) |
 | Storage mode and path rules are separate concepts.                                                                                                                                                                                                 | L171-L180 | [README.md](agents-remember-md/README.md) |
 | Inline storage reuses the same file-level onboarding model, and agents are wired through W-02/W-01 escalation.                                                                                                                                     | L203-L217 | [README.md](agents-remember-md/README.md) |
@@ -65,6 +65,7 @@ The README explains shared workspace use, but this file-level onboarding does no
 
 ## Update History
 
+- 2026-05-12T11:30: Updated after the shared-memory example wording focused on the inspectable memory repo rather than repeating the code repository link.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
 - 2026-05-11T18:34: Updated after the resolver overview adopted `code_repository_name`, `code_repository_root`, and `coordination_root` terminology.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the public repository overview.
