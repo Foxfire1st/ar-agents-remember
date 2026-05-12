@@ -9,13 +9,15 @@
         "paths": [
           "AGENTS.md",
           "README.md",
+          "scripts/**",
           "skills/**",
           "system/**"
         ],
         "fileTypes": [
           ".json",
           ".md",
-          ".py"
+          ".py",
+          ".sh"
         ]
       },
       "exclude": {

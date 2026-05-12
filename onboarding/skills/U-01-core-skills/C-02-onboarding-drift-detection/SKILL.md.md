@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                 |
 | path                   | `skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-05-11T19:42                                                   |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`                         |
-| lastVerifiedCommitDate | 2026-05-11T19:32                                                   |
+| lastUpdated            | 2026-05-12T18:51+02:00                                             |
+| lastVerifiedCommitHash | `3eb9e862887736f0a488ec8144683fb22bb35b16`                         |
+| lastVerifiedCommitDate | 2026-05-12T02:01:56+02:00                                          |
 
 ## Purpose
 
@@ -61,6 +61,7 @@ No cross-repo evidence is needed for the current skill contract.
 
 ## Update History
 
+- 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-02-onboarding-drift-detection` name.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
 - 2026-05-11T18:34: Updated after the C-02 helper command examples adopted `--code-repository-root`.
 - 2026-05-10T03:11: Updated after C-02 documented that explicit report paths inside `memory_root` are redirected to coordination temp.

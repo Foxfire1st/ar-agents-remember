@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-11T19:42                                       |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`             |
-| lastVerifiedCommitDate | 2026-05-11T19:32                                       |
+| lastUpdated            | 2026-05-12T18:51+02:00                                 |
+| lastVerifiedCommitHash | `3eb9e862887736f0a488ec8144683fb22bb35b16`             |
+| lastVerifiedCommitDate | 2026-05-12T02:01:56+02:00                              |
 
 ## Purpose
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-03-repo-bootstrap` name.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
 - 2026-05-09T21:59: Created onboarding after C-03 was aligned to the resolved memory root model.
 - 2026-05-09T22:57: Refreshed verification metadata and expanded source-backed references.

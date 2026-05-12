@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                   |
 | path                   | `skills/U-01-core-skills/C-11-memory-carryover-from-branch/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                              |
-| lastUpdated            | 2026-05-11T19:42                                                     |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`                           |
-| lastVerifiedCommitDate | 2026-05-11T19:32                                                     |
+| lastUpdated            | 2026-05-12T18:51+02:00                                               |
+| lastVerifiedCommitHash | `3eb9e862887736f0a488ec8144683fb22bb35b16`                           |
+| lastVerifiedCommitDate | 2026-05-12T02:01:56+02:00                                            |
 
 ## Purpose
 
@@ -56,6 +56,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-11-memory-carryover-from-branch` name.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and replaced placeholder citations with current source line ranges.
 - 2026-05-11T18:34: Updated after C-11 command examples adopted `--code-repository-root` and `--code-repository-name`.
 - 2026-05-11T03:00: Created onboarding for the new C-11 memory carryover skill and generalized it from workbench-only to source-branch carryover.

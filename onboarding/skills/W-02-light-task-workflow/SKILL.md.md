@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `skills/W-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-11T19:42                           |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8` |
-| lastVerifiedCommitDate | 2026-05-11T19:32                           |
+| lastUpdated            | 2026-05-12T18:51+02:00                     |
+| lastVerifiedCommitHash | `3eb9e862887736f0a488ec8144683fb22bb35b16` |
+| lastVerifiedCommitDate | 2026-05-12T02:01:56+02:00                  |
 
 ## Purpose
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the current workflow skill.
 
 ## Update History
 
+- 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `w-02-light-task-workflow` name.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` after confirming W-02 remains current after the coordination rename.
 - 2026-05-10T01:19: Updated after W-02 gained an explicit worktree-backed commit approval handoff before C-09 closeout commits.
 - 2026-05-10T00:56: Updated after adding the committed shared-memory baseline requirement before C-09 start.

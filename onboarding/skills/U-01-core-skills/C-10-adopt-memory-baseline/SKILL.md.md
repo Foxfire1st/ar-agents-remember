@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                            |
 | path                   | `skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-05-11T19:42                                              |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`                    |
-| lastVerifiedCommitDate | 2026-05-11T19:32                                              |
+| lastUpdated            | 2026-05-12T18:51+02:00                                        |
+| lastVerifiedCommitHash | `3eb9e862887736f0a488ec8144683fb22bb35b16`                    |
+| lastVerifiedCommitDate | 2026-05-12T02:01:56+02:00                                     |
 
 ## Purpose
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-10-adopt-memory-baseline` name.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` after confirming the C-10 coordination-rename contract remains current.
 - 2026-05-11T18:34: Updated after C-10 command examples adopted `--code-repository-name` and `--code-repository-root`.
 - 2026-05-10T00:36: Refreshed verification metadata after C-10's temp-root report wording landed on main.

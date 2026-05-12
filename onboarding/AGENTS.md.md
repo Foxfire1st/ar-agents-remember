@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-12T11:30                           |
-| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07` |
-| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
+| lastUpdated            | 2026-05-12T18:51+02:00                     |
+| lastVerifiedCommitHash | `d2f8072bb43a197c193b99405056e720adc34b1b` |
+| lastVerifiedCommitDate | 2026-05-12T19:22:12+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The file routes work into Chat, W-02 Light Task, or W-01 Heavy Task based on task size and explicit developer intent. It adds a hard workflow discipline line before the memory system section, then tells agents that onboarding is companion context for source files and that C-08 must resolve `code_repository_name` or `code_repository_root` into the active memory and coordination context before onboarding, tasks, docs, or tools are trusted.
+The file routes work into Chat, W-02 Light Task, or W-01 Heavy Task based on task size and explicit developer intent. It adds a strongly emphasized workflow discipline line before the memory system section, then tells agents that onboarding is companion context for source files and that C-08 must resolve `code_repository_name` or `code_repository_root` into the active memory and coordination context before onboarding, tasks, docs, or tools are trusted.
 
 ### Conventions
 
@@ -46,7 +46,7 @@ The active repo behavior depends on the task routing and resolver contract in th
 | Finding                                                                                                                      | Citations | Source Path                               |
 | ---------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
 | Task format routing assigns Chat, W-02 Light Task, and W-01 Heavy Task by task size and explicit developer request.          | L1-L22    | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| The file explicitly forbids code changes outside one of the named workflows.                                                  | L24-L24   | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The file explicitly forbids code changes outside one of the named workflows and visually separates that warning from the memory section. | L22-L28   | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Memory system rules define onboarding as companion context and require C-08 resolution through `code_repository_name` or root. | L26-L40   | [AGENTS.md](agents-remember-md/AGENTS.md) |
 
 ## Cross-Repo References
@@ -59,6 +59,7 @@ The file applies as workspace instruction when `C:\ew\AGENTS.md` points sibling 
 
 ## Update History
 
+- 2026-05-12T18:51+02:00: Refreshed after AGENTS.md emphasized the workflow-before-code warning and separated it from the memory section.
 - 2026-05-12T11:30: Updated after AGENTS.md was shortened to the three workflow formats, workflow-before-code rule, and C-08 resolver contract.
 - 2026-05-11T19:52: Corrected escaped workflow wildcard wording introduced during the verification refresh.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
