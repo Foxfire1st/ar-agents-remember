@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-12T18:57+02:00                     |
-| lastVerifiedCommitHash | `d2f8072bb43a197c193b99405056e720adc34b1b` |
-| lastVerifiedCommitDate | 2026-05-12T19:22:12+02:00|
+| lastUpdated            | 2026-05-13T13:38                           |
+| lastVerifiedCommitHash | `6d413269e6f3b0317829def3b5c77b11631285ac` |
+| lastVerifiedCommitDate | 2026-05-13T13:50:13+02:00                  |
 
 ## Purpose
 
@@ -17,13 +17,13 @@
 
 ### Logic
 
-The README introduces the memory model first, then explains setup, harness skill installation, storage decisions, shared workspace behavior, active coordination context resolution, chat/worktree closeout behavior, and the available skill families. Its early "What This Looks Like" section shows the default repo-local onboarding sidecar and points to this repo's inspectable shared-memory layer as an example, while `memory.md` is explained as the code-commit to memory-commit ledger. It teaches `ar-memory/` for durable internal memory, `ar-coordination/` for local coordination, names C-09 `direct-closeout` as the approved current-checkout commit sequence for small shared-memory chat-mode edits, and lists C-10 as the adoption path that turns existing shared-memory onboarding into the first ledgered `memory.md` baseline after drift review.
+The README introduces the memory model first, then explains setup, harness skill installation, storage decisions, shared workspace behavior, active coordination context resolution, chat/worktree closeout behavior, and the available skill families. Its early "What This Looks Like" section shows the default repo-local onboarding sidecar and points to this repo's inspectable shared-memory layer as an example, while `memory.md` is explained as the code-commit to memory-commit ledger. It teaches `ar-memory/` for durable internal memory, `ar-coordination/` for local coordination, names C-09 `direct-closeout` as the approved current-checkout commit sequence for small shared-memory chat-mode edits, lists C-10 as the adoption path that turns existing shared-memory onboarding into the first ledgered `memory.md` baseline after drift review, and now points users at folder-shaped `system/examples/` scaffolds for coordinator-global versus memory-repo-specific files.
 
 The setup flow now separates three paths that users often conflate: the real `agents-remember-md` checkout, the harness-visible skills folder, and the `ar-coordination` root. Harnesses that require skills in a dedicated folder use `scripts/install-skills.sh --install-root <skills-folder>` to create symlinks back to the canonical `skills/` tree. Recursive scanners such as Codex and Claude Code use the namespace tree layout, while stricter direct-folder scanners such as Hermes.md, Pi.dev, OpenClaw, Windsurf, and Cursor compatibility installs use `--layout flat` so the visible folder names match lowercase skill frontmatter names without copying canonical source files. Shared-mode coordination can live outside both the workspace and the checkout by setting `AR_COORDINATION_ROOT` in the checkout's `.env`.
 
 ### Conventions
 
-The README distinguishes source files, onboarding files, generated maintenance artifacts, task workflow artifacts, shared memory repos, harness skill-install locations, and the `memory.md` ledger. It names Codex `.agents/skills`, Claude Code `.claude/skills`, Hermes `~/.hermes/skills`, Pi `.pi/skills`, OpenClaw `<workspace>/skills` and `~/.openclaw/skills`, Cursor `.cursor/skills`, and Windsurf `.windsurf/skills` locations separately, treats C-08 as the resolver, uses `code_repository_name`/`code_repository_root` for resolver inputs, and treats C-02 as the drift classifier.
+The README distinguishes source files, onboarding files, generated maintenance artifacts, task workflow artifacts, shared memory repos, harness skill-install locations, system examples, and the `memory.md` ledger. It names Codex `.agents/skills`, Claude Code `.claude/skills`, Hermes `~/.hermes/skills`, Pi `.pi/skills`, OpenClaw `<workspace>/skills` and `~/.openclaw/skills`, Cursor `.cursor/skills`, and Windsurf `.windsurf/skills` locations separately, treats C-08 as the resolver, uses `code_repository_name`/`code_repository_root` for resolver inputs, and treats C-02 as the drift classifier.
 
 ### Invariants And Boundaries
 
@@ -71,7 +71,7 @@ The README establishes the conceptual map future tasks will repeatedly cite.
 | The three modes section notes that small chat-mode shared-memory edits can use C-09 `direct-closeout` for code-first onboarding metadata refresh and ledger sequencing, while larger or parallel work should use C-09 worktrees.                    | L561-L571 | [README.md](agents-remember-md/README.md) |
 | Shared coordination guidance now separates skill installation from `AR_COORDINATION_ROOT` and shows a layout where the checkout, `ar-coordination`, and workspace all live in different roots.                                                      | L603-L632 | [README.md](agents-remember-md/README.md) |
 | C-08 resolves the active context from `code_repository_name` or `code_repository_root`, returns `coordination_root` and `memory_root`, and C-02 classifies stale onboarding.                                                                        | L714-L720 | [README.md](agents-remember-md/README.md) |
-| The repository contains core skills, workflows, the skill installer script, roadmap material, and system examples.                                                                                                                                  | L724-L744 | [README.md](agents-remember-md/README.md) |
+| The repository contains core skills, workflows, the skill installer script, root/system instructions, and folder-shaped coordinator/global plus memory-repo-specific scaffold examples.                                                            | L724-L744 | [README.md](agents-remember-md/README.md) |
 | The README lists C-09 as the helper for worktree-backed tasks and direct closeout of approved current-checkout edits, and C-10 as the helper for converting existing shared-memory onboarding into the first ledgered baseline after drift review. | L737-L738 | [README.md](agents-remember-md/README.md) |
 
 ## Cross-Repo References
@@ -84,6 +84,7 @@ The README explains shared workspace use, but this file-level onboarding does no
 
 ## Update History
 
+- 2026-05-13T13:38: Updated after the README replaced top-level system examples with folder-shaped coordinator/global and memory-repo-specific scaffold examples.
 - 2026-05-12T18:57+02:00: Updated after the README added Hermes.md, Pi.dev, and OpenClaw install instructions after the Claude Code section.
 - 2026-05-12T18:51+02:00: Refreshed metadata and current README references after the install-skills guidance and harness-specific skill setup sections were added in the working tree.
 - 2026-05-12T18:22+02:00: Updated after the README gained Cursor and Windsurf native skill instructions and split installer guidance into tree versus flat symlink layouts.
