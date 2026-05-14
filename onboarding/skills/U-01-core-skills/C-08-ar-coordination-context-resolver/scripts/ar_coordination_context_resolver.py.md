@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                                                          |
 | path                   | `skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py` |
 | doc_type               | `file-level-onboarding`                                                                                     |
-| lastUpdated            | 2026-05-12T10:59                                                                                            |
-| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                                                                  |
-| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
+| lastUpdated            | 2026-05-15T01:07+02:00                                                                                      |
+| lastVerifiedCommitHash | `2b6c0a10a600b8d1340932ff2c7b7e158ac40d94`                                                                  |
+| lastVerifiedCommitDate | 2026-05-15T01:14:29+02:00|
 
 ## Purpose
 
@@ -17,15 +17,15 @@
 
 ### Logic
 
-The script defines dataclasses for storage, cross-repo entries, coordination selection, and coordination context; parses JSON-first settings and Markdown content; detects internal or external selection; resolves memory, coordination, and temporary artifact roots; uses coordination-root onboarding when memory-root onboarding is absent; loads task contract facts when present; checks current wrapper task roots before persisted `*-ar` roots when resolving by task name; resolves branch-gated cross-repo entries using actual checkout branches plus ledger commit metadata; and exposes a CLI.
+The script defines dataclasses for storage, cross-repo entries, coordination selection, and coordination context; parses JSON-first settings and Markdown content; detects internal or external selection; resolves memory, coordination, temporary artifact, and repo-specific task roots; uses coordination-root onboarding when memory-root onboarding is absent; loads task contract facts when present; checks current wrapper task roots before persisted `*-ar` roots when resolving by task name; resolves branch-gated cross-repo entries using actual checkout branches plus ledger commit metadata; and exposes a CLI.
 
 ### Conventions
 
-All paths are normalized for portable output. The helper prefers explicit inputs, then coordinator settings, then internal fallback. It keeps path eligibility and storage mode separate, exposes `code_repository_name` and `code_repository_root` as the resolver-facing code repository identity, and exposes `temp_root` as the coordination-local place for non-durable work artifacts.
+All paths are normalized for portable output. The helper prefers explicit inputs, then coordinator settings, then internal fallback. It keeps path eligibility and storage mode separate, exposes `code_repository_name` and `code_repository_root` as the resolver-facing code repository identity, exposes `task_root` as the repo task namespace unless a concrete task is supplied, and exposes `temp_root` as the coordination-local place for non-durable work artifacts.
 
 ### Invariants And Boundaries
 
-The script must not mutate repositories, write onboarding files, create worktrees, or repair memory ledgers. Its output is a contract consumed by C-02, C-05, W-02, and C-09.
+The script must not mutate repositories, write onboarding files, create task folders, create worktrees, or repair memory ledgers. Its output is a contract consumed by C-02, C-05, W-02, and C-09.
 
 ### Todos
 
@@ -49,7 +49,7 @@ The implementation is the authoritative source for current resolver behavior.
 | JSON settings parsing extracts storage mode, path rules, and `crossRepo.allow` from the same settings document.                                                                                                                          | L368-L396                | [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) |
 | Context resolution prefers memory-repo onboarding when present, uses coordination-root onboarding when memory-root onboarding is absent, and then builds the final context.                                                              | L1048-L1073              | [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) |
 | Contract resolution checks current wrapper task roots first and persisted `*-ar` roots second when only a task name is supplied.                                                                                                         | L24-L40; L808-L825       | [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) |
-| Final context construction derives task and temp roots, worktree fields, ledger path, effective memory/docs/onboarding roots, sources, tools, and resolved cross-repo settings.                                                          | L1099-L1156              | [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) |
+| Final context construction returns the repo-specific task namespace when no task name is supplied, keeps task-name resolution task-specific, and derives temp roots, worktree fields, ledger path, effective memory/docs/onboarding roots, sources, tools, and resolved cross-repo settings. | L1110-L1113; L1145-L1160 | [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) |
 | CLI JSON and text output serialize `code_repository_name`, `code_repository_root`, and `temp_root` alongside the other resolved context paths.                                                                                           | L1205-L1218; L1234-L1247 | [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) |
 
 ## Cross-Repo References
@@ -62,6 +62,7 @@ The helper can resolve sibling repositories selected by coordinator settings, bu
 
 ## Update History
 
+- 2026-05-15T01:07+02:00: Updated after C-08's no-task-name `task_root` fallback was corrected to the repo-specific task namespace. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-12T10:59: Updated cross-repo resolver notes after `memory.md` branch metadata stopped being part of ledger compatibility.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
 - 2026-05-11T19:27: Renamed onboarding to the coordination context resolver helper and updated the resolver contract terminology.

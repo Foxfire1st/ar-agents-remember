@@ -4,7 +4,7 @@
 | ----------- | --------------------- |
 | repository  | agents-remember-md    |
 | doc_type    | `repo-entity-catalog` |
-| lastUpdated | 2026-05-15T00:38+02:00 |
+| lastUpdated | 2026-05-15T01:07+02:00 |
 | status      | active                |
 
 ## Purpose
@@ -52,7 +52,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Description                  | C-08 produces this context so downstream skills do not rebuild topology rules.                                                                                                                                                                                                                                             |
 | Canonical Source Of Truth    | `C-08-ar-coordination-context-resolver` skill docs and helper output.                                                                                                                                                                                                                                                      |
 | Current Naming Drift         | None recorded for the C-08 resolver output contract.                                                                                                                                                                                                                                                                       |
-| Key Identifiers              | `topology`, `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `onboarding_root`, `settings_path`, `path_settings_path`, `task_root`, `temp_root`, `pathRules`, `contract_path`, `worktree_group`, `ledger_path`.                                                                         |
+| Key Identifiers              | `topology`, `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `onboarding_root`, `settings_path`, `path_settings_path`, `task_root`, `temp_root`, `pathRules`, `contract_path`, `worktree_group`, `ledger_path`. Without a task name, `task_root` is `ar-coordination/tasks/<repo>/`; with a task name or contract, it is the concrete task folder. |
 | Parent / Child Relationships | Consumed by C-02, C-05, C-03, and task workflows.                                                                                                                                                                                                                                                                          |
 | Often Confused With          | The onboarding root itself or the worktree task contract.                                                                                                                                                                                                                                                                  |
 | Source References            | [C-08 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) L24-L43; [ar_coordination_context_resolver.py](agents-remember-md/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) L87-L111; L1087-L1147; L1216-L1264 |
@@ -219,7 +219,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | ---------------- | -------------------------------------------------------------------------------- |
 | Settings         | `system/settings.md` plus JSON-first `system/settings.json` when present.        |
 | Resolver code    | `CoordinationContext` dataclass and JSON/text output.                            |
-| Consumer skills  | C-02, C-03, C-05, and task workflows consume resolved roots instead of guessing. |
+| Consumer skills  | C-02, C-03, C-05, and task workflows consume resolved roots instead of guessing, including the repo-specific task namespace. |
 | Worktree support | Explicit memory, coordination, task, temp, worktree, contract, and ledger facts. |
 
 ### Light Task Artifact
@@ -267,6 +267,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 ## Update History
 
+- 2026-05-15T01:07+02:00: Clarified that C-08's no-task-name `task_root` is the repo-specific task namespace under `ar-coordination/tasks/<repo>/`.
 - 2026-05-15T00:38+02:00: Added the runtime `AGENTS.md` template package entity after the source templates were consolidated under `system/agents-md-files/`.
 - 2026-05-14T20:00: Updated entity terminology after the alpha model switched to external-memory and C-05 renamed non-inline onboarding storage to sidecar onboarding.
 - 2026-05-12T10:59: Updated the external memory ledger entity after branch fields were removed from canonical ledger metadata.
