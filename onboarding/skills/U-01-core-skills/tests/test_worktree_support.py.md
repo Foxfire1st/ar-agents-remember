@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-05-12T10:59                                         |
-| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07`               |
-| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`               |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This unittest file validates the first worktree-support helper slice.
 
 ### Logic
 
-The tests cover memory ledger roundtrip/prepend behavior, branchless canonical ledger output, legacy branch-metadata ledger parsing without branch-metadata blocking, malformed ledger metadata, invalid ledger top-row detection, dirty shared-memory start blocking, compatible shared-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview, approval-note, onboarding metadata refresh, missing-onboarding blocking behavior, direct checkout closeout dry-run/success/missing-onboarding behavior with `code_repository_name`/`code_repository_root` resolver args, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, C-09 integration fast-forward/replay/conflict behavior, C-09 cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching checkout branches and ledger commit metadata, C-10 adoption status/block/adopt behavior, and C-11 memory carryover plan/apply behavior.
+The tests cover memory ledger roundtrip/prepend behavior, branchless canonical ledger output, legacy branch-metadata ledger parsing without branch-metadata blocking, malformed ledger metadata, invalid ledger top-row detection, dirty external-memory start blocking, compatible external-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview, approval-note, onboarding metadata refresh, missing-onboarding blocking behavior, direct checkout closeout dry-run/success/missing-onboarding behavior with `code_repository_name`/`code_repository_root` resolver args, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, C-09 integration fast-forward/replay/conflict behavior, C-09 cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching checkout branches and ledger commit metadata, C-10 adoption status/block/adopt behavior, and C-11 memory carryover plan/apply behavior.
 
 ### Conventions
 
@@ -29,7 +29,7 @@ These tests are focused smoke coverage, not exhaustive C-09 lifecycle integratio
 
 ### Todos
 
-Add fuller Git fixture tests for compatible shared-memory start. Direct closeout currently has shared-memory smoke coverage only; internal-memory semantics are intentionally not covered because the command is shared-ledger focused.
+Add fuller Git fixture tests for compatible external-memory start. Direct closeout currently has external-memory smoke coverage only; internal-memory semantics are intentionally not covered because the command is external-ledger focused.
 
 ### Docs References
 
@@ -44,8 +44,8 @@ No external documentation is needed for this standard-library test.
 | Finding                                                                                                                                                                                                                                                                                                                           | Citations            | Source Path                                                                                           |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------------------------------------------------------------------------------- |
 | The test module imports the C-10 and C-11 helpers beside the C-09 helper and creates minimal file-level onboarding fixtures for adoption and carryover checks.                                                                                                                                                                    | L41-L61; L88-L106    | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
-| The shared integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests.                                                                                                                                        | L203-L233            | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
-| Shared-memory start blocks dirty source memory repos before worktree creation.                                                                                                                                                                                                                                                    | L320-L349            | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
+| The common integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests.                                                                                                                                        | L203-L233            | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
+| External-memory start blocks dirty source memory repos before worktree creation.                                                                                                                                                                                                                                                    | L320-L349            | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 | Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading.                                                                                                                                                    | L395-L430            | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 | Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, missing onboarding blocking, and dirty closed contracts reporting `commit-approval-pending`.                 | L433-L643            | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
 | Direct closeout tests create real current-branch code and memory repos, pass `code_repository_name` and `code_repository_root` through CLI-style namespaces, check dry-run preview without mutation, check code-first onboarding metadata refresh and ledger update, and verify missing onboarding blocks before the code commit. | L182-L201; L546-L633 | [test_worktree_support.py](agents-remember-md/skills/U-01-core-skills/tests/test_worktree_support.py) |
@@ -73,11 +73,11 @@ No sibling repository evidence is needed for the test itself.
 - 2026-05-10T01:55: Updated after adding closeout metadata refresh and missing-onboarding regression coverage.
 - 2026-05-10T01:19: Updated after adding closeout commit-approval preview and approval-note tests.
 - 2026-05-10T01:04: Updated after adding direct contract-path status coverage.
-- 2026-05-10T00:56: Updated after adding dirty shared-memory start blocking and blocked integration status assertions.
+- 2026-05-10T00:56: Updated after adding dirty external-memory start blocking and blocked integration status assertions.
 - 2026-05-10T00:47: Updated after adding wrapper task-root assertions and C-09 cleanup lifecycle tests.
 - 2026-05-10T00:36: Refreshed verification metadata after integration tests landed on main and removed a stale task-artifact reference.
 - 2026-05-09T23:55: Updated coverage summary after adding C-09 integration fast-forward, replay, and conflict-blocking tests.
 - 2026-05-09T23:22: Updated coverage summary after adding temp-root drift report path assertions.
 - 2026-05-09T21:59: Created onboarding for the worktree-support smoke tests.
-- 2026-05-09T22:10: Updated test coverage summary for malformed metadata, branch-mismatch blocking, compatible shared-memory reporting, internal memory reporting, and cross-repo v2 include states.
+- 2026-05-09T22:10: Updated test coverage summary for malformed metadata, branch-mismatch blocking, compatible external-memory reporting, internal memory reporting, and cross-repo v2 include states.
 - 2026-05-09T22:46: Updated coverage summary for C-10 adoption status, drift blocking, and ledger creation tests.

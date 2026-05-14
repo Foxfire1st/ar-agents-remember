@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py` |
 | doc_type               | `file-level-onboarding`                                                                                     |
 | lastUpdated            | 2026-05-12T10:59                                                                                            |
-| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07`                                                                  |
-| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                                                                  |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
@@ -17,11 +17,11 @@
 
 ### Logic
 
-The script defines dataclasses for storage, cross-repo entries, coordination selection, and coordination context; parses JSON-first settings and Markdown content; detects internal or shared selection; resolves memory, coordination, and temporary artifact roots; uses coordination-root onboarding when memory-root onboarding is absent; loads task contract facts when present; checks current wrapper task roots before persisted `*-ar` roots when resolving by task name; resolves branch-gated cross-repo entries using actual checkout branches plus ledger commit metadata; and exposes a CLI.
+The script defines dataclasses for storage, cross-repo entries, coordination selection, and coordination context; parses JSON-first settings and Markdown content; detects internal or external selection; resolves memory, coordination, and temporary artifact roots; uses coordination-root onboarding when memory-root onboarding is absent; loads task contract facts when present; checks current wrapper task roots before persisted `*-ar` roots when resolving by task name; resolves branch-gated cross-repo entries using actual checkout branches plus ledger commit metadata; and exposes a CLI.
 
 ### Conventions
 
-All paths are normalized for portable output. The helper prefers explicit inputs, then shared settings, then internal fallback. It keeps path eligibility and storage mode separate, exposes `code_repository_name` and `code_repository_root` as the resolver-facing code repository identity, and exposes `temp_root` as the coordination-local place for non-durable work artifacts.
+All paths are normalized for portable output. The helper prefers explicit inputs, then coordinator settings, then internal fallback. It keeps path eligibility and storage mode separate, exposes `code_repository_name` and `code_repository_root` as the resolver-facing code repository identity, and exposes `temp_root` as the coordination-local place for non-durable work artifacts.
 
 ### Invariants And Boundaries
 
@@ -54,7 +54,7 @@ The implementation is the authoritative source for current resolver behavior.
 
 ## Cross-Repo References
 
-The helper can resolve sibling repositories selected by shared settings, but current implementation evidence lives in this repo.
+The helper can resolve sibling repositories selected by coordinator settings, but current implementation evidence lives in this repo.
 
 | Finding                                                                       | Citations | Source Path |
 | ----------------------------------------------------------------------------- | --------- | ----------- |

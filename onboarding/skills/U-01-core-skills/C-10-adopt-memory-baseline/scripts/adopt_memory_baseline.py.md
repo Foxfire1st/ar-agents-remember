@@ -6,18 +6,18 @@
 | path                   | `skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py` |
 | doc_type               | `file-level-onboarding`                                                               |
 | lastUpdated            | 2026-05-12T10:59                                                                      |
-| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07`                                            |
-| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                                            |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
-`adopt_memory_baseline.py` is the C-10 command helper. It lets a developer ask whether existing shared-memory onboarding can become the first `memory.md` baseline, then performs that adoption only when the ledger is absent and drift is either clean or explicitly accepted.
+`adopt_memory_baseline.py` is the C-10 command helper. It lets a developer ask whether existing external-memory onboarding can become the first `memory.md` baseline, then performs that adoption only when the ledger is absent and drift is either clean or explicitly accepted.
 
 ## Code Commentary
 
 ### Logic
 
-The script dynamically loads C-08, C-02, and C-09 so it can reuse the active resolver, drift classifier, and bootstrap behavior without duplicating their logic. `status` resolves context through `code_repository_name` or `code_repository_root`, runs drift, writes a report through C-02's `temp_root`-based report resolver by default, and prints a JSON payload with topology, roots, drift counts, and ledger status. Its C-02 report resolver call passes `context.memory_root` so explicit adoption report paths under the durable memory repo are redirected back to coordination temp. `adopt` requires shared topology, stops when a ledger already exists, exits with code 2 when actionable drift is present without `--accept-drift`, supports `--dry-run`, and otherwise creates a default adoption contract before calling C-09 `bootstrap_memory_repo`.
+The script dynamically loads C-08, C-02, and C-09 so it can reuse the active resolver, drift classifier, and bootstrap behavior without duplicating their logic. `status` resolves context through `code_repository_name` or `code_repository_root`, runs drift, writes a report through C-02's `temp_root`-based report resolver by default, and prints a JSON payload with topology, roots, drift counts, and ledger status. Its C-02 report resolver call passes `context.memory_root` so explicit adoption report paths under the durable memory repo are redirected back to coordination temp. `adopt` requires external topology, stops when a ledger already exists, exits with code 2 when actionable drift is present without `--accept-drift`, supports `--dry-run`, and otherwise creates a default adoption contract before calling C-09 `bootstrap_memory_repo`.
 
 ### Conventions
 
@@ -47,7 +47,7 @@ The helper coordinates three existing core packages instead of becoming a fourth
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | The script loads the resolver, drift checker, worktree manager, memory ledger helper, and worktree contract helper directly from the core skill tree.                                                                 | L16-L25; L28-L40     | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
 | Drift classification writes a report through C-02's path resolver with the resolved memory root, then contributes counts/actionable rows plus `code_repository_name` and `code_repository_root` to the state payload. | L53-L67; L103-L123   | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
-| Adoption requires shared topology, blocks actionable drift unless accepted, supports dry run, and delegates baseline creation to C-09.                                                                                | L135-L176; L198-L202 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
+| Adoption requires external topology, blocks actionable drift unless accepted, supports dry run, and delegates baseline creation to C-09.                                                                                | L135-L176; L198-L202 | [adopt_memory_baseline.py](agents-remember-md/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
 | C-09 bootstrap refuses to overwrite an existing ledger, initializes Git identity when needed, preserves empty docs with `.gitkeep`, and writes the initial ledger.                                                    | L97-L105; L397-L464  | [git_worktree_manager.py](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py)    |
 
 ## Cross-Repo References

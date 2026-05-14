@@ -6,18 +6,18 @@
 | path                   | `skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-05-12T18:51+02:00                                        |
-| lastVerifiedCommitHash | `3eb9e862887736f0a488ec8144683fb22bb35b16`                    |
-| lastVerifiedCommitDate | 2026-05-12T02:01:56+02:00                                     |
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                    |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
-This skill documents the ergonomic adoption path for existing shared-memory onboarding that predates `memory.md`. It tells agents how to inspect that onboarding, surface drift, and create the first ledgered baseline only after the developer has accepted the trust decision.
+This skill documents the ergonomic adoption path for existing external-memory onboarding that predates `memory.md`. It tells agents how to inspect that onboarding, surface drift, and create the first ledgered baseline only after the developer has accepted the trust decision.
 
 ## Code Commentary
 
 ### Logic
 
-The skill routes users through `status` before `adopt`. The workflow resolves the code repository with C-08 using `--code-repository-name` or `--code-repository-root`, runs C-02 drift classification with the reusable report under C-08's resolved temp root by default, checks for an existing ledger, blocks actionable drift unless `--accept-drift` is present, and then delegates the actual shared-memory bootstrap and `memory.md` creation to C-09.
+The skill routes users through `status` before `adopt`. The workflow resolves the code repository with C-08 using `--code-repository-name` or `--code-repository-root`, runs C-02 drift classification with the reusable report under C-08's resolved temp root by default, checks for an existing ledger, blocks actionable drift unless `--accept-drift` is present, and then delegates the actual external-memory bootstrap and `memory.md` creation to C-09.
 
 ### Conventions
 
@@ -25,7 +25,7 @@ The output is state-oriented: `ready`, `blocked-drift`, `already-ledgered`, `ado
 
 ### Invariants And Boundaries
 
-C-10 may create the initial ledgered shared-memory baseline through C-09, but it must not overwrite an existing `memory.md` and must not update onboarding content. C-05 remains the refresh path for stale or incomplete onboarding.
+C-10 may create the initial ledgered external-memory baseline through C-09, but it must not overwrite an existing `memory.md` and must not update onboarding content. C-05 remains the refresh path for stale or incomplete onboarding.
 
 ### Todos
 

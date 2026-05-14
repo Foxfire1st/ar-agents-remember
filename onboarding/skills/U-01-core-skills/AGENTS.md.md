@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/AGENTS.md`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-12T11:36                           |
-| lastVerifiedCommitHash | `3274222c6f818f2241073eecd351cc6f6cb43e07` |
-| lastVerifiedCommitDate | 2026-05-12T11:38:46+02:00|
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a` |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 

@@ -6,12 +6,12 @@
 | path                   | `skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                                                |
 | lastUpdated            | 2026-05-10T01:19                                                       |
-| lastVerifiedCommitHash | `584f15fb1393d32728daff6e3ceef7a15ac99d6e`                             |
-| lastVerifiedCommitDate | 2026-05-10T01:36                                                       |
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                             |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
-`worktree_contract.py` is the shared parser and writer for C-09 task contracts.
+`worktree_contract.py` is the common parser and writer for C-09 task contracts.
 
 ## Code Commentary
 
@@ -25,7 +25,7 @@ Task wrapper folders use `ar-coordination/tasks/<repo-name>/<task-name>/` and co
 
 ### Invariants And Boundaries
 
-Shared-memory contracts must include memory repo, memory worktree, and ledger paths. Disabled-memory contracts must not invent fake memory paths. Integration state must remain parse-compatible with older contracts that only had closeout cleanup. Commit approval notes are optional for older contracts but should be written by new closeouts. Current task roots should not append `-ar`; that suffix belongs to worktree groups and legacy task-root lookup only.
+External-memory contracts must include memory repo, memory worktree, and ledger paths. Disabled-memory contracts must not invent fake memory paths. Integration state must remain parse-compatible with older contracts that only had closeout cleanup. Commit approval notes are optional for older contracts but should be written by new closeouts. Current task roots should not append `-ar`; that suffix belongs to worktree groups and legacy task-root lookup only.
 
 ### Todos
 
@@ -43,7 +43,7 @@ No external documentation is needed; this is repository-local standard-library l
 
 | Finding                                                                                                                                                                                            | Citations | Source Path                                                                                                     |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------- |
-| `WorktreeContract` records task identity, workflow, coordination, code, shared memory, review, commit approval note, closeout, integration, and cleanup state.                                     | L23-L59   | [worktree_contract.py](agents-remember-md/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py) |
+| `WorktreeContract` records task identity, workflow, coordination, code, external memory, review, commit approval note, closeout, integration, and cleanup state.                                     | L23-L59   | [worktree_contract.py](agents-remember-md/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py) |
 | Current task-root helpers create wrapper folders without `-ar`, legacy helpers still list `*-ar` task folders, and worktree group helpers keep the operational `-ar` suffix.                       | L68-L97   | [worktree_contract.py](agents-remember-md/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py) |
 | Default contracts derive repo-scoped task roots, worktree groups, code worktrees, memory worktrees, and ledger paths from the coordination root.                                                   | L100-L146 | [worktree_contract.py](agents-remember-md/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py) |
 | The writer emits front matter and human-readable review, commit approval, closeout, integration, and cleanup state, including approved-for-commit, commit approval note, and landed commit fields. | L169-L268 | [worktree_contract.py](agents-remember-md/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py) |

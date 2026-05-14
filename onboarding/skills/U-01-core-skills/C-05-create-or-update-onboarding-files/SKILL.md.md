@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
 | lastUpdated            | 2026-05-14T18:00+02:00                                                    |
-| lastVerifiedCommitHash | `317503210bc959ec67286551e262de787548321b`                                |
-| lastVerifiedCommitDate | 2026-05-14T18:37:02+02:00|
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                                |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
@@ -46,7 +46,7 @@ C-05 is the content-update counterpart to C-02's detection.
 | Finding                                                                                                  | Citations | Source Path                                                                                                 |
 | -------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
 | Routing sends file-level onboarding and repo-level entity catalog work to different workflows, with inline adapter additions for file-level onboarding. | L19-L31 | [C-05 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
-| Shared placement rules now include route-local `overview.md` files under mirrored source folders and require file-level onboarding to record `governingOverview` when available. | L33-L51 | [C-05 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
+| Sidecar placement rules now include route-local `overview.md` files under mirrored source folders and require file-level onboarding to record `governingOverview` when available. | L33-L51 | [C-05 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
 | Quick rules require file-level onboarding to stay self-sufficient, link to the nearest governing overview, preserve reference explanations, check reference health, and keep update history append-only. | L53-L67 | [C-05 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
 | Source discovery must start from C-08-resolved registries but cite actual evidence, not `sources.md`, and route same-repo facts to `Repo-Internal References`. | L69-L79 | [C-05 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
 | Reference and lifecycle rules require verified links, correct bucket selection, metadata refresh, and mirrored handling when code moves. | L81-L110 | [C-05 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |

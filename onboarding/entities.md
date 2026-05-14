@@ -4,7 +4,7 @@
 | ----------- | --------------------- |
 | repository  | agents-remember-md    |
 | doc_type    | `repo-entity-catalog` |
-| lastUpdated | 2026-05-12T10:59      |
+| lastUpdated | 2026-05-14T20:00      |
 | status      | active                |
 
 ## Purpose
@@ -21,7 +21,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Represents In Reality        | A durable unit of repository knowledge that can be retrieved and verified before an agent relies on it.                                                                                                                                                                                                                              |
 | Description                  | File-level onboarding mirrors one concrete source file; repo-level catalogs document recurring entities.                                                                                                                                                                                                                             |
 | Canonical Source Of Truth    | C-05 onboarding maintenance rules and the generated onboarding files under the resolved onboarding root.                                                                                                                                                                                                                             |
-| Current Naming Drift         | Legacy shared-root onboarding still exists for migration, while current internal topology uses `ar-memory/` as durable memory.                                                                                                                                                                                                       |
+| Current Naming Drift         | None recorded after the external-memory terminology alignment; internal memory uses `ar-memory/`, while external memory uses `ar-coordination/memory-repos/ar-<repo>/`.                                                                                                                                                                                                       |
 | Key Identifiers              | `repository`, `path`, `doc_type`, `lastVerifiedCommitHash`, `lastVerifiedCommitDate`.                                                                                                                                                                                                                                                |
 | Parent / Child Relationships | Lives under the onboarding root returned by C-08. File-level units mirror repo-relative source paths.                                                                                                                                                                                                                                |
 | Often Confused With          | Task artifacts, roadmap specs, source registries, and temporary drift reports.                                                                                                                                                                                                                                                       |
@@ -51,7 +51,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Represents In Reality        | Include/exclude rules that decide which source paths and file types are eligible for onboarding.                                                                                                                                              |
 | Description                  | Path rules are parsed from JSON-first settings where possible and are evaluated separately from storage mode.                                                                                                                                 |
 | Canonical Source Of Truth    | C-08 settings parser plus README storage guidance.                                                                                                                                                                                            |
-| Current Naming Drift         | Shared settings scope path rules per repository; unscoped rules can accidentally read as global defaults.                                                                                                                                     |
+| Current Naming Drift         | Coordinator and memory-repo settings scope path rules per repository; unscoped rules can accidentally read as global defaults.                                                                                                                |
 | Key Identifiers              | `path`, `include.paths`, `include.fileTypes`, `exclude.paths`, `exclude.fileTypes`, `storage`.                                                                                                                                                |
 | Parent / Child Relationships | Belongs to coordination context storage settings and influences C-02 classification.                                                                                                                                                          |
 | Often Confused With          | Storage mode; storage decides where artifacts live, path rules decide eligibility.                                                                                                                                                            |
@@ -86,7 +86,7 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Parent / Child Relationships | File-level units complement repo overview and entity catalog.                                                                                                                                                                                                                     |
 | Often Confused With          | Component overviews or task-local findings.                                                                                                                                                                                                                                       |
 | Source References            | [file-level workflow](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) L48-L82; [C-05 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) L51-L64 |
-| Migration Notes              | The content model should survive storage changes from sidecar to inline or shared roots.                                                                                                                                                                                          |
+| Migration Notes              | The content model should survive storage changes from sidecar to inline, and from internal-memory roots to external-memory roots.                                                                                                                                                |
 
 ### Light Task Artifact
 
@@ -103,17 +103,17 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Source References            | [W-02 SKILL.md](agents-remember-md/skills/W-02-light-task-workflow/SKILL.md) L25-L34; [workflow.md](agents-remember-md/skills/W-02-light-task-workflow/workflow.md) L101-L139; [template.md](agents-remember-md/skills/W-02-light-task-workflow/template.md) L8-L86 |
 | Migration Notes              | Worktree support should keep task artifacts as planning state, not durable current-state onboarding.                                                                                                                                                                |
 
-### Shared Memory Ledger
+### External Memory Ledger
 
 | Field                        | Value                                                                                                                                                                   |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Category                     | Memory compatibility artifact                                                                                                                                           |
-| Represents In Reality        | The `memory.md` mapping between code commits and shared memory commits.                                                                                                 |
+| Represents In Reality        | The `memory.md` mapping between code commits and external memory commits.                                                                                                 |
 | Description                  | The implemented helper parses and writes a fenced `json ar-memory-ledger` metadata block plus a newest-first two-column table that maps code commits to memory commits. |
-| Canonical Source Of Truth    | `_shared/agents_remember/memory_ledger.py` plus the worktree/shared-memory design spec.                                                                                 |
-| Current Naming Drift         | The parser/writer exists in `_shared/agents_remember/memory_ledger.py`; real shared memory repo bootstraps are still operationally new.                                 |
+| Canonical Source Of Truth    | `_shared/agents_remember/memory_ledger.py` plus the worktree/external-memory design spec.                                                                                 |
+| Current Naming Drift         | The parser/writer exists in `_shared/agents_remember/memory_ledger.py`; real external memory repo bootstraps are still operationally new.                                 |
 | Key Identifiers              | `schema`, `repoName`, `lastVerifiedCodeCommit`, `lastMemoryContentCommit`, table rows.                                                                                  |
-| Parent / Child Relationships | Belongs to one shared memory repo and is consumed by C-09 and cross-repo resolution.                                                                                    |
+| Parent / Child Relationships | Belongs to one external memory repo and is consumed by C-09 and cross-repo resolution.                                                                                    |
 | Often Confused With          | Drift report or task contract.                                                                                                                                          |
 | Source References            | [worktree design spec](agents-remember-md/roadmap/agents-remember-worktree-memory-final-design-spec.md) L451-L557                                                       |
 | Migration Notes              | Git fixture coverage is still needed for full bootstrap and closeout integration beyond parser-level tests.                                                             |
@@ -122,9 +122,9 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 | Field                        | Value                                                                                                                                                                                                                                                         |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Category                     | Shared-memory migration operation                                                                                                                                                                                                                             |
-| Represents In Reality        | The explicit one-time conversion of existing shared-memory onboarding into the first ledgered `memory.md` baseline.                                                                                                                                           |
-| Description                  | C-10 resolves the shared context, runs C-02 drift, reports ledger status, blocks actionable drift unless the developer accepts it, and then delegates Git initialization and ledger creation to C-09.                                                         |
+| Category                     | External-memory migration operation                                                                                                                                                                                                                             |
+| Represents In Reality        | The explicit one-time conversion of existing external-memory onboarding into the first ledgered `memory.md` baseline.                                                                                                                                           |
+| Description                  | C-10 resolves the external-memory context, runs C-02 drift, reports ledger status, blocks actionable drift unless the developer accepts it, and then delegates Git initialization and ledger creation to C-09.                                                |
 | Canonical Source Of Truth    | `C-10-adopt-memory-baseline` skill and `adopt_memory_baseline.py`.                                                                                                                                                                                            |
 | Current Naming Drift         | This is not onboarding refresh. It is ledger adoption for onboarding the developer already considers factual enough to trust.                                                                                                                                 |
 | Key Identifiers              | `status`, `adopt`, `--accept-drift`, `ready`, `blocked-drift`, `already-ledgered`, `adopted`, `would-adopt`, `memory.md`.                                                                                                                                     |
@@ -214,13 +214,13 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Developer decision | Current onboarding is either refreshed through C-05 or explicitly accepted despite drift.               |
 | C-10 command       | `status` reports drift and ledger state; `adopt` creates the baseline only when allowed.                |
 | C-09 mutation      | Bootstrap commits current memory content and writes the initial `memory.md`.                            |
-| Future worktrees   | C-09 can use the ledger to decide whether shared memory is compatible with a selected code base commit. |
+| Future worktrees   | C-09 can use the ledger to decide whether external memory is compatible with a selected code base commit. |
 
 ### Worktree Contract
 
 | Layer             | Representation                                                  |
 | ----------------- | --------------------------------------------------------------- |
-| Current repo      | Shared parser/writer and C-09 command consumer.                 |
+| Current repo      | Common parser/writer and C-09 command consumer.                 |
 | Local coordinator | `ar-coordination/tasks/<repo-name>/<task-name>-ar/contract.md`. |
 | C-08              | Facts-only contract reader.                                     |
 | C-09              | Creator/updater and lifecycle owner.                            |
@@ -242,7 +242,8 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 
 ## Update History
 
-- 2026-05-12T10:59: Updated the shared memory ledger entity after branch fields were removed from canonical ledger metadata.
+- 2026-05-14T20:00: Updated entity terminology after the alpha model switched to external-memory and C-05 renamed non-inline onboarding storage to sidecar onboarding.
+- 2026-05-12T10:59: Updated the external memory ledger entity after branch fields were removed from canonical ledger metadata.
 - 2026-05-09T23:55: Added worktree integration as a current lifecycle entity and updated contract fields for integration commits.
 - 2026-05-11T19:01: Renamed the resolver entity to coordination context after C-08 moved its semantic API to coordination terminology.
 - 2026-05-09T23:22: Updated coordination context and drift report entities after C-08 added `temp_root` and C-02 moved reports under `temp/drift-reports`.

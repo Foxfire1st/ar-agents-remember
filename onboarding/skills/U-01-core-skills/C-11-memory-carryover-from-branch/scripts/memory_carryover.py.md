@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/C-11-memory-carryover-from-branch/scripts/memory_carryover.py` |
 | doc_type               | `file-level-onboarding`                                                                 |
 | lastUpdated            | 2026-05-11T19:42                                                                        |
-| lastVerifiedCommitHash | `aa85d3862bf21fed791e3170e6957f9288c319e8`                                              |
-| lastVerifiedCommitDate | 2026-05-11T19:32                                                                        |
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                                              |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 

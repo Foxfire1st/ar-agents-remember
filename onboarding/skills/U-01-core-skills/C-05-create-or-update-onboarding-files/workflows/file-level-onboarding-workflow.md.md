@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-14T18:00+02:00                     |
-| lastVerifiedCommitHash | `317503210bc959ec67286551e262de787548321b` |
-| lastVerifiedCommitDate | 2026-05-14T18:37:02+02:00|
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a` |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
@@ -21,7 +21,7 @@ The workflow selects external sidecar or inline storage, enforces metadata and r
 
 ### Conventions
 
-External onboarding mirrors the repo-relative source path under the onboarding root and appends `.md`. The required sections now include metadata with `governingOverview`, `## Governing Overview`, purpose, code commentary, repo-internal references, cross-repo references, and update history, with docs references under code commentary.
+Sidecar onboarding mirrors the repo-relative source path under the onboarding root and appends `.md`. The required sections now include metadata with `governingOverview`, `## Governing Overview`, purpose, code commentary, repo-internal references, cross-repo references, and update history, with docs references under code commentary.
 
 ### Invariants And Boundaries
 

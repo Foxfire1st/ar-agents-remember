@@ -6,12 +6,12 @@
 | path                   | `system/examples/memory-repo/settings.md`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-13T13:38                           |
-| lastVerifiedCommitHash | `6d413269e6f3b0317829def3b5c77b11631285ac` |
-| lastVerifiedCommitDate | 2026-05-13T13:50:13+02:00                  |
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a` |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
-This file is the human-facing settings example for a repo-local or shared memory layer.
+This file is the human-facing settings example for a repo-local or external memory layer.
 
 ## Code Commentary
 
@@ -43,7 +43,7 @@ No external documentation is needed.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The memory settings example identifies internal and shared memory-layer locations. | L1-L11 | [system/examples/memory-repo/settings.md](agents-remember-md/system/examples/memory-repo/settings.md) |
+| The memory settings example identifies internal and external memory-layer locations. | L1-L11 | [system/examples/memory-repo/settings.md](agents-remember-md/system/examples/memory-repo/settings.md) |
 | The scope section lists memory-owned policy and distinguishes it from global coordinator settings. | L13-L25 | [system/examples/memory-repo/settings.md](agents-remember-md/system/examples/memory-repo/settings.md) |
 | The storage, path eligibility, and cross-repo sections describe memory-layer ownership for settings JSON policy. | L27-L44 | [system/examples/memory-repo/settings.md](agents-remember-md/system/examples/memory-repo/settings.md) |
 

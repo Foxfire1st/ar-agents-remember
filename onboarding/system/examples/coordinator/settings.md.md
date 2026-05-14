@@ -6,8 +6,8 @@
 | path                   | `system/examples/coordinator/settings.md`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-13T13:38                           |
-| lastVerifiedCommitHash | `6d413269e6f3b0317829def3b5c77b11631285ac` |
-| lastVerifiedCommitDate | 2026-05-13T13:50:13+02:00                  |
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a` |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 

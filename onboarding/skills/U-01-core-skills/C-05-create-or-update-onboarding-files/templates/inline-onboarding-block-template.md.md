@@ -41,7 +41,7 @@ No external domain documentation is needed for this repository-local template.
 
 ## Repo-Internal References
 
-Inline onboarding is the storage adapter for C-05's shared file-level content model.
+Inline onboarding is the storage adapter for C-05's common file-level content model.
 
 | Finding                                                                                                                    | Citations | Source Path                                                                                                                                                           |
 | -------------------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

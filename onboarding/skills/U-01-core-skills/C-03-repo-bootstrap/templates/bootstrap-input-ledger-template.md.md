@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md`        |
 | doc_type               | `file-level-onboarding`                                                                          |
 | lastUpdated            | 2026-05-14T18:00+02:00                                                                           |
-| lastVerifiedCommitHash | `317503210bc959ec67286551e262de787548321b`                                                                                               |
-| lastVerifiedCommitDate |                                                                                                  2026-05-14T18:37:02+02:00|
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                                                                                               |
+| lastVerifiedCommitDate |                                                                                                  2026-05-14T20:13:45+02:00|
 
 ## Purpose
 

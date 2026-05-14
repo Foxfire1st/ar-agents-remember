@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-05-12T18:51+02:00                                             |
-| lastVerifiedCommitHash | `3eb9e862887736f0a488ec8144683fb22bb35b16`                         |
-| lastVerifiedCommitDate | 2026-05-12T02:01:56+02:00                                          |
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                         |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
@@ -29,7 +29,7 @@ C-02 must stay read-only with respect to onboarding content. Any content update 
 
 ### Todos
 
-Add tests for C-02 against a migrated shared memory repo once such a fixture exists.
+Add tests for C-02 against a migrated external memory repo once such a fixture exists.
 
 ### Docs References
 

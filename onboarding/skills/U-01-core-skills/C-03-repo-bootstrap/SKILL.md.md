@@ -6,8 +6,8 @@
 | path                   | `skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-14T18:00+02:00                                 |
-| lastVerifiedCommitHash | `317503210bc959ec67286551e262de787548321b`             |
-| lastVerifiedCommitDate | 2026-05-14T18:37:02+02:00|
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`             |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
@@ -21,7 +21,7 @@ C-03 resolves context with C-08, uses the resolved onboarding root as the write 
 
 ### Conventions
 
-Internal bootstrap uses `ar-memory/`; shared bootstrap uses the selected per-repo memory repo under `ar-coordination/memory-repos/ar-<repo-name>/`, and the skill describes those repositories as shared-memory repositories. Durable route-local overview files belong in the mirrored onboarding hierarchy, while `bootstrap/` artifacts are promotion, review, and handoff artifacts.
+Internal bootstrap uses `ar-memory/`; external-memory bootstrap uses the selected per-repo memory repo under `ar-coordination/memory-repos/ar-<repo-name>/`, and the skill describes those repositories as external-memory repositories. Durable route-local overview files belong in the mirrored onboarding hierarchy, while `bootstrap/` artifacts are promotion, review, and handoff artifacts.
 
 ### Invariants And Boundaries
 

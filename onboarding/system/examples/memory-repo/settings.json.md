@@ -11,7 +11,7 @@
 
 ## Purpose
 
-This JSON example models machine-readable settings for a shared memory repo.
+This JSON example models machine-readable settings for a external memory repo.
 
 ## Code Commentary
 

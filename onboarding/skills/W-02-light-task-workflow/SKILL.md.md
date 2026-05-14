@@ -6,8 +6,8 @@
 | path                   | `skills/W-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-12T18:51+02:00                     |
-| lastVerifiedCommitHash | `3eb9e862887736f0a488ec8144683fb22bb35b16` |
-| lastVerifiedCommitDate | 2026-05-12T02:01:56+02:00                  |
+| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a` |
+| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
 
 ## Purpose
 
@@ -25,7 +25,7 @@ The skill keeps planning and implementation in one `task.md` file inside a wrapp
 
 ### Invariants And Boundaries
 
-W-02 task artifacts are planning and execution state. They can trigger onboarding updates through C-05, but they should not be treated as onboarding content. If a light task later becomes worktree-backed, C-09 stores `contract.md` beside `task.md` in the same wrapper folder. Refreshed shared-memory onboarding and ledger changes must be committed before that C-09 worktree start. Implementation approval does not authorize closeout commits; the agent must present a commit preview and wait for explicit commit approval.
+W-02 task artifacts are planning and execution state. They can trigger onboarding updates through C-05, but they should not be treated as onboarding content. If a light task later becomes worktree-backed, C-09 stores `contract.md` beside `task.md` in the same wrapper folder. Refreshed external-memory onboarding and ledger changes must be committed before that C-09 worktree start. Implementation approval does not authorize closeout commits; the agent must present a commit preview and wait for explicit commit approval.
 
 ### Todos
 
@@ -47,7 +47,7 @@ W-02 is the approved workflow used by the preliminary onboarding task and the wo
 | --- | --- | --- |
 | The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. | L25-L36 | [W-02 SKILL.md](agents-remember-md/skills/W-02-light-task-workflow/SKILL.md) |
 | Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, and waiting for commit approval before closeout commits. | L38-L52 | [W-02 SKILL.md](agents-remember-md/skills/W-02-light-task-workflow/SKILL.md) |
-| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed shared-memory baseline before C-09 start, separate commit approval before closeout commits, and no stale task state. | L64-L76 | [W-02 SKILL.md](agents-remember-md/skills/W-02-light-task-workflow/SKILL.md) |
+| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline before C-09 start, separate commit approval before closeout commits, and no stale task state. | L64-L76 | [W-02 SKILL.md](agents-remember-md/skills/W-02-light-task-workflow/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -62,6 +62,6 @@ No sibling repository evidence is needed for the current workflow skill.
 - 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `w-02-light-task-workflow` name.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` after confirming W-02 remains current after the coordination rename.
 - 2026-05-10T01:19: Updated after W-02 gained an explicit worktree-backed commit approval handoff before C-09 closeout commits.
-- 2026-05-10T00:56: Updated after adding the committed shared-memory baseline requirement before C-09 start.
+- 2026-05-10T00:56: Updated after adding the committed external-memory baseline requirement before C-09 start.
 - 2026-05-10T00:47: Updated after light tasks moved from flat task files to wrapper folders containing `task.md`.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for W-02 skill documentation.
