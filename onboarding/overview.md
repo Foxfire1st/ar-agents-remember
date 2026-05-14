@@ -41,7 +41,7 @@ workspace ar-coordination/
 | Area                 | Path                                                                                                                                                                            | Purpose                                                                                                        |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Agent doctrine       | [AGENTS.md](agents-remember-md/AGENTS.md)                                                                                                                                       | Defines high-transparency collaboration, task routing, onboarding gates, and no-code-before-approval behavior. |
-| Public documentation | [README.md](agents-remember-md/README.md)                                                                                                                                       | Explains one-to-one onboarding, setup, storage modes, agent wiring, coordination roots, and repository contents. |
+| Public documentation | [README.md](agents-remember-md/README.md) and [docs/FAQ.md](agents-remember-md/docs/FAQ.md)                                                                                       | Explains one-to-one onboarding, setup, storage modes, path-derived memory, agent wiring, coordination roots, and repository contents. |
 | Core skills          | [skills/U-01-core-skills](agents-remember-md/skills/U-01-core-skills)                                                                                                           | Resolver, drift detection, repo bootstrap, onboarding maintenance, and related support skills.                 |
 | Task workflows       | [skills/W-02-light-task-workflow](agents-remember-md/skills/W-02-light-task-workflow) and [skills/W-01-heavy-task-workflow](agents-remember-md/skills/W-01-heavy-task-workflow) | Durable task artifact workflows for medium and high-risk work.                                                 |
 | Phase skills         | [skills/P-00-creation](agents-remember-md/skills/P-00-creation) through [skills/P-99-review](agents-remember-md/skills/P-99-review)                                             | Heavy workflow phase packages and review gates.                                                                |
@@ -56,11 +56,11 @@ workspace ar-coordination/
 
 ### Core Resolver And Drift Gate
 
-C-08 resolves the active coordination context: topology, code repository, `coordination_root`, `memory_root`, onboarding/docs/system roots, settings paths, task root, temporary artifact root, contract path, worktree group, ledger path, storage settings, path rules, and branch-gated cross-repo allowances. For worktree-backed task names, it resolves current wrapper folders first and persisted `*-ar` task folders second. C-02 consumes that context and verifies file-level onboarding metadata against the current source state. Drift reports are temporary coordination artifacts under `temp_root`; even explicit report paths inside the durable memory repo should be redirected back to coordination temp.
+C-08 resolves the active coordination context: topology, code repository, `coordination_root`, `memory_root`, onboarding/docs/system roots, settings paths, task root, temporary artifact root, contract path, worktree group, ledger path, storage settings, path rules, and branch-gated cross-repo allowances. Path-rule defaults in `system/settings.json` now carry the standard generated/vendor/build/cache/IDE/env/Zone.Identifier excludes. For worktree-backed task names, C-08 resolves current wrapper folders first and persisted `*-ar` task folders second. C-02 consumes that context and verifies file-level onboarding metadata against the current source state. Drift reports are temporary coordination artifacts under `temp_root`; even explicit report paths inside the durable memory repo should be redirected back to coordination temp.
 
 ### Onboarding Maintenance
 
-C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file.
+C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file. C-05 also detects route-level create, refresh, move, and deletion cleanup cases and routes those structural changes to C-03 `existing-memory-slice-maintenance`.
 
 ### Task Workflows
 
@@ -68,7 +68,7 @@ W-02 is the compact durable-task workflow used by the current worktree-support t
 
 ### Bootstrap Memory Build
 
-C-03 now treats the root repo overview as the minimum successful bootstrap and scales through route-local overview construction pillars, evidence packs, file cards, onboarding waves, curator reviews, and handoff artifacts. Its templates live beside the skill under `skills/U-01-core-skills/C-03-repo-bootstrap/templates/` and define the shape of input ledgers, state files, coverage plans, governing route maps, overview cards, route-local overviews, docs packs, boundary packs, file cards, wave manifests, curator reviews, and final handoffs. Route-local overviews are durable memory in the mirrored onboarding hierarchy, not detached area appendices, and file-level onboarding links back to the nearest governing overview.
+C-03 now treats the root repo overview as the minimum successful bootstrap and scales through route-local overview construction pillars, evidence packs, file cards, onboarding waves, curator reviews, and handoff artifacts. Its templates live beside the skill under `skills/U-01-core-skills/C-03-repo-bootstrap/templates/` and define the shape of input ledgers, state files, coverage plans, governing route maps, overview cards, route-local overviews, docs packs, boundary packs, file cards, wave manifests, curator reviews, and final handoffs. Route-local overviews are durable memory in the mirrored onboarding hierarchy directly under the resolved onboarding root, not detached area appendices, and file-level onboarding links back to the nearest governing overview. Existing-memory slice maintenance handles added, moved, deleted, refreshed, and newly important routes without pretending the repo is blank; automated bootstrap starts after source inventory intake and stops at handoff before separate closeout approval.
 
 ### Worktree Support
 
@@ -99,8 +99,8 @@ This repository is currently selected into the workspace `C:\ew\ar-coordination`
 - Worktree-backed task workflows must stop again for explicit commit approval before C-09 closeout creates commits.
 - C-09 wraps task workflows with worktree lifecycle state and also owns direct closeout for approved current-checkout micro edits; it does not replace W-02, starts external-memory worktrees only from a clean committed memory baseline, does not commit, integrate, or clean up without the relevant explicit approval, refreshes affected onboarding metadata between code and memory commits during external-memory closeout, and runs cleanup only after successful integration.
 - C-10 is an adoption wrapper for existing external-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
-- C-03 bootstrap memory must keep durable route-local overviews in the mirrored onboarding hierarchy, use root `bootstrap/` artifacts as temporary promotion/review artifacts, keep low-confidence claims out of durable fact sections, and hand file-level onboarding semantics to C-05.
-- C-05 file-level onboarding remains strict one-to-one with source files and must not collapse file-specific facts into a generic route overview reference.
+- C-03 bootstrap memory must keep durable route-local overviews in the mirrored onboarding hierarchy under the resolved onboarding root, use root `bootstrap/` artifacts as temporary promotion/review artifacts, keep low-confidence claims out of durable fact sections, apply candidate excludes before scouting, and hand file-level onboarding semantics to C-05.
+- C-05 file-level onboarding remains strict one-to-one with source files and must not collapse file-specific facts into a generic route overview reference; structural route changes route to C-03 rather than becoming disconnected file edits.
 
 ## Glossary Terms
 
@@ -136,8 +136,8 @@ No relevant external domain documentation was found for this repository's own wo
 - The coordinator `ar-coordination/system/tools.md` currently lists checks for `resolve_auto_editor`, not this repo.
 - The current source registry is useful as a discovery index but has no direct external domain evidence for this repo's own skill/workflow mechanics.
 - External-memory onboarding for `agents-remember-md` is ledgered; future closeouts must keep the code-to-memory mapping current.
-- The current bootstrap-template expansion is pending final source commits; verification metadata for new/changed onboarding should be refreshed after the code commit lands.
+- The current bootstrap-template and FAQ path-model expansion is pending final source commits; verification metadata for new/changed onboarding should be refreshed after the code commit lands.
 
 ## Last Verified
 
-Updated 2026-05-14T20:00 after the terminology alignment replaced previous memory-mode wording with external-memory and clarified sidecar onboarding as the non-inline storage adapter. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-14T21:38 after skill frontmatter cleanup and moving the standard exclusion baseline into `settings.json` path-rule defaults while keeping the C-03 list as a settings review example. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.

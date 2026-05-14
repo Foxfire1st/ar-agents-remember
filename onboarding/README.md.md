@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-13T13:38                           |
-| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a` |
-| lastVerifiedCommitDate | 2026-05-14T20:13:45+02:00|
+| lastUpdated            | 2026-05-14T21:38+02:00                     |
+| lastVerifiedCommitHash | `4a7c82ddab26013f0cad740227b6896f9bc41aed` |
+| lastVerifiedCommitDate | 2026-05-14T21:53:38+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The README introduces the memory model first, then explains setup, harness skill installation, storage decisions, workspace coordination behavior, active coordination context resolution, chat/worktree closeout behavior, and the available skill families. Its early "What This Looks Like" section shows the default repo-local onboarding sidecar and points to this repo's inspectable external-memory layer as an example, while `memory.md` is explained as the code-commit to memory-commit ledger. It teaches `ar-memory/` for durable internal memory, `ar-coordination/` for local coordination, names C-09 `direct-closeout` as the approved current-checkout commit sequence for small external-memory chat-mode edits, lists C-10 as the adoption path that turns existing external-memory onboarding into the first ledgered `memory.md` baseline after drift review, and now points users at folder-shaped `system/examples/` scaffolds for coordinator-global versus memory-repo-specific files.
+The README introduces the memory model first, then explains setup, harness skill installation, storage decisions, workspace coordination behavior, active coordination context resolution, chat/worktree closeout behavior, and the available skill families. Its early "What This Looks Like" section shows the default repo-local onboarding sidecar and points to this repo's inspectable external-memory layer as an example, while `memory.md` is explained as the code-commit to memory-commit ledger. It teaches `ar-memory/` for durable internal memory, `ar-coordination/` for local coordination, names C-09 `direct-closeout` as the approved current-checkout commit sequence for small external-memory chat-mode edits, lists C-10 as the adoption path that turns existing external-memory onboarding into the first ledgered `memory.md` baseline after drift review, points users at folder-shaped `system/examples/` scaffolds, and now shows standard `settings.json` path-rule excludes for generated/vendor/build/local surfaces.
 
 The setup flow now separates three paths that users often conflate: the real `agents-remember-md` checkout, the harness-visible skills folder, and the `ar-coordination` root. Harnesses that require skills in a dedicated folder use `scripts/install-skills.sh --install-root <skills-folder>` to create symlinks back to the canonical `skills/` tree. Recursive scanners such as Codex and Claude Code use the namespace tree layout, while stricter direct-folder scanners such as Hermes.md, Pi.dev, OpenClaw, Windsurf, and Cursor compatibility installs use `--layout flat` so the visible folder names match lowercase skill frontmatter names without copying canonical source files. External-mode coordination can live outside both the workspace and the checkout by setting `AR_COORDINATION_ROOT` in the checkout's `.env`.
 
@@ -59,7 +59,7 @@ The README establishes the conceptual map future tasks will repeatedly cite.
 | The working external-memory example links to the inspectable memory repo, shows the memory repo layout, and explains the `memory.md` code-to-memory ledger concept.                                                                                   | L43-L73   | [README.md](agents-remember-md/README.md) |
 | The quickstart now states that the checkout can live outside the code workspace, and the installer section explains namespace tree symlinks versus flat direct skill symlinks.                                                                                  | L104-L171 | [README.md](agents-remember-md/README.md) |
 | C-00 creates memory and coordination scaffolds, while C-03 owns initial repo onboarding.                                                                                                                                                           | L175-L203 | [README.md](agents-remember-md/README.md) |
-| Storage mode and path rules are separate concepts.                                                                                                                                                                                                 | L207-L220 | [README.md](agents-remember-md/README.md) |
+| Storage mode and path rules are separate concepts, and the README's settings examples include standard excludes for generated, vendored, build, cache, IDE, environment, generated, and Zone.Identifier paths. | L207-L258; L651-L691 | [README.md](agents-remember-md/README.md) |
 | Inline storage reuses the same file-level onboarding model, and the general wire-up flow now includes installing skills into a dedicated harness folder when required.                                                                              | L243-L256 | [README.md](agents-remember-md/README.md) |
 | The Codex section explains that `AGENTS.md` and `/` skill discovery are separate, and it documents workspace-local, external-checkout, and user-wide `install-skills.sh` calls.                                                                     | L262-L296 | [README.md](agents-remember-md/README.md) |
 | The Claude Code section separates `CLAUDE.md` instruction loading from native skill discovery, and documents `.claude/skills`, `~/.claude/skills`, external checkouts, and nested discovery through the namespace symlink.                           | L300-L338 | [README.md](agents-remember-md/README.md) |
@@ -84,6 +84,7 @@ The README explains workspace coordination use, but this file-level onboarding d
 
 ## Update History
 
+- 2026-05-14T21:38+02:00: Updated after README settings examples gained the standard path-rule exclusion baseline for generated/vendor/build/local artifacts. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-13T13:38: Updated after the README replaced top-level system examples with folder-shaped coordinator/global and memory-repo-specific scaffold examples.
 - 2026-05-12T18:57+02:00: Updated after the README added Hermes.md, Pi.dev, and OpenClaw install instructions after the Claude Code section.
 - 2026-05-12T18:51+02:00: Refreshed metadata and current README references after the install-skills guidance and harness-specific skill setup sections were added in the working tree.

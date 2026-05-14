@@ -5,23 +5,23 @@
 | repository             | agents-remember-md                                                                           |
 | path                   | `skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-handoff-template.md`         |
 | doc_type               | `file-level-onboarding`                                                                      |
-| lastUpdated            | 2026-05-14T18:00+02:00                                                                       |
-| lastVerifiedCommitHash | `317503210bc959ec67286551e262de787548321b`                                                                                           |
-| lastVerifiedCommitDate |                                                                                              2026-05-14T18:37:02+02:00|
+| lastUpdated            | 2026-05-14T21:16+02:00                                                                       |
+| lastVerifiedCommitHash | `4a7c82ddab26013f0cad740227b6896f9bc41aed`                                                                                           |
+| lastVerifiedCommitDate |                                                                                              2026-05-14T21:53:38+02:00|
 
 ## Purpose
 
-This template defines the final or pause-point bootstrap handoff artifact.
+This template defines the final or pause-point bootstrap handoff artifact, including slice maintenance results and the explicit closeout boundary.
 
 ## Code Commentary
 
 ### Logic
 
-The template records run mode, current status, completed coverage, deferred coverage, open questions, risks, completed waves, recommended next waves, developer decisions, and instructions for future agents.
+The template records run mode, current status, completed coverage, slice maintenance results, deferred coverage, open questions, risks, completed waves, recommended next waves, closeout decision status, developer decisions, and instructions for future agents.
 
 ### Conventions
 
-The handoff is a bootstrap-level artifact under `bootstrap/handoff.md`, not durable source-file onboarding. It uses concise tables so a later agent can resume without rereading every intermediate report.
+The handoff is a bootstrap-level artifact under `bootstrap/handoff.md`, not durable source-file onboarding. It uses concise tables so a later agent can resume without rereading every intermediate report, and automated bootstrap stops here before separate closeout approval.
 
 ### Invariants And Boundaries
 
@@ -44,8 +44,8 @@ No external documentation is needed for this repository-local template.
 | Finding                                                                                       | Citations | Source Path                                                                                  |
 | --------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------- |
 | The handoff template records run status and artifact coverage across root overview, plans, maps, packs, route overviews, and file onboarding. | L1-L20    | [bootstrap-handoff-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-handoff-template.md) |
-| The handoff captures trusted/deferred coverage, open questions, risks, waves, decisions, and future-agent usage order. | L22-L68   | [bootstrap-handoff-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-handoff-template.md) |
-| C-03 Phase 5 writes `bootstrap/handoff.md` from this template when pausing or completing bootstrap. | L960-L968 | [C-03 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
+| The handoff captures slice maintenance results, trusted/deferred coverage, open questions, risks, waves, closeout boundary status, decisions, and future-agent usage order. | L22-L82   | [bootstrap-handoff-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-handoff-template.md) |
+| C-03 Phase 5 writes `bootstrap/handoff.md` from this template and makes handoff the automated-bootstrap boundary before separate closeout. | L1031-L1057 | [C-03 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -57,4 +57,5 @@ No sibling repository evidence is needed for this template.
 
 ## Update History
 
+- 2026-05-14T21:16+02:00: Refreshed for existing-memory slice maintenance results and explicit handoff-before-closeout semantics. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-14T18:00+02:00: Created onboarding for the bootstrap handoff template. Verification metadata remains blank until the source file is committed.

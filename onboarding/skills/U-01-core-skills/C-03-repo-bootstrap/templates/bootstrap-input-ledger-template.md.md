@@ -5,23 +5,23 @@
 | repository             | agents-remember-md                                                                               |
 | path                   | `skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md`        |
 | doc_type               | `file-level-onboarding`                                                                          |
-| lastUpdated            | 2026-05-14T18:00+02:00                                                                           |
-| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                                                                                               |
-| lastVerifiedCommitDate |                                                                                                  2026-05-14T20:13:45+02:00|
+| lastUpdated            | 2026-05-14T21:38+02:00                                                                           |
+| lastVerifiedCommitHash | `4a7c82ddab26013f0cad740227b6896f9bc41aed`                                                                                               |
+| lastVerifiedCommitDate |                                                                                                  2026-05-14T21:53:38+02:00|
 
 ## Purpose
 
-This template defines the source-intake ledger used before bootstrap agents ask for additional sources or proceed into research.
+This template defines the source-intake ledger used before bootstrap agents ask for additional sources or proceed into research, including source deltas for existing-memory slice maintenance.
 
 ## Code Commentary
 
 ### Logic
 
-The template captures target repo, control mode, bootstrap mode, memory root, topology, branch, presented source inventory, excluded sources, weak categories, user-added sources, corrections, cross-repo context, assumptions, hard stops, and operator decision.
+The template captures target repo, control mode, bootstrap mode, memory root, onboarding root, topology, branch, source inventory gate status, presented source inventory, excluded sources, weak categories, user-added sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and operator decision.
 
 ### Conventions
 
-The ledger is the durable record of what sources were presented and accepted or rejected. It should be written after the source inventory review, before scout and deeper bootstrap work.
+The ledger is the durable record of what sources were presented and accepted or rejected. It should be written after the source inventory review, before scout and deeper bootstrap work or automated execution.
 
 ### Invariants And Boundaries
 
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                              | Citations | Source Path                                                                                      |
 | ---------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------ |
-| The input ledger records run metadata and the presented source inventory with status, planned use, and user decision. | L1-L18    | [bootstrap-input-ledger-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md) |
-| The template captures excluded sources, weak source categories, additional user sources, corrections, cross-repo context, assumptions, hard stops, and proceed/no-proceed decision. | L19-L67   | [bootstrap-input-ledger-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md) |
-| C-03 requires source inventory review to be written to `bootstrap/input-ledger.md` using this template. | L222-L258 | [C-03 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
+| The input ledger records run metadata, onboarding root, source inventory gate status, and the presented source inventory with status, planned use, and user decision. | L1-L19    | [bootstrap-input-ledger-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md) |
+| The template captures excluded sources, weak source categories, additional user sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and proceed/no-proceed decision. | L21-L100   | [bootstrap-input-ledger-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md) |
+| C-03 requires source inventory review to be written to `bootstrap/input-ledger.md` using this template before automated execution starts. | L226-L254; L548-L564 | [C-03 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -57,4 +57,6 @@ No sibling repository evidence is needed for this template.
 
 ## Update History
 
+- 2026-05-14T21:38+02:00: Refreshed after the default-exclude section became a settings path-rule review checklist instead of an independent bootstrap filter. Verification metadata remains pinned to the last committed source until closeout.
+- 2026-05-14T21:16+02:00: Refreshed for onboarding-root/source-inventory gate fields, existing-memory source deltas, and default bootstrap candidate excludes. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-14T18:00+02:00: Created onboarding for the bootstrap input ledger template. Verification metadata remains blank until the source file is committed.

@@ -28,9 +28,22 @@
           "SECURITY.md",
           "LICENSE",
           "roadmap/**",
+          "node_modules/**",
+          "vendor/**",
+          "dist/**",
+          "build/**",
+          "coverage/**",
           ".cache/**",
           ".pytest_cache/**",
-          ".venv/**"
+          ".venv/**",
+          ".idea/**",
+          ".vscode/**",
+          ".env",
+          ".env.*",
+          "**/generated/**",
+          "**/*.generated.*",
+          "**/*.Zone.Identifier",
+          "**/*:Zone.Identifier"
         ],
         "fileTypes": [
           ".gif",

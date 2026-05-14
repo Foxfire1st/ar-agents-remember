@@ -5,23 +5,23 @@
 | repository             | agents-remember-md                                                                         |
 | path                   | `skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-state-template.md`         |
 | doc_type               | `file-level-onboarding`                                                                    |
-| lastUpdated            | 2026-05-14T18:00+02:00                                                                     |
-| lastVerifiedCommitHash | `f314b0d369e7f68125670caa99986cde1328e08a`                                                                                         |
-| lastVerifiedCommitDate |                                                                                            2026-05-14T20:13:45+02:00|
+| lastUpdated            | 2026-05-14T21:16+02:00                                                                     |
+| lastVerifiedCommitHash | `4a7c82ddab26013f0cad740227b6896f9bc41aed`                                                                                         |
+| lastVerifiedCommitDate |                                                                                            2026-05-14T21:53:38+02:00|
 
 ## Purpose
 
-This template defines the persistent bootstrap state file that allows C-03 runs to pause and resume across sessions.
+This template defines the persistent bootstrap state file that allows C-03 runs to pause and resume across sessions, including existing-memory slice maintenance and the closeout boundary.
 
 ## Code Commentary
 
 ### Logic
 
-The template tracks run metadata, phase status, areas, governing routes, waves, decisions, parking lot items, blockers, deferred files, and the next recommended action.
+The template tracks run metadata, onboarding root, source inventory gate status, phase status, areas, governing routes, slice maintenance, waves, decisions, parking lot items, blockers, deferred files, closeout boundary status, and the next recommended action.
 
 ### Conventions
 
-`bootstrap/STATE.md` is read first and updated last in each bootstrap session. It is state and coordination memory for the bootstrap, not file-level onboarding.
+`bootstrap/STATE.md` is read first and updated last in each bootstrap session. It is state and coordination memory for the bootstrap, not file-level onboarding, and it records whether closeout has merely been requested after handoff.
 
 ### Invariants And Boundaries
 
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                  | Citations | Source Path                                                                                  |
 | ---------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------- |
-| The state template records bootstrap mode, memory root, branch, topology, and phase status across the full C-03 lifecycle. | L1-L29    | [bootstrap-state-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-state-template.md) |
-| The state template tracks areas, governing routes, waves, decisions, parking lot items, blockers, deferred files, and next action. | L31-L74   | [bootstrap-state-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-state-template.md) |
-| C-03 requires every bootstrap to maintain `bootstrap/STATE.md` from this template. | L385-L412 | [C-03 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
+| The state template records bootstrap mode, memory root, onboarding root, branch, topology, source inventory status, and phase status across the full C-03 lifecycle. | L1-L31    | [bootstrap-state-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-state-template.md) |
+| The state template tracks areas, governing routes, slice maintenance, waves, decisions, parking lot items, blockers, deferred files, closeout boundary status, and next action. | L33-L88   | [bootstrap-state-template.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/templates/bootstrap-state-template.md) |
+| C-03 requires every bootstrap to maintain `bootstrap/STATE.md` from this template. | L411-L438 | [C-03 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -57,4 +57,5 @@ No sibling repository evidence is needed for this template.
 
 ## Update History
 
+- 2026-05-14T21:16+02:00: Refreshed for onboarding-root/source-inventory fields, existing-memory slice maintenance state, route cleanup statuses, and the separate closeout boundary. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-14T18:00+02:00: Created onboarding for the bootstrap state template. Verification metadata remains blank until the source file is committed.
