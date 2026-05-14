@@ -5,70 +5,73 @@
 | repository             | agents-remember-md                         |
 | path                   | `system/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-13T19:11                           |
-| lastVerifiedCommitHash | `522d5a2bdc98f7058eeac5a95ee0e67aadfbf719` |
-| lastVerifiedCommitDate | 2026-05-13T19:14:23+02:00|
+| lastUpdated            | 2026-05-15T00:38+02:00                     |
+| lastVerifiedCommitHash | `3a5e72d961b489a7ebb2071e73d0af2247d0ca34` |
+| lastVerifiedCommitDate | 2026-05-15T00:52:32+02:00|
 
 ## Purpose
 
-This file is the installable coordinator-level `AGENTS.md` template for an
-`ar-coordination` runtime. It tells agents how to route from the coordinator
-into repository-specific memory and which coordinator files carry global
-instructions, tools, sources, and layout hints.
+This file is the package-owned template for the installed coordinator root
+`AGENTS.md`. It is intended to land at `ar-coordination/AGENTS.md` after the
+future runtime install layout is implemented.
 
 ## Code Commentary
 
 ### Logic
 
-The file identifies the coordinator as workspace-wide Agents Remember state,
-then requires agents to resolve the active repository context with C-08 before
-using tasks, worktrees, notes, docs, or memory repos. Its routing section points
-agents to coordinator-level settings, tools, and sources while preserving the
-boundary that repository-specific rules belong in the selected memory layer.
+The template combines the checkout's task-format routing with coordinator
+runtime guidance. It requires agents to choose Chat, W-02, or W-01 before
+changing code, resolve active repository context with C-08 before trusting
+memory or task surfaces, use coordinator `system/*` files for workspace-wide
+defaults, and prefer the resolved memory layer when repository-specific guidance
+is more restrictive.
 
 ### Conventions
 
-Coordinator guidance is treated as a default layer. Once C-08 resolves a
-repository memory root, agents should read that memory layer's `AGENTS.md` and
-system files for more specific repository behavior.
+The coordinator root is a workspace-wide default layer. It may direct agents to
+global settings, tools, and sources, but repository-specific rules belong in the
+resolved memory layer. Memory-layer settings and coding guidelines are listed
+as read-first surfaces once C-08 identifies the target repository.
 
 ### Invariants And Boundaries
 
-The coordinator file must not become a place for repository-specific policy. It
-also preserves workflow approval boundaries by forbidding protected-branch
-movement and worktree lifecycle changes unless the selected workflow has granted
-the required approvals.
+The installed coordinator root template must not become a per-repository policy
+file. It also preserves workflow approval boundaries by forbidding protected
+branch movement and worktree lifecycle operations unless the selected workflow
+has granted the required approvals.
 
 ### Todos
 
-None.
+Refresh verification metadata after the current `AGENTS.md` source reshuffle is
+committed.
 
 ### Docs References
 
 No external documentation is needed for this repository-local template.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+| Finding                                   | Citations | Source Path |
+| ----------------------------------------- | --------- | ----------- |
+| No relevant external documentation found. | n/a       | n/a         |
 
 ## Repo-Internal References
 
 This onboarding is backed by the source template itself.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The template defines the coordinator as workspace-wide Agents Remember state and requires C-08 context resolution before using coordinator task, worktree, note, doc, or memory surfaces. | L3-L9 | [system/agents-md-files/coordinator/AGENTS.md](agents-remember-md/system/agents-md-files/coordinator/AGENTS.md) |
-| The routing rules map coordinator settings, JSON hints, tools, and sources, while directing repository-specific rules into the resolved memory layer. | L11-L22 | [system/agents-md-files/coordinator/AGENTS.md](agents-remember-md/system/agents-md-files/coordinator/AGENTS.md) |
-| The boundary rules protect branch movement, worktree lifecycle operations, and repository-specific authority precedence. | L24-L30 | [system/agents-md-files/coordinator/AGENTS.md](agents-remember-md/system/agents-md-files/coordinator/AGENTS.md) |
+| Finding                                                                                                                       | Citations | Source Path |
+| ----------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| The template installs the same Chat/W-02/W-01 routing and workflow-before-code rule expected at a coordinator root.           | L3-L24    | [system/agents-md-files/coordinator/AGENTS.md](agents-remember-md/system/agents-md-files/coordinator/AGENTS.md) |
+| The memory and resolver sections require C-08 before relying on onboarding, task files, docs, tools, or memory-layer state.    | L28-L45   | [system/agents-md-files/coordinator/AGENTS.md](agents-remember-md/system/agents-md-files/coordinator/AGENTS.md) |
+| Coordinator defaults, memory-layer authority, branch/worktree approval boundaries, and repo-specific settings surfaces are listed in the template. | L47-L85   | [system/agents-md-files/coordinator/AGENTS.md](agents-remember-md/system/agents-md-files/coordinator/AGENTS.md) |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this package template.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| Finding                                    | Citations | Source Path |
+| ------------------------------------------ | --------- | ----------- |
+| No meaningful cross-repo references found. | n/a       | n/a         |
 
 ## Update History
 
+- 2026-05-15T00:38+02:00: Refreshed after the coordinator template became one of four runtime `AGENTS.md` templates and absorbed the checkout task routing plus coordinator and memory-layer guidance. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-13T19:11: Created onboarding for the coordinator AGENTS.md install template.

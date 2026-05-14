@@ -4,7 +4,7 @@
 | ----------- | --------------------- |
 | repository  | agents-remember-md    |
 | doc_type    | `repo-entity-catalog` |
-| lastUpdated | 2026-05-14T20:00      |
+| lastUpdated | 2026-05-15T00:38+02:00 |
 | status      | active                |
 
 ## Purpose
@@ -27,6 +27,21 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Often Confused With          | Task artifacts, roadmap specs, source registries, and temporary drift reports.                                                                                                                                                                                                                                                       |
 | Source References            | [README.md](agents-remember-md/README.md) L57-L61; [C-05 SKILL.md](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) L21-L33; [file-level workflow](agents-remember-md/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) L28-L59 |
 | Migration Notes              | The worktree-support stack should preserve one-to-one file-level mapping even as roots are renamed or split.                                                                                                                                                                                                                         |
+
+### Runtime AGENTS Template Package
+
+| Field                        | Value                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Category                     | Installable runtime instruction package                                                                                                                                                                                                                                                                                                                                                                           |
+| Represents In Reality        | The source-owned set of `AGENTS.md` templates that can be installed into a coordinator runtime tree.                                                                                                                                                                                                                                                                                                                |
+| Description                  | The current package lives under `system/agents-md-files/` and contains four templates: `coordinator/AGENTS.md`, `skills/AGENTS.md`, `system/AGENTS.md`, and `tasks/AGENTS.md`.                                                                                                                                                                                                                                    |
+| Canonical Source Of Truth    | The four source templates under `system/agents-md-files/` and their file-level onboarding units.                                                                                                                                                                                                                                                                                                                    |
+| Current Naming Drift         | No `workflow` or package-owned `memory-repo` `AGENTS.md` template exists after the shuffle; memory-repo instructions are owned by the individual memory repo when it is created.                                                                                                                                                                                                                                  |
+| Key Identifiers              | Source paths under `system/agents-md-files/`; intended installed destinations `ar-coordination/AGENTS.md`, `ar-coordination/skills/AGENTS.md`, `ar-coordination/system/AGENTS.md`, and `ar-coordination/tasks/AGENTS.md`.                                                                                                                                                                                           |
+| Parent / Child Relationships | Complements `system/examples/` fixtures and future runtime installer behavior; file-level onboarding mirrors each of the four templates.                                                                                                                                                                                                                                                                            |
+| Often Confused With          | The repo-root `AGENTS.md`, example memory-repo instructions, or old scattered source-tree `AGENTS.md` files.                                                                                                                                                                                                                                                                                                       |
+| Source References            | [coordinator template](agents-remember-md/system/agents-md-files/coordinator/AGENTS.md) L3-L85; [skills template](agents-remember-md/system/agents-md-files/skills/AGENTS.md) L1-L33; [system template](agents-remember-md/system/agents-md-files/system/AGENTS.md) L1-L68; [tasks template](agents-remember-md/system/agents-md-files/tasks/AGENTS.md) L1-L153 |
+| Migration Notes              | Runtime installation should copy only the four package-owned templates. Memory-repo `AGENTS.md` content should be created with the memory repo, not installed from this package.                                                                                                                                                                                                                                  |
 
 ### Coordination Context
 
@@ -189,6 +204,15 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 | Drift detection    | Metadata fields compared against Git history.                                          |
 | Agent workflow     | Read alongside source; update through C-05 when durable state changes.                 |
 
+### Runtime AGENTS Template Package
+
+| Layer              | Representation                                                                                                                       |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Repository source  | Four templates under `system/agents-md-files/{coordinator,skills,system,tasks}/AGENTS.md`.                                           |
+| Runtime install    | Intended destinations under the coordinator root, skills tree, system tree, and task tree.                                           |
+| Onboarding storage | Four mirrored file-level onboarding units under `onboarding/system/agents-md-files/`.                                                |
+| Agent workflow     | Agents read the installed templates at runtime; source changes to the templates are maintained as normal file-level onboarding units. |
+
 ### Coordination Context
 
 | Layer            | Representation                                                                   |
@@ -237,11 +261,13 @@ This catalog documents load-bearing real entities in `agents-remember-md`. It is
 ## Ownership Notes
 
 - This catalog intentionally excludes the eight worktree task files as onboarding subjects.
+- This catalog treats `system/agents-md-files/` as the package source for runtime `AGENTS.md` templates, while memory-repo `AGENTS.md` files remain memory-repo-owned.
 - Roadmap specs are cataloged only where they define active current design concepts that explain the repository's direction.
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 ## Update History
 
+- 2026-05-15T00:38+02:00: Added the runtime `AGENTS.md` template package entity after the source templates were consolidated under `system/agents-md-files/`.
 - 2026-05-14T20:00: Updated entity terminology after the alpha model switched to external-memory and C-05 renamed non-inline onboarding storage to sidecar onboarding.
 - 2026-05-12T10:59: Updated the external memory ledger entity after branch fields were removed from canonical ledger metadata.
 - 2026-05-09T23:55: Added worktree integration as a current lifecycle entity and updated contract fields for integration commits.
