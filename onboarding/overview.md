@@ -60,11 +60,15 @@ C-08 resolves the active coordination context: topology, code repository, `coord
 
 ### Onboarding Maintenance
 
-C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content.
+C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file.
 
 ### Task Workflows
 
 W-02 is the compact durable-task workflow used by the current worktree-support task stack. It creates a task wrapper folder and `task.md` once task class and naming are clear, stops for implementation approval, then treats the checklist, onboarding propagation, checks, and worktree-backed commit approval handoff as one implementation cycle. When refreshed shared-memory onboarding is part of intake, the memory content and ledger are committed before C-09 starts worktrees.
+
+### Bootstrap Memory Build
+
+C-03 now treats the root repo overview as the minimum successful bootstrap and scales through route-local overview construction pillars, evidence packs, file cards, onboarding waves, curator reviews, and handoff artifacts. Its templates live beside the skill under `skills/U-01-core-skills/C-03-repo-bootstrap/templates/` and define the shape of input ledgers, state files, coverage plans, governing route maps, overview cards, route-local overviews, docs packs, boundary packs, file cards, wave manifests, curator reviews, and final handoffs. Route-local overviews are durable memory in the mirrored onboarding hierarchy, not detached area appendices, and file-level onboarding links back to the nearest governing overview.
 
 ### Worktree Support
 
@@ -95,6 +99,8 @@ This repository is currently selected into the shared `C:\ew\ar-coordination` co
 - Worktree-backed task workflows must stop again for explicit commit approval before C-09 closeout creates commits.
 - C-09 wraps task workflows with worktree lifecycle state and also owns direct closeout for approved current-checkout micro edits; it does not replace W-02, starts shared-memory worktrees only from a clean committed memory baseline, does not commit, integrate, or clean up without the relevant explicit approval, refreshes affected onboarding metadata between code and memory commits during shared-memory closeout, and runs cleanup only after successful integration.
 - C-10 is an adoption wrapper for existing shared-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
+- C-03 bootstrap memory must keep durable route-local overviews in the mirrored onboarding hierarchy, use root `bootstrap/` artifacts as temporary promotion/review artifacts, keep low-confidence claims out of durable fact sections, and hand file-level onboarding semantics to C-05.
+- C-05 file-level onboarding remains strict one-to-one with source files and must not collapse file-specific facts into a generic route overview reference.
 
 ## Glossary Terms
 
@@ -130,6 +136,7 @@ No relevant external domain documentation was found for this repository's own wo
 - The shared `ar-coordination/system/tools.md` currently lists checks for `resolve_auto_editor`, not this repo.
 - The current source registry is useful as a discovery index but has no direct external domain evidence for this repo's own skill/workflow mechanics.
 - Shared-memory onboarding for `agents-remember-md` is ledgered; future closeouts must keep the code-to-memory mapping current.
+- The current bootstrap-template expansion is pending final source commits; verification metadata for new/changed onboarding should be refreshed after the code commit lands.
 
 ## Last Verified
 
