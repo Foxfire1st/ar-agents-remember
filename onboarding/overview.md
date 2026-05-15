@@ -16,22 +16,29 @@ agents-remember-md/
     workspace doctrine, task routing, onboarding gates
   README.md
     public setup and conceptual model
-  skills/
-    W-* task workflows
-    U-* core maintenance and resolver skills
-    P-* heavy workflow phase skills
-  roadmap/
-    design specs and historical planning notes
-  system/
+  installer/
+    install-runtime.py
+  runtime/
     agents-md-files/
       coordinator/AGENTS.md
       skills/AGENTS.md
       system/AGENTS.md
       tasks/AGENTS.md
-    examples/
+    scripts/
+      install-skills.sh
+    skills/
+      W-* task workflows
+      U-* core maintenance and resolver skills
+      W-01-heavy-task-workflow/skills/P-* heavy workflow phase skills
+    system/defaults/examples/
       coordinator and memory-repo example settings, sources, and tools files
+  roadmap/
+    design specs and historical planning notes
 
 workspace ar-coordination/
+  AGENTS.md
+  scripts/
+  skills/
   memory-repos/ar-agents-remember-md/
     memory.md
     onboarding/
@@ -48,12 +55,13 @@ workspace ar-coordination/
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Agent doctrine       | [AGENTS.md](agents-remember-md/AGENTS.md)                                                                                                                                       | Defines high-transparency collaboration, task routing, onboarding gates, and no-code-before-approval behavior. |
 | Public documentation | [README.md](agents-remember-md/README.md) and [docs/FAQ.md](agents-remember-md/docs/FAQ.md)                                                                                       | Explains one-to-one onboarding, setup, storage modes, path-derived memory, agent wiring, coordination roots, and repository contents. |
-| Core skills          | [skills/U-01-core-skills](agents-remember-md/skills/U-01-core-skills)                                                                                                           | Resolver, drift detection, repo bootstrap, onboarding maintenance, and related support skills.                 |
-| Task workflows       | [skills/W-02-light-task-workflow](agents-remember-md/skills/W-02-light-task-workflow) and [skills/W-01-heavy-task-workflow](agents-remember-md/skills/W-01-heavy-task-workflow) | Durable task artifact workflows for medium and high-risk work.                                                 |
-| Phase skills         | [skills/P-00-creation](agents-remember-md/skills/P-00-creation) through [skills/P-99-review](agents-remember-md/skills/P-99-review)                                             | Heavy workflow phase packages and review gates.                                                                |
+| Runtime installer    | [installer/install-runtime.py](agents-remember-md/installer/install-runtime.py)                                                                                                     | Installs package-owned runtime assets into a target `ar-coordination` root without running repo onboarding.       |
+| Core skills          | [runtime/skills/U-01-core-skills](agents-remember-md/runtime/skills/U-01-core-skills)                                                                                                           | Resolver, drift detection, repo bootstrap, onboarding maintenance, and related support skills.                 |
+| Task workflows       | [runtime/skills/W-02-light-task-workflow](agents-remember-md/runtime/skills/W-02-light-task-workflow) and [runtime/skills/W-01-heavy-task-workflow](agents-remember-md/runtime/skills/W-01-heavy-task-workflow) | Durable task artifact workflows for medium and high-risk work.                                                 |
+| Phase skills         | [runtime/skills/W-01-heavy-task-workflow/skills/P-00-creation](agents-remember-md/runtime/skills/W-01-heavy-task-workflow/skills/P-00-creation) through [runtime/skills/W-01-heavy-task-workflow/skills/P-99-review](agents-remember-md/runtime/skills/W-01-heavy-task-workflow/skills/P-99-review) | Heavy workflow phase packages and review gates. |
 | Roadmap and specs    | [roadmap](agents-remember-md/roadmap)                                                                                                                                           | Design specs, migration notes, and historical task plans. These are references, not onboarding substitutes.    |
-| Runtime AGENTS templates | [system/agents-md-files](agents-remember-md/system/agents-md-files)                                                                                                          | Package-owned coordinator, skills, system, and tasks `AGENTS.md` templates for runtime installation.           |
-| System examples      | [system/examples](agents-remember-md/system/examples)                                                                                                                           | Example settings, sources, and tools files used as scaffolding material.                                       |
+| Runtime AGENTS templates | [runtime/agents-md-files](agents-remember-md/runtime/agents-md-files)                                                                                                        | Package-owned coordinator, skills, system, and tasks `AGENTS.md` templates for runtime installation.           |
+| System defaults      | [runtime/system/defaults/examples](agents-remember-md/runtime/system/defaults/examples)                                                                                          | Example settings, sources, and tools files used as scaffolding material.                                       |
 
 ## Functional Areas
 
@@ -63,7 +71,7 @@ workspace ar-coordination/
 
 ### Runtime AGENTS Templates
 
-`system/agents-md-files/` is the package-owned source for installed coordinator instructions. The current package has four installable templates: `coordinator/AGENTS.md` for the coordinator root, `skills/AGENTS.md` for compact C-* skill routing, `system/AGENTS.md` for the hard onboarding maintenance gate, and `tasks/AGENTS.md` for task-folder collaboration doctrine. These files replace the previously scattered source-tree `AGENTS.md` files under `skills/`, `system/`, and workflow/task locations. Memory-repo `AGENTS.md` files are not installed from this package; they belong to the individual memory repo when that repo is created.
+`runtime/agents-md-files/` is the package-owned source for installed coordinator instructions. The current package has four installable templates: `coordinator/AGENTS.md` for the coordinator root, `skills/AGENTS.md` for compact C-* skill routing, `system/AGENTS.md` for the hard onboarding maintenance gate, and `tasks/AGENTS.md` for task-folder collaboration doctrine. `installer/install-runtime.py` installs those templates to `ar-coordination/AGENTS.md`, `ar-coordination/skills/AGENTS.md`, `ar-coordination/system/AGENTS.md`, and `ar-coordination/tasks/AGENTS.md`. Memory-repo `AGENTS.md` files are not installed from this package; they belong to the individual memory repo when that repo is created.
 
 ### Core Resolver And Drift Gate
 
@@ -79,11 +87,11 @@ W-02 is the compact durable-task workflow used by the current worktree-support t
 
 ### Bootstrap Memory Build
 
-C-03 now treats the root repo overview as the minimum successful bootstrap and scales through route-local overview construction pillars, evidence packs, file cards, onboarding waves, curator reviews, and handoff artifacts. Its templates live beside the skill under `skills/U-01-core-skills/C-03-repo-bootstrap/templates/` and define the shape of input ledgers, state files, coverage plans, governing route maps, overview cards, route-local overviews, docs packs, boundary packs, file cards, wave manifests, curator reviews, and final handoffs. Route-local overviews are durable memory in the mirrored onboarding hierarchy directly under the resolved onboarding root, not detached area appendices, and file-level onboarding links back to the nearest governing overview. Existing-memory slice maintenance handles added, moved, deleted, refreshed, and newly important routes without pretending the repo is blank; automated bootstrap starts after source inventory intake and stops at handoff before separate closeout approval.
+C-03 now treats the root repo overview as the minimum successful bootstrap and scales through route-local overview construction pillars, evidence packs, file cards, onboarding waves, curator reviews, and handoff artifacts. Its templates live beside the skill under `runtime/skills/U-01-core-skills/C-03-repo-bootstrap/templates/` and define the shape of input ledgers, state files, coverage plans, governing route maps, overview cards, route-local overviews, docs packs, boundary packs, file cards, wave manifests, curator reviews, and final handoffs. Route-local overviews are durable memory in the mirrored onboarding hierarchy directly under the resolved onboarding root, not detached area appendices, and file-level onboarding links back to the nearest governing overview. Existing-memory slice maintenance handles added, moved, deleted, refreshed, and newly important routes without pretending the repo is blank; automated bootstrap starts after source inventory intake and stops at handoff before separate closeout approval.
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `bootstrap-memory`, `closeout`, `direct-closeout`, `integrate`, and `cleanup` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. C-09 external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. C-09 closeout dry-run is the non-mutating preview path before explicit commit approval, and real external-memory closeout commits code first, refreshes affected onboarding verification metadata to that new code commit, then commits memory content and ledger. Direct closeout applies that same code-then-memory-then-ledger order to approved current-checkout micro edits without creating worktree contracts.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, C-08 contract-aware facts, the C-09 `start`, `attach`, `status`, `closeout`, `direct-closeout`, `integrate`, and `cleanup` command surface, and the C-10 `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. C-00 initializes missing memory roots before C-09 worktree use. C-09 external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. C-09 closeout dry-run is the non-mutating preview path before explicit commit approval, and real external-memory closeout commits code first, refreshes affected onboarding verification metadata to that new code commit, then commits memory content and ledger. Direct closeout applies that same code-then-memory-then-ledger order to approved current-checkout micro edits without creating worktree contracts.
 
 ## Cross-Repo References
 
@@ -126,7 +134,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | worktree integration     | The approved C-09 phase that lands closed task work back onto source branches.                                | `ff-only` requires unchanged source ancestry; `replay` supports parallel non-overlapping work and blocks conflicts before main moves.               |
 | direct closeout          | The C-09 current-checkout closeout path for approved small external-memory edits.                               | It dry-runs first, then commits code, refreshes onboarding metadata, commits memory, and commits the ledger without creating worktree contracts.    |
 | memory baseline adoption | The one-time action of turning current external-memory onboarding into the first ledgered `memory.md` baseline. | C-10 checks drift first, requires explicit drift acceptance when needed, and delegates ledger creation to C-09.                                     |
-| runtime AGENTS template  | A package-owned `AGENTS.md` source under `system/agents-md-files/`.                                             | Current templates are coordinator, skills, system, and tasks; memory-repo `AGENTS.md` files are memory-repo-owned.                                  |
+| runtime AGENTS template  | A package-owned `AGENTS.md` source under `runtime/agents-md-files/`.                                             | Current templates are coordinator, skills, system, and tasks; memory-repo `AGENTS.md` files are memory-repo-owned.                                  |
 
 ## Docs References
 
@@ -140,9 +148,9 @@ No relevant external domain documentation was found for this repository's own wo
 
 | Priority | Area / Path                                                                                                               | Why Next                                                                                                            |
 | -------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| high     | [skills/U-01-core-skills/C-09-git-worktree-manager](agents-remember-md/skills/U-01-core-skills/C-09-git-worktree-manager) | External workflow metadata and richer task-intake variables are the next likely worktree lifecycle polish area.     |
-| medium   | [skills/W-01-heavy-task-workflow](agents-remember-md/skills/W-01-heavy-task-workflow)                                     | Heavy workflow docs may need a separate onboarding pass if worktree-backed task folders become common outside W-02. |
-| medium   | [system](agents-remember-md/system)                                                                                       | Add richer settings fixtures if cross-repo v2 behavior needs more than the current example files.                   |
+| high     | [runtime/skills/U-01-core-skills/C-09-git-worktree-manager](agents-remember-md/runtime/skills/U-01-core-skills/C-09-git-worktree-manager) | External workflow metadata and richer task-intake variables are the next likely worktree lifecycle polish area.     |
+| medium   | [runtime/skills/W-01-heavy-task-workflow](agents-remember-md/runtime/skills/W-01-heavy-task-workflow)                                     | Heavy workflow docs may need a separate onboarding pass if worktree-backed task folders become common outside W-02. |
+| medium   | [runtime/system/defaults](agents-remember-md/runtime/system/defaults)                                                     | Add richer settings fixtures if cross-repo v2 behavior needs more than the current example files.                   |
 
 ## Needs Verification
 

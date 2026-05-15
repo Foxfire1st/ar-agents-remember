@@ -9,9 +9,8 @@
         "paths": [
           "AGENTS.md",
           "README.md",
-          "scripts/**",
-          "skills/**",
-          "system/**"
+          "installer/**",
+          "runtime/**"
         ],
         "fileTypes": [
           ".json",
