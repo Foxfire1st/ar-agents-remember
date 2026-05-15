@@ -13,7 +13,7 @@ The current checked-in guidance distinguishes `ar-memory/` as durable internal m
 ```text
 agents-remember-md/
   AGENTS.md
-    workspace doctrine, task routing, onboarding gates
+    source checkout instructions and installed-runtime handoff
   README.md
     public setup and conceptual model
   installer/
@@ -53,7 +53,7 @@ workspace ar-coordination/
 
 | Area                 | Path                                                                                                                                                                            | Purpose                                                                                                        |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Agent doctrine       | [AGENTS.md](agents-remember-md/AGENTS.md)                                                                                                                                       | Defines high-transparency collaboration, task routing, onboarding gates, and no-code-before-approval behavior. |
+| Source checkout instructions | [AGENTS.md](agents-remember-md/AGENTS.md)                                                                                                                               | Defines how agents work on this source checkout and when to hand off to the installed runtime instructions.    |
 | Public documentation | [README.md](agents-remember-md/README.md) and [docs/FAQ.md](agents-remember-md/docs/FAQ.md)                                                                                       | Explains one-to-one onboarding, setup, storage modes, path-derived memory, agent wiring, coordination roots, and repository contents. |
 | Runtime installer    | [installer/install-runtime.py](agents-remember-md/installer/install-runtime.py)                                                                                                     | Installs package-owned runtime assets into a target `ar-coordination` root without running repo onboarding.       |
 | Core skills          | [runtime/skills/U-01-core-skills](agents-remember-md/runtime/skills/U-01-core-skills)                                                                                                           | Resolver, drift detection, repo bootstrap, onboarding maintenance, and related support skills.                 |
@@ -65,13 +65,13 @@ workspace ar-coordination/
 
 ## Functional Areas
 
-### Repository Doctrine
+### Source Checkout Contract
 
-`AGENTS.md` is the authoritative behavioral contract for agents operating in this repository. It requires explicit framing for non-trivial work, C-08 resolution plus C-02 drift detection before relying on onboarding, C-05 propagation when durable current-state knowledge changes, and C-09 direct closeout for approved small current-checkout edits in external-memory mode.
+`AGENTS.md` is the authoritative behavioral contract for agents operating on this source checkout. It now starts by separating the package source repository from the installed `ar-coordination` runtime: when the file is reached through a workspace-level pointer during sibling-repository work, agents should use the installed runtime `AGENTS.md` instead. For work on this repository itself, it keeps `agents-remember-md` as the resolver target, preserves the chat/W-02/W-01 workflow routing, requires C-08 resolution plus C-02 drift detection before relying on onboarding, and points active settings reads at the resolved memory layer rather than a root-level source checkout `system/` directory.
 
 ### Runtime AGENTS Templates
 
-`runtime/agents-md-files/` is the package-owned source for installed coordinator instructions. The current package has four installable templates: `coordinator/AGENTS.md` for the coordinator root, `skills/AGENTS.md` for compact C-* skill routing, `system/AGENTS.md` for the hard onboarding maintenance gate, and `tasks/AGENTS.md` for task-folder collaboration doctrine. `installer/install-runtime.py` installs those templates to `ar-coordination/AGENTS.md`, `ar-coordination/skills/AGENTS.md`, `ar-coordination/system/AGENTS.md`, and `ar-coordination/tasks/AGENTS.md`. Memory-repo `AGENTS.md` files are not installed from this package; they belong to the individual memory repo when that repo is created.
+`runtime/agents-md-files/` is the package-owned source for installed coordinator instructions. The current package has four installable templates: `coordinator/AGENTS.md` for the coordinator root, `skills/AGENTS.md` for compact C-* skill routing, `system/AGENTS.md` for the hard onboarding maintenance gate, and `tasks/AGENTS.md` for task-folder collaboration doctrine. `installer/install-runtime.py` installs those templates to `ar-coordination/AGENTS.md`, `ar-coordination/skills/AGENTS.md`, `ar-coordination/system/AGENTS.md`, and `ar-coordination/tasks/AGENTS.md`. Memory repos are not expected to provide a root-level `AGENTS.md`; repo-specific memory guidance lives in the memory layer's `system/*` files.
 
 ### Core Resolver And Drift Gate
 
@@ -99,7 +99,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 
 | Finding                                                                                                                                                                                                                       | Citations            | Source Path                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------------------- |
-| Workspace rules require C-08 resolution and C-02 drift detection before relying on onboarding, C-05 handles onboarding refresh when needed, and C-09 `direct-closeout` handles approved current-checkout micro-edit closeout. | L332-L338; L397-L410 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The source checkout instructions distinguish this repository from the installed runtime, hand sibling-repo work to `ar-coordination/AGENTS.md`, and keep C-08 plus C-02 as the context gate for this repo. | L1-L14; L28-L53 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | The README presents C-08 as the active context resolver and C-02 as the drift classifier rather than the topology resolver.                                                                                                   | L424-L430            | [README.md](agents-remember-md/README.md) |
 
 ## Build & Dev
@@ -120,7 +120,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 - C-10 is an adoption wrapper for existing external-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
 - C-03 bootstrap memory must keep durable route-local overviews in the mirrored onboarding hierarchy under the resolved onboarding root, use root `bootstrap/` artifacts as temporary promotion/review artifacts, keep low-confidence claims out of durable fact sections, apply candidate excludes before scouting, and hand file-level onboarding semantics to C-05.
 - C-05 file-level onboarding remains strict one-to-one with source files and must not collapse file-specific facts into a generic route overview reference; structural route changes route to C-03 rather than becoming disconnected file edits.
-- The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory-repo instructions are not installed from this package.
+- The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory repos use `system/*` files rather than a root-level `AGENTS.md`.
 
 ## Glossary Terms
 
@@ -134,7 +134,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | worktree integration     | The approved C-09 phase that lands closed task work back onto source branches.                                | `ff-only` requires unchanged source ancestry; `replay` supports parallel non-overlapping work and blocks conflicts before main moves.               |
 | direct closeout          | The C-09 current-checkout closeout path for approved small external-memory edits.                               | It dry-runs first, then commits code, refreshes onboarding metadata, commits memory, and commits the ledger without creating worktree contracts.    |
 | memory baseline adoption | The one-time action of turning current external-memory onboarding into the first ledgered `memory.md` baseline. | C-10 checks drift first, requires explicit drift acceptance when needed, and delegates ledger creation to C-09.                                     |
-| runtime AGENTS template  | A package-owned `AGENTS.md` source under `runtime/agents-md-files/`.                                             | Current templates are coordinator, skills, system, and tasks; memory-repo `AGENTS.md` files are memory-repo-owned.                                  |
+| runtime AGENTS template  | A package-owned `AGENTS.md` source under `runtime/agents-md-files/`.                                             | Current templates are coordinator, skills, system, and tasks; there is no memory-repo `AGENTS.md` template or expected memory-repo root instruction file. |
 
 ## Docs References
 
@@ -157,8 +157,8 @@ No relevant external domain documentation was found for this repository's own wo
 - The coordinator `ar-coordination/system/tools.md` currently lists checks for `resolve_auto_editor`, not this repo.
 - The current source registry is useful as a discovery index but has no direct external domain evidence for this repo's own skill/workflow mechanics.
 - External-memory onboarding for `agents-remember-md` is ledgered; future closeouts must keep the code-to-memory mapping current.
-- The current `AGENTS.md` template reshuffle is pending final source commits; verification metadata for new/changed onboarding should be refreshed after the code commit lands.
+- The current root `AGENTS.md` source-checkout reframing is pending final source commit; verification metadata for that onboarding should be refreshed after the code commit lands.
 
 ## Last Verified
 
-Updated 2026-05-15T01:07+02:00 after C-08's `task_root` contract was clarified as repo-specific when no task name is supplied and task-specific when a task or contract is supplied. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-15T04:12+02:00 after the root `AGENTS.md` contract was reframed as source-checkout instructions with an installed-runtime handoff. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.

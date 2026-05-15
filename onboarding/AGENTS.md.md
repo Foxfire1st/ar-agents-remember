@@ -5,50 +5,61 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-15T00:38+02:00                     |
-| lastVerifiedCommitHash | `3a5e72d961b489a7ebb2071e73d0af2247d0ca34` |
-| lastVerifiedCommitDate | 2026-05-15T00:52:32+02:00|
+| lastUpdated            | 2026-05-15T04:12+02:00                     |
+| lastVerifiedCommitHash | `e402e1446050a7d61f448f816395b911417a5a50` |
+| lastVerifiedCommitDate | 2026-05-15T04:31:07+02:00|
 
 ## Purpose
 
-`AGENTS.md` is the repo-root operating contract for agents working in the
-`agents-remember-md` checkout. It defines the three task/work formats, the
-workflow-before-code rule, the C-08 resolver requirement, and the coordinator
-and memory-layer settings surfaces agents should consult after context
-resolution.
+`AGENTS.md` is the repo-root operating contract for agents working on the
+`agents-remember-md` source checkout. It now explicitly distinguishes this
+source package from the installed coordination runtime and tells agents who
+arrive through a workspace-level pointer to follow the installed
+`ar-coordination/AGENTS.md` instead when they are working on a sibling
+repository.
 
 ## Code Commentary
 
 ### Logic
 
-The file routes work into Chat, W-02 Light Task, or W-01 Heavy Task based on
-task size and explicit developer intent, then blocks code changes outside the
-selected workflow. It tells agents that onboarding is companion context for
-source files and that C-08 must resolve the active memory and coordination
-context before onboarding, task files, docs, or tools are trusted. The new
-coordination and memory-layer sections fold the runtime template wording back
-into the repo-root contract so the checkout itself carries the same settings
-and authority model that the installed coordinator root will use.
+The file starts by declaring that `agents-remember-md` is source package code,
+not the live runtime after installation. It gives a fallback handoff for the
+case where a workspace root includes this file while the actual target is a
+sibling repository, then scopes normal resolver input for this checkout to
+`code_repository_name = agents-remember-md`.
+
+The task-routing section keeps the three workflow choices: default chat mode
+for small current-session edits, W-02 for durable task-file work, and W-01 only
+when the developer explicitly requests the heavy workflow. The memory section
+keeps the C-08 then C-02 gate and points agents at the resolved memory layer's
+settings, tools, sources, and optional coding guidelines rather than pretending
+the source checkout has active root-level `system/` settings.
+
+The source-layout section records the current package structure: installer,
+runtime `AGENTS.md` templates, runtime skills, runtime scripts, runtime system
+defaults, README, and roadmap. The boundaries section keeps root instructions
+scoped to source-checkout work and keeps installed coordinator instructions
+under `runtime/agents-md-files/`.
 
 ### Conventions
 
-Workflow names are stable contracts. C-* skills are core support skills, and
-W-* skills are task workflows. Coordinator settings are treated as workspace
-defaults, while memory-layer settings are repository-specific and more
-authoritative for their own code repository.
+Workflow names remain stable contracts. C-* skills are core support skills, and
+W-* skills are task workflows. Active runtime and memory settings are always
+resolved through C-08; source templates and example defaults are not treated as
+the user's live runtime configuration.
 
 ### Invariants And Boundaries
 
-Agents must choose one of the three workflow formats before changing code. C-08
-owns context resolution and returns the memory, coordination, onboarding, task,
-docs, tools, and ledger facts that downstream workflows consume. Worktree and
-branch movement remain approval-gated, and repository-specific memory-layer
-guidance wins over coordinator-wide guidance when the two conflict.
+This file should not be used as the installed coordinator entrypoint. Installed
+coordinator instructions belong in `runtime/agents-md-files/` as package-owned
+templates and in the live `ar-coordination/` tree after runtime installation.
+User-specific behavior and repo policy belong in the resolved memory layer.
+Worktree, closeout, integration, push, cleanup, and protected-branch movement
+remain approval-gated.
 
 ### Todos
 
-Refresh verification metadata after the current `AGENTS.md` source reshuffle is
-committed.
+Refresh verification metadata after this `AGENTS.md` source update is committed.
 
 ### Docs References
 
@@ -61,27 +72,29 @@ contract.
 
 ## Repo-Internal References
 
-The active repo behavior depends on the task routing, resolver contract,
-settings routing, and approval boundaries in this file.
+The active repo behavior depends on the source-checkout scope, installed-runtime
+handoff, workflow routing, resolver gate, and source-layout boundaries in this
+file.
 
-| Finding                                                                                                                               | Citations | Source Path                               |
-| ------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| Task format routing assigns Chat, W-02 Light Task, and W-01 Heavy Task by task size and explicit developer request.                   | L3-L24    | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Memory system rules define onboarding as companion context and require C-08 resolution through `code_repository_name` or root.        | L28-L45   | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Coordinator settings are workspace defaults, memory-layer settings are repository-specific, and the memory layer wins on conflicts.   | L47-L75   | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Finding                                                                                                                                        | Citations | Source Path                               |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
+| The file identifies `agents-remember-md` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Task format routing keeps chat, W-02, and W-01 as the only work formats before changing code or docs.                                          | L16-L27   | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Memory rules require C-08, then C-02, and route agents to the resolved memory layer instead of a root-level source checkout `system/` folder.   | L28-L53   | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Source-layout and boundary notes separate installer/runtime package assets from user-owned memory and installed coordinator configuration.      | L55-L75   | [AGENTS.md](agents-remember-md/AGENTS.md) |
 
 ## Cross-Repo References
 
-The file applies as workspace instruction when a sibling project's root
-`AGENTS.md` points back to this repository, but this onboarding unit does not
-need a sibling repository citation to explain the file itself.
+The workspace root may include this file as a pointer, but this file now
+delegates sibling-repository work to the installed runtime instructions.
 
-| Finding                                                               | Citations | Source Path |
-| --------------------------------------------------------------------- | --------- | ----------- |
-| No meaningful cross-repo references found for current file semantics. | n/a       | n/a         |
+| Finding                                                                                                   | Citations | Source Path |
+| --------------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| No sibling repository citation is required; the cross-repo behavior is a handoff instruction in this file. | n/a       | n/a         |
 
 ## Update History
 
+- 2026-05-15T04:12+02:00: Reframed the root `AGENTS.md` onboarding around the source checkout contract and the installed-runtime handoff.
 - 2026-05-15T00:38+02:00: Refreshed after coordinator and memory-layer settings guidance was folded into the repo-root contract during the `AGENTS.md` template reshuffle. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-12T18:51+02:00: Refreshed after AGENTS.md emphasized the workflow-before-code warning and separated it from the memory section.
 - 2026-05-12T11:30: Updated after AGENTS.md was shortened to the three workflow formats, workflow-before-code rule, and C-08 resolver contract.
