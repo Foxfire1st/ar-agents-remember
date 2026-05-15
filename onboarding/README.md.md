@@ -5,85 +5,79 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-14T21:38+02:00                     |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964` |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-15T12:05+02:00                     |
+| lastVerifiedCommitHash | `af3e24cadd005d3b79f29dfdc27731019e0dca27` |
+| lastVerifiedCommitDate | 2026-05-15T12:35:48+02:00|
+| governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
-`README.md` is the public-facing explanation of Agents Remember. It explains one-to-one onboarding, runtime installation, harness skill exposure, storage modes, coordination roots, resolver and drift-check roles, and the repository's runtime layout.
+`README.md` is now the public front door for Agents Remember. It gives a concise product-level explanation, a short quickstart, links to harness-specific install pages, and a compact repository/runtime map. Detailed setup, concepts, workflows, guides, and reference material now live under `docs/`.
 
 ## Code Commentary
 
 ### Logic
 
-The README introduces the memory model first, then explains setup, runtime installation, harness skill exposure, storage decisions, workspace coordination behavior, active coordination context resolution, chat/worktree closeout behavior, and the available skill families. Its early "What This Looks Like" section shows the default repo-local onboarding sidecar and points to this repo's inspectable external-memory layer as an example, while `memory.md` is explained as the code-commit to memory-commit ledger. It teaches `ar-memory/` for durable internal memory, `ar-coordination/` for local coordination, names C-09 `direct-closeout` as the approved current-checkout commit sequence for small external-memory chat-mode edits, lists C-10 as the adoption path that turns existing external-memory onboarding into the first ledgered `memory.md` baseline after drift review, points users at folder-shaped `runtime/system/defaults/examples/` scaffolds, and shows standard `settings.json` path-rule excludes for generated/vendor/build/local surfaces.
+The README opens with the stable positioning statement: Agents Remember is path-derived, git-verified memory for coding agents. It immediately shows the source-file to onboarding-unit mapping so readers understand the product before encountering workflow names or runtime folders.
 
-The setup flow now separates three paths that users often conflate: the real `agents-remember-md` checkout, the installed `ar-coordination` runtime, and the harness-visible skills folder. Users install the runtime with `installer/install-runtime.py`, then expose installed skills with `ar-coordination/scripts/install-skills.sh --install-root <skills-folder>`. Recursive scanners such as Codex and Claude Code use the namespace tree layout, while stricter direct-folder scanners such as Hermes.md, Pi.dev, OpenClaw, Windsurf, and Cursor compatibility installs use `--layout flat` so the visible folder names match lowercase skill frontmatter names without copying installed runtime files. Installed runtime skills default to their own `ar-coordination` root; `AR_COORDINATION_ROOT` remains a checkout-development override.
+The previous long README install matrix was moved out of the front page. The root page now keeps one generic quickstart: clone beside target projects, install runtime into `ar-coordination`, expose installed skills with `install-skills.sh`, add workspace instructions that include `ar-coordination/AGENTS.md`, then ask the agent to initialize memory and bootstrap onboarding. Harness-specific setup links point to dedicated pages under `docs/install/`.
+
+The README distinguishes the source checkout from the installed runtime. The source checkout packages `installer/`, `runtime/`, docs, and roadmap notes. The installed `ar-coordination/` runtime owns installed instructions, scripts, skills, local coordination artifacts, external memory repos, worktrees, and temp files.
 
 ### Conventions
 
-The README distinguishes source files, onboarding files, generated maintenance artifacts, task workflow artifacts, external memory repos, runtime installer output, harness skill-install locations, source-side system default examples, and the `memory.md` ledger. It names Codex `.agents/skills`, Claude Code `.claude/skills`, Hermes `~/.hermes/skills`, Pi `.pi/skills`, OpenClaw `<workspace>/skills` and `~/.openclaw/skills`, Cursor `.cursor/skills`, and Windsurf `.windsurf/skills` locations separately, treats C-08 as the resolver, uses `code_repository_name`/`code_repository_root` for resolver inputs, and treats C-02 as the drift classifier.
+- Keep the README short enough to scan.
+- Use the README to orient and route, not to carry full setup matrices or reference material.
+- Use `docs/` for user-facing docs, `AGENTS.md` and installed runtime templates for agent behavior, and onboarding for durable repository knowledge.
+- Keep public language focused on the current intended install model: install into `ar-coordination`, expose installed skills to the harness, and store memory in either repo-local `ar-memory/` or selected external memory repos.
+- Avoid presenting the public README as a source-package explanation or compatibility guide for old alpha layouts.
 
 ### Invariants And Boundaries
 
-The README is explanatory, not an implementation source. When it disagrees with helper scripts, current script behavior should be verified before changing operational assumptions. It must not imply that users should copy individual Agents Remember skill folders; preserving the installed skill tree through tree or flat symlinks is part of the install contract.
+The README is explanatory, not the implementation source of truth. Runtime behavior still belongs to the installer, scripts, and skills. If README guidance disagrees with helper behavior, verify helper behavior before changing operational assumptions.
+
+`docs/**` is currently excluded from file-level onboarding by this repository's path rules, so this README onboarding is the durable file-level companion for the public documentation front door. Repo-level overview onboarding should carry broad documentation-structure context when the docs tree changes.
 
 ### Todos
 
-Second-wave documentation should add richer walkthroughs for real C-09 start/closeout usage after the first production worktree task is run. Refresh verification metadata after the runtime-install README change is committed.
+- After these documentation changes are committed, refresh verification metadata to the new README source commit.
+- If `docs/**` becomes eligible in path rules later, create focused file-level onboarding for high-value docs pages instead of overloading this README onboarding.
 
 ### Docs References
 
-External domain documentation is only needed when the README makes harness-specific discovery claims.
+The README itself no longer depends on external harness docs for detailed setup claims; those claims live in the dedicated install pages.
 
-| Finding                                                                                                                                                 | Citations | Source Path                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------- |
-| Claude Code documents project and personal skill locations, plugin skills, extra directories via `--add-dir`, live skill changes, and nested discovery. | L155-L189 | [Claude Code skills](https://code.claude.com/docs/en/skills) |
-| Hermes documents `.hermes.md`/`HERMES.md`, `AGENTS.md`, and `CLAUDE.md` context discovery plus `AGENTS.md` progressive subdirectory loading. | L58-L75; L136-L154 | [Hermes Context Files](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files) |
-| Hermes documents external skill directories through `skills.external_dirs`, and its skill format uses YAML frontmatter with a lowercase `name`. | L283-L300; L389-L401 | [Hermes Skills](https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/skills.md) |
-| Pi documents `AGENTS.md` startup context and skill locations including `.pi/skills`, `.agents/skills`, global Pi skills, settings paths, and recursive `SKILL.md` directory discovery. | L132-L147; L104-L120 | [Pi Quickstart](https://pi.dev/docs/latest/quickstart), [Pi Skills](https://pi.dev/docs/latest/skills) |
-| Pi documents Agent Skills compatibility and requires lowercase skill names that match parent directories. | L87-L89; L195-L200 | [Pi Skills](https://pi.dev/docs/latest/skills) |
-| OpenClaw documents workspace `AGENTS.md` as injected operating instructions, workspace `runtime/skills/` as a standard workspace file, and skill precedence between workspace, managed, and bundled locations. | L200-L242; L882-L903 | [OpenClaw Agent Workspace](https://openclawlab.com/en/docs/concepts/agent-workspace/), [OpenClaw Skills](https://openclawlab.com/en/docs/tools/skills/) |
-| Cursor documents Agent Skills, recursive skill-root walking, `.agents/skills` and `.cursor/skills` project roots, user-wide roots, slash invocation, and the requirement that `name` match the containing folder. | L1-L14 | [Cursor Agent Skills](https://cursor.com/docs/skills.md) |
-| Windsurf documents workspace/global skill folders, automatic and `@skill-name` invocation, `.agents/skills` compatibility scanning, and Claude skill scanning when Claude config reading is enabled. | L123-L215 | [Windsurf Skills](https://docs.windsurf.com/windsurf/cascade/skills) |
-| Windsurf documents `AGENTS.md` as location-scoped rules that are discovered throughout the workspace and parent directories up to the git root. | L120-L173 | [Windsurf AGENTS.md](https://docs.windsurf.com/windsurf/cascade/agents-md) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No external documentation is needed to prove the root README's current structure; it is a same-repository public overview and link hub. | n/a | n/a |
 
 ## Repo-Internal References
 
-The README establishes the conceptual map future tasks will repeatedly cite.
+The README routes readers into the split documentation tree and gives the current runtime/source layout.
 
-| Finding                                                                                                                                                                                                                                            | Citations | Source Path                               |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| One-to-one onboarding means source files have matching onboarding files.                                                                                                                                                                           | L89       | [README.md](agents-remember-md/README.md) |
-| The working external-memory example links to the inspectable memory repo, shows the memory repo layout, and explains the `memory.md` code-to-memory ledger concept.                                                                                   | L43-L73   | [README.md](agents-remember-md/README.md) |
-| The quickstart now installs runtime mechanics into `ar-coordination`, leaves settings defaults to initialization skills, then explains namespace tree symlinks versus flat direct skill symlinks from the installed runtime.                                                                                  | L104-L185 | [README.md](agents-remember-md/README.md) |
-| C-00 initializes the repo memory root, while the runtime installer owns coordinator runtime files and C-03 owns initial repo onboarding.                                                                                                           | L175-L203 | [README.md](agents-remember-md/README.md) |
-| Storage mode and path rules are separate concepts, and the README's settings examples include standard excludes for generated, vendored, build, cache, IDE, environment, generated, and Zone.Identifier paths. | L207-L258; L651-L691 | [README.md](agents-remember-md/README.md) |
-| Inline storage reuses the same file-level onboarding model, and the general wire-up flow now installs the runtime before exposing skills into a dedicated harness folder when required.                                                                              | L243-L289 | [README.md](agents-remember-md/README.md) |
-| The Codex section explains that `AGENTS.md` and `/` skill discovery are separate, and it documents workspace-local, external-runtime, and user-wide `install-skills.sh` calls.                                                                     | L293-L331 | [README.md](agents-remember-md/README.md) |
-| The Claude Code section separates `CLAUDE.md` instruction loading from native skill discovery, and documents `.claude/skills`, `~/.claude/skills`, external runtimes, and nested discovery through the namespace symlink.                           | L333-L371 | [README.md](agents-remember-md/README.md) |
-| The Hermes.md section documents context-file choices, local and shared skill-folder installs, and `external_dirs` configuration using the flat symlink layout. | L342-L379 | [README.md](agents-remember-md/README.md) |
-| The Pi.dev section documents `AGENTS.md`, `.pi/skills`, `.agents/skills`, and global Pi skill installs using the flat symlink layout. | L381-L418 | [README.md](agents-remember-md/README.md) |
-| The OpenClaw section documents workspace `AGENTS.md`, workspace `skills`, global `~/.openclaw/skills`, and extra dirs while using the flat symlink layout. | L420-L451 | [README.md](agents-remember-md/README.md) |
-| The Cursor section separates instructions from native Agent Skills, documents project/user skill roots, slash invocation, recursive walking, and the flat symlink layout needed for lowercase parent folder compatibility.                           | L453-L495 | [README.md](agents-remember-md/README.md) |
-| Copilot and Windsurf guidance now describes using the installed runtime when a harness cannot discover skills directly; Windsurf uses the flat symlink layout and `@skill-name` invocation.          | L499-L559 | [README.md](agents-remember-md/README.md) |
-| The three modes section notes that small chat-mode external-memory edits can use C-09 `direct-closeout` for code-first onboarding metadata refresh and ledger sequencing, while larger or parallel work should use C-09 worktrees.                    | L561-L571 | [README.md](agents-remember-md/README.md) |
-| External-memory coordination guidance now separates skill installation from `AR_COORDINATION_ROOT` and shows a layout where the checkout, `ar-coordination`, and workspace all live in different roots.                                                      | L603-L632 | [README.md](agents-remember-md/README.md) |
-| C-08 resolves the active context from `code_repository_name` or `code_repository_root`, returns `coordination_root` and `memory_root`, and C-02 classifies stale onboarding.                                                                        | L714-L720 | [README.md](agents-remember-md/README.md) |
-| The repository contains core skills, workflows, the skill installer script, root/system instructions, and folder-shaped coordinator/global plus memory-repo-specific scaffold examples.                                                            | L724-L744 | [README.md](agents-remember-md/README.md) |
-| The README lists C-09 as the helper for worktree-backed tasks and direct closeout of approved current-checkout edits, and C-10 as the helper for converting existing external-memory onboarding into the first ledgered baseline after drift review. | L737-L738 | [README.md](agents-remember-md/README.md) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The README presents Agents Remember as path-derived, git-verified memory and shows the source-file to onboarding-unit mapping before the quickstart. | L1-L14 | [README.md](agents-remember-md/README.md) |
+| The quickstart installs runtime assets into `ar-coordination`, exposes installed skills, points workspace instructions at `ar-coordination/AGENTS.md`, then uses C-00 and C-03 for memory initialization and onboarding bootstrap. | L32-L73 | [README.md](agents-remember-md/README.md) |
+| The README now routes harness-specific setup to dedicated install pages and routes deeper product material to `docs/`. | L75-L99 | [README.md](agents-remember-md/README.md) |
+| The README keeps the source checkout layout distinct from the installed runtime layout. | L101-L130 | [README.md](agents-remember-md/README.md) |
+| The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L39 | [docs/README.md](agents-remember-md/docs/README.md) |
 
 ## Cross-Repo References
 
-The README explains workspace coordination use, but this file-level onboarding does not rely on sibling repository internals.
+The README describes external memory in general terms, but this file-level onboarding does not rely on sibling repository internals.
 
-| Finding                                                                                                                                  | Citations | Source Path                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| External memory uses one memory repo per selected code repo while the coordinator owns tasks, notes, memory-repo checkouts, and worktrees. | L603-L710 | [README.md](agents-remember-md/README.md) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found for the README itself. | n/a | n/a |
 
 ## Update History
 
+- 2026-05-15T12:05+02:00: Refreshed after the README was rewritten as a concise public front door and detailed setup/reference material moved into `docs/`. Verification metadata remains pinned to the last committed source state until the docs rewrite is committed.
 - 2026-05-14T21:38+02:00: Updated after README settings examples gained the standard path-rule exclusion baseline for generated/vendor/build/local artifacts. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-13T13:38: Updated after the README replaced top-level system examples with folder-shaped coordinator/global and memory-repo-specific scaffold examples.
 - 2026-05-12T18:57+02:00: Updated after the README added Hermes.md, Pi.dev, and OpenClaw install instructions after the Claude Code section.
