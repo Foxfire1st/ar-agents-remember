@@ -4,7 +4,7 @@
 
 ## What This Repo Is
 
-`agents-remember-md` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, helper scripts, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. The core idea is one-to-one onboarding: source files have deterministic onboarding units that can be verified against Git history before an agent relies on them.
+`agents-remember-md` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, helper scripts, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. The core idea is deterministic onboarding: source files have one-to-one onboarding units that can be verified against Git history, while overviews and entity catalogs use route scopes or curated evidence fingerprints before an agent relies on them.
 
 The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. C-08 exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`, C-09 owns worktree lifecycle mutation, direct current-checkout closeout for approved micro edits, and integration back to source branches, and C-10 provides the adoption path for existing external-memory onboarding that needs an initial `memory.md` ledger.
 
@@ -54,7 +54,7 @@ workspace ar-coordination/
 | Area                 | Path                                                                                                                                                                            | Purpose                                                                                                        |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Source checkout instructions | [AGENTS.md](agents-remember-md/AGENTS.md)                                                                                                                               | Defines how agents work on this source checkout and when to hand off to the installed runtime instructions.    |
-| Public documentation | [README.md](agents-remember-md/README.md) and [docs/FAQ.md](agents-remember-md/docs/FAQ.md)                                                                                       | Explains one-to-one onboarding, setup, storage modes, path-derived memory, agent wiring, coordination roots, and repository contents. |
+| Public documentation | [README.md](agents-remember-md/README.md) and [docs](agents-remember-md/docs)                                                                                       | Keeps the root README as the public front door while focused docs pages own setup, concepts, architecture, workflows, install guides, guides, and reference material. |
 | Runtime installer    | [installer/install-runtime.py](agents-remember-md/installer/install-runtime.py)                                                                                                     | Installs package-owned runtime assets into a target `ar-coordination` root without running repo onboarding.       |
 | Core skills          | [runtime/skills/U-01-core-skills](agents-remember-md/runtime/skills/U-01-core-skills)                                                                                                           | Resolver, drift detection, repo bootstrap, onboarding maintenance, and related support skills.                 |
 | Task workflows       | [runtime/skills/W-02-light-task-workflow](agents-remember-md/runtime/skills/W-02-light-task-workflow) and [runtime/skills/W-01-heavy-task-workflow](agents-remember-md/runtime/skills/W-01-heavy-task-workflow) | Durable task artifact workflows for medium and high-risk work.                                                 |
@@ -69,17 +69,21 @@ workspace ar-coordination/
 
 `AGENTS.md` is the authoritative behavioral contract for agents operating on this source checkout. It now starts by separating the package source repository from the installed `ar-coordination` runtime: when the file is reached through a workspace-level pointer during sibling-repository work, agents should use the installed runtime `AGENTS.md` instead. For work on this repository itself, it keeps `agents-remember-md` as the resolver target, preserves the chat/W-02/W-01 workflow routing, requires C-08 resolution plus C-02 drift detection before relying on onboarding, and points active settings reads at the resolved memory layer rather than a root-level source checkout `system/` directory.
 
+### Public Documentation
+
+The public README is now intentionally short: product positioning, core path-derived memory example, one generic quickstart, harness install links, docs links, and a compact source/runtime layout. Detailed user-facing material moved under `docs/`: `docs/README.md` is the documentation index, `getting-started.md`, `concepts.md`, `architecture.md`, `workflows.md`, and `FAQ.md` own core narrative, `docs/install/` owns harness-specific setup, `docs/guides/` owns operational tasks, and `docs/reference/` owns exact runtime/settings/skill behavior. The repo's current path rules still exclude `docs/**` from file-level onboarding, so README onboarding and this repo overview carry the durable summary of the public docs split.
+
 ### Runtime AGENTS Templates
 
 `runtime/agents-md-files/` is the package-owned source for installed coordinator instructions. The current package has four installable templates: `coordinator/AGENTS.md` for the coordinator root, `skills/AGENTS.md` for compact C-* skill routing, `system/AGENTS.md` for the hard onboarding maintenance gate, and `tasks/AGENTS.md` for task-folder collaboration doctrine. `installer/install-runtime.py` installs those templates to `ar-coordination/AGENTS.md`, `ar-coordination/skills/AGENTS.md`, `ar-coordination/system/AGENTS.md`, and `ar-coordination/tasks/AGENTS.md`. Memory repos are not expected to provide a root-level `AGENTS.md`; repo-specific memory guidance lives in the memory layer's `system/*` files.
 
 ### Core Resolver And Drift Gate
 
-C-08 resolves the active coordination context: topology, code repository, `coordination_root`, `memory_root`, onboarding/docs/system roots, settings paths, repo-specific task root, temporary artifact root, contract path, worktree group, ledger path, storage settings, path rules, and branch-gated cross-repo allowances. Without a task name, `task_root` is the repository namespace under `ar-coordination/tasks/<repo>/`; with a task name or contract, it is the concrete task folder. Path-rule defaults in `system/settings.json` now carry the standard generated/vendor/build/cache/IDE/env/Zone.Identifier excludes. For worktree-backed task names, C-08 resolves current wrapper folders first and persisted `*-ar` task folders second. C-02 consumes that context and verifies file-level onboarding metadata against the current source state. Drift reports are temporary coordination artifacts under `temp_root`; even explicit report paths inside the durable memory repo should be redirected back to coordination temp.
+C-08 resolves the active coordination context: topology, code repository, `coordination_root`, `memory_root`, onboarding/docs/system roots, settings paths, repo-specific task root, temporary artifact root, contract path, worktree group, ledger path, storage settings, path rules, and branch-gated cross-repo allowances. Without a task name, `task_root` is the repository namespace under `ar-coordination/tasks/<repo>/`; with a task name or contract, it is the concrete task folder. Path-rule defaults in `system/settings.json` now carry the standard generated/vendor/build/cache/IDE/env/Zone.Identifier excludes. For worktree-backed task names, C-08 resolves current wrapper folders first and persisted `*-ar` task folders second. C-02 consumes that context and verifies file-level onboarding metadata, overview `sourceRoute` metadata, inline digests, and repo entity `git-blob-set-v1` fingerprints against the current source state. Drift reports are temporary coordination artifacts under `temp_root`; even explicit report paths inside the durable memory repo should be redirected back to coordination temp.
 
 ### Onboarding Maintenance
 
-C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file. C-05 also detects route-level create, refresh, move, and deletion cleanup cases and routes those structural changes to C-03 `existing-memory-slice-maintenance`.
+C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file. Entity catalogs now carry one deterministic fingerprint row per entity over a small curated evidence file set; C-05 chooses and refreshes those paths after review. C-05 also detects route-level create, refresh, move, and deletion cleanup cases and routes those structural changes to C-03 `existing-memory-slice-maintenance`.
 
 ### Task Workflows
 
@@ -100,7 +104,8 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | Finding                                                                                                                                                                                                                       | Citations            | Source Path                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------------------- |
 | The source checkout instructions distinguish this repository from the installed runtime, hand sibling-repo work to `ar-coordination/AGENTS.md`, and keep C-08 plus C-02 as the context gate for this repo. | L1-L14; L28-L53 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| The README presents C-08 as the active context resolver and C-02 as the drift classifier rather than the topology resolver.                                                                                                   | L424-L430            | [README.md](agents-remember-md/README.md) |
+| The README now presents the public front door, the generic quickstart, links to harness install pages, and a compact source/runtime layout.                                                                                                   | L1-L138            | [README.md](agents-remember-md/README.md) |
+| The docs index owns the expanded documentation map for start-here docs, install guides, operational guides, and reference pages.                                                                                                   | L1-L39            | [docs/README.md](agents-remember-md/docs/README.md) |
 
 ## Build & Dev
 
@@ -112,7 +117,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 
 - Onboarding should describe current repository state; task files describe planned or in-progress future work.
 - C-08 owns topology and path resolution facts; it must not perform Git worktree operations.
-- C-02 detects drift and writes reports under the resolved temporary artifact root; it must not update onboarding itself or write temporary reports into durable memory repos.
+- C-02 detects file-level, overview, inline, and per-entity fingerprint drift and writes reports under the resolved temporary artifact root; it must not update onboarding itself or write temporary reports into durable memory repos.
 - C-05 creates and maintains onboarding artifacts; it must use actual evidence sources rather than citing source registries as proof.
 - Task workflows must stop for developer approval before implementation.
 - Worktree-backed task workflows must stop again for explicit commit approval before C-09 closeout creates commits.
@@ -120,6 +125,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 - C-10 is an adoption wrapper for existing external-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
 - C-03 bootstrap memory must keep durable route-local overviews in the mirrored onboarding hierarchy under the resolved onboarding root, use root `bootstrap/` artifacts as temporary promotion/review artifacts, keep low-confidence claims out of durable fact sections, apply candidate excludes before scouting, and hand file-level onboarding semantics to C-05.
 - C-05 file-level onboarding remains strict one-to-one with source files and must not collapse file-specific facts into a generic route overview reference; structural route changes route to C-03 rather than becoming disconnected file edits.
+- Repo entity catalogs use deterministic `git-blob-set-v1` fingerprints over curated load-bearing evidence files so C-02 can flag stale entity memory without semantic guessing.
 - The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory repos use `system/*` files rather than a root-level `AGENTS.md`.
 
 ## Glossary Terms
@@ -127,6 +133,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | Term                     | Meaning                                                                                                       | Notes                                                                                                                                               |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onboarding unit          | A deterministic documentation unit for one source file or one repo-level entity catalog.                      | File-level units mirror source paths and carry verification metadata.                                                                               |
+| entity fingerprint       | A deterministic hash over the load-bearing files that define a repo entity.                                  | C-05 curates the evidence paths; C-02 recomputes `git-blob-set-v1` and flags drift.                                                                 |
 | coordination context     | The resolved root/path/settings facts returned by C-08 for a code repository.                                 | Current implementation exposes `code_repository_name`, `code_repository_root`, `memory_root`, `coordination_root`, repo-specific `task_root`, and `temp_root`. |
 | pathRules                | Include/exclude eligibility rules that decide which source paths and file types are managed.                  | Storage and eligibility are separate concepts.                                                                                                      |
 | drift report             | A C-02 maintenance artifact that classifies onboarding trust.                                                 | It is temporary evidence under `temp/drift-reports`, not durable repo behavior; explicit memory-root report paths are redirected to temp.           |
@@ -138,11 +145,12 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 
 ## Docs References
 
-No relevant external domain documentation was found for this repository's own workflow mechanics. The resolved `Domain Documentation` registry is currently biased toward `resolve_auto_editor` technologies such as Resolve, Gemini, FastAPI, Pydantic, OTIO, FFmpeg, SQLite, and related libraries; those sources are not direct evidence for `agents-remember-md` repository behavior.
+Same-repository files remain the direct evidence for Agents Remember's own runtime and memory behavior. Public install pages now also link official harness documentation for volatile skill-location claims.
 
-| Finding                                                                                                                                      | Citations | Source Path |
-| -------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| No external documentation is needed to prove the repository's own current workflow structure; same-repository files are the direct evidence. | n/a       | n/a         |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Claude Code, Cursor, Windsurf, VS Code Copilot, Pi, Hermes, and OpenClaw install pages link official docs for their current instruction and skill discovery behavior. | n/a | [Claude Code skills](https://code.claude.com/docs/en/skills); [Cursor Agent Skills](https://cursor.com/docs/skills.md); [Windsurf Skills](https://docs.windsurf.com/windsurf/cascade/skills); [VS Code Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills); [Pi Skills](https://pi.dev/docs/latest/skills); [Hermes Context Files](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files/); [OpenClaw Agent Workspace](https://docs.openclaw.ai/concepts/agent-workspace) |
+| No external documentation is needed to prove the repository's own runtime, resolver, drift, onboarding, or workflow structure; same-repository files remain the direct evidence. | n/a | n/a |
 
 ## What To Explore Next
 
@@ -158,7 +166,8 @@ No relevant external domain documentation was found for this repository's own wo
 - The current source registry is useful as a discovery index but has no direct external domain evidence for this repo's own skill/workflow mechanics.
 - External-memory onboarding for `agents-remember-md` is ledgered; future closeouts must keep the code-to-memory mapping current.
 - The current root `AGENTS.md` source-checkout reframing is pending final source commit; verification metadata for that onboarding should be refreshed after the code commit lands.
+- The README/docs professionalization rewrite is pending final source commit; README onboarding verification metadata should be refreshed after the docs commit lands.
 
 ## Last Verified
 
-Updated 2026-05-15T04:12+02:00 after the root `AGENTS.md` contract was reframed as source-checkout instructions with an installed-runtime handoff. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-15T12:05+02:00 after the public README was shortened into a front door and detailed setup/reference material moved into focused `docs/` pages. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.

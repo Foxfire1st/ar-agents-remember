@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                                    |
 | path                   | `runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py` |
 | doc_type               | `file-level-onboarding`                                                               |
-| lastUpdated            | 2026-05-12T10:59                                                                      |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964`                                            |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-15T11:46+02:00                                                                |
+| lastVerifiedCommitHash | `947b0e52ef06b1160819bd83ac90b5cefa7db811`                                            |
+| lastVerifiedCommitDate | 2026-05-15T12:19:03+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The script dynamically loads C-08, C-02, and C-09 so it can reuse the active resolver, drift classifier, and shared Git helpers without duplicating their logic. `status` resolves context through `code_repository_name` or `code_repository_root`, runs drift, writes a report through C-02's `temp_root`-based report resolver by default, and prints a JSON payload with topology, roots, drift counts, and ledger status. Its C-02 report resolver call passes `context.memory_root` so explicit adoption report paths under the durable memory repo are redirected back to coordination temp. `adopt` requires external topology, requires the memory root to have already been initialized by C-00, stops when a ledger already exists, exits with code 2 when actionable drift is present without `--accept-drift`, supports `--dry-run`, and otherwise commits the current memory content and writes the initial ledger itself.
+The script dynamically loads C-08, C-02, and C-09 so it can reuse the active resolver, drift classifier, and shared Git helpers without duplicating their logic. `status` resolves context through `code_repository_name` or `code_repository_root`, runs drift, writes a report through C-02's `temp_root`-based report resolver by default, and prints a JSON payload with topology, roots, drift counts, and ledger status. Its C-02 pass uses the plural sidecar classifier so adoption sees file-level, overview, and per-entity fingerprint drift rows. Its C-02 report resolver call passes `context.memory_root` so explicit adoption report paths under the durable memory repo are redirected back to coordination temp. `adopt` requires external topology, requires the memory root to have already been initialized by C-00, stops when a ledger already exists, exits with code 2 when actionable drift is present without `--accept-drift`, supports `--dry-run`, and otherwise commits the current memory content and writes the initial ledger itself.
 
 ### Conventions
 
@@ -46,7 +46,7 @@ The helper coordinates three existing core packages instead of becoming a fourth
 | Finding                                                                                                                                                                                                               | Citations            | Source Path                                                                                                                        |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | The script loads the resolver, drift checker, worktree manager, memory ledger helper, and worktree contract helper directly from the core skill tree.                                                                 | L16-L25; L28-L40     | [adopt_memory_baseline.py](agents-remember-md/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
-| Drift classification writes a report through C-02's path resolver with the resolved memory root, then contributes counts/actionable rows plus `code_repository_name` and `code_repository_root` to the state payload. | L53-L67; L103-L123   | [adopt_memory_baseline.py](agents-remember-md/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
+| Drift classification uses C-02's plural sidecar classifier, writes a report through C-02's path resolver with the resolved memory root, then contributes counts/actionable rows plus `code_repository_name` and `code_repository_root` to the state payload. | L52-L67; L103-L123   | [adopt_memory_baseline.py](agents-remember-md/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
 | Adoption requires external topology, blocks actionable drift unless accepted, supports dry run, requires a C-00-initialized memory root, commits current memory content, and writes the initial ledger.                | L80-L122; L135-L176   | [adopt_memory_baseline.py](agents-remember-md/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
 
 ## Cross-Repo References
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the helper itself.
 
 ## Update History
 
+- 2026-05-15T11:46+02:00: Updated after C-10 adoption drift began consuming C-02's plural sidecar classifier for overview and per-entity fingerprint rows. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-15T03:30+02:00: Updated after C-10 stopped delegating baseline creation to C-09 and began requiring C-00-initialized memory roots.
 - 2026-05-12T10:59: Updated ledger-status notes after branch fields were removed from canonical ledger metadata and C-10 payloads.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and corrected same-repo citation ranges after verifying the C-10 coordination rename behavior.

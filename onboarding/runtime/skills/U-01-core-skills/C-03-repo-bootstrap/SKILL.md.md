@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-14T21:38+02:00                                 |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964`             |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-15T11:46+02:00                                 |
+| lastVerifiedCommitHash | `947b0e52ef06b1160819bd83ac90b5cefa7db811`             |
+| lastVerifiedCommitDate | 2026-05-15T12:19:03+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This skill describes repository onboarding bootstrap. It defines a minimum root-
 
 ### Logic
 
-C-03 resolves context with C-08, writes all bootstrap paths relative to the resolved `onboarding_root`, and builds bootstrap memory in phases. The minimum output is `overview.md`; larger runs proceed through source inventory, area research, coverage planning, governing route mapping, route-local overview cards, route-local overview waves, docs and boundary evidence packs, file cards, file-level onboarding waves, curator reviews, and handoff. Existing-memory slice maintenance starts from verified existing memory and handles expansion, refresh, move, or cleanup for a bounded source slice. Its frontmatter now exposes both undocumented-repo bootstrap and existing-memory slice work for skill discovery.
+C-03 resolves context with C-08, writes all bootstrap paths relative to the resolved `onboarding_root`, and builds bootstrap memory in phases. The minimum output is `overview.md`; larger runs proceed through source inventory, area research, coverage planning, governing route mapping, route-local overview cards, route-local overview waves, docs and boundary evidence packs, file cards, file-level onboarding waves, curator reviews, and handoff. Existing-memory slice maintenance starts from verified existing memory and handles expansion, refresh, move, or cleanup for a bounded source slice. Root and route-local overviews record route-based verification metadata so C-02 can later detect deterministic overview drift by `sourceRoute`.
 
 ### Conventions
 
@@ -48,6 +48,7 @@ No external documentation is needed for this repository-local skill.
 | C-03 preserves thin orchestrator behavior, confidence tags, C-08 topology resolution, cross-repo read-only semantics, and C-05 ownership of file-level onboarding. | L132-L143 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | Automated mode starts only after source inventory is accepted or corrected, writes artifacts relative to the resolved `onboarding_root`, and treats common excludes as `settings.json` path-rule defaults. | L181-L307 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | The skill lists all bootstrap templates used for ledgers, state, plans, route maps, evidence packs, cards, waves, reviews, and handoff. | L348-L366 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
+| Phase 3 and Phase 4D require route-based overview verification metadata so C-02 can compare recorded `sourceRoute` scopes deterministically. | L678-L680; L863-L865 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | Existing-memory slice maintenance reuses current memory and covers expansion, refresh, move handling, deleted-slice cleanup, and C-05 routing. | L464-L513 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap. | L756-L808; L1042-L1057 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 
@@ -61,6 +62,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-15T11:46+02:00: Refreshed after C-03 overview templates and instructions gained route-based verification metadata for deterministic C-02 overview drift. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-14T21:38+02:00: Refreshed after the skill frontmatter was tightened and the exclusion baseline was clarified as `settings.json` path-rule defaults rather than a hidden skill filter. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-14T21:16+02:00: Refreshed for resolved onboarding-root paths, source inventory as the pre-automation gate, default bootstrap excludes, existing-memory slice maintenance, deleted-slice cleanup, C-05 routing, and handoff-before-closeout semantics. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-14T18:00+02:00: Refreshed for the route-local bootstrap memory model, evidence packs, file cards, onboarding waves, curator reviews, and new template set. Verification metadata remains pinned to the last committed source until closeout.
