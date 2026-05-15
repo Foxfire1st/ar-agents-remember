@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                                          |
 | path                   | `runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py` |
 | doc_type               | `file-level-onboarding`                                                                     |
-| lastUpdated            | 2026-05-15T11:46+02:00                                                                      |
-| lastVerifiedCommitHash | `947b0e52ef06b1160819bd83ac90b5cefa7db811`                                                  |
-| lastVerifiedCommitDate | 2026-05-15T12:19:03+02:00|
+| lastUpdated            | 2026-05-15T12:57+02:00                                                                      |
+| lastVerifiedCommitHash | `810a54351caa86a8e7f13677d284bd5e03147296`                                                  |
+| lastVerifiedCommitDate | 2026-05-15T13:31:02+02:00|
 
 ## Purpose
 
@@ -17,13 +17,13 @@
 
 ### Logic
 
-The script imports C-08 coordination resolver helpers, discovers supported sidecar onboarding artifacts by `doc_type`, classifies sidecar and inline onboarding, compares recorded verification commits or deterministic fingerprints to current Git state, and writes a Markdown report under the resolved temporary artifact root by default. Its CLI passes the repository path to C-08 as `code_repository_root` and the directory name as `code_repository_name`.
+The script imports C-08 coordination resolver helpers, discovers supported sidecar onboarding artifacts by `doc_type`, classifies sidecar and inline onboarding, compares recorded verification commits or deterministic fingerprints to current Git state, and writes a Markdown report under the resolved temporary artifact root by default. Its CLI passes the repository path to C-08 as `code_repository_root` and the directory name as `code_repository_name`. For repo entity catalogs, it parses both `## Entity Inventory` headings and `## Entity Fingerprints` rows so missing and orphaned fingerprint rows become deterministic drift signals.
 
 `resolve_report_path` keeps drift reports as coordination artifacts. Relative `--report` paths resolve under `temp_root`; absolute paths outside the coordination root are redirected to `temp_root/drift-reports/<repo>/`; absolute paths inside the durable `memory_root` are also redirected there so a lingering drift report cannot dirty the versioned memory repo.
 
 ### Conventions
 
-Sidecar onboarding is detected through Markdown table metadata with supported `doc_type` values: `file-level-onboarding`, `repo-overview`, `route-local-overview`, and `repo-entity-catalog`. File-level sidecars mirror the source path with `.md` appended. Overviews verify a recorded `sourceRoute`. Entity catalogs verify one row per entity in the `Entity Fingerprints` table by recomputing `git-blob-set-v1` over the curated evidence paths.
+Sidecar onboarding is detected through Markdown table metadata with supported `doc_type` values: `file-level-onboarding`, `repo-overview`, `route-local-overview`, and `repo-entity-catalog`. File-level sidecars mirror the source path with `.md` appended. Overviews verify a recorded `sourceRoute`. Entity catalogs verify one row per inventory entity in the `Entity Fingerprints` table by recomputing `git-blob-set-v1` over the curated evidence paths; missing rows are missing verification, and rows without inventory entries are orphaned.
 
 ### Invariants And Boundaries
 
@@ -51,9 +51,9 @@ The script is the current executable implementation of drift checking.
 | Markdown table metadata and supported sidecar `doc_type` detection drive sidecar discovery.                                                                                                                                                                                                                          | L151-L190            | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 | File-level sidecar classification checks source path, verification hash, source existence, commit existence, diff to HEAD, and local changes.                                                                                                                                                                        | L214-L319            | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 | Overview classification verifies the recorded source route against the recorded commit and local working-tree changes.                                                                                                                                                                                               | L322-L441            | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
-| Entity catalog classification parses the `Entity Fingerprints` table, recomputes `git-blob-set-v1`, reports missing evidence paths, unsupported algorithms, fingerprint mismatches, and local evidence-file changes.                                                                                                | L444-L673            | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
+| Entity catalog classification parses the `Entity Fingerprints` table and `Entity Inventory` headings, recomputes `git-blob-set-v1`, reports missing fingerprint rows, orphaned rows, missing evidence paths, unsupported algorithms, fingerprint mismatches, and local evidence-file changes. | L467-L789            | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 | Missing sidecar onboarding is classified when a managed source lacks the mirrored file.                                                                                                                                                                                                                              | L676-L694            | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
-| `classify_sidecar_onboarding_units` can return several rows for one `entities.md`, while the older single-row wrapper remains available for compatibility.                                                                                                                                                            | L697-L767            | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
+| `classify_sidecar_onboarding_units` can return several rows for one `entities.md`, while the older single-row wrapper remains available for compatibility.                                                                                                                                                            | L813-L883            | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 | Default drift report helpers place reports under `<temp_root>/drift-reports/<repo-name>/`; `resolve_report_path` keeps relative paths inside `temp_root`, allows explicit non-memory coordination-root paths, redirects paths outside coordination, and redirects paths inside the durable memory root back to temp. | L107-L118; L1026-L1044 | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 | CLI resolution uses C-08 context via `code_repository_name` and `code_repository_root`, then writes the report through the resolved `coordination_root`, `temp_root`, and `memory_root` so reports cannot land in versioned memory.                                                                                  | L1112-L1194          | [check_onboarding_drift.py](agents-remember-md/runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/scripts/check_onboarding_drift.py) |
 
@@ -67,6 +67,7 @@ No sibling repository evidence is needed for the helper's current logic.
 
 ## Update History
 
+- 2026-05-15T12:57+02:00: Updated after entity catalog drift detection began reconciling inventory headings with fingerprint rows and surfacing missing/orphaned rows. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-15T11:46+02:00: Updated after C-02 gained deterministic route-overview drift and per-entity `git-blob-set-v1` fingerprint classification. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
 - 2026-05-11T18:34: Updated after C-02 switched its resolver call to `code_repository_name` and `code_repository_root`.
