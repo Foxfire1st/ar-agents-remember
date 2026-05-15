@@ -27,6 +27,8 @@
           "SECURITY.md",
           "LICENSE",
           "roadmap/**",
+          "benchmarks/user-runs/**",
+          "benchmarks/workspaces/**",
           "node_modules/**",
           "vendor/**",
           "dist/**",

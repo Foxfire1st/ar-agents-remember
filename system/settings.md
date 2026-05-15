@@ -16,6 +16,8 @@ Onboarding uses `memory-repo` storage. Eligible onboarding artifacts live under 
 
 The path rules in `settings.json` are unscoped because this memory repo maps to exactly one code repo: `agents-remember-md`.
 
+Benchmark case metadata and documentation may be source material, but resettable benchmark workspaces are not. `settings.json` explicitly excludes benchmark `user-runs/` and all package-owned case workspaces so cloned repos, workspace-local `ar-coordination/` trees, and packaged benchmark memory snapshots cannot recursively generate onboarding for themselves.
+
 ## Cross-Repo Policy
 
 `crossRepo.allow` is currently empty. Neighboring repositories are not included unless this committed memory settings file explicitly allows them.

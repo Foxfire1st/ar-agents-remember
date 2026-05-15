@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-15T12:05+02:00                     |
-| lastVerifiedCommitHash | `af3e24cadd005d3b79f29dfdc27731019e0dca27` |
-| lastVerifiedCommitDate | 2026-05-15T12:35:48+02:00|
+| lastUpdated            | 2026-05-15T17:32+02:00                     |
+| lastVerifiedCommitHash | `e7c1ee4f983a7309d51c05b97f94e27443c3cf90` |
+| lastVerifiedCommitDate | 2026-05-15T18:10:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`README.md` is now the public front door for Agents Remember. It gives a concise product-level explanation, a short quickstart, links to harness-specific install pages, and a compact repository/runtime map. Detailed setup, concepts, workflows, guides, and reference material now live under `docs/`.
+`README.md` is now the public front door for Agents Remember. It gives a concise product-level explanation, a short quickstart, links to harness-specific install pages, optional benchmark guidance, and a compact repository/runtime map. Detailed setup, concepts, workflows, benchmark methodology, guides, and reference material now live under `docs/`.
 
 ## Code Commentary
 
@@ -24,15 +24,15 @@
 
 The README opens with the stable positioning statement: Agents Remember is path-derived, git-verified memory for coding agents. It immediately shows the source-file to onboarding-unit mapping so readers understand the product before encountering workflow names or runtime folders.
 
-The previous long README install matrix was moved out of the front page. The root page now keeps one generic quickstart: clone beside target projects, install runtime into `ar-coordination`, expose installed skills with `install-skills.sh`, add workspace instructions that include `ar-coordination/AGENTS.md`, then ask the agent to initialize memory and bootstrap onboarding. Harness-specific setup links point to dedicated pages under `docs/install/`.
+The previous long README install matrix was moved out of the front page. The root page now keeps one generic quickstart: clone beside target projects, install runtime into `ar-coordination`, optionally add benchmark fixtures with `--include-benchmarks`, expose installed skills with `install-skills.sh`, add workspace instructions that include `ar-coordination/AGENTS.md`, then ask the agent to initialize memory and bootstrap onboarding. Harness-specific setup links point to dedicated pages under `docs/install/`.
 
-The README distinguishes the source checkout from the installed runtime. The source checkout packages `installer/`, `runtime/`, docs, and roadmap notes. The installed `ar-coordination/` runtime owns installed instructions, scripts, skills, local coordination artifacts, external memory repos, worktrees, and temp files.
+The README distinguishes the source checkout from the installed runtime. The source checkout packages `installer/`, `runtime/`, optional benchmark package source, docs, and roadmap notes. The installed `ar-coordination/` runtime owns installed instructions, scripts, skills, optional benchmark package content, local coordination artifacts, external memory repos, worktrees, and temp files.
 
 ### Conventions
 
 - Keep the README short enough to scan.
 - Use the README to orient and route, not to carry full setup matrices or reference material.
-- Use `docs/` for user-facing docs, `AGENTS.md` and installed runtime templates for agent behavior, and onboarding for durable repository knowledge.
+- Use `docs/` for user-facing docs, `benchmarks/` for optional benchmark fixtures, `AGENTS.md` and installed runtime templates for agent behavior, and onboarding for durable repository knowledge.
 - Keep public language focused on the current intended install model: install into `ar-coordination`, expose installed skills to the harness, and store memory in either repo-local `ar-memory/` or selected external memory repos.
 - Avoid presenting the public README as a source-package explanation or compatibility guide for old alpha layouts.
 
@@ -62,9 +62,9 @@ The README routes readers into the split documentation tree and gives the curren
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The README presents Agents Remember as path-derived, git-verified memory and shows the source-file to onboarding-unit mapping before the quickstart. | L1-L14 | [README.md](agents-remember-md/README.md) |
-| The quickstart installs runtime assets into `ar-coordination`, exposes installed skills, points workspace instructions at `ar-coordination/AGENTS.md`, then uses C-00 and C-03 for memory initialization and onboarding bootstrap. | L32-L73 | [README.md](agents-remember-md/README.md) |
-| The README now routes harness-specific setup to dedicated install pages and routes deeper product material to `docs/`. | L75-L99 | [README.md](agents-remember-md/README.md) |
-| The README keeps the source checkout layout distinct from the installed runtime layout. | L101-L130 | [README.md](agents-remember-md/README.md) |
+| The quickstart installs runtime assets into `ar-coordination`, optionally installs benchmarks with `--include-benchmarks`, exposes installed skills, points workspace instructions at `ar-coordination/AGENTS.md`, then uses C-00 and C-03 for memory initialization and onboarding bootstrap. | L32-L79 | [README.md](agents-remember-md/README.md) |
+| The README now routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L81-L106 | [README.md](agents-remember-md/README.md) |
+| The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees. | L108-L140 | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L39 | [docs/README.md](agents-remember-md/docs/README.md) |
 
 ## Cross-Repo References
@@ -77,6 +77,8 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-05-15T17:32+02:00: Clarified benchmark package wording after source-side empty workspace folders were removed in favor of generated workspaces. Verification metadata remains pinned to the last committed source state until closeout.
+- 2026-05-15T15:50+02:00: Updated after the README added optional benchmark install guidance, benchmark methodology routing, and benchmark package/runtime layout entries. Verification metadata remains pinned to the last committed source state until closeout.
 - 2026-05-15T12:05+02:00: Refreshed after the README was rewritten as a concise public front door and detailed setup/reference material moved into `docs/`. Verification metadata remains pinned to the last committed source state until the docs rewrite is committed.
 - 2026-05-14T21:38+02:00: Updated after README settings examples gained the standard path-rule exclusion baseline for generated/vendor/build/local artifacts. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-13T13:38: Updated after the README replaced top-level system examples with folder-shaped coordinator/global and memory-repo-specific scaffold examples.
