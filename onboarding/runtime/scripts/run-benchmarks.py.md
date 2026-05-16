@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/scripts/run-benchmarks.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-16T12:09+02:00                     |
-| lastVerifiedCommitHash |                                            `032a5b839c5c7a0f8e487fe65f5b060e11a9b8a2`|
-| lastVerifiedCommitDate |                                            2026-05-16T18:07:23+02:00|
+| lastUpdated            | 2026-05-16T18:39+02:00                     |
+| lastVerifiedCommitHash |                                            `7ec0668152b5b507d51765df0efe1e6651d1d999`|
+| lastVerifiedCommitDate |                                            2026-05-16T18:42:47+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ The script locates the benchmark root from either an installed coordinator or th
 
 Repository preparation wraps git calls with `core.longpaths=true` and cleans existing generated checkouts before checkout, which keeps Windows benchmark paths usable and lets a later prepare recover from an interrupted or partially failed clone.
 
-Running a case optionally prepares the workspace, creates a unique `user-runs/<case>/<run-id>/` output root, and runs each selected prompt/variant/repetition through `codex exec --json`. The command always uses `--skip-git-repo-check`, `--sandbox danger-full-access`, and `approval_policy="never"` because benchmark prompts must run headlessly. Each run writes JSONL, stderr, and metadata sidecars.
+Running a case optionally prepares the workspace, creates one unique `user-runs/<case>/<run-id>/` output root, and builds selected prompt/variant/repetition tasks by repetition so paired variants for the same prompt run land under the same dated entry. Dry-run mode prints the planned files and commands sequentially for auditability. Real runs submit the tasks to a `ThreadPoolExecutor`; default concurrency is the number of selected variants, and `--jobs` can override it. The command always uses `--skip-git-repo-check`, `--sandbox danger-full-access`, and `approval_policy="never"` because benchmark prompts must run headlessly. Each run writes JSONL, stderr, and metadata sidecars.
 
 Analysis scans JSONL recursively under a run root, loads sidecar metadata when present, extracts event counts, detected command/tool events, token counters, errors, duration, exit code, and JSONL size, then emits grouped range summaries by prompt and variant.
 
@@ -37,6 +37,8 @@ Analysis scans JSONL recursively under a run root, loads sidecar metadata when p
 - `benchmarks/workspaces/` is a generated resettable fixture area. It is not where user run outputs belong.
 - `benchmarks/user-runs/` is the preserved output area for local JSONL, stderr, metadata, and generated summaries.
 - Variants are execution modes and result groups. They select a prepared environment root, but the runner keeps the environment set fixed to source-only and memory-enabled roots instead of creating one workspace per prompt variant.
+- `run` creates one dated output root per case invocation; paired `no-onboarding` and `with-onboarding` variants should appear under that same root for each repetition.
+- `--jobs` controls the maximum concurrent Codex runs. If omitted, concurrency defaults to the number of selected variants so the paired benchmark variants run together.
 - Runtime asset sync excludes `__pycache__`, `.pyc`, and `.pyo` files so local validation artifacts do not become benchmark fixture content.
 - The script uses only Python standard-library modules so the installed runtime does not need additional dependencies.
 
@@ -47,6 +49,8 @@ The runner can execute networked `git clone`/`fetch` and expensive Codex runs, s
 The analyzer is schema-tolerant rather than schema-authoritative. It keeps the largest observed token counter for known token keys because Codex JSONL streams may contain cumulative usage updates.
 
 The runner renders `AGENTS.md` only inside the memory-enabled environment before syncing runtime assets into that environment's benchmark-local coordination root and materializing the pinned memory repo at `with-memory/ar-coordination/memory-repos/ar-<repo>/`. The source-only environment intentionally has no generated benchmark `AGENTS.md` or `ar-coordination/` root.
+
+Run failures are aggregated after all submitted tasks finish. A subprocess launch or execution exception in one variant must not prevent the other submitted variant runs from completing and being included in the summary.
 
 ### Todos
 
@@ -75,8 +79,9 @@ The runner is tied to the benchmark package layout and manifest shape.
 | The runner discovers benchmark roots, loads schema-versioned case manifests, and selects all cases or one requested case id. | L78-L119 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
 | Workspace preparation uses long-path-aware git commands, cleans existing generated checkouts before checkout, resolves `source-only` and `with-memory` environment roots, prunes legacy top-level workspace paths, renders `AGENTS.md` only in the memory-enabled root, prepares both pinned source checkouts, syncs runtime assets, and clones or refreshes the pinned memory repo under the memory-enabled coordination root. | L213-L231; L234-L347 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
 | Run execution builds the `codex exec --json` command, writes JSONL/stderr/metadata artifacts, defaults to manifest repetitions, and stores output under `user-runs`. | L377-L461 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| Analysis extracts JSONL metrics and writes grouped Markdown summaries with metric ranges and per-run detail rows. | L493-L651 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| The CLI exposes `list`, `prepare`, `run`, and `analyze` commands with dry-run and selection options. | L666-L750 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
+| Case execution creates one output root, queues prompt/variant/repetition tasks by repetition, dry-runs planned runs sequentially, executes real runs through a bounded `ThreadPoolExecutor`, writes a summary, and raises an aggregated error if submitted runs failed. | L465-L543 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
+| The CLI exposes `list`, `prepare`, `run`, and `analyze` commands with dry-run and selection options, including `--jobs` for run concurrency. | L727-L792 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
+| The draft case prompts explicitly mark benchmark runs as non-interactive and tell the agent to complete the task without asking questions, requesting approval, or pausing for follow-up. | L5-L9; L6-L9 | [with-onboarding prompt](agents-remember-md/benchmarks/cases/agents-remember-md-drift-workflow/prompts/explain-drift-workflow.with-onboarding.md); [no-onboarding prompt](agents-remember-md/benchmarks/cases/agents-remember-md-drift-workflow/prompts/explain-drift-workflow.no-onboarding.md) |
 
 ## Cross-Repo References
 
@@ -88,6 +93,7 @@ The draft case points at a GitHub repository URL for cloning, but this onboardin
 
 ## Update History
 
+- 2026-05-16T18:39+02:00: Updated after benchmark runs switched to one dated output root with paired variants scheduled by repetition, bounded parallel execution, `--jobs` concurrency control, aggregate run-failure reporting, and non-interactive prompt discipline for the drift workflow case.
 - 2026-05-16T12:09+02:00: Updated after benchmark preparation moved to paired `source-only/` and `with-memory/` environment roots, and after git preparation became long-path-aware and recovery-safe for interrupted generated checkouts. Verification metadata should be refreshed after the source change is committed.
 - 2026-05-15T17:32+02:00: Updated after workspace `AGENTS.md` generation moved to `templates/workspace-AGENTS.md`, source-side empty workspaces were removed, and runtime asset sync started ignoring Python bytecode caches. Verification metadata remains blank until the new source file is committed.
 - 2026-05-15T15:50+02:00: Created onboarding for the new benchmark runner and analyzer. Verification metadata is intentionally blank until the new source file is committed.
