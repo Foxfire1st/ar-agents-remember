@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                             |
 | path                   | `runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-05-15T01:07+02:00                                         |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964`                     |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-18T16:42+02:00                                         |
+| lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841`                     |
+| lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
 
 ## Purpose
 
@@ -41,14 +41,14 @@ No external domain documentation applies to this repository-local skill contract
 
 ## Repo-Internal References
 
-C-08 is the base dependency for C-02, C-05, C-03, and task workflows.
+C-08 is the base dependency for C-02, C-03, C-04, C-05, and task workflows.
 
 | Finding                                                                                                                                                                 | Citations                          | Source Path                                                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The skill accepts `code_repository_name`, optional `code_repository_root`, and `task_name`; no-task-name contexts resolve the repo task namespace, while task-name contexts resolve current wrapper task folders and persisted `*-ar` contract folders. | L14-L23 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | The skill returns topology, code repository identity/root, settings paths, repo/task-specific task roots, temp/docs/system roots, worktree fields, ledger path, path rules, and cross-repo data. | L29-L53 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use `.env` or the built-in coordination root default, require supported memory roots, and fail clearly when no memory exists. | L55-L65 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
-| Consumers include C-02, C-03, C-05, W-02, and C-09; boundaries keep C-08 out of mutation work.                                                                          | L84-L94                            | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md)                                                          |
+| Consumers include C-02, C-03, C-04-onboarding-read-mode, C-05, task workflows, and C-09; boundaries keep C-08 out of mutation work. | L84-L94 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | The implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and JSON/text output. | L88-L112; L1002-L1156; L1216-L1267 | [ar_coordination_context_resolver.py](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) |
 
 ## Cross-Repo References
@@ -61,6 +61,7 @@ C-08 may read coordinator settings, but no external repository behavior is requi
 
 ## Update History
 
+- 2026-05-18T16:42+02:00: Updated the consumers list after C-04 was renamed to `C-04-onboarding-read-mode`.
 - 2026-05-15T01:07+02:00: Updated after the skill contract clarified repo-specific `task_root` output when no task name is supplied. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-12T18:51+02:00: Updated after the skill frontmatter moved to lowercase, coordination-root runtime discovery stopped using `.env.example`, and resolution rules began requiring supported memory roots with an explicit missing-memory failure.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
