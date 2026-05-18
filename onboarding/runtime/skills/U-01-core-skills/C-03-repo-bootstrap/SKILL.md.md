@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-15T11:46+02:00                                 |
-| lastVerifiedCommitHash | `947b0e52ef06b1160819bd83ac90b5cefa7db811`             |
-| lastVerifiedCommitDate | 2026-05-15T12:19:03+02:00|
+| lastUpdated            | 2026-05-18T16:42+02:00                                 |
+| lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841`             |
+| lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
 
 ## Purpose
 
@@ -25,7 +25,7 @@ Internal bootstrap uses `ar-memory/`; external-memory bootstrap uses the selecte
 
 ### Invariants And Boundaries
 
-C-03 writes durable onboarding, not task coordination state. Task artifacts stay in the coordinator. Source inventory review is the pre-automation intake gate; automated bootstrap stops at handoff and asks whether separate closeout should run. Candidate eligibility comes from `settings.json` path rules; the skill's exclude list is a settings checklist/example, not a hidden replacement filter. Route-local overviews may become durable memory, but file-level onboarding remains separate and self-sufficient; C-03 prepares file cards and waves while C-05 owns canonical file-level content.
+C-03 writes durable onboarding, not task coordination state. Task artifacts stay in the coordinator. Source inventory review is the pre-automation intake gate; automated bootstrap stops at handoff and asks whether separate closeout should run. Candidate eligibility comes from `settings.json` path rules; the skill's exclude list is a settings checklist/example, not a hidden replacement filter. Route-local overviews may become durable memory, but file-level onboarding remains separate and self-sufficient; C-03 prepares file cards and waves while C-05 owns canonical file-level content. Existing onboarding produced by C-03 is later consumed through `C-04-onboarding-read-mode`.
 
 ### Todos
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-18T16:42+02:00: Updated the C-04 relationship to point to `C-04-onboarding-read-mode` as the consumer of bootstrapped overviews and file maps.
 - 2026-05-15T11:46+02:00: Refreshed after C-03 overview templates and instructions gained route-based verification metadata for deterministic C-02 overview drift. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-14T21:38+02:00: Refreshed after the skill frontmatter was tightened and the exclusion baseline was clarified as `settings.json` path-rule defaults rather than a hidden skill filter. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-14T21:16+02:00: Refreshed for resolved onboarding-root paths, source inventory as the pre-automation gate, default bootstrap excludes, existing-memory slice maintenance, deleted-slice cleanup, C-05 routing, and handoff-before-closeout semantics. Verification metadata remains pinned to the last committed source until closeout.

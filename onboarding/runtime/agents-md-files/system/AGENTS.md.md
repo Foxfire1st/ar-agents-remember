@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/system/AGENTS.md`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-15T00:38+02:00                     |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964` |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-18T17:03+02:00                     |
+| lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841` |
+| lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
 
 ## Purpose
 
@@ -24,22 +24,27 @@ The template requires C-08 context resolution and C-02 drift detection before
 agents rely on repository onboarding for any task, including read-only
 analysis. It defines the developer decision point when drift exists, the C-05
 maintenance route for approved refreshes, and the second C-02 check after
-maintenance. It also preserves the planning rule that agents read the repo
-overview and verified file-level onboarding alongside source, then update or
-create onboarding when implementation changes current-state knowledge.
+maintenance. It then separates post-gate planning from implementation.
+Post-gate planning and research routes onboarding-backed source reading to
+`C-04-onboarding-read-mode`, leaving the detailed overview, route overview,
+candidate source, and sidecar paired-read protocol in the skill that owns that
+behavior. Implementation updates or creates onboarding when code changes
+current-state knowledge.
 
 ### Conventions
 
 The system template is strict because it protects trust in durable memory. It
-uses numbered gates for the startup workflow and separates the post-gate
-planning and implementation expectations from the initial trust check.
+uses numbered gates for the startup workflow and clearer headings for
+single-repo, cross-repo, planning, and implementation phases. The template now
+keeps the trust and maintenance gates here while routing read behavior to C-04,
+so the read-mode contract has one owning document.
 
 ### Invariants And Boundaries
 
 C-08 and C-02 are mandatory before trusting onboarding. C-02 detects drift but
 does not update onboarding; C-05 owns approved onboarding maintenance. The drift
 report is temporary coordination state and should be deleted after the gate is
-complete.
+complete. C-04 owns the post-gate source/onboarding read protocol.
 
 ### Todos
 
@@ -61,9 +66,10 @@ This onboarding is backed by the source template itself.
 
 | Finding                                                                                                                     | Citations | Source Path |
 | --------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The hard gate requires C-08 context resolution, C-02 drift detection, developer review of drift, approved C-05 refresh, a second C-02 check, and drift report deletion. | L1-L30 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
-| Cross-repo drift handling runs the first three gates for every allowed repo before asking about onboarding refresh.          | L32-L38   | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
-| Post-gate planning reads overview and source-paired onboarding, and implementation updates onboarding through C-05.          | L40-L68   | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| The start-of-task trust gate requires C-08 context resolution, C-02 drift detection, developer review of drift, approved C-05 refresh, a second C-02 check, and drift report deletion. | L1-L30 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh. | L32-L38 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| Post-gate planning and research routes onboarding-backed source reading to `C-04-onboarding-read-mode`, which owns the overview, route overview, candidate source, and sidecar paired-read protocol. | L42-L45 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| Post-gate implementation updates or creates onboarding through C-05 when changed source files alter current-state knowledge. | L49-L61 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -75,4 +81,7 @@ No sibling repository evidence is needed for this runtime template.
 
 ## Update History
 
+- 2026-05-18T17:03+02:00: Reduced the system onboarding description to the trust and maintenance gates plus C-04 routing for post-gate read behavior, matching the updated runtime template.
+- 2026-05-18T15:32+02:00: Tightened onboarding-led discovery into an ordering rule: candidate pairs must precede source discovery search, onboarding tree enumeration is fallback-only, and source search must stay route-local before broad fallback.
+- 2026-05-18T14:48+02:00: Renamed the system gate headings and added the onboarding-led source discovery path so warm-memory agents use overview and route maps to choose candidate files before broad source search.
 - 2026-05-15T00:38+02:00: Created onboarding after the former root `system/AGENTS.md` guidance moved to the installable system template path. Verification metadata remains pinned to the last committed source until closeout.

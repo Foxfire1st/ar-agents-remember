@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/skills/AGENTS.md`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-15T00:38+02:00                     |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964` |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-18T16:42+02:00                     |
+| lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841` |
+| lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
 
 ## Purpose
 
@@ -21,8 +21,8 @@ Agents Remember support skills.
 
 The file is a numbered question-to-skill map. It routes context resolution to
 C-08, missing repo memory scaffolds to C-00, stale onboarding to C-02, durable finding
-placement to C-01, bootstrap onboarding to C-03, unfamiliar-surface discovery
-to C-04, onboarding artifact maintenance to C-05, lifecycle and ledger
+placement to C-01, bootstrap onboarding to C-03, existing onboarding/source read
+mode to C-04, onboarding artifact maintenance to C-05, lifecycle and ledger
 operations to C-09, baseline adoption to C-10, and branch memory carryover to
 C-11.
 
@@ -58,7 +58,7 @@ The route list itself is the primary implementation evidence.
 
 | Finding                                                                                                             | Citations | Source Path |
 | ------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| Core-skill routing maps common memory, onboarding, discovery, lifecycle, baseline, and carryover needs to C-* IDs. | L1-L33    | [runtime/agents-md-files/skills/AGENTS.md](agents-remember-md/runtime/agents-md-files/skills/AGENTS.md) |
+| Core-skill routing maps common memory, onboarding read mode, lifecycle, baseline, and carryover needs to C-* IDs. | L1-L34    | [runtime/agents-md-files/skills/AGENTS.md](agents-remember-md/runtime/agents-md-files/skills/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -70,5 +70,6 @@ No sibling repository evidence is needed for this routing guide.
 
 ## Update History
 
+- 2026-05-18T16:42+02:00: Updated C-04 routing language from unfamiliar-surface discovery to onboarding read mode for source reasoning.
 - 2026-05-15T00:38+02:00: Moved onboarding semantics from the deleted core-skills local `AGENTS.md` to the new installable skills template path. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-12T11:36: Created onboarding for the core-skills routing guide while preparing direct closeout.
