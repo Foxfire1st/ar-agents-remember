@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                                                           |
 | path                   | `runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md` |
 | doc_type               | `file-level-onboarding`                                                                                      |
-| lastUpdated            | 2026-05-14T18:00+02:00                                                                                       |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964`                                                                   |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-18T08:49+02:00                                                                                       |
+| lastVerifiedCommitHash | `553d85b9c977e3f99175b6c8705e0ef21d4e8815`                                                                   |
+| lastVerifiedCommitDate | 2026-05-18T08:52:57+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The template defines the required metadata table, governing overview backlink, semantic commentary sections, reference sections, and append-only update-history convention for one concrete source file. It tells maintainers to use the resolved C-08 `system/sources.md` only as a discovery aid for documentation evidence, to cite actual proving sources, and to keep reference sections explanation-first rather than citation-only.
+The template defines the required metadata table, governing overview backlink, semantic commentary sections, top-level reference sections, and append-only update-history convention for one concrete source file. It tells maintainers to use the resolved C-08 `system/sources.md` only as a discovery aid for documentation evidence, to cite actual proving sources, and to keep reference sections explanation-first rather than citation-only.
 
 ### Conventions
 
@@ -25,7 +25,7 @@ The template uses placeholder text in angle brackets and keeps the generated art
 
 ### Invariants And Boundaries
 
-This file defines structure and wording for generated onboarding; it does not decide which source paths are eligible, resolve storage roots, or perform drift classification. C-08 owns context resolution, C-02 owns drift classification, and C-05 workflows own when this template is applied.
+This file defines structure and wording for generated onboarding; it does not decide which source paths are eligible, resolve storage roots, or perform drift classification. `Docs References` is a `##` top-level reference section, parallel to `Repo-Internal References` and `Cross-Repo References`, not a `###` subsection under `Code Commentary`. C-08 owns context resolution, C-02 owns drift classification, and C-05 workflows own when this template is applied.
 
 ### Todos
 
@@ -46,7 +46,7 @@ The template is governed by C-05's onboarding-maintenance contract and is consum
 | Finding                                                                                                                      | Citations | Source Path                                                                                                                                                        |
 | ---------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | C-05 routes file-level onboarding creation to this template and requires strict one-to-one mirroring with source files and route-local governing overview links. | L19-L51 | [C-05 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
-| The template defines metadata including `governingOverview`, the governing overview section, purpose, code commentary, reference sections, and append-only update-history guidance. | L1-L68 | [file-level-onboarding-template.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md) |
+| The template defines metadata including `governingOverview`, the governing overview section, purpose, code commentary, top-level reference sections, and append-only update-history guidance. | L1-L68 | [file-level-onboarding-template.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md) |
 
 ## Cross-Repo References
 
@@ -58,5 +58,6 @@ No sibling repository evidence is needed for this template.
 
 ## Update History
 
+- 2026-05-18T08:49+02:00: Updated after `Docs References` became a top-level `##` section in the canonical file-level onboarding template. Verification metadata remains pinned until closeout commits the template change.
 - 2026-05-14T18:00+02:00: Refreshed for governing overview metadata and backlink guidance. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-12T11:30: Created onboarding for the file-level onboarding template after its update-history wording was clarified.

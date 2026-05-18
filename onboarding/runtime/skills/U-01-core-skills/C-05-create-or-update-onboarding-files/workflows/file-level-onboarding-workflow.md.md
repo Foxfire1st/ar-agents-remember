@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-14T21:16+02:00                     |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964` |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-18T08:49+02:00                     |
+| lastVerifiedCommitHash | `553d85b9c977e3f99175b6c8705e0ef21d4e8815` |
+| lastVerifiedCommitDate | 2026-05-18T08:52:57+02:00|
 
 ## Purpose
 
@@ -17,11 +17,11 @@ This workflow defines how C-05 creates and maintains onboarding for one concrete
 
 ### Logic
 
-The workflow selects sidecar or inline storage, stores sidecar onboarding under the resolved onboarding root, enforces metadata and required sections, discovers the nearest governing route-local overview, reads source and existing onboarding, verifies references, writes concise commentary, and updates verification metadata. Before file-level create/delete/move work, it checks whether the change is actually a route-level slice case that belongs in C-03.
+The workflow selects sidecar or inline storage, stores sidecar onboarding under the resolved onboarding root, enforces metadata and required sections, discovers the nearest governing route-local overview, reads source and existing onboarding, verifies references, writes concise commentary, and updates verification metadata. `Docs References` is a required top-level `##` reference section, not a `###` subsection under `Code Commentary`. Before file-level create/delete/move work, it checks whether the change is actually a route-level slice case that belongs in C-03.
 
 ### Conventions
 
-Sidecar onboarding mirrors the repo-relative source path under the resolved onboarding root and appends `.md`. The required sections include metadata with `governingOverview`, `## Governing Overview`, purpose, code commentary, repo-internal references, cross-repo references, and update history, with docs references under code commentary.
+Sidecar onboarding mirrors the repo-relative source path under the resolved onboarding root and appends `.md`. The required sections include metadata with `governingOverview`, `## Governing Overview`, purpose, code commentary, docs references, repo-internal references, cross-repo references, and update history.
 
 ### Invariants And Boundaries
 
@@ -46,7 +46,7 @@ This workflow is the primary schema source for mirrored file-level onboarding.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Scope and placement rules require one onboarding unit per source file, store sidecar onboarding under the resolved onboarding root, and route structural slice changes to C-03. | L1-L44 | [file-level workflow](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
-| Section rules require metadata with `governingOverview`, a governing overview section, code commentary, repo-internal references, cross-repo references, and update history. | L46-L85 | [file-level workflow](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
+| Section rules require metadata with `governingOverview`, a governing overview section, code commentary, top-level docs references, repo-internal references, cross-repo references, and update history. | L46-L85 | [file-level workflow](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
 | Creation steps now confirm the target is one concrete file, route route-local slice cases to C-03, identify/read the nearest governing overview, and cross-check all reference sections. | L87-L100 | [file-level workflow](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
 | Maintenance steps require re-reading source and onboarding, refreshing changed sections and citations, applying inline syntax rules, appending update history, and routing whole-route moves or deletions to C-03. | L102-L117 | [file-level workflow](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
 
@@ -60,6 +60,7 @@ No sibling repository evidence is needed for the workflow itself.
 
 ## Update History
 
+- 2026-05-18T08:49+02:00: Updated after the workflow was aligned with the template's top-level `## Docs References` section. Verification metadata remains pinned until closeout commits the workflow change.
 - 2026-05-14T21:16+02:00: Refreshed for resolved onboarding-root placement and C-03 routing of route-level slice create, refresh, move, and delete cases. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-14T18:00+02:00: Refreshed for governing overview metadata, route-local overview discovery, canonical reference sections, and self-sufficient file-level onboarding. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-09T21:15: Created first file-level onboarding baseline for the C-05 file-level workflow.
