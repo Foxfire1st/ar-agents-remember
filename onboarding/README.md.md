@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-15T17:32+02:00                     |
-| lastVerifiedCommitHash | `e7c1ee4f983a7309d51c05b97f94e27443c3cf90` |
-| lastVerifiedCommitDate | 2026-05-15T18:10:44+02:00|
+| lastVerifiedCommitHash | `f214142dce36fcf00675a6342cf4bb0f7784ce57` |
+| lastVerifiedCommitDate | 2026-05-18T08:26:25+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
