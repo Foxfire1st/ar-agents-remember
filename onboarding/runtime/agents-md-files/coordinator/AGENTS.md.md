@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-18T17:03+02:00                     |
+| lastUpdated            | 2026-05-18T21:44+02:00                     |
 | lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841` |
 | lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
 
@@ -13,7 +13,7 @@
 
 This file is the package-owned template for the installed coordinator root
 `AGENTS.md`. It is intended to land at `ar-coordination/AGENTS.md` after the
-future runtime install layout is implemented.
+runtime package is installed.
 
 ## Code Commentary
 
@@ -27,8 +27,8 @@ repository context with C-08 before trusting memory or task surfaces, and uses
 coordinator `system/*` files for workspace-wide defaults. It also routes
 important developer clarifications through `C-01-findings-capture` and requires
 verification against code reality before onboarding propagation through C-05.
-The onboarding read path is now routed at the coordinator entrypoint: source
-work that relies on existing onboarding goes through
+The onboarding read path is routed at the coordinator entrypoint: source work
+that relies on existing onboarding goes through
 `C-04-onboarding-read-mode`, which owns the overview-to-route-to-candidate
 source/sidecar paired-read protocol. The memory-layer read path is also
 explicit: memory repos are not expected to provide a root-level `AGENTS.md`;
@@ -58,8 +58,7 @@ granted the required approvals.
 
 ### Todos
 
-Refresh verification metadata after this coordinator template update is
-committed.
+None.
 
 ### Docs References
 
@@ -77,7 +76,7 @@ This onboarding is backed by the source template itself.
 | ----------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
 | The template installs the same Chat/W-02/W-01 routing and workflow-before-code rule expected at a coordinator root.           | L3-L24    | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | L28-L38   | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The onboarding section routes onboarding-backed source reading to `C-04-onboarding-read-mode`, which owns the overview, route overview, candidate source, and sidecar paired-read protocol. | L40-L48 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
+| The onboarding section routes onboarding-backed source reading to `C-04-onboarding-read-mode`, which owns the overview, route overview, candidate source, and sidecar paired-read protocol. | L40-L49 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The developer-clarification section routes important clarifications through C-01/C-05 only after code-reality checks. | L50-L60 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The resolver and memory-layer routing require C-08 before relying on memory/task surfaces and route repository-specific guidance to memory-layer `system/*` files. | L74-L103 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 | Branch/worktree approval boundaries and memory-layer authority remain listed in the template. | L105-L121   | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
@@ -92,6 +91,8 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-05-18T21:44+02:00: Refreshed after pulling the committed C-04 onboarding read-mode rename from `origin/main`.
+- 2026-05-18T21:38+02:00: Refreshed against the current committed coordinator template, removing unlanded C-04 read-mode wording and updating verification metadata.
 - 2026-05-18T17:03+02:00: Updated the coordinator onboarding to route onboarding-backed source reading to `C-04-onboarding-read-mode` instead of duplicating the sidecar lookup and fallback-search protocol inline.
 - 2026-05-18T14:09+02:00: Added coordinator-entrypoint guidance for deterministic sidecar lookup and made broad onboarding `rg`/`find` fallback-only discovery after direct sidecar plus governing overview reads. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-15T15:08+02:00: Added installed `AGENTS.md` routing guidance and developer clarification capture rules that require C-01, developer approval for onboarding documentation, and code-reality checks before C-05 propagation.

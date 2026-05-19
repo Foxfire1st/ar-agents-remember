@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-18T16:42+02:00                                 |
-| lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841`             |
-| lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
+| lastUpdated            | 2026-05-19T02:45+02:00                                 |
+| lastVerifiedCommitHash | `5b26015bb3e9deec8113b1a69a12608bba82cc27`             |
+| lastVerifiedCommitDate | 2026-05-19T03:27:34+02:00|
 
 ## Purpose
 
@@ -17,11 +17,11 @@ This skill describes repository onboarding bootstrap. It defines a minimum root-
 
 ### Logic
 
-C-03 resolves context with C-08, writes all bootstrap paths relative to the resolved `onboarding_root`, and builds bootstrap memory in phases. The minimum output is `overview.md`; larger runs proceed through source inventory, area research, coverage planning, governing route mapping, route-local overview cards, route-local overview waves, docs and boundary evidence packs, file cards, file-level onboarding waves, curator reviews, and handoff. Existing-memory slice maintenance starts from verified existing memory and handles expansion, refresh, move, or cleanup for a bounded source slice. Root and route-local overviews record route-based verification metadata so C-02 can later detect deterministic overview drift by `sourceRoute`.
+C-03 resolves context with C-08, writes all bootstrap paths relative to the resolved `onboarding_root`, and builds bootstrap memory in phases. The minimum output is `overview.md`; larger runs proceed through source inventory, area research, coverage planning, governing route mapping, route-local overview cards, route-local overview waves, docs and boundary evidence packs, file cards, file-level onboarding waves, curator reviews, and handoff. Existing-memory slice maintenance starts from verified existing memory and handles expansion, refresh, move, or cleanup for a bounded source slice. Root and route-local overviews record route-based verification metadata and a compact `## Hot Path Summary` so C-02 can later detect deterministic overview drift by `sourceRoute` and C-04 can use generated route-index hot-path hints.
 
 ### Conventions
 
-Internal bootstrap uses `ar-memory/`; external-memory bootstrap uses the selected per-repo memory repo under `ar-coordination/memory-repos/ar-<repo-name>/`, and the skill describes those repositories as external-memory repositories. Durable route-local overview files belong in the mirrored onboarding hierarchy directly under the resolved onboarding root, while `bootstrap/` artifacts are promotion, review, and handoff artifacts.
+Internal bootstrap uses `ar-memory/`; external-memory bootstrap uses the selected per-repo memory repo under `ar-coordination/memory-repos/ar-<repo-name>/`, and the skill describes those repositories as external-memory repositories. Durable route-local overview files belong in the mirrored onboarding hierarchy directly under the resolved onboarding root, while `bootstrap/` artifacts are promotion, review, and handoff artifacts. Generated `overview.index.json` files live beside overviews and include coverage plus `hotPath` fields.
 
 ### Invariants And Boundaries
 
@@ -29,7 +29,7 @@ C-03 writes durable onboarding, not task coordination state. Task artifacts stay
 
 ### Todos
 
-If bootstrap gains executable helpers, use C-08's `memory_root`, `coordination_root`, `sources_path`, and `tools_path` fields directly rather than deriving paths from prose. After this working-tree update lands, refresh verification metadata to the committed C-03 source revision.
+If bootstrap gains executable helpers, use C-08's `memory_root`, `coordination_root`, `sources_path`, and `tools_path` fields directly rather than deriving paths from prose.
 
 ### Docs References
 
@@ -44,11 +44,11 @@ No external documentation is needed for this repository-local skill.
 | Finding                                                                                                                                        | Citations        | Source Path                                                                              |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------- |
 | C-03 defines root overview as the minimum bootstrap, under the resolved onboarding root, and introduces targeted work for existing-memory source slices. | L8-L31 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
-| The design requires durable route-local overview placement directly in the mirrored onboarding hierarchy and keeps file-level onboarding self-sufficient. | L37-L128 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
+| The design requires durable route-local overview placement directly in the mirrored onboarding hierarchy, generated route indexes with hot-path hints, and self-sufficient file-level onboarding. | L37-L129 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | C-03 preserves thin orchestrator behavior, confidence tags, C-08 topology resolution, cross-repo read-only semantics, and C-05 ownership of file-level onboarding. | L132-L143 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | Automated mode starts only after source inventory is accepted or corrected, writes artifacts relative to the resolved `onboarding_root`, and treats common excludes as `settings.json` path-rule defaults. | L181-L307 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | The skill lists all bootstrap templates used for ledgers, state, plans, route maps, evidence packs, cards, waves, reviews, and handoff. | L348-L366 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
-| Phase 3 and Phase 4D require route-based overview verification metadata so C-02 can compare recorded `sourceRoute` scopes deterministically. | L678-L680; L863-L865 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
+| Phase 3 and Phase 4D require route-based overview verification metadata and `Hot Path Summary` sections so C-02 can compare recorded `sourceRoute` scopes and C-04 can use compact route hints. | L686-L721; L879-L907 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | Existing-memory slice maintenance reuses current memory and covers expansion, refresh, move handling, deleted-slice cleanup, and C-05 routing. | L464-L513 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 | Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap. | L756-L808; L1042-L1057 | [C-03 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md) |
 
@@ -62,6 +62,9 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-19T02:45+02:00: Updated for route-index `hotPath` support, including required root/route overview `## Hot Path Summary` sections and generated index refresh expectations.
+- 2026-05-18T21:44+02:00: Refreshed after pulling the committed C-04 onboarding read-mode rename from `origin/main`.
+- 2026-05-18T21:38+02:00: Refreshed against the current committed C-03 skill, restoring the C-04 relationship to discovery techniques and updating verification metadata.
 - 2026-05-18T16:42+02:00: Updated the C-04 relationship to point to `C-04-onboarding-read-mode` as the consumer of bootstrapped overviews and file maps.
 - 2026-05-15T11:46+02:00: Refreshed after C-03 overview templates and instructions gained route-based verification metadata for deterministic C-02 overview drift. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-14T21:38+02:00: Refreshed after the skill frontmatter was tightened and the exclusion baseline was clarified as `settings.json` path-rule defaults rather than a hidden skill filter. Verification metadata remains pinned to the last committed source until closeout.
