@@ -8,6 +8,10 @@
 
 The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. C-08 exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`, C-09 owns worktree lifecycle mutation, direct current-checkout closeout for approved micro edits, and integration back to source branches, and C-10 provides the adoption path for existing external-memory onboarding that needs an initial `memory.md` ledger.
 
+## Hot Path Summary
+
+Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task workflows, and `installer` plus `runtime/scripts` cover packaging and installed-runtime helpers. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.
+
 ## Architecture At A Glance
 
 ```text
@@ -83,7 +87,7 @@ C-08 resolves the active coordination context: topology, code repository, `coord
 
 ### Onboarding Maintenance
 
-C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file. Entity catalogs now carry one deterministic fingerprint row per entity over a small curated evidence file set; C-05 chooses and refreshes those paths after review. C-05 also detects route-level create, refresh, move, and deletion cleanup cases and routes those structural changes to C-03 `existing-memory-slice-maintenance`.
+C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file. Entity catalogs now carry one deterministic fingerprint row per entity over a small curated evidence file set; C-05 chooses and refreshes those paths after review. C-05 also detects route-level create, refresh, move, and deletion cleanup cases and routes those structural changes to C-03 `existing-memory-slice-maintenance`. Generated `overview.index.json` files live beside route overviews and expose route scope, covered sidecars, child routes, copied hot-path summaries, and mechanically derived source-anchor hints so C-04 can route cheaply before opening full overview prose.
 
 ### Task Workflows
 
@@ -125,6 +129,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 - C-10 is an adoption wrapper for existing external-memory onboarding; it does not refresh onboarding and it does not overwrite an existing ledger.
 - C-03 bootstrap memory must keep durable route-local overviews in the mirrored onboarding hierarchy under the resolved onboarding root, use root `bootstrap/` artifacts as temporary promotion/review artifacts, keep low-confidence claims out of durable fact sections, apply candidate excludes before scouting, and hand file-level onboarding semantics to C-05.
 - C-05 file-level onboarding remains strict one-to-one with source files and must not collapse file-specific facts into a generic route overview reference; structural route changes route to C-03 rather than becoming disconnected file edits.
+- Route indexes are generated availability metadata, not hand-authored truth; overview `## Hot Path Summary` sections and file sidecars are the maintained inputs, and C-04 should infer missing sidecars from `sourceScope` plus `coveredFiles`.
 - Repo entity catalogs use deterministic `git-blob-set-v1` fingerprints over curated load-bearing evidence files so C-02 can flag stale entity memory without semantic guessing.
 - The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory repos use `system/*` files rather than a root-level `AGENTS.md`.
 
@@ -167,7 +172,8 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 - External-memory onboarding for `agents-remember-md` is ledgered; future closeouts must keep the code-to-memory mapping current.
 - The current root `AGENTS.md` source-checkout reframing is pending final source commit; verification metadata for that onboarding should be refreshed after the code commit lands.
 - The README/docs professionalization rewrite is pending final source commit; README onboarding verification metadata should be refreshed after the docs commit lands.
+- The route-index generator, wrapper CLI, and tests are pending final source commit; their new file-level onboarding metadata should be refreshed during closeout.
 
 ## Last Verified
 
-Updated 2026-05-15T12:05+02:00 after the public README was shortened into a front door and detailed setup/reference material moved into focused `docs/` pages. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-19T03:23+02:00 after the route-index hot-path implementation was added to the source checkout and reflected in onboarding. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.

@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/skills/AGENTS.md`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-18T16:42+02:00                     |
+| lastUpdated            | 2026-05-18T21:44+02:00                     |
 | lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841` |
 | lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
 
@@ -40,8 +40,7 @@ syntax.
 
 ### Todos
 
-Refresh verification metadata after the current `AGENTS.md` source reshuffle is
-committed.
+None.
 
 ### Docs References
 
@@ -58,7 +57,7 @@ The route list itself is the primary implementation evidence.
 
 | Finding                                                                                                             | Citations | Source Path |
 | ------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| Core-skill routing maps common memory, onboarding read mode, lifecycle, baseline, and carryover needs to C-* IDs. | L1-L34    | [runtime/agents-md-files/skills/AGENTS.md](agents-remember-md/runtime/agents-md-files/skills/AGENTS.md) |
+| Core-skill routing maps common memory, onboarding read mode, lifecycle, baseline, and carryover needs to C-* IDs. | L1-L33    | [runtime/agents-md-files/skills/AGENTS.md](agents-remember-md/runtime/agents-md-files/skills/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -70,6 +69,8 @@ No sibling repository evidence is needed for this routing guide.
 
 ## Update History
 
+- 2026-05-18T21:44+02:00: Refreshed after pulling the committed C-04 onboarding read-mode rename from `origin/main`.
+- 2026-05-18T21:38+02:00: Refreshed against the current committed skills routing template, restoring C-04 as unfamiliar-surface discovery and updating verification metadata.
 - 2026-05-18T16:42+02:00: Updated C-04 routing language from unfamiliar-surface discovery to onboarding read mode for source reasoning.
 - 2026-05-15T00:38+02:00: Moved onboarding semantics from the deleted core-skills local `AGENTS.md` to the new installable skills template path. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-12T11:36: Created onboarding for the core-skills routing guide while preparing direct closeout.

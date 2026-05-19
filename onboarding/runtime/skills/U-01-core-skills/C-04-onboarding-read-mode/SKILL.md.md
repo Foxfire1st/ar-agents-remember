@@ -1,82 +1,72 @@
-# C-04 onboarding read mode SKILL.md
+# C-04-onboarding-read-mode/SKILL.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| Field                  | Value                                                  |
+| ---------------------- | ------------------------------------------------------ |
+| repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-18T18:05+02:00                     |
-| lastVerifiedCommitHash | `fa305b91cd6b0ec839db1fd2f19496bf292ef3fc` |
-| lastVerifiedCommitDate | 2026-05-18T17:47:59+02:00|
+| doc_type               | `file-level-onboarding`                                |
+| lastUpdated            | 2026-05-19T03:12+02:00                                 |
+| lastVerifiedCommitHash | `5b26015bb3e9deec8113b1a69a12608bba82cc27`             |
+| lastVerifiedCommitDate | 2026-05-19T03:27:34+02:00|
 
 ## Purpose
 
-This skill defines the C-04 onboarding read mode for source work that uses
-Agents Remember memory. The runtime folder and skill-facing name now present
-C-04 as `C-04-onboarding-read-mode` / `c-04-onboarding-read-mode`.
+C-04 is the onboarding-first read protocol for source work. It is deliberately
+short because its job is routing efficiency: discover likely routes, then
+confirm only the resulting candidate packet.
 
 ## Code Commentary
 
 ### Logic
 
-The skill makes existing onboarding the primary navigation layer for source
-reading. Agents follow an explicit read-state machine: known onboarding roots
-go directly to `<onboarding_root>/overview.md`; route overviews define the
-smallest relevant source area; candidate source files are read with their
-deterministic sidecars; and source `rg` or `find` is a single-question fallback
-after paired reads leave a named gap.
+The skill has two modes. `fast-memory-discovery` reads the root route index
+first, using root `hotPath`, child routes, and routing terms before falling back
+to root overview prose. It then reads selected route indexes and only necessary
+route overviews to produce a candidate packet. `bounded-source-confirmation`
+starts from that packet and does not repeat discovery reads.
 
 ### Conventions
 
-The skill is framed forward as a read protocol, not as historical discovery
-guidance. It intentionally has two top-level chapters: the read protocol itself
-and the hard boundaries that keep fallback search behind the onboarding path.
-The read protocol now carries the operational checklist so agents can follow it
-without inventing separate memory discovery steps.
+Route indexes are availability metadata. `coveredFiles` means a sidecar exists;
+a source path inside `sourceScope` but absent from `coveredFiles` means skip the
+sidecar probe, read the governing overview if needed, then read source.
+`hotPath` fields are generated hints for cheap discovery, not proof.
 
 ### Invariants And Boundaries
 
-C-04 does not carry startup prerequisites; coordinator and workflow instructions
-own root selection, resolver usage, and trust gates. Inside the read mode,
-known onboarding roots must not be rediscovered by inventory. Broad file
-inventory, onboarding-tree inventory, repository-root source search,
-multi-subsystem source search, and cross-repo search are fallback actions after
-the overview chain and candidate source/onboarding pairs fail to answer a stated
-question. Cross-repo reading requires explicit evidence from the task or
-onboarding.
+Discovery may run one capped route-scoped `rg` only when index/overview evidence
+does not produce candidate sources. Confirmation may run one capped `rg` only
+for a named unresolved source question and only over candidate files or the
+selected route. Missing sidecars or sparse memory stay in confirmation and drive
+targeted source reads/searches. Before source `rg`, confirmation converts the
+packet into source anchors that are more specific than route labels or broad
+domain words. Confirmation returns to discovery only when no route/source target
+exists or targeted source evidence proves the selected route/files irrelevant.
 
 ### Todos
 
-Refresh verification metadata after this skill update is committed.
-
-### Docs References
-
-No external documentation is needed for this repository-local runtime skill.
-
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+None.
 
 ## Repo-Internal References
 
-This onboarding is backed by the source skill itself.
-
 | Finding | Citations | Source Path |
-| ------- | --------- | ----------- |
-| The frontmatter exposes C-04 as `c-04-onboarding-read-mode` and the runtime folder is `C-04-onboarding-read-mode`. | L1-L6 | [runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md) |
-| The read protocol now uses a state machine: known onboarding root, selected route overview, candidate source/sidecar pairs, then one-question targeted source confirmation. | L18-L78 | [runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md) |
-| Hard boundaries place broad file inventory, onboarding inventory, repository-root or multi-subsystem source search, and cross-repo search behind the overview and paired-read path, with an explicit fallback search budget. | L80-L104 | [runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md) |
+| --- | --- | --- |
+| C-04 fits under 100 lines and defines only discovery plus bounded confirmation. | L1-L20 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md) |
+| Discovery produces the candidate packet, reads root index before root overview, uses route-index `hotPath` hints, and avoids sidecar probing, repository-root search, and multi-subsystem search. | L22-L57 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md) |
+| Confirmation consumes the packet, starts source-anchor narrowing from `hotPath.anchorHints`, treats sparse memory as a source-confirmation input, and forbids expanding into a second investigation. | L60-L90 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md) |
+| Route indexes distinguish covered sidecars from indexed absence and expose cheap `hotPath` summary/anchors without blocking source reads. | L92-L99 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md) |
 
 ## Cross-Repo References
 
-No sibling repository evidence is needed for this runtime skill.
-
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+No sibling repository evidence is needed for this skill.
 
 ## Update History
 
-- 2026-05-18T18:05+02:00: Added the read-state checklist, known-root/no-inventory invariant, source/sidecar evidence format, and fallback search budget while preserving the two top-level C-04 chapters.
-- 2026-05-18T16:42+02:00: Reframed C-04 from general discovery into a forward-facing onboarding read mode, with hard boundaries at the end and no startup prerequisite section.
-- 2026-05-15T01:55+02:00: Created with pending verification metadata for the runtime skill-tree move.
+- 2026-05-19T03:12+02:00: Changed fast discovery to read root `overview.index.json` before root `overview.md`, making full root overview prose a fallback when the index is insufficient.
+- 2026-05-19T02:45+02:00: Added route-index `hotPath` consumption so discovery can use generated summary, candidate hints, and source-anchor hints before reading full overview prose.
+- 2026-05-19T02:21+02:00: Added the generalized source-anchor narrowing step before confirmation-mode `rg`, so route labels and broad domain terms are not reused as source queries after they already selected the route.
+- 2026-05-19T02:03+02:00: Clarified that missing sidecars or sparse memory are not packet failures; they stay in bounded source confirmation and use targeted source reads/searches.
+- 2026-05-19T01:50+02:00: Condensed the source skill to 98 lines and corrected the bounded confirmation handoff so it consumes the discovery candidate packet instead of replaying overview/index reads.
+- 2026-05-19T01:37+02:00: Replaced the normal `deterministic-walkthrough` handoff with `bounded-source-confirmation`.
+- 2026-05-19T01:11+02:00: Split read behavior into `fast-memory-discovery` and `deterministic-walkthrough` modes.
+- 2026-05-18T21:44+02:00: Created onboarding for the renamed and hardened C-04 onboarding read-mode skill after pulling `origin/main`.

@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                                             |
 | path                   | `runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-05-18T16:42+02:00                                         |
+| lastUpdated            | 2026-05-18T21:44+02:00                                         |
 | lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841`                     |
 | lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
 
@@ -61,6 +61,8 @@ C-08 may read coordinator settings, but no external repository behavior is requi
 
 ## Update History
 
+- 2026-05-18T21:44+02:00: Refreshed after pulling the committed C-04 onboarding read-mode rename from `origin/main`.
+- 2026-05-18T21:38+02:00: Refreshed against the current committed C-08 skill, restoring C-04 as discovery in the consumer list and updating verification metadata.
 - 2026-05-18T16:42+02:00: Updated the consumers list after C-04 was renamed to `C-04-onboarding-read-mode`.
 - 2026-05-15T01:07+02:00: Updated after the skill contract clarified repo-specific `task_root` output when no task name is supplied. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-12T18:51+02:00: Updated after the skill frontmatter moved to lowercase, coordination-root runtime discovery stopped using `.env.example`, and resolution rules began requiring supported memory roots with an explicit missing-memory failure.

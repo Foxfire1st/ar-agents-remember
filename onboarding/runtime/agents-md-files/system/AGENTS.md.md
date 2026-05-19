@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/system/AGENTS.md`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-18T17:03+02:00                     |
+| lastUpdated            | 2026-05-18T21:44+02:00                     |
 | lastVerifiedCommitHash | `590df5a74eac6e213ae95c24f60656c4f1eb9841` |
 | lastVerifiedCommitDate | 2026-05-18T17:15:39+02:00|
 
@@ -25,11 +25,10 @@ agents rely on repository onboarding for any task, including read-only
 analysis. It defines the developer decision point when drift exists, the C-05
 maintenance route for approved refreshes, and the second C-02 check after
 maintenance. It then separates post-gate planning from implementation.
-Post-gate planning and research routes onboarding-backed source reading to
-`C-04-onboarding-read-mode`, leaving the detailed overview, route overview,
-candidate source, and sidecar paired-read protocol in the skill that owns that
-behavior. Implementation updates or creates onboarding when code changes
-current-state knowledge.
+For onboarding-backed source reading, use `C-04-onboarding-read-mode`. C-04 owns
+the overview-to-route-to-candidate source/sidecar paired-read protocol.
+Implementation updates or creates onboarding when code changes current-state
+knowledge.
 
 ### Conventions
 
@@ -48,8 +47,7 @@ complete. C-04 owns the post-gate source/onboarding read protocol.
 
 ### Todos
 
-Refresh verification metadata after the current `AGENTS.md` source reshuffle is
-committed.
+None.
 
 ### Docs References
 
@@ -68,7 +66,7 @@ This onboarding is backed by the source template itself.
 | --------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
 | The start-of-task trust gate requires C-08 context resolution, C-02 drift detection, developer review of drift, approved C-05 refresh, a second C-02 check, and drift report deletion. | L1-L30 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 | Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh. | L32-L38 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
-| Post-gate planning and research routes onboarding-backed source reading to `C-04-onboarding-read-mode`, which owns the overview, route overview, candidate source, and sidecar paired-read protocol. | L42-L45 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| Post-gate planning and research routes onboarding-backed source reading to `C-04-onboarding-read-mode`, which owns the overview, route overview, candidate source, and sidecar paired-read protocol. | L42-L50 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 | Post-gate implementation updates or creates onboarding through C-05 when changed source files alter current-state knowledge. | L49-L61 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 
 ## Cross-Repo References
@@ -81,6 +79,8 @@ No sibling repository evidence is needed for this runtime template.
 
 ## Update History
 
+- 2026-05-18T21:44+02:00: Refreshed after pulling the committed C-04 onboarding read-mode rename from `origin/main`.
+- 2026-05-18T21:38+02:00: Refreshed against the current committed system template, removing unlanded C-04 read-mode wording and updating verification metadata.
 - 2026-05-18T17:03+02:00: Reduced the system onboarding description to the trust and maintenance gates plus C-04 routing for post-gate read behavior, matching the updated runtime template.
 - 2026-05-18T15:32+02:00: Tightened onboarding-led discovery into an ordering rule: candidate pairs must precede source discovery search, onboarding tree enumeration is fallback-only, and source search must stay route-local before broad fallback.
 - 2026-05-18T14:48+02:00: Renamed the system gate headings and added the onboarding-led source discovery path so warm-memory agents use overview and route maps to choose candidate files before broad source search.
