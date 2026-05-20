@@ -15,8 +15,10 @@
         "fileTypes": [
           ".json",
           ".md",
+          ".patch",
           ".py",
-          ".sh"
+          ".sh",
+          ".txt"
         ]
       },
       "exclude": {
