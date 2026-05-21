@@ -5,9 +5,14 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-21T04:09+02:00                     |
-| lastVerifiedCommitHash | `0462de46a1da1bf1997e3979f4cc5bc53d1132f6` |
-| lastVerifiedCommitDate | 2026-05-21T08:30:44+02:00|
+| lastUpdated            | 2026-05-21T15:42+02:00                     |
+| lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1` |
+| lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
+| governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[overview.md](../../../../overview.md)
 
 ## Purpose
 
@@ -37,6 +42,9 @@ confirmation. The memory-layer read path is also explicit: memory repos are not
 expected to provide a root-level `AGENTS.md`; repo-specific guidance is read
 from `system/settings.md`, `system/tools.md`, `system/sources.md`, and optional
 `system/coding-guidelines.md`.
+The configured-provider check calls the installed lifecycle script without
+passing an explicit `--coordination-root`, relying on the script's installed-path
+default for the coordinator root.
 
 ### Conventions
 
@@ -46,7 +54,8 @@ durable clarification capture, but repository-specific rules belong in the
 resolved memory layer. Memory-layer `system/*` files are listed as read-first
 surfaces once C-08 identifies the target repository. Provider readiness is
 checked only when enabled `contextProviders` are configured in coordinator
-settings. The coordinator names C-04 as the retrieval strategy owner instead of duplicating
+settings, and the check depends on the lifecycle script's default coordinator
+root inference. The coordinator names C-04 as the retrieval strategy owner instead of duplicating
 provider, source, and onboarding ordering rules inline.
 
 ### Invariants And Boundaries
@@ -66,7 +75,7 @@ granted the required approvals.
 
 None.
 
-### Docs References
+## Docs References
 
 No external documentation is needed for this repository-local template.
 
@@ -84,7 +93,7 @@ This onboarding is backed by the source template itself.
 | The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | L28-L38   | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The onboarding section routes context-backed source reading to `C-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | L40-L49 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The developer-clarification section routes important clarifications through C-01/C-05 only after code-reality checks. | L50-L60 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The resolver section requires C-08 before relying on memory/task surfaces, then checks provider readiness when `contextProviders` are enabled in coordinator settings. | L65-L78 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
+| The resolver section requires C-08 before relying on memory/task surfaces, then checks provider readiness when `contextProviders` are enabled in coordinator settings without passing an explicit `--coordination-root` override. | L65-L83 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 | Memory-layer routing sends repository-specific guidance to memory-layer `system/*` files after C-08 resolves `memory_root`. | L79-L102 | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 | Branch/worktree approval boundaries and memory-layer authority remain listed in the template. | L104-L120   | [runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/runtime/agents-md-files/coordinator/AGENTS.md) |
 
@@ -98,6 +107,7 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-05-21T15:42+02:00: Updated the installed provider readiness command after provider lifecycle commands began inferring the coordinator root from their installed path.
 - 2026-05-21T04:09+02:00: Added the configured-provider readiness check after C-08 in the coordinator root template.
 - 2026-05-21T03:05+02:00: Updated coordinator routing so C-04 owns retrieval strategy across GrepAI Semantics, CGC Relationship, and Intent proof.
 - 2026-05-18T21:44+02:00: Refreshed after pulling the committed C-04 onboarding read-mode rename from `origin/main`.
