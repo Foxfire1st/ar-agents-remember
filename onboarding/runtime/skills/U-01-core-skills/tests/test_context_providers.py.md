@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/skills/U-01-core-skills/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-21T13:22+02:00                     |
-| lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1` |
-| lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
+| lastUpdated            | 2026-05-21T23:18+02:00                     |
+| lastVerifiedCommitHash | `00aae9dad3d8740e10a41ab285f87ecab8608745` |
+| lastVerifiedCommitDate | 2026-05-21T23:53:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,7 +24,7 @@
 
 The test module imports `agents_remember.context_providers` from the core-skill shared helper path. It checks that CGC runtime layout expansion produces a contained per-repo runtime root, shared provider venv, pinned requirements file, patch root, provider-data FalkorDB backend root, FalkorDB process env, and isolated HOME-like runtime directories. It verifies that `ensure_cgc_runtime_layout` writes pinned defaults, inherits source `.gitignore` rules into the managed `.cgcignore`, and excludes process-only CGC/FalkorDB runtime keys from persisted `.env`.
 
-The provider-settings tests cover CGC multi-root settings expansion, root-level `cgcignorePatterns`, and rejection of configured code repository roots that do not exist. The cleanup test creates a synthetic stale `my-app` runtime instance plus legacy `db`, `global`, and `kuzu` artifacts under a configured runtime root, then verifies cleanup removes only those generated artifacts while preserving the shared FalkorDB backend data root. The GrepAI tests cover pin handling, workspace runtime paths, explicit external and repo-internal memory roots, provider-owned mirror roots, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and rejection of `.grepai/` artifacts in indexed roots. The remaining tests cover forbidden source artifact detection, idempotent CGC patch application including the visualizer repo-query and route patches, CGC module lookup helpers including the CLI helper, rejection of unexpected patch source text, stable repo id normalization, and stable patch id naming.
+The provider-settings tests cover CGC multi-root settings expansion, root-level `cgcignorePatterns`, and rejection of configured code repository roots that do not exist. The cleanup test creates a synthetic stale `my-app` runtime instance plus legacy `db`, `global`, and `kuzu` artifacts under a configured runtime root, then verifies cleanup removes only those generated artifacts while preserving the shared FalkorDB backend data root. The GrepAI tests cover pin handling, workspace runtime paths, explicit external and repo-internal memory roots, provider-owned mirror roots, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, detection of `.grepai/` artifacts in indexed roots, and removal of disposable `.grepai/` artifacts without touching durable onboarding files. The remaining tests cover forbidden source artifact detection, idempotent CGC patch application including the visualizer repo-query and route patches, CGC module lookup helpers including the CLI helper, rejection of unexpected patch source text, stable repo id normalization, and stable patch id naming.
 
 ### Conventions
 
@@ -32,7 +32,7 @@ All tests use temporary directories and do not require CodeGraphContext, GrepAI,
 
 ### Invariants And Boundaries
 
-The tests protect the core provider invariant: managed provider artifacts belong under `ar-coordination/providers/`, not inside indexed source repositories or memory roots. They also protect reinstall idempotence by proving stale generated runtime instances and legacy embedded-backend files can be removed without touching shared FalkorDB backend data, and that GrepAI's durable database data root is separate from provider-owned config/log/state/mirror scaffolding.
+The tests protect the core provider invariant: managed provider artifacts belong under `ar-coordination/providers/`, not as durable source or memory data. They also protect reinstall idempotence by proving stale generated runtime instances, legacy embedded-backend files, and disposable GrepAI root artifacts can be removed without touching shared backend data or onboarding files, and that GrepAI's durable database data root is separate from provider-owned config/log/state/mirror scaffolding.
 
 ### Todos
 
@@ -54,8 +54,8 @@ No external documentation is needed for these unit tests.
 | The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | L115-L153 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
 | The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | L154-L187 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
 | Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, and rejection of configured code repository paths that do not exist. | L189-L241 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
-| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, settings expansion across external and internal memory roots into provider-owned mirrors, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and rejection of `.grepai/` artifacts in indexed memory roots. | L243-L382 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
-| Source artifact, patch idempotence, CGC module lookup, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query patch, visualizer route patches, `viz/server.py` lookup, and `cli/cli_helpers.py` lookup. | L392-L664 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
+| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, settings expansion across external and internal memory roots into provider-owned mirrors, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, detection of `.grepai/` artifacts in indexed memory roots, and disposable root artifact removal that preserves regular onboarding files. | L243-L422 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
+| Source artifact, patch idempotence, CGC module lookup, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query patch, visualizer route patches, `viz/server.py` lookup, and `cli/cli_helpers.py` lookup. | L423-L679 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
 
 ## Cross-Repo References
 
@@ -67,6 +67,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-21T23:18+02:00: Updated after adding GrepAI disposable root artifact removal coverage.
 - 2026-05-21T13:22+02:00: Updated CGC patch tests for visualizer server route handling, CLI default-route propagation, CLI helper lookup, and the two new patch ids.
 - 2026-05-21T12:40+02:00: Updated CGC patch tests for the visualizer repo-query patch, `viz/server.py` module lookup, and patch id stability.
 - 2026-05-21T12:35+02:00: Updated GrepAI tests for provider-owned mirror-root expansion and mirror sync that excludes source `.grepai/` artifacts.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/scripts/provider-setup.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-21T04:53+02:00                     |
-| lastVerifiedCommitHash |                                            `0462de46a1da1bf1997e3979f4cc5bc53d1132f6`|
-| lastVerifiedCommitDate |                                            2026-05-21T08:30:44+02:00|
+| lastUpdated            | 2026-05-21T23:18+02:00                     |
+| lastVerifiedCommitHash |                                            `00aae9dad3d8740e10a41ab285f87ecab8608745`|
+| lastVerifiedCommitDate |                                            2026-05-21T23:53:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,7 +22,7 @@
 
 ### Logic
 
-The script reads `<coordination-root>/system/settings.json`, detects enabled context providers, and dispatches provider-specific mechanics through `provider-lifecycle.py`. The `install` action installs enabled GrepAI and CodeGraphContext dependencies. The `prepare` action installs enabled dependencies, refreshes GrepAI when enabled, attempts CGC seed import, and starts plus checks provider watchers.
+The script reads `<coordination-root>/system/settings.json`, detects enabled context providers, and dispatches provider-specific mechanics through `provider-lifecycle.py`. Subprocess execution captures UTF-8 text and forces `PYTHONUTF8=1` plus `PYTHONIOENCODING=utf-8` into lifecycle children so Windows console defaults do not break JSON or provider output rendering. The `install` action installs enabled GrepAI and CodeGraphContext dependencies. The `prepare` action installs enabled dependencies, refreshes GrepAI when enabled, attempts CGC seed import, and starts plus checks provider watchers.
 
 CGC seeding exports a `.cgc` bundle from a source coordination root, rewrites source repository path strings inside the bundle to the target repository root, then loads the rewritten bundle into the target CGC backend with `--clear`. It refuses to seed mismatched source and target HEAD commits unless the caller explicitly allows mismatch. If no source coordinator is configured, the source settings are missing, the source or target root cannot be resolved, or the commit check fails, the seed result is reported as skipped/failed and the caller can fall back to `cgc refresh-all`.
 
@@ -35,6 +35,7 @@ For worktree setup, callers can pass `--cgc-isolated-runtime-root` plus source a
 - Benchmark and worktree callers should pass a CGC seed source coordinator whenever a source index exists.
 - Worktree callers should pass an isolated runtime root so worktree CGC data does not mutate the main coordinator backend.
 - `provider-lifecycle.py` remains the lower-level provider command surface; setup flows should not duplicate its install/start/refresh details.
+- Setup subprocesses should keep UTF-8 environment overrides because lifecycle output may include non-ASCII provider glyphs and JSON payloads.
 
 ### Invariants And Boundaries
 
@@ -61,6 +62,7 @@ No external documentation is needed for this standard-library orchestrator.
 | The installer delegates enabled provider dependency installation to `scripts/provider-setup.py install`. | n/a | [installer](agents-remember-md/installer/install-runtime.py) |
 | The benchmark runner delegates memory-enabled provider preparation to `scripts/provider-setup.py prepare` and passes a source coordination root for CGC seed import when available. | n/a | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
 | The C-09 worktree manager delegates default worktree provider preparation to `scripts/provider-setup.py prepare` with an isolated CGC runtime root. | n/a | [git worktree manager](agents-remember-md/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/scripts/git_worktree_manager.py) |
+| `subprocess_env` and `run_command` force UTF-8 environment variables for provider lifecycle child processes while still capturing stdout/stderr as UTF-8 text. | L197-L228 | [provider-setup.py](agents-remember-md/runtime/scripts/provider-setup.py) |
 
 ## Cross-Repo References
 
@@ -72,4 +74,5 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-05-21T23:18+02:00: Updated after setup subprocesses began forcing UTF-8 environment variables for lifecycle children.
 - 2026-05-21T04:53+02:00: Created onboarding for the shared provider setup script and CGC bundle seed workflow.
