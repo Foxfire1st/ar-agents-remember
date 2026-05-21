@@ -44,6 +44,8 @@
     "runtime/skills/U-01-core-skills/C-03-repo-bootstrap/templates/route-local-overview-card-template.md",
     "runtime/skills/U-01-core-skills/C-03-repo-bootstrap/templates/route-local-overview-template.md",
     "runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md",
+    "runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md",
+    "runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/grepai-high-leverage-usage.md",
     "runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md",
     "runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py",
     "runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md",
@@ -66,6 +68,7 @@
     "runtime/skills/U-01-core-skills/_shared/agents_remember/route_index.py",
     "runtime/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py",
     "runtime/skills/U-01-core-skills/tests/test_context_providers.py",
+    "runtime/skills/U-01-core-skills/tests/test_provider_lifecycle.py",
     "runtime/skills/U-01-core-skills/tests/test_provider_setup.py",
     "runtime/skills/U-01-core-skills/tests/test_route_index.py",
     "runtime/skills/U-01-core-skills/tests/test_worktree_support.py",
@@ -127,8 +130,8 @@
     "runtime/system/defaults/examples/memory-repo/tools.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 208,
-    "fileSidecars": 115,
+    "sourceFilesInScope": 213,
+    "fileSidecars": 118,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -204,14 +207,14 @@
     "guidelines",
     "handoff",
     "heavy",
+    "high",
     "implementation",
     "index",
     "indexes",
     "init",
     "init__",
     "initialize",
-    "inline",
-    "input"
+    "inline"
   ],
   "hotPath": {
     "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task workflows, and `installer` plus `runtime/scripts` cover packaging and installed-runtime helpers. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.",

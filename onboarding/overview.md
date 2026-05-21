@@ -8,6 +8,8 @@
 
 The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. C-08 exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`, C-09 owns worktree lifecycle mutation, direct current-checkout closeout for approved micro edits, and integration back to source branches, and C-10 provides the adoption path for existing external-memory onboarding that needs an initial `memory.md` ledger.
 
+The provider runtime guidance favors coordination-owned wrappers instead of host-level services: runtime-owned binaries and Python venvs live under `providers/`, provider config/log/state/cache/home artifacts live under provider runtime roots, and durable provider database data lives under `provider-data/`. Providers that need databases should use Docker-wrapped backends in managed mode; GrepAI uses a workspace-mode PostgreSQL/pgvector Docker backend for multiple memory roots, and CGC uses a FalkorDB Docker backend for configured code roots.
+
 ## Hot Path Summary
 
 Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task workflows, and `installer` plus `runtime/scripts` cover packaging and installed-runtime helpers. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.
@@ -89,6 +91,12 @@ C-08 resolves the active coordination context: topology, code repository, `coord
 
 C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file. Entity catalogs now carry one deterministic fingerprint row per entity over a small curated evidence file set; C-05 chooses and refreshes those paths after review. C-05 also detects route-level create, refresh, move, and deletion cleanup cases and routes those structural changes to C-03 `existing-memory-slice-maintenance`. Generated `overview.index.json` files live beside route overviews and expose route scope, covered sidecars, child routes, copied hot-path summaries, and mechanically derived source-anchor hints so C-04 can route cheaply before opening full overview prose.
 
+### Context Provider Runtime
+
+The runtime has optional local discovery providers, but they remain accelerators rather than proof. Coordinator settings can declare `grepai-memory` for semantic retrieval over external memory repos plus repo-internal `ar-memory/` roots, and `codegraphcontext-code` for relationship retrieval over code repos. Managed provider installs should be coordination-owned: pinned requirements under `providers/requirements/`, runtime-owned binaries under `providers/_bin/`, reusable Python venvs only for Python providers under `providers/_venvs/`, and patches under `providers/patches/`. Database and daemon infrastructure should be Docker-wrapped rather than installed as host services.
+
+GrepAI runs in workspace mode with explicit `{ projectId, path }` roots. Managed mode mirrors those roots under `providers/grepai/index-roots/` before launching GrepAI because GrepAI still writes per-project `.grepai/` symbol/config artifacts beside each configured project path. Its config, logs, state, cache, home artifacts, and mirrors belong under `providers/grepai/`; its shared PostgreSQL/pgvector Docker data belongs under `provider-data/grepai/postgres/`; and `.grepai/` inside a durable memory root is a containment failure, not durable memory. CodeGraphContext keeps one provider instance per configured repo under `providers/codegraphcontext/<repo-id>/.codegraphcontext/`, with all instances sharing the FalkorDB Docker data root under `provider-data/codegraphcontext/falkordb/`.
+
 ### Task Workflows
 
 W-02 is the compact durable-task workflow used by the current worktree-support task stack. It creates a task wrapper folder and `task.md` once task class and naming are clear, stops for implementation approval, then treats the checklist, onboarding propagation, checks, and worktree-backed commit approval handoff as one implementation cycle. When refreshed external-memory onboarding is part of intake, the memory content and ledger are committed before C-09 starts worktrees.
@@ -110,6 +118,8 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | The source checkout instructions distinguish this repository from the installed runtime, hand sibling-repo work to `ar-coordination/AGENTS.md`, and keep C-08 plus C-02 as the context gate for this repo. | L1-L14; L28-L53 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | The README now presents the public front door, the generic quickstart, links to harness install pages, and a compact source/runtime layout.                                                                                                   | L1-L138            | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, operational guides, and reference pages.                                                                                                   | L1-L39            | [docs/README.md](agents-remember-md/docs/README.md) |
+| Coordinator settings guidance requires Docker-wrapped provider backends instead of host-level services, mirrors GrepAI roots under provider-owned index roots, stores GrepAI artifacts under `providers/grepai/`, stores GrepAI PostgreSQL data under `provider-data/grepai/postgres/`, and treats `.grepai/` in durable memory roots as containment failure. | L79-L99 | [runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/runtime/system/defaults/examples/coordinator/settings.md) |
+| The coordinator JSON example models GrepAI workspace-mode roots, mirror-root policy, runtime-owned GrepAI paths, and a PostgreSQL/pgvector Docker backend alongside CGC's FalkorDB Docker backend. | L13-L72; L96-L117 | [runtime/system/defaults/examples/coordinator/settings.json](agents-remember-md/runtime/system/defaults/examples/coordinator/settings.json) |
 
 ## Build & Dev
 
@@ -132,6 +142,8 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 - Route indexes are generated availability metadata, not hand-authored truth; overview `## Hot Path Summary` sections and file sidecars are the maintained inputs, and C-04 should infer missing sidecars from `sourceScope` plus `coveredFiles`.
 - Repo entity catalogs use deterministic `git-blob-set-v1` fingerprints over curated load-bearing evidence files so C-02 can flag stale entity memory without semantic guessing.
 - The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory repos use `system/*` files rather than a root-level `AGENTS.md`.
+- Managed provider mode should wrap provider databases and daemon infrastructure in Docker instead of requiring host-level PostgreSQL, FalkorDB, OS service managers, launch agents, package-manager services, or global user daemons.
+- Provider runtime artifacts are not durable memory or source data: GrepAI config/log/state/cache/home files and index mirrors belong under `providers/grepai/`, CGC runtime files belong under `providers/codegraphcontext/<repo-id>/.codegraphcontext/`, and durable provider database data belongs under `provider-data/`.
 
 ## Glossary Terms
 
@@ -173,7 +185,8 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 - The current root `AGENTS.md` source-checkout reframing is pending final source commit; verification metadata for that onboarding should be refreshed after the code commit lands.
 - The README/docs professionalization rewrite is pending final source commit; README onboarding verification metadata should be refreshed after the docs commit lands.
 - The route-index generator, wrapper CLI, and tests are pending final source commit; their new file-level onboarding metadata should be refreshed during closeout.
+- The GrepAI workspace/PostgreSQL provider runtime update is pending final source commit; affected file-level onboarding verification metadata remains pinned until closeout refreshes it.
 
 ## Last Verified
 
-Updated 2026-05-19T03:23+02:00 after the route-index hot-path implementation was added to the source checkout and reflected in onboarding. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-21T12:35+02:00 after the GrepAI provider-owned mirror-root policy and Docker-wrapped provider preference were reflected in onboarding. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.

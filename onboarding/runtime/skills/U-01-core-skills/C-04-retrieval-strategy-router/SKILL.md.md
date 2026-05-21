@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-21T04:09+02:00                                 |
-| lastVerifiedCommitHash | `0462de46a1da1bf1997e3979f4cc5bc53d1132f6`             |
-| lastVerifiedCommitDate | 2026-05-21T08:30:44+02:00|
+| lastUpdated            | 2026-05-21T16:14+02:00                                 |
+| lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1`             |
+| lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -18,35 +18,50 @@
 
 C-04 is the retrieval strategy router for context-backed source work. It chooses
 between semantic search, relationship graph queries, and intent-oriented
-onboarding/source confirmation before reading broadly.
+onboarding/source confirmation before broad source reads.
 
 ## Code Commentary
 
 ### Logic
 
-The skill defines three substrates. `Semantics` is for known concepts with
-unknown structure, route, or file location and prefers GrepAI over direct memory
-repo search when the provider is available. `Relationship` is for
-known anchors with unknown callers, callees, dependencies, ownership, or impact
-neighborhoods and prefers CodeGraphContext when the provider is available.
-`Intent` is for known anchors or locations where the missing truth is a contract,
-invariant, workflow rule, or behavioral reason; it reads onboarding and source
-as the proof layer.
+The skill defines three retrieval substrates. `Semantics` is for fuzzy concepts
+whose route, structure, or source location is unknown and prefers GrepAI over
+direct memory repo search when available. `Relationship` is for known anchors
+whose callers, callees, dependencies, ownership, inheritance, or impact
+neighborhoods are unknown and prefers CodeGraphContext when available. `Intent`
+is for known anchors or locations where the missing truth is a contract,
+invariant, branch-valid behavior, or fix direction; it uses onboarding plus
+bounded source confirmation as the proof layer.
 
-Every discovery path produces a candidate packet: question, retrieval contract,
-provider status, candidate routes, candidate source anchors, evidence read so
-far, rejected routes, and the next confirmation step. GrepAI and CGC output are
-candidate discovery only; final claims still require onboarding or source
-evidence.
+The Semantics section now teaches GrepAI through the runtime-owned binary and
+provider-owned environment rather than a global user config. It shows two
+high-value synthetic response shapes: broad semantic routing with
+`--toon --compact`, and scoped memory-project search with compact JSON anchors.
+It links to the sibling `grepai-high-leverage-usage.md` catalog for the full
+GrepAI command selection notes and synthetic example outputs.
+
+The Relationship section teaches CGC as a structural tool rather than a
+file-line locator. It keeps the basic provider-wrapped `find name` and
+`analyze callers` commands, then shows two high-value synthetic response shapes:
+`analyze calls` for downstream impact tracing and `analyze complexity` for risk
+triage. The examples deliberately use placeholder repo ids, symbols, and paths
+so reusable docs do not expose private project code. The skill links to the
+sibling `codegraphcontext-high-level-methods.md` catalog for the full command
+set and synthetic example outputs.
 
 ### Conventions
 
-Use GrepAI with the memory repo root as the working directory and a small JSON
-result budget:
+Use GrepAI with the provider runtime root as the working directory, the
+runtime-owned binary, and provider-owned state/cache/home environment:
 
 ```bash
-cd <coordination_root>/memory-repos
-<coordination_root>/providers/_bin/grepai search "<query>" --json --compact --limit 5
+cd <coordination_root>/providers/grepai
+env \
+  HOME=<coordination_root>/providers/grepai/home \
+  XDG_STATE_HOME=<coordination_root>/providers/grepai/state/xdg \
+  XDG_CACHE_HOME=<coordination_root>/providers/grepai/cache/xdg \
+  <coordination_root>/providers/_bin/grepai search "<query>" \
+  --workspace <workspace> --toon --compact --limit 5
 ```
 
 Use the provider lifecycle wrapper for CGC queries so native CGC commands run
@@ -60,19 +75,20 @@ python <coordination_root>/scripts/provider-lifecycle.py cgc \
   run -- find name <anchor>
 ```
 
-Relationship probing has a small budget: prefer `find name`, `find pattern`,
-`analyze callers`, `calls`, `deps`, `tree`, or `chain`, and switch to Intent
-after no more than two CGC probes.
+After a CGC locator query, prefer `analyze calls`, `callers`, `chain`, `deps`,
+`tree`, `complexity`, `dead-code`, `overrides`, or `variable` for structure.
+Treat CGC output as discovery and confirm selected anchors with bounded source
+reads before editing.
 
 ### Invariants And Boundaries
 
 Provider output is never final proof. C-04 must confirm selected candidates with
-source and/or verified onboarding before answering. If optional providers are
-not available, the skill continues with Intent using route indexes, governing
-overviews, sidecars, and bounded source reads. Route indexes remain
-availability metadata, not proof: `coveredFiles` means a sidecar exists, while a
-source path inside `sourceScope` but absent from `coveredFiles` means skip
-sidecar probing and read source first.
+source and/or verified onboarding before answering or editing. If optional
+providers are not available, the skill continues with Intent using route
+indexes, governing overviews, sidecars, and bounded source reads. Route indexes
+remain availability metadata, not proof: `coveredFiles` means a sidecar exists,
+while a source path inside `sourceScope` but absent from `coveredFiles` means
+skip sidecar probing and read source first.
 
 The skill does not check, install, repair, or reindex providers.
 
@@ -93,22 +109,29 @@ retrieval contract over installed provider tooling and durable onboarding.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| C-04 is now named `c-04-retrieval-strategy-router` and frames routing around semantic, relationship, and intent substrates. | L1-L34 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Candidate packets record the retrieval contract, provider use or fallback, route/source candidates, and the next source/onboarding confirmation step. | L36-L54 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Semantics uses GrepAI as bounded candidate discovery and then switches to Intent for proof. | L56-L90 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Relationship uses provider-wrapped `cgc ... run -- <native args>` commands and switches to Intent after a small graph-query budget. | L92-L147 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer. | L149-L208 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| C-04 defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | L8-L28 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| Semantics uses the runtime-owned GrepAI binary with provider-owned environment, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L103 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| Relationship uses the managed CGC wrapper and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L105-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | L51-L54; L125-L127 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | L100-L103; L168-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | L179-L213 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | L1-L236 | [grepai-high-leverage-usage.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
+| The sibling CGC catalog explains all high-level `cgc analyze` methods and practical selection rules with synthetic examples only. | L1-L38, L321-L332 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
 
 ## Cross-Repo References
 
-No sibling repository evidence is needed for this skill.
+The CGC examples in the source docs are synthetic response-shape illustrations.
+They do not contain private sibling repository names, symbols, paths, or code.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| No source-code contract is imported from a sibling repository. | n/a | n/a |
 
 ## Update History
 
+- 2026-05-21T16:14+02:00: Added GrepAI high-leverage usage examples, runtime-owned invocation guidance, and a link to the sibling GrepAI catalog.
+- 2026-05-21T15:20+02:00: Replaced private-project CGC examples with synthetic response-shape examples and made `analyze complexity` the second inline high-value pattern.
+- 2026-05-21T14:10+02:00: Added CGC high-level method examples to the skill, linked the sibling catalog, and refreshed this sidecar to match the current compact skill.
 - 2026-05-21T04:09+02:00: Removed provider lifecycle wording from C-04.
 - 2026-05-21T03:05+02:00: Rewrote onboarding for the C-04 retrieval strategy router, including GrepAI Semantics, CodeGraphContext Relationship, Intent proof, and candidate packets.
 - 2026-05-19T04:05+02:00: Clarified that the 80-line confirmation output budget requires shell-level output caps and that `rg -m` alone is not enough across many files. Verification metadata remains pinned until closeout commits the source change.
