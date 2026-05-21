@@ -19,8 +19,10 @@
     "runtime/agents-md-files/tasks/AGENTS.md",
     "runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
     "runtime/providers/requirements/codegraphcontext.txt",
+    "runtime/providers/requirements/grepai.txt",
     "runtime/scripts/install-skills.sh",
     "runtime/scripts/provider-lifecycle.py",
+    "runtime/scripts/provider-setup.py",
     "runtime/scripts/run-benchmarks.py",
     "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md",
     "runtime/skills/U-01-core-skills/C-01-findings-capture/SKILL.md",
@@ -41,7 +43,7 @@
     "runtime/skills/U-01-core-skills/C-03-repo-bootstrap/templates/repo-overview-template.md",
     "runtime/skills/U-01-core-skills/C-03-repo-bootstrap/templates/route-local-overview-card-template.md",
     "runtime/skills/U-01-core-skills/C-03-repo-bootstrap/templates/route-local-overview-template.md",
-    "runtime/skills/U-01-core-skills/C-04-onboarding-read-mode/SKILL.md",
+    "runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md",
     "runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md",
     "runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py",
     "runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md",
@@ -64,6 +66,7 @@
     "runtime/skills/U-01-core-skills/_shared/agents_remember/route_index.py",
     "runtime/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py",
     "runtime/skills/U-01-core-skills/tests/test_context_providers.py",
+    "runtime/skills/U-01-core-skills/tests/test_provider_setup.py",
     "runtime/skills/U-01-core-skills/tests/test_route_index.py",
     "runtime/skills/U-01-core-skills/tests/test_worktree_support.py",
     "runtime/skills/W-01-heavy-task-workflow/SKILL.md",
@@ -124,8 +127,8 @@
     "runtime/system/defaults/examples/memory-repo/tools.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 205,
-    "fileSidecars": 112,
+    "sourceFilesInScope": 208,
+    "fileSidecars": 115,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -197,6 +200,7 @@
     "git",
     "git_worktree_manager",
     "governing",
+    "grepai",
     "guidelines",
     "handoff",
     "heavy",
@@ -207,8 +211,7 @@
     "init__",
     "initialize",
     "inline",
-    "input",
-    "install"
+    "input"
   ],
   "hotPath": {
     "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task workflows, and `installer` plus `runtime/scripts` cover packaging and installed-runtime helpers. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.",
@@ -229,14 +232,14 @@
       "runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
       "runtime/providers/requirements",
       "runtime/providers/requirements/codegraphcontext.txt",
+      "runtime/providers/requirements/grepai.txt",
       "runtime/scripts",
       "runtime/scripts/install-skills.sh",
       "runtime/scripts/provider-lifecycle.py",
+      "runtime/scripts/provider-setup.py",
       "runtime/scripts/run-benchmarks.py",
       "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo",
-      "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md",
-      "runtime/skills/U-01-core-skills/C-01-findings-capture",
-      "runtime/skills/U-01-core-skills/C-01-findings-capture/SKILL.md"
+      "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md"
     ],
     "anchorHints": [
       "AGENTS.md",
@@ -249,10 +252,14 @@
       "codegraphcontext-0.4.10-cgcignore-runtime-root",
       "codegraphcontext.txt",
       "codegraphcontext",
+      "grepai.txt",
+      "grepai",
       "install-skills.sh",
       "install-skills",
       "provider-lifecycle.py",
       "provider-lifecycle",
+      "provider-setup.py",
+      "provider-setup",
       "run-benchmarks.py",
       "run-benchmarks",
       "SKILL.md",
@@ -282,11 +289,7 @@
       "onboarding-wave-template.md",
       "onboarding-wave-template",
       "repo-overview-template.md",
-      "repo-overview-template",
-      "route-local-overview-card-template.md",
-      "route-local-overview-card-template",
-      "route-local-overview-template.md",
-      "route-local-overview-template"
+      "repo-overview-template"
     ]
   },
   "fallback": {

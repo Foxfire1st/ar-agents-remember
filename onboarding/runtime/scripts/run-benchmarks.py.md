@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/scripts/run-benchmarks.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-18T22:01+02:00                     |
-| lastVerifiedCommitHash |                                            `5b26015bb3e9deec8113b1a69a12608bba82cc27`|
-| lastVerifiedCommitDate |                                            2026-05-19T03:27:34+02:00|
+| lastUpdated            | 2026-05-21T04:53+02:00                     |
+| lastVerifiedCommitHash |                                            `0462de46a1da1bf1997e3979f4cc5bc53d1132f6`|
+| lastVerifiedCommitDate |                                            2026-05-21T08:30:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,6 +23,8 @@
 ### Logic
 
 The script locates the benchmark root from either an installed coordinator or the source checkout, loads every `cases/*/case.json` manifest with schema version `1`, validates all manifest-controlled paths before using them, and lets callers select all cases or one case by id. Preparation creates one source-only environment and one memory-enabled environment under `workspaces/<case-id>/`. Both environments receive a `.benchmark-root` marker for Codex project-root detection. The source-only environment receives a rendered `source-only/AGENTS.md` from `templates/source-only-AGENTS.md` plus a pinned repository checkout under `source-only/repos/`. The memory-enabled environment receives the same pinned repository checkout under `with-memory/repos/`, a rendered `with-memory/AGENTS.md` from `templates/workspace-AGENTS.md`, synced runtime assets under `with-memory/ar-coordination/`, benchmark skill exposure under `with-memory/.agents/skills/agents-remember-md`, and the manifest-pinned memory repository under `with-memory/ar-coordination/memory-repos/`.
+
+After the memory-enabled coordination root has synced runtime scripts, settings, skill exposure, and the pinned memory repo, preparation checks the benchmark-local `system/settings.json`. If no providers are enabled there, provider setup is skipped. If providers are enabled, preparation calls the shared `scripts/provider-setup.py prepare` entrypoint. When a source coordinator with CGC settings is available, the runner passes it as the CGC seed source together with the case repository id. The shared setup script then exports the existing source CGC bundle, rewrites bundle paths to the benchmark repo checkout, loads the rewritten bundle into the benchmark backend, and only falls back to `cgc refresh-all` when seeding is unavailable or rejected.
 
 Repository preparation wraps git calls with `core.longpaths=true`. Existing generated checkouts are treated as reusable caches: if the manifest-pinned commit is already present locally, preparation skips clone and fetch, then still checks out, resets, and cleans the worktree to keep fixtures deterministic. If the pinned commit is missing, preparation fetches before checkout. Callers can pass `--force-clone` on `prepare` or `run` to discard existing code and memory repository checkouts before cloning. Generated tree replacement and legacy workspace pruning use an extended-path and read-only retry strategy, while preserving symlink paths rather than resolving through them before deletion. Windows directory symlinks and junctions are removed with directory-link semantics so repeated `prepare` runs can clean stale `.agents/skills/agents-remember-md` links without touching the linked runtime skill tree.
 
@@ -45,6 +47,7 @@ Analysis scans JSONL recursively under a run root, loads sidecar metadata when p
 - `run` creates one dated output root per case invocation; paired `no-onboarding` and `with-onboarding` variants should appear under that same root for each repetition.
 - `--jobs` controls the maximum concurrent Codex runs. If omitted, concurrency defaults to the number of selected variants so the paired benchmark variants run together.
 - Runtime asset sync excludes `__pycache__`, `.pyc`, and `.pyo` files so local validation artifacts do not become benchmark fixture content.
+- Benchmark provider preparation is delegated to `scripts/provider-setup.py` only when benchmark-local settings enable providers; the benchmark runner should not directly implement provider installs, CGC backend setup, or `refresh-all` refresh policy.
 - The script uses only Python standard-library modules so the installed runtime does not need additional dependencies.
 
 ### Invariants And Boundaries
@@ -56,6 +59,8 @@ Manifest validation is a security and portability boundary. A case manifest must
 The analyzer is schema-tolerant rather than schema-authoritative. It keeps the largest observed token counter for known token keys because Codex JSONL streams may contain cumulative usage updates.
 
 The runner renders environment-specific `AGENTS.md` files into both generated environments. The source-only template blocks parent workspace instructions and treats the checked-out repository's `AGENTS.md` as source content only. The memory-enabled template reads the benchmark-local coordination root, syncs runtime assets there, exposes the installed benchmark skills for nested benchmark agents, and materializes the pinned memory repo at `with-memory/ar-coordination/memory-repos/ar-<repo>/`.
+
+CGC seeding is correctness-gated by source and target repository identity. If the source coordinator is missing, the source repo is not configured, or the target checkout commit does not match the source checkout and mismatch override is not enabled, the shared provider setup reports a skipped seed and the runner lets provider setup decide whether to fall back to a full refresh.
 
 Run failures are aggregated after all submitted tasks finish. A subprocess launch or execution exception in one variant must not prevent the other submitted variant runs from completing and being included in the summary.
 
@@ -104,6 +109,7 @@ The draft case points at a GitHub repository URL for cloning, but this onboardin
 
 ## Update History
 
+- 2026-05-21T04:53+02:00: Updated after benchmark preparation started delegating provider setup to `scripts/provider-setup.py`, including settings-gated provider setup and CGC bundle seed export/import with path rewrite before falling back to full refresh.
 - 2026-05-18T22:01+02:00: Updated after benchmark repository preparation started reusing cached checkouts for unchanged pinned commits and added `--force-clone` as the explicit fresh-clone override.
 - 2026-05-16T20:14+02:00: Updated after fixing Windows benchmark rerun failures by deleting stale directory symlinks without following them and resolving the default `codex` command to `codex.cmd`/`codex.exe` before subprocess launch.
 - 2026-05-16T20:07+02:00: Refreshed closeout documentation after benchmark docs and prompts were aligned with source-only `AGENTS.md`, benchmark root markers, final-message capture, and auto/copy skill exposure behavior.
