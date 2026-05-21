@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-21T13:22+02:00                     |
-| lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1` |
-| lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
+| lastUpdated            | 2026-05-21T23:18+02:00                     |
+| lastVerifiedCommitHash | `00aae9dad3d8740e10a41ab285f87ecab8608745` |
+| lastVerifiedCommitDate | 2026-05-21T23:53:08+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ The module defines provider ids, the full pinned CGC requirements set, pinned Gr
 
 `GrepaiRuntimeLayout` models workspace-mode GrepAI memory indexing. It expands one `grepai-memory` provider into explicit `{ projectId, path }` memory roots, keeps the GrepAI binary at `providers/_bin/grepai`, writes the applied workspace config under `providers/grepai/home/.grepai/workspace.yaml`, keeps GrepAI logs/state/cache/home under `providers/grepai/`, and stores the shared PostgreSQL/pgvector backend data under `provider-data/grepai/postgres/data`. Managed settings default to provider-owned mirror roots under `providers/grepai/index-roots/` because GrepAI still writes `.grepai/config.yaml` and `.grepai/symbols.gob` beside each configured project path. Workspace config generation names each mirror root as a GrepAI project, points the store at PostgreSQL through a DSN, writes concrete embedder endpoint/dimension values for local Ollama defaults, and carries embedder settings without writing config into durable memory roots.
 
-`cleanup_cgc_runtime_artifacts` is the live-runtime reconciliation guard for already-installed provider scaffolding. It removes unconfigured generated CGC instance directories under `providers/codegraphcontext/`, such as an accidentally materialized example `my-app`, and removes legacy embedded-backend artifacts named `db`, `global`, `kuzu`, or `kuzu.wal` from configured instances. Durable FalkorDB data is not under that tree; reinstall handles broader idempotence by wiping and recreating `providers/` while preserving `provider-data/`.
+`cleanup_cgc_runtime_artifacts` is the live-runtime reconciliation guard for already-installed provider scaffolding. It removes unconfigured generated CGC instance directories under `providers/codegraphcontext/`, such as an accidentally materialized example `my-app`, and removes legacy embedded-backend artifacts named `db`, `global`, `kuzu`, or `kuzu.wal` from configured instances. `remove_grepai_root_provider_artifacts` performs the GrepAI equivalent for deprecated root `.grepai/` state: it only removes recognized direct-child GrepAI artifacts from configured indexed roots after path validation, because GrepAI cache/index state is disposable tooling rather than durable onboarding. Durable FalkorDB and PostgreSQL/pgvector data are not under those cleanup trees; reinstall handles broader idempotence by wiping and recreating `providers/` while preserving `provider-data/`.
 
 Patch helpers locate CGC's installed `cgcignore.py`, FalkorDB writer, graph-builder, discovery, visualizer server, and CLI helper modules inside the provider venv. They detect Agents Remember patch markers and idempotently patch CGC v0.4.10 so managed `.cgcignore` files live in the runtime root, Windows delete queries use legal relationship syntax, additional source extensions are indexed, TableGen files are discoverable, the visualizer repo graph query uses bounded path-prefix matching instead of timing out on large repo traversals, and the local visualizer entrypoint opens at the actual explorer route instead of the packaged public landing page.
 
@@ -48,7 +48,7 @@ Patch helpers locate CGC's installed `cgcignore.py`, FalkorDB writer, graph-buil
 
 ### Invariants And Boundaries
 
-The helper must not write provider artifacts into indexed source repositories or indexed memory roots. If `.cgcignore`, `.codegraphcontext`, or `CGC_REPORT.md` appears in a code repo, `assert_no_source_provider_artifacts` raises a provider error and managed CGC mode should not be trusted until cleaned up. If `.grepai/` appears in any configured GrepAI memory root, `assert_no_grepai_root_provider_artifacts` raises a provider error because GrepAI runtime artifacts are not durable memory. Runtime cleanup may delete provider-owned stale scaffolding and legacy embedded-backend files under `providers/`, but it must not delete durable database state under `provider-data/` or arbitrary paths outside the provider runtime tree.
+The helper must not write authoritative provider artifacts into indexed source repositories or indexed memory roots. If `.cgcignore`, `.codegraphcontext`, or `CGC_REPORT.md` appears in a code repo, `assert_no_source_provider_artifacts` raises a provider error and managed CGC mode should not be trusted until cleaned up. If `.grepai/` appears in any configured GrepAI memory root, it is deprecated disposable GrepAI cache, not durable memory: assertion helpers can still flag it, and lifecycle cleanup can remove it after recognized-name and direct-child path validation. Runtime cleanup may delete provider-owned stale scaffolding, disposable GrepAI root artifacts, and legacy embedded-backend files, but it must not delete durable database state under `provider-data/` or arbitrary paths outside validated cleanup targets.
 
 ### Todos
 
@@ -75,8 +75,9 @@ No external documentation is cited here. The module encodes repository-local pro
 | GrepAI settings expansion requires a non-empty `roots` array, expands workspace/coordinator placeholders, rejects missing paths or duplicate project ids, derives backend data roots under `provider-data/grepai/postgres`, defaults to provider-owned mirror roots under `providers/grepai/index-roots/`, syncs mirrors while excluding `.git`, `.grepai`, and `__pycache__`, and writes workspace config with PostgreSQL store, concrete local embedder endpoint/dimension defaults, and named projects. | L450-L722 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
 | `cgc_runtime_layout_from_provider_settings` expands configured roots, rejects unresolved or missing code repository paths, resolves backend ports, merges `cgcignorePatterns`, and builds watch paths. | L694-L829 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
 | `ensure_cgc_runtime_layout` creates default provider files, writes the full CGC requirements fallback, inherits source `.gitignore` entries into the managed `.cgcignore`, and excludes CGC/FalkorDB runtime keys from persisted `.env`. | L832-L868 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
-| Source and GrepAI artifact checks reject `.cgcignore`, `.codegraphcontext`, `CGC_REPORT.md`, or `.grepai/` in source and durable memory roots before managed provider output is trusted. | L956-L983 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
-| Runtime cleanup removes unconfigured generated CGC instances and legacy embedded backend artifacts from disposable provider scaffolding. | L995-L1031 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
+| Source and GrepAI artifact checks detect `.cgcignore`, `.codegraphcontext`, `CGC_REPORT.md`, or `.grepai/` in source and durable memory roots before managed provider output is trusted. | L1041-L1062 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
+| GrepAI disposable artifact cleanup removes only recognized direct-child `.grepai/` artifacts from configured indexed roots after path validation, and shared runtime removal treats symlinks as unlink targets rather than directory trees. | L1065-L1094 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
+| Runtime cleanup removes unconfigured generated CGC instances and legacy embedded backend artifacts from disposable provider scaffolding. | L1097-L1133 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
 | Patch helpers find CGC's installed ignore, writer, graph-builder, discovery, visualizer server, and CLI helper modules, detect patch markers, and apply the managed `.cgcignore`, Windows delete-query, C++ extension, TableGen discovery, visualizer repo-query, and visualizer route patches idempotently. | L1118-L1384 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
 
 ## Cross-Repo References
@@ -89,6 +90,7 @@ No sibling repository evidence is needed for this helper.
 
 ## Update History
 
+- 2026-05-21T23:18+02:00: Updated after adding disposable GrepAI root artifact cleanup with direct-child path validation and symlink-safe runtime removal.
 - 2026-05-21T13:22+02:00: Updated CGC patch coverage for local visualizer routing so `/` redirects to the explorer and unknown `/api/*` paths return JSON instead of SPA HTML.
 - 2026-05-21T12:40+02:00: Updated CGC patch coverage for the visualizer repo graph query so large repositories use a bounded path-prefix query instead of the default traversal that times out.
 - 2026-05-21T12:35+02:00: Updated for provider-owned GrepAI mirror roots so GrepAI's unavoidable per-project `.grepai/` artifacts stay under `providers/grepai/index-roots/` rather than durable memory roots.

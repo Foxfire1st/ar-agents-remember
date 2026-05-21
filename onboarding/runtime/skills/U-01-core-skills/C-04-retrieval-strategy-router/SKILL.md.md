@@ -6,8 +6,8 @@
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-21T16:14+02:00                                 |
-| lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1`             |
-| lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
+| lastVerifiedCommitHash | `00aae9dad3d8740e10a41ab285f87ecab8608745`             |
+| lastVerifiedCommitDate | 2026-05-21T23:53:08+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -33,8 +33,8 @@ is for known anchors or locations where the missing truth is a contract,
 invariant, branch-valid behavior, or fix direction; it uses onboarding plus
 bounded source confirmation as the proof layer.
 
-The Semantics section now teaches GrepAI through the runtime-owned binary and
-provider-owned environment rather than a global user config. It shows two
+The Semantics section now teaches GrepAI through the lifecycle-managed
+`grepai run -- ...` wrapper rather than a global user config. It shows two
 high-value synthetic response shapes: broad semantic routing with
 `--toon --compact`, and scoped memory-project search with compact JSON anchors.
 It links to the sibling `grepai-high-leverage-usage.md` catalog for the full
@@ -51,16 +51,14 @@ set and synthetic example outputs.
 
 ### Conventions
 
-Use GrepAI with the provider runtime root as the working directory, the
-runtime-owned binary, and provider-owned state/cache/home environment:
+Use GrepAI through the provider lifecycle wrapper so native search receives the
+provider-owned workspace environment:
 
 ```bash
-cd <coordination_root>/providers/grepai
-env \
-  HOME=<coordination_root>/providers/grepai/home \
-  XDG_STATE_HOME=<coordination_root>/providers/grepai/state/xdg \
-  XDG_CACHE_HOME=<coordination_root>/providers/grepai/cache/xdg \
-  <coordination_root>/providers/_bin/grepai search "<query>" \
+python <coordination_root>/scripts/provider-lifecycle.py grepai \
+  --coordination-root <coordination_root> \
+  --json \
+  run -- search "<query>" \
   --workspace <workspace> --toon --compact --limit 5
 ```
 
@@ -110,7 +108,7 @@ retrieval contract over installed provider tooling and durable onboarding.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | C-04 defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | L8-L28 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Semantics uses the runtime-owned GrepAI binary with provider-owned environment, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L103 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| Semantics uses the lifecycle-managed GrepAI wrapper with provider-owned environment, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L103 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
 | Relationship uses the managed CGC wrapper and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L105-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
 | The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | L51-L54; L125-L127 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
 | The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | L100-L103; L168-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
@@ -129,6 +127,7 @@ They do not contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-05-21T23:55+02:00: Switched GrepAI examples from bare binary/environment setup to `provider-lifecycle.py grepai run -- ...`.
 - 2026-05-21T16:14+02:00: Added GrepAI high-leverage usage examples, runtime-owned invocation guidance, and a link to the sibling GrepAI catalog.
 - 2026-05-21T15:20+02:00: Replaced private-project CGC examples with synthetic response-shape examples and made `analyze complexity` the second inline high-value pattern.
 - 2026-05-21T14:10+02:00: Added CGC high-level method examples to the skill, linked the sibling catalog, and refreshed this sidecar to match the current compact skill.
