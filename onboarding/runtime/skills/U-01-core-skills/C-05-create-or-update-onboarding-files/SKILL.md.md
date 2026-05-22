@@ -5,27 +5,27 @@
 | repository             | agents-remember-md                                                        |
 | path                   | `runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
-| lastUpdated            | 2026-05-19T02:45+02:00                                                    |
-| lastVerifiedCommitHash | `5b26015bb3e9deec8113b1a69a12608bba82cc27`                                |
-| lastVerifiedCommitDate | 2026-05-19T03:27:34+02:00|
+| lastUpdated            | 2026-05-22T13:32+02:00                                                    |
+| lastVerifiedCommitHash | `da6f8fa65fd81ff5ba102c7ba5bcea07bb10868d`                                |
+| lastVerifiedCommitDate | 2026-05-22T13:43:07+02:00|
 
 ## Purpose
 
-This skill defines C-05, the onboarding creation and maintenance skill. It routes file-level onboarding and repo-level entity catalogs to the appropriate workflow, points file-level onboarding at inline adapter additions when storage-specific syntax is needed, records the nearest governing route-local overview for file-level onboarding, maintains deterministic entity fingerprints, keeps entity inventory entries matched to fingerprint rows, and routes structural source-slice maintenance to C-03.
+This skill defines C-05, the onboarding creation and maintenance skill. It routes file-level onboarding and repo-level entity catalogs to the appropriate workflow, points file-level onboarding at inline adapter additions when storage-specific syntax is needed, records the nearest governing route-local overview for file-level onboarding, maintains deterministic entity fingerprints, keeps entity inventory entries matched to fingerprint rows, routes structural source-slice maintenance to C-03, and requires documentation discovery to follow the target repository's resolved `Domain Documentation` sources without hard-coding a provider.
 
 ## Code Commentary
 
 ### Logic
 
-C-05 tells agents to classify the onboarding target and the shape of the source change, use C-08 for the active coordination context and resolved roots, use sources as discovery aids rather than citation targets, preserve useful existing content, append update history entries when onboarding changes, and keep file-level onboarding self-sufficient while linking it back to the nearest governing overview. It handles single-file work directly, routes package/module/source-route creation, refresh, move, or deletion cleanup to C-03 `existing-memory-slice-maintenance`, keeps route overview `## Hot Path Summary` sections current, refreshes generated route indexes after onboarding changes, and owns the curation/refresh of `git-blob-set-v1` entity evidence paths that C-02 checks deterministically. When C-02 reports missing or orphaned entity fingerprint rows, C-05 reviews whether the entity was removed, renamed, moved, or simply lacks verification.
+C-05 tells agents to classify the onboarding target and the shape of the source change, use C-08 for the active coordination context and resolved roots, use sources as discovery aids rather than citation targets, preserve useful existing content, append update history entries when onboarding changes, and keep file-level onboarding self-sufficient while linking it back to the nearest governing overview. Its source-discovery rule makes the resolved memory layer's `Domain Documentation` category the required discovery plan: live sources named by that registry are authoritative, local mirrors/caches are only orientation aids, and missing/stale local docs trigger live retrieval through the registry's named tool or MCP before an agent records that no domain documentation exists. It handles single-file work directly, routes package/module/source-route creation, refresh, move, or deletion cleanup to C-03 `existing-memory-slice-maintenance`, keeps route overview `## Hot Path Summary` sections current, refreshes generated route indexes after onboarding changes, and owns the curation/refresh of `git-blob-set-v1` entity evidence paths that C-02 checks deterministically. When C-02 reports missing or orphaned entity fingerprint rows, C-05 reviews whether the entity was removed, renamed, moved, or simply lacks verification.
 
 ### Conventions
 
-File-level onboarding mirrors one source file directly under the resolved onboarding root. Route-local overview files may exist beside mirrored source folders as governing context, but they do not replace file-level onboarding. Generated route indexes carry coverage, sidecar absence inference, and `hotPath` summary/hints; they are refreshed from overview/sidecar state rather than hand-edited. Repo-entity catalogs describe recurring real entities and carry deterministic fingerprints over the smallest practical set of load-bearing evidence files. Every inventory entry should have exactly one fingerprint row. Sources and tools files are registries, not proof for onboarding claims.
+File-level onboarding mirrors one source file directly under the resolved onboarding root. Route-local overview files may exist beside mirrored source folders as governing context, but they do not replace file-level onboarding. Generated route indexes carry coverage, sidecar absence inference, and `hotPath` summary/hints; they are refreshed from overview/sidecar state rather than hand-edited. Repo-entity catalogs describe recurring real entities and carry deterministic fingerprints over the smallest practical set of load-bearing evidence files. Every inventory entry should have exactly one fingerprint row. Sources and tools files are registries, not proof for onboarding claims. Provider-specific documentation systems belong in resolved memory-layer source registries, not in this package's generic C-05 source.
 
 ### Invariants And Boundaries
 
-C-05 updates onboarding content, but it should not turn task plans into current-state documentation or flatten structural route changes into unrelated file-level edits. It must keep references verifiable, avoid overwriting unresolved warnings without evidence, and keep same-repository, docs, and cross-repo evidence in the correct buckets.
+C-05 updates onboarding content, but it should not turn task plans into current-state documentation or flatten structural route changes into unrelated file-level edits. It must keep references verifiable, avoid overwriting unresolved warnings without evidence, and keep same-repository, docs, and cross-repo evidence in the correct buckets. It must not treat local documentation caches as authoritative when the resolved source registry names a live retrieval path, and it must record live-source checks or blockers when no relevant documentation is found.
 
 ### Todos
 
@@ -33,11 +33,11 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 ### Docs References
 
-No external domain documentation applies to the repository-local onboarding maintenance contract.
+No external domain documentation applies to the repository-local onboarding maintenance contract. The resolved `agents-remember-md` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this package behavior is repository source.
 
 | Finding                                   | Citations | Source Path |
 | ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| No relevant external documentation found after checking live sources. | n/a       | n/a         |
 
 ## Repo-Internal References
 
@@ -50,7 +50,8 @@ C-05 is the content-update counterpart to C-02's detection.
 | Sidecar placement rules now use the resolved onboarding root directly, include route-local `overview.md` files under mirrored source folders, and record generated route indexes with hot-path summary/hints. | L58-L75 | [C-05 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
 | Quick rules require file-level onboarding to stay self-sufficient, link to the nearest governing overview, preserve reference explanations, maintain deterministic entity fingerprints, refresh route indexes, keep `Hot Path Summary` current, and route structural changes to C-03. | L77-L98 | [C-05 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
 | Route index refresh derives coverage, scope, copied `hotPath.summary`, candidate hints, anchor hints, and indexed sidecar absence from current onboarding/source state. | L100-L123 | [C-05 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
-| Reference and lifecycle rules require verified links, correct bucket selection, metadata refresh, mirrored handling for simple file moves, entity cleanup review for removed/renamed/moved cases, and C-03 routing for package/module/source-route moves or deletions. | L105-L137 | [C-05 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
+| Source discovery requires the resolved `Domain Documentation` category, treats live registry-named documentation sources as authoritative, uses local mirrors only as orientation caches, and triggers live retrieval before reporting no domain docs. | L127-L138 | [C-05 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
+| Reference and lifecycle rules require verified links, correct bucket selection, metadata refresh, mirrored handling for simple file moves, entity cleanup review for removed/renamed/moved cases, and C-03 routing for package/module/source-route moves or deletions. | L140-L170 | [C-05 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -62,6 +63,7 @@ C-05 can handle cross-repo references when actual boundary evidence exists, but 
 
 ## Update History
 
+- 2026-05-22T13:32+02:00: Updated after C-05 source discovery became provider-neutral while treating live documentation sources named by the resolved registry as authoritative over local caches. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-19T02:45+02:00: Updated for generated route-index `hotPath` fields and the requirement to keep route overview `## Hot Path Summary` sections current before refreshing indexes.
 - 2026-05-15T12:57+02:00: Clarified that C-05 owns entity inventory-to-fingerprint coverage and must verify removed, renamed, or moved entities before deleting stale rows or evidence paths. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-15T11:46+02:00: Refreshed after C-05 took ownership of curating and refreshing repo entity `git-blob-set-v1` evidence paths for deterministic C-02 checks. Verification metadata remains pinned until closeout commits the source change.

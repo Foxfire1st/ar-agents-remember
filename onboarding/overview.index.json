@@ -68,6 +68,7 @@
     "runtime/skills/U-01-core-skills/_shared/agents_remember/route_index.py",
     "runtime/skills/U-01-core-skills/_shared/agents_remember/worktree_contract.py",
     "runtime/skills/U-01-core-skills/tests/test_context_providers.py",
+    "runtime/skills/U-01-core-skills/tests/test_install_runtime.py",
     "runtime/skills/U-01-core-skills/tests/test_provider_lifecycle.py",
     "runtime/skills/U-01-core-skills/tests/test_provider_setup.py",
     "runtime/skills/U-01-core-skills/tests/test_route_index.py",
@@ -130,8 +131,8 @@
     "runtime/system/defaults/examples/memory-repo/tools.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 213,
-    "fileSidecars": 118,
+    "sourceFilesInScope": 210,
+    "fileSidecars": 119,
     "childRoutes": 0
   },
   "routingTerms": [
