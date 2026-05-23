@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T05:35+02:00                     |
-| lastVerifiedCommitHash | `7ab4b520b9178a31c4a5f5f8a5393b9b6ba82e0e` |
-| lastVerifiedCommitDate | 2026-05-23T00:34:51+02:00                  |
+| lastUpdated            | 2026-05-24T00:37+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00                  |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,17 +27,22 @@ coordinator `system/settings.json` provider template.
 The file requires absolute `coordinationRoot` and `workspaceRoot` values,
 optionally sets `transcriptRoot`, names allowed repositories, and names allowed
 providers. Repository entries may carry `memorySettingsIncludes` and
-`contractPath`, both bounded by MCP config validation. Provider entries are
-empty objects by design: `agents_remember.mcp.config` rejects provider-local
-path fields, and `agents_remember.providers.settings` derives provider
-lifecycle settings from the single configured coordination root.
+`contractPath`, both bounded by MCP config validation. They do not carry source
+or memory root path fields: the MCP config derives source roots from
+`workspaceRoot/<repo-id>` and external memory roots from
+`coordinationRoot/memory-repos/ar-<repo-id>`. Provider entries are empty objects
+by design: `agents_remember.mcp.config` rejects provider-local path fields, and
+`agents_remember.providers.settings` derives provider lifecycle settings from
+the single configured coordination root.
 
 ### Invariants And Boundaries
 
 This file must not be placed inside the coordinator root, and it must not carry
-duplicated provider runtime paths. If a provider id is present, the MCP server
-derives its runner, data, log, requirement, patch, venv, binary, backend, and
-watch paths internally.
+duplicated repository or provider runtime paths. If a provider id is present,
+the MCP server derives its runner, data, log, requirement, patch, venv, binary,
+backend, and watch paths internally. `harnessSkillRoot` is optional and omitted
+from the template so normal `.agents/mcp` placement can use the inferred
+`.agents/skills` destination.
 
 ## Repo-Internal References
 
@@ -48,5 +53,5 @@ watch paths internally.
 
 ## Update History
 
+- 2026-05-24T00:37+02:00: Clarified that repository roots are inferred from `workspaceRoot` and `coordinationRoot`, while `harnessSkillRoot` is optional and normally inferred from `.agents/mcp` placement.
 - 2026-05-23T05:35+02:00: Created after migrating coordinator provider JSON authority into the MCP settings example.
-

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/integrity.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T04:29+02:00                     |
-| lastVerifiedCommitHash | `7ab4b520b9178a31c4a5f5f8a5393b9b6ba82e0e` |
-| lastVerifiedCommitDate | 2026-05-22T21:20:47+02:00                 |
+| lastUpdated            | 2026-05-24T00:37+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00                 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -53,4 +53,5 @@ compares current hashes with the recorded manifest and reports `notInstalled`,
 
 ## Update History
 
+- 2026-05-24T00:37+02:00: Refreshed verification after MCP service-controller changes; provider runner integrity behavior stayed unchanged.
 - 2026-05-23T04:29+02:00: Created for Phase 3 provider runner integrity checks.

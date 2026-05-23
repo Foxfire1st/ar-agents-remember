@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T14:20+02:00                     |
-| lastVerifiedCommitHash | `d445e83e7d28e3c34b15d8299d279d65ab9183b9` |
-| lastVerifiedCommitDate | 2026-05-23T05:45:38+02:00                 |
+| lastUpdated            | 2026-05-24T00:37+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00                 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -34,11 +34,15 @@ runner state under `_bin`, `_venvs`, and `providers/runners`, while explicit
 provider dependency installs can reconcile those paths through package-local
 lifecycle code. All installs preserve durable `providers/data` and
 `providers/logs`.
-`install_runtime_from_config()` is the MCP
-entrypoint: it derives the target root from `McpRuntimeConfig`, generates
-provider lifecycle settings from MCP settings, calls package-local provider
-lifecycle install functions when provider deps are enabled, and writes a runner
-integrity manifest after non-dry-run installs.
+
+`source_root_from_package()` locates the packaged runtime assets by walking
+upward from the installed module until it finds the source/runtime asset tree.
+`install_runtime_from_config()` is the MCP entrypoint: it derives the target root
+from `McpRuntimeConfig`, generates provider lifecycle settings from MCP
+settings, calls package-local provider lifecycle install functions when provider
+deps are enabled, and writes a runner integrity manifest after non-dry-run
+installs. The optional `source_root` parameter is an internal development/test
+hook, not a public MCP path field.
 
 The module is intentionally not a second runtime-install command surface. MCP
 clients reach it through the `runtime_install` tool.
@@ -67,6 +71,7 @@ clients reach it through the `runtime_install` tool.
 
 ## Update History
 
+- 2026-05-24T00:37+02:00: Refreshed verification and documented that packaged asset discovery owns normal runtime source selection, with `source_root` reserved for internal development/test use.
 - 2026-05-23T14:20+02:00: Updated after `runtime_install` stopped requiring or copying `runtime/scripts/install-skills.sh` and began removing stale coordinator `scripts/` remnants.
 - 2026-05-23T05:32+02:00: Clarified the earlier intermediate state where runtime sync still installed only `scripts/install-skills.sh` into coordinators while MCP provider installs used package-local lifecycle code.
 - 2026-05-23T04:43+02:00: Clarified that MCP install is exposed through the typed tool, not a package-local wrapper command.
