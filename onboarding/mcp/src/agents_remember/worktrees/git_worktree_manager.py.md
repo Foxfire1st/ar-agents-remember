@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T13:46+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-23T23:46+02:00                     |
+| lastVerifiedCommitHash | `7a12e014c773612105fb91e897c94c9808a61527` |
+| lastVerifiedCommitDate | 2026-05-23T23:56:58+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -22,14 +22,17 @@ implementation behind MCP worktree tools.
 The module creates and attaches code/memory worktrees, writes task contracts,
 reports lifecycle status, performs closeout, integrates completed branches, and
 cleans up registered worktrees. During `start`, provider setup now calls
-package-local `provider_setup.action_payload()` with a generated provider
-settings path supplied by the MCP controller.
+package-local `provider_setup.run_provider_setup()` with a typed
+`ProviderSetupRequest` and the generated provider settings path supplied by the
+MCP controller.
 
 ### Invariants And Boundaries
 
 - Worktree provider setup must not invoke `<coordinationRoot>/scripts`.
 - Provider enablement and roots come from MCP-derived provider settings, not
   coordinator `system/settings.json`.
+- Worktree provider setup should pass typed provider setup options directly and
+  should not round-trip through provider setup CLI parsing.
 - Git subprocesses use `stdin=subprocess.DEVNULL` so they cannot consume MCP
   stdio.
 - Contract paths and worktree roots must stay inside the resolved coordination
@@ -45,4 +48,5 @@ settings path supplied by the MCP controller.
 
 ## Update History
 
+- 2026-05-23T23:46+02:00: Updated after worktree provider setup stopped rebuilding provider setup CLI `argv` and switched to `ProviderSetupRequest`.
 - 2026-05-23T13:46+02:00: Documented the MCP-owned provider setup path and removal of coordinator-local script execution.
