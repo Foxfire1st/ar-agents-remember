@@ -12,7 +12,7 @@ The provider runtime guidance now routes through the MCP/package boundary: MCP s
 
 ## Hot Path Summary
 
-Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, and integrity tools, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, and `runtime/skills/W-*` covers task workflows. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.
+Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, drift, worktree services, memory services, and integrity tools, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers workflow guidance for resolver, drift, bootstrap, onboarding, route-index, memory, and worktree tasks, and `runtime/skills/W-*` covers task workflows. For route-index behavior start at `mcp/src/agents_remember/kernel/route_index.py`, the `route_index_refresh` MCP tool, C-05, and C-04.
 
 ## Architecture At A Glance
 
@@ -121,7 +121,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 ## Build & Dev
 
 - No `agents-remember-md`-specific build or test command is currently listed in the resolved coordinator [system/tools.md](ar-coordination/system/tools.md).
-- The C-08, C-02, C-09, ledger, contract, and worktree-support test helpers use Python standard-library code and can be invoked directly with Python.
+- The MCP package tests under `mcp/tests` cover C-08, C-02, C-09, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
 - This onboarding pass intentionally does not modify `system/sources.md` or `system/tools.md`.
 
 ## Key Invariants
@@ -139,7 +139,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 - Route indexes are generated availability metadata, not hand-authored truth; overview `## Hot Path Summary` sections and file sidecars are the maintained inputs, and C-04 should infer missing sidecars from `sourceScope` plus `coveredFiles`.
 - Repo entity catalogs use deterministic `git-blob-set-v1` fingerprints over curated load-bearing evidence files so C-02 can flag stale entity memory without semantic guessing.
 - The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory repos use `system/*` files rather than a root-level `AGENTS.md`.
-- Runtime, provider, benchmark, and skill-install script behavior belongs in MCP package modules; the source checkout no longer keeps parallel `installer/`, top-level `scripts/`, or `runtime/scripts/` execution routes.
+- Runtime, provider, benchmark, route-index, drift, memory, worktree, and skill-install behavior belongs in MCP package modules; the source checkout no longer keeps parallel `installer/`, top-level `scripts/`, `runtime/scripts/`, skill-local `scripts/`, `_shared`, or skill-local `tests` execution routes.
 - Managed provider mode should wrap provider databases and daemon infrastructure in Docker instead of requiring host-level PostgreSQL, FalkorDB, OS service managers, launch agents, package-manager services, or global user daemons.
 - Provider runtime artifacts are not durable memory or source data: GrepAI config/state/cache/home files and index mirrors belong under `providers/runners/grepai/`, CGC runtime files belong under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable provider database data belongs under `providers/data/`, and logs belong under `providers/logs/`.
 
@@ -152,7 +152,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | coordination context     | The resolved root/path/settings facts returned by C-08 for a code repository.                                 | Current implementation exposes `code_repository_name`, `code_repository_root`, `memory_root`, `coordination_root`, repo-specific `task_root`, and `temp_root`. |
 | pathRules                | Include/exclude eligibility rules that decide which source paths and file types are managed.                  | Storage and eligibility are separate concepts.                                                                                                      |
 | drift report             | A C-02 maintenance artifact that classifies onboarding trust.                                                 | It is temporary evidence under `temp/drift-reports`, not durable repo behavior; explicit memory-root report paths are redirected to temp.           |
-| worktree contract        | Local runtime state file for worktree-backed tasks.                                                           | The parser/writer lives in `_shared/agents_remember/worktree_contract.py`; C-09 creates and consumes contracts beside the task wrapper's `task.md`. |
+| worktree contract        | Local runtime state file for worktree-backed tasks.                                                           | The parser/writer lives in `mcp/src/agents_remember/worktrees/worktree_contract.py`; C-09 creates and consumes contracts beside the task wrapper's `task.md`. |
 | worktree integration     | The approved C-09 phase that lands closed task work back onto source branches.                                | `ff-only` requires unchanged source ancestry; `replay` supports parallel non-overlapping work and blocks conflicts before main moves.               |
 | direct closeout          | The C-09 current-checkout closeout path for approved small external-memory edits.                               | It dry-runs first, then commits code, refreshes onboarding metadata, commits memory, and commits the ledger without creating worktree contracts.    |
 | memory baseline adoption | The one-time action of turning current external-memory onboarding into the first ledgered `memory.md` baseline. | C-10 checks drift first, requires explicit drift acceptance when needed, and delegates ledger creation to C-09.                                     |
@@ -183,7 +183,7 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 - External-memory onboarding for `agents-remember-md` is ledgered; future closeouts must keep the code-to-memory mapping current.
 - The current root `AGENTS.md` source-checkout reframing is pending final source commit; verification metadata for that onboarding should be refreshed after the code commit lands.
 - The README/docs professionalization rewrite is pending final source commit; README onboarding verification metadata should be refreshed after the docs commit lands.
-- The route-index generator, wrapper CLI, and tests are pending final source commit; their new file-level onboarding metadata should be refreshed during closeout.
+- The route-index package module and moved MCP tests are pending final source commit; their file-level onboarding metadata should be refreshed during closeout.
 - The GrepAI workspace/PostgreSQL provider runtime update is pending final source commit; affected file-level onboarding verification metadata remains pinned until closeout refreshes it.
 
 ## Last Verified

@@ -6,8 +6,8 @@
 | path                   | `runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
 | lastUpdated            | 2026-05-22T16:39+02:00                                                    |
-| lastVerifiedCommitHash | `7d45d37e091fab28d25aa993a922e2e9eb71ccb7`                                |
-| lastVerifiedCommitDate | 2026-05-22T16:56:53+02:00|
+| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`                                |
+| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
 
 ## Purpose
 

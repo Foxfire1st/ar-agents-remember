@@ -6,8 +6,8 @@
 | path                   | `runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-05-21T03:05+02:00                                         |
-| lastVerifiedCommitHash | `0462de46a1da1bf1997e3979f4cc5bc53d1132f6`                     |
-| lastVerifiedCommitDate | 2026-05-21T08:30:44+02:00|
+| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`                     |
+| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
 
 ## Purpose
 
@@ -49,7 +49,7 @@ C-08 is the base dependency for C-02, C-03, C-04, C-05, and task workflows.
 | The skill returns topology, code repository identity/root, settings paths, repo/task-specific task roots, temp/docs/system roots, worktree fields, ledger path, path rules, and cross-repo data. | L29-L53 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use `.env` or the built-in coordination root default, require supported memory roots, and fail clearly when no memory exists. | L55-L65 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | Consumers include C-02, C-03, C-04-retrieval-strategy-router, C-05, task workflows, and C-09; boundaries keep C-08 out of mutation work. | L84-L94 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
-| The implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and JSON/text output. | L88-L112; L1002-L1156; L1216-L1267 | [ar_coordination_context_resolver.py](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/scripts/ar_coordination_context_resolver.py) |
+| The package implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and MCP/JSON output. | n/a | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 
 ## Cross-Repo References
 
@@ -61,6 +61,7 @@ C-08 may read coordinator settings, but no external repository behavior is requi
 
 ## Update History
 
+- 2026-05-23T17:50+02:00: Updated implementation reference after the resolver script route was removed from the skill tree and the MCP package became the only implementation route.
 - 2026-05-21T03:05+02:00: Updated the consumer list after C-04 became the retrieval strategy router.
 - 2026-05-18T21:44+02:00: Refreshed after pulling the committed C-04 onboarding read-mode rename from `origin/main`.
 - 2026-05-18T21:38+02:00: Refreshed against the current committed C-08 skill, restoring C-04 as discovery in the consumer list and updating verification metadata.

@@ -3,11 +3,11 @@
 | Field                  | Value                                                  |
 | ---------------------- | ------------------------------------------------------ |
 | repository             | agents-remember-md                                     |
-| path                   | `runtime/skills/U-01-core-skills/tests/test_route_index.py` |
+| path                   | `mcp/tests/test_route_index.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-19T03:23+02:00                                 |
-| lastVerifiedCommitHash | `5b26015bb3e9deec8113b1a69a12608bba82cc27`             |
-| lastVerifiedCommitDate | 2026-05-19T03:27:34+02:00|
+| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`             |
+| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
 
 ## Purpose
 
@@ -43,9 +43,9 @@ No external domain documentation applies to this repository-local unit test.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The primary fixture proves root and route indexes, child route wiring, coverage counts, fallback metadata, copied hot-path summary, candidate hints, and anchor hints. | L17-L78 | [test_route_index.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_route_index.py) |
-| `sidecar_status` is tested for present, absent-in-scope, and out-of-scope paths. | L81-L88 | [test_route_index.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_route_index.py) |
-| The overview-only route test proves sparse memory still indexes source scope and reports empty covered sidecars plus an absent sidecar status. | L91-L111 | [test_route_index.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_route_index.py) |
+| The primary fixture proves root and route indexes, child route wiring, coverage counts, fallback metadata, copied hot-path summary, candidate hints, and anchor hints. | L17-L78 | [test_route_index.py](agents-remember-md/mcp/tests/test_route_index.py) |
+| `sidecar_status` is tested for present, absent-in-scope, and out-of-scope paths. | L81-L88 | [test_route_index.py](agents-remember-md/mcp/tests/test_route_index.py) |
+| The overview-only route test proves sparse memory still indexes source scope and reports empty covered sidecars plus an absent sidecar status. | L91-L111 | [test_route_index.py](agents-remember-md/mcp/tests/test_route_index.py) |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-05-12T18:51+02:00                                        |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964`                    |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`                    |
+| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
 
 ## Purpose
 
@@ -46,8 +46,8 @@ The skill is the human-facing contract for the adoption script and its trust bou
 | Finding                                                                                                                                                                                     | Citations                | Source Path                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 | The skill defines the adoption use case, uses `--code-repository-name`/`--code-repository-root` command examples, and makes C-02 drift plus explicit acceptance the central trust boundary. | L8-L19; L23-L30; L40-L45 | [C-10 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md)                                    |
-| The adoption script implements the documented states and delegates baseline creation to C-09.                                                                                               | L103-L123; L135-L176     | [adopt_memory_baseline.py](agents-remember-md/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
-| C-10's drift run delegates report path resolution to C-02 with the resolved `coordination_root` and `temp_root`.                                                                            | L53-L67                  | [adopt_memory_baseline.py](agents-remember-md/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/scripts/adopt_memory_baseline.py) |
+| The package baseline service implements the documented states and delegates baseline creation to C-09.                                                                                               | n/a     | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py) |
+| C-10's drift run delegates report path resolution to C-02 with the resolved `coordination_root` and `temp_root`.                                                                            | n/a                  | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py) |
 
 ## Cross-Repo References
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-23T17:50+02:00: Updated implementation reference after the baseline script route was removed from the skill tree and the MCP package became the only implementation route.
 - 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-10-adopt-memory-baseline` name.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` after confirming the C-10 coordination-rename contract remains current.
 - 2026-05-11T18:34: Updated after C-10 command examples adopted `--code-repository-name` and `--code-repository-root`.
