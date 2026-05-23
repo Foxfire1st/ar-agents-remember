@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-23T20:42+02:00                                 |
-| lastVerifiedCommitHash | `4ad9686b20334d36308a05d615bccde204b11d7e`             |
-| lastVerifiedCommitDate | 2026-05-23T21:18:05+02:00|
+| lastUpdated            | 2026-05-23T21:25+02:00                                 |
+| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c`             |
+| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -89,7 +89,8 @@ contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
-- 2026-05-23T13:46+02:00: Updated examples to use MCP `cgc_query` instead of the deleted source provider lifecycle script.
 - 2026-05-23T20:42+02:00: Replaced generic `cgc_query` guidance with typed CGC tool guidance.
+- 2026-05-23T21:25+02:00: Simplified provider-authority wording in the CGC tool guidance.
+- 2026-05-23T13:46+02:00: Updated examples to use MCP `cgc_query` instead of the deleted source provider lifecycle script.
 - 2026-05-21T15:20+02:00: Replaced private-project examples with synthetic response-shape examples.
 - 2026-05-21T14:10+02:00: Created onboarding for the CGC high-level methods catalog.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/system/AGENTS.md`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T04:43+02:00                     |
-| lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1` |
-| lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
+| lastUpdated            | 2026-05-23T21:25+02:00                     |
+| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
+| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,13 +32,15 @@ exists, the C-05 maintenance route for approved refreshes, and the second C-02
 check after maintenance. It then separates post-gate planning from
 implementation.
 The configured-provider check now invokes the Agents Remember MCP
-`context_packet` tool with provider inspection enabled. Provider authority comes
-from the MCP settings file, not coordinator `system/settings.json`.
+`context_packet` tool with provider inspection enabled. Provider authority is
+stated directly as the MCP settings file.
 For context-backed source reading, use `C-04-retrieval-strategy-router`. C-04
 owns Semantics, Relationship, and Intent routing across optional providers,
 route indexes, onboarding, and bounded source confirmation.
 Implementation updates or creates onboarding when code changes current-state
-knowledge.
+knowledge. The final code-quality section routes repository-specific validation
+and coding-rule lookup to the resolved memory layer's `system/tools.md` and
+optional `system/coding-guidelines.md`.
 
 ### Conventions
 
@@ -56,7 +58,10 @@ providers. C-02 detects
 drift but does not update onboarding; C-05 owns approved onboarding maintenance.
 The drift report is temporary coordination state and should be deleted after the
 gate is complete. C-04 owns post-gate context retrieval strategy and
-source/onboarding confirmation.
+source/onboarding confirmation. Repository-specific test, lint, typecheck,
+build, smoke-check, branch, and local command guidance belongs in the resolved
+memory layer's `system/tools.md`; repo-specific coding rules belong in optional
+`system/coding-guidelines.md`.
 
 ### Todos
 
@@ -77,11 +82,12 @@ This onboarding is backed by the source template itself.
 
 | Finding                                                                                                                     | Citations | Source Path |
 | --------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The start-of-task trust gate requires C-08 context resolution, a configured-provider check, C-02 drift detection, developer review of drift, approved C-05 refresh, a second C-02 check, and drift report deletion. | L1-L38 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
-| Gate 2 runs provider readiness through MCP `context_packet` only when the MCP server is configured and provider settings are enabled. | L17-L27 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| The start-of-task trust gate requires C-08 context resolution, a configured-provider check, C-02 drift detection, developer review of drift, approved C-05 refresh, a second C-02 check, and drift report deletion. | L1-L37 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| Gate 2 runs provider readiness through MCP `context_packet` only when the MCP server is configured and provider settings are enabled. | L17-L26 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 | Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh. | L40-L46 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 | Post-gate planning and research routes context-backed source reading to `C-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | L50-L54 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
-| Post-gate implementation updates or creates onboarding through C-05 when changed source files alter current-state knowledge. | L58-L70 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| Post-gate implementation updates or creates onboarding through C-05 when changed source files alter current-state knowledge. | L58-L73 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | L77-L81 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -93,6 +99,7 @@ No sibling repository evidence is needed for this runtime template.
 
 ## Update History
 
+- 2026-05-23T21:25+02:00: Simplified provider-authority wording and added installed system code-quality routing to resolved memory-layer tools and coding guidelines.
 - 2026-05-23T04:43+02:00: Updated Gate 2 onboarding for MCP `context_packet` authority instead of coordinator settings.
 - 2026-05-21T15:42+02:00: Updated the provider readiness gate after the lifecycle script began defaulting the coordinator root from its installed location.
 - 2026-05-21T04:09+02:00: Added configured-provider readiness as Gate 2 and renumbered the onboarding drift gates.

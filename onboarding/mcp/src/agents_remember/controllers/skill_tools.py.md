@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T20:56+02:00                     |
-| lastVerifiedCommitHash | `4ad9686b20334d36308a05d615bccde204b11d7e` |
-| lastVerifiedCommitDate | 2026-05-23T21:18:05+02:00|
+| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
+| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose

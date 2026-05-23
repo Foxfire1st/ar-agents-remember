@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_resolver_parity.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T18:05+02:00                     |
-| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a` |
-| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
+| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
+| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
