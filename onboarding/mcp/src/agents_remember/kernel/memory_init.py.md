@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_init.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T13:09+02:00                     |
-| lastVerifiedCommitHash | `d445e83e7d28e3c34b15d8299d279d65ab9183b9` |
-| lastVerifiedCommitDate | 2026-05-23T05:45:38+02:00                 |
+| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
+| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
