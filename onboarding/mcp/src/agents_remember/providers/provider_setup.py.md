@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T13:46+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-23T23:46+02:00                     |
+| lastVerifiedCommitHash | `7a12e014c773612105fb91e897c94c9808a61527` |
+| lastVerifiedCommitDate | 2026-05-23T23:56:58+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,16 +20,19 @@ preparation, isolated CGC settings generation, and CGC bundle path rewriting.
 
 ### Logic
 
-The module loads provider authority from an explicit MCP-derived settings file
-when one is supplied, otherwise from the coordination root for benchmark-local
-legacy fixtures. `action_payload()` coordinates `install` and `prepare` flows by
-calling package-local `provider_lifecycle.main()` through command capture rather
-than invoking coordinator-local Python scripts.
+The module requires provider authority from an explicit settings file and no
+longer falls back to `<coordinationRoot>/system/settings.json`.
+`ProviderSetupRequest` is the service front door used by MCP-adjacent callers,
+with typed CGC seed and isolated-runtime options for worktree and benchmark
+flows. The CLI remains a dev/operator wrapper that parses arguments into the
+same request shape and requires `--from-settings`.
 
 ### Invariants And Boundaries
 
 - MCP worktree provider setup must pass `--from-settings`; it must not depend on
   coordinator `system/settings.json`.
+- `run_provider_setup(ProviderSetupRequest)` is the package service entry point;
+  worktree and benchmark callers should not rebuild provider setup CLI `argv`.
 - CGC worktree seed uses the original MCP-derived source settings when the seed
   source and target share a coordination root, and isolated target settings for
   the worktree runtime.
@@ -47,4 +50,5 @@ than invoking coordinator-local Python scripts.
 
 ## Update History
 
+- 2026-05-23T23:46+02:00: Updated after Phase 05 F-05 made provider setup require explicit settings and added the typed `ProviderSetupRequest` service front door.
 - 2026-05-23T13:46+02:00: Added when provider setup moved from the deleted source `scripts/` route into the MCP package.
