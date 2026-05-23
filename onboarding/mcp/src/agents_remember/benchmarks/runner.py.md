@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T23:46+02:00                     |
-| lastVerifiedCommitHash | `7a12e014c773612105fb91e897c94c9808a61527` |
-| lastVerifiedCommitDate | 2026-05-23T23:56:58+02:00|
+| lastUpdated            | 2026-05-24T00:35+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -30,10 +30,15 @@ Benchmark skill exposure is copy-only: `copy` is the default mode and `none`
 skips harness skill exposure. The old shell/symlink installer path and `auto`
 fallback mode are not part of this module anymore.
 
+`prepare_benchmarks()` and `run_codex_benchmark()` are service entry points for
+MCP controllers. They capture benchmark progress as structured `messages` so
+dry-run evidence stays available without returning raw stdout/stderr or
+requiring controllers to call `main(argv)`.
+
 ### Invariants And Boundaries
 
 - MCP facades choose a configured/default benchmark root and call this module
-  through package-local command capture.
+  through service functions, not package-local command capture.
 - `benchmark_prepare` and `benchmark_run` default to dry-run in the MCP surface.
 - This module still carries benchmark-specific subprocess behavior; it is not a
   generic command execution surface.
@@ -49,12 +54,13 @@ fallback mode are not part of this module anymore.
 
 | Finding | Source Path |
 | --- | --- |
-| Benchmark MCP tools call this module through `run_package_main()`. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
+| Benchmark MCP tools call this module through `prepare_benchmarks()` and `run_codex_benchmark()`. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
 | Provider setup is now package-local MCP code. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
 
 ## Update History
 
 - 2026-05-23T23:46+02:00: Updated after benchmark provider setup stopped reconstructing provider setup CLI arguments and started using `ProviderSetupRequest`.
+- 2026-05-24T00:35+02:00: Updated after benchmark controllers switched to service payload functions and structured progress messages.
 - 2026-05-23T14:20+02:00: Updated after benchmark skill exposure became copy-only and stopped using the deleted `install-skills.sh` route.
 - 2026-05-23T13:09+02:00: Copied into the MCP package for Phase 04 benchmark tools.
 - 2026-05-23T13:46+02:00: Updated after benchmark provider setup stopped invoking the deleted source `scripts/` route.
