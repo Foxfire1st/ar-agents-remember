@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/skills/U-01-core-skills/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-21T23:18+02:00                     |
+| lastUpdated            | 2026-05-23T05:32+02:00                     |
 | lastVerifiedCommitHash | `00aae9dad3d8740e10a41ab285f87ecab8608745` |
 | lastVerifiedCommitDate | 2026-05-21T23:53:08+02:00|
 | governingOverview      | `overview.md`                              |
@@ -22,7 +22,7 @@
 
 ### Logic
 
-The test module imports `runtime/scripts/provider-lifecycle.py` through `importlib.util` so it can exercise the script parser, render helpers, and handler functions directly. Render tests protect native CGC output streaming, the compact `run --lifecycle-json` payload path, and non-command result handling. `parse_cgc` builds the parser, parses a `cgc` command, normalizes CGC defaults, resolves paths, and stabilizes repo ids in the same shape the script uses before dispatch.
+The test module imports top-level `scripts/provider-lifecycle.py` through `importlib.util` so it can exercise the source-checkout script parser, render helpers, and handler functions directly. Render tests protect native CGC output streaming, the compact `run --lifecycle-json` payload path, and non-command result handling. `parse_cgc` builds the parser, parses a `cgc` command, normalizes CGC defaults, resolves paths, and stabilizes repo ids in the same shape the script uses before dispatch.
 
 The tests assert that `cgc visualize` accepts named `--port` and `--context` options after the subcommand, that shared lifecycle options can still appear before the subcommand, that CGC and aggregate watcher commands default their coordinator root to the installed runtime root, that process namespace diagnostics report `durableForDaemons`, and that daemon/server actions reject ephemeral `--die-with-parent` namespaces. Dry-run coverage verifies an explicit long-running `cgc visualize --repo <repo> --port <port>` command. The CGC migration-boundary tests require `cgc run -- visualize ...` to fail with guidance to use `cgc visualize`, and also protect that bounded `cgc run` queries are still allowed in an ephemeral process namespace when the command itself is mocked. GrepAI tests protect native `watch --background` PID parsing, lifecycle-managed `grepai run -- search ...` command shape/env, rejection of native watcher control through `grepai run`, target-database readiness checks after `pg_isready`, adoption of already-running watchers, timeout-shaped starts that can still adopt a running watcher, and aggregate watcher partial-result recovery actions.
 
@@ -50,7 +50,7 @@ No external documentation is needed for these unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module loads `provider-lifecycle.py` directly, and `parse_cgc` normalizes parsed CGC args the way the script's main path does. | L12-L18; L81-L91 | [test_provider_lifecycle.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_lifecycle.py) |
+| The module loads top-level `scripts/provider-lifecycle.py` directly, and `parse_cgc` normalizes parsed CGC args the way the script's main path does. | L12-L18; L81-L91 | [test_provider_lifecycle.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_lifecycle.py) |
 | Render tests assert that captured command output is streamed without wrapper text, successful `cgc run --json` still emits native output, and `run --lifecycle-json -- ...` preserves an explicit metadata path. | L21-L79 | [test_provider_lifecycle.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_lifecycle.py) |
 | Parser tests assert that `visualize` accepts named options after the subcommand and still allows common lifecycle options before the subcommand. | L93-L129 | [test_provider_lifecycle.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_lifecycle.py) |
 | Default-root parser tests assert that CGC and aggregate watcher commands infer the installed runtime root when `--coordination-root` is omitted. | L140-L155 | [test_provider_lifecycle.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_lifecycle.py) |
@@ -69,6 +69,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-23T05:32+02:00: Updated after provider lifecycle script tests switched from installed runtime scripts to top-level source/package-owned scripts.
 - 2026-05-21T23:55+02:00: Updated after adding GrepAI `run -- search` command-shape coverage and native watcher-control rejection.
 - 2026-05-21T23:18+02:00: Updated after adding tests for GrepAI target-database readiness, already-running watcher adoption, timeout-shaped watcher starts, and aggregate partial recovery actions.
 - 2026-05-21T17:16+02:00: Updated after adding process namespace diagnostics/guard coverage and protecting that bounded `cgc run` queries are not blocked by the daemon namespace policy.

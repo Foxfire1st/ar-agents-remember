@@ -8,7 +8,23 @@
   "sourceScope": [
     "**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp",
+      "overview": "mcp/overview.md",
+      "index": "mcp/overview.index.json"
+    },
+    {
+      "route": "scripts",
+      "overview": "scripts/overview.md",
+      "index": "scripts/overview.index.json"
+    },
+    {
+      "route": "examples/mcp",
+      "overview": "examples/mcp/overview.md",
+      "index": "examples/mcp/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "AGENTS.md",
     "README.md",
@@ -21,9 +37,6 @@
     "runtime/providers/requirements/codegraphcontext.txt",
     "runtime/providers/requirements/grepai.txt",
     "runtime/scripts/install-skills.sh",
-    "runtime/scripts/provider-lifecycle.py",
-    "runtime/scripts/provider-setup.py",
-    "runtime/scripts/run-benchmarks.py",
     "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md",
     "runtime/skills/U-01-core-skills/C-01-findings-capture/SKILL.md",
     "runtime/skills/U-01-core-skills/C-01-findings-capture/findings-capture-workflow.md",
@@ -120,7 +133,6 @@
     "runtime/skills/W-02-light-task-workflow/workflow.md",
     "runtime/skills/W-03-chat-task-workflow/SKILL.md",
     "runtime/system/defaults/examples/README.md",
-    "runtime/system/defaults/examples/coordinator/settings.json",
     "runtime/system/defaults/examples/coordinator/settings.md",
     "runtime/system/defaults/examples/coordinator/sources.md",
     "runtime/system/defaults/examples/coordinator/tools.md",
@@ -131,9 +143,9 @@
     "runtime/system/defaults/examples/memory-repo/tools.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 210,
-    "fileSidecars": 119,
-    "childRoutes": 0
+    "sourceFilesInScope": 249,
+    "fileSidecars": 115,
+    "childRoutes": 3
   },
   "routingTerms": [
     "adopt",
@@ -144,7 +156,6 @@
     "ar_coordination_context_resolver",
     "architecture",
     "baseline",
-    "benchmarks",
     "block",
     "bootstrap",
     "boundary",
@@ -215,11 +226,15 @@
     "init",
     "init__",
     "initialize",
-    "inline"
+    "inline",
+    "input"
   ],
   "hotPath": {
-    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task workflows, and `installer` plus `runtime/scripts` cover packaging and installed-runtime helpers. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.",
+    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context-packet, runtime-install, provider settings, and integrity tools, `scripts/` covers source-checkout provider and benchmark helpers, `runtime/agents-md-files` covers installed instruction templates, `runtime/scripts/install-skills.sh` covers the only installed runtime script, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task work...",
     "candidateHints": [
+      "mcp",
+      "scripts",
+      "examples/mcp",
       "AGENTS.md",
       "README.md",
       "installer",
@@ -239,9 +254,6 @@
       "runtime/providers/requirements/grepai.txt",
       "runtime/scripts",
       "runtime/scripts/install-skills.sh",
-      "runtime/scripts/provider-lifecycle.py",
-      "runtime/scripts/provider-setup.py",
-      "runtime/scripts/run-benchmarks.py",
       "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo",
       "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md"
     ],
@@ -260,12 +272,6 @@
       "grepai",
       "install-skills.sh",
       "install-skills",
-      "provider-lifecycle.py",
-      "provider-lifecycle",
-      "provider-setup.py",
-      "provider-setup",
-      "run-benchmarks.py",
-      "run-benchmarks",
       "SKILL.md",
       "SKILL",
       "findings-capture-workflow.md",
@@ -293,7 +299,13 @@
       "onboarding-wave-template.md",
       "onboarding-wave-template",
       "repo-overview-template.md",
-      "repo-overview-template"
+      "repo-overview-template",
+      "route-local-overview-card-template.md",
+      "route-local-overview-card-template",
+      "route-local-overview-template.md",
+      "route-local-overview-template",
+      "codegraphcontext-high-level-methods.md",
+      "codegraphcontext-high-level-methods"
     ]
   },
   "fallback": {

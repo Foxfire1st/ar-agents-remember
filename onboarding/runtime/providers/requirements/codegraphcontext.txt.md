@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/providers/requirements/codegraphcontext.txt` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-21T02:50+02:00                     |
+| lastUpdated            | 2026-05-23T05:32+02:00                     |
 | lastVerifiedCommitHash | `0462de46a1da1bf1997e3979f4cc5bc53d1132f6` |
 | lastVerifiedCommitDate | 2026-05-21T08:30:44+02:00|
 | governingOverview      | `overview.md`                              |
@@ -26,7 +26,7 @@ The file pins `codegraphcontext==0.4.10` plus the Tree-Sitter parser packages CG
 
 ### Conventions
 
-Provider dependency pins live under `runtime/providers/requirements/` in the source checkout and install into `ar-coordination/providers/requirements/`. The installed `providers/` tree is disposable reinstall scaffolding: provider virtual environments under `ar-coordination/providers/_venvs/` are recreated as needed, while durable database state belongs under `ar-coordination/provider-data/`.
+Provider dependency pins live under `runtime/providers/requirements/` in the source checkout and install into `ar-coordination/providers/requirements/`. Package-owned provider defaults are source-reproducible scaffolding; provider virtual environments under `ar-coordination/providers/_venvs/` are reconciled by MCP/package-local lifecycle install, while durable database state belongs under `ar-coordination/providers/data/`.
 
 ### Invariants And Boundaries
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for this provider pin.
 
 ## Update History
 
+- 2026-05-23T05:32+02:00: Corrected the durable provider data path to `providers/data` and clarified that provider dependency reinstall is MCP/package-local lifecycle work.
 - 2026-05-21T02:50+02:00: Added explicit Tree-Sitter parser dependency pins after CGC on Python 3.13 installed without parsers and produced a file-only graph.
 - 2026-05-21T02:10+02:00: Updated for the disposable `providers/` reinstall model and separate durable `provider-data/` location.
 - 2026-05-20T19:11+02:00: Created onboarding for the pinned CodeGraphContext provider requirement.

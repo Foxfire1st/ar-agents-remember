@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "examples/mcp",
+  "overview": "examples/mcp/overview.md",
+  "index": "examples/mcp/overview.index.json",
+  "sourceScope": [
+    "examples/mcp/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "examples/mcp/settings.example.json"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 1,
+    "fileSidecars": 1,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "example",
+    "examples",
+    "json",
+    "mcp",
+    "settings"
+  ],
+  "hotPath": {
+    "summary": "",
+    "candidateHints": [
+      "examples/mcp",
+      "examples/mcp/settings.example.json"
+    ],
+    "anchorHints": [
+      "settings.example.json",
+      "settings.example",
+      "route-local-overview",
+      "examples/mcp",
+      "7ab4b520b9178a31c4a5f5f8a5393b9b6ba82e0e",
+      "examples/mcp/",
+      "system/settings.json",
+      "doc_type",
+      "sourceRoute",
+      "lastUpdated",
+      "T05",
+      "lastVerifiedCommitHash",
+      "ab4b520b9178a31c4a5f5f8a5393b9b6ba82e0e",
+      "lastVerifiedCommitDate",
+      "T00",
+      "MCP"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "examples/mcp/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

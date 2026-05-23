@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `installer/install-runtime.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-21T04:53+02:00                     |
+| lastUpdated            | 2026-05-23T05:32+02:00                     |
 | lastVerifiedCommitHash |                                            `00aae9dad3d8740e10a41ab285f87ecab8608745`|
 | lastVerifiedCommitDate |                                            2026-05-21T23:53:08+02:00|
 | governingOverview      | `overview.md`                              |
@@ -16,25 +16,24 @@
 
 ## Purpose
 
-`install-runtime.py` is the checkout entrypoint for installing package-owned runtime mechanics into a target `ar-coordination` root. It installs runtime skills, scripts, provider package defaults, provider dependencies for enabled providers, coordinator `AGENTS.md` templates, and opt-in benchmark package content when callers pass `--include-benchmarks`.
+`install-runtime.py` is the checkout entrypoint for installing package-owned runtime mechanics into a target `ar-coordination` root. It installs runtime skills, the runtime `install-skills.sh` script, provider package defaults, coordinator `AGENTS.md` templates, and opt-in benchmark package content when callers pass `--include-benchmarks`. Provider dependency installation and provider runner reinstall are MCP-owned operations, not source-installer side effects.
 
 ## Code Commentary
 
 ### Logic
 
-The installer reconciles package-owned runtime directories by pruning stale files from installed `skills/` and `scripts`, then copying the current runtime skill tree, runtime scripts, provider defaults, and four runtime `AGENTS.md` templates. It skips Python bytecode caches while pruning and copying so local validation artifacts do not become installed package content. Provider scaffolding is intentionally disposable during a full provider reinstall: regular reinstall removes `ar-coordination/providers/` wholesale and recreates it from `runtime/providers/`, so pinned requirements and patch assets are source-reproducible instead of preserved by fragile exception lists. Durable provider databases live outside that tree under `ar-coordination/provider-data/`. The `--skip-provider-deps` path is narrower: it updates package-owned provider requirement/patch files while preserving installed provider binaries, venvs, and per-provider runtime roots so script/docs-only repairs do not break live watchers.
+The installer reconciles package-owned runtime directories by pruning stale files from installed `skills/` and `scripts`, then copying the current runtime skill tree, `runtime/scripts/install-skills.sh`, provider defaults, and four runtime `AGENTS.md` templates. It skips Python bytecode caches while pruning and copying so local validation artifacts do not become installed package content. Provider scaffolding is now split by ownership: regular source installs reconcile package-owned provider requirement and patch assets from `runtime/providers/`, while preserving provider dependency state under `_bin`, `_venvs`, and `runners` plus durable provider data/log roots. Python provider lifecycle, setup, and benchmark helpers live in the source/package layer under top-level `scripts/`; they are not installed into coordinator runtimes.
 
-The provider defaults include both `codegraphcontext.txt` and `grepai.txt`; provider lifecycle tooling reads those installed requirement files when installing CGC or GrepAI. After recreating package assets and user-owned directories, regular reinstall checks the live `system/settings.json`. If no providers are enabled there, dependency install is skipped. If providers are enabled, reinstall calls the installed `scripts/provider-setup.py install` entrypoint, which delegates lower-level mechanics to `provider-lifecycle.py`. `--skip-provider-deps` is the explicit file-only escape hatch and preserves live provider runtime dependencies. `provider-lifecycle.py cgc apply-settings` or `install-all` can still reconcile configured CGC runtime shape while the runtime is active, but the full reinstall contract is now complete: `providers/` is rebuilt from source, enabled provider dependencies are reinstalled from copied pins through the shared setup script, and `provider-data/` is preserved. Pruning uses a Windows long-path removal adapter and a read-only retry path so generated benchmark workspaces with deeply nested Git repositories can still be deleted. The installer creates missing user-owned coordinator folders, including `provider-data/`, but does not run repo onboarding bootstrap, copy settings defaults, or overwrite live memory, task, note, worktree, temp, provider-data, or settings content. `runtime/system/defaults/` remains checkout template material for initialization skills rather than installed coordinator state.
+The provider defaults include both `codegraphcontext.txt` and `grepai.txt`; MCP/package-local lifecycle tooling reads those installed requirement files when installing CGC or GrepAI. Source installs no longer read coordinator `system/settings.json`, no longer expose `--skip-provider-deps`, and no longer run provider dependency commands. Provider runtime install/reinstall is exposed through the MCP `runtime_install` tool, which derives settings from MCP authority and can run package-local lifecycle code. The source installer still creates missing user-owned coordinator folders, including provider data/log/runner roots, but does not run repo onboarding bootstrap, copy settings defaults, or overwrite live memory, task, note, worktree, temp, provider dependency, provider data/log, or settings content. `runtime/system/defaults/` remains checkout template material for initialization skills rather than installed coordinator state.
 
 Benchmark installation is opt-in. When `--include-benchmarks` is present, the installer validates the source `benchmarks/` tree, including the workspace `AGENTS.md` template, ensures the target coordinator root `.gitignore` contains `benchmarks/`, reconciles package content into `ar-coordination/benchmarks/`, and preserves the installed `user-runs/` subtree so local benchmark outputs survive reinstall. Source-side `benchmarks/workspaces/` and `benchmarks/user-runs/` are ignored while copying package content, and installed `benchmarks/workspaces/` is pruned as resettable state. Pinned code and memory repositories are not vendored into the source package; the benchmark runner materializes them during `prepare`.
 
 ### Conventions
 
-- Regular installs reconcile runtime skills, scripts, provider defaults, enabled provider dependencies, and coordinator `AGENTS.md` templates.
-- Provider scaffold install requires `runtime/providers/` in the source checkout, deletes the installed `providers/` tree, and copies source defaults back into it before dependency installation runs.
-- Provider dependency install is settings-driven through `scripts/provider-setup.py install`, and is skipped when live settings do not enable any providers.
-- `--skip-provider-deps` deliberately disables provider dependency installation for file-only repair without deleting installed provider runtimes.
-- Durable provider database state belongs under `ar-coordination/provider-data/`, which is created if missing and is not deleted by reinstall.
+- Regular installs reconcile runtime skills, `scripts/install-skills.sh`, provider defaults, and coordinator `AGENTS.md` templates.
+- Provider scaffold install requires `runtime/providers/` in the source checkout, reconciles package-owned installed provider defaults, and preserves provider dependency/runtime/data/log directories.
+- Provider dependency install is not a source-installer responsibility; use the MCP `runtime_install` tool for package-local provider lifecycle install/reinstall.
+- Durable provider database state belongs under `ar-coordination/providers/data/`, logs under `ar-coordination/providers/logs/`, and runner instances under `ar-coordination/providers/runners/<provider>/`.
 - `runtime/providers/requirements/codegraphcontext.txt` and `runtime/providers/requirements/grepai.txt` are required package assets copied into `ar-coordination/providers/requirements/`.
 - `--include-benchmarks` installs package-owned benchmark definitions, prompts, workspace templates, author result artifacts, and benchmark docs.
 - Benchmark installs append `benchmarks/` to the target coordinator root `.gitignore` when the entry is missing, without replacing existing ignore rules.
@@ -47,11 +46,11 @@ Benchmark installation is opt-in. When `--include-benchmarks` is present, the in
 
 ### Invariants And Boundaries
 
-The installer owns package assets, disposable provider scaffolding, and enabled provider dependency installation through the shared provider setup entrypoint. It does not initialize or refresh target repository onboarding, create normal memory repos, prepare benchmark/worktree provider indexes, run benchmark Codex jobs, mutate user-generated benchmark outputs, or delete `provider-data/`. Destructive provider actions such as deleting a FalkorDB graph or purging backend data must remain explicit lifecycle operations.
+The installer owns package assets and provider defaults for the source-checkout CLI path. It does not initialize or refresh target repository onboarding, create normal memory repos, install provider dependencies, reinstall provider runners, prepare benchmark/worktree provider indexes, run benchmark Codex jobs, mutate user-generated benchmark outputs, or delete `providers/data` or `providers/logs`. Destructive provider actions such as deleting a FalkorDB graph or purging backend data must remain explicit lifecycle operations.
 
 ### Todos
 
-- Refresh verification metadata after the benchmark installer changes are committed.
+- Refresh verification metadata after the runtime install/provider layout changes are committed.
 
 ### Docs References
 
@@ -65,15 +64,14 @@ No external documentation is needed for this installer. Benchmark behavior is do
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The installer summary reports copied, unchanged, replaced-link, removed, created-directory, and provider dependency command counts. | L33-L50 | [installer](agents-remember-md/installer/install-runtime.py) |
-| Runtime installation now requires `runtime/providers`, including the CGC and GrepAI requirement pins, before installing package content. | L219-L227 | [installer](agents-remember-md/installer/install-runtime.py) |
-| Provider dependency installation loads live coordinator settings, detects enabled providers, and runs GrepAI and CGC lifecycle install commands from the installed runtime script. | L264-L385 | [installer](agents-remember-md/installer/install-runtime.py) |
-| Runtime installation prunes/copies skills and scripts while ignoring Python bytecode caches, deletes and recreates installed provider scaffolding from source defaults only during full provider dependency installs, preserves installed provider runtimes when dependencies are skipped, installs four `AGENTS.md` templates, creates user-owned coordinator folders including `provider-data`, and then installs enabled provider dependencies unless skipped. | L400-L430 | [installer](agents-remember-md/installer/install-runtime.py) |
+| The installer summary reports copied, unchanged, replaced-link, removed, created-directory, and dependency command counts; source-installer dependency counts remain zero because provider install is MCP-owned. | L33-L50 | [installer](agents-remember-md/installer/install-runtime.py) |
+| Runtime installation now requires `runtime/providers`, the CGC and GrepAI requirement pins, runtime skills, and `runtime/scripts/install-skills.sh` before installing package content. | L197-L207 | [installer](agents-remember-md/installer/install-runtime.py) |
+| Runtime installation prunes/copies skills and the runtime `install-skills.sh` script while ignoring Python bytecode caches, preserves provider data/log/dependency/runtime roots, installs four `AGENTS.md` templates, and creates user-owned coordinator provider folders without running provider dependency commands. | L254-L310 | [installer](agents-remember-md/installer/install-runtime.py) |
 | Removal of stale installed package paths uses an extended Windows path adapter before unlinking files or recursively deleting directories, and read-only files are made writable before retrying removal. | L91-L144 | [installer](agents-remember-md/installer/install-runtime.py) |
 | Benchmark installation requires `README.md`, `cases/`, and `templates/workspace-AGENTS.md`, appends `benchmarks/` to the target coordinator root `.gitignore` when needed, preserves installed `user-runs/`, prunes installed `workspaces/`, and copies package-owned benchmark content while ignoring source-side generated `workspaces/` and `user-runs/`. | L234-L261 | [installer](agents-remember-md/installer/install-runtime.py) |
 | `.gitignore` updates reject a directory at the target ignore-file path, preserve existing rules, count an existing `benchmarks/` entry as unchanged, and append the entry only when missing. | L202-L216 | [installer](agents-remember-md/installer/install-runtime.py) |
-| The CLI exposes `--include-benchmarks`, `--skip-provider-deps`, and `--provider-deps-timeout`, and passes those options into `install_runtime`. | L428-L464 | [installer](agents-remember-md/installer/install-runtime.py) |
-| The root README documents normal runtime installation, default provider dependency installation, the `--skip-provider-deps` escape hatch, and the optional benchmark install command. | L45-L59 | [README](agents-remember-md/README.md) |
+| The CLI exposes `--source-root`, `--dry-run`, and `--include-benchmarks`, then calls `install_runtime` without provider dependency options. | L313-L345 | [installer](agents-remember-md/installer/install-runtime.py) |
+| The runtime layout reference states that coordinator runtimes install only `scripts/install-skills.sh`; Python provider and benchmark helpers remain source/package-owned. | n/a | [runtime layout reference](agents-remember-md/docs/reference/runtime-layout.md) |
 
 ## Cross-Repo References
 
@@ -85,6 +83,8 @@ No sibling repository evidence is needed for the installer.
 
 ## Update History
 
+- 2026-05-23T05:32+02:00: Updated after coordinator runtimes stopped installing Python provider/benchmark scripts and the source installer stopped reading coordinator settings or running provider dependency commands.
+- 2026-05-23T04:29+02:00: Updated after provider layout moved to `providers/runners`, `providers/data`, and `providers/logs`, with MCP-owned runtime install becoming the preferred authority path.
 - 2026-05-21T23:55+02:00: Updated after `--skip-provider-deps` was fixed to preserve installed provider binaries, venvs, and runtime roots while updating package-owned provider defaults.
 - 2026-05-21T04:53+02:00: Updated after the installer switched provider dependency installation to the shared `scripts/provider-setup.py install` entrypoint.
 - 2026-05-21T02:14+02:00: Updated after reinstall began running enabled provider dependency installers by default, with `--skip-provider-deps` as the explicit scaffolding-only mode.

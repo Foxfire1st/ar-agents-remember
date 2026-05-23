@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/grepai-high-leverage-usage.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-21T16:14+02:00                                 |
+| lastUpdated            | 2026-05-23T05:32+02:00                                 |
 | lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1`             |
 | lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
 | governingOverview      | `../../overview.md`                                    |
@@ -26,7 +26,7 @@ substrate without relying on private examples or global GrepAI state.
 ### Logic
 
 The document starts with the managed invocation contract: use the runtime-owned
-GrepAI binary, run from `providers/grepai/`, and set provider-owned `HOME`,
+GrepAI binary, run from `providers/runners/grepai/`, and set provider-owned `HOME`,
 `XDG_STATE_HOME`, and `XDG_CACHE_HOME` so GrepAI reads the managed workspace
 config instead of a global user config. It then maps common semantic retrieval
 questions to commands: broad workspace search, compact JSON anchors, snippet
@@ -42,11 +42,11 @@ project ids, paths, symbols, snippets, and scores.
 Run all GrepAI examples through the provider-owned environment:
 
 ```bash
-cd <coordination_root>/providers/grepai
+cd <coordination_root>/providers/runners/grepai
 env \
-  HOME=<coordination_root>/providers/grepai/home \
-  XDG_STATE_HOME=<coordination_root>/providers/grepai/state/xdg \
-  XDG_CACHE_HOME=<coordination_root>/providers/grepai/cache/xdg \
+  HOME=<coordination_root>/providers/runners/grepai/home \
+  XDG_STATE_HOME=<coordination_root>/providers/runners/grepai/state/xdg \
+  XDG_CACHE_HOME=<coordination_root>/providers/runners/grepai/cache/xdg \
   <coordination_root>/providers/_bin/grepai <command>
 ```
 
@@ -103,4 +103,5 @@ contain private sibling repository names, symbols, paths, snippets, or results.
 
 ## Update History
 
+- 2026-05-23T05:32+02:00: Updated GrepAI managed invocation paths after provider instances moved under `providers/runners/grepai`.
 - 2026-05-21T16:14+02:00: Created onboarding for the GrepAI high-leverage usage catalog.
