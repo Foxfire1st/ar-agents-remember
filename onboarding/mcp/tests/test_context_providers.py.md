@@ -3,11 +3,11 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
-| path                   | `runtime/skills/U-01-core-skills/tests/test_context_providers.py` |
+| path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T05:32+02:00                     |
-| lastVerifiedCommitHash | `00aae9dad3d8740e10a41ab285f87ecab8608745` |
-| lastVerifiedCommitDate | 2026-05-21T23:53:08+02:00|
+| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a` |
+| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,7 +22,7 @@
 
 ### Logic
 
-The test module imports `agents_remember.context_providers` from the core-skill shared helper path. It checks that CGC runtime layout expansion produces a contained per-repo runner root, shared provider venv, pinned requirements file, patch root, durable `providers/data` FalkorDB backend root, FalkorDB process env, and isolated HOME-like runtime directories. It verifies that `ensure_cgc_runtime_layout` writes pinned defaults, inherits source `.gitignore` rules into the managed `.cgcignore`, and excludes process-only CGC/FalkorDB runtime keys from persisted `.env`.
+The test module imports `agents_remember.providers.context_providers` from the MCP package source path. It checks that CGC runtime layout expansion produces a contained per-repo runner root, shared provider venv, pinned requirements file, patch root, durable `providers/data` FalkorDB backend root, FalkorDB process env, and isolated HOME-like runtime directories. It verifies that `ensure_cgc_runtime_layout` writes pinned defaults, inherits source `.gitignore` rules into the managed `.cgcignore`, and excludes process-only CGC/FalkorDB runtime keys from persisted `.env`.
 
 The provider-settings tests cover CGC multi-root settings expansion, root-level `cgcignorePatterns`, and rejection of configured code repository roots that do not exist. The cleanup test creates a synthetic stale `my-app` runtime instance plus legacy `db`, `global`, and `kuzu` artifacts under a configured runtime root, then verifies cleanup removes only those generated artifacts while preserving the shared FalkorDB backend data root. The GrepAI tests cover pin handling, workspace runtime paths, explicit external and repo-internal memory roots, provider-owned mirror roots, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, detection of `.grepai/` artifacts in indexed roots, and removal of disposable `.grepai/` artifacts without touching durable onboarding files. The remaining tests cover forbidden source artifact detection, idempotent CGC patch application including the visualizer repo-query and route patches, CGC module lookup helpers including the CLI helper, rejection of unexpected patch source text, stable repo id normalization, and stable patch id naming.
 
@@ -50,12 +50,12 @@ No external documentation is needed for these unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The layout tests assert that CGC uses `providers/runners/codegraphcontext/<repo-id>`, a shared `providers/data/codegraphcontext/falkordb` backend root, `providers/_venvs/codegraphcontext`, `providers/requirements/codegraphcontext.txt`, and per-repo FalkorDB process env. | L67-L113 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
-| The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | L115-L153 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
-| The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | L154-L187 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
-| Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, and rejection of configured code repository paths that do not exist. | L189-L241 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
-| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, settings expansion across external and internal memory roots into provider-owned mirrors, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, detection of `.grepai/` artifacts in indexed memory roots, and disposable root artifact removal that preserves regular onboarding files. | L243-L422 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
-| Source artifact, patch idempotence, CGC module lookup, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query patch, visualizer route patches, `viz/server.py` lookup, and `cli/cli_helpers.py` lookup. | L423-L679 | [test_context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_context_providers.py) |
+| The layout tests assert that CGC uses `providers/runners/codegraphcontext/<repo-id>`, a shared `providers/data/codegraphcontext/falkordb` backend root, `providers/_venvs/codegraphcontext`, `providers/requirements/codegraphcontext.txt`, and per-repo FalkorDB process env. | L67-L113 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
+| The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | L115-L153 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
+| The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | L154-L187 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
+| Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, and rejection of configured code repository paths that do not exist. | L189-L241 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
+| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, settings expansion across external and internal memory roots into provider-owned mirrors, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, detection of `.grepai/` artifacts in indexed memory roots, and disposable root artifact removal that preserves regular onboarding files. | L243-L422 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
+| Source artifact, patch idempotence, CGC module lookup, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query patch, visualizer route patches, `viz/server.py` lookup, and `cli/cli_helpers.py` lookup. | L423-L679 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
 
 ## Cross-Repo References
 
@@ -68,6 +68,7 @@ No sibling repository evidence is needed for these tests.
 ## Update History
 
 - 2026-05-23T05:32+02:00: Updated provider layout expectations to `providers/runners` plus `providers/data`.
+- 2026-05-23T17:50+02:00: Moved onboarding to `mcp/tests` after the tests moved out of `runtime/skills/U-01-core-skills/tests` and updated imports to the MCP package provider module.
 - 2026-05-21T23:18+02:00: Updated after adding GrepAI disposable root artifact removal coverage.
 - 2026-05-21T13:22+02:00: Updated CGC patch tests for visualizer server route handling, CLI default-route propagation, CLI helper lookup, and the two new patch ids.
 - 2026-05-21T12:40+02:00: Updated CGC patch tests for the visualizer repo-query patch, `viz/server.py` module lookup, and patch id stability.

@@ -6,8 +6,8 @@
 | path                   | `runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-05-15T12:57+02:00                                             |
-| lastVerifiedCommitHash | `810a54351caa86a8e7f13677d284bd5e03147296`                         |
-| lastVerifiedCommitDate | 2026-05-15T13:31:02+02:00|
+| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`                         |
+| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
 
 ## Purpose
 

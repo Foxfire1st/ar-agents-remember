@@ -45,8 +45,8 @@ No external documentation is needed for the pin itself.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The provider requirements file pins CodeGraphContext to version 0.4.10 plus Tree-Sitter parser dependencies needed for symbol extraction. | L1-L4 | [codegraphcontext.txt](agents-remember-md/runtime/providers/requirements/codegraphcontext.txt) |
-| The installer requires and copies `runtime/providers` into the coordination root. | L198-L208; L254-L258 | [installer](agents-remember-md/installer/install-runtime.py) |
-| The shared provider helper writes the full CGC requirements set when creating a missing CGC requirements file. | L13-L20; L508-L509 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
+| The MCP runtime installer requires and copies `runtime/providers` into the coordination root. | n/a | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
+| The package provider helper writes the full CGC requirements set when creating a missing CGC requirements file. | n/a | [context_providers.py](agents-remember-md/mcp/src/agents_remember/providers/context_providers.py) |
 
 ## Cross-Repo References
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for this provider pin.
 
 ## Update History
 
+- 2026-05-23T17:50+02:00: Updated references after provider helpers became MCP package modules and the old source script/shared routes were removed.
 - 2026-05-23T05:32+02:00: Corrected the durable provider data path to `providers/data` and clarified that provider dependency reinstall is MCP/package-local lifecycle work.
 - 2026-05-21T02:50+02:00: Added explicit Tree-Sitter parser dependency pins after CGC on Python 3.13 installed without parsers and produced a file-only graph.
 - 2026-05-21T02:10+02:00: Updated for the disposable `providers/` reinstall model and separate durable `provider-data/` location.

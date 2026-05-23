@@ -6,8 +6,8 @@
 | path                   | `runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-05-16T18:17+02:00                                       |
-| lastVerifiedCommitHash | `403883337d2d0479dc2da02d1ce2a1a0f3983b93`                   |
-| lastVerifiedCommitDate | 2026-05-16T18:21:41+02:00|
+| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`                   |
+| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
 
 ## Purpose
 

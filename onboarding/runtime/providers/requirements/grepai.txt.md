@@ -51,9 +51,9 @@ No external documentation is needed for this pin file.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The requirement file pins GrepAI to `grepai==0.35.0`. | L1-L2 | [grepai.txt](agents-remember-md/runtime/providers/requirements/grepai.txt) |
-| The installer requires both CGC and GrepAI provider requirement files before copying provider defaults into the coordination root. | L198-L204 | [installer](agents-remember-md/installer/install-runtime.py) |
-| The provider helper exposes the GrepAI pin and writes the managed requirements file through the shared provider requirements helper. | L24; L294-L295 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
-| The lifecycle installer reads the GrepAI pin and installs the matching platform release binary into `providers/_bin`. | L1420-L1489 | [provider-lifecycle.py](agents-remember-md/scripts/provider-lifecycle.py) |
+| The MCP runtime installer requires both CGC and GrepAI provider requirement files before copying provider defaults into the coordination root. | n/a | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
+| The provider helper exposes the GrepAI pin and writes the managed requirements file through the package provider helper. | n/a | [context_providers.py](agents-remember-md/mcp/src/agents_remember/providers/context_providers.py) |
+| The lifecycle installer reads the GrepAI pin and installs the matching platform release binary into `providers/_bin`. | n/a | [provider_lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/provider_lifecycle.py) |
 
 ## Cross-Repo References
 
@@ -65,6 +65,7 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-05-23T17:50+02:00: Updated references after provider helpers became MCP package modules and the old source script/shared routes were removed.
 - 2026-05-23T05:32+02:00: Updated the lifecycle-script reference after provider Python scripts moved out of installed runtime and into source/package-owned `scripts/`.
 - 2026-05-21T02:10+02:00: Updated for the disposable `providers/` reinstall model; this pin is source-recopied while durable provider data remains outside the wiped provider scaffold.
 - 2026-05-21T01:47+02:00: Created onboarding for the GrepAI provider requirement pin copied by the runtime installer and consumed by provider lifecycle tooling.

@@ -45,7 +45,7 @@ No external documentation is needed for this local patch asset.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The patch replaces CGC's direct repo-local `.cgcignore` default with a branch that prefers `explicit_cgcignore_path`. | L1-L13 | [patch](agents-remember-md/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch) |
-| The shared provider helper carries the same patch marker and idempotent source replacement used by the lifecycle script. | L54-L66; L222-L235 | [context_providers.py](agents-remember-md/runtime/skills/U-01-core-skills/_shared/agents_remember/context_providers.py) |
+| The package provider helper carries the same patch marker and idempotent source replacement used by the lifecycle service. | n/a | [context_providers.py](agents-remember-md/mcp/src/agents_remember/providers/context_providers.py) |
 
 ## Cross-Repo References
 
@@ -57,5 +57,6 @@ No sibling repository evidence is needed for this patch asset.
 
 ## Update History
 
+- 2026-05-23T17:50+02:00: Updated references after provider helpers became MCP package modules and the old source shared route was removed.
 - 2026-05-23T05:32+02:00: Updated managed CGC runner-path commentary after provider instances moved under `providers/runners/codegraphcontext`.
 - 2026-05-20T19:11+02:00: Created onboarding for the CGC `.cgcignore` runtime-root patch asset.

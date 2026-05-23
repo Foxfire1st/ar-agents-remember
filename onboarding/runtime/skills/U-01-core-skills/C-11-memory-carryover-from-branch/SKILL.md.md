@@ -6,8 +6,8 @@
 | path                   | `runtime/skills/U-01-core-skills/C-11-memory-carryover-from-branch/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                              |
 | lastUpdated            | 2026-05-12T18:51+02:00                                               |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964`                           |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`                           |
+| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This skill documents C-11, the selective memory carryover workflow for protected
 
 ### Logic
 
-The skill defines C-11 as a memory reconciliation step rather than a normal Git merge. It tells agents to run `memory_carryover.py plan` first with `--code-repository-root` and `--code-repository-name`, review the candidate report, and use `apply` only with explicit approval. The contract names the five relevant branch roles: official code, source branch code, official memory, source branch memory, and old base. It defines evidence tiers from strongest to weakest, with only exact landed commits, patch-id matches, and final content matches becoming auto-carry candidates by default.
+The skill defines C-11 as a memory reconciliation step rather than a normal Git merge. It tells agents to use the MCP `memory_carryover_plan` tool first, review the candidate report, and use `memory_carryover_apply` only with explicit intent. The contract names the five relevant branch roles: official code, source branch code, official memory, source branch memory, and old base. It defines evidence tiers from strongest to weakest, with only exact landed commits, patch-id matches, and final content matches becoming auto-carry candidates by default.
 
 ### Conventions
 
@@ -44,7 +44,7 @@ No external documentation is needed for this repository-local workflow skill.
 | Finding                                                                                                                                  | Citations | Source Path                                                                                                                     |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries. | L8-L62    | [C-11 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-11-memory-carryover-from-branch/SKILL.md)                          |
-| The carryover helper implements the plan/apply behavior described by this skill.                                                         | L127-L231; L244-L299; L302-L338 | [memory_carryover.py](agents-remember-md/runtime/skills/U-01-core-skills/C-11-memory-carryover-from-branch/scripts/memory_carryover.py) |
+| The package carryover service implements the plan/apply behavior described by this skill.                                                         | n/a | [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
 
 ## Cross-Repo References
 
@@ -56,6 +56,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-23T17:50+02:00: Updated implementation reference after the carryover script route was removed from the skill tree and the MCP package became the only implementation route.
 - 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-11-memory-carryover-from-branch` name.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and replaced placeholder citations with current source line ranges.
 - 2026-05-11T18:34: Updated after C-11 command examples adopted `--code-repository-root` and `--code-repository-name`.
