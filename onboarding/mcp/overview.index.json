@@ -25,6 +25,7 @@
     "mcp/src/agents_remember/memory/baseline.py",
     "mcp/src/agents_remember/memory/carryover.py",
     "mcp/src/agents_remember/providers/integrity.py",
+    "mcp/src/agents_remember/providers/lifecycle_service.py",
     "mcp/src/agents_remember/providers/provider_lifecycle.py",
     "mcp/src/agents_remember/providers/provider_setup.py",
     "mcp/src/agents_remember/providers/settings.py",
@@ -41,8 +42,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 56,
-    "fileSidecars": 29,
+    "sourceFilesInScope": 57,
+    "fileSidecars": 30,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -67,6 +68,7 @@
     "integrity",
     "kernel",
     "lifecycle",
+    "lifecycle_service",
     "manager",
     "mcp",
     "memory",
@@ -85,6 +87,7 @@
     "runtime",
     "runtime_install",
     "server",
+    "service",
     "settings",
     "setup",
     "skill",
@@ -134,7 +137,7 @@
       "mcp/src/agents_remember/memory/carryover.py",
       "mcp/src/agents_remember/providers",
       "mcp/src/agents_remember/providers/integrity.py",
-      "mcp/src/agents_remember/providers/provider_lifecycle.py"
+      "mcp/src/agents_remember/providers/lifecycle_service.py"
     ],
     "anchorHints": [
       "runner.py",
@@ -167,6 +170,8 @@
       "carryover",
       "integrity.py",
       "integrity",
+      "lifecycle_service.py",
+      "lifecycle_service",
       "provider_lifecycle.py",
       "provider_lifecycle",
       "provider_setup.py",
@@ -182,9 +187,7 @@
       "test_context_providers.py",
       "test_context_providers",
       "test_install_runtime.py",
-      "test_install_runtime",
-      "test_provider_lifecycle.py",
-      "test_provider_lifecycle"
+      "test_install_runtime"
     ]
   },
   "fallback": {
