@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-21T04:09+02:00                     |
-| lastVerifiedCommitHash | `0462de46a1da1bf1997e3979f4cc5bc53d1132f6` |
-| lastVerifiedCommitDate | 2026-05-21T08:30:44+02:00|
+| lastUpdated            | 2026-05-23T14:20+02:00                     |
+| lastVerifiedCommitHash | `d445e83e7d28e3c34b15d8299d279d65ab9183b9` |
+| lastVerifiedCommitDate | 2026-05-23T05:45:38+02:00                 |
 
 ## Purpose
 
@@ -31,13 +31,13 @@ sibling repository, then scopes normal resolver input for this checkout to
 The task-routing section keeps the three workflow choices: default chat mode
 for small current-session edits, W-02 for durable task-file work, and W-01 only
 when the developer explicitly requests the heavy workflow. The memory section
-keeps the C-08, configured-provider, then C-02 gate and points agents at the
+keeps the C-08, MCP `context_packet`, then C-02 gate and points agents at the
 resolved memory layer's settings, tools, sources, and optional coding guidelines
 rather than pretending the source checkout has active root-level `system/`
 settings.
 
-The source-layout section records the current package structure: installer,
-runtime `AGENTS.md` templates, runtime skills, runtime scripts, runtime system
+The source-layout section records the current package structure: MCP server and
+package services, runtime `AGENTS.md` templates, runtime skills, runtime system
 defaults, README, and roadmap. The boundaries section keeps root instructions
 scoped to source-checkout work and keeps installed coordinator instructions
 under `runtime/agents-md-files/`.
@@ -46,9 +46,9 @@ under `runtime/agents-md-files/`.
 
 Workflow names remain stable contracts. C-* skills are core support skills, and
 W-* skills are task workflows. Active runtime and memory settings are always
-resolved through C-08; provider readiness is checked after that resolver step
-only when enabled context providers are configured; source templates and example defaults are not treated as the user's live
-runtime configuration.
+resolved through C-08; provider readiness is checked through MCP when that
+server and providers are configured; source templates and example defaults are
+not treated as the user's live runtime configuration.
 
 ### Invariants And Boundaries
 
@@ -83,7 +83,7 @@ file.
 | The file identifies `agents-remember-md` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Task format routing keeps chat, W-02, and W-01 as the only work formats before changing code or docs.                                          | L16-L27   | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Memory rules require C-08, then a configured-provider readiness check, then C-02, and route agents to the resolved memory layer instead of a root-level source checkout `system/` folder. | L28-L64 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Source-layout and boundary notes separate installer/runtime package assets from user-owned memory and installed coordinator configuration.      | L66-L86   | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Source-layout and boundary notes separate MCP/runtime package assets from user-owned memory and installed coordinator configuration.            | L66-L86   | [AGENTS.md](agents-remember-md/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -96,6 +96,8 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## Update History
 
+- 2026-05-23T14:20+02:00: Updated source-layout onboarding after `installer/` and `runtime/scripts/` were removed from the source package.
+- 2026-05-23T13:46+02:00: Updated provider readiness guidance to use MCP `context_packet` instead of deleted source lifecycle scripts or coordinator `system/settings.json`.
 - 2026-05-21T04:09+02:00: Added the configured-provider readiness check after C-08 and before C-02 for source-checkout work.
 - 2026-05-15T04:12+02:00: Reframed the root `AGENTS.md` onboarding around the source checkout contract and the installed-runtime handoff.
 - 2026-05-15T00:38+02:00: Refreshed after coordinator and memory-layer settings guidance was folded into the repo-root contract during the `AGENTS.md` template reshuffle. Verification metadata remains pinned to the last committed source until closeout.

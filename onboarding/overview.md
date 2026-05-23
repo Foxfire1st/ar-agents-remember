@@ -4,7 +4,7 @@
 
 ## What This Repo Is
 
-`agents-remember-md` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, helper scripts, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. The core idea is deterministic onboarding: source files have one-to-one onboarding units that can be verified against Git history, while overviews and entity catalogs use route scopes or curated evidence fingerprints before an agent relies on them.
+`agents-remember-md` is the source repository for the Agents Remember workflow system. It defines the doctrine, skills, MCP tools, task workflows, and design references that agents use to maintain durable onboarding knowledge beside code. The core idea is deterministic onboarding: source files have one-to-one onboarding units that can be verified against Git history, while overviews and entity catalogs use route scopes or curated evidence fingerprints before an agent relies on them.
 
 The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. C-08 exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`, C-09 owns worktree lifecycle mutation, direct current-checkout closeout for approved micro edits, and integration back to source branches, and C-10 provides the adoption path for existing external-memory onboarding that needs an initial `memory.md` ledger.
 
@@ -12,7 +12,7 @@ The provider runtime guidance now routes through the MCP/package boundary: MCP s
 
 ## Hot Path Summary
 
-Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context-packet, runtime-install, provider settings, and integrity tools, `scripts/` covers source-checkout provider and benchmark helpers, `runtime/agents-md-files` covers installed instruction templates, `runtime/scripts/install-skills.sh` covers the only installed runtime script, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task workflows, and `installer` covers legacy packaging. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.
+Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, and integrity tools, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, and `runtime/skills/W-*` covers task workflows. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.
 
 ## Architecture At A Glance
 
@@ -22,20 +22,14 @@ agents-remember-md/
     source checkout instructions and installed-runtime handoff
   README.md
     public setup and conceptual model
-  installer/
-    install-runtime.py
   mcp/
-    package-managed MCP server, context packet, runtime install, provider settings, and integrity checks
-  scripts/
-    source-checkout provider lifecycle, provider setup, and benchmark helpers
+    package-managed MCP server, runtime/skills install, provider lifecycle/setup, benchmark tools, settings, and integrity checks
   runtime/
     agents-md-files/
       coordinator/AGENTS.md
       skills/AGENTS.md
       system/AGENTS.md
       tasks/AGENTS.md
-    scripts/
-      install-skills.sh
     skills/
       W-* task workflows
       U-* core maintenance and resolver skills
@@ -47,8 +41,6 @@ agents-remember-md/
 
 workspace ar-coordination/
   AGENTS.md
-  scripts/
-    install-skills.sh
   skills/
   memory-repos/ar-agents-remember-md/
     memory.md
@@ -66,8 +58,7 @@ workspace ar-coordination/
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Source checkout instructions | [AGENTS.md](agents-remember-md/AGENTS.md)                                                                                                                               | Defines how agents work on this source checkout and when to hand off to the installed runtime instructions.    |
 | Public documentation | [README.md](agents-remember-md/README.md) and [docs](agents-remember-md/docs)                                                                                       | Keeps the root README as the public front door while focused docs pages own setup, concepts, architecture, workflows, install guides, guides, and reference material. |
-| Runtime installer    | [installer/install-runtime.py](agents-remember-md/installer/install-runtime.py)                                                                                                     | Installs package-owned runtime assets into a target `ar-coordination` root without running repo onboarding.       |
-| MCP package          | [mcp](agents-remember-md/mcp)                                                                                                                                                       | Package-managed MCP server exposing `context_packet` and `runtime_install`, with trusted settings-derived provider lifecycle settings and integrity checks. |
+| MCP package          | [mcp](agents-remember-md/mcp)                                                                                                                                                       | Package-managed MCP server exposing context, runtime install, skills install, provider, worktree, memory, benchmark, settings-derived lifecycle, and integrity tools. |
 | Core skills          | [runtime/skills/U-01-core-skills](agents-remember-md/runtime/skills/U-01-core-skills)                                                                                                           | Resolver, drift detection, repo bootstrap, onboarding maintenance, and related support skills.                 |
 | Task workflows       | [runtime/skills/W-02-light-task-workflow](agents-remember-md/runtime/skills/W-02-light-task-workflow) and [runtime/skills/W-01-heavy-task-workflow](agents-remember-md/runtime/skills/W-01-heavy-task-workflow) | Durable task artifact workflows for medium and high-risk work.                                                 |
 | Phase skills         | [runtime/skills/W-01-heavy-task-workflow/skills/P-00-creation](agents-remember-md/runtime/skills/W-01-heavy-task-workflow/skills/P-00-creation) through [runtime/skills/W-01-heavy-task-workflow/skills/P-99-review](agents-remember-md/runtime/skills/W-01-heavy-task-workflow/skills/P-99-review) | Heavy workflow phase packages and review gates. |
@@ -87,7 +78,7 @@ The public README is now intentionally short: product positioning, core path-der
 
 ### Runtime AGENTS Templates
 
-`runtime/agents-md-files/` is the package-owned source for installed coordinator instructions. The current package has four installable templates: `coordinator/AGENTS.md` for the coordinator root, `skills/AGENTS.md` for compact C-* skill routing, `system/AGENTS.md` for the hard onboarding maintenance gate, and `tasks/AGENTS.md` for task-folder collaboration doctrine. `installer/install-runtime.py` installs those templates to `ar-coordination/AGENTS.md`, `ar-coordination/skills/AGENTS.md`, `ar-coordination/system/AGENTS.md`, and `ar-coordination/tasks/AGENTS.md`. Memory repos are not expected to provide a root-level `AGENTS.md`; repo-specific memory guidance lives in the memory layer's `system/*` files.
+`runtime/agents-md-files/` is the package-owned source for installed coordinator instructions. The current package has four installable templates: `coordinator/AGENTS.md` for the coordinator root, `skills/AGENTS.md` for compact C-* skill routing, `system/AGENTS.md` for the hard onboarding maintenance gate, and `tasks/AGENTS.md` for task-folder collaboration doctrine. MCP `runtime_install` installs those templates to `ar-coordination/AGENTS.md`, `ar-coordination/skills/AGENTS.md`, `ar-coordination/system/AGENTS.md`, and `ar-coordination/tasks/AGENTS.md`. Memory repos are not expected to provide a root-level `AGENTS.md`; repo-specific memory guidance lives in the memory layer's `system/*` files.
 
 ### Core Resolver And Drift Gate
 
@@ -99,7 +90,7 @@ C-05 owns file-level onboarding and repo-level entity catalogs. It is the mainte
 
 ### MCP And Context Provider Runtime
 
-The runtime has optional local discovery providers, but they remain accelerators rather than proof. The MCP settings file, not coordinator `system/settings.json`, declares allowed providers and repositories for the MCP path. `context_packet` reports provider and watcher state, while `runtime_install` installs runtime assets and provider dependencies from package-local code. Managed provider installs should be coordination-owned: pinned requirements under `providers/requirements/`, runtime-owned binaries under `providers/_bin/`, reusable Python venvs only for Python providers under `providers/_venvs/`, provider instances under `providers/runners/`, durable databases under `providers/data/`, logs under `providers/logs/`, and patches under `providers/patches/`. Database and daemon infrastructure should be Docker-wrapped rather than installed as host services.
+The runtime has optional local discovery providers, but they remain accelerators rather than proof. The MCP settings file, not coordinator `system/settings.json`, declares allowed providers and repositories for the MCP path. `context_packet` reports provider and watcher state, `runtime_install` installs runtime assets and provider dependencies from package-local code, and `skills_install` copy-installs packaged skills into harness skill roots. Managed provider installs should be coordination-owned: pinned requirements under `providers/requirements/`, runtime-owned binaries under `providers/_bin/`, reusable Python venvs only for Python providers under `providers/_venvs/`, provider instances under `providers/runners/`, durable databases under `providers/data/`, logs under `providers/logs/`, and patches under `providers/patches/`. Database and daemon infrastructure should be Docker-wrapped rather than installed as host services.
 
 GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generated from MCP repository/memory settings. Managed mode mirrors those roots under `providers/runners/grepai/index-roots/` before launching GrepAI because GrepAI still writes per-project `.grepai/` symbol/config artifacts beside each configured project path. Its runtime config, state, cache, home artifacts, and mirrors belong under `providers/runners/grepai/`; its shared PostgreSQL/pgvector Docker data belongs under `providers/data/grepai/postgres/`; and `.grepai/` inside a durable memory root is a containment failure, not durable memory. CodeGraphContext keeps one provider instance per configured repo under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, with all instances sharing the FalkorDB Docker data root under `providers/data/codegraphcontext/falkordb/`.
 
@@ -148,6 +139,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 - Route indexes are generated availability metadata, not hand-authored truth; overview `## Hot Path Summary` sections and file sidecars are the maintained inputs, and C-04 should infer missing sidecars from `sourceScope` plus `coveredFiles`.
 - Repo entity catalogs use deterministic `git-blob-set-v1` fingerprints over curated load-bearing evidence files so C-02 can flag stale entity memory without semantic guessing.
 - The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory repos use `system/*` files rather than a root-level `AGENTS.md`.
+- Runtime, provider, benchmark, and skill-install script behavior belongs in MCP package modules; the source checkout no longer keeps parallel `installer/`, top-level `scripts/`, or `runtime/scripts/` execution routes.
 - Managed provider mode should wrap provider databases and daemon infrastructure in Docker instead of requiring host-level PostgreSQL, FalkorDB, OS service managers, launch agents, package-manager services, or global user daemons.
 - Provider runtime artifacts are not durable memory or source data: GrepAI config/state/cache/home files and index mirrors belong under `providers/runners/grepai/`, CGC runtime files belong under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable provider database data belongs under `providers/data/`, and logs belong under `providers/logs/`.
 
@@ -196,4 +188,4 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 
 ## Last Verified
 
-Updated 2026-05-21T12:35+02:00 after the GrepAI provider-owned mirror-root policy and Docker-wrapped provider preference were reflected in onboarding. Verification metadata remains pinned to the last committed source state until the follow-up is approved for commit.
+Updated 2026-05-23T14:20+02:00 after runtime install, provider setup/lifecycle, benchmark, and skills install behavior finished moving into MCP package-owned modules and the source-side installer/script remnants were removed. Verification metadata remains pinned to the last committed source state until closeout commits the source changes.

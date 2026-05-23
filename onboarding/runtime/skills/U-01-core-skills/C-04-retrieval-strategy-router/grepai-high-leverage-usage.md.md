@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/grepai-high-leverage-usage.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-23T05:32+02:00                                 |
+| lastUpdated            | 2026-05-23T13:46+02:00                                 |
 | lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1`             |
 | lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
 | governingOverview      | `../../overview.md`                                    |
@@ -19,18 +19,19 @@
 This sibling reference teaches agents how to use GrepAI after C-04 selects the
 `Semantics` substrate. It documents high-leverage search and trace patterns
 with synthetic command shapes and example outputs so agents can use the memory
-substrate without relying on private examples or global GrepAI state.
+substrate through MCP without relying on private examples or global GrepAI
+state.
 
 ## Code Commentary
 
 ### Logic
 
-The document starts with the managed invocation contract: use the runtime-owned
-GrepAI binary, run from `providers/runners/grepai/`, and set provider-owned `HOME`,
-`XDG_STATE_HOME`, and `XDG_CACHE_HOME` so GrepAI reads the managed workspace
-config instead of a global user config. It then maps common semantic retrieval
-questions to commands: broad workspace search, compact JSON anchors, snippet
-search, project scoping, path scoping, trace commands, status, and stats.
+The document starts with the MCP managed invocation contract: request GrepAI
+through `grepai_search`, `grepai_trace`, and `provider_status` so the server
+selects the runtime-owned binary and provider-owned environment. It then maps
+common semantic retrieval questions to broad workspace search, compact JSON
+anchors, snippet search, project scoping, path scoping, trace commands, status,
+and stats.
 
 The examples focus on broad semantic routing, scoped project search,
 route-scoped snippet search, GrepAI trace as a fallback relationship tool, and
@@ -39,15 +40,12 @@ project ids, paths, symbols, snippets, and scores.
 
 ### Conventions
 
-Run all GrepAI examples through the provider-owned environment:
+Run GrepAI examples through MCP provider tools:
 
-```bash
-cd <coordination_root>/providers/runners/grepai
-env \
-  HOME=<coordination_root>/providers/runners/grepai/home \
-  XDG_STATE_HOME=<coordination_root>/providers/runners/grepai/state/xdg \
-  XDG_CACHE_HOME=<coordination_root>/providers/runners/grepai/cache/xdg \
-  <coordination_root>/providers/_bin/grepai <command>
+```text
+grepai_search(query="<query>", dry_run=false)
+grepai_trace(query="<query>", dry_run=false)
+provider_status()
 ```
 
 Use `--toon --compact` for the cheapest broad routing pass, `--json --compact`
@@ -103,5 +101,6 @@ contain private sibling repository names, symbols, paths, snippets, or results.
 
 ## Update History
 
+- 2026-05-23T13:46+02:00: Updated examples to use MCP provider tools instead of direct runtime binary or deleted source lifecycle script calls.
 - 2026-05-23T05:32+02:00: Updated GrepAI managed invocation paths after provider instances moved under `providers/runners/grepai`.
 - 2026-05-21T16:14+02:00: Created onboarding for the GrepAI high-leverage usage catalog.

@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-21T15:20+02:00                                 |
+| lastUpdated            | 2026-05-23T13:46+02:00                                 |
 | lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1`             |
 | lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
 | governingOverview      | `../../overview.md`                                    |
@@ -18,20 +18,20 @@
 
 This sibling reference teaches agents what CodeGraphContext can do after C-04
 selects the `Relationship` substrate. It documents high-level `cgc analyze`
-methods with synthetic command shapes and example outputs so agents do not
-treat CGC as only a file-line locator.
+methods with synthetic MCP `cgc_query` shapes and example outputs so agents do
+not treat CGC as only a file-line locator.
 
 ## Code Commentary
 
 ### Logic
 
-The document starts with the managed provider wrapper contract and makes the
-central distinction: `find name` locates candidate symbols, while high-level
-`analyze` methods expose relationships. The method chooser maps common
+The document starts with the MCP provider tool contract and makes the central
+distinction: `find name` locates candidate symbols, while high-level `analyze`
+methods expose relationships. The method chooser maps common
 relationship questions to commands: calls, callers, chain, deps, tree,
 complexity, dead-code, overrides, variable, and kotlin-call-audit.
 
-Each method section gives a placeholder command and a synthetic output shape.
+Each method section gives a placeholder MCP request and a synthetic output shape.
 The examples cover downstream calls, reverse callers, multi-hop call chains,
 module import neighborhoods, inheritance plus attached methods, complexity
 rankings, unused-code candidates, implementations of a shared method name,
@@ -40,19 +40,16 @@ private repository names, symbols, paths, or code.
 
 ### Conventions
 
-Run all examples through:
+Run all examples through the MCP provider tool:
 
-```bash
-python <coordination_root>/scripts/provider-lifecycle.py cgc \
-  --coordination-root <coordination_root> \
-  --repo-id <repoId> \
-  run -- <cgc command>
+```text
+cgc_query(repo_id="<repoId>", query_type="<cgc command>", arguments=[...])
 ```
 
-Use `--from-settings <coordination_root>/system/settings.json` when provider
-settings are not discoverable from the runtime root. Add `--file` when a symbol
-name is common, overloaded, or implemented in many places. For `deps`, use the
-module import string recorded in code, not necessarily the source file path.
+Provider authority comes from MCP settings. Add `--file` in the native argument
+list when a symbol name is common, overloaded, or implemented in many places.
+For `deps`, use the module import string recorded in code, not necessarily the
+source file path.
 
 ### Invariants And Boundaries
 
@@ -101,5 +98,6 @@ contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-05-23T13:46+02:00: Updated examples to use MCP `cgc_query` instead of the deleted source provider lifecycle script.
 - 2026-05-21T15:20+02:00: Replaced private-project examples with synthetic response-shape examples.
 - 2026-05-21T14:10+02:00: Created onboarding for the CGC high-level methods catalog.
