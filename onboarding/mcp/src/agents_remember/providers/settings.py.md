@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T04:29+02:00                     |
-| lastVerifiedCommitHash | `7ab4b520b9178a31c4a5f5f8a5393b9b6ba82e0e` |
-| lastVerifiedCommitDate | 2026-05-22T21:20:47+02:00                 |
+| lastUpdated            | 2026-05-24T00:37+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00                 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -25,11 +25,12 @@ lifecycle settings consumed by package-local provider lifecycle code.
 
 `lifecycle_settings_from_config()` builds a `contextProviders` object from
 `McpRuntimeConfig.providers` and `McpRuntimeConfig.repositories`. GrepAI roots
-are derived from configured memory roots; CGC roots are derived from configured
-code repository paths. The generated settings include concrete provider runtime
-roots under `providers/runners`, backend data roots under `providers/data`, log
-roots under `providers/logs`, installed requirement paths, Docker backend image
-metadata, and watcher log paths.
+are derived from configured memory roots, falling back to the coordinator
+`memory-repos` root when no repository memory roots are configured; CGC roots
+are derived from configured code repository paths. The generated settings
+include concrete provider runtime roots under `providers/runners`, backend data
+roots under `providers/data`, log roots under `providers/logs`, installed
+requirement paths, Docker backend image metadata, and watcher log paths.
 
 `write_lifecycle_settings()` writes that generated object to a temporary JSON
 file for lower-level lifecycle functions that already accept `--from-settings`.
@@ -54,4 +55,5 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 ## Update History
 
+- 2026-05-24T00:37+02:00: Refreshed verification and clarified the GrepAI fallback root used when no repository memory root is configured.
 - 2026-05-23T04:29+02:00: Created when MCP provider lifecycle settings moved out of coordinator `system/settings.json`.

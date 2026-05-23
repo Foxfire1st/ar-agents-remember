@@ -35,18 +35,20 @@
       "settings.example",
       "route-local-overview",
       "examples/mcp",
-      "7ab4b520b9178a31c4a5f5f8a5393b9b6ba82e0e",
+      "ddf6fcd5981664813c915e94e1c5229b542a28a4",
       "examples/mcp/",
       "system/settings.json",
+      "workspaceRoot/<repo-id>",
+      "coordinationRoot/memory-repos/ar-<repo-id>",
       "doc_type",
       "sourceRoute",
       "lastUpdated",
-      "T05",
-      "lastVerifiedCommitHash",
-      "ab4b520b9178a31c4a5f5f8a5393b9b6ba82e0e",
-      "lastVerifiedCommitDate",
       "T00",
-      "MCP"
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "MCP",
+      "workspaceRoot",
+      "coordinationRoot"
     ]
   },
   "fallback": {

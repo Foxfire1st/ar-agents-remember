@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-23T13:46+02:00                                 |
-| lastVerifiedCommitHash | `00aae9dad3d8740e10a41ab285f87ecab8608745`             |
-| lastVerifiedCommitDate | 2026-05-21T23:53:08+02:00|
+| lastUpdated            | 2026-05-24T00:37+02:00                                 |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4`             |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -102,12 +102,12 @@ retrieval contract over installed provider tooling and durable onboarding.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | C-04 defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | L8-L28 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L103 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L105-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | L51-L54; L125-L127 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | L100-L103; L168-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | L179-L213 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | L1-L236 | [grepai-high-leverage-usage.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
+| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L78 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L80-L122 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | L41-L44; L90-L92 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | L75-L78; L118-L122 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | L129-L163 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | L1-L200 | [grepai-high-leverage-usage.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
 | The sibling CGC catalog explains all high-level `cgc analyze` methods and practical selection rules with synthetic examples only. | L1-L38, L321-L332 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
 
 ## Cross-Repo References
@@ -121,6 +121,7 @@ They do not contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-05-24T00:37+02:00: Refreshed verification and line citations after C-04 was compacted around MCP provider-tool routing.
 - 2026-05-23T13:46+02:00: Updated C-04 onboarding to match the MCP provider-tool route and deleted source lifecycle scripts.
 - 2026-05-21T23:55+02:00: Switched GrepAI examples from bare binary/environment setup to `provider-lifecycle.py grepai run -- ...`.
 - 2026-05-21T16:14+02:00: Added GrepAI high-leverage usage examples, runtime-owned invocation guidance, and a link to the sibling GrepAI catalog.
