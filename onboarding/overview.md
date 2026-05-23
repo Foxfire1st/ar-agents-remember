@@ -8,11 +8,11 @@
 
 The current checked-in guidance distinguishes `ar-memory/` as durable internal memory from `ar-coordination/` as local coordination. C-08 exposes that split through `code_repository_name`, `code_repository_root`, `memory_root`, and `coordination_root`, C-09 owns worktree lifecycle mutation, direct current-checkout closeout for approved micro edits, and integration back to source branches, and C-10 provides the adoption path for existing external-memory onboarding that needs an initial `memory.md` ledger.
 
-The provider runtime guidance favors coordination-owned wrappers instead of host-level services: runtime-owned binaries and Python venvs live under `providers/`, provider config/log/state/cache/home artifacts live under provider runtime roots, and durable provider database data lives under `provider-data/`. Providers that need databases should use Docker-wrapped backends in managed mode; GrepAI uses a workspace-mode PostgreSQL/pgvector Docker backend for multiple memory roots, and CGC uses a FalkorDB Docker backend for configured code roots.
+The provider runtime guidance now routes through the MCP/package boundary: MCP settings outside the coordinator are authority, coordinator files can only teach the model what to ask for, and provider runtime state lives under one coordinator provider root. Runtime-owned binaries and Python venvs live under `providers/_bin/` and `providers/_venvs/`, provider instances live under `providers/runners/`, durable provider database data lives under `providers/data/`, and logs live under `providers/logs/`. Providers that need databases should use Docker-wrapped backends in managed mode; GrepAI uses a workspace-mode PostgreSQL/pgvector Docker backend for multiple memory roots, and CGC uses a FalkorDB Docker backend for configured code roots.
 
 ## Hot Path Summary
 
-Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task workflows, and `installer` plus `runtime/scripts` cover packaging and installed-runtime helpers. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.
+Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context-packet, runtime-install, provider settings, and integrity tools, `scripts/` covers source-checkout provider and benchmark helpers, `runtime/agents-md-files` covers installed instruction templates, `runtime/scripts/install-skills.sh` covers the only installed runtime script, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task workflows, and `installer` covers legacy packaging. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-create-or-update-onboarding-files/scripts/build_route_indexes.py`, C-05, and C-04.
 
 ## Architecture At A Glance
 
@@ -24,6 +24,10 @@ agents-remember-md/
     public setup and conceptual model
   installer/
     install-runtime.py
+  mcp/
+    package-managed MCP server, context packet, runtime install, provider settings, and integrity checks
+  scripts/
+    source-checkout provider lifecycle, provider setup, and benchmark helpers
   runtime/
     agents-md-files/
       coordinator/AGENTS.md
@@ -44,6 +48,7 @@ agents-remember-md/
 workspace ar-coordination/
   AGENTS.md
   scripts/
+    install-skills.sh
   skills/
   memory-repos/ar-agents-remember-md/
     memory.md
@@ -62,6 +67,7 @@ workspace ar-coordination/
 | Source checkout instructions | [AGENTS.md](agents-remember-md/AGENTS.md)                                                                                                                               | Defines how agents work on this source checkout and when to hand off to the installed runtime instructions.    |
 | Public documentation | [README.md](agents-remember-md/README.md) and [docs](agents-remember-md/docs)                                                                                       | Keeps the root README as the public front door while focused docs pages own setup, concepts, architecture, workflows, install guides, guides, and reference material. |
 | Runtime installer    | [installer/install-runtime.py](agents-remember-md/installer/install-runtime.py)                                                                                                     | Installs package-owned runtime assets into a target `ar-coordination` root without running repo onboarding.       |
+| MCP package          | [mcp](agents-remember-md/mcp)                                                                                                                                                       | Package-managed MCP server exposing `context_packet` and `runtime_install`, with trusted settings-derived provider lifecycle settings and integrity checks. |
 | Core skills          | [runtime/skills/U-01-core-skills](agents-remember-md/runtime/skills/U-01-core-skills)                                                                                                           | Resolver, drift detection, repo bootstrap, onboarding maintenance, and related support skills.                 |
 | Task workflows       | [runtime/skills/W-02-light-task-workflow](agents-remember-md/runtime/skills/W-02-light-task-workflow) and [runtime/skills/W-01-heavy-task-workflow](agents-remember-md/runtime/skills/W-01-heavy-task-workflow) | Durable task artifact workflows for medium and high-risk work.                                                 |
 | Phase skills         | [runtime/skills/W-01-heavy-task-workflow/skills/P-00-creation](agents-remember-md/runtime/skills/W-01-heavy-task-workflow/skills/P-00-creation) through [runtime/skills/W-01-heavy-task-workflow/skills/P-99-review](agents-remember-md/runtime/skills/W-01-heavy-task-workflow/skills/P-99-review) | Heavy workflow phase packages and review gates. |
@@ -91,11 +97,11 @@ C-08 resolves the active coordination context: topology, code repository, `coord
 
 C-05 owns file-level onboarding and repo-level entity catalogs. It is the maintenance path for creating or updating onboarding artifacts; C-02 detects drift but does not rewrite onboarding content. File-level onboarding now records the nearest governing `overview.md` when route-local overview coverage exists, while remaining self-sufficient for the concrete source file. Entity catalogs now carry one deterministic fingerprint row per entity over a small curated evidence file set; C-05 chooses and refreshes those paths after review. C-05 also detects route-level create, refresh, move, and deletion cleanup cases and routes those structural changes to C-03 `existing-memory-slice-maintenance`. Generated `overview.index.json` files live beside route overviews and expose route scope, covered sidecars, child routes, copied hot-path summaries, and mechanically derived source-anchor hints so C-04 can route cheaply before opening full overview prose.
 
-### Context Provider Runtime
+### MCP And Context Provider Runtime
 
-The runtime has optional local discovery providers, but they remain accelerators rather than proof. Coordinator settings can declare `grepai-memory` for semantic retrieval over external memory repos plus repo-internal `ar-memory/` roots, and `codegraphcontext-code` for relationship retrieval over code repos. Managed provider installs should be coordination-owned: pinned requirements under `providers/requirements/`, runtime-owned binaries under `providers/_bin/`, reusable Python venvs only for Python providers under `providers/_venvs/`, and patches under `providers/patches/`. Database and daemon infrastructure should be Docker-wrapped rather than installed as host services.
+The runtime has optional local discovery providers, but they remain accelerators rather than proof. The MCP settings file, not coordinator `system/settings.json`, declares allowed providers and repositories for the MCP path. `context_packet` reports provider and watcher state, while `runtime_install` installs runtime assets and provider dependencies from package-local code. Managed provider installs should be coordination-owned: pinned requirements under `providers/requirements/`, runtime-owned binaries under `providers/_bin/`, reusable Python venvs only for Python providers under `providers/_venvs/`, provider instances under `providers/runners/`, durable databases under `providers/data/`, logs under `providers/logs/`, and patches under `providers/patches/`. Database and daemon infrastructure should be Docker-wrapped rather than installed as host services.
 
-GrepAI runs in workspace mode with explicit `{ projectId, path }` roots. Managed mode mirrors those roots under `providers/grepai/index-roots/` before launching GrepAI because GrepAI still writes per-project `.grepai/` symbol/config artifacts beside each configured project path. Its config, logs, state, cache, home artifacts, and mirrors belong under `providers/grepai/`; its shared PostgreSQL/pgvector Docker data belongs under `provider-data/grepai/postgres/`; and `.grepai/` inside a durable memory root is a containment failure, not durable memory. CodeGraphContext keeps one provider instance per configured repo under `providers/codegraphcontext/<repo-id>/.codegraphcontext/`, with all instances sharing the FalkorDB Docker data root under `provider-data/codegraphcontext/falkordb/`.
+GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generated from MCP repository/memory settings. Managed mode mirrors those roots under `providers/runners/grepai/index-roots/` before launching GrepAI because GrepAI still writes per-project `.grepai/` symbol/config artifacts beside each configured project path. Its runtime config, state, cache, home artifacts, and mirrors belong under `providers/runners/grepai/`; its shared PostgreSQL/pgvector Docker data belongs under `providers/data/grepai/postgres/`; and `.grepai/` inside a durable memory root is a containment failure, not durable memory. CodeGraphContext keeps one provider instance per configured repo under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, with all instances sharing the FalkorDB Docker data root under `providers/data/codegraphcontext/falkordb/`.
 
 ### Task Workflows
 
@@ -118,8 +124,8 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | The source checkout instructions distinguish this repository from the installed runtime, hand sibling-repo work to `ar-coordination/AGENTS.md`, and keep C-08 plus C-02 as the context gate for this repo. | L1-L14; L28-L53 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | The README now presents the public front door, the generic quickstart, links to harness install pages, and a compact source/runtime layout.                                                                                                   | L1-L138            | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, operational guides, and reference pages.                                                                                                   | L1-L39            | [docs/README.md](agents-remember-md/docs/README.md) |
-| Coordinator settings guidance requires Docker-wrapped provider backends instead of host-level services, mirrors GrepAI roots under provider-owned index roots, stores GrepAI artifacts under `providers/grepai/`, stores GrepAI PostgreSQL data under `provider-data/grepai/postgres/`, and treats `.grepai/` in durable memory roots as containment failure. | L79-L99 | [runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/runtime/system/defaults/examples/coordinator/settings.md) |
-| The coordinator JSON example models GrepAI workspace-mode roots, mirror-root policy, runtime-owned GrepAI paths, and a PostgreSQL/pgvector Docker backend alongside CGC's FalkorDB Docker backend. | L13-L72; L96-L117 | [runtime/system/defaults/examples/coordinator/settings.json](agents-remember-md/runtime/system/defaults/examples/coordinator/settings.json) |
+| MCP provider guidance requires Docker-wrapped provider backends instead of host-level services, mirrors GrepAI roots under provider-owned index roots, stores GrepAI artifacts under `providers/runners/grepai/`, stores GrepAI PostgreSQL data under `providers/data/grepai/postgres/`, and treats `.grepai/` in durable memory roots as containment failure. | L79-L99 | [runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/runtime/system/defaults/examples/coordinator/settings.md) |
+| The MCP settings example declares the external authority surface for repositories, provider ids, timeout caps, transcript roots, and package-derived provider runtime paths, replacing the removed coordinator `system/settings.json` provider template. | L1-L31 | [examples/mcp/settings.example.json](agents-remember-md/examples/mcp/settings.example.json) |
 
 ## Build & Dev
 
@@ -143,7 +149,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 - Repo entity catalogs use deterministic `git-blob-set-v1` fingerprints over curated load-bearing evidence files so C-02 can flag stale entity memory without semantic guessing.
 - The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory repos use `system/*` files rather than a root-level `AGENTS.md`.
 - Managed provider mode should wrap provider databases and daemon infrastructure in Docker instead of requiring host-level PostgreSQL, FalkorDB, OS service managers, launch agents, package-manager services, or global user daemons.
-- Provider runtime artifacts are not durable memory or source data: GrepAI config/log/state/cache/home files and index mirrors belong under `providers/grepai/`, CGC runtime files belong under `providers/codegraphcontext/<repo-id>/.codegraphcontext/`, and durable provider database data belongs under `provider-data/`.
+- Provider runtime artifacts are not durable memory or source data: GrepAI config/state/cache/home files and index mirrors belong under `providers/runners/grepai/`, CGC runtime files belong under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable provider database data belongs under `providers/data/`, and logs belong under `providers/logs/`.
 
 ## Glossary Terms
 
@@ -159,6 +165,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | direct closeout          | The C-09 current-checkout closeout path for approved small external-memory edits.                               | It dry-runs first, then commits code, refreshes onboarding metadata, commits memory, and commits the ledger without creating worktree contracts.    |
 | memory baseline adoption | The one-time action of turning current external-memory onboarding into the first ledgered `memory.md` baseline. | C-10 checks drift first, requires explicit drift acceptance when needed, and delegates ledger creation to C-09.                                     |
 | runtime AGENTS template  | A package-owned `AGENTS.md` source under `runtime/agents-md-files/`.                                             | Current templates are coordinator, skills, system, and tasks; there is no memory-repo `AGENTS.md` template or expected memory-repo root instruction file. |
+| MCP runtime settings     | A trusted settings file outside the coordinator root that controls the MCP server.                              | It provides `coordinationRoot`, `workspaceRoot`, allowed repos/providers, timeout caps, and optional contract paths; coordinator files do not grant authority. |
 
 ## Docs References
 

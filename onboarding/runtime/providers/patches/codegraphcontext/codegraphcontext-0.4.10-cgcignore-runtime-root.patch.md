@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-20T20:01+02:00                     |
+| lastUpdated            | 2026-05-23T05:32+02:00                     |
 | lastVerifiedCommitHash | `e4ae4955d888d3ce58b55b5ca99d20039cbcb214` |
 | lastVerifiedCommitDate | 2026-05-20T20:01:26+02:00 |
 | governingOverview      | `overview.md`                              |
@@ -22,7 +22,7 @@ This patch asset documents the CodeGraphContext v0.4.10 monkey patch required fo
 
 ### Logic
 
-The patch targets `codegraphcontext/core/cgcignore.py`. In the unpatched code, `local_cgcignore_path` defaults directly to `ignore_root / ".cgcignore"` and CGC writes the default ignore file there. The patch changes that branch to prefer `explicit_cgcignore_path` when provided, falling back to `ignore_root / ".cgcignore"` only when no explicit path exists. This lets Agents Remember place `.cgcignore` under `providers/codegraphcontext/<repo-id>/.codegraphcontext/` instead of dirtying the indexed code repository.
+The patch targets `codegraphcontext/core/cgcignore.py`. In the unpatched code, `local_cgcignore_path` defaults directly to `ignore_root / ".cgcignore"` and CGC writes the default ignore file there. The patch changes that branch to prefer `explicit_cgcignore_path` when provided, falling back to `ignore_root / ".cgcignore"` only when no explicit path exists. This lets Agents Remember place `.cgcignore` under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/` instead of dirtying the indexed code repository.
 
 ### Conventions
 
@@ -57,4 +57,5 @@ No sibling repository evidence is needed for this patch asset.
 
 ## Update History
 
+- 2026-05-23T05:32+02:00: Updated managed CGC runner-path commentary after provider instances moved under `providers/runners/codegraphcontext`.
 - 2026-05-20T19:11+02:00: Created onboarding for the CGC `.cgcignore` runtime-root patch asset.

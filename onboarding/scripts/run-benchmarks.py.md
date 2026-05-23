@@ -3,28 +3,38 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
-| path                   | `runtime/scripts/run-benchmarks.py`        |
+| path                   | `scripts/run-benchmarks.py`                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-21T04:53+02:00                     |
+| lastUpdated            | 2026-05-23T04:43+02:00                     |
 | lastVerifiedCommitHash |                                            `0462de46a1da1bf1997e3979f4cc5bc53d1132f6`|
 | lastVerifiedCommitDate |                                            2026-05-21T08:30:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
 
-[overview.md](../../overview.md)
+[overview.md](../overview.md)
 
 ## Purpose
 
-`run-benchmarks.py` is the installed benchmark runner and analyzer for the optional Agents Remember benchmark package. It discovers manifest-defined cases, renders generated benchmark workspace instructions from templates, prepares resettable benchmark workspaces, runs paired `codex exec --json` variants, stores JSONL/stderr/final-message/metadata outputs under `benchmarks/user-runs/`, and generates Markdown summaries from JSONL plus sidecar metadata.
+`run-benchmarks.py` is the source-checkout benchmark runner and analyzer for the
+optional Agents Remember benchmark package. It discovers manifest-defined
+cases, renders generated benchmark workspace instructions from templates,
+prepares resettable benchmark workspaces, runs paired `codex exec --json`
+variants, stores JSONL/stderr/final-message/metadata outputs under
+`benchmarks/user-runs/`, and generates Markdown summaries from JSONL plus
+sidecar metadata.
 
 ## Code Commentary
 
 ### Logic
 
-The script locates the benchmark root from either an installed coordinator or the source checkout, loads every `cases/*/case.json` manifest with schema version `1`, validates all manifest-controlled paths before using them, and lets callers select all cases or one case by id. Preparation creates one source-only environment and one memory-enabled environment under `workspaces/<case-id>/`. Both environments receive a `.benchmark-root` marker for Codex project-root detection. The source-only environment receives a rendered `source-only/AGENTS.md` from `templates/source-only-AGENTS.md` plus a pinned repository checkout under `source-only/repos/`. The memory-enabled environment receives the same pinned repository checkout under `with-memory/repos/`, a rendered `with-memory/AGENTS.md` from `templates/workspace-AGENTS.md`, synced runtime assets under `with-memory/ar-coordination/`, benchmark skill exposure under `with-memory/.agents/skills/agents-remember-md`, and the manifest-pinned memory repository under `with-memory/ar-coordination/memory-repos/`.
+The script locates the benchmark root from either an installed coordinator or the source checkout, loads every `cases/*/case.json` manifest with schema version `1`, validates all manifest-controlled paths before using them, and lets callers select all cases or one case by id. Preparation creates one source-only environment and one memory-enabled environment under `workspaces/<case-id>/`. Both environments receive a `.benchmark-root` marker for Codex project-root detection. The source-only environment receives a rendered `source-only/AGENTS.md` from `templates/source-only-AGENTS.md` plus a pinned repository checkout under `source-only/repos/`. The memory-enabled environment receives the same pinned repository checkout under `with-memory/repos/`, a rendered `with-memory/AGENTS.md` from `templates/workspace-AGENTS.md`, synced runtime assets under `with-memory/ar-coordination/`, benchmark skill exposure under `with-memory/.agents/skills/agents-remember-md`, and the manifest-pinned memory repository under `with-memory/ar-coordination/memory-repos/`. Generated benchmark cleanup treats `providers/data`, `providers/logs`, and `providers/runners` as resettable benchmark-local state instead of using the removed `provider-data` layout.
 
-After the memory-enabled coordination root has synced runtime scripts, settings, skill exposure, and the pinned memory repo, preparation checks the benchmark-local `system/settings.json`. If no providers are enabled there, provider setup is skipped. If providers are enabled, preparation calls the shared `scripts/provider-setup.py prepare` entrypoint. When a source coordinator with CGC settings is available, the runner passes it as the CGC seed source together with the case repository id. The shared setup script then exports the existing source CGC bundle, rewrites bundle paths to the benchmark repo checkout, loads the rewritten bundle into the benchmark backend, and only falls back to `cgc refresh-all` when seeding is unavailable or rejected.
+After the memory-enabled coordination root has synced runtime skills,
+`install-skills.sh`, provider defaults, skill exposure, and the pinned memory
+repo, provider setup is skipped unless an explicit benchmark-local provider
+settings file exists. When such settings enable providers, preparation calls
+the source-level `scripts/provider-setup.py prepare` entrypoint.
 
 Repository preparation wraps git calls with `core.longpaths=true`. Existing generated checkouts are treated as reusable caches: if the manifest-pinned commit is already present locally, preparation skips clone and fetch, then still checks out, resets, and cleans the worktree to keep fixtures deterministic. If the pinned commit is missing, preparation fetches before checkout. Callers can pass `--force-clone` on `prepare` or `run` to discard existing code and memory repository checkouts before cloning. Generated tree replacement and legacy workspace pruning use an extended-path and read-only retry strategy, while preserving symlink paths rather than resolving through them before deletion. Windows directory symlinks and junctions are removed with directory-link semantics so repeated `prepare` runs can clean stale `.agents/skills/agents-remember-md` links without touching the linked runtime skill tree.
 
@@ -47,7 +57,10 @@ Analysis scans JSONL recursively under a run root, loads sidecar metadata when p
 - `run` creates one dated output root per case invocation; paired `no-onboarding` and `with-onboarding` variants should appear under that same root for each repetition.
 - `--jobs` controls the maximum concurrent Codex runs. If omitted, concurrency defaults to the number of selected variants so the paired benchmark variants run together.
 - Runtime asset sync excludes `__pycache__`, `.pyc`, and `.pyo` files so local validation artifacts do not become benchmark fixture content.
-- Benchmark provider preparation is delegated to `scripts/provider-setup.py` only when benchmark-local settings enable providers; the benchmark runner should not directly implement provider installs, CGC backend setup, or `refresh-all` refresh policy.
+- Benchmark provider reset state lives under `providers/data`, `providers/logs`, and `providers/runners`.
+- Benchmark provider preparation is delegated to the source-level
+  `scripts/provider-setup.py` only when benchmark-local settings enable
+  providers; installed coordinator runtimes do not receive that Python script.
 - The script uses only Python standard-library modules so the installed runtime does not need additional dependencies.
 
 ### Invariants And Boundaries
@@ -89,14 +102,14 @@ The runner is tied to the benchmark package layout and manifest shape.
 | The draft case manifest pins the code repository URL/commit, memory repository URL/commit, file-count scope, workspace fixture path, source-only root, memory-enabled root, shared repo-relative path inside each environment, coordination root, prompt variant CWDs, and author result location. | L1-L55 | [case manifest](agents-remember-md/benchmarks/cases/agents-remember-md-drift-workflow/case.json) |
 | The source-only instruction template marks the source-only fixture root as isolated, fills in case/repo placeholders, tells the agent to use source evidence only, and prevents following the checked-out repository's `AGENTS.md` as active instructions. | L3-L22 | [source-only AGENTS template](agents-remember-md/benchmarks/templates/source-only-AGENTS.md) |
 | The memory-enabled instruction template marks the fixture root as isolated, reads the benchmark-local coordination root, fills in case/repo/memory placeholders, and repeats non-interactive execution discipline. | L3-L24 | [workspace AGENTS template](agents-remember-md/benchmarks/templates/workspace-AGENTS.md) |
-| The runner rejects non-string, absolute, drive-qualified, empty, and parent-escaping manifest paths before loading a case for later workspace writes. | L55-L95; L157 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| Repository preparation uses long-path-aware git commands, reuses existing checkouts when the pinned commit is present, fetches only when that commit is absent, and lets callers opt into deleting cached checkouts with `force_clone`. | L482-L518; L639-L675 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| Workspace preparation renders both source-only and memory-enabled templates, writes benchmark root markers, and uses Windows-safe removal helpers for generated tree replacement, read-only files, stale directory symlinks, and legacy generated workspace pruning. | L224-L278; L583-L618; L628-L675 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| The memory-enabled workspace exposes benchmark skills through `auto`, `link`, `copy`, or `none`; `auto` falls back to Python-native copying when the shell-backed symlink path is unavailable, and stale skill links are cleaned without resolving into their targets. | L405-L470; L674 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| Manifest-owned workspace roots, repository-relative paths, coordination roots, prompt paths, and variant CWDs all pass through the path validator before being joined to local roots. | L525-L562; L774-L780 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| Run execution resolves Windows command shims before building the `codex exec --json` command with ephemeral mode, benchmark root marker configuration, stdin prompt delivery, and final-message capture, then writes JSONL/stderr/final-message/metadata artifacts under `user-runs`. | L727-L834 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| Case execution creates one output root, queues prompt/variant/repetition tasks by repetition, dry-runs planned runs sequentially, executes real runs through a bounded `ThreadPoolExecutor`, writes a summary, and raises an aggregated error if submitted runs failed. | L841-L925 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
-| The CLI exposes `list`, `prepare`, `run`, and `analyze` commands with dry-run and selection options, including `--jobs` for run concurrency, `--skill-exposure-mode` for preparation portability, and `--force-clone` when a fresh clone is required. | L1087-L1196 | [benchmark runner](agents-remember-md/runtime/scripts/run-benchmarks.py) |
+| The runner rejects non-string, absolute, drive-qualified, empty, and parent-escaping manifest paths before loading a case for later workspace writes. | L55-L95; L157 | [benchmark runner](agents-remember-md/scripts/run-benchmarks.py) |
+| Repository preparation uses long-path-aware git commands, reuses existing checkouts when the pinned commit is present, fetches only when that commit is absent, and lets callers opt into deleting cached checkouts with `force_clone`. | L482-L518; L639-L675 | [benchmark runner](agents-remember-md/scripts/run-benchmarks.py) |
+| Workspace preparation renders both source-only and memory-enabled templates, writes benchmark root markers, and uses Windows-safe removal helpers for generated tree replacement, read-only files, stale directory symlinks, and legacy generated workspace pruning. | L224-L278; L583-L618; L628-L675 | [benchmark runner](agents-remember-md/scripts/run-benchmarks.py) |
+| The memory-enabled workspace exposes benchmark skills through `auto`, `link`, `copy`, or `none`; `auto` falls back to Python-native copying when the shell-backed symlink path is unavailable, and stale skill links are cleaned without resolving into their targets. | L405-L470; L674 | [benchmark runner](agents-remember-md/scripts/run-benchmarks.py) |
+| Manifest-owned workspace roots, repository-relative paths, coordination roots, prompt paths, and variant CWDs all pass through the path validator before being joined to local roots. | L525-L562; L774-L780 | [benchmark runner](agents-remember-md/scripts/run-benchmarks.py) |
+| Run execution resolves Windows command shims before building the `codex exec --json` command with ephemeral mode, benchmark root marker configuration, stdin prompt delivery, and final-message capture, then writes JSONL/stderr/final-message/metadata artifacts under `user-runs`. | L727-L834 | [benchmark runner](agents-remember-md/scripts/run-benchmarks.py) |
+| Case execution creates one output root, queues prompt/variant/repetition tasks by repetition, dry-runs planned runs sequentially, executes real runs through a bounded `ThreadPoolExecutor`, writes a summary, and raises an aggregated error if submitted runs failed. | L841-L925 | [benchmark runner](agents-remember-md/scripts/run-benchmarks.py) |
+| The CLI exposes `list`, `prepare`, `run`, and `analyze` commands with dry-run and selection options, including `--jobs` for run concurrency, `--skill-exposure-mode` for preparation portability, and `--force-clone` when a fresh clone is required. | L1087-L1196 | [benchmark runner](agents-remember-md/scripts/run-benchmarks.py) |
 | The draft case prompts explicitly mark benchmark runs as non-interactive, put completion criteria before the primary task, and tell the agent to complete the same drift-workflow explanation from source-only or source-plus-memory evidence. | L5-L22; L5-L23 | [no-onboarding prompt](agents-remember-md/benchmarks/cases/agents-remember-md-drift-workflow/prompts/explain-drift-workflow.no-onboarding.md); [with-onboarding prompt](agents-remember-md/benchmarks/cases/agents-remember-md-drift-workflow/prompts/explain-drift-workflow.with-onboarding.md) |
 
 ## Cross-Repo References
@@ -109,6 +122,8 @@ The draft case points at a GitHub repository URL for cloning, but this onboardin
 
 ## Update History
 
+- 2026-05-23T05:35+02:00: Moved onboarding from `runtime/scripts` to `scripts` after the benchmark runner stopped being installed into coordinator runtimes.
+- 2026-05-23T04:43+02:00: Updated benchmark provider reset notes for the `providers/data`, `providers/logs`, and `providers/runners` layout.
 - 2026-05-21T04:53+02:00: Updated after benchmark preparation started delegating provider setup to `scripts/provider-setup.py`, including settings-gated provider setup and CGC bundle seed export/import with path rewrite before falling back to full refresh.
 - 2026-05-18T22:01+02:00: Updated after benchmark repository preparation started reusing cached checkouts for unchanged pinned commits and added `--force-clone` as the explicit fresh-clone override.
 - 2026-05-16T20:14+02:00: Updated after fixing Windows benchmark rerun failures by deleting stale directory symlinks without following them and resolving the default `codex` command to `codex.cmd`/`codex.exe` before subprocess launch.

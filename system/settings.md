@@ -18,6 +18,12 @@ The path rules in `settings.json` are unscoped because this memory repo maps to 
 
 Benchmark case metadata and documentation may be source material, but resettable benchmark workspaces are not. `settings.json` explicitly excludes benchmark `user-runs/` and all package-owned case workspaces so cloned repos, workspace-local `ar-coordination/` trees, and packaged benchmark memory snapshots cannot recursively generate onboarding for themselves.
 
+The current MCP work adds first-class source under `mcp/**`, source-owned
+operational helpers under `scripts/**`, and the authority-settings example
+under `examples/mcp/**`. These routes are eligible for onboarding in
+`settings.json` so drift detection sees the MCP server, controller, provider
+adapter, settings-template, and non-runtime script changes.
+
 ## Cross-Repo Policy
 
 `crossRepo.allow` is currently empty. Neighboring repositories are not included unless this committed memory settings file explicitly allows them.

@@ -9,8 +9,11 @@
         "paths": [
           "AGENTS.md",
           "README.md",
+          "examples/mcp/**",
           "installer/**",
-          "runtime/**"
+          "mcp/**",
+          "runtime/**",
+          "scripts/**"
         ],
         "fileTypes": [
           ".json",
@@ -18,6 +21,7 @@
           ".patch",
           ".py",
           ".sh",
+          ".toml",
           ".txt"
         ]
       },

@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                                       |
 | path                   | `runtime/skills/U-01-core-skills/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-05-18T22:01+02:00                                   |
+| lastUpdated            | 2026-05-23T05:32+02:00                                   |
 | lastVerifiedCommitHash | `5b26015bb3e9deec8113b1a69a12608bba82cc27`               |
 | lastVerifiedCommitDate | 2026-05-19T03:27:34+02:00|
 
@@ -21,7 +21,7 @@ The tests cover memory ledger roundtrip/prepend behavior, branchless canonical l
 
 ### Conventions
 
-The test imports helper modules directly from the repo path and uses only Python standard-library `unittest` and temporary directories. Drift-specific helpers build minimal route overview and entity catalog fixtures for deterministic C-02 coverage, including realistic `Entity Inventory` headings paired with fingerprint rows. Benchmark runner portability tests import `runtime/scripts/run-benchmarks.py` through `importlib` so they can exercise script-level helpers without converting the runner into a package.
+The test imports helper modules directly from the repo path and uses only Python standard-library `unittest` and temporary directories. Drift-specific helpers build minimal route overview and entity catalog fixtures for deterministic C-02 coverage, including realistic `Entity Inventory` headings paired with fingerprint rows. Benchmark runner portability tests import top-level `scripts/run-benchmarks.py` through `importlib` so they can exercise script-level helpers without converting the runner into a package.
 
 ### Invariants And Boundaries
 
@@ -69,6 +69,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-05-23T05:32+02:00: Updated after benchmark runner tests switched from installed runtime scripts to top-level source/package-owned scripts.
 - 2026-05-18T22:01+02:00: Added benchmark runner cache regressions for reusing an existing pinned checkout, fetching when the manifest commit is absent, and force-cloning on request.
 - 2026-05-16T20:14+02:00: Updated benchmark runner portability coverage after adding regressions for stale directory symlink cleanup and Windows `codex.cmd` shim resolution.
 - 2026-05-16T20:07+02:00: Refreshed benchmark runner portability coverage notes after manifest path validation started rejecting non-string values in addition to unsafe strings.
