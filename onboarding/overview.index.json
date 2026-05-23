@@ -15,11 +15,6 @@
       "index": "mcp/overview.index.json"
     },
     {
-      "route": "scripts",
-      "overview": "scripts/overview.md",
-      "index": "scripts/overview.index.json"
-    },
-    {
       "route": "examples/mcp",
       "overview": "examples/mcp/overview.md",
       "index": "examples/mcp/overview.index.json"
@@ -28,7 +23,6 @@
   "coveredFiles": [
     "AGENTS.md",
     "README.md",
-    "installer/install-runtime.py",
     "runtime/agents-md-files/coordinator/AGENTS.md",
     "runtime/agents-md-files/skills/AGENTS.md",
     "runtime/agents-md-files/system/AGENTS.md",
@@ -36,7 +30,6 @@
     "runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
     "runtime/providers/requirements/codegraphcontext.txt",
     "runtime/providers/requirements/grepai.txt",
-    "runtime/scripts/install-skills.sh",
     "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md",
     "runtime/skills/U-01-core-skills/C-01-findings-capture/SKILL.md",
     "runtime/skills/U-01-core-skills/C-01-findings-capture/findings-capture-workflow.md",
@@ -143,9 +136,9 @@
     "runtime/system/defaults/examples/memory-repo/tools.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 249,
-    "fileSidecars": 115,
-    "childRoutes": 3
+    "sourceFilesInScope": 255,
+    "fileSidecars": 113,
+    "childRoutes": 2
   },
   "routingTerms": [
     "adopt",
@@ -230,15 +223,12 @@
     "input"
   ],
   "hotPath": {
-    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context-packet, runtime-install, provider settings, and integrity tools, `scripts/` covers source-checkout provider and benchmark helpers, `runtime/agents-md-files` covers installed instruction templates, `runtime/scripts/install-skills.sh` covers the only installed runtime script, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, `runtime/skills/W-*` covers task work...",
+    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, and integrity tools, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers resolver, drift, bootstrap, onboarding, route-index, and worktree machinery, and `runtime/skills/W-*` covers task workflows. For route-index behavior start at `_shared/agents_remember/route_index.py`, `C-05-c...",
     "candidateHints": [
       "mcp",
-      "scripts",
       "examples/mcp",
       "AGENTS.md",
       "README.md",
-      "installer",
-      "installer/install-runtime.py",
       "runtime/agents-md-files/coordinator",
       "runtime/agents-md-files/coordinator/AGENTS.md",
       "runtime/agents-md-files/skills",
@@ -252,26 +242,25 @@
       "runtime/providers/requirements",
       "runtime/providers/requirements/codegraphcontext.txt",
       "runtime/providers/requirements/grepai.txt",
-      "runtime/scripts",
-      "runtime/scripts/install-skills.sh",
       "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo",
-      "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md"
+      "runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md",
+      "runtime/skills/U-01-core-skills/C-01-findings-capture",
+      "runtime/skills/U-01-core-skills/C-01-findings-capture/SKILL.md",
+      "runtime/skills/U-01-core-skills/C-01-findings-capture/findings-capture-workflow.md",
+      "runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection",
+      "runtime/skills/U-01-core-skills/C-02-onboarding-drift-detection/SKILL.md"
     ],
     "anchorHints": [
       "AGENTS.md",
       "AGENTS",
       "README.md",
       "README",
-      "install-runtime.py",
-      "install-runtime",
       "codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
       "codegraphcontext-0.4.10-cgcignore-runtime-root",
       "codegraphcontext.txt",
       "codegraphcontext",
       "grepai.txt",
       "grepai",
-      "install-skills.sh",
-      "install-skills",
       "SKILL.md",
       "SKILL",
       "findings-capture-workflow.md",
@@ -305,7 +294,11 @@
       "route-local-overview-template.md",
       "route-local-overview-template",
       "codegraphcontext-high-level-methods.md",
-      "codegraphcontext-high-level-methods"
+      "codegraphcontext-high-level-methods",
+      "grepai-high-leverage-usage.md",
+      "grepai-high-leverage-usage",
+      "build_route_indexes.py",
+      "build_route_indexes"
     ]
   },
   "fallback": {

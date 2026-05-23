@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/skills/U-01-core-skills/tests/test_provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T05:32+02:00                     |
+| lastUpdated            | 2026-05-23T13:46+02:00                     |
 | lastVerifiedCommitHash |                                            `00aae9dad3d8740e10a41ab285f87ecab8608745`|
 | lastVerifiedCommitDate |                                            2026-05-21T23:53:08+02:00|
 | governingOverview      | `overview.md`                              |
@@ -16,15 +16,15 @@
 
 ## Purpose
 
-`test_provider_setup.py` verifies the shared provider setup helper used by installer, benchmark, and worktree preparation flows. It protects CGC bundle path rewriting and isolated worktree CGC settings so provider setup can seed or prepare context providers without mutating the main coordinator backend.
+`test_provider_setup.py` verifies the package-local MCP provider setup helper used by benchmark and worktree preparation flows. It protects CGC bundle path rewriting and isolated worktree CGC settings so provider setup can seed or prepare context providers without mutating the main coordinator backend.
 
 ## Code Commentary
 
 ### Logic
 
-The test module imports top-level `scripts/provider-setup.py` directly with `importlib.util.spec_from_file_location`, because the script filename contains a hyphen and is not importable as a normal Python module. `test_rewrite_cgc_bundle_paths_rewrites_json_jsonl_and_text` builds a synthetic `.cgc` zip bundle containing JSON, JSONL, and text entries with source repository paths, runs `rewrite_cgc_bundle_paths`, then asserts that the rewritten bundle removes the source root and contains the target root.
+The test module imports `agents_remember.providers.provider_setup` from `mcp/src`, extending the loaded `agents_remember` package path when the runtime shared package has already been imported. `test_rewrite_cgc_bundle_paths_rewrites_json_jsonl_and_text` builds a synthetic `.cgc` zip bundle containing JSON, JSONL, and text entries with source repository paths, runs `rewrite_cgc_bundle_paths`, then asserts that the rewritten bundle removes the source root and contains the target root.
 
-`test_isolated_cgc_settings_targets_worktree_backend` builds a minimal provider settings object and calls `isolated_cgc_settings`. It asserts that the isolated settings point CGC roots at the target worktree repository, put CGC runtime and FalkorDB data under the isolated provider runtime, reuse the coordinator's shared CGC venv, and derive an isolated FalkorDB container name. UTF-8 subprocess coverage monkey-patches `subprocess.run` and asserts `run_command` passes `PYTHONUTF8=1` plus `PYTHONIOENCODING=utf-8` to lifecycle children.
+`test_isolated_cgc_settings_targets_worktree_backend` builds a minimal provider settings object and calls `isolated_cgc_settings`. It asserts that the isolated settings point CGC roots at the target worktree repository, put CGC runtime and FalkorDB data under the isolated provider runtime, reuse the coordinator's shared CGC venv, and derive an isolated FalkorDB container name. UTF-8 subprocess coverage monkey-patches `subprocess.run` and asserts `run_command` passes `PYTHONUTF8=1`, `PYTHONIOENCODING=utf-8`, and `stdin=subprocess.DEVNULL` to lifecycle children.
 
 ### Conventions
 
@@ -50,11 +50,11 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The test module imports top-level `scripts/provider-setup.py` directly using `importlib.util.spec_from_file_location` and executes the loaded module before defining test cases. | L12-L21 | [test_provider_setup.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_setup.py) |
+| The test module imports package-local provider setup code from `mcp/src`, extending the loaded `agents_remember` package path when needed. | L12-L24 | [test_provider_setup.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_setup.py) |
 | The CGC bundle rewrite test builds JSON, JSONL, and text zip entries that contain a source path, calls `rewrite_cgc_bundle_paths`, then asserts the source path disappeared and the target path appears. | L22-L54 | [test_provider_setup.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_setup.py) |
 | The isolated settings test builds synthetic CGC provider settings and asserts the target worktree root, isolated runtime root, shared venv, isolated backend data root, and derived container name. | L56-L109 | [test_provider_setup.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_setup.py) |
-| The UTF-8 subprocess test monkey-patches `subprocess.run` and asserts `run_command` passes `PYTHONUTF8=1` and `PYTHONIOENCODING=utf-8` in the child environment. | L111-L133 | [test_provider_setup.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_setup.py) |
-| `provider-setup.py` owns `isolated_cgc_settings` and `rewrite_cgc_bundle_paths`, the two helpers exercised by this test module. | L119-L172, L359-L534 | [provider-setup.py](agents-remember-md/scripts/provider-setup.py) |
+| The UTF-8 subprocess test monkey-patches `subprocess.run` and asserts `run_command` passes `PYTHONUTF8=1`, `PYTHONIOENCODING=utf-8`, and `stdin=subprocess.DEVNULL`. | L111-L134 | [test_provider_setup.py](agents-remember-md/runtime/skills/U-01-core-skills/tests/test_provider_setup.py) |
+| Package-local provider setup owns `isolated_cgc_settings` and `rewrite_cgc_bundle_paths`, the two helpers exercised by this test module. | L119-L172, L359-L534 | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
 
 ## Cross-Repo References
 
@@ -66,6 +66,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-23T13:46+02:00: Updated after provider setup moved into `agents_remember.providers.provider_setup` and source scripts were removed.
 - 2026-05-23T05:32+02:00: Updated after provider setup script tests switched from installed runtime scripts to top-level source/package-owned scripts.
 - 2026-05-21T23:18+02:00: Updated after adding UTF-8 lifecycle child environment coverage.
 - 2026-05-21T08:14+02:00: Created onboarding for provider setup unit tests and their isolated CGC settings coverage.

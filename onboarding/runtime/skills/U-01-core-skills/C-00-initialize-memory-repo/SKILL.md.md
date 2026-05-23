@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-15T03:30+02:00                     |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964`         |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-23T14:20+02:00                     |
+| lastVerifiedCommitHash | `d445e83e7d28e3c34b15d8299d279d65ab9183b9` |
+| lastVerifiedCommitDate | 2026-05-23T05:45:38+02:00                 |
 
 ## Purpose
 
@@ -21,7 +21,7 @@ The skill now owns only memory-root scaffolding. It defaults to internal memory 
 
 ### Conventions
 
-Default internal setup is local-first. External-memory setup is explicit and belongs in the per-repo memory repo under the installed coordination runtime. The skill does not install runtime files, create harness symlinks, create worktrees, or generate onboarding.
+Default internal setup is local-first. External-memory setup is explicit and belongs in the per-repo memory repo under the installed coordination runtime. The skill does not install runtime files, expose harness skills, create worktrees, or generate onboarding. Runtime and harness skill installation are requested through MCP `runtime_install` and `skills_install`.
 
 ### Invariants And Boundaries
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-23T14:20+02:00: Updated setup guidance to request MCP `runtime_install` and `skills_install` instead of deleted source-side installer scripts.
 - 2026-05-15T03:30+02:00: Renamed C-00 to initialize memory repo and narrowed the skill boundary to memory-root initialization.
 - 2026-05-14T21:38+02:00: Refreshed after C-00 starter `settings.json` snippets gained the standard path-rule exclusion baseline. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-12T18:51+02:00: Updated after the skill frontmatter moved to a lowercase skill name and explicit external-memory scaffolding stopped treating `.env.example` as runtime input.

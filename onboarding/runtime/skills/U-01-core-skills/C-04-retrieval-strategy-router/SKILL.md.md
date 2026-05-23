@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-21T16:14+02:00                                 |
+| lastUpdated            | 2026-05-23T13:46+02:00                                 |
 | lastVerifiedCommitHash | `00aae9dad3d8740e10a41ab285f87ecab8608745`             |
 | lastVerifiedCommitDate | 2026-05-21T23:53:08+02:00|
 | governingOverview      | `../../overview.md`                                    |
@@ -33,44 +33,38 @@ is for known anchors or locations where the missing truth is a contract,
 invariant, branch-valid behavior, or fix direction; it uses onboarding plus
 bounded source confirmation as the proof layer.
 
-The Semantics section now teaches GrepAI through the lifecycle-managed
-`grepai run -- ...` wrapper rather than a global user config. It shows two
-high-value synthetic response shapes: broad semantic routing with
-`--toon --compact`, and scoped memory-project search with compact JSON anchors.
-It links to the sibling `grepai-high-leverage-usage.md` catalog for the full
-GrepAI command selection notes and synthetic example outputs.
+The Semantics section first requests MCP `context_packet(...,
+include_providers=true)` when the server is configured, then uses GrepAI only
+when provider state is healthy and a matching MCP provider tool is exposed. It
+shows high-value synthetic response shapes for broad semantic routing and scoped
+memory-project search, and links to the sibling `grepai-high-leverage-usage.md`
+catalog for full usage notes.
 
 The Relationship section teaches CGC as a structural tool rather than a
-file-line locator. It keeps the basic provider-wrapped `find name` and
-`analyze callers` commands, then shows two high-value synthetic response shapes:
-`analyze calls` for downstream impact tracing and `analyze complexity` for risk
-triage. The examples deliberately use placeholder repo ids, symbols, and paths
-so reusable docs do not expose private project code. The skill links to the
-sibling `codegraphcontext-high-level-methods.md` catalog for the full command
-set and synthetic example outputs.
+file-line locator. It first requests the MCP context packet and then uses CGC
+only when provider state and tool exposure allow it. It shows two high-value
+synthetic response shapes: `analyze calls` for downstream impact tracing and
+`analyze complexity` for risk triage. The examples deliberately use placeholder
+repo ids, symbols, and paths so reusable docs do not expose private project
+code. The skill links to the sibling `codegraphcontext-high-level-methods.md`
+catalog for the full command set and synthetic example outputs.
 
 ### Conventions
 
-Use GrepAI through the provider lifecycle wrapper so native search receives the
-provider-owned workspace environment:
+Use MCP provider tools for GrepAI so the server supplies provider authority and
+the provider-owned workspace environment:
 
-```bash
-python <coordination_root>/scripts/provider-lifecycle.py grepai \
-  --coordination-root <coordination_root> \
-  --json \
-  run -- search "<query>" \
-  --workspace <workspace> --toon --compact --limit 5
+```text
+context_packet(repo_id="<repoId>", include_providers=true)
+grepai_search(query="<query>", dry_run=false)
 ```
 
-Use the provider lifecycle wrapper for CGC queries so native CGC commands run
-with the managed FalkorDB-backed provider environment:
+Use MCP provider tools for CGC so native CGC commands run with the managed
+FalkorDB-backed provider environment:
 
-```bash
-python <coordination_root>/scripts/provider-lifecycle.py cgc \
-  --coordination-root <coordination_root> \
-  --repo-id <repoId> \
-  --json \
-  run -- find name <anchor>
+```text
+context_packet(repo_id="<repoId>", include_providers=true)
+cgc_query(repo_id="<repoId>", query_type="find", arguments=["name", "<anchor>"], dry_run=false)
 ```
 
 After a CGC locator query, prefer `analyze calls`, `callers`, `chain`, `deps`,
@@ -108,8 +102,8 @@ retrieval contract over installed provider tooling and durable onboarding.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | C-04 defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | L8-L28 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Semantics uses the lifecycle-managed GrepAI wrapper with provider-owned environment, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L103 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
-| Relationship uses the managed CGC wrapper and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L105-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L103 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
+| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L105-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
 | The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | L51-L54; L125-L127 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
 | The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | L100-L103; L168-L172 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
 | Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | L179-L213 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
@@ -127,6 +121,7 @@ They do not contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-05-23T13:46+02:00: Updated C-04 onboarding to match the MCP provider-tool route and deleted source lifecycle scripts.
 - 2026-05-21T23:55+02:00: Switched GrepAI examples from bare binary/environment setup to `provider-lifecycle.py grepai run -- ...`.
 - 2026-05-21T16:14+02:00: Added GrepAI high-leverage usage examples, runtime-owned invocation guidance, and a link to the sibling GrepAI catalog.
 - 2026-05-21T15:20+02:00: Replaced private-project CGC examples with synthetic response-shape examples and made `analyze complexity` the second inline high-value pattern.
