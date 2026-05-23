@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T13:46+02:00                     |
-| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a` |
-| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
+| lastUpdated            | 2026-05-23T20:56+02:00                     |
+| lastVerifiedCommitHash | `4ad9686b20334d36308a05d615bccde204b11d7e` |
+| lastVerifiedCommitDate | 2026-05-23T21:18:05+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,6 +25,10 @@
 The test module imports `agents_remember.providers.provider_lifecycle` from `mcp/src`. Render tests protect native CGC output streaming, the compact `run --lifecycle-json` payload path, and non-command result handling. `parse_cgc` builds the parser, parses a `cgc` command, normalizes CGC defaults, resolves paths, and stabilizes repo ids in the same shape the lifecycle module uses before dispatch.
 
 The tests assert that `cgc visualize` accepts named `--port` and `--context` options after the subcommand, that shared lifecycle options can still appear before the subcommand, that CGC and aggregate watcher commands default their coordinator root to the installed runtime root, that process namespace diagnostics report `durableForDaemons`, and that daemon/server actions reject ephemeral `--die-with-parent` namespaces. Dry-run coverage verifies an explicit long-running `cgc visualize --repo <repo> --port <port>` command. The CGC migration-boundary tests require `cgc run -- visualize ...` to fail with guidance to use `cgc visualize`, and also protect that bounded `cgc run` queries are still allowed in an ephemeral process namespace when the command itself is mocked. GrepAI tests protect native `watch --background` PID parsing, lifecycle-managed `grepai run -- search ...` command shape/env, rejection of native watcher control through `grepai run`, target-database readiness checks after `pg_isready`, adoption of already-running watchers, timeout-shaped starts that can still adopt a running watcher, and aggregate watcher partial-result recovery actions.
+
+F-04 service tests build a temporary lifecycle settings file and verify that
+`providers.lifecycle_service` can run CGC and aggregate watcher dry-run/status
+paths without going through the CLI `main(argv)` route.
 
 ### Conventions
 
@@ -51,6 +55,7 @@ No external documentation is needed for these unit tests.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The module imports package-local provider lifecycle code from `mcp/src` and `parse_cgc` normalizes parsed CGC args the way the lifecycle main path does. | L12-L24; L81-L91 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| Service tests verify the typed lifecycle service can dispatch CGC and watcher operations from settings-owned config. | L112-L274 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | Render tests assert that captured command output is streamed without wrapper text, successful `cgc run --json` still emits native output, and `run --lifecycle-json -- ...` preserves an explicit metadata path. | L21-L79 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | Parser tests assert that `visualize` accepts named options after the subcommand and still allows common lifecycle options before the subcommand. | L93-L129 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | Default-root parser tests assert that CGC and aggregate watcher commands infer the installed runtime root when `--coordination-root` is omitted. | L140-L155 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
@@ -70,6 +75,7 @@ No sibling repository evidence is needed for these tests.
 ## Update History
 
 - 2026-05-23T13:46+02:00: Updated after provider lifecycle moved into `agents_remember.providers.provider_lifecycle` and source scripts were removed.
+- 2026-05-23T20:56+02:00: Updated after adding typed provider lifecycle service tests for F-04.
 - 2026-05-23T05:32+02:00: Updated after provider lifecycle script tests switched from installed runtime scripts to top-level source/package-owned scripts.
 - 2026-05-21T23:55+02:00: Updated after adding GrepAI `run -- search` command-shape coverage and native watcher-control rejection.
 - 2026-05-21T23:18+02:00: Updated after adding tests for GrepAI target-database readiness, already-running watcher adoption, timeout-shaped watcher starts, and aggregate partial recovery actions.

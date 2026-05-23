@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/tools.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T13:09+02:00                     |
-| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a` |
-| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
+| lastUpdated            | 2026-05-23T20:42+02:00                     |
+| lastVerifiedCommitHash | `4ad9686b20334d36308a05d615bccde204b11d7e` |
+| lastVerifiedCommitDate | 2026-05-23T21:18:05+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -23,6 +23,11 @@ The file keeps `ping`, `server_info`, `context_packet`, and `runtime_install`
 payloads, and now exposes the full Phase 04 skill-facing tool surface through
 thin functions that delegate to `controllers.skill_tools`.
 
+`PUBLIC_TOOLS` now reports typed CGC tools (`cgc_symbol_search`,
+`cgc_callers`, `cgc_callees`, `cgc_dependencies`, and `cgc_complexity`) instead
+of the removed generic `cgc_query` name. Matching payload builders forward only
+typed fields to the controller layer.
+
 ### Invariants And Boundaries
 
 - `PUBLIC_TOOLS` must match the tools registered in `server.py`.
@@ -30,6 +35,8 @@ thin functions that delegate to `controllers.skill_tools`.
   controllers and package services.
 - `server_info` reports no reserved provider status tool now that
   `provider_status` is public.
+- Do not include removed generic tool names in `PUBLIC_TOOLS`; skill-facing
+  provider operations should remain typed.
 
 ## Repo-Internal References
 
@@ -41,3 +48,4 @@ thin functions that delegate to `controllers.skill_tools`.
 ## Update History
 
 - 2026-05-23T13:09+02:00: Updated for the complete Phase 04 public MCP tool surface.
+- 2026-05-23T20:42+02:00: Updated public tool metadata and payload builders for typed CGC tools.

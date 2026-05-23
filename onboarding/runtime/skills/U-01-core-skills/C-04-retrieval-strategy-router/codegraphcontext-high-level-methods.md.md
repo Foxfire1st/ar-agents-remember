@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-23T13:46+02:00                                 |
-| lastVerifiedCommitHash | `5ff4ed4ef94b5576a45059de8ac7c03e8c4c04a1`             |
-| lastVerifiedCommitDate | 2026-05-21T18:12:00+02:00|
+| lastUpdated            | 2026-05-23T20:42+02:00                                 |
+| lastVerifiedCommitHash | `4ad9686b20334d36308a05d615bccde204b11d7e`             |
+| lastVerifiedCommitDate | 2026-05-23T21:18:05+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -17,50 +17,43 @@
 ## Purpose
 
 This sibling reference teaches agents what CodeGraphContext can do after C-04
-selects the `Relationship` substrate. It documents high-level `cgc analyze`
-methods with synthetic MCP `cgc_query` shapes and example outputs so agents do
-not treat CGC as only a file-line locator.
+selects the `Relationship` substrate. It documents typed MCP CGC tools and
+synthetic output shapes so agents do not treat CGC as only a file-line locator
+and do not request the removed generic `cgc_query` facade.
 
 ## Code Commentary
 
 ### Logic
 
-The document starts with the MCP provider tool contract and makes the central
-distinction: `find name` locates candidate symbols, while high-level `analyze`
-methods expose relationships. The method chooser maps common
-relationship questions to commands: calls, callers, chain, deps, tree,
-complexity, dead-code, overrides, variable, and kotlin-call-audit.
+The document starts with the typed MCP provider contract and maps common
+relationship questions to `cgc_symbol_search`, `cgc_callees`, `cgc_callers`,
+`cgc_dependencies`, `cgc_complexity`, and `cgc_visualize`.
 
-Each method section gives a placeholder MCP request and a synthetic output shape.
-The examples cover downstream calls, reverse callers, multi-hop call chains,
-module import neighborhoods, inheritance plus attached methods, complexity
-rankings, unused-code candidates, implementations of a shared method name,
-variable occurrences, and Kotlin call ambiguity coverage without exposing
-private repository names, symbols, paths, or code.
+Each method section gives a placeholder MCP request and a synthetic output
+shape. The examples cover symbol location, downstream calls, reverse callers,
+module import neighborhoods, and complexity signals without exposing private
+repository names, symbols, paths, or code.
 
 ### Conventions
 
-Run all examples through the MCP provider tool:
+Run examples through typed MCP provider tools:
 
 ```text
-cgc_query(repo_id="<repoId>", query_type="<cgc command>", arguments=[...])
+cgc_callers(repo_id="<repoId>", function="<function>", file="<optional path>")
 ```
 
-Provider authority comes from MCP settings. Add `--file` in the native argument
-list when a symbol name is common, overloaded, or implemented in many places.
-For `deps`, use the module import string recorded in code, not necessarily the
-source file path.
+Provider authority comes from MCP settings. Pass `file` to `cgc_callers` when a
+symbol name is common, overloaded, or implemented in many places. For
+`cgc_dependencies`, use the module import string recorded in code, not
+necessarily the source file path.
 
 ### Invariants And Boundaries
 
 CGC output is discovery, not proof. Use it to choose source anchors and narrow
 relationship neighborhoods, then confirm contracts and edit direction with
-bounded source reads. `dead-code` is especially provisional because framework
-entry points, event callbacks, and dynamic calls can look unused.
-
-`kotlin-call-audit` is useful only when the indexed repository actually contains
-Kotlin graph nodes. In a non-Kotlin repo it is a coverage check rather than a
-relationship retrieval method.
+bounded source reads. Native CGC operations not listed in this document are not
+public MCP tools yet; add a typed MCP tool before teaching skills to request
+one of those operations.
 
 ### Todos
 
@@ -80,11 +73,9 @@ example outputs.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The CGC catalog states the managed wrapper command, explains that high-level methods expose relationships beyond `find name`, and requires synthetic examples only. | L1-L23 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| The method chooser maps relationship questions to `calls`, `callers`, `chain`, `deps`, `tree`, `complexity`, `dead-code`, `overrides`, `variable`, and `kotlin-call-audit`. | L25-L38 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| Calls, callers, chain, and deps sections show placeholder command forms and synthetic relationship output shapes for impact tracing and import-neighborhood discovery. | L40-L150 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| Tree, complexity, and dead-code sections show synthetic class hierarchy, risk ranking, and unused-candidate output shapes. | L152-L238 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| Overrides, variable, kotlin-call-audit, and practical rules explain method implementation search, local variable occurrence search, Kotlin coverage limits, and confirmation rules. | L240-L332 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| The CGC catalog states the typed MCP tool contract and says generic `cgc_query` is removed. | L1-L42 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| Symbol search, callees, callers, dependencies, and complexity sections show placeholder tool calls and synthetic output shapes. | L44-L175 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| Practical rules explain when to use each typed CGC tool and require source confirmation before edits. | L177-L185 | [codegraphcontext-high-level-methods.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
 | The C-04 skill links agents to this catalog from the Relationship section. | L107-L111 | [C-04 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/SKILL.md) |
 
 ## Cross-Repo References
@@ -99,5 +90,6 @@ contain private sibling repository names, symbols, paths, or code.
 ## Update History
 
 - 2026-05-23T13:46+02:00: Updated examples to use MCP `cgc_query` instead of the deleted source provider lifecycle script.
+- 2026-05-23T20:42+02:00: Replaced generic `cgc_query` guidance with typed CGC tool guidance.
 - 2026-05-21T15:20+02:00: Replaced private-project examples with synthetic response-shape examples.
 - 2026-05-21T14:10+02:00: Created onboarding for the CGC high-level methods catalog.
