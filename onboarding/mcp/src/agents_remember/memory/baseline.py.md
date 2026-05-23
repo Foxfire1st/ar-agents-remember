@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T13:09+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T00:35+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -19,9 +19,10 @@ adopting an existing external-memory onboarding baseline.
 
 ### Logic
 
-The module keeps the old `status` and `adopt` command behavior but imports the
-package resolver, drift checker, worktree git helpers, and memory ledger
-directly instead of dynamically loading skill-local scripts.
+The module exposes `BaselineRequest`, `baseline_status()`, and
+`baseline_adopt()` as service entry points for MCP controllers. The CLI
+commands now adapt parsed arguments into that request shape, print the returned
+payload, and return the service return code.
 
 ### Invariants And Boundaries
 
@@ -29,6 +30,8 @@ directly instead of dynamically loading skill-local scripts.
 - Actionable drift blocks adoption unless explicitly accepted.
 - This module is invoked through typed MCP payloads, not through a coordinator
   runtime script path.
+- MCP controllers should call `baseline_status()` and `baseline_adopt()`
+  directly rather than invoking `main(argv)` and parsing stdout.
 
 ## Repo-Internal References
 
@@ -40,3 +43,4 @@ directly instead of dynamically loading skill-local scripts.
 ## Update History
 
 - 2026-05-23T13:09+02:00: Copied into the MCP package and patched to package imports.
+- 2026-05-24T00:35+02:00: Updated after adding request/service entry points for MCP controllers.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T13:09+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T00:35+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -21,13 +21,18 @@ applying branch-memory carryover after code has landed.
 
 The module compares old base, source branch, and official branch source changes,
 classifies carryover candidates by evidence, and can copy proven onboarding into
-official memory while updating metadata and the ledger.
+official memory while updating metadata and the ledger. `CarryoverRequest`,
+`build_plan_for_request()`, and `apply_carryover_for_request()` are the service
+entry points used by MCP controllers; CLI commands remain adapters around those
+functions.
 
 ### Invariants And Boundaries
 
 - Only proven evidence tiers auto-carry.
 - Review-required paths must be selected explicitly before apply.
 - The MCP facade constrains memory paths to the configured coordination root.
+- MCP controllers should pass `intent_note` to the service API and should not
+  route through CLI `--approved` / `--approval-note` parsing.
 
 ## Repo-Internal References
 
@@ -39,3 +44,4 @@ official memory while updating metadata and the ledger.
 ## Update History
 
 - 2026-05-23T13:09+02:00: Copied into the MCP package and patched to package imports.
+- 2026-05-24T00:35+02:00: Updated after adding carryover request/service entry points for MCP controllers.

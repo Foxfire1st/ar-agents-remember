@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T20:56+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T00:35+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -21,12 +21,12 @@ provider, worktree, memory, benchmark, and skill-install services.
 ### Logic
 
 The module keeps model-facing tools away from arbitrary shell execution by
-constructing explicit package-local calls and fixed argument vectors. Provider
-flows call the typed `providers.lifecycle_service` API with MCP-generated
-settings instead of invoking `provider_lifecycle.main(argv)`. Worktree,
-baseline, carryover, and benchmark flows that still have command-like
-entrypoints are invoked through `run_package_main()` pending their own
-service-layer refactors.
+constructing explicit package-local calls and fixed provider argument vectors.
+Provider flows call the typed `providers.lifecycle_service` API with
+MCP-generated settings instead of invoking `provider_lifecycle.main(argv)`.
+Worktree, baseline, carryover, and benchmark flows now call package service
+functions directly and return domain payloads instead of `argv`, `stdout`,
+`stderr`, or parsed-JSON wrapper artifacts.
 
 CodeGraphContext access is split into typed controller functions:
 `cgc_symbol_search_tool()`, `cgc_callers_tool()`, `cgc_callees_tool()`,
@@ -51,6 +51,9 @@ manager. That keeps worktree provider preparation independent of coordinator
   typed controller for each CGC operation the skills need.
 - Provider tools should call `providers.lifecycle_service`, not the provider
   lifecycle CLI `main(argv)`.
+- Worktree, baseline, carryover, and benchmark tools should call package
+  service functions directly; CLI entrypoints remain print adapters, not MCP
+  controller targets.
 
 ## Repo-Internal References
 
@@ -59,8 +62,10 @@ manager. That keeps worktree provider preparation independent of coordinator
 | Public MCP tool registration delegates to these facade functions. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
 | Payload builders expose these facades to `server.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
 | Provider lifecycle service calls are centralized in the typed service layer. | [lifecycle_service.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle_service.py) |
-| Package-local command-style capture still supports non-provider legacy facades. | [command_capture.py](agents-remember-md/mcp/src/agents_remember/mcp/command_capture.py) |
+| Worktree manager exposes result-returning service functions for MCP controllers and print-only CLI adapters for dev/operator usage. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 | Worktree provider setup consumes the generated settings path. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
+| Memory baseline and carryover modules expose request/service functions for MCP controllers. | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py), [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
+| Benchmark runner exposes service payload functions that return progress as `messages` instead of raw stdout. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
 
 ## Update History
 
@@ -68,3 +73,4 @@ manager. That keeps worktree provider preparation independent of coordinator
 - 2026-05-23T13:46+02:00: Updated for MCP-derived worktree provider settings after source scripts were removed.
 - 2026-05-23T20:42+02:00: Updated for typed CodeGraphContext controllers replacing the generic `cgc_query` facade.
 - 2026-05-23T20:56+02:00: Updated after MCP provider tools moved from provider lifecycle CLI capture to typed lifecycle service calls.
+- 2026-05-24T00:35+02:00: Updated after worktree, baseline, carryover, and benchmark controllers stopped using command-style `main(argv)` capture.

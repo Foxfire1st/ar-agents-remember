@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T20:56+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T00:35+02:00                     |
+| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
+| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,6 +32,8 @@ for symbol search, callers, callees, dependencies, and complexity.
 
 The typed CGC payload test also patches `provider_lifecycle.main()` to fail if
 the MCP provider path regresses from `lifecycle_service` back to CLI capture.
+Command-style artifact coverage verifies service-backed MCP tools do not expose
+`argv`, `stdout`, `stderr`, or parsed `payload` wrapper fields.
 
 ### Invariants And Boundaries
 
@@ -45,15 +47,20 @@ argument forwarding.
 Provider MCP tests should protect that provider lifecycle calls use the typed
 service layer, not `main(argv)`.
 
+Service-backed MCP tool tests should protect stable domain payloads rather than
+command-capture response wrappers.
+
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
 | Public tool metadata and payload builders live in `tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
 | Server registration lives in `server.py`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
+| Controller facades convert public MCP payloads into service calls. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
 
 ## Update History
 
 - 2026-05-23T18:05+02:00: Created during direct closeout prep for public MCP tool test coverage.
 - 2026-05-23T20:42+02:00: Added typed CGC public-tool and fixed command-shape coverage.
 - 2026-05-23T20:56+02:00: Added regression coverage that MCP provider tools do not route through `provider_lifecycle.main()`.
+- 2026-05-24T00:35+02:00: Added regression coverage that service-backed MCP tools no longer expose command-capture artifacts.
