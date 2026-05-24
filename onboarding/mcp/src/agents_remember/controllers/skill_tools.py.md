@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T05:03+02:00                     |
-| lastVerifiedCommitHash | `9cdb4698da6bda9e8d28463dc65e03f1654cd8f3` |
-| lastVerifiedCommitDate | 2026-05-24T05:20:03+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -46,6 +46,14 @@ provider setup is enabled and wraps that path in a package-local
 provider preparation independent of coordinator `system/settings.json`, deleted
 source scripts, and caller-supplied provider root/settings overrides.
 
+`codex_benchmark_run_tool()` checks Codex availability before running
+benchmarks, and its missing-Codex response includes `codexExecutionPolicy`.
+That keeps the MCP response explicit that Codex is resolved from the MCP server
+process `PATH`, benchmark runs use an allowlisted benchmark sandbox mode, and
+no generic executable override exists. The `codex_sandbox` field is passed
+through to the benchmark service so callers can request `default`, which omits
+the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
+
 ### Invariants And Boundaries
 
 - Repo ids must resolve through `McpRuntimeConfig.repositories`.
@@ -61,6 +69,11 @@ source scripts, and caller-supplied provider root/settings overrides.
 - Worktree, baseline, carryover, and benchmark tools should call package
   service functions directly; CLI entrypoints remain print adapters, not MCP
   controller targets.
+- Codex benchmark tools may start Codex benchmark host processes, but the
+  controller must keep the operation Codex-specific, benchmark-labeled, and
+  `PATH`-resolved rather than accepting executable paths from callers.
+- Benchmark sandbox selection must stay an allowlist owned by the benchmark
+  service; the controller should not accept arbitrary Codex execution flags.
 
 ## Repo-Internal References
 
@@ -74,9 +87,13 @@ source scripts, and caller-supplied provider root/settings overrides.
 | Memory baseline and carryover modules expose request/service functions for MCP controllers. | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py), [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
 | Benchmark runner exposes service payload functions that return progress as `messages` instead of raw stdout. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
 | Memory quality checks combine drift integrity and update-history style checks for closeout. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py) |
+| Public tool tests assert missing Codex responses expose the benchmark execution policy and `PATH` resolution. | [test_tools.py](agents-remember-md/mcp/tests/test_tools.py) |
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` forwarded benchmark sandbox options through MCP controller payloads.
+- 2026-05-24T08:56+02:00: Updated after `codex_benchmark_run_tool()` began forwarding the allowlisted `codex_sandbox` mode into success and missing-Codex policy payloads.
+- 2026-05-24T06:57+02:00: Updated after Codex benchmark missing-executable responses started exposing benchmark-only `PATH` resolution policy.
 - 2026-05-24T05:03+02:00: Updated after `worktree_start_tool()` switched provider setup handoff to an internal `WorktreeProviderSetupConfig`.
 - 2026-05-24T02:47+02:00: Updated after adding the `memory_quality_check` controller for closeout drift and onboarding style checks.
 - 2026-05-24T00:35+02:00: Updated after worktree, baseline, carryover, and benchmark controllers stopped using command-style `main(argv)` capture.

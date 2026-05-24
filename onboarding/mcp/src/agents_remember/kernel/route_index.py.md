@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/kernel/route_index.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T13:09+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -22,6 +22,9 @@ onboarding overviews.
 The package copy preserves the shared route-index builder used by C-05. It
 discovers route overviews, covered sidecars, child routes, source counts,
 routing terms, hot-path summaries, and writes or dry-runs one index per route.
+Its ignored source directories include Codex's project-local `.codex` harness
+folder so MCP settings, skills, and harness config do not become route-index
+source candidates.
 
 ### Invariants And Boundaries
 
@@ -38,4 +41,6 @@ routing terms, hot-path summaries, and writes or dry-runs one index per route.
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` kept `.codex` as the Codex harness exclusion and removed the old `.agents` exclusion.
+- 2026-05-24T09:23+02:00: Updated after route indexing kept `.codex` as the harness-folder exclusion and removed the old `.agents` exclusion.
 - 2026-05-23T13:09+02:00: Copied into the MCP package for Phase 04.

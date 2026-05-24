@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T00:37+02:00                     |
+| lastUpdated            | 2026-05-24T09:23+02:00                     |
 | lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
 | lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00                  |
 | governingOverview      | `overview.md`                              |
@@ -41,8 +41,8 @@ This file must not be placed inside the coordinator root, and it must not carry
 duplicated repository or provider runtime paths. If a provider id is present,
 the MCP server derives its runner, data, log, requirement, patch, venv, binary,
 backend, and watch paths internally. `harnessSkillRoot` is optional and omitted
-from the template so normal `.agents/mcp` placement can use the inferred
-`.agents/skills` destination.
+from the template so normal Codex `.codex/mcp` placement can use the inferred
+`.codex/skills` destination.
 
 ## Repo-Internal References
 
@@ -53,5 +53,6 @@ from the template so normal `.agents/mcp` placement can use the inferred
 
 ## Update History
 
-- 2026-05-24T00:37+02:00: Clarified that repository roots are inferred from `workspaceRoot` and `coordinationRoot`, while `harnessSkillRoot` is optional and normally inferred from `.agents/mcp` placement.
+- 2026-05-24T09:23+02:00: Updated after Codex project-local MCP settings and skills moved from `.agents` to `.codex`.
+- 2026-05-24T00:37+02:00: Clarified that repository roots are inferred from `workspaceRoot` and `coordinationRoot`, while `harnessSkillRoot` is optional and normally inferred from harness-local MCP settings placement.
 - 2026-05-23T05:35+02:00: Created after migrating coordinator provider JSON authority into the MCP settings example.

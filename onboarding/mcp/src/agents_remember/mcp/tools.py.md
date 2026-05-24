@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/tools.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T02:47+02:00                     |
-| lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
-| lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -32,6 +32,10 @@ typed fields to the controller layer.
 that forwards `repo_id`, optional `checks`, and `detail_limit` to
 `controllers.skill_tools.memory_quality_check_tool()`.
 
+`codex_benchmark_run_payload()` forwards the allowlisted `codex_sandbox` field
+to the controller. The payload layer does not interpret sandbox semantics; the
+benchmark service owns validation and command construction.
+
 ### Invariants And Boundaries
 
 - `PUBLIC_TOOLS` must match the tools registered in `server.py`.
@@ -41,6 +45,8 @@ that forwards `repo_id`, optional `checks`, and `detail_limit` to
   `provider_status` is public.
 - Do not include removed generic tool names in `PUBLIC_TOOLS`; skill-facing
   provider operations should remain typed.
+- Benchmark payload builders stay thin; do not add Codex flag construction or
+  executable selection here.
 
 ## Repo-Internal References
 
@@ -51,6 +57,8 @@ that forwards `repo_id`, optional `checks`, and `detail_limit` to
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` exposed benchmark sandbox options through tool payload builders.
+- 2026-05-24T08:56+02:00: Updated after `codex_benchmark_run_payload()` began forwarding the allowlisted `codex_sandbox` field.
 - 2026-05-24T02:47+02:00: Updated after exposing the `memory_quality_check` payload and public tool metadata.
 - 2026-05-23T20:42+02:00: Updated public tool metadata and payload builders for typed CGC tools.
 - 2026-05-23T13:09+02:00: Updated for the complete Phase 04 public MCP tool surface.
