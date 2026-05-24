@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T02:47+02:00                     |
-| lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
-| lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00|
+| lastUpdated            | 2026-05-24T05:03+02:00                     |
+| lastVerifiedCommitHash | `9cdb4698da6bda9e8d28463dc65e03f1654cd8f3` |
+| lastVerifiedCommitDate | 2026-05-24T05:20:03+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -41,9 +41,10 @@ native argument vectors internally and no longer accept caller-supplied generic
 `query_type` plus arbitrary argument lists.
 
 `worktree_start_tool()` writes MCP-derived provider lifecycle settings when
-provider setup is enabled and passes that path into the package-local worktree
-manager. That keeps worktree provider preparation independent of coordinator
-`system/settings.json` and deleted source scripts.
+provider setup is enabled and wraps that path in a package-local
+`WorktreeProviderSetupConfig` for the worktree manager. That keeps worktree
+provider preparation independent of coordinator `system/settings.json`, deleted
+source scripts, and caller-supplied provider root/settings overrides.
 
 ### Invariants And Boundaries
 
@@ -76,6 +77,7 @@ manager. That keeps worktree provider preparation independent of coordinator
 
 ## Update History
 
+- 2026-05-24T05:03+02:00: Updated after `worktree_start_tool()` switched provider setup handoff to an internal `WorktreeProviderSetupConfig`.
 - 2026-05-24T02:47+02:00: Updated after adding the `memory_quality_check` controller for closeout drift and onboarding style checks.
 - 2026-05-24T00:35+02:00: Updated after worktree, baseline, carryover, and benchmark controllers stopped using command-style `main(argv)` capture.
 - 2026-05-23T20:56+02:00: Updated after MCP provider tools moved from provider lifecycle CLI capture to typed lifecycle service calls.
