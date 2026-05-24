@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember-md     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-05-24T02:47+02:00 |
+| lastUpdated | 2026-05-24T03:24+02:00 |
 | status      | active                 |
 
 ## Purpose
@@ -26,8 +26,8 @@ Each row records the deterministic source evidence used by C-02 for entity drift
 | Light Task Artifact                 | `git-blob-set-v1` | `sha256:cbba619f87dc8eb3ac3fe1b1665964e6b3eed6ddcd23732f9918e96f3a1d1706` | `runtime/skills/W-02-light-task-workflow/SKILL.md`; `runtime/skills/W-02-light-task-workflow/workflow.md`; `runtime/skills/W-02-light-task-workflow/template.md`                                                                                                                                                                                                                                                                                      |
 | External Memory Ledger              | `git-blob-set-v1` | `sha256:fd3bb4e38a4e2efb437a2e6d8d39a738bb04f55ad171ba950c7e790ccf57bb3e` | `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/worktrees/git_worktree_manager.py`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                |
 | Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:97eeaf39361b900e7ce94dd186ad78f76ceb3096b5457a1e62ed269f54c2da46` | `runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
-| Worktree Contract                   | `git-blob-set-v1` | `sha256:664648197d0575888b6f0e87f014c5f43ff2ec3a3a9d0f6f35c27cb76cec2bd6` | `mcp/src/agents_remember/worktrees/worktree_contract.py`; `runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/git_worktree_manager.py`                                                                                                                                                                                                     |
-| Worktree Integration                | `git-blob-set-v1` | `sha256:15228b20d58b4c10170fd2dffdec75bc63e9bfc03fc5fcf88f6ddcc88181951a` | `runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/git_worktree_manager.py`                                                                                                                                                                                                                                                                                     |
+| Worktree Contract                   | `git-blob-set-v1` | `sha256:acc5640af1206ed32623fffa8b685f2eb7ebc3940a39e5b7e337873a3cbacb88` | `mcp/src/agents_remember/worktrees/worktree_contract.py`; `runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/git_worktree_manager.py`                                                                                                                                                                                                     |
+| Worktree Integration                | `git-blob-set-v1` | `sha256:52c9e324f1159873882e4f533e55f6d72322a4c0576e6b66a83d5a1a85b0a1c0` | `runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/git_worktree_manager.py`                                                                                                                                                                                                                                                                                     |
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:2c287f6ad7ab059ed87dadd407e92ddfc77986d98d218e18b2e16f9e48994f99` | `runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 
 ## Entity Inventory
@@ -286,6 +286,7 @@ Each row records the deterministic source evidence used by C-02 for entity drift
 
 ## Update History
 
+- 2026-05-24T03:24+02:00: Refreshed worktree fingerprints after C-09 adopted the pre-code-commit missing-onboarding check.
 - 2026-05-24T02:47+02:00: Refreshed drift, baseline, and worktree fingerprints after memory quality moved drift integrity under `memory_quality` and C-09 adopted `memory_quality_check` closeout guidance.
 - 2026-05-24T00:37+02:00: Refreshed external memory ledger, baseline adoption, worktree contract, and worktree integration fingerprints after MCP worktree and memory controllers moved to service-backed result functions.
 - 2026-05-23T04:29+02:00: Updated Runtime AGENTS Template Package after templates moved provider startup guidance to MCP `context_packet` and external MCP settings authority.

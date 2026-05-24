@@ -48,6 +48,7 @@
     "mcp/tests/test_install_runtime.py",
     "mcp/tests/test_integrity.py",
     "mcp/tests/test_memory_quality.py",
+    "mcp/tests/test_missing_onboarding.py",
     "mcp/tests/test_provider_lifecycle.py",
     "mcp/tests/test_provider_setup.py",
     "mcp/tests/test_resolver_parity.py",
@@ -56,8 +57,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 66,
-    "fileSidecars": 38,
+    "sourceFilesInScope": 68,
+    "fileSidecars": 39,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -94,6 +95,8 @@
     "memory_init",
     "memory_ledger",
     "memory_quality",
+    "missing",
+    "onboarding",
     "packet",
     "parity",
     "provider",
@@ -125,6 +128,7 @@
     "test_install_runtime",
     "test_integrity",
     "test_memory_quality",
+    "test_missing_onboarding",
     "test_provider_lifecycle",
     "test_provider_setup",
     "test_resolver_parity",
