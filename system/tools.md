@@ -14,9 +14,18 @@ Note: `C-04-retrieval-strategy-router` documents the usage of these context retr
 
 ## Code Quality
 
-To improve quality when working on source code, the agent shall use `Ruff` and `Radon`. For the `agents-remember-md` repo, install and run them from the source repository directory `agents-remember-md/`.
+To improve quality when working on source code, the agent shall use `Ruff`, `Radon`, `pytest`, `pytest-cov`, and CRAP-Calculator. For the `agents-remember-md` repo, install and run them from the source repository directory `agents-remember-md/`.
 
-The installation has to be done by activating the project's virtual environment (`source .venv/bin/activate` on Linux and macOS, or `.venv\Scripts\activate` on Windows) and installing the repository requirements from `requirements.txt`. After activation, run the tools from the virtual environment with `python -m ruff ...` and `python -m radon ...`.
+The installation has to be done by activating the project's virtual environment (`source .venv/bin/activate` on Linux and macOS, or `.venv\Scripts\activate` on Windows) and installing the repository requirements from `requirements.txt`. After activation, prefer the fixed source quality wrapper for full local checks:
+
+```text
+python -m agents_remember.code_quality.check
+```
+
+The wrapper runs `ruff check`, Radon cyclomatic complexity and maintainability checks, `pytest` with coverage JSON, and CRAP-Calculator. Use the individual tool commands below for focused implementation checks.
+CRAP threshold findings are report-only by default so existing refactor targets
+do not make the remembered suite unusable. Add `--fail-on-crap-threshold` only
+when intentionally gating a cleanup or refactor branch.
 
 ---
 
@@ -61,6 +70,41 @@ python -m radon mi runtime/path/to/file.py -s -n B
 ```
 
 For more information on radon usage use the official documentation: [Radon Documentation](https://radon.readthedocs.io/en/latest/) or check `context7` mcp if available for code examples and usage patterns.
+
+---
+
+### Pytest And Coverage
+
+Pytest runs the existing `unittest` tests and provides better test selection, failure output, fixtures, and coverage integration for new tests.
+
+Common commands:
+
+```text
+python -m pytest mcp/tests -q
+python -m pytest mcp/tests/test_crap_calculator.py -q
+python -m pytest mcp/tests --cov=mcp/src/agents_remember --cov-report=json:coverage.json --cov-report=term
+```
+
+Use focused pytest runs during implementation. Use coverage JSON when CRAP-Calculator needs risk scoring.
+
+---
+
+### CRAP-Calculator
+
+CRAP-Calculator combines Radon function-level cyclomatic complexity with Coverage.py JSON line coverage. It reports function-level CRAP scores and derives a per-file rollup from those function scores.
+
+Recommended flow:
+
+```text
+python -m agents_remember.code_quality.check
+python -m agents_remember.code_quality.check --coverage-json coverage.json
+python -m agents_remember.code_quality.crap_calculator mcp/src/agents_remember --coverage-json coverage.json --project-root . --format json
+```
+
+Use CRAP-Calculator for refactor scouting. It is more useful than raw complexity alone because it highlights complex functions with weak test coverage.
+The plain wrapper command uses a temporary coverage JSON file. Use
+`--coverage-json coverage.json` only when the JSON artifact should be reused by
+the standalone CRAP-Calculator command.
 
 ---
 

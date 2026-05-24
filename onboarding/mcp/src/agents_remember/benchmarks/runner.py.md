@@ -5,15 +5,15 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T00:35+02:00                     |
-| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
-| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
+| lastUpdated            | 2026-05-24T05:48+02:00                     |
+| lastVerifiedCommitHash | `98af161a6c8d77f7dfc30457c9f6ab1c20e411ab` |
+| lastVerifiedCommitDate | 2026-05-24T06:49:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
 
 `runner.py` is the package-local benchmark prepare/run/analyze implementation
-used by the Phase 04 `benchmark_prepare` and `benchmark_run` MCP tools.
+used by the `codex_benchmark_prepare` and `codex_benchmark_run` MCP tools.
 
 ## Code Commentary
 
@@ -26,6 +26,11 @@ Codex prompt variants, and summarizing run artifacts.
 Benchmark provider preparation now calls package-local `provider_setup` behavior
 through a typed `ProviderSetupRequest` instead of a source-checkout
 `scripts/provider-setup.py` file or provider setup CLI `argv` reconstruction.
+Provider authority is generated from a benchmark-local `McpRuntimeConfig` shape
+and temporary provider settings file, not from a benchmark coordinator
+`system/settings.json`. Benchmark manifests can declare provider requirements
+per variant; preparing a whole case runs the union of requested providers, while
+running a selected memory-only variant skips provider setup.
 Benchmark skill exposure is copy-only: `copy` is the default mode and `none`
 skips harness skill exposure. The old shell/symlink installer path and `auto`
 fallback mode are not part of this module anymore.
@@ -44,9 +49,9 @@ requiring controllers to call `main(argv)`.
   generic command execution surface.
 - Provider setup must stay package-local; benchmark workspaces should not depend
   on deleted source-level Python scripts.
-- Benchmark provider setup still reads benchmark-local generated
-  `system/settings.json` fixture data; that remaining authority-shape cleanup is
-  tracked separately by Phase 05 F-08.
+- Benchmark provider setup must not read or mutate coordinator
+  `system/settings.json`; provider scope belongs to generated MCP/provider
+  settings and the selected benchmark variants.
 - Benchmark skill exposure must not call coordinator-local scripts or require
   Bash/symlink support.
 
@@ -59,6 +64,7 @@ requiring controllers to call `main(argv)`.
 
 ## Update History
 
+- 2026-05-24T05:48+02:00: Updated after Phase 05 F-08 moved benchmark provider authority from coordinator `system/settings.json` to generated MCP/provider settings and variant-scoped provider declarations.
 - 2026-05-24T00:35+02:00: Updated after benchmark controllers switched to service payload functions and structured progress messages.
 - 2026-05-23T23:46+02:00: Updated after benchmark provider setup stopped reconstructing provider setup CLI arguments and started using `ProviderSetupRequest`.
 - 2026-05-23T14:20+02:00: Updated after benchmark skill exposure became copy-only and stopped using the deleted `install-skills.sh` route.
