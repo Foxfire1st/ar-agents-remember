@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                           |
 | path                   | `runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-05-24T04:34+02:00                     |
-| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
-| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
+| lastUpdated            | 2026-05-24T05:03+02:00                     |
+| lastVerifiedCommitHash | `9cdb4698da6bda9e8d28463dc65e03f1654cd8f3` |
+| lastVerifiedCommitDate | 2026-05-24T05:20:03+02:00|
 
 ## Purpose
 
@@ -25,7 +25,7 @@ C-09 is a wrapper, not a replacement workflow. Task identity should be settled b
 
 ### Invariants And Boundaries
 
-C-09 must not use divergent memory as trusted reference context and must not auto-commit at workflow finish. Closeout dry-run may run before commit approval because it does not mutate Git. Real worktree closeout requires explicit commit approval evidence, stops when recorded source branches moved since task start, and must not create a code commit when `check_missing_onboarding` reports new eligible files without sidecars. It must not create a memory content commit until drift has been reviewed, onboarding has been refreshed, and `memory_quality_check` is clean. Direct closeout also requires explicit commit approval evidence, requires external memory with matching code/memory checkout branches, and blocks before code commit when required onboarding is missing. Integration requires explicit approval, must not move source branches until code and memory commits are fast-forwardable, must regenerate memory ledger rows after replay, and must ask before cleanup. Cleanup requires integration completion and explicit approval.
+C-09 must not use divergent memory as trusted reference context and must not auto-commit at workflow finish. Worktree status reports lifecycle phase, dirty flags, summary, and typed next hints instead of shell commands. Closeout dry-run may run before commit approval because it does not mutate Git. Real worktree closeout requires explicit commit approval evidence, stops when recorded source branches moved since task start, and must not create a code commit when `check_missing_onboarding` reports new eligible files without sidecars. It must not create a memory content commit until drift has been reviewed, onboarding has been refreshed, and `memory_quality_check` is clean. Direct closeout also requires explicit commit approval evidence, requires external memory with matching code/memory checkout branches, and blocks before code commit when required onboarding is missing. Integration requires explicit approval, must not move source branches until code and memory commits are fast-forwardable, must regenerate memory ledger rows after replay, and must ask before cleanup. Cleanup requires integration completion and explicit approval.
 
 ### Todos
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-24T05:03+02:00: Updated after C-09 worktree status guidance switched from next safe commands to typed `nextOperation`/`nextTool`/`nextArgs` hints.
 - 2026-05-24T04:34+02:00: Updated after closeout guidance routed post-code-commit drift through C-02 memory quality control.
 - 2026-05-24T03:24+02:00: Updated after C-09 closeout adopted the pre-code-commit `check_missing_onboarding` pass for newly added files.
 - 2026-05-24T02:47+02:00: Updated closeout guidance to run drift after the code commit, refresh memory, run `memory_quality_check`, then commit memory and ledger.

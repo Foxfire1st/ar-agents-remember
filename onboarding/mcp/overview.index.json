@@ -41,6 +41,7 @@
     "mcp/src/agents_remember/providers/settings.py",
     "mcp/src/agents_remember/providers/status.py",
     "mcp/src/agents_remember/worktrees/git_worktree_manager.py",
+    "mcp/src/agents_remember/worktrees/status.py",
     "mcp/src/agents_remember/worktrees/worktree_contract.py",
     "mcp/tests/test_config.py",
     "mcp/tests/test_context_packet.py",
@@ -58,7 +59,7 @@
   ],
   "coverageCounts": {
     "sourceFilesInScope": 68,
-    "fileSidecars": 39,
+    "fileSidecars": 40,
     "childRoutes": 1
   },
   "routingTerms": [

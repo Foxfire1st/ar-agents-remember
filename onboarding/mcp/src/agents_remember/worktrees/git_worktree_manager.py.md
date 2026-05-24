@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T00:35+02:00                     |
-| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
-| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
+| lastUpdated            | 2026-05-24T05:03+02:00                     |
+| lastVerifiedCommitHash | `9cdb4698da6bda9e8d28463dc65e03f1654cd8f3` |
+| lastVerifiedCommitDate | 2026-05-24T05:20:03+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -31,6 +31,13 @@ The MCP path calls result-returning service functions such as `start_result()`,
 functions remain print adapters over those payloads, so MCP controllers no
 longer need to run `main(argv)` and parse stdout.
 
+Worktree lifecycle payloads expose typed MCP next hints through
+`nextOperation`, `nextTool`, `nextArgs`, and optional `nextRequiredArgs` instead
+of CLI-shaped `next_command` strings. Provider setup for worktree start is fed
+through an internal `WorktreeProviderSetupConfig` created by the MCP controller,
+so callers no longer pass provider coordination roots, settings paths, or
+runtime roots into the worktree start surface.
+
 ### Invariants And Boundaries
 
 - Worktree provider setup must not invoke `<coordinationRoot>/scripts`.
@@ -38,6 +45,8 @@ longer need to run `main(argv)` and parse stdout.
   coordinator `system/settings.json`.
 - Worktree provider setup should pass typed provider setup options directly and
   should not round-trip through provider setup CLI parsing.
+- Worktree status and closeout payloads should describe the next MCP tool/state,
+  not shell commands.
 - MCP worktree tools should call result-returning functions directly; CLI
   commands should remain adapters for operator use.
 - Git subprocesses use `stdin=subprocess.DEVNULL` so they cannot consume MCP
@@ -51,10 +60,12 @@ longer need to run `main(argv)` and parse stdout.
 | --- | --- |
 | MCP worktree start writes temporary lifecycle settings and passes them to this module. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
 | Provider setup performs isolated CGC seed and runtime preparation. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
+| Worktree status packets project lifecycle payloads into context packets. | [status.py](agents-remember-md/mcp/src/agents_remember/worktrees/status.py) |
 | Worktree contract serialization lives in the package worktree contract module. | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ## Update History
 
+- 2026-05-24T05:03+02:00: Updated after worktree lifecycle payloads replaced CLI `next_command` guidance with typed MCP next hints and provider setup moved behind an internal MCP-derived config object.
 - 2026-05-24T00:35+02:00: Updated after MCP worktree controllers switched from `main(argv)` capture to result-returning service functions.
 - 2026-05-23T23:46+02:00: Updated after worktree provider setup stopped rebuilding provider setup CLI `argv` and switched to `ProviderSetupRequest`.
 - 2026-05-23T13:46+02:00: Documented the MCP-owned provider setup path and removal of coordinator-local script execution.
