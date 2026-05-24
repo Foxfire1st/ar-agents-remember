@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T21:25+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T04:34+02:00                     |
+| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
+| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -112,6 +112,7 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-05-24T04:34+02:00: Updated after coordinator template made commit approval separate from implementation approval.
 - 2026-05-23T21:25+02:00: Simplified provider-authority wording and added installed coordinator code-quality routing to resolved memory-layer tools and coding guidelines.
 - 2026-05-23T04:43+02:00: Updated provider readiness onboarding for MCP `context_packet` authority instead of coordinator settings.
 - 2026-05-21T15:42+02:00: Updated the installed provider readiness command after provider lifecycle commands began inferring the coordinator root from their installed path.

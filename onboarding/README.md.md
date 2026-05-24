@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T14:20+02:00                     |
-| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a` |
-| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
+| lastUpdated            | 2026-05-24T04:34+02:00                     |
+| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
+| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -77,6 +77,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-05-24T04:34+02:00: Updated after public docs renamed C-02 to memory quality control.
 - 2026-05-23T14:20+02:00: Updated after the public quickstart switched from deleted installer scripts to MCP `runtime_install` and copy-only `skills_install`.
 - 2026-05-23T13:46+02:00: Updated repository layout after provider lifecycle, provider setup, and benchmark runner behavior moved into `mcp/` and the source `scripts/` route was removed.
 - 2026-05-23T05:32+02:00: Updated after the quickstart stopped presenting source-installer provider dependency install and moved provider dependency operations behind MCP settings.

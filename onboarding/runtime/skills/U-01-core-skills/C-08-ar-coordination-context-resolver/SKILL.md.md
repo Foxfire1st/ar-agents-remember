@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                             |
 | path                   | `runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-05-21T03:05+02:00                                         |
-| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`                     |
-| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
+| lastUpdated            | 2026-05-24T04:34+02:00                     |
+| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
+| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
 
 ## Purpose
 
@@ -61,6 +61,7 @@ C-08 may read coordinator settings, but no external repository behavior is requi
 
 ## Update History
 
+- 2026-05-24T04:34+02:00: Updated consumer references after C-02 was renamed to memory quality control.
 - 2026-05-23T17:50+02:00: Updated implementation reference after the resolver script route was removed from the skill tree and the MCP package became the only implementation route.
 - 2026-05-21T03:05+02:00: Updated the consumer list after C-04 became the retrieval strategy router.
 - 2026-05-18T21:44+02:00: Refreshed after pulling the committed C-04 onboarding read-mode rename from `origin/main`.

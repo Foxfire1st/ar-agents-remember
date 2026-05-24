@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/skills/W-02-light-task-workflow/workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-10T01:19                           |
-| lastVerifiedCommitHash | `398184b757e336211e335569284f2cde309cd964` |
-| lastVerifiedCommitDate | 2026-05-15T04:04:02+02:00|
+| lastUpdated            | 2026-05-24T04:34+02:00                     |
+| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
+| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
 
 ## Purpose
 
@@ -61,6 +61,7 @@ No sibling repository evidence is needed for the current workflow file.
 
 ## Update History
 
+- 2026-05-24T04:34+02:00: Updated task-start references after C-02 was renamed to memory quality control.
 - 2026-05-10T01:19: Updated after Phase 2 gained the closeout dry-run and explicit commit approval handoff for worktree-backed tasks.
 - 2026-05-10T00:56: Updated the C-09 handoff rule so refreshed external-memory onboarding and ledger changes are committed before worktree start.
 - 2026-05-10T00:47: Updated W-02 phase language so task wrapper folders are created before any C-09 worktree.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                           |
 | path                   | `runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-05-24T03:24+02:00                                       |
-| lastVerifiedCommitHash | `3789c3eba5e6e03889635f19ad3793b9c6bf5a78`                   |
-| lastVerifiedCommitDate | 2026-05-24T03:24:51+02:00|
+| lastUpdated            | 2026-05-24T04:34+02:00                     |
+| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
+| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
 
 ## Purpose
 
@@ -21,7 +21,7 @@ The skill defines `start`, `attach`, `status`, `closeout`, `direct-closeout`, `i
 
 ### Conventions
 
-C-09 is a wrapper, not a replacement workflow. Task identity should be settled before worktree creation: W-02 creates `<task-root>/<task-slug>/task.md`, then C-09 adds `contract.md` beside it. External memory incompatibility is interactive and offers reconciliation, clean start, disabled memory, or custom handling; dirty source memory blocks start until memory content and ledger updates are committed or the developer chooses disabled memory. Closeout dry-run is the non-mutating commit preview path and reports the onboarding metadata and entity fingerprint refresh plan; real closeout needs `--approved` plus an approval note, runs `check_missing_onboarding` before committing code, creates missing sidecars for newly added eligible files, commits code, runs drift detection against that code commit to produce the maintenance worklist, refreshes affected onboarding verification metadata and `git-blob-set-v1` entity fingerprints, runs `memory_quality_check`, then commits memory and ledger when the check is clean. Direct closeout follows the same approval and commit ordering without a worktree contract, and is reserved for approved small current-checkout edits or memory-only polish where worktree isolation would add no value. Integration has two strategies: `ff-only` for unchanged source branches and `replay` for parallel non-overlapping work that already moved source branches.
+C-09 is a wrapper, not a replacement workflow. Task identity should be settled before worktree creation: W-02 creates `<task-root>/<task-slug>/task.md`, then C-09 adds `contract.md` beside it. External memory incompatibility is interactive and offers reconciliation, clean start, disabled memory, or custom handling; dirty source memory blocks start until memory content and ledger updates are committed or the developer chooses disabled memory. Closeout dry-run is the non-mutating commit preview path and reports the onboarding metadata and entity fingerprint refresh plan; real closeout needs explicit commit approval plus an approval note, runs `check_missing_onboarding` before committing code, creates missing sidecars for newly added eligible files, commits code, uses C-02 memory quality control to run drift against that code commit and produce the maintenance worklist, refreshes affected onboarding verification metadata and `git-blob-set-v1` entity fingerprints, runs `memory_quality_check`, then commits memory and ledger when the check is clean. Direct closeout follows the same approval and commit ordering without a worktree contract, and is reserved for approved small current-checkout edits or memory-only polish where worktree isolation would add no value. Integration has two strategies: `ff-only` for unchanged source branches and `replay` for parallel non-overlapping work that already moved source branches.
 
 ### Invariants And Boundaries
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-24T04:34+02:00: Updated after closeout guidance routed post-code-commit drift through C-02 memory quality control.
 - 2026-05-24T03:24+02:00: Updated after C-09 closeout adopted the pre-code-commit `check_missing_onboarding` pass for newly added files.
 - 2026-05-24T02:47+02:00: Updated closeout guidance to run drift after the code commit, refresh memory, run `memory_quality_check`, then commit memory and ledger.
 - 2026-05-16T18:17+02:00: Documented that external-memory closeout refreshes affected repo entity catalog fingerprints after the code commit and before the memory-content commit.

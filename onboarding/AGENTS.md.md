@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T21:31+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T04:34+02:00                     |
+| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
+| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
 
 ## Purpose
 
@@ -31,10 +31,11 @@ sibling repository, then scopes normal resolver input for this checkout to
 The task-routing section keeps the three workflow choices: default chat mode
 for small current-session edits, W-02 for durable task-file work, and W-01 only
 when the developer explicitly requests the heavy workflow. The memory section
-keeps the C-08, MCP `context_packet`, then C-02 gate and points agents at the
-resolved memory layer's settings, tools, sources, and optional coding guidelines
-rather than pretending the source checkout has active root-level `system/`
-settings. Provider authority is stated directly as MCP settings.
+keeps the C-08, MCP `context_packet`, then C-02 memory quality control gate and
+points agents at the resolved memory layer's settings, tools, sources, and
+optional coding guidelines rather than pretending the source checkout has active
+root-level `system/` settings. Provider authority is stated directly as MCP
+settings.
 
 The source-layout section records the current package structure: MCP server and
 package services, runtime `AGENTS.md` templates, runtime skills, runtime system
@@ -61,7 +62,9 @@ coordinator instructions belong in `runtime/agents-md-files/` as package-owned
 templates and in the live `ar-coordination/` tree after runtime installation.
 User-specific behavior and repo policy belong in the resolved memory layer.
 Worktree, closeout, integration, push, cleanup, and protected-branch movement
-remain approval-gated.
+remain approval-gated. Implementation approval and commit approval are separate
+gates; agents must stop after checks or closeout dry-runs until the developer
+explicitly approves real commits or lifecycle mutations.
 
 ### Todos
 
@@ -86,7 +89,8 @@ file.
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
 | The file identifies `agents-remember-md` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Task format routing keeps chat, W-02, and W-01 as the only work formats before changing code or docs.                                          | L16-L27   | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Memory rules require C-08, then a configured-provider readiness check, then C-02, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Memory rules require C-08, then a configured-provider readiness check, then C-02 memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L84-L91 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Source-layout and boundary notes separate MCP/runtime package assets from user-owned memory and installed coordinator configuration.            | L66-L86   | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Code-quality routing tells agents to run Ruff and Radon after Python code changes in this source checkout and sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`. | L90-L95 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 
@@ -101,6 +105,7 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## Update History
 
+- 2026-05-24T04:34+02:00: Updated after source-checkout instructions renamed C-02 to memory quality control and made commit approval separate from implementation approval.
 - 2026-05-23T21:31+02:00: Made source-checkout code quality guidance explicit about Ruff and Radon after Python implementation work.
 - 2026-05-23T21:25+02:00: Simplified provider-authority wording and added source-checkout code-quality routing to resolved memory-layer tools and coding guidelines.
 - 2026-05-23T14:20+02:00: Updated source-layout onboarding after `installer/` and `runtime/scripts/` were removed from the source package.
