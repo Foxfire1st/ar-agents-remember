@@ -14,11 +14,12 @@
     "mcp/src/agents_remember/memory_quality/integrity/ledger_consistency.py",
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py",
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py",
-    "mcp/src/agents_remember/memory_quality/style/update_history/history_order.py"
+    "mcp/src/agents_remember/memory_quality/style/update_history/history_order.py",
+    "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 10,
-    "fileSidecars": 5,
+    "sourceFilesInScope": 11,
+    "fileSidecars": 6,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -27,8 +28,10 @@
     "check",
     "consistency",
     "drift",
+    "fix",
     "history",
     "history_order",
+    "history_order_fix",
     "integrity",
     "ledger",
     "ledger_consistency",
@@ -47,7 +50,7 @@
     "update_history"
   ],
   "hotPath": {
-    "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP controller supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; update-history ordering lives under `style/update_history/`.",
+    "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP controller supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; update-history ordering lives under `style/update_history/`. The history-order checker is diagnostic; the matching `history_order_fix.py` module is the explicit mutating script for timestamped history-order fixes.",
     "candidateHints": [
       "mcp/src/agents_remember/memory_quality",
       "mcp/src/agents_remember/memory_quality/check.py",
@@ -57,7 +60,8 @@
       "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py",
       "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py",
       "mcp/src/agents_remember/memory_quality/style/update_history",
-      "mcp/src/agents_remember/memory_quality/style/update_history/history_order.py"
+      "mcp/src/agents_remember/memory_quality/style/update_history/history_order.py",
+      "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
     ],
     "anchorHints": [
       "check.py",
@@ -70,6 +74,8 @@
       "summary",
       "history_order.py",
       "history_order",
+      "history_order_fix.py",
+      "history_order_fix",
       "DriftCheckContext",
       "integrity/onboarding_drift_check/",
       "style/update_history/",
@@ -78,7 +84,7 @@
       "update_history",
       "mcp/src/agents_remember/memory_quality/",
       "route-overview",
-      "b25d52f2b445554bb64115db2f27fd156954bcf3",
+      "0360e6fd7ab582075f11a2a6a50dfc0566f273e9",
       "/../../overview.md",
       "memory_quality/",
       "## Update History",
@@ -94,13 +100,15 @@
       "agents-remember-md/mcp/src/agents_remember/mcp/tools.py",
       "server.py",
       "agents-remember-md/mcp/src/agents_remember/mcp/server.py",
+      "agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py",
       "agents_remember",
       "memory_quality",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T02",
+      "T03",
       "lastVerifiedCommitHash",
+      "e6fd7ab582075f11a2a6a50dfc0566f273e9",
       "lastVerifiedCommitDate",
       "governingOverview",
       "skill_tools"

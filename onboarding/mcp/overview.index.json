@@ -56,7 +56,7 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 65,
+    "sourceFilesInScope": 66,
     "fileSidecars": 38,
     "childRoutes": 1
   },
