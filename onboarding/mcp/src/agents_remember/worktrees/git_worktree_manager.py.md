@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T05:03+02:00                     |
-| lastVerifiedCommitHash | `9cdb4698da6bda9e8d28463dc65e03f1654cd8f3` |
-| lastVerifiedCommitDate | 2026-05-24T05:20:03+02:00|
+| lastUpdated            | 2026-05-24T18:51+02:00                     |
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -38,6 +38,12 @@ through an internal `WorktreeProviderSetupConfig` created by the MCP controller,
 so callers no longer pass provider coordination roots, settings paths, or
 runtime roots into the worktree start surface.
 
+Closeout context reparses `system/settings.md`/`settings.json` from the
+external memory worktree when that worktree carries settings changes. The
+changed-path and onboarding metadata/entity refresh paths use the shared
+filesystem helper for existence, file, read, and write probes so deeply nested
+Windows paths do not become false missing sidecars.
+
 ### Invariants And Boundaries
 
 - Worktree provider setup must not invoke `<coordinationRoot>/scripts`.
@@ -53,6 +59,10 @@ runtime roots into the worktree start surface.
   stdio.
 - Contract paths and worktree roots must stay inside the resolved coordination
   workflow model.
+- External-memory closeout planning must use memory-worktree settings when the
+  task branch changed eligibility rules.
+- Onboarding sidecar/catalog probes must tolerate long Windows paths that Git
+  can report but normal `Path.exists()`/`Path.is_file()` may miss.
 
 ## Repo-Internal References
 
@@ -62,9 +72,12 @@ runtime roots into the worktree start surface.
 | Provider setup performs isolated CGC seed and runtime preparation. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
 | Worktree status packets project lifecycle payloads into context packets. | [status.py](agents-remember-md/mcp/src/agents_remember/worktrees/status.py) |
 | Worktree contract serialization lives in the package worktree contract module. | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Long-path-safe filesystem wrappers live in the kernel filesystem helper. | [filesystem.py](agents-remember-md/mcp/src/agents_remember/kernel/filesystem.py) |
+| Worktree support tests cover memory-worktree settings and long-path closeout planning regressions. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 
+- 2026-05-24T18:51+02:00: Updated after closeout planning began using memory-worktree settings and long-path-safe filesystem probes.
 - 2026-05-24T05:03+02:00: Updated after worktree lifecycle payloads replaced CLI `next_command` guidance with typed MCP next hints and provider setup moved behind an internal MCP-derived config object.
 - 2026-05-24T00:35+02:00: Updated after MCP worktree controllers switched from `main(argv)` capture to result-returning service functions.
 - 2026-05-23T23:46+02:00: Updated after worktree provider setup stopped rebuilding provider setup CLI `argv` and switched to `ProviderSetupRequest`.

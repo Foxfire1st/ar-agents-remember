@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T22:37+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T19:25+02:00                     |
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -30,6 +30,10 @@ requirements/binary helpers, GrepAI workspace-mode root and config generation,
 CGC runtime layout derivation, source/provider artifact containment checks, and
 CGC patch detectors/applicators for upstream package files.
 
+CGC FalkorDB process environment is derived from package/MCP provider defaults
+and recorded backend state. Ambient host `FALKORDB_HOST` and `FALKORDB_PORT`
+environment variables are not an authority source for layout defaults.
+
 ### Conventions
 
 Provider runtime paths are derived from coordinator provider roots rather than
@@ -44,6 +48,8 @@ trees.
 - Provider instances, cache, state, and mirrored roots belong under
   `providers/runners/`.
 - Durable provider database data belongs under `providers/data/`.
+- CGC backend host/port values come from provider settings and backend state,
+  not ambient process environment.
 - Upstream CGC patches should be detected by marker text before being applied.
 
 ### Todos
@@ -83,4 +89,5 @@ through this package-local code and provider install/runtime modules.
 
 ## Update History
 
+- 2026-05-24T19:25+02:00: Updated after CGC FalkorDB layout defaults stopped reading host `FALKORDB_*` environment variables.
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.

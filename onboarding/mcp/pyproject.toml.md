@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T06:43+02:00                     |
-| lastVerifiedCommitHash | `98af161a6c8d77f7dfc30457c9f6ab1c20e411ab`                      |
-| lastVerifiedCommitDate | 2026-05-24T06:49:48+02:00|
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8`                      |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

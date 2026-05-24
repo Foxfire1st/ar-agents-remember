@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T00:37+02:00                     |
-| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
-| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00                 |
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
