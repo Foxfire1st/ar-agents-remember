@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T18:05+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,8 +22,8 @@ paths.
 The tests create temporary MCP settings files and assert that config loading
 rejects relative or missing paths, rejects coordinator `system/settings.json`,
 rejects MCP settings inside the coordinator root, derives allowed repo/provider
-ids, derives transcript and provider data roots, infers `.agents/skills` from a
-`.agents/mcp` registration path, honors explicit `harnessSkillRoot`, keeps
+ids, derives transcript and provider data roots, infers `.codex/skills` from a
+`.codex/mcp` registration path, honors explicit `harnessSkillRoot`, keeps
 contract paths inside the coordinator, rejects memory settings includes outside
 repo boundaries, and rejects provider path fields that should be server-derived.
 
@@ -41,4 +41,6 @@ include paths cannot escape configured repo/memory roots.
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` moved normal Codex harness fixtures to `.codex`.
+- 2026-05-24T09:23+02:00: Updated after harness-root inference tests moved to Codex `.codex/mcp` placement.
 - 2026-05-23T18:05+02:00: Created during direct closeout prep for MCP config coverage.

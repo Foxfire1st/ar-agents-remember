@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/agents-md-files/system/AGENTS.md`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T04:34+02:00                     |
-| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
-| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,9 +28,10 @@ onboarding.
 The template requires C-08 context resolution, a configured-provider check, and
 C-02 memory quality control before agents rely on repository onboarding for any task,
 including read-only analysis. It defines the developer decision point when drift
-exists, the C-05 maintenance route for approved refreshes, and the second C-02
-check after maintenance. It then separates post-gate planning from
-implementation.
+exists, requires agents to separate clean-source update candidates from
+dirty-source active work-in-progress, keeps C-05 as the maintenance route for
+approved refreshes, and requires a second C-02 check after maintenance. It then
+separates post-gate planning from implementation.
 The configured-provider check now invokes the Agents Remember MCP
 `context_packet` tool with provider inspection enabled. Provider authority is
 stated directly as the MCP settings file.
@@ -82,7 +83,7 @@ This onboarding is backed by the source template itself.
 
 | Finding                                                                                                                     | Citations | Source Path |
 | --------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The start-of-task trust gate requires C-08 context resolution, a configured-provider check, C-02 memory quality control, developer review of drift, approved C-05 refresh, a second C-02 check, and drift report deletion. | L1-L37 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
+| The start-of-task trust gate requires C-08 context resolution, a configured-provider check, C-02 memory quality control, clean-source versus dirty-source drift classification, developer review of drift, approved C-05 refresh, a second C-02 check, and drift report deletion. | L1-L37 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 | Gate 2 runs provider readiness through MCP `context_packet` only when the MCP server is configured and provider settings are enabled. | L17-L26 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 | Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh. | L40-L46 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
 | Post-gate planning and research routes context-backed source reading to `C-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | L50-L54 | [runtime/agents-md-files/system/AGENTS.md](agents-remember-md/runtime/agents-md-files/system/AGENTS.md) |
@@ -99,6 +100,7 @@ No sibling repository evidence is needed for this runtime template.
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to the installed system gate.
 - 2026-05-24T04:34+02:00: Updated after system template routed Gates 3 and 6 through C-02 memory quality control.
 - 2026-05-23T21:25+02:00: Simplified provider-authority wording and added installed system code-quality routing to resolved memory-layer tools and coding guidelines.
 - 2026-05-23T04:43+02:00: Updated Gate 2 onboarding for MCP `context_packet` authority instead of coordinator settings.

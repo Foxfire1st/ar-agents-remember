@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `runtime/skills/W-03-chat-task-workflow/SKILL.md`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T04:34+02:00                     |
-| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
-| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 
 ## Purpose
 
@@ -19,7 +19,8 @@ This skill defines the compact chat-mode coding workflow for approved current-ch
 
 The workflow starts each coding task by resolving C-08 context and running C-02
 memory quality control once for the repository, using task-start drift as the
-trust baseline. During investigation it requires relevant source files and
+trust baseline and applying C-02's clean-source versus dirty-source drift
+classification. During investigation it requires relevant source files and
 onboarding files to be read together, then requires the developer to approve a
 plan with distinct implementation examples before code changes begin. After
 implementation approval, code and onboarding updates happen in the same editing
@@ -35,7 +36,7 @@ W-03 is intentionally lightweight: planning can stay in chat, but it still uses 
 
 ### Invariants And Boundaries
 
-Do not plan against drifted, missing-verification, or orphaned pre-existing onboarding. Do not implement before explicit developer approval. Do not postpone required onboarding updates to the end of the task when the source change affects durable current-state knowledge. Newly added source files must not be committed before the missing-onboarding check has passed or C-05 has created the reported sidecars. Direct closeout must remain preview-first and must rerun C-05 when required onboarding is missing.
+Do not plan against clean-source drifted, missing-verification, or orphaned pre-existing onboarding. Leave dirty-source drift as active work-in-progress unless the developer explicitly takes ownership of it. Do not implement before explicit developer approval. Do not postpone required onboarding updates to the end of the task when the source change affects durable current-state knowledge. Newly added source files must not be committed before the missing-onboarding check has passed or C-05 has created the reported sidecars. Direct closeout must remain preview-first and must rerun C-05 when required onboarding is missing.
 
 ### Todos
 
@@ -55,7 +56,7 @@ W-03 is the chat-mode workflow that complements W-02 light tasks and C-09 direct
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The workflow requires C-08 and C-02 memory quality control at task start, blocks planning against stale onboarding, and avoids rerunning the gate merely because the current task later changes files. | L8-L8 | [W-03 SKILL.md](agents-remember-md/runtime/skills/W-03-chat-task-workflow/SKILL.md) |
+| The workflow requires C-08 and C-02 memory quality control at task start, applies clean-source versus dirty-source drift classification, blocks planning against clean-source stale onboarding, and avoids rerunning the gate merely because the current task later changes files. | L8-L8 | [W-03 SKILL.md](agents-remember-md/runtime/skills/W-03-chat-task-workflow/SKILL.md) |
 | Investigation pairs source and onboarding reads, treats already modified pairs as pending verification, and waits for explicit developer approval before code changes. | L10-L10 | [W-03 SKILL.md](agents-remember-md/runtime/skills/W-03-chat-task-workflow/SKILL.md) |
 | After implementation approval, source and onboarding updates happen in the same pass, newly added source files run the missing-onboarding check before code commit, and small current-checkout edits close through C-09 direct closeout only after a separate commit-approval stop. | L12-L16 | [W-03 SKILL.md](agents-remember-md/runtime/skills/W-03-chat-task-workflow/SKILL.md) |
 
@@ -69,6 +70,7 @@ No sibling repository evidence is needed for the current workflow skill.
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to W-03 task-start checks.
 - 2026-05-24T04:34+02:00: Updated after chat workflow separated implementation approval from commit approval and routed task-start checks through C-02 memory quality control.
 - 2026-05-24T03:24+02:00: Updated after chat closeout adopted `check_missing_onboarding` before code commit for newly added files.
 - 2026-05-14T20:11+02:00: Created file-level onboarding for the chat task workflow while preparing direct closeout for the external-memory terminology alignment.

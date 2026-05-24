@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                             |
 | path                   | `runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-05-24T04:34+02:00                     |
-| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
-| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This skill defines C-08, the authoritative facts-only resolver for memory roots,
 
 ### Logic
 
-The skill tells agents to resolve context once and pass the resulting facts downstream instead of re-deriving topology in every workflow. It documents `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `task_root`, `temp_root`, optional contract/worktree fields, JSON-first settings, path rules, storage settings, and cross-repo v2 result states. Without `task_name`, `task_root` is the repo-specific task namespace under `ar-coordination/tasks/<code-repository-name>/`; with `task_name` or a contract, it is the concrete task folder. Coordination root discovery now uses explicit input, `agents-remember-md/.env`, or the built-in `../ar-coordination` default; `.env.example` is not runtime input. Resolution validates supported memory locations and fails with a missing-memory error instead of inventing an empty context.
+The skill tells agents to resolve context once and pass the resulting facts downstream instead of re-deriving topology in every workflow. It documents `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `task_root`, `temp_root`, optional contract/worktree fields, JSON-first settings, path rules, storage settings, and cross-repo v2 result states. Without `task_name`, `task_root` is the repo-specific task namespace under `ar-coordination/tasks/<code-repository-name>/`; with `task_name` or a contract, it is the concrete task folder. Normal installed workflows resolve the coordination root from MCP settings; package-local resolver calls use explicit input, an installed runtime root, or the source-development `../ar-coordination` default. Source-checkout `.env` and `.env.example` files are not resolver inputs. Resolution validates supported memory locations and fails with a missing-memory error instead of inventing an empty context.
 
 ### Conventions
 
@@ -47,7 +47,7 @@ C-08 is the base dependency for C-02, C-03, C-04, C-05, and task workflows.
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The skill accepts `code_repository_name`, optional `code_repository_root`, and `task_name`; no-task-name contexts resolve the repo task namespace, while task-name contexts resolve current wrapper task folders and persisted `*-ar` contract folders. | L14-L23 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | The skill returns topology, code repository identity/root, settings paths, repo/task-specific task roots, temp/docs/system roots, worktree fields, ledger path, path rules, and cross-repo data. | L29-L53 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
-| Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use `.env` or the built-in coordination root default, require supported memory roots, and fail clearly when no memory exists. | L55-L65 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
+| Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use MCP settings or explicit/installed/default package roots for coordination, require supported memory roots, and fail clearly when no memory exists. | L55-L65 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | Consumers include C-02, C-03, C-04-retrieval-strategy-router, C-05, task workflows, and C-09; boundaries keep C-08 out of mutation work. | L84-L94 | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | The package implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and MCP/JSON output. | n/a | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 
@@ -61,6 +61,8 @@ C-08 may read coordinator settings, but no external repository behavior is requi
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` removed source-checkout `.env` resolver authority from C-08 guidance.
+- 2026-05-24T09:52+02:00: Updated after source-checkout `.env` and `.env.example` stopped being coordination-root resolver inputs.
 - 2026-05-24T04:34+02:00: Updated consumer references after C-02 was renamed to memory quality control.
 - 2026-05-23T17:50+02:00: Updated implementation reference after the resolver script route was removed from the skill tree and the MCP package became the only implementation route.
 - 2026-05-21T03:05+02:00: Updated the consumer list after C-04 became the retrieval strategy router.

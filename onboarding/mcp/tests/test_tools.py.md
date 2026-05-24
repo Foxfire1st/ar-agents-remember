@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T02:47+02:00                     |
-| lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
-| lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -21,9 +21,11 @@ behavior.
 
 The tests cover ping and server info payloads, FastMCP server construction,
 context-packet delegation, runtime install payload authority, the Phase 04 tool
-surface, Codex benchmark executable resolution through `PATH`, skills install
-copy-only behavior, replacement of legacy symlink/junction-style skill
-installations, configured harness-root requirements, memory init behavior,
+surface, Codex benchmark executable resolution through `PATH`, benchmark-only
+Codex execution policy reporting, skills install copy-only behavior,
+replacement of legacy symlink/junction-style skill
+installations, Codex `.codex` harness-root inference, configured
+harness-root requirements, memory init behavior,
 route index refresh behavior, memory quality check exposure, and provider/tool
 payload delegation.
 
@@ -41,6 +43,11 @@ Command-style artifact coverage verifies service-backed MCP tools do not expose
 The public tool surface should remain typed and package-owned. Tests should not
 permit arbitrary executable selection for benchmarks, arbitrary skill install
 roots, raw shell wrappers, or reintroduced script-era tool names.
+
+Codex benchmark tests should protect both failure recovery and policy
+visibility: missing-Codex payloads should name `PATH` resolution and include
+the benchmark-only execution policy, including whether the sandbox argument is
+passed or omitted for `default` mode.
 
 CGC tests should check fixed command construction rather than broad native
 argument forwarding.
@@ -61,6 +68,10 @@ command-capture response wrappers.
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` covered `.codex` skill roots and benchmark sandbox payloads.
+- 2026-05-24T09:23+02:00: Updated after MCP tool tests moved normal harness-root fixtures from `.agents` to Codex `.codex`.
+- 2026-05-24T08:56+02:00: Updated after missing-Codex benchmark payload coverage began asserting `sandboxArgument` for fixed and default sandbox modes.
+- 2026-05-24T06:57+02:00: Updated after missing-Codex benchmark payload tests began asserting explicit benchmark-only `PATH` resolution policy.
 - 2026-05-24T02:47+02:00: Updated after public tool expectations added `memory_quality_check`.
 - 2026-05-24T00:35+02:00: Added regression coverage that service-backed MCP tools no longer expose command-capture artifacts.
 - 2026-05-23T20:56+02:00: Added regression coverage that MCP provider tools do not route through `provider_lifecycle.main()`.

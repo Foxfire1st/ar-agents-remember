@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T04:34+02:00                     |
-| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
-| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,7 +24,7 @@
 
 The README opens with the stable positioning statement: Agents Remember is path-derived, git-verified memory for coding agents. It immediately shows the source-file to onboarding-unit mapping so readers understand the product before encountering workflow names or runtime folders.
 
-The previous long README install matrix was moved out of the front page. The root page now keeps one generic quickstart: clone beside target projects, configure the MCP server, request `runtime_install` for `ar-coordination`, note that reinstall reconciles package-owned runtime scaffold files while provider dependencies are MCP-owned, optionally add benchmark fixtures with `include_benchmarks=true`, expose packaged skills with `skills_install`, add workspace instructions that include `ar-coordination/AGENTS.md`, then ask the agent to initialize memory and bootstrap onboarding. Harness-specific setup links point to dedicated pages under `docs/install/`.
+The previous long README install matrix was moved out of the front page. The root page now keeps one generic quickstart: clone beside target projects, configure the MCP server, request `runtime_install` for `ar-coordination`, note that reinstall reconciles package-owned runtime scaffold files while provider dependencies are MCP-owned, optionally add benchmark fixtures with `include_benchmarks=true`, expose packaged skills with `skills_install`, add workspace instructions that include `ar-coordination/AGENTS.md`, then ask the agent to initialize memory and bootstrap onboarding. For Codex, the quickstart now uses `.codex/mcp` and `.codex/skills` as the normal harness registration and skill exposure folders. Harness-specific setup links point to dedicated pages under `docs/install/`.
 
 The README distinguishes the source checkout from the installed runtime. The source checkout packages `mcp/`, `runtime/`, optional benchmark package source, docs, and roadmap notes. The installed `ar-coordination/` runtime owns installed instructions, skills, optional benchmark package content, local coordination artifacts, external memory repos, worktrees, and temp files.
 
@@ -62,7 +62,7 @@ The README routes readers into the split documentation tree and gives the curren
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The README presents Agents Remember as path-derived, git-verified memory and shows the source-file to onboarding-unit mapping before the quickstart. | L1-L14 | [README.md](agents-remember-md/README.md) |
-| The quickstart installs runtime assets into `ar-coordination` through MCP `runtime_install`, states that provider dependencies are MCP-owned, optionally installs benchmarks with `include_benchmarks=true`, exposes packaged skills through `skills_install`, points workspace instructions at `ar-coordination/AGENTS.md`, then uses C-00 and C-03 for memory initialization and onboarding bootstrap. | L32-L82 | [README.md](agents-remember-md/README.md) |
+| The quickstart installs runtime assets into `ar-coordination` through MCP `runtime_install`, states that provider dependencies are MCP-owned, optionally installs benchmarks with `include_benchmarks=true`, exposes packaged skills through `skills_install`, uses `.codex/mcp` to infer `.codex/skills` for Codex, points workspace instructions at `ar-coordination/AGENTS.md`, then uses C-00 and C-03 for memory initialization and onboarding bootstrap. | L32-L82 | [README.md](agents-remember-md/README.md) |
 | The README now routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L81-L106 | [README.md](agents-remember-md/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees. | L108-L140 | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L39 | [docs/README.md](agents-remember-md/docs/README.md) |
@@ -77,6 +77,8 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` moved Codex setup to `.codex` and removed the source `.env` resolver path.
+- 2026-05-24T09:38+02:00: Updated after the public quickstart switched Codex MCP registration and skill exposure examples from `.agents` to `.codex`.
 - 2026-05-24T04:34+02:00: Updated after public docs renamed C-02 to memory quality control.
 - 2026-05-23T14:20+02:00: Updated after the public quickstart switched from deleted installer scripts to MCP `runtime_install` and copy-only `skills_install`.
 - 2026-05-23T13:46+02:00: Updated repository layout after provider lifecycle, provider setup, and benchmark runner behavior moved into `mcp/` and the source `scripts/` route was removed.

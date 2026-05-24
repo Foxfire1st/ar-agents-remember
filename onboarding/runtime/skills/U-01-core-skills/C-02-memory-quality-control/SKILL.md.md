@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                 |
 | path                   | `runtime/skills/U-01-core-skills/C-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-05-24T04:34+02:00                     |
-| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
-| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
+| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
+| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
 
 ## Purpose
 
@@ -21,7 +21,8 @@ closeout memory quality gate that runs before the memory content commit.
 ### Logic
 
 The skill instructs agents to use C-08/MCP context resolution, run `drift_check`
-as the task-start trust baseline, run
+as the task-start trust baseline, classify drift into clean-source update
+candidates versus dirty-source active work-in-progress, run
 `agents_remember.memory_quality.integrity.check_missing_onboarding` before a
 code commit when the task added source files, and run `memory_quality_check`
 after onboarding refresh and before the memory content commit. It keeps the
@@ -66,7 +67,7 @@ closeout.
 | Finding                                                                                                                                                                                                                                    | Citations | Source Path                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ---------------------------------------------------------------------------------------------------- |
 | The skill names task-start drift, pre-code-commit missing-onboarding checks, closeout `memory_quality_check`, and targeted style repair as one C-02 quality control workflow. | L27-L40 | [C-02 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-02-memory-quality-control/SKILL.md) |
-| Task-start quality control runs MCP `drift_check` and preserves the gradual-adoption boundary for historical files without onboarding. | L67-L91 | [C-02 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-02-memory-quality-control/SKILL.md) |
+| Task-start quality control runs MCP `drift_check`, preserves the gradual-adoption boundary for historical files without onboarding, and separates clean-source update candidates from dirty-source active work-in-progress before C-05 handoff. | L67-L91 | [C-02 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-02-memory-quality-control/SKILL.md) |
 | Pre-code-commit quality control runs `check_missing_onboarding` only against current worktree additions so newly added files cannot escape onboarding. | L147-L164 | [C-02 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-02-memory-quality-control/SKILL.md) |
 | Closeout quality control runs MCP `memory_quality_check` and uses focused fixers such as `history_order_fix.py` only after reported findings. | L166-L191 | [C-02 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-02-memory-quality-control/SKILL.md) |
 
@@ -80,6 +81,7 @@ No cross-repo evidence is needed for the current skill contract.
 
 ## Update History
 
+- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to C-02.
 - 2026-05-24T04:34+02:00: Refreshed verification metadata after C-02 memory quality control source landed.
 - 2026-05-24T04:05+02:00: Renamed C-02 to memory quality control and expanded the skill around drift, missing-onboarding, closeout quality, and style fixer procedures.
 - 2026-05-15T12:57+02:00: Documented entity catalog inventory-to-fingerprint reconciliation, including missing fingerprint rows and orphaned fingerprint rows. Verification metadata remains pinned until closeout commits the source change.
