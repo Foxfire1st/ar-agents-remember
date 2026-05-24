@@ -59,8 +59,8 @@ requiring controllers to call `main(argv)`.
 
 ## Update History
 
-- 2026-05-23T23:46+02:00: Updated after benchmark provider setup stopped reconstructing provider setup CLI arguments and started using `ProviderSetupRequest`.
 - 2026-05-24T00:35+02:00: Updated after benchmark controllers switched to service payload functions and structured progress messages.
+- 2026-05-23T23:46+02:00: Updated after benchmark provider setup stopped reconstructing provider setup CLI arguments and started using `ProviderSetupRequest`.
 - 2026-05-23T14:20+02:00: Updated after benchmark skill exposure became copy-only and stopped using the deleted `install-skills.sh` route.
-- 2026-05-23T13:09+02:00: Copied into the MCP package for Phase 04 benchmark tools.
 - 2026-05-23T13:46+02:00: Updated after benchmark provider setup stopped invoking the deleted source `scripts/` route.
+- 2026-05-23T13:09+02:00: Copied into the MCP package for Phase 04 benchmark tools.

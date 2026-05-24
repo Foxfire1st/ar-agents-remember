@@ -102,8 +102,8 @@ No sibling repository evidence is needed.
 - 2026-05-23T04:43+02:00: Updated coordinator tool onboarding for MCP `runtime_install` and the `providers/runners` provider layout.
 - 2026-05-21T17:16+02:00: Updated examples after daemon/server lifecycle actions began requiring durable host process namespaces and status began reporting `processNamespace`.
 - 2026-05-21T15:42+02:00: Updated examples after normal provider lifecycle commands began inferring the coordinator root from the installed script path.
-- 2026-05-21T12:35+02:00: Updated GrepAI lifecycle command notes for provider-owned mirror roots under the former `providers/grepai/index-roots/` runner path.
 - 2026-05-21T12:40+02:00: Updated CGC command doctrine to show `cgc visualize --port <port>` as the explicit long-running visualizer command, separate from bounded `cgc run` queries.
+- 2026-05-21T12:35+02:00: Updated GrepAI lifecycle command notes for provider-owned mirror roots under the former `providers/grepai/index-roots/` runner path.
 - 2026-05-21T11:50+02:00: Updated GrepAI command doctrine for backend status/start, runtime-owned binary usage, workspace-mode PostgreSQL config, and `.grepai/` containment checks.
 - 2026-05-21T04:53+02:00: Added shared `provider-setup.py` setup commands and documented CGC seed export/import with path rewrite for benchmark and worktree preparation.
 - 2026-05-21T03:05+02:00: Corrected GrepAI search to query-first JSON compact output and documented lifecycle-managed `cgc run` relationship queries.

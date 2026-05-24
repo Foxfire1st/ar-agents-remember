@@ -63,5 +63,5 @@ No sibling repository evidence is needed for this skill.
 - 2026-05-14T21:38+02:00: Refreshed after C-00 starter `settings.json` snippets gained the standard path-rule exclusion baseline. Verification metadata remains pinned to the last committed source until closeout.
 - 2026-05-12T18:51+02:00: Updated after the skill frontmatter moved to a lowercase skill name and explicit external-memory scaffolding stopped treating `.env.example` as runtime input.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
-- 2026-05-09T21:59: Created onboarding after C-00 was aligned to the ar-memory memory-root model.
 - 2026-05-09T22:57: Refreshed verification metadata and replaced design-spec-only evidence with current skill citations.
+- 2026-05-09T21:59: Created onboarding after C-00 was aligned to the ar-memory memory-root model.

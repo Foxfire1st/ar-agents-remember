@@ -43,5 +43,5 @@ functions.
 
 ## Update History
 
-- 2026-05-23T13:09+02:00: Copied into the MCP package and patched to package imports.
 - 2026-05-24T00:35+02:00: Updated after adding carryover request/service entry points for MCP controllers.
+- 2026-05-23T13:09+02:00: Copied into the MCP package and patched to package imports.

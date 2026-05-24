@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T00:35+02:00                     |
-| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
-| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
+| lastUpdated            | 2026-05-24T02:47+02:00                     |
+| lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
+| lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -24,7 +24,8 @@ context-packet delegation, runtime install payload authority, the Phase 04 tool
 surface, Codex benchmark executable resolution through `PATH`, skills install
 copy-only behavior, replacement of legacy symlink/junction-style skill
 installations, configured harness-root requirements, memory init behavior,
-route index refresh behavior, and provider/tool payload delegation.
+route index refresh behavior, memory quality check exposure, and provider/tool
+payload delegation.
 
 The CGC assertions verify that the generic `cgc_query` name stays absent from
 `PUBLIC_TOOLS`, and that typed CGC payloads build fixed native command suffixes
@@ -60,7 +61,8 @@ command-capture response wrappers.
 
 ## Update History
 
-- 2026-05-23T18:05+02:00: Created during direct closeout prep for public MCP tool test coverage.
-- 2026-05-23T20:42+02:00: Added typed CGC public-tool and fixed command-shape coverage.
-- 2026-05-23T20:56+02:00: Added regression coverage that MCP provider tools do not route through `provider_lifecycle.main()`.
+- 2026-05-24T02:47+02:00: Updated after public tool expectations added `memory_quality_check`.
 - 2026-05-24T00:35+02:00: Added regression coverage that service-backed MCP tools no longer expose command-capture artifacts.
+- 2026-05-23T20:56+02:00: Added regression coverage that MCP provider tools do not route through `provider_lifecycle.main()`.
+- 2026-05-23T20:42+02:00: Added typed CGC public-tool and fixed command-shape coverage.
+- 2026-05-23T18:05+02:00: Created during direct closeout prep for public MCP tool test coverage.

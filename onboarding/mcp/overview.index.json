@@ -8,12 +8,18 @@
   "sourceScope": [
     "mcp/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/memory_quality",
+      "overview": "mcp/src/agents_remember/memory_quality/overview.md",
+      "index": "mcp/src/agents_remember/memory_quality/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "mcp/src/agents_remember/benchmarks/runner.py",
+    "mcp/src/agents_remember/controllers/context_packet.py",
     "mcp/src/agents_remember/controllers/runtime_install.py",
     "mcp/src/agents_remember/controllers/skill_tools.py",
-    "mcp/src/agents_remember/drift/onboarding_drift.py",
     "mcp/src/agents_remember/install/__init__.py",
     "mcp/src/agents_remember/install/runtime.py",
     "mcp/src/agents_remember/install/skills.py",
@@ -41,6 +47,7 @@
     "mcp/tests/test_context_providers.py",
     "mcp/tests/test_install_runtime.py",
     "mcp/tests/test_integrity.py",
+    "mcp/tests/test_memory_quality.py",
     "mcp/tests/test_provider_lifecycle.py",
     "mcp/tests/test_provider_setup.py",
     "mcp/tests/test_resolver_parity.py",
@@ -49,9 +56,9 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 57,
-    "fileSidecars": 37,
-    "childRoutes": 0
+    "sourceFilesInScope": 65,
+    "fileSidecars": 38,
+    "childRoutes": 1
   },
   "routingTerms": [
     "agents",
@@ -64,12 +71,12 @@
     "command_capture",
     "config",
     "context",
+    "context_packet",
     "context_providers",
     "contract",
     "controllers",
     "coordination",
     "coordination_context_resolver",
-    "drift",
     "git",
     "git_worktree_manager",
     "index",
@@ -86,14 +93,14 @@
     "memory",
     "memory_init",
     "memory_ledger",
-    "onboarding",
-    "onboarding_drift",
+    "memory_quality",
     "packet",
     "parity",
     "provider",
     "provider_lifecycle",
     "provider_setup",
     "providers",
+    "quality",
     "remember",
     "resolver",
     "route",
@@ -117,6 +124,7 @@
     "test_context_providers",
     "test_install_runtime",
     "test_integrity",
+    "test_memory_quality",
     "test_provider_lifecycle",
     "test_provider_setup",
     "test_resolver_parity",
@@ -130,16 +138,16 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools, `controllers/context_packet.py` for startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.py`; runner executable integrity is checked by `providers/integrity.py` before watcher status is trusted.",
+    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools, `controllers/context_packet.py` for startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.py`; runner executable integrity is checked by `providers/integrity.py` before watcher status is trusted. Memory-layer quality control lives under `src/agents_...",
     "candidateHints": [
       "mcp",
+      "mcp/src/agents_remember/memory_quality",
       "mcp/src/agents_remember/benchmarks",
       "mcp/src/agents_remember/benchmarks/runner.py",
       "mcp/src/agents_remember/controllers",
+      "mcp/src/agents_remember/controllers/context_packet.py",
       "mcp/src/agents_remember/controllers/runtime_install.py",
       "mcp/src/agents_remember/controllers/skill_tools.py",
-      "mcp/src/agents_remember/drift",
-      "mcp/src/agents_remember/drift/onboarding_drift.py",
       "mcp/src/agents_remember/install",
       "mcp/src/agents_remember/install/__init__.py",
       "mcp/src/agents_remember/install/runtime.py",
@@ -160,12 +168,12 @@
     "anchorHints": [
       "runner.py",
       "runner",
+      "context_packet.py",
+      "context_packet",
       "runtime_install.py",
       "runtime_install",
       "skill_tools.py",
       "skill_tools",
-      "onboarding_drift.py",
-      "onboarding_drift",
       "__init__.py",
       "__init__",
       "runtime.py",

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T20:42+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T02:47+02:00                     |
+| lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
+| lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -23,6 +23,11 @@ Agents Remember tools.
 that delegate to payload builders. Phase 04 adds context, drift, route index,
 memory init, skill install, provider, worktree, memory baseline/carryover, and
 benchmark tools.
+
+The registered `memory_quality_check` tool accepts a repo id plus optional
+check names/detail limits and forwards them to the payload/controller layer. It
+is the full closeout quality gate; task-start guidance continues to use
+`drift_check` for the maintenance worklist.
 
 The public CGC provider surface is typed at registration time. The server
 registers `cgc_symbol_search`, `cgc_callers`, `cgc_callees`,
@@ -44,5 +49,6 @@ endpoint.
 
 ## Update History
 
-- 2026-05-23T13:09+02:00: Updated for the complete Phase 04 public MCP tool surface.
+- 2026-05-24T02:47+02:00: Updated after registering `memory_quality_check` as the closeout quality gate.
 - 2026-05-23T20:42+02:00: Updated CGC registration from generic `cgc_query` to typed CGC tools.
+- 2026-05-23T13:09+02:00: Updated for the complete Phase 04 public MCP tool surface.

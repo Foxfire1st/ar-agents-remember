@@ -89,8 +89,8 @@ contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
-- 2026-05-23T20:42+02:00: Replaced generic `cgc_query` guidance with typed CGC tool guidance.
 - 2026-05-23T21:25+02:00: Simplified provider-authority wording in the CGC tool guidance.
+- 2026-05-23T20:42+02:00: Replaced generic `cgc_query` guidance with typed CGC tool guidance.
 - 2026-05-23T13:46+02:00: Updated examples to use MCP `cgc_query` instead of the deleted source provider lifecycle script.
 - 2026-05-21T15:20+02:00: Replaced private-project examples with synthetic response-shape examples.
 - 2026-05-21T14:10+02:00: Created onboarding for the CGC high-level methods catalog.

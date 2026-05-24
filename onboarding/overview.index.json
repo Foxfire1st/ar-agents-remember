@@ -119,7 +119,7 @@
     "runtime/system/defaults/examples/memory-repo/tools.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 245,
+    "sourceFilesInScope": 253,
     "fileSidecars": 96,
     "childRoutes": 2
   },
@@ -206,7 +206,7 @@
     "onboarding"
   ],
   "hotPath": {
-    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, drift, worktree services, memory services, and integrity tools, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers workflow guidance for resolver, drift, bootstrap, onboarding, route-index, memory, and worktree tasks, and `runtime/skills/W-*` covers task w...",
+    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `runtime/agents-md-files` covers installed instruction templates, `runtime/skills/U-01-core-skills` covers workflow guidance for resolver, drift, bootstrap, onboarding, route-index, memory, and worktree tasks, and `runtime/skills/W-*` covers task workflows...",
     "candidateHints": [
       "mcp",
       "examples/mcp",
