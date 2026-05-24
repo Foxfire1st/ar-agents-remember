@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-22T16:39+02:00                                 |
-| lastVerifiedCommitHash | `7d45d37e091fab28d25aa993a922e2e9eb71ccb7`             |
-| lastVerifiedCommitDate | 2026-05-22T16:56:53+02:00|
+| lastUpdated            | 2026-05-24T04:34+02:00                     |
+| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
+| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
 
 ## Purpose
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-24T04:34+02:00: Updated references after C-02 was renamed to memory quality control.
 - 2026-05-22T16:39+02:00: Updated after existing-memory slice maintenance gained explicit preservation-first handling for moved or deleted route behavior. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-21T03:05+02:00: Updated the C-04 relationship to `C-04-retrieval-strategy-router`, with bootstrapped onboarding as its Intent substrate.
 - 2026-05-19T02:45+02:00: Updated for route-index `hotPath` support, including required root/route overview `## Hot Path Summary` sections and generated index refresh expectations.
