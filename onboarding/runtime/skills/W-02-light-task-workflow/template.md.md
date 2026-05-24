@@ -59,6 +59,6 @@ No sibling repository evidence is needed for the current template file.
 ## Update History
 
 - 2026-05-10T00:47: Updated after the W-02 template became the `task.md` file inside task wrapper folders.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for W-02 task template.
-- 2026-05-09T21:59: Updated after worktree task contracts became part of the light-task artifact placement rules.
 - 2026-05-09T22:57: Refreshed verification metadata and tightened template citations.
+- 2026-05-09T21:59: Updated after worktree task contracts became part of the light-task artifact placement rules.
+- 2026-05-09T21:15: Created first file-level onboarding baseline for W-02 task template.

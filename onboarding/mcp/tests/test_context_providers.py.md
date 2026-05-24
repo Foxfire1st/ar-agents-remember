@@ -67,8 +67,8 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
-- 2026-05-23T05:32+02:00: Updated provider layout expectations to `providers/runners` plus `providers/data`.
 - 2026-05-23T17:50+02:00: Moved onboarding to `mcp/tests` after the tests moved out of `runtime/skills/U-01-core-skills/tests` and updated imports to the MCP package provider module.
+- 2026-05-23T05:32+02:00: Updated provider layout expectations to `providers/runners` plus `providers/data`.
 - 2026-05-21T23:18+02:00: Updated after adding GrepAI disposable root artifact removal coverage.
 - 2026-05-21T13:22+02:00: Updated CGC patch tests for visualizer server route handling, CLI default-route propagation, CLI helper lookup, and the two new patch ids.
 - 2026-05-21T12:40+02:00: Updated CGC patch tests for the visualizer repo-query patch, `viz/server.py` module lookup, and patch id stability.

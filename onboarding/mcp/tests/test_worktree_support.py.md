@@ -80,13 +80,13 @@ No sibling repository evidence is needed for the test itself.
 - 2026-05-16T18:17+02:00: Added C-09 direct closeout coverage for entity fingerprint refresh planning and post-code-commit fingerprint rewriting before the memory commit.
 - 2026-05-15T12:57+02:00: Added C-02 regression coverage for entity inventory entries without fingerprint tables, missing fingerprint rows, orphaned fingerprint rows, and removed/renamed/moved guidance on missing evidence paths. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-15T11:46+02:00: Added deterministic C-02 tests for route-local overview drift and repo entity fingerprints. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-15T01:07+02:00: Added coverage for repo-specific C-08 `task_root` output when no task name is supplied. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-15T01:45+02:00: Added coverage for installed-runtime coordination roots with arbitrary directory names. Verification metadata remains pinned until closeout commits the source change.
+- 2026-05-15T01:07+02:00: Added coverage for repo-specific C-08 `task_root` output when no task name is supplied. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-12T10:59: Updated coverage summary after branch fields were removed from canonical ledgers and legacy branch metadata became non-blocking.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and corrected stale/placeholder test citation ranges after source verification.
 - 2026-05-11T18:34: Updated after resolver-facing and C-11 test namespaces switched from ambiguous repo args to `code_repository_name` and `code_repository_root`.
-- 2026-05-10T03:11: Updated after drift report path coverage began asserting explicit memory-root paths are redirected to coordination temp.
 - 2026-05-11T03:00: Updated after adding C-11 memory carryover fixtures for landed, ambiguous, and unlanded source branch memory.
+- 2026-05-10T03:11: Updated after drift report path coverage began asserting explicit memory-root paths are redirected to coordination temp.
 - 2026-05-10T03:01: Updated after adding C-09 direct checkout closeout fixture and dry-run/success/missing-onboarding tests.
 - 2026-05-10T01:55: Updated after adding closeout metadata refresh and missing-onboarding regression coverage.
 - 2026-05-10T01:19: Updated after adding closeout commit-approval preview and approval-note tests.
@@ -96,6 +96,6 @@ No sibling repository evidence is needed for the test itself.
 - 2026-05-10T00:36: Refreshed verification metadata after integration tests landed on main and removed a stale task-artifact reference.
 - 2026-05-09T23:55: Updated coverage summary after adding C-09 integration fast-forward, replay, and conflict-blocking tests.
 - 2026-05-09T23:22: Updated coverage summary after adding temp-root drift report path assertions.
-- 2026-05-09T21:59: Created onboarding for the worktree-support smoke tests.
-- 2026-05-09T22:10: Updated test coverage summary for malformed metadata, branch-mismatch blocking, compatible external-memory reporting, internal memory reporting, and cross-repo v2 include states.
 - 2026-05-09T22:46: Updated coverage summary for C-10 adoption status, drift blocking, and ledger creation tests.
+- 2026-05-09T22:10: Updated test coverage summary for malformed metadata, branch-mismatch blocking, compatible external-memory reporting, internal memory reporting, and cross-repo v2 include states.
+- 2026-05-09T21:59: Created onboarding for the worktree-support smoke tests.

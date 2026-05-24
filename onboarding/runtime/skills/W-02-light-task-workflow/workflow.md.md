@@ -64,6 +64,6 @@ No sibling repository evidence is needed for the current workflow file.
 - 2026-05-10T01:19: Updated after Phase 2 gained the closeout dry-run and explicit commit approval handoff for worktree-backed tasks.
 - 2026-05-10T00:56: Updated the C-09 handoff rule so refreshed external-memory onboarding and ledger changes are committed before worktree start.
 - 2026-05-10T00:47: Updated W-02 phase language so task wrapper folders are created before any C-09 worktree.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for W-02 workflow steps.
-- 2026-05-09T21:59: Updated for worktree-backed task folders and C-08 resolved tools/sources paths.
 - 2026-05-09T22:57: Refreshed verification metadata and updated W-02 citations.
+- 2026-05-09T21:59: Updated for worktree-backed task folders and C-08 resolved tools/sources paths.
+- 2026-05-09T21:15: Created first file-level onboarding baseline for W-02 workflow steps.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T00:35+02:00                     |
-| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
-| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00|
+| lastUpdated            | 2026-05-24T02:47+02:00                     |
+| lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
+| lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -27,6 +27,12 @@ MCP-generated settings instead of invoking `provider_lifecycle.main(argv)`.
 Worktree, baseline, carryover, and benchmark flows now call package service
 functions directly and return domain payloads instead of `argv`, `stdout`,
 `stderr`, or parsed-JSON wrapper artifacts.
+
+`memory_quality_check_tool()` resolves the target repository through MCP
+settings, builds a `DriftCheckContext`, and runs the full closeout quality gate
+through `agents_remember.memory_quality.check`. This keeps task-start drift
+inspection separate from the pre-memory-commit check that combines drift
+integrity with onboarding style checks.
 
 CodeGraphContext access is split into typed controller functions:
 `cgc_symbol_search_tool()`, `cgc_callers_tool()`, `cgc_callees_tool()`,
@@ -66,11 +72,13 @@ manager. That keeps worktree provider preparation independent of coordinator
 | Worktree provider setup consumes the generated settings path. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 | Memory baseline and carryover modules expose request/service functions for MCP controllers. | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py), [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
 | Benchmark runner exposes service payload functions that return progress as `messages` instead of raw stdout. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
+| Memory quality checks combine drift integrity and update-history style checks for closeout. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py) |
 
 ## Update History
 
-- 2026-05-23T13:09+02:00: Created for the Phase 04 skill MCP tool surface.
-- 2026-05-23T13:46+02:00: Updated for MCP-derived worktree provider settings after source scripts were removed.
-- 2026-05-23T20:42+02:00: Updated for typed CodeGraphContext controllers replacing the generic `cgc_query` facade.
-- 2026-05-23T20:56+02:00: Updated after MCP provider tools moved from provider lifecycle CLI capture to typed lifecycle service calls.
+- 2026-05-24T02:47+02:00: Updated after adding the `memory_quality_check` controller for closeout drift and onboarding style checks.
 - 2026-05-24T00:35+02:00: Updated after worktree, baseline, carryover, and benchmark controllers stopped using command-style `main(argv)` capture.
+- 2026-05-23T20:56+02:00: Updated after MCP provider tools moved from provider lifecycle CLI capture to typed lifecycle service calls.
+- 2026-05-23T20:42+02:00: Updated for typed CodeGraphContext controllers replacing the generic `cgc_query` facade.
+- 2026-05-23T13:46+02:00: Updated for MCP-derived worktree provider settings after source scripts were removed.
+- 2026-05-23T13:09+02:00: Created for the Phase 04 skill MCP tool surface.

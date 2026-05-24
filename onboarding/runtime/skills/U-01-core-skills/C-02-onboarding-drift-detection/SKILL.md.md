@@ -70,6 +70,6 @@ No cross-repo evidence is needed for the current skill contract.
 - 2026-05-10T03:11: Updated after C-02 documented that explicit report paths inside `memory_root` are redirected to coordination temp.
 - 2026-05-10T00:36: Refreshed verification metadata after the temp-root drift report behavior landed on main.
 - 2026-05-09T23:22: Updated after C-02 moved default drift reports under C-08's temporary artifact root.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for C-02 skill documentation.
-- 2026-05-09T21:59: Updated after C-08 split memory roots from coordination roots.
 - 2026-05-09T22:57: Refreshed verification metadata and clarified that reports are coordination artifacts.
+- 2026-05-09T21:59: Updated after C-08 split memory roots from coordination roots.
+- 2026-05-09T21:15: Created first file-level onboarding baseline for C-02 skill documentation.

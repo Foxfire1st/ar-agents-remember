@@ -73,6 +73,6 @@ C-08 may read coordinator settings, but no external repository behavior is requi
 - 2026-05-10T00:47: Updated after task-name contract resolution moved to wrapper folders with persisted `*-ar` contract discovery.
 - 2026-05-10T00:36: Refreshed verification metadata after the `temp_root` resolver contract landed on main.
 - 2026-05-09T23:22: Updated after C-08 added `temp_root` to the resolver output contract.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for C-08 skill documentation.
-- 2026-05-09T21:59: Updated after the resolver contract added memory/coordination roots, contract fields, ledger path, and cross-repo v2 shape.
 - 2026-05-09T22:57: Refreshed verification metadata and updated citations for the current resolver layout.
+- 2026-05-09T21:59: Updated after the resolver contract added memory/coordination roots, contract fields, ledger path, and cross-repo v2 shape.
+- 2026-05-09T21:15: Created first file-level onboarding baseline for C-08 skill documentation.

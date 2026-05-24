@@ -94,8 +94,8 @@ The README describes external memory in general terms, but this file-level onboa
 - 2026-05-12T11:30: Updated after the external-memory example wording focused on the inspectable memory repo rather than repeating the code repository link.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
 - 2026-05-11T18:34: Updated after the resolver overview adopted `code_repository_name`, `code_repository_root`, and `coordination_root` terminology.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for the public repository overview.
-- 2026-05-09T21:59: Updated for ar-memory/ar-coordination split, C-09, and resolver contract changes.
 - 2026-05-10T03:01: Updated after the README added C-09 direct-closeout as the lightweight current-checkout path for approved external-memory micro edits.
 - 2026-05-10T02:20: Updated after the README added a working external-memory repo example and links to the code and memory repositories.
 - 2026-05-09T22:46: Updated for the C-10 adoption skill entry.
+- 2026-05-09T21:59: Updated for ar-memory/ar-coordination split, C-09, and resolver contract changes.
+- 2026-05-09T21:15: Created first file-level onboarding baseline for the public repository overview.

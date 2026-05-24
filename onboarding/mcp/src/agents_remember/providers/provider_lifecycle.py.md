@@ -49,5 +49,5 @@ provider commands for GrepAI and CodeGraphContext.
 
 ## Update History
 
-- 2026-05-23T13:46+02:00: Added after lifecycle behavior became package-local MCP code and the source `scripts/` route was removed.
 - 2026-05-23T20:56+02:00: Updated after MCP provider tools moved from `main(argv)` command capture to typed lifecycle service calls.
+- 2026-05-23T13:46+02:00: Added after lifecycle behavior became package-local MCP code and the source `scripts/` route was removed.

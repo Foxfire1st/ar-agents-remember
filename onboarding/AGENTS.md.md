@@ -114,6 +114,6 @@ delegates sibling-repository work to the installed runtime instructions.
 - 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
 - 2026-05-11T18:34: Updated after the memory system rules switched fallback resolver language to `code_repository_name` and `code_repository_root`.
 - 2026-05-10T03:01: Updated after chat-mode closeout guidance routed approved micro edits through C-09 `direct-closeout`.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for the agent operating contract.
-- 2026-05-09T21:59: Updated for split memory/coordination terminology and C-09 worktree context.
 - 2026-05-09T22:57: Refreshed against commit `bb95b99` and tightened references around the six-gate onboarding workflow.
+- 2026-05-09T21:59: Updated for split memory/coordination terminology and C-09 worktree context.
+- 2026-05-09T21:15: Created first file-level onboarding baseline for the agent operating contract.

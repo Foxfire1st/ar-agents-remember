@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                           |
 | path                   | `runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-05-16T18:17+02:00                                       |
-| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a`                   |
-| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
+| lastUpdated            | 2026-05-24T02:47+02:00                                       |
+| lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3`                   |
+| lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00|
 
 ## Purpose
 
@@ -21,11 +21,11 @@ The skill defines `start`, `attach`, `status`, `closeout`, `direct-closeout`, `i
 
 ### Conventions
 
-C-09 is a wrapper, not a replacement workflow. Task identity should be settled before worktree creation: W-02 creates `<task-root>/<task-slug>/task.md`, then C-09 adds `contract.md` beside it. External memory incompatibility is interactive and offers reconciliation, clean start, disabled memory, or custom handling; dirty source memory blocks start until memory content and ledger updates are committed or the developer chooses disabled memory. Closeout dry-run is the non-mutating commit preview path and reports the onboarding metadata and entity fingerprint refresh plan; real closeout needs `--approved` plus an approval note, commits code first, refreshes affected onboarding verification metadata and `git-blob-set-v1` entity fingerprints to that code commit, then commits memory and ledger. Direct closeout follows the same approval and commit ordering without a worktree contract, and is reserved for approved small current-checkout edits or memory-only polish where worktree isolation would add no value. Integration has two strategies: `ff-only` for unchanged source branches and `replay` for parallel non-overlapping work that already moved source branches.
+C-09 is a wrapper, not a replacement workflow. Task identity should be settled before worktree creation: W-02 creates `<task-root>/<task-slug>/task.md`, then C-09 adds `contract.md` beside it. External memory incompatibility is interactive and offers reconciliation, clean start, disabled memory, or custom handling; dirty source memory blocks start until memory content and ledger updates are committed or the developer chooses disabled memory. Closeout dry-run is the non-mutating commit preview path and reports the onboarding metadata and entity fingerprint refresh plan; real closeout needs `--approved` plus an approval note, commits code first, runs drift detection against that code commit to produce the maintenance worklist, refreshes affected onboarding verification metadata and `git-blob-set-v1` entity fingerprints, runs `memory_quality_check`, then commits memory and ledger when the check is clean. Direct closeout follows the same approval and commit ordering without a worktree contract, and is reserved for approved small current-checkout edits or memory-only polish where worktree isolation would add no value. Integration has two strategies: `ff-only` for unchanged source branches and `replay` for parallel non-overlapping work that already moved source branches.
 
 ### Invariants And Boundaries
 
-C-09 must not use divergent memory as trusted reference context and must not auto-commit at workflow finish. Closeout dry-run may run before commit approval because it does not mutate Git. Real worktree closeout requires explicit commit approval evidence, stops when recorded source branches moved since task start, and must not create a memory content commit whose affected onboarding metadata or entity fingerprints still point at pre-closeout code. Direct closeout also requires explicit commit approval evidence, requires external memory with matching code/memory checkout branches, and blocks before code commit when required onboarding is missing. Integration requires explicit approval, must not move source branches until code and memory commits are fast-forwardable, must regenerate memory ledger rows after replay, and must ask before cleanup. Cleanup requires integration completion and explicit approval.
+C-09 must not use divergent memory as trusted reference context and must not auto-commit at workflow finish. Closeout dry-run may run before commit approval because it does not mutate Git. Real worktree closeout requires explicit commit approval evidence, stops when recorded source branches moved since task start, and must not create a memory content commit until drift has been reviewed, onboarding has been refreshed, and `memory_quality_check` is clean. Direct closeout also requires explicit commit approval evidence, requires external memory with matching code/memory checkout branches, and blocks before code commit when required onboarding is missing. Integration requires explicit approval, must not move source branches until code and memory commits are fast-forwardable, must regenerate memory ledger rows after replay, and must ask before cleanup. Cleanup requires integration completion and explicit approval.
 
 ### Todos
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-24T02:47+02:00: Updated closeout guidance to run drift after the code commit, refresh memory, run `memory_quality_check`, then commit memory and ledger.
 - 2026-05-16T18:17+02:00: Documented that external-memory closeout refreshes affected repo entity catalog fingerprints after the code commit and before the memory-content commit.
 - 2026-05-12T10:59: Updated the direct-closeout contract after ledger branch metadata stopped being a compatibility condition.
 - 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and corrected C-09 source citation ranges after confirming the coordination rename behavior remains current.
@@ -73,6 +74,6 @@ No sibling repository evidence is needed for the skill itself.
 - 2026-05-10T00:47: Updated for pre-worktree intake, wrapper task placement, lifecycle status, and cleanup command behavior.
 - 2026-05-10T00:36: Refreshed verification metadata after approval-gated integration landed on main.
 - 2026-05-09T23:55: Updated after documenting the C-09 integration phase and replay/conflict rules.
-- 2026-05-09T21:59: Created onboarding for the new C-09 skill.
-- 2026-05-09T22:10: Updated closeout boundary to include source-branch movement checks.
 - 2026-05-09T22:57: Refreshed verification metadata and replaced task-artifact citations with current skill/spec evidence.
+- 2026-05-09T22:10: Updated closeout boundary to include source-branch movement checks.
+- 2026-05-09T21:59: Created onboarding for the new C-09 skill.
