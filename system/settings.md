@@ -16,7 +16,7 @@ Onboarding uses `memory-repo` storage. Eligible onboarding artifacts live under 
 
 The path rules in `settings.json` are unscoped because this memory repo maps to exactly one code repo: `agents-remember-md`.
 
-Benchmark case metadata and documentation may be source material, but resettable benchmark workspaces are not. `settings.json` explicitly excludes benchmark `user-runs/` and all package-owned case workspaces so cloned repos, workspace-local `ar-coordination/` trees, and packaged benchmark memory snapshots cannot recursively generate onboarding for themselves.
+Benchmark case metadata and documentation may be source material, but resettable benchmark workspaces are not. `settings.json` explicitly excludes benchmark `user-runs/`, benchmark workspaces, and packaged benchmark fixture data under `mcp/src/agents_remember/package_data/benchmarks/**` so cloned repos, workspace-local `ar-coordination/` trees, and packaged benchmark memory snapshots cannot recursively generate onboarding for themselves.
 
 The current MCP work adds first-class source under `mcp/**`, source-owned
 operational helpers under `scripts/**`, and the authority-settings example

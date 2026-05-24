@@ -35,6 +35,7 @@
           "roadmap/**",
           "benchmarks/user-runs/**",
           "benchmarks/workspaces/**",
+          "mcp/src/agents_remember/package_data/benchmarks/**",
           "node_modules/**",
           "vendor/**",
           "dist/**",

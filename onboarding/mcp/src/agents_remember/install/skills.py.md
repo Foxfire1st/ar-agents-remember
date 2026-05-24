@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/skills.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T17:34+02:00                     |
-| lastVerifiedCommitHash | `a6890ae469b70ef045a127fc774d6aa51a54e65a` |
-| lastVerifiedCommitDate | 2026-05-23T18:31:48+02:00|
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T03:24+02:00                     |
-| lastVerifiedCommitHash | `3789c3eba5e6e03889635f19ad3793b9c6bf5a78` |
-| lastVerifiedCommitDate | 2026-05-24T03:24:51+02:00|
+| lastUpdated            | 2026-05-24T18:51+02:00                     |
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -22,7 +22,10 @@ for eligible source files that do not yet have their required onboarding pair.
 The script collects added, copied, renamed, and untracked files from Git status
 sources, resolves each path through the same storage/path-rule helpers used by
 drift detection, and reports missing sidecar or inline onboarding for eligible
-new files. It intentionally does not scan the whole historical repository.
+new files. For CLI runs it derives the canonical repository name from Git's
+common directory, so a linked worktree can be named after the task without
+changing external-memory resolution. It intentionally does not scan the whole
+historical repository.
 
 ### Conventions
 
@@ -37,6 +40,10 @@ code and refresh the new sidecars to the real code commit hash.
 - Inline-managed files require an inline onboarding block.
 - Unsupported storage modes are reported instead of guessed.
 - Git subprocesses use `stdin=subprocess.DEVNULL`.
+- Linked-worktree basenames are not repository identifiers; the Git common
+  directory is the repository identity source for CLI resolution.
+- Sidecar existence and inline source reads use the shared filesystem helper so
+  long Windows paths are checked consistently.
 
 ## Repo-Internal References
 
@@ -45,8 +52,10 @@ code and refresh the new sidecars to the real code commit hash.
 | Drift helpers provide sidecar path construction and inline block parsing. | [drift.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
 | Resolver helpers provide storage/path-rule decisions. | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 | Tests cover untracked, staged, excluded, and renamed file cases. | [test_missing_onboarding.py](agents-remember-md/mcp/tests/test_missing_onboarding.py) |
+| The kernel filesystem helper handles long-path sidecar and source probes. | [filesystem.py](agents-remember-md/mcp/src/agents_remember/kernel/filesystem.py) |
 
 ## Update History
 
+- 2026-05-24T18:51+02:00: Updated after the CLI began deriving repository identity from Git common directories and using long-path-safe filesystem probes.
 - 2026-05-24T03:24+02:00: Refreshed verification metadata after the source commit landed.
 - 2026-05-24T03:22+02:00: Created before the source commit so the new file has an onboarding pair before closeout.

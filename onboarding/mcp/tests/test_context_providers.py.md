@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T05:32+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-24T19:25+02:00                     |
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,6 +26,10 @@ The test module imports `agents_remember.providers.context_providers` from the M
 
 The provider-settings tests cover CGC multi-root settings expansion, root-level `cgcignorePatterns`, and rejection of configured code repository roots that do not exist. The cleanup test creates a synthetic stale `my-app` runtime instance plus legacy `db`, `global`, and `kuzu` artifacts under a configured runtime root, then verifies cleanup removes only those generated artifacts while preserving the shared FalkorDB backend data root. The GrepAI tests cover pin handling, workspace runtime paths, explicit external and repo-internal memory roots, provider-owned mirror roots, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, detection of `.grepai/` artifacts in indexed roots, and removal of disposable `.grepai/` artifacts without touching durable onboarding files. The remaining tests cover forbidden source artifact detection, idempotent CGC patch application including the visualizer repo-query and route patches, CGC module lookup helpers including the CLI helper, rejection of unexpected patch source text, stable repo id normalization, and stable patch id naming.
 
+CGC layout tests also cover that ambient host `FALKORDB_HOST` and
+`FALKORDB_PORT` values do not alter default layout env or provider-settings
+`hostPort=auto` expansion.
+
 ### Conventions
 
 All tests use temporary directories and do not require CodeGraphContext, GrepAI, Docker, FalkorDB, or PostgreSQL to be installed. The `my-app` directory name appears only as synthetic test data to prove stale generated runtime folders are removed; it is not intended live configuration. The GrepAI tests verify generated config text and path containment, not live indexing. The patch tests use small synthetic snippets rather than mutating a real provider package.
@@ -33,6 +37,9 @@ All tests use temporary directories and do not require CodeGraphContext, GrepAI,
 ### Invariants And Boundaries
 
 The tests protect the core provider invariant: managed provider artifacts belong under `ar-coordination/providers/`, not as durable source or memory data. They also protect reinstall idempotence by proving stale generated runtime instances, legacy embedded-backend files, and disposable GrepAI root artifacts can be removed without touching shared backend data or onboarding files, and that GrepAI's durable database data root is separate from provider-owned config/log/state/mirror scaffolding.
+
+The tests protect that provider backend env authority stays in settings/state,
+not ambient host process variables.
 
 ### Todos
 
@@ -67,6 +74,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-24T19:25+02:00: Added coverage that CGC FalkorDB host/port defaults ignore ambient host `FALKORDB_*` environment variables.
 - 2026-05-23T17:50+02:00: Moved onboarding to `mcp/tests` after the tests moved out of `runtime/skills/U-01-core-skills/tests` and updated imports to the MCP package provider module.
 - 2026-05-23T05:32+02:00: Updated provider layout expectations to `providers/runners` plus `providers/data`.
 - 2026-05-21T23:18+02:00: Updated after adding GrepAI disposable root artifact removal coverage.

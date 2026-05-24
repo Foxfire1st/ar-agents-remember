@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T10:06+02:00                     |
-| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
-| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
+| lastUpdated            | 2026-05-24T19:25+02:00                     |
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -27,6 +27,12 @@ MCP-generated settings instead of invoking `provider_lifecycle.main(argv)`.
 Worktree, baseline, carryover, and benchmark flows now call package service
 functions directly and return domain payloads instead of `argv`, `stdout`,
 `stderr`, or parsed-JSON wrapper artifacts.
+
+Provider operation flows share `_provider_lifecycle_result()`. Before writing
+temporary lifecycle settings or calling CGC, GrepAI, or watcher services, it
+checks provider-runner integrity and returns `state=runnerIntegrityFailed` with
+a `runtime_install` recovery action when installed runner files are missing from
+or changed against the manifest.
 
 `memory_quality_check_tool()` resolves the target repository through MCP
 settings, builds a `DriftCheckContext`, and runs the full closeout quality gate
@@ -66,6 +72,9 @@ the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
   typed controller for each CGC operation the skills need.
 - Provider tools should call `providers.lifecycle_service`, not the provider
   lifecycle CLI `main(argv)`.
+- Provider lifecycle calls should be blocked when provider runner integrity
+  fails; `provider_status` is the read-only surface for inspecting the failure
+  details.
 - Worktree, baseline, carryover, and benchmark tools should call package
   service functions directly; CLI entrypoints remain print adapters, not MCP
   controller targets.
@@ -91,6 +100,7 @@ the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
 
 ## Update History
 
+- 2026-05-24T19:25+02:00: Updated after provider operation controllers gained a shared runner-integrity preflight that blocks lifecycle execution on manifest drift.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` forwarded benchmark sandbox options through MCP controller payloads.
 - 2026-05-24T08:56+02:00: Updated after `codex_benchmark_run_tool()` began forwarding the allowlisted `codex_sandbox` mode into success and missing-Codex policy payloads.
 - 2026-05-24T06:57+02:00: Updated after Codex benchmark missing-executable responses started exposing benchmark-only `PATH` resolution policy.

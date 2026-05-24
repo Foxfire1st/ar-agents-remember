@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T10:06+02:00                     |
-| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
-| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
+| lastUpdated            | 2026-05-24T19:25+02:00                     |
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -38,6 +38,11 @@ the MCP provider path regresses from `lifecycle_service` back to CLI capture.
 Command-style artifact coverage verifies service-backed MCP tools do not expose
 `argv`, `stdout`, `stderr`, or parsed `payload` wrapper fields.
 
+Provider operation integrity coverage creates a provider runner file without a
+manifest and asserts CGC query and watcher-start payloads return
+`runnerIntegrityFailed` before lifecycle settings are written or lifecycle
+services execute.
+
 ### Invariants And Boundaries
 
 The public tool surface should remain typed and package-owned. Tests should not
@@ -55,6 +60,9 @@ argument forwarding.
 Provider MCP tests should protect that provider lifecycle calls use the typed
 service layer, not `main(argv)`.
 
+Provider MCP tests should also protect that runner-integrity failures block
+provider operations before lifecycle execution.
+
 Service-backed MCP tool tests should protect stable domain payloads rather than
 command-capture response wrappers.
 
@@ -68,6 +76,7 @@ command-capture response wrappers.
 
 ## Update History
 
+- 2026-05-24T19:25+02:00: Added regression coverage that provider runner integrity failures block CGC query and watcher execution before lifecycle services run.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` covered `.codex` skill roots and benchmark sandbox payloads.
 - 2026-05-24T09:23+02:00: Updated after MCP tool tests moved normal harness-root fixtures from `.agents` to Codex `.codex`.
 - 2026-05-24T08:56+02:00: Updated after missing-Codex benchmark payload coverage began asserting `sandboxArgument` for fixed and default sandbox modes.

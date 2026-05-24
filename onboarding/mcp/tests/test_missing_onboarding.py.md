@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_missing_onboarding.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T03:24+02:00                     |
-| lastVerifiedCommitHash | `3789c3eba5e6e03889635f19ad3793b9c6bf5a78` |
-| lastVerifiedCommitDate | 2026-05-24T03:24:51+02:00|
+| lastUpdated            | 2026-05-24T18:51+02:00                     |
+| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
+| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -21,7 +21,8 @@ check for current worktree additions.
 
 The tests build temporary Git repositories and memory onboarding roots, then
 exercise the checker against untracked additions, staged additions with existing
-sidecars, path-rule-excluded additions, and renamed targets. The checks prove
+sidecars, path-rule-excluded additions, renamed targets, and a linked worktree
+whose directory name differs from the real repository name. The checks prove
 that the script reports only local new worktree responsibility rather than
 historical repository gaps.
 
@@ -31,6 +32,8 @@ historical repository gaps.
 - A staged added file with a sidecar is clean.
 - Excluded files are ignored by path rules.
 - Rename targets require onboarding at the target path.
+- CLI resolution must use Git repository identity, not a task-specific linked
+  worktree basename.
 
 ## Repo-Internal References
 
@@ -41,5 +44,6 @@ historical repository gaps.
 
 ## Update History
 
+- 2026-05-24T18:51+02:00: Added coverage for renamed linked worktrees resolving external memory by Git common-directory repository identity.
 - 2026-05-24T03:24+02:00: Refreshed verification metadata after the source commit landed.
 - 2026-05-24T03:22+02:00: Created before the source commit so the new test file has an onboarding pair before closeout.
