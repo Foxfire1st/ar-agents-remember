@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T23:46+02:00                     |
-| lastVerifiedCommitHash | `7a12e014c773612105fb91e897c94c9808a61527` |
-| lastVerifiedCommitDate | 2026-05-23T23:56:58+02:00|
+| lastUpdated            | 2026-05-24T05:48+02:00                     |
+| lastVerifiedCommitHash | `98af161a6c8d77f7dfc30457c9f6ab1c20e411ab` |
+| lastVerifiedCommitDate | 2026-05-24T06:49:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -27,6 +27,11 @@ with typed CGC seed and isolated-runtime options for worktree and benchmark
 flows. The CLI remains a dev/operator wrapper that parses arguments into the
 same request shape and requires `--from-settings`.
 
+During `prepare`, CGC seeding is an optimization before full refresh. If seed
+cannot run and `cgc_refresh_fallback` is enabled, the payload remains successful
+as long as the fallback refresh path succeeds; the seed result still records the
+skipped or failed seed detail for diagnostics.
+
 ### Invariants And Boundaries
 
 - MCP worktree provider setup must pass `--from-settings`; it must not depend on
@@ -39,6 +44,8 @@ same request shape and requires `--from-settings`.
 - Child subprocess helpers use `stdin=subprocess.DEVNULL` so provider children
   cannot consume the MCP stdio transport.
 - This module is a typed provider setup facade, not a generic shell runner.
+- A failed CGC seed must not fail the whole prepare operation when the existing
+  refresh fallback is enabled and then runs.
 
 ## Repo-Internal References
 
@@ -50,5 +57,6 @@ same request shape and requires `--from-settings`.
 
 ## Update History
 
+- 2026-05-24T05:48+02:00: Updated after CGC seed failure stopped failing provider prepare payloads when the existing refresh fallback is enabled.
 - 2026-05-23T23:46+02:00: Updated after Phase 05 F-05 made provider setup require explicit settings and added the typed `ProviderSetupRequest` service front door.
 - 2026-05-23T13:46+02:00: Added when provider setup moved from the deleted source `scripts/` route into the MCP package.
