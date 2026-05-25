@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                     |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/grepai-high-leverage-usage.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8`             |
-| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
+| lastUpdated            | 2026-05-25T18:07+02:00                     |
+| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f`             |
+| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -28,10 +28,10 @@ state.
 
 The document starts with the MCP managed invocation contract: request GrepAI
 through `grepai_search`, `grepai_trace`, and `provider_status` so the server
-selects the runtime-owned binary and provider-owned environment. It then maps
-common semantic retrieval questions to broad workspace search, compact JSON
-anchors, snippet search, project scoping, path scoping, trace commands, status,
-and stats.
+selects the Docker runner container and provider-owned environment. It then
+maps common semantic retrieval questions to broad workspace search, compact
+JSON anchors, snippet search, project scoping, path scoping, trace commands,
+status, and stats.
 
 The examples focus on broad semantic routing, scoped project search,
 route-scoped snippet search, GrepAI trace as a fallback relationship tool, and
@@ -101,6 +101,7 @@ contain private sibling repository names, symbols, paths, snippets, or results.
 
 ## Update History
 
+- 2026-05-25T18:07+02:00: Updated managed invocation commentary after GrepAI became Docker-runner-owned rather than runtime-binary-owned.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T00:37+02:00: Refreshed verification and citations after the catalog moved fully to MCP provider-tool invocation examples.
 - 2026-05-23T13:46+02:00: Updated examples to use MCP provider tools instead of direct runtime binary or deleted source lifecycle script calls.

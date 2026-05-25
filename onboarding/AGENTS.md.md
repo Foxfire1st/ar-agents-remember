@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T04:34+02:00                     |
-| lastVerifiedCommitHash | `77537b014e3e553825ac79539428ccdcbde88ee9` |
-| lastVerifiedCommitDate | 2026-05-24T04:34:20+02:00|
+| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
+| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
 
 ## Purpose
 

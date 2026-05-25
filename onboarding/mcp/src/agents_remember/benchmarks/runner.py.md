@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T10:06+02:00                     |
-| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
-| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
+| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
+| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose

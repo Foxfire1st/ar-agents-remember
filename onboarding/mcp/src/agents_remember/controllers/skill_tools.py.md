@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T19:25+02:00                     |
-| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
-| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
+| lastUpdated            | 2026-05-25T19:16+02:00                     |
+| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
+| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -23,12 +23,12 @@ provider, worktree, memory, benchmark, and skill-install services.
 The module keeps model-facing tools away from arbitrary shell execution by
 constructing explicit package-local calls and fixed provider argument vectors.
 Provider flows call the typed `providers.lifecycle_service` API with
-MCP-generated settings instead of invoking `provider_lifecycle.main(argv)`.
+MCP-generated settings instead of invoking `lifecycle.main(argv)`.
 Worktree, baseline, carryover, and benchmark flows now call package service
 functions directly and return domain payloads instead of `argv`, `stdout`,
 `stderr`, or parsed-JSON wrapper artifacts.
 
-Provider operation flows share `_provider_lifecycle_result()`. Before writing
+Provider operation flows share `_provider_operation_result()`. Before writing
 temporary lifecycle settings or calling CGC, GrepAI, or watcher services, it
 checks provider-runner integrity and returns `state=runnerIntegrityFailed` with
 a `runtime_install` recovery action when installed runner files are missing from
@@ -100,6 +100,7 @@ the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
 
 ## Update History
 
+- 2026-05-25T19:16+02:00: Updated after provider lifecycle wording switched to the direct `providers.lifecycle` facade.
 - 2026-05-24T19:25+02:00: Updated after provider operation controllers gained a shared runner-integrity preflight that blocks lifecycle execution on manifest drift.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` forwarded benchmark sandbox options through MCP controller payloads.
 - 2026-05-24T08:56+02:00: Updated after `codex_benchmark_run_tool()` began forwarding the allowlisted `codex_sandbox` mode into success and missing-Codex policy payloads.

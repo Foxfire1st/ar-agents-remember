@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T19:25+02:00                     |
-| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
-| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
+| lastUpdated            | 2026-05-25T19:16+02:00                     |
+| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
+| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,7 +22,7 @@
 
 ### Logic
 
-The test module imports `agents_remember.providers.context_providers` from the MCP package source path. It checks that CGC runtime layout expansion produces a contained per-repo runner root, shared provider venv, pinned requirements file, patch root, durable `providers/data` FalkorDB backend root, FalkorDB process env, and isolated HOME-like runtime directories. It verifies that `ensure_cgc_runtime_layout` writes pinned defaults, inherits source `.gitignore` rules into the managed `.cgcignore`, and excludes process-only CGC/FalkorDB runtime keys from persisted `.env`.
+The test module imports `agents_remember.providers.context` from the MCP package source path. It checks that CGC runtime layout expansion produces a contained per-repo runner root, shared provider venv, pinned requirements file, patch root, durable `providers/data` FalkorDB backend root, FalkorDB process env, and isolated HOME-like runtime directories. It verifies that `ensure_cgc_runtime_layout` writes pinned defaults, inherits source `.gitignore` rules into the managed `.cgcignore`, and excludes process-only CGC/FalkorDB runtime keys from persisted `.env`.
 
 The provider-settings tests cover CGC multi-root settings expansion, root-level `cgcignorePatterns`, and rejection of configured code repository roots that do not exist. The cleanup test creates a synthetic stale `my-app` runtime instance plus legacy `db`, `global`, and `kuzu` artifacts under a configured runtime root, then verifies cleanup removes only those generated artifacts while preserving the shared FalkorDB backend data root. The GrepAI tests cover pin handling, workspace runtime paths, explicit external and repo-internal memory roots, provider-owned mirror roots, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, detection of `.grepai/` artifacts in indexed roots, and removal of disposable `.grepai/` artifacts without touching durable onboarding files. The remaining tests cover forbidden source artifact detection, idempotent CGC patch application including the visualizer repo-query and route patches, CGC module lookup helpers including the CLI helper, rejection of unexpected patch source text, stable repo id normalization, and stable patch id naming.
 
@@ -74,6 +74,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-25T19:16+02:00: Updated after tests imported the direct `providers.context` facade and provider context implementation moved into `context_modules/`.
 - 2026-05-24T19:25+02:00: Added coverage that CGC FalkorDB host/port defaults ignore ambient host `FALKORDB_*` environment variables.
 - 2026-05-23T17:50+02:00: Moved onboarding to `mcp/tests` after the tests moved out of `runtime/skills/U-01-core-skills/tests` and updated imports to the MCP package provider module.
 - 2026-05-23T05:32+02:00: Updated provider layout expectations to `providers/runners` plus `providers/data`.
