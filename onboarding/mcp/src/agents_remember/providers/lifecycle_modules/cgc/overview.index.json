@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "mcp/src/agents_remember/providers/lifecycle_modules/cgc",
+  "overview": "mcp/src/agents_remember/providers/lifecycle_modules/cgc/overview.md",
+  "index": "mcp/src/agents_remember/providers/lifecycle_modules/cgc/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/providers/lifecycle_modules/cgc/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/providers/lifecycle_modules/cgc/__init__.py",
+    "mcp/src/agents_remember/providers/lifecycle_modules/cgc/backend.py",
+    "mcp/src/agents_remember/providers/lifecycle_modules/cgc/core.py",
+    "mcp/src/agents_remember/providers/lifecycle_modules/cgc/installation.py",
+    "mcp/src/agents_remember/providers/lifecycle_modules/cgc/process.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 5,
+    "fileSidecars": 5,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "backend",
+    "cgc",
+    "core",
+    "init",
+    "init__",
+    "installation",
+    "lifecycle",
+    "lifecycle_modules",
+    "mcp",
+    "modules",
+    "process",
+    "providers",
+    "remember",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "`__init__.py` re-exports the CGC public lifecycle surface. `core.py` derives settings and runtime layout, `backend.py` manages the FalkorDB Docker backend, `installation.py` owns install/status/patch/doctor behavior, and `process.py` owns watcher processes, bounded native commands, refresh, and visualization.",
+    "candidateHints": [
+      "mcp/src/agents_remember/providers/lifecycle_modules/cgc",
+      "mcp/src/agents_remember/providers/lifecycle_modules/cgc/__init__.py",
+      "mcp/src/agents_remember/providers/lifecycle_modules/cgc/backend.py",
+      "mcp/src/agents_remember/providers/lifecycle_modules/cgc/core.py",
+      "mcp/src/agents_remember/providers/lifecycle_modules/cgc/installation.py",
+      "mcp/src/agents_remember/providers/lifecycle_modules/cgc/process.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "backend.py",
+      "backend",
+      "core.py",
+      "core",
+      "installation.py",
+      "installation",
+      "process.py",
+      "process",
+      "init__",
+      "CGC",
+      "FalkorDB",
+      "mcp/src/agents_remember/providers/lifecycle_modules/cgc/",
+      "route-overview",
+      "a8ee8440dfa920d1153a4bb4bb43cc77534c3c90",
+      "/overview.md",
+      "cgc/",
+      "cgc_*",
+      "lifecycle_modules/cgc/",
+      "lifecycle.py",
+      "agents-remember-md/mcp/src/agents_remember/providers/lifecycle.py",
+      "watchers.py",
+      "agents-remember-md/mcp/src/agents_remember/providers/lifecycle_modules/watchers.py",
+      "agents_remember",
+      "lifecycle_modules",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T19",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T15",
+      "governingOverview",
+      "CodeGraphContext",
+      "cgc_",
+      "GrepAI"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/providers/lifecycle_modules/cgc/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

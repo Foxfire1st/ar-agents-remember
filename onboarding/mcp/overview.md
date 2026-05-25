@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-24T02:47+02:00                     |
+| lastUpdated            | 2026-05-25T19:16+02:00                     |
 | lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
 | lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00                 |
 | governingOverview      | `../overview.md`                           |
@@ -30,7 +30,9 @@ Start in `src/agents_remember/mcp/config.py` for trusted settings parsing,
 installation. Provider status is composed in `providers/status.py`; provider
 lifecycle settings are generated from MCP settings in `providers/settings.py`;
 runner executable integrity is checked by `providers/integrity.py` before
-watcher status is trusted. Memory-layer quality control lives under
+watcher status is trusted. Provider lifecycle implementation is now split
+between `providers/lifecycle.py` and `providers/lifecycle_modules/`; there is no
+legacy `provider_lifecycle.py` facade. Memory-layer quality control lives under
 `src/agents_remember/memory_quality/`: integrity checks include the onboarding
 drift classifier/summary, and style checks currently include update-history
 newest-first ordering.
@@ -57,8 +59,6 @@ Provider runtime layout now uses a single coordinator provider root:
 
 ```text
 <coordinationRoot>/providers/
-  _bin/
-  _venvs/
   runners/
     codegraphcontext/
     grepai/
@@ -75,6 +75,9 @@ configured coordinator root and can run provider dependency installation through
 package-local lifecycle code. It generates lifecycle settings from MCP settings,
 not coordinator `system/settings.json`, and writes provider runner integrity
 manifests beside the trusted MCP settings file after non-dry-run installs.
+Settings-backed `grepai-memory` is Docker-only: the complete stack is the
+managed runner image/container, PostgreSQL/pgvector, Ollama, and their shared
+Docker network, with no host GrepAI binary or host Ollama fallback.
 
 ## Invariants And Boundaries
 
@@ -86,8 +89,10 @@ manifests beside the trusted MCP settings file after non-dry-run installs.
   `McpRuntimeConfig`.
 - Provider status must check runner integrity before invoking watcher status.
 - `providers/runners`, `providers/data`, and `providers/logs` are the active
-  provider layout; `providers/<provider>` and `provider-data` are not active
-  runtime roots.
+  provider layout; `providers/_bin`, `providers/_venvs`,
+  `providers/<provider>`, and `provider-data` are not active runtime roots.
+- `grepai-memory` must remain Docker-or-bust in the MCP runtime; do not add
+  host binary or host Ollama fallbacks.
 - Resolver, provider lifecycle, memory quality, and worktree code under
   `mcp/src/agents_remember` is a package-local implementation surface. Original
   runtime scripts are not the MCP execution authority.
@@ -102,9 +107,12 @@ manifests beside the trusted MCP settings file after non-dry-run installs.
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 | Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, and `providers/logs` paths. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
 | Provider status checks runner integrity before watcher status and reports structured recovery actions on integrity failure. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py); [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
+| Provider lifecycle is now a facade plus focused modules instead of a monolithic file. | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle.py); [lifecycle modules overview](src/agents_remember/providers/lifecycle_modules/overview.md) |
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 
 ## Update History
 
+- 2026-05-25T19:16+02:00: Updated after the legacy `provider_lifecycle.py` facade was deleted and `providers.lifecycle` became the sole lifecycle facade.
+- 2026-05-25T19:01+02:00: Updated after provider lifecycle split into focused modules and GrepAI runtime became Docker-only without `_bin`, `_venvs`, host GrepAI, or host Ollama fallback.
 - 2026-05-24T02:47+02:00: Updated after drift moved into `memory_quality.integrity` and `memory_quality_check` became the closeout quality gate.
 - 2026-05-23T04:29+02:00: Created for the MCP package route after Phase 3 added MCP-owned runtime installation, provider layout convergence, and runner integrity checks.

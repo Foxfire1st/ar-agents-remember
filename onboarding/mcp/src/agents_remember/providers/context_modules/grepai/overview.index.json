@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "mcp/src/agents_remember/providers/context_modules/grepai",
+  "overview": "mcp/src/agents_remember/providers/context_modules/grepai/overview.md",
+  "index": "mcp/src/agents_remember/providers/context_modules/grepai/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/providers/context_modules/grepai/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/providers/context_modules/grepai/__init__.py",
+    "mcp/src/agents_remember/providers/context_modules/grepai/artifacts.py",
+    "mcp/src/agents_remember/providers/context_modules/grepai/constants.py",
+    "mcp/src/agents_remember/providers/context_modules/grepai/core.py",
+    "mcp/src/agents_remember/providers/context_modules/grepai/layout.py",
+    "mcp/src/agents_remember/providers/context_modules/grepai/workspace.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 6,
+    "fileSidecars": 6,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "artifacts",
+    "constants",
+    "context",
+    "context_modules",
+    "core",
+    "grepai",
+    "init",
+    "init__",
+    "layout",
+    "mcp",
+    "modules",
+    "providers",
+    "remember",
+    "src",
+    "workspace"
+  ],
+  "hotPath": {
+    "summary": "Use `constants.py` for Docker/network/container defaults, `layout.py` for `GrepaiRuntimeLayout`, provider settings expansion, provider-owned mirrored roots, and mirror sync, `workspace.py` for workspace YAML rendering, and `artifacts.py` for root artifact validation/removal. `core.py` and `__init__.py` are facades over those focused modules.",
+    "candidateHints": [
+      "mcp/src/agents_remember/providers/context_modules/grepai",
+      "mcp/src/agents_remember/providers/context_modules/grepai/__init__.py",
+      "mcp/src/agents_remember/providers/context_modules/grepai/artifacts.py",
+      "mcp/src/agents_remember/providers/context_modules/grepai/constants.py",
+      "mcp/src/agents_remember/providers/context_modules/grepai/core.py",
+      "mcp/src/agents_remember/providers/context_modules/grepai/layout.py",
+      "mcp/src/agents_remember/providers/context_modules/grepai/workspace.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "artifacts.py",
+      "artifacts",
+      "constants.py",
+      "constants",
+      "core.py",
+      "core",
+      "layout.py",
+      "layout",
+      "workspace.py",
+      "workspace",
+      "GrepaiRuntimeLayout",
+      "YAML",
+      "init__",
+      "mcp/src/agents_remember/providers/context_modules/grepai/",
+      "route-overview",
+      "a8ee8440dfa920d1153a4bb4bb43cc77534c3c90",
+      "/overview.md",
+      "context_modules/grepai/",
+      "grepai/",
+      "agents_remember",
+      "context_modules",
+      "GrepAI",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T19",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T15",
+      "governingOverview"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/providers/context_modules/grepai/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

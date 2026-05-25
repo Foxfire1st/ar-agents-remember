@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
-| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
+| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
+| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ No external documentation is needed for this local patch asset.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The patch replaces CGC's direct repo-local `.cgcignore` default with a branch that prefers `explicit_cgcignore_path`. | L1-L13 | [patch](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch) |
-| The package provider helper carries the same patch marker and idempotent source replacement used by the lifecycle service. | n/a | [context_providers.py](agents-remember-md/mcp/src/agents_remember/providers/context_providers.py) |
+| The package provider helper carries the same patch marker and idempotent source replacement used by the lifecycle service. | n/a | [context.py](agents-remember-md/mcp/src/agents_remember/providers/context.py) |
 
 ## Cross-Repo References
 
@@ -57,6 +57,7 @@ No sibling repository evidence is needed for this patch asset.
 
 ## Update History
 
+- 2026-05-25T19:16+02:00: Updated the provider helper reference after `context_providers.py` was replaced by `providers.context` and context modules.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T17:50+02:00: Updated references after provider helpers became MCP package modules and the old source shared route was removed.
 - 2026-05-23T05:32+02:00: Updated managed CGC runner-path commentary after provider instances moved under `providers/runners/codegraphcontext`.

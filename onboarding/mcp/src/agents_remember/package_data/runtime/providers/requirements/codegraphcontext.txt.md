@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `31846c1136f0fe75503a63fb557303a79fa022e8` |
-| lastVerifiedCommitDate | 2026-05-24T23:07:31+02:00|
+| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
+| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ No external documentation is needed for the pin itself.
 | --- | --- | --- |
 | The provider requirements file pins CodeGraphContext to version 0.4.10 plus Tree-Sitter parser dependencies needed for symbol extraction. | L1-L4 | [codegraphcontext.txt](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt) |
 | The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root. | n/a | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| The package provider helper writes the full CGC requirements set when creating a missing CGC requirements file. | n/a | [context_providers.py](agents-remember-md/mcp/src/agents_remember/providers/context_providers.py) |
+| The package provider helper writes the full CGC requirements set when creating a missing CGC requirements file. | n/a | [context.py](agents-remember-md/mcp/src/agents_remember/providers/context.py) |
 
 ## Cross-Repo References
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for this provider pin.
 
 ## Update History
 
+- 2026-05-25T19:16+02:00: Updated the provider helper reference after `context_providers.py` was replaced by the direct `providers.context` facade and context modules.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T17:50+02:00: Updated references after provider helpers became MCP package modules and the old source script/shared routes were removed.
 - 2026-05-23T05:32+02:00: Corrected the durable provider data path to `providers/data` and clarified that provider dependency reinstall is MCP/package-local lifecycle work.

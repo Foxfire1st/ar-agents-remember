@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "mcp/src/agents_remember/providers/context_modules",
+  "overview": "mcp/src/agents_remember/providers/context_modules/overview.md",
+  "index": "mcp/src/agents_remember/providers/context_modules/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/providers/context_modules/**"
+  ],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/providers/context_modules/cgc",
+      "overview": "mcp/src/agents_remember/providers/context_modules/cgc/overview.md",
+      "index": "mcp/src/agents_remember/providers/context_modules/cgc/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/providers/context_modules/grepai",
+      "overview": "mcp/src/agents_remember/providers/context_modules/grepai/overview.md",
+      "index": "mcp/src/agents_remember/providers/context_modules/grepai/overview.index.json"
+    }
+  ],
+  "coveredFiles": [
+    "mcp/src/agents_remember/providers/context_modules/__init__.py",
+    "mcp/src/agents_remember/providers/context_modules/common.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 12,
+    "fileSidecars": 2,
+    "childRoutes": 2
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "cgc",
+    "common",
+    "context",
+    "context_modules",
+    "grepai",
+    "init",
+    "init__",
+    "mcp",
+    "modules",
+    "providers",
+    "remember",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "Start with `common.py` for shared error, pin, template, state, hash, and removal helpers. CGC behavior lives under `cgc/`: `constants.py` owns provider constants and patch snippets, `core.py` owns runtime layout/config/artifact cleanup, and `patches.py` owns upstream module discovery and idempotent patch application. GrepAI behavior lives under `grepai/`: `constants.py` owns Docker defaults, `layout.py` owns runtime layout and mirror roots, `workspace.py` owns workspace YAML, and `artifacts.py` owns `.grepai/` cleanup.",
+    "candidateHints": [
+      "mcp/src/agents_remember/providers/context_modules",
+      "mcp/src/agents_remember/providers/context_modules/cgc",
+      "mcp/src/agents_remember/providers/context_modules/grepai",
+      "mcp/src/agents_remember/providers/context_modules/__init__.py",
+      "mcp/src/agents_remember/providers/context_modules/common.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "common.py",
+      "common",
+      "cgc",
+      "grepai",
+      "cgc/",
+      "constants.py",
+      "core.py",
+      "patches.py",
+      "grepai/",
+      "layout.py",
+      "workspace.py",
+      "artifacts.py",
+      "YAML",
+      "mcp/src/agents_remember/providers/context_modules/",
+      "route-overview",
+      "a8ee8440dfa920d1153a4bb4bb43cc77534c3c90",
+      "/../../../overview.md",
+      "context_modules/",
+      "context_providers.py",
+      "providers.context",
+      "grepai/core.py",
+      "mcp/overview.md",
+      "context.py",
+      "cgc/overview.md",
+      "grepai/overview.md",
+      "agents_remember",
+      "context_modules",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T19",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T15",
+      "governingOverview",
+      "context_providers",
+      "CodeGraphContext",
+      "API"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/providers/context_modules/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}
