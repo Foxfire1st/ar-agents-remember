@@ -15,6 +15,11 @@
       "index": "mcp/src/agents_remember/memory_quality/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/benchmarks/runner_modules",
+      "overview": "mcp/src/agents_remember/benchmarks/runner_modules/overview.md",
+      "index": "mcp/src/agents_remember/benchmarks/runner_modules/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/kernel/coordination_context",
       "overview": "mcp/src/agents_remember/kernel/coordination_context/overview.md",
       "index": "mcp/src/agents_remember/kernel/coordination_context/overview.index.json"
@@ -189,9 +194,9 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 292,
+    "sourceFilesInScope": 305,
     "fileSidecars": 141,
-    "childRoutes": 7
+    "childRoutes": 8
   },
   "routingTerms": [
     "adopt",
@@ -280,6 +285,7 @@
     "candidateHints": [
       "mcp",
       "mcp/src/agents_remember/memory_quality",
+      "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/kernel/coordination_context",
       "mcp/src/agents_remember/providers/cgc",
       "mcp/src/agents_remember/providers/context",
@@ -300,8 +306,7 @@
       "mcp/src/agents_remember/install",
       "mcp/src/agents_remember/install/__init__.py",
       "mcp/src/agents_remember/install/assets.py",
-      "mcp/src/agents_remember/install/runtime.py",
-      "mcp/src/agents_remember/install/skills.py"
+      "mcp/src/agents_remember/install/runtime.py"
     ],
     "anchorHints": [
       "pyproject.toml",
