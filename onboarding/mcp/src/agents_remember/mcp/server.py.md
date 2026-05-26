@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T10:06+02:00                     |
-| lastVerifiedCommitHash | `f48a34619fbe37c405419acfa60580b95ed8812c` |
-| lastVerifiedCommitDate | 2026-05-24T10:04:28+02:00|
+| lastUpdated            | 2026-05-26T23:11+02:00                     |
+| lastVerifiedCommitHash | `d5de5d5403ccf4db9b2650279004655797c68f6b` |
+| lastVerifiedCommitDate | 2026-05-26T23:19:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -34,6 +34,12 @@ registers `cgc_symbol_search`, `cgc_callers`, `cgc_callees`,
 `cgc_dependencies`, and `cgc_complexity` instead of a generic `cgc_query`
 endpoint.
 
+The public GrepAI provider surface is typed at registration time as well.
+`grepai_search` registers `repo_ids`, `all_repos`, `limit`, and
+`output_format` around the required query, while `grepai_trace` registers
+`trace_action`, `symbol`, optional repo scoping, optional graph depth, and
+output format. The server only forwards these fields to the payload layer.
+
 `codex_benchmark_run` exposes an optional `codex_sandbox` argument with the
 same default as the benchmark service. The server only forwards the value; the
 runner validates it against its allowlist and maps `default` to an omitted
@@ -44,6 +50,8 @@ runner validates it against its allowlist and maps `default` to an omitted
 - Server functions should perform registration and argument forwarding only.
 - Tool behavior and safety checks belong in payload builders/controllers.
 - Do not add a raw shell or arbitrary command tool to this server.
+- Do not collapse GrepAI back into free-form query/native argument forwarding;
+  the registration should mirror the supported MCP contract.
 - Do not turn benchmark sandbox selection into a generic Codex argument surface.
 
 ## Repo-Internal References
@@ -55,6 +63,8 @@ runner validates it against its allowlist and maps `default` to an omitted
 
 ## Update History
 
+- 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI search and trace registration.
+- 2026-05-26T22:54+02:00: Updated after GrepAI search and trace registration gained typed scope, output, and trace-action arguments.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` exposed benchmark sandbox options through the MCP server.
 - 2026-05-24T08:56+02:00: Updated after `codex_benchmark_run` registered the optional `codex_sandbox` forwarding argument.
 - 2026-05-24T02:47+02:00: Updated after registering `memory_quality_check` as the closeout quality gate.

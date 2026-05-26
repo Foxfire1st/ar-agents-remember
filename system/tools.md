@@ -27,6 +27,14 @@ CRAP threshold findings are report-only by default so existing refactor targets
 do not make the remembered suite unusable. Add `--fail-on-crap-threshold` only
 when intentionally gating a cleanup or refactor branch.
 
+For implementation work, focused commands are iteration aids, not the final
+test standard. A code implementation is not closeout-ready until the full
+quality wrapper has been run from the source repository root and its result has
+been recorded in the task notes or final response. Do not substitute a
+model-chosen subset of checks for the project-owned suite. If the wrapper
+cannot run, record the exact blocker and run the closest explicit equivalent:
+Ruff, Radon CC/MI, pytest with coverage JSON, and CRAP-Calculator.
+
 ---
 
 ### Ruff
@@ -112,6 +120,9 @@ the standalone CRAP-Calculator command.
 
 - Run quality tools from the source repository root, not from the coordinator root.
 - Scope checks to touched files or directories first. Use whole-repo checks when the task changes shared behavior, module layout, imports, or public contracts.
+- Use the full quality wrapper before implementation closeout. Focused Ruff,
+  Radon, or pytest runs may prove local edits during development, but they do
+  not replace the project-owned full suite for final validation.
 - Before refactoring complex Python, capture a baseline with Ruff, Radon, and the relevant tests. After the change, compare against that baseline.
 - Do not fix unrelated Ruff or Radon findings during a narrow task unless the developer approves the cleanup scope.
 - Before applying `ruff check --fix` or `ruff format`, run the corresponding `--diff` command first and inspect the proposed changes.
@@ -121,7 +132,8 @@ the standalone CRAP-Calculator command.
 - Prefer facade refactors: keep the current entrypoint stable, move the implementation behind it, and prove behavior with focused tests.
 - If a change worsens complexity or maintainability in touched code, call that out explicitly and explain why it is acceptable or what follow-up is needed.
 - Do not add defensive wrappers, fallbacks, or compatibility layers just to satisfy tools. Defensive code needs a concrete reason.
-- Record the relevant Ruff/Radon/test commands in the final answer or task notes when code was changed.
+- Record the full quality wrapper result and any focused Ruff/Radon/test
+  commands in the final answer or task notes when code was changed.
 
 ---
 
