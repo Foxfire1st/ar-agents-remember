@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "mcp/src/agents_remember/providers/grepai",
+  "overview": "mcp/src/agents_remember/providers/grepai/overview.md",
+  "index": "mcp/src/agents_remember/providers/grepai/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/providers/grepai/**"
+  ],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/providers/grepai/context",
+      "overview": "mcp/src/agents_remember/providers/grepai/context/overview.md",
+      "index": "mcp/src/agents_remember/providers/grepai/context/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/providers/grepai/lifecycle",
+      "overview": "mcp/src/agents_remember/providers/grepai/lifecycle/overview.md",
+      "index": "mcp/src/agents_remember/providers/grepai/lifecycle/overview.index.json"
+    }
+  ],
+  "coveredFiles": [
+    "mcp/src/agents_remember/providers/grepai/__init__.py",
+    "mcp/src/agents_remember/providers/grepai/setup.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 14,
+    "fileSidecars": 2,
+    "childRoutes": 2
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "context",
+    "grepai",
+    "init",
+    "init__",
+    "lifecycle",
+    "mcp",
+    "providers",
+    "remember",
+    "setup",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "Use `setup.py` for setup-time refresh/install wiring. Use `context/` for Docker runtime layout, workspace YAML, and `.grepai/` artifact cleanup. Use `lifecycle/` for Postgres, Ollama, runner image/container, and high-level GrepAI actions.",
+    "candidateHints": [
+      "mcp/src/agents_remember/providers/grepai",
+      "mcp/src/agents_remember/providers/grepai/context",
+      "mcp/src/agents_remember/providers/grepai/lifecycle",
+      "mcp/src/agents_remember/providers/grepai/__init__.py",
+      "mcp/src/agents_remember/providers/grepai/setup.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "setup.py",
+      "setup",
+      "context",
+      "lifecycle",
+      "context/",
+      "grepai/",
+      "lifecycle/",
+      "YAML",
+      "GrepAI",
+      "mcp/src/agents_remember/providers/grepai/",
+      "route-overview",
+      "ae9c4e5b6af38eda7f2b29006130c4263e9db62f",
+      "/../../../overview.md",
+      "grepai_setup.py",
+      "context_modules/grepai",
+      "lifecycle_modules/grepai",
+      "providers/grepai/",
+      "mcp/overview.md",
+      "agents-remember-md/mcp/src/agents_remember/providers/grepai/setup.py",
+      "context/overview.md",
+      "lifecycle/overview.md",
+      "agents_remember",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T21",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T19",
+      "governingOverview",
+      "grepai_setup",
+      "context_modules",
+      "lifecycle_modules",
+      "CGC"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/providers/grepai/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

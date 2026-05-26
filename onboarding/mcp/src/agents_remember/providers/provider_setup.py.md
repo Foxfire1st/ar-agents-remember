@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:50+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastUpdated            | 2026-05-25T21:14+02:00                     |
+| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
+| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -22,8 +22,8 @@ modules.
 ### Logic
 
 The facade imports shared setup helpers from `setup_common.py`, CGC seed and
-bundle helpers from `cgc_seed.py` and `cgc_bundle.py`, CGC provider-level setup
-from `cgc_setup.py`, and GrepAI provider-level setup from `grepai_setup.py`.
+bundle helpers from `cgc/seed.py` and `cgc/bundle.py`, CGC provider-level setup
+from `cgc/setup.py`, and GrepAI provider-level setup from `grepai/setup.py`.
 It preserves the public symbols callers and tests already use, including
 `run_provider_setup`, `ProviderSetupRequest`, `rewrite_cgc_bundle_paths`,
 `isolated_cgc_settings`, and the subprocess helper exports.
@@ -56,12 +56,13 @@ and the fallback refresh path succeeds.
 | Worktree start calls provider setup with MCP-derived provider settings. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 | Benchmark preparation calls package-local provider setup instead of a source script. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
 | Provider lifecycle calls are captured through package-local command capture. | [command_capture.py](agents-remember-md/mcp/src/agents_remember/mcp/command_capture.py) |
-| CGC seed orchestration and bundle rewriting now live outside the facade. | [cgc_seed.py](cgc_seed.py.md); [cgc_bundle.py](cgc_bundle.py.md) |
-| Provider-specific setup branches live in CGC and GrepAI setup modules. | [cgc_setup.py](cgc_setup.py.md); [grepai_setup.py](grepai_setup.py.md) |
+| CGC seed orchestration and bundle rewriting now live outside the facade. | [seed.py](cgc/seed.py.md); [bundle.py](cgc/bundle.py.md) |
+| Provider-specific setup branches live in provider-owned setup modules. | [CGC setup](cgc/setup.py.md); [GrepAI setup](grepai/setup.py.md) |
 | Shared settings and command helpers live in the setup common module. | [setup_common.py](setup_common.py.md) |
 
 ## Update History
 
+- 2026-05-25T21:14+02:00: Updated imports after CGC and GrepAI setup modules moved into provider-owned packages.
 - 2026-05-25T19:50+02:00: Refactored into a setup facade backed by `setup_common.py`, `cgc_setup.py`, `cgc_seed.py`, `cgc_bundle.py`, and `grepai_setup.py`; targeted Radon CC/MI no longer reports B-or-worse output for the setup slice.
 - 2026-05-24T05:48+02:00: Updated after CGC seed failure stopped failing provider prepare payloads when the existing refresh fallback is enabled.
 - 2026-05-23T23:46+02:00: Updated after Phase 05 F-05 made provider setup require explicit settings and added the typed `ProviderSetupRequest` service front door.

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "mcp/src/agents_remember/providers/context",
+  "overview": "mcp/src/agents_remember/providers/context/overview.md",
+  "index": "mcp/src/agents_remember/providers/context/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/providers/context/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/providers/context/__init__.py",
+    "mcp/src/agents_remember/providers/context/common.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 2,
+    "fileSidecars": 2,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "common",
+    "context",
+    "init",
+    "init__",
+    "mcp",
+    "providers",
+    "remember",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "Start with `__init__.py` for the public context facade and `common.py` for shared error, pin, template, state, hash, and removal helpers. CGC behavior lives under `../cgc/context/`; GrepAI behavior lives under `../grepai/context/`.",
+    "candidateHints": [
+      "mcp/src/agents_remember/providers/context",
+      "mcp/src/agents_remember/providers/context/__init__.py",
+      "mcp/src/agents_remember/providers/context/common.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "common.py",
+      "common",
+      "/cgc/context/",
+      "/grepai/context/",
+      "init__",
+      "CGC",
+      "GrepAI",
+      "mcp/src/agents_remember/providers/context/",
+      "route-overview",
+      "a8ee8440dfa920d1153a4bb4bb43cc77534c3c90",
+      "/../../../overview.md",
+      "context/",
+      "providers/cgc/context/",
+      "providers/grepai/context/",
+      "providers.context",
+      "context_providers.py",
+      "cgc/",
+      "grepai/core.py",
+      "mcp/overview.md",
+      "agents-remember-md/mcp/src/agents_remember/providers/context/__init__.py",
+      "/cgc/context/overview.md",
+      "/grepai/context/overview.md",
+      "agents_remember",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T21",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T15",
+      "governingOverview",
+      "CodeGraphContext",
+      "API",
+      "context_providers",
+      "T19"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/providers/context/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

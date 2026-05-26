@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:16+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastUpdated            | 2026-05-25T21:14+02:00                     |
+| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
+| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,13 +16,22 @@
 
 ## Purpose
 
-`test_provider_lifecycle.py` verifies provider lifecycle parser behavior, process-namespace policy, and small command-output helpers that cannot be safely inferred from the generic provider-layout tests.
+`test_provider_lifecycle.py` verifies provider lifecycle parser behavior,
+process-namespace policy, provider-owned lifecycle modules, and small
+command-output helpers that cannot be safely inferred from the generic
+provider-layout tests.
 
 ## Code Commentary
 
 ### Logic
 
-The test module imports `agents_remember.providers.lifecycle` from `mcp/src`. Render tests protect native CGC output streaming, the compact `run --lifecycle-json` payload path, and non-command result handling. `parse_cgc` builds the parser, parses a `cgc` command, normalizes CGC defaults, resolves paths, and stabilizes repo ids in the same shape the lifecycle module uses before dispatch.
+The test module imports `agents_remember.providers.lifecycle` from `mcp/src`,
+then imports CGC, GrepAI, watcher, and process-status modules from the
+provider-first package layout. Render tests protect native CGC output
+streaming, the compact `run --lifecycle-json` payload path, and non-command
+result handling. `parse_cgc` builds the parser, parses a `cgc` command,
+normalizes CGC defaults, resolves paths, and stabilizes repo ids in the same
+shape the lifecycle module uses before dispatch.
 
 The tests assert that `cgc visualize` accepts named `--port` and `--context` options after the subcommand, that shared lifecycle options can still appear before the subcommand, that CGC and aggregate watcher commands default their coordinator root to the installed runtime root, that process namespace diagnostics report `durableForDaemons`, and that daemon/server actions reject ephemeral `--die-with-parent` namespaces. Dry-run coverage verifies an explicit long-running `cgc visualize --repo <repo> --port <port>` command. The CGC migration-boundary tests require `cgc run -- visualize ...` to fail with guidance to use `cgc visualize`, and also protect that bounded `cgc run` queries are still allowed in an ephemeral process namespace when the command itself is mocked. GrepAI tests now protect the Docker-only boundary: direct non-settings GrepAI `run` calls return unsupported instead of trying host binaries, settings-backed bounded GrepAI queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and GrepAI start dry-run includes the managed network, Postgres backend, Ollama embedder, runner image/container, container DSN, container project path, and container Ollama endpoint. Docker readiness tests also verify target-database checks after `pg_isready`, and aggregate watcher tests still cover partial-result recovery actions.
 
@@ -74,6 +83,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-25T21:14+02:00: Updated after tests switched imports to provider-first lifecycle packages and the split `process_status` helper module.
 - 2026-05-25T19:16+02:00: Updated after tests imported `agents_remember.providers.lifecycle` directly and the `provider_lifecycle.py` compatibility module was removed.
 - 2026-05-25T18:07+02:00: Updated after native GrepAI fallback tests were removed and direct non-settings GrepAI calls became unsupported.
 - 2026-05-25T17:40+02:00: Updated after Docker-mode GrepAI tests asserted settings-backed `docker exec` bounded runs and complete start dry-run stack generation.

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "mcp/src/agents_remember/providers/grepai/lifecycle",
+  "overview": "mcp/src/agents_remember/providers/grepai/lifecycle/overview.md",
+  "index": "mcp/src/agents_remember/providers/grepai/lifecycle/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/providers/grepai/lifecycle/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py",
+    "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py",
+    "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py",
+    "mcp/src/agents_remember/providers/grepai/lifecycle/core.py",
+    "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py",
+    "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 6,
+    "fileSidecars": 6,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "actions",
+    "agents",
+    "agents_remember",
+    "backend",
+    "core",
+    "embedder",
+    "grepai",
+    "init",
+    "init__",
+    "lifecycle",
+    "mcp",
+    "providers",
+    "remember",
+    "runner",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "`__init__.py` re-exports the GrepAI public lifecycle surface. `core.py` derives settings, layout, workspace config, container DSNs, and Docker image settings. `backend.py` manages PostgreSQL/pgvector, `embedder.py` manages Ollama and model readiness, `runner.py` manages the GrepAI runner image and watcher container, and `actions.py` composes top-level install/status/start/stop/refresh/run behavior.",
+    "candidateHints": [
+      "mcp/src/agents_remember/providers/grepai/lifecycle",
+      "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py",
+      "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py",
+      "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py",
+      "mcp/src/agents_remember/providers/grepai/lifecycle/core.py",
+      "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py",
+      "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "actions.py",
+      "actions",
+      "backend.py",
+      "backend",
+      "core.py",
+      "core",
+      "embedder.py",
+      "embedder",
+      "runner.py",
+      "runner",
+      "init__",
+      "GrepAI",
+      "DSNs",
+      "PostgreSQL",
+      "mcp/src/agents_remember/providers/grepai/lifecycle/",
+      "route-overview",
+      "a8ee8440dfa920d1153a4bb4bb43cc77534c3c90",
+      "/overview.md",
+      "grepai/lifecycle/",
+      "providers/grepai/lifecycle/",
+      "grepai_*",
+      "lifecycle_modules/grepai/",
+      "agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__init__.py",
+      "test_provider_lifecycle.py",
+      "agents-remember-md/mcp/tests/test_provider_lifecycle.py",
+      "agents_remember",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T21",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T15",
+      "governingOverview",
+      "test_provider_lifecycle",
+      "T19",
+      "grepai_",
+      "lifecycle_modules"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/providers/grepai/lifecycle/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

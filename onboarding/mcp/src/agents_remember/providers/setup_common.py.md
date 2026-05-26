@@ -31,7 +31,7 @@ The module requires an explicit provider settings path, reads JSON settings, ext
 | Finding | Source Path |
 | --- | --- |
 | The provider setup facade re-exports these helpers for existing callers and tests. | [provider_setup.py](provider_setup.py.md) |
-| Lifecycle calls are dispatched through the direct lifecycle facade. | [lifecycle.py](lifecycle.py.md) |
+| Lifecycle calls are dispatched through the direct lifecycle facade. | [lifecycle package](lifecycle/__init__.py.md) |
 
 ## Update History
 
