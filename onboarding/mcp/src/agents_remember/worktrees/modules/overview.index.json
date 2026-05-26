@@ -90,7 +90,7 @@
       "JSON",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "ae9c4e5b6af38eda7f2b29006130c4263e9db62f",
+      "c310611a6678051c9e37b912c522b367530c0686",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
@@ -104,7 +104,7 @@
       "T20",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T19",
+      "T02",
       "governingOverview",
       "git_worktree_manager",
       "test_worktree_support"

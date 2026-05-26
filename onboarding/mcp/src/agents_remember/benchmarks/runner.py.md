@@ -5,86 +5,64 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T10:06+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastUpdated            | 2026-05-26T02:26+02:00                     |
+| lastVerifiedCommitHash | `a7e160cd4381245327da7c5a52e2272b3080ebf7` |
+| lastVerifiedCommitDate | 2026-05-26T02:40:22+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
 
-`runner.py` is the package-local benchmark prepare/run/analyze implementation
-used by the `codex_benchmark_prepare` and `codex_benchmark_run` MCP tools.
+`runner.py` is now a compatibility facade for the benchmark prepare/run/analyze
+surface. The benchmark implementation lives in `runner_modules/`, while this
+module preserves the historical `agents_remember.benchmarks.runner` import path
+used by MCP controllers, CLI entrypoints, and tests.
 
 ## Code Commentary
 
 ### Logic
 
-The module preserves the old benchmark runner behavior: selecting benchmark
-cases, preparing resettable workspaces, optionally exposing skills, running
-Codex prompt variants, and summarizing run artifacts.
+The facade re-exports focused benchmark modules for existing callers and keeps a
+small compatibility wrapper around `prepare_repo()` so tests and callers that
+monkeypatch `benchmark_runner.run_command`, `benchmark_runner.remove_path`, or
+`benchmark_runner.repo_has_commit` still affect repository preparation. It also
+keeps `shutil`, `subprocess`, and `provider_setup` available as module
+attributes because benchmark portability tests patch those old facade-level
+objects.
 
-Benchmark provider preparation now calls package-local `provider_setup` behavior
-through a typed `ProviderSetupRequest` instead of a source-checkout
-`scripts/provider-setup.py` file or provider setup CLI `argv` reconstruction.
-Provider authority is generated from a benchmark-local `McpRuntimeConfig` shape
-and temporary provider settings file, not from a benchmark coordinator
-`system/settings.json`. Benchmark manifests can declare provider requirements
-per variant; preparing a whole case runs the union of requested providers, while
-running a selected memory-only variant skips provider setup.
-Benchmark skill exposure is copy-only: `copy` is the default mode and `none`
-skips harness skill exposure. The old shell/symlink installer path and `auto`
-fallback mode are not part of this module anymore.
-
-Benchmark prepare writes a child-workspace Codex MCP registration under
-`<with-memory>/.codex/config.toml` plus MCP authority settings under
-`<with-memory>/.codex/mcp/`. The generated settings point at the
-benchmark-local coordinator, use the benchmark source checkout's parent as
-`workspaceRoot`, derive the repository path through the normal MCP config
-rules, and expose only the selected benchmark providers.
-
-`prepare_benchmarks()` and `run_codex_benchmark()` are service entry points for
-MCP controllers. They capture benchmark progress as structured `messages` so
-dry-run evidence stays available without returning raw stdout/stderr or
-requiring controllers to call `main(argv)`.
-
-Codex benchmark execution is explicitly classified as benchmark-only host
-execution. The runner resolves `codex` only from the server process `PATH`,
-accepts only the allowlisted `danger-full-access` and `default` sandbox modes,
-and records `codexExecutionPolicy` in service payloads and per-run metadata so
-the PATH source, sandbox mode, sandbox argument, and lack of generic executable
-override are visible. The `default` sandbox mode omits `--sandbox` so child
-Codex uses its configured default permissions.
+The extracted implementation responsibilities are governed by
+`runner_modules/overview.md`: manifest parsing, workspace preparation,
+MCP/provider registration, Codex execution, JSONL analysis, service payloads,
+and CLI wiring each live in a focused file.
 
 ### Invariants And Boundaries
 
-- MCP facades choose a configured/default benchmark root and call this module
-  through service functions, not package-local command capture.
-- `benchmark_prepare` and `benchmark_run` default to dry-run in the MCP surface.
-- This module still carries benchmark-specific subprocess behavior; it is not a
-  generic command execution surface.
-- Provider setup must stay package-local; benchmark workspaces should not depend
-  on deleted source-level Python scripts.
-- Benchmark provider setup must not read or mutate coordinator
-  `system/settings.json`; provider scope belongs to generated MCP/provider
-  settings and the selected benchmark variants.
-- Benchmark skill exposure must not call coordinator-local scripts or require
-  Bash/symlink support.
-- Codex benchmark execution must stay Codex-specific and `PATH`-resolved; do
-  not add a caller-supplied executable path or generic shell command surface.
-- Benchmark MCP registration belongs under the resettable child workspace
-  `.codex` folder, outside the benchmark-local coordinator root.
-- `codex_sandbox` is an allowlist, not a free-form Codex CLI flag tunnel.
+- Keep this file thin; new benchmark behavior belongs in the owning
+  `runner_modules` file.
+- Preserve the public `agents_remember.benchmarks.runner` import surface unless
+  all MCP controller and test callers are migrated in the same change.
+- The facade is allowed to contain compatibility glue for monkeypatch-sensitive
+  public functions, but not benchmark business logic.
+- `__main__` dispatch must continue to call the extracted CLI `main()`.
+
+## Docs References
+
+No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
-| Benchmark MCP tools call this module through `prepare_benchmarks()` and `run_codex_benchmark()`. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| Provider setup is now package-local MCP code. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
-| Benchmark portability tests assert workspace-local MCP registration, Codex `PATH` resolution, default-sandbox omission, and benchmark-only run metadata. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| The extracted implementation package owns benchmark runner behavior behind this facade. | [runner_modules overview](agents-remember-md/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
+| MCP benchmark tools import the facade as `benchmark_runner`. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
+| Benchmark portability tests patch facade-level compatibility attributes. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+
+## Cross-Repo References
+
+No configured sibling repository is required for this facade.
 
 ## Update History
 
+- 2026-05-26T02:26+02:00: Updated after the benchmark runner implementation was split into focused `runner_modules` behind this facade.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` landed Codex `.codex` benchmark registration and default-sandbox support.
 - 2026-05-24T09:23+02:00: Updated after Codex harness registration and benchmark skill exposure moved from `.agents` to `.codex`.
 - 2026-05-24T08:56+02:00: Updated after benchmark prepare began writing child-workspace MCP registration and `codex_benchmark_run` gained the allowlisted `default` sandbox mode.
