@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/actions.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:09+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-05-27T00:25+02:00                     |
+| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
+| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,7 +27,9 @@ The module reports aggregate GrepAI status, validates bounded native GrepAI CLI
 arguments, executes bounded commands through `docker exec ar-grepai-watcher`,
 starts/stops/refreshes the Docker watcher, prepares the workspace after backend
 and embedder startup, builds the runner image during install, and returns
-structured unsupported results for non-Docker settings.
+structured unsupported results for non-Docker settings. Full Docker start
+passes the backend and embedder host ports selected by their startup steps into
+watcher startup so later Compose calls use the same dependency port mappings.
 
 ### Invariants And Boundaries
 
@@ -37,6 +39,8 @@ structured unsupported results for non-Docker settings.
   binaries or using host Ollama.
 - Full install/start health is the composed state of Postgres, Ollama, runner
   image, watcher container, workspace config, and root artifact cleanup.
+- Watcher startup should receive the current backend/embedder port mappings
+  from the same GrepAI start flow.
 
 ## Repo-Internal References
 
@@ -47,5 +51,7 @@ structured unsupported results for non-Docker settings.
 
 ## Update History
 
+- 2026-05-27T00:25+02:00: Updated after Docker start began passing
+  backend/embedder port mappings into watcher startup.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
 - 2026-05-25T19:01+02:00: Created from GrepAI top-level action dispatch extracted out of provider lifecycle.

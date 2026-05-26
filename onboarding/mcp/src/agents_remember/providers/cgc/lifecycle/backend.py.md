@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T13:58+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-05-27T00:25+02:00                     |
+| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
+| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,29 +24,36 @@
 
 The module reports backend status, validates runtime details, removes stale
 containers whose data mount no longer matches the configured backend data root,
-ensures the shared CGC Docker network exists, connects reused backend containers
-to that network, allocates host ports, builds `docker run` commands, starts or
-reuses the FalkorDB container, waits for `redis-cli ping`, records backend
-state, and writes the backend image lock.
+reuses already-running backend host port mappings, starts FalkorDB through the
+package Compose project, waits for `redis-cli ping`, records backend state, and
+writes the backend image lock. Before Compose startup, it performs CGC project
+migration: old unmanaged FalkorDB and watcher containers plus the old
+unmanaged network are removed only when Docker labels do not show the expected
+Compose project.
 
 ### Invariants And Boundaries
 
 - Managed CGC backend mode must be `falkordb-remote` with Docker.
 - Existing containers are reused only when running and mounted to the expected
   provider data root.
-- The FalkorDB backend must be attached to the same Docker network used by CGC
-  runner and watcher containers.
+- The FalkorDB backend and network are owned by the CGC Compose project after
+  migration.
 - Backend state and image lock writes belong here after successful validation.
+- Existing Compose-managed backend port mappings are reused on repeated starts
+  rather than reallocated from host socket availability.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
 | CGC backend settings are derived in the CGC core module. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/core.py) |
-| Shared Docker helpers provide port allocation, container inspection, data mount checks, and FalkorDB ping polling. | [docker_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py); [host_ports.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/host_ports.py) |
+| Shared Docker and Compose helpers provide port inspection/allocation, data mount checks, FalkorDB ping polling, and unmanaged migration. | [docker_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py); [host_ports.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/host_ports.py); [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 
 ## Update History
 
+- 2026-05-27T00:25+02:00: Updated after CGC backend startup added
+  project-wide pre-Compose migration and existing-port reuse for repeated
+  Compose starts.
 - 2026-05-26T13:58+02:00: Updated after CGC backend start/status began ensuring and reporting the shared CGC Docker network for runner-to-FalkorDB connectivity.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
 - 2026-05-25T19:01+02:00: Created from the CGC backend lifecycle portion of provider lifecycle and refactored below Radon B complexity.

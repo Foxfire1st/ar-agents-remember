@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T23:59+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-05-27T00:25+02:00                     |
+| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
+| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,9 +29,12 @@ state.
 shared FalkorDB backend settings from the first layout, fills dynamic backend
 image/container/port/data-volume values, points the runner build context at the
 committed package Docker asset, and renders one watcher service fragment per
-configured repository root. User mapping is optional and only emitted on hosts
-with UID/GID support. `cgc_compose_summary()` exposes the project, base file,
-override hash, and stdin override mode for status and dry-run payloads.
+configured repository root. Backend port mappings go through the shared Compose
+helper so configured `auto` host ports render as Compose's empty
+published-port syntax instead of the literal string `auto`. User mapping is
+optional and only emitted on hosts with UID/GID support. `cgc_compose_summary()`
+exposes the project, base file, override hash, and stdin override mode for
+status and dry-run payloads.
 
 ### Invariants And Boundaries
 
@@ -43,6 +46,8 @@ override hash, and stdin override mode for status and dry-run payloads.
   repository read-only.
 - Container-visible `FALKORDB_HOST` points to the managed backend container
   name, keeping CGC access inside the Compose network.
+- `auto` host ports must remain valid Compose input because Compose parses the
+  full project even for single-service operations.
 
 ## Docs References
 
@@ -57,7 +62,7 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `cgc_compose_render()` fills backend image, container, port, data volume, runner image/build context, mounts, environment, watcher services, and network name into the package override template. | L22-L74 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
+| `cgc_compose_render()` fills backend image, container, port, data volume, runner image/build context, mounts, environment, watcher services, and network name into the package override template, using shared port mapping rendering for `auto` ports. | L24-L75 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
 | CGC watcher service names are derived from layout repo IDs, and watcher fragments mount runtime and code roots with generated environment. | L77-L116 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
 | The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L119-L125 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
 
@@ -71,4 +76,6 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-05-27T00:25+02:00: Updated after CGC Compose port mappings switched to
+  shared `auto`-safe rendering.
 - 2026-05-26T23:59+02:00: Created for the provider Compose migration and closeout missing-onboarding gate.
