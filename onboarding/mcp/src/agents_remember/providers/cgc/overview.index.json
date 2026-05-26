@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "mcp/src/agents_remember/providers/cgc",
+  "overview": "mcp/src/agents_remember/providers/cgc/overview.md",
+  "index": "mcp/src/agents_remember/providers/cgc/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/providers/cgc/**"
+  ],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/providers/cgc/context",
+      "overview": "mcp/src/agents_remember/providers/cgc/context/overview.md",
+      "index": "mcp/src/agents_remember/providers/cgc/context/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/providers/cgc/lifecycle",
+      "overview": "mcp/src/agents_remember/providers/cgc/lifecycle/overview.md",
+      "index": "mcp/src/agents_remember/providers/cgc/lifecycle/overview.index.json"
+    }
+  ],
+  "coveredFiles": [
+    "mcp/src/agents_remember/providers/cgc/__init__.py",
+    "mcp/src/agents_remember/providers/cgc/bundle.py",
+    "mcp/src/agents_remember/providers/cgc/seed.py",
+    "mcp/src/agents_remember/providers/cgc/setup.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 15,
+    "fileSidecars": 4,
+    "childRoutes": 2
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "bundle",
+    "cgc",
+    "context",
+    "init",
+    "init__",
+    "lifecycle",
+    "mcp",
+    "providers",
+    "remember",
+    "seed",
+    "setup",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "Use `setup.py`, `seed.py`, and `bundle.py` for CGC installation/seed preparation. Use `context/` for runtime layout and patch helpers. Use `lifecycle/` for backend, install/status, and process/watch commands.",
+    "candidateHints": [
+      "mcp/src/agents_remember/providers/cgc",
+      "mcp/src/agents_remember/providers/cgc/context",
+      "mcp/src/agents_remember/providers/cgc/lifecycle",
+      "mcp/src/agents_remember/providers/cgc/__init__.py",
+      "mcp/src/agents_remember/providers/cgc/bundle.py",
+      "mcp/src/agents_remember/providers/cgc/seed.py",
+      "mcp/src/agents_remember/providers/cgc/setup.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "bundle.py",
+      "bundle",
+      "seed.py",
+      "seed",
+      "setup.py",
+      "setup",
+      "context",
+      "lifecycle",
+      "context/",
+      "lifecycle/",
+      "CGC",
+      "mcp/src/agents_remember/providers/cgc/",
+      "route-overview",
+      "ae9c4e5b6af38eda7f2b29006130c4263e9db62f",
+      "/../../../overview.md",
+      "cgc/",
+      "cgc_*",
+      "context_modules/cgc",
+      "lifecycle_modules/cgc",
+      "providers/context/",
+      "providers/lifecycle/",
+      "providers.provider_setup",
+      "providers/cgc/",
+      "mcp/overview.md",
+      "agents-remember-md/mcp/src/agents_remember/providers/cgc/setup.py",
+      "context/overview.md",
+      "lifecycle/overview.md",
+      "agents_remember",
+      "CodeGraphContext",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T21",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T19",
+      "governingOverview",
+      "cgc_",
+      "context_modules",
+      "lifecycle_modules",
+      "GrepAI",
+      "provider_setup"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/providers/cgc/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

@@ -1,0 +1,45 @@
+# mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py
+
+| Field                  | Value                                      |
+| ---------------------- | ------------------------------------------ |
+| repository             | agents-remember-md                         |
+| path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py` |
+| doc_type               | `file-level-onboarding`                    |
+| lastUpdated            | 2026-05-25T19:09+02:00                     |
+| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
+| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[Provider Lifecycle Modules Overview](overview.md)
+
+## Purpose
+
+`cgc.py` is the CodeGraphContext lifecycle export facade. It groups the split
+CGC implementation modules behind one import surface for `providers.lifecycle`.
+
+## Code Commentary
+
+### Logic
+
+The module re-exports CGC backend, core settings/layout, installation/patching,
+and process lifecycle functions. It intentionally contains no behavior beyond
+those exports.
+
+### Invariants And Boundaries
+
+- Keep this module import-only.
+- Put CGC implementation in the focused `cgc_*` modules.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The parent lifecycle facade imports this CGC facade. | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
+| CGC core, backend, install, process-control, refresh, and query modules make up the exported surface. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/core.py); [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py); [installation.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py); [process_control.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py); [refresh.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py); [query.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/query.py) |
+
+## Update History
+
+- 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
+- 2026-05-25T19:01+02:00: Created as the CodeGraphContext lifecycle export facade.

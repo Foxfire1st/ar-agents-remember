@@ -5,31 +5,30 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:51+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-25T20:41+02:00                     |
+| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
+| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
 
-`git_worktree_manager.py` is the package-local C-09 worktree lifecycle
-implementation behind MCP worktree tools.
+`git_worktree_manager.py` is the package-local C-09 worktree lifecycle facade
+behind MCP worktree tools.
 
 ## Code Commentary
 
 ### Logic
 
-The module creates and attaches code/memory worktrees, writes task contracts,
-reports lifecycle status, performs closeout, integrates completed branches, and
-cleans up registered worktrees. During `start`, provider setup now calls
-package-local `provider_setup.run_provider_setup()` with a typed
-`ProviderSetupRequest` and the generated provider settings path supplied by the
-MCP controller.
+The module now re-exports the public worktree lifecycle surface from focused
+implementation modules under `worktrees/modules/`. It preserves imports such as
+`agents_remember.worktrees.git_worktree_manager.start_result` while moving the
+actual operation logic into smaller files for Git adapters, guidance, start,
+onboarding refresh, closeout, integration, cleanup, and CLI parsing.
 
-The MCP path calls result-returning service functions such as `start_result()`,
-`closeout_result()`, `integrate_result()`, and `cleanup_result()`. CLI command
-functions remain print adapters over those payloads, so MCP controllers no
-longer need to run `main(argv)` and parse stdout.
+The MCP path still calls result-returning service functions such as
+`start_result()`, `closeout_result()`, `integrate_result()`, and
+`cleanup_result()`. CLI command functions remain print adapters over those
+payloads, so MCP controllers do not need to run `main(argv)` and parse stdout.
 
 Worktree lifecycle payloads expose typed MCP next hints through
 `nextOperation`, `nextTool`, `nextArgs`, and optional `nextRequiredArgs` instead
@@ -38,11 +37,9 @@ through an internal `WorktreeProviderSetupConfig` created by the MCP controller,
 so callers no longer pass provider coordination roots, settings paths, or
 runtime roots into the worktree start surface.
 
-Closeout context reparses `system/settings.md`/`settings.json` from the
-external memory worktree when that worktree carries settings changes. The
-changed-path and onboarding metadata/entity refresh paths use the shared
-filesystem helper for existence, file, read, and write probes so deeply nested
-Windows paths do not become false missing sidecars.
+Closeout context reparsing, changed-path discovery, onboarding metadata/entity
+refresh, integration replay, and cleanup now live in the extracted modules
+documented by the `modules/overview.md` route overview.
 
 ### Invariants And Boundaries
 
@@ -72,11 +69,13 @@ Windows paths do not become false missing sidecars.
 | Provider setup performs isolated CGC seed and runtime preparation. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
 | Worktree status packets project lifecycle payloads into context packets. | [status.py](agents-remember-md/mcp/src/agents_remember/worktrees/status.py) |
 | Worktree contract serialization lives in the package worktree contract module. | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Extracted worktree lifecycle implementation modules live under this route. | [overview.md](agents-remember-md/mcp/src/agents_remember/worktrees/modules/overview.md) |
 | Long-path-safe filesystem wrappers live in the kernel filesystem helper. | [filesystem.py](agents-remember-md/mcp/src/agents_remember/kernel/filesystem.py) |
 | Worktree support tests cover memory-worktree settings and long-path closeout planning regressions. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 
+- 2026-05-25T20:41+02:00: Updated after the worktree manager became a facade over focused lifecycle implementation modules.
 - 2026-05-24T18:51+02:00: Updated after closeout planning began using memory-worktree settings and long-path-safe filesystem probes.
 - 2026-05-24T05:03+02:00: Updated after worktree lifecycle payloads replaced CLI `next_command` guidance with typed MCP next hints and provider setup moved behind an internal MCP-derived config object.
 - 2026-05-24T00:35+02:00: Updated after MCP worktree controllers switched from `main(argv)` capture to result-returning service functions.

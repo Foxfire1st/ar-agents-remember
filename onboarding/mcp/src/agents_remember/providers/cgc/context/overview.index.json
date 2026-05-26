@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember-md",
+  "route": "mcp/src/agents_remember/providers/cgc/context",
+  "overview": "mcp/src/agents_remember/providers/cgc/context/overview.md",
+  "index": "mcp/src/agents_remember/providers/cgc/context/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/providers/cgc/context/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/providers/cgc/context/__init__.py",
+    "mcp/src/agents_remember/providers/cgc/context/constants.py",
+    "mcp/src/agents_remember/providers/cgc/context/core.py",
+    "mcp/src/agents_remember/providers/cgc/context/patches.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "cgc",
+    "constants",
+    "context",
+    "core",
+    "init",
+    "init__",
+    "mcp",
+    "patches",
+    "providers",
+    "remember",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "Use `core.py` for `CgcRuntimeLayout`, settings-derived layout, managed config file creation, source artifact checks, and stale provider runtime cleanup. Use `constants.py` for pins, backend names, env exclusions, default `.cgcignore`, and patch snippets. Use `patches.py` for upstream CGC module discovery and marker-based patch application.",
+    "candidateHints": [
+      "mcp/src/agents_remember/providers/cgc/context",
+      "mcp/src/agents_remember/providers/cgc/context/__init__.py",
+      "mcp/src/agents_remember/providers/cgc/context/constants.py",
+      "mcp/src/agents_remember/providers/cgc/context/core.py",
+      "mcp/src/agents_remember/providers/cgc/context/patches.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "constants.py",
+      "constants",
+      "core.py",
+      "core",
+      "patches.py",
+      "patches",
+      "CgcRuntimeLayout",
+      "cgcignore",
+      "CGC",
+      "mcp/src/agents_remember/providers/cgc/context/",
+      "route-overview",
+      "a8ee8440dfa920d1153a4bb4bb43cc77534c3c90",
+      "/overview.md",
+      "cgc/context/",
+      "providers/cgc/context/",
+      "agents_remember",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T21",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T15",
+      "governingOverview",
+      "CodeGraphContext",
+      "T19"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/providers/cgc/context/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

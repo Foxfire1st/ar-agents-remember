@@ -1,0 +1,72 @@
+# mcp/src/agents_remember/kernel/coordination_context/ — Coordination Context Modules
+
+| Field                  | Value                                      |
+| ---------------------- | ------------------------------------------ |
+| repository             | agents-remember-md                         |
+| sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
+| doc_type               | `route-overview`                           |
+| lastUpdated            | 2026-05-25T20:57+02:00                     |
+| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
+| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00                 |
+| governingOverview      | `../../../../overview.md`                  |
+
+## Governing Overview
+
+[mcp/overview.md](../../../../overview.md)
+
+## Purpose
+
+`coordination_context/` contains the extracted implementation for the C-08
+package resolver. The public import and `python -m` entrypoint remain
+`agents_remember.kernel.coordination_context_resolver`, while this package owns
+the focused resolver, settings, storage, contract, cross-repo, serialization,
+and CLI responsibilities.
+
+## Hot Path Summary
+
+Start in `resolver.py` for topology and context assembly, `settings.py` for
+JSON-first settings selection, `json_settings.py` and `markdown_settings.py`
+for settings formats, `markdown_cross_repo.py` and
+`markdown_global_rules.py` for legacy Markdown parser branches, `storage.py`
+for path-rule eligibility, `cross_repo.py` for branch-gated adjacent repo facts,
+`contracts.py` for worktree contract fact loading, and `serialize.py` plus
+`cli.py` for output adapters.
+
+## Route Model
+
+The package is intentionally split by responsibility:
+
+- `models.py` owns dataclasses and typed dictionaries.
+- `paths.py` owns path/topology primitives.
+- `resolver.py` composes a `CoordinationContext` without performing mutation.
+- `settings.py` chooses JSON settings over Markdown fallback and delegates
+  concrete parsers.
+- `json_settings.py`, `markdown_settings.py`, and `setting_values.py` own
+  settings parsing details.
+- `markdown_cross_repo.py` and `markdown_global_rules.py` keep the Markdown
+  parser below complexity and maintainability thresholds.
+- `storage.py` owns storage/path-rule decisions.
+- `contracts.py` and `cross_repo.py` load external facts used by the resolver.
+- `serialize.py` and `cli.py` adapt the context to text/JSON output.
+
+## Invariants And Boundaries
+
+- C-08 remains facts-only; this package does not create memory roots, modify
+  Git worktrees, or write onboarding.
+- MCP settings and explicit arguments are resolver authority; source-checkout
+  `.env` and `.env.example` are not runtime coordination-root inputs.
+- The facade preserves the public resolver import path and selected test seams,
+  but implementation code belongs in the focused modules.
+- Settings parsing is JSON-first; Markdown fenced settings are accepted only
+  when a sibling `settings.json` is absent.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The package-local facade keeps existing callers pointed at the split implementation. | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| Resolver behavior is covered by resolver parity and worktree support tests. | [test_resolver_parity.py](agents-remember-md/mcp/tests/test_resolver_parity.py); [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+
+## Update History
+
+- 2026-05-25T20:57+02:00: Created after the monolithic C-08 package resolver was split into focused implementation modules, then amended when Markdown fallback parser branches moved into submodules.

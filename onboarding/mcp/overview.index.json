@@ -15,14 +15,34 @@
       "index": "mcp/src/agents_remember/memory_quality/overview.index.json"
     },
     {
-      "route": "mcp/src/agents_remember/providers/context_modules",
-      "overview": "mcp/src/agents_remember/providers/context_modules/overview.md",
-      "index": "mcp/src/agents_remember/providers/context_modules/overview.index.json"
+      "route": "mcp/src/agents_remember/kernel/coordination_context",
+      "overview": "mcp/src/agents_remember/kernel/coordination_context/overview.md",
+      "index": "mcp/src/agents_remember/kernel/coordination_context/overview.index.json"
     },
     {
-      "route": "mcp/src/agents_remember/providers/lifecycle_modules",
-      "overview": "mcp/src/agents_remember/providers/lifecycle_modules/overview.md",
-      "index": "mcp/src/agents_remember/providers/lifecycle_modules/overview.index.json"
+      "route": "mcp/src/agents_remember/providers/cgc",
+      "overview": "mcp/src/agents_remember/providers/cgc/overview.md",
+      "index": "mcp/src/agents_remember/providers/cgc/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/providers/context",
+      "overview": "mcp/src/agents_remember/providers/context/overview.md",
+      "index": "mcp/src/agents_remember/providers/context/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/providers/grepai",
+      "overview": "mcp/src/agents_remember/providers/grepai/overview.md",
+      "index": "mcp/src/agents_remember/providers/grepai/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/providers/lifecycle",
+      "overview": "mcp/src/agents_remember/providers/lifecycle/overview.md",
+      "index": "mcp/src/agents_remember/providers/lifecycle/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/worktrees/modules",
+      "overview": "mcp/src/agents_remember/worktrees/modules/overview.md",
+      "index": "mcp/src/agents_remember/worktrees/modules/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -143,13 +163,7 @@
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md",
-    "mcp/src/agents_remember/providers/cgc_bundle.py",
-    "mcp/src/agents_remember/providers/cgc_seed.py",
-    "mcp/src/agents_remember/providers/cgc_setup.py",
-    "mcp/src/agents_remember/providers/context.py",
-    "mcp/src/agents_remember/providers/grepai_setup.py",
     "mcp/src/agents_remember/providers/integrity.py",
-    "mcp/src/agents_remember/providers/lifecycle.py",
     "mcp/src/agents_remember/providers/lifecycle_service.py",
     "mcp/src/agents_remember/providers/provider_setup.py",
     "mcp/src/agents_remember/providers/settings.py",
@@ -175,9 +189,9 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 256,
-    "fileSidecars": 147,
-    "childRoutes": 3
+    "sourceFilesInScope": 292,
+    "fileSidecars": 141,
+    "childRoutes": 7
   },
   "routingTerms": [
     "adopt",
@@ -192,7 +206,6 @@
     "bootstrap",
     "boundary",
     "branch",
-    "bundle",
     "calculator",
     "candidate",
     "candidates",
@@ -201,9 +214,6 @@
     "carryover",
     "catalog",
     "cgc",
-    "cgc_bundle",
-    "cgc_seed",
-    "cgc_setup",
     "cgcignore",
     "change",
     "chat",
@@ -221,12 +231,12 @@
     "common",
     "config",
     "context",
-    "context_modules",
     "context_packet",
     "contract",
     "control",
     "controllers",
     "coordination",
+    "coordination_context",
     "coordination_context_resolver",
     "coordinator",
     "core",
@@ -259,15 +269,23 @@
     "folder",
     "framing",
     "from",
-    "git"
+    "git",
+    "git_worktree_manager",
+    "governing",
+    "grepai",
+    "guidelines"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools, `controllers/context_packet.py` for startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.py`; runner executable integrity is checked by `providers/integrity.py` before watcher status is trusted. Provider lifecycle implementation is now split betwee...",
     "candidateHints": [
       "mcp",
       "mcp/src/agents_remember/memory_quality",
-      "mcp/src/agents_remember/providers/context_modules",
-      "mcp/src/agents_remember/providers/lifecycle_modules",
+      "mcp/src/agents_remember/kernel/coordination_context",
+      "mcp/src/agents_remember/providers/cgc",
+      "mcp/src/agents_remember/providers/context",
+      "mcp/src/agents_remember/providers/grepai",
+      "mcp/src/agents_remember/providers/lifecycle",
+      "mcp/src/agents_remember/worktrees/modules",
       "mcp/pyproject.toml",
       "mcp/src/agents_remember/benchmarks",
       "mcp/src/agents_remember/benchmarks/runner.py",
@@ -283,11 +301,7 @@
       "mcp/src/agents_remember/install/__init__.py",
       "mcp/src/agents_remember/install/assets.py",
       "mcp/src/agents_remember/install/runtime.py",
-      "mcp/src/agents_remember/install/skills.py",
-      "mcp/src/agents_remember/kernel",
-      "mcp/src/agents_remember/kernel/coordination_context_resolver.py",
-      "mcp/src/agents_remember/kernel/filesystem.py",
-      "mcp/src/agents_remember/kernel/memory_init.py"
+      "mcp/src/agents_remember/install/skills.py"
     ],
     "anchorHints": [
       "pyproject.toml",
