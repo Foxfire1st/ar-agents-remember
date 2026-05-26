@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T18:07+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -29,9 +29,9 @@ The service copies package runtime skills, provider defaults, and runtime
 `AGENTS.md` templates from the source/package runtime tree into the configured
 coordinator. Runtime sync removes stale coordinator `scripts/` remnants because
 the old source-side installer and skill-install script are no longer valid
-runtime entry points. Dependency-skipped syncs preserve non-Docker provider
-venvs under `_venvs` and live provider runner state under `providers/runners`,
-while stale `providers/_bin` content is pruned because host provider binaries
+runtime entry points. Dependency-skipped syncs preserve live provider runner
+state under `providers/runners`, while stale `providers/_bin` and
+`providers/_venvs` content is pruned because host provider binaries and venvs
 are not part of the managed runtime contract. Explicit provider dependency
 installs reconcile supported provider paths through package-local lifecycle
 code. All installs preserve durable `providers/data` and `providers/logs`.
@@ -55,10 +55,12 @@ clients reach it through the `runtime_install` tool.
   scripts must not remain as a parallel route.
 - MCP provider dependency install must use generated settings from
   `McpRuntimeConfig`.
-- Full provider reinstall can replace non-Docker provider venvs and runner
-  instances, but must preserve `providers/data` and `providers/logs`.
+- Full provider reinstall can replace Docker runner instances and image build
+  roots, but must preserve `providers/data` and `providers/logs`.
 - `providers/_bin` is not preserved or recreated as a managed provider runtime
   path.
+- `providers/_venvs` is not preserved or recreated as a managed provider
+  runtime path.
 - This service must not execute coordinator-local `scripts/provider-setup.py`
   for the MCP path.
 - Coordinator runtimes do not receive source scripts; provider, benchmark, and
@@ -74,6 +76,7 @@ clients reach it through the `runtime_install` tool.
 
 ## Update History
 
+- 2026-05-26T12:51+02:00: Updated after runtime install stopped preserving provider venvs and CGC provider dependencies became Docker-owned.
 - 2026-05-25T18:07+02:00: Updated after runtime install stopped preserving `providers/_bin`; Docker-owned GrepAI keeps binaries inside the runner image.
 - 2026-05-24T00:37+02:00: Refreshed verification and documented that packaged asset discovery owns normal runtime source selection, with `source_root` reserved for internal development/test use.
 - 2026-05-23T14:20+02:00: Updated after `runtime_install` stopped requiring or copying `runtime/scripts/install-skills.sh` and began removing stale coordinator `scripts/` remnants.

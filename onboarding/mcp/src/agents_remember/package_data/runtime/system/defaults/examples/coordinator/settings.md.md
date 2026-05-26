@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T18:07+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastUpdated            | 2026-05-26T13:58+02:00                     |
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 
 ## Purpose
 
@@ -19,11 +19,31 @@ This file is the human-facing coordinator settings example for `ar-coordination/
 
 The example describes the coordinator as workspace-wide routing and workflow state. It lists global instructions, shared tools, workspace source registries, task/worktree roots, notes, selected memory repos, and operator conventions as coordinator-owned surfaces. The context provider section frames providers as local discovery accelerators, maps semantic discovery to GrepAI, relationship discovery to CodeGraphContext, and intent retrieval back to onboarding plus bounded source confirmation. Machine-readable provider authority belongs to the MCP settings file outside the coordinator root, not to this human-facing coordinator example.
 
-The provider install guidance says installs should be coordination-owned: pinned requirements under `providers/requirements/`, non-Docker Python provider venvs under `providers/_venvs/`, and patches under `providers/patches/`. `providers/_bin` is explicitly not a managed provider contract. Providers that need native binaries, databases, or daemonized infrastructure should prefer Docker-wrapped providers/backends and must not require host-level PostgreSQL, FalkorDB, Ollama, OS services, launch agents, package-manager services, or global user daemons for normal managed mode.
+The provider install guidance says installs should be coordination-owned:
+pinned requirements under `providers/requirements/`, patches under
+`providers/patches/`, and Docker image locks beside those pins. `providers/_bin`
+and `providers/_venvs` are explicitly not managed provider contracts. Providers
+that need native binaries, databases, or daemonized infrastructure should prefer
+Docker-wrapped providers/backends and must not require host-level PostgreSQL,
+FalkorDB, Ollama, OS services, launch agents, package-manager services, Python
+virtual environments, or global user daemons for normal managed mode.
 
 The GrepAI guidance says one `grepai-memory` provider can declare multiple memory roots in workspace mode, covering both external memory repos and repo-internal `ar-memory/` roots with explicit `{ projectId, path }` entries. Managed lifecycle tooling mirrors those roots into provider-owned index roots before launching GrepAI because GrepAI still writes per-project symbol/config artifacts beside each configured project path. GrepAI config, state, cache, home files, and mirrored index roots live under `providers/runners/grepai/`; logs live under `providers/logs/grepai/`; all memory roots share one lifecycle-owned Docker network, PostgreSQL/pgvector container with durable state under `providers/data/grepai/postgres/`, and Ollama container for embeddings. GrepAI itself runs from the Docker runner container, so managed mode must not install GrepAI or Ollama into host user space. A `.grepai/` directory inside any indexed memory root is a containment failure rather than durable memory.
 
-The CodeGraphContext guidance says one `codegraphcontext-code` provider can declare multiple code repository roots. Lifecycle tooling expands those roots into one watcher/runtime instance per configured code repo under `providers/runners/codegraphcontext/<repo-id>/`, while all instances share one lifecycle-owned FalkorDB Docker DBMS with durable state under `providers/data/codegraphcontext/falkordb/`. Reinstall/update may delete and recreate package-owned provider defaults plus runner scaffolding while preserving `providers/data` and `providers/logs`; current non-Docker provider venvs can remain under `providers/_venvs`, but `_bin` is not preserved as a managed provider path. MCP install generates lifecycle settings from MCP authority rather than coordinator-local JSON authority. Deleting FalkorDB data, graph namespaces, repository indexes, or GrepAI PostgreSQL data requires an explicit destructive lifecycle action.
+The CodeGraphContext guidance says one `codegraphcontext-code` provider can
+declare multiple code repository roots. Lifecycle tooling expands those roots
+into one watcher/runtime instance per configured code repo under
+`providers/runners/codegraphcontext/<repo-id>/`, runs CodeGraphContext itself
+from a lifecycle-owned Docker runner image/container as the host user when
+supported, and shares one lifecycle-owned FalkorDB Docker DBMS on the shared CGC
+Docker network with durable state under
+`providers/data/codegraphcontext/falkordb/`. Reinstall/update may delete and
+recreate package-owned provider defaults plus runner scaffolding while
+preserving `providers/data` and `providers/logs`; `_bin` and `_venvs` are not
+preserved as managed provider paths. MCP install generates lifecycle settings
+from MCP authority rather than coordinator-local JSON authority. Deleting
+FalkorDB data, graph namespaces, repository indexes, or GrepAI PostgreSQL data
+requires an explicit destructive lifecycle action.
 
 ### Conventions
 
@@ -31,7 +51,7 @@ Repo-specific rules belong in the selected memory layer rather than this coordin
 
 ### Invariants And Boundaries
 
-C-08 remains the route from coordinator context into the target repository's active memory settings, tools, sources, onboarding, and ledger paths. Context providers must not replace source proof, verified onboarding, drift checks, branch validity, or memory promotion rules. Disposable GrepAI runtime artifacts must stay under `providers/runners/grepai/`, disposable CGC runtime artifacts must stay under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable database state must stay under `providers/data/`, and process-only env keys must not be persisted into `.env` when CGC v0.4.10 rejects them as invalid config.
+C-08 remains the route from coordinator context into the target repository's active memory settings, tools, sources, onboarding, and ledger paths. Context providers must not replace source proof, verified onboarding, drift checks, branch validity, or memory promotion rules. Disposable GrepAI runtime artifacts must stay under `providers/runners/grepai/`, disposable CGC runtime artifacts must stay under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable database state must stay under `providers/data/`, CGC command execution must stay Docker-owned, and process-only env keys must not be persisted into `.env` when CGC v0.4.10 rejects them as invalid config.
 
 ### Todos
 
@@ -52,9 +72,9 @@ No external documentation is needed.
 | The example states that coordinator settings are workspace-wide and do not replace per-repository memory settings. | L1-L8 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The scope list names global instructions, shared commands, workspace sources, roots, notes, selected memory repos, and operator conventions as coordinator concerns. | L10-L25 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The routing section tells agents to invoke C-08 and treat repository-specific memory guidance as more specific. | L40-L48 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The context provider section defines semantic, relationship, and intent retrieval substrates, keeps provider authority in MCP settings, routes lifecycle behavior through MCP/package-owned tooling, removes `_bin` from the managed provider contract, and prefers Docker-wrapped providers/backends instead of host-level services or global daemons. | L49-L81 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
+| The context provider section defines semantic, relationship, and intent retrieval substrates, keeps provider authority in MCP settings, routes lifecycle behavior through MCP/package-owned tooling, removes `_bin` and `_venvs` from the managed provider contract, and prefers Docker-wrapped providers/backends instead of host-level services or global daemons. | L49-L81 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The GrepAI notes require a workspace-mode `roots` array for external memory repos and repo-internal `ar-memory/` roots, mirror roots into provider-owned index roots, keep GrepAI config/state/mirrors under `providers/runners/grepai/`, store logs under `providers/logs/grepai/`, store durable PostgreSQL/pgvector data under `providers/data/grepai/postgres/`, run Ollama and GrepAI through Docker-owned containers, and treat `.grepai/` inside indexed memory roots as a containment failure. | L83-L94 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The CGC notes require configured code roots, per-repo runtime instances under `providers/runners/codegraphcontext`, a shared lifecycle-owned FalkorDB Docker DBMS with durable state under `providers/data/`, process-env separation, and explicit destructive actions for database deletion. | L96-L123 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
+| The CGC notes require configured code roots, per-repo runtime instances under `providers/runners/codegraphcontext`, Docker-owned CGC runner execution, a shared lifecycle-owned FalkorDB Docker DBMS with durable state under `providers/data/`, process-env separation, and explicit destructive actions for database deletion. | L96-L123 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 
 ## Cross-Repo References
 
@@ -66,6 +86,8 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-05-26T13:58+02:00: Updated CGC doctrine after runner containers moved onto the shared CGC Docker network and began launching as the host user when supported.
+- 2026-05-26T12:51+02:00: Updated provider doctrine after CodeGraphContext moved to Docker-owned runner execution and host venvs left the managed contract.
 - 2026-05-25T18:07+02:00: Updated provider doctrine after Docker-owned GrepAI removed host GrepAI/Ollama installs and `providers/_bin` from the managed contract.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T00:37+02:00: Refreshed provider doctrine after lifecycle setup moved fully behind MCP/package-owned operations and coordinator scripts were removed from runtime installs.

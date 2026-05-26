@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:16+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -38,13 +38,9 @@ the MCP provider path regresses from `lifecycle_service` back to CLI capture.
 Command-style artifact coverage verifies service-backed MCP tools do not expose
 `argv`, `stdout`, `stderr`, or parsed `payload` wrapper fields.
 
-Provider operation integrity coverage creates a provider runner file without a
-manifest and asserts CGC query and watcher-start payloads return
-`runnerIntegrityFailed` before lifecycle settings are written or lifecycle
-services execute. The integrity coverage now uses a CodeGraphContext venv file
-for the blocking case and separately asserts that current or historically
-recorded `providers/_bin` entries are ignored when `grepai-memory` is
-Docker-owned.
+Provider operation integrity coverage asserts that legacy CodeGraphContext venv
+files and current or historically recorded `providers/_bin` entries are ignored
+when providers are Docker-owned.
 
 ### Invariants And Boundaries
 
@@ -63,9 +59,8 @@ argument forwarding.
 Provider MCP tests should protect that provider lifecycle calls use the typed
 service layer, not `main(argv)`.
 
-Provider MCP tests should also protect that runner-integrity failures block
-provider operations before lifecycle execution, while legacy `_bin` artifacts do
-not block Docker-mode `grepai-memory`.
+Provider MCP tests should also protect that legacy `_bin` and `_venvs`
+artifacts do not block Docker-mode providers.
 
 Service-backed MCP tool tests should protect stable domain payloads rather than
 command-capture response wrappers.
@@ -77,10 +72,11 @@ command-capture response wrappers.
 | Public tool metadata and payload builders live in `tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
 | Server registration lives in `server.py`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
 | Controller facades convert public MCP payloads into service calls. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| Provider runner integrity now ignores legacy `_bin` entries while still watching non-Docker runner files. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py) |
+| Provider runner integrity now ignores legacy `_bin` and `_venvs` entries for Docker-owned providers. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py) |
 
 ## Update History
 
+- 2026-05-26T12:51+02:00: Updated after provider integrity stopped treating CodeGraphContext host venvs as authority because CGC is Docker-owned.
 - 2026-05-25T19:16+02:00: Updated after service tests patched `providers.lifecycle.main` directly and the `provider_lifecycle.py` compatibility module was deleted.
 - 2026-05-25T18:07+02:00: Updated after provider integrity removed `_bin` from current runner authority and kept old `_bin` manifest entries ignored.
 - 2026-05-25T17:40+02:00: Updated after provider integrity tests switched the blocking case to CGC runner state and added Docker-mode legacy GrepAI binary/current-manifest ignore coverage.

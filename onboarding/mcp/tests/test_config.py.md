@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T17:40+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastUpdated            | 2026-05-26T13:58+02:00                     |
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -28,7 +28,9 @@ contract paths inside the coordinator, rejects memory settings includes outside
 repo boundaries, and rejects provider path fields that should be server-derived.
 The authority-settings test also verifies generated `grepai-memory` lifecycle
 settings stay Docker-owned, including Docker mode, shared network, runner image
-and container, Postgres backend root, and Ollama embedder backend.
+and container, Postgres backend root, and Ollama embedder backend. It also
+checks that generated `codegraphcontext-code` backend settings include the
+shared CGC Docker network.
 
 ### Invariants And Boundaries
 
@@ -42,10 +44,11 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 | Finding | Source Path |
 | --- | --- |
 | The tested loader lives in MCP config. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| Generated lifecycle settings define the Docker-owned `grepai-memory` stack consumed by provider lifecycle code. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
+| Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
 
 ## Update History
 
+- 2026-05-26T13:58+02:00: Updated after authority-settings coverage asserted the generated CGC backend Docker network.
 - 2026-05-25T17:40+02:00: Updated after authority-settings coverage asserted Docker-owned GrepAI runner, network, Postgres, and Ollama settings.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` moved normal Codex harness fixtures to `.codex`.
 - 2026-05-24T09:23+02:00: Updated after harness-root inference tests moved to Codex `.codex/mcp` placement.

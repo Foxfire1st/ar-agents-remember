@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,9 +23,10 @@ root or every settings-backed root.
 
 ### Logic
 
-The module builds `cgc index <repo> --force` commands, returns dry-run refresh
-payloads, starts the managed backend when required, runs CGC doctor before live
-refreshes, records refresh state, and aggregates all-root refresh results.
+The module builds Dockerized `cgc index <repo> --force` commands, returns
+dry-run refresh payloads, starts the managed backend when required, runs CGC
+doctor before live refreshes, records refresh state, and aggregates all-root
+refresh results.
 
 ### Invariants And Boundaries
 
@@ -33,6 +34,8 @@ refreshes, records refresh state, and aggregates all-root refresh results.
   use managed backend mode.
 - All-root result aggregation is reused from `process_control.py`.
 - Bounded `cgc run` and visualizer behavior live in `query.py`.
+- Refresh execution must use the Docker runner image, not a host `cgc`
+  executable.
 
 ## Repo-Internal References
 
@@ -40,7 +43,9 @@ refreshes, records refresh state, and aggregates all-root refresh results.
 | --- | --- |
 | Backend startup is delegated to the CGC backend lifecycle module. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
 | All-root aggregation helpers are shared with process control. | [process_control.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py) |
+| Docker command construction is provided by the runner module. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
 
 ## Update History
 
+- 2026-05-26T12:51+02:00: Updated after CGC refresh moved into the Docker runner.
 - 2026-05-25T21:14+02:00: Split from `process.py` so refresh orchestration is separate from watcher process control and bounded queries.

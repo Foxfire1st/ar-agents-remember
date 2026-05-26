@@ -16,11 +16,12 @@
     "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py",
     "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py",
     "mcp/src/agents_remember/providers/cgc/lifecycle/query.py",
-    "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py"
+    "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py",
+    "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 7,
-    "fileSidecars": 7,
+    "sourceFilesInScope": 8,
+    "fileSidecars": 8,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -41,10 +42,11 @@
     "query",
     "refresh",
     "remember",
+    "runner",
     "src"
   ],
   "hotPath": {
-    "summary": "`__init__.py` re-exports the CGC public lifecycle surface. `core.py` derives settings and runtime layout, `backend.py` manages the FalkorDB Docker backend, `installation.py` owns install/status/patch/doctor behavior, `process_control.py` owns watcher process start/stop, `refresh.py` owns index refresh, and `query.py` owns bounded native run plus visualizer commands.",
+    "summary": "`__init__.py` re-exports the CGC public lifecycle surface. `core.py` derives settings and runtime layout, `backend.py` manages the FalkorDB Docker backend, `runner.py` builds the Docker runner image and command lines, `installation.py` owns install/status/patch/doctor behavior, `process_control.py` owns watcher process start/stop, `refresh.py` owns index refresh, and `query.py` owns bounded native run plus visualizer commands.",
     "candidateHints": [
       "mcp/src/agents_remember/providers/cgc/lifecycle",
       "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py",
@@ -53,7 +55,8 @@
       "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py",
       "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py",
       "mcp/src/agents_remember/providers/cgc/lifecycle/query.py",
-      "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py"
+      "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py",
+      "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -70,6 +73,8 @@
       "query",
       "refresh.py",
       "refresh",
+      "runner.py",
+      "runner",
       "init__",
       "CGC",
       "FalkorDB",
@@ -88,13 +93,15 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T21",
+      "T13",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "T15",
       "governingOverview",
       "CodeGraphContext",
       "GrepAI",
+      "T12",
+      "T21",
       "T19",
       "cgc_",
       "lifecycle_modules"
