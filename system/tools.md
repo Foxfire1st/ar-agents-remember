@@ -128,6 +128,7 @@ the standalone CRAP-Calculator command.
 - Before applying `ruff check --fix` or `ruff format`, run the corresponding `--diff` command first and inspect the proposed changes.
 - Treat `Radon` as a map of risk, not a scoring game. Do not split code into tiny helpers just to lower complexity; split by responsibility and purpose.
 - When touching a function above the repository complexity target, either reduce the complexity locally or tell the developer why the function should remain as-is for now.
+- For Radon or CRAP-Calculator complexity findings in files touched by the current task, ignoring the finding is not an option. Report every in-scope violation with a concrete fix suggestion so the developer can approve that fix or give alternate direction.
 - Preserve existing script/function contracts unless the developer explicitly approves a contract change.
 - Prefer facade refactors: keep the current entrypoint stable, move the implementation behind it, and prove behavior with focused tests.
 - If a change worsens complexity or maintainability in touched code, call that out explicitly and explain why it is acceptable or what follow-up is needed.

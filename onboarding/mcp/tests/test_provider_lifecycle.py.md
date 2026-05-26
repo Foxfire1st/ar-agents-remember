@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-26T13:58+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
+| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

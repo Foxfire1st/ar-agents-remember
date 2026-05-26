@@ -13,13 +13,14 @@
     "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py",
     "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py",
     "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py",
+    "mcp/src/agents_remember/providers/grepai/lifecycle/compose.py",
     "mcp/src/agents_remember/providers/grepai/lifecycle/core.py",
     "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py",
     "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 6,
-    "fileSidecars": 6,
+    "sourceFilesInScope": 7,
+    "fileSidecars": 7,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -27,6 +28,7 @@
     "agents",
     "agents_remember",
     "backend",
+    "compose",
     "core",
     "embedder",
     "grepai",
@@ -46,6 +48,7 @@
       "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py",
       "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py",
       "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py",
+      "mcp/src/agents_remember/providers/grepai/lifecycle/compose.py",
       "mcp/src/agents_remember/providers/grepai/lifecycle/core.py",
       "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py",
       "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
@@ -57,6 +60,8 @@
       "actions",
       "backend.py",
       "backend",
+      "compose.py",
+      "compose",
       "core.py",
       "core",
       "embedder.py",

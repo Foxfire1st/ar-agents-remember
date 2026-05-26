@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T18:07+02:00                     |
-| lastVerifiedCommitHash |                                            `ae9c4e5b6af38eda7f2b29006130c4263e9db62f`|
-| lastVerifiedCommitDate |                                            2026-05-25T19:55:09+02:00|
+| lastVerifiedCommitHash |                                            `45214435fd2de65765a8230ceb1dcfe188d1944d`|
+| lastVerifiedCommitDate |                                            2026-05-27T00:09:33+02:00|
 | governingOverview      | `../../../../../../../../overview.md`                              |
 
 ## Governing Overview

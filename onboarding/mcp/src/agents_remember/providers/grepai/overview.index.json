@@ -25,7 +25,7 @@
     "mcp/src/agents_remember/providers/grepai/setup.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 14,
+    "sourceFilesInScope": 15,
     "fileSidecars": 2,
     "childRoutes": 2
   },

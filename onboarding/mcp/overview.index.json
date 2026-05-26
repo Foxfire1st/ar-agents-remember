@@ -78,6 +78,8 @@
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md",
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md",
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md",
+    "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py",
+    "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/requirements.txt",
     "mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
     "mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt",
     "mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt",
@@ -195,8 +197,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 307,
-    "fileSidecars": 142,
+    "sourceFilesInScope": 319,
+    "fileSidecars": 144,
     "childRoutes": 8
   },
   "routingTerms": [
@@ -263,6 +265,7 @@
     "defaults",
     "deliberation",
     "design",
+    "docker",
     "docs",
     "documentation",
     "dry",
@@ -278,8 +281,7 @@
     "from",
     "git",
     "git_worktree_manager",
-    "governing",
-    "grepai"
+    "governing"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools, `controllers/context_packet.py` for startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.py`; runner executable integrity is checked by `providers/integrity.py` before watcher status is trusted. Provider lifecycle implementation is now split betwee...",
@@ -356,8 +358,8 @@
       "carryover",
       "AGENTS.md",
       "AGENTS",
-      "codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
-      "codegraphcontext-0.4.10-cgcignore-runtime-root"
+      "patch_cgc.py",
+      "patch_cgc"
     ]
   },
   "fallback": {

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:09+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
+| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
