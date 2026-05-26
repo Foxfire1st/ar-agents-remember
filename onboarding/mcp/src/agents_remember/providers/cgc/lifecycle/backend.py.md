@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:09+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-26T13:58+02:00                     |
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,15 +24,18 @@
 
 The module reports backend status, validates runtime details, removes stale
 containers whose data mount no longer matches the configured backend data root,
-allocates host ports, builds `docker run` commands, starts or reuses the
-FalkorDB container, waits for `redis-cli ping`, records backend state, and
-writes the backend image lock.
+ensures the shared CGC Docker network exists, connects reused backend containers
+to that network, allocates host ports, builds `docker run` commands, starts or
+reuses the FalkorDB container, waits for `redis-cli ping`, records backend
+state, and writes the backend image lock.
 
 ### Invariants And Boundaries
 
 - Managed CGC backend mode must be `falkordb-remote` with Docker.
 - Existing containers are reused only when running and mounted to the expected
   provider data root.
+- The FalkorDB backend must be attached to the same Docker network used by CGC
+  runner and watcher containers.
 - Backend state and image lock writes belong here after successful validation.
 
 ## Repo-Internal References
@@ -44,5 +47,6 @@ writes the backend image lock.
 
 ## Update History
 
+- 2026-05-26T13:58+02:00: Updated after CGC backend start/status began ensuring and reporting the shared CGC Docker network for runner-to-FalkorDB connectivity.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
 - 2026-05-25T19:01+02:00: Created from the CGC backend lifecycle portion of provider lifecycle and refactored below Radon B complexity.

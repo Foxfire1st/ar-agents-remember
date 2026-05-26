@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T17:40+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastUpdated            | 2026-05-26T13:58+02:00                     |
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -17,9 +17,9 @@
 ## Purpose
 
 `settings.py` converts trusted MCP runtime settings into the temporary provider
-lifecycle settings consumed by package-local provider lifecycle code. For
-`grepai-memory`, those generated settings now describe a self-contained Docker
-stack rather than a host GrepAI binary plus externally managed Ollama.
+lifecycle settings consumed by package-local provider lifecycle code. Generated
+settings for both `grepai-memory` and `codegraphcontext-code` describe
+Docker-owned provider runtimes rather than host provider binaries or venvs.
 
 ## Code Commentary
 
@@ -37,6 +37,10 @@ settings still include concrete provider runtime roots under `providers/runners`
 backend data roots under `providers/data`, log roots under `providers/logs`,
 installed requirement paths, Docker backend image metadata, and watcher log
 paths.
+The generated CodeGraphContext settings include a Docker runtime/runner block
+for the `agents-remember/codegraphcontext:<pin>` image, image build root, image
+lock file, watcher container name template, and an `ar-cgc-code` backend network
+entry; they no longer include a managed provider venv root.
 
 `write_lifecycle_settings()` writes that generated object to a temporary JSON
 file for lower-level lifecycle functions that already accept `--from-settings`.
@@ -51,6 +55,12 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 - `grepai-memory` generated settings must be complete enough for Docker to own
   the runner, Postgres backend, and Ollama embedder without requiring host
   GrepAI or Ollama binaries.
+- `codegraphcontext-code` generated settings must be complete enough for Docker
+  to own the runner image/container and FalkorDB backend without requiring a
+  host Python virtual environment.
+- The CGC backend network name in generated settings is part of the Docker-owned
+  runtime contract; runner containers use it to reach FalkorDB by container
+  name instead of host loopback.
 - Delete temporary settings files in the caller after lifecycle operations
   finish.
 
@@ -62,9 +72,12 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 | Provider status writes generated lifecycle settings before calling `watchers_run`. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
 | Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 | GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
+| CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
 
 ## Update History
 
+- 2026-05-26T13:58+02:00: Updated after generated CGC settings gained the shared backend Docker network entry.
+- 2026-05-26T12:51+02:00: Updated after `codegraphcontext-code` lifecycle settings switched from host venv fields to Docker runner image/container settings.
 - 2026-05-25T17:40+02:00: Updated after `grepai-memory` lifecycle settings switched to a complete Docker-owned runner, Postgres, and Ollama embedder stack.
 - 2026-05-24T00:37+02:00: Refreshed verification and clarified the GrepAI fallback root used when no repository memory root is configured.
 - 2026-05-23T04:29+02:00: Created when MCP provider lifecycle settings moved out of coordinator `system/settings.json`.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-26T13:58+02:00                     |
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ result handling. `parse_cgc` builds the parser, parses a `cgc` command,
 normalizes CGC defaults, resolves paths, and stabilizes repo ids in the same
 shape the lifecycle module uses before dispatch.
 
-The tests assert that `cgc visualize` accepts named `--port` and `--context` options after the subcommand, that shared lifecycle options can still appear before the subcommand, that CGC and aggregate watcher commands default their coordinator root to the installed runtime root, that process namespace diagnostics report `durableForDaemons`, and that daemon/server actions reject ephemeral `--die-with-parent` namespaces. Dry-run coverage verifies an explicit long-running `cgc visualize --repo <repo> --port <port>` command. The CGC migration-boundary tests require `cgc run -- visualize ...` to fail with guidance to use `cgc visualize`, and also protect that bounded `cgc run` queries are still allowed in an ephemeral process namespace when the command itself is mocked. GrepAI tests now protect the Docker-only boundary: direct non-settings GrepAI `run` calls return unsupported instead of trying host binaries, settings-backed bounded GrepAI queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and GrepAI start dry-run includes the managed network, Postgres backend, Ollama embedder, runner image/container, container DSN, container project path, and container Ollama endpoint. Docker readiness tests also verify target-database checks after `pg_isready`, and aggregate watcher tests still cover partial-result recovery actions.
+The tests assert that `cgc visualize` accepts named `--port` and `--context` options after the subcommand, that shared lifecycle options can still appear before the subcommand, that CGC and aggregate watcher commands default their coordinator root to the installed runtime root, that process namespace diagnostics report `durableForDaemons`, and that daemon/server actions reject ephemeral `--die-with-parent` namespaces. Dry-run coverage verifies an explicit Dockerized long-running `cgc visualize --repo <repo> --port <port>` command against the `agents-remember/codegraphcontext:<pin>` runner image on the shared CGC Docker network. The generated runner patch script has a regression guard so replacements are embedded as Python data rather than `json.loads({...})`. The CGC migration-boundary tests require `cgc run -- visualize ...` to fail with guidance to use `cgc visualize`, and also protect that bounded `cgc run` queries are still allowed in an ephemeral process namespace when the command itself is mocked. GrepAI tests protect the Docker-only boundary: direct non-settings GrepAI `run` calls return unsupported instead of trying host binaries, settings-backed bounded GrepAI queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and GrepAI start dry-run includes the managed network, Postgres backend, Ollama embedder, runner image/container, container DSN, container project path, and container Ollama endpoint. Docker readiness tests also verify target-database checks after `pg_isready`, and aggregate watcher tests still cover partial-result recovery actions.
 
 F-04 service tests build a temporary lifecycle settings file and verify that
 `providers.lifecycle_service` can run CGC and aggregate watcher dry-run/status
@@ -41,7 +41,7 @@ paths without going through the CLI `main(argv)` route.
 
 ### Conventions
 
-The tests use temporary directories, dry-run/manual override arguments, and monkey-patched lifecycle functions, so they do not require CodeGraphContext, Docker, FalkorDB, GrepAI, or a configured coordinator. Docker-mode tests mock `docker_command()` and the runner release architecture where needed. They focus on command shape, argument defaults, small lifecycle decisions, and aggregation behavior, not live server startup.
+The tests use temporary directories, dry-run/manual override arguments, and monkey-patched lifecycle functions, so they do not require CodeGraphContext, FalkorDB, GrepAI, or a configured coordinator. Docker-mode tests mock `docker_command()` where needed; dry-run CGC command-shape tests require only Docker executable resolution. They focus on command shape, argument defaults, small lifecycle decisions, and aggregation behavior, not live server startup.
 
 ### Invariants And Boundaries
 
@@ -69,7 +69,7 @@ No external documentation is needed for these unit tests.
 | Parser tests assert that `visualize` accepts named options after the subcommand and still allows common lifecycle options before the subcommand. | L93-L129 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | Default-root parser tests assert that CGC and aggregate watcher commands infer the installed runtime root when `--coordination-root` is omitted. | L140-L155 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | Process namespace tests assert that ephemeral daemon actions raise clear errors, namespace status reports `durableForDaemons: false`, `cgc visualize` rejects non-dry-run server launch from that namespace, and bounded `cgc run` queries remain allowed when provider execution is mocked. | L157-L181; L183-L211; L270-L316 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
-| Handler tests assert that `cgc_visualize` dry-run emits an explicit long-running server command and that `cgc_run` rejects `visualize`. | L213-L268 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| Handler tests assert that `cgc_visualize` dry-run emits an explicit Dockerized long-running server command and that `cgc_run` rejects `visualize`. | L213-L268 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | Docker-mode GrepAI tests assert that direct non-settings run calls are unsupported, settings-backed bounded queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and start dry-run builds the full network/Postgres/Ollama/watcher stack with container workspace settings. | L222-L342 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | GrepAI lifecycle tests assert that PostgreSQL readiness proceeds from `pg_isready` to a target database query and aggregate watcher results include partial state plus recovery actions. | L580-L700 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 
@@ -83,6 +83,8 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-26T13:58+02:00: Updated after CGC lifecycle tests asserted Docker-network visualizer commands and guarded the generated runner patch script shape.
+- 2026-05-26T12:51+02:00: Updated after CGC dry-run visualizer tests switched from host `cgc` commands to Docker runner commands.
 - 2026-05-25T21:14+02:00: Updated after tests switched imports to provider-first lifecycle packages and the split `process_status` helper module.
 - 2026-05-25T19:16+02:00: Updated after tests imported `agents_remember.providers.lifecycle` directly and the `provider_lifecycle.py` compatibility module was removed.
 - 2026-05-25T18:07+02:00: Updated after native GrepAI fallback tests were removed and direct non-settings GrepAI calls became unsupported.

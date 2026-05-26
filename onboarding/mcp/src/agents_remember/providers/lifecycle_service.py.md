@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle_service.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:16+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -21,9 +21,9 @@ settings without building CLI `argv` or invoking `lifecycle.main()`.
 ### Logic
 
 `ProviderLifecycleServiceConfig` carries the server-derived coordination root,
-temporary lifecycle settings path, dry-run mode, timeout, and Python executable.
-The service functions normalize those paths, build internal namespaces, and
-dispatch to the provider lifecycle implementation functions:
+temporary lifecycle settings path, dry-run mode, and timeout. The service
+functions normalize those paths, build internal namespaces, and dispatch to the
+provider lifecycle implementation functions:
 
 - `run_cgc_lifecycle()` supports `run`, `visualize`, and `refresh-all`.
 - `run_grepai_lifecycle()` supports `run` and `refresh`.
@@ -38,6 +38,8 @@ structured `ok: false` payloads for MCP callers.
 - MCP callers should pass only server-owned settings, not caller-selected roots.
 - This module is not a generic shell wrapper and does not expose arbitrary
   provider CLI parsing to MCP.
+- CGC service calls do not carry a Python executable because Docker runner
+  lifecycle owns provider execution.
 - The dev/operator CLI facade is `lifecycle.py`; MCP provider tools should call
   this service layer instead of the CLI `main()` path.
 
@@ -51,5 +53,6 @@ structured `ok: false` payloads for MCP callers.
 
 ## Update History
 
+- 2026-05-26T12:51+02:00: Updated after removing the CGC provider Python executable from the typed service config.
 - 2026-05-25T19:16+02:00: Updated after the `provider_lifecycle.py` compatibility shim was deleted and service imports wired to `providers.lifecycle` directly.
 - 2026-05-23T20:56+02:00: Created for F-04 so MCP provider tools call a typed lifecycle service instead of the provider lifecycle CLI main.

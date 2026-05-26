@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:09+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,8 +32,10 @@ output, or a compact text summary.
 ### Invariants And Boundaries
 
 - CLI dispatch is an operator interface; MCP service callers should use
-  `lifecycle_service.py` and implementation functions directly.
+`lifecycle_service.py` and implementation functions directly.
 - Argument normalization should stay shallow and avoid provider behavior.
+- CGC arguments do not carry a Python executable; Docker runner construction
+  owns provider execution.
 - Captured native command output should remain streamable for bounded `run`
   actions.
 
@@ -46,5 +48,6 @@ output, or a compact text summary.
 
 ## Update History
 
+- 2026-05-26T12:51+02:00: Updated after removing the CGC `--python`/host-venv install argument.
 - 2026-05-25T19:09+02:00: Updated after CGC and GrepAI modules moved under package subfolders.
 - 2026-05-25T19:01+02:00: Created from CLI/parser logic extracted out of provider lifecycle.

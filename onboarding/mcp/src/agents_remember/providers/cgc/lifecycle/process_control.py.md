@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,32 +16,37 @@
 
 ## Purpose
 
-`process_control.py` owns CodeGraphContext watcher process start/stop lifecycle
-and all-root start/stop aggregation.
+`process_control.py` owns CodeGraphContext watcher container start/stop
+lifecycle and all-root start/stop aggregation.
 
 ## Code Commentary
 
 ### Logic
 
-The module builds dry-run watch commands, starts the managed FalkorDB backend
-when settings-backed roots require it, detects already-running managed PIDs,
-starts detached `cgc watch`, records provider state, validates stop PIDs, marks
-stopped state, and aggregates start/stop results across configured roots.
+The module builds dry-run Docker watcher commands, starts the managed FalkorDB
+backend when settings-backed roots require it, detects already-running watcher
+containers, starts `cgc watch` inside the CGC runner image, records provider
+state, removes watcher containers on stop, marks stopped state, and aggregates
+start/stop results across configured roots.
 
 ### Invariants And Boundaries
 
 - Long-running watcher start/stop operations require a durable process
-  namespace.
+  namespace even though Docker owns the actual watcher lifetime.
 - Backend lifecycle is delegated to `backend.py`.
 - Refresh and bounded query behavior live in sibling lifecycle modules.
+- Host PIDs are not a managed CGC contract; watcher state is tracked by Docker
+  container name.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
-| Shared process helpers provide durable namespace checks and detached command startup. | [process_status.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/process_status.py); [command_runner.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
+| Shared process helpers provide durable namespace checks and command execution. | [process_status.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/process_status.py); [command_runner.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
 | CGC backend startup is delegated to the backend module. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
+| Docker watcher command construction lives in the runner module. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
 
 ## Update History
 
+- 2026-05-26T12:51+02:00: Updated after watcher start/stop moved from host PIDs to Docker watcher containers.
 - 2026-05-25T21:14+02:00: Split from `process.py` so watcher process control is separate from refresh and bounded query commands.

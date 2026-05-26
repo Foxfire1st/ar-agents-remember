@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/watchers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:09+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
+| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -42,10 +42,11 @@ a durable process namespace.
 | Finding | Source Path |
 | --- | --- |
 | GrepAI watcher behavior lives in the Docker runner module. | [grepai/runner.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
-| CGC start/stop/status behavior lives in the CGC process module. | [cgc/process.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process.py) |
+| CGC start/stop/status behavior lives in the CGC process-control and installation modules. | [cgc/process_control.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py); [cgc/installation.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
 | Tests cover aggregate watcher partial result and recovery-action behavior. | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
 
+- 2026-05-26T12:51+02:00: Updated after watcher CGC args stopped carrying a Python executable and references moved to process-control/status modules.
 - 2026-05-25T19:09+02:00: Updated references after CGC and GrepAI modules moved under package subfolders.
 - 2026-05-25T19:01+02:00: Created from watcher aggregation logic extracted out of provider lifecycle.
