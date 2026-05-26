@@ -12,6 +12,7 @@
   "coveredFiles": [
     "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py",
     "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py",
+    "mcp/src/agents_remember/providers/cgc/lifecycle/compose.py",
     "mcp/src/agents_remember/providers/cgc/lifecycle/core.py",
     "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py",
     "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py",
@@ -20,8 +21,8 @@
     "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 8,
-    "fileSidecars": 8,
+    "sourceFilesInScope": 9,
+    "fileSidecars": 9,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -29,6 +30,7 @@
     "agents_remember",
     "backend",
     "cgc",
+    "compose",
     "control",
     "core",
     "init",
@@ -51,6 +53,7 @@
       "mcp/src/agents_remember/providers/cgc/lifecycle",
       "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py",
       "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py",
+      "mcp/src/agents_remember/providers/cgc/lifecycle/compose.py",
       "mcp/src/agents_remember/providers/cgc/lifecycle/core.py",
       "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py",
       "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py",
@@ -63,6 +66,8 @@
       "__init__",
       "backend.py",
       "backend",
+      "compose.py",
+      "compose",
       "core.py",
       "core",
       "installation.py",
