@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:09+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-05-27T00:25+02:00                     |
+| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
+| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,14 +24,21 @@
 
 The module waits for Postgres readiness with both `pg_isready` and `SELECT 1`,
 creates the `vector` extension, reports backend status, removes mismatched
-containers, creates or reuses the Postgres container, connects it to the shared
-network, records backend state, and writes the backend image lock.
+containers, reuses the host port mapping from an already-running backend,
+starts Postgres through the package Compose project, records backend state, and
+writes the backend image lock. Before Compose startup, it performs GrepAI
+project migration: old unmanaged Postgres, Ollama, watcher containers, and the
+old unmanaged network are removed only when Docker labels do not show the
+expected Compose project.
 
 ### Invariants And Boundaries
 
 - GrepAI backend data must live under provider-managed data roots.
-- The backend container must be connected to the managed GrepAI Docker network.
+- The backend container and network are owned by the GrepAI Compose project
+  after migration.
 - Health is not just container running; database query readiness is required.
+- Existing Compose-managed backend port mappings are reused on repeated starts
+  rather than reallocated from host socket availability.
 
 ## Repo-Internal References
 
@@ -39,8 +46,12 @@ network, records backend state, and writes the backend image lock.
 | --- | --- |
 | Backend settings and Docker network name are derived in GrepAI core. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
 | Tests require the Postgres wait helper to run both `pg_isready` and a database query. | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| Shared Compose helpers provide unmanaged container and network migration. | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 
 ## Update History
 
+- 2026-05-27T00:25+02:00: Updated after GrepAI backend startup added
+  project-wide pre-Compose migration and existing-port reuse for Compose
+  restarts.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
 - 2026-05-25T19:01+02:00: Created from GrepAI PostgreSQL backend lifecycle extracted out of provider lifecycle.

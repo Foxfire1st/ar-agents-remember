@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-05-27T00:25+02:00                     |
+| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
+| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,7 +27,9 @@ The module builds dry-run Docker watcher commands, starts the managed FalkorDB
 backend when settings-backed roots require it, detects already-running watcher
 containers, starts `cgc watch` inside the CGC runner image, records provider
 state, removes watcher containers on stop, marks stopped state, and aggregates
-start/stop results across configured roots.
+start/stop results across configured roots. Watcher startup renders the Compose
+override with backend host ports from the backend start result so repeated
+settings-backed starts keep the same FalkorDB/browser port mappings.
 
 ### Invariants And Boundaries
 
@@ -37,6 +39,8 @@ start/stop results across configured roots.
 - Refresh and bounded query behavior live in sibling lifecycle modules.
 - Host PIDs are not a managed CGC contract; watcher state is tracked by Docker
   container name.
+- Watcher `up` should render dependency backend ports from the current start
+  result when available.
 
 ## Repo-Internal References
 
@@ -48,5 +52,7 @@ start/stop results across configured roots.
 
 ## Update History
 
+- 2026-05-27T00:25+02:00: Updated after watcher startup began reusing
+  backend start-result port mappings in its Compose render.
 - 2026-05-26T12:51+02:00: Updated after watcher start/stop moved from host PIDs to Docker watcher containers.
 - 2026-05-25T21:14+02:00: Split from `process.py` so watcher process control is separate from refresh and bounded query commands.

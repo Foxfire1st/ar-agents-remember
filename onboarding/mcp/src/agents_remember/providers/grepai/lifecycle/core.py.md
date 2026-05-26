@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:09+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-27T00:41+02:00                     |
+| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
+| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,15 +25,17 @@ embedder derivation shared by the Docker-owned GrepAI modules.
 
 The module resolves settings-backed GrepAI runtime layout, prepares workspace
 state, validates Docker mode, derives the managed Docker network name, maps
-container-visible root paths, builds container DSNs and environment variables,
-selects a supported runner release architecture, and derives PostgreSQL,
-Ollama, and runner image settings.
+container-visible root paths, builds container DSNs and container-local
+environment variables, selects a supported runner release architecture, and
+derives PostgreSQL, Ollama, and runner image settings.
 
 ### Invariants And Boundaries
 
 - Settings-backed GrepAI lifecycle must use Docker mode.
 - Workspace config must use container-visible project paths, the Postgres
   container DSN, and the Ollama container endpoint.
+- Containerized GrepAI watcher environment must point at mounted container
+  paths such as `/grepai/runtime/home`, not host runtime paths.
 - This module derives configuration only; container start/status logic belongs
   in backend, embedder, and runner modules.
 
@@ -47,5 +49,7 @@ Ollama, and runner image settings.
 
 ## Update History
 
+- 2026-05-27T00:41+02:00: Updated after container GrepAI environment rendering
+  switched to container-local runtime paths for the Compose watcher.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
 - 2026-05-25T19:01+02:00: Created from GrepAI settings and workspace logic extracted out of provider lifecycle.
