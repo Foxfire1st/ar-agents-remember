@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:16+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastUpdated            | 2026-05-26T23:11+02:00                     |
+| lastVerifiedCommitHash | `d5de5d5403ccf4db9b2650279004655797c68f6b` |
+| lastVerifiedCommitDate | 2026-05-26T23:19:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -33,6 +33,15 @@ The CGC assertions verify that the generic `cgc_query` name stays absent from
 `PUBLIC_TOOLS`, and that typed CGC payloads build fixed native command suffixes
 for symbol search, callers, callees, dependencies, and complexity.
 
+The GrepAI assertions verify that search command construction is
+workspace-wide by default, that explicit configured repo filters become
+repeated `--project` flags, that invalid repo scope and trace inputs fail
+before provider execution, and that trace command construction uses explicit
+`callers`, `callees`, or `graph` actions rather than a free-form query. A gated
+real MCP stdio integration suite exercises the registered `grepai_search` tool
+against a real config, including a dry-run workspace command and a non-dry-run
+project-filtered search.
+
 The typed CGC payload test also patches `lifecycle.main()` to fail if
 the MCP provider path regresses from `lifecycle_service` back to CLI capture.
 Command-style artifact coverage verifies service-backed MCP tools do not expose
@@ -56,6 +65,12 @@ passed or omitted for `default` mode.
 CGC tests should check fixed command construction rather than broad native
 argument forwarding.
 
+GrepAI tests should protect the MCP-facing tool shape, configured-repo scope
+validation, JSON default output, repeated search project flags, and trace action
+validation. Real integration coverage remains gated behind
+`AGENTS_REMEMBER_REAL_MCP_CONFIG` so normal unit runs stay hermetic while
+maintainers can exercise the MCP/provider boundary.
+
 Provider MCP tests should protect that provider lifecycle calls use the typed
 service layer, not `main(argv)`.
 
@@ -76,6 +91,8 @@ command-capture response wrappers.
 
 ## Update History
 
+- 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed GrepAI MCP command-shape and real stdio integration coverage.
+- 2026-05-26T22:54+02:00: Updated after GrepAI search/trace unit tests and gated real MCP stdio integration tests covered the new tool shape.
 - 2026-05-26T12:51+02:00: Updated after provider integrity stopped treating CodeGraphContext host venvs as authority because CGC is Docker-owned.
 - 2026-05-25T19:16+02:00: Updated after service tests patched `providers.lifecycle.main` directly and the `provider_lifecycle.py` compatibility module was deleted.
 - 2026-05-25T18:07+02:00: Updated after provider integrity removed `_bin` from current runner authority and kept old `_bin` manifest entries ignored.

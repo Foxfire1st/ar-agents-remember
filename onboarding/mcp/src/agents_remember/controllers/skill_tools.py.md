@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:16+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00|
+| lastUpdated            | 2026-05-26T23:11+02:00                     |
+| lastVerifiedCommitHash | `d5de5d5403ccf4db9b2650279004655797c68f6b` |
+| lastVerifiedCommitDate | 2026-05-26T23:19:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -46,6 +46,15 @@ CodeGraphContext access is split into typed controller functions:
 native argument vectors internally and no longer accept caller-supplied generic
 `query_type` plus arbitrary argument lists.
 
+GrepAI access is also typed. `grepai_search_tool()` resolves the configured
+GrepAI workspace from MCP-derived lifecycle settings, defaults to JSON output,
+uses workspace-wide search when no repo filter is supplied, and adds repeated
+`--project` flags only for requested `repo_ids` that are present in the MCP
+configuration and GrepAI provider roots. `grepai_trace_tool()` exposes
+explicit `callers`, `callees`, and `graph` actions plus a required symbol; it
+allows `depth` only for graph traces and allows at most one filtered repo
+because the GrepAI trace CLI exposes a singular project flag.
+
 `worktree_start_tool()` writes MCP-derived provider lifecycle settings when
 provider setup is enabled and wraps that path in a package-local
 `WorktreeProviderSetupConfig` for the worktree manager. That keeps worktree
@@ -70,6 +79,9 @@ the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
   typed function and package-owned target.
 - Do not reintroduce generic CGC native-query plumbing on the MCP path; add a
   typed controller for each CGC operation the skills need.
+- GrepAI search repo filters must stay tied to repositories configured through
+  MCP and indexed by the generated GrepAI provider roots; do not accept arbitrary
+  project ids or a free-form trace query.
 - Provider tools should call `providers.lifecycle_service`, not the provider
   lifecycle CLI `main(argv)`.
 - Provider lifecycle calls should be blocked when provider runner integrity
@@ -100,6 +112,8 @@ the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
 
 ## Update History
 
+- 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed the GrepAI MCP search and trace shape.
+- 2026-05-26T22:54+02:00: Updated after GrepAI MCP search gained workspace/project selection, JSON default output, configured-repo validation, and explicit trace action handling.
 - 2026-05-25T19:16+02:00: Updated after provider lifecycle wording switched to the direct `providers.lifecycle` facade.
 - 2026-05-24T19:25+02:00: Updated after provider operation controllers gained a shared runner-integrity preflight that blocks lifecycle execution on manifest drift.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` forwarded benchmark sandbox options through MCP controller payloads.
