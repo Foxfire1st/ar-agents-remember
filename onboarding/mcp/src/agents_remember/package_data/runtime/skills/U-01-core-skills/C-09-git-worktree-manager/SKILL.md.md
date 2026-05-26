@@ -5,31 +5,65 @@
 | repository             | agents-remember-md                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-26T16:25+02:00                     |
+| lastVerifiedCommitHash | `011f84f5a839c95ff0c54a9778794592a4ef30ca` |
+| lastVerifiedCommitDate | 2026-05-26T16:27:41+02:00|
 
 ## Purpose
 
-This skill documents C-09, the Git lifecycle manager that wraps existing task workflows with pre-worktree intake expectations, code/memory worktree setup, lifecycle status, human-approved worktree closeout, human-approved direct checkout closeout, human-approved integration back to source branches, and human-approved cleanup.
+This skill documents C-09, the Git worktree lifecycle manager for Agents
+Remember tasks. C-09 now owns worktree start, attach/status, external-memory
+compatibility before worktree start, integration, and cleanup. Closeout
+sequencing belongs to C-12; C-09 only supplies the worktree-specific
+`contract.md` path and the integration/cleanup follow-up rules.
 
 ## Code Commentary
 
 ### Logic
 
-The skill defines `start`, `attach`, `status`, `closeout`, `direct-closeout`, `integrate`, and `cleanup` helper commands. It states that C-09 begins after the existing onboarding gate and task intake, uses C-08 for facts through `--code-repository-name` or `--code-repository-root`, uses common helpers for ledgers/contracts, requires missing external memory roots to be initialized through C-00 before worktree start, requires refreshed onboarding and ledger changes to be committed before external-memory worktrees start, separates implementation approval from commit approval, refreshes affected file-level onboarding metadata and repo entity catalog fingerprints between code and memory commits during external-memory closeout, supports approved direct current-checkout closeout for micro edits, and requires human approval before real closeout, integration, or cleanup.
+The skill defines the worktree MCP entrypoints for start, attach, status,
+worktree closeout tool handoff, integration, and cleanup. It states that C-09
+begins after the normal intake and onboarding gate, uses C-08-resolved context
+through the MCP worktree tools, refuses external-memory worktree start while
+the source memory repo has uncommitted content or ledger changes, and reports
+recoverable lifecycle state through typed next-operation hints.
+
+The worktree closeout section is deliberately a routing section, not a parallel
+closeout doctrine. It sends the approval gate, missing-onboarding check, code
+commit, onboarding/entity refresh, memory quality gate, memory content commit,
+ledger update, and ledger commit to C-12. For worktree-backed tasks, C-09
+contributes the task `contract.md` used by `worktree_closeout_preview` and
+`worktree_closeout_apply`; after closeout, C-09 resumes ownership for
+integration and cleanup.
 
 ### Conventions
 
-C-09 is a wrapper, not a replacement workflow. Task identity should be settled before worktree creation: W-02 creates `<task-root>/<task-slug>/task.md`, then C-09 adds `contract.md` beside it. External memory incompatibility is interactive and offers reconciliation, clean start, disabled memory, or custom handling; dirty source memory blocks start until memory content and ledger updates are committed or the developer chooses disabled memory. Closeout dry-run is the non-mutating commit preview path and reports the onboarding metadata and entity fingerprint refresh plan; real closeout needs explicit commit approval plus an approval note, runs `check_missing_onboarding` before committing code, creates missing sidecars for newly added eligible files, commits code, uses C-02 memory quality control to run drift against that code commit and produce the maintenance worklist, refreshes affected onboarding verification metadata and `git-blob-set-v1` entity fingerprints, runs `memory_quality_check`, then commits memory and ledger when the check is clean. Direct closeout follows the same approval and commit ordering without a worktree contract, and is reserved for approved small current-checkout edits or memory-only polish where worktree isolation would add no value. Integration has two strategies: `ff-only` for unchanged source branches and `replay` for parallel non-overlapping work that already moved source branches.
+C-09 is a wrapper, not a replacement workflow. Task identity should be settled
+before worktree creation: W-02 creates `<task-root>/<task-slug>/task.md`, then
+C-09 places `contract.md` beside it. External memory incompatibility is
+interactive and offers reconciliation, disabled memory, or custom handling;
+dirty source memory blocks start until memory content and ledger updates are
+committed or the developer chooses another path.
+
+Integration remains human-gated. `ff-only` lands closed task branches when
+source branches did not move; `replay` handles parallel non-overlapping work by
+replaying code and memory content, then regenerating the final memory ledger
+row. Cleanup remains human-gated and removes worktrees plus merged local task
+branches only after integration.
 
 ### Invariants And Boundaries
 
-C-09 must not use divergent memory as trusted reference context and must not auto-commit at workflow finish. Worktree status reports lifecycle phase, dirty flags, summary, and typed next hints instead of shell commands. Closeout dry-run may run before commit approval because it does not mutate Git. Real worktree closeout requires explicit commit approval evidence, stops when recorded source branches moved since task start, and must not create a code commit when `check_missing_onboarding` reports new eligible files without sidecars. It must not create a memory content commit until drift has been reviewed, onboarding has been refreshed, and `memory_quality_check` is clean. Direct closeout also requires explicit commit approval evidence, requires external memory with matching code/memory checkout branches, and blocks before code commit when required onboarding is missing. Integration requires explicit approval, must not move source branches until code and memory commits are fast-forwardable, must regenerate memory ledger rows after replay, and must ask before cleanup. Cleanup requires integration completion and explicit approval.
+C-09 must not use divergent memory as trusted context, must not bypass C-12's
+explicit closeout approval gate, and must not create closeout commits outside
+C-12's code-memory-ledger sequence. Worktree status reports lifecycle phase,
+dirty flags, summary, and typed next hints instead of shell commands.
+Integration must not move source branches until code and memory commits are
+fast-forwardable or replay has produced mediated commits. Cleanup requires
+completed integration and explicit approval.
 
 ### Todos
 
-No current implementation todo is recorded for the skill contract. Further polish should stay in the helper and tests unless the workflow contract changes again.
+No current implementation todo is recorded for the skill contract.
 
 ### Docs References
 
@@ -41,16 +75,12 @@ No external documentation is needed for this repository-local skill.
 
 ## Repo-Internal References
 
-| Finding                                                                                                                                                                                                                                                                                                                                                                                      | Citations                | Source Path                                                                                             |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------- |
-| C-09 wraps existing workflows, owns worktree state, direct checkout closeout, and external-memory compatibility, and exposes commands that accept `--code-repository-name` or `--code-repository-root` for C-08 context resolution.                                                                                                                                                            | L8-L29; L47-L58; L81-L99 | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)          |
-| Pre-worktree intake runs before C-09 start: C-08, C-02/AGENTS choice point, commit refreshed memory and ledger, workflow mode selection, slug review, task wrapper creation, then worktree creation.                                                                                                                                                                                         | L31-L45                  | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)          |
-| External memory start validates a clean source memory repo and `memory.md`, and reports explicit choices when no compatible memory state exists.                                                                                                                                                                                                                                               | L47-L58                  | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)          |
-| Closeout dry-run prepares the commit preview without approval and reports metadata and entity fingerprint refresh plans; real external-memory closeout is human-gated, requires an approval note, runs `check_missing_onboarding` before code commit, creates missing sidecars for new eligible files, commits code, refreshes affected onboarding metadata and entity fingerprints to that code commit, commits memory content, prepends `memory.md`, commits the ledger, and updates the contract. | L60-L94                  | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)          |
-| Direct closeout is the C-09-owned current-checkout path for approved micro edits; it dry-runs first, requires explicit commit approval, validates external-memory branch state, runs `check_missing_onboarding`, creates missing sidecars for new eligible files, then commits code, refreshes onboarding metadata and affected entity fingerprints, commits memory, and commits the ledger.                                                                  | L96-L124                  | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)          |
-| Integration is human-gated, supports `ff-only` and `replay`, regenerates ledger rows after memory content replay, blocks conflicts before source branches move, and asks about cleanup after success.                                                                                                                                                                                        | L101-L112                | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)          |
-| Cleanup is human-gated, requires completed integration, removes worktrees, deletes merged local branches, prunes empty worktree folders, and is idempotent.                                                                                                                                                                                                                                  | L114-L118                | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)          |
-| The worktree design spec defines the same wrapper/non-replacement boundary and C-09 ownership model.                                                                                                                                                                                                                                                                                         | L1218-L1248              | [worktree design spec](agents-remember-md/roadmap/agents-remember-worktree-memory-final-design-spec.md) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| C-09 owns worktree lifecycle and routes closeout to C-12. | L8-L14; L63-L74; L97-L105 | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md) |
+| C-12 owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | L8-L29; L33-L82 | [C-12 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-12-closeout/SKILL.md) |
+| Integration remains C-09-owned and covers fast-forward and replay strategies after closeout. | L76-L86 | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md) |
+| Cleanup remains C-09-owned and requires completed integration plus explicit approval. | L88-L94 | [C-09 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -62,6 +92,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-26T16:25+02:00: Updated after closeout guidance moved to C-12 and C-09 became worktree lifecycle plus integration/cleanup only.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T05:03+02:00: Updated after C-09 worktree status guidance switched from next safe commands to typed `nextOperation`/`nextTool`/`nextArgs` hints.
 - 2026-05-24T04:34+02:00: Updated after closeout guidance routed post-code-commit drift through C-02 memory quality control.
