@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-27T12:50+02:00                     |
+| lastVerifiedCommitHash | `f11222c722324c57672ec1e10c3828671e45b190` |
+| lastVerifiedCommitDate | 2026-05-27T12:53:04+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -73,7 +73,12 @@ movement and worktree lifecycle operations unless the selected workflow has
 granted the required approvals. Repository-specific test, lint, typecheck,
 build, smoke-check, branch, and local command guidance belongs in the resolved
 memory layer's `system/tools.md`; repo-specific coding rules belong in
-`system/coding-guidelines.md` when present.
+`system/coding-guidelines.md` when present. The boundary section also states
+that `ar-coordination/` is a scaffold/coordination root rather than a Git
+repository root: Git operations should target the resolved code repository root
+or memory root when those paths are Git repositories, and task files under
+`ar-coordination/tasks/` remain local coordination artifacts unless a workflow
+explicitly says otherwise.
 
 ### Todos
 
@@ -99,7 +104,8 @@ This onboarding is backed by the source template itself.
 | The developer-clarification section routes important clarifications through C-01/C-05 only after code-reality checks. | L50-L60 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The resolver section requires C-08 before relying on memory/task surfaces, then checks provider readiness through the MCP `context_packet` tool when the MCP server is configured and providers are enabled. | L65-L86 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after C-08 resolves `memory_root`. | L88-L111 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| Branch/worktree approval boundaries and memory-layer authority remain listed in the template. | L113-L128 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
+| The template says not to run Git commands against `ar-coordination/` as a whole; Git belongs to resolved code roots or memory roots that are Git repositories, and task files under `ar-coordination/tasks/` are local coordination artifacts unless a workflow says otherwise. | L122-L126 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
+| Branch/worktree approval boundaries and memory-layer authority remain listed in the template. | L127-L134 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | L131-L135 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 
 ## Cross-Repo References
@@ -112,6 +118,7 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-05-27T12:50+02:00: Added the coordinator Git-boundary rule that `ar-coordination/` is a scaffold root, not a repository root; Git commands should target resolved code or memory Git repositories and `tasks/` artifacts stay local unless a workflow says otherwise.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T04:34+02:00: Updated after coordinator template made commit approval separate from implementation approval.
 - 2026-05-23T21:25+02:00: Simplified provider-authority wording and added installed coordinator code-quality routing to resolved memory-layer tools and coding guidelines.
