@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
+| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

@@ -13,7 +13,7 @@
     "examples/mcp/settings.example.json"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1,
+    "sourceFilesInScope": 2,
     "fileSidecars": 1,
     "childRoutes": 0
   },

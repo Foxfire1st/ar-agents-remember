@@ -171,6 +171,7 @@
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md",
+    "mcp/src/agents_remember/providers/identity.py",
     "mcp/src/agents_remember/providers/integrity.py",
     "mcp/src/agents_remember/providers/lifecycle_service.py",
     "mcp/src/agents_remember/providers/provider_setup.py",
@@ -191,14 +192,15 @@
     "mcp/tests/test_missing_onboarding.py",
     "mcp/tests/test_provider_lifecycle.py",
     "mcp/tests/test_provider_setup.py",
+    "mcp/tests/test_provider_workflow_integration.py",
     "mcp/tests/test_resolver_parity.py",
     "mcp/tests/test_route_index.py",
     "mcp/tests/test_tools.py",
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 319,
-    "fileSidecars": 144,
+    "sourceFilesInScope": 323,
+    "fileSidecars": 146,
     "childRoutes": 8
   },
   "routingTerms": [

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-26T13:58+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
+| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose

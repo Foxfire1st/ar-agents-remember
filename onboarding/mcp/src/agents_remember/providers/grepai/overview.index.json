@@ -22,11 +22,13 @@
   ],
   "coveredFiles": [
     "mcp/src/agents_remember/providers/grepai/__init__.py",
+    "mcp/src/agents_remember/providers/grepai/isolated.py",
+    "mcp/src/agents_remember/providers/grepai/seed.py",
     "mcp/src/agents_remember/providers/grepai/setup.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 15,
-    "fileSidecars": 2,
+    "sourceFilesInScope": 17,
+    "fileSidecars": 4,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -36,10 +38,12 @@
     "grepai",
     "init",
     "init__",
+    "isolated",
     "lifecycle",
     "mcp",
     "providers",
     "remember",
+    "seed",
     "setup",
     "src"
   ],
@@ -50,11 +54,17 @@
       "mcp/src/agents_remember/providers/grepai/context",
       "mcp/src/agents_remember/providers/grepai/lifecycle",
       "mcp/src/agents_remember/providers/grepai/__init__.py",
+      "mcp/src/agents_remember/providers/grepai/isolated.py",
+      "mcp/src/agents_remember/providers/grepai/seed.py",
       "mcp/src/agents_remember/providers/grepai/setup.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "isolated.py",
+      "isolated",
+      "seed.py",
+      "seed",
       "setup.py",
       "setup",
       "context",
