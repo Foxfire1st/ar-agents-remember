@@ -90,7 +90,7 @@
       "JSON",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "c310611a6678051c9e37b912c522b367530c0686",
+      "3f09b75461760479b443f1b04b180772724e7a24",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
@@ -101,13 +101,14 @@
       "doc_type",
       "sourceRoute",
       "lastUpdated",
-      "T20",
+      "T15",
       "lastVerifiedCommitHash",
+      "f09b75461760479b443f1b04b180772724e7a24",
       "lastVerifiedCommitDate",
-      "T02",
       "governingOverview",
       "git_worktree_manager",
-      "test_worktree_support"
+      "test_worktree_support",
+      "T20"
     ]
   },
   "fallback": {
