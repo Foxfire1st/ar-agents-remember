@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `a7e160cd4381245327da7c5a52e2272b3080ebf7` |
-| lastVerifiedCommitDate | 2026-05-26T02:40:22+02:00|
+| lastUpdated            | 2026-05-28T15:10:01+02:00                  |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
