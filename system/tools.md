@@ -35,6 +35,14 @@ model-chosen subset of checks for the project-owned suite. If the wrapper
 cannot run, record the exact blocker and run the closest explicit equivalent:
 Ruff, Radon CC/MI, pytest with coverage JSON, and CRAP-Calculator.
 
+When reporting implementation results, use
+[`code-quality-report-template.md`](code-quality-report-template.md) as the
+standard reporting shape. Include the actual tool findings: Ruff output,
+pytest counts, coverage summary, Radon CC/MI pressure, CRAP threshold rows,
+which findings are in touched files, which are inherited/out of scope, and the
+decision for each in-scope issue. Do not summarize quality as only "tests
+passed" when the tools emitted report-only findings.
+
 ---
 
 ### Ruff

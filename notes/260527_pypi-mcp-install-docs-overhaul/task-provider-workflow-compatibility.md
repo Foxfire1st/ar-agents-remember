@@ -43,6 +43,8 @@ Treat providers as workflow-scoped runtime instances with explicit ownership and
 
 - Add a provider instance identity model that can distinguish normal workspace, worktree, and benchmark provider runtimes.
 - Namespace Docker container names, Compose project names, networks, workspaces, data roots, runtime roots, and logs by provider instance.
+- Route operator-facing Agents Remember logs through a coordination-root log tree, with provider logs under `<coordination-root>/logs/providers/...`; keep provider runtime/data under `<coordination-root>/providers/...`.
+- Persist provider setup summaries under `<coordination-root>/logs/providers/setup/` so a failed phase, final health state, and recovery state survive after the original command output scrolls away.
 - Derive default provider instance names from human-readable workflow names: workspace folder name for normal providers, workspace folder plus worktree name for worktree providers, and workspace folder plus `benchmark` for benchmark providers. Avoid opaque hash-first ids in user-visible Docker resources; duplicate workspace names can use an explicit numbered `instanceId` such as `projects_2`.
 - Stamp provider-owned Docker resources with ownership labels that include provider id, instance id, coordination root, and workflow scope where applicable.
 - Make provider status/start/stop/cleanup verify ownership labels and key bind mounts before reporting a container as usable or mutating it.
@@ -220,6 +222,24 @@ Validation completed for this slice:
 
 - `python -m pytest mcp/tests/test_config.py mcp/tests/test_provider_setup.py mcp/tests/test_worktree_support.py::BenchmarkRunnerPortabilityTests::test_benchmark_provider_settings_are_generated_without_system_settings mcp/tests/test_worktree_support.py::BenchmarkRunnerPortabilityTests::test_benchmark_prepare_writes_workspace_mcp_registration -q`: 29 passed.
 
+### 2026-05-28T11:24+02:00 - Central Logs And Provider Setup Reporting Slice
+
+Implemented the central log-tree and setup-reporting slice.
+
+- Changed generated MCP transcript defaults from `providers/logs/mcp` to `logs/mcp`.
+- Changed generated provider log defaults from `providers/logs/<provider>/<instance>` to `logs/providers/<provider>/<instance>` for workspace, worktree, and benchmark provider settings.
+- Removed `providers/logs/...` fallback scaffolding; runtime install and benchmark setup now create only the central `logs/...` operator-log tree.
+- Added `logs/providers/setup/` scaffolding during runtime and benchmark workspace setup.
+- Added compact provider setup summaries under `logs/providers/setup/last-<action>.json` and timestamped `<timestamp>-<action>.json`.
+- Added setup payload fields for `ready`, `state`, `failedPhases`, `finalStatus`, `resultCounts`, and `setupSummary` while keeping top-level `ok` strict.
+- Added reporting coverage for the recovered case where a setup phase fails but final watcher status is healthy (`state: ready-with-failed-phases`).
+- Updated default coordinator notes so operator logs are described as `logs/` state while durable provider DBs remain under `providers/data/`.
+
+Validation completed for this slice:
+
+- `python -m pytest mcp/tests/test_install_runtime.py mcp/tests/test_context_providers.py mcp/tests/test_config.py mcp/tests/test_provider_setup.py -q`: 63 passed.
+- `python -m agents_remember.code_quality.check`: passed. Ruff passed; pytest passed with 227 passed and 3 skipped; CRAP threshold remains report-only with pre-existing findings.
+
 ---
 
 ## Implementation Steps
@@ -243,6 +263,8 @@ Validation completed for this slice:
 
 - [x] Namespace GrepAI container names, network, Compose project, workspace name, data roots, runtime roots, logs, and ports.
 - [x] Namespace CodeGraphContext backend, watcher containers, network, runtime roots, logs, and ports.
+- [x] Move generated provider log defaults from `providers/logs/...` to `logs/providers/...` without adding legacy `providers/logs/...` fallback scaffolding.
+- [x] Write compact provider setup attempt summaries to `logs/providers/setup/`, including failed phases, final watcher status, and recovered/ready state.
 - [ ] Make status/start/stop/cleanup refuse to mutate mismatched provider instances.
 - [x] Add unit tests for two isolated MCP configs proving distinct provider identities.
 
@@ -325,6 +347,30 @@ After seed/load:
 - no indexed document still points at /workspace/repos/project/...
 ```
 
+### E4 - Central Provider Logs
+
+Distinct change covered: operator-facing logs and setup summaries belong in one coordination-root log tree.
+
+```text
+ar-coordination/
+  logs/
+    providers/
+      setup/
+        last-prepare.json
+        20260528T084200Z-prepare.json
+      grepai/
+        projects/
+          watcher.log
+      codegraphcontext/
+        projects/
+          agents-remember-md/
+            watch.log
+  providers/
+    data/
+    runners/
+    requirements/
+```
+
 ---
 
 ## Resolved Questions
@@ -354,6 +400,7 @@ After seed/load:
 | 2026-05-27T15:19+02:00 | Start with generated provider instance identity and namespaced runtime settings before mutating live Docker cleanup behavior. | Namespaced config and Compose output can be proven safely with tests first; live Docker mutation should wait for ownership verification and collision reporting. |
 | 2026-05-27T15:45+02:00 | Worktree provider mode must create workflow-local containers for both CGC and GrepAI, while GrepAI remains an all-memory provider with only the active repo memory root swapped to the worktree-local memory root. | CGC is naturally per repo, but GrepAI's useful state is the large memory-wide index. Warm-start must avoid rebuilding that index while still routing the active task's memory to the worktree-local copy and avoiding rewrites to unrelated memory repos. |
 | 2026-05-27T15:55+02:00 | Use CGC export/rewrite/load for CGC warm-starts and GrepAI DB clone plus active-project watcher reconciliation for GrepAI warm-starts. | CGC graph data can tolerate source-root path rewrites in its bundle. GrepAI embeddings must remain content-consistent, so direct indexed-content rewrites are unsafe unless followed by re-embedding. |
+| 2026-05-28T10:55+02:00 | Centralize operator-facing Agents Remember logs under `logs/`, with provider logs and setup summaries under `logs/providers/...`. | Provider runtime/data belongs under `providers/`, but humans and agents need one coordination-root log tree for debugging setup failures, recovered states, watcher output, and MCP/user-facing troubleshooting. |
 
 ---
 

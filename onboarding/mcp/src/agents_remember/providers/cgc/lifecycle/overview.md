@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/lifecycle/` |
 | doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-26T13:58+02:00                     |
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
 | lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
 | lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00                  |
 | governingOverview      | `../overview.md`                           |
@@ -25,7 +25,8 @@ filenames.
 `__init__.py` re-exports the CGC public lifecycle surface. `core.py` derives
 settings and runtime layout, `backend.py` manages the FalkorDB Docker backend,
 `runner.py` builds the Docker runner image and command lines,
-`installation.py` owns install/status/patch/doctor behavior,
+`installation.py` owns install/status/patch/doctor behavior including watcher
+container state, last-refresh, and indexing-state reporting,
 `process_control.py` owns watcher process start/stop,
 `refresh.py` owns index refresh, and `query.py` owns bounded native run plus
 visualizer commands.
@@ -53,6 +54,8 @@ visualizer commands.
   or host `cgc` executable.
 - CGC runner and watcher containers must reach FalkorDB over the shared Docker
   network, not through host loopback.
+- Status surfaces should include backend and watcher container state so MCP
+  current-state packets can report what is running now.
 
 ## Repo-Internal References
 
@@ -63,6 +66,7 @@ visualizer commands.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after CGC status began surfacing backend/watcher container state for provider current-state reporting.
 - 2026-05-26T13:58+02:00: Updated after CGC backend and runner lifecycle gained shared Docker network wiring and host-user runner execution.
 - 2026-05-26T12:51+02:00: Updated after CGC moved to a Docker runner image/container instead of a host provider venv.
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/cgc/lifecycle/` route.

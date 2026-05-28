@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-25T19:16+02:00                     |
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
 | lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
 | lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00                 |
 | governingOverview      | `../overview.md`                           |
@@ -55,19 +55,25 @@ server derives repository roots, memory roots, provider runtime roots, provider
 data roots, and provider log roots from those settings. Tool calls name allowed
 repo IDs and boolean options; they do not pass arbitrary host paths.
 
-Provider runtime layout now uses a single coordinator provider root:
+Provider runtime layout now uses a provider runtime root plus a central log
+root under the coordinator:
 
 ```text
-<coordinationRoot>/providers/
-  runners/
-    codegraphcontext/
-    grepai/
-  data/
-    codegraphcontext/
-    grepai/
+<coordinationRoot>/
+  providers/
+    runners/
+      codegraphcontext/
+      grepai/
+    data/
+      codegraphcontext/
+      grepai/
   logs/
-    codegraphcontext/
-    grepai/
+    mcp/
+    providers/
+      codegraphcontext/
+      grepai/
+      setup/
+      status/
 ```
 
 The MCP `runtime_install` operation copies runtime package assets to the
@@ -88,9 +94,11 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
 - Provider install/status must use generated lifecycle settings from
   `McpRuntimeConfig`.
 - Provider status must check runner integrity before invoking watcher status.
-- `providers/runners`, `providers/data`, and `providers/logs` are the active
-  provider layout; `providers/_bin`, `providers/_venvs`,
+- `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` are
+  the active provider/runtime log layout; `providers/_bin`, `providers/_venvs`,
   `providers/<provider>`, and `provider-data` are not active runtime roots.
+- CGC managed execution is Docker-runner owned; do not add host `venvRoot`,
+  host `cgc` executable, or site-packages patch fallback paths.
 - `grepai-memory` must remain Docker-or-bust in the MCP runtime; do not add
   host binary or host Ollama fallbacks.
 - Resolver, provider lifecycle, memory quality, and worktree code under
@@ -105,13 +113,15 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
 | The tool surface exposes `context_packet` and `runtime_install`; handlers delegate to controllers. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py); [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
 | `context_packet` composes resolver, git, worktree, provider, and optional drift status without starting providers. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, and `providers/logs` paths. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
+| Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
 | Provider status checks runner integrity before watcher status and reports structured recovery actions on integrity failure. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py); [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
 | Provider lifecycle is now a facade plus focused modules instead of a monolithic file. | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle.py); [lifecycle modules overview](src/agents_remember/providers/lifecycle_modules/overview.md) |
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 
 ## Update History
 
+- 2026-05-28T13:40+02:00: Tightened MCP provider invariants to forbid CGC host `venvRoot`, host executable, and site-packages patch fallback paths.
+- 2026-05-28T12:32+02:00: Updated after provider operator logs moved into the central `logs/` tree and provider status began writing current-state snapshots under `logs/providers/status/`.
 - 2026-05-25T19:16+02:00: Updated after the legacy `provider_lifecycle.py` facade was deleted and `providers.lifecycle` became the sole lifecycle facade.
 - 2026-05-25T19:01+02:00: Updated after provider lifecycle split into focused modules and GrepAI runtime became Docker-only without `_bin`, `_venvs`, host GrepAI, or host Ollama fallback.
 - 2026-05-24T02:47+02:00: Updated after drift moved into `memory_quality.integrity` and `memory_quality_check` became the closeout quality gate.

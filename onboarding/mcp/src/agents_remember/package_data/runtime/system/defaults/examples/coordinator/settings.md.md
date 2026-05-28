@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T13:58+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 
 ## Purpose
 
@@ -28,7 +28,7 @@ Docker-wrapped providers/backends and must not require host-level PostgreSQL,
 FalkorDB, Ollama, OS services, launch agents, package-manager services, Python
 virtual environments, or global user daemons for normal managed mode.
 
-The GrepAI guidance says one `grepai-memory` provider can declare multiple memory roots in workspace mode, covering both external memory repos and repo-internal `ar-memory/` roots with explicit `{ projectId, path }` entries. Managed lifecycle tooling mirrors those roots into provider-owned index roots before launching GrepAI because GrepAI still writes per-project symbol/config artifacts beside each configured project path. GrepAI config, state, cache, home files, and mirrored index roots live under `providers/runners/grepai/`; logs live under `providers/logs/grepai/`; all memory roots share one lifecycle-owned Docker network, PostgreSQL/pgvector container with durable state under `providers/data/grepai/postgres/`, and Ollama container for embeddings. GrepAI itself runs from the Docker runner container, so managed mode must not install GrepAI or Ollama into host user space. A `.grepai/` directory inside any indexed memory root is a containment failure rather than durable memory.
+The GrepAI guidance says one `grepai-memory` provider can declare multiple memory roots in workspace mode, covering both external memory repos and repo-internal `ar-memory/` roots with explicit `{ projectId, path }` entries. Managed lifecycle tooling mirrors those roots into provider-owned index roots before launching GrepAI because GrepAI still writes per-project symbol/config artifacts beside each configured project path. GrepAI config, state, cache, home files, and mirrored index roots live under `providers/runners/grepai/`; operator logs live under `logs/providers/grepai/`; all memory roots share one lifecycle-owned Docker network, PostgreSQL/pgvector container with durable state under `providers/data/grepai/postgres/`, and Ollama container for embeddings. GrepAI itself runs from the Docker runner container, so managed mode must not install GrepAI or Ollama into host user space. A `.grepai/` directory inside any indexed memory root is a containment failure rather than durable memory.
 
 The CodeGraphContext guidance says one `codegraphcontext-code` provider can
 declare multiple code repository roots. Lifecycle tooling expands those roots
@@ -39,7 +39,7 @@ supported, and shares one lifecycle-owned FalkorDB Docker DBMS on the shared CGC
 Docker network with durable state under
 `providers/data/codegraphcontext/falkordb/`. Reinstall/update may delete and
 recreate package-owned provider defaults plus runner scaffolding while
-preserving `providers/data` and `providers/logs`; `_bin` and `_venvs` are not
+preserving `providers/data` and central logs under `logs/`; `_bin` and `_venvs` are not
 preserved as managed provider paths. MCP install generates lifecycle settings
 from MCP authority rather than coordinator-local JSON authority. Deleting
 FalkorDB data, graph namespaces, repository indexes, or GrepAI PostgreSQL data
@@ -73,7 +73,7 @@ No external documentation is needed.
 | The scope list names global instructions, shared commands, workspace sources, roots, notes, selected memory repos, and operator conventions as coordinator concerns. | L10-L25 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The routing section tells agents to invoke C-08 and treat repository-specific memory guidance as more specific. | L40-L48 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The context provider section defines semantic, relationship, and intent retrieval substrates, keeps provider authority in MCP settings, routes lifecycle behavior through MCP/package-owned tooling, removes `_bin` and `_venvs` from the managed provider contract, and prefers Docker-wrapped providers/backends instead of host-level services or global daemons. | L49-L81 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The GrepAI notes require a workspace-mode `roots` array for external memory repos and repo-internal `ar-memory/` roots, mirror roots into provider-owned index roots, keep GrepAI config/state/mirrors under `providers/runners/grepai/`, store logs under `providers/logs/grepai/`, store durable PostgreSQL/pgvector data under `providers/data/grepai/postgres/`, run Ollama and GrepAI through Docker-owned containers, and treat `.grepai/` inside indexed memory roots as a containment failure. | L83-L94 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
+| The GrepAI notes require a workspace-mode `roots` array for external memory repos and repo-internal `ar-memory/` roots, mirror roots into provider-owned index roots, keep GrepAI config/state/mirrors under `providers/runners/grepai/`, store operator logs under `logs/providers/grepai/`, store durable PostgreSQL/pgvector data under `providers/data/grepai/postgres/`, run Ollama and GrepAI through Docker-owned containers, and treat `.grepai/` inside indexed memory roots as a containment failure. | L83-L94 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The CGC notes require configured code roots, per-repo runtime instances under `providers/runners/codegraphcontext`, Docker-owned CGC runner execution, a shared lifecycle-owned FalkorDB Docker DBMS with durable state under `providers/data/`, process-env separation, and explicit destructive actions for database deletion. | L96-L123 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 
 ## Cross-Repo References
@@ -86,6 +86,7 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after provider operator logs moved from `providers/logs/` into the central `logs/providers/` tree.
 - 2026-05-26T13:58+02:00: Updated CGC doctrine after runner containers moved onto the shared CGC Docker network and began launching as the host user when supported.
 - 2026-05-26T12:51+02:00: Updated provider doctrine after CodeGraphContext moved to Docker-owned runner execution and host venvs left the managed contract.
 - 2026-05-25T18:07+02:00: Updated provider doctrine after Docker-owned GrepAI removed host GrepAI/Ollama installs and `providers/_bin` from the managed contract.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T23:11+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -26,8 +26,8 @@ Codex execution policy reporting, skills install copy-only behavior,
 replacement of legacy symlink/junction-style skill
 installations, Codex `.codex` harness-root inference, configured
 harness-root requirements, memory init behavior,
-route index refresh behavior, memory quality check exposure, and provider/tool
-payload delegation.
+route index refresh behavior, memory quality check exposure, provider/tool
+payload delegation, and provider watcher status current-state reporting.
 
 The CGC assertions verify that the generic `cgc_query` name stays absent from
 `PUBLIC_TOOLS`, and that typed CGC payloads build fixed native command suffixes
@@ -80,6 +80,10 @@ artifacts do not block Docker-mode providers.
 Service-backed MCP tool tests should protect stable domain payloads rather than
 command-capture response wrappers.
 
+Provider watcher status tests should protect that the MCP tool performs a real
+status read, writes the current-state file, and returns `currentStateFile`,
+`currentState`, and aggregate `state`.
+
 ## Repo-Internal References
 
 | Finding | Source Path |
@@ -88,9 +92,11 @@ command-capture response wrappers.
 | Server registration lives in `server.py`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
 | Controller facades convert public MCP payloads into service calls. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
 | Provider runner integrity now ignores legacy `_bin` and `_venvs` entries for Docker-owned providers. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py) |
+| Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | [current_state.py](agents-remember-md/mcp/src/agents_remember/providers/current_state.py) |
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after MCP tool tests added provider watcher status current-state coverage.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed GrepAI MCP command-shape and real stdio integration coverage.
 - 2026-05-26T22:54+02:00: Updated after GrepAI search/trace unit tests and gated real MCP stdio integration tests covered the new tool shape.
 - 2026-05-26T12:51+02:00: Updated after provider integrity stopped treating CodeGraphContext host venvs as authority because CGC is Docker-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T18:07+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -34,7 +34,8 @@ state under `providers/runners`, while stale `providers/_bin` and
 `providers/_venvs` content is pruned because host provider binaries and venvs
 are not part of the managed runtime contract. Explicit provider dependency
 installs reconcile supported provider paths through package-local lifecycle
-code. All installs preserve durable `providers/data` and `providers/logs`.
+code. All installs preserve durable `providers/data` and central logs under
+`logs/`.
 
 `source_root_from_package()` locates the packaged runtime assets by walking
 upward from the installed module until it finds the source/runtime asset tree.
@@ -56,7 +57,7 @@ clients reach it through the `runtime_install` tool.
 - MCP provider dependency install must use generated settings from
   `McpRuntimeConfig`.
 - Full provider reinstall can replace Docker runner instances and image build
-  roots, but must preserve `providers/data` and `providers/logs`.
+  roots, but must preserve `providers/data` and central logs under `logs/`.
 - `providers/_bin` is not preserved or recreated as a managed provider runtime
   path.
 - `providers/_venvs` is not preserved or recreated as a managed provider
@@ -76,6 +77,7 @@ clients reach it through the `runtime_install` tool.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after runtime install moved operator logs from `providers/logs/` into the central `logs/` tree.
 - 2026-05-26T12:51+02:00: Updated after runtime install stopped preserving provider venvs and CGC provider dependencies became Docker-owned.
 - 2026-05-25T18:07+02:00: Updated after runtime install stopped preserving `providers/_bin`; Docker-owned GrepAI keeps binaries inside the runner image.
 - 2026-05-24T00:37+02:00: Refreshed verification and documented that packaged asset discovery owns normal runtime source selection, with `source_root` reserved for internal development/test use.

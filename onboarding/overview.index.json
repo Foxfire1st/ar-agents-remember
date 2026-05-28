@@ -25,7 +25,7 @@
     "README.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 370,
+    "sourceFilesInScope": 374,
     "fileSidecars": 2,
     "childRoutes": 2
   },
@@ -62,11 +62,12 @@
       "memory_root",
       "coordination_root",
       "memory.md",
-      "providers/_bin/",
-      "providers/_venvs/",
       "providers/runners/",
       "providers/data/",
-      "providers/logs/",
+      "logs/mcp/",
+      "logs/providers/",
+      "providers/_bin/",
+      "providers/_venvs/",
       "mcp/src/agents_remember/package_data/runtime/skills/W-*",
       "mcp/src/agents_remember/kernel/route_index.py",
       "route_index_refresh",
@@ -90,8 +91,7 @@
       "tasks/AGENTS.md",
       "runtime_install",
       "ar-coordination/AGENTS.md",
-      "ar-coordination/skills/AGENTS.md",
-      "ar-coordination/system/AGENTS.md"
+      "ar-coordination/skills/AGENTS.md"
     ]
   },
   "fallback": {

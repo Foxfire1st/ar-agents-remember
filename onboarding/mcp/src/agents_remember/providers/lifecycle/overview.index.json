@@ -70,7 +70,7 @@
     "watchers"
   ],
   "hotPath": {
-    "summary": "Start with `cli.py` for parser/action dispatch, `watchers.py` for aggregate provider start/status/stop orchestration, and the named shared modules for provider-agnostic lifecycle primitives: `command_runner.py`, `docker_runtime.py`, `host_ports.py`, `process_status.py`, `provider_settings.py`, `result_rendering.py`, `runtime_environment.py`, and `state_files.py`. CGC behavior lives under `../cgc/lifecycle/`; GrepAI behavior lives under `../grepai/lifecycle/`.",
+    "summary": "Start with `cli.py` for parser/action dispatch, `watchers.py` for aggregate provider start/status/stop orchestration, and the named shared modules for provider-agnostic lifecycle primitives: `command_runner.py`, `docker_runtime.py`, `host_ports.py`, `process_status.py`, `provider_settings.py`, `result_rendering.py`, `runtime_environment.py`, and `state_files.py`. CGC behavior lives under `../cgc/lifecycle/`; GrepAI behavior lives under `../grepai/lifecycle/`. Docker helpers now expose normalized container state, health, and uptime summaries used by provider current-state reporting.",
     "candidateHints": [
       "mcp/src/agents_remember/providers/lifecycle",
       "mcp/src/agents_remember/providers/lifecycle/__init__.py",
@@ -126,6 +126,7 @@
       "providers/cgc/lifecycle/",
       "providers/grepai/lifecycle/",
       "providers.lifecycle",
+      "providers/current_state.py",
       "provider_lifecycle.py",
       "cgc/",
       "grepai/",
@@ -134,8 +135,7 @@
       "agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__main__.py",
       "/cgc/lifecycle/overview.md",
       "/grepai/lifecycle/overview.md",
-      "test_provider_lifecycle.py",
-      "agents-remember-md/mcp/tests/test_provider_lifecycle.py"
+      "test_provider_lifecycle.py"
     ]
   },
   "fallback": {

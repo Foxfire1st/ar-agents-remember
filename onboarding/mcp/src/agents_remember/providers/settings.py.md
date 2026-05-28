@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T13:58+02:00                     |
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
 | lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
 | lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -34,9 +34,9 @@ include Docker mode, the shared `ar-grepai-memory` network, the
 `agents-remember/grepai:<pin>` runner image/container, Postgres backend
 settings, and an Ollama embedder backend with `nomic-embed-text`. The generated
 settings still include concrete provider runtime roots under `providers/runners`,
-backend data roots under `providers/data`, log roots under `providers/logs`,
-installed requirement paths, Docker backend image metadata, and watcher log
-paths.
+backend data roots under `providers/data`, central log roots under
+`logs/providers`, installed requirement paths, Docker backend image metadata,
+and watcher log paths.
 The generated CodeGraphContext settings include a Docker runtime/runner block
 for the `agents-remember/codegraphcontext:<pin>` image, image build root, image
 lock file, watcher container name template, and an `ar-cgc-code` backend network
@@ -76,6 +76,7 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after generated provider log roots moved under the central `logs/providers/` tree.
 - 2026-05-26T13:58+02:00: Updated after generated CGC settings gained the shared backend Docker network entry.
 - 2026-05-26T12:51+02:00: Updated after `codegraphcontext-code` lifecycle settings switched from host venv fields to Docker runner image/container settings.
 - 2026-05-25T17:40+02:00: Updated after `grepai-memory` lifecycle settings switched to a complete Docker-owned runner, Postgres, and Ollama embedder stack.

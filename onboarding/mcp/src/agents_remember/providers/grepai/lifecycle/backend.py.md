@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T00:25+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,10 +26,11 @@ The module waits for Postgres readiness with both `pg_isready` and `SELECT 1`,
 creates the `vector` extension, reports backend status, removes mismatched
 containers, reuses the host port mapping from an already-running backend,
 starts Postgres through the package Compose project, records backend state, and
-writes the backend image lock. Before Compose startup, it performs GrepAI
-project migration: old unmanaged Postgres, Ollama, watcher containers, and the
-old unmanaged network are removed only when Docker labels do not show the
-expected Compose project.
+writes the backend image lock. Status includes a normalized Docker container
+state summary so MCP provider status can report backend state and uptime.
+Before Compose startup, it performs GrepAI project migration: old unmanaged
+Postgres, Ollama, watcher containers, and the old unmanaged network are removed
+only when Docker labels do not show the expected Compose project.
 
 ### Invariants And Boundaries
 
@@ -39,6 +40,8 @@ expected Compose project.
 - Health is not just container running; database query readiness is required.
 - Existing Compose-managed backend port mappings are reused on repeated starts
   rather than reallocated from host socket availability.
+- Backend status should expose enough Docker state for current provider status
+  without requiring callers to inspect containers themselves.
 
 ## Repo-Internal References
 
@@ -50,6 +53,7 @@ expected Compose project.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after GrepAI backend status began including normalized container-state summaries.
 - 2026-05-27T00:25+02:00: Updated after GrepAI backend startup added
   project-wide pre-Compose migration and existing-port reuse for Compose
   restarts.

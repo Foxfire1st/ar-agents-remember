@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T00:25+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -34,7 +34,9 @@ helper so configured `auto` host ports render as Compose's empty
 published-port syntax instead of the literal string `auto`. User mapping is
 optional and only emitted on hosts with UID/GID support. `cgc_compose_summary()`
 exposes the project, base file, override hash, and stdin override mode for
-status and dry-run payloads.
+status and dry-run payloads. CGC Compose rendering now requires generated
+`instance.labels` from MCP/provider settings and fails instead of falling back
+to unlabeled legacy provider settings.
 
 ### Invariants And Boundaries
 
@@ -48,6 +50,8 @@ status and dry-run payloads.
   name, keeping CGC access inside the Compose network.
 - `auto` host ports must remain valid Compose input because Compose parses the
   full project even for single-service operations.
+- CGC Docker resources must render with generated Agents Remember ownership
+  labels; missing `instance.labels` is an invalid settings shape.
 
 ## Docs References
 
@@ -62,7 +66,7 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `cgc_compose_render()` fills backend image, container, port, data volume, runner image/build context, mounts, environment, watcher services, and network name into the package override template, using shared port mapping rendering for `auto` ports. | L24-L75 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
+| `cgc_compose_render()` fills backend image, container, port, data volume, runner image/build context, ownership labels, mounts, environment, watcher services, and network name into the package override template, using shared port mapping rendering for `auto` ports. | L24-L75 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
 | CGC watcher service names are derived from layout repo IDs, and watcher fragments mount runtime and code roots with generated environment. | L77-L116 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
 | The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L119-L125 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
 
@@ -76,6 +80,8 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-05-28T14:21:08+02:00: Updated after CGC Compose label rendering began
+  rejecting provider settings without generated `instance.labels`.
 - 2026-05-27T00:25+02:00: Updated after CGC Compose port mappings switched to
   shared `auto`-safe rendering.
 - 2026-05-26T23:59+02:00: Created for the provider Compose migration and closeout missing-onboarding gate.

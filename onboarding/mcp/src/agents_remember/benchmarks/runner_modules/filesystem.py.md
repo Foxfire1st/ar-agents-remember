@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T02:26+02:00                     |
-| lastVerifiedCommitHash | `a7e160cd4381245327da7c5a52e2272b3080ebf7` |
-| lastVerifiedCommitDate | 2026-05-26T02:40:22+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,17 +16,25 @@
 
 ## Purpose
 
-Filesystem mutation helpers for benchmark workspace setup and runtime asset exposure.
+Filesystem mutation helpers for benchmark workspace setup and runtime asset
+exposure.
 
 ## Code Commentary
 
 ### Logic
 
-`filesystem.py` owns safe path removal across platforms, copying packaged runtime/provider assets, rendering root markers, and exposing skills into the benchmark `.codex/skills` tree.
+`filesystem.py` owns safe path removal across platforms, copying packaged
+runtime/provider assets, rendering root markers, creating benchmark-local
+coordination scaffolding, and exposing skills into the benchmark
+`.codex/skills` tree. The benchmark runtime scaffold creates central
+`logs/mcp` and `logs/providers/...` directories alongside provider data and
+runner roots.
 
 ### Invariants And Boundaries
 
 - Copy/remove helpers are benchmark workspace mechanics, not general repository mutation policy.
+- Benchmark workspaces should mirror the MCP runtime log layout with central
+  `logs/` directories instead of legacy `providers/logs`.
 - Skill exposure remains copy-only or disabled; no shell/symlink installer fallback belongs here.
 
 ## Docs References
@@ -47,4 +55,5 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after benchmark workspace scaffolding moved MCP/provider logs under the central `logs/` tree.
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

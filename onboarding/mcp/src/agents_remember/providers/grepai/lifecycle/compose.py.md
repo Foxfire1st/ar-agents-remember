@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T00:41+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -37,7 +37,9 @@ environment is rendered from container-local runtime paths, and the Compose
 override includes a host UID/GID user block on POSIX hosts so watcher-created
 runtime artifacts stay removable by the developer user.
 `grepai_compose_summary()` returns the project, package base file, override
-hash, and stdin override mode.
+hash, and stdin override mode. GrepAI Compose rendering requires generated
+`instance.labels` from MCP/provider settings and fails instead of rendering
+legacy unlabeled provider resources.
 
 ### Invariants And Boundaries
 
@@ -53,6 +55,8 @@ hash, and stdin override mode.
 - The watcher must not receive host-path `HOME`/XDG environment values inside
   the container; GrepAI discovers its workspace config through the mounted
   `/grepai/runtime/home/.grepai` tree.
+- GrepAI Docker resources must render with generated Agents Remember ownership
+  labels; missing `instance.labels` is an invalid settings shape.
 
 ## Docs References
 
@@ -67,7 +71,7 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L27-L83 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, ownership labels, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L27-L83 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
 | `grepai_user()` and `grepai_user_block()` render the optional POSIX UID/GID Compose user block for the watcher. | L86-L93 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
 | The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L96-L102 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
 
@@ -81,6 +85,8 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-05-28T14:21:08+02:00: Updated after GrepAI Compose label rendering began
+  rejecting provider settings without generated `instance.labels`.
 - 2026-05-27T00:41+02:00: Updated after GrepAI watcher Compose rendering
   switched to container-local env paths and POSIX UID/GID execution.
 - 2026-05-27T00:25+02:00: Updated after GrepAI Compose port mappings switched

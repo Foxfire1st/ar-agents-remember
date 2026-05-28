@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
-| lastUpdated            | 2026-05-26T02:26+02:00                     |
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
 | lastVerifiedCommitHash | `a7e160cd4381245327da7c5a52e2272b3080ebf7` |
 | lastVerifiedCommitDate | 2026-05-26T02:40:22+02:00|
 | governingOverview      | `../../../../overview.md`                  |
@@ -25,8 +25,10 @@ analysis, service payloads, and CLI wiring independently navigable and testable.
 - `filesystem.py`, `commands.py`, and `workspace.py` own benchmark workspace
   mutation: copying runtime assets, safe removal, Git checkout preparation,
   template rendering, memory repo preparation, and whole-case setup.
-- `mcp_registration.py` writes benchmark-local MCP/Codex configuration and
-  invokes package-local provider setup with generated provider settings.
+- `mcp_registration.py` writes benchmark-local MCP/Codex configuration,
+  generates provider settings with central `logs/mcp` and `logs/providers`
+  paths, and invokes package-local provider setup with generated provider
+  settings.
 - `execution.py` owns Codex PATH resolution, sandbox policy, command
   construction, per-run metadata, and benchmark run orchestration.
 - `analysis.py`, `services.py`, and `cli.py` own JSONL metrics, summary
@@ -51,4 +53,5 @@ source-level behavior is local to `agents-remember-md`.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after benchmark provider settings and scaffolded runtime assets moved logs under the central `logs/` tree.
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.
