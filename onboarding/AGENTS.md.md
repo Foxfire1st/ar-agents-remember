@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T04:34+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-28T19:52+02:00                     |
+| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
+| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
 
 ## Purpose
 
@@ -42,8 +42,8 @@ package services, runtime `AGENTS.md` templates, runtime skills, runtime system
 defaults, README, and roadmap. The boundaries section keeps root instructions
 scoped to source-checkout work and keeps installed coordinator instructions
 under `runtime/agents-md-files/`. The final code-quality section tells agents
-working in this source checkout to run Ruff and Radon after Python code changes,
-then routes exact command details and broader validation guidance to the
+working in this source checkout to run Ruff, Pyright, and Radon after Python
+code changes, then routes exact command details and broader validation guidance to the
 resolved memory layer's `system/tools.md` and optional
 `system/coding-guidelines.md`.
 
@@ -92,7 +92,7 @@ file.
 | Memory rules require C-08, then a configured-provider readiness check, then C-02 memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L84-L91 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Source-layout and boundary notes separate MCP/runtime package assets from user-owned memory and installed coordinator configuration.            | L66-L86   | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Code-quality routing tells agents to run Ruff and Radon after Python code changes in this source checkout and sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`. | L90-L95 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Code-quality routing tells agents to run Ruff, Pyright, and Radon after Python code changes in this source checkout and sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`. | L90-L95 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -105,6 +105,7 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## Update History
 
+- 2026-05-28T19:52+02:00: Updated after source-checkout code quality guidance added Pyright beside Ruff and Radon.
 - 2026-05-24T04:34+02:00: Updated after source-checkout instructions renamed C-02 to memory quality control and made commit approval separate from implementation approval.
 - 2026-05-23T21:31+02:00: Made source-checkout code quality guidance explicit about Ruff and Radon after Python implementation work.
 - 2026-05-23T21:25+02:00: Simplified provider-authority wording and added source-checkout code-quality routing to resolved memory-layer tools and coding guidelines.

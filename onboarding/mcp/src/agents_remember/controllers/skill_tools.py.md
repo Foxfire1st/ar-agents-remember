@@ -5,119 +5,42 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| lastUpdated            | 2026-05-28T19:52+02:00                     |
+| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
+| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| governingOverview      | `overview.md`                              |
 
 ## Purpose
 
-`skill_tools.py` is the controller facade for the Phase 04 skill-facing MCP
-tool surface. It maps typed MCP inputs to package-owned resolver, drift,
-provider, worktree, memory, benchmark, and skill-install services.
+`skill_tools.py` now contains only the `skills_install` controller for package
+skill installation.
 
 ## Code Commentary
 
-### Logic
+The former large skill-facing MCP facade was split into focused controller
+modules. This file keeps `skills_install_tool()`, which delegates to
+`install.skills.install_skills()` with layout, dry-run, overwrite, and archive
+options and returns an operation-labeled payload.
 
-The module keeps model-facing tools away from arbitrary shell execution by
-constructing explicit package-local calls and fixed provider argument vectors.
-Provider flows call the typed `providers.lifecycle_service` API with
-MCP-generated settings instead of invoking `lifecycle.main(argv)`.
-Worktree, baseline, carryover, and benchmark flows now call package service
-functions directly and return domain payloads instead of `argv`, `stdout`,
-`stderr`, or parsed-JSON wrapper artifacts.
+## Invariants And Boundaries
 
-Provider operation flows share `_provider_operation_result()`. Before writing
-temporary lifecycle settings or calling CGC, GrepAI, or watcher services, it
-checks provider-runner integrity and returns `state=runnerIntegrityFailed` with
-a `runtime_install` recovery action when installed runner files are missing from
-or changed against the manifest. Watcher status is treated as a real read even
-when the public payload default is dry-run-oriented: `provider_watchers` status
-forces the lifecycle call to non-dry-run mode, writes current provider state,
-and returns `currentStateFile`, `currentState`, and aggregate current `state`.
-
-`memory_quality_check_tool()` resolves the target repository through MCP
-settings, builds a `DriftCheckContext`, and runs the full closeout quality gate
-through `agents_remember.memory_quality.check`. This keeps task-start drift
-inspection separate from the pre-memory-commit check that combines drift
-integrity with onboarding style checks.
-
-CodeGraphContext access is split into typed controller functions:
-`cgc_symbol_search_tool()`, `cgc_callers_tool()`, `cgc_callees_tool()`,
-`cgc_dependencies_tool()`, and `cgc_complexity_tool()`. These build fixed CGC
-native argument vectors internally and no longer accept caller-supplied generic
-`query_type` plus arbitrary argument lists.
-
-GrepAI access is also typed. `grepai_search_tool()` resolves the configured
-GrepAI workspace from MCP-derived lifecycle settings, defaults to JSON output,
-uses workspace-wide search when no repo filter is supplied, and adds repeated
-`--project` flags only for requested `repo_ids` that are present in the MCP
-configuration and GrepAI provider roots. `grepai_trace_tool()` exposes
-explicit `callers`, `callees`, and `graph` actions plus a required symbol; it
-allows `depth` only for graph traces and allows at most one filtered repo
-because the GrepAI trace CLI exposes a singular project flag.
-
-`worktree_start_tool()` writes MCP-derived provider lifecycle settings when
-provider setup is enabled and wraps that path in a package-local
-`WorktreeProviderSetupConfig` for the worktree manager. That keeps worktree
-provider preparation independent of coordinator `system/settings.json`, deleted
-source scripts, and caller-supplied provider root/settings overrides.
-
-`codex_benchmark_run_tool()` checks Codex availability before running
-benchmarks, and its missing-Codex response includes `codexExecutionPolicy`.
-That keeps the MCP response explicit that Codex is resolved from the MCP server
-process `PATH`, benchmark runs use an allowlisted benchmark sandbox mode, and
-no generic executable override exists. The `codex_sandbox` field is passed
-through to the benchmark service so callers can request `default`, which omits
-the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
-
-### Invariants And Boundaries
-
-- Repo ids must resolve through `McpRuntimeConfig.repositories`.
-- Contract, source-memory, and benchmark paths accepted by these tools must stay
-  inside the configured coordination root unless the tool is explicitly a setup
-  copy target such as `skills_install`.
-- Do not add a generic command runner here; every public operation needs a
-  typed function and package-owned target.
-- Do not reintroduce generic CGC native-query plumbing on the MCP path; add a
-  typed controller for each CGC operation the skills need.
-- GrepAI search repo filters must stay tied to repositories configured through
-  MCP and indexed by the generated GrepAI provider roots; do not accept arbitrary
-  project ids or a free-form trace query.
-- Provider tools should call `providers.lifecycle_service`, not the provider
-  lifecycle CLI `main(argv)`.
-- Provider lifecycle calls should be blocked when provider runner integrity
-  fails; `provider_status` is the read-only surface for inspecting the failure
-  details.
-- Provider watcher status should report what is currently true and update the
-  central current-state file; setup history belongs in provider setup summaries.
-- Worktree, baseline, carryover, and benchmark tools should call package
-  service functions directly; CLI entrypoints remain print adapters, not MCP
-  controller targets.
-- Codex benchmark tools may start Codex benchmark host processes, but the
-  controller must keep the operation Codex-specific, benchmark-labeled, and
-  `PATH`-resolved rather than accepting executable paths from callers.
-- Benchmark sandbox selection must stay an allowlist owned by the benchmark
-  service; the controller should not accept arbitrary Codex execution flags.
+- Do not rebuild `skill_tools.py` as a mass re-exporter or mega-controller.
+- New MCP operation controllers should live in the domain module that owns the
+  behavior, then be imported directly by `mcp/tools.py`.
+- Skill installation remains a package install concern, not a provider,
+  worktree, memory, or benchmark controller.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
-| Public MCP tool registration delegates to these facade functions. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| Payload builders expose these facades to `server.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
-| Provider lifecycle service calls are centralized in the typed service layer. | [lifecycle_service.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle_service.py) |
-| Worktree manager exposes result-returning service functions for MCP controllers and print-only CLI adapters for dev/operator usage. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| Worktree provider setup consumes the generated settings path. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| Memory baseline and carryover modules expose request/service functions for MCP controllers. | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py), [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
-| Benchmark runner exposes service payload functions that return progress as `messages` instead of raw stdout. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
-| Memory quality checks combine drift integrity and update-history style checks for closeout. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py) |
-| Provider current-state projection and persistence live in the current-state module. | [current_state.py](agents-remember-md/mcp/src/agents_remember/providers/current_state.py) |
-| Public tool tests assert missing Codex responses expose the benchmark execution policy and `PATH` resolution. | [test_tools.py](agents-remember-md/mcp/tests/test_tools.py) |
+| Split controller route explains the new domain controller layout. | [controllers overview](overview.md) |
+| MCP payload builders import this file only for `skills_install`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Skill install response model lives in the models package. | [skills.py](agents-remember-md/mcp/src/agents_remember/models/skills.py) |
 
 ## Update History
 
+- 2026-05-28T19:52+02:00: Updated after provider, worktree, memory, coordination, and benchmark controllers moved out of the former `skill_tools.py` mega-facade.
 - 2026-05-28T12:32+02:00: Updated after `provider_watchers` status began writing and returning current provider state snapshots.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed the GrepAI MCP search and trace shape.
 - 2026-05-26T22:54+02:00: Updated after GrepAI MCP search gained workspace/project selection, JSON default output, configured-repo validation, and explicit trace action handling.

@@ -14,15 +14,21 @@ Note: `C-04-retrieval-strategy-router` documents the usage of these context retr
 
 ## Code Quality
 
-To improve quality when working on source code, the agent shall use `Ruff`, `Radon`, `pytest`, `pytest-cov`, and CRAP-Calculator. For the `agents-remember-md` repo, install and run them from the source repository directory `agents-remember-md/`.
+To improve quality when working on source code, the agent shall use `Ruff`, `Pyright`, `Radon`, `pytest`, `pytest-cov`, and CRAP-Calculator. For the `agents-remember-md` repo, install and run them from the source repository directory `agents-remember-md/`.
 
-The installation has to be done by activating the project's virtual environment (`source .venv/bin/activate` on Linux and macOS, or `.venv\Scripts\activate` on Windows) and installing the repository requirements from `requirements.txt`. After activation, prefer the fixed source quality wrapper for full local checks:
+The installation has to be done by activating the project's virtual environment (`source .venv/bin/activate` on Linux and macOS, or `.venv\Scripts\activate` on Windows) and installing the MCP package with development extras from the source repository root:
+
+```text
+python -m pip install -e "mcp[dev]"
+```
+
+After activation, prefer the fixed source quality wrapper for full local checks:
 
 ```text
 python -m agents_remember.code_quality.check
 ```
 
-The wrapper runs `ruff check`, Radon cyclomatic complexity and maintainability checks, `pytest` with coverage JSON, and CRAP-Calculator. Use the individual tool commands below for focused implementation checks.
+The wrapper runs `ruff check`, Pyright static type checking, Radon cyclomatic complexity and maintainability checks, `pytest` with coverage JSON, and CRAP-Calculator. Use the individual tool commands below for focused implementation checks.
 CRAP threshold findings are report-only by default so existing refactor targets
 do not make the remembered suite unusable. Add `--fail-on-crap-threshold` only
 when intentionally gating a cleanup or refactor branch.
@@ -33,12 +39,12 @@ quality wrapper has been run from the source repository root and its result has
 been recorded in the task notes or final response. Do not substitute a
 model-chosen subset of checks for the project-owned suite. If the wrapper
 cannot run, record the exact blocker and run the closest explicit equivalent:
-Ruff, Radon CC/MI, pytest with coverage JSON, and CRAP-Calculator.
+Ruff, Pyright, Radon CC/MI, pytest with coverage JSON, and CRAP-Calculator.
 
 When reporting implementation results, use
 [`code-quality-report-template.md`](code-quality-report-template.md) as the
 standard reporting shape. Include the actual tool findings: Ruff output,
-pytest counts, coverage summary, Radon CC/MI pressure, CRAP threshold rows,
+Pyright output, pytest counts, coverage summary, Radon CC/MI pressure, CRAP threshold rows,
 which findings are in touched files, which are inherited/out of scope, and the
 decision for each in-scope issue. Do not summarize quality as only "tests
 passed" when the tools emitted report-only findings.
@@ -64,6 +70,22 @@ python -m ruff format path/to/file.py
 Ruff only fixes issues it considers safe to fix automatically. Everything else requires a manual code change.
 
 For more information on ruff usage use the official documentation: [Ruff Documentation](https://docs.astral.sh/ruff/) or check `context7` mcp if available for code examples and usage patterns.
+
+---
+
+### Pyright
+
+Pyright performs static type checking. It catches mismatches between typed public contracts and the values passed through controllers, adapters, tests, and response builders before runtime.
+
+Common commands:
+
+```text
+python -m pyright --project .                              # Type-check the configured project scope.
+python -m pyright --project . mcp/src/agents_remember      # Type-check package source paths.
+python -m pyright --project . mcp/src/agents_remember/models mcp/tests/test_code_quality_check.py
+```
+
+Pyright is part of the full quality wrapper and should not be scoped out of that wrapper. If the whole-repo baseline reports inherited errors, record the exact count and representative files, then fix in-scope errors in touched files before closeout.
 
 ---
 
@@ -129,9 +151,9 @@ the standalone CRAP-Calculator command.
 - Run quality tools from the source repository root, not from the coordinator root.
 - Scope checks to touched files or directories first. Use whole-repo checks when the task changes shared behavior, module layout, imports, or public contracts.
 - Use the full quality wrapper before implementation closeout. Focused Ruff,
-  Radon, or pytest runs may prove local edits during development, but they do
+  Pyright, Radon, or pytest runs may prove local edits during development, but they do
   not replace the project-owned full suite for final validation.
-- Before refactoring complex Python, capture a baseline with Ruff, Radon, and the relevant tests. After the change, compare against that baseline.
+- Before refactoring complex Python, capture a baseline with Ruff, Pyright, Radon, and the relevant tests. After the change, compare against that baseline.
 - Do not fix unrelated Ruff or Radon findings during a narrow task unless the developer approves the cleanup scope.
 - Before applying `ruff check --fix` or `ruff format`, run the corresponding `--diff` command first and inspect the proposed changes.
 - Treat `Radon` as a map of risk, not a scoring game. Do not split code into tiny helpers just to lower complexity; split by responsibility and purpose.

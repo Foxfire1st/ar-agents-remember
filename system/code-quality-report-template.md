@@ -16,6 +16,7 @@ that they were executed.
 | Tool | Result | Details |
 | --- | --- | --- |
 | Ruff | `<passed / failed / not run>` | `<lint/import/format findings, or "no findings">` |
+| Pyright | `<passed / failed / not run>` | `<type-check findings, baseline count, or "no findings">` |
 | Pytest | `<passed / failed / not run>` | `<passed/skipped/failed counts and notable failures>` |
 | Coverage | `<reported / not reported>` | `<total coverage and important uncovered touched areas>` |
 | Radon CC | `<passed / reported / failed / not run>` | `<average complexity plus high-complexity functions>` |

@@ -240,6 +240,38 @@ Bad:
 
 `utils.py` is allowed only for tiny, dependency-free primitives that are genuinely shared and have no domain ownership.
 
+## Pydantic Response Model Construction
+
+Public MCP response models should make nested structure explicit at construction time.
+
+Do not rely on Pydantic constructor coercion by passing plain dictionaries or lists into nested model fields in controllers, tool adapters, or response builders. That works at runtime, but it hides the response boundary from static analysis and makes model contracts harder to inspect.
+
+Use these patterns instead:
+
+1. For locally assembled response data, construct the nested model directly.
+
+```python
+packet = ContextPacketV2(
+    ok=True,
+    repo=RepoSummary(...),
+    paths=ContextPaths(...),
+    memory=MemorySummary(...),
+    worktree=WorktreeSummary(...),
+    providers=ProviderSummary(...),
+    drift=DriftSummary(...),
+)
+```
+
+2. For intentionally raw data returned by an adapter, provider, parser, or legacy controller, validate it at the narrow boundary where it becomes modeled data.
+
+```python
+providers = ProviderSummary.model_validate(provider_summary_packet(...))
+```
+
+3. For raw/detail diagnostics that intentionally preserve provider-native fields, use the dedicated flexible diagnostic model. Do not let flexible raw payloads leak into compact public context models.
+
+The transport boundary should serialize the final model once through `model_dump(mode="json", exclude_none=True)` or the shared response serialization helper once token accounting is wired.
+
 ## Boolean Flag Rule
 
 Avoid adding boolean mode flags to functions that already have branching behavior.

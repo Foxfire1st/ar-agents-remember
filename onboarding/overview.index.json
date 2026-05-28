@@ -22,18 +22,21 @@
   ],
   "coveredFiles": [
     "AGENTS.md",
-    "README.md"
+    "README.md",
+    "pyproject.toml"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 368,
-    "fileSidecars": 2,
+    "sourceFilesInScope": 389,
+    "fileSidecars": 3,
     "childRoutes": 2
   },
   "routingTerms": [
     "agents",
     "examples",
     "mcp",
-    "readme"
+    "pyproject",
+    "readme",
+    "toml"
   ],
   "hotPath": {
     "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills` covers workflow guidance for resolver, memory quality control, bootstrap, onboardi...",
@@ -41,13 +44,16 @@
       "mcp",
       "examples/mcp",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "pyproject.toml"
     ],
     "anchorHints": [
       "AGENTS.md",
       "AGENTS",
       "README.md",
       "README",
+      "pyproject.toml",
+      "pyproject",
       "mcp",
       "mcp/",
       "mcp/src/agents_remember/package_data/runtime/agents-md-files",
@@ -68,30 +74,28 @@
       "logs/providers/",
       "providers/_bin/",
       "providers/_venvs/",
-      "mcp/src/agents_remember/package_data/runtime/skills/W-*",
-      "mcp/src/agents_remember/kernel/route_index.py",
+      "onboarding/",
+      "ar-coordination/memory-repos/ar-<repo>/",
+      "kernel/memory_ledger.py",
+      "ContextPacketV2",
+      "resolve_context",
+      "context_packet",
+      "drift_check",
+      "memory_quality_check",
+      "check_missing_onboarding",
+      "overview.index.json",
       "route_index_refresh",
-      "ar-coordination",
-      "system/",
-      "docs/",
-      "docs/README.md",
-      "getting-started.md",
-      "concepts.md",
-      "architecture.md",
-      "workflows.md",
-      "FAQ.md",
-      "docs/install/",
-      "docs/guides/",
-      "docs/reference/",
-      "docs/**",
-      "mcp/src/agents_remember/package_data/runtime/agents-md-files/",
-      "coordinator/AGENTS.md",
-      "skills/AGENTS.md",
-      "system/AGENTS.md",
-      "tasks/AGENTS.md",
+      "kernel/route_index.py",
+      "direct_closeout_*",
+      "worktree_closeout_*",
+      "worktree_*",
+      "worktrees/",
       "runtime_install",
-      "ar-coordination/AGENTS.md",
-      "ar-coordination/skills/AGENTS.md"
+      "skills_install",
+      "install/",
+      "package_data/runtime/",
+      "agents-remember-mcp",
+      "mcp/config.py"
     ]
   },
   "fallback": {
