@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-28T15:43+02:00                     |
+| lastVerifiedCommitHash | `9680d150ac9d2e6c1ae04dbab42eac0088dceef8` |
+| lastVerifiedCommitDate | 2026-05-28T15:55:29+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,7 +19,8 @@ behavior.
 
 ### Logic
 
-The tests cover ping and server info payloads, FastMCP server construction,
+The tests cover ping and server info payloads including the public MCP server
+version, FastMCP server construction,
 context-packet delegation, runtime install payload authority, the Phase 04 tool
 surface, Codex benchmark executable resolution through `PATH`, benchmark-only
 Codex execution policy reporting, skills install copy-only behavior,
@@ -89,6 +90,7 @@ status read, writes the current-state file, and returns `currentStateFile`,
 | Finding | Source Path |
 | --- | --- |
 | Public tool metadata and payload builders live in `tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| MCP package-level server identity constants live in `mcp.__init__`. | [__init__.py](agents-remember-md/mcp/src/agents_remember/mcp/__init__.py) |
 | Server registration lives in `server.py`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
 | Controller facades convert public MCP payloads into service calls. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
 | Provider runner integrity now ignores legacy `_bin` and `_venvs` entries for Docker-owned providers. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py) |
@@ -96,6 +98,7 @@ status read, writes the current-state file, and returns `currentStateFile`,
 
 ## Update History
 
+- 2026-05-28T15:43+02:00: Updated after `ping_payload()` version expectations moved to MCP release `0.2.0`. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-28T12:32+02:00: Updated after MCP tool tests added provider watcher status current-state coverage.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed GrepAI MCP command-shape and real stdio integration coverage.
 - 2026-05-26T22:54+02:00: Updated after GrepAI search/trace unit tests and gated real MCP stdio integration tests covered the new tool shape.
