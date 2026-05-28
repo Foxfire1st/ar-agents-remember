@@ -56,7 +56,7 @@
     "workspace"
   ],
   "hotPath": {
-    "summary": "- `models.py`, `constants.py`, and `manifest.py` define benchmark case data, supported provider ids, manifest path validation, case loading, and prompt/variant selection. - `filesystem.py`, `commands.py`, and `workspace.py` own benchmark workspace mutation: copying runtime assets, safe removal, Git checkout preparation, template rendering, memory repo preparation, and whole-case setup. - `mcp_registration.py` writes benchmark-local MCP/Codex configuration and invokes package-local provider setup with generated provider settings. - `execution.py` owns Codex PATH resolution, sandbox policy, c...",
+    "summary": "- `models.py`, `constants.py`, and `manifest.py` define benchmark case data, supported provider ids, manifest path validation, case loading, and prompt/variant selection. - `filesystem.py`, `commands.py`, and `workspace.py` own benchmark workspace mutation: copying runtime assets, safe removal, Git checkout preparation, template rendering, memory repo preparation, and whole-case setup. - `mcp_registration.py` writes benchmark-local MCP/Codex configuration, generates provider settings with central `logs/mcp` and `logs/providers` paths, and invokes package-local provider setup with generated...",
     "candidateHints": [
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/benchmarks/runner_modules/__init__.py",
@@ -100,6 +100,8 @@
       "services",
       "workspace.py",
       "workspace",
+      "logs/mcp",
+      "logs/providers",
       "MCP",
       "route-local-overview",
       "mcp/src/agents_remember/benchmarks/runner_modules",
@@ -108,6 +110,7 @@
       "runner_modules",
       "benchmarks/runner.py",
       "agents-remember-md",
+      "logs/",
       "runner.py",
       "agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py",
       "skill_tools.py",
@@ -118,10 +121,7 @@
       "doc_type",
       "sourceRoute",
       "lastUpdated",
-      "T02",
-      "lastVerifiedCommitHash",
-      "lastVerifiedCommitDate",
-      "governingOverview"
+      "T12"
     ]
   },
   "fallback": {

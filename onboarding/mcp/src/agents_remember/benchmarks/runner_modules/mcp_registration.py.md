@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T02:26+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,11 +22,17 @@ Benchmark-local MCP/Codex registration and generated provider setup settings.
 
 ### Logic
 
-`mcp_registration.py` writes `.codex/mcp` settings and `.codex/config.toml`, builds benchmark `McpRuntimeConfig`/lifecycle settings, names provider containers per case, and calls package-local provider setup with generated settings.
+`mcp_registration.py` writes `.codex/mcp` settings and `.codex/config.toml`,
+builds benchmark `McpRuntimeConfig`/lifecycle settings, names provider
+containers per case, derives benchmark transcript roots under `logs/mcp`,
+derives provider log roots under `logs/providers/<provider>/<instance>`, and
+calls package-local provider setup with generated settings.
 
 ### Invariants And Boundaries
 
 - Benchmark provider authority comes from generated MCP/provider settings, not coordinator `system/settings.json`.
+- Benchmark provider instances should use the same central `logs/` layout as
+  workspace and worktree provider instances.
 - Temporary provider settings must be deleted after setup attempts.
 
 ## Docs References
@@ -47,4 +53,5 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after benchmark-generated MCP/provider settings moved logs under `logs/mcp` and `logs/providers/`.
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

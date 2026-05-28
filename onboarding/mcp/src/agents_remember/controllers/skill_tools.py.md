@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T23:11+02:00                     |
-| lastVerifiedCommitHash | `d5de5d5403ccf4db9b2650279004655797c68f6b` |
-| lastVerifiedCommitDate | 2026-05-26T23:19:42+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -32,7 +32,10 @@ Provider operation flows share `_provider_operation_result()`. Before writing
 temporary lifecycle settings or calling CGC, GrepAI, or watcher services, it
 checks provider-runner integrity and returns `state=runnerIntegrityFailed` with
 a `runtime_install` recovery action when installed runner files are missing from
-or changed against the manifest.
+or changed against the manifest. Watcher status is treated as a real read even
+when the public payload default is dry-run-oriented: `provider_watchers` status
+forces the lifecycle call to non-dry-run mode, writes current provider state,
+and returns `currentStateFile`, `currentState`, and aggregate current `state`.
 
 `memory_quality_check_tool()` resolves the target repository through MCP
 settings, builds a `DriftCheckContext`, and runs the full closeout quality gate
@@ -87,6 +90,8 @@ the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
 - Provider lifecycle calls should be blocked when provider runner integrity
   fails; `provider_status` is the read-only surface for inspecting the failure
   details.
+- Provider watcher status should report what is currently true and update the
+  central current-state file; setup history belongs in provider setup summaries.
 - Worktree, baseline, carryover, and benchmark tools should call package
   service functions directly; CLI entrypoints remain print adapters, not MCP
   controller targets.
@@ -108,10 +113,12 @@ the Codex `--sandbox` argument instead of creating a free-form CLI tunnel.
 | Memory baseline and carryover modules expose request/service functions for MCP controllers. | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py), [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
 | Benchmark runner exposes service payload functions that return progress as `messages` instead of raw stdout. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
 | Memory quality checks combine drift integrity and update-history style checks for closeout. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py) |
+| Provider current-state projection and persistence live in the current-state module. | [current_state.py](agents-remember-md/mcp/src/agents_remember/providers/current_state.py) |
 | Public tool tests assert missing Codex responses expose the benchmark execution policy and `PATH` resolution. | [test_tools.py](agents-remember-md/mcp/tests/test_tools.py) |
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after `provider_watchers` status began writing and returning current provider state snapshots.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed the GrepAI MCP search and trace shape.
 - 2026-05-26T22:54+02:00: Updated after GrepAI MCP search gained workspace/project selection, JSON default output, configured-repo validation, and explicit trace action handling.
 - 2026-05-25T19:16+02:00: Updated after provider lifecycle wording switched to the direct `providers.lifecycle` facade.

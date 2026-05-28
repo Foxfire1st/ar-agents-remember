@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T00:25+02:00                     |
-| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
-| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,6 +29,8 @@ port mapping, starts Ollama through the package Compose project, waits for
 when needed, reports status, and writes the embedder image lock. It shares the
 GrepAI project migration helper so standalone embedder startup can clean
 pre-Compose containers and networks before Compose owns them.
+Status includes a normalized Docker container state summary so MCP provider
+status can report embedder state and uptime.
 
 ### Invariants And Boundaries
 
@@ -38,6 +40,8 @@ pre-Compose containers and networks before Compose owns them.
 - Model readiness is part of lifecycle health, not an optional follow-up.
 - Existing Compose-managed embedder port mappings are reused on repeated starts
   rather than reallocated from host socket availability.
+- Embedder status should expose enough Docker state for current provider status
+  without requiring callers to inspect containers themselves.
 
 ## Repo-Internal References
 
@@ -49,6 +53,7 @@ pre-Compose containers and networks before Compose owns them.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after GrepAI embedder status began including normalized container-state summaries.
 - 2026-05-27T00:25+02:00: Updated after Ollama startup began reusing existing
   Compose port mappings and shared GrepAI project migration.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-27T12:50+02:00                     |
-| lastVerifiedCommitHash | `f11222c722324c57672ec1e10c3828671e45b190` |
-| lastVerifiedCommitDate | 2026-05-27T12:53:04+02:00|
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview

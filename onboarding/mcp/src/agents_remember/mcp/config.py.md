@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T09:23+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,11 +20,13 @@
 
 The loader requires an absolute JSON settings path, rejects coordinator
 `system/settings.json` as an authority file, rejects settings located inside the
-coordinator root, parses configured repositories, derives default memory roots,
-parses optional contract paths inside the coordinator, infers harness skill
-roots from harness-local `mcp/<settings>.json` placement such as
-`.codex/mcp/<settings>.json`, derives provider runtime/log roots
-from provider ids, and exposes sorted allowed repo/provider ids.
+coordinator root, defaults omitted transcript roots to `logs/mcp`, parses
+configured repositories, derives default memory roots, parses optional contract
+paths inside the coordinator, infers harness skill roots from harness-local
+`mcp/<settings>.json` placement such as `.codex/mcp/<settings>.json`, derives
+provider runtime roots under `providers/runners/<provider>/<instance>` and
+provider log roots under `logs/providers/<provider>/<instance>`, and exposes
+sorted allowed repo/provider ids.
 
 ### Invariants And Boundaries
 
@@ -44,5 +46,6 @@ from provider ids, and exposes sorted allowed repo/provider ids.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after transcript roots defaulted to `logs/mcp` and provider log roots moved under `logs/providers/`.
 - 2026-05-24T09:23+02:00: Updated after config coverage switched the normal Codex harness placement from `.agents/mcp` to `.codex/mcp`.
 - 2026-05-23T18:05+02:00: Created during direct closeout prep after MCP settings became the only authority route.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_install_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T18:07+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -34,8 +34,9 @@ MCP runtime installer keeps live runner artifacts, prunes stale `_bin` and
 `_venvs` host artifacts, removes unrelated stale provider files, copies current
 provider defaults, removes stale coordinator `scripts/` remnants, and does not
 run provider dependency commands.
-The second regression proves `providers/data`, `providers/logs`, and default
-runner folders exist after install while stale venvs are pruned.
+The second regression proves `providers/data`, central `logs/mcp`, central
+`logs/providers`, and default runner folders exist after install while stale
+venvs are pruned.
 
 ### Conventions
 
@@ -70,7 +71,7 @@ No external documentation is needed for this test.
 | --- | --- | --- |
 | The test creates a synthetic runtime source tree with the MCP installer-required runtime directories and provider defaults, without a runtime `scripts/` tree. | L22-L31 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
 | The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | L34-L68 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| The full-install regression preserves provider data/log/dependency roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L77-L116 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L96-L140 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
 
 ## Cross-Repo References
 
@@ -82,6 +83,7 @@ No sibling repository evidence is needed for this installer test.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after runtime install moved operator logs from `providers/logs/` into the central `logs/` tree and tests asserted the new directories.
 - 2026-05-26T12:51+02:00: Updated after runtime install began pruning provider venvs because providers are Docker-owned.
 - 2026-05-25T18:07+02:00: Updated after dependency-skipped runtime install began pruning legacy `providers/_bin` while preserving live venv and runner state.
 - 2026-05-23T14:20+02:00: Updated after tests switched from the deleted `installer/install-runtime.py` to MCP package-local `agents_remember.install.runtime` and asserted stale coordinator `scripts/` cleanup.

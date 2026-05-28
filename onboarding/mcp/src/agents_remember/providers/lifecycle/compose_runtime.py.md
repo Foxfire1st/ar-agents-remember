@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/compose_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T00:25+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -36,7 +36,10 @@ render as an empty published-port segment (`host::container`) so Compose can
 parse the service while Docker chooses a port. Unmanaged migration helpers now
 cover containers and networks: both inspect Compose project labels, produce
 dry-run removal payloads, and remove only resources that do not already belong
-to the expected Compose project.
+to the expected Compose project. `required_ownership_labels()` is the shared
+Compose boundary for provider Docker ownership labels; it rejects settings that
+do not include non-empty string `instance.labels` instead of emitting fallback
+or legacy labels.
 
 ### Invariants And Boundaries
 
@@ -50,6 +53,8 @@ to the expected Compose project.
   to the expected Compose project.
 - Unmanaged-network migration must not remove networks that already belong to
   the expected Compose project.
+- Compose-rendered provider resources must carry generated ownership labels;
+  unlabeled provider settings are invalid.
 
 ## Docs References
 
@@ -65,8 +70,8 @@ resolved `system/sources.md` currently contains no entries.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | L41-L67 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, and render `auto` host ports as Compose's empty published-port form. | L81-L112 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | L115-L157; L206-L243 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | L81-L125 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | L134-L176; L225-L262 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 | Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | L160-L203 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 
 ## Cross-Repo References
@@ -79,6 +84,8 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-05-28T14:21:08+02:00: Updated after Compose rendering began rejecting
+  provider settings without generated `instance.labels`.
 - 2026-05-27T00:25+02:00: Updated after auto host ports began rendering as
   `host::container` and unmanaged Compose network migration joined container
   migration.

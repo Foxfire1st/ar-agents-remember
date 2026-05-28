@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T13:58+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,8 +22,9 @@ paths.
 The tests create temporary MCP settings files and assert that config loading
 rejects relative or missing paths, rejects coordinator `system/settings.json`,
 rejects MCP settings inside the coordinator root, derives allowed repo/provider
-ids, derives transcript and provider data roots, infers `.codex/skills` from a
-`.codex/mcp` registration path, honors explicit `harnessSkillRoot`, keeps
+ids, derives the central `logs/mcp` transcript root and `logs/providers`
+provider log roots, infers `.codex/skills` from a `.codex/mcp` registration
+path, honors explicit `harnessSkillRoot`, keeps
 contract paths inside the coordinator, rejects memory settings includes outside
 repo boundaries, and rejects provider path fields that should be server-derived.
 The authority-settings test also verifies generated `grepai-memory` lifecycle
@@ -48,6 +49,7 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after MCP config defaulted transcripts to `logs/mcp` and provider logs to `logs/providers/<provider>/<instance>`.
 - 2026-05-26T13:58+02:00: Updated after authority-settings coverage asserted the generated CGC backend Docker network.
 - 2026-05-25T17:40+02:00: Updated after authority-settings coverage asserted Docker-owned GrepAI runner, network, Postgres, and Ollama settings.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` moved normal Codex harness fixtures to `.codex`.

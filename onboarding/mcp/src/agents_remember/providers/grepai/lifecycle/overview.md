@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/lifecycle/` |
 | doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
 | lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
 | lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00                  |
 | governingOverview      | `../overview.md`                           |
@@ -27,7 +27,8 @@ settings, layout, workspace config, container DSNs, and Docker image settings.
 `backend.py` manages PostgreSQL/pgvector, `embedder.py` manages Ollama and model
 readiness, `runner.py` manages the GrepAI runner image and watcher container,
 and `actions.py` composes top-level install/status/start/stop/refresh/run
-behavior.
+behavior. Status helpers include normalized container state so MCP
+current-state packets can report running state, health, and uptime.
 
 ## Route Model
 
@@ -42,6 +43,8 @@ behavior.
 - GrepAI remains Docker-or-bust; do not add host GrepAI or host Ollama fallbacks.
 - Container-visible paths, Docker service names, and the shared Docker network
   are part of the provider contract.
+- Status surfaces should include backend, embedder, and watcher container state
+  so MCP current-state packets can report what is running now.
 - Keep `__init__.py` as the package export facade.
 
 ## Repo-Internal References
@@ -53,5 +56,6 @@ behavior.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after GrepAI backend/embedder/watcher status began surfacing container-state summaries for provider current-state reporting.
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/grepai/lifecycle/` route.
 - 2026-05-25T19:09+02:00: Created when flat `grepai_*` lifecycle modules moved under `lifecycle_modules/grepai/` with prefix-free filenames.

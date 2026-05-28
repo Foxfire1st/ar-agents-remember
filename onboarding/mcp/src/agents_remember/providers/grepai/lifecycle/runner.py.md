@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T00:25+02:00                     |
-| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
-| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -31,6 +31,8 @@ stops the watcher container, and validates workspace status through
 chosen earlier in the same GrepAI start flow so its Compose override matches
 the already-started dependency services, and it shares the GrepAI project
 migration helper for standalone watcher startup.
+Watcher status includes a normalized Docker container state summary so MCP
+provider status can report watcher state and uptime.
 
 ### Invariants And Boundaries
 
@@ -41,6 +43,8 @@ migration helper for standalone watcher startup.
   container lifecycle.
 - Watcher `up` should render dependency port mappings from the current start
   result when those services were just started.
+- Watcher status should expose enough Docker state for current provider status
+  without requiring callers to inspect containers themselves.
 
 ## Repo-Internal References
 
@@ -52,6 +56,7 @@ migration helper for standalone watcher startup.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after GrepAI watcher status began including normalized container-state summaries.
 - 2026-05-27T00:25+02:00: Updated after watcher startup began rendering
   dependency ports from the current start flow and sharing GrepAI project
   migration.

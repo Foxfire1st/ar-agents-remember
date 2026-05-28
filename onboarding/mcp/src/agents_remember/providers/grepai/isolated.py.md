@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/isolated.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T18:10:12+02:00                  |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7`                         |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24`                         |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -19,11 +19,14 @@
 ### Logic
 
 `isolated_grepai_settings()` reads the configured `grepai-memory` provider, requires an active project id plus target memory root, and deep-copies the source provider settings into a workflow-local target. The generated target settings namespace the GrepAI workspace, runner, Postgres backend, Ollama embedder, network, runtime roots, data roots, logs, and ownership labels by a worktree provider instance id. `_isolated_grepai_roots()` preserves unrelated memory roots and replaces only the active project root with the worktree-local memory path.
+The isolated log root follows the central workflow-local `logs/providers/grepai/<instance>` layout rather than the provider runtime tree.
 
 ### Invariants And Boundaries
 
 - Worktree GrepAI remains an all-memory provider instance; it must not collapse to a single-repo-only provider unless that architecture changes.
 - Only the active project memory root is rewritten for worktree mode; unrelated memory roots must remain pointed at their configured roots.
+- Worktree-local GrepAI logs should use `logs/providers/...` so cleanup can
+  remove provider logs without confusing them with runtime/data roots.
 - Indexed chunk contents are not rewritten here. File-content changes flow through the target memory files and watcher reconciliation.
 - This file creates settings only. Database clone/restore behavior lives in `seed.py`; lifecycle start/refresh remains in the GrepAI lifecycle modules.
 
@@ -38,4 +41,5 @@
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after isolated GrepAI settings moved watch logs under `logs/providers/`.
 - 2026-05-27T18:10:12+02:00: Created for the GrepAI worktree warm-start settings slice.

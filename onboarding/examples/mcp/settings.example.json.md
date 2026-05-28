@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T09:23+02:00                     |
-| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
-| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00                  |
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,7 +27,9 @@ coordinator `system/settings.json` provider template.
 The file requires absolute `coordinationRoot` and `workspaceRoot` values,
 optionally sets `transcriptRoot`, names allowed repositories, and names allowed
 providers. Repository entries may carry `memorySettingsIncludes` and
-`contractPath`, both bounded by MCP config validation. They do not carry source
+`contractPath`, both bounded by MCP config validation. The transcript root
+example points at the central MCP log directory under `logs/mcp/`. Repository
+entries do not carry source
 or memory root path fields: the MCP config derives source roots from
 `workspaceRoot/<repo-id>` and external memory roots from
 `coordinationRoot/memory-repos/ar-<repo-id>`. Provider entries are empty objects
@@ -53,6 +55,7 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after the example transcript root moved from `providers/logs/mcp` to `logs/mcp`.
 - 2026-05-24T09:23+02:00: Updated after Codex project-local MCP settings and skills moved from `.agents` to `.codex`.
 - 2026-05-24T00:37+02:00: Clarified that repository roots are inferred from `workspaceRoot` and `coordinationRoot`, while `harnessSkillRoot` is optional and normally inferred from harness-local MCP settings placement.
 - 2026-05-23T05:35+02:00: Created after migrating coordinator provider JSON authority into the MCP settings example.

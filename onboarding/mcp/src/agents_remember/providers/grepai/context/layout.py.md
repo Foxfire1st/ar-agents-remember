@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/context/layout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:33+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,11 +22,16 @@
 
 ### Logic
 
-It defines `GrepaiMemoryRoot` and `GrepaiRuntimeLayout`, builds the provider runtime/data/config/log/home/cache paths from settings, validates configured memory roots, optionally maps them into provider-owned mirror roots, creates runtime directories, and refreshes mirror roots with `.git`, `.grepai`, and `__pycache__` ignored.
+It defines `GrepaiMemoryRoot` and `GrepaiRuntimeLayout`, builds the provider
+runtime/data/config/log/home/cache paths from settings, validates configured
+memory roots, optionally maps them into provider-owned mirror roots, creates
+runtime directories, and refreshes mirror roots with `.git`, `.grepai`, and
+`__pycache__` ignored. When settings omit a watch log directory, the default is
+the central coordination log tree at `logs/providers/grepai`.
 
 ### Invariants And Boundaries
 
-- Runtime state stays under coordinator provider roots such as `providers/runners/grepai` and `providers/data/grepai/postgres`.
+- Runtime state stays under coordinator provider roots such as `providers/runners/grepai` and `providers/data/grepai/postgres`; operator logs stay under `logs/providers/grepai`.
 - Indexed roots can be mirrored into provider-owned paths so Docker sees stable project paths without writing artifacts into durable memory roots.
 - Root paths with unresolved placeholders, missing directories, or sync targets outside the runtime root raise `ContextProviderError`.
 
@@ -39,4 +44,5 @@ It defines `GrepaiMemoryRoot` and `GrepaiRuntimeLayout`, builds the provider run
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after GrepAI watch log defaults moved under `logs/providers/grepai`.
 - 2026-05-25T19:33+02:00: Created when GrepAI runtime layout and mirror syncing were split out of `grepai/core.py`.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:16+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
+| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
+| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,8 @@
 
 ## Purpose
 
-`grepai.txt` is the package-owned provider requirement pin for the managed GrepAI runner image.
+`grepai.txt` is the package-owned provider requirement pin for the managed
+GrepAI Docker runner image.
 
 ## Code Commentary
 
@@ -65,6 +66,8 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-05-28T14:21:08+02:00: Updated after the source comment was clarified
+  from provider binary wording to Docker runner wording.
 - 2026-05-25T19:16+02:00: Updated after GrepAI became Docker-owned and the legacy `provider_lifecycle.py` compatibility module was removed.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T17:50+02:00: Updated references after provider helpers became MCP package modules and the old source script/shared routes were removed.

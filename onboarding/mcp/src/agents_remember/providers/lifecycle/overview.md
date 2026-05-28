@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
 | doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
+| lastUpdated            | 2026-05-28T12:32+02:00                     |
 | lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
 | lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00                  |
 | governingOverview      | `../../../../overview.md`                  |
@@ -29,7 +29,9 @@ provider-agnostic lifecycle primitives: `command_runner.py`,
 `docker_runtime.py`, `host_ports.py`, `process_status.py`,
 `provider_settings.py`, `result_rendering.py`, `runtime_environment.py`, and
 `state_files.py`. CGC behavior lives under `../cgc/lifecycle/`; GrepAI
-behavior lives under `../grepai/lifecycle/`.
+behavior lives under `../grepai/lifecycle/`. Docker helpers now expose
+normalized container state, health, and uptime summaries used by provider
+current-state reporting.
 
 ## Route Model
 
@@ -47,6 +49,9 @@ behavior lives under `../grepai/lifecycle/`.
 - GrepAI is Docker-or-bust: no host GrepAI binary and no host Ollama fallback.
 - Shared helpers should stay provider-agnostic; provider-specific branching
   belongs in CGC or GrepAI modules.
+- Shared Docker helpers can normalize container facts, but provider readiness
+  and current-state aggregation belong in provider-specific modules and
+  `providers/current_state.py`.
 - Lifecycle service callers should dispatch to implementation functions through
   the `providers.lifecycle` facade, not through CLI subprocess capture.
 
@@ -62,6 +67,7 @@ behavior lives under `../grepai/lifecycle/`.
 
 ## Update History
 
+- 2026-05-28T12:32+02:00: Updated after shared Docker helpers began exposing container-state summaries for provider current-state reporting.
 - 2026-05-25T21:14+02:00: Updated when provider lifecycle implementation moved to provider-first packages and shared lifecycle helpers were split by responsibility.
 - 2026-05-25T19:16+02:00: Updated after the legacy `provider_lifecycle.py` compatibility shim was removed and `providers.lifecycle` became the sole facade.
 - 2026-05-25T19:09+02:00: Updated after CGC and GrepAI lifecycle modules moved into `cgc/` and `grepai/` subpackages with prefix-free filenames.

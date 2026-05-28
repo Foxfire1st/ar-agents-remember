@@ -42,7 +42,7 @@
     "src"
   ],
   "hotPath": {
-    "summary": "`__init__.py` re-exports the GrepAI public lifecycle surface. `core.py` derives settings, layout, workspace config, container DSNs, and Docker image settings. `backend.py` manages PostgreSQL/pgvector, `embedder.py` manages Ollama and model readiness, `runner.py` manages the GrepAI runner image and watcher container, and `actions.py` composes top-level install/status/start/stop/refresh/run behavior.",
+    "summary": "`__init__.py` re-exports the GrepAI public lifecycle surface. `core.py` derives settings, layout, workspace config, container DSNs, and Docker image settings. `backend.py` manages PostgreSQL/pgvector, `embedder.py` manages Ollama and model readiness, `runner.py` manages the GrepAI runner image and watcher container, and `actions.py` composes top-level install/status/start/stop/refresh/run behavior. Status helpers include normalized container state so MCP current-state packets can report running state, health, and uptime.",
     "candidateHints": [
       "mcp/src/agents_remember/providers/grepai/lifecycle",
       "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py",
@@ -72,6 +72,7 @@
       "GrepAI",
       "DSNs",
       "PostgreSQL",
+      "MCP",
       "mcp/src/agents_remember/providers/grepai/lifecycle/",
       "route-overview",
       "a8ee8440dfa920d1153a4bb4bb43cc77534c3c90",
@@ -87,12 +88,13 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T21",
+      "T12",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "T15",
       "governingOverview",
       "test_provider_lifecycle",
+      "T21",
       "T19",
       "grepai_",
       "lifecycle_modules"
