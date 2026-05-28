@@ -21,6 +21,37 @@ GrepAI uses a workspace-mode PostgreSQL/pgvector Docker backend for multiple
 memory roots, and CGC uses a Docker runner plus FalkorDB Docker backend for
 configured code roots.
 
+## Feature Inventory
+
+This is the maintained current-state inventory of the system surface. When a
+feature is added, removed, renamed, or moved between skills, MCP tools, package
+modules, runtime assets, or public docs, update this section in the same
+onboarding pass.
+
+| Feature | What It Offers | Primary Surface |
+| --- | --- | --- |
+| Path-derived onboarding memory | Deterministic Markdown memory beside source files, plus route overviews and repo entity catalogs for larger scopes. | `README.md`, `onboarding/`, C-05 |
+| Internal and external memory roots | Repo-local `ar-memory/` by default, selected external memory repos under `ar-coordination/memory-repos/ar-<repo>/`, and `memory.md` ledgers for code/memory alignment. | C-00, C-08, C-09, C-10, `kernel/memory_ledger.py` |
+| Context resolution and startup packets | Resolved code, coordination, memory, onboarding, task, temp, ledger, storage, path-rule, cross-repo, provider-summary, worktree, Git, and optional drift facts through compact `ContextPacketV2`; detailed provider state is intentionally excluded. | C-08, `resolve_context`, `context_packet`, `ContextPacketV2` |
+| Memory quality control | Task-start drift classification, closeout memory quality, new-file missing-onboarding checks, overview/entity fingerprint checks, and update-history style checks. | C-02, `drift_check`, `memory_quality_check`, `check_missing_onboarding` |
+| Retrieval routing | Semantics, Relationship, and Intent routing across provider accelerators, route indexes, onboarding, and bounded source confirmation. | C-04, `overview.index.json`, GrepAI tools, CGC tools |
+| Onboarding bootstrap and slice maintenance | Repo bootstrap, route-local overview creation, evidence packs, file cards, onboarding waves, curator review artifacts, and route/slice refresh or deletion cleanup. | C-03, C-05 |
+| File and entity onboarding maintenance | File-level sidecars, inline onboarding adapter rules, repo entity catalogs, deterministic entity fingerprints, reference health checks, and generated route indexes. | C-05, `route_index_refresh`, `kernel/route_index.py` |
+| Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | C-01 |
+| Workflow modes | Chat workflow for current-session edits, W-02 light tasks for compact durable plans, and W-01 heavy workflow for phased research, synthesis, design, planning, implementation, closure, and review. | W-03, W-02, W-01, heavy phase skills |
+| Approval-gated closeout | Explicit approval gates for implementation, direct current-checkout closeout, worktree-backed closeout, memory refresh, memory quality, and ledger alignment. | C-09, C-12, `direct_closeout_*`, `worktree_closeout_*` |
+| Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. | C-09, `worktree_*`, `worktrees/` |
+| Runtime and skill installation | MCP-owned install of coordinator `AGENTS.md` templates, packaged skills, system defaults, provider defaults, optional benchmark fixtures, and harness skill layouts. | `runtime_install`, `skills_install`, `install/`, `package_data/runtime/` |
+| MCP server and authority settings | Installable stdio MCP server with trusted settings outside the coordinator root, allowed repo/provider scopes, timeout caps, transcript roots, and path containment. | `agents-remember-mcp`, `mcp/config.py`, `mcp/server.py` |
+| Public MCP response contracts | Pydantic models for every public MCP tool response, registry coverage for the tool surface, compact strict contracts where the repo owns shape, flexible envelopes where provider/service-native details are intentionally passed through, and token metadata fields for later cost accounting. | `mcp/src/agents_remember/models/`, `PUBLIC_TOOL_RESPONSE_MODELS`, `test_models.py` |
+| Provider lifecycle and discovery tools | Docker-managed GrepAI memory search/trace, CodeGraphContext symbol/caller/callee/dependency/complexity/visualization queries, compact provider status, dedicated provider diagnostics, watcher lifecycle, integrity checks, and current-state snapshots. | `provider_status`, `provider_diagnostics`, `provider_watchers`, `grepai_*`, `cgc_*`, `providers/` |
+| Memory baseline adoption | One-time adoption of existing external-memory onboarding into the first ledgered baseline after drift/status review. | C-10, `memory_baseline_*`, `memory/baseline.py` |
+| Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. | C-11, `memory_carryover_*`, `memory/carryover.py` |
+| Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | C-08, `crossRepo.allow` |
+| Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
+| Source quality tooling | Repository-owned quality wrapper for Ruff, Radon, pytest coverage, and CRAP-Calculator risk scoring. | `python -m agents_remember.code_quality.check`, `code_quality/` |
+| Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Windsurf, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
+
 ## Hot Path Summary
 
 Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills` covers workflow guidance for resolver, memory quality control, bootstrap, onboarding, route-index, memory, and worktree tasks, and `mcp/src/agents_remember/package_data/runtime/skills/W-*` covers task workflows. For route-index behavior start at `mcp/src/agents_remember/kernel/route_index.py`, the `route_index_refresh` MCP tool, C-05, and C-04.
@@ -107,7 +138,7 @@ GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generate
 
 ### Code Quality And Refactor Baseline
 
-The source checkout now explicitly tells agents to run Ruff and Radon after Python implementation work, then use the resolved memory layer's `system/tools.md` for exact validation commands and `system/coding-guidelines.md` for repository-specific style rules. Coordinator-level tools examples keep global commands separate from repo-specific code quality tools, and the memory-repo tools example reserves a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands.
+The source checkout now explicitly tells agents to run Ruff, Pyright, and Radon after Python implementation work, then use the resolved memory layer's `system/tools.md` for exact validation commands and `system/coding-guidelines.md` for repository-specific style rules. Coordinator-level tools examples keep global commands separate from repo-specific code quality tools, and the memory-repo tools example reserves a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands.
 
 The current `pyproject.toml` makes Ruff responsible for import/style/static hygiene and Radon responsible for complexity scouting. Ruff ignores line-length wrapping, high-branch/high-return/high-statement complexity warnings, and numeric sentinel warnings that are better reviewed through Radon or code review. Test files have targeted ignores for unused patched-callable arguments and import-path setup. Radon is configured to show `B` through `F` cyclomatic complexity, visible complexity scores, total/average output, and maintainability-index pressure points while excluding generated, cache, virtualenv, build, dist, and test paths.
 
@@ -132,9 +163,10 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 | Finding                                                                                                                                                                                                                       | Citations            | Source Path                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------------------- |
 | The source checkout instructions distinguish this repository from the installed runtime, hand sibling-repo work to `ar-coordination/AGENTS.md`, keep C-08 plus C-02 memory quality control as the context gate for this repo, and separate implementation approval from commit approval. | L1-L14; L28-L53; L84-L91 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| The source checkout instructions route repo-specific code quality checks through resolved memory-layer `system/tools.md`, tell agents to run Ruff and Radon after Python implementation work, and use `system/coding-guidelines.md` when present. | L60-L62; L90-L96 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The source checkout instructions route repo-specific code quality checks through resolved memory-layer `system/tools.md`, tell agents to run Ruff, Pyright, and Radon after Python implementation work, and use `system/coding-guidelines.md` when present. | L60-L62; L90-L96 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | The README now presents the public front door, the generic quickstart, links to harness install pages, and a compact source/runtime layout.                                                                                                   | L1-L138            | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, operational guides, and reference pages.                                                                                                   | L1-L39            | [docs/README.md](agents-remember-md/docs/README.md) |
+| The current feature inventory is supported by the public core model, runtime/tool-surface docs, MCP `PUBLIC_TOOLS`, response model registry, packaged skill reference, runtime layout, benchmark methodology, and source quality wrapper. | README L22-L88; MCP README L64-L90; tools L50-L86; model registry L1-L85; skills L15-L46; runtime layout L1-L118; benchmarks L1-L31; quality wrapper L1-L140 | [README.md](agents-remember-md/README.md); [mcp/README.md](agents-remember-md/mcp/README.md); [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py); [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py); [skills reference](agents-remember-md/docs/reference/skills.md); [runtime layout](agents-remember-md/docs/reference/runtime-layout.md); [benchmark methodology](agents-remember-md/docs/benchmarks-methodology.md); [check.py](agents-remember-md/mcp/src/agents_remember/code_quality/check.py) |
 | MCP provider guidance requires Docker-wrapped provider backends instead of host-level services, mirrors GrepAI roots under provider-owned index roots, stores GrepAI artifacts under `providers/runners/grepai/`, stores GrepAI PostgreSQL data under `providers/data/grepai/postgres/`, and treats `.grepai/` in durable memory roots as containment failure. | L79-L99 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The MCP settings example declares the external authority surface for repositories, provider ids, timeout caps, transcript roots, and package-derived provider runtime paths, replacing the removed coordinator `system/settings.json` provider template. | L1-L31 | [examples/mcp/settings.example.json](agents-remember-md/examples/mcp/settings.example.json) |
 | The repository quality configuration leaves Ruff on import/style/static hygiene, delegates branch/statement complexity pressure to Radon, gives tests targeted patched-callable/import-setup ignores, and configures Radon to report `B` through `F` complexity plus maintainability pressure. | L1-L39; L59-L68 | [pyproject.toml](agents-remember-md/pyproject.toml) |
@@ -142,7 +174,7 @@ This repository is currently selected into the workspace `/home/mohamedreadone/P
 
 ## Build & Dev
 
-- Source-checkout Python implementation work should run Ruff and Radon from the `agents-remember-md/` root; exact command details belong in the resolved memory layer's `system/tools.md`.
+- Source-checkout Python implementation work should run Ruff, Pyright, and Radon from the `agents-remember-md/` root; exact command details belong in the resolved memory layer's `system/tools.md`.
 - The MCP package tests under `mcp/tests` cover C-08, C-02, C-09, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
 - This onboarding pass intentionally does not modify `system/sources.md` or `system/tools.md`.
 
@@ -210,4 +242,4 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 
 ## Last Verified
 
-Updated 2026-05-28T13:40+02:00 after the provider runtime overview was tightened to remove `_bin`/`_venvs` executable-contract wording and make Docker-wrapped managed providers the only normal provider execution path.
+Updated 2026-05-28T19:52+02:00 after adding the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.

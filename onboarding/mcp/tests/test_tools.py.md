@@ -5,99 +5,58 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T15:43+02:00                     |
-| lastVerifiedCommitHash | `9680d150ac9d2e6c1ae04dbab42eac0088dceef8` |
-| lastVerifiedCommitDate | 2026-05-28T15:55:29+02:00|
+| lastUpdated            | 2026-05-28T19:52+02:00                     |
+| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
+| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
-`test_tools.py` verifies public MCP tool payloads and server registration
-behavior.
+`test_tools.py` verifies public MCP tool payloads, server registration, and
+controller-to-service behavior.
 
 ## Code Commentary
 
-### Logic
+The test suite covers core server payloads, FastMCP server construction,
+context-packet delegation, runtime install payload authority, public tool
+surface expectations, skills install behavior, route index refresh, memory
+quality exposure, provider status and watcher current-state reporting, typed
+GrepAI and CodeGraphContext command construction, worktree tool behavior, and
+Codex benchmark execution policy reporting.
 
-The tests cover ping and server info payloads including the public MCP server
-version, FastMCP server construction,
-context-packet delegation, runtime install payload authority, the Phase 04 tool
-surface, Codex benchmark executable resolution through `PATH`, benchmark-only
-Codex execution policy reporting, skills install copy-only behavior,
-replacement of legacy symlink/junction-style skill
-installations, Codex `.codex` harness-root inference, configured
-harness-root requirements, memory init behavior,
-route index refresh behavior, memory quality check exposure, provider/tool
-payload delegation, and provider watcher status current-state reporting.
+After the response-contract wiring, tests also protect that modeled payloads
+include the shared token metadata defaults and that service-backed MCP tools do
+not expose legacy command-capture wrapper fields such as raw `argv`, `stdout`,
+`stderr`, or parsed `payload` wrappers.
 
-The CGC assertions verify that the generic `cgc_query` name stays absent from
-`PUBLIC_TOOLS`, and that typed CGC payloads build fixed native command suffixes
-for symbol search, callers, callees, dependencies, and complexity.
+The typed CGC assertions keep the old generic `cgc_query` name absent and
+verify fixed command construction for symbol search, callers, callees,
+dependencies, and complexity. GrepAI assertions keep workspace/project
+selection tied to MCP configuration and keep trace action validation explicit.
 
-The GrepAI assertions verify that search command construction is
-workspace-wide by default, that explicit configured repo filters become
-repeated `--project` flags, that invalid repo scope and trace inputs fail
-before provider execution, and that trace command construction uses explicit
-`callers`, `callees`, or `graph` actions rather than a free-form query. A gated
-real MCP stdio integration suite exercises the registered `grepai_search` tool
-against a real config, including a dry-run workspace command and a non-dry-run
-project-filtered search.
+## Invariants And Boundaries
 
-The typed CGC payload test also patches `lifecycle.main()` to fail if
-the MCP provider path regresses from `lifecycle_service` back to CLI capture.
-Command-style artifact coverage verifies service-backed MCP tools do not expose
-`argv`, `stdout`, `stderr`, or parsed `payload` wrapper fields.
-
-Provider operation integrity coverage asserts that legacy CodeGraphContext venv
-files and current or historically recorded `providers/_bin` entries are ignored
-when providers are Docker-owned.
-
-### Invariants And Boundaries
-
-The public tool surface should remain typed and package-owned. Tests should not
-permit arbitrary executable selection for benchmarks, arbitrary skill install
-roots, raw shell wrappers, or reintroduced script-era tool names.
-
-Codex benchmark tests should protect both failure recovery and policy
-visibility: missing-Codex payloads should name `PATH` resolution and include
-the benchmark-only execution policy, including whether the sandbox argument is
-passed or omitted for `default` mode.
-
-CGC tests should check fixed command construction rather than broad native
-argument forwarding.
-
-GrepAI tests should protect the MCP-facing tool shape, configured-repo scope
-validation, JSON default output, repeated search project flags, and trace action
-validation. Real integration coverage remains gated behind
-`AGENTS_REMEMBER_REAL_MCP_CONFIG` so normal unit runs stay hermetic while
-maintainers can exercise the MCP/provider boundary.
-
-Provider MCP tests should protect that provider lifecycle calls use the typed
-service layer, not `main(argv)`.
-
-Provider MCP tests should also protect that legacy `_bin` and `_venvs`
-artifacts do not block Docker-mode providers.
-
-Service-backed MCP tool tests should protect stable domain payloads rather than
-command-capture response wrappers.
-
-Provider watcher status tests should protect that the MCP tool performs a real
-status read, writes the current-state file, and returns `currentStateFile`,
-`currentState`, and aggregate `state`.
+- Public MCP tools should remain typed and package-owned.
+- Payload tests should protect stable domain payloads and model defaults, not
+  command-capture implementation artifacts.
+- Real MCP stdio integration remains gated behind
+  `AGENTS_REMEMBER_REAL_MCP_CONFIG` so normal unit runs stay hermetic.
+- Provider lifecycle MCP tests should keep provider operations on typed service
+  functions instead of CLI `main(argv)` wrappers.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
 | Public tool metadata and payload builders live in `tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
-| MCP package-level server identity constants live in `mcp.__init__`. | [__init__.py](agents-remember-md/mcp/src/agents_remember/mcp/__init__.py) |
+| Public response model registry validates payload shapes. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
 | Server registration lives in `server.py`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| Controller facades convert public MCP payloads into service calls. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| Provider runner integrity now ignores legacy `_bin` and `_venvs` entries for Docker-owned providers. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py) |
+| Domain controller modules convert public MCP payloads into service calls. | [controllers overview](agents-remember-md/mcp/src/agents_remember/controllers/overview.md) |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | [current_state.py](agents-remember-md/mcp/src/agents_remember/providers/current_state.py) |
 
 ## Update History
 
+- 2026-05-28T19:52+02:00: Updated after public tool payloads began validating through Pydantic response models and `ping_payload()` started emitting token metadata defaults.
 - 2026-05-28T15:43+02:00: Updated after `ping_payload()` version expectations moved to MCP release `0.2.0`. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-28T12:32+02:00: Updated after MCP tool tests added provider watcher status current-state coverage.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed GrepAI MCP command-shape and real stdio integration coverage.

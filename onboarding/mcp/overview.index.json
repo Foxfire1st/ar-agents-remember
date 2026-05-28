@@ -10,9 +10,19 @@
   ],
   "childRoutes": [
     {
+      "route": "mcp/src/agents_remember/controllers",
+      "overview": "mcp/src/agents_remember/controllers/overview.md",
+      "index": "mcp/src/agents_remember/controllers/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/memory_quality",
       "overview": "mcp/src/agents_remember/memory_quality/overview.md",
       "index": "mcp/src/agents_remember/memory_quality/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/models",
+      "overview": "mcp/src/agents_remember/models/overview.md",
+      "index": "mcp/src/agents_remember/models/overview.index.json"
     },
     {
       "route": "mcp/src/agents_remember/benchmarks/runner_modules",
@@ -53,13 +63,11 @@
   "coveredFiles": [
     "mcp/README.md",
     "mcp/pyproject.toml",
+    "mcp/requirements.txt",
     "mcp/src/agents_remember/benchmarks/runner.py",
     "mcp/src/agents_remember/code_quality/__init__.py",
     "mcp/src/agents_remember/code_quality/check.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
-    "mcp/src/agents_remember/controllers/context_packet.py",
-    "mcp/src/agents_remember/controllers/runtime_install.py",
-    "mcp/src/agents_remember/controllers/skill_tools.py",
     "mcp/src/agents_remember/install/__init__.py",
     "mcp/src/agents_remember/install/assets.py",
     "mcp/src/agents_remember/install/runtime.py",
@@ -195,6 +203,7 @@
     "mcp/tests/test_integrity.py",
     "mcp/tests/test_memory_quality.py",
     "mcp/tests/test_missing_onboarding.py",
+    "mcp/tests/test_models.py",
     "mcp/tests/test_provider_current_state.py",
     "mcp/tests/test_provider_lifecycle.py",
     "mcp/tests/test_provider_setup.py",
@@ -205,9 +214,9 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 322,
-    "fileSidecars": 152,
-    "childRoutes": 8
+    "sourceFilesInScope": 341,
+    "fileSidecars": 151,
+    "childRoutes": 10
   },
   "routingTerms": [
     "adopt",
@@ -248,7 +257,6 @@
     "common",
     "config",
     "context",
-    "context_packet",
     "contract",
     "control",
     "controllers",
@@ -289,13 +297,16 @@
     "folder",
     "framing",
     "from",
-    "git"
+    "git",
+    "git_worktree_manager"
   ],
   "hotPath": {
-    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools, `controllers/context_packet.py` for startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.py`; runner executable integrity is checked by `providers/integrity.py` before watcher status is trusted. Provider lifecycle implementation is now split betwee...",
+    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools, `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.py`; runner executable integrity is checked by `providers/integrity.py` befo...",
     "candidateHints": [
       "mcp",
+      "mcp/src/agents_remember/controllers",
       "mcp/src/agents_remember/memory_quality",
+      "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/kernel/coordination_context",
       "mcp/src/agents_remember/providers/cgc",
@@ -305,25 +316,25 @@
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/README.md",
       "mcp/pyproject.toml",
+      "mcp/requirements.txt",
       "mcp/src/agents_remember/benchmarks",
       "mcp/src/agents_remember/benchmarks/runner.py",
       "mcp/src/agents_remember/code_quality",
       "mcp/src/agents_remember/code_quality/__init__.py",
       "mcp/src/agents_remember/code_quality/check.py",
       "mcp/src/agents_remember/code_quality/crap_calculator.py",
-      "mcp/src/agents_remember/controllers",
-      "mcp/src/agents_remember/controllers/context_packet.py",
-      "mcp/src/agents_remember/controllers/runtime_install.py",
-      "mcp/src/agents_remember/controllers/skill_tools.py",
       "mcp/src/agents_remember/install",
       "mcp/src/agents_remember/install/__init__.py",
-      "mcp/src/agents_remember/install/assets.py"
+      "mcp/src/agents_remember/install/assets.py",
+      "mcp/src/agents_remember/install/runtime.py"
     ],
     "anchorHints": [
       "README.md",
       "README",
       "pyproject.toml",
       "pyproject",
+      "requirements.txt",
+      "requirements",
       "runner.py",
       "runner",
       "__init__.py",
@@ -332,12 +343,6 @@
       "check",
       "crap_calculator.py",
       "crap_calculator",
-      "context_packet.py",
-      "context_packet",
-      "runtime_install.py",
-      "runtime_install",
-      "skill_tools.py",
-      "skill_tools",
       "assets.py",
       "assets",
       "runtime.py",
@@ -367,7 +372,11 @@
       "carryover.py",
       "carryover",
       "AGENTS.md",
-      "AGENTS"
+      "AGENTS",
+      "patch_cgc.py",
+      "patch_cgc",
+      "codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
+      "codegraphcontext-0.4.10-cgcignore-runtime-root"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T23:11+02:00                     |
-| lastVerifiedCommitHash | `d5de5d5403ccf4db9b2650279004655797c68f6b` |
-| lastVerifiedCommitDate | 2026-05-26T23:19:42+02:00|
+| lastUpdated            | 2026-05-28T19:52+02:00                     |
+| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
+| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,9 +20,10 @@ Agents Remember tools.
 ### Logic
 
 `create_server()` builds the FastMCP instance and registers typed tool functions
-that delegate to payload builders. Phase 04 adds context, drift, route index,
-memory init, skill install, provider, worktree, memory baseline/carryover, and
-benchmark tools.
+that delegate to payload builders. The current public surface includes context,
+drift, route index, memory init, skill install, provider status, provider
+diagnostics, provider watcher, GrepAI, CodeGraphContext, worktree, memory
+baseline/carryover, and benchmark tools.
 
 The registered `memory_quality_check` tool accepts a repo id plus optional
 check names/detail limits and forwards them to the payload/controller layer. It
@@ -45,6 +46,10 @@ same default as the benchmark service. The server only forwards the value; the
 runner validates it against its allowlist and maps `default` to an omitted
 `--sandbox` CLI argument.
 
+`provider_diagnostics` is registered as the explicit detail tool for raw
+provider state, keeping `context_packet` and `provider_status` focused on
+compact readiness summaries.
+
 ### Invariants And Boundaries
 
 - Server functions should perform registration and argument forwarding only.
@@ -53,16 +58,20 @@ runner validates it against its allowlist and maps `default` to an omitted
 - Do not collapse GrepAI back into free-form query/native argument forwarding;
   the registration should mirror the supported MCP contract.
 - Do not turn benchmark sandbox selection into a generic Codex argument surface.
+- Keep detailed provider troubleshooting behind `provider_diagnostics`; do not
+  hide raw provider internals in `context_packet`.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
 | Payload builders are defined in `tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Provider diagnostics payloads are modeled separately from compact provider summaries. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
 | The config loader rejects coordinator `system/settings.json` as MCP authority. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
 
 ## Update History
 
+- 2026-05-28T19:52+02:00: Updated after registering the dedicated `provider_diagnostics` MCP tool.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI search and trace registration.
 - 2026-05-26T22:54+02:00: Updated after GrepAI search and trace registration gained typed scope, output, and trace-action arguments.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` exposed benchmark sandbox options through the MCP server.

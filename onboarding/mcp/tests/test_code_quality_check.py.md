@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T06:30+02:00                     |
-| lastVerifiedCommitHash | `98af161a6c8d77f7dfc30457c9f6ab1c20e411ab`                      |
-| lastVerifiedCommitDate | 2026-05-24T06:49:48+02:00|
+| lastUpdated            | 2026-05-28T19:52+02:00                     |
+| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c`                      |
+| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,14 +23,15 @@
 ### Logic
 
 The tests import `agents_remember.code_quality.check` from `mcp/src` and use a
-fake command runner to avoid launching Ruff, Radon, or pytest subprocesses
+fake command runner to avoid launching Ruff, Pyright, Radon, or pytest subprocesses
 during unit tests. The fake runner records command composition and writes a
 synthetic coverage JSON report for the pytest step so the real
 CRAP-Calculator path still executes.
 
 ### Invariants And Boundaries
 
-- Tests verify command order and fixed module selection without shelling out.
+- Tests verify command order and fixed module selection without shelling out,
+  including that Pyright receives the configured source and test paths.
 - Fixed check failures make the wrapper return nonzero.
 - Missing coverage JSON makes the CRAP step fail.
 - CRAP threshold hits are report-only by default and fail only when
@@ -40,9 +41,10 @@ CRAP-Calculator path still executes.
 
 | Finding | Source Path |
 | --- | --- |
-| The source quality wrapper owns the fixed Ruff, Radon, pytest, and CRAP-Calculator sequence. | [check.py](agents-remember-md/mcp/src/agents_remember/code_quality/check.py) |
+| The source quality wrapper owns the fixed Ruff, Pyright, Radon, pytest, and CRAP-Calculator sequence. | [check.py](agents-remember-md/mcp/src/agents_remember/code_quality/check.py) |
 | CRAP-Calculator owns the function scoring used by the wrapper. | [crap_calculator.py](agents-remember-md/mcp/src/agents_remember/code_quality/crap_calculator.py) |
 
 ## Update History
 
+- 2026-05-28T19:52+02:00: Updated after source quality wrapper tests began asserting Pyright command wiring.
 - 2026-05-24T06:30+02:00: Created unit coverage for the source quality suite wrapper.

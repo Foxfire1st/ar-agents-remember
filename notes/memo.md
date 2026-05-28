@@ -5,6 +5,7 @@
 4. memory defragmentation should also look for signs of slop in the code. The test can simply look for "legacy" and "fallback" implementations that are not explicitly documented as agreed upon with the developer within the onboardings. These findings need to appear in the report as well.
 5. maybe integrate slop detector tooling like: https://github.com/flamehaven01/ai-slop-detector
 6. Guided memory-repo scaffolding should take example files so users have code quality and other things setup for them.
+7. Convert tool reponses at the emitting boundary from json into toon output for the model. However existing tests should continue consuming json. The conversion should be done via a dependency that can do that automatically for any json input and output that to toon.
 
 Pylint
 too-many-branches

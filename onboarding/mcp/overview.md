@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
+| lastUpdated            | 2026-05-28T19:52+02:00                     |
 | lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
 | lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00                 |
 | governingOverview      | `../overview.md`                           |
@@ -25,14 +25,16 @@ coordinator `system/settings.json`.
 
 Start in `src/agents_remember/mcp/config.py` for trusted settings parsing,
 `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools,
-`controllers/context_packet.py` for startup packets, and
-`controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime
-installation. Provider status is composed in `providers/status.py`; provider
-lifecycle settings are generated from MCP settings in `providers/settings.py`;
-runner executable integrity is checked by `providers/integrity.py` before
-watcher status is trusted. Provider lifecycle implementation is now split
-between `providers/lifecycle.py` and `providers/lifecycle_modules/`; there is no
-legacy `provider_lifecycle.py` facade. Memory-layer quality control lives under
+`models/tool_registry.py` for public response contracts,
+`controllers/context_packet.py` for compact `ContextPacketV2` startup packets,
+and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned
+runtime installation. Provider status is composed in `providers/status.py`;
+provider lifecycle settings are generated from MCP settings in
+`providers/settings.py`; runner executable integrity is checked by
+`providers/integrity.py` before watcher status is trusted. Provider lifecycle
+implementation is now split between `providers/lifecycle.py` and
+`providers/lifecycle_modules/`; there is no legacy `provider_lifecycle.py`
+facade. Memory-layer quality control lives under
 `src/agents_remember/memory_quality/`: integrity checks include the onboarding
 drift classifier/summary, and style checks currently include update-history
 newest-first ordering.
@@ -44,7 +46,10 @@ The MCP package separates three surfaces:
 - `agents_remember.mcp` owns transport wiring, tool registration, and trusted
   settings parsing.
 - `agents_remember.controllers` owns operation-level composition such as
-  `context_packet` and `runtime_install`.
+  `context_packet`, provider tools, worktree tools, memory tools, benchmarks,
+  and `runtime_install`.
+- `agents_remember.models` owns public MCP response contracts and the
+  tool-to-response-model registry used by `tools.py`.
 - First-class service domains such as `kernel`, `providers`, `memory_quality`,
   `worktrees`, and `install` own deterministic behavior.
 
@@ -104,14 +109,18 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
 - Resolver, provider lifecycle, memory quality, and worktree code under
   `mcp/src/agents_remember` is a package-local implementation surface. Original
   runtime scripts are not the MCP execution authority.
+- Public MCP tool payloads should validate through
+  `models.tool_registry.PUBLIC_TOOL_RESPONSE_MODELS`; compact context belongs
+  in `ContextPacketV2`, and detailed provider state belongs in
+  `provider_diagnostics`.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
 | MCP settings reject coordinator `system/settings.json`, forbid settings inside the coordinator, and derive provider runtime roots under `providers/runners/<provider>`. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| The tool surface exposes `context_packet` and `runtime_install`; handlers delegate to controllers. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py); [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| `context_packet` composes resolver, git, worktree, provider, and optional drift status without starting providers. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
+| The tool surface exposes `context_packet`, provider diagnostics, runtime, memory, worktree, benchmark, and install tools; handlers delegate to controllers and response validation flows through the model registry. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py); [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
+| `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember-md/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 | Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
 | Provider status checks runner integrity before watcher status and reports structured recovery actions on integrity failure. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py); [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
@@ -120,6 +129,7 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
 
 ## Update History
 
+- 2026-05-28T19:52+02:00: Updated after public MCP response payloads were wired through Pydantic models, context packets moved to compact V2, provider diagnostics became the detail boundary, and controllers split by domain.
 - 2026-05-28T13:40+02:00: Tightened MCP provider invariants to forbid CGC host `venvRoot`, host executable, and site-packages patch fallback paths.
 - 2026-05-28T12:32+02:00: Updated after provider operator logs moved into the central `logs/` tree and provider status began writing current-state snapshots under `logs/providers/status/`.
 - 2026-05-25T19:16+02:00: Updated after the legacy `provider_lifecycle.py` facade was deleted and `providers.lifecycle` became the sole lifecycle facade.
