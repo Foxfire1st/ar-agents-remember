@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-05-28T15:24+02:00                     |
-| lastVerifiedCommitHash | `fee469fd8435b9b74e13264591a8c7c6c2773012` |
-| lastVerifiedCommitDate | 2026-05-28T15:30:29+02:00|
+| lastUpdated            | 2026-05-29T07:36+02:00                     |
+| lastVerifiedCommitHash | `b3dc26b0d809e6d386fd13adc77c8530f174b826` |
+| lastVerifiedCommitDate | 2026-05-29T07:42:25+02:00|
 
 ## Purpose
 
@@ -18,6 +18,12 @@ This unittest file validates the first worktree-support helper slice.
 ### Logic
 
 The tests cover memory ledger roundtrip/prepend behavior, branchless canonical ledger output, legacy branch-metadata ledger parsing without branch-metadata blocking, malformed ledger metadata, invalid ledger top-row detection, repo-specific C-08 `task_root` output without a task name, installed-runtime coordination-root defaults, source-checkout `.env` and `.env.example` ignore behavior, dirty external-memory start blocking, compatible external-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview with typed MCP next hints, approval-note, onboarding metadata refresh, route overview/index refresh, memory quality gating before memory commits, missing-onboarding blocking behavior, memory-worktree settings during closeout planning, long Windows path changed-file and sidecar detection, direct checkout closeout dry-run/success/missing-onboarding behavior with `code_repository_name`/`code_repository_root` resolver args, direct closeout entity fingerprint preview and refresh behavior, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, deterministic overview/entity drift checks including entity inventory coverage, C-09 integration fast-forward/replay/conflict behavior, C-09 cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching checkout branches and ledger commit metadata, C-10 adoption status/block/adopt behavior, C-11 memory carryover plan/apply behavior, and benchmark runner portability coverage for non-string/unsafe manifest path guards, Windows-safe generated tree removal, stale directory symlink cleanup, Windows Codex shim resolution, cached benchmark repository reuse, missing-commit fetch behavior, force-clone behavior, copy-only skill exposure, Codex `PATH` resolution and benchmark-only execution metadata, default-sandbox omission, variant-scoped benchmark provider selection, generated benchmark provider settings with central provider log paths, workspace-local `.codex` benchmark MCP registration, and temp-file provider setup handoff.
+
+`RequireUpdatedSidecarContentTests` covers the closeout content gate: in a
+temporary memory Git repo with a committed sidecar, `require_updated_sidecar_content`
+raises when a changed source file's sidecar body was not modified, passes once
+the sidecar body is edited, and is a no-op when the plan has no required
+sidecars.
 
 ### Conventions
 
@@ -70,6 +76,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-05-29T07:36+02:00: Added `RequireUpdatedSidecarContentTests` covering the closeout content gate (`require_updated_sidecar_content`): blocks a changed source with an unmodified sidecar, passes when the sidecar body is updated, and no-ops with no required sidecars.
 - 2026-05-28T15:24+02:00: Updated after direct closeout tests began asserting route overview/index refresh before memory commit and memory quality failure blocking before memory/ledger commits. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-28T12:32+02:00: Updated after benchmark provider settings tests began asserting central `logs/providers/...` log paths.
 - 2026-05-24T18:51+02:00: Added closeout regression coverage for memory-worktree settings and long Windows path changed-file/sidecar probes.
