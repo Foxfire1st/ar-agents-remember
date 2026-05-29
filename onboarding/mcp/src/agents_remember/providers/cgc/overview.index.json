@@ -27,7 +27,7 @@
     "mcp/src/agents_remember/providers/cgc/setup.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 17,
+    "sourceFilesInScope": 19,
     "fileSidecars": 4,
     "childRoutes": 2
   },

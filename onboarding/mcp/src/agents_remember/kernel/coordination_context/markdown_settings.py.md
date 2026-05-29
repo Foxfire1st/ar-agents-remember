@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T20:57+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -64,4 +64,5 @@ No cross-repository evidence is needed for this fallback parser.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Added `None` guards for `current_list`/`current_rule` (`global_target_list`, `try_apply_storage_rule_value`, `try_select_storage_rule_list`) to clear Pyright optional errors; behavior-preserving (commit `0549b28`).
 - 2026-05-25T20:57+02:00: Created by extracting and simplifying the Markdown settings state machine from the C-08 resolver, then amended after legacy branches moved into focused parser helpers.

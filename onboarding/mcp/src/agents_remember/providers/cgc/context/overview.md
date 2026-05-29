@@ -5,20 +5,21 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/context/` |
 | doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00                  |
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                                  |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../overview.md`                  |
 
 ## Purpose
 
-`cgc/context/` owns CodeGraphContext provider context layout, cleanup, constants, and patch helpers.
+`cgc/context/` owns CodeGraphContext provider context layout, materialization, cleanup, constants, and patch helpers.
 
 ## Hot Path Summary
 
-Use `core.py` for `CgcRuntimeLayout`, settings-derived layout, managed config file creation, source artifact checks, and stale provider runtime cleanup. Use `constants.py` for pins, backend names, env exclusions, default `.cgcignore`, and patch snippets. Use `patches.py` for upstream CGC module discovery and marker-based patch application.
+Use `core.py` for `CgcRuntimeLayout` and settings-derived layout construction. Use `materialize.py` for `ensure_cgc_runtime_layout` (managed dirs/config-file creation). Use `cleanup.py` for source-artifact checks and stale provider runtime cleanup. Use `constants.py` for pins, backend names, env exclusions, default `.cgcignore`, and patch snippets. Use `patches.py` for upstream CGC module discovery and marker-based patch application.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Split `core.py` (668 lines) — extracted `materialize.py` (runtime dir/config-file writers) and `cleanup.py` (stale-artifact removal); `core.py` (now 522) keeps the layout dataclass + construction (commit `01f503d`).
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/cgc/context/` route.
 - 2026-05-25T19:16+02:00: Created when CGC provider context behavior moved into its own subpackage.

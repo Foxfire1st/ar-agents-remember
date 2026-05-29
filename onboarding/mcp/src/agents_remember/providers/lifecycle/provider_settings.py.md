@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/provider_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,4 +44,5 @@ watcher orchestration.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: `context_providers_enabled` is now a `TypeGuard[dict[str, Any]]` so `provider_enabled` narrows `context` before `.get`; behavior-preserving (commit `0549b28`).
 - 2026-05-25T21:14+02:00: Created from the provider settings portion of the former shared lifecycle common module.

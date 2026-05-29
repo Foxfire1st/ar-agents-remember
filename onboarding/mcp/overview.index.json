@@ -35,6 +35,11 @@
       "index": "mcp/src/agents_remember/kernel/coordination_context/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/mcp/tools",
+      "overview": "mcp/src/agents_remember/mcp/tools/overview.md",
+      "index": "mcp/src/agents_remember/mcp/tools/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/providers/cgc",
       "overview": "mcp/src/agents_remember/providers/cgc/overview.md",
       "index": "mcp/src/agents_remember/providers/cgc/overview.index.json"
@@ -82,7 +87,6 @@
     "mcp/src/agents_remember/mcp/compact_content.py",
     "mcp/src/agents_remember/mcp/config.py",
     "mcp/src/agents_remember/mcp/server.py",
-    "mcp/src/agents_remember/mcp/tools.py",
     "mcp/src/agents_remember/memory/baseline.py",
     "mcp/src/agents_remember/memory/carryover.py",
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md",
@@ -219,9 +223,9 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 359,
-    "fileSidecars": 156,
-    "childRoutes": 10
+    "sourceFilesInScope": 367,
+    "fileSidecars": 155,
+    "childRoutes": 11
   },
   "routingTerms": [
     "adopt",
@@ -314,6 +318,7 @@
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/kernel/coordination_context",
+      "mcp/src/agents_remember/mcp/tools",
       "mcp/src/agents_remember/providers/cgc",
       "mcp/src/agents_remember/providers/context",
       "mcp/src/agents_remember/providers/grepai",
@@ -330,8 +335,7 @@
       "mcp/src/agents_remember/code_quality/crap_calculator.py",
       "mcp/src/agents_remember/install",
       "mcp/src/agents_remember/install/__init__.py",
-      "mcp/src/agents_remember/install/assets.py",
-      "mcp/src/agents_remember/install/runtime.py"
+      "mcp/src/agents_remember/install/assets.py"
     ],
     "anchorHints": [
       "README.md",
@@ -372,8 +376,6 @@
       "config",
       "server.py",
       "server",
-      "tools.py",
-      "tools",
       "baseline.py",
       "baseline",
       "carryover.py",
@@ -381,7 +383,9 @@
       "AGENTS.md",
       "AGENTS",
       "patch_cgc.py",
-      "patch_cgc"
+      "patch_cgc",
+      "codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
+      "codegraphcontext-0.4.10-cgcignore-runtime-root"
     ]
   },
   "fallback": {

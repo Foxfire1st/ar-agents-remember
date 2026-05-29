@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/process_status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T13:40+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -46,5 +46,6 @@ resolves provider venv Python paths.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Added a `sys.platform != 'win32'` guard in `windows_process_alive` so the Windows-only `ctypes.windll`/`get_last_error` type-check; behavior-preserving (commit `0549b28`).
 - 2026-05-28T13:40+02:00: Updated after provider venv Python path resolution was removed.
 - 2026-05-25T21:14+02:00: Created from the process/namespace portion of the former shared lifecycle common module.

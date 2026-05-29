@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/docker_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -50,5 +50,6 @@ seconds, and health status.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: `raise_docker_ping_timeout` -> `NoReturn` so `docker_wait_for_ping` type-checks on all paths; behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after Docker status helpers began emitting normalized container state, health, and uptime summaries.
 - 2026-05-25T21:14+02:00: Created from the Docker adapter portion of the former shared lifecycle common module.

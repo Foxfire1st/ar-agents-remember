@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-05-28T15:10:01+02:00                  |
-| lastVerifiedCommitHash | `b3dc26b0d809e6d386fd13adc77c8530f174b826` |
-| lastVerifiedCommitDate | 2026-05-29T07:42:25+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose

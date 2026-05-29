@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_init.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T13:09+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -38,4 +38,5 @@ folders, seed system files, and an optional Git repository initialization.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Extracted `_create_missing_dirs`, `_create_missing_files`, and `_git_init_result` from `initialize_memory` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-23T13:09+02:00: Created for MCP-owned memory initialization.

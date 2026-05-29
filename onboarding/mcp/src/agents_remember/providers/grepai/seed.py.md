@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T18:10:12+02:00                  |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7`                         |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                         |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -38,4 +38,5 @@ The module resolves a source and target `grepai-memory` provider from explicit s
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Narrowed the `GrepaiCloneContext | dict` union via `isinstance` and removed the dead `_is_clone_skip`; behavior-preserving (commit `0549b28`).
 - 2026-05-27T18:10:12+02:00: Created for GrepAI provider warm-start support.

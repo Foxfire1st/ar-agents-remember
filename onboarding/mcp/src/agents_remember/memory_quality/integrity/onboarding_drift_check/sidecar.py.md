@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `12737deaac2fd75563ca1e3037cdac911023cf93` |
-| lastVerifiedCommitDate | 2026-05-29T12:28:42+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -43,4 +43,5 @@ mirrored sidecar; `classify_sidecar_onboarding_units` dispatches by `doc_type`
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Extracted an `_early_classification` closure in `classify_overview_onboarding` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; the unused `classify_sidecar_onboarding` aggregator was dropped during the split. Metadata pending closeout refresh to the split commit.

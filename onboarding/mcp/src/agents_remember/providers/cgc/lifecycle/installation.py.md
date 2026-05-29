@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/installation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T13:40+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,6 +57,7 @@ host-venv patch application helpers have been removed from this lifecycle path.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Fixed `commands` types in `cgc_install_dry_run_result`/`cgc_install_preflight` to `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).
 - 2026-05-28T13:40+02:00: Updated after the remaining host-venv patch/status helper functions were removed from CGC lifecycle installation.
 - 2026-05-28T12:32+02:00: Updated after CGC status began reporting watcher container state, last refresh, indexing state, and requiring the watcher to be alive.
 - 2026-05-26T12:51+02:00: Updated after CGC install/status/doctor switched from host venvs to the Docker runner image.

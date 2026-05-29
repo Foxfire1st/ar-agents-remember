@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -77,6 +77,7 @@ clients reach it through the `runtime_install` tool.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Extracted `_remove_with_retry` from `remove_path` to drop cyclomatic complexity below 11; behavior-preserving (commit `e3dab63`).
 - 2026-05-28T12:32+02:00: Updated after runtime install moved operator logs from `providers/logs/` into the central `logs/` tree.
 - 2026-05-26T12:51+02:00: Updated after runtime install stopped preserving provider venvs and CGC provider dependencies became Docker-owned.
 - 2026-05-25T18:07+02:00: Updated after runtime install stopped preserving `providers/_bin`; Docker-owned GrepAI keeps binaries inside the runner image.

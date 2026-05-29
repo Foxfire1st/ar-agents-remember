@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-05-29T07:36+02:00                     |
-| lastVerifiedCommitHash | `b3dc26b0d809e6d386fd13adc77c8530f174b826` |
-| lastVerifiedCommitDate | 2026-05-29T07:42:25+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 
 ## Purpose
 
@@ -76,6 +76,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Typed capture/payload/plan locals as `dict[str, Any]`, typed the `_setup` plan as `OnboardingRefreshPlan`, and added per-method `assert contract.memory_worktree/memory_repo_path is not None` narrowing; behavior-preserving (commit `0549b28`).
 - 2026-05-29T07:36+02:00: Added `RequireUpdatedSidecarContentTests` covering the closeout content gate (`require_updated_sidecar_content`): blocks a changed source with an unmodified sidecar, passes when the sidecar body is updated, and no-ops with no required sidecars.
 - 2026-05-28T15:24+02:00: Updated after direct closeout tests began asserting route overview/index refresh before memory commit and memory quality failure blocking before memory/ledger commits. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-28T12:32+02:00: Updated after benchmark provider settings tests began asserting central `logs/providers/...` log paths.

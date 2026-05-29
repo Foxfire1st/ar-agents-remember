@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/command_runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d` |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -42,4 +42,5 @@ starts detached long-running processes with host-appropriate process flags.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: `popen_detached_command` returns `Popen[bytes]` via an explicit `cast` (the `**popen_kwargs` spread defeated overload selection); behavior-preserving (commit `0549b28`).
 - 2026-05-25T21:14+02:00: Created from the command execution portion of the former shared lifecycle common module.

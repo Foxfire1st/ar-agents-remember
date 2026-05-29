@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:16+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -37,4 +37,5 @@ It re-exports CGC constants, runtime-layout helpers, cleanup helpers, module dis
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Added `materialize` and `cleanup` to the package star-imports after `core.py` was split; behavior-preserving (commit `01f503d`).
 - 2026-05-25T19:16+02:00: Created when `context_providers.py` was split into `context.py` plus provider-specific context modules.

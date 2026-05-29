@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `12737deaac2fd75563ca1e3037cdac911023cf93` |
-| lastVerifiedCommitDate | 2026-05-29T12:28:42+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -43,4 +43,5 @@ ties inventory and fingerprint rows together.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Extracted `_entity_fingerprint_from_row`, `_is_table_separator_row`, `_normalized_header_cells`, and an `_early_classification` closure in `classify_entity_fingerprint` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.

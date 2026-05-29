@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T00:25+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -52,6 +52,7 @@ settings-backed starts keep the same FalkorDB/browser port mappings.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: `cgc_backend_all_error` now accepts `dict | None` with a `None` guard (closes a latent crash when start-all returns a doctor-failure); extracted `_cgc_start_all_live` to reduce `cgc_start_all` complexity; behavior-preserving (commits `0549b28`, `e3dab63`).
 - 2026-05-27T00:25+02:00: Updated after watcher startup began reusing
   backend start-result port mappings in its Compose render.
 - 2026-05-26T12:51+02:00: Updated after watcher start/stop moved from host PIDs to Docker watcher containers.

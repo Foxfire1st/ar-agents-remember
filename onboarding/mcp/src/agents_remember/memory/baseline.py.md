@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T02:47+02:00                     |
-| lastVerifiedCommitHash | `b25d52f2b445554bb64115db2f27fd156954bcf3` |
-| lastVerifiedCommitDate | 2026-05-24T02:36:33+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -44,6 +44,7 @@ payload, and return the service return code.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Typed drift rows as `list[drift.DriftRow]`, normalized `topology` to `Literal['internal','external'] | None` at the argparse boundary, and added a ledger-path guard in `baseline_adopt`; behavior-preserving (commit `0549b28`).
 - 2026-05-24T02:47+02:00: Updated after drift imports moved under `memory_quality.integrity`.
 - 2026-05-24T00:35+02:00: Updated after adding request/service entry points for MCP controllers.
 - 2026-05-23T13:09+02:00: Copied into the MCP package and patched to package imports.
