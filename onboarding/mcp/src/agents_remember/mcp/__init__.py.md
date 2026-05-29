@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T15:43+02:00                     |
-| lastVerifiedCommitHash | `9680d150ac9d2e6c1ae04dbab42eac0088dceef8` |
-| lastVerifiedCommitDate | 2026-05-28T15:55:29+02:00|
+| lastVerifiedCommitHash | `f3d57f6a9cf48a314ec7c9c6c8cb11d5e0eeb893` |
+| lastVerifiedCommitDate | 2026-05-29T20:39:01+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -35,4 +35,5 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-05-29T21:00+02:00: Bumped `SERVER_VERSION` to `0.3.0` for the MCP `0.3.0` release (the act-by-default `dry_run` flip), kept aligned with `mcp/pyproject.toml`.
 - 2026-05-28T15:43+02:00: Created while preparing MCP package release `0.2.0`. Verification metadata remains pinned until closeout commits the source change.
