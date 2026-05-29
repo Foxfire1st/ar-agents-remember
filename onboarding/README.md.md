@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T10:06+02:00                     |
+| lastUpdated            | 2026-05-29T17:30+02:00                     |
 | lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
 | lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
 | governingOverview      | `overview.md`                              |
@@ -22,7 +22,7 @@
 
 ### Logic
 
-The README opens with the stable positioning statement: Agents Remember is path-derived, git-verified memory for coding agents. It immediately shows the source-file to onboarding-unit mapping so readers understand the product before encountering workflow names or runtime folders.
+The README opens with a TLDR that frames Agents Remember as durable, git-verified repo knowledge made first-class infrastructure, then shows the source-file to onboarding-unit mapping and the three substrates agents use to reach memory — by path (the file's own note), by meaning (semantic search), and by relationship (the code graph) — with by-path notes as the core and the other two as opt-in providers. The earlier sidecar-only "path-derived memory, no vector store / hidden service" positioning and the sidecar-era infographic embed were removed; that anti-retrieval framing predated the semantic-search and code-graph providers and no longer described the product.
 
 The previous long README install matrix was moved out of the front page. The root page now keeps one generic quickstart: clone beside target projects, configure the MCP server, request `runtime_install` for `ar-coordination`, note that reinstall reconciles package-owned runtime scaffold files while provider dependencies are MCP-owned, optionally add benchmark fixtures with `include_benchmarks=true`, expose packaged skills with `skills_install`, add workspace instructions that include `ar-coordination/AGENTS.md`, then ask the agent to initialize memory and bootstrap onboarding. For Codex, the quickstart now uses `.codex/mcp` and `.codex/skills` as the normal harness registration and skill exposure folders. Harness-specific setup links point to dedicated pages under `docs/install/`.
 
@@ -61,7 +61,7 @@ The README routes readers into the split documentation tree and gives the curren
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The README presents Agents Remember as path-derived, git-verified memory and shows the source-file to onboarding-unit mapping before the quickstart. | L1-L14 | [README.md](agents-remember-md/README.md) |
+| The README's TLDR frames durable git-verified repo knowledge as infrastructure, shows the source-file to onboarding-unit mapping, and names the three retrieval substrates (by path / by meaning / by relationship), with meaning and relationship as opt-in providers. | L1-L20 | [README.md](agents-remember-md/README.md) |
 | The quickstart installs runtime assets into `ar-coordination` through MCP `runtime_install`, states that provider dependencies are MCP-owned, optionally installs benchmarks with `include_benchmarks=true`, exposes packaged skills through `skills_install`, uses `.codex/mcp` to infer `.codex/skills` for Codex, points workspace instructions at `ar-coordination/AGENTS.md`, then uses C-00 and C-03 for memory initialization and onboarding bootstrap. | L32-L82 | [README.md](agents-remember-md/README.md) |
 | The README now routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L81-L106 | [README.md](agents-remember-md/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees. | L108-L140 | [README.md](agents-remember-md/README.md) |
@@ -77,6 +77,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-05-29T17:30+02:00: Re-spined the README front door — added a TLDR framing repo knowledge as first-class infrastructure, replaced the sidecar-only "path-derived, no vector store / hidden service" positioning with the three retrieval substrates (by path / by meaning / by relationship), and removed the sidecar-era infographic embed. Verification metadata remains pinned to the last committed source state until closeout.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` moved Codex setup to `.codex` and removed the source `.env` resolver path.
 - 2026-05-24T09:38+02:00: Updated after the public quickstart switched Codex MCP registration and skill exposure examples from `.agents` to `.codex`.
 - 2026-05-24T04:34+02:00: Updated after public docs renamed C-02 to memory quality control.
