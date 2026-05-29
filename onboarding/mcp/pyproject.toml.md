@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c`                      |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastVerifiedCommitHash | `f3d57f6a9cf48a314ec7c9c6c8cb11d5e0eeb893`                      |
+| lastVerifiedCommitDate | 2026-05-29T20:39:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -62,6 +62,7 @@ from `mcp/src`.
 
 ## Update History
 
+- 2026-05-29T21:00+02:00: Bumped the package `version` to `0.3.0` for the MCP `0.3.0` release (act-by-default `dry_run` flip), kept aligned with `SERVER_VERSION`.
 - 2026-05-28T19:52+02:00: Updated after Pydantic and tiktoken became MCP runtime dependencies and Pyright joined the dev quality dependency group.
 - 2026-05-28T15:43+02:00: Updated while preparing MCP package release `0.2.0`, documenting package/server version alignment, and wiring the dedicated MCP README into package metadata. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-24T06:43+02:00: Created after the MCP package gained explicit development dependencies for the source quality suite.

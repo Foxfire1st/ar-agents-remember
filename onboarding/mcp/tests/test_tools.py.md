@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastVerifiedCommitHash | `f3d57f6a9cf48a314ec7c9c6c8cb11d5e0eeb893` |
+| lastVerifiedCommitDate | 2026-05-29T20:39:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -62,6 +62,7 @@ the preview path.
 
 ## Update History
 
+- 2026-05-29T21:00+02:00: Updated the `ping_payload()` version assertion to MCP release `0.3.0`.
 - 2026-05-29T20:25+02:00: Updated after the `skills_install`/`route_index_refresh`/`memory_init` payload tests moved to act-by-default assertions and the typed CGC command-construction test pinned `dry_run=True` (`dry_run`-default flip task).
 - 2026-05-28T19:52+02:00: Updated after public tool payloads began validating through Pydantic response models and `ping_payload()` started emitting token metadata defaults.
 - 2026-05-28T15:43+02:00: Updated after `ping_payload()` version expectations moved to MCP release `0.2.0`. Verification metadata remains pinned until closeout commits the source change.
