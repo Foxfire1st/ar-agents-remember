@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
+| lastUpdated            | 2026-05-29T07:19+02:00                     |
 | lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
 | lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
 | governingOverview      | `overview.md`                              |
@@ -38,6 +38,16 @@ status and dry-run payloads. CGC Compose rendering now requires generated
 `instance.labels` from MCP/provider settings and fails instead of falling back
 to unlabeled legacy provider settings.
 
+Runner and watcher services bind-mount the host runtime and code roots at the
+layout's driveless container paths (`container_runtime_root` /
+`container_code_repo_root`), set `working_dir` and the watcher repo argument to
+those container paths, and inject the container environment through
+`cgc_compose_env()`, which calls `layout.env(for_container=True)`. Only the host
+side of each mount keeps the native path. This keeps mount targets and
+in-container paths valid on Windows hosts, where the host path's drive-letter
+colon would otherwise make Docker's `host:container:mode` mount string
+ambiguous ("too many colons").
+
 ### Invariants And Boundaries
 
 - CGC dynamic service values must come from provider settings and lifecycle
@@ -45,7 +55,11 @@ to unlabeled legacy provider settings.
 - The first layout anchors shared backend settings; every configured layout can
   contribute one watcher service.
 - Runner and watcher containers mount the runtime root read/write and the code
-  repository read-only.
+  repository read-only; the container-side mount targets, `working_dir`, watch
+  repo path, and injected environment are driveless POSIX paths
+  (`container_runtime_root` / `container_code_repo_root`,
+  `env(for_container=True)`), while only the host side keeps the native path.
+  This is identity on POSIX hosts and only changes behavior on Windows hosts.
 - Container-visible `FALKORDB_HOST` points to the managed backend container
   name, keeping CGC access inside the Compose network.
 - `auto` host ports must remain valid Compose input because Compose parses the
@@ -80,6 +94,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-05-29T07:19+02:00: Updated after runner/watcher bind-mount targets,
+  `working_dir`, watch repo path, and container environment switched to driveless
+  POSIX container paths (`container_runtime_root` / `container_code_repo_root`,
+  `env(for_container=True)`) for Windows-host support.
 - 2026-05-28T14:21:08+02:00: Updated after CGC Compose label rendering began
   rejecting provider settings without generated `instance.labels`.
 - 2026-05-27T00:25+02:00: Updated after CGC Compose port mappings switched to

@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T13:40+02:00                     |
+| lastUpdated            | 2026-05-29T07:19+02:00                     |
 | lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
 | lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
 | governingOverview      | `overview.md`                              |
@@ -51,6 +51,13 @@ repo id normalization, and stable patch id naming.
 CGC layout tests also cover that ambient host `FALKORDB_HOST` and
 `FALKORDB_PORT` values do not alter default layout env or provider-settings
 `hostPort=auto` expansion.
+
+Windows-host coverage asserts that `to_container_path` strips a leading drive
+letter (and is a no-op on POSIX paths), that the layout's
+`container_runtime_root` / `container_code_repo_root` are driveless, and that
+`env(for_container=True)` renders driveless path values and omits the host-only
+Windows variables (`USERPROFILE`, `APPDATA`, `LOCALAPPDATA`) while leaving
+non-path values unchanged.
 
 ### Conventions
 
@@ -107,6 +114,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-29T07:19+02:00: Added coverage for `to_container_path`, driveless `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=True)` (driveless path values, omitted host-only Windows env) for Windows-host provider support.
 - 2026-05-28T13:40+02:00: Updated after CGC layout tests removed host venv executable expectations, added stale `venvRoot` rejection coverage, and removed venv module lookup tests.
 - 2026-05-28T12:32+02:00: Updated after GrepAI context layout tests moved operator logs under `logs/providers/grepai`.
 - 2026-05-25T19:16+02:00: Updated after tests imported the direct `providers.context` facade and provider context implementation moved into `context_modules/`.

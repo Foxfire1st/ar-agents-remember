@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T13:40+02:00                     |
+| lastUpdated            | 2026-05-29T07:19+02:00                     |
 | lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
 | lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
 | governingOverview      | `overview.md`                     |
@@ -34,6 +34,18 @@ inside validated provider roots. Runtime layout no longer exposes a host
 `venvRoot` or CGC executable path, and provider settings that still define
 `venvRoot` are rejected as stale configuration.
 
+A module-level `to_container_path()` helper maps a host path to the POSIX path
+seen inside the Linux provider container by stripping a leading Windows drive
+letter (`C:/ew/x` becomes `/ew/x`); it is a no-op on POSIX hosts. The layout
+exposes `container_runtime_root` and `container_code_repo_root` properties built
+from that helper, and `env()` takes a `for_container` flag: when set it renders
+path-valued variables (`HOME`, `LOG_FILE_PATH`, `DEBUG_LOG_PATH`, and the
+process-env-template roots) as driveless container paths and omits host-only
+Windows variables (`USERPROFILE`, `APPDATA`, `LOCALAPPDATA`). These keep
+bind-mount targets and in-container arguments valid on Windows hosts, whose host
+paths carry a drive-letter colon Docker's `host:container` mount syntax would
+otherwise reject.
+
 ### Invariants And Boundaries
 
 - This file is part of the direct `providers.context` facade implementation; there is no `context_providers.py` compatibility fallback.
@@ -43,6 +55,11 @@ inside validated provider roots. Runtime layout no longer exposes a host
 - Docker runner command builders consume layout-level backend container and
   network names; layout derivation must keep those synchronized with backend
   settings.
+- Container-side paths — bind-mount targets, `working_dir`, and in-container
+  env/arguments — must be driveless POSIX via `to_container_path` /
+  `env(for_container=True)`; only the host side of a bind mount keeps the native
+  (possibly drive-lettered) path. The mapping is identity on POSIX hosts, so
+  Linux/macOS behavior is unchanged and only Windows hosts are affected.
 
 ## Repo-Internal References
 
@@ -52,6 +69,7 @@ inside validated provider roots. Runtime layout no longer exposes a host
 
 ## Update History
 
+- 2026-05-29T07:19+02:00: Updated after adding `to_container_path`, the `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=...)` so CGC bind-mount targets, working dir, and container environment render as driveless POSIX paths on Windows hosts.
 - 2026-05-28T13:40+02:00: Updated after CGC layout removed host venv path fields and began rejecting stale `venvRoot` provider settings.
 - 2026-05-26T13:58+02:00: Updated after CGC layouts gained backend container and Docker network fields for runner connectivity.
 - 2026-05-26T12:51+02:00: Updated after CGC layout gained Docker runner fields and stopped creating host venv directories.
