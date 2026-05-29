@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md` |
 | doc_type               | `file-level-onboarding`                                                                                      |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90`                                                                   |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-29T11:11+02:00                     |
+| lastVerifiedCommitHash | `df070577e82856b9f43f03e5d6520b64ff93c612`                                                                   |
+| lastVerifiedCommitDate | 2026-05-29T11:05:14+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@
 
 ### Logic
 
-The template defines the required metadata table, governing overview backlink, semantic commentary sections, top-level reference sections, and append-only update-history convention for one concrete source file. It tells maintainers to use the resolved C-08 `system/sources.md` only as a discovery aid for documentation evidence, to cite actual proving sources, to treat local documentation mirrors as orientation caches, to link docs rows to canonical live references, and to keep reference sections explanation-first rather than citation-only.
+The template defines the required metadata table, governing overview backlink, semantic commentary sections, top-level reference sections, and prepend-only update-history convention (newest entry at the top, earlier entries preserved) for one concrete source file. It tells maintainers to use the resolved C-08 `system/sources.md` only as a discovery aid for documentation evidence, to cite actual proving sources, to treat local documentation mirrors as orientation caches, to link docs rows to canonical live references, and to keep reference sections explanation-first rather than citation-only.
 
 ### Conventions
 
@@ -29,7 +29,7 @@ This file defines structure and wording for generated onboarding; it does not de
 
 ### Todos
 
-After this working-tree update lands, refresh verification metadata to the committed template revision.
+None; verification metadata is current as of committed template revision df07057.
 
 ### Docs References
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for this template.
 
 ## Update History
 
+- 2026-05-29T11:11+02:00: Refreshed verification metadata to committed template revision `df07057` after source commit `1ccbc2d` corrected the template's update-history wording from append-only to prepend-only; aligned the logic description to the prepend-only wording.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-22T13:32+02:00: Updated after docs-reference placeholder wording was tightened around canonical live references, local mirrors as orientation caches, and no-docs records after live-source checks. Verification metadata remains pinned until closeout commits the template change.
 - 2026-05-18T08:49+02:00: Updated after `Docs References` became a top-level `##` section in the canonical file-level onboarding template. Verification metadata remains pinned until closeout commits the template change.
