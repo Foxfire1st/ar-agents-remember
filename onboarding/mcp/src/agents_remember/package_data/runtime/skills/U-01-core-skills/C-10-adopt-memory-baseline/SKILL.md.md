@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90`                    |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`                    |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 
 ## Purpose
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the C-10 `memory_baseline_adopt` example now models preview-first (`dry_run=true`) then apply.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T17:50+02:00: Updated implementation reference after the baseline script route was removed from the skill tree and the MCP package became the only implementation route.
 - 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-10-adopt-memory-baseline` name.

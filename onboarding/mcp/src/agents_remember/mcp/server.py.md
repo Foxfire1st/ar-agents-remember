@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T08:53+02:00                     |
-| lastVerifiedCommitHash | `a06bfa65dcee3c8b82652085c69f2a20f163e306` |
-| lastVerifiedCommitDate | 2026-05-29T09:05:12+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -52,6 +52,14 @@ runner validates it against its allowlist and maps `default` to an omitted
 provider state, keeping `context_packet` and `provider_status` focused on
 compact readiness summaries.
 
+Registered tools follow an **act-by-default** `dry_run` contract: effectful
+tools and the read-only `cgc_*`/`grepai_*` query tools register `dry_run=False`,
+so a plain call does the work (queries return results; `dry_run=true` returns
+the planned provider command without executing it). The two `*_closeout_apply`
+tools keep `dry_run=False` paired with explicit `*_preview` tools, and the two
+`codex_benchmark_*` tools are the only `dry_run=True` defaults — a real
+benchmark run clones repos and executes Codex agents, so it stays preview-first.
+
 ### Invariants And Boundaries
 
 - Server functions should perform registration and argument forwarding only.
@@ -70,13 +78,14 @@ compact readiness summaries.
 
 | Finding | Source Path |
 | --- | --- |
-| Payload builders are defined in `tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Payload builders are defined in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | [tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools) |
 | Provider diagnostics payloads are modeled separately from compact provider summaries. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
 | The config loader rejects coordinator `system/settings.json` as MCP authority. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
 | The compact-content shim installed at server creation minifies tool-result text. | [compact_content.py](agents-remember-md/mcp/src/agents_remember/mcp/compact_content.py) |
 
 ## Update History
 
+- 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` contract (effectful + `cgc_*`/`grepai_*` query tools register `dry_run=False`; only `codex_benchmark_*` keeps `dry_run=True`) and refreshed the stale payload-builder reference to the `mcp/tools/` package.
 - 2026-05-29T08:53+02:00: Updated after `create_server()` began installing the FastMCP compact-content shim to minify tool-result text mirrors.
 - 2026-05-28T19:52+02:00: Updated after registering the dedicated `provider_diagnostics` MCP tool.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI search and trace registration.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controllers/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -34,6 +34,10 @@ before calling `lifecycle_service.run_cgc_lifecycle()`.
   context-facing provider status stays compact.
 - Provider runner integrity failures should return structured recovery actions
   instead of proceeding into lifecycle execution.
+- `provider_watchers_tool` and the `cgc_*`/`grepai_*` query controllers default
+  `dry_run=False` (act-by-default): a plain query returns results and
+  `dry_run=true` returns the planned provider command without executing it.
+  `provider_watchers` still forces a live path for `action="status"`.
 
 ## Repo-Internal References
 

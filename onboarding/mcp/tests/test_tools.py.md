@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -34,6 +34,12 @@ verify fixed command construction for symbol search, callers, callees,
 dependencies, and complexity. GrepAI assertions keep workspace/project
 selection tied to MCP configuration and keep trace action validation explicit.
 
+Payload tests track the act-by-default `dry_run` contract: the `skills_install`,
+`route_index_refresh`, and `memory_init` payload tests assert apply-by-default
+(`dryRun` is false), while the typed CGC command-construction test passes
+`dry_run=True` per call because the planned provider command is only exposed in
+the preview path.
+
 ## Invariants And Boundaries
 
 - Public MCP tools should remain typed and package-owned.
@@ -56,6 +62,7 @@ selection tied to MCP configuration and keep trace action validation explicit.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Updated after the `skills_install`/`route_index_refresh`/`memory_init` payload tests moved to act-by-default assertions and the typed CGC command-construction test pinned `dry_run=True` (`dry_run`-default flip task).
 - 2026-05-28T19:52+02:00: Updated after public tool payloads began validating through Pydantic response models and `ping_payload()` started emitting token metadata defaults.
 - 2026-05-28T15:43+02:00: Updated after `ping_payload()` version expectations moved to MCP release `0.2.0`. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-28T12:32+02:00: Updated after MCP tool tests added provider watcher status current-state coverage.

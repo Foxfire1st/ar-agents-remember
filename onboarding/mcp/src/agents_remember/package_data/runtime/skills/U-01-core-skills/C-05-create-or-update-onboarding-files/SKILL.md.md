@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90`                                |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`                                |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 
 ## Purpose
 
@@ -64,6 +64,7 @@ C-05 can handle cross-repo references when actual boundary evidence exists, but 
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the C-05 `route_index_refresh` example now omits `dry_run=false` and notes preview-first (`dry_run=true`).
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-22T16:39+02:00: Updated after C-05 gained explicit preservation-first handling for renamed, moved, split, merged, relocated, or deleted source behavior. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-22T13:32+02:00: Updated after C-05 source discovery became provider-neutral while treating live documentation sources named by the resolved registry as authoritative over local caches. Verification metadata remains pinned until closeout commits the source change.

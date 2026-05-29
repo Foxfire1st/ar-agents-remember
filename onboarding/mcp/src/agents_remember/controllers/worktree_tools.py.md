@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,6 +31,9 @@ setup config to the worktree manager.
   coordination root unless a specific tool owns a setup target.
 - Worktree operations call package services directly; CLI entrypoints remain
   print adapters.
+- `worktree_start_tool`/`worktree_integrate_tool`/`worktree_cleanup_tool` default
+  `dry_run=False` (act-by-default); the `*_closeout_apply` controllers keep
+  `dry_run=False` paired with their `*_preview` tools. `dry_run=true` previews.
 
 ## Repo-Internal References
 

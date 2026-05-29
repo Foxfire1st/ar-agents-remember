@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_install_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -37,6 +37,15 @@ run provider dependency commands.
 The second regression proves `providers/data`, central `logs/mcp`, central
 `logs/providers`, and default runner folders exist after install while stale
 venvs are pruned.
+
+`ProviderDependencyHelperTests` adds hermetic coverage for the provider-dependency
+helpers — `any_provider_enabled`, `configured_provider_enabled`, and
+`install_provider_dependencies_from_settings` (the none-configured skip, the
+run-enabled path with mocked `lifecycle.grepai_install`/`cgc_install_all`, and the
+failure-raises path, all with `dry_run=True`). `ReadSkillNameTests` covers
+`install.skills._read_skill_name` frontmatter parsing (name present, frontmatter
+without a name, and no frontmatter). These drive coverage on the previously
+untested install helpers so they clear the CRAP threshold.
 
 ### Conventions
 
@@ -83,6 +92,7 @@ No sibling repository evidence is needed for this installer test.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Documented the new `ProviderDependencyHelperTests` and `ReadSkillNameTests` coverage added to clear the install helpers' CRAP threshold (`dry_run`-default flip task).
 - 2026-05-28T12:32+02:00: Updated after runtime install moved operator logs from `providers/logs/` into the central `logs/` tree and tests asserted the new directories.
 - 2026-05-26T12:51+02:00: Updated after runtime install began pruning provider venvs because providers are Docker-owned.
 - 2026-05-25T18:07+02:00: Updated after dependency-skipped runtime install began pruning legacy `providers/_bin` while preserving live venv and runner state.
