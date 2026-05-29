@@ -79,6 +79,7 @@
     "mcp/src/agents_remember/kernel/route_index.py",
     "mcp/src/agents_remember/mcp/__init__.py",
     "mcp/src/agents_remember/mcp/command_capture.py",
+    "mcp/src/agents_remember/mcp/compact_content.py",
     "mcp/src/agents_remember/mcp/config.py",
     "mcp/src/agents_remember/mcp/server.py",
     "mcp/src/agents_remember/mcp/tools.py",
@@ -195,6 +196,7 @@
     "mcp/src/agents_remember/worktrees/status.py",
     "mcp/src/agents_remember/worktrees/worktree_contract.py",
     "mcp/tests/test_code_quality_check.py",
+    "mcp/tests/test_compact_content.py",
     "mcp/tests/test_config.py",
     "mcp/tests/test_context_packet.py",
     "mcp/tests/test_context_providers.py",
@@ -210,12 +212,13 @@
     "mcp/tests/test_provider_workflow_integration.py",
     "mcp/tests/test_resolver_parity.py",
     "mcp/tests/test_route_index.py",
+    "mcp/tests/test_tool_response_conformance.py",
     "mcp/tests/test_tools.py",
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 347,
-    "fileSidecars": 151,
+    "sourceFilesInScope": 350,
+    "fileSidecars": 154,
     "childRoutes": 10
   },
   "routingTerms": [
@@ -255,7 +258,11 @@
     "command",
     "command_capture",
     "common",
+    "compact",
+    "compact_content",
     "config",
+    "conformance",
+    "content",
     "context",
     "contract",
     "control",
@@ -294,14 +301,10 @@
     "files",
     "filesystem",
     "findings",
-    "folder",
-    "framing",
-    "from",
-    "git",
-    "git_worktree_manager"
+    "folder"
   ],
   "hotPath": {
-    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools, `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.py`; runner executable integrity is checked by `providers/integrity.py` befo...",
+    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.p...",
     "candidateHints": [
       "mcp",
       "mcp/src/agents_remember/controllers",
@@ -361,6 +364,8 @@
       "route_index",
       "command_capture.py",
       "command_capture",
+      "compact_content.py",
+      "compact_content",
       "config.py",
       "config",
       "server.py",
@@ -374,9 +379,7 @@
       "AGENTS.md",
       "AGENTS",
       "patch_cgc.py",
-      "patch_cgc",
-      "codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
-      "codegraphcontext-0.4.10-cgcignore-runtime-root"
+      "patch_cgc"
     ]
   },
   "fallback": {

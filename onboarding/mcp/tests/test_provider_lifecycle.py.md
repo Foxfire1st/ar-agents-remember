@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T07:19+02:00                     |
-| lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
-| lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
+| lastUpdated            | 2026-05-29T08:53+02:00                     |
+| lastVerifiedCommitHash | `a06bfa65dcee3c8b82652085c69f2a20f163e306` |
+| lastVerifiedCommitDate | 2026-05-29T09:05:12+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ fixtures use Docker runner fields and generated ownership labels without
 
 ### Conventions
 
-The tests use temporary directories, dry-run/manual override arguments, and monkey-patched lifecycle functions, so they do not require CodeGraphContext, FalkorDB, GrepAI, or a configured coordinator. Docker-mode tests mock `docker_command()` where needed; dry-run CGC command-shape tests require only Docker executable resolution. They focus on command shape, argument defaults, small lifecycle decisions, and aggregation behavior, not live server startup.
+The tests use temporary directories, dry-run/manual override arguments, and monkey-patched lifecycle functions, so they do not require CodeGraphContext, FalkorDB, GrepAI, or a configured coordinator. Docker-mode tests mock the `docker_command()` symbol the command builder actually consults — for settings-backed GrepAI runs that is `compose_runtime.docker_command` (the executable is resolved there via `compose_plan`/`run_compose`), not the re-exported `grepai_actions.docker_command`. Dry-run CGC command-shape tests require only Docker executable resolution and compare the executable as `Path(command[0]).stem.lower()` so they tolerate the Windows-resolved `docker.EXE`. The `cgc visualize --repo` expectation uses `to_container_path(repo.resolve())` because that argument is the in-container mount path (drive stripped on Windows), not the host path. They focus on command shape, argument defaults, small lifecycle decisions, and aggregation behavior, not live server startup.
 
 ### Invariants And Boundaries
 
@@ -88,6 +88,11 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-29T08:53+02:00: Updated after Windows-host portability fixes: the
+  Docker executable assertions compare `Path(command[0]).stem.lower()` (tolerating
+  `docker.EXE`), the GrepAI docker-command mock moved to
+  `compose_runtime.docker_command` (the symbol the command builder consults), and
+  the `cgc visualize --repo` expectation switched to `to_container_path(...)`.
 - 2026-05-29T07:19+02:00: Updated after the parallel CGC refresh test asserted
   driveless POSIX runner bind-mount targets (`host:container:ro`) for
   Windows-host support.
