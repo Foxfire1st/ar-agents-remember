@@ -6,8 +6,8 @@
   "repoName": "agents-remember-md",
   "baseCodeCommit": "9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e",
   "baseMemoryCommit": "988e2a452846ced092d4d477e80f4a2207c88d21",
-  "lastVerifiedCodeCommit": "a06bfa65dcee3c8b82652085c69f2a20f163e306",
-  "lastMemoryContentCommit": "8cbb0dd27d187ed1f537fb80c6c0ddfe5267c2ea",
+  "lastVerifiedCodeCommit": "495e9fa503b8708cc2b05a7e67f447071690ee41",
+  "lastMemoryContentCommit": "e1b0d1b7b6fe44564462d8dcd5d8683f825bf507",
   "sortOrder": "newest-first"
 }
 ```
@@ -16,6 +16,7 @@ Newest entries are always inserted at the top.
 
 | Code commit | Memory commit |
 | ----------- | ------------- |
+| 495e9fa503b8708cc2b05a7e67f447071690ee41 | e1b0d1b7b6fe44564462d8dcd5d8683f825bf507 |
 | a06bfa65dcee3c8b82652085c69f2a20f163e306 | 8cbb0dd27d187ed1f537fb80c6c0ddfe5267c2ea |
 | b3dc26b0d809e6d386fd13adc77c8530f174b826 | c2ad28f69e4fdae0d769b22be6628225f86d43fa |
 | e1382b9277d48f13b6a1cb065f2fa2638b36feba | f3afadd9fceace648fa0101fd581171ae7b50204 |
