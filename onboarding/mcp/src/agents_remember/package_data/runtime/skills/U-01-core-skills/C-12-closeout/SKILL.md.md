@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-05-28T15:24+02:00                     |
-| lastVerifiedCommitHash | `fee469fd8435b9b74e13264591a8c7c6c2773012` |
-| lastVerifiedCommitDate | 2026-05-28T15:30:29+02:00|
+| lastUpdated            | 2026-05-29T07:36+02:00                     |
+| lastVerifiedCommitHash | `b3dc26b0d809e6d386fd13adc77c8530f174b826` |
+| lastVerifiedCommitDate | 2026-05-29T07:42:25+02:00|
 
 ## Purpose
 
@@ -42,7 +42,10 @@ it reports the proposed code, memory, and ledger commit messages before the
 apply tool mutates Git.
 
 The missing-onboarding check is scoped to current additions so newly added
-eligible source files cannot escape the gradual onboarding adoption boundary.
+eligible source files cannot escape the gradual onboarding adoption boundary. A
+parallel content gate covers changed (already-onboarded) files: a changed source
+whose existing sidecar body was not updated this task fails closeout, so
+verification metadata is never advanced over stale onboarding content.
 Entity fingerprints are refreshed after the code commit because
 `git-blob-set-v1` resolves `HEAD:<path>` Git blobs. Route overview metadata and
 generated route indexes are refreshed before `memory_quality_check` so the
@@ -54,7 +57,8 @@ C-12 must not commit without explicit approval after a preview, must not create
 a memory content commit whose affected onboarding metadata still points at
 pre-closeout code, must not commit memory before route overview metadata,
 generated route indexes, and `memory_quality_check` are clean for the new code
-commit, and must not push automatically. It does not create worktrees, integrate
+commit, must not advance verification metadata for a changed source file whose
+sidecar content was not updated in the task, and must not push automatically. It does not create worktrees, integrate
 worktrees, clean up worktrees, or initialize memory roots.
 
 ## Repo-Internal References
@@ -76,5 +80,6 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-29T07:36+02:00: Updated after C-12 added a changed-file content gate — a changed source whose existing sidecar body was not updated this task fails closeout — plus the matching failure condition and boundary against metadata-only verification refreshes.
 - 2026-05-28T15:24+02:00: Updated after C-12 explicitly required route overview metadata, generated route index refresh, and clean `memory_quality_check` before memory commits. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-26T16:25+02:00: Created after closeout guidance was promoted from C-09 into a shared direct/worktree closeout skill.

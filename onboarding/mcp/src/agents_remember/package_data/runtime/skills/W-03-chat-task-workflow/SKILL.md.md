@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/W-03-chat-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-29T07:36+02:00                     |
+| lastVerifiedCommitHash | `b3dc26b0d809e6d386fd13adc77c8530f174b826` |
+| lastVerifiedCommitDate | 2026-05-29T07:42:25+02:00|
 
 ## Purpose
 
@@ -36,7 +36,7 @@ W-03 is intentionally lightweight: planning can stay in chat, but it still uses 
 
 ### Invariants And Boundaries
 
-Do not plan against clean-source drifted, missing-verification, or orphaned pre-existing onboarding. Leave dirty-source drift as active work-in-progress unless the developer explicitly takes ownership of it. Do not implement before explicit developer approval. Do not postpone required onboarding updates to the end of the task when the source change affects durable current-state knowledge. Newly added source files must not be committed before the missing-onboarding check has passed or C-05 has created the reported sidecars. Direct closeout must remain preview-first and must rerun C-05 when required onboarding is missing.
+Do not plan against clean-source drifted, missing-verification, or orphaned pre-existing onboarding. Leave dirty-source drift as active work-in-progress unless the developer explicitly takes ownership of it. Do not implement before explicit developer approval. Do not postpone required onboarding updates to the end of the task when the source change affects durable current-state knowledge. Newly added source files must not be committed before the missing-onboarding check has passed or C-05 has created the reported sidecars. Direct closeout must remain preview-first and must rerun C-05 when required onboarding is missing. The closeout gate also rejects a changed source file whose existing sidecar body was not updated this task, so onboarding content updates cannot be deferred to a metadata-only refresh.
 
 ### Todos
 
@@ -70,6 +70,7 @@ No sibling repository evidence is needed for the current workflow skill.
 
 ## Update History
 
+- 2026-05-29T07:36+02:00: Updated after W-03 step 4 documented the closeout content gate that rejects changed source files whose existing sidecar body was not updated this task, preventing metadata-only refreshes.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to W-03 task-start checks.
 - 2026-05-24T04:34+02:00: Updated after chat workflow separated implementation approval from commit approval and routed task-start checks through C-02 memory quality control.
