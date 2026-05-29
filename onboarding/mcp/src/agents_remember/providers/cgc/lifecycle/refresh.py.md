@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
+| lastUpdated            | 2026-05-29T07:19+02:00                     |
 | lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
 | lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
 | governingOverview      | `overview.md`                              |
@@ -23,7 +23,9 @@ root or every settings-backed root.
 
 ### Logic
 
-The module builds Dockerized `cgc index <repo> --force` commands, returns
+The module builds Dockerized `cgc index <repo> --force` commands (with `<repo>`
+rendered as the driveless container path `container_code_repo_root` so it is
+valid inside the Linux runner on Windows hosts), returns
 dry-run refresh payloads, starts the managed backend when required, runs CGC
 doctor before live refreshes, records refresh state, and aggregates all-root
 refresh results.
@@ -47,5 +49,6 @@ refresh results.
 
 ## Update History
 
+- 2026-05-29T07:19+02:00: Updated after the `cgc index` repo argument switched to the driveless container path (`container_code_repo_root`) for Windows-host support.
 - 2026-05-26T12:51+02:00: Updated after CGC refresh moved into the Docker runner.
 - 2026-05-25T21:14+02:00: Split from `process.py` so refresh orchestration is separate from watcher process control and bounded queries.

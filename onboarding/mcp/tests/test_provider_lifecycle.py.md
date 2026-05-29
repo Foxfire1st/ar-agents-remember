@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
+| lastUpdated            | 2026-05-29T07:19+02:00                     |
 | lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
 | lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
 | governingOverview      | `overview.md`                              |
@@ -35,7 +35,7 @@ parser, parses a `cgc` command, normalizes CGC defaults, resolves paths, and
 stabilizes repo ids in the same shape the lifecycle module uses before
 dispatch.
 
-The tests assert that `cgc visualize` accepts named `--port` and `--context` options after the subcommand, that shared lifecycle options can still appear before the subcommand, that CGC and aggregate watcher commands default their coordinator root to the installed runtime root, that process namespace diagnostics report `durableForDaemons`, and that daemon/server actions reject ephemeral `--die-with-parent` namespaces. Dry-run coverage verifies an explicit Dockerized long-running `cgc visualize --repo <repo> --port <port>` command against the `agents-remember/codegraphcontext:<pin>` runner image on the shared CGC Docker network. The generated runner patch script has a regression guard so replacements are embedded as Python data rather than `json.loads({...})`. The CGC migration-boundary tests require `cgc run -- visualize ...` to fail with guidance to use `cgc visualize`, and also protect that bounded `cgc run` queries are still allowed in an ephemeral process namespace when the command itself is mocked. GrepAI tests protect the Docker-only boundary: direct non-settings GrepAI `run` calls return unsupported instead of trying host binaries, settings-backed bounded GrepAI queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and GrepAI start dry-run includes managed Compose migration, the managed network, Postgres backend, Ollama embedder, runner image/container, container DSN, container project path, and container Ollama endpoint. CGC dry-run coverage also asserts project migration for the backend network and watcher containers. Docker readiness tests verify target-database checks after `pg_isready`, and aggregate watcher tests still cover partial-result recovery actions. Compose render coverage also asserts generated ownership labels, rejects missing `instance.labels`, and checks GrepAI container-local watcher `HOME`/XDG paths plus the optional POSIX UID/GID user block.
+The tests assert that `cgc visualize` accepts named `--port` and `--context` options after the subcommand, that shared lifecycle options can still appear before the subcommand, that CGC and aggregate watcher commands default their coordinator root to the installed runtime root, that process namespace diagnostics report `durableForDaemons`, and that daemon/server actions reject ephemeral `--die-with-parent` namespaces. Dry-run coverage verifies an explicit Dockerized long-running `cgc visualize --repo <repo> --port <port>` command against the `agents-remember/codegraphcontext:<pin>` runner image on the shared CGC Docker network. The generated runner patch script has a regression guard so replacements are embedded as Python data rather than `json.loads({...})`. The CGC migration-boundary tests require `cgc run -- visualize ...` to fail with guidance to use `cgc visualize`, and also protect that bounded `cgc run` queries are still allowed in an ephemeral process namespace when the command itself is mocked. GrepAI tests protect the Docker-only boundary: direct non-settings GrepAI `run` calls return unsupported instead of trying host binaries, settings-backed bounded GrepAI queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and GrepAI start dry-run includes managed Compose migration, the managed network, Postgres backend, Ollama embedder, runner image/container, container DSN, container project path, and container Ollama endpoint. CGC dry-run coverage also asserts project migration for the backend network and watcher containers. Docker readiness tests verify target-database checks after `pg_isready`, and aggregate watcher tests still cover partial-result recovery actions. Compose render coverage also asserts generated ownership labels, rejects missing `instance.labels`, and checks GrepAI container-local watcher `HOME`/XDG paths plus the optional POSIX UID/GID user block. The parallel CGC refresh test also asserts each runner bind-mount target is a driveless POSIX container path rendered as `host:container:ro`.
 
 F-04 service tests build a temporary lifecycle settings file and verify that
 `providers.lifecycle_service` can run CGC and aggregate watcher dry-run/status
@@ -88,6 +88,9 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-29T07:19+02:00: Updated after the parallel CGC refresh test asserted
+  driveless POSIX runner bind-mount targets (`host:container:ro`) for
+  Windows-host support.
 - 2026-05-28T14:21:08+02:00: Updated after provider lifecycle tests began
   asserting generated Compose ownership labels and rejection of unlabeled
   provider settings.
