@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -56,6 +56,7 @@ provider status can report watcher state and uptime.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: `grepai_watcher_dry_run_start_result` `commands` -> `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after GrepAI watcher status began including normalized container-state summaries.
 - 2026-05-27T00:25+02:00: Updated after watcher startup began rendering
   dependency ports from the current start flow and sharing GrepAI project

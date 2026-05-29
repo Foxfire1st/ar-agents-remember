@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/context/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -75,6 +75,7 @@ through this package-local code and provider install/runtime modules.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Removed the unsupported computed `__all__` (relies on default star-export like the `cgc/context` facade), clearing the `reportUnsupportedDunderAll` warning; behavior-preserving (commit `0549b28`).
 - 2026-05-25T21:14+02:00: Updated after provider context implementation moved into provider-owned packages.
 - 2026-05-25T19:16+02:00: Renamed from `context_providers.py` to `context.py`; implementation moved into `context_modules/` with CGC and GrepAI subpackages and no compatibility fallback.
 - 2026-05-25T18:07+02:00: Updated after the GrepAI runtime layout dropped the host binary path; the Docker runner image owns GrepAI binaries.

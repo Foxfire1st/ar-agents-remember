@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/integrity.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T18:07+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -65,6 +65,7 @@ Docker-owned providers after the host-binary contract was removed.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Extracted `_recorded_manifest_or_early` (manifest load/validate boundary) from `check_provider_runner_integrity` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-26T12:51+02:00: Updated after CodeGraphContext moved to Docker-owned provider execution and host venv files stopped being runner integrity authority.
 - 2026-05-25T18:07+02:00: Updated after `providers/_bin` was removed from the current runner integrity authority and old `_bin` manifest entries became ignored compatibility data.
 - 2026-05-25T17:40+02:00: Updated after Docker-mode GrepAI host binaries and old manifest entries for those binaries were removed from provider runner integrity authority.

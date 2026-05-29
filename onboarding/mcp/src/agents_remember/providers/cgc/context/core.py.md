@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T07:19+02:00                     |
-| lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
-| lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
+| lastUpdated            | 2026-05-29T18:35+02:00|
+| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
+| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -69,6 +69,7 @@ otherwise reject.
 
 ## Update History
 
+- 2026-05-29T18:35+02:00: Split `core.py` (668->522): extracted `materialize.py` (runtime dir/config writers) and `cleanup.py` (stale-artifact removal); `core.py` keeps the `CgcRuntimeLayout` dataclass, settings-derived construction, and `to_container_path` (commit `01f503d`).
 - 2026-05-29T07:19+02:00: Updated after adding `to_container_path`, the `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=...)` so CGC bind-mount targets, working dir, and container environment render as driveless POSIX paths on Windows hosts.
 - 2026-05-28T13:40+02:00: Updated after CGC layout removed host venv path fields and began rejecting stale `venvRoot` provider settings.
 - 2026-05-26T13:58+02:00: Updated after CGC layouts gained backend container and Docker network fields for runner connectivity.
