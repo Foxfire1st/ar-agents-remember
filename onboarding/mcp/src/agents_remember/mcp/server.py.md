@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-05-29T08:53+02:00                     |
+| lastVerifiedCommitHash | `a06bfa65dcee3c8b82652085c69f2a20f163e306` |
+| lastVerifiedCommitDate | 2026-05-29T09:05:12+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -19,7 +19,9 @@ Agents Remember tools.
 
 ### Logic
 
-`create_server()` builds the FastMCP instance and registers typed tool functions
+`create_server()` first calls `install_compact_content()` (idempotent) so the
+JSON text mirror of every tool result is emitted without FastMCP's hardcoded
+indentation, then builds the FastMCP instance and registers typed tool functions
 that delegate to payload builders. The current public surface includes context,
 drift, route index, memory init, skill install, provider status, provider
 diagnostics, provider watcher, GrepAI, CodeGraphContext, worktree, memory
@@ -54,6 +56,9 @@ compact readiness summaries.
 
 - Server functions should perform registration and argument forwarding only.
 - Tool behavior and safety checks belong in payload builders/controllers.
+- `install_compact_content()` must run before tools are exercised; keep the call
+  at the top of `create_server()`. It only affects text-mirror serialization, not
+  `structuredContent` or tool behavior.
 - Do not add a raw shell or arbitrary command tool to this server.
 - Do not collapse GrepAI back into free-form query/native argument forwarding;
   the registration should mirror the supported MCP contract.
@@ -68,9 +73,11 @@ compact readiness summaries.
 | Payload builders are defined in `tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
 | Provider diagnostics payloads are modeled separately from compact provider summaries. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
 | The config loader rejects coordinator `system/settings.json` as MCP authority. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
+| The compact-content shim installed at server creation minifies tool-result text. | [compact_content.py](agents-remember-md/mcp/src/agents_remember/mcp/compact_content.py) |
 
 ## Update History
 
+- 2026-05-29T08:53+02:00: Updated after `create_server()` began installing the FastMCP compact-content shim to minify tool-result text mirrors.
 - 2026-05-28T19:52+02:00: Updated after registering the dedicated `provider_diagnostics` MCP tool.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI search and trace registration.
 - 2026-05-26T22:54+02:00: Updated after GrepAI search and trace registration gained typed scope, output, and trace-action arguments.
