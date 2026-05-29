@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-27T12:50+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -118,6 +118,7 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Updated after the coordinator AGENTS template gained the explicit "do not randomly commit; use the C-12 closeout procedure" workflow-before-code rule.
 - 2026-05-27T12:50+02:00: Added the coordinator Git-boundary rule that `ar-coordination/` is a scaffold root, not a repository root; Git commands should target resolved code or memory Git repositories and `tasks/` artifacts stay local unless a workflow says otherwise.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T04:34+02:00: Updated after coordinator template made commit approval separate from implementation approval.

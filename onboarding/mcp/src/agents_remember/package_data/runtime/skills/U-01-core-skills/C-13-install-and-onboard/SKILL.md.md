@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T13:22+02:00                     |
-| lastVerifiedCommitHash | `421e27200a2fcd1156732c83de1af94fc08250bc` |
-| lastVerifiedCommitDate | 2026-05-29T14:12:49+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 
 ## Purpose
 
@@ -81,4 +81,5 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — C-13 install/provider guidance now models preview-first (`dry_run=true`) then the real run for `runtime_install`/`skills_install`/`provider_watchers`.
 - 2026-05-29T13:22+02:00: Created with the C-13 install-and-onboard orchestration skill (replaces the reverted scripted start_hook_install MCP tool with a model-driven skill stage). Metadata pending closeout refresh.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 
 ## Purpose
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — C-00 setup-tool examples now model preview-first then apply for `memory_init`/`runtime_install`/`skills_install`.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T14:20+02:00: Updated setup guidance to request MCP `runtime_install` and `skills_install` instead of deleted source-side installer scripts.
 - 2026-05-15T03:30+02:00: Renamed C-00 to initialize memory repo and narrowed the skill boundary to memory-root initialization.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controllers/runtime_install.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T00:37+02:00                     |
-| lastVerifiedCommitHash | `ddf6fcd5981664813c915e94e1c5229b542a28a4` |
-| lastVerifiedCommitDate | 2026-05-24T00:25:39+02:00                 |
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -34,7 +34,9 @@ overrides.
 - Keep this controller thin; install mechanics belong in
   `agents_remember.install.runtime`.
 - Do not add path fields to `RuntimeInstallRequest`.
-- Default `dry_run` stays true so the tool is inspectable before mutation.
+- Default `dry_run` is false — the tool applies by default (act-by-default
+  contract). Pass `dry_run=true` to inspect the planned reconcile before
+  mutation; the packaged install skills tell the agent to preview first.
 
 ## Repo-Internal References
 

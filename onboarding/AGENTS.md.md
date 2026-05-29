@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 
 ## Purpose
 
@@ -64,7 +64,9 @@ User-specific behavior and repo policy belong in the resolved memory layer.
 Worktree, closeout, integration, push, cleanup, and protected-branch movement
 remain approval-gated. Implementation approval and commit approval are separate
 gates; agents must stop after checks or closeout dry-runs until the developer
-explicitly approves real commits or lifecycle mutations.
+explicitly approves real commits or lifecycle mutations. The workflow-before-code
+warning now says this explicitly: do not randomly commit — use the C-12 closeout
+procedure (`direct_closeout_preview`/`apply`) instead.
 
 ### Todos
 
@@ -105,6 +107,7 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Updated after the workflow-before-code warning was made explicit ("do not randomly commit; use the C-12 closeout procedure").
 - 2026-05-28T19:52+02:00: Updated after source-checkout code quality guidance added Pyright beside Ruff and Radon.
 - 2026-05-24T04:34+02:00: Updated after source-checkout instructions renamed C-02 to memory quality control and made commit approval separate from implementation approval.
 - 2026-05-23T21:31+02:00: Made source-checkout code quality guidance explicit about Ruff and Radon after Python implementation work.

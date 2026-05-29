@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/memory.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                                      |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`                                      |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -29,7 +29,11 @@ returns through `base._tool_payload`.
 
 - Transport-thin: all memory/drift behavior lives in `controllers.memory_tools`
   and the memory/onboarding-drift packages.
+- The effectful builders (`route_index_refresh_payload`, `memory_init_payload`,
+  `memory_baseline_adopt_payload`) default `dry_run=False` (act-by-default),
+  matching the server registration; `dry_run=true` previews.
 
 ## Update History
 
+- 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the effectful memory payload builders.
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).

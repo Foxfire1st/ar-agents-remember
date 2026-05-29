@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/grepai-high-leverage-usage.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-26T23:11+02:00                     |
-| lastVerifiedCommitHash | `d5de5d5403ccf4db9b2650279004655797c68f6b`             |
-| lastVerifiedCommitDate | 2026-05-26T23:19:42+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`             |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -43,9 +43,9 @@ placeholder project ids, paths, symbols, snippets, and scores.
 Run GrepAI examples through MCP provider tools:
 
 ```text
-grepai_search(query="<query>", all_repos=true, limit=5, output_format="json", dry_run=false)
-grepai_search(query="<query>", repo_ids=["<repoId>"], limit=5, output_format="json", dry_run=false)
-grepai_trace(trace_action="callers", symbol="<symbol>", output_format="json", dry_run=false)
+grepai_search(query="<query>", all_repos=true, limit=5, output_format="json")
+grepai_search(query="<query>", repo_ids=["<repoId>"], limit=5, output_format="json")
+grepai_trace(trace_action="callers", symbol="<symbol>", output_format="json")
 provider_status()
 ```
 
@@ -102,6 +102,7 @@ contain private sibling repository names, symbols, paths, snippets, or results.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Dropped the now-redundant `dry_run=false` from the GrepAI examples (queries return results by default after the act-by-default flip) and noted `dry_run=true` is a command-preview/debug-only affordance.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed the updated GrepAI MCP usage catalog.
 - 2026-05-26T22:54+02:00: Updated after the catalog switched to the typed GrepAI MCP shape with JSON defaults, configured `repo_ids`, explicit trace actions, and route-follow-up reads instead of raw path scoping.
 - 2026-05-25T18:07+02:00: Updated managed invocation commentary after GrepAI became Docker-runner-owned rather than runtime-binary-owned.

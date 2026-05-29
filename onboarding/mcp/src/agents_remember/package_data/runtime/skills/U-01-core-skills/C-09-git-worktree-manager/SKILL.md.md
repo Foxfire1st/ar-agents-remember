@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-05-26T16:25+02:00                     |
-| lastVerifiedCommitHash | `011f84f5a839c95ff0c54a9778794592a4ef30ca` |
-| lastVerifiedCommitDate | 2026-05-26T16:27:41+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 
 ## Purpose
 
@@ -92,6 +92,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the C-09 worktree examples now omit `dry_run=false` and carry a preview-first note (`dry_run=true` then the real run).
 - 2026-05-26T16:25+02:00: Updated after closeout guidance moved to C-12 and C-09 became worktree lifecycle plus integration/cleanup only.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T05:03+02:00: Updated after C-09 worktree status guidance switched from next safe commands to typed `nextOperation`/`nextTool`/`nextArgs` hints.

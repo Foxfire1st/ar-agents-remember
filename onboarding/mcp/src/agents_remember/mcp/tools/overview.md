@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                                      |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`                                      |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose

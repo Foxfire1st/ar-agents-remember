@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -29,6 +29,8 @@ options and returns an operation-labeled payload.
   behavior, then be imported directly by `mcp/tools.py`.
 - Skill installation remains a package install concern, not a provider,
   worktree, memory, or benchmark controller.
+- `skills_install_tool` defaults `dry_run=False` (act-by-default), forwarding to
+  `install.skills.install_skills`; `dry_run=true` previews the copy plan.
 
 ## Repo-Internal References
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90`             |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`             |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -89,6 +89,7 @@ contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the CGC query examples dropped the now-redundant `dry_run=false` (queries return results by default; `dry_run=true` returns the planned command without executing it).
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T21:25+02:00: Simplified provider-authority wording in the CGC tool guidance.
 - 2026-05-23T20:42+02:00: Replaced generic `cgc_query` guidance with typed CGC tool guidance.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/providers.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                                        |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`                                        |
+| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -29,7 +29,11 @@ through `base._tool_payload`.
 
 - Transport-thin: provider lifecycle and query behavior lives in
   `controllers.provider_tools` and the provider packages.
+- `provider_watchers_payload` and the `cgc_*`/`grepai_*` query builders default
+  `dry_run=False` (act-by-default): a plain query returns results, and
+  `dry_run=true` returns the planned provider command without executing it.
 
 ## Update History
 
+- 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the provider/query payload builders.
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
