@@ -127,6 +127,7 @@
     "mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-10-adopt-memory-baseline/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-11-memory-carryover-from-branch/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-12-closeout/SKILL.md",
+    "mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-13-install-and-onboard/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-01-heavy-task-workflow/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-01-heavy-task-workflow/skills/P-00-creation/C-01-task-folder-creation/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-01-heavy-task-workflow/skills/P-01-research/R-01-requirements-normalization/SKILL.md",
@@ -218,8 +219,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 358,
-    "fileSidecars": 155,
+    "sourceFilesInScope": 359,
+    "fileSidecars": 156,
     "childRoutes": 10
   },
   "routingTerms": [
@@ -227,6 +228,7 @@
     "adversarial",
     "agents",
     "agents_remember",
+    "and",
     "architecture",
     "assets",
     "baseline",
@@ -301,8 +303,7 @@
     "examples",
     "file",
     "files",
-    "filesystem",
-    "findings"
+    "filesystem"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.p...",
