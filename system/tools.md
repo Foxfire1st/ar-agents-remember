@@ -30,8 +30,10 @@ python -m agents_remember.code_quality.check
 
 The wrapper runs `ruff check`, Pyright static type checking, Radon cyclomatic complexity and maintainability checks, `pytest` with coverage JSON, and CRAP-Calculator. Use the individual tool commands below for focused implementation checks.
 CRAP threshold findings are report-only by default so existing refactor targets
-do not make the remembered suite unusable. Add `--fail-on-crap-threshold` only
-when intentionally gating a cleanup or refactor branch.
+do not make the remembered suite unusable. The CI workflow and the shared
+pre-push hook run the wrapper with `--fail-on-crap-threshold` as a standing gate
+(see CI And Pre-Push Enforcement below); for ad-hoc local runs without those
+gates, add the flag when intentionally gating a cleanup or refactor branch.
 
 For implementation work, focused commands are iteration aids, not the final
 test standard. A code implementation is not closeout-ready until the full
@@ -48,6 +50,22 @@ Pyright output, pytest counts, coverage summary, Radon CC/MI pressure, CRAP thre
 which findings are in touched files, which are inherited/out of scope, and the
 decision for each in-scope issue. Do not summarize quality as only "tests
 passed" when the tools emitted report-only findings.
+
+### CI And Pre-Push Enforcement
+
+Quality is enforced at two gates, both running the wrapper with
+`--fail-on-crap-threshold` (ruff, Pyright, the full pytest suite, and CRAP all
+fail the run; the wrapper exits non-zero if any step fails):
+
+- **CI** — `.github/workflows/quality-checks.yml` runs on every push and pull
+  request to `main`, across a Python `3.11 / 3.12 / 3.13` matrix. This is the
+  non-bypassable backstop.
+- **Local pre-push** — `.githooks/pre-push` runs the same command and blocks the
+  push. Enable it once per clone with `git config core.hooksPath .githooks`
+  (after `pip install -e "mcp[dev]"`); `git push --no-verify` bypasses it
+  intentionally.
+
+Keep both gates calling the project-owned wrapper, not a hand-picked subset.
 
 ---
 
