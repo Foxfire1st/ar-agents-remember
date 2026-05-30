@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-31T01:06+02:00                     |
+| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6` |
+| lastVerifiedCommitDate | 2026-05-31T01:23:17+02:00|
 
 ## Purpose
 
@@ -21,7 +21,7 @@ W-02 creates or updates one task wrapper folder under the C-08 resolved task roo
 
 ### Conventions
 
-The skill keeps planning and implementation in one `task.md` file inside a wrapper folder. The folder is created as soon as the task class, naming, and workflow variables are clear, before any C-09 worktree start. The task document requires explicit objective, requirements, steps, decision log, open questions, and references.
+The skill keeps planning and implementation in one `task.md` file inside a wrapper folder. The folder is created as soon as the task class, naming, and workflow variables are clear, before any C-09 worktree start. The task document requires explicit objective, requirements, an optional `## Design` section sized per the Task Collaboration Doctrine, steps, decision log, open questions, and references.
 
 ### Invariants And Boundaries
 
@@ -47,7 +47,7 @@ W-02 is the approved workflow used by the preliminary onboarding task and the wo
 | --- | --- | --- |
 | The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. | L25-L36 | [W-02 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/SKILL.md) |
 | Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, and waiting for commit approval before closeout commits. | L38-L52 | [W-02 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/SKILL.md) |
-| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline before C-09 start, separate commit approval before closeout commits, and no stale task state. | L64-L76 | [W-02 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/SKILL.md) |
+| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline before C-09 start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. | L64-L77 | [W-02 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the current workflow skill.
 
 ## Update History
 
+- 2026-05-31T01:06+02:00: Added invariant 12 requiring the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and noted the optional design section in conventions.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T04:34+02:00: Updated task-start references after C-02 was renamed to memory quality control.
 - 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `w-02-light-task-workflow` name.
