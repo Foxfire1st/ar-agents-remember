@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-05-30T22:29+02:00                     |
+| lastVerifiedCommitHash | `5ccfed5b722ee34158b9533fb7e86e4196cfb569` |
+| lastVerifiedCommitDate | 2026-05-30T22:38:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -35,4 +35,5 @@ import surface with an explicit `__all__`.
 
 ## Update History
 
+- 2026-05-30T22:29+02:00: Added `finalize_payload_tokens` to the token-helper export surface (import and `__all__`) for the S6 token-counter wiring. Verification metadata stays pinned until closeout commits the change.
 - 2026-05-28T19:52+02:00: Created for the response-contract package export surface.
