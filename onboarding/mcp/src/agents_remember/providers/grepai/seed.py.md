@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                         |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00|
+| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493`                         |
+| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -18,7 +18,7 @@
 
 ### Logic
 
-The module resolves a source and target `grepai-memory` provider from explicit settings, starts both Postgres backends through lifecycle calls, and clones the source database into the target with `pg_dump` piped through a temporary SQL file into `psql`. `GrepaiCloneContext` carries the resolved project id, source/target coordination roots, backend containers, database names, users, passwords, and settings files. Dry-runs return the planned dump/restore commands without touching Docker.
+The module resolves a source and target `grepai-memory` provider from explicit settings, starts both Postgres backends through lifecycle calls, and clones the source database into the target with `pg_dump` piped through a temporary SQL file into `psql`. The dump/restore commands run uncapped (`timeout=None`) because clone time scales with index size and must never be killed by a wall-clock cap. `GrepaiCloneContext` carries the resolved project id, source/target coordination roots, backend containers, database names, users, passwords, and settings files. Dry-runs return the planned dump/restore commands without touching Docker.
 
 ### Invariants And Boundaries
 
@@ -38,5 +38,6 @@ The module resolves a source and target `grepai-memory` provider from explicit s
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Documented that clone dump/restore now run uncapped (`timeout=None`) since clone time scales with index size (never-cap-indexing run). Verified against `825a172`.
 - 2026-05-29T18:35+02:00: Narrowed the `GrepaiCloneContext | dict` union via `isinstance` and removed the dead `_is_clone_skip`; behavior-preserving (commit `0549b28`).
 - 2026-05-27T18:10:12+02:00: Created for GrepAI provider warm-start support.

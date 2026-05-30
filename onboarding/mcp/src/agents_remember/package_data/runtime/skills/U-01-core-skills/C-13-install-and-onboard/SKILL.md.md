@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T13:22+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-05-30T21:51+02:00                     |
+| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
+| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
 
 ## Purpose
 
@@ -32,7 +32,11 @@ providers (start/refresh watchers) so they actually index the code and memory,
 since `runtime_install` builds the runtimes but they index nothing until pointed
 at repos. It carries the directive text and a per-harness routing table
 (Claude Code / Codex / Pi / OpenClaw / Antigravity inject; Cursor / Copilot /
-Hermes use their native instructions file).
+Hermes use their native instructions file). When a context-injecting start hook
+is installed, Stage 1 now tells the developer it activates on the **next**
+session (harnesses load and often snapshot session hooks at startup), so a
+restart is required and it must be confirmed on the next session — a distinct
+restart from the post-`skills_install` one.
 
 ### Conventions
 
@@ -81,5 +85,6 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-05-30T21:51+02:00: Documented the hook-activation restart guidance added in the 0.9.x run — a freshly installed context-injecting start hook activates only on the next session, a distinct restart from the post-`skills_install` one. Verified against `57944df`.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — C-13 install/provider guidance now models preview-first (`dry_run=true`) then the real run for `runtime_install`/`skills_install`/`provider_watchers`.
 - 2026-05-29T13:22+02:00: Created with the C-13 install-and-onboard orchestration skill (replaces the reverted scripted start_hook_install MCP tool with a model-driven skill stage). Metadata pending closeout refresh.

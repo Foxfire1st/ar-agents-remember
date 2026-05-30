@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:09+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00                     |
+| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
+| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,8 +24,9 @@ argument normalization, action dispatch, result rendering, and `main()`.
 ### Logic
 
 The parser exposes `cgc`, `grepai`, and `watchers` subcommands with provider
-action-specific arguments. Normalizers resolve paths and stable provider IDs
-after parsing. Dispatch maps provider names to CGC, GrepAI, or watcher
+action-specific arguments, including a `no_cache` flag (default `False`) on the
+image-build paths that forces a from-scratch Docker rebuild. Normalizers resolve
+paths and stable provider IDs after parsing. Dispatch maps provider names to CGC, GrepAI, or watcher
 implementation functions and renders either JSON, native bounded command
 output, or a compact text summary.
 
@@ -48,6 +49,7 @@ output, or a compact text summary.
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Documented the `no_cache` argument added to the provider image-build subcommands (forwarded into the runner image builds for a from-scratch rebuild). Verified against `8927f03`.
 - 2026-05-26T12:51+02:00: Updated after removing the CGC `--python`/host-venv install argument.
 - 2026-05-25T19:09+02:00: Updated after CGC and GrepAI modules moved under package subfolders.
 - 2026-05-25T19:01+02:00: Created from CLI/parser logic extracted out of provider lifecycle.

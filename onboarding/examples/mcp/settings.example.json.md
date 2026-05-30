@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-30T21:22+02:00                     |
+| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
+| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -37,6 +37,13 @@ by design: `agents_remember.mcp.config` rejects provider-local path fields, and
 `agents_remember.providers.settings` derives provider lifecycle settings from
 the single configured coordination root.
 
+The example also carries a `timeoutCaps` block with `toolSeconds` and
+`providerSetupSeconds`. `providerSetupSeconds` caps only provider **image build
+/ dependency install**; database seed, clone, and indexing are never time-capped.
+A cap value of `0` means unlimited. This key was renamed from the old
+`providerSeconds`; `agents_remember.mcp.config` fail-loud rejects the old name
+with a `ConfigError`, so the template ships the current key.
+
 ### Invariants And Boundaries
 
 This file must not be placed inside the coordinator root, and it must not carry
@@ -55,6 +62,7 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 ## Update History
 
+- 2026-05-30T21:22+02:00: Documented the `timeoutCaps` block (`toolSeconds`, `providerSetupSeconds`) the template now carries — `providerSetupSeconds` caps only provider image build / dependency install, `0` means unlimited, and it replaces the rejected `providerSeconds` key. Realigned verification metadata to `825a172`.
 - 2026-05-28T12:32+02:00: Updated after the example transcript root moved from `providers/logs/mcp` to `logs/mcp`.
 - 2026-05-24T09:23+02:00: Updated after Codex project-local MCP settings and skills moved from `.agents` to `.codex`.
 - 2026-05-24T00:37+02:00: Clarified that repository roots are inferred from `workspaceRoot` and `coordinationRoot`, while `harnessSkillRoot` is optional and normally inferred from harness-local MCP settings placement.

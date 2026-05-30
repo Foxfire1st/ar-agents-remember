@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T20:30+02:00                     |
-| lastVerifiedCommitHash | `f3d57f6a9cf48a314ec7c9c6c8cb11d5e0eeb893` |
-| lastVerifiedCommitDate | 2026-05-29T20:39:01+02:00|
+| lastUpdated            | 2026-05-30T21:22+02:00                     |
+| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
+| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,7 +24,7 @@
 
 The README opens with a TLDR that frames Agents Remember as durable, git-verified repo knowledge made first-class infrastructure, then shows the source-file to onboarding-unit mapping and the three substrates agents use to reach memory — by path (the file's own note), by meaning (semantic search), and by relationship (the code graph) — with by-path notes as the core and the other two as opt-in providers. The earlier sidecar-only "path-derived memory, no vector store / hidden service" positioning and the sidecar-era infographic embed were removed; that anti-retrieval framing predated the semantic-search and code-graph providers and no longer described the product.
 
-The previous long README install matrix was moved out of the front page. The root page now keeps one generic quickstart: run the published `agents-remember-mcp` package via `uvx` (no repo clone) with an `ar-coordination/` workspace beside the target projects, configure the MCP server, request `runtime_install()` for `ar-coordination` (it applies by default now), note that reinstall reconciles package-owned runtime scaffold files while provider dependencies are MCP-owned, optionally add benchmark fixtures with `include_benchmarks=true`, expose packaged skills with `skills_install`, add workspace instructions that include `ar-coordination/AGENTS.md`, then ask the agent to initialize memory and bootstrap onboarding. For Codex, the quickstart now uses `.codex/mcp` and `.codex/skills` as the normal harness registration and skill exposure folders. Harness-specific setup links point to dedicated pages under `docs/install/`.
+The previous long README install matrix was moved out of the front page. The root page now keeps one short, harness-agnostic three-step quickstart that the agent drives: (1) wire the MCP server by running the published `agents-remember-mcp` package via `uvx --config <abs>/agents-remember-settings.json` (no repo clone), then restart the harness so it loads the server; (2) run `runtime_install` then `skills_install` (scaffolding, skills, and provider images when enabled), then restart so the harness discovers the new skills; (3) run the `C-13-install-and-onboard` skill, which pre-checks setup, installs the start hook (or places the directive), sets up the memory repo (asking scaffold-new vs use-existing), bootstraps onboarding, and starts providers indexing — then restart once more so a newly installed session hook activates. The README frames those three restarts (load server, discover skills, activate hook) as the only hands-on steps. Harness-specific setup links point to dedicated pages under `docs/install/`, and detailed first-run setup lives in `docs/getting-started.md`.
 
 The README distinguishes the source checkout from the installed runtime. The source checkout packages `mcp/`, `runtime/`, optional benchmark package source, docs, and roadmap notes. The installed `ar-coordination/` runtime owns installed instructions, skills, optional benchmark package content, local coordination artifacts, external memory repos, worktrees, and temp files.
 
@@ -44,7 +44,6 @@ The README is explanatory, not the implementation source of truth. Runtime behav
 
 ### Todos
 
-- After these documentation changes are committed, refresh verification metadata to the new README source commit.
 - If `docs/**` becomes eligible in path rules later, create focused file-level onboarding for high-value docs pages instead of overloading this README onboarding.
 
 ### Docs References
@@ -61,11 +60,12 @@ The README routes readers into the split documentation tree and gives the curren
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The README's TLDR frames durable git-verified repo knowledge as infrastructure, shows the source-file to onboarding-unit mapping, and names the three retrieval substrates (by path / by meaning / by relationship), with meaning and relationship as opt-in providers. | L1-L20 | [README.md](agents-remember-md/README.md) |
-| The quickstart installs runtime assets into `ar-coordination` through MCP `runtime_install`, states that provider dependencies are MCP-owned, optionally installs benchmarks with `include_benchmarks=true`, exposes packaged skills through `skills_install`, uses `.codex/mcp` to infer `.codex/skills` for Codex, points workspace instructions at `ar-coordination/AGENTS.md`, then uses C-00 and C-03 for memory initialization and onboarding bootstrap. | L32-L82 | [README.md](agents-remember-md/README.md) |
-| The README now routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L81-L106 | [README.md](agents-remember-md/README.md) |
-| The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees. | L108-L140 | [README.md](agents-remember-md/README.md) |
-| The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L39 | [docs/README.md](agents-remember-md/docs/README.md) |
+| The README's TLDR frames durable git-verified repo knowledge as infrastructure, shows the source-file to onboarding-unit mapping, and names the three retrieval substrates (by path / by meaning / by relationship), with meaning and relationship as opt-in providers. | L1-L18 | [README.md](agents-remember-md/README.md) |
+| The quickstart is a short, harness-agnostic three-step agent-driven flow — (1) wire the MCP server via `uvx`, (2) run `runtime_install` then `skills_install`, (3) run the `C-13-install-and-onboard` skill (which sets up the memory repo, installs the start hook, bootstraps onboarding, and starts provider indexing) — framed around three harness restarts (load server, discover skills, activate hook). | L47-L65 | [README.md](agents-remember-md/README.md) |
+| The README routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L67-L79 | [README.md](agents-remember-md/README.md) |
+| The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees. | L80-L111 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `0.9.4` (pre-1.0) and warns that tool names/args, the skill set, runtime layout, and providers may still change before 1.0. | L113-L115 | [README.md](agents-remember-md/README.md) |
+| The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L44 | [docs/README.md](agents-remember-md/docs/README.md) |
 
 ## Cross-Repo References
 
@@ -77,6 +77,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-05-30T21:22+02:00: Refreshed for the 0.9.0–0.9.4 run and verified against `57944df`. Rewrote the Logic quickstart description to the current short three-step, agent-driven flow that hands onboarding to `C-13-install-and-onboard` and frames the three harness restarts; corrected the stale Repo-Internal References (the quickstart row had described an older `C-00`/`C-03`/`include_benchmarks`/`.codex` flow) and realigned all README line ranges to the 119-line source; cleared the resolved verification-refresh Todo.
 - 2026-05-29T21:00+02:00: Updated after the Quickstart stopped telling users to clone this repo (Agents Remember runs from the published `agents-remember-mcp` package via `uvx`) and switched the `runtime_install`/`skills_install` examples to the act-by-default form.
 - 2026-05-29T20:30+02:00: Verified the sidecar body against the committed re-spined `README.md` (TLDR, the three retrieval substrates, quickstart, install pages, source/runtime layout) and advanced verification metadata to the landed commit `01f503d`.
 - 2026-05-29T17:30+02:00: Re-spined the README front door — added a TLDR framing repo knowledge as first-class infrastructure, replaced the sidecar-only "path-derived, no vector store / hidden service" positioning with the three retrieval substrates (by path / by meaning / by relationship), and removed the sidecar-era infographic embed. Verification metadata remains pinned to the last committed source state until closeout.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00                     |
+| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
+| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -45,8 +45,9 @@ before calling `lifecycle_service.run_cgc_lifecycle()`.
 | --- | --- |
 | Provider summary and diagnostics projection live in the provider status module. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
 | Provider response models distinguish compact summaries from diagnostics/native payloads. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
-| MCP payload builders validate this controller output through the model registry. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| MCP payload builders validate this controller output through the model registry. | [tools/providers.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/providers.py) |
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Re-verified against `825a172` after the provider dockerization / never-cap-indexing run; the controller surface (status, diagnostics, watchers, GrepAI search/trace, typed CGC tools) and its act-by-default `dry_run` behavior still match. Repaired the builder reference — provider payload builders now live in `tools/providers.py` after the `01f503d` `mcp/tools.py` split.
 - 2026-05-28T19:52+02:00: Created when provider MCP behavior moved out of the former `skill_tools.py` mega-facade.

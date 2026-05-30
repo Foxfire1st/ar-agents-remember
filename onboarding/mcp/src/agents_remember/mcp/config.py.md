@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00|
+| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
+| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -28,6 +28,14 @@ provider runtime roots under `providers/runners/<provider>/<instance>` and
 provider log roots under `logs/providers/<provider>/<instance>`, and exposes
 sorted allowed repo/provider ids.
 
+`parse_timeout_caps` validates the optional `timeoutCaps` object into the
+`timeout_caps` map: every cap must be a non-negative integer, and the renamed
+`providerSeconds` key is fail-loud rejected with a `ConfigError` directing
+callers to `providerSetupSeconds` (indexing and seed are now always uncapped).
+The module defines the defaults `DEFAULT_PROVIDER_SETUP_SECONDS = 1800` and
+`DEFAULT_DOCKER_CONTROL_SECONDS = 120`. All failures raise `ConfigError`, a
+`ValueError` subclass, so the server fails loudly at startup on unsafe settings.
+
 ### Invariants And Boundaries
 
 - MCP settings are the authority for the server path.
@@ -36,6 +44,9 @@ sorted allowed repo/provider ids.
 - Provider path fields are derived by the server, not repeated in settings.
 - Memory settings includes must stay inside the configured code repo or memory
   repo boundaries.
+- `timeoutCaps.providerSetupSeconds` caps only provider setup (image build /
+  dependency install); seed/clone/indexing are never time-capped. The old
+  `providerSeconds` key must keep being rejected, not silently mapped.
 
 ## Repo-Internal References
 
@@ -46,6 +57,7 @@ sorted allowed repo/provider ids.
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Documented `timeoutCaps` handling added in the 0.9.x run — `parse_timeout_caps` (non-negative-int caps), the fail-loud `ConfigError` on the renamed `providerSeconds` key, the `providerSetupSeconds`/`DEFAULT_PROVIDER_SETUP_SECONDS`/`DEFAULT_DOCKER_CONTROL_SECONDS` defaults, and the `ConfigError` (ValueError) contract. Verified against `8927f03`.
 - 2026-05-29T18:35+02:00: Extracted `_parse_repository_entry` from `parse_repositories` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-28T12:32+02:00: Updated after transcript roots defaulted to `logs/mcp` and provider log roots moved under `logs/providers/`.
 - 2026-05-24T09:23+02:00: Updated after config coverage switched the normal Codex harness placement from `.agents/mcp` to `.codex/mcp`.

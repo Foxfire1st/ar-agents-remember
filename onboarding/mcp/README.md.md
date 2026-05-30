@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T14:15+02:00                     |
-| lastVerifiedCommitHash | `412342847484b23136bdc7a41a0d3ec8804a761b` |
-| lastVerifiedCommitDate | 2026-05-29T16:22:42+02:00|
+| lastUpdated            | 2026-05-30T21:22+02:00                     |
+| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
+| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -36,6 +36,23 @@ path (pip as alternative), an inline minimal starter `settings.json`, the harnes
 registration JSON (using `uvx`), the first setup MCP calls, and the tool surface.
 Project-doc links are absolute GitHub URLs so they resolve from PyPI.
 
+Beyond the Quickstart the README now carries the operational detail a first-run
+needs: a **Settings file location** rule (place the settings file under the
+harness registration folder in an `mcp/` subdirectory, because `skills_install`
+infers its skill target from the sibling `skills/` of that `mcp` parent, with a
+per-harness path table), an **Install Order And First Operations** section
+spelling out the strict scaffolding → skills → providers ordering, the
+`runnerIntegrityFailed` fast-fail if providers run before `runtime_install`, and
+the `runtime_install` flags (`install_provider_deps`, `no_cache` to force a
+from-scratch image rebuild), a per-harness setup-pages table, an explicit
+**skill-layout** note (`skills_install` defaults to `tree` for recursive scanners
+like Codex; Claude Code and Cursor need `layout="flat"`), an upgrade callout that
+`timeoutCaps.providerSeconds` was renamed to `providerSetupSeconds` (old key
+rejected with `ConfigError`; `providerSetupSeconds` caps only image build /
+dependency install; `0` means unlimited), and a **Troubleshooting** section
+(uvx index lag, `degraded` providers / Ollama recovery, and the git-identity
+placeholder for memory/worktree commits).
+
 ### Invariants And Boundaries
 
 - Keep this README focused on the MCP package and its bootstrap, not the whole
@@ -49,6 +66,16 @@ Project-doc links are absolute GitHub URLs so they resolve from PyPI.
 - Keep requirements practical and package-level: Python 3.11+, uv/pip, an
   MCP-capable harness, Git, and Docker (plus Ollama for the grepai embedder) only
   when provider tools are enabled.
+- Keep the Settings file location guidance accurate: `skills_install` only finds
+  a skill target when the settings file's parent directory is named `mcp`, so the
+  README must keep telling users to place it under the harness registration folder
+  (e.g. `.claude/mcp/`, `.codex/mcp/`), not loose in the workspace root.
+- Keep the skill-layout note correct: `tree` is the default (namespaced, for
+  recursive scanners like Codex); Claude Code and Cursor need `layout="flat"`.
+  Drift here silently breaks skill discovery for those harnesses.
+- Keep the install-order rationale intact: scaffolding → skills → providers.
+  `runtime_install` builds provider images (step 2); indexing only *starts* in
+  step 3, so "providers last" means indexing, not image builds.
 
 ## Repo-Internal References
 
@@ -58,9 +85,12 @@ Project-doc links are absolute GitHub URLs so they resolve from PyPI.
 | The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | [pyproject.toml](agents-remember-md/mcp/pyproject.toml) |
 | The Quickstart hands post-scaffolding setup off to the C-13 install-and-onboard skill. | [C-13 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-13-install-and-onboard/SKILL.md) |
 | The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [mcp-tools.md](agents-remember-md/docs/reference/mcp-tools.md) |
+| The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
+| The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 
 ## Update History
 
+- 2026-05-30T21:22+02:00: Verified against `57944df` after the 0.9.0–0.9.4 run. Documented the README sections added since `412342847` — Settings file location (the `mcp`-parent rule that lets `skills_install` infer its target), Install Order And First Operations (scaffolding → skills → providers, `runnerIntegrityFailed`, `install_provider_deps`/`no_cache`), the `tree` vs `flat` skill-layout note, the `providerSeconds` → `providerSetupSeconds` rename, and Troubleshooting — and added matching invariants and references.
 - 2026-05-29T14:15+02:00: Rewrote the README as a self-contained, uvx-first bootstrap — added the 3-step "ask your agent to" Quickstart (hands off to C-13), inlined a starter `settings.json`, switched project-doc links to absolute GitHub URLs, and linked the MCP tool reference. Metadata pending closeout refresh.
 - 2026-05-28T15:52+02:00: Updated after the MCP package README added the canonical source checkout link.
 - 2026-05-28T15:43+02:00: Created after the MCP package gained a dedicated README and `pyproject.toml` started using it as package metadata. Verification metadata remains pinned until closeout commits the source change.

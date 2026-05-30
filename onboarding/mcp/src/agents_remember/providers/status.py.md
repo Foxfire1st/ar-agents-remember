@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00|
+| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
+| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -31,7 +31,10 @@ detail.
 The shared projection still checks provider runner integrity before watcher
 probing. When status is read, lifecycle settings are generated from trusted MCP
 settings, watcher status is invoked, and the current provider state file is
-written under the coordinator log/status root. Context packet callers receive
+written under the coordinator log/status root. The watcher probe runs as a
+bounded docker-control command timed by `DEFAULT_DOCKER_CONTROL_SECONDS`; it no
+longer reads the removed `timeout_caps["providerSeconds"]` key (renamed to
+`providerSetupSeconds`, which caps only provider setup, not status probing). Context packet callers receive
 the current-state file path and summary facts, not the full raw status tree.
 
 ## Invariants And Boundaries
@@ -56,6 +59,7 @@ the current-state file path and summary facts, not the full raw status tree.
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Documented that the watcher probe now uses `DEFAULT_DOCKER_CONTROL_SECONDS` instead of the removed `timeout_caps["providerSeconds"]` key (renamed `providerSetupSeconds`). Verified against `825a172`.
 - 2026-05-29T18:35+02:00: `_provider_capability`/`_provider_runtime`/`_watcher_state_from_up` return their `Literal` aliases (`ProviderCapability`/`ProviderRuntime`/`WatcherState`); behavior-preserving (commit `0549b28`).
 - 2026-05-28T19:52+02:00: Updated after provider status split compact summaries from dedicated diagnostics and began returning Pydantic-modeled packets.
 - 2026-05-28T12:32+02:00: Updated after provider status began persisting and returning current provider state snapshots.

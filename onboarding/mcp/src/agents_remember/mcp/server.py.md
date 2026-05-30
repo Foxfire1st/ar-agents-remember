@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T08:53+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00                     |
+| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
+| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -43,10 +43,19 @@ The public GrepAI provider surface is typed at registration time as well.
 `trace_action`, `symbol`, optional repo scoping, optional graph depth, and
 output format. The server only forwards these fields to the payload layer.
 
-`codex_benchmark_run` exposes an optional `codex_sandbox` argument with the
-same default as the benchmark service. The server only forwards the value; the
-runner validates it against its allowlist and maps `default` to an omitted
-`--sandbox` CLI argument.
+`runtime_install` registers the reconcile flags `dry_run` (act-by-default
+`False`), `include_benchmarks`, `install_provider_deps` (default `True`), and
+`no_cache` (default `False`); `no_cache=true` forces a from-scratch provider
+image rebuild that bypasses the skip-if-tag-exists shortcut. Registered tool
+functions now carry human-facing descriptions (docstrings) surfaced to the
+harness's tool list, added in the 0.9.x run.
+
+`codex_benchmark_run` exposes an optional `codex_sandbox` argument whose
+registered default is the literal `"danger-full-access"` (the same default as
+the benchmark service). The server only forwards the value; the runner validates
+it against its allowlist and maps `default` to an omitted `--sandbox` CLI
+argument. (A full-access default on a public package is a known hardening
+follow-up; benchmark tools stay `dry_run=True` so a real run is never implicit.)
 
 `provider_diagnostics` is registered as the explicit detail tool for raw
 provider state, keeping `context_packet` and `provider_status` focused on
@@ -85,6 +94,7 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Documented the 0.9.x registration changes — `runtime_install`'s `no_cache` flag (from-scratch image rebuild) alongside `install_provider_deps`, the human-facing tool descriptions now surfaced to the harness, and the literal `codex_sandbox="danger-full-access"` registered default (noted as a hardening follow-up). Verified against `8927f03`.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` contract (effectful + `cgc_*`/`grepai_*` query tools register `dry_run=False`; only `codex_benchmark_*` keeps `dry_run=True`) and refreshed the stale payload-builder reference to the `mcp/tools/` package.
 - 2026-05-29T08:53+02:00: Updated after `create_server()` began installing the FastMCP compact-content shim to minify tool-result text mirrors.
 - 2026-05-28T19:52+02:00: Updated after registering the dedicated `provider_diagnostics` MCP tool.

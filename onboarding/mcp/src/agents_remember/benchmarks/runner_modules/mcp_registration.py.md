@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-30T21:51+02:00                     |
+| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
+| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ Benchmark-local MCP/Codex registration and generated provider setup settings.
 builds benchmark `McpRuntimeConfig`/lifecycle settings, names provider
 containers per case, derives benchmark transcript roots under `logs/mcp`,
 derives provider log roots under `logs/providers/<provider>/<instance>`, and
-calls package-local provider setup with generated settings.
+calls package-local provider setup with generated settings. Generated
+`timeoutCaps` use the current `providerSetupSeconds` key (renamed from
+`providerSeconds`).
 
 ### Invariants And Boundaries
 
@@ -53,5 +55,6 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-05-30T21:51+02:00: Documented that benchmark-generated `timeoutCaps` now use the renamed `providerSetupSeconds` key (was `providerSeconds`). Verified against `825a172`.
 - 2026-05-28T12:32+02:00: Updated after benchmark-generated MCP/provider settings moved logs under `logs/mcp` and `logs/providers/`.
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`                                      |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00|
+| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19`                                      |
+| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -68,6 +68,7 @@ tool.
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Re-verified the route against `8927f03` after the 0.9.x run; the per-domain Layout, hot path, and invariants still match the current exports. `core.py` gained `no_cache`/`install_provider_deps` forwarding in `runtime_install_payload` (documented on the file card); the registry's public surface is unchanged.
 - 2026-05-29T18:35+02:00: Split `mcp/tools.py` (831 lines) into this `mcp/tools/` package by domain (commit `01f503d`); moved the registry purpose, invariants, and references here from the retired `tools.py.md`. Import surface unchanged.
 - 2026-05-28T19:52+02:00: (from `tools.py`) Updated after all public payload builders were wired through the Pydantic response model registry and controller imports were split by domain.
 - 2026-05-26T23:11+02:00: (from `tools.py`) Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI payload forwarding.

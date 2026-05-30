@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00|
+| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
+| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,7 +24,9 @@ GrepAI.
 ### Logic
 
 The module builds the pinned GrepAI runner image from the upstream Linux release
-asset, records runner image locks, reports watcher container status, runs
+asset (adding `--no-cache` and bypassing the skip-if-tag-exists shortcut for a
+from-scratch rebuild when `no_cache` is set), records runner image locks,
+reports watcher container status, runs
 `grepai watch` in the managed runner container with runtime and log mounts,
 stops the watcher container, and validates workspace status through
 `docker exec`. Watcher startup receives the backend and embedder host ports
@@ -56,6 +58,7 @@ provider status can report watcher state and uptime.
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Documented the `no_cache` build path for the GrepAI runner/watcher image (`--no-cache` + skip-shortcut bypass for a from-scratch rebuild). Verified against `8927f03`.
 - 2026-05-29T18:35+02:00: `grepai_watcher_dry_run_start_result` `commands` -> `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after GrepAI watcher status began including normalized container-state summaries.
 - 2026-05-27T00:25+02:00: Updated after watcher startup began rendering
