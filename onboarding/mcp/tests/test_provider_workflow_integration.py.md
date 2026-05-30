@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_workflow_integration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c`                         |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-05-30T21:51+02:00                     |
+| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493`                         |
+| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -45,5 +45,6 @@ facade.
 
 ## Update History
 
+- 2026-05-30T21:51+02:00: Re-verified against `825a172`; the only change was the MCP settings fixture adopting the renamed `timeoutCaps.providerSetupSeconds` key. Test behavior unchanged.
 - 2026-05-28T19:52+02:00: Updated after Pyright-oriented helper adapters and split worktree controller imports replaced the old `skill_tools` import.
 - 2026-05-27T18:10:12+02:00: Created for Docker-backed worktree and benchmark provider workflow validation.

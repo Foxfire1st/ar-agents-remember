@@ -76,7 +76,7 @@
       "tool_payload",
       "mcp/src/agents_remember/mcp/tools",
       "route-local-overview",
-      "23f4d7681f7fcd729049c5f27878c84bbb8f8e58",
+      "8927f038535bdb514526156df72603708bc89e19",
       "/../../../../overview.md",
       "mcp/tools/",
       "mcp/tools.py",
@@ -90,16 +90,16 @@
       "tools.py",
       "import _tool_payload as _tool_payload",
       "tools._tool_payload",
+      "8927f03",
+      "no_cache",
+      "install_provider_deps",
+      "runtime_install_payload",
       "tools.py.md",
       "5ab704a",
       "memory_quality_check",
       "agents-remember-md/mcp/src/agents_remember/mcp/server.py",
       "tool_registry.py",
-      "agents-remember-md/mcp/src/agents_remember/models/tool_registry.py",
-      "agents-remember-md/mcp/src/agents_remember/controllers/overview.md",
-      "test_models.py",
-      "agents-remember-md/mcp/tests/test_models.py",
-      "test_tool_response_conformance.py"
+      "agents-remember-md/mcp/src/agents_remember/models/tool_registry.py"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-30T21:51+02:00|
+| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
+| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,7 +31,10 @@ The authority-settings test also verifies generated `grepai-memory` lifecycle
 settings stay Docker-owned, including Docker mode, shared network, runner image
 and container, Postgres backend root, and Ollama embedder backend. It also
 checks that generated `codegraphcontext-code` backend settings include the
-shared CGC Docker network.
+shared CGC Docker network. New cases cover `timeoutCaps` parsing:
+`providerSetupSeconds=0` means unlimited, and the legacy `providerSeconds` key is
+rejected with a `ConfigError` carrying the "renamed to providerSetupSeconds"
+message.
 
 ### Invariants And Boundaries
 
@@ -49,6 +52,7 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 
 ## Update History
 
+- 2026-05-30T21:51+02:00: Documented the new `timeoutCaps` cases — `providerSetupSeconds=0` means unlimited, and the legacy `providerSeconds` key is rejected with the rename message. Verified against `825a172`.
 - 2026-05-29T18:35+02:00: Narrowed optional `memory_root`/`contract_path` with `assert ... is not None` before attribute access; behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after MCP config defaulted transcripts to `logs/mcp` and provider logs to `logs/providers/<provider>/<instance>`.
 - 2026-05-26T13:58+02:00: Updated after authority-settings coverage asserted the generated CGC backend Docker network.

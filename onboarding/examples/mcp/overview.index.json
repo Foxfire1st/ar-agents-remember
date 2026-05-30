@@ -10,16 +10,19 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
+    "examples/mcp/coding-guidelines.example.md",
     "examples/mcp/settings.example.json"
   ],
   "coverageCounts": {
     "sourceFilesInScope": 2,
-    "fileSidecars": 1,
+    "fileSidecars": 2,
     "childRoutes": 0
   },
   "routingTerms": [
+    "coding",
     "example",
     "examples",
+    "guidelines",
     "json",
     "mcp",
     "settings"
@@ -28,25 +31,34 @@
     "summary": "",
     "candidateHints": [
       "examples/mcp",
+      "examples/mcp/coding-guidelines.example.md",
       "examples/mcp/settings.example.json"
     ],
     "anchorHints": [
+      "coding-guidelines.example.md",
+      "coding-guidelines.example",
       "settings.example.json",
       "settings.example",
       "route-local-overview",
       "examples/mcp",
-      "3f09b75461760479b443f1b04b180772724e7a24",
+      "825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493",
       "examples/mcp/",
       "system/settings.json",
       "workspaceRoot/<repo-id>",
       "coordinationRoot/memory-repos/ar-<repo-id>",
+      "timeoutCaps",
+      "toolSeconds",
+      "providerSetupSeconds",
+      "providerSeconds",
+      "system/coding-guidelines.md",
       "doc_type",
       "sourceRoute",
       "lastUpdated",
-      "T15",
+      "T21",
       "lastVerifiedCommitHash",
-      "f09b75461760479b443f1b04b180772724e7a24",
+      "a172bdf0d4ee3489ae25dbcc19c4e9c7b9493",
       "lastVerifiedCommitDate",
+      "T17",
       "MCP",
       "workspaceRoot",
       "coordinationRoot"

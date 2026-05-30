@@ -105,11 +105,15 @@
       "MCP",
       "route-local-overview",
       "mcp/src/agents_remember/benchmarks/runner_modules",
-      "3f09b75461760479b443f1b04b180772724e7a24",
+      "825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493",
       "/../../../overview.md",
       "runner_modules",
       "benchmarks/runner.py",
       "agents-remember-md",
+      "825a172",
+      "3f09b75",
+      "providerSeconds",
+      "providerSetupSeconds",
       "logs/",
       "runner.py",
       "agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py",
@@ -117,11 +121,7 @@
       "agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py",
       "test_worktree_support.py",
       "agents-remember-md/mcp/tests/test_worktree_support.py",
-      "agents_remember",
-      "doc_type",
-      "sourceRoute",
-      "lastUpdated",
-      "T15"
+      "agents_remember"
     ]
   },
   "fallback": {

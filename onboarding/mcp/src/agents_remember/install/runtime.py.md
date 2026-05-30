@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00|
+| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
+| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -43,8 +43,10 @@ upward from the installed module until it finds the source/runtime asset tree.
 from `McpRuntimeConfig`, generates provider lifecycle settings from MCP
 settings, calls package-local provider lifecycle install functions when provider
 deps are enabled, and writes a runner integrity manifest after non-dry-run
-installs. The optional `source_root` parameter is an internal development/test
-hook, not a public MCP path field.
+installs. It threads `no_cache` through to the provider lifecycle install calls:
+by default image builds skip any image whose tag already exists, and
+`no_cache=true` forces a from-scratch rebuild. The optional `source_root`
+parameter is an internal development/test hook, not a public MCP path field.
 
 The module is intentionally not a second runtime-install command surface. MCP
 clients reach it through the `runtime_install` tool.
@@ -80,6 +82,7 @@ clients reach it through the `runtime_install` tool.
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Documented the `no_cache` flag threaded through `install_runtime_from_config` into the provider lifecycle install calls — image builds skip existing tags by default, `no_cache=true` forces a from-scratch rebuild. Verified against `8927f03`.
 - 2026-05-29T18:35+02:00: Extracted `_remove_with_retry` from `remove_path` to drop cyclomatic complexity below 11; behavior-preserving (commit `e3dab63`).
 - 2026-05-28T12:32+02:00: Updated after runtime install moved operator logs from `providers/logs/` into the central `logs/` tree.
 - 2026-05-26T12:51+02:00: Updated after runtime install stopped preserving provider venvs and CGC provider dependencies became Docker-owned.

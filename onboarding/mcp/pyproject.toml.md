@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `f3d57f6a9cf48a314ec7c9c6c8cb11d5e0eeb893`                      |
-| lastVerifiedCommitDate | 2026-05-29T20:39:01+02:00|
+| lastUpdated            | 2026-05-30T21:22+02:00                     |
+| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
+| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -34,7 +34,15 @@ Pyright, Radon, and Ruff.
 
 The `agents-remember-mcp` console script points at
 `agents_remember.mcp.__main__:main`, while setuptools discovers import packages
-from `mcp/src`.
+from `mcp/src`. The `[tool.setuptools.package-data]` block ships the installable
+runtime scaffold — `package_data/**/*` (AGENTS.md templates, skills, provider
+assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
+— so `runtime_install` can reconcile those package-owned assets into a
+coordinator from a pip/uvx install with no source checkout.
+
+The package `version` tracks the release line; at this verification it is
+`0.9.4`. It is the same string `runtime_install` and `server_info` report, and
+it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### Invariants And Boundaries
 
@@ -48,6 +56,9 @@ from `mcp/src`.
   optional dependency group, not the base MCP runtime dependency set.
 - The package discovery root is `src`; package modules should remain under
   `mcp/src/agents_remember/`.
+- The installable runtime scaffold is shipped as `package-data` under
+  `agents_remember/package_data/`; assets `runtime_install` reconciles into a
+  coordinator must live inside that tree to be packaged by a pip/uvx install.
 
 ## Repo-Internal References
 
@@ -59,9 +70,11 @@ from `mcp/src`.
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | [__main__.py](agents-remember-md/mcp/src/agents_remember/mcp/__main__.py) |
 | MCP server payloads report the package-level `SERVER_VERSION`. | [__init__.py](agents-remember-md/mcp/src/agents_remember/mcp/__init__.py) |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | [README.md](agents-remember-md/mcp/README.md) |
+| `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 
 ## Update History
 
+- 2026-05-30T21:22+02:00: Realigned to MCP `0.9.4` after the 0.9.0–0.9.4 run; version still tracks `SERVER_VERSION`. Documented the `package-data` runtime-scaffold packaging block (the card body previously described the `0.3.0` release).
 - 2026-05-29T21:00+02:00: Bumped the package `version` to `0.3.0` for the MCP `0.3.0` release (act-by-default `dry_run` flip), kept aligned with `SERVER_VERSION`.
 - 2026-05-28T19:52+02:00: Updated after Pydantic and tiktoken became MCP runtime dependencies and Pyright joined the dev quality dependency group.
 - 2026-05-28T15:43+02:00: Updated while preparing MCP package release `0.2.0`, documenting package/server version alignment, and wiring the dedicated MCP README into package metadata. Verification metadata remains pinned until closeout commits the source change.

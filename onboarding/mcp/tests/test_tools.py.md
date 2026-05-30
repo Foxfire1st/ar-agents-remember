@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `f3d57f6a9cf48a314ec7c9c6c8cb11d5e0eeb893` |
-| lastVerifiedCommitDate | 2026-05-29T20:39:01+02:00|
+| lastUpdated            | 2026-05-30T21:51+02:00                     |
+| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
+| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -40,6 +40,10 @@ Payload tests track the act-by-default `dry_run` contract: the `skills_install`,
 `dry_run=True` per call because the planned provider command is only exposed in
 the preview path.
 
+Newer cases assert that every public tool registers a human-facing description,
+and that `runtime_install_payload` exposes a `no_cache` parameter defaulting to
+`False` and forwards `no_cache=True` into the `RuntimeInstallRequest`.
+
 ## Invariants And Boundaries
 
 - Public MCP tools should remain typed and package-owned.
@@ -54,7 +58,7 @@ the preview path.
 
 | Finding | Source Path |
 | --- | --- |
-| Public tool metadata and payload builders live in `tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | [tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools) |
 | Public response model registry validates payload shapes. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
 | Server registration lives in `server.py`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
 | Domain controller modules convert public MCP payloads into service calls. | [controllers overview](agents-remember-md/mcp/src/agents_remember/controllers/overview.md) |
@@ -62,6 +66,7 @@ the preview path.
 
 ## Update History
 
+- 2026-05-30T21:51+02:00: Documented the new coverage — every public tool must register a description, and `runtime_install_payload` exposes/forwards `no_cache` (default `False`). Repaired the stale `tools.py` reference to the split `mcp/tools/` package. Verified against `57944df`.
 - 2026-05-29T21:00+02:00: Updated the `ping_payload()` version assertion to MCP release `0.3.0`.
 - 2026-05-29T20:25+02:00: Updated after the `skills_install`/`route_index_refresh`/`memory_init` payload tests moved to act-by-default assertions and the typed CGC command-construction test pinned `dry_run=True` (`dry_run`-default flip task).
 - 2026-05-28T19:52+02:00: Updated after public tool payloads began validating through Pydantic response models and `ping_payload()` started emitting token metadata defaults.

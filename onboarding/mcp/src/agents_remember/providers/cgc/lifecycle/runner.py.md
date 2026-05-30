@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T13:58+02:00                     |
-| lastVerifiedCommitHash | `45214435fd2de65765a8230ceb1dcfe188d1944d`                                  |
-| lastVerifiedCommitDate | 2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-05-30T21:33+02:00                     |
+| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19`                                  |
+| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ CodeGraphContext provider execution.
 The module generates a `python:3.12-slim` Dockerfile that installs the pinned
 CodeGraphContext dependency set, copies a generated patch script into the build
 context, applies the managed CGC patches inside the image, and records the image
-lock after successful builds. Runtime helpers build Docker command lines for
+lock after successful builds. When `no_cache` is set the build adds `--no-cache`
+and bypasses the skip-if-tag-exists shortcut so the image is rebuilt from
+scratch; otherwise an existing tagged image short-circuits the build. Runtime helpers build Docker command lines for
 bounded CGC commands, visualizer commands, and long-running watcher containers.
 Those commands mount the provider instance root and code repository at their
 host paths, run as the host UID/GID when supported so mounted runtime files
@@ -56,5 +58,6 @@ Docker network, and route FalkorDB access through the backend container name.
 
 ## Update History
 
+- 2026-05-30T21:33+02:00: Documented the `no_cache` build path — `--no-cache` plus bypassing the skip-if-tag-exists shortcut for a from-scratch image rebuild. Verified against `8927f03`.
 - 2026-05-26T13:58+02:00: Updated after CGC runner commands moved from `host.docker.internal` to the shared CGC Docker network and began passing host UID/GID into containers.
 - 2026-05-26T12:51+02:00: Created when CGC provider execution moved from host venvs to a Docker runner image/container.

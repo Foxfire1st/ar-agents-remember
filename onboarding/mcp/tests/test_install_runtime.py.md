@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_install_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-05-30T21:51+02:00                     |
+| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
+| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -42,7 +42,10 @@ venvs are pruned.
 helpers — `any_provider_enabled`, `configured_provider_enabled`, and
 `install_provider_dependencies_from_settings` (the none-configured skip, the
 run-enabled path with mocked `lifecycle.grepai_install`/`cgc_install_all`, and the
-failure-raises path, all with `dry_run=True`). `ReadSkillNameTests` covers
+failure-raises path, all with `dry_run=True`). It also covers `no_cache`
+threading: `install_provider_dependencies_from_settings` forwards `no_cache=True`
+into both the GrepAI and CGC provider args, and defaults `no_cache` to `False`
+when unset. `ReadSkillNameTests` covers
 `install.skills._read_skill_name` frontmatter parsing (name present, frontmatter
 without a name, and no frontmatter). These drive coverage on the previously
 untested install helpers so they clear the CRAP threshold.
@@ -92,6 +95,7 @@ No sibling repository evidence is needed for this installer test.
 
 ## Update History
 
+- 2026-05-30T21:51+02:00: Documented the new `no_cache` threading coverage in `ProviderDependencyHelperTests` — `no_cache=True` reaches both provider args and defaults to `False`. Verified against `8927f03`.
 - 2026-05-29T20:25+02:00: Documented the new `ProviderDependencyHelperTests` and `ReadSkillNameTests` coverage added to clear the install helpers' CRAP threshold (`dry_run`-default flip task).
 - 2026-05-28T12:32+02:00: Updated after runtime install moved operator logs from `providers/logs/` into the central `logs/` tree and tests asserted the new directories.
 - 2026-05-26T12:51+02:00: Updated after runtime install began pruning provider venvs because providers are Docker-owned.
