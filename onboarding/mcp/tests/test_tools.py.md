@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:51+02:00                     |
-| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
-| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
+| lastUpdated            | 2026-05-30T22:29+02:00                     |
+| lastVerifiedCommitHash | `5ccfed5b722ee34158b9533fb7e86e4196cfb569` |
+| lastVerifiedCommitDate | 2026-05-30T22:38:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -25,8 +25,10 @@ GrepAI and CodeGraphContext command construction, worktree tool behavior, and
 Codex benchmark execution policy reporting.
 
 After the response-contract wiring, tests also protect that modeled payloads
-include the shared token metadata defaults and that service-backed MCP tools do
-not expose legacy command-capture wrapper fields such as raw `argv`, `stdout`,
+carry populated token metadata — `test_ping_payload` asserts a real `tokens`
+count (> 0), `tokenizer == "tiktoken:o200k_base"`, and `tokenCountExact is True`
+since the S6 token-counter wiring — and that service-backed MCP tools do not
+expose legacy command-capture wrapper fields such as raw `argv`, `stdout`,
 `stderr`, or parsed `payload` wrappers.
 
 The typed CGC assertions keep the old generic `cgc_query` name absent and
@@ -66,6 +68,7 @@ and that `runtime_install_payload` exposes a `no_cache` parameter defaulting to
 
 ## Update History
 
+- 2026-05-30T22:29+02:00: Updated `test_ping_payload` for the S6 token-counter wiring — it now asserts populated `tokens`/`tokenizer`/`tokenCountExact` instead of the zero defaults, and the version assertion moved to `0.9.5`. Typed the `fake_run` stub against `RuntimeInstallRequest` (with its import) to clear a Pyright error. Verification metadata stays pinned until closeout commits the change.
 - 2026-05-30T21:51+02:00: Documented the new coverage — every public tool must register a description, and `runtime_install_payload` exposes/forwards `no_cache` (default `False`). Repaired the stale `tools.py` reference to the split `mcp/tools/` package. Verified against `57944df`.
 - 2026-05-29T21:00+02:00: Updated the `ping_payload()` version assertion to MCP release `0.3.0`.
 - 2026-05-29T20:25+02:00: Updated after the `skills_install`/`route_index_refresh`/`memory_init` payload tests moved to act-by-default assertions and the typed CGC command-construction test pinned `dry_run=True` (`dry_run`-default flip task).

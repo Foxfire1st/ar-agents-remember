@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:22+02:00                     |
-| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
-| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
+| lastUpdated            | 2026-05-30T22:29+02:00                     |
+| lastVerifiedCommitHash | `5ccfed5b722ee34158b9533fb7e86e4196cfb569` |
+| lastVerifiedCommitDate | 2026-05-30T22:38:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The quickstart is a short, harness-agnostic three-step agent-driven flow — (1) wire the MCP server via `uvx`, (2) run `runtime_install` then `skills_install`, (3) run the `C-13-install-and-onboard` skill (which sets up the memory repo, installs the start hook, bootstraps onboarding, and starts provider indexing) — framed around three harness restarts (load server, discover skills, activate hook). | L47-L65 | [README.md](agents-remember-md/README.md) |
 | The README routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L67-L79 | [README.md](agents-remember-md/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees. | L80-L111 | [README.md](agents-remember-md/README.md) |
-| The README's Status section pins the project at `0.9.4` (pre-1.0) and warns that tool names/args, the skill set, runtime layout, and providers may still change before 1.0. | L113-L115 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `0.9.5` (pre-1.0) and warns that tool names/args, the skill set, runtime layout, and providers may still change before 1.0. | L113-L115 | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L44 | [docs/README.md](agents-remember-md/docs/README.md) |
 
 ## Cross-Repo References
@@ -77,6 +77,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-05-30T22:29+02:00: Bumped the Status-section version reference to `0.9.5` for the S6 token-counter release. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-30T21:22+02:00: Refreshed for the 0.9.0–0.9.4 run and verified against `57944df`. Rewrote the Logic quickstart description to the current short three-step, agent-driven flow that hands onboarding to `C-13-install-and-onboard` and frames the three harness restarts; corrected the stale Repo-Internal References (the quickstart row had described an older `C-00`/`C-03`/`include_benchmarks`/`.codex` flow) and realigned all README line ranges to the 119-line source; cleared the resolved verification-refresh Todo.
 - 2026-05-29T21:00+02:00: Updated after the Quickstart stopped telling users to clone this repo (Agents Remember runs from the published `agents-remember-mcp` package via `uvx`) and switched the `runtime_install`/`skills_install` examples to the act-by-default form.
 - 2026-05-29T20:30+02:00: Verified the sidecar body against the committed re-spined `README.md` (TLDR, the three retrieval substrates, quickstart, install pages, source/runtime layout) and advanced verification metadata to the landed commit `01f503d`.
