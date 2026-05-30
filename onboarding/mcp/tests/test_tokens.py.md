@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tokens.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T22:29+02:00                     |
-| lastVerifiedCommitHash | `5ccfed5b722ee34158b9533fb7e86e4196cfb569`                                         |
-| lastVerifiedCommitDate |2026-05-30T22:38:37+02:00|
+| lastUpdated            | 2026-05-31T01:06+02:00                     |
+| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6`                                         |
+| lastVerifiedCommitDate |2026-05-31T01:23:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -47,4 +47,5 @@ metadata fields back into the counted JSON.
 
 ## Update History
 
+- 2026-05-31T01:06+02:00: Updated the `PingResponse` fixtures' `version` to `0.9.6` (MCP 0.9.6); the fixtures stay version-agnostic for the token-count assertions. Verification metadata stays pinned until closeout commits the change.
 - 2026-05-30T22:29+02:00: Created for the S6 token-counter wiring — first direct tests of the counting engine and the fixpoint self-consistency guarantee. Verification metadata pending closeout commit.

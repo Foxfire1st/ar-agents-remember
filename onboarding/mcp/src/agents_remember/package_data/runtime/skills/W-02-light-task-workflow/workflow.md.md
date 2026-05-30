@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-31T01:06+02:00                     |
+| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6` |
+| lastVerifiedCommitDate | 2026-05-31T01:23:17+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This workflow file gives the step-by-step W-02 procedure for creating a task wra
 
 ### Logic
 
-The workflow starts with context resolution and drift checks, classifies C-02 drift into clean-source update candidates versus dirty-source active work-in-progress, creates or reuses a task wrapper folder, writes `task.md` from the template, stops for approval, then executes checklist items while keeping the task artifact current. The wrapper folder is created before C-09 worktrees; refreshed external-memory onboarding and ledger changes are committed before worktree start; worktree-backed light tasks later keep `contract.md` beside `task.md` under the C-08 resolved task root. After implementation, worktree-backed tasks prepare a C-09 closeout dry-run and stop for explicit commit approval before any closeout commits are created.
+The workflow starts with context resolution and drift checks, classifies C-02 drift into clean-source update candidates versus dirty-source active work-in-progress, creates or reuses a task wrapper folder, applies the Task Collaboration Doctrine (`tasks/AGENTS.md`) sized to the request and records the settled design in the task file's `## Design` section, writes `task.md` from the template, stops for approval, then executes checklist items while keeping the task artifact current. The wrapper folder is created before C-09 worktrees; refreshed external-memory onboarding and ledger changes are committed before worktree start; worktree-backed light tasks later keep `contract.md` beside `task.md` under the C-08 resolved task root. After implementation, worktree-backed tasks prepare a C-09 closeout dry-run and stop for explicit commit approval before any closeout commits are created.
 
 ### Conventions
 
@@ -48,8 +48,9 @@ The workflow defines the concrete process behind the W-02 skill.
 | Light-task artifacts use `<task-root>/<task-slug>/task.md`, and C-09 later places `contract.md` beside `task.md` when worktrees are created. | L15-L25 | [W-02 workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md) |
 | Drift-gated planning now records that clean-source update candidates are refreshed through C-05, dirty-source drift is left alone unless explicitly owned, and refreshed external-memory onboarding plus ledger changes must be committed before any C-09 worktree starts. | L45-L52 | [W-02 workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md) |
 | Drift detection is part of task planning before the durable plan is finalized. | L45-L51 | [W-02 workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md) |
-| Planning checks C-08 resolved docs, sources, and onboarding roots before writing the approval artifact. | L53-L64; L88-L105 | [W-02 workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md) |
-| Implementation, validation, onboarding propagation, closeout preview, and commit approval handoff are one checklist-driven cycle. | L107-L164 | [W-02 workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md) |
+| Planning checks C-08 resolved docs, sources, and onboarding roots before writing the approval artifact. | L57-L64; L98-L115 | [W-02 workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md) |
+| Implementation, validation, onboarding propagation, closeout preview, and commit approval handoff are one checklist-driven cycle. | L117-L174 | [W-02 workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md) |
+| Before writing `task.md`, the workflow applies the Task Collaboration Doctrine sized to the request and records the settled design in the task file's `## Design` section, from which the implementation steps derive. | L66-L73; L85 | [W-02 workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md) |
 
 ## Cross-Repo References
 
@@ -61,6 +62,7 @@ No sibling repository evidence is needed for the current workflow file.
 
 ## Update History
 
+- 2026-05-31T01:06+02:00: Added step 6 "Reframe and design before writing the plan" linking the Task Collaboration Doctrine and recording settled design in the task file's `## Design` section before implementation steps; renumbered later steps to 7 and 8, added the design item to the required-sections list, and refreshed the citations my insertion shifted.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to W-02 planning.
 - 2026-05-24T04:34+02:00: Updated task-start references after C-02 was renamed to memory quality control.

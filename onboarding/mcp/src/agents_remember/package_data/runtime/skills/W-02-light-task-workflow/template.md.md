@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/template.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-31T01:06+02:00                     |
+| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6` |
+| lastVerifiedCommitDate | 2026-05-31T01:23:17+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This template defines the required shape of W-02 `task.md` artifacts inside task
 
 ### Logic
 
-The template includes status, repo, type, objective, design philosophy, requirements, implementation steps, examples, decision log, open questions, and references. Usage rules include resolved C-08 paths and the wrapper location `<task-root>/<task-slug>/task.md`; when worktrees are created, C-09 places `contract.md` beside that file.
+The template includes status, repo, type, objective, requirements, a `## Design` section, implementation steps, examples, decision log, open questions, and references. The `## Design` section sits above implementation steps and holds the settled design sized to the request per the Task Collaboration Doctrine (`tasks/AGENTS.md`), or a note that no design reasoning is needed. Usage rules include resolved C-08 paths and the wrapper location `<task-root>/<task-slug>/task.md`; when worktrees are created, C-09 places `contract.md` beside that file.
 
 ### Conventions
 
@@ -45,8 +45,8 @@ The template is the stable artifact shape for W-02.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The template requires status metadata, objective, design philosophy, requirements, implementation steps, examples, decision log, open questions, and references. | L8-L86 | [W-02 template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/template.md) |
-| Usage rules require C-08 resolved paths, wrapper-folder task placement, checklist progress, status changes, and append-only decisions. | L91-L105 | [W-02 template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/template.md) |
+| The template requires status metadata, objective, requirements, a `## Design` section (sized per `tasks/AGENTS.md`), implementation steps, examples, decision log, open questions, and references. | L8-L97 | [W-02 template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/template.md) |
+| Usage rules require C-08 resolved paths, wrapper-folder task placement, checklist progress, status changes, append-only decisions, and sizing the `## Design` section to the request. | L99-L114 | [W-02 template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/template.md) |
 
 ## Cross-Repo References
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for the current template file.
 
 ## Update History
 
+- 2026-05-31T01:06+02:00: Added a `## Design` section above implementation steps (settled design sized per the Task Collaboration Doctrine) plus a usage rule for it; corrected the earlier "design philosophy" description that did not match the actual template.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-10T00:47: Updated after the W-02 template became the `task.md` file inside task wrapper folders.
 - 2026-05-09T22:57: Refreshed verification metadata and tightened template citations.
