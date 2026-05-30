@@ -175,3 +175,79 @@ the standalone CRAP-Calculator command.
 - When behavior changes while files are renamed, split, merged, or deleted, check whether existing behavior moved from one source location to another. Reuse the still-accurate fine print in the new target onboarding and update only the parts that changed.
 - Treat onboarding deletion as the last option. It is appropriate only when the documented behavior is gone and no safe target remains for the preserved knowledge.
 - During refactor closeout, make the source move and the onboarding move visible together so reviewers can see which behavior was preserved, which behavior changed, and which metadata was refreshed.
+
+---
+
+## Release And Changelog Convention
+
+This repo has no `CHANGELOG.md`. The release history and user-facing release
+notes live in **GitHub Releases** — that is the canonical changelog, and it is
+what the README's "read the release notes before upgrading" line points at. Do
+not introduce a `CHANGELOG.md`; keep release notes as GitHub Releases.
+
+### Tag scheme
+
+- `mcp-vX.Y.Z` is the canonical release tag. Pushing it triggers
+  [`publish-mcp-to-pypi.yml`](agents-remember-md/.github/workflows/publish-mcp-to-pypi.yml)
+  (`on: push: tags: mcp-v*`), which builds the wheel/sdist and publishes
+  `agents-remember-mcp` to PyPI. Attach the GitHub Release to this `mcp-vX.Y.Z`
+  tag.
+- A bare `vX.Y.Z` scheme exists only on the older `v0.9.0` Release. Do not start
+  new releases on it; use `mcp-v*` going forward.
+
+### Version bump locations (keep in sync)
+
+A release bumps the version string in exactly four places; they must match:
+
+1. `mcp/pyproject.toml` — `version`
+2. `mcp/src/agents_remember/mcp/__init__.py` — `SERVER_VERSION`
+3. `README.md` — the Status section line
+4. `mcp/tests/test_tools.py` — the `payload["version"]` assertion in `test_ping_payload`
+
+`SERVER_VERSION` and `pyproject` `version` must stay equal so installed server
+payloads (`ping`, `server_info`) report the same version PyPI installs.
+
+### Release commit subject
+
+Use `Release MCP X.Y.Z: <one-line summary>` (version-first), matching the
+existing release-commit history.
+
+### End-to-end release flow
+
+1. bump the four version locations, run the full quality wrapper, and close out
+   the change (code, onboarding, ledger) per `C-12-closeout`
+2. push the `mcp-vX.Y.Z` tag; confirm `publish-mcp-to-pypi.yml` succeeded and the
+   version resolves on PyPI (note: PyPI's JSON metadata can show a release ~30s
+   before the files are installable; `uv`/`uvx` may need `--refresh`)
+3. create the GitHub Release on the `mcp-vX.Y.Z` tag (see format below)
+
+The publish workflow does **not** create the GitHub Release; that step is
+manual.
+
+### GitHub Release format
+
+House style observed across `v0.7.0`–`v0.9.0`:
+
+- a **thematic title** that names the headline change, not a version-only title
+  (e.g. "Worktree management & Git Versioned Memory")
+- a Markdown body shaped as:
+
+```markdown
+## Agents Remember X.Y.Z
+<1–2 sentence summary of the release theme>
+
+### Highlights
+- <bullet>
+- <bullet>
+
+### <Themed section, e.g. "Onboarding And Memory">
+- <sub-bullets>
+```
+
+Create it with the web UI (repo → Releases → Draft a new release → choose the
+`mcp-vX.Y.Z` tag) or the `gh` CLI; use `--draft` first to review before
+publishing:
+
+```text
+gh release create mcp-vX.Y.Z --target main --title "<thematic title>" --notes-file <notes.md> --draft
+```
