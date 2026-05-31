@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/storage.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,9 @@ storage settings and path rules.
 
 The module normalizes rule bases, evaluates include/exclude glob variants,
 handles include and exclude file types, and returns the selected storage mode,
-`disabled`, or the hybrid default for unmatched files.
+`disabled`, or the hybrid default for unmatched files. The boolean predicate
+`is_sidecar_storage()` reports whether a storage mode writes a sidecar
+(`repo-sidecar` or `memory-repo`).
 
 ### Invariants And Boundaries
 
@@ -60,5 +62,6 @@ No cross-repository evidence is needed for storage policy.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Renamed the boolean storage-mode predicate `sidecar_storage_label` to `is_sidecar_storage` (signature/return `bool` unchanged); added a Logic note naming the new symbol (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `rule_excludes_source` now returns `bool` via `bool(excludes)` instead of `list[str] | bool`; behavior-preserving (commit `0549b28`).
 - 2026-05-25T20:57+02:00: Created by extracting source storage/path-rule evaluation from the C-08 resolver.

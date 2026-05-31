@@ -31,8 +31,7 @@ Start in `src/agents_remember/mcp/config.py` for trusted settings parsing,
 and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned
 runtime installation. Provider status is composed in `providers/status.py`;
 provider lifecycle settings are generated from MCP settings in
-`providers/settings.py`; runner executable integrity is checked by
-`providers/integrity.py` before watcher status is trusted. Provider lifecycle
+`providers/settings.py`. Provider lifecycle
 implementation is now split between `providers/lifecycle.py` and
 `providers/lifecycle_modules/`; there is no legacy `provider_lifecycle.py`
 facade. Memory-layer quality control lives under
@@ -125,12 +124,13 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
 | `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember-md/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 | Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
-| Provider status checks runner integrity before watcher status and reports structured recovery actions on integrity failure. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py); [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
+| Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
 | Provider lifecycle is now a facade plus focused modules instead of a monolithic file. | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle.py); [lifecycle modules overview](src/agents_remember/providers/lifecycle_modules/overview.md) |
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 
 ## Update History
 
+- 2026-05-31T12:40+02:00: Removed the deleted `providers/integrity.py` runner-integrity prose and reference row after the provider-runner integrity feature was removed in the 1.0.0 remediation; `providers/status.py` no longer checks runner integrity.
 - 2026-05-29T08:53+02:00: Updated after `server.py` began installing the `mcp/compact_content.py` shim that minifies tool-result text mirrors, and after dev-time tool-response conformance tests landed.
 - 2026-05-28T19:52+02:00: Updated after public MCP response payloads were wired through Pydantic models, context packets moved to compact V2, provider diagnostics became the detail boundary, and controllers split by domain.
 - 2026-05-28T13:40+02:00: Tightened MCP provider invariants to forbid CGC host `venvRoot`, host executable, and site-packages patch fallback paths.

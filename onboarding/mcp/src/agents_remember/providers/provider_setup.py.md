@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -24,9 +24,17 @@ modules.
 The facade imports shared setup helpers from `setup_common.py`, CGC seed and
 bundle helpers from `cgc/seed.py` and `cgc/bundle.py`, CGC provider-level setup
 from `cgc/setup.py`, and GrepAI provider-level setup from `grepai/setup.py`.
-It preserves the public symbols callers and tests already use, including
-`run_provider_setup`, `ProviderSetupRequest`, `rewrite_cgc_bundle_paths`,
-`isolated_cgc_settings`, and the subprocess helper exports.
+It re-exports only the narrow set of symbols callers and tests still use,
+including `run_provider_setup`, `ProviderSetupRequest`, `rewrite_cgc_bundle_paths`,
+`isolated_cgc_settings`, and the `subprocess` handle. Unused compatibility
+re-exports (e.g. `command_display`, `expand_template`, `load_json`,
+`parse_json_stdout`, `stable_provider_id`, `subprocess_env`,
+`cgc_seed_source_extra_args`, `configured_cgc_repo_root`, `git_head`,
+`write_isolated_cgc_settings`, `path_replacements`, `rewrite_json_value`,
+`rewrite_string`) are no longer aliased here; import them from their owning
+module. `load_settings` and `settings_path` are called with only the settings
+path argument (`args.from_settings`); the `coordination_root` parameter was
+dropped from both helpers.
 
 During `prepare`, the facade runs install steps, GrepAI refresh, CGC seed or
 refresh fallback, and watcher start/status in sequence. CGC seed failure still
@@ -74,6 +82,7 @@ per-provider duplicate isolated-settings keys.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Pruned unused compatibility re-exports (`command_display`, `expand_template`, `load_json`, `parse_json_stdout`, `stable_provider_id`, `subprocess_env`, `cgc_seed_source_extra_args`, `cgc_seed_source_settings_path`, `configured_cgc_repo_root`, `git_head`, `write_isolated_cgc_settings`, `path_replacements`, `rewrite_json_value`, `rewrite_string`) and dropped the `coordination_root` argument from `load_settings`/`settings_path` calls; corrected the Logic prose's "preserves the public symbols ... subprocess helper exports" claim to the narrowed export set (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after duplicate per-provider isolated
   settings payload keys were removed in favor of canonical
   `isolatedProviderSettings`.

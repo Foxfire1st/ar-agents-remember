@@ -42,8 +42,6 @@ history-order fixes.
 - `style/update_history/` checks that onboarding `## Update History` bullets
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
-- `integrity/ledger_consistency.py` is reserved for a future ledger-vs-memory
-  consistency check.
 
 ## Invariants And Boundaries
 
@@ -70,6 +68,7 @@ history-order fixes.
 
 ## Update History
 
+- 2026-05-31T12:40+02:00: Removed the `integrity/ledger_consistency.py` reserved-stub bullet after the empty stub source and its sidecar were deleted in the 1.0.0 remediation.
 - 2026-05-24T03:24+02:00: Updated after adding `check_missing_onboarding` as the pre-code-commit integrity pass for newly added files.
 - 2026-05-24T03:09+02:00: Updated after adding the dedicated `history_order_fix.py` script and keeping `memory_quality_check` report-only.
 - 2026-05-24T02:47+02:00: Created after memory quality became a first-class package route with integrity and style subdomains.

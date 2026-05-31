@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/worktrees/modules/__init__.py",
+    "mcp/src/agents_remember/worktrees/modules/args.py",
     "mcp/src/agents_remember/worktrees/modules/cleanup.py",
     "mcp/src/agents_remember/worktrees/modules/cli.py",
     "mcp/src/agents_remember/worktrees/modules/closeout.py",
@@ -23,13 +24,14 @@
     "mcp/src/agents_remember/worktrees/modules/start.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 11,
-    "fileSidecars": 11,
+    "sourceFilesInScope": 12,
+    "fileSidecars": 12,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
+    "args",
     "cleanup",
     "cli",
     "closeout",
@@ -49,10 +51,11 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, and `cleanup.py` own the named C-09 lifecycle operations. - `onboarding.py` owns closeout-time onboarding metadata and entity fingerprint refresh planning. - `cli.py` keeps command-line parsing and JSON print adapters out of operation modules.",
+    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, and `cleanup.py` own the named C-09 lifecycle operations. `integrate.py` performs the code and memory fast-forwards atomically: it pre-validates that both fast-forwards are possible before mutating either branch and rolls both heads back on any memory-side failure, so integration never lands a half-integrated state. - `onboarding.py` owns closeout-time onboarding metadata and entity fingerprin...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
+      "mcp/src/agents_remember/worktrees/modules/args.py",
       "mcp/src/agents_remember/worktrees/modules/cleanup.py",
       "mcp/src/agents_remember/worktrees/modules/cli.py",
       "mcp/src/agents_remember/worktrees/modules/closeout.py",
@@ -67,6 +70,8 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "args.py",
+      "args",
       "cleanup.py",
       "cleanup",
       "cli.py",
@@ -87,13 +92,15 @@
       "onboarding",
       "start.py",
       "start",
-      "JSON",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "01f503dcba3a6eacc1587941f6a89fce0bcc72a2",
+      "c20a3292e667d227a3be0c1fb276f8a701df814f",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
+      "WorktreeArgs",
+      "argparse.Namespace",
+      "from_namespace",
       "agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py",
       "test_worktree_support.py",
       "agents-remember-md/mcp/tests/test_worktree_support.py",
@@ -101,14 +108,14 @@
       "doc_type",
       "sourceRoute",
       "lastUpdated",
-      "T18",
+      "T12",
       "lastVerifiedCommitHash",
-      "f503dcba3a6eacc1587941f6a89fce0bcc72a2",
       "lastVerifiedCommitDate",
+      "T14",
       "governingOverview",
       "git_worktree_manager",
-      "test_worktree_support",
-      "T20"
+      "DTO",
+      "JSON"
     ]
   },
   "fallback": {

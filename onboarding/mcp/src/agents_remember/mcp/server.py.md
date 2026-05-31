@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:33+02:00                     |
-| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
-| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -51,11 +51,14 @@ functions now carry human-facing descriptions (docstrings) surfaced to the
 harness's tool list, added in the 0.9.x run.
 
 `codex_benchmark_run` exposes an optional `codex_sandbox` argument whose
-registered default is the literal `"danger-full-access"` (the same default as
-the benchmark service). The server only forwards the value; the runner validates
-it against its allowlist and maps `default` to an omitted `--sandbox` CLI
-argument. (A full-access default on a public package is a known hardening
-follow-up; benchmark tools stay `dry_run=True` so a real run is never implicit.)
+registered default is `CODEX_BENCHMARK_SANDBOX` (imported from
+`agents_remember.benchmarks.runner`), which now resolves to Codex's own
+`default` sandbox rather than `danger-full-access`. Callers must opt into
+`danger-full-access` explicitly (trusted local runs only). The server only
+forwards the value; the runner validates it against its allowlist and maps
+`default` to an omitted `--sandbox` CLI argument. A real benchmark run is also
+refused unless the MCP settings enable benchmarks (`benchmarksEnabled`), and
+benchmark tools stay `dry_run=True` so a run is never implicit.
 
 `provider_diagnostics` is registered as the explicit detail tool for raw
 provider state, keeping `context_packet` and `provider_status` focused on
@@ -94,6 +97,7 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Resolved the hardening follow-up: `codex_sandbox`'s registered default is now `CODEX_BENCHMARK_SANDBOX` (Codex's own `default` sandbox, not `danger-full-access`), callers must opt into full access explicitly, and a real run is refused unless MCP settings set `benchmarksEnabled` (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the 0.9.x registration changes — `runtime_install`'s `no_cache` flag (from-scratch image rebuild) alongside `install_provider_deps`, the human-facing tool descriptions now surfaced to the harness, and the literal `codex_sandbox="danger-full-access"` registered default (noted as a hardening follow-up). Verified against `8927f03`.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` contract (effectful + `cgc_*`/`grepai_*` query tools register `dry_run=False`; only `codex_benchmark_*` keeps `dry_run=True`) and refreshed the stale payload-builder reference to the `mcp/tools/` package.
 - 2026-05-29T08:53+02:00: Updated after `create_server()` began installing the FastMCP compact-content shim to minify tool-result text mirrors.

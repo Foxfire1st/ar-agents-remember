@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/compose_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -31,7 +31,10 @@ Asset helpers locate committed provider runtime assets under
 `run_compose()`, and `compose_plan()` build or execute `docker compose` with the
 package base file plus `-f -` for the rendered override. Template helpers fill
 `@PLACEHOLDER@` tokens, JSON-quote scalar YAML values, render environment maps,
-render Compose port mappings, and produce optional YAML lines. Auto host ports
+render Compose port mappings, and produce optional YAML lines. `host_user()`
+returns the host `uid:gid` (or `None` when `os.getuid`/`os.getgid` are
+unavailable, e.g. non-POSIX hosts), and `host_user_block()` renders it as an
+optional `user:` YAML line so provider containers can run as the host user. Auto host ports
 render as an empty published-port segment (`host::container`) so Compose can
 parse the service while Docker chooses a port. Unmanaged migration helpers now
 cover containers and networks: both inspect Compose project labels, produce
@@ -84,6 +87,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Documented new `host_user()`/`host_user_block()` helpers that render an optional `user: uid:gid` line so provider containers run as the host user (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after Compose rendering began rejecting
   provider settings without generated `instance.labels`.
 - 2026-05-27T00:25+02:00: Updated after auto host ports began rendering as

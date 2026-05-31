@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:22+02:00                     |
-| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
-| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,6 +44,9 @@ A cap value of `0` means unlimited. This key was renamed from the old
 `providerSeconds`; `agents_remember.mcp.config` fail-loud rejects the old name
 with a `ConfigError`, so the template ships the current key.
 
+The example also carries a top-level `benchmarksEnabled` flag, shipped as
+`false`, which gates the optional benchmarking surface off by default.
+
 ### Invariants And Boundaries
 
 This file must not be placed inside the coordinator root, and it must not carry
@@ -62,6 +65,7 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Documented the new top-level `benchmarksEnabled` flag (shipped `false`) the template now carries (1.0.0 review remediation).
 - 2026-05-30T21:22+02:00: Documented the `timeoutCaps` block (`toolSeconds`, `providerSetupSeconds`) the template now carries — `providerSetupSeconds` caps only provider image build / dependency install, `0` means unlimited, and it replaces the rejected `providerSeconds` key. Realigned verification metadata to `825a172`.
 - 2026-05-28T12:32+02:00: Updated after the example transcript root moved from `providers/logs/mcp` to `logs/mcp`.
 - 2026-05-24T09:23+02:00: Updated after Codex project-local MCP settings and skills moved from `.agents` to `.codex`.

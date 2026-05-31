@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/actions.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T00:25+02:00                     |
-| lastVerifiedCommitHash | `767790a0a90c9cdc97eb3e291d42622aced82a14` |
-| lastVerifiedCommitDate | 2026-05-27T01:14:04+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,6 +41,8 @@ watcher startup so later Compose calls use the same dependency port mappings.
   image, watcher container, workspace config, and root artifact cleanup.
 - Watcher startup should receive the current backend/embedder port mappings
   from the same GrepAI start flow.
+- The `layout` parameter throughout is the concrete `GrepaiRuntimeLayout`
+  dataclass (re-exported via the `core` star-import), not an untyped `Any`.
 
 ## Repo-Internal References
 
@@ -51,6 +53,7 @@ watcher startup so later Compose calls use the same dependency port mappings.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Every `layout: Any` parameter re-typed to the concrete `GrepaiRuntimeLayout` (re-exported via the `core` star-import); behaviour-preserving, added an Invariants note pinning the `layout` type (1.0.0 review remediation).
 - 2026-05-27T00:25+02:00: Updated after Docker start began passing
   backend/embedder port mappings into watcher startup.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.

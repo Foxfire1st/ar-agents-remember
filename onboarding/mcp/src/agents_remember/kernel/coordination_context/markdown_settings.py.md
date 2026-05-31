@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -37,6 +37,10 @@ global path-rule branches to focused helper modules.
 - Legacy cross-repo strings remain invalid for v2 and are surfaced as excluded.
 - Legacy cross-repo and global path-rule helper modules keep this state machine
   below the repository maintainability threshold.
+- Empty `mode:`/`layout:`/`default:` scalars fall back to the topology-derived
+  default from `__post_init__` (`default_storage_mode(self.topology)`), not a
+  hardcoded `"external"`; `mode:` and `layout:` share one branch and are treated
+  as aliases.
 
 ## Docs References
 
@@ -64,5 +68,6 @@ No cross-repository evidence is needed for this fallback parser.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `try_apply_storage_mode` consolidated the separate `mode:`/`layout:` branches into one alias branch and `try_apply_storage_default` now falls back to `self.settings.default` instead of a hardcoded `"external"`, so empty storage scalars keep the topology-derived default; recorded the new empty-scalar fallback boundary in Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Added `None` guards for `current_list`/`current_rule` (`global_target_list`, `try_apply_storage_rule_value`, `try_select_storage_rule_list`) to clear Pyright optional errors; behavior-preserving (commit `0549b28`).
 - 2026-05-25T20:57+02:00: Created by extracting and simplifying the Markdown settings state machine from the C-08 resolver, then amended after legacy branches moved into focused parser helpers.

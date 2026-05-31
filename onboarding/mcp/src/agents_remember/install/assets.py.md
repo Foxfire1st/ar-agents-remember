@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/install/assets.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90`                      |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                      |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -33,7 +33,9 @@ and benchmark discovery code.
 
 `long_path()` normalizes concrete Windows filesystem paths to the extended path
 form when needed by recursive copy operations. It is used only after callers
-already have a concrete path.
+already have a concrete path. By default it resolves the path (`resolve=True`);
+callers can pass `resolve=False` to skip symlink resolution and instead absolutize
+a relative path against the current working directory before applying the prefix.
 
 ### Invariants And Boundaries
 
@@ -53,4 +55,5 @@ already have a concrete path.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Documented new `long_path()` `resolve=False` mode that absolutizes relative paths against cwd without resolving symlinks (1.0.0 review remediation).
 - 2026-05-24T18:10+02:00: Created for F-10 package-data asset discovery; verification metadata must be refreshed after the code closeout commit exists.

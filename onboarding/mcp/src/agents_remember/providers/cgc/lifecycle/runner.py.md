@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:33+02:00                     |
-| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19`                                  |
-| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                                  |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,12 +23,16 @@ CodeGraphContext provider execution.
 
 ### Logic
 
-The module generates a `python:3.12-slim` Dockerfile that installs the pinned
-CodeGraphContext dependency set, copies a generated patch script into the build
+The module builds the CGC runner image from the static `python:3.12-slim`
+Dockerfile provider asset (resolved via `provider_asset_path`, no longer via a
+`cgc_runner_dockerfile()` text helper), which installs the pinned
+CodeGraphContext dependency set, copies the generated patch script into the build
 context, applies the managed CGC patches inside the image, and records the image
 lock after successful builds. When `no_cache` is set the build adds `--no-cache`
 and bypasses the skip-if-tag-exists shortcut so the image is rebuilt from
-scratch; otherwise an existing tagged image short-circuits the build. Runtime helpers build Docker command lines for
+scratch; otherwise an existing tagged image short-circuits the build. The image build,
+status, and watcher inspect/running helpers take their `layout` argument typed as
+`CgcRuntimeLayout` (imported from `core`) rather than a loose `Any`. Runtime helpers build Docker command lines for
 bounded CGC commands, visualizer commands, and long-running watcher containers.
 Those commands mount the provider instance root and code repository at their
 host paths, run as the host UID/GID when supported so mounted runtime files
@@ -58,6 +62,7 @@ Docker network, and route FalkorDB access through the backend container name.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Removed the dead `cgc_runner_dockerfile()` text helper and tightened the `layout` param of `cgc_runner_image_build`/`cgc_watcher_inspect`/`cgc_watcher_running`/`cgc_runner_image_status` from `Any` to `CgcRuntimeLayout` (now imported from `core`); corrected Logic prose that implied the module "generates" the Dockerfile to reflect the static Dockerfile provider asset (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the `no_cache` build path — `--no-cache` plus bypassing the skip-if-tag-exists shortcut for a from-scratch image rebuild. Verified against `8927f03`.
 - 2026-05-26T13:58+02:00: Updated after CGC runner commands moved from `host.docker.internal` to the shared CGC Docker network and began passing host UID/GID into containers.
 - 2026-05-26T12:51+02:00: Created when CGC provider execution moved from host venvs to a Docker runner image/container.

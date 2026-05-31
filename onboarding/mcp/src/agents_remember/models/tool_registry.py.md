@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -20,12 +20,27 @@
 `mcp.tools._tool_payload()`. It currently covers all public core, runtime,
 memory, skill install, provider, worktree, and benchmark tools.
 
+The module docstring fixes a deliberate two-tier response-model convention.
+Tools whose response shape is fully AR-owned register a STRICT model
+(`StrictResponseModel` / `ResponseModel` / `ToolResponse`, `extra="forbid"`) so
+the field set is a drift-proof contract; `context_packet` (`ContextPacketV2`),
+`ping`, and `server_info` are the exemplars. Tools that surface provider-native
+or raw diagnostic detail (CodeGraphContext, GrepAI, Docker, watcher output)
+register a FLEXIBLE model (`FlexibleResponseModel` / `FlexibleToolResponse`,
+`extra="allow"`) on purpose: the upstream provider owns that payload, so extra
+fields are tolerated rather than rejected. This is tolerated drift, not
+un-validated input -- the envelope (`ok`/`operation`/`tokens`) is still typed.
+Pick STRICT unless the payload genuinely embeds provider-native detail.
+
 ## Invariants And Boundaries
 
 - The registry keys must equal `mcp.tools.PUBLIC_TOOLS`.
 - Adding or removing a public tool requires updating this registry and the
   schema coverage tests.
 - The registry is response-only; it does not own request validation.
+- A FLEXIBLE (`extra="allow"`) entry is a tolerated-drift surface for
+  provider-native payloads, not a license to skip validation; the typed
+  envelope still applies. AR-owned shapes must register a STRICT model.
 
 ## Repo-Internal References
 
@@ -36,4 +51,5 @@ memory, skill install, provider, worktree, and benchmark tools.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Documented the deliberate STRICT vs FLEXIBLE response-model two-tier convention now fixed in the module docstring (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created for the public tool response model coverage registry.

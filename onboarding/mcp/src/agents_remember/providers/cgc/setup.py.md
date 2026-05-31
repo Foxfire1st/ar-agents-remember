@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T13:40+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -24,7 +24,9 @@ and runs CGC prepare by attempting seed first and then refresh fallback when
 allowed. Isolated CGC watcher logs are written under the workflow-local central
 `logs/providers/codegraphcontext/<instance>/<repoId>/watch.log` tree. Isolated
 settings do not emit `venvRoot`; worktree CGC execution stays Docker-runner
-owned.
+owned. The provider sub-settings lookup uses the shared
+`provider_settings(settings, CGC_PROVIDER_ID)` helper from `setup_common`; the
+former local `_cgc_provider`/`context_providers` wrapper was removed.
 
 ### Invariants And Boundaries
 
@@ -46,6 +48,7 @@ owned.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Removed local `_cgc_provider` helper; provider sub-settings now read via shared `provider_settings(settings, CGC_PROVIDER_ID)` from `setup_common` (import swapped from `context_providers`), behaviour-preserving; noted the helper source in Logic (1.0.0 review remediation).
 - 2026-05-28T13:40+02:00: Updated after isolated CGC settings stopped emitting `venvRoot`.
 - 2026-05-28T12:32+02:00: Updated after isolated CGC settings moved watcher logs under `logs/providers/`.
 - 2026-05-25T19:50+02:00: Created when CGC provider-level setup behavior was extracted out of `provider_setup.py`.

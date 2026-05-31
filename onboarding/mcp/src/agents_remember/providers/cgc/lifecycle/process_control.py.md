@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,8 +24,8 @@ lifecycle and all-root start/stop aggregation.
 ### Logic
 
 The module builds dry-run Docker watcher commands, starts the managed FalkorDB
-backend when settings-backed roots require it, detects already-running watcher
-containers, starts `cgc watch` inside the CGC runner image, records provider
+backend when settings-backed roots require it, starts `cgc watch` inside the
+CGC runner image, records provider
 state, removes watcher containers on stop, marks stopped state, and aggregates
 start/stop results across configured roots. Watcher startup renders the Compose
 override with backend host ports from the backend start result so repeated
@@ -52,6 +52,7 @@ settings-backed starts keep the same FalkorDB/browser port mappings.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Removed already-running watcher detection from start preflight: `cgc_running_process_result` (and its `cgc_watcher_inspect` use / `alreadyRunning` short-circuit) deleted; layout params now typed `CgcRuntimeLayout` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `cgc_backend_all_error` now accepts `dict | None` with a `None` guard (closes a latent crash when start-all returns a doctor-failure); extracted `_cgc_start_all_live` to reduce `cgc_start_all` complexity; behavior-preserving (commits `0549b28`, `e3dab63`).
 - 2026-05-27T00:25+02:00: Updated after watcher startup began reusing
   backend start-result port mappings in its Compose render.

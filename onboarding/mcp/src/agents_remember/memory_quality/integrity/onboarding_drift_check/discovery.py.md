@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `12737deaac2fd75563ca1e3037cdac911023cf93` |
-| lastVerifiedCommitDate | 2026-05-29T12:28:42+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -20,8 +20,8 @@ classifiers.
 
 ### Logic
 
-`parse_table_metadata` reads the leading metadata table; `is_file_level_onboarding`
-and `is_supported_sidecar_onboarding` gate by `doc_type`; `discover_onboarding_files`
+`parse_table_metadata` reads the leading metadata table;
+`is_supported_sidecar_onboarding` gates by `doc_type`; `discover_onboarding_files`
 rglobs supported sidecars; `mirror_onboarding_path` maps a source path to its
 mirrored sidecar; `normalize_overview_route` canonicalizes overview routes; `rel`
 relativizes a path against the onboarding root.
@@ -41,4 +41,5 @@ relativizes a path against the onboarding root.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Dropped citation of removed `is_file_level_onboarding` helper from Logic (1.0.0 review remediation).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.

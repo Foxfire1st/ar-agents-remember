@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,8 +17,11 @@ route index, and entity fingerprint refreshes for changed code paths.
 
 ## Code Commentary
 
-The module finds changed source sidecars, validates required verification
-metadata, updates `lastVerifiedCommitHash` and `lastVerifiedCommitDate`, parses
+The module finds changed source sidecars — gating each changed source on the
+boolean `resolver.is_sidecar_storage(storage)` predicate (sidecar-backed storage
+modes only; non-sidecar modes are recorded as `unsupported`) — validates
+required verification metadata, updates `lastVerifiedCommitHash` and
+`lastVerifiedCommitDate`, parses
 route overview metadata, updates affected route overviews, runs generated route
 index refreshes, parses repo entity fingerprint tables, computes
 `git-blob-set-v1` fingerprints, and updates affected entity rows after the code
@@ -47,6 +50,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `onboarding_refresh_plan_for_context` now gates the sidecar-storage check on the boolean `resolver.is_sidecar_storage(storage)` predicate, replacing the label-returning `resolver.sidecar_storage_label(storage)`; behavior-preserving (truthiness unchanged). Added a Code Commentary note naming the predicate (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Gave the refresh-plan producers precise `TypedDict` return types and removed the now-redundant `isinstance` guards in `require_updated_sidecar_content`; behavior-preserving (commits `0549b28`, `e3dab63`).
 - 2026-05-29T07:36+02:00: Added `require_updated_sidecar_content` and wired it into `validate_onboarding_refresh_plan_for_context` (direct and worktree) so a changed source file with an unmodified sidecar body fails closeout instead of receiving a metadata-only verification refresh.
 - 2026-05-28T15:24+02:00: Updated after closeout began refreshing route overview metadata and generated route indexes before memory quality and memory commits. Verification metadata remains pinned until closeout commits the source change.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,10 +23,13 @@ exposure.
 
 ### Logic
 
-`filesystem.py` owns safe path removal across platforms, copying packaged
+`filesystem.py` owns safe path removal, copying packaged
 runtime/provider assets, rendering root markers, creating benchmark-local
 coordination scaffolding, and exposing skills into the benchmark
-`.codex/skills` tree. The benchmark runtime scaffold creates central
+`.codex/skills` tree. Cross-platform long-path normalization (the Windows
+`\\?\` prefix logic) is no longer inlined here; both `removable_path` and the
+copy helpers delegate to the shared `long_path` helper imported from
+`agents_remember.install.assets`. The benchmark runtime scaffold creates central
 `logs/mcp` and `logs/providers/...` directories alongside provider data and
 runner roots.
 
@@ -55,5 +58,6 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `removable_path` stopped inlining the Windows `\\?\` long-path logic and now delegates to the shared `long_path` helper (imported from `agents_remember.install.assets`); corrected Logic prose to drop "across platforms" ownership and note the delegation (1.0.0 review remediation).
 - 2026-05-28T12:32+02:00: Updated after benchmark workspace scaffolding moved MCP/provider logs under the central `logs/` tree.
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

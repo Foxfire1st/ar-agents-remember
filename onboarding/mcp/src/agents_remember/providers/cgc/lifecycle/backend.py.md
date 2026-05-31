@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,6 +44,8 @@ when Docker labels do not show the expected Compose project.
   rather than reallocated from host socket availability.
 - Backend status should expose enough Docker state for current provider status
   without requiring callers to inspect containers themselves.
+- Layout parameters and layout lists are typed as `CgcRuntimeLayout` (imported
+  from `agents_remember.providers.context`), not bare `Any`.
 
 ## Repo-Internal References
 
@@ -54,6 +56,7 @@ when Docker labels do not show the expected Compose project.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Re-typed `layout` params and `layouts` lists from bare `Any` to `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`) across the backend helpers; behavior-preserving, added a layout-type note to Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Fixed `cgc_backend_dry_run_result` `commands` type to `list[dict[str, Any]]` (compose-plan dicts, not arg lists); behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after backend status began including normalized container-state summaries.
 - 2026-05-27T00:25+02:00: Updated after CGC backend startup added

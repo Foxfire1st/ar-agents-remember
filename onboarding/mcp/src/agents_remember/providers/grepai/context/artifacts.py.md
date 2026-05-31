@@ -35,8 +35,8 @@ It finds configured GrepAI artifact names under each indexed root, raises `Conte
 | Finding | Source Path |
 | --- | --- |
 | Artifact names come from the GrepAI constants module. | [constants.py](constants.py.md) |
-| Provider integrity checks use the exported artifact assertion through `providers.context`. | [integrity.py](../../integrity.py.md) |
 
 ## Update History
 
+- 2026-05-31T12:40+02:00: Removed the stale provider-integrity reference row after `providers/integrity.py` was deleted in the 1.0.0 remediation; the exported artifact assertion currently has no caller.
 - 2026-05-25T19:33+02:00: Created when GrepAI root artifact checks were split out of `grepai/core.py`.

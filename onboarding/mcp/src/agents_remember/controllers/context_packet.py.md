@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -33,6 +33,9 @@ facts. Detailed provider internals are intentionally moved to the
 ## Invariants And Boundaries
 
 - Repo IDs must be allowed by MCP settings.
+- `ContextPacketError` (the authority-gate failure raised when the request
+  violates MCP authority settings) subclasses `AuthorityError` from
+  `agents_remember.errors`, not bare `ValueError`.
 - Context packet version is now `contextPacketVersion: 2`.
 - Do not embed `rawStatus`, duplicated top-level `pathRules`, or full provider
   current-state payloads in this controller.
@@ -53,5 +56,6 @@ facts. Detailed provider internals are intentionally moved to the
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `ContextPacketError` re-typed to subclass `AuthorityError` (imported from `agents_remember.errors`) instead of `ValueError`; noted the new base in Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Updated after context packets moved to explicit `ContextPacketV2` model construction and compact provider summaries.
 - 2026-05-24T02:47+02:00: Created after context packets imported drift summary from the new memory quality package.

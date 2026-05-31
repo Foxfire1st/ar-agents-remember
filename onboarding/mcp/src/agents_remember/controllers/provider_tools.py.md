@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:33+02:00                     |
-| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
-| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,8 +32,6 @@ before calling `lifecycle_service.run_cgc_lifecycle()`.
   arbitrary provider roots or generic native command strings.
 - `provider_diagnostics` is the detail tool for raw provider state; normal
   context-facing provider status stays compact.
-- Provider runner integrity failures should return structured recovery actions
-  instead of proceeding into lifecycle execution.
 - `provider_watchers_tool` and the `cgc_*`/`grepai_*` query controllers default
   `dry_run=False` (act-by-default): a plain query returns results and
   `dry_run=true` returns the planned provider command without executing it.
@@ -49,5 +47,6 @@ before calling `lifecycle_service.run_cgc_lifecycle()`.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Dropped the provider-runner integrity invariant: `_provider_operation_result` no longer calls `check_provider_runner_integrity` / returns a `runnerIntegrityFailed` block, and repo validation now goes through the shared `require_repo` guard (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Re-verified against `825a172` after the provider dockerization / never-cap-indexing run; the controller surface (status, diagnostics, watchers, GrepAI search/trace, typed CGC tools) and its act-by-default `dry_run` behavior still match. Repaired the builder reference — provider payload builders now live in `tools/providers.py` after the `01f503d` `mcp/tools.py` split.
 - 2026-05-28T19:52+02:00: Created when provider MCP behavior moved out of the former `skill_tools.py` mega-facade.

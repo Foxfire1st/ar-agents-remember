@@ -26,7 +26,7 @@
     "pyproject.toml"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 419,
+    "sourceFilesInScope": 426,
     "fileSidecars": 3,
     "childRoutes": 2
   },

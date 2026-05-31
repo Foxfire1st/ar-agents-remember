@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -42,6 +42,10 @@ only when Docker labels do not show the expected Compose project.
   rather than reallocated from host socket availability.
 - Backend status should expose enough Docker state for current provider status
   without requiring callers to inspect containers themselves.
+- The `layout` parameter threaded through these helpers is the shared
+  `GrepaiRuntimeLayout` dataclass (re-exported via the `core` wildcard import),
+  not an untyped object; callers rely on its `backend_root`,
+  `backend_data_root`, `backend_state_file`, and `coordination_root` attributes.
 
 ## Repo-Internal References
 
@@ -53,6 +57,7 @@ only when Docker labels do not show the expected Compose project.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `layout` params (and the `grepai_backend_start_context` return tuple) re-typed `Any` -> `GrepaiRuntimeLayout` across the backend helpers; behavior-preserving type-only tightening, added an Invariants note that `layout` is the shared `GrepaiRuntimeLayout` dataclass (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `grepai_backend_dry_run_result` `commands` -> `list[dict[str, Any]]`; `raise_postgres_timeout` -> `NoReturn`; behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after GrepAI backend status began including normalized container-state summaries.
 - 2026-05-27T00:25+02:00: Updated after GrepAI backend startup added
