@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:33+02:00|
-| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
-| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -41,9 +41,9 @@ code. All installs preserve durable `providers/data` and central logs under
 upward from the installed module until it finds the source/runtime asset tree.
 `install_runtime_from_config()` is the MCP entrypoint: it derives the target root
 from `McpRuntimeConfig`, generates provider lifecycle settings from MCP
-settings, calls package-local provider lifecycle install functions when provider
-deps are enabled, and writes a runner integrity manifest after non-dry-run
-installs. It threads `no_cache` through to the provider lifecycle install calls:
+settings, and calls package-local provider lifecycle install functions when
+provider deps are enabled. It threads `no_cache` through to the provider
+lifecycle install calls:
 by default image builds skip any image whose tag already exists, and
 `no_cache=true` forces a from-scratch rebuild. The optional `source_root`
 parameter is an internal development/test hook, not a public MCP path field.
@@ -70,7 +70,7 @@ clients reach it through the `runtime_install` tool.
   install helpers stay in MCP package-owned code.
 - `install_runtime_from_config`'s `dry_run` defaults to `False` (act-by-default),
   matching the `runtime_install` MCP tool; `dry_run=true` reports the reconcile
-  plan and skips the integrity-manifest write.
+  plan without performing the reconcile.
 
 ## Repo-Internal References
 
@@ -78,10 +78,10 @@ clients reach it through the `runtime_install` tool.
 | --- | --- |
 | The MCP controller exposes only typed install booleans. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py) |
 | Provider settings generation derives lifecycle settings from MCP authority. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
-| Integrity manifests are written after non-dry-run installs. | [integrity.py](agents-remember-md/mcp/src/agents_remember/providers/integrity.py) |
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Dropped the provider runner integrity-manifest write from `install_runtime_from_config` and the `integrity` return field, and removed the stale integrity.py reference (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the `no_cache` flag threaded through `install_runtime_from_config` into the provider lifecycle install calls — image builds skip existing tags by default, `no_cache=true` forces a from-scratch rebuild. Verified against `8927f03`.
 - 2026-05-29T18:35+02:00: Extracted `_remove_with_retry` from `remove_path` to drop cyclomatic complexity below 11; behavior-preserving (commit `e3dab63`).
 - 2026-05-28T12:32+02:00: Updated after runtime install moved operator logs from `providers/logs/` into the central `logs/` tree.

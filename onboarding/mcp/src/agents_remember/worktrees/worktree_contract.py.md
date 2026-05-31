@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T20:41+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -43,6 +43,10 @@ contract files human-readable without introducing a general YAML dependency.
 - Contract serialization must preserve closeout and integration state.
 - Task and worktree folders use slugified names with legacy `-ar` support only
   where the resolver needs to find existing work.
+- `ContractError` subclasses the shared `AgentsRememberError` (imported from
+  `agents_remember.errors`); since that base itself derives from `ValueError`,
+  existing `except ValueError` callers still catch contract failures while the
+  error now also participates in the domain error hierarchy.
 
 ## Docs References
 
@@ -58,7 +62,7 @@ Same-repository source defines the contract format and C-09 uses it.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines the contract schema, valid memory modes, error type, and full `WorktreeContract` state record. | L14-L58 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The module defines the contract schema, valid memory modes, the `ContractError` type (now subclassing `AgentsRememberError` from `agents_remember.errors`), and the full `WorktreeContract` state record. | L16-L60 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Folder naming and default contract helpers derive task roots, worktree groups, and external-memory ledger paths. | L61-L151 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Load/write/render helpers parse front matter, validate contracts, and render closeout/integration state back to markdown. | L154-L289 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Validation and limited YAML parsing enforce required fields and external-memory path requirements. | L292-L387 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
@@ -75,5 +79,6 @@ external memory paths, but the parser and renderer are same-repository code.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `ContractError` re-based from `ValueError` to the shared `AgentsRememberError` (imported from `agents_remember.errors`); corrected the error-type prose in Invariants And Boundaries and Repo-Internal References to name the new domain base while noting `except ValueError` callers still catch it (1.0.0 review remediation).
 - 2026-05-25T20:41+02:00: Updated after contract rendering was split into section helpers during worktree package refactoring.
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.

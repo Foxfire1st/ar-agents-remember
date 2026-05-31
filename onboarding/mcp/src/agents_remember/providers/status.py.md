@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:33+02:00|
-| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
-| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -24,12 +24,10 @@ provider summaries or detailed provider diagnostics.
 `provider_status_packet()` wraps a compact `ProviderSummary` in the public
 `ProviderStatusResponse`. `provider_summary_packet()` returns just the compact
 summary for `ContextPacketV2`. `provider_diagnostics_packet()` returns the
-dedicated diagnostics contract with current-state, integrity,
-process-namespace, recovery-action, raw-status, and per-provider raw status
-detail.
+dedicated diagnostics contract with current-state, process-namespace,
+recovery-action, raw-status, and per-provider raw status detail.
 
-The shared projection still checks provider runner integrity before watcher
-probing. When status is read, lifecycle settings are generated from trusted MCP
+When status is read, lifecycle settings are generated from trusted MCP
 settings, watcher status is invoked, and the current provider state file is
 written under the coordinator log/status root. The watcher probe runs as a
 bounded docker-control command timed by `DEFAULT_DOCKER_CONTROL_SECONDS`; it no
@@ -39,8 +37,6 @@ the current-state file path and summary facts, not the full raw status tree.
 
 ## Invariants And Boundaries
 
-- Runner integrity failure must short-circuit watcher probing and emit a
-  `runtime_install` recovery action.
 - `context_packet` uses `provider_summary_packet()`, not diagnostics/raw status.
 - `provider_diagnostics` is the detail surface for raw provider state.
 - Temporary lifecycle settings come from MCP settings and are deleted after the
@@ -59,6 +55,7 @@ the current-state file path and summary facts, not the full raw status tree.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Removed runner-integrity documentation: status projection no longer checks provider runner integrity, dropped the `integrity` diagnostics field, the `runnerIntegrityFailed` state, and the integrity short-circuit invariant (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented that the watcher probe now uses `DEFAULT_DOCKER_CONTROL_SECONDS` instead of the removed `timeout_caps["providerSeconds"]` key (renamed `providerSetupSeconds`). Verified against `825a172`.
 - 2026-05-29T18:35+02:00: `_provider_capability`/`_provider_runtime`/`_watcher_state_from_up` return their `Literal` aliases (`ProviderCapability`/`ProviderRuntime`/`WatcherState`); behavior-preserving (commit `0549b28`).
 - 2026-05-28T19:52+02:00: Updated after provider status split compact summaries from dedicated diagnostics and began returning Pydantic-modeled packets.

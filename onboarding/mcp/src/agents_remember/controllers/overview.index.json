@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/controllers/__init__.py",
+    "mcp/src/agents_remember/controllers/_guards.py",
     "mcp/src/agents_remember/controllers/benchmark_tools.py",
     "mcp/src/agents_remember/controllers/context_packet.py",
     "mcp/src/agents_remember/controllers/coordination_tools.py",
@@ -21,8 +22,8 @@
     "mcp/src/agents_remember/controllers/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 9,
-    "fileSidecars": 9,
+    "sourceFilesInScope": 10,
+    "fileSidecars": 10,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -35,6 +36,7 @@
     "controllers",
     "coordination",
     "coordination_tools",
+    "guards",
     "init",
     "init__",
     "install",
@@ -59,6 +61,7 @@
     "candidateHints": [
       "mcp/src/agents_remember/controllers",
       "mcp/src/agents_remember/controllers/__init__.py",
+      "mcp/src/agents_remember/controllers/_guards.py",
       "mcp/src/agents_remember/controllers/benchmark_tools.py",
       "mcp/src/agents_remember/controllers/context_packet.py",
       "mcp/src/agents_remember/controllers/coordination_tools.py",
@@ -71,6 +74,8 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "_guards.py",
+      "_guards",
       "benchmark_tools.py",
       "benchmark_tools",
       "context_packet.py",
@@ -114,9 +119,7 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T19",
-      "lastVerifiedCommitHash",
-      "d150ac9d2e6c1ae04dbab42eac0088dceef8"
+      "T19"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T01:06+02:00                     |
-| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6` |
-| lastVerifiedCommitDate | 2026-05-31T01:23:17+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 coordinator from a pip/uvx install with no source checkout.
 
 The package `version` tracks the release line; at this verification it is
-`0.9.6`. It is the same string `runtime_install` and `server_info` report, and
+`1.0.0`. It is the same string `runtime_install` and `server_info` report, and
 it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### Invariants And Boundaries
@@ -74,6 +74,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Bumped the documented package `version` to `1.0.0` (1.0.0 review remediation); still tracks `SERVER_VERSION`.
 - 2026-05-31T01:06+02:00: Bumped the documented package `version` to `0.9.6` (MCP 0.9.6, W-02 design section); still tracks `SERVER_VERSION`. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-30T22:29+02:00: Bumped the documented package `version` to `0.9.5` for the S6 token-counter release; still tracks `SERVER_VERSION`. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-30T21:22+02:00: Realigned to MCP `0.9.4` after the 0.9.0–0.9.4 run; version still tracks `SERVER_VERSION`. Documented the `package-data` runtime-scaffold packaging block (the card body previously described the `0.3.0` release).

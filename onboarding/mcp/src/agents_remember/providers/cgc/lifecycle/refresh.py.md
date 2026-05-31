@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:33+02:00|
-| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493` |
-| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -42,6 +42,9 @@ wall-clock cap.
   executable.
 - Index refresh must stay uncapped (`UNLIMITED_TIMEOUT`); do not reintroduce a
   wall-clock timeout on the `cgc index` commands.
+- Layout parameters are typed as `CgcRuntimeLayout` (imported from
+  `lifecycle.core`, which re-exports it from
+  `agents_remember.providers.context`), not bare `Any`.
 
 ## Repo-Internal References
 
@@ -53,6 +56,7 @@ wall-clock cap.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Re-typed the `layout` param of `cgc_refresh_command`, `cgc_refresh_dry_result`, `cgc_refresh_backend`, `cgc_write_refresh_state`, and `cgc_refresh_preflight` from bare `Any` to `CgcRuntimeLayout` (newly imported from `lifecycle.core`); behavior-preserving, added a layout-type note to Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented that `cgc index --force` refresh commands now run with `UNLIMITED_TIMEOUT` (never-cap-indexing run); added the uncapped-index invariant. Verified against `825a172`.
 - 2026-05-29T18:35+02:00: `cgc_refresh_preflight` `command` parameter typed `dict[str, Any]` (the compose plan it forwards); behavior-preserving (commit `0549b28`).
 - 2026-05-29T07:19+02:00: Updated after the `cgc index` repo argument switched to the driveless container path (`container_code_repo_root`) for Windows-host support.

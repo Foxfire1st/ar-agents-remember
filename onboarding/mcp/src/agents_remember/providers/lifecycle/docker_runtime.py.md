@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/docker_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,8 +25,8 @@ GrepAI lifecycle modules.
 
 The module resolves the Docker executable, inspects containers and images,
 reads published port and mount metadata, normalizes container state summaries,
-normalizes host paths, ensures Docker networks and network attachments, checks
-local image presence, and waits for FalkorDB ping health. Container summaries
+normalizes host paths, reads the set of networks a container is connected to,
+checks local image presence, and waits for FalkorDB ping health. Container summaries
 include Docker state, running flag, normalized `startedAt`, computed uptime
 seconds, and health status.
 
@@ -50,6 +50,7 @@ seconds, and health status.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Dropped the "ensures Docker networks and network attachments" claim from Logic; the `docker_ensure_network` and `docker_ensure_container_network` mutation helpers were removed, leaving only the read-only `docker_container_networks` fact helper (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `raise_docker_ping_timeout` -> `NoReturn` so `docker_wait_for_ping` type-checks on all paths; behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after Docker status helpers began emitting normalized container state, health, and uptime summaries.
 - 2026-05-25T21:14+02:00: Created from the Docker adapter portion of the former shared lifecycle common module.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/identity.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T18:10:12+02:00                  |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7`                         |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                         |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -18,7 +18,7 @@
 
 ### Logic
 
-The module normalizes arbitrary workspace, worktree, benchmark, provider, and repository names into Docker-safe components. `provider_instance_id()` derives readable default instance ids by scope: workspace providers use the workspace folder slug, worktree providers combine workspace and worktree/task names, and benchmark providers combine workspace and `benchmark`. `scoped_name()` then composes those ids into container, network, and Compose project names. `provider_ownership_labels()` emits the labels lifecycle code stamps onto provider-owned Docker resources.
+The module normalizes arbitrary workspace, worktree, benchmark, provider, and repository names into Docker-safe components. `stable_slug()` does the base normalization, and `stable_provider_id()` is a thin wrapper over it that slugs a provider/repository name with a `"repo"` fallback. `provider_instance_id()` derives readable default instance ids by scope: workspace providers use the workspace folder slug, worktree providers combine workspace and worktree/task names, and benchmark providers combine workspace and `benchmark`. `scoped_name()` then composes those ids into container, network, and Compose project names. `provider_ownership_labels()` emits the labels lifecycle code stamps onto provider-owned Docker resources.
 
 ### Invariants And Boundaries
 
@@ -38,4 +38,5 @@ The module normalizes arbitrary workspace, worktree, benchmark, provider, and re
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Source added `stable_provider_id()`, a behaviour-preserving wrapper over `stable_slug()` with fallback `"repo"`; noted it in the Logic section (1.0.0 review remediation).
 - 2026-05-27T18:10:12+02:00: Created for the provider workflow compatibility slice.

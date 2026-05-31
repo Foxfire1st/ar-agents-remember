@@ -1,0 +1,127 @@
+# test_cgc_installation.py
+
+| Field                  | Value                                      |
+| ---------------------- | ------------------------------------------ |
+| repository             | agents-remember-md                         |
+| path                   | `mcp/tests/test_cgc_installation.py` |
+| doc_type               | `file-level-onboarding`                    |
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                         |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| governingOverview      | `../overview.md`                           |
+
+## Governing Overview
+
+[overview.md](../overview.md)
+
+## Purpose
+
+`test_cgc_installation.py` covers the CodeGraphContext (CGC) install and doctor
+dry-run paths so the planned-command shape and the doctor verdict assembly are
+protected without requiring Docker, FalkorDB, or a live coordinator. It is the
+F13 unit contract for the provider-owned `cgc` installation module.
+
+## Code Commentary
+
+### Logic
+
+The module imports `agents_remember.providers.lifecycle` plus the CGC layout and
+installation entry points (`cgc_doctor`, `cgc_install`, `cgc_install_commands`,
+`cgc_install_preflight`, `cgc_runtime_root_containment_check`) from the
+provider-first package layout under `mcp/src`. Shared fixtures build a synthetic
+coordination root: `_write_cgc_settings` lays down a workspace repo, a memory
+repo, and a lifecycle settings file describing a single `codegraphcontext-code`
+provider instance (with runner/backend roots, a `repo-a` root, and ownership
+labels). `_parse_cgc` builds the real lifecycle parser, parses a `cgc`
+subcommand, normalizes CGC defaults, resolves paths, and stabilizes the repo id
+so args match the shape the lifecycle dispatch produces. `_scoped_install_args`
+assembles a settings-backed, `--repo-id repo-a`, `--dry-run` install invocation.
+
+`CgcInstallDryRunTests` asserts the scoped install dry-run returns the expected
+result shape (`provider`, `action: install`, `ok`, `dryRun`, `repoId`) and that
+dry-run short-circuits before the real path, so `doctor`/`backend` keys are
+absent and the planned `commands` list contains exactly two Compose
+invocations — an image build (`build runner`) and a doctor run
+(`run --rm --no-deps runner doctor`). A second case proves the dry-run never
+materializes the runtime root or state file on disk (the preflight short-circuits
+before `ensure_cgc_runtime_layout`). A third case drops `--repo-id` so
+`cgc_install` routes to the install-all aggregation and asserts the
+`install-all` action, a backend ok flag, a per-repo result count of one, and the
+aggregated per-repo `install` result for `repo-a`.
+
+`CgcInstallPreflightTests` calls `cgc_install_preflight` directly and asserts the
+dry-run returns no executed results, no backend result, and an early result that
+carries `dryRun`, `ok`, the `install` action, and the same planned `commands`.
+
+`CgcDoctorTests` asserts the doctor dry-run assembles its named checks in order
+(`runtime-root-contained`, `source-artifact-clean`, `cgc-runner-image`,
+`cgc-image-patches`); that the `cgc-runner-image` check fails because no image
+was built, dragging the overall verdict to not-ok; and that the doctor `command`
+is a Compose plan (`run --rm --no-deps runner doctor`) rather than a captured
+run. A direct call to `cgc_runtime_root_containment_check` proves the
+`runtime-root-contained` check passes for a coordination-rooted runtime and
+reports `outsideSourceRepo: true`.
+
+### Conventions
+
+- Keep these tests synthetic and file-local: use `tempfile.TemporaryDirectory`
+  and `--dry-run`, and do not require Docker, FalkorDB, CGC, network access, or a
+  real `ar-coordination` root.
+- Import the provider-first CGC modules from `mcp/src`
+  (`agents_remember.providers.cgc.lifecycle.*`); do not import deleted or
+  compatibility shims.
+- Drive parsing through the real lifecycle parser via `_parse_cgc` so argument
+  normalization matches the production dispatch path rather than hand-built args.
+- Assert command shape by slicing trailing argv segments (for example
+  `command[-5:]`) so the contract focuses on the planned Compose verbs, not full
+  resolved paths.
+
+### Invariants And Boundaries
+
+Dry-run install must stay side-effect free: it must short-circuit before the
+runtime layout and state file are created, and must not emit
+`doctor`/`backend` keys reserved for the real install path. The planned install
+commands must remain exactly the image build followed by the doctor run, and the
+doctor dry-run must keep its four named checks in the documented order with the
+runner-image check failing (and the overall verdict failing) when no image
+exists. The runtime-root containment check must keep reporting the runtime as
+outside the source repo for a coordination-rooted layout. These tests validate
+planned-command shape, dry-run side-effect absence, and doctor verdict assembly
+only; live install execution, Docker backends, patch application, and graph
+query results remain lifecycle/provider integration concerns.
+
+### Todos
+
+None.
+
+## Docs References
+
+No external documentation is needed for these unit tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Shared fixtures build a synthetic coordination root and settings file for a single `codegraphcontext-code` provider instance and parse `cgc` args through the real lifecycle parser. | L22-L100 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
+| The scoped install dry-run asserts the result shape, absence of `doctor`/`backend` keys, and the two planned Compose commands (image build, then doctor run). | L104-L127 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
+| The dry-run side-effect test proves the runtime root and state file are not materialized because preflight short-circuits before the layout is ensured. | L129-L139 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
+| The no-`--repo-id` install dry-run routes to install-all and asserts the aggregated action, backend ok flag, repo count, and per-repo `install` result. | L141-L165 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
+| The preflight dry-run returns no executed/backend results and an early result carrying `dryRun`, `ok`, the `install` action, and the planned commands. | L169-L185 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
+| The doctor dry-run asserts the named check order, the failing runner-image check and overall verdict, and the Compose doctor command plan. | L189-L233 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
+| The runtime containment check passes for a coordination-rooted runtime and reports `outsideSourceRepo`. | L235-L244 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
+
+## Cross-Repo References
+
+No sibling repository evidence is needed for these tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
+
+## Update History
+
+- 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

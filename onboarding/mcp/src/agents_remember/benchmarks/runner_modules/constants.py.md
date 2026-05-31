@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/constants.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T02:26+02:00                     |
-| lastVerifiedCommitHash | `a7e160cd4381245327da7c5a52e2272b3080ebf7` |
-| lastVerifiedCommitDate | 2026-05-26T02:40:22+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Shared benchmark constants for paths, provider ids, token aliases, Codex policy, and MCP registration names.
+Shared benchmark constants for paths, provider ids, Codex usage token fields, Codex policy, and MCP registration names.
 
 ## Code Commentary
 
@@ -46,4 +46,5 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Replaced `TOKEN_KEYS` alias map with `USAGE_TOKEN_KEYS` (Codex turn.completed usage fields) and flipped `CODEX_BENCHMARK_SANDBOX` to secure-by-default `default` (1.0.0 review remediation).
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

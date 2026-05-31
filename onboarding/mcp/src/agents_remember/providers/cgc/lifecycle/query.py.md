@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/query.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T07:19+02:00                     |
-| lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
-| lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -40,6 +40,8 @@ Linux runner on Windows hosts.
 - Watcher start/stop behavior lives in `process_control.py`.
 - Query and visualizer execution must use the Docker runner image, not a host
   `cgc` executable.
+- Command/dry-result helpers take a concrete `CgcRuntimeLayout` (imported from
+  `agents_remember.providers.context`), not an untyped `Any` layout.
 
 ## Repo-Internal References
 
@@ -51,6 +53,7 @@ Linux runner on Windows hosts.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `cgc_run_command`, `cgc_run_dry_result`, `cgc_visualize_command`, and `cgc_visualize_dry_result` now type their `layout` param as `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`) instead of `Any`; added an Invariants note recording the concrete layout type (1.0.0 review remediation).
 - 2026-05-29T07:19+02:00: Updated after the visualizer `--repo` argument switched to the driveless container path (`container_code_repo_root`) for Windows-host support.
 - 2026-05-26T12:51+02:00: Updated after bounded CGC run and visualizer commands moved into the Docker runner.
 - 2026-05-25T21:14+02:00: Split from `process.py` so bounded query and visualizer behavior is separate from watcher process control and refresh.

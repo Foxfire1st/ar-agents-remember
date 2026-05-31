@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,7 +24,9 @@
 
 The test module imports `agents_remember.providers.provider_setup` from
 `mcp/src`. The explicit-settings tests assert that `settings_path()` rejects
-missing provider settings, the CLI parser requires `--from-settings`, and
+missing provider settings (called as `settings_path(None)` with the single
+settings-path argument, no separate root), the CLI parser requires
+`--from-settings`, and
 `run_provider_setup(ProviderSetupRequest)` accepts a side-effect-free typed
 request with providers disabled. Provider setup reporting coverage asserts
 dry-runs report unwritten summary paths, real runs write compact setup
@@ -100,6 +102,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `test_settings_path_requires_explicit_provider_settings` now calls `provider_setup.settings_path(None)` (single settings-path arg) instead of `settings_path(root, None)` and drops its `TemporaryDirectory`, following `settings_path()` losing its leading `root` parameter; noted the single-arg call in Logic (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Replaced `assertIsNotNone` with `assert ... is not None` so the isolated-settings locals narrow before subscript; behavior-preserving (commit `0549b28`).
 - 2026-05-28T14:21:08+02:00: Updated after provider setup tests asserted
   duplicate per-provider isolated settings payload keys are absent.

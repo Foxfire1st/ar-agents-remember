@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,8 +26,7 @@
 The module reads a fenced JSON metadata block plus the first `Code commit |
 Memory commit` table, validates that the newest table row matches the metadata,
 serializes the canonical ledger format, prepends new mappings, finds existing
-mappings, creates an initial ledger, and locates the commit that introduced a
-specific ledger row.
+mappings, and creates an initial ledger.
 
 ### Conventions
 
@@ -61,10 +60,9 @@ format.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type. | L16-L39 | [memory_ledger.py](agents-remember-md/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of `AgentsRememberError`). | L17-L41 | [memory_ledger.py](agents-remember-md/mcp/src/agents_remember/kernel/memory_ledger.py) |
 | `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | L51-L104 | [memory_ledger.py](agents-remember-md/mcp/src/agents_remember/kernel/memory_ledger.py) |
 | `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | L142-L179; L193-L204 | [memory_ledger.py](agents-remember-md/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| `find_ledger_anchor_commit()` searches Git history for the row text using stdin detached from the parent stream. | L228-L241 | [memory_ledger.py](agents-remember-md/mcp/src/agents_remember/kernel/memory_ledger.py) |
 
 ## Cross-Repo References
 
@@ -78,5 +76,6 @@ file and the C-09 worktree manager.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Removed `find_ledger_anchor_commit()` (and its `subprocess` use) from Logic and references; `LedgerError` now subclasses `AgentsRememberError` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Extracted `_ledger_rows_from` (inner row loop) from `parse_ledger_rows` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.

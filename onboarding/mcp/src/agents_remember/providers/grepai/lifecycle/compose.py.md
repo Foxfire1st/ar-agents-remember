@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T14:21:08+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -71,9 +71,9 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, ownership labels, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L27-L83 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
-| `grepai_user()` and `grepai_user_block()` render the optional POSIX UID/GID Compose user block for the watcher. | L86-L93 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
-| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L96-L102 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, ownership labels, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L40-L97 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| The optional POSIX UID/GID Compose user block for the watcher is rendered via the shared `host_user_block()` helper. | L76 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L100-L106 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
 
 ## Cross-Repo References
 
@@ -85,6 +85,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Fixed Repo-Internal citation: local `grepai_user()`/`grepai_user_block()` replaced by shared `host_user_block()` helper; refreshed line ranges (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after GrepAI Compose label rendering began
   rejecting provider settings without generated `instance.labels`.
 - 2026-05-27T00:41+02:00: Updated after GrepAI watcher Compose rendering

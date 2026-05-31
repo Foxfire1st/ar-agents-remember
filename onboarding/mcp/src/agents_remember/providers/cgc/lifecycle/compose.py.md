@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T07:19+02:00                     |
-| lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
-| lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,7 +32,10 @@ committed package Docker asset, and renders one watcher service fragment per
 configured repository root. Backend port mappings go through the shared Compose
 helper so configured `auto` host ports render as Compose's empty
 published-port syntax instead of the literal string `auto`. User mapping is
-optional and only emitted on hosts with UID/GID support. `cgc_compose_summary()`
+optional and only emitted on hosts with UID/GID support; it is now produced by
+the shared `host_user_block()` helper imported from `compose_runtime` (the
+former local `cgc_user()` / `cgc_user_block()` helpers and the `os` import were
+removed). `cgc_compose_summary()`
 exposes the project, base file, override hash, and stdin override mode for
 status and dry-run payloads. CGC Compose rendering now requires generated
 `instance.labels` from MCP/provider settings and fails instead of falling back
@@ -94,6 +97,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Source consolidated host user mapping: local `cgc_user()` / `cgc_user_block()` and the `os` import were removed, `RUNNER_USER_BLOCK` / `WATCHER_USER_BLOCK` now use the shared `host_user_block()` imported from `compose_runtime`, and `layouts` plus the layout-taking helpers are now typed `CgcRuntimeLayout` (imported from `core`) instead of `Any`; corrected the Logic section's user-mapping prose to name the shared helper (1.0.0 review remediation).
 - 2026-05-29T07:19+02:00: Updated after runner/watcher bind-mount targets,
   `working_dir`, watch repo path, and container environment switched to driveless
   POSIX container paths (`container_runtime_root` / `container_code_repo_root`,

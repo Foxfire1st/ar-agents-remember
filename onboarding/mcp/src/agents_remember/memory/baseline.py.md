@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00|
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -22,7 +22,9 @@ adopting an existing external-memory onboarding baseline.
 The module exposes `BaselineRequest`, `baseline_status()`, and
 `baseline_adopt()` as service entry points for MCP controllers. The CLI
 commands now adapt parsed arguments into that request shape, print the returned
-payload, and return the service return code.
+payload, and return the service return code. The thin argparse-to-context
+adapter is `resolve_baseline_context(args)` (renamed from the package-generic
+`resolve_context`); it delegates to `resolve_request_context(request_from_args(args))`.
 
 ### Invariants And Boundaries
 
@@ -46,6 +48,7 @@ payload, and return the service return code.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Renamed the argparse adapter `resolve_context` to `resolve_baseline_context` in the source; noted the new name in Logic (behavior-preserving, thin delegate to `resolve_request_context(request_from_args(args))`) (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Typed drift rows as `list[drift.DriftRow]`, normalized `topology` to `Literal['internal','external'] | None` at the argparse boundary, and added a ledger-path guard in `baseline_adopt`; behavior-preserving (commit `0549b28`).
 - 2026-05-24T02:47+02:00: Updated after drift imports moved under `memory_quality.integrity`.
 - 2026-05-24T00:35+02:00: Updated after adding request/service entry points for MCP controllers.

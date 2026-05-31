@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/runtime_environment.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,7 +23,7 @@ provider lifecycle commands.
 
 ### Logic
 
-The module infers runtime and coordination roots from the installed package
+The module infers the coordination root from the installed package
 location, configures stdout/stderr for UTF-8, and builds subprocess
 environments that force UTF-8 Python IO.
 
@@ -42,4 +42,5 @@ environments that force UTF-8 Python IO.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Dropped runtime_root_from_script; Logic now describes only the coordination root inference (1.0.0 review remediation).
 - 2026-05-25T21:14+02:00: Created from the environment portion of the former shared lifecycle common module.

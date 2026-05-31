@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T01:06+02:00                     |
-| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6` |
-| lastVerifiedCommitDate | 2026-05-31T01:23:17+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -17,10 +17,14 @@ builders.
 
 ## Code Commentary
 
-The module currently exposes `SERVER_NAME` and `SERVER_VERSION` (`0.9.6` at this
-verification). Payload builders in `mcp.tools` use those constants for `ping`
-and `server_info`, so release version bumps must keep `SERVER_VERSION` aligned
-with `mcp/pyproject.toml`.
+The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
+derived from the installed package metadata via
+`importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
+the single source of truth; a `PackageNotFoundError` fallback hardcodes `1.0.0`
+for source checkouts without an install. Payload builders in `mcp.tools` use
+those constants for `ping` and `server_info`, so the version no longer needs a
+manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
+sync at release.
 
 ## Docs References
 
@@ -35,6 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — `SERVER_VERSION` now reads from installed package metadata (`importlib.metadata.version`) with a `1.0.0` source-checkout fallback; pyproject is the single source of truth (1.0.0 review remediation).
 - 2026-05-31T01:06+02:00: Bumped `SERVER_VERSION` to `0.9.6` (MCP 0.9.6); still aligned with `mcp/pyproject.toml`. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-30T22:29+02:00: Bumped `SERVER_VERSION` to `0.9.5` for the S6 token-counter release; still aligned with `mcp/pyproject.toml`. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-30T21:33+02:00: Verified `SERVER_VERSION` is `0.9.4` after the 0.9.0–0.9.4 run; still aligned with `mcp/pyproject.toml`. Repaired the broken builder reference — the former single `mcp/tools.py` was split into the `mcp/tools/` package at `01f503d`, so `ping_payload`/`server_info_payload` now live in `tools/core.py`.

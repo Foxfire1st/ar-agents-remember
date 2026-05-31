@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -20,7 +20,7 @@ dedicated diagnostics, watcher lifecycle, GrepAI, and CodeGraphContext tools.
 `ProviderSummary` and `ContextProviderItem` are the compact context-facing
 shape: identity, runtime, capability, aggregate state, watcher state, and
 target repo readiness. `ProviderDiagnosticsResponse` is the detail surface that
-can include current-state files, integrity blocks, process namespace, raw
+can include current-state files, process namespace, raw
 status, and per-provider diagnostics. Provider-native GrepAI and CGC tools use
 flexible response envelopes because their service payloads can expose
 provider-specific fields.
@@ -42,4 +42,5 @@ provider-specific fields.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Dropped `integrity` block from diagnostics commentary; `runnerIntegrityFailed` state and `ProviderDiagnosticsResponse.integrity` field removed (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created for compact provider summaries and the dedicated diagnostics response contract.

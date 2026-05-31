@@ -281,3 +281,78 @@ Bad:
 ```python
 def update_memory(path: Path, dry_run: bool, force: bool, skip_validation: bool) -> None:
     ...
+```
+
+Good: split the modes into separate functions, or pass one small typed options/strategy object, so each call site reads as a single intent rather than a matrix of flags.
+
+## Error Handling
+
+Domain failures use the typed error family in `errors.py`, not bare exceptions.
+
+1. Raise an `AgentsRememberError` subclass (`ConfigError`, `AuthorityError`, `LedgerError`, `ContractError`, `ContextProviderError`, `ContextPacketError`, `MissingMemoryError`) for invalid input, settings/authority violations, and broken contracts.
+2. New typed errors subclass `AgentsRememberError` (which subclasses `ValueError`, so existing `except ValueError` handlers keep working). Put the base in `errors.py`, not a per-module ad-hoc class.
+3. Reserve bare `RuntimeError` for genuinely-unexpected states, not for validation or authority failures.
+4. Do not broadly `except Exception` to build a response; catch the typed family (or a specific error) at the boundary.
+
+## Security Boundaries
+
+Path-confinement and repo-allowlist checks are centralized, never copy-pasted.
+
+1. Resolve-and-confine a caller path through `controllers/_guards.require_within_coordination`; resolve a caller repo id through `require_repo`. Do not re-implement the "resolve, then check `is_relative_to`" guard inline.
+2. A confinement guard returns the resolved path or raises `AuthorityError`. Callers use the returned value; they do not re-resolve.
+3. Rationale: a security check duplicated across call sites is the one you forget to update — and the one you forget is the vuln.
+
+## Secure Defaults
+
+Public, agent-callable surfaces default to the safe option.
+
+1. A tool's default must be the least-privileged choice. Dangerous modes (e.g. a full-access sandbox) are explicit opt-in, never the default value baked into the public signature.
+2. Capabilities that execute untrusted or third-party code are gated behind an explicit settings flag and refuse when it is unset — they are not always-on.
+3. Document the execution/trust model where the capability is exposed (README + settings reference), not only in code.
+
+## Cross-Layer DTOs
+
+Arguments that cross a layer boundary are a typed object, not `argparse.Namespace` or `Any`.
+
+1. Do not pass `argparse.Namespace` from a controller or CLI into the domain layer as the shared argument type. Build a frozen dataclass (e.g. `WorktreeArgs`) and convert argparse output to it at the CLI edge.
+2. `Any` on a parameter that has a concrete type is a defect, not a shortcut. Type provider layouts, request objects, and results with their real classes — removing `Any` here surfaced latent `None`-handling bugs the type checker had been unable to see.
+3. This complements the Boolean Flag Rule: prefer a typed request/options object over threading many positional or boolean args.
+
+## Single Source of Truth
+
+A value or algorithm lives in exactly one place.
+
+1. The package version derives from installed metadata (`importlib.metadata`), not a hand-maintained literal duplicated across modules and tests.
+2. A shared constant or helper lives in one module and is imported; do not copy it. Byte-identical duplicates drift silently (the cgc/grepai provider-settings extractor had already diverged before it was consolidated).
+3. When you find the same function in two places, consolidate rather than edit both.
+
+## Atomic Mutations
+
+An operation that mutates more than one repo, branch, or file is all-or-nothing.
+
+1. Pre-validate every step before mutating anything (e.g. confirm both fast-forwards are possible before performing either).
+2. If a later step can still fail after an earlier mutation, capture the pre-mutation state and roll back on failure.
+3. Never leave a half-applied state — one branch advanced while the other is behind is a bug, not an edge case.
+
+## Dead Code and Theater Tests
+
+Do not ship code that does nothing, and do not test that it does nothing.
+
+1. A test asserts real behavior. A test that asserts a feature has no effect (an empty watch-list, a no-op result) is theater — remove the feature or make it do something, then test that.
+2. Do not wire in an inert feature (a loop over an empty constant, a CLI subcommand returning a static no-op). Implement it or remove it.
+3. Prefer deleting dead code over keeping it "just in case". Unreferenced functions, parameters a function immediately discards, and unreachable branches are removed, not retained.
+
+## Parse By Schema, Not Heuristics
+
+Parsers (per the Responsibility Rules) extract fields by the source's declared shape.
+
+1. Read structured fields from their documented keys and event types. Do not substring-scan a serialized blob or take "the longest string" to guess a value.
+2. When the upstream format is known (e.g. a provider's event stream), match its schema explicitly, add a fixture from real output, and test against it.
+
+## Smell vs Defect
+
+A code smell is not automatically a defect.
+
+1. Before "fixing" a pattern, confirm it is actually wrong. Some indirection is intentional — a flexible-by-design model boundary, a deliberate test seam. Verify against the code and its tests first.
+2. If a flagged smell turns out to be intentional, document the intent at the site (a short comment, or a note here) instead of refactoring it into something worse.
+3. Behavior-preserving cleanups keep the suite green at each step; do not bundle a risky structural change with unrelated edits.

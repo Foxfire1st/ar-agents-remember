@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T20:41+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,6 +22,13 @@ blocked non-fast-forward cases, optionally replays code and memory content for
 reviewed parallel changes, merges integrated commits, verifies the memory
 ledger mapping, and updates integration fields in the contract.
 
+The merge of integrated commits is all-or-nothing: both the code and memory
+fast-forwards are pre-validated as ancestors before either branch is mutated,
+and if the memory-side merge or ledger-mapping check fails after the code
+branch has advanced, both branches are reset hard to their pre-merge heads
+before the failure re-raises, so integration never leaves a half-integrated
+state.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -35,4 +42,5 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Documented all-or-nothing merge: pre-validate both fast-forwards and roll both branches back on memory-side failure (1.0.0 review remediation).
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.

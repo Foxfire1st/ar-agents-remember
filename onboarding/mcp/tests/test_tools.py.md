@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T01:06+02:00                     |
-| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6` |
-| lastVerifiedCommitDate | 2026-05-31T01:23:17+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -29,12 +29,20 @@ carry populated token metadata — `test_ping_payload` asserts a real `tokens`
 count (> 0), `tokenizer == "tiktoken:o200k_base"`, and `tokenCountExact is True`
 since the S6 token-counter wiring — and that service-backed MCP tools do not
 expose legacy command-capture wrapper fields such as raw `argv`, `stdout`,
-`stderr`, or parsed `payload` wrappers.
+`stderr`, or parsed `payload` wrappers. The `test_ping_payload` version check no
+longer pins a literal string; it asserts `payload["version"] == SERVER_VERSION`
+(imported from `agents_remember.mcp`) so the test tracks the package version
+instead of a hardcoded release number.
 
 The typed CGC assertions keep the old generic `cgc_query` name absent and
 verify fixed command construction for symbol search, callers, callees,
 dependencies, and complexity. GrepAI assertions keep workspace/project
 selection tied to MCP configuration and keep trace action validation explicit.
+
+This file no longer carries the Docker-mode provider-runner-integrity
+regressions (the three `test_provider_integrity_ignores_*` cases and their
+`check_provider_runner_integrity` / `manifest_path_for_config` imports were
+removed); that integrity coverage now lives elsewhere.
 
 Payload tests track the act-by-default `dry_run` contract: the `skills_install`,
 `route_index_refresh`, and `memory_init` payload tests assert apply-by-default
@@ -45,6 +53,13 @@ the preview path.
 Newer cases assert that every public tool registers a human-facing description,
 and that `runtime_install_payload` exposes a `no_cache` parameter defaulting to
 `False` and forwards `no_cache=True` into the `RuntimeInstallRequest`.
+
+The Codex benchmark policy coverage now treats `"default"`/`"omitted"` as the
+fixed (no-sandbox-argument) reporting and asserts the explicit
+`danger-full-access` request separately. `test_codex_benchmark_tools_refuse_when_disabled`
+adds a guard case: when `benchmarksEnabled` is `False`, both
+`codex_benchmark_run_payload` and `codex_benchmark_prepare_payload` return
+`ok is False` with the matching `operation` and a `disabled` error.
 
 ## Invariants And Boundaries
 
@@ -68,6 +83,7 @@ and that `runtime_install_payload` exposes a `no_cache` parameter defaulting to
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `test_ping_payload` now asserts `payload["version"] == SERVER_VERSION` (imported from `agents_remember.mcp`) instead of the `0.9.6` literal; the Codex benchmark policy test flips the fixed default to `default`/`omitted` and asserts `danger-full-access` separately; added `test_codex_benchmark_tools_refuse_when_disabled`; removed the three Docker-mode `test_provider_integrity_ignores_*` cases and their `check_provider_runner_integrity`/`manifest_path_for_config` imports. Corrected the version-assertion, Codex benchmark, and provider-integrity prose to match (1.0.0 review remediation).
 - 2026-05-31T01:06+02:00: Updated `test_ping_payload`'s version assertion to `0.9.6` (MCP 0.9.6, W-02 design section). Verification metadata stays pinned until closeout commits the change.
 - 2026-05-30T22:29+02:00: Updated `test_ping_payload` for the S6 token-counter wiring — it now asserts populated `tokens`/`tokenizer`/`tokenCountExact` instead of the zero defaults, and the version assertion moved to `0.9.5`. Typed the `fake_run` stub against `RuntimeInstallRequest` (with its import) to clear a Pyright error. Verification metadata stays pinned until closeout commits the change.
 - 2026-05-30T21:51+02:00: Documented the new coverage — every public tool must register a description, and `runtime_install_payload` exposes/forwards `no_cache` (default `False`). Repaired the stale `tools.py` reference to the split `mcp/tools/` package. Verified against `57944df`.

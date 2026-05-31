@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T20:57+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,9 @@
 The module resolves the code repository, chooses internal or external memory,
 parses settings, loads optional worktree contract facts, computes effective
 task/docs/system roots, resolves cross-repo settings, and returns one
-`CoordinationContext`.
+`CoordinationContext`. The effective memory root is the contract's
+`memory_worktree` when present and otherwise the resolved `memory_root`; it is
+not influenced by `memory_mode`.
 
 ### Invariants And Boundaries
 
@@ -62,4 +64,5 @@ No cross-repository evidence is needed; cross-repo facts are read dynamically fr
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — `_effective_memory_root` dropped its unused `memory_mode` parameter and its dead `disabled`-mode branch (both returned `memory_root`); behaviour-preserving, and added a Logic note that the effective memory root is not influenced by `memory_mode` (1.0.0 review remediation).
 - 2026-05-25T20:57+02:00: Created by extracting coordination context selection and assembly from the monolithic resolver.

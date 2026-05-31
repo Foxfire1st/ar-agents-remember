@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:22+02:00                     |
-| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
-| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
+| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -76,6 +76,13 @@ placeholder for memory/worktree commits).
 - Keep the install-order rationale intact: scaffolding → skills → providers.
   `runtime_install` builds provider images (step 2); indexing only *starts* in
   step 3, so "providers last" means indexing, not image builds.
+- Keep the benchmark-safety callout intact: `codex_benchmark_prepare`/
+  `codex_benchmark_run` are opt-in, refused unless settings set
+  `"benchmarksEnabled": true`; a real run (`dry_run=false`) clones third-party
+  repos and runs the Codex CLI, and `codex_sandbox` defaults to Codex's `default`
+  sandbox with `danger-full-access` reserved for trusted local runs (full host
+  access). The README must keep warning that benchmark execution runs untrusted
+  code.
 
 ## Repo-Internal References
 
@@ -90,6 +97,7 @@ placeholder for memory/worktree commits).
 
 ## Update History
 
+- 2026-05-31T12:30+02:00 — Captured the README's new benchmark-safety callout (1.0.0 review remediation): `codex_benchmark_prepare`/`codex_benchmark_run` are opt-in behind `benchmarksEnabled: true`, real runs run untrusted code, and `codex_sandbox` defaults to `default` with `danger-full-access` opt-in.
 - 2026-05-30T21:22+02:00: Verified against `57944df` after the 0.9.0–0.9.4 run. Documented the README sections added since `412342847` — Settings file location (the `mcp`-parent rule that lets `skills_install` infer its target), Install Order And First Operations (scaffolding → skills → providers, `runnerIntegrityFailed`, `install_provider_deps`/`no_cache`), the `tree` vs `flat` skill-layout note, the `providerSeconds` → `providerSetupSeconds` rename, and Troubleshooting — and added matching invariants and references.
 - 2026-05-29T14:15+02:00: Rewrote the README as a self-contained, uvx-first bootstrap — added the 3-step "ask your agent to" Quickstart (hands off to C-13), inlined a starter `settings.json`, switched project-doc links to absolute GitHub URLs, and linked the MCP tool reference. Metadata pending closeout refresh.
 - 2026-05-28T15:52+02:00: Updated after the MCP package README added the canonical source checkout link.

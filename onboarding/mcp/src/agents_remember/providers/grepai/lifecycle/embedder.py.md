@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
+| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -42,6 +42,12 @@ status can report embedder state and uptime.
   rather than reallocated from host socket availability.
 - Embedder status should expose enough Docker state for current provider status
   without requiring callers to inspect containers themselves.
+- Layout-consuming helpers (`grepai_embedder_health`,
+  `grepai_embedder_start_context` return value,
+  `grepai_embedder_remove_mismatched_container`, `grepai_embedder_inspect`, and
+  `grepai_embedder_create_start_result`) are typed against the
+  `GrepaiRuntimeLayout` dataclass (re-exported via the `core` star-import), not
+  an opaque `Any`.
 
 ## Repo-Internal References
 
@@ -53,6 +59,7 @@ status can report embedder state and uptime.
 
 ## Update History
 
+- 2026-05-31T12:50+02:00 — Re-typed the `layout` params of `grepai_embedder_health`, `grepai_embedder_remove_mismatched_container`, `grepai_embedder_inspect`, and `grepai_embedder_create_start_result`, plus the `grepai_embedder_start_context` return tuple, from `Any` to the `GrepaiRuntimeLayout` dataclass (re-exported via the `core` star-import); behavior-preserving, recorded the layout typing in Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `grepai_embedder_dry_run_result` `commands` -> `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after GrepAI embedder status began including normalized container-state summaries.
 - 2026-05-27T00:25+02:00: Updated after Ollama startup began reusing existing
