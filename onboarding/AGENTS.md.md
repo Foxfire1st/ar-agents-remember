@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-06-01T11:18+02:00                     |
+| lastVerifiedCommitHash | `3113f8b877d670e15df17349de186b1bcbc6b629` |
+| lastVerifiedCommitDate | 2026-06-01T13:10:08+02:00|
 
 ## Purpose
 
@@ -27,6 +27,14 @@ not the live runtime after installation. It gives a fallback handoff for the
 case where a workspace root includes this file while the actual target is a
 sibling repository, then scopes normal resolver input for this checkout to
 `code_repository_name = agents-remember-md`.
+
+A `Frame Before You Choose a Format` section now sits ahead of Task Format
+Routing: it makes the `tasks/AGENTS.md` collaboration doctrine apply up front in
+plain chat, before a format is chosen, and routes the evidence that conversation
+needs to `C-04-retrieval-strategy-router`. The memory section also carries a
+`Memory Retrieval Strategies` list — Semantics (GrepAI), Relationship (cgc), and
+Intent (onboarding plus bounded source confirmation) — that points to the same
+C-04 router.
 
 The task-routing section keeps the three workflow choices: default chat mode
 for small current-session edits, W-02 for durable task-file work, and W-01 only
@@ -107,6 +115,7 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## Update History
 
+- 2026-06-01T11:18+02:00: Documented the new `Frame Before You Choose a Format` section ahead of Task Format Routing (the `tasks/AGENTS.md` collaboration doctrine applies up front and routes evidence to C-04) and the added `Memory Retrieval Strategies` list pointing to C-04. Verification metadata stays pinned; Repo-Internal Reference line ranges will be re-verified at closeout.
 - 2026-05-29T20:25+02:00: Updated after the workflow-before-code warning was made explicit ("do not randomly commit; use the C-12 closeout procedure").
 - 2026-05-28T19:52+02:00: Updated after source-checkout code quality guidance added Pyright beside Ruff and Radon.
 - 2026-05-24T04:34+02:00: Updated after source-checkout instructions renamed C-02 to memory quality control and made commit approval separate from implementation approval.
