@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-05-29T08:53+02:00                             |
-| lastVerifiedCommitHash | `a06bfa65dcee3c8b82652085c69f2a20f163e306`         |
-| lastVerifiedCommitDate | 2026-05-29T09:05:12+02:00                          |
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`         |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -90,4 +90,5 @@ declared nor part of the input."
 
 ## Update History
 
+- 2026-06-01T20:45+02:00 — Extended conformance coverage to the new `worktree_abandon` payload/response model.
 - 2026-05-29T08:53+02:00: Created onboarding for the dev-time tool-response conformance tests covering all public tools.

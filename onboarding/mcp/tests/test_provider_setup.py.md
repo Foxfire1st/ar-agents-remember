@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -102,6 +102,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-01T20:45+02:00 — Updated the isolated-grepai assertion to expect the workspace-scoped `workspace` key (clone-reuse fix).
 - 2026-05-31T12:50+02:00 — `test_settings_path_requires_explicit_provider_settings` now calls `provider_setup.settings_path(None)` (single settings-path arg) instead of `settings_path(root, None)` and drops its `TemporaryDirectory`, following `settings_path()` losing its leading `root` parameter; noted the single-arg call in Logic (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Replaced `assertIsNotNone` with `assert ... is not None` so the isolated-settings locals narrow before subscript; behavior-preserving (commit `0549b28`).
 - 2026-05-28T14:21:08+02:00: Updated after provider setup tests asserted

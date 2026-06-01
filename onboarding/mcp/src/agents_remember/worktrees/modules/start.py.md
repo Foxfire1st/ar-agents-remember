@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-01T00:00+02:00                     |
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,6 +32,21 @@ and `provider_setup.settings_path` are now called with the settings path alone
 `_cgc_enablement_state` helper was removed in favour of the unified
 `_provider_enablement_state`.
 
+When an existing contract is found on disk, `start_result` now checks its
+`cleanup` field: if `cleanup == "abandoned"` the contract is a tombstone whose
+worktrees and branches were already discarded, so start recreates fresh rather
+than attaching to the dead binding.
+
+`prepare_memory_for_start` now also calls `_sync_worktree_memory_mtimes` after
+preparing the memory worktree. `git checkout` stamps every file with the current
+time; GrepAI's watcher skips unchanged files by `ModTime`, so brand-new mtimes
+make every file look modified and force a full re-embed — defeating the DB clone.
+`_sync_worktree_memory_mtimes` walks the freshly checked-out memory worktree,
+finds each file's counterpart in the source memory repo, and calls `os.utime` to
+copy the source mtime onto the worktree file. Files absent in the source are left
+untouched and counted as `filesMissingInSource`. The `.git` subtree is skipped.
+The result is returned as `mtimeSync` in the `prepare_memory_for_start` payload.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -43,9 +58,11 @@ No external Domain Documentation source is configured for this memory repo.
 | Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | [args.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/args.py) |
 | Provider setup requests are implemented by the providers package. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
 | Worktree tests cover memory compatibility, disabled-memory choices, and dirty external-memory blocking. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | [test_worktree_mtime_sync.py](agents-remember-md/mcp/tests/test_worktree_mtime_sync.py) |
 
 ## Update History
 
+- 2026-06-01T00:00+02:00 — `start_result` now detects abandoned contracts and recreates instead of reattaching. `prepare_memory_for_start` calls `_sync_worktree_memory_mtimes` to mirror source-repo file mtimes onto the freshly checked-out memory worktree, enabling GrepAI clone reuse. Updated Code Commentary.
 - 2026-05-31T12:50+02:00 — Re-typed every `args` param from `argparse.Namespace` to the new `WorktreeArgs` dataclass (dropping `import argparse`), added `task_name`/`worktree_name`/`provider_setup_config` non-`None` asserts, switched `provider_setup.load_settings`/`settings_path` to the path-only signature, and removed the dead `_cgc_enablement_state` helper; corrected Code Commentary and added the args.py reference (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `_load_memory_ledger` returns `MemoryLedger | dict[str, object]` so `prepare_memory_for_start` narrows the ledger before `find_mapping`/attribute access; behavior-preserving (commit `0549b28`).
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.

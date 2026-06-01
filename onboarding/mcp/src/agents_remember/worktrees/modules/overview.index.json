@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/worktrees/modules/__init__.py",
+    "mcp/src/agents_remember/worktrees/modules/abandon.py",
     "mcp/src/agents_remember/worktrees/modules/args.py",
     "mcp/src/agents_remember/worktrees/modules/cleanup.py",
     "mcp/src/agents_remember/worktrees/modules/cli.py",
@@ -21,14 +22,16 @@
     "mcp/src/agents_remember/worktrees/modules/integrate.py",
     "mcp/src/agents_remember/worktrees/modules/models.py",
     "mcp/src/agents_remember/worktrees/modules/onboarding.py",
+    "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
     "mcp/src/agents_remember/worktrees/modules/start.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 12,
-    "fileSidecars": 12,
+    "sourceFilesInScope": 14,
+    "fileSidecars": 14,
     "childRoutes": 0
   },
   "routingTerms": [
+    "abandon",
     "agents",
     "agents_remember",
     "args",
@@ -45,16 +48,20 @@
     "models",
     "modules",
     "onboarding",
+    "provider",
+    "provider_teardown",
     "remember",
     "src",
     "start",
+    "teardown",
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, and `cleanup.py` own the named C-09 lifecycle operations. `integrate.py` performs the code and memory fast-forwards atomically: it pre-validates that both fast-forwards are possible before mutating either branch and rolls both heads back on any memory-side failure, so integration never lands a half-integrated state. - `onboarding.py` owns closeout-time onboarding metadata and entity fingerprin...",
+    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named C-09 lifecycle operations. `integrate.py` performs the code and memory fast-forwards atomically: it pre-validates that both fast-forwards are possible before mutating either branch and rolls both heads back on any memory-side failure, so integration never lands a half-integrated state. `abandon.py` is the discard-without-integration sibling: it recl...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
+      "mcp/src/agents_remember/worktrees/modules/abandon.py",
       "mcp/src/agents_remember/worktrees/modules/args.py",
       "mcp/src/agents_remember/worktrees/modules/cleanup.py",
       "mcp/src/agents_remember/worktrees/modules/cli.py",
@@ -65,11 +72,14 @@
       "mcp/src/agents_remember/worktrees/modules/integrate.py",
       "mcp/src/agents_remember/worktrees/modules/models.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
+      "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
       "mcp/src/agents_remember/worktrees/modules/start.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "abandon.py",
+      "abandon",
       "args.py",
       "args",
       "cleanup.py",
@@ -90,11 +100,13 @@
       "models",
       "onboarding.py",
       "onboarding",
+      "provider_teardown.py",
+      "provider_teardown",
       "start.py",
       "start",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "c20a3292e667d227a3be0c1fb276f8a701df814f",
+      "4117c3d98eadb4265af6e55f3dd8f2552e8589a0",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
@@ -110,12 +122,8 @@
       "lastUpdated",
       "T12",
       "lastVerifiedCommitHash",
-      "lastVerifiedCommitDate",
-      "T14",
-      "governingOverview",
-      "git_worktree_manager",
-      "DTO",
-      "JSON"
+      "c3d98eadb4265af6e55f3dd8f2552e8589a0",
+      "lastVerifiedCommitDate"
     ]
   },
   "fallback": {

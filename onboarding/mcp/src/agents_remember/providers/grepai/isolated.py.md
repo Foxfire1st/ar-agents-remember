@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/isolated.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                         |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-01T00:00+02:00                     |
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                         |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -18,8 +18,23 @@
 
 ### Logic
 
-`isolated_grepai_settings()` reads the configured `grepai-memory` provider via the shared `setup_common.provider_settings()` helper (which returns the provider block only when it is a dict), requires an active project id plus target memory root, and deep-copies the source provider settings into a workflow-local target. The generated target settings namespace the GrepAI workspace, runner, Postgres backend, Ollama embedder, network, runtime roots, data roots, logs, and ownership labels by a worktree provider instance id. `_isolated_grepai_roots()` preserves unrelated memory roots and replaces only the active project root with the worktree-local memory path.
-The isolated log root follows the central workflow-local `logs/providers/grepai/<instance>` layout rather than the provider runtime tree.
+`isolated_grepai_settings()` reads the configured `grepai-memory` provider via the shared `setup_common.provider_settings()` helper (which returns the provider block only when it is a dict), requires an active project id plus target memory root, and deep-copies the source provider settings into a workflow-local target. The generated target settings namespace the GrepAI workspace, runner, Postgres backend, Ollama embedder, network, runtime roots, data roots, logs, and ownership labels by a worktree provider instance id. `_isolated_grepai_roots()` preserves unrelated memory roots and replaces only the active project root with the worktree-local memory path. The isolated log root follows the central workflow-local `logs/providers/grepai/<instance>` layout rather than the provider runtime tree.
+
+`_isolated_grepai_base_fields` sets the GrepAI logical `workspace` key to a
+scope derived from the **workspace** identity (not the worktree instance id).
+The worktree's Postgres is seeded as a clone of the workspace Postgres; the
+clone is keyed by the workspace `workspace` value. If the worktree instance id
+scoped the `workspace` key instead, the seeded clone would be invisible to the
+worktree watcher (different key), forcing a full re-embed. The fix: derive a
+`workspace_instance_id` for the `"workspace"` provider scope and use it as the
+scoping argument for `scoped_name("agents-remember-memory", ...)`, matching the
+workspace's own `workspace` value exactly.
+
+`_isolated_grepai_embedder` sets `seedFromContainer` in the embedder backend to
+the workspace Ollama container name (derived by the same `workspace_instance_id`
+approach). The worktree Ollama starts empty; this key tells the embedder
+lifecycle to copy the model from the workspace Ollama via a local tar pipe
+instead of re-pulling it over the network.
 
 ### Invariants And Boundaries
 
@@ -41,6 +56,7 @@ The isolated log root follows the central workflow-local `logs/providers/grepai/
 
 ## Update History
 
+- 2026-06-01T00:00+02:00 — `_isolated_grepai_base_fields` now derives `workspace` from the workspace-scope `provider_instance_id` (not the worktree instance id) so the seeded Postgres clone is reused; `_isolated_grepai_embedder` now sets `seedFromContainer` to the workspace Ollama container name. Updated Code Commentary Logic.
 - 2026-05-31T12:50+02:00 — Source dropped the file-local `_grepai_provider()` helper and now resolves the GrepAI block through the shared `setup_common.provider_settings()` (import switched from `context_providers` to `provider_settings`); behaviour-preserving, Logic prose updated to name the shared helper (1.0.0 review remediation).
 - 2026-05-28T12:32+02:00: Updated after isolated GrepAI settings moved watch logs under `logs/providers/`.
 - 2026-05-27T18:10:12+02:00: Created for the GrepAI worktree warm-start settings slice.
