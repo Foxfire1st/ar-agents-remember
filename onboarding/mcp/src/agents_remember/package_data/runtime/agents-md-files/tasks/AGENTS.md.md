@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastUpdated            | 2026-06-01T11:18+02:00                     |
+| lastVerifiedCommitHash | `3113f8b877d670e15df17349de186b1bcbc6b629` |
+| lastVerifiedCommitDate | 2026-06-01T13:10:08+02:00|
 
 ## Purpose
 
@@ -24,7 +24,11 @@ tasks, surface assumptions and truth gaps, reason top-down and bottom-up, make
 the evidence model visible, and show representative examples before risky code
 or structural documentation changes. It also defines a visible planning standard
 for non-trivial work so task artifacts carry intent, invariants, examples, and
-implementation sequencing rather than only a checklist.
+implementation sequencing rather than only a checklist. A preamble now states
+the doctrine applies up front — the moment a developer is thinking about building
+something, in plain chat, before any task format is chosen or task file exists —
+and the Evidence-First Reasoning section routes evidence gathering through
+`C-04-retrieval-strategy-router`.
 
 ### Conventions
 
@@ -72,5 +76,6 @@ No sibling repository evidence is needed for this task doctrine template.
 
 ## Update History
 
+- 2026-06-01T11:18+02:00: Documented the new title preamble (the task collaboration doctrine applies up front, before a task format is chosen or task file exists) and the `C-04-retrieval-strategy-router` route added to Evidence-First Reasoning. Verification metadata stays pinned; Repo-Internal Reference line ranges and the `Runtime AGENTS Template Package` entity fingerprint will be re-verified/recomputed at closeout.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-15T00:38+02:00: Created onboarding after the former skills-folder task collaboration doctrine moved to the installable tasks template path. Verification metadata remains pinned to the last committed source until closeout.

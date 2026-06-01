@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-27T12:50+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-06-01T11:18+02:00                     |
+| lastVerifiedCommitHash | `3113f8b877d670e15df17349de186b1bcbc6b629` |
+| lastVerifiedCommitDate | 2026-06-01T13:10:08+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,13 @@ runtime package is installed.
 ### Logic
 
 The template combines the checkout's task-format routing with coordinator
-runtime guidance. It requires agents to choose Chat, W-02, or W-01 before
+runtime guidance. It now opens with a `Frame Before You Choose a Format` routing
+section ahead of Task Format Routing: the `tasks/AGENTS.md` collaboration
+doctrine applies up front in plain chat — before any task file exists and before
+a format is chosen — and the up-front conversation pulls evidence through
+`C-04-retrieval-strategy-router`. The former "do not rush" doctrine bullet under
+Installed AGENTS.md Routing is now a plain pointer to `tasks/AGENTS.md`, so the
+doctrine is stated once instead of twice. It requires agents to choose Chat, W-02, or W-01 before
 changing code, points agents to the sibling installed `system/`, `tasks/`, and
 `skills/` `AGENTS.md` files when those scopes become relevant, resolves active
 repository context with C-08 before trusting memory or task surfaces, checks
@@ -118,6 +124,7 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-06-01T11:18+02:00: Documented the new top `Frame Before You Choose a Format` routing section (the `tasks/AGENTS.md` collaboration doctrine now applies up front, before a task format is chosen, and routes evidence to C-04) and the slimming of the buried "do not rush" bullet to a plain `tasks/AGENTS.md` pointer. Verification metadata stays pinned; Repo-Internal Reference line ranges and the `Runtime AGENTS Template Package` entity fingerprint will be re-verified/recomputed at the single closeout after the routing-layer optimization pass and mcp version bump.
 - 2026-05-29T20:25+02:00: Updated after the coordinator AGENTS template gained the explicit "do not randomly commit; use the C-12 closeout procedure" workflow-before-code rule.
 - 2026-05-27T12:50+02:00: Added the coordinator Git-boundary rule that `ar-coordination/` is a scaffold root, not a repository root; Git commands should target resolved code or memory Git repositories and `tasks/` artifacts stay local unless a workflow says otherwise.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
