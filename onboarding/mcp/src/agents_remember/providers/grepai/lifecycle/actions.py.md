@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/actions.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-02T01:15+02:00                     |
+| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
+| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,7 +38,9 @@ watcher startup so later Compose calls use the same dependency port mappings.
 - Non-Docker GrepAI paths must report unsupported instead of installing host
   binaries or using host Ollama.
 - Full install/start health is the composed state of Postgres, Ollama, runner
-  image, watcher container, workspace config, and root artifact cleanup.
+  image, watcher container, and workspace config. Presence of grepai's `.grepai/`
+  working dir in a root is expected (roots are watched live) and no longer fails
+  status.
 - Watcher startup should receive the current backend/embedder port mappings
   from the same GrepAI start flow.
 - The `layout` parameter throughout is the concrete `GrepaiRuntimeLayout`
@@ -53,6 +55,7 @@ watcher startup so later Compose calls use the same dependency port mappings.
 
 ## Update History
 
+- 2026-06-02T01:15+02:00 — Removed `grepai_root_artifacts` and dropped the `rootArtifacts` term from the status ok-gate (roots are watched live; `.grepai/` is expected); `grepai_roots_payload` no longer emits `sourcePath` (watch-live).
 - 2026-05-31T12:50+02:00 — Every `layout: Any` parameter re-typed to the concrete `GrepaiRuntimeLayout` (re-exported via the `core` star-import); behaviour-preserving, added an Invariants note pinning the `layout` type (1.0.0 review remediation).
 - 2026-05-27T00:25+02:00: Updated after Docker start began passing
   backend/embedder port mappings into watcher startup.

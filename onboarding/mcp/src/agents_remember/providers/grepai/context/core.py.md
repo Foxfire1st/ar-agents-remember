@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/context/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:33+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-06-02T01:15+02:00                     |
+| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
+| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -22,7 +22,7 @@
 
 ### Logic
 
-It imports public names from `artifacts.py`, `constants.py`, `layout.py`, and `workspace.py`. It keeps `grepai.core` as a local organization point inside the new subpackage, while the public API remains `providers.context`.
+It imports public names from `constants.py`, `layout.py`, and `workspace.py`. It keeps `grepai.core` as a local organization point inside the new subpackage, while the public API remains `providers.context`.
 
 ### Invariants And Boundaries
 
@@ -38,5 +38,6 @@ It imports public names from `artifacts.py`, `constants.py`, `layout.py`, and `w
 
 ## Update History
 
+- 2026-06-02T01:15+02:00: Dropped the `artifacts.py` re-export after the module was removed.
 - 2026-05-25T19:33+02:00: Reduced to a facade after GrepAI context responsibilities were split into constants, layout, workspace, and artifact modules.
 - 2026-05-25T19:16+02:00: Created when `context_providers.py` was split into `context.py` plus provider-specific context modules.

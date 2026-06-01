@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T07:19+02:00                     |
-| lastVerifiedCommitHash | `e1382b9277d48f13b6a1cb065f2fa2638b36feba` |
-| lastVerifiedCommitDate | 2026-05-29T07:08:19+02:00|
+| lastUpdated            | 2026-06-02T01:15+02:00                     |
+| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
+| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,12 +38,11 @@ synthetic stale `my-app` runtime instance plus legacy `db`, `global`, and
 `kuzu` artifacts under a configured runtime root, then verifies cleanup removes
 only those generated artifacts while preserving the shared FalkorDB backend
 data root. The GrepAI tests cover pin handling, workspace runtime paths,
-explicit external and repo-internal memory roots, provider-owned mirror roots,
-mirror sync exclusion of source `.grepai/`, provider-owned workspace config,
-PostgreSQL store config, explicit Ollama endpoint/dimension defaults, central
-`logs/providers/grepai` operator log layout, detection of `.grepai/` artifacts
-in indexed roots, and removal of disposable `.grepai/` artifacts without
-touching durable onboarding files. The remaining tests cover forbidden source
+explicit external and repo-internal memory roots indexed live in place,
+provider-owned workspace config, PostgreSQL store config, explicit Ollama
+endpoint/dimension defaults, central `logs/providers/grepai` operator log
+layout, and `ensure_grepai_root_gitignore` (appends `.grepai/` to a root's
+`.gitignore`, creates one when absent, idempotent). The remaining tests cover forbidden source
 artifact detection, idempotent CGC patch application including the visualizer
 repo-query and route patches, rejection of unexpected patch source text, stable
 repo id normalization, and stable patch id naming.
@@ -68,11 +67,10 @@ All tests use temporary directories and do not require CodeGraphContext, GrepAI,
 The tests protect the core provider invariant: managed provider artifacts belong
 under `ar-coordination/providers/` and operator logs under
 `ar-coordination/logs/`, not as durable source or memory data. They also
-protect reinstall idempotence by proving stale generated runtime instances,
-legacy embedded-backend files, and disposable GrepAI root artifacts can be
-removed without touching shared backend data or onboarding files, and that
-GrepAI's durable database data root is separate from provider-owned
-config/state/mirror scaffolding.
+protect reinstall idempotence by proving stale generated runtime instances and
+legacy embedded-backend files can be removed without touching shared backend
+data or onboarding files, and that GrepAI's durable database data root is
+separate from provider-owned config/state scaffolding.
 
 The tests protect that provider backend env authority stays in settings/state,
 not ambient host process variables.
@@ -101,7 +99,7 @@ No external documentation is needed for these unit tests.
 | The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | L145-L187 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
 | The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | L188-L226 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
 | Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, rejection of configured code repository paths that do not exist, and rejection of removed `venvRoot` settings. | L228-L338 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
-| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, central log roots, settings expansion across external and internal memory roots into provider-owned mirrors, mirror sync exclusion of source `.grepai/`, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, detection of `.grepai/` artifacts in indexed memory roots, and disposable root artifact removal that preserves regular onboarding files. | L243-L445 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
+| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, central log roots, settings expansion across external and internal memory roots indexed live in place, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and `ensure_grepai_root_gitignore` (append/create/idempotent `.grepai/` ignore). | L243-L420 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
 | Source artifact, patch idempotence, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query and route patches. | L423-L726 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
 
 ## Cross-Repo References
@@ -114,6 +112,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-02T01:15+02:00: Replaced the mirror-sync and `.grepai/` artifact detection/removal tests with `ensure_grepai_root_gitignore` coverage (append/create/idempotent) and switched layout expansion expectations to live in-place roots (watch-live).
 - 2026-05-29T07:19+02:00: Added coverage for `to_container_path`, driveless `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=True)` (driveless path values, omitted host-only Windows env) for Windows-host provider support.
 - 2026-05-28T13:40+02:00: Updated after CGC layout tests removed host venv executable expectations, added stale `venvRoot` rejection coverage, and removed venv module lookup tests.
 - 2026-05-28T12:32+02:00: Updated after GrepAI context layout tests moved operator logs under `logs/providers/grepai`.

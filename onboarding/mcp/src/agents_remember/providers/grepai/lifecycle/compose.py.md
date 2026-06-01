@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-02T01:15+02:00                     |
+| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
+| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,8 +29,9 @@ assembly while still letting lifecycle code choose ports and paths.
 provided or configured host ports, fills Postgres and Ollama images,
 containers, ports, and data volumes, points the runner build context at the
 committed GrepAI Docker asset, injects runner version/architecture build args,
-and renders watcher runtime/log mounts, environment, workspace name, and
-network name into the package override template. Port mappings go through the
+and renders watcher runtime/log mounts plus a read-write bind-mount of each live
+memory root at `/grepai/roots/<project_id>` (`WATCHER_ROOT_VOLUMES`), environment,
+workspace name, and network name into the package override template. Port mappings go through the
 shared Compose helper so configured `auto` host ports render as Compose's empty
 published-port syntax instead of the literal string `auto`. The watcher
 environment is rendered from container-local runtime paths, and the Compose
@@ -85,6 +86,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-06-02T01:15+02:00 — `grepai_compose_render()` now bind-mounts each live memory root read-write at `/grepai/roots/<project_id>` (`WATCHER_ROOT_VOLUMES`) so the watcher indexes the real repos in place instead of a mirror under the runtime mount.
 - 2026-05-31T12:30+02:00 — Fixed Repo-Internal citation: local `grepai_user()`/`grepai_user_block()` replaced by shared `host_user_block()` helper; refreshed line ranges (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after GrepAI Compose label rendering began
   rejecting provider settings without generated `instance.labels`.

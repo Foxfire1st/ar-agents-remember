@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
+| lastUpdated            | 2026-06-02T01:15+02:00                     |
 | lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
 | lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00                  |
 | governingOverview      | `../../../../overview.md`                  |
@@ -24,14 +24,14 @@ top-level `grepai_setup.py` plus mixed `context_modules/grepai` and
 ## Hot Path Summary
 
 Use `setup.py` for setup-time refresh/install wiring. Use `context/` for
-Docker runtime layout, workspace YAML, and `.grepai/` artifact cleanup. Use
-`lifecycle/` for Postgres, Ollama, runner image/container, and high-level
-GrepAI actions.
+Docker runtime layout, workspace YAML, and per-root `.gitignore` of grepai's
+`.grepai/` working dir. Use `lifecycle/` for Postgres, Ollama, runner
+image/container, and high-level GrepAI actions.
 
 ## Route Model
 
 - `setup.py` wires enabled GrepAI setup through lifecycle commands.
-- `context/` owns GrepAI runtime layout and workspace artifacts.
+- `context/` owns GrepAI runtime layout, workspace config, and live-root indexing.
 - `lifecycle/` owns Docker backend, embedder, runner, and top-level actions.
 
 ## Invariants And Boundaries
@@ -51,4 +51,5 @@ GrepAI actions.
 
 ## Update History
 
+- 2026-06-02T01:15+02:00: Updated for watch-live — `context/` now indexes the live memory roots in place and git-ignores grepai's `.grepai/` working dir; removed the `.grepai/` artifact-cleanup reference (`artifacts.py` deleted).
 - 2026-05-25T21:14+02:00: Created when provider modules were reorganized provider-first under `providers/grepai/`.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T18:07+02:00                     |
-| lastVerifiedCommitHash |                                            `45214435fd2de65765a8230ceb1dcfe188d1944d`|
-| lastVerifiedCommitDate |                                            2026-05-27T00:09:33+02:00|
+| lastUpdated            | 2026-06-02T01:15+02:00                     |
+| lastVerifiedCommitHash |                                            `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44`|
+| lastVerifiedCommitDate |                                            2026-06-02T01:10:22+02:00|
 | governingOverview      | `../../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -50,9 +50,9 @@ tools stay in the selected memory layer. Setup flows should use the MCP
 are lower-level provider diagnostics and operations. GrepAI lifecycle commands
 read the `grepai-memory` settings, expand workspace roots into explicit
 projects, ensure the shared Docker network plus PostgreSQL/pgvector and Ollama
-containers are healthy, mirror memory roots under
-`providers/runners/grepai/index-roots/` when enabled, and write GrepAI workspace
-config under `providers/runners/grepai/home/.grepai/workspace.yaml`. The GrepAI
+containers are healthy, watch the live memory roots in place (read-write
+bind-mounted into the watcher), and write GrepAI workspace config under
+`providers/runners/grepai/home/.grepai/workspace.yaml`. The GrepAI
 binary lives in the Docker runner container, not under `providers/_bin`.
 CGC/FalkorDB runtime env
 keys are process env only; for CGC v0.4.10 they should not be written into
@@ -65,7 +65,7 @@ before starting daemons from automation or sandbox-like harnesses.
 
 ### Invariants And Boundaries
 
-Agents should resolve the target repository with C-08 before choosing task, worktree, memory, validation paths, or context provider roots. Provider output is discovery evidence only, and source/onboarding proof remains required. Managed mode should fail containment/health checks if CGC writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs inside indexed source repositories, or if GrepAI writes `.grepai/` inside indexed source repositories or durable memory roots. Daemon/server lifecycle actions must be launched from a durable host process namespace; bounded retrieval commands like `cgc run` remain usable from sandboxed harnesses.
+Agents should resolve the target repository with C-08 before choosing task, worktree, memory, validation paths, or context provider roots. Provider output is discovery evidence only, and source/onboarding proof remains required. Managed mode should fail containment/health checks if CGC writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs inside indexed source code repositories. GrepAI indexes the live memory roots in place, so its `.grepai/` working dir is expected inside each memory root and is kept out of git via the root's `.gitignore` (it must still not land in indexed source code repositories). Daemon/server lifecycle actions must be launched from a durable host process namespace; bounded retrieval commands like `cgc run` remain usable from sandboxed harnesses.
 
 ### Todos
 
@@ -85,9 +85,9 @@ No external documentation is needed.
 | --- | --- | --- |
 | The coordinator tools example separates global commands from repository-specific checks, branch workflow, and code quality tools. | L1-L7; L121-L125 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
 | The provider command section records MCP runtime install, `grepai_search`, aggregate provider status/watcher flows, and CGC bounded `run -- ...` plus long-running `visualize --port 8000` command shapes. | L13-L68 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
-| The provider notes say aggregate `watchers` commands start or stop every enabled provider watcher; GrepAI lifecycle commands expand `grepai-memory` roots, ensure Docker network/Postgres/Ollama health, mirror memory roots under `providers/runners/grepai/index-roots/`, write provider-owned workspace config/state, and use the Docker runner container instead of host binaries; CGC lifecycle commands expand configured roots, ensure FalkorDB Docker, pass post-`--` arguments to native CGC for bounded relationship queries, and expose the visualizer as a separate long-running lifecycle command. | L70-L109 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
+| The provider notes say aggregate `watchers` commands start or stop every enabled provider watcher; GrepAI lifecycle commands expand `grepai-memory` roots, ensure Docker network/Postgres/Ollama health, watch the live memory roots in place, write provider-owned workspace config/state, and use the Docker runner container instead of host binaries; CGC lifecycle commands expand configured roots, ensure FalkorDB Docker, pass post-`--` arguments to native CGC for bounded relationship queries, and expose the visualizer as a separate long-running lifecycle command. | L70-L109 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
 | The process namespace note says long-running daemon actions such as watcher start/stop/shutdown, CGC start/stop/visualize, and GrepAI watcher start/stop/refresh must run from a durable host namespace, while lifecycle status reports `processNamespace` diagnostics and refuses `--die-with-parent` sandboxes. | L111-L117 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
-| The containment notes require managed mode to reject source-repo CGC artifacts and GrepAI `.grepai/` directories in source repositories or durable memory roots. | L119-L127 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
+| The containment notes require managed mode to reject source-repo CGC artifacts; GrepAI indexes the live memory roots in place, where its `.grepai/` working dir is expected and git-ignored. | L119-L127 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
 
 ## Cross-Repo References
 
@@ -99,6 +99,7 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-06-02T01:15+02:00: Updated GrepAI guidance for watch-live: roots are indexed in place (read-write bind-mounted) instead of mirrored under `index-roots/`, and `.grepai/` is now git-ignored per memory root rather than rejected from memory roots.
 - 2026-05-25T18:07+02:00: Updated GrepAI tool guidance after managed mode became Docker-only and stopped using `providers/_bin`.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T21:25+02:00: Clarified that repo-specific code quality tools belong in the selected memory layer's `system/tools.md`.

@@ -11,21 +11,19 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/providers/grepai/context/__init__.py",
-    "mcp/src/agents_remember/providers/grepai/context/artifacts.py",
     "mcp/src/agents_remember/providers/grepai/context/constants.py",
     "mcp/src/agents_remember/providers/grepai/context/core.py",
     "mcp/src/agents_remember/providers/grepai/context/layout.py",
     "mcp/src/agents_remember/providers/grepai/context/workspace.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 6,
-    "fileSidecars": 6,
+    "sourceFilesInScope": 5,
+    "fileSidecars": 5,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
-    "artifacts",
     "constants",
     "context",
     "core",
@@ -40,11 +38,10 @@
     "workspace"
   ],
   "hotPath": {
-    "summary": "Use `constants.py` for Docker/network/container defaults, `layout.py` for `GrepaiRuntimeLayout`, provider settings expansion, provider-owned mirrored roots, and mirror sync, `workspace.py` for workspace YAML rendering, and `artifacts.py` for root artifact validation/removal. `core.py` and `__init__.py` are facades over those focused modules.",
+    "summary": "Use `constants.py` for Docker/network/container defaults, `layout.py` for `GrepaiRuntimeLayout`, provider settings expansion, live memory roots, and per-root `.gitignore` of grepai's `.grepai/` working dir, and `workspace.py` for workspace YAML rendering. `core.py` and `__init__.py` are facades over those focused modules.",
     "candidateHints": [
       "mcp/src/agents_remember/providers/grepai/context",
       "mcp/src/agents_remember/providers/grepai/context/__init__.py",
-      "mcp/src/agents_remember/providers/grepai/context/artifacts.py",
       "mcp/src/agents_remember/providers/grepai/context/constants.py",
       "mcp/src/agents_remember/providers/grepai/context/core.py",
       "mcp/src/agents_remember/providers/grepai/context/layout.py",
@@ -53,8 +50,6 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
-      "artifacts.py",
-      "artifacts",
       "constants.py",
       "constants",
       "core.py",
@@ -64,6 +59,8 @@
       "workspace.py",
       "workspace",
       "GrepaiRuntimeLayout",
+      "gitignore",
+      "grepai/",
       "YAML",
       "init__",
       "mcp/src/agents_remember/providers/grepai/context/",
@@ -71,18 +68,19 @@
       "a8ee8440dfa920d1153a4bb4bb43cc77534c3c90",
       "/overview.md",
       "grepai/context/",
-      "grepai/",
+      "artifacts.py",
       "providers/grepai/context/",
       "agents_remember",
       "GrepAI",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T21",
+      "T01",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "T15",
       "governingOverview",
+      "T21",
       "T19"
     ]
   },
