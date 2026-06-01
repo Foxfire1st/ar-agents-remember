@@ -213,6 +213,7 @@
     "mcp/tests/test_controller_guards.py",
     "mcp/tests/test_crap_calculator.py",
     "mcp/tests/test_docker_runtime_parsers.py",
+    "mcp/tests/test_identity.py",
     "mcp/tests/test_install_runtime.py",
     "mcp/tests/test_markdown_settings.py",
     "mcp/tests/test_memory_quality.py",
@@ -231,8 +232,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 374,
-    "fileSidecars": 163,
+    "sourceFilesInScope": 375,
+    "fileSidecars": 164,
     "childRoutes": 11
   },
   "routingTerms": [
