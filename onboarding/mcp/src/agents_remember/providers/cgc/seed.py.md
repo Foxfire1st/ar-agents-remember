@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-01T23:40+02:00|
+| lastVerifiedCommitHash | `8833b31a37deda0d9d2e6895659ab0fe085a8ee9` |
+| lastVerifiedCommitDate | 2026-06-01T23:39:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,11 +20,16 @@
 
 It defines `CgcSeedOptions` and the internal `CgcSeedContext`, resolves source and target CGC roots from explicit arguments or settings, checks repository HEAD compatibility (via `git_head_or_none`) unless mismatches are allowed, protects same-coordination-root cross-path seeding unless explicitly allowed or isolated, starts the source backend, exports a bundle, rewrites paths, and loads the rewritten bundle into the target. The CGC provider block is looked up through the shared `setup_common.provider_settings(settings, CGC_PROVIDER_ID)` helper rather than a local wrapper. The export and load commands run with `UNLIMITED_TIMEOUT` so large bundle dump/load operations are never killed by a wall-clock cap.
 
+`_cgc_settings_path(args)` is the single source of truth for which settings file cgc actually runs against. It walks the priority chain `cgc_from_settings > provider_from_settings > from_settings` and returns the first truthy value. Both `cgc_extra_args` (which builds the `--from-settings` CLI flag) and `_seed_target_runtime_root` call this helper so both always agree on the settings file.
+
+`_seed_target_runtime_root(args, settings, repo_id)` resolves the host path under which the rewritten target bundle is written. In an isolated worktree seed (`cgc_isolated_runtime_root` is set), the `bundle import` runs inside the worktree's cgc runner, which bind-mounts only the worktree instance runtime root and receives the bundle path verbatim. Using the caller's `settings` (which resolve against the workspace coordination root) would land the bundle under the workspace runner root that the worktree runner cannot see, causing "Bundle file not found" and a silent fallback to a full re-index (OQ5). The fix: resolve from the isolated `--from-settings` path (via `_cgc_settings_path` + `_seed_runtime_root`) so the bundle lands under `<worktreeRuntimeRoot>/<repoId>` — the path the worktree runner's mount covers. Falls back to the workspace `_seed_runtime_root` when not isolated or when the isolated settings file is unreadable. `_seed_bundle_paths` consumes `context.target_runtime_root` returned by this function.
+
 ### Invariants And Boundaries
 
 - Seed source settings must come from explicit provider settings or from the same coordination root's active settings path.
 - CGC seed is an optimization; callers decide whether a failed seed can fall back to full refresh.
 - Bundle path rewriting is delegated to `bundle.py`.
+- `_cgc_settings_path` is the canonical priority chain for the cgc settings file; it must match the chain in `cgc_extra_args`.
 
 ## Repo-Internal References
 
@@ -36,6 +41,7 @@ It defines `CgcSeedOptions` and the internal `CgcSeedContext`, resolves source a
 
 ## Update History
 
+- 2026-06-01T23:40+02:00 — Added `_cgc_settings_path(args)` as the single-source settings-path resolver (priority: `cgc_from_settings > provider_from_settings > from_settings`) used by both `cgc_extra_args` and the new `_seed_target_runtime_root`. Added `_seed_target_runtime_root(args, settings, repo_id)`: in an isolated worktree seed resolves the bundle's host path from the isolated worktree settings (via `_cgc_settings_path` + `_seed_runtime_root`) so the bundle lands under the worktree runner's instance mount, not the workspace runner root where the worktree runner can't find it. Fixes OQ5 ("Bundle file not found" / silent full re-index fallback). Falls back to workspace `_seed_runtime_root` when not isolated or isolated settings are unreadable. Updated Logic and Invariants accordingly.
 - 2026-05-31T12:50+02:00 — Renamed `git_head` to `git_head_or_none` (now with a docstring) and removed the local `_cgc_provider` wrapper in favor of `setup_common.provider_settings`; `load_settings`/`settings_path` now take only the settings file path. Corrected Logic prose to name `git_head_or_none` and the shared `provider_settings` lookup (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented that seed export/load now run with `UNLIMITED_TIMEOUT` (never-cap-indexing run). Verified against `825a172`.
 - 2026-05-29T18:35+02:00: Narrowed the `CgcSeedContext | dict` union via `isinstance` at the consumption boundary and removed the now-dead `_first_seed_skip`; behavior-preserving (commit `0549b28`).
