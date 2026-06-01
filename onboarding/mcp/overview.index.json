@@ -206,6 +206,7 @@
     "mcp/tests/test_benchmark_analysis.py",
     "mcp/tests/test_cgc_index_concurrency.py",
     "mcp/tests/test_cgc_installation.py",
+    "mcp/tests/test_cgc_seed_bundle_path.py",
     "mcp/tests/test_code_quality_check.py",
     "mcp/tests/test_compact_content.py",
     "mcp/tests/test_config.py",
@@ -239,8 +240,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 385,
-    "fileSidecars": 171,
+    "sourceFilesInScope": 386,
+    "fileSidecars": 172,
     "childRoutes": 11
   },
   "routingTerms": [
@@ -261,6 +262,7 @@
     "bootstrap",
     "boundary",
     "branch",
+    "bundle",
     "calculator",
     "candidate",
     "candidates",
@@ -322,8 +324,7 @@
     "design",
     "docker",
     "docs",
-    "documentation",
-    "drift"
+    "documentation"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.p...",
