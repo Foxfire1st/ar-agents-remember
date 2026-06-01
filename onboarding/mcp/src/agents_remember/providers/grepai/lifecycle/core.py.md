@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-02T01:15+02:00                     |
+| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
+| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,6 +28,13 @@ state, validates Docker mode, derives the managed Docker network name, maps
 container-visible root paths, builds container DSNs and container-local
 environment variables, selects a supported runner release architecture, and
 derives PostgreSQL, Ollama, and runner image settings.
+
+Root container paths resolve under the runner `rootsMount` (default
+`/grepai/roots/<project_id>`) via `grepai_root_container_path`, where each live
+memory root is bind-mounted; the prior host-path translator
+(`grepai_container_path`) is gone. `prepare_grepai_workspace` no longer syncs a
+mirror or scrubs artifacts -- it calls `ensure_grepai_root_gitignore` so each
+root's `.gitignore` ignores grepai's `.grepai/` working dir.
 
 `grepai_embedder_backend_settings` now conditionally propagates
 `seedFromContainer` from the embedder backend settings into the resolved dict.
@@ -63,6 +70,7 @@ seed target without the caller needing to pass it separately.
 
 ## Update History
 
+- 2026-06-02T01:15+02:00 — Added `rootsMount` (default `/grepai/roots`) to runner settings; `grepai_container_project_paths` now maps via `grepai_root_container_path` to `/grepai/roots/<project_id>` and the host-path translator `grepai_container_path` was removed; `prepare_grepai_workspace` now calls `ensure_grepai_root_gitignore` instead of the mirror sync + artifact scrub (watch-live).
 - 2026-06-01T00:00+02:00 — `grepai_embedder_backend_settings` now propagates `seedFromContainer` from raw backend settings into the resolved dict when the key is a non-empty string; updated Logic.
 - 2026-05-31T12:50+02:00 — Removed the unused `grepai_run_checked_command` helper and its `run_command` import, and typed the `layout` params plus the `grepai_layout_from_args` return on `GrepaiRuntimeLayout` (newly imported) instead of `Any`; reinforced the "derives configuration only" boundary and recorded the layout typing in Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-27T00:41+02:00: Updated after container GrepAI environment rendering

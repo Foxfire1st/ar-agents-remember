@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/context/layout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-06-02T01:15+02:00                     |
+| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
+| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`grepai/layout.py` owns GrepAI memory-root models, provider-owned runtime layout expansion, requirements pin writing, and mirrored index-root syncing.
+`grepai/layout.py` owns GrepAI memory-root models, provider-owned runtime layout expansion, requirements pin writing, and per-root `.gitignore` management for grepai's `.grepai/` working dir.
 
 ## Code Commentary
 
@@ -24,16 +24,16 @@
 
 It defines `GrepaiMemoryRoot` and `GrepaiRuntimeLayout`, builds the provider
 runtime/data/config/log/home/cache paths from settings, validates configured
-memory roots, optionally maps them into provider-owned mirror roots, creates
-runtime directories, and refreshes mirror roots with `.git`, `.grepai`, and
-`__pycache__` ignored. When settings omit a watch log directory, the default is
-the central coordination log tree at `logs/providers/grepai`.
+memory roots, creates runtime directories, and ensures each indexed root's
+`.gitignore` ignores grepai's `.grepai/` working dir (`ensure_grepai_root_gitignore`,
+idempotent). When settings omit a watch log directory, the default is the central
+coordination log tree at `logs/providers/grepai`.
 
 ### Invariants And Boundaries
 
 - Runtime state stays under coordinator provider roots such as `providers/runners/grepai` and `providers/data/grepai/postgres`; operator logs stay under `logs/providers/grepai`.
-- Indexed roots can be mirrored into provider-owned paths so Docker sees stable project paths without writing artifacts into durable memory roots.
-- Root paths with unresolved placeholders, missing directories, or sync targets outside the runtime root raise `ContextProviderError`.
+- Indexed roots are watched live in place (read-write bind-mounted into the watcher); grepai's `.grepai/` working dir is kept out of git via each root's `.gitignore` rather than by mirroring to a throwaway copy.
+- Root paths with unresolved placeholders or missing directories raise `ContextProviderError`.
 
 ## Repo-Internal References
 
@@ -44,5 +44,6 @@ the central coordination log tree at `logs/providers/grepai`.
 
 ## Update History
 
+- 2026-06-02T01:15+02:00: Dropped the mirror redirect and `sync_grepai_index_roots`/`_sync_grepai_index_root`; roots are now indexed live in place. Added `ensure_grepai_root_gitignore` (called from `prepare_grepai_workspace`) and removed `GrepaiMemoryRoot.source_path`.
 - 2026-05-28T12:32+02:00: Updated after GrepAI watch log defaults moved under `logs/providers/grepai`.
 - 2026-05-25T19:33+02:00: Created when GrepAI runtime layout and mirror syncing were split out of `grepai/core.py`.

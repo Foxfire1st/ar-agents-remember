@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-02T01:15+02:00|
+| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
+| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -65,6 +65,7 @@ provider status can report watcher state and uptime.
 
 ## Update History
 
+- 2026-06-02T01:15+02:00 — `grepai_docker_state` roots payload no longer emits `sourcePath` after `GrepaiMemoryRoot.source_path` was removed (roots are watched live in place).
 - 2026-05-31T12:50+02:00 — Removed the unused `grepai_runner_dockerfile` helper and its `provider_asset_text` import (build path uses `provider_asset_path`); re-typed the `layout` param from `Any` to `GrepaiRuntimeLayout` across `grepai_watcher_inspect`/`grepai_watcher_workspace_status`/`grepai_watcher_start_prerequisites`/`grepai_watcher_create_start_result`/`grepai_docker_state`; added matching Invariants And Boundaries notes (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the `no_cache` build path for the GrepAI runner/watcher image (`--no-cache` + skip-shortcut bypass for a from-scratch rebuild). Verified against `8927f03`.
 - 2026-05-29T18:35+02:00: `grepai_watcher_dry_run_start_result` `commands` -> `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).
