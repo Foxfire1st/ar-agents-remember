@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-02T02:00+02:00                     |
+| lastVerifiedCommitHash | `01178eb7dfc7d8d2b5d38afc4d8a12358353cdc2` |
+| lastVerifiedCommitDate | 2026-06-02T01:19:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -38,6 +38,9 @@ The typed CGC assertions keep the old generic `cgc_query` name absent and
 verify fixed command construction for symbol search, callers, callees,
 dependencies, and complexity. GrepAI assertions keep workspace/project
 selection tied to MCP configuration and keep trace action validation explicit.
+A regression case configures an uppercase repo id (`Cobalt`) and asserts that
+`grepai_search` emits `--project cobalt` and accepts the id in any casing, so the
+tool's `--project` matches the watcher's `stable_provider_id`-normalized project.
 
 This file no longer carries the Docker-mode provider-runner-integrity
 regressions (the three `test_provider_integrity_ignores_*` cases and their
@@ -83,6 +86,7 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 ## Update History
 
+- 2026-06-02T02:00+02:00 — Added `test_grepai_search_resolves_uppercase_repo_id_to_normalized_project`: a configured uppercase repo id (`Cobalt`) is queried as `--project cobalt` and accepted in any casing. Updated Code Commentary.
 - 2026-05-31T12:50+02:00 — `test_ping_payload` now asserts `payload["version"] == SERVER_VERSION` (imported from `agents_remember.mcp`) instead of the `0.9.6` literal; the Codex benchmark policy test flips the fixed default to `default`/`omitted` and asserts `danger-full-access` separately; added `test_codex_benchmark_tools_refuse_when_disabled`; removed the three Docker-mode `test_provider_integrity_ignores_*` cases and their `check_provider_runner_integrity`/`manifest_path_for_config` imports. Corrected the version-assertion, Codex benchmark, and provider-integrity prose to match (1.0.0 review remediation).
 - 2026-05-31T01:06+02:00: Updated `test_ping_payload`'s version assertion to `0.9.6` (MCP 0.9.6, W-02 design section). Verification metadata stays pinned until closeout commits the change.
 - 2026-05-30T22:29+02:00: Updated `test_ping_payload` for the S6 token-counter wiring — it now asserts populated `tokens`/`tokenizer`/`tokenCountExact` instead of the zero defaults, and the version assertion moved to `0.9.5`. Typed the `fake_run` stub against `RuntimeInstallRequest` (with its import) to clear a Pyright error. Verification metadata stays pinned until closeout commits the change.
