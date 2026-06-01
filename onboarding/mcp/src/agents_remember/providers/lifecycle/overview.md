@@ -26,12 +26,13 @@ Provider-specific lifecycle implementations now live under
 Start with `cli.py` for parser/action dispatch, `watchers.py` for aggregate
 provider start/status/stop orchestration, and the named shared modules for
 provider-agnostic lifecycle primitives: `command_runner.py`,
-`docker_runtime.py`, `host_ports.py`, `process_status.py`,
+`docker_runtime.py`, `host_ports.py`, `log_capture.py`, `process_status.py`,
 `provider_settings.py`, `result_rendering.py`, `runtime_environment.py`, and
 `state_files.py`. CGC behavior lives under `../cgc/lifecycle/`; GrepAI
 behavior lives under `../grepai/lifecycle/`. Docker helpers now expose
 normalized container state, health, and uptime summaries used by provider
-current-state reporting.
+current-state reporting. `log_capture.py` trims tool response payloads
+recursively so verbose provider command output does not exceed client size limits.
 
 ## Route Model
 
@@ -67,6 +68,7 @@ current-state reporting.
 
 ## Update History
 
+- 2026-06-01T00:00+02:00 — Added `log_capture.py` to the shared modules listing in Hot Path Summary.
 - 2026-05-28T12:32+02:00: Updated after shared Docker helpers began exposing container-state summaries for provider current-state reporting.
 - 2026-05-25T21:14+02:00: Updated when provider lifecycle implementation moved to provider-first packages and shared lifecycle helpers were split by responsibility.
 - 2026-05-25T19:16+02:00: Updated after the legacy `provider_lifecycle.py` compatibility shim was removed and `providers.lifecycle` became the sole facade.

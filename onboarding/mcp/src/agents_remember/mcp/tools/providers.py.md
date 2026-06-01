@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/providers.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58`                                        |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastUpdated            | 2026-06-01T00:00+02:00|
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                                        |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -25,6 +25,14 @@ and the CGC query builders (`cgc_symbol_search`, `cgc_callers`, `cgc_callees`,
 arguments to the matching `controllers.provider_tools` function and returns
 through `base._tool_payload`.
 
+`provider_watchers_payload` now wraps its controller result with
+`summarize_command_logs` (imported from
+`providers.lifecycle.log_capture`) before returning, trimming large stdout/stderr
+from watcher lifecycle responses.
+
+All CGC and GrepAI query builder functions now accept and forward an optional
+`worktree` parameter to the controller layer.
+
 ### Invariants And Boundaries
 
 - Transport-thin: provider lifecycle and query behavior lives in
@@ -35,5 +43,6 @@ through `base._tool_payload`.
 
 ## Update History
 
+- 2026-06-01T00:00+02:00 — `provider_watchers_payload` now applies `summarize_command_logs`; all CGC/GrepAI builders gained a `worktree` parameter forwarded to the controller.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the provider/query payload builders.
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).

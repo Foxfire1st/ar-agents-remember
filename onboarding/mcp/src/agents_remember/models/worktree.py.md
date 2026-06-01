@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -39,4 +39,5 @@ carry operation-specific planning and closeout fields.
 
 ## Update History
 
+- 2026-06-01T20:45+02:00 — `CleanupStatus` gained the `abandoned` literal and a `WorktreeAbandonResponse` model was added for the discard-without-integration tool.
 - 2026-05-28T19:52+02:00: Created after worktree context summaries gained typed Pydantic literal fields.

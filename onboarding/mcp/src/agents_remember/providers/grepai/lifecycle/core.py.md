@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-01T00:00+02:00                     |
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,6 +28,14 @@ state, validates Docker mode, derives the managed Docker network name, maps
 container-visible root paths, builds container DSNs and container-local
 environment variables, selects a supported runner release architecture, and
 derives PostgreSQL, Ollama, and runner image settings.
+
+`grepai_embedder_backend_settings` now conditionally propagates
+`seedFromContainer` from the embedder backend settings into the resolved dict.
+The key is present only when the raw backend settings carry a non-empty
+`seedFromContainer` string (populated by `isolated.py` for worktree embedders
+to name the workspace Ollama container); it is absent for the workspace embedder
+itself. This lets `embedder.py`'s `_seed_ollama_model_from_source` find the
+seed target without the caller needing to pass it separately.
 
 ### Invariants And Boundaries
 
@@ -55,6 +63,7 @@ derives PostgreSQL, Ollama, and runner image settings.
 
 ## Update History
 
+- 2026-06-01T00:00+02:00 — `grepai_embedder_backend_settings` now propagates `seedFromContainer` from raw backend settings into the resolved dict when the key is a non-empty string; updated Logic.
 - 2026-05-31T12:50+02:00 — Removed the unused `grepai_run_checked_command` helper and its `run_command` import, and typed the `layout` params plus the `grepai_layout_from_args` return on `GrepaiRuntimeLayout` (newly imported) instead of `Any`; reinforced the "derives configuration only" boundary and recorded the layout typing in Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-27T00:41+02:00: Updated after container GrepAI environment rendering
   switched to container-local runtime paths for the Compose watcher.

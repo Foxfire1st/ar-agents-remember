@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                         |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                         |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -47,4 +47,5 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-01T20:45+02:00 — `WorktreeArgs` gained `force` and `teardown_providers` for the abandon/cleanup teardown path.
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

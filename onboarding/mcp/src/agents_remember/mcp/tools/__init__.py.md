@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                                        |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                                        |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -38,4 +38,5 @@ Re-exports the shared constants and `_tool_payload` from `base`, and every
 
 ## Update History
 
+- 2026-06-01T20:45+02:00 — Added `worktree_abandon_payload` to the tools-package facade exports for the new abandon tool.
 - 2026-05-29T18:35+02:00: Created as the package facade when `mcp/tools.py` was split (commit `01f503d`).

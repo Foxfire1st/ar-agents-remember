@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -82,6 +82,7 @@ per-provider duplicate isolated-settings keys.
 
 ## Update History
 
+- 2026-06-01T20:45+02:00 — Provider setup no longer starts the grepai watcher early; it starts once at `_watcher_results` after the DB clone, cgc seed, and index-root copy, so the watcher never sees files mid-copy (OQ7 copy-first / watch-last ordering).
 - 2026-05-31T12:50+02:00 — Pruned unused compatibility re-exports (`command_display`, `expand_template`, `load_json`, `parse_json_stdout`, `stable_provider_id`, `subprocess_env`, `cgc_seed_source_extra_args`, `cgc_seed_source_settings_path`, `configured_cgc_repo_root`, `git_head`, `write_isolated_cgc_settings`, `path_replacements`, `rewrite_json_value`, `rewrite_string`) and dropped the `coordination_root` argument from `load_settings`/`settings_path` calls; corrected the Logic prose's "preserves the public symbols ... subprocess helper exports" claim to the narrowed export set (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after duplicate per-provider isolated
   settings payload keys were removed in favor of canonical

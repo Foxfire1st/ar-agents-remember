@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-01T00:00+02:00|
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,11 +25,22 @@ lifecycle and all-root start/stop aggregation.
 
 The module builds dry-run Docker watcher commands, starts the managed FalkorDB
 backend when settings-backed roots require it, starts `cgc watch` inside the
-CGC runner image, records provider
-state, removes watcher containers on stop, marks stopped state, and aggregates
-start/stop results across configured roots. Watcher startup renders the Compose
-override with backend host ports from the backend start result so repeated
-settings-backed starts keep the same FalkorDB/browser port mappings.
+CGC runner image, records provider state, removes watcher containers on stop,
+marks stopped state, and aggregates start/stop results across configured roots.
+Watcher startup renders the Compose override with backend host ports from the
+backend start result so repeated settings-backed starts keep the same
+FalkorDB/browser port mappings.
+
+`cgc_index_concurrency(layout_count)` bounds how many repos reindex
+simultaneously. Each CGC indexer self-throttles to ~10 in-flight FalkorDB
+queries and uses up to ~10 parser threads; reindexing all repos in parallel
+(`max_workers=len(layouts)`) would peg the CPU and overrun the shared FalkorDB
+query queue on a workspace with many repos. The default cap is
+`DEFAULT_CGC_INDEX_CONCURRENCY` (2). The env var `AR_CGC_INDEX_CONCURRENCY`
+overrides the cap (non-integer values are silently ignored in favour of the
+default). The function returns at least 1 and at most `layout_count`.
+`cgc_parallel_layout_action_results` now calls `cgc_index_concurrency` to set
+`max_workers` instead of always using `len(layouts)`.
 
 ### Invariants And Boundaries
 
@@ -41,6 +52,9 @@ settings-backed starts keep the same FalkorDB/browser port mappings.
   container name.
 - Watcher `up` should render dependency backend ports from the current start
   result when available.
+- The parallel reindex fan-in is capped by `cgc_index_concurrency` (default 2)
+  to prevent FalkorDB query queue saturation on large workspaces; override with
+  `AR_CGC_INDEX_CONCURRENCY` on machines with more resources.
 
 ## Repo-Internal References
 
@@ -49,9 +63,12 @@ settings-backed starts keep the same FalkorDB/browser port mappings.
 | Shared process helpers provide durable namespace checks and command execution. | [process_status.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/process_status.py); [command_runner.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
 | CGC backend startup is delegated to the backend module. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
 | Docker watcher command construction lives in the runner module. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| `cgc_index_concurrency` is also imported by `refresh.py` to report `indexConcurrency` in the refresh-all result. | [refresh.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py) |
+| Unit tests protect the cap defaults, env-override, and boundary conditions. | [test_cgc_index_concurrency.py](agents-remember-md/mcp/tests/test_cgc_index_concurrency.py) |
 
 ## Update History
 
+- 2026-06-01T00:00+02:00 — Added `cgc_index_concurrency` (default 2, `AR_CGC_INDEX_CONCURRENCY` override) to bound `cgc_parallel_layout_action_results` fan-in and prevent FalkorDB queue saturation; updated Logic, added fan-in Invariant, added cross-references.
 - 2026-05-31T12:30+02:00 — Removed already-running watcher detection from start preflight: `cgc_running_process_result` (and its `cgc_watcher_inspect` use / `alreadyRunning` short-circuit) deleted; layout params now typed `CgcRuntimeLayout` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `cgc_backend_all_error` now accepts `dict | None` with a `None` guard (closes a latent crash when start-all returns a doctor-failure); extracted `_cgc_start_all_live` to reduce `cgc_start_all` complexity; behavior-preserving (commits `0549b28`, `e3dab63`).
 - 2026-05-27T00:25+02:00: Updated after watcher startup began reusing

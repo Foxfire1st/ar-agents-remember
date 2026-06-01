@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-01T00:00+02:00                     |
+| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
+| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -34,14 +34,32 @@ is the full closeout quality gate; task-start guidance continues to use
 
 The public CGC provider surface is typed at registration time. The server
 registers `cgc_symbol_search`, `cgc_callers`, `cgc_callees`,
-`cgc_dependencies`, and `cgc_complexity` instead of a generic `cgc_query`
-endpoint.
+`cgc_dependencies`, `cgc_complexity`, and `cgc_visualize` instead of a generic
+`cgc_query` endpoint. All CGC and GrepAI query tools now accept an optional
+`worktree` parameter forwarded to the payload layer, which routes to a
+worktree's isolated provider stack.
 
 The public GrepAI provider surface is typed at registration time as well.
 `grepai_search` registers `repo_ids`, `all_repos`, `limit`, and
 `output_format` around the required query, while `grepai_trace` registers
 `trace_action`, `symbol`, optional repo scoping, optional graph depth, and
 output format. The server only forwards these fields to the payload layer.
+
+The `provider_watchers` docstring now describes `restart` (stop then start,
+indexes preserved — use to wake a stale watcher) and `invalidate-indexes`
+(DELETE and rebuild every index from scratch: full re-embed + full graph
+re-index, slow and CPU-heavy) as distinct actions. The former `refresh` action
+is no longer listed; it is rejected at the controller with guidance.
+
+`worktree_cleanup` now accepts `teardown_providers` (default `true`), which
+reclaims the worktree's isolated provider stack (containers, networks,
+provider-runtime tree) before removing worktrees and branches.
+
+`worktree_abandon` is newly registered. It discards a worktree-backed task
+without integration: reclaims its isolated provider stack, removes worktrees,
+deletes task branches, and removes the group dir. Without `force` it refuses
+dirty worktrees and unmerged branches (reporting them); `force=true` discards
+with `git worktree remove --force` / `git branch -D`.
 
 `runtime_install` registers the reconcile flags `dry_run` (act-by-default
 `False`), `include_benchmarks`, `install_provider_deps` (default `True`), and
@@ -97,6 +115,7 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 
 ## Update History
 
+- 2026-06-01T00:00+02:00 — `provider_watchers` docstring updated to name `restart` (index-preserving) and `invalidate-indexes` (destructive rebuild) as distinct actions, replacing `refresh`. All CGC/GrepAI query tools gained `worktree` parameter. `worktree_cleanup` gained `teardown_providers`. `worktree_abandon` newly registered with `force`. Updated Code Commentary Logic section.
 - 2026-05-31T12:30+02:00 — Resolved the hardening follow-up: `codex_sandbox`'s registered default is now `CODEX_BENCHMARK_SANDBOX` (Codex's own `default` sandbox, not `danger-full-access`), callers must opt into full access explicitly, and a real run is refused unless MCP settings set `benchmarksEnabled` (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the 0.9.x registration changes — `runtime_install`'s `no_cache` flag (from-scratch image rebuild) alongside `install_provider_deps`, the human-facing tool descriptions now surfaced to the harness, and the literal `codex_sandbox="danger-full-access"` registered default (noted as a hardening follow-up). Verified against `8927f03`.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` contract (effectful + `cgc_*`/`grepai_*` query tools register `dry_run=False`; only `codex_benchmark_*` keeps `dry_run=True`) and refreshed the stale payload-builder reference to the `mcp/tools/` package.
