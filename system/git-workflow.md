@@ -41,8 +41,11 @@ A job changes the checkout via these steps:
 7. Agent owns the tail: **push the branch → `gh pr create` (target `main`) → checks green →
    `gh pr merge --delete-branch`.**
 8. **C-09 closeout** + worktree/provider cleanup.
-9. **C-11 carryover** of the parked memory to main-memory; the ledger is mapped to the **merged**
-   commit.
+9. **C-11 carryover** of the parked memory to main-memory, run against the merged `main`. Carryover
+   maps the ledger to the actual `main` HEAD — **including the PR merge commit** even when nothing
+   else needs carrying — so the next worktree bases off the merged `main` without a manual
+   reconciliation. Always run it after the merge (even the linear case where memory already
+   fast-forwarded: carryover adds the missing merge-commit ledger row).
 
 ### Gates, in one line
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `52d901160fc86c0338f343b5fe6e7200457165dd` |
+| lastVerifiedCommitDate | 2026-06-02T03:53:20+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -24,7 +24,12 @@ classifies carryover candidates by evidence, and can copy proven onboarding into
 official memory while updating metadata and the ledger. `CarryoverRequest`,
 `build_plan_for_request()`, and `apply_carryover_for_request()` are the service
 entry points used by MCP controllers; CLI commands remain adapters around those
-functions.
+functions. When apply finds nothing actionable to carry (no auto-carry and no
+pending review-required candidate), `_nothing_to_carry_result()` still maps an
+**unmapped official code HEAD** — e.g. a PR merge commit that landed on top of the
+verified tip — to the current memory content commit and commits the ledger,
+returning state `ledger-mapped-head`; this removes the manual post-merge ledger
+reconciliation a later worktree would otherwise need.
 
 ### Invariants And Boundaries
 
@@ -37,6 +42,10 @@ functions.
 - The MCP facade constrains memory paths to the configured coordination root.
 - MCP controllers should pass `intent_note` to the service API and should not
   route through CLI `--approved` / `--approval-note` parsing.
+- The post-merge head-mapping only fires when nothing is actionable
+  (`auto-carry == 0` and `review-required == 0`) and the official HEAD is not
+  already in the ledger; a pending review-required candidate keeps the result
+  `nothing-to-carryover` so a behind-memory state is never falsely marked verified.
 
 ## Repo-Internal References
 
@@ -47,6 +56,7 @@ functions.
 
 ## Update History
 
+- 2026-06-02T04:00+02:00: `apply_carryover_for_request()` now maps an unmapped official code HEAD to the current memory content (new state `ledger-mapped-head`) when there is nothing actionable to carry — automating the post-merge merge-commit ledger entry so the next worktree needs no manual reconciliation; gated so a pending review-required candidate still returns `nothing-to-carryover`. Added `_nothing_to_carry_result()` plus `find_mapping`/`MemoryLedger` imports. (L-01 series, Sub-task C, mcp 1.1.0.)
 - 2026-05-31T12:30+02:00 — `evidence_for_path()` now requires ALL source-branch commits touching a path to be ancestors of the official ref for `exact-landed-commit`, not just one (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Narrowed `plan['candidates']` to a `list` before iterating to clear a Pyright not-iterable error; behavior-preserving (commit `0549b28`).
 - 2026-05-24T00:35+02:00: Updated after adding carryover request/service entry points for MCP controllers.

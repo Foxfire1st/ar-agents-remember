@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `52d901160fc86c0338f343b5fe6e7200457165dd` |
+| lastVerifiedCommitDate | 2026-06-02T03:53:20+02:00|
 
 ## Purpose
 
@@ -63,7 +63,7 @@ No external documentation is needed for this standard-library test.
 | Deterministic C-02 drift tests build route overview and entity catalog fixtures, then cover clean route scopes, changed route scopes, clean fingerprints, changed fingerprints, missing evidence paths, missing fingerprint tables, missing fingerprint rows, and orphaned fingerprint rows. | L112-L175; L1062-L1256 | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 | Resolver tests cover arbitrary installed runtime roots by making a non-`ar-coordination` directory with `skills/`, `system/`, `tasks/`, and `memory-repos/`, then proving C-08 uses it as the coordination root; adjacent tests prove source-checkout `.env` and `.env.example` no longer override coordination-root selection. | L852-L875 | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 | C-10 tests cover ready status without a ledger, `code_repository_name`/`code_repository_root` resolver args, drift report placement outside task folders, drift blocking without explicit acceptance, and initial ledger creation with docs `.gitkeep`.                                                                           | L852-L923            | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
-| C-11 tests pass `code_repository_name` and `code_repository_root`, then cover auto-carry for landed source branch code with new onboarding, refreshed official verification metadata, official ledger prepending, review-required same-path ambiguity, earlier-only-landed same-path commits yielding `same-path-changed`/`review-required` rather than `exact-landed-commit`, and rejected unlanded source branch memory.                                | C-11 tests | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| C-11 tests pass `code_repository_name` and `code_repository_root`, then cover auto-carry for landed source branch code with new onboarding, refreshed official verification metadata, official ledger prepending, review-required same-path ambiguity, earlier-only-landed same-path commits yielding `same-path-changed`/`review-required` rather than `exact-landed-commit`, rejected unlanded source branch memory, and mapping an unmapped official code HEAD (e.g. a PR merge commit) to current memory content when nothing is actionable to carry (`ledger-mapped-head`).                                | C-11 tests | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 | Benchmark runner portability tests cover manifest path containment, non-string path rejection, manifest path component validation, read-only generated tree removal, stale directory symlink removal without deleting the target, Windows `.cmd` shim selection for `codex`, Codex `PATH` resolution and benchmark-only execution metadata, default-sandbox omission, variant-scoped provider selection, generated provider settings without coordinator `system/settings.json` and with central provider log paths, workspace-local `.codex` benchmark MCP registration, temporary provider setup settings handoff, cached repository reuse without clone or fetch, changed-pinned-commit fetching, force-clone cache discard, and copy-only benchmark skill exposure without the deleted shell installer. | L1577-L2225          | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
@@ -76,6 +76,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-06-02T04:00+02:00: Added `test_memory_carryover_maps_unmapped_official_head_when_nothing_to_carry` covering the new `ledger-mapped-head` result — carryover maps an unmapped official code HEAD (e.g. a PR merge commit) to current memory content when nothing is actionable to carry; the review-required case still returns `nothing-to-carryover`. Added `find_mapping`/`load_ledger` test imports. (L-01 series, Sub-task C, mcp 1.1.0.)
 - 2026-05-31T12:30+02:00 — Added coverage notes for new `_merge_integrated_commits` non-fast-forward integration refusal (no `HEAD` mutation) and the C-11 earlier-only-landed same-path commit staying `same-path-changed`/`review-required`; the existing default-sandbox omission test is unchanged, so benchmark phrasing kept (1.0.0 review remediation).
 - 2026-05-30T21:51+02:00: Re-verified against `825a172`; the only change was an installed-runtime config assertion adopting the renamed `timeout_caps["providerSetupSeconds"]` key. Coverage otherwise unchanged.
 - 2026-05-29T18:35+02:00: Typed capture/payload/plan locals as `dict[str, Any]`, typed the `_setup` plan as `OnboardingRefreshPlan`, and added per-method `assert contract.memory_worktree/memory_repo_path is not None` narrowing; behavior-preserving (commit `0549b28`).
