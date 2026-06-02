@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c`                      |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-06-02T10:35+02:00                     |
+| lastVerifiedCommitHash | `949f14e7d17f71c9f8d516c21cbaa3a979c95590`                      |
+| lastVerifiedCommitDate | 2026-06-02T10:38:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -35,6 +35,16 @@ default because the current repository already has known high-score legacy
 functions. Passing `--fail-on-crap-threshold` turns that report into a hard
 gate.
 
+Each subprocess runs with this checkout's source import roots (the parent of
+every configured source package, e.g. `mcp/src`) prepended to `PYTHONPATH` via
+`subprocess_env`/`source_import_roots`. That makes pytest import and measure
+coverage for *this* checkout's `agents_remember` rather than whatever an editable
+install resolves to. Without it, running the gate from a git worktree imported
+the primary clone's editable package, so coverage never matched the worktree's
+files and every complex function scored as uncovered — inflating CRAP far past
+the threshold and falsely failing the push. With it, the gate behaves identically
+from the primary clone and from any worktree.
+
 ### Invariants And Boundaries
 
 - The wrapper is a fixed quality suite, not a generic shell command surface.
@@ -46,6 +56,9 @@ gate.
 - CRAP-Calculator runs in-process from the generated coverage JSON.
 - Existing high CRAP pressure is report-only unless the caller opts into the
   threshold gate.
+- Subprocesses receive an environment with this checkout's source roots first on
+  `PYTHONPATH`, so the gate measures the current checkout regardless of where an
+  editable install points; the `CommandRunner` signature carries that env.
 
 ## Repo-Internal References
 
@@ -57,5 +70,6 @@ gate.
 
 ## Update History
 
+- 2026-06-02T10:35+02:00: The wrapper now prepends this checkout's source import roots to `PYTHONPATH` for every quality subprocess (`subprocess_env`/`source_import_roots`) and threads that env through the `CommandRunner`. Fixes the gate falsely failing from a git worktree (it imported the primary clone's editable package, so coverage didn't match the worktree files and CRAP inflated). Verification metadata stays pinned until closeout. fix/quality-gate-worktree-local branch.
 - 2026-05-28T19:52+02:00: Updated after Pyright joined the fixed source quality wrapper.
 - 2026-05-24T06:30+02:00: Created the source quality suite wrapper that runs Ruff, Radon, pytest coverage, and CRAP-Calculator.
