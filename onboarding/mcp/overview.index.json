@@ -181,6 +181,7 @@
     "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/docs/architecture.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/docs/overview.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/docs/requirements.md",
+    "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/master-template.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/template.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md",
@@ -243,8 +244,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 382,
-    "fileSidecars": 175,
+    "sourceFilesInScope": 383,
+    "fileSidecars": 176,
     "childRoutes": 11
   },
   "routingTerms": [
