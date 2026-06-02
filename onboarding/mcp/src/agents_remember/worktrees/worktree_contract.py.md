@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`worktree_contract.py` reads, writes, validates, and renders the C-09
+`worktree_contract.py` reads, writes, validates, and renders the `c-09-git-worktree-manager` skill
 `contract.md` file that records worktree-backed task state.
 
 ## Code Commentary
@@ -58,7 +58,7 @@ No external documentation is needed for this local contract format.
 
 ## Repo-Internal References
 
-Same-repository source defines the contract format and C-09 uses it.
+Same-repository source defines the contract format and `c-09-git-worktree-manager` skill uses it.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |

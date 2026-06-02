@@ -65,4 +65,4 @@ No cross-repository evidence is needed for local path policy.
 ## Update History
 
 - 2026-05-31T12:50+02:00 — `find_code_repository_root` dropped its `workspace_root.iterdir()` name-match scan and the "multiple code repositories" `ValueError`, leaving only absolute-path and direct-join resolution; corrected the Logic section to describe direct-join-only resolution and the removed ambiguity error (1.0.0 review remediation).
-- 2026-05-25T20:57+02:00: Created by extracting C-08 path and topology helpers from the monolithic resolver.
+- 2026-05-25T20:57+02:00: Created by extracting `c-08-ar-coordination-context-resolver` skill path and topology helpers from the monolithic resolver.

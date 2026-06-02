@@ -12,7 +12,7 @@
 
 ## Purpose
 
-`memory_init.py` provides the package-owned C-00 memory scaffold behavior used
+`memory_init.py` provides the package-owned `c-00-initialize-memory-repo` skill memory scaffold behavior used
 by the `memory_init` MCP tool.
 
 ## Code Commentary

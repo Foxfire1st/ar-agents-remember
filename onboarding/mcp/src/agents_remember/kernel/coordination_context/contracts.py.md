@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`contracts.py` loads optional C-09 worktree contract facts for the C-08
+`contracts.py` loads optional `c-09-git-worktree-manager` skill worktree contract facts for the `c-08-ar-coordination-context-resolver` skill
 coordination context.
 
 ## Code Commentary
@@ -30,7 +30,7 @@ still report the attempted path without mutating contract state.
 
 ### Invariants And Boundaries
 
-- This module reads contract facts only; C-09 owns contract creation and
+- This module reads contract facts only; `c-09-git-worktree-manager` skill owns contract creation and
   mutation.
 - Contract parser failures should not fabricate worktree facts.
 
@@ -59,4 +59,4 @@ No cross-repository evidence is needed for local contract fact loading.
 
 ## Update History
 
-- 2026-05-25T20:57+02:00: Created by extracting worktree contract fact loading from the C-08 resolver.
+- 2026-05-25T20:57+02:00: Created by extracting worktree contract fact loading from the `c-08-ar-coordination-context-resolver` skill resolver.

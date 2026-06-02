@@ -27,7 +27,7 @@ contract path and group fields.
 
 ### Invariants And Boundaries
 
-The resolver must keep the C-08 JSON shape stable after moving out of the skill
+The resolver must keep the `c-08-ar-coordination-context-resolver` skill JSON shape stable after moving out of the skill
 tree. Tests should exercise the package route directly rather than loading a
 deleted runtime skill script.
 

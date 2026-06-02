@@ -68,11 +68,11 @@ format.
 
 The ledger records code and memory commits across the source repository and its
 external memory repository, but the implementation contract is local to this
-file and the C-09 worktree manager.
+file and the `c-09-git-worktree-manager` skill worktree manager.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| C-09 imports ledger helpers for closeout, integration, and direct closeout mapping updates. | L18-L24; L923-L929; L1071-L1078 | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
+| `c-09-git-worktree-manager` skill imports ledger helpers for closeout, integration, and direct closeout mapping updates. | L18-L24; L923-L929; L1071-L1078 | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 
 ## Update History
 

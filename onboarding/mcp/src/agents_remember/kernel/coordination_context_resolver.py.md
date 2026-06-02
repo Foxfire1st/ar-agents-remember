@@ -12,7 +12,7 @@
 
 ## Purpose
 
-`coordination_context_resolver.py` is the public C-08 resolver facade and
+`coordination_context_resolver.py` is the public `c-08-ar-coordination-context-resolver` skill resolver facade and
 `python -m` entrypoint for one configured repository.
 
 ## Code Commentary
@@ -38,7 +38,7 @@ invokes it.
 
 ### Invariants And Boundaries
 
-- C-08 is facts-only and does not mutate Git, onboarding, or worktree state.
+- `c-08-ar-coordination-context-resolver` skill is facts-only and does not mutate Git, onboarding, or worktree state.
 - Source-checkout `.env` files are not resolver authority; MCP settings or an
   explicit coordination root own that path.
 - Resolver behavior must not depend on deleted skill-local `_shared` paths.
@@ -51,7 +51,7 @@ invokes it.
 
 | Finding | Source Path |
 | --- | --- |
-| C-08 skill guidance routes normal use through the MCP/package resolver. | [C-08 SKILL.md](agents-remember-md/runtime/skills/C-08-ar-coordination-context-resolver/SKILL.md) |
+| `c-08-ar-coordination-context-resolver` skill guidance routes normal use through the MCP/package resolver. | [`c-08-ar-coordination-context-resolver` SKILL.md](agents-remember-md/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md) |
 | Resolver shape is covered by package resolver tests. | [test_resolver_parity.py](agents-remember-md/mcp/tests/test_resolver_parity.py) |
 | Focused implementation modules now live under the coordination-context package. | [coordination_context overview](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/overview.md) |
 

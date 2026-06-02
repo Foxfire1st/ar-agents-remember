@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`resolver.py` owns C-08 coordination context detection and assembly.
+`resolver.py` owns `c-08-ar-coordination-context-resolver` skill coordination context detection and assembly.
 
 ## Code Commentary
 

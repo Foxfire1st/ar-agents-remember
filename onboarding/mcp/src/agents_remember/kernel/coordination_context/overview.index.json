@@ -123,6 +123,7 @@
       "ae9c4e5b6af38eda7f2b29006130c4263e9db62f",
       "/../../../overview.md",
       "coordination_context/",
+      "c-08-ar-coordination-context-resolver",
       "python -m",
       "agents_remember.kernel.coordination_context_resolver",
       "CoordinationContext",
@@ -133,8 +134,7 @@
       "coordination_context_resolver.py",
       "agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py",
       "test_resolver_parity.py",
-      "agents-remember-md/mcp/tests/test_resolver_parity.py",
-      "test_worktree_support.py"
+      "agents-remember-md/mcp/tests/test_resolver_parity.py"
     ]
   },
   "fallback": {

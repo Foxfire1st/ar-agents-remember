@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
+| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -23,7 +23,7 @@ argument wiring while preserving the public facade import path.
 - `git.py` owns raw Git subprocess operations and small repository state checks.
 - `guidance.py` renders lifecycle phase and typed next-operation payloads.
 - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py`
-  own the named C-09 lifecycle operations. `integrate.py` performs the code and
+  own the named `c-09-git-worktree-manager` skill lifecycle operations. `integrate.py` performs the code and
   memory fast-forwards atomically: it pre-validates that both fast-forwards are
   possible before mutating either branch and rolls both heads back on any
   memory-side failure, so integration never lands a half-integrated state.
@@ -58,4 +58,4 @@ No external Domain Documentation source is configured for this memory repo.
 
 - 2026-06-01T00:00+02:00 — Added `abandon.py` (discard without integration) and `provider_teardown.py` (full-reclaim Docker + rmtree teardown) to the Purpose and Hot Path Summary listings.
 - 2026-05-31T12:30+02:00 — Documented the new `args.py` typed `WorktreeArgs` cross-layer DTO replacing `argparse.Namespace` and `integrate.py`'s atomic all-or-nothing fast-forward behavior (1.0.0 review remediation).
-- 2026-05-25T20:41+02:00: Created when C-09 worktree lifecycle logic was split into focused implementation modules.
+- 2026-05-25T20:41+02:00: Created when `c-09-git-worktree-manager` skill worktree lifecycle logic was split into focused implementation modules.

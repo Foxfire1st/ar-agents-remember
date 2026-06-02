@@ -74,11 +74,11 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
-- 2026-06-02T05:10+02:00: Bumped the documented package `version` to `2.0.0` (mcp 2.0.0 — the L-01 lifecycle reshape, a major/breaking release); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
+- 2026-06-02T05:10+02:00: Bumped the documented package `version` to `2.0.0` (mcp 2.0.0 — the `l-01-session-job-lifecycle` skill lifecycle reshape, a major/breaking release); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-02T03:30+02:00: Bumped the documented package `version` to `1.0.2` (mcp 1.0.2 — git-workflow.md + PR-gated landing); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-01T13:30+02:00: Bumped the documented package `version` to `1.0.1` (mcp 1.0.1 — worktree cgc DNS-label fix); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-05-31T12:30+02:00 — Bumped the documented package `version` to `1.0.0` (1.0.0 review remediation); still tracks `SERVER_VERSION`.
-- 2026-05-31T01:06+02:00: Bumped the documented package `version` to `0.9.6` (MCP 0.9.6, W-02 design section); still tracks `SERVER_VERSION`. Verification metadata stays pinned until closeout commits the source change.
+- 2026-05-31T01:06+02:00: Bumped the documented package `version` to `0.9.6` (MCP 0.9.6, `w-02-light-task-workflow` skill design section); still tracks `SERVER_VERSION`. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-30T22:29+02:00: Bumped the documented package `version` to `0.9.5` for the S6 token-counter release; still tracks `SERVER_VERSION`. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-30T21:22+02:00: Realigned to MCP `0.9.4` after the 0.9.0–0.9.4 run; version still tracks `SERVER_VERSION`. Documented the `package-data` runtime-scaffold packaging block (the card body previously described the `0.3.0` release).
 - 2026-05-29T21:00+02:00: Bumped the package `version` to `0.3.0` for the MCP `0.3.0` release (act-by-default `dry_run` flip), kept aligned with `SERVER_VERSION`.

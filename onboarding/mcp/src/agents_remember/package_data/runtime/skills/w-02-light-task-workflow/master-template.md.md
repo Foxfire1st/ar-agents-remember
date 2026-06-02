@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T04:10+02:00                     |
-| lastVerifiedCommitHash | `dc25f5a63de359926985c925096aad9019968bf4` |
-| lastVerifiedCommitDate | 2026-06-02T18:31:01+02:00|
+| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
+| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
 
 ## Purpose
 

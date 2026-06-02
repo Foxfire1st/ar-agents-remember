@@ -26,7 +26,7 @@ Use `context_packet.py` for compact `ContextPacketV2` assembly,
 `coordination_tools.py` for resolver calls, `memory_tools.py` for drift,
 memory quality, route-index, init, baseline, and carryover operations,
 `provider_tools.py` for provider status/diagnostics/watchers and GrepAI/CGC
-operations, `worktree_tools.py` for C-09 worktree/direct-closeout operations,
+operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree/direct-closeout operations,
 `benchmark_tools.py` for Codex benchmark prepare/run, `runtime_install.py` for
 runtime install, and `skill_tools.py` for skill installation.
 

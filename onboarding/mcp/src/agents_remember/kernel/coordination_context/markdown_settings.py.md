@@ -70,4 +70,4 @@ No cross-repository evidence is needed for this fallback parser.
 
 - 2026-05-31T12:50+02:00 — `try_apply_storage_mode` consolidated the separate `mode:`/`layout:` branches into one alias branch and `try_apply_storage_default` now falls back to `self.settings.default` instead of a hardcoded `"external"`, so empty storage scalars keep the topology-derived default; recorded the new empty-scalar fallback boundary in Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Added `None` guards for `current_list`/`current_rule` (`global_target_list`, `try_apply_storage_rule_value`, `try_select_storage_rule_list`) to clear Pyright optional errors; behavior-preserving (commit `0549b28`).
-- 2026-05-25T20:57+02:00: Created by extracting and simplifying the Markdown settings state machine from the C-08 resolver, then amended after legacy branches moved into focused parser helpers.
+- 2026-05-25T20:57+02:00: Created by extracting and simplifying the Markdown settings state machine from the `c-08-ar-coordination-context-resolver` skill resolver, then amended after legacy branches moved into focused parser helpers.

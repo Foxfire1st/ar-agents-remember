@@ -17,7 +17,7 @@ tool response envelopes.
 
 ## Code Commentary
 
-`WorktreeSummary` is strict and uses literal state fields for known C-09
+`WorktreeSummary` is strict and uses literal state fields for known `c-09-git-worktree-manager` skill
 lifecycle values such as workflow kind, memory mode, human review status,
 closeout status, integration status, phase, next operation, and next tool. The
 command response models remain flexible because worktree service results can
@@ -39,6 +39,6 @@ carry operation-specific planning and closeout fields.
 
 ## Update History
 
-- 2026-06-02T04:25+02:00: `WorkflowKind` dropped the retired `heavy`/`heavy-task` literals (now `chat`/`light`/`light-task`) after the heavy workflow was retired. L-01 series, Sub-task B/S6, mcp 1.1.0.
+- 2026-06-02T04:25+02:00: `WorkflowKind` dropped the retired `heavy`/`heavy-task` literals (now `chat`/`light`/`light-task`) after the heavy workflow was retired. `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-01T20:45+02:00 — `CleanupStatus` gained the `abandoned` literal and a `WorktreeAbandonResponse` model was added for the discard-without-integration tool.
 - 2026-05-28T19:52+02:00: Created after worktree context summaries gained typed Pydantic literal fields.

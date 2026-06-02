@@ -42,7 +42,7 @@ subdomains.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP `memory_quality_check` builds drift context and calls this runner. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
+| `memory_quality_check` MCP tool builds drift context and calls this runner. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
 | Update-history ordering is the first style checker. | [history_order.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 | Drift summary provides the integrity checker payload. | [summary.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
 

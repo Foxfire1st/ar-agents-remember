@@ -59,4 +59,4 @@ No cross-repository evidence is needed for format-neutral value parsing.
 
 ## Update History
 
-- 2026-05-25T20:57+02:00: Created by extracting shared settings value parsing from the C-08 resolver.
+- 2026-05-25T20:57+02:00: Created by extracting shared settings value parsing from the `c-08-ar-coordination-context-resolver` skill resolver.

@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`cli.py` owns command-line argument parsing for the package-local C-08 resolver
+`cli.py` owns command-line argument parsing for the package-local `c-08-ar-coordination-context-resolver` skill resolver
 entrypoint.
 
 ## Code Commentary

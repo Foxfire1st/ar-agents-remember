@@ -64,4 +64,4 @@ No cross-repository evidence is needed for storage policy.
 
 - 2026-05-31T12:50+02:00 — Renamed the boolean storage-mode predicate `sidecar_storage_label` to `is_sidecar_storage` (signature/return `bool` unchanged); added a Logic note naming the new symbol (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `rule_excludes_source` now returns `bool` via `bool(excludes)` instead of `list[str] | bool`; behavior-preserving (commit `0549b28`).
-- 2026-05-25T20:57+02:00: Created by extracting source storage/path-rule evaluation from the C-08 resolver.
+- 2026-05-25T20:57+02:00: Created by extracting source storage/path-rule evaluation from the `c-08-ar-coordination-context-resolver` skill resolver.

@@ -12,7 +12,7 @@
 
 ## Purpose
 
-`carryover.py` is the package-local C-11 implementation for planning and
+`carryover.py` is the package-local `c-11-memory-carryover-from-branch` skill implementation for planning and
 applying branch-memory carryover after code has landed.
 
 ## Code Commentary
@@ -56,7 +56,7 @@ reconciliation a later worktree would otherwise need.
 
 ## Update History
 
-- 2026-06-02T04:00+02:00: `apply_carryover_for_request()` now maps an unmapped official code HEAD to the current memory content (new state `ledger-mapped-head`) when there is nothing actionable to carry — automating the post-merge merge-commit ledger entry so the next worktree needs no manual reconciliation; gated so a pending review-required candidate still returns `nothing-to-carryover`. Added `_nothing_to_carry_result()` plus `find_mapping`/`MemoryLedger` imports. (L-01 series, Sub-task C, mcp 1.1.0.)
+- 2026-06-02T04:00+02:00: `apply_carryover_for_request()` now maps an unmapped official code HEAD to the current memory content (new state `ledger-mapped-head`) when there is nothing actionable to carry — automating the post-merge merge-commit ledger entry so the next worktree needs no manual reconciliation; gated so a pending review-required candidate still returns `nothing-to-carryover`. Added `_nothing_to_carry_result()` plus `find_mapping`/`MemoryLedger` imports. (`l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.)
 - 2026-05-31T12:30+02:00 — `evidence_for_path()` now requires ALL source-branch commits touching a path to be ancestors of the official ref for `exact-landed-commit`, not just one (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Narrowed `plan['candidates']` to a `list` before iterating to clear a Pyright not-iterable error; behavior-preserving (commit `0549b28`).
 - 2026-05-24T00:35+02:00: Updated after adding carryover request/service entry points for MCP controllers.
