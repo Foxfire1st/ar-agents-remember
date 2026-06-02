@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `dc25f5a63de359926985c925096aad9019968bf4` |
+| lastVerifiedCommitDate | 2026-06-02T18:31:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,10 +31,12 @@ It also enforces the closeout content gate via `require_updated_sidecar_content`
 when a changed source file's existing sidecar body was not modified in the task
 (checked against the memory worktree's changed paths),
 `validate_onboarding_refresh_plan_for_context` raises instead of advancing
-verification metadata over stale content. The check accepts an explicit
-`memory_tree` (the worktree wrapper passes the memory worktree) and safely skips
-sidecars that do not resolve under that tree rather than reporting false stale
-findings.
+verification metadata over stale content. The user-facing closeout error
+messages direct the developer to "Run the
+`c-05-create-or-update-onboarding-files` skill, then rerun closeout." The check
+accepts an explicit `memory_tree` (the worktree wrapper passes the memory
+worktree) and safely skips sidecars that do not resolve under that tree rather
+than reporting false stale findings.
 
 ## Docs References
 
@@ -50,6 +52,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-02T16:24+02:00: User-facing closeout content-gate error messages now say "Run the `c-05-create-or-update-onboarding-files` skill, then rerun closeout" (was "Run C-05 create-or-update-onboarding-files"). Reference-style normalization; behavior unchanged.
 - 2026-05-31T12:50+02:00 — `onboarding_refresh_plan_for_context` now gates the sidecar-storage check on the boolean `resolver.is_sidecar_storage(storage)` predicate, replacing the label-returning `resolver.sidecar_storage_label(storage)`; behavior-preserving (truthiness unchanged). Added a Code Commentary note naming the predicate (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Gave the refresh-plan producers precise `TypedDict` return types and removed the now-redundant `isinstance` guards in `require_updated_sidecar_content`; behavior-preserving (commits `0549b28`, `e3dab63`).
 - 2026-05-29T07:36+02:00: Added `require_updated_sidecar_content` and wired it into `validate_onboarding_refresh_plan_for_context` (direct and worktree) so a changed source file with an unmodified sidecar body fails closeout instead of receiving a metadata-only verification refresh.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-05-29T08:53+02:00                             |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`         |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastVerifiedCommitHash | `dc25f5a63de359926985c925096aad9019968bf4`         |
+| lastVerifiedCommitDate | 2026-06-02T18:31:01+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -41,7 +41,8 @@ collects one representative payload per tool into `cls.payloads`:
 - `_direct_closeout_payloads`: an external-memory direct-checkout fixture drives
   `direct_closeout_preview` and `direct_closeout_apply`.
 - `_carryover_payloads`: a landed-branch fixture drives `memory_carryover_plan`
-  and `memory_carryover_apply`.
+  and `memory_carryover_apply` (a docstring names the
+  `c-11-memory-carryover-from-branch` skill).
 
 `tearDownClass` removes the temp dirs with `shutil.rmtree(..., ignore_errors=True)`
 because git worktrees leave read-only pack files that otherwise break cleanup on
@@ -90,5 +91,6 @@ declared nor part of the input."
 
 ## Update History
 
+- 2026-06-02T16:24+02:00: A docstring now references the `c-11-memory-carryover-from-branch` skill in full (was "C-11"). Reference-style normalization; behavior unchanged.
 - 2026-06-01T20:45+02:00 — Extended conformance coverage to the new `worktree_abandon` payload/response model.
 - 2026-05-29T08:53+02:00: Created onboarding for the dev-time tool-response conformance tests covering all public tools.

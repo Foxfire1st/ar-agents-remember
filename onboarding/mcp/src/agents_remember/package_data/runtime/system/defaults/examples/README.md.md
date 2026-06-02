@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `d61c30b5b716a8d8feb0e1ddcc3149047b5b7536` |
-| lastVerifiedCommitDate | 2026-06-02T02:13:58+02:00|
+| lastVerifiedCommitHash | `dc25f5a63de359926985c925096aad9019968bf4` |
+| lastVerifiedCommitDate | 2026-06-02T18:31:01+02:00|
 
 ## Purpose
 
@@ -67,6 +67,7 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-06-02T16:24+02:00: Normalized skill references in the example coordinator README to full lowercase skill ids plus the word "skill" (was abbreviated, e.g. C-08). Reference-style normalization; example guidance unchanged.
 - 2026-06-02T03:30+02:00: Documented the new memory-repo `git-workflow.md` example (gated-branch landing flow) alongside the code-quality report template (mcp 1.0.2). Verification metadata pinned until closeout.
 - 2026-05-28T12:32+02:00: Updated after the examples index began mentioning the memory-repo code quality report template.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.

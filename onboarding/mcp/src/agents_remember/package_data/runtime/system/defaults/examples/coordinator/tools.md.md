@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T01:15+02:00                     |
-| lastVerifiedCommitHash |                                            `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44`|
-| lastVerifiedCommitDate |                                            2026-06-02T01:10:22+02:00|
+| lastVerifiedCommitHash |                                            `dc25f5a63de359926985c925096aad9019968bf4`|
+| lastVerifiedCommitDate |                                            2026-06-02T18:31:01+02:00|
 | governingOverview      | `../../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -25,9 +25,9 @@ This example documents the coordinator-level tools surface, including the shared
 The file says coordinator tools are commands useful across many repositories.
 Repo-specific checks, branch workflow, and code quality tools belong in
 memory-layer `system/tools.md`. When MCP `contextProviders` are enabled,
-runtime installation is exposed through the MCP `runtime_install` tool and
+runtime installation is exposed through the `runtime_install` MCP tool and
 lower-level provider diagnostics use explicit generated settings with
-`--from-settings`. GrepAI search is documented through the MCP `grepai_search`
+`--from-settings`. GrepAI search is documented through the `grepai_search` MCP tool
 tool rather than a host binary, global command, or path filter. CGC commands
 expand configured roots into per-repo runtime
 instances under `providers/runners/codegraphcontext`, ensure the shared FalkorDB
@@ -65,7 +65,7 @@ before starting daemons from automation or sandbox-like harnesses.
 
 ### Invariants And Boundaries
 
-Agents should resolve the target repository with C-08 before choosing task, worktree, memory, validation paths, or context provider roots. Provider output is discovery evidence only, and source/onboarding proof remains required. Managed mode should fail containment/health checks if CGC writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs inside indexed source code repositories. GrepAI indexes the live memory roots in place, so its `.grepai/` working dir is expected inside each memory root and is kept out of git via the root's `.gitignore` (it must still not land in indexed source code repositories). Daemon/server lifecycle actions must be launched from a durable host process namespace; bounded retrieval commands like `cgc run` remain usable from sandboxed harnesses.
+Agents should resolve the target repository with `c-08-ar-coordination-context-resolver` skill before choosing task, worktree, memory, validation paths, or context provider roots. Provider output is discovery evidence only, and source/onboarding proof remains required. Managed mode should fail containment/health checks if CGC writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs inside indexed source code repositories. GrepAI indexes the live memory roots in place, so its `.grepai/` working dir is expected inside each memory root and is kept out of git via the root's `.gitignore` (it must still not land in indexed source code repositories). Daemon/server lifecycle actions must be launched from a durable host process namespace; bounded retrieval commands like `cgc run` remain usable from sandboxed harnesses.
 
 ### Todos
 
@@ -103,7 +103,7 @@ No sibling repository evidence is needed.
 - 2026-05-25T18:07+02:00: Updated GrepAI tool guidance after managed mode became Docker-only and stopped using `providers/_bin`.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T21:25+02:00: Clarified that repo-specific code quality tools belong in the selected memory layer's `system/tools.md`.
-- 2026-05-23T04:43+02:00: Updated coordinator tool onboarding for MCP `runtime_install` and the `providers/runners` provider layout.
+- 2026-05-23T04:43+02:00: Updated coordinator tool onboarding for `runtime_install` MCP tool and the `providers/runners` provider layout.
 - 2026-05-21T17:16+02:00: Updated examples after daemon/server lifecycle actions began requiring durable host process namespaces and status began reporting `processNamespace`.
 - 2026-05-21T15:42+02:00: Updated examples after normal provider lifecycle commands began inferring the coordinator root from the installed script path.
 - 2026-05-21T12:40+02:00: Updated CGC command doctrine to show `cgc visualize --port <port>` as the explicit long-running visualizer command, separate from bounded `cgc run` queries.

@@ -6,13 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `dc25f5a63de359926985c925096aad9019968bf4` |
+| lastVerifiedCommitDate | 2026-06-02T18:31:01+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
 
-`drift.py` is the thin facade for the package-local C-02 drift classifier. It
+`drift.py` is the thin facade for the package-local `c-02-memory-quality-control` skill drift classifier. It
 keeps the orchestration entry point and CLI here and re-exports the public names
 so existing imports keep working, while the implementation lives in focused
 sibling modules.
@@ -41,7 +41,7 @@ external classifier via the shared `is_sidecar_storage` predicate from
 
 ### Invariants And Boundaries
 
-- C-02 detects and reports drift; it must not rewrite onboarding.
+- `c-02-memory-quality-control` skill detects and reports drift; it must not rewrite onboarding.
 - Implementation responsibilities live in `models`, `git_ops`, `discovery`,
   `entities`, `inline`, `sidecar`, and `report`; this file must stay a facade
   plus `classify_source`/`main` and not re-accumulate logic.
