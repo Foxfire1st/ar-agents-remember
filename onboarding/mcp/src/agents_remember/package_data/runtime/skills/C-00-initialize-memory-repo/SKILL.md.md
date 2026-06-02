@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/C-00-initialize-memory-repo/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `72789a48dc47acf417725ae051eaa123cadeaa0b` |
-| lastVerifiedCommitDate | 2026-06-02T04:33:30+02:00|
+| lastUpdated            | 2026-06-02T11:30+02:00                     |
+| lastVerifiedCommitHash | `f70e0108910088af1df622ffd12d16271845cf51` |
+| lastVerifiedCommitDate | 2026-06-02T13:52:16+02:00|
 
 ## Purpose
 
@@ -58,6 +58,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-06-02T11:30+02:00: Dropped the removed `layout="tree"` argument from the C-00 setup-example `skills_install` call (the `layout` input was removed in 2.0.0; the installer is always flat). Example-only correction, in place at L35 — documented behavior and citations unchanged. Verification metadata stays pinned until closeout. docs/hn-launch-hardening branch.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — C-00 setup-tool examples now model preview-first then apply for `memory_init`/`runtime_install`/`skills_install`.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T14:20+02:00: Updated setup guidance to request MCP `runtime_install` and `skills_install` instead of deleted source-side installer scripts.
