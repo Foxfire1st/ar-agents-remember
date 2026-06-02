@@ -61,11 +61,11 @@ fail the run; the wrapper exits non-zero if any step fails):
   request to `main`, across a Python `3.11 / 3.12 / 3.13` matrix. This is the
   non-bypassable backstop.
 - **Local pre-push** — `.githooks/pre-push` runs the same command and blocks the
-  push. Enable it once per clone with `git config core.hooksPath .githooks`
-  (after `pip install -e "mcp[dev]"`); `git push --no-verify` bypasses it
-  intentionally.
+  push.
 
 Keep both gates calling the project-owned wrapper, not a hand-picked subset.
+Enabling the pre-push hook (`./setup-hooks.sh`), the PR-gated landing flow, and
+the release/tag/publish flow live in [`git-workflow.md`](git-workflow.md).
 
 ---
 
@@ -198,74 +198,7 @@ the standalone CRAP-Calculator command.
 
 ## Release And Changelog Convention
 
-This repo has no `CHANGELOG.md`. The release history and user-facing release
-notes live in **GitHub Releases** — that is the canonical changelog, and it is
-what the README's "read the release notes before upgrading" line points at. Do
-not introduce a `CHANGELOG.md`; keep release notes as GitHub Releases.
-
-### Tag scheme
-
-- `mcp-vX.Y.Z` is the canonical release tag. Pushing it triggers
-  [`publish-mcp-to-pypi.yml`](agents-remember-md/.github/workflows/publish-mcp-to-pypi.yml)
-  (`on: push: tags: mcp-v*`), which builds the wheel/sdist and publishes
-  `agents-remember-mcp` to PyPI. Attach the GitHub Release to this `mcp-vX.Y.Z`
-  tag.
-- A bare `vX.Y.Z` scheme exists only on the older `v0.9.0` Release. Do not start
-  new releases on it; use `mcp-v*` going forward.
-
-### Version bump locations (keep in sync)
-
-A release bumps the version string in exactly four places; they must match:
-
-1. `mcp/pyproject.toml` — `version`
-2. `mcp/src/agents_remember/mcp/__init__.py` — `SERVER_VERSION`
-3. `README.md` — the Status section line
-4. `mcp/tests/test_tools.py` — the `payload["version"]` assertion in `test_ping_payload`
-
-`SERVER_VERSION` and `pyproject` `version` must stay equal so installed server
-payloads (`ping`, `server_info`) report the same version PyPI installs.
-
-### Release commit subject
-
-Use `Release MCP X.Y.Z: <one-line summary>` (version-first), matching the
-existing release-commit history.
-
-### End-to-end release flow
-
-1. bump the four version locations, run the full quality wrapper, and close out
-   the change (code, onboarding, ledger) per `C-12-closeout`
-2. push the `mcp-vX.Y.Z` tag; confirm `publish-mcp-to-pypi.yml` succeeded and the
-   version resolves on PyPI (note: PyPI's JSON metadata can show a release ~30s
-   before the files are installable; `uv`/`uvx` may need `--refresh`)
-3. create the GitHub Release on the `mcp-vX.Y.Z` tag (see format below)
-
-The publish workflow does **not** create the GitHub Release; that step is
-manual.
-
-### GitHub Release format
-
-House style observed across `v0.7.0`–`v0.9.0`:
-
-- a **thematic title** that names the headline change, not a version-only title
-  (e.g. "Worktree management & Git Versioned Memory")
-- a Markdown body shaped as:
-
-```markdown
-## Agents Remember X.Y.Z
-<1–2 sentence summary of the release theme>
-
-### Highlights
-- <bullet>
-- <bullet>
-
-### <Themed section, e.g. "Onboarding And Memory">
-- <sub-bullets>
-```
-
-Create it with the web UI (repo → Releases → Draft a new release → choose the
-`mcp-vX.Y.Z` tag) or the `gh` CLI; use `--draft` first to review before
-publishing:
-
-```text
-gh release create mcp-vX.Y.Z --target main --title "<thematic title>" --notes-file <notes.md> --draft
-```
+Moved to [`git-workflow.md`](git-workflow.md): the `mcp-vX.Y.Z` tag scheme (→ PyPI publish), the four
+version-bump locations that must stay in sync, the `Release MCP X.Y.Z: …` commit subject, the
+PR-gated end-to-end release flow (land via PR, then tag the merged commit), and the GitHub Release
+format. This repo keeps release notes in **GitHub Releases**, not a `CHANGELOG.md`.

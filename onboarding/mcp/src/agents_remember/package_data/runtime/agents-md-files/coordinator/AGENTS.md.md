@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T11:18+02:00                     |
-| lastVerifiedCommitHash | `3113f8b877d670e15df17349de186b1bcbc6b629` |
-| lastVerifiedCommitDate | 2026-06-01T13:10:08+02:00|
+| lastUpdated            | 2026-06-02T03:30+02:00                     |
+| lastVerifiedCommitHash | `d61c30b5b716a8d8feb0e1ddcc3149047b5b7536` |
+| lastVerifiedCommitDate | 2026-06-02T02:13:58+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -47,8 +47,9 @@ that relies on onboarding, providers, or repository source goes through
 routing across optional providers, route indexes, onboarding, and bounded source
 confirmation. The memory-layer read path is also explicit: memory repos are not
 expected to provide a root-level `AGENTS.md`; repo-specific guidance is read
-from `system/settings.md`, `system/tools.md`, `system/sources.md`, and optional
-`system/coding-guidelines.md`.
+from `system/settings.md`, `system/tools.md`, `system/git-workflow.md` (when
+present, for the gated-branch landing flow read before any commit/push/PR),
+`system/sources.md`, and optional `system/coding-guidelines.md`.
 Provider authority is stated directly as the MCP settings file.
 
 ### Conventions
@@ -124,6 +125,7 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-06-02T03:30+02:00: Registered `system/git-workflow.md` as a read-first memory-layer file (when present): added it to the post-C-08 read list and the memory-repo system-file list, and pointed "Branch And Workflow Notes" at it for the gated-branch landing flow. Verification metadata + the `Runtime AGENTS Template Package` entity fingerprint recomputed at this closeout (mcp 1.0.2).
 - 2026-06-01T11:18+02:00: Documented the new top `Frame Before You Choose a Format` routing section (the `tasks/AGENTS.md` collaboration doctrine now applies up front, before a task format is chosen, and routes evidence to C-04) and the slimming of the buried "do not rush" bullet to a plain `tasks/AGENTS.md` pointer. Verification metadata stays pinned; Repo-Internal Reference line ranges and the `Runtime AGENTS Template Package` entity fingerprint will be re-verified/recomputed at the single closeout after the routing-layer optimization pass and mcp version bump.
 - 2026-05-29T20:25+02:00: Updated after the coordinator AGENTS template gained the explicit "do not randomly commit; use the C-12 closeout procedure" workflow-before-code rule.
 - 2026-05-27T12:50+02:00: Added the coordinator Git-boundary rule that `ar-coordination/` is a scaffold root, not a repository root; Git commands should target resolved code or memory Git repositories and `tasks/` artifacts stay local unless a workflow says otherwise.

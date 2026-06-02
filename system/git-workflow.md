@@ -1,0 +1,149 @@
+# Git Workflow — PR-Gated `main`
+
+Repo-local landing doctrine for `agents-remember-md`. Read this **before** committing,
+pushing, opening a PR, or cutting a release. PR-gating and the spear branch are per-repo;
+the coordinator only routes "read `git-workflow.md` when present."
+
+---
+
+## Spine
+
+- **Spear branch = `main`.** `main` is **PR-gated — never push to it directly.** Every change
+  reaches `main` through a GitHub PR that passes checks and is merged.
+- Work branches are cut from the spear: **`feat/<slug>`** (features) or **`fix/<slug>`** (fixes).
+- **Everything is worktree-backed** (chat *and* task) so external memory stays consistent: memory
+  parks on the worktree memory branch and lands on `main` via **C-11 carryover** *after* the code PR
+  merges.
+
+---
+
+## When you need an issue + PR
+
+| Change kind | Issue? | PR to `main`? |
+| --- | --- | --- |
+| `feat` / `fix` / `chore` | **`gh issue create`** (after agent + developer agree) | yes |
+| pure research (read-only, no source/memory change) | no | no — maps to L-01's read-only exit |
+
+---
+
+## The landing flow
+
+A job changes the checkout via these steps:
+
+1. **`gh issue create`** for `feat`/`fix`/`chore` (skip for pure research).
+2. Cut **`feat/<slug>`** | **`fix/<slug>`** from the spear (`main`).
+3. **C-09 worktree on that branch — chat & task both** (task adds `task.md`; chat doesn't).
+4. Work in the worktree; **memory parks on the worktree memory branch.**
+5. **Commit gate (human).** Nothing is committed before explicit developer commit approval
+   (C-12 / direct-closeout preview first).
+6. **Push gate (human — one question).** After commit approval, a single "push?" approval hands the
+   tail to the agent. Merge is **no longer its own gate** — only timing.
+7. Agent owns the tail: **push the branch → `gh pr create` (target `main`) → checks green →
+   `gh pr merge --delete-branch`.**
+8. **C-09 closeout** + worktree/provider cleanup.
+9. **C-11 carryover** of the parked memory to main-memory; the ledger is mapped to the **merged**
+   commit.
+
+### Gates, in one line
+
+`commit approval (human)` → `push approval (human, one question)` → agent owns `push → PR → checks
+→ merge → cleanup → carryover`.
+
+---
+
+## PR merge: prefer a merge commit over squash
+
+- **Default: merge commit** (`gh pr merge --delete-branch`). It preserves the branch's distinct
+  commits on `main` — important when a PR bundles several self-contained changes (each with its own
+  onboarding + ledger mapping), so history stays bisectable and traceable.
+- **Squash** (`--squash`) is for messy WIP branches full of "fix typo" commits where the individual
+  history has no value. Do not squash a bundle of distinct features just to get a single line.
+- Never `--rebase`-merge onto `main` in a way that rewrites already-pushed history.
+
+---
+
+## Pre-push quality gate
+
+Quality is enforced at two gates, both running the project quality wrapper with
+`--fail-on-crap-threshold` (Ruff, Pyright, the full pytest suite, and CRAP all fail the run):
+
+- **CI** — `.github/workflows/quality-checks.yml` runs on every push and PR to `main` across a
+  Python `3.11 / 3.12 / 3.13` matrix. This is the non-bypassable backstop.
+- **Local pre-push** — `.githooks/pre-push` runs the same wrapper and blocks the push. **Enable it
+  once per clone** with `./setup-hooks.sh` (which sets `git config core.hooksPath .githooks` after
+  `pip install -e "mcp[dev]"`); `git push --no-verify` bypasses it intentionally.
+
+Keep both gates calling the project-owned wrapper, not a hand-picked subset. See
+[`tools.md`](tools.md) for the quality wrapper itself.
+
+---
+
+## Release And Changelog Convention
+
+This repo has **no `CHANGELOG.md`**. The release history and user-facing release notes live in
+**GitHub Releases** — that is the canonical changelog, and what the README's "read the release notes
+before upgrading" line points at. Do not introduce a `CHANGELOG.md`.
+
+### Tag scheme
+
+- **`mcp-vX.Y.Z`** is the canonical release tag. Pushing it triggers
+  [`publish-mcp-to-pypi.yml`](agents-remember-md/.github/workflows/publish-mcp-to-pypi.yml)
+  (`on: push: tags: mcp-v*`), which builds the wheel/sdist and publishes `agents-remember-mcp` to
+  PyPI. Attach the GitHub Release to this `mcp-vX.Y.Z` tag.
+- A bare `vX.Y.Z` scheme exists only on the older `v0.9.0` Release. Use `mcp-v*` going forward.
+
+### Version bump locations (keep in sync)
+
+A release bumps the version string in exactly three places; they must match:
+
+1. `mcp/pyproject.toml` — `version`
+2. `mcp/src/agents_remember/mcp/__init__.py` — `SERVER_VERSION` fallback
+3. `README.md` — the Status section line
+
+`SERVER_VERSION` and `pyproject` `version` must stay equal so installed server payloads (`ping`,
+`server_info`) report the same version PyPI installs. `mcp/tests/test_tools.py::test_ping_payload`
+asserts `payload["version"] == SERVER_VERSION` **dynamically** — it is not a bump location; it
+validates the bump automatically (it must stay dynamic, never re-pinned to a literal).
+
+### Release commit subject
+
+Use `Release MCP X.Y.Z: <one-line summary>` (version-first), matching existing release-commit history.
+
+### End-to-end release flow (PR-gated)
+
+1. On a `feat/`|`fix/` branch in the worktree, bump the four version locations, run the full quality
+   wrapper, and close out the change (code, onboarding, ledger) per `C-12-closeout`.
+2. **Land it on `main` via PR** (the landing flow above) — `main` is PR-gated, so a release reaches
+   `main` through the merged PR, not a direct push.
+3. **Tag the merged commit:** push the `mcp-vX.Y.Z` tag pointing at the merge commit on `main`;
+   confirm `publish-mcp-to-pypi.yml` succeeded and the version resolves on PyPI (PyPI's JSON metadata
+   can show a release ~30s before the files are installable; `uv`/`uvx` may need `--refresh`).
+4. Create the GitHub Release on the `mcp-vX.Y.Z` tag (format below). The publish workflow does **not**
+   create the Release; that step is manual.
+
+### GitHub Release format
+
+House style observed across `v0.7.0`–`v0.9.0`:
+
+- a **thematic title** that names the headline change, not a version-only title
+  (e.g. "Worktree management & Git Versioned Memory")
+- a Markdown body shaped as:
+
+```markdown
+## Agents Remember X.Y.Z
+<1–2 sentence summary of the release theme>
+
+### Highlights
+- <bullet>
+- <bullet>
+
+### <Themed section, e.g. "Onboarding And Memory">
+- <sub-bullets>
+```
+
+Create it with the web UI (repo → Releases → Draft a new release → choose the `mcp-vX.Y.Z` tag) or
+the `gh` CLI; use `--draft` first to review before publishing:
+
+```text
+gh release create mcp-vX.Y.Z --target main --title "<thematic title>" --notes-file <notes.md> --draft
+```

@@ -187,6 +187,7 @@
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md",
+    "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md",
@@ -240,8 +241,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 385,
-    "fileSidecars": 172,
+    "sourceFilesInScope": 380,
+    "fileSidecars": 173,
     "childRoutes": 11
   },
   "routingTerms": [
