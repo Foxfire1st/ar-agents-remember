@@ -51,7 +51,7 @@ invokes it.
 
 | Finding | Source Path |
 | --- | --- |
-| C-08 skill guidance routes normal use through the MCP/package resolver. | [C-08 SKILL.md](agents-remember-md/runtime/skills/U-01-core-skills/C-08-ar-coordination-context-resolver/SKILL.md) |
+| C-08 skill guidance routes normal use through the MCP/package resolver. | [C-08 SKILL.md](agents-remember-md/runtime/skills/C-08-ar-coordination-context-resolver/SKILL.md) |
 | Resolver shape is covered by package resolver tests. | [test_resolver_parity.py](agents-remember-md/mcp/tests/test_resolver_parity.py) |
 | Focused implementation modules now live under the coordination-context package. | [coordination_context overview](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/overview.md) |
 

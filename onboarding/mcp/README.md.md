@@ -90,7 +90,7 @@ placeholder for memory/worktree commits).
 | --- | --- |
 | The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
 | The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | [pyproject.toml](agents-remember-md/mcp/pyproject.toml) |
-| The Quickstart hands post-scaffolding setup off to the C-13 install-and-onboard skill. | [C-13 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-13-install-and-onboard/SKILL.md) |
+| The Quickstart hands post-scaffolding setup off to the C-13 install-and-onboard skill. | [C-13 SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/C-13-install-and-onboard/SKILL.md) |
 | The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [mcp-tools.md](agents-remember-md/docs/reference/mcp-tools.md) |
 | The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
 | The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |

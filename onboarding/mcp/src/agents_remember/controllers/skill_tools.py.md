@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastVerifiedCommitHash | `72789a48dc47acf417725ae051eaa123cadeaa0b` |
+| lastVerifiedCommitDate | 2026-06-02T04:33:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,8 +19,9 @@ skill installation.
 
 The former large skill-facing MCP facade was split into focused controller
 modules. This file keeps `skills_install_tool()`, which delegates to
-`install.skills.install_skills()` with layout, dry-run, overwrite, and archive
-options and returns an operation-labeled payload.
+`install.skills.install_skills()` with dry-run, overwrite, and archive options
+and returns an operation-labeled payload (the installer is a flat copy, so there
+is no layout option).
 
 ## Invariants And Boundaries
 
@@ -42,6 +43,7 @@ options and returns an operation-labeled payload.
 
 ## Update History
 
+- 2026-06-02T04:40+02:00: Dropped the `layout` option from `skills_install_tool` after the installer became a single flat copy (U-01-core-skills dissolved). L-01 series, Sub-task B/S7, mcp 1.1.0.
 - 2026-05-28T19:52+02:00: Updated after provider, worktree, memory, coordination, and benchmark controllers moved out of the former `skill_tools.py` mega-facade.
 - 2026-05-28T12:32+02:00: Updated after `provider_watchers` status began writing and returning current provider state snapshots.
 - 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed the GrepAI MCP search and trace shape.

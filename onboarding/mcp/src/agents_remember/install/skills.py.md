@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/skills.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastVerifiedCommitHash | `72789a48dc47acf417725ae051eaa123cadeaa0b` |
+| lastVerifiedCommitDate | 2026-06-02T04:33:30+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -19,13 +19,15 @@ packaged Agents Remember skills into the configured harness skill root.
 
 ### Logic
 
-The service finds the packaged runtime skills through `source_root_from_package`.
-It supports `tree` layout by copying the whole skill tree under
-`agents-remember-md`, and `flat` layout by copying each named skill directory
-directly under the install root. Existing targets are either archived or
-replaced depending on the request. Replacement handles normal directories, file
-links, directory symlinks, and Windows junction/reparse-point directories so
-legacy symlink installs can be migrated to the copy-only layout.
+The service finds the packaged runtime skills through `packaged_source_root`. The
+packaged skills tree is flat — one folder per skill directly under `skills/` — so
+the service simply copies each skill directory under the install root, named by its
+frontmatter `name` (validated as `[a-z0-9][a-z0-9-]*`). There is no layout
+branching or namespace folder: the source is already flat, so the script just
+copies the skills across. Existing targets are either archived or replaced
+depending on the request. Replacement handles normal directories, file links,
+directory symlinks, and Windows junction/reparse-point directories so legacy
+symlink installs can be migrated to the copy.
 
 ### Invariants And Boundaries
 
@@ -44,10 +46,11 @@ legacy symlink installs can be migrated to the copy-only layout.
 | --- | --- |
 | `skills_install` is exposed as an MCP payload. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
 | Runtime package discovery is shared with runtime install. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| MCP tests cover replacing a legacy symlink skill tree with a copied tree. | [test_tools.py](agents-remember-md/mcp/tests/test_tools.py) |
+| MCP tests cover replacing an existing symlink skill at its flat install path. | [test_tools.py](agents-remember-md/mcp/tests/test_tools.py) |
 
 ## Update History
 
+- 2026-06-02T04:40+02:00: Simplified to a single flat copy — dropped the `layout` param, the `tree` branch, and the `agents-remember-md` namespace now that the packaged skills tree is flat (U-01-core-skills dissolved). `install_skills` copies each skill by frontmatter name; callers + the `skills_install` tool dropped `layout`. L-01 series, Sub-task B/S7, mcp 1.1.0.
 - 2026-05-29T18:35+02:00: Added `sys.platform` narrowing in `_is_link` for the Windows-only `st_file_attributes` and extracted `_validate_install_skills_args` from `install_skills`; behavior-preserving (commits `0549b28`, `e3dab63`).
 - 2026-05-23T17:34+02:00: Documented overwrite handling for legacy symlink and Windows junction skill installs.
 - 2026-05-23T13:09+02:00: Created for copy-only MCP skill installation.
