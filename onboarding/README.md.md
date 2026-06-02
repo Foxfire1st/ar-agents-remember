@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T16:35+02:00                     |
-| lastVerifiedCommitHash | `700ed5e9cc4549276226b6662eb8c9ff90739ee0` |
-| lastVerifiedCommitDate | 2026-06-02T18:28:34+02:00|
+| lastUpdated            | 2026-06-02T18:35+02:00                     |
+| lastVerifiedCommitHash | `64c1b55fbf30c2a01b733975a2701f69e42b8616` |
+| lastVerifiedCommitDate | 2026-06-02T18:47:28+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The quickstart is a short, harness-agnostic three-step agent-driven flow — (1) wire the MCP server via `uvx`, (2) run `runtime_install` then `skills_install`, (3) run the `c-13-install-and-onboard` skill (which sets up the memory repo, installs the start hook, bootstraps onboarding, and starts provider indexing) — framed around three harness restarts (load server, discover skills, activate hook). | L72-L90 | [README.md](agents-remember-md/README.md) |
 | The README routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L92-L103 | [README.md](agents-remember-md/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees, and notes the workspace-first `<workspace>/ar-coordination/` default. | L105-L139 | [README.md](agents-remember-md/README.md) |
-| The README's Status section pins the project at `2.0.0` (a major, breaking lifecycle-reshape release) and defers the public-contract promise to the Stability section, noting those contracts change only on a major bump while internals/providers may still evolve across minors. | L141-L143 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `2.1.0` (a minor, backward-compatible release on the 2.0.0 lifecycle reshape) and defers the public-contract promise to the Stability section, noting those contracts change only on a major bump while internals/providers may still evolve across minors. | L141-L143 | [README.md](agents-remember-md/README.md) |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L145-L147 | [README.md](agents-remember-md/README.md) |
 | The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L149-L153 | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L44 | [docs/README.md](agents-remember-md/docs/README.md) |
@@ -85,6 +85,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-02T18:35+02:00: Bumped the Status-section version reference to `2.1.0` (mcp 2.1.0 — workspace-first install defaults, skill-name/MCP-tool reference convention, grepai-status + quality-gate fixes; a minor backward-compatible release on the 2.0.0 reshape). Verification metadata pinned until closeout. chore/release-mcp-2.1.0 branch.
 - 2026-06-02T16:35+02:00: Second batch (install-location defaults) — the Repository Layout section gained a workspace-first note (installed runtime defaults to `<workspace>/ar-coordination/`, inside the workspace and never the home directory; the `c-13-install-and-onboard` skill shows each install path as an accept-or-override default). Realigned the post-Layout row ranges by +3 (layout end L105-L139, status L141-L143, stability L145-L147, contributing L149-L153). fix/skill-ref-naming-and-grepai-status branch; verification pinned until closeout.
 - 2026-06-02T11:30+02:00: Added a `## What It Looks Like In Practice` mini-transcript between Core Model and Live Demo (by-path note + task-start `context_packet`/`memory_quality_check` + read/propose/refresh loop). Added its Repo-Internal References row (L36-L52) and realigned every post-insertion row range by +18 (live-demo L54-L59, quickstart L72-L90, documentation L92-L103, layout L105-L136, status L138-L140, stability L142-L144, contributing L146-L150). Part of the HN-launch doc pass that also touched `docs/getting-started.md`, `docs/workflows.md`, `docs/README.md`, and a new `docs/release-checklist.md` (all outside file-level onboarding). Verification metadata stays pinned until closeout. docs/hn-launch-hardening branch.
 - 2026-06-02T10:10+02:00: Added a `## Live Demo: This Repo Uses Agents Remember` section between Core Model and Requirements — it states Agents Remember runs on itself and links the project's own published memory repo (`Foxfire1st/ar-agents-remember-md`) as a live, inspectable onboarding example, surfacing the dogfooding message higher on the page than the existing Contributing mention. Added a Live Demo Repo-Internal References row (L36-L41) and realigned every post-insertion row range by +7 (quickstart L54-L72, documentation L74-L85, layout L87-L118, status L120-L122, stability L124-L126, contributing L128-L132). Verification metadata stays pinned until closeout commits the source change. docs/readme-live-demo branch.
