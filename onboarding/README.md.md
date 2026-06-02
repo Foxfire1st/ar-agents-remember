@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `d61c30b5b716a8d8feb0e1ddcc3149047b5b7536` |
-| lastVerifiedCommitDate | 2026-06-02T02:13:58+02:00|
+| lastVerifiedCommitHash | `87cb039be37b129f8f08baf7334d4bc3b4047aa4` |
+| lastVerifiedCommitDate | 2026-06-02T04:41:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -79,6 +79,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-02T05:00+02:00: Updated the README's workflow language for the L-01 reshape — "normal work starts in chat mode" became the L-01 session job lifecycle, and the Workflows doc link now names the L-01 build modes (read-only / chat build / W-02). The `docs/**` workflow/skills/layout/install pages were rewritten in the same pass but stay outside file-level onboarding. L-01 series, docs pass, mcp 2.0.0.
 - 2026-06-02T03:30+02:00: Bumped the Status-section version reference to `1.0.2` (mcp 1.0.2 — `system/git-workflow.md` + PR-gated landing doctrine). Verification metadata pinned until closeout.
 - 2026-06-01T13:30+02:00: Bumped the Status-section version reference to `1.0.1` (mcp 1.0.1). Verification metadata pinned until closeout.
 - 2026-05-31T12:40+02:00 — Added a new `## Stability` section (the 1.0.0 semver public-contract promise: skill IDs, MCP tool names/inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema) and reconciled the Status section to defer to it instead of warning that those contracts may evolve. Added a Contributing line linking the project's own published memory layer (Foxfire1st/ar-agents-remember-md) as a downloadable example. Verification metadata stays pinned until closeout commits the source change.
