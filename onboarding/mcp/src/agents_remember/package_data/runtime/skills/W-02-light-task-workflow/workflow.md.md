@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T01:06+02:00                     |
-| lastVerifiedCommitHash | `5aadda92c9b3c104418770410d49b275deef95c2` |
-| lastVerifiedCommitDate | 2026-06-02T03:58:52+02:00|
+| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb` |
+| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
 
 ## Purpose
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for the current workflow file.
 
 ## Update History
 
+- 2026-06-02T04:25+02:00: Replaced the heavy-oriented "What This Workflow Does Not Cover" + "Relationship To Heavy Task Workflow" sections with a "When To Escalate To A Master Series" section, and dropped the "same naming convention as heavy-task-workflow" phrasing. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-02T04:10+02:00: Added a "Master Task Series" section documenting escalation to a master + light sub-task series (one worktree per series, a commit per slice, one integrate + release at the end). L-01 series, Sub-task B/S5, mcp 1.1.0.
 - 2026-05-31T01:06+02:00: Added step 6 "Reframe and design before writing the plan" linking the Task Collaboration Doctrine and recording settled design in the task file's `## Design` section before implementation steps; renumbered later steps to 7 and 8, added the design item to the required-sections list, and refreshed the citations my insertion shifted.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.

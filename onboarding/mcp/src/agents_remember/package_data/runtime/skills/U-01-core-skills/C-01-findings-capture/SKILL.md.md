@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-01-findings-capture/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90`         |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb`         |
+| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
 
 ## Purpose
 
@@ -75,6 +75,7 @@ No sibling repository evidence is needed for this package skill.
 
 ## Update History
 
+- 2026-06-02T04:25+02:00: Redirected the Operating Modes "inside a heavy-task-workflow task" reference to an L-01 build job or W-02 task (incl. master + light sub-task series) after W-01 retirement; behavior unchanged. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-15T15:08+02:00: Documented that C-01 now explicitly rejects verbatim onboarding capture for developer clarifications until the clarification has been checked against code reality and mismatches have been resolved.
 - 2026-05-15T01:55+02:00: Created with pending verification metadata for the runtime skill-tree move.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T21:51+02:00                     |
-| lastVerifiedCommitHash | `57944dfd52a1e92c9f3eeae1977148666ed2736a` |
-| lastVerifiedCommitDate | 2026-05-30T20:56:17+02:00|
+| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb` |
+| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
 
 ## Purpose
 
@@ -85,6 +85,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-06-02T04:25+02:00: Replaced the "chat / W-02 light / W-01 heavy" routing line with L-01's build-mode (read-only exit / chat build / W-02 light task) after W-01 retirement. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-05-30T21:51+02:00: Documented the hook-activation restart guidance added in the 0.9.x run — a freshly installed context-injecting start hook activates only on the next session, a distinct restart from the post-`skills_install` one. Verified against `57944df`.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — C-13 install/provider guidance now models preview-first (`dry_run=true`) then the real run for `runtime_install`/`skills_install`/`provider_watchers`.
 - 2026-05-29T13:22+02:00: Created with the C-13 install-and-onboard orchestration skill (replaces the reverted scripted start_hook_install MCP tool with a model-driven skill stage). Metadata pending closeout refresh.
