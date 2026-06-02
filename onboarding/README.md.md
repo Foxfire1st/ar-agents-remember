@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `87cb039be37b129f8f08baf7334d4bc3b4047aa4` |
-| lastVerifiedCommitDate | 2026-06-02T04:41:16+02:00|
+| lastVerifiedCommitHash | `82090ddc9804d64d887f6dfe362fed95e9dcb82a` |
+| lastVerifiedCommitDate | 2026-06-02T04:46:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The quickstart is a short, harness-agnostic three-step agent-driven flow — (1) wire the MCP server via `uvx`, (2) run `runtime_install` then `skills_install`, (3) run the `C-13-install-and-onboard` skill (which sets up the memory repo, installs the start hook, bootstraps onboarding, and starts provider indexing) — framed around three harness restarts (load server, discover skills, activate hook). | L47-L65 | [README.md](agents-remember-md/README.md) |
 | The README routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L67-L79 | [README.md](agents-remember-md/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees. | L80-L111 | [README.md](agents-remember-md/README.md) |
-| The README's Status section pins the project at `1.0.2` and defers the public-contract promise to the Stability section, noting only that internals beneath those contracts and the optional providers may still evolve across minor releases. | L113-L115 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `2.0.0` (a major, breaking lifecycle-reshape release) and defers the public-contract promise to the Stability section, noting those contracts change only on a major bump while internals/providers may still evolve across minors. | L113-L115 | [README.md](agents-remember-md/README.md) |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L117-L119 | [README.md](agents-remember-md/README.md) |
 | The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L121-L126 | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L44 | [docs/README.md](agents-remember-md/docs/README.md) |
@@ -79,6 +79,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-02T05:10+02:00: Bumped the Status section to `2.0.0` and flagged it as a major, breaking release (the L-01 lifecycle reshape: retired W-03/W-01, flat skills, removed skill IDs + the `skills_install` `layout` input + heavy `workflow_kind` values). L-01 series, release, mcp 2.0.0.
 - 2026-06-02T05:00+02:00: Updated the README's workflow language for the L-01 reshape — "normal work starts in chat mode" became the L-01 session job lifecycle, and the Workflows doc link now names the L-01 build modes (read-only / chat build / W-02). The `docs/**` workflow/skills/layout/install pages were rewritten in the same pass but stay outside file-level onboarding. L-01 series, docs pass, mcp 2.0.0.
 - 2026-06-02T03:30+02:00: Bumped the Status-section version reference to `1.0.2` (mcp 1.0.2 — `system/git-workflow.md` + PR-gated landing doctrine). Verification metadata pinned until closeout.
 - 2026-06-01T13:30+02:00: Bumped the Status-section version reference to `1.0.1` (mcp 1.0.1). Verification metadata pinned until closeout.
