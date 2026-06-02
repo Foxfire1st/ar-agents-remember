@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb` |
+| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
 
 ## Purpose
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
+- 2026-06-02T04:25+02:00: Replaced the `W-01-heavy-task-workflow` row in the related-skills table with `L-01-session-job-lifecycle` after W-01 retirement. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T04:34+02:00: Updated references after C-02 was renamed to memory quality control.
 - 2026-05-22T16:39+02:00: Updated after existing-memory slice maintenance gained explicit preservation-first handling for moved or deleted route behavior. Verification metadata remains pinned until closeout commits the source change.

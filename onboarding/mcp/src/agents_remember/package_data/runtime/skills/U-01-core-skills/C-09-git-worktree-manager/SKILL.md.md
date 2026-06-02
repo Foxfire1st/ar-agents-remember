@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-05-26T16:25+02:00                     |
-| lastVerifiedCommitHash | `52d901160fc86c0338f343b5fe6e7200457165dd` |
-| lastVerifiedCommitDate | 2026-06-02T03:53:20+02:00|
+| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb` |
+| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
 
 ## Purpose
 
@@ -95,6 +95,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-06-02T04:25+02:00: Dropped the retired heavy-task workflow from the wrapped-workflow list and the intake decision step (now chat, W-02 light task, or master + light sub-task series). L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-02T04:00+02:00: Added a Start/Attach/Status note that the external-memory "no compatible state" prompt's common trigger is a freshly-merged gated branch whose PR merge commit is unmapped, and that C-11 carryover now maps it automatically after the merge (so `reconciliation` is usually unnecessary). L-01 series, Sub-task C, mcp 1.1.0.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the C-09 worktree examples now omit `dry_run=false` and carry a preview-first note (`dry_run=true` then the real run).
 - 2026-05-26T16:25+02:00: Updated after closeout guidance moved to C-12 and C-09 became worktree lifecycle plus integration/cleanup only.

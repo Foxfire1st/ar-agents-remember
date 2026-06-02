@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb` |
+| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -115,6 +115,7 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 
 ## Update History
 
+- 2026-06-02T04:25+02:00: `worktree_start` docstring dropped the retired `heavy-task` workflow_kind (now `light-task`/`chat-task`) after the heavy workflow was retired. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-01T00:00+02:00 — `provider_watchers` docstring updated to name `restart` (index-preserving) and `invalidate-indexes` (destructive rebuild) as distinct actions, replacing `refresh`. All CGC/GrepAI query tools gained `worktree` parameter. `worktree_cleanup` gained `teardown_providers`. `worktree_abandon` newly registered with `force`. Updated Code Commentary Logic section.
 - 2026-05-31T12:30+02:00 — Resolved the hardening follow-up: `codex_sandbox`'s registered default is now `CODEX_BENCHMARK_SANDBOX` (Codex's own `default` sandbox, not `danger-full-access`), callers must opt into full access explicitly, and a real run is refused unless MCP settings set `benchmarksEnabled` (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the 0.9.x registration changes — `runtime_install`'s `no_cache` flag (from-scratch image rebuild) alongside `install_provider_deps`, the human-facing tool descriptions now surfaced to the harness, and the literal `codex_sandbox="danger-full-access"` registered default (noted as a hardening follow-up). Verified against `8927f03`.

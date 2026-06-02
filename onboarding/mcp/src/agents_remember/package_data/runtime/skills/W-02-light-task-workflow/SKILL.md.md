@@ -6,12 +6,12 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T01:06+02:00                     |
-| lastVerifiedCommitHash | `5aadda92c9b3c104418770410d49b275deef95c2` |
-| lastVerifiedCommitDate | 2026-06-02T03:58:52+02:00|
+| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb` |
+| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
 
 ## Purpose
 
-This skill defines W-02, the light durable task workflow for medium-risk or multi-step changes that need a task artifact but not the full heavy workflow stack.
+This skill defines W-02, the light durable task workflow for medium-risk or multi-step changes that need a task artifact; work that outgrows a single-page plan escalates to a master + light sub-task series rather than a separate heavy workflow.
 
 ## Code Commentary
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the current workflow skill.
 
 ## Update History
 
+- 2026-06-02T04:25+02:00: Removed heavy-workflow references after W-01 retirement — the Purpose, When To Use, and naming notes no longer point at the heavy workflow; escalation now routes to a master + light sub-task series. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-02T04:10+02:00: Added master-task composition — a new `master-template.md` companion, a "Master-Task Composition (task series)" section, and invariant 13 (escalate a too-large task to a master + light sub-task series; one wrapper folder with flat `NN_<name>.md` sub-tasks, one shared worktree, a commit per slice, one integrate + release at the end). L-01 series, Sub-task B/S5, mcp 1.1.0.
 - 2026-05-31T01:06+02:00: Added invariant 12 requiring the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and noted the optional design section in conventions.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.

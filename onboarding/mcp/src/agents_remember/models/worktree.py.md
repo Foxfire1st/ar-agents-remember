@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb` |
+| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -39,5 +39,6 @@ carry operation-specific planning and closeout fields.
 
 ## Update History
 
+- 2026-06-02T04:25+02:00: `WorkflowKind` dropped the retired `heavy`/`heavy-task` literals (now `chat`/`light`/`light-task`) after the heavy workflow was retired. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-01T20:45+02:00 — `CleanupStatus` gained the `abandoned` literal and a `WorktreeAbandonResponse` model was added for the discard-without-integration tool.
 - 2026-05-28T19:52+02:00: Created after worktree context summaries gained typed Pydantic literal fields.
