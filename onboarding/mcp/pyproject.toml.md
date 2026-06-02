@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `d61c30b5b716a8d8feb0e1ddcc3149047b5b7536` |
-| lastVerifiedCommitDate | 2026-06-02T02:13:58+02:00|
+| lastVerifiedCommitHash | `82090ddc9804d64d887f6dfe362fed95e9dcb82a` |
+| lastVerifiedCommitDate | 2026-06-02T04:46:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 coordinator from a pip/uvx install with no source checkout.
 
 The package `version` tracks the release line; at this verification it is
-`1.0.2`. It is the same string `runtime_install` and `server_info` report, and
+`2.0.0`. It is the same string `runtime_install` and `server_info` report, and
 it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### Invariants And Boundaries
@@ -74,6 +74,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-06-02T05:10+02:00: Bumped the documented package `version` to `2.0.0` (mcp 2.0.0 — the L-01 lifecycle reshape, a major/breaking release); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-02T03:30+02:00: Bumped the documented package `version` to `1.0.2` (mcp 1.0.2 — git-workflow.md + PR-gated landing); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-01T13:30+02:00: Bumped the documented package `version` to `1.0.1` (mcp 1.0.1 — worktree cgc DNS-label fix); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-05-31T12:30+02:00 — Bumped the documented package `version` to `1.0.0` (1.0.0 review remediation); still tracks `SERVER_VERSION`.
