@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-06-02T03:30+02:00                     |
+| lastVerifiedCommitHash | `d61c30b5b716a8d8feb0e1ddcc3149047b5b7536` |
+| lastVerifiedCommitDate | 2026-06-02T02:13:58+02:00|
 
 ## Purpose
 
@@ -22,7 +22,8 @@ coordinator files and `examples/memory-repo/` for repository-specific
 memory-layer files. It states that coordinator files can define global defaults
 but should not encode one-repository rules, while memory-layer rules win for
 their own repository. It also notes that the memory-repo examples include a
-code quality report template for implementation validation summaries.
+`git-workflow.md` landing-flow starter (for repos that land through a gated
+branch) and a code quality report template for implementation validation summaries.
 
 ### Conventions
 
@@ -54,7 +55,7 @@ The source file itself is the active example index.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The README states that examples are split by target folder rather than by inferred ownership from file names. | L1-L4 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
-| The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo quality-report template. | L8-L34 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
+| The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `git-workflow.md` landing-flow starter and quality-report template. | L8-L34 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
 
 ## Cross-Repo References
 
@@ -66,6 +67,7 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-06-02T03:30+02:00: Documented the new memory-repo `git-workflow.md` example (gated-branch landing flow) alongside the code-quality report template (mcp 1.0.2). Verification metadata pinned until closeout.
 - 2026-05-28T12:32+02:00: Updated after the examples index began mentioning the memory-repo code quality report template.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-13T13:38: Created onboarding for the folder-shaped system examples index.

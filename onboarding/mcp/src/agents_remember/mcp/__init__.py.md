@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T13:30+02:00                     |
-| lastVerifiedCommitHash | `6bca8938635734072b08955f9dc47ebdaba763fd` |
-| lastVerifiedCommitDate | 2026-06-01T14:01:01+02:00|
+| lastUpdated            | 2026-06-02T03:30+02:00                     |
+| lastVerifiedCommitHash | `d61c30b5b716a8d8feb0e1ddcc3149047b5b7536` |
+| lastVerifiedCommitDate | 2026-06-02T02:13:58+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,7 +20,7 @@ builders.
 The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
 derived from the installed package metadata via
 `importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
-the single source of truth; a `PackageNotFoundError` fallback hardcodes `1.0.1`
+the single source of truth; a `PackageNotFoundError` fallback hardcodes `1.0.2`
 for source checkouts without an install. Payload builders in `mcp.tools` use
 those constants for `ping` and `server_info`, so the version no longer needs a
 manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
@@ -39,6 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-02T03:30+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `1.0.2` (mcp 1.0.2); pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-01T13:30+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `1.0.1` (mcp 1.0.1); pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-05-31T12:30+02:00 — `SERVER_VERSION` now reads from installed package metadata (`importlib.metadata.version`) with a `1.0.0` source-checkout fallback; pyproject is the single source of truth (1.0.0 review remediation).
 - 2026-05-31T01:06+02:00: Bumped `SERVER_VERSION` to `0.9.6` (MCP 0.9.6); still aligned with `mcp/pyproject.toml`. Verification metadata stays pinned until closeout commits the source change.
