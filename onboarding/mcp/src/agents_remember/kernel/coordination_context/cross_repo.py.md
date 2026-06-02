@@ -67,4 +67,4 @@ No separate repository evidence is needed; the module reports adjacent repo fact
 ## Update History
 
 - 2026-05-31T12:50+02:00 — `run_git` is now imported from `agents_remember.kernel.git_command` (local definition removed) and re-exported via a new `__all__`; `git_head` renamed to `git_head_or_empty` (now docstringed) with its `code_repository_info` call site updated; corrected Logic prose to name `git_branch`/`git_head_or_empty` and the shared `run_git`, and added the git_command repo-internal reference (1.0.0 review remediation).
-- 2026-05-25T20:57+02:00: Created by extracting branch-gated cross-repo state resolution from the C-08 resolver.
+- 2026-05-25T20:57+02:00: Created by extracting branch-gated cross-repo state resolution from the `c-08-ar-coordination-context-resolver` skill resolver.

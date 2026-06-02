@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`settings.py` is the settings-selection facade for the C-08 implementation
+`settings.py` is the settings-selection facade for the `c-08-ar-coordination-context-resolver` skill implementation
 package.
 
 ## Code Commentary

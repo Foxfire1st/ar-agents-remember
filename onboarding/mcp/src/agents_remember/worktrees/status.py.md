@@ -12,7 +12,7 @@
 
 ## Purpose
 
-`status.py` projects an optional C-09 worktree contract into the read-only
+`status.py` projects an optional `c-09-git-worktree-manager` skill worktree contract into the read-only
 worktree summary used by context packets.
 
 ## Code Commentary

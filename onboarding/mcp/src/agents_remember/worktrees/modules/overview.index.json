@@ -57,7 +57,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named C-09 lifecycle operations. `integrate.py` performs the code and memory fast-forwards atomically: it pre-validates that both fast-forwards are possible before mutating either branch and rolls both heads back on any memory-side failure, so integration never lands a half-integrated state. `abandon.py` is the discard-without-integration sibling: it recl...",
+    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named `c-09-git-worktree-manager` skill lifecycle operations. `integrate.py` performs the code and memory fast-forwards atomically: it pre-validates that both fast-forwards are possible before mutating either branch and rolls both heads back on any memory-side failure, so integration never lands a half-integrated state. `abandon.py` is the discard-without...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
@@ -104,9 +104,10 @@
       "provider_teardown",
       "start.py",
       "start",
+      "c-09-git-worktree-manager",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "4117c3d98eadb4265af6e55f3dd8f2552e8589a0",
+      "53b17f574a53ae400f8abb9fda264fa9fa3e8dff",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
@@ -122,8 +123,7 @@
       "lastUpdated",
       "T12",
       "lastVerifiedCommitHash",
-      "c3d98eadb4265af6e55f3dd8f2552e8589a0",
-      "lastVerifiedCommitDate"
+      "b17f574a53ae400f8abb9fda264fa9fa3e8dff"
     ]
   },
   "fallback": {

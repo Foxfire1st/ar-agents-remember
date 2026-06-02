@@ -81,7 +81,7 @@ root under the coordinator:
       status/
 ```
 
-The MCP `runtime_install` operation copies runtime package assets to the
+The `runtime_install` MCP tool operation copies runtime package assets to the
 configured coordinator root and can run provider dependency installation through
 package-local lifecycle code. It generates lifecycle settings from MCP settings,
 not coordinator `system/settings.json`, and writes provider runner integrity

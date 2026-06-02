@@ -19,7 +19,7 @@ onboarding overviews.
 
 ### Logic
 
-The package copy preserves the shared route-index builder used by C-05. It
+The package copy preserves the shared route-index builder used by `c-05-create-or-update-onboarding-files` skill. It
 discovers route overviews, covered sidecars, child routes, source counts,
 routing terms, hot-path summaries, and writes or dry-runs one index per route.
 Its ignored source directories include Codex's project-local `.codex` harness

@@ -35,7 +35,7 @@ history-order fixes.
 
 - `check.py` normalizes check names, dispatches quality runners, and returns one
   combined payload.
-- `integrity/onboarding_drift_check/` contains the moved C-02 drift classifier
+- `integrity/onboarding_drift_check/` contains the moved `c-02-memory-quality-control` skill drift classifier
   and bounded summary helper.
 - `integrity/check_missing_onboarding.py` checks only current worktree
   additions so newly added eligible files get sidecars before the code commit.

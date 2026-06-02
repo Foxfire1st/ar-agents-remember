@@ -39,7 +39,7 @@ without writing them.
 - Missing or invalid timestamps are not guessed.
 - Continuation lines stay attached to their bullet block.
 - The script operates on the onboarding root passed by the caller; normal
-  closeout should pass the C-08/MCP-resolved onboarding root.
+  closeout should pass the `c-08-ar-coordination-context-resolver` skill/MCP-resolved onboarding root.
 
 ## Repo-Internal References
 

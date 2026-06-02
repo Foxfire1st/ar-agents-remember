@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`coordination_context/` contains the extracted implementation for the C-08
+`coordination_context/` contains the extracted implementation for the `c-08-ar-coordination-context-resolver` skill
 package resolver. The public import and `python -m` entrypoint remain
 `agents_remember.kernel.coordination_context_resolver`, while this package owns
 the focused resolver, settings, storage, contract, cross-repo, serialization,
@@ -51,7 +51,7 @@ The package is intentionally split by responsibility:
 
 ## Invariants And Boundaries
 
-- C-08 remains facts-only; this package does not create memory roots, modify
+- `c-08-ar-coordination-context-resolver` skill remains facts-only; this package does not create memory roots, modify
   Git worktrees, or write onboarding.
 - MCP settings and explicit arguments are resolver authority; source-checkout
   `.env` and `.env.example` are not runtime coordination-root inputs.
@@ -69,4 +69,4 @@ The package is intentionally split by responsibility:
 
 ## Update History
 
-- 2026-05-25T20:57+02:00: Created after the monolithic C-08 package resolver was split into focused implementation modules, then amended when Markdown fallback parser branches moved into submodules.
+- 2026-05-25T20:57+02:00: Created after the monolithic `c-08-ar-coordination-context-resolver` skill package resolver was split into focused implementation modules, then amended when Markdown fallback parser branches moved into submodules.

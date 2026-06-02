@@ -17,7 +17,7 @@
 ## Purpose
 
 `install/runtime.py` is the package-local runtime installer service used by the
-MCP `runtime_install` tool. It reconciles runtime assets into the configured
+`runtime_install` MCP tool. It reconciles runtime assets into the configured
 coordinator root and can run provider dependency installation through
 package-local lifecycle functions.
 

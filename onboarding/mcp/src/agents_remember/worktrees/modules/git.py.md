@@ -13,7 +13,7 @@
 ## Purpose
 
 Owns the Git subprocess adapter and small repository state helpers used by the
-C-09 worktree lifecycle.
+`c-09-git-worktree-manager` skill worktree lifecycle.
 
 ## Code Commentary
 

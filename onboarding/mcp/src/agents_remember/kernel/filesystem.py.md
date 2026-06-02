@@ -53,7 +53,7 @@ Same-repository closeout code and tests are the direct evidence for this helper.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| C-09 closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes. | closeout plan helpers | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
+| `c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes. | closeout plan helpers | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 | The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads. | missing-onboarding checks | [check_missing_onboarding.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
 | Worktree support tests create and clean up deliberately long paths through this helper. | long-path regression tests | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 

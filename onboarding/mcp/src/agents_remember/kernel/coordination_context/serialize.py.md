@@ -59,4 +59,4 @@ No cross-repository evidence is needed for this formatter.
 
 ## Update History
 
-- 2026-05-25T20:57+02:00: Created by extracting C-08 JSON/text serialization from the monolithic resolver.
+- 2026-05-25T20:57+02:00: Created by extracting `c-08-ar-coordination-context-resolver` skill JSON/text serialization from the monolithic resolver.

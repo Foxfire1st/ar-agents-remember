@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`json_settings.py` parses machine-readable C-08 settings from
+`json_settings.py` parses machine-readable `c-08-ar-coordination-context-resolver` skill settings from
 `settings.json`.
 
 ## Code Commentary
@@ -61,4 +61,4 @@ No cross-repository evidence is needed for this settings parser.
 
 ## Update History
 
-- 2026-05-25T20:57+02:00: Created by extracting JSON settings parsing from the C-08 resolver.
+- 2026-05-25T20:57+02:00: Created by extracting JSON settings parsing from the `c-08-ar-coordination-context-resolver` skill resolver.

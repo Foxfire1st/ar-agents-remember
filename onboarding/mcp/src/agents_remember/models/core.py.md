@@ -12,7 +12,7 @@
 
 ## Purpose
 
-`core.py` defines response models for the core MCP `ping` and `server_info`
+`core.py` defines response models for the core `ping` MCP tool and `server_info`
 tools.
 
 ## Code Commentary

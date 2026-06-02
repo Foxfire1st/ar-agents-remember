@@ -11,7 +11,7 @@
 
 ## Purpose
 
-This unittest module validates the route-index generator and the sidecar availability classifier used by C-04/C-05.
+This unittest module validates the route-index generator and the sidecar availability classifier used by `c-04-retrieval-strategy-router` and `c-05-create-or-update-onboarding-files` skill.
 
 ## Code Commentary
 

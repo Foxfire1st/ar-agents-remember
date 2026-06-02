@@ -17,7 +17,7 @@
 ## Purpose
 
 `__init__.py` marks `coordination_context/` as the focused implementation
-package behind the public C-08 resolver facade.
+package behind the public `c-08-ar-coordination-context-resolver` skill resolver facade.
 
 ## Code Commentary
 

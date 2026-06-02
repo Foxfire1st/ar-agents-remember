@@ -12,7 +12,7 @@
 
 ## Purpose
 
-`git_worktree_manager.py` is the package-local C-09 worktree lifecycle facade
+`git_worktree_manager.py` is the package-local `c-09-git-worktree-manager` skill worktree lifecycle facade
 behind MCP worktree tools.
 
 ## Code Commentary

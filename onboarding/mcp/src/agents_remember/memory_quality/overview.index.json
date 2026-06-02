@@ -124,6 +124,7 @@
       "3789c3eba5e6e03889635f19ad3793b9c6bf5a78",
       "/../../overview.md",
       "memory_quality/",
+      "c-02-memory-quality-control",
       "## Update History",
       "drift_check",
       "memory_quality_check",
@@ -132,8 +133,7 @@
       "integrity/ledger_consistency.py",
       "mcp/overview.md",
       "skill_tools.py",
-      "agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py",
-      "tools.py"
+      "agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py"
     ]
   },
   "fallback": {

@@ -39,7 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
-- 2026-06-02T05:10+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.0.0` (mcp 2.0.0 — the L-01 lifecycle reshape, a major/breaking release); pyproject remains the single source of truth. Verification metadata pinned until closeout.
+- 2026-06-02T05:10+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.0.0` (mcp 2.0.0 — the `l-01-session-job-lifecycle` skill lifecycle reshape, a major/breaking release); pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-02T03:30+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `1.0.2` (mcp 1.0.2); pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-01T13:30+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `1.0.1` (mcp 1.0.1); pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-05-31T12:30+02:00 — `SERVER_VERSION` now reads from installed package metadata (`importlib.metadata.version`) with a `1.0.0` source-checkout fallback; pyproject is the single source of truth (1.0.0 review remediation).
