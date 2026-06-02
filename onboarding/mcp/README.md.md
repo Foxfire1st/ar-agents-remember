@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-02T11:00+02:00                     |
+| lastVerifiedCommitHash | `dee479e5414e822b4914456345f2309acd8cc779` |
+| lastVerifiedCommitDate | 2026-06-02T12:47:04+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,9 +44,9 @@ per-harness path table), an **Install Order And First Operations** section
 spelling out the strict scaffolding → skills → providers ordering, the
 `runnerIntegrityFailed` fast-fail if providers run before `runtime_install`, and
 the `runtime_install` flags (`install_provider_deps`, `no_cache` to force a
-from-scratch image rebuild), a per-harness setup-pages table, an explicit
-**skill-layout** note (`skills_install` defaults to `tree` for recursive scanners
-like Codex; Claude Code and Cursor need `layout="flat"`), an upgrade callout that
+from-scratch image rebuild), a per-harness setup-pages table, a
+**skill-install** note (`skills_install` copies one flat folder per skill at
+`<skill-root>/<name>/` — there is no layout option), an upgrade callout that
 `timeoutCaps.providerSeconds` was renamed to `providerSetupSeconds` (old key
 rejected with `ConfigError`; `providerSetupSeconds` caps only image build /
 dependency install; `0` means unlimited), and a **Troubleshooting** section
@@ -70,9 +70,12 @@ placeholder for memory/worktree commits).
   a skill target when the settings file's parent directory is named `mcp`, so the
   README must keep telling users to place it under the harness registration folder
   (e.g. `.claude/mcp/`, `.codex/mcp/`), not loose in the workspace root.
-- Keep the skill-layout note correct: `tree` is the default (namespaced, for
-  recursive scanners like Codex); Claude Code and Cursor need `layout="flat"`.
-  Drift here silently breaks skill discovery for those harnesses.
+- Keep the skill-install note correct: `skills_install` copies one flat folder
+  per skill (`<skill-root>/<name>/`, matching the skill's lowercase `name`) and
+  has **no layout option** (the `tree`/`flat` `layout` input was removed in
+  2.0.0). For harnesses whose skill root isn't the inferred
+  `<harness-root>/skills/`, set `harnessSkillRoot`. Drift here (reintroducing a
+  `layout=` arg) silently breaks skill-install docs.
 - Keep the install-order rationale intact: scaffolding → skills → providers.
   `runtime_install` builds provider images (step 2); indexing only *starts* in
   step 3, so "providers last" means indexing, not image builds.
@@ -97,6 +100,7 @@ placeholder for memory/worktree commits).
 
 ## Update History
 
+- 2026-06-02T11:00+02:00: Removed the stale `tree`/`flat` skill-layout language after confirming `skills_install` has no `layout` arg (removed in 2.0.0) — it copies one flat folder per skill at `<skill-root>/<name>/`. Updated the Logic note and the skill-install invariant; `README.md`, `docs/getting-started.md`, `docs/reference/mcp-tools.md`, and the per-harness install pages were corrected in the same pass (docs/** are outside file-level onboarding). Verification metadata stays pinned until closeout. fix/skills-install-layout-docs branch.
 - 2026-05-31T12:30+02:00 — Captured the README's new benchmark-safety callout (1.0.0 review remediation): `codex_benchmark_prepare`/`codex_benchmark_run` are opt-in behind `benchmarksEnabled: true`, real runs run untrusted code, and `codex_sandbox` defaults to `default` with `danger-full-access` opt-in.
 - 2026-05-30T21:22+02:00: Verified against `57944df` after the 0.9.0–0.9.4 run. Documented the README sections added since `412342847` — Settings file location (the `mcp`-parent rule that lets `skills_install` infer its target), Install Order And First Operations (scaffolding → skills → providers, `runnerIntegrityFailed`, `install_provider_deps`/`no_cache`), the `tree` vs `flat` skill-layout note, the `providerSeconds` → `providerSetupSeconds` rename, and Troubleshooting — and added matching invariants and references.
 - 2026-05-29T14:15+02:00: Rewrote the README as a self-contained, uvx-first bootstrap — added the 3-step "ask your agent to" Quickstart (hands off to C-13), inlined a starter `settings.json`, switched project-doc links to absolute GitHub URLs, and linked the MCP tool reference. Metadata pending closeout refresh.
