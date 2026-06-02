@@ -91,7 +91,7 @@ No sibling repository evidence is needed for the test itself.
 - 2026-05-24T06:57+02:00: Updated after benchmark tests began asserting Codex `PATH` resolution and benchmark-only execution metadata.
 - 2026-05-24T05:48+02:00: Updated after benchmark portability tests began covering variant-scoped provider selection and generated benchmark provider settings without coordinator `system/settings.json`.
 - 2026-05-24T05:03+02:00: Updated after worktree support tests began asserting typed MCP next hints and absence of legacy `next_command` payload fields.
-- 2026-05-23T17:50+02:00: Moved onboarding to `mcp/tests` after the tests moved out of `runtime/skills/U-01-core-skills/tests` and updated imports to MCP package modules only.
+- 2026-05-23T17:50+02:00: Moved onboarding to `mcp/tests` after the tests moved out of `runtime/skills/tests` and updated imports to MCP package modules only.
 - 2026-05-23T14:20+02:00: Updated after benchmark skill exposure became copy-only and test imports began explicitly preserving both shared runtime and MCP package paths.
 - 2026-05-23T13:46+02:00: Updated after benchmark runner tests switched to package-local MCP module imports and source scripts were removed.
 - 2026-05-23T05:32+02:00: Updated after benchmark runner tests switched from installed runtime scripts to top-level source/package-owned scripts.
