@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `d61c30b5b716a8d8feb0e1ddcc3149047b5b7536` |
-| lastVerifiedCommitDate | 2026-06-02T02:13:58+02:00|
+| lastVerifiedCommitHash | `52d901160fc86c0338f343b5fe6e7200457165dd` |
+| lastVerifiedCommitDate | 2026-06-02T03:53:20+02:00|
 
 ## Purpose
 
@@ -22,9 +22,11 @@ The file tells users to copy the example to memory-layer `system/git-workflow.md
 `<placeholders>` for their repo. It states the spine (spear branch + whether it is gated; `feat/`|
 `fix/` work branches; whether work is worktree-backed), an issue/PR policy table, a generic landing
 flow (issue → branch → worktree → commit gate → push gate → agent owns push→PR→checks→merge→cleanup
-→ C-11 carryover), a "prefer merge commit over squash" rule for branches that bundle distinct
-changes, the optional CI + local pre-push quality gate, and an optional release/changelog convention
-(tag scheme, version-bump locations, release commit subject, PR-gated end-to-end flow).
+→ C-11 carryover run against the merged spear, which maps the ledger to the actual spear HEAD
+including a PR merge commit even when nothing else needs carrying), a "prefer merge commit over
+squash" rule for branches that bundle distinct changes, the optional CI + local pre-push quality
+gate, and an optional release/changelog convention (tag scheme, version-bump locations, release
+commit subject, PR-gated end-to-end flow).
 
 ### Conventions
 
@@ -67,4 +69,5 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-06-02T04:00+02:00: Updated after the example's landing flow clarified that C-11 carryover (run against the merged spear) maps the ledger to the actual spear HEAD, including a PR merge commit even when nothing else needs carrying. L-01 series, Sub-task C, mcp 1.1.0.
 - 2026-06-02T03:30+02:00: Created the onboarding for the new memory-repo `git-workflow.md` example (PR-gated landing flow starter), shipped in MCP 1.0.2.

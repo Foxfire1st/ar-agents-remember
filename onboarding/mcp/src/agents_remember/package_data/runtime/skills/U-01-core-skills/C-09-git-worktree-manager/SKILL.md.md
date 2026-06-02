@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-05-26T16:25+02:00                     |
-| lastVerifiedCommitHash | `23f4d7681f7fcd729049c5f27878c84bbb8f8e58` |
-| lastVerifiedCommitDate | 2026-05-29T20:24:00+02:00|
+| lastVerifiedCommitHash | `52d901160fc86c0338f343b5fe6e7200457165dd` |
+| lastVerifiedCommitDate | 2026-06-02T03:53:20+02:00|
 
 ## Purpose
 
@@ -41,9 +41,12 @@ integration and cleanup.
 C-09 is a wrapper, not a replacement workflow. Task identity should be settled
 before worktree creation: W-02 creates `<task-root>/<task-slug>/task.md`, then
 C-09 places `contract.md` beside it. External memory incompatibility is
-interactive and offers reconciliation, disabled memory, or custom handling;
-dirty source memory blocks start until memory content and ledger updates are
-committed or the developer chooses another path.
+interactive and offers reconciliation, disabled memory, or custom handling; its
+common trigger is starting off a freshly-merged gated branch whose PR merge
+commit the ledger has not mapped, which C-11 carryover (run after the merge) now
+maps automatically so `reconciliation` is not needed. Dirty source memory blocks
+start until memory content and ledger updates are committed or the developer
+chooses another path.
 
 Integration remains human-gated. `ff-only` lands closed task branches when
 source branches did not move; `replay` handles parallel non-overlapping work by
@@ -92,6 +95,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-06-02T04:00+02:00: Added a Start/Attach/Status note that the external-memory "no compatible state" prompt's common trigger is a freshly-merged gated branch whose PR merge commit is unmapped, and that C-11 carryover now maps it automatically after the merge (so `reconciliation` is usually unnecessary). L-01 series, Sub-task C, mcp 1.1.0.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the C-09 worktree examples now omit `dry_run=false` and carry a preview-first note (`dry_run=true` then the real run).
 - 2026-05-26T16:25+02:00: Updated after closeout guidance moved to C-12 and C-09 became worktree lifecycle plus integration/cleanup only.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
