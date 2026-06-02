@@ -6,13 +6,13 @@
 | path                   | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `dc25f5a63de359926985c925096aad9019968bf4` |
+| lastVerifiedCommitDate | 2026-06-02T18:31:01+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
 
-`baseline.py` is the package-local C-10 implementation for inspecting and
+`baseline.py` is the package-local `c-10-adopt-memory-baseline` skill implementation for inspecting and
 adopting an existing external-memory onboarding baseline.
 
 ## Code Commentary

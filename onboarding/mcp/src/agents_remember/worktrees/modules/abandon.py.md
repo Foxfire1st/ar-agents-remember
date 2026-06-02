@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastVerifiedCommitHash | `dc25f5a63de359926985c925096aad9019968bf4`                |
+| lastVerifiedCommitDate | 2026-06-02T18:31:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -55,6 +55,8 @@ exist, the contract is not marked `cleanup="abandoned"` and the state is
   is reclaimed even when Git operations subsequently fail.
 - The contract `cleanup` field is set to `"abandoned"` on success; this value
   causes a subsequent `start` call to recreate rather than reattach.
+- The docstring points at the `l-01-session-job-lifecycle` skill's
+  read-only/abandon exit as the lifecycle entry that drives this operation.
 
 ## Docs References
 
@@ -76,4 +78,5 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-02T16:24+02:00: Docstring now references the `l-01-session-job-lifecycle` skill in full for the read-only/abandon exit (was "L-01"). Reference-style normalization; behavior unchanged.
 - 2026-06-01T00:00+02:00 — Created onboarding for the new abandon module.

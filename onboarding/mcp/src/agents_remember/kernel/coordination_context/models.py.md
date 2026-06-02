@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `dc25f5a63de359926985c925096aad9019968bf4` |
+| lastVerifiedCommitDate | 2026-06-02T18:31:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,7 +35,8 @@ cross-repo allow state, coordination selection, and the final
   `agents_remember.errors`), so it joins the package's typed error family while
   staying catchable by existing `except ValueError` handlers. It keeps the
   checked internal and external memory paths so callers can report actionable
-  initialization guidance.
+  initialization guidance, naming the skills in full — initialize memory with
+  `c-00-initialize-memory-repo`, then run `c-03-repo-bootstrap`.
 
 ## Docs References
 
@@ -63,5 +64,6 @@ No cross-repository evidence is needed for local model declarations.
 
 ## Update History
 
+- 2026-06-02T16:24+02:00 — Normalized skill references in the missing-memory guidance message to full lowercase skill names (`c-00-initialize-memory-repo`, then `c-03-repo-bootstrap`); previously abbreviated C-00/C-03. Reference-style normalization; behavior unchanged.
 - 2026-05-31T12:50+02:00 — `MissingMemoryError` now subclasses `AgentsRememberError` (imported from `agents_remember.errors`) instead of the builtin `ValueError`; updated Invariants And Boundaries to state the typed-error-family base and `except ValueError` compatibility, and added the errors.py repo-internal reference (1.0.0 review remediation).
 - 2026-05-25T20:57+02:00: Created by extracting coordination-context model declarations from the monolithic resolver.
