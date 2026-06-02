@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T11:18+02:00                     |
-| lastVerifiedCommitHash | `3113f8b877d670e15df17349de186b1bcbc6b629` |
-| lastVerifiedCommitDate | 2026-06-01T13:10:08+02:00|
+| lastVerifiedCommitHash | `4e80f678776b449b4bc1a756fc4f3f8d5ce5198c` |
+| lastVerifiedCommitDate | 2026-06-02T03:41:17+02:00|
 
 ## Purpose
 
@@ -28,17 +28,18 @@ case where a workspace root includes this file while the actual target is a
 sibling repository, then scopes normal resolver input for this checkout to
 `code_repository_name = agents-remember-md`.
 
-A `Frame Before You Choose a Format` section now sits ahead of Task Format
-Routing: it makes the `tasks/AGENTS.md` collaboration doctrine apply up front in
-plain chat, before a format is chosen, and routes the evidence that conversation
-needs to `C-04-retrieval-strategy-router`. The memory section also carries a
-`Memory Retrieval Strategies` list — Semantics (GrepAI), Relationship (cgc), and
-Intent (onboarding plus bounded source confirmation) — that points to the same
-C-04 router.
+A `Start Here — Enter the Job Lifecycle` section now sits where Task Format
+Routing used to: every session enters `L-01-session-job-lifecycle` (orient →
+ground → frame → decide → build → close), the job type is a lens, and the only
+task-format decision is L-01's build-mode step — read-only exit, chat build
+(worktree, no task file), or a durable `W-02` task. Framing is subsumed into
+L-01's `frame` phase, where the `tasks/AGENTS.md` collaboration doctrine applies.
+The memory section also carries a `Memory Retrieval Strategies` list — Semantics
+(GrepAI), Relationship (cgc), and Intent (onboarding plus bounded source
+confirmation) — that points to the same C-04 router.
 
-The task-routing section keeps the three workflow choices: default chat mode
-for small current-session edits, W-02 for durable task-file work, and W-01 only
-when the developer explicitly requests the heavy workflow. The memory section
+The build-mode decision is the only task-format call, and the former standalone
+chat (W-03) workflow is retired — its role is absorbed into L-01's chat build. The memory section
 keeps the C-08, MCP `context_packet`, then C-02 memory quality control gate and
 points agents at the resolved memory layer's settings, tools, sources, and
 optional coding guidelines rather than pretending the source checkout has active
@@ -98,7 +99,7 @@ file.
 | Finding                                                                                                                                        | Citations | Source Path                               |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
 | The file identifies `agents-remember-md` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Task format routing keeps chat, W-02, and W-01 as the only work formats before changing code or docs.                                          | L16-L27   | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The repo routes every session into the `L-01-session-job-lifecycle`; the only task-format call is L-01's build-mode step (read-only exit / chat build / durable W-02), and the standalone W-03 chat workflow is retired. | L16-L34 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Memory rules require C-08, then a configured-provider readiness check, then C-02 memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L84-L91 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Source-layout and boundary notes separate MCP/runtime package assets from user-owned memory and installed coordinator configuration.            | L66-L86   | [AGENTS.md](agents-remember-md/AGENTS.md) |
@@ -115,6 +116,7 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## Update History
 
+- 2026-06-02T03:45+02:00: Rewired the root checkout contract to route every session into `L-01-session-job-lifecycle`: replaced Task Format Routing and the separate `Frame Before You Choose a Format` section with a `Start Here — Enter the Job Lifecycle` section whose only task-format call is L-01's build-mode step (read-only exit / chat build / durable W-02); the standalone W-03 chat workflow is retired and absorbed into L-01's chat build. Part of the L-01 lifecycle reshape (mcp 1.1.0). Verification metadata re-verified at closeout.
 - 2026-06-01T11:18+02:00: Documented the new `Frame Before You Choose a Format` section ahead of Task Format Routing (the `tasks/AGENTS.md` collaboration doctrine applies up front and routes evidence to C-04) and the added `Memory Retrieval Strategies` list pointing to C-04. Verification metadata stays pinned; Repo-Internal Reference line ranges will be re-verified at closeout.
 - 2026-05-29T20:25+02:00: Updated after the workflow-before-code warning was made explicit ("do not randomly commit; use the C-12 closeout procedure").
 - 2026-05-28T19:52+02:00: Updated after source-checkout code quality guidance added Pyright beside Ruff and Radon.

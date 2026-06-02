@@ -101,6 +101,9 @@
     "mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
     "mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt",
     "mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt",
+    "mcp/src/agents_remember/package_data/runtime/skills/L-01-session-job-lifecycle/SKILL.md",
+    "mcp/src/agents_remember/package_data/runtime/skills/L-01-session-job-lifecycle/job-variants.md",
+    "mcp/src/agents_remember/package_data/runtime/skills/L-01-session-job-lifecycle/lifecycle.md",
     "mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-01-findings-capture/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/U-01-core-skills/C-01-findings-capture/findings-capture-workflow.md",
@@ -180,7 +183,6 @@
     "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/docs/requirements.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/template.md",
     "mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md",
-    "mcp/src/agents_remember/package_data/runtime/skills/W-03-chat-task-workflow/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md",
@@ -241,8 +243,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 380,
-    "fileSidecars": 173,
+    "sourceFilesInScope": 382,
+    "fileSidecars": 175,
     "childRoutes": 11
   },
   "routingTerms": [
@@ -274,7 +276,6 @@
     "cgc",
     "cgcignore",
     "change",
-    "chat",
     "check",
     "checkpoint",
     "checks",
@@ -325,7 +326,8 @@
     "design",
     "docker",
     "docs",
-    "documentation"
+    "documentation",
+    "drift"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and `tools.py` for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `providers/settings.p...",
