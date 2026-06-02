@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T01:06+02:00                     |
-| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6` |
-| lastVerifiedCommitDate | 2026-05-31T01:23:17+02:00|
+| lastVerifiedCommitHash | `5aadda92c9b3c104418770410d49b275deef95c2` |
+| lastVerifiedCommitDate | 2026-06-02T03:58:52+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This workflow file gives the step-by-step W-02 procedure for creating a task wra
 
 ### Logic
 
-The workflow starts with context resolution and drift checks, classifies C-02 drift into clean-source update candidates versus dirty-source active work-in-progress, creates or reuses a task wrapper folder, applies the Task Collaboration Doctrine (`tasks/AGENTS.md`) sized to the request and records the settled design in the task file's `## Design` section, writes `task.md` from the template, stops for approval, then executes checklist items while keeping the task artifact current. The wrapper folder is created before C-09 worktrees; refreshed external-memory onboarding and ledger changes are committed before worktree start; worktree-backed light tasks later keep `contract.md` beside `task.md` under the C-08 resolved task root. After implementation, worktree-backed tasks prepare a C-09 closeout dry-run and stop for explicit commit approval before any closeout commits are created.
+The workflow starts with context resolution and drift checks, classifies C-02 drift into clean-source update candidates versus dirty-source active work-in-progress, creates or reuses a task wrapper folder, applies the Task Collaboration Doctrine (`tasks/AGENTS.md`) sized to the request and records the settled design in the task file's `## Design` section, writes `task.md` from the template, stops for approval, then executes checklist items while keeping the task artifact current. The wrapper folder is created before C-09 worktrees; refreshed external-memory onboarding and ledger changes are committed before worktree start; worktree-backed light tasks later keep `contract.md` beside `task.md` under the C-08 resolved task root. After implementation, worktree-backed tasks prepare a C-09 closeout dry-run and stop for explicit commit approval before any closeout commits are created. A "Master Task Series" section documents escalating a too-large task to a master + light sub-task series run as one task / one workflow / one worktree: a commit per slice behind a commit gate, the worktree open across slices, and a single integrate + release at the end.
 
 ### Conventions
 
@@ -62,6 +62,7 @@ No sibling repository evidence is needed for the current workflow file.
 
 ## Update History
 
+- 2026-06-02T04:10+02:00: Added a "Master Task Series" section documenting escalation to a master + light sub-task series (one worktree per series, a commit per slice, one integrate + release at the end). L-01 series, Sub-task B/S5, mcp 1.1.0.
 - 2026-05-31T01:06+02:00: Added step 6 "Reframe and design before writing the plan" linking the Task Collaboration Doctrine and recording settled design in the task file's `## Design` section before implementation steps; renumbered later steps to 7 and 8, added the design item to the required-sections list, and refreshed the citations my insertion shifted.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to W-02 planning.

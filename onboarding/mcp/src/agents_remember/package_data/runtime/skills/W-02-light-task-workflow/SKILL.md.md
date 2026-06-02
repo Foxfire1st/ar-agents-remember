@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/W-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T01:06+02:00                     |
-| lastVerifiedCommitHash | `ddbc50109ab26d295094e7e4ac90bb4ee25844e6` |
-| lastVerifiedCommitDate | 2026-05-31T01:23:17+02:00|
+| lastVerifiedCommitHash | `5aadda92c9b3c104418770410d49b275deef95c2` |
+| lastVerifiedCommitDate | 2026-06-02T03:58:52+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This skill defines W-02, the light durable task workflow for medium-risk or mult
 
 ### Logic
 
-W-02 creates or updates one task wrapper folder under the C-08 resolved task root, writes the durable task document as `task.md`, stops for approval before implementation, uses the artifact checklist as the live execution record, and for worktree-backed tasks stops again for explicit commit approval before C-09 closeout creates commits.
+W-02 creates or updates one task wrapper folder under the C-08 resolved task root, writes the durable task document as `task.md`, stops for approval before implementation, uses the artifact checklist as the live execution record, and for worktree-backed tasks stops again for explicit commit approval before C-09 closeout creates commits. When a task outgrows a single-page plan it escalates to a master + light sub-task series (`master-template.md`): one wrapper folder with a master `task.md` plus flat numbered `NN_<name>.md` sub-tasks, run as one task / one workflow / one worktree with a commit per slice and a single integrate + release at the end.
 
 ### Conventions
 
@@ -59,6 +59,7 @@ No sibling repository evidence is needed for the current workflow skill.
 
 ## Update History
 
+- 2026-06-02T04:10+02:00: Added master-task composition — a new `master-template.md` companion, a "Master-Task Composition (task series)" section, and invariant 13 (escalate a too-large task to a master + light sub-task series; one wrapper folder with flat `NN_<name>.md` sub-tasks, one shared worktree, a commit per slice, one integrate + release at the end). L-01 series, Sub-task B/S5, mcp 1.1.0.
 - 2026-05-31T01:06+02:00: Added invariant 12 requiring the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and noted the optional design section in conventions.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T04:34+02:00: Updated task-start references after C-02 was renamed to memory quality control.
