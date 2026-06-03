@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/job-variants.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-03T03:38+02:00                     |
+| lastVerifiedCommitHash | `8db105a67d985bd09836f790ba862d668c786d8d` |
+| lastVerifiedCommitDate | 2026-06-03T04:19:25+02:00|
 
 ## Purpose
 
@@ -17,11 +17,11 @@ This companion file defines the four `l-01-session-job-lifecycle` skill job lens
 
 ### Logic
 
-A table maps each job to its opening move, its leading `c-04-retrieval-strategy-router` skill strategy, and its usual `decide` landing, followed by a short paragraph per job. `bug` reproduces and proves root cause (Relationship + Intent) and defaults to build. `feature` clarifies intent/scope/non-goals (design doctrine + Intent) and defaults to build. `triage` assesses severity/blast-radius/ownership (breadth scan) and frequently exits read-only by routing or spawning. `research` states the question (Semantics + onboarding) and exits read-only by design.
+A table maps each job to its opening move, its leading `c-04-retrieval-strategy-router` skill strategy, and its usual `decide` landing, followed by a short paragraph per job. `bug` reproduces and proves root cause (Relationship + Intent) and defaults to build. `feature` clarifies intent/scope/non-goals (design doctrine + Intent) and defaults to build. `triage` assesses severity/blast-radius/ownership (breadth scan) and frequently exits research-only by routing or spawning. `research` states the question (Semantics + onboarding) and exits research-only by design.
 
 ### Conventions
 
-The lens is explicitly a hint, not a gate; the `decide` defaults are still real decisions, not automatic transitions. Read-only is the natural landing for triage and research, but any lens can re-route.
+The lens is explicitly a hint, not a gate; the `decide` defaults are still real decisions, not automatic transitions. Research-only is the natural landing for triage and research, but any lens can re-route.
 
 ### Invariants And Boundaries
 
@@ -57,4 +57,5 @@ No sibling repository evidence is needed for this job-variants file.
 
 ## Update History
 
+- 2026-06-03T03:38+02:00: Updated triage and research lens terminology from the old no-worktree answer wording to research-only exits so the companion file matches the recast lifecycle skill.
 - 2026-06-02T03:30+02:00: Created file-level onboarding for the `l-01-session-job-lifecycle` skill job-variants companion file defining the bug/feature/triage/research lenses as frame-time hints over the shared spine.

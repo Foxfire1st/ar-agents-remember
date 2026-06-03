@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-05-26T16:25+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-03T04:06+02:00                     |
+| lastVerifiedCommitHash | `8db105a67d985bd09836f790ba862d668c786d8d` |
+| lastVerifiedCommitDate | 2026-06-03T04:19:25+02:00|
 
 ## Purpose
 
@@ -26,7 +26,11 @@ worktree closeout tool handoff, integration, and cleanup. It states that `c-09-g
 begins after the normal intake and onboarding gate, uses context resolved by the `c-08-ar-coordination-context-resolver` skill
 through the MCP worktree tools, refuses external-memory worktree start while
 the source memory repo has uncommitted content or ledger changes, and reports
-recoverable lifecycle state through typed next-operation hints.
+recoverable lifecycle state through typed next-operation hints. It now also
+requires agents to identify the branch that `worktree_integrate` would move
+before `worktree_start`; when that branch is protected, PR-gated, or otherwise
+not directly landable, agents must first create or check out a pushable
+integration branch and use that branch as the worktree `source_branch`.
 
 The worktree closeout section is deliberately a routing section, not a parallel
 closeout doctrine. It sends the approval gate, missing-onboarding check, code
@@ -51,8 +55,10 @@ chooses another path.
 Integration remains human-gated. `ff-only` lands closed task branches when
 source branches did not move; `replay` handles parallel non-overlapping work by
 replaying code and memory content, then regenerating the final memory ledger
-row. Cleanup remains human-gated and removes worktrees plus merged local task
-branches only after integration.
+row. The recorded `source_branch` is the integration target, not just a base
+branch: `worktree_integrate` will move it and will not open a PR or discover
+protected-branch policy on its own. Cleanup remains human-gated and removes
+worktrees plus merged local task branches only after integration.
 
 ### Invariants And Boundaries
 
@@ -61,8 +67,11 @@ explicit closeout approval gate, and must not create closeout commits outside
 `c-12-closeout` skill's code-memory-ledger sequence. Worktree status reports lifecycle phase,
 dirty flags, summary, and typed next hints instead of shell commands.
 Integration must not move source branches until code and memory commits are
-fast-forwardable or replay has produced mediated commits. Cleanup requires
-completed integration and explicit approval.
+fast-forwardable or replay has produced mediated commits. For protected,
+PR-gated, or otherwise not-directly-landable target branches, the selected
+`source_branch` must be a pushable integration branch created from that target,
+not the protected target itself. Cleanup requires completed integration and
+explicit approval.
 
 ### Todos
 
@@ -80,10 +89,11 @@ No external documentation is needed for this repository-local skill.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | L8-L14; L63-L74; L97-L105 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | L8-L13; L84-L96; L121-L131 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | L8-L29; L33-L82 | [`c-12-closeout` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md) |
-| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | L76-L86 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
-| Cleanup remains owned by the `c-09-git-worktree-manager` skill and requires completed integration plus explicit approval. | L88-L94 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | L49-L57; L65-L68; L100-L109 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | L98-L113 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| Cleanup remains owned by the `c-09-git-worktree-manager` skill and requires completed integration plus explicit approval. | L115-L119 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -95,6 +105,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-06-03T04:06+02:00: Clarified the source-branch contract for protected or PR-gated targets: before `worktree_start`, choose a pushable integration branch as `source_branch`, because `worktree_integrate` lands into the recorded source branch and does not open PRs or infer branch protection.
 - 2026-06-02T04:25+02:00: Dropped the retired heavy-task workflow from the wrapped-workflow list and the intake decision step (now chat, `w-02-light-task-workflow` skill light task, or master + light sub-task series). `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-02T04:00+02:00: Added a Start/Attach/Status note that the external-memory "no compatible state" prompt's common trigger is a freshly-merged gated branch whose PR merge commit is unmapped, and that `c-11-memory-carryover-from-branch` skill carryover now maps it automatically after the merge (so `reconciliation` is usually unnecessary). `l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the `c-09-git-worktree-manager` skill worktree examples now omit `dry_run=false` and carry a preview-first note (`dry_run=true` then the real run).
