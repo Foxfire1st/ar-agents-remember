@@ -1,0 +1,20 @@
+[mcp_servers.agents-remember]
+command = "/usr/bin/sg"
+args = [
+  "docker",
+  "-c",
+  "uvx --refresh-package agents-remember-mcp agents-remember-mcp@latest --config /home/foxfire/Projects/.codex/mcp/agents-remember-settings.json",
+]
+startup_timeout_sec = 30
+
+[mcp_servers.agents-remember.env]
+PYTHONIOENCODING = "utf-8"
+PYTHONUTF8 = "1"
+
+[[hooks.SessionStart]]
+
+[[hooks.SessionStart.hooks]]
+type = "command"
+command = "/usr/bin/python3 /home/foxfire/Projects/.codex/hooks/agents-remember-session-start.py"
+timeout = 60
+statusMessage = "Loading Agents Remember workspace directive"

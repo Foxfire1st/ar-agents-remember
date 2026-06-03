@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "agents-remember": {
+      "command": "uvx",
+      "args": [
+        "--refresh-package",
+        "agents-remember-mcp",
+        "agents-remember-mcp@latest",
+        "--config",
+        "/home/foxfire/Projects/.claude/mcp/agents-remember-settings.json"
+      ]
+    }
+  }
+}

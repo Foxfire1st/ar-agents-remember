@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+"""Emit Agents Remember workspace startup context for Codex SessionStart."""
+
+from __future__ import annotations
+
+import json
+import os
+from pathlib import Path
+
+
+WORKSPACE_ROOT = Path("/home/foxfire/Projects")
+DIRECTIVE_PATH = Path(
+    "/home/foxfire/Projects/.codex/hooks/agents-remember-session-start.md"
+)
+
+
+def main() -> None:
+    cwd = Path(os.environ.get("PWD", Path.cwd())).resolve()
+    try:
+        cwd.relative_to(WORKSPACE_ROOT)
+    except ValueError:
+        return
+
+    directive = DIRECTIVE_PATH.read_text(encoding="utf-8")
+    payload = {
+        "hookSpecificOutput": {
+            "hookEventName": "SessionStart",
+            "additionalContext": directive,
+        }
+    }
+    print(json.dumps(payload))
+
+
+if __name__ == "__main__":
+    main()
