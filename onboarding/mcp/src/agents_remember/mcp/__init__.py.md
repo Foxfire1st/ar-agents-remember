@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-03T04:25+02:00                     |
-| lastVerifiedCommitHash | `6ec5c99f81d1b7f532c67717e0d7bf81aa23ddff` |
-| lastVerifiedCommitDate | 2026-06-03T04:33:45+02:00|
+| lastUpdated            | 2026-06-03T18:58+02:00                     |
+| lastVerifiedCommitHash | `3015ae75020d45fedc44ab484c3b878fc5248b33` |
+| lastVerifiedCommitDate | 2026-06-03T19:15:43+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,7 +20,7 @@ builders.
 The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
 derived from the installed package metadata via
 `importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
-the single source of truth; a `PackageNotFoundError` fallback hardcodes `2.2.0`
+the single source of truth; a `PackageNotFoundError` fallback hardcodes `2.3.0`
 for source checkouts without an install. Payload builders in `mcp.tools` use
 those constants for `ping` and `server_info`, so the version no longer needs a
 manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
@@ -39,6 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-03T18:58+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.3.0` for the harness starter-package / package-first install ergonomics release; pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-03T04:25+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.2.0` (mcp 2.2.0 release); pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-02T18:35+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.1.0` (mcp 2.1.0 release); pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-02T05:10+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.0.0` (mcp 2.0.0 — the `l-01-session-job-lifecycle` skill lifecycle reshape, a major/breaking release); pyproject remains the single source of truth. Verification metadata pinned until closeout.

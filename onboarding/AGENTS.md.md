@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T11:18+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-03T18:58+02:00                     |
+| lastVerifiedCommitHash | `3015ae75020d45fedc44ab484c3b878fc5248b33` |
+| lastVerifiedCommitDate | 2026-06-03T19:15:43+02:00|
 
 ## Purpose
 
@@ -46,15 +46,18 @@ optional coding guidelines rather than pretending the source checkout has active
 root-level `system/` settings. Provider authority is stated directly as MCP
 settings.
 
-The source-layout section records the current package structure: MCP server and
-package services, runtime `AGENTS.md` templates, runtime skills, runtime system
-defaults, README, and roadmap. The boundaries section keeps root instructions
-scoped to source-checkout work and keeps installed coordinator instructions
-under `runtime/agents-md-files/`. The final code-quality section tells agents
-working in this source checkout to run Ruff, Pyright, and Radon after Python
-code changes, then routes exact command details and broader validation guidance to the
-resolved memory layer's `system/tools.md` and optional
-`system/coding-guidelines.md`.
+The source-layout section now records root `skills/` as the canonical skill
+source tree and `scripts/sync-skills.py` as the repo helper that copies canonical
+skills into the MCP package-data tree and every harness starter package. The
+MCP package-data skill tree is explicitly generated, so agents should edit root
+`skills/` first and run the sync helper instead of editing package copies by
+hand. The boundaries section keeps root instructions scoped to source-checkout
+work, keeps installed coordinator instructions under `runtime/agents-md-files/`,
+and repeats the "edit root skills, then sync" rule. The final code-quality
+section tells agents working in this source checkout to run Ruff, Pyright, and
+Radon after Python code changes, then routes exact command details and broader
+validation guidance to the resolved memory layer's `system/tools.md` and
+optional `system/coding-guidelines.md`.
 
 ### Conventions
 
@@ -102,8 +105,8 @@ file.
 | The repo routes every session into the `l-01-session-job-lifecycle`; the only task-format call is `l-01-session-job-lifecycle` skill's build-mode step (read-only exit / chat build / durable `w-02-light-task-workflow` skill), and the standalone chat workflow is retired. | L16-L34 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 | Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L84-L91 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Source-layout and boundary notes separate MCP/runtime package assets from user-owned memory and installed coordinator configuration.            | L66-L86   | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Code-quality routing tells agents to run Ruff, Pyright, and Radon after Python code changes in this source checkout and sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`. | L90-L95 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | L95-L117 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| Code-quality routing tells agents to run Ruff, Pyright, and Radon after Python code changes in this source checkout and sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`. | L127-L135 | [AGENTS.md](agents-remember-md/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -116,6 +119,7 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## Update History
 
+- 2026-06-03T18:58+02:00: Updated source-layout onboarding for the root-level canonical `skills/` tree and `scripts/sync-skills.py` sync helper. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-02T03:45+02:00: Rewired the root checkout contract to route every session into `l-01-session-job-lifecycle`: replaced Task Format Routing and the separate `Frame Before You Choose a Format` section with a `Start Here — Enter the Job Lifecycle` section whose only task-format call is L-01's build-mode step (read-only exit / chat build / durable W-02); the standalone W-03 chat workflow is retired and absorbed into L-01's chat build. Part of the L-01 lifecycle reshape (mcp 1.1.0). Verification metadata re-verified at closeout.
 - 2026-06-01T11:18+02:00: Documented the new `Frame Before You Choose a Format` section ahead of Task Format Routing (the `tasks/AGENTS.md` collaboration doctrine applies up front and routes evidence to `c-04-retrieval-strategy-router` skill) and the added `Memory Retrieval Strategies` list pointing to `c-04-retrieval-strategy-router` skill. Verification metadata stays pinned; Repo-Internal Reference line ranges will be re-verified at closeout.
 - 2026-05-29T20:25+02:00: Updated after the workflow-before-code warning was made explicit ("do not randomly commit; use the `c-12-closeout` skill closeout procedure").
