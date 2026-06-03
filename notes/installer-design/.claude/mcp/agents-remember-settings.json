@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "coordinationRoot": "/home/foxfire/Projects/ar-coordination",
+  "workspaceRoot": "/home/foxfire/Projects",
+  "repositories": {
+    "agents-remember-md": {}
+  },
+  "providers": {
+    "codegraphcontext-code": {},
+    "grepai-memory": {}
+  },
+  "timeoutCaps": {
+    "toolSeconds": 30,
+    "providerSetupSeconds": 1800
+  }
+}
