@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-03T04:25+02:00                     |
-| lastVerifiedCommitHash | `6ec5c99f81d1b7f532c67717e0d7bf81aa23ddff` |
-| lastVerifiedCommitDate | 2026-06-03T04:33:45+02:00|
+| lastUpdated            | 2026-06-03T18:58+02:00                     |
+| lastVerifiedCommitHash | `3015ae75020d45fedc44ab484c3b878fc5248b33` |
+| lastVerifiedCommitDate | 2026-06-03T19:15:43+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,9 +24,31 @@
 
 The README opens with a TLDR that frames Agents Remember as durable, git-verified repo knowledge made first-class infrastructure, then shows the source-file to onboarding-unit mapping and the three substrates agents use to reach memory — by path (the file's own note), by meaning (semantic search), and by relationship (the code graph) — with by-path notes as the core and the other two as opt-in providers. The earlier sidecar-only "path-derived memory, no vector store / hidden service" positioning and the sidecar-era infographic embed were removed; that anti-retrieval framing predated the semantic-search and code-graph providers and no longer described the product.
 
-The previous long README install matrix was moved out of the front page. The root page now keeps one short, harness-agnostic three-step quickstart that the agent drives: (1) wire the MCP server by running the published `agents-remember-mcp` package via `uvx --config <abs>/agents-remember-settings.json` (no repo clone), then restart the harness so it loads the server; (2) run `runtime_install` then `skills_install` (scaffolding, skills, and provider images when enabled), then restart so the harness discovers the new skills; (3) run the `c-13-install-and-onboard` skill, which pre-checks setup, installs the start hook (or places the directive), sets up the memory repo (asking scaffold-new vs use-existing), bootstraps onboarding, and starts providers indexing — then restart once more so a newly installed session hook activates. The README frames those three restarts (load server, discover skills, activate hook) as the only hands-on steps. Harness-specific setup links point to dedicated pages under `docs/install/`, and detailed first-run setup lives in `docs/getting-started.md`.
+The previous MCP-installs-skills first-run model was replaced with package-first
+harness setup. The root page now keeps one short, harness-agnostic three-step
+quickstart that the agent drives: (1) copy the harness-native starter package
+from the repo, replace placeholders, and use the package-provided skills, hooks,
+rules, instructions, and MCP settings templates; (2) wire the published
+`agents-remember-mcp` package with `uvx agents-remember-mcp@latest --config
+<abs>/agents-remember-settings.json`, then restart the harness once so it loads
+the MCP server and native package files; (3) invoke `c-13-install-and-onboard`,
+which runs or verifies `runtime_install()`, asks scaffold-new vs existing memory,
+bootstraps onboarding when needed, and starts provider indexing when enabled.
+`skills_install()` remains documented as maintenance/manual, not the normal
+first-run path. Harness-specific setup links point to dedicated pages under
+`docs/install/`, and detailed first-run setup lives in `docs/getting-started.md`.
 
-The README distinguishes the source checkout from the installed runtime. The source checkout packages `mcp/`, `runtime/`, optional benchmark package source, docs, and roadmap notes. The installed `ar-coordination/` runtime owns installed instructions, skills, optional benchmark package content, local coordination artifacts, external memory repos, worktrees, and temp files. The Repository Layout section now states the installed runtime defaults to `<workspace>/ar-coordination/` — inside the workspace, never the user's home directory — and points at the `c-13-install-and-onboard` skill, which presents that and every other install path as a workspace-first accept-or-override default.
+The README distinguishes the source checkout from the installed runtime. The
+source checkout now exposes root `skills/` as the canonical skill source tree and
+`scripts/sync-skills.py` as the helper that refreshes MCP package-data and
+harness package skill copies. The installed `ar-coordination/` runtime owns
+installed instructions, skills, optional benchmark package content, local
+coordination artifacts, external memory repos, worktrees, and temp files. The
+Repository Layout section states the installed runtime defaults to
+`<workspace>/ar-coordination/` — inside the workspace, never the user's home
+directory — and points at the `c-13-install-and-onboard` skill, which presents
+that and every other install path as a workspace-first accept-or-override
+default.
 
 A `## What It Looks Like In Practice` mini-transcript sits between Core Model and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
 
@@ -37,7 +59,7 @@ A short `## Live Demo: This Repo Uses Agents Remember` section sits between Core
 - Keep the README short enough to scan.
 - Use the README to orient and route, not to carry full setup matrices or reference material.
 - Use `docs/` for user-facing docs, `benchmarks/` for optional benchmark fixtures, `AGENTS.md` and installed runtime templates for agent behavior, and onboarding for durable repository knowledge.
-- Keep public language focused on the current intended install model: install into `ar-coordination`, expose installed skills to the harness, and store memory in either repo-local `ar-memory/` or selected external memory repos.
+- Keep public language focused on the current intended install model: copy a harness starter package, wire the MCP server, run/verify `runtime_install()` through `c-13-install-and-onboard`, and store memory in either repo-local `ar-memory/` or selected external memory repos.
 - Avoid presenting the public README as a source-package explanation or compatibility guide for old alpha layouts.
 
 ### Invariants And Boundaries
@@ -67,12 +89,12 @@ The README routes readers into the split documentation tree and gives the curren
 | The README's TLDR frames durable git-verified repo knowledge as infrastructure, shows the source-file to onboarding-unit mapping, and names the three retrieval substrates (by path / by meaning / by relationship), with meaning and relationship as opt-in providers. | L1-L18 | [README.md](agents-remember-md/README.md) |
 | The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. | L36-L52 | [README.md](agents-remember-md/README.md) |
 | The README adds a `## Live Demo: This Repo Uses Agents Remember` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember-md`) as a live, inspectable by-path onboarding example. | L54-L59 | [README.md](agents-remember-md/README.md) |
-| The quickstart is a short, harness-agnostic three-step agent-driven flow — (1) wire the MCP server via `uvx`, (2) run `runtime_install` then `skills_install`, (3) run the `c-13-install-and-onboard` skill (which sets up the memory repo, installs the start hook, bootstraps onboarding, and starts provider indexing) — framed around three harness restarts (load server, discover skills, activate hook). | L72-L90 | [README.md](agents-remember-md/README.md) |
-| The README routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L92-L103 | [README.md](agents-remember-md/README.md) |
-| The README keeps the source checkout layout distinct from the installed runtime layout and includes optional benchmark package locations in both trees, and notes the workspace-first `<workspace>/ar-coordination/` default. | L105-L139 | [README.md](agents-remember-md/README.md) |
-| The README's Status section pins the project at `2.2.0` (a minor, backward-compatible release on the 2.0.0 lifecycle reshape) and defers the public-contract promise to the Stability section, noting those contracts change only on a major bump while internals/providers may still evolve across minors. | L141-L143 | [README.md](agents-remember-md/README.md) |
-| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L145-L147 | [README.md](agents-remember-md/README.md) |
-| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L149-L153 | [README.md](agents-remember-md/README.md) |
+| The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L75-L105 | [README.md](agents-remember-md/README.md) |
+| The README routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L109-L120 | [README.md](agents-remember-md/README.md) |
+| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated package copies, and notes the workspace-first `<workspace>/ar-coordination/` default. | L122-L148 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `2.3.0` and describes harness-native starter packages, package-first skills/hooks/instructions, root-level canonical skill sources, and the one-restart first-run path as a backward-compatible minor release. | L164-L166 | [README.md](agents-remember-md/README.md) |
+| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L168-L170 | [README.md](agents-remember-md/README.md) |
+| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L172-L176 | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L44 | [docs/README.md](agents-remember-md/docs/README.md) |
 
 ## Cross-Repo References
@@ -85,6 +107,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-03T18:58+02:00: Updated for the 2.3.0 starter-package release: package-first quickstart, one-restart first-run path, root `skills/` canonical source tree, `scripts/sync-skills.py`, and Status-section version bump. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-03T04:25+02:00: Bumped the Status-section version reference to `2.2.0` (mcp 2.2.0 — lifecycle collaboration loop and C-09 source-branch contract refresh; a minor backward-compatible release on the 2.0.0 reshape). Verification metadata pinned until closeout. chore/release-mcp-2.2.0 branch.
 - 2026-06-02T18:35+02:00: Bumped the Status-section version reference to `2.1.0` (mcp 2.1.0 — workspace-first install defaults, skill-name/MCP-tool reference convention, grepai-status + quality-gate fixes; a minor backward-compatible release on the 2.0.0 reshape). Verification metadata pinned until closeout. chore/release-mcp-2.1.0 branch.
 - 2026-06-02T16:35+02:00: Second batch (install-location defaults) — the Repository Layout section gained a workspace-first note (installed runtime defaults to `<workspace>/ar-coordination/`, inside the workspace and never the home directory; the `c-13-install-and-onboard` skill shows each install path as an accept-or-override default). Realigned the post-Layout row ranges by +3 (layout end L105-L139, status L141-L143, stability L145-L147, contributing L149-L153). fix/skill-ref-naming-and-grepai-status branch; verification pinned until closeout.
