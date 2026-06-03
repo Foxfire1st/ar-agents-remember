@@ -12,6 +12,33 @@ Note: `C-04-retrieval-strategy-router` documents the usage of these context retr
 
 ---
 
+## Dependency Code Library
+
+Instead of looking up library and dependency code online for this project, use `opensrc` in the shell:
+
+### List cached sources
+
+```text
+opensrc list          # human-readable
+opensrc list --json   # JSON output
+```
+
+### Fetch source code
+
+```text
+opensrc fetch zod                                         # npm-package
+opensrc fetch pypi:requests crates:serde vercel/next.js   # PyPi
+opensrc fetch https://github.com/anomalyco/opentui        # GitHub
+```
+
+### Cache Location
+
+```text
+~/.opensrc/repos/<host>/<owner>/<repo>/<version>/
+```
+
+---
+
 ## Code Quality
 
 To improve quality when working on source code, the agent shall use `Ruff`, `Pyright`, `Radon`, `pytest`, `pytest-cov`, and CRAP-Calculator. For the `agents-remember-md` repo, install and run them from the source repository directory `agents-remember-md/`.
