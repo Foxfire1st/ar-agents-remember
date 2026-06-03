@@ -12,6 +12,12 @@ This memory repo is selected by the local coordinator at `C:\ew\ar-coordination`
 
 Onboarding uses `memory-repo` storage. Eligible onboarding artifacts live under this memory repo's `onboarding/` directory.
 
+## Format Ordering
+
+Agents Remember formats list chronological appendices newest-first for reading ergonomics. This applies to update histories, decision logs, ledgers, handoff logs, task-local history sections, and any similar log/history surface unless a format explicitly says otherwise.
+
+When adding an entry, prepend it at the top of the relevant list or table. Use an ISO timestamp where the format carries timestamps. Do not append new entries to the bottom or insert them arbitrarily.
+
 ## Path Eligibility
 
 The path rules in `settings.json` are unscoped because this memory repo maps to exactly one code repo: `agents-remember-md`.
