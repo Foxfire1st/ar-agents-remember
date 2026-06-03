@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T18:35+02:00                     |
-| lastVerifiedCommitHash | `64c1b55fbf30c2a01b733975a2701f69e42b8616` |
-| lastVerifiedCommitDate | 2026-06-02T18:47:28+02:00|
+| lastUpdated            | 2026-06-03T04:25+02:00                     |
+| lastVerifiedCommitHash | `6ec5c99f81d1b7f532c67717e0d7bf81aa23ddff` |
+| lastVerifiedCommitDate | 2026-06-03T04:33:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 coordinator from a pip/uvx install with no source checkout.
 
 The package `version` tracks the release line; at this verification it is
-`2.1.0`. It is the same string `runtime_install` and `server_info` report, and
+`2.2.0`. It is the same string `runtime_install` and `server_info` report, and
 it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### Invariants And Boundaries
@@ -74,6 +74,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-06-03T04:25+02:00: Bumped the documented package `version` to `2.2.0` (mcp 2.2.0 release for the lifecycle collaboration loop and C-09 source-branch contract refresh); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-02T18:35+02:00: Bumped the documented package `version` to `2.1.0` (mcp 2.1.0 release); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-02T05:10+02:00: Bumped the documented package `version` to `2.0.0` (mcp 2.0.0 — the `l-01-session-job-lifecycle` skill lifecycle reshape, a major/breaking release); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-02T03:30+02:00: Bumped the documented package `version` to `1.0.2` (mcp 1.0.2 — git-workflow.md + PR-gated landing); still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
