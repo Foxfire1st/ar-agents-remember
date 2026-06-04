@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-06-03T04:06+02:00                     |
-| lastVerifiedCommitHash | `8db105a67d985bd09836f790ba862d668c786d8d` |
-| lastVerifiedCommitDate | 2026-06-03T04:19:25+02:00|
+| lastUpdated            | 2026-06-04T16:03+02:00                     |
+| lastVerifiedCommitHash | `d3c641bda41e7220d7543df002dbafa9c0f44ee2` |
+| lastVerifiedCommitDate | 2026-06-04T16:13:23+02:00|
 
 ## Purpose
 
@@ -30,7 +30,10 @@ recoverable lifecycle state through typed next-operation hints. It now also
 requires agents to identify the branch that `worktree_integrate` would move
 before `worktree_start`; when that branch is protected, PR-gated, or otherwise
 not directly landable, agents must first create or check out a pushable
-integration branch and use that branch as the worktree `source_branch`.
+integration branch and use that branch as the worktree `source_branch`. Before
+calling `worktree_start`, agents must present a Worktree Intent Gate for
+developer approval; the packet names the repo, build mode, branch policy,
+source branch, work branch/worktree name, memory mode, landing path, and risks.
 
 The worktree closeout section is deliberately a routing section, not a parallel
 closeout doctrine. It sends the approval gate, missing-onboarding check, code
@@ -39,6 +42,9 @@ ledger update, and ledger commit to `c-12-closeout` skill. For worktree-backed t
 contributes the task `contract.md` used by `worktree_closeout_preview` and
 `worktree_closeout_apply`; after closeout, `c-09-git-worktree-manager` skill resumes ownership for
 integration and cleanup.
+Before previewing integration, agents must also check out the recorded code and
+memory `source_branch` in the source repositories because `worktree_integrate`
+requires those active checkouts even for `dry_run=true`.
 
 ### Conventions
 
@@ -57,8 +63,14 @@ source branches did not move; `replay` handles parallel non-overlapping work by
 replaying code and memory content, then regenerating the final memory ledger
 row. The recorded `source_branch` is the integration target, not just a base
 branch: `worktree_integrate` will move it and will not open a PR or discover
-protected-branch policy on its own. Cleanup remains human-gated and removes
-worktrees plus merged local task branches only after integration.
+protected-branch policy on its own. For PR-gated repositories, the approved
+intent packet must make clear that the protected target is not the recorded
+`source_branch`; the source branch is the pushable branch that will later be
+pushed for PR. Integration preview also expects the recorded code and memory
+source branches to be the active checkouts in the source repositories, so agents
+should switch clean source checkouts before calling `worktree_integrate` with
+`dry_run=true`. Cleanup remains human-gated and removes worktrees plus merged
+local task branches only after integration.
 
 ### Invariants And Boundaries
 
@@ -67,11 +79,12 @@ explicit closeout approval gate, and must not create closeout commits outside
 `c-12-closeout` skill's code-memory-ledger sequence. Worktree status reports lifecycle phase,
 dirty flags, summary, and typed next hints instead of shell commands.
 Integration must not move source branches until code and memory commits are
-fast-forwardable or replay has produced mediated commits. For protected,
-PR-gated, or otherwise not-directly-landable target branches, the selected
-`source_branch` must be a pushable integration branch created from that target,
-not the protected target itself. Cleanup requires completed integration and
-explicit approval.
+fast-forwardable or replay has produced mediated commits. The skill must not
+call `worktree_start` until the developer has approved the Worktree Intent Gate.
+For protected, PR-gated, or otherwise not-directly-landable target branches, the
+selected `source_branch` must be a developer-approved pushable integration
+branch created from that target, not the protected target itself. Cleanup
+requires completed integration and explicit approval.
 
 ### Todos
 
@@ -89,11 +102,13 @@ No external documentation is needed for this repository-local skill.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | L8-L13; L84-L96; L121-L131 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | L8-L13; L103-L115; L140-L152 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | L8-L29; L33-L82 | [`c-12-closeout` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md) |
-| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | L49-L57; L65-L68; L100-L109 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
-| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | L98-L113 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
-| Cleanup remains owned by the `c-09-git-worktree-manager` skill and requires completed integration plus explicit approval. | L115-L119 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | L49-L59; L72-L87; L121-L128 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| The Worktree Intent Gate must be explicitly approved before `worktree_start` and must name branch policy, source/work branches, memory mode, landing path, and risks. | L55-L75; L150-L151 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | L117-L125 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | L117-L134 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| Cleanup remains owned by the `c-09-git-worktree-manager` skill and requires completed integration plus explicit approval. | L136-L140 | [`c-09-git-worktree-manager` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -105,6 +120,8 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-06-04T16:03+02:00: Added the integration-preview reminder that agents must check out the recorded code and memory `source_branch` in the source repositories before calling `worktree_integrate`, including `dry_run=true`.
+- 2026-06-04T15:45+02:00: Added the Worktree Intent Gate: agents must present branch policy, pushable source branch, work branch/worktree name, memory mode, landing path, and risks for developer approval before `worktree_start`; PR-gated flows must show that the recorded `source_branch` is the pushable integration branch, not the protected target.
 - 2026-06-03T04:06+02:00: Clarified the source-branch contract for protected or PR-gated targets: before `worktree_start`, choose a pushable integration branch as `source_branch`, because `worktree_integrate` lands into the recorded source branch and does not open PRs or infer branch protection.
 - 2026-06-02T04:25+02:00: Dropped the retired heavy-task workflow from the wrapped-workflow list and the intake decision step (now chat, `w-02-light-task-workflow` skill light task, or master + light sub-task series). `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-02T04:00+02:00: Added a Start/Attach/Status note that the external-memory "no compatible state" prompt's common trigger is a freshly-merged gated branch whose PR merge commit is unmapped, and that `c-11-memory-carryover-from-branch` skill carryover now maps it automatically after the merge (so `reconciliation` is usually unnecessary). `l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.
