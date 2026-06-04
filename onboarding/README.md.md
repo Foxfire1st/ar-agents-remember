@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-03T19:25+02:00                     |
-| lastVerifiedCommitHash | `ce689567ce0f2785f868695a429879d1b068e91c` |
-| lastVerifiedCommitDate | 2026-06-03T19:33:53+02:00|
+| lastUpdated            | 2026-06-04T18:52+02:00                     |
+| lastVerifiedCommitHash | `66a79a4f111b83c74a35556ca29b0ae51b1ed69e` |
+| lastVerifiedCommitDate | 2026-06-04T19:03:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L75-L105 | [README.md](agents-remember-md/README.md) |
 | The README routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L109-L120 | [README.md](agents-remember-md/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated package copies, and notes the workspace-first `<workspace>/ar-coordination/` default. | L122-L148 | [README.md](agents-remember-md/README.md) |
-| The README's Status section pins the project at `2.3.1`, describes `2.3.0` as the harness-native starter package release, and identifies `2.3.1` as the patch that corrects the MCP package README shown on PyPI to match that setup flow. | L164-L166 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `2.3.2`, describes `2.3.0` as the harness-native starter package release, identifies `2.3.1` as the patch that corrects the MCP package README shown on PyPI, and identifies `2.3.2` as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder. | L164-L166 | [README.md](agents-remember-md/README.md) |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L168-L170 | [README.md](agents-remember-md/README.md) |
 | The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L172-L176 | [README.md](agents-remember-md/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L44 | [docs/README.md](agents-remember-md/docs/README.md) |
@@ -107,6 +107,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-04T18:52+02:00: Bumped the Status section to `2.3.2` and documented it as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-03T19:25+02:00: Bumped the Status section to `2.3.1` and documented it as the patch that corrects the PyPI/MCP package README to the 2.3.0 package-first setup flow. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-03T18:58+02:00: Updated for the 2.3.0 starter-package release: package-first quickstart, one-restart first-run path, root `skills/` canonical source tree, `scripts/sync-skills.py`, and Status-section version bump. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-03T04:25+02:00: Bumped the Status-section version reference to `2.2.0` (mcp 2.2.0 — lifecycle collaboration loop and C-09 source-branch contract refresh; a minor backward-compatible release on the 2.0.0 reshape). Verification metadata pinned until closeout. chore/release-mcp-2.2.0 branch.
