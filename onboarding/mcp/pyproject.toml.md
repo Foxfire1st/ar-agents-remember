@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T18:52+02:00                     |
-| lastVerifiedCommitHash | `66a79a4f111b83c74a35556ca29b0ae51b1ed69e` |
-| lastVerifiedCommitDate | 2026-06-04T19:03:03+02:00|
+| lastUpdated            | 2026-06-04T23:15+02:00                     |
+| lastVerifiedCommitHash | `83b147e9ccc481749f7a3b40a27acf23cfe4296b` |
+| lastVerifiedCommitDate | 2026-06-04T23:30:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 coordinator from a pip/uvx install with no source checkout.
 
 The package `version` tracks the release line; at this verification it is
-`2.3.2`. It is the same string `runtime_install` and `server_info` report, and
+`2.3.3`. It is the same string `runtime_install` and `server_info` report, and
 it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### Invariants And Boundaries
@@ -74,6 +74,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-06-04T23:15+02:00: Bumped the documented package `version` to `2.3.3` for the provider watcher rebind and Docker-safe provider identity patch; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-04T18:52+02:00: Bumped the documented package `version` to `2.3.2` for the runtime skill refresh patch; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-03T19:25+02:00: Bumped the documented package `version` to `2.3.1` for the MCP package README correction patch; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-03T18:58+02:00: Bumped the documented package `version` to `2.3.0` for the harness starter-package / package-first install ergonomics release; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
