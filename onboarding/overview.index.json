@@ -23,11 +23,12 @@
   "coveredFiles": [
     "AGENTS.md",
     "README.md",
-    "pyproject.toml"
+    "pyproject.toml",
+    "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 446,
-    "fileSidecars": 3,
+    "sourceFilesInScope": 757,
+    "fileSidecars": 4,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -36,16 +37,21 @@
     "mcp",
     "pyproject",
     "readme",
+    "scripts",
+    "skills",
+    "sync",
     "toml"
   ],
   "hotPath": {
-    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, the flat `mcp/src/agents_remember/package_data/runtime/skills/C-*` skills cover core support (resolver, memory quality control, bootstrap, onboarding, ro...",
+    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, the hidden harness starter package roots (`.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`)...",
     "candidateHints": [
       "mcp",
       "examples/mcp",
       "AGENTS.md",
       "README.md",
-      "pyproject.toml"
+      "pyproject.toml",
+      "scripts",
+      "scripts/sync-skills.py"
     ],
     "anchorHints": [
       "AGENTS.md",
@@ -54,10 +60,20 @@
       "README",
       "pyproject.toml",
       "pyproject",
+      "sync-skills.py",
+      "sync-skills",
       "mcp",
       "mcp/",
       "mcp/src/agents_remember/package_data/runtime/agents-md-files",
-      "mcp/src/agents_remember/package_data/runtime/skills/C-*",
+      "claude/",
+      "codex/",
+      "cursor/",
+      "agents/",
+      "github-vscode/",
+      "vscode/",
+      "hermes/",
+      "pi/",
+      "openclaw/",
       "agents_remember",
       "package_data",
       "agents-remember-md",
@@ -85,17 +101,7 @@
       "kernel/memory_ledger.py",
       "ContextPacketV2",
       "resolve_context",
-      "context_packet",
-      "c-02-memory-quality-control",
-      "drift_check",
-      "memory_quality_check",
-      "check_missing_onboarding",
-      "overview.index.json",
-      "c-03-repo-bootstrap",
-      "route_index_refresh",
-      "kernel/route_index.py",
-      "c-01-findings-capture",
-      "l-01-session-job-lifecycle"
+      "context_packet"
     ]
   },
   "fallback": {
