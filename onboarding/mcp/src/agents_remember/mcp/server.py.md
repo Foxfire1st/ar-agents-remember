@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-04T22:15+02:00                     |
+| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
+| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -63,10 +63,14 @@ with `git worktree remove --force` / `git branch -D`.
 
 `runtime_install` registers the reconcile flags `dry_run` (act-by-default
 `False`), `include_benchmarks`, `install_provider_deps` (default `True`), and
-`no_cache` (default `False`); `no_cache=true` forces a from-scratch provider
-image rebuild that bypasses the skip-if-tag-exists shortcut. Registered tool
-functions now carry human-facing descriptions (docstrings) surfaced to the
-harness's tool list, added in the 0.9.x run.
+`no_cache` (default `False`). Its operator text now distinguishes preserved user
+data (`memory-repos/`, `providers/data/`) from managed scaffold, and explains
+that `install_provider_deps=true` may refresh `providers/runners/` after
+stopping watchers so containers rebind cleanly, then starts/rechecks watchers
+without rebuilding indexes. `no_cache=true` forces a from-scratch provider image
+rebuild that bypasses the skip-if-tag-exists shortcut. Registered tool functions
+carry human-facing descriptions (docstrings) surfaced to the harness's tool
+list.
 
 `codex_benchmark_run` exposes an optional `codex_sandbox` argument whose
 registered default is `CODEX_BENCHMARK_SANDBOX` (imported from
@@ -112,9 +116,11 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 | Provider diagnostics payloads are modeled separately from compact provider summaries. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
 | The config loader rejects coordinator `system/settings.json` as MCP authority. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
 | The compact-content shim installed at server creation minifies tool-result text. | [compact_content.py](agents-remember-md/mcp/src/agents_remember/mcp/compact_content.py) |
+| The `runtime_install` tool docstring names preserved user data, managed provider scaffold replacement, watcher rebind behavior, and non-index-rebuilding post-install watcher checks. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
 
 ## Update History
 
+- 2026-06-04T22:15+02:00: Updated `runtime_install` operator text to clarify provider runner refresh during `install_provider_deps=true`, watcher rebind/recheck behavior, and index preservation.
 - 2026-06-02T04:40+02:00: `skills_install` tool dropped the `layout` parameter after the installer became a single flat copy (U-01-core-skills dissolved). `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.
 - 2026-06-02T04:25+02:00: `worktree_start` docstring dropped the retired `heavy-task` workflow_kind (now `light-task`/`chat-task`) after the heavy workflow was retired. `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-01T00:00+02:00 — `provider_watchers` docstring updated to name `restart` (index-preserving) and `invalidate-indexes` (destructive rebuild) as distinct actions, replacing `refresh`. All CGC/GrepAI query tools gained `worktree` parameter. `worktree_cleanup` gained `teardown_providers`. `worktree_abandon` newly registered with `force`. Updated Code Commentary Logic section.
