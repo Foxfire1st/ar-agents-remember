@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-04T22:15+02:00|
+| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
+| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -18,8 +18,9 @@
 
 `install/runtime.py` is the package-local runtime installer service used by the
 `runtime_install` MCP tool. It reconciles runtime assets into the configured
-coordinator root and can run provider dependency installation through
-package-local lifecycle functions.
+coordinator root, delegates provider watcher rebind orchestration to
+`install/provider_watchers.py`, and can run provider dependency installation
+through package-local lifecycle functions.
 
 ## Code Commentary
 
@@ -34,8 +35,13 @@ state under `providers/runners`, while stale `providers/_bin` and
 `providers/_venvs` content is pruned because host provider binaries and venvs
 are not part of the managed runtime contract. Explicit provider dependency
 installs reconcile supported provider paths through package-local lifecycle
-code. All installs preserve durable `providers/data` and central logs under
-`logs/`.
+code. When provider dependencies are installed, the service stops enabled
+provider watchers before runner scaffolding can be pruned, refreshes managed
+provider runtime files and dependencies, then starts and checks the watchers so
+containers rebind to the current runner roots. If the first post-install status
+is still degraded, it records one non-destructive restart/rebind attempt and
+reports recovery guidance if readiness is still not restored. All installs
+preserve durable `providers/data` and central logs under `logs/`.
 
 `source_root_from_package()` locates the packaged runtime assets by walking
 upward from the installed module until it finds the source/runtime asset tree.
@@ -59,7 +65,8 @@ clients reach it through the `runtime_install` tool.
 - MCP provider dependency install must use generated settings from
   `McpRuntimeConfig`.
 - Full provider reinstall can replace Docker runner instances and image build
-  roots, but must preserve `providers/data` and central logs under `logs/`.
+  roots, but must stop/restart enabled watchers around that replacement and
+  must preserve `providers/data` and central logs under `logs/`.
 - `providers/_bin` is not preserved or recreated as a managed provider runtime
   path.
 - `providers/_venvs` is not preserved or recreated as a managed provider
@@ -71,6 +78,8 @@ clients reach it through the `runtime_install` tool.
 - `install_runtime_from_config`'s `dry_run` defaults to `False` (act-by-default),
   matching the `runtime_install` MCP tool; `dry_run=true` reports the reconcile
   plan without performing the reconcile.
+- Provider watcher rebind reporting belongs in the install summary and response
+  payload; the detailed lifecycle sequencing belongs in `install/provider_watchers.py`.
 
 ## Repo-Internal References
 
@@ -78,9 +87,13 @@ clients reach it through the `runtime_install` tool.
 | --- | --- |
 | The MCP controller exposes only typed install booleans. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py) |
 | Provider settings generation derives lifecycle settings from MCP authority. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
+| `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
+| Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. | [provider_watchers.py](agents-remember-md/mcp/src/agents_remember/install/provider_watchers.py) |
+| Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, unrecovered failure reporting, and dependency-install failure recovery. | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
 
 ## Update History
 
+- 2026-06-04T22:15+02:00 — Documented provider watcher rebind orchestration for `install_provider_deps=true`, including the extracted helper, non-destructive retry, recovery reporting, and preserved provider data.
 - 2026-05-31T12:30+02:00 — Dropped the provider runner integrity-manifest write from `install_runtime_from_config` and the `integrity` return field, and removed the stale integrity.py reference (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the `no_cache` flag threaded through `install_runtime_from_config` into the provider lifecycle install calls — image builds skip existing tags by default, `no_cache=true` forces a from-scratch rebuild. Verified against `8927f03`.
 - 2026-05-29T18:35+02:00: Extracted `_remove_with_retry` from `remove_path` to drop cyclomatic complexity below 11; behavior-preserving (commit `e3dab63`).

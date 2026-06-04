@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-04T22:15+02:00                     |
+| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
+| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -27,8 +27,9 @@ during the last setup attempt.
 The test module uses synthetic settings and synthetic watcher status payloads.
 It verifies Docker container state normalization, the current-state file path,
 ready and degraded aggregate state, per-provider resource shape, disabled
-provider aggregation, GrepAI no-workspace degradation, workflow-local instance
-paths for benchmarks, and integration through `provider_status_packet()` plus
+provider aggregation, GrepAI no-workspace degradation, GrepAI no-workspace
+restart/rebind recovery guidance, workflow-local instance paths for benchmarks,
+and integration through `provider_status_packet()` plus
 `provider_diagnostics_packet()`.
 
 `ready_status_payload()` builds a small GrepAI plus CGC status packet with
@@ -38,6 +39,10 @@ to prove degradation and disabled provider behavior without starting real
 providers. `test_current_state_reports_grepai_no_workspace_as_degraded` drops the
 watcher's searchable workspace and asserts GrepAI reports `degraded` with
 `indexingState: noWorkspace`, degrading the aggregate state.
+`test_provider_status_reports_restart_recovery_for_grepai_no_workspace` then
+mocks the same no-workspace status through the provider-status surface and
+asserts both compact status and diagnostics return the
+`provider_watchers(action='restart')` recovery action.
 
 ### Conventions
 
@@ -75,10 +80,11 @@ No external documentation is needed for these standard-library unit tests.
 | The Docker summary regression asserts container state, running flag, health, and integer uptime. | L24-L40 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
 | The current-truth regression writes current state, asserts `ready`, excludes `lastSetup`, checks the central status path, and verifies GrepAI watcher/resource fields. | L42-L74 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
 | The CGC degradation regression mutates one repo watcher to down and expects aggregate degraded state plus per-repo watcher/container details. | L76-L103 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
-| The disabled-provider regression proves disabled GrepAI is reported as disabled without poisoning aggregate readiness. | L105-L124 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
-| The GrepAI no-workspace regression drops the watcher's searchable workspace and expects GrepAI `degraded` with `indexingState: noWorkspace` plus a degraded aggregate. | n/a | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
-| The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | L126-L155 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
-| The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | L157-L174 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
+| The disabled-provider regression proves disabled GrepAI is reported as disabled without poisoning aggregate readiness. | L157-L176 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
+| The GrepAI no-workspace regression drops the watcher's searchable workspace and expects GrepAI `degraded` with `indexingState: noWorkspace` plus a degraded aggregate. | L107-L127 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
+| Provider status and diagnostics both expose restart/rebind recovery guidance when the current projected GrepAI state is `noWorkspace`. | L129-L155 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
+| The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | L178-L208 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
+| The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | L209-L230 | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
 | Current-state projection and persistence are implemented in the provider current-state module. | L16-L277 | [current_state.py](agents-remember-md/mcp/src/agents_remember/providers/current_state.py) |
 
 ## Cross-Repo References
@@ -91,6 +97,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-04T22:15+02:00: Documented the provider-status regression that returns restart/rebind recovery guidance for GrepAI `noWorkspace` from both compact status and diagnostics.
 - 2026-06-02T16:24+02:00: Added the `test_current_state_reports_grepai_no_workspace_as_degraded` regression (GrepAI reports `degraded` / `indexingState: noWorkspace` when the watcher has no searchable workspace) and noted that the ready fixture now includes a healthy `workspaceStatus`; reflected both in the Logic narrative and repo-internal references.
 - 2026-05-28T19:52+02:00: Updated after provider current-state integration tests moved full current-state payload assertions to provider diagnostics.
 - 2026-05-28T12:32+02:00: Created for provider current-state unit coverage.

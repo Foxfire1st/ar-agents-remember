@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_install_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:51+02:00                     |
-| lastVerifiedCommitHash | `8927f038535bdb514526156df72603708bc89e19` |
-| lastVerifiedCommitDate | 2026-05-30T19:59:15+02:00|
+| lastUpdated            | 2026-06-04T22:15+02:00                     |
+| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
+| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 `test_install_runtime.py` covers MCP package runtime-install behavior that
-affects live provider runtime safety from the core-skill test suite.
+affects live provider runtime safety from the core-skill test suite, including
+the provider watcher rebind path used when provider dependencies are refreshed.
 
 ## Code Commentary
 
@@ -37,6 +38,15 @@ run provider dependency commands.
 The second regression proves `providers/data`, central `logs/mcp`, central
 `logs/providers`, and default runner folders exist after install while stale
 venvs are pruned.
+
+The provider-deps rebind regressions seed a stale runner file, mock watcher and
+provider dependency lifecycle calls, and prove ordering: watchers stop before
+runner refresh, provider dependency install runs, then watchers start and status
+is checked. A dry-run variant proves the same lifecycle plan is reported without
+mutating the runner file. Additional cases prove a degraded post-install status
+triggers exactly one non-destructive restart/rebind, still-degraded status
+records a recovery action, and provider dependency failure attempts watcher
+recovery before raising.
 
 `ProviderDependencyHelperTests` adds hermetic coverage for the provider-dependency
 helpers — `any_provider_enabled`, `configured_provider_enabled`, and
@@ -58,12 +68,16 @@ untested install helpers so they clear the CRAP threshold.
   deleted source-checkout installer scripts.
 - Use the public `install_runtime()` function directly rather than invoking the
   MCP server transport.
+- Patch watcher lifecycle calls through `install.provider_watchers` when testing
+  rebind sequencing; patch provider dependency install calls through
+  `install.runtime`.
 
 ### Invariants And Boundaries
 
-The test validates runtime-install file reconciliation only. It does not prove provider
-install commands, provider watcher readiness, Docker backends, or runtime search
-results; those remain lifecycle/provider integration concerns.
+The test validates runtime-install file reconciliation and watcher lifecycle
+sequencing only. It does not prove real provider install commands, Docker
+backends, watcher containers, or runtime search results; those remain
+lifecycle/provider integration concerns.
 
 ### Todos
 
@@ -82,8 +96,12 @@ No external documentation is needed for this test.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The test creates a synthetic runtime source tree with the MCP installer-required runtime directories and provider defaults, without a runtime `scripts/` tree. | L22-L31 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | L34-L68 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L96-L140 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | L63-L116 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L118-L160 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| The provider-deps rebind regression proves watcher stop happens before runner refresh and watcher start/status happens after provider dependency install. | L162-L232 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| The dry-run rebind regression reports watcher stop/start/status and dependency install while preserving the stale runner file. | L234-L297 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| Degraded and unrecovered status regressions prove one non-destructive restart/rebind attempt and recovery-action reporting. | L299-L403 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| Dependency-install failure still attempts watcher recovery before raising a runtime-install failure. | L405-L454 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
 
 ## Cross-Repo References
 
@@ -95,6 +113,7 @@ No sibling repository evidence is needed for this installer test.
 
 ## Update History
 
+- 2026-06-04T22:15+02:00: Documented the new provider-deps watcher rebind regression coverage: sequencing, dry-run reporting, degraded-status retry, unrecovered recovery action, and dependency-failure recovery.
 - 2026-05-30T21:51+02:00: Documented the new `no_cache` threading coverage in `ProviderDependencyHelperTests` — `no_cache=True` reaches both provider args and defaults to `False`. Verified against `8927f03`.
 - 2026-05-29T20:25+02:00: Documented the new `ProviderDependencyHelperTests` and `ReadSkillNameTests` coverage added to clear the install helpers' CRAP threshold (`dry_run`-default flip task).
 - 2026-05-28T12:32+02:00: Updated after runtime install moved operator logs from `providers/logs/` into the central `logs/` tree and tests asserted the new directories.

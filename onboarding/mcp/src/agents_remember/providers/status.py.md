@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-04T22:15+02:00|
+| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
+| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 `status.py` reads provider watcher state and projects it into either compact
-provider summaries or detailed provider diagnostics.
+provider summaries or detailed provider diagnostics, including recovery guidance
+for known degraded states such as GrepAI `noWorkspace`.
 
 ## Code Commentary
 
@@ -32,8 +33,15 @@ settings, watcher status is invoked, and the current provider state file is
 written under the coordinator log/status root. The watcher probe runs as a
 bounded docker-control command timed by `DEFAULT_DOCKER_CONTROL_SECONDS`; it no
 longer reads the removed `timeout_caps["providerSeconds"]` key (renamed to
-`providerSetupSeconds`, which caps only provider setup, not status probing). Context packet callers receive
-the current-state file path and summary facts, not the full raw status tree.
+`providerSetupSeconds`, which caps only provider setup, not status probing).
+Context packet callers receive the current-state file path and summary facts,
+not the full raw status tree.
+
+`_provider_recovery_actions()` preserves raw lifecycle recovery actions and adds
+shared restart guidance when the current projected GrepAI state has
+`indexingState == "noWorkspace"`. The same action list is returned from compact
+provider status and provider diagnostics so the model sees the same
+non-destructive next step from either surface.
 
 ## Invariants And Boundaries
 
@@ -43,6 +51,8 @@ the current-state file path and summary facts, not the full raw status tree.
   status read.
 - Provider status is read-only from the MCP caller perspective; setup history
   belongs in provider setup summary logs.
+- `noWorkspace` remains a degraded state; status adds restart/rebind guidance
+  rather than treating missing workspaces as acceptable readiness.
 
 ## Repo-Internal References
 
@@ -52,9 +62,13 @@ the current-state file path and summary facts, not the full raw status tree.
 | Context packet construction consumes the compact provider summary. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
 | Provider MCP controllers expose status, diagnostics, watcher, GrepAI, and CGC tools. | [provider_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py) |
 | Current-state projection and persistence live in the current-state module. | [current_state.py](agents-remember-md/mcp/src/agents_remember/providers/current_state.py) |
+| Restart/rebind recovery wording is shared with runtime-install recovery reporting. | [recovery.py](agents-remember-md/mcp/src/agents_remember/providers/recovery.py) |
+| Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
+| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
 
 ## Update History
 
+- 2026-06-04T22:15+02:00 — Documented shared provider restart/rebind recovery guidance for GrepAI `noWorkspace`, including matching compact status and diagnostics recovery actions.
 - 2026-05-31T12:30+02:00 — Removed runner-integrity documentation: status projection no longer checks provider runner integrity, dropped the `integrity` diagnostics field, the `runnerIntegrityFailed` state, and the integrity short-circuit invariant (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented that the watcher probe now uses `DEFAULT_DOCKER_CONTROL_SECONDS` instead of the removed `timeout_caps["providerSeconds"]` key (renamed `providerSetupSeconds`). Verified against `825a172`.
 - 2026-05-29T18:35+02:00: `_provider_capability`/`_provider_runtime`/`_watcher_state_from_up` return their `Literal` aliases (`ProviderCapability`/`ProviderRuntime`/`WatcherState`); behavior-preserving (commit `0549b28`).
