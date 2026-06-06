@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00                     |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -52,10 +52,11 @@ facts. Detailed provider internals are intentionally moved to the
 | `ContextPacketV2` and nested summary models define the response shape. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/models/context_packet.py) |
 | Provider summary projection keeps context compact and points details at diagnostics. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
 | Worktree status projection supplies the read-only worktree summary. | [status.py](agents-remember-md/mcp/src/agents_remember/worktrees/status.py) |
-| Public payload builder validates this controller output through the model registry. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Public payload builder validates this controller output through the model registry. | [core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py) |
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected the context-packet payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-31T12:50+02:00 — `ContextPacketError` re-typed to subclass `AuthorityError` (imported from `agents_remember.errors`) instead of `ValueError`; noted the new base in Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Updated after context packets moved to explicit `ContextPacketV2` model construction and compact provider summaries.
 - 2026-05-24T02:47+02:00: Created after context packets imported drift summary from the new memory quality package.

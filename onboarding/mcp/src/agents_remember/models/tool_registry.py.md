@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00                     |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -46,11 +46,12 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 
 | Finding | Source Path |
 | --- | --- |
-| Payload builders validate through this registry. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Payload builders validate through this registry. | [base.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/base.py) |
 | Tests assert exact coverage between `PUBLIC_TOOLS` and this registry. | [test_models.py](agents-remember-md/mcp/tests/test_models.py) |
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected the payload-validation reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-06-01T20:45+02:00 — Registered `worktree_abandon` → `WorktreeAbandonResponse` in `PUBLIC_TOOL_RESPONSE_MODELS`.
 - 2026-05-31T12:30+02:00 — Documented the deliberate STRICT vs FLEXIBLE response-model two-tier convention now fixed in the module docstring (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created for the public tool response model coverage registry.

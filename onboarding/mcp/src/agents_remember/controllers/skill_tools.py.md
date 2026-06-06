@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `72789a48dc47acf417725ae051eaa123cadeaa0b` |
-| lastVerifiedCommitDate | 2026-06-02T04:33:30+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00                     |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -27,7 +27,8 @@ is no layout option).
 
 - Do not rebuild `skill_tools.py` as a mass re-exporter or mega-controller.
 - New MCP operation controllers should live in the domain module that owns the
-  behavior, then be imported directly by `mcp/tools.py`.
+  behavior, then be imported directly by the relevant `mcp/tools/` domain
+  module.
 - Skill installation remains a package install concern, not a provider,
   worktree, memory, or benchmark controller.
 - `skills_install_tool` defaults `dry_run=False` (act-by-default), forwarding to
@@ -38,11 +39,12 @@ is no layout option).
 | Finding | Source Path |
 | --- | --- |
 | Split controller route explains the new domain controller layout. | [controllers overview](overview.md) |
-| MCP payload builders import this file only for `skills_install`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| MCP payload builders import this file only for `skills_install`. | [core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py) |
 | Skill install response model lives in the models package. | [skills.py](agents-remember-md/mcp/src/agents_remember/models/skills.py) |
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected current MCP payload-builder references after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-06-02T04:40+02:00: Dropped the `layout` option from `skills_install_tool` after the installer became a single flat copy (U-01-core-skills dissolved). `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.
 - 2026-05-28T19:52+02:00: Updated after provider, worktree, memory, coordination, and benchmark controllers moved out of the former `skill_tools.py` mega-facade.
 - 2026-05-28T12:32+02:00: Updated after `provider_watchers` status began writing and returning current provider state snapshots.

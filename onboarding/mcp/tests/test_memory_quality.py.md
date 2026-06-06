@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_memory_quality.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T03:09+02:00                     |
-| lastVerifiedCommitHash | `0360e6fd7ab582075f11a2a6a50dfc0566f273e9` |
-| lastVerifiedCommitDate | 2026-05-24T03:09:23+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00                     |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -41,11 +41,12 @@ blocks and skips sections with missing timestamps.
 | Finding | Source Path |
 | --- | --- |
 | The tested package runner lives in `memory_quality.check`. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py) |
-| The tested payload builder lives in `mcp.tools`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| The tested payload builder lives in `mcp.tools.memory`. | [memory.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/memory.py) |
 | The tested style checker lives in `history_order.py`. | [history_order.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 | The tested style fixer lives in `history_order_fix.py`. | [history_order_fix.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected the memory-quality payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-24T03:09+02:00: Updated after adding dedicated history-order fixer coverage while keeping `memory_quality_check` diagnostic.
 - 2026-05-24T02:47+02:00: Created for memory quality checker and payload coverage.

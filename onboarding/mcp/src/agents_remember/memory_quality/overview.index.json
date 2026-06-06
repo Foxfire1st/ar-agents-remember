@@ -120,8 +120,8 @@
       "onboarding_drift_check",
       "update_history",
       "mcp/src/agents_remember/memory_quality/",
-      "route-overview",
-      "3789c3eba5e6e03889635f19ad3793b9c6bf5a78",
+      "route-local-overview",
+      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
       "/../../overview.md",
       "memory_quality/",
       "c-02-memory-quality-control",
@@ -130,10 +130,10 @@
       "memory_quality_check",
       "style/",
       "integrity/",
-      "integrity/ledger_consistency.py",
-      "mcp/overview.md",
       "skill_tools.py",
-      "agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py"
+      "mcp/tools.py",
+      "integrity/ledger_consistency.py",
+      "mcp/overview.md"
     ]
   },
   "fallback": {

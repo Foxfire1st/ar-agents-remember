@@ -4,10 +4,10 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
-| doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-06-02T01:15+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00                  |
+| doc_type               | `route-local-overview`                     |
+| lastUpdated            | 2026-06-06T12:15                           |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -23,14 +23,20 @@ top-level `grepai_setup.py` plus mixed `context_modules/grepai` and
 
 ## Hot Path Summary
 
-Use `setup.py` for setup-time refresh/install wiring. Use `context/` for
-Docker runtime layout, workspace YAML, and per-root `.gitignore` of grepai's
-`.grepai/` working dir. Use `lifecycle/` for Postgres, Ollama, runner
-image/container, and high-level GrepAI actions.
+Use `setup.py` for setup-time refresh/install wiring, `seed.py` for worktree
+PostgreSQL database clone/reuse, and `isolated.py` for worktree-scoped provider
+settings. Use `context/` for Docker runtime layout, workspace YAML, live memory
+roots, and per-root `.gitignore` of grepai's `.grepai/` working dir. Use
+`lifecycle/` for Postgres, Ollama, runner image/container, and high-level
+GrepAI actions.
 
 ## Route Model
 
 - `setup.py` wires enabled GrepAI setup through lifecycle commands.
+- `seed.py` clones the source GrepAI database into an isolated worktree backend
+  so embeddings can be reused instead of rebuilt.
+- `isolated.py` rewrites provider settings for worktree-specific containers,
+  roots, logs, and runtime paths while preserving the logical workspace key.
 - `context/` owns GrepAI runtime layout, workspace config, and live-root indexing.
 - `lifecycle/` owns Docker backend, embedder, runner, and top-level actions.
 
@@ -51,5 +57,6 @@ image/container, and high-level GrepAI actions.
 
 ## Update History
 
+- 2026-06-06T12:15: Re-verified against the current GrepAI provider package; added the worktree database-clone (`seed.py`) and isolated-settings (`isolated.py`) surfaces.
 - 2026-06-02T01:15+02:00: Updated for watch-live — `context/` now indexes the live memory roots in place and git-ignores grepai's `.grepai/` working dir; removed the `.grepai/` artifact-cleanup reference (`artifacts.py` deleted).
 - 2026-05-25T21:14+02:00: Created when provider modules were reorganized provider-first under `providers/grepai/`.

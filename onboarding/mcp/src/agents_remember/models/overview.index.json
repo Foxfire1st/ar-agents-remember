@@ -104,8 +104,8 @@
       "ContextPacketV2",
       "PUBLIC_TOOLS",
       "mcp/src/agents_remember/models/",
-      "route-overview",
-      "9680d150ac9d2e6c1ae04dbab42eac0088dceef8",
+      "route-local-overview",
+      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
       "/../../../overview.md",
       "models/",
       "StrictResponseModel",
@@ -117,9 +117,9 @@
       "NestedModel.model_validate",
       "rawStatus",
       "pathRules",
+      "mcp/tools.py",
+      "mcp/tools/",
       "mcp/overview.md",
-      "tools.py",
-      "agents-remember-md/mcp/src/agents_remember/mcp/tools.py",
       "agents-remember-md/mcp/src/agents_remember/models/tool_registry.py",
       "test_models.py"
     ]

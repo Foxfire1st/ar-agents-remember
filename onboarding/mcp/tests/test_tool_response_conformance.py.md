@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-05-29T08:53+02:00                             |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`         |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00                             |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f`         |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -84,13 +84,14 @@ declared nor part of the input."
 | Finding | Source Path |
 | --- | --- |
 | The registry maps each public tool to its response model. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
-| `_tool_payload()` is the production validation path mirrored here. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| `_tool_payload()` is the production validation path mirrored here. | [base.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/base.py) |
 | The strict/flexible response-model taxonomy lives in the model base. | [base.py](agents-remember-md/mcp/src/agents_remember/models/base.py) |
 | Worktree/direct-closeout/carryover fixtures reuse worktree test helpers. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 | Schema-level registry coverage is asserted separately. | [test_models.py](agents-remember-md/mcp/tests/test_models.py) |
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected the `_tool_payload()` reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-06-02T16:24+02:00: A docstring now references the `c-11-memory-carryover-from-branch` skill in full (was "C-11"). Reference-style normalization; behavior unchanged.
 - 2026-06-01T20:45+02:00 — Extended conformance coverage to the new `worktree_abandon` payload/response model.
 - 2026-05-29T08:53+02:00: Created onboarding for the dev-time tool-response conformance tests covering all public tools.

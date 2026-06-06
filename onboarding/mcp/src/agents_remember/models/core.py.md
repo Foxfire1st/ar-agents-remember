@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/core.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00                     |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,8 +31,9 @@ tool, and reserved-tool metadata.
 
 | Finding | Source Path |
 | --- | --- |
-| Core payload builders serialize these models. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Core payload builders serialize these models. | [core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py) |
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected the core payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-28T19:52+02:00: Created for core MCP response contracts.

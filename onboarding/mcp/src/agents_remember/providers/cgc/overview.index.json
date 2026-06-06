@@ -48,7 +48,7 @@
     "src"
   ],
   "hotPath": {
-    "summary": "Use `setup.py`, `seed.py`, and `bundle.py` for CGC installation/seed preparation. Use `context/` for runtime layout and patch helpers. Use `lifecycle/` for backend, install/status, and process/watch commands.",
+    "summary": "Use `setup.py` for enabled-provider wiring and isolated worktree settings, `seed.py` plus `bundle.py` for CGC index export/rewrite/import seeding, and `context/` for runtime layout, materialization, cleanup, and patch helpers. Use `lifecycle/` for backend, install/status, and process/watch commands.",
     "candidateHints": [
       "mcp/src/agents_remember/providers/cgc",
       "mcp/src/agents_remember/providers/cgc/context",
@@ -73,8 +73,8 @@
       "lifecycle/",
       "CGC",
       "mcp/src/agents_remember/providers/cgc/",
-      "route-overview",
-      "ae9c4e5b6af38eda7f2b29006130c4263e9db62f",
+      "route-local-overview",
+      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
       "/../../../overview.md",
       "cgc/",
       "cgc_*",
@@ -93,16 +93,18 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T21",
+      "T12",
       "lastVerifiedCommitHash",
+      "f28a2035f06f8bc33f11b0617b41cda1122c1f",
       "lastVerifiedCommitDate",
-      "T19",
+      "T13",
       "governingOverview",
       "cgc_",
       "context_modules",
       "lifecycle_modules",
       "GrepAI",
-      "provider_setup"
+      "provider_setup",
+      "T21"
     ]
   },
   "fallback": {
