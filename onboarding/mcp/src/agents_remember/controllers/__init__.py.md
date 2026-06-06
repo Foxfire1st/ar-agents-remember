@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `9680d150ac9d2e6c1ae04dbab42eac0088dceef8` |
-| lastVerifiedCommitDate | 2026-05-28T15:55:29+02:00                  |
+| lastUpdated            | 2026-06-06T12:28+02:00                     |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,8 +32,9 @@ builders import controller functions directly from their domain modules such as
 | Finding | Source Path |
 | --- | --- |
 | The route overview documents the split controller package layout. | [overview.md](overview.md) |
-| Public payload builders import controllers from their owning modules. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Public payload builders import controllers from their owning modules. | [__init__.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/__init__.py) |
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected the public payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-28T19:52+02:00: Created when the controllers route overview made the package initializer part of the explicit route coverage.

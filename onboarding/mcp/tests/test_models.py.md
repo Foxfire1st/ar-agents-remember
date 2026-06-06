@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_models.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00                     |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,9 +32,10 @@ a response contract and catches model definitions that are not schema-safe.
 
 | Finding | Source Path |
 | --- | --- |
-| Public tool metadata lives in `mcp/tools.py`. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Public tool metadata lives in the `mcp/tools/` package. | [base.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/base.py) |
 | Response model registry lives in the models package. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected the public-tool metadata reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-28T19:52+02:00: Created for public tool response model registry and schema coverage.

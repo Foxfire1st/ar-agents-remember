@@ -4,10 +4,10 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
-| doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `9680d150ac9d2e6c1ae04dbab42eac0088dceef8` |
-| lastVerifiedCommitDate | 2026-05-28T15:55:29+02:00                  |
+| doc_type               | `route-local-overview`                     |
+| lastUpdated            | 2026-06-06T03:43                           |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -32,13 +32,14 @@ runtime install, and `skill_tools.py` for skill installation.
 
 ## Route Model
 
-- MCP transport lives in `mcp/server.py` and `mcp/tools.py`.
+- MCP transport lives in `mcp/server.py` and the `mcp/tools/` package.
 - Controllers should remain typed operation facades, not generic command
   runners.
 - Domain behavior belongs in service modules such as `providers`,
   `worktrees`, `memory_quality`, `memory`, `benchmarks`, and `install`.
 - Response shape validation happens after controller return through the model
-  registry in `mcp/tools.py`.
+  registry (`models/tool_registry.py`), applied by the `mcp/tools/` payload
+  builders.
 
 ## Invariants And Boundaries
 
@@ -53,9 +54,10 @@ runtime install, and `skill_tools.py` for skill installation.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP payload builders call these controllers and then validate responses through models. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| MCP payload builders call these controllers and then validate responses through the model registry. | [mcp/tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools/) |
 | Public tool response models live in the models package. | [models overview](../models/overview.md) |
 
 ## Update History
 
+- 2026-06-06T03:43: Re-verified against the current controller surface (9 files incl. `_guards.py` and per-domain tool modules); corrected `mcp/tools.py` references to the `mcp/tools/` package; re-stamped to `7123da56`.
 - 2026-05-28T19:52+02:00: Created after the MCP controller surface split out of the former `skill_tools.py` mega-facade.

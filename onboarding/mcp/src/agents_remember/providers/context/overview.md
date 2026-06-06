@@ -4,10 +4,10 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/context/` |
-| doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00                  |
+| doc_type               | `route-local-overview`                     |
+| lastUpdated            | 2026-06-06T12:15                           |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ Start with `__init__.py` for the public context facade and `common.py` for share
 ## Invariants And Boundaries
 
 - There is no `context_providers.py` compatibility module.
-- CGC venv/runtime layout remains CGC-specific and lives under `cgc/`.
+- CGC runtime layout remains CGC-specific and lives under `cgc/`.
 - GrepAI remains Docker-owned; the runner image owns the GrepAI binary.
 - Common modules must stay provider-agnostic.
 
@@ -46,6 +46,7 @@ Start with `__init__.py` for the public context facade and `common.py` for share
 
 ## Update History
 
+- 2026-06-06T12:15: Re-verified against the current shared provider-context facade; corrected the CGC boundary wording after CGC became Docker-runner owned.
 - 2026-05-25T21:14+02:00: Updated when provider context implementation moved to provider-first packages.
 - 2026-05-25T19:33+02:00: Updated after GrepAI context logic was split out of `grepai/core.py` into focused submodules.
 - 2026-05-25T19:16+02:00: Created when provider context logic was split out of `context_providers.py` into focused modules.

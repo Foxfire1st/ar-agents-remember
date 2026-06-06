@@ -4,10 +4,10 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
-| doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `9680d150ac9d2e6c1ae04dbab42eac0088dceef8` |
-| lastVerifiedCommitDate | 2026-05-28T15:55:29+02:00                  |
+| doc_type               | `route-local-overview`                     |
+| lastUpdated            | 2026-06-06T12:15                           |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -58,10 +58,11 @@ benchmark tools, and `tokens.py` for response token accounting.
 
 | Finding | Source Path |
 | --- | --- |
-| Public MCP payload builders validate through the response model registry. | [tools.py](agents-remember-md/mcp/src/agents_remember/mcp/tools.py) |
+| Public MCP payload builders validate through the response model registry. | [mcp/tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools/) |
 | The registry maps every public tool name to a response model. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
 | Contract tests prove public tool coverage and schema generation. | [test_models.py](agents-remember-md/mcp/tests/test_models.py) |
 
 ## Update History
 
+- 2026-06-06T12:15: Re-verified against the current response model package; corrected the payload-builder reference from the deleted `mcp/tools.py` file to the `mcp/tools/` package.
 - 2026-05-28T19:52+02:00: Created for the Pydantic public response-contract model package while S2/S4 source changes are still uncommitted in the checkout.

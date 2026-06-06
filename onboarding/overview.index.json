@@ -27,7 +27,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 757,
+    "sourceFilesInScope": 769,
     "fileSidecars": 4,
     "childRoutes": 2
   },
@@ -76,6 +76,8 @@
       "openclaw/",
       "agents_remember",
       "package_data",
+      "repo-overview",
+      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
       "agents-remember-md",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -99,9 +101,7 @@
       "ar-coordination/memory-repos/ar-<repo>/",
       "c-00-initialize-memory-repo",
       "kernel/memory_ledger.py",
-      "ContextPacketV2",
-      "resolve_context",
-      "context_packet"
+      "ContextPacketV2"
     ]
   },
   "fallback": {

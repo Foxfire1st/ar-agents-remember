@@ -4,10 +4,10 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/lifecycle/` |
-| doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00                  |
+| doc_type               | `route-local-overview`                     |
+| lastUpdated            | 2026-06-06T12:15                           |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -66,6 +66,7 @@ visualizer commands.
 
 ## Update History
 
+- 2026-06-06T12:15: Re-verified against the current CGC lifecycle package; backend, runner, installation, process, refresh, and query boundaries still match.
 - 2026-05-28T12:32+02:00: Updated after CGC status began surfacing backend/watcher container state for provider current-state reporting.
 - 2026-05-26T13:58+02:00: Updated after CGC backend and runner lifecycle gained shared Docker network wiring and host-user runner execution.
 - 2026-05-26T12:51+02:00: Updated after CGC moved to a Docker runner image/container instead of a host provider venv.

@@ -48,7 +48,7 @@
     "src"
   ],
   "hotPath": {
-    "summary": "Use `setup.py` for setup-time refresh/install wiring. Use `context/` for Docker runtime layout, workspace YAML, and per-root `.gitignore` of grepai's `.grepai/` working dir. Use `lifecycle/` for Postgres, Ollama, runner image/container, and high-level GrepAI actions.",
+    "summary": "Use `setup.py` for setup-time refresh/install wiring, `seed.py` for worktree PostgreSQL database clone/reuse, and `isolated.py` for worktree-scoped provider settings. Use `context/` for Docker runtime layout, workspace YAML, live memory roots, and per-root `.gitignore` of grepai's `.grepai/` working dir. Use `lifecycle/` for Postgres, Ollama, runner image/container, and high-level GrepAI actions.",
     "candidateHints": [
       "mcp/src/agents_remember/providers/grepai",
       "mcp/src/agents_remember/providers/grepai/context",
@@ -73,11 +73,12 @@
       "gitignore",
       "grepai/",
       "lifecycle/",
+      "PostgreSQL",
       "YAML",
       "GrepAI",
       "mcp/src/agents_remember/providers/grepai/",
-      "route-overview",
-      "ae9c4e5b6af38eda7f2b29006130c4263e9db62f",
+      "route-local-overview",
+      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
       "/../../../overview.md",
       "grepai_setup.py",
       "context_modules/grepai",
@@ -92,15 +93,17 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T01",
+      "T12",
       "lastVerifiedCommitHash",
+      "f28a2035f06f8bc33f11b0617b41cda1122c1f",
       "lastVerifiedCommitDate",
-      "T19",
+      "T13",
       "governingOverview",
       "grepai_setup",
       "context_modules",
       "lifecycle_modules",
       "CGC",
+      "T01",
       "T21"
     ]
   },

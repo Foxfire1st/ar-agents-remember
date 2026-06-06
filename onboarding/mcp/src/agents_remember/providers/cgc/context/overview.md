@@ -4,10 +4,10 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/context/` |
-| doc_type               | `route-overview`                           |
+| doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                                  |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f`                                  |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `../overview.md`                  |
 
 ## Purpose

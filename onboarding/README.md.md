@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T23:15+02:00                     |
-| lastVerifiedCommitHash | `7123da567f433b43f3c868cdac50950ab7f0bfb7` |
-| lastVerifiedCommitDate | 2026-06-06T01:29:43+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00                     |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,13 +16,13 @@
 
 ## Purpose
 
-`README.md` is now the public front door for Agents Remember. It gives a concise product-level explanation, a short quickstart, links to harness-specific install pages, optional benchmark guidance, and a compact repository/runtime map. Detailed setup, concepts, workflows, benchmark methodology, guides, and reference material now live under `docs/`.
+`README.md` is the public front door for Agents Remember. It gives a concise product-level explanation, a high-signal Core Features section, a short quickstart, links to harness-specific install pages, optional benchmark guidance, and a compact repository/runtime map. The concentrated feature tour now lives in `docs/features.md`; detailed setup, concepts, workflows, benchmark methodology, guides, and reference material live under `docs/`.
 
 ## Code Commentary
 
 ### Logic
 
-The README opens with a TLDR that frames Agents Remember as durable, git-verified repo knowledge made first-class infrastructure, then shows the source-file to onboarding-unit mapping and the three substrates agents use to reach memory — by path (the file's own note), by meaning (semantic search), and by relationship (the code graph) — with by-path notes as the core and the other two as opt-in providers. The earlier sidecar-only "path-derived memory, no vector store / hidden service" positioning and the sidecar-era infographic embed were removed; that anti-retrieval framing predated the semantic-search and code-graph providers and no longer described the product.
+The README now uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
 
 The previous MCP-installs-skills first-run model was replaced with package-first
 harness setup. The root page now keeps one short, harness-agnostic three-step
@@ -50,9 +50,9 @@ directory — and points at the `c-13-install-and-onboard` skill, which presents
 that and every other install path as a workspace-first accept-or-override
 default.
 
-A `## What It Looks Like In Practice` mini-transcript sits between Core Model and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
+A `## What It Looks Like In Practice` mini-transcript sits between Core Features and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
 
-A short `## Live Demo: This Repo Uses Agents Remember` section sits between Core Model and Requirements. It states that Agents Remember runs on itself and links the project's own published memory repo (`Foxfire1st/ar-agents-remember-md`) as a live, inspectable example of the by-path onboarding layer. It surfaces the dogfooding message higher on the page than the existing Contributing-section mention, which still owns the operational instruction to clone that memory and use it while contributing.
+A short `## Live Demo` section sits between Core Features and Requirements. It states that Agents Remember runs on itself and links the project's own published memory repo (`Foxfire1st/ar-agents-remember-md`) as a live, inspectable example of the by-path onboarding layer. It surfaces the dogfooding message higher on the page than the existing Contributing-section mention, which still owns the operational instruction to clone that memory and use it while contributing.
 
 ### Conventions
 
@@ -86,16 +86,17 @@ The README routes readers into the split documentation tree and gives the curren
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The README's TLDR frames durable git-verified repo knowledge as infrastructure, shows the source-file to onboarding-unit mapping, and names the three retrieval substrates (by path / by meaning / by relationship), with meaning and relationship as opt-in providers. | L1-L18 | [README.md](agents-remember-md/README.md) |
-| The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. | L36-L52 | [README.md](agents-remember-md/README.md) |
-| The README adds a `## Live Demo: This Repo Uses Agents Remember` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember-md`) as a live, inspectable by-path onboarding example. | L54-L59 | [README.md](agents-remember-md/README.md) |
-| The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L75-L105 | [README.md](agents-remember-md/README.md) |
-| The README routes harness-specific setup to dedicated install pages and routes deeper product material, including benchmark methodology, to `docs/`. | L109-L120 | [README.md](agents-remember-md/README.md) |
-| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated package copies, and notes the workspace-first `<workspace>/ar-coordination/` default. | L122-L148 | [README.md](agents-remember-md/README.md) |
-| The README's Status section pins the project at `2.3.3`, describes `2.3.0` as the harness-native starter package release, identifies `2.3.1` as the patch that corrects the MCP package README shown on PyPI, identifies `2.3.2` as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder, and identifies `2.3.3` as the patch that stops/restarts provider watchers around runtime reinstall runner refreshes and normalizes dotted worktree names for Docker-backed provider setup. | L164-L166 | [README.md](agents-remember-md/README.md) |
-| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L168-L170 | [README.md](agents-remember-md/README.md) |
-| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L172-L176 | [README.md](agents-remember-md/README.md) |
-| The docs index owns the expanded documentation map for start-here docs, install guides, guides, and reference pages. | L1-L44 | [docs/README.md](agents-remember-md/docs/README.md) |
+| The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. | L32-L48 | [README.md](agents-remember-md/README.md) |
+| The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. | L50-L66 | [README.md](agents-remember-md/README.md) |
+| The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember-md`) as a live, inspectable by-path onboarding example. | L68-L73 | [README.md](agents-remember-md/README.md) |
+| The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L89-L121 | [README.md](agents-remember-md/README.md) |
+| The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | L123-L135 | [README.md](agents-remember-md/README.md) |
+| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated package copies, and notes the workspace-first `<workspace>/ar-coordination/` default. | L137-L177 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `2.3.3`, describes `2.3.0` as the harness-native starter package release, identifies `2.3.1` as the patch that corrects the MCP package README shown on PyPI, identifies `2.3.2` as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder, and identifies `2.3.3` as the patch that stops/restarts provider watchers around runtime reinstall runner refreshes and normalizes dotted worktree names for Docker-backed provider setup. | L179-L181 | [README.md](agents-remember-md/README.md) |
+| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L183-L185 | [README.md](agents-remember-md/README.md) |
+| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L187-L191 | [README.md](agents-remember-md/README.md) |
+| The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | L1-L46 | [docs/README.md](agents-remember-md/docs/README.md) |
+| `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. | L1-L471 | [docs/features.md](agents-remember-md/docs/features.md) |
 
 ## Cross-Repo References
 
@@ -107,6 +108,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Replaced README `## Core Model` memory with a faster `## Core Features` pitch and added the public `docs/features.md` link; updated references to the new features page and docs index entry. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-04T23:15+02:00: Updated the `2.3.3` Status note to include Docker-safe provider setup naming for dotted worktree names alongside the runtime reinstall watcher rebind patch. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-04T18:52+02:00: Bumped the Status section to `2.3.2` and documented it as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-03T19:25+02:00: Bumped the Status section to `2.3.1` and documented it as the patch that corrects the PyPI/MCP package README to the 2.3.0 package-first setup flow. Verification metadata stays pinned until closeout commits the source change.

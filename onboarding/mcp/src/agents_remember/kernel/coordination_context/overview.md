@@ -4,10 +4,10 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
-| doc_type               | `route-overview`                           |
-| lastUpdated            | 2026-05-25T20:57+02:00                     |
-| lastVerifiedCommitHash | `ae9c4e5b6af38eda7f2b29006130c4263e9db62f` |
-| lastVerifiedCommitDate | 2026-05-25T19:55:09+02:00                 |
+| doc_type               | `route-local-overview`                     |
+| lastUpdated            | 2026-06-06T12:15                           |
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -69,4 +69,5 @@ The package is intentionally split by responsibility:
 
 ## Update History
 
+- 2026-06-06T12:15: Re-verified against the current 15-file coordination-context package; purpose, hot path, route model, and invariants still match.
 - 2026-05-25T20:57+02:00: Created after the monolithic `c-08-ar-coordination-context-resolver` skill package resolver was split into focused implementation modules, then amended when Markdown fallback parser branches moved into submodules.

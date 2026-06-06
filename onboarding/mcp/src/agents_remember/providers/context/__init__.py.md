@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/context/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-06-06T12:28+02:00|
+| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
+| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ Same-repository source defines the active provider layout and patch behavior.
 | --- | --- | --- |
 | Shared provider context helpers live in the common context module. | n/a | [common.py](agents-remember-md/mcp/src/agents_remember/providers/context/common.py) |
 | CGC provider context constants, layout, cleanup, and patches live under the CGC provider package. | n/a | [CGC context overview](../cgc/context/overview.md) |
-| GrepAI provider context layout, mirror roots, workspace config, and artifact cleanup live under the GrepAI provider package. | n/a | [GrepAI context overview](../grepai/context/overview.md) |
+| GrepAI provider context layout, live-root workspace config, and artifact cleanup live under the GrepAI provider package. | n/a | [GrepAI context overview](../grepai/context/overview.md) |
 
 ## Cross-Repo References
 
@@ -75,6 +75,7 @@ through this package-local code and provider install/runtime modules.
 
 ## Update History
 
+- 2026-06-06T12:28+02:00: Corrected the GrepAI context reference from the old mirror-root model to current live-root workspace behavior; source behavior unchanged.
 - 2026-05-29T18:35+02:00: Removed the unsupported computed `__all__` (relies on default star-export like the `cgc/context` facade), clearing the `reportUnsupportedDunderAll` warning; behavior-preserving (commit `0549b28`).
 - 2026-05-25T21:14+02:00: Updated after provider context implementation moved into provider-owned packages.
 - 2026-05-25T19:16+02:00: Renamed from `context_providers.py` to `context.py`; implementation moved into `context_modules/` with CGC and GrepAI subpackages and no compatibility fallback.
