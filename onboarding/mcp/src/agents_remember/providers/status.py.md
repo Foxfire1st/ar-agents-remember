@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T22:15+02:00|
-| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
-| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
+| lastUpdated            | 2026-06-08T09:57+02:00|
+| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
+| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -27,6 +27,9 @@ for known degraded states such as GrepAI `noWorkspace`.
 summary for `ContextPacketV2`. `provider_diagnostics_packet()` returns the
 dedicated diagnostics contract with current-state, process-namespace,
 recovery-action, raw-status, and per-provider raw status detail.
+When provider details are intentionally skipped, compact summary item
+construction returns an empty `items` list instead of synthesizing provider rows
+from absent current-state detail.
 
 When status is read, lifecycle settings are generated from trusted MCP
 settings, watcher status is invoked, and the current provider state file is
@@ -47,6 +50,8 @@ non-destructive next step from either surface.
 
 - `context_packet` uses `provider_summary_packet()`, not diagnostics/raw status.
 - `provider_diagnostics` is the detail surface for raw provider state.
+- A skipped provider projection reports aggregate skipped state only; it does
+  not emit per-provider summary rows with unknown or omitted `ok` fields.
 - Temporary lifecycle settings come from MCP settings and are deleted after the
   status read.
 - Provider status is read-only from the MCP caller perspective; setup history
@@ -68,6 +73,7 @@ non-destructive next step from either surface.
 
 ## Update History
 
+- 2026-06-08T09:57+02:00: Documented skipped-provider summary behavior: when provider details are skipped, compact summary `items` is empty rather than populated from missing current-state rows.
 - 2026-06-04T22:15+02:00 — Documented shared provider restart/rebind recovery guidance for GrepAI `noWorkspace`, including matching compact status and diagnostics recovery actions.
 - 2026-05-31T12:30+02:00 — Removed runner-integrity documentation: status projection no longer checks provider runner integrity, dropped the `integrity` diagnostics field, the `runnerIntegrityFailed` state, and the integrity short-circuit invariant (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented that the watcher probe now uses `DEFAULT_DOCKER_CONTROL_SECONDS` instead of the removed `timeout_caps["providerSeconds"]` key (renamed `providerSetupSeconds`). Verified against `825a172`.

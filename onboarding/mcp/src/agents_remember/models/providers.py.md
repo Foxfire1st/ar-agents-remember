@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-08T09:57+02:00                     |
+| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
+| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,8 +19,11 @@ dedicated diagnostics, watcher lifecycle, GrepAI, and CodeGraphContext tools.
 
 `ProviderSummary` and `ContextProviderItem` are the compact context-facing
 shape: identity, runtime, capability, aggregate state, watcher state, and
-target repo readiness. `ProviderDiagnosticsResponse` is the detail surface that
-can include current-state files, process namespace, raw
+target repo readiness. Their nullable `ok` fields default to `None` because
+skipped or unknown provider checks may omit those fields after public payloads
+are serialized with `exclude_none=True` and later re-validated.
+`ProviderDiagnosticsResponse` is the detail surface that can include
+current-state files, process namespace, raw
 status, and per-provider diagnostics. Provider-native GrepAI and CGC tools use
 flexible response envelopes because their service payloads can expose
 provider-specific fields.
@@ -30,6 +33,9 @@ provider-specific fields.
 - Context provider summaries should remain small enough for startup packets.
 - Raw lifecycle status belongs in `ProviderDiagnosticsResponse`, not
   `ContextPacketV2`.
+- Nullable provider `ok` fields that may be absent from public JSON must declare
+  `= None`; `bool | None` without a default is required-nullable and fails a
+  later validation pass after `exclude_none=True` drops the key.
 - `GrepAIWatcherState` and `CGCWatcherState` make watcher state typed and
   distinguish workspace-level memory search from per-repo code graph watchers.
 
@@ -42,5 +48,6 @@ provider-specific fields.
 
 ## Update History
 
+- 2026-06-08T09:57+02:00: Made compact provider `ok` fields optional-null defaults so skipped provider summaries survive public payload serialization and re-validation.
 - 2026-05-31T12:30+02:00 — Dropped `integrity` block from diagnostics commentary; `runnerIntegrityFailed` state and `ProviderDiagnosticsResponse.integrity` field removed (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created for compact provider summaries and the dedicated diagnostics response contract.

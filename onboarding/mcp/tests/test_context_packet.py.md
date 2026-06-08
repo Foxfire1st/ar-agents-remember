@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T08:53+02:00                     |
-| lastVerifiedCommitHash | `a06bfa65dcee3c8b82652085c69f2a20f163e306` |
-| lastVerifiedCommitDate | 2026-05-29T09:05:12+02:00|
+| lastUpdated            | 2026-06-08T09:57+02:00                     |
+| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
+| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -26,6 +26,9 @@ external-memory packets, V2 field placement, provider current-state file path
 reporting without embedded raw status, optional drift summaries, unknown repo
 rejection before filesystem resolution, non-Git repo error reporting, active
 worktree contract reporting without worktree raw status, and CLI JSON output.
+Skipped-provider regression coverage goes through `context_packet_payload(...)`
+so the test exercises the public MCP payload wrapper's second validation pass,
+not just the direct controller call.
 The `taskRoot` expectation is built with `Path.as_posix()` because the packet
 emits posix paths on every host (including Windows, where `str(Path)` would use
 backslashes).
@@ -48,6 +51,7 @@ detail consumers at `provider_diagnostics`.
 
 ## Update History
 
+- 2026-06-08T09:57+02:00: Moved skipped-provider regression coverage to the public `context_packet_payload(...)` path so serialization and wrapper re-validation are exercised.
 - 2026-05-29T08:53+02:00: Updated after the `taskRoot` assertion switched from `str(path)` to `path.as_posix()` so it matches the packet's posix paths on Windows hosts.
 - 2026-05-28T19:52+02:00: Updated after context packet tests moved to `ContextPacketV2`, rejected duplicate top-level path rules, and rejected embedded provider/worktree raw status.
 - 2026-05-28T12:32+02:00: Updated after context packets began exposing provider current-state files and aggregate current state.
