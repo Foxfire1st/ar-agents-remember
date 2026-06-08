@@ -5,9 +5,9 @@
 | repository | agents-remember-md |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-06-06T12:28 |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated | 2026-06-08T09:57+02:00 |
+| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
+| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
 
 > **Status:** active baseline
 
@@ -184,6 +184,10 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The MCP settings example declares the external authority surface for repositories, provider ids, timeout caps, transcript roots, and package-derived provider runtime paths, replacing the removed coordinator `system/settings.json` provider template. | L1-L31 | [examples/mcp/settings.example.json](agents-remember-md/examples/mcp/settings.example.json) |
 | The repository quality configuration leaves Ruff on import/style/static hygiene, delegates branch/statement complexity pressure to Radon, gives tests targeted patched-callable/import-setup ignores, and configures Radon to report `B` through `F` complexity plus maintainability pressure. | L1-L39; L59-L68 | [pyproject.toml](agents-remember-md/pyproject.toml) |
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
+
+## Update History
+
+- 2026-06-08T09:57+02:00: Re-verified the repository overview against the PR-39 branch head after the branch merged current `main` and the skipped-provider context-packet contract was corrected.
 
 ## Build & Dev
 

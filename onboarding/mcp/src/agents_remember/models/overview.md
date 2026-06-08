@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-08T09:57+02:00                     |
+| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
+| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -51,6 +51,9 @@ benchmark tools, and `tokens.py` for response token accounting.
   `NestedModel.model_validate(...)` only at a narrow raw-adapter boundary.
 - Keep `context_packet` free of `rawStatus` and duplicate top-level
   `pathRules`; detailed provider state belongs in `provider_diagnostics`.
+- Nullable response fields that can be omitted after `exclude_none=True` must
+  declare optional defaults (`= None`); otherwise a later public payload
+  validation pass treats the missing key as a required-field error.
 - Flexible models are for intentionally raw/detail payloads, not a shortcut for
   avoiding a stable public contract.
 
@@ -64,5 +67,6 @@ benchmark tools, and `tokens.py` for response token accounting.
 
 ## Update History
 
+- 2026-06-08T09:57+02:00: Re-verified response model guidance after compact provider `ok` fields became optional-null defaults for skipped-provider payload re-validation.
 - 2026-06-06T12:15: Re-verified against the current response model package; corrected the payload-builder reference from the deleted `mcp/tools.py` file to the `mcp/tools/` package.
 - 2026-05-28T19:52+02:00: Created for the Pydantic public response-contract model package while S2/S4 source changes are still uncommitted in the checkout.

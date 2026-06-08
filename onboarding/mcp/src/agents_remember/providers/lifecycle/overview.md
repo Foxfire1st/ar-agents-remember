@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-08T09:57+02:00                     |
+| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
+| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -33,6 +33,9 @@ behavior lives under `../grepai/lifecycle/`. Docker helpers now expose
 normalized container state, health, and uptime summaries used by provider
 current-state reporting. `log_capture.py` trims tool response payloads
 recursively so verbose provider command output does not exceed client size limits.
+Compose rendering only emits a host `user:` block when `os.getuid` and
+`os.getgid` exist and are callable, which keeps non-POSIX hosts from receiving
+an invalid UID/GID override.
 
 ## Route Model
 
@@ -68,6 +71,7 @@ recursively so verbose provider command output does not exceed client size limit
 
 ## Update History
 
+- 2026-06-08T09:57+02:00: Re-verified the provider lifecycle route after the Compose host-user helper switched to callable `getuid`/`getgid` checks for non-POSIX safety.
 - 2026-06-06T12:15: Re-verified against the current shared provider lifecycle package; CLI, watcher aggregation, Docker helpers, result rendering, state files, and log trimming still match.
 - 2026-06-01T00:00+02:00 — Added `log_capture.py` to the shared modules listing in Hot Path Summary.
 - 2026-05-28T12:32+02:00: Updated after shared Docker helpers began exposing container-state summaries for provider current-state reporting.
