@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/compose_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-06T17:27+02:00                     |
+| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
+| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,6 +44,11 @@ Compose boundary for provider Docker ownership labels; it rejects settings that
 do not include non-empty string `instance.labels` instead of emitting fallback
 or legacy labels.
 
+Current-state note: `host_user()` resolves `os.getuid` and `os.getgid` with
+`getattr()` and checks both values are callable before invoking them. Non-POSIX
+hosts therefore return `None` without making POSIX-only `os` attributes part of
+the Windows/Pyright contract.
+
 ### Invariants And Boundaries
 
 - Rendered Compose override YAML is execution input and is passed through stdin;
@@ -74,6 +79,7 @@ resolved `system/sources.md` currently contains no entries.
 | --- | --- | --- |
 | Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | L41-L67 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 | Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | L81-L125 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | L135-L144 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 | Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | L134-L176; L225-L262 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 | Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | L160-L203 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 
@@ -87,6 +93,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-06-06T17:27+02:00 — Updated after `host_user()` switched to `getattr()` plus `callable()` checks so Windows/Pyright does not treat POSIX-only `os.getuid` and `os.getgid` as required attributes.
 - 2026-05-31T12:30+02:00 — Documented new `host_user()`/`host_user_block()` helpers that render an optional `user: uid:gid` line so provider containers run as the host user (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after Compose rendering began rejecting
   provider settings without generated `instance.labels`.
