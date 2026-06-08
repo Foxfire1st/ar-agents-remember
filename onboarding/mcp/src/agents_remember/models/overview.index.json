@@ -105,7 +105,7 @@
       "PUBLIC_TOOLS",
       "mcp/src/agents_remember/models/",
       "route-local-overview",
-      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
+      "d92bc99c82eaa3e8d89ee9352075def2c66c1235",
       "/../../../overview.md",
       "models/",
       "StrictResponseModel",
@@ -117,11 +117,11 @@
       "NestedModel.model_validate",
       "rawStatus",
       "pathRules",
+      "exclude_none=True",
+      "= None",
+      "ok",
       "mcp/tools.py",
-      "mcp/tools/",
-      "mcp/overview.md",
-      "agents-remember-md/mcp/src/agents_remember/models/tool_registry.py",
-      "test_models.py"
+      "mcp/tools/"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-08T09:57+02:00                     |
+| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
+| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -114,6 +114,10 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
   `models.tool_registry.PUBLIC_TOOL_RESPONSE_MODELS`; compact context belongs
   in `ContextPacketV2`, and detailed provider state belongs in
   `provider_diagnostics`.
+- Skipped provider details are still a modeled public contract: compact
+  provider summaries report aggregate skipped state, omit provider detail rows,
+  and rely on optional-null provider `ok` fields to survive JSON
+  serialization/re-validation.
 
 ## Repo-Internal References
 
@@ -131,6 +135,7 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
 
 ## Update History
 
+- 2026-06-08T09:57+02:00: Re-verified the MCP package route after PR-39 restored context-packet provider-summary validation and made skipped-provider summaries a modeled optional-null contract.
 - 2026-06-06T12:15: Re-verified against the current MCP package surface; corrected stale `mcp/tools.py` and provider lifecycle module references after the `mcp/tools/` package split and provider-first lifecycle packages.
 - 2026-05-31T12:40+02:00: Removed the deleted `providers/integrity.py` runner-integrity prose and reference row after the provider-runner integrity feature was removed in the 1.0.0 remediation; `providers/status.py` no longer checks runner integrity.
 - 2026-05-29T08:53+02:00: Updated after `server.py` began installing the `mcp/compact_content.py` shim that minifies tool-result text mirrors, and after dev-time tool-response conformance tests landed.
