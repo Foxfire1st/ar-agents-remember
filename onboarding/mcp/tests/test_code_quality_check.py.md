@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T10:35+02:00                     |
-| lastVerifiedCommitHash | `949f14e7d17f71c9f8d516c21cbaa3a979c95590`                      |
-| lastVerifiedCommitDate | 2026-06-02T10:38:57+02:00|
+| lastUpdated            | 2026-06-08T12:06+02:00                     |
+| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06`                      |
+| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,11 +29,15 @@ synthetic coverage JSON report for the pytest step so the real
 CRAP-Calculator path still executes. The runner now also receives the subprocess
 environment, and one test asserts the wrapper puts this checkout's source import
 root first on `PYTHONPATH` while preserving any pre-existing `PYTHONPATH` entry.
+The command-composition test also asserts Pyright receives `--pythonpath` with
+the active interpreter, which lets linked worktrees reuse the primary checkout
+virtualenv without losing third-party import resolution.
 
 ### Invariants And Boundaries
 
 - Tests verify command order and fixed module selection without shelling out,
-  including that Pyright receives the configured source and test paths.
+  including that Pyright receives the configured source/test paths and active
+  interpreter path.
 - Fixed check failures make the wrapper return nonzero.
 - Missing coverage JSON makes the CRAP step fail.
 - CRAP threshold hits are report-only by default and fail only when
@@ -50,6 +54,10 @@ root first on `PYTHONPATH` while preserving any pre-existing `PYTHONPATH` entry.
 
 ## Update History
 
+- 2026-06-08T12:06+02:00: Added coverage that the Pyright command includes
+  `--pythonpath` and the active interpreter path, matching the linked-worktree
+  quality gate fix. Verification metadata stays pinned until closeout.
+  task/runtime-asset-canonical-sync branch.
 - 2026-06-02T10:35+02:00: Added a test that the wrapper threads this checkout's source import root first onto `PYTHONPATH` (preserving any pre-existing value); the fake runners now take the `env` argument. Verification metadata stays pinned until closeout. fix/quality-gate-worktree-local branch.
 - 2026-05-28T19:52+02:00: Updated after source quality wrapper tests began asserting Pyright command wiring.
 - 2026-05-24T06:30+02:00: Created unit coverage for the source quality suite wrapper.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06` |
+| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -25,16 +25,13 @@ runtime package is installed.
 ### Logic
 
 The template combines the checkout's lifecycle routing with coordinator
-runtime guidance. It now opens with a `Start Here — Enter the Job Lifecycle`
-section: every session enters `l-01-session-job-lifecycle` (orient → ground →
-frame → decide → build → close), the job type is a lens rather than a gate, and
-the only task-format decision is `l-01-session-job-lifecycle` skill's build-mode step (read-only exit, chat
-build, or a durable `w-02-light-task-workflow` skill task). The former three-way Task Format Routing and the
-separate `Frame Before You Choose a Format` section are gone: framing is subsumed
-into `l-01-session-job-lifecycle` skill's `frame` phase, where the `tasks/AGENTS.md` collaboration doctrine
-applies up front in plain chat. The Installed AGENTS.md Routing pointer to
-`tasks/AGENTS.md` now references `l-01-session-job-lifecycle` skill's `frame` phase, so the doctrine is stated
-once. It requires agents to enter the lifecycle and clear its `frame` plan gate before
+runtime guidance. It now opens with a concise `Start Here — Enter the Job
+Lifecycle` section: every session enters `l-01-session-job-lifecycle`, and an
+already-running session must stay aware of managed-repo boundaries so a turn or
+tool target that crosses from outside Agents Remember scope into a managed
+repository re-enters the lifecycle. The detailed build-mode explanation lives in
+the lifecycle skill rather than being repeated in this coordinator entrypoint.
+It requires agents to enter the lifecycle and clear its `frame` plan gate before
 changing code, points agents to the sibling installed `system/`, `tasks/`, and
 `skills/` `AGENTS.md` files when those scopes become relevant, resolves active
 repository context with `c-08-ar-coordination-context-resolver` skill before trusting memory or task surfaces, checks
@@ -108,7 +105,7 @@ This onboarding is backed by the source template itself.
 
 | Finding                                                                                                                       | Citations | Source Path |
 | ----------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The template routes every session into the `l-01-session-job-lifecycle` and reduces the task-format choice to `l-01-session-job-lifecycle` skill's build-mode step (read-only exit / chat build / durable `w-02-light-task-workflow` skill). | L3-L26 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
+| The template routes every session into the `l-01-session-job-lifecycle` and requires lifecycle re-entry when an already-running session crosses from outside Agents Remember scope into a managed repository. | L3-L10 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | L28-L38   | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | L40-L49 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. | L50-L60 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
@@ -128,6 +125,7 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-06-08T11:53+02:00: Updated coordinator-template onboarding for the narrower lifecycle entry surface: session start remains the primary lifecycle entry, and managed-repo boundary crossings inside an already-running session re-enter the lifecycle. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-02T03:45+02:00: Rewired the coordinator template to route every session into `l-01-session-job-lifecycle`: replaced the three-way Task Format Routing and the separate `Frame Before You Choose a Format` section with a `Start Here — Enter the Job Lifecycle` section whose only task-format call is `l-01-session-job-lifecycle` skill's build-mode step (read-only exit / chat build / durable `w-02-light-task-workflow` skill); repointed the Installed AGENTS.md Routing bullet at `l-01-session-job-lifecycle` skill's `frame` phase; and de-duped `c-04-retrieval-strategy-router` skill by collapsing the Onboarding Documentation explanation into a pointer to Memory Retrieval Strategies. Part of the `l-01-session-job-lifecycle` skill lifecycle reshape (mcp 1.1.0). Verification metadata recomputed at this closeout.
 - 2026-06-02T03:30+02:00: Registered `system/git-workflow.md` as a read-first memory-layer file (when present): added it to the read list after the `c-08-ar-coordination-context-resolver` skill resolves context, and to the memory-repo system-file list, and pointed "Branch And Workflow Notes" at it for the gated-branch landing flow. Verification metadata + the `Runtime AGENTS Template Package` entity fingerprint recomputed at this closeout (mcp 1.0.2).
 - 2026-06-01T11:18+02:00: Documented the new top `Frame Before You Choose a Format` routing section (the `tasks/AGENTS.md` collaboration doctrine now applies up front, before a task format is chosen, and routes evidence to `c-04-retrieval-strategy-router` skill) and the slimming of the buried "do not rush" bullet to a plain `tasks/AGENTS.md` pointer. Verification metadata stays pinned; Repo-Internal Reference line ranges and the `Runtime AGENTS Template Package` entity fingerprint will be re-verified/recomputed at the single closeout after the routing-layer optimization pass and mcp version bump.

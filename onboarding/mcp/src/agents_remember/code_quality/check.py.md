@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T10:35+02:00                     |
-| lastVerifiedCommitHash | `949f14e7d17f71c9f8d516c21cbaa3a979c95590`                      |
-| lastVerifiedCommitDate | 2026-06-02T10:38:57+02:00|
+| lastUpdated            | 2026-06-08T12:06+02:00                     |
+| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06`                      |
+| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,7 +20,8 @@ Agents Remember development.
 ### Logic
 
 The module runs a fixed sequence of development checks from the source checkout:
-`ruff check`, Pyright with the root project config, Radon cyclomatic
+`ruff check`, Pyright with the root project config and active interpreter,
+Radon cyclomatic
 complexity, Radon maintainability index, pytest with coverage JSON, and
 CRAP-Calculator over the generated coverage report.
 
@@ -49,8 +50,11 @@ from the primary clone and from any worktree.
 
 - The wrapper is a fixed quality suite, not a generic shell command surface.
 - Subprocess commands use the active Python executable and fixed module names.
-- Pyright uses `--project .` and the same configured source/test paths as the
-  other source quality commands.
+- Pyright uses `--project .`, `--pythonpath` pointing at the wrapper's active
+  interpreter, and the same configured source/test paths as the other source
+  quality commands. The explicit interpreter keeps linked worktrees usable when
+  root Pyright config still names `.venv` relative to the checkout but the hook
+  is intentionally running with the primary checkout's virtualenv.
 - pytest coverage JSON is generated into a temporary file unless the caller
   explicitly supplies `--coverage-json`.
 - CRAP-Calculator runs in-process from the generated coverage JSON.
@@ -70,6 +74,12 @@ from the primary clone and from any worktree.
 
 ## Update History
 
+- 2026-06-08T12:06+02:00: Pyright command composition now passes `--pythonpath`
+  with the wrapper's active interpreter so linked worktrees can reuse the
+  primary checkout virtualenv while still resolving third-party imports. The
+  pre-push hook also prepends the current checkout's `mcp/src` before invoking
+  the wrapper so the worktree version of this module runs. Verification metadata
+  stays pinned until closeout. task/runtime-asset-canonical-sync branch.
 - 2026-06-02T10:35+02:00: The wrapper now prepends this checkout's source import roots to `PYTHONPATH` for every quality subprocess (`subprocess_env`/`source_import_roots`) and threads that env through the `CommandRunner`. Fixes the gate falsely failing from a git worktree (it imported the primary clone's editable package, so coverage didn't match the worktree files and CRAP inflated). Verification metadata stays pinned until closeout. fix/quality-gate-worktree-local branch.
 - 2026-05-28T19:52+02:00: Updated after Pyright joined the fixed source quality wrapper.
 - 2026-05-24T06:30+02:00: Created the source quality suite wrapper that runs Ruff, Radon, pytest coverage, and CRAP-Calculator.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-08T08:33+02:00                     |
-| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
-| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
+| lastUpdated            | 2026-06-08T12:22+02:00                     |
+| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06` |
+| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,9 +44,12 @@ first-run path. Harness-specific setup links point to dedicated pages under
 `docs/install/`, and detailed first-run setup lives in `docs/getting-started.md`.
 
 The README distinguishes the source checkout from the installed runtime. The
-source checkout now exposes root `skills/` as the canonical skill source tree and
+source checkout exposes root `skills/` as the canonical skill source tree and
 `scripts/sync-skills.py` as the helper that refreshes MCP package-data and
-harness package skill copies. The installed `ar-coordination/` runtime owns
+harness package skill copies. It also exposes root `agents-md-files/`,
+`benchmarks/`, `providers/`, and `system/` as canonical runtime asset source
+folders and `scripts/sync-runtime.py` as the helper that refreshes MCP
+package-data copies only. The installed `ar-coordination/` runtime owns
 installed instructions, skills, optional benchmark package content, local
 coordination artifacts, external memory repos, worktrees, and temp files. The
 Repository Layout section states the installed runtime defaults to
@@ -96,8 +99,8 @@ The README routes readers into the split documentation tree and gives the curren
 | The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember-md`) as a live, inspectable by-path onboarding example. | L68-L73 | [README.md](agents-remember-md/README.md) |
 | The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L89-L121 | [README.md](agents-remember-md/README.md) |
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | L123-L135 | [README.md](agents-remember-md/README.md) |
-| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated package copies, and notes the workspace-first `<workspace>/ar-coordination/` default. | L137-L177 | [README.md](agents-remember-md/README.md) |
-| The README's Status section pins the project at `2.4.0`, describes `2.3.0` as the harness-native starter package release, identifies `2.3.1` as the patch that corrects the MCP package README shown on PyPI, identifies `2.3.2` as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder, identifies `2.3.3` as the patch that stops/restarts provider watchers around runtime reinstall runner refreshes and normalizes dotted worktree names for Docker-backed provider setup, and identifies `2.4.0` as the backward-compatible release for harness-local starter renderers, Python hook command rendering, and manual placeholder-replacement docs that remove the legacy Claude Code `jq` misconception. | L179-L181 | [README.md](agents-remember-md/README.md) |
+| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | L137-L177 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `2.4.1`, describes `2.3.0` as the harness-native starter package release, identifies `2.3.1` as the patch that corrects the MCP package README shown on PyPI, identifies `2.3.2` as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder, identifies `2.3.3` as the patch that stops/restarts provider watchers around runtime reinstall runner refreshes and normalizes dotted worktree names for Docker-backed provider setup, identifies `2.4.0` as the backward-compatible release for harness-local starter renderers, Python hook command rendering, and manual placeholder-replacement docs that remove the legacy Claude Code `jq` misconception, and identifies `2.4.1` as the patch for runtime asset packaging/source sync plus skipped-provider context-packet provider validation. | L179-L181 | [README.md](agents-remember-md/README.md) |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L183-L185 | [README.md](agents-remember-md/README.md) |
 | The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L187-L191 | [README.md](agents-remember-md/README.md) |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | L1-L46 | [docs/README.md](agents-remember-md/docs/README.md) |
@@ -113,6 +116,11 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-08T12:22+02:00: Bumped the Status section to `2.4.1` and documented
+  it as the patch for runtime asset packaging/source sync plus skipped-provider
+  context-packet provider validation. Verification metadata stays pinned until
+  closeout commits the source change.
+- 2026-06-08T11:53+02:00: Updated repository-layout onboarding for canonical root runtime asset folders and `scripts/sync-runtime.py`, including the pre-commit/pre-push generated-copy checks. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-08T08:33+02:00: Bumped the Status section to `2.4.0` and documented it as the release for harness-local starter renderers, Python hook command rendering, and manual placeholder-replacement docs that remove the legacy Claude Code `jq` misconception. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-06T18:42+02:00: Refined setup memory so renderers are framed as optional convenience scripts for placeholder replacement; manual replacement is an explicit supported path. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-06T18:19+02:00: Refined the renderer setup memory after the CLI contract dropped the separate workspace-root flag; copied harness packages now infer the workspace root from their folder and accept one `--repo` list. Verification metadata stays pinned until closeout commits the source change.
