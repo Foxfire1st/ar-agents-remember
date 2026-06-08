@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T23:15+02:00                     |
-| lastVerifiedCommitHash | `83b147e9ccc481749f7a3b40a27acf23cfe4296b` |
-| lastVerifiedCommitDate | 2026-06-04T23:30:06+02:00|
+| lastUpdated            | 2026-06-08T08:33+02:00                     |
+| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
+| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,7 +20,7 @@ builders.
 The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
 derived from the installed package metadata via
 `importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
-the single source of truth; a `PackageNotFoundError` fallback hardcodes `2.3.3`
+the single source of truth; a `PackageNotFoundError` fallback hardcodes `2.4.0`
 for source checkouts without an install. Payload builders in `mcp.tools` use
 those constants for `ping` and `server_info`, so the version no longer needs a
 manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
@@ -39,6 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-08T08:33+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.4.0` for the harness-local starter renderer and Python hook command rendering release; pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-04T23:15+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.3.3` for the provider watcher rebind and Docker-safe provider identity patch; pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-04T18:52+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.3.2` for the runtime skill refresh patch; pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-03T19:25+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.3.1` for the MCP package README correction patch; pyproject remains the single source of truth. Verification metadata pinned until closeout.

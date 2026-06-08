@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T01:15+02:00                     |
-| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
-| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
+| lastUpdated            | 2026-06-06T17:27+02:00                     |
+| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
+| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -40,6 +40,12 @@ The tests assert that `cgc visualize` accepts named `--port` and `--context` opt
 New `no_cache` image-build cases assert that both the CGC and GrepAI runner
 image builds insert the `--no-cache` flag in their dry-run command when
 `no_cache=True`, and omit it otherwise.
+
+Current-state note: the optional POSIX UID/GID assertion in the GrepAI Compose
+render test resolves `os.getuid` and `os.getgid` with `getattr()` and checks
+both values are callable before asserting the rendered `user:` line. Windows
+test runs therefore skip that POSIX-only assertion while POSIX runs still
+protect the host-user YAML block.
 
 F-04 service tests build a temporary lifecycle settings file and verify that
 `providers.lifecycle_service` can run CGC and aggregate watcher dry-run/status
@@ -80,6 +86,7 @@ No external documentation is needed for these unit tests.
 | Handler tests assert that `cgc_visualize` dry-run emits an explicit Dockerized long-running server command and that `cgc_run` rejects `visualize`. | L213-L268 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | Docker-mode GrepAI tests assert that direct non-settings run calls are unsupported, settings-backed bounded queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and start dry-run builds the full migration/network/Postgres/Ollama/watcher stack with container workspace settings. | L221-L334 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | Compose render and CGC start-all tests assert `auto` ports do not leak into rendered YAML, provider ownership labels are required, the GrepAI watcher gets container-local config env plus a POSIX user block when available, and CGC project migration includes unmanaged network and watcher removal. | L387-L533 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| The optional POSIX user-block assertion uses `getattr()` plus `callable()` checks before reading `os.getuid` and `os.getgid`, so the test remains valid on Windows hosts. | L428-L434 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 | GrepAI lifecycle tests assert that PostgreSQL readiness proceeds from `pg_isready` to a target database query and aggregate watcher results include partial state plus recovery actions. | L580-L700 | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
 
 ## Cross-Repo References
@@ -92,6 +99,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-06T17:27+02:00 — Updated after the optional POSIX UID/GID assertion switched to `getattr()` plus `callable()` checks so the provider lifecycle tests type-check cleanly on Windows.
 - 2026-06-02T01:15+02:00 — Watch-live: the GrepAI workspace-state `projectPaths` assertion is now `/grepai/roots/<project_id>` (was `/grepai/runtime/index-roots/...`), and the Compose render test asserts each live memory root is bind-mounted read-write at `/grepai/roots/<project_id>`.
 - 2026-06-01T23:40+02:00 — `test_run_allows_bounded_query_in_ephemeral_process_namespace` now stubs `cgc_query.cgc_backend_status` (saved/restored alongside `cgc_status`) because `cgc run` gates on backend readiness rather than the full provider status. Updated Logic and the process-namespace Repo-Internal References row.
 - 2026-05-30T21:51+02:00: Documented the new CGC/GrepAI runner-image `no_cache` build cases (`--no-cache` present in the dry-run command when `no_cache=True`, absent otherwise). Verified against `8927f03`.

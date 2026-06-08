@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-03T19:25+02:00                     |
-| lastVerifiedCommitHash | `ce689567ce0f2785f868695a429879d1b068e91c` |
-| lastVerifiedCommitDate | 2026-06-03T19:33:53+02:00|
+| lastUpdated            | 2026-06-06T18:42+02:00                     |
+| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
+| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,7 +29,11 @@ post-restart MCP calls, and the high-level tool surface.
 The README is self-contained for the bootstrap so it works from the rendered
 PyPI page without a source checkout. It now leads with the same package-first
 three-step Quickstart as the root docs: (1) copy the harness-native starter
-package from the source repo and replace placeholders; (2) wire
+package from the source repo and render the copied package. The
+`render-starter` script is a convenience that infers the workspace root from
+the copied harness folder, accepts one explicit `--repo` list, and fills path,
+repository, and hook-command placeholders; the docs also allow manual
+placeholder replacement; (2) wire
 `agents-remember-mcp` with `uvx agents-remember-mcp@latest --config
 <abs settings.json>` using the copied package's settings file and restart the
 harness once; (3) invoke the copied `c-13-install-and-onboard` skill to run or
@@ -37,7 +41,9 @@ verify `runtime_install()`, choose new vs existing memory, bootstrap onboarding,
 and start provider indexing when enabled. It explicitly says
 `skills_install()` is maintenance/manual only in the normal package-based
 first-run path because the copied starter package already provides the initial
-skills and harness files.
+skills and harness files. The Requirements section clarifies that Claude Code
+hooks do not require `jq`; `jq` was only a legacy starter one-liner dependency,
+and current starter packages use Python renderers and Python hook scripts.
 
 Beyond the Quickstart the README now carries the operational detail a first-run
 needs: a **Settings file location** table mapping each harness starter package
@@ -99,13 +105,16 @@ the workspace and never the user's home directory.
 | --- | --- |
 | The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
 | The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | [pyproject.toml](agents-remember-md/mcp/pyproject.toml) |
-| The Quickstart hands post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | [`c-13-install-and-onboard` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
+| The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | [`c-13-install-and-onboard` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
 | The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [mcp-tools.md](agents-remember-md/docs/reference/mcp-tools.md) |
 | The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
 | The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 
 ## Update History
 
+- 2026-06-06T18:42+02:00: Refined the PyPI-facing quickstart memory so the renderer is an optional convenience script for placeholder replacement and manual replacement is explicit. Verification metadata stays pinned until closeout commits the source change.
+- 2026-06-06T18:19+02:00: Refined the PyPI-facing quickstart memory after renderers dropped the separate workspace-root flag; copied packages now infer the workspace root and accept one `--repo` list. Verification metadata stays pinned until closeout commits the source change.
+- 2026-06-06T16:45+02:00: Updated the PyPI-facing quickstart memory for harness-local `render-starter` scripts and the Claude Code `jq` correction; the setup path now renders copied package placeholders, repository scope, and hook commands before MCP wiring. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-03T19:25+02:00: Corrected the PyPI-facing package README for the 2.3.1 patch release: package-first starter package setup, one restart, `c-13-install-and-onboard` after MCP wiring, and `skills_install()` as maintenance/manual only. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-02T16:35+02:00: Second batch (install-location defaults) — documented the workspace-first settings default: `coordinationRoot` at `<workspace>/ar-coordination/` and the settings file under `<workspace>/<harness-folder>/mcp/`, inside the workspace and never the user's home directory. fix/skill-ref-naming-and-grepai-status branch; verification pinned until closeout.
 - 2026-06-02T11:00+02:00: Removed the stale `tree`/`flat` skill-layout language after confirming `skills_install` has no `layout` arg (removed in 2.0.0) — it copies one flat folder per skill at `<skill-root>/<name>/`. Updated the Logic note and the skill-install invariant; `README.md`, `docs/getting-started.md`, `docs/reference/mcp-tools.md`, and the per-harness install pages were corrected in the same pass (docs/** are outside file-level onboarding). Verification metadata stays pinned until closeout. fix/skills-install-layout-docs branch.

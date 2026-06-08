@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-06T12:28+02:00                     |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-08T08:33+02:00                     |
+| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
+| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,8 +27,13 @@ The README now uses `## Core Features` as the fast product pitch. It frames Agen
 The previous MCP-installs-skills first-run model was replaced with package-first
 harness setup. The root page now keeps one short, harness-agnostic three-step
 quickstart that the agent drives: (1) copy the harness-native starter package
-from the repo, replace placeholders, and use the package-provided skills, hooks,
-rules, instructions, and MCP settings templates; (2) wire the published
+from the repo and render the copied package. The `render-starter` script is a
+convenience that infers the workspace root from the copied harness folder, takes
+one explicit `--repo` list such as `--repo my-app shared-lib`, and fills path,
+repository, and hook-command placeholders; the docs also allow manual
+placeholder replacement. The package provides skills, hooks, rules,
+instructions, MCP settings templates, and rendered hook commands; (2) wire the
+published
 `agents-remember-mcp` package with `uvx agents-remember-mcp@latest --config
 <abs>/agents-remember-settings.json`, then restart the harness once so it loads
 the MCP server and native package files; (3) invoke `c-13-install-and-onboard`,
@@ -89,10 +94,10 @@ The README routes readers into the split documentation tree and gives the curren
 | The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. | L32-L48 | [README.md](agents-remember-md/README.md) |
 | The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. | L50-L66 | [README.md](agents-remember-md/README.md) |
 | The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember-md`) as a live, inspectable by-path onboarding example. | L68-L73 | [README.md](agents-remember-md/README.md) |
-| The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L89-L121 | [README.md](agents-remember-md/README.md) |
+| The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L89-L121 | [README.md](agents-remember-md/README.md) |
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | L123-L135 | [README.md](agents-remember-md/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated package copies, and notes the workspace-first `<workspace>/ar-coordination/` default. | L137-L177 | [README.md](agents-remember-md/README.md) |
-| The README's Status section pins the project at `2.3.3`, describes `2.3.0` as the harness-native starter package release, identifies `2.3.1` as the patch that corrects the MCP package README shown on PyPI, identifies `2.3.2` as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder, and identifies `2.3.3` as the patch that stops/restarts provider watchers around runtime reinstall runner refreshes and normalizes dotted worktree names for Docker-backed provider setup. | L179-L181 | [README.md](agents-remember-md/README.md) |
+| The README's Status section pins the project at `2.4.0`, describes `2.3.0` as the harness-native starter package release, identifies `2.3.1` as the patch that corrects the MCP package README shown on PyPI, identifies `2.3.2` as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder, identifies `2.3.3` as the patch that stops/restarts provider watchers around runtime reinstall runner refreshes and normalizes dotted worktree names for Docker-backed provider setup, and identifies `2.4.0` as the backward-compatible release for harness-local starter renderers, Python hook command rendering, and manual placeholder-replacement docs that remove the legacy Claude Code `jq` misconception. | L179-L181 | [README.md](agents-remember-md/README.md) |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L183-L185 | [README.md](agents-remember-md/README.md) |
 | The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember-md) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L187-L191 | [README.md](agents-remember-md/README.md) |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | L1-L46 | [docs/README.md](agents-remember-md/docs/README.md) |
@@ -108,6 +113,10 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-08T08:33+02:00: Bumped the Status section to `2.4.0` and documented it as the release for harness-local starter renderers, Python hook command rendering, and manual placeholder-replacement docs that remove the legacy Claude Code `jq` misconception. Verification metadata stays pinned until closeout commits the source change.
+- 2026-06-06T18:42+02:00: Refined setup memory so renderers are framed as optional convenience scripts for placeholder replacement; manual replacement is an explicit supported path. Verification metadata stays pinned until closeout commits the source change.
+- 2026-06-06T18:19+02:00: Refined the renderer setup memory after the CLI contract dropped the separate workspace-root flag; copied harness packages now infer the workspace root from their folder and accept one `--repo` list. Verification metadata stays pinned until closeout commits the source change.
+- 2026-06-06T16:45+02:00: Updated the quickstart memory after starter packages gained harness-local `render-starter` scripts; setup now says copy the package, render paths/repositories/hook commands before MCP wiring, then wire MCP and restart. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-06T12:28+02:00: Replaced README `## Core Model` memory with a faster `## Core Features` pitch and added the public `docs/features.md` link; updated references to the new features page and docs index entry. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-04T23:15+02:00: Updated the `2.3.3` Status note to include Docker-safe provider setup naming for dotted worktree names alongside the runtime reinstall watcher rebind patch. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-04T18:52+02:00: Bumped the Status section to `2.3.2` and documented it as the patch that packages the refreshed runtime skills with the C-09 worktree intent approval gate and integration checkout prerequisite reminder. Verification metadata stays pinned until closeout commits the source change.
