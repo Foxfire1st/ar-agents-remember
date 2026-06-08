@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-08T08:33+02:00                     |
-| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
-| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
+| lastUpdated            | 2026-06-08T12:22+02:00                     |
+| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06` |
+| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 coordinator from a pip/uvx install with no source checkout.
 
 The package `version` tracks the release line; at this verification it is
-`2.4.0`. It is the same string `runtime_install` and `server_info` report, and
+`2.4.1`. It is the same string `runtime_install` and `server_info` report, and
 it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### Invariants And Boundaries
@@ -74,6 +74,9 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-06-08T12:22+02:00: Bumped the documented package `version` to `2.4.1`
+  for the runtime asset sync and provider validation patch release; still
+  tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-08T08:33+02:00: Bumped the documented package `version` to `2.4.0` for the harness-local starter renderer and Python hook command rendering release; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-04T23:15+02:00: Bumped the documented package `version` to `2.3.3` for the provider watcher rebind and Docker-safe provider identity patch; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-04T18:52+02:00: Bumped the documented package `version` to `2.3.2` for the runtime skill refresh patch; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.

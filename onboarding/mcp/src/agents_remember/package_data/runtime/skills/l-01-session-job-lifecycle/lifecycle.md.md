@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T15:45+02:00                     |
-| lastVerifiedCommitHash | `d3c641bda41e7220d7543df002dbafa9c0f44ee2` |
-| lastVerifiedCommitDate | 2026-06-04T16:13:23+02:00|
+| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06` |
+| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This companion file is the detailed `l-01-session-job-lifecycle` skill spine: it
 
 ### Logic
 
-Six phases run in order with one branch. `request` receives the developer's raw request and identifies the target repository through `c-08-ar-coordination-context-resolver` skill or MCP authority. `trust checkpoint` runs `context_packet(repo_id="<repo-id>", include_providers=true, include_drift=true)`, reports repo/memory/provider/drift facts, asks the developer about clean-source onboarding drift, treats dirty-source drift as active work-in-progress, and recovers degraded providers through MCP provider/runtime operations before relying on them. `reframe and research` gathers `c-04-retrieval-strategy-router` evidence for a `tasks/AGENTS.md` reframe, gets developer agreement or revision, then performs deeper research whose report uses `deep-research-report-template.md`, ties evidence to supported claims, and lists onboarding docs, semantic queries, code graph queries, source files, and remaining truth gaps. `decide` is the single build-mode branch: research-only exit, or a worktree build that first presents the worktree intent packet and waits for developer approval before `worktree_start`. `build` implements in the worktree with live per-section onboarding and green tools.md checks before each commit. `close` previews the `c-09-git-worktree-manager` skill closeout, stops at the commit gate, runs the external-memory invariant, integrates the worktree branch into the approved source/integration branch before PR-gated landing, cleans up, carries over memory, and maps the ledger to the landed commit including the post-merge merge commit.
+Six phases run in order with one branch. `request` receives the developer's raw request and identifies the target repository through `c-08-ar-coordination-context-resolver` skill or MCP authority. It now states that the upcoming Trust Checkpoint reveals whether the request is related to repositories managed by Agents Remember; if not, the lifecycle can exit early, but later work entering a managed-repo boundary must re-enter the lifecycle. `trust checkpoint` runs `context_packet(repo_id="<repo-id>", include_providers=true, include_drift=true)`, reports repo/memory/provider/drift facts, asks the developer about clean-source onboarding drift, treats dirty-source drift as active work-in-progress, and recovers degraded providers through MCP provider/runtime operations before relying on them. `reframe and research` gathers `c-04-retrieval-strategy-router` evidence for a `tasks/AGENTS.md` reframe, gets developer agreement or revision, then performs deeper research whose report uses `deep-research-report-template.md`, ties evidence to supported claims, and lists onboarding docs, semantic queries, code graph queries, source files, and remaining truth gaps. `decide` is the single build-mode branch: research-only exit, or a worktree build that first presents the worktree intent packet and waits for developer approval before `worktree_start`. `build` implements in the worktree with live per-section onboarding and green tools.md checks before each commit. `close` previews the `c-09-git-worktree-manager` skill closeout, stops at the commit gate, runs the external-memory invariant, integrates the worktree branch into the approved source/integration branch before PR-gated landing, cleans up, carries over memory, and maps the ledger to the landed commit including the post-merge merge commit.
 
 ### Conventions
 
@@ -45,6 +45,7 @@ The spine sequences the core skills and defers landing to the repo git-workflow 
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
+| `request` now allows early exit for requests unrelated to Agents Remember managed repositories and requires lifecycle re-entry when later work enters a managed-repo boundary. | L20-L33 | [lifecycle.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
 | `decide` requires a developer-approved worktree intent packet before `worktree_start`, including branch policy, source/work branches, memory mode, landing path, and risks. | L115-L127 | [lifecycle.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
 | `close` integrates the worktree branch into the approved source/integration branch before PR-gated landing, then defers the post-merge ledger entry to `system/git-workflow.md`. | L170-L180 | [lifecycle.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
 | The entry contract and per-job lenses live alongside this file. | n/a | [SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
@@ -60,6 +61,7 @@ No sibling repository evidence is needed for this lifecycle file.
 
 ## Update History
 
+- 2026-06-08T11:53+02:00: Updated lifecycle-spine onboarding for the Request-phase managed-repo boundary rule and typo-only wording cleanup. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-04T15:45+02:00: Updated the lifecycle onboarding for the new worktree intent gate and close-road wording: decide now requires approval of the intent packet before `worktree_start`, and close integrates into the approved source/integration branch before PR-gated landing.
 - 2026-06-04T14:50+02:00: Updated the lifecycle onboarding for the new companion template: deeper research now links to `deep-research-report-template.md`, keeps required proof categories in the lifecycle, and requires evidence to support specific claims. Verification metadata remains pinned until closeout refreshes it to the code commit.
 - 2026-06-03T03:05+02:00: Updated the lifecycle onboarding for the recast front half: developer request, mandatory context packet with providers and drift, clean-source drift choice point, dirty-source drift handling, provider recovery/reporting, evidence-backed reframe agreement, and deeper research proof requirements. Verification metadata remains pinned until closeout refreshes it to the code commit.
