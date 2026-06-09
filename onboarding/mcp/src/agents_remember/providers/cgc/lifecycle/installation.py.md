@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/installation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00|
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -58,6 +58,8 @@ removed from this lifecycle path.
 | Docker runner image build and command helpers live in the runner module. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — `cgc_status` now derives `indexingState` from a real probe instead of hardcoded `"unknown"`: `cgc_indexing_state_probe()` reports `indexing` when the watcher's container logs show `Performing initial scan` without `Initial scan complete` since container start, otherwise `cgc_graph_content_state()` runs `GRAPH.RO_QUERY` (read-only on purpose — plain `GRAPH.QUERY` auto-creates empty graph keys) counting File nodes: `indexed` / `empty` / `backend-unreachable` / `unknown`. redis-cli exits 0 on error replies, so classification inspects reply text, not just the return code.
 
 - 2026-05-31T12:30+02:00 — Removed the standalone public `cgc_patch` action (patch state now only surfaces as a docker-image field of install/status/doctor); narrowed `layout` params from `Any` to `CgcRuntimeLayout` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Fixed `commands` types in `cgc_install_dry_run_result`/`cgc_install_preflight` to `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T15:39+02:00                     |
-| lastVerifiedCommitHash | `d807926b81c76a98709d387dce36da0127889e24` |
-| lastVerifiedCommitDate | 2026-06-09T17:25:22+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -38,6 +38,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Tool tests assert the public version reported by `ping_payload()`. | [test_tools.py](agents-remember-md/mcp/tests/test_tools.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — `SERVER_VERSION` fallback bumped to 2.5.0 in lockstep with `mcp/pyproject.toml`.
 
 - 2026-06-09T15:39+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.4.2` for the L-01 lifecycle skill consolidation patch release; pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-08T12:22+02:00: Bumped the source-checkout `SERVER_VERSION` fallback

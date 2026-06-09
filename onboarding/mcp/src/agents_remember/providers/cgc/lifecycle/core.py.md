@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -50,6 +50,8 @@ runner image/build/lock/container settings for CGC command execution.
 | CGC Docker runner helpers consume runner image/build/lock/container fields from this layout. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — `cgc_backend_settings()` gained `dataDestination` (default `/var/lib/falkordb/data`, mirroring the GrepAI `dataDestination` pattern): the container path the FalkorDB data volume binds to, fixing graph persistence across container recreates.
 
 - 2026-05-31T12:50+02:00 — Re-typed `layout` params, `layouts` lists, and the `cgc_layout_from_args` / `*_layouts_from_settings` return types from bare `Any` to `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`); behavior-preserving, added a layout-type note to Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-26T12:51+02:00: Updated after CGC layouts gained Docker runner image/build/lock/container fields and stopped creating provider venv directories.

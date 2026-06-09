@@ -99,6 +99,7 @@
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md",
     "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py",
     "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/requirements.txt",
+    "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py",
     "mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
     "mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt",
     "mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt",
@@ -171,6 +172,7 @@
     "mcp/tests/test_cgc_index_concurrency.py",
     "mcp/tests/test_cgc_installation.py",
     "mcp/tests/test_cgc_seed_bundle_path.py",
+    "mcp/tests/test_cgc_watch_guard.py",
     "mcp/tests/test_code_quality_check.py",
     "mcp/tests/test_compact_content.py",
     "mcp/tests/test_config.py",
@@ -206,8 +208,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 351,
-    "fileSidecars": 138,
+    "sourceFilesInScope": 353,
+    "fileSidecars": 140,
     "childRoutes": 11
   },
   "routingTerms": [
@@ -289,8 +291,8 @@
     "git_worktree_manager",
     "governing",
     "grepai",
-    "guards",
-    "guidelines"
+    "guard",
+    "guards"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `provid...",

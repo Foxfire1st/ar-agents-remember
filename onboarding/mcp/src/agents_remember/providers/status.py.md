@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-08T09:57+02:00|
-| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
-| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00|
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -72,6 +72,8 @@ non-destructive next step from either surface.
 | Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — The projection's global `ok` now requires both the raw watchers ok (containers) and the aggregated current-state ok (graph/workspace content); `partial` is set when other providers remain ready. Recovery actions now include a per-repo CGC restart entry for `empty`/`backend-unreachable` targets, and the compact summary gained the additive `indexing` list of busy `"<provider-id>:<repo-id>"` targets (healthy-but-busy: never degrades state/ok). This closes the 2026-06-09 incident where `context_packet` reported green over a 0-node graph for 3 days.
 
 - 2026-06-08T09:57+02:00: Documented skipped-provider summary behavior: when provider details are skipped, compact summary `items` is empty rather than populated from missing current-state rows.
 - 2026-06-04T22:15+02:00 — Documented shared provider restart/rebind recovery guidance for GrepAI `noWorkspace`, including matching compact status and diagnostics recovery actions.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview

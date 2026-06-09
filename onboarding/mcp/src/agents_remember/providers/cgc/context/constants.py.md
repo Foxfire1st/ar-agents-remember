@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/constants.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T13:58+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -43,6 +43,8 @@ marker text. It also reads source `.gitignore` patterns for managed
 | CGC patch application uses marker and snippet constants from this module. | [patches.py](patches.py.md) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — Added `CGC_RUNNER_IMAGE_LAYER_REVISION` ("ar1"), suffixed onto the runner image tag (`<repo>:<cgc-version>-<revision>`); bump it whenever the runner Docker layer changes without a cgc version change, because `runtime_install` skips building image tags that already exist.
 
 - 2026-05-26T13:58+02:00: Updated after adding the shared CGC Docker network constant.
 - 2026-05-26T12:51+02:00: Updated after adding CGC Docker runner image and watcher naming constants.

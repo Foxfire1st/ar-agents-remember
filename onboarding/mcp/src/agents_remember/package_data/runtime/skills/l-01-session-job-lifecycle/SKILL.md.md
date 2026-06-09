@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T15:26+02:00                     |
-| lastVerifiedCommitHash | `d807926b81c76a98709d387dce36da0127889e24` |
-| lastVerifiedCommitDate | 2026-06-09T17:25:22+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 
 ## Purpose
 
@@ -62,6 +62,8 @@ No sibling repository evidence is needed for this lifecycle skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — Trust checkpoint step 5 now tells agents to report the providers summary's `indexing` busy targets to the developer: those providers are healthy but mid-scan, and their results may be partial until the scan completes (paired with the 2.5.0 `ProviderSummary.indexing` field).
 
 - 2026-06-09T15:26+02:00: Consolidated the detailed lifecycle spine from the deleted `lifecycle.md` companion into `SKILL.md`, leaving only `job-variants.md` and `deep-research-report-template.md` as companion files. Updated references and preserved the phase behavior in this sidecar so agents get the complete lifecycle contract from the skill entry file. Verification metadata remains pinned until closeout refreshes it to the code commit.
 - 2026-06-04T15:45+02:00: Updated the entry-contract onboarding for the new worktree intent gate: before `worktree_start`, the model must present repo/build mode, branch policy, source and work branches, memory mode, landing path, and risks for developer approval.

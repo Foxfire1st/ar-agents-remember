@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -97,6 +97,8 @@ No sibling repository boundary is needed to explain this file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — `cgc_repo_state()` degrades a ready repo target whose `indexingState` is `empty` or `backend-unreachable` (readiness reflects graph content, not container liveness; `indexing` stays ready), and `cgc_current_state()` degrades the provider when any repo target is not ready — mirroring the existing GrepAI no-workspace degradation pattern.
 
 - 2026-06-02T16:24+02:00: GrepAI readiness gated on workspace presence — `grepai_workspace_present()` reads the watcher `workspaceStatus` stdout; container-ready GrepAI with no searchable workspace is now `degraded` / `indexingState: noWorkspace`.
 - 2026-05-28T12:32+02:00: Created after provider status gained a current-state projection separate from setup history.

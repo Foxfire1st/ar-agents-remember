@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00|
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -55,6 +55,8 @@ when Docker labels do not show the expected Compose project.
 | Shared Docker and Compose helpers provide port inspection/allocation, data mount checks, FalkorDB ping polling, and unmanaged migration. | [docker_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py); [host_ports.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/host_ports.py); [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — Mount verification (`cgc_backend_runtime_details`, `cgc_backend_remove_mismatched_container`) now checks the mount at the configured backend `dataDestination` instead of hardcoded `/data`; an existing container mounted at the old destination is treated as mismatched and recreated on the next backend start (the built-in migration path for the persistence fix).
 
 - 2026-05-31T12:50+02:00 — Re-typed `layout` params and `layouts` lists from bare `Any` to `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`) across the backend helpers; behavior-preserving, added a layout-type note to Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Fixed `cgc_backend_dry_run_result` `commands` type to `list[dict[str, Any]]` (compose-plan dicts, not arg lists); behavior-preserving (commit `0549b28`).
