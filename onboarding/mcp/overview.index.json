@@ -139,7 +139,6 @@
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report-template.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/job-variants.md",
-    "mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md",
     "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md",
     "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md",
@@ -207,8 +206,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 352,
-    "fileSidecars": 139,
+    "sourceFilesInScope": 351,
+    "fileSidecars": 138,
     "childRoutes": 11
   },
   "routingTerms": [
