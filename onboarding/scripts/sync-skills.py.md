@@ -5,9 +5,9 @@
 | repository             | agents-remember-md             |
 | path                   | `scripts/sync-skills.py`       |
 | doc_type               | `file-level-onboarding`        |
-| lastUpdated            | 2026-06-03T18:58+02:00         |
-| lastVerifiedCommitHash |                               `3015ae75020d45fedc44ab484c3b878fc5248b33`|
-| lastVerifiedCommitDate | 2026-06-03T19:15:43+02:00|
+| lastUpdated            | 2026-06-10T00:40+02:00         |
+| lastVerifiedCommitHash |                               `9911a8054b6314e051b094456a72eeec668c4c84`|
+| lastVerifiedCommitDate | 2026-06-09T22:29:02+02:00|
 | governingOverview      | `overview.md`                  |
 
 ## Governing Overview
@@ -84,5 +84,7 @@ No sibling repository evidence is needed for this helper.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-06-10T00:40+02:00 — `sync_target` now uses crash-safe `replace_tree` (copy to `<target>.ar-sync-new`, rename live target aside, swap in, then remove the old tree; stale staging/retired leftovers are cleaned on re-run), and `extended_length()` applies the Windows `\\?\` prefix so syncs and `--check` walks work past 260-char paths even with `LongPathsEnabled=0`. Replaces the delete-then-copy that gutted `package_data` when a long-path crash hit mid-delete (2026-06-09 incident).
 
 - 2026-06-03T18:58+02:00: Created onboarding for the new skill synchronization helper. Verification metadata is pending until the code commit exists.
