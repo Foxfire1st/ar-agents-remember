@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -18,8 +18,12 @@ coordination context tools.
 ## Code Commentary
 
 `RuntimeInstallResponse` remains flexible because install reports include
-summary and message blocks from installer services. `ResolveContextResponse`
-uses a strict tool envelope and carries the resolved context dictionary.
+summary and message blocks from installer services; since 2.5.1 it also
+declares an optional `reportPath` — the full install detail (watcher rebind
+runs, compose renders, transcripts) is filed under `temp/tool-reports/` while
+the inline payload keeps counts and a compact rebind digest.
+`ResolveContextResponse` uses a strict tool envelope and carries the resolved
+context dictionary.
 
 ## Invariants And Boundaries
 
@@ -37,4 +41,5 @@ uses a strict tool envelope and carries the resolved context dictionary.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — `RuntimeInstallResponse` gains a documented optional `reportPath` field for the S4 response-budget compaction (2.5.1).
 - 2026-05-28T19:52+02:00: Created for runtime and resolver response contracts.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview

@@ -86,5 +86,4 @@ No sibling repository evidence is needed for this helper.
 ## Update History
 
 - 2026-06-10T00:40+02:00 — `sync_target` now uses crash-safe `replace_tree` (copy to `<target>.ar-sync-new`, rename live target aside, swap in, then remove the old tree; stale staging/retired leftovers are cleaned on re-run), and `extended_length()` applies the Windows `\\?\` prefix so syncs and `--check` walks work past 260-char paths even with `LongPathsEnabled=0`. Replaces the delete-then-copy that gutted `package_data` when a long-path crash hit mid-delete (2026-06-09 incident).
-
 - 2026-06-03T18:58+02:00: Created onboarding for the new skill synchronization helper. Verification metadata is pending until the code commit exists.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,11 +22,13 @@ shape: identity, runtime, capability, aggregate state, watcher state, and
 target repo readiness. Their nullable `ok` fields default to `None` because
 skipped or unknown provider checks may omit those fields after public payloads
 are serialized with `exclude_none=True` and later re-validated.
-`ProviderDiagnosticsResponse` is the detail surface that can include
-current-state files, process namespace, raw
-status, and per-provider diagnostics. Provider-native GrepAI and CGC tools use
-flexible response envelopes because their service payloads can expose
-provider-specific fields.
+`ProviderDiagnosticsResponse` is the detail surface for per-provider
+diagnostics; since 2.5.1 its `rawStatus`/`currentState` bodies are filed to a
+temp report and the documented `reportPath` field (also on
+`ProviderWatchersResponse` and `RuntimeInstallResponse`) points at the full
+detail while `currentStateFile` keeps pointing at the on-disk state.
+Provider-native GrepAI and CGC tools use flexible response envelopes because
+their service payloads can expose provider-specific fields.
 
 ## Invariants And Boundaries
 
@@ -48,8 +50,8 @@ provider-specific fields.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — `ProviderDiagnosticsResponse` and `ProviderWatchersResponse` gain documented optional `reportPath` fields for the S4 response-budget compaction (2.5.1).
 - 2026-06-09T22:10+02:00 — `ProviderSummary` gained the additive `indexing: list[str]` field (busy `"<provider-id>:<repo-id>"` targets with an initial scan in progress; empty when idle, default-factory so older payloads still validate). Released in 2.5.0.
-
 - 2026-06-08T09:57+02:00: Made compact provider `ok` fields optional-null defaults so skipped provider summaries survive public payload serialization and re-validation.
 - 2026-05-31T12:30+02:00 — Dropped `integrity` block from diagnostics commentary; `runnerIntegrityFailed` state and `ProviderDiagnosticsResponse.integrity` field removed (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created for compact provider summaries and the dedicated diagnostics response contract.

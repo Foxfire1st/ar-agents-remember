@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastUpdated            | 2026-06-10T06:20+02:00                     |
 | lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
 | lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
 | governingOverview      | `overview.md`                              |
@@ -40,6 +40,14 @@ The tests assert that `cgc visualize` accepts named `--port` and `--context` opt
 New `no_cache` image-build cases assert that both the CGC and GrepAI runner
 image builds insert the `--no-cache` flag in their dry-run command when
 `no_cache=True`, and omit it otherwise.
+
+Persistence-and-readiness coverage (2.5.0) asserts the rendered FalkorDB
+volume binds the backend `dataDestination` (`/var/lib/falkordb/data` by
+default, configurable) and the watcher entrypoint references
+`cgc-watch-guard.py`; it also pins `cgc_graph_content_state` reply-text
+classification (File-node count, auto-created empty key, `LOADING` reply,
+connection failure — exit codes alone are not trusted) and the scan-marker
+`indexing` probe over watcher container logs.
 
 Current-state note: the optional POSIX UID/GID assertion in the GrepAI Compose
 render test resolves `os.getuid` and `os.getgid` with `getattr()` and checks
@@ -99,8 +107,8 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-10T06:20+02:00 — Body-quality pass: merged the 2.5.0 persistence-and-readiness coverage (dataDestination bind, watch-guard entrypoint, reply-text classification, scan-marker probe) into Logic (documentation only).
 - 2026-06-09T22:10+02:00 — Compose render test now asserts the FalkorDB volume binds `/var/lib/falkordb/data` and the watcher entrypoint references `cgc-watch-guard.py`; added tests for configurable `dataDestination`, `cgc_graph_content_state` reply-text classification (count / empty-key / LOADING / connection failure), and the scan-marker `indexing` probe.
-
 - 2026-06-06T17:27+02:00 — Updated after the optional POSIX UID/GID assertion switched to `getattr()` plus `callable()` checks so the provider lifecycle tests type-check cleanly on Windows.
 - 2026-06-02T01:15+02:00 — Watch-live: the GrepAI workspace-state `projectPaths` assertion is now `/grepai/roots/<project_id>` (was `/grepai/runtime/index-roots/...`), and the Compose render test asserts each live memory root is bind-mounted read-write at `/grepai/roots/<project_id>`.
 - 2026-06-01T23:40+02:00 — `test_run_allows_bounded_query_in_ephemeral_process_namespace` now stubs `cgc_query.cgc_backend_status` (saved/restored alongside `cgc_status`) because `cgc run` gates on backend readiness rather than the full provider status. Updated Logic and the process-namespace Repo-Internal References row.

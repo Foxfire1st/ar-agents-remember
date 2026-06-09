@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/installation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00|
+| lastUpdated            | 2026-06-10T06:20+02:00|
 | lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
 | lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
 | governingOverview      | `overview.md`                              |
@@ -29,6 +29,16 @@ initializes runtime layout state, and runs doctor checks through the runner
 image. Status now inspects the watcher container, requires it to be running for
 `ok`, includes normalized container state, reports `lastRefresh` from runtime
 state, and exposes an `indexingState` field for MCP current-state consumers.
+
+`indexingState` comes from a real probe chain, not container liveness alone.
+`cgc_indexing_state_probe()` first checks scan markers in the watcher's
+container logs since container start: `Performing initial scan` without a
+matching `Initial scan complete` means `indexing`. Otherwise
+`cgc_graph_content_state()` queries the backend with `GRAPH.RO_QUERY`, counting
+File nodes in the repo's graph, and classifies the result as `indexed`,
+`empty`, `backend-unreachable`, or `unknown`. A running watcher over an empty
+graph therefore reports `empty`, the state that exposed the 2026-06-09
+silent-data-loss incident instead of masking it.
 Install-all also coordinates backend installation and per-root install results
 from settings. There is no longer a standalone public `patch` action: managed
 patches are baked into the runner image during build, so patch state surfaces
@@ -48,6 +58,11 @@ removed from this lifecycle path.
   modules and must use Docker runner commands.
 - CGC status should not be ok when the runner image exists but the repo watcher
   container is not running.
+- Graph content probes must use `GRAPH.RO_QUERY`, never `GRAPH.QUERY`: a plain
+  query auto-creates an empty graph key as a side effect, so a read probe would
+  manufacture the very `empty` state it is checking for.
+- `redis-cli` exits 0 even when the server returns an error reply, so probe
+  classification must inspect the reply text rather than trust the exit code.
 
 ## Repo-Internal References
 
@@ -59,8 +74,8 @@ removed from this lifecycle path.
 
 ## Update History
 
+- 2026-06-10T06:20+02:00 — Body-quality pass: merged the 2026-06-09 probe-chain mechanics into Logic and promoted the `GRAPH.RO_QUERY` and redis-cli exit-code rules to Invariants (documentation only).
 - 2026-06-09T22:10+02:00 — `cgc_status` now derives `indexingState` from a real probe instead of hardcoded `"unknown"`: `cgc_indexing_state_probe()` reports `indexing` when the watcher's container logs show `Performing initial scan` without `Initial scan complete` since container start, otherwise `cgc_graph_content_state()` runs `GRAPH.RO_QUERY` (read-only on purpose — plain `GRAPH.QUERY` auto-creates empty graph keys) counting File nodes: `indexed` / `empty` / `backend-unreachable` / `unknown`. redis-cli exits 0 on error replies, so classification inspects reply text, not just the return code.
-
 - 2026-05-31T12:30+02:00 — Removed the standalone public `cgc_patch` action (patch state now only surfaces as a docker-image field of install/status/doctor); narrowed `layout` params from `Any` to `CgcRuntimeLayout` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Fixed `commands` types in `cgc_install_dry_run_result`/`cgc_install_preflight` to `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).
 - 2026-05-28T13:40+02:00: Updated after the remaining host-venv patch/status helper functions were removed from CGC lifecycle installation.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `52d901160fc86c0338f343b5fe6e7200457165dd` |
-| lastVerifiedCommitDate | 2026-06-02T03:53:20+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -39,6 +39,11 @@ reconciliation a later worktree would otherwise need.
   official ref; a single landed commit is not enough, so a later unlanded commit
   to the same path cannot be silently carried over as landed.
 - Review-required paths must be selected explicitly before apply.
+- `run_git` must never let children inherit the process stdin: under the stdio
+  MCP transport that descriptor is the protocol request pipe, and inheriting it
+  hung the carryover tools for minutes while their work completed (GitHub #49;
+  proven by `test_mcp_stdio_transport.py`). `stdin=DEVNULL` unless explicit
+  `input_text` is given (`git patch-id`).
 - The MCP facade constrains memory paths to the configured coordination root.
 - MCP controllers should pass `intent_note` to the service API and should not
   route through CLI `--approved` / `--approval-note` parsing.
@@ -56,6 +61,7 @@ reconciliation a later worktree would otherwise need.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — `run_git` now sets `stdin=subprocess.DEVNULL` (or explicit `input`): git children inherited the MCP stdio protocol pipe, the proven root cause of the #49 tool-call hangs (stdio harness A/B: 120s hang pre-fix, 3.4s post-fix).
 - 2026-06-02T04:00+02:00: `apply_carryover_for_request()` now maps an unmapped official code HEAD to the current memory content (new state `ledger-mapped-head`) when there is nothing actionable to carry — automating the post-merge merge-commit ledger entry so the next worktree needs no manual reconciliation; gated so a pending review-required candidate still returns `nothing-to-carryover`. Added `_nothing_to_carry_result()` plus `find_mapping`/`MemoryLedger` imports. (`l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.)
 - 2026-05-31T12:30+02:00 — `evidence_for_path()` now requires ALL source-branch commits touching a path to be ancestors of the official ref for `exact-landed-commit`, not just one (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Narrowed `plan['candidates']` to a `list` before iterating to clear a Pyright not-iterable error; behavior-preserving (commit `0549b28`).

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/isolated.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                         |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01`                         |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -56,6 +56,7 @@ instead of re-pulling it over the network.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — Leaf import replaces the `providers.context` aggregator import (circular-import fix; see grepai/lifecycle/core.py 2026-06-10 entry).
 - 2026-06-01T00:00+02:00 — `_isolated_grepai_base_fields` now derives `workspace` from the workspace-scope `provider_instance_id` (not the worktree instance id) so the seeded Postgres clone is reused; `_isolated_grepai_embedder` now sets `seedFromContainer` to the workspace Ollama container name. Updated Code Commentary Logic.
 - 2026-05-31T12:50+02:00 — Source dropped the file-local `_grepai_provider()` helper and now resolves the GrepAI block through the shared `setup_common.provider_settings()` (import switched from `context_providers` to `provider_settings`); behaviour-preserving, Logic prose updated to name the shared helper (1.0.0 review remediation).
 - 2026-05-28T12:32+02:00: Updated after isolated GrepAI settings moved watch logs under `logs/providers/`.

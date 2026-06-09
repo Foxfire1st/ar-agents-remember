@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,6 +57,7 @@ only when Docker labels do not show the expected Compose project.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — Leaf imports replace the `providers.context` aggregator import (circular-import fix; see core.py 2026-06-10 entry).
 - 2026-05-31T12:50+02:00 — `layout` params (and the `grepai_backend_start_context` return tuple) re-typed `Any` -> `GrepaiRuntimeLayout` across the backend helpers; behavior-preserving type-only tightening, added an Invariants note that `layout` is the shared `GrepaiRuntimeLayout` dataclass (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `grepai_backend_dry_run_result` `commands` -> `list[dict[str, Any]]`; `raise_postgres_timeout` -> `NoReturn`; behavior-preserving (commit `0549b28`).
 - 2026-05-28T12:32+02:00: Updated after GrepAI backend status began including normalized container-state summaries.

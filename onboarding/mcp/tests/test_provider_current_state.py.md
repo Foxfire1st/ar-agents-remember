@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastUpdated            | 2026-06-10T06:20+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -43,6 +43,16 @@ watcher's searchable workspace and asserts GrepAI reports `degraded` with
 mocks the same no-workspace status through the provider-status surface and
 asserts both compact status and diagnostics return the
 `provider_watchers(action='restart')` recovery action.
+
+Readiness coverage from the 2.5.0/2.5.1 cycles pins the content-gated `ok`
+contract: an `empty` CGC graph degrades the repo target, the provider, the
+aggregate, and the global packet `ok` (with `partial` when other providers
+remain ready), and yields a per-repo CGC restart recovery action; the
+`indexing` transient stays ready at every level and instead feeds the compact
+summary's `indexing` busy-target list. A `restarting` (crash-looping) watcher
+container is not ready and degrades provider and global `ok`, and GrepAI
+`initialScan` log markers map to `indexing`/`indexed`/`unknown` without
+degrading readiness.
 
 ### Conventions
 
@@ -97,8 +107,9 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-10T06:20+02:00 — Body-quality pass: merged the 2.5.0/2.5.1 readiness coverage (content-gated ok, indexing busy list, restarting watcher, scan markers) into Logic (documentation only).
+- 2026-06-10T05:30+02:00 — Added tests: restarting (crash-looping) watcher is not ready and degrades the provider/global ok; GrepAI `initialScan` markers map to indexing/indexed/unknown without degrading readiness; GrepAI indexing feeds the summary busy list.
 - 2026-06-09T22:10+02:00 — Added tests for empty-graph degradation (repo target, provider, aggregate, and global packet `ok`/`partial`), the `indexing` transient staying ready at every level, the CGC per-repo restart recovery action, and the summary `indexing` busy-target list.
-
 - 2026-06-04T22:15+02:00: Documented the provider-status regression that returns restart/rebind recovery guidance for GrepAI `noWorkspace` from both compact status and diagnostics.
 - 2026-06-02T16:24+02:00: Added the `test_current_state_reports_grepai_no_workspace_as_degraded` regression (GrepAI reports `degraded` / `indexingState: noWorkspace` when the watcher has no searchable workspace) and noted that the ready fixture now includes a healthy `workspaceStatus`; reflected both in the Logic narrative and repo-internal references.
 - 2026-05-28T19:52+02:00: Updated after provider current-state integration tests moved full current-state payload assertions to provider diagnostics.

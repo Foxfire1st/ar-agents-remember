@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00|
+| lastUpdated            | 2026-06-10T06:20+02:00|
 | lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
 | lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
 | governingOverview      | `overview.md`                              |
@@ -29,7 +29,11 @@ CGC runner image, records provider state, removes watcher containers on stop,
 marks stopped state, and aggregates start/stop results across configured roots.
 Watcher startup renders the Compose override with backend host ports from the
 backend start result so repeated settings-backed starts keep the same
-FalkorDB/browser port mappings.
+FalkorDB/browser port mappings. Every watcher `up` (start, start-all, and
+their dry-run plans) passes `--remove-orphans`: the render always lists every
+configured watcher service, so Compose removes exactly the watcher containers
+of repos that were dropped from MCP settings instead of leaving them running
+against the shared backend.
 
 `cgc_index_concurrency(layout_count)` bounds how many repos reindex
 simultaneously. Each CGC indexer self-throttles to ~10 in-flight FalkorDB
@@ -52,6 +56,9 @@ default). The function returns at least 1 and at most `layout_count`.
   container name.
 - Watcher `up` should render dependency backend ports from the current start
   result when available.
+- `--remove-orphans` is safe here only because the render is always complete:
+  if a future change renders a partial service set, the flag would delete the
+  watchers that were merely omitted.
 - The parallel reindex fan-in is capped by `cgc_index_concurrency` (default 2)
   to prevent FalkorDB query queue saturation on large workspaces; override with
   `AR_CGC_INDEX_CONCURRENCY` on machines with more resources.
@@ -68,8 +75,8 @@ default). The function returns at least 1 and at most `layout_count`.
 
 ## Update History
 
+- 2026-06-10T06:20+02:00 — Body-quality pass: merged the `--remove-orphans` semantics into Logic and added the complete-render precondition to Invariants (documentation only).
 - 2026-06-09T22:10+02:00 — All watcher `up` invocations (start, start-all, and their dry-run plans) now pass `--remove-orphans`; the render always contains every configured watcher service, so Compose removes exactly the watcher containers of repos no longer in MCP settings.
-
 - 2026-06-01T00:00+02:00 — Added `cgc_index_concurrency` (default 2, `AR_CGC_INDEX_CONCURRENCY` override) to bound `cgc_parallel_layout_action_results` fan-in and prevent FalkorDB queue saturation; updated Logic, added fan-in Invariant, added cross-references.
 - 2026-05-31T12:30+02:00 — Removed already-running watcher detection from start preflight: `cgc_running_process_result` (and its `cgc_watcher_inspect` use / `alreadyRunning` short-circuit) deleted; layout params now typed `CgcRuntimeLayout` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: `cgc_backend_all_error` now accepts `dict | None` with a `None` guard (closes a latent crash when start-all returns a doctor-failure); extracted `_cgc_start_all_live` to reduce `cgc_start_all` complexity; behavior-preserving (commits `0549b28`, `e3dab63`).

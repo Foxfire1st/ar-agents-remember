@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-05-30T21:33+02:00|
-| lastVerifiedCommitHash | `72789a48dc47acf417725ae051eaa123cadeaa0b`                                      |
-| lastVerifiedCommitDate | 2026-06-02T04:33:30+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01`                                      |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -26,7 +26,12 @@ arguments to their controllers (`build_context_packet`, `run_runtime_install`,
 `resolve_context_tool`, `skills_install_tool`). `server_info_payload` reports
 `PUBLIC_TOOLS`/`RESERVED_TOOLS`. `runtime_install_payload` forwards a full
 `RuntimeInstallRequest` — `dry_run`, `include_benchmarks`, `install_provider_deps`
-(default `True`), and `no_cache` (default `False`) — and `skills_install_payload`
+(default `True`), and `no_cache` (default `False`) — then response-budgets the
+result (S4, 2.5.1): the full install detail goes to a temp report via
+`write_tool_report`, and `compact_runtime_install_payload` returns summary
+counts, a rebind digest (`{attempted, ok, phases:[{phase, action, ok}]}`), the
+first 5 messages plus an overflow marker, and `reportPath` (the rebind runs
+were historically >50k chars inline). `skills_install_payload`
 forwards `overwrite`/`archive_existing` alongside `dry_run` (the installer is a
 flat copy, so there is no layout argument).
 
@@ -43,6 +48,7 @@ flat copy, so there is no layout argument).
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — `runtime_install_payload` files the full install detail via `write_tool_report` and returns `compact_runtime_install_payload`: summary counts, rebind digest `{attempted, ok, phases}`, first 5 messages + overflow marker, `reportPath` (the rebind runs were historically >50k chars).
 - 2026-06-02T04:40+02:00: `skills_install_payload` dropped the `layout` argument after the installer became a single flat copy (U-01-core-skills dissolved). `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.
 - 2026-05-30T21:33+02:00: Documented `runtime_install_payload` forwarding the full `RuntimeInstallRequest` including `install_provider_deps` and the new `no_cache` flag, and `skills_install_payload`'s `layout`/`overwrite`/`archive_existing` forwarding. Verified against `8927f03`.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the install payload builders.

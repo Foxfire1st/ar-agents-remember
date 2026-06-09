@@ -91,6 +91,7 @@
     "mcp/src/agents_remember/mcp/compact_content.py",
     "mcp/src/agents_remember/mcp/config.py",
     "mcp/src/agents_remember/mcp/server.py",
+    "mcp/src/agents_remember/mcp/tool_reports.py",
     "mcp/src/agents_remember/memory/baseline.py",
     "mcp/src/agents_remember/memory/carryover.py",
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md",
@@ -185,6 +186,7 @@
     "mcp/tests/test_install_runtime.py",
     "mcp/tests/test_log_capture.py",
     "mcp/tests/test_markdown_settings.py",
+    "mcp/tests/test_mcp_stdio_transport.py",
     "mcp/tests/test_memory_quality.py",
     "mcp/tests/test_missing_onboarding.py",
     "mcp/tests/test_models.py",
@@ -198,10 +200,13 @@
     "mcp/tests/test_provider_worktree_routing.py",
     "mcp/tests/test_resolver_parity.py",
     "mcp/tests/test_route_index.py",
+    "mcp/tests/test_seed_timeouts.py",
     "mcp/tests/test_starter_renderers.py",
+    "mcp/tests/test_subprocess_hygiene.py",
     "mcp/tests/test_sync_runtime.py",
     "mcp/tests/test_sync_scripts.py",
     "mcp/tests/test_tokens.py",
+    "mcp/tests/test_tool_response_budgets.py",
     "mcp/tests/test_tool_response_conformance.py",
     "mcp/tests/test_tools.py",
     "mcp/tests/test_worktree_abandon.py",
@@ -210,8 +215,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 355,
-    "fileSidecars": 142,
+    "sourceFilesInScope": 360,
+    "fileSidecars": 147,
     "childRoutes": 11
   },
   "routingTerms": [
@@ -230,6 +235,7 @@
     "bootstrap",
     "boundary",
     "branch",
+    "budgets",
     "bundle",
     "calculator",
     "capture",
@@ -293,8 +299,7 @@
     "git_worktree_manager",
     "governing",
     "grepai",
-    "guard",
-    "guards"
+    "guard"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `provid...",
@@ -371,8 +376,8 @@
       "config",
       "server.py",
       "server",
-      "baseline.py",
-      "baseline"
+      "tool_reports.py",
+      "tool_reports"
     ]
   },
   "fallback": {

@@ -36,5 +36,4 @@ No external Domain Documentation source is configured for this memory repo.
 ## Update History
 
 - 2026-06-10T00:40+02:00 — Added `longest_tracked_path_length()` (`git ls-tree -r --name-only <ref>` with HEAD fallback, 0 for unborn repos) for the worktree-start Windows long-path preflight.
-
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.
