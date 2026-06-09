@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T22:15+02:00                     |
-| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
-| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -96,6 +96,8 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — Added tests for empty-graph degradation (repo target, provider, aggregate, and global packet `ok`/`partial`), the `indexing` transient staying ready at every level, the CGC per-repo restart recovery action, and the summary `indexing` busy-target list.
 
 - 2026-06-04T22:15+02:00: Documented the provider-status regression that returns restart/rebind recovery guidance for GrepAI `noWorkspace` from both compact status and diagnostics.
 - 2026-06-02T16:24+02:00: Added the `test_current_state_reports_grepai_no_workspace_as_degraded` regression (GrepAI reports `degraded` / `indexingState: noWorkspace` when the watcher has no searchable workspace) and noted that the ready fixture now includes a healthy `workspaceStatus`; reflected both in the Logic narrative and repo-internal references.

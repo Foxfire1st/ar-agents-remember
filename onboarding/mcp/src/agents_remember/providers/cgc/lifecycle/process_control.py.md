@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00|
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00|
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -67,6 +67,8 @@ default). The function returns at least 1 and at most `layout_count`.
 | Unit tests protect the cap defaults, env-override, and boundary conditions. | [test_cgc_index_concurrency.py](agents-remember-md/mcp/tests/test_cgc_index_concurrency.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — All watcher `up` invocations (start, start-all, and their dry-run plans) now pass `--remove-orphans`; the render always contains every configured watcher service, so Compose removes exactly the watcher containers of repos no longer in MCP settings.
 
 - 2026-06-01T00:00+02:00 — Added `cgc_index_concurrency` (default 2, `AR_CGC_INDEX_CONCURRENCY` override) to bound `cgc_parallel_layout_action_results` fan-in and prevent FalkorDB queue saturation; updated Logic, added fan-in Invariant, added cross-references.
 - 2026-05-31T12:30+02:00 — Removed already-running watcher detection from start preflight: `cgc_running_process_result` (and its `cgc_watcher_inspect` use / `alreadyRunning` short-circuit) deleted; layout params now typed `CgcRuntimeLayout` (1.0.0 review remediation).

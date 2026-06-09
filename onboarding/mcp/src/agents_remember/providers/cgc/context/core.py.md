@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00|
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -68,6 +68,8 @@ otherwise reject.
 | Lifecycle CGC modules use these layout and cleanup helpers before running or installing CGC. | [core.py](../lifecycle/core.py.md); [installation.py](../lifecycle/installation.py.md); [process_control.py](../lifecycle/process_control.py.md); [runner.py](../lifecycle/runner.py.md) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — `_cgc_runner_image()` now appends `CGC_RUNNER_IMAGE_LAYER_REVISION` to the tag (`agents-remember/codegraphcontext:0.4.10-ar1`) so Docker-layer-only changes (e.g. the watch-guard entrypoint) trigger image rebuilds on install.
 
 - 2026-05-29T18:35+02:00: Split `core.py` (668->522): extracted `materialize.py` (runtime dir/config writers) and `cleanup.py` (stale-artifact removal); `core.py` keeps the `CgcRuntimeLayout` dataclass, settings-derived construction, and `to_container_path` (commit `01f503d`).
 - 2026-05-29T07:19+02:00: Updated after adding `to_container_path`, the `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=...)` so CGC bind-mount targets, working dir, and container environment render as driveless POSIX paths on Windows hosts.

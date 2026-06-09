@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T15:39+02:00                     |
-| lastVerifiedCommitHash | `d807926b81c76a98709d387dce36da0127889e24` |
-| lastVerifiedCommitDate | 2026-06-09T17:25:22+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,6 +73,8 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 | `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — Version bumped to 2.5.0 for the CGC persistence/readiness release (FalkorDB `dataDestination` mount fix, graph-content readiness probe with `indexing` state, degraded-state propagation, summary `indexing` list, watcher self-heal entrypoint, `--remove-orphans` hygiene).
 
 - 2026-06-09T15:39+02:00: Bumped the documented package `version` to `2.4.2` for the L-01 lifecycle skill consolidation patch release; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
 - 2026-06-08T12:22+02:00: Bumped the documented package `version` to `2.4.1`

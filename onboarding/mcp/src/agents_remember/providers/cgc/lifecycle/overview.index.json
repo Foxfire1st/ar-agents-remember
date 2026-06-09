@@ -85,7 +85,7 @@
       "FalkorDB",
       "mcp/src/agents_remember/providers/cgc/lifecycle/",
       "route-local-overview",
-      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
+      "04f736d5fdaf23002b0e4172b7475a1108da0d9e",
       "/overview.md",
       "cgc/lifecycle/",
       "providers/cgc/lifecycle/",
@@ -100,16 +100,16 @@
       "lastUpdated",
       "T12",
       "lastVerifiedCommitHash",
-      "f28a2035f06f8bc33f11b0617b41cda1122c1f",
+      "f736d5fdaf23002b0e4172b7475a1108da0d9e",
       "lastVerifiedCommitDate",
-      "T13",
+      "T22",
       "governingOverview",
       "CodeGraphContext",
       "GrepAI",
       "MCP",
+      "T13",
       "T21",
-      "T19",
-      "cgc_"
+      "T19"
     ]
   },
   "fallback": {

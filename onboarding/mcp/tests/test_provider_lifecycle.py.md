@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-06T17:27+02:00                     |
-| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
-| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -98,6 +98,8 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — Compose render test now asserts the FalkorDB volume binds `/var/lib/falkordb/data` and the watcher entrypoint references `cgc-watch-guard.py`; added tests for configurable `dataDestination`, `cgc_graph_content_state` reply-text classification (count / empty-key / LOADING / connection failure), and the scan-marker `indexing` probe.
 
 - 2026-06-06T17:27+02:00 — Updated after the optional POSIX UID/GID assertion switched to `getattr()` plus `callable()` checks so the provider lifecycle tests type-check cleanly on Windows.
 - 2026-06-02T01:15+02:00 — Watch-live: the GrepAI workspace-state `projectPaths` assertion is now `/grepai/roots/<project_id>` (was `/grepai/runtime/index-roots/...`), and the Compose render test asserts each live memory root is bind-mounted read-write at `/grepai/roots/<project_id>`.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-08T09:57+02:00                     |
-| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
-| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -47,6 +47,8 @@ provider-specific fields.
 | Provider controller functions expose provider status, diagnostics, watcher, GrepAI, and CGC operations. | [provider_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — `ProviderSummary` gained the additive `indexing: list[str]` field (busy `"<provider-id>:<repo-id>"` targets with an initial scan in progress; empty when idle, default-factory so older payloads still validate). Released in 2.5.0.
 
 - 2026-06-08T09:57+02:00: Made compact provider `ok` fields optional-null defaults so skipped provider summaries survive public payload serialization and re-validation.
 - 2026-05-31T12:30+02:00 — Dropped `integrity` block from diagnostics commentary; `runnerIntegrityFailed` state and `ProviderDiagnosticsResponse.integrity` field removed (1.0.0 review remediation).

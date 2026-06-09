@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T15:39+02:00                     |
-| lastVerifiedCommitHash | `d807926b81c76a98709d387dce36da0127889e24` |
-| lastVerifiedCommitDate | 2026-06-09T17:25:22+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -115,6 +115,8 @@ The README describes external memory in general terms, but this file-level onboa
 | No meaningful cross-repo references found for the README itself. | n/a | n/a |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — Status section bumped to 2.5.0 with the CGC durability/readiness release sentence (FalkorDB host-path persistence, graph-content readiness states, degraded-packet propagation, `indexing` summary list, watcher self-heal, orphan cleanup).
 
 - 2026-06-09T15:39+02:00: Bumped the Status section to `2.4.2` and documented it as the patch packaging the consolidated `l-01-session-job-lifecycle` skill, where the complete lifecycle spine now lives in `SKILL.md` instead of a separate `lifecycle.md` companion. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-08T12:22+02:00: Bumped the Status section to `2.4.1` and documented

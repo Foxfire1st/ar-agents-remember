@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `f20f75e3e3c6da0c56a6ccfdedfa9d859d7329b7` |
-| lastVerifiedCommitDate | 2026-05-27T18:11:35+02:00|
+| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
+| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -75,6 +75,8 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 | CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
 
 ## Update History
+
+- 2026-06-09T22:10+02:00 — CGC backend default settings gained `dataDestination: /var/lib/falkordb/data` (the container path FalkorDB v4 writes to), mirroring the GrepAI/Postgres `dataDestination` pattern; the data volume now binds there instead of `/data`.
 
 - 2026-05-28T12:32+02:00: Updated after generated provider log roots moved under the central `logs/providers/` tree.
 - 2026-05-26T13:58+02:00: Updated after generated CGC settings gained the shared backend Docker network entry.
