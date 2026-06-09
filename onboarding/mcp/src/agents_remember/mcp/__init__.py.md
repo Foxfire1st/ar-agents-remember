@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-08T12:22+02:00                     |
-| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06` |
-| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
+| lastUpdated            | 2026-06-09T15:39+02:00                     |
+| lastVerifiedCommitHash | `d807926b81c76a98709d387dce36da0127889e24` |
+| lastVerifiedCommitDate | 2026-06-09T17:25:22+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,7 +20,7 @@ builders.
 The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
 derived from the installed package metadata via
 `importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
-the single source of truth; a `PackageNotFoundError` fallback hardcodes `2.4.1`
+the single source of truth; a `PackageNotFoundError` fallback hardcodes `2.4.2`
 for source checkouts without an install. Payload builders in `mcp.tools` use
 those constants for `ping` and `server_info`, so the version no longer needs a
 manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
@@ -39,6 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-09T15:39+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.4.2` for the L-01 lifecycle skill consolidation patch release; pyproject remains the single source of truth. Verification metadata pinned until closeout.
 - 2026-06-08T12:22+02:00: Bumped the source-checkout `SERVER_VERSION` fallback
   to `2.4.1` for the runtime asset sync and provider validation patch release;
   pyproject remains the single source of truth. Verification metadata pinned
