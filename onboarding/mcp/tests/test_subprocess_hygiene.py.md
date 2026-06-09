@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_subprocess_hygiene.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
-| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01`|
-| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
+| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879`|
+| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
