@@ -24,11 +24,12 @@
     "AGENTS.md",
     "README.md",
     "pyproject.toml",
+    "scripts/sync-runtime.py",
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 792,
-    "fileSidecars": 4,
+    "sourceFilesInScope": 871,
+    "fileSidecars": 5,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -37,6 +38,7 @@
     "mcp",
     "pyproject",
     "readme",
+    "runtime",
     "scripts",
     "skills",
     "sync",
@@ -51,6 +53,7 @@
       "README.md",
       "pyproject.toml",
       "scripts",
+      "scripts/sync-runtime.py",
       "scripts/sync-skills.py"
     ],
     "anchorHints": [
@@ -60,6 +63,8 @@
       "README",
       "pyproject.toml",
       "pyproject",
+      "sync-runtime.py",
+      "sync-runtime",
       "sync-skills.py",
       "sync-skills",
       "mcp",
@@ -77,7 +82,7 @@
       "agents_remember",
       "package_data",
       "repo-overview",
-      "d92bc99c82eaa3e8d89ee9352075def2c66c1235",
+      "19b33573a71c8634acfb836d4245f1ead8594f06",
       "agents-remember-md",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -99,9 +104,7 @@
       "onboarding/",
       "c-05-create-or-update-onboarding-files",
       "ar-coordination/memory-repos/ar-<repo>/",
-      "c-00-initialize-memory-repo",
-      "kernel/memory_ledger.py",
-      "ContextPacketV2"
+      "c-00-initialize-memory-repo"
     ]
   },
   "fallback": {
