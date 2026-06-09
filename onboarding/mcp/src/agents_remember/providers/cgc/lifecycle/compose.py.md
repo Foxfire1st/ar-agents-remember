@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastUpdated            | 2026-06-10T06:20+02:00                     |
 | lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
 | lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
 | governingOverview      | `overview.md`                              |
@@ -32,7 +32,10 @@ committed package Docker asset, and renders one watcher service fragment per
 configured repository root. The FalkorDB data volume binds the host
 `backend_data_root` to the backend settings' `dataDestination` (default
 `/var/lib/falkordb/data`, where FalkorDB v4 actually writes) — binding `/data`
-left graph data in the ephemeral container layer, lost on every recreate. Backend port mappings go through the shared Compose
+left graph data in the ephemeral container layer, lost on every recreate. Each
+watcher service runs the `cgc-watch-guard.py` entrypoint, which clears a
+poisoned empty graph key for its repo before exec'ing `cgc watch` (and keeps a
+populated graph untouched). Backend port mappings go through the shared Compose
 helper so configured `auto` host ports render as Compose's empty
 published-port syntax instead of the literal string `auto`. User mapping is
 optional and only emitted on hosts with UID/GID support; it is now produced by
@@ -100,6 +103,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-06-10T06:20+02:00 — Body-quality pass: merged the `cgc-watch-guard.py` watcher entrypoint into Logic alongside the existing `dataDestination` prose (documentation only).
 - 2026-06-09T22:10+02:00 — FalkorDB data volume now binds to the configurable backend `dataDestination` (default `/var/lib/falkordb/data`) instead of hardcoded `/data`, fixing graph data loss on container recreate; the watcher service template gained a `cgc-watch-guard.py` entrypoint that clears poisoned empty graph keys before exec'ing `cgc watch`.
 - 2026-05-31T12:50+02:00 — Source consolidated host user mapping: local `cgc_user()` / `cgc_user_block()` and the `os` import were removed, `RUNNER_USER_BLOCK` / `WATCHER_USER_BLOCK` now use the shared `host_user_block()` imported from `compose_runtime`, and `layouts` plus the layout-taking helpers are now typed `CgcRuntimeLayout` (imported from `core`) instead of `Any`; corrected the Logic section's user-mapping prose to name the shared helper (1.0.0 review remediation).
 - 2026-05-29T07:19+02:00: Updated after runner/watcher bind-mount targets,

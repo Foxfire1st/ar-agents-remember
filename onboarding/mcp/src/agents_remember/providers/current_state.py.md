@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -44,8 +44,16 @@ GrepAI readiness is additionally gated on workspace presence.
 (not just its exit code, because `grepai workspace status` exits 0 even when it
 prints "No workspaces configured"). `grepai_current_state()` downgrades a
 container-ready GrepAI to `degraded` when no searchable workspace exists, and
-`grepai_indexing_state()` reports `noWorkspace` in that case (`unknown` when a
-workspace is present but indexing progress is unreported).
+`grepai_indexing_state()` reports `noWorkspace` in that case. With a workspace
+present, it maps the watcher's `initialScan` log-marker probe (provided by
+`grepai/lifecycle/runner.py`) to `indexing` (scan in progress) or `indexed`
+(scan complete), falling back to `unknown` only when markers are absent —
+parity with the CGC graph probe.
+
+Crash-looping containers are not live: `resource_state()` returns `failed` for
+`containerState == "restarting"` (Docker reports Running=true between
+restarts), and both the CGC `watcherUp` and GrepAI `watcher_up` derivations
+exclude restarting containers.
 
 ### Invariants And Boundaries
 
@@ -57,14 +65,17 @@ workspace is present but indexing progress is unreported).
   facts produced by lifecycle watchers.
 - GrepAI is only `ready` when its watcher reports a real, searchable workspace;
   container liveness alone is not readiness. A missing/empty workspace is
-  `degraded` with `indexingState: noWorkspace`. Indexing progress for a present
-  workspace stays conservative (`unknown`) until the provider exposes a precise
-  signal.
+  `degraded` with `indexingState: noWorkspace`.
+- A `restarting` (crash-looping) container must never count as a ready
+  watcher — observed during the 2.5.0 rollout, when a crash loop surfaced as
+  `running: true` → `ready`.
+- `indexing` is healthy-but-busy at every level: it must not degrade
+  state/ok; it feeds the compact summary busy list instead.
 
 ### Todos
 
-- Replace GrepAI `unknown` indexing state with real progress when the watcher
-  returns an auditable indexing signal.
+No open file-local todos (the former "replace GrepAI unknown indexing state"
+todo is resolved by the `initialScan` marker probe).
 
 ## Docs References
 
@@ -98,7 +109,7 @@ No sibling repository boundary is needed to explain this file.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — `grepai_indexing_state` maps the watcher's `initialScan` markers to `indexing`/`indexed` (parity with CGC); `resource_state` treats `restarting` containers as failed and CGC/GrepAI watcher-up checks exclude crash loops (a restarting container reported Running=true and looked ready during the 2.5.0 rollout).
 - 2026-06-09T22:10+02:00 — `cgc_repo_state()` degrades a ready repo target whose `indexingState` is `empty` or `backend-unreachable` (readiness reflects graph content, not container liveness; `indexing` stays ready), and `cgc_current_state()` degrades the provider when any repo target is not ready — mirroring the existing GrepAI no-workspace degradation pattern.
-
 - 2026-06-02T16:24+02:00: GrepAI readiness gated on workspace presence — `grepai_workspace_present()` reads the watcher `workspaceStatus` stdout; container-ready GrepAI with no searchable workspace is now `degraded` / `indexingState: noWorkspace`.
 - 2026-05-28T12:32+02:00: Created after provider status gained a current-state projection separate from setup history.

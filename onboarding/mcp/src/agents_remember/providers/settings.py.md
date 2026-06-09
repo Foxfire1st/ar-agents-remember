@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -38,9 +38,13 @@ backend data roots under `providers/data`, central log roots under
 `logs/providers`, installed requirement paths, Docker backend image metadata,
 and watcher log paths.
 The generated CodeGraphContext settings include a Docker runtime/runner block
-for the `agents-remember/codegraphcontext:<pin>` image, image build root, image
-lock file, watcher container name template, and an `ar-cgc-code` backend network
-entry; they no longer include a managed provider venv root.
+whose image comes from the single `cgc_runner_image()` derivation
+(`repository:version-layerrevision`, imported from `cgc/context/core.py`) —
+deriving it independently here is what shipped the 2.5.0 upgrade-path bug
+where cached-image hosts kept a guard-less image (GitHub #50) — plus image
+build root, image lock file, watcher container name template, and an
+`ar-cgc-code` backend network entry; they no longer include a managed provider
+venv root.
 
 `write_lifecycle_settings()` writes that generated object to a temporary JSON
 file for lower-level lifecycle functions that already accept `--from-settings`.
@@ -76,8 +80,8 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — CGC runner image comes from the single `cgc_runner_image()` derivation (GitHub #50): the independent repository:version f-string here dropped the image layer revision, so upgrading hosts kept a cached guard-less image under the guard entrypoint.
 - 2026-06-09T22:10+02:00 — CGC backend default settings gained `dataDestination: /var/lib/falkordb/data` (the container path FalkorDB v4 writes to), mirroring the GrepAI/Postgres `dataDestination` pattern; the data volume now binds there instead of `/data`.
-
 - 2026-05-28T12:32+02:00: Updated after generated provider log roots moved under the central `logs/providers/` tree.
 - 2026-05-26T13:58+02:00: Updated after generated CGC settings gained the shared backend Docker network entry.
 - 2026-05-26T12:51+02:00: Updated after `codegraphcontext-code` lifecycle settings switched from host venv fields to Docker runner image/container settings.

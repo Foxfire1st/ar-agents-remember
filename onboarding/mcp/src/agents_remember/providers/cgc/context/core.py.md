@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00|
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -30,7 +30,13 @@ derives Docker runner image/build/lock/container paths, tracks the backend
 container name and shared Docker network name for runner connectivity, writes
 managed `.cgcignore`, config, and `.env` files, detects source-tree CGC
 artifacts, and removes only generated or obsolete provider runtime artifacts
-inside validated provider roots. Runtime layout no longer exposes a host
+inside validated provider roots. The public `cgc_runner_image()` is the single
+source of truth for the runner image tag
+(`repository:version-layerrevision`); `providers/settings.py` and a regression
+test depend on it, because an independent derivation there shipped the 2.5.0
+upgrade-path bug where cached-image hosts kept a guard-less image (GitHub #50).
+Bump `CGC_RUNNER_IMAGE_LAYER_REVISION` whenever the runner Docker layer changes
+without a cgc version change. Runtime layout no longer exposes a host
 `venvRoot` or CGC executable path, and provider settings that still define
 `venvRoot` are rejected as stale configuration.
 
@@ -69,8 +75,8 @@ otherwise reject.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — `_cgc_runner_image` is now public `cgc_runner_image()` with a docstring naming it the single source of truth (GitHub #50); `providers/settings.py` and a regression test depend on it.
 - 2026-06-09T22:10+02:00 — `_cgc_runner_image()` now appends `CGC_RUNNER_IMAGE_LAYER_REVISION` to the tag (`agents-remember/codegraphcontext:0.4.10-ar1`) so Docker-layer-only changes (e.g. the watch-guard entrypoint) trigger image rebuilds on install.
-
 - 2026-05-29T18:35+02:00: Split `core.py` (668->522): extracted `materialize.py` (runtime dir/config writers) and `cleanup.py` (stale-artifact removal); `core.py` keeps the `CgcRuntimeLayout` dataclass, settings-derived construction, and `to_container_path` (commit `01f503d`).
 - 2026-05-29T07:19+02:00: Updated after adding `to_container_path`, the `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=...)` so CGC bind-mount targets, working dir, and container environment render as driveless POSIX paths on Windows hosts.
 - 2026-05-28T13:40+02:00: Updated after CGC layout removed host venv path fields and began rejecting stale `venvRoot` provider settings.

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T02:00+02:00                     |
-| lastVerifiedCommitHash | `72789a48dc47acf417725ae051eaa123cadeaa0b` |
-| lastVerifiedCommitDate | 2026-06-02T04:33:30+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -86,6 +86,7 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — Diagnostics/watchers tool tests assert the S4 compact wire shape: rawStatus/currentState bodies absent inline, present in the `reportPath` file, `currentStateFile` still on disk.
 - 2026-06-02T04:40+02:00: Updated the skills_install payload tests for the flat installer — dropped the `layout == "tree"` assertion and replaced the legacy-namespace-symlink test with a per-skill flat-destination symlink-replacement test. `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.
 - 2026-06-02T02:00+02:00 — Added `test_grepai_search_resolves_uppercase_repo_id_to_normalized_project`: a configured uppercase repo id (`Cobalt`) is queried as `--project cobalt` and accepted in any casing. Updated Code Commentary.
 - 2026-05-31T12:50+02:00 — `test_ping_payload` now asserts `payload["version"] == SERVER_VERSION` (imported from `agents_remember.mcp`) instead of the `0.9.6` literal; the Codex benchmark policy test flips the fixed default to `default`/`omitted` and asserts `danger-full-access` separately; added `test_codex_benchmark_tools_refuse_when_disabled`; removed the three Docker-mode `test_provider_integrity_ignores_*` cases and their `check_provider_runner_integrity`/`manifest_path_for_config` imports. Corrected the version-assertion, Codex benchmark, and provider-integrity prose to match (1.0.0 review remediation).

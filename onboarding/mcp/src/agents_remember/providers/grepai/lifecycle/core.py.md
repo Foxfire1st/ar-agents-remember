@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T01:15+02:00                     |
-| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
-| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,8 +57,12 @@ seed target without the caller needing to pass it separately.
   removed, so command execution lives solely in the lifecycle command runner.
 - Layout-consuming helpers (`grepai_layout_from_args` return value,
   `prepare_grepai_workspace`, runner/backend/embedder/container/template-vars
-  builders) are typed against the `GrepaiRuntimeLayout` dataclass imported from
-  `providers.context`, not an opaque `Any`.
+  builders) are typed against the `GrepaiRuntimeLayout` dataclass, not an
+  opaque `Any`.
+- Imports come from the leaf modules (`grepai.context`, `context.common`),
+  never the `providers.context` aggregator: the aggregator star-imports this
+  provider's context back, so routing through it is a circular import that
+  breaks any entry point touching grepai modules first.
 
 ## Repo-Internal References
 
@@ -70,6 +74,7 @@ seed target without the caller needing to pass it separately.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — Imports moved off the `providers.context` aggregator to leaf modules (`grepai.context` + `context.common`): the aggregator star-imports grepai context back, a circular import that broke any entry point touching grepai modules first.
 - 2026-06-02T01:15+02:00 — Added `rootsMount` (default `/grepai/roots`) to runner settings; `grepai_container_project_paths` now maps via `grepai_root_container_path` to `/grepai/roots/<project_id>` and the host-path translator `grepai_container_path` was removed; `prepare_grepai_workspace` now calls `ensure_grepai_root_gitignore` instead of the mirror sync + artifact scrub (watch-live).
 - 2026-06-01T00:00+02:00 — `grepai_embedder_backend_settings` now propagates `seedFromContainer` from raw backend settings into the resolved dict when the key is a non-empty string; updated Logic.
 - 2026-05-31T12:50+02:00 — Removed the unused `grepai_run_checked_command` helper and its `run_command` import, and typed the `layout` params plus the `grepai_layout_from_args` return on `GrepaiRuntimeLayout` (newly imported) instead of `Any`; reinforced the "derives configuration only" boundary and recorded the layout typing in Invariants And Boundaries (1.0.0 review remediation).

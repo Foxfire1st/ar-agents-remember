@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00|
+| lastUpdated            | 2026-06-10T06:20+02:00|
 | lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
 | lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -31,6 +31,17 @@ When provider details are intentionally skipped, compact summary item
 construction returns an empty `items` list instead of synthesizing provider rows
 from absent current-state detail.
 
+The projection's global `ok` requires both signals to pass: the raw watchers
+`ok` (are the containers up) AND the aggregated current-state `ok` (does the
+graph/workspace actually hold content). A degraded target — an `empty` graph,
+an unreachable backend, a missing workspace — pulls the global flag false even
+while every container reports running; `partial` is set when other providers
+remain ready so callers can distinguish "one repo degraded" from "everything
+down". Separately, the compact summary carries an additive `indexing` list of
+busy `"<provider-id>:<repo-id>"` targets: healthy-but-busy targets never
+degrade state or `ok`, but agents can relay "ready, indexing in progress" to
+developers instead of guessing why fresh symbols are missing.
+
 When status is read, lifecycle settings are generated from trusted MCP
 settings, watcher status is invoked, and the current provider state file is
 written under the coordinator log/status root. The watcher probe runs as a
@@ -42,9 +53,12 @@ not the full raw status tree.
 
 `_provider_recovery_actions()` preserves raw lifecycle recovery actions and adds
 shared restart guidance when the current projected GrepAI state has
-`indexingState == "noWorkspace"`. The same action list is returned from compact
-provider status and provider diagnostics so the model sees the same
-non-destructive next step from either surface.
+`indexingState == "noWorkspace"`. It also emits a per-repo CGC restart entry
+for each target whose state is `empty` or `backend-unreachable`, naming the
+affected repo so the suggested action is scoped rather than a blanket restart.
+The same action list is returned from compact provider status and provider
+diagnostics so the model sees the same non-destructive next step from either
+surface.
 
 ## Invariants And Boundaries
 
@@ -58,6 +72,13 @@ non-destructive next step from either surface.
   belongs in provider setup summary logs.
 - `noWorkspace` remains a degraded state; status adds restart/rebind guidance
   rather than treating missing workspaces as acceptable readiness.
+- Container liveness alone must never produce global `ok: true`; content-level
+  current-state aggregation gates it too. Running containers over a 0-node
+  graph reported green for three days before this rule existed (2026-06-09
+  incident).
+- `indexing` is informational, never degrading: a busy target stays `ok` and
+  appears in the busy list, so "wait" and "intervene" remain distinguishable
+  signals.
 
 ## Repo-Internal References
 
@@ -73,8 +94,8 @@ non-destructive next step from either surface.
 
 ## Update History
 
+- 2026-06-10T06:20+02:00 — Body-quality pass: merged the dual-gate global `ok`, `partial`, `indexing` busy-list, and per-repo CGC recovery mechanics into Code Commentary and Invariants (documentation only).
 - 2026-06-09T22:10+02:00 — The projection's global `ok` now requires both the raw watchers ok (containers) and the aggregated current-state ok (graph/workspace content); `partial` is set when other providers remain ready. Recovery actions now include a per-repo CGC restart entry for `empty`/`backend-unreachable` targets, and the compact summary gained the additive `indexing` list of busy `"<provider-id>:<repo-id>"` targets (healthy-but-busy: never degrades state/ok). This closes the 2026-06-09 incident where `context_packet` reported green over a 0-node graph for 3 days.
-
 - 2026-06-08T09:57+02:00: Documented skipped-provider summary behavior: when provider details are skipped, compact summary `items` is empty rather than populated from missing current-state rows.
 - 2026-06-04T22:15+02:00 — Documented shared provider restart/rebind recovery guidance for GrepAI `noWorkspace`, including matching compact status and diagnostics recovery actions.
 - 2026-05-31T12:30+02:00 — Removed runner-integrity documentation: status projection no longer checks provider runner integrity, dropped the `integrity` diagnostics field, the `runnerIntegrityFailed` state, and the integrity short-circuit invariant (1.0.0 review remediation).

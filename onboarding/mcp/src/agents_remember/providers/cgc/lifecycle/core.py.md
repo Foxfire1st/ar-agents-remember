@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T22:10+02:00                     |
+| lastUpdated            | 2026-06-10T06:20+02:00                     |
 | lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
 | lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
 | governingOverview      | `overview.md`                              |
@@ -25,7 +25,9 @@
 The module resolves CGC runtime layout from either settings-backed provider
 roots or manual CLI overrides, validates configured roots, selects the active
 root by repo ID, and derives managed backend settings such as FalkorDB image,
-ports, data roots, container name, and image lock path. It also derives Docker
+ports, data roots, container name, `dataDestination` (the container path the
+data volume binds to, default `/var/lib/falkordb/data` — where FalkorDB v4
+actually writes), and image lock path. It also derives Docker
 runner image/build/lock/container settings for CGC command execution.
 
 ### Invariants And Boundaries
@@ -51,8 +53,8 @@ runner image/build/lock/container settings for CGC command execution.
 
 ## Update History
 
+- 2026-06-10T06:20+02:00 — Body-quality pass: `dataDestination` now named in the Logic list of derived backend settings (documentation only).
 - 2026-06-09T22:10+02:00 — `cgc_backend_settings()` gained `dataDestination` (default `/var/lib/falkordb/data`, mirroring the GrepAI `dataDestination` pattern): the container path the FalkorDB data volume binds to, fixing graph persistence across container recreates.
-
 - 2026-05-31T12:50+02:00 — Re-typed `layout` params, `layouts` lists, and the `cgc_layout_from_args` / `*_layouts_from_settings` return types from bare `Any` to `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`); behavior-preserving, added a layout-type note to Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-26T12:51+02:00: Updated after CGC layouts gained Docker runner image/build/lock/container fields and stopped creating provider venv directories.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.

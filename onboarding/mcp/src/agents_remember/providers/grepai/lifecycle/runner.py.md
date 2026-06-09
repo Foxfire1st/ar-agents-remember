@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T01:15+02:00|
-| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
-| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00     |
+| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
+| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -34,7 +34,13 @@ chosen earlier in the same GrepAI start flow so its Compose override matches
 the already-started dependency services, and it shares the GrepAI project
 migration helper for standalone watcher startup.
 Watcher status includes a normalized Docker container state summary so MCP
-provider status can report watcher state and uptime.
+provider status can report watcher state and uptime, plus an `initialScan`
+probe: `grepai_watcher_initial_scan` reads the watcher's container log since
+its start (`docker logs --since`) and `grepai_scan_state_from_log` classifies
+the watcher's own markers — `Initial scan complete` → `complete`, progress
+markers (`Indexing [`, `Initial scan`, `Embedding`) → `in-progress`, otherwise
+`unknown` — the same marker mechanism as the CGC probe, feeding GrepAI's
+`indexed`/`indexing` states in current-state mapping.
 
 ### Invariants And Boundaries
 
@@ -65,6 +71,7 @@ provider status can report watcher state and uptime.
 
 ## Update History
 
+- 2026-06-10T05:30+02:00 — Watcher status gains `initialScan`: `grepai_watcher_initial_scan` reads the watcher's own container-log scan markers since container start (`Indexing [` progress, `Initial scan complete`) via `grepai_scan_state_from_log` — the same mechanism as the CGC probe, giving GrepAI real indexed/indexing states instead of permanent unknown.
 - 2026-06-02T01:15+02:00 — `grepai_docker_state` roots payload no longer emits `sourcePath` after `GrepaiMemoryRoot.source_path` was removed (roots are watched live in place).
 - 2026-05-31T12:50+02:00 — Removed the unused `grepai_runner_dockerfile` helper and its `provider_asset_text` import (build path uses `provider_asset_path`); re-typed the `layout` param from `Any` to `GrepaiRuntimeLayout` across `grepai_watcher_inspect`/`grepai_watcher_workspace_status`/`grepai_watcher_start_prerequisites`/`grepai_watcher_create_start_result`/`grepai_docker_state`; added matching Invariants And Boundaries notes (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the `no_cache` build path for the GrepAI runner/watcher image (`--no-cache` + skip-shortcut bypass for a from-scratch rebuild). Verified against `8927f03`.
