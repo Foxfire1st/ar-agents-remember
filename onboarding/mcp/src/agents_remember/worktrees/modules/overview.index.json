@@ -107,7 +107,7 @@
       "c-09-git-worktree-manager",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "53b17f574a53ae400f8abb9fda264fa9fa3e8dff",
+      "9911a8054b6314e051b094456a72eeec668c4c84",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
@@ -123,7 +123,7 @@
       "lastUpdated",
       "T12",
       "lastVerifiedCommitHash",
-      "b17f574a53ae400f8abb9fda264fa9fa3e8dff"
+      "a8054b6314e051b094456a72eeec668c4c84"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T20:41+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-06-10T00:40+02:00                     |
+| lastVerifiedCommitHash | `9911a8054b6314e051b094456a72eeec668c4c84` |
+| lastVerifiedCommitDate | 2026-06-09T22:29:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -34,5 +34,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Worktree tests cover changed-path behavior for long filesystem paths. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 
 ## Update History
+
+- 2026-06-10T00:40+02:00 — Added `longest_tracked_path_length()` (`git ls-tree -r --name-only <ref>` with HEAD fallback, 0 for unborn repos) for the worktree-start Windows long-path preflight.
 
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.
