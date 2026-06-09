@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-08T09:57+02:00                     |
-| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
-| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
+| lastUpdated            | 2026-06-09T14:52+02:00                     |
+| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06` |
+| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -37,7 +37,10 @@ the `providers/lifecycle/` facade/shared helpers and provider-owned
 is no legacy `provider_lifecycle.py` facade. Memory-layer quality control lives under
 `src/agents_remember/memory_quality/`: integrity checks include the onboarding
 drift classifier/summary, and style checks currently include update-history
-newest-first ordering.
+newest-first ordering. Runtime package data under
+`src/agents_remember/package_data/` is synchronized from canonical root runtime
+asset folders by `scripts/sync-runtime.py`, and the sync behavior is covered by
+`mcp/tests/test_sync_runtime.py` plus the pre-commit check.
 
 ## Route Model
 
@@ -90,6 +93,12 @@ Settings-backed `grepai-memory` is Docker-only: the complete stack is the
 managed runner image/container, PostgreSQL/pgvector, Ollama, and their shared
 Docker network, with no host GrepAI binary or host Ollama fallback.
 
+The package data that `runtime_install` copies is not edited as an independent
+source of truth. Canonical runtime assets live at the repository root in
+`agents-md-files/`, `benchmarks/`, `providers/`, and `system/`; the sync script
+replaces the corresponding package-data folders and reports missing, extra, or
+changed files in check mode.
+
 ## Invariants And Boundaries
 
 - MCP settings are authority; coordinator files can teach the model what to ask
@@ -128,6 +137,7 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
 | `server.py` installs a FastMCP shim that minifies the JSON text mirror of tool results without touching structured content. | [compact_content.py](agents-remember-md/mcp/src/agents_remember/mcp/compact_content.py) |
 | `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember-md/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
+| Runtime package data is synchronized from canonical root asset folders, and tests verify missing, extra, changed, and target-scope behavior. | [sync-runtime.py](agents-remember-md/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember-md/mcp/tests/test_sync_runtime.py); [pre-commit hook](agents-remember-md/.githooks/pre-commit) |
 | Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
 | Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
 | Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
@@ -135,6 +145,7 @@ Docker network, with no host GrepAI binary or host Ollama fallback.
 
 ## Update History
 
+- 2026-06-09T14:52+02:00: Refreshed the MCP route overview against MCP 2.4.1 `main`; added the canonical root runtime asset sync boundary for package data.
 - 2026-06-08T09:57+02:00: Re-verified the MCP package route after PR-39 restored context-packet provider-summary validation and made skipped-provider summaries a modeled optional-null contract.
 - 2026-06-06T12:15: Re-verified against the current MCP package surface; corrected stale `mcp/tools.py` and provider lifecycle module references after the `mcp/tools/` package split and provider-first lifecycle packages.
 - 2026-05-31T12:40+02:00: Removed the deleted `providers/integrity.py` runner-integrity prose and reference row after the provider-runner integrity feature was removed in the 1.0.0 remediation; `providers/status.py` no longer checks runner integrity.

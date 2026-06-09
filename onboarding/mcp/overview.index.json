@@ -198,6 +198,7 @@
     "mcp/tests/test_resolver_parity.py",
     "mcp/tests/test_route_index.py",
     "mcp/tests/test_starter_renderers.py",
+    "mcp/tests/test_sync_runtime.py",
     "mcp/tests/test_tokens.py",
     "mcp/tests/test_tool_response_conformance.py",
     "mcp/tests/test_tools.py",
@@ -206,8 +207,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 351,
-    "fileSidecars": 138,
+    "sourceFilesInScope": 352,
+    "fileSidecars": 139,
     "childRoutes": 11
   },
   "routingTerms": [
