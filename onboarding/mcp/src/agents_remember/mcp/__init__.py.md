@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastUpdated            | 2026-06-10T09:00+02:00     |
+| lastVerifiedCommitHash | `cca911fcb6417ecf56de00c17d05aa304daa51c5` |
+| lastVerifiedCommitDate | 2026-06-10T02:35:22+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -21,7 +21,7 @@ The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
 derived from the installed package metadata via
 `importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
 the single source of truth; a `PackageNotFoundError` fallback hardcodes the
-current release version (now `2.5.1`) for source checkouts without an install. Payload builders in `mcp.tools` use
+current release version (now `2.5.2`) for source checkouts without an install. Payload builders in `mcp.tools` use
 those constants for `ping` and `server_info`, so the version no longer needs a
 manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
 sync at release.
@@ -39,6 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T09:00+02:00 — `SERVER_VERSION` fallback bumped to 2.5.2 in lockstep with `mcp/pyproject.toml`.
 - 2026-06-10T05:30+02:00 — `SERVER_VERSION` fallback bumped to 2.5.1 in lockstep with `mcp/pyproject.toml`.
 - 2026-06-09T22:10+02:00 — `SERVER_VERSION` fallback bumped to 2.5.0 in lockstep with `mcp/pyproject.toml`.
 - 2026-06-09T15:39+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.4.2` for the L-01 lifecycle skill consolidation patch release; pyproject remains the single source of truth. Verification metadata pinned until closeout.
