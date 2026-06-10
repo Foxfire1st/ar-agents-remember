@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-06-10T10:30+02:00 |
-| lastVerifiedCommitHash | `7e730de0465266ef19c31ceaffa29475b7bc3a79` |
-| lastVerifiedCommitDate | 2026-06-10T05:35:29+02:00|
+| lastVerifiedCommitHash | `bbc88100e2b34bf8fd467856d9dc64a25f2394fd` |
+| lastVerifiedCommitDate | 2026-06-10T05:50:55+02:00|
 
 > **Status:** active baseline
 
@@ -192,6 +192,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 ## Update History
 
 - 2026-06-10T10:30+02:00 — Root overview body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness + `indexing` busy list in the feature inventory, a new tool-response-budget inventory row, and stall-watchdog/seed-fallback/stdio-subprocess doctrine in the provider runtime narrative. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T06:05+02:00 — No route impact: README Status section bumped to 2.6.0 with the GitHub #56 release sentence; the repo surface this overview describes is unchanged.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the branch memory carryover inventory row now records route-overview candidates (identical→auto re-verify, differing→always review-required) and guarded official-side route-index regeneration.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-tasks 1-2: the approval-gated closeout inventory row now records the body/history gates and the `No content impact:` / `No route impact:` reviewed-no-impact markers enforced for sidecars and nearest-governing route overviews.
 - 2026-06-09T14:52+02:00: Refreshed the root overview against MCP 2.4.1 `main` after runtime asset canonical sync landed; recorded the hard installed-runtime onboarding trust gate and the canonical root-to-package runtime asset sync path.
