@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-10T04:47+02:00|
+| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0` |
+| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
 
 ## Purpose
 
@@ -19,11 +19,16 @@ This unittest file validates the first worktree-support helper slice.
 
 The tests cover memory ledger roundtrip/prepend behavior, branchless canonical ledger output, legacy branch-metadata ledger parsing without branch-metadata blocking, malformed ledger metadata, invalid ledger top-row detection, repo-specific `c-08-ar-coordination-context-resolver` skill `task_root` output without a task name, installed-runtime coordination-root defaults, source-checkout `.env` and `.env.example` ignore behavior, dirty external-memory start blocking, compatible external-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview with typed MCP next hints, approval-note, onboarding metadata refresh, route overview/index refresh, memory quality gating before memory commits, missing-onboarding blocking behavior, memory-worktree settings during closeout planning, long Windows path changed-file and sidecar detection, direct checkout closeout dry-run/success/missing-onboarding behavior with `code_repository_name`/`code_repository_root` resolver args, direct closeout entity fingerprint preview and refresh behavior, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, deterministic overview/entity drift checks including entity inventory coverage, `c-09-git-worktree-manager` skill integration fast-forward/replay/conflict behavior, non-fast-forward integration refusal at `_merge_integrated_commits` without advancing the code branch, `c-09-git-worktree-manager` skill cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching checkout branches and ledger commit metadata, `c-10-adopt-memory-baseline` skill adoption status/block/adopt behavior, `c-11-memory-carryover-from-branch` skill memory carryover plan/apply behavior including earlier-only-landed same-path commits staying `same-path-changed`/`review-required` rather than exact-landed, and benchmark runner portability coverage for non-string/unsafe manifest path guards, Windows-safe generated tree removal, stale directory symlink cleanup, Windows Codex shim resolution, cached benchmark repository reuse, missing-commit fetch behavior, force-clone behavior, copy-only skill exposure, Codex `PATH` resolution and benchmark-only execution metadata, default-sandbox omission, variant-scoped benchmark provider selection, generated benchmark provider settings with central provider log paths, workspace-local `.codex` benchmark MCP registration, and temp-file provider setup handoff.
 
-`RequireUpdatedSidecarContentTests` covers the closeout content gate: in a
-temporary memory Git repo with a committed sidecar, `require_updated_sidecar_content`
-raises when a changed source file's sidecar body was not modified, passes once
-the sidecar body is edited, and is a no-op when the plan has no required
-sidecars.
+`RequireUpdatedSidecarContentTests` covers the four-case closeout content gate:
+in a temporary memory Git repo with a committed sidecar,
+`require_updated_sidecar_content` raises for an unchanged sidecar, a
+metadata-only edit, a history-only edit without the no-impact marker, and a
+body edit without a new Update History entry; it passes (returning the attested
+source paths) for a history-only edit carrying a `No content impact:` entry,
+passes with empty attestations for a body+history update and for a new
+untracked sidecar, and is a no-op when the plan has no required sidecars. The
+shared direct-closeout fixture's sidecar update pairs its body edit with an
+Update History entry to satisfy the gate.
 
 ### Conventions
 
@@ -76,6 +81,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: extended `RequireUpdatedSidecarContentTests` to the four-case gate (metadata-only, unmarked history-only, marked no-impact attestation, untraced body edit, body+history, new untracked sidecar) and paired the direct-closeout fixture's sidecar body edit with an Update History entry.
 - 2026-06-02T04:00+02:00: Added `test_memory_carryover_maps_unmapped_official_head_when_nothing_to_carry` covering the new `ledger-mapped-head` result — carryover maps an unmapped official code HEAD (e.g. a PR merge commit) to current memory content when nothing is actionable to carry; the review-required case still returns `nothing-to-carryover`. Added `find_mapping`/`load_ledger` test imports. (`l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.)
 - 2026-05-31T12:30+02:00 — Added coverage notes for new `_merge_integrated_commits` non-fast-forward integration refusal (no `HEAD` mutation) and the `c-11-memory-carryover-from-branch` skill earlier-only-landed same-path commit staying `same-path-changed`/`review-required`; the existing default-sandbox omission test is unchanged, so benchmark phrasing kept (1.0.0 review remediation).
 - 2026-05-30T21:51+02:00: Re-verified against `825a172`; the only change was an installed-runtime config assertion adopting the renamed `timeout_caps["providerSetupSeconds"]` key. Coverage otherwise unchanged.
