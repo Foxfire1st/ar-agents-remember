@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-06-10T10:30+02:00 |
-| lastVerifiedCommitHash | `7cb9c6bf223818a516c443a72ba976a38f6f06e9` |
-| lastVerifiedCommitDate | 2026-06-10T05:20:13+02:00|
+| lastVerifiedCommitHash | `7e730de0465266ef19c31ceaffa29475b7bc3a79` |
+| lastVerifiedCommitDate | 2026-06-10T05:35:29+02:00|
 
 > **Status:** active baseline
 
@@ -57,7 +57,7 @@ onboarding pass.
 | Provider lifecycle and discovery tools | Docker-managed GrepAI memory search/trace, CodeGraphContext symbol/caller/callee/dependency/complexity/visualization queries, compact provider status, dedicated provider diagnostics, watcher lifecycle, and current-state snapshots. Readiness is content-gated (2.5.0/2.5.1): graph/workspace content probes drive `indexed`/`indexing`/`empty`/`backend-unreachable` states for both providers, empty/unreachable targets degrade the global packet `ok`, crash-looping containers are not ready, and healthy-but-busy targets surface in the compact summary's `indexing` list. | `provider_status`, `provider_diagnostics`, `provider_watchers`, `grepai_*`, `cgc_*`, `providers/` |
 | Tool response token budgets | Verbose tools (`runtime_install`, `provider_diagnostics`, `provider_watchers`, carryover plan/apply) keep compact outcomes inline and file bulk diagnostics under `temp/tool-reports/<tool>/` with an inline `reportPath` (keep-last-5 / 7-day write-time prune, secret redaction); budget tests are the regression line (2.5.1/2.5.2). | `mcp/tool_reports.py`, `compact_*_payload` builders, `test_tool_response_budgets.py` |
 | Memory baseline adoption | One-time adoption of existing external-memory onboarding into the first ledgered baseline after drift/status review. | `c-10-adopt-memory-baseline` skill, `memory_baseline_*`, `memory/baseline.py` |
-| Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
+| Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
 | Source quality tooling | Repository-owned quality wrapper for Ruff, Radon, pytest coverage, and CRAP-Calculator risk scoring. | `python -m agents_remember.code_quality.check`, `code_quality/` |
@@ -192,6 +192,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 ## Update History
 
 - 2026-06-10T10:30+02:00 — Root overview body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness + `indexing` busy list in the feature inventory, a new tool-response-budget inventory row, and stall-watchdog/seed-fallback/stdio-subprocess doctrine in the provider runtime narrative. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the branch memory carryover inventory row now records route-overview candidates (identical→auto re-verify, differing→always review-required) and guarded official-side route-index regeneration.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-tasks 1-2: the approval-gated closeout inventory row now records the body/history gates and the `No content impact:` / `No route impact:` reviewed-no-impact markers enforced for sidecars and nearest-governing route overviews.
 - 2026-06-09T14:52+02:00: Refreshed the root overview against MCP 2.4.1 `main` after runtime asset canonical sync landed; recorded the hard installed-runtime onboarding trust gate and the canonical root-to-package runtime asset sync path.
 - 2026-06-08T09:57+02:00: Re-verified the repository overview against the PR-39 branch head after the branch merged current `main` and the skipped-provider context-packet contract was corrected.

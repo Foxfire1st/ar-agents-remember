@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T10:30+02:00                     |
-| lastVerifiedCommitHash | `7cb9c6bf223818a516c443a72ba976a38f6f06e9` |
-| lastVerifiedCommitDate | 2026-06-10T05:20:13+02:00|
+| lastVerifiedCommitHash | `7e730de0465266ef19c31ceaffa29475b7bc3a79` |
+| lastVerifiedCommitDate | 2026-06-10T05:35:29+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -39,12 +39,16 @@ the `providers/lifecycle/` facade/shared helpers and provider-owned
 is no legacy `provider_lifecycle.py` facade. Memory-layer quality control lives under
 `src/agents_remember/memory_quality/`: integrity checks include the onboarding
 drift classifier/summary, and style checks currently include update-history
-newest-first ordering. Shared onboarding-document parsing and the
+newest-first ordering. Shared onboarding-document parsing, route-overview discovery, and the
 "meaningful body vs metadata/history" change classification live in
 `kernel/onboarding_doc.py`; the closeout body gates in
 `worktrees/modules/onboarding.py` consume them and accept explicit
 `No content impact:` / `No route impact:` Update History markers as in-band
-reviewed-no-impact attestations. Runtime package data under
+reviewed-no-impact attestations. Branch-memory carryover
+(`memory/carryover.py`) plans route-overview candidates beside file sidecars
+(route-keyed, never auto-carried when content differs) and regenerates
+official-side route indexes after a carry, guarded on a clean official-ref
+checkout. Runtime package data under
 `src/agents_remember/package_data/` is synchronized from canonical root runtime
 asset folders by `scripts/sync-runtime.py`, and the sync behavior is covered by
 `mcp/tests/test_sync_runtime.py` plus the pre-commit check.

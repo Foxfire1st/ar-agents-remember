@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastUpdated            | 2026-06-10T05:50+02:00     |
+| lastVerifiedCommitHash | `7e730de0465266ef19c31ceaffa29475b7bc3a79` |
+| lastVerifiedCommitDate | 2026-06-10T05:35:29+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -30,6 +30,23 @@ pending review-required candidate), `_nothing_to_carry_result()` still maps an
 verified tip — to the current memory content commit and commits the ledger,
 returning state `ledger-mapped-head`; this removes the manual post-merge ledger
 reconciliation a later worktree would otherwise need.
+
+Candidates are `kind`-tagged. File sidecars (`file-sidecar`, the dataclass
+default) keep the 1:1 source-path mapping. Route overviews (`route-overview`,
+issue #56) are discovered in the source memory via
+`kernel.onboarding_doc.discover_route_overviews` and become candidates when
+their route covers any landed path (`source_changed ∩ official_changed`); their
+`source_path` key is the normalized code route (`.` for the repo root), so
+`include_review_required` selects them with route strings. Identical
+branch/official overview content auto-carries (metadata re-verification only —
+closing the post-merge gap where overview verification stayed pinned at the
+pre-merge commit); differing content is **always** review-required, regardless
+of per-path evidence, because overview bodies are model-authored aggregates.
+After a carry, `_refresh_official_route_indexes()` regenerates official-side
+`overview.index.json` files — derived artifacts are regenerated, never copied —
+guarded on the code repository being a clean checkout of the official ref; the
+apply payload reports the result (or the reasoned skip) as
+`route_index_refresh`.
 
 ### Invariants And Boundaries
 
@@ -61,6 +78,7 @@ reconciliation a later worktree would otherwise need.
 
 ## Update History
 
+- 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: route-overview carryover candidates (`kind`-tagged, route-keyed, identical→auto re-verify, differing→always review-required) and guarded official-side route-index regeneration (`_refresh_official_route_indexes`, reported as `route_index_refresh`).
 - 2026-06-10T05:30+02:00 — `run_git` now sets `stdin=subprocess.DEVNULL` (or explicit `input`): git children inherited the MCP stdio protocol pipe, the proven root cause of the #49 tool-call hangs (stdio harness A/B: 120s hang pre-fix, 3.4s post-fix).
 - 2026-06-02T04:00+02:00: `apply_carryover_for_request()` now maps an unmapped official code HEAD to the current memory content (new state `ledger-mapped-head`) when there is nothing actionable to carry — automating the post-merge merge-commit ledger entry so the next worktree needs no manual reconciliation; gated so a pending review-required candidate still returns `nothing-to-carryover`. Added `_nothing_to_carry_result()` plus `find_mapping`/`MemoryLedger` imports. (`l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.)
 - 2026-05-31T12:30+02:00 — `evidence_for_path()` now requires ALL source-branch commits touching a path to be ancestors of the official ref for `exact-landed-commit`, not just one (1.0.0 review remediation).

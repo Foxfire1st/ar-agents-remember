@@ -171,6 +171,7 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py",
     "mcp/tests/conftest.py",
     "mcp/tests/test_benchmark_analysis.py",
+    "mcp/tests/test_carryover.py",
     "mcp/tests/test_cgc_index_concurrency.py",
     "mcp/tests/test_cgc_installation.py",
     "mcp/tests/test_cgc_seed_bundle_path.py",
@@ -217,8 +218,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 362,
-    "fileSidecars": 149,
+    "sourceFilesInScope": 363,
+    "fileSidecars": 150,
     "childRoutes": 11
   },
   "routingTerms": [
