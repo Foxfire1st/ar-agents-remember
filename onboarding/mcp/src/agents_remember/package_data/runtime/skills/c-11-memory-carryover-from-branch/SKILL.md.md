@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                                   |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                              |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`                           |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-10T10:26+02:00                     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                           |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 
 ## Purpose
 
@@ -18,6 +18,14 @@ This skill documents `c-11-memory-carryover-from-branch` skill, the selective me
 ### Logic
 
 The skill defines `c-11-memory-carryover-from-branch` skill as a memory reconciliation step rather than a normal Git merge. It tells agents to use the `memory_carryover_plan` MCP tool first, review the candidate report, and use `memory_carryover_apply` only with explicit intent. The contract names the five relevant branch roles: official code, source branch code, official memory, source branch memory, and old base. It defines evidence tiers from strongest to weakest, with only exact landed commits, patch-id matches, and final content matches becoming auto-carry candidates by default.
+
+Since GitHub #54 the Output States section also documents `ledger-mapped-head`
+(an unmapped official code HEAD — e.g. a PR merge commit — mapped to the
+current memory content commit) and the `memory_main_advance` block every apply
+reports: memory `main` is fast-forwarded to the official checkout tip after
+the carryover commits (states `fast-forwarded` / `already-current` /
+`diverged` / `failed` / `skipped`), with a note to push memory `main` per the
+repo's git workflow on developer approval.
 
 ### Conventions
 
@@ -56,6 +64,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-06-10T10:26+02:00 — GitHub #54: documented the `ledger-mapped-head` output state and the `memory_main_advance` block (carryover fast-forwards memory main to the official checkout tip; push on developer approval).
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T17:50+02:00: Updated implementation reference after the carryover script route was removed from the skill tree and the MCP package became the only implementation route.
 - 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-11-memory-carryover-from-branch` name.

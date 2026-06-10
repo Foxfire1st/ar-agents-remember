@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-06-10T08:39+02:00                     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,6 +22,14 @@ worktree summary, provider summary, and drift summary into explicit nested
 objects. `ContextPacketV2` fixes `contextPacketVersion` to `2` and carries a
 diagnostics hint pointing agents at `provider_diagnostics` for raw provider
 details.
+
+`FreshnessSummary` (issue #54) is the opt-in branch-freshness section:
+`status` is `checked`/`not-checked` (defaulting like drift's not-checked), with
+optional `BranchFreshness` blocks for the code and memory repos (`branch`,
+`upstream`, `fetched`, `ahead`/`behind`, `state` literal incl. `no-upstream`,
+`no-branch`, `unknown`, `unavailable`) plus `ledgerMapsCodeHead`/`ledgerError`.
+`ContextPacketV2.freshness` uses `default_factory=FreshnessSummary` so omitted
+requests serialize as `{"status": "not-checked"}` under `exclude_none`.
 
 ## Invariants And Boundaries
 
@@ -41,4 +49,5 @@ details.
 
 ## Update History
 
+- 2026-06-10T08:39+02:00: Added `BranchFreshness` and `FreshnessSummary` and the `ContextPacketV2.freshness` field (issue #54 opt-in freshness section).
 - 2026-05-28T19:52+02:00: Created after context packets moved to the compact V2 Pydantic contract.

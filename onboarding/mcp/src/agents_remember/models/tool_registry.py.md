@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-06T12:28+02:00                     |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00                     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -18,7 +18,8 @@
 
 `PUBLIC_TOOL_RESPONSE_MODELS` is the enforcement registry consumed by
 `mcp.tools._tool_payload()`. It currently covers all public core, runtime,
-memory, skill install, provider, worktree, and benchmark tools.
+memory, skill install, provider, worktree (including `worktree_sync` →
+`WorktreeSyncResponse`, GitHub #54 sub-task D), and benchmark tools.
 
 The module docstring fixes a deliberate two-tier response-model convention.
 Tools whose response shape is fully AR-owned register a STRICT model
@@ -51,6 +52,7 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00: Registered `worktree_sync` → `WorktreeSyncResponse` (GitHub #54 sub-task D).
 - 2026-06-06T12:28+02:00: Corrected the payload-validation reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-06-01T20:45+02:00 — Registered `worktree_abandon` → `WorktreeAbandonResponse` in `PUBLIC_TOOL_RESPONSE_MODELS`.
 - 2026-05-31T12:30+02:00 — Documented the deliberate STRICT vs FLEXIBLE response-model two-tier convention now fixed in the module docstring (1.0.0 review remediation).

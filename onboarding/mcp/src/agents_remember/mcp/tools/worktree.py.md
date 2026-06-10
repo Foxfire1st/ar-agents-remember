@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0`                                       |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                                       |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Purpose
@@ -37,7 +37,7 @@ would otherwise make the response too large to render.
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
-`worktree_start_payload` forwards `retry_provider_setup` to the controller — the relaunch path for a failed or stale background provider setup (GitHub #53).
+`worktree_start_payload` forwards `retry_provider_setup` to the controller — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` is newly added (GitHub #54 sub-task D), forwarding `contract_path`/`memory_sync_choice`/`dry_run` to `worktree_sync_tool`.
 
 ### Invariants And Boundaries
 
@@ -51,6 +51,8 @@ would otherwise make the response too large to render.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00 — Added `worktree_sync_payload` (GitHub #54 sub-task D); plumbing only.
+- 2026-06-10T09:30+02:00 — `worktree_start_payload` forwards `stale_base_choice` (GitHub #54 stale-base preflight recovery); plumbing only.
 - 2026-06-10T07:30+02:00 — `worktree_start_payload` forwards the new `retry_provider_setup` flag to the controller (GitHub #53 async setup recovery path).
 - 2026-06-01T00:00+02:00 — `worktree_start_payload` now applies `summarize_command_logs`; `worktree_cleanup_payload` gained `teardown_providers`; `worktree_abandon_payload` newly added.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the worktree payload builders.

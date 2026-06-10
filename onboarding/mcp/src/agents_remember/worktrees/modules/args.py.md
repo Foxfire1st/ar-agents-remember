@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0`                         |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                         |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -38,6 +38,16 @@ the namespace omits keeps its dataclass default rather than raising.
 worktree start relaunches background provider setup instead of attaching;
 refused while a live setup heartbeat exists.
 
+`stale_base_choice: str | None = None` (GitHub #54): the stale-base preflight
+recovery selector for worktree start — `fast-forward` (ff stale local source
+branches, then proceed) or `proceed-stale` (explicit override); `None` means
+block when a source branch is behind/diverged from its upstream.
+
+`memory_sync_choice: str | None = None` (GitHub #54 sub-task D): the
+`worktree_sync` recovery selector when the memory work branch has local
+commits and the official memory moved — `merge-memory` or `skip-memory`;
+`None` blocks with `needs-review`.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -51,6 +61,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00 — Added `memory_sync_choice: str | None = None` (GitHub #54 sub-task D worktree_sync recovery selector).
+- 2026-06-10T09:30+02:00 — Added `stale_base_choice: str | None = None` (GitHub #54 stale-base preflight recovery selector).
 - 2026-06-10T07:30+02:00 — Added `retry_provider_setup: bool = False` (GitHub #53): on an existing contract, worktree start relaunches background provider setup instead of attaching; refused while a live setup heartbeat exists.
 - 2026-06-01T20:45+02:00 — `WorktreeArgs` gained `force` and `teardown_providers` for the abandon/cleanup teardown path.
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

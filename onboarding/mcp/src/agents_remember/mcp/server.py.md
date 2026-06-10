@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -86,6 +86,23 @@ benchmark tools stay `dry_run=True` so a run is never implicit.
 provider state, keeping `context_packet` and `provider_status` focused on
 compact readiness summaries.
 
+`context_packet` registers `include_freshness` (issue #54, default `false`):
+its docstring tells callers the flag fetches remote-tracking refs and reports
+ahead/behind for the code and memory checkouts plus whether the ledger maps
+code HEAD — the lifecycle-start staleness checkpoint.
+
+`worktree_start` registers `stale_base_choice` (issue #54): its docstring
+documents the stale-base preflight (refuses behind/diverged source branches),
+the `fast-forward` / `proceed-stale` recoveries, and the auto-created memory
+source branch templated from the code source branch name.
+
+`worktree_sync` is newly registered (issue #54 sub-task D): the mid-task base
+sync taking `contract_path`, optional `memory_sync_choice`
+(`merge-memory`/`skip-memory`), and `dry_run`; its docstring documents the
+atomic pair advance, the mid-cycle carryover-first block, and the
+sync-early-before-memories doctrine. `worktree_status`'s freshness block
+recommends it when recorded bases fall behind local source tips.
+
 Registered tools follow an **act-by-default** `dry_run` contract: effectful
 tools and the read-only `cgc_*`/`grepai_*` query tools register `dry_run=False`,
 so a plain call does the work (queries return results; `dry_run=true` returns
@@ -120,6 +137,9 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00: Registered `worktree_sync` (contract_path, memory_sync_choice, dry_run) for the issue #54 mid-task base sync.
+- 2026-06-10T09:30+02:00: `worktree_start` registers `stale_base_choice` and documents the stale-base preflight + recoveries + memory branch auto-template (issue #54 sub-task B).
+- 2026-06-10T08:39+02:00: `context_packet` registers `include_freshness` and documents the fetch + ahead/behind + ledger-mapping report (issue #54).
 - 2026-06-10T07:30+02:00 — `worktree_start` registers `retry_provider_setup` and its docstring documents the async contract (returns in seconds; providers `starting` + progressFile; poll worktree_status; seed copy seconds vs seedFallback reindex minutes; retry on failed/stale). `worktree_status` docstring documents the providers poll block and its states (GitHub #53).
 - 2026-06-04T22:15+02:00: Updated `runtime_install` operator text to clarify provider runner refresh during `install_provider_deps=true`, watcher rebind/recheck behavior, and index preservation.
 - 2026-06-02T04:40+02:00: `skills_install` tool dropped the `layout` parameter after the installer became a single flat copy (U-01-core-skills dissolved). `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.

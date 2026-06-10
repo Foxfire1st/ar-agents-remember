@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-06T12:28+02:00                             |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f`         |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00                             |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`         |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -36,8 +36,9 @@ collects one representative payload per tool into `cls.payloads`:
   dry-run, baseline, benchmarks).
 - `_worktree_payloads`: a real worktree lifecycle in disabled-memory mode
   produces `worktree_start`, `worktree_status`, `worktree_attach`,
-  `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`,
-  and `worktree_cleanup` against a real contract.
+  `worktree_sync` (dry-run, GitHub #54 sub-task D), `worktree_closeout_preview`,
+  `worktree_closeout_apply`, `worktree_integrate`, and `worktree_cleanup`
+  against a real contract.
 - `_direct_closeout_payloads`: an external-memory direct-checkout fixture drives
   `direct_closeout_preview` and `direct_closeout_apply`.
 - `_carryover_payloads`: a landed-branch fixture drives `memory_carryover_plan`
@@ -91,6 +92,7 @@ declared nor part of the input."
 
 ## Update History
 
+- 2026-06-10T09:56+02:00: Added the `worktree_sync` dry-run representative payload to the worktree fixture (GitHub #54 sub-task D).
 - 2026-06-06T12:28+02:00: Corrected the `_tool_payload()` reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-06-02T16:24+02:00: A docstring now references the `c-11-memory-carryover-from-branch` skill in full (was "C-11"). Reference-style normalization; behavior unchanged.
 - 2026-06-01T20:45+02:00 — Extended conformance coverage to the new `worktree_abandon` payload/response model.

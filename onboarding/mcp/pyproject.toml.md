@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T08:15+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T10:26+02:00     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -74,6 +74,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-06-10T10:26+02:00 — No content impact: version bumped to 2.8.0 for the GitHub #54 release (lifecycle-long stale-base prevention); the packaging contract this sidecar describes is unchanged.
 - 2026-06-10T08:15+02:00 — Version bumped to 2.7.0 for the GitHub #53/#58 release (async worktree provider setup + Windows seed fix).
 - 2026-06-10T06:05+02:00 — No content impact: version bumped to 2.6.0 for the memory-integrity release (GitHub #56); package metadata semantics unchanged.
 - 2026-06-10T05:45+02:00 — Version bumped to 2.5.2 for the carryover response compaction patch (GitHub #52).

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T08:15+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T10:26+02:00     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -116,6 +116,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-10T10:26+02:00 — No content impact: Status section bumped to 2.8.0 with the GitHub #54 release sentence (lifecycle-long stale-base prevention: include_freshness, stale-base preflight, memory_main_advance, worktree_sync); the README structure this sidecar describes is unchanged.
 - 2026-06-10T08:15+02:00 — Status section bumped to 2.7.0 with the release sentence: background worktree provider setup observability (#53) and container-form CGC seed argv on Windows (#58).
 - 2026-06-10T06:05+02:00 — No content impact: Status section bumped to 2.6.0 with the memory-integrity release sentence (carryover overview candidates, closeout body/history gates, no-impact markers; GitHub #56); the sidecar's description of the README remains accurate.
 - 2026-06-10T05:45+02:00 — Status section bumped to 2.5.2 with the carryover response compaction sentence (GitHub #52).
