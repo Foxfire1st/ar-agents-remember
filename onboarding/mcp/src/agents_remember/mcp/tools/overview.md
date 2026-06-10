@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-06-10T07:40+02:00|
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0`                                      |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                                      |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -80,6 +80,8 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00 — No route impact: sub-task D adds `worktree_sync_payload` (plus the `PUBLIC_TOOLS`/facade registrations) following the existing one-builder-per-tool pattern; the payload-builder route model this overview describes is unchanged (detail in the file sidecars).
+- 2026-06-10T09:30+02:00 — No route impact: `tools/worktree.py` and `tools/core.py` only forward the new `stale_base_choice` / `include_freshness` arguments to their controllers (GitHub #54); the payload-builder surface this overview describes is unchanged.
 - 2026-06-10T07:40+02:00 — No route impact: `tools/worktree.py` only forwards the new `retry_provider_setup` flag to the controller (GitHub #53).
 - 2026-06-10T05:30+02:00 — Route body caught up with the 2.5.1/2.5.2 response-budget layer (compact builders per domain, tool-report filing, report-before-compaction and budget-test invariants); previous closeouts had only stamped the verification header. Developer-flagged gap.
 - 2026-05-30T21:33+02:00: Re-verified the route against `8927f03` after the 0.9.x run; the per-domain Layout, hot path, and invariants still match the current exports. `core.py` gained `no_cache`/`install_provider_deps` forwarding in `runtime_install_payload` (documented on the file card); the registry's public surface is unchanged.

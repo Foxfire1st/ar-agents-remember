@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:50+02:00                     |
-| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4`                                  |
-| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
+| lastUpdated            | 2026-06-10T09:45+02:00                     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                                  |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 
 ## Purpose
 
@@ -33,6 +33,12 @@ overview is copied, restamped to the official head, and official-side
 index regeneration with a reported reason; a no-carry apply reports the
 skipped index refresh.
 
+`MemoryMainAdvanceTests` (issue #54) prove `memory_main_advance`: a carried-over
+apply from a non-main official checkout fast-forwards `main` to the cycle
+branch tip; the `ledger-mapped-head` path advances too; a main checkout reports
+`already-current`; a diverged main is reported and left untouched; a repo
+without a `main` branch reports `skipped`.
+
 ### Invariants And Boundaries
 
 Self-contained git/onboarding fixtures (no imports from other test modules);
@@ -53,4 +59,5 @@ No external documentation is needed for this standard-library test.
 
 ## Update History
 
+- 2026-06-10T09:45+02:00 — Issue #54 sub-task C: added `MemoryMainAdvanceTests` (5 tests: ff from non-main checkout, ledger-mapped-head ff, already-current, diverged untouched, missing-main skipped).
 - 2026-06-10T05:50+02:00 — Created with the route-overview carryover candidates and guarded index regeneration (issue #56 sub-task 3).

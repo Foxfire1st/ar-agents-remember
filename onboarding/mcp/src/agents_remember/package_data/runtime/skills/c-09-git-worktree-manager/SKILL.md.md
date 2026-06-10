@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-06-04T16:03+02:00                     |
-| lastVerifiedCommitHash | `d3c641bda41e7220d7543df002dbafa9c0f44ee2` |
-| lastVerifiedCommitDate | 2026-06-04T16:13:23+02:00|
+| lastUpdated            | 2026-06-10T10:26+02:00                     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 
 ## Purpose
 
@@ -22,7 +22,17 @@ sequencing belongs to `c-12-closeout` skill; `c-09-git-worktree-manager` skill o
 ### Logic
 
 The skill defines the worktree MCP entrypoints for start, attach, status,
-worktree closeout tool handoff, integration, and cleanup. It states that `c-09-git-worktree-manager` skill
+mid-task sync, worktree closeout tool handoff, integration, and cleanup. Since
+the GitHub #54 series it documents the stale-base preflight (start blocks when
+a source branch is behind/diverged from its upstream, with
+`stale_base_choice="fast-forward"`/`"proceed-stale"` recoveries), the
+auto-created external-memory source branch (official-tip base, code branch
+name as template, reported as `memorySourceBranch`), the fetch-free
+`worktree_status` freshness block with its `syncHint`, and the new **Mid-Task
+Sync** section: `worktree_sync` pulls a moved official line into the live
+worktree atomically (new code tip must be ledger-mapped at the official memory
+tip; sync early — before memories are written — for the pure fast-forward
+path; `memory_sync_choice` recoveries when local memory commits diverge). It states that `c-09-git-worktree-manager` skill
 begins after the normal intake and onboarding gate, uses context resolved by the `c-08-ar-coordination-context-resolver` skill
 through the MCP worktree tools, refuses external-memory worktree start while
 the source memory repo has uncommitted content or ledger changes, and reports
@@ -120,6 +130,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-06-10T10:26+02:00 — GitHub #54: documented the stale-base preflight + `stale_base_choice` recoveries, the auto-created memory source branch, the `worktree_status` freshness block, `worktree_sync` in the MCP tools list, and the new Mid-Task Sync section (sync-early-before-memories doctrine).
 - 2026-06-04T16:03+02:00: Added the integration-preview reminder that agents must check out the recorded code and memory `source_branch` in the source repositories before calling `worktree_integrate`, including `dry_run=true`.
 - 2026-06-04T15:45+02:00: Added the Worktree Intent Gate: agents must present branch policy, pushable source branch, work branch/worktree name, memory mode, landing path, and risks for developer approval before `worktree_start`; PR-gated flows must show that the recorded `source_branch` is the pushable integration branch, not the protected target.
 - 2026-06-03T04:06+02:00: Clarified the source-branch contract for protected or PR-gated targets: before `worktree_start`, choose a pushable integration branch as `source_branch`, because `worktree_integrate` lands into the recorded source branch and does not open PRs or infer branch protection.

@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-06-10T05:30+02:00 |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 
 > **Status:** active baseline
 
@@ -191,6 +191,11 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-06-10T10:26+02:00 — No route impact: README Status section bumped to 2.8.0 with the GitHub #54 release sentence, and the canonical root skills (l-01/c-09/c-11) gained the freshness-checkpoint doctrine in lockstep with their packaged copies; the repo surface this overview describes is unchanged.
+- 2026-06-10T09:56+02:00 — No route impact: issue #54 sub-task D is mcp-package-internal (worktree_sync tool + status freshness); the mcp and worktrees/modules route overviews carry the content updates, and the repo surface this overview describes is unchanged.
+- 2026-06-10T09:45+02:00 — No route impact: issue #54 sub-task C is mcp-package-internal (carryover memory-main advance); the mcp route overview carries the content update, and the repo surface this overview describes is unchanged.
+- 2026-06-10T09:30+02:00 — No route impact: issue #54 sub-task B is mcp-package-internal (worktree_start stale-base preflight + memory branch auto-template); the mcp and worktrees/modules route overviews carry the content updates, and the repo surface this overview describes is unchanged.
+- 2026-06-10T08:39+02:00 — No route impact: issue #54 sub-task A is mcp-package-internal (freshness kernel + context_packet section); the mcp route overview carries the content update, and the repo surface this overview describes is unchanged.
 - 2026-06-10T08:15+02:00 — No route impact: README Status section bumped to 2.7.0 with the GitHub #53/#58 release sentence; the repo surface this overview describes is unchanged.
 - 2026-06-10T06:05+02:00 — No route impact: README Status section bumped to 2.6.0 with the GitHub #56 release sentence; the repo surface this overview describes is unchanged.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the branch memory carryover inventory row now records route-overview candidates (identical→auto re-verify, differing→always review-required) and guarded official-side route-index regeneration.

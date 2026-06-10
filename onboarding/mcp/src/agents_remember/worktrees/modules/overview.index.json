@@ -24,11 +24,12 @@
     "mcp/src/agents_remember/worktrees/modules/onboarding.py",
     "mcp/src/agents_remember/worktrees/modules/provider_async.py",
     "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
-    "mcp/src/agents_remember/worktrees/modules/start.py"
+    "mcp/src/agents_remember/worktrees/modules/start.py",
+    "mcp/src/agents_remember/worktrees/modules/sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 15,
-    "fileSidecars": 15,
+    "sourceFilesInScope": 16,
+    "fileSidecars": 16,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -56,11 +57,12 @@
     "remember",
     "src",
     "start",
+    "sync",
     "teardown",
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named `c-09-git-worktree-manager` skill lifecycle operations. `start.py` runs a synchronous provider preflight, writes the contract, and then launches provider setup in the background (GitHub #53): dry runs stay synchronous, real starts return `starting` within seconds, and `retry_provider_setup` relaunches a failed/stale setup on an existing contract. `c...",
+    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named `c-09-git-worktree-manager` skill lifecycle operations. `start.py` runs a synchronous provider preflight, writes the contract, and then launches provider setup in the background (GitHub #53): dry runs stay synchronous, real starts return `starting` within seconds, and `retry_provider_setup` relaunches a failed/stale setup on an existing contract. Be...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
@@ -77,7 +79,8 @@
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
       "mcp/src/agents_remember/worktrees/modules/provider_async.py",
       "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
-      "mcp/src/agents_remember/worktrees/modules/start.py"
+      "mcp/src/agents_remember/worktrees/modules/start.py",
+      "mcp/src/agents_remember/worktrees/modules/sync.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -110,24 +113,24 @@
       "provider_teardown",
       "start.py",
       "start",
+      "sync.py",
+      "sync",
       "c-09-git-worktree-manager",
       "starting",
       "retry_provider_setup",
       "GitHub",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0",
+      "f62c732df2acc30ec3766f83c176a24b39c0bc46",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
-      "setup-progress.json",
-      "worktree_status",
-      "providers/setup_progress.py",
-      "classify_sidecar_updates",
-      "require_updated_sidecar_content",
-      "classify_route_overview_updates",
-      "require_updated_route_overview_content",
-      "No content impact"
+      "stale_base_choice",
+      "fast-forward",
+      "proceed-stale",
+      "worktree_sync",
+      "memory_sync_choice",
+      "sync_log"
     ]
   },
   "fallback": {

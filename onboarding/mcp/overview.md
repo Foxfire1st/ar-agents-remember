@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T07:40+02:00|
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -44,11 +44,18 @@ newest-first ordering. Shared onboarding-document parsing, route-overview discov
 `kernel/onboarding_doc.py`; the closeout body gates in
 `worktrees/modules/onboarding.py` consume them and accept explicit
 `No content impact:` / `No route impact:` Update History markers as in-band
-reviewed-no-impact attestations. Branch-memory carryover
+reviewed-no-impact attestations. Branch freshness (issue #54: is a local
+branch current with its upstream, plus ahead/behind counts) lives in
+`kernel/git_freshness.py` beside `kernel/git_facts.py`; the `context_packet`
+controller surfaces it as the opt-in `include_freshness` packet section
+together with a `ledgerMapsCodeHead` check, forming the lifecycle-start
+staleness checkpoint. Branch-memory carryover
 (`memory/carryover.py`) plans route-overview candidates beside file sidecars
-(route-keyed, never auto-carried when content differs) and regenerates
+(route-keyed, never auto-carried when content differs), regenerates
 official-side route indexes after a carry, guarded on a clean official-ref
-checkout. Runtime package data under
+checkout, and fast-forwards memory `main` to the official checkout tip
+(`memory_main_advance`, issue #54) so non-main cycles no longer leave memory
+main behind. Runtime package data under
 `src/agents_remember/package_data/` is synchronized from canonical root runtime
 asset folders by `scripts/sync-runtime.py`, and the sync behavior is covered by
 `mcp/tests/test_sync_runtime.py` plus the pre-commit check.
@@ -174,7 +181,7 @@ changed files in check mode.
 | MCP settings reject coordinator `system/settings.json`, forbid settings inside the coordinator, and derive provider runtime roots under `providers/runners/<provider>`. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
 | The tool surface exposes `context_packet`, provider diagnostics, runtime, memory, worktree, benchmark, and install tools; handlers delegate to controllers and response validation flows through the model registry. | [mcp/tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools/); [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
 | `server.py` installs a FastMCP shim that minifies the JSON text mirror of tool results without touching structured content. | [compact_content.py](agents-remember-md/mcp/src/agents_remember/mcp/compact_content.py) |
-| `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember-md/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
+| `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift and branch-freshness status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember-md/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember-md/mcp/src/agents_remember/models/providers.py); [git_freshness.py](agents-remember-md/mcp/src/agents_remember/kernel/git_freshness.py) |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
 | Runtime package data is synchronized from canonical root asset folders, and tests verify missing, extra, changed, and target-scope behavior. | [sync-runtime.py](agents-remember-md/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember-md/mcp/tests/test_sync_runtime.py); [pre-commit hook](agents-remember-md/.githooks/pre-commit) |
 | Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
@@ -184,6 +191,11 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-06-10T10:26+02:00 — No route impact: package version bumped to 2.8.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #54 release; runtime skills (l-01/c-09/c-11) teach the new freshness checkpoints; route behavior unchanged.
+- 2026-06-10T09:56+02:00 — Issue #54 sub-task D: new `worktree_sync` tool (mid-task atomic base-pair sync) and the fetch-free `worktree_status` freshness block; route detail lives in the `worktrees/modules` overview.
+- 2026-06-10T09:45+02:00 — Issue #54 sub-task C: carryover apply reports `memory_main_advance`, fast-forwarding memory main to the official checkout tip after the carryover commits.
+- 2026-06-10T09:30+02:00 — Issue #54 sub-task B: `worktree_start` gained the stale-base preflight (behind/diverged source branches block with `stale_base_choice` recoveries) and the memory source branch auto-template; route detail lives in the `worktrees/modules` overview.
+- 2026-06-10T08:39+02:00 — Issue #54 sub-task A: added `kernel/git_freshness.py` (branch-vs-upstream freshness kernel) and the opt-in `context_packet` `include_freshness` section with `ledgerMapsCodeHead`.
 - 2026-06-10T08:15+02:00 — No route impact: package version bumped to 2.7.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #53/#58 release; route behavior unchanged.
 - 2026-06-10T07:40+02:00 — GitHub #53/#58: added the background-observability invariant (async worktree provider setup with durable heartbeat progress, stale projection, retry path) and the container-form argv invariant; shared context helpers moved to `providers/context_common.py` (facade re-entrancy fix).
 - 2026-06-10T06:05+02:00 — No route impact: package version bumped to 2.6.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #56 release; route behavior unchanged.

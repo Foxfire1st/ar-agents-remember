@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-06-10T07:35+02:00|
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T09:30+02:00|
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -28,7 +28,12 @@ argument wiring while preserving the public facade import path.
   then launches provider setup in the background (GitHub #53): dry runs stay
   synchronous, real starts return `starting` within seconds, and
   `retry_provider_setup` relaunches a failed/stale setup on an existing
-  contract. `cleanup.py`/`abandon.py` refuse to tear down while a live
+  contract. Before any worktree exists, `start.py` also runs the stale-base
+  preflight (GitHub #54): source branches behind/diverged from their upstream
+  block the start with `stale_base_choice` recoveries (`fast-forward` /
+  `proceed-stale`), and a missing external memory source branch is
+  auto-created at the official memory tip using the code branch name as
+  template. `cleanup.py`/`abandon.py` refuse to tear down while a live
   (fresh-heartbeat) background setup owns the worktree. `integrate.py` performs the code and
   memory fast-forwards atomically: it pre-validates that both fast-forwards are
   possible before mutating either branch and rolls both heads back on any
@@ -36,6 +41,14 @@ argument wiring while preserving the public facade import path.
   `abandon.py` is the discard-without-integration sibling: it reclaims the
   isolated provider stack and removes worktrees/branches without requiring a
   prior integration.
+- `sync.py` (GitHub #54 sub-task D) owns `worktree_sync`: the mid-task base
+  sync that fetches upstreams, requires the new code tip to be ledger-mapped at
+  the official memory tip, merges the source branch into the code work branch
+  (abort on conflicts), fast-forwards parked memory (or blocks with
+  `memory_sync_choice` recoveries when local memory commits diverge), and
+  advances the contract's recorded base pair with a `sync_log` entry.
+  `guidance.py`'s fetch-free `freshness` block in `worktree_status` is the
+  detection surface that recommends it.
 - `provider_async.py` owns the background setup launch (daemon thread), the
   durable `setup-progress.json` under the worktree group's provider-runtime
   dir, the `worktree_status` providers projection (running / stale / ok /
@@ -77,6 +90,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00 — GitHub #54 sub-task D: added `sync.py` (worktree_sync mid-task base sync) and `guidance.py`'s fetch-free `freshness` status block; `args.py` gained `memory_sync_choice`.
+- 2026-06-10T09:30+02:00 — GitHub #54 sub-task B: `start.py` gained the stale-base preflight (`stale_base_choice` recoveries) and the memory source branch auto-template; `args.py` gained `stale_base_choice`.
 - 2026-06-10T07:35+02:00 — GitHub #53: added `provider_async.py` (background provider setup launch, progress projection, teardown guard); `start.py` split preflight from launch and writes the contract before launching; cleanup/abandon gained the live-setup guard.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: route overviews get the same body gate scoped to nearest-governing routes (`No route impact:` marker; ancestors report as `stamped_without_body_review`), surfaced in closeout previews and apply payloads.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: `onboarding.py`'s content gate became the four-case body/history classification with in-band `No content impact:` attestation, shared parsing helpers moved to `kernel/onboarding_doc.py` (facade re-exports kept), and closeout payloads surface attested sidecars.

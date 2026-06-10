@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00                     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -28,7 +28,15 @@ The module defines the contract schema, supported memory modes, the
 default contract construction, markdown front-matter serialization, validation,
 limited YAML-like parsing, and conversion from parsed front matter back into a
 typed contract object. Contract rendering is split into small section renderers
-for memory, human review, closeout, integration, and body content.
+for memory, sync, human review, closeout, integration, and body content.
+
+`sync_log` (issue #54 sub-task D) records each `worktree_sync` base-pair
+advance as a tuple of dict entries. It is a real dataclass field because the
+closeout/contract rewrite regenerates the document from the model — freeform
+contract prose does not survive. It serializes as one compact JSON scalar
+(`sync:` / `  log: [...]`) so the limited front-matter parser (scalar one-level
+sections only) round-trips it; an absent or unparseable value loads as `()`,
+keeping pre-#54 contracts loadable.
 
 ### Conventions
 
@@ -79,6 +87,7 @@ external memory paths, but the parser and renderer are same-repository code.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00 — Added the `sync_log` field + `sync:` section (compact JSON scalar, backward-compatible empty default) for issue #54 sub-task D worktree_sync bookkeeping.
 - 2026-05-31T12:50+02:00 — `ContractError` re-based from `ValueError` to the shared `AgentsRememberError` (imported from `agents_remember.errors`); corrected the error-type prose in Invariants And Boundaries and Repo-Internal References to name the new domain base while noting `except ValueError` callers still catch it (1.0.0 review remediation).
 - 2026-05-25T20:41+02:00: Updated after contract rendering was split into section helpers during worktree package refactoring.
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.

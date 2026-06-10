@@ -98,7 +98,7 @@
       "CGC",
       "mcp/src/agents_remember/controllers/",
       "route-local-overview",
-      "ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0",
+      "f62c732df2acc30ec3766f83c176a24b39c0bc46",
       "/../../overview.md",
       "controllers/",
       "mcp/server.py",
@@ -115,11 +115,11 @@
       "starting",
       "retry_provider_setup",
       "timeoutCaps.providerSetupSeconds",
-      "mcp/tools.py",
-      "7123da56",
-      "mcp/overview.md",
-      "/models/overview.md",
-      "agents_remember"
+      "include_freshness",
+      "fetch_timeout",
+      "kernel.git_freshness.read_branch_freshness",
+      "ledgerMapsCodeHead",
+      "not-checked"
     ]
   },
   "fallback": {

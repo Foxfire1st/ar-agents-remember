@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-08T09:57+02:00                     |
-| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
-| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
+| lastUpdated            | 2026-06-10T08:39+02:00                     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -33,6 +33,15 @@ The `taskRoot` expectation is built with `Path.as_posix()` because the packet
 emits posix paths on every host (including Windows, where `str(Path)` would use
 backslashes).
 
+Freshness coverage (issue #54): default packets keep
+`freshness == {"status": "not-checked"}`; `include_freshness=true` on the
+remote-less fixture reports `code.state == "no-upstream"` with no memory block
+(fixture memory root is not a git repo) and no `ledgerMapsCodeHead` (no
+`memory.md`); a bare-origin + second-clone fixture proves `code.state ==
+"behind"` with the behind count and `ledgerMapsCodeHead` true via a
+`create_initial_ledger`-written `memory.md` mapping the code HEAD; a ledger
+mapping a different commit proves `ledgerMapsCodeHead` false.
+
 ### Invariants And Boundaries
 
 The context packet is a read-oriented bootstrap surface. It should report
@@ -51,6 +60,7 @@ detail consumers at `provider_diagnostics`.
 
 ## Update History
 
+- 2026-06-10T08:39+02:00: Added four freshness tests (default not-checked, no-upstream fixture, behind + ledger-mapped fixture, unmapped-head ledger) for the issue #54 freshness section.
 - 2026-06-08T09:57+02:00: Moved skipped-provider regression coverage to the public `context_packet_payload(...)` path so serialization and wrapper re-validation are exercised.
 - 2026-05-29T08:53+02:00: Updated after the `taskRoot` assertion switched from `str(path)` to `path.as_posix()` so it matches the packet's posix paths on Windows hosts.
 - 2026-05-28T19:52+02:00: Updated after context packet tests moved to `ContextPacketV2`, rejected duplicate top-level path rules, and rejected embedded provider/worktree raw status.

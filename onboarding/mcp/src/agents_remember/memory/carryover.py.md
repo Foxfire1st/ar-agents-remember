@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:50+02:00     |
-| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4` |
-| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
+| lastUpdated            | 2026-06-10T09:45+02:00     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -48,6 +48,15 @@ guarded on the code repository being a clean checkout of the official ref; the
 apply payload reports the result (or the reasoned skip) as
 `route_index_refresh`.
 
+Every apply result also carries `memory_main_advance` (issue #54):
+`_advance_memory_main()` fast-forwards memory `main` to the official checkout
+tip after the carryover commits exist. Code `main` advances via the GitHub PR
+merge, but memory has no PR flow, so non-main cycles previously left memory
+`main` behind indefinitely. ff-only via `branch -f` guarded by `is_ancestor`;
+states: `fast-forwarded`, `already-current` (main checked out or already at
+tip), `diverged` (independent commits on main — reported, never forced),
+`failed` (e.g. main pinned by another worktree), `skipped` (no main branch).
+
 ### Invariants And Boundaries
 
 - Only proven evidence tiers auto-carry.
@@ -78,6 +87,7 @@ apply payload reports the result (or the reasoned skip) as
 
 ## Update History
 
+- 2026-06-10T09:45+02:00 — Issue #54 sub-task C: added `_advance_memory_main()` (+ `branch_exists`/`current_branch` helpers); both apply result paths report `memory_main_advance`, fast-forwarding memory main to the official checkout tip after carryover.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: route-overview carryover candidates (`kind`-tagged, route-keyed, identical→auto re-verify, differing→always review-required) and guarded official-side route-index regeneration (`_refresh_official_route_indexes`, reported as `route_index_refresh`).
 - 2026-06-10T05:30+02:00 — `run_git` now sets `stdin=subprocess.DEVNULL` (or explicit `input`): git children inherited the MCP stdio protocol pipe, the proven root cause of the #49 tool-call hangs (stdio harness A/B: 120s hang pre-fix, 3.4s post-fix).
 - 2026-06-02T04:00+02:00: `apply_carryover_for_request()` now maps an unmapped official code HEAD to the current memory content (new state `ledger-mapped-head`) when there is nothing actionable to carry — automating the post-merge merge-commit ledger entry so the next worktree needs no manual reconciliation; gated so a pending review-required candidate still returns `nothing-to-carryover`. Added `_nothing_to_carry_result()` plus `find_mapping`/`MemoryLedger` imports. (`l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.)

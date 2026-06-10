@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-05-30T22:29+02:00|
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                                      |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00|
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                                      |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -19,7 +19,8 @@ name list and the single response-validation helper that every builder uses.
 
 ### Logic
 
-Declares `TRANSPORT = "stdio"`, the `PUBLIC_TOOLS` tuple (36 tool names),
+Declares `TRANSPORT = "stdio"`, the `PUBLIC_TOOLS` tuple (37 tool names —
+`worktree_sync` joined in GitHub #54 sub-task D),
 `RESERVED_TOOLS`, and `_tool_payload(tool_name, payload)`. `_tool_payload`
 selects the declared Pydantic model from
 `models.tool_registry.PUBLIC_TOOL_RESPONSE_MODELS`, validates the
@@ -49,6 +50,7 @@ passes through, that one call is what gives every MCP response a real
 
 ## Update History
 
+- 2026-06-10T09:56+02:00 — Registered `worktree_sync` in `PUBLIC_TOOLS` (GitHub #54 sub-task D); tuple is now 37 names.
 - 2026-06-01T20:45+02:00 — Registered `worktree_abandon` in `PUBLIC_TOOLS` so its response is validated like every other public tool.
 - 2026-05-30T22:29+02:00: Documented that `_tool_payload` now finalizes token-accounting metadata via `finalize_payload_tokens` (S6 wiring), making it the single point that populates `tokens`/`tokenizer`/`tokenCountExact` on every MCP response. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-29T18:35+02:00: Created when `mcp/tools.py` was split into the `mcp/tools/` package (commit `01f503d`); holds the `_tool_payload`/`PUBLIC_TOOLS` contract previously documented in `tools.py.md`.

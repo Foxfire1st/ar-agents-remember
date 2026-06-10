@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T09:30+02:00     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -54,6 +54,30 @@ the preflight + launch re-run against the existing contract and the result is
 `provider-setup-retried` — the recovery path for failed or stale background
 setups.
 
+The stale-base preflight (issue #54) runs after the existing-contract
+short-circuit and before the long-path preflight: `_stale_base_preflight`
+reads `kernel.git_freshness` for the code source branch and (external mode)
+the memory source branch, and blocks (exit 2,
+`choose_stale_base_recovery`, required arg `stale_base_choice`) when either is
+`behind` or `diverged` from its upstream — a stale base produces wrong code
+and silently defeats the CGC seed fast-path. `unknown` (offline fetch) and
+`no-upstream` never block. Recoveries: `proceed-stale` skips the check;
+`fast-forward` routes through `_fast_forward_stale_branches` (checked-out
+branch → `merge --ff-only`; parked branch → `branch -f`, safe because state
+`behind` proves ancestry; diverged or worktree-pinned branches land back in
+`staleBases` with a `recovery_error`). After a fast-forward recovery
+`start_result` rebuilds the contract so recorded base commits reflect the
+recovered tips.
+
+`_ensure_memory_source_branch` (issue #54) runs inside
+`prepare_memory_for_start` after the ledger mapping gate: a missing external
+memory source branch is auto-created at the validated official checkout tip
+(`memory_base_commit`) using the code source branch name as template,
+reported as `memorySourceBranch` (`existing` /
+`created-from-official-tip` / dry-run `would-create-from-official-tip`) —
+previously agents had to create that branch by hand or `ensure_worktree`
+raised.
+
 `prepare_memory_for_start` now also calls `_sync_worktree_memory_mtimes` after
 preparing the memory worktree. `git checkout` stamps every file with the current
 time; GrepAI's watcher skips unchanged files by `ModTime`, so brand-new mtimes
@@ -78,9 +102,12 @@ No external Domain Documentation source is configured for this memory repo.
 | Launcher, ordering, retry, and guard coverage for the async path. | [test_provider_async.py](agents-remember-md/mcp/tests/test_provider_async.py) |
 | Background launcher and status projection. | [provider_async.py](provider_async.py.md) |
 | mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | [test_worktree_mtime_sync.py](agents-remember-md/mcp/tests/test_worktree_mtime_sync.py) |
+| Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | [test_worktree_stale_base.py](agents-remember-md/mcp/tests/test_worktree_stale_base.py) |
+| Branch freshness facts come from the shared kernel. | [git_freshness.py](agents-remember-md/mcp/src/agents_remember/kernel/git_freshness.py) |
 
 ## Update History
 
+- 2026-06-10T09:30+02:00 — Issue #54 sub-task B: added `_stale_base_preflight` (+ `_branch_freshness_findings`, `_fast_forward_stale_branches`) blocking starts on behind/diverged source branches with `stale_base_choice` recoveries, contract rebuild after fast-forward recovery, and `_ensure_memory_source_branch` auto-creating a missing memory source branch at the official tip.
 - 2026-06-10T07:30+02:00 — GitHub #53: provider setup moved to a background launch. `prepare_providers_for_start` split into `plan_providers_for_start` (sync preflight) + `run_or_launch_provider_setup` (dry-run sync / real launch via `provider_async`); the contract write moved BEFORE the launch; `_run_provider_setup` became the request builder `_provider_setup_request`; `_started_result` summary names the background poll loop; added the `retry_provider_setup` path on existing contracts.
 - 2026-06-10T00:40+02:00 — Added the Windows long-path preflight: on hosts with `LongPathsEnabled=0`, `start_result` blocks (exit 2) before creating worktrees when the projected worktree path plus the longest tracked path in the code or external-memory repo exceeds `WINDOWS_MAX_PATH_BUDGET` (250). The block payload reports the computed lengths and both remedies (enable long paths / shorter worktree name). `long_path_block_payload` is the pure, platform-independent decision; `_windows_long_paths_enabled` reads the registry and returns True off-Windows. Existing-contract attach still short-circuits before the preflight.
 - 2026-06-02T16:24+02:00: Normalized skill references in this module to full lowercase skill names; the missing-external-memory guidance names `c-00-initialize-memory-repo` (confirmed in source `_missing_memory_repo_state`). Reference-style normalization; behavior unchanged.

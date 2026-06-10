@@ -70,6 +70,7 @@
     "mcp/pyproject.toml",
     "mcp/requirements.txt",
     "mcp/src/agents_remember/benchmarks/runner.py",
+    "mcp/src/agents_remember/cli/context_packet.py",
     "mcp/src/agents_remember/code_quality/__init__.py",
     "mcp/src/agents_remember/code_quality/check.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
@@ -83,6 +84,7 @@
     "mcp/src/agents_remember/kernel/filesystem.py",
     "mcp/src/agents_remember/kernel/git_command.py",
     "mcp/src/agents_remember/kernel/git_facts.py",
+    "mcp/src/agents_remember/kernel/git_freshness.py",
     "mcp/src/agents_remember/kernel/memory_init.py",
     "mcp/src/agents_remember/kernel/memory_ledger.py",
     "mcp/src/agents_remember/kernel/onboarding_doc.py",
@@ -186,6 +188,7 @@
     "mcp/tests/test_controller_guards.py",
     "mcp/tests/test_crap_calculator.py",
     "mcp/tests/test_docker_runtime_parsers.py",
+    "mcp/tests/test_git_freshness.py",
     "mcp/tests/test_identity.py",
     "mcp/tests/test_install_runtime.py",
     "mcp/tests/test_log_capture.py",
@@ -198,6 +201,7 @@
     "mcp/tests/test_onboarding_doc.py",
     "mcp/tests/test_onboarding_drift.py",
     "mcp/tests/test_provider_async.py",
+    "mcp/tests/test_provider_context_imports.py",
     "mcp/tests/test_provider_current_state.py",
     "mcp/tests/test_provider_lifecycle.py",
     "mcp/tests/test_provider_setup.py",
@@ -219,11 +223,13 @@
     "mcp/tests/test_worktree_abandon.py",
     "mcp/tests/test_worktree_longpath_preflight.py",
     "mcp/tests/test_worktree_mtime_sync.py",
-    "mcp/tests/test_worktree_support.py"
+    "mcp/tests/test_worktree_stale_base.py",
+    "mcp/tests/test_worktree_support.py",
+    "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 367,
-    "fileSidecars": 154,
+    "sourceFilesInScope": 373,
+    "fileSidecars": 160,
     "childRoutes": 11
   },
   "routingTerms": [
@@ -236,6 +242,7 @@
     "and",
     "assets",
     "async",
+    "base",
     "baseline",
     "benchmark",
     "benchmarks",
@@ -253,6 +260,7 @@
     "cgc",
     "cgcignore",
     "check",
+    "cli",
     "closeout",
     "code",
     "code_quality",
@@ -270,6 +278,7 @@
     "content",
     "context",
     "context_common",
+    "context_packet",
     "contract",
     "control",
     "controller",
@@ -302,11 +311,8 @@
     "files",
     "filesystem",
     "findings",
-    "from",
-    "git",
-    "git_command",
-    "git_facts",
-    "git_worktree_manager"
+    "freshness",
+    "from"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",
@@ -328,13 +334,13 @@
       "mcp/requirements.txt",
       "mcp/src/agents_remember/benchmarks",
       "mcp/src/agents_remember/benchmarks/runner.py",
+      "mcp/src/agents_remember/cli",
+      "mcp/src/agents_remember/cli/context_packet.py",
       "mcp/src/agents_remember/code_quality",
       "mcp/src/agents_remember/code_quality/__init__.py",
       "mcp/src/agents_remember/code_quality/check.py",
       "mcp/src/agents_remember/code_quality/crap_calculator.py",
-      "mcp/src/agents_remember",
-      "mcp/src/agents_remember/errors.py",
-      "mcp/src/agents_remember/install"
+      "mcp/src/agents_remember"
     ],
     "anchorHints": [
       "README.md",
@@ -345,6 +351,8 @@
       "requirements",
       "runner.py",
       "runner",
+      "context_packet.py",
+      "context_packet",
       "__init__.py",
       "__init__",
       "check.py",
@@ -369,6 +377,8 @@
       "git_command",
       "git_facts.py",
       "git_facts",
+      "git_freshness.py",
+      "git_freshness",
       "memory_init.py",
       "memory_init",
       "memory_ledger.py",
@@ -380,11 +390,7 @@
       "command_capture.py",
       "command_capture",
       "compact_content.py",
-      "compact_content",
-      "config.py",
-      "config",
-      "server.py",
-      "server"
+      "compact_content"
     ]
   },
   "fallback": {

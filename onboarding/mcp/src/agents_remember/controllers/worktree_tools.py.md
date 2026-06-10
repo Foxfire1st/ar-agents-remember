@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -25,7 +25,12 @@ and path confinement use the shared `_guards` helpers (`require_repo`,
 `require_within_coordination`) so the security boundary lives in one place.
 Worktree start can include provider setup by writing MCP-derived lifecycle
 settings and handing a package-local provider setup config to the worktree
-manager.
+manager. `worktree_start_tool` forwards `stale_base_choice` (GitHub #54) into
+`WorktreeArgs` for the stale-base preflight recovery; the controller adds no
+behavior of its own. `worktree_sync_tool` (GitHub #54 sub-task D) is the
+contract-path-based controller for the mid-task base sync: it confines
+`contract_path` via `require_within_coordination` and forwards
+`memory_sync_choice`/`dry_run` to `git_worktree_manager.sync_result`.
 
 ## Invariants And Boundaries
 
@@ -58,6 +63,8 @@ the documented setup cap now actually governs the worktree flow.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00 — Added `worktree_sync_tool` (contract-path confinement + `memory_sync_choice`/`dry_run` forwarding to `sync_result`) for the GitHub #54 mid-task base sync.
+- 2026-06-10T09:30+02:00 — `worktree_start_tool` forwards the new `stale_base_choice` recovery selector into `WorktreeArgs` (GitHub #54 stale-base preflight); plumbing only.
 - 2026-06-10T07:30+02:00 — worktree_start async support (GitHub #53): the provider setup config now carries `unlink_settings_after_setup=True` and the controller skips its `finally` unlink when the result's providers state is `starting` (`_settings_owned_by_background`) — the background thread reads the temp settings file and owns the unlink. New `retry_provider_setup` flag forwarded to the worktree layer. The provider timeout switched from the hardcoded `DEFAULT_DOCKER_CONTROL_SECONDS` (120) to `config.timeout_caps['providerSetupSeconds']` (default `DEFAULT_PROVIDER_SETUP_SECONDS`, 1800) — the documented setup cap now actually governs the worktree flow (GitHub #58 evidence showed the 120s bound on seed exports).
 - 2026-06-01T20:45+02:00 — Added `worktree_abandon_tool` to the controller surface and threaded the `teardown_providers` flag through `worktree_cleanup_tool` (behavior detail lives in `provider_tools.py.md`, `abandon.py.md`, `cleanup.py.md`).
 - 2026-05-31T12:30+02:00 — Repo/path guards moved to shared `_guards` (require_repo/require_within_coordination) raising AuthorityError, and namespaces are now typed `git_worktree_manager.WorktreeArgs` instead of `argparse.Namespace` (1.0.0 review remediation).

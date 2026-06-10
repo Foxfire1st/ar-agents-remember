@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T07:40+02:00|
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-10T08:39+02:00|
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -62,8 +62,17 @@ lifecycle settings file to the background setup thread on a `starting` result,
 forwards `retry_provider_setup`, and bounds worktree provider setup by
 `timeoutCaps.providerSetupSeconds` instead of the docker-control default.
 
+`context_packet.py` carries the opt-in branch-freshness section (GitHub #54):
+`include_freshness`/`fetch_timeout` on the request feed
+`kernel.git_freshness.read_branch_freshness` for the code and external-memory
+repos plus a `ledgerMapsCodeHead` mapping check; the default stays
+`not-checked` so everyday packets skip the remote fetch.
+
 ## Update History
 
+- 2026-06-10T09:56+02:00 — No route impact: sub-task D adds `worktree_sync_tool` as another typed worktree operation facade in `worktree_tools.py` (path confinement + forwarding); the route model this overview describes is unchanged (detail in the file sidecar).
+- 2026-06-10T09:30+02:00 — No route impact: sub-task B's `worktree_tools.py` change is a plumbing-only forward of `stale_base_choice` into `WorktreeArgs`; the controller surface this overview describes is unchanged (detail in the file sidecar).
+- 2026-06-10T08:39+02:00 — GitHub #54 sub-task A: `context_packet.py` gained the opt-in freshness section (`include_freshness`, kernel-backed code/memory branch freshness, `ledgerMapsCodeHead`).
 - 2026-06-10T07:40+02:00 — GitHub #53: `worktree_tools.py` start controller hands the temp lifecycle settings file to the background setup thread (skip-unlink on a `starting` result), forwards `retry_provider_setup`, and bounds worktree provider setup by `timeoutCaps.providerSetupSeconds` instead of the docker-control default.
 - 2026-06-06T03:43: Re-verified against the current controller surface (9 files incl. `_guards.py` and per-domain tool modules); corrected `mcp/tools.py` references to the `mcp/tools/` package; re-stamped to `7123da56`.
 - 2026-05-28T19:52+02:00: Created after the MCP controller surface split out of the former `skill_tools.py` mega-facade.

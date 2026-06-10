@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-10T09:56+02:00                     |
+| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
+| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -30,7 +30,8 @@ re-exports the typed `WorktreeArgs` dataclass DTO (from
 the worktree domain functions.
 
 The MCP path still calls result-returning service functions such as
-`start_result()`, `closeout_result()`, `integrate_result()`, and
+`start_result()`, `sync_result()` (GitHub #54 sub-task D, re-exported from
+`worktrees/modules/sync.py`), `closeout_result()`, `integrate_result()`, and
 `cleanup_result()`. CLI command functions remain print adapters over those
 payloads, so MCP controllers do not need to run `main(argv)` and parse stdout.
 
@@ -79,6 +80,7 @@ documented by the `modules/overview.md` route overview.
 
 ## Update History
 
+- 2026-06-10T09:56+02:00 — Re-exported `sync_result` from the new `worktrees/modules/sync.py` (GitHub #54 sub-task D).
 - 2026-06-01T20:45+02:00 — Re-exported `abandon_result`, `teardown_worktree_providers`, and `delete_branch_force` for the new worktree abandon/teardown path.
 - 2026-05-31T12:50+02:00 — Source now imports and re-exports the typed `WorktreeArgs` dataclass DTO from `worktrees/modules/args.py` (replacing the loosely typed `argparse.Namespace` into domain functions); added it to `__all__` and noted it in the Logic section (1.0.0 review remediation).
 - 2026-05-25T20:41+02:00: Updated after the worktree manager became a facade over focused lifecycle implementation modules.
