@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:00+02:00     |
-| lastVerifiedCommitHash | `9b25740b5b373b410c270e14913f5a220c63c795` |
-| lastVerifiedCommitDate | 2026-06-10T02:38:07+02:00|
+| lastVerifiedCommitHash | `bbc88100e2b34bf8fd467856d9dc64a25f2394fd` |
+| lastVerifiedCommitDate | 2026-06-10T05:50:55+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -117,6 +117,7 @@ The README describes external memory in general terms, but this file-level onboa
 ## Update History
 
 - 2026-06-10T09:00+02:00 — Status section bumped to 2.5.2 with the carryover response compaction sentence (GitHub #52).
+- 2026-06-10T06:05+02:00 — No content impact: Status section bumped to 2.6.0 with the memory-integrity release sentence (carryover overview candidates, closeout body/history gates, no-impact markers; GitHub #56); the sidecar's description of the README remains accurate.
 - 2026-06-10T05:30+02:00 — Status section bumped to 2.5.1 with the tool-reliability release sentence (protocol-pipe hygiene, stall-based wedge detection, GrepAI indexing parity, single runner-image derivation, tool-report compaction with keep-5/7-day retention).
 - 2026-06-09T22:10+02:00 — Status section bumped to 2.5.0 with the CGC durability/readiness release sentence (FalkorDB host-path persistence, graph-content readiness states, degraded-packet propagation, `indexing` summary list, watcher self-heal, orphan cleanup).
 - 2026-06-09T15:39+02:00: Bumped the Status section to `2.4.2` and documented it as the patch packaging the consolidated `l-01-session-job-lifecycle` skill, where the complete lifecycle spine now lives in `SKILL.md` instead of a separate `lifecycle.md` companion. Verification metadata stays pinned until closeout commits the source change.

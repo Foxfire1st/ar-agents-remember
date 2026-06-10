@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T10:30+02:00                     |
-| lastVerifiedCommitHash | `7e730de0465266ef19c31ceaffa29475b7bc3a79` |
-| lastVerifiedCommitDate | 2026-06-10T05:35:29+02:00|
+| lastVerifiedCommitHash | `bbc88100e2b34bf8fd467856d9dc64a25f2394fd` |
+| lastVerifiedCommitDate | 2026-06-10T05:50:55+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -174,6 +174,8 @@ changed files in check mode.
 ## Update History
 
 - 2026-06-10T10:30+02:00 — Route body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness, the stdio subprocess invariant (#49), stall-watchdog doctrine, and the tool-report response-budget layer. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T06:05+02:00 — No route impact: package version bumped to 2.6.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #56 release; route behavior unchanged.
+- 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the Hot Path Summary now records carryover route-overview candidates and guarded official-side index regeneration (`memory/carryover.py`).
 - 2026-06-10T05:20+02:00 — No route impact: sub-task 2 extended the body gates to route overviews and the c-05 skill doctrine; the route surface described in the sub-task 1 entry already covers both gates and the markers.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: added `kernel/onboarding_doc.py` (shared doc parsing + body/history classification) and the four-case sidecar body gate with in-band no-impact attestation markers to the route surface.
 - 2026-06-09T14:52+02:00: Refreshed the MCP route overview against MCP 2.4.1 `main`; added the canonical root runtime asset sync boundary for package data.

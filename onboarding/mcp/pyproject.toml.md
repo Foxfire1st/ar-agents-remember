@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:00+02:00     |
-| lastVerifiedCommitHash | `9b25740b5b373b410c270e14913f5a220c63c795` |
-| lastVerifiedCommitDate | 2026-06-10T02:38:07+02:00|
+| lastVerifiedCommitHash | `bbc88100e2b34bf8fd467856d9dc64a25f2394fd` |
+| lastVerifiedCommitDate | 2026-06-10T05:50:55+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -75,6 +75,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 ## Update History
 
 - 2026-06-10T09:00+02:00 — Version bumped to 2.5.2 for the carryover response compaction patch (GitHub #52).
+- 2026-06-10T06:05+02:00 — No content impact: version bumped to 2.6.0 for the memory-integrity release (GitHub #56); package metadata semantics unchanged.
 - 2026-06-10T05:30+02:00 — Version bumped to 2.5.1 for the tool-reliability release (stdio subprocess hygiene #49, seed stall watchdog, runner-image derivation #50, GrepAI indexing parity, crash-loop readiness, response token budgets).
 - 2026-06-09T22:10+02:00 — Version bumped to 2.5.0 for the CGC persistence/readiness release (FalkorDB `dataDestination` mount fix, graph-content readiness probe with `indexing` state, degraded-state propagation, summary `indexing` list, watcher self-heal entrypoint, `--remove-orphans` hygiene).
 - 2026-06-09T15:39+02:00: Bumped the documented package `version` to `2.4.2` for the L-01 lifecycle skill consolidation patch release; still tracks `SERVER_VERSION`. Verification metadata pinned until closeout.
