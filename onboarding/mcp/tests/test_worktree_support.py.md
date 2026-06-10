@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-06-10T04:47+02:00|
-| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0` |
-| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
+| lastUpdated            | 2026-06-10T05:20+02:00|
+| lastVerifiedCommitHash | `7cb9c6bf223818a516c443a72ba976a38f6f06e9` |
+| lastVerifiedCommitDate | 2026-06-10T05:20:13+02:00|
 
 ## Purpose
 
@@ -29,6 +29,17 @@ passes with empty attestations for a body+history update and for a new
 untracked sidecar, and is a no-op when the plan has no required sidecars. The
 shared direct-closeout fixture's sidecar update pairs its body edit with an
 Update History entry to satisfy the gate.
+
+`RequireUpdatedRouteOverviewContentTests` covers the route-overview body gate:
+with committed root and `src/app` overviews, the nearest-governing overview of
+a changed path fails when stale or when its body update lacks a history entry,
+passes via a `No route impact:` marked entry (returned as attested) or a
+body+history update, the ancestor/root overview is reported as
+`stamped_without_body_review` instead of failing, the root overview gates when
+it is itself the nearest governor, and an empty plan is a no-op. The
+route-overview direct-closeout test attests the root route via marker and
+asserts the apply payload surfaces `route_overviews_attested_no_impact`; the
+shared fixture adds that marked entry when a route overview is included.
 
 ### Conventions
 
@@ -81,6 +92,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added `RequireUpdatedRouteOverviewContentTests` (nearest-governor gating, ancestor reporting, marker attestation, untraced body edits, root-as-governor) and payload assertions for `route_overviews_attested_no_impact`; route-overview fixture gains a `No route impact:` entry.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: extended `RequireUpdatedSidecarContentTests` to the four-case gate (metadata-only, unmarked history-only, marked no-impact attestation, untraced body edit, body+history, new untracked sidecar) and paired the direct-closeout fixture's sidecar body edit with an Update History entry.
 - 2026-06-02T04:00+02:00: Added `test_memory_carryover_maps_unmapped_official_head_when_nothing_to_carry` covering the new `ledger-mapped-head` result — carryover maps an unmapped official code HEAD (e.g. a PR merge commit) to current memory content when nothing is actionable to carry; the review-required case still returns `nothing-to-carryover`. Added `find_mapping`/`load_ledger` test imports. (`l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.)
 - 2026-05-31T12:30+02:00 — Added coverage notes for new `_merge_integrated_commits` non-fast-forward integration refusal (no `HEAD` mutation) and the `c-11-memory-carryover-from-branch` skill earlier-only-landed same-path commit staying `same-path-changed`/`review-required`; the existing default-sandbox omission test is unchanged, so benchmark phrasing kept (1.0.0 review remediation).
