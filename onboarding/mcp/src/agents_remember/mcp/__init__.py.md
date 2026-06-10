@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:00+02:00     |
-| lastVerifiedCommitHash | `bbc88100e2b34bf8fd467856d9dc64a25f2394fd` |
-| lastVerifiedCommitDate | 2026-06-10T05:50:55+02:00|
+| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4` |
+| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -21,7 +21,7 @@ The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
 derived from the installed package metadata via
 `importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
 the single source of truth; a `PackageNotFoundError` fallback hardcodes the
-current release version (now `2.5.2`) for source checkouts without an install. Payload builders in `mcp.tools` use
+current release version (now `2.6.0`) for source checkouts without an install. Payload builders in `mcp.tools` use
 those constants for `ping` and `server_info`, so the version no longer needs a
 manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
 sync at release.
@@ -40,6 +40,7 @@ No external Domain Documentation source is configured for this memory repo.
 ## Update History
 
 - 2026-06-10T09:00+02:00 — `SERVER_VERSION` fallback bumped to 2.5.2 in lockstep with `mcp/pyproject.toml`.
+- 2026-06-10T06:25+02:00 — Corrected the fallback version named in the commentary to 2.6.0; the release-bump pass had left the parenthetical at 2.5.2.
 - 2026-06-10T06:05+02:00 — No content impact: `SERVER_VERSION` fallback bumped to 2.6.0 in lockstep with `mcp/pyproject.toml` (GitHub #56 release); module behavior unchanged.
 - 2026-06-10T05:30+02:00 — `SERVER_VERSION` fallback bumped to 2.5.1 in lockstep with `mcp/pyproject.toml`.
 - 2026-06-09T22:10+02:00 — `SERVER_VERSION` fallback bumped to 2.5.0 in lockstep with `mcp/pyproject.toml`.

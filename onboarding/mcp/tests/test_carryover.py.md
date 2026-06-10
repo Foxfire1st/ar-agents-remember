@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:50+02:00                     |
-| lastVerifiedCommitHash | `7e730de0465266ef19c31ceaffa29475b7bc3a79`                                  |
-| lastVerifiedCommitDate | 2026-06-10T05:35:29+02:00|
+| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4`                                  |
+| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
 
 ## Purpose
 
