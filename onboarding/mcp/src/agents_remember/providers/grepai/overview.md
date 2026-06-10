@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
+| lastUpdated            | 2026-06-10T10:30+02:00                     |
 | lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
 | lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../../../../overview.md`                  |
@@ -34,7 +34,10 @@ GrepAI actions.
 
 - `setup.py` wires enabled GrepAI setup through lifecycle commands.
 - `seed.py` clones the source GrepAI database into an isolated worktree backend
-  so embeddings can be reused instead of rebuilt.
+  so embeddings can be reused instead of rebuilt. The clone runs under a stall
+  watchdog (killed after `GREPAI_CLONE_STALL_SECONDS` of zero progress in dump
+  growth / target database size) and is never capped by total duration — a
+  wedge's signature is silence, not size (2.5.1).
 - `isolated.py` rewrites provider settings for worktree-specific containers,
   roots, logs, and runtime paths while preserving the logical workspace key.
 - `context/` owns GrepAI runtime layout, workspace config, and live-root indexing.
@@ -57,6 +60,7 @@ GrepAI actions.
 
 ## Update History
 
+- 2026-06-10T10:30+02:00 — Route body caught up with 2.5.1: the `seed.py` clone stall watchdog and no-total-cap contract. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current GrepAI provider package; added the worktree database-clone (`seed.py`) and isolated-settings (`isolated.py`) surfaces.
 - 2026-06-02T01:15+02:00: Updated for watch-live — `context/` now indexes the live memory roots in place and git-ignores grepai's `.grepai/` working dir; removed the `.grepai/` artifact-cleanup reference (`artifacts.py` deleted).
 - 2026-05-25T21:14+02:00: Created when provider modules were reorganized provider-first under `providers/grepai/`.

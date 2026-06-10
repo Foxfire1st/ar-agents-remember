@@ -42,7 +42,7 @@
     "src"
   ],
   "hotPath": {
-    "summary": "`__init__.py` re-exports the GrepAI public lifecycle surface. `core.py` derives settings, layout, workspace config, container DSNs, and Docker image settings. `backend.py` manages PostgreSQL/pgvector, `embedder.py` manages Ollama and model readiness, `runner.py` manages the GrepAI runner image and watcher container, and `actions.py` composes top-level install/status/start/stop/refresh/run behavior. Status helpers include normalized container state so MCP current-state packets can report running state, health, and uptime.",
+    "summary": "`__init__.py` re-exports the GrepAI public lifecycle surface. `core.py` derives settings, layout, workspace config, container DSNs, and Docker image settings. `backend.py` manages PostgreSQL/pgvector, `embedder.py` manages Ollama and model readiness, `runner.py` manages the GrepAI runner image and watcher container, and `actions.py` composes top-level install/status/start/stop/refresh/run behavior. Status helpers include normalized container state so MCP current-state packets can report running state, health, and uptime; since 2.5.1 `runner.py` also reads the watcher's initial-scan log mark...",
     "candidateHints": [
       "mcp/src/agents_remember/providers/grepai/lifecycle",
       "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py",
@@ -78,6 +78,15 @@
       "592274a52cec61d97521771c630272c72240ed01",
       "/overview.md",
       "grepai/lifecycle/",
+      "Performing initial scan",
+      "Initial scan complete",
+      "initialScan",
+      "indexing",
+      "indexed",
+      "unknown",
+      "grepai.context",
+      "context.common",
+      "providers.context",
       "providers/grepai/lifecycle/",
       "grepai_*",
       "lifecycle_modules/grepai/",
@@ -88,17 +97,11 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T12",
+      "T10",
       "lastVerifiedCommitHash",
       "a52cec61d97521771c630272c72240ed01",
       "lastVerifiedCommitDate",
-      "T01",
-      "governingOverview",
-      "test_provider_lifecycle",
-      "T21",
-      "T19",
-      "grepai_",
-      "lifecycle_modules"
+      "T01"
     ]
   },
   "fallback": {

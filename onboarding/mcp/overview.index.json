@@ -302,7 +302,7 @@
     "guard"
   ],
   "hotPath": {
-    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned runtime installation. Provider status is composed in `providers/status.py`; provider lifecycle settings are generated from MCP settings in `provid...",
+    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",
     "candidateHints": [
       "mcp",
       "mcp/src/agents_remember/controllers",

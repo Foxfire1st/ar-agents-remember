@@ -119,9 +119,9 @@
       "pathRules",
       "exclude_none=True",
       "= None",
-      "ok",
-      "mcp/tools.py",
-      "mcp/tools/"
+      "temp/tool-reports/",
+      "reportPath",
+      "phases"
     ]
   },
   "fallback": {
