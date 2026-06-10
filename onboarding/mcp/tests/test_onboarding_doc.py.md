@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T04:47+02:00                     |
-| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0`                                  |
-| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
+| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4`                                  |
+| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
 
 ## Purpose
 
