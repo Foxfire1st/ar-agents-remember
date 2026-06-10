@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-10T07:05+02:00                     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -20,11 +20,11 @@
 
 ## Hot Path Summary
 
-Start with `__init__.py` for the public context facade and `common.py` for shared error, pin, template, state, hash, and removal helpers. CGC behavior lives under `../cgc/context/`; GrepAI behavior lives under `../grepai/context/`.
+Start with `__init__.py` for the public context facade. Shared error, pin, template, state, hash, removal, and host→container path helpers (`to_container_path` — drive letter stripped on Windows, identity on POSIX) live in `../context_common.py`, deliberately OUTSIDE this package (GitHub #58). CGC behavior lives under `../cgc/context/`; GrepAI behavior lives under `../grepai/context/`.
 
 ## Route Model
 
-- Shared helper primitives live in `common.py`.
+- Shared helper primitives live in `../context_common.py` (outside this package).
 - `../cgc/context/` owns CodeGraphContext provider context layout and patch behavior.
 - `../grepai/context/` owns Docker-owned GrepAI provider context layout and workspace behavior.
 - `providers.context` re-exports this route as the public API.
@@ -35,6 +35,11 @@ Start with `__init__.py` for the public context facade and `common.py` for share
 - CGC runtime layout remains CGC-specific and lives under `cgc/`.
 - GrepAI remains Docker-owned; the runner image owns the GrepAI binary.
 - Common modules must stay provider-agnostic.
+- `common.py` keeps minimal imports (errors + identity): it is the cycle-safe
+  import target for low-level provider modules. The package facades
+  (`providers.context`, `cgc.context`, `grepai.context`) form a star-import
+  diamond — importing a facade from a module that loads during a facade's own
+  init leaves `providers.context` permanently missing names (GitHub #58).
 
 ## Repo-Internal References
 
@@ -46,6 +51,8 @@ Start with `__init__.py` for the public context facade and `common.py` for share
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — `common.py` moved out of this package to `providers/context_common.py`: importing it here initialized the facade mid-`cgc.context`-init and left the facade permanently missing CGC names (GitHub #58). Added the no-shared-helpers-inside invariant.
+- 2026-06-10T07:05+02:00 — `to_container_path` canonical home moved into the shared helpers module (GitHub #58); documented the facade star-import diamond and the minimal-imports rule.
 - 2026-06-06T12:15: Re-verified against the current shared provider-context facade; corrected the CGC boundary wording after CGC became Docker-runner owned.
 - 2026-05-25T21:14+02:00: Updated when provider context implementation moved to provider-first packages.
 - 2026-05-25T19:33+02:00: Updated after GrepAI context logic was split out of `grepai/core.py` into focused submodules.

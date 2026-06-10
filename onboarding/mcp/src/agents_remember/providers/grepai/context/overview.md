@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-10T07:40+02:00|
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../overview.md`                  |
 
 ## Purpose
@@ -20,6 +20,7 @@ Use `constants.py` for Docker/network/container defaults, `layout.py` for `Grepa
 
 ## Update History
 
+- 2026-06-10T07:40+02:00 — No route impact: `layout.py` only updated the shared-helper import path to `providers/context_common.py` (GitHub #58).
 - 2026-06-06T12:15: Re-verified against the current GrepAI context package; live memory-root indexing and per-root `.grepai/` ignores still match the source.
 - 2026-06-02T01:15+02:00: Watch live memory roots in place; removed `artifacts.py` (the `.grepai/` artifact guard) and the mirror sync — grepai's `.grepai/` is now git-ignored per root.
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/grepai/context/` route.

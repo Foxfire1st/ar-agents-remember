@@ -22,12 +22,13 @@
     "mcp/src/agents_remember/worktrees/modules/integrate.py",
     "mcp/src/agents_remember/worktrees/modules/models.py",
     "mcp/src/agents_remember/worktrees/modules/onboarding.py",
+    "mcp/src/agents_remember/worktrees/modules/provider_async.py",
     "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
     "mcp/src/agents_remember/worktrees/modules/start.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 14,
-    "fileSidecars": 14,
+    "sourceFilesInScope": 15,
+    "fileSidecars": 15,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -35,6 +36,7 @@
     "agents",
     "agents_remember",
     "args",
+    "async",
     "cleanup",
     "cli",
     "closeout",
@@ -49,6 +51,7 @@
     "modules",
     "onboarding",
     "provider",
+    "provider_async",
     "provider_teardown",
     "remember",
     "src",
@@ -57,7 +60,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named `c-09-git-worktree-manager` skill lifecycle operations. `integrate.py` performs the code and memory fast-forwards atomically: it pre-validates that both fast-forwards are possible before mutating either branch and rolls both heads back on any memory-side failure, so integration never lands a half-integrated state. `abandon.py` is the discard-without...",
+    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named `c-09-git-worktree-manager` skill lifecycle operations. `start.py` runs a synchronous provider preflight, writes the contract, and then launches provider setup in the background (GitHub #53): dry runs stay synchronous, real starts return `starting` within seconds, and `retry_provider_setup` relaunches a failed/stale setup on an existing contract. `c...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
@@ -72,6 +75,7 @@
       "mcp/src/agents_remember/worktrees/modules/integrate.py",
       "mcp/src/agents_remember/worktrees/modules/models.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
+      "mcp/src/agents_remember/worktrees/modules/provider_async.py",
       "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
       "mcp/src/agents_remember/worktrees/modules/start.py"
     ],
@@ -100,30 +104,30 @@
       "models",
       "onboarding.py",
       "onboarding",
+      "provider_async.py",
+      "provider_async",
       "provider_teardown.py",
       "provider_teardown",
       "start.py",
       "start",
       "c-09-git-worktree-manager",
+      "starting",
+      "retry_provider_setup",
+      "GitHub",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4",
+      "ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
+      "setup-progress.json",
+      "worktree_status",
+      "providers/setup_progress.py",
       "classify_sidecar_updates",
       "require_updated_sidecar_content",
       "classify_route_overview_updates",
       "require_updated_route_overview_content",
-      "No content impact",
-      "No route impact",
-      "stamped_without_body_review",
-      "kernel/onboarding_doc.py",
-      "WorktreeArgs",
-      "argparse.Namespace",
-      "from_namespace",
-      "agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py",
-      "test_worktree_support.py"
+      "No content impact"
     ]
   },
   "fallback": {

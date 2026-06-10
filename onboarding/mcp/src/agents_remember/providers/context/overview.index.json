@@ -10,18 +10,16 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
-    "mcp/src/agents_remember/providers/context/__init__.py",
-    "mcp/src/agents_remember/providers/context/common.py"
+    "mcp/src/agents_remember/providers/context/__init__.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 2,
-    "fileSidecars": 2,
+    "sourceFilesInScope": 1,
+    "fileSidecars": 1,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
-    "common",
     "context",
     "init",
     "init__",
@@ -31,25 +29,28 @@
     "src"
   ],
   "hotPath": {
-    "summary": "Start with `__init__.py` for the public context facade and `common.py` for shared error, pin, template, state, hash, and removal helpers. CGC behavior lives under `../cgc/context/`; GrepAI behavior lives under `../grepai/context/`.",
+    "summary": "Start with `__init__.py` for the public context facade. Shared error, pin, template, state, hash, removal, and host\u2192container path helpers (`to_container_path` \u2014 drive letter stripped on Windows, identity on POSIX) live in `../context_common.py`, deliberately OUTSIDE this package (GitHub #58). CGC behavior lives under `../cgc/context/`; GrepAI behavior lives under `../grepai/context/`.",
     "candidateHints": [
       "mcp/src/agents_remember/providers/context",
-      "mcp/src/agents_remember/providers/context/__init__.py",
-      "mcp/src/agents_remember/providers/context/common.py"
+      "mcp/src/agents_remember/providers/context/__init__.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
-      "common.py",
-      "common",
+      "to_container_path",
+      "/context_common.py",
       "/cgc/context/",
       "/grepai/context/",
       "init__",
+      "POSIX",
+      "context_common",
+      "OUTSIDE",
+      "GitHub",
       "CGC",
       "GrepAI",
       "mcp/src/agents_remember/providers/context/",
       "route-local-overview",
-      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
+      "ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30",
       "/../../../overview.md",
       "context/",
       "providers/cgc/context/",
@@ -57,6 +58,10 @@
       "providers.context",
       "context_providers.py",
       "cgc/",
+      "common.py",
+      "cgc.context",
+      "grepai.context",
+      "providers/context_common.py",
       "grepai/core.py",
       "mcp/overview.md",
       "agents-remember-md/mcp/src/agents_remember/providers/context/__init__.py",
@@ -66,15 +71,14 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T12",
+      "T07",
       "lastVerifiedCommitHash",
-      "f28a2035f06f8bc33f11b0617b41cda1122c1f",
       "lastVerifiedCommitDate",
-      "T13",
       "governingOverview",
       "CodeGraphContext",
       "API",
       "context_providers",
+      "T12",
       "T21",
       "T19"
     ]

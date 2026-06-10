@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `b9b032e0dc9afe70a20db348a8705c2b81d448bb` |
-| lastVerifiedCommitDate | 2026-06-02T04:13:16+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,6 +22,13 @@ lifecycle values such as workflow kind, memory mode, human review status,
 closeout status, integration status, phase, next operation, and next tool. The
 command response models remain flexible because worktree service results can
 carry operation-specific planning and closeout fields.
+
+`WorktreeCommandResponse.providers` carries the background provider setup
+state (GitHub #53): `starting` plus a progressFile from `worktree_start`, then
+running / stale (dead heartbeat) / ok / ready-with-failed-phases / failed via
+the `worktree_status` projection. The strict `WorktreeSummary` (context
+packets) deliberately does not project it — provider truth in packets comes
+from the providers section.
 
 ## Invariants And Boundaries
 
@@ -39,6 +46,7 @@ carry operation-specific planning and closeout fields.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — `WorktreeCommandResponse.providers` documented as the background provider setup state (GitHub #53): `starting` + progressFile from worktree_start, then running / stale / ok / ready-with-failed-phases / failed via the worktree_status projection. `WorktreeSummary` (context packets) deliberately does not project it.
 - 2026-06-02T04:25+02:00: `WorkflowKind` dropped the retired `heavy`/`heavy-task` literals (now `chat`/`light`/`light-task`) after the heavy workflow was retired. `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-01T20:45+02:00 — `CleanupStatus` gained the `abandoned` literal and a `WorktreeAbandonResponse` model was added for the discard-without-integration tool.
 - 2026-05-28T19:52+02:00: Created after worktree context summaries gained typed Pydantic literal fields.

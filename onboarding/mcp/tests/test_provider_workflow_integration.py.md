@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_workflow_integration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:51+02:00                     |
-| lastVerifiedCommitHash | `825a172bdf0d4ee3489ae25dbcc19c4e9c7b9493`                         |
-| lastVerifiedCommitDate | 2026-05-30T17:31:45+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30`                         |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -25,6 +25,11 @@ check nested provider settings traversal without relying on broad untyped-dict
 coercion. `worktree_start_tool` is imported from the split
 `controllers.worktree_tools` module rather than the former `skill_tools`
 facade.
+
+The worktree start assertions follow the async contract (GitHub #53): the
+tool returns providers `starting` plus a progressFile, the test polls
+`read_setup_progress` to a terminal state within the provider timeout, and
+reads the provider-state file from the finish summary's `providerStateFile`.
 
 ### Invariants And Boundaries
 
@@ -45,6 +50,7 @@ facade.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — Worktree start assertions updated for async provider setup (GitHub #53): the tool returns providers `starting` + progressFile; the test now polls `read_setup_progress` to a terminal state and reads the provider-state file from the finish summary.
 - 2026-05-30T21:51+02:00: Re-verified against `825a172`; the only change was the MCP settings fixture adopting the renamed `timeoutCaps.providerSetupSeconds` key. Test behavior unchanged.
 - 2026-05-28T19:52+02:00: Updated after Pyright-oriented helper adapters and split worktree controller imports replaced the old `skill_tools` import.
 - 2026-05-27T18:10:12+02:00: Created for Docker-backed worktree and benchmark provider workflow validation.

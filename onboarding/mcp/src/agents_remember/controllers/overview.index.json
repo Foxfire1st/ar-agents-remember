@@ -98,7 +98,7 @@
       "CGC",
       "mcp/src/agents_remember/controllers/",
       "route-local-overview",
-      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
+      "ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30",
       "/../../overview.md",
       "controllers/",
       "mcp/server.py",
@@ -112,14 +112,14 @@
       "models/tool_registry.py",
       "McpRuntimeConfig",
       "main(argv",
+      "starting",
+      "retry_provider_setup",
+      "timeoutCaps.providerSetupSeconds",
       "mcp/tools.py",
       "7123da56",
       "mcp/overview.md",
       "/models/overview.md",
-      "agents_remember",
-      "MCP",
-      "sourceRoute",
-      "doc_type"
+      "agents_remember"
     ]
   },
   "fallback": {

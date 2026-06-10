@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T03:43                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-10T07:40+02:00|
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -57,7 +57,13 @@ runtime install, and `skill_tools.py` for skill installation.
 | MCP payload builders call these controllers and then validate responses through the model registry. | [mcp/tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools/) |
 | Public tool response models live in the models package. | [models overview](../models/overview.md) |
 
+Worktree start is async (GitHub #53): `worktree_tools.py` transfers the temp
+lifecycle settings file to the background setup thread on a `starting` result,
+forwards `retry_provider_setup`, and bounds worktree provider setup by
+`timeoutCaps.providerSetupSeconds` instead of the docker-control default.
+
 ## Update History
 
+- 2026-06-10T07:40+02:00 — GitHub #53: `worktree_tools.py` start controller hands the temp lifecycle settings file to the background setup thread (skip-unlink on a `starting` result), forwards `retry_provider_setup`, and bounds worktree provider setup by `timeoutCaps.providerSetupSeconds` instead of the docker-control default.
 - 2026-06-06T03:43: Re-verified against the current controller surface (9 files incl. `_guards.py` and per-domain tool modules); corrected `mcp/tools.py` references to the `mcp/tools/` package; re-stamped to `7123da56`.
 - 2026-05-28T19:52+02:00: Created after the MCP controller surface split out of the former `skill_tools.py` mega-facade.

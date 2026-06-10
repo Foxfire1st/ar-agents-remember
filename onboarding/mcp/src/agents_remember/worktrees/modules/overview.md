@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-06-10T04:47+02:00|
-| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4` |
-| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
+| lastUpdated            | 2026-06-10T07:35+02:00|
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -23,13 +23,24 @@ argument wiring while preserving the public facade import path.
 - `git.py` owns raw Git subprocess operations and small repository state checks.
 - `guidance.py` renders lifecycle phase and typed next-operation payloads.
 - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py`
-  own the named `c-09-git-worktree-manager` skill lifecycle operations. `integrate.py` performs the code and
+  own the named `c-09-git-worktree-manager` skill lifecycle operations.
+  `start.py` runs a synchronous provider preflight, writes the contract, and
+  then launches provider setup in the background (GitHub #53): dry runs stay
+  synchronous, real starts return `starting` within seconds, and
+  `retry_provider_setup` relaunches a failed/stale setup on an existing
+  contract. `cleanup.py`/`abandon.py` refuse to tear down while a live
+  (fresh-heartbeat) background setup owns the worktree. `integrate.py` performs the code and
   memory fast-forwards atomically: it pre-validates that both fast-forwards are
   possible before mutating either branch and rolls both heads back on any
   memory-side failure, so integration never lands a half-integrated state.
   `abandon.py` is the discard-without-integration sibling: it reclaims the
   isolated provider stack and removes worktrees/branches without requiring a
   prior integration.
+- `provider_async.py` owns the background setup launch (daemon thread), the
+  durable `setup-progress.json` under the worktree group's provider-runtime
+  dir, the `worktree_status` providers projection (running / stale / ok /
+  ready-with-failed-phases / failed + retryArgs), and the live-setup guard.
+  The progress file format itself lives in `providers/setup_progress.py`.
 - `provider_teardown.py` performs full-reclaim teardown of a worktree's
   isolated provider stack (Docker rm -f containers and networks derived from
   persisted settings, then rmtree the provider-runtime tree, reclaiming
@@ -66,6 +77,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T07:35+02:00 — GitHub #53: added `provider_async.py` (background provider setup launch, progress projection, teardown guard); `start.py` split preflight from launch and writes the contract before launching; cleanup/abandon gained the live-setup guard.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: route overviews get the same body gate scoped to nearest-governing routes (`No route impact:` marker; ancestors report as `stamped_without_body_review`), surfaced in closeout previews and apply payloads.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: `onboarding.py`'s content gate became the four-case body/history classification with in-band `No content impact:` attestation, shared parsing helpers moved to `kernel/onboarding_doc.py` (facade re-exports kept), and closeout payloads surface attested sidecars.
 - 2026-06-01T00:00+02:00 — Added `abandon.py` (discard without integration) and `provider_teardown.py` (full-reclaim Docker + rmtree teardown) to the Purpose and Hot Path Summary listings.

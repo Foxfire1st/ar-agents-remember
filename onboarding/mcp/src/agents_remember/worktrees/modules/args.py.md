@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                         |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30`                         |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -34,6 +34,10 @@ instance via `replace`. This tolerates argparse subparsers that only populate th
 arguments they declare and tests that construct partial namespaces, so any field
 the namespace omits keeps its dataclass default rather than raising.
 
+`retry_provider_setup: bool = False` (GitHub #53): on an existing contract,
+worktree start relaunches background provider setup instead of attaching;
+refused while a live setup heartbeat exists.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -47,5 +51,6 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — Added `retry_provider_setup: bool = False` (GitHub #53): on an existing contract, worktree start relaunches background provider setup instead of attaching; refused while a live setup heartbeat exists.
 - 2026-06-01T20:45+02:00 — `WorktreeArgs` gained `force` and `teardown_providers` for the abandon/cleanup teardown path.
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.
