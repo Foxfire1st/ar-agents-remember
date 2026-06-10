@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastUpdated            | 2026-06-10T09:00+02:00                     |
+| lastVerifiedCommitHash | `cca911fcb6417ecf56de00c17d05aa304daa51c5` |
+| lastVerifiedCommitDate | 2026-06-10T02:35:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -21,7 +21,10 @@ memory initialization, baseline, and carryover MCP tools.
 count, report, and actionable-sample shape. Memory quality, route index,
 initialization, baseline, and carryover responses use flexible tool envelopes
 because their underlying service payloads still carry operation-specific
-details.
+details. The carryover models document the 2.5.2 compact wire shape: both
+declare optional `decisions` (source paths grouped by carryover decision) and
+`reportPath` (the temp report holding the full candidate records), and the
+apply model adds `carriedPaths` (paths whose onboarding actually carried).
 
 ## Invariants And Boundaries
 
@@ -37,4 +40,5 @@ details.
 
 ## Update History
 
+- 2026-06-10T09:00+02:00 — Carryover plan/apply models gained documented optional `decisions`/`reportPath` (plus `carriedPaths` on apply) for the 2.5.2 response compaction (GitHub #52).
 - 2026-05-28T19:52+02:00: Created for memory and onboarding response contracts.
