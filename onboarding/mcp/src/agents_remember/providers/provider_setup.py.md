@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -47,6 +47,12 @@ Workflow-local isolated provider settings are reported through the canonical
 `isolatedProviderSettings` payload only; the setup payload no longer emits
 per-provider duplicate isolated-settings keys.
 
+`run_provider_setup(request, progress=None)` accepts a `SetupProgress` sink
+and rides it on the args namespace (the established state-carrier pattern);
+`_watcher_results` announces the `watchers start`/`watchers status` phases.
+Without a sink every announcement is a no-op, so CLI behavior is unchanged
+(GitHub #53).
+
 ### Invariants And Boundaries
 
 - MCP worktree provider setup must pass `--from-settings`; it must not depend on
@@ -82,6 +88,7 @@ per-provider duplicate isolated-settings keys.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — `run_provider_setup(request, progress=None)` accepts a `SetupProgress` sink and rides it on the args namespace (the established state-carrier pattern); `_watcher_results` announces `watchers start`/`watchers status` phases. With no sink everything is a no-op, so CLI behavior is unchanged (GitHub #53).
 - 2026-06-01T20:45+02:00 — Provider setup no longer starts the grepai watcher early; it starts once at `_watcher_results` after the DB clone, cgc seed, and index-root copy, so the watcher never sees files mid-copy (OQ7 copy-first / watch-last ordering).
 - 2026-05-31T12:50+02:00 — Pruned unused compatibility re-exports (`command_display`, `expand_template`, `load_json`, `parse_json_stdout`, `stable_provider_id`, `subprocess_env`, `cgc_seed_source_extra_args`, `cgc_seed_source_settings_path`, `configured_cgc_repo_root`, `git_head`, `write_isolated_cgc_settings`, `path_replacements`, `rewrite_json_value`, `rewrite_string`) and dropped the `coordination_root` argument from `load_settings`/`settings_path` calls; corrected the Logic prose's "preserves the public symbols ... subprocess helper exports" claim to the narrowed export set (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after duplicate per-provider isolated

@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
-| lastUpdated            | 2026-06-10T10:30+02:00                     |
+| lastUpdated            | 2026-06-10T05:30+02:00                     |
 | lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
 | lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../../../../overview.md`                  |
@@ -56,7 +56,7 @@ source-level behavior is local to `agents-remember-md`.
 
 ## Update History
 
-- 2026-06-10T10:30+02:00 — Route body caught up with 2.5.1: `run_command` captures output and never inherits parent stdio (GitHub #49). Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: `run_command` captures output and never inherits parent stdio (GitHub #49). Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-05-30T21:51+02:00: Re-verified the route against `825a172`; the module split summary still matches. The only route change since `3f09b75` was `mcp_registration.py` renaming the generated `providerSeconds` cap to `providerSetupSeconds` (documented on its file card).
 - 2026-05-28T12:32+02:00: Updated after benchmark provider settings and scaffolded runtime assets moved logs under the central `logs/` tree.
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

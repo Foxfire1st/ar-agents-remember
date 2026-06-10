@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T10:30+02:00                     |
-| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
-| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
+| lastUpdated            | 2026-06-10T07:40+02:00|
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -65,7 +65,8 @@ instead of `unknown`.
 
 ## Update History
 
-- 2026-06-10T10:30+02:00 — Route body caught up with 2.5.1: `initialScan` scan-marker reading in `runner.py` and the leaf-import invariant (circular-import fix). Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T07:40+02:00 — No route impact: `actions.py`/`backend.py`/`core.py`/`embedder.py` only updated the shared-helper import path to `providers/context_common.py` (GitHub #58).
+- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: `initialScan` scan-marker reading in `runner.py` and the leaf-import invariant (circular-import fix). Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current GrepAI lifecycle package; backend, embedder, runner, and action composition still match.
 - 2026-05-28T12:32+02:00: Updated after GrepAI backend/embedder/watcher status began surfacing container-state summaries for provider current-state reporting.
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/grepai/lifecycle/` route.

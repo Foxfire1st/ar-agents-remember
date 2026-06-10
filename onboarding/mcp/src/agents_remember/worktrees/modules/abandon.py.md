@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`                |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30`                |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -78,5 +78,6 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — `abandon_result` blocks (exit 2) without `force` while a live background provider setup owns the worktree (fresh heartbeat); `force=true` overrides, and a stale heartbeat does not block (GitHub #53).
 - 2026-06-02T16:24+02:00: Docstring now references the `l-01-session-job-lifecycle` skill in full for the read-only/abandon exit (was "L-01"). Reference-style normalization; behavior unchanged.
 - 2026-06-01T00:00+02:00 — Created onboarding for the new abandon module.

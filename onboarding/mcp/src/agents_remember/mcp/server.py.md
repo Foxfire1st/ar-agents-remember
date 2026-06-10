@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T22:15+02:00                     |
-| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
-| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -120,6 +120,7 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — `worktree_start` registers `retry_provider_setup` and its docstring documents the async contract (returns in seconds; providers `starting` + progressFile; poll worktree_status; seed copy seconds vs seedFallback reindex minutes; retry on failed/stale). `worktree_status` docstring documents the providers poll block and its states (GitHub #53).
 - 2026-06-04T22:15+02:00: Updated `runtime_install` operator text to clarify provider runner refresh during `install_provider_deps=true`, watcher rebind/recheck behavior, and index preservation.
 - 2026-06-02T04:40+02:00: `skills_install` tool dropped the `layout` parameter after the installer became a single flat copy (U-01-core-skills dissolved). `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.
 - 2026-06-02T04:25+02:00: `worktree_start` docstring dropped the retired `heavy-task` workflow_kind (now `light-task`/`chat-task`) after the heavy workflow was retired. `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.

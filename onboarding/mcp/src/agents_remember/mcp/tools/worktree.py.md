@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated            | 2026-06-01T00:00+02:00|
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                                       |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30`                                       |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Purpose
@@ -37,6 +37,8 @@ would otherwise make the response too large to render.
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
+`worktree_start_payload` forwards `retry_provider_setup` to the controller — the relaunch path for a failed or stale background provider setup (GitHub #53).
+
 ### Invariants And Boundaries
 
 - Transport-thin: worktree/closeout behavior lives in
@@ -49,6 +51,7 @@ would otherwise make the response too large to render.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — `worktree_start_payload` forwards the new `retry_provider_setup` flag to the controller (GitHub #53 async setup recovery path).
 - 2026-06-01T00:00+02:00 — `worktree_start_payload` now applies `summarize_command_logs`; `worktree_cleanup_payload` gained `teardown_providers`; `worktree_abandon_payload` newly added.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the worktree payload builders.
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).

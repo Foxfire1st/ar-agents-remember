@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -27,6 +27,14 @@ settings do not emit `venvRoot`; worktree CGC execution stays Docker-runner
 owned. The provider sub-settings lookup uses the shared
 `provider_settings(settings, CGC_PROVIDER_ID)` helper from `setup_common`; the
 former local `_cgc_provider`/`context_providers` wrapper was removed.
+
+Setup phases announce through `setup_progress_from(args)` (GitHub #53):
+`install-all`, `seed`, and — the headline — `_refresh_after_seed(args, seed,
+progress)` announces `refresh-all` with `seed_fallback={active, reason}`
+BEFORE the reindex runs, because a refused seed changes the expected duration
+from ~1 minute to N minutes and the reindex emits nothing observable.
+`_seed_failure_reason` derives the reason from the seed result (`reason`,
+else `stage`).
 
 ### Invariants And Boundaries
 
@@ -48,6 +56,7 @@ former local `_cgc_provider`/`context_providers` wrapper was removed.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — Install/seed/refresh phases announce through `setup_progress_from(args)` (GitHub #53). `_refresh_after_seed(args, seed, progress)` announces the fallback BEFORE the reindex runs, carrying `seed_fallback={active, reason}` — the single most important transition to surface, since a refused seed changes expected duration from ~1 minute to N minutes and the reindex emits nothing the orchestrator can see. `_seed_failure_reason` derives the reason from the seed result (`reason`, else `stage`).
 - 2026-05-31T12:50+02:00 — Removed local `_cgc_provider` helper; provider sub-settings now read via shared `provider_settings(settings, CGC_PROVIDER_ID)` from `setup_common` (import swapped from `context_providers`), behaviour-preserving; noted the helper source in Logic (1.0.0 review remediation).
 - 2026-05-28T13:40+02:00: Updated after isolated CGC settings stopped emitting `venvRoot`.
 - 2026-05-28T12:32+02:00: Updated after isolated CGC settings moved watcher logs under `logs/providers/`.

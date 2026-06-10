@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -77,6 +77,7 @@ fallback runs. The failed seed result is attached to the response as
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-06-10T05:30+02:00 — Leaf import replaces the `providers.context` aggregator import (circular-import fix; see core.py 2026-06-10 entry).
 - 2026-06-01T00:00+02:00 — `docker_ensure_ollama_model` now seeds the model from the workspace Ollama via `_seed_ollama_model_from_source` (local tar pipe) before falling back to `ollama pull`; `seedFromContainer` key drives the seed path; updated Logic, added two new Invariants, added Repo-Internal References section.
 - 2026-05-31T12:50+02:00 — Re-typed the `layout` params of `grepai_embedder_health`, `grepai_embedder_remove_mismatched_container`, `grepai_embedder_inspect`, and `grepai_embedder_create_start_result`, plus the `grepai_embedder_start_context` return tuple, from `Any` to the `GrepaiRuntimeLayout` dataclass (re-exported via the `core` star-import); behavior-preserving, recorded the layout typing in Invariants And Boundaries (1.0.0 review remediation).

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/tests/test_provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -36,6 +36,8 @@ asserts that a missing seed source does not fail the whole prepare payload when
 refresh fallback remains enabled and dry-run refresh is planned.
 
 `test_rewrite_cgc_bundle_paths_rewrites_json_jsonl_and_text` builds a synthetic `.cgc` zip bundle containing JSON, JSONL, and text entries with source repository paths, runs `rewrite_cgc_bundle_paths`, then asserts that the rewritten bundle removes the source root and contains the target root.
+
+`test_cgc_seed_uses_container_mounted_runtime_bundle_paths` asserts the seed export/load argv carries bundle and repo paths in **container form** (`to_container_path`, imported from `providers.context.common`): the expected seed-bundle roots are wrapped in `to_container_path(...)`, and the in-container portion of each command (after `--`) must not match `[A-Za-z]:/` — on Windows hosts that drive-letter guard pins GitHub #58 (host-form `C:/` argv made every seed export fail into the silent reindex fallback); on POSIX the mapping is identity, so the assertions hold tautologically there.
 
 `test_isolated_cgc_settings_targets_worktree_backend` builds a minimal provider
 settings object and calls `isolated_cgc_settings`. It asserts that the isolated
@@ -102,6 +104,8 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — Added `test_prepare_announces_phases_in_order_with_seed_fallback`: a recording `SetupProgress` driven through a full dry-run prepare (mocked seed/clone bundles) pins the phase order (grepai install, cgc install-all, grepai clone-db, cgc seed, cgc refresh-all, watchers start/status) and that ONLY the refresh-all fallback start carries `seed_fallback` with the seed's refusal reason (GitHub #53).
+- 2026-06-10T07:05+02:00 — Seed argv assertions switched to container form (`to_container_path` from `providers.context.common`) plus a no-drive-letter regex guard on the post-`--` argv, pinning the GitHub #58 Windows seed-export fix.
 - 2026-06-01T20:45+02:00 — Updated the isolated-grepai assertion to expect the workspace-scoped `workspace` key (clone-reuse fix).
 - 2026-05-31T12:50+02:00 — `test_settings_path_requires_explicit_provider_settings` now calls `provider_setup.settings_path(None)` (single settings-path arg) instead of `settings_path(root, None)` and drops its `TemporaryDirectory`, following `settings_path()` losing its leading `root` parameter; noted the single-arg call in Logic (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Replaced `assertIsNotNone` with `assert ... is not None` so the isolated-settings locals narrow before subscript; behavior-preserving (commit `0549b28`).

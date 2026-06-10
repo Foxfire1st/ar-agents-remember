@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T20:41+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,6 +22,12 @@ stable MCP-facing lifecycle phases such as commit approval pending, integration
 pending, cleanup pending, and done. It also renders contract dataclasses into
 JSON-compatible dictionaries.
 
+`status_payload` includes a `providers` block from
+`provider_async.provider_setup_status(contract)` when present: the
+`worktree_status` poll surface for background provider setup — running with
+currentPhase/heartbeat/seedFallback, stale on a dead heartbeat, terminal
+ok / ready-with-failed-phases / failed with `retryArgs` (GitHub #53).
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -35,4 +41,5 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — `status_payload` includes a `providers` block from `provider_async.provider_setup_status(contract)` when present: the worktree_status poll surface for background provider setup (running with currentPhase/heartbeat/seedFallback, stale on dead heartbeat, terminal ok/ready-with-failed-phases/failed with retryArgs) (GitHub #53).
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.

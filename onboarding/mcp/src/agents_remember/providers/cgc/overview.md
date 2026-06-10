@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T10:30+02:00                     |
-| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
-| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
+| lastUpdated            | 2026-06-10T05:30+02:00                     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -31,6 +31,10 @@ Seeding refuses when the workspace and worktree repository HEADs differ (a
 copied graph must match the code it describes) and the worktree then falls
 back to a full reindex; seed export/load is capped by the configurable
 `providerSetupSeconds`, while actual indexing is never duration-capped.
+Seed argv after `--` executes inside the Linux runner container and is
+rendered via `to_container_path` (`providers/context_common.py`) — host-form
+`C:/` paths made every Windows seed fail into the silent reindex fallback
+(GitHub #58).
 
 ## Route Model
 
@@ -58,6 +62,7 @@ back to a full reindex; seed export/load is capped by the configurable
 
 ## Update History
 
-- 2026-06-10T10:30+02:00 — Route body caught up with 2.5.0/2.5.1: seed HEAD-match refusal with full-reindex fallback and the setup-cap-vs-uncapped-indexing boundary. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T07:05+02:00 — Seed in-container argv (post-`--`) documented as container-form via `to_container_path` (GitHub #58: host-form Windows paths failed every seed into the silent reindex fallback).
+- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.0/2.5.1: seed HEAD-match refusal with full-reindex fallback and the setup-cap-vs-uncapped-indexing boundary. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current CGC provider package; expanded the hot-path summary to include isolated worktree settings and CGC index bundle seeding.
 - 2026-05-25T21:14+02:00: Created when provider modules were reorganized provider-first under `providers/cgc/`.

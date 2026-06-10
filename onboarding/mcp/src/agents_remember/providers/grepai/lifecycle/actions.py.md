@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/actions.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -55,6 +55,7 @@ watcher startup so later Compose calls use the same dependency port mappings.
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-06-10T05:30+02:00 — Leaf imports replace the `providers.context` aggregator import (circular-import fix; see core.py 2026-06-10 entry).
 - 2026-06-02T01:15+02:00 — Removed `grepai_root_artifacts` and dropped the `rootArtifacts` term from the status ok-gate (roots are watched live; `.grepai/` is expected); `grepai_roots_payload` no longer emits `sourcePath` (watch-live).
 - 2026-05-31T12:50+02:00 — Every `layout: Any` parameter re-typed to the concrete `GrepaiRuntimeLayout` (re-exported via the `core` star-import); behaviour-preserving, added an Invariants note pinning the `layout` type (1.0.0 review remediation).

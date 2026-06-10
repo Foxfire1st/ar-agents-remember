@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T10:30+02:00                     |
-| lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
-| lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
+| lastUpdated            | 2026-06-10T07:50+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -32,7 +32,10 @@ GrepAI actions.
 
 ## Route Model
 
-- `setup.py` wires enabled GrepAI setup through lifecycle commands.
+- `setup.py` wires enabled GrepAI setup through lifecycle commands and
+  announces its phases (`grepai install`, `grepai clone-db`) through the
+  provider setup progress sink so background worktree setup is observable
+  (GitHub #53).
 - `seed.py` clones the source GrepAI database into an isolated worktree backend
   so embeddings can be reused instead of rebuilt. The clone runs under a stall
   watchdog (killed after `GREPAI_CLONE_STALL_SECONDS` of zero progress in dump
@@ -60,7 +63,8 @@ GrepAI actions.
 
 ## Update History
 
-- 2026-06-10T10:30+02:00 — Route body caught up with 2.5.1: the `seed.py` clone stall watchdog and no-total-cap contract. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T07:50+02:00 — GitHub #53: `setup.py` announces install/clone-db phases through the setup progress sink for background worktree provider setup.
+- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: the `seed.py` clone stall watchdog and no-total-cap contract. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current GrepAI provider package; added the worktree database-clone (`seed.py`) and isolated-settings (`isolated.py`) surfaces.
 - 2026-06-02T01:15+02:00: Updated for watch-live — `context/` now indexes the live memory roots in place and git-ignores grepai's `.grepai/` working dir; removed the `.grepai/` artifact-cleanup reference (`artifacts.py` deleted).
 - 2026-05-25T21:14+02:00: Created when provider modules were reorganized provider-first under `providers/grepai/`.

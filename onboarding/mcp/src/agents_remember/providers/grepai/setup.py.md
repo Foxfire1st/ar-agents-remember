@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-10T07:30+02:00     |
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -19,6 +19,11 @@
 ### Logic
 
 It checks whether `grepai-memory` is selected and enabled, then returns lifecycle `install` or `refresh` command payloads for the Docker-owned GrepAI provider. The actual lifecycle behavior remains under `providers.lifecycle` and its GrepAI lifecycle modules.
+
+`install_enabled_provider` and `prepare_enabled_provider` announce their
+phases (`grepai install`, `grepai clone-db`) through
+`setup_progress_from(args)` so background worktree setup is observable mid-run
+(GitHub #53); return shapes are unchanged.
 
 ### Invariants And Boundaries
 
@@ -35,5 +40,6 @@ It checks whether `grepai-memory` is selected and enabled, then returns lifecycl
 
 ## Update History
 
+- 2026-06-10T07:30+02:00 — `install_enabled_provider` and `prepare_enabled_provider` announce their phases (`grepai install`, `grepai clone-db`) through `setup_progress_from(args)` so background worktree setup is observable mid-run (GitHub #53). Behavior and return shapes unchanged.
 - 2026-05-31T12:50+02:00 — `prepare_enabled_provider` dropped the leading `args.coordination_root` argument from its `load_settings(...)` call to match `setup_common.load_settings`/`settings_path`, which no longer take a `coordination_root` parameter; behaviour-preserving, no documented prose named the call so no prose corrected (1.0.0 review remediation).
 - 2026-05-25T19:50+02:00: Created when GrepAI setup orchestration was extracted out of `provider_setup.py`.

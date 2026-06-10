@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T10:30+02:00                     |
-| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4` |
-| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
+| lastUpdated            | 2026-06-10T07:40+02:00|
+| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
+| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -155,6 +155,17 @@ changed files in check mode.
   `temp/tool-reports/<tool>/` (keep-last-5 / 7-day write-time prune, secret
   redaction) with the compact inline outcome carrying `reportPath`;
   `test_tool_response_budgets.py` is the regression line (2.5.1/2.5.2).
+- Long-running tool work must be observable, not silent: `worktree_start`
+  returns within seconds and provider setup runs on a background thread that
+  writes a durable, heartbeat-stamped `setup-progress.json` (`providers/
+  setup_progress.py` + `worktrees/modules/provider_async.py`); `worktree_status`
+  is the poll surface, a dead heartbeat projects as `stale`, and
+  `retry_provider_setup` is the recovery path. The seed-refused→full-reindex
+  transition is flagged as `seedFallback` the moment it happens (GitHub #53).
+- In-container argv must be container-form: everything after `--` in a
+  provider runner command executes inside the Linux container, so paths are
+  rendered via `to_container_path` (`providers/context_common.py`) — host-form
+  `C:/` paths fail silently into expensive fallbacks (GitHub #58).
 
 ## Repo-Internal References
 
@@ -173,9 +184,10 @@ changed files in check mode.
 
 ## Update History
 
-- 2026-06-10T10:30+02:00 — Route body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness, the stdio subprocess invariant (#49), stall-watchdog doctrine, and the tool-report response-budget layer. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T07:40+02:00 — GitHub #53/#58: added the background-observability invariant (async worktree provider setup with durable heartbeat progress, stale projection, retry path) and the container-form argv invariant; shared context helpers moved to `providers/context_common.py` (facade re-entrancy fix).
 - 2026-06-10T06:05+02:00 — No route impact: package version bumped to 2.6.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #56 release; route behavior unchanged.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the Hot Path Summary now records carryover route-overview candidates and guarded official-side index regeneration (`memory/carryover.py`).
+- 2026-06-10T05:30+02:00 — Route body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness, the stdio subprocess invariant (#49), stall-watchdog doctrine, and the tool-report response-budget layer. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-10T05:20+02:00 — No route impact: sub-task 2 extended the body gates to route overviews and the c-05 skill doctrine; the route surface described in the sub-task 1 entry already covers both gates and the markers.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: added `kernel/onboarding_doc.py` (shared doc parsing + body/history classification) and the four-case sidecar body gate with in-band no-impact attestation markers to the route surface.
 - 2026-06-09T14:52+02:00: Refreshed the MCP route overview against MCP 2.4.1 `main`; added the canonical root runtime asset sync boundary for package data.
