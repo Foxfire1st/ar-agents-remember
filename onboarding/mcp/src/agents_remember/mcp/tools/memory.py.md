@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/memory.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-10T09:00+02:00|
-| lastVerifiedCommitHash | `cca911fcb6417ecf56de00c17d05aa304daa51c5`                                      |
-| lastVerifiedCommitDate | 2026-06-10T02:35:22+02:00|
+| lastVerifiedCommitHash | `9b25740b5b373b410c270e14913f5a220c63c795`                                      |
+| lastVerifiedCommitDate | 2026-06-10T02:38:07+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
