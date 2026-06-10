@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T07:40+02:00|
-| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
-| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
+| lastVerifiedCommitHash | `cda255d075b143693ea270bac44d85c65f032b91` |
+| lastVerifiedCommitDate | 2026-06-10T08:05:48+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -184,6 +184,7 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-06-10T08:15+02:00 — No route impact: package version bumped to 2.7.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #53/#58 release; route behavior unchanged.
 - 2026-06-10T07:40+02:00 — GitHub #53/#58: added the background-observability invariant (async worktree provider setup with durable heartbeat progress, stale projection, retry path) and the container-form argv invariant; shared context helpers moved to `providers/context_common.py` (facade re-entrancy fix).
 - 2026-06-10T06:05+02:00 — No route impact: package version bumped to 2.6.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #56 release; route behavior unchanged.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the Hot Path Summary now records carryover route-overview candidates and guarded official-side index regeneration (`memory/carryover.py`).

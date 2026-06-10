@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-06-10T05:30+02:00 |
-| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30` |
-| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
+| lastVerifiedCommitHash | `cda255d075b143693ea270bac44d85c65f032b91` |
+| lastVerifiedCommitDate | 2026-06-10T08:05:48+02:00|
 
 > **Status:** active baseline
 
@@ -191,6 +191,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-06-10T08:15+02:00 — No route impact: README Status section bumped to 2.7.0 with the GitHub #53/#58 release sentence; the repo surface this overview describes is unchanged.
 - 2026-06-10T06:05+02:00 — No route impact: README Status section bumped to 2.6.0 with the GitHub #56 release sentence; the repo surface this overview describes is unchanged.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the branch memory carryover inventory row now records route-overview candidates (identical→auto re-verify, differing→always review-required) and guarded official-side route-index regeneration.
 - 2026-06-10T05:30+02:00 — Root overview body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness + `indexing` busy list in the feature inventory, a new tool-response-budget inventory row, and stall-watchdog/seed-fallback/stdio-subprocess doctrine in the provider runtime narrative. Previous closeouts had only stamped the verification header (developer-flagged gap).

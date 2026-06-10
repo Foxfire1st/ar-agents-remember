@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:00+02:00     |
-| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4` |
-| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
+| lastUpdated            | 2026-06-10T08:15+02:00     |
+| lastVerifiedCommitHash | `cda255d075b143693ea270bac44d85c65f032b91` |
+| lastVerifiedCommitDate | 2026-06-10T08:05:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -21,7 +21,7 @@ The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
 derived from the installed package metadata via
 `importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
 the single source of truth; a `PackageNotFoundError` fallback hardcodes the
-current release version (now `2.6.0`) for source checkouts without an install. Payload builders in `mcp.tools` use
+current release version (now `2.7.0`) for source checkouts without an install. Payload builders in `mcp.tools` use
 those constants for `ping` and `server_info`, so the version no longer needs a
 manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
 sync at release.
@@ -39,9 +39,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
-- 2026-06-10T09:00+02:00 — `SERVER_VERSION` fallback bumped to 2.5.2 in lockstep with `mcp/pyproject.toml`.
+- 2026-06-10T08:15+02:00 — SERVER_VERSION fallback bumped to 2.7.0 in lockstep with pyproject (GitHub #53/#58 release).
 - 2026-06-10T06:25+02:00 — Corrected the fallback version named in the commentary to 2.6.0; the release-bump pass had left the parenthetical at 2.5.2.
 - 2026-06-10T06:05+02:00 — No content impact: `SERVER_VERSION` fallback bumped to 2.6.0 in lockstep with `mcp/pyproject.toml` (GitHub #56 release); module behavior unchanged.
+- 2026-06-10T05:45+02:00 — `SERVER_VERSION` fallback bumped to 2.5.2 in lockstep with `mcp/pyproject.toml`.
 - 2026-06-10T05:30+02:00 — `SERVER_VERSION` fallback bumped to 2.5.1 in lockstep with `mcp/pyproject.toml`.
 - 2026-06-09T22:10+02:00 — `SERVER_VERSION` fallback bumped to 2.5.0 in lockstep with `mcp/pyproject.toml`.
 - 2026-06-09T15:39+02:00: Bumped the source-checkout `SERVER_VERSION` fallback to `2.4.2` for the L-01 lifecycle skill consolidation patch release; pyproject remains the single source of truth. Verification metadata pinned until closeout.
