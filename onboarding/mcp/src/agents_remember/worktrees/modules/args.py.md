@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30`                         |
-| lastVerifiedCommitDate | 2026-06-10T07:59:14+02:00|
+| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0`                         |
+| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose

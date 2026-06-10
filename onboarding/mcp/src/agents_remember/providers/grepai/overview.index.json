@@ -78,7 +78,7 @@
       "GrepAI",
       "mcp/src/agents_remember/providers/grepai/",
       "route-local-overview",
-      "ebe9ef2aa882b5ed6df6dcb2491452efc0cf5c30",
+      "ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0",
       "/../../../overview.md",
       "grepai_setup.py",
       "context_modules/grepai",
@@ -99,14 +99,14 @@
       "T07",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
+      "T08",
       "governingOverview",
       "grepai_setup",
       "context_modules",
       "lifecycle_modules",
       "GitHub",
       "CGC",
-      "T05",
-      "T12"
+      "T05"
     ]
   },
   "fallback": {

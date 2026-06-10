@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:15+02:00     |
-| lastVerifiedCommitHash | `cda255d075b143693ea270bac44d85c65f032b91` |
-| lastVerifiedCommitDate | 2026-06-10T08:05:48+02:00|
+| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
+| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
