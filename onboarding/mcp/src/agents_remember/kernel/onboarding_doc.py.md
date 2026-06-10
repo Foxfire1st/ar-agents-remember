@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T04:47+02:00                     |
-| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0`                                  |
-| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
+| lastUpdated            | 2026-06-10T05:50+02:00                     |
+| lastVerifiedCommitHash | `7e730de0465266ef19c31ceaffa29475b7bc3a79`                                  |
+| lastVerifiedCommitDate | 2026-06-10T05:35:29+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -24,6 +24,9 @@ The metadata helpers (`onboarding_metadata_row`, `markdown_table_cells`,
 `table_metadata`, `normalize_route`, `route_contains_changed_path`,
 `ROUTE_OVERVIEW_DOC_TYPES`) moved here verbatim from
 `worktrees/modules/onboarding.py`, which keeps re-exporting them as a facade.
+`discover_route_overviews(onboarding_root)` returns (normalized route,
+onboarding-root-relative path) pairs for doc_type-verified route overviews —
+the shared discovery used by carryover overview candidates.
 
 The change-classification helpers define what counts as an honest onboarding
 update. `meaningful_body(text)` is the document minus the three verification
@@ -62,4 +65,5 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: added `discover_route_overviews` (doc_type-verified route discovery) for carryover overview candidates.
 - 2026-06-10T04:47+02:00 — Created: extracted shared metadata/route helpers from `worktrees/modules/onboarding.py` and added the body/history classification helpers (`meaningful_body`, `meaningful_body_changed`, `update_history_section`, `new_history_lines`, `has_no_impact_marker`) for the issue #56 memory-integrity gates.
