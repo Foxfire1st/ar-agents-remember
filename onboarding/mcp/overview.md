@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T10:30+02:00                     |
-| lastVerifiedCommitHash | `cca911fcb6417ecf56de00c17d05aa304daa51c5` |
-| lastVerifiedCommitDate | 2026-06-10T02:35:22+02:00|
+| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0` |
+| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -39,7 +39,12 @@ the `providers/lifecycle/` facade/shared helpers and provider-owned
 is no legacy `provider_lifecycle.py` facade. Memory-layer quality control lives under
 `src/agents_remember/memory_quality/`: integrity checks include the onboarding
 drift classifier/summary, and style checks currently include update-history
-newest-first ordering. Runtime package data under
+newest-first ordering. Shared onboarding-document parsing and the
+"meaningful body vs metadata/history" change classification live in
+`kernel/onboarding_doc.py`; the closeout body gates in
+`worktrees/modules/onboarding.py` consume them and accept explicit
+`No content impact:` / `No route impact:` Update History markers as in-band
+reviewed-no-impact attestations. Runtime package data under
 `src/agents_remember/package_data/` is synchronized from canonical root runtime
 asset folders by `scripts/sync-runtime.py`, and the sync behavior is covered by
 `mcp/tests/test_sync_runtime.py` plus the pre-commit check.
@@ -165,6 +170,7 @@ changed files in check mode.
 ## Update History
 
 - 2026-06-10T10:30+02:00 — Route body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness, the stdio subprocess invariant (#49), stall-watchdog doctrine, and the tool-report response-budget layer. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: added `kernel/onboarding_doc.py` (shared doc parsing + body/history classification) and the four-case sidecar body gate with in-band no-impact attestation markers to the route surface.
 - 2026-06-09T14:52+02:00: Refreshed the MCP route overview against MCP 2.4.1 `main`; added the canonical root runtime asset sync boundary for package data.
 - 2026-06-08T09:57+02:00: Re-verified the MCP package route after PR-39 restored context-packet provider-summary validation and made skipped-provider summaries a modeled optional-null contract.
 - 2026-06-06T12:15: Re-verified against the current MCP package surface; corrected stale `mcp/tools.py` and provider lifecycle module references after the `mcp/tools/` package split and provider-first lifecycle packages.

@@ -107,10 +107,14 @@
       "c-09-git-worktree-manager",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "9911a8054b6314e051b094456a72eeec668c4c84",
+      "5397b76fc4d2bb6808c286fbf8fd780baa5139e0",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
+      "classify_sidecar_updates",
+      "require_updated_sidecar_content",
+      "No content impact",
+      "kernel/onboarding_doc.py",
       "WorktreeArgs",
       "argparse.Namespace",
       "from_namespace",
@@ -119,11 +123,7 @@
       "agents-remember-md/mcp/tests/test_worktree_support.py",
       "agents_remember",
       "doc_type",
-      "sourceRoute",
-      "lastUpdated",
-      "T12",
-      "lastVerifiedCommitHash",
-      "a8054b6314e051b094456a72eeec668c4c84"
+      "sourceRoute"
     ]
   },
   "fallback": {

@@ -85,6 +85,7 @@
     "mcp/src/agents_remember/kernel/git_facts.py",
     "mcp/src/agents_remember/kernel/memory_init.py",
     "mcp/src/agents_remember/kernel/memory_ledger.py",
+    "mcp/src/agents_remember/kernel/onboarding_doc.py",
     "mcp/src/agents_remember/kernel/route_index.py",
     "mcp/src/agents_remember/mcp/__init__.py",
     "mcp/src/agents_remember/mcp/command_capture.py",
@@ -191,6 +192,7 @@
     "mcp/tests/test_missing_onboarding.py",
     "mcp/tests/test_models.py",
     "mcp/tests/test_ollama_model_seed.py",
+    "mcp/tests/test_onboarding_doc.py",
     "mcp/tests/test_onboarding_drift.py",
     "mcp/tests/test_provider_current_state.py",
     "mcp/tests/test_provider_lifecycle.py",
@@ -215,8 +217,8 @@
     "mcp/tests/test_worktree_support.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 360,
-    "fileSidecars": 147,
+    "sourceFilesInScope": 362,
+    "fileSidecars": 149,
     "childRoutes": 11
   },
   "routingTerms": [
@@ -280,6 +282,7 @@
     "data",
     "deep",
     "defaults",
+    "doc",
     "docker",
     "docs",
     "drift",
@@ -298,8 +301,7 @@
     "git_facts",
     "git_worktree_manager",
     "governing",
-    "grepai",
-    "guard"
+    "grepai"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",
@@ -366,6 +368,8 @@
       "memory_init",
       "memory_ledger.py",
       "memory_ledger",
+      "onboarding_doc.py",
+      "onboarding_doc",
       "route_index.py",
       "route_index",
       "command_capture.py",
@@ -375,9 +379,7 @@
       "config.py",
       "config",
       "server.py",
-      "server",
-      "tool_reports.py",
-      "tool_reports"
+      "server"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-10T04:47+02:00|
+| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0` |
+| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -24,6 +24,13 @@ clean, updates the external memory ledger, and returns the closeout payload.
 Direct closeout applies the same ordering to the current source branches without
 task worktrees. Worktree closeout uses the code worktree as the source of truth
 for drift and fingerprint checks after the worktree code commit exists.
+
+Both preview payloads expose the sidecar body gate's classification
+(`sidecar_body_gate` with stale / untraced / attested_no_impact lists from
+`classify_sidecar_updates`) and both apply paths surface marker-attested
+sidecars as `sidecars_attested_no_impact`, so explicit
+`No content impact:` attestations are visible at the commit-approval gate
+instead of only in memory diffs.
 
 All entry points (`closeout_preview_payload`, `closeout_result`,
 `direct_closeout_preview_payload`, `direct_closeout_result`) and the
@@ -47,6 +54,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: previews expose `sidecar_body_gate` (stale/untraced/attested), and both apply paths surface `sidecars_attested_no_impact` so in-band no-impact attestations show up in the tool response at the commit-approval gate.
 - 2026-05-31T12:50+02:00 — All closeout entry points and helpers re-typed from `argparse.Namespace` to the new `WorktreeArgs` dataclass (imported from `modules.args`), dropped `import argparse`, and `closeout_result` added an `args.contract_path is not None` assert; corrected Code Commentary to name the typed param and added the args.py reference (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Typed route-index/memory-quality dicts as `dict[str, Any]`, `validate_direct_external_context` -> `MemoryLedger`; extracted `_refresh_plans_have_work` and `_format_memory_quality_finding` to reduce preview/failure-message complexity; behavior-preserving (commits `0549b28`, `e3dab63`).
 - 2026-05-28T15:24+02:00: Updated after closeout began enforcing route overview/index refresh plus a clean memory quality gate before memory commits. Verification metadata remains pinned until closeout commits the source change.
