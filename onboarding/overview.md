@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-06-10T10:30+02:00 |
-| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0` |
-| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
+| lastVerifiedCommitHash | `7cb9c6bf223818a516c443a72ba976a38f6f06e9` |
+| lastVerifiedCommitDate | 2026-06-10T05:20:13+02:00|
 
 > **Status:** active baseline
 
@@ -48,7 +48,7 @@ onboarding pass.
 | File and entity onboarding maintenance | File-level sidecars, inline onboarding adapter rules, repo entity catalogs, deterministic entity fingerprints, reference health checks, and generated route indexes. | `c-05-create-or-update-onboarding-files` skill, `route_index_refresh`, `kernel/route_index.py` |
 | Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | `c-01-findings-capture` skill |
 | Workflow modes | The `l-01-session-job-lifecycle` skill chat build for current-session edits and the `w-02-light-task-workflow` skill for compact durable plans, escalating to a master + light sub-task series for larger phased work (the retired heavy workflow is no longer a separate mode). | `l-01-session-job-lifecycle` skill, `w-02-light-task-workflow` skill |
-| Approval-gated closeout | Explicit approval gates for implementation, direct current-checkout closeout, worktree-backed closeout, memory refresh, memory quality, and ledger alignment. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `direct_closeout_*`, `worktree_closeout_*` |
+| Approval-gated closeout | Explicit approval gates for implementation, direct current-checkout closeout, worktree-backed closeout, memory refresh, memory quality, and ledger alignment. Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `direct_closeout_*`, `worktree_closeout_*` |
 | Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. | `c-09-git-worktree-manager` skill, `worktree_*`, `worktrees/` |
 | Runtime and skill installation | MCP-owned install of coordinator `AGENTS.md` templates, packaged skills, system defaults, provider defaults, optional benchmark fixtures, and harness skill layouts. | `runtime_install`, `skills_install`, `install/`, `package_data/runtime/` |
 | Harness starter packages | Harness-native first-run packages for Claude Code, Codex, Cursor, Antigravity, VS Code + Copilot, Hermes, Pi.dev, and OpenClaw. Each package carries MCP settings templates, skill folders, and either startup hooks or always-on instruction files that load the coordinator first-action directive. | `.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`, `docs/install/` |
@@ -192,6 +192,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 ## Update History
 
 - 2026-06-10T10:30+02:00 — Root overview body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness + `indexing` busy list in the feature inventory, a new tool-response-budget inventory row, and stall-watchdog/seed-fallback/stdio-subprocess doctrine in the provider runtime narrative. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T05:20+02:00 — Issue #56 sub-tasks 1-2: the approval-gated closeout inventory row now records the body/history gates and the `No content impact:` / `No route impact:` reviewed-no-impact markers enforced for sidecars and nearest-governing route overviews.
 - 2026-06-09T14:52+02:00: Refreshed the root overview against MCP 2.4.1 `main` after runtime asset canonical sync landed; recorded the hard installed-runtime onboarding trust gate and the canonical root-to-package runtime asset sync path.
 - 2026-06-08T09:57+02:00: Re-verified the repository overview against the PR-39 branch head after the branch merged current `main` and the skipped-provider context-packet contract was corrected.
 

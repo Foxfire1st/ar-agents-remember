@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-06-10T04:47+02:00|
-| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0` |
-| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
+| lastVerifiedCommitHash | `7cb9c6bf223818a516c443a72ba976a38f6f06e9` |
+| lastVerifiedCommitDate | 2026-06-10T05:20:13+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -36,12 +36,17 @@ argument wiring while preserving the public facade import path.
   root-owned data via a docker chown when needed). Used by both `cleanup.py`
   and `abandon.py`.
 - `onboarding.py` owns closeout-time onboarding metadata and entity fingerprint
-  refresh planning, plus the four-case sidecar body/history gate
-  (`classify_sidecar_updates` / `require_updated_sidecar_content`): a changed
-  source's sidecar must pair a meaningful body change with a new Update History
-  entry, or carry an explicit `No content impact:` history entry; previews and
-  apply payloads surface marker-attested sidecars. Shared metadata/route
-  parsing lives in `kernel/onboarding_doc.py` and is re-exported here.
+  refresh planning, plus the four-case body/history gates
+  (`classify_sidecar_updates` / `require_updated_sidecar_content` for file
+  sidecars, `classify_route_overview_updates` /
+  `require_updated_route_overview_content` for route overviews): a changed
+  source's sidecar — and the route overview that is its **nearest governor** —
+  must pair a meaningful body change with a new Update History entry, or carry
+  an explicit `No content impact:` / `No route impact:` history entry.
+  Ancestor-matched overviews are reported as `stamped_without_body_review`
+  rather than gating. Previews and apply payloads surface marker-attested
+  documents. Shared metadata/route parsing lives in `kernel/onboarding_doc.py`
+  and is re-exported here.
 - `args.py` defines the frozen `WorktreeArgs` cross-layer DTO that operation
   modules consume in place of `argparse.Namespace`; `from_namespace` builds it
   from partial CLI/controller namespaces with per-field defaults.
@@ -61,6 +66,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: route overviews get the same body gate scoped to nearest-governing routes (`No route impact:` marker; ancestors report as `stamped_without_body_review`), surfaced in closeout previews and apply payloads.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: `onboarding.py`'s content gate became the four-case body/history classification with in-band `No content impact:` attestation, shared parsing helpers moved to `kernel/onboarding_doc.py` (facade re-exports kept), and closeout payloads surface attested sidecars.
 - 2026-06-01T00:00+02:00 — Added `abandon.py` (discard without integration) and `provider_teardown.py` (full-reclaim Docker + rmtree teardown) to the Purpose and Hot Path Summary listings.
 - 2026-05-31T12:30+02:00 — Documented the new `args.py` typed `WorktreeArgs` cross-layer DTO replacing `argparse.Namespace` and `integrate.py`'s atomic all-or-nothing fast-forward behavior (1.0.0 review remediation).

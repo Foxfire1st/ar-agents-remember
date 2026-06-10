@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T10:30+02:00                     |
-| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0` |
-| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
+| lastVerifiedCommitHash | `7cb9c6bf223818a516c443a72ba976a38f6f06e9` |
+| lastVerifiedCommitDate | 2026-06-10T05:20:13+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -170,6 +170,7 @@ changed files in check mode.
 ## Update History
 
 - 2026-06-10T10:30+02:00 — Route body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness, the stdio subprocess invariant (#49), stall-watchdog doctrine, and the tool-report response-budget layer. Previous closeouts had only stamped the verification header (developer-flagged gap).
+- 2026-06-10T05:20+02:00 — No route impact: sub-task 2 extended the body gates to route overviews and the c-05 skill doctrine; the route surface described in the sub-task 1 entry already covers both gates and the markers.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: added `kernel/onboarding_doc.py` (shared doc parsing + body/history classification) and the four-case sidecar body gate with in-band no-impact attestation markers to the route surface.
 - 2026-06-09T14:52+02:00: Refreshed the MCP route overview against MCP 2.4.1 `main`; added the canonical root runtime asset sync boundary for package data.
 - 2026-06-08T09:57+02:00: Re-verified the MCP package route after PR-39 restored context-packet provider-summary validation and made skipped-provider summaries a modeled optional-null contract.

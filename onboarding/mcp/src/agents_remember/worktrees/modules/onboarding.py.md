@@ -5,9 +5,9 @@
 | repository             | agents-remember-md                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T04:47+02:00|
-| lastVerifiedCommitHash | `5397b76fc4d2bb6808c286fbf8fd780baa5139e0` |
-| lastVerifiedCommitDate | 2026-06-10T05:03:05+02:00|
+| lastUpdated            | 2026-06-10T05:20+02:00|
+| lastVerifiedCommitHash | `7cb9c6bf223818a516c443a72ba976a38f6f06e9` |
+| lastVerifiedCommitDate | 2026-06-10T05:20:13+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -47,6 +47,19 @@ not resolve under that tree rather than reporting false stale findings;
 `validate_onboarding_refresh_plan_for_context` wires it into both closeout
 paths before the code commit.
 
+Route overviews get the same body gate scoped by domain evidence.
+`_nearest_governing_route` picks the longest matched route per changed path
+(`.` loses to any deeper route); `classify_route_overview_updates` classifies
+only those nearest-governing overviews as stale / untraced / attested (marker
+`No route impact:`), while ancestor-matched overviews — including the repo-root
+overview matched by happenstance — are collected as
+`stamped_without_body_review` (skipped when their body was reviewed anyway) and
+never gate closeout. `require_updated_route_overview_content` raises on
+stale/untraced and returns attested routes;
+`validate_route_overview_refresh_plan_for_context` runs it (with `memory_tree`
+plumbed from the worktree wrapper) before the code commit in both closeout
+paths. New overview files absent from memory HEAD pass without classification.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -61,6 +74,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added the route-overview body gate (`_nearest_governing_route`, `classify_route_overview_updates`, `require_updated_route_overview_content` with the `No route impact:` marker) wired into `validate_route_overview_refresh_plan_for_context`; ancestor matches report as `stamped_without_body_review` instead of failing.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: moved shared metadata/route helpers to `kernel/onboarding_doc.py` (facade re-exports kept) and rebuilt the content gate as the four-case body/history classification (`classify_sidecar_updates` + `require_updated_sidecar_content` returning marker-attested paths): untraced body edits and unmarked history-only edits now fail; `No content impact:` entries pass and are surfaced.
 - 2026-06-02T16:24+02:00: User-facing closeout content-gate error messages now say "Run the `c-05-create-or-update-onboarding-files` skill, then rerun closeout" (was "Run C-05 create-or-update-onboarding-files"). Reference-style normalization; behavior unchanged.
 - 2026-05-31T12:50+02:00 — `onboarding_refresh_plan_for_context` now gates the sidecar-storage check on the boolean `resolver.is_sidecar_storage(storage)` predicate, replacing the label-returning `resolver.sidecar_storage_label(storage)`; behavior-preserving (truthiness unchanged). Added a Code Commentary note naming the predicate (1.0.0 review remediation).
