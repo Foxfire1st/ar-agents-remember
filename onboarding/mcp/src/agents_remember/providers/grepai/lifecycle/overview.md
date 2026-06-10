@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
+| lastUpdated            | 2026-06-10T10:30+02:00                     |
 | lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
 | lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../overview.md`                           |
@@ -28,7 +28,11 @@ settings, layout, workspace config, container DSNs, and Docker image settings.
 readiness, `runner.py` manages the GrepAI runner image and watcher container,
 and `actions.py` composes top-level install/status/start/stop/refresh/run
 behavior. Status helpers include normalized container state so MCP
-current-state packets can report running state, health, and uptime.
+current-state packets can report running state, health, and uptime; since
+2.5.1 `runner.py` also reads the watcher's initial-scan log markers
+(`Performing initial scan` / `Initial scan complete` since container start)
+into an `initialScan` field, giving GrepAI real `indexing`/`indexed` states
+instead of `unknown`.
 
 ## Route Model
 
@@ -46,6 +50,11 @@ current-state packets can report running state, health, and uptime.
 - Status surfaces should include backend, embedder, and watcher container state
   so MCP current-state packets can report what is running now.
 - Keep `__init__.py` as the package export facade.
+- Modules in this route import context helpers from the leaf modules
+  (`grepai.context`, `context.common`), never the `providers.context`
+  aggregator: the aggregator star-imports this provider's context back, so
+  routing through it is a circular import that breaks any entry point touching
+  grepai modules first (2.5.1 fix).
 
 ## Repo-Internal References
 
@@ -56,6 +65,7 @@ current-state packets can report running state, health, and uptime.
 
 ## Update History
 
+- 2026-06-10T10:30+02:00 — Route body caught up with 2.5.1: `initialScan` scan-marker reading in `runner.py` and the leaf-import invariant (circular-import fix). Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current GrepAI lifecycle package; backend, embedder, runner, and action composition still match.
 - 2026-05-28T12:32+02:00: Updated after GrepAI backend/embedder/watcher status began surfacing container-state summaries for provider current-state reporting.
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/grepai/lifecycle/` route.

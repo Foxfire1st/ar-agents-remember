@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-08T09:57+02:00                     |
+| lastUpdated            | 2026-06-10T10:30+02:00                     |
 | lastVerifiedCommitHash | `cca911fcb6417ecf56de00c17d05aa304daa51c5` |
 | lastVerifiedCommitDate | 2026-06-10T02:35:22+02:00|
 | governingOverview      | `../../../../overview.md`                  |
@@ -56,6 +56,12 @@ benchmark tools, and `tokens.py` for response token accounting.
   validation pass treats the missing key as a required-field error.
 - Flexible models are for intentionally raw/detail payloads, not a shortcut for
   avoiding a stable public contract.
+- Tools whose bulk moved to `temp/tool-reports/` (2.5.1: runtime install,
+  provider diagnostics/watchers; 2.5.2: carryover plan/apply) document the
+  compact wire fields as optional declared fields on their flexible models —
+  `reportPath` everywhere, plus the per-tool digests (rebind `phases`,
+  carryover `decisions`/`carriedPaths`) — so the compact shape is discoverable
+  from the model even though the envelope stays flexible.
 
 ## Repo-Internal References
 
@@ -67,6 +73,7 @@ benchmark tools, and `tokens.py` for response token accounting.
 
 ## Update History
 
+- 2026-06-10T10:30+02:00 — Route body caught up with the 2.5.1/2.5.2 compact-response field documentation pattern (`reportPath` + per-tool digests declared on flexible models); previous closeouts had only stamped the verification header. Developer-flagged gap.
 - 2026-06-08T09:57+02:00: Re-verified response model guidance after compact provider `ok` fields became optional-null defaults for skipped-provider payload re-validation.
 - 2026-06-06T12:15: Re-verified against the current response model package; corrected the payload-builder reference from the deleted `mcp/tools.py` file to the `mcp/tools/` package.
 - 2026-05-28T19:52+02:00: Created for the Pydantic public response-contract model package while S2/S4 source changes are still uncommitted in the checkout.

@@ -48,7 +48,7 @@
     "src"
   ],
   "hotPath": {
-    "summary": "Use `setup.py` for enabled-provider wiring and isolated worktree settings, `seed.py` plus `bundle.py` for CGC index export/rewrite/import seeding, and `context/` for runtime layout, materialization, cleanup, and patch helpers. Use `lifecycle/` for backend, install/status, and process/watch commands.",
+    "summary": "Use `setup.py` for enabled-provider wiring and isolated worktree settings, `seed.py` plus `bundle.py` for CGC index export/rewrite/import seeding, and `context/` for runtime layout, materialization, cleanup, and patch helpers. Use `lifecycle/` for backend, install/status, and process/watch commands. Seeding refuses when the workspace and worktree repository HEADs differ (a copied graph must match the code it describes) and the worktree then falls back to a full reindex; seed export/load is capped by the configurable `providerSetupSeconds`, while actual indexing is never duration-capped.",
     "candidateHints": [
       "mcp/src/agents_remember/providers/cgc",
       "mcp/src/agents_remember/providers/cgc/context",
@@ -71,7 +71,9 @@
       "lifecycle",
       "context/",
       "lifecycle/",
+      "providerSetupSeconds",
       "CGC",
+      "HEADs",
       "mcp/src/agents_remember/providers/cgc/",
       "route-local-overview",
       "592274a52cec61d97521771c630272c72240ed01",
@@ -93,7 +95,7 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T12",
+      "T10",
       "lastVerifiedCommitHash",
       "a52cec61d97521771c630272c72240ed01",
       "lastVerifiedCommitDate",
@@ -104,7 +106,7 @@
       "lifecycle_modules",
       "GrepAI",
       "provider_setup",
-      "T21"
+      "HEAD"
     ]
   },
   "fallback": {

@@ -56,7 +56,7 @@
     "workspace"
   ],
   "hotPath": {
-    "summary": "- `models.py`, `constants.py`, and `manifest.py` define benchmark case data, supported provider ids, manifest path validation, case loading, and prompt/variant selection. - `filesystem.py`, `commands.py`, and `workspace.py` own benchmark workspace mutation: copying runtime assets, safe removal, Git checkout preparation, template rendering, memory repo preparation, and whole-case setup. - `mcp_registration.py` writes benchmark-local MCP/Codex configuration, generates provider settings with central `logs/mcp` and `logs/providers` paths, and invokes package-local provider setup with generated...",
+    "summary": "- `models.py`, `constants.py`, and `manifest.py` define benchmark case data, supported provider ids, manifest path validation, case loading, and prompt/variant selection. - `filesystem.py`, `commands.py`, and `workspace.py` own benchmark workspace mutation: copying runtime assets, safe removal, Git checkout preparation, template rendering, memory repo preparation, and whole-case setup. `commands.py`'s `run_command` captures stdout/stderr and never inherits the parent's stdio (on MCP stdio transport those are the protocol pipes; 2.5.1, GitHub #49) \u2014 failures raise with a bounded output tail....",
     "candidateHints": [
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/benchmarks/runner_modules/__init__.py",
@@ -100,15 +100,17 @@
       "services",
       "workspace.py",
       "workspace",
-      "logs/mcp",
-      "logs/providers",
+      "run_command",
       "MCP",
+      "GitHub",
       "route-local-overview",
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "592274a52cec61d97521771c630272c72240ed01",
       "/../../../overview.md",
       "runner_modules",
       "benchmarks/runner.py",
+      "logs/mcp",
+      "logs/providers",
       "agents-remember-md",
       "825a172",
       "3f09b75",
@@ -119,9 +121,7 @@
       "agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py",
       "skill_tools.py",
       "agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py",
-      "test_worktree_support.py",
-      "agents-remember-md/mcp/tests/test_worktree_support.py",
-      "agents_remember"
+      "test_worktree_support.py"
     ]
   },
   "fallback": {

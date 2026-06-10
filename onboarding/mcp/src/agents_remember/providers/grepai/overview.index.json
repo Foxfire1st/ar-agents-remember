@@ -83,6 +83,7 @@
       "grepai_setup.py",
       "context_modules/grepai",
       "lifecycle_modules/grepai",
+      "GREPAI_CLONE_STALL_SECONDS",
       "artifacts.py",
       "providers/grepai/",
       "mcp/overview.md",
@@ -93,7 +94,7 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T12",
+      "T10",
       "lastVerifiedCommitHash",
       "a52cec61d97521771c630272c72240ed01",
       "lastVerifiedCommitDate",
@@ -103,6 +104,7 @@
       "context_modules",
       "lifecycle_modules",
       "CGC",
+      "T12",
       "T21"
     ]
   },

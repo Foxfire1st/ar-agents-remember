@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
+| lastUpdated            | 2026-06-10T10:30+02:00                     |
 | lastVerifiedCommitHash | `592274a52cec61d97521771c630272c72240ed01` |
 | lastVerifiedCommitDate | 2026-06-10T01:38:42+02:00|
 | governingOverview      | `../../../../overview.md`                  |
@@ -27,6 +27,10 @@ Use `setup.py` for enabled-provider wiring and isolated worktree settings,
 `seed.py` plus `bundle.py` for CGC index export/rewrite/import seeding, and
 `context/` for runtime layout, materialization, cleanup, and patch helpers.
 Use `lifecycle/` for backend, install/status, and process/watch commands.
+Seeding refuses when the workspace and worktree repository HEADs differ (a
+copied graph must match the code it describes) and the worktree then falls
+back to a full reindex; seed export/load is capped by the configurable
+`providerSetupSeconds`, while actual indexing is never duration-capped.
 
 ## Route Model
 
@@ -54,5 +58,6 @@ Use `lifecycle/` for backend, install/status, and process/watch commands.
 
 ## Update History
 
+- 2026-06-10T10:30+02:00 — Route body caught up with 2.5.0/2.5.1: seed HEAD-match refusal with full-reindex fallback and the setup-cap-vs-uncapped-indexing boundary. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current CGC provider package; expanded the hot-path summary to include isolated worktree settings and CGC index bundle seeding.
 - 2026-05-25T21:14+02:00: Created when provider modules were reorganized provider-first under `providers/cgc/`.

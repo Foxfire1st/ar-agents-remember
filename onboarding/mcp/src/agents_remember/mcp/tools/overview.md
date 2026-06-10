@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-05-30T21:33+02:00|
+| lastUpdated            | 2026-06-10T10:30+02:00|
 | lastVerifiedCommitHash | `cca911fcb6417ecf56de00c17d05aa304daa51c5`                                      |
 | lastVerifiedCommitDate | 2026-06-10T02:35:22+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
@@ -32,12 +32,19 @@ tool.
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
 | `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS`, `RESERVED_TOOLS`, and `_tool_payload`.         |
-| `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install. |
-| `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply. |
-| `providers.py`  | provider status/diagnostics/watchers, GrepAI search/trace, CGC query tools.|
+| `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `compact_runtime_install_payload`. |
+| `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
+| `providers.py`  | provider status/diagnostics/watchers, GrepAI search/trace, CGC query tools; `compact_diagnostics_payload`, `compact_watchers_payload`. |
 | `worktree.py`   | worktree start/attach/status/closeout/integrate/cleanup, direct closeout.  |
 | `benchmark.py`  | codex_benchmark_prepare, codex_benchmark_run.                              |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
+
+Since 2.5.1 this route also owns the response token-budget layer: the verbose
+tools (`runtime_install`, `provider_diagnostics`, `provider_watchers`, and
+since 2.5.2 the carryover plan/apply pair) write their full result to
+`temp/tool-reports/<tool>/` via `mcp/tool_reports.py` (keep-last-5 / 7-day
+write-time prune, secret redaction) and return a compact outcome with an
+inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Invariants And Boundaries
 
@@ -55,6 +62,11 @@ tool.
 - The facade `__init__.py` re-exports `_tool_payload` with an explicit
   `import _tool_payload as _tool_payload` so the conformance test's
   `tools._tool_payload` access keeps working.
+- Compaction is wire-shape only and lives in this route, not in controllers:
+  the full result is written to the tool report BEFORE any compaction mutates
+  it, decision/outcome facts stay inline, and
+  `test_tool_response_budgets.py` holds every compact builder under
+  `INLINE_BUDGET_CHARS` with deliberately fat inputs.
 
 ## Repo-Internal References
 
@@ -68,6 +80,7 @@ tool.
 
 ## Update History
 
+- 2026-06-10T10:30+02:00 — Route body caught up with the 2.5.1/2.5.2 response-budget layer (compact builders per domain, tool-report filing, report-before-compaction and budget-test invariants); previous closeouts had only stamped the verification header. Developer-flagged gap.
 - 2026-05-30T21:33+02:00: Re-verified the route against `8927f03` after the 0.9.x run; the per-domain Layout, hot path, and invariants still match the current exports. `core.py` gained `no_cache`/`install_provider_deps` forwarding in `runtime_install_payload` (documented on the file card); the registry's public surface is unchanged.
 - 2026-05-29T18:35+02:00: Split `mcp/tools.py` (831 lines) into this `mcp/tools/` package by domain (commit `01f503d`); moved the registry purpose, invariants, and references here from the retired `tools.py.md`. Import surface unchanged.
 - 2026-05-28T19:52+02:00: (from `tools.py`) Updated after all public payload builders were wired through the Pydantic response model registry and controller imports were split by domain.

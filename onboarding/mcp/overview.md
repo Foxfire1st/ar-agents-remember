@@ -5,7 +5,7 @@
 | repository             | agents-remember-md                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-09T14:52+02:00                     |
+| lastUpdated            | 2026-06-10T10:30+02:00                     |
 | lastVerifiedCommitHash | `cca911fcb6417ecf56de00c17d05aa304daa51c5` |
 | lastVerifiedCommitDate | 2026-06-10T02:35:22+02:00|
 | governingOverview      | `../overview.md`                           |
@@ -26,7 +26,9 @@ coordinator `system/settings.json`.
 Start in `src/agents_remember/mcp/config.py` for trusted settings parsing,
 `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed
 MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result
-text), `models/tool_registry.py` for public response contracts,
+text; verbose tools additionally file bulk diagnostics under
+`temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes
+with a `reportPath`), `models/tool_registry.py` for public response contracts,
 `controllers/context_packet.py` for compact `ContextPacketV2` startup packets,
 and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned
 runtime installation. Provider status is composed in `providers/status.py`;
@@ -127,6 +129,23 @@ changed files in check mode.
   provider summaries report aggregate skipped state, omit provider detail rows,
   and rely on optional-null provider `ok` fields to survive JSON
   serialization/re-validation.
+- On stdio transport the server's stdin/stdout ARE the JSON-RPC pipes:
+  every `subprocess` call in the package must declare its stdin handling
+  (`stdin=DEVNULL` or piped `input`), enforced by the
+  `test_subprocess_hygiene.py` AST guard and the end-to-end stdio transport
+  test (2.5.1, GitHub #49).
+- Provider readiness is content-gated, not liveness-gated: global `ok`
+  requires both running containers and actual graph/workspace content;
+  healthy-but-busy targets surface in the compact summary's `indexing` list
+  without degrading state (2.5.0).
+- Long-running provider seed/clone operations are guarded by stall watchdogs
+  (kill on zero progress), never by total-duration caps — copying index data
+  instead of re-indexing is what makes rapid worktree provider deployment
+  viable, and it scales with index size by design (2.5.1).
+- Verbose tool responses are budgeted: bulk passthrough detail belongs in
+  `temp/tool-reports/<tool>/` (keep-last-5 / 7-day write-time prune, secret
+  redaction) with the compact inline outcome carrying `reportPath`;
+  `test_tool_response_budgets.py` is the regression line (2.5.1/2.5.2).
 
 ## Repo-Internal References
 
@@ -145,6 +164,7 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-06-10T10:30+02:00 — Route body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness, the stdio subprocess invariant (#49), stall-watchdog doctrine, and the tool-report response-budget layer. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-09T14:52+02:00: Refreshed the MCP route overview against MCP 2.4.1 `main`; added the canonical root runtime asset sync boundary for package data.
 - 2026-06-08T09:57+02:00: Re-verified the MCP package route after PR-39 restored context-packet provider-summary validation and made skipped-provider summaries a modeled optional-null contract.
 - 2026-06-06T12:15: Re-verified against the current MCP package surface; corrected stale `mcp/tools.py` and provider lifecycle module references after the `mcp/tools/` package split and provider-first lifecycle packages.
