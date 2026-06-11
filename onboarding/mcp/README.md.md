@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-06T18:42+02:00                     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-11T14:07+02:00 |
+| lastVerifiedCommitHash | `c2c2dcbe0b4ae26e73b9d9aef2b3abba58605adc` |
+| lastVerifiedCommitDate | 2026-06-11T14:07+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -112,6 +112,7 @@ the workspace and never the user's home directory.
 
 ## Update History
 
+- 2026-06-11T14:07+02:00: Re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
 - 2026-06-11T06:47+02:00: No content impact: the Tool Surface bullet changed from "chat/direct closeout and worktree-backed task workflows" to "worktree-backed closeout and task workflows" (issue #62 worktree-only closeout); the bootstrap structure this sidecar describes is unchanged.
 - 2026-06-06T18:42+02:00: Refined the PyPI-facing quickstart memory so the renderer is an optional convenience script for placeholder replacement and manual replacement is explicit. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-06T18:19+02:00: Refined the PyPI-facing quickstart memory after renderers dropped the separate workspace-root flag; copied packages now infer the workspace root and accept one `--repo` list. Verification metadata stays pinned until closeout commits the source change.
