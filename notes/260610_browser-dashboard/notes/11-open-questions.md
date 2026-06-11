@@ -11,13 +11,21 @@
    `lifecycle_start/pause/resume/end` family, minted adjacent to
    `context_packet` (governance confirmed ⇒ start), end = task end, worktree =
    commitment boundary (lingers with the fixture), TTL auto-abandon otherwise.
-2. **Id propagation — mostly settled** (note 01, round 2): the model only sends
-   signals (start/end/pause/resume/block/switch/phase); ids are system-managed —
-   idempotent start, contract-driven resume, `switch_lifecycle` for pivots
-   (auto-pause persistent / auto-end fleeting), ~1h TTL only for missing
-   signals. Remaining: per-harness verification of session-scoped stdio server
-   (ambient auto-tagging), blocked→running auto-unblock on gate approval,
-   start/resume/switch precedence table, phase enum + field names (with 02).
+   2026-06-11: a lifecycle represents *work*, not a repo — the contract
+   enclosure is the identity anchor and may conceptually span multiple repos
+   of one larger product (untested; don't design it out).
+2. **Id propagation — mostly settled** (note 01, rounds 2–3): the model only
+   sends signals (start/end/pause/resume/block/switch/phase); ids are
+   system-managed — guarded start (start-while-active rejected with a
+   reminder; no identifier), contract-driven resume, `switch_lifecycle` as the
+   only id-carrying signal for pivots (save gate when leaving a fleeting
+   lifecycle: offer worktree+notes+task-file promotion, else deliberate
+   discard; auto-pause persistent / auto-end fleeting), TTL fleeting-only
+   (~1h, missing signals; persistent never auto-reaped — dev steps in).
+   Remaining: per-harness verification of session-scoped stdio server (ambient
+   auto-tagging), blocked→running auto-unblock on gate approval,
+   attach-vs-active-lifecycle precedence table, phase enum + field names
+   (with 02).
 3. ~~lifecycle vs session vs run~~ **SETTLED 2026-06-10:** lifecycle is the
    public primary, owned by MCP + contract; harness session is correlated, not
    causal (a lifecycle survives chat sessions); session id = provenance metadata.
@@ -26,7 +34,8 @@
 5. **Event store layout:** per-lifecycle `events.jsonl` (#43) vs one workspace
    log vs both (truth per-lifecycle + derived workspace feed).
 6. **Emit points:** `_tool_payload` choke point (observed) + skill-declared
-   events (declared) — confirm the trust split and the minimum v1 event set.
+   events (declared) — confirm the trust split and the minimum v1 event set
+   (incl. the fleeting→persistent promotion event from the save gate, note 01).
 7. **Retention:** what is forever-truth (ledger-like) vs rolling window; the
    observer branch's 1-day/250MB defaults are too small for trend charts.
 8. **Gate return channel:** durable gate state + tool enforcement + agent
@@ -43,6 +52,13 @@
     first time someone tunnels it?
 12. **Multi-workspace:** one cockpit per coordination root, or aggregate? (Defer,
     but don't design it out.)
+23. **Save-gate landing zones (design note 2026-06-11, note 01):** task roots
+    are repo-grouped, but saved fleeting work is not always bound to one
+    tangible repo (e.g. research across many pages) — give it a home in a
+    `0_misc` task folder; multi-repo enclosure work likewise needs
+    `1_inter-repo-work` so no save forces an arbitrary single-repo choice.
+    Number prefixes sort both above the repo folders. Final names improvable;
+    settle before the save gate is built.
 
 ## Product (notes 05/06)
 

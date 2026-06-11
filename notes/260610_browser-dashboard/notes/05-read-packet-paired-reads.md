@@ -30,10 +30,11 @@ one roof:
 2. **Observability** — today, file reads happen through harness-native tools and
    are invisible. Routed through the MCP, each read becomes an attributable
    event: *this lifecycle read these files with their onboardings at this time*.
-3. **Lifecycle attribution** — if the request envelope carries `lifecycle_id`
-   from day one (note 01), reads stop looking random. The observer branch even
-   had `read.session.*` / `read pairs` event families and a dashboard view for
-   "onboarding usage" — same instinct, pre-MCP vintage.
+3. **Lifecycle attribution** — reads are attributed via the ambient lifecycle
+   (server-side auto-tagging, note 01); the request envelope needs no
+   lifecycle param, so reads stop looking random by construction. The observer
+   branch even had `read.session.*` / `read pairs` event families and a
+   dashboard view for "onboarding usage" — same instinct, pre-MCP vintage.
 4. **Token accounting** — packet responses are token-stamped like everything
    else, so "context spend per lifecycle" (the fuel gauge) gets its biggest
    missing contributor.
@@ -51,7 +52,8 @@ one roof:
 
 - The tool can ship after the lifecycle/event groundwork — but its **request and
   response envelope should be designed in the same pass as note 01/02 schemas**,
-  so `lifecycle_id` and event emission are native, not retrofitted.
+  so ambient lifecycle attribution and event emission are native, not
+  retrofitted.
 - Adoption risk to design around: the model must *prefer* this tool over
   harness-native reads during Intent work in managed repos, which is a skills/
   doctrine change (c-04 / l-01 teach it), not just a tool launch.

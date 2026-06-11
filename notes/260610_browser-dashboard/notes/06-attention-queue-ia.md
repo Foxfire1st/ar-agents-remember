@@ -24,8 +24,9 @@ and the canonical `origin/browser-dashboard` mockups; see note 07):
 
 Supporting IA (the rest of the operations console, accepted alongside):
 
-- **Live session strip** — active lifecycles with phase, repo, worktree, age (the
-  projection over note 01's entity).
+- **Live session strip** — active lifecycles with phase, repo(s), worktree, age
+  (the projection over note 01's entity); fleeting lifecycles appear as
+  bare-bones entries visually distinct from persistent (worktree-backed) ones.
 - **Operation tree** — workspace → repo → checkout/worktree → task, pivotable by
   repo or by lifecycle (mc2's two-axis tree).
 - **Detail panel** — selected task/lifecycle: phase mini-map, step checklist,
@@ -33,7 +34,9 @@ Supporting IA (the rest of the operations console, accepted alongside):
 - **Engine room** — per-worktree provider stacks (note 08 visual grammar).
 - **Memory mirror** — coverage/drift/ledger currency segmented bar.
 - **Event river** — filtered observer feed with trust provenance.
-- **Hangar** — stale/uncleaned worktree groups debt.
+- **Hangar** — stale/uncleaned worktree groups debt. Load-bearing: persistent
+  lifecycles are never TTL-reaped (note 01), so this panel is *the* surfacing
+  mechanism for rotting persistent work where the developer must step in.
 
 The whole mockup lineage settled on a three-pane console (tree | detail |
 health+attention+events) — treat as the working IA, not as final. The coupling

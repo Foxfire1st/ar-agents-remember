@@ -97,5 +97,7 @@ coupling during the Open Design loop.
 - Aesthetic: Operator skin is the closest *starting point*, but its
   Linear/Datadog look is explicitly what the podracer grammar (note 08) replaces.
   Keep its IA + token mechanics, swap its soul.
-- Unknown still: what the red-pen annotations on `mq0zupso-image.png` say —
-  check before finalizing IA (note 11).
+- ~~Unknown still: what the red-pen annotations on `mq0zupso-image.png` say~~
+  **RESOLVED 2026-06-10** (note 11 item 17 + the screenshot table above): they
+  were the developer's mid-iteration directions to the Open Design agent,
+  already absorbed into mc2. No pending feedback content.
