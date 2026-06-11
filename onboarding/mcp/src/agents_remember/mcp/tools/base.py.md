@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-10T09:56+02:00|
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                                      |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6`                                      |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -19,8 +19,8 @@ name list and the single response-validation helper that every builder uses.
 
 ### Logic
 
-Declares `TRANSPORT = "stdio"`, the `PUBLIC_TOOLS` tuple (37 tool names —
-`worktree_sync` joined in GitHub #54 sub-task D),
+Declares `TRANSPORT = "stdio"`, the `PUBLIC_TOOLS` tuple (36 tool names —
+`direct_closeout_preview`/`apply` left in issue #62's worktree-only closeout),
 `RESERVED_TOOLS`, and `_tool_payload(tool_name, payload)`. `_tool_payload`
 selects the declared Pydantic model from
 `models.tool_registry.PUBLIC_TOOL_RESPONSE_MODELS`, validates the
@@ -50,6 +50,7 @@ passes through, that one call is what gives every MCP response a real
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — Removed `direct_closeout_preview`/`direct_closeout_apply` from `PUBLIC_TOOLS` (issue #62 worktree-only closeout); tuple is now 36 names (the earlier "37" count was itself stale — the tuple held 38 before this removal).
 - 2026-06-10T09:56+02:00 — Registered `worktree_sync` in `PUBLIC_TOOLS` (GitHub #54 sub-task D); tuple is now 37 names.
 - 2026-06-01T20:45+02:00 — Registered `worktree_abandon` in `PUBLIC_TOOLS` so its response is validated like every other public tool.
 - 2026-05-30T22:29+02:00: Documented that `_tool_payload` now finalizes token-accounting metadata via `finalize_payload_tokens` (S6 wiring), making it the single point that populates `tokens`/`tokenizer`/`tokenCountExact` on every MCP response. Verification metadata stays pinned until closeout commits the source change.

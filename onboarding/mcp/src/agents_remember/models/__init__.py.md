@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0` |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -35,6 +35,7 @@ import surface with an explicit `__all__`.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — No content impact: `DirectCloseoutPreviewResponse`/`DirectCloseoutApplyResponse` left the export surface (import block and `__all__`) with the issue #62 worktree-only closeout; the exports-only contract this sidecar describes is unchanged.
 - 2026-06-01T20:45+02:00 — Added `WorktreeAbandonResponse` to the response-model export surface for the `worktree_abandon` tool.
 - 2026-05-31T12:50+02:00 — Dropped `CodexExecutionPolicy` from the export surface (removed from the `agents_remember.models.benchmarks` import block and from `__all__`); behaviour-preserving export-surface reduction, no sidecar prose named the removed symbol (1.0.0 review remediation).
 - 2026-05-30T22:29+02:00: Added `finalize_payload_tokens` to the token-helper export surface (import and `__all__`) for the S6 token-counter wiring. Verification metadata stays pinned until closeout commits the change.

@@ -6,8 +6,8 @@
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T18:42+02:00                     |
-| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
-| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -112,6 +112,7 @@ the workspace and never the user's home directory.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00: No content impact: the Tool Surface bullet changed from "chat/direct closeout and worktree-backed task workflows" to "worktree-backed closeout and task workflows" (issue #62 worktree-only closeout); the bootstrap structure this sidecar describes is unchanged.
 - 2026-06-06T18:42+02:00: Refined the PyPI-facing quickstart memory so the renderer is an optional convenience script for placeholder replacement and manual replacement is explicit. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-06T18:19+02:00: Refined the PyPI-facing quickstart memory after renderers dropped the separate workspace-root flag; copied packages now infer the workspace root and accept one `--repo` list. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-06T16:45+02:00: Updated the PyPI-facing quickstart memory for harness-local `render-starter` scripts and the Claude Code `jq` correction; the setup path now renders copied package placeholders, repository scope, and hook commands before MCP wiring. Verification metadata stays pinned until closeout commits the source change.
