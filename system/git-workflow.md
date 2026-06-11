@@ -11,18 +11,18 @@ the coordinator only routes "read `git-workflow.md` when present."
 - **Spear branch = `main`.** `main` is **PR-gated — never push to it directly.** Every change
   reaches `main` through a GitHub PR that passes checks and is merged.
 - Work branches are cut from the spear: **`feat/<slug>`** (features) or **`fix/<slug>`** (fixes).
-- **Everything is worktree-backed** (chat *and* task) so external memory stays consistent: memory
-  parks on the worktree memory branch and lands on `main` via **C-11 carryover** *after* the code PR
+- **Everything is worktree-backed** (chat _and_ task) so external memory stays consistent: memory
+  parks on the worktree memory branch and lands on `main` via **C-11 carryover** _after_ the code PR
   merges.
 
 ---
 
 ## When you need an issue + PR
 
-| Change kind | Issue? | PR to `main`? |
-| --- | --- | --- |
-| `feat` / `fix` / `chore` | **`gh issue create`** (after agent + developer agree) | yes |
-| pure research (read-only, no source/memory change) | no | no — maps to L-01's read-only exit |
+| Change kind                                        | Issue?                                                | PR to `main`?                      |
+| -------------------------------------------------- | ----------------------------------------------------- | ---------------------------------- |
+| `feat` / `fix` / `chore`                           | **`gh issue create`** (after agent + developer agree) | yes                                |
+| pure research (read-only, no source/memory change) | no                                                    | no — maps to L-01's read-only exit |
 
 ---
 
@@ -50,7 +50,7 @@ A job changes the checkout via these steps:
 ### Gates, in one line
 
 `commit approval (human)` → `push approval (human, one question)` → agent owns `push → PR → checks
-→ merge → cleanup → carryover`.
+→ merge → cleanup → carryover → memory-main push`.
 
 ---
 
@@ -134,13 +134,16 @@ House style observed across `v0.7.0`–`v0.9.0`:
 
 ```markdown
 ## Agents Remember X.Y.Z
+
 <1–2 sentence summary of the release theme>
 
 ### Highlights
+
 - <bullet>
 - <bullet>
 
 ### <Themed section, e.g. "Onboarding And Memory">
+
 - <sub-bullets>
 ```
 
