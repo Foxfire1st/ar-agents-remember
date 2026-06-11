@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-10T09:56+02:00                             |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6`         |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66`         |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -93,6 +93,7 @@ declared nor part of the input."
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-11T06:47+02:00 — Removed the `_direct_closeout_payloads` fixture and its temp dir (issue #62 worktree-only closeout); the suite now covers the 36 public tools across three fixtures.
 - 2026-06-10T09:56+02:00: Added the `worktree_sync` dry-run representative payload to the worktree fixture (GitHub #54 sub-task D).
 - 2026-06-06T12:28+02:00: Corrected the `_tool_payload()` reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.

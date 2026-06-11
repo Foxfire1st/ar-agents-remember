@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_worktree_routing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66`                |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -91,4 +91,5 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-01T00:00+02:00 — Created onboarding for the new worktree-provider routing and workspace-alignment tests.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_onboarding_drift.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `12737deaac2fd75563ca1e3037cdac911023cf93` |
-| lastVerifiedCommitDate | 2026-05-29T12:28:42+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -42,4 +42,5 @@ exit plus a written report.
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-05-29T12:10+02:00: Created with the drift.py split tests; metadata pending closeout refresh to the split commit.

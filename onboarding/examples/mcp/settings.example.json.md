@@ -6,8 +6,8 @@
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -65,6 +65,7 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-05-31T12:30+02:00 — Documented the new top-level `benchmarksEnabled` flag (shipped `false`) the template now carries (1.0.0 review remediation).
 - 2026-05-30T21:22+02:00: Documented the `timeoutCaps` block (`toolSeconds`, `providerSetupSeconds`) the template now carries — `providerSetupSeconds` caps only provider image build / dependency install, `0` means unlimited, and it replaces the rejected `providerSeconds` key. Realigned verification metadata to `825a172`.
 - 2026-05-28T12:32+02:00: Updated after the example transcript root moved from `providers/logs/mcp` to `logs/mcp`.

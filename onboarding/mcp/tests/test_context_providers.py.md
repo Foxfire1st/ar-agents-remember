@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T01:15+02:00                     |
-| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
-| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -112,6 +112,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-02T01:15+02:00: Replaced the mirror-sync and `.grepai/` artifact detection/removal tests with `ensure_grepai_root_gitignore` coverage (append/create/idempotent) and switched layout expansion expectations to live in-place roots (watch-live).
 - 2026-05-29T07:19+02:00: Added coverage for `to_container_path`, driveless `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=True)` (driveless path values, omitted host-only Windows env) for Windows-host provider support.
 - 2026-05-28T13:40+02:00: Updated after CGC layout tests removed host venv executable expectations, added stale `venvRoot` rejection coverage, and removed venv module lookup tests.

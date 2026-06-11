@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-03T18:58+02:00                     |
-| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06` |
-| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
+| lastUpdated            | 2026-06-11T14:07+02:00 |
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 
 ## Purpose
 
@@ -124,6 +124,7 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## Update History
 
+- 2026-06-11T14:07+02:00: No content impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
 - 2026-06-08T11:53+02:00: Updated source-layout onboarding for canonical root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) and `scripts/sync-runtime.py`, including the generated package-data boundary. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-03T18:58+02:00: Updated source-layout onboarding for the root-level canonical `skills/` tree and `scripts/sync-skills.py` sync helper. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-02T03:45+02:00: Rewired the root checkout contract to route every session into `l-01-session-job-lifecycle`: replaced Task Format Routing and the separate `Frame Before You Choose a Format` section with a `Start Here — Enter the Job Lifecycle` section whose only task-format call is L-01's build-mode step (read-only exit / chat build / durable W-02); the standalone W-03 chat workflow is retired and absorbed into L-01's chat build. Part of the L-01 lifecycle reshape (mcp 1.1.0). Verification metadata re-verified at closeout.
