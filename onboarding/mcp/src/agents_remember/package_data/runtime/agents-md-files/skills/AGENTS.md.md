@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -58,7 +58,7 @@ The route list itself is the primary implementation evidence.
 
 | Finding                                                                                                             | Citations | Source Path |
 | ------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| Core-skill routing maps common memory, retrieval strategy, lifecycle, baseline, and carryover needs to C-* IDs. | L1-L33    | [mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md) |
+| Core-skill routing maps common memory, retrieval strategy, lifecycle, baseline, and carryover needs to C-* IDs. | L1-L33    | [mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md) |
 
 ## Cross-Repo References
 

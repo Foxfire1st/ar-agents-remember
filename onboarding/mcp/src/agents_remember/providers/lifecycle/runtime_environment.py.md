@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/runtime_environment.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -37,8 +37,8 @@ environments that force UTF-8 Python IO.
 
 | Finding | Source Path |
 | --- | --- |
-| The lifecycle CLI uses these root and stdio helpers. | [cli.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/cli.py) |
-| Command execution uses the subprocess environment helper. | [command_runner.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
+| The lifecycle CLI uses these root and stdio helpers. | [cli.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/cli.py) |
+| Command execution uses the subprocess environment helper. | [command_runner.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
 
 ## Update History
 

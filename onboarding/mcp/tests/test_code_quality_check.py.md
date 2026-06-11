@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-08T12:06+02:00                     |
@@ -49,8 +49,8 @@ virtualenv without losing third-party import resolution.
 
 | Finding | Source Path |
 | --- | --- |
-| The source quality wrapper owns the fixed Ruff, Pyright, Radon, pytest, and CRAP-Calculator sequence. | [check.py](agents-remember-md/mcp/src/agents_remember/code_quality/check.py) |
-| CRAP-Calculator owns the function scoring used by the wrapper. | [crap_calculator.py](agents-remember-md/mcp/src/agents_remember/code_quality/crap_calculator.py) |
+| The source quality wrapper owns the fixed Ruff, Pyright, Radon, pytest, and CRAP-Calculator sequence. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
+| CRAP-Calculator owns the function scoring used by the wrapper. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
 
 ## Update History
 

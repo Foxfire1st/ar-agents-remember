@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T12:32+02:00                     |
@@ -63,9 +63,9 @@ No external documentation is needed for this template example.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution. | L1-L9 | [code-quality-report-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
-| The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example. | L18-L31 | [code-quality-report-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
-| The findings sections separate touched-file findings from existing or out-of-scope pressure. | L33-L51 | [code-quality-report-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
+| The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution. | L1-L9 | [code-quality-report-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
+| The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example. | L18-L31 | [code-quality-report-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
+| The findings sections separate touched-file findings from existing or out-of-scope pressure. | L33-L51 | [code-quality-report-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
 
 ## Cross-Repo References
 
@@ -73,7 +73,7 @@ The live memory layer carries a project-specific copy beside `system/tools.md`.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The local memory-layer template is the project-specific copy used by `agents-remember-md` agents. | n/a | [system/code-quality-report-template.md](ar-coordination/memory-repos/ar-agents-remember-md/system/code-quality-report-template.md) |
+| The local memory-layer template is the project-specific copy used by `agents-remember` agents. | n/a | [system/code-quality-report-template.md](ar-coordination/memory-repos/ar-agents-remember/system/code-quality-report-template.md) |
 
 ## Update History
 

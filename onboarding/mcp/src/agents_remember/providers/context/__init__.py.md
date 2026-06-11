@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/context/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -68,7 +68,7 @@ Same-repository source defines the active provider layout and patch behavior.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Shared provider context helpers live in the common context module. | n/a | [common.py](agents-remember-md/mcp/src/agents_remember/providers/context/common.py) |
+| Shared provider context helpers live in the common context module. | n/a | [common.py](agents-remember/mcp/src/agents_remember/providers/context/common.py) |
 | CGC provider context constants, layout, cleanup, and patches live under the CGC provider package. | n/a | [CGC context overview](../cgc/context/overview.md) |
 | GrepAI provider context layout, live-root workspace config, and artifact cleanup live under the GrepAI provider package. | n/a | [GrepAI context overview](../grepai/context/overview.md) |
 
@@ -79,7 +79,7 @@ through this package-local code and provider install/runtime modules.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Provider setup and lifecycle modules import this facade for runtime layout and install work. | n/a | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
+| Provider setup and lifecycle modules import this facade for runtime layout and install work. | n/a | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
 
 ## Update History
 

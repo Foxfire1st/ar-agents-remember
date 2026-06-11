@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/benchmarks.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -32,7 +32,7 @@ resolution behavior) is carried on `CodexBenchmarkRunResponse` as the untyped
 
 | Finding | Source Path |
 | --- | --- |
-| Benchmark controllers expose prepare/run service payloads through MCP. | [benchmark_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/benchmark_tools.py) |
+| Benchmark controllers expose prepare/run service payloads through MCP. | [benchmark_tools.py](agents-remember/mcp/src/agents_remember/controllers/benchmark_tools.py) |
 
 ## Update History
 

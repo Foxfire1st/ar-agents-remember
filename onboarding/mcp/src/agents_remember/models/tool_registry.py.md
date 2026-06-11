@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
@@ -49,8 +49,8 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 
 | Finding | Source Path |
 | --- | --- |
-| Payload builders validate through this registry. | [base.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/base.py) |
-| Tests assert exact coverage between `PUBLIC_TOOLS` and this registry. | [test_models.py](agents-remember-md/mcp/tests/test_models.py) |
+| Payload builders validate through this registry. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| Tests assert exact coverage between `PUBLIC_TOOLS` and this registry. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
 
 ## Update History
 

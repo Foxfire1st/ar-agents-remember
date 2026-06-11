@@ -24,7 +24,7 @@
 - Primary isolated MCP settings: `/tmp/ar-mcp-real-validate-02/.codex/mcp/settings.json`
   - `workspaceRoot`: `/tmp/ar-mcp-real-validate-02/workspace`
   - `coordinationRoot`: `/tmp/ar-mcp-real-validate-02/ar-coordination`
-  - repo id: `agents-remember-md`
+  - repo id: `agents-remember`
 - Fresh child Codex invocation pattern:
   - `codex exec ... -c 'mcp_servers.agents-remember.command="/tmp/ar-mcp-real-validate-02/venv/bin/agents-remember-mcp"'`
   - `-c 'mcp_servers.agents-remember.args=["--config", "/tmp/ar-mcp-real-validate-02/.codex/mcp/settings.json"]'`
@@ -35,7 +35,7 @@
   - Result: `coordinationRoot=/tmp/ar-mcp-real-validate-02/ar-coordination`
 - Installed-skill visibility proof:
   - `CODEX_HOME=/tmp/ar-mcp-real-validate-02/.codex codex debug ... prompt-input`
-  - Prompt input showed installed Agents Remember skills under `/tmp/ar-mcp-real-validate-02/.codex/skills/agents-remember-md`.
+  - Prompt input showed installed Agents Remember skills under `/tmp/ar-mcp-real-validate-02/.codex/skills/agents-remember`.
 - Additional isolated settings were used for memory-topology fixtures:
   - Existing external memory: `/tmp/ar-mcp-existing-memory-validate/.codex/mcp/settings.json`
   - Repo-local memory: `/tmp/ar-mcp-repolocal-memory-validate/.codex/mcp/settings.json`

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/paths.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -51,8 +51,8 @@ No external documentation is needed for this package-local path policy.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Resolver selection uses these path primitives for topology and settings discovery. | resolver selection | [resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
-| Worktree support tests cover installed-runtime root detection and `.env` non-authority. | path policy tests | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| Resolver selection uses these path primitives for topology and settings discovery. | resolver selection | [resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
+| Worktree support tests cover installed-runtime root detection and `.env` non-authority. | path policy tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 

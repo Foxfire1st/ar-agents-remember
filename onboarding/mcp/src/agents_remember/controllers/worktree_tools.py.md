@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
@@ -59,9 +59,9 @@ the documented setup cap now actually governs the worktree flow.
 
 | Finding | Source Path |
 | --- | --- |
-| Worktree service behavior is owned by the worktree manager and modules. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| Worktree response models define the public tool envelopes and context summary. | [worktree.py](agents-remember-md/mcp/src/agents_remember/models/worktree.py) |
-| Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | [_guards.py](agents-remember-md/mcp/src/agents_remember/controllers/_guards.py) |
+| Worktree service behavior is owned by the worktree manager and modules. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
+| Worktree response models define the public tool envelopes and context summary. | [worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
+| Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | [_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
 
 ## Update History
 

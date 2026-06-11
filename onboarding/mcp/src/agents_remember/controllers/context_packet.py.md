@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
@@ -70,12 +70,12 @@ l-01 trust checkpoint is the intended opt-in caller.
 
 | Finding | Source Path |
 | --- | --- |
-| `ContextPacketV2` and nested summary models define the response shape. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/models/context_packet.py) |
-| Provider summary projection keeps context compact and points details at diagnostics. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
-| Worktree status projection supplies the read-only worktree summary. | [status.py](agents-remember-md/mcp/src/agents_remember/worktrees/status.py) |
-| Public payload builder validates this controller output through the model registry. | [core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py) |
-| Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel. | [git_freshness.py](agents-remember-md/mcp/src/agents_remember/kernel/git_freshness.py) |
-| `ledgerMapsCodeHead` reuses the ledger loader and mapping lookup. | [memory_ledger.py](agents-remember-md/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| `ContextPacketV2` and nested summary models define the response shape. | [context_packet.py](agents-remember/mcp/src/agents_remember/models/context_packet.py) |
+| Provider summary projection keeps context compact and points details at diagnostics. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
+| Worktree status projection supplies the read-only worktree summary. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
+| Public payload builder validates this controller output through the model registry. | [core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py) |
+| Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
+| `ledgerMapsCodeHead` reuses the ledger loader and mapping lookup. | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
 
 ## Update History
 

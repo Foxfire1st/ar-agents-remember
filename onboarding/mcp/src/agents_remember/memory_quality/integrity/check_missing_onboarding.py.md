@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -51,10 +51,10 @@ code and refresh the new sidecars to the real code commit hash.
 
 | Finding | Source Path |
 | --- | --- |
-| Drift helpers provide sidecar path construction and inline block parsing. | [drift.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
-| Resolver helpers provide storage/path-rule decisions. | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| Tests cover untracked, staged, excluded, and renamed file cases. | [test_missing_onboarding.py](agents-remember-md/mcp/tests/test_missing_onboarding.py) |
-| The kernel filesystem helper handles long-path sidecar and source probes. | [filesystem.py](agents-remember-md/mcp/src/agents_remember/kernel/filesystem.py) |
+| Drift helpers provide sidecar path construction and inline block parsing. | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
+| Resolver helpers provide storage/path-rule decisions. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| Tests cover untracked, staged, excluded, and renamed file cases. | [test_missing_onboarding.py](agents-remember/mcp/tests/test_missing_onboarding.py) |
+| The kernel filesystem helper handles long-path sidecar and source probes. | [filesystem.py](agents-remember/mcp/src/agents_remember/kernel/filesystem.py) |
 
 ## Update History
 

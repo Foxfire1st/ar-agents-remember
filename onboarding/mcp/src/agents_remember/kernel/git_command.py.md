@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/git_command.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00|
@@ -66,8 +66,8 @@ runner.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `git_facts.py` imports `run_git` and uses it for its git facts (e.g. work-tree and commit probes) instead of its former private `_run_git`. | imports `run_git` | [git_facts.py](agents-remember-md/mcp/src/agents_remember/kernel/git_facts.py) |
-| `coordination_context/cross_repo.py` imports `run_git`, re-exports it in `__all__`, and uses it for branch and HEAD lookups, preserving the old `cross_repo.run_git` call site. | imports and re-exports `run_git` | [cross_repo.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py) |
+| `git_facts.py` imports `run_git` and uses it for its git facts (e.g. work-tree and commit probes) instead of its former private `_run_git`. | imports `run_git` | [git_facts.py](agents-remember/mcp/src/agents_remember/kernel/git_facts.py) |
+| `coordination_context/cross_repo.py` imports `run_git`, re-exports it in `__all__`, and uses it for branch and HEAD lookups, preserving the old `cross_repo.run_git` call site. | imports and re-exports `run_git` | [cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py) |
 
 ## Cross-Repo References
 

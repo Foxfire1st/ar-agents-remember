@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_sync_runtime.py`           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-08T11:53+02:00                     |
@@ -62,10 +62,10 @@ No external documentation is needed for this repository-local test.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The tests load `scripts/sync-runtime.py` from the repository root despite its hyphenated filename. | L11-L21 | [mcp/tests/test_sync_runtime.py](agents-remember-md/mcp/tests/test_sync_runtime.py) |
-| The diff test verifies missing, extra, and changed file reporting. | L24-L46 | [mcp/tests/test_sync_runtime.py](agents-remember-md/mcp/tests/test_sync_runtime.py) |
-| The sync test verifies target replacement and cache-directory ignore behavior. | L48-L69 | [mcp/tests/test_sync_runtime.py](agents-remember-md/mcp/tests/test_sync_runtime.py) |
-| The target-boundary test verifies default targets are package-data-only and exclude harness starter package folders. | L71-L83 | [mcp/tests/test_sync_runtime.py](agents-remember-md/mcp/tests/test_sync_runtime.py) |
+| The tests load `scripts/sync-runtime.py` from the repository root despite its hyphenated filename. | L11-L21 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
+| The diff test verifies missing, extra, and changed file reporting. | L24-L46 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
+| The sync test verifies target replacement and cache-directory ignore behavior. | L48-L69 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
+| The target-boundary test verifies default targets are package-data-only and exclude harness starter package folders. | L71-L83 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
 
 ## Cross-Repo References
 

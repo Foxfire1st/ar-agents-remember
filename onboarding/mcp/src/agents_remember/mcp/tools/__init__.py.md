@@ -2,7 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember-md                               |
+| repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-10T09:56+02:00|
@@ -34,7 +34,7 @@ Re-exports the shared constants and `_tool_payload` from `base`, and every
 
 | Finding | Source Path |
 | --- | --- |
-| Conformance test reaches `tools._tool_payload`. | [test_tool_response_conformance.py](agents-remember-md/mcp/tests/test_tool_response_conformance.py) |
+| Conformance test reaches `tools._tool_payload`. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 
 ## Update History
 

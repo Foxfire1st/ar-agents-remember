@@ -2,7 +2,7 @@
 
 | Field                  | Value                                          |
 | ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember-md                             |
+| repository             | agents-remember                             |
 | path                   | `mcp/tests/test_docker_runtime_parsers.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-05-31T12:30+02:00                         |
@@ -106,8 +106,8 @@ tolerance band rather than exact equality.
 
 | Finding | Source Path |
 | --- | --- |
-| All ten parser functions under test live in the Docker lifecycle adapter. | [docker_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py) |
-| `docker_container_state_summary` is the projection these parsers feed into provider current state, which has its own integration coverage. | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
+| All ten parser functions under test live in the Docker lifecycle adapter. | [docker_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py) |
+| `docker_container_state_summary` is the projection these parsers feed into provider current state, which has its own integration coverage. | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 
 ## Update History
 

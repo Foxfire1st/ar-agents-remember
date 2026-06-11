@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-06T12:15                           |
@@ -64,8 +64,8 @@ The package is intentionally split by responsibility:
 
 | Finding | Source Path |
 | --- | --- |
-| The package-local facade keeps existing callers pointed at the split implementation. | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| Resolver behavior is covered by resolver parity and worktree support tests. | [test_resolver_parity.py](agents-remember-md/mcp/tests/test_resolver_parity.py); [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| The package-local facade keeps existing callers pointed at the split implementation. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| Resolver behavior is covered by resolver parity and worktree support tests. | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py); [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 

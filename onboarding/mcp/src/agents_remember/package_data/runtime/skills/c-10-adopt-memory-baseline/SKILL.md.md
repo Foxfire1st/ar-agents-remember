@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                         |
 | ---------------------- | ------------------------------------------------------------- |
-| repository             | agents-remember-md                                            |
+| repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -45,9 +45,9 @@ The skill is the human-facing contract for the adoption script and its trust bou
 
 | Finding                                                                                                                                                                                     | Citations                | Source Path                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| The skill defines the adoption use case, uses `--code-repository-name`/`--code-repository-root` command examples, and makes `c-02-memory-quality-control` skill drift plus explicit acceptance the central trust boundary. | L8-L19; L23-L30; L40-L45 | [`c-10-adopt-memory-baseline` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md)                                    |
-| The package baseline service implements the documented states and delegates baseline creation to `c-09-git-worktree-manager` skill.                                                                                               | n/a     | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py) |
-| `c-10-adopt-memory-baseline` skill's drift run delegates report path resolution to `c-02-memory-quality-control` skill with the resolved `coordination_root` and `temp_root`.                                                                            | n/a                  | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py) |
+| The skill defines the adoption use case, uses `--code-repository-name`/`--code-repository-root` command examples, and makes `c-02-memory-quality-control` skill drift plus explicit acceptance the central trust boundary. | L8-L19; L23-L30; L40-L45 | [`c-10-adopt-memory-baseline` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md)                                    |
+| The package baseline service implements the documented states and delegates baseline creation to `c-09-git-worktree-manager` skill.                                                                                               | n/a     | [baseline.py](agents-remember/mcp/src/agents_remember/memory/baseline.py) |
+| `c-10-adopt-memory-baseline` skill's drift run delegates report path resolution to `c-02-memory-quality-control` skill with the resolved `coordination_root` and `temp_root`.                                                                            | n/a                  | [baseline.py](agents-remember/mcp/src/agents_remember/memory/baseline.py) |
 
 ## Cross-Repo References
 

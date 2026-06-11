@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/coordination_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -40,10 +40,10 @@ repo is disallowed or a path escapes the coordination root.
 
 | Finding | Source Path |
 | --- | --- |
-| Runtime/coordination response models include `ResolveContextResponse`. | [runtime.py](agents-remember-md/mcp/src/agents_remember/models/runtime.py) |
-| Coordination context resolver owns the actual context construction. | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| `require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared guards module. | [_guards.py](agents-remember-md/mcp/src/agents_remember/controllers/_guards.py) |
-| `AuthorityError` is the authority-violation error type the guards raise. | [errors.py](agents-remember-md/mcp/src/agents_remember/errors.py) |
+| Runtime/coordination response models include `ResolveContextResponse`. | [runtime.py](agents-remember/mcp/src/agents_remember/models/runtime.py) |
+| Coordination context resolver owns the actual context construction. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| `require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared guards module. | [_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
+| `AuthorityError` is the authority-violation error type the guards raise. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
 
 ## Update History
 

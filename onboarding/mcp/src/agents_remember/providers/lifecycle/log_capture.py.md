@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/log_capture.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -70,9 +70,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| `provider_watchers_payload` applies `summarize_command_logs` to every watcher tool response. | [tools/providers.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/providers.py) |
-| `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. | [tools/worktree.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/worktree.py) |
-| Unit tests verify per-node success/failure behaviour, `json` always-dropped, secret redaction, and recursive step trimming. | [test_log_capture.py](agents-remember-md/mcp/tests/test_log_capture.py) |
+| `provider_watchers_payload` applies `summarize_command_logs` to every watcher tool response. | [tools/providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py) |
+| `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. | [tools/worktree.py](agents-remember/mcp/src/agents_remember/mcp/tools/worktree.py) |
+| Unit tests verify per-node success/failure behaviour, `json` always-dropped, secret redaction, and recursive step trimming. | [test_log_capture.py](agents-remember/mcp/tests/test_log_capture.py) |
 
 ## Update History
 

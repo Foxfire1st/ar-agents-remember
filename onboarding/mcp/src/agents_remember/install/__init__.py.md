@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T22:37+02:00                     |
@@ -54,7 +54,7 @@ The source file itself is the direct evidence.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The initializer identifies the package as runtime installation services and contains no executable behavior. | L1-L1 | [__init__.py](agents-remember-md/mcp/src/agents_remember/install/__init__.py) |
+| The initializer identifies the package as runtime installation services and contains no executable behavior. | L1-L1 | [__init__.py](agents-remember/mcp/src/agents_remember/install/__init__.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,8 +43,8 @@ No external documentation is needed.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The example says repository-specific coding guidance belongs in the target memory root. | L1-L10 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md) |
-| The example documents compatibility and cleanup rules for memory-layer coding guidance. | L12-L37 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md) |
+| The example says repository-specific coding guidance belongs in the target memory root. | L1-L10 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md) |
+| The example documents compatibility and cleanup rules for memory-layer coding guidance. | L12-L37 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md) |
 
 ## Cross-Repo References
 

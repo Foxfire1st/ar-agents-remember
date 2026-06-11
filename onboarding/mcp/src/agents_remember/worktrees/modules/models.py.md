@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -37,7 +37,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP skill tools type result envelopes and provider setup config through this facade-exported model. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
+| MCP skill tools type result envelopes and provider setup config through this facade-exported model. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
 
 ## Update History
 

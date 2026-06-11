@@ -4,7 +4,7 @@
   "workspaceRoot": "/home/foxfire/Projects",
   "transcriptRoot": "/home/foxfire/Projects/ar-coordination/providers/logs/mcp",
   "repositories": {
-    "agents-remember-md": {
+    "agents-remember": {
       "memorySettingsIncludes": [],
       "contractPath": null
     }

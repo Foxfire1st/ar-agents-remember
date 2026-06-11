@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -45,9 +45,9 @@ without writing them.
 
 | Finding | Source Path |
 | --- | --- |
-| The diagnostic checker provides the timestamp and section parsing helpers. | [history_order.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
-| The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally. | [discovery.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
-| Tests cover successful reordering and skipped missing-timestamp sections. | [test_memory_quality.py](agents-remember-md/mcp/tests/test_memory_quality.py) |
+| The diagnostic checker provides the timestamp and section parsing helpers. | [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
+| The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally. | [discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
+| Tests cover successful reordering and skipped missing-timestamp sections. | [test_memory_quality.py](agents-remember/mcp/tests/test_memory_quality.py) |
 
 ## Update History
 

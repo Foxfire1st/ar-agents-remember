@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
@@ -72,11 +72,11 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| Provider status writes generated lifecycle settings before calling `watchers_run`. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
-| Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
-| CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
+| MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| Provider status writes generated lifecycle settings before calling `watchers_run`. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
+| Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
+| CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 
 ## Update History
 

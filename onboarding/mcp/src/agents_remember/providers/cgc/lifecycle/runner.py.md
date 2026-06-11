@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -56,9 +56,9 @@ Docker network, and route FalkorDB access through the backend container name.
 
 | Finding | Source Path |
 | --- | --- |
-| Install/status/doctor behavior consumes runner image build and status helpers. | [installation.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
-| Watcher process control consumes Docker watcher command helpers. | [process_control.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py) |
-| Refresh and bounded query commands run through Docker command helpers. | [refresh.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py); [query.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/query.py) |
+| Install/status/doctor behavior consumes runner image build and status helpers. | [installation.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
+| Watcher process control consumes Docker watcher command helpers. | [process_control.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py) |
+| Refresh and bounded query commands run through Docker command helpers. | [refresh.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py); [query.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/query.py) |
 
 ## Update History
 

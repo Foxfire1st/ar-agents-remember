@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
@@ -37,9 +37,9 @@ fields.
 
 | Finding | Source Path |
 | --- | --- |
-| Worktree lifecycle status and next hints are composed by the worktree manager. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| Worktree summary model constrains the context-facing shape. | [worktree.py](agents-remember-md/mcp/src/agents_remember/models/worktree.py) |
-| Context packet assembly consumes this read-only worktree projection. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
+| Worktree lifecycle status and next hints are composed by the worktree manager. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
+| Worktree summary model constrains the context-facing shape. | [worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
+| Context packet assembly consumes this read-only worktree projection. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
 
 ## Update History
 

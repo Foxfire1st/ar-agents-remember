@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T22:15+02:00|
@@ -85,11 +85,11 @@ clients reach it through the `runtime_install` tool.
 
 | Finding | Source Path |
 | --- | --- |
-| The MCP controller exposes only typed install booleans. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py) |
-| Provider settings generation derives lifecycle settings from MCP authority. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
-| `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. | [provider_watchers.py](agents-remember-md/mcp/src/agents_remember/install/provider_watchers.py) |
-| Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, unrecovered failure reporting, and dependency-install failure recovery. | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| The MCP controller exposes only typed install booleans. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py) |
+| Provider settings generation derives lifecycle settings from MCP authority. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
+| `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
+| Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, unrecovered failure reporting, and dependency-install failure recovery. | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
 
 ## Update History
 

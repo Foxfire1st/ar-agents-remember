@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/command_capture.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:16+02:00                     |
@@ -36,8 +36,8 @@ where lower-level provider setup still bridges through `lifecycle.main`.
 
 | Finding | Source Path |
 | --- | --- |
-| Provider setup still uses this helper while bridging to the provider lifecycle CLI facade. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
-| Skill controllers now call service-backed functions instead of returning command-capture payloads. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
+| Provider setup still uses this helper while bridging to the provider lifecycle CLI facade. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
+| Skill controllers now call service-backed functions instead of returning command-capture payloads. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
 
 ## Update History
 

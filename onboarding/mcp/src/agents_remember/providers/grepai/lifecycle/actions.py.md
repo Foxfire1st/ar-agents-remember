@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/actions.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -50,8 +50,8 @@ watcher startup so later Compose calls use the same dependency port mappings.
 
 | Finding | Source Path |
 | --- | --- |
-| PostgreSQL, Ollama, and runner modules provide the Docker stack that this module composes. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py); [embedder.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py); [runner.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
-| Tests protect Docker-only direct-run rejection, Docker bounded run construction, and full dry-run stack creation. | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| PostgreSQL, Ollama, and runner modules provide the Docker stack that this module composes. | [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py); [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py); [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
+| Tests protect Docker-only direct-run rejection, Docker bounded run construction, and full dry-run stack creation. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
 

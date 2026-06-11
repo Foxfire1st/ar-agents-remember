@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_missing_onboarding.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:51+02:00                     |
@@ -39,8 +39,8 @@ historical repository gaps.
 
 | Finding | Source Path |
 | --- | --- |
-| The tested checker lives in `check_missing_onboarding.py`. | [check_missing_onboarding.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
-| Storage settings and path rules are resolved by the kernel resolver helpers. | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| The tested checker lives in `check_missing_onboarding.py`. | [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
+| Storage settings and path rules are resolved by the kernel resolver helpers. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 
 ## Update History
 

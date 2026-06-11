@@ -2,7 +2,7 @@
 
 | Field                  | Value                                          |
 | ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember-md                             |
+| repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-10T09:56+02:00|
@@ -44,9 +44,9 @@ passes through, that one call is what gives every MCP response a real
 
 | Finding | Source Path |
 | --- | --- |
-| Response model registry resolved per tool name. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
-| Server registers exactly the `PUBLIC_TOOLS` names. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| Token-accounting finalizer applied to every dumped payload. | [tokens.py](agents-remember-md/mcp/src/agents_remember/models/tokens.py) |
+| Response model registry resolved per tool name. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Server registers exactly the `PUBLIC_TOOLS` names. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| Token-accounting finalizer applied to every dumped payload. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
 
 ## Update History
 

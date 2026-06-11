@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:00+02:00                     |
@@ -36,7 +36,7 @@ apply model adds `carriedPaths` (paths whose onboarding actually carried).
 
 | Finding | Source Path |
 | --- | --- |
-| Memory MCP controllers route these tools to drift, quality, route-index, init, baseline, and carryover services. | [memory_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/memory_tools.py) |
+| Memory MCP controllers route these tools to drift, quality, route-index, init, baseline, and carryover services. | [memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py) |
 
 ## Update History
 

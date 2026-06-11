@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_install_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T22:15+02:00                     |
@@ -95,13 +95,13 @@ No external documentation is needed for this test.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The test creates a synthetic runtime source tree with the MCP installer-required runtime directories and provider defaults, without a runtime `scripts/` tree. | L22-L31 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | L63-L116 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L118-L160 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| The provider-deps rebind regression proves watcher stop happens before runner refresh and watcher start/status happens after provider dependency install. | L162-L232 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| The dry-run rebind regression reports watcher stop/start/status and dependency install while preserving the stale runner file. | L234-L297 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| Degraded and unrecovered status regressions prove one non-destructive restart/rebind attempt and recovery-action reporting. | L299-L403 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
-| Dependency-install failure still attempts watcher recovery before raising a runtime-install failure. | L405-L454 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| The test creates a synthetic runtime source tree with the MCP installer-required runtime directories and provider defaults, without a runtime `scripts/` tree. | L22-L31 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | L63-L116 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L118-L160 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The provider-deps rebind regression proves watcher stop happens before runner refresh and watcher start/status happens after provider dependency install. | L162-L232 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The dry-run rebind regression reports watcher stop/start/status and dependency install while preserving the stale runner file. | L234-L297 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| Degraded and unrecovered status regressions prove one non-destructive restart/rebind attempt and recovery-action reporting. | L299-L403 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| Dependency-install failure still attempts watcher recovery before raising a runtime-install failure. | L405-L454 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
 
 ## Cross-Repo References
 

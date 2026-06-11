@@ -2,7 +2,7 @@
 
 | Field                  | Value                                              |
 | ---------------------- | -------------------------------------------------- |
-| repository             | agents-remember-md                                 |
+| repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-10T09:56+02:00                             |
@@ -85,11 +85,11 @@ declared nor part of the input."
 
 | Finding | Source Path |
 | --- | --- |
-| The registry maps each public tool to its response model. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
-| `_tool_payload()` is the production validation path mirrored here. | [base.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/base.py) |
-| The strict/flexible response-model taxonomy lives in the model base. | [base.py](agents-remember-md/mcp/src/agents_remember/models/base.py) |
-| Worktree/carryover fixtures reuse worktree test helpers. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
-| Schema-level registry coverage is asserted separately. | [test_models.py](agents-remember-md/mcp/tests/test_models.py) |
+| The registry maps each public tool to its response model. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| `_tool_payload()` is the production validation path mirrored here. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| The strict/flexible response-model taxonomy lives in the model base. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
+| Worktree/carryover fixtures reuse worktree test helpers. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Schema-level registry coverage is asserted separately. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
 
 ## Update History
 

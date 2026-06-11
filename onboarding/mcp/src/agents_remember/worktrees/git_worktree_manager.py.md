@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
@@ -74,13 +74,13 @@ documented by the `modules/overview.md` route overview.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP worktree start writes temporary lifecycle settings and passes them to this module. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| Provider setup performs isolated CGC seed and runtime preparation. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
-| Worktree status packets project lifecycle payloads into context packets. | [status.py](agents-remember-md/mcp/src/agents_remember/worktrees/status.py) |
-| Worktree contract serialization lives in the package worktree contract module. | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Extracted worktree lifecycle implementation modules live under this route. | [overview.md](agents-remember-md/mcp/src/agents_remember/worktrees/modules/overview.md) |
-| Long-path-safe filesystem wrappers live in the kernel filesystem helper. | [filesystem.py](agents-remember-md/mcp/src/agents_remember/kernel/filesystem.py) |
-| Worktree support tests cover memory-worktree settings and long-path closeout planning regressions. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| MCP worktree start writes temporary lifecycle settings and passes them to this module. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| Provider setup performs isolated CGC seed and runtime preparation. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
+| Worktree status packets project lifecycle payloads into context packets. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
+| Worktree contract serialization lives in the package worktree contract module. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Extracted worktree lifecycle implementation modules live under this route. | [overview.md](agents-remember/mcp/src/agents_remember/worktrees/modules/overview.md) |
+| Long-path-safe filesystem wrappers live in the kernel filesystem helper. | [filesystem.py](agents-remember/mcp/src/agents_remember/kernel/filesystem.py) |
+| Worktree support tests cover memory-worktree settings and long-path closeout planning regressions. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:30+02:00     |
@@ -96,14 +96,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | [args.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/args.py) |
-| Provider setup requests are implemented by the providers package. | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
-| Worktree tests cover memory compatibility, disabled-memory choices, and dirty external-memory blocking. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
-| Launcher, ordering, retry, and guard coverage for the async path. | [test_provider_async.py](agents-remember-md/mcp/tests/test_provider_async.py) |
+| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
+| Provider setup requests are implemented by the providers package. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
+| Worktree tests cover memory compatibility, disabled-memory choices, and dirty external-memory blocking. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Launcher, ordering, retry, and guard coverage for the async path. | [test_provider_async.py](agents-remember/mcp/tests/test_provider_async.py) |
 | Background launcher and status projection. | [provider_async.py](provider_async.py.md) |
-| mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | [test_worktree_mtime_sync.py](agents-remember-md/mcp/tests/test_worktree_mtime_sync.py) |
-| Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | [test_worktree_stale_base.py](agents-remember-md/mcp/tests/test_worktree_stale_base.py) |
-| Branch freshness facts come from the shared kernel. | [git_freshness.py](agents-remember-md/mcp/src/agents_remember/kernel/git_freshness.py) |
+| mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | [test_worktree_mtime_sync.py](agents-remember/mcp/tests/test_worktree_mtime_sync.py) |
+| Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | [test_worktree_stale_base.py](agents-remember/mcp/tests/test_worktree_stale_base.py) |
+| Branch freshness facts come from the shared kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
 
 ## Update History
 

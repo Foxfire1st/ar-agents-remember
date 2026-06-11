@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
@@ -44,8 +44,8 @@ requests serialize as `{"status": "not-checked"}` under `exclude_none`.
 
 | Finding | Source Path |
 | --- | --- |
-| The context controller constructs `ContextPacketV2` from resolver, Git, provider, worktree, and drift facts. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
-| Provider readiness in the packet uses compact provider summary models. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
+| The context controller constructs `ContextPacketV2` from resolver, Git, provider, worktree, and drift facts. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
+| Provider readiness in the packet uses compact provider summary models. | [providers.py](agents-remember/mcp/src/agents_remember/models/providers.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/cross_repo.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -51,10 +51,10 @@ No external documentation is needed for the local cross-repo resolver.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The shared `run_git` helper is imported from the kernel git command module rather than defined locally. | run_git import | [git_command.py](agents-remember-md/mcp/src/agents_remember/kernel/git_command.py) |
-| Cross-repo entries are parsed from settings before this module resolves repository state. | settings values | [setting_values.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/setting_values.py) |
-| External memory ledger parsing supplies memory compatibility facts. | ledger helper | [memory_ledger.py](agents-remember-md/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| Worktree support tests cover branch-gated cross-repo inclusion and legacy-string exclusion. | cross-repo tests | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| The shared `run_git` helper is imported from the kernel git command module rather than defined locally. | run_git import | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Cross-repo entries are parsed from settings before this module resolves repository state. | settings values | [setting_values.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/setting_values.py) |
+| External memory ledger parsing supplies memory compatibility facts. | ledger helper | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| Worktree support tests cover branch-gated cross-repo inclusion and legacy-string exclusion. | cross-repo tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 

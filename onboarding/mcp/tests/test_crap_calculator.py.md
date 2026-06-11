@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_crap_calculator.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T06:05+02:00                     |
@@ -43,7 +43,7 @@ zero coverage, and exercise file rollups plus table/JSON CLI rendering.
 
 | Finding | Source Path |
 | --- | --- |
-| CRAP-Calculator owns the formula, coverage matching, Radon integration, table output, and JSON output. | [crap_calculator.py](agents-remember-md/mcp/src/agents_remember/code_quality/crap_calculator.py) |
+| CRAP-Calculator owns the formula, coverage matching, Radon integration, table output, and JSON output. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
 
 ## Update History
 

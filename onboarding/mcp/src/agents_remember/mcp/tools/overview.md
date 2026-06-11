@@ -2,7 +2,7 @@
 
 | Field                  | Value                                          |
 | ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember-md                             |
+| repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-06-10T07:40+02:00|
@@ -72,11 +72,11 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 | Finding | Source Path |
 | --- | --- |
-| FastMCP server registration calls these payload builders. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| Public response model registry maps each tool name to a Pydantic model. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
-| Domain controllers own the tool behavior the builders forward to. | [controllers overview](agents-remember-md/mcp/src/agents_remember/controllers/overview.md) |
-| Schema tests assert public tool and response model coverage. | [test_models.py](agents-remember-md/mcp/tests/test_models.py) |
-| Conformance test validates every builder routes through `_tool_payload`. | [test_tool_response_conformance.py](agents-remember-md/mcp/tests/test_tool_response_conformance.py) |
+| FastMCP server registration calls these payload builders. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| Public response model registry maps each tool name to a Pydantic model. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Domain controllers own the tool behavior the builders forward to. | [controllers overview](agents-remember/mcp/src/agents_remember/controllers/overview.md) |
+| Schema tests assert public tool and response model coverage. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
+| Conformance test validates every builder routes through `_tool_payload`. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 
 ## Update History
 

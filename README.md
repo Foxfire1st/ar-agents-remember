@@ -1,10 +1,10 @@
-# agents-remember-md Memory Layer
+# agents-remember Memory Layer
 
-This repository is the shared memory layer for the `agents-remember-md` code repository.
+This repository is the shared memory layer for the `agents-remember` code repository.
 
 It is meant to be read beside the code, not instead of it. The code lives at:
 
-- https://github.com/Foxfire1st/agents-remember-md
+- https://github.com/Foxfire1st/agents-remember
 
 ## What This Repository Shows
 

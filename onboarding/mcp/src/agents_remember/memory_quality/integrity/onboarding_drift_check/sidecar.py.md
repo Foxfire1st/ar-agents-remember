@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
@@ -39,8 +39,8 @@ mirrored sidecar; `classify_sidecar_onboarding_units` dispatches by `doc_type`
 
 | Finding | Source Path |
 | --- | --- |
-| Metadata parsing, path mirroring, and `rel` come from `discovery`. | [discovery.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
-| Source diff and change notes come from `git_ops`; entity catalogs are delegated to `entities`. | [entities.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
+| Metadata parsing, path mirroring, and `rel` come from `discovery`. | [discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
+| Source diff and change notes come from `git_ops`; entity catalogs are delegated to `entities`. | [entities.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
 
 ## Update History
 

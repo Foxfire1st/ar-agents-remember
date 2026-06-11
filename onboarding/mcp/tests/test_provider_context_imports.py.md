@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_context_imports.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
@@ -41,9 +41,9 @@ or their own subpackages); these tests fail if such a back-edge returns.
 
 | Finding | Source Path |
 | --- | --- |
-| The facade whose initialization order is being pinned. | [__init__.py](agents-remember-md/mcp/src/agents_remember/providers/context/__init__.py) |
-| The relocated shared helpers that broke the cycle. | [context_common.py](agents-remember-md/mcp/src/agents_remember/providers/context_common.py) |
-| The chain that originally surfaced the bug (settings imports the facade). | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
+| The facade whose initialization order is being pinned. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/context/__init__.py) |
+| The relocated shared helpers that broke the cycle. | [context_common.py](agents-remember/mcp/src/agents_remember/providers/context_common.py) |
+| The chain that originally surfaced the bug (settings imports the facade). | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 
 ## Update History
 

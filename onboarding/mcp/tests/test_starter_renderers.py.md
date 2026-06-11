@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_starter_renderers.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T18:19+02:00                     |
@@ -67,10 +67,10 @@ No external documentation is needed for this repository-local renderer test.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Harness cases cover copied starter folders, rendered settings files, rendered placeholder-free files, and optional hook smoke scripts. | L15-L126 | [test_starter_renderers.py](agents-remember-md/mcp/tests/test_starter_renderers.py) |
-| `render_case()` creates temporary repository roots, copies starter folders, invokes the harness-local renderer, and passes a duplicate repo argument to prove output de-duplication. | L129-L158 | [test_starter_renderers.py](agents-remember-md/mcp/tests/test_starter_renderers.py) |
-| Shared assertions verify MCP root settings, absence of placeholders, hook smoke output, and rendered Python command shapes for Codex, Claude Code, Cursor, and VS Code/Copilot. | L161-L239 | [test_starter_renderers.py](agents-remember-md/mcp/tests/test_starter_renderers.py) |
-| The missing-repository test requires the renderer to fail explicitly when a requested repository root is absent. | L242-L263 | [test_starter_renderers.py](agents-remember-md/mcp/tests/test_starter_renderers.py) |
+| Harness cases cover copied starter folders, rendered settings files, rendered placeholder-free files, and optional hook smoke scripts. | L15-L126 | [test_starter_renderers.py](agents-remember/mcp/tests/test_starter_renderers.py) |
+| `render_case()` creates temporary repository roots, copies starter folders, invokes the harness-local renderer, and passes a duplicate repo argument to prove output de-duplication. | L129-L158 | [test_starter_renderers.py](agents-remember/mcp/tests/test_starter_renderers.py) |
+| Shared assertions verify MCP root settings, absence of placeholders, hook smoke output, and rendered Python command shapes for Codex, Claude Code, Cursor, and VS Code/Copilot. | L161-L239 | [test_starter_renderers.py](agents-remember/mcp/tests/test_starter_renderers.py) |
+| The missing-repository test requires the renderer to fail explicitly when a requested repository root is absent. | L242-L263 | [test_starter_renderers.py](agents-remember/mcp/tests/test_starter_renderers.py) |
 
 ## Cross-Repo References
 

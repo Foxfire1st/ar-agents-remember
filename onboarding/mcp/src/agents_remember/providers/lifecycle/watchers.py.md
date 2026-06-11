@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/watchers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T12:32+02:00                     |
@@ -45,10 +45,10 @@ configured repo watchers to be ok.
 
 | Finding | Source Path |
 | --- | --- |
-| GrepAI watcher behavior lives in the Docker runner module. | [grepai/runner.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
-| CGC start/stop/status behavior lives in the CGC process-control and installation modules. | [cgc/process_control.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py); [cgc/installation.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
-| CGC backend status is reported through the backend module and folded into watcher aggregate status. | [cgc/backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| Tests cover aggregate watcher partial result and recovery-action behavior. | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| GrepAI watcher behavior lives in the Docker runner module. | [grepai/runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
+| CGC start/stop/status behavior lives in the CGC process-control and installation modules. | [cgc/process_control.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py); [cgc/installation.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
+| CGC backend status is reported through the backend module and folded into watcher aggregate status. | [cgc/backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
+| Tests cover aggregate watcher partial result and recovery-action behavior. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
 

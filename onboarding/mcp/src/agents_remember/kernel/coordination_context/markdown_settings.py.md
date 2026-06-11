@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
@@ -54,9 +54,9 @@ No external documentation is needed for this project fallback parser.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Settings selection calls this parser only after confirming JSON settings are absent. | settings selector | [settings.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/settings.py) |
-| Legacy cross-repo and global path-rule branches are delegated to focused modules. | parser helpers | [markdown_cross_repo.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py); [markdown_global_rules.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/markdown_global_rules.py) |
-| Worktree support tests cover legacy Markdown and cross-repo settings behavior. | resolver tests | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| Settings selection calls this parser only after confirming JSON settings are absent. | settings selector | [settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/settings.py) |
+| Legacy cross-repo and global path-rule branches are delegated to focused modules. | parser helpers | [markdown_cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py); [markdown_global_rules.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_global_rules.py) |
+| Worktree support tests cover legacy Markdown and cross-repo settings behavior. | resolver tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:28+02:00                     |
@@ -32,7 +32,7 @@ builders import controller functions directly from their domain modules such as
 | Finding | Source Path |
 | --- | --- |
 | The route overview documents the split controller package layout. | [overview.md](overview.md) |
-| Public payload builders import controllers from their owning modules. | [__init__.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/__init__.py) |
+| Public payload builders import controllers from their owning modules. | [__init__.py](agents-remember/mcp/src/agents_remember/mcp/tools/__init__.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_identity.py`               |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T23:15+02:00|
@@ -41,7 +41,7 @@ deterministic and collision-safe rather than a lossy truncation.
 
 | Finding | Source Path |
 | --- | --- |
-| The provider identity helpers under test. | [identity.py](agents-remember-md/mcp/src/agents_remember/providers/identity.py) |
+| The provider identity helpers under test. | [identity.py](agents-remember/mcp/src/agents_remember/providers/identity.py) |
 
 ## Update History
 

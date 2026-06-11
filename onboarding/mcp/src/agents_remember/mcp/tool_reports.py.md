@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/tool_reports.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
@@ -41,8 +41,8 @@ masks `PASSWORD=...` values in any string.
 
 | Finding | Source Path |
 | --- | --- |
-| Compact builders that pair with the reports. | [core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py); [providers.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/providers.py) |
-| Budget/prune/redaction tests. | [test_tool_response_budgets.py](agents-remember-md/mcp/tests/test_tool_response_budgets.py) |
+| Compact builders that pair with the reports. | [core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py); [providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py) |
+| Budget/prune/redaction tests. | [test_tool_response_budgets.py](agents-remember/mcp/tests/test_tool_response_budgets.py) |
 
 ## Update History
 

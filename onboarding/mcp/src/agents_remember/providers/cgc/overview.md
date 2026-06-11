@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
@@ -56,7 +56,7 @@ rendered via `to_container_path` (`providers/context_common.py`) — host-form
 
 | Finding | Source Path |
 | --- | --- |
-| CGC setup orchestration lives in the provider-owned setup module. | [setup.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/setup.py) |
+| CGC setup orchestration lives in the provider-owned setup module. | [setup.py](agents-remember/mcp/src/agents_remember/providers/cgc/setup.py) |
 | CGC context behavior is grouped under the provider-owned context package. | [context overview](context/overview.md) |
 | CGC lifecycle behavior is grouped under the provider-owned lifecycle package. | [lifecycle overview](lifecycle/overview.md) |
 

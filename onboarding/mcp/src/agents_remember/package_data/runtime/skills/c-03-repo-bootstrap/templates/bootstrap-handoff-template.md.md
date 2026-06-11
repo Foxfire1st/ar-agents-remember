@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                        |
 | ---------------------- | -------------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                           |
+| repository             | agents-remember                                                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md` |
 | doc_type               | `file-level-onboarding`                                                                      |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                       | Citations | Source Path                                                                                  |
 | --------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------- |
-| The handoff template records run status and artifact coverage across root overview, plans, maps, packs, route overviews, and file onboarding. | L1-L20    | [bootstrap-handoff-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md) |
-| The handoff captures slice maintenance results, trusted/deferred coverage, open questions, risks, waves, closeout boundary status, decisions, and future-agent usage order. | L22-L82   | [bootstrap-handoff-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md) |
-| `c-03-repo-bootstrap` skill Phase 5 writes `bootstrap/handoff.md` from this template and makes handoff the automated-bootstrap boundary before separate closeout. | L1031-L1057 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The handoff template records run status and artifact coverage across root overview, plans, maps, packs, route overviews, and file onboarding. | L1-L20    | [bootstrap-handoff-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md) |
+| The handoff captures slice maintenance results, trusted/deferred coverage, open questions, risks, waves, closeout boundary status, decisions, and future-agent usage order. | L22-L82   | [bootstrap-handoff-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md) |
+| `c-03-repo-bootstrap` skill Phase 5 writes `bootstrap/handoff.md` from this template and makes handoff the automated-bootstrap boundary before separate closeout. | L1031-L1057 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

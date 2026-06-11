@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/provider_teardown.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -75,10 +75,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| `abandon.py` calls `teardown_worktree_providers` and `remove_tree` from this module. | [abandon.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/abandon.py) |
-| `cleanup.py` calls `teardown_worktree_providers` when `args.teardown_providers` is set. | [cleanup.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| `docker_command` and `run_command` are provided by the provider lifecycle shared layer. | [docker_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py); [command_runner.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
-| Unit tests cover resource derivation, dry-run teardown, reclaim-image selection, and branch-safety helpers. | [test_worktree_abandon.py](agents-remember-md/mcp/tests/test_worktree_abandon.py) |
+| `abandon.py` calls `teardown_worktree_providers` and `remove_tree` from this module. | [abandon.py](agents-remember/mcp/src/agents_remember/worktrees/modules/abandon.py) |
+| `cleanup.py` calls `teardown_worktree_providers` when `args.teardown_providers` is set. | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
+| `docker_command` and `run_command` are provided by the provider lifecycle shared layer. | [docker_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py); [command_runner.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
+| Unit tests cover resource derivation, dry-run teardown, reclaim-image selection, and branch-safety helpers. | [test_worktree_abandon.py](agents-remember/mcp/tests/test_worktree_abandon.py) |
 
 ## Update History
 

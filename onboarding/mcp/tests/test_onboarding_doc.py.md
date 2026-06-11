@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T04:47+02:00                     |
@@ -42,8 +42,8 @@ No external documentation is needed for this standard-library test.
 
 | Finding | Source Path |
 | --- | --- |
-| Module under test. | [onboarding_doc.py](agents-remember-md/mcp/src/agents_remember/kernel/onboarding_doc.py) |
-| Git-fixture gate coverage consuming the same helpers. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| Module under test. | [onboarding_doc.py](agents-remember/mcp/src/agents_remember/kernel/onboarding_doc.py) |
+| Git-fixture gate coverage consuming the same helpers. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 

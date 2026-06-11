@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                      |
+| repository             | agents-remember                                                                      |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/coverage-plan-template.md` |
 | doc_type               | `file-level-onboarding`                                                                 |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                           | Citations | Source Path                                                                               |
 | ------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------- |
-| The coverage plan template captures strategy, area goals, route classification, file classification, and evidence pack queues. | L1-L36    | [coverage-plan-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/coverage-plan-template.md) |
-| The template records deferred routes/files, slice cleanup decisions, developer review questions, and decisions for later waves. | L38-L65   | [coverage-plan-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/coverage-plan-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4A writes `bootstrap/coverage-plan.md` from this template and classifies deleted, moved, or stale onboarding routes when needed. | L735-L780 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The coverage plan template captures strategy, area goals, route classification, file classification, and evidence pack queues. | L1-L36    | [coverage-plan-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/coverage-plan-template.md) |
+| The template records deferred routes/files, slice cleanup decisions, developer review questions, and decisions for later waves. | L38-L65   | [coverage-plan-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/coverage-plan-template.md) |
+| `c-03-repo-bootstrap` skill Phase 4A writes `bootstrap/coverage-plan.md` from this template and classifies deleted, moved, or stale onboarding routes when needed. | L735-L780 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

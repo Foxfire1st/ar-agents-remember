@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
@@ -59,12 +59,12 @@ external classifier via the shared `is_sidecar_storage` predicate from
 
 | Finding | Source Path |
 | --- | --- |
-| Data records and constants. | [models.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
-| Git boundary and fingerprints. | [git_ops.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
-| Discovery and metadata parsing. | [discovery.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
-| Sidecar/overview and entity/inline classifiers. | [sidecar.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
-| Report rendering and path resolution. | [report.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py) |
-| Summary generation reuses the facade's classifiers. | [summary.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
+| Data records and constants. | [models.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
+| Git boundary and fingerprints. | [git_ops.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
+| Discovery and metadata parsing. | [discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
+| Sidecar/overview and entity/inline classifiers. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
+| Report rendering and path resolution. | [report.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py) |
+| Summary generation reuses the facade's classifiers. | [summary.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
 
 ## Update History
 

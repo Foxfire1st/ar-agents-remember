@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_markdown_settings.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -72,10 +72,10 @@ module runs under `unittest.main()`.
 
 | Finding | Source Path |
 | --- | --- |
-| The parser under test exposes `parse_settings_block`. | [markdown_settings.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
-| Returned `StorageSettings`, `StorageRule`, and `CrossRepoSettings` shapes are defined here. | [models.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/models.py) |
-| Topology-derived default modes come from `default_storage_mode`. | [paths.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/paths.py) |
-| The legacy "expectedBranch is required" cross-repo error originates here. | [markdown_cross_repo.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py) |
+| The parser under test exposes `parse_settings_block`. | [markdown_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
+| Returned `StorageSettings`, `StorageRule`, and `CrossRepoSettings` shapes are defined here. | [models.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/models.py) |
+| Topology-derived default modes come from `default_storage_mode`. | [paths.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/paths.py) |
+| The legacy "expectedBranch is required" cross-repo error originates here. | [markdown_cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py) |
 
 ## Update History
 

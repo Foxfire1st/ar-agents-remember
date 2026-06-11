@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/_guards.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -62,10 +62,10 @@ Two module-level helpers operate on an `McpRuntimeConfig`:
 
 | Finding | Source Path |
 | --- | --- |
-| `RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| `AuthorityError` is the authority-violation error type raised by both guards. | [errors.py](agents-remember-md/mcp/src/agents_remember/errors.py) |
-| Worktree controllers consume these guards for repo resolution and path confinement. | [worktree_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/worktree_tools.py) |
-| Provider controllers route repo validation through `require_repo`. | [provider_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py) |
+| `RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| `AuthorityError` is the authority-violation error type raised by both guards. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
+| Worktree controllers consume these guards for repo resolution and path confinement. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
+| Provider controllers route repo validation through `require_repo`. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
 
 ## Update History
 

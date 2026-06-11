@@ -257,7 +257,7 @@ The installer should configure MCP directly in the harness config files.
 The MCP command should prefer an invocation that does not depend on an activated
 virtual environment. Candidate order:
 
-1. `uvx agents-remember-md` when `uvx` is available.
+1. `uvx agents-remember` when `uvx` is available.
 2. A managed Python environment created by the installer.
 3. A pip-installed console script when clearly available.
 

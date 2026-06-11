@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -55,11 +55,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | [args.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/args.py) |
-| Integration creates the scratch memory integration branch name that cleanup may remove. | [integrate.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Provider teardown is delegated to this module. | [provider_teardown.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
-| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | [abandon.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/abandon.py) |
-| Worktree tests cover cleanup preconditions and completed cleanup state. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
+| Integration creates the scratch memory integration branch name that cleanup may remove. | [integrate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/integrate.py) |
+| Provider teardown is delegated to this module. | [provider_teardown.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
+| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | [abandon.py](agents-remember/mcp/src/agents_remember/worktrees/modules/abandon.py) |
+| Worktree tests cover cleanup preconditions and completed cleanup state. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 

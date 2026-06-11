@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                  |
 | ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember-md                                     |
+| repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-26T23:11+02:00                     |
@@ -84,12 +84,12 @@ example outputs.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The GrepAI catalog requires synthetic examples only and positions GrepAI as the fuzzy discovery tool for memory/onboarding, with CGC reserved for structural code relationships. | L1-L12 | [grepai-high-leverage-usage.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
-| The managed invocation section routes through `grepai_search` MCP tool and `grepai_trace`, defaults examples to JSON, and says `repo_ids` must be MCP-configured repositories. | L14-L28 | [grepai-high-leverage-usage.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
-| The command chooser maps semantic routing, JSON anchors, configured repo scoping, route-focused follow-up reads, trace, and health checks to MCP tool calls. | L30-L39 | [grepai-high-leverage-usage.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
-| Broad semantic routing, scoped project search, and route-focused snippet search sections show placeholder MCP calls and synthetic JSON output shapes. | L41-L138 | [grepai-high-leverage-usage.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
-| Trace, coverage, and practical rules explain when GrepAI trace is acceptable, how to check status, how to keep result budgets small, and that MCP GrepAI does not expose path scoping. | L140-L207 | [grepai-high-leverage-usage.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
-| The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Semantics section. | L75-L78 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| The GrepAI catalog requires synthetic examples only and positions GrepAI as the fuzzy discovery tool for memory/onboarding, with CGC reserved for structural code relationships. | L1-L12 | [grepai-high-leverage-usage.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
+| The managed invocation section routes through `grepai_search` MCP tool and `grepai_trace`, defaults examples to JSON, and says `repo_ids` must be MCP-configured repositories. | L14-L28 | [grepai-high-leverage-usage.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
+| The command chooser maps semantic routing, JSON anchors, configured repo scoping, route-focused follow-up reads, trace, and health checks to MCP tool calls. | L30-L39 | [grepai-high-leverage-usage.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
+| Broad semantic routing, scoped project search, and route-focused snippet search sections show placeholder MCP calls and synthetic JSON output shapes. | L41-L138 | [grepai-high-leverage-usage.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
+| Trace, coverage, and practical rules explain when GrepAI trace is acceptable, how to check status, how to keep result budgets small, and that MCP GrepAI does not expose path scoping. | L140-L207 | [grepai-high-leverage-usage.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
+| The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Semantics section. | L75-L78 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
 
 ## Cross-Repo References
 

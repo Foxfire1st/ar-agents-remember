@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_subprocess_hygiene.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
@@ -38,7 +38,7 @@ spread is accepted as a deliberate choice (e.g. `command_runner`).
 
 | Finding | Source Path |
 | --- | --- |
-| The proving harness for the bug class this guards. | [test_mcp_stdio_transport.py](agents-remember-md/mcp/tests/test_mcp_stdio_transport.py) |
+| The proving harness for the bug class this guards. | [test_mcp_stdio_transport.py](agents-remember/mcp/tests/test_mcp_stdio_transport.py) |
 
 ## Update History
 

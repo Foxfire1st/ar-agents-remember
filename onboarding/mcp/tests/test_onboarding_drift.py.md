@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_onboarding_drift.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
@@ -37,8 +37,8 @@ exit plus a written report.
 
 | Finding | Source Path |
 | --- | --- |
-| The inline classifier under test. | [inline.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py) |
-| The CLI facade under test and the reused fixture. | [drift.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
+| The inline classifier under test. | [inline.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py) |
+| The CLI facade under test and the reused fixture. | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
 
 ## Update History
 

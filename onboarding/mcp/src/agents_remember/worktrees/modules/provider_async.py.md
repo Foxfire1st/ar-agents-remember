@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00                     |
@@ -75,7 +75,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Progress file format, heartbeat, and staleness projection. | [setup_progress.py](../../providers/setup_progress.py.md) |
 | `start_result` writes the contract first, then launches through this module. | [start.py](start.py.md) |
 | `status_payload` exposes the projection; cleanup/abandon use the running guard. | [guidance.py](guidance.py.md) |
-| Launcher, projection, ordering, retry, and guard unit tests. | [test_provider_async.py](agents-remember-md/mcp/tests/test_provider_async.py) |
+| Launcher, projection, ordering, retry, and guard unit tests. | [test_provider_async.py](agents-remember/mcp/tests/test_provider_async.py) |
 
 ## Update History
 

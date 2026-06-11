@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/bundle.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:50+02:00                     |
@@ -31,7 +31,7 @@ It builds path replacement pairs for POSIX and platform string variants, safely 
 | Finding | Source Path |
 | --- | --- |
 | CGC seed orchestration calls this module between export and load. | [seed.py](seed.py.md) |
-| Tests exercise JSON, JSONL, and text rewriting through the provider setup facade export. | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
+| Tests exercise JSON, JSONL, and text rewriting through the provider setup facade export. | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
 
 ## Update History
 

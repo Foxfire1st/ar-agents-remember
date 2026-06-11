@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
@@ -54,8 +54,8 @@ The source file itself is the active example index.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The README states that examples are split by target folder rather than by inferred ownership from file names. | L1-L4 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
-| The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `git-workflow.md` landing-flow starter and quality-report template. | L8-L34 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
+| The README states that examples are split by target folder rather than by inferred ownership from file names. | L1-L4 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
+| The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `git-workflow.md` landing-flow starter and quality-report template. | L8-L34 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
 
 ## Cross-Repo References
 

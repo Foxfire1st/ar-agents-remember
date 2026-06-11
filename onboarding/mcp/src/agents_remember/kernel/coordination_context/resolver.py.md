@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -50,9 +50,9 @@ No external documentation is needed for this package-local resolver flow.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Data models and missing-memory errors are defined separately. | models | [models.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/models.py) |
+| Data models and missing-memory errors are defined separately. | models | [models.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/models.py) |
 | Settings parsing, contract loading, and cross-repo resolution are delegated to focused modules. | package overview | [overview.md](overview.md) |
-| Resolver parity and worktree support tests cover the output contract and worktree-aware path behavior. | tests | [test_resolver_parity.py](agents-remember-md/mcp/tests/test_resolver_parity.py); [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| Resolver parity and worktree support tests cover the output contract and worktree-aware path behavior. | tests | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py); [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 

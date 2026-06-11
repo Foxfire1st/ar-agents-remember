@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -44,8 +44,8 @@ No external documentation is needed for this local patch asset.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The patch replaces CGC's direct repo-local `.cgcignore` default with a branch that prefers `explicit_cgcignore_path`. | L1-L13 | [patch](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch) |
-| The package provider helper carries the same patch marker and idempotent source replacement used by the lifecycle service. | n/a | [context.py](agents-remember-md/mcp/src/agents_remember/providers/context.py) |
+| The patch replaces CGC's direct repo-local `.cgcignore` default with a branch that prefers `explicit_cgcignore_path`. | L1-L13 | [patch](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch) |
+| The package provider helper carries the same patch marker and idempotent source replacement used by the lifecycle service. | n/a | [context.py](agents-remember/mcp/src/agents_remember/providers/context.py) |
 
 ## Cross-Repo References
 

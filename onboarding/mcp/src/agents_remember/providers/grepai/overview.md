@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T07:50+02:00     |
@@ -57,7 +57,7 @@ GrepAI actions.
 
 | Finding | Source Path |
 | --- | --- |
-| GrepAI setup delegates to provider lifecycle commands. | [setup.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/setup.py) |
+| GrepAI setup delegates to provider lifecycle commands. | [setup.py](agents-remember/mcp/src/agents_remember/providers/grepai/setup.py) |
 | GrepAI context behavior is grouped under the provider-owned context package. | [context overview](context/overview.md) |
 | GrepAI lifecycle behavior is grouped under the provider-owned lifecycle package. | [lifecycle overview](lifecycle/overview.md) |
 

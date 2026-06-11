@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/route_index.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -39,7 +39,7 @@ exported from here.
 
 | Finding | Source Path |
 | --- | --- |
-| `route_index_refresh` calls `build_route_indexes()`. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
+| `route_index_refresh` calls `build_route_indexes()`. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
 
 ## Update History
 

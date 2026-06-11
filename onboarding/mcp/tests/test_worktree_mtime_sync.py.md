@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_mtime_sync.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -66,7 +66,7 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| `_sync_worktree_memory_mtimes` lives in the worktree start module. | [start.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/start.py) |
+| `_sync_worktree_memory_mtimes` lives in the worktree start module. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
@@ -41,8 +41,8 @@ transport input.
 
 | Finding | Source Path |
 | --- | --- |
-| `entities.py` recomputes entity fingerprints and change notes through these helpers. | [entities.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
-| `sidecar.py` reads source diff/notes through `run_git` and the change-note helpers. | [sidecar.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
+| `entities.py` recomputes entity fingerprints and change notes through these helpers. | [entities.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
+| `sidecar.py` reads source diff/notes through `run_git` and the change-note helpers. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
 
 ## Update History
 

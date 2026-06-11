@@ -37,7 +37,7 @@ Semgrep / Bandit / CodeQL: security-shaped slop
 uv run bandit -r src
 uvx semgrep scan --config auto
 
-## recommended stack for agents-remember-md
+## recommended stack for agents-remember
 
 ### Hard gate immediately
 

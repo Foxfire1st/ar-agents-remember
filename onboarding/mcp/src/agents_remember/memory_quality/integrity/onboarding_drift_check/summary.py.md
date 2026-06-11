@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -36,9 +36,9 @@ provides the stable context-packet response when callers do not request drift.
 
 | Finding | Source Path |
 | --- | --- |
-| Context packets and skill-facing drift tools call this summary helper. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py); [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| The memory quality runner wraps actionable rows from this summary as integrity findings. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py) |
-| `ACTIONABLE_CLASSIFICATIONS` is sourced from the shared models module. | [models.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
+| Context packets and skill-facing drift tools call this summary helper. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py); [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| The memory quality runner wraps actionable rows from this summary as integrity findings. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py) |
+| `ACTIONABLE_CLASSIFICATIONS` is sourced from the shared models module. | [models.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
 
 ## Update History
 

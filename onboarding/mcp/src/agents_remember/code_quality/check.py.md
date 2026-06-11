@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-08T12:06+02:00                     |
@@ -68,9 +68,9 @@ from the primary clone and from any worktree.
 
 | Finding | Source Path |
 | --- | --- |
-| CRAP-Calculator owns function-level CRAP scoring and rendering. | [crap_calculator.py](agents-remember-md/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| Unit tests cover fixed command composition including Pyright, failure propagation, missing coverage JSON, and optional CRAP threshold gating. | [test_code_quality_check.py](agents-remember-md/mcp/tests/test_code_quality_check.py) |
-| Repo tool guidance points agents to this wrapper for full local source quality checks. | [system/tools.md](agents-remember-md/system/tools.md) |
+| CRAP-Calculator owns function-level CRAP scoring and rendering. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
+| Unit tests cover fixed command composition including Pyright, failure propagation, missing coverage JSON, and optional CRAP threshold gating. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
+| Repo tool guidance points agents to this wrapper for full local source quality checks. | [system/tools.md](agents-remember/system/tools.md) |
 
 ## Update History
 

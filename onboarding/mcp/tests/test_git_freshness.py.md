@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_git_freshness.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
@@ -39,8 +39,8 @@ clean CI environments.
 
 | Finding | Source Path |
 | --- | --- |
-| The kernel under test. | [git_freshness.py](agents-remember-md/mcp/src/agents_remember/kernel/git_freshness.py) |
-| Packet-level freshness coverage lives with the context packet tests. | [test_context_packet.py](agents-remember-md/mcp/tests/test_context_packet.py) |
+| The kernel under test. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
+| Packet-level freshness coverage lives with the context packet tests. | [test_context_packet.py](agents-remember/mcp/tests/test_context_packet.py) |
 
 ## Update History
 

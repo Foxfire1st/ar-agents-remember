@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -33,7 +33,7 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 ### Docs References
 
-No external documentation is needed for this package starter. The resolved `agents-remember-md` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this example is repository source.
+No external documentation is needed for this package starter. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this example is repository source.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
@@ -43,8 +43,8 @@ No external documentation is needed for this package starter. The resolved `agen
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The memory-repo sources example tells users to install it into a memory layer and defines task, domain, tech-stack, and schema sections. | L1-L22 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md) |
-| Domain documentation placeholders name the authoritative live source and retrieval tool/MCP, treat local mirrors as orientation caches, and require live retrieval before recording that no domain docs exist. | L11-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md) |
+| The memory-repo sources example tells users to install it into a memory layer and defines task, domain, tech-stack, and schema sections. | L1-L22 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md) |
+| Domain documentation placeholders name the authoritative live source and retrieval tool/MCP, treat local mirrors as orientation caches, and require live retrieval before recording that no domain docs exist. | L11-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T06:20+02:00|
@@ -67,11 +67,11 @@ default). The function returns at least 1 and at most `layout_count`.
 
 | Finding | Source Path |
 | --- | --- |
-| Shared process helpers provide durable namespace checks and command execution. | [process_status.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/process_status.py); [command_runner.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
-| CGC backend startup is delegated to the backend module. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| Docker watcher command construction lives in the runner module. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
-| `cgc_index_concurrency` is also imported by `refresh.py` to report `indexConcurrency` in the refresh-all result. | [refresh.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py) |
-| Unit tests protect the cap defaults, env-override, and boundary conditions. | [test_cgc_index_concurrency.py](agents-remember-md/mcp/tests/test_cgc_index_concurrency.py) |
+| Shared process helpers provide durable namespace checks and command execution. | [process_status.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/process_status.py); [command_runner.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
+| CGC backend startup is delegated to the backend module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
+| Docker watcher command construction lives in the runner module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| `cgc_index_concurrency` is also imported by `refresh.py` to report `indexConcurrency` in the refresh-all result. | [refresh.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py) |
+| Unit tests protect the cap defaults, env-override, and boundary conditions. | [test_cgc_index_concurrency.py](agents-remember/mcp/tests/test_cgc_index_concurrency.py) |
 
 ## Update History
 

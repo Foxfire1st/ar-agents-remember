@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/git_freshness.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
@@ -73,10 +73,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Shared low-level git runner (5s timeout) used for all non-fetch commands. | [git_command.py](agents-remember-md/mcp/src/agents_remember/kernel/git_command.py) |
-| Style precedent: read-only git facts with dataclass + packet projector. | [git_facts.py](agents-remember-md/mcp/src/agents_remember/kernel/git_facts.py) |
-| The context packet controller is the first consumer (`_freshness_packet`). | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
-| Kernel unit tests cover all states against local bare-origin fixtures. | [test_git_freshness.py](agents-remember-md/mcp/tests/test_git_freshness.py) |
+| Shared low-level git runner (5s timeout) used for all non-fetch commands. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Style precedent: read-only git facts with dataclass + packet projector. | [git_facts.py](agents-remember/mcp/src/agents_remember/kernel/git_facts.py) |
+| The context packet controller is the first consumer (`_freshness_packet`). | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
+| Kernel unit tests cover all states against local bare-origin fixtures. | [test_git_freshness.py](agents-remember/mcp/tests/test_git_freshness.py) |
 
 ## Cross-Repo References
 

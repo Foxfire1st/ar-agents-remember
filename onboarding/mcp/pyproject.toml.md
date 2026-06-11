@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T10:26+02:00     |
@@ -64,13 +64,13 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 | Finding | Source Path |
 | --- | --- |
-| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | [check.py](agents-remember-md/mcp/src/agents_remember/code_quality/check.py) |
-| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | [models overview](agents-remember-md/mcp/src/agents_remember/models/overview.md) |
-| CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | [crap_calculator.py](agents-remember-md/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| The MCP console entry point resolves through `agents_remember.mcp.__main__`. | [__main__.py](agents-remember-md/mcp/src/agents_remember/mcp/__main__.py) |
-| MCP server payloads report the package-level `SERVER_VERSION`. | [__init__.py](agents-remember-md/mcp/src/agents_remember/mcp/__init__.py) |
-| The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | [README.md](agents-remember-md/mcp/README.md) |
-| `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
+| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
+| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | [models overview](agents-remember/mcp/src/agents_remember/models/overview.md) |
+| CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
+| The MCP console entry point resolves through `agents_remember.mcp.__main__`. | [__main__.py](agents-remember/mcp/src/agents_remember/mcp/__main__.py) |
+| MCP server payloads report the package-level `SERVER_VERSION`. | [__init__.py](agents-remember/mcp/src/agents_remember/mcp/__init__.py) |
+| The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | [README.md](agents-remember/mcp/README.md) |
+| `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 
 ## Update History
 

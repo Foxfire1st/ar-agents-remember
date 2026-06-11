@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_init.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T18:35+02:00|
@@ -35,8 +35,8 @@ folders, seed system files, and an optional Git repository initialization.
 
 | Finding | Source Path |
 | --- | --- |
-| `memory_init` is wired through the Phase 04 controller. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| MCP config defines repository memory roots. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
+| `memory_init` is wired through the Phase 04 controller. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| MCP config defines repository memory roots. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 
 ## Update History
 

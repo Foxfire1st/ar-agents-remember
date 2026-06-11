@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/state_files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
@@ -35,8 +35,8 @@ deterministic, sorted, indented JSON with a trailing newline.
 
 | Finding | Source Path |
 | --- | --- |
-| CGC and GrepAI lifecycle modules use these helpers for provider state and image locks. | [cgc backend](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py); [grepai backend](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
-| Provider settings reads reuse the JSON loader. | [provider_settings.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/provider_settings.py) |
+| CGC and GrepAI lifecycle modules use these helpers for provider state and image locks. | [cgc backend](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py); [grepai backend](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
+| Provider settings reads reuse the JSON loader. | [provider_settings.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/provider_settings.py) |
 
 ## Update History
 

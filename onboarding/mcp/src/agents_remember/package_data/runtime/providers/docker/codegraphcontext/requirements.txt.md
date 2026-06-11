@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/requirements.txt` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-26T23:59+02:00                     |
@@ -50,8 +50,8 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The requirements file pins CodeGraphContext and tree-sitter dependencies for the Docker runner image. | L1-L4 | [requirements.txt](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/requirements.txt) |
-| The CGC Dockerfile installs this requirements file before running `patch_cgc.py`. | L7-L13 | [Dockerfile](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
+| The requirements file pins CodeGraphContext and tree-sitter dependencies for the Docker runner image. | L1-L4 | [requirements.txt](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/requirements.txt) |
+| The CGC Dockerfile installs this requirements file before running `patch_cgc.py`. | L7-L13 | [Dockerfile](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
 
 ## Cross-Repo References
 

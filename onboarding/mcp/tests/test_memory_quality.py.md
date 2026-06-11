@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_memory_quality.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:28+02:00                     |
@@ -40,10 +40,10 @@ blocks and skips sections with missing timestamps.
 
 | Finding | Source Path |
 | --- | --- |
-| The tested package runner lives in `memory_quality.check`. | [check.py](agents-remember-md/mcp/src/agents_remember/memory_quality/check.py) |
-| The tested payload builder lives in `mcp.tools.memory`. | [memory.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/memory.py) |
-| The tested style checker lives in `history_order.py`. | [history_order.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
-| The tested style fixer lives in `history_order_fix.py`. | [history_order_fix.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
+| The tested package runner lives in `memory_quality.check`. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py) |
+| The tested payload builder lives in `mcp.tools.memory`. | [memory.py](agents-remember/mcp/src/agents_remember/mcp/tools/memory.py) |
+| The tested style checker lives in `history_order.py`. | [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
+| The tested style fixer lives in `history_order_fix.py`. | [history_order_fix.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
 
 ## Update History
 

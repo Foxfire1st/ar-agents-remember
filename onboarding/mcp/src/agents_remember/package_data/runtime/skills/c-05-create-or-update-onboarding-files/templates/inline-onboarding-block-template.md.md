@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                                          |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                                             |
+| repository             | agents-remember                                                                                             |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md` |
 | doc_type               | `file-level-onboarding`                                                                                        |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -33,7 +33,7 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 ### Docs References
 
-No external domain documentation is needed for this repository-local template. The resolved `agents-remember-md` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this template is repository source.
+No external domain documentation is needed for this repository-local template. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this template is repository source.
 
 | Finding                                   | Citations | Source Path |
 | ----------------------------------------- | --------- | ----------- |
@@ -45,10 +45,10 @@ Inline onboarding is the storage adapter for `c-05-create-or-update-onboarding-f
 
 | Finding                                                                                                                    | Citations | Source Path                                                                                                                                                           |
 | -------------------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The inline template reuses the sidecar content model and differs only in storage, syntax, placement, metadata, and digesting. | L1-L6     | [inline-onboarding-block-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
-| The inline block includes `governingOverview` metadata and a governing overview section before the normal semantic sections. | L7-L42    | [inline-onboarding-block-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
-| Docs reference placeholder text now records no relevant documentation only after live-source checks or a retrieval blocker. | L34-L35   | [inline-onboarding-block-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
-| Guidelines require stable markers, host-language comment adaptation, high placement, and digest recomputation with the block removed. | L46-L51   | [inline-onboarding-block-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
+| The inline template reuses the sidecar content model and differs only in storage, syntax, placement, metadata, and digesting. | L1-L6     | [inline-onboarding-block-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
+| The inline block includes `governingOverview` metadata and a governing overview section before the normal semantic sections. | L7-L42    | [inline-onboarding-block-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
+| Docs reference placeholder text now records no relevant documentation only after live-source checks or a retrieval blocker. | L34-L35   | [inline-onboarding-block-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
+| Guidelines require stable markers, host-language comment adaptation, high placement, and digest recomputation with the block removed. | L46-L51   | [inline-onboarding-block-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
 
 ## Cross-Repo References
 

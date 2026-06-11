@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -45,9 +45,9 @@ This workflow is the inline-storage counterpart to the sidecar file-level onboar
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The workflow states that inline onboarding stores file-level onboarding inside the source file and keeps the semantic content from the file-level template. | L1-L5 | [inline-onboarding-workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md) |
-| Inline workflow steps cover comment delimiter selection, safe placement, stable markers, digest recomputation, and sidecar fallback. | L11-L18 | [inline-onboarding-workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md) |
-| Verification rules require timestamp and digest fields and classify missing markers or digest as missing verification. | L20-L25 | [inline-onboarding-workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md) |
+| The workflow states that inline onboarding stores file-level onboarding inside the source file and keeps the semantic content from the file-level template. | L1-L5 | [inline-onboarding-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md) |
+| Inline workflow steps cover comment delimiter selection, safe placement, stable markers, digest recomputation, and sidecar fallback. | L11-L18 | [inline-onboarding-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md) |
+| Verification rules require timestamp and digest fields and classify missing markers or digest as missing verification. | L20-L25 | [inline-onboarding-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md) |
 
 ## Cross-Repo References
 

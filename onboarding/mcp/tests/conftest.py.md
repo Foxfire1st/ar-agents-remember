@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T23:59+02:00                     |
@@ -48,9 +48,9 @@ At conftest import time (before any test is collected or run) the module mutates
 
 | Finding | Source Path |
 | --- | --- |
-| Worktree fixtures run `git` with `cwd=<temp repo>` and inherit the environment, so they depend on this guard. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
-| Conformance fixtures also shell out to `git` for temp-repo setup. | [test_tool_response_conformance.py](agents-remember-md/mcp/tests/test_tool_response_conformance.py) |
-| The pre-push hook runs the suite via the quality wrapper, the original trigger of the ambient-`GIT_DIR` clobber. | [pre-push](agents-remember-md/.githooks/pre-push) |
+| Worktree fixtures run `git` with `cwd=<temp repo>` and inherit the environment, so they depend on this guard. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Conformance fixtures also shell out to `git` for temp-repo setup. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
+| The pre-push hook runs the suite via the quality wrapper, the original trigger of the ambient-`GIT_DIR` clobber. | [pre-push](agents-remember/.githooks/pre-push) |
 
 ## Update History
 

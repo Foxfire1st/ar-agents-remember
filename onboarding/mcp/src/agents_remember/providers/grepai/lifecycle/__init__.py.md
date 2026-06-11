@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:09+02:00                     |
@@ -38,8 +38,8 @@ image/container lifecycle.
 
 | Finding | Source Path |
 | --- | --- |
-| The parent lifecycle facade imports this GrepAI facade. | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| GrepAI core, backend, embedder, runner, and action modules make up the exported surface. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/core.py); [backend.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py); [embedder.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py); [runner.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py); [actions.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/actions.py) |
+| The parent lifecycle facade imports this GrepAI facade. | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
+| GrepAI core, backend, embedder, runner, and action modules make up the exported surface. | [core.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/core.py); [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py); [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py); [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py); [actions.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/actions.py) |
 
 ## Update History
 

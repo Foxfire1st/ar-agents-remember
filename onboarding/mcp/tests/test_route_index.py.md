@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                  |
 | ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember-md                                     |
+| repository             | agents-remember                                     |
 | path                   | `mcp/tests/test_route_index.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-19T03:23+02:00                                 |
@@ -43,9 +43,9 @@ No external domain documentation applies to this repository-local unit test.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The primary fixture proves root and route indexes, child route wiring, coverage counts, fallback metadata, copied hot-path summary, candidate hints, and anchor hints. | L17-L78 | [test_route_index.py](agents-remember-md/mcp/tests/test_route_index.py) |
-| `sidecar_status` is tested for present, absent-in-scope, and out-of-scope paths. | L81-L88 | [test_route_index.py](agents-remember-md/mcp/tests/test_route_index.py) |
-| The overview-only route test proves sparse memory still indexes source scope and reports empty covered sidecars plus an absent sidecar status. | L91-L111 | [test_route_index.py](agents-remember-md/mcp/tests/test_route_index.py) |
+| The primary fixture proves root and route indexes, child route wiring, coverage counts, fallback metadata, copied hot-path summary, candidate hints, and anchor hints. | L17-L78 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| `sidecar_status` is tested for present, absent-in-scope, and out-of-scope paths. | L81-L88 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| The overview-only route test proves sparse memory still indexes source scope and reports empty covered sidecars plus an absent sidecar status. | L91-L111 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 
 ## Cross-Repo References
 

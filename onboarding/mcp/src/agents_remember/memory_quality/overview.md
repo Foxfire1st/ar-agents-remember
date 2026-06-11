@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-06T12:15                           |
@@ -61,10 +61,10 @@ history-order fixes.
 
 | Finding | Source Path |
 | --- | --- |
-| The MCP controller builds drift context and calls the package runner for `memory_quality_check`. | [memory_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/memory_tools.py) |
-| Tool metadata and server registration expose `memory_quality_check` to agents. | [mcp/tools/memory.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/memory.py); [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | [history_order_fix.py](agents-remember-md/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
-| The missing-onboarding checker catches newly added worktree files before code commit. | [check_missing_onboarding.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
+| The MCP controller builds drift context and calls the package runner for `memory_quality_check`. | [memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py) |
+| Tool metadata and server registration expose `memory_quality_check` to agents. | [mcp/tools/memory.py](agents-remember/mcp/src/agents_remember/mcp/tools/memory.py); [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | [history_order_fix.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
+| The missing-onboarding checker catches newly added worktree files before code commit. | [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
@@ -36,8 +36,8 @@ context dictionary.
 
 | Finding | Source Path |
 | --- | --- |
-| Runtime install controller produces the installer response payload. | [runtime_install.py](agents-remember-md/mcp/src/agents_remember/controllers/runtime_install.py) |
-| Coordination controller exposes resolver output through MCP. | [coordination_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/coordination_tools.py) |
+| Runtime install controller produces the installer response payload. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py) |
+| Coordination controller exposes resolver output through MCP. | [coordination_tools.py](agents-remember/mcp/src/agents_remember/controllers/coordination_tools.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/skill_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:28+02:00                     |
@@ -39,8 +39,8 @@ is no layout option).
 | Finding | Source Path |
 | --- | --- |
 | Split controller route explains the new domain controller layout. | [controllers overview](overview.md) |
-| MCP payload builders import this file only for `skills_install`. | [core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py) |
-| Skill install response model lives in the models package. | [skills.py](agents-remember-md/mcp/src/agents_remember/models/skills.py) |
+| MCP payload builders import this file only for `skills_install`. | [core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py) |
+| Skill install response model lives in the models package. | [skills.py](agents-remember/mcp/src/agents_remember/models/skills.py) |
 
 ## Update History
 

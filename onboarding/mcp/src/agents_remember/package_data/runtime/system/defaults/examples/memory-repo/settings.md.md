@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,9 +43,9 @@ No external documentation is needed.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The memory settings example identifies internal and external memory-layer locations. | L1-L11 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
-| The scope section lists memory-owned policy and distinguishes it from global coordinator settings. | L13-L25 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
-| The storage, path eligibility, and cross-repo sections describe memory-layer ownership for settings JSON policy. | L27-L44 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
+| The memory settings example identifies internal and external memory-layer locations. | L1-L11 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
+| The scope section lists memory-owned policy and distinguishes it from global coordinator settings. | L13-L25 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
+| The storage, path eligibility, and cross-repo sections describe memory-layer ownership for settings JSON policy. | L27-L44 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
 
 ## Cross-Repo References
 

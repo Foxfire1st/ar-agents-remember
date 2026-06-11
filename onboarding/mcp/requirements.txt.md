@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/requirements.txt`                     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
@@ -30,8 +30,8 @@ contract dependencies `pydantic>=2,<3` and `tiktoken>=0.12,<1`.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP package metadata declares the same runtime dependencies. | [pyproject.toml](agents-remember-md/mcp/pyproject.toml) |
-| Pydantic response contracts live under the models package. | [models overview](agents-remember-md/mcp/src/agents_remember/models/overview.md) |
+| MCP package metadata declares the same runtime dependencies. | [pyproject.toml](agents-remember/mcp/pyproject.toml) |
+| Pydantic response contracts live under the models package. | [models overview](agents-remember/mcp/src/agents_remember/models/overview.md) |
 
 ## Update History
 

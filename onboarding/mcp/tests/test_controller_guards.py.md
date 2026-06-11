@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_controller_guards.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -62,9 +62,9 @@ substring of each guard's message rather than the full string.
 
 | Finding | Source Path |
 | --- | --- |
-| The two guards under test live in the controllers package. | [_guards.py](agents-remember-md/mcp/src/agents_remember/controllers/_guards.py) |
-| `AuthorityError` is the rejection type and is a `ValueError` subclass via `AgentsRememberError`. | [errors.py](agents-remember-md/mcp/src/agents_remember/errors.py) |
-| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
+| The two guards under test live in the controllers package. | [_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
+| `AuthorityError` is the rejection type and is a `ValueError` subclass via `AgentsRememberError`. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
+| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 
 ## Update History
 

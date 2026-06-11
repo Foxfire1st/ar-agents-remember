@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/git_facts.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:45+02:00|
@@ -67,8 +67,8 @@ The shared git runner and the context-packet consumer are the direct evidence.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. | imports `run_git` | [git_command.py](agents-remember-md/mcp/src/agents_remember/kernel/git_command.py) |
-| `git_facts_to_packet` output feeds the context packet's repo summary. | `read_git_facts` / `git_facts_to_packet` | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
+| Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. | imports `run_git` | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| `git_facts_to_packet` output feeds the context packet's repo summary. | `read_git_facts` / `git_facts_to_packet` | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                      |
+| repository             | agents-remember                                                                      |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/curator-review-template.md` |
 | doc_type               | `file-level-onboarding`                                                                 |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                   | Citations | Source Path                                                                              |
 | ----------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| The curator template records wave metadata, reviewed files, and a compliance checklist for placement, references, links, history, low-confidence claims, and state updates. | L1-L38    | [curator-review-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/curator-review-template.md) |
-| The template captures reference-health issues, bucket corrections, required fixes, developer questions, and next-wave recommendations. | L40-L62   | [curator-review-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/curator-review-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4I requires a curator review after each overview or onboarding wave. | L918-L942 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The curator template records wave metadata, reviewed files, and a compliance checklist for placement, references, links, history, low-confidence claims, and state updates. | L1-L38    | [curator-review-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/curator-review-template.md) |
+| The template captures reference-health issues, bucket corrections, required fixes, developer questions, and next-wave recommendations. | L40-L62   | [curator-review-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/curator-review-template.md) |
+| `c-03-repo-bootstrap` skill Phase 4I requires a curator review after each overview or onboarding wave. | L918-L942 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

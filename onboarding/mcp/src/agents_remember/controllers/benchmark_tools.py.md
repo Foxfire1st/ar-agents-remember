@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/benchmark_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -37,9 +37,9 @@ policy and sandbox allowlist behavior owned by the benchmark service.
 
 | Finding | Source Path |
 | --- | --- |
-| Benchmark response models define prepare/run envelopes and Codex execution policy fields. | [benchmarks.py](agents-remember-md/mcp/src/agents_remember/models/benchmarks.py) |
-| Benchmark service behavior lives under the benchmarks package. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
-| Shared coordination-confinement guard used for benchmark root overrides. | [_guards.py](agents-remember-md/mcp/src/agents_remember/controllers/_guards.py) |
+| Benchmark response models define prepare/run envelopes and Codex execution policy fields. | [benchmarks.py](agents-remember/mcp/src/agents_remember/models/benchmarks.py) |
+| Benchmark service behavior lives under the benchmarks package. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
+| Shared coordination-confinement guard used for benchmark root overrides. | [_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
 
 ## Update History
 

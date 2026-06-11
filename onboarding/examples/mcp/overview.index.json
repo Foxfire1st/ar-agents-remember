@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "agents-remember-route-index",
-  "repository": "agents-remember-md",
+  "repository": "agents-remember",
   "route": "examples/mcp",
   "overview": "examples/mcp/overview.md",
   "index": "examples/mcp/overview.index.json",

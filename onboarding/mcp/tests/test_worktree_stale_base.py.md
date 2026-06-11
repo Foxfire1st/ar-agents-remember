@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_stale_base.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:30+02:00                     |
@@ -46,8 +46,8 @@ with a `SimpleNamespace` context because it only reads
 
 | Finding | Source Path |
 | --- | --- |
-| The preflight and template under test. | [start.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/start.py) |
-| Freshness states come from the shared kernel (unit-tested separately). | [test_git_freshness.py](agents-remember-md/mcp/tests/test_git_freshness.py) |
+| The preflight and template under test. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
+| Freshness states come from the shared kernel (unit-tested separately). | [test_git_freshness.py](agents-remember/mcp/tests/test_git_freshness.py) |
 
 ## Update History
 

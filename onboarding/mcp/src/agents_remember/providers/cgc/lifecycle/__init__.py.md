@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:09+02:00                     |
@@ -36,8 +36,8 @@ contains no behavior beyond those exports.
 
 | Finding | Source Path |
 | --- | --- |
-| The parent lifecycle facade imports this CGC facade. | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| CGC core, backend, runner, install, process-control, refresh, and query modules make up the exported surface. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/core.py); [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py); [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py); [installation.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py); [process_control.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py); [refresh.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py); [query.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/query.py) |
+| The parent lifecycle facade imports this CGC facade. | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
+| CGC core, backend, runner, install, process-control, refresh, and query modules make up the exported surface. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/core.py); [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py); [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py); [installation.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py); [process_control.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py); [refresh.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py); [query.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/query.py) |
 
 ## Update History
 

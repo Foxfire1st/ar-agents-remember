@@ -1,7 +1,7 @@
 # Handover: Pydantic Tool Response Contracts
 
 **Task:** `260528_pydantic-tool-response-contracts`  
-**Repo:** `agents-remember-md`  
+**Repo:** `agents-remember`  
 **Written:** 2026-05-28T20:04+02:00  
 **Source baseline used for provisional onboarding metadata:** `9680d150ac9d2e6c1ae04dbab42eac0088dceef8`
 

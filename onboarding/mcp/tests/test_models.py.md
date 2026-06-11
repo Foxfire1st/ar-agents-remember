@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_models.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:28+02:00                     |
@@ -32,8 +32,8 @@ a response contract and catches model definitions that are not schema-safe.
 
 | Finding | Source Path |
 | --- | --- |
-| Public tool metadata lives in the `mcp/tools/` package. | [base.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/base.py) |
-| Response model registry lives in the models package. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
+| Public tool metadata lives in the `mcp/tools/` package. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| Response model registry lives in the models package. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
 
 ## Update History
 

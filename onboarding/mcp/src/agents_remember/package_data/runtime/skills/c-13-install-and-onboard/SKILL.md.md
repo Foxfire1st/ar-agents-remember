@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T18:42+02:00                     |
@@ -78,11 +78,11 @@ Harness-native setup details now live in the install guides and starter packages
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. | L8-L22; L25-L42 | [`c-13-install-and-onboard` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. | L63-L95 | [`c-13-install-and-onboard` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | L97-L116 | [`c-13-install-and-onboard` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 2/3 delegate memory init, existing-memory adoption, and bootstrap to the existing skills rather than reimplementing them. | L118-L145 | [`c-13-install-and-onboard` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 4 starts/refreshes provider watchers and verifies indexing. | L147-L167 | [provider_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py) |
+| The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. | L8-L22; L25-L42 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
+| Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. | L63-L95 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
+| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | L97-L116 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
+| Stage 2/3 delegate memory init, existing-memory adoption, and bootstrap to the existing skills rather than reimplementing them. | L118-L145 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
+| Stage 4 starts/refreshes provider watchers and verifies indexing. | L147-L167 | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
 
 ## Cross-Repo References
 

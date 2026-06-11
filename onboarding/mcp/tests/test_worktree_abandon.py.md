@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_abandon.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -92,9 +92,9 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| `teardown_worktree_providers` and Docker resource derivation helpers. | [provider_teardown.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
-| `_abandon_branch` and `_abandon_blockers`. | [abandon.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/abandon.py) |
-| `git`/`init_repo` test utilities from the worktree support test module. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| `teardown_worktree_providers` and Docker resource derivation helpers. | [provider_teardown.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
+| `_abandon_branch` and `_abandon_blockers`. | [abandon.py](agents-remember/mcp/src/agents_remember/worktrees/modules/abandon.py) |
+| `git`/`init_repo` test utilities from the worktree support test module. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_longpath_preflight.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T00:40+02:00                     |
@@ -41,8 +41,8 @@ helper, so they run identically on Windows and Linux CI.
 
 | Finding | Source Path |
 | --- | --- |
-| The preflight and pure payload function under test. | [start.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/start.py) |
-| The longest-tracked-path git helper. | [git.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/git.py) |
+| The preflight and pure payload function under test. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
+| The longest-tracked-path git helper. | [git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
 
 ## Update History
 

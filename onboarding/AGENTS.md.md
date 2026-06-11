@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-03T18:58+02:00                     |
@@ -12,7 +12,7 @@
 ## Purpose
 
 `AGENTS.md` is the repo-root operating contract for agents working on the
-`agents-remember-md` source checkout. It now explicitly distinguishes this
+`agents-remember` source checkout. It now explicitly distinguishes this
 source package from the installed coordination runtime and tells agents who
 arrive through a workspace-level pointer to follow the installed
 `ar-coordination/AGENTS.md` instead when they are working on a sibling
@@ -22,11 +22,11 @@ repository.
 
 ### Logic
 
-The file starts by declaring that `agents-remember-md` is source package code,
+The file starts by declaring that `agents-remember` is source package code,
 not the live runtime after installation. It gives a fallback handoff for the
 case where a workspace root includes this file while the actual target is a
 sibling repository, then scopes normal resolver input for this checkout to
-`code_repository_name = agents-remember-md`.
+`code_repository_name = agents-remember`.
 
 A `Start Here — Enter the Job Lifecycle` section now sits where Task Format
 Routing used to: every session enters `l-01-session-job-lifecycle` (orient →
@@ -105,13 +105,13 @@ file.
 
 | Finding                                                                                                                                        | Citations | Source Path                               |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| The file identifies `agents-remember-md` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| The repo routes every session into the `l-01-session-job-lifecycle`; the only task-format call is `l-01-session-job-lifecycle` skill's build-mode step (read-only exit / chat build / durable `w-02-light-task-workflow` skill), and the standalone chat workflow is retired. | L16-L34 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L84-L91 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | L95-L123 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | L100-L123 | [AGENTS.md](agents-remember-md/AGENTS.md) |
-| Code-quality routing tells agents to run Ruff, Pyright, and Radon after Python code changes in this source checkout and sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`. | L127-L135 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember/AGENTS.md) |
+| The repo routes every session into the `l-01-session-job-lifecycle`; the only task-format call is `l-01-session-job-lifecycle` skill's build-mode step (read-only exit / chat build / durable `w-02-light-task-workflow` skill), and the standalone chat workflow is retired. | L16-L34 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L84-L91 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | L95-L123 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | L100-L123 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Code-quality routing tells agents to run Ruff, Pyright, and Radon after Python code changes in this source checkout and sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`. | L127-L135 | [AGENTS.md](agents-remember/AGENTS.md) |
 
 ## Cross-Repo References
 

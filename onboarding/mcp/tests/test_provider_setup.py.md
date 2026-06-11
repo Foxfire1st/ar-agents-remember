@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -85,14 +85,14 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The test module imports package-local provider setup code from `mcp/src`, extending the loaded `agents_remember` package path when needed. | L12-L24 | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
-| Explicit-settings coverage asserts missing provider settings are rejected, the parser requires `--from-settings`, and a typed `ProviderSetupRequest` can execute a disabled-provider dry run with setup summary metadata. | L20-L60 | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
-| Setup reporting coverage asserts compact summary writes and recovered final status reporting while preserving strict failed-phase `ok=false`. | L62-L192 | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
-| CGC prepare fallback coverage asserts a missing seed source still yields an overall successful dry-run payload when refresh fallback is enabled and `refresh-all` is planned. | L194-L235 | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
-| The CGC bundle rewrite test builds JSON, JSONL, and text zip entries that contain a source path, calls `rewrite_cgc_bundle_paths`, then asserts the source path disappeared and the target path appears. | L102-L146 | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
-| The isolated settings tests build synthetic CGC and GrepAI provider settings and assert target worktree roots, isolated runtime/data/log roots, no CGC `venvRoot` emission, canonical isolated setup payload shape, and derived container names. | L285-L626 | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
-| The UTF-8 subprocess test monkey-patches `subprocess.run` and asserts `run_command` passes `PYTHONUTF8=1`, `PYTHONIOENCODING=utf-8`, and `stdin=subprocess.DEVNULL`. | L214-L237 | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
-| Package-local provider setup owns the explicit settings check, typed setup request path, isolated CGC settings, command wrapper, and CGC bundle rewriting exercised by this test module. | L36-L127, L278-L407, L552-L633, L886-L894 | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
+| The test module imports package-local provider setup code from `mcp/src`, extending the loaded `agents_remember` package path when needed. | L12-L24 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| Explicit-settings coverage asserts missing provider settings are rejected, the parser requires `--from-settings`, and a typed `ProviderSetupRequest` can execute a disabled-provider dry run with setup summary metadata. | L20-L60 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| Setup reporting coverage asserts compact summary writes and recovered final status reporting while preserving strict failed-phase `ok=false`. | L62-L192 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| CGC prepare fallback coverage asserts a missing seed source still yields an overall successful dry-run payload when refresh fallback is enabled and `refresh-all` is planned. | L194-L235 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| The CGC bundle rewrite test builds JSON, JSONL, and text zip entries that contain a source path, calls `rewrite_cgc_bundle_paths`, then asserts the source path disappeared and the target path appears. | L102-L146 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| The isolated settings tests build synthetic CGC and GrepAI provider settings and assert target worktree roots, isolated runtime/data/log roots, no CGC `venvRoot` emission, canonical isolated setup payload shape, and derived container names. | L285-L626 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| The UTF-8 subprocess test monkey-patches `subprocess.run` and asserts `run_command` passes `PYTHONUTF8=1`, `PYTHONIOENCODING=utf-8`, and `stdin=subprocess.DEVNULL`. | L214-L237 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| Package-local provider setup owns the explicit settings check, typed setup request path, isolated CGC settings, command wrapper, and CGC bundle rewriting exercised by this test module. | L36-L127, L278-L407, L552-L633, L886-L894 | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
 
 ## Cross-Repo References
 

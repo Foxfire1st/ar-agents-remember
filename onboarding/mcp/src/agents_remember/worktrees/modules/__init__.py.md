@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:41+02:00                     |
@@ -28,7 +28,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| The package overview describes the module split. | [overview.md](agents-remember-md/mcp/src/agents_remember/worktrees/modules/overview.md) |
+| The package overview describes the module split. | [overview.md](agents-remember/mcp/src/agents_remember/worktrees/modules/overview.md) |
 
 ## Update History
 

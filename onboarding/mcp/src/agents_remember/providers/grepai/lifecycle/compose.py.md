@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T01:15+02:00                     |
@@ -72,9 +72,9 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, ownership labels, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L40-L97 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
-| The optional POSIX UID/GID Compose user block for the watcher is rendered via the shared `host_user_block()` helper. | L76 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
-| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L100-L106 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, ownership labels, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L40-L97 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| The optional POSIX UID/GID Compose user block for the watcher is rendered via the shared `host_user_block()` helper. | L76 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L100-L106 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00|
@@ -61,8 +61,8 @@ subclass), so the server fails loudly at startup on unsafe settings.
 
 | Finding | Source Path |
 | --- | --- |
-| Server registration consumes this config object. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | [test_config.py](agents-remember-md/mcp/tests/test_config.py) |
+| Server registration consumes this config object. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
 
 ## Update History
 

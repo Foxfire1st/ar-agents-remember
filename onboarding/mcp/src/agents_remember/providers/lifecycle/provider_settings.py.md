@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/provider_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T18:35+02:00|
@@ -38,9 +38,9 @@ watcher orchestration.
 
 | Finding | Source Path |
 | --- | --- |
-| CGC lifecycle core consumes CGC settings from this module. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/core.py) |
-| GrepAI lifecycle core consumes GrepAI settings from this module. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
-| Watcher orchestration uses provider-enabled checks from this module. | [watchers.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
+| CGC lifecycle core consumes CGC settings from this module. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/core.py) |
+| GrepAI lifecycle core consumes GrepAI settings from this module. | [core.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
+| Watcher orchestration uses provider-enabled checks from this module. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
 
 ## Update History
 

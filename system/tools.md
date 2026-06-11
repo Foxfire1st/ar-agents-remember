@@ -41,7 +41,7 @@ opensrc fetch https://github.com/anomalyco/opentui        # GitHub
 
 ## Code Quality
 
-To improve quality when working on source code, the agent shall use `Ruff`, `Pyright`, `Radon`, `pytest`, `pytest-cov`, and CRAP-Calculator. For the `agents-remember-md` repo, install and run them from the source repository directory `agents-remember-md/`.
+To improve quality when working on source code, the agent shall use `Ruff`, `Pyright`, `Radon`, `pytest`, `pytest-cov`, and CRAP-Calculator. For the `agents-remember` repo, install and run them from the source repository directory `agents-remember/`.
 
 The installation has to be done by activating the project's virtual environment (`source .venv/bin/activate` on Linux and macOS, or `.venv\Scripts\activate` on Windows) and installing the MCP package with development extras from the source repository root:
 

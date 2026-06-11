@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:28+02:00                     |
@@ -35,8 +35,8 @@ so tests can import package code through `mcp/src`.
 
 | Finding | Source Path |
 | --- | --- |
-| The source quality wrapper invokes Pyright through this project configuration. | [check.py](agents-remember-md/mcp/src/agents_remember/code_quality/check.py) |
-| Source-checkout instructions tell agents to run Ruff, Pyright, and Radon after Python changes. | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The source quality wrapper invokes Pyright through this project configuration. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
+| Source-checkout instructions tell agents to run Ruff, Pyright, and Radon after Python changes. | [AGENTS.md](agents-remember/AGENTS.md) |
 
 ## Update History
 

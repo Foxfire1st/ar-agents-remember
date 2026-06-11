@@ -58,7 +58,7 @@ Package environment:
 
 | Path | Evidence | Result | Docs consequence |
 | --- | --- | --- | --- |
-| Task-start context/drift | `context_packet(repo_id="agents-remember-md", include_providers=true)` and `drift_check(repo_id="agents-remember-md", detail_limit=50)` | pass: providers healthy, drift actionableCount=0 | Existing onboarding can be used as validation context. |
+| Task-start context/drift | `context_packet(repo_id="agents-remember", include_providers=true)` and `drift_check(repo_id="agents-remember", detail_limit=50)` | pass: providers healthy, drift actionableCount=0 | Existing onboarding can be used as validation context. |
 | PyPI install and tool list | Clean venv install plus direct `server_info_payload` | package smoke pass: 34 public tools reported by package code | Retest `server_info` through MCP before using as end-to-end proof. |
 | Codex MCP registration | Isolated `HOME=/tmp/ar-codex-home codex mcp add/list/get` | pass for registration; visibility validation is docs-only | Docs need explicit restart/reload and “ask the model to call `server_info`” validation. See F-005. |
 | Runtime scaffold install | Direct `runtime_install_payload(dry_run=true/false, include_benchmarks=false, install_provider_deps=false)` | package/API pass: runtime copied packaged coordinator/provider/skill files and wrote provider manifest | Retest through MCP before documenting as happy path. See F-008. |

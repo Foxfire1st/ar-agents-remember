@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -78,9 +78,9 @@ Without a sink every announcement is a no-op, so CLI behavior is unchanged
 
 | Finding | Source Path |
 | --- | --- |
-| Worktree start calls provider setup with MCP-derived provider settings. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| Benchmark preparation calls package-local provider setup instead of a source script. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
-| Provider lifecycle calls are captured through package-local command capture. | [command_capture.py](agents-remember-md/mcp/src/agents_remember/mcp/command_capture.py) |
+| Worktree start calls provider setup with MCP-derived provider settings. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
+| Benchmark preparation calls package-local provider setup instead of a source script. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
+| Provider lifecycle calls are captured through package-local command capture. | [command_capture.py](agents-remember/mcp/src/agents_remember/mcp/command_capture.py) |
 | CGC seed orchestration and bundle rewriting now live outside the facade. | [seed.py](cgc/seed.py.md); [bundle.py](cgc/bundle.py.md) |
 | Provider-specific setup branches live in provider-owned setup modules. | [CGC setup](cgc/setup.py.md); [GrepAI setup](grepai/setup.py.md) |
 | Shared settings and command helpers live in the setup common module. | [setup_common.py](setup_common.py.md) |

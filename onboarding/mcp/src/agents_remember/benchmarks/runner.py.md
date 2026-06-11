@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-26T02:26+02:00                     |
@@ -52,9 +52,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| The extracted implementation package owns benchmark runner behavior behind this facade. | [runner_modules overview](agents-remember-md/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
-| MCP benchmark tools import the facade as `benchmark_runner`. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| Benchmark portability tests patch facade-level compatibility attributes. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| The extracted implementation package owns benchmark runner behavior behind this facade. | [runner_modules overview](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
+| MCP benchmark tools import the facade as `benchmark_runner`. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| Benchmark portability tests patch facade-level compatibility attributes. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 

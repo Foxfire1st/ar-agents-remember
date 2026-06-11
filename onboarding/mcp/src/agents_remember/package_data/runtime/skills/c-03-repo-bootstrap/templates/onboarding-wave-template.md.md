@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                      |
+| repository             | agents-remember                                                                      |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/onboarding-wave-template.md` |
 | doc_type               | `file-level-onboarding`                                                                 |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,8 +43,8 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                       | Citations | Source Path                                                                               |
 | --------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------- |
-| The onboarding wave template records wave metadata, cards, deferred targets, evidence needs, worker instructions, assignments, done criteria, and review questions. | L1-L65    | [onboarding-wave-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/onboarding-wave-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4H writes onboarding wave manifests and gives each file worker a file card plus `c-05-create-or-update-onboarding-files` skill instructions. | L886-L916 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The onboarding wave template records wave metadata, cards, deferred targets, evidence needs, worker instructions, assignments, done criteria, and review questions. | L1-L65    | [onboarding-wave-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/onboarding-wave-template.md) |
+| `c-03-repo-bootstrap` skill Phase 4H writes onboarding wave manifests and gives each file worker a file card plus `c-05-create-or-update-onboarding-files` skill instructions. | L886-L916 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

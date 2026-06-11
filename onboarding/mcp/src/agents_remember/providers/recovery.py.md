@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/recovery.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T22:15+02:00                     |
@@ -60,9 +60,9 @@ watcher rebind reporting.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The shared recovery constant names `provider_watchers(action='restart')`, current runner roots, preserved indexes, and follow-up status/diagnostics checks. | L1-L7 | [recovery.py](agents-remember-md/mcp/src/agents_remember/providers/recovery.py) |
-| Runtime-install watcher recovery actions use the shared restart/rebind text when provider watchers remain degraded. | L110-L124; L180-L214 | [provider_watchers.py](agents-remember-md/mcp/src/agents_remember/install/provider_watchers.py) |
-| Provider status adds the same shared recovery text for GrepAI `noWorkspace`. | L214-L225 | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
+| The shared recovery constant names `provider_watchers(action='restart')`, current runner roots, preserved indexes, and follow-up status/diagnostics checks. | L1-L7 | [recovery.py](agents-remember/mcp/src/agents_remember/providers/recovery.py) |
+| Runtime-install watcher recovery actions use the shared restart/rebind text when provider watchers remain degraded. | L110-L124; L180-L214 | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
+| Provider status adds the same shared recovery text for GrepAI `noWorkspace`. | L214-L225 | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 
 ## Cross-Repo References
 

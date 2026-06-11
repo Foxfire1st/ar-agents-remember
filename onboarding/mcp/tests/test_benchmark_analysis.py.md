@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_benchmark_analysis.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -69,8 +69,8 @@ name.
 
 | Finding | Source Path |
 | --- | --- |
-| `analyze_jsonl` and the per-event metric extraction under test live in the benchmark analysis module. | [analysis.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner_modules/analysis.py) |
-| The token-key set summed from `turn.completed.usage` is defined in benchmark runner constants. | [constants.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner_modules/constants.py) |
+| `analyze_jsonl` and the per-event metric extraction under test live in the benchmark analysis module. | [analysis.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/analysis.py) |
+| The token-key set summed from `turn.completed.usage` is defined in benchmark runner constants. | [constants.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/constants.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/markdown_global_rules.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
@@ -46,8 +46,8 @@ No external documentation is needed for this local fallback parser helper.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The Markdown parser delegates global path-rule branches to this module. | Markdown parser | [markdown_settings.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
-| Storage evaluation consumes parsed include/exclude paths and file types. | storage policy | [storage.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/storage.py) |
+| The Markdown parser delegates global path-rule branches to this module. | Markdown parser | [markdown_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
+| Storage evaluation consumes parsed include/exclude paths and file types. | storage policy | [storage.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/storage.py) |
 
 ## Cross-Repo References
 

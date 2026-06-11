@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
@@ -45,7 +45,7 @@ No external documentation is needed for this standard-library CLI adapter.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The public facade delegates its module entrypoint to this CLI. | facade entrypoint | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| The public facade delegates its module entrypoint to this CLI. | facade entrypoint | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 
 ## Cross-Repo References
 

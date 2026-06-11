@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T12:32+02:00                     |
@@ -54,7 +54,7 @@ No external documentation is needed.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The memory-repo tools example says it belongs in memory-layer `system/tools.md`, can carry branch workflow notes/checks/code-quality commands, and should point implementation reporting at a project-adjusted quality report template. | L1-L23 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
+| The memory-repo tools example says it belongs in memory-layer `system/tools.md`, can carry branch workflow notes/checks/code-quality commands, and should point implementation reporting at a project-adjusted quality report template. | L1-L23 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/providers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
@@ -45,8 +45,8 @@ their service payloads can expose provider-specific fields.
 
 | Finding | Source Path |
 | --- | --- |
-| Provider status projection builds these models before returning MCP payloads. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
-| Provider controller functions expose provider status, diagnostics, watcher, GrepAI, and CGC operations. | [provider_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py) |
+| Provider status projection builds these models before returning MCP payloads. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
+| Provider controller functions expose provider status, diagnostics, watcher, GrepAI, and CGC operations. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
 
 ## Update History
 

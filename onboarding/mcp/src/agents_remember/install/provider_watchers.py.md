@@ -2,7 +2,7 @@
 
 | Field                  | Value                                              |
 | ---------------------- | -------------------------------------------------- |
-| repository             | agents-remember-md                                 |
+| repository             | agents-remember                                 |
 | path                   | `mcp/src/agents_remember/install/provider_watchers.py` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-04T22:15+02:00                             |
@@ -75,12 +75,12 @@ regression suite.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The rebind report stores lifecycle runs, readiness, recovery actions, messages, and the MCP payload shape. | L16-L31 | [provider_watchers.py](agents-remember-md/mcp/src/agents_remember/install/provider_watchers.py) |
-| Watcher lifecycle calls use temporary provider settings, `lifecycle.watchers_run`, and per-phase result recording. | L34-L103 | [provider_watchers.py](agents-remember-md/mcp/src/agents_remember/install/provider_watchers.py) |
-| The pre-refresh stop aborts on non-ok/partial watcher stop before runtime provider refresh proceeds. | L127-L151 | [provider_watchers.py](agents-remember-md/mcp/src/agents_remember/install/provider_watchers.py) |
-| The post-install path starts watchers, checks status, and attempts one non-destructive restart/rebind before adding recovery guidance. | L154-L214 | [provider_watchers.py](agents-remember-md/mcp/src/agents_remember/install/provider_watchers.py) |
-| Runtime install creates and attaches the report, stops watchers before provider refresh, and completes rebind/recovery before returning. | L437-L527 | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| Focused tests cover stop/start ordering, dry-run reporting, degraded retry, unrecovered failure guidance, and dependency-failure recovery. | L162-L452 | [test_install_runtime.py](agents-remember-md/mcp/tests/test_install_runtime.py) |
+| The rebind report stores lifecycle runs, readiness, recovery actions, messages, and the MCP payload shape. | L16-L31 | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
+| Watcher lifecycle calls use temporary provider settings, `lifecycle.watchers_run`, and per-phase result recording. | L34-L103 | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
+| The pre-refresh stop aborts on non-ok/partial watcher stop before runtime provider refresh proceeds. | L127-L151 | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
+| The post-install path starts watchers, checks status, and attempts one non-destructive restart/rebind before adding recovery guidance. | L154-L214 | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
+| Runtime install creates and attaches the report, stops watchers before provider refresh, and completes rebind/recovery before returning. | L437-L527 | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| Focused tests cover stop/start ordering, dry-run reporting, degraded retry, unrecovered failure guidance, and dependency-failure recovery. | L162-L452 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
 
 ## Cross-Repo References
 

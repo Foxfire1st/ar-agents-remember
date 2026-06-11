@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_worktree_routing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -78,8 +78,8 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| `_resolve_worktree_target` and `_worktree_provider_targets` live in the provider tools controller. | [provider_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py) |
-| `_isolated_grepai_base_fields` derives the workspace key under test. | [isolated.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/isolated.py) |
+| `_resolve_worktree_target` and `_worktree_provider_targets` live in the provider tools controller. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
+| `_isolated_grepai_base_fields` derives the workspace key under test. | [isolated.py](agents-remember/mcp/src/agents_remember/providers/grepai/isolated.py) |
 
 ## Cross-Repo References
 

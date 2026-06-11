@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_resolver_parity.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T18:05+02:00                     |
@@ -35,8 +35,8 @@ deleted runtime skill script.
 
 | Finding | Source Path |
 | --- | --- |
-| The package resolver module provides the tested CLI. | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| Worktree contracts supply the contract-backed fixture. | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The package resolver module provides the tested CLI. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| Worktree contracts supply the contract-backed fixture. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ## Update History
 

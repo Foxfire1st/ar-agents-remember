@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
@@ -42,9 +42,9 @@ monolithic public surface.
 
 | Finding | Source Path |
 | --- | --- |
-| The CLI parser and dispatcher live in the lifecycle package. | [cli.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/cli.py) |
-| CGC exports are grouped behind the CGC package facade. | [cgc/__init__.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py) |
-| GrepAI exports are grouped behind the Docker-owned GrepAI package facade. | [grepai/__init__.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py) |
+| The CLI parser and dispatcher live in the lifecycle package. | [cli.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/cli.py) |
+| CGC exports are grouped behind the CGC package facade. | [cgc/__init__.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py) |
+| GrepAI exports are grouped behind the Docker-owned GrepAI package facade. | [grepai/__init__.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_compact_content.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T08:53+02:00                     |
@@ -48,9 +48,9 @@ the compaction must never raise on non-JSON content.
 
 | Finding | Source Path |
 | --- | --- |
-| The shim under test installs the FastMCP converter patch. | [compact_content.py](agents-remember-md/mcp/src/agents_remember/mcp/compact_content.py) |
-| `create_server()` installs the shim before registering tools. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| MCP settings fixtures come from `test_config.py`. | [test_config.py](agents-remember-md/mcp/tests/test_config.py) |
+| The shim under test installs the FastMCP converter patch. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
+| `create_server()` installs the shim before registering tools. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| MCP settings fixtures come from `test_config.py`. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
 
 ## Update History
 
