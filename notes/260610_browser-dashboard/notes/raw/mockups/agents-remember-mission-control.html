@@ -1,0 +1,1004 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agents Remember · Memory Control</title>
+<style>
+/* ─── SpaceX tokens (verbatim contract) ─────────────────────────────── */
+:root {
+  --bg: #000000;
+  --surface: #000000;
+  --surface-warm: var(--surface);
+  --fg: #f0f0fa;
+  --fg-2: var(--fg);
+  --muted: rgba(240, 240, 250, 0.7);
+  --meta: var(--muted);
+  --border: rgba(240, 240, 250, 0.35);
+  --border-soft: rgba(240, 240, 250, 0.1);
+  --accent: #f0f0fa;
+  --accent-on: #000000;
+  --accent-hover: #ffffff;
+  --accent-active: #d8d8e6;
+  --success: #16a34a;
+  --warn: #eab308;
+  --danger: #dc2626;
+  --font-display: "D-DIN-Bold", "D-DIN", "DIN Alternate", "Helvetica Neue", Arial, Verdana, sans-serif;
+  --font-body: "D-DIN", "DIN Alternate", "Helvetica Neue", Arial, Verdana, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+  --text-xs: 10px;
+  --text-sm: 12px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 48px;
+  --leading-body: 1.5;
+  --leading-tight: 1.0;
+  --tracking-display: 0.02em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --section-y-desktop: 120px;
+  --section-y-tablet: 80px;
+  --section-y-phone: 56px;
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-pill: 32px;
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: none;
+  --focus-ring: 0 0 0 2px var(--accent);
+  --motion-fast: 150ms;
+  --motion-base: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --container-max: 1440px;
+  --container-gutter-desktop: 24px;
+  --container-gutter-tablet: 20px;
+  --container-gutter-phone: 18px;
+}
+
+/* ─── reset / base ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+canvas { display: block; }
+button { font: inherit; cursor: pointer; color: inherit; background: none; border: none; }
+::selection { background: var(--accent); color: var(--accent-on); }
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb { background: var(--border-soft); }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ─── helpers ───────────────────────────────────────────────────────── */
+.up { text-transform: uppercase; letter-spacing: 0.12em; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); }
+.muted { color: var(--muted); }
+.eyebrow {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ─── app shell ─────────────────────────────────────────────────────── */
+.app {
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  grid-template-rows: 62px 1fr;
+  grid-template-areas: "logo top" "rail stage";
+  height: 100vh;
+}
+.brandbox {
+  grid-area: logo;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 0 var(--space-6);
+  border-right: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+.brandbox .wm {
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  line-height: 1;
+}
+.brandbox .wm b { color: var(--accent-hover); }
+.brandbox .sub {
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.26em;
+  color: var(--muted); margin-top: 6px;
+}
+
+/* topbar */
+.topbar {
+  grid-area: top;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--space-8);
+  border-bottom: 1px solid var(--border-soft);
+}
+.tb-left { display: flex; align-items: baseline; gap: var(--space-5); }
+.tb-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--fg); }
+.tb-crumb { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+.tb-right { display: flex; align-items: center; gap: var(--space-6); }
+.readout { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.readout .rv { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.05em; }
+.readout .rl { font-size: 8px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); }
+.envtag {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 11px; border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted);
+}
+
+/* ghost button — the sole interactive flourish */
+.ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--border-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--fg);
+  padding: 9px 18px;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em;
+  transition: background var(--motion-base) var(--ease-standard), color var(--motion-base) var(--ease-standard);
+}
+.ghost:hover { background: color-mix(in oklch, var(--fg) 18%, transparent); color: var(--accent-hover); }
+.ghost:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.ghost[disabled] { opacity: 0.5; cursor: progress; }
+
+/* ─── rail ──────────────────────────────────────────────────────────── */
+.rail {
+  grid-area: rail;
+  border-right: 1px solid var(--border-soft);
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+}
+.nav { padding: var(--space-5) 0; flex: 1; }
+.nav-item {
+  width: 100%; display: flex; align-items: center; gap: var(--space-4);
+  padding: 13px var(--space-6);
+  border-left: 2px solid transparent;
+  color: var(--muted);
+  text-align: left;
+  transition: color var(--motion-base) var(--ease-standard), background var(--motion-base) var(--ease-standard);
+}
+.nav-item .ni { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; opacity: 0.6; }
+.nav-item .nl { font-size: 12px; text-transform: uppercase; letter-spacing: 0.13em; }
+.nav-item:hover { color: var(--fg); }
+.nav-item.active { color: var(--accent-hover); border-left-color: var(--accent); background: var(--border-soft); }
+.nav-item .nb {
+  margin-left: auto; font-family: var(--font-mono); font-size: 10px;
+  color: var(--warn); letter-spacing: 0.05em;
+}
+.rail-foot {
+  border-top: 1px solid var(--border-soft);
+  padding: var(--space-5) var(--space-6);
+  display: flex; flex-direction: column; gap: 9px;
+}
+.rf-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.rf-k { font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); }
+.rf-v { font-family: var(--font-mono); font-size: 10px; color: var(--fg); letter-spacing: 0.03em; text-align: right; }
+
+/* ─── stage / views ─────────────────────────────────────────────────── */
+.stage { grid-area: stage; overflow-y: auto; }
+.view { display: none; padding: var(--space-8); }
+.view.active { display: block; animation: rise var(--motion-base) var(--ease-standard); }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.view-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); margin-bottom: var(--space-6); }
+.view-head h1 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: var(--text-2xl); text-transform: uppercase;
+  letter-spacing: var(--tracking-display); line-height: var(--leading-tight);
+  margin: 0;
+}
+.view-head .vh-sub { font-size: 12px; color: var(--muted); margin: 8px 0 0; max-width: 64ch; line-height: 1.5; }
+.view-head .vh-side { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-align: right; letter-spacing: 0.04em; white-space: nowrap; }
+
+/* panels */
+.panel { border: 1px solid var(--border-soft); padding: var(--space-6); position: relative; }
+.panel-h { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-5); }
+.panel-h .ph-t { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; }
+.panel-h .ph-m { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; }
+
+.cols { display: grid; gap: var(--space-5); }
+.c-2 { grid-template-columns: 2fr 1fr; }
+.c-3 { grid-template-columns: repeat(3, 1fr); }
+.c-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* metric strip */
+.metrics { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--border-soft); margin-bottom: var(--space-5); }
+.metric { padding: var(--space-5) var(--space-6); border-left: 1px solid var(--border-soft); }
+.metric:first-child { border-left: 0; }
+.metric .ml { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted); }
+.metric .mv { font-family: var(--font-display); font-weight: 700; font-size: clamp(34px, 3.4vw, 52px); line-height: 1; margin-top: 12px; letter-spacing: 0.01em; }
+.metric .mv u { font-style: normal; font-size: 0.42em; color: var(--muted); margin-left: 3px; }
+.metric .md { margin-top: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: var(--muted); }
+.metric .md.pos { color: color-mix(in oklch, var(--success) 80%, var(--fg)); }
+.metric .md.neg { color: var(--warn); }
+
+/* status dot + pill */
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); display: inline-block; flex: none; }
+.dot.ok { background: color-mix(in oklch, var(--success) 85%, var(--fg)); }
+.dot.warn { background: var(--warn); }
+.dot.crit { background: var(--danger); }
+.dot.idle { background: var(--muted); }
+.dot.core { background: var(--accent-hover); }
+.pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 4px 10px; border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--fg); white-space: nowrap;
+}
+
+/* bars */
+.bar { height: 5px; background: var(--border-soft); position: relative; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--fg); }
+.bar > i.warn { background: var(--warn); }
+.barline { display: grid; grid-template-columns: 1fr 44px; align-items: center; gap: var(--space-4); }
+.barline + .barline { margin-top: 14px; }
+.barline .bk { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px; }
+.barline .bv { font-family: var(--font-mono); font-size: 12px; text-align: right; }
+
+/* tables */
+.tbl { width: 100%; border-collapse: collapse; }
+.tbl th, .tbl td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); }
+.tbl th { font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); font-weight: 400; }
+.tbl td { font-size: 12px; }
+.tbl td.m, .tbl th.m { font-family: var(--font-mono); letter-spacing: 0.03em; }
+.tbl td.r, .tbl th.r { text-align: right; font-variant-numeric: tabular-nums; }
+.tbl tbody tr { transition: background var(--motion-fast) var(--ease-standard); }
+.tbl tbody tr:hover { background: var(--border-soft); }
+.tbl tbody tr:last-child td { border-bottom: 0; }
+
+/* pipeline stepper */
+.pipe { display: flex; border: 1px solid var(--border-soft); }
+.step { flex: 1; padding: var(--space-5); border-right: 1px solid var(--border-soft); }
+.step:last-child { border-right: 0; }
+.step .si { font-family: var(--font-mono); font-size: 9px; color: var(--muted); letter-spacing: 0.12em; }
+.step .sl { margin-top: 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.3; min-height: 26px; }
+.step .sc { margin-top: 12px; font-family: var(--font-display); font-weight: 700; font-size: var(--text-xl); }
+.step.hot { background: var(--border-soft); }
+.step.hot .sc { color: var(--accent-hover); }
+
+/* constellation */
+.constel { padding: 0; overflow: hidden; }
+.constel-wrap { position: relative; height: 460px; }
+.constel-wrap canvas { width: 100%; height: 100%; }
+.constel-head { position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: var(--space-5) var(--space-6); z-index: 2; pointer-events: none; }
+.constel-legend { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: var(--space-6); flex-wrap: wrap; padding: var(--space-4) var(--space-6); border-top: 1px solid var(--border-soft); z-index: 2; pointer-events: none; }
+.lg { display: inline-flex; align-items: center; gap: 8px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.13em; color: var(--muted); }
+.tip {
+  position: absolute; z-index: 5; pointer-events: none; opacity: 0;
+  transform: translate(-50%, -135%); transition: opacity var(--motion-fast) var(--ease-standard);
+  background: var(--bg); border: 1px solid var(--border);
+  padding: 7px 11px; white-space: nowrap;
+}
+.tip .tt { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
+.tip .ts { font-family: var(--font-mono); font-size: 9px; color: var(--muted); margin-top: 3px; letter-spacing: 0.05em; }
+
+/* live feed */
+.feed { display: flex; flex-direction: column; }
+.feed-row { display: grid; grid-template-columns: 56px 12px 1fr; gap: 11px; align-items: start; padding: 11px 0; border-bottom: 1px solid var(--border-soft); }
+.feed-row:last-child { border-bottom: 0; }
+.feed-row .ft { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.03em; padding-top: 2px; }
+.feed-row .fd .fk { font-size: 10px; text-transform: uppercase; letter-spacing: 0.13em; }
+.feed-row .fd .fx { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.45; }
+.feed-row .dot { margin-top: 5px; }
+@keyframes flash { from { background: var(--border-soft); } to { background: transparent; } }
+.feed-row.new { animation: flash 1.4s var(--ease-standard); }
+
+/* jump cards (launcher) */
+.jump { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); margin-top: var(--space-5); }
+.jcard { border: 1px solid var(--border-soft); padding: var(--space-5); text-align: left; transition: border-color var(--motion-base) var(--ease-standard); }
+.jcard:hover { border-color: var(--border); }
+.jcard:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.jcard .jk { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+.jcard .jv { font-family: var(--font-display); font-weight: 700; font-size: var(--text-xl); margin: 14px 0 6px; }
+.jcard .jx { font-size: 11px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+.jcard .jx::after { content: "→"; transition: transform var(--motion-base) var(--ease-standard); }
+.jcard:hover .jx::after { transform: translateX(3px); }
+
+/* small list (substrate / closeout) */
+.list { display: flex; flex-direction: column; }
+.li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: 12px 0; border-bottom: 1px solid var(--border-soft); }
+.li:last-child { border-bottom: 0; }
+.li .lt { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+.li .lx { font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-top: 4px; letter-spacing: 0.03em; }
+.li .lr { display: flex; align-items: center; gap: 9px; }
+
+.grid-gap { display: grid; gap: var(--space-5); }
+.mt5 { margin-top: var(--space-5); }
+.spark { display: flex; align-items: flex-end; gap: 3px; height: 46px; }
+.spark i { flex: 1; background: var(--border-soft); display: block; }
+.spark i.hi { background: var(--fg); }
+
+/* ─── responsive degrade ────────────────────────────────────────────── */
+@media (max-width: 1180px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .metric:nth-child(odd) { border-left: 0; }
+  .c-2, .c-3, .c-4 { grid-template-columns: 1fr; }
+  .jump { grid-template-columns: repeat(2, 1fr); }
+  .pipe { flex-wrap: wrap; }
+  .step { flex: 1 1 33%; }
+}
+@media (max-width: 860px) {
+  body { overflow: auto; }
+  .app { grid-template-columns: 1fr; grid-template-rows: auto auto auto 1fr; grid-template-areas: "logo" "top" "rail" "stage"; height: auto; min-height: 100vh; }
+  .rail { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--border-soft); }
+  .nav { display: flex; padding: 0; }
+  .nav-item { border-left: 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  .nav-item.active { border-left: 0; border-bottom-color: var(--accent); }
+  .rail-foot { display: none; }
+  .stage { overflow: visible; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .view.active { animation: none; }
+  .feed-row.new { animation: none; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- logo cell -->
+  <div class="brandbox" data-od-id="brand">
+    <div class="wm">AGENTS·<b>REMEMBER</b></div>
+    <div class="sub">Memory Control</div>
+  </div>
+
+  <!-- topbar -->
+  <header class="topbar" data-od-id="topbar">
+    <div class="tb-left">
+      <span class="tb-title" id="crumbTitle">Mission Control</span>
+      <span class="tb-crumb" id="crumbPath">/ memory-root · agents-remember-md</span>
+    </div>
+    <div class="tb-right">
+      <span class="envtag"><span class="dot ok"></span> Sample telemetry</span>
+      <div class="readout"><span class="rv" id="uptime">00d 00:00:00</span><span class="rl">Coord uptime</span></div>
+      <div class="readout"><span class="rv" id="clock">--:--:-- UTC</span><span class="rl">Mission time</span></div>
+      <button class="ghost" id="scanBtn">▣ Run drift scan</button>
+    </div>
+  </header>
+
+  <!-- rail -->
+  <aside class="rail" data-od-id="rail">
+    <nav class="nav" id="nav">
+      <button class="nav-item active" data-view="overview" data-title="Mission Control" data-path="/ memory-root · agents-remember-md"><span class="ni">01</span><span class="nl">Overview</span></button>
+      <button class="nav-item" data-view="health" data-title="Memory Health &amp; Quality" data-path="/ memory_quality · drift · gates"><span class="ni">02</span><span class="nl">Memory Health</span><span class="nb">2</span></button>
+      <button class="nav-item" data-view="retrieval" data-title="Retrieval" data-path="/ c-04 strategy router"><span class="ni">03</span><span class="nl">Retrieval</span></button>
+      <button class="nav-item" data-view="sessions" data-title="Sessions &amp; Tasks" data-path="/ l-01 session lifecycle"><span class="ni">04</span><span class="nl">Sessions &amp; Tasks</span></button>
+      <button class="nav-item" data-view="worktrees" data-title="Worktrees &amp; Branches" data-path="/ c-09 worktree manager"><span class="ni">05</span><span class="nl">Worktrees</span><span class="nb">1</span></button>
+    </nav>
+    <div class="rail-foot">
+      <div class="rf-row"><span class="rf-k">Topology</span><span class="rf-v">repo-local</span></div>
+      <div class="rf-row"><span class="rf-k">Memory root</span><span class="rf-v">.agents/memory</span></div>
+      <div class="rf-row"><span class="rf-k">Ledger</span><span class="rf-v">aligned · 0 drift</span></div>
+      <div class="rf-row"><span class="rf-k">MCP</span><span class="rf-v">v2.3.1 · live</span></div>
+    </div>
+  </aside>
+
+  <!-- stage -->
+  <main class="stage">
+
+    <!-- ════ OVERVIEW ════ -->
+    <section class="view active" id="view-overview" data-od-id="overview">
+      <div class="view-head">
+        <div>
+          <h1>Mission Control</h1>
+          <p class="vh-sub">Live state of the agents-remember memory substrate — coverage, drift, retrieval and task flow across the coordination root.</p>
+        </div>
+        <div class="vh-side">SYNC · LIVE<br>last event <span id="lastEvt">just now</span></div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="ml">Memory health index</div><div class="mv num" data-target="94.2" data-dec="1">0</div><div class="md pos">▲ +1.3 vs 7d</div></div>
+        <div class="metric"><div class="ml">Onboarding coverage</div><div class="mv num" data-target="87">0<u>%</u></div><div class="md pos">▲ +4 files</div></div>
+        <div class="metric"><div class="ml">Active sessions</div><div class="mv num" data-target="6">0</div><div class="md">4 build · 2 research</div></div>
+        <div class="metric"><div class="ml">Open worktrees</div><div class="mv num" data-target="4">0</div><div class="md neg">1 conflict</div></div>
+        <div class="metric"><div class="ml">Drift alerts</div><div class="mv num" data-target="2">0</div><div class="md neg">▲ stale onboarding</div></div>
+      </div>
+
+      <div class="cols c-2">
+        <div class="panel constel">
+          <div class="constel-head">
+            <span class="eyebrow">Memory constellation · live</span>
+            <span class="ph-m mono">22 nodes · 4 orbital tiers</span>
+          </div>
+          <div class="constel-wrap" id="cwrap">
+            <canvas id="constel"></canvas>
+            <div class="tip" id="tip"><div class="tt" id="tipT"></div><div class="ts" id="tipS"></div></div>
+          </div>
+          <div class="constel-legend">
+            <span class="lg"><span class="dot core"></span> Memory root</span>
+            <span class="lg"><span class="dot ok"></span> Onboarding · route maps · file cards</span>
+            <span class="lg"><span class="dot warn"></span> Drifted / stale slice</span>
+            <span class="lg"><span class="dot idle"></span> Closeout gate idle</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-h"><span class="ph-t">Live telemetry</span><span class="ph-m mono">stream</span></div>
+          <div class="feed" id="feed">
+            <div class="feed-row"><span class="ft">14:32:07</span><span class="dot ok"></span><div class="fd"><div class="fk">Semantic · retrieval</div><div class="fx">query resolved · c-08 resolver · 6 hits</div></div></div>
+            <div class="feed-row"><span class="ft">14:31:44</span><span class="dot warn"></span><div class="fd"><div class="fk">Drift · quality</div><div class="fx">onboarding stale · worktrees slice</div></div></div>
+            <div class="feed-row"><span class="ft">14:30:58</span><span class="dot ok"></span><div class="fd"><div class="fk">Worktree · integration</div><div class="fx">T-117 merged to main · gates passed</div></div></div>
+            <div class="feed-row"><span class="ft">14:30:12</span><span class="dot ok"></span><div class="fd"><div class="fk">Intent · retrieval</div><div class="fx">grepai contract scan · 3 hits</div></div></div>
+            <div class="feed-row"><span class="ft">14:29:30</span><span class="dot ok"></span><div class="fd"><div class="fk">Closeout · gate</div><div class="fx">ledger aligned · no auto-push</div></div></div>
+            <div class="feed-row"><span class="ft">14:28:51</span><span class="dot crit"></span><div class="fd"><div class="fk">Conflict · integration</div><div class="fx">T-119 rebase conflict · 2 files</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jump" id="jump">
+        <button class="jcard" data-view="health"><div class="jk">Memory health</div><div class="jv num">94.2</div><span class="jx">2 drift alerts open</span></button>
+        <button class="jcard" data-view="retrieval"><div class="jk">Retrieval · 24h</div><div class="jv num">762</div><span class="jx">queries routed</span></button>
+        <button class="jcard" data-view="sessions"><div class="jk">Lifecycle</div><div class="jv num">6</div><span class="jx">sessions in flight</span></button>
+        <button class="jcard" data-view="worktrees"><div class="jk">Worktrees</div><div class="jv num">4</div><span class="jx">1 awaiting approval</span></button>
+      </div>
+    </section>
+
+    <!-- ════ MEMORY HEALTH ════ -->
+    <section class="view" id="view-health" data-od-id="memory-health">
+      <div class="view-head">
+        <div>
+          <h1>Memory Health &amp; Quality</h1>
+          <p class="vh-sub">The c-02 quality control loop — task-start drift checks, pre-commit missing-onboarding gates, and the closeout quality gate over every memory slice.</p>
+        </div>
+        <div class="vh-side">index 94.2 / 100<br>2 slices flagged</div>
+      </div>
+
+      <div class="panel" style="margin-bottom:var(--space-5)">
+        <div class="panel-h"><span class="ph-t">Quality gate pipeline · c-02</span><span class="ph-m mono">last run 14:29 UTC</span></div>
+        <div class="pipe">
+          <div class="step hot"><div class="si">GATE 01</div><div class="sl">Task-start drift check</div><div class="sc">PASS</div></div>
+          <div class="step"><div class="si">GATE 02</div><div class="sl">Pre-commit missing onboarding</div><div class="sc" style="color:var(--warn)">WARN</div></div>
+          <div class="step"><div class="si">GATE 03</div><div class="sl">Closeout quality gate</div><div class="sc" style="color:var(--muted)">READY</div></div>
+        </div>
+      </div>
+
+      <div class="cols c-2">
+        <div class="panel">
+          <div class="panel-h"><span class="ph-t">Onboarding drift · by slice</span><span class="ph-m mono">onboarding_drift_check</span></div>
+          <table class="tbl">
+            <thead><tr><th class="m">Slice</th><th>State</th><th class="r">Last verified</th></tr></thead>
+            <tbody>
+              <tr><td class="m">mcp/…/kernel</td><td><span class="pill"><span class="dot ok"></span>Current</span></td><td class="r m">2h ago</td></tr>
+              <tr><td class="m">mcp/…/controllers</td><td><span class="pill"><span class="dot ok"></span>Current</span></td><td class="r m">2h ago</td></tr>
+              <tr><td class="m">mcp/…/worktrees</td><td><span class="pill"><span class="dot warn"></span>Drift</span></td><td class="r m">code ahead</td></tr>
+              <tr><td class="m">mcp/…/memory_quality</td><td><span class="pill"><span class="dot ok"></span>Current</span></td><td class="r m">5h ago</td></tr>
+              <tr><td class="m">mcp/…/benchmarks</td><td><span class="pill"><span class="dot warn"></span>Stale</span></td><td class="r m">16d ago</td></tr>
+              <tr><td class="m">skills/c-03-repo-bootstrap</td><td><span class="pill"><span class="dot ok"></span>Current</span></td><td class="r m">1d ago</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid-gap">
+          <div class="panel">
+            <div class="panel-h"><span class="ph-t">Quality score · breakdown</span><span class="ph-m mono">/100</span></div>
+            <div class="barline"><div><div class="bk">Integrity · 1-to-1 mapping</div><div class="bar"><i style="width:96%"></i></div></div><div class="bv">96</div></div>
+            <div class="barline"><div><div class="bk">Style · references &amp; metadata</div><div class="bar"><i style="width:91%"></i></div></div><div class="bv">91</div></div>
+            <div class="barline"><div><div class="bk">Update history · freshness</div><div class="bar"><i class="warn" style="width:88%"></i></div></div><div class="bv">88</div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-h"><span class="ph-t">Missing onboarding</span><span class="ph-m mono">blocks closeout</span></div>
+            <div class="list">
+              <div class="li"><div><div class="lt">worktrees/modules/start.py</div><div class="lx">no file card · 1-to-1 mapping violation</div></div><div class="lr"><span class="pill"><span class="dot warn"></span>Open</span></div></div>
+              <div class="li"><div><div class="lt">benchmarks/runner_modules</div><div class="lx">route-local overview missing pillar</div></div><div class="lr"><span class="pill"><span class="dot warn"></span>Open</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel mt5">
+        <div class="panel-h"><span class="ph-t">Coverage by area</span><span class="ph-m mono">file cards / source files</span></div>
+        <div class="cols c-4" style="gap:var(--space-6)">
+          <div><div class="bk up" style="font-size:10px;color:var(--muted)">kernel</div><div class="bar mt5"><i style="width:100%"></i></div><div class="md mono" style="margin-top:8px">100%</div></div>
+          <div><div class="bk up" style="font-size:10px;color:var(--muted)">controllers</div><div class="bar mt5"><i style="width:95%"></i></div><div class="md mono" style="margin-top:8px">95%</div></div>
+          <div><div class="bk up" style="font-size:10px;color:var(--muted)">mcp/tools</div><div class="bar mt5"><i style="width:82%"></i></div><div class="md mono" style="margin-top:8px">82%</div></div>
+          <div><div class="bk up" style="font-size:10px;color:var(--muted)">benchmarks</div><div class="bar mt5"><i class="warn" style="width:61%"></i></div><div class="md mono" style="margin-top:8px">61%</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ RETRIEVAL ════ -->
+    <section class="view" id="view-retrieval" data-od-id="retrieval">
+      <div class="view-head">
+        <div>
+          <h1>Retrieval</h1>
+          <p class="vh-sub">The c-04 strategy router across three substrates — semantics for known concepts, relationships for known anchors, intent for hidden contracts and code truths.</p>
+        </div>
+        <div class="vh-side">762 queries · 24h<br>avg 71 ms · hit-rate 86%</div>
+      </div>
+
+      <div class="cols c-3" style="margin-bottom:var(--space-5)">
+        <div class="panel">
+          <span class="eyebrow">Strategy 01</span>
+          <div class="mv num" style="font-family:var(--font-display);font-weight:700;font-size:var(--text-3xl);margin:12px 0 4px">412</div>
+          <div class="up" style="font-size:11px">Semantic · 54%</div>
+          <div class="lx mono" style="margin-top:14px;color:var(--muted)">known concept · unknown structure</div>
+          <div class="bar mt5"><i style="width:54%"></i></div>
+          <div class="rf-row" style="margin-top:14px"><span class="rf-k">avg latency</span><span class="rf-v">42 ms</span></div>
+          <div class="rf-row" style="margin-top:8px"><span class="rf-k">hit-rate</span><span class="rf-v">91%</span></div>
+        </div>
+        <div class="panel">
+          <span class="eyebrow">Strategy 02</span>
+          <div class="mv num" style="font-family:var(--font-display);font-weight:700;font-size:var(--text-3xl);margin:12px 0 4px">196</div>
+          <div class="up" style="font-size:11px">Relationship · 26%</div>
+          <div class="lx mono" style="margin-top:14px;color:var(--muted)">known anchor · unknown connections</div>
+          <div class="bar mt5"><i style="width:26%"></i></div>
+          <div class="rf-row" style="margin-top:14px"><span class="rf-k">substrate</span><span class="rf-v">codegraphcontext</span></div>
+          <div class="rf-row" style="margin-top:8px"><span class="rf-k">avg latency</span><span class="rf-v">88 ms</span></div>
+        </div>
+        <div class="panel">
+          <span class="eyebrow">Strategy 03</span>
+          <div class="mv num" style="font-family:var(--font-display);font-weight:700;font-size:var(--text-3xl);margin:12px 0 4px">154</div>
+          <div class="up" style="font-size:11px">Intent · 20%</div>
+          <div class="lx mono" style="margin-top:14px;color:var(--muted)">hidden contracts · code truths</div>
+          <div class="bar mt5"><i style="width:20%"></i></div>
+          <div class="rf-row" style="margin-top:14px"><span class="rf-k">substrate</span><span class="rf-v">grepai</span></div>
+          <div class="rf-row" style="margin-top:8px"><span class="rf-k">avg latency</span><span class="rf-v">130 ms</span></div>
+        </div>
+      </div>
+
+      <div class="cols c-2">
+        <div class="panel">
+          <div class="panel-h"><span class="ph-t">Query log</span><span class="ph-m mono">tail · live</span></div>
+          <table class="tbl">
+            <thead><tr><th class="m">Time</th><th>Strategy</th><th>Target</th><th class="r">ms</th><th class="r">Hits</th></tr></thead>
+            <tbody>
+              <tr><td class="m">14:32:07</td><td><span class="pill"><span class="dot ok"></span>Semantic</span></td><td class="m">c-08 resolver</td><td class="r m">38</td><td class="r m">6</td></tr>
+              <tr><td class="m">14:31:51</td><td><span class="pill"><span class="dot ok"></span>Relationship</span></td><td class="m">kernel/coordination_context</td><td class="r m">91</td><td class="r m">4</td></tr>
+              <tr><td class="m">14:30:12</td><td><span class="pill"><span class="dot ok"></span>Intent</span></td><td class="m">worktrees/start.py</td><td class="r m">142</td><td class="r m">3</td></tr>
+              <tr><td class="m">14:29:40</td><td><span class="pill"><span class="dot ok"></span>Semantic</span></td><td class="m">c-12 closeout gates</td><td class="r m">46</td><td class="r m">7</td></tr>
+              <tr><td class="m">14:28:55</td><td><span class="pill"><span class="dot ok"></span>Relationship</span></td><td class="m">controllers · callers</td><td class="r m">79</td><td class="r m">5</td></tr>
+              <tr><td class="m">14:28:09</td><td><span class="pill"><span class="dot ok"></span>Intent</span></td><td class="m">ledger pathRules</td><td class="r m">121</td><td class="r m">2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><span class="ph-t">Volume · last 12 h</span><span class="ph-m mono">queries / hr</span></div>
+          <div class="spark" id="spark"></div>
+          <div class="mt5 list">
+            <div class="li"><div class="lt">Peak hour</div><span class="rf-v">11:00 · 94 q</span></div>
+            <div class="li"><div class="lt">Cache warm-hits</div><span class="rf-v">38%</span></div>
+            <div class="li"><div class="lt">Re-routed strategy</div><span class="rf-v">17 queries</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ SESSIONS & TASKS ════ -->
+    <section class="view" id="view-sessions" data-od-id="sessions">
+      <div class="view-head">
+        <div>
+          <h1>Sessions &amp; Tasks</h1>
+          <p class="vh-sub">The l-01 session lifecycle — every session routed from request through the context/trust checkpoint, reframe, research and build-mode decision, to closeout.</p>
+        </div>
+        <div class="vh-side">6 active · 2 closing<br>job lens mix below</div>
+      </div>
+
+      <div class="panel" style="margin-bottom:var(--space-5)">
+        <div class="panel-h"><span class="ph-t">Lifecycle pipeline · l-01</span><span class="ph-m mono">count by stage</span></div>
+        <div class="pipe">
+          <div class="step"><div class="si">01</div><div class="sl">Request</div><div class="sc num">3</div></div>
+          <div class="step"><div class="si">02</div><div class="sl">Context / trust</div><div class="sc num">2</div></div>
+          <div class="step"><div class="si">03</div><div class="sl">Reframe</div><div class="sc num">1</div></div>
+          <div class="step"><div class="si">04</div><div class="sl">Research</div><div class="sc num">2</div></div>
+          <div class="step"><div class="si">05</div><div class="sl">Build mode</div><div class="sc num">1</div></div>
+          <div class="step hot"><div class="si">06</div><div class="sl">Build</div><div class="sc num">4</div></div>
+          <div class="step"><div class="si">07</div><div class="sl">Close</div><div class="sc num">2</div></div>
+        </div>
+      </div>
+
+      <div class="cols c-2">
+        <div class="panel">
+          <div class="panel-h"><span class="ph-t">Active sessions</span><span class="ph-m mono">live</span></div>
+          <table class="tbl">
+            <thead><tr><th class="m">SID</th><th>Lens</th><th>Stage</th><th>Mode</th><th class="r">Age</th></tr></thead>
+            <tbody>
+              <tr><td class="m">S-2271</td><td><span class="pill">Feature</span></td><td class="up" style="font-size:10px">Build</td><td class="m">durable · w-02</td><td class="r m">2h12m</td></tr>
+              <tr><td class="m">S-2270</td><td><span class="pill"><span class="dot warn"></span>Bug</span></td><td class="up" style="font-size:10px">Research</td><td class="m">chat</td><td class="r m">41m</td></tr>
+              <tr><td class="m">S-2268</td><td><span class="pill">Triage</span></td><td class="up" style="font-size:10px">Context/trust</td><td class="m">chat</td><td class="r m">12m</td></tr>
+              <tr><td class="m">S-2265</td><td><span class="pill">Feature</span></td><td class="up" style="font-size:10px">Build</td><td class="m">durable · w-02</td><td class="r m">3h05m</td></tr>
+              <tr><td class="m">S-2264</td><td><span class="pill">Research</span></td><td class="up" style="font-size:10px">Research-only</td><td class="m">research exit</td><td class="r m">1h18m</td></tr>
+              <tr><td class="m">S-2261</td><td><span class="pill"><span class="dot ok"></span>Feature</span></td><td class="up" style="font-size:10px">Close</td><td class="m">durable · w-02</td><td class="r m">4h47m</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-gap">
+          <div class="panel">
+            <div class="panel-h"><span class="ph-t">Job lens · 7d</span><span class="ph-m mono">sessions</span></div>
+            <div class="barline"><div><div class="bk">Feature</div><div class="bar"><i style="width:48%"></i></div></div><div class="bv">23</div></div>
+            <div class="barline"><div><div class="bk">Bug</div><div class="bar"><i style="width:30%"></i></div></div><div class="bv">14</div></div>
+            <div class="barline"><div><div class="bk">Triage</div><div class="bar"><i style="width:14%"></i></div></div><div class="bv">7</div></div>
+            <div class="barline"><div><div class="bk">Research</div><div class="bar"><i style="width:18%"></i></div></div><div class="bv">9</div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-h"><span class="ph-t">Recent closeouts · c-12</span><span class="ph-m mono">gates</span></div>
+            <div class="list">
+              <div class="li"><div><div class="lt">S-2259 · feature</div><div class="lx">5/5 gates · ledger aligned · no push</div></div><span class="pill"><span class="dot ok"></span>Closed</span></div>
+              <div class="li"><div><div class="lt">S-2257 · bug</div><div class="lx">onboarding refresh · approval held</div></div><span class="pill"><span class="dot ok"></span>Closed</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ WORKTREES ════ -->
+    <section class="view" id="view-worktrees" data-od-id="worktrees">
+      <div class="view-head">
+        <div>
+          <h1>Worktrees &amp; Branches</h1>
+          <p class="vh-sub">Worktree-backed tasks under c-09 — integration state, human approval gates, and c-11 memory carryover gated to land only when the code lands on the official branch.</p>
+        </div>
+        <div class="vh-side">4 active · 1 conflict<br>1 awaiting approval</div>
+      </div>
+
+      <div class="cols c-4" style="margin-bottom:var(--space-5)">
+        <div class="panel"><div class="ml" style="font-size:9px;letter-spacing:0.18em;color:var(--muted)">ACTIVE</div><div class="mv num" style="font-family:var(--font-display);font-weight:700;font-size:var(--text-3xl);margin-top:10px">4</div></div>
+        <div class="panel"><div class="ml" style="font-size:9px;letter-spacing:0.18em;color:var(--muted)">CLEAN</div><div class="mv num" style="font-family:var(--font-display);font-weight:700;font-size:var(--text-3xl);margin-top:10px">1</div></div>
+        <div class="panel"><div class="ml" style="font-size:9px;letter-spacing:0.18em;color:var(--muted)">AHEAD</div><div class="mv num" style="font-family:var(--font-display);font-weight:700;font-size:var(--text-3xl);margin-top:10px">1</div></div>
+        <div class="panel"><div class="ml" style="font-size:9px;letter-spacing:0.18em;color:var(--muted)">CONFLICT</div><div class="mv num" style="font-family:var(--font-display);font-weight:700;font-size:var(--text-3xl);margin-top:10px;color:var(--danger)">1</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-h"><span class="ph-t">Worktree tasks · c-09</span><span class="ph-m mono">base · main</span></div>
+        <table class="tbl">
+          <thead><tr><th class="m">Task</th><th class="m">Branch</th><th>Stage</th><th>Integration</th><th>Carryover</th><th>Approval</th></tr></thead>
+          <tbody>
+            <tr><td class="m">T-118</td><td class="m">feat/harness-root-starter-packages</td><td class="up" style="font-size:10px">Build</td><td><span class="pill"><span class="dot ok"></span>Ahead 3</span></td><td class="up" style="font-size:10px;color:var(--muted)">Pending</td><td><span class="pill"><span class="dot warn"></span>Held</span></td></tr>
+            <tr><td class="m">T-117</td><td class="m">fix/mcp-package-readme</td><td class="up" style="font-size:10px">Close</td><td><span class="pill"><span class="dot ok"></span>Integrated</span></td><td class="up" style="font-size:10px;color:var(--muted)">Landed</td><td><span class="pill"><span class="dot ok"></span>Merged</span></td></tr>
+            <tr><td class="m">T-119</td><td class="m">feat/retrieval-intent-router</td><td class="up" style="font-size:10px">Build</td><td><span class="pill"><span class="dot crit"></span>Conflict 2</span></td><td class="up" style="font-size:10px;color:var(--muted)">Blocked</td><td><span class="pill"><span class="dot warn"></span>Held</span></td></tr>
+            <tr><td class="m">T-120</td><td class="m">chore/benchmark-warm-onboarding</td><td class="up" style="font-size:10px">Research</td><td><span class="pill"><span class="dot ok"></span>Clean</span></td><td class="up" style="font-size:10px;color:var(--muted)">n/a</td><td class="up" style="font-size:10px;color:var(--muted)">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cols c-2 mt5">
+        <div class="panel">
+          <div class="panel-h"><span class="ph-t">Carryover policy · c-11</span><span class="ph-m mono">branch → official</span></div>
+          <div class="list">
+            <div class="li"><div><div class="lt">feat/harness-root-starter-packages</div><div class="lx">richer onboarding staged · code not yet on main</div></div><span class="pill"><span class="dot warn"></span>Withheld</span></div>
+            <div class="li"><div><div class="lt">fix/mcp-package-readme</div><div class="lx">code landed on main · carryover applied</div></div><span class="pill"><span class="dot ok"></span>Applied</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><span class="ph-t">Approval gates</span><span class="ph-m mono">no auto-push</span></div>
+          <div class="list">
+            <div class="li"><div class="lt">Commit approval preserved</div><span class="pill"><span class="dot ok"></span>On</span></div>
+            <div class="li"><div class="lt">Missing-onboarding pre-merge</div><span class="pill"><span class="dot ok"></span>On</span></div>
+            <div class="li"><div class="lt">External-memory refresh</div><span class="pill"><span class="dot idle"></span>n/a · repo-local</span></div>
+            <div class="li"><div class="lt">Auto-push</div><span class="pill"><span class="dot crit"></span>Disabled</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var root = getComputedStyle(document.documentElement);
+  var FG = (root.getPropertyValue("--fg") || "#f0f0fa").trim();
+  var WHITE = (root.getPropertyValue("--accent-hover") || "#ffffff").trim();
+  var WARN = (root.getPropertyValue("--warn") || "#eab308").trim();
+  var SUCCESS = (root.getPropertyValue("--success") || "#16a34a").trim();
+  var MUTED = "#9a9aa6";
+
+  /* ── view router ─────────────────────────────────────────────── */
+  var items = Array.prototype.slice.call(document.querySelectorAll(".nav-item"));
+  var views = {
+    overview: document.getElementById("view-overview"),
+    health: document.getElementById("view-health"),
+    retrieval: document.getElementById("view-retrieval"),
+    sessions: document.getElementById("view-sessions"),
+    worktrees: document.getElementById("view-worktrees")
+  };
+  var crumbT = document.getElementById("crumbTitle");
+  var crumbP = document.getElementById("crumbPath");
+  var animated = {};
+
+  function show(name) {
+    if (!views[name]) name = "overview";
+    Object.keys(views).forEach(function (k) { views[k].classList.toggle("active", k === name); });
+    items.forEach(function (b) {
+      var on = b.getAttribute("data-view") === name;
+      b.classList.toggle("active", on);
+      if (on) { crumbT.textContent = b.getAttribute("data-title"); crumbP.textContent = b.getAttribute("data-path"); }
+    });
+    try { localStorage.setItem("ar.view", name); } catch (e) {}
+    if (name === "overview" && !animated.overview) { animated.overview = true; countUp(); }
+    if (name === "retrieval" && !animated.retrieval) { animated.retrieval = true; buildSpark(); }
+    views[name].scrollTop = 0;
+  }
+
+  items.forEach(function (b) { b.addEventListener("click", function () { show(b.getAttribute("data-view")); }); });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-view].jcard"), function (c) {
+    c.addEventListener("click", function () { show(c.getAttribute("data-view")); });
+  });
+  document.addEventListener("keydown", function (e) {
+    var map = { "1": "overview", "2": "health", "3": "retrieval", "4": "sessions", "5": "worktrees" };
+    if (map[e.key] && !/input|textarea/i.test((document.activeElement || {}).tagName || "")) show(map[e.key]);
+  });
+
+  var saved = "overview";
+  try { saved = localStorage.getItem("ar.view") || "overview"; } catch (e) {}
+  show(saved);
+
+  /* ── mission clock + uptime ──────────────────────────────────── */
+  var clock = document.getElementById("clock");
+  var up = document.getElementById("uptime");
+  var upSec = 148328; // ≈ 1d 17h base
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function tick() {
+    var d = new Date();
+    clock.textContent = pad(d.getUTCHours()) + ":" + pad(d.getUTCMinutes()) + ":" + pad(d.getUTCSeconds()) + " UTC";
+    upSec++;
+    var days = Math.floor(upSec / 86400), r = upSec % 86400;
+    up.textContent = pad(days) + "d " + pad(Math.floor(r / 3600)) + ":" + pad(Math.floor((r % 3600) / 60)) + ":" + pad(r % 60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ── count-up metrics ────────────────────────────────────────── */
+  function countUp() {
+    Array.prototype.forEach.call(document.querySelectorAll("#view-overview .mv[data-target]"), function (el) {
+      var target = parseFloat(el.getAttribute("data-target"));
+      var dec = parseInt(el.getAttribute("data-dec") || "0", 10);
+      var unit = el.querySelector("u") ? el.querySelector("u").outerHTML : "";
+      var t0 = performance.now(), dur = 900;
+      function step(t) {
+        var p = Math.min(1, (t - t0) / dur);
+        var e = 1 - Math.pow(1 - p, 3);
+        el.innerHTML = (target * e).toFixed(dec) + unit;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  /* ── retrieval sparkline ─────────────────────────────────────── */
+  function buildSpark() {
+    var s = document.getElementById("spark");
+    if (!s || s.childNodes.length) return;
+    var vals = [41, 52, 47, 63, 58, 71, 94, 80, 66, 72, 61, 55];
+    var max = Math.max.apply(null, vals);
+    vals.forEach(function (v) {
+      var i = document.createElement("i");
+      i.style.height = (18 + (v / max) * 82) + "%";
+      if (v === max) i.className = "hi";
+      s.appendChild(i);
+    });
+  }
+
+  /* ── drift scan button ───────────────────────────────────────── */
+  var scanBtn = document.getElementById("scanBtn");
+  scanBtn.addEventListener("click", function () {
+    if (scanBtn.disabled) return;
+    var label = scanBtn.textContent;
+    scanBtn.disabled = true;
+    scanBtn.textContent = "◌ Scanning…";
+    setTimeout(function () {
+      scanBtn.disabled = false;
+      scanBtn.textContent = "▣ Run drift scan";
+      pushEvent(["ok", "Drift scan · quality", "completed · 0 new drift · 2 known stale"]);
+    }, 1600);
+  });
+
+  /* ── live telemetry feed ─────────────────────────────────────── */
+  var feed = document.getElementById("feed");
+  var lastEvt = document.getElementById("lastEvt");
+  var pool = [
+    ["ok", "Semantic · retrieval", "concept resolved · c-04 router · 5 hits"],
+    ["ok", "Relationship · retrieval", "codegraphcontext callers · 4 hits"],
+    ["ok", "Intent · retrieval", "grepai contract scan · hidden truth found"],
+    ["warn", "Drift · quality", "onboarding lag · benchmarks slice"],
+    ["ok", "Onboarding · bootstrap", "wave 3 file cards committed"],
+    ["ok", "Session · lifecycle", "S-2272 entered build mode · durable task"],
+    ["ok", "Closeout · gate", "ledger aligned · approval held"],
+    ["ok", "Worktree · integration", "T-120 rebased clean on main"]
+  ];
+  function nowStr() { var d = new Date(); return pad(d.getUTCHours()) + ":" + pad(d.getUTCMinutes()) + ":" + pad(d.getUTCSeconds()); }
+  function pushEvent(ev) {
+    var row = document.createElement("div");
+    row.className = "feed-row new";
+    row.innerHTML = '<span class="ft">' + nowStr() + '</span><span class="dot ' + ev[0] + '"></span><div class="fd"><div class="fk">' + ev[1] + '</div><div class="fx">' + ev[2] + '</div></div>';
+    feed.insertBefore(row, feed.firstChild);
+    while (feed.childNodes.length > 8) feed.removeChild(feed.lastChild);
+    lastEvt.textContent = "just now";
+  }
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce) setInterval(function () { pushEvent(pool[Math.floor(Math.random() * pool.length)]); }, 4800);
+
+  /* ════ MEMORY CONSTELLATION ════ */
+  var cv = document.getElementById("constel");
+  var ctx = cv.getContext("2d");
+  var wrap = document.getElementById("cwrap");
+  var tip = document.getElementById("tip"), tipT = document.getElementById("tipT"), tipS = document.getElementById("tipS");
+  var cw = 0, ch = 0, dpr = 1;
+
+  var TIERS = [
+    { f: 0.20, spin: 0.00022, items: [
+      { l: "ROUTE MAP · kernel", s: "ok" }, { l: "COORD CONTEXT", s: "ok" },
+      { l: "ROUTE MAP · controllers", s: "ok" }, { l: "LEDGER", s: "ok" } ] },
+    { f: 0.36, spin: -0.00016, items: [
+      { l: "ONBOARDING WAVE 3", s: "ok" }, { l: "EVIDENCE PACK · mcp", s: "ok" },
+      { l: "ROUTE MAP · worktrees", s: "warn" }, { l: "CURATOR REVIEW", s: "ok" },
+      { l: "ROUTE MAP · memory_quality", s: "ok" } ] },
+    { f: 0.52, spin: 0.00012, items: [
+      { l: "FILE CARD · start.py", s: "warn" }, { l: "FILE CARD · resolver", s: "ok" },
+      { l: "FILE CARD · closeout", s: "ok" }, { l: "FILE CARD · drift_check", s: "ok" },
+      { l: "FILE CARD · router", s: "ok" }, { l: "FILE CARD · lifecycle", s: "ok" } ] },
+    { f: 0.68, spin: -0.00009, items: [
+      { l: "SLICE · benchmarks", s: "warn" }, { l: "SLICE · cli", s: "ok" },
+      { l: "RETRIEVAL INDEX", s: "ok" }, { l: "SLICE · install", s: "ok" },
+      { l: "CLOSEOUT GATE", s: "idle" }, { l: "SLICE · models", s: "ok" } ] }
+  ];
+  var nodes = [];
+  TIERS.forEach(function (tier, ti) {
+    tier.items.forEach(function (it, i) {
+      nodes.push({
+        tier: ti, f: tier.f, spin: tier.spin,
+        ang: (i / tier.items.length) * Math.PI * 2 + ti * 0.5,
+        phase: Math.random() * Math.PI * 2,
+        label: it.l, status: it.s, x: 0, y: 0, base: 2.2 + (3 - ti) * 0.5
+      });
+    });
+  });
+
+  function col(s) { return s === "warn" ? WARN : s === "idle" ? MUTED : s === "core" ? WHITE : FG; }
+
+  function resize() {
+    var r = wrap.getBoundingClientRect();
+    cw = r.width; ch = r.height;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.max(1, cw * dpr); cv.height = Math.max(1, ch * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    buildStars();
+  }
+
+  var stars = [];
+  function buildStars() {
+    stars = [];
+    var n = Math.round((cw * ch) / 5200);
+    for (var i = 0; i < n; i++) stars.push({ x: Math.random() * cw, y: Math.random() * ch, a: Math.random() * 0.5 + 0.1, tw: Math.random() * Math.PI * 2, sp: 0.6 + Math.random() });
+  }
+
+  var hovered = -1;
+  wrap.addEventListener("mousemove", function (e) {
+    var r = wrap.getBoundingClientRect();
+    var mx = e.clientX - r.left, my = e.clientY - r.top, best = -1, bd = 15;
+    for (var i = 0; i < nodes.length; i++) {
+      var d = Math.hypot(nodes[i].x - mx, nodes[i].y - my);
+      if (d < bd) { bd = d; best = i; }
+    }
+    hovered = best;
+    if (best >= 0) {
+      tip.style.left = nodes[best].x + "px";
+      tip.style.top = nodes[best].y + "px";
+      tipT.textContent = nodes[best].label;
+      tipS.textContent = nodes[best].status === "warn" ? "STATUS · DRIFT / STALE" : nodes[best].status === "idle" ? "STATUS · IDLE" : "STATUS · CURRENT";
+      tip.style.opacity = "1";
+      wrap.style.cursor = "pointer";
+    } else { tip.style.opacity = "0"; wrap.style.cursor = "default"; }
+  });
+  wrap.addEventListener("mouseleave", function () { hovered = -1; tip.style.opacity = "0"; });
+
+  var t = 0, sweep = 0;
+  function frame() {
+    t += 16; sweep += 0.006;
+    if (!cw) { requestAnimationFrame(frame); return; }
+    var cx = cw / 2, cy = ch / 2, R = Math.min(cw, ch) * 0.46;
+    ctx.clearRect(0, 0, cw, ch);
+
+    // starfield
+    ctx.fillStyle = FG;
+    for (var i = 0; i < stars.length; i++) {
+      var st = stars[i];
+      ctx.globalAlpha = st.a * (0.55 + 0.45 * Math.sin(t * 0.001 * st.sp + st.tw));
+      ctx.fillRect(st.x, st.y, 1, 1);
+    }
+    ctx.globalAlpha = 1;
+
+    // orbit rings
+    ctx.strokeStyle = FG;
+    for (var ti = 0; ti < TIERS.length; ti++) {
+      ctx.globalAlpha = 0.05;
+      ctx.beginPath(); ctx.arc(cx, cy, TIERS[ti].f * R, 0, Math.PI * 2); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+
+    // radar sweep
+    var sa = sweep % (Math.PI * 2);
+    var grad = ctx.createConicGradient ? null : null;
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, R * 0.72, sa - 0.28, sa);
+    ctx.closePath();
+    ctx.fillStyle = FG; ctx.globalAlpha = 0.05; ctx.fill();
+    ctx.globalAlpha = 0.22; ctx.strokeStyle = FG; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + Math.cos(sa) * R * 0.72, cy + Math.sin(sa) * R * 0.72); ctx.stroke();
+    ctx.restore();
+    ctx.globalAlpha = 1; ctx.lineWidth = 1;
+
+    // update node positions
+    for (var n = 0; n < nodes.length; n++) {
+      var nd = nodes[n];
+      nd.ang += nd.spin * 16;
+      nd.x = cx + Math.cos(nd.ang) * nd.f * R;
+      nd.y = cy + Math.sin(nd.ang) * nd.f * R;
+    }
+
+    // links core -> node
+    for (var l = 0; l < nodes.length; l++) {
+      var nl = nodes[l];
+      ctx.globalAlpha = nl.status === "warn" ? 0.16 : 0.07;
+      ctx.strokeStyle = col(nl.status);
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nl.x, nl.y); ctx.stroke();
+    }
+    // constellation links (adjacent tiers)
+    ctx.strokeStyle = FG; ctx.globalAlpha = 0.06;
+    for (var a = 0; a < nodes.length; a++) {
+      for (var b = a + 1; b < nodes.length; b++) {
+        if (nodes[b].tier - nodes[a].tier === 1) {
+          var dd = Math.hypot(nodes[a].x - nodes[b].x, nodes[a].y - nodes[b].y);
+          if (dd < R * 0.30) { ctx.beginPath(); ctx.moveTo(nodes[a].x, nodes[a].y); ctx.lineTo(nodes[b].x, nodes[b].y); ctx.stroke(); }
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+
+    // core glow + node
+    for (var g = 5; g >= 1; g--) {
+      ctx.globalAlpha = 0.05 * g;
+      ctx.fillStyle = WHITE;
+      ctx.beginPath(); ctx.arc(cx, cy, g * 4 + 4, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1; ctx.fillStyle = WHITE;
+    ctx.beginPath(); ctx.arc(cx, cy, 5, 0, Math.PI * 2); ctx.fill();
+
+    // nodes
+    for (var m = 0; m < nodes.length; m++) {
+      var node = nodes[m];
+      var pulse = 1 + 0.28 * Math.sin(t * 0.003 + node.phase);
+      var rad = node.base * pulse;
+      ctx.fillStyle = col(node.status);
+      if (m === hovered) {
+        ctx.globalAlpha = 0.9; ctx.strokeStyle = WHITE;
+        ctx.beginPath(); ctx.arc(node.x, node.y, rad + 5, 0, Math.PI * 2); ctx.stroke();
+        rad += 0.8;
+      }
+      ctx.globalAlpha = node.status === "warn" ? 1 : 0.92;
+      ctx.beginPath(); ctx.arc(node.x, node.y, rad, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(frame);
+  }
+
+  if (window.ResizeObserver) { new ResizeObserver(resize).observe(wrap); }
+  window.addEventListener("resize", resize);
+  resize();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

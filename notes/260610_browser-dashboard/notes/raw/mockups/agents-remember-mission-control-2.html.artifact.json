@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Agents Remember · Agent Operations",
+  "entry": "agents-remember-mission-control-2.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "primary": true,
+  "createdAt": "2026-06-05T11:05:28.467Z",
+  "updatedAt": "2026-06-05T11:05:29.235Z",
+  "designSystemId": "spacex",
+  "metadata": {
+    "identifier": "agents-remember-mission-control",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}
