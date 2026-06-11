@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-06-10T05:30+02:00 |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated | 2026-06-11T14:07+02:00 |
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 
 > **Status:** active baseline
 
@@ -191,6 +191,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-06-11T14:07+02:00: No route impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
 - 2026-06-11T06:47+02:00 — Issue #62 removed the direct-closeout path: closeout is worktree-only. Updated the approval-gated closeout inventory row (dropped `direct_closeout_*` identifiers), the Worktree Support narrative (command surface and the closing sentence now state the worktree-only rule), the c-09 boundary bullet, and removed the `direct closeout` glossary term.
 - 2026-06-10T10:26+02:00 — No route impact: README Status section bumped to 2.8.0 with the GitHub #54 release sentence, and the canonical root skills (l-01/c-09/c-11) gained the freshness-checkpoint doctrine in lockstep with their packaged copies; the repo surface this overview describes is unchanged.
 - 2026-06-10T09:56+02:00 — No route impact: issue #54 sub-task D is mcp-package-internal (worktree_sync tool + status freshness); the mcp and worktrees/modules route overviews carry the content updates, and the repo surface this overview describes is unchanged.

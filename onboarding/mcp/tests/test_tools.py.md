@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -88,6 +88,7 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-11T06:47+02:00 — `test_phase_04_tools_are_reported` no longer expects `direct_closeout_preview`/`direct_closeout_apply` (issue #62 worktree-only closeout removed the tools from `PUBLIC_TOOLS`).
 - 2026-06-10T05:30+02:00 — Diagnostics/watchers tool tests assert the S4 compact wire shape: rawStatus/currentState bodies absent inline, present in the `reportPath` file, `currentStateFile` still on disk.
 - 2026-06-02T04:40+02:00: Updated the skills_install payload tests for the flat installer — dropped the `layout == "tree"` assertion and replaced the legacy-namespace-symlink test with a per-skill flat-destination symlink-replacement test. `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.

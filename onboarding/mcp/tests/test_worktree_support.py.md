@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-06-10T05:20+02:00|
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 
 ## Purpose
 
@@ -94,6 +94,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-11T09:10+02:00 — Issue #62 follow-up: added `test_closeout_blocks_memory_commit_when_memory_quality_fails` and `test_closeout_refreshes_entity_fingerprint_after_code_commit` — worktree-closeout replacements for coverage the deleted direct tests carried; CI's `--fail-on-crap-threshold` gate had flagged `parse_entity_fingerprint_rows`, `_fingerprint_table_header`, and `_format_memory_quality_finding` over the CRAP threshold from the coverage loss.
 - 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: removed the seven `test_direct_closeout_*` end-to-end tests and the `direct_external_memory_fixture`; the sidecar/route-overview body-gate behavior remains covered by `RequireUpdatedSidecarContentTests` / `RequireUpdatedRouteOverviewContentTests` and the worktree closeout tests.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added `RequireUpdatedRouteOverviewContentTests` (nearest-governor gating, ancestor reporting, marker attestation, untraced body edits, root-as-governor) and payload assertions for `route_overviews_attested_no_impact`; route-overview fixture gains a `No route impact:` entry.

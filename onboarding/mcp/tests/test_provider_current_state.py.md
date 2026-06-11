@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T06:20+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -107,6 +107,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the 2.5.0/2.5.1 readiness coverage (content-gated ok, indexing busy list, restarting watcher, scan markers) into Logic (documentation only).
 - 2026-06-10T05:30+02:00 — Added tests: restarting (crash-looping) watcher is not ready and degrades the provider/global ok; GrepAI `initialScan` markers map to indexing/indexed/unknown without degrading readiness; GrepAI indexing feeds the summary busy list.
 - 2026-06-09T22:10+02:00 — Added tests for empty-graph degradation (repo target, provider, aggregate, and global packet `ok`/`partial`), the `indexing` transient staying ready at every level, the CGC per-repo restart recovery action, and the summary `indexing` busy-target list.

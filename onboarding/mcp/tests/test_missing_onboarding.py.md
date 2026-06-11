@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_missing_onboarding.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:51+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -44,6 +44,7 @@ historical repository gaps.
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-05-24T18:51+02:00: Added coverage for renamed linked worktrees resolving external memory by Git common-directory repository identity.
 - 2026-05-24T03:24+02:00: Refreshed verification metadata after the source commit landed.
 - 2026-05-24T03:22+02:00: Created before the source commit so the new test file has an onboarding pair before closeout.

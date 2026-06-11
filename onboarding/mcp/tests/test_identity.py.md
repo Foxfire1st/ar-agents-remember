@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_identity.py`               |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T23:15+02:00|
-| lastVerifiedCommitHash | `83b147e9ccc481749f7a3b40a27acf23cfe4296b` |
-| lastVerifiedCommitDate | 2026-06-04T23:30:06+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -45,5 +45,6 @@ deterministic and collision-safe rather than a lossy truncation.
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-04T23:15+02:00: Added coverage for dotted release worktree names, asserting provider instance IDs replace dots with hyphens before being used in Docker Compose project names. Verification metadata pinned until closeout.
 - 2026-06-01T13:30+02:00: Created with the `scoped_name` DNS-label bound (mcp 1.0.1). Verification metadata pinned to the last committed source until closeout.

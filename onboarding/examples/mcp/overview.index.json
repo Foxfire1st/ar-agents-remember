@@ -41,7 +41,7 @@
       "settings.example",
       "route-local-overview",
       "examples/mcp",
-      "c20a3292e667d227a3be0c1fb276f8a701df814f",
+      "b9f1a31ccf6c826f4558e15d3feada70d2375e66",
       "examples/mcp/",
       "system/settings.json",
       "benchmarksEnabled",
@@ -53,16 +53,19 @@
       "providerSetupSeconds",
       "providerSeconds",
       "system/coding-guidelines.md",
+      "agents-remember-md",
+      "agents-remember",
       "doc_type",
       "sourceRoute",
       "lastUpdated",
       "T12",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T14",
+      "T15",
       "MCP",
       "workspaceRoot",
-      "coordinationRoot"
+      "coordinationRoot",
+      "T14"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T10:26+02:00     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-11T14:07+02:00 |
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -116,6 +116,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-11T14:07+02:00: No content impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
 - 2026-06-10T10:26+02:00 — No content impact: Status section bumped to 2.8.0 with the GitHub #54 release sentence (lifecycle-long stale-base prevention: include_freshness, stale-base preflight, memory_main_advance, worktree_sync); the README structure this sidecar describes is unchanged.
 - 2026-06-10T08:15+02:00 — Status section bumped to 2.7.0 with the release sentence: background worktree provider setup observability (#53) and container-form CGC seed argv on Windows (#58).
 - 2026-06-10T06:05+02:00 — No content impact: Status section bumped to 2.6.0 with the memory-integrity release sentence (carryover overview candidates, closeout body/history gates, no-impact markers; GitHub #56); the sidecar's description of the README remains accurate.

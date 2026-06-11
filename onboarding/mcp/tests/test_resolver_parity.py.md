@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_resolver_parity.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T18:05+02:00                     |
-| lastVerifiedCommitHash | `3417d47f1e76d37e9ba6e803c7b28afa4758da9c` |
-| lastVerifiedCommitDate | 2026-05-23T23:06:47+02:00|
+| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
+| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -40,4 +40,5 @@ deleted runtime skill script.
 
 ## Update History
 
+- 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-05-23T18:05+02:00: Created during direct closeout prep after resolver parity tests stopped comparing against the deleted old script.
