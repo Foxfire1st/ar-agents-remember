@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Agents Remember · Memory Control",
+  "entry": "agents-remember-mission-control.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "primary": true,
+  "createdAt": "2026-06-05T10:33:41.814Z",
+  "updatedAt": "2026-06-05T10:33:42.179Z",
+  "designSystemId": "spacex",
+  "metadata": {
+    "identifier": "agents-remember-mission-control",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}
