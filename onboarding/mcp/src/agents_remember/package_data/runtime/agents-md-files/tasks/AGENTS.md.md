@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T11:18+02:00                     |
@@ -62,9 +62,9 @@ This onboarding is backed by the source template itself.
 
 | Finding                                                                                                              | Citations | Source Path |
 | -------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The template covers meta-questioning, task reframing, top-down/bottom-up design philosophy, assumptions, and truth gaps. | L1-L103 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md) |
-| Evidence-first reasoning and representative examples are required when correctness depends on interpretation or risky structure. | L105-L133 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md) |
-| The visible planning standard lists the context agents should surface before non-trivial implementation.             | L136-L153 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md) |
+| The template covers meta-questioning, task reframing, top-down/bottom-up design philosophy, assumptions, and truth gaps. | L1-L103 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md) |
+| Evidence-first reasoning and representative examples are required when correctness depends on interpretation or risky structure. | L105-L133 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md) |
+| The visible planning standard lists the context agents should surface before non-trivial implementation.             | L136-L153 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md) |
 
 ## Cross-Repo References
 

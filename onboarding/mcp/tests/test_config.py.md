@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
@@ -48,8 +48,8 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 
 | Finding | Source Path |
 | --- | --- |
-| The tested loader lives in MCP config. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
+| The tested loader lives in MCP config. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 
 ## Update History
 

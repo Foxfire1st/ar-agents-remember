@@ -1,6 +1,6 @@
-# agents-remember-md Memory Settings
+# agents-remember Memory Settings
 
-This is the committed memory settings file for the `agents-remember-md` shared memory repo.
+This is the committed memory settings file for the `agents-remember` shared memory repo.
 
 ## Scope
 
@@ -20,7 +20,7 @@ When adding an entry, prepend it at the top of the relevant list or table. Use a
 
 ## Path Eligibility
 
-The path rules in `settings.json` are unscoped because this memory repo maps to exactly one code repo: `agents-remember-md`.
+The path rules in `settings.json` are unscoped because this memory repo maps to exactly one code repo: `agents-remember`.
 
 Benchmark case metadata and documentation may be source material, but resettable benchmark workspaces are not. `settings.json` explicitly excludes benchmark `user-runs/`, benchmark workspaces, and packaged benchmark fixture data under `mcp/src/agents_remember/package_data/benchmarks/**` so cloned repos, workspace-local `ar-coordination/` trees, and packaged benchmark memory snapshots cannot recursively generate onboarding for themselves.
 

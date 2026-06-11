@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                  |
 | ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember-md                                     |
+| repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -101,14 +101,14 @@ retrieval contract over installed provider tooling and durable onboarding.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | L8-L28 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L78 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L80-L122 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | L41-L44; L90-L92 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | L75-L78; L118-L122 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | L129-L163 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | L1-L200 | [grepai-high-leverage-usage.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
-| The sibling CGC catalog explains all high-level `cgc analyze` methods and practical selection rules with synthetic examples only. | L1-L38, L321-L332 | [codegraphcontext-high-level-methods.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | L8-L28 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L78 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L80-L122 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | L41-L44; L90-L92 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | L75-L78; L118-L122 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | L129-L163 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | L1-L200 | [grepai-high-leverage-usage.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
+| The sibling CGC catalog explains all high-level `cgc analyze` methods and practical selection rules with synthetic examples only. | L1-L38, L321-L332 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
 
 ## Cross-Repo References
 

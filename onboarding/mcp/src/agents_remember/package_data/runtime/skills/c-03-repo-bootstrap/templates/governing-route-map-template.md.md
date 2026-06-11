@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                          |
+| repository             | agents-remember                                                                          |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/governing-route-map-template.md` |
 | doc_type               | `file-level-onboarding`                                                                     |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                      | Citations | Source Path                                                                                  |
 | -------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------- |
-| The governing route map template defines placement principles for route-local overviews and keeps file-level onboarding separate. | L1-L13    | [governing-route-map-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/governing-route-map-template.md) |
-| The template records proposed routes, deferred routes, moved/deleted routes, cross-cutting concepts, parent/child overview relationships, and developer questions. | L15-L52   | [governing-route-map-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/governing-route-map-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4B writes `bootstrap/governing-route-map.md` from this template before overview cards and waves, and records stale, moved, or deleted routes for existing-memory slice maintenance. | L782-L808 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The governing route map template defines placement principles for route-local overviews and keeps file-level onboarding separate. | L1-L13    | [governing-route-map-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/governing-route-map-template.md) |
+| The template records proposed routes, deferred routes, moved/deleted routes, cross-cutting concepts, parent/child overview relationships, and developer questions. | L15-L52   | [governing-route-map-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/governing-route-map-template.md) |
+| `c-03-repo-bootstrap` skill Phase 4B writes `bootstrap/governing-route-map.md` from this template before overview cards and waves, and records stale, moved, or deleted routes for existing-memory slice maintenance. | L782-L808 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

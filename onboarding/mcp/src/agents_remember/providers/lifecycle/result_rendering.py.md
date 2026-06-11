@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/result_rendering.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
@@ -38,8 +38,8 @@ payloads, and routes dry-run versus live command rendering.
 
 | Finding | Source Path |
 | --- | --- |
-| The lifecycle CLI delegates result display to this module. | [cli.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/cli.py) |
-| Provider lifecycle tests verify native captured output streaming. | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| The lifecycle CLI delegates result display to this module. | [cli.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/cli.py) |
+| Provider lifecycle tests verify native captured output streaming. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -33,7 +33,7 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 ### Docs References
 
-No external domain documentation is required for this repository-local workflow. The resolved `agents-remember-md` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this workflow is repository source.
+No external domain documentation is required for this repository-local workflow. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this workflow is repository source.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
@@ -45,11 +45,11 @@ This workflow is the primary schema source for mirrored file-level onboarding.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Scope and placement rules require one onboarding unit per source file, store sidecar onboarding under the resolved onboarding root, and route structural slice changes to `c-03-repo-bootstrap` skill. | L1-L44 | [file-level workflow](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
-| Source discovery rules require the resolved `Domain Documentation` category, authoritative live documentation retrieval when the registry names it, local mirrors as orientation only, and actual evidence citations instead of source registries. | L20-L29 | [file-level workflow](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
-| Section rules require metadata with `governingOverview`, a governing overview section, code commentary, top-level docs references, repo-internal references, cross-repo references, and update history. | L47-L86 | [file-level workflow](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
-| Creation steps now confirm the target is one concrete file, route route-local slice cases to `c-03-repo-bootstrap` skill, identify/read the nearest governing overview, and cross-check all reference sections. | L87-L100 | [file-level workflow](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
-| Maintenance steps require re-reading source and onboarding, refreshing changed sections and citations, applying inline syntax rules, appending update history, classifying moves/splits/merges/relocations/deletions, preserving accurate old onboarding in current targets, and routing whole-route moves or deletions to `c-03-repo-bootstrap` skill. | L103-L121 | [file-level workflow](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
+| Scope and placement rules require one onboarding unit per source file, store sidecar onboarding under the resolved onboarding root, and route structural slice changes to `c-03-repo-bootstrap` skill. | L1-L44 | [file-level workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
+| Source discovery rules require the resolved `Domain Documentation` category, authoritative live documentation retrieval when the registry names it, local mirrors as orientation only, and actual evidence citations instead of source registries. | L20-L29 | [file-level workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
+| Section rules require metadata with `governingOverview`, a governing overview section, code commentary, top-level docs references, repo-internal references, cross-repo references, and update history. | L47-L86 | [file-level workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
+| Creation steps now confirm the target is one concrete file, route route-local slice cases to `c-03-repo-bootstrap` skill, identify/read the nearest governing overview, and cross-check all reference sections. | L87-L100 | [file-level workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
+| Maintenance steps require re-reading source and onboarding, refreshing changed sections and citations, applying inline syntax rules, appending update history, classifying moves/splits/merges/relocations/deletions, preserving accurate old onboarding in current targets, and routing whole-route moves or deletions to `c-03-repo-bootstrap` skill. | L103-L121 | [file-level workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) |
 
 ## Cross-Repo References
 

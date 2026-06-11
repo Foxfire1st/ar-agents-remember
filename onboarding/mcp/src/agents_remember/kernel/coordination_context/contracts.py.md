@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/contracts.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
@@ -46,8 +46,8 @@ No external documentation is needed for this package-local worktree contract ada
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Worktree contract parsing and task-root candidate logic live in the worktrees package. | contract helper | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Resolver assembly consumes the optional contract payload. | context assembly | [resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
+| Worktree contract parsing and task-root candidate logic live in the worktrees package. | contract helper | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Resolver assembly consumes the optional contract payload. | context assembly | [resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
 
 ## Cross-Repo References
 

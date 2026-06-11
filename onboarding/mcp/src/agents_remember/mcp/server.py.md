@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
@@ -131,11 +131,11 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 
 | Finding | Source Path |
 | --- | --- |
-| Payload builders are defined in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | [tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools) |
-| Provider diagnostics payloads are modeled separately from compact provider summaries. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
-| The config loader rejects coordinator `system/settings.json` as MCP authority. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| The compact-content shim installed at server creation minifies tool-result text. | [compact_content.py](agents-remember-md/mcp/src/agents_remember/mcp/compact_content.py) |
-| The `runtime_install` tool docstring names preserved user data, managed provider scaffold replacement, watcher rebind behavior, and non-index-rebuilding post-install watcher checks. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
+| Payload builders are defined in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | [tools/](agents-remember/mcp/src/agents_remember/mcp/tools) |
+| Provider diagnostics payloads are modeled separately from compact provider summaries. | [providers.py](agents-remember/mcp/src/agents_remember/models/providers.py) |
+| The config loader rejects coordinator `system/settings.json` as MCP authority. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| The compact-content shim installed at server creation minifies tool-result text. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
+| The `runtime_install` tool docstring names preserved user data, managed provider scaffold replacement, watcher rebind behavior, and non-index-rebuilding post-install watcher checks. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 
 ## Update History
 

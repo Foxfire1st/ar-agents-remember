@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T08:39+02:00|
@@ -54,7 +54,7 @@ runtime install, and `skill_tools.py` for skill installation.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP payload builders call these controllers and then validate responses through the model registry. | [mcp/tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools/) |
+| MCP payload builders call these controllers and then validate responses through the model registry. | [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/) |
 | Public tool response models live in the models package. | [models overview](../models/overview.md) |
 
 Worktree start is async (GitHub #53): `worktree_tools.py` transfers the temp

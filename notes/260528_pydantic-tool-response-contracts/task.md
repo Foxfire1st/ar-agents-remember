@@ -1,7 +1,7 @@
 # Task: Pydantic Tool Response Contracts
 
 **Status:** inProgress
-**Repo:** agents-remember-md
+**Repo:** agents-remember
 **Type:** Code
 **Created:** 2026-05-28T16:53
 
@@ -368,27 +368,27 @@ def response_payload(
 
 ## References
 
-- `/home/mohamedreadone/Projects/agents-remember-md/context-packet.json`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/controllers/benchmark_tools.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/controllers/coordination_tools.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/controllers/memory_tools.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/controllers/worktree_tools.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/models/benchmarks.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/models/core.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/models/memory.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/models/runtime.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/models/skills.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/models/tool_registry.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/status.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/current_state.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/mcp/tools.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/mcp/server.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/tests/test_context_packet.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/tests/test_models.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/tests/test_provider_current_state.py`
-- `/home/mohamedreadone/Projects/agents-remember-md/mcp/tests/test_provider_workflow_integration.py`
-- `/home/mohamedreadone/Projects/ar-coordination/memory-repos/ar-agents-remember-md/system/tools.md`
-- Drift gate before planning: `actionableCount=0`, report `/home/mohamedreadone/Projects/ar-coordination/temp/drift-reports/agents-remember-md/agents-remember-md_main_drift-report.md`
+- `/home/mohamedreadone/Projects/agents-remember/context-packet.json`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/controllers/context_packet.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/controllers/benchmark_tools.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/controllers/coordination_tools.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/controllers/memory_tools.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/controllers/provider_tools.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/controllers/skill_tools.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/models/benchmarks.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/models/core.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/models/memory.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/models/runtime.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/models/skills.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/models/tool_registry.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/status.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/current_state.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/mcp/tools.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/mcp/server.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/tests/test_context_packet.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/tests/test_models.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/tests/test_provider_current_state.py`
+- `/home/mohamedreadone/Projects/agents-remember/mcp/tests/test_provider_workflow_integration.py`
+- `/home/mohamedreadone/Projects/ar-coordination/memory-repos/ar-agents-remember/system/tools.md`
+- Drift gate before planning: `actionableCount=0`, report `/home/mohamedreadone/Projects/ar-coordination/temp/drift-reports/agents-remember/agents-remember_main_drift-report.md`

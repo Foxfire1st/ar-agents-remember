@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-03T18:58+02:00                     |
@@ -65,10 +65,10 @@ No external documentation is needed for this repository-local skill.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `c-00-initialize-memory-repo` skill initializes memory roots, not coordinator runtime assets, harness skills, task worktrees, or onboarding content; package-based first-run setup gets harness skills from copied starter packages and uses `skills_install` only for maintenance/manual paths. | L8-L18; L43-L49 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
-| Internal memory resolves to repo-local `ar-memory/`; explicit external memory resolves to `ar-coordination/memory-repos/ar-<repo>/` after runtime install is verified. | L63-L92 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
-| Starter settings examples keep storage and path rules under memory-layer `system/settings.json` and seed common generated/vendor/build/local excludes. | L157-L245 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
-| Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired. | L302-L318 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
+| `c-00-initialize-memory-repo` skill initializes memory roots, not coordinator runtime assets, harness skills, task worktrees, or onboarding content; package-based first-run setup gets harness skills from copied starter packages and uses `skills_install` only for maintenance/manual paths. | L8-L18; L43-L49 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
+| Internal memory resolves to repo-local `ar-memory/`; explicit external memory resolves to `ar-coordination/memory-repos/ar-<repo>/` after runtime install is verified. | L63-L92 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
+| Starter settings examples keep storage and path rules under memory-layer `system/settings.json` and seed common generated/vendor/build/local excludes. | L157-L245 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
+| Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired. | L302-L318 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
 
 ## Cross-Repo References
 

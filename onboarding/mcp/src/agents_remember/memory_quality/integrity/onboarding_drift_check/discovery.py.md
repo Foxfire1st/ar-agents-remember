@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -36,8 +36,8 @@ relativizes a path against the onboarding root.
 
 | Finding | Source Path |
 | --- | --- |
-| `sidecar.py` and `entities.py` parse metadata and relativize paths through these helpers. | [sidecar.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
-| Path normalization is provided by the kernel resolver. | [coordination_context_resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| `sidecar.py` and `entities.py` parse metadata and relativize paths through these helpers. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
+| Path normalization is provided by the kernel resolver. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 
 ## Update History
 

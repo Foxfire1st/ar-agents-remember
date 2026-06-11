@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                            |
 | ---------------------- | ---------------------------------------------------------------- |
-| repository             | agents-remember-md                                               |
+| repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/materialize.py`   |
 | doc_type               | `file-level-onboarding`                                          |
 | lastUpdated            | 2026-05-29T18:35+02:00|
@@ -37,8 +37,8 @@ then appends source `.gitignore` patterns and repo-specific managed exclusions.
 
 | Finding | Source Path |
 | --- | --- |
-| `CgcRuntimeLayout` definition and construction. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/context/core.py) |
-| Ignore/requirements constants and `.gitignore` reader. | [constants.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/context/constants.py) |
+| `CgcRuntimeLayout` definition and construction. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/context/core.py) |
+| Ignore/requirements constants and `.gitignore` reader. | [constants.py](agents-remember/mcp/src/agents_remember/providers/cgc/context/constants.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/setting_values.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
@@ -46,8 +46,8 @@ No external documentation is needed for these local parsing helpers.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| JSON settings parsing delegates shared value validation to this module. | JSON parser | [json_settings.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/json_settings.py) |
-| Cross-repo runtime resolution consumes parsed allow entries. | cross-repo resolver | [cross_repo.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py) |
+| JSON settings parsing delegates shared value validation to this module. | JSON parser | [json_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/json_settings.py) |
+| Cross-repo runtime resolution consumes parsed allow entries. | cross-repo resolver | [cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py) |
 
 ## Cross-Repo References
 

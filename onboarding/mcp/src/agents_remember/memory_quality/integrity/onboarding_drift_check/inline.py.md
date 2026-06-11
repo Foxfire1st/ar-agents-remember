@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
@@ -38,8 +38,8 @@ finds inline-eligible sources via storage resolution.
 
 | Finding | Source Path |
 | --- | --- |
-| Inline source enumeration reads repo files through `git_ops.list_repo_sources`. | [git_ops.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
-| Inline parsing and CLI behavior are covered by the package tests. | [test_onboarding_drift.py](agents-remember-md/mcp/tests/test_onboarding_drift.py) |
+| Inline source enumeration reads repo files through `git_ops.list_repo_sources`. | [git_ops.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
+| Inline parsing and CLI behavior are covered by the package tests. | [test_onboarding_drift.py](agents-remember/mcp/tests/test_onboarding_drift.py) |
 
 ## Update History
 

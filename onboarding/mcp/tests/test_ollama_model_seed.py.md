@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_ollama_model_seed.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -74,7 +74,7 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| The embedder module under test. | [embedder.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py) |
+| The embedder module under test. | [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py) |
 
 ## Cross-Repo References
 

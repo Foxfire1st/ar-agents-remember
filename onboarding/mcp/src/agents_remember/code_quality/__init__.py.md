@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T06:05+02:00                     |
@@ -33,8 +33,8 @@ register MCP tools or runtime behavior.
 
 | Finding | Source Path |
 | --- | --- |
-| CRAP-Calculator lives in this package. | [crap_calculator.py](agents-remember-md/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| The source quality suite wrapper lives in this package. | [check.py](agents-remember-md/mcp/src/agents_remember/code_quality/check.py) |
+| CRAP-Calculator lives in this package. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
+| The source quality suite wrapper lives in this package. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
 
 ## Update History
 

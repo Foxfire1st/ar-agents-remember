@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
@@ -56,8 +56,8 @@ No external documentation is needed.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics. | L1-L120 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md) |
-| The examples README documents that the memory layer owns this landing-flow file. | n/a | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
+| The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics. | L1-L120 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md) |
+| The examples README documents that the memory layer owns this landing-flow file. | n/a | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
 
 ## Cross-Repo References
 

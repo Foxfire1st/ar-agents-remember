@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "agents-remember-route-index",
-  "repository": "agents-remember-md",
+  "repository": "agents-remember",
   "route": "",
   "overview": "overview.md",
   "index": "overview.index.json",
@@ -83,7 +83,7 @@
       "package_data",
       "repo-overview",
       "a69b72e101d09423601916c03d4f59ecdee7dda6",
-      "agents-remember-md",
+      "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
       "ar-coordination/",

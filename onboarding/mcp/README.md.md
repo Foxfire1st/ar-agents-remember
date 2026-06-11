@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T18:42+02:00                     |
@@ -103,12 +103,12 @@ the workspace and never the user's home directory.
 
 | Finding | Source Path |
 | --- | --- |
-| The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | [pyproject.toml](agents-remember-md/mcp/pyproject.toml) |
-| The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | [`c-13-install-and-onboard` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py); [mcp-tools.md](agents-remember-md/docs/reference/mcp-tools.md) |
-| The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
+| The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py); [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | [pyproject.toml](agents-remember/mcp/pyproject.toml) |
+| The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
+| The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py); [mcp-tools.md](agents-remember/docs/reference/mcp-tools.md) |
+| The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 
 ## Update History
 

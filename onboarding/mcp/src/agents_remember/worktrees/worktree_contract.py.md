@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
@@ -70,11 +70,11 @@ Same-repository source defines the contract format and `c-09-git-worktree-manage
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines the contract schema, valid memory modes, the `ContractError` type (now subclassing `AgentsRememberError` from `agents_remember.errors`), and the full `WorktreeContract` state record. | L16-L60 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Folder naming and default contract helpers derive task roots, worktree groups, and external-memory ledger paths. | L61-L151 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Load/write/render helpers parse front matter, validate contracts, and render closeout/integration state back to markdown. | L154-L289 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Validation and limited YAML parsing enforce required fields and external-memory path requirements. | L292-L387 | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The worktree lifecycle modules import contract helpers and record closeout/integration commit state through these contract objects. | n/a | [modules/overview.md](agents-remember-md/mcp/src/agents_remember/worktrees/modules/overview.md) |
+| The module defines the contract schema, valid memory modes, the `ContractError` type (now subclassing `AgentsRememberError` from `agents_remember.errors`), and the full `WorktreeContract` state record. | L16-L60 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Folder naming and default contract helpers derive task roots, worktree groups, and external-memory ledger paths. | L61-L151 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Load/write/render helpers parse front matter, validate contracts, and render closeout/integration state back to markdown. | L154-L289 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Validation and limited YAML parsing enforce required fields and external-memory path requirements. | L292-L387 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The worktree lifecycle modules import contract helpers and record closeout/integration commit state through these contract objects. | n/a | [modules/overview.md](agents-remember/mcp/src/agents_remember/worktrees/modules/overview.md) |
 
 ## Cross-Repo References
 

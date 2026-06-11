@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/installation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T06:20+02:00|
@@ -68,9 +68,9 @@ removed from this lifecycle path.
 
 | Finding | Source Path |
 | --- | --- |
-| CGC layout and backend settings come from the CGC core module. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/core.py) |
-| CGC backend install/start behavior is delegated to the backend module. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| Docker runner image build and command helpers live in the runner module. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| CGC layout and backend settings come from the CGC core module. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/core.py) |
+| CGC backend install/start behavior is delegated to the backend module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
+| Docker runner image build and command helpers live in the runner module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
 
 ## Update History
 

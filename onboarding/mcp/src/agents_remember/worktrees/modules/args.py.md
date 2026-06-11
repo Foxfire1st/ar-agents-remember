@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
@@ -56,8 +56,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Provider setup config is typed through the companion worktree models module. | [models.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/models.py) |
-| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. | [cli.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/cli.py) |
+| Provider setup config is typed through the companion worktree models module. | [models.py](agents-remember/mcp/src/agents_remember/worktrees/modules/models.py) |
+| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. | [cli.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cli.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/job-variants.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-03T03:38+02:00                     |
@@ -45,7 +45,7 @@ The lenses tune the shared spine defined in the companion files.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The lenses tune the `frame` opening move and the `decide` default of the shared spine. | n/a | [lifecycle.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
+| The lenses tune the `frame` opening move and the `decide` default of the shared spine. | n/a | [lifecycle.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T01:06+02:00                     |
@@ -45,12 +45,12 @@ The workflow defines the concrete process behind the `w-02-light-task-workflow` 
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Light-task artifacts use `<task-root>/<task-slug>/task.md`, and `c-09-git-worktree-manager` skill later places `contract.md` beside `task.md` when worktrees are created. | L15-L25 | [`w-02-light-task-workflow` workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
-| Drift-gated planning now records that clean-source update candidates are refreshed through `c-05-create-or-update-onboarding-files` skill, dirty-source drift is left alone unless explicitly owned, and refreshed external-memory onboarding plus ledger changes must be committed before any `c-09-git-worktree-manager` skill worktree starts. | L45-L52 | [`w-02-light-task-workflow` workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
-| Drift detection is part of task planning before the durable plan is finalized. | L45-L51 | [`w-02-light-task-workflow` workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
-| Planning checks `c-08-ar-coordination-context-resolver` skill resolved docs, sources, and onboarding roots before writing the approval artifact. | L57-L64; L98-L115 | [`w-02-light-task-workflow` workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
-| Implementation, validation, onboarding propagation, closeout preview, and commit approval handoff are one checklist-driven cycle. | L117-L174 | [`w-02-light-task-workflow` workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
-| Before writing `task.md`, the workflow applies the Task Collaboration Doctrine sized to the request and records the settled design in the task file's `## Design` section, from which the implementation steps derive. | L66-L73; L85 | [`w-02-light-task-workflow` workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
+| Light-task artifacts use `<task-root>/<task-slug>/task.md`, and `c-09-git-worktree-manager` skill later places `contract.md` beside `task.md` when worktrees are created. | L15-L25 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
+| Drift-gated planning now records that clean-source update candidates are refreshed through `c-05-create-or-update-onboarding-files` skill, dirty-source drift is left alone unless explicitly owned, and refreshed external-memory onboarding plus ledger changes must be committed before any `c-09-git-worktree-manager` skill worktree starts. | L45-L52 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
+| Drift detection is part of task planning before the durable plan is finalized. | L45-L51 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
+| Planning checks `c-08-ar-coordination-context-resolver` skill resolved docs, sources, and onboarding roots before writing the approval artifact. | L57-L64; L98-L115 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
+| Implementation, validation, onboarding propagation, closeout preview, and commit approval handoff are one checklist-driven cycle. | L117-L174 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
+| Before writing `task.md`, the workflow applies the Task Collaboration Doctrine sized to the request and records the settled design in the task file's `## Design` section, from which the implementation steps derive. | L66-L73; L85 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
 
 ## Cross-Repo References
 

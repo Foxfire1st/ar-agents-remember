@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -68,9 +68,9 @@ seed target without the caller needing to pass it separately.
 
 | Finding | Source Path |
 | --- | --- |
-| GrepAI PostgreSQL backend lifecycle consumes backend settings from this module. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
-| GrepAI Ollama lifecycle consumes embedder settings from this module. | [embedder.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py) |
-| GrepAI runner image/container lifecycle consumes runner settings and workspace config from this module. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
+| GrepAI PostgreSQL backend lifecycle consumes backend settings from this module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
+| GrepAI Ollama lifecycle consumes embedder settings from this module. | [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py) |
+| GrepAI runner image/container lifecycle consumes runner settings and workspace config from this module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
 
 ## Update History
 

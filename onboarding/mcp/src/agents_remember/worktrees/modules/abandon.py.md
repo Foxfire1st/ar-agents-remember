@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -70,11 +70,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Provider teardown is delegated to `provider_teardown.py`. | [provider_teardown.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
-| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, `remove_empty_dir` are reused from `cleanup.py`. | [cleanup.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| `WorktreeArgs` types the abandon input. | [args.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/args.py) |
-| The server registers `worktree_abandon` with `force` forwarded from the MCP layer. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | [test_worktree_abandon.py](agents-remember-md/mcp/tests/test_worktree_abandon.py) |
+| Provider teardown is delegated to `provider_teardown.py`. | [provider_teardown.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
+| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, `remove_empty_dir` are reused from `cleanup.py`. | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
+| `WorktreeArgs` types the abandon input. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
+| The server registers `worktree_abandon` with `force` forwarded from the MCP layer. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | [test_worktree_abandon.py](agents-remember/mcp/tests/test_worktree_abandon.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T02:00+02:00                     |
@@ -76,10 +76,10 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 
 | Finding | Source Path |
 | --- | --- |
-| Provider summary and diagnostics projection live in the provider status module. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
-| Provider response models distinguish compact summaries from diagnostics/native payloads. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
-| MCP payload builders validate this controller output through the model registry. | [tools/providers.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/providers.py) |
-| Unit tests guard action naming (refresh rejected, invalidate-indexes dispatches) and worktree routing resolution. | [test_provider_watcher_actions.py](agents-remember-md/mcp/tests/test_provider_watcher_actions.py); [test_provider_worktree_routing.py](agents-remember-md/mcp/tests/test_provider_worktree_routing.py) |
+| Provider summary and diagnostics projection live in the provider status module. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
+| Provider response models distinguish compact summaries from diagnostics/native payloads. | [providers.py](agents-remember/mcp/src/agents_remember/models/providers.py) |
+| MCP payload builders validate this controller output through the model registry. | [tools/providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py) |
+| Unit tests guard action naming (refresh rejected, invalidate-indexes dispatches) and worktree routing resolution. | [test_provider_watcher_actions.py](agents-remember/mcp/tests/test_provider_watcher_actions.py); [test_provider_worktree_routing.py](agents-remember/mcp/tests/test_provider_worktree_routing.py) |
 
 ## Update History
 

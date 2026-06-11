@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_setup_progress.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00                     |
@@ -47,7 +47,7 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| Module under test. | [setup_progress.py](agents-remember-md/mcp/src/agents_remember/providers/setup_progress.py) |
+| Module under test. | [setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
 
 ## Update History
 

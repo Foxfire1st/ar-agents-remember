@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/cli/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
@@ -60,8 +60,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| The controller that builds the printed packet and owns request semantics. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
-| CLI JSON output is covered by the context packet tests. | [test_context_packet.py](agents-remember-md/mcp/tests/test_context_packet.py) |
+| The controller that builds the printed packet and owns request semantics. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
+| CLI JSON output is covered by the context packet tests. | [test_context_packet.py](agents-remember/mcp/tests/test_context_packet.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `examples/mcp/coding-guidelines.example.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T21:30+02:00                     |
@@ -58,7 +58,7 @@ descendant of the same ruleset.
 ### Invariants And Boundaries
 
 - This file is example content under `examples/mcp/`; it must not be treated as
-  the authoritative guidelines for `agents-remember-md` itself. The authority for
+  the authoritative guidelines for `agents-remember` itself. The authority for
   this repo is its memory layer's `system/coding-guidelines.md`.
 - No runtime component reads this file. Changing it does not change MCP, provider,
   or skill behavior.
@@ -89,7 +89,7 @@ and anti-patterns — written language-general for teams to adapt.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The full guidelines body (design philosophy, budget tables, split triggers, responsibility rules, anti-patterns, naming, boolean-flag rule) lives in the source example. | L1-L255 | [coding-guidelines.example.md](agents-remember-md/examples/mcp/coding-guidelines.example.md) |
+| The full guidelines body (design philosophy, budget tables, split triggers, responsibility rules, anti-patterns, naming, boolean-flag rule) lives in the source example. | L1-L255 | [coding-guidelines.example.md](agents-remember/examples/mcp/coding-guidelines.example.md) |
 | The example sits in the `examples/mcp` route governed by the route overview, alongside `settings.example.json`. | n/a | [overview.md](overview.md) |
 
 ## Cross-Repo References

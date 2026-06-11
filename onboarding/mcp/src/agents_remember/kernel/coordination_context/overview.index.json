@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "agents-remember-route-index",
-  "repository": "agents-remember-md",
+  "repository": "agents-remember",
   "route": "mcp/src/agents_remember/kernel/coordination_context",
   "overview": "mcp/src/agents_remember/kernel/coordination_context/overview.md",
   "index": "mcp/src/agents_remember/kernel/coordination_context/overview.index.json",
@@ -132,9 +132,9 @@
       "settings.json",
       "mcp/overview.md",
       "coordination_context_resolver.py",
-      "agents-remember-md/mcp/src/agents_remember/kernel/coordination_context_resolver.py",
+      "agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py",
       "test_resolver_parity.py",
-      "agents-remember-md/mcp/tests/test_resolver_parity.py"
+      "agents-remember/mcp/tests/test_resolver_parity.py"
     ]
   },
   "fallback": {

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T01:06+02:00                     |
@@ -45,8 +45,8 @@ The template is the stable artifact shape for `w-02-light-task-workflow` skill.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The template requires status metadata, objective, requirements, a `## Design` section (sized per `tasks/AGENTS.md`), implementation steps, examples, decision log, open questions, and references. | L8-L97 | [`w-02-light-task-workflow` template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md) |
-| Usage rules require `c-08-ar-coordination-context-resolver` skill resolved paths, wrapper-folder task placement, checklist progress, status changes, append-only decisions, and sizing the `## Design` section to the request. | L99-L114 | [`w-02-light-task-workflow` template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md) |
+| The template requires status metadata, objective, requirements, a `## Design` section (sized per `tasks/AGENTS.md`), implementation steps, examples, decision log, open questions, and references. | L8-L97 | [`w-02-light-task-workflow` template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md) |
+| Usage rules require `c-08-ar-coordination-context-resolver` skill resolved paths, wrapper-folder task placement, checklist progress, status changes, append-only decisions, and sizing the `## Design` section to the request. | L99-L114 | [`w-02-light-task-workflow` template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T04:47+02:00                     |
@@ -32,8 +32,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Memory baseline code reuses these facade-exported Git helpers. | [baseline.py](agents-remember-md/mcp/src/agents_remember/memory/baseline.py) |
-| Worktree tests cover changed-path behavior for long filesystem paths. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| Memory baseline code reuses these facade-exported Git helpers. | [baseline.py](agents-remember/mcp/src/agents_remember/memory/baseline.py) |
+| Worktree tests cover changed-path behavior for long filesystem paths. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 

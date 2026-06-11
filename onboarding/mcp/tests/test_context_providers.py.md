@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T01:15+02:00                     |
@@ -95,12 +95,12 @@ No external documentation is needed for these unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The layout tests assert that CGC uses `providers/runners/codegraphcontext/<repo-id>`, a shared `providers/data/codegraphcontext/falkordb` backend root, `providers/requirements/codegraphcontext.txt`, patch root, and per-repo FalkorDB process env without host venv executable fields. | L89-L125 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
-| The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | L145-L187 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
-| The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | L188-L226 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
-| Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, rejection of configured code repository paths that do not exist, and rejection of removed `venvRoot` settings. | L228-L338 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
-| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, central log roots, settings expansion across external and internal memory roots indexed live in place, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and `ensure_grepai_root_gitignore` (append/create/idempotent `.grepai/` ignore). | L243-L420 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
-| Source artifact, patch idempotence, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query and route patches. | L423-L726 | [test_context_providers.py](agents-remember-md/mcp/tests/test_context_providers.py) |
+| The layout tests assert that CGC uses `providers/runners/codegraphcontext/<repo-id>`, a shared `providers/data/codegraphcontext/falkordb` backend root, `providers/requirements/codegraphcontext.txt`, patch root, and per-repo FalkorDB process env without host venv executable fields. | L89-L125 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | L145-L187 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | L188-L226 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, rejection of configured code repository paths that do not exist, and rejection of removed `venvRoot` settings. | L228-L338 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, central log roots, settings expansion across external and internal memory roots indexed live in place, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and `ensure_grepai_root_gitignore` (append/create/idempotent `.grepai/` ignore). | L243-L420 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| Source artifact, patch idempotence, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query and route patches. | L423-L726 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
 
 ## Cross-Repo References
 

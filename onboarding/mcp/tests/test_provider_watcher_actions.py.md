@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_watcher_actions.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -62,7 +62,7 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| `provider_watchers_tool` enforces the action naming guard. | [provider_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py) |
+| `provider_watchers_tool` enforces the action naming guard. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
 
 ## Cross-Repo References
 

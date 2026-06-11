@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "agents-remember-route-index",
-  "repository": "agents-remember-md",
+  "repository": "agents-remember",
   "route": "mcp/src/agents_remember/providers/context",
   "overview": "mcp/src/agents_remember/providers/context/overview.md",
   "index": "mcp/src/agents_remember/providers/context/overview.index.json",
@@ -64,7 +64,7 @@
       "providers/context_common.py",
       "grepai/core.py",
       "mcp/overview.md",
-      "agents-remember-md/mcp/src/agents_remember/providers/context/__init__.py",
+      "agents-remember/mcp/src/agents_remember/providers/context/__init__.py",
       "/cgc/context/overview.md",
       "/grepai/context/overview.md",
       "agents_remember",

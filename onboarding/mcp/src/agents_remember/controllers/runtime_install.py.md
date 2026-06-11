@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/runtime_install.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T21:33+02:00                     |
@@ -43,9 +43,9 @@ all four flags. It does not accept host paths or provider path overrides.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP tool payload construction maps tool booleans into `RuntimeInstallRequest`. | [tools/core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py) |
-| Server registration exposes `runtime_install` as a public tool. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| The service layer performs the actual runtime install. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
+| MCP tool payload construction maps tool booleans into `RuntimeInstallRequest`. | [tools/core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py) |
+| Server registration exposes `runtime_install` as a public tool. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| The service layer performs the actual runtime install. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 
 ## Update History
 

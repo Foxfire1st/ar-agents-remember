@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-08T09:57+02:00                     |
@@ -63,11 +63,11 @@ an invalid UID/GID override.
 
 | Finding | Source Path |
 | --- | --- |
-| Public lifecycle exports are collected by the package facade. | [__init__.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| Package execution delegates to the lifecycle CLI. | [__main__.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__main__.py) |
+| Public lifecycle exports are collected by the package facade. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
+| Package execution delegates to the lifecycle CLI. | [__main__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__main__.py) |
 | CGC lifecycle implementation is grouped under the CGC provider package. | [CGC lifecycle overview](../cgc/lifecycle/overview.md) |
 | GrepAI lifecycle implementation is grouped under the GrepAI provider package. | [GrepAI lifecycle overview](../grepai/lifecycle/overview.md) |
-| Provider lifecycle tests cover Docker-only GrepAI behavior, CGC bounded run behavior, and watcher aggregation. | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| Provider lifecycle tests cover Docker-only GrepAI behavior, CGC bounded run behavior, and watcher aggregation. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
 

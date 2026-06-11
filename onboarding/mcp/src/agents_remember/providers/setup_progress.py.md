@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/setup_progress.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00                     |
@@ -70,7 +70,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- |
 | Provider setup functions announce phases through `setup_progress_from(args)`. | [setup_common.py](setup_common.py.md) |
 | The worktree launcher creates the file and finishes it from the setup payload. | [provider_async.py](../worktrees/modules/provider_async.py.md) |
-| Unit tests cover the event lifecycle, heartbeat, staleness, and projections. | [test_setup_progress.py](agents-remember-md/mcp/tests/test_setup_progress.py) |
+| Unit tests cover the event lifecycle, heartbeat, staleness, and projections. | [test_setup_progress.py](agents-remember/mcp/tests/test_setup_progress.py) |
 
 ## Update History
 

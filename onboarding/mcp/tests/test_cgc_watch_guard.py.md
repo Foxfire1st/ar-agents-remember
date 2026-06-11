@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_cgc_watch_guard.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-09T23:55+02:00                     |
@@ -46,8 +46,8 @@ becomes ready or no graph name is set).
 
 | Finding | Source Path |
 | --- | --- |
-| The asset under test, baked into the runner image as `/usr/local/bin/cgc-watch-guard.py`. | [watch_guard.py](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py) |
-| The watcher Compose template sets the guard as the watcher entrypoint. | [codegraphcontext.watcher.yaml.tmpl](agents-remember-md/providers/compose/codegraphcontext.watcher.yaml.tmpl) |
+| The asset under test, baked into the runner image as `/usr/local/bin/cgc-watch-guard.py`. | [watch_guard.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py) |
+| The watcher Compose template sets the guard as the watcher entrypoint. | [codegraphcontext.watcher.yaml.tmpl](agents-remember/providers/compose/codegraphcontext.watcher.yaml.tmpl) |
 
 ## Update History
 

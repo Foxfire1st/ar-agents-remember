@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/serialize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
@@ -46,8 +46,8 @@ No external documentation is needed for this local formatter.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The CLI delegates JSON/text output to this module. | CLI adapter | [cli.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/cli.py) |
-| Controllers consume `context_to_dict()` through the public facade. | context packet controller | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
+| The CLI delegates JSON/text output to this module. | CLI adapter | [cli.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cli.py) |
+| Controllers consume `context_to_dict()` through the public facade. | context packet controller | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
 
 ## Cross-Repo References
 

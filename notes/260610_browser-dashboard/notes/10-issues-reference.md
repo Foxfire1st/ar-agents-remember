@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Topic | Status and key content of every issue thread feeding this feature |
-| Status | Swept 2026-06-10 (`gh` over Foxfire1st/agents-remember-md, all states); re-check states before task creation — #54's fix landed via the other chat (MCP now 2.8.0, new `worktree_sync` tool) |
+| Status | Swept 2026-06-10 (`gh` over Foxfire1st/agents-remember, all states); re-check states before task creation — #54's fix landed via the other chat (MCP now 2.8.0, new `worktree_sync` tool) |
 
 ## The Map
 

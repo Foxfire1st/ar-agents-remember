@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/base.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
@@ -33,8 +33,8 @@ payloads that must preserve provider or service output. `ResponseModel` and
 
 | Finding | Source Path |
 | --- | --- |
-| Token serialization helpers consume `ToolResponse` instances. | [tokens.py](agents-remember-md/mcp/src/agents_remember/models/tokens.py) |
-| Public tool payloads validate through concrete subclasses. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
+| Token serialization helpers consume `ToolResponse` instances. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
+| Public tool payloads validate through concrete subclasses. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
 
 ## Update History
 

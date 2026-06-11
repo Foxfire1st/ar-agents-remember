@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_cgc_index_concurrency.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -62,7 +62,7 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| `cgc_index_concurrency` and `DEFAULT_CGC_INDEX_CONCURRENCY` live in the CGC process-control module. | [process_control.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py) |
+| `cgc_index_concurrency` and `DEFAULT_CGC_INDEX_CONCURRENCY` live in the CGC process-control module. | [process_control.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py) |
 
 ## Cross-Repo References
 

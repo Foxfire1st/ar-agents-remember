@@ -1,7 +1,7 @@
 # Task: PyPI MCP Install And User Documentation Overhaul
 
 **Status:** inProgress
-**Repo:** agents-remember-md
+**Repo:** agents-remember
 **Type:** Docs | Config | Skill
 **Created:** 2026-05-27T12:27
 **Execution Mode:** current checkout until implementation approval; no C-09 worktree requested yet
@@ -104,7 +104,7 @@ The workflow-integrity pass must validate the published package as users run it:
 - Treat the source checkout as inspection-only during validation; it must not be on the MCP server `PYTHONPATH`, and the MCP server must not be launched from the checkout.
 - Treat CLI commands as setup/inspection only: package install, Codex MCP registration, temp fixture creation, Git fixture setup, and post-run filesystem/Git verification are allowed; Agents Remember workflow behavior is not proven unless it came from MCP tool calls.
 - Capture evidence from the harness run: child Codex prompt, MCP server config path, `server_info` output from the child session, MCP tool results, and any transcript/event output showing the tool path.
-- The active workspace MCP server can be used only for the real `agents-remember-md` task context. It does not validate the isolated PyPI install unless the isolated server is the registered server for that run.
+- The active workspace MCP server can be used only for the real `agents-remember` task context. It does not validate the isolated PyPI install unless the isolated server is the registered server for that run.
 
 Pass 01 is invalid as workflow-integrity proof because it used direct package/API calls for most workflow checks. It remains only a package smoke and mistake-analysis artifact.
 
@@ -112,7 +112,7 @@ Pass 01 is invalid as workflow-integrity proof because it used direct package/AP
 
 ## Follow-Up Task Series
 
-- [Provider Workflow Compatibility For Worktrees And Benchmarks](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember-md/260527_pypi-mcp-install-docs-overhaul/task-provider-workflow-compatibility.md) covers the provider-runtime defect family before provider docs are rewritten. It owns provider instance namespacing, Docker ownership verification, worktree and benchmark provider isolation, safe cleanup, and copying/seeding existing provider data with rewritten target paths/base URLs so expensive re-indexing is not the default workflow.
+- [Provider Workflow Compatibility For Worktrees And Benchmarks](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember/260527_pypi-mcp-install-docs-overhaul/task-provider-workflow-compatibility.md) covers the provider-runtime defect family before provider docs are rewritten. It owns provider instance namespacing, Docker ownership verification, worktree and benchmark provider isolation, safe cleanup, and copying/seeding existing provider data with rewritten target paths/base URLs so expensive re-indexing is not the default workflow.
 
 ---
 
@@ -287,18 +287,18 @@ Why this example is included: Missing prerequisites are one of the easiest ways 
 
 ## References
 
-- [PyPI publish workflow](/home/mohamedreadone/Projects/agents-remember-md/.github/workflows/publish-mcp-to-pypi.yml)
-- [MCP package metadata](/home/mohamedreadone/Projects/agents-remember-md/mcp/pyproject.toml)
-- [MCP server tool registration](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/mcp/server.py)
-- [MCP tool payloads](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/mcp/tools.py)
-- [Current README](/home/mohamedreadone/Projects/agents-remember-md/README.md)
-- [Getting Started](/home/mohamedreadone/Projects/agents-remember-md/docs/getting-started.md)
-- [Install guide index](/home/mohamedreadone/Projects/agents-remember-md/docs/install/README.md)
-- [Workflows docs](/home/mohamedreadone/Projects/agents-remember-md/docs/workflows.md)
-- [Skills reference](/home/mohamedreadone/Projects/agents-remember-md/docs/reference/skills.md)
-- [Worktrees reference](/home/mohamedreadone/Projects/agents-remember-md/docs/reference/worktrees-c09.md)
-- [Chat workflow skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember-md/W-03-chat-task-workflow/SKILL.md)
-- [Light task workflow skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember-md/W-02-light-task-workflow/SKILL.md)
-- [Worktree manager skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember-md/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)
-- [Closeout skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember-md/U-01-core-skills/C-12-closeout/SKILL.md)
-- [Memory initialization skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember-md/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md)
+- [PyPI publish workflow](/home/mohamedreadone/Projects/agents-remember/.github/workflows/publish-mcp-to-pypi.yml)
+- [MCP package metadata](/home/mohamedreadone/Projects/agents-remember/mcp/pyproject.toml)
+- [MCP server tool registration](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/mcp/server.py)
+- [MCP tool payloads](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/mcp/tools.py)
+- [Current README](/home/mohamedreadone/Projects/agents-remember/README.md)
+- [Getting Started](/home/mohamedreadone/Projects/agents-remember/docs/getting-started.md)
+- [Install guide index](/home/mohamedreadone/Projects/agents-remember/docs/install/README.md)
+- [Workflows docs](/home/mohamedreadone/Projects/agents-remember/docs/workflows.md)
+- [Skills reference](/home/mohamedreadone/Projects/agents-remember/docs/reference/skills.md)
+- [Worktrees reference](/home/mohamedreadone/Projects/agents-remember/docs/reference/worktrees-c09.md)
+- [Chat workflow skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember/W-03-chat-task-workflow/SKILL.md)
+- [Light task workflow skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember/W-02-light-task-workflow/SKILL.md)
+- [Worktree manager skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember/U-01-core-skills/C-09-git-worktree-manager/SKILL.md)
+- [Closeout skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember/U-01-core-skills/C-12-closeout/SKILL.md)
+- [Memory initialization skill](/home/mohamedreadone/Projects/.codex/skills/agents-remember/U-01-core-skills/C-00-initialize-memory-repo/SKILL.md)

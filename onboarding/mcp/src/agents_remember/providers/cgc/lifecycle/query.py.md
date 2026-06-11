@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/query.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T23:40+02:00                     |
@@ -50,10 +50,10 @@ Linux runner on Windows hosts.
 
 | Finding | Source Path |
 | --- | --- |
-| CGC status checks are provided by the installation module. | [installation.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
-| `cgc_backend_status` (backend-only readiness) is provided by the backend module. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| Docker command construction is provided by the runner module. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
-| Provider lifecycle tests cover visualizer rejection, dry-run visualize command construction, and bounded `cgc run`; the `cgc run` test now stubs `cgc_backend_status`. | [test_provider_lifecycle.py](agents-remember-md/mcp/tests/test_provider_lifecycle.py) |
+| CGC status checks are provided by the installation module. | [installation.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
+| `cgc_backend_status` (backend-only readiness) is provided by the backend module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
+| Docker command construction is provided by the runner module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| Provider lifecycle tests cover visualizer rejection, dry-run visualize command construction, and bounded `cgc run`; the `cgc run` test now stubs `cgc_backend_status`. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
 

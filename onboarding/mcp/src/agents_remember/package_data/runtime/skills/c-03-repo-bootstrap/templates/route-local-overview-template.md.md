@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                         |
 | ---------------------- | --------------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                            |
+| repository             | agents-remember                                                                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md` |
 | doc_type               | `file-level-onboarding`                                                                       |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,10 +43,10 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                           | Citations | Source Path                                                                                         |
 | ------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------- |
-| The route-local overview template defines route metadata, route verification fields, hot-path summary, scope, structures, flows, load-bearing files, local invariants, and traps. | L1-L59    | [route-local-overview-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
-| The template uses canonical repo-internal, cross-repo, and docs reference sections, with depth-aware evidence-pack link placeholders. | L60-L81   | [route-local-overview-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
-| The template maps file-level onboarding, child overviews, usage order, needs verification, and update history. | L83-L111  | [route-local-overview-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4D writes route-local overviews in mirrored source folders using this template. | L764-L812 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The route-local overview template defines route metadata, route verification fields, hot-path summary, scope, structures, flows, load-bearing files, local invariants, and traps. | L1-L59    | [route-local-overview-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
+| The template uses canonical repo-internal, cross-repo, and docs reference sections, with depth-aware evidence-pack link placeholders. | L60-L81   | [route-local-overview-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
+| The template maps file-level onboarding, child overviews, usage order, needs verification, and update history. | L83-L111  | [route-local-overview-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
+| `c-03-repo-bootstrap` skill Phase 4D writes route-local overviews in mirrored source folders using this template. | L764-L812 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

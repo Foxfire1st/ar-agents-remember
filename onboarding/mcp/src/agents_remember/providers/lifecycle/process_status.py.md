@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/process_status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00|
@@ -38,8 +38,8 @@ liveness, reads `/proc/<pid>/cmdline`, or resolves provider venv Python paths.
 
 | Finding | Source Path |
 | --- | --- |
-| CGC process lifecycle uses namespace gates, liveness checks, and command-line inspection. | [process.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/process.py) |
-| Aggregate watcher lifecycle reports namespace durability before starting enabled providers. | [watchers.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
+| CGC process lifecycle uses namespace gates, liveness checks, and command-line inspection. | [process.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process.py) |
+| Aggregate watcher lifecycle reports namespace durability before starting enabled providers. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
 
 ## Update History
 

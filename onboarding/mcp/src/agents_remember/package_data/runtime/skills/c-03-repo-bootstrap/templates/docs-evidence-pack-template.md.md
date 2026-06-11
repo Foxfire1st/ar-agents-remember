@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                          |
+| repository             | agents-remember                                                                          |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/docs-evidence-pack-template.md` |
 | doc_type               | `file-level-onboarding`                                                                     |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,8 +43,8 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                   | Citations | Source Path                                                                                  |
 | ----------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------- |
-| The docs pack template records scope, source checks, confirmed documentation findings, constraints, terms, affected files, no-evidence records, and open questions. | L1-L52    | [docs-evidence-pack-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/docs-evidence-pack-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4E writes docs evidence packs for priority routes where documentation affects behavior. | L814-L835 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The docs pack template records scope, source checks, confirmed documentation findings, constraints, terms, affected files, no-evidence records, and open questions. | L1-L52    | [docs-evidence-pack-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/docs-evidence-pack-template.md) |
+| `c-03-repo-bootstrap` skill Phase 4E writes docs evidence packs for priority routes where documentation affects behavior. | L814-L835 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

@@ -76,7 +76,7 @@
 ## Spawned follow-ups (decisions made here that need their own work)
 
 22. **Worktree-only closeout alignment — TASK CREATED 2026-06-10 (planning):**
-    `tasks/agents-remember-md/260610_worktree-only-closeout-alignment/task.md`.
+    `tasks/agents-remember/260610_worktree-only-closeout-alignment/task.md`.
     Clarified: worktree-only was the *original* design intent of the lifecycle
     skill; `direct_closeout_*` is leftover from an incomplete cleanup. The task
     carries the full removal plan (tools, l-01/c-12, docs, sync) + two rulings

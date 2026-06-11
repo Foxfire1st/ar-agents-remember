@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-26T23:59+02:00                     |
@@ -55,9 +55,9 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The script locates the installed CodeGraphContext package and applies a static list of patch operations. | L1-L33 | [patch_cgc.py](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
-| Patch operations fail fast when neither the patched text nor an acceptable original snippet is present. | L238-L249 | [patch_cgc.py](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
-| The CGC Dockerfile copies and executes this patch script during runner image build. | L10-L13 | [Dockerfile](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
+| The script locates the installed CodeGraphContext package and applies a static list of patch operations. | L1-L33 | [patch_cgc.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
+| Patch operations fail fast when neither the patched text nor an acceptable original snippet is present. | L238-L249 | [patch_cgc.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
+| The CGC Dockerfile copies and executes this patch script during runner image build. | L10-L13 | [Dockerfile](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
 
 ## Cross-Repo References
 

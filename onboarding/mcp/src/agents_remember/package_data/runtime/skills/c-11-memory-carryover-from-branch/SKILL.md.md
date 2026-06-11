@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                |
 | ---------------------- | -------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                   |
+| repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                              |
 | lastUpdated            | 2026-06-10T10:26+02:00                     |
@@ -51,8 +51,8 @@ No external documentation is needed for this repository-local workflow skill.
 
 | Finding                                                                                                                                  | Citations | Source Path                                                                                                                     |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries. | L8-L62    | [`c-11-memory-carryover-from-branch` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md)                          |
-| The package carryover service implements the plan/apply behavior described by this skill.                                                         | n/a | [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
+| The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries. | L8-L62    | [`c-11-memory-carryover-from-branch` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md)                          |
+| The package carryover service implements the plan/apply behavior described by this skill.                                                         | n/a | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py) |
 
 ## Cross-Repo References
 

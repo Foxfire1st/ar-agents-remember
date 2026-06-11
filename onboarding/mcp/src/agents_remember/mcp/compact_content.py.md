@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                |
 | ---------------------- | ---------------------------------------------------- |
-| repository             | agents-remember-md                                   |
+| repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/compact_content.py`     |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-05-29T08:53+02:00                               |
@@ -51,8 +51,8 @@ compacted text remains a faithful mirror of the structured payload.
 
 | Finding | Source Path |
 | --- | --- |
-| `create_server()` installs the shim as its first action. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| Behavior is verified through an in-process tool call. | [test_compact_content.py](agents-remember-md/mcp/tests/test_compact_content.py) |
+| `create_server()` installs the shim as its first action. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| Behavior is verified through an in-process tool call. | [test_compact_content.py](agents-remember/mcp/tests/test_compact_content.py) |
 
 ## Update History
 

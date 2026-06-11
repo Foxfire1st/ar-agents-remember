@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_sync_scripts.py`           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T00:40+02:00                     |
@@ -41,7 +41,7 @@ platform behavior, and cache-name copy ignores.
 
 | Finding | Source Path |
 | --- | --- |
-| The scripts under test. | [sync-skills.py](agents-remember-md/scripts/sync-skills.py); [sync-runtime.py](agents-remember-md/scripts/sync-runtime.py) |
+| The scripts under test. | [sync-skills.py](agents-remember/scripts/sync-skills.py); [sync-runtime.py](agents-remember/scripts/sync-runtime.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T07:05+02:00                     |
@@ -45,7 +45,7 @@ Start with `__init__.py` for the public context facade. Shared error, pin, templ
 
 | Finding | Source Path |
 | --- | --- |
-| Public context exports are collected by the package facade. | [__init__.py](agents-remember-md/mcp/src/agents_remember/providers/context/__init__.py) |
+| Public context exports are collected by the package facade. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/context/__init__.py) |
 | CGC context behavior is grouped under the CGC provider package. | [CGC context overview](../cgc/context/overview.md) |
 | GrepAI context behavior is grouped under the GrepAI provider package. | [GrepAI context overview](../grepai/context/overview.md) |
 

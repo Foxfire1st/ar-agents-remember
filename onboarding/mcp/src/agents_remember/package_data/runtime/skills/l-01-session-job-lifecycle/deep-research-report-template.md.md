@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report-template.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T14:50+02:00                     |
@@ -45,9 +45,9 @@ The template is a companion to the lifecycle entry contract and the detailed spi
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The entry contract lists this file as the reusable report and evidence-ledger shape for deeper research. | L29-L33 | [SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
-| The lifecycle delegates report shape to this template while preserving its required proof categories. | L87-L97 | [lifecycle.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
-| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | L12-L123 | [deep-research-report-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report-template.md) |
+| The entry contract lists this file as the reusable report and evidence-ledger shape for deeper research. | L29-L33 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
+| The lifecycle delegates report shape to this template while preserving its required proof categories. | L87-L97 | [lifecycle.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
+| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | L12-L123 | [deep-research-report-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report-template.md) |
 
 ## Cross-Repo References
 

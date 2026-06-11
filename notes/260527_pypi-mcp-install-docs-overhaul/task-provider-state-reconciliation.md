@@ -2,7 +2,7 @@
 
 **Status:** source implementation complete; installed MCP retest pending
 **Parent Task:** `260527_pypi-mcp-install-docs-overhaul`
-**Repo:** agents-remember-md
+**Repo:** agents-remember
 **Type:** Provider | State | Reporting | Tests
 **Created:** 2026-05-28T11:32
 **Series Role:** follow-up 02, split out from provider workflow compatibility after setup reporting grew large
@@ -147,7 +147,7 @@ Why this example is included: it is the missing layer between `ok=false` and act
       "resources": {
         "falkordb": {"containerState": "running", "uptimeSeconds": 7225, "containerName": "ar-cgc-falkordb-projects"},
         "watchers": {
-          "agents-remember-md": {"watcherUp": true, "indexingState": "idle"},
+          "agents-remember": {"watcherUp": true, "indexingState": "idle"},
           "device-management": {"watcherUp": false, "indexingState": "unknown"}
         }
       }
@@ -178,9 +178,9 @@ Why this example is included: it is the missing layer between `ok=false` and act
 
 ## References
 
-- [Provider workflow compatibility task](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember-md/260527_pypi-mcp-install-docs-overhaul/task-provider-workflow-compatibility.md)
-- [Parent findings](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember-md/260527_pypi-mcp-install-docs-overhaul/findings.md)
-- [Provider setup service](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py)
-- [Provider setup reporting](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/setup_reporting.py)
-- [Provider status packet](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/status.py)
-- [Watcher lifecycle orchestration](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/lifecycle/watchers.py)
+- [Provider workflow compatibility task](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember/260527_pypi-mcp-install-docs-overhaul/task-provider-workflow-compatibility.md)
+- [Parent findings](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember/260527_pypi-mcp-install-docs-overhaul/findings.md)
+- [Provider setup service](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/provider_setup.py)
+- [Provider setup reporting](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/setup_reporting.py)
+- [Provider status packet](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/status.py)
+- [Watcher lifecycle orchestration](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py)

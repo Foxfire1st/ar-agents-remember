@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T10:26+02:00                     |
@@ -49,9 +49,9 @@ No external domain documentation applies to this repository-local lifecycle skil
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The coordinator and root `AGENTS.md` route every session into `l-01-session-job-lifecycle` skill and reduce task-format choice to `l-01-session-job-lifecycle` skill's build-mode step. | n/a | [coordinator AGENTS.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The lifecycle phase spine now lives inline in `SKILL.md`; companion files are limited to the job lenses and deeper-research report template. | L17-L20; L28-L195 | [SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
-| The build-mode invariant requires a developer-approved worktree intent packet before `worktree_start`. | L121-L144 | [SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
+| The coordinator and root `AGENTS.md` route every session into `l-01-session-job-lifecycle` skill and reduce task-format choice to `l-01-session-job-lifecycle` skill's build-mode step. | n/a | [coordinator AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
+| The lifecycle phase spine now lives inline in `SKILL.md`; companion files are limited to the job lenses and deeper-research report template. | L17-L20; L28-L195 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
+| The build-mode invariant requires a developer-approved worktree intent packet before `worktree_start`. | L121-L144 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
 
 ## Cross-Repo References
 

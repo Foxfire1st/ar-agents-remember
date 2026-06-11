@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/docker_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00|
@@ -45,8 +45,8 @@ seconds, and health status.
 
 | Finding | Source Path |
 | --- | --- |
-| CGC backend lifecycle uses Docker inspection, container-state summaries, mount matching, image locks, and FalkorDB ping polling. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| GrepAI backend, embedder, and runner lifecycles use Docker inspection, container-state summaries, and network helpers. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py); [embedder.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py); [runner.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
+| CGC backend lifecycle uses Docker inspection, container-state summaries, mount matching, image locks, and FalkorDB ping polling. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
+| GrepAI backend, embedder, and runner lifecycles use Docker inspection, container-state summaries, and network helpers. | [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py); [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py); [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
 
 ## Update History
 

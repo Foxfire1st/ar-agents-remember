@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:45+02:00                     |
@@ -54,8 +54,8 @@ No external documentation is needed for this standard-library test.
 
 | Finding | Source Path |
 | --- | --- |
-| Module under test. | [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
-| Evidence-tier and ledger-mapping carryover coverage lives beside the worktree tests. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| Module under test. | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py) |
+| Evidence-tier and ledger-mapping carryover coverage lives beside the worktree tests. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 

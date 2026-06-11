@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
@@ -80,11 +80,11 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 | Finding | Source Path |
 | --- | --- |
-| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | [tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools) |
-| Public response model registry validates payload shapes. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
-| Server registration lives in `server.py`. | [server.py](agents-remember-md/mcp/src/agents_remember/mcp/server.py) |
-| Domain controller modules convert public MCP payloads into service calls. | [controllers overview](agents-remember-md/mcp/src/agents_remember/controllers/overview.md) |
-| Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | [current_state.py](agents-remember-md/mcp/src/agents_remember/providers/current_state.py) |
+| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | [tools/](agents-remember/mcp/src/agents_remember/mcp/tools) |
+| Public response model registry validates payload shapes. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Server registration lives in `server.py`. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| Domain controller modules convert public MCP payloads into service calls. | [controllers overview](agents-remember/mcp/src/agents_remember/controllers/overview.md) |
+| Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 
 ## Update History
 

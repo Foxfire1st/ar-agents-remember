@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
@@ -45,14 +45,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| The public facade re-exports this package for existing callers. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
-| MCP controllers call the benchmark service entry points through the facade. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| Focused benchmark tests exercise facade compatibility, provider setup, MCP registration, Codex execution policy, repository prep, and skill exposure behavior. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| The public facade re-exports this package for existing callers. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
+| MCP controllers call the benchmark service entry points through the facade. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| Focused benchmark tests exercise facade compatibility, provider setup, MCP registration, Codex execution policy, repository prep, and skill exposure behavior. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 
 Benchmark cases may clone external repositories during runs, but this package's
-source-level behavior is local to `agents-remember-md`.
+source-level behavior is local to `agents-remember`.
 
 ## Update History
 

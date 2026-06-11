@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00                     |
@@ -57,9 +57,9 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| Launcher and projections under test. | [provider_async.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/provider_async.py) |
-| Start ordering and retry path under test. | [start.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/start.py) |
-| Controller ownership helper under test. | [worktree_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/worktree_tools.py) |
+| Launcher and projections under test. | [provider_async.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_async.py) |
+| Start ordering and retry path under test. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
+| Controller ownership helper under test. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
 
 ## Update History
 

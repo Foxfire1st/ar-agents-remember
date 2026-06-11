@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/core.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:28+02:00                     |
@@ -31,7 +31,7 @@ tool, and reserved-tool metadata.
 
 | Finding | Source Path |
 | --- | --- |
-| Core payload builders serialize these models. | [core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py) |
+| Core payload builders serialize these models. | [core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py) |
 
 ## Update History
 

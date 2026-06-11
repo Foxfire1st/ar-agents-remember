@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T06:20+02:00|
@@ -84,13 +84,13 @@ surface.
 
 | Finding | Source Path |
 | --- | --- |
-| Provider response models define summary, diagnostics, watcher, and native provider payload shapes. | [providers.py](agents-remember-md/mcp/src/agents_remember/models/providers.py) |
-| Context packet construction consumes the compact provider summary. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
-| Provider MCP controllers expose status, diagnostics, watcher, GrepAI, and CGC tools. | [provider_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/provider_tools.py) |
-| Current-state projection and persistence live in the current-state module. | [current_state.py](agents-remember-md/mcp/src/agents_remember/providers/current_state.py) |
-| Restart/rebind recovery wording is shared with runtime-install recovery reporting. | [recovery.py](agents-remember-md/mcp/src/agents_remember/providers/recovery.py) |
-| Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | [status.py](agents-remember-md/mcp/src/agents_remember/providers/status.py) |
-| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | [test_provider_current_state.py](agents-remember-md/mcp/tests/test_provider_current_state.py) |
+| Provider response models define summary, diagnostics, watcher, and native provider payload shapes. | [providers.py](agents-remember/mcp/src/agents_remember/models/providers.py) |
+| Context packet construction consumes the compact provider summary. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
+| Provider MCP controllers expose status, diagnostics, watcher, GrepAI, and CGC tools. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
+| Current-state projection and persistence live in the current-state module. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
+| Restart/rebind recovery wording is shared with runtime-install recovery reporting. | [recovery.py](agents-remember/mcp/src/agents_remember/providers/recovery.py) |
+| Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
+| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 
 ## Update History
 

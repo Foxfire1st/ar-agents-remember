@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_mcp_stdio_transport.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
@@ -41,8 +41,8 @@ has a real auto-carry candidate. A `ping` test proves the harness itself.
 
 | Finding | Source Path |
 | --- | --- |
-| The fixed subprocess call site. | [carryover.py](agents-remember-md/mcp/src/agents_remember/memory/carryover.py) |
-| The package-wide stdin guard that prevents reintroduction. | [test_subprocess_hygiene.py](agents-remember-md/mcp/tests/test_subprocess_hygiene.py) |
+| The fixed subprocess call site. | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py) |
+| The package-wide stdin guard that prevents reintroduction. | [test_subprocess_hygiene.py](agents-remember/mcp/tests/test_subprocess_hygiene.py) |
 
 ## Update History
 

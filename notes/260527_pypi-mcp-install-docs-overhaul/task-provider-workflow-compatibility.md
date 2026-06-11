@@ -2,7 +2,7 @@
 
 **Status:** in-progress
 **Parent Task:** `260527_pypi-mcp-install-docs-overhaul`
-**Repo:** agents-remember-md
+**Repo:** agents-remember
 **Type:** Provider | Workflow | Tests | Config
 **Created:** 2026-05-27T14:50+02:00
 **Series Role:** follow-up 01, prerequisite for provider docs and full PyPI MCP workflow sign-off
@@ -120,8 +120,8 @@ Treat providers as workflow-scoped runtime instances with explicit ownership and
 
 ## Audit Artifacts
 
-- [Provider Workflow Compatibility Audit 01](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember-md/260527_pypi-mcp-install-docs-overhaul/provider-workflow-audit-01.md) records the first S1 audit. It confirms GrepAI persists copyable state in mirrored roots plus PostgreSQL/pgvector tables, but there is no existing GrepAI export/import seed path equivalent to CGC. Warm-start support therefore needs Agents Remember-owned copy/restore logic.
-- [GrepAI Worktree Warm-Start Feasibility 01](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember-md/260527_pypi-mcp-install-docs-overhaul/grepai-worktree-feasibility-01.md) confirms the proposed worktree shape is feasible if implemented as a full target provider database clone plus one active-project memory-root swap, followed by target watcher reconciliation.
+- [Provider Workflow Compatibility Audit 01](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember/260527_pypi-mcp-install-docs-overhaul/provider-workflow-audit-01.md) records the first S1 audit. It confirms GrepAI persists copyable state in mirrored roots plus PostgreSQL/pgvector tables, but there is no existing GrepAI export/import seed path equivalent to CGC. Warm-start support therefore needs Agents Remember-owned copy/restore logic.
+- [GrepAI Worktree Warm-Start Feasibility 01](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember/260527_pypi-mcp-install-docs-overhaul/grepai-worktree-feasibility-01.md) confirms the proposed worktree shape is feasible if implemented as a full target provider database clone plus one active-project memory-root swap, followed by target watcher reconciliation.
 
 ---
 
@@ -363,7 +363,7 @@ ar-coordination/
           watcher.log
       codegraphcontext/
         projects/
-          agents-remember-md/
+          agents-remember/
             watch.log
   providers/
     data/
@@ -406,11 +406,11 @@ ar-coordination/
 
 ## References
 
-- [Parent task](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember-md/260527_pypi-mcp-install-docs-overhaul/task.md)
-- [Parent findings](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember-md/260527_pypi-mcp-install-docs-overhaul/findings.md)
-- [Provider setup service](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py)
-- [CGC bundle path rewriting](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/cgc/bundle.py)
-- [CGC seed rewrite/load path](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/providers/cgc/seed.py)
-- [Worktree provider start](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/worktrees/modules/start.py)
-- [Worktree cleanup](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/worktrees/modules/cleanup.py)
-- [Benchmark MCP/provider registration](/home/mohamedreadone/Projects/agents-remember-md/mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py)
+- [Parent task](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember/260527_pypi-mcp-install-docs-overhaul/task.md)
+- [Parent findings](/home/mohamedreadone/Projects/ar-coordination/tasks/agents-remember/260527_pypi-mcp-install-docs-overhaul/findings.md)
+- [Provider setup service](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/provider_setup.py)
+- [CGC bundle path rewriting](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/cgc/bundle.py)
+- [CGC seed rewrite/load path](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/providers/cgc/seed.py)
+- [Worktree provider start](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/worktrees/modules/start.py)
+- [Worktree cleanup](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py)
+- [Benchmark MCP/provider registration](/home/mohamedreadone/Projects/agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py)

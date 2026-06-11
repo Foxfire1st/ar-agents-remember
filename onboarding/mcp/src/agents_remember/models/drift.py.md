@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/drift.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
@@ -28,7 +28,7 @@ and actionable counts, an optional report path, and a bounded actionable sample.
 
 | Finding | Source Path |
 | --- | --- |
-| Context packet construction validates drift output through this model. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
+| Context packet construction validates drift output through this model. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
 
 ## Update History
 

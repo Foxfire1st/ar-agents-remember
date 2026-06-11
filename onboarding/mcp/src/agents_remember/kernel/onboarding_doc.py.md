@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:50+02:00                     |
@@ -60,8 +60,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| The closeout sidecar/overview gates consume these helpers and re-export the moved names. | [onboarding.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/onboarding.py) |
-| Helper unit tests cover body stripping, history extraction, and marker detection. | [test_onboarding_doc.py](agents-remember-md/mcp/tests/test_onboarding_doc.py) |
+| The closeout sidecar/overview gates consume these helpers and re-export the moved names. | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py) |
+| Helper unit tests cover body stripping, history extraction, and marker detection. | [test_onboarding_doc.py](agents-remember/mcp/tests/test_onboarding_doc.py) |
 
 ## Update History
 

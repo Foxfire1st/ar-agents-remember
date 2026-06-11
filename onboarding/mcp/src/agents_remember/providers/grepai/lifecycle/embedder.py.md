@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -69,11 +69,11 @@ fallback runs. The failed seed result is attached to the response as
 
 | Finding | Source Path |
 | --- | --- |
-| Embedder settings and container endpoint are derived in GrepAI core. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
-| GrepAI install/start composes backend, embedder, and runner lifecycle steps. | [actions.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/actions.py) |
-| GrepAI project migration lives with backend startup and is reused here. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
-| `isolated.py` populates `seedFromContainer` in worktree embedder settings. | [isolated.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/isolated.py) |
-| Unit tests cover the tar-pipe command shape, no-source guard, successful-seed-skips-pull, and failed-seed-falls-back-to-pull paths. | [test_ollama_model_seed.py](agents-remember-md/mcp/tests/test_ollama_model_seed.py) |
+| Embedder settings and container endpoint are derived in GrepAI core. | [core.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
+| GrepAI install/start composes backend, embedder, and runner lifecycle steps. | [actions.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/actions.py) |
+| GrepAI project migration lives with backend startup and is reused here. | [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
+| `isolated.py` populates `seedFromContainer` in worktree embedder settings. | [isolated.py](agents-remember/mcp/src/agents_remember/providers/grepai/isolated.py) |
+| Unit tests cover the tar-pipe command shape, no-source guard, successful-seed-skips-pull, and failed-seed-falls-back-to-pull paths. | [test_ollama_model_seed.py](agents-remember/mcp/tests/test_ollama_model_seed.py) |
 
 ## Update History
 

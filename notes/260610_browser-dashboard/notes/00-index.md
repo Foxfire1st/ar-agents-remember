@@ -2,7 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| Repo | agents-remember-md |
+| Repo | agents-remember |
 | Created | 2026-06-10 |
 | Status | **Pre-task research base.** No `task.md` yet — deliberately. One bounded file per topic so each can be discussed and settled on its own before tasks are defined. |
 | Provenance | Recon workflow 2026-06-10 (7 agents: prototype, branches, issues, data surfaces, 2× frame scan, tech research) + developer direction from the same day's session. Inventory baseline: MCP 2.7.0 @ `ab7e21b`; **2.8.0 landed during the session** (issue-54 fix, new `worktree_sync`) — see note 11 item 16. |

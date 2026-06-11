@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_log_capture.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
@@ -63,7 +63,7 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| The module under test. | [log_capture.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/log_capture.py) |
+| The module under test. | [log_capture.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/log_capture.py) |
 
 ## Cross-Repo References
 

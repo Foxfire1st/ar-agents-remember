@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/assets.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -49,9 +49,9 @@ a relative path against the current working directory before applying the prefix
 
 | Finding | Source Path |
 | --- | --- |
-| Runtime install uses packaged assets unless tests pass an explicit source root. | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| Skill installation reads package-owned runtime skills through the shared asset root. | [skills.py](agents-remember-md/mcp/src/agents_remember/install/skills.py) |
-| Benchmark tooling resolves packaged benchmark cases through the same package-data root. | [runner.py](agents-remember-md/mcp/src/agents_remember/benchmarks/runner.py) |
+| Runtime install uses packaged assets unless tests pass an explicit source root. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| Skill installation reads package-owned runtime skills through the shared asset root. | [skills.py](agents-remember/mcp/src/agents_remember/install/skills.py) |
+| Benchmark tooling resolves packaged benchmark cases through the same package-data root. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
 
 ## Update History
 

@@ -480,7 +480,7 @@ button { font: inherit; cursor: pointer; color: inherit; background: none; borde
       <div class="ops-head">
         <div class="rtabs" id="rtabs">
           <button class="rtab active" data-repo="all">All repos</button>
-          <button class="rtab" data-repo="ar">agents-remember-md</button>
+          <button class="rtab" data-repo="ar">agents-remember</button>
           <button class="rtab" data-repo="cw">coordination-workbench</button>
         </div>
         <div class="counters" id="counters"></div>
@@ -505,7 +505,7 @@ button { font: inherit; cursor: pointer; color: inherit; background: none; borde
           <div class="panel tight" data-od-id="op-eventlog">
             <div class="panel-h"><span class="ph-t">Event log</span><span class="ph-m mono">stream</span></div>
             <div class="feed" id="feed">
-              <div class="feed-row"><span class="ft">14:32:07</span><span class="dot warn"></span><div class="fd"><div class="fk">Attention · T-118</div><div class="fx">commit approval held · agents-remember-md</div></div></div>
+              <div class="feed-row"><span class="ft">14:32:07</span><span class="dot warn"></span><div class="fd"><div class="fk">Attention · T-118</div><div class="fx">commit approval held · agents-remember</div></div></div>
               <div class="feed-row"><span class="ft">14:31:44</span><span class="dot crit"></span><div class="fd"><div class="fk">Conflict · T-119</div><div class="fx">rebase conflict · 2 files · intent-router</div></div></div>
               <div class="feed-row"><span class="ft">14:30:58</span><span class="dot ok"></span><div class="fd"><div class="fk">Provider · spawn</div><div class="fx">wt-205 grepai instance booting</div></div></div>
               <div class="feed-row"><span class="ft">14:30:12</span><span class="dot ok"></span><div class="fd"><div class="fk">Worktree · integration</div><div class="fx">T-117 gates passed · ready to merge</div></div></div>
@@ -572,7 +572,7 @@ button { font: inherit; cursor: pointer; color: inherit; background: none; borde
       <div class="ops-head">
         <div class="rtabs" id="memTabs">
           <button class="rtab active" data-mrepo="all">All repos</button>
-          <button class="rtab" data-mrepo="ar">agents-remember-md</button>
+          <button class="rtab" data-mrepo="ar">agents-remember</button>
           <button class="rtab" data-mrepo="cw">coordination-workbench</button>
         </div>
         <span class="ph-m mono" id="memStructMeta"></span>
@@ -686,7 +686,7 @@ button { font: inherit; cursor: pointer; color: inherit; background: none; borde
   var PRO = function(a,b,c,d){ return [P("codegraphcontext",a[0],a[1],a[2]),P("grepai",b[0],b[1],b[2]),P("semantic-index",c[0],c[1],c[2]),P("mcp-bridge",d[0],d[1],d[2])]; };
 
   var WS = { name:"nexu-ops", repos:[
-    { id:"ar", name:"agents-remember-md", worktrees:[
+    { id:"ar", name:"agents-remember", worktrees:[
       { id:"wt-118", branch:"feat/harness-root-starter-packages", providers:PRO(["healthy",88,0.42],["healthy",130,0.31],["healthy",42,0.55],["healthy",12,0.18]),
         tasks:[{ id:"T-118", title:"Harness root starter packages", stage:"build", lens:"Feature", mode:"durable · w-02", status:"running",
           art:"3 file cards · onboarding wave 3", ckpt:"checkpoint @ step 5 · 14:21", mem:"memory archive · staged",
@@ -1001,7 +1001,7 @@ button { font: inherit; cursor: pointer; color: inherit; background: none; borde
   /* Onboarding memory is a 1-to-1 mirror of source: cards = current+drift+stale,
      missing = source files with no card. One model, derived four ways. */
   var MEM = { repos: [
-    { id:"ar", name:"agents-remember-md", overview:"current", routes:[
+    { id:"ar", name:"agents-remember", overview:"current", routes:[
       { name:"kernel",          src:12, current:11, drift:1, stale:0 },
       { name:"controllers",     src:9,  current:9,  drift:0, stale:0 },
       { name:"memory_quality",  src:14, current:12, drift:1, stale:1 },

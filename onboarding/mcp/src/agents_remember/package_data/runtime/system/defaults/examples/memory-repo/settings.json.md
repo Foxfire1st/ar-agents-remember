@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,8 +43,8 @@ No external documentation is needed.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The JSON example declares version 2 memory-repo storage and path-rule include/exclude filters with common generated/vendor/build/local exclusions. | L1-L33 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json) |
-| The JSON example shows a branch-gated cross-repo allowance with code and memory inclusion flags. | L35-L45 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json) |
+| The JSON example declares version 2 memory-repo storage and path-rule include/exclude filters with common generated/vendor/build/local exclusions. | L1-L33 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json) |
+| The JSON example shows a branch-gated cross-repo allowance with code and memory inclusion flags. | L35-L45 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json) |
 
 ## Cross-Repo References
 

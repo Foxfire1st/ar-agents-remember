@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T10:26+02:00     |
@@ -34,8 +34,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| `ping_payload()` and `server_info_payload()` report `SERVER_VERSION`. | [tools/core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py) |
-| Tool tests assert the public version reported by `ping_payload()`. | [test_tools.py](agents-remember-md/mcp/tests/test_tools.py) |
+| `ping_payload()` and `server_info_payload()` report `SERVER_VERSION`. | [tools/core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py) |
+| Tool tests assert the public version reported by `ping_payload()`. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
 
 ## Update History
 

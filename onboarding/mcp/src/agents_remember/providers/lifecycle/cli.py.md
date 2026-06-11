@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -46,8 +46,8 @@ the `cgc.lifecycle` import), and no longer present in `cgc_cli_handlers()`.
 
 | Finding | Source Path |
 | --- | --- |
-| Public facade imports `main()` from this module. | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| CGC and GrepAI implementations are dispatched from this CLI layer. | [cgc/__init__.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py); [grepai/__init__.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py) |
+| Public facade imports `main()` from this module. | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
+| CGC and GrepAI implementations are dispatched from this CLI layer. | [cgc/__init__.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py); [grepai/__init__.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                              |
 | ---------------------- | -------------------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                                 |
+| repository             | agents-remember                                                                                 |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md` |
 | doc_type               | `file-level-onboarding`                                                                            |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                  | Citations | Source Path                                                                                               |
 | ---------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------- |
-| The boundary pack records allowed adjacent repos, boundary summaries, confirmed interfaces, and shared contracts. | L1-L31    | [cross-repo-boundary-pack-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md) |
-| The template records branch/topology notes, same-repo facts that must not be classified as cross-repo, boundary risks, and developer-confirmation needs. | L33-L51   | [cross-repo-boundary-pack-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4F writes boundary packs for priority routes with inbound or outbound cross-repo signals. | L837-L859 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The boundary pack records allowed adjacent repos, boundary summaries, confirmed interfaces, and shared contracts. | L1-L31    | [cross-repo-boundary-pack-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md) |
+| The template records branch/topology notes, same-repo facts that must not be classified as cross-repo, boundary risks, and developer-confirmation needs. | L33-L51   | [cross-repo-boundary-pack-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md) |
+| `c-03-repo-bootstrap` skill Phase 4F writes boundary packs for priority routes with inbound or outbound cross-repo signals. | L837-L859 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/setup_reporting.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T23:40+02:00                     |
@@ -59,12 +59,12 @@ No external documentation is needed for this local setup reporting module.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Setup finalization computes strict `ok`, recovered `ready`, setup state, failed phases, final status, result counts, and summary output. | L45-L66 | [setup_reporting.py](agents-remember-md/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Setup state keeps `ready-with-failed-phases` distinct from `ok`, failed, and failed-unchecked states. | L69-L77 | [setup_reporting.py](agents-remember-md/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Setup summary files are written under `logs/providers/setup/` as `last-<action>.json`, a timestamped snapshot, and `last-<action>-full.json` (full untrimmed payload), with dry-runs returning paths but writing nothing. | L117-L154 | [setup_reporting.py](agents-remember-md/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Summary payloads omit nested settings internals and include action, readiness, enabled providers, result counts, failed phases, final status, and compacted results. | L157-L183 | [setup_reporting.py](agents-remember-md/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Tests assert dry-run no-write behavior, compact summary files, recovered final status reporting, and omission of raw stdout. | L51-L192 | [test_provider_setup.py](agents-remember-md/mcp/tests/test_provider_setup.py) |
-| Provider setup delegates final payload augmentation and summary persistence to this module. | L1-L66 | [provider_setup.py](agents-remember-md/mcp/src/agents_remember/providers/provider_setup.py) |
+| Setup finalization computes strict `ok`, recovered `ready`, setup state, failed phases, final status, result counts, and summary output. | L45-L66 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
+| Setup state keeps `ready-with-failed-phases` distinct from `ok`, failed, and failed-unchecked states. | L69-L77 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
+| Setup summary files are written under `logs/providers/setup/` as `last-<action>.json`, a timestamped snapshot, and `last-<action>-full.json` (full untrimmed payload), with dry-runs returning paths but writing nothing. | L117-L154 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
+| Summary payloads omit nested settings internals and include action, readiness, enabled providers, result counts, failed phases, final status, and compacted results. | L157-L183 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
+| Tests assert dry-run no-write behavior, compact summary files, recovered final status reporting, and omission of raw stdout. | L51-L192 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| Provider setup delegates final payload augmentation and summary persistence to this module. | L1-L66 | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
 
 ## Cross-Repo References
 

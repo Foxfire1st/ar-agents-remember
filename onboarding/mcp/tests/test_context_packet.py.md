@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
@@ -54,9 +54,9 @@ detail consumers at `provider_diagnostics`.
 
 | Finding | Source Path |
 | --- | --- |
-| The context packet controller builds the tested payload. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/controllers/context_packet.py) |
-| `ContextPacketV2` defines the compact public response contract. | [context_packet.py](agents-remember-md/mcp/src/agents_remember/models/context_packet.py) |
-| MCP config fixtures come from `test_config.py`. | [test_config.py](agents-remember-md/mcp/tests/test_config.py) |
+| The context packet controller builds the tested payload. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
+| `ContextPacketV2` defines the compact public response contract. | [context_packet.py](agents-remember/mcp/src/agents_remember/models/context_packet.py) |
+| MCP config fixtures come from `test_config.py`. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
 
 ## Update History
 

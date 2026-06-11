@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-09T22:10+02:00                     |
@@ -64,9 +64,9 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The guard waits for a genuine PONG, clears poisoned graph keys below the threshold, and execs cgc with the original arguments. | L1-L115 | [watch_guard.py](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py) |
-| The CGC Dockerfile copies the guard to `/usr/local/bin/cgc-watch-guard.py` during runner image build. | L13-L16 | [Dockerfile](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
-| The watcher Compose template sets the guard as the watcher service entrypoint. | L14-L22 | [codegraphcontext.watcher.yaml.tmpl](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/compose/codegraphcontext.watcher.yaml.tmpl) |
+| The guard waits for a genuine PONG, clears poisoned graph keys below the threshold, and execs cgc with the original arguments. | L1-L115 | [watch_guard.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py) |
+| The CGC Dockerfile copies the guard to `/usr/local/bin/cgc-watch-guard.py` during runner image build. | L13-L16 | [Dockerfile](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
+| The watcher Compose template sets the guard as the watcher service entrypoint. | L14-L22 | [codegraphcontext.watcher.yaml.tmpl](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/compose/codegraphcontext.watcher.yaml.tmpl) |
 
 ## Cross-Repo References
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "agents-remember-route-index",
-  "repository": "agents-remember-md",
+  "repository": "agents-remember",
   "route": "mcp/src/agents_remember/providers/cgc",
   "overview": "mcp/src/agents_remember/providers/cgc/overview.md",
   "index": "mcp/src/agents_remember/providers/cgc/overview.index.json",
@@ -91,7 +91,7 @@
       "providers.provider_setup",
       "providers/cgc/",
       "mcp/overview.md",
-      "agents-remember-md/mcp/src/agents_remember/providers/cgc/setup.py",
+      "agents-remember/mcp/src/agents_remember/providers/cgc/setup.py",
       "context/overview.md",
       "lifecycle/overview.md",
       "agents_remember",

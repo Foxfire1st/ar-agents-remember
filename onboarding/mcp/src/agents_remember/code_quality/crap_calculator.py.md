@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/crap_calculator.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T06:05+02:00                     |
@@ -49,9 +49,9 @@ stays visible as risk.
 
 | Finding | Source Path |
 | --- | --- |
-| Unit tests cover the CRAP formula, function-span coverage intersection, and missing coverage data behavior. | [test_crap_calculator.py](agents-remember-md/mcp/tests/test_crap_calculator.py) |
-| The source quality suite wrapper runs CRAP-Calculator from pytest coverage JSON. | [check.py](agents-remember-md/mcp/src/agents_remember/code_quality/check.py) |
-| Development tool guidance documents the source quality wrapper and CRAP-Calculator command flow. | [system/tools.md](agents-remember-md/system/tools.md) |
+| Unit tests cover the CRAP formula, function-span coverage intersection, and missing coverage data behavior. | [test_crap_calculator.py](agents-remember/mcp/tests/test_crap_calculator.py) |
+| The source quality suite wrapper runs CRAP-Calculator from pytest coverage JSON. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
+| Development tool guidance documents the source quality wrapper and CRAP-Calculator command flow. | [system/tools.md](agents-remember/system/tools.md) |
 
 ## Update History
 

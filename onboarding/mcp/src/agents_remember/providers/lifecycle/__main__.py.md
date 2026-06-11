@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/__main__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
@@ -35,7 +35,7 @@ that command's return code.
 
 | Finding | Source Path |
 | --- | --- |
-| The lifecycle CLI parser and main function live in `cli.py`. | [cli.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/cli.py) |
+| The lifecycle CLI parser and main function live in `cli.py`. | [cli.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/cli.py) |
 
 ## Update History
 

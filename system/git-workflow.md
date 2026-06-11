@@ -1,6 +1,6 @@
 # Git Workflow — PR-Gated `main`
 
-Repo-local landing doctrine for `agents-remember-md`. Read this **before** committing,
+Repo-local landing doctrine for `agents-remember`. Read this **before** committing,
 pushing, opening a PR, or cutting a release. PR-gating and the spear branch are per-repo;
 the coordinator only routes "read `git-workflow.md` when present."
 
@@ -90,7 +90,7 @@ before upgrading" line points at. Do not introduce a `CHANGELOG.md`.
 ### Tag scheme
 
 - **`mcp-vX.Y.Z`** is the canonical release tag. Pushing it triggers
-  [`publish-mcp-to-pypi.yml`](agents-remember-md/.github/workflows/publish-mcp-to-pypi.yml)
+  [`publish-mcp-to-pypi.yml`](agents-remember/.github/workflows/publish-mcp-to-pypi.yml)
   (`on: push: tags: mcp-v*`), which builds the wheel/sdist and publishes `agents-remember-mcp` to
   PyPI. Attach the GitHub Release to this `mcp-vX.Y.Z` tag.
 - A bare `vX.Y.Z` scheme exists only on the older `v0.9.0` Release. Use `mcp-v*` going forward.

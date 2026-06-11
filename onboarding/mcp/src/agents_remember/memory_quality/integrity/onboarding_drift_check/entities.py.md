@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T18:35+02:00|
@@ -38,8 +38,8 @@ ties inventory and fingerprint rows together.
 
 | Finding | Source Path |
 | --- | --- |
-| Fingerprints and change notes are computed via `git_ops`. | [git_ops.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
-| `sidecar.py` delegates `repo-entity-catalog` sidecars to `classify_entity_catalog`. | [sidecar.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
+| Fingerprints and change notes are computed via `git_ops`. | [git_ops.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
+| `sidecar.py` delegates `repo-entity-catalog` sidecars to `classify_entity_catalog`. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
 
 ## Update History
 

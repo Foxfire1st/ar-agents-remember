@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                        |
 | ---------------------- | ------------------------------------------------------------ |
-| repository             | agents-remember-md                                           |
+| repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/cleanup.py`   |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
@@ -40,8 +40,8 @@ under the expected root before calling `remove_runtime_path`.
 
 | Finding | Source Path |
 | --- | --- |
-| `CgcRuntimeLayout` definition. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/context/core.py) |
-| `remove_runtime_path` and `ContextProviderError`. | [common.py](agents-remember-md/mcp/src/agents_remember/providers/context/common.py) |
+| `CgcRuntimeLayout` definition. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/context/core.py) |
+| `remove_runtime_path` and `ContextProviderError`. | [common.py](agents-remember/mcp/src/agents_remember/providers/context/common.py) |
 
 ## Update History
 

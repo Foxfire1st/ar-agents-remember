@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |

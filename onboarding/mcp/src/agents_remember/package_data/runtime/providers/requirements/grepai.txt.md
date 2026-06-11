@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T14:21:08+02:00                     |
@@ -51,10 +51,10 @@ No external documentation is needed for this pin file.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The requirement file pins GrepAI to `grepai==0.35.0`. | L1-L2 | [grepai.txt](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt) |
-| The MCP runtime installer requires both CGC and GrepAI provider requirement files before copying provider defaults into the coordination root. | n/a | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| The provider helper exposes the GrepAI pin and writes the managed requirements file through the package provider helper. | n/a | [context.py](agents-remember-md/mcp/src/agents_remember/providers/context.py) |
-| The lifecycle installer reads the GrepAI pin and builds the Docker-owned runner image through the lifecycle facade. | n/a | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle.py) |
+| The requirement file pins GrepAI to `grepai==0.35.0`. | L1-L2 | [grepai.txt](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt) |
+| The MCP runtime installer requires both CGC and GrepAI provider requirement files before copying provider defaults into the coordination root. | n/a | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| The provider helper exposes the GrepAI pin and writes the managed requirements file through the package provider helper. | n/a | [context.py](agents-remember/mcp/src/agents_remember/providers/context.py) |
+| The lifecycle installer reads the GrepAI pin and builds the Docker-owned runner image through the lifecycle facade. | n/a | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle.py) |
 
 ## Cross-Repo References
 

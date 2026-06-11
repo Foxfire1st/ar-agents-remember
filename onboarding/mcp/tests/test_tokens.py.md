@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tokens.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -42,8 +42,8 @@ metadata fields back into the counted JSON.
 
 | Finding | Source Path |
 | --- | --- |
-| Counting engine under test. | [tokens.py](agents-remember-md/mcp/src/agents_remember/models/tokens.py) |
-| `PingResponse` is the representative `ResponseModel` used for the serializer tests. | [core.py](agents-remember-md/mcp/src/agents_remember/models/core.py) |
+| Counting engine under test. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
+| `PingResponse` is the representative `ResponseModel` used for the serializer tests. | [core.py](agents-remember/mcp/src/agents_remember/models/core.py) |
 
 ## Update History
 

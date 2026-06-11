@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/json_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
@@ -47,9 +47,9 @@ No external documentation is needed for this project settings parser.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Settings selection prefers this JSON parser before Markdown fallback. | settings selector | [settings.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/settings.py) |
-| Example settings exercise storage path rules and cross-repo configuration shape. | settings fixture | [settings.example.json](agents-remember-md/examples/mcp/settings.example.json) |
-| Resolver parity tests cover JSON settings output shape. | resolver tests | [test_resolver_parity.py](agents-remember-md/mcp/tests/test_resolver_parity.py) |
+| Settings selection prefers this JSON parser before Markdown fallback. | settings selector | [settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/settings.py) |
+| Example settings exercise storage path rules and cross-repo configuration shape. | settings fixture | [settings.example.json](agents-remember/examples/mcp/settings.example.json) |
+| Resolver parity tests cover JSON settings output shape. | resolver tests | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py) |
 
 ## Cross-Repo References
 

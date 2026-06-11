@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                              |
 | ---------------------- | ------------------------------------------------------------------ |
-| repository             | agents-remember-md                                                 |
+| repository             | agents-remember                                                 |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -66,10 +66,10 @@ closeout.
 
 | Finding                                                                                                                                                                                                                                    | Citations | Source Path                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ---------------------------------------------------------------------------------------------------- |
-| The skill names task-start drift, pre-code-commit missing-onboarding checks, closeout `memory_quality_check`, and targeted style repair as one `c-02-memory-quality-control` skill quality control workflow. | L27-L40 | [`c-02-memory-quality-control` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
-| Task-start quality control runs `drift_check` MCP tool, preserves the gradual-adoption boundary for historical files without onboarding, and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | L67-L91 | [`c-02-memory-quality-control` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
-| Pre-code-commit quality control runs `check_missing_onboarding` only against current worktree additions so newly added files cannot escape onboarding. | L147-L164 | [`c-02-memory-quality-control` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
-| Closeout quality control runs `memory_quality_check` MCP tool and uses focused fixers such as `history_order_fix.py` only after reported findings. | L166-L191 | [`c-02-memory-quality-control` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
+| The skill names task-start drift, pre-code-commit missing-onboarding checks, closeout `memory_quality_check`, and targeted style repair as one `c-02-memory-quality-control` skill quality control workflow. | L27-L40 | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
+| Task-start quality control runs `drift_check` MCP tool, preserves the gradual-adoption boundary for historical files without onboarding, and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | L67-L91 | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
+| Pre-code-commit quality control runs `check_missing_onboarding` only against current worktree additions so newly added files cannot escape onboarding. | L147-L164 | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
+| Closeout quality control runs `memory_quality_check` MCP tool and uses focused fixers such as `history_order_fix.py` only after reported findings. | L166-L191 | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
 
 ## Cross-Repo References
 

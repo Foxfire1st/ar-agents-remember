@@ -2,7 +2,7 @@
 
 | Field                  | Value                         |
 | ---------------------- | ----------------------------- |
-| repository             | agents-remember-md             |
+| repository             | agents-remember             |
 | path                   | `scripts/sync-skills.py`       |
 | doc_type               | `file-level-onboarding`        |
 | lastUpdated            | 2026-06-10T00:40+02:00         |
@@ -70,10 +70,10 @@ No external documentation is needed for this repository-local helper.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets. | L13-L55 | [scripts/sync-skills.py](agents-remember-md/scripts/sync-skills.py) |
-| `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. | L86-L161 | [scripts/sync-skills.py](agents-remember-md/scripts/sync-skills.py) |
-| Normal sync mode refuses self-sync, removes each target skill folder, copies canonical skills into place, and then reruns the check. | L124-L132; L164-L172 | [scripts/sync-skills.py](agents-remember-md/scripts/sync-skills.py) |
-| The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. | L95-L117 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets. | L13-L55 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
+| `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. | L86-L161 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
+| Normal sync mode refuses self-sync, removes each target skill folder, copies canonical skills into place, and then reruns the check. | L124-L132; L164-L172 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
+| The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. | L95-L117 | [AGENTS.md](agents-remember/AGENTS.md) |
 
 ## Cross-Repo References
 

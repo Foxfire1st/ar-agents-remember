@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-06T12:15                           |
@@ -61,8 +61,8 @@ visualizer commands.
 
 | Finding | Source Path |
 | --- | --- |
-| The parent lifecycle facade imports the CGC package facade. | [__init__.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| Watcher aggregation imports CGC all-root start/status/stop behavior from this package. | [watchers.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
+| The parent lifecycle facade imports the CGC package facade. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
+| Watcher aggregation imports CGC all-root start/status/stop behavior from this package. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
 
 ## Update History
 

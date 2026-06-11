@@ -1,9 +1,9 @@
 ## Installation Order
 
-1. Started from the freshly cloned code repository at `/home/foxfire/Projects/agents-remember-md`.
+1. Started from the freshly cloned code repository at `/home/foxfire/Projects/agents-remember`.
 2. Created the initial `ar-coordination` structure so the workspace had a coordination root, MCP settings location, provider directories, and memory-repo slot.
 3. Removed the auto-generated memory scaffold after confirming the workspace should use the existing memory repository instead.
-4. Cloned the existing memory repository `https://github.com/Foxfire1st/ar-agents-remember-md.git` into `/home/foxfire/Projects/ar-coordination/memory-repos/ar-agents-remember-md`.
+4. Cloned the existing memory repository `https://github.com/Foxfire1st/ar-agents-remember.git` into `/home/foxfire/Projects/ar-coordination/memory-repos/ar-agents-remember`.
 5. Registered the Agents Remember MCP server in `/home/foxfire/.codex/config.toml`.
 6. Wrote the MCP runtime settings at `/home/foxfire/.codex/mcp/agents-remember.settings.json`, pointing it at `/home/foxfire/Projects/ar-coordination` and `/home/foxfire/Projects`.
 7. Enabled the provider entries in the MCP settings:
@@ -17,16 +17,16 @@
     - `ar-cgc-falkordb`
     - `ar-grepai-postgres`
 12. Updated the MCP server command to run through `sg docker -c ...` so it can access Docker even before the current login session picks up the Docker group membership.
-13. Started the CodeGraphContext watcher for `/home/foxfire/Projects/agents-remember-md`.
+13. Started the CodeGraphContext watcher for `/home/foxfire/Projects/agents-remember`.
 14. Started the GrepAI watcher for the `agents-remember-memory` workspace with the configured provider log directory.
 15. Verified the provider containers and watcher processes:
     - CodeGraphContext watcher PID: `21059`
     - GrepAI watcher PID: `22034`
-16. Verified the MCP/provider path with `context_packet(repo_id="agents-remember-md", include_providers=true)`.
+16. Verified the MCP/provider path with `context_packet(repo_id="agents-remember", include_providers=true)`.
 
 ## Issues Encountered
 
-1. The first memory bootstrap created a fresh scaffold, but the workspace already had an intended external memory repo. The scaffold had to be removed and replaced with `Foxfire1st/ar-agents-remember-md.git`.
+1. The first memory bootstrap created a fresh scaffold, but the workspace already had an intended external memory repo. The scaffold had to be removed and replaced with `Foxfire1st/ar-agents-remember.git`.
 2. The MCP server was not enough by itself because provider-backed retrieval was configured but the provider runtimes were not installed yet.
 3. Docker was initially missing, which blocked the provider containers for Ollama, FalkorDB, and PostgreSQL.
 4. After Docker was installed, the current shell still could not access `/var/run/docker.sock` directly because the Docker group membership had not propagated into the active session. Direct `docker ps` returned permission denied, while `sg docker -c "docker ps ..."` worked.

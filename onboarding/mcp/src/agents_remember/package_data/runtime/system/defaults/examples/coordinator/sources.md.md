@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,7 +43,7 @@ No external documentation is needed.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The coordinator sources example distinguishes global source registries from repository-specific domain documentation. | L1-L12 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md) |
+| The coordinator sources example distinguishes global source registries from repository-specific domain documentation. | L1-L12 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md) |
 
 ## Cross-Repo References
 

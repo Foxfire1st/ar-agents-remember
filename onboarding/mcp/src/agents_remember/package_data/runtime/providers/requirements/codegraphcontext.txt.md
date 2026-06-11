@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T12:32+02:00                     |
@@ -55,9 +55,9 @@ No external documentation is needed for the pin itself.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The provider requirements file pins CodeGraphContext to version 0.4.10 plus Tree-Sitter parser dependencies needed for symbol extraction. | L1-L4 | [codegraphcontext.txt](agents-remember-md/mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt) |
-| The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root. | n/a | [runtime.py](agents-remember-md/mcp/src/agents_remember/install/runtime.py) |
-| The CGC runner build uses the installed requirements pin when building the Docker runner image. | n/a | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| The provider requirements file pins CodeGraphContext to version 0.4.10 plus Tree-Sitter parser dependencies needed for symbol extraction. | L1-L4 | [codegraphcontext.txt](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt) |
+| The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root. | n/a | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| The CGC runner build uses the installed requirements pin when building the Docker runner image. | n/a | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
 
 ## Cross-Repo References
 

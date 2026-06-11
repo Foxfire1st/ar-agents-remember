@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
@@ -46,8 +46,8 @@ envelopes were removed with the direct-closeout tool surface (issue #62).
 
 | Finding | Source Path |
 | --- | --- |
-| Read-only worktree status projects worktree-manager payloads into the context summary shape. | [status.py](agents-remember-md/mcp/src/agents_remember/worktrees/status.py) |
-| Public worktree MCP controllers delegate to the package worktree manager. | [worktree_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/worktree_tools.py) |
+| Read-only worktree status projects worktree-manager payloads into the context summary shape. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
+| Public worktree MCP controllers delegate to the package worktree manager. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
 
 ## Update History
 

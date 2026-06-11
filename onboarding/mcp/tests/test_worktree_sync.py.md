@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
@@ -41,8 +41,8 @@ representative `worktree_sync` payload).
 
 | Finding | Source Path |
 | --- | --- |
-| The sync module under test. | [sync.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/sync.py) |
-| Contract `sync_log` round-trip relies on the contract serializer. | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The sync module under test. | [sync.py](agents-remember/mcp/src/agents_remember/worktrees/modules/sync.py) |
+| Contract `sync_log` round-trip relies on the contract serializer. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ## Update History
 

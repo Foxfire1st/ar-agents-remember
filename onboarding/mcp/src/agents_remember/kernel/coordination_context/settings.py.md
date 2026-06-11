@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
@@ -47,9 +47,9 @@ No external documentation is needed for this package-local settings selector.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| JSON parsing owns the preferred settings format. | JSON parser | [json_settings.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/json_settings.py) |
-| Markdown parsing owns legacy fenced settings fallback. | Markdown parser | [markdown_settings.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
-| Resolver assembly calls this selector before building the final context. | resolver | [resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
+| JSON parsing owns the preferred settings format. | JSON parser | [json_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/json_settings.py) |
+| Markdown parsing owns legacy fenced settings fallback. | Markdown parser | [markdown_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
+| Resolver assembly calls this selector before building the final context. | resolver | [resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
 
 ## Cross-Repo References
 

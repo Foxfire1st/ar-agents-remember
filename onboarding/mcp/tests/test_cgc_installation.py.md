@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_cgc_installation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -106,13 +106,13 @@ No external documentation is needed for these unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Shared fixtures build a synthetic coordination root and settings file for a single `codegraphcontext-code` provider instance and parse `cgc` args through the real lifecycle parser. | L22-L100 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
-| The scoped install dry-run asserts the result shape, absence of `doctor`/`backend` keys, and the two planned Compose commands (image build, then doctor run). | L104-L127 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
-| The dry-run side-effect test proves the runtime root and state file are not materialized because preflight short-circuits before the layout is ensured. | L129-L139 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
-| The no-`--repo-id` install dry-run routes to install-all and asserts the aggregated action, backend ok flag, repo count, and per-repo `install` result. | L141-L165 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
-| The preflight dry-run returns no executed/backend results and an early result carrying `dryRun`, `ok`, the `install` action, and the planned commands. | L169-L185 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
-| The doctor dry-run asserts the named check order, the failing runner-image check and overall verdict, and the Compose doctor command plan. | L189-L233 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
-| The runtime containment check passes for a coordination-rooted runtime and reports `outsideSourceRepo`. | L235-L244 | [test_cgc_installation.py](agents-remember-md/mcp/tests/test_cgc_installation.py) |
+| Shared fixtures build a synthetic coordination root and settings file for a single `codegraphcontext-code` provider instance and parse `cgc` args through the real lifecycle parser. | L22-L100 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The scoped install dry-run asserts the result shape, absence of `doctor`/`backend` keys, and the two planned Compose commands (image build, then doctor run). | L104-L127 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The dry-run side-effect test proves the runtime root and state file are not materialized because preflight short-circuits before the layout is ensured. | L129-L139 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The no-`--repo-id` install dry-run routes to install-all and asserts the aggregated action, backend ok flag, repo count, and per-repo `install` result. | L141-L165 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The preflight dry-run returns no executed/backend results and an early result carrying `dryRun`, `ok`, the `install` action, and the planned commands. | L169-L185 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The doctor dry-run asserts the named check order, the failing runner-image check and overall verdict, and the Compose doctor command plan. | L189-L233 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The runtime containment check passes for a coordination-rooted runtime and reports `outsideSourceRepo`. | L235-L244 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
 
 ## Cross-Repo References
 

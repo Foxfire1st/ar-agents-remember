@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -60,8 +60,8 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | n/a | [config.py](agents-remember-md/mcp/src/agents_remember/mcp/config.py) |
-| Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | n/a | [settings.py](agents-remember-md/mcp/src/agents_remember/providers/settings.py) |
+| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | n/a | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | n/a | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 
 ## Update History
 

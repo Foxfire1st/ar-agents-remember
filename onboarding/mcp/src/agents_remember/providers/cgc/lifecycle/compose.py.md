@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T06:20+02:00                     |
@@ -89,9 +89,9 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `cgc_compose_render()` fills backend image, container, port, data volume, runner image/build context, ownership labels, mounts, environment, watcher services, and network name into the package override template, using shared port mapping rendering for `auto` ports. | L24-L75 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
-| CGC watcher service names are derived from layout repo IDs, and watcher fragments mount runtime and code roots with generated environment. | L77-L116 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
-| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L119-L125 | [compose.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
+| `cgc_compose_render()` fills backend image, container, port, data volume, runner image/build context, ownership labels, mounts, environment, watcher services, and network name into the package override template, using shared port mapping rendering for `auto` ports. | L24-L75 | [compose.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
+| CGC watcher service names are derived from layout repo IDs, and watcher fragments mount runtime and code roots with generated environment. | L77-L116 | [compose.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
+| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L119-L125 | [compose.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -60,10 +60,10 @@ This onboarding is backed by the skill entrypoint and its companion workflow.
 
 | Finding | Citations | Source Path |
 | ------- | --------- | ----------- |
-| The skill entrypoint applies when durable knowledge emerges during developer discussion, task execution, review, or direct clarification. | L6-L17 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
-| Durable destinations include task-local artifacts and onboarding through `c-05-create-or-update-onboarding-files` skill when a verified factual current-state clarification should survive outside the task. | L19-L26 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
-| The entrypoint now requires code/onboarding verification and forbids copying developer clarifications into onboarding verbatim when code reality contradicts or only partially supports them. | L28-L39 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
-| The companion workflow requires verification before capture, only propagates factual current-state findings to onboarding after the guardrail passes, and preserves evidence/capture summaries. | L38-L42; L70-L95; L97-L105 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/findings-capture-workflow.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/findings-capture-workflow.md) |
+| The skill entrypoint applies when durable knowledge emerges during developer discussion, task execution, review, or direct clarification. | L6-L17 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
+| Durable destinations include task-local artifacts and onboarding through `c-05-create-or-update-onboarding-files` skill when a verified factual current-state clarification should survive outside the task. | L19-L26 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
+| The entrypoint now requires code/onboarding verification and forbids copying developer clarifications into onboarding verbatim when code reality contradicts or only partially supports them. | L28-L39 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
+| The companion workflow requires verification before capture, only propagates factual current-state findings to onboarding after the guardrail passes, and preserves evidence/capture summaries. | L38-L42; L70-L95; L97-L105 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/findings-capture-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/findings-capture-workflow.md) |
 
 ## Cross-Repo References
 

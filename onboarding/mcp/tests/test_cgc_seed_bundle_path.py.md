@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_cgc_seed_bundle_path.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T23:40+02:00                     |
@@ -87,8 +87,8 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Source Path |
 | --- | --- |
-| `_seed_target_runtime_root` and `_cgc_settings_path` live in the CGC seed module. | [seed.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/seed.py) |
-| `cgc_extra_args` uses `_cgc_settings_path` with the same priority chain verified here. | [seed.py](agents-remember-md/mcp/src/agents_remember/providers/cgc/seed.py) |
+| `_seed_target_runtime_root` and `_cgc_settings_path` live in the CGC seed module. | [seed.py](agents-remember/mcp/src/agents_remember/providers/cgc/seed.py) |
+| `cgc_extra_args` uses `_cgc_settings_path` with the same priority chain verified here. | [seed.py](agents-remember/mcp/src/agents_remember/providers/cgc/seed.py) |
 
 ## Cross-Repo References
 

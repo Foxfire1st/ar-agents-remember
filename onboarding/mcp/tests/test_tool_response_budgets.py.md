@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tool_response_budgets.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:00+02:00                     |
@@ -47,8 +47,8 @@ enumerated, and that the report file retains all records round-trip.
 
 | Finding | Source Path |
 | --- | --- |
-| The report helper under test. | [tool_reports.py](agents-remember-md/mcp/src/agents_remember/mcp/tool_reports.py) |
-| The compact builders under test. | [core.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/core.py); [providers.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/providers.py); [memory.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/memory.py) |
+| The report helper under test. | [tool_reports.py](agents-remember/mcp/src/agents_remember/mcp/tool_reports.py) |
+| The compact builders under test. | [core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py); [providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py); [memory.py](agents-remember/mcp/src/agents_remember/mcp/tools/memory.py) |
 
 ## Update History
 

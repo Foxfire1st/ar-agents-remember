@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
@@ -37,7 +37,7 @@ and the `repo_root_placeholder()` helper.
 
 | Finding | Source Path |
 | --- | --- |
-| The drift facade re-exports these models/constants for backward-compatible imports. | [drift.py](agents-remember-md/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
+| The drift facade re-exports these models/constants for backward-compatible imports. | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
 
 ## Update History
 

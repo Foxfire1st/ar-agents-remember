@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context_resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -51,9 +51,9 @@ invokes it.
 
 | Finding | Source Path |
 | --- | --- |
-| `c-08-ar-coordination-context-resolver` skill guidance routes normal use through the MCP/package resolver. | [`c-08-ar-coordination-context-resolver` SKILL.md](agents-remember-md/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md) |
-| Resolver shape is covered by package resolver tests. | [test_resolver_parity.py](agents-remember-md/mcp/tests/test_resolver_parity.py) |
-| Focused implementation modules now live under the coordination-context package. | [coordination_context overview](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/overview.md) |
+| `c-08-ar-coordination-context-resolver` skill guidance routes normal use through the MCP/package resolver. | [`c-08-ar-coordination-context-resolver` SKILL.md](agents-remember/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md) |
+| Resolver shape is covered by package resolver tests. | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py) |
+| Focused implementation modules now live under the coordination-context package. | [coordination_context overview](agents-remember/mcp/src/agents_remember/kernel/coordination_context/overview.md) |
 
 ## Update History
 

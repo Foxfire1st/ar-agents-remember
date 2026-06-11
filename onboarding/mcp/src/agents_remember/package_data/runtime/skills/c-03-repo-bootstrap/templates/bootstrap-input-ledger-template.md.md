@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------ |
-| repository             | agents-remember-md                                                                               |
+| repository             | agents-remember                                                                               |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md` |
 | doc_type               | `file-level-onboarding`                                                                          |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                              | Citations | Source Path                                                                                      |
 | ---------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------ |
-| The input ledger records run metadata, onboarding root, source inventory gate status, and the presented source inventory with status, planned use, and user decision. | L1-L19    | [bootstrap-input-ledger-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md) |
-| The template captures excluded sources, weak source categories, additional user sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and proceed/no-proceed decision. | L21-L100   | [bootstrap-input-ledger-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md) |
-| `c-03-repo-bootstrap` skill requires source inventory review to be written to `bootstrap/input-ledger.md` using this template before automated execution starts. | L226-L254; L548-L564 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The input ledger records run metadata, onboarding root, source inventory gate status, and the presented source inventory with status, planned use, and user decision. | L1-L19    | [bootstrap-input-ledger-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md) |
+| The template captures excluded sources, weak source categories, additional user sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and proceed/no-proceed decision. | L21-L100   | [bootstrap-input-ledger-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md) |
+| `c-03-repo-bootstrap` skill requires source inventory review to be written to `bootstrap/input-ledger.md` using this template before automated execution starts. | L226-L254; L548-L564 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
@@ -50,9 +50,9 @@ No external documentation is needed for these package-local data models.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `MissingMemoryError` subclasses the typed `AgentsRememberError` base instead of bare `ValueError`. | error base import | [errors.py](agents-remember-md/mcp/src/agents_remember/errors.py) |
-| Resolver assembly returns `CoordinationContext` instances defined here. | resolver assembly | [resolver.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
-| Serialization converts these models to JSON-safe dictionaries. | serialization | [serialize.py](agents-remember-md/mcp/src/agents_remember/kernel/coordination_context/serialize.py) |
+| `MissingMemoryError` subclasses the typed `AgentsRememberError` base instead of bare `ValueError`. | error base import | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
+| Resolver assembly returns `CoordinationContext` instances defined here. | resolver assembly | [resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
+| Serialization converts these models to JSON-safe dictionaries. | serialization | [serialize.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/serialize.py) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/memory_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
@@ -44,8 +44,8 @@ use the broader memory quality gate. `memory_baseline_status_tool` reports
 
 | Finding | Source Path |
 | --- | --- |
-| Memory response models cover drift, quality, route-index, init, baseline, and carryover tools. | [memory.py](agents-remember-md/mcp/src/agents_remember/models/memory.py) |
-| Route index generation is owned by the kernel route-index module. | [route_index.py](agents-remember-md/mcp/src/agents_remember/kernel/route_index.py) |
+| Memory response models cover drift, quality, route-index, init, baseline, and carryover tools. | [memory.py](agents-remember/mcp/src/agents_remember/models/memory.py) |
+| Route index generation is owned by the kernel route-index module. | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 
 ## Update History
 

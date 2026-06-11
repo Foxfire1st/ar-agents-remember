@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/tests/test_seed_timeouts.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
@@ -39,8 +39,8 @@ Marker tests drive `grepai_scan_state_from_log` with real watcher log shapes.
 
 | Finding | Source Path |
 | --- | --- |
-| The watchdog and clone under test. | [seed.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/seed.py) |
-| The scan-marker parser under test. | [runner.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
+| The watchdog and clone under test. | [seed.py](agents-remember/mcp/src/agents_remember/providers/grepai/seed.py) |
+| The scan-marker parser under test. | [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
 
 ## Update History
 

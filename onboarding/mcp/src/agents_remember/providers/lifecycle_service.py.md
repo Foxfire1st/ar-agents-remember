@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle_service.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T19:16+02:00                     |
@@ -47,9 +47,9 @@ structured `ok: false` payloads for MCP callers.
 
 | Finding | Source Path |
 | --- | --- |
-| MCP provider tool controllers call this service layer. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| CLI/operator implementation functions remain behind the lifecycle facade. | [lifecycle.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| Tests verify service calls do not route through `lifecycle.main()`. | [test_tools.py](agents-remember-md/mcp/tests/test_tools.py) |
+| MCP provider tool controllers call this service layer. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| CLI/operator implementation functions remain behind the lifecycle facade. | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
+| Tests verify service calls do not route through `lifecycle.main()`. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T01:06+02:00                     |
@@ -45,9 +45,9 @@ No external domain documentation applies to this repository-local workflow skill
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. | L25-L36 | [`w-02-light-task-workflow` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
-| Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, and waiting for commit approval before closeout commits. | L38-L52 | [`w-02-light-task-workflow` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
-| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. | L64-L77 | [`w-02-light-task-workflow` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
+| The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. | L25-L36 | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
+| Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, and waiting for commit approval before closeout commits. | L38-L52 | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
+| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. | L64-L77 | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
 
 ## Cross-Repo References
 

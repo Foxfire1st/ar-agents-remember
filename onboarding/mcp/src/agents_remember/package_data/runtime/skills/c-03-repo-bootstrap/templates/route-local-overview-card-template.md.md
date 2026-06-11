@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                              |
 | ---------------------- | -------------------------------------------------------------------------------------------------- |
-| repository             | agents-remember-md                                                                                 |
+| repository             | agents-remember                                                                                 |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-card-template.md` |
 | doc_type               | `file-level-onboarding`                                                                            |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,8 +43,8 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                         | Citations | Source Path                                                                                              |
 | ----------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------- |
-| The overview card template records route metadata, governed paths, required explanation topics, inputs, links, and open questions. | L1-L61    | [route-local-overview-card-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-card-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4C writes overview cards for each selected governing route before route-local overview waves. | L738-L762 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The overview card template records route metadata, governed paths, required explanation topics, inputs, links, and open questions. | L1-L61    | [route-local-overview-card-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-card-template.md) |
+| `c-03-repo-bootstrap` skill Phase 4C writes overview cards for each selected governing route before route-local overview waves. | L738-L762 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

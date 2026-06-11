@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:45+02:00     |
@@ -82,8 +82,8 @@ tip), `diverged` (independent commits on main — reported, never forced),
 
 | Finding | Source Path |
 | --- | --- |
-| `memory_carryover_plan` and `memory_carryover_apply` call this module. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
-| Ledger updates are delegated to kernel memory ledger helpers. | [memory_ledger.py](agents-remember-md/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| `memory_carryover_plan` and `memory_carryover_apply` call this module. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| Ledger updates are delegated to kernel memory ledger helpers. | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
 
 ## Update History
 

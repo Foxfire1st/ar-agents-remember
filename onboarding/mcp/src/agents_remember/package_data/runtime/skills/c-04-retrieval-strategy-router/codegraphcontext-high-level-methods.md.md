@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                  |
 | ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember-md                                     |
+| repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -73,10 +73,10 @@ example outputs.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The CGC catalog states the typed MCP tool contract and says generic `cgc_query` is removed. | L1-L42 | [codegraphcontext-high-level-methods.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| Symbol search, callees, callers, dependencies, and complexity sections show placeholder tool calls and synthetic output shapes. | L44-L175 | [codegraphcontext-high-level-methods.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| Practical rules explain when to use each typed CGC tool and require source confirmation before edits. | L177-L185 | [codegraphcontext-high-level-methods.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Relationship section. | L107-L111 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| The CGC catalog states the typed MCP tool contract and says generic `cgc_query` is removed. | L1-L42 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| Symbol search, callees, callers, dependencies, and complexity sections show placeholder tool calls and synthetic output shapes. | L44-L175 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| Practical rules explain when to use each typed CGC tool and require source confirmation before edits. | L177-L185 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Relationship section. | L107-L111 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
 
 ## Cross-Repo References
 

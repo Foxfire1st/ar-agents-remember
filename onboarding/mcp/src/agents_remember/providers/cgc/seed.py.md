@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:05+02:00     |
@@ -44,7 +44,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- |
 | Provider-level CGC setup calls this module before optional refresh fallback. | [setup.py](setup.py.md) |
 | Bundle path rewriting is delegated to the CGC bundle module. | [bundle.py](bundle.py.md) |
-| Worktree setup constructs CGC seed options through the provider setup request. | [git_worktree_manager.py](agents-remember-md/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
+| Worktree setup constructs CGC seed options through the provider setup request. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 
 ## Update History
 

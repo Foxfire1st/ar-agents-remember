@@ -3,7 +3,7 @@
   "coordinationRoot": "/home/foxfire/Projects/ar-coordination",
   "workspaceRoot": "/home/foxfire/Projects",
   "repositories": {
-    "agents-remember-md": {}
+    "agents-remember": {}
   },
   "providers": {
     "codegraphcontext-code": {},

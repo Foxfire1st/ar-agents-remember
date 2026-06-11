@@ -2,7 +2,7 @@
 
 **Task:** `task-provider-workflow-compatibility.md`  
 **Created:** 2026-05-27  
-**Code repo:** `/home/mohamedreadone/Projects/agents-remember-md`  
+**Code repo:** `/home/mohamedreadone/Projects/agents-remember`  
 **Current committed code slice:** `f20f75e Make providers workflow-scoped for worktrees and benchmarks`  
 **Current memory commits:** `6ea6374 Update agents-remember provider workflow memory`, `2eedaa8 Record provider workflow compatibility closeout`
 
@@ -125,7 +125,7 @@ Remaining steps after the live process finishes:
 - Confirm no CGC runner commands replaced `ar-cgc-falkordb-projects`.
 - Confirm all `ar-cgc-watcher-projects-*` containers remain running.
 - Confirm GrepAI watcher/backend/embedder remain healthy.
-- Run targeted CGC queries, for example `provider_instance_id` in `agents-remember-md` and a known symbol in `device-management`.
+- Run targeted CGC queries, for example `provider_instance_id` in `agents-remember` and a known symbol in `device-management`.
 - Run targeted GrepAI searches against current memory.
 - Update findings F-021, F-022, F-023, and F-024 from `fixed-awaiting-retest` to `retested` only after these pass.
 

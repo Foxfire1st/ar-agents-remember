@@ -160,7 +160,7 @@ is inside the workspace, otherwise absolute).
 
 | Harness | Mechanism | What to do |
 | --- | --- | --- |
-| Claude Code | `SessionStart` hook injects `additionalContext` | Install the hook: write `.claude/hooks/coordinator-first-action.md`, add a `SessionStart` command entry to `.claude/settings.json` that emits the file as `additionalContext`. Full worked example in [docs/install/claude-code.md](agents-remember-md/docs/install/claude-code.md). Keep `CLAUDE.md` import only as a degraded fallback. |
+| Claude Code | `SessionStart` hook injects `additionalContext` | Install the hook: write `.claude/hooks/coordinator-first-action.md`, add a `SessionStart` command entry to `.claude/settings.json` that emits the file as `additionalContext`. Full worked example in [docs/install/claude-code.md](agents-remember/docs/install/claude-code.md). Keep `CLAUDE.md` import only as a degraded fallback. |
 | Codex | `SessionStart` hook (Claude-style), `~/.codex/hooks.json` or `.codex/config.toml [hooks]`; `stdout` JSON `hookSpecificOutput.additionalContext` is injected | Install the hook with the same directive; also note Codex reads `AGENTS.md` natively. |
 | Pi.dev | `session_start` / `before_agent_start` can inject context | Install the harness's start hook with the directive. |
 | OpenClaw | `session_start` / `before_prompt_build` can inject context | Install the harness's start hook with the directive. |

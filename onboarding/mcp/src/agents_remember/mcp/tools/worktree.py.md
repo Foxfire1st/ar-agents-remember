@@ -2,7 +2,7 @@
 
 | Field                  | Value                                           |
 | ---------------------- | ----------------------------------------------- |
-| repository             | agents-remember-md                              |
+| repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-06-10T09:56+02:00     |

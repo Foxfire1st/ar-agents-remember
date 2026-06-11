@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T22:29+02:00                     |
@@ -45,9 +45,9 @@ operation-less responses such as `ping`.
 
 | Finding | Source Path |
 | --- | --- |
-| Shared response envelopes define the token metadata fields on the `ResponseModel` base. | [base.py](agents-remember-md/mcp/src/agents_remember/models/base.py) |
-| `_tool_payload` finalizes token metadata on every public tool response via this module. | [tools/base.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/base.py) |
-| Direct tests for the counters, serializers, and the fixpoint self-consistency guarantee. | [test_tokens.py](agents-remember-md/mcp/tests/test_tokens.py) |
+| Shared response envelopes define the token metadata fields on the `ResponseModel` base. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
+| `_tool_payload` finalizes token metadata on every public tool response via this module. | [tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| Direct tests for the counters, serializers, and the fixpoint self-consistency guarantee. | [test_tokens.py](agents-remember/mcp/tests/test_tokens.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                         |
 | ---------------------- | ----------------------------- |
-| repository             | agents-remember-md             |
+| repository             | agents-remember             |
 | path                   | `scripts/sync-runtime.py`      |
 | doc_type               | `file-level-onboarding`        |
 | lastUpdated            | 2026-06-10T00:40+02:00         |
@@ -69,10 +69,10 @@ No external documentation is needed for this repository-local helper.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The script defines the four root runtime asset source folders and maps them only to MCP package-data targets. | L13-L52 | [scripts/sync-runtime.py](agents-remember-md/scripts/sync-runtime.py) |
-| `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. | L99-L155 | [scripts/sync-runtime.py](agents-remember-md/scripts/sync-runtime.py) |
-| Normal sync mode refuses self-sync, replaces each package-data target folder, copies the canonical source tree into place, and reruns the check. | L118-L125; L158-L171 | [scripts/sync-runtime.py](agents-remember-md/scripts/sync-runtime.py) |
-| The root AGENTS instructions tell contributors to edit root runtime asset folders first and run `python3 scripts/sync-runtime.py` rather than editing generated package-data copies directly. | L100-L123 | [AGENTS.md](agents-remember-md/AGENTS.md) |
+| The script defines the four root runtime asset source folders and maps them only to MCP package-data targets. | L13-L52 | [scripts/sync-runtime.py](agents-remember/scripts/sync-runtime.py) |
+| `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. | L99-L155 | [scripts/sync-runtime.py](agents-remember/scripts/sync-runtime.py) |
+| Normal sync mode refuses self-sync, replaces each package-data target folder, copies the canonical source tree into place, and reruns the check. | L118-L125; L158-L171 | [scripts/sync-runtime.py](agents-remember/scripts/sync-runtime.py) |
+| The root AGENTS instructions tell contributors to edit root runtime asset folders first and run `python3 scripts/sync-runtime.py` rather than editing generated package-data copies directly. | L100-L123 | [AGENTS.md](agents-remember/AGENTS.md) |
 
 ## Cross-Repo References
 

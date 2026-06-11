@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T07:40+02:00|
@@ -67,9 +67,9 @@ benchmark tools, and `tokens.py` for response token accounting.
 
 | Finding | Source Path |
 | --- | --- |
-| Public MCP payload builders validate through the response model registry. | [mcp/tools/](agents-remember-md/mcp/src/agents_remember/mcp/tools/) |
-| The registry maps every public tool name to a response model. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
-| Contract tests prove public tool coverage and schema generation. | [test_models.py](agents-remember-md/mcp/tests/test_models.py) |
+| Public MCP payload builders validate through the response model registry. | [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/) |
+| The registry maps every public tool name to a response model. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Contract tests prove public tool coverage and schema generation. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
 
 ## Update History
 

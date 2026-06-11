@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
@@ -65,9 +65,9 @@ markers (`Indexing [`, `Initial scan`, `Embedding`) → `in-progress`, otherwise
 
 | Finding | Source Path |
 | --- | --- |
-| Runner settings and workspace paths are derived in GrepAI core. | [core.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
-| GrepAI action dispatch uses this module for start, stop, refresh, and bounded run readiness. | [actions.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/actions.py) |
-| GrepAI project migration lives with backend startup and is reused here. | [backend.py](agents-remember-md/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
+| Runner settings and workspace paths are derived in GrepAI core. | [core.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
+| GrepAI action dispatch uses this module for start, stop, refresh, and bounded run readiness. | [actions.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/actions.py) |
+| GrepAI project migration lives with backend startup and is reused here. | [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
 
 ## Update History
 

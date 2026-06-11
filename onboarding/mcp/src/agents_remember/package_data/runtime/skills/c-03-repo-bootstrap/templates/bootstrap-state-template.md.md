@@ -2,7 +2,7 @@
 
 | Field                  | Value                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------ |
-| repository             | agents-remember-md                                                                         |
+| repository             | agents-remember                                                                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-state-template.md` |
 | doc_type               | `file-level-onboarding`                                                                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
@@ -43,9 +43,9 @@ No external documentation is needed for this repository-local template.
 
 | Finding                                                                                  | Citations | Source Path                                                                                  |
 | ---------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------- |
-| The state template records bootstrap mode, memory root, onboarding root, branch, topology, source inventory status, and phase status across the full `c-03-repo-bootstrap` skill lifecycle. | L1-L31    | [bootstrap-state-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-state-template.md) |
-| The state template tracks areas, governing routes, slice maintenance, waves, decisions, parking lot items, blockers, deferred files, closeout boundary status, and next action. | L33-L88   | [bootstrap-state-template.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-state-template.md) |
-| `c-03-repo-bootstrap` skill requires every bootstrap to maintain `bootstrap/STATE.md` from this template. | L411-L438 | [`c-03-repo-bootstrap` SKILL.md](agents-remember-md/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| The state template records bootstrap mode, memory root, onboarding root, branch, topology, source inventory status, and phase status across the full `c-03-repo-bootstrap` skill lifecycle. | L1-L31    | [bootstrap-state-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-state-template.md) |
+| The state template tracks areas, governing routes, slice maintenance, waves, decisions, parking lot items, blockers, deferred files, closeout boundary status, and next action. | L33-L88   | [bootstrap-state-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-state-template.md) |
+| `c-03-repo-bootstrap` skill requires every bootstrap to maintain `bootstrap/STATE.md` from this template. | L411-L438 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
 ## Cross-Repo References
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
@@ -47,8 +47,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Context packet worktree status consumes the facade-exported status payload. | [status.py](agents-remember-md/mcp/src/agents_remember/worktrees/status.py) |
-| MCP skill tools return the typed next-operation payloads produced here. | [skill_tools.py](agents-remember-md/mcp/src/agents_remember/controllers/skill_tools.py) |
+| Context packet worktree status consumes the facade-exported status payload. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
+| MCP skill tools return the typed next-operation payloads produced here. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
 
 ## Update History
 

@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
@@ -80,10 +80,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Detection surface: `worktree_status`'s fetch-free freshness block recommends this tool. | [guidance.py](agents-remember-md/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| The contract's `sync_log` field persists each base-pair advance. | [worktree_contract.py](agents-remember-md/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Upstream fetch + ref helpers come from the freshness kernel. | [git_freshness.py](agents-remember-md/mcp/src/agents_remember/kernel/git_freshness.py) |
-| Sync behavior coverage: ff pair, mid-cycle block, conflicts, choices, dry-run. | [test_worktree_sync.py](agents-remember-md/mcp/tests/test_worktree_sync.py) |
+| Detection surface: `worktree_status`'s fetch-free freshness block recommends this tool. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| The contract's `sync_log` field persists each base-pair advance. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Upstream fetch + ref helpers come from the freshness kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
+| Sync behavior coverage: ff pair, mid-cycle block, conflicts, choices, dry-run. | [test_worktree_sync.py](agents-remember/mcp/tests/test_worktree_sync.py) |
 
 ## Cross-Repo References
 

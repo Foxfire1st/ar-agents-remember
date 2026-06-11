@@ -2,7 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember-md                         |
+| repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/compose_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T17:27+02:00                     |
@@ -77,11 +77,11 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | L41-L67 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | L81-L125 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | L135-L144 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | L134-L176; L225-L262 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | L160-L203 | [compose_runtime.py](agents-remember-md/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | L41-L67 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | L81-L125 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | L135-L144 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | L134-L176; L225-L262 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | L160-L203 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 
 ## Cross-Repo References
 
