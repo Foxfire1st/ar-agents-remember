@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                              |
 | lastUpdated            | 2026-06-10T10:26+02:00                     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                           |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `610b8568b6517a78a80d35583101b32ed396e2a7`                           |
+| lastVerifiedCommitDate | 2026-06-11T15:49:54+02:00|
 
 ## Purpose
 
@@ -26,6 +26,16 @@ reports: memory `main` is fast-forwarded to the official checkout tip after
 the carryover commits (states `fast-forwarded` / `already-current` /
 `diverged` / `failed` / `skipped`), with a note to push memory `main` per the
 repo's git workflow on developer approval.
+
+The Candidate Kinds section (carryover artifact coverage, 2.9.0) names the
+four kinds and their `include_review_required` selection keys: `file-sidecar`
+(source path), `route-overview` (normalized route), `memory-only-doc` (source
+path or route, for docs changed only in branch memory), and `entity-catalog`
+(the literal `entity-catalog`; always review-required when differing, with
+fingerprints recomputed against the official ref on apply and reported as
+`entity_fingerprint_validation`). The `exact-landed-commit` tier wording now
+matches the implementation: EVERY source-branch commit touching the path must
+have landed.
 
 ### Conventions
 
@@ -64,6 +74,7 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-06-11T15:05+02:00 — The skill doc gained a Candidate Kinds section (file-sidecar, route-overview, memory-only-doc, entity-catalog with selection keys), memory-only evidence values, the `entity_fingerprint_validation` output field, and the corrected `exact-landed-commit` wording (EVERY touching commit must have landed, not at least one).
 - 2026-06-10T10:26+02:00 — GitHub #54: documented the `ledger-mapped-head` output state and the `memory_main_advance` block (carryover fast-forwards memory main to the official checkout tip; push on developer approval).
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T17:50+02:00: Updated implementation reference after the carryover script route was removed from the skill tree and the MCP package became the only implementation route.

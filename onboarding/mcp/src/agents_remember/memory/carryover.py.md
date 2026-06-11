@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:45+02:00     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `610b8568b6517a78a80d35583101b32ed396e2a7` |
+| lastVerifiedCommitDate | 2026-06-11T15:49:54+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -48,6 +48,26 @@ guarded on the code repository being a clean checkout of the official ref; the
 apply payload reports the result (or the reasoned skip) as
 `route_index_refresh`.
 
+Two further kinds close the diff-blindness gap (issue follow-up to #56).
+Memory-only docs (`memory-only-doc`, via `memory_only_doc_candidates()`) are
+onboarding docs changed only in branch memory whose source path is outside the
+code diff — e.g. a pre-existing drift re-verified mid-task. Auto-carry needs
+two proofs from `_memory_only_evidence()`: the source object at the branch
+doc's `lastVerifiedCommitHash` equals the official ref's
+(`object_id_at_ref()`, file blobs and route trees alike, repo root via
+`<ref>^{tree}`), and official memory has not changed the doc since the memory
+merge-base (`memory_merge_base()`); a parallel official change, a diverged
+source, or an unresolvable verification commit is review-required. The entity
+catalog (`entity-catalog`, via `entity_catalog_candidate()`, selection key
+`entity-catalog`) is review-required whenever `onboarding/entities.md`
+differs; an identical catalog yields no candidate because it has no per-doc
+verification metadata to bump. On carry the catalog skips
+`refresh_onboarding_metadata()` and `_validate_entity_fingerprints()`
+recomputes every `git-blob-set-v1` row against the official ref instead,
+reported as `entity_fingerprint_validation` (`validated` / `mismatch` /
+`skipped`) — fingerprints are derived values, validated rather than trusted as
+copied.
+
 Every apply result also carries `memory_main_advance` (issue #54):
 `_advance_memory_main()` fast-forwards memory `main` to the official checkout
 tip after the carryover commits exist. Code `main` advances via the GitHub PR
@@ -87,6 +107,7 @@ tip), `diverged` (independent commits on main — reported, never forced),
 
 ## Update History
 
+- 2026-06-11T15:05+02:00 — Carryover artifact coverage: documented the `memory-only-doc` and `entity-catalog` candidate kinds (`memory_only_doc_candidates()`, `entity_catalog_candidate()`, `_memory_only_evidence()`, `object_id_at_ref()`, `memory_merge_base()`, `_validate_entity_fingerprints()`) and the `entity_fingerprint_validation` apply field.
 - 2026-06-10T09:45+02:00 — Issue #54 sub-task C: added `_advance_memory_main()` (+ `branch_exists`/`current_branch` helpers); both apply result paths report `memory_main_advance`, fast-forwarding memory main to the official checkout tip after carryover.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: route-overview carryover candidates (`kind`-tagged, route-keyed, identical→auto re-verify, differing→always review-required) and guarded official-side route-index regeneration (`_refresh_official_route_indexes`, reported as `route_index_refresh`).
 - 2026-06-10T05:30+02:00 — `run_git` now sets `stdin=subprocess.DEVNULL` (or explicit `input`): git children inherited the MCP stdio protocol pipe, the proven root cause of the #49 tool-call hangs (stdio harness A/B: 120s hang pre-fix, 3.4s post-fix).
