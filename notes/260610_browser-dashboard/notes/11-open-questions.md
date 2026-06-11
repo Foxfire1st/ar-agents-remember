@@ -58,7 +58,9 @@
     `0_misc` task folder; multi-repo enclosure work likewise needs
     `1_inter-repo-work` so no save forces an arbitrary single-repo choice.
     Number prefixes sort both above the repo folders. Final names improvable;
-    settle before the save gate is built.
+    settle before the save gate is built. The persistence/sharing substrate
+    for the task layer itself (tasks + worktree wrapper contracts in a neutral
+    repo) is parked as backburner issue #79.
 
 ## Product (notes 05/06)
 
