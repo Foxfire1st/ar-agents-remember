@@ -77,6 +77,8 @@ design task.
   (cheap, complete for tool-visible actions) vs explicit emit calls in skills
   (covers chat-side facts but depends on model discipline). Likely both, with
   trust = `observed` for tool-emitted and `declared` for skill-emitted.
+  The fleeting→persistent *promotion* event (save gate, note 01) belongs in
+  the minimum v1 event set.
 - Schema versioning from day one (`ar-observer-event/v2`?) and how corrections
   reference corrected event ids.
 - Retention: the branch had maxDays 1 / 250MB — a dashboard with history charts

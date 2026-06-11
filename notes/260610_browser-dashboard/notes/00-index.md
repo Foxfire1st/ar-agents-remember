@@ -20,7 +20,7 @@ stack (09).
 
 | File | Hook | Status |
 | --- | --- | --- |
-| `01-lifecycle-entity.md` | The root primitive: identifiable, observable lifecycles; every action attributable via lifecycle-id | **SETTLED 2026-06-10**: signals-vs-states player model + orthogonal phases, system-managed ids (idempotent start, contract-owned resume, `switch_lifecycle`), fleeting-vs-persistent boundary at the worktree, worktree-only closeouts (spawned follow-up Q22). Small mechanics remain |
+| `01-lifecycle-entity.md` | The root primitive: identifiable, observable lifecycles; every action attributable via lifecycle-id | **SETTLED 2026-06-10, sharpened 2026-06-11**: signals-vs-states player model + orthogonal phases, system-managed ids (guarded start, contract-owned resume, `switch_lifecycle` as the only id-carrying signal), fleeting-vs-persistent boundary at the worktree, save gate on switch-from-fleeting (landing zones `0_misc` / `1_inter-repo-work` — Q23), TTL fleeting-only, worktree-only closeouts (spawned follow-up Q22). Small mechanics remain |
 | `02-event-model-middle-layer.md` | Point events vs long-running spans; the reducer ("runtime engine", to be renamed) that owns interpretation; what to salvage from the observer branch (concepts, not code) | Concepts accepted; naming + schema open |
 | `03-data-surfaces.md` | The 14 artifacts a dashboard can read today + the 12 gaps (= observability backlog) | Inventory; re-verify at 2.8.0 |
 | `04-control-plane-interaction.md` | Two-way interaction (act on attention items in the same UX); gates; the deliberate "plan for 3.0, architecture supports the dashboard" posture | Requirement fixed; mechanism open |

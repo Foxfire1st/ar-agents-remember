@@ -65,13 +65,15 @@ the entity design.
 
 ## What 3.0 Plausibly Contains (scope sketch, not commitment)
 
-- Lifecycle entity + id propagation through tool calls (note 01)
+- Lifecycle entity + ambient id propagation (server-side auto-tagging; note 01)
 - Event emission at the `_tool_payload` choke point + skill-side declared events (note 02)
 - Gate records as durable, enforced, dashboard-writable state
 - The observer/projection component + its serving layer (SSE; note 09 §transport)
 - Possibly `read_source_packet` carrying lifecycle-id (note 05)
-- Breaking changes allowed: tool signatures gaining `lifecycle_id`, response
-  envelopes gaining attribution, contract front-matter v2
+- Breaking changes allowed: ambient lifecycle attribution server-side (explicit
+  `lifecycle_id` only as an override, never model-managed; only
+  `switch_lifecycle` carries a target), response envelopes gaining attribution,
+  contract front-matter v2
 
 ## Invariants (must survive 3.0)
 

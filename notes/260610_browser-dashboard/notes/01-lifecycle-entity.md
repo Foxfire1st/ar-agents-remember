@@ -3,8 +3,8 @@
 | Field | Value |
 | --- | --- |
 | Topic | The root primitive under the dashboard: an observable, identifiable lifecycle |
-| Status | **SETTLED 2026-06-10** (two discussion rounds). Remaining: per-harness propagation verification, schema details with note 02, and one spawned follow-up (worktree-only closeout policy) |
-| Sources | Issue #43, `l-01-session-job-lifecycle` skill, observer-branch event contract, developer discussions 2026-06-10 |
+| Status | **SETTLED 2026-06-10** (two discussion rounds); **sharpened 2026-06-11** (baseline alignment: guarded start, switch-only target id, save gate, TTL fleeting-only, contract-enclosure identity, multi-repo openness). Remaining: per-harness propagation verification, schema details with note 02, and one spawned follow-up (worktree-only closeout policy) |
+| Sources | Issue #43, `l-01-session-job-lifecycle` skill, observer-branch event contract, developer discussions 2026-06-10/11 |
 
 ## Developer Direction (verbatim intent)
 
@@ -33,12 +33,12 @@ buttons, only one state true at a time:
 
 | Signal (tool) | Resulting state | Notes |
 | --- | --- | --- |
-| `lifecycle_start` | `running` | Can imply create; **idempotent** — starting while one is active for the repo+session returns the existing id, no duplicates |
+| `lifecycle_start` | `running` | Takes no identifier; performs only the transition no-lifecycle → running. **Guarded** — while any lifecycle is active in the session, start is rejected with a reminder naming the active lifecycle: it can neither restart nor stack. Leaving happens only via `lifecycle_end` or `switch_lifecycle` |
 | `lifecycle_pause` | `paused` | For genuine off-task digressions ("how is the weather"), not repo research |
 | `lifecycle_resume` | `running` | Pause+resume simultaneously is nonsensical by intention — states are exclusive |
 | `lifecycle_block` | `blocked` | Approval pendings and similar gates. Models already wait at gates today, so the motivation to signal is real — and the dashboard uses exactly this signal to draw attention to the blocker |
 | `lifecycle_end` | `completed` or `abandoned` | `completed` = the human declared the task done; `abandoned` otherwise |
-| `switch_lifecycle` | (transition) | See pivoting below |
+| `switch_lifecycle` | (transition) | The only signal that carries a target identifier. See pivoting below |
 
 **Phases are orthogonal to states.** Phases (the l-01 enum: request, trust,
 reframe/research, decide, build, close) are also one-at-a-time but semantically
@@ -51,13 +51,21 @@ w-02 and harness workflow tooling), never "runtime" (note 02).
 
 ### Minting, and why the model never handles ids
 
+- **A lifecycle represents work, not a repo.** One lifecycle can enclose work
+  spanning multiple repos (2, 4, or 6 — untested but never conceptually
+  forbidden when the repos together describe one larger product); repos are
+  where the work lands, never the lifecycle's identity key. A session holds
+  zero or one active lifecycle.
 - **Minting moment: adjacent to `context_packet`.** At l-01 entry the agent has
   read the skill but doesn't know whether the task touches a managed repo;
   `context_packet` answers that definitively — governance confirmed ⇒ start.
+  A second `context_packet` for another repo mid-lifecycle mints nothing: the
+  same lifecycle encloses that work.
 - **The system manages relationships; the model manages signals.** The model's
   whole job is start / end / pause / resume / block / switch / phase. It never
-  juggles ids: idempotent start prevents duplicates, and the **contract** makes
-  resume MCP-owned (below). Ambient propagation (below) tags everything else.
+  juggles ids: guarded start prevents duplicates (start-while-active is
+  rejected with a reminder), and the **contract** makes resume MCP-owned
+  (below). Ambient propagation (below) tags everything else.
 
 ### The commitment boundary: fleeting vs persistent
 
@@ -65,24 +73,33 @@ The consistent boundary is *commitment to a code change* — the point that woul
 produce a w02 task if the work were bigger. That point is the **worktree**, the
 fixture chat builds and w02 builds share:
 
-- **Fleeting lifecycle (no worktree yet):** exists only in chat context. Shown
-  on the dashboard as a bare-bones entry (phase + some context). Ends early and
-  cheaply: discarded immediately on `switch_lifecycle` (nothing to return to —
-  no worktree, and whatever research it did is still in the agent's context),
-  or TTL-reaped (~**1h**) when the clear signal is missing entirely.
+- **Fleeting lifecycle (no worktree yet):** unbound to any durable artifact —
+  recorded server-side (the dashboard shows a bare-bones entry: phase + some
+  context), but the model can't track it and shouldn't. Ends early and
+  cheaply: discarded on `switch_lifecycle` once the save gate (below) is
+  declined (nothing to return to — no worktree, and whatever research it did
+  is still in the agent's context), or TTL-reaped (~**1h**) when the clear
+  signal is missing entirely.
 - **Persistent lifecycle (worktree locked):** the lifecycle lingers *because the
   fixture lingers on disk* — disk fixture ↔ dashboard entity is a consistency
   rule (a worktree only visible in the filesystem is easily forgotten; this is
   the hangar panel, note 06). Visually distinct from fleeting entries to
   communicate "this survives the chat."
-- TTL applies **only** when signals are missing; pause is a signal, so a
-  deliberately paused persistent lifecycle does not evaporate.
+- **TTL is fleeting-only.** It reaps a fleeting lifecycle whose signals go
+  missing; a persistent worktree-backed lifecycle is **never** auto-reaped —
+  when persistent work rots, the dashboard surfaces the staleness (hangar
+  panel, note 06) and the developer steps in.
 
 ### Resume across sessions: MCP-owned via the contract
 
-Every dual worktree comes with a contract (today `contract.md` YAML front
-matter, `ar-worktree-contract/v1`). The contract **binds the lifecycle
-identity** the moment a worktree exists. Continuing a task days later, in a new
+Every worktree group comes with a contract (today `contract.md` YAML front
+matter, `ar-worktree-contract/v1`). **The lifecycle's identity anchor is the
+contract enclosure** — the wrapper `contract.md` defines, not any individual
+code or memory worktree inside it. Today that enclosure wraps one code+memory
+pair; conceptually it may span several repos of one larger product (untested —
+keep in mind, don't design it out). A multi-task series runs in one enclosure
+and is therefore one lifecycle. The contract binds the lifecycle identity the
+moment a worktree exists. Continuing a task days later, in a new
 chat, after compaction: attach to the worktree → the contract tells the MCP the
 lifecycle id → the session switches into that lifecycle and all further work is
 attributed. Resume depends on the MCP, **not** on the model inferring anything —
@@ -95,8 +112,11 @@ be *declared* finished.
 
 ### Pivoting: `switch_lifecycle`
 
-`lifecycle_start` is for session starts (and is idempotent); pivoting mid-chat
-is an **intended choice** with its own lever. `switch_lifecycle` either:
+`lifecycle_start` is for session starts (and is guarded); pivoting mid-chat
+is an **intended choice** with its own lever. `switch_lifecycle` is the only
+signal that carries a target identifier — a reference to an existing
+worktree-backed lifecycle, which the contract resolves to the lifecycle id
+(the model never handles raw ids). It either:
 
 - creates a brand-new lifecycle (new task, nothing existing), or
 - switches into the lifecycle of an **existing worktree** (= resume it).
@@ -104,6 +124,26 @@ is an **intended choice** with its own lever. `switch_lifecycle` either:
 Switching **auto-pauses** the lifecycle being left if it is persistent
 (worktree-backed), and **auto-ends** it if it is fleeting. Inner-switches
 between tasks on a managed repo are therefore deterministic.
+
+**The switch boundary is a gate (save gate).** When the lifecycle being left
+is a *fleeting* research task, the model first asks the developer whether to
+**save** the work: saving creates a worktree, puts the notes in it, and — if
+the task is understood — a task file too, which *promotes* the lifecycle to
+persistent before the switch (so it auto-pauses instead of auto-ending).
+Declining is a deliberate discard: the switch commits without a worktree and
+the fleeting lifecycle auto-ends. Progress is either preserved or thrown away
+on purpose — never by surprise.
+
+**Where saved work lands (design note, 2026-06-11).** Tasks and worktrees are
+grouped by repo — but a fleeting lifecycle is not necessarily bound to a
+single tangible repo under the Agents Remember domain (e.g. a research task
+across many pages, which you still don't want to lose). To give such work a
+home when saving, the task root gains a **`0_misc`** folder (number prefix so
+it sorts distinctly above the repo folders). By the same logic, multi-repo
+work (the multi-repo enclosure above) needs its own **`1_inter-repo-work`**
+folder — without it, every save would force an arbitrary choice of one repo's
+folder, which would be wrong. Final names can be improved; settle them before
+the save gate is built.
 
 ### Worktree-only closeouts (original design intent; cleanup incomplete)
 
@@ -161,9 +201,10 @@ others).
    (note 04), does the reducer auto-project the lifecycle back to `running`, or
    does the model signal resume when it notices? Lean: system-driven unblock
    (gate state change clears the block), model signal optional. Settle with 02/04.
-3. **Precedence rules** between idempotent `lifecycle_start`, contract-driven
-   resume on worktree attach, and `switch_lifecycle` — write the decision table
-   when drafting the tool specs.
+3. **Precedence rules** — guarded `lifecycle_start` is now unambiguous, so the
+   open question reduces to: contract-driven resume on worktree attach vs. an
+   already-active lifecycle (when must attach behave as a switch?). Write the
+   decision table when drafting the tool specs.
 4. **Phase enum finalization + schema field names** — with the event schema (02).
 
 ## Prior Art In The Mockups
@@ -197,8 +238,10 @@ the worktree locks.
 - The lifecycle record is append-only history + current-state projection, not a
   mutable status field with no memory.
 - A lifecycle that vanishes mid-chat must be detectable (staleness via last-event
-  age — precedent: `setup-progress.json` heartbeat/stale rule); TTL reaping is
-  the cleanup, staleness is the detection.
+  age — precedent: `setup-progress.json` heartbeat/stale rule). Staleness
+  detection applies to every lifecycle; TTL cleanup applies only to fleeting
+  ones — rotting persistent lifecycles are surfaced for the developer to step
+  in, never auto-reaped.
 - Ids are minted locally (no network), unique across parallel sessions.
 
 ## Why This Is Note 01
