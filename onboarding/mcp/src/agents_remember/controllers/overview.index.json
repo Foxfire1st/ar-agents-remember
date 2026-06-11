@@ -57,7 +57,7 @@
     "worktree_tools"
   ],
   "hotPath": {
-    "summary": "Use `context_packet.py` for compact `ContextPacketV2` assembly, `coordination_tools.py` for resolver calls, `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover operations, `provider_tools.py` for provider status/diagnostics/watchers and GrepAI/CGC operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree/direct-closeout operations, `benchmark_tools.py` for Codex benchmark prepare/run, `runtime_install.py` for runtime install, and `skill_tools.py` for skill installation.",
+    "summary": "Use `context_packet.py` for compact `ContextPacketV2` assembly, `coordination_tools.py` for resolver calls, `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover operations, `provider_tools.py` for provider status/diagnostics/watchers and GrepAI/CGC operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree operations, `benchmark_tools.py` for Codex benchmark prepare/run, `runtime_install.py` for runtime install, and `skill_tools.py` for skill installation.",
     "candidateHints": [
       "mcp/src/agents_remember/controllers",
       "mcp/src/agents_remember/controllers/__init__.py",
@@ -98,7 +98,7 @@
       "CGC",
       "mcp/src/agents_remember/controllers/",
       "route-local-overview",
-      "f62c732df2acc30ec3766f83c176a24b39c0bc46",
+      "a69b72e101d09423601916c03d4f59ecdee7dda6",
       "/../../overview.md",
       "controllers/",
       "mcp/server.py",

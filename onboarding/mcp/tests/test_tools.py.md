@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,10 +19,12 @@ controller-to-service behavior.
 
 The test suite covers core server payloads, FastMCP server construction,
 context-packet delegation, runtime install payload authority, public tool
-surface expectations, skills install behavior, route index refresh, memory
-quality exposure, provider status and watcher current-state reporting, typed
-GrepAI and CodeGraphContext command construction, worktree tool behavior, and
-Codex benchmark execution policy reporting.
+surface expectations (which no longer list `direct_closeout_preview`/`apply`
+after the issue #62 worktree-only removal), skills install behavior, route
+index refresh, memory quality exposure, provider status and watcher
+current-state reporting, typed GrepAI and CodeGraphContext command
+construction, worktree tool behavior, and Codex benchmark execution policy
+reporting.
 
 After the response-contract wiring, tests also protect that modeled payloads
 carry populated token metadata — `test_ping_payload` asserts a real `tokens`
@@ -86,6 +88,7 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — `test_phase_04_tools_are_reported` no longer expects `direct_closeout_preview`/`direct_closeout_apply` (issue #62 worktree-only closeout removed the tools from `PUBLIC_TOOLS`).
 - 2026-06-10T05:30+02:00 — Diagnostics/watchers tool tests assert the S4 compact wire shape: rawStatus/currentState bodies absent inline, present in the `reportPath` file, `currentStateFile` still on disk.
 - 2026-06-02T04:40+02:00: Updated the skills_install payload tests for the flat installer — dropped the `layout == "tree"` assertion and replaced the legacy-namespace-symlink test with a per-skill flat-destination symlink-replacement test. `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.
 - 2026-06-02T02:00+02:00 — Added `test_grepai_search_resolves_uppercase_repo_id_to_normalized_project`: a configured uppercase repo id (`Cobalt`) is queried as `--project cobalt` and accepted in any casing. Updated Code Commentary.

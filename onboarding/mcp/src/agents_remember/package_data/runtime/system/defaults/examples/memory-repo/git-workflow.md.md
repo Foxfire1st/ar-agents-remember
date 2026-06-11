@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 
 ## Purpose
 
@@ -69,5 +69,6 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00: No content impact: the example's commit-gate line now says "the `c-12-closeout` skill worktree closeout preview first" instead of "/ direct-closeout preview first" (issue #62 worktree-only closeout); the starter structure this sidecar describes is unchanged.
 - 2026-06-02T04:00+02:00: Updated after the example's landing flow clarified that `c-11-memory-carryover-from-branch` skill carryover (run against the merged spear) maps the ledger to the actual spear HEAD, including a PR merge commit even when nothing else needs carrying. `l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.
 - 2026-06-02T03:30+02:00: Created the onboarding for the new memory-repo `git-workflow.md` example (PR-gated landing flow starter), shipped in MCP 1.0.2.

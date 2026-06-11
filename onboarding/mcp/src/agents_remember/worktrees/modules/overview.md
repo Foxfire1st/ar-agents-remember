@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-06-10T09:30+02:00|
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -90,6 +90,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — No route impact: issue #62 removed the direct-closeout functions from `closeout.py`, the `direct-closeout` CLI subcommand from `cli.py`, and the facade re-exports — closeout is worktree-only; the module split this overview describes is unchanged (detail in the file sidecars).
 - 2026-06-10T09:56+02:00 — GitHub #54 sub-task D: added `sync.py` (worktree_sync mid-task base sync) and `guidance.py`'s fetch-free `freshness` status block; `args.py` gained `memory_sync_choice`.
 - 2026-06-10T09:30+02:00 — GitHub #54 sub-task B: `start.py` gained the stale-base preflight (`stale_base_choice` recoveries) and the memory source branch auto-template; `args.py` gained `stale_base_choice`.
 - 2026-06-10T07:35+02:00 — GitHub #53: added `provider_async.py` (background provider setup launch, progress projection, teardown guard); `start.py` split preflight from launch and writes the contract before launching; cleanup/abandon gained the live-setup guard.

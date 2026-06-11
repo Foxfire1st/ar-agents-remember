@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -34,6 +34,10 @@ The MCP path still calls result-returning service functions such as
 `worktrees/modules/sync.py`), `closeout_result()`, `integrate_result()`, and
 `cleanup_result()`. CLI command functions remain print adapters over those
 payloads, so MCP controllers do not need to run `main(argv)` and parse stdout.
+The former direct-closeout re-exports (`direct_closeout_result`,
+`direct_closeout_preview_payload`, `validate_direct_external_context`,
+`command_direct_closeout`) were removed with the direct-closeout surface
+(issue #62): closeout is worktree-only.
 
 Worktree lifecycle payloads expose typed MCP next hints through
 `nextOperation`, `nextTool`, `nextArgs`, and optional `nextRequiredArgs` instead
@@ -80,6 +84,7 @@ documented by the `modules/overview.md` route overview.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — Dropped the direct-closeout re-exports (`direct_closeout_result`, `direct_closeout_preview_payload`, `validate_direct_external_context`, `command_direct_closeout`) from the facade imports and `__all__` (issue #62 worktree-only closeout).
 - 2026-06-10T09:56+02:00 — Re-exported `sync_result` from the new `worktrees/modules/sync.py` (GitHub #54 sub-task D).
 - 2026-06-01T20:45+02:00 — Re-exported `abandon_result`, `teardown_worktree_providers`, and `delete_branch_force` for the new worktree abandon/teardown path.
 - 2026-05-31T12:50+02:00 — Source now imports and re-exports the typed `WorktreeArgs` dataclass DTO from `worktrees/modules/args.py` (replacing the loosely typed `argparse.Namespace` into domain functions); added it to `__all__` and noted it in the Logic section (1.0.0 review remediation).

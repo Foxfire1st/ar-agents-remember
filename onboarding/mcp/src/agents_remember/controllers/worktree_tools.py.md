@@ -6,15 +6,17 @@
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
 `worktree_tools.py` is the controller surface for worktree start, attach,
-status, closeout preview/apply, direct closeout preview/apply, integration,
-and cleanup tools.
+status, closeout preview/apply, integration, and cleanup tools. The direct
+closeout preview/apply controllers (and the `_direct_closeout` helper) were
+removed with the direct-closeout tool surface (issue #62): closeout is
+worktree-only.
 
 ## Code Commentary
 
@@ -63,6 +65,7 @@ the documented setup cap now actually governs the worktree flow.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — Removed `direct_closeout_preview_tool` / `direct_closeout_apply_tool` and the `_direct_closeout` helper (issue #62 worktree-only closeout); the controller surface is now start, attach, status, sync, closeout preview/apply, integrate, cleanup, abandon.
 - 2026-06-10T09:56+02:00 — Added `worktree_sync_tool` (contract-path confinement + `memory_sync_choice`/`dry_run` forwarding to `sync_result`) for the GitHub #54 mid-task base sync.
 - 2026-06-10T09:30+02:00 — `worktree_start_tool` forwards the new `stale_base_choice` recovery selector into `WorktreeArgs` (GitHub #54 stale-base preflight); plumbing only.
 - 2026-06-10T07:30+02:00 — worktree_start async support (GitHub #53): the provider setup config now carries `unlink_settings_after_setup=True` and the controller skips its `finally` unlink when the result's providers state is `starting` (`_settings_owned_by_background`) — the background thread reads the temp settings file and owns the unlink. New `retry_provider_setup` flag forwarded to the worktree layer. The provider timeout switched from the hardcoded `DEFAULT_DOCKER_CONTROL_SECONDS` (120) to `config.timeout_caps['providerSetupSeconds']` (default `DEFAULT_PROVIDER_SETUP_SECONDS`, 1800) — the documented setup cap now actually governs the worktree flow (GitHub #58 evidence showed the 120s bound on seed exports).

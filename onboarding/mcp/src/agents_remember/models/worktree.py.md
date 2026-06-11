@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,7 +32,8 @@ from the providers section.
 
 `WorktreeSyncResponse` (GitHub #54 sub-task D) is the flexible envelope for the
 new `worktree_sync` tool, following the same `WorktreeCommandResponse` shape as
-its siblings.
+its siblings. The `DirectCloseoutPreviewResponse` / `DirectCloseoutApplyResponse`
+envelopes were removed with the direct-closeout tool surface (issue #62).
 
 ## Invariants And Boundaries
 
@@ -50,6 +51,7 @@ its siblings.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — Removed `DirectCloseoutPreviewResponse` / `DirectCloseoutApplyResponse` (issue #62 worktree-only closeout).
 - 2026-06-10T09:56+02:00 — Added `WorktreeSyncResponse` for the new worktree_sync tool (GitHub #54 sub-task D).
 - 2026-06-10T07:30+02:00 — `WorktreeCommandResponse.providers` documented as the background provider setup state (GitHub #53): `starting` + progressFile from worktree_start, then running / stale / ok / ready-with-failed-phases / failed via the worktree_status projection. `WorktreeSummary` (context packets) deliberately does not project it.
 - 2026-06-02T04:25+02:00: `WorkflowKind` dropped the retired `heavy`/`heavy-task` literals (now `chat`/`light`/`light-task`) after the heavy workflow was retired. `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.

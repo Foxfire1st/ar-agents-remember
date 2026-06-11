@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-10T09:56+02:00                             |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`         |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6`         |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -27,7 +27,7 @@ Production already validates each tool payload through
 obtaining a *representative* payload for every public tool from the real
 `*_payload` builder, then asserting conformance.
 
-`setUpClass` builds four temporary fixtures (each in its own temp dir) and
+`setUpClass` builds three temporary fixtures (each in its own temp dir) and
 collects one representative payload per tool into `cls.payloads`:
 
 - `_base_fixture` / `_simple_payloads`: a code repo, memory layer, and
@@ -39,11 +39,12 @@ collects one representative payload per tool into `cls.payloads`:
   `worktree_sync` (dry-run, GitHub #54 sub-task D), `worktree_closeout_preview`,
   `worktree_closeout_apply`, `worktree_integrate`, and `worktree_cleanup`
   against a real contract.
-- `_direct_closeout_payloads`: an external-memory direct-checkout fixture drives
-  `direct_closeout_preview` and `direct_closeout_apply`.
 - `_carryover_payloads`: a landed-branch fixture drives `memory_carryover_plan`
   and `memory_carryover_apply` (a docstring names the
   `c-11-memory-carryover-from-branch` skill).
+
+The former `_direct_closeout_payloads` fixture was removed with the
+`direct_closeout_*` tools (issue #62 worktree-only closeout).
 
 `tearDownClass` removes the temp dirs with `shutil.rmtree(..., ignore_errors=True)`
 because git worktrees leave read-only pack files that otherwise break cleanup on
@@ -87,11 +88,12 @@ declared nor part of the input."
 | The registry maps each public tool to its response model. | [tool_registry.py](agents-remember-md/mcp/src/agents_remember/models/tool_registry.py) |
 | `_tool_payload()` is the production validation path mirrored here. | [base.py](agents-remember-md/mcp/src/agents_remember/mcp/tools/base.py) |
 | The strict/flexible response-model taxonomy lives in the model base. | [base.py](agents-remember-md/mcp/src/agents_remember/models/base.py) |
-| Worktree/direct-closeout/carryover fixtures reuse worktree test helpers. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
+| Worktree/carryover fixtures reuse worktree test helpers. | [test_worktree_support.py](agents-remember-md/mcp/tests/test_worktree_support.py) |
 | Schema-level registry coverage is asserted separately. | [test_models.py](agents-remember-md/mcp/tests/test_models.py) |
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — Removed the `_direct_closeout_payloads` fixture and its temp dir (issue #62 worktree-only closeout); the suite now covers the 36 public tools across three fixtures.
 - 2026-06-10T09:56+02:00: Added the `worktree_sync` dry-run representative payload to the worktree fixture (GitHub #54 sub-task D).
 - 2026-06-06T12:28+02:00: Corrected the `_tool_payload()` reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-06-02T16:24+02:00: A docstring now references the `c-11-memory-carryover-from-branch` skill in full (was "C-11"). Reference-style normalization; behavior unchanged.

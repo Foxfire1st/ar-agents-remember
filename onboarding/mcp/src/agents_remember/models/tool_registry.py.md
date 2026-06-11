@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,7 +19,9 @@
 `PUBLIC_TOOL_RESPONSE_MODELS` is the enforcement registry consumed by
 `mcp.tools._tool_payload()`. It currently covers all public core, runtime,
 memory, skill install, provider, worktree (including `worktree_sync` →
-`WorktreeSyncResponse`, GitHub #54 sub-task D), and benchmark tools.
+`WorktreeSyncResponse`, GitHub #54 sub-task D), and benchmark tools — 36
+entries after the `direct_closeout_*` rows left in issue #62's worktree-only
+closeout.
 
 The module docstring fixes a deliberate two-tier response-model convention.
 Tools whose response shape is fully AR-owned register a STRICT model
@@ -52,6 +54,7 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — Removed the `direct_closeout_preview`/`direct_closeout_apply` rows and their model imports (issue #62 worktree-only closeout); the conformance tests enforce that the registry still exactly matches `PUBLIC_TOOLS`.
 - 2026-06-10T09:56+02:00: Registered `worktree_sync` → `WorktreeSyncResponse` (GitHub #54 sub-task D).
 - 2026-06-06T12:28+02:00: Corrected the payload-validation reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-06-01T20:45+02:00 — Registered `worktree_abandon` → `WorktreeAbandonResponse` in `PUBLIC_TOOL_RESPONSE_MODELS`.

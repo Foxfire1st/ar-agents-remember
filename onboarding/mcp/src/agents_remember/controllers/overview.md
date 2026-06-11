@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T08:39+02:00|
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ Use `context_packet.py` for compact `ContextPacketV2` assembly,
 `coordination_tools.py` for resolver calls, `memory_tools.py` for drift,
 memory quality, route-index, init, baseline, and carryover operations,
 `provider_tools.py` for provider status/diagnostics/watchers and GrepAI/CGC
-operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree/direct-closeout operations,
+operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree operations,
 `benchmark_tools.py` for Codex benchmark prepare/run, `runtime_install.py` for
 runtime install, and `skill_tools.py` for skill installation.
 
@@ -70,6 +70,7 @@ repos plus a `ledgerMapsCodeHead` mapping check; the default stays
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: `worktree_tools.py` dropped the `direct_closeout_*` controllers, so the Hot Path Summary now describes it as the worktree-operations facade only.
 - 2026-06-10T09:56+02:00 — No route impact: sub-task D adds `worktree_sync_tool` as another typed worktree operation facade in `worktree_tools.py` (path confinement + forwarding); the route model this overview describes is unchanged (detail in the file sidecar).
 - 2026-06-10T09:30+02:00 — No route impact: sub-task B's `worktree_tools.py` change is a plumbing-only forward of `stale_base_choice` into `WorktreeArgs`; the controller surface this overview describes is unchanged (detail in the file sidecar).
 - 2026-06-10T08:39+02:00 — GitHub #54 sub-task A: `context_packet.py` gained the opt-in freshness section (`include_freshness`, kernel-backed code/memory branch freshness, `ledgerMapsCodeHead`).

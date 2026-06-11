@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T07:40+02:00|
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -73,6 +73,7 @@ benchmark tools, and `tokens.py` for response token accounting.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — No route impact: issue #62 removed `DirectCloseoutPreviewResponse`/`DirectCloseoutApplyResponse`, their registry rows, and their package exports; the strict/flexible route model this overview describes is unchanged (detail in the file sidecars).
 - 2026-06-10T09:56+02:00 — No route impact: sub-task D adds `WorktreeSyncResponse` (one more flexible `WorktreeCommandResponse` subclass) and its registry row (GitHub #54); the strict/flexible route model this overview describes is unchanged (detail in the file sidecars).
 - 2026-06-10T07:40+02:00 — No route impact: `models/worktree.py` only documented the existing flexible `providers` field's async setup states (GitHub #53).
 - 2026-06-10T05:30+02:00 — Route body caught up with the 2.5.1/2.5.2 compact-response field documentation pattern (`reportPath` + per-tool digests declared on flexible models); previous closeouts had only stamped the verification header. Developer-flagged gap.

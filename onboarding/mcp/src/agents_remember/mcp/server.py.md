@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
+| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -25,7 +25,9 @@ indentation, then builds the FastMCP instance and registers typed tool functions
 that delegate to payload builders. The current public surface includes context,
 drift, route index, memory init, skill install, provider status, provider
 diagnostics, provider watcher, GrepAI, CodeGraphContext, worktree, memory
-baseline/carryover, and benchmark tools.
+baseline/carryover, and benchmark tools. The former `direct_closeout_preview` /
+`direct_closeout_apply` registrations were removed (issue #62): closeout is
+worktree-only.
 
 The registered `memory_quality_check` tool accepts a repo id plus optional
 check names/detail limits and forwards them to the payload/controller layer. It
@@ -137,6 +139,7 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 
 ## Update History
 
+- 2026-06-11T06:47+02:00 — Unregistered `direct_closeout_preview`/`direct_closeout_apply` and dropped their payload-builder imports (issue #62 worktree-only closeout).
 - 2026-06-10T09:56+02:00: Registered `worktree_sync` (contract_path, memory_sync_choice, dry_run) for the issue #54 mid-task base sync.
 - 2026-06-10T09:30+02:00: `worktree_start` registers `stale_base_choice` and documents the stale-base preflight + recoveries + memory branch auto-template (issue #54 sub-task B).
 - 2026-06-10T08:39+02:00: `context_packet` registers `include_freshness` and documents the fetch + ahead/behind + ledger-mapping report (issue #54).
