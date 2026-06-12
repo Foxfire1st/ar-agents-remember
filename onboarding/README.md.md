@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-12T12:05+02:00 |
-| lastVerifiedCommitHash | `d35a15bcb128c9d15ff3c41657aad365e68a7d44` |
-| lastVerifiedCommitDate | 2026-06-12T12:40:30+02:00|
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -116,6 +116,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-12T19:06+02:00 — No content impact: Status section version string bumped to 2.9.1 (issue #83 closeout committed-range fix release); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-12T12:05+02:00 — Rewrote the Status section from the per-release narrative chain (2.0.0→2.8.0, grown into a de-facto changelog) into a two-paragraph current-state + direction statement: version `2.9.0` with the core-path maturity, Stability deferral, GitHub Releases routing (the repository's canonical changelog), and harness-maturity notes, plus a "where the journey is going" paragraph (observable, steerable sessions: machine-readable lifecycle entity, durable gates, projection layer, browser cockpit #2/#43, the 3.0 posture) — making Status the one public place that states direction. The 2.9.0 release content (worktree-only closeout, GitHub #62) moves to the mcp-v2.9.0 GitHub Release notes instead of the README. Updated the stale Status body row (previously pinned at 2.5.2). Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-11T14:07+02:00: No content impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
 - 2026-06-10T10:26+02:00 — No content impact: Status section bumped to 2.8.0 with the GitHub #54 release sentence (lifecycle-long stale-base prevention: include_freshness, stale-base preflight, memory_main_advance, worktree_sync); the README structure this sidecar describes is unchanged.

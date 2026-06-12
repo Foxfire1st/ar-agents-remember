@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-05-29T07:36+02:00                     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-12T19:06+02:00                     |
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 
 ## Purpose
 
@@ -39,13 +39,26 @@ Closeout approval is separate from implementation approval. Agents must not
 treat a previous "looks good", implementation approval, or their own judgment
 as commit approval. The matching preview tool is the approval prompt surface:
 it reports the proposed code, memory, and ledger commit messages before the
-apply tool mutates Git.
+apply tool mutates Git. The relay follows the `l-01-session-job-lifecycle`
+skill gate protocol: it is its own turn ending with the approval question in
+prose, and `worktree_closeout_apply` — or any approval-prompting mechanism —
+is never invoked in the same turn as the relay, because harnesses render
+approval prompts over same-turn prose.
 
 The missing-onboarding check is scoped to current additions so newly added
 eligible source files cannot escape the gradual onboarding adoption boundary. A
 parallel content gate covers changed (already-onboarded) files: a changed source
 whose existing sidecar body was not updated this task fails closeout, so
 verification metadata is never advanced over stale onboarding content.
+
+The closeout worklist covers the working tree plus the contract-recorded
+committed range (issue #83): paths changed between the last verified commit and
+the work branch HEAD, scoped by the recorded base so synced-in parallel work
+and previously closed-out slices never re-gate. Already-onboarded artifacts
+gate on every transported change regardless of author; committed-range paths
+without onboarding are reported as `unonboarded` (count plus capped sample) and
+never block, and the skill instructs relaying that list at the commit-approval
+gate so important transported files are onboarded deliberately.
 Entity fingerprints are refreshed after the code commit because
 `git-blob-set-v1` resolves `HEAD:<path>` Git blobs. Route overview metadata and
 generated route indexes are refreshed before `memory_quality_check` so the
@@ -80,6 +93,8 @@ No sibling repository evidence is needed for the skill itself.
 
 ## Update History
 
+- 2026-06-12T19:47+02:00 — Approval Gate adopted the `l-01-session-job-lifecycle` skill gate protocol: the relay is its own turn ending with a prose approval question, and the apply tool is never invoked in the same turn as the relay.
+- 2026-06-12T19:06+02:00 — Issue #83: the skill documents the committed-range worklist (last verified commit → HEAD, base-scoped), the gate-regardless-of-author rule for existing artifacts, the non-blocking `unonboarded` report, and the commit-gate relay of its count + sample.
 - 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: the skill no longer offers `direct_closeout_preview`/`apply` or the "small approved edits" direct-closeout guidance; the MCP Tools block lists only the worktree closeout pair and the intro states the worktree-only rule.
 - 2026-05-29T07:36+02:00: Updated after `c-12-closeout` skill added a changed-file content gate — a changed source whose existing sidecar body was not updated this task fails closeout — plus the matching failure condition and boundary against metadata-only verification refreshes.
 - 2026-05-28T15:24+02:00: Updated after `c-12-closeout` skill explicitly required route overview metadata, generated route index refresh, and clean `memory_quality_check` before memory commits. Verification metadata remains pinned until closeout commits the source change.

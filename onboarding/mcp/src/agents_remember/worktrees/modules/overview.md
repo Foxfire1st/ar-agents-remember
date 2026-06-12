@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-06-10T09:30+02:00|
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-12T19:06+02:00|
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -20,7 +20,10 @@ argument wiring while preserving the public facade import path.
 
 ## Hot Path Summary
 
-- `git.py` owns raw Git subprocess operations and small repository state checks.
+- `git.py` owns raw Git subprocess operations and small repository state checks,
+  including `committed_changed_paths` (issue #83: the unverified committed
+  range — tree-diff `base..HEAD` ∩ `verified..HEAD`) and the
+  `commit_text_or_none` baseline reader behind the closeout body gates.
 - `guidance.py` renders lifecycle phase and typed next-operation payloads.
 - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py`
   own the named `c-09-git-worktree-manager` skill lifecycle operations.
@@ -71,6 +74,16 @@ argument wiring while preserving the public facade import path.
   rather than gating. Previews and apply payloads surface marker-attested
   documents. Shared metadata/route parsing lives in `kernel/onboarding_doc.py`
   and is re-exported here.
+- The closeout worklist (issue #83) is `closeout.py`'s
+  `closeout_changed_paths`: working tree ∪ the unverified committed range, so
+  transported history (merges, pre-committed slices) gates and stamps like
+  hands-on edits. The onboarding plan's two-tier split (`working_paths`) keeps
+  missing-sidecar blocking on working-tree paths only; committed-range paths
+  without onboarding surface as the non-blocking `unonboarded` report. Body
+  gates baseline against `contract_memory_verified_commit` so memory work
+  committed before closeout classifies honestly, and payload lists that scale
+  with transported history are exposed as count + sample
+  (`PATH_SAMPLE_LIMIT`).
 - `args.py` defines the frozen `WorktreeArgs` cross-layer DTO that operation
   modules consume in place of `argparse.Namespace`; `from_namespace` builds it
   from partial CLI/controller namespaces with per-field defaults.
@@ -90,6 +103,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-12T19:06+02:00 — Issue #83: closeout worklist covers the unverified committed range (`closeout_changed_paths` in `closeout.py`, `committed_changed_paths`/`commit_text_or_none` in `git.py`), the onboarding plan gained the two-tier `working_paths` split with the non-blocking `unonboarded` report, body gates baseline at `contract_memory_verified_commit`, and scaling payload lists are bounded to count + sample.
 - 2026-06-11T06:47+02:00 — No route impact: issue #62 removed the direct-closeout functions from `closeout.py`, the `direct-closeout` CLI subcommand from `cli.py`, and the facade re-exports — closeout is worktree-only; the module split this overview describes is unchanged (detail in the file sidecars).
 - 2026-06-10T09:56+02:00 — GitHub #54 sub-task D: added `sync.py` (worktree_sync mid-task base sync) and `guidance.py`'s fetch-free `freshness` status block; `args.py` gained `memory_sync_choice`.
 - 2026-06-10T09:30+02:00 — GitHub #54 sub-task B: `start.py` gained the stale-base preflight (`stale_base_choice` recoveries) and the memory source branch auto-template; `args.py` gained `stale_base_choice`.

@@ -62,7 +62,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named `c-09-git-worktree-manager` skill lifecycle operations. `start.py` runs a synchronous provider preflight, writes the contract, and then launches provider setup in the background (GitHub #53): dry runs stay synchronous, real starts return `starting` within seconds, and `retry_provider_setup` relaunches a failed/stale setup on an existing contract. Be...",
+    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks, including `committed_changed_paths` (issue #83: the unverified committed range \u2014 tree-diff `base..HEAD` \u2229 `verified..HEAD`) and the `commit_text_or_none` baseline reader behind the closeout body gates. - `guidance.py` renders lifecycle phase and typed next-operation payloads. - `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, and `abandon.py` own the named `c-09-git-worktree-manager` skill lifecycle operations. `start.py` runs a synchronous provider preflight, writes the contract, and then launches prov...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
@@ -115,22 +115,22 @@
       "start",
       "sync.py",
       "sync",
+      "committed_changed_paths",
+      "base..HEAD",
+      "verified..HEAD",
+      "commit_text_or_none",
       "c-09-git-worktree-manager",
-      "starting",
-      "retry_provider_setup",
-      "GitHub",
+      "HEAD",
       "route-local-overview",
       "mcp/src/agents_remember/worktrees/modules",
-      "a69b72e101d09423601916c03d4f59ecdee7dda6",
+      "6f1a7e9028d5d4858cf9c645f2448d5395fafc6a",
       "/../../../overview.md",
       "worktrees/modules",
       "git_worktree_manager.py",
+      "starting",
+      "retry_provider_setup",
       "stale_base_choice",
-      "fast-forward",
-      "proceed-stale",
-      "worktree_sync",
-      "memory_sync_choice",
-      "sync_log"
+      "fast-forward"
     ]
   },
   "fallback": {

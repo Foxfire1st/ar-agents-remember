@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T10:26+02:00     |
-| lastVerifiedCommitHash | `610b8568b6517a78a80d35583101b32ed396e2a7` |
-| lastVerifiedCommitDate | 2026-06-11T15:49:54+02:00|
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -74,6 +74,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-06-12T19:06+02:00 — No content impact: version bumped to 2.9.1 for the issue #83 closeout committed-range fix release; packaging contract unchanged.
 - 2026-06-11T15:20+02:00 — No content impact: version bumped to 2.9.0 for the carryover artifact coverage release; packaging contract unchanged.
 - 2026-06-10T10:26+02:00 — No content impact: version bumped to 2.8.0 for the GitHub #54 release (lifecycle-long stale-base prevention); the packaging contract this sidecar describes is unchanged.
 - 2026-06-10T08:15+02:00 — Version bumped to 2.7.0 for the GitHub #53/#58 release (async worktree provider setup + Windows seed fix).

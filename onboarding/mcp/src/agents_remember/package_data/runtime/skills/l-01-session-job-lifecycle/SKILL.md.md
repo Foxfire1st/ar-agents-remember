@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T10:26+02:00                     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-12T19:47+02:00                     |
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 
 ## Purpose
 
@@ -22,6 +22,8 @@ The skill frames `l-01-session-job-lifecycle` skill as a canvas rather than a ta
 The former `lifecycle.md` phase detail is now inline. `request` receives the developer's raw request and identifies the target repository; the trust checkpoint reveals whether the request is inside Agents Remember managed-repo scope and requires lifecycle re-entry if later work crosses that boundary. `trust checkpoint` runs `context_packet(repo_id="<repo-id>", include_providers=true, include_drift=true, include_freshness=true)`, reports repo/memory/provider/drift facts — including any `indexing` busy targets from the providers summary, which the agent relays to the developer as healthy-but-mid-scan (results may be partial until the scan completes), plus branch freshness (GitHub #54: behind/diverged code or memory checkouts mean the local official line is stale and should be fast-forwarded before trusting analysis; `ledgerMapsCodeHead=false` means the memory checkout does not match the code state) — asks about clean-source onboarding drift, treats dirty-source drift as active work-in-progress, and recovers degraded providers before relying on them. `reframe and research` gathers `c-04-retrieval-strategy-router` evidence for a `tasks/AGENTS.md` reframe, gets developer agreement or revision, then performs proof-bearing deeper research. `decide` is the single build-mode branch: research-only exit, or a worktree build that first presents the worktree intent packet and waits for developer approval before `worktree_start`. `build` implements in the worktree with live per-section onboarding and green checks before each commit, watching `worktree_status`'s freshness block and syncing a moved official line in early via `worktree_sync` (GitHub #54: before memories are written, the sync is a pure fast-forward and integration stays ff-only). `close` previews the `c-09-git-worktree-manager` skill closeout (worktree-only — the close step no longer offers a `direct_closeout_preview` alternative, issue #62), stops at the commit gate, runs the external-memory invariant, integrates the worktree branch into the approved source/integration branch before PR-gated landing, cleans up, carries over memory, and maps the ledger to the landed commit including the post-merge merge commit.
 
 The per-job lenses live in `job-variants.md`; the reusable deep research report and evidence-ledger shape lives in `deep-research-report-template.md`.
+
+The skill also carries the gate protocol: every lifecycle gate (reframe agreement, plan gate, worktree intent, commit approval, push approval, integration, cleanup) is two turns, never one. The report turn delivers the complete gate report as plain assistant output ending with the approval question in prose; the action turn invokes the gated tool only after the developer replies. The report turn must not contain a structured question widget, a mutating tool call, or any permission-triggering operation, because harnesses render approval prompts over or instead of same-turn prose and the developer never sees a report attached to its own approval prompt.
 
 ### Conventions
 
@@ -50,8 +52,9 @@ No external domain documentation applies to this repository-local lifecycle skil
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The coordinator and root `AGENTS.md` route every session into `l-01-session-job-lifecycle` skill and reduce task-format choice to `l-01-session-job-lifecycle` skill's build-mode step. | n/a | [coordinator AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The lifecycle phase spine now lives inline in `SKILL.md`; companion files are limited to the job lenses and deeper-research report template. | L17-L20; L28-L195 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
-| The build-mode invariant requires a developer-approved worktree intent packet before `worktree_start`. | L121-L144 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
+| The lifecycle phase spine now lives inline in `SKILL.md`; companion files are limited to the job lenses and deeper-research report template. | L17-L20; L49-L216 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
+| The build-mode invariant requires a developer-approved worktree intent packet before `worktree_start`. | L147-L168 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
+| The gate protocol makes every lifecycle gate a report turn followed by an action turn, with no approval mechanism raised in the report turn. | L28-L45 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -63,6 +66,7 @@ No sibling repository evidence is needed for this lifecycle skill.
 
 ## Update History
 
+- 2026-06-12T19:47+02:00 — Added the Gate Protocol section: every lifecycle gate is two turns (report turn delivering the full gate report ending with a prose approval question, then the action turn invoking the gated tool after the developer replies); the report turn must not raise question widgets, mutating tool calls, or permission prompts, which harnesses render over same-turn prose.
 - 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: the close step offers only `worktree_closeout_preview`; the conditional `direct_closeout_preview` escape hatch ("only if the repo's git-workflow.md permits a direct-checkout build") was removed.
 - 2026-06-10T10:26+02:00 — GitHub #54: trust checkpoint adds `include_freshness=true` (branch freshness + `ledgerMapsCodeHead` reporting), and the build phase gains the watch-and-sync-early doctrine (`worktree_status` freshness → `worktree_sync` before memories are written).
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the `indexing` busy-target relay into the trust-checkpoint prose in Logic (documentation only).

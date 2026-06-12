@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-06-10T05:20+02:00|
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
+| lastUpdated            | 2026-06-12T19:06+02:00|
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 
 ## Purpose
 
@@ -26,7 +26,26 @@ metadata-only edit, a history-only edit without the no-impact marker, and a
 body edit without a new Update History entry; it passes (returning the attested
 source paths) for a history-only edit carrying a `No content impact:` entry,
 passes with empty attestations for a body+history update and for a new
-untracked sidecar, and is a no-op when the plan has no required sidecars.
+untracked sidecar, and is a no-op when the plan has no required sidecars. The
+issue #83 additions prove the `memory_verified_commit` baseline: a sidecar
+body+history update committed in the memory repo before closeout passes, a
+sidecar unchanged since the verified commit still blocks, and a new sidecar
+committed after the verified baseline passes like an untracked one.
+
+The issue #83 committed-range coverage drives full closeouts through
+`committed_range_external_contract_fixture` (work-branch commits with a
+baseline sidecar plus an un-onboarded `raw.txt`): preview reports the bounded
+`changed_code_paths`/`changed_code_paths_committed` shapes, the non-blocking
+`unonboarded` bucket, and the `stale` body-gate finding for the transported
+onboarded path; apply with an updated sidecar stamps metadata to the existing
+HEAD without creating a code commit, surfaces `unonboarded_changed_paths`, and
+maps the ledger to that HEAD; apply with a stale sidecar still blocks. A second
+closeout after `closed_external_contract_fixture` excludes the first closeout's
+paths via the contract `code_commit` pointer, a merged-in moved `main` with an
+advanced `code_base_commit` is excluded entirely (sync-transport intersection),
+`test_committed_changed_paths_intersects_base_and_verified` proves the git
+helper directly (including deletion filtering), and the bulk-commit test proves
+`PATH_SAMPLE_LIMIT` count+sample bounding.
 
 `RequireUpdatedRouteOverviewContentTests` covers the route-overview body gate:
 with committed root and `src/app` overviews, the nearest-governing overview of
@@ -94,6 +113,7 @@ No sibling repository evidence is needed for the test itself.
 
 ## Update History
 
+- 2026-06-12T19:06+02:00 — Issue #83: added `committed_range_external_contract_fixture` plus closeout coverage for committed-range preview/apply (bounded payload shapes, non-blocking `unonboarded`, stamping to existing HEAD), stale-sidecar blocking for transported paths, second-closeout exclusion via `code_commit`, sync-transport exclusion, `committed_changed_paths` unit behavior, `PATH_SAMPLE_LIMIT` bounding, and the verified-baseline classifier cases; existing preview assertions adopted the count+sample shapes and plan literals gained `unonboarded`.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-11T09:10+02:00 — Issue #62 follow-up: added `test_closeout_blocks_memory_commit_when_memory_quality_fails` and `test_closeout_refreshes_entity_fingerprint_after_code_commit` — worktree-closeout replacements for coverage the deleted direct tests carried; CI's `--fail-on-crap-threshold` gate had flagged `parse_entity_fingerprint_rows`, `_fingerprint_table_header`, and `_format_memory_quality_finding` over the CRAP threshold from the coverage loss.
 - 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: removed the seven `test_direct_closeout_*` end-to-end tests and the `direct_external_memory_fixture`; the sidecar/route-overview body-gate behavior remains covered by `RequireUpdatedSidecarContentTests` / `RequireUpdatedRouteOverviewContentTests` and the worktree closeout tests.

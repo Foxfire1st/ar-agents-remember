@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:20+02:00|
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-12T19:06+02:00|
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -26,6 +26,28 @@ Closeout is worktree-only: the former direct-closeout functions
 `direct_closeout_result`) were removed with the direct tool surface (issue #62).
 Worktree closeout uses the code worktree as the source of truth for drift and
 fingerprint checks after the worktree code commit exists.
+
+The worklist is no longer dirty-tree-only (issue #83). `closeout_changed_paths`
+unions the working tree with `committed_changed_paths(code_worktree,
+code_base_commit, code_commit)` — the unverified committed range, excluding
+synced-in parallel work and previous closeouts in the same worktree — and both
+preview and apply consume that worklist. The onboarding plan receives the
+working tier through `working_paths`, so missing sidecars block only for
+working-tree paths while committed-range paths without onboarding surface as
+the non-blocking `unonboarded` list. Both body gates receive
+`contract_memory_verified_commit(contract)` (`ledger_commit` →
+`memory_content_commit` → `memory_base_commit`) so sidecar work already
+committed in the memory worktree still classifies honestly. When everything is
+pre-committed and the tree is clean, `commit_if_dirty` returns the existing
+HEAD and metadata stamps to that tip without creating an empty commit.
+
+Payload lists that scale with transported history are bounded (issue #83):
+`_bounded_paths` exposes count + sample capped at `PATH_SAMPLE_LIMIT`, applied
+to `changed_code_paths`, `changed_code_paths_committed`, the
+`onboarding_metadata_refresh` view (`required`/`unonboarded`; the blocking
+`missing`/`unsupported` lists stay full), `sidecar_body_gate`,
+`sidecars_attested_no_impact`, `refreshed_onboarding`, and
+`unonboarded_changed_paths` in the apply payload.
 
 The preview payload exposes the body gates' classifications
 (`sidecar_body_gate` from `classify_sidecar_updates` and
@@ -58,6 +80,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-12T19:06+02:00 — Issue #83: worklist = working tree ∪ unverified committed range (`closeout_changed_paths`), two-tier blocking via `working_paths` with the non-blocking `unonboarded` report, body gates baselined at `contract_memory_verified_commit`, and count+sample payload bounding (`_bounded_paths`, `PATH_SAMPLE_LIMIT`).
 - 2026-06-11T08:55+02:00 — No content impact: removed the 8 imports orphaned by the issue #62 deletion (`resolve_context`, `current_branch`, and the direct-path `*_for_context` planners/validators/refreshers) after CI's Ruff F401 gate caught them; pure import cleanup, behavior unchanged.
 - 2026-06-11T06:47+02:00 — Removed `validate_direct_external_context`, `direct_closeout_preview_payload`, and `direct_closeout_result` plus the now-unused `MemoryLedger` import (issue #62 worktree-only closeout); the module owns only the worktree closeout path.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: previews additionally expose `route_overview_body_gate`; apply payloads surface `route_overviews_attested_no_impact` and `route_overviews_stamped_without_body_review` (worktree + direct).

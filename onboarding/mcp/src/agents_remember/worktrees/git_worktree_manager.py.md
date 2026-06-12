@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:56+02:00                     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-12T19:06+02:00                     |
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -32,7 +32,12 @@ the worktree domain functions.
 The MCP path still calls result-returning service functions such as
 `start_result()`, `sync_result()` (GitHub #54 sub-task D, re-exported from
 `worktrees/modules/sync.py`), `closeout_result()`, `integrate_result()`, and
-`cleanup_result()`. CLI command functions remain print adapters over those
+`cleanup_result()`. The facade also re-exports the issue #83 committed-range
+closeout surface — `closeout_changed_paths` (from `modules/closeout.py`),
+`committed_changed_paths` and `commit_text_or_none` (from `modules/git.py`),
+and `contract_memory_verified_commit` (from `modules/onboarding.py`) — so tests
+and callers reach the worklist and body-gate baseline helpers through the
+stable facade path. CLI command functions remain print adapters over those
 payloads, so MCP controllers do not need to run `main(argv)` and parse stdout.
 The former direct-closeout re-exports (`direct_closeout_result`,
 `direct_closeout_preview_payload`, `validate_direct_external_context`,
@@ -84,6 +89,7 @@ documented by the `modules/overview.md` route overview.
 
 ## Update History
 
+- 2026-06-12T19:06+02:00 — Issue #83: re-exported the committed-range closeout surface (`closeout_changed_paths`, `committed_changed_paths`, `commit_text_or_none`, `contract_memory_verified_commit`) and added them to `__all__`.
 - 2026-06-11T06:47+02:00 — Dropped the direct-closeout re-exports (`direct_closeout_result`, `direct_closeout_preview_payload`, `validate_direct_external_context`, `command_direct_closeout`) from the facade imports and `__all__` (issue #62 worktree-only closeout).
 - 2026-06-10T09:56+02:00 — Re-exported `sync_result` from the new `worktrees/modules/sync.py` (GitHub #54 sub-task D).
 - 2026-06-01T20:45+02:00 — Re-exported `abandon_result`, `teardown_worktree_providers`, and `delete_branch_force` for the new worktree abandon/teardown path.
