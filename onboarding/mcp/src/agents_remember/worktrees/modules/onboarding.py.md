@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:20+02:00|
-| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4` |
-| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
+| lastUpdated            | 2026-06-12T19:06+02:00|
+| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
+| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,9 +19,8 @@ route index, and entity fingerprint refreshes for changed code paths.
 
 The module finds changed source sidecars — gating each changed source on the
 boolean `resolver.is_sidecar_storage(storage)` predicate (sidecar-backed storage
-modes only; non-sidecar modes are recorded as `unsupported`) — validates
-required verification metadata, updates `lastVerifiedCommitHash` and
-`lastVerifiedCommitDate`, parses
+modes only) — validates required verification metadata, updates
+`lastVerifiedCommitHash` and `lastVerifiedCommitDate`, parses
 route overview metadata, updates affected route overviews, runs generated route
 index refreshes, parses repo entity fingerprint tables, computes
 `git-blob-set-v1` fingerprints, and updates affected entity rows after the code
@@ -30,22 +29,38 @@ commit exists. The shared metadata/route parsing helpers
 `normalize_route`, `route_contains_changed_path`, `ROUTE_OVERVIEW_DOC_TYPES`)
 live in `kernel/onboarding_doc.py` and are re-exported here as a facade.
 
+`onboarding_refresh_plan_for_context` carries the two-tier responsibility split
+(issue #83) through its keyword-only `working_paths`: paths in the working set
+without onboarding land in the blocking `missing`/`unsupported` buckets exactly
+as before, while committed-range paths (transported merges, pre-committed
+slices) without onboarding collect in the non-blocking `unonboarded` list, so
+already-onboarded artifacts gate regardless of author but never-onboarded files
+are not blanket-onboarded at closeout. `working_paths=None` keeps the strict
+legacy semantics. `contract_memory_verified_commit(contract)` resolves the
+body-gate baseline (`ledger_commit` → `memory_content_commit` →
+`memory_base_commit`), `_changed_memory_paths` widens gate membership to dirty
+∪ committed-since-verified memory paths, and `_joined_sample` caps gate error
+path joins at `PATH_SAMPLE_LIMIT`.
+
 It also enforces the closeout content gate. `classify_sidecar_updates` sorts
 each changed source's sidecar by meaningful body change (content outside the
-verification metadata rows and Update History, vs the memory tree's HEAD via
-`head_text_or_none`) and new Update History lines into four cases:
+verification metadata rows and Update History, vs the last verified memory
+commit via `commit_text_or_none` — `memory_verified_commit`, falling back to
+HEAD when empty) and new Update History lines into four cases:
 body+history passes; body without history is `untraced` (traceability);
 history-only passes only with a new `No content impact:` marked entry and is
 collected as `attested_no_impact`; everything else (unchanged, metadata-only,
-unmarked history-only) is `stale`. `require_updated_sidecar_content` raises on
+unmarked history-only) is `stale`. The verified-commit baseline means sidecar
+work already committed in the memory worktree before closeout still classifies
+honestly, and a new sidecar committed early passes like an untracked one
+(absent at the baseline). `require_updated_sidecar_content` raises on
 `stale`/`untraced` — the error teaches both the c-05 body-update path and the
 explicit no-impact marker — and returns the attested source paths so closeout
-payloads can surface them. New sidecars absent from the memory HEAD pass
-without classification. The check accepts an explicit `memory_tree` (the
+payloads can surface them. The check accepts an explicit `memory_tree` (the
 worktree wrapper passes the memory worktree) and safely skips sidecars that do
 not resolve under that tree rather than reporting false stale findings;
-`validate_onboarding_refresh_plan_for_context` wires it into both closeout
-paths before the code commit.
+`validate_onboarding_refresh_plan_for_context` wires it into the worktree
+closeout path before the code commit.
 
 Route overviews get the same body gate scoped by domain evidence.
 `_nearest_governing_route` picks the longest matched route per changed path
@@ -57,8 +72,9 @@ overview matched by happenstance — are collected as
 never gate closeout. `require_updated_route_overview_content` raises on
 stale/untraced and returns attested routes;
 `validate_route_overview_refresh_plan_for_context` runs it (with `memory_tree`
-plumbed from the worktree wrapper) before the code commit in both closeout
-paths. New overview files absent from memory HEAD pass without classification.
+and `memory_verified_commit` plumbed from the worktree wrapper) before the code
+commit. New overview files absent from the verified baseline pass without
+classification.
 
 ## Docs References
 
@@ -74,6 +90,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-12T19:06+02:00 — Issue #83: two-tier plan split via `working_paths` (blocking `missing`/`unsupported` scoped to working paths, committed-range gaps collected as non-blocking `unonboarded`), body gates re-baselined on `contract_memory_verified_commit` via `commit_text_or_none` with `_changed_memory_paths` membership, and `_joined_sample` capping gate error joins.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added the route-overview body gate (`_nearest_governing_route`, `classify_route_overview_updates`, `require_updated_route_overview_content` with the `No route impact:` marker) wired into `validate_route_overview_refresh_plan_for_context`; ancestor matches report as `stamped_without_body_review` instead of failing.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: moved shared metadata/route helpers to `kernel/onboarding_doc.py` (facade re-exports kept) and rebuilt the content gate as the four-case body/history classification (`classify_sidecar_updates` + `require_updated_sidecar_content` returning marker-attested paths): untraced body edits and unmarked history-only edits now fail; `No content impact:` entries pass and are surfaced.
 - 2026-06-02T16:24+02:00: User-facing closeout content-gate error messages now say "Run the `c-05-create-or-update-onboarding-files` skill, then rerun closeout" (was "Run C-05 create-or-update-onboarding-files"). Reference-style normalization; behavior unchanged.
