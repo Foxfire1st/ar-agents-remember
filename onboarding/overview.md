@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-06-11T14:07+02:00 |
-| lastVerifiedCommitHash | `610b8568b6517a78a80d35583101b32ed396e2a7` |
-| lastVerifiedCommitDate | 2026-06-11T15:49:54+02:00|
+| lastVerifiedCommitHash | `d35a15bcb128c9d15ff3c41657aad365e68a7d44` |
+| lastVerifiedCommitDate | 2026-06-12T12:40:30+02:00|
 
 > **Status:** active baseline
 
@@ -191,6 +191,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-06-12T12:25+02:00 — No route impact: README Status section rewritten from the per-release narrative chain into a two-paragraph current-state + direction statement at `2.9.0` (release history routed to GitHub Releases; direction = observable/steerable sessions toward the browser cockpit, #2/#43); the README remains the short public front door this overview describes, and the repo surface is unchanged.
 - 2026-06-11T15:20+02:00 — No route impact: the carryover artifact-coverage change is contained in mcp/ (carryover kinds, drift git_ops ref parameter, c-11 skill doc, version bump); repo-root route structure is unchanged.
 - 2026-06-11T14:07+02:00: No route impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
 - 2026-06-11T06:47+02:00 — Issue #62 removed the direct-closeout path: closeout is worktree-only. Updated the approval-gated closeout inventory row (dropped `direct_closeout_*` identifiers), the Worktree Support narrative (command surface and the closing sentence now state the worktree-only rule), the c-09 boundary bullet, and removed the `direct closeout` glossary term.
