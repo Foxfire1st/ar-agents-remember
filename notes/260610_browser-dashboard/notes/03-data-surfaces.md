@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Topic | Every artifact the system produces today that a dashboard could read, plus the gaps |
-| Status | Inventory (verified 2026-06-10 against MCP 2.7.0 @ `ab7e21b`; **re-verify deltas at design time — 2.8.0 landed since, incl. a new `worktree_sync` tool**) |
+| Status | Inventory (verified 2026-06-10 against MCP 2.7.0 @ `ab7e21b`; **delta re-verified 2026-06-12 against 2.9.0 @ `610b856`**: tools 37→36 (+`worktree_sync`, −`direct_closeout_*`), contract still v1 + new `sync_log` field, `worktree_start` response shape and `setup-progress.json` contract unchanged) |
 | Sources | Recon agent over live `ar-coordination/` tree + source + onboarding; raw detail in `raw/recon-workflow-output.json` → `dataSurfaces` |
 
 ## Surfaces That Exist Today
@@ -15,14 +15,14 @@
 | 3 | Worktree setup progress (2.7.0) | `<worktreeGroup>/provider-runtime/setup-progress.json` | `setup_progress.py` on daemon thread; 15s heartbeat, stale > 90s; `currentPhase`, `completedPhases[]`, `seedFallback`, `retryArgs` | **The boot-sequence data.** Live phase widget; docstring: "any dashboard can observe this file" |
 | 4 | Worktree provider-state | `<worktreeGroup>/provider-runtime/provider-state.json` | written on successful isolated setup | Inventory of live isolated stacks; join key to Docker compose projects |
 | 5 | Worktree group layout | `worktrees/<repo>/<group>-ar/{code, memory-<name>, provider-runtime}` | worktree_start / cleanup / abandon | Active vs stale groups (3 of 4 looked uncleaned at recon), disk, pairing |
-| 6 | Worktree contract | `tasks/<repo>/<task>/contract.md` (YAML front matter `ar-worktree-contract/v1`) | `worktree_contract.py`; mutated at each contract state transition ("lifecycle" is now reserved for note 01's entity) | Per-task kanban: started → approved → closed out → integrated → cleaned; approval audit |
+| 6 | Worktree contract | `tasks/<repo>/<task>/contract.md` (YAML front matter `ar-worktree-contract/v1`) | `worktree_contract.py`; mutated at each contract state transition ("lifecycle" is now reserved for note 01's entity) | Per-task kanban: started → approved → closed out → integrated → cleaned; approval audit; since 2.9.0 also a `sync_log` (one entry per mid-task base sync) |
 | 7 | Task files + registry | `tasks/<repo>/<YYMMDD>_<name>/task.md`, `tasks/index.md` | hand-written by sessions | Open-task board, decision-log feed (markdown parsing required) |
 | 8 | Memory ledger | `memory-repos/ar-<repo>/memory.md` (`ar-memory-ledger/v1` + table) | closeout/baseline/carryover tools, one row per closeout | Memory↔code currency, closeout frequency over time (~95 rows) |
 | 9 | Drift reports | `temp/drift-reports/<token>/<repo>_<branch>_drift-report.md` | drift_check / memory_quality_check; **same-name overwrite, no history** | Drift gauge + classification breakdown (last run: 330 up-to-date / 1 disabled) |
 | 10 | Route indexes | 18× `onboarding/**/overview.index.json` | `route_index_refresh` | Coverage charts (root: 878 files in scope), route tree map |
 | 11 | Onboarding sidecars | `onboarding/**/<file>.md` metadata (`lastVerifiedCommitHash/Date`) | c-05 during closeouts | lastVerified age histogram over 330+ units, stalest-docs leaderboard |
 | 12 | Tool reports | `temp/tool-reports/<tool>/<UTC>-<label>.json` (keep-last-5, 7 days) | `tool_reports.py` for verbose tools | Recent heavy-ops drill-down (bounded window) |
-| 13 | MCP read-only tools (36 total at 2.7.0) | stdio server; e.g. `context_packet`, `worktree_status` (designated poll target: phase, dirty flags, providers block), `provider_status`, `drift_check`, `cgc_*`, `grepai_*` | FastMCP; every response token-stamped via `_tool_payload` | The poll API; per-call token cost already present in every payload |
+| 13 | MCP read-only tools (37 total at 2.7.0; 36 at 2.9.0 — +`worktree_sync`, −`direct_closeout_*`) | stdio server; e.g. `context_packet`, `worktree_status` (designated poll target: phase, dirty flags, providers block), `provider_status`, `drift_check`, `cgc_*`, `grepai_*` | FastMCP; every response token-stamped via `_tool_payload` | The poll API; per-call token cost already present in every payload |
 | 14 | Watcher log roots | `logs/providers/{grepai,codegraphcontext}/...` | **reserved but empty** — watchers log to Docker stdout only (`docker logs <containerName>` via names in current.json) | Would be indexing-activity tail; today requires docker shell-out |
 
 Also: `sessions/` (issue #43) does **not** exist yet. `logs/mcp/` exists, empty.

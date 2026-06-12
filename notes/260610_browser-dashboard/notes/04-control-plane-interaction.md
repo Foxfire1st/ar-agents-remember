@@ -1,18 +1,18 @@
 # 04 — Control Plane: Interaction Back Into The System
 
-| Field | Value |
-| --- | --- |
-| Topic | Two-way communication: acting on attention items from the dashboard; architecture posture (3.0) |
-| Status | Requirement fixed by developer; mechanism design open; **no conservative fixation — MCP/tool changes explicitly allowed** |
-| Sources | Issue #43, #53 comments (async direction), developer notes 2026-06-10 |
+| Field   | Value                                                                                                                     |
+| ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Topic   | Two-way communication: acting on attention items from the dashboard; architecture posture (3.0)                           |
+| Status  | Requirement fixed by developer; mechanism design open; **no conservative fixation — MCP/tool changes explicitly allowed** |
+| Sources | Issue #43, #53 comments (async direction), developer notes 2026-06-10                                                     |
 
 ## Developer Direction (the two fixed points)
 
-1. **The dashboard must not be a pretty toy.** A dashboard you pull up once
-   because GitHub showed it, then forget, has no return value. Its value is
-   (a) visibility into the inner workings — especially after long
-   "things just worked, now it's broken, how do I look at the state?" gaps —
-   and (b) a surface to *interact* with the running system. "A cockpit is quite
+1. **The dashboard should definitely look amazing. But it should never be just a pretty toy.**
+   A dashboard you pull up once because GitHub showed it, then forget, has no
+   return value. Its value is (a) visibility into the inner workings — especially
+   after long "things just worked, now it's broken, how do I look at the state?"
+   gaps — and (b) a surface to _interact_ with the running system. "A cockpit is quite
    useless if all you can do is watch."
 2. **Architecture supports the dashboard, not vice versa.** Do not contort the
    dashboard around today's tool assumptions to avoid touching the MCP. Plan
@@ -35,7 +35,7 @@ First-class examples (rough order of value):
 
 ## The Hard Problem: The Return Channel
 
-Acting on a gate writes durable state. But the *agent* lives in a harness chat
+Acting on a gate writes durable state. But the _agent_ lives in a harness chat
 the system cannot see or push to. Honest options, not mutually exclusive:
 
 1. **Durable gate state + agent polling (the #43 MVP slice).** Gates are
@@ -55,7 +55,7 @@ Lean: (1) is the backbone — gate truth lives in the system, not in any chat.
 
 ## On A2A
 
-The label was technically off, the *requirement* behind it stands: bidirectional
+The label was technically off, the _requirement_ behind it stands: bidirectional
 communication, multiple clients (dashboard, possibly other agents) talking to
 the same control plane about the same lifecycle/gate entities. Decision posture:
 design the **entities and their state machine first** (lifecycle, gate, request,
