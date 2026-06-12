@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Topic | Status and key content of every issue thread feeding this feature |
-| Status | Swept 2026-06-10 (`gh` over Foxfire1st/agents-remember, all states); re-check states before task creation — #54's fix landed via the other chat (MCP now 2.8.0, new `worktree_sync` tool) |
+| Status | Swept 2026-06-10 (`gh` over Foxfire1st/agents-remember, all states); **states re-checked 2026-06-12**: #2/#43/#46 OPEN, #49/#53/#54 CLOSED (#54 via PR #61), #62 worktree-only closeout CLOSED via PR #63 (MCP now 2.9.0 @ `610b856`) |
 
 ## The Map
 
@@ -13,7 +13,8 @@
 | 43 | Design A2A control plane for observable AR lifecycle | OPEN, 0 comments | Lifecycle sessions as root tasks; gates as `input-required`; durable `sessions/<id>/events.jsonl` ("durable store is the truth, streams are projections"); dashboard approve/reject. Feeds notes 01/02/04 |
 | 46 | Add MCP source/onboarding read packet tool | OPEN, 0 comments | Paired reads → observable, lifecycle-attributable (note 05). **Correction recorded: #46 has nothing to do with worktree_start** |
 | 53 | worktree_start: ~6 min silence indistinguishable from hang | CLOSED | Developer direction in comments: **async shape** — return fast with `providerSetup: running`, poll `provider_status`/`worktree_status`; surface `seedFallback: full-reindex` with refusal reason. Origin of the boot-progress data the dashboard animates |
-| 54 | worktree_start branches from stale local bases | OPEN at sweep; **fix task completed in parallel chat 2026-06-10** | The actual "remaining worktree_start issue" (active branch `issue-54-stale-bases`). Comment ties #53+#54: stale base defeats CGC seed (HEAD mismatch → 240.86s full reindex) making silence read as hang |
+| 54 | worktree_start branches from stale local bases | **CLOSED** (PR #61 → 2.8.0; re-checked 2026-06-12) | Comment ties #53+#54: stale base defeats CGC seed (HEAD mismatch → 240.86s full reindex) making silence read as hang. Fix also added the contract `sync_log` + `worktree_sync` tool |
+| 62 | Remove direct-closeout leftovers — closeout is worktree-only | **CLOSED** (PR #63 → 2.9.0) | The Q22 prerequisite alignment (note 01): the commitment-boundary assumption now matches the code; `direct_closeout_*` removed (tools 37→36) |
 | 49 | memory_carryover tools hang (work completes, response never returns) | CLOSED | Context: stdio-pipe deadlock class; another "server did the work, client saw nothing" story reinforcing the observability theme |
 
 ## Issue #2 Mockup Image (context)

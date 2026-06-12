@@ -31,6 +31,7 @@ stack (09).
 | `09-tech-stack.md` | Each candidate tool in detail: Motion + anime.js split, uPlot, xyflow, CRT layering, WebAudio, View Transitions, HyperFrames (replays), SSE transport design | Recommendations, not decisions |
 | `10-issues-reference.md` | #2 / #43 / #46 / #53 / #54 / #49 — states, key content, corrections (#54 is the worktree_start issue, not #46) | Reference |
 | `11-open-questions.md` | All unresolved questions + verification debts, numbered for burn-down | Living list |
+| `12-north-star-orchestration.md` | North star: lifecycles as the primitive of a self-organizing build machine — orchestrator succession, repo-as-cell-division, Conway-continuous splits, agent-sized code | Vision note 2026-06-11 — direction, not commitment; outside the discussion order |
 
 ## The Frame In One Paragraph
 

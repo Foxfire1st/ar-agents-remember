@@ -76,31 +76,40 @@
 
 ## Verification debts (cheap to clear, do before task definition)
 
-16. **2.8.0 delta:** recon inventoried 2.7.0 @ `ab7e21b`; #54's fix + new
-    `worktree_sync` tool landed since. Re-run the surface inventory delta
-    (tool list, any new files/contracts) before designing against it.
+16. ~~2.8.0 delta~~ **CLEARED 2026-06-12** (git evidence, `ab7e21b`→`610b856`):
+    2.7.0 → 2.9.0; tools 37→36 (+`worktree_sync` in 2.8.0/PR #61,
+    −`direct_closeout_*` in 2.9.0/PR #63); contract still
+    `ar-worktree-contract/v1` + new `sync_log` field (one entry per mid-task
+    base sync, a `sync.log` JSON scalar in front matter); `worktree_start`
+    response shape + `setup-progress.json` contract unchanged. Other merges:
+    docs patch series (#64–#73), rename sweep (#75), carryover artifact
+    coverage (#77). **Installed runtime is still 2.8.0-vintage** (exposes
+    `direct_closeout_*`) — update the runtime before Phase B work.
 17. ~~Red-pen annotations~~ **RESOLVED 2026-06-10:** they were the developer's
     mid-iteration *directions to the Open Design agent* (the pivot→queue arrow
     produced the combined Attention / By repo / By lifecycle panel), already
     absorbed into mc2 — the designated endpoint. No pending feedback content.
-18. **`logs/mcp/` transcripts:** confirmed empty — is there a config flag that
-    populates it today, or is transcript capture genuinely unimplemented?
+18. ~~`logs/mcp/` transcripts~~ **CLEARED 2026-06-12:** scaffolding only — the
+    directory is created by `install/runtime.py` and the benchmark workspace
+    builder; nothing writes into it and no config flag exists. Transcript
+    capture is genuinely unimplemented; the real requirement remains gap #1 in
+    note 03.
 19. **#43 session-id model vs observer-branch correlation model:** reconcile the
     two vocabularies explicitly when drafting the event schema (note 02).
-20. **Issue states:** re-check #54 (should be closeable/closed now) and whether
-    the other chat's landing changed any worktree_start response shapes the
-    boot-sequence design depends on (`setup-progress.json` contract).
+20. ~~Issue states~~ **CLEARED 2026-06-12:** #54 CLOSED (PR #61); #2/#43/#46
+    OPEN; #62 CLOSED (PR #63). `worktree_start` response shape unchanged;
+    `setup-progress.json` contract intact — the boot-sequence design basis
+    holds.
 
 ## Spawned follow-ups (decisions made here that need their own work)
 
-22. **Worktree-only closeout alignment — TASK CREATED 2026-06-10 (planning):**
-    `tasks/agents-remember/260610_worktree-only-closeout-alignment/task.md`.
-    Clarified: worktree-only was the *original* design intent of the lifecycle
-    skill; `direct_closeout_*` is leftover from an incomplete cleanup. The task
-    carries the full removal plan (tools, l-01/c-12, docs, sync) + two rulings
-    it needs from the developer: memory-only edits (worktree too?) and release
-    placement (standalone vs 3.0). Prerequisite alignment, separate from the
-    dashboard series.
+22. ~~Worktree-only closeout alignment~~ **DONE — merged to main via PR #63
+    (issue #62), in 2.9.0; verified 2026-06-12** (`direct_closeout_*` gone
+    from source). Worktree-only was the *original* design intent of the
+    lifecycle skill; the leftover direct-closeout path is removed from tools,
+    models, skills, docs, and tests. The dashboard series starts on the clean
+    foundation note 01 assumes.
+    (`tasks/agents-remember/260610_worktree-only-closeout-alignment/task.md`)
 
 ## Meta
 
