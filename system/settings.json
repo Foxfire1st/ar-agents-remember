@@ -9,6 +9,7 @@
         "paths": [
           "AGENTS.md",
           "README.md",
+          "dashboard/src/**",
           "examples/mcp/**",
           "installer/**",
           "mcp/**",
@@ -16,12 +17,15 @@
           "scripts/**"
         ],
         "fileTypes": [
+          ".css",
           ".json",
           ".md",
           ".patch",
           ".py",
           ".sh",
           ".toml",
+          ".ts",
+          ".tsx",
           ".txt"
         ]
       },
@@ -36,6 +40,7 @@
           "benchmarks/user-runs/**",
           "benchmarks/workspaces/**",
           "mcp/src/agents_remember/package_data/benchmarks/**",
+          "mcp/src/agents_remember/package_data/dashboard/**",
           "node_modules/**",
           "vendor/**",
           "dist/**",
