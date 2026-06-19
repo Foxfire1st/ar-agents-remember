@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-12T12:05+02:00 |
-| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
-| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
+| lastUpdated            | 2026-06-19T01:50+02:00 |
+| lastVerifiedCommitHash | `cbea101871743715b485f221d00f21f28d0d8835` |
+| lastVerifiedCommitDate | 2026-06-13T18:54:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,7 +22,7 @@
 
 ### Logic
 
-The README now uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
+The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable, git-verified repo memory" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
 
 The previous MCP-installs-skills first-run model was replaced with package-first
 harness setup. The root page now keeps one short, harness-agnostic three-step
@@ -116,6 +116,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-19T01:50+02:00 — Updated the Logic section for the README headline revision (PR #85 / `b9d7314`): the `<h3>` tagline changed from "Durable, git-verified repo memory for coding agents." to "Git-verified records for what your coding agents know. A control plane for what they do.", sharpening the public positioning toward records-plus-control-plane. Advanced verification metadata to merged `main` `cbea101`.
 - 2026-06-12T19:06+02:00 — No content impact: Status section version string bumped to 2.9.1 (issue #83 closeout committed-range fix release); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-12T12:05+02:00 — Rewrote the Status section from the per-release narrative chain (2.0.0→2.8.0, grown into a de-facto changelog) into a two-paragraph current-state + direction statement: version `2.9.0` with the core-path maturity, Stability deferral, GitHub Releases routing (the repository's canonical changelog), and harness-maturity notes, plus a "where the journey is going" paragraph (observable, steerable sessions: machine-readable lifecycle entity, durable gates, projection layer, browser cockpit #2/#43, the 3.0 posture) — making Status the one public place that states direction. The 2.9.0 release content (worktree-only closeout, GitHub #62) moves to the mcp-v2.9.0 GitHub Release notes instead of the README. Updated the stale Status body row (previously pinned at 2.5.2). Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-11T14:07+02:00: No content impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
