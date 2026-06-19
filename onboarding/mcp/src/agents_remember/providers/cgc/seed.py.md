@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:05+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastVerifiedCommitHash | `4728fa846d20cffd3f25c34e072e41920b49461e` |
+| lastVerifiedCommitDate | 2026-06-19T14:22:14+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -18,7 +18,7 @@
 
 ### Logic
 
-It defines `CgcSeedOptions` and the internal `CgcSeedContext`, resolves source and target CGC roots from explicit arguments or settings, checks repository HEAD compatibility (via `git_head_or_none`) unless mismatches are allowed, protects same-coordination-root cross-path seeding unless explicitly allowed or isolated, starts the source backend, exports a bundle, rewrites paths, and loads the rewritten bundle into the target. The CGC provider block is looked up through the shared `setup_common.provider_settings(settings, CGC_PROVIDER_ID)` helper rather than a local wrapper. The export and load commands run under the configurable provider-setup cap (`args.timeout` ← `timeoutCaps.providerSetupSeconds`, default 1800; `0` = unbounded opt-out) — bundle copies run <60s in practice, so only a genuinely wedged docker exec can reach the cap, and a wedge no longer hangs `worktree_start` forever. A stall watchdog (like the GrepAI clone's) is a noted follow-up; the lifecycle-CLI boundary currently blocks a progress callback here.
+`_resolve_seed_context` first refuses a **benchmark-scoped** target: when the target `codegraphcontext-code` provider's `instance.scope == "benchmark"`, it returns `_seed_skip` before any source/backend work, so a benchmark never seeds from the live workspace cgc backend (hermetic). Otherwise it defines `CgcSeedOptions` and the internal `CgcSeedContext`, resolves source and target CGC roots from explicit arguments or settings, checks repository HEAD compatibility (via `git_head_or_none`) unless mismatches are allowed, protects same-coordination-root cross-path seeding unless explicitly allowed or isolated, starts the source backend, exports a bundle, rewrites paths, and loads the rewritten bundle into the target. The CGC provider block is looked up through the shared `setup_common.provider_settings(settings, CGC_PROVIDER_ID)` helper rather than a local wrapper. The export and load commands run under the configurable provider-setup cap (`args.timeout` ← `timeoutCaps.providerSetupSeconds`, default 1800; `0` = unbounded opt-out) — bundle copies run <60s in practice, so only a genuinely wedged docker exec can reach the cap, and a wedge no longer hangs `worktree_start` forever. A stall watchdog (like the GrepAI clone's) is a noted follow-up; the lifecycle-CLI boundary currently blocks a progress callback here.
 
 `_cgc_settings_path(args)` is the single source of truth for which settings file cgc actually runs against. It walks the priority chain `cgc_from_settings > provider_from_settings > from_settings` and returns the first truthy value. Both `cgc_extra_args` (which builds the `--from-settings` CLI flag) and `_seed_target_runtime_root` call this helper so both always agree on the settings file.
 
@@ -28,6 +28,7 @@ The argv after `--` in `_seed_export`/`_seed_load` executes inside the Linux run
 
 ### Invariants And Boundaries
 
+- A benchmark-scoped target is never seeded (hermetic): `_resolve_seed_context` returns `_seed_skip` before resolving any source or starting a backend, mirroring the GrepAI clone guard so a benchmark cannot reach the live workspace cgc backend (task 260619).
 - Seed source settings must come from explicit provider settings or from the same coordination root's active settings path.
 - CGC seed is an optimization; callers decide whether a failed seed can fall back to full refresh.
 - Bundle path rewriting is delegated to `bundle.py`.
@@ -44,10 +45,12 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- |
 | Provider-level CGC setup calls this module before optional refresh fallback. | [setup.py](setup.py.md) |
 | Bundle path rewriting is delegated to the CGC bundle module. | [bundle.py](bundle.py.md) |
+| The GrepAI seed applies the same benchmark-scope hermetic guard. | [../grepai/seed.py](agents-remember/mcp/src/agents_remember/providers/grepai/seed.py) |
 | Worktree setup constructs CGC seed options through the provider setup request. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 
 ## Update History
 
+- 2026-06-19T13:42: `_resolve_seed_context` now refuses a benchmark-scoped target (`instance.scope == "benchmark"`) with a `_seed_skip` before any source/backend work — mirrors the GrepAI hermetic guard so a benchmark never seeds from the live workspace cgc backend (task 260619).
 - 2026-06-10T07:05+02:00 — Export/load in-container argv (bundle paths, export `--repo`) now rendered via `to_container_path` (GitHub #58): raw host paths made every Windows seed export fail and silently forced the full reindex fallback. `to_container_path`'s canonical home moved to `providers/context_common.py` (provider-agnostic; also avoids the facade star-import diamond a `cgc/seed.py → cgc.context.core` import would trip).
 - 2026-06-10T05:30+02:00 — `git_head_or_none` detaches stdin (protocol-pipe hygiene), and `_seed_export`/`_seed_load` are bounded by the configurable provider-setup cap (`timeoutCaps.providerSetupSeconds`) instead of UNLIMITED — only a wedge can reach the cap since bundle copies run <60s in practice.
 - 2026-06-01T23:40+02:00 — Added `_cgc_settings_path(args)` as the single-source settings-path resolver (priority: `cgc_from_settings > provider_from_settings > from_settings`) used by both `cgc_extra_args` and the new `_seed_target_runtime_root`. Added `_seed_target_runtime_root(args, settings, repo_id)`: in an isolated worktree seed resolves the bundle's host path from the isolated worktree settings (via `_cgc_settings_path` + `_seed_runtime_root`) so the bundle lands under the worktree runner's instance mount, not the workspace runner root where the worktree runner can't find it. Fixes OQ5 ("Bundle file not found" / silent full re-index fallback). Falls back to workspace `_seed_runtime_root` when not isolated or isolated settings are unreadable. Updated Logic and Invariants accordingly.

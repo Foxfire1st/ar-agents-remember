@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-10T07:50+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastVerifiedCommitHash | `4728fa846d20cffd3f25c34e072e41920b49461e` |
+| lastVerifiedCommitDate | 2026-06-19T14:22:14+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -40,7 +40,9 @@ GrepAI actions.
   so embeddings can be reused instead of rebuilt. The clone runs under a stall
   watchdog (killed after `GREPAI_CLONE_STALL_SECONDS` of zero progress in dump
   growth / target database size) and is never capped by total duration — a
-  wedge's signature is silence, not size (2.5.1).
+  wedge's signature is silence, not size (2.5.1). A benchmark-scoped target is
+  refused up front (`_clone_skip`) so a benchmark never clones from another
+  stack (hermetic; task 260619).
 - `isolated.py` rewrites provider settings for worktree-specific containers,
   roots, logs, and runtime paths while preserving the logical workspace key.
 - `context/` owns GrepAI runtime layout, workspace config, and live-root indexing.
@@ -63,6 +65,7 @@ GrepAI actions.
 
 ## Update History
 
+- 2026-06-19T13:42 — `seed.py` now refuses a benchmark-scoped clone target (`_clone_skip`), so a benchmark never clones from another provider stack (hermetic; defense-in-depth for task 260619's benchmark isolation).
 - 2026-06-10T07:50+02:00 — GitHub #53: `setup.py` announces install/clone-db phases through the setup progress sink for background worktree provider setup.
 - 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: the `seed.py` clone stall watchdog and no-total-cap contract. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current GrepAI provider package; added the worktree database-clone (`seed.py`) and isolated-settings (`isolated.py`) surfaces.

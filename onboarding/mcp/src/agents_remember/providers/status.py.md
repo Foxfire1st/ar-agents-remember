@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T06:20+02:00|
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastVerifiedCommitHash | `4728fa846d20cffd3f25c34e072e41920b49461e` |
+| lastVerifiedCommitDate | 2026-06-19T14:22:14+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -30,6 +30,12 @@ recovery-action, raw-status, and per-provider raw status detail.
 When provider details are intentionally skipped, compact summary item
 construction returns an empty `items` list instead of synthesizing provider rows
 from absent current-state detail.
+
+`_cgc_watcher_state` projects each CGC watcher row, and `_last_refresh_summary`
+compacts its raw `lastRefresh` value: a plain string passes through, but a dict
+is reduced to a short `"<updatedAt> returncode=<…> durationSeconds=<…>"` string
+(only the present keys) so the projected watcher state carries a readable refresh
+marker instead of an opaque nested object.
 
 The projection's global `ok` requires both signals to pass: the raw watchers
 `ok` (are the containers up) AND the aggregated current-state `ok` (does the
@@ -66,6 +72,8 @@ surface.
 - `provider_diagnostics` is the detail surface for raw provider state.
 - A skipped provider projection reports aggregate skipped state only; it does
   not emit per-provider summary rows with unknown or omitted `ok` fields.
+- A projected CGC watcher's `lastRefresh` is a compact string, not a raw dict:
+  `_last_refresh_summary` keeps only `updatedAt`/`returncode`/`durationSeconds`.
 - Temporary lifecycle settings come from MCP settings and are deleted after the
   status read.
 - Provider status is read-only from the MCP caller perspective; setup history
@@ -89,11 +97,11 @@ surface.
 | Provider MCP controllers expose status, diagnostics, watcher, GrepAI, and CGC tools. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
 | Current-state projection and persistence live in the current-state module. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 | Restart/rebind recovery wording is shared with runtime-install recovery reporting. | [recovery.py](agents-remember/mcp/src/agents_remember/providers/recovery.py) |
-| Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
-| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
+| Provider current-state tests assert `noWorkspace` stays degraded, the restart recovery action, and the compacted CGC `lastRefresh` summary. | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 
 ## Update History
 
+- 2026-06-19T13:42: Documented `_last_refresh_summary()` — `_cgc_watcher_state` now compacts the raw `lastRefresh` dict (updatedAt/returncode/durationSeconds) into a short string instead of passing the nested object through; added the matching invariant and test reference.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the dual-gate global `ok`, `partial`, `indexing` busy-list, and per-repo CGC recovery mechanics into Code Commentary and Invariants (documentation only).
 - 2026-06-09T22:10+02:00 — The projection's global `ok` now requires both the raw watchers ok (containers) and the aggregated current-state ok (graph/workspace content); `partial` is set when other providers remain ready. Recovery actions now include a per-repo CGC restart entry for `empty`/`backend-unreachable` targets, and the compact summary gained the additive `indexing` list of busy `"<provider-id>:<repo-id>"` targets (healthy-but-busy: never degrades state/ok). This closes the 2026-06-09 incident where `context_packet` reported green over a 0-node graph for 3 days.
 - 2026-06-08T09:57+02:00: Documented skipped-provider summary behavior: when provider details are skipped, compact summary `items` is empty rather than populated from missing current-state rows.
