@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T10:26+02:00     |
-| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
-| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
+| lastVerifiedCommitHash | `4728fa846d20cffd3f25c34e072e41920b49461e` |
+| lastVerifiedCommitDate | 2026-06-19T14:22:14+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -39,6 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-19T13:42 — No content impact: SERVER_VERSION fallback bumped to 2.9.2 in lockstep with pyproject (benchmark provider isolation release, task 260619); the version-resolution contract this sidecar describes is unchanged.
 - 2026-06-12T19:06+02:00 — No content impact: SERVER_VERSION fallback bumped to 2.9.1 in lockstep with pyproject (issue #83 closeout committed-range fix release); the version-resolution contract this sidecar describes is unchanged.
 - 2026-06-11T15:20+02:00 — No content impact: SERVER_VERSION fallback bumped to 2.9.0 in lockstep with pyproject (carryover artifact coverage release); the version-resolution contract this sidecar describes is unchanged.
 - 2026-06-10T10:26+02:00 — No content impact: SERVER_VERSION fallback bumped to 2.8.0 in lockstep with pyproject (GitHub #54 release); the version-resolution contract this sidecar describes is unchanged.

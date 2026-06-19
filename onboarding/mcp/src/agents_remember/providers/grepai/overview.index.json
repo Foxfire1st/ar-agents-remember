@@ -78,7 +78,7 @@
       "GrepAI",
       "mcp/src/agents_remember/providers/grepai/",
       "route-local-overview",
-      "ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0",
+      "4728fa846d20cffd3f25c34e072e41920b49461e",
       "/../../../overview.md",
       "grepai_setup.py",
       "context_modules/grepai",
@@ -86,6 +86,7 @@
       "grepai install",
       "grepai clone-db",
       "GREPAI_CLONE_STALL_SECONDS",
+      "_clone_skip",
       "artifacts.py",
       "providers/grepai/",
       "mcp/overview.md",
@@ -98,15 +99,14 @@
       "lastUpdated",
       "T07",
       "lastVerifiedCommitHash",
+      "fa846d20cffd3f25c34e072e41920b49461e",
       "lastVerifiedCommitDate",
-      "T08",
+      "T14",
       "governingOverview",
       "grepai_setup",
       "context_modules",
       "lifecycle_modules",
-      "GitHub",
-      "CGC",
-      "T05"
+      "GitHub"
     ]
   },
   "fallback": {

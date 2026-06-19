@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
+| lastVerifiedCommitHash | `4728fa846d20cffd3f25c34e072e41920b49461e` |
+| lastVerifiedCommitDate | 2026-06-19T14:22:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,6 +51,12 @@ canonical `isolatedProviderSettings` payload.
 UTF-8 subprocess coverage monkey-patches `subprocess.run` and asserts `run_command` passes
 `PYTHONUTF8=1`, `PYTHONIOENCODING=utf-8`, and `stdin=subprocess.DEVNULL` to
 lifecycle children.
+
+`BenchmarkSeedGuardTests` asserts the hermetic boundary directly: a
+benchmark-scoped target (`instance.scope == "benchmark"`) makes
+`grepai_seed._resolve_clone_context` and `cgc_seed._resolve_seed_context` return
+a `skipped` result even when a seed source is configured, so a benchmark never
+clones/seeds from another provider stack.
 
 ### Conventions
 
@@ -104,6 +110,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-19T13:42: Added `BenchmarkSeedGuardTests` — asserts the GrepAI clone and CGC seed resolvers refuse a benchmark-scoped target (return a `skipped` hermetic result) even with a source configured (task 260619).
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-10T07:30+02:00 — Added `test_prepare_announces_phases_in_order_with_seed_fallback`: a recording `SetupProgress` driven through a full dry-run prepare (mocked seed/clone bundles) pins the phase order (grepai install, cgc install-all, grepai clone-db, cgc seed, cgc refresh-all, watchers start/status) and that ONLY the refresh-all fallback start carries `seed_fallback` with the seed's refusal reason (GitHub #53).
 - 2026-06-10T07:05+02:00 — Seed argv assertions switched to container form (`to_container_path` from `providers.context.common`) plus a no-drive-letter regex guard on the post-`--` argv, pinning the GitHub #58 Windows seed-export fix.

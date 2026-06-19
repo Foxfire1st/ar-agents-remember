@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/workspace.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-26T02:26+02:00                     |
-| lastVerifiedCommitHash | `a7e160cd4381245327da7c5a52e2272b3080ebf7` |
-| lastVerifiedCommitDate | 2026-05-26T02:40:22+02:00|
+| lastVerifiedCommitHash | `4728fa846d20cffd3f25c34e072e41920b49461e` |
+| lastVerifiedCommitDate | 2026-06-19T14:22:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,12 +22,13 @@ Benchmark workspace and repository preparation orchestration.
 
 ### Logic
 
-`workspace.py` derives source-only and with-memory workspace paths, prepares Git checkouts, renders benchmark AGENTS files, syncs runtime assets, writes MCP registration, prepares memory repos, and invokes configured provider setup.
+`workspace.py` derives source-only and with-memory workspace paths, prepares Git checkouts, renders benchmark AGENTS files, syncs runtime assets, writes MCP registration, prepares memory repos, and invokes configured provider setup. `prepare_case` calls `prepare_configured_providers` with no seed source: each benchmark stack indexes its own pinned fixture from scratch (hermetic-cold) rather than warm-starting from the live workspace.
 
 ### Invariants And Boundaries
 
 - Workspace preparation is case setup, not Codex execution.
 - Path derivation must stay manifest-validated and relative to the benchmark root.
+- Benchmark provider setup is hermetic: `prepare_case` never passes a seed-source coordination root, so a benchmark run cannot start or clone the live workspace provider backends. Seeding from the live workspace previously cascaded a full re-embed across main and every worktree (task 260619).
 
 ## Docs References
 
@@ -47,4 +48,5 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-06-19T13:42: Benchmark provider setup is now hermetic — `prepare_case` passes no seed source, so each benchmark stack indexes its own pinned fixture from scratch and never starts/clones the live workspace provider backends (task 260619: that cross-stack disturbance had cascaded a full re-embed across main + every worktree).
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

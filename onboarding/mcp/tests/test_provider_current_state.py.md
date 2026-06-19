@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T06:20+02:00     |
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
+| lastVerifiedCommitHash | `4728fa846d20cffd3f25c34e072e41920b49461e` |
+| lastVerifiedCommitDate | 2026-06-19T14:22:14+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -29,8 +29,11 @@ It verifies Docker container state normalization, the current-state file path,
 ready and degraded aggregate state, per-provider resource shape, disabled
 provider aggregation, GrepAI no-workspace degradation, GrepAI no-workspace
 restart/rebind recovery guidance, workflow-local instance paths for benchmarks,
-and integration through `provider_status_packet()` plus
-`provider_diagnostics_packet()`.
+integration through `provider_status_packet()` plus
+`provider_diagnostics_packet()`, and the structured CGC `lastRefresh` summary
+(`test_provider_status_summarizes_structured_cgc_last_refresh` asserts a dict
+`lastRefresh` becomes a compact `"<updatedAt> returncode=… durationSeconds=…"`
+string).
 
 `ready_status_payload()` builds a small GrepAI plus CGC status packet with
 running container-state summaries, one CGC repo watcher, a healthy GrepAI
@@ -107,6 +110,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-19T13:42: Added `test_provider_status_summarizes_structured_cgc_last_refresh` covering the compacted CGC `lastRefresh` summary (dict → `"<updatedAt> returncode=… durationSeconds=…"`), matching `status.py:_last_refresh_summary`.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the 2.5.0/2.5.1 readiness coverage (content-gated ok, indexing busy list, restarting watcher, scan markers) into Logic (documentation only).
 - 2026-06-10T05:30+02:00 — Added tests: restarting (crash-looping) watcher is not ready and degrades the provider/global ok; GrepAI `initialScan` markers map to indexing/indexed/unknown without degrading readiness; GrepAI indexing feeds the summary busy list.
