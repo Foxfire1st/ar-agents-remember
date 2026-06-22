@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-06-22T22:00+02:00|
-| lastVerifiedCommitHash | `6a87054534caec754faae00447f737d71b094cb9` |
-| lastVerifiedCommitDate | 2026-06-22T21:58:03+02:00|
+| lastVerifiedCommitHash | `adbee7d31a75ca4ae85c2d99d05a9109969399e5` |
+| lastVerifiedCommitDate | 2026-06-22T22:08:07+02:00|
 
 ## Purpose
 
