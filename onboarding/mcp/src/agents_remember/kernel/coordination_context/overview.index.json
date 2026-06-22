@@ -120,7 +120,7 @@
       "JSON",
       "mcp/src/agents_remember/kernel/coordination_context/",
       "route-local-overview",
-      "11f28a2035f06f8bc33f11b0617b41cda1122c1f",
+      "6a87054534caec754faae00447f737d71b094cb9",
       "/../../../overview.md",
       "coordination_context/",
       "c-08-ar-coordination-context-resolver",
@@ -130,11 +130,11 @@
       "env",
       "env.example",
       "settings.json",
+      "worktree_name",
+      "resolve_contract",
+      "find_worktree_contract",
       "mcp/overview.md",
-      "coordination_context_resolver.py",
-      "agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py",
-      "test_resolver_parity.py",
-      "agents-remember/mcp/tests/test_resolver_parity.py"
+      "coordination_context_resolver.py"
     ]
   },
   "fallback": {

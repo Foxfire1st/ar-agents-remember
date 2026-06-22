@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-06-22T22:00+02:00                     |
+| lastVerifiedCommitHash | `6a87054534caec754faae00447f737d71b094cb9` |
+| lastVerifiedCommitDate | 2026-06-22T21:58:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,6 +28,13 @@ task/docs/system roots, resolves cross-repo settings, and returns one
 `CoordinationContext`. The effective memory root is the contract's
 `memory_worktree` when present and otherwise the resolved `memory_root`; it is
 not influenced by `memory_mode`.
+
+`build_coordination_context` forwards `worktree_name` into `resolve_contract`, so
+a context resolves its contract-derived fields (`contract_path`, `code_worktree`,
+`memory_worktree`) from `worktree_name` alone — matching what `worktree_status`
+returns — not only from `task_name`/`contract_path`. The same `worktree_name` also
+derives `worktree_group` as pure path math (`_worktree_group`), which is why that
+one field populated even before the contract lookup was wired through.
 
 ### Invariants And Boundaries
 
@@ -64,5 +71,6 @@ No cross-repository evidence is needed; cross-repo facts are read dynamically fr
 
 ## Update History
 
+- 2026-06-22T22:00+02:00 — `build_coordination_context` now forwards `worktree_name` into `resolve_contract` so the contract-derived fields (`contract_path`/`code_worktree`/`memory_worktree`) resolve from `worktree_name` alone, matching `worktree_status`; previously `worktree_name` only fed `_worktree_group` (#90).
 - 2026-05-31T12:50+02:00 — `_effective_memory_root` dropped its unused `memory_mode` parameter and its dead `disabled`-mode branch (both returned `memory_root`); behaviour-preserving, and added a Logic note that the effective memory root is not influenced by `memory_mode` (1.0.0 review remediation).
 - 2026-05-25T20:57+02:00: Created by extracting coordination context selection and assembly from the monolithic resolver.

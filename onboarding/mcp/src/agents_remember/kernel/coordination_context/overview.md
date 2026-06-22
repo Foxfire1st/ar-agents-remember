@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-06-22T22:00+02:00                     |
+| lastVerifiedCommitHash | `6a87054534caec754faae00447f737d71b094cb9` |
+| lastVerifiedCommitDate | 2026-06-22T21:58:03+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -69,5 +69,6 @@ The package is intentionally split by responsibility:
 
 ## Update History
 
+- 2026-06-22T22:00+02:00 — No route impact: `contracts.py` gained a `worktree_name` fallback in `resolve_contract` plus the `find_worktree_contract` helper, `resolver.py` forwards `worktree_name` into it, and the facade re-exports it (#90); the route's module responsibilities (`contracts.py` still loads worktree contract facts for the resolver), structure, and invariants are unchanged. Detail lives in the file sidecars.
 - 2026-06-06T12:15: Re-verified against the current 15-file coordination-context package; purpose, hot path, route model, and invariants still match.
 - 2026-05-25T20:57+02:00: Created after the monolithic `c-08-ar-coordination-context-resolver` skill package resolver was split into focused implementation modules, then amended when Markdown fallback parser branches moved into submodules.
