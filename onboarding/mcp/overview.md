@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-11T14:07+02:00 |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36` |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastUpdated            | 2026-06-22T22:00+02:00 |
+| lastVerifiedCommitHash | `6a87054534caec754faae00447f737d71b094cb9` |
+| lastVerifiedCommitDate | 2026-06-22T21:58:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -191,6 +191,7 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-06-22T22:00+02:00 — No route impact: the #90 change adds a `worktree_name` fallback to the coordination-context resolver (`contracts.py`/`resolver.py`), re-exports `find_worktree_contract` from the `kernel/coordination_context_resolver.py` facade, and adds resolver tests under `mcp/tests/`; the MCP package structure and routing this overview describes are unchanged. Detail lives in the `coordination_context` route overview and the file sidecars.
 - 2026-06-19T13:42 — No route impact: the changes governed by this route are `status.py`'s new `_last_refresh_summary` helper (CGC watcher `lastRefresh` compaction) and test updates under `mcp/tests/`; the benchmark hermetic-provider behavior is carried by the `benchmarks/runner_modules` and provider route overviews, and the mcp package structure/routing this overview describes is unchanged (task 260619).
 - 2026-06-12T19:06+02:00 — No route impact: the issue #83 changes under this route are the worktree-manager facade re-exports, the test additions, the 2.9.1 version bump, and the synced c-12-closeout and l-01-session-job-lifecycle skill copies (issue #83 doctrine plus the two-turn gate protocol); the closeout worklist behavior itself is documented at the `mcp/src/agents_remember/worktrees/modules` route, and the package layout/routing this overview describes is unchanged.
 - 2026-06-11T15:20+02:00 — No route impact: carryover gained the memory-only-doc and entity-catalog candidate kinds inside memory/carryover.py and the c-11 packaged skill doc; route structure and module responsibilities on this route are unchanged (detail lives in the per-file cards).
