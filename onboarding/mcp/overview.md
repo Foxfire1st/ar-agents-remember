@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-22T22:00+02:00 |
-| lastVerifiedCommitHash | `6a87054534caec754faae00447f737d71b094cb9` |
-| lastVerifiedCommitDate | 2026-06-22T21:58:03+02:00|
+| lastVerifiedCommitHash | `f80ef88d591f267441bd62dc462fadab2e7e8128` |
+| lastVerifiedCommitDate | 2026-06-22T22:02:41+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -191,6 +191,7 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-06-22T22:00+02:00 — No route impact: package version bumped to 2.9.3 (`pyproject.toml`, `SERVER_VERSION` fallback) for the #90 worktree_name contract-resolution patch release; route behavior unchanged.
 - 2026-06-22T22:00+02:00 — No route impact: the #90 change adds a `worktree_name` fallback to the coordination-context resolver (`contracts.py`/`resolver.py`), re-exports `find_worktree_contract` from the `kernel/coordination_context_resolver.py` facade, and adds resolver tests under `mcp/tests/`; the MCP package structure and routing this overview describes are unchanged. Detail lives in the `coordination_context` route overview and the file sidecars.
 - 2026-06-19T13:42 — No route impact: the changes governed by this route are `status.py`'s new `_last_refresh_summary` helper (CGC watcher `lastRefresh` compaction) and test updates under `mcp/tests/`; the benchmark hermetic-provider behavior is carried by the `benchmarks/runner_modules` and provider route overviews, and the mcp package structure/routing this overview describes is unchanged (task 260619).
 - 2026-06-12T19:06+02:00 — No route impact: the issue #83 changes under this route are the worktree-manager facade re-exports, the test additions, the 2.9.1 version bump, and the synced c-12-closeout and l-01-session-job-lifecycle skill copies (issue #83 doctrine plus the two-turn gate protocol); the closeout worklist behavior itself is documented at the `mcp/src/agents_remember/worktrees/modules` route, and the package layout/routing this overview describes is unchanged.

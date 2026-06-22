@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-19T01:50+02:00 |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36` |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastUpdated            | 2026-06-22T22:00+02:00 |
+| lastVerifiedCommitHash | `f80ef88d591f267441bd62dc462fadab2e7e8128` |
+| lastVerifiedCommitDate | 2026-06-22T22:02:41+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -116,6 +116,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-06-22T22:00+02:00 — No content impact: Status section version string bumped to 2.9.3 (worktree_name contract-resolution fix release, #90); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-19T13:42 — No content impact: Status section version string bumped to 2.9.2 (benchmark provider isolation release, task 260619); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-19T01:50+02:00 — Updated the Logic section for the README headline revision (PR #85 / `b9d7314`): the `<h3>` tagline changed from "Durable, git-verified repo memory for coding agents." to "Git-verified records for what your coding agents know. A control plane for what they do.", sharpening the public positioning toward records-plus-control-plane. Advanced verification metadata to merged `main` `cbea101`.
 - 2026-06-12T19:06+02:00 — No content impact: Status section version string bumped to 2.9.1 (issue #83 closeout committed-range fix release); the README structure and guidance this sidecar describes are unchanged.

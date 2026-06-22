@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T10:26+02:00     |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36` |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastUpdated            | 2026-06-22T22:00+02:00     |
+| lastVerifiedCommitHash | `f80ef88d591f267441bd62dc462fadab2e7e8128` |
+| lastVerifiedCommitDate | 2026-06-22T22:02:41+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -74,6 +74,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-06-22T22:00+02:00 — No content impact: version bumped to 2.9.3 for the worktree_name contract-resolution fix release (#90); packaging contract unchanged.
 - 2026-06-19T13:42 — No content impact: version bumped to 2.9.2 for the benchmark provider isolation release (task 260619); packaging contract unchanged.
 - 2026-06-12T19:06+02:00 — No content impact: version bumped to 2.9.1 for the issue #83 closeout committed-range fix release; packaging contract unchanged.
 - 2026-06-11T15:20+02:00 — No content impact: version bumped to 2.9.0 for the carryover artifact coverage release; packaging contract unchanged.

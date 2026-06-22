@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-06-19T01:50+02:00 |
-| lastVerifiedCommitHash | `6a87054534caec754faae00447f737d71b094cb9` |
-| lastVerifiedCommitDate | 2026-06-22T21:58:03+02:00|
+| lastUpdated | 2026-06-22T22:00+02:00 |
+| lastVerifiedCommitHash | `f80ef88d591f267441bd62dc462fadab2e7e8128` |
+| lastVerifiedCommitDate | 2026-06-22T22:02:41+02:00|
 
 > **Status:** active baseline
 
@@ -191,6 +191,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-06-22T22:00+02:00 — No route impact: the only root-level change is the README Status version string bumped to 2.9.3 for the #90 worktree_name contract-resolution patch release; the repository structure, routes, and feature inventory this overview describes are unchanged.
 - 2026-06-19T13:42 — No route impact: the root-governed changes are benchmark fixture doc/prompt wording under `benchmarks/`; the benchmark provider-isolation fix (hermetic-cold + seed guard) is documented on the `benchmarks/runner_modules` and provider route overviews, and the repo structure / feature inventory this overview describes is unchanged (task 260619).
 - 2026-06-19T01:50+02:00 — No route impact: the only root-level change since the last verification (PR #85 / `b9d7314`) is the README `<h3>` headline tagline ("Git-verified records for what your coding agents know. A control plane for what they do."); the repository structure, routes, feature inventory, and routing this overview describes are unchanged. The README headline content is carried by the `README.md.md` sidecar. Re-verified against merged `main` `cbea101`.
 - 2026-06-12T19:06+02:00 — No route impact: root-level changes for issue #83 are the README status version string (2.9.1) and the synced c-12-closeout and l-01-session-job-lifecycle skill doctrine copies (canonical `skills/` plus harness directories; issue #83 doctrine and the two-turn gate protocol); the repository structure and routing this overview describes are unchanged.
