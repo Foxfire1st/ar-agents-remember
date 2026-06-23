@@ -10,6 +10,11 @@
   ],
   "childRoutes": [
     {
+      "route": "dev-skills",
+      "overview": "dev-skills/overview.md",
+      "index": "dev-skills/overview.index.json"
+    },
+    {
       "route": "mcp",
       "overview": "mcp/overview.md",
       "index": "mcp/overview.index.json"
@@ -28,12 +33,13 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 886,
+    "sourceFilesInScope": 895,
     "fileSidecars": 5,
-    "childRoutes": 2
+    "childRoutes": 3
   },
   "routingTerms": [
     "agents",
+    "dev",
     "examples",
     "mcp",
     "pyproject",
@@ -47,6 +53,7 @@
   "hotPath": {
     "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, the hidden harness starter package roots (`.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`)...",
     "candidateHints": [
+      "dev-skills",
       "mcp",
       "examples/mcp",
       "AGENTS.md",
@@ -67,6 +74,7 @@
       "sync-runtime",
       "sync-skills.py",
       "sync-skills",
+      "dev-skills",
       "mcp",
       "mcp/",
       "mcp/src/agents_remember/package_data/runtime/agents-md-files",
@@ -82,7 +90,7 @@
       "agents_remember",
       "package_data",
       "repo-overview",
-      "adbee7d31a75ca4ae85c2d99d05a9109969399e5",
+      "8e39b62c3550e974486479203d191aac39a0f0f3",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -103,8 +111,7 @@
       "providers/_venvs/",
       "onboarding/",
       "c-05-create-or-update-onboarding-files",
-      "ar-coordination/memory-repos/ar-<repo>/",
-      "c-00-initialize-memory-repo"
+      "ar-coordination/memory-repos/ar-<repo>/"
     ]
   },
   "fallback": {

@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-06-22T22:00+02:00 |
-| lastVerifiedCommitHash | `adbee7d31a75ca4ae85c2d99d05a9109969399e5` |
-| lastVerifiedCommitDate | 2026-06-22T22:08:07+02:00|
+| lastVerifiedCommitHash | `8e39b62c3550e974486479203d191aac39a0f0f3` |
+| lastVerifiedCommitDate | 2026-06-23T06:11:39+02:00|
 
 > **Status:** active baseline
 
@@ -191,6 +191,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-06-23T05:31 — No route impact: added the new top-level `dev-skills/` slice — dev-only, non-distributed tooling (the `dashboard-experience-review` cockpit reviewer skill) — and brought it into the onboarding include scope. It ships to nobody (never synced/packaged by `scripts/sync-skills.py`) and is documented by its own route overview (`dev-skills/overview.md`), so the product feature inventory, surfaces, and routing this overview describes are unchanged (issue #92).
 - 2026-06-22T22:00+02:00 — No route impact: the only root-level change is the README Status version string bumped to 2.9.3 for the #90 worktree_name contract-resolution patch release; the repository structure, routes, and feature inventory this overview describes are unchanged.
 - 2026-06-19T13:42 — No route impact: the root-governed changes are benchmark fixture doc/prompt wording under `benchmarks/`; the benchmark provider-isolation fix (hermetic-cold + seed guard) is documented on the `benchmarks/runner_modules` and provider route overviews, and the repo structure / feature inventory this overview describes is unchanged (task 260619).
 - 2026-06-19T01:50+02:00 — No route impact: the only root-level change since the last verification (PR #85 / `b9d7314`) is the README `<h3>` headline tagline ("Git-verified records for what your coding agents know. A control plane for what they do."); the repository structure, routes, feature inventory, and routing this overview describes are unchanged. The README headline content is carried by the `README.md.md` sidecar. Re-verified against merged `main` `cbea101`.
