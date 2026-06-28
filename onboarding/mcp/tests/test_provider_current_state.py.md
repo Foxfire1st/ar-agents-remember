@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T06:20+02:00     |
+| lastUpdated            | 2026-06-28T19:10+02:00     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../overview.md`                           |
@@ -54,6 +54,12 @@ container is not ready and degrades provider and global `ok`, and GrepAI
 `initialScan` log markers map to `indexing`/`indexed`/`unknown` without
 degrading readiness.
 
+`test_provider_status_summarizes_structured_cgc_last_refresh` pins the structured
+CGC `lastRefresh` projection: when a watcher reports `lastRefresh` as a
+`{returncode, durationSeconds, updatedAt}` object, the compact provider status
+flattens it to `"<updatedAt> returncode=<n> durationSeconds=<s>"` rather than
+leaking the raw dict.
+
 ### Conventions
 
 - Keep these tests side-effect free; do not require Docker, GrepAI, CGC, or
@@ -98,6 +104,7 @@ No external documentation is needed for these standard-library unit tests.
 | The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | L178-L208 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | L209-L230 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | Current-state projection and persistence are implemented in the provider current-state module. | L16-L325 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
+| The structured-`lastRefresh` regression mutates a CGC watcher's `lastRefresh` to a `{returncode, durationSeconds, updatedAt}` object and asserts the projected watcher `lastRefresh` is the flattened summary string. | L232-L265 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 
 ## Cross-Repo References
 
@@ -109,6 +116,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): documented `test_provider_status_summarizes_structured_cgc_last_refresh` (MCP 2.9.x), which pins flattening a structured CGC `lastRefresh` object to the human-readable summary string. Grafted onto the series' task-12 `targetRepos` content.
 - 2026-06-23T22:09+02:00 — Task 12 S2 correction: the current-truth regression now asserts GrepAI
   `targetRepos` are persisted from configured repository memory roots, protecting the observer's
   repo-scoped memory-provider projection. Verification metadata will be stamped at closeout.

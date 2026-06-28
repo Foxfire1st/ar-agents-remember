@@ -5,7 +5,7 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-06-23T07:25+02:00|
+| lastUpdated            | 2026-06-28T19:10+02:00|
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 
@@ -57,6 +57,18 @@ commits. The paired no-op regression proves a clean re-closeout after
 integration reports no reopen, preserves completed integration fields, keeps the
 recorded closeout commits unchanged, and does not move the code or memory source
 branches.
+
+The worktree-name resolution slice (MCP 2.9.3) adds
+`test_resolver_resolves_contract_by_worktree_name`,
+`test_resolver_returns_empty_for_unknown_worktree_name`,
+`test_resolver_prefers_task_name_over_worktree_name`, and
+`test_find_worktree_contract_matches_group_or_returns_none`, built on
+`_external_memory_skeleton` / `_write_task_contract` helpers and importing
+`worktree_group_for`. They prove `resolve_coordination_context(worktree_name=…)`
+populates contract-derived fields from the matching worktree group, returns a
+blank context for an unknown worktree name, lets an explicit `task_name` win over
+a competing `worktree_name`, and that `find_worktree_contract` matches by group
+or returns `None`.
 
 `RequireUpdatedRouteOverviewContentTests` covers the route-overview body gate:
 with committed root and `src/app` overviews, the nearest-governing overview of
@@ -129,6 +141,7 @@ Worktree support coverage includes the master-start path that creates a root int
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): documented the MCP 2.9.3 worktree-name resolution tests (`test_resolver_resolves_contract_by_worktree_name`, `…returns_empty_for_unknown_worktree_name`, `…prefers_task_name_over_worktree_name`, `test_find_worktree_contract_matches_group_or_returns_none`) and the `worktree_group_for` import. Grafted onto the series' task-30 re-closeout / leaf-enclosure coverage.
 - 2026-06-27T21:10+02:00 — Task 30: added
   `integrated_external_contract_fixture` and re-closeout regressions proving an
   already-integrated leaf is reopened only when a new unlanded closeout exists,

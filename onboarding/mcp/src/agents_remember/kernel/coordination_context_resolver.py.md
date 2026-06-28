@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context_resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastUpdated            | 2026-06-28T19:10+02:00                     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -25,7 +25,9 @@ execution to `coordination_context.cli`, and preserves the existing
 `agents_repo_from_script` monkeypatch seam used by resolver tests. The actual
 resolution, settings parsing, storage decisions, cross-repo checks,
 serialization, and contract loading now live in focused modules under
-`coordination_context/`.
+`coordination_context/`. The re-exported contract helpers are `resolve_contract`,
+`find_task_contract`, and `find_worktree_contract` (the worktree-name fallback),
+all kept in sync in `__all__`.
 
 The cross-repo re-export is `git_head_or_empty` (formerly `git_head`), and the
 storage re-export is the boolean predicate `is_sidecar_storage` (the former
@@ -61,6 +63,7 @@ The compatibility facade preserves the old import path while forwarding `parent_
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): the facade now also re-exports `find_worktree_contract` (import + `__all__`) for the MCP 2.9.3 worktree-name contract fallback. Grafted onto the series' `parent_task`/`leaf_id` forwarding.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the facade resolver signature now forwards `parent_task` and `leaf_id` to the package resolver while preserving the legacy facade bridge. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-31T12:50+02:00 — Source renamed the cross-repo re-export `git_head` to `git_head_or_empty`, swapped the storage re-export `sidecar_storage_label` for the `is_sidecar_storage` predicate (import + `__all__`), and documented `_with_facade_agents_repo` as an identity rebind that is load-bearing only as a test seam; corrected the Logic prose to name the new re-exports and the documented seam (1.0.0 review remediation).
 - 2026-05-25T20:57+02:00: Updated after the monolithic resolver was split into the `coordination_context/` implementation package and this file became the public facade.

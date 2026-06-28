@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T05:30+02:00                     |
+| lastUpdated            | 2026-06-28T19:10+02:00                     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../../overview.md`                  |
@@ -39,7 +39,9 @@ rendered via `to_container_path` (`providers/context_common.py`) — host-form
 ## Route Model
 
 - `bundle.py`, `seed.py`, and `setup.py` own package/setup-time CGC behavior,
-  including worktree graph seeding from an existing provider index.
+  including worktree graph seeding from an existing provider index. A
+  benchmark-scoped target is refused before any seed work (`_seed_skip`),
+  mirroring the GrepAI guard (hermetic; task 260619).
 - `context/` owns CGC runtime layout and upstream patch behavior.
 - `lifecycle/` owns CGC backend, installation, status, and process lifecycle.
 
@@ -62,6 +64,8 @@ rendered via `to_container_path` (`providers/context_common.py`) — host-form
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the `_seed_skip` benchmark-scoped hermetic guard (task 260619 / MCP 2.9.2) that the series carryover had reverted. The merged tree at 84e95ad keeps main's hermetic seed behavior (the series did not touch this route's source).
+- 2026-06-19T13:42 — `seed.py` now refuses a benchmark-scoped seed target (`_seed_skip`) before any source/backend work, mirroring the GrepAI guard (hermetic; task 260619).
 - 2026-06-10T07:05+02:00 — Seed in-container argv (post-`--`) documented as container-form via `to_container_path` (GitHub #58: host-form Windows paths failed every seed into the silent reindex fallback).
 - 2026-06-10T05:30+02:00 — Route body caught up with 2.5.0/2.5.1: seed HEAD-match refusal with full-reindex fallback and the setup-cap-vs-uncapped-indexing boundary. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current CGC provider package; expanded the hot-path summary to include isolated worktree settings and CGC index bundle seeding.
