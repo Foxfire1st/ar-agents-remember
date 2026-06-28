@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-06-22T22:00+02:00 |
-| lastVerifiedCommitHash | `8e39b62c3550e974486479203d191aac39a0f0f3` |
-| lastVerifiedCommitDate | 2026-06-23T06:11:39+02:00|
+| lastUpdated | 2026-06-28T16:17+02:00 |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 
 > **Status:** active baseline
 
@@ -49,7 +49,13 @@ onboarding pass.
 | Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | `c-01-findings-capture` skill |
 | Workflow modes | The `l-01-session-job-lifecycle` skill chat build for current-session edits and the `w-02-light-task-workflow` skill for compact durable plans, escalating to a master + light sub-task series for larger phased work (the retired heavy workflow is no longer a separate mode). | `l-01-session-job-lifecycle` skill, `w-02-light-task-workflow` skill |
 | Approval-gated closeout | Explicit approval gates for implementation, worktree-backed closeout, memory refresh, memory quality, and ledger alignment. Closeout is worktree-only — the direct current-checkout path was removed (issue #62). Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `worktree_closeout_*` |
-| Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. | `c-09-git-worktree-manager` skill, `worktree_*`, `worktrees/` |
+| Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, lifecycle finalization, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. | `c-09-git-worktree-manager` skill, `lifecycle_finalize_task`, `worktree_*`, `worktrees/` |
+| Observable session lifecycle | The 3.0 browser-dashboard substrate: an append-only `ar-observer-event/v1` event log with trust provenance, an ambient process-singleton lifecycle (six `lifecycle_*` signals, heartbeat, TTL sweep, tool-call attribution), and a pure projection reducer that folds events + file snapshots into resolved state (lifecycle tree, metrics, staleness, per-lifecycle token fuel gauge, drift/sidecar/setup/route/ledger analytical surfaces, precomputed action availability, and a server-computed attention queue). Task 27 adds a **lifecycle next-step hint engine** — every MCP tool response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload` choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing `lifecycle_gate` at gate junctions; built on the existing gate, with auto-firing a later step). Task 28 makes **NOTIFY-AND-CONTINUE** the active turn-end model: a new public `lifecycle_turn_end_notification` tool + a non-terminal `awaiting-developer` lifecycle state (notify the developer and stop — no gate, no wait — and the next AR tool call auto-resumes at the `_tool_payload` choke point), the next-step hints repoint off `lifecycle_gate` onto it, a one-line reducer dedup collapses the duplicate gate-open/blocked-gate attention item, and the old `lifecycle_gate`/inbox stack is parked (kept, un-hinted). Task 29 makes throwaway event/runtime surfaces lifecycle-aware: raw Event River lifetime is backend-retained by lifecycle state rather than frontend count caps, worktree provider/runtime facts require active enclosures, and actionable-drift attention carries repo/branch/source/memory provenance with targetless dismissal. | `agents_remember.observer`, `lifecycle_*` tools, `next_step.py`, `observer/` route overview, `docs/design/observable-lifecycle.md` |
+| JSON-primary task documents | The `ar-task-document/v1` document is the source of truth for a task's plan + step/substep progress; `task.md` is a deterministic render of it. The `task_doc` MCP tool authors documents, including a schema-validated full-document `replace` operation for task resets/replans, and re-renders the markdown without parsing it back; the observer projects leaf docs per lifecycle (what a lifecycle is doing, including creation timestamp for reader ordering) and series **masters** folder-keyed (R1 — whole-series progress and authored master content, so a master is observable on the dashboard). Series leaf rows expose structured leaf `createdAt` metadata for oldest-first display without parsing task-name prefixes. Closes the machine-readable-task-registry gap (note-03 #8). | `agents_remember.tasks`, `task_doc` tool, `tasks/` route overview |
+| Gate control plane | The durable, attributed record of decision points on a lifecycle (closeout/integration/cleanup approvals, agent questions, alarm acks): an append-only `ar-gate-record/v1` `GateRecord` + `GateStore` co-located with the observer event log. The public agent-facing MCP junction is `lifecycle_gate`: it creates the typed durable gate, blocks the active lifecycle with the developer-facing ask, waits for a developer decision or gate-specific inbox response, and can carry `required_decision`; lower-level gate payloads/stores remain the implementation substrate. `controlplane/enforcement.py` binds `worktree_closeout_apply` to a developer-approved `closeout-approval` gate; model self-approval remains non-binding. Task 19 adds the single-current-gate invariant (new lifecycle gates expire older open lifecycle gates) plus targeted dashboard decisions via `gate_decide_for_lifecycle`. Lifecycle skills now raise `lifecycle_gate(kind=...)`, handle the returned developer decision or operator-inbox message from that public junction, and clear with `lifecycle_resume`, split across plan/worktree/closeout/push/integration/cleanup/agent-question gate kinds. Dashboard gate projection is live and now renders human-readable previews with raw JSON as diagnostics. | `agents_remember.controlplane`, `lifecycle_gate`, `gate_*` stores/tools, `controlplane/` route overview |
+| Dashboard serving layer | The local mission-control server: `agents-remember dashboard` runs a FastAPI app over the observer projection — a multiplexed `state` SSE stream (snapshot + per-entity deltas), a one-shot state endpoint, a raw `event` SSE channel with byte-offset resume and a `ready` hydration marker after retained backlog replay, a POST action plane (slice 6b records gate-decision verbs as developer-attributed gate decisions; lifecycle transitions stay no-mutation; targetless actionable-drift dismissals persist acknowledgements), sim-mode replay, and the static cockpit bundle. Slice 6d begins **Mode B2** (the dashboard-hosted terminal): 6d-1 lands the terminal-host backend (`serving.terminal` — a `TerminalHost` registry of tmux-wrapped stdlib-`pty` sessions launching the harness render-not-scrape, fixed-argv/OS-user/localhost); 6d-2 adds the `/api/terminal/{session}` WebSocket bridge (PTY ↔ browser; + the `websockets` core dep), with the xterm.js visual (6e) to follow. Transport only (reads via the one coordination-state path abstraction); the frontend lives at the root-level `dashboard/` sub-project. Task 26 adds a **hot-reload dev env** — a `--reload` flag on the `agents-remember dashboard` CLI. | `agents_remember.serving`, `agents-remember dashboard` CLI, `serving/` route overview, root `dashboard/` |
+| Dashboard frontend (mission-control cockpit) | The browser cockpit (`dashboard/src/`): a near-read-only Vite + React 19 + TS-strict UI over the observer projection — model-C shell (top bar + rails + switchable viewport + event river + mode bar), cockpit panels plus the slice-6e Chats terminal, and a shared grammar/primitives library. Styled with the layered blueprint (slice 5d): **Panda CSS** (typed tokens + build-time/zero-runtime recipes) for styling + **React Aria** (headless a11y — the mode bar / pivot `ToggleButtonGroup`s and the lifecycle `ListBox`); the CRT effects layer isolated. Now a memory citizen (`dashboard/src/**` onboarded). As of slice 5e the **Engine Room** is an enclosure-centered, state-backed process map (`panels/engine-room/`) that makes the worktree manager's operating model legible — official line → code/memory worktrees → contract coupler → CGC/GrepAI engines — with observed/derived/planned/missing fact-state honesty, fed by a new server `analytics.engineProcesses` projection. **Slices 5f–5g** animate it as a worktree-lifecycle state machine on the prototype's **bird's-eye podracer canvas**: boot choreography (center-out engine charge + travelling conduit packets), failure overlays (steady blocked gates · isolated engine fault flicker · amber reindex reroute), and the **live/teardown** states (sync block · a terminal integration-conflict STOP · abandon dissolve); engines read **green when active** (empty off · cyan booting · red fault · amber reindex). The successful-landing arc (closeout train · PR/push · carryover · cleanup teardown) landed in **5h**; **5i** then made the canvas a dev scenario-player-driven build-up/tear-down stage; and **05k** completed the motion property-split onto GSAP timelines (`useEngineTimeline`) + Motion (`AnimatePresence`), CSS static. A **visual-parity pass** then completes the prototype fidelity: the atmospheric blueprint backdrop (5g G6) + a cockpit Effects/Calm toggle, the full HUD decal layer (canopy frame, engine spine + petals, the **left official-line engines** + conduits + coupler, lane annotations), and a fixed-height room layout via a `Panel` `fill` variant (the centre canvas + right panel stop resizing per selection; the side columns scroll). **Slice 05o** opens the engine room's **failure-mode** choreography (lifting the `podstage.html` non-happy-path scenes the canvas didn't yet drive, one mode at a time): **mode 1 (T3B memory/ledger block)** adds the **scan-ring** (the cyan pre-block ledger-verify sweep) + **ghosted-lane** (the held memory lane dims+desaturates while the code lane stays solid) primitives and the `memory-block` player scenario (verify → block → reconcile → provider clone → nominal), with a coupled engine-gauge polish (flat gold bezel, constant-gold petals). **Slice 05o Mode 2 (T1B stale-base block)** adds the **pruned-base-node** primitive plus the big red **fleeting-enclosure** box, and a failure-indicator polish pass anchors the verify/block pointers **ON the repository node** (topmost layer) and gives every alert overlay a Motion fade/pop transition. **Slice 05o completes the failure-mode library** — the canvas now drives all eight `podstage.html` failure modes (memory/ledger block, stale base, provider-plan block, seed fault, reindex reroute, live sync, integration conflict, abandon) on a shared set of node-anchored failure primitives (steady gate, scan ring, ghosted lane, pruned node, refused-conduit flash, moved badge, engine-dropout, terminal STOP, dissolve) with Motion fade/pop transitions. On the Task-6 control-plane branch the cockpit also gains its first interactive surfaces: **Slice 6e** adds the visible **Mode B2 terminal** — a full-bleed **Chats** view (`panels/Chats.tsx` + a code-split `Terminal.tsx` xterm.js wrapper) that renders the 6d PTY stream over the `/api/terminal` WebSocket (`data/terminal.ts` — keystrokes/resize ↔ raw PTY bytes), the cockpit's first bidirectional surface. **Slice 6e-2a** makes it a **create** surface: a "＋ Terminal" control spawns a **dashboard-owned** shell at the workspace root via the `POST /api/terminal` opener (`TerminalHost.open`, server-resolved command) — the dashboard owns the session it created. **Slice 6e-2b** adds per-harness launch buttons — a detection-driven button per *installed* harness (Claude Code / Codex / Pi.dev, via the new `GET /api/harnesses` + the `serving.harnesses` registry) beside ＋ Terminal, each spawning that agent at the workspace root. **Slice 6e-2c** moves the open sessions into a dedicated left-rail **session switcher** (`panels/SessionList.tsx` — a React Aria `GridList`, single-select = active session, per-row close ✕), replacing the horizontal tab strip, and unifies the harness buttons onto ＋ Terminal's golden look. **Slice 6e-3** adds **context injection** — a `SessionComposer` docked below the terminal sends a block of text into the active session's stdin as a bracketed paste (the on-ramp to 6f highlight→feedback). **Slice 6e-4** hardens terminal persistence — the open-session registry moves into a `data/sessions` store, and a live terminal survives both a cockpit *view* switch and a *session-tab* switch (kept mounted, hidden via CSS, never unmounted), while the backend PTY spawn gains a controlling terminal (`os.login_tty`) so tmux honors resize. **Slice 6f-1** adds the **highlight → context-package** composer — a cockpit text selection raises a React Aria popover to send the selection + a message into a chat session's stdin (single chat / a selector / create-on-Enter when none is open + ＋ new chat), reusing the live stdin channel; no silent action, not ACP. **Slice 6g** turns the detail panel into a **task-document reader**: a series **master** shows its overview (objective + ordered sections) + a clickable **sub-task index** with in-panel **drill-in** into each slice (the back/parent up-link in the sticky panel header), **markdown-rendered** task prose (a new `grammar/Markdown` primitive — react-markdown + remark-gfm, memoized), and **cross-master "→" navigation** that jumps between series lifecycles (a master links to a parallel/child series via the contract-paired projection). A **slice 07b polish** extends the engine-room G6 atmosphere to empty panels: a shared `panels/EmptyStateBackdrop` puts a faint, effects-gated boomerang-video backdrop behind the no-selection (detail) and no-session (chats) empty states — pure atmosphere (aria-hidden, absent under the Effects/Calm toggle / reduced-motion), the message always shown. Task 12 refines the topology constellation so backend-supplied repo coverage parents workspace provider satellites to repo nodes while worktree providers stay bound to their worktree groups; GrepAI `targetRepos` are addressable project targets inside one aggregate provider instance, not separate provider processes. **Task 33** scopes the topology to active work — an active-enclosure constellation (`workspace → source checkouts → active worktree enclosures`) that folds each lifecycle into its enclosure node and filters on a new served `activeWorktreeGroups` set (shared with the Engine Room's active admission). Task 29 S7 hides the former **Lifecycle Flow** tab from the cockpit while leaving `panels/FlowTab.tsx` dormant in source. | root `dashboard/`, `dashboard/src/` route overview, `@xterm/xterm`, `react-aria-components`, `@pandacss/dev` |
+| Event River lifecycle task labels | Event River readable history rows translate lifecycle-bound activity into task-facing context. When a retained event still has a lifecycle id but its live lifecycle projection is gone, the formatter uses projected task documents to show the task title before falling back to raw enclosure or lifecycle ids. The panel waits for raw-stream hydration before showing an empty feed and renders all retained rows it receives; backend lifecycle retention owns the cutoff. | `dashboard/src/panels/eventSummary.ts`, `dashboard/src/data/taskIdentity.ts`, `dashboard/src/panels/EventRiver.test.tsx` |
 | Runtime and skill installation | MCP-owned install of coordinator `AGENTS.md` templates, packaged skills, system defaults, provider defaults, optional benchmark fixtures, and harness skill layouts. | `runtime_install`, `skills_install`, `install/`, `package_data/runtime/` |
 | Harness starter packages | Harness-native first-run packages for Claude Code, Codex, Cursor, Antigravity, VS Code + Copilot, Hermes, Pi.dev, and OpenClaw. Each package carries MCP settings templates, skill folders, and either startup hooks or always-on instruction files that load the coordinator first-action directive. | `.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`, `docs/install/` |
 | MCP server and authority settings | Installable stdio MCP server with trusted settings outside the coordinator root, allowed repo/provider scopes, timeout caps, transcript roots, and path containment. | `agents-remember-mcp`, `mcp/config.py`, `mcp/server.py` |
@@ -62,7 +68,33 @@ onboarding pass.
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
 | Source quality tooling | Repository-owned quality wrapper for Ruff, Radon, pytest coverage, and CRAP-Calculator risk scoring. | `python -m agents_remember.code_quality.check`, `code_quality/` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
-| Canonical runtime asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are the canonical editable assets; `scripts/sync-runtime.py` copies them into MCP package data and `mcp/tests/test_sync_runtime.py` verifies the sync behavior. | `scripts/sync-runtime.py`, `mcp/tests/test_sync_runtime.py`, `.githooks/pre-commit` |
+| Canonical runtime, skills, and dashboard asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`; the built dashboard cockpit (`dashboard/dist/`) syncs into `package_data/dashboard/` by `scripts/sync-dashboard.py`. These sync checks are gated by githooks + CI and covered by `mcp/tests/test_sync_*`; the dashboard `--check` is source-aware — it fingerprints the build inputs into a sibling `dashboard.fingerprint`, so a `dashboard/src` change shipped without a rebuild is flagged at the commit gate, not only at push. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `scripts/sync-dashboard.py`, `mcp/tests/test_sync_runtime.py`, `mcp/tests/test_sync_dashboard.py`, `.githooks/` |
+
+Task 10 external-chat inbox current state spans three route families: the control-plane inbox
+(`OperatorInboxEntry` / `OperatorInboxStore` plus the `operator_inbox_*` MCP tools), the dashboard
+serving endpoint (`POST /api/operator-inbox`, trusted developer/dashboard attribution), and the
+dashboard Gate Respond fallback (`GateResponder` calls `data/operatorInbox.postOperatorInbox` when no
+hosted chat session is attached). Hosted chat injection remains preferred; the inbox is the pull-based
+return channel for external agents that cannot receive direct dashboard injection.
+
+Task 23/24 changes the lifecycle of those gate/inbox interactions: prompts, responses, pending pickup
+signals, and attention-queue gate rows are disposable interaction data. They disappear when the
+developer responds, dismisses a gate, clears the attention queue, the agent consumes the inbox entry,
+or passive TTL cleanup reaches the 24-hour interaction window. The only durable lifecycle records are
+the task/worktree documents, commits, contracts, and ledger rows.
+
+Task 31 updates the root dashboard/provider current-state story: live dashboard projection now refreshes
+provider current-state before serving snapshots, worktree provider stacks can be inspected from their
+isolated runtime settings, and Engine Room renders expected provider roles as observed, configured-only,
+failed/degraded, or missing instead of letting empty provider containers imply no expectation. The detail is
+route-local under `mcp/`, `mcp/src/agents_remember/observer/`, `mcp/src/agents_remember/serving/`, and
+`dashboard/src/panels/engine-room/`.
+
+Task 29 S7 updates the root Event River and attention-queue story: raw events are retained by the
+backend lifecycle policy and the frontend no longer hides rows with its own short cap, `/api/events`
+emits a ready marker after retained backlog replay, actionable-drift notices name the affected
+repository/memory pair, and only actionable drift can be dismissed without a lifecycle/worktree target.
+The former Lifecycle Flow tab is hidden from the cockpit; `FlowTab.tsx` remains dormant source.
 
 ## Hot Path Summary
 
@@ -126,7 +158,7 @@ workspace ar-coordination/
 
 ### Public Documentation
 
-The public README is now intentionally short: product positioning, a fast Core Features pitch, a core path-derived memory example, one generic quickstart, harness install links, docs links, and a compact source/runtime layout. Detailed user-facing material moved under `docs/`: `docs/features.md` is the concentrated product tour, `docs/README.md` is the documentation index, `getting-started.md`, `concepts.md`, `architecture.md`, `workflows.md`, and `FAQ.md` own core narrative, `docs/install/` owns harness-specific setup, `docs/guides/` owns operational tasks, and `docs/reference/` owns exact runtime/settings/skill behavior. The repo's current path rules still exclude `docs/**` from file-level onboarding, so README onboarding and this repo overview carry the durable summary of the public docs split.
+The public README is now intentionally short: product positioning, a fast Core Features pitch, a core path-derived memory example, one generic quickstart, harness install links, docs links, and a compact source/runtime layout. Detailed user-facing material moved under `docs/`: `docs/features.md` is the concentrated product tour, `docs/README.md` is the documentation index, `getting-started.md`, `concepts.md`, `architecture.md`, `workflows.md`, and `FAQ.md` own core narrative, `docs/install/` owns harness-specific setup, `docs/guides/` owns operational tasks, and `docs/reference/` owns exact runtime/settings/skill behavior. A separate `docs/design/` subtree holds developer-facing design specs for in-flight major work — distinct from the user-facing pages above and from the historical `roadmap/` notes. Its entries include `docs/design/observable-lifecycle.md` (the approved 3.0 design for an observable, controllable session lifecycle — the browser-dashboard direction, issues #2/#43), `docs/design/harness-matrix.md`, and the **engine-room** design language: `docs/design/engine-room/engine-room-visual-language.html` (the canonical living spec for the engine-room visual primitives — state colours, motion, glow, timing) and `docs/design/engine-room/podstage.html` (the prototype the production canvas was built from). As of slice 05k, `docs/design/` is **in onboarding scope** — a `docs/design`-scoped `pathRules` rule (listed first; first-match-wins) onboards its `.html` + `.md`, registered in `system/sources.md` as Domain Documentation, while the rest of `docs/**` stays excluded — so the design specs are now first-class onboarded memory under `onboarding/docs/design/` rather than summarized only here. (The general `docs/` user-facing pages remain onboarding-excluded; README onboarding + this overview carry their durable summary.)
 
 ### Harness Starter Packages
 
@@ -148,7 +180,7 @@ The hidden root packages `.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github
 
 The runtime has optional local discovery providers, but they remain accelerators rather than proof. The MCP settings file, not coordinator `system/settings.json`, declares allowed providers and repositories for the MCP path. `context_packet` reports provider and watcher state, `runtime_install` installs runtime assets and provider dependencies from package-local code, and `skills_install` copy-installs packaged skills into harness skill roots. Managed provider installs should be coordination-owned without host executable fallbacks: pinned requirements under `providers/requirements/`, provider instances under `providers/runners/`, durable databases under `providers/data/`, operator logs under `logs/providers/`, MCP transcripts under `logs/mcp/`, and patches under `providers/patches/`. `providers/_bin/` and `providers/_venvs/` are stale-artifact cleanup targets, not runtime authority. Database, native-binary, and daemon infrastructure should be Docker-wrapped rather than installed as host services.
 
-GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generated from MCP repository/memory settings. Current managed mode indexes live memory roots in place and git-ignores GrepAI's per-root `.grepai/` working directory instead of mirroring roots under a separate index-root tree. Its runtime config, state, cache, and home artifacts belong under `providers/runners/grepai/`; its shared PostgreSQL/pgvector Docker data belongs under `providers/data/grepai/postgres/`; and `.grepai/` content should not be treated as durable memory. Worktree isolation clones the source GrepAI database into a worktree-scoped PostgreSQL backend and rewrites provider settings so containers, logs, and runtime paths are isolated while the logical workspace key remains reusable. CodeGraphContext keeps one provider instance per configured repo under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, with all instances sharing the FalkorDB Docker data root under `providers/data/codegraphcontext/falkordb/`; worktree setup seeds CGC by exporting, path-rewriting, and importing an existing graph bundle. Seed/clone operations are guarded by stall watchdogs (kill on zero progress), never total-duration caps — the copy-instead-of-reindex mechanic is what makes rapid worktree provider deployment viable and it scales with index size by design; the CGC seed refuses when workspace and worktree HEADs differ and falls back to a full reindex. On stdio transport, package subprocesses must never inherit the server's protocol pipes (`stdin=DEVNULL` or piped input, AST-guarded; the 2.5.1 fix for the multi-minute tool hangs).
+GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generated from MCP repository/memory settings. Current managed mode indexes live memory roots in place and git-ignores GrepAI's per-root `.grepai/` working directory instead of mirroring roots under a separate index-root tree. Its runtime config, state, cache, and home artifacts belong under `providers/runners/grepai/`; its shared PostgreSQL/pgvector Docker data belongs under `providers/data/grepai/postgres/`; and `.grepai/` content should not be treated as durable memory. Managed GrepAI prefers non-conflicting auto host ports (`61432` for Postgres, `61434` for Ollama) while keeping the Docker container service ports (`5432` and `11434`) inside the provider network. Worktree isolation clones the source GrepAI database into a worktree-scoped PostgreSQL backend and rewrites provider settings so containers, logs, and runtime paths are isolated while the logical workspace key remains reusable. CodeGraphContext keeps one provider instance per configured repo under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, with all instances sharing the FalkorDB Docker data root under `providers/data/codegraphcontext/falkordb/`; worktree setup seeds CGC by exporting, path-rewriting, and importing an existing graph bundle. Seed/clone operations are guarded by stall watchdogs (kill on zero progress), never total-duration caps — the copy-instead-of-reindex mechanic is what makes rapid worktree provider deployment viable and it scales with index size by design; the CGC seed refuses when workspace and worktree HEADs differ and falls back to a full reindex. On stdio transport, package subprocesses must never inherit the server's protocol pipes (`stdin=DEVNULL` or piped input, AST-guarded; the 2.5.1 fix for the multi-minute tool hangs).
 
 ### Code Quality And Refactor Baseline
 
@@ -168,7 +200,138 @@ The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit 
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, `c-08-ar-coordination-context-resolver` skill contract-aware facts, the `c-09-git-worktree-manager` skill `start`, `attach`, `status`, `closeout`, `integrate`, and `cleanup` command surface, and the `c-10-adopt-memory-baseline` skill `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. `c-00-initialize-memory-repo` skill initializes missing memory roots before `c-09-git-worktree-manager` skill worktree use. `c-09-git-worktree-manager` skill external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. `c-09-git-worktree-manager` skill closeout dry-run is the non-mutating preview path before explicit commit approval, and real external-memory closeout commits code first, uses `c-02-memory-quality-control` skill memory quality control to produce the maintenance worklist, refreshes affected onboarding verification metadata and entity fingerprints, runs `memory_quality_check`, then commits memory content and ledger when clean. Closeout is worktree-only: the former direct-closeout current-checkout path was removed (issue #62), so every closeout runs against a task contract.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, `c-08-ar-coordination-context-resolver` skill contract-aware facts, the `c-09-git-worktree-manager` skill `start`, `attach`, `status`, `closeout`, `integrate`, `lifecycle_finalize_task`, and `cleanup` command surface, and the `c-10-adopt-memory-baseline` skill `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. `c-00-initialize-memory-repo` skill initializes missing memory roots before `c-09-git-worktree-manager` skill worktree use. `c-09-git-worktree-manager` skill external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. `c-09-git-worktree-manager` skill closeout dry-run is the non-mutating preview path before explicit commit approval, and real external-memory closeout commits code first, uses `c-02-memory-quality-control` skill memory quality control to produce the maintenance worklist, refreshes affected onboarding verification metadata and entity fingerprints, runs `memory_quality_check`, then commits memory content and ledger when clean. `lifecycle_finalize_task` is the terminal lifecycle operation after the branch edge has landed: it proves the landed commit is reachable from the local parent/source branch, verifies memory carryover, runs or verifies cleanup, and reconciles the JSON-primary leaf task plus immediate parent row to `Completed`; it does not attempt squash equivalence or recursively complete ancestors. Closeout is worktree-only: the former direct-closeout current-checkout path was removed (issue #62), so every closeout runs against a task contract.
+
+### Observable Session Lifecycle
+
+The `agents_remember.observer` package is the 3.0 browser-dashboard direction: it
+makes a working session a first-class, observable entity. The **write side** is an
+append-only, replayable `ar-observer-event/v1` event log with trust provenance
+(declared vs observed vs inferred), an ambient process-singleton lifecycle (the six
+`lifecycle_*` signal tools, a heartbeat ticker, and a TTL project-and-prune sweep),
+and a `_tool_payload` emission hook that attributes every tool call. The **read
+side** is a pure projection reducer — the single owner of interpretation — that
+folds the event logs plus file snapshots into resolved state for any client
+(dashboard, future TUI, or agent): the lifecycle/enclosure/provider tree, metrics,
+staleness, the per-lifecycle token fuel gauge, the analytical surfaces (drift read
+from a persisted snapshot, sidecar staleness, provider setup, route coverage, tool
+reports, ledger currency), and precomputed action availability, written atomically.
+The lifecycle-signal and gate substrates are now **adopted by the lifecycle
+skills**, so the agent's behavior — not just the dashboard's reads — makes the
+session observable: the `l-01-session-job-lifecycle` skill carries a **Gate
+Choreography** (every approval junction calls public `lifecycle_gate`, which
+blocks the ambient lifecycle, creates the durable kind-typed gate, and initializes
+wait state; the **developer** resolves or sends a message — never the agent's own
+model-attributed `gate_decide` — and the agent always *clears* with
+`lifecycle_resume`), with the junctions split by kind across
+the skills: `plan-approval`/`push-approval` (l-01), `worktree-intent` +
+`integration-approval`/`cleanup-approval` (the `c-09-git-worktree-manager` skill),
+and `closeout-approval` — which **is** the single commit gate — (the
+`c-12-closeout` skill, now extended to the full raise→wait→clear pattern). This
+completes the observable-lifecycle gate story end-to-end. Detailed per-file routing
+lives in the `observer/` route overview; the full design (lifecycle entity, event
+schema, enforced gates, the cockpit) is `docs/design/observable-lifecycle.md`. The
+serving layer and the cockpit UI are later slices of the same series. **Task 27** adds
+the **lifecycle next-step hint engine** ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)):
+every MCP tool response now carries a `nextStep` computed from the projected lifecycle
+state at the `_tool_payload` choke point — a one-time front-half prose rundown from
+`lifecycle_start`, then a linear per-tool chain that delegates to the worktree
+`guidance.lifecycle_guidance` state machine and points at the existing `lifecycle_gate`
+at gate junctions; it is built on the existing gate, with auto-firing left to a later step.
+**Task 28** then makes **NOTIFY-AND-CONTINUE** the active turn-end model: a new public
+`lifecycle_turn_end_notification` tool drives a non-terminal `awaiting-developer` lifecycle
+state (the agent notifies the developer and stops — no gate, no wait — and the next AR tool
+call auto-resumes at the `_tool_payload` choke point via `resume_from_await`), the next-step
+ACTIVE hints repoint off `lifecycle_gate` onto it, and a one-line reducer dedup
+(`_lifecycle_attention`'s `... and lifecycle.gate is None`) collapses the duplicate
+gate-open/blocked-gate attention item; the `lifecycle_gate`/inbox stack stays valid but
+parked (un-hinted). Detail lives in the `observer/`, `mcp/tools/`, and `models/` route overviews.
+Task 28 is also a **doctrine reframe** across the root skill trees (`skills/` and its mirrors
+`.claude/skills/`, `.agents/skills/`, `.hermes/…`, `.codex/…`, `.cursor/…`, … = the `.` route): the
+active-developer hand-off in `l-01-session-job-lifecycle`, `c-09-git-worktree-manager`, and
+`c-12-closeout` now teaches **notify-and-continue** at every junction (reframe / plan / worktree-intent /
+commit-closeout / push / integration / cleanup / turn-end) — dry-run → chat report →
+`lifecycle_turn_end_notification(summary=…)` + STOP, with the next turn's first AR tool call auto-resuming —
+and parks block-and-wait `lifecycle_gate` (+ `lifecycle_resume`) and the operator inbox as the fallback. The
+packaged bundle copies under `mcp/src/agents_remember/package_data/runtime/skills/` are propagated from the
+canonical `skills/` by `scripts/sync-skills.py`.
+
+### JSON-Primary Task Documents
+
+The `agents_remember.tasks` package makes the task document machine-readable: the
+persisted `ar-task-document/v1` JSON (status, info, requirements, step/substep
+progress, decisions) is the source of truth, and `task.md` is a deterministic render
+of it (the `w-02-light-task-workflow` `template.md` is the render spec). The `task_doc`
+MCP tool authors documents — create, full-document replace for task resets/replans,
+set status, set a step/substep, append a decision — and re-renders the markdown on
+every write; the markdown is never parsed back. This
+closes note-03 gap #8 (no machine-readable task registry) and is the per-lifecycle
+work-content layer the observer projects (keyed by the contract's `lifecycle_id`) so
+the dashboard can show step/substep progress. Scope covers `light`, `subTask`, **and**
+`master` documents — a master carries a structured `subTasks` series index + an ordered
+`sections` passthrough that preserves its bespoke prose, so a series wrapper is
+machine-readable too; live adoption follows the runtime shipping `task_doc`. **R1 (masters
+observable):** the observer now also projects `master` docs **folder-keyed**
+(`read_series_documents` → `Analytics.series`), aggregating the declared `subTasks` checkboxes into
+whole-series progress — so clicking a series master on the dashboard shows its overall progress, not
+just per-lifecycle leaves. Task 17 extends that surface with master `objective` and structured leaf
+`createdAt` metadata; dashboard readers can therefore show authored master content and default leaf
+lists to creation order without interpreting filename or task-slug prefixes. It relates
+to — but does not build — the parked neutral-repo task/contract sharing substrate
+(issue #79). Detail lives in the `tasks/` route overview. (Slice 3c: commit 1 = engine +
+tool; commit 2 = the `w-02-light-task-workflow` JSON-primary adoption and the observer
+reader; commit 3 = master JSON support; reopened R1 = the folder-keyed series projection; reopened R2 = the heading-vs-outcome renderer fix (distinct `Step.outcome`); reopened R3 = the deferred-examples honesty field (`codeExamplesNote`); reopened R4 = leaf-doc fidelity (`statusNote`/`headerNotes`/freeform leaf sections) — all landed.)
+
+### Dashboard Serving Layer
+
+The `agents_remember.serving` package is the 3.0 dashboard's transport spine (slice 04): a
+FastAPI app, launched by `agents-remember dashboard` (the new umbrella `agents-remember` CLI),
+that serves the observer projection live. One shared projector ticks `project_and_write`,
+diffs each projection against the last, and fans **per-entity deltas** out to every client
+over a single multiplexed SSE stream (`GET /api/stream`: an `event:snapshot` then named
+`lifecycle`/`enclosure`/`provider`/`metrics`/`analytics` upserts and `*.removed` markers);
+`GET /api/state` returns the projection once. It is transport only — no interpretation, which
+the reducer owns — and reads coordination state exclusively through `McpRuntimeConfig` +
+`observer.paths` (North-Star #5), never raw host paths. Local-first: bound to `127.0.0.1`,
+no auth in v1. The **frontend** is a root-level sub-project (`dashboard/`) whose built bundle
+ships as `package_data/dashboard/` via `scripts/sync-dashboard.py` (mirroring
+`sync-runtime.py`); slice 04 shipped a placeholder, and slice 05 (5a) now ships the real Vite/React cockpit, synced by `scripts/sync-dashboard.py` and gated by `sync-dashboard --check` in both githooks + CI. Slice 4b added
+the raw `event` SSE channel (`GET /api/events`, byte-offset `Last-Event-ID` resume), sim-mode
+replay (a replay clock + fixture feeder over the projector's `now`/`before_tick` seams, so the
+frontend cannot tell sim from live), and the `POST /api/actions/{action}` plane
+(validated against the reducer's `ActionAvailability`; slice 6b records gate-decision verbs as
+developer-attributed gate decisions via `gate_decide_for_lifecycle`, lifecycle transitions stay no-mutation). Slice 05 (5b)
+builds the read-only **cockpit** on this stream — the four core panels (attention queue, live
+session strip, the two-axis BY REPO | BY LIFECYCLE operation tree, and the detail panel with the
+Request→Close phase stepper + display-only gate banner) on the podracer state-grammar, fed the
+server-computed `Analytics.attentionQueue`. **Slice 05 (5c)** then rebuilt the cockpit to represent
+the real model (notes 01/03/06): the **lifecycle is the unit** — paused persistent lifecycles
+synthesized from worktree contracts show even when idle — in one de-duped BY REPO | BY PHASE list; a
+**task reader** rendering the full task document; a **per-worktree engine room** (each worktree's
+CGC↔code / GrepAI↔memory stack); the lifecycle → worktree → provider spine; and the topology
+constellation. This drove a projection correction (per-worktree provider stacks, full task content on
+`TaskDocNode`, persistent-lifecycle synthesis) detailed on the `observer/` route, plus a `serving/`
+sim/events fix. **Slice 05 (5d)** then re-architected the React/TS frontend and brought `dashboard/src/**` **into
+memory scope** (now onboarded, governed by the `dashboard/src/` route overview): the ~1,200-line
+global `tokens.css` monolith was retired into the layered blueprint — **Panda CSS** (typed tokens +
+build-time/zero-runtime recipes) for styling and **React Aria** (`react-aria-components`) for headless
+behavior/a11y (the mode bar + pivot `ToggleButtonGroup`s, the lifecycle `ListBox`), with the CRT
+effects isolated in `index.css`. A dev `/dev/bench` gallery + `/dev/reference` mc2 mount + the
+`build_rich_sim.py` 35-lifecycle stress fixture drive the screenshot-annotate review loop.
+**Slice 6d** begins **Mode B2** — the dashboard-hosted terminal: 6d-1 lands the `serving.terminal`
+host (a `TerminalHost` registry of tmux-wrapped stdlib-`pty` sessions that launch the real harness
+render-not-scrape — raw VT bytes for xterm.js, fixed-argv with no shell-injection surface, OS-user
+creds, localhost; the PTY/tmux spawn seam is injectable so CI drives a real kernel PTY without tmux),
+6d-2 bridges it to the browser over the `/api/terminal/{session}` WebSocket — binary PTY bytes
+out, JSON `stdin`/`resize` in, `{type:exit}` on child exit (the `websockets` dep is uvicorn's WS
+impl); the xterm.js Chats tab (6e) follows. Task 22 makes those dashboard terminal sessions durable:
+the serving layer persists a terminal catalog, rehydrates cataloged tmux sessions after browser
+refresh/server restart, lets multiple browser tabs attach independent tmux clients to the same chat,
+and keeps explicit `End`/terminate hidden across later exit bookkeeping. **Task 26** adds a
+**hot-reload dev env** — a `--reload` flag on the `agents-remember dashboard` CLI. Task 29 S7 hides the
+former **Lifecycle Flow** tab from the cockpit while leaving
+[FlowTab.tsx](agents-remember/dashboard/src/panels/FlowTab.tsx) dormant in source. Detail
+lives in the `serving/` + `observer/` + `dashboard/src/` route overviews.
 
 ## Cross-Repo References
 
@@ -191,10 +354,243 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
-- 2026-06-23T05:31 — No route impact: added the new top-level `dev-skills/` slice — dev-only, non-distributed tooling (the `dashboard-experience-review` cockpit reviewer skill) — and brought it into the onboarding include scope. It ships to nobody (never synced/packaged by `scripts/sync-skills.py`) and is documented by its own route overview (`dev-skills/overview.md`), so the product feature inventory, surfaces, and routing this overview describes are unchanged (issue #92).
-- 2026-06-22T22:00+02:00 — No route impact: the only root-level change is the README Status version string bumped to 2.9.3 for the #90 worktree_name contract-resolution patch release; the repository structure, routes, and feature inventory this overview describes are unchanged.
-- 2026-06-19T13:42 — No route impact: the root-governed changes are benchmark fixture doc/prompt wording under `benchmarks/`; the benchmark provider-isolation fix (hermetic-cold + seed guard) is documented on the `benchmarks/runner_modules` and provider route overviews, and the repo structure / feature inventory this overview describes is unchanged (task 260619).
-- 2026-06-19T01:50+02:00 — No route impact: the only root-level change since the last verification (PR #85 / `b9d7314`) is the README `<h3>` headline tagline ("Git-verified records for what your coding agents know. A control plane for what they do."); the repository structure, routes, feature inventory, and routing this overview describes are unchanged. The README headline content is carried by the `README.md.md` sidecar. Re-verified against merged `main` `cbea101`.
+- 2026-06-28T16:17+02:00 — Task 35 route impact: the dashboard asset sync gate (`scripts/sync-dashboard.py
+  --check`, run by `.githooks/`) became source-aware — it fingerprints the dashboard build inputs into a
+  sibling `dashboard.fingerprint` and flags a `dashboard/src` change shipped without a rebuild, the way the
+  skill gate flags a changed skill; the frontend `LifecycleList` reopen-task nesting fix is covered by the
+  `dashboard/src` route overview. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-28T13:54+02:00 — No route impact: task 34 changed activity-decaying heartbeat emission,
+  inactivity-keyed raw Event River retention, the `/api/events` single-scan / heartbeat-filtered /
+  chunked-backlog channel, and the dashboard event-store sliding window + Event River virtualization
+  within child files (covered by their file-level sidecars and the `observer/`, `serving/`,
+  `dashboard/src/`, and `dashboard/src/panels/` route overviews); this route's purpose/structure is
+  unchanged.
+- 2026-06-28T07:45+02:00 — Task 33 route impact (light): the dashboard-frontend feature row notes the
+  active-enclosure topology scoping that landed in leaf 33 (an `activeWorktreeGroups` projection field,
+  shared with the Engine Room's active admission, with the lifecycle/task rim folded into the enclosure
+  node). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-28T07:43+02:00 — Task 29 S7 root route impact: surfaced the current Event River boundary
+  (backend lifecycle retention, raw-stream `ready`, no frontend count cap), actionable-drift
+  provenance/targetless dismissal, optimistic attention suppression, and the hidden Lifecycle Flow tab.
+  Route detail lives under `mcp/`, `observer/`, `serving/`, `controlplane/`, `memory_quality/`,
+  `dashboard/src/`, and `dashboard/src/panels/`. Verification metadata pinned until closeout stamps the
+  task-29 code commit.
+- 2026-06-28T03:33+02:00 — No route impact: task 32 is scoped to mcp-internal drift snapshot
+  retention for the observer/worktree cleanup surface; the top-level feature inventory already routes
+  this behavior through the MCP/observer/worktree entries, and no repository-level surface changes here.
+  Verification metadata pinned until closeout stamps the task-32 code commit.
+- 2026-06-28T03:21+02:00 — Task 31 route impact: refreshed the root overview body for dashboard/provider
+  current-state honesty: live projection refreshes provider state, isolated worktree provider containers are
+  inspected, and Engine Room keeps expected-but-missing provider roles visible. Route detail lives in the
+  MCP, observer, serving, and dashboard panel overviews. Verification metadata pinned until closeout stamps
+  the task-31 code commit.
+- 2026-06-27T22:00+02:00 — Task 28 SKILL / doctrine reframe (`.` root route): the active-developer
+  hand-off taught by the root skill trees (`skills/` plus the mirrors `.claude/skills/`, `.agents/skills/`,
+  `.hermes/…`, `.codex/…`, `.cursor/…`, `.github-vscode/…`, `.openclaw/…`) moved from block-and-wait
+  `lifecycle_gate` to **notify-and-continue** `lifecycle_turn_end_notification` across
+  `l-01-session-job-lifecycle`, `c-09-git-worktree-manager`, and `c-12-closeout` — every junction (reframe /
+  plan / worktree-intent / commit-closeout / push / integration / cleanup / turn-end) now runs dry-run →
+  report → notify-and-stop, with the next turn's first AR tool call auto-resuming and auto-dismissing the
+  attention item (no `lifecycle_resume`); `next_step.py` repoints onto the notification and the
+  `lifecycle_gate`/operator-inbox stack is parked as the fallback. The packaged bundle copies under
+  `mcp/src/agents_remember/package_data/runtime/skills/` are sync-propagated from canonical `skills/` via
+  `scripts/sync-skills.py`. Acknowledged in the root overview body; junction-level detail lives in the
+  l-01/c-09/c-12 skill sidecars. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-27T20:16+02:00 — No route impact: the task-27 follow-up adds a gate-await branch to the
+  lifecycle next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)) —
+  a `blocked` lifecycle now hints `lifecycle_resume`, carrying the chain through the open gate. The
+  feature is already in this root inventory and the repo route model is unchanged (detail in the file
+  sidecar). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-27T18:43+02:00 — Tasks 26+27 root route impact: surfaced two new features in the feature
+  inventory. **Task 27** adds the **lifecycle next-step hint engine**
+  ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)) — every MCP tool
+  response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload`
+  choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain
+  that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing
+  `lifecycle_gate` at gate junctions; built on the existing gate, auto-firing a later step); refreshed
+  the Observable session lifecycle row + Observable Session Lifecycle functional area. **Task 26** adds
+  the dev-facing **Lifecycle Flow** tab ([FlowTab.tsx](agents-remember/dashboard/src/panels/FlowTab.tsx))
+  visualizing the build-job lifecycle and a **hot-reload dev env** (`--reload` on the dashboard CLI);
+  refreshed the Dashboard frontend + Dashboard serving Feature Inventory rows and the Dashboard Serving
+  Layer functional area. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-27T15:24+02:00 — Task 22 root route impact: the Dashboard Serving Layer paragraph now records
+  durable terminal catalog persistence, refresh/server restart rehydration, multi-tab terminal attach,
+  and sticky explicit termination as repo-level dashboard serving behavior. Detailed behavior lives in
+  the serving route overview, dashboard source route, and file sidecars. Verification metadata pinned
+  until closeout stamps the follow-up code commit.
+- 2026-06-26T19:40+02:00 — Task 20 reopened root route impact: added the Event
+  River lifecycle task label feature-inventory row so retained event-history
+  rows whose live lifecycle projection is gone are still documented as
+  task-title-first. Detailed behavior lives in the dashboard source route,
+  panel route, and file sidecars. Verification metadata pinned until closeout
+  stamps the reopened task-20 code commit.
+- 2026-06-26T18:43+02:00 — Regression fix: root gate-control-plane row now
+  states that `lifecycle_gate` blocks until a developer decision or gate-specific
+  inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
+- 2026-06-26T18:23+02:00 — No route impact: task 20 is scoped to the Event River
+  frontend under `dashboard/src/panels/` plus the generated `package_data/dashboard/` bundle sync.
+  The root feature inventory and functional-area model stay unchanged; detailed behavior lives in the
+  dashboard panels overview and file sidecars. Verification metadata pinned until closeout stamps the
+  code commit.
+- 2026-06-26T17:12+02:00 — Regression fix: root gate-control-plane row now
+  states that `lifecycle_gate` performs the bounded gate/inbox wait itself
+  after creating the gate and blocking the lifecycle.
+- 2026-06-26T16:15+02:00 — Task 25 closeout verification: refreshed the root
+  gate-control-plane wording to the unified public `lifecycle_gate` junction (including
+  `required_decision`) and verified the task-document replacement summary against the
+  source branch's `task_doc replace` operation at `2017434`.
+- 2026-06-26T15:33+02:00 — No route impact: task 25 preserves the source branch's
+  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
+  observer, control-plane, model, and MCP-tool sidecars, so the root task-document inventory remains
+  the replacement-repair wording.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-25T13:20+02:00 — Task 23/24: root overview now records gate/inbox interactions as disposable data with response, dismiss, clear, consume, and TTL cleanup paths.
+- 2026-06-25T09:55+02:00 — Root provider runtime summary now records GrepAI's non-conflicting preferred auto host ports (`61432`/`61434`) and preserves the distinction from container service ports (`5432`/`11434`).
+- 2026-06-25T07:26+02:00 — Task 19 gate interaction polish: root inventory now records
+  `gate_response_wait`, single-current gate expiration, targeted dashboard decisions with rejection
+  notes, message-only Chat responses, and human-readable dashboard gate previews. Verification metadata
+  pinned until closeout stamps the code commit.
+- 2026-06-24T18:13+02:00 - No route impact: the empty-state backdrop zoom-stability pass is scoped to
+  the existing dashboard panels route and tracked SC2 media assets. The repository-level dashboard
+  feature inventory already describes these as shared, effects-gated boomerang-video empty-state
+  backdrops; the panels route overview and file sidecars own the current static direct-video and
+  media-owned zoom contract.
+- 2026-06-24T12:31+02:00 — Task 17 root inventory refresh: the JSON-primary task-documents row and
+  functional area now record that leaf task docs and folder-keyed series masters expose structured
+  creation metadata for reader ordering, and that the series master projection carries authored master
+  content for the dashboard reader.
+- 2026-06-24T09:53+02:00 - No route impact: slice 16 is scoped to the dashboard Engine Room/detail
+  reader implementation and its file/route sidecars; the repository-level feature inventory and
+  invariants remain accurate.
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: root inventory refreshed for the workflow change from task-root `contract.md` files to one `ar-series-contract/v1` schema: root series contracts represent integration branches, leaf enclosure contracts represent worktrees, and observer/dashboard projections carry leaf identity separately from task roots. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-23T23:04+02:00 — Dashboard task 14 adds `lifecycle_finalize_task` as the terminal worktree lifecycle operation. Refreshed the Worktree lifecycle Feature Inventory row and Worktree Support narrative: closeout remains commit-only, finalization proves one local parent-child branch edge after landing/carryover, runs or verifies cleanup, updates the leaf task plus immediate parent row, and deliberately does not model squash-merge equivalence.
+- 2026-06-23T22:31+02:00 — Task 12 S2 clarification: the Dashboard frontend Feature Inventory row now
+  distinguishes GrepAI process aggregation from target addressability, so repo-scoped provider dots can
+  represent `targetRepos` without implying separate provider processes.
+- 2026-06-23T22:09+02:00 — Task 12 S2 correction: the Dashboard frontend Feature Inventory row still
+  describes provider parenting generically, but the backend source of repo coverage is now explicit:
+  CGC watcher rows and GrepAI configured `targetRepos` parent workspace provider satellites to repo
+  nodes, while worktree providers remain worktree-group scoped.
+- 2026-06-23T21:58+02:00 — Task 12 S2 refreshed the Dashboard frontend Feature Inventory row for the
+  topology constellation's provider-parenting correction: repo-covered workspace provider nodes now
+  parent to repo nodes, while worktree providers remain worktree-group scoped. Detail lives in the
+  `mcp/` observer route and the root `dashboard/src/topology/` route.
+- 2026-06-23T15:05+02:00 — Task 10 external-chat inbox: added a root feature note tying the control-plane inbox, the dashboard serving `POST /api/operator-inbox` endpoint, and the `GateResponder` no-hosted-session fallback together as the current pull-based return channel for external agents. Verification metadata pinned until closeout stamps the task-10 code commit.
+- 2026-06-23T07:39+02:00 — slice 09 closes the **observable-lifecycle gate story** by adopting the
+  lifecycle-signal + gate substrate into the lifecycle skills: touched the **Observable Session
+  Lifecycle** functional area and the **Gate control plane** Feature Inventory row to record the
+  `l-01-session-job-lifecycle` skill's new **Gate Choreography** (every approval junction raises an
+  ambient `lifecycle_block` + a durable kind-typed `gate_create`, `gate_wait`s, the **developer**
+  resolves — never the agent's model-attributed `gate_decide` — and the agent always clears with
+  `lifecycle_resume`), with junctions split by kind across the skills (`plan-approval`/`push-approval`
+  in l-01; `worktree-intent`/`integration-approval`/`cleanup-approval` in the `c-09-git-worktree-manager`
+  skill; `closeout-approval` = the single commit gate in the `c-12-closeout` skill; `agent-question`
+  catch-all). The agent's behavior — not just the dashboard's reads — now makes the session observable.
+  The same slice refreshed the empty-state backdrop atmosphere: the shared `EmptyStateBackdrop` video
+  became a `motion.video` with a slow 12s scale-yoyo zoom (`1`→`1.03`, no CSS per the animation
+  doctrine, shared by both backdrops, effects-gated), and the battle-cruiser clip was re-sourced into the
+  same `sc2-battlecruiser-boomerang.mp4` path. Per the root-overview-surfaces-emerging-features lesson
+  these are surfaced here as they land; per-file detail lives in the skill mirror sidecars + the
+  `dashboard/src/panels/` route overview + sidecars. Verification metadata pinned until closeout stamps
+  the code commit.
+- 2026-06-23T04:35+02:00 — slice 07b targeted polish extends the engine-room **G6 video-backdrop
+  atmosphere** to the cockpit's empty-state canvases: a new shared `EmptyStateBackdrop` panel
+  (`dashboard/src/panels/`) renders a faint, effects-gated, forward+reverse **boomerang** clip behind
+  centered empty-state text — the operations DetailPanel no-selection state shows the battle cruiser and
+  the chats no-session state shows the adjutant. New atmosphere assets land under `dashboard/public/assets/`
+  (`sc2-battlecruiser-boomerang.mp4`, `sc2-adjutant-boomerang.mp4`, plus a spare
+  `sc2-siegetank-blueprint-video.mp4`); the backdrop honors `useShouldAnimate` (absent under calm-cockpit /
+  reduced-motion) and is `aria-hidden`. Per the root-overview-surfaces-emerging-features lesson this growing
+  cockpit atmosphere is surfaced here as it lands; per-file detail lives in the `dashboard/src/panels/` route
+  overview + sidecars. Verification metadata pinned until closeout stamps the 07b code commit.
+- 2026-06-23T00:53+02:00 — No route impact: slice 07 S4+S5 is doctrine/docstring text only — the `read_ar_files`
+  tool docstring now states its research-phase-read role (read managed-repo source through it until the
+  build/job decision; native read = the edit precondition once building begins), the `read_files.py` +
+  `served_store.py` docstrings retarget the compact-reset producer to the post-3.0 agentic-control-plane (no
+  session-hook producer; consumer + `refresh` kept as defensive scaffolding), and the synced runtime mirrors
+  under `mcp/.../package_data/runtime/` carry that research-phase-read doctrine. No MCP tool surface, schema, or
+  subsystem changed, so the repo's feature inventory / functional areas this overview describes are unchanged —
+  detail lives in the `mcp/` package overview + the `controllers/` / `observer/` route overviews + file
+  sidecars. Verification metadata pinned until closeout stamps the slice-07 code commit.
+- 2026-06-22T11:00 — slice 05o completes the engine-room **failure-mode library**: enriched the
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the canvas now driving
+  **all eight** `podstage.html` failure modes (memory/ledger block, stale base, provider-plan block, seed
+  fault, reindex reroute, live sync, integration conflict, abandon) on a shared set of node-anchored failure
+  primitives — steady gate, scan ring, ghosted lane, pruned node, refused-conduit flash, moved badge,
+  engine-dropout, terminal STOP, and dissolve — each entering/exiting with a Motion fade/pop transition. Per
+  the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-route-impact. The change is scoped to `dashboard/src/panels/engine-room/` +
+  `dashboard/src/dev/` (their route overviews + sidecars carry the per-file detail); the repo's other
+  functional areas are unchanged. Verification metadata pinned until closeout stamps the 05o code commit.
+- 2026-06-22T10:45 — slice 05o Mode 2 (engine-room failure modes, mode 2 = T1B stale-base block): enriched the
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the next failure-mode beat —
+  the **pruned-base-node** primitive (a stale local base, behind upstream, reads DORMANT/pruned over its
+  fact-state box) plus the big red **fleeting-enclosure** box (a born-blocked / pre-contract worktree footprint
+  replacing the dashed-amber border, BLOCKED title + reason + recovery chips), and a failure-indicator polish
+  pass that anchors the verify/block pointers **ON the repository node** as the topmost layer (the gate +
+  reason badge straddle the checked node's top edge, "pointing at" the blocked repo) and gives every alert
+  overlay (gate, reason, attention, chips, STOP, the block pointer) a Motion fade/pop enter/exit transition.
+  Per the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-impact. The change is internal to `dashboard/src/panels/engine-room/` +
+  `dashboard/src/dev/` + the `docs/design/engine-room/` living spec (their overviews + sidecars carry the
+  detail); the repo's other functional areas are unchanged. Verification metadata pinned until closeout stamps
+  the 05o code commit.
+- 2026-06-22T00:29 — slice 05o (engine-room failure modes, mode 1 = T3B memory/ledger block): enriched the
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the new **failure-mode**
+  choreography — the **scan-ring** + **ghosted-lane** primitives and the `memory-block` player scenario (verify
+  → block → reconcile → **provider clone** → nominal, mirroring `podstage.html` T3B), plus the coupled
+  engine-gauge polish (flat gold bezel, constant-gold petals). Per the root-overview-surfaces-emerging-features
+  lesson this growing cockpit subsystem is surfaced here as it lands, not marked no-impact. The change is
+  internal to `dashboard/src/panels/engine-room/` + `dashboard/src/dev/` + the `docs/design/engine-room/` living
+  spec (their overviews + sidecars carry the detail); the repo's other functional areas are unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-21T23:35 — slice 05k (docs/design onboarding inclusion + engine-room tear-down/refinements): **`docs/design/` is now in onboarding scope.** `system/settings.json` `pathRules` became a two-rule list — a `docs/design`-scoped rule (first; first-match-wins) onboards `.html` + `.md` there, the root rule unchanged (so a stray non-design `.html` like `dashboard/src/dev/reference/mc2.html` still falls through and is *not* onboarded) — and `system/sources.md` registers `docs/design/` as Domain Documentation. The engine-room design language (`engine-room-visual-language.html` living spec + `podstage.html` prototype) + `observable-lifecycle.md`/`harness-matrix.md` are now first-class memory under `onboarding/docs/design/` (2 new file sidecars + the `docs/design/` + `docs/design/engine-room/` route overviews). Updated the Public Documentation functional area + the Build & Dev `sources.md` note accordingly. The accompanying engine-room dashboard work (5k tear-down dispose sequence + power-down diagnostics + active/settled flow language, and the design-review refinements: the second-loop engine-fill fix, the three-column re-spacing, the closeout-train breadcrumb, the memory integration arrow) is internal to `dashboard/src/panels/engine-room/` (its overview + sidecars) and already surfaced in the Dashboard frontend Feature Inventory row. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-21T02:26 — slice 05k (dashboard engine-room motion): the engine-room canvas motion completed its 05f §8 property-split — moved off interim CSS onto a new `useEngineTimeline` GSAP hook (draw-ons + the repeating fx) + Motion (`AnimatePresence` enter/exit), CSS static; the "Dashboard frontend (mission-control cockpit)" Feature Inventory row now surfaces this (plus the 5h landing arc + the 5i scenario player), per the root-overview-surfaces-emerging-features lesson. The change is internal to `dashboard/src/panels/engine-room/` + `dashboard/src/index.css` (their overviews + sidecars); the repo's other functional areas are unchanged. A known D5 (`cleanup-pending`) landing-tier retraction follow-up is tracked in the engine-room overview. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-21T02:44+02:00 — Slice 6g: the **Dashboard frontend** Feature Inventory row now records **task-document navigation** — the detail panel renders a series master (overview + clickable sub-task index) with in-panel drill-in into each slice (back/parent up-link in the sticky panel header), markdown-rendered task prose (new `grammar/Markdown` primitive), and cross-master "→" navigation between series lifecycles. Per the root-overview-surfaces-emerging-features lesson the dashboard surface is described here as it grows. Verification metadata pinned until closeout stamps the 6g code commit.
+- 2026-06-19T15:59 — Task 6 slice 6f-1: the **Dashboard frontend** Feature Inventory row now records the **highlight → context-package** composer — a cockpit text selection raises a React Aria popover to send the selection + a message into a chat session's stdin (single/selector/create-on-Enter + ＋ new chat), reusing the live stdin channel; no silent action, not ACP. Per the root-overview-surfaces-emerging-features lesson the chat surface is described here as it grows. Verification metadata pinned until closeout stamps the 6f-1 code commit.
+- 2026-06-19T14:05 — Task 6 slice 6e-4: the **Dashboard frontend** Feature Inventory row now records the terminal/session **hardening** — the open-session registry moved into a `data/sessions` store, and a live terminal survives a cockpit *view* switch (`Cockpit` keeps `<Chats>` mounted, hidden via CSS) and a *session-tab* switch (`Chats` keeps every session's `<Terminal>` mounted) instead of being unmounted ("tabbing away bricked the session"); the backend PTY spawn (`serving/terminal.py`) gained a controlling terminal (`os.login_tty`) so tmux honors resize. Per the root-overview-surfaces-emerging-features lesson the chat surface is described here as it grows. Verification metadata pinned until closeout stamps the 6e-4 code commit.
+- 2026-06-19T07:23 — No route impact: slice 3c R5 adds the `task_doc` `dry_run`/preview op (render + diff + would-lose without writing) — the adoption safety partner to R4; an mcp-internal tool-op addition, so the repo's feature inventory / functional areas this overview describes are unchanged — detail in the `controllers/`/`models/`/`mcp/tools/` overviews + sidecars. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-19T06:39 — No route impact: an engine-room dashboard crash fix (the `landing` read guarded for pre-5h/persisted projections) under `dashboard/src/` + the rebuilt `package_data/dashboard/` bundle; the repo's feature inventory / functional areas this overview describes are unchanged — detail in the `dashboard/src/panels/engine-room/` overview + sidecars. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-19T06:03 — Slice 3c reopened (R4, leaf-doc fidelity): recorded in the JSON-primary task-documents Functional Area slice tracker — leaf docs gain `statusNote`/`headerNotes` + freeform `sections` so a real hand file round-trips content-complete (the escape hatch; the standard sections stay the backbone), `DocStatus` stays strict, and the w-02 skill documents the extensions. A schema-fidelity refinement within the `tasks/` route; detail in the `tasks/` overview. Verification metadata pinned until closeout stamps the R4 code commit.
+- 2026-06-19T05:48 — Task 6 slice 6e-3: the **Dashboard frontend** Feature Inventory row now records **context injection** — a `SessionComposer` docked below the Chats terminal sends a block of text into the active session's stdin as a bracketed paste (the on-ramp to 6f). Per the root-overview-surfaces-emerging-features lesson the chat surface is described here as it grows. Verification metadata pinned until closeout stamps the 6e-3 code commit.
+- 2026-06-19T05:15 — Slice 3c reopened (R3, deferred-examples honesty): recorded in the JSON-primary task-documents Functional Area slice tracker — an optional `codeExamplesNote` lets a planning slice that defers its examples render as *deferred* rather than "none needed", and the w-02 skill now teaches it. A small format-honesty refinement within the `tasks/` route; detail in the `tasks/` overview. Verification metadata pinned until closeout stamps the R3 code commit.
+- 2026-06-19T04:38 — Task 6 slice 6e-2c: the **Dashboard frontend** Feature Inventory row now records the **session switcher** — the Chats view's open sessions moved into a dedicated left-rail `SessionList` (a React Aria `GridList`: single-select = active session, per-row close ✕), replacing the horizontal tab strip, plus the harness buttons unified onto ＋ Terminal's golden look. Per the root-overview-surfaces-emerging-features lesson the chat surface is described here as it grows, not no-impacted. Verification metadata pinned until closeout stamps the 6e-2c code commit.
+- 2026-06-19T04:18 — Slice 3c reopened (R2, heading-vs-outcome): recorded the task-document renderer fix in the JSON-primary task-documents Functional Area slice tracker — `Step.outcome` is now distinct from the heading `title` (a bare step renders heading-only). A small render-fidelity refinement within the `tasks/` route; detail in the `tasks/` overview. Verification metadata pinned until closeout stamps the R2 code commit.
+- 2026-06-19T03:17 — Slice 3c reopened (R1, masters observable): the observer now projects series **masters** folder-keyed (`read_series_documents` → `Analytics.series`), aggregating the declared `subTasks` checkboxes into whole-series progress so a master is observable on the dashboard (click a master → overall progress, not just per-lifecycle leaves). Refreshed the JSON-primary task-documents Feature Inventory row + Functional Area; per the root-overview-surfaces-emerging-features lesson this growing dashboard subsystem is surfaced here, not marked no-impact. Verification metadata pinned until closeout stamps the R1 code commit.
+- 2026-06-18T21:27 — Task 6 slice 6e-2b: the **Dashboard frontend** Feature Inventory row now records the **per-harness launch buttons** — a detection-driven button per *installed* harness (Claude Code / Codex / Pi.dev) beside ＋ Terminal, via the new `GET /api/harnesses` detection endpoint + the `serving.harnesses` registry (a harness id on the wire, the fixed argv server-side). Per the root-overview-surfaces-emerging-features lesson this lands here as it ships. Verification metadata pinned until closeout stamps the 6e-2b code commit.
+- 2026-06-18T17:40 — Task 6 slice 6e-2a: the **Dashboard frontend** Feature Inventory row now records the **create + own** capability — a "＋ Terminal" control spawns a dashboard-owned shell at the workspace root via the new `POST /api/terminal` opener (`TerminalHost.open`, server-resolved command); the dashboard owns the session it created (the Chats view no longer just attaches). Per-harness launch buttons (Claude Code / Codex / Pi.dev) are 6e-2b. Verified live (POST → real shell → WS). Per the root-overview-surfaces-emerging-features lesson this lands here as it ships. Verification metadata pinned until closeout stamps the 6e-2a code commit.
+- 2026-06-18T16:50 — Task 6 slice 6e-1: surfaced the visible **Mode B2 terminal** on the **Dashboard frontend** Feature Inventory row — a full-bleed **Chats** view (`panels/Chats.tsx` + a code-split `Terminal.tsx` xterm.js wrapper over the `data/terminal.ts` WebSocket client) rendering the 6d PTY stream (keystrokes/resize ↔ PTY bytes), the cockpit's first bidirectional surface; reviewed against a dev mock socket, the real launch is 6e-2. Per the root-overview-surfaces-emerging-features lesson this lands here as it ships. Verification metadata pinned until closeout stamps the 6e-1 code commit.
+- 2026-06-18T16:10 — Task 6 slice 6d-2: the **Dashboard serving layer** Feature Inventory row + Dashboard Serving Layer functional area now record Mode B2's `/api/terminal/{session}` WebSocket bridge (PTY ↔ browser — binary out, JSON `stdin`/`resize` in, `{type:exit}` on child exit; attach-only + tmux-persistent) landing in `serving.app`, plus the new `websockets` core dep. The xterm.js Chats tab (6e) still follows. Per the root-overview-surfaces-emerging-features lesson this subsystem is tracked here as it lands. Verification metadata pinned until closeout stamps the 6d-2 code commit.
+- 2026-06-18T15:40 — Task 6 slice 6d-1: surfaced **Mode B2** (the dashboard-hosted terminal) on the **Dashboard serving layer** Feature Inventory row + Dashboard Serving Layer functional area — 6d-1 lands the `serving.terminal` host (a `TerminalHost` registry of tmux-wrapped stdlib-`pty` sessions launching the harness render-not-scrape; fixed-argv/OS-user/localhost; injectable PTY/tmux spawn). Per the root-overview-surfaces-emerging-features lesson this new subsystem is surfaced here as it lands, not marked no-impact; the WebSocket bridge (6d-2) + xterm.js visual (6e) follow. (Task 6 runs in its own worktree off the slice-5 tip, reconciling at the series integration gate.) Verification metadata pinned until closeout stamps the 6d-1 code commit.
+- 2026-06-18T12:10 — Task 6 slice 6b: the **Gate control plane** became enforcing — `controlplane/enforcement.py` binds `worktree_closeout_apply` to a developer-approved gate (model self-approval rejected; gateless lifecycles unchanged), and the dashboard POST plane records that approval (`gate_decide_for_lifecycle`). Refreshed the Gate control plane + Dashboard serving Feature Inventory rows and the Dashboard Serving Layer area; per the root-overview-surfaces-emerging-features lesson this growing subsystem is surfaced here as it lands. (Task 6 runs in its own worktree off the slice-5 tip, reconciling at the series integration gate.) Verification metadata pinned until closeout stamps the 6b code commit.
+- 2026-06-18T01:05+02:00 — Task 6 slice 6a: surfaced the new **Gate control plane** subsystem as a Feature Inventory row — the `agents_remember.controlplane` gate-record substrate (`GateRecord` + `GateStore`) and the four `gate_*` MCP tools. Per the root-overview-surfaces-emerging-features lesson this growing subsystem is surfaced here as it lands, not marked no-impact. (Task 6 runs in its own worktree off the slice-5 work-branch tip, reconciling at the series integration gate.) Verification metadata pinned until closeout stamps the 6a code commit.
+- 2026-06-17T22:45 — Slice 5g (visual-parity / G6): enriched the "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the completed bird's-eye fidelity — the 5g G6 atmospheric backdrop + the cockpit Effects/Calm toggle, the restored HUD decal layer (canopy frame, engine spine + petals, the left official-line engines + conduits + coupler, lane annotations), and the fixed-height room layout (the `grammar/Panel` `fill` variant). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-17T16:15 — Slice 5g (G1–G5): the dashboard **Engine Room** was reworked into the design
+  prototype's **bird's-eye podracer canvas** and now renders the whole worktree lifecycle — boot
+  choreography, failure overlays (blocked gates · engine fault flicker · reindex reroute), and the
+  **live/teardown** states (sync block · a terminal integration-conflict STOP · abandon dissolve) — with
+  engines reading **green when active**. Refreshed the Dashboard frontend Feature Inventory row; per the
+  root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-impact. The successful-landing choreography (needs a `projection.py` addition) is
+  split to the `05h` follow-up. Verification metadata pinned until closeout stamps the G5 code commit.
+- 2026-06-17T01:49+02:00 — No route impact: adds the engine-room **pod-stage design prototype sandbox** under `dashboard/public/_proto/` (a standalone choreography reference — `podstage.html` + `SCENARIOS.md`/`DESIGN.md` + the blueprint boomerang backdrop), the design source iterated on Open Design for the forthcoming **5g** engine-room dashboard implementation. This is a design-reference *sandbox*, not feature code: `dashboard/public/**` is outside the memory/route scope, no governed source changed, and the repository's top-level surface this overview describes is unchanged. Distinct from the 5a–5f entries (which surfaced shipped serving/panel/projection work) — when the **5g implementation** lands (evolving `panels/engine-room/EnclosureProcessMap` into the prototype's bird's-eye podracer canvas) it WILL be surfaced here as it lands, per the root-overview-surfaces-emerging-features lesson. Verification metadata pinned until closeout stamps the sandbox code commit.
+- 2026-06-16T02:30 — Slice 5f (S0–S1): the dashboard **Engine Room** is becoming an animated worktree-lifecycle state machine — S0 landed the honest-motion gate (`useShouldAnimate`), SVG conduits, and `worktreeGroup` keying (visual parity); S1 gave the room a full-width 3-zone **full-bleed** layout (the rails hide for the Engine Room / Topology machine-map views). Refreshed the Dashboard frontend Feature Inventory row; per the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here, not marked no-impact. Verification metadata pinned until closeout stamps the S1 code commit.
+- 2026-06-15T19:35 — Slice 5e: reworked the dashboard **Engine Room** into an enclosure-centered, state-backed process map (a new `analytics.engineProcesses` server projection + the `panels/engine-room/` module + pre-contract `worktree_start` observability, §5.4); refreshed the Dashboard frontend Feature Inventory row. Verification metadata pinned until closeout stamps the 5e code commit.
+- 2026-06-15T17:00 — Slice 05 (5d): the React/TS **frontend was re-architected** and `dashboard/src/**` brought **into memory scope** — now onboarded with a new `dashboard/src/` route overview (+ `panels/` + `grammar/` route overviews + 19 file sidecars). The ~1,200-line global `tokens.css` monolith was retired into the layered blueprint: **Panda CSS** (typed tokens + build-time/zero-runtime recipes) for styling, **React Aria** (`react-aria-components`) for headless behavior/a11y (the mode bar + pivot `ToggleButtonGroup`s, the lifecycle `ListBox`), CRT effects isolated in `index.css`. Added a **Dashboard frontend** Feature Inventory row and refreshed the Dashboard Serving Layer functional area (the frontend is no longer out-of-memory-scope). Verification metadata pinned until closeout stamps the 5d code commit.
+- 2026-06-14T23:30+02:00 — Slice 05 (5c): the cockpit was rebuilt to represent the real Agents Remember model — lifecycle as the unit (paused persistent lifecycles synthesized from worktree contracts), one de-duped BY REPO | BY PHASE lifecycle list, an in-dashboard **task reader** (full task-document content), a **per-worktree engine room**, the lifecycle → worktree → provider spine, and the topology constellation. This drove a **projection correction** under `observer/` (per-worktree provider stacks, full task content on `TaskDocNode`, persistent-lifecycle synthesis) plus a `serving/` sim/events fix. Refreshed the Dashboard Serving Layer functional area. The cockpit UI is the out-of-scope root `dashboard/`, surfaced here per the root-overview-surfaces-emerging-features lesson. Verification metadata pinned until closeout stamps the 5c code commit.
+- 2026-06-14T17:28+02:00 — Slice 05 (5b): surfaced the **server-computed attention queue** (`AttentionItem` + the derived `Analytics.attentionQueue`, reducer `build_attention_queue`) on the Observable Session Lifecycle inventory row, and noted the read-only **cockpit panels** (attention queue, live session strip, two-axis operation tree, detail panel + phase stepper / display-only gate banner) on the Dashboard Serving Layer area. The React/TS panels live in the out-of-memory-scope `dashboard/`, so the durable summary lives here per the root-overview-surfaces-emerging-features lesson. Verification metadata pinned until closeout stamps the 5b code commit.
+- 2026-06-14T15:52+02:00 — Slice 05a: the **real** Vite/React mission-control cockpit now ships under the root `dashboard/` sub-project (the slice-04 placeholder is replaced; built bundle synced into `package_data/dashboard/` by `scripts/sync-dashboard.py`, gated by `sync-dashboard --check` in both githooks + a new frontend CI job). Refreshed the **Dashboard Serving Layer** functional area + the canonical-asset-sync Feature Inventory row. Per the root-overview-surfaces-emerging-features lesson the cockpit is surfaced here as it lands; its React/TS sources live in the out-of-memory-scope `dashboard/`, so the durable summary lives on this overview. Verification metadata pinned until closeout stamps the 5a code commit.
+- 2026-06-14T11:30 — Slice 04 commit 4b: refreshed the **dashboard serving layer** Feature Inventory row + functional area — the serving layer now carries the raw `event` SSE channel (byte-offset resume), sim-mode replay, and the no-mutation POST action skeleton (slice 06 enforces). Per the root-overview-surfaces-emerging-features lesson this growing subsystem is refreshed here as it lands, not marked "No route impact." Verification metadata pinned until closeout stamps the 4b code commit.
+- 2026-06-14T11:30 — Slice 04 commit 4a: surfaced the **dashboard serving layer** (`agents_remember.serving` + the umbrella `agents-remember dashboard` CLI) as a Feature Inventory row and a "Dashboard Serving Layer" functional area, naming the root-level `dashboard/` frontend sub-project. Per the root-overview-surfaces-emerging-features lesson, the serving layer is surfaced here as it lands (4a), not deferred to the cockpit. Verification metadata pinned until closeout stamps the 4a code commit.
+- 2026-06-14T00:16 — Slice 3c commit 3: surfaced master JSON support (`kind:"master"` — a `subTasks` series index + ordered `sections`) in the "JSON-Primary Task Documents" functional area; the format now covers every task-doc kind. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
+- 2026-06-13T23:10 — Slice 3c commit 2: the JSON-primary task-document feature is complete — the `w-02-light-task-workflow` skill adopted authoring via the `task_doc` tool (synced to package data + harness packages) and the observer reader (`read_task_documents`, keyed by lifecycle) landed; updated the "JSON-Primary Task Documents" functional-area note. Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
+- 2026-06-13T22:34 — Addition: surfaced **JSON-primary task documents** (the `agents_remember.tasks` package + `task_doc` tool, slice 3c) on this entry-point overview as a Feature Inventory row and a "JSON-Primary Task Documents" functional area, pointing down to the new `tasks/` route overview. Per the root-overview-surfaces-emerging-features lesson, this growing dashboard-series subsystem is surfaced at the root as it lands (commit 1: engine + tool), not deferred until the cockpit ships. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- 2026-06-13T20:48+02:00 — Correction + addition: surfaced the **observable session lifecycle (`observer`)** on this entry-point overview as a Feature Inventory row and an "Observable Session Lifecycle" functional area, pointing down to the `observer/` route overview and `docs/design/observable-lifecycle.md` for detail. This **corrects** the earlier dashboard-series entries (2a–3a below), which marked their changes "No route impact" on this root because the work was mcp-internal: the observable-lifecycle subsystem has in fact been a growing top-level feature since 2a (event substrate → ambient lifecycle → save gate → projection read side → 3b analytical surfaces) and should have been surfaced here as it grew, not deferred "until the cockpit ships." Per append-only history the earlier entries are preserved; this entry is the correction of record. Verification metadata pinned until closeout stamps the 3b code commit.
+- 2026-06-13T19:30+02:00 — No route impact: slice 3a of the 3.0 browser-dashboard series adds the observable-lifecycle **projection read side** (the mcp-internal `observer` reducer/schema/structural snapshot readers/atomic projection store, plus the shared `observer_root`/`timeutil`); per the 2a/2b/2c framing the subsystem detail lives in the `mcp`/`observer` route overviews, and the repository's top-level surface this overview describes is unchanged until the cockpit ships.
+- 2026-06-13T18:45+02:00 — No route impact: slice 2c of the 3.0 browser-dashboard series adds the observable-lifecycle resume + save gate (mcp-internal `observer.save_gate`, ambient `promote`/`attach`, the contract `lifecycle_id` anchor) and the per-harness matrix doc; per the 2a/2b framing the subsystem detail lives in the `mcp`/`observer`/`mcp/tools` route overviews, and the repository's top-level surface this overview describes is unchanged until the cockpit ships.
+- 2026-06-13T16:41+02:00 — No route impact: slice 2b of the 3.0 browser-dashboard series adds the mcp-package-internal ambient lifecycle and the six `lifecycle_*` MCP signal tools (plus the `_tool_payload` emission hook) under the `agents_remember.observer` domain. Per the slice-2a framing, the observable-lifecycle subsystem's detail lives in the `mcp`, `observer`, and `mcp/tools` route overviews; the repository's top-level surface this overview describes is unchanged until the cockpit ships.
+- 2026-06-13T11:15+02:00 — No route impact: slice 2a of the 3.0 browser-dashboard series adds the mcp-package-internal `agents_remember.observer` event-substrate write side (envelope, ULID, store) under a new `mcp/src/agents_remember/observer/` route, and amends `docs/design/observable-lifecycle.md` (TTL project-and-prune). The repository's top-level surface this overview describes is unchanged; the new subsystem's detail lives in the `mcp` and `observer` route overviews.
+- 2026-06-13T10:48+02:00 — Added `docs/design/` as the home for developer-facing design specs of in-flight major work (first entry: `docs/design/observable-lifecycle.md`, the approved 3.0 observable-lifecycle design — lifecycle entity, `ar-observer-event/v1` substrate, enforced gates, the browser-dashboard cockpit). Recorded it in the Public Documentation area as distinct from the user-facing `docs/` pages and the historical `roadmap/` specs; `docs/**` stays onboarding-excluded, so this overview is where the routing convention lives. No source-code structure change.
 - 2026-06-12T19:06+02:00 — No route impact: root-level changes for issue #83 are the README status version string (2.9.1) and the synced c-12-closeout and l-01-session-job-lifecycle skill doctrine copies (canonical `skills/` plus harness directories; issue #83 doctrine and the two-turn gate protocol); the repository structure and routing this overview describes are unchanged.
 - 2026-06-12T12:25+02:00 — No route impact: README Status section rewritten from the per-release narrative chain into a two-paragraph current-state + direction statement at `2.9.0` (release history routed to GitHub Releases; direction = observable/steerable sessions toward the browser cockpit, #2/#43); the README remains the short public front door this overview describes, and the repo surface is unchanged.
 - 2026-06-11T15:20+02:00 — No route impact: the carryover artifact-coverage change is contained in mcp/ (carryover kinds, drift git_ops ref parameter, c-11 skill doc, version bump); repo-root route structure is unchanged.
@@ -217,7 +613,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 - Source-checkout Python implementation work should run Ruff, Pyright, and Radon from the `agents-remember/` root; exact command details belong in the resolved memory layer's `system/tools.md`.
 - The MCP package tests under `mcp/tests` cover `c-08-ar-coordination-context-resolver` skill, `c-02-memory-quality-control` skill, `c-09-git-worktree-manager` skill, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
-- This onboarding pass intentionally does not modify `system/sources.md` or `system/tools.md`.
+- `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when `docs/design/` was brought into onboarding scope, slice 05k); `system/tools.md` is unchanged.
 
 ## Key Invariants
 
@@ -283,4 +679,8 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 
 ## Last Verified
 
-Updated 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat; verification metadata stays pinned until closeout commits the source docs. (Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
+Updated 2026-06-28T07:43+02:00 — task 29 S7: refreshed the root Event River, actionable-drift, and dashboard frontend inventory for backend-retained raw events, raw-stream hydration, no frontend count cap, targetless actionable-drift dismissal, and the hidden Lifecycle Flow tab. Route detail lives in the `mcp/`, `observer/`, `serving/`, `controlplane/`, `memory_quality/`, `dashboard/src/`, and `dashboard/src/panels/` route overviews. Verification metadata pinned until closeout stamps the task-29 code commit.
+
+Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refreshed the Observable session lifecycle inventory row + functional-area section for the new public `lifecycle_turn_end_notification` tool, the non-terminal `awaiting-developer` state, the next-step hint repoint off the now-parked `lifecycle_gate`, and the reducer gate-open/blocked-gate dedup. Route detail lives in the `observer/`, `mcp/tools/`, and `models/` route overviews and their file sidecars. Verification metadata pinned until closeout stamps the code commit.
+
+Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)

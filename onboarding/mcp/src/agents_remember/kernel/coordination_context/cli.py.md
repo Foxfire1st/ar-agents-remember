@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -55,6 +55,11 @@ No cross-repository evidence is needed for this CLI adapter.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## Series-Contract Notes
+
+The CLI mirrors the resolver API by accepting `--parent-task` and `--leaf-id`; `--contract-path` now means an explicit `series-contract.md` path rather than the retired task-root `contract.md`.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the CLI now describes `series-contract.md`, accepts `--parent-task` and `--leaf-id`, and resolves task names under active task roots with `0_archive` excluded. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-25T20:57+02:00: Created by extracting the resolver command-line adapter from the monolithic facade.

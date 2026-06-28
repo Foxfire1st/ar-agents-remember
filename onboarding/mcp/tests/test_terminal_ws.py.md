@@ -1,0 +1,98 @@
+# test_terminal_ws.py
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `mcp/tests/test_terminal_ws.py`                  |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-06-27T02:28+02:00                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
+
+## Purpose
+
+`test_terminal_ws.py` covers the Mode B2 WebSocket bridge (slice 6d-2): the pure client-frame
+parser `_apply_terminal_input` and the `@app.websocket("/api/terminal/{session}")` endpoint via
+Starlette's TestClient against a `socketpair`-backed fake host (no real PTY).
+
+## Code Commentary
+
+### Logic
+
+`ApplyTerminalInputTests` drive `_apply_terminal_input` against a `_RecordingHost`: a
+`stdin` frame writes the decoded bytes, a `resize` frame forwards `(cols, rows)`, and
+non-int dimensions / unknown types / malformed JSON / non-object JSON are all ignored
+(no write, no resize). `TerminalWebSocketTests` build the app with
+`create_app(..., terminal_host=cast(TerminalHost, fake))` where the fake is a
+`_FakeTerminalHost` backed by `socket.socketpair()` — each websocket attachment gets its own
+master/peer pair so tests can model multiple browser tabs attached to one durable tmux name. The
+test-side helpers drive a peer (`feed`/`feed_to`/`feed_all` = child output, `read_child_input` =
+delivered stdin, `end` = child exit). The cases assert: an unknown session is refused with close
+code `4404`; PTY output arrives as a **binary** frame (raw VT bytes preserved); a client
+`stdin` frame reaches the child; a `resize` is forwarded and ordered before a following
+`stdin` (read-back proves order); child exit emits the `_TERMINAL_EXIT_FRAME` text frame
+then disconnects; two websocket clients can attach to the same catalog row and closing one leaves the
+other usable; and app teardown calls `host.shutdown()`. Slice 6e-2a adds `test_post_open_*` (the fake host gains
+`open`; `POST /api/terminal/{id}` `{kind:"terminal"}` records `host.open` with the workspace-root cwd +
+a shell argv; an unknown kind ⇒ 400) and `ResolveTerminalLaunchTests` (the pure `resolve_terminal_launch`).
+Slice 6e-2b adds the harness path: `GET /api/harnesses` lists the supported set with detection
+(monkeypatching `shutil.which`), a `{kind:"harness"}` POST spawns the registry argv at the
+workspace root, and an uninstalled / unknown harness ⇒ 400 — plus harness cases in
+`ResolveTerminalLaunchTests` (a `_which` fake injected directly). Slice 6f: the `_FakeTerminalHost`/
+`_FakeSession` gain a `cwd` + `open(..., suspend_unsafe=...)`, the opener cases assert the
+`suspend_unsafe` flag flows (`True` for a harness, `False` for a shell), and a new
+`TerminalImageEndpointTests` covers `POST /api/terminal/{session}/image`: a valid image saves under
+`<cwd>/.dashboard-pastes/` and returns its path; a hostile filename (`../../etc/passwd.png`) still
+yields a uuid basename confined under the cwd; non-image extension, non-image content for an image
+extension (magic-byte sniff), empty body, oversize (post-read and via `Content-Length`), and an unknown
+session are each rejected with the right status. Task 22 extends the fake host with tmux
+probe/terminate state, per-connection `attach`/`close_session` clients, and a temp `TerminalCatalog`
+injected into `create_app`; the route tests now
+assert opener rows persist label/lifecycle/tmux/status through `host.ensure`, `GET
+/api/terminal/sessions` lists and refreshes catalog rows, WebSocket attach creates a catalog-backed
+client only when the tmux probe says the session exists, the first WebSocket after POST open can read
+from the detached session, stale catalog rows become `exited`, explicit terminate kills the tmux name
+and marks the row `terminated`, browser disconnect closes the local host attachment while leaving the
+catalog row `running`, and image upload can use a catalog cwd after dashboard restart.
+
+### Conventions
+
+Inserts `mcp/src` on `sys.path` (suite idiom). `cast(TerminalHost, fake)` bridges the duck
+-typed fakes to the typed `create_app`/`_apply_terminal_input` signatures without subclassing.
+The fake's peer sockets carry a 2s timeout so `read_child_input` never hangs the suite.
+`_config(tmp)` mirrors `test_serving.py` (a `McpRuntimeConfig` over a temp root; the projector
+primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py` (6d-1).
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The WebSocket endpoint + bridge helpers under test. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The terminal host the bridge drives (faked here). | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
+| The durable terminal catalog injected into the app for route tests. | [serving/terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| The 6d-1 real-PTY/tmux host tests (the other half of Mode B2). | [test_terminal.py](agents-remember/mcp/tests/test_terminal.py) |
+
+## Update History
+
+- 2026-06-27T02:28+02:00 — Task 22 follow-up: `_FakeTerminalHost` now models `ensure` separately from
+  `open`; opener tests assert no starter PTY client is opened or closed, and a new first-WebSocket test
+  proves POST open leaves a detached session available for attach. Verification metadata pinned until
+  closeout stamps the task-22 follow-up code commit.
+- 2026-06-27T01:25+02:00 — Task 22 follow-up: `_FakeTerminalHost` now models multiple
+  per-WebSocket socketpair clients with `attach`/`close_session`; tests seed catalog rows before
+  websocket attach, assert catalog-backed attach uses `host.attach`, and cover two simultaneous
+  websockets where closing one client does not close the other. Verification metadata pinned until
+  closeout stamps the task-22 follow-up code commit.
+- 2026-06-27T00:45+02:00 — Task 22 follow-up: added coverage that a browser WebSocket disconnect closes
+  the local terminal client but keeps the catalog row running, which forces the next refresh to reattach
+  through tmux instead of reusing a stale PTY.
+- 2026-06-26T23:05+02:00 — Task 22: fake sessions/host now carry tmux name, command, lifecycle,
+  suspend flag, probe names, and terminate calls; tests inject a temp `TerminalCatalog` and cover
+  persisted opener metadata, session listing, tmux-probed WebSocket rehydrate, stale-row exit marking,
+  explicit terminate, and image upload using catalog cwd after restart. Verification metadata pinned
+  until closeout stamps the task-22 code commit.
+- 2026-06-19T20:30 — Task 6 slice 6f: added `TerminalImageEndpointTests` for `POST /api/terminal/{session}/image` (save-under-cwd + returned path, hostile-filename confinement to a uuid name, non-image-type / magic-byte-mismatch / empty / oversize-post-read / oversize-via-Content-Length / unknown-session rejections); gave `_FakeTerminalHost`/`_FakeSession` a `cwd` + `suspend_unsafe` open param; and asserted the opener passes `suspend_unsafe` (True harness / False shell). Verification metadata pinned until closeout stamps the 6f code commit.
+- 2026-06-18T21:27+02:00 — Task 6 slice 6e-2b: added the harness endpoint cases (`GET /api/harnesses` detection via `patch("shutil.which")`; `{kind:"harness"}` POST → registry argv at the workspace root; uninstalled/unknown ⇒ 400) + harness cases in `ResolveTerminalLaunchTests` + a `_which` fake. Verification metadata pinned until closeout stamps the 6e-2b code commit.
+- 2026-06-18T17:40+02:00 — Task 6 slice 6e-2a: added `test_post_open_*` (the `POST /api/terminal/{id}` opener calls `host.open` with the workspace-root cwd + a shell argv; unknown kind ⇒ 400) + `ResolveTerminalLaunchTests`, and gave the fake host an `open` method. Verification metadata pinned until closeout stamps the 6e-2a code commit.
+- 2026-06-18T16:10+02:00 — Created for task 6 slice 6d-2: covers `_apply_terminal_input` (frame parsing) and the `/api/terminal/{session}` WebSocket bridge end-to-end via TestClient + a socketpair fake host (binary output, stdin delivery, resize ordering, 4404 refusal, exit frame, host shutdown). Verification metadata pinned to the 6d-1 base until closeout stamps the 6d-2 code commit.

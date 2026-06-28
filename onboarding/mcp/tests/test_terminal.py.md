@@ -1,0 +1,92 @@
+# test_terminal.py
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `mcp/tests/test_terminal.py`                     |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-06-27T02:28+02:00                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
+
+## Purpose
+
+`test_terminal.py` covers the Mode B2 terminal host (slice 6d-1, `serving.terminal`):
+tmux command construction, the session registry, and real-PTY write/read/resize/exit —
+with the tmux integration path gated so CI without tmux still passes.
+
+## Code Commentary
+
+### Logic
+
+`BuildCommandTests` assert the pure builders: `_build_tmux_command` emits
+`tmux new-session -A -s <name> -c <cwd> -- <harness>`, and `_tmux_session_name`
+collapses tmux-illegal chars (`.`/`:`) and falls back to `ar-session`.
+`TerminalHostRegistryTests` drive a pipe-backed `_FakeSpawner` (a real master fd, no
+child): open records the tmux argv + registers + correlates `lifecycle_id`
+(`get`/`sessions`/`for_lifecycle`), open is idempotent for a live session and replaces a
+dead one, `close` unregisters, an unknown sid raises `KeyError` on write/resize, and a
+custom `name` overrides the derived one. Task 22 extends these registry tests with injectable tmux
+probe/kill fakes: `has_session` delegates to the probe, `terminate` kills the resolved tmux name and
+unregisters the local session, terminating an unknown sid uses a supplied tmux name, and
+`attach` creates unregistered per-connection clients that can be `close_session`ed without removing the
+durable registry entry. The opener regression coverage adds an injectable tmux creator and asserts
+`ensure` creates a detached tmux session without registering a client, while an already-present tmux
+session makes `ensure` idempotent.
+`TerminalHostPtyTests` (skipped without `cat`)
+run the host against a **real kernel PTY** via `_raw_spawn` (which strips the tmux
+wrapper): a `cat` write/read round-trip, an idle non-blocking read returning `b""`,
+`resize` verified by reading the winsize back with `TIOCGWINSZ`, and (with `true`) an
+empty read + dead `is_alive` after the child exits. `TerminalHostTmuxIntegrationTests`
+(skipped without tmux) exercises the real default spawner end-to-end: a tmux-wrapped
+`sh -c 'printf MARKER; sleep 2'` whose output is read back, proving the tmux client
+attaches to the PTY. `test_spawn_seeds_default_winsize` (slice 6e-4) opens a real-PTY
+`cat` session and reads back `TIOCGWINSZ` to assert the seeded **24×80** default, so tmux
+never starts at 0×0 before the first browser resize lands. The tmux integration skip also
+requires the current `TERM` to expose a terminfo `clear` capability; noninteractive push hooks
+often run with `TERM=dumb`, where tmux itself fails before launching the child. The 6f-hardening cases assert
+the **Ctrl-Z (`0x1a`) suspend strip is scoped**: the real-PTY tests cover a harness session
+(`suspend_unsafe=True`) dropping `0x1a`, and `TerminalHostSuspendScopingTests` drives a
+`_PipeWriteSpawner` (master fd = a pipe write end, so bytes are read back with no PTY line
+discipline turning `0x1a` into a signal) to prove a harness strips Ctrl-Z, a **shell keeps
+it** (job control), an all-Ctrl-Z harness frame writes nothing, and an unknown sid still
+raises `KeyError` (the require-before-strip ordering).
+
+### Conventions
+
+Inserts `mcp/src` on `sys.path` (the suite idiom) before importing
+`agents_remember.serving.terminal`. `_read_until` polls `read_nonblocking` via
+`select` to a deadline; `_wait_dead` spins on `is_alive`. Skips key off
+`shutil.which("tmux"|"cat"|"true")`, plus `_term_supports_clear()` for the real tmux
+integration case, so the slice's PTY/tmux integration tests degrade to skips rather than
+failures where the binaries or required terminal capabilities are absent (the slice-plan CI rule).
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The terminal host under test. | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
+| The serving layer the host joins. | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
+
+## Update History
+
+- 2026-06-27T02:28+02:00 — Task 22 follow-up: added `TerminalHost.ensure` registry coverage proving
+  detached tmux creation records no durable PTY client, and proving the creator is skipped when the tmux
+  probe already reports the session. Verification metadata pinned until closeout stamps the task-22
+  follow-up code commit.
+- 2026-06-27T01:25+02:00 — Task 22 follow-up: added registry coverage for `TerminalHost.attach` /
+  `close_session`, proving per-WebSocket clients are distinct from the durable `open` registry session
+  and can be detached without unregistering it. Verification metadata pinned until closeout stamps the
+  task-22 follow-up code commit.
+- 2026-06-26T23:05+02:00 — Task 22: `TerminalHostRegistryTests` now injects tmux probe/kill fakes and
+  covers `has_session`, explicit `terminate` killing/unregistering a live session, and terminating an
+  unknown sid by supplied tmux name. Verification metadata pinned until closeout stamps the task-22 code
+  commit.
+- 2026-06-26T16:20+02:00 — Push-hook stability: the real tmux integration test now requires both
+  `tmux` and a current `TERM` entry with `clear` capability, so noninteractive `TERM=dumb` push hooks
+  skip the optional tmux end-to-end case instead of failing before the child command starts.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-19T20:30 — Task 6 slice 6f hardening: added the harness-scoped Ctrl-Z strip coverage — real-PTY `test_harness_write_strips_ctrl_z_suspend_byte` / `test_harness_write_all_ctrl_z_is_noop` (now opened `suspend_unsafe=True`) and a new `TerminalHostSuspendScopingTests` (via a `_PipeWriteSpawner`) proving harness-strips / shell-keeps / all-Ctrl-Z-noop / unknown-sid-still-raises. Verification metadata pinned until closeout stamps the 6f code commit.
+- 2026-06-19T14:05 — Task 6 slice 6e-4: added `test_spawn_seeds_default_winsize` — opens a real-PTY session and reads back `TIOCGWINSZ` to assert the seeded 24×80 default (the controlling-terminal/winsize hardening so tmux honors resize). Verification metadata pinned until closeout stamps the 6e-4 code commit.
+- 2026-06-18T15:40+02:00 — Created for task 6 slice 6d-1: covers `serving.terminal` (pure tmux command/name builders, the fake-spawner registry suite, real-PTY write/read/resize/exit, and a tmux-gated integration case). Verification metadata pinned to the task base until closeout stamps the 6d-1 code commit.

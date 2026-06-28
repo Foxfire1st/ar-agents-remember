@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06` |
-| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -45,7 +45,14 @@ The context retrieval path is routed at the coordinator entrypoint: source work
 that relies on onboarding, providers, or repository source goes through
 `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent
 routing across optional providers, route indexes, onboarding, and bounded source
-confirmation. The memory-layer read path is also explicit: memory repos are not
+confirmation. This generated runtime mirror now also carries the slice-07
+**research-phase read** doctrine: until the build/job decision, managed-repo
+source is read through the `read_ar_files` MCP tool rather than the native read
+(it pairs each file with its onboarding by construction and keeps the read trail
+observable), `read_ar_files` calls count as retrieval evidence alongside CGC and
+GrepAI, and native read is the edit precondition once building begins. (The
+authored doctrine lives in `c-04-retrieval-strategy-router` / `l-01-session-job-lifecycle`;
+this template is the synced mirror of the coordinator-entry pointer.) The memory-layer read path is also explicit: memory repos are not
 expected to provide a root-level `AGENTS.md`; repo-specific guidance is read
 from `system/settings.md`, `system/tools.md`, `system/git-workflow.md` (when
 present, for the gated-branch landing flow read before any commit/push/PR),
@@ -125,6 +132,7 @@ No sibling repository evidence is needed for this package template.
 
 ## Update History
 
+- 2026-06-23T00:53+02:00 — Slice 07 (S5 sync): this generated coordinator-template mirror was re-synced to carry the `read_ar_files` **research-phase read** doctrine — until the build/job decision, read managed-repo source through `read_ar_files` (paired onboarding by construction; counts as retrieval evidence) rather than native read, which is the edit precondition once building begins. Generated-mirror note only; the authored doctrine lives in the `c-04`/`l-01` skills. Verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-06-08T11:53+02:00: Updated coordinator-template onboarding for the narrower lifecycle entry surface: session start remains the primary lifecycle entry, and managed-repo boundary crossings inside an already-running session re-enter the lifecycle. Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-02T03:45+02:00: Rewired the coordinator template to route every session into `l-01-session-job-lifecycle`: replaced the three-way Task Format Routing and the separate `Frame Before You Choose a Format` section with a `Start Here — Enter the Job Lifecycle` section whose only task-format call is `l-01-session-job-lifecycle` skill's build-mode step (read-only exit / chat build / durable `w-02-light-task-workflow` skill); repointed the Installed AGENTS.md Routing bullet at `l-01-session-job-lifecycle` skill's `frame` phase; and de-duped `c-04-retrieval-strategy-router` skill by collapsing the Onboarding Documentation explanation into a pointer to Memory Retrieval Strategies. Part of the `l-01-session-job-lifecycle` skill lifecycle reshape (mcp 1.1.0). Verification metadata recomputed at this closeout.
 - 2026-06-02T03:30+02:00: Registered `system/git-workflow.md` as a read-first memory-layer file (when present): added it to the read list after the `c-08-ar-coordination-context-resolver` skill resolves context, and to the memory-repo system-file list, and pointed "Branch And Workflow Notes" at it for the gated-branch landing flow. Verification metadata + the `Runtime AGENTS Template Package` entity fingerprint recomputed at this closeout (mcp 1.0.2).

@@ -5,17 +5,21 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-06-10T10:26+02:00                     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastUpdated            | 2026-06-27T22:00+02:00                     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 
 ## Purpose
 
 This skill documents `c-09-git-worktree-manager` skill, the Git worktree lifecycle manager for Agents
 Remember tasks. `c-09-git-worktree-manager` skill now owns worktree start, attach/status, external-memory
-compatibility before worktree start, integration, and cleanup. Closeout
+compatibility before worktree start, integration, lifecycle finalization, and cleanup. Closeout
 sequencing belongs to `c-12-closeout` skill; `c-09-git-worktree-manager` skill only supplies the worktree-specific
-`contract.md` path and the integration/cleanup follow-up rules.
+`contract.md` path and the integration/finalization follow-up rules. Slice 2c adds a
+Lifecycle Resume And Promotion section: `worktree_start` promotes the current
+fleeting lifecycle to persistent (the contract `lifecycle:` anchor),
+`worktree_attach` resumes it, and attaching over an unsaved fleeting lifecycle
+hits the save gate (`on_unsaved=save`|`discard`).
 
 ## Code Commentary
 
@@ -56,6 +60,59 @@ Before previewing integration, agents must also check out the recorded code and
 memory `source_branch` in the source repositories because `worktree_integrate`
 requires those active checkouts even for `dry_run=true`.
 
+Task 25 consolidates the worktree-manager junctions onto `lifecycle_gate` with
+the lifecycle-wide dry-run -> report -> raise order. At the **Worktree Intent
+Gate** the skill runs the applicable dry-run/preflight first, reports the intent
+packet in chat, then raises one durable lifecycle gate carrying the
+`worktree-intent` junction kind, developer-facing ask, and intent packet; the
+single call also blocks the lifecycle and waits for the developer decision or
+matching inbox response. Integration runs
+`worktree_integrate(..., dry_run=true)` before reporting the preview in chat and
+then uses `lifecycle_gate(kind="integration-approval", ask=..., packet=...)`.
+Cleanup/finalization runs `lifecycle_finalize_task(..., dry_run=true)` before
+reporting the cleanup plan in chat and then uses
+`lifecycle_gate(kind="cleanup-approval", ask=..., packet=...)`. After a
+developer response reaches the agent it clears the ambient block with
+`lifecycle_resume` before running the gated mutation.
+
+The developer resolves every one of these — an agent's own model-attributed
+`gate_decide` never counts as approval, and a chat "approved" does not propagate
+itself, so the agent always owns the `lifecycle_resume` clear.
+
+Task 28 reframes these three worktree hand-offs (worktree-intent,
+integration-approval, cleanup-approval) from the block-and-wait `lifecycle_gate`
+to **notify-and-continue**, in the order **dry-run → notify (last tool call) →
+report (last prose) → stop**: the agent runs the applicable dry-run/preflight,
+then calls `lifecycle_turn_end_notification(summary={…the intent / integration /
+cleanup packet + the developer ask…})` as the **last tool call of the turn**, then
+delivers that packet as its **final prose** and **STOPs / ends the turn**. That tool
+sets the new `awaiting-developer` lifecycle state, surfaces a dashboard attention
+item, and returns immediately — no wait, no operator inbox, and because it does not
+render a prompt over the prose the report stays the last thing the developer reads;
+the developer
+responds and the **first AR tool call of the next turn** auto-resumes
+(`running`) and auto-dismisses the item, so the agent issues no explicit
+`lifecycle_resume`. The block-and-wait `lifecycle_gate` (+ `lifecycle_resume`)
+and the operator inbox are parked as the fallback for a deliberate durable,
+developer-attributed, mutation-blocking approval record (on that parked path the
+report still precedes the gate raise, since the durable gate renders a prompt over
+the prose); the Task 25 /
+`gate_decide` / `lifecycle_resume` descriptions above are superseded historical
+context. This packaged file is a sync-propagated (`scripts/sync-skills.py`)
+bundle copy of the canonical `skills/c-09-git-worktree-manager/SKILL.md`.
+
+Dashboard task 14 adds `lifecycle_finalize_task` as the terminal worktree
+lifecycle tool. The skill now instructs agents to preview it, relay the landed
+commit proof, cleanup plan, and task-document updates, raise the
+`cleanup-approval` gate, then run the real finalizer after developer approval.
+The tool proves exactly one parent-child branch edge by checking that the landed
+commit is reachable from the recorded local source branch, runs or verifies
+cleanup, and updates the leaf task plus immediate parent row to `Completed` when
+task-doc paths are supplied. PR-gated edges are structurally identical after the
+PR merge has been pulled locally. Squash-merge equivalence is intentionally out
+of the default path because it erases commit lineage and can invalidate memory
+lookup history.
+
 ### Conventions
 
 `c-09-git-worktree-manager` skill is a wrapper, not a replacement workflow. Task identity should be settled
@@ -79,8 +136,9 @@ intent packet must make clear that the protected target is not the recorded
 pushed for PR. Integration preview also expects the recorded code and memory
 source branches to be the active checkouts in the source repositories, so agents
 should switch clean source checkouts before calling `worktree_integrate` with
-`dry_run=true`. Cleanup remains human-gated and removes worktrees plus merged
-local task branches only after integration.
+`dry_run=true`. Lifecycle finalization remains human-gated and removes
+worktrees plus merged local task branches only after integration, carryover, and
+landed-commit proof.
 
 ### Invariants And Boundaries
 
@@ -93,8 +151,10 @@ fast-forwardable or replay has produced mediated commits. The skill must not
 call `worktree_start` until the developer has approved the Worktree Intent Gate.
 For protected, PR-gated, or otherwise not-directly-landable target branches, the
 selected `source_branch` must be a developer-approved pushable integration
-branch created from that target, not the protected target itself. Cleanup
-requires completed integration and explicit approval.
+branch created from that target, not the protected target itself. Lifecycle
+finalization requires completed closeout, completed integration, completed
+memory carryover, landed-commit ancestry on the recorded source branch, and
+explicit cleanup/finalization approval.
 
 ### Todos
 
@@ -115,10 +175,12 @@ No external documentation is needed for this repository-local skill.
 | `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | L8-L13; L103-L115; L140-L152 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | L8-L29; L33-L82 | [`c-12-closeout` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md) |
 | The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | L49-L59; L72-L87; L121-L128 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
-| The Worktree Intent Gate must be explicitly approved before `worktree_start` and must name branch policy, source/work branches, memory mode, landing path, and risks. | L55-L75; L150-L151 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| The Worktree Intent Gate must be explicitly approved before `worktree_start` and must name branch policy, source/work branches, memory mode, landing path, and risks. | L80-L94 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| The Worktree Intent Gate runs the applicable dry-run/preflight first, reports in chat, then uses one `lifecycle_gate(kind="worktree-intent", ask=..., packet=...)` call; `worktree_start` runs only after a developer-resolved decision is cleared with `lifecycle_resume`. | L99-L114 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| Integration and cleanup/finalization run their dry-runs first, report previews in chat, then use `lifecycle_gate(kind="integration-approval", ...)` / `lifecycle_gate(kind="cleanup-approval", ...)` before `worktree_integrate` / `lifecycle_finalize_task`, with `lifecycle_resume` after the developer response is handled. | L193-L199; L220-L225 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
 | Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | L117-L125 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
 | Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | L117-L134 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
-| Cleanup remains owned by the `c-09-git-worktree-manager` skill and requires completed integration plus explicit approval. | L136-L140 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
+| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | L213-L242 | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md) |
 
 ## Cross-Repo References
 
@@ -128,8 +190,54 @@ No sibling repository evidence is needed for the skill itself.
 | ------------------------------------------ | --------- | ----------- |
 | No meaningful cross-repo references found. | n/a       | n/a         |
 
+## Series-Contract Notes
+
+The packaged worktree-manager skill defines the new operating model: master tasks own an integration branch via root `series-contract.md`, and each active leaf owns a distinct enclosure contract/worktree under `enclosures/<leaf-id>/`.
+
 ## Update History
 
+- 2026-06-27T22:00+02:00 — Order fix (notify-then-report): corrected the Task 28
+  notify-and-continue hand-off ORDER for all three worktree hand-offs (worktree
+  intent, integration, cleanup/finalization) to **dry-run → notify
+  (`lifecycle_turn_end_notification`, the last tool call) → report (the last prose)
+  → stop**. The earlier notify-and-continue pass (entry below) had described
+  report-before-notify; the corrected order ends the turn on the prose report
+  (the notification returns immediately and does not render a prompt over the
+  prose). Parked block-and-wait `lifecycle_gate` fallback unchanged (report still
+  precedes the durable gate raise there). Sync-propagated (`scripts/sync-skills.py`)
+  bundle copy of the canonical `skills/c-09-git-worktree-manager/SKILL.md`.
+  Verification metadata pinned.
+- 2026-06-27T22:00+02:00 — Task 28 (notify-and-continue reframe): the three
+  worktree hand-offs (worktree intent, integration, cleanup/finalization) now
+  notify-and-continue through the new `lifecycle_turn_end_notification` tool —
+  dry-run, chat report, then `lifecycle_turn_end_notification(summary=…)` + STOP,
+  which sets the new `awaiting-developer` state, surfaces a dashboard attention
+  item, and returns immediately; the next turn's first AR tool call auto-resumes
+  (`running`) and auto-dismisses the item (no `lifecycle_resume`). Block-and-wait
+  `lifecycle_gate` / operator inbox parked as the fallback. Sync-propagated
+  (`scripts/sync-skills.py`) bundle copy of the canonical
+  `skills/c-09-git-worktree-manager/SKILL.md`; the older block-and-wait
+  `lifecycle_gate` body above is superseded historical context. Verification
+  metadata pinned until closeout stamps the task-28 code commit.
+- 2026-06-26T18:58+02:00 — No content impact: reviewed the source commit's
+  generated skill-copy sync; the existing body already describes the current
+  dry-run -> chat report -> `lifecycle_gate` order for worktree intent,
+  integration, and cleanup/finalization.
+- 2026-06-26T17:21+02:00 — Task 25 regression fix: current worktree intent,
+  integration, and cleanup/finalization guidance now follows dry-run/preflight
+  first, chat report second, and `lifecycle_gate` third; older report/action
+  descriptions below are superseded historical context.
+- 2026-06-26T17:12+02:00 — Regression fix: current worktree intent,
+  integration, and cleanup/finalization guidance now describes `lifecycle_gate`
+  as the single call that creates the durable gate, blocks the lifecycle, and
+  waits for the developer decision or matching inbox response.
+- 2026-06-26T14:27+02:00 — Task 25: updated current worktree intent, integration, and cleanup/finalization guidance to use `lifecycle_gate` as the single lifecycle-gate junction call that creates the durable gate, blocks the lifecycle with the ask, and waits for the developer response. Older split-call history entries below are superseded historical context. Verification metadata pinned until closeout stamps the task-25 code commit.
+- 2026-06-25T13:20+02:00 — Task 23/24: worktree gate examples now rely on one normal five-minute `gate_response_wait` call instead of caller-managed timeout loops.
+- 2026-06-25T07:17+02:00 — Task 19: worktree intent, integration, and cleanup/finalization gate examples now use `gate_response_wait` and tell agents to consume returned inbox entries after reading them. Verification metadata pinned until closeout stamps the task-19 code commit.
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged worktree-manager doctrine now states the single-schema commitment: master tasks own root integration `series-contract.md`, leaf worktrees own `enclosures/<leaf-id>/series-contract.md`, and `contract.md` is retired. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-23T22:50+02:00 — Dashboard task 14: documented `lifecycle_finalize_task` as the terminal tool replacing standalone cleanup as the normal final step. It proves one landed parent-child edge, runs or verifies cleanup, updates the leaf and immediate parent row to `Completed`, treats PR-gated edges as normal local ancestry after merge/pull, and excludes squash equivalence from the default path. Verification metadata pinned until closeout stamps the source commit.
+- 2026-06-23T07:39+02:00 — Slice 09: documented the mirror's adoption of the `l-01-session-job-lifecycle` skill's Gate Choreography at the three junctions this skill owns — the **Worktree Intent Gate** now raises `lifecycle_block(kind="decision")` + `gate_create(kind="worktree-intent")`, `gate_wait`s, and clears with `lifecycle_resume` before `worktree_start`; **integration** raises `gate_create(kind="integration-approval")` and **cleanup** raises `gate_create(kind="cleanup-approval")`, each raise → wait → developer-resolve → clear (an agent's own `gate_decide` never counts). Raised on top of the two-turn chat protocol, not instead of it. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-13T18:45+02:00 — Slice 2c: documented the Lifecycle Resume And Promotion section (start=promote the current fleeting lifecycle to persistent + contract `lifecycle:` anchor; attach=resume; save gate on leaving an unsaved fleeting via `on_unsaved`). Verification metadata pinned until closeout stamps the 2c code commit.
 - 2026-06-10T10:26+02:00 — GitHub #54: documented the stale-base preflight + `stale_base_choice` recoveries, the auto-created memory source branch, the `worktree_status` freshness block, `worktree_sync` in the MCP tools list, and the new Mid-Task Sync section (sync-early-before-memories doctrine).
 - 2026-06-04T16:03+02:00: Added the integration-preview reminder that agents must check out the recorded code and memory `source_branch` in the source repositories before calling `worktree_integrate`, including `dry_run=true`.
 - 2026-06-04T15:45+02:00: Added the Worktree Intent Gate: agents must present branch policy, pushable source branch, work branch/worktree name, memory mode, landing path, and risks for developer approval before `worktree_start`; PR-gated flows must show that the recorded `source_branch` is the pushable integration branch, not the protected target.

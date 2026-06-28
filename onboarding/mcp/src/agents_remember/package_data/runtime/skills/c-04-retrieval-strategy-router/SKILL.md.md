@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`             |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -31,7 +31,15 @@ whose callers, callees, dependencies, ownership, inheritance, or impact
 neighborhoods are unknown and prefers CodeGraphContext when available. `Intent`
 is for known anchors or locations where the missing truth is a contract,
 invariant, branch-valid behavior, or fix direction; it uses onboarding plus
-bounded source confirmation as the proof layer.
+bounded source confirmation as the proof layer. This generated runtime mirror now
+also carries the slice-07 **research-phase read** doctrine attached to the Intent
+strategy: the `read_ar_files` MCP tool is the preferred paired onboarding + bounded
+source read (mirroring how Semantics prefers GrepAI and Relationship prefers CGC) —
+one batch call returns each source file with its sidecar plus the repository and
+governing route overviews; during the research phase (up to the build/job decision)
+read managed-repo source with `read_ar_files` rather than native read, count those
+calls as research evidence alongside the Semantics/Relationship queries, and reserve
+native read as the edit precondition once building begins.
 
 The Semantics section first requests MCP `context_packet(...,
 include_providers=true)` when the server is configured, then uses GrepAI only
@@ -121,6 +129,7 @@ They do not contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-06-23T00:53+02:00 — Slice 07 (S5 sync): this generated `c-04` skill mirror was re-synced to carry the `read_ar_files` **research-phase read** doctrine on the Intent strategy — `read_ar_files` is the preferred paired onboarding + bounded source read (the recipe batched), used during the research phase instead of native read, counted as research evidence, with native read reserved as the edit precondition. Generated-mirror note only; the authored skill source owns the wording. Verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T00:37+02:00: Refreshed verification and line citations after `c-04-retrieval-strategy-router` skill was compacted around MCP provider-tool routing.
 - 2026-05-23T13:46+02:00: Updated `c-04-retrieval-strategy-router` skill onboarding to match the MCP provider-tool route and deleted source lifecycle scripts.

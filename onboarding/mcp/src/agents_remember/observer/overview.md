@@ -1,0 +1,487 @@
+# mcp/src/agents_remember/observer/ — Observable-Lifecycle Substrate And Projection Overview
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| sourceRoute            | `mcp/src/agents_remember/observer/`              |
+| doc_type               | `route-local-overview`                           |
+| lastUpdated            | 2026-06-28T13:54+02:00                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../../../../overview.md`                         |
+
+## Governing Overview
+
+[mcp/overview.md](../../../../overview.md)
+
+## Purpose
+
+`observer/` is the observable session lifecycle substrate (the 3.0
+browser-dashboard direction). It owns **both sides**: the **write side** — an
+append-only, durable, replayable log of what happened in (or to) a lifecycle —
+and the **read side** — the projection reducer that folds that log (plus
+structural file snapshots) into resolved state for replay/sim fixtures, the
+dashboard, and any other client. The full design is
+`docs/design/observable-lifecycle.md`.
+
+Slice 2a built the write side; slice 2b adds the ambient lifecycle — the
+process-singleton signal state machine, the six `lifecycle_*` signals, the
+heartbeat ticker, and the TTL project-and-prune sweep. Slice 2c adds resume + the
+save gate: `promote`/`attach` on the ambient, the pure `save_gate.py` vocabulary
+(landing-zone scope, the `SaveDecision` boundary, `SaveGateRequired`), and the
+`LifecycleState` persistence-binding fields — so a lifecycle survives chat death
+and resumes from the worktree contract. Slice 3a adds the **projection read
+side**: the pure reducer that folds the event logs (plus structural file
+snapshots) into the resolved state tree, the shared timing leaf, and the atomic
+projection store (the structural surfaces — providers, contracts, group layout).
+Slice 3b adds the **analytical surfaces** — drift read from a persisted JSON
+snapshot, git-free sidecar staleness, provider setup summaries/progress, route
+coverage, the tool-report feed, and ledger currency — plus the derived-aggregate
+rollups (the per-lifecycle token fuel gauge and the sidecar-staleness histogram).
+Slice 3c adds the task-document surface (S7): `read_task_documents` projects active
+JSON-primary `ar-task-document/v1` docs with optional lifecycle attachment, so the dashboard shows
+task content before and after runtime binding. Slice 05 (5b) adds the **attention queue**: the
+reducer's `build_attention_queue` ranks what needs the human (blocked gates, down
+providers, actionable drift, failed setup, stale/dormant sessions) into the derived
+`Analytics.attentionQueue` — the one analytics field composed from the structural tree +
+signals rather than read from an input file. Slice 5f S6 (§9) adds `_start_attention`: a pre-contract
+**blocked-start** raises the same master-caution in the queue that the agent raises in chat, and
+`project_workspace` now threads `engine_start_progress` into it (a happy-path beat is not an alarm).
+
+Slice 05 (5c) completes the route's read side for the cockpit: `project_workspace` synthesizes a
+paused **persistent lifecycle** for every current worktree-backed enclosure with no event log. The live
+projection boundary is current enclosure ownership: fleeting lifecycles still do not need enclosures,
+fresh non-terminal promotion/gate lifecycles may bridge the enclosure materialization window, but older
+non-fleeting event-backed lifecycles drop from the live view when their enclosure is deleted or re-owned.
+`read_providers` reads each worktree's **isolated provider stack** (surface 4) bound to
+worktree/repo/role; and `TaskDocNode` carries the **full task content**
+(objective/requirements/design/steps/codeExamples/decisions/refs), so the dashboard reads the task in
+the UI rather than the filesystem.
+
+Slice 5e adds the **Engine Room process map** surface: `Analytics.engineProcesses` — a second derived
+analytics surface (like `attentionQueue`) composed by `reducer.build_engine_processes` into one
+`EngineProcessNode` per worktree enclosure, joining the recorded contract + status guidance
+(existence/dirty/freshness/provider boot) with the worktree's isolated providers and setup-progress,
+carrying observed/derived/planned/missing fact-state honesty. `snapshots.read_engine_process_facts`
+sources the contract facts (best-effort `status_payload`); `read_start_progress_entries` (§5.4) +
+`reducer._start_process_node` surface a `worktree_start` blocked **before** its contract exists.
+`WorkspaceProjection.version` bumps to 2.
+
+Slice 5h extends this surface with the **successful-landing arc**: additive
+`EngineProcessNode.landing` (a list of `LandingRefNode` — `origin/<feat>`, `origin/<base>`, the PR,
+`origin/mem-main`) + `integrationStrategy`, observed best-effort by `worktrees/modules/landing.py`
+(remote/PR refs) and composed by `reducer._engine_process` from the status payload's `landing` block.
+Both are empty/`None` until the lifecycle reaches a landing phase, so every prior fixture and the live
+feed render unchanged. Slice 5l P2 adds the display-only `LandingRefNode.at` (gh's PR milestone
+timestamp — `mergedAt` once merged, else `createdAt`; `None` for branch refs); the reducer's
+`LandingRefNode(**ref)` splat picks it up from the probe's emitted dict with no reducer change.
+
+Slice 05l Part 1 closes the **backend teardown-visibility** gaps in this surface. The reducer's
+`_GUIDANCE_PHASE` gains `"abandoned": "abandoned"`, surfacing `worktrees/modules/guidance.py`'s new
+abandoned-worktree phase to the process-map vocabulary (before, an abandoned enclosure projected the
+`worktree-started` default — a fully-active phantom). And a new `reducer._is_disposed(fact)` (True when
+the contract's `cleanup` is `completed`/`abandoned` = `worktree_cleanup`/`worktree_abandon` already
+reclaimed the stack) now filters `build_engine_processes`, so a **disposed** enclosure drops from the
+active `Analytics.engineProcesses` instead of rendering as a phantom — the frontend (05k) animates the
+removal. `cleanup-pending` is intentionally kept (its de-materialise beat still needs a live node).
+
+Slice 05m extends this Engine Room surface for the **carryover-before-cleanup** lifecycle step. The
+reducer's `_GUIDANCE_PHASE` gains `"carryover-pending": "carryover-pending"`, surfacing
+`worktrees/modules/guidance.py`'s new phase (between integration and cleanup, raised while the parked
+memory still needs carrying home) to the process-map vocabulary. And `reducer._engine_process` maps the
+additive `EngineProcessNode.carryoverDoneAt` (`_str_or_none(status.get("carryoverDoneAt"))`) — the
+carryover milestone ISO time read off the OFFICIAL ledger by `guidance.carryover_done` and surfaced
+through `status_payload`; `None` until carried, display-only (5k renders the seam). Both are additive,
+so prior fixtures and the live feed render unchanged.
+
+Slice 3c **reopened (R1)** adds the **series/master surface** so a series master is observable, not just
+its leaves: `snapshots.read_series_documents` selects `kind == "master"` docs (keyed by task **folder**)
+and builds a `SeriesNode` (full reader: `objective` + `subTasks` + `sections` + `decisions` +
+`doneCount`/`totalCount` over the master's *declared* `subTasks[]`, each subtask one checkbox),
+threaded through `build_analytics`/`project_workspace`/`project_and_write` into additive
+`Analytics.series`. Task 17 changes Operations to project concrete active task documents first:
+`read_task_documents` now includes active master/leaf/light JSON docs even before lifecycle binding, and
+`TaskDocNode.lifecycleId` is optional runtime context. `TaskDocNode.id` carries the JSON-primary task id
+used by clients as the authored leaf display number; `TaskDocNode.createdAt` carries task creation time,
+and `SeriesSubTaskNode.createdAt` is resolved from the referenced sibling leaf JSON so clients can default
+to oldest-first leaf display without parsing task-name prefixes. Task 21 adds `SeriesNode.seriesTokenTotal`,
+derived by joining a master's declared sub-task files to projected sibling leaf task documents and summing
+their bound lifecycle token totals; missing or unbound leaves contribute zero.
+
+Slice 6c adds **gate projection** (the Task-6 gate/action plane): `snapshots.read_gates` folds every
+lifecycle + workspace `GateStore` log, and `reducer._attach_gates` materializes each lifecycle's
+latest *open* `GateRecord` onto `LifecycleProjection.gate` (a `GateNode`) while
+`_gate_attention` raises a `gate-open` queue item — so the cockpit can review and decide
+a durable gate, distinct from the event-derived `ask` proto-gate.
+
+Task 23/24 turns gate/operator-inbox prompts into TTL-bound interaction surfaces. `read_gates` can compact
+expired throwaway gate rows before projection, `AgentPickupNode` is the pending-inbox task-row feedback
+surface, and `read_agent_pickups` projects each pending inbox entry as `waiting-for-agent` until the
+5-minute pickup TTL, then `check-chat` until the developer dismisses it or the 24-hour interaction TTL
+deletes it. Durable tasks, contracts, and ledgers remain outside this cleanup path.
+
+Slice 6g extends the task-document surface for **series navigation**: `read_series_documents` remains the
+folder-keyed master aggregation surface, while `read_task_documents` projects every active JSON-primary
+task document and attaches lifecycle context when direct lifecycle ids, `enclosures[].enclosurePath`, or
+structured leaf/root enclosure matches exist. Task JSON scans skip `0_archive/` and `enclosures/`, so
+archived roots and contract folders do not reappear in the live projection. The enclosure contract can
+supply the lifecycle binding for a real JSON task document, but the contract itself is never projected as
+readable task-document content.
+
+Task 12 S2 adds repo-covered provider projection to the read side. `snapshots.read_providers` still owns
+the file-surface read of workspace `current.json` and each worktree group's provider state, but provider
+node construction now lives in `provider_nodes.py`: CGC `resources.watchers` rows become repo-scoped
+workspace provider nodes, and GrepAI `targetRepos` derived from configured repository memory roots become
+repo-scoped memory provider nodes. A single GrepAI runtime may still aggregate multiple repository
+memory projects; the route projects `targetRepos` because those projects are addressable targets inside
+that provider instance. Providers without explicit target evidence still fall back to one aggregate
+workspace provider node.
+
+Task 31 closes the provider-state honesty gap for live dashboards. `projection_store.project_and_write`
+can call a TTL-gated provider-state refresher before reading provider snapshots, so `current.json` tracks
+the actual provider stack instead of only changing after an explicit provider status call. `snapshots`
+also inspects isolated worktree provider containers from the worktree provider settings, and the reducer
+emits missing provider boot nodes for expected CGC/GrepAI roles when runtime/configured evidence is absent.
+The provider surface therefore distinguishes observed, configured-only, failed/degraded, and missing roles.
+
+Task 28 adds the **NOTIFY-AND-CONTINUE turn end** to this route — the new ACTIVE turn-end path that
+supersedes (but parks, un-hinted) the `lifecycle_gate`/inbox stack. The write side gains a non-terminal
+`awaiting-developer` state in `lifecycle_state.py` (deliberately *not* in `TERMINAL_STATES`) plus
+`ambient.await_developer(*, summary)` / `resume_from_await` — a `block`/`resume` peer with no gate and no
+wait (the model declares the turn complete and stops), `resume_from_await` kept a separate method so
+`resume` keeps its blocked-only guard. The read side folds it in `reducer.py`: a
+`lifecycle.awaiting-developer` arm rides the turn-end `summary` on the `ask` carrier (cleared on
+`lifecycle.resumed`), `_lifecycle_attention` raises a single `info` "Turn complete — your move" item via
+the new `_await_summary` helper, and its blocked branch is narrowed to `... and lifecycle.gate is None` —
+the one-line dedup that fixes the gate-open/blocked-gate double-emission when a durable open gate is
+already materialized by `_attach_gates`/emitted by `_gate_attention`.
+
+Task 28 S5.2 makes attention dismissal lifecycle-scoped instead of append-only suppression history.
+`AttentionDismissalStore` stores compact current acknowledgements keyed by item id; `reducer.py`
+honors them only when the item lifecycle id matches and the acknowledgement is at or after the item's
+`signalTs`; `projection_store.py` prunes acknowledgement rows for lifecycles outside the projected live
+set on each tick. Gate-open attention is consumed by cancelling/deleting the gate source itself.
+
+Task 29 makes the throwaway event/runtime surfaces lifecycle-aware at the backend boundary. The raw
+Event River now uses `event_retention.py` for cursorless fresh-connect offsets, one-hour terminal
+lifecycle pruning, and workspace age-window replay without a global count cap; the frontend no longer
+adds a shorter row cap on top of this backend lifetime policy. `worktree_provider_admission.py`
+derives active-enclosure worktree groups from enclosure contracts plus lifecycle logs: strict provider
+groups admit only provider-relevant active lifecycle phases, while a broader active group keeps
+non-terminal close/integration work visible in the Engine Room. `projection_store.py` reuses the same
+lifecycle/enclosure pass, prunes expired event logs, filters stale provider/setup/engine facts before
+projection, and caches repository surfaces on a short TTL so provider-state refreshes are not delayed by
+repeated git probes. Task 29 S7 enriches actionable-drift attention with repository, branch,
+source-root, memory-root, report-path, and checked-at provenance from the drift snapshot, and makes
+actionable drift the only targetless attention class that can be dismissed. Task 34 re-keys this
+raw-event retention on **inactivity** rather than the post-termination pruning above: a lifecycle's
+`events.jsonl` is pruned after >1h with no real (non-heartbeat) activity (fleeting and enclosure alike,
+not on `lifecycle.ended`), the `ambient.py` heartbeat ticker decays after ~10 min idle so a dormant log
+goes quiet and ages out on its own, and a fresh `/api/events` connect replays only a bounded recent
+window.
+
+Task 33 surfaces that active-enclosure admission to the dashboard Topology. `projection.py` gains the
+served `WorkspaceProjection.activeWorktreeGroups: list[str]` (the worktree-group basenames with a live
+enclosure lifecycle); `reducer.py`'s `project_workspace` accepts an `active_worktree_groups` kwarg and
+stores it sorted on the projection; and `projection_store.project_and_write` passes the very
+`active_enclosure_worktree_groups` set it already computes for the Engine Room — so the Topology and the
+Engine Room share one definition of "active" while the shared `enclosures`/`lifecycles` collections keep
+all-time history. `serving/delta.py` emits an `activeWorktreeGroups` whole-value delta when the set
+changes.
+
+## Route Model
+
+- `events.py` — the `ar-observer-event/v1` Pydantic envelope (`Event`): the
+  versioned record contract with Literal-typed `trust`/`actor` and camelCase
+  wire fields. The persisted-record peer of the `models/` response contracts,
+  but deliberately **not** an MCP response model (no token fields, never
+  returned by a tool, not in `PUBLIC_TOOL_RESPONSE_MODELS`).
+- `ulid.py` — `new_ulid()`: a local, stateless, dependency-free ULID mint
+  (48-bit ms time + 80-bit random, Crockford Base32) so ids are
+  lexicographically time-sortable and mintable without coordination.
+- `store.py` — `EventStore`: resolves the per-lifecycle
+  (`lifecycles/<id>/events.jsonl`) and workspace logs and appends events as
+  JSONL.
+- `event_retention.py` — raw Event River retention policy: fresh `/api/events`
+  offsets for lifecycle/workspace logs, **inactivity-keyed** per-lifecycle log deletion
+  (a fleeting or enclosure lifecycle log is pruned after >1h with no real, non-heartbeat
+  activity — keyed on inactivity, **not** a `lifecycle.ended` event, so dormant logs age
+  out on their own), and a bounded recent-window replay on a fresh connect (not
+  whole-history). This backend policy is the Event River lifetime boundary; the dashboard
+  keeps a memory-bounded sliding window but applies no shorter display cap.
+- `lifecycle_state.py` — the `State`/`Phase` Literals, the frozen
+  `LifecycleState` record, the typed errors (`LifecycleError`,
+  `GuardedStartError`), and the `coerce_phase` boundary validator. Pure
+  vocabulary with no I/O, so the later projection slice can reuse it. Task 28:
+  `State` gained the non-terminal `awaiting-developer` turn-end state.
+- `save_gate.py` — the pure save-gate vocabulary: the landing-zone scope rule
+  (`compute_scope` → `<repo_id>` / `0_unscoped` / `1_cross-repo`), the
+  `SaveDecision` boundary (`coerce_save_decision`), and `SaveGateRequired`. No
+  I/O, so the reducer can reuse the scope rule (slice 2c).
+- `ambient.py` — `AmbientLifecycle`, the process-singleton current lifecycle: the
+  signal state machine (start/block/resume/end/switch/phase) plus 2c
+  `promote`/`attach` and the save gate, the choke-point `emit_tool` hook, the
+  **activity-decaying** heartbeat ticker (task 34: it stops emitting after ~10 min with no
+  real, non-heartbeat activity and resumes on the next real signal, so an idle lifecycle's
+  log goes quiet and ages out under the inactivity retention), and the project-and-prune TTL
+  sweep, plus the
+  `ambient()`/`install_ambient`/`require_ambient`/`reset_ambient` registry. Task 28
+  adds the `await_developer(*, summary)` / `resume_from_await` NOTIFY-AND-CONTINUE
+  turn-end pair (no gate, no wait; a second resume path so `resume` keeps its
+  blocked-only guard).
+
+The slice-3a projection read side:
+
+- `timeutil.py` — the shared time leaf: `age_seconds`, the `Clock` alias, and the
+  timing thresholds (`HEARTBEAT_SECONDS`/`STALE_AFTER_SECONDS`/`TTL_SECONDS`) the
+  write side (ambient) and read side (reducer) both import, so they never drift.
+- `paths.py` — `observer_root(config)`, the single store-root resolver shared by
+  the writer (`server`) and the reader; dependency-light (no read-side imports).
+- `drift_snapshots.py` — the shared drift-snapshot filename, exact removal, and
+  worktree-orphan pruning helper used by the drift producer, projection tick,
+  cleanup, and tests.
+- `projection.py` — the projection schema (`LifecycleProjection`,
+  `WorkspaceProjection`, `EnclosureNode`, `ProviderNode`, `Metrics`,
+  `ActionAvailability`, slice 05 `AttentionItem` + `Analytics.attentionQueue`, and — slice 5e —
+  `EngineProcessNode`/`CommitRefNode`/`ProviderBootNode`/`EngineProcessEdge` + `Analytics.engineProcesses`
+  + the `EngineProcessFacts` input carrier, — R1/task 17 — `TaskDocNode.id`/`createdAt`,
+  `SeriesNode`/`SeriesSubTaskNode` (including optional `createdAt`)/`SeriesSectionNode`
+  + `Analytics.series`, and slice 6c `GateNode` + `LifecycleProjection.gate`): the persisted/served peer
+  of `events.py`, **not** an MCP response model. Task 29 S7 adds drift-snapshot provenance fields for
+  actionable-drift attention detail. `version` is 2.
+- `reducer.py` — the pure fold: `project_lifecycle` (events → projection, with the
+  inferred paused/abandoned layer, corrections, and token aggregation),
+  `project_workspace` (tree assembly, including current-enclosure reconciliation for
+  non-fleeting event-backed lifecycle rows), precomputed action availability, slice 05
+  `build_attention_queue` (+ slice 5f S6 `_start_attention`, the blocked-start chat-parity source),
+  and — slice 5e — `build_engine_processes` (the enclosure-centered process
+  map joined on the worktree-group basename; slice 05l P1 filters disposed enclosures via
+  `_is_disposed` and maps the `abandoned` guidance phase) + `_start_process_node` (pre-contract §5.4 synthesis).
+  Task 28 adds the `lifecycle.awaiting-developer` fold arm (summary on the `ask` carrier),
+  `_lifecycle_attention`'s `awaiting-developer` info item (via `_await_summary`), and the
+  `... and lifecycle.gate is None` blocked-gate/gate-open dedup. Task 29 S7 keys actionable-drift
+  attention by repository/branch, enriches its detail from snapshot provenance, and treats only
+  actionable drift as targetless dismissible attention.
+- `series_tokens.py` — the pure series-token aggregate helper: indexes non-master task documents by
+  series directory plus markdown filename, joins master `subTasks[].file` rows to bound leaf
+  lifecycles, and returns copied `SeriesNode`s with `seriesTokenTotal`.
+- `snapshots.py` — the file-surface readers reusing each producer's parser:
+  structural (`read_providers` S1, `read_enclosures` S5/S6; enclosures now come from active leaf
+  `enclosures/<leaf-id>/series-contract.md`, not root series contracts) from 3a, plus the
+  slice-3b analytical readers (drift snapshot S9, sidecar staleness S11, setup
+  summaries S2 + progress S3, route coverage S10, tool reports S12, ledger S8), the
+  slice-3c task-document reader (`read_task_documents` S7, active JSON-primary docs with optional
+  lifecycle attachment; leaf docs can bind through `enclosures[].enclosurePath` or structured leaf/root
+  enclosure matches, contracts themselves are skipped, and task JSON scans skip archives plus enclosure
+  folders), drift snapshots with `sourceRoot`, `memoryRoot`, optional `reportPath`, and `checkedAt`
+  provenance,
+  slice 5e `read_engine_process_facts` (contract + best-effort `status_payload` + `lifecycle_guidance`) +
+  `read_start_progress_entries` (§5.4), the slice 6c `read_gates` reader (folds the `GateStore` logs for
+  gate projection), plus — R1/task 17 — `read_series_documents` (`kind == "master"` docs keyed by task
+  folder; the companion master aggregation surface) carrying master objective and sorting sub-task rows
+  oldest-first by resolved sibling leaf `createdAt` only when every row has one.
+- `provider_nodes.py` — the provider-node projection policy used by `snapshots.read_providers`: it expands
+  CGC workspace current-state watcher rows and explicit GrepAI `targetRepos` into repo-scoped provider
+  nodes, keeps unsupported providers aggregate, and builds isolated worktree provider nodes by
+  `worktreeGroup`; configured-only worktree provider nodes stay distinct from observed runtime rows.
+- `worktree_provider_admission.py` — active-enclosure admission for worktree runtime surfaces:
+  strict groups for provider/setup alarms, broader non-terminal enclosure groups for Engine Room facts.
+- `projection_store.py` — the I/O edge: `read_lifecycle_logs`, the atomic
+  `latest-state.json`/`latest-metrics.json` writer, and the `project_and_write`
+  orchestrator the serving layer drives. It prunes expired raw lifecycle event logs, derives admitted
+  worktree groups before snapshot reads, and caches repository surfaces on a short TTL; live serving can
+  install a TTL-gated provider refresher here before snapshot reads, while sim/tests can omit it.
+
+## Invariants And Boundaries
+
+- **Single writer per lifecycle file.** A lifecycle is adopted by exactly one
+  live session, so appends need no cross-process lock. Every event in a
+  lifecycle file is written by that lifecycle's live owner; the only cleanup of a
+  dead lifecycle is the TTL *prune* of a dormant fleeting log (a directory
+  deletion), never a non-owner append.
+- **Events are a persisted, versioned contract.** The envelope carries
+  `schema = ar-observer-event/v1`; readers `model_validate` records back, so the
+  format must round-trip. Always serialize with
+  `model_dump_json(by_alias=True, exclude_none=True)`.
+- **Replayability is a schema requirement.** Stable ordering (append order; ULID
+  tie-break) and self-contained `lifecycle.started` events let one log replay one
+  lifecycle's state alone — the same recorded log doubles as dev/test/demo/replay
+  fixture.
+- This route owns both sides: the write side + ambient lifecycle (signals +
+  emission + heartbeat + TTL) **and** the read side — the pure reducer that owns
+  interpretation (projection, state, metrics, staleness, action availability).
+- The fold is pure: `project_lifecycle`/`project_workspace` take already-read
+  inputs; all file I/O lives at the edge (`snapshots`, `projection_store`).
+- Analytical surfaces are cheap reads (slice 3b): drift is read from a persisted
+  snapshot, never re-classified in the reducer (git-per-sidecar stays in the
+  on-demand drift tools); large inventories collapse to rollups + bounded samples
+  so the served projection stays lean.
+- Derived states are flagged `inferred` so a renderer never shows a projected
+  state as a written fact ("never pretend declared is observed").
+- **Persistent lifecycle rows are current-enclosure-owned:** deleting or re-owning an enclosure removes
+  the older non-fleeting lifecycle from `WorkspaceProjection.lifecycles`; fleeting lifecycles and fresh
+  non-terminal promotion/gate windows are explicitly outside that deletion rule.
+- **Task documents disappear only by archive/delete:** active JSON-primary task docs under
+  `tasks/<repo>/...` project regardless of lifecycle binding or terminal status. Completed/abandoned
+  status is filter/history state; moving the doc under `0_archive/` or deleting it is what removes it
+  from Operations.
+- **Masters have two surfaces:** `read_task_documents` projects the concrete active master document for
+  direct selection, while `read_series_documents` also projects the folder-keyed checklist aggregation.
+  Series progress reads the master's *declared* `subTasks[]`, never a slice's leaf steps. Leaf
+  `series-contract.md` files are enclosure/process state, not task documents.
+- **Series token totals are composed:** `seriesTokenTotal` is derived from already-projected
+  task-document and lifecycle nodes, not read from the master JSON and not inferred from file names
+  beyond the explicit master `subTasks[].file` join key.
+- **Creation order is structured, not parsed:** task creation time comes from `ar-task-document/v1`
+  `createdAt`; series sub-task ordering may use it when all referenced leaves resolve, otherwise the
+  master-authored order remains authoritative.
+- **Drift snapshot retention is physical, not only filtered:** configured-repo snapshots stay; valid
+  worktree snapshots stay only while their leaf contract still points at an existing code worktree.
+  Projection-time pruning removes valid orphaned snapshots before the analytical surface is read, and
+  cleanup removes the exact snapshot for the contract it is reclaiming.
+- **Raw event retention is inactivity-keyed (task 34):** a lifecycle log is pruned after >1h with no
+  real (non-heartbeat) activity — fleeting and enclosure lifecycles alike — keyed on inactivity rather
+  than a `lifecycle.ended` event, and the heartbeat ticker decays after ~10 min idle so a dormant
+  lifecycle stops refreshing its own activity and ages out; workspace/lifecycle-less events retain only
+  the short replay age window, and a fresh connect replays only a bounded recent window. The frontend
+  keeps a memory-bounded sliding window and virtualizes it, adding no shorter display cutoff.
+- **Worktree runtime facts require active enclosure admission:** stale `provider-state.json`,
+  setup-progress, or historical contract files do not page or feed process facts unless the enclosure's
+  lifecycle is still active under the relevant provider/Engine Room boundary.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The design this substrate implements (entities, store layout, retention, TTL project-and-prune). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| The persisted-record envelope is the peer of the MCP response contracts. | [models/](agents-remember/mcp/src/agents_remember/models/) |
+| Provider-node projection is a route-local read-side helper used by the snapshot reader. | [provider_nodes.py](provider_nodes.py) |
+| Raw event retention is centralized before `/api/events` replay and projection ticks prune expired lifecycle logs. | [event_retention.py](event_retention.py) |
+| Active-enclosure worktree admission gates provider/setup/runtime facts before projection. | [worktree_provider_admission.py](worktree_provider_admission.py) |
+| Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | [series_tokens.py](series_tokens.py) |
+| Drift snapshot pathing and worktree-orphan pruning are centralized for producer/projection/cleanup parity. | [drift_snapshots.py](drift_snapshots.py) |
+| The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
+
+## Update History
+
+- 2026-06-28T13:54+02:00 — Task 34 route impact: raw Event River retention is now **inactivity-keyed**
+  rather than termination-keyed — `event_retention.py` prunes a fleeting or enclosure lifecycle log after
+  >1h with no real (non-heartbeat) activity (not on `lifecycle.ended`), `ambient.py`'s heartbeat ticker
+  decays after ~10 min idle so a dormant lifecycle stops refreshing its own activity and ages out, and a
+  fresh `/api/events` connect replays only a bounded recent window. Updated the `ambient.py` /
+  `event_retention.py` Route Model bullets, the retention invariant, and the Task-29 retention narrative.
+  Verification metadata pinned until closeout stamps the task-34 code commit.
+- 2026-06-28T07:45+02:00 — Task 33 route impact: `projection.py`/`reducer.py`/`projection_store.py` now expose
+  `WorkspaceProjection.activeWorktreeGroups`, sourced from `active_enclosure_worktree_groups` (shared with
+  the Engine Room) and consumed by the dashboard Topology for active-enclosure scoping. Verification
+  metadata pinned until closeout stamps the code commit.
+- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: actionable-drift attention now carries
+  repository/branch/source/memory/report/checked-at provenance, uses checked-at as the signal time,
+  and is the only targetless dismissible attention type. The raw Event River lifetime remains owned by
+  backend retention, with no shorter frontend row cap. Verification metadata pinned until closeout
+  stamps the task-29 code commit.
+- 2026-06-28T05:38+02:00 — Task 29 route impact: added lifecycle-aware raw
+  Event River retention, active-enclosure worktree provider admission, broader active Engine Room
+  admission, projection-time expired-event pruning, and a short repo-surface cache so stale worktree
+  runtime files no longer page or dominate refresh cost. Verification metadata pinned until closeout
+  stamps the task-29 code commit.
+- 2026-06-28T03:52+02:00 — Task 28 S5.2 after source sync: route now documents
+  lifecycle-scoped attention acknowledgements, reducer signal anchors, and projection-time pruning of
+  acknowledgement rows for non-live lifecycles. Verification metadata pinned until closeout stamps the
+  task-28 code commit.
+- 2026-06-28T03:33+02:00 — Task 32 memory-mirror pruning: added `drift_snapshots.py` to the
+  route model and documented the physical retention boundary for configured repositories, active
+  worktrees, projection pruning, and cleanup removal. Verification metadata pinned until closeout stamps
+  the task-32 code commit.
+- 2026-06-28T03:21+02:00 — Task 31 route impact: provider snapshots now refresh live provider current-state
+  through the projection-store seam, worktree provider facts inspect isolated Docker containers from the
+  provider settings, and the reducer emits `missing` provider boot nodes for expected CGC/GrepAI roles with
+  no evidence. Added focused tests for provider state refresh, worktree provider inspection, missing-role
+  projection, Operations nesting, and the `_inspect_result_map` CRAP regression. Verification metadata
+  pinned until closeout stamps the task-31 code commit.
+- 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): documented the new ACTIVE turn-end
+  path across this route — the non-terminal `awaiting-developer` state in `lifecycle_state.py`, the
+  `ambient.await_developer`/`resume_from_await` signal pair (no gate, no wait; `resume` keeps its
+  blocked-only guard), and the reducer's `lifecycle.awaiting-developer` fold arm + `_lifecycle_attention`
+  `awaiting-developer` item (`_await_summary`) + the one-line `lifecycle.gate is None` blocked-gate/gate-open
+  dedup. The old `lifecycle_gate`/inbox stack is parked (kept, un-hinted). Verification metadata pinned
+  until closeout stamps the code commit.
+- 2026-06-26T20:18+02:00 — Task 21 series token rollup: documented `SeriesNode.seriesTokenTotal` and
+  the `series_tokens.py` helper that composes the aggregate from projected sibling task documents and
+  lifecycle token totals. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-26T15:13+02:00 — Task 25 lifecycle live-row cleanup: the observer route now documents
+  current enclosure ownership as the live boundary for non-fleeting lifecycle rows, with explicit
+  exceptions for fleeting lifecycles and fresh non-terminal promotion/gate windows. Verification metadata
+  pinned until closeout stamps the code commit.
+- 2026-06-26T14:16+02:00 — No route impact: task 25 only clarifies `ambient.build_ask`/`block` as the shared ask path used by `lifecycle_gate`; the observer route model is unchanged.
+- 2026-06-25T13:20+02:00 — Task 23/24: observer route now covers TTL-compacted gates and `AgentPickupNode` waiting-for-agent/check-chat projection.
+- 2026-06-24T18:11+02:00 — Task 17 observer route correction: `TaskDocNode.id` now exposes the
+  JSON-primary task id for authored leaf labels, separate from parent `subTasks[].number` fallback data.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T16:39+02:00 — Task 17 Operations route correction: active JSON task docs now project
+  independently of lifecycle/enclosure binding, `TaskDocNode.lifecycleId` is optional runtime context,
+  master docs project on both task-document and series surfaces, and archive/delete is the Operations
+  disappearance boundary. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T12:21+02:00 — Task 17 route impact: the observer projection now carries task/series
+  `createdAt` metadata, master `objective`, and a series-reader ordering rule that uses resolved leaf
+  creation times only when complete. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T08:59+02:00 — Task-document correction: clarified that `read_task_documents` may use
+  enclosure metadata to bind a real JSON task document to a lifecycle, but never projects
+  `series-contract.md` itself as readable task content. Verification metadata pinned until closeout
+  stamps the code commit.
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: observer snapshots now read only active leaf `enclosures/<leaf-id>/series-contract.md` contracts for live enclosures/engine processes, project `enclosureId`/`leafId`/`taskRoot`, bind leaf task docs through `enclosures[].enclosurePath`, and skip `0_archive` plus enclosure folders in task JSON scans. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-23T22:31+02:00 — Task 12 S2 clarification: provider projection now documents GrepAI as one
+  aggregate provider instance with individually addressable `targetRepos`, and worktree GrepAI as the
+  same multi-root shape with only the active project root redirected. Verification metadata pinned until
+  closeout stamps the S2 code commit.
+- 2026-06-23T22:09+02:00 — Task 12 S2 correction: GrepAI workspace current state now persists
+  configured repository memory-root targets as `targetRepos`, so the observer route projects those
+  memory roots as repo-scoped workspace provider nodes instead of treating GrepAI as unmapped.
+  Verification metadata pinned until closeout stamps the S2 code commit.
+- 2026-06-23T21:46+02:00 — Task 12 S2 route impact: added `provider_nodes.py` to the read-side route
+  model; `snapshots.read_providers` now delegates provider-node policy there so CGC workspace
+  `resources.watchers` rows project as repo-scoped provider nodes. Later 22:09/22:31 entries document the
+  GrepAI `targetRepos` correction. Verification metadata pinned until closeout stamps the S2 code commit.
+- 2026-06-23T01:40+02:00 — No route impact: slice 07b v1, `ambient.emit_read_packet` now takes the read's `repo_id` (signature `emit_read_packet(repo_id, files)`) and carries it as `data.repoId` on the `read.packet` (a fact, distinct from the envelope `repoId`); the facts-only per-file projection and this route's reader/reducer/projection split are unchanged (detail in the `ambient.py` sidecar). Verification metadata pinned until closeout stamps the slice-07b code commit.
+- 2026-06-23T00:53+02:00 — No route impact: slice 07 S5 retargets the `served_store.py` module docstring only — the `compact-reset.json` producer is deferred to the post-3.0 agentic-control-plane (no session-hook producer), with the controller-side consumer + `refresh=true` kept as defensive scaffolding; the `ServedRecord`/`ServedStore` surface and this route's reader/reducer/projection split are unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the slice-07 code commit.
+- 2026-06-21T06:40+02:00 — Slice 05m (carryover-before-cleanup): extended the **Engine Room** surface in this route's reducer — `_GUIDANCE_PHASE` gained `"carryover-pending": "carryover-pending"` (surfaces guidance.py's new carryover phase, between integration and cleanup, to the process-map vocabulary), and `_engine_process` maps the additive `EngineProcessNode.carryoverDoneAt` (the carryover milestone ISO time, read off the official ledger by `guidance.carryover_done` and surfaced through `status_payload`; `None` until carried, display-only — 5k renders the seam). Added a Purpose paragraph; both reducer changes are additive so prior fixtures + the live feed are unchanged. The carryover/cleanup lifecycle correctness itself lives in the `worktrees/modules/` overview. Verification metadata pinned until closeout stamps the 05m code commit.
+- 2026-06-21T05:30+02:00 — Slice 05l Part 2 (landing-arc probe hardening): refreshed this route's successful-landing-arc paragraph for the display-only `LandingRefNode.at` (gh's PR milestone timestamp — mergedAt once merged, else createdAt), which the reducer's `LandingRefNode(**ref)` splat picks up from the `worktrees/modules/landing.py` probe with no reducer change, and added `origin/<base>` to the participant list. The probe-side hardening (direct `origin/<base>` `ls-remote`, `_default_branch`) lives in the `worktrees/modules/` overview; this route's reducer/schema split is otherwise unchanged. Verification metadata pinned until closeout stamps the 05l-P2 code commit.
+- 2026-06-21T04:10+02:00 — Slice 05l Part 1 (backend teardown visibility): extended the **Engine Room** surface in this route's reducer — `_GUIDANCE_PHASE` gained `"abandoned": "abandoned"` (surfaces guidance.py's new abandoned phase to the process-map vocabulary), and a new `_is_disposed(fact)` (True when the contract's `cleanup` is `completed`/`abandoned`) now filters `build_engine_processes` so a disposed enclosure drops from the active `Analytics.engineProcesses` (the frontend 05k animates the removal); `cleanup-pending` is intentionally kept. No new schema or surface — additive reducer logic. Verification metadata pinned until closeout stamps the 05l-P1 code commit.
+- 2026-06-21T02:44+02:00: Slice 6g — extended the task-document surface for series navigation: `read_task_documents` started taking `enclosures` for runtime attachment and resolves **cross-master links** via the new `_ref_lifecycle`/`_task_doc_node` helpers (subTask `file`→`linkedLifecycleId`; doc `master` ref→`masterLifecycleId`); `projection.TaskDocNode` gains `subTasks`/`sections`/`masterLifecycleId` + the `TaskSubTaskRefNode`/`TaskSectionNode` nodes. Later Task 17 narrowed master runtime attachment to structurally root lifecycles. Additive, no `version` bump. Verification metadata pinned until closeout stamps the 6g code commit.
+- 2026-06-19T03:17+02:00 — Slice 3c reopened (R1, masters observable): added the **series/master surface** to this route — `snapshots.read_series_documents` (`kind == "master"`, keyed by task folder), the `SeriesNode`/`SeriesSubTaskNode`/`SeriesSectionNode` schema nodes + additive `Analytics.series` in `projection.py`, and the `series` threading through `build_analytics`/`project_workspace`/`project_and_write`. Later Task 17 made master docs a dual-surface case: concrete task document plus folder-keyed series aggregation. Verification metadata pinned until closeout stamps the R1 code commit.
+- 2026-06-18T21:25+02:00 — No route impact: slice 5h Tier 2 enriches the ledger-window rows with the per-side commit message + committer date — one batched, best-effort `git log --no-walk --ignore-missing` per repo in the `snapshots` I/O layer (`_git_commit_meta` / `_enrich_ledger_rows`; `_ledger_window` / `read_ledger` gained `code_root`/`memory_root` params), still passed through the pure reducer. The observer's surface inventory + reader/reducer/projection split this overview describes is unchanged (best-effort git at the I/O edge is already an invariant here) — detail in the `snapshots.py` / `projection.py` / `projection_store.py` sidecars. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-18T18:00+02:00 — No route impact: slice 5h ledger popover adds additive `LedgerNode.rows` (surface 8) + `EngineProcessNode.ledgerRows`/`ledgerRowCount`, read best-effort in `snapshots` (`_ledger_window` + `read_ledger`) and passed through the pure reducer; the observer's surface inventory + reader/reducer/projection split this overview describes is unchanged — detail in the file sidecars. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-18T14:05: Task 6 slice 6c Part A — added **gate projection** to this route: `snapshots.read_gates` folds the `GateStore` logs, `reducer._attach_gates` materializes each lifecycle's latest open gate onto `LifecycleProjection.gate` (`GateNode`), and `_gate_attention` raises a `gate-open` attention item, threaded through `project_workspace` / `project_and_write`. Verification metadata pinned until closeout stamps the 6c Part A code commit.
+- 2026-06-18T08:51+02:00: Slice 5h H1 — extended the Engine Room surface with the successful-landing arc: additive `LandingRefNode` + `EngineProcessNode.landing`/`integrationStrategy` in `projection.py`, the composer mapping in `reducer.py` (reads `status["landing"]`), fed by the new best-effort `worktrees/modules/landing.py` probe. Verification metadata pinned until closeout stamps the 5h code commit.
+- 2026-06-16T03:25: Slice 5f S6 (§9) — closed the blocked-start observability gaps in this route's reducer: `build_attention_queue` gained a `start_progress` param + the `_start_attention` builder (a pre-contract blocked start raises the same master-caution the agent raises in chat), threaded via `project_workspace`'s `engine_start_progress`. (The happy-path start-progress emit lives in `worktrees/modules/start.py`.) Verification metadata pinned until closeout stamps the S6 code commit.
+- 2026-06-15T19:35: Slice 5e — added the **Engine Room process-map** surface: `EngineProcessNode` (+ `CommitRefNode`/`ProviderBootNode`/`EngineProcessEdge`) and the derived `Analytics.engineProcesses` in `projection.py` (version 1→2), the pure `build_engine_processes` + pre-contract `_start_process_node` in `reducer.py`, and `read_engine_process_facts` + `read_start_progress_entries` (§5.4) in `snapshots.py`, threaded through `project_workspace`/`build_analytics`/`project_and_write`. Verification metadata pinned until closeout stamps the 5e code commit.
+- 2026-06-14T23:30+02:00: Slice 05 (5c) — completed the read side for the cockpit: `reducer.project_workspace` synthesizes paused persistent lifecycles from worktree enclosures (note 01); `snapshots.read_providers` reads per-worktree provider stacks (surface 4) bound to worktree/repo/role; `projection`/`snapshots` carry the full task content (`TaskDocNode` + step/decision/code-example nodes) and `ProviderNode` binding fields. Verification metadata pinned until closeout stamps the 5c code commit.
+- 2026-06-14T17:28+02:00: Slice 05 (5b) — added the attention-queue surface to this route: `AttentionItem` + the derived `Analytics.attentionQueue` in `projection.py`, and the pure `build_attention_queue` (+ per-source helpers) in `reducer.py`, wired through `project_workspace` with no call-edge change. Verification metadata pinned until closeout stamps the 5b code commit.
+- 2026-06-13T22:34: Slice 3c commit 2 — added the task-document read side: `read_task_documents` (surface 7) in `snapshots.py`, the `TaskDocNode` schema node + `Analytics.taskDocuments`, and the reducer/store wiring (`build_analytics`/`project_workspace`/`project_and_write` gained an optional `task_documents` input). Later Task 17 made the reader active-doc-first with optional lifecycle attachment. Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
+- 2026-06-13T20:48+02:00: Slice 3b — added the analytical surface readers to
+  `snapshots.py` (drift snapshot, sidecar staleness, setup summaries/progress,
+  route coverage, tool reports, ledger), the derived-aggregate rollups
+  (`token_series`, `staleness_histogram`, `build_analytics`) + the `Analytics`
+  schema block, and the drift-snapshot producer write in `memory_quality`
+  (`summary._write_drift_snapshot`) sharing the `paths` drift contract. The route
+  now owns the full read side. Verification metadata is pinned until closeout
+  stamps the 3b code commit.
+- 2026-06-13T19:30+02:00: Slice 3a — added the projection **read side** to this
+  route (`reducer.py`, `projection.py`, `snapshots.py`, `projection_store.py`,
+  `paths.py`) plus the shared `timeutil.py` leaf (timing thresholds +
+  `age_seconds` moved out of `ambient`). The route now owns interpretation, not
+  just the write side; structural surfaces (providers/contracts) land in 3a,
+  analytical surfaces + rollups in 3b. Verification metadata is pinned until
+  closeout stamps the 3a code commit.
+- 2026-06-13T18:45+02:00: Slice 2c — added `save_gate.py` (the pure save-gate
+  vocabulary) to the Route Model and extended `ambient.py` with `promote`/`attach`
+  and the save gate; `lifecycle_state.py` gained the persistence-binding fields.
+  Resume + save gate close the write-side seams (the reducer read side still lands
+  later). Verification metadata is pinned until closeout stamps the 2c code commit.
+- 2026-06-13T16:41+02:00: Slice 2b — added the ambient lifecycle to this route
+  (`ambient.py`, `lifecycle_state.py`): the signal state machine, choke-point
+  emission, heartbeat ticker, and TTL project-and-prune sweep. Verification
+  metadata is pinned until closeout stamps the 2b code commit.
+- 2026-06-13T11:15+02:00: Created for slice 2a — the observable-lifecycle event
+  substrate write side (`events.py`, `ulid.py`, `store.py`). Verification
+  metadata is pinned until closeout stamps the 2a code commit.

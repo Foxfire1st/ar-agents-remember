@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -17,18 +17,23 @@
 ## Purpose
 
 `worktree_contract.py` reads, writes, validates, and renders the `c-09-git-worktree-manager` skill
-`contract.md` file that records worktree-backed task state.
+`series-contract.md` files. A root series contract records a master task's integration branch; a leaf
+enclosure contract records one concrete worktree under `enclosures/<leaf-id>/series-contract.md`.
 
 ## Code Commentary
 
 ### Logic
 
-The module defines the contract schema, supported memory modes, the
-`WorktreeContract` dataclass, deterministic task/worktree folder naming helpers,
-default contract construction, markdown front-matter serialization, validation,
-limited YAML-like parsing, and conversion from parsed front matter back into a
-typed contract object. Contract rendering is split into small section renderers
-for memory, sync, human review, closeout, integration, and body content.
+The module defines the single `ar-series-contract/v1` schema, supported memory modes, valid contract
+`kind`s (`series` or `leaf`), the `WorktreeContract` dataclass, deterministic worktree folder helpers,
+root/leaf default constructors, markdown front-matter serialization, validation, limited YAML-like parsing,
+and conversion from parsed front matter back into a typed contract object. Contract rendering is split into
+small section renderers for memory, sync, human review, closeout, integration, and body content. Task-folder
+lookup is delegated to `worktrees/task_resolver.py`; this module no longer owns active-task lookup.
+
+`lifecycle_id` (slice 2c) remains the observable-lifecycle enclosure anchor for leaf contracts, rendered as
+a `lifecycle:` front-matter section and parsed back through `_section(data, "lifecycle")`. Root series
+contracts represent integration branches and do not require a lifecycle id.
 
 `sync_log` (issue #54 sub-task D) records each `worktree_sync` base-pair
 advance as a tuple of dict entries. It is a real dataclass field because the
@@ -46,11 +51,11 @@ contract files human-readable without introducing a general YAML dependency.
 
 ### Invariants And Boundaries
 
-- External-memory contracts must include memory repo, memory worktree, and
-  ledger paths.
+- External-memory leaf contracts must include memory repo, memory worktree, and
+  ledger paths; root series contracts can point at the memory repo ledger without a leaf memory worktree.
 - Contract serialization must preserve closeout and integration state.
-- Task and worktree folders use slugified names with legacy `-ar` support only
-  where the resolver needs to find existing work.
+- Leaf worktree folders use slugified names with legacy `-ar` support only where the resolver needs to find
+  existing work; task-root lookup lives in `worktrees/task_resolver.py`.
 - `ContractError` subclasses the shared `AgentsRememberError` (imported from
   `agents_remember.errors`); since that base itself derives from `ValueError`,
   existing `except ValueError` callers still catch contract failures while the
@@ -87,6 +92,8 @@ external memory paths, but the parser and renderer are same-repository code.
 
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `worktree_contract.py` now owns the single `ar-series-contract/v1` schema with `kind` (`series` or `leaf`), root `series-contract.md` integration contracts, leaf `enclosures/<leaf-id>/series-contract.md` contracts, parent linkage fields, and parser compatibility only for path key names inside that schema. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-13T18:45+02:00 — Slice 2c: added the additive `lifecycle_id` field (the observable-lifecycle enclosure anchor, design §1.1) on the unchanged `v1` schema — rendered as a `lifecycle:` front-matter section, parsed back via `_section`, defaulting to "" for pre-2c contracts. Verification metadata pinned until closeout stamps the 2c code commit.
 - 2026-06-10T09:56+02:00 — Added the `sync_log` field + `sync:` section (compact JSON scalar, backward-compatible empty default) for issue #54 sub-task D worktree_sync bookkeeping.
 - 2026-05-31T12:50+02:00 — `ContractError` re-based from `ValueError` to the shared `AgentsRememberError` (imported from `agents_remember.errors`); corrected the error-type prose in Invariants And Boundaries and Repo-Internal References to name the new domain base while noting `except ValueError` callers still catch it (1.0.0 review remediation).
 - 2026-05-25T20:41+02:00: Updated after contract rendering was split into section helpers during worktree package refactoring.

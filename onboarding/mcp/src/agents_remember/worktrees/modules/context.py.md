@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/context.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -33,7 +33,12 @@ No external Domain Documentation source is configured for this memory repo.
 | The kernel resolver owns topology, storage, path rules, and cross-repo resolution. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 | Closeout planning uses this module before refreshing onboarding metadata. | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
 
+## Series-Contract Notes
+
+The context wrapper forwards `parent_task` and `leaf_id` from `WorktreeArgs` to the resolver before operation modules build or load contracts.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: worktree context resolution now forwards `parent_task` and `leaf_id` from `WorktreeArgs` into the coordination resolver. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-31T12:50+02:00 — `resolve_context()` now takes a typed `WorktreeArgs` (from `agents_remember.worktrees.modules.args`) instead of `argparse.Namespace`, dropping the `import argparse`; corrected Code Commentary "command namespaces" prose to name the dataclass (1.0.0 review remediation).
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T08:39+02:00|
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-26T20:18+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,9 +26,16 @@ Use `context_packet.py` for compact `ContextPacketV2` assembly,
 `coordination_tools.py` for resolver calls, `memory_tools.py` for drift,
 memory quality, route-index, init, baseline, and carryover operations,
 `provider_tools.py` for provider status/diagnostics/watchers and GrepAI/CGC
-operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree operations,
+operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree operations
+including the terminal `lifecycle_finalize_task` path,
 `benchmark_tools.py` for Codex benchmark prepare/run, `runtime_install.py` for
-runtime install, and `skill_tools.py` for skill installation.
+runtime install, `skill_tools.py` for skill installation, `task_doc_tools.py`
+for JSON-primary task-document authoring, including full-document replace for
+schema-validated task resets/replans (slice 3c) and same-root leaf-to-master row sync (Task 21), and `read_files.py` for the
+`read_ar_files` paired source+onboarding batch reads (slice 07; resolution lives
+in the controller so a later dashboard `GET /api/files` route can reuse it).
+Context and worktree controllers forward `parent_task`/`leaf_id` into the source resolver, and task-doc
+authoring writes `seriesContractPath` plus `enclosures[]` instead of the retired `contractPath`.
 
 ## Route Model
 
@@ -70,6 +77,28 @@ repos plus a `ledgerMapsCodeHead` mapping check; the default stays
 
 ## Update History
 
+- 2026-06-26T20:18+02:00 — Task 21 route impact: `task_doc_tools.py` remains the task-document authoring
+  controller and now also composes same-root leaf-to-master row sync through the task service layer.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-26T16:15+02:00 — No route impact: re-verified `task_doc_tools.py`
+  against the source-branch `replace` controller (`_replace` preserves the existing JSON path and
+  refuses slug/kind path drift); lifecycle-gate API consolidation does not change the controller
+  route model.
+- 2026-06-26T15:33+02:00 — No route impact: task 25 preserves `task_doc_tools.py`'s
+  source-branch `replace` operation; lifecycle-gate API consolidation does not change the controller
+  route model, and operation-level detail remains in file sidecars. Verification metadata pinned until
+  closeout stamps the code commit.
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: controllers now route `parent_task` and `leaf_id` through context/worktree operations, and `task_doc_tools.py` creates `seriesContractPath` plus `enclosures[]` references instead of the retired `contractPath`. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-23T23:04+02:00 — Dashboard task 14 adds `lifecycle_finalize_task_tool` to `worktree_tools.py`. The controller remains a typed operation facade: it confines coordination paths, builds `FinalizeArgs`, and delegates branch-edge proof, cleanup verification, and task-document reconciliation to `worktrees/modules/finalize.py`.
+- 2026-06-23T01:40+02:00 — No route impact: slice 07b v1, `read_files.py` now passes `repo.repo_id` to `emit_read_packet` so the `read.packet` carries `data.repoId`; the controller stays a typed operation facade delegating emission to the `observer` service, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the slice-07b code commit.
+- 2026-06-23T00:53+02:00 — No route impact: slice 07 S5 retargets the `read_files.py` compact-reset docstring only — the `compact-reset.json` producer is deferred to the post-3.0 agentic-control-plane (no session-hook producer), with the consumer (`_maybe_reset_served`) + `refresh=true` kept as defensive scaffolding; no controller signature or behavior changed, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the slice-07 code commit.
+- 2026-06-22T22:33+02:00 — Slice 07: added `read_files.py`, the `read_ar_files` controller (paired source+onboarding batch reads of ≤5 repo-relative paths, with its own path-confinement guard, route-index onboarding lookup, session-deduped overview front-door, and facts-only `read.packet`); added it to the Hot Path Summary. It stays a typed operation facade — resolution lives in the controller so a later dashboard `GET /api/files` route can reuse it — so the route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the slice-07 code commit.
+- 2026-06-19T07:23+02:00 — No route impact: slice 3c R5 adds a `dry_run` param + a `_preview` helper to `task_doc_tools.py` (renders + diffs the would-be doc and returns `rendered`/`diff`/`wouldLose` without writing); the controller stays a typed operation facade, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-19T06:03+02:00 — No route impact: slice 3c R4 adds `statusNote` to `_MUTABLE_FIELDS` and drops the master-only guard on `set_section` (a leaf may upsert freeform sections; the schema validator backstops) in `task_doc_tools.py`; the controller stays a typed operation facade, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-19T05:15+02:00 — No route impact: slice 3c R3 adds `codeExamplesNote` to `_MUTABLE_FIELDS` in `task_doc_tools.py` so `set_field` can record the deferred-examples note; the controller stays a typed operation facade, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-14T00:16 — No route impact: slice 3c commit 3 adds master ops (`set_subtask`/`set_section`) + master `create` handling to `task_doc_tools.py`; the controllers stay typed operation facades, so the route model this overview describes is unchanged (detail in the file sidecar).
+- 2026-06-13T22:34 — Slice 3c commit 1: added `task_doc_tools.py`, the op-dispatched controller behind the `task_doc` authoring tool (load/create the `ar-task-document/v1` JSON, apply one edit, re-render the markdown); added it to the Hot Path Summary. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- 2026-06-13T18:45+02:00 — No route impact: slice 2c adds the observer-attribution wiring to `worktree_tools.py` (`_attribute_start`/`_attribute_attach` driving `ambient().promote`/`attach`); the controllers stay typed facades delegating behavior to the `observer` service, so the route model this overview describes is unchanged (detail in the file sidecar).
 - 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: `worktree_tools.py` dropped the `direct_closeout_*` controllers, so the Hot Path Summary now describes it as the worktree-operations facade only.
 - 2026-06-10T09:56+02:00 — No route impact: sub-task D adds `worktree_sync_tool` as another typed worktree operation facade in `worktree_tools.py` (path confinement + forwarding); the route model this overview describes is unchanged (detail in the file sidecar).
 - 2026-06-10T09:30+02:00 — No route impact: sub-task B's `worktree_tools.py` change is a plumbing-only forward of `stale_base_choice` into `WorktreeArgs`; the controller surface this overview describes is unchanged (detail in the file sidecar).

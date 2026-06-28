@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 
 ## Purpose
 
@@ -59,8 +59,13 @@ No external domain documentation applies to this repository-local skill contract
 | ---------------------------------------------------------------------- | --------- | ----------- |
 | No meaningful cross-repo references found for current skill semantics. | n/a       | n/a         |
 
+## Series-Contract Notes
+
+The packaged resolver skill now teaches active task-name lookup, optional `parent_task` disambiguation, optional `leaf_id` selection, and root/leaf `series-contract.md` paths so installed runtimes do not look for `contract.md`.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged resolver instructions now document `series-contract.md`, active task-root lookup, `parent_task`, and `leaf_id` so installed runtimes do not teach the retired `contract.md` schema. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` removed source-checkout `.env` resolver authority from `c-08-ar-coordination-context-resolver` skill guidance.
 - 2026-05-24T09:52+02:00: Updated after source-checkout `.env` and `.env.example` stopped being coordination-root resolver inputs.

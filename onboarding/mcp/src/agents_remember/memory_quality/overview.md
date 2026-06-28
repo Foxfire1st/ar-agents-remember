@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `610b8568b6517a78a80d35583101b32ed396e2a7` |
-| lastVerifiedCommitDate | 2026-06-11T15:49:54+02:00|
+| lastUpdated            | 2026-06-28T07:43+02:00                     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -36,7 +36,13 @@ history-order fixes.
 - `check.py` normalizes check names, dispatches quality runners, and returns one
   combined payload.
 - `integrity/onboarding_drift_check/` contains the moved `c-02-memory-quality-control` skill drift classifier
-  and bounded summary helper.
+  and bounded summary helper; the summary run also persists a durable
+  `ar-drift-snapshot/v1` JSON (best-effort) under `logs/observer/drift/` for the
+  observer dashboard to read without re-classifying (slice 3b). Task 29 S7 writes the snapshot's
+  `sourceRoot`, `memoryRoot`, optional `reportPath`, and `checkedAt` provenance so actionable-drift
+  attention can say which repo/memory pair raised the notice and when it was measured. Task 32 routes
+  that writer through the shared observer drift-snapshot path helper so producer
+  writes, projection pruning, and cleanup deletion share one filename contract.
 - `integrity/check_missing_onboarding.py` checks only current worktree
   additions so newly added eligible files get sidecars before the code commit.
 - `style/update_history/` checks that onboarding `## Update History` bullets
@@ -68,6 +74,11 @@ history-order fixes.
 
 ## Update History
 
+- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: drift snapshot summaries now carry source-root,
+  memory-root, optional report-path, and checked-at provenance for actionable-drift attention detail.
+  Verification metadata pinned until closeout stamps the task-29 code commit.
+- 2026-06-27T23:09+02:00 — Task 32 route impact: the drift summary writer now uses the shared observer drift-snapshot path helper, keeping producer writes aligned with projection pruning and cleanup deletion. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-13T20:48+02:00 — Slice 3b (browser-dashboard): the drift summary run now also persists a durable `ar-drift-snapshot/v1` JSON under `logs/observer/drift/` (`_write_drift_snapshot`, best-effort) for the observer dashboard to read without re-classifying; recorded this new output in the `integrity/onboarding_drift_check/` Route Model bullet. The route's check responsibilities are otherwise unchanged. Verification metadata pinned until closeout stamps the 3b code commit.
 - 2026-06-11T15:20+02:00 — No route impact: onboarding_drift_check/git_ops.py fingerprint helpers gained a keyword-only ref parameter for carryover entity-catalog validation; route structure and check responsibilities are unchanged.
 - 2026-06-06T12:15: Re-verified against the current memory-quality package; corrected controller and MCP payload-builder references after memory tools moved out of the former `skill_tools.py`/`mcp/tools.py` surfaces.
 - 2026-05-31T12:40+02:00: Removed the `integrity/ledger_consistency.py` reserved-stub bullet after the empty stub source and its sidecar were deleted in the 1.0.0 remediation.

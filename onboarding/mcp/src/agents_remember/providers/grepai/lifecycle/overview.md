@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T07:40+02:00|
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-25T09:55+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -33,6 +33,9 @@ current-state packets can report running state, health, and uptime; since
 (`Performing initial scan` / `Initial scan complete` since container start)
 into an `initialScan` field, giving GrepAI real `indexing`/`indexed` states
 instead of `unknown`.
+For new `auto` host-port allocations, backend/embedder startup prefer host
+`61432` for Postgres and host `61434` for Ollama while preserving the container
+service ports (`5432` and `11434`) used inside the Docker network.
 
 ## Route Model
 
@@ -47,6 +50,8 @@ instead of `unknown`.
 - GrepAI remains Docker-or-bust; do not add host GrepAI or host Ollama fallbacks.
 - Container-visible paths, Docker service names, and the shared Docker network
   are part of the provider contract.
+- Preferred host ports avoid common neighboring service ports; container ports
+  remain the service ports exposed inside the GrepAI Compose network.
 - Status surfaces should include backend, embedder, and watcher container state
   so MCP current-state packets can report what is running now.
 - Keep `__init__.py` as the package export facade.
@@ -65,6 +70,7 @@ instead of `unknown`.
 
 ## Update History
 
+- 2026-06-25T09:55+02:00 — GrepAI backend/embedder startup now prefer host `61432`/`61434` for auto host publication while keeping Postgres/Ollama container ports at `5432`/`11434`.
 - 2026-06-10T07:40+02:00 — No route impact: `actions.py`/`backend.py`/`core.py`/`embedder.py` only updated the shared-helper import path to `providers/context_common.py` (GitHub #58).
 - 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: `initialScan` scan-marker reading in `runner.py` and the leaf-import invariant (circular-import fix). Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current GrepAI lifecycle package; backend, embedder, runner, and action composition still match.

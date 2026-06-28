@@ -6,9 +6,9 @@
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T23:59+02:00                     |
-| lastVerifiedCommitHash | `36d74c5f3fd11b25c96008f06b058105c5c083e2` |
-| lastVerifiedCommitDate | 2026-05-30T23:57:28+02:00|
-| governingOverview      | `overview.md`                              |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Purpose
 

@@ -1,0 +1,242 @@
+# dashboard/src/panels/DetailPanel.tsx
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `dashboard/src/panels/DetailPanel.tsx`           |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-06-26T20:18+02:00                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[panels/ overview](overview.md)
+
+## Purpose
+
+The selected lifecycle's detail (the operations centre viewport): phase stepper, the **Gate Respond
+surface** (Task 11), the **task reader** (the JSON task content rendered to read in the dashboard, not
+the filesystem), the lifecycle → worktree → provider spine, and the token gauge. The largest panel.
+Slice 6g makes a task **series** navigable: a master shows its overview + a clickable sub-task index,
+you drill into a slice's reader, and the back / parent-series up-links sit in the panel's **sticky
+header** (so they never scroll away); task prose renders as **markdown**, and a sub-task that points at
+another series jumps to it. Promoted leaf lifecycles may get their visible title from the bound
+enclosure, but the readable task body is still sourced only from `analytics.taskDocuments`. A selected
+series master can also render directly from `analytics.series`, including when the selected sidebar row
+is the root task lifecycle id and its structured enclosure `taskId`/`taskName` identifies the
+folder-keyed series. Leaf lifecycle rows never use parent `taskName` as content. Master leaf rows
+display each authored leaf task document's own task id and default to creation order (`createdAt`) when
+every row has structured creation metadata; they do not parse numeric filename prefixes or generate
+reader-local display counters. Leaf progress
+summaries in the master index and reader header are derived from visible top-level implementation steps,
+not nested substeps. Master sub-task navigation resolves authored leaf documents from the full projected
+sibling task-document pool, so leaves can stay absent from the Operations sidebar while remaining
+clickable from the master. Directly opened leaf task documents, including enclosure-backed leaf
+lifecycle rows, now get the same sticky parent/root task backlink as the master-drill path. Master
+readers also show the server-projected `seriesTokenTotal` scalar so aggregate series cost is visible
+without changing the selected lifecycle token gauge.
+
+## Code Commentary
+
+### Logic
+
+Resolves `selectedId` through `parseTaskSelection` before choosing content. A `taskdoc:<docPath>` key
+selects a concrete `TaskDocNode`, `series:<seriesId>` selects the legacy folder-keyed series surface,
+and `lifecycle:<id>` selects runtime lifecycle state. Raw lifecycle/series ids are accepted only
+through the shared compatibility bridge. If a selected task document has `lifecycleId`, the panel
+attaches that runtime lifecycle/enclosure/provider/gate context; if it is unbound, it still renders the
+JSON-primary task document. The selected document's own `kind` decides the reader: `master` uses
+`MasterOverview` with sibling slice docs, while `subTask`/`light` use `TaskReader`.
+
+For lifecycle selections, the panel resolves the matching enclosure with
+`taskIdentity.findLifecycleEnclosure` and filters `analytics.taskDocuments` by the selected
+`lifecycle.id`. It also looks up `analytics.series` only for explicit `series:` selection or when the
+selected lifecycle is the root task identity (`lifecycle.id === enclosure.taskId` or
+`enclosure.taskName`) and the served series projection is keyed by that enclosure `taskName`. This
+covers the live master row without stealing leaf lifecycles whose `taskName` names the parent series.
+`seriesAsMasterDoc` adapts the folder-keyed `SeriesNode` into the master overview shape and
+`seriesSliceDocs` limits drill-in candidates to sibling leaf task docs. `taskLabel` uses enclosure
+identity for visible promoted-leaf titles, while `taskDocsForLifecycle` keeps the readable body limited
+to actual task-document JSON for that lifecycle. With **no selection** (`!lifecycle && !selectedSeries && !selectedTaskDoc`) the panel early-returns a `Panel` `fill` holding the
+shared `EmptyStateBackdrop` (slice 07b polish): a faint, effects-gated **battle-cruiser** boomerang-video
+atmosphere (`/assets/sc2-battlecruiser-boomerang.mp4`, aria-hidden, absent under calm-cockpit /
+reduced-motion) behind the **"Select a task to inspect its phase, gate, and tokens."** copy
+(user-facing copy; the selected unit is still the `lifecycle`). The `Panel` `fill` variant gives the
+backdrop the flex-column slot its `flex:1` canvas needs. The `stepper` is a `step` `cva`
+(done/current/todo computed from the phase index).
+Task 11 renders `GateResponder` when `lifecycle.gate` or `lifecycle.ask` exists. Durable gates use
+`testId="gate-review"` and proto asks use `testId="gate-banner"` for continuity with existing tests,
+but both are the same chat-routed Respond surface: the dialog shows `GateNode.packet` / `ask` and sends
+developer text back to the hosted chat tagged with this lifecycle through `data/sessions.deliverToSession`.
+There is no `/api/actions` decision POST in this surface. **Drill state (`openSlug`) lives in
+`DetailPanel`, not `TaskContent`**, so the
+back / parent up-link sits in the `Panel` `head` slot (sticky): when a slice is open the body is its
+`TaskReader` (objective/requirements/design/`StepList`/`CodeExample`/`DecisionList`/refs) and the head
+shows `← {series}`; otherwise a matched `selectedSeries` renders `MasterOverview` from the
+`analytics.series` master before any lifecycle-doc fallback. Without that series match, an actual
+selected/bound master renders `MasterOverview` directly with sibling slice docs from
+`seriesSliceDocs(allDocs, master.docPath)`. `seriesAsMasterDoc` carries `seriesTokenTotal` directly from
+`Analytics.series`; `masterDocWithSeriesTokens` enriches concrete master `TaskDocNode`s by matching
+`docPath` against `analytics.series`, and `MasterTokenSummary` renders the scalar `series tokens` row
+when a total is present. This is deliberately broader than the selected lifecycle's
+direct `docs` array and broader than the Operations sidebar rows: the master index remains the navigation
+surface for authored leaf documents that are not sidebar-eligible. If no master is present,
+`parentTaskLinkForDoc` asks `data/taskHierarchy.ts` whether the selected leaf document matches a
+structured parent series sub-task ref; when it does, the sticky head renders an `↑ {parent}` link whose
+target is the typed parent `taskdoc:` key when the parent master document is projected, otherwise the
+typed `series:` fallback. The same parent-link path is used for unbound `taskdoc:` selections and active
+enclosure-backed leaf lifecycles. If no master is present, `TaskContent`
+renders a lone doc's
+`TaskReader`, or a clickable `SliceList` for a master-less series; with no bound doc it shows the
+fallback **"No task document bound to this task."** (user-facing copy; keyed off the selected
+lifecycle's `lifecycleId`). `SubTaskIndex` calls `orderedByCreation` before rendering rows, displays
+`${match?.id || ref.number}. ${match?.title || ref.name}` labels, and uses a separate position counter
+only for stable test ids; if any row lacks `createdAt`, it preserves the input/master-authored order
+rather than guessing from the number or filename. `SliceList`
+uses the same helper so master-less leaf lists default to creation order when all docs expose
+`createdAt`. `topLevelStepProgress` counts `doc.steps` and completed top-level step statuses;
+`SubTaskIndex`, `SliceList`, and the `TaskReader` header `ProgressFill` use that top-level summary
+instead of `TaskDocNode.stepsDone/stepsTotal`, which may be the backend's nested progress-bearing leaf
+count. `TaskReader` renders a top **Progress** step list immediately under the head before
+Objective, then keeps the existing Implementation steps section later in the reader for continuity.
+`StepList` and `CodeExample` display labels from structured id + title (`S11 — ...`, `E4 — ...`) while
+leaving the underlying title fields clean. It renders freeform `sections` that are present on real task docs, including non-master `subTask` docs;
+it does not parse or display `series-contract.md`. A sub-task row whose
+`linkedLifecycleId` is set is a parallel/external series → an amber **"→"** that calls `onOpenLifecycle`
+to switch the selected lifecycle; a child master's `masterLifecycleId` drives a **"↑ parent"** head
+link. Prose (objective/design/section bodies) renders through the `Markdown` grammar component, bullets
+and decision cells through its inline variant; a `0/0` step count is suppressed. `SpineLane` draws the code→CGC / memory→GrepAI lanes, joining the
+enclosure's worktree-scoped engines by group name. Step status is data-driven so `STEP_MARK`/
+`STEP_TITLE`/`SUBSTEP` are record lookups (not cvas). `badge` + `laneMeta` are local (the old
+`.badge`/`.engine__meta` were removed with their panels).
+
+### Invariants And Boundaries
+
+The gate response is an instructional chat injection through `GateResponder`; it is not a
+developer-attributed decision record and does not enforce closeout. Renders the full task content from
+the JSON-primary doc; only sections with content render. Enclosure metadata can label a leaf or attach
+runtime state, but it is not a fallback content source for leaf bodies — if no matching `TaskDocNode`
+exists, the no-doc fallback must render. The structured exception is master selection: an explicit
+selected master document or `Analytics.series` is the master-reader surface, and `EnclosureNode.taskName`
+may bridge a selected lifecycle row to it only when the selected lifecycle id is the root task identity
+(`taskId`/`taskName`), still without parsing filenames or rendering contract prose as task content.
+
+The reason for that ordering is that a promoted/attached leaf lifecycle carries parent task identity as
+coordination metadata: `taskName` names the parent/root series folder, while the actual leaf content is
+the `TaskDocNode` whose `lifecycleId` equals the selected lifecycle id. Treating `taskName` as a content
+selector for every lifecycle makes all leaf lifecycle rows render the parent master. Therefore the
+render precedence is deliberate: (1) an opened slice doc from the master sub-task index, (2) explicit
+selected task document rendered by its own `kind`, (3) folder-keyed `analytics.series` for a selected
+series/root task identity, (4) direct `analytics.taskDocuments` for selected leaf lifecycles, and only
+then (5) the no-doc fallback.
+Sub-task navigation — in-panel drill-in, the cross-master `→`, and the parent `↑` — is read-only routing
+over the selected-lifecycle state, never a mutation; `onOpenLifecycle` is optional so the panel still
+renders standalone (e.g. in tests). Parent `↑` links for directly opened leaves are navigation metadata
+only and must not change the leaf content selector. A master row is clickable only when its authored
+`file` resolves to a sibling JSON task document; rows without a projected sibling remain static. Creation ordering is
+data-driven: when every row has `createdAt`, the panel sorts by that value; when any row lacks it, the
+authored order is preserved. Visible master leaf numbers are never generated row indexes or parsed
+numeric filename/task prefixes. When an authored sibling `TaskDocNode` is projected, its `id` is the
+visible number; the parent ref `number` is fallback only for rows without a projected child doc.
+User-facing task progress in the master index and leaf reader must match the visible top-level
+implementation-step list; nested substeps should not inflate those orientation counts. Step and
+code-example labels must compose structured ids with titles at render time; do not embed ids inside
+title strings and do not strip ids from display.
+Series token totals are displayed only from the server-projected `SeriesNode.seriesTokenTotal`; the
+panel must not recompute the aggregate from lifecycle token gauges or child task rows.
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| DetailPanel resolves typed taskdoc/series/lifecycle selections before rendering by task-document `kind`. | L305-L361; L496-L508 | [DetailPanel.tsx](DetailPanel.tsx) |
+| Typed Operations selection helpers shared with Cockpit and LifecycleList. | L1-L76 | [taskIdentity.ts](../data/taskIdentity.ts) |
+| Selected series masters render directly from `analytics.series` by direct `seriesId` selection or by a selected root-task lifecycle whose enclosure `taskId`/`taskName` maps to the folder-keyed series, adapting a `SeriesNode` to the master overview shape and pairing only sibling slice docs. | L305-L361; L382-L452; L496-L506; L563-L571 | [DetailPanel.tsx](DetailPanel.tsx) |
+| Lifecycle-bound selected masters render `MasterOverview` with sibling docs from the full projected task-document pool, so master rows can open authored leaves that are not sidebar rows. | L435-L440; L496-L508; L539-L552; L677-L740 | [DetailPanel.tsx](DetailPanel.tsx) |
+| Direct taskdoc and active lifecycle leaf selections use `parentTaskLinkForDoc` to show a sticky parent/root backlink without changing leaf content selection. | L337-L361; L453-L487 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The shared hierarchy helper resolves parent task links from projected series sub-task refs and typed selection keys. | L45-L58; L85-L88 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
+| The enclosure-opened leaf backlink regression proves the parent link targets the parent master task document. | L766-L778 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| `topLevelStepProgress` derives user-facing progress from top-level `doc.steps`, and the master sub-task index, master-less slice list, and reader `ProgressFill` consume it. | L553-L556; L699-L707; L780-L795; L833-L846 | [DetailPanel.tsx](DetailPanel.tsx) |
+| Master leaf rows sort by structured `createdAt` only when all rows have it, then display the matched child task document `id` while keeping row position separate for test ids. | L717-L785 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The task reader now renders top progress before Objective while retaining the implementation-step copy later in the document. | L833-L866 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The master reader maps `SeriesNode.seriesTokenTotal` onto concrete/folder-keyed master views and renders the aggregate series-token scalar. | L592-L620; L652-L705 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The `SeriesNode`, `TaskDocNode.createdAt`, and sub-task `createdAt` contract fields consumed by this panel are mirrored in the dashboard projection types. | L196-L250; L375-L386 | [types/projection.ts](../types/projection.ts) |
+| Lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. | L1-L63 | [taskIdentity.ts](../data/taskIdentity.ts) |
+| The shared chat-routed gate responder. | L1-L124 | [GateResponder.tsx](GateResponder.tsx) |
+| The markdown renderer for task prose / master sections / bullets / decisions (6g). | L1-L84 | [grammar/Markdown.tsx](../grammar/Markdown.tsx) |
+| `ProgressFill` + `TokenGauge` grammar it composes. | L1-L58 | [grammar/overview.md](../grammar/overview.md) |
+| The shared empty-state backdrop the no-selection state renders. | L1-L64 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
+
+## Update History
+
+- 2026-06-26T20:18+02:00 — Task 21 series token rollup: master readers now display
+  `seriesTokenTotal` from `Analytics.series`, including concrete master task docs matched by `docPath`.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T18:11+02:00 — Corrected Task 17 live-data numbering: authored master leaf rows now show the
+  child `TaskDocNode.id` and title, using the parent ref number/name only when no child doc is projected.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T18:02+02:00 — Corrected Task 17 leaf numbering: master sub-task rows still order by
+  structured creation metadata, but visible labels now use each ref's structured task number instead of
+  a generated local counter. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T17:51+02:00 — Task 17 parent-link follow-up: directly opened leaf task documents and
+  enclosure-backed leaf lifecycles now show a sticky parent/root task backlink resolved through
+  structured series metadata, while leaf content still comes only from the selected leaf task document.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T17:20+02:00 — Task 17 master-navigation/sidebar-scope correction: lifecycle-bound masters
+  now render their sub-task index against the full projected sibling task-document pool, keeping authored
+  leaves clickable from the master even when they are not sidebar rows; missing authored siblings remain
+  static. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T16:33+02:00 — Task 17 task-document-first reader: DetailPanel now resolves typed
+  `taskdoc:`/`series:`/`lifecycle:` selections, renders unbound planning documents, uses document
+  `kind` to choose master vs leaf content, and displays structured step/example ids with titles.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T15:37+02:00 — Task 17 live-projection correction: selected lifecycle rows bridge to
+  `analytics.series` only for root task identity (`lifecycle.id` equals enclosure `taskId`/`taskName`);
+  leaf lifecycle rows without projected task docs show the no-doc fallback instead of rendering the
+  parent master, while projected leaf docs still render their own reader. Verification metadata pinned
+  until closeout stamps the follow-up code commit.
+- 2026-06-24T15:23+02:00 — Superseded Task 17 lifecycle-leaf regression note: the first follow-up used
+  "no direct task document" as the bridge discriminator; live projection inspection showed that was the
+  wrong boundary because unprojected leaf docs also have no direct task document. The current rule above
+  uses root task identity instead.
+- 2026-06-24T13:59+02:00 — Task 17 progress-count follow-up: master leaf rows, master-less slice rows,
+  and the leaf reader's blue progress fill now summarize top-level implementation steps instead of the
+  backend's nested progress-bearing leaf totals. Verification metadata pinned until closeout stamps the
+  follow-up code commit.
+- 2026-06-24T12:53+02:00 — Master selection follow-up: selected task-id lifecycles now join through
+  structured enclosure `taskName` to the folder-keyed `analytics.series` master, so clicking the root
+  master row renders master content instead of the lifecycle no-doc fallback. Verification metadata
+  pinned until closeout stamps the follow-up code commit.
+- 2026-06-24T12:21+02:00 — Task 17 master reader update: selected series masters can render from
+  `analytics.series`, master rows display labelled sub-task rows and sort by structured creation time when
+  available, and leaf task docs show a top Progress block before Objective. Ordering deliberately
+  preserves authored order when `createdAt` is incomplete rather than parsing filename prefixes.
+  Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-24T08:59+02:00 — Promoted leaf task-document correction: `DetailPanel` now uses
+  `taskIdentity` helpers to label selected leaf lifecycles from enclosure metadata while reading body
+  content only from direct `analytics.taskDocuments` matches; real task-doc `sections` render, but
+  `series-contract.md` never becomes task content. Verification metadata pinned until closeout stamps
+  the code commit.
+- 2026-06-23T13:45+02:00 — Task 11: replaced the local `GateReview` `/api/actions` decision drawer
+  with the shared `GateResponder` for both durable gates and proto `ask`s. The detail panel remains the
+  canonical task gate surface, but responses now route back into the attached hosted chat via
+  `deliverToSession`. Verification metadata pinned until closeout stamps the task-11 code commit.
+- 2026-06-23T07:25+02:00 — UI copy rename (user-facing lifecycle → task): the no-selection placeholder
+  now reads **"Select a task to inspect its phase, gate, and tokens."** (was "…a session…") and the
+  `TaskContent` empty fallback **"No task document bound to this task."** (was "…this lifecycle.").
+  Display copy only — the selected unit, props (`selectedId`), and `lifecycleId` keying are unchanged.
+  Refreshed the Logic commentary for both strings. Verification metadata pinned until closeout stamps
+  the rename code commit.
+- 2026-06-23T04:20+02:00 — Slice 07b polish: the no-selection state now renders inside the shared
+  `EmptyStateBackdrop` — a faint, effects-gated **battle-cruiser** boomerang-video atmosphere
+  (`/assets/sc2-battlecruiser-boomerang.mp4`, aria-hidden, absent under calm-cockpit / reduced-motion)
+  behind the "Select a session to inspect…" copy, inside the `Panel` `fill` slot (its flex column lets
+  the backdrop's `flex:1` canvas fill). Added the `EmptyStateBackdrop` reference. Verification metadata
+  pinned until closeout stamps the slice-07b code commit.
+- 2026-06-21T02:44+02:00 — Slice 6g: master overview + clickable `SubTaskIndex` (pinned above the description + in its authored section, `subtask-open`/`subtask-mid` testids); in-panel drill-in with the back/parent up-link lifted into the `Panel` sticky `head` (drill `openSlug` state moved from `TaskContent` to `DetailPanel`); markdown rendering via the new `Markdown` grammar component; cross-master `→` rows + parent `↑` breadcrumb that switch lifecycles through the new optional `onOpenLifecycle` prop; `0/0` step counts suppressed. Verification metadata pinned until closeout stamps the 6g code commit.
+- 2026-06-18T15:00 — Task 6 slice 6c Part B: the display-only gate banner became the **Gate Review drawer** — `GateReview` POSTs `lifecycle.gate.decisions` to `/api/actions` via `data/actions.postGateDecision`, with honest status; the `ask` proto-gate falls back to the display banner. Verification metadata pinned until closeout stamps the 6c Part B code commit.
+- 2026-06-15T17:00 — Created for slice 5d: migrated onto `Panel` + Panda css/cva; `badge`/`laneMeta`
+  localized (their source panels' classes were removed). Verification metadata pinned until closeout
+  stamps the 5d code commit.

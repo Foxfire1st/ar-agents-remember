@@ -6,9 +6,9 @@
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
-| governingOverview      | `overview.md`                              |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Purpose
 
@@ -51,8 +51,13 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 | The tested loader lives in MCP config. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 
+## Series-Contract Notes
+
+Config/schema tests now assert the public tool surface includes `parent_task` and `leaf_id` where task-name based leaf resolution is supported.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: config/tool-schema assertions now include `parent_task` and `leaf_id` on resolver/worktree tool signatures so installed MCP metadata matches the new task resolver contract. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-10T05:30+02:00 — Added `LifecycleSettingsDerivationTests`: the settings-generated CGC runner image must equal `cgc_runner_image()` and carry the version-layerrevision suffix (regression for GitHub #50).
 - 2026-05-31T12:30+02:00 — Documented the new `timeoutCaps` case rejecting unknown keys with an "unsupported timeout cap" `ConfigError` (1.0.0 review remediation).

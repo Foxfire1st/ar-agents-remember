@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-12T19:06+02:00                     |
-| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
-| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
+| lastUpdated            | 2026-06-23T22:50+02:00                     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -32,7 +32,10 @@ the worktree domain functions.
 The MCP path still calls result-returning service functions such as
 `start_result()`, `sync_result()` (GitHub #54 sub-task D, re-exported from
 `worktrees/modules/sync.py`), `closeout_result()`, `integrate_result()`, and
-`cleanup_result()`. The facade also re-exports the issue #83 committed-range
+`cleanup_result()`. Dashboard task 14 adds `FinalizeArgs` and
+`finalize_result()` from `worktrees/modules/finalize.py`; callers use this
+facade for terminal lifecycle finalization so cleanup plus task-document
+completion stay on the same public worktree surface. The facade also re-exports the issue #83 committed-range
 closeout surface — `closeout_changed_paths` (from `modules/closeout.py`),
 `committed_changed_paths` and `commit_text_or_none` (from `modules/git.py`),
 and `contract_memory_verified_commit` (from `modules/onboarding.py`) — so tests
@@ -52,7 +55,7 @@ so callers no longer pass provider coordination roots, settings paths, or
 runtime roots into the worktree start surface.
 
 Closeout context reparsing, changed-path discovery, onboarding metadata/entity
-refresh, integration replay, and cleanup now live in the extracted modules
+refresh, integration replay, cleanup, and lifecycle finalization now live in the extracted modules
 documented by the `modules/overview.md` route overview.
 
 ### Invariants And Boundaries
@@ -84,10 +87,13 @@ documented by the `modules/overview.md` route overview.
 | Worktree status packets project lifecycle payloads into context packets. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
 | Worktree contract serialization lives in the package worktree contract module. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Extracted worktree lifecycle implementation modules live under this route. | [overview.md](agents-remember/mcp/src/agents_remember/worktrees/modules/overview.md) |
+| Terminal lifecycle finalization is implemented here and re-exported by this facade. | [finalize.py](agents-remember/mcp/src/agents_remember/worktrees/modules/finalize.py) |
 | Long-path-safe filesystem wrappers live in the kernel filesystem helper. | [filesystem.py](agents-remember/mcp/src/agents_remember/kernel/filesystem.py) |
 | Worktree support tests cover memory-worktree settings and long-path closeout planning regressions. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
+
+- 2026-06-23T22:50+02:00 — Re-exported `FinalizeArgs` and `finalize_result` for the new `lifecycle_finalize_task` terminal operation. Verification metadata pinned until closeout stamps the source commit.
 
 - 2026-06-12T19:06+02:00 — Issue #83: re-exported the committed-range closeout surface (`closeout_changed_paths`, `committed_changed_paths`, `commit_text_or_none`, `contract_memory_verified_commit`) and added them to `__all__`.
 - 2026-06-11T06:47+02:00 — Dropped the direct-closeout re-exports (`direct_closeout_result`, `direct_closeout_preview_payload`, `validate_direct_external_context`, `command_direct_closeout`) from the facade imports and `__all__` (issue #62 worktree-only closeout).

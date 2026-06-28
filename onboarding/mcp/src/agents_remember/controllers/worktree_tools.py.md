@@ -5,15 +5,16 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:56+02:00     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-06-23T22:50+02:00     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
 `worktree_tools.py` is the controller surface for worktree start, attach,
-status, closeout preview/apply, integration, and cleanup tools. The direct
+status, closeout preview/apply, integration, cleanup, and lifecycle finalization
+tools. The direct
 closeout preview/apply controllers (and the `_direct_closeout` helper) were
 removed with the direct-closeout tool surface (issue #62): closeout is
 worktree-only.
@@ -33,6 +34,22 @@ behavior of its own. `worktree_sync_tool` (GitHub #54 sub-task D) is the
 contract-path-based controller for the mid-task base sync: it confines
 `contract_path` via `require_within_coordination` and forwards
 `memory_sync_choice`/`dry_run` to `git_worktree_manager.sync_result`.
+`lifecycle_finalize_task_tool` confines the contract and optional task-document
+paths under the coordination root, builds `git_worktree_manager.FinalizeArgs`,
+and delegates final readiness, cleanup, and task-document reconciliation to the
+worktree finalizer.
+
+Slice 2c wires the observable lifecycle here while the git module stays
+observer-free: `worktree_start_tool` resolves a `lifecycle_id` (the active
+lifecycle's id, or a fresh `new_ulid()` when none is active), threads it into
+`WorktreeArgs`, and after `start_result` calls `_attribute_start` — promoting the
+active lifecycle into the contract (`ambient().promote`) on a `started` result, or
+adopting the minted id when none was active. `worktree_attach_tool` gains
+`on_unsaved` and calls `_attribute_attach`, which drives `ambient().attach` (the
+§1.3 resume table: adopt when none is active, no-op on the same id, auto-pause a
+persistent current, route an unsaved fleeting through the save gate —
+`SaveGateRequired` when `on_unsaved` is absent). Both helpers no-op when no
+ambient is installed (CLI/tests).
 
 ## Invariants And Boundaries
 
@@ -42,7 +59,7 @@ contract-path-based controller for the mid-task base sync: it confines
   coordination root unless a specific tool owns a setup target.
 - Worktree operations call package services directly; CLI entrypoints remain
   print adapters.
-- `worktree_start_tool`/`worktree_integrate_tool`/`worktree_cleanup_tool` default
+- `worktree_start_tool`/`worktree_integrate_tool`/`worktree_cleanup_tool`/`lifecycle_finalize_task_tool` default
   `dry_run=False` (act-by-default); the `*_closeout_apply` controllers keep
   `dry_run=False` paired with their `*_preview` tools. `dry_run=true` previews.
 
@@ -62,9 +79,17 @@ the documented setup cap now actually governs the worktree flow.
 | Worktree service behavior is owned by the worktree manager and modules. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 | Worktree response models define the public tool envelopes and context summary. | [worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | [_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
+| Lifecycle finalization behavior is delegated to the worktree finalizer module. | [finalize.py](agents-remember/mcp/src/agents_remember/worktrees/modules/finalize.py) |
+
+## Series-Contract Notes
+
+Worktree start/attach/status controllers accept `parent_task` and `leaf_id` and report lifecycle attribution against `enclosure_path`, with `contract_path` retained only as the existing wire-compatible field.
 
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: worktree start/attach/status controllers now accept `leaf_id` and `parent_task`, and lifecycle attribution prefers `enclosure_path` while keeping `contract_path` as a compatibility payload field. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-23T22:50+02:00 — Added `lifecycle_finalize_task_tool`: coordination-confined contract/task-doc paths are converted into `FinalizeArgs` and delegated to `git_worktree_manager.finalize_result`. The controller remains a path-authority and typed-argument facade; finalization behavior lives in `worktrees/modules/finalize.py`. Verification metadata pinned until closeout stamps the source commit.
+- 2026-06-13T18:45+02:00 — Slice 2c: wired the observable lifecycle. `worktree_start_tool` resolves + threads a `lifecycle_id` (active id or fresh mint) and `_attribute_start` promotes/adopts it after start; `worktree_attach_tool` gains `on_unsaved` and `_attribute_attach` drives the `ambient().attach` §1.3 resume table (adopt / no-op / pause+adopt / save gate). The git module stays observer-free; both helpers no-op without an ambient. Verification metadata pinned until closeout stamps the 2c code commit.
 - 2026-06-11T06:47+02:00 — Removed `direct_closeout_preview_tool` / `direct_closeout_apply_tool` and the `_direct_closeout` helper (issue #62 worktree-only closeout); the controller surface is now start, attach, status, sync, closeout preview/apply, integrate, cleanup, abandon.
 - 2026-06-10T09:56+02:00 — Added `worktree_sync_tool` (contract-path confinement + `memory_sync_choice`/`dry_run` forwarding to `sync_result`) for the GitHub #54 mid-task base sync.
 - 2026-06-10T09:30+02:00 — `worktree_start_tool` forwards the new `stale_base_choice` recovery selector into `WorktreeArgs` (GitHub #54 stale-base preflight); plumbing only.

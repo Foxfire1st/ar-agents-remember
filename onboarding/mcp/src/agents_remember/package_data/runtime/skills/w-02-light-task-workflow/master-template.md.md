@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T04:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-23T22:50+02:00                     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 
 ## Purpose
 
@@ -23,7 +23,7 @@ The file states when to escalate to a series (`l-01-session-job-lifecycle` skill
 series convention (one wrapper folder = master `task.md` + flat numbered `NN_<name>.md` sub-task files
 in execution order), and the lifecycle: **one task = one workflow = one worktree**, a commit per slice
 via `c-09-git-worktree-manager` skill closeout behind a commit gate, the worktree open across slices, and a single integrate +
-release at the end with the master owning the version bump. It then gives a master `task.md` scaffold
+`lifecycle_finalize_task` + release at the end with the master owning the version bump. It then gives a master `task.md` scaffold
 (Objective, Sub-tasks execution order, Single Release, Shared Decisions, Open Questions, References)
 and a sub-task `NN_<name>.md` scaffold, plus usage rules.
 
@@ -36,7 +36,8 @@ the hand-rolled master this very lifecycle-reshape series used (`260601_l01-life
 ### Invariants And Boundaries
 
 A master series runs in one shared worktree (never one per sub-task). Only the master records the
-version bump and release; sub-tasks never bump. Each slice is test-verified before its commit. Decision
+version bump and release; sub-tasks never bump. `lifecycle_finalize_task` proves the landed edge and
+performs terminal cleanup/task-document reconciliation after integration. Each slice is test-verified before its commit. Decision
 logs are append-only in both the master and the sub-task files.
 
 ### Todos
@@ -66,6 +67,12 @@ No sibling repository evidence is needed for this template.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## Series-Contract Notes
+
+The master template's execution model now says a master provides the integration branch and each active sub-task gets its own leaf enclosure/worktree, replacing the previous single shared worktree guidance.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged master template now teaches "one master integration branch, one leaf enclosure per active sub-task" instead of a single shared series worktree. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-23T22:50+02:00: Dashboard task 14 — updated the master-series convention from integrate+cleanup to integrate+finalize, with `lifecycle_finalize_task` owning terminal cleanup/task-document reconciliation. Verification metadata pinned until closeout stamps the source commit.
 - 2026-06-02T04:10+02:00: Created onboarding for the new `w-02-light-task-workflow` skill `master-template.md` (master + light sub-task series scaffold) that formalizes the convention this series prototyped. `l-01-session-job-lifecycle` skill series, Sub-task B/S5, mcp 1.1.0.

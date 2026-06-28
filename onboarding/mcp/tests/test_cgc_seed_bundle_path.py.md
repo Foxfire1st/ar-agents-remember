@@ -6,13 +6,13 @@
 | path                   | `mcp/tests/test_cgc_seed_bundle_path.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T23:40+02:00                     |
-| lastVerifiedCommitHash | `8833b31a37deda0d9d2e6895659ab0fe085a8ee9`                              |
-| lastVerifiedCommitDate | 2026-06-01T23:39:39+02:00|
-| governingOverview      | `overview.md`                              |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                              |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
 
-[overview.md](../../../../../overview.md)
+[overview.md](../overview.md)
 
 ## Purpose
 

@@ -1,0 +1,59 @@
+# dashboard/src/panels/engine-room/DiagnosticsPanel.tsx
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-06-23T13:45+02:00                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[engine-room overview](overview.md)
+
+## Purpose
+
+Renders the diagnostics column for one enclosure pod in slice 5e's Engine Room process map. It presents the server-composed `EngineProcessNode` as read-only facts — phase/health, the four code/memory commit refs with their fact-state honesty, provider-setup progress, completed/failed phases — plus a "Missing observability" notice, action availability, and the contributing source files. Task 11 makes it the Engine Room's secondary gate-response surface: worktree-bound projected gates render compact `GateResponder`; non-gate actions remain display-only affordances. The panel re-derives nothing except one presentation-only `poweringDown` flag (slice 5k F3): during the power-down phases (`cleanup-pending`/`abandoned`) the providers are being torn down, so the diagnostics show "powering down" instead of an "ok" provider line and de-emphasize the now-stale completed-phase lines. That flag is derived from `node.phase` on the frontend because the live runtime is pre-05m and sends no power-down signal of its own.
+
+## Code Commentary
+
+### Logic
+
+Two exports, both presentational (no state, no effects, no mutation).
+
+- `CommitRow({ label, refNode })` formats one `CommitRefNode`. It builds `ref` as `branch @ commit[0:8]` (joined with `·`-style ` @ `, empty parts dropped) and a `flags` string from `exists === false → "absent"`, `dirty → "dirty"`, and `behindSource → "N behind"`. It leads with a `factChip({ factState })` badge showing `refNode.factState`, then `ref || "—"`, then ` (flags)` when any flag is set.
+- `DiagnosticsPanel({ node, lifecycleId, gateNode })` is the panel body. It first derives `poweringDown = node.phase === "cleanup-pending" || node.phase === "abandoned"` (slice 5k F3). It then derives `setupLine`: when powering down it joins `"powering down"` and `node.currentPhase`; otherwise it joins `node.setupState`, an optional `heartbeat <fmtWait(heartbeatAgeSeconds)>`, and `node.currentPhase`. It conditionally renders: `node.summary`; always-on Phase (`node.phase`) and Health (`node.health`) rows; an optional Next row (`node.nextAction`); four `CommitRow`s for `codeSource`, `codeWorktree`, and (when present) `memorySource` / `memoryWorktree`; a Provider-setup row when `setupLine` is non-empty; a `phaseLineList` listing `completedPhases` and `failedPhases` (✗, alarm) when either is non-empty — completed lines render as mint `✓` normally but as muted `◦` while `poweringDown` (de-emphasizing the stale, now-torn-down provider/completed-phase lines); a Seed row reading `reroute → reindex fallback` when `node.seedFallback`; an `actionRow` that renders compact `GateResponder` when `lifecycleId` + a worktree-bound `gateNode` are present, otherwise maps `node.actions` to display-only `<Affordance>`; a `missing-facts` notice mapping `node.missingFacts`; and a Sources row joining `node.sourceFiles`.
+
+### Invariants And Boundaries
+
+- Non-gate actions go through `Affordance`, which is `aria-disabled` with no `onClick`/POST. Gate responses
+  go through `GateResponder` as chat injections, not local lifecycle mutation.
+- Fact honesty is preserved verbatim: the panel never recomputes `factState`; it surfaces the server value through `factChip` and shows `behindSource` as a count (fetch-free), absent/zero meaning current.
+- The `poweringDown` flag is a frontend-only presentation decision derived from `node.phase` (no power-down field exists on the pre-05m projection); it only swaps the setup-line text and the completed-phase glyph/colour (`✓` mint → `◦` muted) — it does not drop, recompute, or hide any underlying fact.
+- Memory rows are conditional because `memorySource`/`memoryWorktree` are absent on internal/disabled memory modes; optional sections collapse rather than render empty shells.
+- `node.actions`, `completedPhases`, `failedPhases`, `missingFacts`, and `sourceFiles` are always arrays; guards use `.length > 0`, so empty collections render nothing.
+- `data-testid` hooks (`diagnostics`, `missing-facts`, and `affordance` via the child) are load-bearing for the slice 5e visual/test harness.
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `CommitRow` formats branch/commit + absent/dirty/behind flags behind a `factChip` | L18-L37 | [DiagnosticsPanel.tsx](DiagnosticsPanel.tsx) |
+| `DiagnosticsPanel` derives `poweringDown`, builds `setupLine`, renders facts, phases, seed, actions, missing facts, sources | L39-L128 | [DiagnosticsPanel.tsx](DiagnosticsPanel.tsx) |
+| `poweringDown` flag (`cleanup-pending`/`abandoned`) drives the "powering down" setup line and the muted `◦` completed-phase glyph (5k F3) | L43, L85-L88 | [DiagnosticsPanel.tsx](DiagnosticsPanel.tsx) |
+| `EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes | L207-L285 | [projection.ts](../../types/projection.ts) |
+| `Affordance` display-only action button (aria-disabled, no POST) | L27-L42 | [Affordance.tsx](../../grammar/Affordance.tsx) |
+| `GateResponder` compact worktree-gate control. | — | [GateResponder.tsx](../GateResponder.tsx) |
+| `fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d | L83-L89 | [selectors.ts](../../data/selectors.ts) |
+| `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes | — | [engineRoomStyles.ts](engineRoomStyles.ts) |
+
+## Update History
+
+- 2026-06-23T13:45+02:00 — Task 11: added `lifecycleId`/`gateNode` props. Worktree-bound projected
+  gates render compact `GateResponder` in the action row; ordinary action availability still renders
+  through display-only `Affordance`. Verification metadata pinned until closeout stamps the task-11 code commit.
+- 2026-06-21T23:35 — Slice 5k F3: documented the frontend-derived `poweringDown` flag (`node.phase ∈ {cleanup-pending, abandoned}`). During power-down the setup line reads "powering down · <phase>" instead of the provider/heartbeat line, and completed-phase lines de-emphasize from mint `✓` to muted `◦`. Derived on the frontend because the pre-05m runtime sends no power-down signal; presentation-only (no fact recompute). Added the flag reference row and refreshed the panel-body line range.
+- 2026-06-15T19:35 — Created for slice 5e: facts + missing observability + display-only Affordance actions + source files. Verification metadata pinned until closeout stamps the 5e code commit.

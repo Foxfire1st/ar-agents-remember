@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-22T22:00+02:00                     |
-| lastVerifiedCommitHash | `adbee7d31a75ca4ae85c2d99d05a9109969399e5` |
-| lastVerifiedCommitDate | 2026-06-22T22:08:07+02:00|
+| lastUpdated            | 2026-05-31T12:50+02:00                     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,13 +28,6 @@ task/docs/system roots, resolves cross-repo settings, and returns one
 `CoordinationContext`. The effective memory root is the contract's
 `memory_worktree` when present and otherwise the resolved `memory_root`; it is
 not influenced by `memory_mode`.
-
-`build_coordination_context` forwards `worktree_name` into `resolve_contract`, so
-a context resolves its contract-derived fields (`contract_path`, `code_worktree`,
-`memory_worktree`) from `worktree_name` alone — matching what `worktree_status`
-returns — not only from `task_name`/`contract_path`. The same `worktree_name` also
-derives `worktree_group` as pure path math (`_worktree_group`), which is why that
-one field populated even before the contract lookup was wired through.
 
 ### Invariants And Boundaries
 
@@ -69,8 +62,12 @@ No cross-repository evidence is needed; cross-repo facts are read dynamically fr
 | --- | --- | --- |
 | No static cross-repo references are required. | n/a | n/a |
 
+## Series-Contract Notes
+
+Resolver assembly now threads `parent_task` and `leaf_id` into contract and task-root selection, so user-facing calls can keep using task names while the source API resolves nested active roots.
+
 ## Update History
 
-- 2026-06-22T22:00+02:00 — `build_coordination_context` now forwards `worktree_name` into `resolve_contract` so the contract-derived fields (`contract_path`/`code_worktree`/`memory_worktree`) resolve from `worktree_name` alone, matching `worktree_status`; previously `worktree_name` only fed `_worktree_group` (#90).
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: context resolution now plumbs `parent_task` and `leaf_id`, derives task roots with the active-task resolver, and can resolve leaf enclosure contracts without requiring users to pass filesystem paths. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-31T12:50+02:00 — `_effective_memory_root` dropped its unused `memory_mode` parameter and its dead `disabled`-mode branch (both returned `memory_root`); behaviour-preserving, and added a Logic note that the effective memory root is not influenced by `memory_mode` (1.0.0 review remediation).
 - 2026-05-25T20:57+02:00: Created by extracting coordination context selection and assembly from the monolithic resolver.

@@ -6,9 +6,9 @@
 | path                   | `mcp/tests/test_compact_content.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T08:53+02:00                     |
-| lastVerifiedCommitHash | `a06bfa65dcee3c8b82652085c69f2a20f163e306` |
-| lastVerifiedCommitDate | 2026-05-29T09:05:12+02:00                  |
-| governingOverview      | `overview.md`                              |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Purpose
 

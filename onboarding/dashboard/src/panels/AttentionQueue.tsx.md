@@ -1,0 +1,76 @@
+# dashboard/src/panels/AttentionQueue.tsx
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `dashboard/src/panels/AttentionQueue.tsx`        |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-06-28T07:32+02:00                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[panels/ overview](overview.md)
+
+## Purpose
+
+The home-screen attention queue (note 06): the **server-ranked** list of what needs the human,
+rendered through the dashboard's task-centric lens when a queued lifecycle has a bound task document.
+"Open" couples into the detail view (the queue↔detail coupling). The queue also exposes a server-write
+`Dismiss` / `Clear all` affordances for lifecycle-bound throwaway attention rows. Gate-open rows are
+consumed by server-side gate cancellation/deletion; actionable-drift rows are dismissible repo-level
+one-shots anchored by the drift snapshot timestamp. Other non-lifecycle alarms remain visible until
+their source condition clears.
+
+## Code Commentary
+
+### Logic
+
+Reads `selectQueue` (the reducer's `analytics.attentionQueue`, already severity-sorted) plus
+`analytics.taskDocuments`. `taskForAttention` resolves a lifecycle-bound attention item to its
+non-master task document when possible, `titleForAttention` promotes that task (`Task <id>: <title>`)
+to the visible row title, and `detailForAttention` preserves the original attention title/detail as
+secondary context. Each item is a `motion.li` (Motion enter/leave + layout reflow) styled by an `item`
+Panda `cva` keyed on `severity` (alarm/warn/info border-left). A captured `lifecycleId` const drives
+the "Open" `ghost` button. `canDismiss` limits per-row `Dismiss` and header `Clear all` to rows with
+a lifecycle id, a gate-open `gateId`, or `kind === "actionable-drift"`; clicking either path first
+calls `dashboardStore.suppressAttention(...)` so the row leaves the UI immediately, then posts
+`postAttentionDismiss` with `itemId`, `kind`, nullable `lifecycleId`, and optional `gateId`. Failed
+POSTs call `releaseAttention(...)`. Empty → a `muted` "queue clear".
+
+### Conventions
+
+Panda `css`/`cva`; the `Panel` chrome with a sizing `className` (`flex:0 1 auto; maxHeight:42%`). The
+severity also drives a `<Dot>`.
+
+### Invariants And Boundaries
+
+The queue is computed server-side (never re-ranked here). Wait-times are formatted (`fmtWait`), never
+computed from the clock. Dismissal stays source-scoped: lifecycle rows require a lifecycle target,
+gate-open rows can be consumed by gate id, and actionable drift is the only targetless repo-level row
+this component can dismiss. Provider/down/setup/start alarms remain fact-backed and cannot be dismissed
+by this component.
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The server-side attention queue this reads. | — | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
+| The `selectQueue` selector. | L23-L32 | [data/selectors.ts](../data/selectors.ts) |
+| `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. | L103-L118 | [AttentionQueue.tsx](AttentionQueue.tsx) |
+| Dismiss and Clear all optimistically suppress rows and release failed POSTs. | L126-L158 | [AttentionQueue.tsx](AttentionQueue.tsx) |
+
+## Update History
+
+- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `Dismiss`/`Clear all` now hide rows immediately via
+  store-level optimistic suppression, release failed POSTs, and include targetless actionable-drift rows
+  as the repo-level one-shot dismiss case. Verification metadata pinned until closeout stamps the task-29
+  code commit.
+- 2026-06-28T03:05+02:00 — Task 28 S5.2: `Dismiss` and `Clear all` now target only lifecycle-bound attention rows through `postAttentionDismiss`; non-lifecycle alarms no longer render dismissal controls. Verification metadata pinned until closeout stamps the task-28 code commit.
+- 2026-06-25T14:02+02:00 — Task 24 reopened: `Clear` now includes stale gate-open rows with only `gateId`, posting a gate-id-only cancel instead of hiding or ignoring them.
+- 2026-06-25T13:10+02:00 — Task 23/24: added the `Clear` gate-interaction action, backed by targeted cancel writes instead of local hiding.
+- 2026-06-25T07:17+02:00 — Task 19: attention rows now resolve lifecycle-bound queue items through `analytics.taskDocuments` so the visible title is task-centric while the original lifecycle/gate attention text remains in detail. Verification metadata pinned until closeout stamps the task-19 code commit.
+- 2026-06-15T17:00 — Created for slice 5d: migrated onto `Panel` + Panda `cva`. Verification metadata
+  pinned until closeout stamps the 5d code commit.

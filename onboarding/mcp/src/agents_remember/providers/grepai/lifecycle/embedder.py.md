@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-25T09:55+02:00     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,7 +29,9 @@ port mapping, starts Ollama through the package Compose project, waits for
 model is loaded. It shares the GrepAI project migration helper so standalone
 embedder startup can clean pre-Compose containers and networks before Compose
 owns them. Status includes a normalized Docker container state summary so MCP
-provider status can report embedder state and uptime.
+provider status can report embedder state and uptime. For new `auto` host-port
+allocations it prefers `GREPAI_OLLAMA_DEFAULT_PORT` (`61434`) while keeping the
+container-side Ollama HTTP port at `11434`.
 
 `docker_ensure_ollama_model` now seeds the model from the workspace Ollama
 before falling back to `ollama pull`. `_seed_ollama_model_from_source` reads
@@ -51,6 +53,8 @@ fallback runs. The failed seed result is attached to the response as
 - Model readiness is part of lifecycle health, not an optional follow-up.
 - Existing Compose-managed embedder port mappings are reused on repeated starts
   rather than reallocated from host socket availability.
+- The preferred host port avoids developer-owned host Ollama services; the
+  container port remains the Ollama service port used inside the Docker network.
 - Embedder status should expose enough Docker state for current provider status
   without requiring callers to inspect containers themselves.
 - `_seed_ollama_model_from_source` returns `None` (not a failed result dict)
@@ -77,6 +81,7 @@ fallback runs. The failed seed result is attached to the response as
 
 ## Update History
 
+- 2026-06-25T09:55+02:00 — `auto` host-port selection now uses the centralized GrepAI Ollama preferred host port (`61434`) instead of preferring host `11434`; existing mappings and explicit configured ports still win.
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-06-10T05:30+02:00 — Leaf import replaces the `providers.context` aggregator import (circular-import fix; see core.py 2026-06-10 entry).
 - 2026-06-01T00:00+02:00 — `docker_ensure_ollama_model` now seeds the model from the workspace Ollama via `_seed_ollama_model_from_source` (local tar pipe) before falling back to `ollama pull`; `seedFromContainer` key drives the seed path; updated Logic, added two new Invariants, added Repo-Internal References section.
