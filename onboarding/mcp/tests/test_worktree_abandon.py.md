@@ -5,14 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_abandon.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66`                |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
-| governingOverview      | `overview.md`                              |
+| lastUpdated            | 2026-06-21T04:10+02:00                     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
 
-[overview.md](../../../../../overview.md)
+[overview.md](../overview.md)
 
 ## Purpose
 
@@ -66,11 +66,20 @@ helpers):
 asserts two blockers (dirty worktree + unmerged branch), or zero blockers for a
 clean removal.
 
+`AbandonLifecyclePhaseTests` (slice 05l P1, Gap A) covers the abandon-phase
+projection in isolation: `test_abandoned_cleanup_projects_abandoned_phase` calls
+`lifecycle_guidance(SimpleNamespace(cleanup="abandoned"))` and asserts the result's
+`phase` is `"abandoned"` and `nextOperation` is `"done"`. It pins the new
+`cleanup == "abandoned"` guidance branch so an abandoned worktree no longer falls
+through to the `worktree-started` phantom and the teardown can render (05k). The test
+imports `lifecycle_guidance` from `worktrees.modules.guidance`.
+
 ### Conventions
 
 Tests that need Git use the `git`/`init_repo` helpers imported from
 `test_worktree_support`. Docker tests are purely structural (no containers
-started). Temp dirs are cleaned up in `tearDown`.
+started). Temp dirs are cleaned up in `tearDown`. `lifecycle_guidance` (slice 05l)
+is exercised against a `SimpleNamespace` contract stub — no real Git or Docker.
 
 ### Invariants And Boundaries
 
@@ -94,6 +103,7 @@ No external documentation is needed for these standard-library unit tests.
 | --- | --- |
 | `teardown_worktree_providers` and Docker resource derivation helpers. | [provider_teardown.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
 | `_abandon_branch` and `_abandon_blockers`. | [abandon.py](agents-remember/mcp/src/agents_remember/worktrees/modules/abandon.py) |
+| `lifecycle_guidance`, whose `cleanup == "abandoned"` branch the 05l-P1 phase test pins. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
 | `git`/`init_repo` test utilities from the worktree support test module. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
@@ -106,5 +116,6 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-06-21T04:10+02:00 — slice 05l P1 (backend teardown visibility, Gap A): added `AbandonLifecyclePhaseTests.test_abandoned_cleanup_projects_abandoned_phase` (a unit test that `lifecycle_guidance(SimpleNamespace(cleanup="abandoned"))` returns phase `"abandoned"` / `nextOperation` `"done"`) plus the `lifecycle_guidance` import from `worktrees.modules.guidance`; documented the new suite + reference row. Verification metadata pinned until closeout stamps the 05l-P1 code commit.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-01T00:00+02:00 — Created onboarding for the new worktree abandon + provider teardown tests.

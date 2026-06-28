@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T06:20+02:00     |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36` |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -26,14 +26,11 @@ during the last setup attempt.
 
 The test module uses synthetic settings and synthetic watcher status payloads.
 It verifies Docker container state normalization, the current-state file path,
-ready and degraded aggregate state, per-provider resource shape, disabled
-provider aggregation, GrepAI no-workspace degradation, GrepAI no-workspace
-restart/rebind recovery guidance, workflow-local instance paths for benchmarks,
-integration through `provider_status_packet()` plus
-`provider_diagnostics_packet()`, and the structured CGC `lastRefresh` summary
-(`test_provider_status_summarizes_structured_cgc_last_refresh` asserts a dict
-`lastRefresh` becomes a compact `"<updatedAt> returncode=… durationSeconds=…"`
-string).
+ready and degraded aggregate state, per-provider resource shape, GrepAI target
+repo persistence, disabled provider aggregation, GrepAI no-workspace degradation,
+GrepAI no-workspace restart/rebind recovery guidance, workflow-local instance paths for benchmarks,
+and integration through `provider_status_packet()` plus
+`provider_diagnostics_packet()`.
 
 `ready_status_payload()` builds a small GrepAI plus CGC status packet with
 running container-state summaries, one CGC repo watcher, a healthy GrepAI
@@ -73,6 +70,8 @@ degrading readiness.
   instance path.
 - Provider status must persist current state and return the current-state file
   path in compact status; the full current-state payload belongs in diagnostics.
+- GrepAI current state must persist configured target repos so read-side provider
+  projection does not have to infer memory-root ownership from names.
 
 ### Todos
 
@@ -91,14 +90,14 @@ No external documentation is needed for these standard-library unit tests.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The Docker summary regression asserts container state, running flag, health, and integer uptime. | L24-L40 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| The current-truth regression writes current state, asserts `ready`, excludes `lastSetup`, checks the central status path, and verifies GrepAI watcher/resource fields. | L42-L74 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
+| The current-truth regression writes current state, asserts `ready`, excludes `lastSetup`, checks the central status path, and verifies GrepAI watcher/resource fields plus `targetRepos`. | L42-L85 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The CGC degradation regression mutates one repo watcher to down and expects aggregate degraded state plus per-repo watcher/container details. | L76-L103 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The disabled-provider regression proves disabled GrepAI is reported as disabled without poisoning aggregate readiness. | L157-L176 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The GrepAI no-workspace regression drops the watcher's searchable workspace and expects GrepAI `degraded` with `indexingState: noWorkspace` plus a degraded aggregate. | L107-L127 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | Provider status and diagnostics both expose restart/rebind recovery guidance when the current projected GrepAI state is `noWorkspace`. | L129-L155 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | L178-L208 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | L209-L230 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| Current-state projection and persistence are implemented in the provider current-state module. | L16-L277 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
+| Current-state projection and persistence are implemented in the provider current-state module. | L16-L325 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 
 ## Cross-Repo References
 
@@ -110,7 +109,9 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
-- 2026-06-19T13:42: Added `test_provider_status_summarizes_structured_cgc_last_refresh` covering the compacted CGC `lastRefresh` summary (dict → `"<updatedAt> returncode=… durationSeconds=…"`), matching `status.py:_last_refresh_summary`.
+- 2026-06-23T22:09+02:00 — Task 12 S2 correction: the current-truth regression now asserts GrepAI
+  `targetRepos` are persisted from configured repository memory roots, protecting the observer's
+  repo-scoped memory-provider projection. Verification metadata will be stamped at closeout.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the 2.5.0/2.5.1 readiness coverage (content-gated ok, indexing busy list, restarting watcher, scan markers) into Logic (documentation only).
 - 2026-06-10T05:30+02:00 — Added tests: restarting (crash-looping) watcher is not ready and degrades the provider/global ok; GrepAI `initialScan` markers map to indexing/indexed/unknown without degrading readiness; GrepAI indexing feeds the summary busy list.

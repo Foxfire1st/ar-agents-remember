@@ -6,13 +6,13 @@
 | path                   | `mcp/tests/test_crap_calculator.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T06:05+02:00                     |
-| lastVerifiedCommitHash | `98af161a6c8d77f7dfc30457c9f6ab1c20e411ab`                      |
-| lastVerifiedCommitDate | 2026-05-24T06:49:48+02:00|
-| governingOverview      | `overview.md`                              |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                      |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
 
-[overview.md](../../../../../overview.md)
+[overview.md](../overview.md)
 
 ## Purpose
 

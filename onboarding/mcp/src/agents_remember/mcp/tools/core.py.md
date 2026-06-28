@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-10T08:39+02:00     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                                      |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                      |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -48,8 +48,13 @@ flat copy, so there is no layout argument). `context_packet_payload` forwards
   `skills_install_tool` contracts and the server registration (e.g. `no_cache`);
   the builder stays transport-thin and does not interpret these flags.
 
+## Series-Contract Notes
+
+`resolve_context_payload` forwards `parent_task` and `leaf_id` through the same response-model validation path as the rest of the core resolver payload.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `resolve_context_payload` now accepts and forwards `parent_task` and `leaf_id` for nested task-root and leaf-enclosure resolution. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-10T08:39+02:00: `context_packet_payload` gained the `include_freshness` forward (issue #54 freshness section).
 - 2026-06-10T05:30+02:00 — `runtime_install_payload` files the full install detail via `write_tool_report` and returns `compact_runtime_install_payload`: summary counts, rebind digest `{attempted, ok, phases}`, first 5 messages + overflow marker, `reportPath` (the rebind runs were historically >50k chars).
 - 2026-06-02T04:40+02:00: `skills_install_payload` dropped the `layout` argument after the installer became a single flat copy (U-01-core-skills dissolved). `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
+| lastUpdated            | 2026-06-26T14:16+02:00                      |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -59,6 +59,15 @@ Newer cases assert that every public tool registers a human-facing description,
 and that `runtime_install_payload` exposes a `no_cache` parameter defaulting to
 `False` and forwards `no_cache=True` into the `RuntimeInstallRequest`.
 
+Task 10 extends `test_phase_04_tools_are_reported` with the three
+`operator_inbox_*` tools so the external-chat inbox surface is pinned in
+`PUBLIC_TOOLS`; `test_every_public_tool_has_a_description` also covers their
+FastMCP docstrings through the server tool list.
+
+Task 25 changes the public-tool surface expectation: `lifecycle_gate` is included
+as the unified gate junction, while `lifecycle_block`, `gate_create`, `gate_wait`,
+and `gate_response_wait` are explicitly asserted absent from `PUBLIC_TOOLS`.
+
 The Codex benchmark policy coverage now treats `"default"`/`"omitted"` as the
 fixed (no-sandbox-argument) reporting and asserts the explicit
 `danger-full-access` request separately. `test_codex_benchmark_tools_refuse_when_disabled`
@@ -85,9 +94,13 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 | Server registration lives in `server.py`. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | Domain controller modules convert public MCP payloads into service calls. | [controllers overview](agents-remember/mcp/src/agents_remember/controllers/overview.md) |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
+| Inbox tool names are now pinned in the public tool subset. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
 
 ## Update History
 
+- 2026-06-26T14:16+02:00 — Task 25: public tool expectations now include `lifecycle_gate` and assert the retired split helpers are absent from `PUBLIC_TOOLS`.
+- 2026-06-25T07:17+02:00 — Task 19: added `gate_response_wait` to the expected public-tool surface. Verification metadata pinned until closeout stamps the task-19 code commit.
+- 2026-06-23T13:44+02:00 — Task 10 backend inbox: `test_phase_04_tools_are_reported` now expects `operator_inbox_post`, `operator_inbox_poll`, and `operator_inbox_consume`; the existing public-description smoke test covers their server docstrings. Verification metadata pinned until closeout stamps the task-10 code commit.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-11T06:47+02:00 — `test_phase_04_tools_are_reported` no longer expects `direct_closeout_preview`/`direct_closeout_apply` (issue #62 worktree-only closeout removed the tools from `PUBLIC_TOOLS`).
 - 2026-06-10T05:30+02:00 — Diagnostics/watchers tool tests assert the S4 compact wire shape: rawStatus/currentState bodies absent inline, present in the `reportPath` file, `currentStateFile` still on disk.

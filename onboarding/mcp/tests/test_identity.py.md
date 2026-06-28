@@ -6,9 +6,9 @@
 | path                   | `mcp/tests/test_identity.py`               |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T23:15+02:00|
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
-| governingOverview      | `overview.md`                              |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Purpose
 

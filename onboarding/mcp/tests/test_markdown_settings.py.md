@@ -6,9 +6,9 @@
 | path                   | `mcp/tests/test_markdown_settings.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                         |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
-| governingOverview      | `overview.md`                              |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Purpose
 

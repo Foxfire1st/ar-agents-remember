@@ -1,0 +1,91 @@
+# mcp/src/agents_remember/controlplane/operator_inbox_store.py
+
+| Field                  | Value                                                             |
+| ---------------------- | ----------------------------------------------------------------- |
+| repository             | agents-remember                                                   |
+| path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
+| doc_type               | `file-level-onboarding`                                           |
+| lastUpdated            | 2026-06-25T13:10+02:00                                            |
+| lastVerifiedCommitHash |                                                                   `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
+| lastVerifiedCommitDate |                                                                   2026-06-28T18:49:06+02:00|
+| governingOverview      | `overview.md`                                                     |
+
+## Governing Overview
+
+[overview.md](overview.md)
+
+## Purpose
+
+File-backed operator inbox store for short-lived external-chat polling.
+
+## Code Commentary
+
+### Logic
+
+`OperatorInboxStore(observer_root)` writes one workspace log:
+`workspace/operator-inbox.jsonl`. `append(record)` creates the parent directory
+and appends a strict JSON snapshot. `read()` validates each JSONL row back into
+`OperatorInboxEntry`, and `current()` folds by entry id, last snapshot wins.
+
+`list_pending(lifecycle_id, agent_id)` requires at least one mailbox key, then
+returns pending entries matching every supplied key. That means a lifecycle poll,
+an agent poll, or a combined lifecycle+agent poll all use the same log without
+duplicating entries. `consume(entry_id, ...)` appends one consumed snapshot and
+returns `(entry, True)` the first time; repeated consumes return the existing
+consumed entry with `False`.
+
+Task 23/24 added physical cleanup. `delete(entry_id)` removes all snapshots for
+one inbox entry, `delete_by_gate(gate_id)` removes entries associated with a
+cleared/dismissed gate, and `compact(now=...)` prunes consumed or 24h-expired
+entries through `interaction_retention.inbox_keep_ids`. The public consume tool
+now deletes the entry after returning the consumed payload.
+
+### Conventions
+
+The store follows the gate store's append/read/fold pattern, but uses a shared
+workspace inbox log because external chats may address by lifecycle, agent, or
+both.
+
+### Invariants And Boundaries
+
+- Current state is a fold while entries are pending; consumed/dismissed/expired
+  entries are throwaway interaction data and can be physically removed.
+- Polling without `lifecycle_id` or `agent_id` is invalid because it has no
+  mailbox boundary.
+- This store owns persistence only; MCP payload shapes and attribution routing
+  live in `mcp/tools/operator_inbox.py`.
+
+### Todos
+
+None.
+
+## Docs References
+
+The observable-lifecycle design describes passive/active pull as the durable
+return-channel family; this store supplies the durable mailbox for external
+agents that cannot receive dashboard session injection.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Pull-based return channels sit above durable gate truth and resume on the next poll/poke when push is unavailable. | L251-L266 | [observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | L15-L53 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Pending filters match supplied lifecycle and/or agent keys. | L55-L70 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Consume is idempotent and appends a consumed snapshot only once. | L72-L93 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| None. | N/A | N/A |
+
+## Update History
+
+- 2026-06-25T13:10+02:00 — Task 23/24: added delete, delete-by-gate, and compaction so consumed/dismissed/expired operator-inbox entries do not accumulate forever.
+- 2026-06-23T13:44+02:00 — Created for task 10 backend inbox: append-only workspace inbox store with lifecycle/agent pending filters and idempotent consume. Verification metadata pinned until closeout stamps the task-10 code commit.

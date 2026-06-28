@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-22T22:00+02:00     |
-| lastVerifiedCommitHash | `adbee7d31a75ca4ae85c2d99d05a9109969399e5` |
-| lastVerifiedCommitDate | 2026-06-22T22:08:07+02:00|
+| lastUpdated            | 2026-06-18T16:10+02:00     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,14 +27,25 @@ dependencies, console script, and setuptools package discovery root.
 The package builds with `setuptools`, publishes as `agents-remember-mcp`, uses
 `mcp/README.md` as its package README, and requires Python 3.11 or newer.
 Runtime dependencies stay intentionally narrow but now include `mcp`,
-`pydantic`, and `tiktoken`: Pydantic owns public response validation and
-tiktoken backs response token accounting. Development-only quality tools live
-under the `dev` optional dependency group: Coverage.py, pytest, pytest-cov,
-Pyright, Radon, and Ruff.
+`pydantic`, `tiktoken`, and — for the slice-04 dashboard serving layer —
+`fastapi` (built-in `fastapi.sse`), `uvicorn`, and — for the slice 6d-2 Mode B2
+terminal — `websockets`: Pydantic owns public response validation, tiktoken
+backs response token accounting, FastAPI/uvicorn serve the local dashboard, and
+`websockets` is uvicorn's WebSocket protocol implementation for the
+`/api/terminal/{session}` terminal bridge (plain `uvicorn` ships no WS impl, so a
+live WebSocket needs it). Slice 6f adds `python-multipart`, which FastAPI requires to
+parse the `multipart/form-data` upload on `POST /api/terminal/{session}/image` (its
+`UploadFile`/`File` form support fails without it). The webstack is a **core** dependency (not an optional
+extra) so `agents-remember dashboard` works on a plain install. Development-only
+quality tools live under the `dev` optional dependency group: Coverage.py, httpx
+(the FastAPI `TestClient` backend), pytest, pytest-cov, Pyright, Radon, and Ruff.
 
-The `agents-remember-mcp` console script points at
-`agents_remember.mcp.__main__:main`, while setuptools discovers import packages
-from `mcp/src`. The `[tool.setuptools.package-data]` block ships the installable
+Two console scripts are declared: the umbrella `agents-remember`
+(`agents_remember.cli.__main__:main`, the front door for subcommands such as
+`dashboard`) and the unchanged `agents-remember-mcp`
+(`agents_remember.mcp.__main__:main`, the MCP server — kept standalone because
+harness MCP configs launch it by that exact name). setuptools discovers import
+packages from `mcp/src`. The `[tool.setuptools.package-data]` block ships the installable
 runtime scaffold — `package_data/**/*` (AGENTS.md templates, skills, provider
 assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 — so `runtime_install` can reconcile those package-owned assets into a
@@ -48,7 +59,10 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 - Runtime package dependencies should stay separate from source-development
   quality dependencies; Pydantic and tiktoken are runtime dependencies because
-  modeled responses and token metadata are part of normal tool output.
+  modeled responses and token metadata are part of normal tool output, and
+  FastAPI/uvicorn are runtime dependencies because the dashboard ships in the
+  package and must run on a plain install. httpx, by contrast, is dev-only — it
+  only backs the FastAPI `TestClient` in tests.
 - Release version bumps should keep this project version aligned with
   `agents_remember.mcp.SERVER_VERSION` so installed server payloads report the
   same version that PyPI installs.
@@ -74,8 +88,9 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
-- 2026-06-22T22:00+02:00 — No content impact: version bumped to 2.9.3 for the worktree_name contract-resolution fix release (#90); packaging contract unchanged.
-- 2026-06-19T13:42 — No content impact: version bumped to 2.9.2 for the benchmark provider isolation release (task 260619); packaging contract unchanged.
+- 2026-06-19T20:30 — Task 6 slice 6f: added `python-multipart` (`>=0.0.9,<1`) as a **core** runtime dependency — FastAPI needs it to parse the `multipart/form-data` `UploadFile` on `POST /api/terminal/{session}/image` (the screenshot upload). Verification metadata pinned until closeout stamps the 6f code commit.
+- 2026-06-18T16:10+02:00 — Task 6 slice 6d-2: added `websockets` (`>=12,<16`) as a **core** runtime dependency — uvicorn's WebSocket protocol impl for the Mode B2 `/api/terminal/{session}` bridge (plain `uvicorn` ships none). Verification metadata pinned until closeout stamps the 6d-2 code commit.
+- 2026-06-14T11:30+02:00 — Slice 04 commit 4a: added `fastapi` + `uvicorn` as **core** runtime dependencies (the dashboard webstack, forced core so `agents-remember dashboard` works on a plain install), `httpx` to the `dev` group (FastAPI `TestClient`), and the umbrella `agents-remember` console script alongside the unchanged `agents-remember-mcp`. Verification metadata pinned until closeout stamps the 4a code commit.
 - 2026-06-12T19:06+02:00 — No content impact: version bumped to 2.9.1 for the issue #83 closeout committed-range fix release; packaging contract unchanged.
 - 2026-06-11T15:20+02:00 — No content impact: version bumped to 2.9.0 for the carryover artifact coverage release; packaging contract unchanged.
 - 2026-06-10T10:26+02:00 — No content impact: version bumped to 2.8.0 for the GitHub #54 release (lifecycle-long stale-base prevention); the packaging contract this sidecar describes is unchanged.

@@ -5,29 +5,29 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-10T09:56+02:00                             |
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66`         |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
+| lastUpdated            | 2026-06-27T22:00+02:00                      |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`         |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
 
 `test_tool_response_conformance.py` moves the production response-contract
-guarantee into the test suite: every public MCP tool produces a payload that
-conforms to its registered Pydantic response model, so controller drift is caught
-at dev time instead of in a live tool call.
+guarantee into the test suite: every response-modeled MCP payload builder produces
+a payload that conforms to its registered Pydantic response model, so controller
+drift is caught at dev time instead of in a live tool call.
 
 ## Code Commentary
 
 ### Logic
 
 Production already validates each tool payload through
-`tools._tool_payload()` against `models.tool_registry.PUBLIC_TOOL_RESPONSE_MODELS`
+`tools._tool_payload()` against `models.tool_registry.TOOL_RESPONSE_MODELS`
 (strict models use `extra="forbid"`). These tests reproduce that guarantee by
-obtaining a *representative* payload for every public tool from the real
+obtaining a *representative* payload for every modeled builder from the real
 `*_payload` builder, then asserting conformance.
 
-`setUpClass` builds three temporary fixtures (each in its own temp dir) and
+`setUpClass` builds seven temporary fixtures (each in its own temp dir) and
 collects one representative payload per tool into `cls.payloads`:
 
 - `_base_fixture` / `_simple_payloads`: a code repo, memory layer, and
@@ -37,11 +37,25 @@ collects one representative payload per tool into `cls.payloads`:
 - `_worktree_payloads`: a real worktree lifecycle in disabled-memory mode
   produces `worktree_start`, `worktree_status`, `worktree_attach`,
   `worktree_sync` (dry-run, GitHub #54 sub-task D), `worktree_closeout_preview`,
-  `worktree_closeout_apply`, `worktree_integrate`, and `worktree_cleanup`
-  against a real contract.
+  `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, and
+  `lifecycle_finalize_task` (dry-run) against a real contract.
 - `_carryover_payloads`: a landed-branch fixture drives `memory_carryover_plan`
   and `memory_carryover_apply` (a docstring names the
   `c-11-memory-carryover-from-branch` skill).
+- `_lifecycle_payloads`: installs an ambient lifecycle over a temp `EventStore`
+  and drives the lifecycle signal payloads (task 28 adds a representative
+  `lifecycle_turn_end_notification` payload — the NOTIFY-AND-CONTINUE turn end that
+  leaves the lifecycle `awaiting-developer`); `lifecycle_block` remains here as
+  lower-level compatibility coverage, not as an advertised public MCP tool.
+- `_task_doc_payloads`: a base fixture authoring one representative `task_doc`
+  document (a `create`), so the JSON-primary task tool has a payload (slice 3c).
+- `_gate_payloads`: a base fixture driving `lifecycle_gate` with an injected
+  developer decision for deterministic conformance, then create/decide/wait/response-wait/list
+  compatibility payloads, so both the public unified gate response and retained
+  lower-level gate response models have representative payloads.
+- `_operator_inbox_payloads`: a base fixture posting, polling, and consuming one
+  external-chat inbox entry, so the three `operator_inbox_*` tools have
+  representative payloads (task 10).
 
 The former `_direct_closeout_payloads` fixture was removed with the
 `direct_closeout_*` tools (issue #62 worktree-only closeout).
@@ -50,7 +64,7 @@ The former `_direct_closeout_payloads` fixture was removed with the
 because git worktrees leave read-only pack files that otherwise break cleanup on
 Windows.
 
-`test_every_public_tool_has_a_representative_payload` asserts the payload set
+`test_every_modeled_tool_has_a_representative_payload` asserts the payload set
 exactly covers the registry. `test_representative_payloads_conform_to_registered_models`
 asserts, per tool, that the payload validates and that round-tripping
 (`model_validate(...).model_dump(mode="json", exclude_none=True)`) fabricates no
@@ -75,7 +89,8 @@ declared nor part of the input."
 
 - Prefer the real controller/`*_payload` builder for representative payloads; fall
   back to hand-built fixtures only where invoking the controller is impractical
-  (currently none are needed — all 36 tools run for real).
+  (currently none are needed — every modeled tool runs for real, including the
+  task-28 `lifecycle_turn_end_notification`).
 - Strict response models must keep `extra="forbid"`; flexible models keep
   `extra="allow"`. The structural rule is `FlexibleResponseModel` membership.
 - This is a dev-time conformance net; the runtime contract still lives in
@@ -90,9 +105,24 @@ declared nor part of the input."
 | The strict/flexible response-model taxonomy lives in the model base. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
 | Worktree/carryover fixtures reuse worktree test helpers. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 | Schema-level registry coverage is asserted separately. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
+| Inbox representative payloads call the real post, poll, and consume builders. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
+| Lifecycle finalizer representative payload exercises the new terminal worktree tool. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
 
 ## Update History
 
+- 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): `_lifecycle_payloads` now also drives a representative `lifecycle_turn_end_notification` payload, so the new public tool's registered response model is covered by `test_every_modeled_tool_has_a_representative_payload` / `test_representative_payloads_conform_to_registered_models`. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-26T18:43+02:00 — Regression fixture update: `_gate_payloads`
+  now resolves the representative `lifecycle_gate_payload` through an injected
+  developer-attributed decision instead of the internal zero-timeout path.
+- 2026-06-26T17:05+02:00 — Regression fixture update: `_gate_payloads`
+  preserves deterministic conformance coverage after the public junction became blocking.
+- 2026-06-26T14:16+02:00 — Task 25: conformance now targets `TOOL_RESPONSE_MODELS`, adds a representative `lifecycle_gate` payload, and keeps split gate/block/wait payloads as compatibility coverage rather than public-tool coverage.
+- 2026-06-25T07:17+02:00 — Task 19: `_gate_payloads` now includes a representative `gate_response_wait` payload so the new public helper is covered by response conformance. Verification metadata pinned until closeout stamps the task-19 code commit.
+- 2026-06-23T22:50+02:00 — Dashboard task 14: added a representative `lifecycle_finalize_task` payload to the worktree fixture, so all 51 public tools still validate through their registered response models. Verification metadata pinned until closeout stamps the source commit.
+- 2026-06-23T13:44+02:00 — Task 10 backend inbox: added `_operator_inbox_payloads` and a seventh fixture so the three `operator_inbox_*` tools have representative payloads; the suite now covers 50 public tools. Verification metadata pinned until closeout stamps the task-10 code commit.
+- 2026-06-18T01:05+02:00: Task 6 slice 6a — added the `_gate_payloads` fixture (a sixth fixture) so the four `gate_*` tools have representative payloads; the suite now covers 47 public tools. Verification metadata pinned until closeout stamps the 6a code commit.
+- 2026-06-13T22:34: Slice 3c commit 1 — added the `_task_doc_payloads` fixture (a fifth fixture) so the `task_doc` tool has a representative payload; the suite now covers 43 public tools. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- 2026-06-13T16:41+02:00: Slice 2b — added the `_lifecycle_payloads` fixture (a fourth fixture) so the six `lifecycle_*` tools have representative payloads; the suite now covers 42 public tools. Verification metadata pinned until closeout stamps the 2b code commit.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-11T06:47+02:00 — Removed the `_direct_closeout_payloads` fixture and its temp dir (issue #62 worktree-only closeout); the suite now covers the 36 public tools across three fixtures.
 - 2026-06-10T09:56+02:00: Added the `worktree_sync` dry-run representative payload to the worktree fixture (GitHub #54 sub-task D).

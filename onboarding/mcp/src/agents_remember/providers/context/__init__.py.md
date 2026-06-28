@@ -6,13 +6,13 @@
 | path                   | `mcp/src/agents_remember/providers/context/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `overview.md`                              |
 
 ## Governing Overview
 
-[mcp/overview.md](../../../overview.md)
+[mcp/overview.md](overview.md)
 
 ## Purpose
 

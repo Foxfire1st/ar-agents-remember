@@ -5,23 +5,23 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T01:06+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-06-23T22:50+02:00                     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 
 ## Purpose
 
-This workflow file gives the step-by-step `w-02-light-task-workflow` skill procedure for creating a task wrapper, planning in `task.md`, approving implementation, implementing, validating, requesting separate commit approval for worktree-backed closeout, and closing a light durable task.
+This workflow file gives the step-by-step `w-02-light-task-workflow` skill procedure for creating a task wrapper, planning in `task.md`, approving implementation, implementing, validating, requesting separate commit approval for worktree-backed closeout, and finalizing a light durable task after its branch lands.
 
 ## Code Commentary
 
 ### Logic
 
-The workflow starts with context resolution and drift checks, classifies `c-02-memory-quality-control` skill drift into clean-source update candidates versus dirty-source active work-in-progress, creates or reuses a task wrapper folder, applies the Task Collaboration Doctrine (`tasks/AGENTS.md`) sized to the request and records the settled design in the task file's `## Design` section, writes `task.md` from the template, stops for approval, then executes checklist items while keeping the task artifact current. The wrapper folder is created before `c-09-git-worktree-manager` skill worktrees; refreshed external-memory onboarding and ledger changes are committed before worktree start; worktree-backed light tasks later keep `contract.md` beside `task.md` under the `c-08-ar-coordination-context-resolver` skill resolved task root. After implementation, worktree-backed tasks prepare a `c-09-git-worktree-manager` skill closeout dry-run and stop for explicit commit approval before any closeout commits are created. A "Master Task Series" section documents escalating a too-large task to a master + light sub-task series run as one task / one workflow / one worktree: a commit per slice behind a commit gate, the worktree open across slices, and a single integrate + release at the end.
+The workflow starts with context resolution and drift checks, classifies `c-02-memory-quality-control` skill drift into clean-source update candidates versus dirty-source active work-in-progress, creates or reuses a task wrapper folder, applies the Task Collaboration Doctrine (`tasks/AGENTS.md`) sized to the request and records the settled design in the task file's `## Design` section, writes the task document with the `task_doc` MCP tool (JSON-primary, slice 3c: the tool renders `task.md` from the `ar-task-document/v1` JSON; the `template.md` is the render spec), stops for approval, then executes checklist items while keeping the task artifact current. The wrapper folder is created before `c-09-git-worktree-manager` skill worktrees; refreshed external-memory onboarding and ledger changes are committed before worktree start; worktree-backed light tasks later keep `contract.md` beside `task.md` under the `c-08-ar-coordination-context-resolver` skill resolved task root. After implementation, worktree-backed tasks prepare a `c-09-git-worktree-manager` skill closeout dry-run and stop for explicit commit approval before any closeout commits are created; task status stays below `Completed` until `lifecycle_finalize_task` proves the landed edge and reconciles task docs. A "Master Task Series" section documents escalating a too-large task to a master + light sub-task series run as one task / one workflow / one worktree: a commit per slice behind a commit gate, the worktree open across slices, and a single integrate + finalization + release at the end.
 
 ### Conventions
 
-The workflow treats `task.md` as active state inside the wrapper folder. It uses checkboxes for implementation progress and a decision log for durable choices, and refers to `c-08-ar-coordination-context-resolver` skill resolved `tools_path` and `sources_path`.
+The workflow treats `task.md` as active state inside the wrapper folder. It uses checkboxes for implementation progress and a decision log for durable choices, and refers to `c-08-ar-coordination-context-resolver` skill resolved `tools_path` and `sources_path`. When code examples are deferred to the plan gate, the planning step records that via `codeExamplesNote` so the render distinguishes deferred from none-needed.
 
 ### Invariants And Boundaries
 
@@ -49,7 +49,7 @@ The workflow defines the concrete process behind the `w-02-light-task-workflow` 
 | Drift-gated planning now records that clean-source update candidates are refreshed through `c-05-create-or-update-onboarding-files` skill, dirty-source drift is left alone unless explicitly owned, and refreshed external-memory onboarding plus ledger changes must be committed before any `c-09-git-worktree-manager` skill worktree starts. | L45-L52 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
 | Drift detection is part of task planning before the durable plan is finalized. | L45-L51 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
 | Planning checks `c-08-ar-coordination-context-resolver` skill resolved docs, sources, and onboarding roots before writing the approval artifact. | L57-L64; L98-L115 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
-| Implementation, validation, onboarding propagation, closeout preview, and commit approval handoff are one checklist-driven cycle. | L117-L174 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
+| Implementation, validation, onboarding propagation, closeout preview, commit approval handoff, and later lifecycle finalization are one checklist-driven cycle. | L117-L176 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
 | Before writing `task.md`, the workflow applies the Task Collaboration Doctrine sized to the request and records the settled design in the task file's `## Design` section, from which the implementation steps derive. | L66-L73; L85 | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
 
 ## Cross-Repo References
@@ -60,8 +60,16 @@ No sibling repository evidence is needed for the current workflow file.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## Series-Contract Notes
+
+The workflow reference now distinguishes the master integration branch lifecycle from active leaf enclosure lifecycles and shows leaf closeout/integration before final master release.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged workflow details now define the master integration branch plus per-leaf enclosure lifecycle, including active slice worktrees and final master release. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-23T22:50+02:00: Dashboard task 14 — documented that closeout does not set worktree-backed tasks to `Completed`; `lifecycle_finalize_task` does so after the branch lands and cleanup/finalization is approved. Verification metadata pinned until closeout stamps the source commit.
+- 2026-06-19T05:15+02:00: Slice 3c reopened (R3, deferred-examples honesty) — the proposed-code-examples step now records deferral via `codeExamplesNote` so the render distinguishes deferred from none-needed. Synced from canonical `skills/`. Verification metadata pinned until closeout stamps the R3 code commit.
+- 2026-06-13T22:34: Slice 3c commit 2 — step 7 now authors the task document via the `task_doc` MCP tool (JSON-primary; the tool renders `task.md`, `template.md` is the render spec). Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
 - 2026-06-02T04:25+02:00: Replaced the heavy-oriented "What This Workflow Does Not Cover" + "Relationship To Heavy Task Workflow" sections with a "When To Escalate To A Master Series" section, and dropped the "same naming convention as heavy-task-workflow" phrasing. `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.
 - 2026-06-02T04:10+02:00: Added a "Master Task Series" section documenting escalation to a master + light sub-task series (one worktree per series, a commit per slice, one integrate + release at the end). `l-01-session-job-lifecycle` skill series, Sub-task B/S5, mcp 1.1.0.
 - 2026-05-31T01:06+02:00: Added step 6 "Reframe and design before writing the plan" linking the Task Collaboration Doctrine and recording settled design in the task file's `## Design` section before implementation steps; renumbered later steps to 7 and 8, added the design item to the required-sections list, and refreshed the citations my insertion shifted.

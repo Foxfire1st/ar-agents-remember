@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T07:50+02:00     |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36` |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastUpdated            | 2026-06-25T09:55+02:00     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -25,10 +25,13 @@ top-level `grepai_setup.py` plus mixed `context_modules/grepai` and
 
 Use `setup.py` for setup-time refresh/install wiring, `seed.py` for worktree
 PostgreSQL database clone/reuse, and `isolated.py` for worktree-scoped provider
-settings. Use `context/` for Docker runtime layout, workspace YAML, live memory
+settings that keep the multi-root provider shape while swapping only the active
+project root to the task memory worktree. Use `context/` for Docker runtime layout, workspace YAML, live memory
 roots, and per-root `.gitignore` of grepai's `.grepai/` working dir. Use
 `lifecycle/` for Postgres, Ollama, runner image/container, and high-level
-GrepAI actions.
+GrepAI actions. The lifecycle package owns the current preferred auto host
+ports (`61432` for Postgres, `61434` for Ollama); Docker container service
+ports stay `5432` and `11434`.
 
 ## Route Model
 
@@ -40,17 +43,18 @@ GrepAI actions.
   so embeddings can be reused instead of rebuilt. The clone runs under a stall
   watchdog (killed after `GREPAI_CLONE_STALL_SECONDS` of zero progress in dump
   growth / target database size) and is never capped by total duration — a
-  wedge's signature is silence, not size (2.5.1). A benchmark-scoped target is
-  refused up front (`_clone_skip`) so a benchmark never clones from another
-  stack (hermetic; task 260619).
+  wedge's signature is silence, not size (2.5.1).
 - `isolated.py` rewrites provider settings for worktree-specific containers,
-  roots, logs, and runtime paths while preserving the logical workspace key.
+  roots, logs, and runtime paths while preserving the logical workspace key and
+  leaving unrelated repository roots on their configured paths.
 - `context/` owns GrepAI runtime layout, workspace config, and live-root indexing.
 - `lifecycle/` owns Docker backend, embedder, runner, and top-level actions.
 
 ## Invariants And Boundaries
 
 - GrepAI is Docker-or-bust; there is no host binary or host Ollama fallback.
+- GrepAI can be one aggregate provider instance with multiple addressable
+  project roots; worktree isolation rewrites only the active project root.
 - GrepAI-specific behavior belongs under this package, not in CGC modules or
   shared lifecycle helpers.
 - Shared helpers must stay provider-agnostic.
@@ -65,7 +69,10 @@ GrepAI actions.
 
 ## Update History
 
-- 2026-06-19T13:42 — `seed.py` now refuses a benchmark-scoped clone target (`_clone_skip`), so a benchmark never clones from another provider stack (hermetic; defense-in-depth for task 260619's benchmark isolation).
+- 2026-06-25T09:55+02:00 — No route model change: child context/lifecycle routes now record GrepAI's preferred auto host ports (`61432`/`61434`) separately from container service ports (`5432`/`11434`).
+- 2026-06-23T22:31+02:00 — Clarified the worktree-isolation invariant behind Task 12 provider
+  projection: GrepAI remains a multi-root provider instance while only the active project root is
+  redirected to the task memory worktree. Verification metadata will be stamped at closeout.
 - 2026-06-10T07:50+02:00 — GitHub #53: `setup.py` announces install/clone-db phases through the setup progress sink for background worktree provider setup.
 - 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: the `seed.py` clone stall watchdog and no-total-cap contract. Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-06-06T12:15: Re-verified against the current GrepAI provider package; added the worktree database-clone (`seed.py`) and isolated-settings (`isolated.py`) surfaces.

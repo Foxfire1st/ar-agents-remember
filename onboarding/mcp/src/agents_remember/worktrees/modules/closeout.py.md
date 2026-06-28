@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-12T19:06+02:00|
-| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
-| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
+| lastUpdated            | 2026-06-18T12:10+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -65,6 +65,31 @@ The entry points (`closeout_preview_payload`, `closeout_result`) and the
 `argparse.Namespace`; `closeout_result` asserts `args.contract_path is not None`
 before loading the contract, since `WorktreeArgs.contract_path` is optional.
 
+Server-side gate enforcement (slice 6b): when the contract carries a
+`lifecycle_id`, `_enforce_closeout_gate` reads the lifecycle's gate log via
+`GateStore(observer_logs_root(contract.coordination_root))` — the same log the
+dashboard writes — and `controlplane.evaluate_closeout_gate` refuses the closeout
+unless a `closeout-approval` gate is `approved` **by the developer** (a model
+self-approval, or an `open`/`rejected`/`applied` gate, blocks; a gateless
+lifecycle falls back to the chat `--approved` gate, unchanged). The check runs
+after the chat approval note and before the code commit; on success
+`_mark_closeout_gate_applied` appends an `applied` snapshot so one approval cannot
+be replayed. Both preview and apply payloads carry a `closeout_gate` block
+(`enforced` / `permitted` / `gateId` / `reason`) for the commit-approval relay.
+
+Task 30 adds the re-closeout reset path for already-integrated leaves. When a
+completed integration is legitimately re-closed, source-head validation accepts
+the recorded integrated tips in addition to the original base tips. Preview
+reports `integration_reopen.would_reopen` when the closeout would create or
+transport new unlanded code or memory content. Apply compares the resulting
+code and memory-content commits against the contract and recorded source
+branches; if either new content commit is not yet on its source branch, closeout
+reopens the contract by clearing the integrated commit fields, setting
+`integration_status` back to `not-started`, and leaving cleanup pending so
+`worktree_integrate` can land the new tip normally. A clean no-op re-closeout
+does not reopen integration and avoids duplicating an existing ledger mapping,
+so a completed leaf stays completed when no new code or memory content exists.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -77,9 +102,18 @@ No external Domain Documentation source is configured for this memory repo.
 | Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py) |
 | Worktree tests cover dry-run previews, approval notes, missing onboarding blocking, route overview/index refresh, memory quality gating, and ledger updates. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 | Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
+| The pure closeout-gate policy this module enforces (slice 6b). | [controlplane/enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
+| The gate log read during enforcement and appended to when marking `applied`. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
 
 ## Update History
 
+- 2026-06-27T21:10+02:00 — Task 30: documented completed-integration
+  re-closeout handling. Closeout now reports and applies an integration reopen
+  only when a new code or memory-content commit is not yet on the recorded
+  source branch, while no-op re-closeout avoids duplicate ledger mapping and
+  leaves completed integration state intact. Verification metadata pinned until
+  closeout stamps the task-30 code commit.
+- 2026-06-18T12:10+02:00 — Task 6 slice 6b: closeout is now server-side gate-enforcing — `_enforce_closeout_gate` refuses unless the lifecycle's `closeout-approval` gate is developer-approved (gateless lifecycles fall back to the chat `--approved` gate), `_mark_closeout_gate_applied` consumes the approval after the commit, and preview/apply payloads carry a `closeout_gate` block. Verification metadata pinned until closeout stamps the 6b code commit.
 - 2026-06-12T19:06+02:00 — Issue #83: worklist = working tree ∪ unverified committed range (`closeout_changed_paths`), two-tier blocking via `working_paths` with the non-blocking `unonboarded` report, body gates baselined at `contract_memory_verified_commit`, and count+sample payload bounding (`_bounded_paths`, `PATH_SAMPLE_LIMIT`).
 - 2026-06-11T08:55+02:00 — No content impact: removed the 8 imports orphaned by the issue #62 deletion (`resolve_context`, `current_branch`, and the direct-path `*_for_context` planners/validators/refreshers) after CI's Ruff F401 gate caught them; pure import cleanup, behavior unchanged.
 - 2026-06-11T06:47+02:00 — Removed `validate_direct_external_context`, `direct_closeout_preview_payload`, and `direct_closeout_result` plus the now-unused `MemoryLedger` import (issue #62 worktree-only closeout); the module owns only the worktree closeout path.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-22T22:00+02:00                     |
-| lastVerifiedCommitHash | `adbee7d31a75ca4ae85c2d99d05a9109969399e5` |
-| lastVerifiedCommitDate | 2026-06-22T22:08:07+02:00|
+| lastUpdated            | 2026-06-06T12:15                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ JSON-first settings selection, `json_settings.py` and `markdown_settings.py`
 for settings formats, `markdown_cross_repo.py` and
 `markdown_global_rules.py` for legacy Markdown parser branches, `storage.py`
 for path-rule eligibility, `cross_repo.py` for branch-gated adjacent repo facts,
-`contracts.py` for worktree contract fact loading, and `serialize.py` plus
+`contracts.py` for root/leaf series-contract fact loading, and `serialize.py` plus
 `cli.py` for output adapters.
 
 ## Route Model
@@ -46,7 +46,7 @@ The package is intentionally split by responsibility:
 - `markdown_cross_repo.py` and `markdown_global_rules.py` keep the Markdown
   parser below complexity and maintainability thresholds.
 - `storage.py` owns storage/path-rule decisions.
-- `contracts.py` and `cross_repo.py` load external facts used by the resolver.
+- `contracts.py` and `cross_repo.py` load external facts used by the resolver; contract lookup goes through active task-root and leaf-enclosure resolution, excluding archived task roots.
 - `serialize.py` and `cli.py` adapt the context to text/JSON output.
 
 ## Invariants And Boundaries
@@ -69,6 +69,6 @@ The package is intentionally split by responsibility:
 
 ## Update History
 
-- 2026-06-22T22:00+02:00 — No route impact: `contracts.py` gained a `worktree_name` fallback in `resolve_contract` plus the `find_worktree_contract` helper, `resolver.py` forwards `worktree_name` into it, and the facade re-exports it (#90); the route's module responsibilities (`contracts.py` still loads worktree contract facts for the resolver), structure, and invariants are unchanged. Detail lives in the file sidecars.
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: coordination context now resolves active task names, optional nested `parent_task`, and optional `leaf_id` into root or leaf `series-contract.md` paths instead of looking for sibling `contract.md` files. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-06T12:15: Re-verified against the current 15-file coordination-context package; purpose, hot path, route model, and invariants still match.
 - 2026-05-25T20:57+02:00: Created after the monolithic `c-08-ar-coordination-context-resolver` skill package resolver was split into focused implementation modules, then amended when Markdown fallback parser branches moved into submodules.

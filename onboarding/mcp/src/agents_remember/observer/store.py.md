@@ -1,0 +1,48 @@
+# mcp/src/agents_remember/observer/store.py
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `mcp/src/agents_remember/observer/store.py`      |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-06-13T11:15+02:00                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `overview.md`                                     |
+
+## Purpose
+
+`store.py` is the append-only event store: it resolves a given event's log path
+and appends it as one JSONL line.
+
+## Code Commentary
+
+`EventStore(observer_root)` holds the `logs/observer/` root. `log_path(lifecycle_id)`
+routes to `lifecycles/<id>/events.jsonl` when a lifecycle id is present, else the
+shared `workspace/events.jsonl`. `append(event)` creates parent dirs on first
+write and appends `event.model_dump_json(by_alias=True, exclude_none=True)`.
+`read(lifecycle_id)` validates a log back into `Event` objects — the minimal,
+validated read that proves the write format round-trips (the projection layer
+will read more richly).
+
+## Invariants And Boundaries
+
+- **Single writer per lifecycle file.** Exclusive adoption (one live session per
+  lifecycle) means appends need no cross-process lock. The only events written to
+  a lifecycle file are written by its live owner; a dormant fleeting lifecycle
+  past TTL is *pruned* (directory deletion), never terminated by a non-owner
+  append — so the single-writer invariant holds without coordination.
+- Append-only: history is never rewritten in place (corrections are later
+  events, by design).
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The event envelope serialized/validated here. | [events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
+| The store layout, retention tiers, and TTL prune rule. | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+
+## Update History
+
+- 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
+  until closeout stamps the 2a code commit.

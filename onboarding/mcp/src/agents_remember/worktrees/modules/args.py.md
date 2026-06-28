@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                         |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -48,6 +48,11 @@ block when a source branch is behind/diverged from its upstream.
 commits and the official memory moved — `merge-memory` or `skip-memory`;
 `None` blocks with `needs-review`.
 
+`lifecycle_id: str = ""` (slice 2c): the observable-lifecycle id the controller
+resolves (the active lifecycle's id, or a fresh mint when none is active) and
+threads through to `_build_start_contract`, which stamps it into the contract's
+`lifecycle:` block — the durable resume anchor.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -59,8 +64,14 @@ No external Domain Documentation source is configured for this memory repo.
 | Provider setup config is typed through the companion worktree models module. | [models.py](agents-remember/mcp/src/agents_remember/worktrees/modules/models.py) |
 | Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. | [cli.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cli.py) |
 
+## Series-Contract Notes
+
+`WorktreeArgs` carries `parent_task` and `leaf_id` through CLI, MCP, and source API entrypoints, giving all operations the same active-task and leaf-selection inputs.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `WorktreeArgs` now includes `parent_task` and `leaf_id` so all worktree operations can resolve nested active task roots and specific leaf enclosures without filesystem paths. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-13T18:45+02:00 — Slice 2c: added `lifecycle_id: str = ""` (the observable-lifecycle enclosure anchor the controller resolves and `_build_start_contract` stamps into the contract). Verification metadata pinned until closeout stamps the 2c code commit.
 - 2026-06-10T09:56+02:00 — Added `memory_sync_choice: str | None = None` (GitHub #54 sub-task D worktree_sync recovery selector).
 - 2026-06-10T09:30+02:00 — Added `stale_base_choice: str | None = None` (GitHub #54 stale-base preflight recovery selector).
 - 2026-06-10T07:30+02:00 — Added `retry_provider_setup: bool = False` (GitHub #53): on an existing contract, worktree start relaunches background provider setup instead of attaching; refused while a live setup heartbeat exists.

@@ -1,0 +1,144 @@
+# mcp/src/agents_remember/serving/terminal.py
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `mcp/src/agents_remember/serving/terminal.py`    |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-06-27T18:43+02:00                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `overview.md`                                     |
+
+## Governing Overview
+
+[serving/ overview](overview.md)
+
+## Purpose
+
+`terminal.py` is the **Mode B2 terminal host backend** (slice 6d-1): a registry of
+tmux-wrapped PTY sessions that launch the real harness *inside* a dashboard-owned
+terminal. It is render-not-scrape plumbing — the raw VT/ANSI bytes a PTY emits are
+exactly what xterm.js will render (slice 6e) — and it is backend-only here: the
+WebSocket bridge that drives it live is slice 6d-2, the visual is 6e. Task 22 adds the
+tmux probe/create/kill hooks the durable terminal-session catalog needs to create a detached session,
+distinguish a still-live external tmux session from a stale catalog row, and terminate explicitly,
+plus per-WebSocket tmux-client attachment so multiple browser tabs can share one durable chat without
+racing one PTY fd.
+
+## Code Commentary
+
+### Logic
+
+`TerminalHost` holds a `dict[str, TerminalSession]` registry for attached PTY clients.
+`ensure(sid, *, cwd, command, lifecycle_id=None, name=None, suspend_unsafe=False)` creates the durable
+tmux session with `tmux new-session -d ...` when it is absent, returns a `TerminalSessionBinding`
+metadata object, and deliberately registers no PTY client. This is the POST-opener path: the browser
+WebSocket later attaches with its own client. `open(sid, *, cwd, command, lifecycle_id=None, name=None,
+suspend_unsafe=False)` is idempotent — a live
+registered session for `sid` is returned as-is, a dead one reaped and replaced — and spawns
+`_build_tmux_command(name, cwd, harness)` =
+`tmux new-session -A -s <name> -c <cwd> -- <harness>` via the injectable `self._spawn`.
+`attach(...)` uses the same spawn path but does **not** register the returned `TerminalSession`: it is a
+per-connection tmux client for one WebSocket. This matters because one PTY master fd is a single-reader
+stream; two browser tabs must not call `read_nonblocking(sid)` on the same registered fd. The WebSocket
+bridge uses `read_session`/`write_session`/`resize_session`/`close_session` against the concrete
+attachment object, while existing sid-keyed `write`/`read_nonblocking`/`resize`/`close` remain for the
+registered-session API and tests. `-A` is attach-or-create, so the tmux **server** outliving this process
+means a restart or dropped socket re-attaches the same live harness (persistence). `write` resolves the
+session first (so an unknown sid still raises `KeyError`) and `write_session` applies the same write rules
+to a concrete client: for a **suspend-unsafe**
+session (`suspend_unsafe=True`, set by the opener for bare-pane harnesses), strips the
+Ctrl-Z byte `_SUSPEND_BYTE` (`0x1a`) before `os.write` — that byte makes Claude Code
+self-suspend and a bare pane has no shell to `fg` it back, so the harness soft-locks and
+the operator's message is lost; a plain shell session leaves `suspend_unsafe=False`, so its
+Ctrl-Z (legitimate job control) passes through and an all-Ctrl-Z frame to a harness is a
+no-op write (slice 6f hardening). `read_nonblocking`/`resize`/`close` key off the session's
+PTY `master_fd`:
+`read_nonblocking` returns `b""` both when idle (`BlockingIOError`) and after the child
+exits (`OSError`/EIO once the slave closes) — callers use `is_alive` to disambiguate;
+`resize` packs `struct.pack("HHHH", rows, cols, 0, 0)` into a `TIOCSWINSZ` ioctl
+(SIGWINCH to the child / tmux client). `_tmux_session_name` sanitizes an arbitrary sid
+into a tmux-legal name (`.`/`:` collapse to `-`, `ar-` prefix). Registry views:
+`get`/`sessions`/`for_lifecycle`. Durability helpers: `has_session(tmux_name)` delegates to the
+injectable tmux probe (`tmux has-session -t <name>` by default), `ensure` delegates missing-session
+creation to the injectable creator (`tmux new-session -d -s <name> ...` by default), and
+`terminate(sid, tmux_name=None)` kills the resolved tmux name via the injectable killer
+(`tmux kill-session -t <name>` by default), then drops/discards any in-process PTY client. `close`
+remains detach-only and does **not** kill tmux. All three default tmux helpers
+(`_tmux_has_session`/`_tmux_kill_session`/`_tmux_create_detached`) run `subprocess.run(...,
+stdin=subprocess.DEVNULL, stdout=..., stderr=subprocess.DEVNULL)` — the `stdin=DEVNULL` is the
+subprocess-hygiene guard (GitHub #49): under the stdio MCP transport the parent's stdin *is* the
+JSON-RPC protocol pipe, so a fire-and-forget tmux call must never inherit and consume it.
+
+The default spawner `_spawn_pty` is the one impure seam: `pty.openpty()`, **seed a sane
+`_DEFAULT_PTY_SIZE` (24×80) winsize** on the master (`TIOCSWINSZ`) so tmux never starts at 0×0, then
+`subprocess.Popen(argv, stdin=stdout=stderr=slave, preexec_fn=lambda: os.login_tty(slave_fd),
+pass_fds=(slave_fd,))`. **`os.login_tty` (setsid + `TIOCSCTTY` + dup2) makes the slave the child's
+controlling terminal** — without it tmux has no `/dev/tty` to size against and stays stuck at 80×24,
+ignoring every resize; `pass_fds` keeps the slave open past `close_fds` so `login_tty` can re-claim it,
+and the explicit `stdin/stdout/stderr=slave` is the deliberate handle that keeps the child off the
+inherited MCP stdio pipe (the subprocess-hygiene guard, GitHub #49 — the `preexec_fn` body is
+async-signal-safe syscalls only, hence the local `# noqa: PLW1509`). The parent closes the slave →
+`os.set_blocking(master_fd, False)`. `PtyProcess` (the spawner
+return shape) carries `master_fd`/`pid`/`terminate`/`poll` as plain values + callables,
+so a fake spawner can back a session with any process object.
+
+### Invariants And Boundaries
+
+- **Impure seams are injectable.** Attached-client PTY I/O is behind `Spawner`, detached tmux creation
+  is behind `TmuxCreator`, and explicit termination is behind `TmuxKiller`; tests drive a real kernel
+  PTY with the tmux wrapper stripped (`cat`), and the tmux path itself is one skip-when-unavailable
+  integration test. The pure command/name builders are I/O-free.
+- **Fixed-argv security posture (B2).** The spawn is a `Sequence[str]`, never a shell
+  string — no shell-injection surface. The child runs as the dashboard's own OS user with
+  that user's existing credentials (`~/.claude`, no re-auth). The driving WebSocket
+  (6d-2) stays `127.0.0.1`-bound like the rest of `serving/`.
+- **Persistence is tmux's, not ours.** `close` terminates the registered local client + reaps it but the
+  tmux server keeps the session; `close_session` does the same for one per-WebSocket attachment without
+  mutating the registry. A later `open`/`attach` with the same name re-attaches.
+- **Rehydrate must probe first.** Callers must use `has_session` before using `open(..., name=...)` for a
+  catalog row. `tmux new-session -A` would create a fresh session if the named one is gone, which would
+  turn stale catalog state into a false resume.
+- **Terminate is explicit.** Only `terminate` kills a tmux session. UI detach/`close` stays non-destructive.
+- **No subprocess inherits the MCP stdio pipe (GitHub #49).** Under the stdio transport the parent's
+  stdin is the JSON-RPC protocol pipe, so every spawn must redirect stdin: the three default tmux
+  `subprocess.run` helpers pass `stdin=subprocess.DEVNULL`, and the `_spawn_pty` child is wired to the
+  PTY slave (`stdin=stdout=stderr=slave_fd`). Enforced by `mcp/tests/test_subprocess_hygiene.py`.
+- **Backend-only.** No FastAPI import here — `app.py` wires the WebSocket endpoint over
+  this host in 6d-2; the xterm.js viewport is 6e.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The serving layer this host joins (transport; localhost posture). | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
+| The FastAPI app that wires the WebSocket bridge over this host (slice 6d-2). | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The catalog rows that persist tmux name, command, cwd, lifecycle, and status across dashboard restarts. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
+| The slice authority (Mode B2 = embedded real TUI, render-not-scrape, tmux persistence). | [tasks/260610_task6-control-plane/task.md](agents-remember/../tasks/agents-remember/260610_task6-control-plane/task.md) |
+
+## Update History
+
+- 2026-06-27T18:43+02:00 — Subprocess-hygiene fix (GitHub #49): added `stdin=subprocess.DEVNULL` to the
+  three default tmux `subprocess.run` call sites (`_tmux_has_session`/`_tmux_kill_session`/
+  `_tmux_create_detached`) so a fire-and-forget tmux call cannot inherit and consume the stdio MCP
+  transport's protocol pipe. Behavior-preserving; the `_spawn_pty` Popen child (already wired to the PTY
+  slave) was unchanged. Repo enforces it via `mcp/tests/test_subprocess_hygiene.py`. Verification metadata
+  left pinned until closeout stamps the code commit.
+- 2026-06-27T02:28+02:00 — Task 22 follow-up: added `TerminalHost.ensure` and
+  `TerminalSessionBinding` so the opener can create a detached durable tmux session without spawning a
+  starter PTY client that then gets closed. This keeps a new chat alive until the first WebSocket
+  attaches while preserving per-tab `attach` clients. Verification metadata pinned until closeout
+  stamps the task-22 follow-up code commit.
+- 2026-06-27T01:25+02:00 — Task 22 follow-up: added unregistered `attach` clients plus
+  `read_session`/`write_session`/`resize_session`/`close_session` so each browser WebSocket gets its own
+  tmux client PTY while the durable catalog identity remains one tmux session. This fixes multi-tab
+  terminal sharing by removing shared-fd read/close contention. Verification metadata pinned until
+  closeout stamps the task-22 follow-up code commit.
+- 2026-06-26T23:05+02:00 — Task 22: added injectable tmux probe/kill hooks, `has_session`, and
+  `terminate`. The catalog rehydrate path can now verify a tmux name exists before calling `open`, and
+  the UI terminate route can kill tmux explicitly without changing detach semantics. Verification
+  metadata pinned until closeout stamps the task-22 code commit.
+- 2026-06-19T20:30 — Task 6 slice 6f hardening: `TerminalSession` gained `suspend_unsafe` and `TerminalHost.write` now strips the Ctrl-Z byte `0x1a` for **suspend-unsafe (bare-pane harness)** sessions only — it self-suspends Claude Code with no shell to `fg`, soft-locking the session and dropping the operator's message; a plain shell session keeps Ctrl-Z (job control). `write` resolves the sid before stripping (unknown sid still raises), and `open` carries the new `suspend_unsafe` flag (the opener sets it `True` for `kind="harness"`). Verification metadata pinned until closeout stamps the 6f code commit.
+- 2026-06-19T14:05 — Task 6 slice 6e-4: `_spawn_pty` now makes the PTY slave the child's **controlling terminal** via `os.login_tty` in a `preexec_fn` (setsid + `TIOCSCTTY` + dup2) and seeds a `_DEFAULT_PTY_SIZE` winsize before exec — without a controlling tty tmux ignored every resize and stayed at 80×24. Kept the explicit `stdin/stdout/stderr=slave` (deliberate handle off the MCP stdio pipe, GitHub #49 hygiene) + `pass_fds=(slave_fd,)`; the `preexec_fn` is async-signal-safe, so it carries a local `# noqa: PLW1509`. Verification metadata pinned until closeout stamps the 6e-4 code commit.
+- 2026-06-18T15:40+02:00 — Created for task 6 slice 6d-1: the `TerminalHost` + `PtyProcess`/`TerminalSession` + the pure `_build_tmux_command`/`_tmux_session_name` builders + the stdlib-`pty` default spawner `_spawn_pty` — the backend half of Mode B2 (tmux-wrapped PTY sessions; injectable spawn; localhost/fixed-argv posture). The WebSocket bridge is 6d-2. Verification metadata pinned to the task base until closeout stamps the 6d-1 code commit.

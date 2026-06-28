@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-06-25T09:55+02:00     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ The module waits for Postgres readiness with both `pg_isready` and `SELECT 1`,
 creates the `vector` extension, reports backend status, removes mismatched
 containers, reuses the host port mapping from an already-running backend,
 starts Postgres through the package Compose project, records backend state, and
-writes the backend image lock. Status includes a normalized Docker container
+writes the backend image lock. For new `auto` host-port allocations it prefers
+`GREPAI_POSTGRES_DEFAULT_PORT` (`61432`) while keeping the container-side
+Postgres port at `5432`. Status includes a normalized Docker container
 state summary so MCP provider status can report backend state and uptime.
 Before Compose startup, it performs GrepAI project migration: old unmanaged
 Postgres, Ollama, watcher containers, and the old unmanaged network are removed
@@ -40,6 +42,8 @@ only when Docker labels do not show the expected Compose project.
 - Health is not just container running; database query readiness is required.
 - Existing Compose-managed backend port mappings are reused on repeated starts
   rather than reallocated from host socket availability.
+- The preferred host port avoids neighboring Postgres services; the container
+  port remains the actual Postgres service port.
 - Backend status should expose enough Docker state for current provider status
   without requiring callers to inspect containers themselves.
 - The `layout` parameter threaded through these helpers is the shared
@@ -57,6 +61,7 @@ only when Docker labels do not show the expected Compose project.
 
 ## Update History
 
+- 2026-06-25T09:55+02:00 — `auto` host-port selection now uses the centralized GrepAI Postgres preferred host port (`61432`) instead of preferring host `5432`; existing mappings and explicit configured ports still win.
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-06-10T05:30+02:00 — Leaf imports replace the `providers.context` aggregator import (circular-import fix; see core.py 2026-06-10 entry).
 - 2026-05-31T12:50+02:00 — `layout` params (and the `grepai_backend_start_context` return tuple) re-typed `Any` -> `GrepaiRuntimeLayout` across the backend helpers; behavior-preserving type-only tightening, added an Invariants note that `layout` is the shared `GrepaiRuntimeLayout` dataclass (1.0.0 review remediation).

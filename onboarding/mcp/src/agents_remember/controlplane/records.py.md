@@ -1,0 +1,70 @@
+# mcp/src/agents_remember/controlplane/records.py
+
+| Field                  | Value                                              |
+| ---------------------- | -------------------------------------------------- |
+| repository             | agents-remember                                    |
+| path                   | `mcp/src/agents_remember/controlplane/records.py`  |
+| doc_type               | `file-level-onboarding`                            |
+| lastUpdated            | 2026-06-25T07:17+02:00                             |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`         |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `overview.md`                                      |
+
+## Purpose
+
+`records.py` defines the `ar-gate-record/v1` envelope (`GateRecord`) — one
+append-only, attributed snapshot of a decision point on a lifecycle — plus the
+pure helpers that open and decide gates.
+
+## Code Commentary
+
+`GATE_RECORD_SCHEMA` is the versioned wire tag. `GateKind` (slice 09 extends it to
+the full l-01 gate spine: plan-approval | worktree-intent | closeout-approval |
+push-approval | integration-approval | cleanup-approval | agent-question |
+provider-retry | alarm-ack), `GateState` (open | approved | rejected |
+revision-requested | applied | cancelled | expired), and `DecidedVia` (chat |
+dashboard | cli) are Literals so a typo cannot corrupt the audit trail. There is
+**no separate `commit-approval` kind**: `closeout-approval` IS the commit gate —
+closeout is the single commit-of-record for code + memory + ledger, and singular
+commits route through it. Adding a gate kind stays a one-literal change (the
+docstring's "extensible: a new gate kind is one literal" note). `DECISION_STATES` maps the
+decision verbs (approve / reject / request-revision / cancel) to the resulting
+state. `coerce_gate_kind(raw)` validates a raw string against the `GateKind`
+literals (`get_args` + `cast`) so the MCP boundary can accept a plain `str`.
+
+`GateRecord` is a Pydantic `BaseModel` with `extra="forbid"` and camelCase wire
+fields (mirroring the observer event envelope); `schema_version` carries
+`alias="schema"`, so records dump with `model_dump_json(by_alias=True,
+exclude_none=True)`. `create_gate(...)` returns a fresh `open` gate (the caller
+mints the ULID `id` and `now`); `decide_gate(gate, ...)` returns a NEW snapshot
+(same `id`, new `ts`) carrying the decision. `expire_gate(gate, now=...)` returns
+a NEW `expired` snapshot for an open gate replaced by a newer lifecycle gate.
+`apply_gate(gate, ...)` (slice 6b)
+returns a NEW `applied` snapshot — the transition a mutating tool writes once it
+consumes an approval (decision attribution carries forward; only `state`/`ts`
+advance). All helpers are pure.
+
+## Invariants And Boundaries
+
+- **Append a snapshot per state change; never mutate in place.** A gate's `id` is
+  stable across its life; `ts` changes per snapshot, and readers fold by `id`
+  (last-wins) for current state.
+- `decidedBy` (actor) and `decidedVia` (through what) stay separate — the same
+  "who ≠ through what" rule the observer envelope follows.
+- This is a persisted-record model, not an MCP response: the `gate_*` tools have
+  their own response models in `models/gates.py`.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| Mirrors the observer event envelope (camelCase, `extra="forbid"`, schema alias). | [observer/events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
+| The append-only store that serializes and folds these snapshots. | [store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
+| Ids come from the local ULID mint. | [observer/ulid.py](agents-remember/mcp/src/agents_remember/observer/ulid.py) |
+
+## Update History
+
+- 2026-06-25T07:17+02:00 — Task 19: added pure `expire_gate(gate, now=...)` so creating a new lifecycle gate can supersede the previous open gate without deleting history. Verification metadata pinned until closeout stamps the task-19 code commit.
+- 2026-06-23T07:25+02:00 — slice 09 (gate-signal adoption, S2 kind extension): `GateKind` gained `plan-approval`, `worktree-intent`, and `push-approval` (the full l-01 gate spine alongside the existing closeout/integration/cleanup/question/retry/ack kinds). NB `closeout-approval` IS the commit gate — there is no separate `commit-approval` (closeout is the commit-of-record for code + memory + ledger). Envelope/helpers otherwise unchanged. Refreshed the Code Commentary `GateKind` listing. Verification metadata pinned until closeout stamps the slice-09 code commit.
+- 2026-06-18T12:10+02:00 — Task 6 slice 6b: added pure `apply_gate(gate, now=...)`, the `open/approved → applied` snapshot a mutating tool writes when it consumes an approval (the transition this module's docstring anticipated). No change to the envelope or the create/decide helpers. Verification metadata pinned until closeout stamps the 6b code commit.
+- 2026-06-18T01:05+02:00 — Created for task 6 slice 6a: the `GateRecord` envelope + pure `create_gate` / `decide_gate` / `coerce_gate_kind`. Verification metadata pinned until closeout stamps the 6a code commit.

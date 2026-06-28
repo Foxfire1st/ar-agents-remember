@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:30+02:00     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastUpdated            | 2026-06-16T03:25                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -34,14 +34,26 @@ file. The settings path transfers to the launcher's cleanup only when
 `provider_setup_config.unlink_settings_after_setup` is set (the controller's
 temp-file ownership handshake). `prepare_providers_for_start` remains as the
 facade/CLI wrapper composing both halves in one call. `_build_start_contract`
-asserts `args.task_name`/`args.worktree_name` are non-`None`, and
-`_provider_start_paths` asserts `args.provider_setup_config` is non-`None`,
-before use. Provider setup remains typed through `ProviderSetupRequest`; there is
+asserts `args.task_name`/`args.worktree_name` are non-`None` and stamps
+`args.lifecycle_id` into the contract (slice 2c — the observable-lifecycle
+enclosure anchor, default `""`), and `_provider_start_paths` asserts
+`args.provider_setup_config` is non-`None`, before use. Provider setup remains typed through `ProviderSetupRequest`; there is
 no coordinator script or host-binary fallback path here. `provider_setup.load_settings`
 and `provider_setup.settings_path` are now called with the settings path alone
 (the `target_coordination_root` argument was dropped), and the dead
 `_cgc_enablement_state` helper was removed in favour of the unified
 `_provider_enablement_state`.
+
+Slice 5e (§5.4) adds pre-contract start observability: `start_result` calls `_record_start_block` at
+each of the three blocked early returns — stale-base (`stale-base-blocked`), external-memory
+(`memory-blocked`), and provider-plan (`provider-blocked`) — writing a transient `start-progress.json`
+(via `worktrees/start_progress.write_start_progress`) so a start gated *before* its contract exists is
+visible to the dashboard; `_clear_start_block` removes it once `write_contract` lands (the contract
+then anchors the enclosure). Slice 5f S6 (§9) closes the happy-path gap: `_record_start_progress`
+(non-blocked, `blocked_reason` stays None) emits a beat at the two pre-contract success points —
+`preflight` (after the preflights pass) and `code-worktree` (after `ensure_worktree`) — so the
+enclosure is observable assembling rather than popping in at contract-write. All three helpers are
+best-effort and skipped on dry runs, so the start flow never fails on observability.
 
 When an existing contract is found on disk, `start_result` now checks its
 `cleanup` field: if `cleanup == "abandoned"` the contract is a tombstone whose
@@ -105,8 +117,16 @@ No external Domain Documentation source is configured for this memory repo.
 | Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | [test_worktree_stale_base.py](agents-remember/mcp/tests/test_worktree_stale_base.py) |
 | Branch freshness facts come from the shared kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
 
+## Series-Contract Notes
+
+For master task starts, `start.py` creates or loads the root series contract, creates the integration branch from the protected/source branch, and then builds the leaf contract from that integration branch with `leaf_id` recorded.
+
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: start now creates or loads a root series contract for master tasks, creates the integration branch from the protected/source branch, starts each leaf from that integration branch, writes leaf contracts under `enclosures/<leaf-id>/series-contract.md`, and reports `enclosure_path`/`leaf_id`. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-16T03:25 — Slice 5f S6 (§9): added `_record_start_progress` and called it at the two happy-path pre-contract success points (`preflight`, `code-worktree`) so a non-blocked start emits start-progress (previously only blocked early returns did); best-effort, dry-run-skipped, cleared by the existing `_clear_start_block` on contract write. Verification metadata pinned until closeout stamps the S6 code commit.
+- 2026-06-15T19:35 — Slice 5e (§5.4): `start_result` records a transient start-progress file at the three pre-contract blocked returns (stale-base / memory / provider) via `_record_start_block`, and clears it on contract write via `_clear_start_block` — best-effort, dry-run-skipped — so a start gated before its contract is observable. Verification metadata pinned until closeout stamps the 5e code commit.
+- 2026-06-13T18:45+02:00 — Slice 2c: `_build_start_contract` stamps `args.lifecycle_id` into the built contract (the observable-lifecycle enclosure anchor; `worktree_start_tool` resolves it and the controller promotes/adopts after start). Verification metadata pinned until closeout stamps the 2c code commit.
 - 2026-06-10T09:30+02:00 — Issue #54 sub-task B: added `_stale_base_preflight` (+ `_branch_freshness_findings`, `_fast_forward_stale_branches`) blocking starts on behind/diverged source branches with `stale_base_choice` recoveries, contract rebuild after fast-forward recovery, and `_ensure_memory_source_branch` auto-creating a missing memory source branch at the official tip.
 - 2026-06-10T07:30+02:00 — GitHub #53: provider setup moved to a background launch. `prepare_providers_for_start` split into `plan_providers_for_start` (sync preflight) + `run_or_launch_provider_setup` (dry-run sync / real launch via `provider_async`); the contract write moved BEFORE the launch; `_run_provider_setup` became the request builder `_provider_setup_request`; `_started_result` summary names the background poll loop; added the `retry_provider_setup` path on existing contracts.
 - 2026-06-10T00:40+02:00 — Added the Windows long-path preflight: on hosts with `LongPathsEnabled=0`, `start_result` blocks (exit 2) before creating worktrees when the projected worktree path plus the longest tracked path in the code or external-memory repo exceeds `WINDOWS_MAX_PATH_BUDGET` (250). The block payload reports the computed lengths and both remedies (enable long paths / shorter worktree name). `long_path_block_payload` is the pure, platform-independent decision; `_windows_long_paths_enabled` reads the registry and returns True off-Windows. Existing-contract attach still short-circuits before the preflight.

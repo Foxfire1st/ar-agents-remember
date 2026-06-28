@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:56+02:00     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastUpdated            | 2026-06-23T07:25+02:00     |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,10 +17,60 @@ tools.
 
 ## Code Commentary
 
-The module converts a `WorktreeContract` plus current worktree dirtiness into
-stable MCP-facing lifecycle phases such as commit approval pending, integration
-pending, cleanup pending, and done. It also renders contract dataclasses into
-JSON-compatible dictionaries.
+The module converts a `WorktreeContract` into stable MCP-facing lifecycle phases
+keyed off its **lifecycle position** (disposal/integration/closeout/approval
+fields) — integration pending, carryover pending, cleanup pending, done, and so
+on — and renders contract dataclasses into JSON-compatible dictionaries.
+
+**Slice 09 (visibility fix): `lifecycle_guidance` no longer infers a commit-approval
+gate from `git status`.** The old code carried a dirty-tree branch (worktree dirty
+→ phase `commit-approval-pending`) that fabricated a gate the working tree has no
+authority to assert; it has been removed (with its unused `contract_has_worktree_changes`
+import — `worktree_dirty`/`run_git` stay). A dirty worktree now falls through to its
+honest lifecycle-position phase (e.g. `closeout_status == "completed"` →
+`integration-pending`). `commit-approval-pending` is owned by the closeout preview
+(the real gate moment, set in `closeout.py`) and — once the slice-6 gate plane is
+adopted — by a raised `closeout-approval` gate surfaced via `GateNode`; it is never
+read off the tree. (`closeout-approval` IS the commit gate: closeout is the single
+commit-of-record for code + memory + ledger, so there is no separate
+`commit-approval`.)
+
+`lifecycle_guidance` checks the disposal states **first**: `cleanup == "completed"`
+returns the `cleanup-completed` phase, and (slice 05l P1) `cleanup == "abandoned"`
+returns a dedicated `abandoned` phase (`"Worktree abandoned — provider stack reclaimed;
+no further action."`, `nextOperation: "done"`). Before this branch an abandoned worktree
+fell through to the `worktree-started` default, so the dashboard rendered a torn-down /
+deleted worktree as fully active; the explicit phase lets the observer surface it (the
+reducer's `_GUIDANCE_PHASE` maps it through) and the teardown render (05k).
+
+`carryover_done(contract) -> (done, carryoverDoneAt)` (slice 05m) is the new public
+honesty signal for "has the parked memory been carried into official memory?". The
+existing `memory_carryover_apply` is contract-decoupled and leaves no contract stamp, so
+the truthful source is the OFFICIAL ledger itself: a successful carry prepends a row to
+the official `memory.md` (`contract.memory_repo_path / "memory.md"`) mapping the landed
+code commit → the carried memory commit. `carryover_done` reads it with `load_ledger`
+and looks up the landed commit (`integrated_code_commit`, else `code_commit`) via
+`find_mapping`; the carried memory commit's `%cI` (`run_git ... show -s --format=%cI`) is
+the returned milestone time. It is **external-only**: `internal`/`disabled` memory has
+nothing to carry, so it returns `(True, "")` — the carryover route + cleanup guard are
+no-ops there. A `LedgerError`, an absent ledger, or a missing row returns `(False, "")`.
+
+Slice 05m also splits the `integration_status == "completed"` branch on `carryover_done`,
+making carryover a distinct lifecycle phase **between integration and cleanup**:
+
+- **not carried** → phase `carryover-pending` (`"Integration completed; carry the parked
+  memory home before cleanup."`). The next operation routes the EXISTING
+  `memory_carryover_apply` (its own plan→apply gate stays intact) with args derived from
+  the contract — `repo_id`, `source_memory` (the memory worktree posix path),
+  `official_code_ref` (`integrated_code_commit` or `code_commit`) — and
+  `required_args=["intent_note"]`. Carryover must run while the worktree (its parked
+  memory branch) still exists; cleanup later hard-guards on this same signal.
+- **carried** → phase `cleanup-pending`, with the guidance dict now carrying
+  `carryoverDoneAt` (the milestone time from `carryover_done`, surfaced onto
+  `EngineProcessNode.carryoverDoneAt` for the dashboard; 5k renders the seam).
+
+New imports back this: `LedgerError`/`find_mapping`/`load_ledger` from
+`kernel.memory_ledger`, and `run_git` from `modules.git`.
 
 `status_payload` includes a `providers` block from
 `provider_async.provider_setup_status(contract)` when present: the
@@ -39,6 +89,19 @@ safe for the provider-setup polling loop; the fetching freshness checks live in
 `context_packet` (`include_freshness`), the start preflight, and
 `worktree_sync` itself.
 
+`status_payload` also includes a `landing` block (slice 5h) from
+`landing.landing_refs(contract)` once the worktree reaches the landing window
+(closeout-completed onward): the successful-landing arc's remote/PR refs
+(`origin/<feat>`, `origin/mem-main`, the PR), observed best-effort — `git ls-remote`
+for branch tips and a best-effort `gh` for PR state, each timeout-bounded with
+`stdin=DEVNULL` (the #49 stdio-pipe guard). Honest `factState` (`observed` when a
+probe ran, else `planned`/`missing` — never faked); additive and absent before the
+landing window, so the build-phase poll stays network-free like `freshness`.
+
+`status_payload` also emits `lifecycle_id` (slice 2c) — the contract's
+observable-lifecycle enclosure anchor, surfaced snake_case (like its sibling
+keys) so `worktree_attach` can resume it; `""` for contracts written before 2c.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -48,10 +111,24 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Source Path |
 | --- | --- |
 | Context packet worktree status consumes the facade-exported status payload. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
+| `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | [landing.py](agents-remember/mcp/src/agents_remember/worktrees/modules/landing.py) |
+| `carryover_done` reads the official ledger via `load_ledger`/`find_mapping`. | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| Cleanup hard-guards on `carryover_done` (and imports it from here) before deleting the parked memory branch. | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
+| The `carryover-pending`/`cleanup-pending` routing + `carryover_done` are pinned here. | [test_cleanup_carryover.py](agents-remember/mcp/tests/test_cleanup_carryover.py) |
 | MCP skill tools return the typed next-operation payloads produced here. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+
+## Series-Contract Notes
+
+Guidance/status payloads now expose contract `kind`, `leaf_id`, `enclosure_path`, and optional `parent_contract_path`, making the leaf/root split visible to dashboard and tool callers.
 
 ## Update History
 
+- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: status and next-action payloads now include `kind`, `leaf_id`, `enclosure_path`, and `parent_contract_path`, while retaining `contract_path` for callers that have not yet renamed the field. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-23T07:25+02:00 — slice 09 (gate-signal adoption, S1 visibility fix): removed the dirty-tree → `commit-approval-pending` branch from `lifecycle_guidance` — a dirty worktree no longer fabricates a commit-approval gate and instead falls through to its honest lifecycle-position phase (closeout-completed → `integration-pending`, etc.). `commit-approval-pending` is owned by the closeout preview (`closeout.py`) and, once the gate plane is adopted, by a raised `closeout-approval` `GateNode` — never `git status`. Dropped the now-unused `contract_has_worktree_changes` import (`worktree_dirty`/`run_git` stay). Corrected the stale Code Commentary opening that still claimed the module reads worktree dirtiness into phases. Verification metadata pinned until closeout stamps the slice-09 code commit.
+- 2026-06-21T06:40+02:00 — slice 05m (carryover-before-cleanup): added the public `carryover_done(contract) -> (done, carryoverDoneAt)` — it reads the OFFICIAL ledger (`memory_repo_path/memory.md` via `load_ledger`/`find_mapping`) to detect whether the landed code commit (`integrated_code_commit`, else `code_commit`) was carried home and returns the carry commit's `%cI`; external-only (internal/disabled → `(True, "")`). `lifecycle_guidance` now splits the `integration_status == "completed"` branch on it: not carried → phase `carryover-pending` (next: the existing `memory_carryover_apply`, args derived from the contract, `required_args=["intent_note"]`); carried → `cleanup-pending` with the new `carryoverDoneAt` in the guidance dict. New imports: `LedgerError`/`find_mapping`/`load_ledger` from `kernel.memory_ledger` and `run_git` from `modules.git`. Verification metadata pinned until closeout stamps the 05m code commit.
+- 2026-06-21T04:10+02:00 — slice 05l P1 (backend teardown visibility, Gap A): `lifecycle_guidance` gained a `cleanup == "abandoned"` branch (right after the `cleanup == "completed"` branch) returning a dedicated `abandoned` phase (`nextOperation: "done"`). Previously an abandoned worktree fell through to the `worktree-started` default, so the dashboard rendered a deleted worktree as fully active; the explicit phase lets the observer project it for the teardown render (05k). Verification metadata pinned until closeout stamps the 05l-P1 code commit.
+- 2026-06-18T08:51+02:00 — slice 5h H1: `status_payload` emits a best-effort `landing` block from `landing.landing_refs(contract)` (the successful-landing arc's remote/PR refs, gated to closeout-completed onward; git ls-remote + best-effort gh, honest factState, stdin=DEVNULL). Verification metadata pinned until closeout stamps the 5h code commit.
+- 2026-06-13T18:45+02:00 — Slice 2c: `status_payload` emits `lifecycle_id` (the contract's observable-lifecycle enclosure anchor) so `worktree_attach` can resume it. Verification metadata pinned until closeout stamps the 2c code commit.
 - 2026-06-10T09:56+02:00 — Issue #54 sub-task D: added `base_freshness` (fetch-free recorded-base vs local source tip counts with a `worktree_sync` `syncHint`) and wired it into `status_payload` as `freshness`.
 - 2026-06-10T07:30+02:00 — `status_payload` includes a `providers` block from `provider_async.provider_setup_status(contract)` when present: the worktree_status poll surface for background provider setup (running with currentPhase/heartbeat/seedFallback, stale on dead heartbeat, terminal ok/ready-with-failed-phases/failed with retryArgs) (GitHub #53).
 - 2026-05-25T20:41+02:00: Created during worktree manager module extraction.

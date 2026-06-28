@@ -6,9 +6,9 @@
 | path                   | `mcp/src/agents_remember/mcp/tool_reports.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879`|
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
-| governingOverview      | `../overview.md`                           |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../../../overview.md`                              |
 
 ## Purpose
 

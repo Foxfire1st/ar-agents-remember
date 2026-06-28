@@ -6,9 +6,9 @@
 | path                   | `mcp/tests/test_sync_runtime.py`           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-08T11:53+02:00                     |
-| lastVerifiedCommitHash | `19b33573a71c8634acfb836d4245f1ead8594f06`                         |
-| lastVerifiedCommitDate | 2026-06-08T12:38:40+02:00|
-| governingOverview      | `overview.md`                              |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
 
