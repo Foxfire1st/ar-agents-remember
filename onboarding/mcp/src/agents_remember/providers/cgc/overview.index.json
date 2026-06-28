@@ -76,7 +76,7 @@
       "HEADs",
       "mcp/src/agents_remember/providers/cgc/",
       "route-local-overview",
-      "add1235644c8a5a4b5d6a1b114f29510cdc03d36",
+      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
       "/../../../overview.md",
       "cgc/",
       "cgc_*",
@@ -100,13 +100,13 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T05",
+      "T19",
       "lastVerifiedCommitHash",
+      "e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
       "lastVerifiedCommitDate",
-      "T15",
+      "T18",
       "governingOverview",
-      "cgc_",
-      "context_modules"
+      "cgc_"
     ]
   },
   "fallback": {

@@ -67,7 +67,7 @@
     "values"
   ],
   "hotPath": {
-    "summary": "Start in `resolver.py` for topology and context assembly, `settings.py` for JSON-first settings selection, `json_settings.py` and `markdown_settings.py` for settings formats, `markdown_cross_repo.py` and `markdown_global_rules.py` for legacy Markdown parser branches, `storage.py` for path-rule eligibility, `cross_repo.py` for branch-gated adjacent repo facts, `contracts.py` for worktree contract fact loading, and `serialize.py` plus `cli.py` for output adapters.",
+    "summary": "Start in `resolver.py` for topology and context assembly, `settings.py` for JSON-first settings selection, `json_settings.py` and `markdown_settings.py` for settings formats, `markdown_cross_repo.py` and `markdown_global_rules.py` for legacy Markdown parser branches, `storage.py` for path-rule eligibility, `cross_repo.py` for branch-gated adjacent repo facts, `contracts.py` for root/leaf series-contract fact loading, and `serialize.py` plus `cli.py` for output adapters.",
     "candidateHints": [
       "mcp/src/agents_remember/kernel/coordination_context",
       "mcp/src/agents_remember/kernel/coordination_context/__init__.py",
@@ -120,7 +120,7 @@
       "JSON",
       "mcp/src/agents_remember/kernel/coordination_context/",
       "route-local-overview",
-      "adbee7d31a75ca4ae85c2d99d05a9109969399e5",
+      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
       "/../../../overview.md",
       "coordination_context/",
       "c-08-ar-coordination-context-resolver",
@@ -133,8 +133,8 @@
       "worktree_name",
       "resolve_contract",
       "find_worktree_contract",
-      "mcp/overview.md",
-      "coordination_context_resolver.py"
+      "parent_task",
+      "leaf_id"
     ]
   },
   "fallback": {

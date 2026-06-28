@@ -104,7 +104,7 @@ No external documentation is needed for these standard-library unit tests.
 | The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | L178-L208 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | L209-L230 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | Current-state projection and persistence are implemented in the provider current-state module. | L16-L325 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| The structured-`lastRefresh` regression mutates a CGC watcher's `lastRefresh` to a `{returncode, durationSeconds, updatedAt}` object and asserts the projected watcher `lastRefresh` is the flattened summary string. | L232-L265 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
+| The structured-`lastRefresh` regression mutates a CGC watcher's `lastRefresh` to a `{returncode, durationSeconds, updatedAt}` object and asserts the projected watcher `lastRefresh` is the flattened summary string. | L243-L275 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 
 ## Cross-Repo References
 

@@ -20,6 +20,16 @@
       "index": "mcp/overview.index.json"
     },
     {
+      "route": "dashboard/src",
+      "overview": "dashboard/src/overview.md",
+      "index": "dashboard/src/overview.index.json"
+    },
+    {
+      "route": "docs/design",
+      "overview": "docs/design/overview.md",
+      "index": "docs/design/overview.index.json"
+    },
+    {
       "route": "examples/mcp",
       "overview": "examples/mcp/overview.md",
       "index": "examples/mcp/overview.index.json"
@@ -29,17 +39,21 @@
     "AGENTS.md",
     "README.md",
     "pyproject.toml",
+    "scripts/sync-dashboard.py",
     "scripts/sync-runtime.py",
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 895,
-    "fileSidecars": 5,
-    "childRoutes": 3
+    "sourceFilesInScope": 1118,
+    "fileSidecars": 6,
+    "childRoutes": 5
   },
   "routingTerms": [
     "agents",
+    "dashboard",
+    "design",
     "dev",
+    "docs",
     "examples",
     "mcp",
     "pyproject",
@@ -47,6 +61,7 @@
     "runtime",
     "scripts",
     "skills",
+    "src",
     "sync",
     "toml"
   ],
@@ -55,11 +70,14 @@
     "candidateHints": [
       "dev-skills",
       "mcp",
+      "dashboard/src",
+      "docs/design",
       "examples/mcp",
       "AGENTS.md",
       "README.md",
       "pyproject.toml",
       "scripts",
+      "scripts/sync-dashboard.py",
       "scripts/sync-runtime.py",
       "scripts/sync-skills.py"
     ],
@@ -70,12 +88,16 @@
       "README",
       "pyproject.toml",
       "pyproject",
+      "sync-dashboard.py",
+      "sync-dashboard",
       "sync-runtime.py",
       "sync-runtime",
       "sync-skills.py",
       "sync-skills",
       "dev-skills",
       "mcp",
+      "src",
+      "design",
       "mcp/",
       "mcp/src/agents_remember/package_data/runtime/agents-md-files",
       "claude/",
@@ -90,7 +112,7 @@
       "agents_remember",
       "package_data",
       "repo-overview",
-      "8e39b62c3550e974486479203d191aac39a0f0f3",
+      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -107,11 +129,7 @@
       "providers/data/",
       "logs/mcp/",
       "logs/providers/",
-      "providers/_bin/",
-      "providers/_venvs/",
-      "onboarding/",
-      "c-05-create-or-update-onboarding-files",
-      "ar-coordination/memory-repos/ar-<repo>/"
+      "providers/_bin/"
     ]
   },
   "fallback": {
