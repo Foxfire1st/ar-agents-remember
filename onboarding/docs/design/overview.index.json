@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "docs/design",
+  "overview": "docs/design/overview.md",
+  "index": "docs/design/overview.index.json",
+  "sourceScope": [
+    "docs/design/**"
+  ],
+  "childRoutes": [
+    {
+      "route": "docs/design/engine-room",
+      "overview": "docs/design/engine-room/overview.md",
+      "index": "docs/design/engine-room/overview.index.json"
+    }
+  ],
+  "coveredFiles": [
+    "docs/design/observable-lifecycle.md"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 6,
+    "fileSidecars": 1,
+    "childRoutes": 1
+  },
+  "routingTerms": [
+    "design",
+    "docs",
+    "engine",
+    "lifecycle",
+    "observable",
+    "room"
+  ],
+  "hotPath": {
+    "summary": "In-repo design documentation for the dashboard. Child route `engine-room/` is the engine-room design reference \u2014 a living spec (`engine-room-visual-language.html`, the canonical colour/motion/glow/timing source of truth) paired with the prototype/scenario player (`podstage.html`) the React engine room was built from. Two top-level notes also live here: `observable-lifecycle.md` (file-onboarded, including the task-23/24 interaction-retention model) and `harness-matrix.md` (present but not yet file-onboarded).",
+    "candidateHints": [
+      "docs/design",
+      "docs/design/engine-room",
+      "docs/design/observable-lifecycle.md"
+    ],
+    "anchorHints": [
+      "observable-lifecycle.md",
+      "observable-lifecycle",
+      "engine-room",
+      "engine-room/",
+      "engine-room-visual-language.html",
+      "podstage.html",
+      "harness-matrix.md",
+      "docs/design/",
+      "route-local-overview",
+      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "/../overview.md",
+      "dashboard/src/panels/engine-room/",
+      "lifecycle_gate",
+      "engine-room/overview.md",
+      "dashboard/src/panels/engine-room/overview.md",
+      "/../dashboard/src/panels/engine-room/overview.md",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "lastVerifiedCommitDate",
+      "T18",
+      "governingOverview",
+      "TTL",
+      "HTML",
+      "CSS",
+      "GSAP",
+      "T13",
+      "T23",
+      "HEAD"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "docs/design/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

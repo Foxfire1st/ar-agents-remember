@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "docs/design/engine-room",
+  "overview": "docs/design/engine-room/overview.md",
+  "index": "docs/design/engine-room/overview.index.json",
+  "sourceScope": [
+    "docs/design/engine-room/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "docs/design/engine-room/engine-room-visual-language.html",
+    "docs/design/engine-room/podstage.html"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 2,
+    "fileSidecars": 2,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "design",
+    "docs",
+    "engine",
+    "html",
+    "language",
+    "podstage",
+    "room",
+    "visual"
+  ],
+  "hotPath": {
+    "summary": "Two HTML design docs for the engine room: `engine-room-visual-language.html` is the canonical living spec (state colour language \u2014 cyan = active step, amber = settled relationship, mint/green = fresh/healthy engine, red = fault/blocked \u2014 plus motion/glow/timing tables, reduced-motion + WCAG rules, and the GSAP/Motion implementation mapping; the source of truth, \"change it here first\"). `podstage.html` is the prototype / scenario player (build-up B0\u2192B5, tear-down D0\u2192D6, and the full failure-mode scene library + failure-primitive vocabulary) that the React canvas `dashboard/src/panels/engine-...",
+    "candidateHints": [
+      "docs/design/engine-room",
+      "docs/design/engine-room/engine-room-visual-language.html",
+      "docs/design/engine-room/podstage.html"
+    ],
+    "anchorHints": [
+      "engine-room-visual-language.html",
+      "engine-room-visual-language",
+      "podstage.html",
+      "podstage",
+      "HTML",
+      "WCAG",
+      "GSAP",
+      "docs/design/engine-room/",
+      "route-local-overview",
+      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "/overview.md",
+      "dashboard/src/panels/engine-room/",
+      "dashboard/src/panels/engine-room/overview.md",
+      "/../../dashboard/src/panels/engine-room/overview.md",
+      "2.1",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T23",
+      "lastVerifiedCommitHash",
+      "e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "lastVerifiedCommitDate",
+      "T18",
+      "governingOverview",
+      "STOP",
+      "T3b",
+      "T1b",
+      "T7b",
+      "T9b",
+      "T9c",
+      "T12b",
+      "T14c",
+      "CSS",
+      "API",
+      "T17",
+      "T10",
+      "T00",
+      "HEAD"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "docs/design/engine-room/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}
