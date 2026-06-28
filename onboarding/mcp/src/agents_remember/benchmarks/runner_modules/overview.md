@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
-| lastUpdated            | 2026-06-10T05:30+02:00                     |
+| lastUpdated            | 2026-06-28T19:10+02:00                     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../../overview.md`                  |
@@ -30,10 +30,14 @@ analysis, service payloads, and CLI wiring independently navigable and testable.
   GitHub #49) — failures raise with a bounded output tail.
 - `mcp_registration.py` writes benchmark-local MCP/Codex configuration,
   generates provider settings with central `logs/mcp` and `logs/providers`
-  paths, and invokes package-local provider setup with generated provider
-  settings.
+  paths, and invokes package-local provider setup. Benchmark provider setup is
+  **hermetic-cold**: `prepare_configured_providers` wires no seed source, so a
+  benchmark builds each index from its own fixture and never starts/clones the
+  live workspace provider backends (task 260619).
 - `execution.py` owns Codex PATH resolution, sandbox policy, command
-  construction, per-run metadata, and benchmark run orchestration.
+  construction, per-run metadata, and benchmark run orchestration; its
+  `benchmark_mcp_config_overrides` points the benchmarked Codex at the
+  benchmark's own MCP server.
 - `analysis.py`, `services.py`, and `cli.py` own JSONL metrics, summary
   rendering, MCP service payloads, and the argparse command surface.
 
@@ -47,6 +51,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- |
 | The public facade re-exports this package for existing callers. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
 | MCP controllers call the benchmark service entry points through the facade. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| The shared seed resolvers refuse a benchmark-scoped target as defense-in-depth for the hermetic boundary. | [grepai/seed.py](agents-remember/mcp/src/agents_remember/providers/grepai/seed.py) |
 | Focused benchmark tests exercise facade compatibility, provider setup, MCP registration, Codex execution policy, repository prep, and skill exposure behavior. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
@@ -56,6 +61,8 @@ source-level behavior is local to `agents-remember`.
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the **hermetic-cold** benchmark provider-isolation content (task 260619 / MCP 2.9.2) that the series carryover had reverted to pre-2.9.2 prose — `mcp_registration.py` wires no seed source, `execution.py`'s `benchmark_mcp_config_overrides` points at the benchmark's own MCP server, plus the grepai/seed.py defense-in-depth reference. The merged tree at 84e95ad keeps main's hermetic behavior (the series did not touch this route's source).
+- 2026-06-19T13:42: Benchmark provider setup is now hermetic-cold — `workspace.py`/`mcp_registration.py` wire no seed source, so benchmark stacks index their own fixture and never start/clone the live workspace backends (task 260619). `execution.py` gained `benchmark_mcp_config_overrides` so the benchmarked Codex uses the benchmark's own MCP server.
 - 2026-06-11T14:12+02:00: No route impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in files on this route; route structure and overview content are unchanged.
 - 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: `run_command` captures output and never inherits parent stdio (GitHub #49). Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-05-30T21:51+02:00: Re-verified the route against `825a172`; the module split summary still matches. The only route change since `3f09b75` was `mcp_registration.py` renaming the generated `providerSeconds` cap to `providerSetupSeconds` (documented on its file card).

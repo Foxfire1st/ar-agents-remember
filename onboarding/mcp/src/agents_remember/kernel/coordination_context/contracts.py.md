@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/contracts.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T20:57+02:00                     |
+| lastUpdated            | 2026-06-28T19:10+02:00                     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
@@ -23,10 +23,24 @@ coordination context.
 
 ### Logic
 
-`resolve_contract()` honors an explicit contract path first, otherwise searches
-task-root candidates for a `contract.md` when a task name is supplied. Missing
+`resolve_contract()` resolves a worktree contract in priority order: an explicit
+`contract_path` first, then a task-based lookup via `find_task_contract` when a
+`task_name` is supplied (leaf-enclosure-aware through `parent_task`/`leaf_id`),
+then a `find_worktree_contract` fallback keyed on `worktree_name` alone. Missing
 or unparsable contracts produce `(None, candidate_path)` so the resolver can
 still report the attempted path without mutating contract state.
+
+`find_task_contract` selects the root `series-contract.md` or a specific leaf
+enclosure contract through `worktrees.task_resolver` (`resolve_active_task_root`
+/ `resolve_leaf_enclosure_contract`), with `parent_task` used for
+disambiguation. `find_worktree_contract` exists because a `worktree_name` cannot
+be reversed to a `task_name` (`slugify` keeps both `-` and `_`, so the prefix
+boundary is lossy); it derives the worktree-group folder name via
+`worktree_group_for` and matches it against each contract's recorded
+`coordination.worktree_group`, scanning `tasks/<repo>` **recursively** for the
+canonical `series-contract.md` (the enclosure layout nests contracts under
+master + leaf folders, so main's original flat `*/contract.md` glob no longer
+suffices).
 
 ### Invariants And Boundaries
 
@@ -59,9 +73,10 @@ No cross-repository evidence is needed for local contract fact loading.
 
 ## Series-Contract Notes
 
-Contract lookup delegates task-name and leaf selection to `worktrees.task_resolver`, first resolving active task roots outside `0_archive/` and then choosing a root series contract or leaf enclosure contract as requested.
+Contract lookup delegates task-name and leaf selection to `worktrees.task_resolver`, first resolving active task roots outside `0_archive/` and then choosing a root series contract or leaf enclosure contract as requested. Independently, the `worktree_name` fallback resolves a contract by its derived worktree-group folder when no task name is available; the two paths coexist (task-based selection wins, worktree-name is the fallback), and both honor the canonical `series-contract.md` filename.
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): `resolve_contract` gained a `worktree_name` fallback (MCP 2.9.3, `find_worktree_contract`) that resolves a contract by its worktree-group folder name when no task name is known, scanning `tasks/<repo>` recursively for the canonical `series-contract.md`. Reconciled onto the series' leaf-enclosure resolution (`parent_task`/`leaf_id`); task-based lookup stays first, the worktree-name match is the fallback.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: contract resolution now finds root `series-contract.md` or a specific leaf enclosure through `resolve_active_task_root` / `resolve_leaf_enclosure_contract`, with `parent_task` used only for disambiguation. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-25T20:57+02:00: Created by extracting worktree contract fact loading from the `c-08-ar-coordination-context-resolver` skill resolver.

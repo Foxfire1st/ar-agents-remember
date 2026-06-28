@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-18T16:10+02:00     |
+| lastUpdated            | 2026-06-28T19:10+02:00     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                              |
@@ -52,7 +52,7 @@ assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 coordinator from a pip/uvx install with no source checkout.
 
 The package `version` tracks the release line; at this verification it is
-`2.7.0`. It is the same string `runtime_install` and `server_info` report, and
+`2.9.3`. It is the same string `runtime_install` and `server_info` report, and
 it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### Invariants And Boundaries
@@ -88,6 +88,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): version reflects the main releases merged onto the series — `2.9.2` (benchmark provider-isolation / hermetic setup) and `2.9.3` (resolve a worktree contract from `worktree_name`); no packaging-contract change, and the documented `version` still tracks `SERVER_VERSION`. Corrected the stale `2.7.0` verification note in the body to `2.9.3`.
 - 2026-06-19T20:30 — Task 6 slice 6f: added `python-multipart` (`>=0.0.9,<1`) as a **core** runtime dependency — FastAPI needs it to parse the `multipart/form-data` `UploadFile` on `POST /api/terminal/{session}/image` (the screenshot upload). Verification metadata pinned until closeout stamps the 6f code commit.
 - 2026-06-18T16:10+02:00 — Task 6 slice 6d-2: added `websockets` (`>=12,<16`) as a **core** runtime dependency — uvicorn's WebSocket protocol impl for the Mode B2 `/api/terminal/{session}` bridge (plain `uvicorn` ships none). Verification metadata pinned until closeout stamps the 6d-2 code commit.
 - 2026-06-14T11:30+02:00 — Slice 04 commit 4a: added `fastapi` + `uvicorn` as **core** runtime dependencies (the dashboard webstack, forced core so `agents-remember dashboard` works on a plain install), `httpx` to the `dev` group (FastAPI `TestClient`), and the umbrella `agents-remember` console script alongside the unchanged `agents-remember-mcp`. Verification metadata pinned until closeout stamps the 4a code commit.

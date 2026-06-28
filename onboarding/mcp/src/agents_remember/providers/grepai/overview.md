@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-25T09:55+02:00     |
+| lastUpdated            | 2026-06-28T19:10+02:00     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../../overview.md`                  |
@@ -43,7 +43,9 @@ ports stay `5432` and `11434`.
   so embeddings can be reused instead of rebuilt. The clone runs under a stall
   watchdog (killed after `GREPAI_CLONE_STALL_SECONDS` of zero progress in dump
   growth / target database size) and is never capped by total duration — a
-  wedge's signature is silence, not size (2.5.1).
+  wedge's signature is silence, not size (2.5.1). A benchmark-scoped target is
+  refused up front (`_clone_skip`) so a benchmark never clones from another
+  stack (hermetic; task 260619).
 - `isolated.py` rewrites provider settings for worktree-specific containers,
   roots, logs, and runtime paths while preserving the logical workspace key and
   leaving unrelated repository roots on their configured paths.
@@ -69,6 +71,7 @@ ports stay `5432` and `11434`.
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the `_clone_skip` benchmark-scoped hermetic guard (task 260619 / MCP 2.9.2) that the series carryover had dropped, while keeping the series' Task 12 multi-root / preferred-host-port content. The merged tree at 84e95ad has both.
 - 2026-06-25T09:55+02:00 — No route model change: child context/lifecycle routes now record GrepAI's preferred auto host ports (`61432`/`61434`) separately from container service ports (`5432`/`11434`).
 - 2026-06-23T22:31+02:00 — Clarified the worktree-isolation invariant behind Task 12 provider
   projection: GrepAI remains a multi-root provider instance while only the active project root is

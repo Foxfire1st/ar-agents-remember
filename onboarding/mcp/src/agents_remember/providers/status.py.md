@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-27T23:08+02:00|
+| lastUpdated            | 2026-06-28T19:10+02:00|
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -41,6 +41,14 @@ down". Separately, the compact summary carries an additive `indexing` list of
 busy `"<provider-id>:<repo-id>"` targets: healthy-but-busy targets never
 degrade state or `ok`, but agents can relay "ready, indexing in progress" to
 developers instead of guessing why fresh symbols are missing.
+
+`_cgc_watcher_state()` projects each CGC watcher row, and its `lastRefresh` now
+passes through `_last_refresh_summary()`: a structured refresh record
+(`{updatedAt, returncode, durationSeconds}`) is flattened into a single scalar
+string (`"<updatedAt> returncode=<n> durationSeconds=<s>"`), a plain string is
+passed through unchanged, and an empty record collapses to `None`. This keeps the
+watcher payload's `lastRefresh` a stable scalar even after the backend began
+emitting a structured object.
 
 When status is read, lifecycle settings are generated from trusted MCP
 settings, watcher status is invoked, and the current provider state file is
@@ -103,6 +111,7 @@ surface.
 
 ## Update History
 
+- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): documented `_last_refresh_summary`, which flattens a structured CGC `lastRefresh` object (`{updatedAt, returncode, durationSeconds}`) into a scalar summary string inside `_cgc_watcher_state` (MCP 2.9.x). Grafted onto the series' task-31 `refresh_current_provider_state` content.
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: documented `refresh_current_provider_state`, the shared writer-backed seam used by dashboard projection ticks. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the dual-gate global `ok`, `partial`, `indexing` busy-list, and per-repo CGC recovery mechanics into Code Commentary and Invariants (documentation only).
 - 2026-06-09T22:10+02:00 — The projection's global `ok` now requires both the raw watchers ok (containers) and the aggregated current-state ok (graph/workspace content); `partial` is set when other providers remain ready. Recovery actions now include a per-repo CGC restart entry for `empty`/`backend-unreachable` targets, and the compact summary gained the additive `indexing` list of busy `"<provider-id>:<repo-id>"` targets (healthy-but-busy: never degrades state/ok). This closes the 2026-06-09 incident where `context_packet` reported green over a 0-node graph for 3 days.
