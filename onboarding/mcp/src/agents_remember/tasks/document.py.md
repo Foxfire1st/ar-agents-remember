@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-24T16:39+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-29T21:24+02:00                     |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,8 +28,9 @@ parsing markdown back.
 `TaskEnclosureRef`, `SubTaskRef`, and `Section`) extend `_Doc`, a `BaseModel` with
 `extra="forbid", populate_by_name=True` — unknown keys are a schema error and field
 name or alias both validate. The `schema_` field defaults to `TASK_DOCUMENT_SCHEMA`
-and serializes under the `schema` alias. `DocKind` is `light`|`subTask`|`master`;
-`DocStatus` stays in the `w-02-light-task-workflow` template vocabulary
+and serializes under the `schema` alias. `DocKind` is `light`|`subTask`|`master` — `light` is
+retained only so any legacy `light` document still loads; the `task_doc` controller no longer authors
+new ones (every task is master/leaf). `DocStatus` stays in the `w-02-light-task-workflow` template vocabulary
 (`planning`|`inProgress`|`Completed`) so the rendered `**Status:**` line is always
 valid; `StepStatus` is a 4-state (`pending`|`inProgress`|`blocked`|`done`) carrying the
 dashboard's granularity. `seriesContractPath` names the root task series contract when one exists, and
@@ -72,6 +73,9 @@ the escape hatch for bespoke prose; the standard template sections stay the back
   `observer.projection`); it round-trips, so changes must stay backward-readable.
 - The markdown checkbox is binary; the richer `StepStatus` lives only in the JSON.
 - `schema_` must serialize as `schema` (alias) — always dump `by_alias=True`.
+- **`light` is load-compatibility only:** the `DocKind` literal keeps `light` so legacy documents still
+  deserialize, but `task_doc` create/replace refuse to author it (`controllers/task_doc_tools.py`) — new
+  tasks are `master` or `subTask` (leaf).
 - A master carries **no authored `lifecycleId`** (validator-enforced): it spans the series, not one
   leaf lifecycle. The observer still projects the master as an active task document with
   `lifecycleId=None` unless a root lifecycle is structurally attached.
@@ -96,6 +100,10 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 
 ## Update History
 
+- 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only): clarified that `light` survives in
+  `DocKind` for legacy-load compatibility only — the `task_doc` controller refuses to author new `light`
+  documents, so every task is `master` or `subTask` (leaf). Schema unchanged (a code comment documents the
+  retention). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T16:39+02:00 — Task 17 schema-side clarification: master docs still forbid authored
   `lifecycleId`, but that is no longer treated as a projection exclusion; the observer projects active
   master docs with optional runtime lifecycle attachment. Verification metadata pinned until closeout

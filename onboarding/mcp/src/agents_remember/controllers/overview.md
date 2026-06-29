@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-26T20:18+02:00|
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-29T22:57+02:00|
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -77,6 +77,14 @@ repos plus a `ledgerMapsCodeHead` mapping check; the default stays
 
 ## Update History
 
+- 2026-06-29T22:57+02:00 — No route impact: `task_doc_tools.py` gained the `remove_subtask` op (CRUD
+  delete: drop the master row + delete the leaf doc unless `keep_file`); the controller stays a typed
+  operation facade, so the route model is unchanged (detail in the task_doc_tools.py file sidecar; task
+  260629_post-landing-cleanup L2).
+- 2026-06-29T21:24+02:00 — No route impact: `task_doc_tools.py` now refuses `kind="light"` and defaults
+  an absent `kind` context-awarely (subTask under a leaf contract, else master); the controller stays a
+  typed operation facade, so the route model this overview describes is unchanged (detail in the
+  task_doc_tools.py file sidecar; task 260628_post-landing-cleanup).
 - 2026-06-26T20:18+02:00 — Task 21 route impact: `task_doc_tools.py` remains the task-document authoring
   controller and now also composes same-root leaf-to-master row sync through the task service layer.
   Verification metadata pinned until closeout stamps the code commit.

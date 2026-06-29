@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-06-28T16:17+02:00 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-06-29T23:18+02:00 |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 
 > **Status:** active baseline
 
@@ -354,6 +354,9 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-06-29T23:18+02:00 — No route impact: `worktree_start` now records the memory base from the source branch tip (not the repo HEAD) deep under `mcp/`; nothing at the repo-overview level changes (detail in the start.py file sidecar; task 260629_post-landing-cleanup L3).
+- 2026-06-29T22:57+02:00 — No route impact: `task_doc` gained a `remove_subtask` op deep under `mcp/`; nothing at the repo-overview level changes (detail in the task_doc_tools.py file sidecar; task 260629_post-landing-cleanup L2).
+- 2026-06-28T20:30+02:00 — No route impact: a `find_worktree_contract` archive-skip + docstring fix deep under `mcp/`; nothing at the repo-overview level changes (detail in the contracts.py file sidecar; task 260628_post-landing-cleanup).
 - 2026-06-28T16:17+02:00 — Task 35 route impact: the dashboard asset sync gate (`scripts/sync-dashboard.py
   --check`, run by `.githooks/`) became source-aware — it fingerprints the dashboard build inputs into a
   sibling `dashboard.fingerprint` and flags a `dashboard/src` change shipped without a rebuild, the way the

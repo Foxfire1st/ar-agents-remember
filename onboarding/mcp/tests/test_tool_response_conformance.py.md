@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-29T21:24+02:00                      |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b`         |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -48,7 +48,8 @@ collects one representative payload per tool into `cls.payloads`:
   leaves the lifecycle `awaiting-developer`); `lifecycle_block` remains here as
   lower-level compatibility coverage, not as an advertised public MCP tool.
 - `_task_doc_payloads`: a base fixture authoring one representative `task_doc`
-  document (a `create`), so the JSON-primary task tool has a payload (slice 3c).
+  document (a `create` of a `master`, since `light` is no longer authorable), so the
+  JSON-primary task tool has a payload (slice 3c).
 - `_gate_payloads`: a base fixture driving `lifecycle_gate` with an injected
   developer decision for deterministic conformance, then create/decide/wait/response-wait/list
   compatibility payloads, so both the public unified gate response and retained
@@ -110,6 +111,10 @@ declared nor part of the input."
 
 ## Update History
 
+- 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only authoring): the representative
+  `_task_doc_payloads` fixture now authors a `master` instead of a `light` document, because
+  `task_doc` create/replace refuse `light`. Conformance coverage is otherwise unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): `_lifecycle_payloads` now also drives a representative `lifecycle_turn_end_notification` payload, so the new public tool's registered response model is covered by `test_every_modeled_tool_has_a_representative_payload` / `test_representative_payloads_conform_to_registered_models`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-26T18:43+02:00 — Regression fixture update: `_gate_payloads`
   now resolves the representative `lifecycle_gate_payload` through an injected
