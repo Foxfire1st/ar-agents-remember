@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-26T20:18+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-29T21:24+02:00                           |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b`       |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -103,6 +103,9 @@ together.
 
 ## Update History
 
+- 2026-06-29T21:24+02:00 — No route impact: `document.py` gained a comment noting `DocKind`'s `light` is
+  retained only for legacy load-compat (the `task_doc` controller refuses to author new `light` docs); the
+  schema and route model are unchanged (detail in the document.py file sidecar; task 260628_post-landing-cleanup).
 - 2026-06-26T20:18+02:00 — Task 21 task-doc sync: added `master_sync.py` to the route model and clarified
   that `store.write_task_docs` persists coupled leaf/master edits after preparing all payloads. Verification
   metadata pinned until closeout stamps the code commit.

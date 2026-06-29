@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-06-27T23:09+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-29T23:18+02:00                     |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -183,6 +183,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-06-29T23:18+02:00 — No route impact: `start.py` now derives the recorded memory base from the memory source branch tip (`_memory_base_for_source`) instead of the repo HEAD; the module structure and route model are unchanged (detail in the start.py file sidecar; task 260629_post-landing-cleanup L3).
 - 2026-06-27T23:09+02:00 — Task 32 route impact: refreshed the `cleanup.py` hot-path paragraph for exact observer drift-snapshot reclamation during worktree cleanup, including dry-run reporting and the contract-owned repository/branch boundary. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T21:10+02:00 — Task 30: refreshed the closeout hot-path summary for
   already-integrated re-closeout behavior: integrated source tips are valid

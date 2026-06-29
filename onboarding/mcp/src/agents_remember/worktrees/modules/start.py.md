@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-16T03:25                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-29T23:18+02:00                     |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -119,10 +119,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Series-Contract Notes
 
-For master task starts, `start.py` creates or loads the root series contract, creates the integration branch from the protected/source branch, and then builds the leaf contract from that integration branch with `leaf_id` recorded.
+For master task starts, `start.py` creates or loads the root series contract, creates the integration branch from the protected/source branch, and then builds the leaf contract from that integration branch with `leaf_id` recorded. Both the root and leaf `memory_base_commit` come from `_memory_base_for_source` — the tip of the **memory source branch** the worktree is created off (mirroring the code base), **not** the memory repo's current HEAD, which may sit on an unrelated in-flight branch and would record a divergent base that breaks closeout's "memory source branch moved" preflight; it falls back to the repo HEAD only when external memory is off or the source branch is not present yet.
 
 ## Update History
 
+- 2026-06-29T23:18+02:00 — Memory-base fix (L3): `start.py` now derives both the root and leaf `memory_base_commit` from the memory source branch tip via `_memory_base_for_source` (mirroring the code base) instead of the memory repo HEAD, so a memory repo checked out on an unrelated branch no longer records a divergent base that breaks closeout's "memory source branch moved" preflight. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: start now creates or loads a root series contract for master tasks, creates the integration branch from the protected/source branch, starts each leaf from that integration branch, writes leaf contracts under `enclosures/<leaf-id>/series-contract.md`, and reports `enclosure_path`/`leaf_id`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-16T03:25 — Slice 5f S6 (§9): added `_record_start_progress` and called it at the two happy-path pre-contract success points (`preflight`, `code-worktree`) so a non-blocked start emits start-progress (previously only blocked early returns did); best-effort, dry-run-skipped, cleared by the existing `_clear_start_block` on contract write. Verification metadata pinned until closeout stamps the S6 code commit.
 - 2026-06-15T19:35 — Slice 5e (§5.4): `start_result` records a transient start-progress file at the three pre-contract blocked returns (stale-base / memory / provider) via `_record_start_block`, and clears it on contract write via `_clear_start_block` — best-effort, dry-run-skipped — so a start gated before its contract is observable. Verification metadata pinned until closeout stamps the 5e code commit.

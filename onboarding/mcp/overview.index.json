@@ -273,7 +273,7 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 468,
+    "sourceFilesInScope": 475,
     "fileSidecars": 185,
     "childRoutes": 15
   },

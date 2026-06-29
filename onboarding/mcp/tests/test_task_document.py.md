@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-06-26T20:18+02:00 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-06-29T22:57+02:00 |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 Tests for the JSON-primary task-document layer (slice 3c): the schema, renderer,
-store, the `task_doc` controller (light/subTask + master), and tool registration.
+store, the `task_doc` controller (master + subTask leaf authoring; `light` is load-compat only),
+and tool registration.
 
 ## Code Commentary
 
@@ -53,14 +54,18 @@ store, the `task_doc` controller (light/subTask + master), and tool registration
   both files untouched, and slug/kind path changes are rejected. Task 21 adds leaf-to-master sync
   coverage: leaf creation inserts the parent master row, updates preserve manually-authored master
   `scope`, step status changes derive the master row status, and dry-run returns a master sync preview
-  without mutating the parent file.
+  without mutating the parent file. Master/leaf-only authoring is covered too: `create`/`replace`
+  refuse an explicit `kind="light"`, and a bare `create` defaults to `master` with no contract and to
+  `subTask` under a leaf contract.
   A `cast`-typed `SimpleNamespace` stands in for `McpRuntimeConfig` (only
   `coordination_root` is read).
 - `MasterControllerTests` — master `create` (writes `task.json`, no `lifecycleId`
   even with a contract present), `set_subtask` insert-then-update by number,
   `set_section` upsert by heading, `set_step` rejected on a master,
   `set_subtask` rejected on a non-master, `set_section` now allowed on a leaf (freeform-only, R4),
-  and the argument-error paths.
+  the argument-error paths, and the `remove_subtask` CRUD-delete cases (deletes the leaf doc + master
+  row, `keep_file` retains the doc, dry-run reports `wouldDeleteFiles` without deleting, absent number
+  raises, non-master rejected).
 - `RegistrationTests` — `task_doc` is in `PUBLIC_TOOLS` + the registry, and the
   payload builder returns a token-stamped payload that validates against
   `TaskDocResponse` (ambient reset first).
@@ -88,6 +93,15 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 
 ## Update History
 
+- 2026-06-29T22:57+02:00 — CRUD completion (L2): added `MasterControllerTests` cases for `remove_subtask`
+  — deletes the leaf doc + master row, `keep_file` retains the doc, dry-run previews `wouldDeleteFiles`
+  without deleting, absent number raises, non-master rejected. Verification metadata pinned until closeout
+  stamps the code commit.
+- 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only authoring): added `ControllerTests`
+  cases that `create`/`replace` refuse an explicit `kind="light"` and that a bare `create` defaults to
+  `master` (no contract) or `subTask` (leaf contract); repaired the `MasterControllerTests` non-master
+  fixture and the `RegistrationTests` payload-builder fixture, which previously authored `light` through
+  the controller. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: controller coverage now proves automatic
   same-root master row create/update, manual `scope` preservation, derived row status, and dry-run master
   preview without parent mutation. Verification metadata pinned until closeout stamps the code commit.

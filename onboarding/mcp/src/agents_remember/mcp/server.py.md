@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-29T22:57+02:00                      |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -183,14 +183,15 @@ begins.
 
 `task_doc` is registered (slice 3c): the JSON-primary task-document authoring tool
 taking `repo_id`, `operation`
-(`create`/`replace`/`set_status`/`set_step`/`set_subtask`/`set_section`/
+(`create`/`replace`/`set_status`/`set_step`/`set_subtask`/`remove_subtask`/`set_section`/
 `append_decision`/`set_field`/`get`), optional `task_name`/`contract_path`/`slug`, and the
 `fields`/`step`/`decision`/`subtask`/`section` payloads. It forwards to
 `task_doc_payload`; the JSON is the source of truth and `task.md` is a generated render
 (mutating except `operation='get'`). `replace` takes a full replacement document in `fields`,
 validates it through the same schema path, and rewrites the existing JSON+markdown without
 allowing the replacement to move to a different task-document path. `kind:"master"` series wrappers use the
-`subtask`/`section` payloads (`set_subtask`/`set_section`); `set_step` is leaf-only. `dry_run`
+`subtask`/`section` payloads (`set_subtask`/`remove_subtask`/`set_section`); `remove_subtask` drops a
+sub-task row and deletes its leaf doc (json+md) unless `subtask.keep_file`; `set_step` is leaf-only. `dry_run`
 (act-by-default `False`, R5) builds + validates and returns `rendered`/`diff`/`wouldLose` **without**
 writing — the preview before adopting a hand `.md`.
 
@@ -229,6 +230,10 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 
 ## Update History
 
+- 2026-06-29T22:57+02:00 — CRUD completion (L2): the `task_doc` registration docstring now lists the
+  `remove_subtask` master op (`subtask={number, keep_file?}` — drops the row and deletes the leaf doc
+  unless `keep_file`). Registration/forwarding only; no schema change. Verification metadata pinned
+  until closeout stamps the code commit.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): registered the
   public `lifecycle_turn_end_notification(summary)` tool between `lifecycle_resume`
   and `lifecycle_end`, forwarding to `lifecycle_turn_end_notification_payload`

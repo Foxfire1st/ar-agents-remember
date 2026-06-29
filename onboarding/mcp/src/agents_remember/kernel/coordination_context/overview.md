@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-06-28T19:10+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -69,6 +69,7 @@ The package is intentionally split by responsibility:
 
 ## Update History
 
+- 2026-06-28T20:30+02:00 — No route impact: `find_worktree_contract` now skips archived (`0_archive/`) contracts and its docstring was corrected to `series-contract.md`; the route's module structure and model are unchanged (detail in the contracts.py file sidecar; task 260628_post-landing-cleanup).
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): re-recorded main's worktree_name route note that the series carryover dropped — `contracts.py` gained a `worktree_name` fallback in `resolve_contract` plus `find_worktree_contract`, `resolver.py` forwards `worktree_name`, and the facade re-exports it (#90, MCP 2.9.3); **no route impact** (module responsibilities, structure, and invariants unchanged), detail lives in the `contracts.py` / `resolver.py` file sidecars.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: coordination context now resolves active task names, optional nested `parent_task`, and optional `leaf_id` into root or leaf `series-contract.md` paths instead of looking for sibling `contract.md` files. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-06T12:15: Re-verified against the current 15-file coordination-context package; purpose, hot path, route model, and invariants still match.

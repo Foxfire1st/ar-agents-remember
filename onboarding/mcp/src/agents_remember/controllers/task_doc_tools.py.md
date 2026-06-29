@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/controllers/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-06-26T20:18+02:00 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-06-29T22:57+02:00 |
+| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
+| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,20 +27,24 @@ the JSON (source of truth) and the rendered markdown.
 `task_doc_tool(config, *, repo_id, operation, task_name=None, contract_path=None,
 slug=None, fields=None, step=None, decision=None, subtask=None, section=None)`
 validates `operation` against `VALID_OPERATIONS`
-(`create`/`replace`/`set_status`/`set_step`/`set_subtask`/`set_section`/
+(`create`/`replace`/`set_status`/`set_step`/`set_subtask`/`remove_subtask`/`set_section`/
 `append_decision`/`set_field`/`get`), then `_resolve()`s the task root + optional contract: a
 `contract_path` can point at either a root `series-contract.md` or a leaf
 `enclosures/<leaf-id>/series-contract.md`; otherwise `task_name` is mapped through
 `worktrees.task_resolver.resolve_active_task_root`, with leaf lookup as the fallback. `get`
 reads and returns without writing; `create` builds a new `TaskDocument` from `fields`
-(defaulting `kind="light"`, and picking up `seriesContractPath` plus `enclosures[]` from
+(refusing an explicit `kind="light"` and defaulting an absent `kind` context-awarely — `subTask`
+under a leaf contract, else `master` — while picking up `seriesContractPath` plus `enclosures[]` from
 the contract when present; leaf contracts also seed `lifecycleId` for non-masters), refusing to overwrite an existing doc;
-`replace` builds the same full `TaskDocument` from `fields`, validates it, refuses a slug/kind
-change that would move the JSON document path, and then rewrites the existing JSON plus rendered markdown;
+`replace` builds the same full `TaskDocument` from `fields` (so it shares the `light` refusal and the
+context-aware `kind` default), validates it, refuses a slug/kind change that would move the JSON document
+path, and then rewrites the existing JSON plus rendered markdown;
 the mutating ops load the existing JSON, apply the edit on a `model_dump(by_alias=True)`
 dict, and re-validate. `set_step` upserts a top-level step or, with `parent`, a substep
 (insert or in-place update by id) and rejects a master; `set_subtask` upserts a
-`SubTaskRef` by `number` (master-only) and `set_section` upserts a freeform `Section` by `heading`
+`SubTaskRef` by `number` (master-only); `remove_subtask` (master-only) drops the `SubTaskRef` by
+`number` AND deletes the referenced leaf doc (`<slug>.json` + `.md`) unless `subtask.keep_file`,
+raising when the number is absent; and `set_section` upserts a freeform `Section` by `heading`
 (master, or a leaf — freeform-only, R4). Every op ends in `write_task_doc` and returns a compact
 result (`taskId`, `status`, `lifecycleId`, `docPath`, `renderedPath`,
 `stepsDone`/`stepsTotal`). After any create/update, the controller calls
@@ -68,6 +72,15 @@ validation failures, and invalid resolvable parent master docs.
 - Master vs leaf ops are kind-gated up front: `set_step` rejects a master and `set_subtask` rejects a
   non-master; `set_section` works on both (a leaf gets freeform-only sections — R4 — with the schema
   validator as the backstop), so a wrong-kind edit fails with a clear `TaskDocError`.
+- Authoring is master/leaf only: `_build_doc` (shared by `create` and `replace`) raises `TaskDocError`
+  on an explicit `kind="light"`, and an absent `kind` defaults context-awarely — `subTask` when
+  resolving against a leaf contract, otherwise `master`. `light` survives in `DocKind`
+  (`tasks/document.py`) only so a legacy light document still loads.
+- `remove_subtask` completes task-doc CRUD (the **D**): master-only, it removes the `SubTaskRef` by
+  `number` and, by default, deletes the leaf doc the row points at (`SubTaskRef.file` → `<slug>.json` +
+  `.md`) — "remove means remove"; `subtask.keep_file` unlinks the index row but leaves the leaf doc on
+  disk. It does not touch the leaf's worktree/enclosure. dry-run reports `wouldDeleteFiles` without
+  writing or deleting; it has its own handler (a file side effect), so it bypasses `plan_master_sync`.
 - Resolution is coordination-local: the task root comes from `config.coordination_root`
   plus active task-name resolution (or an explicit root/leaf `series-contract.md` path).
 - Master sync is an additive leaf-write side effect only when the parent master resolves inside the
@@ -89,6 +102,15 @@ validation failures, and invalid resolvable parent master docs.
 
 ## Update History
 
+- 2026-06-29T22:57+02:00 — CRUD completion (L2): added the `remove_subtask` op — master-only, drops the
+  `SubTaskRef` by `number` and deletes the referenced leaf doc (json+md) unless `keep_file`, raising on an
+  absent number; dry-run reports `wouldDeleteFiles`. Verification metadata pinned until closeout stamps
+  the code commit.
+- 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only authoring): `_build_doc` (shared by
+  `create`/`replace`) now refuses an explicit `kind="light"` and defaults an absent `kind` to `subTask`
+  under a leaf contract else `master`. Added a controller rejection + default-kind test and repaired two
+  tests that authored `light` through the controller. Verification metadata pinned until closeout stamps
+  the code commit.
 - 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: the controller now plans same-root leaf-to-master
   row sync after every leaf mutation, includes master preview data in dry-run responses, and writes changed
   leaf/master docs together through `write_task_docs`. Verification metadata pinned until closeout stamps
