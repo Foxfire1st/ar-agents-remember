@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-03T12:58+02:00 |
-| lastVerifiedCommitHash | `7bebee59a9d03a42c3085fb85e3f3e9e7804c72c` |
-| lastVerifiedCommitDate | 2026-07-03T11:38:33+02:00|
+| lastUpdated | 2026-07-03T12:59+02:00 |
+| lastVerifiedCommitHash | `44c8051d00df970eb02cff7dc1e744c9c8338b1b` |
+| lastVerifiedCommitDate | 2026-07-03T11:42:56+02:00|
 
 > **Status:** active baseline
 
@@ -177,7 +177,7 @@ workspace ar-coordination/
 
 ### Public Documentation
 
-The public README is now intentionally short: product positioning, a fast Core Features pitch, a core path-derived memory example, one generic quickstart, a ToC-linked **Run The Dashboard** section (260703 L3 — unpinned `uv tool install agents-remember-mcp` as the first-class install, flag-free discovery-backed `agents-remember dashboard`, daemon mode + the `dashboard.autoStart` key, pinning as the debugging path, one rc-period pre-release note; the PyPI `mcp/README.md` Install And Run carries the same story), harness install links, docs links, and a compact source/runtime layout. Detailed user-facing material moved under `docs/`: `docs/features.md` is the concentrated product tour, `docs/README.md` is the documentation index, `getting-started.md`, `concepts.md`, `architecture.md`, `workflows.md`, and `FAQ.md` own core narrative, `docs/install/` owns harness-specific setup, `docs/guides/` owns operational tasks, and `docs/reference/` owns exact runtime/settings/skill behavior. Its Status section, as of the L14 release, states the current version (`3.0.0rc1`) and that the 3.0 cockpit arc has shipped — the dashboard is served from the MCP package via the `agents-remember dashboard` CLI. A separate `docs/design/` subtree holds developer-facing design specs for in-flight major work — distinct from the user-facing pages above and from the historical `roadmap/` notes. Its entries include `docs/design/observable-lifecycle.md` (the approved 3.0 design for an observable, controllable session lifecycle — the browser-dashboard direction, issues #2/#43), `docs/design/harness-matrix.md`, and the **engine-room** design language: `docs/design/engine-room/engine-room-visual-language.html` (the canonical living spec for the engine-room visual primitives — state colours, motion, glow, timing) and `docs/design/engine-room/podstage.html` (the prototype the production canvas was built from). As of slice 05k, `docs/design/` is **in onboarding scope** — a `docs/design`-scoped `pathRules` rule (listed first; first-match-wins) onboards its `.html` + `.md`, registered in `system/sources.md` as Domain Documentation, while the rest of `docs/**` stays excluded — so the design specs are now first-class onboarded memory under `onboarding/docs/design/` rather than summarized only here. (The general `docs/` user-facing pages remain onboarding-excluded; README onboarding + this overview carry their durable summary.)
+The public README is now intentionally short: product positioning, a fast Core Features pitch, a core path-derived memory example, one generic quickstart, a ToC-linked **Run The Dashboard** section (260703 L3 — unpinned `uv tool install agents-remember-mcp` as the first-class install, flag-free discovery-backed `agents-remember dashboard`, daemon mode + the `dashboard.autoStart` key, pinning as the debugging path, one rc-period pre-release note; the PyPI `mcp/README.md` Install And Run carries the same story), harness install links, docs links, and a compact source/runtime layout. Detailed user-facing material moved under `docs/`: `docs/features.md` is the concentrated product tour, `docs/README.md` is the documentation index, `getting-started.md`, `concepts.md`, `architecture.md`, `workflows.md`, and `FAQ.md` own core narrative, `docs/install/` owns harness-specific setup, `docs/guides/` owns operational tasks, and `docs/reference/` owns exact runtime/settings/skill behavior. Its Status section states the current version (bumped every release) and that the 3.0 cockpit arc has shipped — the dashboard is served from the MCP package via the `agents-remember dashboard` CLI. A separate `docs/design/` subtree holds developer-facing design specs for in-flight major work — distinct from the user-facing pages above and from the historical `roadmap/` notes. Its entries include `docs/design/observable-lifecycle.md` (the approved 3.0 design for an observable, controllable session lifecycle — the browser-dashboard direction, issues #2/#43), `docs/design/harness-matrix.md`, and the **engine-room** design language: `docs/design/engine-room/engine-room-visual-language.html` (the canonical living spec for the engine-room visual primitives — state colours, motion, glow, timing) and `docs/design/engine-room/podstage.html` (the prototype the production canvas was built from). As of slice 05k, `docs/design/` is **in onboarding scope** — a `docs/design`-scoped `pathRules` rule (listed first; first-match-wins) onboards its `.html` + `.md`, registered in `system/sources.md` as Domain Documentation, while the rest of `docs/**` stays excluded — so the design specs are now first-class onboarded memory under `onboarding/docs/design/` rather than summarized only here. (The general `docs/` user-facing pages remain onboarding-excluded; README onboarding + this overview carry their durable summary.)
 
 ### Harness Starter Packages
 
@@ -373,6 +373,9 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-03T12:59+02:00 — No route impact: 260703 L4 releases the series as MCP 3.0.0rc2 (version
+  strings only: pyproject, SERVER_VERSION fallback, README Status; the Public Documentation
+  paragraph's version reference became generic). Repo structure and behavior unchanged.
 - 2026-07-03T12:58+02:00 — 260703 L3 route impact: the public README gains the ToC-linked
   `## Run The Dashboard` section (unpinned install first-class, daemon usage, autoStart key,
   pinning as debugging, rc-period note) and the PyPI `mcp/README.md` Install And Run carries the

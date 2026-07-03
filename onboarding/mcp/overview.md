@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-03T12:58+02:00 |
-| lastVerifiedCommitHash | `7bebee59a9d03a42c3085fb85e3f3e9e7804c72c` |
-| lastVerifiedCommitDate | 2026-07-03T11:38:33+02:00|
+| lastUpdated            | 2026-07-03T12:59+02:00 |
+| lastVerifiedCommitHash | `44c8051d00df970eb02cff7dc1e744c9c8338b1b` |
+| lastVerifiedCommitDate | 2026-07-03T11:42:56+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -382,6 +382,8 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-03T12:59+02:00 — No route impact: 260703 L4 release bump only (pyproject version +
+  SERVER_VERSION fallback to 3.0.0rc2); no mcp behavior or structure change.
 - 2026-07-03T12:58+02:00 — No route impact: 260703 L3 rewrote `mcp/README.md`'s Install And Run
   (the PyPI page gains the uv-tool + dashboard + daemon install story; detail in the
   `mcp/README.md` sidecar). Documentation only — the mcp package route model, structure, and
