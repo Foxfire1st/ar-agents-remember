@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T00:30+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-03T11:45+02:00 |
+| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e` |
+| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -80,6 +80,14 @@ is now the **active** turn-end path — the next-step hint engine repoints its
 closeout/decide hints at it. The `lifecycle_gate` + `operator_inbox_*` junction
 stays registered and the durable-gate stack remains valid, but it is **parked**:
 no longer hinted as the normal turn-end choreography.
+
+260703 L2 adds the boot-time dashboard supervision seam to `main()`: between
+`load_config` and `run_server` it calls `maybe_autostart_dashboard(config)`
+(from `serving/daemon.py`) — a no-op unless the trusted settings set
+`dashboard.autoStart`, otherwise a daemon thread ensures the detached dashboard
+daemon (adopt healthy / spawn absent / restart on version mismatch). The hook is
+total and threaded so it can never delay or break the stdio handshake, and its
+only output goes to stderr (stdout is the MCP protocol).
 
 Dashboard task 14 registers `lifecycle_finalize_task`. The server signature
 accepts a coordination-contained contract path, optional leaf task document,
@@ -236,6 +244,10 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 
 ## Update History
 
+- 2026-07-03T11:45+02:00 — 260703 L2: `main()` calls `maybe_autostart_dashboard(config)` between
+  `load_config` and `run_server` — threaded, total, stderr-only dashboard daemon supervision
+  gated by the `dashboard.autoStart` settings key. Verification metadata pinned until closeout
+  stamps the code commit.
 - 2026-07-03T00:30+02:00 — L11 registers the `task_reopen` tool (task-domain reset of a completed leaf; dry_run preview; delegates to task_reopen_payload).
 - 2026-07-02T17:04+02:00 — L9: registered `attach_terminal_session_to_leaf(session_id, leaf_key)` as the
   agent-facing path for moving an existing hosted terminal/chat session between durable leaves. Verification

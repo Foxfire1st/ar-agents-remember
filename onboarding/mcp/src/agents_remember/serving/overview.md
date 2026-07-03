@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-03T12:50+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-03T12:57+02:00 |
+| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e`       |
+| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -108,6 +108,17 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   session cwd or a catalog-restored cwd so the composer can inject its path; the terminal channel is
   text-only), and the static mount.
   SSE uses built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`).
+- `daemon.py` — the dashboard daemon supervisor (260703 L2): `ensure()` adopts a healthy detached
+  daemon, spawns a missing one, and restarts on version/host/port mismatch, behind one
+  non-blocking flock (`ensure.lock`) so concurrent MCP boots never double-spawn. State lives under
+  `<coordinationRoot>/logs/dashboard/` — an atomic `daemon.json` (pid/host/port/version/paths,
+  written immediately after spawn) and a per-spawn-rotated `dashboard.log` (the child serves with
+  `--no-access-log` so the log stays bounded). Liveness is kill-probe **plus** `/proc/<pid>/cmdline`
+  identity (pid reuse and zombies read as stale); stop is TERM → bounded wait → KILL. The child is
+  the plain foreground CLI addressed by module string — the module stays import-light (stdlib +
+  config types, never uvicorn/FastAPI), so `mcp/server.py`'s boot hook
+  (`maybe_autostart_dashboard`, threaded/total/stderr-only, gated by the `dashboard.autoStart`
+  settings key) never pulls the serving stack into MCP startup.
 - `projector.py` — `Projector`: owns the latest projection, a monotonic sequence, and the
   subscriber fan-out. `prime()`, `run()` (tick: re-project → diff → broadcast), `current()`,
   `subscribe()`. The `now`/`before_tick` seams + `_tick_sync(moment)` keep one loop generic
@@ -260,6 +271,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-03T12:57+02:00 — 260703 L2 route impact: the route gains `daemon.py` — the dashboard
+  daemon supervisor (flock-guarded ensure: adopt/spawn/restart-on-mismatch; atomic `daemon.json`;
+  identity-checked liveness; TERM→KILL stop; the threaded `maybe_autostart_dashboard` MCP boot
+  hook). Covered by `mcp/tests/test_dashboard_daemon.py`. Verification metadata pinned until
+  closeout stamps the code commit.
 - 2026-07-03T12:50+02:00 — No route impact: L15 changed only pyright-visible narrowing inside changeset.py; the serving surface and behavior are unchanged.
 - 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape route impact: `terminal.py`'s `write_session`
   now cancels tmux copy-mode (new injectable `TmuxModeCanceller`, `tmux send-keys -X cancel` default)

@@ -14,6 +14,7 @@
     "mcp/src/agents_remember/serving/actions.py",
     "mcp/src/agents_remember/serving/app.py",
     "mcp/src/agents_remember/serving/changeset.py",
+    "mcp/src/agents_remember/serving/daemon.py",
     "mcp/src/agents_remember/serving/delta.py",
     "mcp/src/agents_remember/serving/events.py",
     "mcp/src/agents_remember/serving/files.py",
@@ -27,8 +28,8 @@
     "mcp/src/agents_remember/serving/terminal_leaf_assignment.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 15,
-    "fileSidecars": 15,
+    "sourceFilesInScope": 16,
+    "fileSidecars": 16,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -39,6 +40,7 @@
     "assignment",
     "catalog",
     "changeset",
+    "daemon",
     "delta",
     "events",
     "files",
@@ -66,6 +68,7 @@
       "mcp/src/agents_remember/serving/actions.py",
       "mcp/src/agents_remember/serving/app.py",
       "mcp/src/agents_remember/serving/changeset.py",
+      "mcp/src/agents_remember/serving/daemon.py",
       "mcp/src/agents_remember/serving/delta.py",
       "mcp/src/agents_remember/serving/events.py",
       "mcp/src/agents_remember/serving/files.py",
@@ -87,6 +90,8 @@
       "app",
       "changeset.py",
       "changeset",
+      "daemon.py",
+      "daemon",
       "delta.py",
       "delta",
       "events.py",
@@ -124,9 +129,7 @@
       "analytics",
       "*.removed",
       "GET /api/state",
-      "GET /api/events",
-      "settings.json",
-      "create_app"
+      "GET /api/events"
     ]
   },
   "fallback": {
