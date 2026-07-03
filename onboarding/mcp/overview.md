@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-03T12:57+02:00 |
-| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e` |
-| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
+| lastUpdated            | 2026-07-03T12:58+02:00 |
+| lastVerifiedCommitHash | `7bebee59a9d03a42c3085fb85e3f3e9e7804c72c` |
+| lastVerifiedCommitDate | 2026-07-03T11:38:33+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -382,6 +382,10 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-03T12:58+02:00 — No route impact: 260703 L3 rewrote `mcp/README.md`'s Install And Run
+  (the PyPI page gains the uv-tool + dashboard + daemon install story; detail in the
+  `mcp/README.md` sidecar). Documentation only — the mcp package route model, structure, and
+  behavior are unchanged.
 - 2026-07-03T12:57+02:00 — 260703 L2 route impact: `serving/` gains `daemon.py` (dashboard daemon
   supervision), the CLI gains `--daemon`/`--status`/`--stop`/`--no-access-log` with settings-default
   `--port`, `mcp/config.py` parses the fail-loud `dashboard` settings object (autoStart, port), and
