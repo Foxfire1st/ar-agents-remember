@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
 | lastUpdated            | 2026-07-03T11:50+02:00                     |
-| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e` |
-| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
+| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
+| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
 
 ## Purpose
 
