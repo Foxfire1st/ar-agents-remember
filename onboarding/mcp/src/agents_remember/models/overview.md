@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:35+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -19,7 +19,9 @@
 `models/` owns the Pydantic response contracts for Agents Remember MCP payload
 builders. It turns the public tool surface and retained compatibility builders
 from loose dictionaries into named, inspectable models that can be validated at
-runtime and tested by schema.
+runtime and tested by schema. Model homes follow tool domains: `TaskReopenResponse`
+(L11) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
+the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
 
@@ -43,7 +45,8 @@ leaf-to-master result, `gates.py` for
 `LifecycleGateResponse`, the public gate decide/list responses, and retained
 compatibility gate responses, `operator_inbox.py` for the
 three `operator_inbox_*` external-chat response contracts (task 10),
-`lifecycle_finalize.py` for the strict terminal task-finalizer response, and
+`lifecycle_finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
+`attach_terminal_session_to_leaf` hosted-chat/terminal reassignment response, and
 `tokens.py` for response token accounting.
 
 ## Route Model
@@ -96,10 +99,15 @@ three `operator_inbox_*` external-chat response contracts (task 10),
 | Contract tests prove public tool coverage and schema generation. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
 | Operator inbox response models cover post, poll, and consume payloads. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
 | Lifecycle finalizer response model covers the terminal task finalization payload. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
+| Terminal response model covers hosted session leaf reassignment. | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
 | The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 
 ## Update History
 
+- 2026-07-03T00:35+02:00 — L11 route impact: TaskReopenResponse added in task_doc.py; tool_registry maps task_reopen to it.
+- 2026-07-02T17:04+02:00 — L9 route impact: added `models/terminal.py` with the strict
+  `AttachTerminalSessionToLeafResponse` and registered it in `tool_registry.py` for the new public
+  reassignment tool. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — Task 28 route impact: `models/lifecycle.py` adds `LifecycleTurnEndNotificationResponse(LifecycleResponse)` (adds a required `summary`) and `tool_registry.py` registers `lifecycle_turn_end_notification` → that strict response as a real public tool (not in `INTERNAL_COMPAT_TOOL_NAMES`; `TOOL_RESPONSE_MODELS` → 55, `PUBLIC_TOOL_RESPONSE_MODELS` → 51, still matching `PUBLIC_TOOLS`). It follows the existing STRICT `ToolResponse` pattern, so the strict/flexible split this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T18:43+02:00 — Task 27 route impact: `base.py` adds the strict `NextStep`
   lifecycle-hint model (`summary` + optional `nextOperation`/`nextTool`/`nextArgs`/`nextRequiredArgs`,

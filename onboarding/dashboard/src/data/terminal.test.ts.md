@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T01:25+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T16:35+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -17,7 +17,11 @@
 ## Purpose
 
 Unit tests for the terminal WebSocket client (`data/terminal.ts`, slice 6e-1) — the pure protocol
-logic, driven against a `FakeSocket` so no real `WebSocket` (absent in jsdom) is touched.
+logic, driven against a `FakeSocket` so no real `WebSocket` (absent in jsdom) is touched. The
+reopened-L6 suite pins `pasteAndConfirm`'s confirmed draft-paste contract under fake timers: one
+bracketed-paste frame and `true` when the composer echoes, retries when a booting harness discards the
+paste, confirmation of the echoing attempt without further sends, `false` past the 30s boot deadline,
+and never a `\r` on any path.
 
 ## Code Commentary
 
@@ -56,6 +60,11 @@ real socket is built lazily.
 
 ## Update History
 
+- 2026-07-02T16:35+02:00 — Reopened L6 paste-loss fix: added the `pasteAndConfirm` suite under fake
+  timers — a quiet-gated paste confirmed by its echo resolves `true` with exactly one bracketed-paste
+  frame and never a `\r`; a discarded first attempt is retried and the echoing attempt confirms without
+  further sends; and a never-echoing session resolves `false` after the 30s boot deadline with bounded
+  retries. Verification metadata pinned until closeout stamps the follow-up commit.
 - 2026-06-27T01:25+02:00 — Task 22 follow-up: added `fetchTerminalSessionsOrNull` coverage for the
   successful-empty vs failed-fetch distinction used by cross-tab catalog sync. Verification metadata
   pinned until closeout stamps the task-22 follow-up code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-06-29T23:18+02:00                     |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-03T00:35+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -16,7 +16,9 @@ The `worktrees/modules` package contains the extracted implementation modules
 behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycle
 status guidance, start preparation, onboarding refresh, closeout, integration,
 cleanup, lifecycle finalization, abandon, provider teardown, the typed cross-layer argument DTO, and CLI
-argument wiring while preserving the public facade import path.
+argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
+`task_reopen` lives in the tasks package (L11) because it reopens a task, and this route's start path
+merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
 
 ## Hot Path Summary
 
@@ -24,6 +26,12 @@ argument wiring while preserving the public facade import path.
   including `committed_changed_paths` (issue #83: the unverified committed
   range — tree-diff `base..HEAD` ∩ `verified..HEAD`) and the
   `commit_text_or_none` baseline reader behind the closeout body gates.
+  **Operations-integration L3** adds `changed_files_with_counts(repo, base, head=None)`
+  (+ `_rename_aware_path`) — the change-set primitive behind the serving change-set API
+  (`serving/changeset.py`): per-file `{path, insertions, deletions, status}` via
+  `git diff --numstat --name-status --find-renames`, KEEPING deletions and reporting
+  counts (binary → `None`, untracked → `A`, rename → post-rename path), unlike the
+  name-only `changed_*_paths`.
 - `guidance.py` renders lifecycle phase and typed next-operation payloads. Its
   `lifecycle_guidance` checks the disposal states first: `cleanup == "completed"`
   → the `cleanup-completed` phase, and (slice 05l P1) `cleanup == "abandoned"` →
@@ -183,7 +191,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-03T00:35+02:00 — L11 route impact: start's existing-contract branch recreates fresh for cleanup in {abandoned, reopened} and restamps the leaf doc's lifecycleId post-write; abandon's controller ends its anchored ambient lifecycle. The reopen implementation itself lives under tasks/.
 - 2026-06-29T23:18+02:00 — No route impact: `start.py` now derives the recorded memory base from the memory source branch tip (`_memory_base_for_source`) instead of the repo HEAD; the module structure and route model are unchanged (detail in the start.py file sidecar; task 260629_post-landing-cleanup L3).
+- 2026-06-29T15:30+02:00 — operations-integration L3: `git.py` gained `changed_files_with_counts` (+ `_rename_aware_path`), the counts/status change-set primitive (keeps deletions; binary → `None`; untracked → `A`; rename → post-rename path) feeding the L3 serving change-set API (`serving/changeset.py`). Refreshed the `git.py` Hot Path bullet. The module split this overview describes is unchanged. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
 - 2026-06-27T23:09+02:00 — Task 32 route impact: refreshed the `cleanup.py` hot-path paragraph for exact observer drift-snapshot reclamation during worktree cleanup, including dry-run reporting and the contract-owned repository/branch boundary. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T21:10+02:00 — Task 30: refreshed the closeout hot-path summary for
   already-integrated re-closeout behavior: integrated source tips are valid

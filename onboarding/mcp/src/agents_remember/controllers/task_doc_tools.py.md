@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/controllers/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-06-29T22:57+02:00 |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated | 2026-07-03T00:30+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,7 +18,10 @@
 
 The operation-dispatched controller behind the `task_doc` MCP tool: it loads or
 creates the `ar-task-document/v1` JSON for a task, applies one edit, and rewrites both
-the JSON (source of truth) and the rendered markdown.
+the JSON (source of truth) and the rendered markdown. Since L11 it also hosts
+`task_reopen_tool`: the task-domain reset that reopens a fully landed leaf under its
+exact leaf id (delegating to `tasks/reopen.py`); its response keeps the
+worktree-command contract shape because the payload carries the enclosure state.
 
 ## Code Commentary
 
@@ -102,6 +105,7 @@ validation failures, and invalid resolvable parent master docs.
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 adds `task_reopen_tool` beside the task_doc controller — the tool reopens a TASK, so the controller lives in the task domain, not with the worktree tools.
 - 2026-06-29T22:57+02:00 — CRUD completion (L2): added the `remove_subtask` op — master-only, drops the
   `SubTaskRef` by `number` and deletes the referenced leaf doc (json+md) unless `keep_file`, raising on an
   absent number; dry-run reports `wouldDeleteFiles`. Verification metadata pinned until closeout stamps

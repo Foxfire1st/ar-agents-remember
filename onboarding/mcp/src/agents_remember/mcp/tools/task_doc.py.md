@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/tools/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-19T07:23                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,8 @@
 
 ## Purpose
 
-Transport-thin payload builder for the `task_doc` authoring tool.
+Transport-thin payload builders for the task-domain tools: `task_doc` authoring and,
+since L11, `task_reopen` (reopen a completed leaf task under its exact leaf id).
 
 ## Code Commentary
 
@@ -47,6 +48,7 @@ renders + diffs the would-be doc and returns it **without** writing).
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 adds `task_reopen_payload` beside the task_doc builder — the payload lives in the task domain.
 - 2026-06-19T07:23 — Slice 3c reopened (R5, dry-run/preview): threads the new `dry_run` flag into `task_doc_tool`. Verification metadata pinned until closeout stamps the R5 code commit.
 - 2026-06-14T00:16 — Slice 3c commit 3: forwards the new `subtask`/`section` payloads for the master `set_subtask`/`set_section` ops. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
 - 2026-06-13T22:34 — Created for slice 3c commit 1: the `task_doc` payload builder. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

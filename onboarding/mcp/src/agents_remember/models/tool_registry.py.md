@@ -5,15 +5,16 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
 `tool_registry.py` maps modeled MCP payload-builder names to response model
-classes and exposes the advertised public subset separately.
+classes and exposes the advertised public subset separately. L11 maps
+`task_reopen` → `TaskReopenResponse` (imported from `models.task_doc`).
 
 ## Code Commentary
 
@@ -28,13 +29,14 @@ task-10 external-chat inbox tools (`operator_inbox_post` / `operator_inbox_poll`
 / `operator_inbox_consume` → the strict `models/operator_inbox.py` responses),
 plus dashboard task 14 `lifecycle_finalize_task` → `LifecycleFinalizeTaskResponse`,
 plus the task-28 `lifecycle_turn_end_notification` → `LifecycleTurnEndNotificationResponse`
-(the public NOTIFY-AND-CONTINUE turn-end response)
-— 55 entries. `INTERNAL_COMPAT_TOOL_NAMES` identifies the four lower-level split
+(the public NOTIFY-AND-CONTINUE turn-end response), plus L9
+`attach_terminal_session_to_leaf` → `AttachTerminalSessionToLeafResponse`
+(`models/terminal.py`) — 56 entries. `INTERNAL_COMPAT_TOOL_NAMES` identifies the four lower-level split
 builders that remain modeled but are not advertised MCP tools:
 `lifecycle_block`, `gate_create`, `gate_wait`, and `gate_response_wait`
 (`lifecycle_turn_end_notification` is deliberately NOT among them — it is a real
 public tool). `PUBLIC_TOOL_RESPONSE_MODELS` is derived by filtering those names
-out and matches the 51-entry `PUBLIC_TOOLS` tuple/server tool list. The lifecycle
+out and matches the 52-entry `PUBLIC_TOOLS` tuple/server tool list. The lifecycle
 rows map to STRICT `ToolResponse` subclasses in
 `models/lifecycle.py` (`LifecycleStartResponse`, `LifecycleBlockResponse`,
 `LifecycleResumeResponse`, `LifecycleTurnEndNotificationResponse`,
@@ -74,9 +76,14 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 | Inbox responses registered here are strict AR-owned tool responses. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
 | Gate responses, including the combined wait helper, are strict AR-owned tool responses. | [gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
 | Lifecycle finalizer response registered here is a strict AR-owned tool response. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
+| Terminal leaf reassignment response registered here is a strict AR-owned tool response. | L78-L82; L105-L111 | [terminal.py](terminal.py) |
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 registers task_reopen → TaskReopenResponse.
+- 2026-07-02T17:04+02:00 — L9: registered `attach_terminal_session_to_leaf` →
+  `AttachTerminalSessionToLeafResponse`, keeping the new agent-facing reassignment tool in the strict
+  AR-owned response-contract path. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): registered `lifecycle_turn_end_notification` → strict `LifecycleTurnEndNotificationResponse` (`models/lifecycle.py`). It is a real public tool — deliberately NOT in `INTERNAL_COMPAT_TOOL_NAMES` — so `TOOL_RESPONSE_MODELS` is now 55 entries and `PUBLIC_TOOL_RESPONSE_MODELS` is 51, still exactly matching `PUBLIC_TOOLS`. The parked `lifecycle_gate` → `LifecycleGateResponse` row is unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-26T14:16+02:00 — Task 25: split the registry into all modeled builders (`TOOL_RESPONSE_MODELS`, 54 entries) and the advertised public subset (`PUBLIC_TOOL_RESPONSE_MODELS`, 50 entries), excluding `lifecycle_block`, `gate_create`, `gate_wait`, and `gate_response_wait` from the public MCP surface while keeping their response validation.
 - 2026-06-25T07:17+02:00 — Task 19: registered `gate_response_wait` to strict `GateResponseWaitResponse`; the registry is now 52 entries and still exactly matches `PUBLIC_TOOLS`. Verification metadata pinned until closeout stamps the task-19 code commit.

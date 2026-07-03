@@ -5,14 +5,14 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-10T07:40+02:00|
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0`                                  |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-03T01:55+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                  |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                  |
 
 ## Purpose
 
-`cgc/context/` owns CodeGraphContext provider context layout, materialization, cleanup, constants, and patch helpers.
+`cgc/context/` owns CodeGraphContext provider context layout, materialization, cleanup, constants, and patch helpers. Since L12 materialization writes the enriched `.cgcignore` into the HOME-scoped global context file the live watch actually reads, constants carry per-repo managed exclusions (`CGC_REPO_CGCIGNORE_EXTRAS`) plus the watcher timer-pop patch snippets, and the runner image layer revision is `ar2`.
 
 ## Hot Path Summary
 
@@ -27,6 +27,7 @@ whenever the runner Docker layer changes without a cgc version change, because
 
 ## Update History
 
+- 2026-07-03T01:55+02:00 — L12 route impact: materialize targets the watch-context global .cgcignore; constants add per-repo exclusions + timer-pop patch (revision ar2); patches.py applies it idempotently.
 - 2026-06-10T07:40+02:00 — No route impact: `core.py` re-exports `to_container_path` from its new canonical home `providers/context_common.py`; `cleanup.py`/`patches.py` only updated the import path (GitHub #58).
 - 2026-06-10T05:30+02:00 — Route body caught up with 2.5.0/2.5.1: the single `cgc_runner_image()` derivation rule and the layer-revision bump doctrine (GitHub #50). Previous closeouts had only stamped the verification header (developer-flagged gap).
 - 2026-05-29T18:35+02:00: Split `core.py` (668 lines) — extracted `materialize.py` (runtime dir/config-file writers) and `cleanup.py` (stale-artifact removal); `core.py` (now 522) keeps the layout dataclass + construction (commit `01f503d`).

@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                      |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:35+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                      |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -15,7 +15,9 @@
 `mcp/tools/` is the pure payload-builder registry for the Agents Remember MCP
 server. It was split out of the former single `mcp/tools.py` module (commit
 `01f503d`) into one submodule per tool domain, behind a facade `__init__.py`
-that preserves the public import surface: every `*_payload` builder, the
+that preserves the public import surface (L11: `task_reopen_payload` lives in the
+task-domain `task_doc.py` submodule, and `PUBLIC_TOOLS` lists `task_reopen` beside
+`task_doc`): every `*_payload` builder, the
 `PUBLIC_TOOLS`/`RESERVED_TOOLS`/`TRANSPORT` constants, and the `_tool_payload`
 re-export remain importable from `agents_remember.mcp.tools`.
 
@@ -34,13 +36,15 @@ it — the `lifecycle_gate`/inbox stack stays exported but PARKED (un-hinted). S
 at `base.py` for the shared `_tool_payload`/`PUBLIC_TOOLS` contract, then the
 domain submodule that owns the tool. Task 25 makes `lifecycle_gate_payload` the
 public agent-facing gate junction; split gate/block/wait builders remain exported
-for internal compatibility and tests but are not registered as public MCP tools.
+for internal compatibility and tests but are not registered as public MCP tools. L9 adds the
+`terminal.py` submodule and public `attach_terminal_session_to_leaf` builder, an agent-facing wrapper over
+the dashboard terminal catalog move policy.
 
 ## Layout
 
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
-| `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (51 with task-28 `lifecycle_turn_end_notification`), `RESERVED_TOOLS`, and `_tool_payload` — the choke point that, after the ambient emission hook, runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification`) and then attaches the `next_step.py`-computed `nextStep` hint to every active-lifecycle response (exception-safe; never raises into the tool path). |
+| `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (52 with L9 `attach_terminal_session_to_leaf`), `RESERVED_TOOLS`, and `_tool_payload` — the choke point that, after the ambient emission hook, runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification`) and then attaches the `next_step.py`-computed `nextStep` hint to every active-lifecycle response (exception-safe; never raises into the tool path). |
 | `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`); linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. |
 | `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `compact_runtime_install_payload`. |
 | `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
@@ -52,6 +56,7 @@ for internal compatibility and tests but are not registered as public MCP tools.
 | `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (create/set_status/set_step/set_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` controller. |
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response), public `gate_decide`/`gate_list` builders, lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
 | `operator_inbox.py` | the three `operator_inbox_*` external-chat builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10). |
+| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder, config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment` and returning `attached` / `leaf-taken` / `unknown-session` through the strict response model. |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
 Since 2.5.1 this route also owns the response token-budget layer: the verbose
@@ -101,6 +106,11 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-03T00:35+02:00 — L11 route impact: task_doc.py hosts task_reopen_payload; base.py advertises task_reopen next to task_doc.
+- 2026-07-02T17:04+02:00 — L9 route impact: added the `terminal.py` tools submodule and public
+  `attach_terminal_session_to_leaf` tool. `base.py`, the facade, `server.py`, and `models/tool_registry.py`
+  now expose/validate the agent-facing hosted chat reassignment path. Verification metadata pinned until
+  closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE active turn end): the route
   now documents `lifecycle_turn_end_notification` as the active turn-end tool —
   `lifecycle.py` adds `lifecycle_turn_end_notification_payload(summary)`, `base.py`

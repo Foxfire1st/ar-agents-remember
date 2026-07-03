@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-22T22:00+02:00 |
-| lastVerifiedCommitHash | `adbee7d31a75ca4ae85c2d99d05a9109969399e5` |
-| lastVerifiedCommitDate | 2026-06-22T22:08:07+02:00|
+| lastUpdated            | 2026-07-03T11:20+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L89-L121 | [README.md](agents-remember/README.md) |
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | L123-L135 | [README.md](agents-remember/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | L137-L177 | [README.md](agents-remember/README.md) |
-| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (`2.9.0`), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two states where the journey is going (observable, steerable sessions: machine-readable lifecycle entity, durable approval gates, a projection layer, the browser cockpit #2/#43, and the up-to-3.0 posture) — the only public place that states direction. | L199-L203 | [README.md](agents-remember/README.md) |
+| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (`2.9.0`), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | L199-L203 | [README.md](agents-remember/README.md) |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L183-L185 | [README.md](agents-remember/README.md) |
 | The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | L187-L191 | [README.md](agents-remember/README.md) |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | L1-L46 | [docs/README.md](agents-remember/docs/README.md) |
@@ -116,6 +116,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-07-03T11:20+02:00 — L14 release: Status reads 3.0.0rc1 and the journey paragraph became 'The 3.0 arc' — the lifecycle/gates/projection substrate served as the mission-control cockpit from the MCP package (agents-remember dashboard), with the rc caveat on the settling cockpit surface.
 - 2026-06-22T22:00+02:00 — No content impact: Status section version string bumped to 2.9.3 (worktree_name contract-resolution fix release, #90); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-19T13:42 — No content impact: Status section version string bumped to 2.9.2 (benchmark provider isolation release, task 260619); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-19T01:50+02:00 — Updated the Logic section for the README headline revision (PR #85 / `b9d7314`): the `<h3>` tagline changed from "Durable, git-verified repo memory for coding agents." to "Git-verified records for what your coding agents know. A control plane for what they do.", sharpening the public positioning toward records-plus-control-plane. Advanced verification metadata to merged `main` `cbea101`.

@@ -5,16 +5,18 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-29T21:24+02:00                      |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b`         |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`         |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
 
 `test_tool_response_conformance.py` moves the production response-contract
 guarantee into the test suite: every response-modeled MCP payload builder produces
-a payload that conforms to its registered Pydantic response model, so controller
+a payload that conforms to its registered Pydantic response model (L11: the worktree
+flow ends by reopening the landed demo-task leaf so `task_reopen` has a live
+representative payload), so controller
 drift is caught at dev time instead of in a live tool call.
 
 ## Code Commentary
@@ -31,9 +33,10 @@ obtaining a *representative* payload for every modeled builder from the real
 collects one representative payload per tool into `cls.payloads`:
 
 - `_base_fixture` / `_simple_payloads`: a code repo, memory layer, and
-  `.codex/mcp` settings drive the 25 tools that run directly (core, context,
+  `.codex/mcp` settings drive the directly runnable tools (core, context,
   runtime, memory, skills, provider status/diagnostics/watchers, GrepAI/CGC
-  dry-run, baseline, benchmarks).
+  dry-run, baseline, benchmarks, and the L9 terminal leaf reassignment builder's missing-session
+  payload).
 - `_worktree_payloads`: a real worktree lifecycle in disabled-memory mode
   produces `worktree_start`, `worktree_status`, `worktree_attach`,
   `worktree_sync` (dry-run, GitHub #54 sub-task D), `worktree_closeout_preview`,
@@ -108,9 +111,14 @@ declared nor part of the input."
 | Schema-level registry coverage is asserted separately. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
 | Inbox representative payloads call the real post, poll, and consume builders. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 | Lifecycle finalizer representative payload exercises the new terminal worktree tool. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
+| Terminal leaf reassignment representative payload exercises the new strict terminal response model. | L97-L101 | [test_tool_response_conformance.py](test_tool_response_conformance.py) |
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11: the worktree-flow fixture reopens the fully landed demo-task leaf, giving task_reopen a real representative payload against TaskReopenResponse.
+- 2026-07-02T17:04+02:00 — L9: `_simple_payloads` now includes a representative
+  `attach_terminal_session_to_leaf` payload (`unknown-session` fixture), so the new strict response model
+  is covered by the conformance suite. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only authoring): the representative
   `_task_doc_payloads` fixture now authors a `master` instead of a `light` document, because
   `task_doc` create/replace refuse `light`. Conformance coverage is otherwise unchanged.

@@ -5,15 +5,21 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-29T22:57+02:00                      |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
 
 `server.py` wires the stdio FastMCP server and registers the model-visible
-Agents Remember tools.
+Agents Remember tools. L11 registers `task_reopen` beside `task_doc`: reopen a
+completed leaf task under its exact leaf id (state reset; worktree recreation stays
+with `worktree_start`).
+L9 registers `attach_terminal_session_to_leaf(session_id, leaf_key)` after `read_ar_files`. This is the
+agent-facing hosted chat reassignment path: it forwards to `attach_terminal_session_to_leaf_payload`,
+reuses the dashboard terminal catalog's role-scoped leaf uniqueness rules, and returns
+`attached`/`leaf-taken`/`unknown-session` without spawning a session or requiring a worktree enclosure.
 
 ## Code Commentary
 
@@ -230,6 +236,10 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 registers the `task_reopen` tool (task-domain reset of a completed leaf; dry_run preview; delegates to task_reopen_payload).
+- 2026-07-02T17:04+02:00 — L9: registered `attach_terminal_session_to_leaf(session_id, leaf_key)` as the
+  agent-facing path for moving an existing hosted terminal/chat session between durable leaves. Verification
+  metadata pinned until closeout stamps the L9 commit.
 - 2026-06-29T22:57+02:00 — CRUD completion (L2): the `task_doc` registration docstring now lists the
   `remove_subtask` master op (`subtask={number, keep_file?}` — drops the row and deletes the leaf doc
   unless `keep_file`). Registration/forwarding only; no schema change. Verification metadata pinned

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/HighlightComposer.tsx`     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T20:55+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -16,29 +16,38 @@
 
 ## Purpose
 
-The slice-6f **"send a context package by highlighting"** composer — **two stages**, like a code
-editor's selection toolbar: (1) selecting cockpit content (on mouse-up) raises a small **"Add to
-chat"** pill anchored to it; (2) clicking the pill opens the composer box, which **stays open** until
-the operator clicks outside it or Sends. The composer lives on a *snapshot* of the selection
-(`useSelectionCapture`), so clicking into the message box never dismisses it. The target control offers
-the open chats **and** a create option per detected harness, so a new chat is an agent (not a shell
-into the void). A selection only ever *raises* the pill; nothing reaches an agent until Send (the
-**no-silent-action** invariant). Mounted once in `CockpitShell`. 6f-1 covers text; entity-aware repo
-inference (6f-2) and image paste (6f-3) follow. Task 11 adds lifecycle-aware target filtering: when
-`selectedLifecycleId` is present, open-chat targets are limited to sessions already tagged with that
-lifecycle, and create targets tag the new hosted chat.
+The slice-6f **"send a context package by highlighting"** composer. Every selection raises the same
+small **Add to chat** pill — a selection alone never sends anything (the L8-r1 correction: the earlier
+auto-paste-on-selection was invisible and fired on unintended highlights). What differs is what the
+pill CLICK does. When the captured selection came from the displayed task leaf and the right rail is
+actively showing that leaf's live chat, the click pastes the context block directly into that chat's
+draft with no target selector, no message box, and no Enter/submission. Otherwise the click opens the
+generic composer stage, and Send delivers to a chosen/open/new chat. The composer lives on a snapshot from
+`useSelectionCapture`, so clicking into the message box never dismisses it. Mounted once in
+`CockpitShell`; lifecycle-aware target filtering still limits generic open-chat targets to sessions
+tagged with `selectedLifecycleId` when present.
 
 ## Code Commentary
 
 ### Logic
 
-Driven by `useSelectionCapture()` (`data/selection`) — renders `null` with no snapshot. A
-fixed-position 0-area `<span>` at the snapshot rect is the React Aria `Popover` `triggerRef`; the
-`Popover` is controlled (`isOpen` while a snapshot exists) and `onOpenChange(false)` (outside-click /
-Escape) → `dismiss()` = `clear()` + back to the pill. A `mode` (`"pill" | "composer"`), reset to
-`"pill"` whenever the snapshot changes, drives the stages: **pill** is a single **Add to chat** button;
-**composer** renders the captured selection (`<pre>`), the **target control**, an autofocused message
-`TextField`/`TextArea` (**Enter = send + submit**, **Shift+Enter = newline**), and **Send**.
+Driven by `useSelectionCapture()` (`data/selection`) — renders `null` with no snapshot. If
+`selection.leafKey` equals the `viewedLeafKey` supplied by `CockpitShell`, `leafChatActive` is true, and
+`findSessionForLeaf(viewedLeafKey, "chat")` finds a live chat, that session becomes `directLeafChat`:
+the pill's `onPress` then calls `directPaste(id)` —
+`pasteDraftToSession(id, buildContextPackage({selectionText}))` behind a `sendingRef` in-flight guard
+(the pill disables while `status === "sending"`) — and clears the selection after a confirmed draft
+paste, never entering the composer stage. An unconfirmed direct paste opens the generic composer for
+the same selection instead of dying silently. Without a `directLeafChat`, the pill click opens the
+composer stage as before.
+
+The fallback path uses a fixed-position 0-area `<span>` at the snapshot rect as the React Aria
+`Popover` trigger. The `Popover` is controlled (`isOpen` while a snapshot exists) and
+`onOpenChange(false)` (outside-click / Escape) → `dismiss()` = `clear()` + back to the pill. A `mode`
+(`"pill" | "composer"`), reset to `"pill"` whenever the snapshot changes, drives the stages: **pill** is
+a single **Add to chat** button; **composer** renders the captured selection (`<pre>`), the **target
+control**, an autofocused message `TextField`/`TextArea` (**Enter = send + submit**, **Shift+Enter =
+newline**), and **Send**.
 
 **Target** — one React Aria `ToggleButtonGroup` lists open chats **and** a create option per
 **detected** harness (`fetchHarnesses` on mount: ＋ Claude Code / ＋ Codex / …) plus a plain `＋
@@ -47,13 +56,12 @@ Terminal` shell. The default is the active chat, else the first open chat, else 
 When `selectedLifecycleId` is set, "open chats" means sessions whose `lifecycleId` matches; create
 targets pass that lifecycle to `createSession`.
 **`send()`** resolves the selected target: an open chat → `setActive` + deliver; a create option →
-`createSession(prefix, "harness"|"terminal", harnessId?, selectedLifecycleId?)` then deliver. The always-sendable minimum
-holds because there is always a default. Send builds the package, resolves the target, then immediately calls `finish()` (`dismiss()` +
-`onSent?.()` — the composer closes + switches to Chats) and delivers in the **background** so the
-operator isn't blocked: **`deliverPackage(id, pkg)`** `await`s `sendWhenReady(id, bracketedPaste(pkg))` —
-which waits for the session's terminal to register **and** its harness to look ready (so a fresh agent
-doesn't drop the package mid-boot) — then `sendToSession(id, "\r")` (the Enter that submits). The
-package is the message, then a `--- from the dashboard ---` rule + the selection.
+`createSession(prefix, "harness"|"terminal", harnessId?, selectedLifecycleId?)` then deliver. The
+always-sendable minimum holds because there is always a default. Send builds the package, resolves the
+target, and calls `deliverToSession(id, pkg)`, which bracket-pastes and submits through the terminal
+confirmation path; on `delivered`, `finish()` dismisses and `onSent?.()` switches to Chats. Direct
+leaf-chat paste deliberately uses `pasteDraftToSession`, not `deliverToSession`, so it never synthesizes
+Enter.
 
 ### Conventions
 
@@ -66,26 +74,37 @@ so it never tracks the selection's width) with the amber active border. The mess
 
 ### Invariants And Boundaries
 
-No silent action: a selection raises only the **pill**; the composer opens on an explicit click, and
-only an explicit Send injects. The composer persists until outside-click/Escape or Send
-(snapshot-driven, not live-selection-driven). Delivery reuses the live B2 `{type:stdin}` channel via
-`data/sessions.sendToSession` (a brand-new session's connection buffers until its WebSocket opens) — no
-new transport, not ACP. Presentational state only (mode / draft / target); session lifecycle stays in
-`data/sessions`. With a selected lifecycle, unrelated open chats are not offered; the create target
-becomes the routeable chat.
+Both paths keep the no-silent-action invariant: a selection only raises the pill, and nothing is pasted
+or sent before an explicit click. The L8 direct path acts on the pill click alone — only when the
+selected DOM was tagged with the same leaf the visible rail chat is serving — drafts without ever
+synthesizing Enter, and keeps one consistent "Add to chat" label. The composer persists until
+outside-click/Escape or Send in fallback mode (snapshot-driven, not live-selection-driven). Delivery
+reuses the live B2 `{type:stdin}` channel via `data/sessions` — no new transport, not ACP. With a
+selected lifecycle, unrelated open chats are not offered; the create target becomes the routeable chat.
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The mouse-up selection snapshot it attaches to. | — | [data/selection.ts](../data/selection.ts) |
-| The inject seam + `createSession` it drives. | — | [data/sessions.ts](../data/sessions.ts) |
+| The mouse-up selection snapshot it attaches to, including optional task leaf metadata. | L9-L44 | [data/selection.ts](../data/selection.ts) |
+| The inject seams: `pasteDraftToSession` for no-submit direct leaf paste and `deliverToSession` for fallback send+submit. | L403-L431 | [data/sessions.ts](../data/sessions.ts) |
 | `bracketedPaste` + `fetchHarnesses` (package wrap + harness create options). | — | [data/terminal.ts](../data/terminal.ts) |
-| Where it is mounted (cockpit-wide). | — | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| The behavior tests. | — | [HighlightComposer.test.tsx](HighlightComposer.test.tsx) |
+| Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | L491-L499 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
+| The behavior tests cover direct leaf paste and fallback routing. | L132-L163 | [HighlightComposer.test.tsx](HighlightComposer.test.tsx) |
 
 ## Update History
 
+- 2026-07-02T20:55+02:00 — L8-r1 correction (developer feedback): the direct leaf-chat path no longer
+  auto-pastes on selection and no longer hides the pill — every selection raises the same "Add to chat"
+  pill, and only the pill CLICK routes: direct draft paste when the obvious leaf-chat target exists
+  (selector/message box skipped), generic composer otherwise; an unconfirmed direct paste opens the
+  composer. Restores the visible-intentional-interaction invariant the auto-paste had broken.
+  Verification metadata pinned until closeout stamps the L8-r1 commit.
+- 2026-07-02T16:18+02:00 — L8: added the direct leaf-chat draft-paste route. When the selection's
+  captured `leafKey` matches the displayed leaf and the right rail is actively showing that leaf's live
+  chat, the component calls `pasteDraftToSession` and renders no Add-to-chat UI; unconfirmed draft paste
+  falls back to the generic composer. The generic path still uses `deliverToSession` and submits only on
+  explicit Send.
 - 2026-06-23T13:45+02:00 — Task 11: `HighlightComposer` accepts `selectedLifecycleId`; open-chat
   targets are filtered to sessions tagged with that lifecycle, and create targets pass the lifecycle
   to `createSession` so new hosted chats become routeable for Gate Respond. Verification metadata pinned

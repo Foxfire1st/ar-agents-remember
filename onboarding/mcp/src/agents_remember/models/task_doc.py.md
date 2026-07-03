@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-26T20:18+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,6 +18,9 @@
 
 The STRICT response model for the `task_doc` tool: it echoes the document's identity,
 progress, dry-run preview, and optional master-row sync outcome after an operation.
+L11 adds `TaskReopenResponse` here — the task-domain home for the `task_reopen`
+envelope; it subclasses `WorktreeCommandResponse` because the payload legitimately
+carries the enclosure contract state.
 
 ## Code Commentary
 
@@ -52,6 +55,7 @@ persisted task document itself (`tasks.TaskDocument`) is deliberately not return
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 adds `TaskReopenResponse` (task_reopen envelope; WorktreeCommandResponse shape, task-domain home).
 - 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: added `TaskDocMasterSync` and optional
   `TaskDocResponse.masterSync` so leaf writes can report same-root master-row changes and dry-run master
   previews. Verification metadata pinned until closeout stamps the code commit.

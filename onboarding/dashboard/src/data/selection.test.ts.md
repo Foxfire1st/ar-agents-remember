@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/selection.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-21T02:44+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T16:18+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 Unit tests for the pure selection rules (slice 6f-1): `isIgnoredAnchor` (terminal host / composer /
 editable fields are ignored) and `readSelection` (trimmed text + rect, or `null` for a
-collapsed/empty/ignored/absent selection), plus a `renderHook` test for `useSelectionCapture`
+collapsed/empty/ignored/absent selection), including L8's optional `leafKey` captured from the nearest
+task-reader `data-task-leaf-key` ancestor, plus a `renderHook` test for `useSelectionCapture`
 (mouse-up snapshot + `clear`).
 
 ## Code Commentary
@@ -29,6 +30,8 @@ Builds real jsdom nodes (`nodeInside(html)` → the deepest text node) and a `fa
 `Selection` with `toString`/`anchorNode`/`getRangeAt().getBoundingClientRect`). Asserts the ignore
 matrix (terminal-host / `data-highlight-composer` / `textarea` → ignored; ordinary content → not) and
 that `readSelection` returns the trimmed `{ text, rect }` or `null` across the reject cases. A
+specific L8 assertion wraps selected text in `<article data-task-leaf-key="repo/master/L8">` and expects
+`readSelection` to carry `leafKey: "repo/master/L8"` beside the trimmed text and rect. A
 `renderHook` case (fake timers + a stubbed `window.getSelection`) asserts `useSelectionCapture`
 snapshots on a `mouseup` (deferred a tick) and `clear()`s on demand. Slice 6g adds two dismiss cases:
 a `mouseup` with no live selection clears the snapshot (the handler now mirrors the live selection
@@ -53,5 +56,8 @@ is in `HighlightComposer.test.tsx` (which mocks `useSelectionCapture`).
 
 ## Update History
 
+- 2026-07-02T16:18+02:00 — L8: added coverage that `readSelection` preserves the nearest
+  `data-task-leaf-key` as `SelectionContext.leafKey`, enabling task-reader highlights to be routed to
+  the adjacent leaf chat. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-06-21T02:44+02:00 — Slice 6g: added the selection-dismiss tests — an empty `mouseup` clears the snapshot, and `clear()` collapses the live selection (`removeAllRanges` called); `fakeSelection` gained `removeAllRanges`. Verification metadata pinned until closeout stamps the 6g code commit.
 - 2026-06-19T15:59 — Created for task 6 slice 6f-1: tests for `isIgnoredAnchor` + `readSelection`. Verification metadata pinned until closeout stamps the 6f-1 code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-29T21:24+02:00                           |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b`       |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-03T00:35+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -19,7 +19,10 @@
 `tasks/` owns the **JSON-primary task document**: the persisted `ar-task-document/v1`
 record is the source of truth for a task's plan and progress, and `task.md` (or
 `<slug>.md` for a sub-task) is a deterministic *render* of it. The JSON is never
-produced by parsing markdown back. This is the work-content layer the observer projects as active
+produced by parsing markdown back. Since L11 the route also owns leaf reopen semantics: `reopen.py` (the `task_reopen`
+tool's implementation — reset a fully landed leaf back to planning under its exact
+leaf id) and `leaf_doc.py` (exact case-insensitive leaf-doc lookup plus the explicit
+`lifecycleId` restamp worktree start applies across restarts). This is the work-content layer the observer projects as active
 task documents, with lifecycle/enclosure bindings attached when available, so the dashboard can show
 planned and running work from the same JSON source (slice 3c; closes note-03 gap #8).
 
@@ -103,6 +106,7 @@ together.
 
 ## Update History
 
+- 2026-07-03T00:35+02:00 — L11 route impact: `reopen.py` and `leaf_doc.py` join the route — reopening is a TASK operation (contract + doc reset; worktree recreation stays with worktree_start), and the doc-to-lifecycle binding is explicit-restamp, never heuristic.
 - 2026-06-29T21:24+02:00 — No route impact: `document.py` gained a comment noting `DocKind`'s `light` is
   retained only for legacy load-compat (the `task_doc` controller refuses to author new `light` docs); the
   schema and route model are unchanged (detail in the document.py file sidecar; task 260628_post-landing-cleanup).

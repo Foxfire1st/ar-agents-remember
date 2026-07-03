@@ -5,15 +5,19 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/materialize.py`   |
 | doc_type               | `file-level-onboarding`                                          |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2`                                                        |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-07-03T01:55+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                                        |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                                    |
 
 ## Purpose
 
 Materialize a resolved `CgcRuntimeLayout` onto disk: create the runtime
-directories and write the default CGC config files.
+directories and write the default CGC config files. Since L12 the enriched
+`.cgcignore` (defaults + folded repo .gitignore + per-repo managed exclusions) is
+written TWICE on purpose: at the runtime root AND into the HOME-scoped
+`global/.cgcignore` — the file the live `cgc watch` context actually resolves;
+without the second copy the enrichment never reached the watcher.
 
 ## Code Commentary
 
@@ -42,4 +46,5 @@ then appends source `.gitignore` patterns and repo-specific managed exclusions.
 
 ## Update History
 
+- 2026-07-03T01:55+02:00 — L12: ensure_cgc_runtime_layout also materializes the enriched .cgcignore into run/home/.codegraphcontext/global/.cgcignore (byte-identical), closing the dead-config gap where the watch context read cgc's auto-created plain defaults instead.
 - 2026-05-29T18:35+02:00: Created when `ensure_cgc_runtime_layout` and the runtime file/dir writers were extracted from `core.py` (commit `01f503d`).

@@ -5,16 +5,24 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T02:28+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T17:25+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
 
 `test_terminal.py` covers the Mode B2 terminal host (slice 6d-1, `serving.terminal`):
 tmux command construction, the session registry, and real-PTY write/read/resize/exit —
-with the tmux integration path gated so CI without tmux still passes.
+with the tmux integration path gated so CI without tmux still passes. The reopened-L6 pass injects a
+recording `tmux_configurer` fake into the registry fixture and pins that `ensure` asserts session
+options (mouse mode) after both the create and the idempotent already-exists paths and that every
+`attach` re-asserts them against the durable session. The copy-mode escape suite
+(`TerminalHostCopyModeCancelTests`, pipe-backed writes + a recording `tmux_mode_canceller` fake) pins
+the scroll-then-type state machine: mouse-report-only frames pass through without cancelling, typing
+without prior mouse never cancels, the first typed byte after mouse traffic cancels exactly once (and
+still writes through), another scroll re-arms the cancel, and a mixed mouse+typing frame counts as
+typing.
 
 ## Code Commentary
 
@@ -71,6 +79,15 @@ failures where the binaries or required terminal capabilities are absent (the sl
 
 ## Update History
 
+- 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape: added `TerminalHostCopyModeCancelTests`
+  (pipe-backed writes, recording `tmux_mode_canceller` fake) pinning that mouse-report frames arm but
+  never trigger the cancel, the first typed input after scrolling cancels copy-mode exactly once and
+  passes through, scrolling re-arms it, and mixed frames count as typing. Verification metadata pinned
+  until closeout stamps the follow-up commit.
+- 2026-07-02T16:35+02:00 — Reopened L6 wheel fix: the registry fixture injects a recording
+  `tmux_configurer` fake and pins that `ensure` asserts session options after both the create and the
+  idempotent already-exists paths, and that every `attach` re-asserts them against the durable session.
+  Verification metadata pinned until closeout stamps the follow-up commit.
 - 2026-06-27T02:28+02:00 — Task 22 follow-up: added `TerminalHost.ensure` registry coverage proving
   detached tmux creation records no durable PTY client, and proving the creator is skipped when the tmux
   probe already reports the session. Verification metadata pinned until closeout stamps the task-22

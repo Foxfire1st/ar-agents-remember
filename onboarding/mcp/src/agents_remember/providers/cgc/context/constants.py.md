@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/constants.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T06:20+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastUpdated            | 2026-07-03T01:55+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -18,7 +18,9 @@
 
 `cgc/constants.py` owns CGC provider identifiers, pins, Docker runner image,
 watcher naming defaults, shared Docker network name, backend defaults, source
-artifact names, env exclusion keys, default `.cgcignore` text, and upstream
+artifact names, env exclusion keys, default `.cgcignore` text, per-repo managed
+exclusions (`CGC_REPO_CGCIGNORE_EXTRAS` — L12: agents-remember excludes its committed
+package_data bundle from watch/index work), the watcher timer-pop patch snippets, and upstream
 patch snippets.
 
 ## Code Commentary
@@ -51,6 +53,7 @@ new tag.
 
 ## Update History
 
+- 2026-07-03T01:55+02:00 — L12: adds CGC_REPO_CGCIGNORE_EXTRAS (feeds per-root cgcignorePatterns in generated settings), the watcher timer-pop patch id/marker/snippets, and bumps CGC_RUNNER_IMAGE_LAYER_REVISION ar1->ar2 so hosts rebuild the runner image with the new patch.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the layer-revision tag mechanics into Logic and promoted the bump-on-layer-change rule to Invariants (documentation only).
 - 2026-06-09T22:10+02:00 — Added `CGC_RUNNER_IMAGE_LAYER_REVISION` ("ar1"), suffixed onto the runner image tag (`<repo>:<cgc-version>-<revision>`); bump it whenever the runner Docker layer changes without a cgc version change, because `runtime_install` skips building image tags that already exist.
 - 2026-05-26T13:58+02:00: Updated after adding the shared CGC Docker network constant.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T16:17+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -18,8 +18,8 @@
 
 `LifecycleList.test.tsx` covers the Operations left-rail task-list identity contract. It verifies that
 the sidebar admits root/master task documents, leaf task documents that match active enclosures, and
-runtime enclosure fallbacks, while excluding loose/inactive leaf documents and cleanup-completed leaf
-enclosures from the sidebar. It also keeps standalone root `task.json` documents visible and selectable
+runtime enclosure fallbacks, while excluding loose/inactive leaf documents and cleanup-completed or
+cleanup-abandoned leaf enclosures from the sidebar (L11). It also keeps standalone root `task.json` documents visible and selectable
 through typed `taskdoc:<docPath>` keys. The long-title fixture is now enclosure-backed, proving that the
 native `title` tooltip survives the stricter sidebar admission rule and that the row/title carry the
 minimum-width, flex-basis, and metadata-ellipsis classes required for the browser to ellipsize inside
@@ -52,7 +52,10 @@ Two task-35 regressions pin the reopen-task nesting fix. One seeds a reopened le
 id is a cycle-suffixed slug (`…-s7`) that no longer matches the document stem/`id` directly and shares
 only the document's lifecycle; it asserts the document row still nests under the master at
 `data-depth="1"` with the master `taskdoc:` parent key, and that the suffixed enclosure id never renders
-as its own standalone row (`queryByText` for it is `null`). The other seeds a doc-less,
+as its own standalone row (`queryByText` for it is `null`). The L10 regression seeds the real series
+shape — a lowercase enclosure leaf id (`260628-l7`) against an uppercase doc id (`260628-L7`) with a
+numbered doc slug matching neither — and asserts the doc renders as a clickable `taskdoc:` row rather
+than a doc-less runtime lifecycle fallback. The other seeds a doc-less,
 enclosure-backed runtime lifecycle and asserts that `lifecycleRow`'s computed `parentKey` nests it under
 its master instead of floating as a top-level row. Together they would have caught the phantom
 standalone node a re-opened task produced before the fix.
@@ -98,6 +101,11 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11: the suffixed-enclosure reopen-admission test is replaced by two exact-id cases — a `cleanup: reopened` enclosure renders as its planned doc row nested under the master, and an abandoned enclosure disappears from the active rows.
+- 2026-07-02T21:45+02:00 — L10 binding repair: added a regression where the enclosure leaf id differs
+  from the doc id only by case (lowercase `260628-l7` vs uppercase `260628-L7`, numbered doc slug
+  matching neither) — the doc must render as a clickable taskdoc row instead of a doc-less runtime
+  lifecycle fallback. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-06-28T16:17+02:00 — Task 35 reopen-task nesting: added two regressions — a reopened leaf whose enclosure leaf id is a cycle-suffixed slug (`…-s7`) sharing only the document lifecycle still nests under its master and never renders the suffixed id as a standalone row, and a doc-less enclosure-backed runtime lifecycle nests under its master through the computed parent key. Both would have caught the phantom standalone node a re-opened task produced. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-28T07:30+02:00 — Task 33: the `projection()` test builder gained `activeWorktreeGroups: []` for the
   new required projection field; no behavioural assertion change. Verification metadata pinned until

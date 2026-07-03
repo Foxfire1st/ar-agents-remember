@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-26T14:16+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -38,7 +38,7 @@ instead of a hardcoded release number.
 
 The typed CGC assertions keep the old generic `cgc_query` name absent and
 verify fixed command construction for symbol search, callers, callees,
-dependencies, and complexity. GrepAI assertions keep workspace/project
+dependencies (`analyze deps <module>`), and complexity. GrepAI assertions keep workspace/project
 selection tied to MCP configuration and keep trace action validation explicit.
 A regression case configures an uppercase repo id (`Cobalt`) and asserts that
 `grepai_search` emits `--project cobalt` and accepts the id in any casing, so the
@@ -68,6 +68,10 @@ Task 25 changes the public-tool surface expectation: `lifecycle_gate` is include
 as the unified gate junction, while `lifecycle_block`, `gate_create`, `gate_wait`,
 and `gate_response_wait` are explicitly asserted absent from `PUBLIC_TOOLS`.
 
+L9 extends that public-tool surface expectation with `attach_terminal_session_to_leaf`, the agent-facing
+tool for moving an existing hosted terminal/chat session between durable leaves through the dashboard
+catalog.
+
 The Codex benchmark policy coverage now treats `"default"`/`"omitted"` as the
 fixed (no-sandbox-argument) reporting and asserts the explicit
 `danger-full-access` request separately. `test_codex_benchmark_tools_refuse_when_disabled`
@@ -95,9 +99,16 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 | Domain controller modules convert public MCP payloads into service calls. | [controllers overview](agents-remember/mcp/src/agents_remember/controllers/overview.md) |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 | Inbox tool names are now pinned in the public tool subset. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
+| Terminal leaf reassignment is pinned in the public tool subset. | L300-L315 | [test_tools.py](test_tools.py) |
 
 ## Update History
 
+- 2026-07-02T17:04+02:00 — L9: public-tool coverage now expects
+  `attach_terminal_session_to_leaf`, pinning the new agent-facing hosted chat reassignment surface in
+  `PUBLIC_TOOLS`. Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-07-02T15:40+02:00 — The typed CGC command-construction assertions now
+  expect `cgc_dependencies_payload(..., dry_run=True)` to expose
+  `analyze deps <module>`, matching the current CodeGraphContext CLI.
 - 2026-06-26T14:16+02:00 — Task 25: public tool expectations now include `lifecycle_gate` and assert the retired split helpers are absent from `PUBLIC_TOOLS`.
 - 2026-06-25T07:17+02:00 — Task 19: added `gate_response_wait` to the expected public-tool surface. Verification metadata pinned until closeout stamps the task-19 code commit.
 - 2026-06-23T13:44+02:00 — Task 10 backend inbox: `test_phase_04_tools_are_reported` now expects `operator_inbox_post`, `operator_inbox_poll`, and `operator_inbox_consume`; the existing public-description smoke test covers their server docstrings. Verification metadata pinned until closeout stamps the task-10 code commit.

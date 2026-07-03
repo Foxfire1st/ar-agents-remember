@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controllers/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T02:00+02:00                     |
-| lastVerifiedCommitHash | `01178eb7dfc7d8d2b5d38afc4d8a12358353cdc2` |
-| lastVerifiedCommitDate | 2026-06-02T01:19:03+02:00|
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -25,6 +25,8 @@ scope, workspace/project selection, output format, trace action, and numeric
 limits before calling `lifecycle_service.run_grepai_lifecycle()`. CGC helpers
 construct fixed native argument vectors for typed code-relationship operations
 before calling `lifecycle_service.run_cgc_lifecycle()`.
+The `cgc_dependencies` wrapper maps to CodeGraphContext's current native
+dependency analyzer subcommand, `analyze deps <module>`.
 
 `provider_watchers_tool` no longer accepts `action="refresh"` — it raises
 `ValueError` with guidance directing callers to either `restart` (stop then
@@ -71,6 +73,8 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
   (`stable_provider_id`), and `repo_ids` are matched case-insensitively, so a
   configured id like `Cobalt` resolves to project `cobalt` instead of returning
   an empty result.
+- `cgc_dependencies` must keep using the native `analyze deps <module>` command
+  shape; provider readiness does not prove this typed wrapper is correct.
 
 ## Repo-Internal References
 
@@ -83,6 +87,10 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 
 ## Update History
 
+- 2026-07-02T15:40+02:00 — `cgc_dependencies_tool` now emits CodeGraphContext's
+  current `analyze deps <module>` command instead of the stale
+  `analyze dependencies <module>` spelling. Updated Code Commentary and
+  Invariants.
 - 2026-06-02T02:00+02:00 — `_grepai_project_selection` now emits `--project` as `stable_provider_id(repo_id)` (matching the watcher's project naming) and resolves `repo_ids` case-insensitively via the new `_canonical_repo_ids`; fixes uppercase repo ids (e.g. `Cobalt`) returning empty grepai_search/grepai_trace results. Updated Code Commentary and Invariants.
 - 2026-06-01T00:00+02:00 — `action="refresh"` removed and replaced by `restart` (no index changes) and `invalidate-indexes` (destructive rebuild); `_provider_invalidate_indexes` implements the destructive path. All CGC/GrepAI query tools gained a `worktree` parameter routed through `_resolve_worktree_target` / `_worktree_provider_targets` / `_load_worktree_grepai_provider` / `_provider_operation_result`. Updated Purpose, Code Commentary, and Invariants.
 - 2026-05-31T12:30+02:00 — Dropped the provider-runner integrity invariant: `_provider_operation_result` no longer calls `check_provider_runner_integrity` / returns a `runnerIntegrityFailed` block, and repo validation now goes through the shared `require_repo` guard (1.0.0 review remediation).

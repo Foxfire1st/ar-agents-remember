@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/event_retention.py` |
 | doc_type               | `file-level-onboarding`                             |
 | lastUpdated            | 2026-06-28T13:54+02:00                              |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`          |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`          |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Governing Overview
@@ -51,9 +51,16 @@ zero — so a reload keeps useful task-local history without re-streaming the wh
 reserved `workspace` source starts at the first row inside the workspace TTL. Cursor
 resumes stay owned by `serving.events.decode_cursor`.
 
-`prune_expired_lifecycle_event_logs(root, *, now)` physically unlinks
-`lifecycles/<id>/events.jsonl` for **any** dormant log (inactivity past its TTL) — not
-only terminal ones — and attempts to remove the now-empty lifecycle directory.
+`prune_expired_lifecycle_event_logs(root, *, now, protected_lifecycle_ids=frozenset())`
+physically unlinks `lifecycles/<id>/events.jsonl` for **any** dormant log (inactivity past
+its TTL) — not only terminal ones — and attempts to remove the now-empty lifecycle directory.
+`protected_lifecycle_ids` is an exemption set checked *before* dormancy: a log whose id is in
+the set is skipped no matter how long it has been inactive. The dashboard passes the lifecycle
+ids of every leaf in a not-yet-retired master series (from
+`worktree_provider_admission.series_retained_lifecycle_ids`), so a running durable task — and
+all of its sibling leaves — keep their full event history until the whole series is archived
+(plus a grace window). This **supersedes** the per-log inactivity TTL for durable,
+enclosure-backed work; only fleeting/standalone logs are still retired by inactivity alone.
 `lifecycle_terminal_at(path)` is retained for back-compat (the explicit `lifecycle.ended`
 reader) but is no longer the prune or offset gate.
 
@@ -75,6 +82,11 @@ without a live dashboard server.
 - Retention keys on **inactivity**, not on a terminal event, so EVERY lifecycle type
   is cleanable — a dormant promoted/enclosure-backed log is retired even though it never
   wrote `lifecycle.ended` (real sessions die silently).
+- **A live master series supersedes the inactivity TTL.** `protected_lifecycle_ids` is
+  checked before dormancy, so a durable task in a not-yet-retired series (and its sibling
+  leaves) keeps its whole history even while idle. The protection set is computed from durable
+  enclosure state by the caller; this module just honors it. Without an id in that set, the
+  ordinary per-type TTL applies — so fleeting/standalone logs are unaffected.
 - **Heartbeats are not activity.** A parked lifecycle that only keeps beating still ages
   out; only real (non-heartbeat) events reset the inactivity clock.
 - No global raw-event count cap lives here; retention is inactivity-time based, and active
@@ -110,6 +122,9 @@ lifecycles.
 | Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary. | L36-L61 | [event_retention.py](event_retention.py) |
 | `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. | L83-L135 | [event_retention.py](event_retention.py) |
 | Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. | L64-L80 | [event_retention.py](event_retention.py) |
+| `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. | L64-L91 | [event_retention.py](event_retention.py) |
+| The protection set is derived from durable enclosure state (a live master series) by the admission module. | `series_retained_lifecycle_ids` | [worktree_provider_admission.py](worktree_provider_admission.py) |
+| A protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | [test_serving.py](../../../tests/test_serving.py) |
 | `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. | L138-L151 | [event_retention.py](event_retention.py) |
 | The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. | L199-L213 | [serving/events.py](../serving/events.py) |
 | Raw-event tests cover dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, and uncapped parallel active history. | L888-L1074 | [test_serving.py](../../../tests/test_serving.py) |
@@ -127,6 +142,12 @@ log layout.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): `prune_expired_lifecycle_event_logs` gained a
+  `protected_lifecycle_ids` exemption checked before dormancy. A not-yet-retired master series' leaf
+  ids (from `series_retained_lifecycle_ids`) are passed in by `projection_store.project_and_write`, so a
+  running durable task keeps its (and its siblings') full event history regardless of inactivity —
+  superseding the per-type TTL for enclosure-backed work. Documented in Logic, Invariants, and
+  Repo-Internal References. Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-06-28T13:54+02:00 — Task 34: retention now keys on INACTIVITY per lifecycle type
   (seconds since the last real, non-heartbeat activity event), not a written `lifecycle.ended`.
   Added `lifecycle_is_dormant` (the cleanup key) / single-pass `_retention_facts` / `last_activity_at`

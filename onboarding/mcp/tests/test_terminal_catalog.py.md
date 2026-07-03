@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T00:22+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T12:50+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -33,6 +33,16 @@ terminated rows are filtered by default but still available with `include_termin
 `test_mark_exited_does_not_downgrade_terminated_session` covers the `End`/WebSocket teardown race:
 explicit termination must keep `status="terminated"` and remain filtered even if later exit
 bookkeeping runs.
+Slice L5 adds `leaf_key` coverage: a row with a `leaf_key` round-trips through `to_json`/`from_json`,
+an unset `leaf_key` is **omitted** from the serialized JSON, and a legacy row with no `leafKey` reads
+back as `None` (migration-safe). `with_leaf_key` is asserted to bind and to unbind (`None`). The L5 fix
+pass makes uniqueness per **(leaf, role)**, so the `_entry` helper now takes a `kind` (a `harness` row is
+chat-role, a `terminal` row is terminal-role) and the `active_for_leaf` coverage is role-aware:
+`test_active_for_leaf_returns_running_owner` proves the **default role is `"chat"`** (resolving the harness
+owner) and a differently-keyed leaf returns `None`; `test_active_for_leaf_is_scoped_by_role` seeds a chat
+**and** a terminal on the same leaf and asserts `active_for_leaf(leaf, role="chat")` /
+`role="terminal"` resolve each independently; and `test_active_for_leaf_ignores_exited_and_terminated`
+proves an exited or terminated owner frees its leaf (the running-only, single-owner-per-role contract).
 
 ### Conventions
 
@@ -52,6 +62,15 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 
 ## Update History
 
+- 2026-07-03T12:50+02:00 — No content impact: L15 hoisted a function-local `import threading` to module top for the PLC0415 gate; no test logic change.
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: `active_for_leaf` coverage is now role-aware — `_entry` takes a `kind`
+  (harness ⇒ chat, terminal), `test_active_for_leaf_returns_running_owner` pins the default `"chat"` role,
+  and `test_active_for_leaf_is_scoped_by_role` seeds a chat + a terminal on one leaf and asserts each role
+  resolves independently. Verification metadata pinned until closeout stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added `leaf_key` coverage — round-trip + omit-when-unset + legacy
+  row→`None` (migration-safe), `with_leaf_key` bind/unbind, and `active_for_leaf` returning the single
+  running owner (not exited/terminated/other-keyed rows). Verification metadata pinned until closeout
+  stamps the L5 commit.
 - 2026-06-27T00:22+02:00 — Task 22 follow-up: added coverage that `mark_exited` cannot downgrade an
   explicitly terminated catalog row, matching the browser `End` behavior.
 - 2026-06-26T23:05+02:00 — Created for task 22: covers catalog path, JSON schema/order, default

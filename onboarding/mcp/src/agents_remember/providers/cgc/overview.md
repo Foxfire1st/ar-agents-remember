@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-28T19:10+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T01:55+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -17,7 +17,10 @@
 ## Purpose
 
 `cgc/` is the provider-owned home for CodeGraphContext setup, seeding,
-context layout, patching, and lifecycle operations. The package replaces the
+context layout, patching, and lifecycle operations. Since L12 every CGC compose
+service ships an explicit memory cap (falkordb 2g, batch runner 1g, per-repo
+watchers 512m) so a runaway container OOM-recycles itself under unless-stopped
+instead of exhausting the host — the 2026-07-03 swap-exhaustion incident defense. The package replaces the
 former top-level `cgc_*` modules and mixed `context_modules/cgc` plus
 `lifecycle_modules/cgc` routes.
 
@@ -64,6 +67,7 @@ rendered via `to_container_path` (`providers/context_common.py`) — host-form
 
 ## Update History
 
+- 2026-07-03T01:55+02:00 — L12 route impact: compose memory caps across the CGC stack; watch hygiene fixes live in cgc/context (enriched cgcignore reaches the watch context, timer-pop patch, bundle exclusion).
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the `_seed_skip` benchmark-scoped hermetic guard (task 260619 / MCP 2.9.2) that the series carryover had reverted. The merged tree at 84e95ad keeps main's hermetic seed behavior (the series did not touch this route's source).
 - 2026-06-19T13:42 — `seed.py` now refuses a benchmark-scoped seed target (`_seed_skip`) before any source/backend work, mirroring the GrepAI guard (hermetic; task 260619).
 - 2026-06-10T07:05+02:00 — Seed in-container argv (post-`--`) documented as container-form via `to_container_path` (GitHub #58: host-form Windows paths failed every seed into the silent reindex fallback).

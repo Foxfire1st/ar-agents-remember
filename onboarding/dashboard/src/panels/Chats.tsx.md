@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T03:04+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T17:04+02:00                          |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -31,7 +31,13 @@ view fetches catalog rows from the backend, restores the last active live sessio
 when possible, renders exited rows as status instead of opening a WebSocket, and exposes End as the only
 row action. Successful End releases that session's friendly label for later reuse. Backend-persisted
 create/end changes are synchronized across browser tabs by subscribing to `data/sessions`
-catalog-change events and re-fetching the durable catalog.
+catalog-change events and re-fetching the durable catalog. Slice L5 adds leaf-keyed attachment: the
+cockpit passes the open leaf's `selectedLeafKey` + `taskDocuments`, so the active session can be bound to
+a leaf through the server (the uniqueness arbiter), a bound-leaf badge shows on the strip, and the
+session list resolves leaf names — the same per-leaf session the right-rail `RailChat` surfaces.
+L9 keeps that leaf selector visible after a chat is already attached, changing it into a move/reassign
+control. Successful moves reuse the backend catalog claim rules, update the local session store, keep the
+xterm/WebSocket session mounted, and broadcast a `"leaf"` catalog invalidation for other open tabs.
 
 ## Code Commentary
 
@@ -53,6 +59,22 @@ that fourth argument so the hosted chat is routeable for Gate Respond. If an act
 lifecycle tag, the top strip shows `Attach <lifecycleId>` and calls `setLifecycle`; tagged sessions
 show a small task badge.
 
+Slice L5 adds the parallel **leaf attach**, extended by L9 into **attach-or-move**, on the strip, driven by the new `selectedLeafKey` +
+`taskDocuments` props. A `leafNameFor(leafKey)` resolver maps a bound leaf to `leafTitleForKey(taskDocuments,
+…)` (the task-doc title), falling back to `leafIdFromKey`. Chat **creation is never gated on a leaf** (the
+`＋ Terminal`/harness launch buttons always make a free session); attaching is decoupled and works from
+anywhere: whenever there is an active session, the **"Attach to leaf ▾" / "Move leaf" picker**
+(`chats-attach-leaf-picker`)
+lists **every** projected leaf (`taskDocuments` filtered to `kind:"subTask"`, mapped via `qualifiedLeafKey` +
+`leafNameFor`) so the chat can be bound to **any** leaf regardless of the current view. Selecting one calls
+the parameterized `attachActiveLeaf(leafKey)` → `attachSessionToLeaf(id, leafKey)`: on `"ok"` it binds the
+leaf locally through `applyLeafAssignment` and broadcasts a `"leaf"` catalog change so the shared `RailChat` instance picks
+it up; on `"leaf-taken"` (the server `409`) it surfaces a transient note "leaf already has a chat", and any
+other failure shows "could not attach to leaf". Picking the session's current leaf is a no-op. When a leaf
+IS open, its `selectedLeafKey` is surfaced first as the "(current)" quick default — but the picker is
+independent of selection. A bound session still renders a `leaf <name>` badge (`chats-leaf-badge`), and the
+`leafNameFor` resolver is passed into `SessionList` so each row shows its attached leaf's name.
+
 Task 22 adds a second mount effect that calls `fetchTerminalSessionsOrNull()` and hydrates the store from
 `fromTerminalSessionInfo`, using `localStorage["ar-dashboard:last-active-chat-session"]` as a preferred
 active id. Initial mount ignores failed or empty responses so the dev/test bench does not erase local
@@ -60,7 +82,9 @@ mock sessions. A catalog-sync effect subscribes to `subscribeSessionCatalogChang
 events trigger a fresh catalog fetch where an empty successful list is allowed to hydrate and clear rows
 (needed when another tab ends the last session). Remote terminate events include the terminated
 `sessionId`; the subscriber immediately marks/closes that row locally and filters the same id from the
-catalog hydrate so a stale re-fetch cannot repaint a ghost row. A separate effect writes the active id
+catalog hydrate so a stale re-fetch cannot repaint a ghost row. A separate L9 polling effect rehydrates
+from the catalog every 2.5s so agent-facing MCP moves or browser sessions without a shared
+`BroadcastChannel` still converge without a full refresh. A separate effect writes the active id
 back to localStorage. `terminateSession(id)` calls `terminateTerminalSession(id)`, marks the row
 `terminated` so the session store releases its label, removes it locally only when the backend confirms
 success, and broadcasts a `"terminate"` catalog invalidation with that id to other tabs.
@@ -94,8 +118,9 @@ routing tag for AR-hosted gate responses, but that tag is ephemeral UI/catalog s
 lifecycle truth. End/terminate is the only row action and waits for the backend. The session-switcher behavior + a11y live in `SessionList` (a React Aria `GridList`); this
 file owns the session lifecycle + the launch controls. The first genuinely bidirectional cockpit
 surface (keystrokes → PTY).
-Cross-tab updates are catalog-based: another tab's create/end event causes local id-aware cleanup plus a
-server re-fetch; the dashboard does not share arbitrary local store state between tabs.
+Cross-tab updates are catalog-based: another tab's create/end/leaf event causes local id-aware cleanup or a
+server re-fetch, and the L9 polling fallback also picks up backend catalog leaf moves made outside the
+current browser session. The dashboard does not share arbitrary local store state between tabs.
 
 ## Repo-Internal References
 
@@ -104,14 +129,34 @@ server re-fetch; the dashboard does not share arbitrary local store state betwee
 | The open-session switcher side-rail (React Aria `GridList`). | — | [SessionList.tsx](SessionList.tsx) |
 | The context composer docked below the terminal (injects to the active session's stdin). | — | [SessionComposer.tsx](SessionComposer.tsx) |
 | The lazy-loaded xterm terminal it mounts per session. | — | [Terminal.tsx](Terminal.tsx) |
-| The opener, catalog hydrate, and terminate helpers the view drives. | L264-L315 | [data/terminal.ts](../data/terminal.ts) |
-| The store hydrate and catalog-row conversion logic used by the mount effect. | L144-L229 | [data/sessions.ts](../data/sessions.ts) |
+| The opener, catalog hydrate, terminate, and `attachSessionToLeaf` helpers the view drives. | L264-L357 | [data/terminal.ts](../data/terminal.ts) |
+| The leaf-name resolvers (`leafTitleForKey` / `leafIdFromKey`) + the qualified-leaf-key source. | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
+| The right-rail leaf chat that shares the same per-leaf session via the connection registry. | — | [RailChat.tsx](RailChat.tsx) |
+| The attach-or-move handler updates the store only after server success, broadcasts `"leaf"` invalidations, and leaves `leaf-taken` unbound. | L303-L318; L374-L388 | [Chats.tsx](Chats.tsx) |
+| The store hydrate/catalog-change seam accepts `"leaf"` invalidations, keeps advisory `setLeaf` separate from server-confirmed `applyLeafAssignment`, and rehydrates durable `leafKey` bindings. | L32-L85; L104-L114; L270-L317 | [data/sessions.ts](../data/sessions.ts) |
+| The store hydrate and catalog-row conversion logic used by the mount, BroadcastChannel, and polling effects. | L216-L229; L344-L354 | [data/sessions.ts](../data/sessions.ts) |
 | The store label allocator distinguishes hidden-live reservations from terminated/exited label release. | L57-L177; L324-L348 | [data/sessions.ts](../data/sessions.ts) |
 | The cockpit shell that registers the `chats` full-bleed view. | — | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
 | The shared empty-state backdrop the no-session state renders (adjutant boomerang). | — | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 
 ## Update History
 
+- 2026-07-02T17:04+02:00 — L9: kept the leaf picker visible for attached chats as a "Move leaf" control,
+  switched successful attach/move broadcasts to the `"leaf"` catalog reason, and documented the polling
+  catalog refresh that makes out-of-band backend leaf changes visible without a page reload. Successful
+  server moves use `applyLeafAssignment`; `409 leaf-taken` still leaves local state unchanged. Verification
+  metadata pinned until closeout stamps the L9 commit.
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: decoupled chat creation from leaf attachment. The single open-leaf "Attach to
+  leaf" button became an **"Attach to leaf ▾" picker** over ALL projected leaves, shown for any unattached
+  chat regardless of the current view (creation was already ungated) — so a chat made anywhere attaches to
+  any leaf; `attachActiveLeaf(leafKey)` is now parameterized. Verification metadata pinned until closeout
+  stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added leaf-keyed attachment to the Chats page. New `selectedLeafKey` +
+  `taskDocuments` props drive a `leafNameFor` resolver (`leafTitleForKey`, fallback `leafIdFromKey`); an
+  **"Attach to leaf"** strip control calls `attachSessionToLeaf` → on `200` binds the leaf +
+  broadcasts a `"create"` catalog change, on `409` surfaces "leaf already has a chat"; a bound session
+  shows a `leaf <name>` badge; and `leafNameFor` is passed into `SessionList` for the per-row leaf label.
+  Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-06-27T03:04+02:00 — Task 22 follow-up: removed the local Hide path from `Chats`/`SessionList`
   wiring, made End the only row action, and made remote terminate broadcasts remove the named session id
   locally while filtering the same id from the follow-up catalog hydrate to avoid ghost rows.

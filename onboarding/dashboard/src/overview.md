@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-28T16:17+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:35+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -18,12 +18,14 @@
 
 `dashboard/src/` is the **browser-dashboard frontend** (the 3.0 mission-control cockpit) — a
 Vite + React 19 + TypeScript-strict app that renders the observer projection served by the
-`serving/` layer. It is a near-read-only cockpit whose **interactive surfaces** are now
+`serving/` layer. It renders reopened leaves (L11) as ordinary planned task rows — leaf identity is
+stable across reopens, so no dashboard-side reopen special-casing exists anymore. It
+is a near-read-only cockpit whose **interactive surfaces** are now
 gate responses (`GateResponder` records durable Yes/No gate decisions through `data/actions` and
 routes Chat/informational responses through hosted chats or the external operator inbox) and the
 Chats terminal (slice 6e — an xterm.js view over the Mode B2
 `/api/terminal` WebSocket): a persistent top bar + left rail (attention queue + lifecycle list) + a
-switchable centre viewport (operations / engine room / memory mirror / topology / hangar / chats) +
+switchable centre viewport (operations / file viewer / engine room / memory mirror / topology / hangar / chats) +
 a right-rail event river + a bottom mode bar (note 06 model C). The unit is the lifecycle (note 01).
 
 ## The Layered Architecture (slice 5d)
@@ -63,7 +65,12 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   the selected lifecycle id so chat creation, highlight delivery, and gate responses share the same
   lifecycle/session identity. Task 29 S7 hides the former **Lifecycle Flow** tab from the cockpit
   navigation and removes the `flow` view from the shell; `panels/FlowTab.tsx` remains dormant source
-  material only.
+  material only. Operations-integration L2 registers the full-bleed **File Viewer** view
+  (`panels/file-viewer/`) between Operations and Engine Room, **kept mounted** (CSS-hidden) like Chats so
+  its repo/scope/open-file/tree state survives a tab switch. Operations-integration L4 adds a **Change-Set
+  Viewer** TAKEOVER (a `changeSet` state): a `DetailPanel` change-set button replaces the railed Operations
+  body with a full-bleed `<ChangeSetViewer>` (a back link restores the rails) — a task-scoped screen, not a
+  standing view.
 - `test/` — the vitest (jsdom) bootstrap: `setup.ts` stubs `matchMedia`/`ResizeObserver` + the SVG geometry
   APIs jsdom omits (`getBBox`/`getTotalLength`/`getPointAtLength`, for the engine-room GSAP DrawSVG/MotionPath
   plugins — 05n) for
@@ -74,7 +81,11 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 - `panels/` — the cockpit panels (incl. the slice-6e **Chats** terminal view + its lazy `Terminal`
   xterm wrapper + the 6e-2c `SessionList` session switcher, plus Task 11's shared `GateResponder`
   used by the detail panel, engine-room diagnostics, and Hangar worktree gates); `FlowTab.tsx` remains
-  present but unreferenced after Task 29 S7 hides the Lifecycle Flow tab. See
+  present but unreferenced after Task 29 S7 hides the Lifecycle Flow tab. Operations-integration L2 adds
+  the **`panels/file-viewer/`** sub-route — the File Viewer centre tab (a read-only code+onboarding
+  dual-pane over the L1 files API) + the reusable `FilePane`/`DualPane` the Change-Set Viewer (L4) will
+  reuse; L4 then adds the **`panels/changeset/`** sub-route — the Change-Set Viewer screen (a read-only
+  `@codemirror/merge` diff over the L3 change-set API, reusing the L2 `FilePane`). See
   [panels/overview.md](panels/overview.md).
 - `data/` — the Zustand store, pure selectors, SSE stream wiring, the gate-action client
   (`actions.ts` POSTs targeted `gateId`/`note` decisions to `/api/actions/{verb}`, can omit `target`
@@ -86,9 +97,16 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   opener labels/lifecycle ids, and exposes a nullable catalog fetch for sync), and the open-terminal **session registry** store (`sessions.ts`,
   slice 6e-4 — now also the Task 11 lifecycle-tagged hosted-chat routing table for direct gate
   responses, the slice-6f cockpit-wide inject seam, and the Task 22 catalog hydration/status plus
-  per-prefix label-reuse and cross-tab catalog-invalidation layer) +
+  per-prefix label-reuse and cross-tab catalog-invalidation layer; the L6 follow-up adds a
+  draft-paste handoff seam that inserts leaf context into the selected hosted chat without submitting it,
+  and L9 adds `"leaf"` catalog invalidations so open tabs can rehydrate hosted-chat leaf moves) +
   the cockpit text-selection hook
-  (`selection.ts`, slice 6f). Task 29 S7 tracks a raw-stream hydration flag from the backend
+  (`selection.ts`, slice 6f; since L8 a selection anchored inside a task reader marked
+  `data-task-leaf-key` carries that qualified `leafKey`, the signal the direct leaf-chat highlight
+  paste resolves its target from). The serving **read clients** `files.ts` (the L1 files API, L2) and
+  `changeset.ts` (the L3 change-set API, L4) are same-origin typed wrappers sharing one `getJson`/`qs`
+  transport + `FilesApiError`, feeding the File Viewer + Change-Set Viewer; they hold no store state. Task
+  29 S7 tracks a raw-stream hydration flag from the backend
   `ready` event and applies optimistic attention suppression while dismiss/clear POSTs are pending; Task
   34 then bounds the raw Event River store (`store.ts`) to a **sliding window** of the newest ~2000 rows
   (memory-bounded rather than unbounded session growth), which `EventRiver` virtualizes over so there is
@@ -172,6 +190,73 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-03T00:35+02:00 — L11 route impact: reopened leaves render as planned doc rows via the stable leaf id; abandoned enclosures leave the active operations rows (see panels/LifecycleList).
+- 2026-07-02T20:15+02:00 — L8 route impact (small): `data/selection.ts` selections now carry the
+  qualified `leafKey` when anchored inside a task reader marked `data-task-leaf-key`, and
+  `cockpit/Cockpit.tsx` threads `viewedLeafKey` + `leafChatActive` into `HighlightComposer` so the
+  direct leaf-chat paste path can resolve its target. The route structure is otherwise unchanged;
+  behavior detail lives in the `panels/` overview and file sidecars. Verification metadata pinned until
+  closeout stamps the L8 commit.
+- 2026-07-02T17:04+02:00 — No route impact: L9 extends the existing `data/sessions.ts` and
+  `panels/Chats.tsx` / `RailChat.tsx` routes so hosted chats can move between durable leaves after
+  creation, and open dashboard tabs rehydrate `"leaf"` catalog invalidations or polling refreshes. The
+  `dashboard/src/` route model is unchanged; detail lives in the `panels/` overview and changed sidecars.
+  Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-07-02T16:35+02:00 — No route impact: the reopened-L6 wheel/paste fixes stay inside `panels/` and
+  `data/`. `panels/Terminal.tsx` yields wheel to xterm mouse reporting when the app tracks the mouse;
+  `data/terminal.ts` gained `pasteAndConfirm` (echo-confirmed, boot-deadline-retried draft paste) and
+  `data/sessions.ts`'s `pasteDraftToSession` delegates to it. The `dashboard/src/` route model is
+  unchanged. Verification metadata pinned until closeout stamps the follow-up commit.
+- 2026-07-02T15:03+02:00 — No route impact: the L6 alternate-buffer wheel follow-up stays inside the
+  existing shared `Terminal` wrapper under `panels/`. Normal-buffer scrollback still uses xterm viewport
+  scrolling, while alternate-buffer hosted agent TUIs receive PageUp/PageDown wheel steps instead of
+  xterm Up/Down history input. The `dashboard/src/` route model is unchanged. Verification metadata
+  pinned until closeout stamps the follow-up commit.
+- 2026-07-02T13:16+02:00 — Reopened L6 route impact/no route impact: the follow-up stays inside the
+  existing `cockpit/` + `panels/` + `data/` model, but `data/sessions.ts` now separates leaf-context
+  draft paste from submit so `RailChat` can place context in the selected hosted chat without pressing
+  Enter. Chat scrollback remains documented in the `panels/` overview and `Terminal.tsx` sidecar. The
+  `dashboard/src/` route model is unchanged; verification metadata pinned until closeout stamps the L6
+  follow-up commit.
+- 2026-07-01T01:19+02:00 — No route impact: L6 adds bind-time leaf context handoff inside the existing
+  `cockpit/` + `panels/` + `data/` model. `CockpitShell` passes `analytics.engineProcesses` to the existing
+  right-rail `RailChat`, and `RailChat` injects a projected leaf context package when a chat is started on a
+  displayed leaf or a free chat is successfully attached. The `dashboard/src/` route model is unchanged;
+  detail lives in the `panels/` overview and the `Cockpit.tsx`/`RailChat.tsx`/`RailChat.test.tsx` sidecars.
+  Verification metadata pinned until closeout stamps the L6 commit.
+- 2026-06-30T00:00:00+02:00 — No route impact: L5 (Sidebar chat) adds leaf-keyed attachment + a right-rail River⇄Chat
+  toggle. The change lives in `cockpit/Cockpit.tsx` (a `railView` toggle + `selectedLeafKey` derivation),
+  `data/` (`sessions.ts` leaf binding, `terminal.ts` `attach-leaf` client, `taskIdentity.ts` leaf-key
+  helpers), and `panels/` (the new `RailChat.tsx`, plus `Chats.tsx`/`SessionList.tsx` leaf-attach + name
+  label) — all within the already-documented `panels/` route. The `dashboard/src/` route model
+  (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged; detail lives in the `panels/` overview
+  and the `cockpit/`/`data/`/`panels/` file sidecars. Verification metadata pinned until closeout stamps
+  the L5 commit.
+- 2026-06-29T23:00+02:00 — No route impact: L4a refines the already-documented `panels/changeset/`
+  sub-route (leaf committed/working change-set views, a diff-highlight rectangle, a live working-view
+  auto-refresh), adds the doc-reader change-set bars in `panels/DetailPanel.tsx` + leaf helpers in
+  `data/changeset.ts`, and changes `cockpit/Cockpit.tsx` so the change-set takeover overlays (rather than
+  replaces) the railed body so the back link returns to the leaf it was opened from. The `dashboard/src/`
+  route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged; detail lives in the `panels/`
+  + `panels/changeset/` overviews and the `Cockpit.tsx`/file sidecars. Verification metadata pinned until
+  closeout stamps the L4a commit.
+- 2026-06-29T17:00+02:00 — No route impact: the L4 follow-up refines the already-documented `panels/changeset/` sub-route — the series/master change-set is now the NET inspectable diff (was accumulated-only) — plus shared code-view polish (`codemirrorTheme` comment/punctuation readability, `DiffPane` split-diff scroll). The `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged; detail lives in the `panels/changeset/` overview + the file sidecars. Verification metadata pinned until closeout stamps the L4 follow-up commit.
+- 2026-06-29T16:40+02:00 — Operations Integration L4 (Change-Set Viewer) route impact: `cockpit/Cockpit.tsx`
+  gained a `changeSet` **TAKEOVER** (a `DetailPanel` change-set button replaces the railed Operations body
+  with a full-bleed `<ChangeSetViewer>`; a back link restores it); a new **`panels/changeset/`** sub-route
+  lands — the Change-Set Viewer screen (a read-only `@codemirror/merge` diff over the L3 `/api/changeset/*`
+  API, reusing the L2 `FilePane`); and `data/` gains the `changeset.ts` serving client (sharing `files.ts`'s
+  `getJson`/`qs`/`FilesApiError`). Detail in the `panels/` + new `panels/changeset/` overviews and sidecars.
+  Verification metadata pinned to the task base until closeout stamps the L4 code commit.
+- 2026-06-29T09:06+02:00 — Operations Integration L2 (File Viewer) route impact: `cockpit/Cockpit.tsx`
+  registers a new full-bleed **File Viewer** view (`"files"` in the `View` union + the `fullBleed` set, a
+  `VIEWS` tab between Operations and Engine Room), **kept mounted** (CSS-hidden) like Chats so its
+  repo/scope/open-file/tree state survives a tab switch; and a new **`panels/file-viewer/`** sub-route
+  lands — a read-only code+onboarding dual-pane (two Headless Tree explorers, a read-only CodeMirror 6
+  pane, bidirectional code↔onboarding pairing) that is the first consumer of the L1 read-only files API,
+  plus the reusable `FilePane`/`DualPane` for the L4 Change-Set Viewer. Detail in the `panels/` + new
+  `panels/file-viewer/` overviews and sidecars. Verification metadata pinned until closeout stamps the L2
+  code commit.
 - 2026-06-28T16:17+02:00 — Task 35 route impact: `panels/LifecycleList.tsx` reopen-task nesting — the
   Operations list admits a reopened leaf's suffixed enclosure by shared lifecycle + suffixed-leaf shape and
   nests doc-less enclosure-backed runtime rows under their master, ending the standalone-phantom row. No

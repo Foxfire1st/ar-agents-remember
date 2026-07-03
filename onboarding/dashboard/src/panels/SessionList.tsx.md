@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T03:04+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-30                                       |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -23,7 +23,8 @@ the session lifecycle while `SessionList` only renders + reports. Selecting a ro
 session; each row carries one explicit destructive Terminate control. Task 11 adds a compact lifecycle
 tag when a session is attached to a lifecycle for gate-response routing, and task 22 adds a compact
 non-running status tag for restored exited rows. The Task 22 follow-up removed the old local-only Hide
-action; End is now the only per-row command.
+action; End is now the only per-row command. Slice L5 adds an optional `leafNameFor` resolver so a
+leaf-bound session's row appends the attached leaf's name ("who works on what").
 
 ## Code Commentary
 
@@ -37,6 +38,10 @@ clears itself. Each `GridListItem` renders the label `<span>`, an optional `sess
 an optional `session.status` badge for non-running sessions, and an action group with one native
 button: End (`onTerminate(id)`, destructive backend termination). The button handlers stop
 pointer/click propagation so ending a row is not confused with `GridListItem` selection.
+Slice L5 adds the optional `leafNameFor?: (leafKey: string) => string` prop: when a row's
+`session.leafKey` is set, the label appends ` · {leafNameFor(leafKey) ?? leafKey}` (a
+`chats-session-leaf-{id}` span) — the bound leaf's task-doc title, or the raw key when no resolver is
+supplied — so the side rail shows which leaf each chat is working on.
 
 ### Conventions
 
@@ -67,6 +72,9 @@ actual backend terminate call, local row removal, cross-tab broadcast, and termi
 
 ## Update History
 
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added an optional `leafNameFor` resolver prop; a leaf-bound row now
+  appends ` · {leaf name}` (the bound leaf's task-doc title, fallback the raw leaf key) so the side rail
+  shows which leaf each chat works on. Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-06-27T03:04+02:00 — Task 22 follow-up: removed the local-only Hide action and `onDetach` prop;
   the row switcher now exposes only the destructive End action and reports it through `onTerminate`.
 - 2026-06-27T00:33+02:00 — Task 22 follow-up: renamed the local-only Detach button to visible `Hide`

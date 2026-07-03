@@ -5,16 +5,20 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
 
 `reducer.py` is the single owner of interpretation (design §2.5): it folds event
 logs (and structural snapshots) into resolved projections, so no frontend ever
-reimplements lifecycle assembly (slice 3a). It also *composes* derived surfaces
+reimplements lifecycle assembly (slice 3a). Since L11 the reader also owns abandon
+terminality: a lifecycle anchored to a `cleanup: abandoned` enclosure projects
+`abandoned` (the store's single-writer invariant forbids a foreign `lifecycle.ended`
+append), and abandoned/reopened enclosures synthesize no paused persistent lifecycle
+— no worktree, nothing to pause. It also *composes* derived surfaces
 the runtime never stores — the analytical rollups, the attention queue, and (slice
 5e) the enclosure-centered Engine Room process map — from already-read inputs, so
 the served projection and a sim replay stay byte-identical.
@@ -266,6 +270,7 @@ prior structural/analytical callers remain unchanged.
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 abandon terminality: `_terminalize_abandoned_anchor_lifecycles` projects `abandoned` onto event-backed lifecycles whose anchor enclosure was abandoned, and `_persistent_lifecycles` skips `cleanup in {abandoned, reopened}` enclosures.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: actionable-drift attention now uses
   `repository:branch` ids, provenance-rich detail, and drift `checkedAt` as the repo-level dismissal
   anchor; `_is_dismissed` keeps targetless suppression limited to whitelisted repo rows. Verification

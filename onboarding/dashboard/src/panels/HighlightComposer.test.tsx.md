@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/HighlightComposer.test.tsx`|
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T03:04+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T20:55+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -19,7 +19,10 @@
 Behavior tests for the slice-6f-1 highlight composer: a selection raises the **Add to chat** pill (not
 the box); clicking it opens the composer; then the target rule — open chats + a create option per detected
 harness; Enter sends to the default (an open chat, or the first detected harness — not a shell). Task 11
-adds selected-lifecycle target filtering/tagging coverage.
+adds selected-lifecycle target filtering/tagging coverage. L8 (as corrected by L8-r1) covers the direct
+leaf-chat branch as a pill-click behavior: the pill stays visible and nothing pastes on selection alone;
+clicking it draft-pastes into the matching leaf session without showing the generic picker, an
+unconfirmed direct paste opens the composer, and off-leaf selections still fall back to the picker.
 
 ## Code Commentary
 
@@ -35,6 +38,10 @@ not pi); with **no** chat open Enter creates the default detected harness
 (`createSession("Claude Code","harness","claude")`) and sends; picking ＋ Codex targets `codex`; with a
 chat open Enter sends to it (and `setActive`s + `clear`s). Task 11 cases assert that a create target
 receives the selected lifecycle id and that open-chat targets are filtered to the selected lifecycle.
+L8 cases mock `pasteDraftToSession`, hydrate a leaf-keyed session, and assert that matching
+`selection.leafKey` + `viewedLeafKey` + `leafChatActive` bypasses `deliverToSession`, hides
+`highlight-add-to-chat`, draft-pastes the context block, and clears only after confirmation. A paired
+mismatch case proves the generic composer remains available when selected text belongs to another leaf.
 The package arg is asserted via `stringContaining` the selection text.
 
 ### Conventions
@@ -53,10 +60,18 @@ pure selection rules live in `data/selection.test.ts`.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The composer under test. | — | [HighlightComposer.tsx](HighlightComposer.tsx) |
-| The mocked inject seam + create helper. | — | [data/sessions.ts](../data/sessions.ts) |
+| The mocked inject seam, draft-paste seam, and create helper. | — | [data/sessions.ts](../data/sessions.ts) |
 
 ## Update History
 
+- 2026-07-02T20:55+02:00 — L8-r1 correction: the direct-branch cases now pin click semantics — the pill
+  renders and nothing pastes on selection alone; the pill click draft-pastes without the
+  selector/composer stage and dismisses only after a confirmed paste; a new case pins that an
+  unconfirmed direct paste opens the generic composer. Verification metadata pinned until closeout
+  stamps the L8-r1 commit.
+- 2026-07-02T16:18+02:00 — L8: mocked `pasteDraftToSession` and added direct leaf-chat coverage for
+  matching `selection.leafKey`/`viewedLeafKey` with an active rail chat, plus a mismatch case that keeps
+  the generic Add-to-chat fallback. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-06-27T03:04+02:00 — No content impact: updated the store reset shape after Task 22 removed the
   hidden-label reservation state; HighlightComposer behavior and assertions are unchanged.
 - 2026-06-27T01:03+02:00 — Task 22 label allocator follow-up: no behavior change to HighlightComposer

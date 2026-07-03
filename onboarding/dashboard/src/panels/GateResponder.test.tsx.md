@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/GateResponder.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T03:04+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T16:18+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -18,9 +18,10 @@
 
 Focused behavior coverage for the shared `GateResponder`. It pins the routing contract: `Yes` and
 `No` record targeted durable decisions before notifying the agent, `No` requires a reason, `Dismiss`
-records a cancel/delete decision, `Chat` remains message-only, stale targeted gates do not notify the
-agent, successful responses close the prompt, hosted/inbox routing still works with active untagged
-session attach, and common gate kinds render as readable request previews instead of primary raw JSON.
+records a cancel/delete decision, stale targeted gates do not notify the agent, successful responses
+close the prompt, hosted/inbox routing still works with active untagged session attach, and common gate
+kinds render as readable request previews instead of primary raw JSON. L8 removes the obsolete
+message-only `Chat` path from this gate UI.
 
 ## Code Commentary
 
@@ -37,8 +38,9 @@ real `sessionStore` and `findSessionForLifecycle` helpers. Each test resets the 
   rejection reason to the operator inbox.
 - Dismiss route: records `cancel` with the current gate id and closes the dialog without sending an
   agent notification.
-- Chat route: sends the free-form message through the inbox and asserts no gate decision was recorded.
-- Close-on-success route: asserts approved/rejected/chat submissions close the dialog after the server
+- Obsolete-chat route: opens the prompt and asserts `gate-respond-chat` is absent, with no decision or
+  inbox write triggered just by opening the dialog.
+- Close-on-success route: asserts approved/rejected/dismiss submissions close the dialog after the server
   accepts the write or delivery.
 - Preview fixtures: plan approval, cleanup approval, and agent-question packets render human-readable
   gate kind, request, and context lines while keeping raw JSON in diagnostics.
@@ -49,9 +51,9 @@ real `sessionStore` and `findSessionForLifecycle` helpers. Each test resets the 
 
 ### Invariants And Boundaries
 
-The test distinguishes decision and message paths: `Yes`/`No` must call the `/api/actions` client, while
-`Chat` must not. `Dismiss` is separate from approve/reject: it cancels/deletes the interaction and does
-not notify the agent.
+The test distinguishes durable decisions from the removed message-only path: `Yes`/`No` must call the
+`/api/actions` client, `Dismiss` cancels/deletes the interaction and does not notify the agent, and the
+old `Chat` control must stay absent.
 
 ## Repo-Internal References
 
@@ -64,6 +66,9 @@ not notify the agent.
 
 ## Update History
 
+- 2026-07-02T16:18+02:00 — L8: replaced the message-only Chat route assertion with a regression that
+  `gate-respond-chat` is absent while durable Yes/No/Dismiss behavior remains covered. Verification
+  metadata pinned until closeout stamps the L8 commit.
 - 2026-06-27T03:04+02:00 — No content impact: updated the store reset shape after Task 22 removed the
   hidden-label reservation state; GateResponder behavior and assertions are unchanged.
 - 2026-06-27T01:03+02:00 — Task 22 label allocator follow-up: no behavior change to GateResponder

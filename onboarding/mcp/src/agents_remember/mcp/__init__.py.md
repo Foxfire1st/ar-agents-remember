@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-22T22:00+02:00     |
-| lastVerifiedCommitHash | `adbee7d31a75ca4ae85c2d99d05a9109969399e5` |
-| lastVerifiedCommitDate | 2026-06-22T22:08:07+02:00|
+| lastUpdated            | 2026-07-03T11:20+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -39,6 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-03T11:20+02:00 — No content impact: L14 bumped the SERVER_VERSION source-checkout fallback to 3.0.0rc1; resolution order unchanged.
 - 2026-06-22T22:00+02:00 — No content impact: SERVER_VERSION fallback bumped to 2.9.3 in lockstep with pyproject (worktree_name contract-resolution fix release, #90); the version-resolution contract this sidecar describes is unchanged.
 - 2026-06-19T13:42 — No content impact: SERVER_VERSION fallback bumped to 2.9.2 in lockstep with pyproject (benchmark provider isolation release, task 260619); the version-resolution contract this sidecar describes is unchanged.
 - 2026-06-12T19:06+02:00 — No content impact: SERVER_VERSION fallback bumped to 2.9.1 in lockstep with pyproject (issue #83 closeout committed-range fix release); the version-resolution contract this sidecar describes is unchanged.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-24T15:16+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                        |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                        |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,14 +27,19 @@ no-session state (adjutant clip).
 
 ### Logic
 
-A single `EmptyStateBackdrop({ src, children })` component. The `content` children (the empty-state
+A single `EmptyStateBackdrop({ src, children, opacity })` component. The `content` children (the empty-state
 message) **always** render in a centered, z-above layer. The video backdrop is conditional: it mounts
 only when `useShouldAnimate()` is true — the same honest-motion gate the engine room uses — so under
 calm-cockpit (`data-effects=off`) or OS `prefers-reduced-motion` the backdrop is absent entirely (not
 just hidden) and the message stands alone. When mounted, a `backdrop` div (`data-testid`
 `empty-backdrop`, `aria-hidden`) holds an autoplaying, muted, `playsInline`, `loop`ing `<video>` keyed to
 the given `src`. The styling (`backdropVideo`) mirrors the engine room: low opacity, a sepia/amber tint
-filter, `screen` blend, and a centered radial mask that vignettes the edges into the stage.
+filter, `screen` blend, and a centered radial mask that vignettes the edges into the stage. The
+`backdropVideo` css sets the default faint video opacity to `0.14`; the optional `opacity?: number` prop
+overrides that per-caller via an inline `style={{ opacity }}` on the `<video>` (applied only when the prop
+is non-null), so a clip that reads darker can be given a touch more presence without changing the default.
+The File/Diff viewer's siege-tank backdrops and the Operations `DetailPanel`'s battle-cruiser backdrop
+pass `0.18`; the `Chats` adjutant backdrop omits the prop and keeps the `0.14` default.
 
 Any slow zoom and playback cadence belong to the MP4 assets themselves. `EmptyStateBackdrop`
 intentionally does **not** mount a Motion wrapper, run `requestAnimationFrame`, or apply a runtime
@@ -59,8 +64,8 @@ fills the slot (the `DetailPanel` mounts it inside `Panel` `fill`; `Chats` insid
 
 Pure atmosphere, never state: the video is `aria-hidden` + `pointerEvents:none`, so it carries no
 meaning and never intercepts interaction — assistive tech and the calm cockpit see only the message.
-The component owns no data and reads no store; it is a presentational wrapper that takes a `src` + the
-message as `children`. Effects-gating is mandatory (it must consult `useShouldAnimate`, not a CSS-only
+The component owns no data and reads no store; it is a presentational wrapper that takes a `src`, the
+message as `children`, and an optional `opacity` override. Effects-gating is mandatory (it must consult `useShouldAnimate`, not a CSS-only
 switch, because an autoplaying video is not frozen by the `data-effects` CSS layer); gating the whole
 backdrop subtree off therefore also stops video playback. Keep the browser backdrop layer static: do not
 reintroduce a DOM/CSS/Motion zoom wrapper around this filtered video. If the desired media motion or
@@ -89,8 +94,10 @@ that now mount it.
 | The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors. | L1230-L1247 | [engine-room/engineRoomStyles.ts](engine-room/engineRoomStyles.ts) |
 | The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). | L82-L88 | [engine-room/EnclosureProcessMap.tsx](engine-room/EnclosureProcessMap.tsx) |
 | The honest-motion gate that decides whether the backdrop mounts at all. | L19-L37 | [engine-room/useShouldAnimate.ts](engine-room/useShouldAnimate.ts) |
-| The no-selection empty state that mounts this with the battle-cruiser clip (inside `Panel` `fill`). | L336-L344 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The no-session empty state that mounts this with the adjutant clip (inside `terminalArea`). | L218-L223 | [Chats.tsx](Chats.tsx) |
+| The no-selection empty state that mounts this with the battle-cruiser clip (inside `Panel` `fill`), passing `opacity={0.18}`. | L446-L449 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The no-session empty state that mounts this with the adjutant clip (inside `terminalArea`); no `opacity` prop, so it keeps the `0.14` default. | L435-L438 | [Chats.tsx](Chats.tsx) |
+| The File-viewer no-selection empty state that mounts this with the siege-tank clip, passing `opacity={0.18}` (the clip reads darker). | L105-L109 | [file-viewer/DualPane.tsx](file-viewer/DualPane.tsx) |
+| The Diff (change-set) viewer empty state that mounts this with the siege-tank clip, passing `opacity={0.18}`. | L337-L339 | [changeset/ChangeSetViewer.tsx](changeset/ChangeSetViewer.tsx) |
 | The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. | L6-L12; L31-L40; L51-L59 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 | The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`. | L39-L55 | [EmptyStateBackdrop.test.tsx](EmptyStateBackdrop.test.tsx) |
 
@@ -102,6 +109,13 @@ No meaningful cross-repo references found. This is a self-contained presentation
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-06-30T00:00:00+02:00 — Operations Integration L5: added an optional `opacity?: number` prop. When supplied it
+  overrides the `backdropVideo` css default (`0.14`) via an inline `style={{ opacity }}` on the `<video>`
+  (applied only when non-null); default behaviour with no prop is unchanged. Callers whose clip reads
+  darker pass a brighter value — the File viewer (`DualPane`) and Diff viewer (`ChangeSetViewer`)
+  siege-tank backdrops and the Operations `DetailPanel` battle-cruiser backdrop all pass `0.18`; the
+  `Chats` adjutant backdrop keeps the default. Verification metadata pinned until closeout stamps the L5
+  commit.
 - 2026-06-24T15:16+02:00 — Developer finalized the two SC2 boomerang assets in a video editor after the
   ffmpeg rebuild experiments. Current tracked assets are 1280x720, 60fps, 721 frames, and 12.016667s;
   the slow zoom remains baked into the media and the component remains a static direct-video layer. This

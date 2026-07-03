@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T16:17+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -20,8 +20,8 @@ The Operations task list. It uses projected JSON-primary task documents as the r
 does not put every projected document into the left sidebar. Sidebar rows are limited to root/master
 task documents, leaf task documents that match an active enclosure, folder-keyed series fallbacks when
 no master document is projected, and runtime lifecycle fallbacks for enclosure-backed work with no
-document row. An active enclosure is a projected enclosure whose cleanup is not completed; cleanup
-completed leaves stay reachable through typed `taskdoc:` links and master-internal navigation instead
+document row. An active enclosure is a projected enclosure whose cleanup is neither completed nor abandoned
+(L11); retired and discarded leaves stay reachable through typed `taskdoc:` links and master-internal navigation instead
 of lingering in the sidebar. Planning/inactive leaves follow the same non-sidebar path.
 
 In the `BY REPO` pivot, admitted leaf documents are grouped below their parent/root task and rendered as
@@ -52,16 +52,16 @@ list, while projected task documents remain available to Detail/master navigatio
 
 A document is admitted when `isRootTaskDoc` returns true (`kind === "master"` or `task.json`) or
 `enclosureForDoc` matches the document directory to `EnclosureNode.taskRoot` and either the document
-stem or authored task-document `id` to `EnclosureNode.leafId` in the active enclosure list. The `id`
+stem or authored task-document `id` to `EnclosureNode.leafId` in the active enclosure list — every
+leafId comparison **case-insensitive** since L10, because enclosure leaf ids are slugified lowercase
+directory names (`260628-l7`) while doc ids are authored uppercase labels (`260628-L7`), the mismatch
+that left active series leaves rendering as doc-less runtime rows. The `id`
 join covers numbered leaf enclosures such as leaf id `31` whose readable task file is
 `31_provider-state-refresh-and-engine-room-honesty.json`; it deliberately does not admit arbitrary
-docs that merely share a master lifecycle. Reopening a finalized task spins up a fresh worktree whose
-leaf id is the original stem/`id` plus a cycle suffix (for example `…-s7`) and shares the original
-document's lifecycle; `enclosureForDoc` admits that suffixed enclosure only when **both** it shares
-`doc.lifecycleId` **and** its leaf id is the suffixed form of the document stem or `id`
-(`leafId.startsWith(stem + "-")` / `startsWith(id + "-")`) — the shared lifecycle alone is never
-sufficient, so a reopened leaf stays nested under its master instead of surfacing as a standalone
-phantom row. These comparisons are structural joins to projected
+docs that merely share a master lifecycle. Since L11 the joins are EXACT only: `task_reopen` reuses
+the original leaf id (a reopened enclosure returns to planning with `cleanup: reopened` and renders
+as its planned doc row), so the old `-rN`/`-sN` suffixed-leaf-id `startsWith` admission heuristic is
+gone. These comparisons are structural joins to projected
 enclosure identity; they are not used to recover display numbers or ordering from task-name prefixes.
 Document rows use `taskDocSelectionKey(doc.docPath)`, series fallback rows use
 `seriesSelectionKey`, and runtime-only rows use `lifecycleSelectionKey`. Runtime-only lifecycle rows
@@ -118,11 +118,10 @@ Archived/deleted docs disappear because the observer stops projecting them; stat
 sidebar disappearance rule. Cleanup completion is an Operations sidebar disappearance rule for leaf
 enclosures only: it removes left-rail eligibility without deleting or hiding the task document from
 master navigation. `BY REPO` hierarchy is presentation over admitted rows only; it must not make
-inactive/planning/cleanup-completed leaf documents sidebar-eligible. A reopened leaf's suffixed
-enclosure is admitted, and a doc-less runtime row is nested, only on the combined
-lifecycle-plus-structural match (shared `lifecycleId` *and* a suffixed-leaf-id or `taskRoot`/series
-join); a shared master lifecycle by itself must never admit a document or re-parent a row, so unrelated
-leaves under one master stay distinct rather than collapsing onto each other.
+inactive/planning/cleanup-completed leaf documents sidebar-eligible. Abandoned enclosures are
+excluded from the active set entirely (L11), and a doc-less runtime row is nested only on the
+`taskRoot`/series join; a shared master lifecycle by itself must never admit a document or re-parent a
+row, so unrelated leaves under one master stay distinct rather than collapsing onto each other.
 
 Title truncation is presentational only: row selection and React Aria `textValue` still use the resolved
 task label and stable typed row key. The no-horizontal-scroll contract belongs to the Operations list
@@ -134,8 +133,8 @@ list.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Sidebar row admission uses root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document. | L306-L346; L589-L599 | [LifecycleList.tsx](LifecycleList.tsx) |
-| A reopened leaf's suffixed enclosure is admitted only on shared lifecycle plus suffixed-leaf-id shape (`enclosureForDoc`), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | [LifecycleList.tsx](LifecycleList.tsx) |
-| Regressions assert a reopened suffixed-enclosure doc and a doc-less orphan lifecycle both nest under the master instead of floating top-level. | reopen + orphan tests | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
+| `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | [LifecycleList.tsx](LifecycleList.tsx) |
+| Regressions assert a reopened (cleanup=reopened, exact leaf id) enclosure renders as its planned doc row, an abandoned enclosure leaves the active rows, and a doc-less orphan lifecycle nests under the master. | reopen + abandoned + orphan tests | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | BY REPO hierarchy uses taskHierarchy labels/parent keys, marks child rows with depth, and leaves BY PHASE flat. | L15-L20; L307-L343; L415-L447 | [LifecycleList.tsx](LifecycleList.tsx) |
 | Operations rows stay within the left panel by constraining the panel/listbox/section/row widths, then ellipsizing the title span. | L38-L106; L187-L214 | [LifecycleList.tsx](LifecycleList.tsx) |
 | Row titles use a shrinkable title span and native hover title assembled from label, lifecycle, repo, gate, and current-step context. | L99-L123; L212-L214; L464-L480 | [LifecycleList.tsx](LifecycleList.tsx) |
@@ -148,6 +147,13 @@ list.
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 task_reopen: active-enclosure admission now excludes `cleanup: abandoned`; the `-rN` suffixed-leaf-id `startsWith` reopen heuristic is removed because reopen reuses the exact leaf id, and a `cleanup: reopened` enclosure renders as its planned doc row.
+- 2026-07-02T21:45+02:00 — L10 binding repair: every `enclosureForDoc` leafId comparison (stem, doc id,
+  and the lifecycle-guarded reopen-suffix startsWith) is now case-insensitive, matching the
+  normalization RailChat and the change-set bar already use. Enclosure leaf ids are slugified
+  lowercase directory names while doc ids are authored uppercase, so active series leaf docs failed
+  the admission and rendered as doc-less runtime rows. Verification metadata pinned until closeout
+  stamps the L10 commit.
 - 2026-06-28T16:17+02:00 — Task 35 reopen-task nesting fix: `enclosureForDoc` now admits a reopened leaf's suffixed enclosure (`leafId` = stem/`id` + cycle suffix such as `…-s7`) only when it both shares the document lifecycle and matches the suffixed-leaf-id shape, and `lifecycleRow` resolves a master `parentKey` through the new `masterParentKeyForEnclosure` helper so doc-less enclosure-backed runtime rows nest under their master. Together these stop a re-opened/edited task from appearing as a standalone phantom sidebar node, without letting a shared master lifecycle alone re-parent unrelated leaves. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T23:08+02:00 — Task 31 Operations grouping: `enclosureForDoc` now admits leaf docs when the active enclosure leaf id matches the authored task-document id, fixing numbered leaves like `31` whose file stem includes a readable slug. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-25T13:10+02:00 — Task 23/24: Operations rows now render backend-projected agent pickup state through `AgentPickupIndicator`.
