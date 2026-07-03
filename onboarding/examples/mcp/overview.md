@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
+| lastUpdated            | 2026-07-03T11:50+02:00                     |
+| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e` |
+| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
 
 ## Purpose
 
@@ -19,8 +19,10 @@ replaces the removed coordinator `system/settings.json` provider example.
 ## Current Model
 
 `settings.example.json` names one coordination root, one workspace root, allowed
-repository ids, allowed provider ids, transcript log root, timeout caps, and a
-top-level `benchmarksEnabled` flag (defaulting to `false`).
+repository ids, allowed provider ids, transcript log root, timeout caps, a
+top-level `benchmarksEnabled` flag (defaulting to `false`), and (260703 L2) the
+`dashboard` object shipped at its defaults (`autoStart: false`, `port: 8765`) so
+dashboard daemon supervision stays opt-in.
 Repository source roots are derived from `workspaceRoot/<repo-id>`, and external
 memory roots are derived from `coordinationRoot/memory-repos/ar-<repo-id>`.
 Provider entries stay empty because the MCP server derives provider runtime
@@ -35,5 +37,8 @@ content, not a runtime input.
 
 ## Update History
 
+- 2026-07-03T11:50+02:00 — 260703 L2 route impact: the settings template gains the `dashboard`
+  object (autoStart/port, shipped at defaults-off). Verification metadata pinned until closeout
+  stamps the code commit.
 - 2026-06-11T14:12+02:00: No route impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in files on this route; route structure and overview content are unchanged.
 - 2026-05-31T12:30+02:00 — Noted new top-level `benchmarksEnabled` flag (default `false`) in `settings.example.json` (1.0.0 review remediation, F2).

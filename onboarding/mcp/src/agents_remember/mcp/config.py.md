@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-07-03T11:40+02:00|
+| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e` |
+| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -42,6 +42,14 @@ and `DEFAULT_DOCKER_CONTROL_SECONDS = 120`. All failures raise `ConfigError`,
 now a member of the typed `AgentsRememberError` family (itself a `ValueError`
 subclass), so the server fails loudly at startup on unsafe settings.
 
+`parse_dashboard_settings` (260703 L2) validates the optional `dashboard` object
+into `McpRuntimeConfig.dashboard` — a frozen `DashboardSettings(auto_start=False,
+port=DEFAULT_DASHBOARD_PORT=8765)`, so omitted settings keep supervision fully
+off. It follows the `timeoutCaps` fail-loud discipline: keys outside
+`KNOWN_DASHBOARD_FIELDS` (`autoStart`, `port`) are rejected (a typo like
+`autostart` must surface at boot, not silently leave the daemon unsupervised),
+`autoStart` must be a boolean, and `port` a non-bool integer in 1..65535.
+
 ### Invariants And Boundaries
 
 - MCP settings are the authority for the server path.
@@ -56,6 +64,9 @@ subclass), so the server fails loudly at startup on unsafe settings.
 - `timeoutCaps` accepts only the `KNOWN_TIMEOUT_CAPS` allowlist
   (`providerSetupSeconds`, `toolSeconds`); any other cap name is rejected, so
   unknown keys are never silently stored and ignored.
+- `dashboard` accepts only `KNOWN_DASHBOARD_FIELDS` (`autoStart`, `port`) with the
+  same fail-loud rejection; its defaults keep dashboard supervision off, so
+  existing settings files are untouched by the feature.
 
 ## Repo-Internal References
 
@@ -63,9 +74,15 @@ subclass), so the server fails loudly at startup on unsafe settings.
 | --- | --- |
 | Server registration consumes this config object. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
+| The daemon supervisor consuming `DashboardSettings` (autoStart/port). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
 
 ## Update History
 
+- 2026-07-03T11:40+02:00 — 260703 L2: added the optional `dashboard` settings object —
+  `parse_dashboard_settings` → frozen `DashboardSettings(auto_start, port)` on
+  `McpRuntimeConfig.dashboard`, `KNOWN_DASHBOARD_FIELDS` fail-loud allowlist,
+  `DEFAULT_DASHBOARD_PORT = 8765`; defaults keep supervision off. Verification metadata pinned
+  until closeout stamps the code commit.
 - 2026-05-31T12:30+02:00 — `timeoutCaps` now rejects unknown cap names via the `KNOWN_TIMEOUT_CAPS` allowlist (`providerSetupSeconds`, `toolSeconds`); added the boolean `benchmarksEnabled`/`benchmarks_enabled` flag (`parse_benchmarks_enabled`); `ConfigError` now subclasses the typed `AgentsRememberError` family rather than `ValueError` directly (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented `timeoutCaps` handling added in the 0.9.x run — `parse_timeout_caps` (non-negative-int caps), the fail-loud `ConfigError` on the renamed `providerSeconds` key, the `providerSetupSeconds`/`DEFAULT_PROVIDER_SETUP_SECONDS`/`DEFAULT_DOCKER_CONTROL_SECONDS` defaults, and the `ConfigError` (ValueError) contract. Verified against `8927f03`.
 - 2026-05-29T18:35+02:00: Extracted `_parse_repository_entry` from `parse_repositories` to reduce complexity; behavior-preserving (commit `e3dab63`).

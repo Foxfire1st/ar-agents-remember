@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-03T12:55+02:00 |
-| lastVerifiedCommitHash | `08307e134bbdcff9b67e38232e513ebea21d3abf` |
-| lastVerifiedCommitDate | 2026-07-03T11:19:21+02:00|
+| lastUpdated            | 2026-07-03T12:57+02:00 |
+| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e` |
+| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -208,7 +208,12 @@ The MCP package separates three surfaces:
   `agents-remember` CLI under `cli/`; 260703 L1 makes `--config` optional there —
   `cli/discovery.py` walks upward from the working directory, the settings convention before an
   `.mcp.json` registration's recorded path, nearest wins, semantically probing usability so the
-  repo's tracked placeholder template never shadows real settings). Slice 6d-1 adds the **Mode B2 terminal host**
+  repo's tracked placeholder template never shadows real settings). 260703 L2 adds **daemon
+  supervision** (`serving/daemon.py`): `--daemon`/`--status`/`--stop` on the same CLI (state under
+  `<coordinationRoot>/logs/dashboard/`; `--port` defaults from the new fail-loud `dashboard`
+  settings object), and `dashboard.autoStart` makes every `agents-remember-mcp` boot ensure the
+  daemon — adopt healthy, spawn absent, restart on version mismatch — via the threaded, total,
+  stderr-only `maybe_autostart_dashboard` hook in `mcp/server.py` `main()`. Slice 6d-1 adds the **Mode B2 terminal host**
   (`serving.terminal`): a registry of tmux-wrapped stdlib-`pty` sessions that launch the harness
   render-not-scrape (fixed-argv, OS-user creds, localhost), opened by the
   `POST /api/terminal/{session}` opener (6e-2a/6e-2b — the dashboard spawns + owns a shell or a detected
@@ -377,6 +382,12 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-03T12:57+02:00 — 260703 L2 route impact: `serving/` gains `daemon.py` (dashboard daemon
+  supervision), the CLI gains `--daemon`/`--status`/`--stop`/`--no-access-log` with settings-default
+  `--port`, `mcp/config.py` parses the fail-loud `dashboard` settings object (autoStart, port), and
+  `mcp/server.py` `main()` gains the threaded `maybe_autostart_dashboard` boot hook. Covered by
+  `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
+  until closeout stamps the code commit.
 - 2026-07-03T12:55+02:00 — 260703 L1 route impact: the umbrella CLI under `cli/` gains
   `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
   `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic

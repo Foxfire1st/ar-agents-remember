@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T13:54+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-03T11:45+02:00                           |
+| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e`       |
+| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -114,9 +114,10 @@ imports follow it (the suite idiom). An empty-`coordination_root` `McpRuntimeCon
 `mcp/tests/fixtures/sim/logs/observer/...`. Async suites use `unittest.IsolatedAsyncioTestCase`,
 and CLI launch tests patch `uvicorn.run` + `cli.dashboard.create_app`/`load_config` so no server
 is actually started. Both CLI `run()` fixtures (`CliRunTests._args`, `CliSimTests._args`) build the
-`argparse.Namespace` with every flag `run()` reads, including `reload: False`, so the fixtures stay
-in lock-step with `dashboard.run()` reading `args.reload`; a missing attr would raise instead of
-exercising the branch.
+`argparse.Namespace` with every flag `run()` reads, including `reload: False` and (260703 L2) the
+daemon-era keys `daemon`/`status`/`stop`: False + `no_access_log`: False, so the fixtures stay
+in lock-step with `dashboard.run()` reading those attrs; a missing attr would raise instead of
+exercising the branch. Daemon dispatch itself is covered in `test_dashboard_daemon.py`, not here.
 
 ## Repo-Internal References
 
@@ -144,6 +145,10 @@ exercising the branch.
 
 ## Update History
 
+- 2026-07-03T11:45+02:00 — 260703 L2: both CLI Namespace fixtures gained the daemon-era keys
+  (`daemon`/`status`/`stop`/`no_access_log`, all off) so `dashboard.run()`'s new reads stay
+  exercised; no assertion changes. Verification metadata pinned until closeout stamps the code
+  commit.
 - 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): added `test_protected_lifecycle_log_survives_inactivity`
   to `RawEventTests` — a dormant enclosure-backed log in `protected_lifecycle_ids` is exempt from the
   inactivity prune, and is pruned only once protection is dropped (proving the dormancy precondition and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `b9f1a31ccf6c826f4558e15d3feada70d2375e66` |
-| lastVerifiedCommitDate | 2026-06-11T15:04:57+02:00|
+| lastUpdated            | 2026-07-03T11:45+02:00                     |
+| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e` |
+| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,6 +47,11 @@ with a `ConfigError`, so the template ships the current key.
 The example also carries a top-level `benchmarksEnabled` flag, shipped as
 `false`, which gates the optional benchmarking surface off by default.
 
+The `dashboard` object (260703 L2) ships `{"autoStart": false, "port": 8765}` —
+the defaults, so dashboard daemon supervision stays off until a user opts in;
+`agents_remember.mcp.config` fail-loud rejects unknown `dashboard` keys the same
+way `timeoutCaps` does.
+
 ### Invariants And Boundaries
 
 This file must not be placed inside the coordinator root, and it must not carry
@@ -65,6 +70,9 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 ## Update History
 
+- 2026-07-03T11:45+02:00 — 260703 L2: the template now carries the `dashboard` object
+  (`autoStart: false`, `port: 8765` — supervision off by default). Verification metadata pinned
+  until closeout stamps the code commit.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-05-31T12:30+02:00 — Documented the new top-level `benchmarksEnabled` flag (shipped `false`) the template now carries (1.0.0 review remediation).
 - 2026-05-30T21:22+02:00: Documented the `timeoutCaps` block (`toolSeconds`, `providerSetupSeconds`) the template now carries — `providerSetupSeconds` caps only provider image build / dependency install, `0` means unlimited, and it replaces the rejected `providerSeconds` key. Realigned verification metadata to `825a172`.

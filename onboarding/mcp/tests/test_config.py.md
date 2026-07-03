@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-03T11:40+02:00 |
+| lastVerifiedCommitHash | `66af2a722e20e291163e280371b3f42cd920966e` |
+| lastVerifiedCommitDate | 2026-07-03T11:34:31+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -36,7 +36,10 @@ shared CGC Docker network. New cases cover `timeoutCaps` parsing:
 `providerSetupSeconds=0` means unlimited, the legacy `providerSeconds` key is
 rejected with a `ConfigError` carrying the "renamed to providerSetupSeconds"
 message, and an unknown `timeoutCaps` key is rejected with an "unsupported
-timeout cap" `ConfigError`.
+timeout cap" `ConfigError`. `DashboardSettingsTests` (260703 L2) covers the
+optional `dashboard` object: absent → defaults off (autoStart False, port 8765),
+happy parse, unknown-key rejection (`autostart` typo), non-bool `autoStart`
+rejection, invalid ports (bool/0/65536/string), and non-object shapes.
 
 ### Invariants And Boundaries
 
@@ -58,6 +61,10 @@ Config/schema tests now assert the public tool surface includes `parent_task` an
 
 ## Update History
 
+- 2026-07-03T11:40+02:00 — 260703 L2: added `DashboardSettingsTests` (defaults-off, happy parse,
+  fail-loud unknown key, type/port validation, non-object rejection) and imported
+  `McpRuntimeConfig` for the typed `_load` helper. Verification metadata pinned until closeout
+  stamps the code commit.
 - 2026-07-03T01:55+02:00 — L12 asserts the agents-remember root entry in generated settings carries cgcignorePatterns=[mcp/src/agents_remember/package_data/].
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: config/tool-schema assertions now include `parent_task` and `leaf_id` on resolver/worktree tool signatures so installed MCP metadata matches the new task resolver contract. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
