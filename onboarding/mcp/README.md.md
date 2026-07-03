@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-11T14:07+02:00 |
-| lastVerifiedCommitHash | `c2c2dcbe0b4ae26e73b9d9aef2b3abba58605adc` |
-| lastVerifiedCommitDate | 2026-06-11T14:07+02:00|
+| lastUpdated            | 2026-07-03T11:55+02:00 |
+| lastVerifiedCommitHash | `7bebee59a9d03a42c3085fb85e3f3e9e7804c72c` |
+| lastVerifiedCommitDate | 2026-07-03T11:38:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,8 +19,11 @@
 `mcp/README.md` is the PyPI-facing README for the installable
 `agents-remember-mcp` package and the de-facto pre-MCP bootstrap doc. It opens
 with the package-first, one-restart Quickstart, then documents requirements,
-install/run (uvx-first), a starter settings block, harness registration, the
-post-restart MCP calls, and the high-level tool surface.
+install/run (uvx-first for the server; since 260703 L3 also the umbrella CLI:
+unpinned `uv tool install agents-remember-mcp` + `agents-remember dashboard`
+with daemon mode and the rc-period pre-release note), a starter settings block,
+harness registration, the post-restart MCP calls, and the high-level tool
+surface.
 
 ## Code Commentary
 
@@ -44,6 +47,18 @@ first-run path because the copied starter package already provides the initial
 skills and harness files. The Requirements section clarifies that Claude Code
 hooks do not require `jq`; `jq` was only a legacy starter one-liner dependency,
 and current starter packages use Python renderers and Python hook scripts.
+
+The Install And Run section (260703 L3) adds the mission-control CLI story after
+the server forms: the package ships the umbrella `agents-remember` CLI carrying
+the `dashboard` subcommand — install unpinned as a uv tool (latest stable,
+first-class; pinning `==X.Y.Z` / `uvx --from` is the debugging path), `dashboard`
+discovers `--config` itself (nearest `.claude/mcp/agents-remember-settings.json`
+or the `.mcp.json`-recorded path), `--daemon` detaches it with `--status`/`--stop`
+management and state under `<coordinationRoot>/logs/dashboard/`, and the
+`"dashboard": {"autoStart": true}` settings key has every MCP boot ensure the
+daemon with restart-on-version-mismatch. One pre-release note covers the rc
+period: `3.0.0rcN` is skipped by default resolution — `--prerelease allow` for
+the tool install, an explicit pin for the registration instead of `@latest`.
 
 Beyond the Quickstart the README now carries the operational detail a first-run
 needs: a **Settings file location** table mapping each harness starter package
@@ -112,6 +127,11 @@ the workspace and never the user's home directory.
 
 ## Update History
 
+- 2026-07-03T11:55+02:00 — 260703 L3: Install And Run gains the umbrella-CLI story — unpinned
+  `uv tool install agents-remember-mcp` first-class, discovery-backed flag-free `dashboard`,
+  daemon mode + the `dashboard.autoStart` settings key, pinning as the debugging path, and the
+  rc-period pre-release note (`--prerelease allow` / explicit registration pin). Verification
+  metadata pinned until closeout stamps the code commit.
 - 2026-06-11T14:07+02:00: Re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
 - 2026-06-11T06:47+02:00: No content impact: the Tool Surface bullet changed from "chat/direct closeout and worktree-backed task workflows" to "worktree-backed closeout and task workflows" (issue #62 worktree-only closeout); the bootstrap structure this sidecar describes is unchanged.
 - 2026-06-06T18:42+02:00: Refined the PyPI-facing quickstart memory so the renderer is an optional convenience script for placeholder replacement and manual replacement is explicit. Verification metadata stays pinned until closeout commits the source change.

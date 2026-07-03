@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T11:20+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-03T11:55+02:00 |
+| lastVerifiedCommitHash | `7bebee59a9d03a42c3085fb85e3f3e9e7804c72c` |
+| lastVerifiedCommitDate | 2026-07-03T11:38:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`README.md` is the public front door for Agents Remember. It gives a concise product-level explanation, a high-signal Core Features section, a short quickstart, links to harness-specific install pages, optional benchmark guidance, and a compact repository/runtime map. The concentrated feature tour now lives in `docs/features.md`; detailed setup, concepts, workflows, benchmark methodology, guides, and reference material live under `docs/`.
+`README.md` is the public front door for Agents Remember. It gives a concise product-level explanation, a high-signal Core Features section, a short quickstart, a Run The Dashboard section (260703 L3 — the first-class CLI install/run story), links to harness-specific install pages, optional benchmark guidance, and a compact repository/runtime map. The concentrated feature tour now lives in `docs/features.md`; detailed setup, concepts, workflows, benchmark methodology, guides, and reference material live under `docs/`.
 
 ## Code Commentary
 
@@ -60,6 +60,19 @@ default.
 
 A `## What It Looks Like In Practice` mini-transcript sits between Core Features and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
 
+A ToC-linked `## Run The Dashboard` section (260703 L3) sits between Quickstart and
+Documentation. It leads with the **unpinned** install as the first-class citizen —
+`uv tool install agents-remember-mcp` then `agents-remember dashboard` (no `--config`:
+L1's discovery walks up from the working directory) — then daemon mode
+(`--daemon`/`--status`/`--stop`, state under `<coordinationRoot>/logs/dashboard/`) and the
+`"dashboard": {"autoStart": true}` settings key (L2), presents version pinning
+(`==X.Y.Z`, `uvx --from`) as the debugging/repro path, and closes with one pre-release
+note: until 3.0.0 final the dashboard ships in `3.0.0rcN` pre-releases that default
+resolution skips — `uv tool install --prerelease allow` or an explicit pin, including for
+the MCP registration instead of `@latest`. Every documented command was verified against
+real PyPI resolution (unpinned resolves the latest stable; `--prerelease allow` resolves
+the rc).
+
 A short `## Live Demo` section sits between Core Features and Requirements. It states that Agents Remember runs on itself and links the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable example of the by-path onboarding layer. It surfaces the dogfooding message higher on the page than the existing Contributing-section mention, which still owns the operational instruction to clone that memory and use it while contributing.
 
 ### Conventions
@@ -99,6 +112,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable by-path onboarding example. | L68-L73 | [README.md](agents-remember/README.md) |
 | The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | L89-L121 | [README.md](agents-remember/README.md) |
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | L123-L135 | [README.md](agents-remember/README.md) |
+| The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. | L134-L172 | [README.md](agents-remember/README.md) |
 | The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | L137-L177 | [README.md](agents-remember/README.md) |
 | The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (`2.9.0`), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | L199-L203 | [README.md](agents-remember/README.md) |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | L183-L185 | [README.md](agents-remember/README.md) |
@@ -116,6 +130,13 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-07-03T11:55+02:00 — 260703 L3: added the ToC-linked `## Run The Dashboard` section between
+  Quickstart and Documentation — unpinned `uv tool install agents-remember-mcp` as the first-class
+  install, flag-free `agents-remember dashboard` (L1 discovery), daemon mode + `dashboard.autoStart`
+  (L2), pinning as the debugging/repro path, and the single rc-period pre-release note
+  (`--prerelease allow` / explicit pin, incl. the MCP registration). Concrete pin examples reference
+  `3.0.0rc2`, the release this lands with. Verification metadata pinned until closeout stamps the
+  code commit.
 - 2026-07-03T11:20+02:00 — L14 release: Status reads 3.0.0rc1 and the journey paragraph became 'The 3.0 arc' — the lifecycle/gates/projection substrate served as the mission-control cockpit from the MCP package (agents-remember dashboard), with the rc caveat on the settling cockpit surface.
 - 2026-06-22T22:00+02:00 — No content impact: Status section version string bumped to 2.9.3 (worktree_name contract-resolution fix release, #90); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-19T13:42 — No content impact: Status section version string bumped to 2.9.2 (benchmark provider isolation release, task 260619); the README structure and guidance this sidecar describes are unchanged.
