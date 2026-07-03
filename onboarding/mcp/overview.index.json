@@ -93,6 +93,7 @@
     "mcp/src/agents_remember/cli/__main__.py",
     "mcp/src/agents_remember/cli/context_packet.py",
     "mcp/src/agents_remember/cli/dashboard.py",
+    "mcp/src/agents_remember/cli/discovery.py",
     "mcp/src/agents_remember/code_quality/__init__.py",
     "mcp/src/agents_remember/code_quality/check.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
@@ -207,6 +208,7 @@
     "mcp/tests/test_cgc_seed_bundle_path.py",
     "mcp/tests/test_cgc_watch_guard.py",
     "mcp/tests/test_cleanup_carryover.py",
+    "mcp/tests/test_cli_discovery.py",
     "mcp/tests/test_code_quality_check.py",
     "mcp/tests/test_compact_content.py",
     "mcp/tests/test_config.py",
@@ -278,8 +280,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 496,
-    "fileSidecars": 190,
+    "sourceFilesInScope": 491,
+    "fileSidecars": 192,
     "childRoutes": 15
   },
   "routingTerms": [
@@ -357,12 +359,12 @@
     "data",
     "deep",
     "defaults",
+    "discovery",
     "doc",
     "docker",
     "docs",
     "document",
-    "drift",
-    "entity"
+    "drift"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",
@@ -407,6 +409,8 @@
       "context_packet",
       "dashboard.py",
       "dashboard",
+      "discovery.py",
+      "discovery",
       "__init__.py",
       "__init__",
       "check.py",
@@ -438,9 +442,7 @@
       "memory_ledger.py",
       "memory_ledger",
       "onboarding_doc.py",
-      "onboarding_doc",
-      "route_index.py",
-      "route_index"
+      "onboarding_doc"
     ]
   },
   "fallback": {
