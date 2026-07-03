@@ -66,7 +66,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks, including `committed_changed_paths` (issue #83: the unverified committed range \u2014 tree-diff `base..HEAD` \u2229 `verified..HEAD`) and the `commit_text_or_none` baseline reader behind the closeout body gates. - `guidance.py` renders lifecycle phase and typed next-operation payloads. Its `lifecycle_guidance` checks the disposal states first: `cleanup == \"completed\"` \u2192 the `cleanup-completed` phase, and (slice 05l P1) `cleanup == \"abandoned\"` \u2192 a dedicated `abandoned` phase (`nextOperation: \"done\"`). Before the abandone...",
+    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks, including `committed_changed_paths` (issue #83: the unverified committed range \u2014 tree-diff `base..HEAD` \u2229 `verified..HEAD`) and the `commit_text_or_none` baseline reader behind the closeout body gates. **Operations-integration L3** adds `changed_files_with_counts(repo, base, head=None)` (+ `_rename_aware_path`) \u2014 the change-set primitive behind the serving change-set API (`serving/changeset.py`): per-file `{path, insertions, deletions, status}` via `git diff --numstat --name-status --find-renames`, KEEPING dele...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
@@ -129,14 +129,14 @@
       "base..HEAD",
       "verified..HEAD",
       "commit_text_or_none",
-      "lifecycle_guidance",
-      "cleanup == \"completed",
-      "cleanup-completed",
-      "cleanup == \"abandoned",
-      "abandoned",
-      "nextOperation: \"done",
+      "changed_files_with_counts(repo, base, head=None",
+      "_rename_aware_path",
+      "serving/changeset.py",
+      "path, insertions, deletions, status",
+      "git diff --numstat --name-status --find-renames",
       "HEAD",
-      "nextOperation"
+      "changed_files_with_counts",
+      "rename_aware_path"
     ]
   },
   "fallback": {

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/src/panels/changeset",
+  "overview": "dashboard/src/panels/changeset/overview.md",
+  "index": "dashboard/src/panels/changeset/overview.index.json",
+  "sourceScope": [
+    "dashboard/src/panels/changeset/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "dashboard/src/panels/changeset/ChangeSetPane.test.tsx",
+    "dashboard/src/panels/changeset/ChangeSetPane.tsx",
+    "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx",
+    "dashboard/src/panels/changeset/ChangeSetViewer.tsx",
+    "dashboard/src/panels/changeset/DiffPane.tsx"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 5,
+    "fileSidecars": 5,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "changeset",
+    "changesetpane",
+    "changesetviewer",
+    "dashboard",
+    "diffpane",
+    "panels",
+    "src",
+    "test",
+    "tsx"
+  ],
+  "hotPath": {
+    "summary": "The Change-Set Viewer: a DetailPanel change-set button opens a full-bleed takeover \u2014 column 1 changed code/onboarding rows (active row in an amber wash) over the L3 change-set API \u2192 column 2/3 a read-only CodeMirror `@codemirror/merge` diff (split/inline/full-file/highlight-off, persisted) reusing the L2 FilePane, with a **rendered-markdown** toggle for `.md` files and a faint siege-tank empty-state backdrop until a file is picked; the back link restores the railed Operations view.",
+    "candidateHints": [
+      "dashboard/src/panels/changeset",
+      "dashboard/src/panels/changeset/ChangeSetPane.test.tsx",
+      "dashboard/src/panels/changeset/ChangeSetPane.tsx",
+      "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx",
+      "dashboard/src/panels/changeset/ChangeSetViewer.tsx",
+      "dashboard/src/panels/changeset/DiffPane.tsx"
+    ],
+    "anchorHints": [
+      "ChangeSetPane.test.tsx",
+      "ChangeSetPane.test",
+      "ChangeSetPane.tsx",
+      "ChangeSetPane",
+      "ChangeSetViewer.test.tsx",
+      "ChangeSetViewer.test",
+      "ChangeSetViewer.tsx",
+      "ChangeSetViewer",
+      "DiffPane.tsx",
+      "DiffPane",
+      "@codemirror/merge",
+      "md",
+      "DetailPanel",
+      "API",
+      "CodeMirror",
+      "FilePane",
+      "dashboard/src/panels/changeset/",
+      "route-local-overview",
+      "ad30dd38c3dcfa13fb85f44b281488499e92519a",
+      "/overview.md",
+      "changeset/",
+      "GET /api/changeset/{task,file-diff,master",
+      "serving/changeset.py",
+      "codemirrorTheme",
+      "langByExtension",
+      "usePersistedFlag",
+      "grammar/Markdown",
+      "CockpitShell",
+      "+ins/\u2212del",
+      "taskChangeset",
+      "masterChangeset",
+      "color-mix(in oklab, var(--amber) 20%/12%, transparent",
+      "background: bg",
+      "EmptyStateBackdrop",
+      "/assets/sc2-siege-tank-boomerang.mp4",
+      "opacity 0.18",
+      "scope",
+      "/api/changeset/file-diff",
+      "master",
+      "git diff <master-base> <tip>",
+      "leaf",
+      "+ mode",
+      "committed",
+      "working",
+      "mode",
+      "committed \u00b7 <leaf>",
+      "working \u00b7 <leaf> \u00b7 uncommitted",
+      "react-resizable-panels"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/src/panels/changeset/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

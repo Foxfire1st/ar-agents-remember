@@ -23,11 +23,12 @@
     "mcp/src/agents_remember/mcp/tools/providers.py",
     "mcp/src/agents_remember/mcp/tools/read_files.py",
     "mcp/src/agents_remember/mcp/tools/task_doc.py",
+    "mcp/src/agents_remember/mcp/tools/terminal.py",
     "mcp/src/agents_remember/mcp/tools/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 14,
-    "fileSidecars": 14,
+    "sourceFilesInScope": 15,
+    "fileSidecars": 15,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -59,6 +60,7 @@
     "step",
     "task",
     "task_doc",
+    "terminal",
     "tools",
     "worktree"
   ],
@@ -79,6 +81,7 @@
       "mcp/src/agents_remember/mcp/tools/providers.py",
       "mcp/src/agents_remember/mcp/tools/read_files.py",
       "mcp/src/agents_remember/mcp/tools/task_doc.py",
+      "mcp/src/agents_remember/mcp/tools/terminal.py",
       "mcp/src/agents_remember/mcp/tools/worktree.py"
     ],
     "anchorHints": [
@@ -108,6 +111,8 @@
       "read_files",
       "task_doc.py",
       "task_doc",
+      "terminal.py",
+      "terminal",
       "worktree.py",
       "worktree",
       "*_payload",
@@ -126,10 +131,8 @@
       "CONTINUE",
       "mcp/src/agents_remember/mcp/tools",
       "route-local-overview",
-      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
-      "/../../../../overview.md",
-      "mcp/tools/",
-      "mcp/tools.py"
+      "ad30dd38c3dcfa13fb85f44b281488499e92519a",
+      "/../../../../overview.md"
     ]
   },
   "fallback": {

@@ -142,14 +142,14 @@
       "worktree_provider_admission",
       "mcp/src/agents_remember/observer/",
       "route-local-overview",
-      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "ad30dd38c3dcfa13fb85f44b281488499e92519a",
       "/../../../overview.md",
       "observer/",
+      "abandoned",
+      "lifecycle.ended",
       "docs/design/observable-lifecycle.md",
       "lifecycle_*",
-      "promote",
-      "attach",
-      "SaveDecision"
+      "promote"
     ]
   },
   "fallback": {

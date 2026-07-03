@@ -10,9 +10,19 @@
   ],
   "childRoutes": [
     {
+      "route": "dashboard/src/panels/changeset",
+      "overview": "dashboard/src/panels/changeset/overview.md",
+      "index": "dashboard/src/panels/changeset/overview.index.json"
+    },
+    {
       "route": "dashboard/src/panels/engine-room",
       "overview": "dashboard/src/panels/engine-room/overview.md",
       "index": "dashboard/src/panels/engine-room/overview.index.json"
+    },
+    {
+      "route": "dashboard/src/panels/file-viewer",
+      "overview": "dashboard/src/panels/file-viewer/overview.md",
+      "index": "dashboard/src/panels/file-viewer/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -34,28 +44,35 @@
     "dashboard/src/panels/GateResponder.test.tsx",
     "dashboard/src/panels/GateResponder.tsx",
     "dashboard/src/panels/GateResponderText.ts",
+    "dashboard/src/panels/Hangar.test.tsx",
     "dashboard/src/panels/Hangar.tsx",
     "dashboard/src/panels/HighlightComposer.test.tsx",
     "dashboard/src/panels/HighlightComposer.tsx",
+    "dashboard/src/panels/LeafAttachPicker.test.tsx",
+    "dashboard/src/panels/LeafAttachPicker.tsx",
     "dashboard/src/panels/LifecycleList.test.tsx",
     "dashboard/src/panels/LifecycleList.tsx",
     "dashboard/src/panels/MemoryMirror.tsx",
+    "dashboard/src/panels/RailChat.test.tsx",
+    "dashboard/src/panels/RailChat.tsx",
     "dashboard/src/panels/SessionComposer.test.tsx",
     "dashboard/src/panels/SessionComposer.tsx",
     "dashboard/src/panels/SessionList.test.tsx",
     "dashboard/src/panels/SessionList.tsx",
+    "dashboard/src/panels/Terminal.test.tsx",
     "dashboard/src/panels/Terminal.tsx",
     "dashboard/src/panels/Topology.tsx",
     "dashboard/src/panels/eventSummary.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 45,
-    "fileSidecars": 31,
-    "childRoutes": 1
+    "sourceFilesInScope": 66,
+    "fileSidecars": 37,
+    "childRoutes": 3
   },
   "routingTerms": [
     "agentpickupindicator",
     "attentionqueue",
+    "changeset",
     "chats",
     "dashboard",
     "detailpanel",
@@ -64,14 +81,17 @@
     "engineroom",
     "eventriver",
     "eventsummary",
+    "file",
     "flowtab",
     "gateresponder",
     "gaterespondertext",
     "hangar",
     "highlightcomposer",
+    "leafattachpicker",
     "lifecyclelist",
     "memorymirror",
     "panels",
+    "railchat",
     "room",
     "sessioncomposer",
     "sessionlist",
@@ -79,13 +99,16 @@
     "terminal",
     "test",
     "topology",
-    "tsx"
+    "tsx",
+    "viewer"
   ],
   "hotPath": {
     "summary": "",
     "candidateHints": [
       "dashboard/src/panels",
+      "dashboard/src/panels/changeset",
       "dashboard/src/panels/engine-room",
+      "dashboard/src/panels/file-viewer",
       "dashboard/src/panels/AgentPickupIndicator.test.tsx",
       "dashboard/src/panels/AgentPickupIndicator.tsx",
       "dashboard/src/panels/AttentionQueue.test.tsx",
@@ -104,10 +127,8 @@
       "dashboard/src/panels/GateResponder.test.tsx",
       "dashboard/src/panels/GateResponder.tsx",
       "dashboard/src/panels/GateResponderText.ts",
-      "dashboard/src/panels/Hangar.tsx",
-      "dashboard/src/panels/HighlightComposer.test.tsx",
-      "dashboard/src/panels/HighlightComposer.tsx",
-      "dashboard/src/panels/LifecycleList.test.tsx"
+      "dashboard/src/panels/Hangar.test.tsx",
+      "dashboard/src/panels/Hangar.tsx"
     ],
     "anchorHints": [
       "AgentPickupIndicator.test.tsx",
@@ -146,18 +167,18 @@
       "GateResponder",
       "GateResponderText.ts",
       "GateResponderText",
+      "Hangar.test.tsx",
+      "Hangar.test",
       "Hangar.tsx",
       "Hangar",
       "HighlightComposer.test.tsx",
       "HighlightComposer.test",
       "HighlightComposer.tsx",
       "HighlightComposer",
-      "LifecycleList.test.tsx",
-      "LifecycleList.test",
-      "LifecycleList.tsx",
-      "LifecycleList",
-      "MemoryMirror.tsx",
-      "MemoryMirror"
+      "LeafAttachPicker.test.tsx",
+      "LeafAttachPicker.test",
+      "LeafAttachPicker.tsx",
+      "LeafAttachPicker"
     ]
   },
   "fallback": {
