@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T11:20+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-03T12:05+02:00 |
+| lastVerifiedCommitHash | `44c8051d00df970eb02cff7dc1e744c9c8338b1b` |
+| lastVerifiedCommitDate | 2026-07-03T11:42:56+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -88,6 +88,8 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-07-03T12:05+02:00 — No content impact: 260703 L4 bumped version 3.0.0rc1 -> 3.0.0rc2 (PEP
+  440 prerelease); no dependency or build-system change.
 - 2026-07-03T11:20+02:00 — No content impact: L14 bumped version 2.9.3 -> 3.0.0rc1 (PEP 440 prerelease); no dependency or build-system change.
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): version reflects the main releases merged onto the series — `2.9.2` (benchmark provider-isolation / hermetic setup) and `2.9.3` (resolve a worktree contract from `worktree_name`); no packaging-contract change, and the documented `version` still tracks `SERVER_VERSION`. Corrected the stale `2.7.0` verification note in the body to `2.9.3`.
 - 2026-06-19T20:30 — Task 6 slice 6f: added `python-multipart` (`>=0.0.9,<1`) as a **core** runtime dependency — FastAPI needs it to parse the `multipart/form-data` `UploadFile` on `POST /api/terminal/{session}/image` (the screenshot upload). Verification metadata pinned until closeout stamps the 6f code commit.

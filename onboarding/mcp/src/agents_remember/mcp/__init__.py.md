@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T11:20+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-03T12:05+02:00 |
+| lastVerifiedCommitHash | `44c8051d00df970eb02cff7dc1e744c9c8338b1b` |
+| lastVerifiedCommitDate | 2026-07-03T11:42:56+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -21,7 +21,8 @@ The module exposes `SERVER_NAME` and `SERVER_VERSION`. `SERVER_VERSION` is now
 derived from the installed package metadata via
 `importlib.metadata.version("agents-remember-mcp")`, making `mcp/pyproject.toml`
 the single source of truth; a `PackageNotFoundError` fallback hardcodes the
-current release version (now `2.7.0`) for source checkouts without an install. Payload builders in `mcp.tools` use
+current release version for source checkouts without an install (bumped in
+lockstep with pyproject at every release). Payload builders in `mcp.tools` use
 those constants for `ping` and `server_info`, so the version no longer needs a
 manual bump here — keep `mcp/pyproject.toml` and the source-checkout fallback in
 sync at release.
@@ -39,6 +40,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-03T12:05+02:00 — 260703 L4: SERVER_VERSION fallback bumped to 3.0.0rc2 (resolution order
+  unchanged); the body's stale `(now 2.7.0)` parenthetical became version-generic so release bumps
+  stop drifting it.
 - 2026-07-03T11:20+02:00 — No content impact: L14 bumped the SERVER_VERSION source-checkout fallback to 3.0.0rc1; resolution order unchanged.
 - 2026-06-22T22:00+02:00 — No content impact: SERVER_VERSION fallback bumped to 2.9.3 in lockstep with pyproject (worktree_name contract-resolution fix release, #90); the version-resolution contract this sidecar describes is unchanged.
 - 2026-06-19T13:42 — No content impact: SERVER_VERSION fallback bumped to 2.9.2 in lockstep with pyproject (benchmark provider isolation release, task 260619); the version-resolution contract this sidecar describes is unchanged.
