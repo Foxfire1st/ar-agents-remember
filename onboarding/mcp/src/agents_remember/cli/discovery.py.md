@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/discovery.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-03T09:55+02:00                       |
-| lastVerifiedCommitHash | `08307e134bbdcff9b67e38232e513ebea21d3abf`   |
-| lastVerifiedCommitDate | 2026-07-03T11:19:21+02:00|
+| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6`   |
+| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
