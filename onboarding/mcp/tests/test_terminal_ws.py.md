@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T02:28+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-30                                       |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -55,6 +55,17 @@ client only when the tmux probe says the session exists, the first WebSocket aft
 from the detached session, stale catalog rows become `exited`, explicit terminate kills the tmux name
 and marks the row `terminated`, browser disconnect closes the local host attachment while leaving the
 catalog row `running`, and image upload can use a catalog cwd after dashboard restart.
+Slice L5 adds the leaf-registry cases over the same fake host + temp `TerminalCatalog`: the opener with a
+`leafKey` claims + persists `leaf_key` on the catalog row and echoes `leafKey` in the body, a null/absent
+leaf opener still succeeds (back-compatible), the opener and `POST /api/terminal/{session}/attach-leaf`
+both return `409 leaf-taken` when a *different* running session of the **same role** already owns the leaf,
+the same session re-claiming its own leaf is allowed (self-reclaim, no 409), and `attach-leaf` returns
+`200 attached` for a known running session while a `404` covers an unknown / terminated session. The L5
+fix pass adds the **per-(leaf, role)** cases: `test_terminal_shares_a_leaf_with_its_chat_but_two_chats_conflict`
+opens a `harness` chat + a `terminal` on one leaf (both `200` — they share the leaf), then proves a
+**second chat** and a **second terminal** each `409` (reporting the existing owner `chat-1` / `term-1`);
+`test_attach_leaf_terminal_does_not_conflict_with_existing_chat` proves the attach path is role-scoped too —
+a terminal can `attach-leaf` to a leaf already held by a running chat (`200`, the row persists the leaf).
 
 ### Conventions
 
@@ -75,6 +86,16 @@ primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py
 
 ## Update History
 
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: added per-(leaf, role) route coverage —
+  `test_terminal_shares_a_leaf_with_its_chat_but_two_chats_conflict` (a chat + a terminal share one leaf,
+  but a second chat and a second terminal each `409` against the existing same-role owner) and
+  `test_attach_leaf_terminal_does_not_conflict_with_existing_chat` (a terminal can `attach-leaf` to a leaf
+  already held by a chat). Verification metadata pinned until closeout stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added leaf-registry route coverage — the opener claims + persists
+  `leaf_key` and echoes `leafKey`, a null-leaf opener still works, the opener and
+  `POST /api/terminal/{session}/attach-leaf` both `409 leaf-taken` against a different running owner while
+  self-reclaim is allowed, and `attach-leaf` returns `200 attached` / `404` for unknown or terminated
+  sessions. Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-06-27T02:28+02:00 — Task 22 follow-up: `_FakeTerminalHost` now models `ensure` separately from
   `open`; opener tests assert no starter PTY client is opened or closed, and a new first-WebSocket test
   proves POST open leaves a detached session available for attach. Verification metadata pinned until

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-28T16:17+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:35+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,7 +16,10 @@
 
 ## Purpose
 
-`panels/` holds the cockpit panels — each a read over the Zustand store,
+`panels/` holds the cockpit panels — each a read over the Zustand store (L11: the
+Operations list admits active enclosures excluding cleanup completed AND abandoned,
+and joins docs to enclosures by exact case-insensitive ids only — reopen reuses the
+same leaf id, so the suffixed-leaf heuristic is gone),
 rendered into the shell's rails/viewport — plus the slice-6e **Chats** terminal view (the one
 interactive, full-bleed panel). `FlowTab.tsx` remains in the route as dormant diagnostic source, but
 Task 29 S7 hides the Lifecycle Flow tab from the cockpit shell. As of slice 5d every presentational
@@ -38,7 +41,9 @@ and the `Chats` `SessionList` switcher).
   empty state `No tasks.`, aria-labels "Group tasks by" / "Tasks"). **React Aria `ListBox`** (arrow-nav
   + type-ahead) grouped BY REPO | BY PHASE via a **React Aria `ToggleButtonGroup`** pivot. Rows are
   sidebar-scoped, not a dump of every projected task document: root/master documents (`kind: "master"` or
-  `task.json`) and leaf docs matched to an active enclosure (`taskRoot` + `leafId` — including a
+  `task.json`) and leaf docs matched to an active enclosure (`taskRoot` + `leafId`, every leafId
+  comparison **case-insensitive** since L10 because enclosure leaf ids are slugified lowercase while
+  doc ids are authored uppercase — including a
   **reopened** leaf's suffixed `leafId` admitted via the shared lifecycle, never a bare shared master
   lifecycle — with `cleanup !== "completed"`) become `taskdoc:<docPath>` rows; folder-keyed series fallback rows
   (`series:<seriesId>`) appear only when no master task document already covers them; runtime-only
@@ -56,16 +61,18 @@ and the `Chats` `SessionList` switcher).
   title. Hovering the title exposes the full label plus lifecycle/gate/repo/current-step context.
   `AgentPickupIndicator.tsx` renders `analytics.agentPickups` beside affected rows: fresh pending inbox
   entries show `waiting for agent`, and stale entries switch to a dismissible `check chat` warning.
-- `GateResponder.tsx` — shared **Respond** control for lifecycle gates/asks: one button opens a
+- `GateResponder.tsx` — shared **Respond** control for lifecycle gates: one button opens a
   request dialog with a human-readable request preview and collapsed raw-JSON diagnostics. For durable
   gates, Yes records a targeted `approve` through `data/actions.postGateDecision`, No requires a reason
-  and records a targeted `reject` with `note`, Dismiss records a targeted `cancel` that deletes the gate
-  interaction, and Chat is message-only through `data/sessions.deliverToSession` or
-  `data/operatorInbox.postOperatorInbox`. Successful approve/reject/chat/dismiss submissions close the
-  dialog after the server accepts the write/delivery. The request preview starts at 480px and can be
-  resized with a keyboard/pointer handle without resizing the response controls.
+  and records a targeted `reject` with `note`, and Dismiss records a targeted `cancel` that deletes the
+  gate interaction. The former message-only **Chat** mode was removed by L8 — conversational follow-up
+  belongs in the adjacent leaf chat, while durable gate decisions stay explicit here. Successful
+  approve/reject/dismiss submissions close the dialog after the server accepts the write. The request
+  preview starts at 480px and can be resized with a keyboard/pointer handle without resizing the
+  response controls.
 - `DetailPanel.tsx` — the typed selected task document, series master, or runtime lifecycle: phase stepper, the canonical **Gate Respond** surface
-  (durable gate or proto `ask`, routed through `GateResponder`), and the **task-document reader**
+  (durable gates only since L8 — proto `ask` items no longer raise the message-box responder; the
+  task-doc reader container carries `data-task-leaf-key` so selections resolve their leaf), and the **task-document reader**
   (slice 6g / task 17): a concrete `analytics.taskDocuments` master/light/subTask selected via
   `taskdoc:<docPath>` renders by its own `kind` even when no lifecycle is attached; folder-keyed
   `analytics.series` remains the legacy master aggregation fallback. A master shows its overview
@@ -109,6 +116,16 @@ and the `Chats` `SessionList` switcher).
   the abandon (skipped) / integration-conflict (blocked) tear-down step states corrected. Driven by
   the pure `engine-room/buildEngineRoomModel` over the server-composed `analytics.engineProcesses`;
   keeps the old `groupEngines` provider-stack view as a fallback. See [engine-room/ overview](engine-room/overview.md).
+- `file-viewer/` — the **File Viewer** centre tab (slice L2): a general-purpose read-only browser for code
+  + paired onboarding over the L1 files API (repo/scope selectors → code & onboarding Headless Trees → a
+  read-only CodeMirror dual-pane with bidirectional code↔onboarding pairing). Kept mounted across tab
+  switches; full-bleed. See [file-viewer/ overview](file-viewer/overview.md).
+- `changeset/` — the **Change-Set Viewer** screen (slice L4): a task-scoped takeover over the L3
+  `/api/changeset/*` API (column-1 changed code/onboarding rows + counters, column-2/3 a read-only
+  `@codemirror/merge` diff with split/inline/full-file/highlight-off toggles, code↔sidecar partner),
+  reusing the L2 File Viewer primitives. Opened from a `DetailPanel` change-set button as a Cockpit
+  full-bleed takeover (back link restores Operations); master scope is accumulated-only. See
+  [changeset/ overview](changeset/overview.md).
 - `MemoryMirror.tsx` — the segmented coverage/drift bar per repo + ledger currency + stalest
   sidecars (slice-3b analytics); drift classes mapped by record (forward-compatible).
 - `EventRiver.tsx` + `eventSummary.ts` — right-rail readable activity feed over the raw observer
@@ -131,7 +148,7 @@ and the `Chats` `SessionList` switcher).
   stays in `topology/constel.ts`, driven via refs); container/tip/legend styled by Panda. Task 33: it now
   reads the store's `activeWorktreeGroups` and runs `topology/model.activeTopologyInputs` to bound the
   inputs to active worktree enclosures before `buildTopology`.
-- `Chats.tsx` + `SessionList.tsx` + `Terminal.tsx` — the **Chats** view (slice 6e), the visible Mode B2
+- `Chats.tsx` + `SessionList.tsx` + `Terminal.tsx` + `RailChat.tsx` — the **Chats** view (slice 6e), the visible Mode B2
   surface: a full-bleed **"＋ Terminal"** control that asks the `POST /api/terminal` opener to spawn +
   own a session (a shell at the workspace root, 6e-2a), a left-rail **`SessionList`** switcher of open
   sessions (slice 6e-2c — a React Aria `GridList`, single-select = active session, with Task 22
@@ -153,9 +170,41 @@ and the `Chats` `SessionList` switcher).
 	  of trying to reconnect, and now mounts restored rows on first selection: the restored active row
 	  attaches immediately, unvisited rows wait until selected, and visited rows stay mounted while hidden.
 	  End/terminate releases the session label for reuse. Backend-persisted create/end changes broadcast
-	  id-bearing catalog invalidations across browser tabs; receivers remove terminated ids immediately,
-	  re-fetch the catalog, and can clear rows on a successful empty response.
+	  id-bearing catalog invalidations across browser tabs; L9 also broadcasts `"leaf"` for reassignment
+	  and periodically re-fetches the catalog so out-of-session leaf moves converge without refresh.
+	  Receivers remove terminated ids immediately, re-fetch the catalog, and can clear rows on a successful empty response.
 	  Persistence is covered by `Chats.test.tsx`.
+  **Slice L5** adds leaf-keyed attachment: the cockpit passes the **displayed** leaf's `selectedLeafKey`
+  (reported up from `DetailPanel` via `onViewLeaf`, not the master selection — L5 fix 1) + `taskDocuments`,
+  so `Chats` can bind or move the active session to a leaf through the server (an **"Attach to leaf"** /
+  **"Move leaf"** control → `attach-leaf`: `200` binds/moves + broadcasts a `"leaf"` catalog change,
+  `409` → "leaf already has a chat"), shows a bound-leaf badge, and passes a `leafNameFor` resolver into `SessionList` so each row appends its attached
+  leaf's name (task-doc title, fallback the leaf id) and carries the full label+leaf as a hover `title`
+  (fix 4, covered by `SessionList.test.tsx`). A new **`RailChat.tsx`** is the single-instance right-rail
+  chat the cockpit's River⇄Chat `RailToggle` swaps in for the Event River: anchored on the durable
+  `leafKey` (not the enclosure, so it survives finalize), it reuses the **same** `Terminal` +
+  `SessionComposer` + connection registry as the Chats page (one session shared between the two surfaces).
+  Per (leaf, role) it surfaces a **chat** (an agent — Claude Code / Codex / Pi.dev, chosen from a harness
+  picker via `fetchHarnesses`) on top and an optional **terminal** (a plain shell, via **＋ Terminal**)
+  split below; each pane has a **terminate** (End) control and a truncating, `title`-bearing header, and
+  surfaced sessions stay mounted-but-hidden across leaf switches. **L6** adds bind-time leaf context
+  handoff: when a harness chat is started while a leaf is displayed, or a free chat is successfully attached
+  to a picked leaf, `RailChat` builds a package from `taskDocuments` + `engineProcesses` (task metadata,
+  requirements, top-level steps, lifecycle, and worktree paths) and pastes it as a draft through the
+  shared session registry so the operator can add an instruction before submitting; free/off-leaf creation,
+  terminal creation, and rejected attaches do not inject. L9 keeps the picker visible for attached chats
+  too, so successful moves preserve the same xterm/WebSocket session and draft the destination leaf's
+  context while `leaf-taken` leaves local state untouched. The draft paste is delivered through
+  `data/terminal.ts`'s `pasteAndConfirm` — echo-confirmed attempts retried over a 30s boot deadline,
+  because a booting Claude Code discards stdin — and only a confirmed echo reports "delivered". The
+  shared `Terminal` wrapper enables xterm viewport scrollback for normal buffers and captures wheel
+  input with a precedence: an app with active mouse tracking keeps the wheel (xterm reports it as mouse
+  events — with the backend's per-session tmux `mouse on`, tmux scrolls pane history for normal-buffer
+  TUIs and passes wheel through to mouse-aware ones), normal-buffer scrollback scrolls the viewport, and
+  only mouse-less alternate-buffer panes get synthesized PageUp/PageDown. Leaf-attach + name-label are
+  covered by `Chats.test.tsx`; the rail's harness-choice start, chat/terminal split, role-independent
+  terminate, L6/L9 context handoff and move behavior, and terminal scrollback/wheel behavior are covered
+  by `RailChat.test.tsx`, `sessions.test.ts`, `terminal.test.ts`, and `Terminal.test.tsx`.
 - `EmptyStateBackdrop.tsx` — a **shared empty-state panel** (slice 07b polish): a faint, effects-gated
   boomerang-video atmosphere behind centered empty-state text, lifted from the engine-room G6 backdrop
   (`engine-room/engineRoomStyles` `backdrop`/`backdropVideo`). The message children always render; the
@@ -164,14 +213,21 @@ and the `Chats` `SessionList` switcher).
   belong to the pre-rendered 60fps boomerang MP4 assets, not a DOM/CSS/Motion transform layer. Used by
   `DetailPanel`'s no-selection state (battle cruiser) and `Chats`'s no-session state (adjutant); the host
   slot must be a flex column so its `flex:1` canvas fills. Covered by `EmptyStateBackdrop.test.tsx`.
-- `HighlightComposer.tsx` — the slice-6f **highlight → context-package** composer: a cockpit text
-  selection raises a React Aria `Popover` (mounted cockpit-wide in `CockpitShell`, the cockpit's first
-  overlay) to send the selection + a message into a chat session's stdin — single chat / a selector /
-  create-on-Enter when none is open, plus a ＋ new-chat button; **deliver + submit** over the live
-  `{type:stdin}` channel via `data/sessions`. When a lifecycle is selected, open-chat targets are
-  filtered to sessions tagged with that lifecycle and create targets inherit the lifecycle id. No silent
-  action (a selection only *raises* it). Covered by `HighlightComposer.test.tsx`; the pure selection
-  rules by `data/selection.test.ts`.
+- `HighlightComposer.tsx` — the slice-6f **highlight → context-package** composer. Every selection
+  raises the same **"Add to chat" pill**; nothing pastes on selection alone (the L8-r1 correction of
+  L8's invisible auto-paste). The pill CLICK routes one of two ways. **Direct leaf-chat paste:** when
+  the selection carries the viewed leaf's `data-task-leaf-key`, the right-rail leaf chat is active, and
+  that leaf has a bound running chat, the click pastes straight into that chat's draft via
+  `pasteDraftToSession` (echo-confirmed, no Enter) with no target selector or message box; an
+  unconfirmed paste opens the generic composer for the same selection. **Generic composer:** selections
+  without a confident leaf-chat target open the React Aria `Popover` composer (mounted cockpit-wide in
+  `CockpitShell`) to send the selection + a message into a chat session's stdin — single chat / a
+  selector / create-on-Enter when none is open, plus a ＋ new-chat button; **deliver + submit** over the
+  live `{type:stdin}` channel via `data/sessions`. When a lifecycle is selected, open-chat targets are
+  filtered to sessions tagged with that lifecycle and create targets inherit the lifecycle id. No
+  silent action (a selection only raises the pill; pastes and sends happen on explicit clicks). Covered
+  by `HighlightComposer.test.tsx`; the pure selection rules (including leaf-key tagging) by
+  `data/selection.test.ts`.
 - `FlowTab.tsx` — the former **Lifecycle Flow** view (task 26): a **static** diagnostic visualization of the
   build-job lifecycle (no store read — module-level data + co-located Panda `css`/`cva`). Task 29 S7
   removed it from the cockpit `View` union and mode bar, so this source is dormant until a dev-only
@@ -211,6 +267,83 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-03T00:35+02:00 — L11 route impact: LifecycleList excludes abandoned enclosures from the active rows and drops the -rN startsWith doc-admission heuristic (task_reopen keeps leaf ids stable).
+- 2026-07-02T21:45+02:00 — L10 route impact: `LifecycleList`'s `enclosureForDoc` admission is now
+  case-insensitive on every leafId comparison (stem, doc id, and the lifecycle-guarded reopen-suffix
+  rule) — enclosure leaf ids are slugified lowercase while doc ids are authored uppercase, so active
+  series leaf docs failed the admission and rendered as doc-less runtime rows with no task content and
+  no viewed-leaf chat chain. Verification metadata pinned until closeout stamps the L10 commit.
+- 2026-07-02T20:55+02:00 — L8-r1 route correction (developer feedback): the direct leaf-chat paste is
+  now triggered by the visible "Add to chat" pill CLICK instead of firing automatically on selection —
+  the auto-paste made the interaction invisible and pasted unintended highlights. The pill stays for
+  every selection with one consistent label; only the post-click routing differs (direct draft paste vs
+  generic composer), and an unconfirmed direct paste opens the composer. Verification metadata pinned
+  until closeout stamps the L8-r1 commit.
+- 2026-07-02T20:15+02:00 — L8 route impact: highlight handling split into a **direct leaf-chat draft
+  paste** primary path (selection inside the viewed leaf's task reader + active rail chat + bound leaf
+  chat → `pasteDraftToSession`, no popover, popover fallback on failed paste) with the generic
+  `HighlightComposer` popover as fallback only; `GateResponder` lost its message-only **Chat** mode
+  (durable approve/reject/dismiss remain); `DetailPanel` no longer raises the responder for proto
+  `ask`-only items and tags the task-doc reader with `data-task-leaf-key`. Covered by the updated
+  `HighlightComposer/DetailPanel/GateResponder` tests and `selection.test.ts`. Verification metadata
+  pinned until closeout stamps the L8 commit.
+- 2026-07-02T17:04+02:00 — L9 route impact: extended the existing `Chats.tsx` / `RailChat.tsx` route model
+  for hosted chat leaf reassignment. Attached chats keep the picker as a move control, successful moves
+  emit `"leaf"` catalog invalidations and draft the destination leaf context, and out-of-session catalog
+  changes live-refresh through BroadcastChannel or polling. Verification metadata pinned until closeout
+  stamps the L9 commit.
+- 2026-07-02T16:35+02:00 — Reopened L6 wheel-precedence route impact: the shared `Terminal` wrapper now
+  defers wheel input to xterm's native mouse-report path whenever the attached app tracks the mouse
+  (`term.modes.mouseTrackingMode !== "none"`). Combined with the backend's per-session tmux `mouse on`,
+  wheel scrolling works for both normal-buffer TUIs (tmux copy-mode pane history — Codex) and
+  mouse-aware alternate-screen TUIs (pass-through — Claude Code); synthesized PageUp/PageDown remains
+  only as the mouse-less alternate-buffer fallback. `pasteDraftToSession` deliveries are now
+  echo-confirmed with boot-deadline retries (`pasteAndConfirm`), fixing the leaf-context draft silently
+  discarded by a booting Claude Code. Verification metadata pinned until closeout stamps the follow-up
+  commit.
+- 2026-07-02T15:03+02:00 — Reopened L6 served-page route impact: live 8770 inspection showed Codex-style
+  chat panes in xterm's alternate buffer with no viewport scrollback, so the shared `Terminal` wrapper now
+  keeps normal-buffer viewport scrolling but maps alternate-buffer wheel movement to PageUp/PageDown
+  navigation. Verification metadata pinned until closeout stamps the follow-up commit.
+- 2026-07-02T14:28+02:00 — Reopened L6 route impact: the existing shared `Terminal` wrapper now captures
+  wheel input, swallows partial pixel deltas, and routes accumulated movement to xterm viewport scrolling,
+  preventing mouse wheel movement from becoming PTY up/down input in Chats and right-rail panes. No new
+  route or panel surface was added; verification metadata pinned until closeout stamps the follow-up commit.
+- 2026-07-02T13:07+02:00 — Reopened L6 route impact: leaf-context handoff remains in the existing
+  `RailChat` route, but now pastes the packet as editable draft input instead of submitting it. The shared
+  `Terminal` wrapper also enables xterm scrollback for Chats and right-rail panes. Verification metadata
+  pinned until closeout stamps the follow-up commit.
+- 2026-07-01T01:19+02:00 — L6 route impact: extended the `Chats.tsx` / `RailChat.tsx` route-model
+  description with bind-time leaf context handoff. The route still owns the existing hosted chat surfaces;
+  `RailChat` now sends a projected context package only after start-on-leaf or successful free-chat attach,
+  using `taskDocuments` plus `engineProcesses` for task/worktree facts. Verification metadata pinned until
+  closeout stamps the L6 commit.
+- 2026-06-30T00:00:00+02:00 — L5 follow-up route impact: reshaped the **`RailChat`** route-model description — it is now a
+  per-(leaf, role) **chat (agent harness) + terminal (shell) vertical split** with a harness-choice start
+  picker (`fetchHarnesses`), a separate ＋ Terminal, and an independent **terminate** per pane (replacing the
+  pre-fix single "＋ Start chat for this leaf"); added `RailChat.test.tsx` coverage. The Chats/`SessionList`
+  leaf key now comes from the **displayed** leaf via `DetailPanel.onViewLeaf` (not the master selection),
+  and `SessionList` rows gained a hover `title` (full label + bound leaf, fix 4). Verification metadata
+  pinned until closeout stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat) route impact: added **`RailChat.tsx`** (the single-instance right-rail
+  leaf chat the cockpit `RailToggle` swaps in for the Event River, reusing the shared `Terminal` +
+  `SessionComposer` + connection registry) to the Route Model, and extended the **Chats** bullet with
+  leaf-keyed attachment — `Chats` gains an "Attach to leaf" control (`attach-leaf`, `200` bind / `409`
+  "leaf already has a chat") + a bound-leaf badge, and `SessionList` gains a `leafNameFor` per-row leaf
+  label (task-doc title, fallback leaf id). Verification metadata pinned until closeout stamps the L5
+  commit.
+- 2026-06-29T23:00+02:00 — No route impact: L4a added change-set buttons on the task-document reader
+  (`DetailPanel`'s `DocChangeSetBar` — series on a master, committed/working on a leaf) and refined the
+  `changeset/` child route (leaf committed/working views + a diff-highlight rectangle). The `panels/`
+  route model — the panel list + the `file-viewer/`/`changeset/` child routes — is unchanged; the detail
+  lives in the `DetailPanel.tsx` sidecar and the `changeset/` overview. Verification metadata pinned until
+  closeout stamps the L4a commit.
+- 2026-06-29T16:40+02:00 — Operations Integration L4 route impact: added the `changeset/` child route — the **Change-Set Viewer** screen (a task-scoped takeover over the L3 `/api/changeset/*` API; a read-only `@codemirror/merge` diff with split/inline/full-file/highlight-off toggles; a code↔sidecar partner column), opened from a `DetailPanel` change-set button as a Cockpit full-bleed takeover. See the new [changeset/ overview](changeset/overview.md). Verification metadata pinned to the task base until closeout stamps the L4 code commit.
+- 2026-06-29T09:06+02:00 — Operations Integration L2 route impact: added the `file-viewer/` child route —
+  the **File Viewer** centre tab (a read-only code + paired-onboarding browser over the L1 files API; a
+  reusable CodeMirror dual-pane; bidirectional code↔onboarding pairing; kept mounted across tab switches).
+  See the new [file-viewer/ overview](file-viewer/overview.md). Verification metadata pinned to the task
+  base until closeout stamps the L2 code commit.
 - 2026-06-28T16:17+02:00 — Task 35 route impact: `LifecycleList` now also admits a **reopened** leaf's
   suffixed-leaf enclosure (`leafId` = stem/`id` + cycle suffix, e.g. `…-s7`) on the combined shared-lifecycle
   + suffixed-leaf match (never a bare shared master lifecycle), and runtime-only enclosure-backed rows nest

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-29T23:18+02:00                     |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-03T12:50+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -19,7 +19,11 @@
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
-coordinator `system/settings.json`.
+coordinator `system/settings.json`. The tool surface gained `task_reopen` (L11):
+reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
+whose worktree recreation stays with `worktree_start`. Since L12 every managed
+provider container carries an explicit compose memory cap (watchers 512m,
+falkordb/ollama 2g, runner 1g, postgres 512m) with self-recycling OOM behavior.
 
 ## Hot Path Summary
 
@@ -216,8 +220,11 @@ The MCP package separates three surfaces:
   /api/terminal/{session}/terminate`, and image-upload cwd fallback through the catalog. Task 22
   follow-ups keep that catalog durable across browser refresh and multi-tab use: openers create
   detached tmux sessions, each WebSocket attaches its own tmux client, browser disconnects detach
-  non-destructively, and explicit termination stays hidden across later exit bookkeeping. A service
-  domain with its own route overview.
+  non-destructively, and explicit termination stays hidden across later exit bookkeeping. L9 adds the
+  shared `serving.terminal_leaf_assignment` move policy and the public
+  `attach_terminal_session_to_leaf` MCP tool so an agent can move its hosted chat's durable `leafKey`
+  through the same catalog uniqueness rules as the dashboard attach route. A service domain with its own
+  route overview.
 - `agents_remember.controlplane` owns the **gate control plane** (task 6): the durable,
   append-only `ar-gate-record/v1` `GateRecord` + `GateStore` (co-located with the observer
   event log under `observer_root`) and the five `gate_*` MCP tools (`mcp/tools/gates.py`)
@@ -367,8 +374,83 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-03T12:50+02:00 — No route impact: L15 push-gate fixups (type narrowing + test import hygiene only; the pre-push quality gate now exits 0 across the tree).
+- 2026-07-03T11:20+02:00 — No route impact: L14 release bump only (pyproject version + SERVER_VERSION fallback); no mcp behavior or structure change.
+- 2026-07-03T02:58+02:00 — No route impact: L13 reopen drill second cycle (marker comment extension only).
+- 2026-07-03T02:40+02:00 — No route impact: L13 reopen drill: a marker comment in mcp/tests/conftest.py only; no mcp behavior or structure change.
+- 2026-07-03T01:55+02:00 — L12 route impact: provider compose templates gain memory caps; CGC watch hygiene fixed (enriched .cgcignore reaches the watch context, committed bundle excluded per-repo, fired debounce timers popped via a maintained patch, image revision ar2).
+- 2026-07-03T00:35+02:00 — L11 route impact: task_reopen tool added (tasks/reopen.py + leaf_doc.py, task_doc-side controller/payload/model); worktree start honors cleanup=reopened and restamps leaf-doc lifecycles; the reducer projects abandon terminality from contracts.
+- 2026-07-02T21:45+02:00 — No route impact: the L10 binding repair is a one-line-scale join fix inside
+  `observer/snapshots.py` (described in the observer route overview) plus its
+  `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
+  changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
+- 2026-07-02T20:55+02:00 — No route impact: the L8-r1 correction (pill-click-triggered direct leaf
+  paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
+  effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
+  metadata pinned until closeout stamps the L8-r1 commit.
+- 2026-07-02T20:15+02:00 — No route impact: operations-integration L8 is a dashboard frontend change
+  (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
+  regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
+  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
+  commit.
+- 2026-07-02T18:35+02:00 — No route impact: operations-integration L7 repaired the `cgc_dependencies`
+  native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
+  guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
+  subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
+  the L7 commit.
+- 2026-07-02T17:25+02:00 — No route impact: the reopened-L6 copy-mode escape stays inside
+  `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
+  route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
+  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+- 2026-07-02T17:04+02:00 — L9 route impact: added a package-level agent-facing terminal reassignment tool
+  (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
+  route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
+  Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-07-02T16:35+02:00 — No route impact: the reopened-L6 wheel/paste fixes touch
+  `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
+  route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
+  `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
+  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+- 2026-07-02T15:03+02:00 — No route impact: the L6 alternate-buffer wheel follow-up rebuilt and
+  re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
+  `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
+  package data served by the existing dashboard package path; no MCP package source behavior, tool
+  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
+  follow-up commit.
+- 2026-07-02T14:15+02:00 — No route impact: L6 closeout rebuilt and re-synced the generated
+  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
+  terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
+  static package data served by the existing dashboard package path; no MCP package source behavior,
+  tool surface, or subsystem narrative changed.
+- 2026-07-01T01:43+02:00 — No route impact: L6 rebuilt and re-synced the generated
+  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
+  frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
+  by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
+  narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
+- 2026-06-30T00:00:00+02:00 — No route impact: L5 (Sidebar chat: leaf-keyed attachment) added the leaf→chat registry to
+  the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
+  (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
+  + `active_for_leaf`, and the generated `package_data/dashboard/` bundle (+ fingerprint) was
+  rebuilt/re-synced for the sidebar-chat frontend (the rail River⇄Chat toggle + leaf attach). The serving
+  change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
+  shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
+  unchanged. Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-06-29T23:18+02:00 — No route impact: `worktrees/modules/start.py` now derives the recorded memory base from the source branch tip (not the repo HEAD); nothing at the mcp-package route level changes (detail in the start.py file sidecar; task 260629_post-landing-cleanup L3).
+- 2026-06-29T23:00+02:00 — No route impact: operations-integration L4a — `serving/changeset.py` gained the
+  doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
+  committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
+  bundle (+ fingerprint) was rebuilt/re-synced for the doc-reader change-set buttons + the diff-highlight
+  rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
+  the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
+  Verification metadata pinned until closeout stamps the L4a commit.
 - 2026-06-29T22:57+02:00 — No route impact: the `task_doc` MCP tool docstring now lists the `remove_subtask` op (server.py registration/forwarding only); nothing at the mcp-package route level changes (detail in the server.py / task_doc_tools.py file sidecars; task 260629_post-landing-cleanup L2).
+- 2026-06-29T17:00+02:00 — No route impact: operations-integration L4 review follow-up — `serving/changeset.py` gained the master NET change-set (`master_changeset` net `base→tip` + `master_file_diff`, the `/api/changeset/file-diff` `master` param), and the generated `package_data/dashboard/` bundle (+ fingerprint) was rebuilt/re-synced for the master-inspection + code-view readability/scroll polish. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar; the shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L4 follow-up commit.
+- 2026-06-29T16:40+02:00 — No route impact: operations-integration L4 rebuilt and re-synced the generated `package_data/dashboard/` bundle (+ the sibling `package_data/dashboard.fingerprint`) with `scripts/sync-dashboard.py` after the Change-Set Viewer frontend source changes under the in-scope root `dashboard/src/` sub-project (new `@codemirror/merge` dep). The shipped bundle remains generated static package data served by the existing dashboard package path; no mcp-package source behavior or tool surface changed. Verification metadata pinned until closeout stamps the L4 code commit.
+- 2026-06-29T15:30+02:00 — No route impact: operations-integration L3 added a read-only change-set API (`serving/changeset.py`: `GET /api/changeset/{task,file-diff,master}`) plus a shared `serving/scope.py` (scope resolution + error map extracted from `serving/files.py`) and a new `worktrees/modules/git.py` `changed_files_with_counts` primitive. These are serving-layer / worktrees-module additions documented in the `serving/` and `worktrees/modules/` route overviews and the file sidecars; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L3 code commit.
+- 2026-06-29T09:06+02:00 — No route impact: operations-integration L2 rebuilt and re-synced the generated `package_data/dashboard/` bundle (+ the sibling `package_data/dashboard.fingerprint`) with `scripts/sync-dashboard.py` after the File Viewer frontend source changes under the in-scope root `dashboard/src/` sub-project. The shipped bundle remains generated static package data served by the existing dashboard package path; no mcp-package source behavior or tool surface changed. Verification metadata pinned until closeout stamps the L2 code commit.
+- 2026-06-28T22:41+02:00 — No route impact: operations-integration L1 added a read-only dashboard files API (`serving/files.py`) plus a shared `kernel/sidecar_pairing.py` helper and its test. These are serving-layer / shared-kernel additions documented in the `serving/` route overview and the file sidecars; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-28T20:30+02:00 — No route impact: a `find_worktree_contract` archive-skip + docstring fix under `kernel/coordination_context/`; nothing at the mcp-package route level changes (detail in the contracts.py file sidecar; task 260628_post-landing-cleanup).
 - 2026-06-28T16:17+02:00 — Task 35 route impact: `scripts/sync-dashboard.py --check` is now source-aware —
   `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
@@ -559,9 +641,9 @@ changed files in check mode.
 - 2026-06-21T04:10+02:00 — Slice 05l Part 1 (backend teardown visibility): the `agents_remember.observer` reducer now projects the `abandoned` worktree phase (sourced from `worktrees/modules/guidance.py`'s new `cleanup == "abandoned"` branch) and **drops disposed** (cleaned-up/abandoned) enclosures from the Engine Room `Analytics.engineProcesses` so the frontend (05k) animates the teardown; refreshed the observer Route Model bullet. The mcp-package detail lives in the `observer/` + `worktrees/modules/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 05l-P1 code commit.
 - 2026-06-21T02:44+02:00 — No route impact: slice 6g changes are observer-local — `observer/read_task_documents` contract-pairs masters + resolves cross-master links, and `observer/projection.TaskDocNode` gains `subTasks`/`sections`/`masterLifecycleId` (detail in `src/agents_remember/observer/overview.md`). The `mcp/` package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 6g code commit.
 - 2026-06-19T20:30 — Task 6 slice 6f: `agents_remember.serving` gained `POST /api/terminal/{session}/image` (save a validated screenshot under the session cwd for path-injection, `python-multipart` dep) and a harness-scoped Ctrl-Z strip on the terminal host. Refreshed the serving Route Model bullet; per-file detail lives in `serving/overview.md` + the `app.py`/`terminal.py` sidecars. Verification metadata pinned until closeout stamps the 6f code commit.
-- 2026-06-19T14:05 — No route impact: task 6 slice 6e-4 modified `serving/terminal.py` (controlling-tty via `os.login_tty` + a seeded winsize so tmux honors resize) and `mcp/tests/test_terminal.py` (added `test_spawn_seeds_default_winsize`); both are internal to the already-documented `serving/` sub-route (detail in `serving/overview.md` + the `terminal.py` / `test_terminal.py` sidecars). The `mcp/` package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 6e-4 code commit.
 - 2026-06-19T15:50+02:00 — No route impact: the 5h H4 cleanup teardown + landing-source flag fix only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The frontend change lives in the in-scope root `dashboard/src/`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-19T15:00+02:00 — No route impact: the 5h H3 remote/PR strip readability + connector pass only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The frontend change lives in the in-scope root `dashboard/src/`. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-19T14:05 — No route impact: task 6 slice 6e-4 modified `serving/terminal.py` (controlling-tty via `os.login_tty` + a seeded winsize so tmux honors resize) and `mcp/tests/test_terminal.py` (added `test_spawn_seeds_default_winsize`); both are internal to the already-documented `serving/` sub-route (detail in `serving/overview.md` + the `terminal.py` / `test_terminal.py` sidecars). The `mcp/` package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 6e-4 code commit.
 - 2026-06-19T13:57+02:00 — No route impact: slice 5h H3 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope; synced from `dashboard/dist`); no mcp-package source behavior changed. The H3 frontend change (engine-room remote/PR landing strip) lives in the in-scope root `dashboard/src/` with its own route + file sidecars. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-19T07:23+02:00 — No route impact: slice 3c R5 adds a `dry_run` flag to the `task_doc` tool (act-by-default false; true returns `rendered`/`diff`/`wouldLose` without writing) — an optional param on an existing tool, no new tool surface; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-19T06:39+02:00 — No route impact: the engine-room crash fix rebuilt the shipped dashboard bundle under `package_data/dashboard/` (synced from `dashboard/dist`); it is a generated artifact and no mcp package route surface changed. Verification metadata pinned until closeout stamps the code commit.
@@ -571,9 +653,9 @@ changed files in check mode.
 - 2026-06-19T03:17+02:00 — No route impact: slice 3c reopened (R1, masters observable) adds a folder-keyed series/master projection inside the `observer/` route (`read_series_documents` + `SeriesNode`/`Analytics.series`) plus the `series_total`/`series_done` helpers in the `tasks/` route; both carry their own sub-route overviews and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T21:27 — Task 6 slice 6e-2b: `agents_remember.serving` gained `harnesses.py` (the curated harness launch registry — Claude Code/Codex/Pi.dev + `shutil.which` detection) + `app.py`'s `GET /api/harnesses` and a `kind="harness"` opener branch. Refreshed the serving Route Model bullet (opener now spawns a shell *or* a detected harness). Per-file detail lives in the `serving/` route. Verification metadata pinned until closeout stamps the 6e-2b code commit.
 - 2026-06-18T21:25+02:00 — No route impact: slice 5h Tier 2 enriches the `observer/` ledger window with per-side commit message + date via a best-effort batched `git log` (detail in the `observer/` overview) and expands `mcp/tests/test_observer_projection.py` under this route with `LedgerCommitMetaTests` (real git repos); the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-18T18:00+02:00 — No route impact: slice 5h's ledger popover extends the `observer/` ledger surface (additive `LedgerNode.rows` / `EngineProcessNode.ledgerRows`; detail in the `observer/` overview) and expands `mcp/tests/test_observer_projection.py` under this route with the windowing tests; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T17:40 — Task 6 slice 6e-2a: `agents_remember.serving` `app.py` gained the `POST /api/terminal/{session}` **opener** (the dashboard spawns + owns a shell session at `config.workspace_root` via the pure `resolve_terminal_launch` → `host.open`; server-resolved command). Refreshed the serving Route Model bullet. Harness kinds + per-harness buttons are 6e-2b. Verification metadata pinned until closeout stamps the 6e-2a code commit.
 - 2026-06-18T16:10 — Task 6 slice 6d-2: `agents_remember.serving` `app.py` gained the `@app.websocket("/api/terminal/{session}")` Mode B2 bridge (PTY ↔ WebSocket — binary out, JSON `stdin`/`resize` in, `{type:exit}` on child exit, attach-only + tmux-persistent) + the `terminal_host` `create_app` param; `pyproject.toml` added the `websockets` core dep (uvicorn's WS impl). Refreshed the serving Route Model bullet; per-file detail lives in the `serving/` route. The xterm.js visual is 6e. Verification metadata pinned until closeout stamps the 6d-2 code commit.
-- 2026-06-18T18:00+02:00 — No route impact: slice 5h's ledger popover extends the `observer/` ledger surface (additive `LedgerNode.rows` / `EngineProcessNode.ledgerRows`; detail in the `observer/` overview) and expands `mcp/tests/test_observer_projection.py` under this route with the windowing tests; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T15:40 — Task 6 slice 6d-1: `agents_remember.serving` gained the **Mode B2 terminal host** (`terminal.py` — a `TerminalHost` registry of tmux-wrapped stdlib-`pty` sessions, injectable spawn, fixed-argv/localhost posture) + `mcp/tests/test_terminal.py`. Refreshed the serving Route Model bullet; per-file detail lives in the `serving/` route. The WebSocket bridge + `websockets` dep are 6d-2, the xterm.js visual 6e. Verification metadata pinned until closeout stamps the 6d-1 code commit.
 - 2026-06-18T14:05 — No route impact: task 6 slice 6c Part A is within the `agents_remember.observer` sub-route (gate projection — `read_gates` + `_attach_gates` / `_gate_attention` materialize a durable gate onto the lifecycle); the mcp package route model this overview describes is unchanged — detail lives in the `observer/` route overview + file sidecars (the `mcp/tests` test addition has no package-route impact). Verification metadata pinned until closeout stamps the 6c Part A code commit.
 - 2026-06-18T12:10 — Task 6 slice 6b: the `agents_remember.controlplane` domain became **enforcing** — new `enforcement.py` (`evaluate_closeout_gate`) binds `worktree_closeout_apply` on a developer-approved gate, and `agents_remember.serving`'s POST plane records gate decisions (`gate_decide_for_lifecycle`). Refreshed the controlplane + serving Route Model bullets; per-file detail lives in those routes + the synced l-01/c-12-closeout skill sidecars under this package. Verification metadata pinned until closeout stamps the 6b code commit.

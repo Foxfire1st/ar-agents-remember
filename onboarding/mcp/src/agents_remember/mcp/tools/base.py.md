@@ -5,23 +5,25 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                      |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                      |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
 
 Shared payload-builder primitives for the MCP tools package: the advertised
 public tool-name list and the single response-validation helper that every
-modeled builder uses.
+modeled builder uses. L11 adds `task_reopen` to `PUBLIC_TOOLS`, listed beside
+`task_doc` (it is a task tool, not a worktree tool).
 
 ## Code Commentary
 
 ### Logic
 
-Declares `TRANSPORT = "stdio"`, the `PUBLIC_TOOLS` tuple (51 advertised MCP tools:
+Declares `TRANSPORT = "stdio"`, the `PUBLIC_TOOLS` tuple (52 advertised MCP tools:
 core/context/runtime/memory/provider/worktree/baseline/carryover/benchmark tools,
+the L9 `attach_terminal_session_to_leaf` hosted-chat/terminal leaf reassignment tool,
 the public lifecycle signals `lifecycle_start`/`lifecycle_resume`/
 `lifecycle_turn_end_notification` (task-28 NOTIFY-AND-CONTINUE turn end)/
 `lifecycle_end`/`switch_lifecycle`/`lifecycle_phase`, the slice-3c `task_doc` authoring tool,
@@ -92,6 +94,10 @@ a real `tokens`/`tokenizer`/`tokenCountExact` rather than the model defaults.
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 advertises `task_reopen` in PUBLIC_TOOLS next to `task_doc`.
+- 2026-07-02T17:04+02:00 — L9: `PUBLIC_TOOLS` now advertises
+  `attach_terminal_session_to_leaf`, the agent-facing hosted chat/terminal leaf reassignment tool.
+  `_tool_payload` behavior is unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): `PUBLIC_TOOLS` grew to 51 with `lifecycle_turn_end_notification`, and `_tool_payload` gained the awaiting-developer auto-dismiss — after `emit_tool`, when `amb.current.state == "awaiting-developer"` and `tool_name != "lifecycle_turn_end_notification"`, it calls `amb.resume_from_await()` so the next AR tool call resumes the parked lifecycle to `running` (notification = stop, not stall). The tool-name guard is load-bearing: the notification flows through the same choke point in the call that parked the lifecycle, so without it the notification would self-dismiss. The auto-dismiss runs between `emit_tool` and the task-27 next-step attachment. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T18:43+02:00 — Task 27: after `amb.emit_tool(...)`, `_tool_payload` now attaches `finalized["nextStep"] = next_step_for(amb, tool_name)` (new top-level `from .next_step import next_step_for`) when non-`None`, so the single response choke point carries both the slice-2b emission hook and an engine-computed next-step hint for every in-lifecycle tool, with no per-tool wiring. `next_step_for` is exception-contained. New collaborator `mcp/src/agents_remember/mcp/tools/next_step.py`.
 - 2026-06-26T14:16+02:00 — Task 25: `PUBLIC_TOOLS` now advertises `lifecycle_gate` and no longer advertises `lifecycle_block`, `gate_create`, `gate_wait`, or `gate_response_wait`; `_tool_payload` validates against `TOOL_RESPONSE_MODELS` so retained compatibility builders still keep strict response contracts.

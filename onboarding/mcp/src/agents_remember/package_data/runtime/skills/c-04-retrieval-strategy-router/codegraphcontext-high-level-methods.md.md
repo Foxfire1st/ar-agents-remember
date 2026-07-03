@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`             |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`             |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -28,6 +28,8 @@ and do not request the removed generic `cgc_query` facade.
 The document starts with the typed MCP provider contract and maps common
 relationship questions to `cgc_symbol_search`, `cgc_callees`, `cgc_callers`,
 `cgc_dependencies`, `cgc_complexity`, and `cgc_visualize`.
+Its native-operation table records `cgc_dependencies` as the current
+CodeGraphContext `analyze deps <module>` command shape.
 
 Each method section gives a placeholder MCP request and a synthetic output
 shape. The examples cover symbol location, downstream calls, reverse callers,
@@ -89,6 +91,8 @@ contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-07-02T15:40+02:00 — Updated the CGC dependency-method catalog to document
+  the current native command shape as `analyze deps <module>`.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the CGC query examples dropped the now-redundant `dry_run=false` (queries return results by default; `dry_run=true` returns the planned command without executing it).
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-23T21:25+02:00: Simplified provider-authority wording in the CGC tool guidance.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-28T07:32+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T17:04+02:00                    |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,8 +24,11 @@
 `POST /api/actions/dismiss`, the durable terminal-session catalog
 surface (`GET /api/terminal/sessions`, catalog-backed per-WebSocket tmux-client attach, and explicit
 `POST /api/terminal/{session}/terminate`), the `POST /api/terminal/{session}` opener that ensures a
-detached tmux session — a shell or a detected harness (6e-2a/6e-2b) — the `GET /api/harnesses` detection
-endpoint (6e-2b), image upload under a live or catalog-restored cwd, and the static mount. It is the
+detached tmux session — a shell or a detected harness (6e-2a/6e-2b) — the L5/L9
+`POST /api/terminal/{session}/attach-leaf` leaf-claim/move route, the `GET /api/harnesses` detection
+endpoint (6e-2b), image upload under a live or catalog-restored cwd, the read-only `/api/files/*` files API
+(operations-integration L1) and the read-only `/api/changeset/*` change-set API (L3) — both registered
+just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 
 ## Code Commentary
@@ -95,15 +98,31 @@ fixtures stay deterministic. Tests can still force either branch explicitly.
   terminated rows are filtered by the catalog.
 - `POST /api/terminal/{session}` (slice 6e-2a/6e-2b) is the **opener**: the dashboard ensures a
   detached durable tmux session, then the WebSocket attaches with a per-tab client. `TerminalOpenRequest` carries a `kind` (+ optional `harness`),
-  a display `label`, and `lifecycleId`; `resolve_terminal_launch(kind, workspace_root, shell, harness)` maps it to `(cwd, argv)`
+  a display `label`, `lifecycleId`, and (L5) `leafKey` (alias `leafKey`); `resolve_terminal_launch(kind, workspace_root, shell, harness)` maps it to `(cwd, argv)`
   **server-side** — `kind="terminal"` ⇒ `[$SHELL]` (`os.environ["SHELL"]` or `/bin/bash`),
   `kind="harness"` ⇒ the registry argv for `harness` (rejecting an absent / unknown / not-installed
-  id), both at `config.workspace_root`; only ids are on the wire, never an argv. `host.ensure(...,
+  id), both at `config.workspace_root`; only ids are on the wire, never an argv. **L5** then calls
+  `_claim_leaf_or_409(catalog, leaf_key, session, role=role_for_kind(kind))` *before* the spawn so a leaf
+  already owned by a **different running session of the same role** is refused `409
+  {"status":"leaf-taken","leafKey","session"}` (self-reclaim is allowed). The guard is **role-scoped**
+  (L5 fix 2): a `kind="terminal"` open claims the terminal slot and a `kind="harness"` open claims the
+  chat slot, so opening a terminal never 409s against the leaf's agent chat and vice-versa — a leaf can hold
+  one running chat AND one running terminal. `host.ensure(...,
   suspend_unsafe=(kind=="harness"))` returns the tmux binding (200; a bad kind/harness ⇒ 400), and the route
   upserts a `TerminalCatalogEntry` carrying the label, kind, optional harness/lifecycle, cwd, tmux name,
-  command argv, timestamps, and `running` status. There is no starter PTY client to close, so a brand-new
+  command argv, timestamps, `running` status, and `leaf_key=request.leaf_key or (existing.leaf_key …)` (an
+  explicit key claims now; otherwise an existing binding is preserved across re-open/reconnect). The 200
+  body echoes the persisted `leafKey`. There is no starter PTY client to close, so a brand-new
   row stays backed by tmux until the first WebSocket attaches. A bare-pane harness is opened
   suspend-unsafe so the host strips Ctrl-Z for it (slice 6f); a shell is not.
+- `POST /api/terminal/{session}/attach-leaf` claims or **moves** a leaf for an **existing** session from
+  the Chats page — enclosure-free, no respawn. `TerminalAttachLeafRequest` carries the required `leafKey`;
+  the route delegates to `assign_terminal_session_to_leaf(catalog, session_id, leaf_key)`, so browser
+  actions and the agent-facing MCP tool share one server-authoritative catalog policy. The result maps to
+  `404 {"status":"unknown-session"}` for an unknown/terminated session, `409 {"status":"leaf-taken",...}`
+  when a different running session of the same role owns the target leaf, and
+  `200 {"session","status":"attached","leafKey"}` after persisting `entry.with_leaf_key(leaf_key)`.
+  A conflict does not mutate the catalog.
 - `POST /api/terminal/{session}/terminate` is the destructive terminal action. It accepts either a live
   host session or a catalog row, kills the tmux session through `TerminalHost.terminate`, marks the
   catalog row `terminated`, and returns `404 unknown-session` only when neither exists.
@@ -119,6 +138,12 @@ fixtures stay deterministic. Tests can still force either branch explicitly.
   basename ⇒ no traversal), returning `{path}`. Same localhost posture; unlike the JSON POSTs it is
   multipart (a preflight-free "simple request"), but the write target is keyed by an unguessable session
   UUID. Needs `python-multipart` (for `UploadFile`).
+- `register_files_routes(app, config)` (operations-integration L1) registers the read-only
+  `GET /api/files/{repos,list,read,onboarding}` routes **before** `mount_static`, so the greedy `/`
+  SPA mount cannot swallow them. The handlers live in `serving/files.py`.
+- `register_changeset_routes(app, config)` (operations-integration L3) registers the read-only
+  `GET /api/changeset/{task,file-diff,master}` change-set routes immediately after the files routes and
+  still **before** `mount_static` (L711-L713). The handlers live in `serving/changeset.py`.
 
 `stream_events(projector)` yields an `event:snapshot` with the full projection on connect, then
 per-entity delta events from `projector.subscribe()`. `_encode` dumps projection nodes by alias
@@ -151,6 +176,13 @@ built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive
   remains the persistence boundary and can serve multiple browser tabs at once.
 - **Terminal catalog boundary:** `terminal_catalog.py` owns JSON persistence and filtering semantics;
   this module owns HTTP/WebSocket orchestration and status refresh.
+- **Leaf registry (L5):** the catalog is the leaf→chat registry and the server is the uniqueness
+  arbiter — at most one *running* session per **(leaf, role)**, enforced by `_claim_leaf_or_409` on both the
+  opener (`role=role_for_kind(kind)`) and `attach-leaf` (`role=entry.role`). A **chat** (any harness) and a
+  **terminal** (a shell) are separate slots, so a leaf can hold one running chat AND one running terminal,
+  and a terminal never conflicts with the leaf's chat. `leaf_key` is opaque here (a qualified leaf id or a
+  reserved `master:<…>` key flow identically); the binding is enclosure-independent and survives finalize,
+  and a dead/exited session frees its slot because `active_for_leaf` gates on `status == "running"`.
 - **Sim is a seam, not a fork:** `now`/`before_tick` default to live; `cli.dashboard` passes a
   replay clock + fixture feeder under `--sim` and the path is otherwise byte-identical.
 - `McpRuntimeConfig`/`datetime` are imported under `TYPE_CHECKING` (config is only passed on).
@@ -166,13 +198,36 @@ built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive
 | The operator inbox payload builder used by `/api/operator-inbox`. | [mcp/tools/operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
 | The Mode B2 terminal host the `/api/terminal` WebSocket bridges to (slice 6d), including tmux probe/kill hooks used for durability. | L86-L121; L230-L239; L287-L289; L340-L347 | [terminal.py](terminal.py) |
 | The durable terminal-session catalog persisted by the opener, sessions endpoint, and terminate route. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
+| The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
 | The harness launch registry the opener + `/api/harnesses` consume (slice 6e-2b). | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
 | The static-bundle resolver/mount. | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
+| The read-only files API registered just before the static mount (operations-integration L1). | [files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
+| The read-only change-set API registered right after the files routes (operations-integration L3). | [changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
 | The served projection shape + `ActionAvailability`. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 | The CLI adapter that builds and serves this app (and wires sim). | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
 
 ## Update History
 
+- 2026-07-02T17:04+02:00 — L9: `attach-leaf` is now a true move/reassign route. It delegates to
+  `serving.terminal_leaf_assignment.assign_terminal_session_to_leaf`, so dashboard clicks and the
+  agent-facing MCP tool share the same catalog uniqueness policy; `leaf-taken` returns 409 without
+  mutating the row. Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: `_claim_leaf_or_409` is now **role-aware** — it takes a `role` kwarg and
+  probes `catalog.active_for_leaf(leaf_key, role=role)`, so uniqueness is per **(leaf, role)**. The opener
+  passes `role_for_kind(kind)` and `attach-leaf` passes the existing `entry.role`, so a terminal can sit
+  beside the leaf's agent chat (no 409) while a second chat / second terminal still 409s. Updated the
+  opener + attach-leaf bullets and the Leaf-registry invariant. Verification metadata pinned until closeout
+  stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat: leaf-keyed attachment): `TerminalOpenRequest` gained `leaf_key` (alias
+  `leafKey`); a new `TerminalAttachLeafRequest` + `POST /api/terminal/{session}/attach-leaf` claim a leaf
+  for an existing session (404 unknown/terminated). The shared `_claim_leaf_or_409` helper is the
+  server-authoritative uniqueness guard (`409 {"status":"leaf-taken","leafKey","session"}` when a
+  *different* running chat owns the leaf, self-reclaim allowed), called by both the opener and attach-leaf
+  before the catalog upsert; the opener now claims + persists `leaf_key` (preserving an existing binding
+  when none is sent) and echoes `leafKey`. Verification metadata pinned until closeout stamps the L5
+  commit.
+- 2026-06-29T15:30+02:00 — operations-integration L3: `create_app` now also calls `register_changeset_routes(app, config)` between `register_files_routes` and `mount_static` (L711-L713), mounting the read-only `/api/changeset/{task,file-diff,master}` change-set API (handlers in `serving/changeset.py`) — registered before the greedy `/` static mount. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
+- 2026-06-28T22:41+02:00 — operations-integration L1: `create_app` now calls `register_files_routes(app, config)` immediately before `mount_static`, mounting the read-only `/api/files/{repos,list,read,onboarding}` files API (handlers in `serving/files.py`). Registered before the greedy `/` static mount so it cannot swallow them. Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `/api/actions/dismiss` now persists targetless
   actionable-drift acknowledgements while keeping gate-open dismissal source-consuming and lifecycle
   dismissals lifecycle-scoped. Verification metadata pinned until closeout stamps the task-29 code commit.

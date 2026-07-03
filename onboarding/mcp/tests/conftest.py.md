@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T23:59+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T02:58+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -54,4 +54,6 @@ At conftest import time (before any test is collected or run) the module mutates
 
 ## Update History
 
+- 2026-07-03T02:58+02:00 — No content impact: L13 reopen drill second cycle extended the marker comment; the reopened leaf ran under its original id with a fresh lifecycle.
+- 2026-07-03T02:40+02:00 — No content impact: L13 reopen drill appended a marker comment at the end of conftest.py (no fixtures, env handling, or behavior touched); the drill exercises task_reopen mechanics, not this file.
 - 2026-05-30T23:59+02:00: Created with `mcp/tests/conftest.py` (commit `36d74c5`). Added after the worktree fixtures clobbered the project repo when the suite ran with an inherited `GIT_DIR` (a git pre-push hook firing, and a concurrent evaluation run). The guard strips git's repo-pointer env and sets a fallback identity so no runner can redirect the fixtures onto a real repo.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-06-28T05:38+02:00                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`             |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Purpose
@@ -94,6 +94,15 @@ staleness, route coverage, and ledgers do not re-walk every memory tree on every
 and the Engine Room therefore share one definition of "active", and the shared `enclosures`/`lifecycles`
 collections still carry all-time history for the other views.
 
+**L5 (260628_operations-integration):** retention is now **enclosure-aware**. `read_enclosures` is
+hoisted *above* the prune call, and `prune_expired_lifecycle_event_logs` is invoked with
+`protected_lifecycle_ids=series_retained_lifecycle_ids(enclosures, now=moment)`. The effect: every leaf
+of a not-yet-retired master series is exempt from the inactivity TTL, so a running durable task (and its
+sibling leaves) never lose their Event River history mid-task. This closed the regression where the
+hour-long inactivity prune deleted a live task's log — and admission then keyed on the now-missing log,
+making the worktree vanish from the Engine Room. The protection set is derived entirely from durable
+enclosure state in `worktree_provider_admission`; this file only reorders the read and threads the set.
+
 ## Invariants And Boundaries
 
 - **Atomic writes:** every projection file is written tmp + `os.replace`; readers
@@ -115,9 +124,10 @@ collections still carry all-time history for the other views.
   than an ever-growing set that clients merely filter.
 - **Attention acknowledgement pruning is tick-bound:** `project_and_write` uses the reducer's projected
   lifecycle states as the live set and prunes `AttentionDismissalStore` rows outside that set.
-- **Raw event retention is tick-bound:** expired terminal lifecycle event logs are pruned before the
-  lifecycle log read, so raw Event River history and projected lifecycle inputs share the same
-  lifecycle-completion boundary.
+- **Raw event retention is tick-bound and enclosure-aware:** dormant lifecycle event logs are pruned
+  before the lifecycle log read, but `enclosures` is read first so a not-yet-retired master series'
+  leaf ids are passed as `protected_lifecycle_ids` — a live durable task's history is never pruned by
+  inactivity, and admission (which keys on the durable enclosure) keeps the worktree visible.
 - **Slow repo surfaces are cached, not fast attention inputs:** `_gather_repo_surfaces_cached` caches
   per-repo onboarding/ledger walks, while lifecycle logs, gates, admitted providers/setup progress,
   pickups, task documents, and dismissals are still read every projection tick.
@@ -144,6 +154,12 @@ collections still carry all-time history for the other views.
 
 ## Update History
 
+- 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): `read_enclosures` hoisted above the retention prune
+  so `prune_expired_lifecycle_event_logs` receives
+  `protected_lifecycle_ids=series_retained_lifecycle_ids(enclosures, now=moment)`; a not-yet-retired
+  master series' leaf logs are exempt from inactivity pruning. Fixes the regression where a live task's
+  log was pruned and the worktree then vanished from the Engine Room. Verification metadata pinned until
+  closeout stamps the L5 code commit.
 - 2026-06-28T07:30+02:00 — Task 33: `project_and_write` now passes
   `active_worktree_groups=sorted(engine_groups)` into `project_workspace`, so the served
   `activeWorktreeGroups` (the Topology's active scope) reuses the same `active_enclosure_worktree_groups`

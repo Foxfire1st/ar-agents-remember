@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T01:15+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T01:55+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`test_context_providers.py` verifies the shared provider layout, settings expansion, runtime cleanup, and patch helpers used by the provider lifecycle manager.
+`test_context_providers.py` verifies the shared provider layout, settings expansion, runtime cleanup, and patch helpers used by the provider lifecycle manager — since L12 also the timer-pop patch (idempotency + marker), the patch-script drift guard pinning patch_cgc.py's snippets to the in-package constants, and the HOME-scoped global .cgcignore materialization.
 
 ## Code Commentary
 
@@ -112,6 +112,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-07-03T01:55+02:00 — L12: timer-pop patch idempotency test, patch-script drift guard, and the materialize test asserts the global/.cgcignore copy is byte-identical to the runtime-root copy.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-02T01:15+02:00: Replaced the mirror-sync and `.grepai/` artifact detection/removal tests with `ensure_grepai_root_gitignore` coverage (append/create/idempotent) and switched layout expansion expectations to live in-place roots (watch-live).
 - 2026-05-29T07:19+02:00: Added coverage for `to_container_path`, driveless `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=True)` (driveless path values, omitted host-only Windows env) for Windows-host provider support.

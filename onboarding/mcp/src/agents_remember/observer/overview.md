@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-28T13:54+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:35+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -20,7 +20,10 @@
 browser-dashboard direction). It owns **both sides**: the **write side** — an
 append-only, durable, replayable log of what happened in (or to) a lifecycle —
 and the **read side** — the projection reducer that folds that log (plus
-structural file snapshots) into resolved state for replay/sim fixtures, the
+structural file snapshots) into resolved state — including, since L11, abandon
+terminality read from contracts: an abandoned enclosure's lifecycle projects
+`abandoned` and abandoned/reopened enclosures synthesize no paused zombie, because
+the single-writer store forbids foreign `lifecycle.ended` appends — for replay/sim fixtures, the
 dashboard, and any other client. The full design is
 `docs/design/observable-lifecycle.md`.
 
@@ -40,7 +43,9 @@ coverage, the tool-report feed, and ledger currency — plus the derived-aggrega
 rollups (the per-lifecycle token fuel gauge and the sidecar-staleness histogram).
 Slice 3c adds the task-document surface (S7): `read_task_documents` projects active
 JSON-primary `ar-task-document/v1` docs with optional lifecycle attachment, so the dashboard shows
-task content before and after runtime binding. Slice 05 (5b) adds the **attention queue**: the
+task content before and after runtime binding; since L10 the leaf-enclosure attachment joins the
+served enclosure `leafId` (a slugified lowercase directory name) against the doc's authored `id`
+**case-insensitively**, because series leaf docs carry no `enclosures[]` refs in practice. Slice 05 (5b) adds the **attention queue**: the
 reducer's `build_attention_queue` ranks what needs the human (blocked gates, down
 providers, actionable drift, failed setup, stale/dormant sessions) into the derived
 `Analytics.attentionQueue` — the one analytics field composed from the structural tree +
@@ -189,6 +194,21 @@ Engine Room share one definition of "active" while the shared `enclosures`/`life
 all-time history. `serving/delta.py` emits an `activeWorktreeGroups` whole-value delta when the set
 changes.
 
+**L5 (260628_operations-integration)** makes the **durable enclosure the source of truth for
+liveness/retention**, fixing two coupled regressions introduced by Task 34's inactivity pruning. (1)
+Admission no longer dies on a *missing* log: `admitted_worktree_groups` and
+`active_enclosure_worktree_groups` only demote on a *present* terminal/post-phase log, so a running
+worktree whose `events.jsonl` was pruned for inactivity stays in the Engine Room (before, it vanished an
+hour after its last event). (2) A live master series **protects its whole history**:
+`worktree_provider_admission.series_retained_lifecycle_ids` groups leaf enclosures by `(repoName,
+taskName)` and returns every leaf id of any non-retired series; `projection_store.project_and_write`
+reads enclosures first and passes that set to `event_retention.prune_expired_lifecycle_event_logs` as
+`protected_lifecycle_ids`, exempting it from the inactivity TTL. A series retires only when every leaf
+is archived (`cleanup` `completed`/`abandoned`, `ARCHIVED_CLEANUP_STATES`) **and** a one-week grace
+(`MASTER_ARCHIVE_GRACE_SECONDS`, measured from the most recent finalized leaf contract mtime) has
+elapsed. This durable-state retention deliberately **supersedes** the per-log inactivity TTL for
+enclosure-backed work; fleeting/standalone logs (no `taskName`) keep the ordinary TTL.
+
 ## Route Model
 
 - `events.py` — the `ar-observer-event/v1` Pydantic envelope (`Event`): the
@@ -207,8 +227,12 @@ changes.
   (a fleeting or enclosure lifecycle log is pruned after >1h with no real, non-heartbeat
   activity — keyed on inactivity, **not** a `lifecycle.ended` event, so dormant logs age
   out on their own), and a bounded recent-window replay on a fresh connect (not
-  whole-history). This backend policy is the Event River lifetime boundary; the dashboard
-  keeps a memory-bounded sliding window but applies no shorter display cap.
+  whole-history). `prune_expired_lifecycle_event_logs` now takes a `protected_lifecycle_ids`
+  exemption checked before dormancy (L5): logs in that set are never pruned by inactivity, so a
+  live master series' history survives (the set comes from
+  `worktree_provider_admission.series_retained_lifecycle_ids`). This backend policy is the Event
+  River lifetime boundary; the dashboard keeps a memory-bounded sliding window but applies no
+  shorter display cap.
 - `lifecycle_state.py` — the `State`/`Phase` Literals, the frozen
   `LifecycleState` record, the typed errors (`LifecycleError`,
   `GuardedStartError`), and the `coerce_phase` boundary validator. Pure
@@ -286,6 +310,11 @@ The slice-3a projection read side:
   `worktreeGroup`; configured-only worktree provider nodes stay distinct from observed runtime rows.
 - `worktree_provider_admission.py` — active-enclosure admission for worktree runtime surfaces:
   strict groups for provider/setup alarms, broader non-terminal enclosure groups for Engine Room facts.
+  A **missing** lifecycle log never retires a live enclosure (only a present terminal/post-phase one
+  does) — the durable contract is the truth. Also derives `series_retained_lifecycle_ids` (+
+  `_series_is_retired`/`_contract_finalized_at`, `ARCHIVED_CLEANUP_STATES`/`MASTER_ARCHIVE_GRACE_SECONDS`):
+  every leaf id of a not-yet-retired master series, which the projection store feeds back to event
+  retention as the protection set.
 - `projection_store.py` — the I/O edge: `read_lifecycle_logs`, the atomic
   `latest-state.json`/`latest-metrics.json` writer, and the `project_and_write`
   orchestrator the serving layer drives. It prunes expired raw lifecycle event logs, derives admitted
@@ -339,12 +368,20 @@ The slice-3a projection read side:
   worktree snapshots stay only while their leaf contract still points at an existing code worktree.
   Projection-time pruning removes valid orphaned snapshots before the analytical surface is read, and
   cleanup removes the exact snapshot for the contract it is reclaiming.
-- **Raw event retention is inactivity-keyed (task 34):** a lifecycle log is pruned after >1h with no
-  real (non-heartbeat) activity — fleeting and enclosure lifecycles alike — keyed on inactivity rather
-  than a `lifecycle.ended` event, and the heartbeat ticker decays after ~10 min idle so a dormant
-  lifecycle stops refreshing its own activity and ages out; workspace/lifecycle-less events retain only
-  the short replay age window, and a fresh connect replays only a bounded recent window. The frontend
-  keeps a memory-bounded sliding window and virtualizes it, adding no shorter display cutoff.
+- **Raw event retention is inactivity-keyed (task 34), but a live master series supersedes it (L5):** a
+  lifecycle log is pruned after >1h with no real (non-heartbeat) activity — fleeting and enclosure
+  lifecycles alike — keyed on inactivity rather than a `lifecycle.ended` event, and the heartbeat ticker
+  decays after ~10 min idle so a dormant lifecycle stops refreshing its own activity and ages out;
+  workspace/lifecycle-less events retain only the short replay age window, and a fresh connect replays
+  only a bounded recent window. **However**, every leaf of a not-yet-retired master series is passed as
+  `protected_lifecycle_ids` and is exempt from this TTL — a running durable task never loses its (or a
+  sibling leaf's) history; the series releases only when all leaves are archived plus the one-week
+  grace. The frontend keeps a memory-bounded sliding window and virtualizes it, adding no shorter
+  display cutoff.
+- **The durable enclosure — not the lifecycle log — is the source of truth for liveness (L5):** a
+  *missing* lifecycle log (pruned for inactivity) never retires a live enclosure from either admission
+  set; only a *present*, genuinely terminal/post-phase log demotes it. This is what keeps a running
+  worktree visible in the Engine Room even after its event log ages out.
 - **Worktree runtime facts require active enclosure admission:** stale `provider-state.json`,
   setup-progress, or historical contract files do not page or feed process facts unless the enclosure's
   lifecycle is still active under the relevant provider/Engine Room boundary.
@@ -364,6 +401,22 @@ The slice-3a projection read side:
 
 ## Update History
 
+- 2026-07-03T00:35+02:00 — L11 route impact: the reducer terminalizes lifecycles anchored to cleanup=abandoned enclosures and skips persistent synthesis for abandoned/reopened enclosures (reader-projected terminality per the store's single-writer invariant).
+- 2026-07-02T21:45+02:00 — L10 route impact: `snapshots.read_task_documents` binds a leaf task doc to
+  its active enclosure lifecycle by a **case-insensitive** `(taskRoot, enclosure.leafId)` join against
+  the doc's authored `id` (filename stem kept as a lowercased legacy alternative). Enclosure leaf ids
+  are slugified lowercase directory names while doc ids are authored uppercase, and series leaf docs
+  carry no `enclosures[]` refs, so the previous fallbacks were dead — active-enclosure leaf docs
+  projected with `lifecycleId: null`, breaking the sidebar content binding and the viewed-leaf chat
+  chain. Verification metadata pinned until closeout stamps the L10 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration) route impact: the **durable enclosure is the source of
+  truth for liveness/retention**. Documented the L5 narrative + invariants + Route Model bullets:
+  admission no longer dies on a missing (pruned) log (`admitted_worktree_groups` /
+  `active_enclosure_worktree_groups` only demote on a *present* terminal/post-phase log — fixes the
+  disappearing-worktree regression), and a not-yet-retired master series protects every leaf's event log
+  from the inactivity TTL via `series_retained_lifecycle_ids` → `event_retention`'s
+  `protected_lifecycle_ids` (retire = all leaves archived + one-week grace from the last finalized
+  contract). Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-06-28T13:54+02:00 — Task 34 route impact: raw Event River retention is now **inactivity-keyed**
   rather than termination-keyed — `event_retention.py` prunes a fleeting or enclosure lifecycle log after
   >1h with no real (non-heartbeat) activity (not on `lifecycle.ended`), `ambient.py`'s heartbeat ticker

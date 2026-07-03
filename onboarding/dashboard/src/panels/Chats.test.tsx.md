@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.test.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T03:04+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T17:04+02:00                          |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -25,7 +25,11 @@ terminal mounted.
 Task 11 adds coverage for attaching the active untagged hosted session to the selected lifecycle. Task
 22 adds coverage for durable catalog hydration, exited restored rows, backend-backed terminate, and
 cross-tab catalog refresh after another tab ends the last session. The Task 22 follow-up adds a stale
-catalog echo regression so a remote terminate with `sessionId` cannot resurrect a ghost row.
+catalog echo regression so a remote terminate with `sessionId` cannot resurrect a ghost row. Slice L5
+adds leaf-attach coverage: a `200` attach binds the leaf, a `409` is rejected with a "leaf already has a
+chat" note, and the session-row leaf label resolves a task-doc title with an id fallback. L9 adds
+attached-chat move coverage and live catalog refresh coverage for `"leaf"` invalidations from another
+browser tab or agent-facing reassignment.
 
 ## Code Commentary
 
@@ -50,6 +54,20 @@ empty successful response and asserts the local row disappears; one case keeps t
 with the same row and asserts the remote terminate still does not resurrect it; and one case clicks
 Terminate, waits for the backend success path before the row disappears, and asserts an id-bearing
 catalog-change broadcast is posted.
+Slice L5 adds leaf-attach cases. The decoupled flow is driven through the **"Attach to leaf ▾" picker**
+(`chats-attach-leaf-picker`) via `fireEvent.change`, with `kind:"subTask"` leaf docs in `taskDocuments`:
+the key case renders `<Chats taskDocuments=…>` with **NO `selectedLeafKey`** and an active untagged session,
+asserts the projected leaf is listed in the picker, and a stubbed `200` from
+`/api/terminal/{id}/attach-leaf` binds `leafKey` on the store row (and posts a catalog-change broadcast) —
+proving attach works from anywhere; a stubbed `409` leaves the session unbound and renders the
+`chats-leaf-attach-error` "leaf already has a chat" note. A separate case asserts the `＋ Terminal`/harness
+launch buttons are enabled with nothing selected (free-chat creation is never gated). A leaf-name case
+asserts a bound session's `chats-leaf-badge` / `chats-session-leaf-*` shows the matching task-doc title, and
+falls back to the leaf id (`leafIdFromKey`) when no doc title resolves.
+L9 adds a second task leaf fixture and two reassignment cases: an already-attached session still shows the
+leaf picker, selecting another leaf updates the store on a stubbed `200`, and a remote `"leaf"`
+BroadcastChannel invalidation causes the view to re-fetch `/api/terminal/sessions` and hydrate the moved
+`leafKey`.
 
 ### Conventions
 
@@ -64,11 +82,23 @@ resets the `sessions` store to its current shape (`sessions`, `activeId`, `count
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The Chats view under test (harness buttons + fetch). | — | [Chats.tsx](Chats.tsx) |
+| The Chats view under test keeps the picker visible for attached sessions, handles attach/move outcomes, and rehydrates catalog changes. | L256-L275; L303-L318; L374-L388 | [Chats.tsx](Chats.tsx) |
+| The L9 tests add a second leaf, move an attached chat on `200`, and rehydrate a `"leaf"` catalog invalidation from another tab. | L8-L31; L354-L381; L405-L451 | [Chats.test.tsx](Chats.test.tsx) |
 | The `fetchHarnesses` / catalog hydrate / terminate client the view drives. | L253-L315 | [data/terminal.ts](../data/terminal.ts) |
 
 ## Update History
 
+- 2026-07-02T17:04+02:00 — L9: added coverage that an attached chat still renders the leaf picker and
+  moves to another leaf on server `200`, plus a BroadcastChannel `"leaf"` invalidation case that rehydrates
+  the moved catalog binding. Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: reworked the leaf-attach cases to drive the **"Attach to leaf ▾" picker**
+  (`fireEvent.change`, `kind:"subTask"` docs) — the key case now asserts attach works with **no
+  `selectedLeafKey`** (any-leaf, from anywhere), plus a case that the launch buttons are enabled with nothing
+  selected. Verification metadata pinned until closeout stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added leaf-attach coverage — a `200` attach binds `leafKey` (and posts
+  a catalog broadcast), a `409` keeps the session unbound and shows the "leaf already has a chat" note,
+  and the session-row leaf label resolves a task-doc title with a leaf-id fallback. Verification metadata
+  pinned until closeout stamps the L5 commit.
 - 2026-06-27T03:04+02:00 — Task 22 follow-up: removed local Hide coverage, required terminate
   broadcasts to include `sessionId`, and added a stale-catalog echo regression proving another tab's
   terminate cannot repaint the row.

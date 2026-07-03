@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T03:04+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-30                                       |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -21,16 +21,21 @@ presentational (no backend, no lazy xterm), the tests drive it directly — unli
 tests, which must never click a launch button (that would Suspense-load xterm into jsdom).
 Task 11 adds a render assertion for the optional lifecycle tag badge. Task 22 adds non-running status
 badge coverage; the Task 22 follow-up removes the old local Hide assertion and keeps only destructive
-Terminate action coverage.
+Terminate action coverage. The L5 fix pass adds **hover-title (fix 4)** coverage: a long label exposes its
+full text through a `title` so the row's CSS ellipsis stays readable, and a bound session's `title` also
+appends the resolved leaf name.
 
 ## Code Commentary
 
 ### Logic
 
-Five cases over a two-session fixture: (1) a row renders per session and the active row carries React
+Seven cases over a two-session fixture: (1) a row renders per session and the active row carries React
 Aria's `data-selected`; (2) an attached session renders its `lifecycleId`; (3) a non-running session
-renders its status tag; (4) `fireEvent.click` on a row reports the new id via `onSelect`; (5)
-Terminate reports `onTerminate` separately and does not select the row.
+renders its status tag; (4) `fireEvent.click` on a row reports the new id via `onSelect`; (5) a long
+label is truncated but its full text is exposed via a hover `title` — `getByTitle(longLabel)` resolves
+(fix 4); (6) a bound session passes a `leafNameFor` resolver and `getByTitle("Claude Code 1 · Sidebar
+chat")` proves the `title` appends the resolved leaf name (fix 4); (7) Terminate reports `onTerminate`
+separately and does not select the row.
 `fireEvent.click` is the repo idiom for driving
 React Aria interaction (see `Cockpit.test.tsx` / `DetailPanel.test.tsx`).
 
@@ -47,6 +52,10 @@ Aria's emitted `data-selected` rather than a CSS class, so it tracks the primiti
 
 ## Update History
 
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: added two hover-title (fix 4) cases — a long label exposes its full text via
+  a `title` (`getByTitle(longLabel)`) so the row ellipsis stays readable, and a bound session's `title`
+  appends the `leafNameFor`-resolved leaf name (`"Claude Code 1 · Sidebar chat"`). Verification metadata
+  pinned until closeout stamps the L5 commit.
 - 2026-06-27T03:04+02:00 — Task 22 follow-up: removed local Hide/onDetach coverage and kept the row
   action test focused on End/Terminate not selecting the row.
 - 2026-06-27T00:33+02:00 — Task 22 follow-up: updated action coverage for the visible `Hide` label so

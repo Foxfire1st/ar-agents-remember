@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-19T14:05                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-30                                       |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -18,15 +18,19 @@
 
 Vitest + `@testing-library/react` render test pinning the slice 5f S1 full-bleed behaviour: the
 machine-map views drop the cockpit rails while the others keep them. The first component-render test in
-the dashboard suite (prior tests are pure logic/selector).
+the dashboard suite (prior tests are pure logic/selector). Slice L5 adds the right-rail River⇄Chat toggle
+and (L5 fix 1) a regression that the rail chat keys by the leaf the detail panel is **displaying**: after
+drilling into a master's sub-task the rail heading is the drilled **leaf** id, not the master.
 
 ## Code Commentary
 
 ### Logic
 
 A local `seed(stateName)` applies a `GALLERY` fixture projection to the real Zustand store
-(`dashboardStore.getState().applySnapshot(...)`) — the same hydration the dev bench uses; `afterEach`
-runs RTL `cleanup`.
+(`dashboardStore.getState().applySnapshot(...)`) — the same hydration the dev bench uses. The lazy
+`../panels/Terminal` is mocked to a jsdom-safe stub so toggling the rail to chat never pulls xterm (a
+canvas probe) into jsdom. `afterEach` runs RTL `cleanup`, resets the `sessions` store, and resets the
+dashboard store.
 
 - "rails the Operations view but goes full-bleed for the Engine Room" — seeds `engine-fleet`, renders
   `<CockpitShell />`, asserts the default Operations view has `.shell__body[data-fullbleed="false"]`
@@ -39,6 +43,16 @@ runs RTL `cleanup`.
   clicks the "Chats" mode-bar radio and asserts the **same** DOM node is now `display:flex` (never
   remounted), then switching back to Operations hides it again — pinning that a view switch never tears
   down the live terminal.
+- "toggles the right rail between the Event River and the leaf chat" (slice L5) — on a railed view the
+  default `rail--right` shows the Event River; clicking the `rail-toggle-chat` `role="radio"` segment
+  swaps in the single-instance `RailChat` (`rail-chat` testid), and clicking `rail-toggle-river` swaps
+  the Event River back, pinning the `railView` switch without unmounting the railed body.
+- "rail chat keys by the drilled leaf, not the master" (L5 fix 1) — a local `seedDrillableMaster` (+ a
+  `taskDoc` factory) seeds a lifecycle-bound master with one authored, drillable leaf. The test selects
+  the master, toggles the rail to chat, and asserts the master overview shows no leaf slot yet
+  (`rail-chat-no-leaf`); drilling into the master's `subtask-open-1` then makes the `rail-chat-heading`
+  contain the **leaf** id (`leaf-one`) and not the master id (`master-x`) — pinning that the rail keys off
+  the displayed leaf (via `DetailPanel.onViewLeaf` → the shell's `viewedLeafKey`).
 
 ### Invariants And Boundaries
 
@@ -57,6 +71,15 @@ single-select), driven by `fireEvent.click`. Uses plain `container.querySelector
 
 ## Update History
 
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: added a `seedDrillableMaster` (+ `taskDoc` factory) and a "rail chat keys by
+  the drilled leaf, not the master" case — drilling a master's sub-task makes the `rail-chat-heading` the
+  leaf id, not the master, pinning the displayed-leaf key (L5 fix 1). Also mocked the lazy
+  `../panels/Terminal` (jsdom-safe) and reset the `sessions` store in `afterEach`. Verification metadata
+  pinned until closeout stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added a right-rail River⇄Chat toggle case — clicking the
+  `rail-toggle-chat` radio swaps the Event River for the single-instance `RailChat` and
+  `rail-toggle-river` swaps it back, pinning the `railView` switch on a railed view. Verification metadata
+  pinned until closeout stamps the L5 commit.
 - 2026-06-19T14:05 — Task 6 slice 6e-4: added the "Chats persistence across view switches" describe — pins that `<Chats>` stays mounted (its parent layer toggles `display` none↔flex) across a view switch and is the **same** DOM node throughout, so the live terminal is never re-created. Verification metadata pinned until closeout stamps the 6e-4 code commit.
 - 2026-06-16T02:30 — Created for slice 5f S1: render test pinning the full-bleed rails-hide (Engine
   Room / Topology) vs railed (Operations / Memory) behaviour. Verification metadata pinned until

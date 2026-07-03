@@ -5,15 +5,18 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-29T23:18+02:00                     |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
 Owns worktree start, attach, status result construction, and startup preparation
-for external memory and providers.
+for external memory and providers. Since L11 the existing-contract branch recreates
+fresh for `cleanup in {abandoned, reopened}` (a reopened leaf keeps its exact leaf
+id), and after writing a leaf contract start restamps the leaf doc's `lifecycleId`
+via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle.
 
 ## Code Commentary
 
@@ -123,6 +126,7 @@ For master task starts, `start.py` creates or loads the root series contract, cr
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11: recreate-fresh admits `cleanup: reopened` beside `abandoned`, and a post-write hook restamps the existing leaf doc's lifecycleId with the newly minted lifecycle (explicit linkage across restarts).
 - 2026-06-29T23:18+02:00 — Memory-base fix (L3): `start.py` now derives both the root and leaf `memory_base_commit` from the memory source branch tip via `_memory_base_for_source` (mirroring the code base) instead of the memory repo HEAD, so a memory repo checked out on an unrelated branch no longer records a divergent base that breaks closeout's "memory source branch moved" preflight. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: start now creates or loads a root series contract for master tasks, creates the integration branch from the protected/source branch, starts each leaf from that integration branch, writes leaf contracts under `enclosures/<leaf-id>/series-contract.md`, and reports `enclosure_path`/`leaf_id`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-16T03:25 — Slice 5f S6 (§9): added `_record_start_progress` and called it at the two happy-path pre-contract success points (`preflight`, `code-worktree`) so a non-blocked start emits start-progress (previously only blocked early returns did); best-effort, dry-run-skipped, cleared by the existing `_clear_start_block` on contract write. Verification metadata pinned until closeout stamps the S6 code commit.

@@ -5,15 +5,17 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-06-27T22:00+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 
 ## Purpose
 
 This skill documents `c-09-git-worktree-manager` skill, the Git worktree lifecycle manager for Agents
 Remember tasks. `c-09-git-worktree-manager` skill now owns worktree start, attach/status, external-memory
-compatibility before worktree start, integration, lifecycle finalization, and cleanup. Closeout
+compatibility before worktree start, integration, lifecycle finalization, and cleanup. Since L11 it also documents reopening: `task_reopen` resets a fully landed leaf back
+to planning under its exact leaf id, and a normal `worktree_start` then recreates the
+worktrees. Closeout
 sequencing belongs to `c-12-closeout` skill; `c-09-git-worktree-manager` skill only supplies the worktree-specific
 `contract.md` path and the integration/finalization follow-up rules. Slice 2c adds a
 Lifecycle Resume And Promotion section: `worktree_start` promotes the current
@@ -196,6 +198,7 @@ The packaged worktree-manager skill defines the new operating model: master task
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 documents the task_reopen flow (reopen a completed leaf in place; never mint a suffixed leaf id).
 - 2026-06-27T22:00+02:00 — Order fix (notify-then-report): corrected the Task 28
   notify-and-continue hand-off ORDER for all three worktree hand-offs (worktree
   intent, integration, cleanup/finalization) to **dry-run → notify

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/GateResponder.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-25T13:10+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T16:18+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -16,12 +16,11 @@
 
 ## Purpose
 
-Shared **Gate Respond** control for lifecycle gates and proto `ask` packets. It renders one `Respond`
-button, shows a human-readable request preview with raw JSON tucked behind diagnostics, and splits
-developer response paths by meaning: `Yes` / `No` record gate decisions through
-`data/actions.postGateDecision`, `Dismiss` cancels/deletes the current gate, and `Chat` is message-only
-and routes text either to the AR-hosted chat attached to that lifecycle or, when no hosted session
-exists, to the external operator inbox.
+Shared **Gate Respond** control for durable lifecycle gates. It renders one `Respond` button, shows a
+human-readable request preview with raw JSON tucked behind diagnostics, and keeps only gate-decision
+paths in this task-local surface: `Yes` / `No` record gate decisions through
+`data/actions.postGateDecision`, and `Dismiss` cancels/deletes the current gate. The old message-only
+`Chat` response path was removed in L8; conversational follow-up belongs in the adjacent leaf chat.
 
 ## Code Commentary
 
@@ -44,13 +43,13 @@ For a durable `gateNode`, `Yes` first calls `postGateDecision(lifecycleId, "appr
 backend treats as a physical gate delete. None of these paths asks the agent to set the decision
 itself. After a successful recorded approve/reject decision the component notifies the agent with a
 short message through the hosted chat or operator inbox; after a successful dismiss it closes without
-agent notification. `Chat` never calls `postGateDecision`; it only sends the free-form message. Delivery first uses
-`deliverToSession` when `findSessionForLifecycle(lifecycleId)` returns a hosted chat; otherwise it
-calls `postOperatorInbox` with the lifecycle id, gate id, human preview text, and trimmed response.
+agent notification. Delivery first uses `deliverToSession` when `findSessionForLifecycle(lifecycleId)`
+returns a hosted chat; otherwise it calls `postOperatorInbox` with the lifecycle id, gate id, human
+preview text, and trimmed response.
 The visible status distinguishes decision recording, stale/no-open gate failures, hosted delivery,
 external-inbox queueing, unconfirmed hosted delivery, and inbox-post failure.
 
-Successful approve/reject/chat/dismiss submissions close the dialog immediately after the server accepts
+Successful approve/reject/dismiss submissions close the dialog immediately after the server accepts
 the write/delivery, so the developer is not left staring at a completed prompt. Formatting helpers moved
 to `GateResponderText.ts` so this component remains behavior-focused.
 
@@ -67,8 +66,8 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
   longer a disabled response path.
 - Durable gate decisions are recorded by the dashboard (`/api/actions/{approve,reject}`) and targeted
   by `gateId`; stale gates surface as errors and do not notify the agent.
-- `Chat` is deliberately message-only: it cannot approve/reject/cancel a gate and exists for revision
-  instructions or follow-up questions.
+- No message-only response box lives here after L8; revision instructions and follow-up questions go to
+  the adjacent leaf chat, while this component keeps durable gate decisions explicit.
 - `Dismiss` is not a decision outcome like approve/reject; it maps to backend `cancel`, which deletes
   the gate interaction so the attention row disappears server-side.
 - `compact` only changes presentation so the same routing/control logic is used in Detail, Hangar, and
@@ -82,13 +81,17 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
 | Hosted session identity and delivery helpers. | — | [data/sessions.ts](../data/sessions.ts) |
 | External inbox helper used when no hosted session is attached. | L1-L25 | [data/operatorInbox.ts](../data/operatorInbox.ts) |
 | Request/status formatting helpers extracted from this component. | — | [GateResponderText.ts](GateResponderText.ts) |
-| Canonical lifecycle detail surface that renders this for gates and asks. | — | [DetailPanel.tsx](DetailPanel.tsx) |
+| Canonical lifecycle detail surface that renders this only when a durable gate exists. | L574-L581 | [DetailPanel.tsx](DetailPanel.tsx) |
 | Engine Room diagnostics secondary surface. | — | [engine-room/DiagnosticsPanel.tsx](engine-room/DiagnosticsPanel.tsx) |
 | Hangar secondary surface for worktree-bound gates. | — | [Hangar.tsx](Hangar.tsx) |
 | Projection gate and lifecycle shapes. | — | [types/projection.ts](../types/projection.ts) |
 
 ## Update History
 
+- 2026-07-02T16:18+02:00 — L8: removed the message-only `Chat` mode and its textarea/send path from
+  the gate responder. The component still records explicit approve/reject/cancel decisions and notifies
+  the agent after successful approve/reject; non-decision conversation now belongs in the adjacent leaf
+  chat.
 - 2026-06-25T13:10+02:00 — Task 23/24: added Dismiss/cancel, close-on-success response behavior, and extracted request/status formatting to `GateResponderText.ts`.
 - 2026-06-25T07:17+02:00 — Task 19: split Gate Respond into durable decision paths (`Yes` approves, `No` rejects with required reason) and message-only `Chat`, added targeted stale-gate handling, rendered gate requests as human-readable previews with diagnostics JSON collapsed, and added the 480px resizable request panel. Verification metadata pinned until closeout stamps the task-19 code commit.
 - 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: Gate Respond now queues a developer response in the external operator inbox when `findSessionForLifecycle` finds no hosted chat, and exposes queued/error status text instead of disabling the response path. Verification metadata pinned until closeout stamps the task-10 code commit.

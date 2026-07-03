@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T16:18+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -22,7 +22,15 @@ mode bar. Owns the ephemeral selection + view UI state and the live SSE wiring. 
 two "machine map" views (Engine Room / Topology) drop the rails and span the full body width (§4.1);
 slice 6e adds a third full-bleed view, **Chats** (the xterm.js Mode B2 terminal). Task 29 hides the
 Task 26 Lifecycle Flow diagnostic from normal dashboard navigation; `FlowTab.tsx` remains in the source
-tree but `Cockpit.tsx` no longer imports or routes it.
+tree but `Cockpit.tsx` no longer imports or routes it. **Slice L5** makes the right rail itself
+switchable: a `railView` River⇄Chat toggle swaps the standing Event River for a single-instance,
+leaf-keyed `RailChat`, and the shell tracks the leaf the **detail panel is displaying** (reported up from
+`DetailPanel`) so both the rail chat and the Chats page bind to the same per-leaf session. L6 keeps that
+timing and adds one extra projection thread: the shell passes `analytics.engineProcesses` into `RailChat`
+so a newly created or newly attached leaf chat can receive worktree facts in its context package. L8 also
+threads the displayed leaf key and active rail-chat state into `HighlightComposer`, letting obvious
+task-reader selections paste straight into the adjacent leaf chat draft instead of opening the generic
+Add-to-chat composer.
 
 ## Code Commentary
 
@@ -30,10 +38,12 @@ tree but `Cockpit.tsx` no longer imports or routes it.
 
 `Cockpit` wires the two SSE streams (`connectState`, `connectEvents`→`pushEvent`) then renders
 `CockpitShell` (split out so the dev gallery renders the same surface against fixtures). `CockpitShell`
-holds `view` + `selectedId` state and derives `fullBleed = view === "engine" || view === "topology" ||
-view === "chats"` (the `chats` view is full-bleed; slice 6e-4 keeps `<Chats>`
-mounted as a persistent CSS-hidden layer in `CockpitShell` rather than routing it through `ViewBody`, so
-a view switch never unmounts the live terminal + WebSocket).
+holds `view` + `selectedId` state and derives `fullBleed = view === "files" || view === "engine" ||
+view === "topology" || view === "chats"`. Both the **File Viewer** (slice L2) and **Chats** views are
+full-bleed AND kept mounted as persistent CSS-hidden layers in `CockpitShell` (a `filesLayer` / `chatsLayer`
+div toggled by `display`), not routed through `ViewBody`, so switching tabs never unmounts them: the File
+Viewer's repo/scope selection, open file, and expanded tree state survive a switch, as does the live xterm
+terminal + WebSocket.
 Task 29 wires the raw Event River readiness signal through this shell: `connectEvents` receives
 `markEventsHydrated` as its `ready` callback, so the right rail can show "Syncing event history." until
 the backend has emitted the retained backlog and the explicit ready marker.
@@ -43,6 +53,15 @@ when `fullBleed`. The two `<aside>` rails (`rail--left` = attention queue + life
 clean expand; they fade back in via a `motion.aside` gated by `useShouldAnimate()` (instant under
 `data-effects=off` / reduced-motion, keeping snapshots stable). `ViewBody` switches the centre by
 `view`; the mode bar is the `<ModeBar>` primitive. `open(id)` selects a node AND jumps to Operations.
+**Operations-integration L4** adds a `changeSet` TAKEOVER: `CockpitShell` holds a `changeSet:
+ChangeSetTarget | null` state; when set, a full-bleed `<ChangeSetViewer>` shows (its back link clears it,
+restoring the rails), and `open(id)` plus a mode-bar switch (`changeView`) also clear it — the takeover is
+transient (a task-scoped screen), not a standing view. `onOpenChangeSet` is threaded through `ViewBody`
+into `DetailPanel`. **L4a** changes the takeover from *replacing* the railed body to **overlaying** it:
+the railed body is now kept mounted but `display:none`/`aria-hidden` while the takeover shows (the same
+hidden-not-unmounted pattern as the File Viewer + Chats layers), so the `DetailPanel`'s drill state (which
+leaf you were reading) survives — the viewer's back link returns you to exactly where you opened it from
+(a drilled leaf), instead of `DetailPanel` remounting fresh at the master overview.
 `TopBar` shows the always-visible master-caution (`⚠ N waiting`, severity-keyed from `selectQueue`), so
 an alarm is never hidden even in a full-bleed view. **5g G6** adds an `EffectsToggle` to the `TopBar`
 (`effects-toggle`): a ✦ Effects / ❄ Calm button that flips `html[data-effects]` (which `useShouldAnimate`
@@ -50,7 +69,11 @@ reads live, so the engine-room backdrop + all gated motion respond at once) and 
 `calm-cockpit` localStorage flag `main.tsx` reads on the next load. **Slice 6f** mounts the
 `HighlightComposer` once in `CockpitShell` (after the mode bar): a cockpit text selection raises it to
 send a context package to a chat session, and its `onSent` flips to the Chats view so the operator sees
-the injection land. **Slice 6g** threads `open` into `DetailPanel` as `onOpenLifecycle`, so a
+the injection land. **L8** narrows that flow when the target is obvious: `CockpitShell` now passes the
+current `selectedLifecycleId`, the lifted `viewedLeafKey`, and `leafChatActive={!fullBleed && railView ===
+"chat"}` into `HighlightComposer`; only that composer decides whether to bypass the generic target picker
+and draft-paste into the existing leaf chat. The shell still does not submit chat text or build the
+context package. **Slice 6g** threads `open` into `DetailPanel` as `onOpenLifecycle`, so a
 cross-master `→` row or a parent `↑` breadcrumb in the task reader switches the selected lifecycle
 through the same `open(id)` path.
 **Task 17** keeps `selectedId` as the shared Operations selection key, but normalizes raw ids from
@@ -60,6 +83,24 @@ older surfaces through `lifecycleSelectionKey(id)` so the list/detail path can u
 selected runtime row or task-document row. That is the attach seam: hosted chats created while a
 lifecycle-backed task document is selected inherit the lifecycle tag, and highlighted context targets
 can be filtered to that lifecycle's hosted chat.
+**Slice L5** adds the leaf-keyed rail chat. `CockpitShell` holds a `railView: "river" | "chat"` state
+and renders an inline `RailToggle` (a two-segment `role="radiogroup"` mirroring `EffectsToggle`'s cva
+look) above the rail content, replacing the hard `<EventRiver/>` in `rail--right` with a switch between
+`<EventRiver/>` and `<RailChat leafKey={viewedLeafKey} selectedLifecycleId={…}/>`. **L5 fix 1** changes
+the leaf-key source: instead of `leafKeyForSelection(selectedId, …)` (which keyed off the top-level
+selection = the master), the shell holds a `viewedLeafKey` state set from `DetailPanel`'s new `onViewLeaf`
+callback — threaded down through `ViewBody` (`setViewedLeafKey`) — so it is the leaf the panel is
+**actually showing** (a drilled sub-task / a directly-opened leaf doc; `undefined` for a master/series
+overview), its durable qualified id (`repo/master/leaf-id`, not the enclosure). The state is **lifted to
+the shell** so it survives a `DetailPanel` unmount (a full-bleed view switch) and reaches both the rail
+and the Chats page. `taskDocuments` is read from `analytics?.taskDocuments` (memoized through a stable
+`EMPTY_TASK_DOCS`) and, with `viewedLeafKey` as `selectedLeafKey`, passed into `<Chats>` so the page can
+offer "Attach to leaf" + resolve leaf names. The rail chat and the Chats-page row surface the **same**
+session because both reuse the shared `data/sessions` connection registry. (`leafKeyForSelection` in
+`data/taskIdentity.ts` is now superseded/unused.) **L6** also reads `analytics?.engineProcesses` through a
+stable `EMPTY_ENGINE_PROCESSES` fallback and passes it into `<RailChat>` beside `taskDocuments`. The shell
+does not build or deliver the context package itself; it only supplies the process projection so the rail can
+include worktree-group/code-worktree/memory-worktree facts at the leaf bind point.
 
 ### Conventions
 
@@ -88,12 +129,49 @@ must derive it through the task-identity helper.
 | The boot-time effects flag it persists to. | — | [main.tsx](../main.tsx) |
 | The honest-motion gate the rail transition + the toggle drive. | — | [panels/engine-room/useShouldAnimate.ts](../panels/engine-room/useShouldAnimate.ts) |
 | The SSE stream wiring includes an Event River ready callback. | L172-L181 | [Cockpit.tsx](Cockpit.tsx) |
-| Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId`. | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
-| The hosted chat view that receives `selectedLifecycleId`. | — | [panels/Chats.tsx](../panels/Chats.tsx) |
-| The highlight composer that filters targets by `selectedLifecycleId`. | — | [panels/HighlightComposer.tsx](../panels/HighlightComposer.tsx) |
+| Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
+| The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | — | [panels/DetailPanel.tsx](../panels/DetailPanel.tsx) |
+| The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; L6 receives `engineProcesses` here for leaf-context worktree facts. | L479-L485 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
+| The hosted chat view that receives `selectedLifecycleId` + `selectedLeafKey` + `taskDocuments`. | — | [panels/Chats.tsx](../panels/Chats.tsx) |
+| The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | — | [panels/HighlightComposer.tsx](../panels/HighlightComposer.tsx) |
+| The frontend projection type exposes `Analytics.engineProcesses`, the process-map input Cockpit now threads into `RailChat`. | L395-L408 | [types/projection.ts](../types/projection.ts) |
 
 ## Update History
 
+- 2026-07-02T16:18+02:00 — L8: `CockpitShell` now threads `viewedLeafKey` and active right-rail chat
+  state into `HighlightComposer` beside `selectedLifecycleId`, so highlighted text from the displayed leaf
+  can be routed to the adjacent leaf chat draft while global/off-leaf selections keep the generic
+  Add-to-chat fallback. Verification metadata pinned until closeout stamps the L8 commit.
+- 2026-07-01T01:19+02:00 — L6: threaded `analytics.engineProcesses` through `CockpitShell` to the
+  right-rail `RailChat` using a stable empty fallback. Cockpit still owns only selection/view state; packet
+  construction and delivery stay inside `RailChat` at start-on-leaf or successful free-chat attach time.
+  Verification metadata pinned until closeout stamps the L6 commit.
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: the rail/Chats leaf key now comes from the **displayed** leaf, not the
+  top-level selection. Replaced `leafKeyForSelection(selectedId, …)` with a `viewedLeafKey` state set from
+  `DetailPanel`'s new `onViewLeaf` callback (threaded through `ViewBody` as `setViewedLeafKey` and lifted to
+  the shell so it survives a `DetailPanel` unmount); it feeds both `<RailChat leafKey>` and the Chats page's
+  `selectedLeafKey`. `leafKeyForSelection` is now superseded/unused. Verification metadata pinned until
+  closeout stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): `CockpitShell` gained a `railView: "river" | "chat"` state + an inline
+  `RailToggle` (a `role="radiogroup"` two-segment control mirroring `EffectsToggle`) that replaces the
+  hard `<EventRiver/>` in `rail--right` with a switch between the Event River and a single-instance
+  `<RailChat>`. Derives `selectedLeafKey` from the **open task doc** via `leafKeyForSelection` (the
+  durable `repo/master/leaf-id`, not the enclosure) and reads `taskDocuments` from analytics, passing both
+  (plus `selectedLifecycleId`) into `<Chats>` and `selectedLeafKey` into `<RailChat>`. New collaborator:
+  `panels/RailChat.tsx`. Verification metadata pinned until closeout stamps the L5 commit.
+- 2026-06-29T23:00+02:00 — L4a: the change-set takeover now **overlays** the railed body instead of
+  replacing it — the body div is kept mounted but `display:none`/`aria-hidden` while `changeSet` is set
+  (the File Viewer / Chats hidden-not-unmounted pattern), so `DetailPanel`'s drill state survives and the
+  viewer's back link returns to the leaf it was opened from rather than resetting to the master overview.
+  Verification metadata pinned until closeout stamps the L4a commit.
+- 2026-06-29T16:40+02:00 — Operations Integration L4 (Change-Set Viewer): `CockpitShell` gained a `changeSet` TAKEOVER state — when set it renders `<ChangeSetViewer>` full-bleed in place of the railed Operations body, and the screen's back link / a mode-bar switch (`changeView`) / `open()` all clear it; `onOpenChangeSet` is threaded through `ViewBody` into `DetailPanel`. New collaborator: `panels/changeset/ChangeSetViewer`. Verification metadata pinned to the task base until closeout stamps the L4 code commit.
+- 2026-06-29T09:06+02:00 — Operations Integration L2 (File Viewer): registered a full-bleed **File Viewer**
+  view — `View` gained `"files"`, `VIEWS` a `{ id: "files", label: "File Viewer" }` tab between Operations
+  and Engine Room, and `fullBleed` now includes `files`. The File Viewer is **kept mounted** as a persistent
+  CSS-hidden `filesLayer` in `CockpitShell` (the Chats pattern), not routed through `ViewBody`, so a tab
+  switch preserves its repo/scope/open-file/tree state instead of resetting it. New collaborator:
+  `panels/file-viewer/FileViewer`. Verification metadata pinned to the task base until closeout stamps the
+  L2 code commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: removed the Lifecycle Flow tab from the visible
   cockpit view registry and routed `/api/events` readiness through `markEventsHydrated`, so the Event
   River waits for retained backlog hydration before showing empty-state copy. Verification metadata

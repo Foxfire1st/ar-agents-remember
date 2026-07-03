@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-28T13:54+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -61,7 +61,11 @@ The 4b additions:
   `test_dormant_fleeting_lifecycle_pruned_without_terminal_event`,
   `test_active_lifecycle_with_recent_activity_not_pruned`, and
   `test_initial_offsets_bound_active_replay_to_recent_window` (an active log with history older than the
-  1h replay window replays only the recent row, not from byte zero).
+  1h replay window replays only the recent row, not from byte zero). **L5** adds
+  `test_protected_lifecycle_log_survives_inactivity`: a dormant, enclosure-backed log passed in
+  `protected_lifecycle_ids` is exempt from pruning (it stays even though its last real activity is past
+  the TTL), and dropping the protection then prunes it — proving the dormancy precondition held and that
+  a live master series' history is what the protection set preserves.
   `StreamRawEventsTests` (async) assert `stream_raw_events` emits the backlog as `event` records,
   single-encoded (the SSE `data` is the parsed object, not the double-encoded JSON string), then emits a
   one-shot `ready` marker after backlog delivery; `test_stream_does_not_emit_heartbeats` proves the stream
@@ -126,6 +130,8 @@ exercising the branch.
 | The inactivity-based raw event retention helper under test. | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
 | The raw retention regressions: dormant pruning without a terminal event (a recent heartbeat doesn't save it), heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | L994-L1074 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| L5 retention exemption: a protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The `protected_lifecycle_ids` parameter under test, and the series-retention set it carries. | `prune_expired_lifecycle_event_logs`, `series_retained_lifecycle_ids` | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
 | Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | L1085-L1124 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The sim load/replay under test. | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
 | The action evaluation under test. | [serving/actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
@@ -138,6 +144,10 @@ exercising the branch.
 
 ## Update History
 
+- 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): added `test_protected_lifecycle_log_survives_inactivity`
+  to `RawEventTests` — a dormant enclosure-backed log in `protected_lifecycle_ids` is exempt from the
+  inactivity prune, and is pruned only once protection is dropped (proving the dormancy precondition and
+  the live-master-series exemption). Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-06-28T13:54+02:00 — Task 34: extended `RawEventTests` for the inactivity-retention rework —
   `test_read_new_events_skips_heartbeats`, `test_read_new_events_limit_bounds_batch`,
   `test_dormant_promoted_lifecycle_pruned_without_terminal_event` (a recent heartbeat does NOT save a

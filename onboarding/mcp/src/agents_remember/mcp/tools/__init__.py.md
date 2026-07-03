@@ -5,14 +5,16 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                        |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                        |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
 
 Facade that preserves the public import surface of the former `mcp/tools.py`.
+L11 re-exports `task_reopen_payload` from `.task_doc` — the task-domain payload
+module — not from `.worktree`.
 
 ## Code Commentary
 
@@ -20,7 +22,8 @@ Facade that preserves the public import surface of the former `mcp/tools.py`.
 
 Re-exports the shared constants and `_tool_payload` from `base`, and every
 `*_payload` builder from the domain submodules (`core`, `gates`, `lifecycle`,
-`lifecycle_finalize`, `memory`, `operator_inbox`, `providers`, `worktree`, `benchmark`, `task_doc`).
+`lifecycle_finalize`, `memory`, `operator_inbox`, `providers`, `terminal`, `worktree`, `benchmark`,
+`task_doc`).
 Task 25 keeps the split gate/block/wait builders re-exported for internal
 compatibility and tests while making `lifecycle_gate_payload` the only public
 agent-facing gate junction. `__all__` lists the full builder import surface, not
@@ -45,9 +48,14 @@ only the advertised MCP tools.
 | The gate response wait payload builder owned by the `gates` submodule. | [gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | The inbox payload builders re-exported by this facade. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
 | The lifecycle finalizer payload builder re-exported by this facade. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
+| The terminal catalog leaf reassignment payload builder re-exported by this facade. | L67-L72; L86-L94 | [terminal.py](terminal.py) |
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 re-exports `task_reopen_payload` from the task-domain payload module.
+- 2026-07-02T17:04+02:00 — L9: the new `terminal` tools submodule joins the facade exports with
+  `attach_terminal_session_to_leaf_payload`, preserving the package-wide import surface pattern.
+  Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — No content impact: task 28 adds `lifecycle_turn_end_notification_payload` (the NOTIFY-AND-CONTINUE turn-end builder) to the `lifecycle` import block and `__all__` exactly per the documented re-export pattern; the facade contract this sidecar describes — re-export every `*_payload` builder regardless of owning submodule — is unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-26T14:16+02:00 — Task 25: documented that the facade still exports split gate/block/wait compatibility builders while the advertised MCP surface uses `lifecycle_gate` for live agent gate choreography.
 - 2026-06-25T07:17+02:00 — Task 19: the `gates` submodule facade exports now include `gate_response_wait_payload` alongside create/decide/wait/list. Verification metadata pinned until closeout stamps the task-19 code commit.

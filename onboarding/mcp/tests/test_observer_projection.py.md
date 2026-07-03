@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T00:30+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -15,7 +15,9 @@
 `test_observer_projection.py` covers the observer projection read side (slice 3a):
 the pure fold and its determinism, the inferred layer, append-only corrections,
 precomputed action availability, workspace tree assembly, the atomic projection
-write, and the structural surface readers.
+write, and the structural surface readers. L11 adds abandon-terminality coverage:
+an abandoned-enclosure lifecycle projects `abandoned`, and abandoned/reopened
+enclosures synthesize no paused persistent lifecycle.
 
 ## Code Commentary
 
@@ -41,7 +43,10 @@ empty list when the kwarg is omitted. `StoreIOTests` assert log
 enumeration and the atomic round-trip (no `.tmp` left). `SnapshotReaderTests`
 assert provider snapshot parsing with `snapshotStaleSeconds`, enclosure reading
 from a real contract, the absent-surface empties, and `project_and_write`
-end-to-end.
+end-to-end. The L10 regression (`test_resolves_leaf_doc_lifecycle_from_doc_id_case_insensitively`)
+seeds the real series shape — lowercase enclosure leaf id, uppercase doc id, numbered doc slug
+matching neither, no lifecycleId/enclosures[] on the doc — and asserts `read_task_documents` still
+attaches the enclosure's lifecycle.
 
 Slice 3b adds: `TokenSeriesTests` (cumulative fuel gauge from `tool.completed`),
 `StalenessHistogramTests` (age bucketing), `AnalyticsAssemblyTests` (bounded
@@ -124,6 +129,19 @@ provider/setup/engine-process files are skipped when filters are supplied, and `
 reuses the TTL-gated repo-surface cache so provider-state refreshes are not hidden behind repeated git
 surface probes.
 
+**L5 (260628_operations-integration)** adds the durable-state retention regressions.
+`WorktreeProviderAdmissionTests.test_active_group_survives_a_pruned_lifecycle_log` pins the Engine Room
+fix: a `cleanup:"pending"` enclosure with **no** lifecycle log (the log was pruned for inactivity) is
+still returned by both `active_enclosure_worktree_groups` and `admitted_worktree_groups` — admission
+keys on the durable enclosure, not the prunable log. The new `SeriesRetentionTests` cover
+`series_retained_lifecycle_ids`: a live master protects every leaf including archived siblings while a
+second live master is independently protected
+(`test_live_master_protects_every_leaf_including_archived_siblings`); a fully-archived master with no
+readable contract timestamp is released (`..._without_readable_timestamp_is_released`); an archived
+master is retained inside the one-week grace and released past it (using `os.utime` on a real contract
+file — `test_archived_master_is_retained_within_grace_then_released_after`); and an enclosure with no
+`taskName` is never series-protected (`..._is_not_series_protected`).
+
 Slice 3c **reopened (R1)** adds the series-master cases to `TaskDocumentsReaderTests`:
 `test_read_series_documents_projects_master` (a mixed-status master → a `SeriesNode` with
 `doneCount`/`totalCount` over the declared `subTasks[]` + the full render), `..._skips_leaf_docs` (a leaf
@@ -198,6 +216,8 @@ worktree snapshots while deleting a valid snapshot for a deleted worktree.
 | The fold + inferred layer + action availability under test. | L1-L92 | [reducer.py](../src/agents_remember/observer/reducer.py) |
 | The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | L1-L92 | [provider_nodes.py](../src/agents_remember/observer/provider_nodes.py) |
 | The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | L18-L84 | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
+| The admission resilience (missing-log survives) + series-retention helpers under test. | `test_active_group_survives_a_pruned_lifecycle_log`, `SeriesRetentionTests` | [test_observer_projection.py](test_observer_projection.py) |
+| The `series_retained_lifecycle_ids` / `_series_is_retired` / `_contract_finalized_at` derivation the L5 cases pin. | `series_retained_lifecycle_ids` | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
 | Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | L112-L203; L496-L535; L778-L805 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
 | Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | L1439-L1468 | [test_observer_projection.py](test_observer_projection.py) |
 | Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | L1604-L1629 | [test_observer_projection.py](test_observer_projection.py) |
@@ -216,6 +236,18 @@ and verifies that a leaf contract itself is not a readable lifecycle task docume
 
 ## Update History
 
+- 2026-07-03T00:30+02:00 — L11 adds reducer coverage for abandoned-enclosure lifecycle terminalization and the persistent-synthesis skip for abandoned/reopened enclosures.
+- 2026-07-02T21:45+02:00 — L10 binding repair: added
+  `test_resolves_leaf_doc_lifecycle_from_doc_id_case_insensitively` — the real-world series shape
+  (lowercase enclosure leaf id `260628-l7`, uppercase doc id `260628-L7`, numbered doc slug matching
+  neither, no lifecycleId/enclosures[] on the doc) binds to the enclosure lifecycle. Verification
+  metadata pinned until closeout stamps the L10 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): added `test_active_group_survives_a_pruned_lifecycle_log`
+  (a live enclosure with no lifecycle log stays in both admission sets) and the `SeriesRetentionTests`
+  suite for `series_retained_lifecycle_ids` (live master protects all leaves incl. archived siblings;
+  fully-archived-no-timestamp released; archived retained-within-grace then released-past-grace via
+  `os.utime`; no-taskName not protected). Verification metadata pinned until closeout stamps the L5 code
+  commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: added/recorded projection regressions for provenance-rich
   actionable-drift rows and targetless dismissal that re-surfaces on newer drift snapshots. Verification
   metadata pinned until closeout stamps the task-29 code commit.

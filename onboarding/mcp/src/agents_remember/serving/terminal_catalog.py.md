@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-06-27T00:22+02:00                                  |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`              |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-30                                              |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`              |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -27,10 +27,28 @@ still-live tmux session without asking the browser to remember process-local sta
 `TerminalCatalogEntry` is the immutable row model. It stores the browser-visible session id and label,
 the launch kind (`terminal` or `harness`), optional harness id and lifecycle id, cwd, tmux session
 name, fixed command argv, creation and last-attach timestamps, status (`running`, `exited`, or
-`terminated`), and optional termination timestamp. `from_json`/`to_json` translate between Python
-snake_case and the dashboard API's camelCase fields. `with_attachment` restores a row to `running`,
+`terminated`), optional termination timestamp, and (slice L5) an optional `leaf_key` — the durable
+leaf-identity key (qualified leaf id `repo/master/leaf-id`) the catalog uses as the **leaf→chat
+registry** key; it is opaque to the backend. `from_json`/`to_json` translate between Python
+snake_case and the dashboard API's camelCase fields. `to_json` writes `leafKey` **only when set** (like
+`harness` / `lifecycleId` / `terminatedAt`), so legacy rows with no `leafKey` read back as `None` — no
+schema bump, migration-safe. `with_attachment` restores a row to `running`,
 refreshes `lastAttachedAt`, and clears `terminatedAt`; `with_status` changes status and records
-`terminatedAt` only for explicit termination.
+`terminatedAt` only for explicit termination — both thread `leaf_key` through unchanged. `with_leaf_key(leaf_key)`
+(a `dataclasses.replace`) is the leaf-attach write point: a copy bound to `leaf_key`, or unbound when
+`None`.
+
+The **leaf-uniqueness role** (L5 fix 2) splits one slot into two: `TerminalSessionRole = "chat" |
+"terminal"`, `role_for_kind(kind)` maps a shell (`kind == "terminal"`) to `"terminal"` and any harness to
+`"chat"`, and the `entry.role` property derives a row's role from its kind. Uniqueness is per **(leaf,
+role)** — a leaf may hold at most one running chat AND one running terminal, so an agent chat and a scratch
+terminal can share a leaf without colliding. `active_for_leaf(leaf_key, *, role="chat")` is the
+role-scoped registry lookup the opener + `attach-leaf` routes call before an upsert: the first `list()`
+row whose `leaf_key == leaf_key and status == "running" and role == role`, else `None` (the default
+`"chat"` is the agent slot). Because `list()` already excludes terminated rows and the probe gates on
+`running`, an exited/terminated session frees its leaf for that role (a stale `running` row is downgraded
+to `exited` by `serving.app`'s `_refresh_catalog_entries` when its tmux session is gone), giving
+server-authoritative single-owner-per-role uniqueness.
 
 `terminal_catalog_path(coordination_root)` places the runtime file under
 `logs/dashboard/terminal-sessions.json`. `TerminalCatalog` is a small JSON store over that file:
@@ -56,6 +74,13 @@ The catalog is JSON-primary and API-shaped: persisted keys use the same camelCas
 - Explicit termination is terminal for catalog visibility: later exit bookkeeping must preserve the
   `terminated` status and `terminatedAt` timestamp.
 - The command is stored as a tuple/list of fixed argv parts, not a shell string.
+- `leaf_key` is opaque (the catalog never parses it) and optional — omitted from JSON when unset so the
+  schema stays back-compatible. The catalog only *reports* the single running owner **of a given role** via
+  `active_for_leaf(leaf_key, role=…)`; the `409 leaf-taken` decision + the claim-then-write atomicity live
+  in `serving.app`.
+- Uniqueness is per **(leaf, role)**, not per leaf: a chat (any harness) and a terminal (a shell) are
+  distinct slots and never conflict with each other on the same leaf; `role` is always derived from kind
+  (`role_for_kind` / `entry.role`), never stored separately.
 
 ### Todos
 
@@ -91,6 +116,16 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: leaf uniqueness is now per **(leaf, role)**. Added `TerminalSessionRole`
+  (`chat`|`terminal`), `role_for_kind(kind)` (a shell ⇒ terminal, a harness ⇒ chat), and the `entry.role`
+  property; `active_for_leaf` gained a `role` kwarg (default `"chat"`) so it probes the chat slot and the
+  terminal slot independently — a leaf may hold one running chat AND one running terminal without conflict.
+  Verification metadata pinned until closeout stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): `TerminalCatalogEntry` gained an optional `leaf_key` (the leaf→chat
+  registry key) — `to_json` writes `leafKey` only when set (migration-safe), `with_attachment`/`with_status`
+  thread it through, and a `with_leaf_key` copier is the attach write point. Added `TerminalCatalog.active_for_leaf(leaf_key)`,
+  the running-only single-owner lookup the opener + attach-leaf routes probe for uniqueness. Verification
+  metadata pinned until closeout stamps the L5 commit.
 - 2026-06-27T00:22+02:00 — Task 22 follow-up: documented that `mark_exited` preserves an already
   terminated row so a WebSocket teardown after `End` cannot make the hidden row visible again as
   `exited`.

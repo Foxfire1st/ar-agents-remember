@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T21:45+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -77,8 +77,12 @@ ledger closeout **count + currency** (rows carry no timestamps, so no time serie
 `read_task_documents` (slice 3c) reads every active `ar-task-document/v1` JSON, skipping `0_archive/`
 and `enclosures/`, into a selectable `TaskDocNode` (surface 7). `lifecycleId` is optional runtime
 context, not the admission ticket: light/subTask docs use their direct `lifecycleId`, a matching
-`enclosures[].enclosurePath`, or the document filename matching a served leaf enclosure's structured
-`leafId` inside the same task root when those bindings exist, but planning docs still project before an
+`enclosures[].enclosurePath`, or — the L10 repair — a **case-insensitive** join of the same task
+root's served enclosure `leafId` against the doc's own authored `id` (with the filename stem kept as a
+legacy alternative). The case fold matters because enclosure leaf ids are slugified lowercase
+directory names (`260628-l7`) while doc ids are authored uppercase labels (`260628-L7`), and series
+leaf docs carry no `enclosures[]` refs in practice; suffixed reopen enclosures (`…-r1`) deliberately
+do not bind here and stay a sidebar admission. Planning docs still project before an
 enclosure exists. Master docs project here too; a leaf `series-contract.md` is enclosure state, not task
 reader content.
 Small coercion helpers (`_as_int`/`_as_float`/`_text_or_none`/`_report_label`/
@@ -242,6 +246,13 @@ work while archived roots and contract folders stay out of the JSON scan.
 
 ## Update History
 
+- 2026-07-02T21:45+02:00 — L10 binding repair: `read_task_documents`' leaf-enclosure fallback is now
+  keyed on `(taskRoot, enclosure.leafId.lower())` and matched against `doc.id.lower()` (stem kept as a
+  lowercased legacy alternative). Root cause: enclosure leaf ids are slugified lowercase directory
+  names while doc ids are authored uppercase, and series leaf docs never carry `enclosures[]` refs —
+  so every existing join was dead and active-enclosure leaf docs projected with `lifecycleId: null`,
+  breaking the sidebar task-content binding and the viewed-leaf chat chain. Verification metadata
+  pinned until closeout stamps the L10 commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: drift snapshot reads now carry source/memory/report
   provenance, and active-group filters remain the backend boundary for worktree provider/setup/engine
   reads so inactive parked worktrees do not emit provider alarms or projection work. Verification

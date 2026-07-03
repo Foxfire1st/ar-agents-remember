@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/controllers/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-22T22:33+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-06-28T22:41+02:00                     |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -21,6 +21,12 @@ Resolution lives here (not in the payload module) so a later dashboard
 ## Code Commentary
 
 ### Logic
+
+The path-confinement guard and the sidecar-pairing helpers were extracted to
+`kernel/sidecar_pairing.py` (shared with the dashboard `serving/files.py`); they are
+imported here under their former private names (`_confined_rel`,
+`_route_sidecar_status`, `_sidecar_body`) and behave exactly as before. The
+descriptions below document that imported behavior.
 
 `read_ar_files_tool(config, *, repo_id, files, refresh, _context)` is the entry
 point. It resolves the repo through `require_repo` (authority check), rejects a
@@ -135,15 +141,15 @@ ever appears it is honored once.
 | The authority-violation error raised on a bad batch/range/path. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
 | The full read and the net-new ranged reader (`read_text_range`). | [kernel/filesystem.py](agents-remember/mcp/src/agents_remember/kernel/filesystem.py) |
 | Coordination-context resolution and per-path storage-mode resolution. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| The sidecar `meaningful_body` extractor applied to the onboarding body. | [onboarding_doc.py](agents-remember/mcp/src/agents_remember/kernel/onboarding_doc.py) |
-| `sidecar_status`, `INDEX_FILE_NAME`, and `ROUTE_OVERVIEW_NAME` consumed read-only. | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
-| The mirror sidecar-path helper used for the body read and the no-index probe. | [onboarding_drift_check/discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
+| The shared path-confinement + sidecar-pairing helpers, imported under their former private names (`_confined_rel`/`_route_sidecar_status`/`_sidecar_body`). | [kernel/sidecar_pairing.py](agents-remember/mcp/src/agents_remember/kernel/sidecar_pairing.py) |
+| `ROUTE_OVERVIEW_NAME` consumed read-only for the front-door route derivation. | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 | The ambient lifecycle: `read.packet` emission and the served-onboarding dedup ledger consumed here. | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
 | The observer-root resolver locating the compact-reset marker. | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
 | The slice-07 test suite. | [test_read_ar_files.py](agents-remember/mcp/tests/test_read_ar_files.py) |
 
 ## Update History
 
+- 2026-06-28T22:41+02:00 — operations-integration L1: extracted the path-confinement guard (`_confined_rel`) and the sidecar-pairing helpers (`_route_sidecar_status`/`_governing_indexes`/`_load_route_index`/`_sidecar_body`) into `kernel/sidecar_pairing.py`, shared with the new dashboard `serving/files.py`; they are now imported here under their former private names. Behavior-preserving — the slice-07 suite is unchanged. References updated (the direct `meaningful_body`/`mirror_onboarding_path`/`sidecar_status` rows now flow through `sidecar_pairing`). Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-23T01:40+02:00 — Slice 07b v1: the controller now passes `repo.repo_id` to `emit_read_packet`, so the emitted `read.packet` carries `data.repoId` (the read's repo). Body + invariant note only — verification metadata pinned until closeout stamps the slice-07b code commit.
 - 2026-06-23T00:53+02:00 — Slice 07 (S5): retargeted the compact-reset note — the `compact-reset.json` **producer** is **not** a session-hook concern; it is deferred to the post-3.0 agentic-control-plane follow-up (fresh-worker / new-lifecycle = fresh ledger). `_maybe_reset_served` (consumer) + the `refresh=true` path remain as defensive scaffolding; `refresh=true` is the working manual reset. Docstring text only. Verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-06-22T22:33+02:00 — Created for slice 07 (S2+S3): the `read_ar_files` controller — paired source+onboarding batch reads (≤5 files), the net-new `_confined_rel` path-confinement guard, ranged/full source read, storage-mode + route-index onboarding lookup (present→found, absent→missing without probing, external-as-sidecar), the session-deduped front-door auto-attach (repo overview + governing route chain + sidecar `meaningful_body`), facts-only `read.packet` emission, and the `refresh` + compact-reset-marker consumer (the marker producer is deferred to slice-07 S5 / Probe B). Verification metadata pinned until closeout stamps the slice-07 code commit.

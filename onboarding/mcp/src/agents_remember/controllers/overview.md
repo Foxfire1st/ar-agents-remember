@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-29T22:57+02:00|
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-03T00:35+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -18,7 +18,10 @@
 
 `controllers/` owns operation-level MCP composition. Controllers translate
 trusted MCP runtime config plus typed tool arguments into package service calls
-and JSON-compatible payload dictionaries.
+and JSON-compatible payload dictionaries. Domain placement follows what a tool
+operates on: `task_reopen_tool` (L11) sits beside the task_doc controller because it
+reopens a task, while worktree_tools keeps only genuine worktree operations (its
+abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
 
@@ -77,6 +80,12 @@ repos plus a `ledgerMapsCodeHead` mapping check; the default stays
 
 ## Update History
 
+- 2026-07-03T00:35+02:00 — L11 route impact: task_reopen_tool joins task_doc_tools (task domain); worktree_abandon_tool ends its anchored ambient lifecycle.
+- 2026-07-02T18:35+02:00 — No route impact: operations-integration L7 fixed the native argv inside the
+  typed `cgc_dependencies` wrapper (`provider_tools.py`) from the stale `analyze dependencies` to the
+  current `analyze deps` subcommand. The controller surface, tool names, and response envelope are
+  unchanged, so the route model this overview describes is unaffected (detail in the file sidecar).
+  Verification metadata pinned until closeout stamps the L7 commit.
 - 2026-06-29T22:57+02:00 — No route impact: `task_doc_tools.py` gained the `remove_subtask` op (CRUD
   delete: drop the master row + delete the leaf doc unless `keep_file`); the controller stays a typed
   operation facade, so the route model is unchanged (detail in the task_doc_tools.py file sidecar; task
@@ -85,6 +94,7 @@ repos plus a `ledgerMapsCodeHead` mapping check; the default stays
   an absent `kind` context-awarely (subTask under a leaf contract, else master); the controller stays a
   typed operation facade, so the route model this overview describes is unchanged (detail in the
   task_doc_tools.py file sidecar; task 260628_post-landing-cleanup).
+- 2026-06-28T22:41+02:00 — No route impact: operations-integration L1 extracted `read_files.py`'s path-confinement + sidecar-pairing helpers into `kernel/sidecar_pairing.py` (behavior-preserving; `read_ar_files` re-imports them under their former private names). `read_files.py` stays a typed operation facade and no controller signature/surface changed, so the route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-26T20:18+02:00 — Task 21 route impact: `task_doc_tools.py` remains the task-document authoring
   controller and now also composes same-root leaf-to-master row sync through the task service layer.
   Verification metadata pinned until closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-26T20:18+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T16:18+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -17,8 +17,8 @@
 ## Purpose
 
 Vitest + Testing Library coverage for the `DetailPanel` gate surface. Task 11 asserts the durable gate
-renders the shared Respond control with its full request packet and that a proto-gate-only lifecycle uses
-the same surface. Slice 6g adds master-series
+renders the shared Respond control with its full request packet; L8 asserts a proto-gate/ask-only
+attention detail no longer renders the obsolete task-local response box. Slice 6g adds master-series
 navigation coverage: the master overview + a sub-task index pinned above the description (with an
 in-section copy), drill-in into a slice reader + return via the header breadcrumb, GFM markdown (a
 table) rendering, and cross-master "→" / parent-breadcrumb lifecycle jumps.
@@ -44,17 +44,25 @@ must render both the `series tokens` label and formatted token value. Task 33: e
 fixture seeded here — the inline objects and the `seedProjection` builder — now sets the required
 top-level `activeWorktreeGroups: []`, so the seeded snapshots satisfy the current projection contract
 (the field is required because the server always serves it); no DetailPanel assertion depends on its
-value.
+value. **L4a** adds doc-reader change-set bar coverage: rendering a leaf doc reader with `onOpenChangeSet`
+shows a single **committed** button whose click opens the leaf target `{repo, master, leaf, mode}`; a
+master doc reader shows a **series** button; a leaf whose enclosure is live (seeded `enclosures` +
+`activeWorktreeGroups`) shows both **committed** + **working**; and with no `onOpenChangeSet` wired the bar
+is omitted entirely. **L5 fix 1** adds a `DetailPanel viewed-leaf reporting` describe block that pins the
+new `onViewLeaf` prop: a master overview reports `undefined`, drilling into a sub-task reports the leaf's
+qualified id (`repo-a/series/1`, not the master), the breadcrumb back clears it again, and a
+directly-opened leaf doc reports its own `repo/master/leaf-id`.
 
 ## Code Commentary
 
 ### Logic
 
 Seeds a `GALLERY` fixture into `dashboardStore` (`applySnapshot`) and renders `<DetailPanel selectedId=…>`.
-Task 11 gate cases: the `gate-review` scene renders `gate-review` + `gate-respond-open`, no old
+Task 11/L8 gate cases: the `gate-review` scene renders `gate-review` + `gate-respond-open`, no old
 decision-verb buttons, and the opened dialog contains the Task 19 human-readable request preview
-(`Changed paths`) instead of the raw JSON key; the `blocked` scene
-(proto-gate `ask`, no durable gate) renders `gate-banner` through the same Respond surface.
+(`Changed paths`) instead of the raw JSON key; the `blocked` scene (proto-gate `ask`, no durable gate)
+renders the task detail but no `gate-review`, no `gate-banner`, and no `gate-respond-open`, proving the
+ask-only task-local response box stays removed.
 
 The slice-6g cases build a master+slice projection with a local `taskDoc` factory + `seedSeries`
 helper (a folder-keyed `SeriesNode` master in `analytics.series`, a `subTasks` index, a cross-master
@@ -89,6 +97,11 @@ leaf's real `subTask` document. The test asserts that the detail panel renders t
 objective, step, and freeform section while rejecting parent-doc text, raw lifecycle id text, and
 `series-contract.md` schema strings. The paired backlink test uses the same fixture, clicks
 `master-parent-link`, and expects navigation to the parent master document's typed `taskdoc:` key.
+The L5 viewed-leaf cases pass a `vi.fn()` as `onViewLeaf` and assert its **last** call: `series` →
+`undefined` while the master overview shows, `subtask-open-1` → `repo-a/series/1`, `series-breadcrumb` →
+`undefined` again; the directly-opened-leaf case seeds a leaf `taskDoc` (`id: "260628-L5"`, repo
+`agents-remember`, an operations-integration docPath) and asserts the reported key is the doc's
+`qualifiedLeafKey`.
 
 ### Invariants And Boundaries
 
@@ -116,11 +129,25 @@ archived documents.
 | The shared hierarchy helper resolves the parent link from projected series sub-task refs. | L45-L58; L85-L88 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
 | The helper that separates visible lifecycle labels from direct task-doc filtering. | L1-L63 | [taskIdentity.ts](../data/taskIdentity.ts) |
 | The gate-review test opens the shared responder and expects the rendered preview label `Changed paths`. | L408-L417 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The ask-only attention detail regression asserts the obsolete task-local response box is absent when no durable gate exists. | — | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
 | The shared responder rendered by the gate cases. | L1-L124 | [GateResponder.tsx](GateResponder.tsx) |
 | The `gate-review` / `blocked` fixtures seeded. | L151-L290 | [dev/fixtures.ts](../dev/fixtures.ts) |
 
 ## Update History
 
+- 2026-07-02T16:18+02:00 — L8: changed the ask-only attention detail regression to assert no
+  `GateResponder`/`gate-banner`/`gate-respond-open` is rendered when only `activeLifecycle.ask` exists,
+  while durable gate coverage remains intact. Verification metadata pinned until closeout stamps the L8
+  commit.
+- 2026-06-30T00:00:00+02:00 — L5 follow-up: added a `DetailPanel viewed-leaf reporting` describe block pinning the new
+  `onViewLeaf` prop — a master overview reports `undefined`, drilling a sub-task reports the leaf's
+  qualified id (not the master), the breadcrumb clears it, and a directly-opened leaf doc reports its own
+  `repo/master/leaf-id`. Verification metadata pinned until closeout stamps the L5 commit.
+- 2026-06-29T23:00+02:00 — L4a: added a `DetailPanel doc-reader change-set bar` describe block (a
+  `stubCounters` fetch stub; `afterEach` now also `vi.unstubAllGlobals()`) — committed button + leaf target
+  on a leaf reader, series button on a master reader, working button only when the leaf's enclosure is
+  live, and the bar omitted with no `onOpenChangeSet`. Verification metadata pinned until closeout stamps
+  the L4a commit.
 - 2026-06-28T07:30+02:00 — Task 33: the inline/`seedProjection` `WorkspaceProjection` fixtures gained
   `activeWorktreeGroups: []` for the new required projection field; no behavioural assertion change.
   Verification metadata pinned until closeout stamps the code commit.

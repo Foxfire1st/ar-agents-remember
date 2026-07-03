@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-25T09:55+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T01:55+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 `test_provider_lifecycle.py` verifies provider lifecycle parser behavior,
-process-namespace policy, provider-owned lifecycle modules, and small
+process-namespace policy, provider-owned lifecycle modules, compose memory caps
+(L12: every provider service ships an explicit mem_limit — watchers 512m), and small
 command-output helpers that cannot be safely inferred from the generic
 provider-layout tests.
 
@@ -107,6 +108,7 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-07-03T01:55+02:00 — L12 adds ProviderComposeMemoryCapTests pinning every cgc/grepai service's mem_limit in the shipped compose assets (falkordb 2g, runner 1g, watchers 512m, postgres 512m, ollama 2g).
 - 2026-06-25T09:55+02:00 — GrepAI start dry-run assertions now pin preferred auto host ports `61432`/`61434` while preserving container service ports `5432`/`11434`.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the 2.5.0 persistence-and-readiness coverage (dataDestination bind, watch-guard entrypoint, reply-text classification, scan-marker probe) into Logic (documentation only).
 - 2026-06-09T22:10+02:00 — Compose render test now asserts the FalkorDB volume binds `/var/lib/falkordb/data` and the watcher entrypoint references `cgc-watch-guard.py`; added tests for configurable `dataDestination`, `cgc_graph_content_state` reply-text classification (count / empty-key / LOADING / connection failure), and the scan-marker `indexing` probe.

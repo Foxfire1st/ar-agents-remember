@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T01:25+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T16:35+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -46,7 +46,8 @@ or an 8s timeout — the highlight composer awaits it so a package isn't dropped
 harness. Pure helpers: `terminalSocketUrl` (same-origin
 `ws(s)://<host>/api/terminal/{id}`, id-encoded) and `parseTerminalControl` (`"exit"` | `null`).
 `TerminalSessionInfo` mirrors the server catalog payload (`id`, `label`, `kind`, optional
-`harness`/`lifecycleId`, `cwd`, `tmuxName`, timestamps, `status`, optional `terminatedAt`) and
+`harness`/`lifecycleId`, optional `leafKey` (the durable qualified leaf id the chat claims, slice L5),
+`cwd`, `tmuxName`, timestamps, `status`, optional `terminatedAt`) and
 `TerminalSessionStatus` is `"running" | "exited" | "terminated"`. `fetchTerminalSessions(base)` GETs
 `/api/terminal/sessions` and returns an array or `[]` on failure, letting `Chats` hydrate rows after a
 page/dashboard refresh without treating the session list as projected lifecycle truth.
@@ -56,16 +57,33 @@ without a transient fetch failure wiping local state.
 `openTerminalSession(id, kind, base, harness?, options?)` (slice 6e-2a/6e-2b) is a best-effort
 `POST /api/terminal/{id}` asking the server to **spawn + own** the session (the command is
 server-resolved from `kind` + the `harness` id, never sent — `kind="harness"` posts `{kind,harness}`);
-the optional `options` object sends the friendly label and `lifecycleId` so the backend catalog can
-persist the same identity the store will hydrate later. The caller then opens the socket — best-effort
-because the dev bench has no backend yet renders its mock. `terminateTerminalSession(id, base)` POSTs
+the optional `options` object sends the friendly label, `lifecycleId`, and (slice L5) `leafKey` so the
+backend catalog can persist the same identity the store will hydrate later — `leafKey` claims a leaf at
+open (the opener returns `409` when a different running chat already owns it). The caller then opens the
+socket — best-effort because the dev bench has no backend yet renders its mock.
+`terminateTerminalSession(id, base)` POSTs
 `/api/terminal/{id}/terminate` and returns success/failure for the destructive UI action.
+`attachSessionToLeaf(sessionId, leafKey, base)` (slice L5) POSTs `/api/terminal/{id}/attach-leaf {leafKey}`
+to claim a leaf for an **existing** session (enclosure-free, no respawn): the server is the uniqueness
+arbiter, so it maps `200 → "ok"` (bound), `409 → "leaf-taken"` (another running chat owns it), and any
+other status / network failure → `"error"` (the `AttachLeafResult` union the Chats page surfaces).
 `fetchHarnesses(base)` (slice 6e-2b) GETs `/api/harnesses` → the `HarnessInfo[]`
 (id/name/detected) the Chats strip turns into a button per *detected* harness; `[]` on any failure.
 `TerminalSocketContext` is the dev/test seam — a provider supplies a fake factory (the bench mock);
 `null` in production ⇒ a real same-origin socket.
 `bracketedPaste(text)` (slice 6e-3) is a pure helper wrapping text in `ESC[200~…ESC[201~` so a TUI
 treats composer-injected context as one paste (used by `Chats`; typed keystrokes stay raw).
+`pasteAndConfirm(conn, packageText)` (reopened L6) is the confirmed **draft** delivery loop for the
+leaf-bind handoff: it never sends Enter, and it does not trust a single send — a booting harness
+(Claude Code loading MCP servers) silently **discards** stdin until its composer mounts, and tmux masks
+every readiness signal from the client (it enables bracketed paste and the alternate screen for all
+clients unconditionally and exposes no pane-level composer state). Each attempt waits for an
+output-quiet window (`whenReady`), snapshots `lastOutputAt()`, sends ONE sanitized bracketed paste, and
+polls for the paste's own echo (the draft render or a `[Pasted text #N]` chip) past that baseline
+within `PASTE_ECHO_MS` (4s); no echo means the paste was discarded, so it retries after
+`PASTE_RETRY_DELAY_MS` until `PASTE_BOOT_DEADLINE_MS` (30s) and resolves `false` so the caller can
+surface an unconfirmed-delivery note. The long echo window doubles as a late-echo catch so a paste the
+harness queued (rather than discarded) is not re-sent as a duplicate.
 
 ### Invariants And Boundaries
 
@@ -85,6 +103,18 @@ imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-
 
 ## Update History
 
+- 2026-07-02T16:35+02:00 — Reopened L6 paste-loss fix: added `pasteAndConfirm(conn, packageText)` — the
+  confirmed draft-paste loop (quiet-gated attempt → echo confirmation past the pre-paste `lastOutputAt`
+  baseline → bounded retry over a 30s boot deadline, never sending Enter). Root cause it covers:
+  reproduced against a scratch tmux+claude session, a bracketed paste sent 1.5s after spawn is discarded
+  by booting Claude Code while the same paste at ~10s lands as an unsubmitted draft; no readiness signal
+  exists to wait on because tmux 3.4 enables `?2004h`/`?1049h` on every client unconditionally.
+  Verification metadata pinned until closeout stamps the follow-up commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added the leaf-registry client surface — `TerminalSessionInfo.leafKey`
+  and an `OpenTerminalOptions.leafKey` the opener body now sends (claim-at-open), plus
+  `attachSessionToLeaf(id, leafKey)` → `POST /api/terminal/{id}/attach-leaf` mapping `200/409/other` to
+  the `AttachLeafResult` union `"ok" | "leaf-taken" | "error"` (the server is the uniqueness arbiter).
+  Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-06-27T01:25+02:00 — Task 22 follow-up: added `fetchTerminalSessionsOrNull` so cross-tab Chats
   sync can distinguish a successful empty catalog from a failed fetch while keeping
   `fetchTerminalSessions`'s existing `[]`-on-failure API stable. Verification metadata pinned until

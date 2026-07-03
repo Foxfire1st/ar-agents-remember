@@ -5,15 +5,16 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T01:55+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
 
 `test_config.py` verifies MCP authority settings parsing and derived runtime
-paths.
+paths, including (L12) that generated CGC roots carry the per-repo managed
+cgcignorePatterns for agents-remember.
 
 ## Code Commentary
 
@@ -57,6 +58,7 @@ Config/schema tests now assert the public tool surface includes `parent_task` an
 
 ## Update History
 
+- 2026-07-03T01:55+02:00 — L12 asserts the agents-remember root entry in generated settings carries cgcignorePatterns=[mcp/src/agents_remember/package_data/].
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: config/tool-schema assertions now include `parent_task` and `leaf_id` on resolver/worktree tool signatures so installed MCP metadata matches the new task resolver contract. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-10T05:30+02:00 — Added `LifecycleSettingsDerivationTests`: the settings-generated CGC runner image must equal `cgc_runner_image()` and carry the version-layerrevision suffix (regression for GitHub #50).

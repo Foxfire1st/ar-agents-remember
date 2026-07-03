@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T18:43+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-02T17:25+02:00                           |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -53,7 +53,14 @@ Ctrl-Z byte `_SUSPEND_BYTE` (`0x1a`) before `os.write` — that byte makes Claud
 self-suspend and a bare pane has no shell to `fg` it back, so the harness soft-locks and
 the operator's message is lost; a plain shell session leaves `suspend_unsafe=False`, so its
 Ctrl-Z (legitimate job control) passes through and an all-Ctrl-Z frame to a harness is a
-no-op write (slice 6f hardening). `read_nonblocking`/`resize`/`close` key off the session's
+no-op write (slice 6f hardening). `write_session` also runs the reopened-L6 **copy-mode escape**
+state machine: a stdin frame made only of SGR mouse reports (`_SGR_MOUSE_EVENT`) arms the
+per-connection `mouse_seen` flag (wheel scrolling under `mouse on` may have entered tmux copy-mode,
+which captures the keyboard); the first non-mouse input afterwards clears the flag and calls the
+injectable mode canceller (`tmux send-keys -X cancel` by default, harmless no-op outside a mode)
+before writing — so typing anywhere in the scrollback snaps the view to the live bottom and reaches
+the pane app, at most one cancel subprocess per scroll-then-type cycle, and never triggered by
+mouse-aware panes that don't enter copy-mode. `read_nonblocking`/`resize`/`close` key off the session's
 PTY `master_fd`:
 `read_nonblocking` returns `b""` both when idle (`BlockingIOError`) and after the child
 exits (`OSError`/EIO once the slave closes) — callers use `is_alive` to disambiguate;
@@ -65,11 +72,19 @@ injectable tmux probe (`tmux has-session -t <name>` by default), `ensure` delega
 creation to the injectable creator (`tmux new-session -d -s <name> ...` by default), and
 `terminate(sid, tmux_name=None)` kills the resolved tmux name via the injectable killer
 (`tmux kill-session -t <name>` by default), then drops/discards any in-process PTY client. `close`
-remains detach-only and does **not** kill tmux. All three default tmux helpers
-(`_tmux_has_session`/`_tmux_kill_session`/`_tmux_create_detached`) run `subprocess.run(...,
-stdin=subprocess.DEVNULL, stdout=..., stderr=subprocess.DEVNULL)` — the `stdin=DEVNULL` is the
-subprocess-hygiene guard (GitHub #49): under the stdio MCP transport the parent's stdin *is* the
-JSON-RPC protocol pipe, so a fire-and-forget tmux call must never inherit and consume it.
+remains detach-only and does **not** kill tmux. The reopened L6 wheel fix adds an injectable
+**configurer** (`_tmux_enable_mouse` by default: `tmux set-option -t <name> mouse on`, failures
+suppressed) that `ensure` re-asserts after the create/probe step — so durable sessions predating the
+option pick it up — and `attach` re-asserts against the existing session (attach cannot race creation).
+With per-session `mouse on`, tmux requests mouse tracking from the browser client, so wheel input
+scrolls tmux's own pane history (copy-mode) for normal-buffer TUIs (Codex) and passes through to panes
+whose app tracks the mouse itself (Claude Code); the known tradeoff is Shift+drag for pane text
+selection. All four default tmux helpers
+(`_tmux_has_session`/`_tmux_kill_session`/`_tmux_create_detached`/`_tmux_enable_mouse`) run
+`subprocess.run(..., stdin=subprocess.DEVNULL, stdout=..., stderr=subprocess.DEVNULL)` — the
+`stdin=DEVNULL` is the subprocess-hygiene guard (GitHub #49): under the stdio MCP transport the
+parent's stdin *is* the JSON-RPC protocol pipe, so a fire-and-forget tmux call must never inherit and
+consume it.
 
 The default spawner `_spawn_pty` is the one impure seam: `pty.openpty()`, **seed a sane
 `_DEFAULT_PTY_SIZE` (24×80) winsize** on the master (`TIOCSWINSZ`) so tmux never starts at 0×0, then
@@ -87,7 +102,9 @@ so a fake spawner can back a session with any process object.
 ### Invariants And Boundaries
 
 - **Impure seams are injectable.** Attached-client PTY I/O is behind `Spawner`, detached tmux creation
-  is behind `TmuxCreator`, and explicit termination is behind `TmuxKiller`; tests drive a real kernel
+  is behind `TmuxCreator`, explicit termination is behind `TmuxKiller`, session-option assertion
+  (mouse mode) is behind `TmuxConfigurer`, and copy-mode escape is behind `TmuxModeCanceller`; tests
+  drive a real kernel
   PTY with the tmux wrapper stripped (`cat`), and the tmux path itself is one skip-when-unavailable
   integration test. The pure command/name builders are I/O-free.
 - **Fixed-argv security posture (B2).** The spawn is a `Sequence[str]`, never a shell
@@ -119,6 +136,20 @@ so a fake spawner can back a session with any process object.
 
 ## Update History
 
+- 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape: `write_session` now recognizes SGR
+  mouse-report-only stdin frames (arming a per-connection `mouse_seen` flag) and cancels tmux
+  copy-mode via the new injectable `TmuxModeCanceller` (`tmux send-keys -X cancel`, suppressed
+  failures, DEVNULL hygiene) on the first typed input after scrolling. Rationale: copy-mode captures
+  the keyboard, so scrolled-up non-mouse panes (Codex) swallowed typing until the operator scrolled
+  back to the bottom; tmux offers no any-key-cancels binding, but the host sees every stdin frame.
+  Verification metadata pinned until closeout stamps the follow-up commit.
+- 2026-07-02T16:35+02:00 — Reopened L6 wheel fix: added the injectable `TmuxConfigurer` seam with the
+  `_tmux_enable_mouse` default (`tmux set-option -t <name> mouse on`, suppressed failures, DEVNULL
+  hygiene), asserted by `ensure` after create/probe and by `attach` against the existing durable
+  session. Rationale: xterm always sees the tmux client's alternate screen, so browser wheel input can
+  only scroll correctly when tmux itself handles it as mouse reports (pane history for normal-buffer
+  TUIs, pass-through for mouse-aware TUIs). Verification metadata pinned until closeout stamps the
+  follow-up commit.
 - 2026-06-27T18:43+02:00 — Subprocess-hygiene fix (GitHub #49): added `stdin=subprocess.DEVNULL` to the
   three default tmux `subprocess.run` call sites (`_tmux_has_session`/`_tmux_kill_session`/
   `_tmux_create_detached`) so a fire-and-forget tmux call cannot inherit and consume the stdio MCP

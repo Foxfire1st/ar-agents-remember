@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-28T13:54+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-03T12:50+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -34,7 +34,9 @@ for stale task-row pickup warnings. Task 22 adds `terminal_catalog.py` and the d
 surface: opener rows persist under `logs/dashboard/terminal-sessions.json`, `/api/terminal/sessions`
 hydrates the UI after refresh, the opener creates detached tmux sessions, each WebSocket gets its own
 tmux client only after a tmux probe, and explicit terminate kills tmux and hides the row from normal
-lists. Run via
+lists. L9 adds `terminal_leaf_assignment.py`, the shared catalog move policy used by both
+`POST /api/terminal/{session}/attach-leaf` and the agent-facing MCP tool so hosted chats can move between
+durable leaves without respawn. Run via
 `agents-remember dashboard` (the `cli/` umbrella); `--sim` replays a recorded fixture
 through the byte-identical path.
 
@@ -91,7 +93,14 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   detected harness tmux session at `config.workspace_root`; server-resolved, never on the wire — the
   opener also passes `suspend_unsafe=(kind=="harness")` so later host writes strip Ctrl-Z for bare-pane
   harnesses, slice 6f, and persists a `TerminalCatalogEntry` carrying
-  label/lifecycle/cwd/tmux/command/status without opening a starter PTY client), `GET
+  label/lifecycle/cwd/tmux/command/status without opening a starter PTY client; **slice L5** the opener
+  also takes a `leafKey`, claims the leaf via `_claim_leaf_or_409(…, role=role_for_kind(kind))` before the
+  spawn — `409 leaf-taken` only when a different running session **of the same role** owns it (uniqueness
+  is per (leaf, role), so a terminal never collides with the leaf's chat) — persists `leaf_key` (preserving
+  an existing binding when none is sent), and echoes `leafKey`),
+  `POST /api/terminal/{session}/attach-leaf` (**slice L5/L9** — claim or move a leaf for an existing
+  session, enclosure-free / no respawn; delegates to `terminal_leaf_assignment.assign_terminal_session_to_leaf`,
+  returning `404 unknown-session`, `409 leaf-taken` without mutation, or `200 attached`), `GET
   /api/terminal/sessions` (task 22 — refresh stale catalog rows and return non-terminated sessions),
   `POST /api/terminal/{session}/terminate` (task 22 — kill tmux and mark the catalog row terminated),
   `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), `POST /api/terminal/{session}/image`
@@ -138,6 +147,33 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 - `static.py` — `dashboard_static_dir()` resolves `package_data/dashboard` via
   `importlib.resources` (the `install.assets` idiom); `mount_static(app)` mounts it at `/`
   (non-fatal when absent).
+- `files.py` — the **read-only files API** (operations-integration L1): `register_files_routes(app, config)`
+  registers `GET /api/files/{repos,list,read,onboarding}` **before** `mount_static` (the greedy `/` mount
+  must stay last). It is the first serving module to resolve a kernel `CoordinationContext`: a
+  `{repo, mainline|enclosure}` scope maps to `(codeRoot, onboardingRoot)` to enumerate repos/enclosures,
+  list one directory level (code + paired onboarding), read a file (content + drift metadata), and resolve
+  the 1:1 code↔onboarding sidecar pairing both ways via the shared `kernel/sidecar_pairing.py`. Allow-listed
+  roots only, realpath-confined (Task-6 posture); a memory-less repo degrades to code-only browsing and a
+  missing sidecar is a normal `missing` result, never an error. Feeds the dashboard File Viewer (L2) and
+  Change-Set Viewer (L3/L4).
+- `scope.py` — the **shared browse-scope layer** (operations-integration L3, extracted from `files.py`):
+  `FileScope`, `resolve_scope` (`{repo, mainline|enclosure}` → roots), the `run_scoped` error map (404
+  unknown-repo/unknown-scope/not-found, 400 bad-path), `language_for`, and the active leaf-enclosure
+  enumeration. `files.py` and `changeset.py` both import it (files.py re-exports `FileScope` +
+  `_resolve_within` for callers/tests). Behaviour is identical to L1 — one resolver, shared.
+- `changeset.py` — the **read-only change-set API** (operations-integration L3): `register_changeset_routes`
+  mounts `GET /api/changeset/{task,file-diff,master}` **before** the static mount. Computes a task's
+  `base → current` code + memory change-set with insertion/deletion counts + status + `hasSidecar`
+  (`task`), BEFORE/AFTER file content for the L4 CodeMirror MergeView (`file-diff`, with an optional `master` param for the series net file-diff), and the master's **NET**
+  change-set (`master`) — `git diff <master-base> <series-tip>` for code + memory (one coherent,
+  per-file-inspectable range) with a per-leaf counter breakdown alongside. **L4a** adds the doc-reader
+  **leaf views**: the `task` + `file-diff` routes take a `leaf` + `mode` selector (precedence
+  `leaf > master > scope`), resolving one leaf's `committed` (`base → code_commit`) or `working`
+  (`HEAD → worktree`, uncommitted only) change-set straight off the persisted enclosure contract
+  (`_load_leaf_contract`, by leaf-id — works with no live worktree, for a completed leaf), with the
+  selector validated (`leaf` needs `master` + a valid `mode` → `400`, no-live-worktree `working` → `404`).
+  Reuses `scope.py` + the L1 posture; the change-detection primitive is
+  `worktrees/modules/git.changed_files_with_counts`. Feeds the dashboard Change-Set Viewer (L4/L4a).
 - `terminal.py` — the **Mode B2 terminal host** (slice 6d-1): `TerminalHost`, a registry of
   tmux-wrapped PTY sessions correlated to a lifecycle/worktree. `open`/`write`/
   `read_nonblocking`/`resize`/`close` over a stdlib-`pty` master fd; the spawn (`tmux
@@ -149,15 +185,32 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   Task 22 adds injectable tmux probe/create/kill hooks, `has_session`, `ensure`, `terminate`, and
   unregistered per-connection `attach` clients so the durable catalog can create a detached tmux
   session, prove it still exists before attach, kill one explicitly, and serve multiple browser tabs
-  without sharing one PTY fd. Fixed-argv (no shell injection), OS-user creds, localhost. The live
+  without sharing one PTY fd. The reopened L6 wheel fix adds the injectable `TmuxConfigurer` seam
+  (default: per-session `tmux set-option mouse on`, failures suppressed), asserted by `ensure` and
+  every `attach`, so browser wheel input reaches tmux as mouse reports — tmux scrolls pane history for
+  normal-buffer TUIs and passes wheel through to mouse-aware ones (pane text selection becomes
+  Shift+drag). Its copy-mode escape companion: `write_session` arms a per-connection flag on
+  mouse-report-only stdin and cancels copy-mode (injectable `TmuxModeCanceller`, `send-keys -X cancel`
+  default) on the first typed input after scrolling, so typing anywhere in the scrollback snaps to the
+  live bottom and reaches the pane app. Fixed-argv (no shell injection), OS-user creds, localhost. The live
   WebSocket bridge (`@app.websocket("/api/terminal/{session}")`, in `app.py`) + the `websockets`
   dep landed in 6d-2; the xterm.js viewport is 6e.
 - `terminal_catalog.py` — the durable dashboard terminal-session catalog (task 22): immutable
   `TerminalCatalogEntry` rows plus a JSON store under `logs/dashboard/terminal-sessions.json`. It
-  persists id, label, kind, optional harness/lifecycle, cwd, tmux name, command, timestamps, and status;
-  normal `list()` keeps exited rows visible and filters terminated rows, while `include_terminated=True`
+  persists id, label, kind, optional harness/lifecycle, cwd, tmux name, command, timestamps, status, and
+  (**slice L5**) an optional `leaf_key`; normal `list()` keeps exited rows visible and filters terminated
+  rows, while `include_terminated=True`
   is available for audits. Explicit termination wins over later passive exit bookkeeping so an `End`
-  action cannot reappear after refresh as an `exited` row.
+  action cannot reappear after refresh as an `exited` row. **Slice L5** makes the catalog the
+  **leaf→chat registry**: `to_json` writes `leafKey` only when set (migration-safe), `with_leaf_key` is
+  the attach write point, and (L5 fix 2) a leaf-uniqueness **role** (`TerminalSessionRole`,
+  `role_for_kind` / `entry.role` — a shell is a terminal, a harness is a chat) scopes
+  `active_for_leaf(leaf_key, role="chat")` so it returns the single **running** owner *of that role* — the
+  per-(leaf, role) single-owner probe the opener + attach-leaf routes call before an upsert, letting one
+  leaf hold a running chat AND a running terminal at once.
+- `terminal_leaf_assignment.py` — the shared L9 catalog reassignment helper: moves an existing catalog row
+  to a new durable `leafKey`, returns `leaf-taken` without mutation when another running same-role session
+  owns the target leaf, and is reused by the dashboard route and MCP tool.
 - `harnesses.py` — the **harness launch registry** (slice 6e-2b): the curated `HARNESSES` set (Claude
   Code / Codex / Pi.dev) + `find_harness` / `is_detected` / `detect_harnesses` (injectable, call-time
   `shutil.which`). The data behind `GET /api/harnesses` detection + the `kind="harness"` opener
@@ -207,6 +260,48 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-03T12:50+02:00 — No route impact: L15 changed only pyright-visible narrowing inside changeset.py; the serving surface and behavior are unchanged.
+- 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape route impact: `terminal.py`'s `write_session`
+  now cancels tmux copy-mode (new injectable `TmuxModeCanceller`, `tmux send-keys -X cancel` default)
+  on the first typed input after mouse-report traffic, because copy-mode captures the keyboard and
+  scrolled-up non-mouse panes swallowed typing until scrolled back to the bottom. At most one cancel
+  per scroll-then-type cycle; mouse-aware panes never trigger it. Verification metadata pinned until
+  closeout stamps the follow-up commit.
+- 2026-07-02T17:04+02:00 — L9 route impact: added `terminal_leaf_assignment.py` and made
+  `app.py`'s existing `attach-leaf` route a move/reassign route over the shared helper. The route now
+  shares server-authoritative catalog conflict handling with the agent-facing MCP tool and preserves
+  `leaf-taken` no-mutation semantics. Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-07-02T16:35+02:00 — Reopened L6 wheel fix route impact: `terminal.py` gained the injectable
+  `TmuxConfigurer` seam (default `_tmux_enable_mouse`: per-session `tmux set-option mouse on`, failures
+  suppressed, DEVNULL hygiene), asserted by `ensure` after create/probe and by every `attach`. Browser
+  wheel input now reaches tmux as mouse reports, scrolling pane history for normal-buffer TUIs and
+  passing through to mouse-aware TUIs; pane text selection becomes Shift+drag. Verification metadata
+  pinned until closeout stamps the follow-up commit.
+- 2026-06-30T00:00:00+02:00 — L5 follow-up route impact: leaf uniqueness is now per **(leaf, role)**. `terminal_catalog.py`
+  gained `TerminalSessionRole` / `role_for_kind` / `entry.role` and a role kwarg on `active_for_leaf`; in
+  `app.py` `_claim_leaf_or_409` is role-aware — the opener passes `role_for_kind(kind)` and `attach-leaf`
+  passes `entry.role`, so a terminal can sit beside the leaf's agent chat (no 409) while a second chat or
+  terminal still 409s. Updated the `app.py` opener/attach-leaf + `terminal_catalog.py` Route Model bullets.
+  Verification metadata pinned until closeout stamps the L5 commit.
+- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat) route impact: `app.py` gained the leaf→chat registry routes — the
+  opener now takes a `leafKey`, claims the leaf via `_claim_leaf_or_409` (`409 leaf-taken`, running-only),
+  persists + echoes it, and a new `POST /api/terminal/{session}/attach-leaf` claims a leaf for an existing
+  session (`404` unknown/terminated). `terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
+  (migration-safe `to_json`), `with_leaf_key`, and `active_for_leaf` (running-only single-owner lookup).
+  Updated the `app.py` + `terminal_catalog.py` Route Model bullets. Verification metadata pinned until
+  closeout stamps the L5 commit.
+- 2026-06-29T23:00+02:00 — operations-integration L4a route impact: `changeset.py`'s `task` + `file-diff`
+  routes gained a `leaf` + `mode` selector (precedence `leaf > master > scope`) for the doc-reader leaf
+  views — `committed` (`base → code_commit`) / `working` (`HEAD → worktree`), resolved by leaf-id off the
+  persisted enclosure contract (works with no live worktree), with selector validation (400/404). Updated
+  the `changeset.py` Route Model bullet. Verification metadata pinned until closeout stamps the L4a commit.
+- 2026-06-29T17:00+02:00 — operations-integration L4 follow-up route impact: `changeset.py`'s `master`
+  endpoint is now the **NET** series diff (`git diff <master-base> <series-tip>` for code + memory, per-file
+  inspectable) rather than the sum-of-leaves, and `/api/changeset/file-diff` gained an optional `master`
+  param (the series net file-diff). Updated the `changeset.py` Route Model bullet. Verification metadata
+  pinned until closeout stamps the L4 follow-up commit.
+- 2026-06-29T15:30+02:00 — operations-integration L3 route impact: added `scope.py` (the shared browse-scope layer extracted from `files.py` — `FileScope`/`resolve_scope`/`run_scoped`/`language_for`/active-enclosure enumeration) and `changeset.py` (the read-only `GET /api/changeset/{task,file-diff,master}` change-set API: per-task `base → current` code+memory counts + status + `hasSidecar`, BEFORE/AFTER file content for the L4 MergeView, and master accumulation) to the Route Model, both registered before the static mount; `files.py` now shares `scope.py`. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
+- 2026-06-28T22:41+02:00 — operations-integration L1 route impact: added `files.py` (the read-only `GET /api/files/{repos,list,read,onboarding}` files API) to the Route Model — the first serving module to bridge to the kernel `CoordinationContext`, registered before the static mount. Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-28T13:54+02:00 — Task 34 route impact: the raw `/api/events` channel (`events.py`) now does
   **one** retained-backlog scan per connect, streams that bounded backlog in **chunks** instead of
   materializing the whole history, **filters `lifecycle.heartbeat`** out of the river, and prunes expired

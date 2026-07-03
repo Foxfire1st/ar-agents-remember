@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastUpdated            | 2026-07-03T01:55+02:00 |
+| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
+| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -17,7 +17,10 @@
 ## Purpose
 
 `settings.py` converts trusted MCP runtime settings into the temporary provider
-lifecycle settings consumed by package-local provider lifecycle code. Generated
+lifecycle settings consumed by package-local provider lifecycle code. Since L12 each generated CGC root entry can carry per-repo managed
+`cgcignorePatterns` from `CGC_REPO_CGCIGNORE_EXTRAS` (feeding the layout's
+`_cgcignore_patterns_from_settings` hook, which previously had no config feeder).
+Generated
 settings for both `grepai-memory` and `codegraphcontext-code` describe
 Docker-owned provider runtimes rather than host provider binaries or venvs.
 
@@ -80,6 +83,7 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 ## Update History
 
+- 2026-07-03T01:55+02:00 — L12: _cgc_root_settings generates each CGC root and attaches per-repo cgcignorePatterns from the in-code extras map (agents-remember: exclude the committed package_data bundle).
 - 2026-06-10T05:30+02:00 — CGC runner image comes from the single `cgc_runner_image()` derivation (GitHub #50): the independent repository:version f-string here dropped the image layer revision, so upgrading hosts kept a cached guard-less image under the guard entrypoint.
 - 2026-06-09T22:10+02:00 — CGC backend default settings gained `dataDestination: /var/lib/falkordb/data` (the container path FalkorDB v4 writes to), mirroring the GrepAI/Postgres `dataDestination` pattern; the data volume now binds there instead of `/data`.
 - 2026-05-28T12:32+02:00: Updated after generated provider log roots moved under the central `logs/providers/` tree.
