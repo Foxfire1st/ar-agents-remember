@@ -114,9 +114,10 @@
       "JSON",
       "mcp/src/agents_remember/controllers/",
       "route-local-overview",
-      "026b2468a8d456e35a4f80a86e66a574b1e81f4b",
+      "ad30dd38c3dcfa13fb85f44b281488499e92519a",
       "/../../overview.md",
       "controllers/",
+      "task_reopen_tool",
       "read_ar_files",
       "GET /api/files",
       "parent_task",
@@ -128,8 +129,7 @@
       "mcp/tools/",
       "providers",
       "worktrees",
-      "memory_quality",
-      "memory"
+      "memory_quality"
     ]
   },
   "fallback": {

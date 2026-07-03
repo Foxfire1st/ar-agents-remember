@@ -26,13 +26,14 @@
     "mcp/src/agents_remember/models/runtime.py",
     "mcp/src/agents_remember/models/skills.py",
     "mcp/src/agents_remember/models/task_doc.py",
+    "mcp/src/agents_remember/models/terminal.py",
     "mcp/src/agents_remember/models/tokens.py",
     "mcp/src/agents_remember/models/tool_registry.py",
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 19,
-    "fileSidecars": 19,
+    "sourceFilesInScope": 20,
+    "fileSidecars": 20,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -69,6 +70,7 @@
     "src",
     "task",
     "task_doc",
+    "terminal",
     "tokens",
     "tool",
     "tool_registry",
@@ -94,6 +96,7 @@
       "mcp/src/agents_remember/models/runtime.py",
       "mcp/src/agents_remember/models/skills.py",
       "mcp/src/agents_remember/models/task_doc.py",
+      "mcp/src/agents_remember/models/terminal.py",
       "mcp/src/agents_remember/models/tokens.py",
       "mcp/src/agents_remember/models/tool_registry.py",
       "mcp/src/agents_remember/models/worktree.py"
@@ -131,6 +134,8 @@
       "skills",
       "task_doc.py",
       "task_doc",
+      "terminal.py",
+      "terminal",
       "tokens.py",
       "tokens",
       "tool_registry.py",
@@ -144,9 +149,7 @@
       "ResponseModel",
       "FlexibleResponseEnvelope",
       "PUBLIC_TOOLS",
-      "BOTH",
-      "mcp/src/agents_remember/models/",
-      "route-local-overview"
+      "BOTH"
     ]
   },
   "fallback": {

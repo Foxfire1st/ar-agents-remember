@@ -44,7 +44,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1321,
+    "sourceFilesInScope": 1371,
     "fileSidecars": 6,
     "childRoutes": 5
   },
@@ -112,7 +112,7 @@
       "agents_remember",
       "package_data",
       "repo-overview",
-      "026b2468a8d456e35a4f80a86e66a574b1e81f4b",
+      "ad30dd38c3dcfa13fb85f44b281488499e92519a",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -123,13 +123,13 @@
       "memory_root",
       "coordination_root",
       "c-09-git-worktree-manager",
+      "task_reopen",
       "c-10-adopt-memory-baseline",
       "memory.md",
       "providers/runners/",
       "providers/data/",
       "logs/mcp/",
-      "logs/providers/",
-      "providers/_bin/"
+      "logs/providers/"
     ]
   },
   "fallback": {
