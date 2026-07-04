@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00 |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -161,8 +161,9 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   with transported history are exposed as count + sample
   (`PATH_SAMPLE_LIMIT`). Slice 6b adds **server-side gate enforcement** to
   `closeout.py`: when the contract has a `lifecycle_id`, closeout refuses unless
-  the lifecycle's `closeout-approval` gate is developer-approved
-  (`controlplane.evaluate_closeout_gate`), marks it `applied` on success, and
+  the lifecycle's `closeout-approval` gate is developer-approved or approved by
+  a policy-valid delegated orchestration decision
+  (`controlplane.evaluate_closeout_gate(..., policy=args.gate_policy)`), marks it `applied` on success, and
   reports a `closeout_gate` block; gateless lifecycles keep the chat commit gate.
   Task 30 adds the already-integrated re-closeout reset: closeout source-head
   validation accepts the recorded integrated tips, preview reports
@@ -191,6 +192,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4 route impact: closeout preview/apply now
+  threads the trusted gate policy through `WorktreeArgs` and evaluates
+  `closeout-approval` through that policy, preserving human approvals while
+  allowing only configured delegated orchestration approvals. Verification
+  metadata pinned until closeout stamps the L4 commit.
 - 2026-07-03T00:35+02:00 — L11 route impact: start's existing-contract branch recreates fresh for cleanup in {abandoned, reopened} and restamps the leaf doc's lifecycleId post-write; abandon's controller ends its anchored ambient lifecycle. The reopen implementation itself lives under tasks/.
 - 2026-06-29T23:18+02:00 — No route impact: `start.py` now derives the recorded memory base from the memory source branch tip (`_memory_base_for_source`) instead of the repo HEAD; the module structure and route model are unchanged (detail in the start.py file sidecar; task 260629_post-landing-cleanup L3).
 - 2026-06-29T15:30+02:00 — operations-integration L3: `git.py` gained `changed_files_with_counts` (+ `_rename_aware_path`), the counts/status change-set primitive (keeps deletions; binary → `None`; untracked → `A`; rename → post-rename path) feeding the L3 serving change-set API (`serving/changeset.py`). Refreshed the `git.py` Hot Path bullet. The module split this overview describes is unchanged. Verification metadata pinned to the task base until closeout stamps the L3 code commit.

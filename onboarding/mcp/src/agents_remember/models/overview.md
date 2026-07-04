@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00 |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -43,7 +43,8 @@ adding a `summary` for the public NOTIFY-AND-CONTINUE turn-end tool),
 `task_doc.py` for the `task_doc` authoring response including the optional Task 21 `masterSync`
 leaf-to-master result, `gates.py` for
 `LifecycleGateResponse`, the public gate decide/list responses, and retained
-compatibility gate responses, `operator_inbox.py` for the
+compatibility gate responses (L4 adds delegated-decision `decidingRole` and
+`evidenceRefs` to the decide response), `operator_inbox.py` for the
 three `operator_inbox_*` external-chat response contracts (task 10),
 `orchestration.py` for the strict `orchestration_nudge_manager` response,
 `lifecycle_finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
@@ -108,6 +109,10 @@ context-delivery outcome + the server-arbitrated `leaf-taken`/pre-spawn refusal 
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4 route impact: `models/gates.py` extends
+  `GateDecideResponse` with delegated-decision attribution and evidence refs.
+  It remains a strict `ToolResponse`, so the strict/flexible route model is
+  unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: added the strict orchestration
   nudge response model and expanded inbox response fields for delivery metadata.
   Verification metadata pinned until closeout stamps the L3 commit.

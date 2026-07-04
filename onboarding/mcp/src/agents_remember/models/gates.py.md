@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/models/gates.py`   |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-06-26T14:16+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`  |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                      |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`  |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -21,7 +21,8 @@ Response models for lifecycle gate control-plane payloads — AR-owned strict
 `gate`, `lifecycle`, and `wait` objects plus the optional structured `ask`.
 `GateCreateResponse`, `GateWaitResponse`, and `GateResponseWaitResponse` remain
 internal compatibility response models for lower-level payload builders.
-`GateDecideResponse` (gateId / state / decidedBy / decidedVia) and
+`GateDecideResponse` (gateId / state / decidedBy / decidedVia, plus L4
+`decidingRole` and `evidenceRefs`) and
 `GateListResponse` (lifecycleId / gates) remain public gate response models. All subclass `ToolResponse` (strict,
 `extra="forbid"`). `GateKind` / `GateState` reuse the record's Literals so the response contract is as
 drift-proof as the record.
@@ -42,6 +43,10 @@ drift-proof as the record.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: `GateDecideResponse` now exposes
+  delegated-decision attribution (`decidingRole`) and reviewer/evidence refs
+  carried on the gate record. Verification metadata pinned until closeout stamps
+  the L4 commit.
 - 2026-06-26T14:16+02:00 — Task 25: added `LifecycleGateResponse` for the unified public junction and classified create/wait/response-wait models as internal compatibility contracts.
 - 2026-06-25T07:17+02:00 — Task 19: `GateWaitResponse` now carries optional decision metadata and `GateResponseWaitResponse` models the combined gate/inbox bounded wait helper. Verification metadata pinned until closeout stamps the task-19 code commit.
 - 2026-06-18T01:05+02:00 — Created for task 6 slice 6a: the four `gate_*` response models. Verification metadata pinned until closeout stamps the 6a code commit.

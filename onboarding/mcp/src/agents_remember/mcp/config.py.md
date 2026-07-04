@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T11:40+02:00|
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00|
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -50,6 +50,16 @@ off. It follows the `timeoutCaps` fail-loud discipline: keys outside
 `autostart` must surface at boot, not silently leave the daemon unsupervised),
 `autoStart` must be a boolean, and `port` a non-bool integer in 1..65535.
 
+`parse_orchestration_settings` (260703-L4) validates the optional
+`orchestration` object into `McpRuntimeConfig.orchestration`. The L4 field is
+`gateDelegation`: omitted means `DEFAULT_GATE_POLICY` (all-human). It accepts a
+built-in `policy` name (`all-human` or `manager-decides-leaf-gates`), optional
+per-kind overrides under `kinds`, and
+`requireReviewerVerdictAtSeams`. Per-kind entries may be a role string or an
+object with `role` and `requireReviewerVerdict`; unknown keys, bad roles,
+human-pinned gate delegation, and unsupported delegated kinds raise
+`ConfigError` at startup.
+
 ### Invariants And Boundaries
 
 - MCP settings are the authority for the server path.
@@ -67,6 +77,9 @@ off. It follows the `timeoutCaps` fail-loud discipline: keys outside
 - `dashboard` accepts only `KNOWN_DASHBOARD_FIELDS` (`autoStart`, `port`) with the
   same fail-loud rejection; its defaults keep dashboard supervision off, so
   existing settings files are untouched by the feature.
+- `orchestration.gateDelegation` defaults to all-human. Delegation is opt-in,
+  validates through `controlplane.gate_policy`, and fail-loud rejects policies
+  that would weaken human-pinned gate kinds.
 
 ## Repo-Internal References
 
@@ -75,9 +88,15 @@ off. It follows the `timeoutCaps` fail-loud discipline: keys outside
 | Server registration consumes this config object. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
 | The daemon supervisor consuming `DashboardSettings` (autoStart/port). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
+| Gate delegation policy validation lives in controlplane. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: added optional
+  `orchestration.gateDelegation` parsing into `OrchestrationSettings`, defaulting
+  to all-human and fail-loud validating delegated roles, reviewer-verdict
+  requirements, and human-pinned kinds. Verification metadata pinned until
+  closeout stamps the L4 commit.
 - 2026-07-03T11:40+02:00 — 260703 L2: added the optional `dashboard` settings object —
   `parse_dashboard_settings` → frozen `DashboardSettings(auto_start, port)` on
   `McpRuntimeConfig.dashboard`, `KNOWN_DASHBOARD_FIELDS` fail-loud allowlist,

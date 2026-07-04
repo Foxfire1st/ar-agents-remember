@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T12:31+02:00                           |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                           |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`       |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -42,7 +42,9 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
   `id`/`kind`/`state`/`decidedBy`/`decidedVia`/`packet`/`ts` plus `decisions` (the
   decision verbs the cockpit may POST for an *open* gate, empty once decided). Distinct
   from the event-derived `ask` proto-gate; the reducer attaches each lifecycle's latest
-  *open* gate, read by `snapshots.read_gates` from the `GateStore`.
+  *open* gate, read by `snapshots.read_gates` from the `GateStore`. L4 adds
+  `evidenceRefs`, passed through from the gate record so clients can see
+  reviewer-verdict artifact references even before dedicated gate-responder polish lands.
 - `EnclosureNode` — a worktree enclosure (contract + group), cross-referenced to
   its lifecycle by `lifecycleId` (`""` for a legacy contract).
 - `ProviderNode` — a provider current-state snapshot with `snapshotStaleSeconds`
@@ -242,6 +244,10 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: `GateNode` now carries additive
+  `evidenceRefs` from the gate record so delegated approvals can surface
+  reviewer verdict artifacts in the projection. Verification metadata pinned
+  until closeout stamps the L4 commit.
 - 2026-07-04T12:31+02:00 - L3: `AgentPickupNode` gained role/message/artifact
   and hosted-delivery metadata so the dashboard projection can display durable
   agent-to-agent inbox state. Verification metadata pinned until closeout stamps

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00 |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -49,7 +49,11 @@ lifecycle with the developer-facing ask, and waits for a developer decision or g
 and forwards the optional `required_decision` list to the payload layer.
 `gate_decide` and `gate_list` remain public control-plane tools; `gate_decide`
 hardcodes `decided_by="model"`/`decided_via="cli"` so the agent cannot
-self-attribute a developer decision. The retired split helpers
+self-attribute a developer decision. L4 adds a trusted orchestration path to
+that registration: when the optional `deciding_role` argument is supplied, the
+payload is decided via `orchestration`, derives `decidedBy` from the active
+lifecycle/session, and is checked against the configured gate policy before any
+gate snapshot is appended. The retired split helpers
 `lifecycle_block`, `gate_create`, `gate_wait`, and `gate_response_wait` are no
 longer registered on the FastMCP surface; their payload builders remain
 lower-level compatibility internals. The
@@ -245,6 +249,7 @@ writing — the preview before adopting a hand `.md`.
 | The compact-content shim installed at server creation minifies tool-result text. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
 | The `runtime_install` tool docstring names preserved user data, managed provider scaffold replacement, watcher rebind behavior, and non-index-rebuilding post-install watcher checks. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | The inbox tools are registered after the gate tools with fixed model/cli attribution. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| Gate delegation policy is parsed from trusted settings and enforced in payload builders. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) and [tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 
 ## Series-Contract Notes
 
@@ -252,6 +257,10 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: `lifecycle_gate`/`gate_decide`
+  registrations forward gate evidence refs, and `gate_decide(deciding_role=...)`
+  uses the server-enforced orchestration decision path instead of model/cli
+  attribution. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-04T12:31+02:00 - L3: expanded the operator inbox tool signatures for
   role/message/delivery metadata and registered `orchestration_nudge_manager`.
   Verification metadata pinned until closeout stamps the L3 commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T11:40+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00 |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -40,6 +40,10 @@ timeout cap" `ConfigError`. `DashboardSettingsTests` (260703 L2) covers the
 optional `dashboard` object: absent → defaults off (autoStart False, port 8765),
 happy parse, unknown-key rejection (`autostart` typo), non-bool `autoStart`
 rejection, invalid ports (bool/0/65536/string), and non-object shapes.
+`OrchestrationSettingsTests` (260703-L4) covers `orchestration.gateDelegation`:
+defaults to all-human, named manager leaf-gate policy, per-kind
+reviewer-verdict requirements, and fail-loud rejection for human-pinned
+`push-approval` or unsupported `agent-question` delegation.
 
 ### Invariants And Boundaries
 
@@ -61,6 +65,10 @@ Config/schema tests now assert the public tool surface includes `parent_task` an
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: added
+  `OrchestrationSettingsTests` for gate-delegation defaults, named/custom
+  policies, reviewer-verdict requirements, and invalid delegation rejection.
+  Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-03T11:40+02:00 — 260703 L2: added `DashboardSettingsTests` (defaults-off, happy parse,
   fail-loud unknown key, type/port validation, non-object rejection) and imported
   `McpRuntimeConfig` for the typed `_load` helper. Verification metadata pinned until closeout

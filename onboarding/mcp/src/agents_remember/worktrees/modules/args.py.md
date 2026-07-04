@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:56+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00     |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`                         |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -53,6 +53,10 @@ resolves (the active lifecycle's id, or a fresh mint when none is active) and
 threads through to `_build_start_contract`, which stamps it into the contract's
 `lifecycle:` block — the durable resume anchor.
 
+`gate_policy: GatePolicy = DEFAULT_GATE_POLICY` (260703-L4) is the parsed
+server-side gate delegation policy threaded from MCP config into worktree
+closeout. Existing CLI/tests that omit it keep the all-human default.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -63,6 +67,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- |
 | Provider setup config is typed through the companion worktree models module. | [models.py](agents-remember/mcp/src/agents_remember/worktrees/modules/models.py) |
 | Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. | [cli.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cli.py) |
+| Gate delegation policy model. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
 
 ## Series-Contract Notes
 
@@ -70,6 +75,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: `WorktreeArgs` now carries
+  `gate_policy`, defaulting to all-human, so closeout preview/apply consumes the
+  trusted MCP gate delegation policy. Verification metadata pinned until closeout
+  stamps the L4 commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `WorktreeArgs` now includes `parent_task` and `leaf_id` so all worktree operations can resolve nested active task roots and specific leaf enclosures without filesystem paths. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-13T18:45+02:00 — Slice 2c: added `lifecycle_id: str = ""` (the observable-lifecycle enclosure anchor the controller resolves and `_build_start_contract` stamps into the contract). Verification metadata pinned until closeout stamps the 2c code commit.
 - 2026-06-10T09:56+02:00 — Added `memory_sync_choice: str | None = None` (GitHub #54 sub-task D worktree_sync recovery selector).

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00 |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -250,10 +250,13 @@ The MCP package separates three surfaces:
 - `agents_remember.controlplane` owns the **gate control plane** (task 6): the durable,
   append-only `ar-gate-record/v1` `GateRecord` + `GateStore` (co-located with the observer
   event log under `observer_root`) and the five `gate_*` MCP tools (`mcp/tools/gates.py`)
-  (slice 6a), plus the **enforcement policy** `enforcement.py` (slice 6b): a
-  `closeout-approval` gate, once developer-approved via the dashboard, binds
-  `worktree_closeout_apply` server-side (a model self-approval is rejected; gateless
-  lifecycles keep the chat commit gate). Slice 09 extends `GateKind` to the full l-01
+  (slice 6a), plus the **enforcement policy** `enforcement.py` (slice 6b/L4): a
+  `closeout-approval` gate, once developer-approved or approved by a configured
+  delegated orchestration role, binds `worktree_closeout_apply` server-side (a
+  model self-approval and an owner lifecycle self-approval are rejected; gateless
+  lifecycles keep the chat commit gate). L4 adds `gate_policy.py`, default
+  all-human settings, human-pinned integration/push/cleanup gates, and
+  reviewer-verdict evidence refs for delegated approvals. Slice 09 extends `GateKind` to the full l-01
   gate spine (`plan-approval` / `worktree-intent` / `closeout-approval` / `push-approval` /
   `integration-approval` / `cleanup-approval` / `agent-question` / `provider-retry` /
   `alarm-ack`) — `closeout-approval` IS the commit gate (no separate `commit-approval`).
@@ -279,7 +282,8 @@ The MCP package separates three surfaces:
 
 The trusted MCP settings file must be absolute and outside the coordinator root.
 It supplies `coordinationRoot`, `workspaceRoot`, allowed repository IDs,
-allowed provider IDs, timeout caps, and optional repository contract paths. The
+allowed provider IDs, timeout caps, optional orchestration gate delegation, and
+optional repository contract paths. The
 server derives repository roots, memory roots, provider runtime roots, provider
 data roots, and provider log roots from those settings. Tool calls name allowed
 repo IDs and boolean options; they do not pass arbitrary host paths.
@@ -398,6 +402,11 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4 route impact: the MCP package now parses
+  opt-in `orchestration.gateDelegation`, exposes the gate policy/controlplane
+  schema, enforces policy-valid delegated closeout approvals server-side, and
+  projects gate evidence refs. Verification metadata pinned until closeout
+  stamps the L4 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: MCP now includes generalized
   agent-to-agent inbox metadata, hosted push delivery, orchestration nudge
   helpers, and dashboard-visible delivery projection. Verification metadata

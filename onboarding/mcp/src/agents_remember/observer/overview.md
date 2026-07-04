@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00 |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`       |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -117,7 +117,9 @@ Slice 6c adds **gate projection** (the Task-6 gate/action plane): `snapshots.rea
 lifecycle + workspace `GateStore` log, and `reducer._attach_gates` materializes each lifecycle's
 latest *open* `GateRecord` onto `LifecycleProjection.gate` (a `GateNode`) while
 `_gate_attention` raises a `gate-open` queue item — so the cockpit can review and decide
-a durable gate, distinct from the event-derived `ask` proto-gate.
+a durable gate, distinct from the event-derived `ask` proto-gate. L4 adds
+`GateNode.evidenceRefs`, a projection pass-through for reviewer-verdict artifact
+refs attached to delegated approvals.
 
 Task 23/24/L3 turns gate/operator-inbox prompts into TTL-bound interaction surfaces. `read_gates` can compact
 expired throwaway gate rows before projection, `AgentPickupNode` is the pending-inbox task-row feedback
@@ -403,6 +405,10 @@ The slice-3a projection read side:
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4 route impact: gate projection now surfaces
+  `evidenceRefs` on `GateNode`, preserving reviewer-verdict references for
+  delegated approval rows. Verification metadata pinned until closeout stamps
+  the L4 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: pending inbox pickups now surface
   role/message/artifact and hosted-delivery metadata for dashboard-visible
   agent-to-agent comms. Verification metadata pinned until closeout stamps the

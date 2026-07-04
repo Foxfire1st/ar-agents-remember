@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`                                      |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00 |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`                                      |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -61,6 +61,8 @@ that records an orchestration nudge event and enqueues a manager-addressed inbox
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response), public `gate_decide`/`gate_list` builders, lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
+| `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response), public `gate_decide`/`gate_list` builders, lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. L4 adds policy-checked `decidedVia="orchestration"` decisions with deciding role, no owner self-approval, and append-only evidence refs. The gate substrate itself lives in `controlplane/` (task 6). |
+| `operator_inbox.py` | the three `operator_inbox_*` external-chat builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10). |
 | `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session`) AND the L2 `spawn_agent_session_payload` dispatch builder — it validates the harness against detection, composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure) then a `serving.terminal_paste.TerminalPaster` echo-confirmed context paste, records spawned-by provenance, and returns `spawned` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `bad-kind` through the strict response model. |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
@@ -111,6 +113,10 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4 route impact: `gates.py` now handles
+  policy-checked orchestration gate decisions with deciding role, no owner
+  self-approval, and gate evidence refs. Verification metadata pinned until
+  closeout stamps the L4 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: added `orchestration.py` and
   `orchestration_nudge_manager`, while `operator_inbox.py` gained role/message
   metadata and optional hosted push delivery. Verification metadata pinned until

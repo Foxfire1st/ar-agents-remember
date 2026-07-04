@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/mcp/tools/gates.py`       |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-26T18:43+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                      |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`         |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -39,7 +39,13 @@ lifecycle-less server process fails fast instead of writing a workspace gate by 
 `gate_decide_payload`
 validates the decision against `DECISION_STATES`, folds `current()` to find the
 gate (missing → `KeyError`), and appends a decided snapshot; it takes explicit
-`decided_by` / `decided_via`. `gate_wait_payload` is a bounded poll (injectable
+`decided_by` / `decided_via`. L4 extends it with optional `deciding_role` and
+`evidence_refs`: when `decided_via="orchestration"`, the deciding actor is the
+active lifecycle/session (or an explicit test override), the resulting snapshot
+is checked against the configured `GatePolicy` before append, and owner
+self-approval / missing reviewer verdict evidence is rejected server-side.
+`gate_create_payload` and `lifecycle_gate_payload` can also attach initial gate
+evidence refs. `gate_wait_payload` is a bounded poll (injectable
 `sleep` / `monotonic`) that returns when the gate leaves `open` or
 `timeout_seconds` elapses (`timedOut`), including any decision attribution/note in the response.
 `gate_response_wait_payload` is the dashboard-response helper: a compatibility call polls the folded
@@ -63,8 +69,10 @@ envelope. `cancel` decisions physically delete the gate and any inbox entries ti
   `decided_by="model"` / `decided_via="cli"`, so the agent cannot claim a
   developer decision; the dashboard serving layer calls `gate_decide_for_lifecycle`
   with `developer` / `dashboard` (slice 6b). Enforcement now consumes that
-  distinction — `worktree_closeout_apply` binds on a developer-attributed approval
-  (`controlplane/enforcement.py`), so a model self-decision is non-binding.
+  distinction — `worktree_closeout_apply` binds on a developer-attributed
+  approval or on a policy-valid orchestration approval (`controlplane/enforcement.py`);
+  a model self-decision is non-binding, and a lifecycle cannot approve its own
+  gate through orchestration.
 - Config-rooted: the store root resolves through `observer.observer_root`, so
   gates live beside the event log; the durable logic stays in `controlplane/`.
 - One lifecycle has at most one open gate via `lifecycle_gate_payload` or the retained
@@ -83,6 +91,7 @@ envelope. `cancel` decisions physically delete the gate and any inbox entries ti
 | Finding | Source Path |
 | --- | --- |
 | The gate entity and decision helpers. | [controlplane/records.py](agents-remember/mcp/src/agents_remember/controlplane/records.py) |
+| The gate delegation policy checked before orchestration decisions append. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
 | The append-only store these builders mutate. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
 | The external-chat inbox store this polls in `gate_response_wait_payload`. | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The choke point every gate payload returns through. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
@@ -90,6 +99,11 @@ envelope. `cancel` decisions physically delete the gate and any inbox entries ti
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: `gate_decide_payload` now handles
+  `decidedVia="orchestration"` with a deciding role, active lifecycle/session
+  attribution, policy validation, no owner self-approval, and append-only
+  evidence refs; create/lifecycle gate payloads accept initial evidence refs.
+  Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-06-26T18:43+02:00 — Regression fix: `lifecycle_gate_payload` now uses the
   wait helper with no public timeout and gate-specific inbox matching, so stale
   lifecycle-scoped inbox entries cannot make a newly raised gate return

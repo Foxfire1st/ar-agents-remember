@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-03T00:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                     |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`       |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -231,6 +231,8 @@ prior structural/analytical callers remain unchanged.
   6c materializes the durable gate too: `_attach_gates` reads each lifecycle's latest
   *open* `GateRecord` (via `snapshots.read_gates`) onto `LifecycleProjection.gate`, and
   `_gate_attention` raises a `gate-open` queue item — additive, not a rewrite.
+  L4 passes the gate record's `evidenceRefs` through onto the `GateNode`; the
+  reducer still interprets no evidence contents and remains a pure fold.
 - Attention dismissal is source-scoped: lifecycle rows must match lifecycle id, and the only targetless
   repo-level queue kind admitted by `_is_dismissed` is actionable drift.
 - **Composed, not read (slice 5e):** the Engine Room map is joined here from
@@ -270,6 +272,10 @@ prior structural/analytical callers remain unchanged.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: `_gate_node` passes gate
+  `evidenceRefs` into the served `GateNode`, exposing delegated-approval reviewer
+  evidence refs without changing reducer ownership. Verification metadata pinned
+  until closeout stamps the L4 commit.
 - 2026-07-03T00:30+02:00 — L11 abandon terminality: `_terminalize_abandoned_anchor_lifecycles` projects `abandoned` onto event-backed lifecycles whose anchor enclosure was abandoned, and `_persistent_lifecycles` skips `cleanup in {abandoned, reopened}` enclosures.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: actionable-drift attention now uses
   `repository:branch` ids, provenance-rich detail, and drift `checkedAt` as the repo-level dismissal

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-26T18:43+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                      |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`       |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -51,6 +51,12 @@ developer-approved permits, **model-approved blocks**, latest gate governs).
 `CloseoutEnforcementHelperTests` drives `closeout.py`'s `_enforce_closeout_gate` /
 `_mark_closeout_gate_applied` / `_closeout_gate_payload` over a temp `GateStore`
 rooted at a stub contract's `coordination_root`.
+260703-L4 extends the suite with gate policy and evidence coverage: record
+helpers append reviewer-verdict refs and orchestration attribution,
+`gate_decide_payload` records active-lifecycle deciding identity, rejects owner
+self-approval and missing required verdicts before append, projections surface
+evidence refs, and the pure resolver blocks/permits manager delegated closeout
+approvals according to `GatePolicy`.
 
 ## Invariants And Boundaries
 
@@ -67,11 +73,16 @@ rooted at a stub contract's `coordination_root`.
 | The payload builders under test. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | The operator inbox store polled by `gate_response_wait_payload`. | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The enforcement policy under test (slice 6b). | [controlplane/enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
+| Gate delegation policy under test. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
 | The closeout enforcement helpers under test (slice 6b). | [worktrees/modules/closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
 | The conformance suite that also covers the gate tools. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: added coverage for delegated
+  orchestration attribution, no owner self-approval, reviewer-verdict evidence
+  requirements, projection evidence refs, and policy-aware closeout enforcement.
+  Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-06-26T18:43+02:00 — Regression coverage: `lifecycle_gate_payload`
   tests now prove the public default waits through unrelated lifecycle inbox
   rows and returns only after the newly opened gate is decided.

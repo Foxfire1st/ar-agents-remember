@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T11:45+02:00                     |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                     |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -52,6 +52,12 @@ the defaults, so dashboard daemon supervision stays off until a user opts in;
 `agents_remember.mcp.config` fail-loud rejects unknown `dashboard` keys the same
 way `timeoutCaps` does.
 
+The template also shows the optional `orchestration.gateDelegation` object
+(260703-L4). It is shipped as `policy: "all-human"` with empty `kinds`, so
+delegated approvals remain opt-in. Operators can switch to a built-in delegated
+policy or add per-kind role entries in real settings files; config validation
+rejects unsupported or human-pinned delegation.
+
 ### Invariants And Boundaries
 
 This file must not be placed inside the coordinator root, and it must not carry
@@ -70,6 +76,10 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: the template now carries the
+  opt-in `orchestration.gateDelegation` shape, shipped at `all-human` defaults
+  with no delegated kinds. Verification metadata pinned until closeout stamps
+  the L4 commit.
 - 2026-07-03T11:45+02:00 — 260703 L2: the template now carries the `dashboard` object
   (`autoStart: false`, `port: 8765` — supervision off by default). Verification metadata pinned
   until closeout stamps the code commit.
