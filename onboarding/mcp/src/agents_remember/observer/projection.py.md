@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                           |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -77,9 +77,11 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
   actionable-drift rows, sourced from `DriftSnapshotNode.checkedAt`. It is *derived* analytics (composed from the
   tree + signals, not read from an input file), so a structural-only caller can still see a non-empty
   queue.
-- `AgentPickupNode` + `Analytics.agentPickups` (task 23/24) — pending dashboard responses waiting for
-  agent-side operator-inbox consumption. It carries entry/lifecycle/agent/gate ids, server-computed
-  age, pickup TTL, and state (`waiting-for-agent` or `check-chat`) without echoing the message body.
+- `AgentPickupNode` + `Analytics.agentPickups` (task 23/24/L3) — pending dashboard responses waiting for
+  agent-side operator-inbox consumption. It carries entry/lifecycle/agent/gate ids, sender/recipient
+  role metadata, message kind, artifact path, hosted delivery state, delivered session id/detail,
+  server-computed age, pickup TTL, and state (`waiting-for-agent` or `check-chat`) without echoing the
+  message body.
   `AttentionItem` also carries optional `gateId` so dashboard Clear/Dismiss actions can target gate
   records directly.
 - **Slice-05 (5c) detail surfaces:** `ProviderNode` gained `scope`/`role`/`repoId`/`worktreeGroup`
@@ -240,6 +242,10 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: `AgentPickupNode` gained role/message/artifact
+  and hosted-delivery metadata so the dashboard projection can display durable
+  agent-to-agent inbox state. Verification metadata pinned until closeout stamps
+  the L3 commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `DriftSnapshotNode` now carries optional
   `checkedAt`, `sourceRoot`, `memoryRoot`, and `reportPath` provenance used by actionable-drift queue
   detail and targetless dismissal freshness. Verification metadata pinned until closeout stamps the

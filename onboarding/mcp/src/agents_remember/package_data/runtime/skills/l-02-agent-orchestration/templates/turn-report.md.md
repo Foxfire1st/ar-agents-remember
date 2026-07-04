@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/templates/turn-report.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                     |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                     |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 
 ## Purpose
 
@@ -21,7 +21,7 @@ The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the cano
 
 ### Conventions
 
-The report is written in the **main loop** from the worker's own work plus any sub-agent summaries — never delegated to a sub-agent. It states facts (what changed, what broke, what is proven green, what remains) rather than a narrative, and lives durably in the series notes, referenced from the leaf `task_doc`.
+The report is written in the **main loop** from the worker's own work plus any sub-agent summaries — never delegated to a sub-agent. It states facts (what changed, what broke, what is proven green, what remains) rather than a narrative, and lives durably in the series notes (`notes/reports/<leaf>-worker-report.md`), referenced from the leaf `task_doc` and posted through the inbox with `messageKind: turn-report`.
 
 ### Invariants And Boundaries
 
@@ -59,4 +59,8 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: pinned the default
+  `notes/reports/<leaf>-worker-report.md` artifact path and `turn-report` inbox
+  message-kind convention. Verification metadata pinned until closeout stamps
+  the L3 commit.
 - 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-02-agent-orchestration` turn-report report template (leaf 260703-L1) — the mandatory worker hand-off artifact whose Respawn State onboards a successor from state, not the transcript. Verification metadata pinned until closeout stamps the L1 commit.

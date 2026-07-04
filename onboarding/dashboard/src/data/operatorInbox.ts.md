@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/operatorInbox.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-25T13:10+02:00                           |
-| lastVerifiedCommitHash |                                                  `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                  2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                           |
+| lastVerifiedCommitHash |                                                  `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
+| lastVerifiedCommitDate |                                                  2026-07-04T12:52:03+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,15 +16,16 @@
 
 ## Purpose
 
-Same-origin client helper for the dashboard's external-chat operator inbox fallback and pending-entry
-dismissal.
+Same-origin client helper for the dashboard's durable operator/agent inbox post
+path and pending-entry dismissal.
 
 ## Code Commentary
 
 ### Logic
 
 `OperatorInboxPostRequest` mirrors the serving endpoint's camelCase body: optional `lifecycleId`,
-optional `agentId`, optional `gateId`, plus the preserved `ask` and developer `response`.
+optional `agentId`, optional `recipientRole`, optional `gateId`, sender/message metadata,
+optional `artifactPath`, optional `deliverToHosted`, plus the preserved `ask` and developer `response`.
 `postOperatorInbox(request, base = "")` sends that JSON to `POST /api/operator-inbox` and returns the
 small UI status union `"posted"` or `"error"`. A non-2xx response and a network throw both map to
 `"error"` so the responder can show a retryable status instead of claiming delivery.
@@ -40,8 +41,8 @@ body, tiny status union, and no optimistic store mutation.
 
 ### Invariants And Boundaries
 
-- This is a transport helper, not gate enforcement. The inbox entry is a response for an external
-  agent to poll; it does not decide or release a gate by itself.
+- This is a transport helper, not gate enforcement. The inbox entry is a durable message for an
+  external or hosted agent; it does not decide or release a gate by itself.
 - Same-origin by default. The FastAPI dashboard server owns the trusted developer/dashboard
   attribution for this write.
 - The helper reports small status unions only; callers own route selection, copy, and retry affordance.
@@ -79,5 +80,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: mirrored the expanded `/api/operator-inbox`
+  request body with recipient role, sender/message metadata, artifact path, and
+  hosted-delivery opt-in. Verification metadata pinned until closeout stamps the
+  L3 commit.
 - 2026-06-25T13:10+02:00 — Task 23/24: added `dismissOperatorInboxEntry` for the task-row check-chat warning.
 - 2026-06-23T15:05+02:00 — Created for task 10 dashboard fallback: `postOperatorInbox` sends missing-hosted-session gate responses to `POST /api/operator-inbox` and reports posted/error for the responder UI. Verification metadata pinned until closeout stamps the task-10 code commit.

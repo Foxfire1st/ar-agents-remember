@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00 |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -119,11 +119,13 @@ latest *open* `GateRecord` onto `LifecycleProjection.gate` (a `GateNode`) while
 `_gate_attention` raises a `gate-open` queue item — so the cockpit can review and decide
 a durable gate, distinct from the event-derived `ask` proto-gate.
 
-Task 23/24 turns gate/operator-inbox prompts into TTL-bound interaction surfaces. `read_gates` can compact
+Task 23/24/L3 turns gate/operator-inbox prompts into TTL-bound interaction surfaces. `read_gates` can compact
 expired throwaway gate rows before projection, `AgentPickupNode` is the pending-inbox task-row feedback
 surface, and `read_agent_pickups` projects each pending inbox entry as `waiting-for-agent` until the
 5-minute pickup TTL, then `check-chat` until the developer dismisses it or the 24-hour interaction TTL
-deletes it. Durable tasks, contracts, and ledgers remain outside this cleanup path.
+deletes it. L3 carries sender/recipient roles, message kind, artifact path, and hosted-delivery
+state/session/detail through that node so agent-to-agent inbox push attempts are dashboard-visible.
+Durable tasks, contracts, and ledgers remain outside this cleanup path.
 
 Slice 6g extends the task-document surface for **series navigation**: `read_series_documents` remains the
 folder-keyed master aggregation surface, while `read_task_documents` projects every active JSON-primary
@@ -401,6 +403,10 @@ The slice-3a projection read side:
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3 route impact: pending inbox pickups now surface
+  role/message/artifact and hosted-delivery metadata for dashboard-visible
+  agent-to-agent comms. Verification metadata pinned until closeout stamps the
+  L3 commit.
 - 2026-07-03T00:35+02:00 — L11 route impact: the reducer terminalizes lifecycles anchored to cleanup=abandoned enclosures and skips persistent synthesis for abandoned/reopened enclosures (reader-projected terminality per the store's single-writer invariant).
 - 2026-07-02T21:45+02:00 — L10 route impact: `snapshots.read_task_documents` binds a leaf task doc to
   its active enclosure lifecycle by a **case-insensitive** `(taskRoot, enclosure.leafId)` join against

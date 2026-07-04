@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T11:10+02:00 |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00 |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -147,9 +147,10 @@ The MCP package separates three surfaces:
   contract source branch, and dry-runs classify worktree group directories after planned
   worktree/provider-runtime removals. Task 14 narrows cleanup to the finalized child edge: cleanup
   retires task work branches only and preserves parent/source branches for their own lifecycle edge.
-  Task 23/24 adds the interaction-retention read side: gate logs and operator-inbox rows are treated as
+  Task 23/24/L3 adds the interaction-retention read side: gate logs and operator-inbox rows are treated as
   disposable interaction records, `read_gates` can TTL-compact them, and `AgentPickupNode` projects
-  pending inbox entries as waiting-for-agent/check-chat feedback for the dashboard.
+  pending inbox entries as waiting-for-agent/check-chat feedback for the dashboard, including L3
+  sender/recipient role, message kind, artifact, and hosted-delivery metadata.
   The series-contract resolver helpers in `worktrees/task_resolver.py` now own task-name lookup,
   nested parent-task disambiguation, leaf `enclosures/<leaf-id>/series-contract.md` paths, archive
   exclusion, and root-task archival into `tasks/<repo>/0_archive/`.
@@ -266,13 +267,15 @@ The MCP package separates three surfaces:
   append `expired` snapshots for older open gates), while dashboard/operator-inbox paths continue to
   provide the developer-attributed response side.
   Dashboard
-  *projection* of gates is live. Task 10 adds the pull-based external-chat
-  operator inbox in the same service domain: `OperatorInboxEntry` / `OperatorInboxStore`
-  queue ask+response entries addressed by lifecycle and/or external agent, while
+  *projection* of gates is live. Task 10/L3 adds the durable operator/agent inbox
+  in the same service domain: `OperatorInboxEntry` / `OperatorInboxStore`
+  queue ask+response entries addressed by lifecycle, external agent, or recipient role, while
   `operator_inbox_post` / `operator_inbox_poll` / `operator_inbox_consume` expose the
-  backend mailbox for chats the dashboard cannot inject into. The dashboard serving layer's
-  `POST /api/operator-inbox` endpoint writes the same entries with developer/dashboard attribution
-  after task 11's hosted-session route fails. A service domain with its own route overview.
+  backend mailbox for chats the dashboard cannot inject into and for agent-to-agent messages that can
+  also be pushed into hosted sessions. The dashboard serving layer's `POST /api/operator-inbox`
+  endpoint writes the same entries with developer/dashboard attribution and L3 adds hosted push
+  delivery through `serving.inbox_delivery`; `orchestration_nudge_manager` records/rate-limits nudges
+  and queues manager inbox rows. A service domain with its own route overview.
 
 The trusted MCP settings file must be absolute and outside the coordinator root.
 It supplies `coordinationRoot`, `workspaceRoot`, allowed repository IDs,
@@ -395,6 +398,10 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3 route impact: MCP now includes generalized
+  agent-to-agent inbox metadata, hosted push delivery, orchestration nudge
+  helpers, and dashboard-visible delivery projection. Verification metadata
+  pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — agent-orchestration L2 route impact: added the public `spawn_agent_session`
   MCP tool (agent-facing session dispatch) — it changes the mcp tool/model surface (`mcp/tools/terminal.py`
   + `models/terminal.py` + `base.py`/facade/`server.py`/`tool_registry.py`) and extends the `serving`

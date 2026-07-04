@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-06-25T13:10+02:00                                            |
-| lastVerifiedCommitHash |                                                                   `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                                   2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                                            |
+| lastVerifiedCommitHash |                                                                   `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
+| lastVerifiedCommitDate |                                                                   2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -16,7 +16,8 @@
 
 ## Purpose
 
-File-backed operator inbox store for short-lived external-chat polling.
+File-backed operator inbox store for short-lived polling plus hosted-session
+delivery metadata.
 
 ## Code Commentary
 
@@ -27,10 +28,11 @@ File-backed operator inbox store for short-lived external-chat polling.
 and appends a strict JSON snapshot. `read()` validates each JSONL row back into
 `OperatorInboxEntry`, and `current()` folds by entry id, last snapshot wins.
 
-`list_pending(lifecycle_id, agent_id)` requires at least one mailbox key, then
-returns pending entries matching every supplied key. That means a lifecycle poll,
-an agent poll, or a combined lifecycle+agent poll all use the same log without
-duplicating entries. `consume(entry_id, ...)` appends one consumed snapshot and
+`list_pending(lifecycle_id, agent_id, recipient_role)` requires at least one
+mailbox key, then returns pending entries matching every supplied key. That means
+a lifecycle poll, an agent poll, a role poll, or a combined poll all use the same
+log without duplicating entries. `record_delivery(...)` appends a delivery-state
+snapshot for a queued message. `consume(entry_id, ...)` appends one consumed snapshot and
 returns `(entry, True)` the first time; repeated consumes return the existing
 consumed entry with `False`.
 
@@ -43,15 +45,15 @@ now deletes the entry after returning the consumed payload.
 ### Conventions
 
 The store follows the gate store's append/read/fold pattern, but uses a shared
-workspace inbox log because external chats may address by lifecycle, agent, or
-both.
+workspace inbox log because external chats and orchestration agents may address
+by lifecycle, agent, role, or combinations of those keys.
 
 ### Invariants And Boundaries
 
 - Current state is a fold while entries are pending; consumed/dismissed/expired
   entries are throwaway interaction data and can be physically removed.
-- Polling without `lifecycle_id` or `agent_id` is invalid because it has no
-  mailbox boundary.
+- Polling without `lifecycle_id`, `agent_id`, or `recipient_role` is invalid
+  because it has no mailbox boundary.
 - This store owns persistence only; MCP payload shapes and attribution routing
   live in `mcp/tools/operator_inbox.py`.
 
@@ -87,5 +89,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: added recipient-role pending filters and
+  `record_delivery(...)` snapshots so hosted push outcomes stay attached to the
+  durable inbox row. Verification metadata pinned until closeout stamps the L3
+  commit.
 - 2026-06-25T13:10+02:00 — Task 23/24: added delete, delete-by-gate, and compaction so consumed/dismissed/expired operator-inbox entries do not accumulate forever.
 - 2026-06-23T13:44+02:00 — Created for task 10 backend inbox: append-only workspace inbox store with lifecycle/agent pending filters and idempotent consume. Verification metadata pinned until closeout stamps the task-10 code commit.

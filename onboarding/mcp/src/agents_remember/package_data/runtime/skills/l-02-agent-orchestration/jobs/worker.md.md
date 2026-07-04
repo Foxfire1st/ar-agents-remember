@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                     |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                     |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 
 ## Purpose
 
@@ -41,9 +41,10 @@ and respawned safely.
 Role + lens in one file (D10); a portable knob block (D7) resolving job base < `jobs/worker.claude-code.md`
 variant < `settings.json orchestration.roles.worker`. "Spine unchanged, lens specializes" (borrowed 260619
 S8): the worker runs the ordinary l-01 build spine; the worker lens tunes it, it does not fork it. Comms
-ride the inbox (receive the dispatch/context packet, post the turn report, raise escalations) plus stdin
-push (the manager's nudges); replies are inbox rows or the turn-report artifact — **never an untracked
-side channel**.
+ride the inbox (receive the dispatch/context packet, post the turn report with `messageKind:
+turn-report`, raise escalations with artifact paths) plus stdin push (the manager's nudges through
+`orchestration_nudge_manager`); replies are inbox rows or the turn-report artifact — **never an
+untracked side channel**.
 
 ### Invariants And Boundaries
 
@@ -90,4 +91,7 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: worker comms now name the inbox message-kind
+  metadata, mandatory turn-report artifact path, and manager nudge tool.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-02-agent-orchestration` worker job file (leaf 260703-L1) — one short-lived fresh worker per leaf onboarded from context packet + task_doc (never a transcript), the l-01 build spine in the leaf worktree, the manager-decided closeout gate, the mandatory turn-report artifact, and the same default-behavior rule as the manager (spirit test does not apply; a plan delta escalates to the manager). Verification metadata pinned until closeout stamps the L1 commit.

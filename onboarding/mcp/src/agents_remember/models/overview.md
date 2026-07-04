@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T11:10+02:00 |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00 |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -45,6 +45,7 @@ leaf-to-master result, `gates.py` for
 `LifecycleGateResponse`, the public gate decide/list responses, and retained
 compatibility gate responses, `operator_inbox.py` for the
 three `operator_inbox_*` external-chat response contracts (task 10),
+`orchestration.py` for the strict `orchestration_nudge_manager` response,
 `lifecycle_finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
 `attach_terminal_session_to_leaf` hosted-chat/terminal reassignment response AND the L2
 `spawn_agent_session` dispatch response (`SpawnAgentSessionResponse` — spawned-by provenance +
@@ -99,13 +100,17 @@ context-delivery outcome + the server-arbitrated `leaf-taken`/pre-spawn refusal 
 | Public MCP payload builders validate through the response model registry. | [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/) |
 | The registry maps every modeled builder and the advertised public subset to response models. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
 | Contract tests prove public tool coverage and schema generation. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
-| Operator inbox response models cover post, poll, and consume payloads. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
+| Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
+| Orchestration response models cover the public manager-nudge helper. | [orchestration.py](agents-remember/mcp/src/agents_remember/models/orchestration.py) |
 | Lifecycle finalizer response model covers the terminal task finalization payload. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
 | Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
 | The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3 route impact: added the strict orchestration
+  nudge response model and expanded inbox response fields for delivery metadata.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — L2 route impact: `models/terminal.py` adds the strict
   `SpawnAgentSessionResponse` (+ `SpawnAgentSessionStatus`) for the agent-facing `spawn_agent_session`
   dispatch tool, and `tool_registry.py` registers `spawn_agent_session` → that model in the strict public

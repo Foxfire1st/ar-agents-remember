@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-04T11:10+02:00                     |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`                                      |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                     |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`                                      |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -16,7 +16,8 @@ Shared payload-builder primitives for the MCP tools package: the advertised
 public tool-name list and the single response-validation helper that every
 modeled builder uses. L11 adds `task_reopen` to `PUBLIC_TOOLS`, listed beside
 `task_doc` (it is a task tool, not a worktree tool). L2 adds `spawn_agent_session`
-beside `attach_terminal_session_to_leaf` (both terminal-catalog tools).
+beside `attach_terminal_session_to_leaf` (both terminal-catalog tools). L3 adds
+`orchestration_nudge_manager` for rate-limited manager nudges over the inbox.
 
 ## Code Commentary
 
@@ -26,7 +27,8 @@ Declares `TRANSPORT = "stdio"`, the `PUBLIC_TOOLS` tuple (advertised MCP tools:
 core/context/runtime/memory/provider/worktree/baseline/carryover/benchmark tools,
 the L9 `attach_terminal_session_to_leaf` hosted-chat/terminal leaf reassignment tool,
 the L2 `spawn_agent_session` agent-facing dispatch tool (create + leaf-attach +
-context-prime a hosted session, listed right after attach),
+context-prime a hosted session, listed right after attach), the L3
+`orchestration_nudge_manager` communication helper,
 the public lifecycle signals `lifecycle_start`/`lifecycle_resume`/
 `lifecycle_turn_end_notification` (task-28 NOTIFY-AND-CONTINUE turn end)/
 `lifecycle_end`/`switch_lifecycle`/`lifecycle_phase`, the slice-3c `task_doc` authoring tool,
@@ -97,6 +99,9 @@ a real `tokens`/`tokenizer`/`tokenCountExact` rather than the model defaults.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: `PUBLIC_TOOLS` now advertises
+  `orchestration_nudge_manager`; `_tool_payload` behavior is unchanged.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — L2: `PUBLIC_TOOLS` now advertises `spawn_agent_session` (the agent-facing
   dispatch tool) right after `attach_terminal_session_to_leaf`; `_tool_payload` behavior is unchanged.
   Verification metadata pinned until closeout stamps the L2 commit.

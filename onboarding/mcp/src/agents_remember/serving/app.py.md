@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:10+02:00                    |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                    |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,11 +73,12 @@ fixtures stay deterministic. Tests can still force either branch explicitly.
   `actionable-drift` dismiss writes a targetless repo-level current acknowledgement because its source is
   the drift snapshot rather than a lifecycle.
 - `POST /api/operator-inbox` parses `OperatorInboxPostRequest` (`lifecycleId` / `agentId` /
-  `gateId` aliases plus `ask` and `response`) and calls `operator_inbox_post_payload` with
+  `recipientRole` / `gateId` aliases plus `ask`, `response`, sender/message metadata, optional
+  `artifactPath`, and `deliverToHosted`) and calls `operator_inbox_post_payload` with
   `created_by="developer"` and `created_via="dashboard"`. This is the trusted dashboard write side
-  for task-10 external-chat responses when no hosted chat session can receive direct injection.
-  Missing lifecycle/agent addressing returns `400 {"status":"bad-address"}` from the builder's
-  address validation.
+  for task-10/L3 durable inbox messages; when a hosted session matches, it passes the catalog/host/paster
+  seams so the same row can be pushed over echo-confirmed stdin immediately. Missing lifecycle/agent/role
+  addressing returns `400 {"status":"bad-address"}` from the builder's address validation.
 - `POST /api/operator-inbox/{entry_id}/dismiss` physically deletes a pending operator-inbox entry.
   This is the trusted dashboard path used by the dismissible `check chat` task-row warning; it clears
   developer-side noise without marking the entry as agent-consumed.
@@ -218,6 +219,10 @@ built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: `/api/operator-inbox` now accepts agent-role,
+  message-kind, artifact, and delivery-request metadata and attempts hosted push
+  through the shared terminal paster while keeping the durable inbox row.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — L2 (agent-facing dispatch): the `POST /api/terminal/{session}` opener now
   delegates the whole leaf-claim + tmux-ensure + catalog-upsert composition to the new shared
   `serving.terminal_opener.open_terminal_session` (`resolve_terminal_launch` / `_terminal_label` /
