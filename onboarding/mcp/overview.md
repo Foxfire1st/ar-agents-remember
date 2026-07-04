@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-03T12:59+02:00 |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00 |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -21,7 +21,14 @@ startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
 coordinator `system/settings.json`. The tool surface gained `task_reopen` (L11):
 reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
-whose worktree recreation stays with `worktree_start`. Since L12 every managed
+whose worktree recreation stays with `worktree_start`. The agent-orchestration L2
+adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
+role-configured, leaf-attached, context-primed hosted session by composing the
+existing serving primitives (the shared session opener + optional leaf attach with
+server-arbitrated `leaf-taken` + an echo-confirmed context paste with optional
+submit), injects the model/effort/env role knobs at spawn, and records spawned-by
+provenance — so orchestrators spawn managers and managers spawn workers without
+dashboard clicks. Since L12 every managed
 provider container carries an explicit compose memory cap (watchers 512m,
 falkordb/ollama 2g, runner 1g, postgres 512m) with self-recycling OOM behavior.
 
@@ -231,7 +238,13 @@ The MCP package separates three surfaces:
   non-destructively, and explicit termination stays hidden across later exit bookkeeping. L9 adds the
   shared `serving.terminal_leaf_assignment` move policy and the public
   `attach_terminal_session_to_leaf` MCP tool so an agent can move its hosted chat's durable `leafKey`
-  through the same catalog uniqueness rules as the dashboard attach route. A service domain with its own
+  through the same catalog uniqueness rules as the dashboard attach route. Agent-orchestration L2 adds the
+  shared `serving.terminal_opener` (the single hosted-session opener the `POST /api/terminal/{session}`
+  route and the agent-facing `spawn_agent_session` MCP tool both compose — no parallel spawn path) plus
+  `serving.terminal_paste` (server-side echo-confirmed stdin paste, backing a new
+  `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery); `serving.terminal` gains
+  a `tmux new-session -e KEY=VALUE` env knob-injection seam and `serving.terminal_catalog` gains spawned-by
+  provenance columns. A service domain with its own
   route overview.
 - `agents_remember.controlplane` owns the **gate control plane** (task 6): the durable,
   append-only `ar-gate-record/v1` `GateRecord` + `GateStore` (co-located with the observer
@@ -382,6 +395,14 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — agent-orchestration L2 route impact: added the public `spawn_agent_session`
+  MCP tool (agent-facing session dispatch) — it changes the mcp tool/model surface (`mcp/tools/terminal.py`
+  + `models/terminal.py` + `base.py`/facade/`server.py`/`tool_registry.py`) and extends the `serving`
+  subsystem with the shared `terminal_opener` + `terminal_paste` modules, the `tmux -e` env seam, the
+  spawned-by catalog columns, and a `POST /api/terminal/{session}/paste` endpoint. Composition-only over
+  existing serving primitives (no parallel spawn path). Updated the Purpose tool-surface note and the
+  `agents_remember.serving` route-model bullet. Verification metadata pinned until closeout stamps the L2
+  commit. (Distinct from the 260703-L2 daemon-supervision entry below.)
 - 2026-07-04T11:00+02:00 — No route impact: route model unchanged — orchestration 260703-L1 adds the new `l-02-agent-orchestration` skill tree (14 files: `SKILL.md` = the orchestration frame, five `jobs/<role>.md` job files + two `jobs/<role>.claude-code.md` per-harness variants, six `templates/` report shapes) under `package_data/runtime/skills/`, sync-propagated via `scripts/sync-skills.py`. Registered 14 new file cards in this route's `coveredFiles`, bumped `coverageCounts` (sourceFilesInScope 499→513, fileSidecars 193→207). Skills are model-interpreted markdown, not mcp Python; no mcp source, tool signature, or route behavior changed. Verification metadata on the new file cards pinned until closeout stamps the L1 commit.
 - 2026-07-04T10:15+02:00 — No route impact: orchestration 260703-L0 resynced the generated shipped dashboard bundle (mcp/src/agents_remember/package_data/dashboard, a build artifact excluded from memory scope) plus dashboard.fingerprint via scripts/sync-dashboard.py after dashboard-source changes; no mcp Python source, tool, or route behavior changed. Reviewed, overview body accurate as-is.
 - 2026-07-03T12:59+02:00 — No route impact: 260703 L4 release bump only (pyproject version +

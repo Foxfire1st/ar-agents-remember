@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-26T14:16+02:00                      |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00                      |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -70,7 +70,8 @@ and `gate_response_wait` are explicitly asserted absent from `PUBLIC_TOOLS`.
 
 L9 extends that public-tool surface expectation with `attach_terminal_session_to_leaf`, the agent-facing
 tool for moving an existing hosted terminal/chat session between durable leaves through the dashboard
-catalog.
+catalog. L2 extends it further with `spawn_agent_session`, the agent-facing session-dispatch tool, so the
+expected `PUBLIC_TOOLS` subset pins both terminal-catalog tools.
 
 The Codex benchmark policy coverage now treats `"default"`/`"omitted"` as the
 fixed (no-sandbox-argument) reporting and asserts the explicit
@@ -99,10 +100,13 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 | Domain controller modules convert public MCP payloads into service calls. | [controllers overview](agents-remember/mcp/src/agents_remember/controllers/overview.md) |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 | Inbox tool names are now pinned in the public tool subset. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
-| Terminal leaf reassignment is pinned in the public tool subset. | L300-L315 | [test_tools.py](test_tools.py) |
+| Terminal leaf reassignment and agent-facing session spawn are pinned in the public tool subset. | [test_tools.py](test_tools.py) |
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2: the expected public-tool subset now includes `spawn_agent_session`,
+  pinning the agent-facing session-dispatch surface in `PUBLIC_TOOLS` beside
+  `attach_terminal_session_to_leaf`. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-02T17:04+02:00 — L9: public-tool coverage now expects
   `attach_terminal_session_to_leaf`, pinning the new agent-facing hosted chat reassignment surface in
   `PUBLIC_TOOLS`. Verification metadata pinned until closeout stamps the L9 commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T17:25+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00                           |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`       |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -31,10 +31,17 @@ racing one PTY fd.
 ### Logic
 
 `TerminalHost` holds a `dict[str, TerminalSession]` registry for attached PTY clients.
-`ensure(sid, *, cwd, command, lifecycle_id=None, name=None, suspend_unsafe=False)` creates the durable
-tmux session with `tmux new-session -d ...` when it is absent, returns a `TerminalSessionBinding`
+`ensure(sid, *, cwd, command, lifecycle_id=None, name=None, suspend_unsafe=False, env=None)` creates the
+durable tmux session with `tmux new-session -d ...` when it is absent, returns a `TerminalSessionBinding`
 metadata object, and deliberately registers no PTY client. This is the POST-opener path: the browser
-WebSocket later attaches with its own client. `open(sid, *, cwd, command, lifecycle_id=None, name=None,
+WebSocket later attaches with its own client. **L2 knob injection:** `env` (a `Mapping[str, str]`) is
+flattened by `_env_flags` into `tmux new-session -e KEY=VALUE` flags that seed the new session's — and
+thus the child harness's — environment at spawn; it is empty-safe (an empty mapping yields the
+byte-identical legacy no-env argv), stays argv items on the fixed `Sequence[str]` spawn (no
+shell-injection surface), and is **inert on a re-attach** (a durable session keeps its creation env).
+This is the same injection seam the planned T3 analytics env wiring and the role-knob (model/effort)
+resolution layer target; `open`, `_build_tmux_command`, and `_ensure_binding` thread the same `env`
+through. `open(sid, *, cwd, command, lifecycle_id=None, name=None,
 suspend_unsafe=False)` is idempotent — a live
 registered session for `sid` is returned as-is, a dead one reaped and replaced — and spawns
 `_build_tmux_command(name, cwd, harness)` =
@@ -132,10 +139,18 @@ so a fake spawner can back a session with any process object.
 | The serving layer this host joins (transport; localhost posture). | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
 | The FastAPI app that wires the WebSocket bridge over this host (slice 6d-2). | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The catalog rows that persist tmux name, command, cwd, lifecycle, and status across dashboard restarts. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
+| The shared opener that seeds this host's `env` at `ensure` (the L2 knob-injection call site). | L137-L146 | [terminal_opener.py](terminal_opener.py) |
 | The slice authority (Mode B2 = embedded real TUI, render-not-scrape, tmux persistence). | [tasks/260610_task6-control-plane/task.md](agents-remember/../tasks/agents-remember/260610_task6-control-plane/task.md) |
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2 (agent-orchestration knob injection): `TmuxCreator` gained an `env`
+  parameter and `_tmux_create_detached`/`_build_tmux_command` now emit `tmux new-session -e KEY=VALUE`
+  flags (via the new pure `_env_flags`); `ensure`/`open`/`_ensure_binding` thread an optional
+  `env: Mapping[str, str]` through, seeded only at creation and inert on re-attach. Empty-safe (an empty
+  mapping keeps the byte-identical legacy argv). This is the minimal env-passthrough seam the agent-facing
+  `spawn_agent_session` tool composes over to inject role knobs (model/effort/env) at spawn. Verification
+  metadata pinned until closeout stamps the L2 commit.
 - 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape: `write_session` now recognizes SGR
   mouse-report-only stdin frames (arming a per-connection `mouse_seen` flag) and cancels tmux
   copy-mode via the new injectable `TmuxModeCanceller` (`tmux send-keys -X cancel`, suppressed

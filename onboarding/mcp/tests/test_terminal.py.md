@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T17:25+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00                           |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`       |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -41,7 +41,10 @@ unregisters the local session, terminating an unknown sid uses a supplied tmux n
 `attach` creates unregistered per-connection clients that can be `close_session`ed without removing the
 durable registry entry. The opener regression coverage adds an injectable tmux creator and asserts
 `ensure` creates a detached tmux session without registering a client, while an already-present tmux
-session makes `ensure` idempotent.
+session makes `ensure` idempotent. Since L2 the fake `_create_tmux` creator gained the `env`
+parameter (matching the `TmuxCreator` seam that now carries spawn env) and records `created_env`, so
+the registry fixture is signature-compatible with the `tmux new-session -e KEY=VALUE` knob-injection
+seam.
 `TerminalHostPtyTests` (skipped without `cat`)
 run the host against a **real kernel PTY** via `_raw_spawn` (which strips the tmux
 wrapper): a `cat` write/read round-trip, an idle non-blocking read returning `b""`,
@@ -79,6 +82,10 @@ failures where the binaries or required terminal capabilities are absent (the sl
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2 (knob injection): the registry fixture's fake tmux `_create_tmux` creator
+  gained the `env` parameter (and a `created_env` recorder) to match the `TmuxCreator` seam now carrying
+  `tmux new-session -e KEY=VALUE` spawn env. Test-fixture signature alignment only — the existing
+  assertions are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape: added `TerminalHostCopyModeCancelTests`
   (pipe-backed writes, recording `tmux_mode_canceller` fake) pinning that mouse-report frames arm but
   never trigger the cancel, the first typed input after scrolling cancels copy-mode exactly once and

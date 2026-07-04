@@ -270,6 +270,7 @@
     "mcp/tests/test_serving_changeset.py",
     "mcp/tests/test_serving_files.py",
     "mcp/tests/test_setup_progress.py",
+    "mcp/tests/test_spawn_agent_session.py",
     "mcp/tests/test_starter_renderers.py",
     "mcp/tests/test_subprocess_hygiene.py",
     "mcp/tests/test_sync_dashboard.py",
@@ -280,6 +281,8 @@
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
     "mcp/tests/test_terminal_leaf_assignment.py",
+    "mcp/tests/test_terminal_opener.py",
+    "mcp/tests/test_terminal_paste.py",
     "mcp/tests/test_terminal_ws.py",
     "mcp/tests/test_tokens.py",
     "mcp/tests/test_tool_response_budgets.py",
@@ -295,8 +298,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 507,
-    "fileSidecars": 207,
+    "sourceFilesInScope": 512,
+    "fileSidecars": 210,
     "childRoutes": 15
   },
   "routingTerms": [

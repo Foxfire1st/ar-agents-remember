@@ -25,11 +25,13 @@
     "mcp/src/agents_remember/serving/static.py",
     "mcp/src/agents_remember/serving/terminal.py",
     "mcp/src/agents_remember/serving/terminal_catalog.py",
-    "mcp/src/agents_remember/serving/terminal_leaf_assignment.py"
+    "mcp/src/agents_remember/serving/terminal_leaf_assignment.py",
+    "mcp/src/agents_remember/serving/terminal_opener.py",
+    "mcp/src/agents_remember/serving/terminal_paste.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 16,
-    "fileSidecars": 16,
+    "sourceFilesInScope": 18,
+    "fileSidecars": 18,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -49,6 +51,8 @@
     "init__",
     "leaf",
     "mcp",
+    "opener",
+    "paste",
     "projector",
     "remember",
     "scope",
@@ -58,7 +62,9 @@
     "static",
     "terminal",
     "terminal_catalog",
-    "terminal_leaf_assignment"
+    "terminal_leaf_assignment",
+    "terminal_opener",
+    "terminal_paste"
   ],
   "hotPath": {
     "summary": "`agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diffs each projection against the last (`serving.delta.diff_projection`), and fans **per-entity deltas** out to every SSE client. `GET /api/stream` emits `event:snapshot` then per-entity `lifecycle`/`enclosure`/ `provider`/`metrics`/`analytics` (and `*.removed`) events; `GET /api/state` returns the projection once; `GET /api/events` tai...",
@@ -79,7 +85,9 @@
       "mcp/src/agents_remember/serving/static.py",
       "mcp/src/agents_remember/serving/terminal.py",
       "mcp/src/agents_remember/serving/terminal_catalog.py",
-      "mcp/src/agents_remember/serving/terminal_leaf_assignment.py"
+      "mcp/src/agents_remember/serving/terminal_leaf_assignment.py",
+      "mcp/src/agents_remember/serving/terminal_opener.py",
+      "mcp/src/agents_remember/serving/terminal_paste.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -114,6 +122,10 @@
       "terminal_catalog",
       "terminal_leaf_assignment.py",
       "terminal_leaf_assignment",
+      "terminal_opener.py",
+      "terminal_opener",
+      "terminal_paste.py",
+      "terminal_paste",
       "agents-remember dashboard --config <settings.json>",
       "cli/dashboard.py",
       "serving.app.create_app(config",
@@ -125,11 +137,7 @@
       "lifecycle",
       "enclosure",
       "provider",
-      "metrics",
-      "analytics",
-      "*.removed",
-      "GET /api/state",
-      "GET /api/events"
+      "metrics"
     ]
   },
   "fallback": {

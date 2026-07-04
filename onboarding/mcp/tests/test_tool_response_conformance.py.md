@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-03T00:30+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`         |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00 |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`         |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -35,8 +35,10 @@ collects one representative payload per tool into `cls.payloads`:
 - `_base_fixture` / `_simple_payloads`: a code repo, memory layer, and
   `.codex/mcp` settings drive the directly runnable tools (core, context,
   runtime, memory, skills, provider status/diagnostics/watchers, GrepAI/CGC
-  dry-run, baseline, benchmarks, and the L9 terminal leaf reassignment builder's missing-session
-  payload).
+  dry-run, baseline, benchmarks, the L9 terminal leaf reassignment builder's missing-session
+  payload, and (L2) the `spawn_agent_session` builder's `harness-unknown` refusal payload — an
+  unknown harness id short-circuits before any tmux spawn, so the fixture never touches a real
+  terminal host).
 - `_worktree_payloads`: a real worktree lifecycle in disabled-memory mode
   produces `worktree_start`, `worktree_status`, `worktree_attach`,
   `worktree_sync` (dry-run, GitHub #54 sub-task D), `worktree_closeout_preview`,
@@ -111,10 +113,15 @@ declared nor part of the input."
 | Schema-level registry coverage is asserted separately. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
 | Inbox representative payloads call the real post, poll, and consume builders. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 | Lifecycle finalizer representative payload exercises the new terminal worktree tool. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
-| Terminal leaf reassignment representative payload exercises the new strict terminal response model. | L97-L101 | [test_tool_response_conformance.py](test_tool_response_conformance.py) |
+| Terminal representative payloads exercise the strict `AttachTerminalSessionToLeafResponse` (unknown-session) and `SpawnAgentSessionResponse` (unknown-harness) models. | [test_tool_response_conformance.py](test_tool_response_conformance.py) |
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2: `_simple_payloads` now includes a representative `spawn_agent_session`
+  payload (a `harness-unknown` refusal, which short-circuits before any tmux spawn), so the new strict
+  `SpawnAgentSessionResponse` model is covered by `test_every_modeled_tool_has_a_representative_payload`
+  / `test_representative_payloads_conform_to_registered_models`. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-07-03T00:30+02:00 — L11: the worktree-flow fixture reopens the fully landed demo-task leaf, giving task_reopen a real representative payload against TaskReopenResponse.
 - 2026-07-02T17:04+02:00 — L9: `_simple_payloads` now includes a representative
   `attach_terminal_session_to_leaf` payload (`unknown-session` fixture), so the new strict response model

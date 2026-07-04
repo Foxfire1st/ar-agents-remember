@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00 |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -46,7 +46,9 @@ leaf-to-master result, `gates.py` for
 compatibility gate responses, `operator_inbox.py` for the
 three `operator_inbox_*` external-chat response contracts (task 10),
 `lifecycle_finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
-`attach_terminal_session_to_leaf` hosted-chat/terminal reassignment response, and
+`attach_terminal_session_to_leaf` hosted-chat/terminal reassignment response AND the L2
+`spawn_agent_session` dispatch response (`SpawnAgentSessionResponse` — spawned-by provenance +
+context-delivery outcome + the server-arbitrated `leaf-taken`/pre-spawn refusal statuses), and
 `tokens.py` for response token accounting.
 
 ## Route Model
@@ -99,11 +101,17 @@ three `operator_inbox_*` external-chat response contracts (task 10),
 | Contract tests prove public tool coverage and schema generation. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
 | Operator inbox response models cover post, poll, and consume payloads. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
 | Lifecycle finalizer response model covers the terminal task finalization payload. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
-| Terminal response model covers hosted session leaf reassignment. | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
+| Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
 | The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2 route impact: `models/terminal.py` adds the strict
+  `SpawnAgentSessionResponse` (+ `SpawnAgentSessionStatus`) for the agent-facing `spawn_agent_session`
+  dispatch tool, and `tool_registry.py` registers `spawn_agent_session` → that model in the strict public
+  response-contract path. It follows the existing STRICT `ToolResponse` pattern, so the strict/flexible
+  split this overview describes is unchanged. Verification metadata pinned until closeout stamps the L2
+  commit.
 - 2026-07-03T00:35+02:00 — L11 route impact: TaskReopenResponse added in task_doc.py; tool_registry maps task_reopen to it.
 - 2026-07-02T17:04+02:00 — L9 route impact: added `models/terminal.py` with the strict
   `AttachTerminalSessionToLeafResponse` and registered it in `tool_registry.py` for the new public

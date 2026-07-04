@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-30                                       |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00                           |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`       |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -69,7 +69,10 @@ a terminal can `attach-leaf` to a leaf already held by a running chat (`200`, th
 
 ### Conventions
 
-Inserts `mcp/src` on `sys.path` (suite idiom). `cast(TerminalHost, fake)` bridges the duck
+Inserts `mcp/src` on `sys.path` (suite idiom). Since L2 `resolve_terminal_launch` is imported from
+`agents_remember.serving.terminal_opener` (it moved out of `serving.app` into the shared opener), and
+the `_FakeTerminalHost` `ensure`/`open` signatures gained the optional `env` param so they stay
+compatible with the opener's env-seeding call. `cast(TerminalHost, fake)` bridges the duck
 -typed fakes to the typed `create_app`/`_apply_terminal_input` signatures without subclassing.
 The fake's peer sockets carry a 2s timeout so `read_child_input` never hangs the suite.
 `_config(tmp)` mirrors `test_serving.py` (a `McpRuntimeConfig` over a temp root; the projector
@@ -86,6 +89,12 @@ primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2 (agent-facing dispatch): `resolve_terminal_launch` is now imported from
+  `serving.terminal_opener` (the opener extraction moved it out of `serving.app`), and the
+  `_FakeTerminalHost` `ensure`/`open` fakes gained the optional `env` param to match the opener's
+  env-seeding call. Import/signature alignment only — the WebSocket/opener assertions are unchanged; the
+  new opener + paste + spawn coverage lives in the dedicated L2 test files. Verification metadata pinned
+  until closeout stamps the L2 commit.
 - 2026-06-30T00:00:00+02:00 — L5 follow-up: added per-(leaf, role) route coverage —
   `test_terminal_shares_a_leaf_with_its_chat_but_two_chats_conflict` (a chat + a terminal share one leaf,
   but a second chat and a second terminal each `409` against the existing same-role owner) and
