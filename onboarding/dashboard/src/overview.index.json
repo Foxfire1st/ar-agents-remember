@@ -63,7 +63,7 @@
     "dashboard/src/types/projection.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 121,
+    "sourceFilesInScope": 123,
     "fileSidecars": 40,
     "childRoutes": 2
   },

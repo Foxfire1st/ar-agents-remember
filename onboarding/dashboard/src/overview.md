@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb`       |
+| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -147,7 +147,8 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   and `data/stream.ts` threads through (`"activeWorktreeGroups"` added to `STATE_EVENTS`).
 - `index.css` — the Panda entry + global reset/base/effects layers.
 - `styles/tokens.css` — the `:root` design-token CSS vars.
-- `dev/` — the DEV-only harness: `DevApp` (router), `Reference` (mc2 mount), `dev.css`, and — slice **5i**
+- `dev/` — the DEV-only harness: `DevApp` (router — `/dev/bench`, `/dev/reference`, plus the orchestration-L0
+  `/dev/flows` lifecycle-design canvas mounting `panels/FlowTab`), `Reference` (mc2 mount), `dev.css`, and — slice **5i**
   — the **scenario player** (`scenarios.ts` model + `ScenarioPlayer.tsx` transport) that `Bench` drives the
   real cockpit through phase-transition timelines with, plus `scenarios.test.ts`. (`fixtures.ts` gained the
   shared `engineRoomProjection` wrap.) `scenarios.ts` now also carries the recoverable failure-mode timelines —
@@ -190,6 +191,10 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-04T10:05+02:00 — 260703-L0 route impact (small): `dev/` gained the `/dev/flows` lifecycle-design
+  canvas route (DevApp mounts the generalized `panels/FlowTab` over the new `panels/flowModels.ts` registry);
+  detail lives in the `panels/` overview and the file sidecars. Verification metadata pinned until closeout
+  stamps the L0 commit.
 - 2026-07-03T00:35+02:00 — L11 route impact: reopened leaves render as planned doc rows via the stable leaf id; abandoned enclosures leave the active operations rows (see panels/LifecycleList).
 - 2026-07-02T20:15+02:00 — L8 route impact (small): `data/selection.ts` selections now carry the
   qualified `leafKey` when anchored inside a task reader marked `data-task-leaf-key`, and
