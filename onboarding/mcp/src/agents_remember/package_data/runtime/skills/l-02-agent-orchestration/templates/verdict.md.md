@@ -5,23 +5,23 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/templates/verdict.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                     |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-04T13:16+02:00                     |
+| lastVerifiedCommitHash | `9f72d7705fa711017ba599ac13a348b927084d3d` |
+| lastVerifiedCommitDate | 2026-07-04T13:22:12+02:00|
 
 ## Purpose
 
-This template is the **adversarial reviewer's** artifact of the `l-02-agent-orchestration` report-template library. It attaches to the handover gate as **judge evidence** at either of the two review seams — **master-exit** (before a manager hands to the orchestrator) and **super-exit** (before the orchestrator hands to the developer) — which share one shape.
+This template is the **adversarial reviewer's** artifact of the `l-02-agent-orchestration` report-template library. It lands under the series `notes/reports/` directory and attaches to the handover gate as **judge evidence** at either of the two review seams — **master-exit** (before a manager hands to the orchestrator) and **super-exit** (before the orchestrator hands to the developer). The two variants now share rules but carry different review shapes because master-exit reviews one completed master branch while super-exit reviews the accumulated super branch.
 
 ## Code Commentary
 
 ### Logic
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-02-agent-orchestration/templates/verdict.md`. It carries a prose header naming the writer (`jobs/adversarial-reviewer.md`) and the two seam variants, a numbered **Rules** block, and a fenced **Shape**: a metadata table (seam / scope / reviewer / task docs / recommendation / decider / written) followed by the three lens sections — *Lens 1 Completion vs Task Docs*, *Lens 2 Code Quality*, *Lens 3 Onboarding vs Code* — then *Findings (ranked; each refute-tested)*, *If BLOCK — Fix Leaves (decomposed, leaf-shaped)*, and a *Judge-Evidence Note*. The completion and code-quality lenses cite a backing `templates/impact-analysis.md` artifact; the onboarding lens cites a backing `templates/onboarding-coherency.md` artifact.
+The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-02-agent-orchestration/templates/verdict.md`. It carries a prose header naming the writer (`jobs/adversarial-reviewer.md`), a numbered **Rules** block, and two fenced variants. The **Master-Exit Variant** records the master integration branch, master/leaf task docs, recommendation, decider, artifact path, and exact gate evidence ref (`kind=reviewer-verdict`, `ref=...`, `verdict=...`), then reviews completion against master task docs, code quality for the master branch, onboarding-vs-code for master-side sidecars/route overviews, ranked refute-tested findings, and manager fix leaves for a BLOCK. The **Super-Exit Variant** records the super branch, portfolio/master task docs, recommendation, decider, artifact path, and the same gate evidence ref shape, then reviews portfolio completion, whole-super branch quality, accumulated onboarding/carry-over/ledger coherence, ranked findings, and orchestrator-routed fix leaves for a BLOCK.
 
 ### Conventions
 
-Every finding is **refute-or-confirm**: it must survive an attempt to refute it, findings are ranked, and each cites its backing sub-agent report. All three lenses (completion · code quality · onboarding-vs-code) are covered explicitly, even to state a lens is clean. Regressions are checked against the past via route indexes, `cgc`, and `grepai`.
+Every finding is **refute-or-confirm**: it must survive an attempt to refute it, findings are ranked, and each cites a backing evidence file. All three lenses (completion · code quality · onboarding-vs-code) are covered explicitly, even to state a lens is clean. Regressions are checked against the past via route indexes, `cgc`, and `grepai`. The gate evidence reference is part of the artifact contract, not optional prose.
 
 ### Invariants And Boundaries
 
@@ -61,4 +61,8 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-07-04T13:16+02:00: 260703-L6 split the verdict shape into explicit master-exit and super-exit
+  variants, added evidence-file and gate-evidence-ref fields, and made BLOCK fix-leaf decomposition
+  seam-specific for the manager or orchestrator owner. Verification metadata pinned until closeout
+  stamps the L6 commit.
 - 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-02-agent-orchestration` verdict report template (leaf 260703-L1) — the adversarial reviewer's master-exit/super-exit artifact that is evidence not a decision, whose BLOCK must decompose into fix leaves, covering the completion/code-quality/onboarding-vs-code lenses under a refute-or-confirm posture. Verification metadata pinned until closeout stamps the L1 commit.

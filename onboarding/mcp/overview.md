@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T13:03+02:00 |
-| lastVerifiedCommitHash | `5ab7550b256fe4cd82514b81f455aa9026c0d7de` |
-| lastVerifiedCommitDate | 2026-07-04T13:10:34+02:00|
+| lastUpdated            | 2026-07-04T13:16+02:00 |
+| lastVerifiedCommitHash | `9f72d7705fa711017ba599ac13a348b927084d3d` |
+| lastVerifiedCommitDate | 2026-07-04T13:22:12+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -32,7 +32,11 @@ dashboard clicks. The package-data runtime skill mirror now carries the L5
 super-integration doctrine for orchestrated series: super branches from main,
 masters branch from super, leaves branch from masters, C-11 carries every edge,
 the orchestrator integrates completed masters from a super-sourced worktree, and
-the final super-to-main PR is followed by main-memory carry-over and push. Since L12 every managed
+the final super-to-main PR is followed by main-memory carry-over and push. L6
+sharpens the same runtime skill mirror's adversarial review procedures: managers
+spawn master-exit reviewers, orchestrators spawn super-exit reviewers, verdicts
+land in series `notes/reports/`, and the handover gate carries
+`reviewer-verdict` evidence refs that L4 policy may require. Since L12 every managed
 provider container carries an explicit compose memory cap (watchers 512m,
 falkordb/ollama 2g, runner 1g, postgres 512m) with self-recycling OOM behavior.
 
@@ -406,6 +410,11 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-04T13:16+02:00 — No route impact: 260703-L6 sharpened the synced
+  `l-02-agent-orchestration` runtime skill docs/templates only — adversarial reviewer seam-specific
+  rubrics, verdict variants, `notes/reports/` artifact placement, and `reviewer-verdict` gate evidence
+  refs. No MCP Python source, tool signature, response schema, or package route behavior changed.
+  Verification metadata pinned until closeout stamps the L6 commit.
 - 2026-07-04T13:03+02:00 — 260703-L5 route model update: the synced
   `l-02-agent-orchestration` runtime skill mirror now carries the full super integration branch
   topology (super from main, masters from super, leaves from masters), orchestrator master-to-super

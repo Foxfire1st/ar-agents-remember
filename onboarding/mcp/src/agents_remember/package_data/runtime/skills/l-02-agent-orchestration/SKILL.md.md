@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T13:03+02:00                      |
-| lastVerifiedCommitHash | `5ab7550b256fe4cd82514b81f455aa9026c0d7de` |
-| lastVerifiedCommitDate | 2026-07-04T13:10:34+02:00|
+| lastUpdated            | 2026-07-04T13:16+02:00                      |
+| lastVerifiedCommitHash | `9f72d7705fa711017ba599ac13a348b927084d3d` |
+| lastVerifiedCommitDate | 2026-07-04T13:22:12+02:00|
 
 ## Purpose
 
@@ -24,7 +24,9 @@ contract from the entry file, with each seat's meat deferred to `jobs/<role>.md`
 spells out the strict branch stack (super from main, masters from super, leaves from masters), C-11 as
 the universal integration mechanic, the orchestrator's master-to-super worktree flow, the two conflict
 resolution modes, leaf-move decision-log duties, the memory-ledger invariant, and the sequenced
-260630-derived follow-ups.
+260630-derived follow-ups. It now also documents the two adversarial review seam procedures end to end:
+who spawns the reviewer, which context is passed, where the verdict artifact lands, and how the verdict
+attaches to the handover gate through `reviewer-verdict` evidence refs.
 
 ## Code Commentary
 
@@ -84,11 +86,17 @@ Runtime conventions carried inline by `SKILL.md`:
   default agent behavior stands and any plan delta beyond blank-filling escalates.
 - **Two adversarial review seams.** Adversarial review spawns at **exactly two seams** (developer
   decision 2026-07-03), never per-leaf: **master-exit** (before a manager hands its master to the
-  orchestrator) and **super-exit** (before the orchestrator hands super to the developer). Each spawns
-  an `adversarial-reviewer` over three lenses (completion vs docs · code quality per `system/tools.md`
-  · onboarding-vs-code = paired `read_ar_files` + `memory_quality_check` + drift); the verdict is a
-  templated artifact (`templates/verdict.md`) that attaches to the handover gate as **evidence, never a
-  decision**, and a blocking verdict must decompose into fix leaves.
+  orchestrator) and **super-exit** (before the orchestrator hands accumulated super to the developer).
+  Each spawns an `adversarial-reviewer` over three lenses (completion vs docs · code quality per
+  `system/tools.md` · onboarding-vs-code = paired `read_ar_files` + `memory_quality_check` + drift);
+  the verdict is a templated artifact (`templates/verdict.md`) under series `notes/reports/` that
+  attaches to the handover gate as **evidence, never a decision**, and a blocking verdict must
+  decompose into fix leaves. L6 adds the concrete procedures: the manager spawns the reviewer before
+  master handover and passes the master branch/docs/reports/tool and memory evidence; the orchestrator
+  spawns the reviewer before developer handover and passes the whole super branch/portfolio/master
+  handover/carry-over evidence. The handover gate carries the verdict as
+  `evidenceRefs=[{"kind":"reviewer-verdict","ref":"notes/reports/...","verdict":"pass|pass-with-notes|block"}]`,
+  which an L4 policy may require before a delegated orchestration decision is valid.
 - **Gate-delegation doctrine (enforcement is L4).** Leaf plan/closeout gates become **delegable to a
   configured role**; the invariant is sharpened, not weakened — *the owning agent never self-approves; a
   distinct, configured role may.* Delegated decisions are **attributed** (`decidedBy: <manager
@@ -165,8 +173,9 @@ task-doc-tooling leaves land.
 ### Todos
 
 No current todo is recorded in this skill file. The deferred implementations (spawn tool L2, comms L3,
-gate policy + settings parsing L4, full topology L5, adversarial reviews L6, orchestrated pilot L7) are
-tracked as the series' downstream leaves, not as in-file todos.
+gate policy + settings parsing L4, full topology L5, and adversarial reviews L6) are now documented in
+the series leaves that landed them; the orchestrated pilot L7 remains the next end-to-end proof surface,
+not an in-file TODO.
 
 ### Docs References
 
@@ -201,6 +210,11 @@ No sibling repository evidence is needed for this repository-local orchestration
 
 ## Update History
 
+- 2026-07-04T13:16+02:00 — 260703-L6 documented the adversarial seam procedures end to end: manager
+  spawn at master-exit, orchestrator spawn at super-exit, `notes/reports/` verdict placement,
+  `reviewer-verdict` gate evidence refs, policy-required verdict evidence, and block-to-fix-leaf routing
+  back to the owning manager/orchestrator. Verification metadata pinned until closeout stamps the L6
+  commit.
 - 2026-07-04T13:03+02:00 — 260703-L5 expanded the frame's super integration branch topology from a
   summary into doctrine: super branches from main, masters branch from super, leaves branch from their
   master, C-11 is universal at every edge, dependent managers dispatch only after dependencies

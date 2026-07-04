@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/adversarial-reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                     |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-04T13:16+02:00                     |
+| lastVerifiedCommitHash | `9f72d7705fa711017ba599ac13a348b927084d3d` |
+| lastVerifiedCommitDate | 2026-07-04T13:22:12+02:00|
 
 ## Purpose
 
@@ -15,8 +15,9 @@ This is the portable **adversarial reviewer** job file the `l-02-agent-orchestra
 review seams. Like every job file it carries **both axes in one file** — the **role** (review the
 accumulated change set at a seam) and the **lens** (refute-or-confirm across three review lenses) — plus
 an opening move, duties, artifact obligations, a comms protocol, and a harness-agnostic knob block. The
-central doctrine the card must protect: **verdicts are evidence, not decisions**, and a **blocking verdict
-must decompose into fix leaves**.
+central doctrine the card must protect: **verdicts are evidence, not decisions**, a **blocking verdict
+must decompose into fix leaves**, and the reviewer uses different rubrics at master-exit and
+super-exit because those seams review different accumulated change sets.
 
 ## Code Commentary
 
@@ -32,10 +33,18 @@ the review to the seam's diff · task docs · rubric; retrieval lean = refute-or
 the change set; decide default = a verdict artifact with an explicit pass/block recommendation — never a
 decision, never prose-only); the **three review lenses** (1. completion vs task docs; 2. code quality per
 `system/tools.md` + regressions **vs the past** via route indexes/cgc/grepai; 3. onboarding-vs-code = the
-paired `read_ar_files` + `memory_quality_check` + `drift_check` check); five duties; the artifact
-obligations; the comms protocol; and the knob block. It **fans out sub-agents that write durable reports**
-(`templates/impact-analysis.md`, `templates/onboarding-coherency.md`) backing the verdict
-(`templates/verdict.md`).
+paired `read_ar_files` + `memory_quality_check` + `drift_check` check); and the seam-specific rubrics.
+The **master-exit** rubric reviews the accumulated master integration branch before manager →
+orchestrator handover: master/leaf task docs, worker reports, decision logs, the draft handover packet,
+resolved tools evidence, changed sidecars, route overviews, and memory/carry-over state. The
+**super-exit** rubric reviews wholesale super-branch behavior before orchestrator → developer handover:
+the full portfolio docs, master handovers, prior master-exit verdicts, orchestrator decision logs,
+branch-wide quality evidence, route/memory coherence, and final ledger/carry-over state. Both rubrics
+require refute-or-confirm findings and make any BLOCK invalid unless it names concrete fix leaves. The
+file also defines five duties, artifact obligations, the comms protocol, and the knob block. It **fans
+out sub-agents that write durable reports** (`templates/impact-analysis.md`,
+`templates/onboarding-coherency.md`) backing the verdict (`templates/verdict.md`) under the series
+`notes/reports/` directory.
 
 ### Conventions
 
@@ -91,4 +100,8 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-04T13:16+02:00: 260703-L6 sharpened this reviewer job with separate MASTER-EXIT and
+  SUPER-EXIT rubrics, explicit refute-or-confirm evidence-file posture, `notes/reports/` verdict
+  placement, and the rule that blocking verdicts decompose into fix leaves for the owning
+  manager/orchestrator. Verification metadata pinned until closeout stamps the L6 commit.
 - 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-02-agent-orchestration` adversarial reviewer job file (leaf 260703-L1) — short-lived at exactly two seams (master-exit, super-exit), the three review lenses, sub-agent durable reports, and the critical doctrine that verdicts are evidence not decisions and a blocking verdict must decompose into fix leaves (leaf-level review being the manager's duty, not a seam). Verification metadata pinned until closeout stamps the L1 commit.
