@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/models/operator_inbox.py`      |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-06-23T13:44+02:00                                  |
-| lastVerifiedCommitHash |                                                         `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                         2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                                  |
+| lastVerifiedCommitHash |                                                         `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
+| lastVerifiedCommitDate |                                                         2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -16,15 +16,18 @@
 
 ## Purpose
 
-Strict public response models for the `operator_inbox_*` MCP tools.
+Strict public response models for the `operator_inbox_*` MCP tools, including
+agent-to-agent metadata and hosted-delivery status.
 
 ## Code Commentary
 
 ### Logic
 
-`OperatorInboxPostResponse` returns the queued entry id, state, mailbox keys, and
-optional gate id. `OperatorInboxPollResponse` returns the mailbox key, pending
-entry count, and serialized entry dictionaries. `OperatorInboxConsumeResponse`
+`OperatorInboxPostResponse` returns the queued entry id, state, mailbox keys,
+sender/recipient role metadata, message kind, optional artifact path, and
+optional hosted-delivery fields. `OperatorInboxPollResponse` returns the mailbox
+key, optional recipient role, pending entry count, and serialized entry
+dictionaries. `OperatorInboxConsumeResponse`
 returns the entry id, final state, whether this call consumed it now, and the
 consume timestamp when present.
 
@@ -38,7 +41,7 @@ reuses `OperatorInboxState` from the persisted record module.
 
 - These models describe public MCP responses, not persisted inbox records.
 - Nullable fields use `= None` so `_tool_payload(... exclude_none=True)` can omit
-  absent mailbox/gate/consumed timestamp fields.
+  absent mailbox/gate/delivery/consumed timestamp fields.
 - Register every new public inbox tool here and in
   `PUBLIC_TOOL_RESPONSE_MODELS`.
 
@@ -72,4 +75,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: extended inbox response models with role/message
+  metadata and hosted-delivery fields. Verification metadata pinned until
+  closeout stamps the L3 commit.
 - 2026-06-23T13:44+02:00 — Created for task 10 backend inbox: strict response models for post, poll, and consume. Verification metadata pinned until closeout stamps the task-10 code commit.

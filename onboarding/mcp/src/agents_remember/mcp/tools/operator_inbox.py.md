@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-06-25T13:10+02:00                                       |
-| lastVerifiedCommitHash |                                                              `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                              2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                                       |
+| lastVerifiedCommitHash |                                                              `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
+| lastVerifiedCommitDate |                                                              2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -16,8 +16,8 @@
 
 ## Purpose
 
-Payload builders for the `operator_inbox_*` MCP tools that post, poll, and
-consume external-chat operator responses.
+Payload builders for the `operator_inbox_*` MCP tools that post, poll, consume,
+and optionally push durable operator or agent-to-agent messages.
 
 ## Code Commentary
 
@@ -26,12 +26,16 @@ consume external-chat operator responses.
 `_store(config)` roots `OperatorInboxStore` under `observer_root(config)`.
 `operator_inbox_post_payload(...)` mints a ULID and timestamp, creates an
 `OperatorInboxEntry`, appends it, and returns a strict `operator_inbox_post`
-payload. The trusted caller supplies `created_by` / `created_via`; the public
-MCP server fixes those values for its own route.
+payload with metadata and delivery fields. The trusted caller supplies
+`created_by` / `created_via`; the public MCP server fixes those values for its
+own route. When catalog/host/paster seams are supplied and
+`deliver_to_hosted=True`, it attempts immediate hosted-session push through
+`serving.inbox_delivery`.
 
-`operator_inbox_poll_payload(...)` lists pending entries for a lifecycle and/or
-agent mailbox key, serializes each record with the `schema` alias, and returns
-`entryCount` plus the entry list. `operator_inbox_consume_payload(...)` marks
+`operator_inbox_poll_payload(...)` lists pending entries for a lifecycle, agent,
+recipient role, or combined mailbox key, serializes each record with the `schema`
+alias, and returns `entryCount` plus the entry list.
+`operator_inbox_consume_payload(...)` marks
 one entry consumed through the store, reports whether this call consumed it now
 or observed an already-consumed entry, then deletes the inbox row because the
 agent has received the throwaway response.
@@ -49,9 +53,11 @@ and attribution is explicit rather than inferred.
 - The dashboard serving endpoint calls the post payload builder directly with trusted
   developer/dashboard attribution when the task-11 hosted-session route has no chat to inject into.
 - Polling requires at least one mailbox key because an unaddressed read would
-  not represent an external agent inbox.
+  not represent an addressable agent inbox.
 - Consumed inbox rows are not durable task records; the payload is returned to
   the caller, then the row is physically deleted.
+- Hosted push delivery is opportunistic; the durable row remains pollable unless
+  the consumer explicitly consumes it.
 
 ### Todos
 
@@ -86,6 +92,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: generalized posting/polling for agent roles and
+  message kinds, added optional hosted-session delivery through
+  `serving.inbox_delivery`, and returned delivery metadata. Verification metadata
+  pinned until closeout stamps the L3 commit.
 - 2026-06-25T13:10+02:00 — Task 23/24: post opportunistically compacts expired inbox rows and consume deletes the entry after returning the consumed response.
 - 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: clarified that `serving.app` now calls `operator_inbox_post_payload` with developer/dashboard attribution when Gate Respond has no hosted session to inject into. Verification metadata pinned until closeout stamps the task-10 code commit.
 - 2026-06-23T13:44+02:00 — Created for task 10 backend inbox: post, poll, and consume payload builders for the external-chat operator inbox. Verification metadata pinned until closeout stamps the task-10 code commit.

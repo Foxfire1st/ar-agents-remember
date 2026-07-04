@@ -20,6 +20,7 @@
     "mcp/src/agents_remember/mcp/tools/memory.py",
     "mcp/src/agents_remember/mcp/tools/next_step.py",
     "mcp/src/agents_remember/mcp/tools/operator_inbox.py",
+    "mcp/src/agents_remember/mcp/tools/orchestration.py",
     "mcp/src/agents_remember/mcp/tools/providers.py",
     "mcp/src/agents_remember/mcp/tools/read_files.py",
     "mcp/src/agents_remember/mcp/tools/task_doc.py",
@@ -27,8 +28,8 @@
     "mcp/src/agents_remember/mcp/tools/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 15,
-    "fileSidecars": 15,
+    "sourceFilesInScope": 16,
+    "fileSidecars": 16,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -52,6 +53,7 @@
     "next_step",
     "operator",
     "operator_inbox",
+    "orchestration",
     "providers",
     "read",
     "read_files",
@@ -78,6 +80,7 @@
       "mcp/src/agents_remember/mcp/tools/memory.py",
       "mcp/src/agents_remember/mcp/tools/next_step.py",
       "mcp/src/agents_remember/mcp/tools/operator_inbox.py",
+      "mcp/src/agents_remember/mcp/tools/orchestration.py",
       "mcp/src/agents_remember/mcp/tools/providers.py",
       "mcp/src/agents_remember/mcp/tools/read_files.py",
       "mcp/src/agents_remember/mcp/tools/task_doc.py",
@@ -105,6 +108,8 @@
       "next_step",
       "operator_inbox.py",
       "operator_inbox",
+      "orchestration.py",
+      "orchestration",
       "providers.py",
       "providers",
       "read_files.py",
@@ -130,9 +135,7 @@
       "AND",
       "CONTINUE",
       "mcp/src/agents_remember/mcp/tools",
-      "route-local-overview",
-      "3c592f76ed607e4c0391fd26d77b869ee837a5af",
-      "/../../../../overview.md"
+      "route-local-overview"
     ]
   },
   "fallback": {

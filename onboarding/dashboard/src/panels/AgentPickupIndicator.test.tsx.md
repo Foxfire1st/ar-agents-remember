@@ -5,9 +5,9 @@
 | repository             | agents-remember                                      |
 | path                   | `dashboard/src/panels/AgentPickupIndicator.test.tsx` |
 | doc_type               | `file-level-onboarding`                              |
-| lastUpdated            | 2026-06-25T13:20+02:00                               |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                               |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -24,7 +24,9 @@ The tests render `AgentPickupIndicator` in both backend-projected states. The fr
 `waiting-for-agent` case proves the spinner/status renders without a dismissal
 action. The stale `check-chat` case proves the warning renders an `x` control and
 calls `dismissOperatorInboxEntry(entryId)` so the developer can remove the warning
-without pretending the agent consumed the inbox entry.
+without pretending the agent consumed the inbox entry. L3 fixture rows include
+`messageKind` and `deliveryState` so the test shape stays aligned with the
+backend projection.
 
 ## Invariants And Boundaries
 
@@ -40,4 +42,7 @@ without pretending the agent consumed the inbox entry.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: updated pickup fixtures with message-kind and
+  delivery-state fields from the expanded projection contract. Verification
+  metadata pinned until closeout stamps the L3 commit.
 - 2026-06-25T13:20+02:00 — Created for task 23/24 coverage of waiting-for-agent and dismissible check-chat task-row feedback.

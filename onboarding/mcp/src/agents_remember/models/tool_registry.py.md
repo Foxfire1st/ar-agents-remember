@@ -5,17 +5,19 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:10+02:00                     |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                     |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
 `tool_registry.py` maps modeled MCP payload-builder names to response model
 classes and exposes the advertised public subset separately. L11 maps
-`task_reopen` → `TaskReopenResponse` (imported from `models.task_doc`). L2 maps
-`spawn_agent_session` → `SpawnAgentSessionResponse` (imported from `models.terminal`).
+`task_reopen` -> `TaskReopenResponse` (imported from `models.task_doc`). L2 maps
+`spawn_agent_session` -> `SpawnAgentSessionResponse` (imported from `models.terminal`).
+L3 maps `orchestration_nudge_manager` -> `OrchestrationNudgeManagerResponse`
+(imported from `models.orchestration`).
 
 ## Code Commentary
 
@@ -26,8 +28,10 @@ GitHub #54 sub-task D), benchmark, slice-2b lifecycle, the slice-3c
 `task_doc` → `TaskDocResponse`, `lifecycle_gate` → `LifecycleGateResponse`, the
 control-plane gate payload builders (`gate_create`/`gate_decide`/`gate_wait`/
 `gate_response_wait`/`gate_list` → the strict `models/gates.py` responses), plus the
-task-10 external-chat inbox tools (`operator_inbox_post` / `operator_inbox_poll`
-/ `operator_inbox_consume` → the strict `models/operator_inbox.py` responses),
+task-10/L3 inbox tools (`operator_inbox_post` / `operator_inbox_poll`
+/ `operator_inbox_consume` -> the strict `models/operator_inbox.py` responses),
+the L3 orchestration nudge tool (`orchestration_nudge_manager` ->
+`models/orchestration.py`),
 plus dashboard task 14 `lifecycle_finalize_task` → `LifecycleFinalizeTaskResponse`,
 plus the task-28 `lifecycle_turn_end_notification` → `LifecycleTurnEndNotificationResponse`
 (the public NOTIFY-AND-CONTINUE turn-end response), plus L9
@@ -82,6 +86,10 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: registered
+  `orchestration_nudge_manager` to the strict orchestration response model while
+  the inbox response rows gained delivery metadata. Verification metadata pinned
+  until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — L2: registered `spawn_agent_session` → `SpawnAgentSessionResponse`
   (`models/terminal.py`), keeping the new agent-facing dispatch tool in the strict AR-owned
   response-contract path; `PUBLIC_TOOL_RESPONSE_MODELS` still exactly matches `PUBLIC_TOOLS`.

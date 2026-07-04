@@ -5,19 +5,21 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-06-28T07:43+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`     |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                      |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`     |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
 
 `controlplane/` owns control-plane records: the gate control plane (task 6), the
-external-chat operator inbox (task 10), the task-23/24 interaction-retention
-policy, and task-28 lifecycle-scoped attention acknowledgements. Gates are
-attributed decision points on a lifecycle; the inbox is the pull-based return
-channel for chats the dashboard does not host; attention acknowledgement rows hide
-one current queue occurrence. Lifecycle-bound acknowledgements disappear with their
+operator/agent inbox (task 10/L3), orchestration artifact/nudge helpers (L3), the
+task-23/24 interaction-retention policy, and task-28 lifecycle-scoped attention
+acknowledgements. Gates are attributed decision points on a lifecycle; the inbox
+is the pull-based return channel for chats the dashboard does not host and the
+durable substrate for agent-to-agent messages that may also be pushed into
+hosted sessions; nudge rows record rate-limited manager nudges. Attention
+acknowledgement rows hide one current queue occurrence. Lifecycle-bound acknowledgements disappear with their
 lifecycle; Task 29 S7 keeps only targetless actionable-drift acknowledgements current
 across that prune boundary because their source item is repository/branch-scoped rather
 than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
@@ -40,11 +42,16 @@ event log under `observer_root`). `enforcement.py`'s `evaluate_closeout_gate` is
 the pure policy `worktree_closeout_apply` obeys — a `closeout-approval` gate binds
 closeout only when a developer approved it.
 
-External-chat responses are queued with `OperatorInboxEntry` snapshots and
+Operator/agent messages are queued with `OperatorInboxEntry` snapshots and
 stored through `OperatorInboxStore`. The inbox log lives under
 `observer_root/workspace/operator-inbox.jsonl`; entries carry `lifecycleId`
-and/or `agentId`, preserve the originating ask and response while pending, and are deleted when the
-agent consumes them, the developer dismisses the stale pickup warning, or TTL compaction removes them.
+and/or `agentId` and/or `recipientRole`, preserve sender/recipient role metadata,
+message kind, optional artifact path, originating ask, response, and hosted
+delivery state while pending, and are deleted when the agent consumes them, the
+developer dismisses the stale pickup warning, or TTL compaction removes them.
+L3 adds `orchestration_nudges.py` for rate-limited manager nudges and
+`orchestration_artifacts.py` for turn-report, master-handover, and escalation
+packet helpers.
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -61,8 +68,10 @@ signal, while targetless provider-down dismissals are not accepted.
 | `records.py`  | `GateRecord` (`ar-gate-record/v1`) + pure `create_gate` / `decide_gate` / `expire_gate` / `coerce_gate_kind`; the `GateKind` / `GateState` / `DecidedVia` Literals and `DECISION_STATES`. `GateKind` is the full l-01 gate spine (slice 09 added `plan-approval` / `worktree-intent` / `push-approval`); `closeout-approval` IS the commit gate — no separate `commit-approval`. |
 | `store.py`    | `GateStore`: lifecycle/workspace gate logs beside the event log; `current()` folds by gate id (last-wins), while `delete`/`compact` physically remove throwaway interaction rows. |
 | `enforcement.py` | `evaluate_closeout_gate` (pure closeout-gate policy) + `CloseoutGuard` — the binding rule `worktree_closeout_apply` reads (slice 6b). |
-| `operator_inbox_records.py` | `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/consume helpers for external-chat inbox snapshots. |
-| `operator_inbox_store.py` | `OperatorInboxStore`: workspace inbox log, pending filters by lifecycle/agent, idempotent store consume, public delete/dismiss paths, and TTL compaction. |
+| `operator_inbox_records.py` | `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/consume helpers for durable operator/agent inbox snapshots, including role/message/artifact and delivery metadata. |
+| `operator_inbox_store.py` | `OperatorInboxStore`: workspace inbox log, pending filters by lifecycle/agent/recipient role, delivery-state snapshots, idempotent store consume, public delete/dismiss paths, and TTL compaction. |
+| `orchestration_artifacts.py` | Strict turn-report, master-handover, and escalation packet helpers for the L2/L3 orchestration frame. |
+| `orchestration_nudges.py` | `OrchestrationNudgeRecord` + `OrchestrationNudgeStore`: append-only, rate-limited manager nudge attempts plus message/artifact helpers. |
 | `attention_dismissals.py` | `AttentionDismissalRecord` + `AttentionDismissalStore`: compact current acknowledgement rows for attention queue dismissals, with physical prune by live lifecycle id and a targetless actionable-drift exception. |
 | `interaction_retention.py` | Shared 5-minute pickup/wait and 24-hour interaction TTL policy helpers. |
 | `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store). |
@@ -92,8 +101,8 @@ response models are `models/operator_inbox.py`.
   closeout only on a `decidedBy="developer"` approval, so that honesty is load-bearing.
 - Gates co-locate under `observer_root`, mirroring the event substrate; no new
   storage root.
-- Inbox entries require `lifecycleId` or `agentId`; an unaddressed response has
-  no external mailbox to poll.
+- Inbox entries require `lifecycleId`, `agentId`, or `recipientRole`; an
+  unaddressed response has no external mailbox or hosted-session target.
 
 ## Repo-Internal References
 
@@ -107,6 +116,10 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3 route impact: the inbox is now generalized for
+  agent-to-agent addressing with role/message/artifact/delivery metadata, and
+  the route adds orchestration artifact and rate-limited nudge helpers.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-06-28T07:43+02:00 — Task 29 S7 route impact: attention dismissals now document the targetless
   actionable-drift exception, preserving only current repo/branch drift acknowledgements while
   lifecycle-bound rows continue to prune with live lifecycle ids. Verification metadata pinned until

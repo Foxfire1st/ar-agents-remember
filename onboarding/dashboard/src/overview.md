@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb`       |
-| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00 |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -91,8 +91,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   (`actions.ts` POSTs targeted `gateId`/`note` decisions to `/api/actions/{verb}`, can omit `target`
   for gate-id-only cancel cleanup and targetless actionable-drift dismissal, and distinguishes stale
   gates from no-open-gate), the external-inbox client (`operatorInbox.ts` -> `POST
-  /api/operator-inbox` for message-only Chat and missing-hosted-session gate notifications plus
-  `/api/operator-inbox/{entryId}/dismiss` for stale pickup-warning deletion), the Mode B2 terminal WebSocket
+  /api/operator-inbox` for message-only Chat, agent-to-agent inbox rows with role/message/artifact
+  metadata, and missing-hosted-session gate notifications plus `/api/operator-inbox/{entryId}/dismiss`
+  for stale pickup-warning deletion), the Mode B2 terminal WebSocket
   client (`terminal.ts`, slice 6e; Task 22 also lists/terminates durable catalog rows, sends
   opener labels/lifecycle ids, and exposes a nullable catalog fetch for sync), and the open-terminal **session registry** store (`sessions.ts`,
   slice 6e-4 — now also the Task 11 lifecycle-tagged hosted-chat routing table for direct gate
@@ -138,8 +139,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   and folder-keyed master aggregation surfaces so the detail panel can render masters, label authored
   leaves from the child task id, and order leaves from structured creation metadata rather than task-name
   prefixes. Task 21 adds `SeriesNode.seriesTokenTotal`, the server-composed aggregate displayed by
-  master readers. Task 23/24 adds `AttentionItem.gateId?` and `AgentPickupNode` /
-  `Analytics.agentPickups` for attention clear and task-row waiting-for-agent/check-chat feedback. Task
+  master readers. Task 23/24/L3 adds `AttentionItem.gateId?` and `AgentPickupNode` /
+  `Analytics.agentPickups` for attention clear and task-row waiting-for-agent/check-chat feedback,
+  including sender/recipient roles, message kind, artifact path, and hosted-delivery state. Task
   31 mirrors the provider boot-node `missing` state so Engine Room slots can distinguish expected-but-absent
   CGC/GrepAI roles from configured or observed provider rows. Task 33 mirrors the required top-level
   `WorkspaceProjection.activeWorktreeGroups: string[]` — the bounded active worktree-group set the
@@ -191,6 +193,10 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3 route impact: dashboard data/types now mirror
+  agent-to-agent inbox metadata and hosted-delivery state for `AgentPickupNode`
+  and `/api/operator-inbox`. Verification metadata pinned until closeout stamps
+  the L3 commit.
 - 2026-07-04T10:05+02:00 — 260703-L0 route impact (small): `dev/` gained the `/dev/flows` lifecycle-design
   canvas route (DevApp mounts the generalized `panels/FlowTab` over the new `panels/flowModels.ts` registry);
   detail lives in the `panels/` overview and the file sidecars. Verification metadata pinned until closeout

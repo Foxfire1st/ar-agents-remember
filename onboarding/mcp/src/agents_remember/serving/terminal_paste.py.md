@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-04T11:10+02:00                                  |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`              |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                                  |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`              |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Purpose
@@ -40,12 +40,13 @@ the confirmation loop is deterministically unit-testable against fakes — no re
 
 `TerminalPaster.paste(tmux_name, text, *, submit, echo_timeout, boot_deadline, submit_timeout,
 poll_interval)` is the loop: it sanitizes the text, then `_paste_until_echo` loads a uniquely-named
-tmux buffer + `paste-buffer -p` and watches (`_await_advance` — `capture-pane` before/after) for the
-composer to echo the draft, **re-pasting across the boot window** (`boot_deadline`) because a booting
-harness (Claude Code loading MCP) discards stdin until its composer mounts. Only once `delivered` and
-`submit` does it capture a baseline, `send-keys Enter`, and watch for output past that baseline
-(`submitted`). It never raises on a missing/gone session — an unchanged pane simply reports the
-unconfirmed outcome (the "surface a retry, never silently drop" contract).
+tmux buffer + `paste-buffer -p` and watches for a **real echo**: either a visible sanitized draft
+fragment or a new bracketed-paste chip such as `[Pasted text #N]`. It re-pastes across the boot
+window (`boot_deadline`, about 30s by default) because a booting harness can advance the pane while
+discarding stdin until its composer mounts; pane advancement alone is no longer treated as delivery.
+Only once `delivered` and `submit` does it capture a baseline, `send-keys Enter`, and watch for output
+past that baseline (`submitted`). It never raises on a missing/gone session — an unchanged pane simply
+reports the unconfirmed outcome (the "surface a retry, never silently drop" contract).
 
 ### Conventions
 
@@ -61,6 +62,8 @@ collide.
   `submit=True` to auto-start.
 - Delivery is best-effort and confirmation-based: a boot-discarded paste is retried, and a paste that
   never echoes past `boot_deadline` reports `delivered=False` rather than raising.
+- Boot chatter or harness startup output does not confirm delivery; the composer must echo the pasted
+  draft/chip.
 - No PTY client is attached; this operates on the durable tmux session by name over tmux CLI primitives.
 
 ### Todos
@@ -95,6 +98,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: tightened delivery confirmation to require a
+  pasted draft fragment or new paste chip, preserving the L2 over-boot retry loop
+  while fixing false-positive delivery during harness boot. Verification metadata
+  pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — L2: created as the server-side echo-confirmed paste helper mirroring the
   frontend `pasteAndConfirm`/`submitAndConfirm` over tmux `set-buffer`/`paste-buffer -p`/`send-keys` +
   `capture-pane` confirmation, with re-paste across the harness boot window and every tmux op injectable

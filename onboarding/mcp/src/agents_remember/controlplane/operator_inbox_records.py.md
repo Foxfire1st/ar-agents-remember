@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-06-23T13:44+02:00                                              |
-| lastVerifiedCommitHash |                                                                     `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                                     2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                                              |
+| lastVerifiedCommitHash |                                                                     `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
+| lastVerifiedCommitDate |                                                                     2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -16,24 +16,29 @@
 
 ## Purpose
 
-Defines the persisted `ar-operator-inbox-entry/v1` snapshot used to queue an
-operator response for an external chat to poll.
+Defines the persisted `ar-operator-inbox-entry/v1` snapshot used to queue a
+durable operator or agent-to-agent message that can be pushed into a hosted
+session and/or polled by an external chat.
 
 ## Code Commentary
 
 ### Logic
 
 `OPERATOR_INBOX_RECORD_SCHEMA` is the wire tag. `OperatorInboxState` is
-`pending | consumed`, and `OperatorInboxVia` is `chat | dashboard | cli`.
-`require_inbox_address(...)` rejects unaddressed entries because an external
-chat can only poll by `lifecycle_id` and/or `agent_id`.
+`pending | consumed`, `OperatorInboxVia` is `chat | dashboard | cli`,
+`AgentRole` addresses orchestration identities (`orchestrator`, `manager`,
+`worker`, etc.), `InboxMessageKind` classifies the row, and
+`InboxDeliveryState` records hosted push state. `require_inbox_address(...)`
+rejects entries with no lifecycle id, agent id, or recipient role.
 
 `OperatorInboxEntry` is a strict Pydantic record. It stores the mailbox keys
-(`lifecycleId`, `agentId`), optional `gateId`, the originating `ask`, the
-operator `response`, creation attribution, and optional consume attribution.
-`create_operator_inbox_entry(...)` returns a `pending` snapshot using caller-minted
-`entry_id` and `now`. `consume_operator_inbox_entry(...)` returns a later
-`consumed` snapshot while preserving the original post attribution.
+(`lifecycleId`, `agentId`, `recipientRole`), optional `gateId`, sender role/id,
+message kind, optional artifact path, the originating `ask`, the message
+`response`, creation attribution, hosted delivery metadata, and optional consume
+attribution. `create_operator_inbox_entry(...)` returns a `pending` snapshot using
+caller-minted `entry_id` and `now`. `consume_operator_inbox_entry(...)` returns a
+later `consumed` snapshot while preserving the original post and delivery
+metadata.
 
 ### Conventions
 
@@ -44,7 +49,8 @@ literal states, and pure helper functions that do not write disk.
 
 - Append a new snapshot for consumption; do not mutate the pending entry in
   place.
-- An entry must carry at least one mailbox key (`lifecycleId` or `agentId`).
+- An entry must carry at least one mailbox key (`lifecycleId`, `agentId`, or
+  `recipientRole`).
 - This is the persisted record, not the public MCP response contract; responses
   live in `models/operator_inbox.py`.
 
@@ -80,4 +86,8 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: generalized the inbox record from external-chat
+  operator responses to agent-addressed durable messages with sender/recipient
+  role metadata, message kinds, artifact paths, and hosted delivery state.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-06-23T13:44+02:00 — Created for task 10 backend inbox: persistent operator inbox entry record plus pure create/consume helpers. Verification metadata pinned until closeout stamps the task-10 code commit.

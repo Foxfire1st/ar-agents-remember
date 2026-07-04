@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-04T11:10+02:00 |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`       |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00 |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -27,9 +27,10 @@ developer-attributed and binding), and hosts the Mode B2 terminal backend
 (`terminal.py` — tmux-wrapped PTY sessions, slice 6d-1) bridged to the browser over the
 `@app.websocket("/api/terminal/{session}")` WebSocket (slice 6d-2); a `POST /api/terminal/{session}`
 opener + `GET /api/harnesses` let the dashboard spawn + own a shell or a detected harness (slices
-6e-2a/6e-2b, the `harnesses.py` registry). Task 10 adds `POST /api/operator-inbox`, the trusted
-developer/dashboard write side for external-chat gate responses when no hosted chat session can
-receive direct injection. Task 23/24 adds `POST /api/operator-inbox/{entry_id}/dismiss`, the delete path
+6e-2a/6e-2b, the `harnesses.py` registry). Task 10/L3 adds `POST /api/operator-inbox`, the trusted
+developer/dashboard write side for durable inbox messages; L3 can immediately push a queued row into a
+matching hosted session through the shared terminal paster while keeping the row pollable.
+Task 23/24 adds `POST /api/operator-inbox/{entry_id}/dismiss`, the delete path
 for stale task-row pickup warnings. Task 22 adds `terminal_catalog.py` and the durable terminal-session
 surface: opener rows persist under `logs/dashboard/terminal-sessions.json`, `/api/terminal/sessions`
 hydrates the UI after refresh, the opener creates detached tmux sessions, each WebSocket gets its own
@@ -89,9 +90,10 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   `gateId`/`note`, require a reason for reject, and distinguish stale gates from no-open-gate), the
   `@app.websocket("/api/terminal/{session}")` Mode B2 terminal bridge (6d-2 — catalog-backed
   per-websocket `TerminalHost.attach`, binary PTY bytes out / JSON `stdin`+`resize` in, via the
-  module-level `_bridge_terminal`/`_apply_terminal_session_input` helpers), `POST /api/operator-inbox` (task 10 — call
-  `operator_inbox_post_payload` with developer/dashboard attribution for missing-hosted-session gate
-  responses; bad lifecycle/agent addressing returns `400 bad-address`),
+  module-level `_bridge_terminal`/`_apply_terminal_session_input` helpers), `POST /api/operator-inbox` (task 10/L3 — call
+  `operator_inbox_post_payload` with developer/dashboard attribution for durable inbox messages,
+  accepting lifecycle/agent/recipient role plus role/message/artifact metadata and passing catalog/host/paster
+  seams for optional hosted push; bad lifecycle/agent/role addressing returns `400 bad-address`),
   `POST /api/operator-inbox/{entry_id}/dismiss` (task 23/24 — physically delete a pending inbox entry
   for dismissible `check chat` warnings), the
   `POST /api/terminal/{session}` **opener**
@@ -105,8 +107,9 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   starter PTY client; **slice L5** uniqueness is per (leaf, role) so a terminal never collides with the
   leaf's chat, and the `leafKey` is persisted (preserving an existing binding when none is sent) and
   echoed),
-  `POST /api/terminal/{session}/paste` (**L2** — server-side echo-confirmed context-packet delivery to a
-  hosted session with no attached browser client, over `terminal_paste.TerminalPaster`; 404 on
+  `POST /api/terminal/{session}/paste` (**L2/L3** — server-side echo-confirmed context-packet delivery to a
+  hosted session with no attached browser client, over `terminal_paste.TerminalPaster`; L3 requires a
+  real pasted draft/chip echo across the boot retry window, not mere pane output; 404 on
   unknown/gone session, else `{delivered, submitted}`),
   `POST /api/terminal/{session}/attach-leaf` (**slice L5/L9** — claim or move a leaf for an existing
   session, enclosure-free / no respawn; delegates to `terminal_leaf_assignment.assign_terminal_session_to_leaf`,
@@ -247,10 +250,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   in `app.py`, a validated payload in the MCP tool). The ONE opener both the dashboard `POST
   /api/terminal/{session}` route and the agent-facing `spawn_agent_session` tool compose — no parallel
   spawn path.
-- `terminal_paste.py` — the **L2 server-side echo-confirmed paste**: `TerminalPaster.paste(tmux_name,
+- `terminal_paste.py` — the **L2/L3 server-side echo-confirmed paste**: `TerminalPaster.paste(tmux_name,
   text, submit=…)` mirrors the frontend `pasteAndConfirm`/`submitAndConfirm` over tmux primitives
-  (`set-buffer` + `paste-buffer -p` + `capture-pane` before/after echo confirmation, `send-keys Enter`
-  on submit), re-pasting across the harness boot window because a booting harness discards stdin. Every
+  (`set-buffer` + `paste-buffer -p` + `capture-pane` looking for a pasted draft fragment or new paste
+  chip, `send-keys Enter` on submit), re-pasting across the harness boot window because a booting harness
+  can discard stdin while still producing output. Every
   tmux op + the clock are injectable so the loop is fake-driven and sleepless in tests. Never submits an
   unconfirmed paste; never raises on a gone session. Backs the `spawn_agent_session` context delivery and
   the `POST /api/terminal/{session}/paste` endpoint.
@@ -303,6 +307,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3 route impact: `/api/operator-inbox` now accepts
+  agent-role/message/artifact metadata, attempts hosted push through
+  `inbox_delivery.py`, and `terminal_paste.py` confirms delivery only on a real
+  pasted draft/chip echo across the boot window. Verification metadata pinned
+  until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — agent-orchestration L2 route impact: the route gains `terminal_opener.py`
   (the shared hosted-session opener extracted from `app.py`'s inline opener handler — leaf claim +
   env-seeded tmux ensure + catalog upsert; `resolve_terminal_launch`/`_terminal_label`/the role-scoped

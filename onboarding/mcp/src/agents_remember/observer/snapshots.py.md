@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T21:45+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                           |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -170,8 +170,10 @@ projection sees live gate state with no event machinery. A malformed log is skip
 now compacts gate logs through `GateStore.compact` before projecting, so untouched open/terminal
 interaction gates cannot sit in the dashboard forever. `read_agent_pickups(coordination_root, *, now)`
 projects pending operator-inbox responses as `AgentPickupNode`s for task-row feedback: fresh pending
-entries show `waiting-for-agent`, entries older than the 5-minute pickup TTL show `check-chat`, and
-consumed/dismissed/24h-expired entries disappear because the inbox store physically removes them.
+entries show `waiting-for-agent`, entries older than the 5-minute pickup TTL show `check-chat`, L3
+metadata (sender/recipient roles, message kind, artifact path, delivery state/session/detail) is carried
+through from the inbox row, and consumed/dismissed/24h-expired entries disappear because the inbox store
+physically removes them.
 
 **Task 28 S5.2** adds `read_attention_dismissals(coordination_root)`, returning the compact
 `{itemId: AttentionDismissalRecord}` acknowledgement map from
@@ -246,6 +248,9 @@ work while archived roots and contract folders stay out of the JSON scan.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: `read_agent_pickups` now carries inbox role,
+  message, artifact, and hosted-delivery metadata into `AgentPickupNode`.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-02T21:45+02:00 — L10 binding repair: `read_task_documents`' leaf-enclosure fallback is now
   keyed on `(taskRoot, enclosure.leafId.lower())` and matched against `doc.id.lower()` (stem kept as a
   lowercased legacy alternative). Root cause: enclosure leaf ids are slugified lowercase directory

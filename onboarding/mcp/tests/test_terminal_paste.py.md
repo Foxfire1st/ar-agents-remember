@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_paste.py`                |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-04T11:10+02:00                            |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`        |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                            |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`        |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -34,8 +34,9 @@ and `_paster` wires all four tmux callables + the clock + a no-op sleep into a `
   markers, and CR while keeping NEWLINE and TAB (and ordinary text).
 - `PasteTests` pin the loop: an echo-confirmed paste **without** submit delivers and leaves a draft (one
   bracketed paste of the sanitized text, no `Enter`); a paste **with** submit presses `Enter` and
-  confirms; an **unechoed** paste re-pastes across the boot window and reports unconfirmed delivery
-  (never submitting); and a submit whose `Enter` produces no output reports `delivered=True,
+  confirms; an **unechoed** paste re-pastes across the boot window and reports unconfirmed delivery,
+  boot output without a pasted draft/chip does not count as delivered (never submitting either case),
+  and a submit whose `Enter` produces no output reports `delivered=True,
   submitted=False`.
 
 ### Conventions
@@ -82,6 +83,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: added the harness-boot false-positive regression
+  where pane output advances but no pasted draft/chip appears. Verification
+  metadata pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — L2: created coverage for the server-side echo-confirmed paste helper —
   sanitization, draft (no submit), paste+submit confirmation, unechoed boot-window retry reporting
   unconfirmed delivery, and unconfirmed submit — against an in-memory fake pane + injected clock/sleep.

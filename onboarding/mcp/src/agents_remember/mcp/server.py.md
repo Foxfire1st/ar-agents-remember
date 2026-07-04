@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:10+02:00 |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00 |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -58,14 +58,17 @@ removed (issue #62): closeout is worktree-only. Slice 2c adds an `on_unsaved`
 argument to the `switch_lifecycle` and `worktree_attach` registrations (the
 save-gate decision `save`/`discard`); registration/forwarding only.
 
-Task 10 adds the external-chat inbox tools:
-`operator_inbox_post(ask, response, lifecycle_id?, agent_id?, gate_id?)`,
-`operator_inbox_poll(lifecycle_id?, agent_id?)`, and
+Task 10/L3 adds the inbox tools:
+`operator_inbox_post(ask, response, lifecycle_id?, agent_id?, recipient_role?,
+message_kind?, artifact_path?, deliver_to_hosted?)`,
+`operator_inbox_poll(lifecycle_id?, agent_id?, recipient_role?)`, and
 `operator_inbox_consume(entry_id)`. The server registers them after the gate
 tools and forwards to `operator_inbox_*_payload` builders. MCP calls are
 attributed to `model` / `cli`; trusted dashboard code can call the payload
 builder directly with developer/dashboard attribution when the frontend response
-path lands.
+path lands. L3 also registers `orchestration_nudge_manager(...)`, the public
+manager-nudge helper that records the nudge event and queues a manager inbox
+message.
 
 Task 25 supersedes the former public wait helper choreography. Agents call
 `lifecycle_gate` once at the gate junction; dashboard decisions and Chat/inbox
@@ -249,6 +252,9 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: expanded the operator inbox tool signatures for
+  role/message/delivery metadata and registered `orchestration_nudge_manager`.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — L2 (agent-orchestration spawn-dispatch): registered
   `spawn_agent_session(harness, leaf_key?, context?, submit, label?, model?, effort?, env?,
   spawned_by_session?, spawned_by_lifecycle?, kind)` after `attach_terminal_session_to_leaf`,

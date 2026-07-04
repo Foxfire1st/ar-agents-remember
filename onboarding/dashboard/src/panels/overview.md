@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-04T09:40+02:00 |
-| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb`       |
-| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00 |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -62,7 +62,8 @@ and the `Chats` `SessionList` switcher).
   horizontal scrollbar; secondary/gate/progress chips are also bounded so they cannot crowd out the
   title. Hovering the title exposes the full label plus lifecycle/gate/repo/current-step context.
   `AgentPickupIndicator.tsx` renders `analytics.agentPickups` beside affected rows: fresh pending inbox
-  entries show `waiting for agent`, and stale entries switch to a dismissible `check chat` warning.
+  entries show `waiting for agent`, stale entries switch to a dismissible `check chat` warning, and L3
+  fixtures/props carry message-kind plus delivery-state metadata from the backend projection.
 - `GateResponder.tsx` — shared **Respond** control for lifecycle gates: one button opens a
   request dialog with a human-readable request preview and collapsed raw-JSON diagnostics. For durable
   gates, Yes records a targeted `approve` through `data/actions.postGateDecision`, No requires a reason
@@ -277,6 +278,9 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3 route impact: task-row pickup feedback now
+  mirrors message-kind and hosted-delivery metadata from `AgentPickupNode`.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-04T09:40+02:00 — 260703-L0 (Canvas & playground) route impact: reworked the `FlowTab.tsx` bullet
   from the dormant single-model Lifecycle Flow diagnostic into the **lifecycle-design canvas** — a pure
   segment renderer + radiogroup model nav (still zero store reads) over the **new `flowModels.ts`**

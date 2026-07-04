@@ -254,6 +254,7 @@
     "mcp/tests/test_onboarding_doc.py",
     "mcp/tests/test_onboarding_drift.py",
     "mcp/tests/test_operator_inbox.py",
+    "mcp/tests/test_orchestration_comms.py",
     "mcp/tests/test_provider_async.py",
     "mcp/tests/test_provider_context_imports.py",
     "mcp/tests/test_provider_current_state.py",
@@ -298,8 +299,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 512,
-    "fileSidecars": 210,
+    "sourceFilesInScope": 518,
+    "fileSidecars": 211,
     "childRoutes": 15
   },
   "routingTerms": [
@@ -350,6 +351,7 @@
     "command",
     "command_capture",
     "common",
+    "comms",
     "compact",
     "compact_content",
     "concurrency",
@@ -381,8 +383,7 @@
     "daemon",
     "dashboard",
     "data",
-    "deep",
-    "defaults"
+    "deep"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",

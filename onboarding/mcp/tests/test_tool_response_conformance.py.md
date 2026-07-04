@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-04T11:10+02:00 |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`         |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00 |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`         |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -29,7 +29,7 @@ Production already validates each tool payload through
 obtaining a *representative* payload for every modeled builder from the real
 `*_payload` builder, then asserting conformance.
 
-`setUpClass` builds seven temporary fixtures (each in its own temp dir) and
+`setUpClass` builds eight temporary fixtures (each in its own temp dir) and
 collects one representative payload per tool into `cls.payloads`:
 
 - `_base_fixture` / `_simple_payloads`: a code repo, memory layer, and
@@ -117,6 +117,10 @@ declared nor part of the input."
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: added a representative
+  `orchestration_nudge_manager` payload and kept the expanded inbox responses in
+  the modeled conformance path. Verification metadata pinned until closeout
+  stamps the L3 commit.
 - 2026-07-04T11:10+02:00 — L2: `_simple_payloads` now includes a representative `spawn_agent_session`
   payload (a `harness-unknown` refusal, which short-circuits before any tmux spawn), so the new strict
   `SpawnAgentSessionResponse` model is covered by `test_every_modeled_tool_has_a_representative_payload`

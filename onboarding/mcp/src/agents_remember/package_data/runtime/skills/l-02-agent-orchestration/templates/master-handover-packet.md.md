@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                     |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-04T12:31+02:00                     |
+| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
+| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
 
 ## Purpose
 
@@ -21,7 +21,11 @@ The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the cano
 
 ### Conventions
 
-The packet is delivered durably via the inbox plus a stdin push. It names the integration branch precisely (the orchestrator bases its C-11 integration on it) and summarizes the change set at master granularity, listing each leaf landed with a one-line outcome.
+The packet is delivered durably via the inbox plus a stdin push, using the
+`master-handover` message kind so the orchestrator can distinguish it from nudges
+or ordinary notes. It names the integration branch precisely (the orchestrator
+bases its C-11 integration on it) and summarizes the change set at master
+granularity, listing each leaf landed with a one-line outcome.
 
 ### Invariants And Boundaries
 
@@ -60,4 +64,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-07-04T12:31+02:00 - L3: documented the `master-handover` inbox
+  message-kind convention for manager-to-orchestrator delivery. Verification
+  metadata pinned until closeout stamps the L3 commit.
 - 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-02-agent-orchestration` master-handover-packet report template (leaf 260703-L1) — the manager → orchestrator master-exit hand-off (integration branch, change-set summary, verdict ref, C-11 carry-over), posted only after the master-exit verdict exists. Verification metadata pinned until closeout stamps the L1 commit.
