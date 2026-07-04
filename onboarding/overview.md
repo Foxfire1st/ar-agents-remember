@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-03T12:59+02:00 |
-| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb` |
-| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
+| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
+| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
 
 > **Status:** active baseline
 
@@ -117,7 +117,7 @@ overviews.
 
 ## Hot Path Summary
 
-Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, the hidden harness starter package roots (`.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`) cover first-run harness files and startup directives, the flat `mcp/src/agents_remember/package_data/runtime/skills/C-*` skills cover core support (resolver, memory quality control, bootstrap, onboarding, route-index, memory, and worktree tasks), `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle` is the session job lifecycle the coordinator routes into, and `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow` is the durable task workflow. For route-index behavior start at `mcp/src/agents_remember/kernel/route_index.py`, the `route_index_refresh` MCP tool, `c-05-create-or-update-onboarding-files` skill, and `c-04-retrieval-strategy-router` skill.
+Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, the hidden harness starter package roots (`.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`) cover first-run harness files and startup directives, the flat `mcp/src/agents_remember/package_data/runtime/skills/C-*` skills cover core support (resolver, memory quality control, bootstrap, onboarding, route-index, memory, and worktree tasks), `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle` is the session job lifecycle the coordinator routes into, `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration` is the orchestration frame (five role job files + per-harness variants + report templates; the canonical source is the root `skills/` tree synced by `scripts/sync-skills.py`), and `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow` is the durable task workflow. For route-index behavior start at `mcp/src/agents_remember/kernel/route_index.py`, the `route_index_refresh` MCP tool, `c-05-create-or-update-onboarding-files` skill, and `c-04-retrieval-strategy-router` skill.
 
 ## Architecture At A Glance
 
@@ -373,6 +373,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-04T11:20+02:00 — 260703-L1 route impact (small): the canonical `skills/` tree and every synced mirror gained `l-02-agent-orchestration` (the orchestration frame: SKILL.md + five jobs + two claude-code variants + six report templates); the root index enumeration now names it beside l-01/w-02. Runtime behavior unchanged (doctrine only). Verification metadata pinned until closeout stamps the L1 commit.
 - 2026-07-03T12:59+02:00 — No route impact: 260703 L4 releases the series as MCP 3.0.0rc2 (version
   strings only: pyproject, SERVER_VERSION fallback, README Status; the Public Documentation
   paragraph's version reference became generic). Repo structure and behavior unchanged.
