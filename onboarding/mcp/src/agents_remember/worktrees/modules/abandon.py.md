@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0`                |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-05T01:32+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`                |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -55,7 +55,7 @@ exist, the contract is not marked `cleanup="abandoned"` and the state is
   is reclaimed even when Git operations subsequently fail.
 - The contract `cleanup` field is set to `"abandoned"` on success; this value
   causes a subsequent `start` call to recreate rather than reattach.
-- The docstring points at the `l-01-session-job-lifecycle` skill's
+- The docstring points at the `l-01-agent-lifecycles` skill's
   read-only/abandon exit as the lifecycle entry that drives this operation.
 
 ## Docs References
@@ -78,6 +78,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: docstring vocabulary updated to the l-01-agent-lifecycles orchestrator read-only/abandon exit; behavior unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-10T07:30+02:00 — `abandon_result` blocks (exit 2) without `force` while a live background provider setup owns the worktree (fresh heartbeat); `force=true` overrides, and a stale heartbeat does not block (GitHub #53).
-- 2026-06-02T16:24+02:00: Docstring now references the `l-01-session-job-lifecycle` skill in full for the read-only/abandon exit (was "L-01"). Reference-style normalization; behavior unchanged.
+- 2026-06-02T16:24+02:00: Docstring now references the `l-01-agent-lifecycles` skill in full for the read-only/abandon exit (was "L-01"). Reference-style normalization; behavior unchanged.
 - 2026-06-01T00:00+02:00 — Created onboarding for the new abandon module.

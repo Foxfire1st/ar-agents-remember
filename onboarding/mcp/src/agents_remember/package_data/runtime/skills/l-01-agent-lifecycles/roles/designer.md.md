@@ -1,17 +1,17 @@
-# l-02-agent-orchestration/jobs/designer.md
+# l-01-agent-lifecycles/roles/designer.md
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/designer.md` |
+| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                     |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-05T01:30+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 
 ## Purpose
 
-This is the portable **designer** job file the `l-02-agent-orchestration` frame houses at the front of
+This is the portable **designer** job file the `l-01-agent-lifecycles` frame houses at the front of
 the pipeline. Task design is registered as its **own job** (developer decision 2026-07-04): before
 orchestration one implicit do-it-all role did design, features, and fixes; the roles now diversify and
 the designer owns helping the developer think a master through. Like every job file it carries **both
@@ -25,7 +25,7 @@ a harness-agnostic knob block.
 ### Logic
 
 The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-02-agent-orchestration/jobs/designer.md`; it is model-interpreted markdown, never an executor.
+`skills/l-01-agent-lifecycles/roles/designer.md`; it is model-interpreted markdown, never an executor.
 The body defines: the seat (front of the pipeline, scoped to **one master**); the lens (opening move =
 meta-question the ask; retrieval lean = evidence-first within the master's scope; decide default = a
 `w-02-light-task-workflow`-shaped master + leaf `task_doc` handed into the portfolio, **not** a build);
@@ -43,7 +43,7 @@ limit, not to close it.
 ### Conventions
 
 Role + lens in one file (borrowed D10); a portable knob block (D7) whose defaults resolve job base <
-`jobs/designer.<harness>.md` variant < `settings.json orchestration.roles.designer`. Unlike the deeper
+`roles/designer.<harness>.md` variant < `settings.json orchestration.roles.designer`. Unlike the deeper
 seats that relay through the ladder, the designer's primary channel is the **developer directly** — the
 seat is a co-thinking loop, so the developer is the standing interlocutor. Evidence is gathered through
 the `c-04-retrieval-strategy-router` skill, not ad-hoc reads; sub-agents fan out and write durable
@@ -59,7 +59,7 @@ implement**: the decide default is a `task_doc` into the portfolio, never a buil
 
 ### Todos
 
-No `jobs/designer.<harness>.md` overlay ships yet; author one when a harness needs designer-specific
+No `roles/designer.<harness>.md` overlay ships yet; author one when a harness needs designer-specific
 knobs. No other TODO is recorded for this job file.
 
 ### Docs References
@@ -76,9 +76,9 @@ The designer job is housed by the frame and its residual risk is closed by the o
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [designer.md](agents-remember/skills/l-02-agent-orchestration/jobs/designer.md) |
-| The frame that houses this seat and defines the job registry, contact points, and knob resolution. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md) |
-| The orchestrator seat doubles as the designer's adversarial reviewer at portfolio streamlining and shares the bird's-eye toolkit. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.md) |
+| Canonical source this bundle copy is sync-propagated from. | n/a | [designer.md](agents-remember/skills/l-01-agent-lifecycles/roles/designer.md) |
+| The frame that houses this seat and defines the job registry, contact points, and knob resolution. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| The orchestrator seat doubles as the designer's adversarial reviewer at portfolio streamlining and shares the bird's-eye toolkit. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
 
 ## Cross-Repo References
 
@@ -90,4 +90,5 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
-- 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-02-agent-orchestration` designer job file (leaf 260703-L1) — task design as its own job, the role + lens axes, the master-scoped bird's-eye toolkit whose residual cross/future-master collision risk is owned downstream by the orchestrator-as-reviewer at streamlining. Verification metadata pinned until closeout stamps the L1 commit.
+- 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed to roles/ under the unified skill; new duty: decision-needing questions land in the task doc's openQuestions (the rendered decision surface), notes/ carries the analysis. Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-01-agent-lifecycles` designer job file (leaf 260703-L1) — task design as its own job, the role + lens axes, the master-scoped bird's-eye toolkit whose residual cross/future-master collision risk is owned downstream by the orchestrator-as-reviewer at streamlining. Verification metadata pinned until closeout stamps the L1 commit.

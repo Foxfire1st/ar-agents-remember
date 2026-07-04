@@ -56,7 +56,7 @@ A job changes the checkout via these steps:
 
 ## Orchestrated Series (Super Integration Branch)
 
-For developer-requested `l-02-agent-orchestration` work, the landing topology is accumulative rather
+For developer-requested `l-01-agent-lifecycles` orchestrated work, the landing topology is accumulative rather
 than one work branch straight to `main`:
 
 - The orchestrator creates a **super integration branch** from PR-gated `main`.
@@ -73,7 +73,7 @@ than one work branch straight to `main`:
   carry-over to main-memory so the ledger maps the actual main merge commit, then push memory.
 
 The full orchestration doctrine lives in
-`skills/l-02-agent-orchestration/SKILL.md` and `skills/l-02-agent-orchestration/jobs/orchestrator.md`.
+`skills/l-01-agent-lifecycles/SKILL.md` and `skills/l-01-agent-lifecycles/roles/orchestrator.md`.
 
 ---
 

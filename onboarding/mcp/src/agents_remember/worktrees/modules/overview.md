@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -192,6 +192,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-05T01:32+02:00 — No route impact: abandon docstring vocabulary updated to the `l-01-agent-lifecycles` orchestrator read-only/abandon exit; no behavior change (260703-L9).
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: closeout preview/apply now
   threads the trusted gate policy through `WorktreeArgs` and evaluates
   `closeout-approval` through that policy, preserving human approvals while

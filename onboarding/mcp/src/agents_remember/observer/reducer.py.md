@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T12:32+02:00                     |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`       |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-05T01:32+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`       |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -270,8 +270,11 @@ prior structural/analytical callers remain unchanged.
 | `_is_dismissed` admits targetless suppression only for dismissible repo-level kinds. | L568-L590 | [reducer.py](reducer.py) |
 | The design: the reducer, inferred trust, corrections (§2.1, §2.5). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
 
+As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks generic lifecycle vocabulary ("the lifecycle phase") rather than naming the retired session-job skill; the inference logic itself is unchanged.
+
 ## Update History
 
+- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: phase-inference comment re-worded (lifecycle phase, not l-01 phase); behavior unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: `_gate_node` passes gate
   `evidenceRefs` into the served `GateNode`, exposing delegated-approval reviewer
   evidence refs without changing reducer ownership. Verification metadata pinned

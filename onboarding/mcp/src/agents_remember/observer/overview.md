@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`       |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`       |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -405,6 +405,7 @@ The slice-3a projection read side:
 
 ## Update History
 
+- 2026-07-05T01:32+02:00 — No route impact: reducer phase-inference comment re-worded (lifecycle phase, not l-01 phase); no behavior change (260703-L9).
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: gate projection now surfaces
   `evidenceRefs` on `GateNode`, preserving reviewer-verdict references for
   delegated approval rows. Verification metadata pinned until closeout stamps

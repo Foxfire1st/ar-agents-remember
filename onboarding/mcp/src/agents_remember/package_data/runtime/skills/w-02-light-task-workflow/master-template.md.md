@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-05T01:32+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 
 ## Purpose
 
@@ -19,7 +19,7 @@ convention, the master `task.md` scaffold, and the per-slice sub-task scaffold.
 
 ### Logic
 
-The file states when to escalate to a series (`l-01-session-job-lifecycle` skill `decide` build-mode, once size is apparent), the
+The file states when to escalate to a series (`l-01-agent-lifecycles` skill `decide` build-mode, once size is apparent), the
 series convention (one wrapper folder = master `task.md` + flat numbered `NN_<name>.md` sub-task files
 in execution order), and the lifecycle: **one task = one workflow = one worktree**, a commit per slice
 via `c-09-git-worktree-manager` skill closeout behind a commit gate, the worktree open across slices, and a single integrate +
@@ -73,6 +73,7 @@ The master template's execution model now says a master provides the integration
 
 ## Update History
 
+- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the escalation reference now names the l-01-agent-lifecycles orchestrator lifecycle's decide step. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged master template now teaches "one master integration branch, one leaf enclosure per active sub-task" instead of a single shared series worktree. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-23T22:50+02:00: Dashboard task 14 — updated the master-series convention from integrate+cleanup to integrate+finalize, with `lifecycle_finalize_task` owning terminal cleanup/task-document reconciliation. Verification metadata pinned until closeout stamps the source commit.
-- 2026-06-02T04:10+02:00: Created onboarding for the new `w-02-light-task-workflow` skill `master-template.md` (master + light sub-task series scaffold) that formalizes the convention this series prototyped. `l-01-session-job-lifecycle` skill series, Sub-task B/S5, mcp 1.1.0.
+- 2026-06-02T04:10+02:00: Created onboarding for the new `w-02-light-task-workflow` skill `master-template.md` (master + light sub-task series scaffold) that formalizes the convention this series prototyped. `l-01-agent-lifecycles` skill series, Sub-task B/S5, mcp 1.1.0.

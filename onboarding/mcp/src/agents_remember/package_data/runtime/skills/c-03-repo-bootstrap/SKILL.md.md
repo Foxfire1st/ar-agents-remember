@@ -5,9 +5,9 @@
 | repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-07-05T01:32+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 
 ## Purpose
 
@@ -52,6 +52,8 @@ No external documentation is needed for this repository-local skill.
 | Existing-memory slice maintenance reuses current memory, covers expansion, refresh, move handling, deleted-slice cleanup, asks whether moved/deleted route behavior relocated before removal, and supports cleanup, move, preservation, or removal plans. | L464-L527 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 | Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap. | L756-L808; L1042-L1057 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
 
+As of the 260703-L9 lifecycle convergence, the bootstrap-trigger table row names `l-01-agent-lifecycles` (an active orchestrator job entering an uncovered area may trigger targeted bootstrap); the bootstrap flow itself is unchanged.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this skill.
@@ -62,7 +64,8 @@ No sibling repository evidence is needed for this skill.
 
 ## Update History
 
-- 2026-06-02T04:25+02:00: Replaced the `W-01-heavy-task-workflow` row in the related-skills table with `l-01-session-job-lifecycle` after W-01 retirement. L-01 series, Sub-task B/S6, mcp 1.1.0.
+- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the trigger table row now names l-01-agent-lifecycles. Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-06-02T04:25+02:00: Replaced the `W-01-heavy-task-workflow` row in the related-skills table with `l-01-agent-lifecycles` after W-01 retirement. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T04:34+02:00: Updated references after `c-02-memory-quality-control` skill was renamed to memory quality control.
 - 2026-05-22T16:39+02:00: Updated after existing-memory slice maintenance gained explicit preservation-first handling for moved or deleted route behavior. Verification metadata remains pinned until closeout commits the source change.

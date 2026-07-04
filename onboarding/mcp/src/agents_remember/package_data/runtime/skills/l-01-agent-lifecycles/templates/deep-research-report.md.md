@@ -1,13 +1,13 @@
-# l-01-session-job-lifecycle/deep-research-report-template.md
+# l-01-agent-lifecycles/templates/deep-research-report.md
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report-template.md` |
+| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T14:50+02:00                     |
-| lastVerifiedCommitHash |                                            `39ab8694f3f0a83f75a5484fa39e526e78d2cdad`|
-| lastVerifiedCommitDate |                                            2026-06-04T15:08:01+02:00|
+| lastUpdated            | 2026-07-05T01:30+02:00 |
+| lastVerifiedCommitHash |                                            `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`|
+| lastVerifiedCommitDate |                                            2026-07-05T01:30:08+02:00|
 
 ## Purpose
 
@@ -47,7 +47,7 @@ The template is a companion to the lifecycle entry contract and the detailed spi
 | --- | --- | --- |
 | The entry contract lists this file as the reusable report and evidence-ledger shape for deeper research. | L29-L33 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
 | The lifecycle delegates report shape to this template while preserving its required proof categories. | L87-L97 | [lifecycle.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
-| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | L12-L123 | [deep-research-report-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report-template.md) |
+| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | L12-L123 | [deep-research-report.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report.md) |
 
 ## Cross-Repo References
 
@@ -59,4 +59,5 @@ No sibling repository evidence is needed for this lifecycle report template.
 
 ## Update History
 
+- 2026-07-05T01:30+02:00 - L9 lifecycle convergence: moved from the retired l-01-session-job-lifecycle skill into the shared template library and renamed deep-research-report.md; used by the orchestrator lifecycle's research phase. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-04T14:50+02:00: Created file-level onboarding for the new deep research report template companion file. Verification metadata is intentionally blank until closeout refreshes it to the first code commit containing the new source file.

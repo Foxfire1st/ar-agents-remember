@@ -1,17 +1,17 @@
-# l-02-agent-orchestration/jobs/adversarial-reviewer.md
+# l-01-agent-lifecycles/roles/adversarial-reviewer.md
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/adversarial-reviewer.md` |
+| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T13:16+02:00                     |
-| lastVerifiedCommitHash | `9f72d7705fa711017ba599ac13a348b927084d3d` |
-| lastVerifiedCommitDate | 2026-07-04T13:22:12+02:00|
+| lastUpdated            | 2026-07-05T01:30+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 
 ## Purpose
 
-This is the portable **adversarial reviewer** job file the `l-02-agent-orchestration` frame houses at the
+This is the portable **adversarial reviewer** job file the `l-01-agent-lifecycles` frame houses at the
 review seams. Like every job file it carries **both axes in one file** — the **role** (review the
 accumulated change set at a seam) and the **lens** (refute-or-confirm across three review lenses) — plus
 an opening move, duties, artifact obligations, a comms protocol, and a harness-agnostic knob block. The
@@ -24,7 +24,7 @@ super-exit because those seams review different accumulated change sets.
 ### Logic
 
 The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-02-agent-orchestration/jobs/adversarial-reviewer.md`; it is model-interpreted markdown, never
+`skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md`; it is model-interpreted markdown, never
 an executor. The body defines: the seat (**short-lived, spawned at exactly TWO seams** — developer
 decision 2026-07-03: **master-exit** before a manager hands its master integration branch to the
 orchestrator, and **super-exit** before the orchestrator hands the super integration branch to the
@@ -67,7 +67,7 @@ refute it is not a finding.
 
 ### Todos
 
-No `jobs/adversarial-reviewer.<harness>.md` overlay ships yet; author one when a harness needs
+No `roles/adversarial-reviewer.<harness>.md` overlay ships yet; author one when a harness needs
 reviewer-specific knobs. Gate-policy enforcement (the seam-verdict requirement) is documented here but is
 **leaf L4**. No other TODO is recorded for this job file.
 
@@ -85,10 +85,10 @@ The reviewer is spawned at the manager's master-exit seam and the orchestrator's
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [adversarial-reviewer.md](agents-remember/skills/l-02-agent-orchestration/jobs/adversarial-reviewer.md) |
-| The frame that houses this seat and owns the two adversarial review seams, the gate-delegation doctrine, and the report-template library. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md) |
-| The manager that spawns the reviewer at master-exit and dispatches its decomposed fix leaves. | n/a | [manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/manager.md) |
-| The orchestrator that spawns the reviewer at super-exit and decides that seam's handover gate. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.md) |
+| Canonical source this bundle copy is sync-propagated from. | n/a | [adversarial-reviewer.md](agents-remember/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md) |
+| The frame that houses this seat and owns the two adversarial review seams, the gate-delegation doctrine, and the report-template library. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| The manager that spawns the reviewer at master-exit and dispatches its decomposed fix leaves. | n/a | [manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md) |
+| The orchestrator that spawns the reviewer at super-exit and decides that seam's handover gate. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
 
 ## Cross-Repo References
 
@@ -100,8 +100,9 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed to roles/ under the unified skill; self-contained header (brief = session start); template references now ../templates/. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T13:16+02:00: 260703-L6 sharpened this reviewer job with separate MASTER-EXIT and
   SUPER-EXIT rubrics, explicit refute-or-confirm evidence-file posture, `notes/reports/` verdict
   placement, and the rule that blocking verdicts decompose into fix leaves for the owning
   manager/orchestrator. Verification metadata pinned until closeout stamps the L6 commit.
-- 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-02-agent-orchestration` adversarial reviewer job file (leaf 260703-L1) — short-lived at exactly two seams (master-exit, super-exit), the three review lenses, sub-agent durable reports, and the critical doctrine that verdicts are evidence not decisions and a blocking verdict must decompose into fix leaves (leaf-level review being the manager's duty, not a seam). Verification metadata pinned until closeout stamps the L1 commit.
+- 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-01-agent-lifecycles` adversarial reviewer job file (leaf 260703-L1) — short-lived at exactly two seams (master-exit, super-exit), the three review lenses, sub-agent durable reports, and the critical doctrine that verdicts are evidence not decisions and a blocking verdict must decompose into fix leaves (leaf-level review being the manager's duty, not a seam). Verification metadata pinned until closeout stamps the L1 commit.
