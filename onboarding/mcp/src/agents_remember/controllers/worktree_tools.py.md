@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T00:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                     |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -41,6 +41,9 @@ contract-path-based controller for the mid-task base sync: it confines
 paths under the coordination root, builds `git_worktree_manager.FinalizeArgs`,
 and delegates final readiness, cleanup, and task-document reconciliation to the
 worktree finalizer.
+260703-L4 also threads `config.orchestration.gate_policy` into closeout
+`WorktreeArgs`, keeping the controller as typed plumbing while the closeout
+module and controlplane enforce the policy.
 
 Slice 2c wires the observable lifecycle here while the git module stays
 observer-free: `worktree_start_tool` resolves a `lifecycle_id` (the active
@@ -90,6 +93,10 @@ Worktree start/attach/status controllers accept `parent_task` and `leaf_id` and 
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — No route impact: 260703-L4 only forwards the parsed
+  gate delegation policy from MCP config into worktree closeout args; controller
+  domain boundaries and public tool surface are unchanged. Verification metadata
+  pinned until closeout stamps the L4 commit.
 - 2026-07-03T00:30+02:00 — L11: worktree_abandon ends its anchored ambient lifecycle via `_end_ambient_lifecycle_if_anchored`; the short-lived task_reopen controller moved out to task_doc_tools (task domain).
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: worktree start/attach/status controllers now accept `leaf_id` and `parent_task`, and lifecycle attribution prefers `enclosure_path` while keeping `contract_path` as a compatibility payload field. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-23T22:50+02:00 — Added `lifecycle_finalize_task_tool`: coordination-confined contract/task-doc paths are converted into `FinalizeArgs` and delegated to `git_worktree_manager.finalize_result`. The controller remains a path-authority and typed-argument facade; finalization behavior lives in `worktrees/modules/finalize.py`. Verification metadata pinned until closeout stamps the source commit.

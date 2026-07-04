@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-04T12:31+02:00                      |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`     |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                      |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`     |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -34,13 +34,19 @@ Decisions (`gate_decide`) and listing
 are compatibility internals in `mcp/tools/gates.py`. The builders append
 `GateRecord` snapshots to `GateStore`. Lifecycle-scoped gate creation expires any
 previous open gate before opening the new one, so each lifecycle has one current
-actionable gate. Task 23/24 adds the retention boundary: cancel,
+actionable gate. L4 adds policy-governed delegated approvals: default policy is
+all-human; non-human orchestration decisions are valid only for explicitly
+delegated gate kinds, never for human-pinned integration/push/cleanup gates, and
+never by the owning lifecycle itself. Gate records can attach reviewer-verdict
+evidence refs, and policies may require that evidence before a delegated decision
+binds. Task 23/24 adds the retention boundary: cancel,
 non-enforcement wait pickup, dismiss, clear, consume, and the 24-hour TTL physically delete throwaway
 interaction rows. Start at `records.py` for the
 entity, then `store.py` for the append-only log (co-located with the observer
-event log under `observer_root`). `enforcement.py`'s `evaluate_closeout_gate` is
-the pure policy `worktree_closeout_apply` obeys — a `closeout-approval` gate binds
-closeout only when a developer approved it.
+event log under `observer_root`). `gate_policy.py` owns the validated
+delegation schema and attribution checks. `enforcement.py`'s `evaluate_gate` is
+the pure kind-generic policy resolver; `evaluate_closeout_gate` remains the
+closeout wrapper `worktree_closeout_apply` obeys.
 
 Operator/agent messages are queued with `OperatorInboxEntry` snapshots and
 stored through `OperatorInboxStore`. The inbox log lives under
@@ -65,13 +71,17 @@ signal, while targetless provider-down dismissals are not accepted.
 
 | Module        | Owns                                                                          |
 | ------------- | ----------------------------------------------------------------------------- |
-| `records.py`  | `GateRecord` (`ar-gate-record/v1`) + pure `create_gate` / `decide_gate` / `expire_gate` / `coerce_gate_kind`; the `GateKind` / `GateState` / `DecidedVia` Literals and `DECISION_STATES`. `GateKind` is the full l-01 gate spine (slice 09 added `plan-approval` / `worktree-intent` / `push-approval`); `closeout-approval` IS the commit gate — no separate `commit-approval`. |
+| `records.py`  | `GateRecord` (`ar-gate-record/v1`) + pure `create_gate` / `decide_gate` / `expire_gate` / `coerce_gate_kind`; the `GateKind` / `GateState` / `DecidedVia` Literals, `GateEvidenceRef`, and `DECISION_STATES`. `GateKind` is the full l-01 gate spine (slice 09 added `plan-approval` / `worktree-intent` / `push-approval`); `closeout-approval` IS the commit gate — no separate `commit-approval`. |
 | `store.py`    | `GateStore`: lifecycle/workspace gate logs beside the event log; `current()` folds by gate id (last-wins), while `delete`/`compact` physically remove throwaway interaction rows. |
 | `enforcement.py` | `evaluate_closeout_gate` (pure closeout-gate policy) + `CloseoutGuard` — the binding rule `worktree_closeout_apply` reads (slice 6b). |
 | `operator_inbox_records.py` | `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/consume helpers for durable operator/agent inbox snapshots, including role/message/artifact and delivery metadata. |
 | `operator_inbox_store.py` | `OperatorInboxStore`: workspace inbox log, pending filters by lifecycle/agent/recipient role, delivery-state snapshots, idempotent store consume, public delete/dismiss paths, and TTL compaction. |
 | `orchestration_artifacts.py` | Strict turn-report, master-handover, and escalation packet helpers for the L2/L3 orchestration frame. |
 | `orchestration_nudges.py` | `OrchestrationNudgeRecord` + `OrchestrationNudgeStore`: append-only, rate-limited manager nudge attempts plus message/artifact helpers. |
+| `gate_policy.py` | `GatePolicy` / `GatePolicyRule`, built-in policy names, human-pinned/delegable kind validation, and delegated-decision attribution/evidence checks. |
+| `enforcement.py` | `evaluate_gate` (pure kind-generic gate policy resolver) + `GateGuard`; `evaluate_closeout_gate` / `CloseoutGuard` remain the closeout wrapper `worktree_closeout_apply` reads. |
+| `operator_inbox_records.py` | `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/consume helpers for external-chat inbox snapshots. |
+| `operator_inbox_store.py` | `OperatorInboxStore`: workspace inbox log, pending filters by lifecycle/agent, idempotent store consume, public delete/dismiss paths, and TTL compaction. |
 | `attention_dismissals.py` | `AttentionDismissalRecord` + `AttentionDismissalStore`: compact current acknowledgement rows for attention queue dismissals, with physical prune by live lifecycle id and a targetless actionable-drift exception. |
 | `interaction_retention.py` | Shared 5-minute pickup/wait and 24-hour interaction TTL policy helpers. |
 | `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store). |
@@ -84,9 +94,10 @@ response models are `models/operator_inbox.py`.
 ## Invariants And Boundaries
 
 - **Records + a pure policy, not the mutation.** Creating/deciding a gate writes
-  durable history (`records.py`/`store.py`); `enforcement.py` decides whether an
-  approved gate permits closeout — but the *mutation* (refusing the closeout,
-  marking the gate `applied`) lives in the worktree tool
+  durable history (`records.py`/`store.py`); `gate_policy.py` validates which
+  roles can decide which gate kinds; `enforcement.py` decides whether an
+  approved gate permits the guarded operation — but the *mutation* (refusing the
+  closeout, marking the gate `applied`) lives in the worktree tool
   (`worktrees/modules/closeout.py`), which imports the I/O-free policy.
 - **Interaction records are disposable.** Gate/inbox rows remain modeled records while pending, and
   lifecycle-bound attention acknowledgement rows remain only while their lifecycle is live; targetless
@@ -95,10 +106,11 @@ response models are `models/operator_inbox.py`.
   commits, and ledgers carry lifecycle history.
 - **Single current lifecycle gate.** A lifecycle may have only one open durable gate; creating a new
   lifecycle-scoped gate appends an `expired` snapshot for older open gates rather than deleting them.
-- **Honest attribution → enforceable.** `decidedBy` (actor) and `decidedVia`
-  (chat/dashboard/cli) are separate; the MCP `gate_decide` attributes `model`/`cli`
-  so the agent cannot claim a developer decision — and `evaluate_closeout_gate` binds
-  closeout only on a `decidedBy="developer"` approval, so that honesty is load-bearing.
+- **Honest attribution → enforceable.** `decidedBy` (actor/session/lifecycle),
+  `decidedVia` (chat/dashboard/cli/orchestration), and `decidingRole` are
+  separate. MCP self-decisions stay model/cli and non-binding; delegated
+  orchestration decisions name a distinct deciding lifecycle/session and must
+  satisfy the configured `GatePolicy` before they are appended or consumed.
 - Gates co-locate under `observer_root`, mirroring the event substrate; no new
   storage root.
 - Inbox entries require `lifecycleId`, `agentId`, or `recipientRole`; an
@@ -109,6 +121,7 @@ response models are `models/operator_inbox.py`.
 | Finding | Source Path |
 | --- | --- |
 | Gates mirror the observer event substrate (envelope + append-only JSONL store). | [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
+| Gate policy validation and delegated decision checks. | [gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
 | The `gate_*` payload builders that drive this substrate. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | Gate response models. | [models/gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
 | The inbox record/store pair provides the external-chat pull return channel. | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) and [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
@@ -116,6 +129,12 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4 route impact: added the
+  `gate_policy.py` schema/validator, generalized enforcement to a kind-generic
+  resolver, and documented delegated orchestration attribution plus reviewer
+  evidence refs. Human-pinned integration/push/cleanup gates remain
+  non-delegable. Verification metadata pinned until closeout stamps the L4
+  commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: the inbox is now generalized for
   agent-to-agent addressing with role/message/artifact/delivery metadata, and
   the route adds orchestration artifact and rate-limited nudge helpers.

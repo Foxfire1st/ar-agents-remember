@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-25T07:17+02:00                             |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                             |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`         |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -35,11 +35,16 @@ literals (`get_args` + `cast`) so the MCP boundary can accept a plain `str`.
 `GateRecord` is a Pydantic `BaseModel` with `extra="forbid"` and camelCase wire
 fields (mirroring the observer event envelope); `schema_version` carries
 `alias="schema"`, so records dump with `model_dump_json(by_alias=True,
-exclude_none=True)`. `create_gate(...)` returns a fresh `open` gate (the caller
-mints the ULID `id` and `now`); `decide_gate(gate, ...)` returns a NEW snapshot
-(same `id`, new `ts`) carrying the decision. `expire_gate(gate, now=...)` returns
-a NEW `expired` snapshot for an open gate replaced by a newer lifecycle gate.
-`apply_gate(gate, ...)` (slice 6b)
+exclude_none=True)`. L4 adds `GateEvidenceRef` (`kind="reviewer-verdict"`,
+`ref`, optional `verdict`) plus `GateRecord.decidingRole` and
+`GateRecord.evidenceRefs`. `create_gate(...)` returns a fresh `open` gate (the
+caller mints the ULID `id` and `now`) and may attach initial evidence refs;
+`decide_gate(gate, ...)` returns a NEW snapshot (same `id`, new `ts`) carrying
+the decision, the optional deciding role, and append-only evidence refs from the
+previous snapshot plus the decision call. `DecidedVia` now includes
+`orchestration`, so delegated approvals can be attributed separately from
+chat/dashboard/cli. `expire_gate(gate, now=...)` returns a NEW `expired`
+snapshot for an open gate replaced by a newer lifecycle gate. `apply_gate(gate, ...)` (slice 6b)
 returns a NEW `applied` snapshot — the transition a mutating tool writes once it
 consumes an approval (decision attribution carries forward; only `state`/`ts`
 advance). All helpers are pure.
@@ -49,8 +54,12 @@ advance). All helpers are pure.
 - **Append a snapshot per state change; never mutate in place.** A gate's `id` is
   stable across its life; `ts` changes per snapshot, and readers fold by `id`
   (last-wins) for current state.
-- `decidedBy` (actor) and `decidedVia` (through what) stay separate — the same
-  "who ≠ through what" rule the observer envelope follows.
+- `decidedBy` (actor/session/lifecycle), `decidedVia` (through what), and
+  `decidingRole` (policy role) stay separate. Orchestration decisions name the
+  deciding lifecycle/session in `decidedBy`; the policy layer rejects owner
+  self-approval before such a snapshot is persisted.
+- Evidence refs are append-only metadata on the gate snapshots. A reviewer
+  verdict artifact is referenced by id/path, not inlined into the gate record.
 - This is a persisted-record model, not an MCP response: the `gate_*` tools have
   their own response models in `models/gates.py`.
 
@@ -64,6 +73,11 @@ advance). All helpers are pure.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: added orchestration attribution
+  (`decidedVia="orchestration"`, `decidingRole`) and append-only
+  `GateEvidenceRef` / `evidenceRefs` so delegated gate decisions can cite
+  reviewer-verdict artifacts. Verification metadata pinned until closeout stamps
+  the L4 commit.
 - 2026-06-25T07:17+02:00 — Task 19: added pure `expire_gate(gate, now=...)` so creating a new lifecycle gate can supersede the previous open gate without deleting history. Verification metadata pinned until closeout stamps the task-19 code commit.
 - 2026-06-23T07:25+02:00 — slice 09 (gate-signal adoption, S2 kind extension): `GateKind` gained `plan-approval`, `worktree-intent`, and `push-approval` (the full l-01 gate spine alongside the existing closeout/integration/cleanup/question/retry/ack kinds). NB `closeout-approval` IS the commit gate — there is no separate `commit-approval` (closeout is the commit-of-record for code + memory + ledger). Envelope/helpers otherwise unchanged. Refreshed the Code Commentary `GateKind` listing. Verification metadata pinned until closeout stamps the slice-09 code commit.
 - 2026-06-18T12:10+02:00 — Task 6 slice 6b: added pure `apply_gate(gate, now=...)`, the `open/approved → applied` snapshot a mutating tool writes when it consumes an approval (the transition this module's docstring anticipated). No change to the envelope or the create/decide helpers. Verification metadata pinned until closeout stamps the 6b code commit.

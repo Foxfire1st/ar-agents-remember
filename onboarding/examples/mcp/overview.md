@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-07-03T11:50+02:00                     |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00                     |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 
 ## Purpose
 
@@ -22,7 +22,9 @@ replaces the removed coordinator `system/settings.json` provider example.
 repository ids, allowed provider ids, transcript log root, timeout caps, a
 top-level `benchmarksEnabled` flag (defaulting to `false`), and (260703 L2) the
 `dashboard` object shipped at its defaults (`autoStart: false`, `port: 8765`) so
-dashboard daemon supervision stays opt-in.
+dashboard daemon supervision stays opt-in, and the L4
+`orchestration.gateDelegation` object shipped at `policy: "all-human"` with no
+delegated kinds so delegated gate approvals stay opt-in.
 Repository source roots are derived from `workspaceRoot/<repo-id>`, and external
 memory roots are derived from `coordinationRoot/memory-repos/ar-<repo-id>`.
 Provider entries stay empty because the MCP server derives provider runtime
@@ -37,6 +39,9 @@ content, not a runtime input.
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4 route impact: the settings template gains
+  the opt-in `orchestration.gateDelegation` shape, shipped as all-human by
+  default. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-03T11:50+02:00 — 260703 L2 route impact: the settings template gains the `dashboard`
   object (autoStart/port, shipped at defaults-off). Verification metadata pinned until closeout
   stamps the code commit.

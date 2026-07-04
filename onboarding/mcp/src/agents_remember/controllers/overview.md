@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00 |
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -80,6 +80,10 @@ repos plus a `ledgerMapsCodeHead` mapping check; the default stays
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — No route impact: 260703-L4 only threads
+  `config.orchestration.gate_policy` through `worktree_tools.py` into closeout
+  args; controller boundaries and public controller responsibilities are
+  unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-03T00:35+02:00 — L11 route impact: task_reopen_tool joins task_doc_tools (task domain); worktree_abandon_tool ends its anchored ambient lifecycle.
 - 2026-07-02T18:35+02:00 — No route impact: operations-integration L7 fixed the native argv inside the
   typed `cgc_dependencies` wrapper (`provider_tools.py`) from the stale `analyze dependencies` to the

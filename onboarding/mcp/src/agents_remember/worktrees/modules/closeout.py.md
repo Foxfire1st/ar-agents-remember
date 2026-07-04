@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-18T12:10+02:00|
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-04T12:32+02:00|
+| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
+| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -65,13 +65,15 @@ The entry points (`closeout_preview_payload`, `closeout_result`) and the
 `argparse.Namespace`; `closeout_result` asserts `args.contract_path is not None`
 before loading the contract, since `WorktreeArgs.contract_path` is optional.
 
-Server-side gate enforcement (slice 6b): when the contract carries a
+Server-side gate enforcement (slice 6b, generalized by 260703-L4): when the contract carries a
 `lifecycle_id`, `_enforce_closeout_gate` reads the lifecycle's gate log via
 `GateStore(observer_logs_root(contract.coordination_root))` — the same log the
-dashboard writes — and `controlplane.evaluate_closeout_gate` refuses the closeout
-unless a `closeout-approval` gate is `approved` **by the developer** (a model
-self-approval, or an `open`/`rejected`/`applied` gate, blocks; a gateless
-lifecycle falls back to the chat `--approved` gate, unchanged). The check runs
+dashboard writes — and `controlplane.evaluate_closeout_gate(..., policy=args.gate_policy)` refuses the closeout
+unless a `closeout-approval` gate is `approved` by the developer or by a
+policy-valid delegated orchestration decision (a model self-approval, owner
+self-approval, missing required reviewer verdict evidence, or an
+`open`/`rejected`/`applied` gate blocks; a gateless lifecycle falls back to the
+chat `--approved` gate, unchanged). The check runs
 after the chat approval note and before the code commit; on success
 `_mark_closeout_gate_applied` appends an `applied` snapshot so one approval cannot
 be replayed. Both preview and apply payloads carry a `closeout_gate` block
@@ -103,10 +105,16 @@ No external Domain Documentation source is configured for this memory repo.
 | Worktree tests cover dry-run previews, approval notes, missing onboarding blocking, route overview/index refresh, memory quality gating, and ledger updates. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 | Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
 | The pure closeout-gate policy this module enforces (slice 6b). | [controlplane/enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
+| The gate policy threaded through `WorktreeArgs`. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
 | The gate log read during enforcement and appended to when marking `applied`. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
 
 ## Update History
 
+- 2026-07-04T12:32+02:00 — 260703-L4: closeout preview/apply now evaluate
+  `closeout-approval` through `args.gate_policy`, so human approvals remain
+  binding and delegated orchestration approvals bind only when the trusted
+  policy allows them. Verification metadata pinned until closeout stamps the L4
+  commit.
 - 2026-06-27T21:10+02:00 — Task 30: documented completed-integration
   re-closeout handling. Closeout now reports and applies an integration reopen
   only when a new code or memory-content commit is not yet on the recorded
