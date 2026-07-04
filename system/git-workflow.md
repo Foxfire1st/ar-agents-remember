@@ -54,6 +54,29 @@ A job changes the checkout via these steps:
 
 ---
 
+## Orchestrated Series (Super Integration Branch)
+
+For developer-requested `l-02-agent-orchestration` work, the landing topology is accumulative rather
+than one work branch straight to `main`:
+
+- The orchestrator creates a **super integration branch** from PR-gated `main`.
+- Every **master integration branch** bases from the current super branch, not from `main`.
+- Every **leaf work branch** bases from its owning master integration branch.
+- **C-11 is the universal integration mechanic** at every edge: leaf -> master, master -> super, and
+  super -> main. Every edge carries memory so the ledger maps the accumulated code commits.
+- The orchestrator dispatches managers by dependency order. Dependent masters start only after their
+  dependencies are integrated into super; independent masters may run in parallel, with reconcile
+  absorbing a moved super base.
+- A completed master is integrated into super from an **orchestrator integration worktree** sourced at
+  super, mirroring the leaf -> master worktree flow.
+- The landing tail remains PR-gated: open the final super -> main PR, merge remotely, run C-11
+  carry-over to main-memory so the ledger maps the actual main merge commit, then push memory.
+
+The full orchestration doctrine lives in
+`skills/l-02-agent-orchestration/SKILL.md` and `skills/l-02-agent-orchestration/jobs/orchestrator.md`.
+
+---
+
 ## PR merge: prefer a merge commit over squash
 
 - **Default: merge commit** (`gh pr merge --delete-branch`). It preserves the branch's distinct

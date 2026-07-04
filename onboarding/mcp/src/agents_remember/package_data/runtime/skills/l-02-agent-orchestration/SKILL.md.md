@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                      |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-04T13:03+02:00                      |
+| lastVerifiedCommitHash | `5ab7550b256fe4cd82514b81f455aa9026c0d7de` |
+| lastVerifiedCommitDate | 2026-07-04T13:10:34+02:00|
 
 ## Purpose
 
@@ -18,9 +18,13 @@ itself; it guarantees only the thin contact points every housed job shares — *
 → housed job execution → wrap-up** — and lets each job's own flow take over from there. `SKILL.md`
 carries the frame doctrine plus the shared runtime conventions (the job registry, the coordination-leaf
 convention, the escalation ladder, the two adversarial seams, the gate-delegation doctrine, the knob
-block + per-harness variant resolution, the settings.json orchestration schema block, the super
-integration branch topology summary, and the credits) so an agent entering at any seat gets the whole
-runtime contract from the entry file, with each seat's meat deferred to `jobs/<role>.md`.
+block + per-harness variant resolution, the settings.json orchestration schema block, the full super
+integration branch topology, and the credits) so an agent entering at any seat gets the whole runtime
+contract from the entry file, with each seat's meat deferred to `jobs/<role>.md`. The topology now
+spells out the strict branch stack (super from main, masters from super, leaves from masters), C-11 as
+the universal integration mechanic, the orchestrator's master-to-super worktree flow, the two conflict
+resolution modes, leaf-move decision-log duties, the memory-ledger invariant, and the sequenced
+260630-derived follow-ups.
 
 ## Code Commentary
 
@@ -110,13 +114,19 @@ Runtime conventions carried inline by `SKILL.md`:
   via echo-confirmed paste; turn-report artifacts = reporting), plus nudging on trustworthy inactivity
   signals. The comms substrate is implemented in **leaf L3**; the skill describes the protocol it
   realizes.
-- **Super integration branch topology (summary — full topology owned by L5).** An **accumulative**
-  super integration branch owned by the orchestrator: master integration branches base off **super**
-  so it accumulates; dependency-ordered dispatch (B after A is integrated into super; independent
-  masters parallel off the same super base); **C-11 is the universal integration mechanic at every
-  level** (leaf→master, master→super, super→main) and every edge carries its C-11 carry-over. The full
-  topology, the orchestrator worktree flow, the parallel-conflict maneuver, and the memory
-  single-siding rule are owned by **leaf L5** and the design record.
+- **Super integration branch topology.** An **accumulative** super integration branch owned by the
+  orchestrator: super bases from `main`, master integration branches base from the current super tip,
+  and leaf branches base from their owning master branch. **C-11 is the universal integration mechanic
+  at every level** (leaf -> master, master -> super, super -> main), and every edge carries memory so
+  the ledger maps the accumulated code commits. The orchestrator dependency-orders managers from the
+  master DAG, integrates each completed master into super from an orchestrator worktree sourced at
+  super, and only then releases downstream masters. Independent masters may run in parallel and
+  reconcile against a moved super base. Conflict resolution has exactly two modes: up-front
+  foundation-master extraction when overlap is visible during streamlining, or post-hoc code dedup plus
+  memory single-siding on the super worktree. Not-yet-started leaf moves are real moves with
+  decision-log entries on both affected masters. The 260630-derived master finalize/archive and
+  parallel-master reconcile primitives remain sequenced follow-ups; until they land, the orchestrator
+  performs those edges manually with existing C-09/C-11 primitives and records them in durable notes.
 - **Credits.** Vocabulary/structure adopted from the parked `260619_agentic-control-plane` spec (D6,
   D7, D10, D11, D12, the judge rung, short-lived workers with structured handoff, the orchestrate lens,
   D15), which in turn credits **Archon** and the **agent-control-plane** project for the orchestration
@@ -147,9 +157,10 @@ spawns at exactly two seams; a verdict is evidence, never a decision, and a bloc
 into fix leaves. The owning agent never self-approves a gate; a distinct configured role may, with
 attribution. Continuity lives in the `task_doc` + durable artifacts, never in the transcript. Two
 capabilities are **contract only** in this skill: `spawn_agent_session` (implemented in L2) and gate
-delegation + the settings.json orchestration block parsing (implemented in L4); the topology section is
-a summary owned by L5, and the comms substrate is implemented in L3. Until those leaves land, the
-described behaviors are the target, and the frame owns the doctrine, not the implementation.
+delegation + the settings.json orchestration block parsing (implemented in L4); the comms substrate is
+implemented in L3. The L5 topology doctrine is live skill text, while the master finalize/archive and
+parallel-master reconcile primitives named by the doctrine stay sequenced backlog until their
+task-doc-tooling leaves land.
 
 ### Todos
 
@@ -175,6 +186,7 @@ the `w-02-light-task-workflow` task format.
 | --- | --- | --- |
 | `SKILL.md` is the frame; each housed job's flow lives in its own `jobs/<role>.md` payload, resolved by profile-fit against the job registry. | L24-L52; L79-L114 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md) |
 | The orchestrator job owns the portfolio, dependency-ordered dispatch, the super integration branch, and the orchestrator-only spirit test. | n/a | [jobs/orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.md) |
+| The L5 topology doctrine defines the super/main/master/leaf branch stack, C-11 at every edge, dependency-ordered dispatch, orchestrator worktree integration, conflict modes, leaf-move logs, ledger mapping, and the sequenced 260630 follow-ups. | L263-L358 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md) |
 | The Claude Code overlay carries the sub-agent fan-out mechanic (durable reports; AR mutations stay in the main loop) on top of the portable orchestrator job. | n/a | [jobs/orchestrator.claude-code.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.claude-code.md) |
 | Every housed job's trust checkpoint and build spine are the `l-01-session-job-lifecycle` skill's; the frame only guarantees the checkpoint runs identically at every seat. | L69-L77 | [l-01 SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
 | The series is scaffolded in the `w-02-light-task-workflow` task format, which the frame extends rather than replaces. | L342-L347 | [w-02 SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
@@ -189,6 +201,15 @@ No sibling repository evidence is needed for this repository-local orchestration
 
 ## Update History
 
+- 2026-07-04T13:03+02:00 — 260703-L5 expanded the frame's super integration branch topology from a
+  summary into doctrine: super branches from main, masters branch from super, leaves branch from their
+  master, C-11 is universal at every edge, dependent managers dispatch only after dependencies
+  integrate into super, independent masters reconcile a moved super base, master-to-super integration
+  runs in an orchestrator worktree, conflict resolution is either up-front foundation-master extraction
+  or post-hoc super-worktree dedup with memory single-siding, leaf moves carry decision-log entries,
+  and the final super-to-main PR includes main-memory carry-over plus push. Also recorded the
+  260630-derived master finalize/archive and parallel-master reconcile items as sequenced follow-ups,
+  not implemented behavior. Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-07-04T11:00+02:00 — Created file-level onboarding for the new `l-02-agent-orchestration` skill
   (leaf 260703-L1), the developer-invoked, never-self-spawning frame that houses the five
   orchestration-family jobs via the four thin contact points (context → job selection → housed job
