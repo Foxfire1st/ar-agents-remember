@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_serving_changeset.py`      |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T12:50+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T23:43+02:00 |
+| lastVerifiedCommitHash | `c522779df57ddee8192816d2f2769fdf20d75f3a` |
+| lastVerifiedCommitDate | 2026-07-04T23:51:13+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -42,10 +42,12 @@ Real git repos are built per case (`_init_repo` / `_commit_all` via the `safe.di
   `file_diff` for a modified file (before+after), an added file (`before=None`), a deleted
   file (`after=None`), and the memory side (`kind="memory"`). `test_mainline_scope_has_no_changeset`
   is the 404 guard (a mainline `FileScope` → `FileNotFoundError`).
-- **`MasterChangesetTests`** drives the series **NET** diff over a written master contract +
-  ≥2 commits past the base: `master_changeset` returns the net `git diff base..tip` (NOT a
-  doubled sum), `master_file_diff` returns before/after at base vs tip, the per-leaf
-  `leaves[]` breakdown is kept alongside, and an unknown master degrades to an empty net.
+- **`MasterChangesetTests`** drives the series **NET** diff over a written master contract where
+  the source branch remains at the base and the work branch carries ≥2 commits: `master_changeset`
+  returns the net `git diff base..work-tip` for code and memory (NOT a doubled sum),
+  `master_file_diff` returns before/after at base vs the same work tip, the per-leaf `leaves[]`
+  breakdown is kept alongside, the landed fallback fast-forwards source and deletes the work branch
+  to prove source-tip behavior remains, and an unknown master degrades to an empty net.
 - **`LeafChangesetTests`** (L4a) drives `leaf_changeset` / `leaf_file_diff` over written leaf
   contracts (a shared `_write_leaf` helper places them under `tasks/R/t/enclosures/<leaf>/`):
   committed = base→`code_commit` resolved with **no live worktree** (a cleaned leaf, the durable
@@ -75,6 +77,9 @@ this checkout, `unittest.TestCase` with a `tempfile.TemporaryDirectory` per case
   numstat + name-status parsing and the binary/rename edge cases are regression-guarded.
 - The change-set assertions run over a real worktree pair behind a written contract, so
   the base→worktree range, the sidecar pairing, and the before/after content are end-to-end.
+- The master assertions keep in-flight series commits on the contract work branch first, then
+  delete that branch after fast-forwarding source, so both the work-tip resolver and landed fallback
+  are regression-guarded against real git refs.
 - The extraction test is the guard that the L3 `scope.py` split kept `files.py` callers
   (and L1's test imports) working.
 
@@ -92,6 +97,7 @@ this checkout, `unittest.TestCase` with a `tempfile.TemporaryDirectory` per case
 
 ## Update History
 
+- 2026-07-04T23:43+02:00 — L8 content update: `MasterChangesetTests` now models an in-flight series with source at base and code/memory work branches ahead, asserts master counters equal the real base→work-tip git diff, checks `master_file_diff` AFTER content from the same work tip, and covers the landed fallback after source fast-forward plus work-branch deletion. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-03T12:50+02:00 — No content impact: L15 sorted the third-party import block (everything stays below the load-bearing sys.path.insert); no test logic change.
 - 2026-06-29T23:00+02:00 — L4a: added `LeafChangesetTests` (committed/working leaf views — cleaned-leaf
   resolution + slugify, committed worktree-HEAD fallback, working uncommitted-only, no-worktree→404,

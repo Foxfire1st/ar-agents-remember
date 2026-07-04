@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T13:16+02:00 |
-| lastVerifiedCommitHash | `9f72d7705fa711017ba599ac13a348b927084d3d` |
-| lastVerifiedCommitDate | 2026-07-04T13:22:12+02:00|
+| lastUpdated            | 2026-07-04T23:43+02:00 |
+| lastVerifiedCommitHash | `c522779df57ddee8192816d2f2769fdf20d75f3a` |
+| lastVerifiedCommitDate | 2026-07-04T23:51:13+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -410,6 +410,7 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-04T23:43+02:00 — No route impact: L8 fixes `serving/changeset.py` master net diff tip resolution inside the already-documented change-set serving route; no MCP tool signature, response shape, package route model, or higher-level subsystem boundary changed. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T13:16+02:00 — No route impact: 260703-L6 sharpened the synced
   `l-02-agent-orchestration` runtime skill docs/templates only — adversarial reviewer seam-specific
   rubrics, verdict variants, `notes/reports/` artifact placement, and `reviewer-verdict` gate evidence

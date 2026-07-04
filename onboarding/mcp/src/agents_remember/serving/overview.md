@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-04T23:43+02:00 |
+| lastVerifiedCommitHash | `c522779df57ddee8192816d2f2769fdf20d75f3a`       |
+| lastVerifiedCommitDate | 2026-07-04T23:51:13+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -189,8 +189,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   mounts `GET /api/changeset/{task,file-diff,master}` **before** the static mount. Computes a task's
   `base → current` code + memory change-set with insertion/deletion counts + status + `hasSidecar`
   (`task`), BEFORE/AFTER file content for the L4 CodeMirror MergeView (`file-diff`, with an optional `master` param for the series net file-diff), and the master's **NET**
-  change-set (`master`) — `git diff <master-base> <series-tip>` for code + memory (one coherent,
-  per-file-inspectable range) with a per-leaf counter breakdown alongside. **L4a** adds the doc-reader
+  change-set (`master`) — `git diff <master-base> <resolved-series-tip>` for code + memory (one
+  coherent, per-file-inspectable range) with a per-leaf counter breakdown alongside. For an in-flight
+  series the resolved tip is the contract work-branch tip; after landing, when that work branch is gone,
+  it falls back to the source-branch tip. The master file-diff view uses the same resolved tip so
+  counters and BEFORE/AFTER content cannot drift. **L4a** adds the doc-reader
   **leaf views**: the `task` + `file-diff` routes take a `leaf` + `mode` selector (precedence
   `leaf > master > scope`), resolving one leaf's `committed` (`base → code_commit`) or `working`
   (`HEAD → worktree`, uncommitted only) change-set straight off the persisted enclosure contract
@@ -307,6 +310,7 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-04T23:43+02:00 — L8 route impact: `changeset.py`'s master net routes now resolve the series tip as the contract work branch while it exists, falling back to the source branch after landing/deletion; `/api/changeset/master` counters and `/api/changeset/file-diff?master=...` content share that resolver for code and memory. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: `/api/operator-inbox` now accepts
   agent-role/message/artifact metadata, attempts hosted push through
   `inbox_delivery.py`, and `terminal_paste.py` confirms delivery only on a real
