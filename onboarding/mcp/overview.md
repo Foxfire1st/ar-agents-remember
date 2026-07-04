@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-03T12:59+02:00 |
-| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb` |
-| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
+| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
+| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -382,6 +382,7 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-04T11:00+02:00 — No route impact: route model unchanged — orchestration 260703-L1 adds the new `l-02-agent-orchestration` skill tree (14 files: `SKILL.md` = the orchestration frame, five `jobs/<role>.md` job files + two `jobs/<role>.claude-code.md` per-harness variants, six `templates/` report shapes) under `package_data/runtime/skills/`, sync-propagated via `scripts/sync-skills.py`. Registered 14 new file cards in this route's `coveredFiles`, bumped `coverageCounts` (sourceFilesInScope 499→513, fileSidecars 193→207). Skills are model-interpreted markdown, not mcp Python; no mcp source, tool signature, or route behavior changed. Verification metadata on the new file cards pinned until closeout stamps the L1 commit.
 - 2026-07-04T10:15+02:00 — No route impact: orchestration 260703-L0 resynced the generated shipped dashboard bundle (mcp/src/agents_remember/package_data/dashboard, a build artifact excluded from memory scope) plus dashboard.fingerprint via scripts/sync-dashboard.py after dashboard-source changes; no mcp Python source, tool, or route behavior changed. Reviewed, overview body accurate as-is.
 - 2026-07-03T12:59+02:00 — No route impact: 260703 L4 release bump only (pyproject version +
   SERVER_VERSION fallback to 3.0.0rc2); no mcp behavior or structure change.
