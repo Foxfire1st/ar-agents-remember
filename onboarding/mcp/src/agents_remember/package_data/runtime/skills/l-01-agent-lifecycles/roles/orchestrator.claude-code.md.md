@@ -1,20 +1,20 @@
-# l-02-agent-orchestration/jobs/orchestrator.claude-code.md
+# l-01-agent-lifecycles/roles/orchestrator.claude-code.md
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.claude-code.md` |
+| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.claude-code.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                      |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-05T01:30+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 
 ## Purpose
 
 This file is the per-harness **overlay** for the orchestrator seat when it runs on the **claude-code**
 harness. It carries only what is harness-specific — the concrete knobs, the sub-agent fan-out mechanic,
 and the durable-report rule — and does **not** restate the orchestrator's duties, spirit test, or
-topology (those live in `jobs/orchestrator.md`). Resolution: base job < harness variant < settings.json
+topology (those live in `roles/orchestrator.md`). Resolution: base job < harness variant < settings.json
 orchestration block.
 
 ## Code Commentary
@@ -22,11 +22,11 @@ orchestration block.
 ### Logic
 
 This packaged file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-02-agent-orchestration/jobs/orchestrator.claude-code.md`; the authored skill source owns the
+`skills/l-01-agent-lifecycles/roles/orchestrator.claude-code.md`; the authored skill source owns the
 wording, and this is the synced runtime mirror.
 
-The overlay sits between the portable `jobs/orchestrator.md` base and the settings.json orchestration
-block (resolution: `jobs/orchestrator.md` → **this overlay** → settings.json). Harness knobs override
+The overlay sits between the portable `roles/orchestrator.md` base and the settings.json orchestration
+block (resolution: `roles/orchestrator.md` → **this overlay** → settings.json). Harness knobs override
 the base knob block: harness `claude-code`; model = the strongest available reasoning model (the
 concrete id named by settings.json `orchestration.roles.orchestrator.model`); effort `high`; tools =
 full tool surface + the `Agent`/`Task` sub-agent tool for fan-out.
@@ -50,10 +50,10 @@ accretes rather than fragmenting across files.
 
 ### Conventions
 
-Per-harness job variant (borrowed D12): a `jobs/<role>.<harness>.md` overlay carries only
+Per-harness job variant (borrowed D12): a `roles/<role>.<harness>.md` overlay carries only
 harness-specific content (concrete knobs, the fan-out mechanic, tool-surface specifics) and never
 restates the role's duties. It is one of the two exemplars that ship (with
-`jobs/worker.claude-code.md`).
+`roles/worker.claude-code.md`).
 
 ### Invariants And Boundaries
 
@@ -83,9 +83,9 @@ per-harness variant resolution.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| This file overlays the portable orchestrator job; read that file for the seat's duties, spirit test, and topology. | L11-L23 | [jobs/orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.md) |
-| The frame's variant resolution (job base < harness variant < settings.json) is what layers this overlay over the base and under the settings block. | L231-L243 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md) |
-| Fan-out sub-agents write into the report-template library this overlay names (impact analysis, onboarding coherency). | n/a | [templates/impact-analysis.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/templates/impact-analysis.md) |
+| This file overlays the portable orchestrator job; read that file for the seat's duties, spirit test, and topology. | L11-L23 | [roles/orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
+| The frame's variant resolution (job base < harness variant < settings.json) is what layers this overlay over the base and under the settings block. | L231-L243 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| Fan-out sub-agents write into the report-template library this overlay names (impact analysis, onboarding coherency). | n/a | [templates/impact-analysis.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md) |
 
 ## Cross-Repo References
 
@@ -97,12 +97,13 @@ No sibling repository evidence is needed for this repository-local job variant.
 
 ## Update History
 
-- 2026-07-04T11:00+02:00 — Created file-level onboarding for the new `l-02-agent-orchestration` skill's
+- 2026-07-05T01:30+02:00 - L9 lifecycle convergence: overlay re-pointed from jobs/ to roles/ paths; content otherwise unchanged. Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-07-04T11:00+02:00 — Created file-level onboarding for the new `l-01-agent-lifecycles` skill's
   Claude Code orchestrator overlay (leaf 260703-L1), the per-harness variant resolved between the
   portable base job and the settings.json orchestration block. Captured the harness knobs (the
   `Agent`/`Task` sub-agent tool for fan-out) and the sub-agent fan-out rule: sub-agents WRITE durable
   report artifacts while AR state mutations (`task_doc`, gates, spawn, closeout) stay in the main loop,
   fan-out capped by `orchestration.concurrency.maxSubAgents`; noted the overlay does not restate the
   seat's duties. Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-  `skills/l-02-agent-orchestration/jobs/orchestrator.claude-code.md`. Verification metadata pinned until
+  `skills/l-01-agent-lifecycles/roles/orchestrator.claude-code.md`. Verification metadata pinned until
   closeout stamps the L1 commit.

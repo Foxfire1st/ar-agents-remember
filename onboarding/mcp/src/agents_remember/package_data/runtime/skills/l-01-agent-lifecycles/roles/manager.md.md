@@ -1,17 +1,17 @@
-# l-02-agent-orchestration/jobs/manager.md
+# l-01-agent-lifecycles/roles/manager.md
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/manager.md` |
+| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                     |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-05T01:30+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 
 ## Purpose
 
-This is the portable **manager** job file the `l-02-agent-orchestration` frame houses at the master
+This is the portable **manager** job file the `l-01-agent-lifecycles` frame houses at the master
 tier. Like every job file it carries **both axes in one file** — the **role** (drive exactly one master
 series) and the **lens** (leaf loop: dispatch · review · delegated gates · master-exit handover) — plus
 an opening move, duties, artifact obligations, a comms protocol, and a harness-agnostic knob block. The
@@ -23,7 +23,7 @@ agent behavior stands, with no creative-liberty prompting in either direction.
 ### Logic
 
 The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-02-agent-orchestration/jobs/manager.md`; it is model-interpreted markdown, never an executor.
+`skills/l-01-agent-lifecycles/roles/manager.md`; it is model-interpreted markdown, never an executor.
 The body defines: the seat (**one per master task**, its own coordination leaf + chat, **no worktree**);
 the lens (opening move = read the master `task_doc` + leaf docs and order the leaves; retrieval lean =
 intent-confirmation on the master's own routes, no bird's-eye view; decide default = dispatch the next
@@ -43,7 +43,7 @@ orchestrator.
 ### Conventions
 
 Role + lens in one file (D10); a portable knob block (D7) resolving job base <
-`jobs/manager.<harness>.md` variant < `settings.json orchestration.roles.manager`. Coordination seat =
+`roles/manager.<harness>.md` variant < `settings.json orchestration.roles.manager`. Coordination seat =
 an ordinary `subTask` leaf with no enclosure and a role marker; comms ride the inbox (durable, dashboard-
 visible) plus stdin push (nudges/messages into hosted worker sessions, poll as fallback). Gate delegation
 is documented here but **enforced in leaf L4**; until then hand-offs follow the
@@ -62,7 +62,7 @@ master's own view first, then rises up the ladder to the orchestrator.
 
 ### Todos
 
-No `jobs/manager.<harness>.md` overlay ships yet; author one when a harness needs manager-specific knobs.
+No `roles/manager.<harness>.md` overlay ships yet; author one when a harness needs manager-specific knobs.
 No other TODO is recorded for this job file.
 
 ### Docs References
@@ -79,11 +79,11 @@ The manager spawns workers, spawns the master-exit reviewer, and hands its maste
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [manager.md](agents-remember/skills/l-02-agent-orchestration/jobs/manager.md) |
-| The frame that houses this seat and owns the escalation ladder, gate-delegation doctrine, and the two adversarial seams. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md) |
-| The worker seat the manager spawns fresh per leaf and whose turn report it reviews. | n/a | [worker.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/worker.md) |
-| The adversarial reviewer spawned at the master-exit seam, whose blocking verdict decomposes into fix leaves the manager dispatches. | n/a | [adversarial-reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/adversarial-reviewer.md) |
-| The orchestrator seat the manager escalates to and hands the completed master over to. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.md) |
+| Canonical source this bundle copy is sync-propagated from. | n/a | [manager.md](agents-remember/skills/l-01-agent-lifecycles/roles/manager.md) |
+| The frame that houses this seat and owns the escalation ladder, gate-delegation doctrine, and the two adversarial seams. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| The worker seat the manager spawns fresh per leaf and whose turn report it reviews. | n/a | [worker.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md) |
+| The adversarial reviewer spawned at the master-exit seam, whose blocking verdict decomposes into fix leaves the manager dispatches. | n/a | [adversarial-reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md) |
+| The orchestrator seat the manager escalates to and hands the completed master over to. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
 
 ## Cross-Repo References
 
@@ -95,4 +95,5 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
-- 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-02-agent-orchestration` manager job file (leaf 260703-L1) — one manager per master, the leaf dispatch loop with delegated attributed gates and C-11 integration, the master-exit adversarial seam and handover packet, and the critical rule that the spirit test does NOT apply here (default behavior stands; a plan delta escalates to the orchestrator, never the developer). Verification metadata pinned until closeout stamps the L1 commit.
+- 2026-07-05T01:30+02:00 - L9 lifecycle convergence: the manager now owns the leaf lifecycle END-TO-END (worker closeout stripped; worktree_start -> closeout/gates -> integrate -> finalize incl. task-doc steps); master-exit reviewer spawn procedure inlined; gate policy described as-built; briefs compiled from templates/worker-brief.md with AR_SPAWN_ROLE + the qualified leaf key. Verification metadata pinned until closeout stamps the L9 commit.
+- 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-01-agent-lifecycles` manager job file (leaf 260703-L1) — one manager per master, the leaf dispatch loop with delegated attributed gates and C-11 integration, the master-exit adversarial seam and handover packet, and the critical rule that the spirit test does NOT apply here (default behavior stands; a plan delta escalates to the orchestrator, never the developer). Verification metadata pinned until closeout stamps the L1 commit.

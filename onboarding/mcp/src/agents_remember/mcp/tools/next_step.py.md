@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/mcp/tools/next_step.py`       |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-06-27T22:00+02:00                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-05T01:32+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`             |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -172,12 +172,15 @@ and the ambient lifecycle / phase definitions.
 | `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …). | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
 | Engine tests. | [test_next_step.py](agents-remember/mcp/tests/test_next_step.py) |
 
+As of the 260703-L9 lifecycle convergence, the FRONT_HALF_RUNDOWN reframe bullet names the orchestrator lifecycle explicitly (`l-01-agent-lifecycles` `roles/orchestrator.md`); the rundown's flow semantics are unchanged — the front half it describes is now the orchestrator lifecycle's front half, since spawned roles never call `lifecycle_start`.
+
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the FRONT_HALF_RUNDOWN reframe bullet now names the orchestrator lifecycle explicitly (l-01-agent-lifecycles roles/orchestrator.md); flow semantics unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE active turn end): repointed every ACTIVE hint off `lifecycle_gate` onto `lifecycle_turn_end_notification` — the front-half `decide` hint, the generic `_FRONT_HALF_SUMMARY`/`FRONT_HALF_RUNDOWN` closing step, and the three `_gate_after` closeout/integration/cleanup overlays now all carry `nextTool="lifecycle_turn_end_notification"` + a context `summary` (notify and stop, no gate, no wait). Added the `_TURN_HANDED_TO_DEVELOPER` constant and a `state.state == "awaiting-developer"` branch (checked right after `blocked`) returning a `nextTool=None` stop hint. The `_AWAIT_GATE` + `blocked` branch is left intact — the parked gate path stays valid but un-hinted. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T20:16+02:00 — Gate-await hint. Added the `_AWAIT_GATE` module constant and a `state.state == "blocked"` branch in `compute_next_step`, checked right after the terminal check and before the front-half/linear branches. A raised `lifecycle_gate` calls `amb.block()` (state → "blocked"), so the hint now points at `lifecycle_resume` (await the developer's decision) instead of the post-gate operational step — carrying the chain through the open gate (raise → blocked → resume → continue), independent of phase/contract.
 - 2026-06-27T18:43+02:00 — Added. New module: the task-27 lifecycle next-step engine — pure `compute_next_step` (front-half rundown pointer / `decide` worktree-intent gate vs linear-half `_gate_after` overlay + `lifecycle_guidance` delegation, plus the terminal `_LOOP_BACK`) and the exception-contained edge `next_step_for` with look-before-leaping `_load_contract`/`_guidance_for`.

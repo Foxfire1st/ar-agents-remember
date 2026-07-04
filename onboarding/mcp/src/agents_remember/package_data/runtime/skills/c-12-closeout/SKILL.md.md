@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-06-27T22:00+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-05T01:32+02:00 |
+| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
+| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
 
 ## Purpose
 
@@ -42,7 +42,7 @@ Closeout approval is separate from implementation approval. Agents must not
 treat a previous "looks good", implementation approval, or their own judgment
 as commit approval. The matching preview tool is the approval prompt surface:
 it reports the proposed code, memory, and ledger commit messages before the
-apply tool mutates Git. The relay follows the `l-01-session-job-lifecycle`
+apply tool mutates Git. The relay follows the `l-01-agent-lifecycles`
 skill hand-off protocol in the corrected order — run the preview/dry-run first,
 call `lifecycle_turn_end_notification` as the **last tool call**, then report the
 preview facts and proposed messages as the **final prose** ending with the
@@ -152,6 +152,7 @@ Closeout instructions now target the leaf enclosure `series-contract.md`; the ro
 
 ## Update History
 
+- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the relay reference now names the l-01-agent-lifecycles orchestrator hand-off protocol. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — Order fix (notify-then-report): corrected the Task 28
   notify-and-continue hand-off ORDER for the closeout commit and push hand-offs to
   **dry-run → notify (`lifecycle_turn_end_notification`, the last tool call) →
@@ -194,7 +195,7 @@ Closeout instructions now target the leaf enclosure `series-contract.md`; the ro
 - 2026-06-23T22:50+02:00 — Dashboard task 14: clarified that closeout is commit-only; `lifecycle_finalize_task` later proves the landed edge, runs or verifies cleanup, and marks the current task plus immediate parent row complete. Verification metadata pinned until closeout stamps the source commit.
 - 2026-06-23T07:39+02:00 — Slice 09: extended the Server-Side Gate Enforcement onboarding to the full **raise → wait → clear** choreography — the raise now opens the ambient `lifecycle_block(kind="decision")` **and** the durable `gate_create(kind="closeout-approval")`, and the agent **always clears** with `lifecycle_resume` (the new step) before `worktree_closeout_apply`, since a chat "approved" does not propagate itself. Stated that **`closeout-approval` IS the commit gate** (the single commit-of-record for code/memory/ledger; no separate `commit-approval`), and that the push junction uses the `push-approval` gate kind. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T12:10+02:00 — Task 6 slice 6b: documented the new Server-Side Gate Enforcement section — opt-in `gate_create`/`gate_wait` choreography for dashboard-connected lifecycles, the developer-approved-gate-binds / never-self-approve rule, and the gateless-unchanged fallback. Verification metadata pinned until closeout stamps the 6b code commit.
-- 2026-06-12T19:47+02:00 — Approval Gate adopted the `l-01-session-job-lifecycle` skill gate protocol: the relay is its own turn ending with a prose approval question, and the apply tool is never invoked in the same turn as the relay.
+- 2026-06-12T19:47+02:00 — Approval Gate adopted the `l-01-agent-lifecycles` skill gate protocol: the relay is its own turn ending with a prose approval question, and the apply tool is never invoked in the same turn as the relay.
 - 2026-06-12T19:06+02:00 — Issue #83: the skill documents the committed-range worklist (last verified commit → HEAD, base-scoped), the gate-regardless-of-author rule for existing artifacts, the non-blocking `unonboarded` report, and the commit-gate relay of its count + sample.
 - 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: the skill no longer offers `direct_closeout_preview`/`apply` or the "small approved edits" direct-closeout guidance; the MCP Tools block lists only the worktree closeout pair and the intro states the worktree-only rule.
 - 2026-05-29T07:36+02:00: Updated after `c-12-closeout` skill added a changed-file content gate — a changed source whose existing sidecar body was not updated this task fails closeout — plus the matching failure condition and boundary against metadata-only verification refreshes.

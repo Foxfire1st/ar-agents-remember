@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_orchestration_comms.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T12:31+02:00                     |
-| lastVerifiedCommitHash |                                            `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
-| lastVerifiedCommitDate |                                            2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-05T01:32+02:00 |
+| lastVerifiedCommitHash |                                            `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`|
+| lastVerifiedCommitDate |                                            2026-07-05T01:30:08+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -50,6 +50,9 @@ workspace.
 | Nudge store and message policy under test. | [orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py) |
 | Public nudge payload under test. | [orchestration.py](agents-remember/mcp/src/agents_remember/mcp/tools/orchestration.py) |
 
+As of the 260703-L9 lifecycle convergence, the artifact-helper test pins the turn-report template path under `runtime/skills/l-01-agent-lifecycles/templates/` (the unified skill folder that replaced the l-02 tree).
+
 ## Update History
 
+- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the pinned turn-report template path expectation moved to runtime skills/l-01-agent-lifecycles/templates/. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:31+02:00 - L3: created orchestration communication helper coverage. Verification metadata pinned until closeout stamps the L3 commit.
