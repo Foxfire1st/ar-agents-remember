@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-03T12:59+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb` |
+| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -382,6 +382,7 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-04T10:15+02:00 — No route impact: orchestration 260703-L0 resynced the generated shipped dashboard bundle (mcp/src/agents_remember/package_data/dashboard, a build artifact excluded from memory scope) plus dashboard.fingerprint via scripts/sync-dashboard.py after dashboard-source changes; no mcp Python source, tool, or route behavior changed. Reviewed, overview body accurate as-is.
 - 2026-07-03T12:59+02:00 — No route impact: 260703 L4 release bump only (pyproject version +
   SERVER_VERSION fallback to 3.0.0rc2); no mcp behavior or structure change.
 - 2026-07-03T12:58+02:00 — No route impact: 260703 L3 rewrote `mcp/README.md`'s Install And Run

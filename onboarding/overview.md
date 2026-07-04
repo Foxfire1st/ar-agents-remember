@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-03T12:59+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb` |
+| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
 
 > **Status:** active baseline
 

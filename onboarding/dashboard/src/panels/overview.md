@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T09:40+02:00 |
+| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb`       |
+| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -21,8 +21,10 @@ Operations list admits active enclosures excluding cleanup completed AND abandon
 and joins docs to enclosures by exact case-insensitive ids only — reopen reuses the
 same leaf id, so the suffixed-leaf heuristic is gone),
 rendered into the shell's rails/viewport — plus the slice-6e **Chats** terminal view (the one
-interactive, full-bleed panel). `FlowTab.tsx` remains in the route as dormant diagnostic source, but
-Task 29 S7 hides the Lifecycle Flow tab from the cockpit shell. As of slice 5d every presentational
+interactive, full-bleed panel). `FlowTab.tsx` is no longer a cockpit view — Task 29 S7 hid the Lifecycle
+Flow tab from the shell, and orchestration leaf 260703-L0 reworked it into a **dev-only multi-model
+design canvas** (`FlowTab.tsx` renderer/nav + the new `flowModels.ts` registry) mounted at `/dev/flows`.
+As of slice 5d every presentational
 panel renders through the shared
 `grammar/Panel` chrome (self-scrolling box + sticky header) and styles itself with co-located
 Panda `css()` / `cva()`; several add React Aria behavior (the `LifecycleList`/`EngineRoom` `ListBox`es
@@ -228,20 +230,27 @@ and the `Chats` `SessionList` switcher).
   silent action (a selection only raises the pill; pastes and sends happen on explicit clicks). Covered
   by `HighlightComposer.test.tsx`; the pure selection rules (including leaf-key tagging) by
   `data/selection.test.ts`.
-- `FlowTab.tsx` — the former **Lifecycle Flow** view (task 26): a **static** diagnostic visualization of the
-  build-job lifecycle (no store read — module-level data + co-located Panda `css`/`cva`). Task 29 S7
-  removed it from the cockpit `View` union and mode bar, so this source is dormant until a dev-only
-  mount is reintroduced. It renders the
-  lifecycle in TWO regimes: a non-linear **front half** — a one-time prose `RUNDOWN` array emitted by
-  `lifecycle_start` (reframe → research → job-selection → `⟁ task-file-exists?` junction → `task_doc`),
-  prose rather than per-tool hints because the research tools fire unpredictably and the junction isn't a
-  tool call — and a **`LINEAR`** chain of `Node`s from `worktree_start --dry-run` → `lifecycle_end`, where
-  each gate `Node` carries a `rides` annotation (the turn-end notification auto-fires when that gate tool —
-  dry-run / preview / task_doc-create — is called, so the agent can't forget it). Edge colour encodes
-  `nextStatus`: mint = wired today (`guidance.lifecycle_guidance`), amber dashed = this series. It is the
-  human-readable SPEC the task-27 next-step engine
-  ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)) was built to match.
-  It is no longer visible in the shipped dashboard cockpit.
+- `FlowTab.tsx` + `flowModels.ts` — the **lifecycle-design canvas** (task 26, generalized by orchestration
+  leaf 260703-L0): the surface where a lifecycle/interaction is **drawn and reviewed with the developer
+  before it is built**. `FlowTab.tsx` is now a **pure segment renderer + radiogroup model nav** (the
+  `RailToggle` idiom) with **zero store reads**; all content is externalized to the new `flowModels.ts`
+  **flow-model registry** (the `FlowStart`/`FlowNode`/`FlowRundown`/`FlowDivider` = `FlowSegment` union +
+  the `FlowModel` type, plus **8 static models**: `build-job` · `frame` · `designer` · `orchestrator` ·
+  `manager` · `worker` · `reviewer` · `comms`). The renderer draws four segment kinds — a start pill, a
+  tool `node`, a gate-rider node (amber left-bar, `rides` + optional `ridesNote` override), and a prose
+  `rundown` card — with mint (wired today) / amber-dashed (this series) edges via `nextStatus`. The
+  **build-job** model preserves the original task-26 chain (front-half prose rundown + the linear
+  `worktree_start --dry-run` → `lifecycle_end` gate chain) and stays the human-readable SPEC the task-27
+  next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)) was
+  built to match; its takeaway now self-identifies as the "Eierlegende Wollmilchsau" and points at the
+  `frame` model. The other seven models encode the agent-orchestration series' agreed invariants
+  (orchestrator-only spirit test; the worker → manager → orchestrator → developer escalation ladder; the
+  two adversarial seams; the master-granular DAG / never-interleave-dispatch rule; delegated attributed
+  gates; verdicts-are-evidence-not-decisions; mandatory turn reports; one handover-packet schema). Task 29
+  S7 removed it from the cockpit `View` union and mode bar; L0 **mounts it dev-only at `/dev/flows`**
+  (`dev/DevApp.tsx`, `initialModel` from `?model=`), dead-code-eliminated in production — it is not a
+  shipped cockpit panel. Covered by `FlowTab.test.tsx` (default model, nav switching, `initialModel`
+  fallback, per-model render census, and verbatim invariant assertions).
 
 ## Invariants And Boundaries
 
@@ -263,10 +272,20 @@ and the `Chats` `SessionList` switcher).
 | The shared panel chrome every panel renders through. | [grammar/Panel.tsx](agents-remember/dashboard/src/grammar/Panel.tsx) |
 | The pure selectors the panels read (queue, tree, engine state, drift segments). | [data/selectors.ts](agents-remember/dashboard/src/data/selectors.ts) |
 | The projection node shapes the panels render. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The next-step engine `FlowTab.tsx` is the human-readable SPEC for. | [tools/next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
+| The next-step engine the `FlowTab.tsx` build-job model is the human-readable SPEC for. | [tools/next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
+| The flow-model registry that holds the `FlowTab` canvas content (8 static models + segment/model types). | [flowModels.ts](agents-remember/dashboard/src/panels/flowModels.ts) |
 
 ## Update History
 
+- 2026-07-04T09:40+02:00 — 260703-L0 (Canvas & playground) route impact: reworked the `FlowTab.tsx` bullet
+  from the dormant single-model Lifecycle Flow diagnostic into the **lifecycle-design canvas** — a pure
+  segment renderer + radiogroup model nav (still zero store reads) over the **new `flowModels.ts`**
+  flow-model registry (8 static models: build-job · frame · designer · orchestrator · manager · worker ·
+  reviewer · comms, encoding the orchestration series' agreed invariants). The build-job model preserves
+  the task-26 chain and stays the `next_step.py` SPEC; the source is now **mounted dev-only at `/dev/flows`**
+  via `dev/DevApp.tsx` (kept out of the cockpit `View` union per task 29) and covered by the new
+  `FlowTab.test.tsx`. Added `panels/flowModels.ts.md` + `panels/FlowTab.test.tsx.md` sidecars. Verification
+  metadata pinned until closeout stamps the L0 commit.
 - 2026-07-03T00:35+02:00 — L11 route impact: LifecycleList excludes abandoned enclosures from the active rows and drops the -rN startsWith doc-admission heuristic (task_reopen keeps leaf ids stable).
 - 2026-07-02T21:45+02:00 — L10 route impact: `LifecycleList`'s `enclosureForDoc` admission is now
   case-insensitive on every leafId comparison (stem, doc id, and the lifecycle-guarded reopen-suffix
