@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated | 2026-07-04T13:03+02:00 |
+| lastVerifiedCommitHash | `5ab7550b256fe4cd82514b81f455aa9026c0d7de` |
+| lastVerifiedCommitDate | 2026-07-04T13:10:34+02:00|
 
 > **Status:** active baseline
 
@@ -50,6 +50,7 @@ onboarding pass.
 | File and entity onboarding maintenance | File-level sidecars, inline onboarding adapter rules, repo entity catalogs, deterministic entity fingerprints, reference health checks, and generated route indexes. | `c-05-create-or-update-onboarding-files` skill, `route_index_refresh`, `kernel/route_index.py` |
 | Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | `c-01-findings-capture` skill |
 | Workflow modes | The `l-01-session-job-lifecycle` skill chat build for current-session edits and the `w-02-light-task-workflow` skill for compact durable plans, escalating to a master + light sub-task series for larger phased work (the retired heavy workflow is no longer a separate mode). | `l-01-session-job-lifecycle` skill, `w-02-light-task-workflow` skill |
+| Agent orchestration frame | Developer-requested multi-agent series run through the `l-02-agent-orchestration` frame: designer/orchestrator/manager/worker/reviewer jobs, master-granular dependency dispatch, super integration branches off main, master branches off super, leaf branches off masters, C-11 carry-over at every edge, orchestrator worktree integration for master-to-super, and final super-to-main PR plus main-memory carry-over. | `l-02-agent-orchestration` skill, `skills/l-02-agent-orchestration/jobs/orchestrator.md`, `system/git-workflow.md` |
 | Approval-gated closeout | Explicit approval gates for implementation, worktree-backed closeout, memory refresh, memory quality, and ledger alignment. Closeout is worktree-only — the direct current-checkout path was removed (issue #62). Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `worktree_closeout_*` |
 | Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, lifecycle finalization, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. | `c-09-git-worktree-manager` skill, `lifecycle_finalize_task`, `worktree_*`, `worktrees/` |
 | Observable session lifecycle | The 3.0 browser-dashboard substrate: an append-only `ar-observer-event/v1` event log with trust provenance, an ambient process-singleton lifecycle (six `lifecycle_*` signals, heartbeat, TTL sweep, tool-call attribution), and a pure projection reducer that folds events + file snapshots into resolved state (lifecycle tree, metrics, staleness, per-lifecycle token fuel gauge, drift/sidecar/setup/route/ledger analytical surfaces, precomputed action availability, and a server-computed attention queue). Task 27 adds a **lifecycle next-step hint engine** — every MCP tool response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload` choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing `lifecycle_gate` at gate junctions; built on the existing gate, with auto-firing a later step). Task 28 makes **NOTIFY-AND-CONTINUE** the active turn-end model: a new public `lifecycle_turn_end_notification` tool + a non-terminal `awaiting-developer` lifecycle state (notify the developer and stop — no gate, no wait — and the next AR tool call auto-resumes at the `_tool_payload` choke point), the next-step hints repoint off `lifecycle_gate` onto it, a one-line reducer dedup collapses the duplicate gate-open/blocked-gate attention item, and the old `lifecycle_gate`/inbox stack is parked (kept, un-hinted). Task 29 makes throwaway event/runtime surfaces lifecycle-aware: raw Event River lifetime is backend-retained by lifecycle state rather than frontend count caps, worktree provider/runtime facts require active enclosures, and actionable-drift attention carries repo/branch/source/memory provenance with targetless dismissal. | `agents_remember.observer`, `lifecycle_*` tools, `next_step.py`, `observer/` route overview, `docs/design/observable-lifecycle.md` |
@@ -375,6 +376,12 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-04T13:03+02:00 — 260703-L5 route impact: added the Agent orchestration
+  frame inventory row for the super integration branch topology: super from main,
+  masters from super, leaves from masters, C-11 carry-over at every edge,
+  orchestrator worktree integration for master-to-super, and final super-to-main
+  PR plus main-memory carry-over. Verification metadata pinned until closeout
+  stamps the L5 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: the Gate control plane
   inventory now records opt-in delegated approvals, all-human defaults,
   human-pinned integration/push/cleanup gates, no owner self-approval, and

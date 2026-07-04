@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:00+02:00                      |
-| lastVerifiedCommitHash | `763ec25a77b4cdf44c87509c2d1baca3d275ba20` |
-| lastVerifiedCommitDate | 2026-07-04T11:09:24+02:00|
+| lastUpdated            | 2026-07-04T13:03+02:00                      |
+| lastVerifiedCommitHash | `5ab7550b256fe4cd82514b81f455aa9026c0d7de` |
+| lastVerifiedCommitDate | 2026-07-04T13:10:34+02:00|
 
 ## Purpose
 
@@ -15,9 +15,11 @@ This file is the portable **orchestrator** job the `l-02-agent-orchestration` fr
 orchestrator seat — role + lens in one file. It is the one job that carries the **spirit test** (and
 the test is **orchestrator-only**). The seat owns the portfolio, the master-level dependency DAG,
 dependency-ordered manager dispatch, and the accumulative super integration branch, and is the single
-point of contact for the developer. This card explains the seat's flow so an agent onboarding into the
-orchestrator seat gets the job contract without re-deriving it from the transcript; the harness
-specifics live in the `jobs/orchestrator.claude-code.md` overlay.
+point of contact for the developer. It also owns the master-to-super integration duty: consume the
+manager handover packet, check the seam verdict, integrate from a super-sourced orchestrator worktree,
+carry memory through C-11, map the ledger, and release the next ready masters. This card explains the
+seat's flow so an agent onboarding into the orchestrator seat gets the job contract without re-deriving
+it from the transcript; the harness specifics live in the `jobs/orchestrator.claude-code.md` overlay.
 
 ## Code Commentary
 
@@ -61,10 +63,9 @@ The duties spine:
 4. **Dependency-ordered dispatch loop** — for each **ready** master (its deps integrated into super):
    `spawn_agent_session(manager)` with the manager job + master context packet; monitor + steer (turn
    reports · nudges · escalation intake, applying the spirit test to plan deltas that escalate up);
-   receive the master-handover packet (incl. the **master-exit adversarial verdict**); **integrate
-   master → super** in an **orchestrator worktree** with super as source via the
-   `c-11-memory-carryover-from-branch` skill (merge/carry-over, memory single-siding, ledger maps every
-   commit). Loop until the DAG drains.
+   receive the master-handover packet (incl. the **master-exit adversarial verdict**); then run the
+   integration-duty procedure in an **orchestrator worktree** with super as source. Loop until the DAG
+   drains.
 5. **Super-exit seam & developer handover** — spawn the **super-exit adversarial reviewer** over the
    whole super branch, attach its verdict, hand super to the developer for a **whole-behavior review**;
    a rejection decomposes into **fix leaves** (reactive dispatch); on approval super → main PR (remote
@@ -87,6 +88,19 @@ moves are the mechanism for pulling shared logic in front of dependents). **Post
 visible in the returned integration branches → **remediate on the super integration branch worktree**
 (code dedup + memory single-siding at merge time; defer the memory write to the strand that integrates
 second, ideally keeping memory single-sided so no conflict materializes).
+
+**Integration duty — master to super.** The orchestrator treats each completed master as a higher-level
+leaf-to-master edge: consume the manager's handover packet, check the master-exit verdict, open an
+orchestrator worktree sourced from the current super branch, merge/replay the master branch into super
+with the same C-09/C-11 mechanics, carry memory with C-11, keep duplicate-memory conflicts
+single-sided, run memory quality, record the ledger mapping from accumulated master commits to the new
+super memory line, then advance the ready set for downstream masters. The final super-to-main edge
+keeps the same invariant but lands through the PR-gated main tail in `system/git-workflow.md`.
+
+**Sequenced backlog.** Gh-route master finalize/archive and first-class parallel-master reconcile remain
+manual orchestrator duties until the task-doc-tooling leaves
+`260703_task-doc-tooling-repair/08_retire-master-series.md` and
+`260703_task-doc-tooling-repair/09_parallel-master-reconciliation.md` land.
 
 **Self-improvement loop.** The orchestrator is the first seat where self-improvement is meaningful;
 register improvement potential and encountered issues in the durable notes **as you work** and surface
@@ -117,13 +131,17 @@ wrong profile forces a takeover spawn. Streamlining is a proposal — no silent 
 developer-accepted tasks; the portfolio plan gate is one wholesale developer review. The DAG must be
 expressible at master granularity — dispatch is never interleaved at leaf-level cross-deps; instead
 master boundaries are reshaped. A master is dispatched only when its dependencies are integrated into
-super. The **spirit test is orchestrator-only** — within-spirit acts get a decision-log entry,
+super, and downstream masters are released only after the orchestrator records the master-to-super code
+tip, memory tip, and ledger mapping. The **spirit test is orchestrator-only** — within-spirit acts get a decision-log entry,
 against-spirit changes are raised for a joint decision. Conflict resolution has exactly two modes
 (up-front foundation-master extraction vs post-hoc super-branch remediation). Self-improvement is
 **proposals only — no automated self-modification**. Sub-agents write durable reports; **AR state
 mutations stay in the main loop** (the orchestrator is the only mutator). `spawn_agent_session` is the
 L2 spawn tool, **not yet implemented** — treat its references as the contract a dispatch/takeover will
-call. Continuity lives in the durable notes/reports and `task_doc`, never in the transcript.
+call. The 260630-derived master finalize/archive and parallel-master reconcile primitives are not live
+tooling yet; until their task-doc-tooling leaves land, the orchestrator records manual C-09/C-11
+operations in durable notes. Continuity lives in the durable notes/reports and `task_doc`, never in the
+transcript.
 
 ### Todos
 
@@ -145,6 +163,7 @@ coordination leaf; its harness specifics and its integration mechanic live in si
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | This job is the payload the frame selects at the orchestrator seat; the frame owns the contact points and the escalation ladder this seat tops. | L1-L23; L146-L149 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/SKILL.md) |
+| The integration-duty procedure consumes the manager handover packet, checks the verdict, integrates from a super-sourced worktree, carries memory, maps the ledger, and releases the next ready masters. | L92-L123 | [jobs/orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.md) |
 | The Claude Code overlay realizes the sub-agent fan-out (durable reports; AR mutations stay in the main loop) and never restates these duties. | n/a | [jobs/orchestrator.claude-code.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/jobs/orchestrator.claude-code.md) |
 | Master→super and super→main integration is the `c-11-memory-carryover-from-branch` mechanic — the universal integration mechanic at every level. | n/a | [c-11 SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md) |
 | Fan-out sub-agents write into the report-template library the seat consumes (impact analysis, onboarding coherency). | n/a | [templates/impact-analysis.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-02-agent-orchestration/templates/impact-analysis.md) |
@@ -159,6 +178,13 @@ No sibling repository evidence is needed for this repository-local orchestration
 
 ## Update History
 
+- 2026-07-04T13:03+02:00 — 260703-L5 expanded the orchestrator job with its master-to-super
+  integration duty: consume the manager handover packet, check the master-exit verdict, integrate from
+  a super-sourced orchestrator worktree, run C-09/C-11 merge/carry-over, keep duplicate memory
+  single-sided, map the ledger for accumulated master commits, and release the next ready masters only
+  after the super code/memory tips are recorded. It also records the 260630-derived gh-route master
+  finalize/archive and parallel-master reconcile primitives as sequenced manual backlog until their
+  task-doc-tooling leaves land. Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-07-04T11:00+02:00 — Created file-level onboarding for the new `l-02-agent-orchestration` skill's
   orchestrator job (leaf 260703-L1), the portable job the frame houses at the first coordination leaf.
   Captured the seat definition (memory substrate; quality ∝ memory-repo quality), the six-step duties

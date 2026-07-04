@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-04T13:03+02:00 |
+| lastVerifiedCommitHash | `5ab7550b256fe4cd82514b81f455aa9026c0d7de` |
+| lastVerifiedCommitDate | 2026-07-04T13:10:34+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -28,7 +28,11 @@ existing serving primitives (the shared session opener + optional leaf attach wi
 server-arbitrated `leaf-taken` + an echo-confirmed context paste with optional
 submit), injects the model/effort/env role knobs at spawn, and records spawned-by
 provenance — so orchestrators spawn managers and managers spawn workers without
-dashboard clicks. Since L12 every managed
+dashboard clicks. The package-data runtime skill mirror now carries the L5
+super-integration doctrine for orchestrated series: super branches from main,
+masters branch from super, leaves branch from masters, C-11 carries every edge,
+the orchestrator integrates completed masters from a super-sourced worktree, and
+the final super-to-main PR is followed by main-memory carry-over and push. Since L12 every managed
 provider container carries an explicit compose memory cap (watchers 512m,
 falkordb/ollama 2g, runner 1g, postgres 512m) with self-recycling OOM behavior.
 
@@ -402,6 +406,13 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-04T13:03+02:00 — 260703-L5 route model update: the synced
+  `l-02-agent-orchestration` runtime skill mirror now carries the full super integration branch
+  topology (super from main, masters from super, leaves from masters), orchestrator master-to-super
+  worktree integration, C-11 memory carry-over at every edge, ledger mapping, final super-to-main PR +
+  main-memory carry-over + push, and the 260630-derived master finalize/archive plus parallel-master
+  reconcile follow-ups as sequenced manual backlog. Verification metadata pinned until closeout stamps
+  the L5 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: the MCP package now parses
   opt-in `orchestration.gateDelegation`, exposes the gate policy/controlplane
   schema, enforces policy-valid delegated closeout approvals server-side, and
