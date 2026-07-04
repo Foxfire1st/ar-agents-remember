@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-04T13:16+02:00 |
-| lastVerifiedCommitHash | `9f72d7705fa711017ba599ac13a348b927084d3d` |
-| lastVerifiedCommitDate | 2026-07-04T13:22:12+02:00|
+| lastUpdated | 2026-07-04T23:43+02:00 |
+| lastVerifiedCommitHash | `c522779df57ddee8192816d2f2769fdf20d75f3a` |
+| lastVerifiedCommitDate | 2026-07-04T23:51:13+02:00|
 
 > **Status:** active baseline
 
@@ -376,6 +376,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-04T23:43+02:00 — No route impact: L8 fixes the master change-set net diff resolver inside the existing MCP dashboard serving layer; the repo-wide feature inventory and top-level runtime subsystem boundaries are unchanged. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T13:16+02:00 — No route impact: 260703-L6 sharpened existing orchestration skill
   doctrine/templates for the two adversarial seams — master-exit and super-exit reviewer rubrics,
   verdict artifact variants under `notes/reports/`, and `reviewer-verdict` handover gate evidence refs.

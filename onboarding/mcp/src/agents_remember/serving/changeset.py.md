@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-03T12:50+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`     |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T23:43+02:00 |
+| lastVerifiedCommitHash | `c522779df57ddee8192816d2f2769fdf20d75f3a`     |
+| lastVerifiedCommitDate | 2026-07-04T23:51:13+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -57,22 +57,23 @@ commit_text_or_none(root, base, relp)` (the `git show base:path` reader — `Non
 added file) and `after` = the worktree read (`None` for a deleted file); `language` comes
 from `language_for`. The path is confined with `confine_rel`.
 
-`master_changeset(config, repo_id, master)` (L182-L217) is the series **NET** change-set —
+`master_changeset(config, repo_id, master)` is the series **NET** change-set —
 `git diff <master-base> <series-tip>` for code + memory, **not** a sum of the leaves.
 `_load_master_contract` (L129-L143) loads the series (root) contract at
 `tasks/<repo>/<master>/series-contract.md`, with `master` confined to a single path segment
-(no `/` `\` or leading `.`) so a wire value cannot escape the tasks tree. `_net_changed`
-(L146-L154) resolves the live tip with `head_commit(repo, source_branch)` and runs
-`changed_files_with_counts(repo, base, tip)` over the code repo (`code_base_commit` →
-`code_source_branch` tip) and the memory repo; code entries are tagged with `hasSidecar` via
-`route_sidecar_status` on `memory_repo_path/onboarding`. `_master_leaf_summaries` (L157-L179)
+(no `/` `\` or leading `.`) so a wire value cannot escape the tasks tree. `_series_tip`
+resolves the shared series tip for both counters and file view: it uses the contract's
+`code_work_branch` / `memory_work_branch` tip while that branch exists (the in-flight series
+state), then falls back to `code_source_branch` / `memory_source_branch` once the series has
+landed and the work branch has been deleted. `_net_changed` runs
+`changed_files_with_counts(repo, base, resolved_tip)` over the code repo and the memory repo;
+code entries are tagged with `hasSidecar` via `route_sidecar_status` on
+`memory_repo_path/onboarding`. `_master_leaf_summaries` (L157-L179)
 keeps the per-leaf `{leafId, counters}` breakdown alongside (each leaf vs its own base, via
 `_leaf_counts` L112-L126). It degrades to an empty net (never a 500) on a missing contract /
-ref, and reflects the **committed/landed** series — an in-flight leaf not yet integrated is
-in `leaves` but not the net. `master_file_diff(config, repo_id, master, kind, rel)`
-(L220-L249) makes every net-changed file inspectable: BEFORE = `commit_text_or_none(repo,
-master_base, relp)`, AFTER = `commit_text_or_none(repo, series_tip, relp)` (both committed
-refs).
+ref. `master_file_diff(config, repo_id, master, kind, rel)` makes every net-changed file
+inspectable against the same resolved tip: BEFORE = `commit_text_or_none(repo, master_base,
+relp)`, AFTER = `commit_text_or_none(repo, resolved_series_tip, relp)` (both committed refs).
 
 `leaf_changeset(config, repo_id, master, leaf, mode)` + `leaf_file_diff(...)` are the L4a
 doc-reader leaf views. `_load_leaf_contract` resolves the leaf enclosure contract by
@@ -109,8 +110,9 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 - **The master is the NET series diff** — `git diff <master-base> <series-tip>`, one
   coherent range that is per-file inspectable (via `master_file_diff`) and does not
   double-count a file two leaves touched; the per-leaf `leaves[]` counter breakdown is kept
-  alongside. It reflects the committed/landed series (an un-integrated in-flight leaf is in
-  `leaves` but not the net).
+  alongside. The resolved series tip is the work-branch tip for an in-flight series and the
+  source-branch tip only after the work branch is absent, so counters and file content stay
+  aligned before and after landing.
 - **Leaf views are contract-resolved, not enclosure-bound** (L4a) — `committed` and `working`
   resolve by leaf-id from the persisted enclosure contract, so the change-set is reviewable from
   the doc reader with **no live worktree** (`committed` works for a completed/cleaned leaf;
@@ -123,7 +125,7 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | Finding | Source Path |
 | --- | --- |
 | The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
-| The change-set primitive (counts/status, keeps deletions) + the BEFORE reader. | [worktrees/modules/git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
+| The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | [worktrees/modules/git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
 | The sidecar-pairing helpers (`route_sidecar_status`, `confine_rel`) reused for `hasSidecar` + confinement. | [kernel/sidecar_pairing.py](agents-remember/mcp/src/agents_remember/kernel/sidecar_pairing.py) |
 | The leaf-enclosure contract enumerator + `WorktreeContract`/`load_contract` for master accumulation. | [worktrees/task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
 | The app factory that calls `register_changeset_routes` before `mount_static`. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
@@ -131,6 +133,7 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 
 ## Update History
 
+- 2026-07-04T23:43+02:00 — L8 content update: master series net diffs now resolve a shared series tip through the work branch while it exists, falling back to the source branch after landing/deletion; `master_changeset` counters and `master_file_diff` BEFORE/AFTER content use the same resolved code/memory tip. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-03T12:50+02:00 — No content impact: L15 replaced the `live` boolean alias with visible `worktree is None` narrowing in the change-set file listing and file-diff functions so pyright proves the Optional[Path] uses; behavior identical (same guards, same fallbacks).
 - 2026-06-29T23:00+02:00 — L4a: doc-reader leaf views. Adds `leaf_changeset` + `leaf_file_diff`
   (resolved by leaf-id via `_load_leaf_contract`, which persists past cleanup), `_leaf_range`
