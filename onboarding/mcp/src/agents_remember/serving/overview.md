@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-03T12:57+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6`       |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00 |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`       |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -36,7 +36,13 @@ hydrates the UI after refresh, the opener creates detached tmux sessions, each W
 tmux client only after a tmux probe, and explicit terminate kills tmux and hides the row from normal
 lists. L9 adds `terminal_leaf_assignment.py`, the shared catalog move policy used by both
 `POST /api/terminal/{session}/attach-leaf` and the agent-facing MCP tool so hosted chats can move between
-durable leaves without respawn. Run via
+durable leaves without respawn. L2 (agent-facing dispatch) adds `terminal_opener.py` — the shared
+hosted-session **opener** (leaf claim + env-seeded tmux ensure + catalog upsert) that both the
+`POST /api/terminal/{session}` route and the agent-facing `spawn_agent_session` MCP tool compose over so
+there is **no parallel spawn path** — and `terminal_paste.py`, the server-side echo-confirmed stdin paste
+that backs the new `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery. `terminal.py`
+gains an `env` knob-injection seam (`tmux new-session -e KEY=VALUE`) and `terminal_catalog.py` gains
+spawned-by provenance columns for the orchestration tree. Run via
 `agents-remember dashboard` (the `cli/` umbrella); `--sim` replays a recorded fixture
 through the byte-identical path.
 
@@ -89,15 +95,19 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   `POST /api/operator-inbox/{entry_id}/dismiss` (task 23/24 — physically delete a pending inbox entry
   for dismissible `check chat` warnings), the
   `POST /api/terminal/{session}` **opener**
-  (6e-2a/6e-2b — `resolve_terminal_launch(kind, harness)` → `host.ensure` creates a detached shell or
-  detected harness tmux session at `config.workspace_root`; server-resolved, never on the wire — the
-  opener also passes `suspend_unsafe=(kind=="harness")` so later host writes strip Ctrl-Z for bare-pane
-  harnesses, slice 6f, and persists a `TerminalCatalogEntry` carrying
-  label/lifecycle/cwd/tmux/command/status without opening a starter PTY client; **slice L5** the opener
-  also takes a `leafKey`, claims the leaf via `_claim_leaf_or_409(…, role=role_for_kind(kind))` before the
-  spawn — `409 leaf-taken` only when a different running session **of the same role** owns it (uniqueness
-  is per (leaf, role), so a terminal never collides with the leaf's chat) — persists `leaf_key` (preserving
-  an existing binding when none is sent), and echoes `leafKey`),
+  (6e-2a/6e-2b; **since L2** the leaf-claim + `host.ensure` + catalog-upsert composition delegates to the
+  shared `terminal_opener.open_terminal_session` — `resolve_terminal_launch` / `_terminal_label` / the
+  role-scoped conflict check all left `app.py` for that module — so this route and the `spawn_agent_session`
+  MCP tool spawn through ONE opener; the route maps `bad-kind`→400 / `leaf-taken`→409 / `opened`→200.
+  Server-resolved harness id, never on the wire; the opener passes `suspend_unsafe=(kind=="harness")` so
+  later host writes strip Ctrl-Z for bare-pane harnesses, slice 6f, and persists a `TerminalCatalogEntry`
+  carrying label/lifecycle/cwd/tmux/command/status/leafKey + L2 spawned-by provenance without opening a
+  starter PTY client; **slice L5** uniqueness is per (leaf, role) so a terminal never collides with the
+  leaf's chat, and the `leafKey` is persisted (preserving an existing binding when none is sent) and
+  echoed),
+  `POST /api/terminal/{session}/paste` (**L2** — server-side echo-confirmed context-packet delivery to a
+  hosted session with no attached browser client, over `terminal_paste.TerminalPaster`; 404 on
+  unknown/gone session, else `{delivered, submitted}`),
   `POST /api/terminal/{session}/attach-leaf` (**slice L5/L9** — claim or move a leaf for an existing
   session, enclosure-free / no respawn; delegates to `terminal_leaf_assignment.assign_terminal_session_to_leaf`,
   returning `404 unknown-session`, `409 leaf-taken` without mutation, or `200 attached`), `GET
@@ -196,7 +206,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   Task 22 adds injectable tmux probe/create/kill hooks, `has_session`, `ensure`, `terminate`, and
   unregistered per-connection `attach` clients so the durable catalog can create a detached tmux
   session, prove it still exists before attach, kill one explicitly, and serve multiple browser tabs
-  without sharing one PTY fd. The reopened L6 wheel fix adds the injectable `TmuxConfigurer` seam
+  without sharing one PTY fd. **L2** threads an optional `env: Mapping[str, str]` through
+  `ensure`/`open`/`_build_tmux_command` (`_tmux_create_detached` emits `tmux new-session -e KEY=VALUE`
+  via the pure `_env_flags`), seeded only at creation and inert on re-attach — the minimal
+  env-passthrough seam the agent-facing spawn tool injects role knobs through (empty-safe: an empty
+  mapping keeps the byte-identical legacy argv). The reopened L6 wheel fix adds the injectable `TmuxConfigurer` seam
   (default: per-session `tmux set-option mouse on`, failures suppressed), asserted by `ensure` and
   every `attach`, so browser wheel input reaches tmux as mouse reports — tmux scrolls pane history for
   normal-buffer TUIs and passes wheel through to mouse-aware ones (pane text selection becomes
@@ -208,8 +222,10 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   dep landed in 6d-2; the xterm.js viewport is 6e.
 - `terminal_catalog.py` — the durable dashboard terminal-session catalog (task 22): immutable
   `TerminalCatalogEntry` rows plus a JSON store under `logs/dashboard/terminal-sessions.json`. It
-  persists id, label, kind, optional harness/lifecycle, cwd, tmux name, command, timestamps, status, and
-  (**slice L5**) an optional `leaf_key`; normal `list()` keeps exited rows visible and filters terminated
+  persists id, label, kind, optional harness/lifecycle, cwd, tmux name, command, timestamps, status,
+  (**slice L5**) an optional `leaf_key`, and (**L2**) optional spawned-by provenance
+  (`spawned_by_session` / `spawned_by_lifecycle`, written migration-safe only when set; the copiers now
+  use `dataclasses.replace` so a new column survives a re-attach); normal `list()` keeps exited rows visible and filters terminated
   rows, while `include_terminated=True`
   is available for audits. Explicit termination wins over later passive exit bookkeeping so an `End`
   action cannot reappear after refresh as an `exited` row. **Slice L5** makes the catalog the
@@ -222,6 +238,22 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 - `terminal_leaf_assignment.py` — the shared L9 catalog reassignment helper: moves an existing catalog row
   to a new durable `leafKey`, returns `leaf-taken` without mutation when another running same-role session
   owns the target leaf, and is reused by the dashboard route and MCP tool.
+- `terminal_opener.py` — the shared **L2 hosted-session opener**: `open_terminal_session(...)` resolves
+  the launch (`resolve_terminal_launch` — a harness **id** to its fixed argv, moved here from `app.py`),
+  claims `leaf_key` under the role-scoped per-(leaf, role) uniqueness rule **before** any spawn (a taken
+  leaf returns `leaf-taken` without ensuring tmux or mutating the catalog), seeds `env` at
+  `TerminalHost.ensure` (the L2 knob-injection seam), and upserts a durable `TerminalCatalogEntry`
+  carrying write-once spawned-by provenance. Transport-agnostic (`OpenTerminalResult` → HTTP 200/409/400
+  in `app.py`, a validated payload in the MCP tool). The ONE opener both the dashboard `POST
+  /api/terminal/{session}` route and the agent-facing `spawn_agent_session` tool compose — no parallel
+  spawn path.
+- `terminal_paste.py` — the **L2 server-side echo-confirmed paste**: `TerminalPaster.paste(tmux_name,
+  text, submit=…)` mirrors the frontend `pasteAndConfirm`/`submitAndConfirm` over tmux primitives
+  (`set-buffer` + `paste-buffer -p` + `capture-pane` before/after echo confirmation, `send-keys Enter`
+  on submit), re-pasting across the harness boot window because a booting harness discards stdin. Every
+  tmux op + the clock are injectable so the loop is fake-driven and sleepless in tests. Never submits an
+  unconfirmed paste; never raises on a gone session. Backs the `spawn_agent_session` context delivery and
+  the `POST /api/terminal/{session}/paste` endpoint.
 - `harnesses.py` — the **harness launch registry** (slice 6e-2b): the curated `HARNESSES` set (Claude
   Code / Codex / Pi.dev) + `find_harness` / `is_detected` / `detect_harnesses` (injectable, call-time
   `shutil.which`). The data behind `GET /api/harnesses` detection + the `kind="harness"` opener
@@ -271,6 +303,17 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — agent-orchestration L2 route impact: the route gains `terminal_opener.py`
+  (the shared hosted-session opener extracted from `app.py`'s inline opener handler — leaf claim +
+  env-seeded tmux ensure + catalog upsert; `resolve_terminal_launch`/`_terminal_label`/the role-scoped
+  conflict check moved here) and `terminal_paste.py` (the server-side echo-confirmed stdin paste mirror
+  of the frontend). `app.py`'s `POST /api/terminal/{session}` opener now delegates to the shared opener
+  (so it and the `spawn_agent_session` MCP tool share ONE spawn path) and gains `POST
+  /api/terminal/{session}/paste` + a `terminal_paster` `create_app` param; `terminal.py` gains the `env`
+  knob-injection seam (`tmux new-session -e`); `terminal_catalog.py` gains spawned-by provenance columns
+  (via `dataclasses.replace` copiers). Covered by `test_terminal_opener.py`, `test_terminal_paste.py`,
+  `test_spawn_agent_session.py`. Verification metadata pinned until closeout stamps the L2 commit.
+  (Distinct from the 260703-L2 daemon-supervision entry below.)
 - 2026-07-03T12:57+02:00 — 260703 L2 route impact: the route gains `daemon.py` — the dashboard
   daemon supervisor (flock-guarded ensure: adopt/spawn/restart-on-mismatch; atomic `daemon.json`;
   identity-checked liveness; TERM→KILL stop; the threaded `maybe_autostart_dashboard` MCP boot

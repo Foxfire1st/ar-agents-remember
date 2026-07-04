@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                      |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00 |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`                                      |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -38,7 +38,9 @@ domain submodule that owns the tool. Task 25 makes `lifecycle_gate_payload` the
 public agent-facing gate junction; split gate/block/wait builders remain exported
 for internal compatibility and tests but are not registered as public MCP tools. L9 adds the
 `terminal.py` submodule and public `attach_terminal_session_to_leaf` builder, an agent-facing wrapper over
-the dashboard terminal catalog move policy.
+the dashboard terminal catalog move policy. L2 adds the public `spawn_agent_session` builder to that same
+submodule — the agent-facing dispatch tool that composes the shared serving opener + an echo-confirmed
+context paste to create a role-configured, leaf-attached, context-primed hosted session.
 
 ## Layout
 
@@ -56,7 +58,7 @@ the dashboard terminal catalog move policy.
 | `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (create/set_status/set_step/set_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` controller. |
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response), public `gate_decide`/`gate_list` builders, lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
 | `operator_inbox.py` | the three `operator_inbox_*` external-chat builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10). |
-| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder, config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment` and returning `attached` / `leaf-taken` / `unknown-session` through the strict response model. |
+| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session`) AND the L2 `spawn_agent_session_payload` dispatch builder — it validates the harness against detection, composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure) then a `serving.terminal_paste.TerminalPaster` echo-confirmed context paste, records spawned-by provenance, and returns `spawned` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `bad-kind` through the strict response model. |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
 Since 2.5.1 this route also owns the response token-budget layer: the verbose
@@ -106,6 +108,12 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2 route impact: the `terminal.py` submodule gains the public
+  `spawn_agent_session_payload` dispatch builder beside `attach_terminal_session_to_leaf_payload`;
+  `base.py`'s `PUBLIC_TOOLS`, the facade, `server.py`, and `models/tool_registry.py` now
+  expose/validate the agent-facing session-spawn path. It composes the shared serving opener +
+  echo-confirmed paste (durable behavior stays in `serving/`; this builder stays transport-thin).
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-03T00:35+02:00 — L11 route impact: task_doc.py hosts task_reopen_payload; base.py advertises task_reopen next to task_doc.
 - 2026-07-02T17:04+02:00 — L9 route impact: added the `terminal.py` tools submodule and public
   `attach_terminal_session_to_leaf` tool. `base.py`, the facade, `server.py`, and `models/tool_registry.py`

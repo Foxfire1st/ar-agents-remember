@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-06-30                                              |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`              |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00                                  |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`              |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -29,14 +29,20 @@ the launch kind (`terminal` or `harness`), optional harness id and lifecycle id,
 name, fixed command argv, creation and last-attach timestamps, status (`running`, `exited`, or
 `terminated`), optional termination timestamp, and (slice L5) an optional `leaf_key` — the durable
 leaf-identity key (qualified leaf id `repo/master/leaf-id`) the catalog uses as the **leaf→chat
-registry** key; it is opaque to the backend. `from_json`/`to_json` translate between Python
-snake_case and the dashboard API's camelCase fields. `to_json` writes `leafKey` **only when set** (like
-`harness` / `lifecycleId` / `terminatedAt`), so legacy rows with no `leafKey` read back as `None` — no
-schema bump, migration-safe. `with_attachment` restores a row to `running`,
+registry** key; it is opaque to the backend. Since **L2** the row also carries **spawned-by
+provenance** — `spawned_by_session` + `spawned_by_lifecycle`, set when the row was created by the
+`spawn_agent_session` tool (an orchestrator spawning a manager, a manager spawning a worker). `from_json`/`to_json` translate between Python
+snake_case and the dashboard API's camelCase fields. `to_json` writes `leafKey` / `spawnedBySession` /
+`spawnedByLifecycle` **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
+with no such key read back as `None` — no schema bump, migration-safe, the SAME pattern for all optional
+columns; the dashboard reads the spawned-by pair to render the orchestration tree (spawner → spawned
+edges) once that surface lands. `with_attachment` restores a row to `running`,
 refreshes `lastAttachedAt`, and clears `terminatedAt`; `with_status` changes status and records
-`terminatedAt` only for explicit termination — both thread `leaf_key` through unchanged. `with_leaf_key(leaf_key)`
-(a `dataclasses.replace`) is the leaf-attach write point: a copy bound to `leaf_key`, or unbound when
-`None`.
+`terminatedAt` only for explicit termination. **L2** rewrote all three copiers
+(`with_attachment` / `with_status` / `with_leaf_key`) to use `dataclasses.replace(self, …)` instead of
+field-by-field reconstruction, so a newly added column (like the spawned-by pair) is preserved through a
+re-attach/status change **by construction** rather than silently dropped. `with_leaf_key(leaf_key)` is
+the leaf-attach write point: a copy bound to `leaf_key`, or unbound when `None`.
 
 The **leaf-uniqueness role** (L5 fix 2) splits one slot into two: `TerminalSessionRole = "chat" |
 "terminal"`, `role_for_kind(kind)` maps a shell (`kind == "terminal"`) to `"terminal"` and any harness to
@@ -116,6 +122,13 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2 (agent-orchestration provenance): `TerminalCatalogEntry` gained optional
+  `spawned_by_session` + `spawned_by_lifecycle` columns (the spawning session/lifecycle when the
+  `spawn_agent_session` tool created the row) — `to_json`/`from_json` handle them migration-safe (written
+  only when set), and `with_attachment`/`with_status`/`with_leaf_key` were rewritten to
+  `dataclasses.replace(self, …)` so the new columns (and any future one) survive a re-attach/status change
+  by construction. The dashboard reads the pair for the orchestration tree. Verification metadata pinned
+  until closeout stamps the L2 commit.
 - 2026-06-30T00:00:00+02:00 — L5 follow-up: leaf uniqueness is now per **(leaf, role)**. Added `TerminalSessionRole`
   (`chat`|`terminal`), `role_for_kind(kind)` (a shell ⇒ terminal, a harness ⇒ chat), and the `entry.role`
   property; `active_for_leaf` gained a `role` kwarg (default `"chat"`) so it probes the chat slot and the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T11:45+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-04T11:10+02:00 |
+| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af` |
+| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,6 +20,11 @@ L9 registers `attach_terminal_session_to_leaf(session_id, leaf_key)` after `read
 agent-facing hosted chat reassignment path: it forwards to `attach_terminal_session_to_leaf_payload`,
 reuses the dashboard terminal catalog's role-scoped leaf uniqueness rules, and returns
 `attached`/`leaf-taken`/`unknown-session` without spawning a session or requiring a worktree enclosure.
+L2 registers `spawn_agent_session(harness, leaf_key?, context?, submit, label?, model?, effort?, env?,
+spawned_by_session?, spawned_by_lifecycle?, kind)` right after attach: the agent-facing **dispatch**
+path that CREATES a role-configured, leaf-attached, context-primed hosted session by composing the
+existing serving primitives (opener + leaf claim + echo-confirmed paste), forwarding to
+`spawn_agent_session_payload`.
 
 ## Code Commentary
 
@@ -244,6 +249,14 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 
 ## Update History
 
+- 2026-07-04T11:10+02:00 — L2 (agent-orchestration spawn-dispatch): registered
+  `spawn_agent_session(harness, leaf_key?, context?, submit, label?, model?, effort?, env?,
+  spawned_by_session?, spawned_by_lifecycle?, kind)` after `attach_terminal_session_to_leaf`,
+  forwarding to `spawn_agent_session_payload`. Its docstring states it composes the existing session
+  primitives (serving opener + optional leaf attach with server-arbitrated `leaf-taken` + echo-confirmed
+  context paste with optional submit), injects the model/effort/env knobs at spawn, and records
+  spawned-by provenance. Registration/forwarding only. Verification metadata pinned until closeout stamps
+  the L2 commit. (Distinct from the 260703-L2 daemon-supervision entry below.)
 - 2026-07-03T11:45+02:00 — 260703 L2: `main()` calls `maybe_autostart_dashboard(config)` between
   `load_config` and `run_server` — threaded, total, stderr-only dashboard daemon supervision
   gated by the `dashboard.autoStart` settings key. Verification metadata pinned until closeout
