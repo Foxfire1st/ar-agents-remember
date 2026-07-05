@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T04:40+02:00 |
-| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
-| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
+| lastUpdated            | 2026-07-05T16:20+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 
 ## Purpose
 
@@ -21,6 +21,8 @@ Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/designe
 
 As of the L8 de-harnessing pass the overlay-authoring sentence is gone: no per-harness designer files; the hat is fully portable.
 
+As of cycle 4 the knob footer resolution reads role-file defaults < settings (dead variant rung removed).
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -31,6 +33,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): knob footer variant rung removed. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: overlay-authoring sentence removed (no per-harness files). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:15+02:00 - L8 orchestrator routes rework: re-framed from seat to hat (worn by the orchestrator, inline, mid-flight valid; separate chair = logistics); body rewritten accordingly. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed to roles/ under the unified skill; new duty: decision-needing questions land in the task doc's openQuestions (the rendered decision surface), notes/ carries the analysis. Verification metadata pinned until closeout stamps the L9 commit.

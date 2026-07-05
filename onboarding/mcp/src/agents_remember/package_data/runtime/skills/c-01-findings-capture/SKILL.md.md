@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`         |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-05T16:30+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`         |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 
 ## Purpose
 
@@ -67,6 +67,8 @@ This onboarding is backed by the skill entrypoint and its companion workflow.
 
 As of the 260703-L9 lifecycle convergence, the task-workflow trigger names an `l-01-agent-lifecycles` orchestrator build job (the retired session-job skill name is gone); the capture workflow itself is unchanged.
 
+As of the 260703-L8 remediation the trigger names an orchestrator build phase (the retired 'build job' vocabulary is gone).
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this package skill.
@@ -77,6 +79,7 @@ No sibling repository evidence is needed for this package skill.
 
 ## Update History
 
+- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): retired build-job vocabulary removed. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the task-workflow reference now names the l-01-agent-lifecycles orchestrator build job. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-02T04:25+02:00: Redirected the Operating Modes "inside a heavy-task-workflow task" reference to an L-01 build job or W-02 task (incl. master + light sub-task series) after W-01 retirement; behavior unchanged. L-01 series, Sub-task B/S6, mcp 1.1.0.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.

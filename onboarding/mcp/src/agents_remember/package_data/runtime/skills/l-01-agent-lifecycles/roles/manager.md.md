@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T04:40+02:00 |
-| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
-| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
+| lastUpdated            | 2026-07-05T16:20+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 
 ## Purpose
 
@@ -89,6 +89,8 @@ As of the 260703-L8 reopened pass the file carries two additions: a flat-run not
 
 As of the L8 de-harnessing pass the overlay-authoring sentence is gone and the knob harness row is a preference settings overrides: no per-harness manager files.
 
+As of cycle 4 the master-exit procedure is operable as-built: the manager RAISES the `master-handover-approval` gate (delegable, never human-pinned) with the verdict attached as evidenceRefs, and the ORCHESTRATOR decides it — identity mechanics stated (raiser = the manager's ambient lifecycle; the deciding orchestrator's ambient identity becomes decidedBy; owner-never-self-approves holds; no ids handled). The leaf loop now names the human-pinned kinds (integration-approval, push-approval, cleanup-approval) and marks the integrate step's durable-gate behavior; reviewer spawns state AR_SPAWN_ROLE=reviewer; finalize wording is honest (statuses via the tool, steps by hand); the knob footer resolution is role-file defaults < settings.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration job file.
@@ -99,6 +101,7 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): master-exit seam made operable (raise-with-verdict -> orchestrator decides); human-pinned kinds enumerated at the integrate step; reviewer spawn value stated. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: overlay-authoring sentence removed (no per-harness files). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:15+02:00 - L8 orchestrator routes rework: flat-run note added (in a flat series the orchestrator wears this hat) and the leaf-review bullet gained the reopen-and-reshape rule (task_reopen a wrong deliverable, never a redo sibling). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: the manager now owns the leaf lifecycle END-TO-END (worker closeout stripped; worktree_start -> closeout/gates -> integrate -> finalize incl. task-doc steps); master-exit reviewer spawn procedure inlined; gate policy described as-built; briefs compiled from templates/worker-brief.md with AR_SPAWN_ROLE + the qualified leaf key. Verification metadata pinned until closeout stamps the L9 commit.

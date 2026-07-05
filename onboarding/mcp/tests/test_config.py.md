@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-05T16:30+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -63,8 +63,11 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 
 Config/schema tests now assert the public tool surface includes `parent_task` and `leaf_id` where task-name based leaf resolution is supported.
 
+As of the 260703-L8 seam ruling the orchestration settings tests prove the parse path consumes requireReviewerVerdictAtSeams (the delegated handover rule comes back verdict-bound; non-seam rules untouched).
+
 ## Update History
 
+- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): at-seams parse-path consumption test added. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: added
   `OrchestrationSettingsTests` for gate-delegation defaults, named/custom
   policies, reviewer-verdict requirements, and invalid delegation rejection.

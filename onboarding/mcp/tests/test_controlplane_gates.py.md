@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T12:32+02:00                      |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`       |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-05T16:30+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`       |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -77,8 +77,11 @@ approvals according to `GatePolicy`.
 | The closeout enforcement helpers under test (slice 6b). | [worktrees/modules/closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
 | The conformance suite that also covers the gate tools. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 
+As of the 260703-L8 seam ruling the suite carries MasterHandoverSeamTests: delegability to the orchestrator, the named-policy routing, human-pinned kinds staying pinned, apply_seam_verdict_requirement binding only delegated seam rules, verdict-evidence refusal/acceptance on a delegated handover decision, and owner-never-self-approves on the handover kind.
+
 ## Update History
 
+- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): MasterHandoverSeamTests added (6 tests). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: added coverage for delegated
   orchestration attribution, no owner self-approval, reviewer-verdict evidence
   requirements, projection evidence refs, and policy-aware closeout enforcement.

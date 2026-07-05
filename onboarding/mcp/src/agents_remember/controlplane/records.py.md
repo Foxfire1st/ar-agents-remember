@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-04T12:32+02:00                             |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`         |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-05T16:30+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`         |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -71,8 +71,11 @@ advance). All helpers are pure.
 | The append-only store that serializes and folds these snapshots. | [store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
 | Ids come from the local ULID mint. | [observer/ulid.py](agents-remember/mcp/src/agents_remember/observer/ulid.py) |
 
+As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handover-approval`: the master-exit seam gate the manager raises with the reviewer verdict attached and the orchestrator decides (delegable, never human-pinned — human review concentrates at the super gate).
+
 ## Update History
 
+- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): GateKind gains master-handover-approval (the ruled master-exit seam gate). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: added orchestration attribution
   (`decidedVia="orchestration"`, `decidingRole`) and append-only
   `GateEvidenceRef` / `evidenceRefs` so delegated gate decisions can cite
