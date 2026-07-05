@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-04T12:32+02:00                      |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`     |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a`     |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -29,7 +29,7 @@ than lifecycle-scoped. These rows are throwaway interaction data, not durable ta
 
 ## Hot Path Summary
 
-A gate is publicly opened for agent workflow through `lifecycle_gate`, which
+A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `GateStore.find` giving deciders cross-lifecycle resolution by gate id), which
 creates the `GateRecord`, blocks the ambient lifecycle with the ask, and
 keeps the public tool call waiting until the gate is decided or a gate-specific inbox response exists.
 Decisions (`gate_decide`) and listing
@@ -132,6 +132,7 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-05T18:24+02:00 — 260703-L8 route impact (cycle 5, small): `GateStore.find` resolves a gate id across the workspace and every lifecycle log — the packet-carried-id decide path. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:32+02:00 — 260703-L8 route impact (small): GateKind gains `master-handover-approval` (delegable master-exit seam gate; the named policy routes it to the orchestrator) and gate_policy gains SEAM_GATE_KINDS + `apply_seam_verdict_requirement` — the requireReviewerVerdictAtSeams wiring. Enforcement paths otherwise unchanged. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:32+02:00 — No route impact: orchestration_artifacts `template_path` root renamed with the unified skill folder (`l-01-agent-lifecycles`); resolution logic and the route model are unchanged (260703-L9).
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: added the

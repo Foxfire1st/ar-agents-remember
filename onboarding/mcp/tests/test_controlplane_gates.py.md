@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-05T16:30+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`       |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-05T18:20+02:00 |
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a`       |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -79,8 +79,11 @@ approvals according to `GatePolicy`.
 
 As of the 260703-L8 seam ruling the suite carries MasterHandoverSeamTests: delegability to the orchestrator, the named-policy routing, human-pinned kinds staying pinned, apply_seam_verdict_requirement binding only delegated seam rules, verdict-evidence refusal/acceptance on a delegated handover decision, and owner-never-self-approves on the handover kind.
 
+As of cycle 5 SeamChannelTests exercises the seam end-to-end at the payload layer: wait=false raise (and its refusal for undelegated kinds), cross-lifecycle decide by packet-carried gate id with orchestration attribution, verdict-evidence requirement, cli refusal on delegated kinds, raiser cancel, and evaluate_gate over the handover kind.
+
 ## Update History
 
+- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): SeamChannelTests added (7 tests). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): MasterHandoverSeamTests added (6 tests). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: added coverage for delegated
   orchestration attribution, no owner self-approval, reviewer-verdict evidence

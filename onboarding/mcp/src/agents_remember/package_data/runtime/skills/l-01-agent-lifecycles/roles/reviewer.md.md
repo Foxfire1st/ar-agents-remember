@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T16:20+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-05T18:20+02:00 |
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 
 ## Purpose
 
@@ -94,6 +94,8 @@ As of the L8 de-harnessing pass the overlay-authoring sentence is gone and the k
 
 As of cycle 4 the file is `roles/reviewer.md` (renamed from adversarial-reviewer.md to match the server role vocabulary and the spawn value `AR_SPAWN_ROLE=reviewer`), and its header states the ruled deciders: the ORCHESTRATOR decides master-exit via the delegable `master-handover-approval` gate kind, the DEVELOPER decides super-exit; `requireReviewerVerdictAtSeams` binds delegated seam decisions to attached verdict evidence.
 
+As of cycle 5: settings key is orchestration.roles.reviewer; the super-exit scope packet says 'against its base (main)' instead of spear jargon; the knob tools row gains the inbox.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration job file.
@@ -104,6 +106,7 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): settings key is orchestration.roles.reviewer. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): renamed to reviewer.md (server vocabulary + spawn value); deciders ruled (orchestrator@master-exit, developer@super-exit); L4-policy shorthand replaced with the as-built citation. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: overlay-authoring sentence removed (no per-harness files). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed to roles/ under the unified skill; self-contained header (brief = session start); template references now ../templates/. Verification metadata pinned until closeout stamps the L9 commit.
