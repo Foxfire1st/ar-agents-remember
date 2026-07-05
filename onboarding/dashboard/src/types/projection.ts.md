@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T12:31+02:00                           |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-06T03:00+02:00                           |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -68,10 +68,14 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 
 ## Series-Contract Notes
 
-`EnclosureNode` separates leaf contract identity (`enclosureId` / `leafId`) from the containing `taskRoot`, which lets dashboard views handle root series tasks and leaf worktrees without deriving paths client-side.
+`EnclosureNode` separates leaf contract identity (`enclosureId` / `leafId`) from the containing `taskRoot`, which lets dashboard views handle root series tasks and leaf worktrees without deriving paths client-side. 260703-L11 adds the required `codeWorktreeExists` / `memoryWorktreeExists` booleans — the server-stat'ed worktree-existence truth (always on the wire: bool defaults are never `exclude_none`-dropped) that `hasLiveWorktree` filters tasks-surface visibility on, replacing every client-side cleanup-state proxy; `cleanup: reopened` means contract-reset-awaiting-restart, not live work.
 
 ## Update History
 
+- 2026-07-06T03:00+02:00 — 260703-L11: mirrored the new required
+  `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` existence-truth flags (stat'ed server-side
+  at snapshot time; the tasks-surface visibility rule). Verification metadata pinned until closeout
+  stamps the L11 commit.
 - 2026-07-04T12:31+02:00 - L3: mirrored the expanded `AgentPickupNode`
   metadata for agent-to-agent inbox delivery state. Verification metadata pinned
   until closeout stamps the L3 commit.

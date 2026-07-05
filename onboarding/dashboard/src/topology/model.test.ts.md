@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `dashboard/src/topology/model.test.ts`      |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-06-23T21:46+02:00                      |
-| lastVerifiedCommitHash |                                             `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                             2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-06T03:20+02:00                      |
+| lastVerifiedCommitHash |                                             `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`|
+| lastVerifiedCommitDate |                                             2026-07-06T01:49:54+02:00|
 | governingOverview      | `../overview.md`                            |
 
 ## Governing Overview
@@ -78,12 +78,16 @@ No meaningful cross-repo references found. The test covers same-repository front
 
 ## Series-Contract Notes
 
-Topology tests construct `EnclosureNode` fixtures with the new `enclosureId`, `leafId`, and `taskRoot` fields so provider-parenting expectations run against the current projection shape.
+Topology tests construct `EnclosureNode` fixtures with the new `enclosureId`, `leafId`, and `taskRoot` fields so provider-parenting expectations run against the current projection shape. Since 260703-L11 the fixture also carries the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` (defaulted `true`); the Topology itself keeps filtering on `activeWorktreeGroups`, not on these flags.
 
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-07-06T03:20+02:00 — 260703-L11: the `enclosure(...)` fixture defaults the new required
+  `codeWorktreeExists`/`memoryWorktreeExists` flags to `true`, matching the projection contract; no
+  assertion change — topology admission still keys on `activeWorktreeGroups`. Verification metadata
+  pinned until closeout stamps the L11 commit.
 - 2026-06-28T07:30+02:00 — Task 33: added an `activeTopologyInputs` describe (active-only inclusion,
   terminal/orphan exclusion), a lifecycle-fold test (enclosure node carries id/status/sub, no task-kind
   node), and a path-vs-basename provider-join test; added a `lifecycle()` fixture factory. Verification

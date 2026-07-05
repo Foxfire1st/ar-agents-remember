@@ -106,6 +106,7 @@ together.
 
 ## Update History
 
+- 2026-07-06T03:30+02:00 — No route impact: 260703-L11 (tasks tab shows worktree truth) reviewed `reopen.py`'s `cleanup: reopened` semantics as the projection's documented meaning (contract-reset-awaiting-restart); no file in this route changed — the existence flags live in the observer route.
 - 2026-07-03T00:35+02:00 — L11 route impact: `reopen.py` and `leaf_doc.py` join the route — reopening is a TASK operation (contract + doc reset; worktree recreation stays with worktree_start), and the doc-to-lifecycle binding is explicit-restamp, never heuristic.
 - 2026-06-29T21:24+02:00 — No route impact: `document.py` gained a comment noting `DocKind`'s `light` is
   retained only for legacy load-compat (the `task_doc` controller refuses to author new `light` docs); the

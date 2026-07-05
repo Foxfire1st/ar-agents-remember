@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T12:32+02:00                           |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`       |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-06T02:05+02:00                           |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -46,7 +46,19 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
   `evidenceRefs`, passed through from the gate record so clients can see
   reviewer-verdict artifact references even before dedicated gate-responder polish lands.
 - `EnclosureNode` — a worktree enclosure (contract + group), cross-referenced to
-  its lifecycle by `lifecycleId` (`""` for a legacy contract).
+  its lifecycle by `lifecycleId` (`""` for a legacy contract). L11 adds the
+  worktree-existence truth `codeWorktreeExists` / `memoryWorktreeExists` (default
+  `False`): stat'ed in the I/O layer at snapshot time
+  (`snapshots._enclosure_from_contract`), matching how `worktree_status` reports
+  existence (`contract.code_worktree.exists()`;
+  `memory_worktree.exists()`/`False` when the contract has no memory worktree).
+  The tasks surface (Hangar + LifecycleList) filters visibility on these flags,
+  never on a cleanup-state proxy. Reopened-state semantics: `cleanup: reopened`
+  (written by `task_reopen`) means contract-reset-awaiting-restart — the leaf's
+  worktrees are gone until the next `worktree_start` recreates them — NOT live
+  work, and NOT archived like `completed`/`abandoned` (the leaf is coming back);
+  the node still projects so clients can see the reset, but both existence flags
+  read `False` until restart.
 - `ProviderNode` — a provider current-state snapshot with `snapshotStaleSeconds`
   (the snapshot is call-triggered, so its age is surfaced, never faked as live).
   Workspace provider nodes may be aggregate or repo-covered (`repoId`) when backend
@@ -244,6 +256,12 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
 
 ## Update History
 
+- 2026-07-06T02:05+02:00 — 260703-L11: `EnclosureNode` gains additive
+  `codeWorktreeExists`/`memoryWorktreeExists` (default `False`) — worktree-existence
+  truth stat'ed at snapshot time in the I/O layer, the tasks surface's visibility
+  rule (existence over cleanup-proxy). Documented `cleanup: reopened` as
+  contract-reset-awaiting-restart, not live work. Verification metadata pinned
+  until closeout stamps the L11 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: `GateNode` now carries additive
   `evidenceRefs` from the gate record so delegated approvals can surface
   reviewer verdict artifacts in the projection. Verification metadata pinned

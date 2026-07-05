@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:40+02:00                           |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026                           |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -56,6 +56,8 @@ directly-opened leaf doc reports its own `repo/master/leaf-id`.
 ## Code Commentary
 
 ### Logic
+
+Since L11 the local `enclosure(...)` fixture defaults the REQUIRED `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags to `true` (a live worktree) — DetailPanel itself does not filter on existence, so no assertion changed.
 
 Seeds a `GALLERY` fixture into `dashboardStore` (`applySnapshot`) and renders `<DetailPanel selectedId=…>`.
 Task 11/L8 gate cases: the `gate-review` scene renders `gate-review` + `gate-respond-open`, no old
@@ -143,6 +145,11 @@ archived documents.
 
 ## Update History
 
+- 2026-07-06T10:45+02:00 — L11 body note: the enclosure fixture carries the required existence flags (default true); no assertion change. Verification metadata pinned until closeout stamps the L11 commit.
+- 2026-07-06T03:05+02:00 — 260703-L11: the local `enclosure(...)` fixture now defaults the new required
+  `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags to `true` (a live worktree), matching
+  the projection contract; no assertion change — DetailPanel does not filter on existence. Verification
+  metadata pinned until closeout stamps the L11 commit.
 - 2026-07-06T02:40+02:00 — agent-orchestration L9: added the `DetailPanel series notes` describe
   block (per-URL `stubNotes` fetch stub) pinning the notes-list wiring on a leaf reader (exact
   list URL → the doc's own repo/master), reference-link resolution (notes file → openable

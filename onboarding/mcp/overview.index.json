@@ -271,6 +271,7 @@
     "mcp/tests/test_serving_files.py",
     "mcp/tests/test_serving_notes.py",
     "mcp/tests/test_setup_progress.py",
+    "mcp/tests/test_sim_fixture_builder.py",
     "mcp/tests/test_spawn_agent_session.py",
     "mcp/tests/test_starter_renderers.py",
     "mcp/tests/test_subprocess_hygiene.py",
@@ -299,8 +300,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 520,
-    "fileSidecars": 211,
+    "sourceFilesInScope": 521,
+    "fileSidecars": 212,
     "childRoutes": 15
   },
   "routingTerms": [
@@ -329,6 +330,7 @@
     "budgets",
     "build",
     "build_rich_sim",
+    "builder",
     "bundle",
     "calculator",
     "capture",
@@ -382,8 +384,7 @@
     "daemon",
     "dashboard",
     "data",
-    "deep",
-    "defaults"
+    "deep"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",

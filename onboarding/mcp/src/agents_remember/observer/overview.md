@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`       |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-06T02:15+02:00 |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -276,7 +276,10 @@ The slice-3a projection read side:
   `SeriesNode`/`SeriesSubTaskNode` (including optional `createdAt`)/`SeriesSectionNode`
   + `Analytics.series`, and slice 6c `GateNode` + `LifecycleProjection.gate`): the persisted/served peer
   of `events.py`, **not** an MCP response model. Task 29 S7 adds drift-snapshot provenance fields for
-  actionable-drift attention detail. `version` is 2.
+  actionable-drift attention detail. 260703-L11 adds `EnclosureNode.codeWorktreeExists`/
+  `memoryWorktreeExists` — worktree-existence truth stat'ed by the snapshots I/O layer, the tasks
+  surface's visibility rule (`cleanup: reopened` = contract-reset-awaiting-restart, not live work).
+  `version` is 2.
 - `reducer.py` — the pure fold: `project_lifecycle` (events → projection, with the
   inferred paused/abandoned layer, corrections, and token aggregation),
   `project_workspace` (tree assembly, including current-enclosure reconciliation for
@@ -405,6 +408,13 @@ The slice-3a projection read side:
 
 ## Update History
 
+- 2026-07-06T02:15+02:00 — 260703-L11 route impact: `EnclosureNode` gains additive
+  `codeWorktreeExists`/`memoryWorktreeExists`, stat'ed by
+  `snapshots._enclosure_from_contract` at snapshot time (the `status_payload`
+  probes), so tasks-surface visibility is physical worktree existence — never a
+  cleanup-state proxy; `cleanup: reopened` documented as
+  contract-reset-awaiting-restart. Verification metadata pinned until closeout
+  stamps the L11 commit.
 - 2026-07-05T01:32+02:00 — No route impact: reducer phase-inference comment re-worded (lifecycle phase, not l-01 phase); no behavior change (260703-L9).
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: gate projection now surfaces
   `evidenceRefs` on `GateNode`, preserving reviewer-verdict references for

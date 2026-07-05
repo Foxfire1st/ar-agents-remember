@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/selectors.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-06T02:55+02:00                           |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -25,7 +25,10 @@ wait-time formatting, and attention queue display filtering.
 
 The `lifecycle(...)` fixture builds minimal `LifecycleProjection` rows so `buildTree` can be tested by
 phase pipeline order, repo grouping, and the `(unassigned)` fallback. `fmtWait` coverage pins s/m/h/d
-formatting plus the unknown dash. The `selectQueue` tests assert the server-computed queue is returned
+formatting plus the unknown dash. The `hasLiveWorktree` case (260703-L11) pins the four-flag truth
+table of the tasks-surface visibility rule: either existing worktree (code or memory) admits, and only
+both-false hides — no cleanup-state input exists in the signature at all. The `selectQueue` tests
+assert the server-computed queue is returned
 when analytics exists, a stable empty queue is returned when it does not, and optimistic
 `suppressedAttentionIds` hide a matching queue row.
 
@@ -66,6 +69,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T02:55+02:00 — 260703-L11: added the `hasLiveWorktree` truth-table case pinning the
+  existence-only tasks-surface visibility rule. Verification metadata pinned until closeout stamps the
+  L11 commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: created the missing sidecar and documented coverage for
   the optimistic attention suppression selector behavior. Verification metadata is pinned to the last
   committed file version until closeout stamps the task-29 code commit.

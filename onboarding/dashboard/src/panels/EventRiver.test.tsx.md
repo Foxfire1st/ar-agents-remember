@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/EventRiver.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T13:54+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-06T03:10+02:00                           |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -28,6 +28,8 @@ display cap).
 ## Code Commentary
 
 ### Logic
+
+Since L11 the suite's enclosure fixtures carry the REQUIRED `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags (default `true`) — the river renders events, not task rows, so behavior under test is unchanged.
 
 A small `ev(...)` helper builds an `ar-observer-event/v1` event (defaulting `ts`/`trust`/`actor`/`id`).
 Fixture helpers build minimal `LifecycleProjection`, `EnclosureNode`, `TaskDocNode`, and `Analytics`
@@ -85,6 +87,12 @@ exists; lifecycle-less workspace diagnostics still render their honest raw fallb
 
 ## Update History
 
+- 2026-07-06T10:45+02:00 — L11 body note: enclosure fixtures carry the required existence flags (default true); river behavior unchanged. Verification metadata pinned until closeout stamps the L11 commit.
+
+- 2026-07-06T03:10+02:00 — 260703-L11: the local `enclosure(...)` fixture now defaults the new required
+  `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags to `true`, matching the projection
+  contract; no assertion change — the river does not filter rows on worktree existence. Verification
+  metadata pinned until closeout stamps the L11 commit.
 - 2026-06-28T13:54+02:00 — Task 34: the suite now renders a **virtualized** EventRiver — a `beforeAll`
   stubs `HTMLElement.prototype.offsetHeight`/`offsetWidth` so TanStack measures a non-zero viewport in
   jsdom (otherwise no rows mount). The old "renders events beyond the newest-60 window" test is now

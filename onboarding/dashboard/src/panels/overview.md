@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T02:50+02:00 |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-06T10:30+02:00 |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -45,14 +45,19 @@ and the `Chats` `SessionList` switcher).
   sidebar-scoped, not a dump of every projected task document: root/master documents (`kind: "master"` or
   `task.json`) and leaf docs matched to an active enclosure (`taskRoot` + `leafId`, every leafId
   comparison **case-insensitive** since L10 because enclosure leaf ids are slugified lowercase while
-  doc ids are authored uppercase — including a
-  **reopened** leaf's suffixed `leafId` admitted via the shared lifecycle, never a bare shared master
-  lifecycle — with `cleanup !== "completed"`) become `taskdoc:<docPath>` rows; folder-keyed series fallback rows
+  doc ids are authored uppercase; exact joins only since task_reopen) become `taskdoc:<docPath>` rows;
+  folder-keyed series fallback rows
   (`series:<seriesId>`) appear only when no master task document already covers them; runtime-only
   lifecycle rows (`lifecycle:<id>`) appear only for active-enclosure-backed work with no document row, and
   nest under their master via a computed parent key rather than floating as a standalone top-level row.
+  Since 260703-L11 "active enclosure" is the worktree-existence truth — the shared `hasLiveWorktree`
+  selector over `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` — never a cleanup-state proxy
+  (a `cleanup: reopened` contract stays hidden until `worktree_start` recreates its worktrees), and each
+  leaf renders at most ONE task entry per `enclosureId`: a lifecycle bound to a doc's enclosure
+  annotates the doc row (state/gate/ask/staleness via `lifecycleForEnclosure`) instead of duplicating it
+  as a lifecycle card.
   Runtime state attaches by structured lifecycle/enclosure binding when present. Other projected
-  planning/inactive/cleanup-completed leaves stay readable through typed links and the master sub-task
+  planning/inactive/worktree-less leaves stay readable through typed links and the master sub-task
   index instead of flooding the sidebar. In `BY REPO`, active leaf task-document rows are
   grouped beneath their parent/root task with a visual indent and the child task document id matching
   the master task list; `BY PHASE` remains flat. Archived/deleted docs disappear because the
@@ -157,7 +162,9 @@ and the `Chats` `SessionList` switcher).
   (no hard display cap) while staying memory-bounded.
 - `Hangar.tsx` — the persistent (never-reaped) worktree enclosures with closeout/integration/cleanup
   badges; worktree-bound projected gates render the real `GateResponder` control, while non-gate
-  availability still renders display-only affordances.
+  availability still renders display-only affordances. Since 260703-L11 a row renders ONLY while a
+  worktree physically exists (the shared `hasLiveWorktree` existence rule replaced the
+  `ARCHIVED_CLEANUP` cleanup proxy that `cleanup: reopened` outflanked).
 - `Topology.tsx` — the radial constellation hero: a React-wrapped imperative `<canvas>` (the renderer
   stays in `topology/constel.ts`, driven via refs); container/tip/legend styled by Panda. Task 33: it now
   reads the store's `activeWorktreeGroups` and runs `topology/model.activeTopologyInputs` to bound the
@@ -291,12 +298,20 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-06T10:30+02:00 — L11 adversarial-review follow-up: the anchor fallback annotation is deterministic (greatest lastEventTs), closing L11R-2. Verification metadata pinned until closeout stamps the L11 commit.
 - 2026-07-06T02:50+02:00 — 260703-L9 route impact (friction F-M): the route gains `TaskNotes.tsx`
   (+ its component suite), the read-only coordination-notes surface — series notes list over
   `/api/notes/*`, opened notes rendered as formatted markdown (sidecar treatment), and task-doc
   references resolved into openable links; `DetailPanel.tsx`'s `TaskReader` delegates its
   References section to it and `MasterOverview` appends it. Verification metadata pinned until
   closeout stamps the L9 commit.
+- 2026-07-06T02:45+02:00 — 260703-L11 route impact (tasks tab shows worktree truth): `Hangar` and
+  `LifecycleList` visibility flipped from cleanup-state proxies to the shared `hasLiveWorktree`
+  existence rule over the new `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags — a
+  reopened contract stays hidden until `worktree_start` recreates its worktrees; `LifecycleList` adds
+  the one-row-per-`enclosureId` identity rule with `lifecycleForEnclosure` annotating the single doc row (deterministically: greatest `lastEventTs` wins the anchor fallback, L11R-2)
+  instead of duplicating the leaf as a lifecycle card. Verification metadata pinned until closeout
+  stamps the L11 commit.
 - 2026-07-05T19:55+02:00 — 260703-L8 route impact (cycle 7, AR4-3/AR4-4): the seam-channel sentence rescoped to what the canvas draws — the manager raise node now names `enclosure="<master task name>"` as the exact address integration enforcement matches the gate by (AR4-4), so the enclosure clause is true as-drawn; the cycle-6 owner follow-up's "exactly … integration enforces the verdict by master identity" overclaim is dropped (enforcement itself is not a drawn node). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): body de-staled — the FlowTab paragraph's leftover build-job/frame tail (deleted models, the "8 static models" reference row, the "other seven" phrasing) replaced with the converged 7-model census and the exact ruled seam channel (wait=false raise, enclosure address, packet-carried gateId, identity-addressed enforcement). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): the flowModels seam nodes now draw the ruled channel exactly — the manager's raise carries wait=false with the returned gateId riding the packet, and the orchestrator decides by the packet-carried gateId; FlowTab tests pin the new prose. Verification metadata pinned until closeout stamps the L8 commit.

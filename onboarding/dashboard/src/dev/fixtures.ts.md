@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/fixtures.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-24T12:21+02:00                          |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-06T03:15+02:00                          |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -70,10 +70,14 @@ Engine Room scenes reuse the `engine-room/fixtures` source of truth rather than 
 
 ## Series-Contract Notes
 
-The dev projection fixture now includes `enclosureId`, `leafId`, and `taskRoot` on each `EnclosureNode`, matching the server projection after leaf enclosure contracts moved under `enclosures/<leaf-id>/series-contract.md`.
+The dev projection fixture now includes `enclosureId`, `leafId`, and `taskRoot` on each `EnclosureNode`, matching the server projection after leaf enclosure contracts moved under `enclosures/<leaf-id>/series-contract.md`. Since 260703-L11 the `enclosure(...)` factory also defaults the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` to `true`, so the seeded gallery enclosures render as live worktrees under the tasks surface's existence-only visibility rule.
 
 ## Update History
 
+- 2026-07-06T03:15+02:00 — 260703-L11: the `enclosure(...)` fixture defaults the new required
+  `codeWorktreeExists`/`memoryWorktreeExists` flags to `true` so dev-gallery enclosures stay visible
+  under the existence-based Hangar/Tasks filter. Verification metadata pinned until closeout stamps the
+  L11 commit.
 - 2026-06-28T07:30+02:00 — Task 33: `project()` now defaults the new required `activeWorktreeGroups: []`
   (overridable via `over`). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T12:21+02:00 — Task 17 analytics fixture shape: `EMPTY_ANALYTICS` now defaults

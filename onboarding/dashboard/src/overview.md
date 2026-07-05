@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T03:00+02:00 |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026 |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -116,6 +116,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   34 then bounds the raw Event River store (`store.ts`) to a **sliding window** of the newest ~2000 rows
   (memory-bounded rather than unbounded session growth), which `EventRiver` virtualizes over so there is
   still no hard display cap.
+  260703-L11 adds `selectors.hasLiveWorktree`, the shared tasks-surface visibility rule
+  (`EnclosureNode.codeWorktreeExists || memoryWorktreeExists` — server-stat'ed existence truth, never a
+  cleanup-state proxy) consumed by both `Hangar` and `LifecycleList`.
   `taskIdentity.ts` centralizes lifecycle-visible labels plus typed
   Operations selection keys (`taskdoc:` / `series:` / `lifecycle:`), so task documents, series masters,
   and runtime-only lifecycles are not inferred from one overloaded id string; Event River also reuses
@@ -137,7 +140,8 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   processes.
 - `types/projection.ts` — the frontend mirror of the served projection schema. `EnclosureNode` carries
   `enclosureId`, `leafId`, and `taskRoot` so frontend routes can distinguish a root task folder from a leaf
-  enclosure contract without deriving path structure in the browser. `TaskDocNode.lifecycleId?` is
+  enclosure contract without deriving path structure in the browser, and — 260703-L11 — the required
+  `codeWorktreeExists`/`memoryWorktreeExists` existence-truth flags the tasks surface filters on. `TaskDocNode.lifecycleId?` is
   optional runtime attachment, while `TaskDocNode.id`, `TaskDocNode.createdAt`,
   `TaskSubTaskRefNode.createdAt`, and `SeriesNode`/`Analytics.series` mirror the active task-document
   and folder-keyed master aggregation surfaces so the detail panel can render masters, label authored
@@ -197,6 +201,11 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-06T03:25+02:00 — 260703-L11 route impact: `data/selectors.ts` gains the shared
+  `hasLiveWorktree` tasks-surface visibility rule and `types/projection.ts` mirrors the new required
+  `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags; `dev/fixtures.ts` and the
+  `topology`/`panels` test fixtures default them `true`. The Hangar/LifecycleList behavior change is
+  documented at the panels route. Verification metadata pinned until closeout stamps the L11 commit.
 - 2026-07-06T03:00+02:00 — 260703-L9 route impact (friction F-M): `data/` gains `notes.ts` (+ unit
   suite), the third serving read client — `listNotes`/`readNote` over the shared `getJson`/`qs`
   transport plus the pure `resolveNoteReference` — feeding the new task-reader notes view

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Hangar.tsx`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T02:25+02:00                           |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -20,44 +20,56 @@ The hangar (notes 01/06): persistent worktree-backed lifecycles are NEVER auto-r
 rot, this surfaces the staleness for the developer to step in (the TTL reaper is fleeting-only). It lists
 only **LIVE** worktree enclosures: a finalized worktree keeps its enclosure contract on disk (it records
 the landed state for memory lineage) even after its directory is reaped, so the raw enclosure set only
-ever grows; the hangar hides the archived ones so the count reflects worktrees that physically exist /
-still need action.
+ever grows. Since 260703-L11 "live" means the projection's stat'ed worktree-existence truth
+(`hasLiveWorktree`: `codeWorktreeExists || memoryWorktreeExists`), never a cleanup-state proxy — the
+count reflects worktrees that physically exist / still need action, and a reopened contract
+(`cleanup: reopened`, worktrees gone) stays hidden until `worktree_start` recreates them.
 
 ## Code Commentary
 
 ### Logic
 
-First **filters out archived enclosures**, then lists the rest (sorted) with
-closeout/integration/cleanup `badge`s + the cross-ref lifecycle's staleness. A module-level
-`ARCHIVED_CLEANUP = new Set(["completed", "abandoned"])` and `isArchived(enclosure)` (true when
-`enclosure.cleanup` is in that set) drive the filter: `rows = Object.values(enclosures).filter((e) =>
-!isArchived(e)).sort(...)`. A completed/abandoned cleanup means there is no worktree left to integrate,
-clean up, or rot — so it is dropped (this fixes the bug where finalized enclosure contracts piled up
-forever, e.g. 31 shown when only a couple were live). The `Panel` title and the empty state both read off
-the filtered `rows`: `Hangar · {rows.length} worktrees`, and "Hangar empty — no live persistent
-worktrees." when none remain. `isStale` (cleanup pending / integration completed / inferred lifecycle)
-toggles the `row` `cva`'s `stale` boolean variant (amber border). A captured `lifecycleId` guards the
-ghost open button. When the bound lifecycle has a worktree-bound gate (`closeout` / `push` / `integration`
-/ `cleanup`), the actions row renders compact `GateResponder`; otherwise enclosure actions remain
-display-only `Affordance`s.
+First **filters to enclosures whose worktrees physically exist**, then lists the rest (sorted) with
+closeout/integration/cleanup `badge`s + the cross-ref lifecycle's staleness. The filter is the shared
+`hasLiveWorktree` selector (`data/selectors.ts`): `rows =
+Object.values(enclosures).filter(hasLiveWorktree).sort(...)` — true when `codeWorktreeExists ||
+memoryWorktreeExists`, the flags the snapshots I/O layer stats onto `EnclosureNode` (260703-L11). This
+replaced the earlier `ARCHIVED_CLEANUP = {completed, abandoned}` cleanup-state proxy, which
+`task_reopen`'s `cleanup: reopened` outflanked (a reopened contract has no worktrees on disk yet rendered
+as live): completed/abandoned enclosures still drop out (their worktrees were reaped), and a reopened
+contract stays hidden until `worktree_start` recreates its worktrees. The `Panel` title and the empty
+state both read off the filtered `rows`: `Hangar · {rows.length} worktrees`, and "Hangar empty — no live
+persistent worktrees." when none remain. `isStale` (cleanup pending / integration completed / inferred
+lifecycle) toggles the `row` `cva`'s `stale` boolean variant (amber border). A captured `lifecycleId`
+guards the ghost open button. When the bound lifecycle has a worktree-bound gate (`closeout` / `push` /
+`integration` / `cleanup`), the actions row renders compact `GateResponder`; otherwise enclosure actions
+remain display-only `Affordance`s.
 
 ### Invariants And Boundaries
 
-Reflects the enclosure node statuses, not a recomputation. The archived-cleanup filter is **display-only**:
-it hides completed/abandoned enclosures from the list and count but never deletes their on-disk contract
-(the durable record stays for memory lineage). Non-gate affordances remain read-only. Gate responses are
+Reflects the enclosure node statuses, not a recomputation. The existence filter is **display-only**:
+it hides worktree-less enclosures from the list and count but never deletes their on-disk contract
+(the durable record stays for memory lineage), and it never infers existence client-side — the flags are
+server-stat'ed. Non-gate affordances remain read-only. Gate responses are
 instructional chat injections through `GateResponder`, not enclosure status mutation.
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The `EnclosureNode` statuses (closeout/integration/cleanup) shown. | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| The `EnclosureNode` statuses (closeout/integration/cleanup) and existence flags shown/filtered on. | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| The shared `hasLiveWorktree` tasks-surface visibility rule. | — | [data/selectors.ts](../data/selectors.ts) |
 | The shared chat-routed gate responder. | — | [GateResponder.tsx](GateResponder.tsx) |
-| The render test pinning that archived (completed/abandoned) enclosures are filtered out so the count reflects live worktrees. | L34-L67 | [Hangar.test.tsx](Hangar.test.tsx) |
+| The render tests pinning existence-only visibility (reopened hidden, visible again after restart, completed/abandoned gone). | L36-L139 | [Hangar.test.tsx](Hangar.test.tsx) |
 
 ## Update History
 
+- 2026-07-06T02:25+02:00 — 260703-L11: visibility flipped from the `ARCHIVED_CLEANUP` cleanup-state
+  proxy to worktree-existence truth — rows filter through the shared `hasLiveWorktree` selector over the
+  new `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags, so a reopened contract
+  (`cleanup: reopened`, no worktrees) stays hidden until `worktree_start` recreates its worktrees while
+  completed/abandoned stay hidden as before. Verification metadata pinned until closeout stamps the L11
+  commit.
 - 2026-06-30T00:00:00+02:00 — Operations Integration L5: the hangar now **filters out archived enclosures** —
   a module-level `ARCHIVED_CLEANUP = new Set(["completed", "abandoned"])` + `isArchived(e)` (true when
   `e.cleanup` is in that set) gate the rows (`Object.values(enclosures).filter((e) => !isArchived(e))
