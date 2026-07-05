@@ -5,19 +5,19 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-05T04:15+02:00 |
+| lastVerifiedCommitHash | `4604de60589ecba642db9455179f0b11a8484bc4` |
+| lastVerifiedCommitDate | 2026-07-05T03:18:30+02:00|
 
 ## Purpose
 
-The developer-facing lifecycle - the seat every developer session runs, whether it fixes one typo or orchestrates a portfolio. Absorbs the retired session-job spine as its phase axis (request -> trust-checkpoint -> reframe-research -> decide -> build -> close) and adds Orchestrated Mode, where the build phase becomes dispatch. Solo work is the degenerate portfolio: same lifecycle, hands-on build.
+The developer-facing lifecycle, restructured (260703-L8 reopened pass) as an EVENT LOOP over durable portfolio state - not a request-to-close pipeline. Each turn routes the incoming event (developer message, worker report, verdict, own finding) into one of three jobs under one roof: Design (pull the designer hat), Portfolio (streamline + the planner master), Orchestrate (execute the plan). Solo work is the same jobs with hats collapsed. Supersedes the transplanted session-job phase spine the first L8/L9 landing shipped.
 
 ## Code Commentary
 
 ### Logic
 
-Sync-propagated copy of the canonical `skills/l-01-agent-lifecycles/roles/orchestrator.md`. Phase axis: trust checkpoint (context_packet facts before trusting memory/providers; approval-gated drift handling), reframe+research (read_ar_files paired reads until the build decision, c-04 strategy routing, lens pick from ../lenses.md, evidence-tied research report, PLAN GATE), decide (research-only exit / session-scale worktree via c-09 with intent hand-off / portfolio-scale -> Orchestrated Mode; openQuestions doctrine), build (same-pass c-05 onboarding, tools.md checks green, freshness watch + early worktree_sync), close (closeout preview/apply with commit gate, integrate + developer-gated push, ledger mapping, finalize incl. task-doc steps; when workers were dispatched, the OWNING SEAT - not the worker - runs the closeout tail). Hand-off protocol: dry-run -> lifecycle_turn_end_notification as last tool call -> report prose -> STOP, with the junction/parked-gate table and the lifecycle_gate fallback. Orchestrated Mode: profile check + takeover spawn; portfolio phase (route-coherence scan, integrity bulwark, reshape proposals, master-granular DAG only); portfolio plan gate; dependency-ordered dispatch (spawn_agent_session(manager) with AR_SPAWN_ROLE env + qualified leaf key); THE TOPOLOGY'S SINGLE HOME (strict branch stack, C-11 at every edge, integration duty master->super in an orchestrator worktree sourced at super, exactly two conflict-resolution modes, the T8/T9 manual backlog); super-exit seam with reviewer verdict as evidenceRefs; close with grounded self-improvement proposals (never automated self-modification). The spirit test lives here and only here.
+Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/orchestrator.md. Opening move every session (resumption is the common case): trust checkpoint -> lifecycle_start -> PORTFOLIO ORIENTATION (read the task tree: in flight / blocked / awaiting whom; say it back) -> route the event by a four-row condition table (no doc -> D; docs + coherence question -> P; approved series -> O; no code change -> research-only exit, chat is the right medium). THE INVARIANT LADDER: approved task doc -> branch (intent) -> worktree only where something is built; D and P never touch git; chat is never a build route (260628 T7). Job D: run roles/designer.md inline as a hat (egg/hen: a designer cannot sit in a leaf the task does not exist yet); orchestrator bulwark-checks the design planned-vs-planned/past before acceptance; gate = developer accepts. Job P: coherence scan, bulwark, reshape (leaf moves + ORDERED-LIST renumbering: numbers ARE positions, contiguous while unlanded, maps in the decision log, freeze at main-landing); output = the planner master task (coordination leaves as subTasks, DAG + dispatch order in the body); gate = wholesale portfolio review; still no git. Job O: first act = the super-branch INTENT creating a BRANCH only (managers base off it); dispatch loop with AR_SPAWN_ROLE + qualified leaf keys; the FAILED-DELIVERABLE RULE (task_reopen + reshape, never redo siblings); integration duty master->super in a per-edge orchestrator worktree (C-11, the topology's single home with the strict branch stack and two conflict modes); super-exit seam; developer-gated landing tail; self-improvement close. Hat-collapse rule: flat run -> manager hat; session scale -> hands-on build with the worker's discipline and the owner's closeout tail. Spirit test remains this seat only; hand-off protocol (dry-run -> notify-and-stop -> report + junction table) unchanged.
 
 ## Cross-Repo Evidence
 
@@ -29,6 +29,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-05T04:15+02:00 - L8 orchestrator routes rework: restructured as event loop + three jobs + hat-collapse; invariant ladder (task doc -> branch -> worktree) replaces worktree-first ordering; chat-build route removed; reopen-and-reshape + ordered-list renumbering doctrines encoded; body rewritten accordingly. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: orchestrator.md became the full developer-facing lifecycle: absorbed the session-job phase axis + hand-off protocol, gained solo-as-degenerate-portfolio, and is now the topology's single home; body rewritten accordingly. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T13:03+02:00 — 260703-L5 expanded the orchestrator job with its master-to-super
   integration duty: consume the manager handover packet, check the master-exit verdict, integrate from

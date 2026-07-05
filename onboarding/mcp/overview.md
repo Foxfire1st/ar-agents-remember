@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastVerifiedCommitHash | `4604de60589ecba642db9455179f0b11a8484bc4` |
+| lastVerifiedCommitDate | 2026-07-05T03:18:30+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -409,6 +409,8 @@ changed files in check mode.
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 
 ## Update History
+
+- 2026-07-05T04:16+02:00 — No route impact: 260703-L8 reopened pass restructures four runtime-mirror doctrine files inside skills/l-01-agent-lifecycles (orchestrator = event loop + three jobs; designer = the hat; SKILL registry/router wording; manager flat-run + reopen rule) — markdown doctrine only, no mcp source, tool signature, or route model change.
 
 - 2026-07-05T01:32+02:00 — No route impact: route model unchanged — 260703-L9 lifecycle convergence merges the two runtime lifecycle skill trees into `skills/l-01-agent-lifecycles/` (SKILL.md = router + minimal frame; `roles/` from `jobs/`; `lenses.md` from `job-variants.md`; templates gain `worker-brief.md` + the relocated `deep-research-report.md`); file cards moved/renamed accordingly and four c/w skill mirrors carry one-line reference updates. The mcp source deltas are name/path/comment-level only (orchestration_artifacts template root, next_step rundown wording, abandon/reducer comments); tool signatures and route behavior unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T23:43+02:00 — No route impact: L8 fixes `serving/changeset.py` master net diff tip resolution inside the already-documented change-set serving route; no MCP tool signature, response shape, package route model, or higher-level subsystem boundary changed. Verification metadata pinned until closeout stamps the L8 commit.

@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastVerifiedCommitHash | `4604de60589ecba642db9455179f0b11a8484bc4` |
+| lastVerifiedCommitDate | 2026-07-05T03:18:30+02:00|
 
 > **Status:** active baseline
 
@@ -375,6 +375,8 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
 ## Update History
+
+- 2026-07-05T04:16+02:00 — No route impact: 260703-L8 reopened pass is internal restructuring of the unified lifecycle skill's role files; the repo-level feature rows (Agent lifecycles, Workflow modes) remain accurate as written — no repository structure or routing change.
 
 - 2026-07-05T01:32+02:00 — 260703-L9 route impact: lifecycle convergence — `l-01-session-job-lifecycle` and `l-02-agent-orchestration` merged into the single `l-01-agent-lifecycles` skill (three-condition router + minimal frame in SKILL.md; `roles/` from jobs/; `lenses.md` from job-variants.md; templates gain worker-brief.md and the relocated deep-research-report.md); body rows, tree lines, and AGENTS.md description updated to the unified name and router semantics. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T23:43+02:00 — No route impact: L8 fixes the master change-set net diff resolver inside the existing MCP dashboard serving layer; the repo-wide feature inventory and top-level runtime subsystem boundaries are unchanged. Verification metadata pinned until closeout stamps the L8 commit.
