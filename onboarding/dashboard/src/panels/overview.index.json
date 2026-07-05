@@ -60,6 +60,8 @@
     "dashboard/src/panels/SessionComposer.tsx",
     "dashboard/src/panels/SessionList.test.tsx",
     "dashboard/src/panels/SessionList.tsx",
+    "dashboard/src/panels/TaskNotes.test.tsx",
+    "dashboard/src/panels/TaskNotes.tsx",
     "dashboard/src/panels/Terminal.test.tsx",
     "dashboard/src/panels/Terminal.tsx",
     "dashboard/src/panels/Topology.tsx",
@@ -67,8 +69,8 @@
     "dashboard/src/panels/flowModels.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 68,
-    "fileSidecars": 39,
+    "sourceFilesInScope": 70,
+    "fileSidecars": 41,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -99,6 +101,7 @@
     "sessioncomposer",
     "sessionlist",
     "src",
+    "tasknotes",
     "terminal",
     "test",
     "topology",

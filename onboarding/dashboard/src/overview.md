@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`       |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastUpdated            | 2026-07-06T03:00+02:00 |
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -104,9 +104,13 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   the cockpit text-selection hook
   (`selection.ts`, slice 6f; since L8 a selection anchored inside a task reader marked
   `data-task-leaf-key` carries that qualified `leafKey`, the signal the direct leaf-chat highlight
-  paste resolves its target from). The serving **read clients** `files.ts` (the L1 files API, L2) and
-  `changeset.ts` (the L3 change-set API, L4) are same-origin typed wrappers sharing one `getJson`/`qs`
-  transport + `FilesApiError`, feeding the File Viewer + Change-Set Viewer; they hold no store state. Task
+  paste resolves its target from). The serving **read clients** `files.ts` (the L1 files API, L2),
+  `changeset.ts` (the L3 change-set API, L4), and `notes.ts` (the agent-orchestration L9
+  coordination-notes API — `listNotes`/`readNote` plus the pure conservative
+  `resolveNoteReference` behind the task reader's reference links) are same-origin typed wrappers
+  sharing one `getJson`/`qs`
+  transport + `FilesApiError`, feeding the File Viewer + Change-Set Viewer + the task reader's
+  notes view; they hold no store state. Task
   29 S7 tracks a raw-stream hydration flag from the backend
   `ready` event and applies optimistic attention suppression while dismiss/clear POSTs are pending; Task
   34 then bounds the raw Event River store (`store.ts`) to a **sliding window** of the newest ~2000 rows
@@ -193,6 +197,11 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-06T03:00+02:00 — 260703-L9 route impact (friction F-M): `data/` gains `notes.ts` (+ unit
+  suite), the third serving read client — `listNotes`/`readNote` over the shared `getJson`/`qs`
+  transport plus the pure `resolveNoteReference` — feeding the new task-reader notes view
+  (`panels/TaskNotes.tsx`); the `data/` route-model bullet now names it beside `files.ts` and
+  `changeset.ts`. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-05T19:55+02:00 — No route impact: the dashboard/src route model is unchanged — the cycle-7 manager-raise-node enclosure addition is documented at the panels route (260703-L8 cycle 7).
 - 2026-07-05T19:10+02:00 — No route impact: the dashboard/src route model is unchanged — the cycle-6 seam-node prose update is documented at the panels route (260703-L8 cycle 6).
 - 2026-07-05T18:24+02:00 — No route impact: dev-only index label aligned with the converged canvas (DevApp.tsx); no production route or component change (260703-L8 cycle 5).

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:18+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T02:40+02:00                           |
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -103,6 +103,14 @@ The L5 viewed-leaf cases pass a `vi.fn()` as `onViewLeaf` and assert its **last*
 `agents-remember`, an operations-integration docPath) and asserts the reported key is the doc's
 `qualifiedLeafKey`.
 
+The L9 series-notes block (`stubNotes` — a per-URL fetch stub answering `/api/notes/list` and
+`/api/notes/read`, everything else a bare ok) proves the DetailPanel wiring: a leaf reader fetches
+the notes list for the doc's OWN series (the exact
+`/api/notes/list?repo=agents-remember&master=260703_agent-orchestration` URL is asserted, pinning
+the repo/master derivation from the doc node), a notes-file reference renders as `note-ref-1` and
+opens `note-view` with the fetched body while a code-path reference gets no link, and a master
+overview shows the "Series notes" list.
+
 ### Invariants And Boundaries
 
 Component-level (jsdom) — no real backend. Reuses the
@@ -135,6 +143,11 @@ archived documents.
 
 ## Update History
 
+- 2026-07-06T02:40+02:00 — agent-orchestration L9: added the `DetailPanel series notes` describe
+  block (per-URL `stubNotes` fetch stub) pinning the notes-list wiring on a leaf reader (exact
+  list URL → the doc's own repo/master), reference-link resolution (notes file → openable
+  `note-ref-1`; code path → plain text), and the master-overview "Series notes" section.
+  Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-02T16:18+02:00 — L8: changed the ask-only attention detail regression to assert no
   `GateResponder`/`gate-banner`/`gate-respond-open` is rendered when only `activeLifecycle.ask` exists,
   while durable gate coverage remains intact. Verification metadata pinned until closeout stamps the L8

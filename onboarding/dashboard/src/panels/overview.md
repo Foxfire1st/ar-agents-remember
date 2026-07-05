@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-05T19:25+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`       |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastUpdated            | 2026-07-06T02:50+02:00 |
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -105,6 +105,17 @@ and the `Chats` `SessionList` switcher).
   the sticky header, resolved through structured series metadata rather than task-name parsing. Task 21
   adds the master-level `series tokens` scalar, displayed from server-projected `seriesTokenTotal` on
   folder-keyed and concrete master readers without recomputing from lifecycle gauges.
+  Agent-orchestration L9 moves the reader's trailing References into `TaskNotes` so notes-file
+  references become openable links, and appends `TaskNotes` to `MasterOverview` (list only).
+- `TaskNotes.tsx` — the **coordination-notes surface** inside the task reader (agent-orchestration
+  L9, friction F-M): lists the selected master's `tasks/<repo>/<master>/notes/**` tree (reports/
+  subfolders included, the server's `truncated` depth-cap flag surfaced honestly) over the L9
+  `/api/notes/*` API (`data/notes.ts`), and renders one opened note as formatted markdown via
+  `grammar/Markdown` — the File Viewer sidecar treatment — with preformatted text for non-markdown
+  notes and a byte-count placeholder for binary. Owns the doc's References section: a reference
+  string naming an existing notes file (resolved conservatively by `resolveNoteReference`) renders
+  as an openable link into the notes view; non-matching references stay plain text. GET-only, no
+  mutation surface; an unreachable API renders no notes surface at all.
 - `EngineRoom.tsx` + **`engine-room/`** — the enclosure-centered **Engine Room process map** (slice
   5e): an official-line strip (workspace providers grouped by provider label + runtime state, so duplicate
   same-state CGCs render as counted chips with repo-label hover detail) + a React Aria `ListBox` of worktree
@@ -280,6 +291,12 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-06T02:50+02:00 — 260703-L9 route impact (friction F-M): the route gains `TaskNotes.tsx`
+  (+ its component suite), the read-only coordination-notes surface — series notes list over
+  `/api/notes/*`, opened notes rendered as formatted markdown (sidecar treatment), and task-doc
+  references resolved into openable links; `DetailPanel.tsx`'s `TaskReader` delegates its
+  References section to it and `MasterOverview` appends it. Verification metadata pinned until
+  closeout stamps the L9 commit.
 - 2026-07-05T19:55+02:00 — 260703-L8 route impact (cycle 7, AR4-3/AR4-4): the seam-channel sentence rescoped to what the canvas draws — the manager raise node now names `enclosure="<master task name>"` as the exact address integration enforcement matches the gate by (AR4-4), so the enclosure clause is true as-drawn; the cycle-6 owner follow-up's "exactly … integration enforces the verdict by master identity" overclaim is dropped (enforcement itself is not a drawn node). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): body de-staled — the FlowTab paragraph's leftover build-job/frame tail (deleted models, the "8 static models" reference row, the "other seven" phrasing) replaced with the converged 7-model census and the exact ruled seam channel (wait=false raise, enclosure address, packet-carried gateId, identity-addressed enforcement). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): the flowModels seam nodes now draw the ruled channel exactly — the manager's raise carries wait=false with the returned gateId riding the packet, and the orchestrator decides by the packet-carried gateId; FlowTab tests pin the new prose. Verification metadata pinned until closeout stamps the L8 commit.

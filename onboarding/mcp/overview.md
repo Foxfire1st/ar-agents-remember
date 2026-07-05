@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -410,6 +410,13 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-06T03:10+02:00 — No route impact: route model unchanged — 260703-L9 added a read-only
+  coordination-notes API (`serving/notes.py`: `GET /api/notes/{list,read}` confined to
+  `tasks/<repo>/<master>/notes/`) registered in `serving/app.py`, plus its API-layer suite
+  `mcp/tests/test_serving_notes.py`, and the regenerated `package_data/dashboard/` bundle
+  (+ fingerprint) for the task reader's notes view. These are serving-layer additions documented
+  in the `serving/` route overview and the file sidecars; the mcp-package overview's subsystem
+  narrative is unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-05T19:55+02:00 — No route impact: route model unchanged — 260703-L8 cycle 7 is the adversarial-review-4 remediation inside existing routes (wait=false enclosure requirement at mcp/tools + the server docstring, integrate dry-run guard reporting + the unmatched-gate warning at worktrees/modules, doctrine sentences inside the lifecycle/c-09 skill trees). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — No route impact: route model unchanged — 260703-L8 cycle 6 hardens seam internals inside existing routes (integrate guard re-addressing at worktrees/modules, all_current at controlplane, wait=false seam restriction + ambient gate_list at mcp/tools, integrate policy pass-through at controllers) plus doctrine/template updates inside the lifecycle skill tree. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:24+02:00 — No route impact: route model unchanged — 260703-L8 cycle 5 lands the seam channel (gates wait/decide semantics documented at mcp/tools; store.find at controlplane; the integrate consumer at worktrees/modules) plus doctrine/template updates inside the lifecycle skill tree and a next_step summary wording fix. Verification metadata pinned until closeout stamps the L8 commit.

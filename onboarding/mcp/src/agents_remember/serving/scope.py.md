@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/scope.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T09:30+02:00                     |
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,6 +26,8 @@ scope and maps domain errors to the serving status-string `JSONResponse` idiom.
 ## Code Commentary
 
 ### Logic
+
+L9 review ride-along (L9R-1): the files-API status mapper now also catches `ValueError` from `Path.resolve()` (e.g. an embedded null byte) and answers `400 bad-path` — the notes API inherited its uncaught-500 idiom from here, so both were fixed in the same pass.
 
 `resolve_scope(config, repo_id, scope_id) -> FileScope` (L107-L153) maps
 `{repo, mainline|enclosure}` to a frozen `FileScope` (`code_root`,
@@ -86,5 +88,7 @@ modules.
 | The test asserting the extraction (files.py re-exports `FileScope`/`_resolve_within`). | [test_serving_changeset.py](agents-remember/mcp/tests/test_serving_changeset.py) |
 
 ## Update History
+
+- 2026-07-06T09:30+02:00 — L9 adversarial-review ride-along (L9R-1): ValueError (null-byte path) now maps to 400 bad-path in the shared scope status mapper; regression test added. Verification metadata pinned until closeout stamps the L9 commit.
 
 - 2026-06-29T15:30+02:00 — Created for operations-integration L3: extracted the shared browse-scope layer out of `serving/files.py` — `FileScope`, `resolve_scope`, the `run_scoped` error mapper (was `files._run`), `language_for`/`_LANG_BY_EXT` (was `files._language_for`), the `_iter_repo_contracts`/`_find_enclosure_contract` active-enclosure enumeration, and `_resolve_within` — so the L3 change-set backend (`serving/changeset.py`) reuses one resolver + one 404/400 error map. Behavior is identical to L1; `files.py` re-imports these. Verification metadata pinned to the task base until closeout stamps the L3 code commit.

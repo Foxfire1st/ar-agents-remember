@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T12:31+02:00                    |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141` |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-06T01:30+02:00                    |
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -151,6 +151,9 @@ fixtures stay deterministic. Tests can still force either branch explicitly.
 - `register_changeset_routes(app, config)` (operations-integration L3) registers the read-only
   `GET /api/changeset/{task,file-diff,master}` change-set routes immediately after the files routes and
   still **before** `mount_static` (L711-L713). The handlers live in `serving/changeset.py`.
+- `register_notes_routes(app, config)` (agent-orchestration L9) registers the read-only
+  `GET /api/notes/{list,read}` coordination-notes routes after the change-set routes and still
+  **before** `mount_static`. The handlers live in `serving/notes.py`.
 
 `stream_events(projector)` yields an `event:snapshot` with the full projection on connect, then
 per-entity delta events from `projector.subscribe()`. `_encode` dumps projection nodes by alias
@@ -219,6 +222,11 @@ built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive
 
 ## Update History
 
+- 2026-07-06T01:30+02:00 — agent-orchestration L9: `create_app` now also calls
+  `register_notes_routes(app, config)` between `register_changeset_routes` and `mount_static`,
+  mounting the read-only `/api/notes/{list,read}` coordination-notes API (handlers in
+  `serving/notes.py`) — registered before the greedy `/` static mount. Verification metadata
+  pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:31+02:00 - L3: `/api/operator-inbox` now accepts agent-role,
   message-kind, artifact, and delivery-request metadata and attempts hosted push
   through the shared terminal paster while keeping the durable inbox row.

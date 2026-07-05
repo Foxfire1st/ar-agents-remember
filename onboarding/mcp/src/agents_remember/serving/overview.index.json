@@ -20,6 +20,7 @@
     "mcp/src/agents_remember/serving/files.py",
     "mcp/src/agents_remember/serving/harnesses.py",
     "mcp/src/agents_remember/serving/inbox_delivery.py",
+    "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/projector.py",
     "mcp/src/agents_remember/serving/scope.py",
     "mcp/src/agents_remember/serving/sim.py",
@@ -31,8 +32,8 @@
     "mcp/src/agents_remember/serving/terminal_paste.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 19,
-    "fileSidecars": 19,
+    "sourceFilesInScope": 20,
+    "fileSidecars": 20,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -55,6 +56,7 @@
     "init__",
     "leaf",
     "mcp",
+    "notes",
     "opener",
     "paste",
     "projector",
@@ -84,6 +86,7 @@
       "mcp/src/agents_remember/serving/files.py",
       "mcp/src/agents_remember/serving/harnesses.py",
       "mcp/src/agents_remember/serving/inbox_delivery.py",
+      "mcp/src/agents_remember/serving/notes.py",
       "mcp/src/agents_remember/serving/projector.py",
       "mcp/src/agents_remember/serving/scope.py",
       "mcp/src/agents_remember/serving/sim.py",
@@ -115,6 +118,8 @@
       "harnesses",
       "inbox_delivery.py",
       "inbox_delivery",
+      "notes.py",
+      "notes",
       "projector.py",
       "projector",
       "scope.py",
@@ -140,9 +145,7 @@
       "--interval",
       "serving.delta.diff_projection",
       "GET /api/stream",
-      "event:snapshot",
-      "lifecycle",
-      "enclosure"
+      "event:snapshot"
     ]
   },
   "fallback": {

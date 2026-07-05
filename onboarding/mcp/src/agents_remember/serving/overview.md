@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `c522779df57ddee8192816d2f2769fdf20d75f3a`       |
-| lastVerifiedCommitDate | 2026-07-04T23:51:13+02:00|
+| lastUpdated            | 2026-07-06T09:30+02:00 |
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -201,6 +201,14 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   selector validated (`leaf` needs `master` + a valid `mode` → `400`, no-live-worktree `working` → `404`).
   Reuses `scope.py` + the L1 posture; the change-detection primitive is
   `worktrees/modules/git.changed_files_with_counts`. Feeds the dashboard Change-Set Viewer (L4/L4a).
+- `notes.py` — the **read-only coordination-notes API** (agent-orchestration L9, friction F-M) (its status mapper, like `scope.py`'s files-API mapper, answers `400 bad-path` for `ValueError` input such as null bytes — the L9 review's L9R-1 fix, applied to both):
+  `register_notes_routes` mounts `GET /api/notes/{list,read}` **before** the static mount. Lists +
+  reads one series master's `tasks/<repo>/<master>/notes/` tree under the coordination root — the
+  design records / friction ledger / worker reports / adversarial verdicts that previously had no
+  dashboard surface. Confinement: `require_repo` allow-list, single-segment `master`, `confine_rel`
+  realpath reads, per-child realpath checks on the depth-capped (`truncated`-honest) listing walk;
+  a missing notes folder is an empty list, a binary file reads as `language: "binary"` with empty
+  content. Feeds the task reader's notes view (`dashboard/src/panels/TaskNotes.tsx`).
 - `terminal.py` — the **Mode B2 terminal host** (slice 6d-1): `TerminalHost`, a registry of
   tmux-wrapped PTY sessions correlated to a lifecycle/worktree. `open`/`write`/
   `read_nonblocking`/`resize`/`close` over a stdlib-`pty` master fd; the spawn (`tmux
@@ -310,6 +318,14 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-06T09:30+02:00 — L9 adversarial-review follow-up (L9R-1): both the notes and files status mappers now map ValueError (null-byte paths) to 400 bad-path; regression tests in both suites. Verification metadata pinned until closeout stamps the L9 commit.
+
+- 2026-07-06T01:40+02:00 — agent-orchestration L9 route impact: the route gains `notes.py`, the
+  read-only coordination-notes API (`GET /api/notes/{list,read}` confined to
+  `tasks/<repo>/<master>/notes/` via allow-list + single-segment master + `confine_rel`; missing
+  folder → empty list; depth-capped honest listing; binary-tolerant size-capped reads), registered
+  in `app.py` between the change-set routes and the static mount. Closes friction F-M (the notes
+  tree had no dashboard surface). Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T23:43+02:00 — L8 route impact: `changeset.py`'s master net routes now resolve the series tip as the contract work branch while it exists, falling back to the source branch after landing/deletion; `/api/changeset/master` counters and `/api/changeset/file-diff?master=...` content share that resolver for code and memory. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: `/api/operator-inbox` now accepts
   agent-role/message/artifact metadata, attempts hosted push through
