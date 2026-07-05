@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_serving_files.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-28T22:41+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T09:30+02:00                     |
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -25,6 +25,8 @@ forward + reverse onboarding pairing, the repo/enclosure catalog, and the four
 ## Code Commentary
 
 ### Logic
+
+L9 review ride-along adds `test_null_byte_path_is_400_bad_path` to RouteTests: the files API answers `400 bad-path` for a null-byte path (same L9R-1 fix as the notes API it seeded).
 
 Two layers, deliberately split so onboarding behavior is testable without standing
 up the resolver:
@@ -74,6 +76,8 @@ Run with `PYTHONPATH=mcp/src python -m pytest mcp/tests/test_serving_files.py -q
 | The serving test suite whose `_config` / `TestClient` pattern this mirrors. | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 
 ## Update History
+
+- 2026-07-06T09:30+02:00 — L9 adversarial-review ride-along: null-byte path regression test added (L9R-1). Verification metadata pinned until closeout stamps the L9 commit.
 
 - 2026-06-30T00:00:00+02:00 — operations-integration L5: documented that the reverse-pairing overview-without-code case
   now also asserts the node's markdown `body` (`"# repo overview\n"`), pinning that the File Viewer can

@@ -63,6 +63,7 @@ these rather than re-styling raw elements (the slice-5d analogue of the device-m
 
 ## Update History
 
+- 2026-07-06T03:20+02:00 — No route impact: 260703-L9 reuses `Markdown.tsx` unchanged as the renderer for the task reader's opened notes (the sidecar-view treatment); no grammar primitive was added or modified.
 - 2026-06-21T02:44+02:00 — slice 6g: added the `Markdown.tsx` primitive (memoized react-markdown + remark-gfm renderer for task-doc prose; GFM tables, `inline` variant). Verification metadata pinned until closeout stamps the 6g code commit.
 - 2026-06-17T22:45 — engine-room visual-parity: `Panel` gained an opt-in `fill` variant (a bounded flex
   column vs the default self-scroll block) so a panel that hosts its own internal layout — the Engine Room's

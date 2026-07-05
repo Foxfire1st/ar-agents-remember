@@ -89,6 +89,7 @@ integrate side.
 
 ## Update History
 
+- 2026-07-06T03:20+02:00 — No route impact: 260703-L9 reuses `_guards.require_repo` unchanged as the repo allow-list boundary for the new `serving/notes.py` API; no controller changed.
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): `worktree_integrate_tool` now threads `config.orchestration.gate_policy` into integrate `WorktreeArgs` (mirroring the closeout path), so the integrate-side master-handover guard evaluates the configured policy instead of the all-human dataclass default. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — No route impact: 260703-L4 only threads
   `config.orchestration.gate_policy` through `worktree_tools.py` into closeout

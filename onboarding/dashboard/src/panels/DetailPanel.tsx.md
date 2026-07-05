@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:18+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T02:30+02:00                           |
+| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
+| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -143,6 +143,14 @@ data-driven so `STEP_MARK`/
 `STEP_TITLE`/`SUBSTEP` are record lookups (not cvas). `badge` + `laneMeta` are local (the old
 `.badge`/`.engine__meta` were removed with their panels).
 
+**L9 (agent-orchestration)** adds the coordination-notes surface: `TaskReader` no longer renders its
+own References bullets — the trailing References block moved into `TaskNotes` (rendered with
+`repo = doc.repository`, `master = dirName(doc.docPath)`, `references = doc.references`) so a
+reference naming an existing `notes/` file becomes an openable link into the series-notes view;
+`MasterOverview` appends `TaskNotes` with empty references, so the series' notes (design records,
+friction ledger, `reports/`) are browsable from the master overview too. All other sections are
+unchanged.
+
 ### Invariants And Boundaries
 
 `GateResponder` is only for durable gate decisions after L8. Ask-only attention details must not regain
@@ -204,6 +212,11 @@ panel must not recompute the aggregate from lifecycle token gauges or child task
 
 ## Update History
 
+- 2026-07-06T02:30+02:00 — agent-orchestration L9 (friction F-M): the References section moved out
+  of `TaskReader` into the new `TaskNotes` component (repo/master derived from the doc node like
+  `DocChangeSetBar`), which resolves references into openable notes links and lists the series'
+  `notes/` tree; `MasterOverview` appends `TaskNotes` (list only). Verification metadata pinned
+  until closeout stamps the L9 commit.
 - 2026-07-02T16:18+02:00 — L8: `GateResponder` now renders only for durable `activeLifecycle.gate`
   requests, removing the obsolete ask-only task-local response box from attention details. `TaskReader`
   now marks leaf content with `data-task-leaf-key` so highlight capture can route obvious leaf selections
