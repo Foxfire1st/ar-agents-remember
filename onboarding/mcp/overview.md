@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088` |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -409,6 +409,8 @@ changed files in check mode.
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 
 ## Update History
+
+- 2026-07-06T10:50+02:00 — No route impact: L11's mcp-side changes are test-layer only (observer projection test updates, the new mcp/tests/test_sim_fixture_builder.py regression suite, and build_rich_sim.py's materialize_worktrees fixture fix) — the mcp package route model this overview describes is unchanged; details live in the file sidecars.
 
 - 2026-07-06T03:10+02:00 — No route impact: route model unchanged — 260703-L9 added a read-only
   coordination-notes API (`serving/notes.py`: `GET /api/notes/{list,read}` confined to

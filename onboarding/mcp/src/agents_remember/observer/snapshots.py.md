@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T12:31+02:00                           |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-06T02:10+02:00                           |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -54,7 +54,11 @@ full file-surface read used by lower-level tests and diagnostics.
 `enclosures/<leaf-id>/series-contract.md` through `worktrees.worktree_contract.load_contract` to an
 `EnclosureNode`. Root `series-contract.md` files represent integration branches and are not live worktree
 processes; `0_archive/` is excluded. A malformed contract is skipped (`ContractError`/`OSError`), never
-fatal to the whole projection.
+fatal to the whole projection. Since L11 `_enclosure_from_contract` also stats the worktree paths at
+snapshot time — `codeWorktreeExists = contract.code_worktree.exists()` and `memoryWorktreeExists =
+contract.memory_worktree.exists()` (or `False` with no memory worktree) — the same probes
+`status_payload` uses, so the projection carries physical worktree-existence truth for the tasks
+surface's visibility rule instead of clients inferring liveness from `cleanup` state.
 
 The **slice-3b analytical readers** add the cockpit's charts/feeds, each cheap and
 reusing a producer's parser: `read_drift_snapshots(coordination_root, *, now)`
@@ -248,6 +252,11 @@ work while archived roots and contract folders stay out of the JSON scan.
 
 ## Update History
 
+- 2026-07-06T02:10+02:00 — 260703-L11: `_enclosure_from_contract` now stats
+  `codeWorktreeExists`/`memoryWorktreeExists` onto each `EnclosureNode` at snapshot
+  time (the same `exists()` probes `status_payload` uses) so the tasks surface can
+  filter on worktree-existence truth rather than a cleanup-state proxy.
+  Verification metadata pinned until closeout stamps the L11 commit.
 - 2026-07-04T12:31+02:00 - L3: `read_agent_pickups` now carries inbox role,
   message, artifact, and hosted-delivery metadata into `AgentPickupNode`.
   Verification metadata pinned until closeout stamps the L3 commit.

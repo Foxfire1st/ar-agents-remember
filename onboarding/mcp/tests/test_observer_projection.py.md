@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-03T00:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T02:20+02:00                     |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -232,10 +232,20 @@ worktree snapshots while deleting a valid snapshot for a deleted worktree.
 
 Observer projection coverage now distinguishes root series contracts from live leaf enclosure contracts,
 validates new leaf identity fields, proves archives/enclosure folders are excluded from task JSON scans,
-and verifies that a leaf contract itself is not a readable lifecycle task document.
+and verifies that a leaf contract itself is not a readable lifecycle task document. 260703-L11 extends
+`SnapshotReaderTests` with worktree-existence coverage: a shared external-memory contract factory
+(`_existence_contract`) backs `test_read_enclosures_stat_worktree_existence` (flags flip False→True as
+the code/memory directories appear on disk, no contract rewrite) and
+`test_read_enclosures_reopened_is_reset_awaiting_restart_not_archived` (a `cleanup=reopened` contract
+still projects — it is NOT archived — but with both flags False until `worktree_start` recreates the
+directories).
 
 ## Update History
 
+- 2026-07-06T02:20+02:00 — 260703-L11: added `SnapshotReaderTests` coverage for the
+  `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` stat-time flags and the
+  reopened-is-reset-not-archived semantics (visible-again-after-restart included).
+  Verification metadata pinned until closeout stamps the L11 commit.
 - 2026-07-03T00:30+02:00 — L11 adds reducer coverage for abandoned-enclosure lifecycle terminalization and the persistent-synthesis skip for abandoned/reopened enclosures.
 - 2026-07-02T21:45+02:00 — L10 binding repair: added
   `test_resolves_leaf_doc_lifecycle_from_doc_id_case_insensitively` — the real-world series shape

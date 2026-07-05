@@ -319,7 +319,7 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 ## Update History
 
 - 2026-07-06T09:30+02:00 — L9 adversarial-review follow-up (L9R-1): both the notes and files status mappers now map ValueError (null-byte paths) to 400 bad-path; regression tests in both suites. Verification metadata pinned until closeout stamps the L9 commit.
-
+- 2026-07-06T03:30+02:00 — No route impact: 260703-L11's additive `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags pass through the serving layer unchanged (booleans are never `exclude_none`-dropped); `test_serving.py` re-run green with no serving-code change.
 - 2026-07-06T01:40+02:00 — agent-orchestration L9 route impact: the route gains `notes.py`, the
   read-only coordination-notes API (`GET /api/notes/{list,read}` confined to
   `tasks/<repo>/<master>/notes/` via allow-list + single-segment master + `confine_rel`; missing

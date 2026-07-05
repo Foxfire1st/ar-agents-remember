@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-03T00:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T10:30+02:00                     |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -20,9 +20,14 @@ The Operations task list. It uses projected JSON-primary task documents as the r
 does not put every projected document into the left sidebar. Sidebar rows are limited to root/master
 task documents, leaf task documents that match an active enclosure, folder-keyed series fallbacks when
 no master document is projected, and runtime lifecycle fallbacks for enclosure-backed work with no
-document row. An active enclosure is a projected enclosure whose cleanup is neither completed nor abandoned
-(L11); retired and discarded leaves stay reachable through typed `taskdoc:` links and master-internal navigation instead
-of lingering in the sidebar. Planning/inactive leaves follow the same non-sidebar path.
+document row. Since 260703-L11 an active enclosure is one whose worktree PHYSICALLY EXISTS — the shared
+`hasLiveWorktree` rule over the projection's stat'ed `codeWorktreeExists`/`memoryWorktreeExists` flags,
+never a cleanup-state proxy: retired/discarded leaves stay hidden as before (their worktrees were
+reaped), and a reopened contract (`cleanup: reopened`) stays hidden until `worktree_start` recreates its
+worktrees. Retired and discarded leaves stay reachable through typed `taskdoc:` links and master-internal
+navigation instead of lingering in the sidebar. Planning/inactive leaves follow the same non-sidebar
+path. The complementary identity rule (260703-L11): each leaf appears ONCE — one task entry per
+`enclosureId` — with a bound lifecycle annotating the doc row rather than duplicating it as a card.
 
 In the `BY REPO` pivot, admitted leaf documents are grouped below their parent/root task and rendered as
 indented child rows; those leaf labels use the same child task-document numbers as the master task
@@ -41,14 +46,28 @@ cannot consume the whole title lane.
 
 ### Logic
 
+L11 review follow-up (L11R-2): `lifecycleForEnclosure`'s anchor fallback is now deterministic — among lifecycles anchoring one enclosure without a contract `lifecycleId`, the greatest `lastEventTs` (most recently active) annotates the row, never projection order.
+
 The `Panel` `head` shows `Tasks · {rows.length}`. The BY REPO | BY PHASE pivot is a React Aria
 `ToggleButtonGroup` (single-select, `aria-label="Group tasks by"`) in that custom `head`; it groups the
 derived `OperationRow` collection by repository or lifecycle phase/task status. `operationRows` builds
 rows in this order: admitted task-document rows first, series fallback rows only when the master doc is
 not already in `taskDocuments`, then runtime-only lifecycle rows for enclosure-backed lifecycles that no
-document/series row represents. It first derives an active enclosure list by filtering out
-`cleanup === "completed"`; document admission and runtime-only lifecycle fallbacks use that filtered
-list, while projected task documents remain available to Detail/master navigation.
+document/series row represents. It first derives an active enclosure list with the shared
+`hasLiveWorktree` selector (`codeWorktreeExists || memoryWorktreeExists` — 260703-L11); document
+admission and runtime-only lifecycle fallbacks use that filtered list, while projected task documents
+remain available to Detail/master navigation.
+
+One row per `enclosureId` (260703-L11): a `representedEnclosureIds` set records every enclosure a doc
+row resolved through, and the runtime-only lifecycle loop skips a lifecycle whose
+`findLifecycleEnclosure` result is already claimed (also claiming the ids it does render, so two
+lifecycles bound to one enclosure yield one row). The annotation half of the rule is
+`lifecycleForEnclosure(enclosure, lifecycles, lifecycleById)`: when `runtimeForDoc` finds no lifecycle
+(e.g. the doc's `lifecycleId` was cleared), the doc row falls back to the lifecycle bound to its
+enclosure — by the contract's recorded `lifecycleId` or by a live lifecycle's own `enclosure` anchor —
+so the lifecycle's state/gate/ask/staleness enrich the single doc row instead of rendering a second
+task entry (the L9-reopen defect: the enclosure row AND the live lifecycle's card rendered for one
+leaf).
 
 A document is admitted when `isRootTaskDoc` returns true (`kind === "master"` or `task.json`) or
 `enclosureForDoc` matches the document directory to `EnclosureNode.taskRoot` and either the document
@@ -115,13 +134,17 @@ derive a task-document row from parent `taskName`, display numbers, filename pre
 `series-contract.md` content. The observer may project many completed/planning/inactive documents for
 reading and master navigation, but the sidebar list stays finite through root/enclosure admission.
 Archived/deleted docs disappear because the observer stops projecting them; status alone is not a
-sidebar disappearance rule. Cleanup completion is an Operations sidebar disappearance rule for leaf
-enclosures only: it removes left-rail eligibility without deleting or hiding the task document from
-master navigation. `BY REPO` hierarchy is presentation over admitted rows only; it must not make
-inactive/planning/cleanup-completed leaf documents sidebar-eligible. Abandoned enclosures are
-excluded from the active set entirely (L11), and a doc-less runtime row is nested only on the
+sidebar disappearance rule. Worktree existence is THE Operations sidebar disappearance rule for leaf
+enclosures (260703-L11): losing the physical worktree removes left-rail eligibility without deleting or
+hiding the task document from master navigation, and no cleanup-state proxy may substitute for the
+stat'ed flags. `BY REPO` hierarchy is presentation over admitted rows only; it must not make
+inactive/planning/worktree-less leaf documents sidebar-eligible. Completed/abandoned/reopened enclosures
+all drop out through the same existence rule, one leaf renders at most one task entry (per
+`enclosureId`), and a doc-less runtime row is nested only on the
 `taskRoot`/series join; a shared master lifecycle by itself must never admit a document or re-parent a
 row, so unrelated leaves under one master stay distinct rather than collapsing onto each other.
+Spawned-session provenance stays visible where sessions are shown (the chats sidebar keeps its own
+qualified-leaf-key rule); this list only de-duplicates task entries.
 
 Title truncation is presentational only: row selection and React Aria `textValue` still use the resolved
 task label and stable typed row key. The no-horizontal-scroll contract belongs to the Operations list
@@ -132,9 +155,9 @@ list.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Sidebar row admission uses root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document. | L306-L346; L589-L599 | [LifecycleList.tsx](LifecycleList.tsx) |
+| Sidebar row admission uses root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document. | L306-L370; L659-L672 | [LifecycleList.tsx](LifecycleList.tsx) |
 | `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | [LifecycleList.tsx](LifecycleList.tsx) |
-| Regressions assert a reopened (cleanup=reopened, exact leaf id) enclosure renders as its planned doc row, an abandoned enclosure leaves the active rows, and a doc-less orphan lifecycle nests under the master. | reopen + abandoned + orphan tests | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
+| Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it. | reopen-hidden + reopen-restart + abandoned + orphan + one-row-per-enclosureId tests | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | BY REPO hierarchy uses taskHierarchy labels/parent keys, marks child rows with depth, and leaves BY PHASE flat. | L15-L20; L307-L343; L415-L447 | [LifecycleList.tsx](LifecycleList.tsx) |
 | Operations rows stay within the left panel by constraining the panel/listbox/section/row widths, then ellipsizing the title span. | L38-L106; L187-L214 | [LifecycleList.tsx](LifecycleList.tsx) |
 | Row titles use a shrinkable title span and native hover title assembled from label, lifecycle, repo, gate, and current-step context. | L99-L123; L212-L214; L464-L480 | [LifecycleList.tsx](LifecycleList.tsx) |
@@ -147,6 +170,16 @@ list.
 
 ## Update History
 
+- 2026-07-06T10:30+02:00 — L11 adversarial-review follow-up: L11R-2 (deterministic lastEventTs anchor fallback) and L11R-3 (re-measured row-admission citations, were stale after the diff shifted the functions). Verification metadata pinned until closeout stamps the L11 commit.
+
+- 2026-07-06T02:35+02:00 — 260703-L11 (worktree truth): active-enclosure admission flipped from the
+  cleanup-state proxy (`cleanup !== completed/abandoned`) to the shared `hasLiveWorktree` existence rule
+  over `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` — a reopened leaf is now HIDDEN until
+  `worktree_start` recreates its worktrees (supersedes the L11-task_reopen behavior of rendering it as a
+  planned doc row). Added the one-row-per-`enclosureId` identity rule (`representedEnclosureIds` +
+  claim-on-render in the runtime loop) and the `lifecycleForEnclosure` annotation fallback so a bound
+  lifecycle enriches the doc row (state/gate/ask/staleness) instead of duplicating the leaf as a card.
+  Verification metadata pinned until closeout stamps the L11 commit.
 - 2026-07-03T00:30+02:00 — L11 task_reopen: active-enclosure admission now excludes `cleanup: abandoned`; the `-rN` suffixed-leaf-id `startsWith` reopen heuristic is removed because reopen reuses the exact leaf id, and a `cleanup: reopened` enclosure renders as its planned doc row.
 - 2026-07-02T21:45+02:00 — L10 binding repair: every `enclosureForDoc` leafId comparison (stem, doc id,
   and the lifecycle-guarded reopen-suffix startsWith) is now case-insensitive, matching the

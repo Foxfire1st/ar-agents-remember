@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-03T00:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T02:40+02:00                     |
+| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
+| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -18,9 +18,15 @@
 
 `LifecycleList.test.tsx` covers the Operations left-rail task-list identity contract. It verifies that
 the sidebar admits root/master task documents, leaf task documents that match active enclosures, and
-runtime enclosure fallbacks, while excluding loose/inactive leaf documents and cleanup-completed or
-cleanup-abandoned leaf enclosures from the sidebar (L11). It also keeps standalone root `task.json` documents visible and selectable
-through typed `taskdoc:<docPath>` keys. The long-title fixture is now enclosure-backed, proving that the
+runtime enclosure fallbacks, while excluding loose/inactive leaf documents and enclosures whose
+worktrees are physically gone (260703-L11: the `enclosure()` fixture defaults
+`codeWorktreeExists`/`memoryWorktreeExists` to `true` and archived/reopened cases override them to
+`false`, since admission now keys on the existence flags, not the cleanup label). It pins both halves of
+the L11 tasks-surface rule: visibility (a reopened leaf is hidden until `worktree_start` recreates its
+worktrees, then re-admitted) and identity (one task entry per `enclosureId` — a lifecycle bound to a
+doc's enclosure, by contract `lifecycleId` or by its own `enclosure` anchor, annotates the doc row's
+title/gate/staleness instead of rendering a duplicate card). It also keeps standalone root `task.json`
+documents visible and selectable through typed `taskdoc:<docPath>` keys. The long-title fixture is now enclosure-backed, proving that the
 native `title` tooltip survives the stricter sidebar admission rule and that the row/title carry the
 minimum-width, flex-basis, and metadata-ellipsis classes required for the browser to ellipsize inside
 the left rail.
@@ -48,17 +54,21 @@ The second test seeds a task-31-shaped leaf: the enclosure leaf id is the numeri
 task-document file stem is the readable `31_provider-state-refresh-and-engine-room-honesty`. It asserts
 the row is still admitted and nested under the browser-dashboard master through the parent `taskdoc:` key.
 
-Two task-35 regressions pin the reopen-task nesting fix. One seeds a reopened leaf whose enclosure leaf
-id is a cycle-suffixed slug (`…-s7`) that no longer matches the document stem/`id` directly and shares
-only the document's lifecycle; it asserts the document row still nests under the master at
-`data-depth="1"` with the master `taskdoc:` parent key, and that the suffixed enclosure id never renders
-as its own standalone row (`queryByText` for it is `null`). The L10 regression seeds the real series
+The 260703-L11 regressions pin the worktree-truth rule. Two reopen cases: a `cleanup: "reopened"`
+enclosure with both existence flags `false` renders neither a doc row nor a lifecycle row (`Tasks · 1`,
+the master alone), and the same enclosure with flags `true` (after `worktree_start`) renders the leaf's
+doc row again, nested under its master. The one-row-per-`enclosureId` case seeds two live enclosures
+each with an un-stamped doc (`lifecycleId: undefined`) plus one bound lifecycle each — `LC-CONTRACT`
+bound via the contract's `lifecycleId` (blocked, `closeout-approval` gate, `staleSeconds: 120`) and
+`LC-ANCHOR` bound only via its own `lifecycle.enclosure` anchor — and asserts exactly two option rows
+render (no bare `leafId` lifecycle cards), each doc row's hover `title` carries the bound lifecycle's
+id/state, the gate badge and formatted `2m` staleness annotate the row, and clicking selects the
+`taskdoc:` key. The L10 regression seeds the real series
 shape — a lowercase enclosure leaf id (`260628-l7`) against an uppercase doc id (`260628-L7`) with a
 numbered doc slug matching neither — and asserts the doc renders as a clickable `taskdoc:` row rather
-than a doc-less runtime lifecycle fallback. The other seeds a doc-less,
+than a doc-less runtime lifecycle fallback. The orphan case seeds a doc-less,
 enclosure-backed runtime lifecycle and asserts that `lifecycleRow`'s computed `parentKey` nests it under
-its master instead of floating as a top-level row. Together they would have caught the phantom
-standalone node a re-opened task produced before the fix.
+its master instead of floating as a top-level row.
 The third test seeds only task documents and asserts that a standalone root `task.json` document remains
 visible while a loose sibling leaf doc is absent. The fourth test seeds an active-enclosure-backed blocked
 task document with an intentionally long title, a durable gate, and a `currentStep`; rendering must attach
@@ -91,7 +101,7 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 | The component under test admits root/master docs, active-enclosure-matched leaves, series fallbacks, and active-enclosure-backed lifecycle fallbacks. | L252-L286; L443-L455 | [LifecycleList.tsx](LifecycleList.tsx) |
 | The regression fixture proves sidebar inclusion/exclusion for root docs, active leaves, cleanup-completed leaves, enclosure fallbacks, inactive leaves, loose leaves, and unenclosed lifecycles, plus BY REPO child depth and BY PHASE flatness. | L129-L260 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | The numbered-leaf regression fixture proves a leaf document whose file stem is longer than `EnclosureNode.leafId` still nests under its master when its authored task id matches the enclosure leaf id. | L264-L318 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The reopen-leaf regression proves a suffixed-enclosure (`…-s7`) document nests under its master by the combined lifecycle match and never renders the suffixed id as a standalone row. | reopen test | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
+| The reopen regressions prove a reopened worktree-less enclosure is hidden until restart then re-admitted, and the identity regression proves one row per `enclosureId` with lifecycle annotation (both binding directions). | reopen-hidden + reopen-restart + one-row tests | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | The orphan-lifecycle regression proves a doc-less enclosure-backed runtime row nests under its master via the computed parent key instead of floating top-level. | orphan test | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | The long-title fixture proves native row title hover text plus the row/title/metadata shrink classes on an admitted enclosure-backed task row. | L296-L350 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | The shared hierarchy helper supplies the parent match, child task-document id, and creation-order placement that the test expects in the Operations row label. | L15-L58; L73-L88 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
@@ -101,6 +111,13 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 
 ## Update History
 
+- 2026-07-06T02:40+02:00 — 260703-L11 (worktree truth): the enclosure fixture defaults the new
+  existence flags true; the reopened-leaf test flipped to hidden-until-restart plus a re-admitted-after-
+  restart case (existence truth supersedes the render-as-planned-doc-row behavior below); added the
+  one-row-per-`enclosureId` regression (bound lifecycle annotates the doc row — contract-`lifecycleId`
+  and `enclosure`-anchor directions — with no duplicate lifecycle card); the cleanup-completed and
+  abandoned fixtures now carry `false` flags since admission keys on existence. Verification metadata
+  pinned until closeout stamps the L11 commit.
 - 2026-07-03T00:30+02:00 — L11: the suffixed-enclosure reopen-admission test is replaced by two exact-id cases — a `cleanup: reopened` enclosure renders as its planned doc row nested under the master, and an abandoned enclosure disappears from the active rows.
 - 2026-07-02T21:45+02:00 — L10 binding repair: added a regression where the enclosure leaf id differs
   from the doc id only by case (lowercase `260628-l7` vs uppercase `260628-L7`, numbered doc slug
