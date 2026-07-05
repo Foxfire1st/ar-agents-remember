@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T04:15+02:00 |
-| lastVerifiedCommitHash | `4604de60589ecba642db9455179f0b11a8484bc4` |
-| lastVerifiedCommitDate | 2026-07-05T03:18:30+02:00|
+| lastUpdated            | 2026-07-05T04:40+02:00 |
+| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
+| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
 
 ## Purpose
 
@@ -19,6 +19,8 @@ The spine of the unified `l-01-agent-lifecycles` skill: lifecycle and job are ON
 
 Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/SKILL.md`. The designer registry row now reads 'a HAT the orchestrator pulls inline (separate chair optional)', and condition 3 spells out solo as the three jobs with hats collapsed (task doc first). The router has exactly three conditions, in order: (1) `AR_SPAWN_ROLE` env set -> run `roles/<value>.md`; (2) first user message is a role brief -> run that role; (3) otherwise the session is developer-facing -> run `roles/orchestrator.md` (solo work is the degenerate portfolio). The minimal frame is the only shared machinery: the six `lifecycle_*` signals, fleeting->persistent promotion at `worktree_start`, `awaiting-developer` auto-resume on the next AR call, server-side identity; a spawned role that never touches mutating AR tools never instantiates a lifecycle (designed shape), and a spawned role never adopts its spawner's lifecycle - the session<->leaf association is the catalog binding via the QUALIFIED leaf key `<repository>/<master>/<docId>`. Shared invariants: continuity in task_doc + durable artifacts (never transcripts); the escalation ladder worker -> manager -> orchestrator -> developer with no rung skipped; decision-needing questions land in task-doc `openQuestions`. Also carries the knob-block/per-harness variant resolution (role base < `roles/<R>.<H>.md` < settings.json orchestration block), the as-built settings documentation (`orchestration.gateDelegation` parsed + enforced by `controlplane/gate_policy.py`; `roles`/`concurrency` documented schema with parsing tracked as backlog), a 6-line super-branch orientation diagram (the full topology's single home is `roles/orchestrator.md`), and the credits lineage (260619 spec -> Archon / agent-control-plane).
 
+As of the L8 de-harnessing pass there are deliberately NO per-harness role files (developer decision 2026-07-05): the registry lists exactly five portable role files, knob resolution is role-file defaults < settings.json orchestration block (the variant layer is gone), harness ABILITIES are capability-conditional doctrine inside the portable files, and harness PREFERENCE is deployment configuration in settings.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -29,6 +31,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-05T04:40+02:00 - L8 de-harnessing pass: per-harness variant layer removed from the resolution order; registry overlay mentions dropped. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:15+02:00 - L8 orchestrator routes rework: registry row marks the designer as a hat the orchestrator pulls (separate chair optional); router condition 1 notes AR_SPAWN_ROLE=designer as the same hat in another chair; router condition 3 states solo = the three jobs with hats collapsed, task doc first. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: SKILL.md is now the unified-skill spine (router + minimal frame + shared invariants); body rewritten accordingly; supersedes the two retired skill spines. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T13:16+02:00 — 260703-L6 documented the adversarial seam procedures end to end: manager

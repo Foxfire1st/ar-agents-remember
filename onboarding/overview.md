@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `4604de60589ecba642db9455179f0b11a8484bc4` |
-| lastVerifiedCommitDate | 2026-07-05T03:18:30+02:00|
+| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
+| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
 
 > **Status:** active baseline
 
@@ -375,6 +375,8 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
 ## Update History
+
+- 2026-07-05T04:40+02:00 — No route impact: 260703-L8 de-harnessing pass is internal to the unified lifecycle skill (no per-harness role files); repo-level rows remain accurate — no repository structure or routing change.
 
 - 2026-07-05T04:16+02:00 — No route impact: 260703-L8 reopened pass is internal restructuring of the unified lifecycle skill's role files; the repo-level feature rows (Agent lifecycles, Workflow modes) remain accurate as written — no repository structure or routing change.
 
