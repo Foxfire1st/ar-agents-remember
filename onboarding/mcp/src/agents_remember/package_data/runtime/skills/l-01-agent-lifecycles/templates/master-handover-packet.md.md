@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastUpdated            | 2026-07-05T19:10+02:00 |
+| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
+| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This template is the **manager → orchestrator** hand-off artifact posted at **
 
 ### Logic
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/master-handover-packet.md`. It carries a prose header naming the writer (`roles/manager.md`) and the delivery path (inbox + stdin push), a numbered **Rules** block, and a fenced **Shape**: a metadata table (master / manager / integration branch / base / verdict / verdict outcome / written) followed by *Change-Set Summary*, *Requirements / Steps Completion*, *Carry-Over State* (for the orchestrator's master → super C-11), *Known Follow-Ups*, and *Reachability*.
+The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/master-handover-packet.md`. It carries a prose header naming the writer (`roles/manager.md`) and the delivery path (inbox + stdin push), a numbered **Rules** block, and a fenced **Shape**: a metadata table (master / manager seat / integration branch / handover gateId / base / verdict / verdict outcome / written) followed by *Change-Set Summary*, *Requirements / Steps Completion*, *Carry-Over State* (for the orchestrator's master → super C-11), *Known Follow-Ups*, and *Reachability*. Since cycle 6 the manager row is `manager seat | <master's coordination leaf / chat ref>` — no lifecycle ids in model-authored artifacts; the gateId row is the gate's address.
 
 ### Conventions
 
@@ -66,6 +66,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-07-05T19:10+02:00 - L8 builder cycle 6: the manager row became `manager seat | <master's coordination leaf / chat ref>` — no lifecycle ids in model-authored artifacts (AR3-6d). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the shape gains the handover gateId row — the packet is the decider's address for the gate.. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/; role-file reference now roles/manager.md. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:31+02:00 - L3: documented the `master-handover` inbox

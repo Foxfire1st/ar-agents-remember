@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-04T12:32+02:00                      |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a`     |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastUpdated            | 2026-07-05T19:25+02:00                      |
+| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`     |
+| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -76,15 +76,12 @@ signal, while targetless provider-down dismissals are not accepted.
 | ------------- | ----------------------------------------------------------------------------- |
 | `records.py`  | `GateRecord` (`ar-gate-record/v1`) + pure `create_gate` / `decide_gate` / `expire_gate` / `coerce_gate_kind`; the `GateKind` / `GateState` / `DecidedVia` Literals, `GateEvidenceRef`, and `DECISION_STATES`. `GateKind` is the full l-01 gate spine (slice 09 added `plan-approval` / `worktree-intent` / `push-approval`); `closeout-approval` IS the commit gate — no separate `commit-approval`. |
 | `store.py`    | `GateStore`: lifecycle/workspace gate logs beside the event log; `current()` folds by gate id (last-wins), while `delete`/`compact` physically remove throwaway interaction rows. |
-| `enforcement.py` | `evaluate_closeout_gate` (pure closeout-gate policy) + `CloseoutGuard` — the binding rule `worktree_closeout_apply` reads (slice 6b). |
 | `operator_inbox_records.py` | `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/consume helpers for durable operator/agent inbox snapshots, including role/message/artifact and delivery metadata. |
 | `operator_inbox_store.py` | `OperatorInboxStore`: workspace inbox log, pending filters by lifecycle/agent/recipient role, delivery-state snapshots, idempotent store consume, public delete/dismiss paths, and TTL compaction. |
 | `orchestration_artifacts.py` | Strict turn-report, master-handover, and escalation packet helpers for the L2/L3 orchestration frame. |
 | `orchestration_nudges.py` | `OrchestrationNudgeRecord` + `OrchestrationNudgeStore`: append-only, rate-limited manager nudge attempts plus message/artifact helpers. |
 | `gate_policy.py` | `GatePolicy` / `GatePolicyRule`, built-in policy names, human-pinned/delegable kind validation, and delegated-decision attribution/evidence checks. |
 | `enforcement.py` | `evaluate_gate` (pure kind-generic gate policy resolver) + `GateGuard`; `evaluate_closeout_gate` / `CloseoutGuard` remain the closeout wrapper `worktree_closeout_apply` reads. |
-| `operator_inbox_records.py` | `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/consume helpers for external-chat inbox snapshots. |
-| `operator_inbox_store.py` | `OperatorInboxStore`: workspace inbox log, pending filters by lifecycle/agent, idempotent store consume, public delete/dismiss paths, and TTL compaction. |
 | `attention_dismissals.py` | `AttentionDismissalRecord` + `AttentionDismissalStore`: compact current acknowledgement rows for attention queue dismissals, with physical prune by live lifecycle id and a targetless actionable-drift exception. |
 | `interaction_retention.py` | Shared 5-minute pickup/wait and 24-hour interaction TTL policy helpers. |
 | `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store). |
@@ -116,6 +113,12 @@ response models are `models/operator_inbox.py`.
   satisfy the configured `GatePolicy` before they are appended or consumed.
 - Gates co-locate under `observer_root`, mirroring the event substrate; no new
   storage root.
+- **Cross-lifecycle seam fold.** A seam gate lives on its raiser's lifecycle (the
+  manager raises `master-handover-approval` with `enclosure=<master task name>`),
+  while its consumer — the orchestrator's master → super integrate — anchors a
+  different lifecycle. Identity-addressed consumers therefore read
+  `GateStore.all_current()` (the whole-workspace last-wins fold) and match by
+  `enclosure`, never by the consuming contract's lifecycle id.
 - Inbox entries require `lifecycleId`, `agentId`, or `recipientRole`; an
   unaddressed response has no external mailbox or hosted-session target.
 
@@ -132,6 +135,8 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): the cross-lifecycle seam fold added as an invariant bullet (`all_current()` + enclosure addressing) and the Layout table de-duplicated (the older `enforcement.py`/`operator_inbox_records.py`/`operator_inbox_store.py` rows removed; the newer kind-generic + role/delivery-metadata descriptions kept). Verification metadata pinned until closeout stamps the L8 commit.
+- 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): `GateStore.all_current()` folds every gate log (workspace + all lifecycles, last-wins per gate id) — the cross-lifecycle fold the integrate-side seam guard reads so an enclosure-addressed handover gate is visible from a different consuming lifecycle. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:24+02:00 — 260703-L8 route impact (cycle 5, small): `GateStore.find` resolves a gate id across the workspace and every lifecycle log — the packet-carried-id decide path. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:32+02:00 — 260703-L8 route impact (small): GateKind gains `master-handover-approval` (delegable master-exit seam gate; the named policy routes it to the orchestrator) and gate_policy gains SEAM_GATE_KINDS + `apply_seam_verdict_requirement` — the requireReviewerVerdictAtSeams wiring. Enforcement paths otherwise unchanged. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:32+02:00 — No route impact: orchestration_artifacts `template_path` root renamed with the unified skill folder (`l-01-agent-lifecycles`); resolution logic and the route model are unchanged (260703-L9).

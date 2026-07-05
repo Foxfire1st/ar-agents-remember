@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-05T19:25+02:00 |
+| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
+| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -78,8 +78,18 @@ forwards `retry_provider_setup`, and bounds worktree provider setup by
 repos plus a `ledgerMapsCodeHead` mapping check; the default stays
 `not-checked` so everyday packets skip the remote fetch.
 
+Gate-policy threading (260703-L8): `worktree_tools.py` resolves
+`config.orchestration.gate_policy` and threads it into BOTH the closeout and the
+integrate `WorktreeArgs`, so the module-level enforcement guards (closeout's
+delegated-gate check, integrate's master-handover seam guard) always evaluate
+the configured policy — never the all-human dataclass default. Omitting the
+passthrough on either path silently reverts that guard to human-only semantics,
+which is exactly the inert-consumer defect adversarial review 3 caught on the
+integrate side.
+
 ## Update History
 
+- 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): `worktree_integrate_tool` now threads `config.orchestration.gate_policy` into integrate `WorktreeArgs` (mirroring the closeout path), so the integrate-side master-handover guard evaluates the configured policy instead of the all-human dataclass default. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — No route impact: 260703-L4 only threads
   `config.orchestration.gate_policy` through `worktree_tools.py` into closeout
   args; controller boundaries and public controller responsibilities are

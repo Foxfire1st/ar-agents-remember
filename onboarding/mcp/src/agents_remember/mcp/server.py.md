@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastUpdated            | 2026-07-05T19:10+02:00 |
+| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
+| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -255,10 +255,11 @@ writing — the preview before adopting a hand `.md`.
 
 FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `worktree_start`, `worktree_attach`, and `worktree_status`, matching the controller and source API signatures.
 
-As of cycle 5 the lifecycle_gate registration exposes wait (default true) with the raise-and-continue contract documented in the docstring.
+As of cycle 5 the lifecycle_gate registration exposes wait (default true) with the raise-and-continue contract documented in the docstring; cycle 6 makes both gate docstrings match the payload layer exactly — `lifecycle_gate` says wait=false is reserved for delegated seam kinds (any other kind blocks), and `gate_list` says a missing lifecycle_id defaults to the ACTIVE (ambient) lifecycle with the workspace log as the no-ambient fallback.
 
 ## Update History
 
+- 2026-07-05T19:10+02:00 - L8 builder cycle 6: lifecycle_gate/gate_list docstrings aligned with the seam-kind wait=false restriction and the ambient-defaulting gate_list (AR3-3/AR3-5). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): lifecycle_gate wait passthrough registered. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: `lifecycle_gate`/`gate_decide`
   registrations forward gate evidence refs, and `gate_decide(deciding_role=...)`

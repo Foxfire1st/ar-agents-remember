@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
+| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
 
 > **Status:** active baseline
 
@@ -376,6 +376,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-05T19:10+02:00 — No route impact: repo-level rows remain accurate — 260703-L8 cycle 6 is the adversarial-review-3 remediation (enforcement re-addressing, raise hygiene, doctrine/template/canvas alignment), all inside existing routes. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:24+02:00 — No route impact: repo-level rows remain accurate — 260703-L8 cycle 5 is the seam-channel remediation (server + doctrine internals documented at their routes) and the settings-json.md gate-delegation paragraph update. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:32+02:00 — 260703-L8 route impact (cycle 4, seam ruling): the master-exit handover gate is now the delegable `master-handover-approval` kind — the manager raises it with the reviewer verdict attached, the ORCHESTRATOR decides (human review concentrates at the super gate); `requireReviewerVerdictAtSeams` is wired (binds delegated seam decisions to verdict evidence); the reviewer role file is `roles/reviewer.md` (renamed to the server vocabulary, spawn value `reviewer`); templates gain `manager-brief.md`; the FlowTab canvas draws the converged doctrine (ROUTER in, FRAME/BUILD-JOB out). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 — No route impact: 260703-L8 de-harnessing pass is internal to the unified lifecycle skill (no per-harness role files); repo-level rows remain accurate — no repository structure or routing change.

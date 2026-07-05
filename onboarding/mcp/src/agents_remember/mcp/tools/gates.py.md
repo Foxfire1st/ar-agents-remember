@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/mcp/tools/gates.py`       |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a`         |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastUpdated            | 2026-07-05T19:10+02:00 |
+| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`         |
+| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -97,10 +97,11 @@ envelope. `cancel` decisions physically delete the gate and any inbox entries ti
 | The choke point every gate payload returns through. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 | Gate response models. | [models/gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
 
-As of cycle 5 the seam channel is operable: lifecycle_gate accepts wait=false (raise-and-continue, allowed only for kinds the active policy delegates — returns the gateId in a model-conformant raised payload instead of blocking); gate_decide resolves a bare gate_id across lifecycles via GateStore.find when no lifecycle_id is given, REFUSES cli-attributed non-cancel decisions on kinds the active policy delegates (fail-loud: pass deciding_role or leave it to the developer), and cancel deletes by the gate's own lifecycleId.
+As of cycle 5 the seam channel is operable: lifecycle_gate accepts wait=false (raise-and-continue — returns the gateId in a model-conformant raised payload instead of blocking); gate_decide resolves a bare gate_id across lifecycles via GateStore.find when no lifecycle_id is given, REFUSES cli-attributed non-cancel decisions on kinds the active policy delegates (fail-loud: pass deciding_role or leave it to the developer), and cancel deletes by the gate's own lifecycleId. Cycle 6 hardens the raise path: wait=false is now reserved for SEAM kinds (`SEAM_GATE_KINDS`) that the active policy also delegates — a delegated non-seam kind like plan-approval blocks again — and the check runs BEFORE the expire-sweep and append (validate-then-mutate), so a refused raise persists no orphan open gate and expires no sibling. `gate_list_payload` is now ambient-defaulting: with no explicit lifecycle_id it lists the ACTIVE lifecycle's gates (a raiser polls its own gate without handling lifecycle ids) and falls back to the workspace log only when no lifecycle is active.
 
 ## Update History
 
+- 2026-07-05T19:10+02:00 - L8 builder cycle 6: wait=false restricted to delegated seam kinds and validated before mutating (AR3-2/AR3-5); gate_list defaults to the ambient lifecycle (AR3-3). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): wait=false raise, cross-lifecycle decide-by-id, cli refusal on delegated kinds. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: `gate_decide_payload` now handles
   `decidedVia="orchestration"` with a deciding role, active lifecycle/session
