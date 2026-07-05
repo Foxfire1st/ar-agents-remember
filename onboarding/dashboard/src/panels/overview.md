@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `6b940141fc319f1d2d18b2c94fd9e9a213d43141`       |
-| lastVerifiedCommitDate | 2026-07-04T12:52:03+02:00|
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`       |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -236,8 +236,10 @@ and the `Chats` `SessionList` switcher).
   before it is built**. `FlowTab.tsx` is now a **pure segment renderer + radiogroup model nav** (the
   `RailToggle` idiom) with **zero store reads**; all content is externalized to the new `flowModels.ts`
   **flow-model registry** (the `FlowStart`/`FlowNode`/`FlowRundown`/`FlowDivider` = `FlowSegment` union +
-  the `FlowModel` type, plus **8 static models**: `build-job` · `frame` · `designer` · `orchestrator` ·
-  `manager` · `worker` · `reviewer` · `comms`). The renderer draws four segment kinds — a start pill, a
+  the `FlowModel` type, plus **7 static models**: `router` · `designer` · `orchestrator` · `manager` ·
+  `worker` · `reviewer` · `comms` — the converged l-01-agent-lifecycles doctrine; the retired
+  `build-job` and `frame` models died with the l-01/l-02 convergence, and `router` (the default)
+  draws the three-condition entry, the D·P·O event loop, and the task-doc→branch→worktree ladder). The renderer draws four segment kinds — a start pill, a
   tool `node`, a gate-rider node (amber left-bar, `rides` + optional `ridesNote` override), and a prose
   `rundown` card — with mint (wired today) / amber-dashed (this series) edges via `nextStatus`. The
   **build-job** model preserves the original task-26 chain (front-half prose rundown + the linear
@@ -278,6 +280,7 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-05T16:32+02:00 — 260703-L8 route impact (small): the FlowTab registry now draws the converged lifecycle doctrine — ROUTER model (three conditions + D·P·O event loop + the invariant ladder) replaces the retired FRAME and BUILD-JOB models; worker/manager/orchestrator/reviewer/comms models redrawn to the ruled seam semantics; FlowTab tests rewritten (9). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: task-row pickup feedback now
   mirrors message-kind and hosted-delivery metadata from `AgentPickupNode`.
   Verification metadata pinned until closeout stamps the L3 commit.

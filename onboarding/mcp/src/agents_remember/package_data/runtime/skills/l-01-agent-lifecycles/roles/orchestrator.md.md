@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T04:40+02:00 |
-| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
-| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
+| lastUpdated            | 2026-07-05T16:20+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 
 ## Purpose
 
@@ -21,6 +21,8 @@ Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/orchest
 
 As of the L8 de-harnessing pass the file carries a Sub-Agent Fan-Out capability-doctrine section (any harness that has fan-out: sub-agents write templated durable reports and return compact summaries; AR mutations stay in the main loop; capped by orchestration.concurrency.maxSubAgents; a harness without the ability runs the analyses sequentially) — the content formerly held by the deleted roles/orchestrator.claude-code.md overlay, generalized off the vendor.
 
+As of cycle 4 the orchestrator DECIDES the manager's `master-handover-approval` gate at each master exit (own ambient identity as the attributed decider; policy may require the attached verdict; an undecidable handover escalates to the developer); manager dispatch compiles from templates/manager-brief.md carrying the base-off-current-super fact; the hat-collapse rule notes delegated gates collapse back to the developer when one chair owns both sides; the super-exit reviewer spawn states AR_SPAWN_ROLE=reviewer; finalize wording is honest (statuses via the tool, steps by hand); the dangling Phase cross-reference is fixed.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -31,6 +33,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): gained the handover-gate deciding duty + manager-brief dispatch + hat-collapse gate-reversion clause. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: harness overlay deleted; sub-agent doctrine folded in as a capability-conditional section; knob harness row is a preference settings overrides. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:15+02:00 - L8 orchestrator routes rework: restructured as event loop + three jobs + hat-collapse; invariant ladder (task doc -> branch -> worktree) replaces worktree-first ordering; chat-build route removed; reopen-and-reshape + ordered-list renumbering doctrines encoded; body rewritten accordingly. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: orchestrator.md became the full developer-facing lifecycle: absorbed the session-job phase axis + hand-off protocol, gained solo-as-degenerate-portfolio, and is now the topology's single home; body rewritten accordingly. Verification metadata pinned until closeout stamps the L9 commit.

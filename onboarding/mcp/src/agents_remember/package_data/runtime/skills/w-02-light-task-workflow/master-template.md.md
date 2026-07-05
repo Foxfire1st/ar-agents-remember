@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-05T16:30+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 
 ## Purpose
 
@@ -59,6 +59,8 @@ No external domain documentation applies to this repository-local template.
 | The `w-02-light-task-workflow` skill lists `master-template.md` as a companion and adds the master-task composition section + invariant 13. | n/a | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
 | The `w-02-light-task-workflow` skill workflow's "Master Task Series" section describes the one-worktree / commit-per-slice / one-integrate lifecycle. | n/a | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
 
+As of the 260703-L8 remediation the escalation line names the orchestrator lifecycle's `decide` step plainly (the retired 'build-mode' vocabulary is gone).
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this template.
@@ -73,6 +75,7 @@ The master template's execution model now says a master provides the integration
 
 ## Update History
 
+- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): retired build-mode vocabulary removed. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the escalation reference now names the l-01-agent-lifecycles orchestrator lifecycle's decide step. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged master template now teaches "one master integration branch, one leaf enclosure per active sub-task" instead of a single shared series worktree. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-23T22:50+02:00: Dashboard task 14 — updated the master-series convention from integrate+cleanup to integrate+finalize, with `lifecycle_finalize_task` owning terminal cleanup/task-document reconciliation. Verification metadata pinned until closeout stamps the source commit.

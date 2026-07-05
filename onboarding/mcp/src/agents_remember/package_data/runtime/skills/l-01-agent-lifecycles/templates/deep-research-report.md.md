@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash |                                            `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`|
-| lastVerifiedCommitDate |                                            2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-05T16:20+02:00 |
+| lastVerifiedCommitHash |                                            `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`|
+| lastVerifiedCommitDate |                                            2026-07-05T16:23:40+02:00|
 
 ## Purpose
 
@@ -49,6 +49,8 @@ The template is a companion to the lifecycle entry contract and the detailed spi
 | The lifecycle delegates report shape to this template while preserving its required proof categories. | L87-L97 | [lifecycle.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
 | The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | L12-L123 | [deep-research-report.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report.md) |
 
+As of cycle 4 the decision block asks for the suggested artifact shape (minimal w-02 task vs master + series) instead of the retired 'build mode' axis.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this lifecycle report template.
@@ -59,5 +61,6 @@ No sibling repository evidence is needed for this lifecycle report template.
 
 ## Update History
 
+- 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): retired build-mode vocabulary replaced with artifact shape. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: moved from the retired l-01-session-job-lifecycle skill into the shared template library and renamed deep-research-report.md; used by the orchestrator lifecycle's research phase. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-04T14:50+02:00: Created file-level onboarding for the new deep research report template companion file. Verification metadata is intentionally blank until closeout refreshes it to the first code commit containing the new source file.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
-| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -410,6 +410,7 @@ changed files in check mode.
 
 ## Update History
 
+- 2026-07-05T16:32+02:00 — No route impact: route model unchanged — 260703-L8 cycle 4 lands the seam-ruling remediation (reviewer.md rename + manager-brief.md inside the lifecycle skill tree; config wires the at-seams flag through parse_gate_delegation; next_step rundown re-worded; four skill mirrors touched). Tool signatures unchanged; the new gate kind is documented at the controlplane route. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 — No route impact: 260703-L8 de-harnessing pass: the two .claude-code.md runtime-mirror overlays are deleted and their sub-agent doctrine folded into the portable orchestrator/worker files as capability-conditional sections; SKILL resolution drops the variant layer. Markdown doctrine only; file cards for the two overlays retire with their sources; no mcp source or route model change.
 
 - 2026-07-05T04:16+02:00 — No route impact: 260703-L8 reopened pass restructures four runtime-mirror doctrine files inside skills/l-01-agent-lifecycles (orchestrator = event loop + three jobs; designer = the hat; SKILL registry/router wording; manager flat-run + reopen rule) — markdown doctrine only, no mcp source, tool signature, or route model change.

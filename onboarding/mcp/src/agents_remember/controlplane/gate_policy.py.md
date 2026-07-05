@@ -5,9 +5,9 @@
 | repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/controlplane/gate_policy.py` |
 | doc_type               | `file-level-onboarding`                             |
-| lastUpdated            | 2026-07-04T12:32+02:00                              |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19`          |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-05T16:30+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`          |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Purpose
@@ -58,8 +58,11 @@ requires it.
 | MCP settings parse the named/custom policy into this model. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | Gate decision payloads reject invalid orchestration decisions before appending. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 
+As of the 260703-L8 seam ruling: `master-handover-approval` joins DELEGABLE_GATE_KINDS; SEAM_GATE_KINDS names the seam set; `apply_seam_verdict_requirement(policy)` binds reviewer-verdict evidence to every DELEGATED seam rule (the requireReviewerVerdictAtSeams wiring — human-decided seam kinds are untouched since the human sees the attached verdict); the named policy manager-decides-leaf-gates now also routes the master-exit handover to the ORCHESTRATOR.
+
 ## Update History
 
+- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): seam kind delegable; at-seams flag wired via apply_seam_verdict_requirement; named policy routes handover to the orchestrator. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: created for validated opt-in gate
   delegation policy, human-pinned gate protection, no-self-approval attribution,
   and reviewer-verdict evidence requirements. Verification metadata pinned until

@@ -105,9 +105,11 @@
       "GateStore",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "277f27a33b35aed8235cbb3c1ae2b5633cc88b22",
+      "19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0",
       "/../../overview.md",
       "controlplane/",
+      "master-handover-approval",
+      "requireReviewerVerdictAtSeams",
       "observer_root",
       "evaluate_gate",
       "evaluate_closeout_gate",
@@ -120,9 +122,7 @@
       "recipientRole",
       "AttentionDismissalStore",
       "observer_root/workspace/attention-dismissals.jsonl",
-      "ar-gate-record/v1",
-      "create_gate",
-      "decide_gate"
+      "ar-gate-record/v1"
     ]
   },
   "fallback": {

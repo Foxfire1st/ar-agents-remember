@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-04T12:32+02:00                      |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`     |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`     |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -15,7 +15,10 @@
 `controlplane/` owns control-plane records: the gate control plane (task 6), the
 operator/agent inbox (task 10/L3), orchestration artifact/nudge helpers (L3), the
 task-23/24 interaction-retention policy, and task-28 lifecycle-scoped attention
-acknowledgements. Gates are attributed decision points on a lifecycle; the inbox
+acknowledgements. Gates are attributed decision points on a lifecycle — the kind vocabulary
+includes the delegable `master-handover-approval` seam gate (the manager raises it with the
+reviewer verdict attached; the orchestrator decides per the gate delegation policy, and
+`requireReviewerVerdictAtSeams` binds delegated seam decisions to that evidence); the inbox
 is the pull-based return channel for chats the dashboard does not host and the
 durable substrate for agent-to-agent messages that may also be pushed into
 hosted sessions; nudge rows record rate-limited manager nudges. Attention
@@ -129,6 +132,7 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-05T16:32+02:00 — 260703-L8 route impact (small): GateKind gains `master-handover-approval` (delegable master-exit seam gate; the named policy routes it to the orchestrator) and gate_policy gains SEAM_GATE_KINDS + `apply_seam_verdict_requirement` — the requireReviewerVerdictAtSeams wiring. Enforcement paths otherwise unchanged. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:32+02:00 — No route impact: orchestration_artifacts `template_path` root renamed with the unified skill folder (`l-01-agent-lifecycles`); resolution logic and the route model are unchanged (260703-L9).
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: added the
   `gate_policy.py` schema/validator, generalized enforcement to a kind-generic

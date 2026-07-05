@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-05T16:20+02:00 |
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 
 ## Purpose
 
@@ -51,6 +51,8 @@ This bundle copy is the shape the adversarial-reviewer job writes at each seam; 
 | Lens 3 cites a backing onboarding-coherency report. | n/a | [onboarding-coherency.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md) |
 | The frame defines the two seams and the evidence-not-decision / block-decomposes-into-fix-leaves doctrine. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
 
+As of cycle 4 the decider rows are ruled: master-exit = orchestrator (delegated master-handover-approval; serious issues escalate to the developer); super-exit = developer (human review concentrates at the super gate); the reviewer role file reference is roles/reviewer.md.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this report template.
@@ -61,6 +63,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): decider rows ruled per the seam decision; L4 shorthand replaced. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/; role-file reference now roles/adversarial-reviewer.md. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T13:16+02:00: 260703-L6 split the verdict shape into explicit master-exit and super-exit
   variants, added evidence-file and gate-evidence-ref fields, and made BLOCK fix-leaf decomposition

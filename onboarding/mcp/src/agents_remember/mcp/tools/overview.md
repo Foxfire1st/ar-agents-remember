@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`                                      |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`                                      |
+| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -113,6 +113,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-05T16:32+02:00 — No route impact: next_step FRONT_HALF_RUNDOWN re-worded to the event-loop + ladder vocabulary (AR-13); strings only, no tool behavior change (260703-L8 cycle 4).
 - 2026-07-05T01:32+02:00 — No route impact: next_step FRONT_HALF_RUNDOWN reframe bullet now names the orchestrator lifecycle (`l-01-agent-lifecycles` roles/orchestrator.md); string wording only, no tool behavior change (260703-L9).
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: `gates.py` now handles
   policy-checked orchestration gate decisions with deciding role, no owner
