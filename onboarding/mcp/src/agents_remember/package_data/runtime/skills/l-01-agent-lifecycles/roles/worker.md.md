@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-05T04:40+02:00 |
+| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
+| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
 
 ## Purpose
 
@@ -19,6 +19,8 @@ The self-contained worker lifecycle: one leaf, one session, one report. The brie
 
 Sync-propagated copy of the canonical `skills/l-01-agent-lifecycles/roles/worker.md`. The worker loop: intake (brief + leaf task_doc + predecessor report - never a transcript) -> orient (paired reads via read_ar_files, which serves the OFFICIAL baseline, plus native worktree reads as the edit precondition; evidence tally per brief) -> build (leaf plan exactly; same-pass c-05 onboarding incl. the literal '- <ISO> - No route impact: <reason>' attestation form; generated indexes via local build_route_indexes; NEVER git commit) -> checks green (brief-prescribed focused + full wrapper; a red check outside leaf scope is an escalation) -> mandatory turn report (../templates/turn-report.md, written even when blocked) -> end. Tool surface stated positively: native file tools in the two worktrees, read-only AR retrieval, shell for checks, inbox when wired; no worktree_*/lifecycle_*/task_doc/gate_*/memory_*/route_index_refresh. Default behavior: fulfill the task, fill small blanks; plan deltas escalate one rung to the owning seat (spirit test is orchestrator-only). Knob default harness is codex (the practiced worker economics); `roles/worker.claude-code.md` overlays Claude Code.
 
+As of the L8 de-harnessing pass the file carries a Fan-Out capability-doctrine section (read/search sub-agents only, scoped to the leaf; durable notes + compact summaries; the main loop owns every durable act incl. the never-delegated turn report) — formerly the deleted roles/worker.claude-code.md overlay, generalized off the vendor.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -29,6 +31,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-05T04:40+02:00 - L8 de-harnessing pass: harness overlay deleted; fan-out doctrine folded in; knob harness row is a preference settings overrides. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: worker.md rewritten as a POSITIVE, self-contained lifecycle: no session-job references, closeout/integrate/attach stripped (owning seat's machinery), brief-as-session-start, terminal state = checks green + turn report; body rewritten accordingly. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:31+02:00 - L3: worker comms now name the inbox message-kind
   metadata, mandatory turn-report artifact path, and manager nudge tool.

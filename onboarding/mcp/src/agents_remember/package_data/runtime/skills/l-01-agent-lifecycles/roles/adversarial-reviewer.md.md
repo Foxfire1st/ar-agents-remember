@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-05T04:40+02:00 |
+| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
+| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
 
 ## Purpose
 
@@ -90,6 +90,8 @@ The reviewer is spawned at the manager's master-exit seam and the orchestrator's
 | The manager that spawns the reviewer at master-exit and dispatches its decomposed fix leaves. | n/a | [manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md) |
 | The orchestrator that spawns the reviewer at super-exit and decides that seam's handover gate. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
 
+As of the L8 de-harnessing pass the overlay-authoring sentence is gone and the knob harness row is a preference settings overrides: no per-harness reviewer files.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration job file.
@@ -100,6 +102,7 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-05T04:40+02:00 - L8 de-harnessing pass: overlay-authoring sentence removed (no per-harness files). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed to roles/ under the unified skill; self-contained header (brief = session start); template references now ../templates/. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T13:16+02:00: 260703-L6 sharpened this reviewer job with separate MASTER-EXIT and
   SUPER-EXIT rubrics, explicit refute-or-confirm evidence-file posture, `notes/reports/` verdict

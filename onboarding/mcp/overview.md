@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `4604de60589ecba642db9455179f0b11a8484bc4` |
-| lastVerifiedCommitDate | 2026-07-05T03:18:30+02:00|
+| lastVerifiedCommitHash | `314d21a8917decf942b302413e0cd31e8befec33` |
+| lastVerifiedCommitDate | 2026-07-05T04:29:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -409,6 +409,8 @@ changed files in check mode.
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 
 ## Update History
+
+- 2026-07-05T04:40+02:00 — No route impact: 260703-L8 de-harnessing pass: the two .claude-code.md runtime-mirror overlays are deleted and their sub-agent doctrine folded into the portable orchestrator/worker files as capability-conditional sections; SKILL resolution drops the variant layer. Markdown doctrine only; file cards for the two overlays retire with their sources; no mcp source or route model change.
 
 - 2026-07-05T04:16+02:00 — No route impact: 260703-L8 reopened pass restructures four runtime-mirror doctrine files inside skills/l-01-agent-lifecycles (orchestrator = event loop + three jobs; designer = the hat; SKILL registry/router wording; manager flat-run + reopen rule) — markdown doctrine only, no mcp source, tool signature, or route model change.
 

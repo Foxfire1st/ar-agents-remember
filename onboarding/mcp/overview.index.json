@@ -170,9 +170,7 @@
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md",
-    "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.claude-code.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md",
-    "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.claude-code.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md",
@@ -299,8 +297,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 519,
-    "fileSidecars": 211,
+    "sourceFilesInScope": 517,
+    "fileSidecars": 209,
     "childRoutes": 15
   },
   "routingTerms": [
@@ -340,7 +338,6 @@
     "cgcignore",
     "changeset",
     "check",
-    "claude",
     "cleanup",
     "cli",
     "closeout",
@@ -383,7 +380,8 @@
     "current_state",
     "daemon",
     "dashboard",
-    "data"
+    "data",
+    "deep"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",
