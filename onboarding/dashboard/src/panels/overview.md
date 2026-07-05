@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-05T19:25+02:00 |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`       |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`       |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -245,11 +245,11 @@ and the `Chats` `SessionList` switcher).
   seven models encode the converged doctrine's agreed invariants (the router three-condition entry; the
   worker → manager → orchestrator → developer escalation ladder; the master-granular DAG /
   never-interleave-dispatch rule; delegated attributed gates; verdicts-are-evidence-not-decisions;
-  mandatory turn reports; one handover-packet schema). Since L8 cycles 5–6 the manager and orchestrator
-  seam nodes draw the ruled handover channel exactly: the manager raises `master-handover-approval` with
-  `wait=false` and `enclosure=<master task name>`, the returned gateId rides the handover packet, the
-  orchestrator decides by that packet-carried gateId, and integration enforces the verdict by master
-  identity. Task 29
+  mandatory turn reports; one handover-packet schema). Since L8 cycles 5–7 the manager and orchestrator
+  seam nodes draw the ruled handover channel: the manager raises `master-handover-approval` with
+  `wait=false` and `enclosure="<master task name>"` (the raise node names the enclosure as the exact
+  address integration enforcement matches the gate by), the returned gateId rides the handover packet,
+  and the orchestrator decides by that packet-carried gateId. Task 29
   S7 removed it from the cockpit `View` union and mode bar; L0 **mounts it dev-only at `/dev/flows`**
   (`dev/DevApp.tsx`, `initialModel` from `?model=`), dead-code-eliminated in production — it is not a
   shipped cockpit panel. Covered by `FlowTab.test.tsx` (default model, nav switching, `initialModel`
@@ -280,6 +280,7 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 — 260703-L8 route impact (cycle 7, AR4-3/AR4-4): the seam-channel sentence rescoped to what the canvas draws — the manager raise node now names `enclosure="<master task name>"` as the exact address integration enforcement matches the gate by (AR4-4), so the enclosure clause is true as-drawn; the cycle-6 owner follow-up's "exactly … integration enforces the verdict by master identity" overclaim is dropped (enforcement itself is not a drawn node). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): body de-staled — the FlowTab paragraph's leftover build-job/frame tail (deleted models, the "8 static models" reference row, the "other seven" phrasing) replaced with the converged 7-model census and the exact ruled seam channel (wait=false raise, enclosure address, packet-carried gateId, identity-addressed enforcement). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): the flowModels seam nodes now draw the ruled channel exactly — the manager's raise carries wait=false with the returned gateId riding the packet, and the orchestrator decides by the packet-carried gateId; FlowTab tests pin the new prose. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:32+02:00 — 260703-L8 route impact (small): the FlowTab registry now draws the converged lifecycle doctrine — ROUTER model (three conditions + D·P·O event loop + the invariant ladder) replaces the retired FRAME and BUILD-JOB models; worker/manager/orchestrator/reviewer/comms models redrawn to the ruled seam semantics; FlowTab tests rewritten (9). Verification metadata pinned until closeout stamps the L8 commit.

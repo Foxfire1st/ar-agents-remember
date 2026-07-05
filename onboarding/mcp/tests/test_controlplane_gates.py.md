@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-05T19:10+02:00 |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`       |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastUpdated            | 2026-07-05T19:55+02:00 |
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`       |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -79,10 +79,11 @@ approvals according to `GatePolicy`.
 
 As of the 260703-L8 seam ruling the suite carries MasterHandoverSeamTests: delegability to the orchestrator, the named-policy routing, human-pinned kinds staying pinned, apply_seam_verdict_requirement binding only delegated seam rules, verdict-evidence refusal/acceptance on a delegated handover decision, and owner-never-self-approves on the handover kind.
 
-As of cycle 5 SeamChannelTests exercises the seam end-to-end at the payload layer: wait=false raise (and its refusal for undelegated kinds), cross-lifecycle decide by packet-carried gate id with orchestration attribution, verdict-evidence requirement, cli refusal on delegated kinds, raiser cancel, and evaluate_gate over the handover kind. Cycle 6 tightens the refusal coverage (an all-human refusal now also asserts no orphan gate persists and no sibling is expired — validate-then-mutate; a delegated-but-non-seam kind like plan-approval is refused too) and adds `HandoverEnforcementHelperTests`: the integrate-side `handover_gate_guard` over a cross-lifecycle `GateStore.all_current()` fold — open-on-foreign-lifecycle blocks, policy-valid approval permits, the CONFIGURED policy (not `DEFAULT_GATE_POLICY`) governs, gateless/unaddressed permits, `parent_task_name` addressing works, and `worktree_integrate_tool` is inspected to construct `WorktreeArgs` with `config.orchestration.gate_policy`. `GateToolTests` also covers the ambient-defaulting `gate_list_payload` (ambient → that lifecycle's gates; no ambient → workspace).
+As of cycle 5 SeamChannelTests exercises the seam end-to-end at the payload layer: wait=false raise (and its refusal for undelegated kinds), cross-lifecycle decide by packet-carried gate id with orchestration attribution, verdict-evidence requirement, cli refusal on delegated kinds, raiser cancel, and evaluate_gate over the handover kind. Cycle 6 tightens the refusal coverage (an all-human refusal now also asserts no orphan gate persists and no sibling is expired — validate-then-mutate; a delegated-but-non-seam kind like plan-approval is refused too) and adds `HandoverEnforcementHelperTests`: the integrate-side `handover_gate_guard` over a cross-lifecycle `GateStore.all_current()` fold — open-on-foreign-lifecycle blocks, policy-valid approval permits, the CONFIGURED policy (not `DEFAULT_GATE_POLICY`) governs, gateless/unaddressed permits, `parent_task_name` addressing works, and `worktree_integrate_tool` is inspected to construct `WorktreeArgs` with `config.orchestration.gate_policy`. `GateToolTests` also covers the ambient-defaulting `gate_list_payload` (ambient → that lifecycle's gates; no ambient → workspace). Cycle 7 adds three layers on the enclosure address: SeamChannelTests proves an enclosure-less/blank wait=false raise refuses BEFORE mutation (no orphan gate, sibling not expired) and that a raised gate carries its address; HandoverEnforcementHelperTests covers the pure `unmatched_handover_gate_warning` (foreign-enclosure open gate warns with gateId+enclosure, no-handover-gates and matched/decided cases stay silent); and `IntegrateDryRunGuardTests` drives `integrate_result(dry_run=true)` with the git steps mocked over a REAL cross-lifecycle store, asserting the preview carries `handover_gate` (permitted/gateId/reason), names `handover-gate-blocked` in the summary when the real run would refuse, carries the unmatched-gate warning, and never calls `write_contract`.
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 - L8 builder cycle 7: enclosure-required raise refusal (AR4-1a), unmatched-open-gate warning helper tests (AR4-1b), and IntegrateDryRunGuardTests for the guard-reporting, non-persisting dry run (AR4-2). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: HandoverEnforcementHelperTests (7 tests), wait=false refusal hygiene + seam-kind restriction coverage, ambient gate_list tests. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): SeamChannelTests added (7 tests). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): MasterHandoverSeamTests added (6 tests). Verification metadata pinned until closeout stamps the L8 commit.

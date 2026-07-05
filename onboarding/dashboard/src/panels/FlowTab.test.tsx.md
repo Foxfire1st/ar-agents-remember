@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/FlowTab.test.tsx`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-05T19:10+02:00 |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`       |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastUpdated            | 2026-07-05T19:55+02:00 |
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`       |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -81,10 +81,11 @@ exact on-canvas prose, so they double as a regression guard on the drawn spec.
 | The renderer + nav under test (default model, nav radiogroup, initialModel fallback, segment counts). | L111-L150; L60-L109 | [FlowTab.tsx](FlowTab.tsx) |
 | The registry the census derives expectations from and whose invariant prose the suite asserts. | L7-L50; L54-L366; L368 | [flowModels.ts](flowModels.ts) |
 
-As of the 260703-L8 remediation the tests assert the converged canvas: router default + retired models absent from the nav, the ladder and no-chat-builds invariants on the ROUTER drawing, the branch-not-worktree intent and delegated handover decision on the orchestrator, reopen-not-redo on the manager, brief-started/no-machinery worker, hat-framed designer, and the ruled deciders on the reviewer. Cycle 6 pins the ruled seam channel verbatim: the orchestrator assertion now matches `the ORCHESTRATOR decides by the packet-carried gateId`, and a manager assertion matches the gateId-rides-the-packet raise line.
+As of the 260703-L8 remediation the tests assert the converged canvas: router default + retired models absent from the nav, the ladder and no-chat-builds invariants on the ROUTER drawing, the branch-not-worktree intent and delegated handover decision on the orchestrator, reopen-not-redo on the manager, brief-started/no-machinery worker, hat-framed designer, and the ruled deciders on the reviewer. Cycle 6 pins the ruled seam channel verbatim: the orchestrator assertion now matches `the ORCHESTRATOR decides by the packet-carried gateId`, and a manager assertion matches the gateId-rides-the-packet raise line. Cycle 7 adds a manager assertion pinning the raise node's enclosure address (`enclosure="<master task name>" — the exact address integration enforcement matches the gate by`).
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 - L8 builder cycle 7: new assertion pins the manager raise node's enclosure address (AR4-4). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: seam-channel assertions updated to the wait=false raise + decide-by-packet-carried-gateId prose (AR3-6a). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): tests rewritten for the converged canvas (9 tests). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T09:40+02:00 — Created for 260703-L0 (Canvas & playground): 8 vitest cases for the FlowTab

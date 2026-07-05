@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 
 > **Status:** active baseline
 
@@ -376,6 +376,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 — No route impact: repo-level rows remain accurate — 260703-L8 cycle 7 is the adversarial-review-4 remediation (enclosure address validation + warning, dry-run guard reporting, canvas/doctrine/registry alignment), all inside existing routes. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — No route impact: repo-level rows remain accurate — 260703-L8 cycle 6 is the adversarial-review-3 remediation (enforcement re-addressing, raise hygiene, doctrine/template/canvas alignment), all inside existing routes. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:24+02:00 — No route impact: repo-level rows remain accurate — 260703-L8 cycle 5 is the seam-channel remediation (server + doctrine internals documented at their routes) and the settings-json.md gate-delegation paragraph update. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:32+02:00 — 260703-L8 route impact (cycle 4, seam ruling): the master-exit handover gate is now the delegable `master-handover-approval` kind — the manager raises it with the reviewer verdict attached, the ORCHESTRATOR decides (human review concentrates at the super gate); `requireReviewerVerdictAtSeams` is wired (binds delegated seam decisions to verdict evidence); the reviewer role file is `roles/reviewer.md` (renamed to the server vocabulary, spawn value `reviewer`); templates gain `manager-brief.md`; the FlowTab canvas draws the converged doctrine (ROUTER in, FRAME/BUILD-JOB out). Verification metadata pinned until closeout stamps the L8 commit.
