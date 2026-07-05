@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T12:32+02:00                     |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-05T19:10+02:00                     |
+| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
+| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -43,7 +43,11 @@ and delegates final readiness, cleanup, and task-document reconciliation to the
 worktree finalizer.
 260703-L4 also threads `config.orchestration.gate_policy` into closeout
 `WorktreeArgs`, keeping the controller as typed plumbing while the closeout
-module and controlplane enforce the policy.
+module and controlplane enforce the policy. L8 cycle 6 extends the same
+pass-through to `worktree_integrate_tool`: integrate `WorktreeArgs` now carry
+the configured policy too (the dataclass default is all-human, which would
+refuse the exact delegated master-handover approval the seam channel produces),
+so both gate consumers evaluate the deployment's policy, not the default.
 
 Slice 2c wires the observable lifecycle here while the git module stays
 observer-free: `worktree_start_tool` resolves a `lifecycle_id` (the active
@@ -93,6 +97,7 @@ Worktree start/attach/status controllers accept `parent_task` and `leaf_id` and 
 
 ## Update History
 
+- 2026-07-05T19:10+02:00 - L8 builder cycle 6: `worktree_integrate_tool` now passes `gate_policy=config.orchestration.gate_policy` into `WorktreeArgs`, mirroring the closeout path (AR3-1(a)). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — No route impact: 260703-L4 only forwards the parsed
   gate delegation policy from MCP config into worktree closeout args; controller
   domain boundaries and public tool surface are unchanged. Verification metadata

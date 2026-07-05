@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`       |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-05T19:25+02:00 |
+| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`       |
+| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -242,14 +242,14 @@ and the `Chats` `SessionList` switcher).
   draws the three-condition entry, the D·P·O event loop, and the task-doc→branch→worktree ladder). The renderer draws four segment kinds — a start pill, a
   tool `node`, a gate-rider node (amber left-bar, `rides` + optional `ridesNote` override), and a prose
   `rundown` card — with mint (wired today) / amber-dashed (this series) edges via `nextStatus`. The
-  **build-job** model preserves the original task-26 chain (front-half prose rundown + the linear
-  `worktree_start --dry-run` → `lifecycle_end` gate chain) and stays the human-readable SPEC the task-27
-  next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)) was
-  built to match; its takeaway now self-identifies as the "Eierlegende Wollmilchsau" and points at the
-  `frame` model. The other seven models encode the agent-orchestration series' agreed invariants
-  (orchestrator-only spirit test; the worker → manager → orchestrator → developer escalation ladder; the
-  two adversarial seams; the master-granular DAG / never-interleave-dispatch rule; delegated attributed
-  gates; verdicts-are-evidence-not-decisions; mandatory turn reports; one handover-packet schema). Task 29
+  seven models encode the converged doctrine's agreed invariants (the router three-condition entry; the
+  worker → manager → orchestrator → developer escalation ladder; the master-granular DAG /
+  never-interleave-dispatch rule; delegated attributed gates; verdicts-are-evidence-not-decisions;
+  mandatory turn reports; one handover-packet schema). Since L8 cycles 5–6 the manager and orchestrator
+  seam nodes draw the ruled handover channel exactly: the manager raises `master-handover-approval` with
+  `wait=false` and `enclosure=<master task name>`, the returned gateId rides the handover packet, the
+  orchestrator decides by that packet-carried gateId, and integration enforces the verdict by master
+  identity. Task 29
   S7 removed it from the cockpit `View` union and mode bar; L0 **mounts it dev-only at `/dev/flows`**
   (`dev/DevApp.tsx`, `initialModel` from `?model=`), dead-code-eliminated in production — it is not a
   shipped cockpit panel. Covered by `FlowTab.test.tsx` (default model, nav switching, `initialModel`
@@ -275,11 +275,13 @@ and the `Chats` `SessionList` switcher).
 | The shared panel chrome every panel renders through. | [grammar/Panel.tsx](agents-remember/dashboard/src/grammar/Panel.tsx) |
 | The pure selectors the panels read (queue, tree, engine state, drift segments). | [data/selectors.ts](agents-remember/dashboard/src/data/selectors.ts) |
 | The projection node shapes the panels render. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The next-step engine the `FlowTab.tsx` build-job model is the human-readable SPEC for. | [tools/next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| The flow-model registry that holds the `FlowTab` canvas content (8 static models + segment/model types). | [flowModels.ts](agents-remember/dashboard/src/panels/flowModels.ts) |
+| The lifecycle next-step engine (historically specced by the retired build-job model). | [tools/next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
+| The flow-model registry that holds the `FlowTab` canvas content (7 static models + segment/model types). | [flowModels.ts](agents-remember/dashboard/src/panels/flowModels.ts) |
 
 ## Update History
 
+- 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): body de-staled — the FlowTab paragraph's leftover build-job/frame tail (deleted models, the "8 static models" reference row, the "other seven" phrasing) replaced with the converged 7-model census and the exact ruled seam channel (wait=false raise, enclosure address, packet-carried gateId, identity-addressed enforcement). Verification metadata pinned until closeout stamps the L8 commit.
+- 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): the flowModels seam nodes now draw the ruled channel exactly — the manager's raise carries wait=false with the returned gateId riding the packet, and the orchestrator decides by the packet-carried gateId; FlowTab tests pin the new prose. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:32+02:00 — 260703-L8 route impact (small): the FlowTab registry now draws the converged lifecycle doctrine — ROUTER model (three conditions + D·P·O event loop + the invariant ladder) replaces the retired FRAME and BUILD-JOB models; worker/manager/orchestrator/reviewer/comms models redrawn to the ruled seam semantics; FlowTab tests rewritten (9). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:31+02:00 - L3 route impact: task-row pickup feedback now
   mirrors message-kind and hosted-delivery metadata from `AgentPickupNode`.
