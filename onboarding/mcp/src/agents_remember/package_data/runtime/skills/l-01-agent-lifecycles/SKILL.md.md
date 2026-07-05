@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastUpdated            | 2026-07-05T19:55+02:00 |
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 
 ## Purpose
 
@@ -23,7 +23,7 @@ As of the L8 de-harnessing pass there are deliberately NO per-harness role files
 
 As of cycle 4 the router decides its edge cases in writing (unresolvable AR_SPAWN_ROLE falls through to the brief; a briefless role-env session announces itself on the inbox and waits; AR_SPAWN_ROLE=orchestrator is takeover-only), the brief header form is canonical (`ROLE BRIEF — <role>` or a templates/*-brief.md shape), the hat/seat exception to the no-cross-reading rule is stated, the reviewer registry row carries spawn value `reviewer` -> roles/reviewer.md, the six lifecycle signals are enumerated by name, the dead variant rung is gone from the precedence line, and the as-built settings text documents the wired requireReviewerVerdictAtSeams + the named policy routing the handover to the orchestrator.
 
-As of cycle 5: the takeover pointer names the real section (Profile check (takeover), The Event Loop); the no-cross-reading exception says 'above'; the capability paragraph states the spawn-as-fan-out backdoor (DBMS principle).
+As of cycle 5: the takeover pointer names the real section (Profile check (takeover), The Event Loop); the no-cross-reading exception says 'above'; the capability paragraph states the spawn-as-fan-out backdoor (DBMS principle). As of cycle 7 the Companion Files template registry lists all nine on-disk templates: `manager-brief` joins the line with its header-consistent description (`ROLE BRIEF — manager`; the orchestrator compiles a manager's session start from it) — the ninth template added in cycle 4 without extending the registry (AR4-5).
 
 ## Cross-Repo Evidence
 
@@ -35,6 +35,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 - L8 builder cycle 7: Companion Files template registry gains the manager-brief row — all 9 on-disk templates listed (AR4-5). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the takeover pointer names the real section (Profile check (takeover), The Event Loop). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): router edge cases written; six signals enumerated; variant rung removed; at-seams flag documented as wired. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: per-harness variant layer removed from the resolution order; registry overlay mentions dropped. Verification metadata pinned until closeout stamps the L8 commit.

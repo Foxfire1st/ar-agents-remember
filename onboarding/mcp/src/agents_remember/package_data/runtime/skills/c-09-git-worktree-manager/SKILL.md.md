@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-05T19:25+02:00                     |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastUpdated            | 2026-07-05T19:55+02:00                     |
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 
 ## Purpose
 
@@ -62,7 +62,11 @@ seam consumer: on an orchestrated master's exit (master → super), an undecided
 or policy-invalid `master-handover-approval` gate addressed to the master (by
 `enclosure` = master task name) makes `worktree_integrate` return
 `handover-gate-blocked` instead of landing — decide the gate per the
-`l-01-agent-lifecycles` seam doctrine, then rerun.
+`l-01-agent-lifecycles` seam doctrine, then rerun. Since cycle 7 the same
+section also names the spelling-check warning: when no gate addresses the
+integrating master but open `master-handover-approval` gates exist elsewhere,
+integrate proceeds and its result carries a `handover_gate_warning` naming
+them — a check on the raised gate's `enclosure` spelling.
 Before previewing integration, agents must also check out the recorded code and
 memory `source_branch` in the source repositories because `worktree_integrate`
 requires those active checkouts even for `dry_run=true`.
@@ -203,6 +207,7 @@ The packaged worktree-manager skill defines the new operating model: master task
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 — L8 builder cycle 7: Integration section adds one sentence — integrate reports unmatched open handover gates as the `handover_gate_warning` enclosure spelling check (AR4-1c). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:25+02:00 — L8 cycle 6 (owner follow-up to builder escalation #1 / AR3-1): the Integration section now names the `handover-gate-blocked` state — the delegated `master-handover-approval` seam enforced at master → super integrate, addressed by `enclosure` = master task name. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-03T00:30+02:00 — L11 documents the task_reopen flow (reopen a completed leaf in place; never mint a suffixed leaf id).
 - 2026-06-27T22:00+02:00 — Order fix (notify-then-report): corrected the Task 28

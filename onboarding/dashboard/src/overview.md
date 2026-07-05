@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`       |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`       |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -193,6 +193,7 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 — No route impact: the dashboard/src route model is unchanged — the cycle-7 manager-raise-node enclosure addition is documented at the panels route (260703-L8 cycle 7).
 - 2026-07-05T19:10+02:00 — No route impact: the dashboard/src route model is unchanged — the cycle-6 seam-node prose update is documented at the panels route (260703-L8 cycle 6).
 - 2026-07-05T18:24+02:00 — No route impact: dev-only index label aligned with the converged canvas (DevApp.tsx); no production route or component change (260703-L8 cycle 5).
 - 2026-07-05T16:32+02:00 — No route impact: the dashboard/src route model is unchanged — the FlowTab redraw is documented at the panels route (260703-L8 cycle 4).

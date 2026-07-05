@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T19:10+02:00 |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastUpdated            | 2026-07-05T19:55+02:00 |
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 
 ## Purpose
 
@@ -91,7 +91,7 @@ As of the L8 de-harnessing pass the overlay-authoring sentence is gone and the k
 
 As of cycle 4 the master-exit procedure is operable as-built: the manager RAISES the `master-handover-approval` gate (delegable, never human-pinned) with the verdict attached as evidenceRefs, and the ORCHESTRATOR decides it — identity mechanics stated (raiser = the manager's ambient lifecycle; the deciding orchestrator's ambient identity becomes decidedBy; owner-never-self-approves holds; no ids handled). The leaf loop now names the human-pinned kinds (integration-approval, push-approval, cleanup-approval) and marks the integrate step's durable-gate behavior; reviewer spawns state AR_SPAWN_ROLE=reviewer; finalize wording is honest (statuses via the tool, steps by hand); the knob footer resolution is role-file defaults < settings.
 
-As of cycle 5: the seam channel is exact: raise with lifecycle_gate(..., wait=false) → carry the returned gateId in the handover packet; identity truth restated (gate ids are model-visible, lifecycle ids stay server-side); the integrate-step sentence now defines the series' standing approval (the developer's portfolio-gate approval recorded in the planner master) and the seat's own hand-off idiom (gates + inbox, never the developer-facing notification). Cycle 6 completes the raise's address: §3's call now carries `enclosure="<master task name>"` — the master identity integration enforcement matches the gate by — and adds the all-human conditional (under an all-human policy the raise blocks and the developer decides; do not pass wait=false).
+As of cycle 5: the seam channel is exact: raise with lifecycle_gate(..., wait=false) → carry the returned gateId in the handover packet; identity truth restated (gate ids are model-visible, lifecycle ids stay server-side); the integrate-step sentence now defines the series' standing approval (the developer's portfolio-gate approval recorded in the planner master) and the seat's own hand-off idiom (gates + inbox, never the developer-facing notification). Cycle 6 completes the raise's address: §3's call now carries `enclosure="<master task name>"` — the master identity integration enforcement matches the gate by — and adds the all-human conditional (under an all-human policy the raise blocks and the developer decides; do not pass wait=false). Cycle 7 pins the address as a contract, not a convention: §3 now states the match is exact-string — the EXACT master task name as the contracts carry it (`worktree_start`'s `task_name`) — and that a wait=false raise without an enclosure is refused.
 
 ## Cross-Repo References
 
@@ -103,6 +103,7 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 - L8 builder cycle 7: §3 pins the enclosure as the EXACT contract task name (exact-string match) and states the enclosure-less raise refusal (AR4-1c). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: §3 raise now carries enclosure=<master task name> (the integration guard's address) + the do-not-pass-wait=false-under-all-human conditional (AR3-1/AR3-2). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the seam channel is exact: raise with lifecycle_gate(..., wait=false) → carry the returned gateId in the handover packet. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): master-exit seam made operable (raise-with-verdict -> orchestrator decides); human-pinned kinds enumerated at the integrate step; reviewer spawn value stated. Verification metadata pinned until closeout stamps the L8 commit.

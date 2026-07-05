@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/flowModels.ts`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-05T19:10+02:00 |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`       |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastUpdated            | 2026-07-05T19:55+02:00 |
+| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`       |
+| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -119,7 +119,7 @@ same-repository (see Repo-Internal References).
 | `lifecycle_start`, which emits the build-job front-half prose rundown. | — | [tools/lifecycle.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle.py) |
 | The orchestration series design record these 8 models encode (roles, seams, DAG topology, gate delegation, spirit test, frame doctrine). | — | [design-agent-orchestration.md](agents-remember/tasks/agents-remember/260703_agent-orchestration/notes/design-agent-orchestration.md) |
 
-As of the 260703-L8 remediation the registry draws the CONVERGED doctrine: a ROUTER model (three conditions, edge cases, the D·P·O event loop, the task-doc→branch→worktree ladder) replaces the retired FRAME and BUILD-JOB models; the worker model is brief-started with no lifecycle machinery; the manager raises master-handover-approval (the orchestrator decides); the orchestrator model draws the event loop with the super-branch INTENT as a branch-only act; the comms takeaway scopes the spirit test to the orchestrator rung. FLOW_MODELS = [ROUTER, DESIGNER, ORCHESTRATOR, MANAGER, WORKER, REVIEWER, COMMS]. Cycle 6 aligns the two seam nodes with the ruled channel: the manager's handover node draws the non-blocking raise (`wait=false`) with the returned gateId riding the packet, and the orchestrator's handover node draws the decide-by-packet-carried-gateId — a canvas-onboarded manager no longer reproduces the blocking raise.
+As of the 260703-L8 remediation the registry draws the CONVERGED doctrine: a ROUTER model (three conditions, edge cases, the D·P·O event loop, the task-doc→branch→worktree ladder) replaces the retired FRAME and BUILD-JOB models; the worker model is brief-started with no lifecycle machinery; the manager raises master-handover-approval (the orchestrator decides); the orchestrator model draws the event loop with the super-branch INTENT as a branch-only act; the comms takeaway scopes the spirit test to the orchestrator rung. FLOW_MODELS = [ROUTER, DESIGNER, ORCHESTRATOR, MANAGER, WORKER, REVIEWER, COMMS]. Cycle 6 aligns the two seam nodes with the ruled channel: the manager's handover node draws the non-blocking raise (`wait=false`) with the returned gateId riding the packet, and the orchestrator's handover node draws the decide-by-packet-carried-gateId — a canvas-onboarded manager no longer reproduces the blocking raise. Cycle 7 completes the raise node's address (AR4-4): its detail now names `enclosure="<master task name>"` as the exact address integration enforcement matches the gate by, so a canvas-onboarded manager raises an addressed (matchable) gate instead of an unaddressed one.
 
 ## Cross-Repo References
 
@@ -127,6 +127,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-05T19:55+02:00 - L8 builder cycle 7: manager RAISE node detail now names the enclosure address (`enclosure="<master task name>"`, AR4-4). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: seam nodes updated — manager RAISE node carries wait=false + gateId-in-packet, orchestrator decide node carries decide-by-packet-carried-id (AR3-6a). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): canvas redrawn to the converged doctrine (visuals ride every doctrine change from now on). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T09:40+02:00 — Created for 260703-L0 (Canvas & playground): the flow-model registry for the
