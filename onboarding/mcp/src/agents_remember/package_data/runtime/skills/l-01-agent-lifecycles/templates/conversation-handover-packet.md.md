@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T16:20+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-05T18:20+02:00 |
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 
 ## Purpose
 
@@ -52,6 +52,8 @@ This bundle copy is the shape the frame hands a successor at a takeover spawn or
 
 As of cycle 4 the takeover use names its owner (the orchestrator's profile check in roles/orchestrator.md) instead of the retired 'frame' vocabulary.
 
+As of cycle 5: the takeover pointer names the real section.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this report template.
@@ -62,6 +64,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the takeover pointer names the real section.. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): takeover owner named; frame vocabulary removed. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/ (content unchanged). Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-01-agent-lifecycles` conversation-handover-packet report template (leaf 260703-L1) — one schema with three uses (role takeover, worker respawn, master-complete handover) where the receiver always onboards from the packet, not the transcript. Verification metadata pinned until closeout stamps the L1 commit.

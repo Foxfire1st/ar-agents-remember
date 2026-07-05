@@ -59,7 +59,7 @@
     "store"
   ],
   "hotPath": {
-    "summary": "A gate is publicly opened for agent workflow through `lifecycle_gate`, which creates the `GateRecord`, blocks the ambient lifecycle with the ask, and keeps the public tool call waiting until the gate is decided or a gate-specific inbox response exists. Decisions (`gate_decide`) and listing (`gate_list`) remain public control-plane tools; lower-level create/wait builders are compatibility internals in `mcp/tools/gates.py`. The builders append `GateRecord` snapshots to `GateStore`. Lifecycle-scoped gate creation expires any previous open gate before opening the new one, so each lifecycle has...",
+    "summary": "A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `GateStore.find` giving deciders cross-lifecycle resolution by gate id), which creates the `GateRecord`, blocks the ambient lifecycle with the ask, and keeps the public tool call waiting until the gate is decided or a gate-specific inbox response exists. Decisions (`gate_decide`) and listing (`gate_list`) remain public control-plane tools; lower-level create/wait builders are compatibility internals in `mcp/tools/gates.py`. The builders...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -98,6 +98,7 @@
       "store.py",
       "store",
       "lifecycle_gate",
+      "GateStore.find",
       "GateRecord",
       "gate_decide",
       "gate_list",
@@ -105,7 +106,7 @@
       "GateStore",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0",
+      "e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a",
       "/../../overview.md",
       "controlplane/",
       "master-handover-approval",
@@ -121,8 +122,7 @@
       "agentId",
       "recipientRole",
       "AttentionDismissalStore",
-      "observer_root/workspace/attention-dismissals.jsonl",
-      "ar-gate-record/v1"
+      "observer_root/workspace/attention-dismissals.jsonl"
     ]
   },
   "fallback": {

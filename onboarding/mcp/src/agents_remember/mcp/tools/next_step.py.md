@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/mcp/tools/next_step.py`       |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-05T16:30+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`             |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-05T18:20+02:00 |
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a`             |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -176,12 +176,15 @@ As of the 260703-L9 lifecycle convergence, the FRONT_HALF_RUNDOWN reframe bullet
 
 As of the 260703-L8 remediation the FRONT_HALF_RUNDOWN speaks the event-loop vocabulary: the third item routes the event (no doc → design one; approved + code change → build; no code change → research-only exit; triage may route/spawn/escalate) instead of the retired job-selection table, and the task-file item states the ladder explicitly (task doc → branch → worktree, worktree_start only after the plan gate).
 
+As of cycle 5 the front-half summary speaks event-routing (the last job-selection remnant is gone).
+
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): front-half summary vocabulary aligned. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): rundown re-worded to the event-loop + ladder vocabulary (AR-13). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the FRONT_HALF_RUNDOWN reframe bullet now names the orchestrator lifecycle explicitly (l-01-agent-lifecycles roles/orchestrator.md); flow semantics unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE active turn end): repointed every ACTIVE hint off `lifecycle_gate` onto `lifecycle_turn_end_notification` — the front-half `decide` hint, the generic `_FRONT_HALF_SUMMARY`/`FRONT_HALF_RUNDOWN` closing step, and the three `_gate_after` closeout/integration/cleanup overlays now all carry `nextTool="lifecycle_turn_end_notification"` + a context `summary` (notify and stop, no gate, no wait). Added the `_TURN_HANDED_TO_DEVELOPER` constant and a `state.state == "awaiting-developer"` branch (checked right after `blocked`) returning a `nextTool=None` stop hint. The `_AWAIT_GATE` + `blocked` branch is left intact — the parked gate path stays valid but un-hinted. Verification metadata pinned until closeout stamps the code commit.

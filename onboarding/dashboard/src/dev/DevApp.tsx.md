@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/DevApp.tsx`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T09:40+02:00                           |
-| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb`       |
-| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
+| lastUpdated            | 2026-07-05T18:20+02:00 |
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a`       |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -45,8 +45,11 @@ chunk). Its CSS is co-located in `dev.css`, loaded only here.
 | The co-located dev-gallery styles it imports. | — | [dev.css](dev.css) |
 | The lifecycle-design canvas mounted at `/dev/flows` (`initialModel` from `?model=`). | L15-L20 | [panels/FlowTab.tsx](../panels/FlowTab.tsx) |
 
+As of cycle 5 the /dev/flows index label lists the converged model set (router first; build job and frame gone).
+
 ## Update History
 
+- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): dev index label aligned with the converged canvas. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T09:40+02:00 — 260703-L0 (Canvas & playground): added the `/dev/flows` route — it renders
   the panels `FlowTab` lifecycle-design canvas in a `.cockpit` wrapper with `initialModel` seeded from the
   `?model=` query param, and a matching index-list entry. Kept out of the cockpit mode bar (task 29); the

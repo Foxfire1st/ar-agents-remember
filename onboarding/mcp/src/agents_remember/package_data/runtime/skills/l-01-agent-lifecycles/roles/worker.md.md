@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T16:20+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-05T18:20+02:00 |
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 
 ## Purpose
 
@@ -23,6 +23,8 @@ As of the L8 de-harnessing pass the file carries a Fan-Out capability-doctrine s
 
 As of cycle 4 the knob footer resolution reads role-file defaults < settings (dead variant rung removed).
 
+As of cycle 5: the fan-out fallback clarifies workers do not spawn AR sessions (spawning is the seats' channel).
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -33,6 +35,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the fan-out fallback clarifies workers do not spawn AR sessions (spawning is the seats' channel).. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): knob footer variant rung removed. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: harness overlay deleted; fan-out doctrine folded in; knob harness row is a preference settings overrides. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: worker.md rewritten as a POSITIVE, self-contained lifecycle: no session-job references, closeout/integrate/attach stripped (owning seat's machinery), brief-as-session-start, terminal state = checks green + turn report; body rewritten accordingly. Verification metadata pinned until closeout stamps the L9 commit.

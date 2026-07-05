@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`                                      |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a`                                      |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -58,7 +58,7 @@ that records an orchestration nudge event and enqueues a manager-addressed inbox
 | `lifecycle.py`  | lifecycle signal builders driving the observer ambient lifecycle; `lifecycle_block_payload` is retained for lower-level compatibility. Since task 27 `lifecycle_start_payload` also emits the one-time `frontHalfRundown` (`next_step.py`'s `FRONT_HALF_RUNDOWN`). Task 28 adds `lifecycle_turn_end_notification_payload(summary)` — the NOTIFY-AND-CONTINUE turn end: drives `await_developer` → `awaiting-developer` and returns immediately (no gate, no wait), the one builder the choke-point auto-dismiss skips by name. |
 | `lifecycle_finalize.py` | the terminal `lifecycle_finalize_task` builder, forwarding to the worktree finalizer and strict response model. |
 | `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (create/set_status/set_step/set_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` controller. |
-| `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response), public `gate_decide`/`gate_list` builders, lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
+| `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a policy-delegated kind, raises-and-continues returning the gateId the handover packet carries), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response), public `gate_decide`/`gate_list` builders, lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. L4 adds policy-checked `decidedVia="orchestration"` decisions with deciding role, no owner self-approval, and append-only evidence refs. The gate substrate itself lives in `controlplane/` (task 6). |
@@ -113,6 +113,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-05T18:24+02:00 — 260703-L8 route impact (cycle 5, small): `lifecycle_gate` gains `wait=false` (raise-and-continue for policy-delegated kinds, returning the gateId); `gate_decide` resolves bare gate ids across lifecycles (GateStore.find) and refuses cli-attributed decisions on delegated kinds. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:32+02:00 — No route impact: next_step FRONT_HALF_RUNDOWN re-worded to the event-loop + ladder vocabulary (AR-13); strings only, no tool behavior change (260703-L8 cycle 4).
 - 2026-07-05T01:32+02:00 — No route impact: next_step FRONT_HALF_RUNDOWN reframe bullet now names the orchestrator lifecycle (`l-01-agent-lifecycles` roles/orchestrator.md); string wording only, no tool behavior change (260703-L9).
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: `gates.py` now handles

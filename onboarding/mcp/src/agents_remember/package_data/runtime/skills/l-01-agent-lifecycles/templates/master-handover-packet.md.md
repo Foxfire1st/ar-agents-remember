@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-05T18:20+02:00 |
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 
 ## Purpose
 
@@ -54,6 +54,8 @@ This bundle copy is the shape the manager job posts at master exit; it reference
 | The required verdict slot references the master-exit adversarial verdict artifact. | n/a | [verdict.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md) |
 | The frame lists the master-handover packet among the per-role artifact obligations. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
 
+As of cycle 5: the shape gains the handover gateId row — the packet is the decider's address for the gate.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this report template.
@@ -64,6 +66,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the shape gains the handover gateId row — the packet is the decider's address for the gate.. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/; role-file reference now roles/manager.md. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:31+02:00 - L3: documented the `master-handover` inbox
   message-kind convention for manager-to-orchestrator delivery. Verification

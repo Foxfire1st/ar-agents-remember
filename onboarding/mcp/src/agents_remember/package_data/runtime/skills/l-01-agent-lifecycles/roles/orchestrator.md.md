@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T16:20+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-05T18:20+02:00 |
+| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
+| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
 
 ## Purpose
 
@@ -23,6 +23,8 @@ As of the L8 de-harnessing pass the file carries a Sub-Agent Fan-Out capability-
 
 As of cycle 4 the orchestrator DECIDES the manager's `master-handover-approval` gate at each master exit (own ambient identity as the attributed decider; policy may require the attached verdict; an undecidable handover escalates to the developer); manager dispatch compiles from templates/manager-brief.md carrying the base-off-current-super fact; the hat-collapse rule notes delegated gates collapse back to the developer when one chair owns both sides; the super-exit reviewer spawn states AR_SPAWN_ROLE=reviewer; finalize wording is honest (statuses via the tool, steps by hand); the dangling Phase cross-reference is fixed.
 
+As of cycle 5: the master-exit decide call is named exactly (gate_decide(gate_id=<packet-carried>, decision, deciding_role=orchestrator) with server-side cross-lifecycle resolution) and integration enforcement stated; a Profile check (takeover) paragraph exists in The Event Loop (the AR-10 pointers now resolve); the fan-out section names the framework backdoor: spawn_agent_session is the harness-independent fan-out (DBMS principle).
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -33,6 +35,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the master-exit decide call is named exactly (gate_decide(gate_id=<packet-carried>, decision, deciding_role=orchestrator) with server-side cross-lifec. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): gained the handover-gate deciding duty + manager-brief dispatch + hat-collapse gate-reversion clause. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: harness overlay deleted; sub-agent doctrine folded in as a capability-conditional section; knob harness row is a preference settings overrides. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:15+02:00 - L8 orchestrator routes rework: restructured as event loop + three jobs + hat-collapse; invariant ladder (task doc -> branch -> worktree) replaces worktree-first ordering; chat-build route removed; reopen-and-reshape + ordered-list renumbering doctrines encoded; body rewritten accordingly. Verification metadata pinned until closeout stamps the L8 commit.
