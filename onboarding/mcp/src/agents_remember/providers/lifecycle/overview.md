@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-08T09:57+02:00                     |
-| lastVerifiedCommitHash | `d92bc99c82eaa3e8d89ee9352075def2c66c1235` |
-| lastVerifiedCommitDate | 2026-06-08T10:09:59+02:00|
+| lastUpdated            | 2026-07-06T23:04+02:00                     |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -50,6 +50,12 @@ an invalid UID/GID override.
 ## Invariants And Boundaries
 
 - `providers.lifecycle` is the only public facade; implementation belongs here.
+- Settings-driven lifecycle commands require an EXPLICIT `--from-settings` path
+  (server-generated at runtime). The implicit fallback to
+  `<coordination_root>/system/settings.json` was DELETED with 260703-L13 (GQ3):
+  that file is the global agentic settings home, and `provider_settings.py`'s
+  `require_lifecycle_settings_path` refuses a missing path instead of
+  empty-defaulting on absent coordinator state.
 - GrepAI is Docker-or-bust: no host GrepAI binary and no host Ollama fallback.
 - Shared helpers should stay provider-agnostic; provider-specific branching
   belongs in CGC or GrepAI modules.
@@ -70,6 +76,12 @@ an invalid UID/GID override.
 | Provider lifecycle tests cover Docker-only GrepAI behavior, CGC bounded run behavior, and watcher aggregation. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
+
+- 2026-07-06T23:04+02:00 — 260703-L13 (GQ3): the implicit coordinator `system/settings.json`
+  fallback was deleted from `provider_settings.py` (readers now demand the explicit
+  `--from-settings`; the `coordination_root` parameter dropped, call sites in `watchers.py`
+  and both provider lifecycle cores updated; `cli.py` help text rewritten). Route model
+  otherwise unchanged. Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-06-08T09:57+02:00: Re-verified the provider lifecycle route after the Compose host-user helper switched to callable `getuid`/`getgid` checks for non-POSIX safety.
 - 2026-06-06T12:15: Re-verified against the current shared provider lifecycle package; CLI, watcher aggregation, Docker helpers, result rendering, state files, and log trimming still match.

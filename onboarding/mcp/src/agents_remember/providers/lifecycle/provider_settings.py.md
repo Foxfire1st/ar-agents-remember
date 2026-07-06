@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/provider_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-07-06T22:30+02:00|
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 `provider_settings.py` owns lifecycle-time reads of context provider settings
-from coordinator `settings.json` files.
+from an EXPLICIT settings file (the lifecycle CLI's `--from-settings`, normally
+server-generated from the authority config).
 
 ## Code Commentary
 
@@ -25,7 +26,13 @@ from coordinator `settings.json` files.
 
 The module loads CGC and GrepAI provider settings, checks whether a configured
 provider is enabled, and exposes context-provider enabled predicates used by
-watcher orchestration.
+watcher orchestration. Every file reader goes through
+`require_lifecycle_settings_path` (260703-L13, GQ3): a `None` settings path
+raises `ContextProviderError` naming `--from-settings` — the historic implicit
+fallback to `<coordination_root>/system/settings.json` was DELETED (that file is
+the global agentic settings home now, and `read_json`'s empty-dict default made
+the old fallback fail-open when the file was absent). The readers therefore no
+longer take a `coordination_root` parameter.
 
 ### Invariants And Boundaries
 
@@ -33,6 +40,9 @@ watcher orchestration.
 - Provider-specific validation remains in each provider's lifecycle core.
 - Missing CGC settings are an error for CGC lifecycle commands; missing GrepAI
   settings resolve to an empty provider dict for manual/default layout paths.
+- A missing settings PATH is always an error: coordinator
+  `system/settings.json` is not an authority source (the same posture as
+  provider setup's `require_settings_path`).
 
 ## Repo-Internal References
 
@@ -43,6 +53,12 @@ watcher orchestration.
 | Watcher orchestration uses provider-enabled checks from this module. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
 
 ## Update History
+
+- 2026-07-06T22:30+02:00 — 260703-L13 (GQ3): deleted the implicit coordinator
+  `system/settings.json` fallback — `require_lifecycle_settings_path` refuses a missing
+  `--from-settings` with a `ContextProviderError`; the `coordination_root` parameter dropped
+  from all three readers; explicit settings paths keep working unchanged. Verification
+  metadata pinned until closeout stamps the L13 commit.
 
 - 2026-05-29T18:35+02:00: `context_providers_enabled` is now a `TypeGuard[dict[str, Any]]` so `provider_enabled` narrows `context` before `.get`; behavior-preserving (commit `0549b28`).
 - 2026-05-25T21:14+02:00: Created from the provider settings portion of the former shared lifecycle common module.

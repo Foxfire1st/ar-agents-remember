@@ -76,7 +76,7 @@
       "HEADs",
       "mcp/src/agents_remember/providers/cgc/",
       "route-local-overview",
-      "ad30dd38c3dcfa13fb85f44b281488499e92519a",
+      "9d58058e3ce4815b0356794fc21973ebe9c71345",
       "/../../../overview.md",
       "cgc/",
       "cgc_*",
@@ -102,11 +102,11 @@
       "lastUpdated",
       "T01",
       "lastVerifiedCommitHash",
+      "d58058e3ce4815b0356794fc21973ebe9c71345",
       "lastVerifiedCommitDate",
-      "T08",
+      "T11",
       "governingOverview",
-      "L12",
-      "OOM"
+      "L12"
     ]
   },
   "fallback": {

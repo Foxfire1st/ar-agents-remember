@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
-| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
+| lastUpdated            | 2026-07-06T22:42+02:00 |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -20,11 +20,14 @@ L9 registers `attach_terminal_session_to_leaf(session_id, leaf_key)` after `read
 agent-facing hosted chat reassignment path: it forwards to `attach_terminal_session_to_leaf_payload`,
 reuses the dashboard terminal catalog's role-scoped leaf uniqueness rules, and returns
 `attached`/`leaf-taken`/`unknown-session` without spawning a session or requiring a worktree enclosure.
-L2 registers `spawn_agent_session(harness, leaf_key?, context?, submit, label?, model?, effort?, env?,
+L2 registers `spawn_agent_session(harness?, leaf_key?, context?, submit, label?, model?, effort?, env?,
 spawned_by_session?, spawned_by_lifecycle?, kind)` right after attach: the agent-facing **dispatch**
 path that CREATES a role-configured, leaf-attached, context-primed hosted session by composing the
 existing serving primitives (opener + leaf claim + echo-confirmed paste), forwarding to
-`spawn_agent_session_payload`.
+`spawn_agent_session_payload`. Since 260703-L13 `harness` is OPTIONAL: omitted, the payload
+builder resolves it per-use from the agentic settings (repo-local over global
+`orchestration.spawn.harness`, repo selected by the qualified leaf key) and falls back to the
+detection-gated default — the docstring documents the resolution chain.
 
 ## Code Commentary
 
@@ -260,6 +263,11 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 As of cycle 5 the lifecycle_gate registration exposes wait (default true) with the raise-and-continue contract documented in the docstring; cycle 6 makes both gate docstrings match the payload layer exactly — `lifecycle_gate` says wait=false is reserved for delegated seam kinds (any other kind blocks), and `gate_list` says a missing lifecycle_id defaults to the ACTIVE (ambient) lifecycle with the workspace log as the no-ambient fallback; cycle 7 extends the `lifecycle_gate` docstring with the new wait=false requirement that `enclosure=<master task name>` be supplied (the address integration enforcement matches the gate by), keeping the registration truthful about the payload layer's refusal.
 
 ## Update History
+
+- 2026-07-06T22:42+02:00 — 260703-L13 (settings unification): `spawn_agent_session.harness`
+  became optional (`str | None = None`) and the tool docstring documents the explicit >
+  repo-local > global > detection-gated resolution chain. Registration order and every other
+  tool unchanged. Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-07-06T13:35+02:00 — 260703-L10 round 2 (L10R-2): the `read_ar_files` docstring's pre-convergence "build/job decision" compound became "build decision" (the l-01 vocabulary; the flipped session-start directive says the same). Docstring text only — no signature, payload, or registration change. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-05T19:55+02:00 - L8 builder cycle 7: lifecycle_gate docstring now names the wait=false enclosure requirement (AR4-1a ride-along). Verification metadata pinned until closeout stamps the L8 commit.

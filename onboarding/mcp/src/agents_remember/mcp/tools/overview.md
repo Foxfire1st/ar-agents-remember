@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`                                      |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastUpdated            | 2026-07-06T23:02+02:00 |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345`                                      |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -40,7 +40,12 @@ for internal compatibility and tests but are not registered as public MCP tools.
 `terminal.py` submodule and public `attach_terminal_session_to_leaf` builder, an agent-facing wrapper over
 the dashboard terminal catalog move policy. L2 adds the public `spawn_agent_session` builder to that same
 submodule — the agent-facing dispatch tool that composes the shared serving opener + an echo-confirmed
-context paste to create a role-configured, leaf-attached, context-primed hosted session.
+context paste to create a role-configured, leaf-attached, context-primed hosted session. Since
+260703-L13 its `harness` argument is optional: `_resolve_spawn_harness` reads the agentic settings
+PER-USE (`kernel/agentic_settings.py`; repo-local layer via the qualified leaf key) and resolves
+explicit arg > repo-local `orchestration.spawn.harness` > global > the first detected registry
+harness, refusing (never silently defaulting) when nothing resolves or the configured preference is
+not installed.
 L3 adds `orchestration.py` and public `orchestration_nudge_manager`, a rate-limited manager nudge helper
 that records an orchestration nudge event and enqueues a manager-addressed inbox message.
 
@@ -110,6 +115,12 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The linear-half hint delegates to the worktree guidance state machine. | [guidance/lifecycle_guidance](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
 
 ## Update History
+
+- 2026-07-06T23:02+02:00 — 260703-L13 (settings unification): `terminal.py`'s
+  `spawn_agent_session_payload` gained the settings-driven harness resolution seam
+  (`_resolve_spawn_harness` + `_spawn_repo_root`; harness optional; refusals name the
+  settings source); no other builder or the public tool set changed. Verification metadata
+  pinned until closeout stamps the L13 commit.
 
 - 2026-07-05T19:55+02:00 — 260703-L8 route impact (cycle 7, small): `lifecycle_gate` `wait=false` additionally requires a non-empty `enclosure` (the integrate guard's address; refused before any mutation, AR4-1a) — the `gates.py` row carries the requirement. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): Layout table de-duplicated (the stale second `gates.py`/`operator_inbox.py` rows removed) and the live `gates.py` row brought to cycle-6 semantics (SEAM-kind-restricted validate-then-raise `wait=false`; `gate_list` ambient default). Verification metadata pinned until closeout stamps the L8 commit.

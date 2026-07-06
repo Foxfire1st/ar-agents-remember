@@ -127,7 +127,7 @@
       "GrepAI",
       "mcp/src/agents_remember/providers/lifecycle/",
       "route-local-overview",
-      "d92bc99c82eaa3e8d89ee9352075def2c66c1235",
+      "9d58058e3ce4815b0356794fc21973ebe9c71345",
       "/../../../overview.md",
       "lifecycle/",
       "providers/cgc/lifecycle/",
@@ -136,11 +136,11 @@
       "os.getuid",
       "os.getgid",
       "providers.lifecycle",
+      "--from-settings",
+      "require_lifecycle_settings_path",
       "providers/current_state.py",
-      "getuid",
-      "getgid",
-      "provider_lifecycle.py",
-      "cgc/"
+      "system/settings.json",
+      "coordination_root"
     ]
   },
   "fallback": {

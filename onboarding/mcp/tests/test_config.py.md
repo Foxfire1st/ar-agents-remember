@@ -5,16 +5,28 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T16:30+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-06T22:44+02:00 |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
 
 `test_config.py` verifies MCP authority settings parsing and derived runtime
 paths, including (L12) that generated CGC roots carry the per-repo managed
-cgcignorePatterns for agents-remember.
+cgcignorePatterns for agents-remember, and (L13) the gateDelegation
+boot-sourcing rules: `OrchestrationSettingsTests` drives `load_config` with an
+optional authority `orchestration` block AND an optional global agentic file
+(`<coordinationRoot>/system/settings.json`) — the global file sources the
+policy warning-free, an authority-only value is honored as the legacy fallback
+WITH the migration `UserWarning`, a shadowed authority value warns as IGNORED
+while the global value wins, `loops`/`roles`/`concurrency` in the authority
+file fail loud naming the new home, gate-policy semantic errors (human-pinned)
+surface as `ConfigError` from either file, and a malformed global file fails
+boot naming the file. `test_legacy_memory_settings_includes_key_is_tolerated_and_ignored`
+replaces the old escape-boundary test: the removed dead plumbing means a
+leftover `memorySettingsIncludes` key parses fine and `RepositoryScope` no
+longer exposes the field.
 
 ## Code Commentary
 
@@ -66,6 +78,12 @@ Config/schema tests now assert the public tool surface includes `parent_task` an
 As of the 260703-L8 seam ruling the orchestration settings tests prove the parse path consumes requireReviewerVerdictAtSeams (the delegated handover rule comes back verdict-bound; non-seam rules untouched).
 
 ## Update History
+
+- 2026-07-06T22:44+02:00 — 260703-L13 (settings unification): OrchestrationSettingsTests
+  rewritten for the two-source boot flow (global agentic file + legacy authority fallback,
+  warning assertions both ways, new-home fail-loud for loops/roles/concurrency, malformed
+  global file); memorySettingsIncludes escape test replaced by the tolerated-ignored test.
+  Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): at-seams parse-path consumption test added. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: added

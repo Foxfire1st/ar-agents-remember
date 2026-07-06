@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-06T22:38+02:00     |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,8 +23,12 @@ embedder derivation shared by the Docker-owned GrepAI modules.
 
 ### Logic
 
-The module resolves settings-backed GrepAI runtime layout, prepares workspace
-state, validates Docker mode, derives the managed Docker network name, maps
+The module resolves settings-backed GrepAI runtime layout
+(`grepai_settings_from_file(from_settings)` — since 260703-L13 the explicit
+`--from-settings` path is REQUIRED even for manual `--root`/`--runtime-root`
+layouts, because `grepai_layout_from_args` always reads provider settings for
+workspace/embedder derivation and the implicit coordinator-settings fallback
+was deleted), prepares workspace state, validates Docker mode, derives the managed Docker network name, maps
 container-visible root paths, builds container DSNs and container-local
 environment variables, selects a supported runner release architecture, and
 derives PostgreSQL, Ollama, and runner image settings.
@@ -73,6 +77,12 @@ seed target without the caller needing to pass it separately.
 | GrepAI runner image/container lifecycle consumes runner settings and workspace config from this module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
 
 ## Update History
+
+- 2026-07-06T22:38+02:00 — 260703-L13 ride-along: `grepai_layout_from_args` calls
+  `grepai_settings_from_file` without the dropped `coordination_root` argument; manual
+  layouts now require an explicit `--from-settings` file (an empty JSON object suffices —
+  the old fallback empty-defaulted the same way, fail-open). Verification metadata pinned
+  until closeout stamps the L13 commit.
 
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-06-10T05:30+02:00 — Imports moved off the `providers.context` aggregator to leaf modules (`grepai.context` + `context.common`): the aggregator star-imports grepai context back, a circular import that broke any entry point touching grepai modules first.

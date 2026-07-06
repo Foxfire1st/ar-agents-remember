@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T22:48+02:00 |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -20,7 +20,14 @@
 process-namespace policy, provider-owned lifecycle modules, compose memory caps
 (L12: every provider service ships an explicit mem_limit — watchers 512m), and small
 command-output helpers that cannot be safely inferred from the generic
-provider-layout tests.
+provider-layout tests. `LifecycleSettingsPathTests` (L13, GQ3) pins the deleted
+implicit coordinator-settings fallback: all three readers
+(`cgc_settings_from_file`, `grepai_settings_from_file`,
+`context_provider_enabled`) refuse a `None` settings path with the
+`ContextProviderError` naming `--from-settings`, while an explicit path keeps
+working; the two grepai direct-run tests now pass an explicit empty settings
+file (preserving their Docker-only semantics) and the watchers fake matches the
+two-argument reader signature.
 
 ## Code Commentary
 
@@ -107,6 +114,11 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-06T22:48+02:00 — 260703-L13 (GQ3): added `LifecycleSettingsPathTests` (fallback
+  removal refusals + explicit-path pass-through); grepai direct-run tests updated to explicit
+  `--from-settings`; watchers fake signature updated. Verification metadata pinned until
+  closeout stamps the L13 commit.
 
 - 2026-07-03T01:55+02:00 — L12 adds ProviderComposeMemoryCapTests pinning every cgc/grepai service's mem_limit in the shipped compose assets (falkordb 2g, runner 1g, watchers 512m, postgres 512m, ollama 2g).
 - 2026-06-25T09:55+02:00 — GrepAI start dry-run assertions now pin preferred auto host ports `61432`/`61434` while preserving container service ports `5432`/`11434`.

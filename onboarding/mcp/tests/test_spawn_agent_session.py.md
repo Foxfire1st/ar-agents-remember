@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-04T11:10+02:00                            |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`        |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-06T22:46+02:00                            |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345`        |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -19,7 +19,14 @@
 `test_spawn_agent_session.py` covers the agent-facing `spawn_agent_session` MCP tool (L2 dispatch) and
 the serving `POST /api/terminal/{session}/paste` endpoint. It exercises the whole composition —
 opener + leaf claim + echo-confirmed paste + submit — against a fake host + fake paster + a fake
-`which`, so no real tmux server, no real daemon, and no real sleeping are involved.
+`which`, so no real tmux server, no real daemon, and no real sleeping are involved. Since 260703-L13
+`SpawnHarnessResolutionTests` pins the settings-driven harness seam through the payload builder with
+REAL settings files in temp roots: omitted harness reads the global `orchestration.spawn.harness`,
+the repo-local file (selected via the qualified leaf key against a configured `RepositoryScope`)
+overrides global, leafless/unconfigured-repo spawns read global only, an explicit argument beats
+every layer, no-settings falls back to the first DETECTED registry harness, nothing-detected and
+configured-but-undetected both REFUSE (`harness-not-detected`, the latter naming
+`orchestration.spawn.harness` and the source file) — never a silent default.
 
 ## Code Commentary
 
@@ -95,6 +102,12 @@ No meaningful cross-repo references found.
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-06T22:46+02:00 — 260703-L13 (settings unification): added
+  `SpawnHarnessResolutionTests` — eight cases pinning explicit > repo-local > global >
+  detection-gated resolution, refusal-not-fallback behavior, and source-naming refusal
+  details, all through `spawn_agent_session_payload` with real temp settings files.
+  Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-07-04T11:10+02:00 — L2: created coverage for the agent-facing `spawn_agent_session` tool
   (spawn+submit, draft, no-context, leaf-taken-never-overridden, unknown/undetected-harness refusals,

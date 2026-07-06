@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_install_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T22:15+02:00                     |
-| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
-| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
+| lastUpdated            | 2026-07-06T22:50+02:00                     |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -19,6 +19,11 @@
 `test_install_runtime.py` covers MCP package runtime-install behavior that
 affects live provider runtime safety from the core-skill test suite, including
 the provider watcher rebind path used when provider dependencies are refreshed.
+`AgenticSettingsSeedTests` (L13) pins the global agentic settings seeding:
+`install_runtime` writes `<coordinationRoot>/system/settings.json` when missing
+(content equal to `default_agentic_settings_seed()`), NEVER clobbers an
+existing file (byte-for-byte preserved), and dry-run counts the seed without
+writing.
 
 ## Code Commentary
 
@@ -112,6 +117,10 @@ No sibling repository evidence is needed for this installer test.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-06T22:50+02:00 — 260703-L13 (settings unification): added
+  `AgenticSettingsSeedTests` — seed-when-missing, never-clobber, dry-run-no-write.
+  Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-06-04T22:15+02:00: Documented the new provider-deps watcher rebind regression coverage: sequencing, dry-run reporting, degraded-status retry, unrecovered recovery action, and dependency-failure recovery.
 - 2026-05-30T21:51+02:00: Documented the new `no_cache` threading coverage in `ProviderDependencyHelperTests` — `no_cache=True` reaches both provider args and defaults to `False`. Verified against `8927f03`.
