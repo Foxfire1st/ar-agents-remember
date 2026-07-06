@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/FlowTab.tsx`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T09:40+02:00                           |
-| lastVerifiedCommitHash | `eb681053dc1257efada82afbf6cb59c5dee46feb`       |
-| lastVerifiedCommitDate | 2026-07-04T09:50:59+02:00|
+| lastUpdated            | 2026-07-06T15:40+02:00                           |
+| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2`       |
+| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -19,17 +19,17 @@
 The **lifecycle-design canvas** (orchestration leaf 260703-L0): FlowTab is no longer the single
 hardcoded build-job diagram it was at task 26. It is now a **pure segment renderer + model nav** — the
 surface where a lifecycle or agent interaction is **drawn and reviewed with the developer before it is
-built**. All content lives in the sibling `flowModels.ts` registry (`FLOW_MODELS`, 8 static models);
-this file owns only the presentation: a `Segment` renderer that draws one of four segment kinds
-(start / node / gate-rider node / rundown card / divider) and a **radiogroup model nav** (the
-`RailToggle`/`EffectsToggle` idiom) that switches which model is shown. It is **still zero store
-reads** — it takes at most an `initialModel` string prop and holds one piece of local nav state.
+built**. All content lives in the sibling `flowModels.ts` registry (`FLOW_MODELS` — 8 static models
+since 260703-L12: router · designer · strategist · orchestrator · manager · worker · reviewer ·
+comms, the converged `l-01-agent-lifecycles` doctrine; the pre-convergence build-job/frame models
+died with the l-01/l-02 convergence). This file owns only the presentation: a `Segment` renderer
+that draws one of four segment kinds (start / node / gate-rider node / rundown card / divider) and
+a **radiogroup model nav** (the `RailToggle`/`EffectsToggle` idiom) that switches which model is
+shown. It is **still zero store reads** — it takes at most an `initialModel` string prop and holds
+one piece of local nav state.
 
 Task 29 removed it from the cockpit `View` union and mode bar, and that stays true: it is **mounted
-dev-only** at `/dev/flows` (see `dev/DevApp.tsx`), dead-code-eliminated from the production bundle. The
-build-job model preserves the task-26 chain and remains the human-readable spec the task-27 next-step
-engine matches; the other seven models draw the agent-orchestration series (designer, frame,
-orchestrator, manager, worker, reviewer, comms).
+dev-only** at `/dev/flows` (see `dev/DevApp.tsx`), dead-code-eliminated from the production bundle.
 
 ## Code Commentary
 
@@ -37,7 +37,7 @@ orchestrator, manager, worker, reviewer, comms).
 
 `FlowTab({ initialModel }: { initialModel?: string } = {})` (L111) resolves the shown model against the
 `flowModels.FLOW_MODELS` array: it seeds `useState` with `initialModel` only when some registered model
-carries that id, else falls back to `FLOW_MODELS[0]` (the build-job model); an unknown id therefore
+carries that id, else falls back to `FLOW_MODELS[0]` (the router model); an unknown id therefore
 lands on the fallback rather than crashing (L112-L116). The root `<div>` carries `data-testid="flow-tab"`
 and `data-model={model.id}` (L118). The **model nav** (L119-L133) is a `role="radiogroup"`
 (`aria-label="Flow model"`, `data-testid="flow-nav"`) of one `role="radio"` button per model, each with
@@ -119,6 +119,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T15:40+02:00 — 260703-L12 (three-party loops, staleness de-stale — no source change): the Purpose's pre-convergence census ("8 static models" meaning build-job/frame-era; "the other seven models draw … designer, frame, …") was stale since the L8 convergence and is rewritten to the current 8-model registry (strategist joins in L12); the Logic fallback line now names the router, not build-job. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-04T09:40+02:00 — 260703-L0 (Canvas & playground): rewrote FlowTab from the single hardcoded
   build-job diagram (`RUNDOWN`/`HEAD`/`LINEAR` module constants) into a **multi-model design canvas** — a
   pure `Segment` renderer (start / node / gate-rider with optional `ridesNote` override / rundown card /

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_orchestration_comms.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash |                                            `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`|
-| lastVerifiedCommitDate |                                            2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-06T15:35+02:00 |
+| lastVerifiedCommitHash |                                            `bcaa78070f77c76f1c4db0af93786bb193b92523`|
+| lastVerifiedCommitDate |                                            2026-07-06T07:51:05+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -27,7 +27,10 @@ enqueueing.
 The suite pins the pure artifact helpers (`turn_report_artifact`,
 `escalation_packet`), the missing-artifact check, `OrchestrationNudgeStore`
 rate-limit behavior, and the `orchestration_nudge_manager_payload(...)` path that
-records an event and queues a manager-addressed inbox message.
+records an event and queues a manager-addressed inbox message. As of 260703-L12
+it also pins the strategist rung: `test_strategist_escalates_to_orchestrator`
+asserts an `escalation_packet(from_role="strategist", ...)` routes to the
+orchestrator (the new `OrchestrationRole` literal's ladder entry).
 
 ### Conventions
 
@@ -54,5 +57,6 @@ As of the 260703-L9 lifecycle convergence, the artifact-helper test pins the tur
 
 ## Update History
 
+- 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): added `test_strategist_escalates_to_orchestrator` pinning the new strategist ladder rung in `escalation_packet`. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the pinned turn-report template path expectation moved to runtime skills/l-01-agent-lifecycles/templates/. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:31+02:00 - L3: created orchestration communication helper coverage. Verification metadata pinned until closeout stamps the L3 commit.

@@ -106,7 +106,7 @@
       "GateStore",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "0347c7e627c0278c29a9c72d0a3494d65638d7f8",
+      "bcaa78070f77c76f1c4db0af93786bb193b92523",
       "/../../overview.md",
       "controlplane/",
       "master-handover-approval",
@@ -121,8 +121,8 @@
       "lifecycleId",
       "agentId",
       "recipientRole",
-      "AttentionDismissalStore",
-      "observer_root/workspace/attention-dismissals.jsonl"
+      "strategist",
+      "AgentRole"
     ]
   },
   "fallback": {

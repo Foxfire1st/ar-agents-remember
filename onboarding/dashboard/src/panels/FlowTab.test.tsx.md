@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/FlowTab.test.tsx`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`       |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastUpdated            | 2026-07-06T15:40+02:00 |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523`       |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -28,33 +28,35 @@ edit that drops an invariant from a drawn model fails a test.
 
 ### Logic
 
-Eight `it` cases under one `describe` (L9), `afterEach(cleanup)` (L7); no mocking — FlowTab has no lazy
-xterm or store dependency, so it renders straight into jsdom.
+Eleven `it` cases under one `describe` (`FlowTab canvas (unified l-01-agent-lifecycles)`),
+`afterEach(cleanup)`; no mocking — FlowTab has no lazy xterm or store dependency, so it renders
+straight into jsdom.
 
-- **default build-job (L10-17)** — a bare `<FlowTab />` reports `data-model="build-job"`, shows the
-  build-job title, and still carries the task-26 survivors (`flow-nav` + a `worktree_start --dry-run`
-  node).
-- **nav switching (L19-28)** — clicking `flow-nav-orchestrator` flips `data-model` to `orchestrator` and
-  its `aria-checked` to `"true"` while `flow-nav-build-job` reads `"false"`; a further click to
-  `flow-nav-comms` switches again — proving the radiogroup drives the shown model.
-- **initialModel + fallback (L30-36)** — `initialModel="manager"` renders the manager model; an unknown
-  `initialModel="nope"` falls back to `build-job` (`FLOW_MODELS[0]`).
-- **per-model render census (L38-54)** — iterates `FLOW_MODELS` and, for each, asserts `data-model`
-  matches and that the DOM counts derived from the registry hold: `flow-gate` count == nodes with
-  `rides`, `flow-node` count == non-gate nodes, `flow-rundown` count == `rundown` segments. This is the
-  structural guard that the segment renderer draws exactly what each model declares.
-- **orchestration invariants (L56-68)** — on `orchestrator`: the master-granular DAG rule
-  (`reshape master boundaries — NEVER interleave dispatch`) and exactly **two** `adversarial review seam`
-  matches; on `comms`: the escalation ladder text and the **ORCHESTRATOR-ONLY** spirit test; on
-  `manager`: `managers don't reshape plans (no bird's-eye)` — i.e. managers escalate, they don't judge.
-- **designer (L70-76)** — the designer draws as its own job and names the orchestrator as its adversarial
-  reviewer (`ORCHESTRATOR adversarially reviews the design`), plus `ask — never fill silently`.
-- **frame (L78-86)** — the frame draws as the thin consistent runtime (`context → job → wrap-up`) with
-  the junction where `the JOB's own flow takes over … the frame stays thin`; then switches to build-job
-  and asserts it self-identifies as the `Eierlegende Wollmilchsau`.
-- **reviewer (L88-94)** — verdicts-are-evidence (`verdicts are evidence, not decisions — a policy may
-  REQUIRE a verdict`), the onboarding-vs-code review lens, and the decomposable-blocks outcome
-  (`⟁ block? → decomposable fix leaves`).
+- **default router** — a bare `<FlowTab />` reports `data-model="router"`, shows the unified-skill
+  title, and asserts the retired `build-job`/`frame` models are gone from the nav.
+- **nav switching** — clicking `flow-nav-orchestrator` flips `data-model` and `aria-checked`;
+  a further click to `flow-nav-comms` switches again — the radiogroup drives the shown model.
+- **initialModel + fallback** — `initialModel="manager"` renders the manager model; an unknown id
+  falls back to `router` (`FLOW_MODELS[0]`).
+- **per-model render census** — iterates `FLOW_MODELS` (8 models since 260703-L12) and asserts the
+  DOM counts derived from the registry hold: `flow-gate` == nodes with `rides`, `flow-node` ==
+  non-gate nodes, `flow-rundown` == rundown segments.
+- **router invariants** — three conditions/no fourth entry, the task-doc → branch → worktree
+  ladder, and chat-is-never-a-build-route.
+- **orchestration invariants** — the master-granular DAG rule, the branch-not-worktree intent, the
+  decide-by-packet-carried-gateId handover; comms ladder + ORCHESTRATOR-ONLY spirit test; manager
+  reopen-not-redo + the enclosure-addressed raise.
+- **strategist (260703-L12)** — the mandatory pre-run gate (`no orchestration task, no
+  orchestrated run`), the single-master pass, the cited-edges/blast-radius method line, the
+  unplannable-as-scoped junction, and the reader-not-mutator adoption node.
+- **three-party-loop invariants (260703-L12)** — manager tier scoring + the 3-full-round cap with
+  the non-shrinking-round escalation; comms quo-vadis line; reviewer criteria-catalog binding +
+  delta-verify loop-seat reuse; worker builder-resume line; orchestrator strategist pre-run +
+  visible-behavior-first reviewable-environment handover.
+- **worker** — brief-started, NEVER git commit, owning seat runs closeout → integrate → finalize.
+- **designer** — the hat the orchestrator pulls; `ask — never fill silently`.
+- **reviewer** — verdicts-are-evidence with `requireReviewerVerdictAtSeams`, the ruled deciders,
+  and `⟁ block? → decomposable fix leaves`.
 
 ### Conventions
 
@@ -85,6 +87,7 @@ As of the 260703-L8 remediation the tests assert the converged canvas: router de
 
 ## Update History
 
+- 2026-07-06T15:40+02:00 — 260703-L12 (three-party loops): two new cases — the strategist model (mandatory pre-run gate, cited-edges method, unplannable-as-scoped junction, reader-not-mutator adoption) and the cross-model loop invariants (tier scoring, 3-full-round cap, quo-vadis, criteria-catalog binding, builder/reviewer resume, strategist pre-run + reviewable-environment handover) — 11 tests total; the Logic body was de-staled from the pre-convergence build-job/frame census to the current suite. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T19:55+02:00 - L8 builder cycle 7: new assertion pins the manager raise node's enclosure address (AR4-4). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: seam-channel assertions updated to the wait=false raise + decide-by-packet-carried-gateId prose (AR3-6a). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): tests rewritten for the converged canvas (9 tests). Verification metadata pinned until closeout stamps the L8 commit.

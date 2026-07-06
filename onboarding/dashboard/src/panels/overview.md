@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T10:30+02:00 |
-| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2`       |
-| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
+| lastUpdated            | 2026-07-06T15:40+02:00 |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523`       |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -254,16 +254,24 @@ and the `Chats` `SessionList` switcher).
   before it is built**. `FlowTab.tsx` is now a **pure segment renderer + radiogroup model nav** (the
   `RailToggle` idiom) with **zero store reads**; all content is externalized to the new `flowModels.ts`
   **flow-model registry** (the `FlowStart`/`FlowNode`/`FlowRundown`/`FlowDivider` = `FlowSegment` union +
-  the `FlowModel` type, plus **7 static models**: `router` · `designer` · `orchestrator` · `manager` ·
-  `worker` · `reviewer` · `comms` — the converged l-01-agent-lifecycles doctrine; the retired
+  the `FlowModel` type, plus **8 static models** (since 260703-L12): `router` · `designer` ·
+  `strategist` · `orchestrator` · `manager` · `worker` · `reviewer` · `comms` — the converged
+  l-01-agent-lifecycles doctrine; the retired
   `build-job` and `frame` models died with the l-01/l-02 convergence, and `router` (the default)
   draws the three-condition entry, the D·P·O event loop, and the task-doc→branch→worktree ladder). The renderer draws four segment kinds — a start pill, a
   tool `node`, a gate-rider node (amber left-bar, `rides` + optional `ridesNote` override), and a prose
   `rundown` card — with mint (wired today) / amber-dashed (this series) edges via `nextStatus`. The
-  seven models encode the converged doctrine's agreed invariants (the router three-condition entry; the
+  eight models encode the converged doctrine's agreed invariants (the router three-condition entry; the
   worker → manager → orchestrator → developer escalation ladder; the master-granular DAG /
   never-interleave-dispatch rule; delegated attributed gates; verdicts-are-evidence-not-decisions;
-  mandatory turn reports; one handover-packet schema). Since L8 cycles 5–7 the manager and orchestrator
+  mandatory turn reports; one handover-packet schema). The 260703-L12 three-party-loops leaf adds the
+  `strategist` model — the spawn-first sprint planner whose run is the MANDATORY precondition for any
+  orchestrated run (the mandatory pre-run gate, the eight-phase method with cited edges and two-sided
+  touch surfaces, the orchestration-task deliverable, the reader-not-mutator adoption) — and rides the
+  loop doctrine along on the sibling drawings: manager tier scoring + the 3-full-round cap and
+  convergence junction, worker builder-resume, reviewer criteria-catalog binding + delta-verify reuse,
+  the comms quo-vadis junction, and the orchestrator's strategist pre-run line + the
+  visible-behavior-first reviewable-environment handover. Since L8 cycles 5–7 the manager and orchestrator
   seam nodes draw the ruled handover channel: the manager raises `master-handover-approval` with
   `wait=false` and `enclosure="<master task name>"` (the raise node names the enclosure as the exact
   address integration enforcement matches the gate by), the returned gateId rides the handover packet,
@@ -297,10 +305,11 @@ and the `Chats` `SessionList` switcher).
 | The pure selectors the panels read (queue, tree, engine state, drift segments). | [data/selectors.ts](agents-remember/dashboard/src/data/selectors.ts) |
 | The projection node shapes the panels render. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 | The lifecycle next-step engine (historically specced by the retired build-job model). | [tools/next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| The flow-model registry that holds the `FlowTab` canvas content (7 static models + segment/model types). | [flowModels.ts](agents-remember/dashboard/src/panels/flowModels.ts) |
+| The flow-model registry that holds the `FlowTab` canvas content (8 static models + segment/model types). | [flowModels.ts](agents-remember/dashboard/src/panels/flowModels.ts) |
 
 ## Update History
 
+- 2026-07-06T15:40+02:00 — 260703-L12 route impact (three-party loops, canvas ride-along): `flowModels.ts` gains the STRATEGIST model (FLOW_MODELS census 7 → 8; placed between designer and orchestrator) and loop-doctrine lines on the manager/worker/reviewer/comms/orchestrator drawings; `FlowTab.test.tsx` grows to 11 cases (strategist model + cross-model loop invariants). FlowTab.tsx itself is unchanged (pure renderer over the registry). Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T12:10+02:00 — 260703-L10 route impact (small): the FlowTab canvas was verified against the converged `l-01-agent-lifecycles` doctrine (S2 reduced to verification after L8 shipped the redraw); the one residual vocabulary drift fixed is the designer model's reframe-agreement node phase label, `"frame"` → `"reframe"`. Tests (41 files / 385) stay green — no invariant string changed. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-06T10:30+02:00 — L11 adversarial-review follow-up: the anchor fallback annotation is deterministic (greatest lastEventTs), closing L11R-2. Verification metadata pinned until closeout stamps the L11 commit.
 - 2026-07-06T02:50+02:00 — 260703-L9 route impact (friction F-M): the route gains `TaskNotes.tsx`

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastUpdated            | 2026-07-06T15:35+02:00 |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 
 ## Purpose
 
@@ -25,6 +25,8 @@ As of cycle 4 the knob footer resolution reads role-file defaults < settings (de
 
 As of cycle 5: the fan-out fallback clarifies workers do not spawn AR sessions (spawning is the seats' channel).
 
+As of 260703-L12 the file carries a **Loop Position** section (between Fan-Out and Default Behavior): on a builder-verified or full-loop leaf this seat is the three-party loop's BUILDER — fix rounds resume the SAME session and round-2+ reports APPEND to the report file (loop history stays legible); the cap, the convergence call, and escalation are the OWNER's controls, not the worker's; disagreement with a handed reviewer finding is stated with evidence in the report — the owner rules, the worker never argues a verdict into the code.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -35,6 +37,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): a Loop Position section makes the worker the loop's BUILDER — fix rounds resume the same session, reports append, cap/convergence/escalation stay the owner's, and disagreement with a finding goes into the report as evidence. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the fan-out fallback clarifies workers do not spawn AR sessions (spawning is the seats' channel).. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): knob footer variant rung removed. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: harness overlay deleted; fan-out doctrine folded in; knob harness row is a preference settings overrides. Verification metadata pinned until closeout stamps the L8 commit.

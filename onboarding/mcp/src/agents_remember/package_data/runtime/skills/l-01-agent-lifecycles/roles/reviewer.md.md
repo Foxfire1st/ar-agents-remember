@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastUpdated            | 2026-07-06T17:35+02:00 |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 
 ## Purpose
 
@@ -96,6 +96,8 @@ As of cycle 4 the file is `roles/reviewer.md` (renamed from adversarial-reviewer
 
 As of cycle 5: settings key is orchestration.roles.reviewer; the super-exit scope packet says 'against its base (main)' instead of spear jargon; the knob tools row gains the inbox.
 
+As of 260703-L12 the file **binds the criteria catalogs** (a new Criteria Catalogs section before the three lenses): criteria are never made up on the spot — every review runs its type's STANDING catalog from `criteria/` plus an exploratory mandate (default 2 novel lenses), with a binding table (master-exit → code-seam · onboarding-memory · report-verification, + doctrine when doctrine files ride; super-exit → all four wholesale; leaf full-loop → per the change set; plan review → plan-review · report-verification) and the promotion-ratchet duty (surviving novel finding-classes are proposed as catalog amendments IN THE VERDICT, promoted on the loop owner's acceptance). The seat definition extends beyond the two seams — since round 2 (L12R-5) the OPENING sentence itself is count-honest ("spawned at exactly two adversarial seams — and as any three-party loop's reviewer seat"): **the same role file is every three-party loop's reviewer** (developer ruling L12-Q2 — reuse, not a lighter loop-checker), including the portfolio plan review; **delta-verify reuse** is stated as this seat's duty (resumed via follow-up to verify a passing round's landed residuals, appending a delta section to its own verdict; only full rounds count against the loop's 3-round cap). The refute-or-confirm posture is unchanged.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration job file.
@@ -106,6 +108,8 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-5): the What-This-Seat-Is opening sentence made count-honest — two adversarial seams AND the loop-reviewer seat named up front instead of ten lines later. Verification metadata pinned until closeout stamps the L12 commit.
+- 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): the criteria catalogs are bound (binding table per review type + promotion-ratchet duty in the verdict); the seat extends to every three-party loop's reviewer (L12-Q2 reuse ruling) incl. the plan review; delta-verify reuse stated (same-instance resume closes rounds; only full rounds count against the cap); refute-or-confirm unchanged. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): settings key is orchestration.roles.reviewer. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): renamed to reviewer.md (server vocabulary + spawn value); deciders ruled (orchestrator@master-exit, developer@super-exit); L4-policy shorthand replaced with the as-built citation. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T04:40+02:00 - L8 de-harnessing pass: overlay-authoring sentence removed (no per-harness files). Verification metadata pinned until closeout stamps the L8 commit.

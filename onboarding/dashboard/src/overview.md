@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026 |
-| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2`       |
-| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523`       |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -201,6 +201,7 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-06T15:40+02:00 — No route impact: 260703-L12's dashboard change is content-only inside `panels/` — `flowModels.ts` gains the STRATEGIST model (8-model census) and loop-doctrine lines, `FlowTab.test.tsx` grows to 11 cases; the dashboard/src route model, data layer, and grammar this overview describes are unchanged — detail lives in the `panels/` overview and the two file sidecars. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T12:10+02:00 — No route impact: 260703-L10's dashboard change is a single phase-label string inside `panels/flowModels.ts` (designer `frame` → `reframe`); the dashboard/src route model, data layer, and grammar this overview describes are unchanged — detail lives in the `panels/` overview and the `flowModels.ts` sidecar. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-06T03:25+02:00 — 260703-L11 route impact: `data/selectors.ts` gains the shared
   `hasLiveWorktree` tasks-surface visibility rule and `types/projection.ts` mirrors the new required

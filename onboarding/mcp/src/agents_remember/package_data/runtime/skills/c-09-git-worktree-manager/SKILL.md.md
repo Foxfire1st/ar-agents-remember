@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-06T12:30+02:00                     |
-| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
-| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
+| lastUpdated            | 2026-07-06T17:35+02:00                     |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 
 ## Purpose
 
@@ -136,8 +136,13 @@ maps automatically so `reconciliation` is not needed. Dirty source memory blocks
 start until memory content and ledger updates are committed or the developer
 chooses another path.
 
-Integration remains human-gated. `ff-only` lands closed task branches when
-source branches did not move; `replay` handles parallel non-overlapping work by
+Integration remains human-gated, with the 260703-L12 round-2 orchestrated-run
+carve-out stated in the section itself: dependency-ordered leaf→master and
+master→super integrations ride the series' standing approval (the developer's
+portfolio-gate approval recorded in the planner master), concentrating the
+developer hand-off at the super PR/carry-over gate; a raised durable
+`integration-approval` gate still awaits the developer. `ff-only` lands closed
+task branches when source branches did not move; `replay` handles parallel non-overlapping work by
 replaying code and memory content, then regenerating the final memory ledger
 row. The recorded `source_branch` is the integration target, not just a base
 branch: `worktree_integrate` will move it and will not open a PR or discover
@@ -207,6 +212,7 @@ The packaged worktree-manager skill defines the new operating model: master task
 
 ## Update History
 
+- 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-6): the Integration section gains the orchestrated-run standing-approval carve-out sentence (ruled 2026-07-06, resolves L8-Q9's practiced path) — the developer hand-off concentrates at the super PR/carry-over gate; a raised durable integration-approval gate still awaits the developer. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T12:30+02:00 — L10 owner ruling (builder escalation #1): the chat-build option is swept from the intro and intake decision — chat never builds; single-session work takes a thin w-02 doc. Verification metadata pinned until closeout stamps the L10 commit.
 
 - 2026-07-05T19:55+02:00 — L8 builder cycle 7: Integration section adds one sentence — integrate reports unmatched open handover gates as the `handover_gate_warning` enclosure spelling check (AR4-1c). Verification metadata pinned until closeout stamps the L8 commit.
