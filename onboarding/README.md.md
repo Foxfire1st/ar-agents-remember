@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T12:05+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
+| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -59,6 +59,8 @@ that and every other install path as a workspace-first accept-or-override
 default.
 
 A `## What It Looks Like In Practice` mini-transcript sits between Core Features and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
+
+Since the 260703-L10 one-vocabulary sweep, the post-quickstart workflow sentence and the Workflows docs link speak the unified `l-01-agent-lifecycles` vocabulary: a developer-facing session is the orchestrator, spawned agents follow their role briefs, and the named build modes are the research-only exit, the `w-02-light-task-workflow` skill task, and the master + light sub-task series (the chat build is retired — chat is never a build route). The Status section's 3.0-arc paragraph likewise says "a system-managed agent lifecycle" instead of the retired "session job lifecycle" phrase.
 
 A ToC-linked `## Run The Dashboard` section (260703 L3) sits between Quickstart and
 Documentation. It leads with the **unpinned** install as the first-class citizen —
@@ -130,6 +132,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep): the workflow sentence after the quickstart and the Workflows docs-index line now name the `l-01-agent-lifecycles` skill (orchestrator + role briefs; research-only exit / `w-02-light-task-workflow` task / master series — the chat build removed), and the Status 3.0-arc paragraph says "system-managed agent lifecycle". The `docs/**` pages (workflows, getting-started, features, llms.txt, FAQ, concepts, reference/skills, reference/runtime-layout, install/claude-code, docs/README) were swept in the same pass but stay outside file-level onboarding per path rules. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-03T12:05+02:00 — 260703 L4: Status version string bumped to 3.0.0rc2 (structure
   unchanged); the sidecar's Status reference row became version-generic so release bumps stop
   drifting it.

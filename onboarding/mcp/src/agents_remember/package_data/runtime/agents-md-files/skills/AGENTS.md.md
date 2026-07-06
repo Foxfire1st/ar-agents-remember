@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
+| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
 
 ## Purpose
 
@@ -31,7 +31,11 @@ memory carryover to `c-11-memory-carryover-from-branch` skill.
 
 Each route is written as a developer-facing question followed by the canonical
 skill identifier. The template intentionally stays compact so it can be read
-quickly when an agent is already inside the installed skills tree.
+quickly when an agent is already inside the installed skills tree. A closing
+Reference Style section requires full lowercase skill ids with the word "skill"
+(its lifecycle example cites *the `l-01-agent-lifecycles` skill*) and snake_case
+MCP tool names qualified with "MCP tool", so skills and tools stay
+distinguishable in prose.
 
 ### Invariants And Boundaries
 
@@ -70,6 +74,7 @@ No sibling repository evidence is needed for this routing guide.
 
 ## Update History
 
+- 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep, synced from root `agents-md-files/` via `sync-runtime.py`): the Reference Style section's lifecycle example now cites the `l-01-agent-lifecycles` skill instead of the retired `l-01-session-job-lifecycle`; the routing map itself is unchanged. Documented the Reference Style section in Conventions. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-21T03:05+02:00: Updated `c-04-retrieval-strategy-router` skill routing language to point at retrieval strategy selection across GrepAI semantics, CGC relationships, and Intent proof.
 - 2026-05-18T21:44+02:00: Refreshed after pulling the committed `c-04-retrieval-strategy-router` skill onboarding read-mode rename from `origin/main`.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2`             |
+| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -36,7 +36,8 @@ also carries the slice-07 **research-phase read** doctrine attached to the Inten
 strategy: the `read_ar_files` MCP tool is the preferred paired onboarding + bounded
 source read (mirroring how Semantics prefers GrepAI and Relationship prefers CGC) —
 one batch call returns each source file with its sidecar plus the repository and
-governing route overviews; during the research phase (up to the build/job decision)
+governing route overviews; during the research phase (up to the build decision —
+the 260703-L10 sweep retired the pre-convergence "build/job" compound here)
 read managed-repo source with `read_ar_files` rather than native read, count those
 calls as research evidence alongside the Semantics/Relationship queries, and reserve
 native read as the edit precondition once building begins.
@@ -129,6 +130,7 @@ They do not contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-07-06T13:35+02:00 — 260703-L10 round 2 (L10R-2, synced from root `skills/` via `sync-skills.py`): the research-phase rule's "build/job decision" became "build decision" (the l-01 vocabulary) in the Rules list; no strategy, recipe, or routing change. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-06-23T00:53+02:00 — Slice 07 (S5 sync): this generated `c-04` skill mirror was re-synced to carry the `read_ar_files` **research-phase read** doctrine on the Intent strategy — `read_ar_files` is the preferred paired onboarding + bounded source read (the recipe batched), used during the research phase instead of native read, counted as research evidence, with native read reserved as the edit precondition. Generated-mirror note only; the authored skill source owns the wording. Verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T00:37+02:00: Refreshed verification and line citations after `c-04-retrieval-strategy-router` skill was compacted around MCP provider-tool routing.

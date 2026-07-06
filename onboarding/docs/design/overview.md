@@ -65,6 +65,7 @@ task-23/24 interaction-retention model) and `harness-matrix.md` (present but not
 
 ## Update History
 
+- 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — the design specs here are historical design records (engine-room visual language, observable-lifecycle 3.0 design) and are not rewritten by vocabulary sweeps; their only `orient` hits are SVG marker attributes.
 - 2026-06-26T14:16+02:00 — Task 25: route overview now points to `lifecycle_gate` as the observable-lifecycle design's public gate junction.
 - 2026-06-25T13:20+02:00 — Task 23/24: onboarded `observable-lifecycle.md` and recorded the interaction-retention design update for gate/inbox throwaway data.
 - 2026-06-21T23:35 — Created. Route overview for `docs/design/` (in-repo dashboard design documentation):

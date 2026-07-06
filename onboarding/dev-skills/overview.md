@@ -123,6 +123,7 @@ When changing files under this route:
 
 ## Update History
 
+- 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — `dev-skills/` carries no retired lifecycle vocabulary (no `l-01-session-job-lifecycle`/`l-02` names, no dead phase axis), so nothing changed on this route.
 <!-- newest first; append-only -->
 
 - 2026-06-23T05:31 — Created the `dev-skills/` route overview when the slice was added to the onboarding include scope (issue #92).

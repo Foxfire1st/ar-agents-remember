@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-06T10:30+02:00 |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2`       |
+| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -267,7 +267,10 @@ and the `Chats` `SessionList` switcher).
   seam nodes draw the ruled handover channel: the manager raises `master-handover-approval` with
   `wait=false` and `enclosure="<master task name>"` (the raise node names the enclosure as the exact
   address integration enforcement matches the gate by), the returned gateId rides the handover packet,
-  and the orchestrator decides by that packet-carried gateId. Task 29
+  and the orchestrator decides by that packet-carried gateId. The 260703-L10 one-vocabulary sweep
+  verified the canvas against the converged doctrine and aligned the one residual label: the designer
+  model's reframe-agreement node phase is `reframe` (the `roles/designer.md` word), not the dead
+  `frame` phase name. Task 29
   S7 removed it from the cockpit `View` union and mode bar; L0 **mounts it dev-only at `/dev/flows`**
   (`dev/DevApp.tsx`, `initialModel` from `?model=`), dead-code-eliminated in production — it is not a
   shipped cockpit panel. Covered by `FlowTab.test.tsx` (default model, nav switching, `initialModel`
@@ -298,6 +301,7 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-06T12:10+02:00 — 260703-L10 route impact (small): the FlowTab canvas was verified against the converged `l-01-agent-lifecycles` doctrine (S2 reduced to verification after L8 shipped the redraw); the one residual vocabulary drift fixed is the designer model's reframe-agreement node phase label, `"frame"` → `"reframe"`. Tests (41 files / 385) stay green — no invariant string changed. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-06T10:30+02:00 — L11 adversarial-review follow-up: the anchor fallback annotation is deterministic (greatest lastEventTs), closing L11R-2. Verification metadata pinned until closeout stamps the L11 commit.
 - 2026-07-06T02:50+02:00 — 260703-L9 route impact (friction F-M): the route gains `TaskNotes.tsx`
   (+ its component suite), the read-only coordination-notes surface — series notes list over

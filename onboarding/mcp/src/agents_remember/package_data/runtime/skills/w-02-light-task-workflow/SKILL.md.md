@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-06T12:30+02:00                     |
+| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
+| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
 
 ## Purpose
 
@@ -16,6 +16,8 @@ This skill defines `w-02-light-task-workflow` skill, the light durable task work
 ## Code Commentary
 
 ### Logic
+
+Since L10 the JSON-primary paragraph anchors the thin-doc example to the smallest single-session build instead of a 'chat build': chat is never a build route (the l-01 invariant), so the thin doc — title plus a few steps — is the MINIMUM build artifact, not an optional upgrade over a doc-less chat.
 
 `w-02-light-task-workflow` skill creates or updates one task wrapper folder under the `c-08-ar-coordination-context-resolver` skill resolved task root, writes the durable task document as `task.md`, stops for approval before implementation, uses the artifact checklist as the live execution record, and for worktree-backed tasks stops again for explicit commit approval before `c-09-git-worktree-manager` skill closeout creates commits. Dashboard task 14 clarifies that closeout is not task completion: after the task branch lands on its parent branch, `lifecycle_finalize_task` proves the edge, runs or verifies cleanup, and sets the leaf task plus immediate parent row to `Completed`. When a task outgrows a single-page plan it escalates to a master + light sub-task series (`master-template.md`): one wrapper folder with a master `task.md` plus flat numbered `NN_<name>.md` sub-tasks, run as one task / one workflow / one worktree with a commit per slice and a single integrate + finalization + release at the end.
 
@@ -62,6 +64,8 @@ No sibling repository evidence is needed for the current workflow skill.
 The packaged light-task workflow describes master series as integration-branch wrappers and leaf sub-tasks as the worktree-backed units with their own enclosure contracts and closeout/finalization.
 
 ## Update History
+
+- 2026-07-06T12:30+02:00 — L10 owner ruling (builder escalation #1): the JSON-primary paragraph's 'chat build' thin-doc example is re-anchored to the smallest single-session build — chat is never a build route; the thin doc IS the minimum artifact. Verification metadata pinned until closeout stamps the L10 commit.
 
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged light-task workflow now says JSON task docs bind to leaf enclosures, master series use an integration branch, and each active slice gets its own enclosure/worktree. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-23T22:50+02:00 — Dashboard task 14: documented that worktree-backed light tasks become `Completed` through `lifecycle_finalize_task` after the landed edge is proven, not immediately after closeout. Verification metadata pinned until closeout stamps the source commit.
