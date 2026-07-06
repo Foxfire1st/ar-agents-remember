@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-06T22:25+02:00                            |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345`        |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-06T23:58:24+02:00                            |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`        |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -75,7 +75,9 @@ is `_tool_payload` + `models/terminal.py`, and server registration lives in `mcp
 - Leaf uniqueness stays server-arbitrated: `spawn_agent_session` surfaces `leaf-taken` (with the owning
   session) and never overrides it.
 - Spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) is recorded on the catalog row so
-  the dashboard can render the orchestration tree; the tool also carries it on its response.
+  the dashboard can render the orchestration tree; the tool also carries it on its response. Since
+  L14 the `spawned` payload also reports `spawnRole` — the `AR_SPAWN_ROLE` the opener persisted from
+  the caller's `env` (omitted when the spawn carried no role), the Chats command-tree grouping key.
 - The responses remain AR-owned and strict; provider-flexible models are not used here.
 - Harness resolution precedence is explicit arg > repo-local settings > global settings >
   detection-gated default; settings are read PER-USE (an edit applies to the next spawn, no
@@ -119,6 +121,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T23:58:24+02:00 — 260703-L14 (visual hierarchy + chat grouping): the `spawned` payload now
+  reports `spawnRole` (`entry.spawn_role` — the AR_SPAWN_ROLE the shared opener recorded on the
+  catalog row from the caller's env; `_tool_payload` omits it when `None`). No builder logic
+  changed. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T22:25+02:00 — 260703-L13 (settings unification): `harness` became optional —
   `_resolve_spawn_harness` implements explicit arg > repo-local settings > global settings >
   detection-gated default, reading the agentic settings per-use with the repo-local layer

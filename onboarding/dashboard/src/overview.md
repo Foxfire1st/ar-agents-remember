@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026 |
-| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523`       |
-| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
+| lastUpdated            | 2026-07-06T23:57:36+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -77,7 +77,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   component-render tests (the rest of the suite — `smoke`, `contract`, and the `data/` store+selector
   tests — is pure logic).
 - `grammar/` — the shared primitives library (`Panel`, `ModeBar`, `Dot`, `Affordance`,
-  `ProgressFill`, `TokenGauge`, `Markdown`); see [grammar/overview.md](grammar/overview.md).
+  `ProgressFill`, `TokenGauge`, `Markdown`, and — 260703-L14 — `RankBadge`, the V4 chevron rank
+  insignia for the orchestration/management command tiers); see
+  [grammar/overview.md](grammar/overview.md).
 - `panels/` — the cockpit panels (incl. the slice-6e **Chats** terminal view + its lazy `Terminal`
   xterm wrapper + the 6e-2c `SessionList` session switcher, plus Task 11's shared `GateResponder`
   used by the detail panel, engine-room diagnostics, and Hangar worktree gates); `FlowTab.tsx` remains
@@ -125,7 +127,16 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   it to show task document titles for lifecycle-only history rows before falling back to raw lifecycle
   ids. `taskHierarchy.ts` centralizes the structured parent-series join used by Operations and Detail:
   active leaf rows can show the child task document's own id and link back to the parent/root task
-  without parsing task slugs or parent label strings.
+  without parsing task slugs or parent label strings; 260703-L14 adds its orchestration-command
+  helpers (`isOrchestrationDoc` / `masterCommandNames` / `orchestratorParentKey` — the
+  `orchestrates`-list match both command surfaces share). 260703-L14 also adds
+  **`sessionGroups.ts`** (+ unit suite), the pure G1 command-tree derivation for the Chats sidebar:
+  `groupSessions({sessions, taskDocuments, enclosures})` decks command-role/orchestration-claiming
+  chats (only when an orchestration task exists — D3), groups leaf-claimed chats under their live
+  master (via `hasLiveWorktree` + the case-insensitive leaf join), rolls landed/absent-enclosure
+  chats into one archive, and leaves claim-less sessions ungrouped; master grouping is the chats
+  pane's baseline in every run (owner-ratified, L14R-1) while the gold sprint deck stays
+  orchestration-gated, and the tasks tab renders flat runs unchanged.
 - `topology/` — the imperative constellation canvas + its pure model adapter. Task 33 reshapes it into an
   **active-enclosure** view: the constellation is now `workspace → source checkouts → active worktree
   enclosures (+ providers)`. The separate lifecycle/task rim is gone — each enclosure node folds in its
@@ -149,7 +160,8 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   prefixes. Task 21 adds `SeriesNode.seriesTokenTotal`, the server-composed aggregate displayed by
   master readers. Task 23/24/L3 adds `AttentionItem.gateId?` and `AgentPickupNode` /
   `Analytics.agentPickups` for attention clear and task-row waiting-for-agent/check-chat feedback,
-  including sender/recipient roles, message kind, artifact path, and hosted-delivery state. Task
+  including sender/recipient roles, message kind, artifact path, and hosted-delivery state. 260703-L14 mirrors `TaskDocNode.orchestrates?` — the orchestration-command relation (non-empty only
+  on an orchestration-task master; optional for pre-L14 persisted-projection compatibility). Task
   31 mirrors the provider boot-node `missing` state so Engine Room slots can distinguish expected-but-absent
   CGC/GrepAI roles from configured or observed provider rows. Task 33 mirrors the required top-level
   `WorkspaceProjection.activeWorktreeGroups: string[]` — the bounded active worktree-group set the
@@ -201,6 +213,12 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-06T23:57:36+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): `data/` gains
+  `sessionGroups.ts` (+ unit suite, the G1 command-tree derivation) and `taskHierarchy.ts` gains the
+  orchestration-command helpers; `grammar/` gains `RankBadge.tsx` (+ test, the V4 chevron insignia);
+  `types/projection.ts` mirrors `TaskDocNode.orchestrates?`; `styles/tokens.css` gains the six
+  gold/purple tier vars (mirrored as Panda tokens in `panda.config.ts`). Behavior detail lives in the
+  `panels/`/`grammar/` overviews and the changed sidecars. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T15:40+02:00 — No route impact: 260703-L12's dashboard change is content-only inside `panels/` — `flowModels.ts` gains the STRATEGIST model (8-model census) and loop-doctrine lines, `FlowTab.test.tsx` grows to 11 cases; the dashboard/src route model, data layer, and grammar this overview describes are unchanged — detail lives in the `panels/` overview and the two file sidecars. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T12:10+02:00 — No route impact: 260703-L10's dashboard change is a single phase-label string inside `panels/flowModels.ts` (designer `frame` → `reframe`); the dashboard/src route model, data layer, and grammar this overview describes are unchanged — detail lives in the `panels/` overview and the `flowModels.ts` sidecar. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-06T03:25+02:00 — 260703-L11 route impact: `data/selectors.ts` gains the shared

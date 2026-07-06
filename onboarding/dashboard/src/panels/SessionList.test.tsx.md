@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-30                                       |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T23:56:42+02:00                           |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -23,7 +23,9 @@ Task 11 adds a render assertion for the optional lifecycle tag badge. Task 22 ad
 badge coverage; the Task 22 follow-up removes the old local Hide assertion and keeps only destructive
 Terminate action coverage. The L5 fix pass adds **hover-title (fix 4)** coverage: a long label exposes its
 full text through a `title` so the row's CSS ellipsis stays readable, and a bound session's `title` also
-appends the resolved leaf name.
+appends the resolved leaf name. 260703-L14 adds a second describe, **"SessionList command tree
+(L14)"**, driving the grouped rendering with hand-built `SessionGroup` fixtures (membership
+derivation is covered separately in `data/sessionGroups.test.ts`).
 
 ## Code Commentary
 
@@ -39,6 +41,16 @@ separately and does not select the row.
 `fireEvent.click` is the repo idiom for driving
 React Aria interaction (see `Cockpit.test.tsx` / `DetailPanel.test.tsx`).
 
+The L14 command-tree describe adds six grouped cases over a `group()` fixture builder: (1) group
+headers render chevron + insignia + name + counts (`aria-expanded`, `data-rank-tier`/`data-rank-size`
+hooks, the commanded master section carrying `data-nested` and containing its member row); (2) the
+landed archive is collapsed by default (rows unmounted, no insignia) and each header click toggles
+`aria-expanded`/row mounting; (3) a default-collapsed group holding the ACTIVE session auto-expands,
+and the user's explicit collapse still wins afterwards; (4) ungrouped sessions render outside every
+`chats-group-*` section (the flat placement below); (5) a zero-group model renders the pre-L14 flat
+list (no `chats-session-tree`, selection intact); (6) a `spawnRole` session renders its
+`chats-session-role-{id}` chip and a role-less one renders none.
+
 ### Invariants And Boundaries
 
 Render + interaction only; no backend, no WebSocket, no xterm. The selection assertion reads React
@@ -52,6 +64,10 @@ Aria's emitted `data-selected` rather than a CSS class, so it tracks the primiti
 
 ## Update History
 
+- 2026-07-06T23:56:42+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the "SessionList
+  command tree (L14)" describe — grouped headers with insignia + counts, landed default-collapse +
+  toggle, the active-session auto-expand exception, ungrouped-flat-below, the zero-group flat
+  fallback, and spawn-role chip coverage. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-06-30T00:00:00+02:00 — L5 follow-up: added two hover-title (fix 4) cases — a long label exposes its full text via
   a `title` (`getByTitle(longLabel)`) so the row ellipsis stays readable, and a bound session's `title`
   appends the `leafNameFor`-resolved leaf name (`"Claude Code 1 · Sidebar chat"`). Verification metadata

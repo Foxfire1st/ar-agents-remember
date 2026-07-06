@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T10:30+02:00                     |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastUpdated            | 2026-07-06T23:56:24+02:00                     |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -31,7 +31,13 @@ path. The complementary identity rule (260703-L11): each leaf appears ONCE — o
 
 In the `BY REPO` pivot, admitted leaf documents are grouped below their parent/root task and rendered as
 indented child rows; those leaf labels use the same child task-document numbers as the master task
-list. `BY PHASE` remains a flat lifecycle/status view. The panel uses React Aria `ListBox` rows with
+list. Since 260703-L14 the hierarchy carries a third, top level: an **orchestration task** — a
+`kind:"master"` doc with a non-empty `orchestrates` list — renders as a gold-tier command row, the
+masters it names nest one 22px step below it with the purple management tier, and their leaves keep
+today's rendering one step further. Command rows wear the developer-picked V4 treatment (folded corner,
+tier ghost wash, chevron `RankBadge`, gold top hairline for orchestration); uncommanded masters — and
+every row of a run with no orchestration task (the D3 ruling) — render exactly as before: no tier, no
+badge, no extra indent. `BY PHASE` remains a flat lifecycle/status view. The panel uses React Aria `ListBox` rows with
 typed selection keys (`taskdoc:<docPath>`, `series:<seriesId>`, `lifecycle:<id>`) and keeps the
 user-facing copy as "Tasks" (`Tasks · {n}`, empty state `No tasks.`). Task 11's compact gate badge is
 still shown when the attached lifecycle has `gate.kind` or a proto `ask`. Long visible task labels stay
@@ -92,10 +98,24 @@ lifecycle nests under its master in `BY REPO` rather than floating as a top-leve
 Leaf document row labels and parent keys come from `data/taskHierarchy.ts`: `taskDocHierarchyLabel`
 resolves the parent master sub-task ref and prepends the child task document `id` when that doc is
 projected, while `taskDocParentKey` points child rows at the projected parent master (`taskdoc:` when
-available, otherwise `series:`). `groupRows` keeps `BY PHASE` flat, but for `BY REPO` calls
-`hierarchyRows` so parent/root rows render first and active leaf rows copy to depth `1` beneath their
-parent. The `ListBoxItem` carries `data-depth` and `data-parent-key` for this hierarchy contract, while
-lifecycle selection ids remain unchanged. `selectedId` is normalized with `parseTaskSelection` before
+available, otherwise `series:`). The L14 command tier layers on top through `commandFacts(doc,
+allDocs)`: a master doc that IS an orchestration task (`isOrchestrationDoc` — `kind:"master"` +
+non-empty `orchestrates`) gets `tier:"orchestration"`; a master named in some orchestration doc's list
+(matched forgivingly by folder / doc id / title via `orchestratorParentKey(masterCommandNames(doc), …)`,
+never itself) gets `tier:"management"` and `parentKey` = the orchestration row's `taskdoc:` key.
+`seriesRow` applies the same commander check to folder-keyed series fallback rows (seriesId / title /
+folder names). `groupRows` keeps `BY PHASE` flat, but for `BY REPO` calls
+`hierarchyRows` — since L14 a depth-first walk over the parent links to ANY depth (orchestration >
+master > leaf is three levels) with a `seen` cycle guard plus a trailing sweep that appends
+cycle-orphaned rows top-level so pathological parent data can never drop a row. The `ListBoxItem`
+carries `data-depth`, `data-parent-key`, and (L14) `data-tier` for this hierarchy contract, while
+lifecycle selection ids remain unchanged. Tier rows render the V4 treatment through the row `cva`'s
+`tier` variants — a 13px folded-corner `_before` triangle, a `backgroundImage` ghost wash fading into
+the row bg (gold/purple ghost tokens), and for orchestration a `goldDim` top hairline — plus a
+`RankBadge` (size `row`) after the state `Dot`. Indentation is `indentStyle`: 22px `marginLeft` per
+step, where tier rows indent by their full depth while non-tier rows keep today's `nested`
+padding-left for their first level and only add margin beyond it — so a leaf under a commanded master
+sits one 22px step past the master, and a flat run's rows keep byte-identical styling to pre-L14. `selectedId` is normalized with `parseTaskSelection` before
 feeding React Aria `selectedKeys`, so raw lifecycle ids from older surfaces still highlight the right
 typed row when a matching row exists.
 
@@ -144,7 +164,13 @@ all drop out through the same existence rule, one leaf renders at most one task 
 `taskRoot`/series join; a shared master lifecycle by itself must never admit a document or re-parent a
 row, so unrelated leaves under one master stay distinct rather than collapsing onto each other.
 Spawned-session provenance stays visible where sessions are shown (the chats sidebar keeps its own
-qualified-leaf-key rule); this list only de-duplicates task entries.
+qualified-leaf-key rule); this list only de-duplicates task entries. The L14 tier treatment is
+strictly additive and orchestration-gated (D3): tier/badge/indent render only when a projected doc
+carries `orchestrates` — no doc may be styled as a command row from titles, folder conventions, or
+lifecycle shape, and a run without an orchestration task must render exactly as pre-L14 (pinned by
+the flat-run regression test). Insignia render only through the shared `grammar/RankBadge`; the
+chips/gate/progress vocabulary and the L11 worktree-truth + one-row-per-enclosure rules are
+untouched by tiering.
 
 Title truncation is presentational only: row selection and React Aria `textValue` still use the resolved
 task label and stable typed row key. The no-horizontal-scroll contract belongs to the Operations list
@@ -162,6 +188,9 @@ list.
 | Operations rows stay within the left panel by constraining the panel/listbox/section/row widths, then ellipsizing the title span. | L38-L106; L187-L214 | [LifecycleList.tsx](LifecycleList.tsx) |
 | Row titles use a shrinkable title span and native hover title assembled from label, lifecycle, repo, gate, and current-step context. | L99-L123; L212-L214; L464-L480 | [LifecycleList.tsx](LifecycleList.tsx) |
 | The shared hierarchy helper computes parent matches, child-id hierarchy labels, creation-order placement, and parent selection keys. | L15-L58; L73-L88 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
+| The L14 orchestration-command helpers this list's `commandFacts`/`seriesRow` tier derivation calls. | `isOrchestrationDoc`; `masterCommandNames`; `orchestratorParentKey` | [taskHierarchy.ts](../data/taskHierarchy.ts) |
+| The V4 chevron insignia rendered on tier rows (size `row`). | — | [RankBadge.tsx](../grammar/RankBadge.tsx) |
+| L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression. | L14 describe blocks | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness. | L130-L352 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | `fmtWait` for server-computed stale/wait ages. | L1-L40 | [data/selectors.ts](../data/selectors.ts) |
 | Shared typed selection and label helpers used by the list and detail panel. | L1-L76 | [taskIdentity.ts](../data/taskIdentity.ts) |
@@ -170,6 +199,14 @@ list.
 
 ## Update History
 
+- 2026-07-06T23:56:24+02:00 — 260703-L14 (visual hierarchy + chat grouping): the tasks tab gained the
+  orchestration tier — `OperationRow.tier` derived by `commandFacts` (orchestration = a master doc
+  with `orchestrates`; management = a master an orchestration doc names, matched folder/id/title,
+  nesting under it via `parentKey`), `seriesRow` applying the same commander check, `hierarchyRows`
+  generalized to N-depth DFS with a cycle guard, the V4 row treatment (folded-corner `_before`,
+  ghost wash, gold hairline) as row-cva `tier` variants, `RankBadge` beside the Dot, `data-tier`,
+  and the 22px `indentStyle` grammar. Flat runs (D3) render byte-identically to pre-L14.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T10:30+02:00 — L11 adversarial-review follow-up: L11R-2 (deterministic lastEventTs anchor fallback) and L11R-3 (re-measured row-admission citations, were stale after the diff shifted the functions). Verification metadata pinned until closeout stamps the L11 commit.
 
 - 2026-07-06T02:35+02:00 — 260703-L11 (worktree truth): active-enclosure admission flipped from the

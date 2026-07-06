@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:05+02:00                           |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastUpdated            | 2026-07-06T23:58:00+02:00                           |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -201,6 +201,11 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
   and `masterLifecycleId` (the parent
   master's lifecycle when this doc's `master` ref points at another series — drives a "↑ parent
   series" breadcrumb). Additive — no `version` bump.
+- **L14 orchestration-command relation** — `TaskDocNode.orchestrates` (`list[str]`, default `[]`):
+  the pass-through of the task doc's master-only `orchestrates` field. Non-empty only on a master
+  that IS an orchestration task; each entry names a master task it commands, and the dashboard
+  derives the orchestration > master > leaf hierarchy (and rank insignia) from it. Additive — no
+  `version` bump; docs without the field project `[]`.
 
 ## Invariants And Boundaries
 
@@ -256,6 +261,11 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
 
 ## Update History
 
+- 2026-07-06T23:58:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TaskDocNode` gains
+  additive `orchestrates: list[str]` (default `[]`) — the orchestration-command relation from the
+  `ar-task-document/v1` schema, exposed so the dashboard can nest commanded masters under their
+  orchestration task. No `version` bump.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T02:05+02:00 — 260703-L11: `EnclosureNode` gains additive
   `codeWorktreeExists`/`memoryWorktreeExists` (default `False`) — worktree-existence
   truth stat'ed at snapshot time in the I/O layer, the tasks surface's visibility

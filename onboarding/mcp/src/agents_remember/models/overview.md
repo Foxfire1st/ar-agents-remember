@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T12:32+02:00 |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-06T23:59:42+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -94,6 +94,8 @@ context-delivery outcome + the server-arbitrated `leaf-taken`/pre-spawn refusal 
   carryover `decisions`/`carriedPaths`) — so the compact shape is discoverable
   from the model even though the envelope stays flexible.
 
+L14: the task-doc node model exposes the optional `orchestrates` list and the sessions wire model carries the optional `spawnRole` — both additive, absent on old payloads.
+
 ## Repo-Internal References
 
 | Finding | Source Path |
@@ -109,6 +111,9 @@ context-delivery outcome + the server-arbitrated `leaf-taken`/pre-spawn refusal 
 
 ## Update History
 
+- 2026-07-06T23:59:58+02:00 — L14 route impact (body): optional orchestrates + spawnRole on the response models. Verification metadata pinned until closeout stamps the L14 commit.
+
+- 2026-07-06T23:59:42+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `terminal.py`'s `SpawnAgentSessionResponse` gained the optional `spawnRole` field mirroring the new catalog column (additive, `None`-omitted). Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: `models/gates.py` extends
   `GateDecideResponse` with delegated-decision attribution and evidence refs.
   It remains a strict `ToolResponse`, so the strict/flexible route model is

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:20+02:00                     |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastUpdated            | 2026-07-06T23:58:42+02:00                     |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -60,7 +60,9 @@ git-backed round trip — the producer writes a snapshot a reader then parses), 
 repository). Slice 3c adds `TaskDocumentsReaderTests` (the `read_task_documents`
 reader, its optional lifecycle binding, projection of active docs without lifecycle keys, master docs
 as concrete task documents, archive exclusion, and inclusion in `build_analytics` and
-`project_and_write`).
+`project_and_write`; L14 adds `test_exposes_orchestrates_on_the_task_doc_node` — a master with
+`orchestrates` projects the list onto `TaskDocNode.orchestrates`, a doc without the field projects
+`[]`).
 
 Slice 05 (5b) adds `AttentionQueueTests`: the server-computed attention queue — alarms
 ranked above warnings, the blocked-gate item carrying its lifecycle cross-ref + ask
@@ -242,6 +244,10 @@ directories).
 
 ## Update History
 
+- 2026-07-06T23:58:42+02:00 — 260703-L14 (visual hierarchy + chat grouping): added
+  `TaskDocumentsReaderTests.test_exposes_orchestrates_on_the_task_doc_node` — a master doc with
+  `orchestrates` projects the list onto `TaskDocNode.orchestrates`; a doc without the field
+  projects `[]`. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T02:20+02:00 — 260703-L11: added `SnapshotReaderTests` coverage for the
   `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` stat-time flags and the
   reopened-is-reset-not-archived semantics (visible-again-after-restart included).

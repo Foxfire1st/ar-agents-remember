@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-29T21:24+02:00                     |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-06T23:57:42+02:00                     |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,8 +39,14 @@ lifecycle through observer projection. A `master` carries the series index — `
 number/name/file/status/scope) — and an ordered `sections` render plan (`Section`:
 `freeform`|`subTasks`|`sharedDecisions` + heading + body); a `@model_validator(mode="after")`
 keeps the kinds disjoint (master forbids `steps`/`codeExamples`/`codeExamplesNote`/`lifecycleId`;
-`light`/`subTask` forbid `subTasks` and non-freeform `sections` but may carry freeform `sections`
-(R4), and forbid `codeExamplesNote` alongside non-empty `codeExamples`).
+`light`/`subTask` forbid `subTasks`, `orchestrates`, and non-freeform `sections` but may carry
+freeform `sections` (R4), and forbid `codeExamplesNote` alongside non-empty `codeExamples`).
+
+A master may also carry `orchestrates: list[str]` (L14, the orchestration-command relation): a
+master doc with a non-empty list **is** an orchestration task, and each entry names a master task
+it commands (its task folder, doc id, or title — the dashboard matches forgivingly). Additive by
+design — `default_factory=list`, no new `DocKind`, no migration; docs without the field validate
+and serialize exactly as before, and masters named nowhere stay top-level.
 
 `step_total`/`step_done` count the progress-bearing leaves (`_leaf_statuses`: a step's
 substeps when it has any, else the step itself), and `current_step` returns the first
@@ -89,6 +95,10 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 - **Leaf escape hatch (R4):** a leaf may carry freeform `sections` + `headerNotes` + a `statusNote`; the
   `subTasks` series index and non-freeform sections stay master-only, and `DocStatus` stays a strict enum
   (the `_MARKER`/observer lever — never loosened to a free string).
+- **`orchestrates` is master-only (L14):** the validator rejects it on `light`/`subTask` docs
+  ("a {kind} document has no orchestrates (master-only)") — an orchestration task is a `master`
+  doc carrying the field, never a new kind; insignia/hierarchy consumers (observer projection →
+  dashboard) treat an empty list as "not an orchestration task".
 
 ## Repo-Internal References
 
@@ -100,6 +110,12 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 
 ## Update History
 
+- 2026-07-06T23:57:42+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TaskDocument` gained
+  `orchestrates: list[str]` (default `[]`) — the orchestration-command relation; a master doc with a
+  non-empty list IS an orchestration task naming the masters it commands. The kind validator now
+  rejects the field on non-master docs (master-only, like `subTasks`). Additive: no new kind, no
+  migration, docs without the field are byte-identical.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only): clarified that `light` survives in
   `DocKind` for legacy-load compatibility only — the `task_doc` controller refuses to author new `light`
   documents, so every task is `master` or `subTask` (leaf). Schema unchanged (a code comment documents the

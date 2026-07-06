@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/controllers/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-07-03T00:30+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated | 2026-07-06T23:57:54+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -67,9 +67,11 @@ validation failures, and invalid resolvable parent master docs.
   writing, so a bad edit fails loudly and the markdown is only ever a render of a valid
   model.
 - `set_field` may only touch the scalar/flat-list fields in `_MUTABLE_FIELDS` (which includes
-  `codeExamplesNote`, `statusNote`, `seriesContractPath`, and `enclosures`; the structured
-  `headerNotes` list is create-set);
+  `codeExamplesNote`, `statusNote`, `seriesContractPath`, `enclosures`, and — since L14 —
+  `orchestrates`, the flat string list that makes an existing master an orchestration task without
+  a `replace`; the structured `headerNotes` list is create-set);
   structural edits go through `create`/`replace`/`set_step`/`set_subtask`/`set_section`/`append_decision`.
+  The schema validator backstops `orchestrates` as master-only, so `set_field` on a leaf fails loudly.
 - `replace` is the supported reset/replan path for changing structural arrays such as steps,
   `codeExamples`, decisions, and sections; it is not a path-move operation.
 - Master vs leaf ops are kind-gated up front: `set_step` rejects a master and `set_subtask` rejects a
@@ -105,6 +107,11 @@ validation failures, and invalid resolvable parent master docs.
 
 ## Update History
 
+- 2026-07-06T23:57:54+02:00 — 260703-L14 (visual hierarchy + chat grouping): added `orchestrates` to
+  `_MUTABLE_FIELDS` — `set_field` can set the orchestration-command list on a master (flat string
+  list, matching the whitelist's scalars+flat-lists rule); the schema validator backstops
+  master-only, so the same call on a leaf raises `TaskDocError`.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-03T00:30+02:00 — L11 adds `task_reopen_tool` beside the task_doc controller — the tool reopens a TASK, so the controller lives in the task domain, not with the worktree tools.
 - 2026-06-29T22:57+02:00 — CRUD completion (L2): added the `remove_subtask` op — master-only, drops the
   `SubTaskRef` by `number` and deletes the referenced leaf doc (json+md) unless `keep_file`, raising on an

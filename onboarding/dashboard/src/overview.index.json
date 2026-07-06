@@ -37,6 +37,8 @@
     "dashboard/src/data/selection.ts",
     "dashboard/src/data/selectors.test.ts",
     "dashboard/src/data/selectors.ts",
+    "dashboard/src/data/sessionGroups.test.ts",
+    "dashboard/src/data/sessionGroups.ts",
     "dashboard/src/data/sessions.test.ts",
     "dashboard/src/data/sessions.ts",
     "dashboard/src/data/store.test.ts",
@@ -65,8 +67,8 @@
     "dashboard/src/types/projection.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 127,
-    "fileSidecars": 42,
+    "sourceFilesInScope": 131,
+    "fileSidecars": 44,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -95,6 +97,7 @@
     "scenarios",
     "selection",
     "selectors",
+    "sessiongroups",
     "sessions",
     "setup",
     "src",
@@ -134,9 +137,9 @@
       "dashboard/src/data/selection.ts",
       "dashboard/src/data/selectors.test.ts",
       "dashboard/src/data/selectors.ts",
-      "dashboard/src/data/sessions.test.ts",
-      "dashboard/src/data/sessions.ts",
-      "dashboard/src/data/store.test.ts"
+      "dashboard/src/data/sessionGroups.test.ts",
+      "dashboard/src/data/sessionGroups.ts",
+      "dashboard/src/data/sessions.test.ts"
     ],
     "anchorHints": [
       "Cockpit.test.tsx",
@@ -171,6 +174,10 @@
       "selectors.test",
       "selectors.ts",
       "selectors",
+      "sessionGroups.test.ts",
+      "sessionGroups.test",
+      "sessionGroups.ts",
+      "sessionGroups",
       "sessions.test.ts",
       "sessions.test",
       "sessions.ts",
@@ -182,11 +189,7 @@
       "stream.ts",
       "stream",
       "taskHierarchy.ts",
-      "taskHierarchy",
-      "taskIdentity.test.ts",
-      "taskIdentity.test",
-      "taskIdentity.ts",
-      "taskIdentity"
+      "taskHierarchy"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-06T23:00+02:00 |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-06T23:59:48+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -432,6 +432,9 @@ into the role files.
 
 ## Update History
 
+- 2026-07-06T23:59:58+02:00 — No route impact: L14's mcp-package changes live in the tools/controllers/models/serving sub-routes (orchestrates field, spawnRole seam) — the mcp package route model this overview describes is unchanged; details in the sub-route overviews and file sidecars.
+
+- 2026-07-06T23:59:48+02:00 — 260703-L14 (visual hierarchy + chat grouping) test-route impact: five suites extended — `test_task_document.py` (orchestrates schema/render/set_field), `test_observer_projection.py` (TaskDocNode.orchestrates exposure), `test_terminal_catalog.py` (spawnRole round-trip), `test_terminal_opener.py` (AR_SPAWN_ROLE recording + write-once preservation), `test_spawn_agent_session.py` (spawnRole in the payload). Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T23:00+02:00 — 260703-L13 route impact (settings unification): NEW kernel module
   `kernel/agentic_settings.py` (the two-layer agentic settings loader + typed models + the
   install seed) with its suite `mcp/tests/test_agentic_settings.py`; `mcp/config.py` re-homes
