@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
+| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -202,7 +202,9 @@ benchmark run clones repos and executes Codex agents, so it stays preview-first.
 source+onboarding read (≤5 repo-relative paths) forwarding to
 `read_ar_files_payload`. Its docstring now states the **research-phase read**
 doctrine (S4): in a managed repo this is the read for the research phase (the
-lifecycle up to the build/job decision) — use it instead of a native read so each
+lifecycle up to the build decision — the 260703-L10 sweep retired the
+pre-convergence "build/job" compound from this docstring) — use it instead of a
+native read so each
 file comes paired with its onboarding plus the repository and governing route
 overviews; native read is reserved as the **edit precondition** once building
 begins.
@@ -259,6 +261,7 @@ As of cycle 5 the lifecycle_gate registration exposes wait (default true) with t
 
 ## Update History
 
+- 2026-07-06T13:35+02:00 — 260703-L10 round 2 (L10R-2): the `read_ar_files` docstring's pre-convergence "build/job decision" compound became "build decision" (the l-01 vocabulary; the flipped session-start directive says the same). Docstring text only — no signature, payload, or registration change. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-05T19:55+02:00 - L8 builder cycle 7: lifecycle_gate docstring now names the wait=false enclosure requirement (AR4-1a ride-along). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: lifecycle_gate/gate_list docstrings aligned with the seam-kind wait=false restriction and the ambient-defaulting gate_list (AR3-3/AR3-5). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): lifecycle_gate wait passthrough registered. Verification metadata pinned until closeout stamps the L8 commit.

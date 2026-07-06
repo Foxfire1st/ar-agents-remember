@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-05T19:55+02:00                     |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastUpdated            | 2026-07-06T12:30+02:00                     |
+| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
+| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
 
 ## Purpose
 
@@ -27,7 +27,7 @@ hits the save gate (`on_unsaved=save`|`discard`).
 
 ### Logic
 
-The skill defines the worktree MCP entrypoints for start, attach, status,
+Since L10 the skill's intake no longer offers a chat build: it wraps the light-task or external workflow only, and single-session work rides a THIN w-02 doc (the l-01 'chat is never a build route' invariant swept into the intro and intake step 4). The skill defines the worktree MCP entrypoints for start, attach, status,
 mid-task sync, worktree closeout tool handoff, integration, and cleanup. Since
 the GitHub #54 series it documents the stale-base preflight (start blocks when
 a source branch is behind/diverged from its upstream, with
@@ -206,6 +206,8 @@ No sibling repository evidence is needed for the skill itself.
 The packaged worktree-manager skill defines the new operating model: master tasks own an integration branch via root `series-contract.md`, and each active leaf owns a distinct enclosure contract/worktree under `enclosures/<leaf-id>/`.
 
 ## Update History
+
+- 2026-07-06T12:30+02:00 — L10 owner ruling (builder escalation #1): the chat-build option is swept from the intro and intake decision — chat never builds; single-session work takes a thin w-02 doc. Verification metadata pinned until closeout stamps the L10 commit.
 
 - 2026-07-05T19:55+02:00 — L8 builder cycle 7: Integration section adds one sentence — integrate reports unmatched open handover gates as the `handover_gate_warning` enclosure spelling check (AR4-1c). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:25+02:00 — L8 cycle 6 (owner follow-up to builder escalation #1 / AR3-1): the Integration section now names the `handover-gate-blocked` state — the delegated `master-handover-approval` seam enforced at master → super integrate, addressed by `enclosure` = master task name. Verification metadata pinned until closeout stamps the L8 commit.

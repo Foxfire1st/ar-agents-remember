@@ -39,6 +39,7 @@ content, not a runtime input.
 
 ## Update History
 
+- 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — the settings/guideline examples carry no lifecycle vocabulary at all, so nothing changed on this route.
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: the settings template gains
   the opt-in `orchestration.gateDelegation` shape, shipped as all-human by
   default. Verification metadata pinned until closeout stamps the L4 commit.
