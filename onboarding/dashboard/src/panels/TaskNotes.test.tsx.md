@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/TaskNotes.test.tsx`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:20+02:00                           |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-07T14:00+02:00                           |
+| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
+| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -16,40 +16,43 @@
 
 ## Purpose
 
-`TaskNotes.test.tsx` is the component suite for the L9 notes view (`TaskNotes.tsx`): the
-series-notes listing, the opened-note rendering modes, and reference-link resolution.
+`TaskNotes.test.tsx` is the component suite for the notes ENTRY surface (`TaskNotes.tsx`
+after L17): the series-notes listing and reference-link resolution, plus the contract that
+opening a note delegates to the notes-reader takeover via the `onOpenNotes` callback — the
+inline reading pane is retired, and note-content rendering is covered by
+`notes-reader/NotesReaderViewer.test.tsx`.
 
 ## Code Commentary
 
 ### Logic
 
 Testing-library component tests in the `DetailPanel.test.tsx` idiom (render + fireEvent +
-`findBy*`, cleanup/`vi.unstubAllGlobals` after each). `stubNotesApi(notes, contents,
-truncated)` stubs `fetch` per URL — `/api/notes/list` answers the seeded listing,
-`/api/notes/read` the seeded per-path content or a `404 not-found`, matching the serving
-status idiom rather than an invented mock shape.
+`findBy*`, cleanup/`vi.unstubAllGlobals` after each). `stubNotesApi(notes, truncated)`
+stubs `fetch` for `/api/notes/list` only — the entry surface never fetches note content
+(`/api/notes/read` belongs to the reader since L17); every other URL answers a `404
+not-found` in the serving status idiom.
 
-- **list + reader** — the listing renders `reports/` subfolder entries; opening a note
-  renders formatted markdown (`**F-M**` becomes a real `<strong>`, the raw pipes/stars
-  are gone) and the close button collapses it; a binary note degrades to the byte-count
-  placeholder; a non-markdown text note renders inside `<pre>`; a `truncated: true`
-  listing shows the depth-cap hint; an unreachable API renders no notes surface and the
-  reference stays plain text.
+- **entry surface** — the listing renders `reports/` subfolder entries; clicking a list
+  row fires `onOpenNotes` with `{repo, master, path}` (the notes-reader takeover) instead
+  of rendering anything inline; a `truncated: true` listing shows the depth-cap hint; an
+  unreachable API renders no notes surface and the reference stays plain text.
 - **reference resolution** — a reference naming an existing notes file renders as a
-  `<button>` link (`note-ref-1`) that opens the note view with its fetched body; a
+  `<button>` link (`note-ref-1`) whose click fires `onOpenNotes` with the resolved path; a
   code-path reference stays plain text with no link testid, asserted only after the
   listing has arrived so resolution is settled.
 
 ### Conventions
 
 Fetch is stubbed per test (never a live server); assertions target testids
-(`note-open-<n>`, `note-ref-<n>`, `note-view`, `note-close`) and rendered DOM tags,
-never implementation internals.
+(`note-open-<n>`, `note-ref-<n>`) and the `onOpenNotes` callback payload, never
+implementation internals — the `note-view`/`note-close` testids left with the inline
+reader.
 
 ### Invariants And Boundaries
 
 The suite pins the no-mutation posture indirectly: every interaction is a GET-backed
-render; there is nothing to submit.
+render or a callback dispatch; there is nothing to submit, and nothing here reads
+`/api/notes/read`.
 
 ## Cross-Repo References
 
@@ -66,9 +69,15 @@ No meaningful cross-repo references found.
 | The component under test. | [panels/TaskNotes.tsx](agents-remember/dashboard/src/panels/TaskNotes.tsx) |
 | The data types the stubs shape. | [data/notes.ts](agents-remember/dashboard/src/data/notes.ts) |
 | The sibling panel suite whose render/fireEvent idiom this mirrors. | [panels/DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
+| The moved note-content suite (markdown, text fallback, binary placeholder, truncation) covering the reader this surface opens. | [panels/notes-reader/NotesReaderViewer.test.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx) |
 
 ## Update History
 
+- 2026-07-07T14:00+02:00 — agent-orchestration L17: rewritten to the entry-surface contract — the list +
+  resolved references now assert the `onOpenNotes` callback (with `{repo, master, path}`) instead of an
+  inline `note-view`. The note-CONTENT tests (formatted markdown, preformatted text, binary placeholder,
+  truncation, close) were MOVED to `notes-reader/NotesReaderViewer.test.tsx` with the retired inline reader.
+  Verification metadata pinned until closeout stamps the L17 commit.
 - 2026-07-06T02:20+02:00 — Created for agent-orchestration L9: 8 component tests over
   the notes list (subfolders, depth-cap hint), the note reader modes (formatted
   markdown, preformatted text, binary placeholder, close toggle), the unreachable-API

@@ -23,6 +23,11 @@
       "route": "dashboard/src/panels/file-viewer",
       "overview": "dashboard/src/panels/file-viewer/overview.md",
       "index": "dashboard/src/panels/file-viewer/overview.index.json"
+    },
+    {
+      "route": "dashboard/src/panels/notes-reader",
+      "overview": "dashboard/src/panels/notes-reader/overview.md",
+      "index": "dashboard/src/panels/notes-reader/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -69,9 +74,9 @@
     "dashboard/src/panels/flowModels.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 70,
+    "sourceFilesInScope": 72,
     "fileSidecars": 41,
-    "childRoutes": 3
+    "childRoutes": 4
   },
   "routingTerms": [
     "agentpickupindicator",
@@ -95,8 +100,10 @@
     "leafattachpicker",
     "lifecyclelist",
     "memorymirror",
+    "notes",
     "panels",
     "railchat",
+    "reader",
     "room",
     "sessioncomposer",
     "sessionlist",
@@ -115,6 +122,7 @@
       "dashboard/src/panels/changeset",
       "dashboard/src/panels/engine-room",
       "dashboard/src/panels/file-viewer",
+      "dashboard/src/panels/notes-reader",
       "dashboard/src/panels/AgentPickupIndicator.test.tsx",
       "dashboard/src/panels/AgentPickupIndicator.tsx",
       "dashboard/src/panels/AttentionQueue.test.tsx",
@@ -133,8 +141,7 @@
       "dashboard/src/panels/FlowTab.tsx",
       "dashboard/src/panels/GateResponder.test.tsx",
       "dashboard/src/panels/GateResponder.tsx",
-      "dashboard/src/panels/GateResponderText.ts",
-      "dashboard/src/panels/Hangar.test.tsx"
+      "dashboard/src/panels/GateResponderText.ts"
     ],
     "anchorHints": [
       "AgentPickupIndicator.test.tsx",

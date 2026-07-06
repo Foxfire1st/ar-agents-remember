@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/src/panels/notes-reader",
+  "overview": "dashboard/src/panels/notes-reader/overview.md",
+  "index": "dashboard/src/panels/notes-reader/overview.index.json",
+  "sourceScope": [
+    "dashboard/src/panels/notes-reader/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx",
+    "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 2,
+    "fileSidecars": 2,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "dashboard",
+    "notes",
+    "notesreaderviewer",
+    "panels",
+    "reader",
+    "src",
+    "test",
+    "tsx"
+  ],
+  "hotPath": {
+    "summary": "The Notes Reader: a `TaskNotes` list row or a resolved reference opens a full-bleed takeover \u2014 a notes-tree rail (highlight-follows-selection, reports/ included) over the L9 `/api/notes/list` \u2192 a content pane that reuses `DualPane` (markdown as a partnerless overview, text through CodeSide, binary placeholder) over `/api/notes/read`; rail clicks switch the pane in place, and Back restores the railed Operations view with the reader kept mounted-hidden so selection survives.",
+    "candidateHints": [
+      "dashboard/src/panels/notes-reader",
+      "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx",
+      "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+    ],
+    "anchorHints": [
+      "NotesReaderViewer.test.tsx",
+      "NotesReaderViewer.test",
+      "NotesReaderViewer.tsx",
+      "NotesReaderViewer",
+      "TaskNotes",
+      "/api/notes/list",
+      "DualPane",
+      "/api/notes/read",
+      "CodeSide",
+      "dashboard/src/panels/notes-reader/",
+      "route-local-overview",
+      "5160dbbbb06695742fea9aed9bd8e9efc78f29bc",
+      "/overview.md",
+      "notes-reader/",
+      "CockpitShell",
+      "GET /api/notes/{list,read",
+      "serving/notes.py",
+      "file-viewer/DualPane",
+      "FilePane",
+      "grammar/Markdown",
+      "react-resizable-panels",
+      "reports/",
+      "truncated",
+      "note-status",
+      "path",
+      "onSelectNote",
+      "notes-reader-back",
+      "/api/notes/*",
+      "data/notes.ts",
+      "open",
+      "listNotes",
+      "readNote",
+      "resolveNoteReference",
+      "agents-remember/mcp/src/agents_remember/serving/notes.py",
+      "agents-remember/dashboard/src/data/notes.ts",
+      "panels/file-viewer/DualPane.tsx",
+      "agents-remember/dashboard/src/panels/file-viewer/DualPane.tsx",
+      "cockpit/Cockpit.tsx",
+      "agents-remember/dashboard/src/cockpit/Cockpit.tsx",
+      "panels/TaskNotes.tsx",
+      "agents-remember/dashboard/src/panels/TaskNotes.tsx",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "dbbbb06695742fea9aed9bd8e9efc78f29bc",
+      "lastVerifiedCommitDate"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/src/panels/notes-reader/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

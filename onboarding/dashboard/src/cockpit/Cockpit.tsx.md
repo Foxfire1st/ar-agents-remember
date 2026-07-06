@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
-| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
+| lastUpdated            | 2026-07-07T14:00+02:00                           |
+| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
+| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -30,7 +30,12 @@ timing and adds one extra projection thread: the shell passes `analytics.engineP
 so a newly created or newly attached leaf chat can receive worktree facts in its context package. L8 also
 threads the displayed leaf key and active rail-chat state into `HighlightComposer`, letting obvious
 task-reader selections paste straight into the adjacent leaf chat draft instead of opening the generic
-Add-to-chat composer.
+Add-to-chat composer. **L17** adds a second full-bleed **takeover** beside the Change-Set Viewer: the
+**Notes Reader** (`panels/notes-reader/NotesReaderViewer.tsx`), opened from a `TaskNotes` note/reference via
+the threaded `onOpenNotes`. The shell holds its selection (`notes`) + a `notesOpen` visibility flag and a
+shared `takeover` flag hides the railed body for either screen; unlike the Change-Set takeover it is
+RETAINED mounted-hidden after Back (the File Viewer pattern) so its listing + open note survive
+back/forward, and a fresh entry re-shows it on the clicked note.
 
 ## Code Commentary
 
@@ -140,6 +145,11 @@ must derive it through the task-identity helper.
 
 ## Update History
 
+- 2026-07-07T14:00+02:00 — agent-orchestration L17: the shell gained a second full-bleed **takeover**, the
+  **Notes Reader** — `notes`/`notesOpen` state + `openNotes`/`openChangeSet` handlers, a shared `takeover`
+  flag that hides the railed body for either screen, and `onOpenNotes` wired into `DetailPanel`. Unlike the
+  Change-Set takeover the reader is retained mounted-hidden after Back (selection survives back/forward, the
+  File Viewer pattern). Verification metadata pinned until closeout stamps the L17 commit.
 - 2026-07-07T10:50+02:00 — L15: servingBuild stamp in the top bar (build_info via /api/state). Verification metadata pinned until closeout stamps the L15 commit.
 
 - 2026-07-07T05:24+02:00 — 260703-L15 S3 (stale-server visibility): the top bar gained the muted

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
-| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
+| lastUpdated            | 2026-07-07T14:00+02:00                           |
+| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
+| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -40,7 +40,9 @@ every row of a run with no orchestration task (the D3 ruling) — render exactly
 badge, no extra indent. `BY PHASE` remains a flat lifecycle/status view. The panel uses React Aria `ListBox` rows with
 typed selection keys (`taskdoc:<docPath>`, `series:<seriesId>`, `lifecycle:<id>`) and keeps the
 user-facing copy as "Tasks" (`Tasks · {n}`, empty state `No tasks.`). Task 11's compact gate badge is
-still shown when the attached lifecycle has `gate.kind` or a proto `ask`. Long visible task labels stay
+shown when the attached lifecycle has a durable `gate.kind` (`gateHint` returns the kind or `""`). **L17
+removed the wait-loop-era fallback** to a proto `ask` (the question string, else the literal "ask"): under
+notify-and-continue the attention queue carries the notification and only durable gates surface here. Long visible task labels stay
 one-line: the title span is the row's shrinkable segment, truncates with ellipsis when space is tight,
 and carries a native hover `title` containing the full label plus lifecycle context. The listbox,
 section, and row containers are also width-constrained (`minmax(0, 1fr)` grid tracks plus `minWidth:0`
@@ -201,6 +203,11 @@ list.
 
 ## Update History
 
+- 2026-07-07T14:00+02:00 — agent-orchestration L17 (supplement): `gateHint` no longer falls back to the
+  lifecycle's bare `ask` payload — it returns the durable `gate.kind` or `""`. The wait-loop-era chip (a
+  proto `ask` rendering "Gate: <question>" / "Gate: ask") is retired under notify-and-continue; the three
+  call sites drop the `ask` argument. A focused regression test locks it (a bare-ask lifecycle shows no
+  "Gate:" line). Verification metadata pinned until closeout stamps the L17 commit.
 - 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
 
 - 2026-07-07T05:34+02:00 — 260703-L15 S1: row staleness advances locally — `OperationRowsInput`
