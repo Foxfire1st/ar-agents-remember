@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T05:38+02:00 |
-| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
-| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
+| lastUpdated            | 2026-07-07T14:00+02:00 |
+| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
+| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -70,7 +70,10 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   its repo/scope/open-file/tree state survives a tab switch. Operations-integration L4 adds a **Change-Set
   Viewer** TAKEOVER (a `changeSet` state): a `DetailPanel` change-set button replaces the railed Operations
   body with a full-bleed `<ChangeSetViewer>` (a back link restores the rails) — a task-scoped screen, not a
-  standing view.
+  standing view. 260703-L17 adds the second such takeover: a `notesOpen` state renders the full-bleed
+  **Notes Reader** (`panels/notes-reader/`) from `DetailPanel` note links or the TaskNotes entry list; the
+  two takeovers are mutually exclusive, and the reader is **kept mounted** after Back (File-Viewer-style)
+  so the selected note survives within the session.
 - `test/` — the vitest (jsdom) bootstrap: `setup.ts` stubs `matchMedia`/`ResizeObserver` + the SVG geometry
   APIs jsdom omits (`getBBox`/`getTotalLength`/`getPointAtLength`, for the engine-room GSAP DrawSVG/MotionPath
   plugins — 05n) for
@@ -87,7 +90,10 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   the **`panels/file-viewer/`** sub-route — the File Viewer centre tab (a read-only code+onboarding
   dual-pane over the L1 files API) + the reusable `FilePane`/`DualPane` the Change-Set Viewer (L4) will
   reuse; L4 then adds the **`panels/changeset/`** sub-route — the Change-Set Viewer screen (a read-only
-  `@codemirror/merge` diff over the L3 change-set API, reusing the L2 `FilePane`). See
+  `@codemirror/merge` diff over the L3 change-set API, reusing the L2 `FilePane`). 260703-L17 adds the
+  **`panels/notes-reader/`** sub-route — the Notes Reader takeover (rail = the master's notes from the
+  unchanged L9 `/api/notes/list`, content pane = the same `DualPane`; `TaskNotes.tsx` shrinks to the
+  compact entry list that opens it). See
   [panels/overview.md](panels/overview.md).
 - `data/` — the Zustand store, pure selectors, SSE stream wiring, the gate-action client
   (`actions.ts` POSTs targeted `gateId`/`note` decisions to `/api/actions/{verb}`, can omit `target`
@@ -225,6 +231,13 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-07T14:00+02:00 — agent-orchestration L17 route impact: `panels/` gains the **`notes-reader/`**
+  child route (the Notes Reader takeover, reusing the File Viewer `DualPane` over the unchanged L9
+  `/api/notes/*` API), and `cockpit/Cockpit.tsx` gains a second full-bleed takeover hosting it (retained
+  mounted-hidden after Back so selection survives back/forward). `panels/TaskNotes.tsx` becomes the compact
+  entry surface (inline reader retired) and `panels/LifecycleList.tsx`'s gate chip drops the wait-loop `ask`
+  fallback. Details in the `panels/` + `panels/notes-reader/` overviews and the touched sidecars.
+  Verification metadata pinned until closeout stamps the L17 commit.
 - 2026-07-07T05:38+02:00 — 260703-L15 route impact (long-session memory): `data/` gains
   `servedAges.ts` (+ suite; the volatile-age mirror, stable equality, arrival anchors, display
   ticker); `store.ts` apply paths became identity-preserving/change-gated (zero writes on idle

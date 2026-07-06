@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:30+02:00                           |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-07T14:00+02:00                           |
+| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
+| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -19,7 +19,10 @@
 The selected lifecycle's detail (the operations centre viewport): phase stepper, durable **Gate Respond
 surface** for explicit approval/rejection gates, the **task reader** (the JSON task content rendered to
 read in the dashboard, not the filesystem), the lifecycle → worktree → provider spine, and the token
-gauge. The largest panel.
+gauge. The largest panel. The task reader's coordination-notes surface (`TaskNotes`) opens the L17
+**Notes Reader** takeover through the `onOpenNotes` prop that `DetailPanel` threads from `CockpitShell`
+alongside `onOpenChangeSet` (down through `TaskReader` / `MasterOverview` / `TaskContent`); the GateResponder
+is durable-gates-only (no wait-loop `ask` fallback).
 Slice 6g makes a task **series** navigable: a master shows its overview + a clickable sub-task index,
 you drill into a slice's reader, and the back / parent-series up-links sit in the panel's **sticky
 header** (so they never scroll away); task prose renders as **markdown**, and a sub-task that points at
@@ -212,6 +215,13 @@ panel must not recompute the aggregate from lifecycle token gauges or child task
 
 ## Update History
 
+- 2026-07-07T14:00+02:00 — agent-orchestration L17: `DetailPanel` now threads an `onOpenNotes` prop
+  (parallel to `onOpenChangeSet`) from `CockpitShell` down through `TaskReader` / `MasterOverview` /
+  `TaskContent` into `TaskNotes`, so a note list-row or resolved reference opens the L17 Notes Reader
+  takeover (the inline `TaskNotes` reading pane is retired). Also de-staled the header comment: the Gate
+  Respond surface is durable-gates-only (the wait-loop "ask fallback" phrasing was removed). The series-notes
+  test now asserts the `onOpenNotes` callback instead of an inline `note-view`. Verification metadata pinned
+  until closeout stamps the L17 commit.
 - 2026-07-06T02:30+02:00 — agent-orchestration L9 (friction F-M): the References section moved out
   of `TaskReader` into the new `TaskNotes` component (repo/master derived from the doc node like
   `DocChangeSetBar`), which resolves references into openable notes links and lists the series'

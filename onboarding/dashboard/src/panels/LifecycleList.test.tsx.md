@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:30+02:00                     |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T14:00+02:00                           |
+| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
+| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -80,6 +80,10 @@ and one enclosure-backed leaf, then asserts per row `data-tier` / `data-depth` /
 absence) of the `[data-rank-tier]` badge — the uncommanded master must be attribute-identical to a
 pre-L14 root row. The flat-run case seeds the same shapes WITHOUT `orchestrates` and asserts the
 container has zero `[data-tier]`/`[data-rank-tier]` matches and today's depths/margins (D3).
+The 260703-L17 supplement regression seeds an enclosure-bound doc row annotated by a running
+lifecycle that carries a bare `ask` question but NO durable gate, and asserts the row's hover
+`title` includes `State: running` (the binding is live) while containing neither a `Gate:` segment
+nor the ask text — pinning the retired wait-loop-era `gateHint` fallback (durable gate kinds only).
 The third test seeds only task documents and asserts that a standalone root `task.json` document remains
 visible while a loose sibling leaf doc is absent. The fourth test seeds an active-enclosure-backed blocked
 task document with an intentionally long title, a durable gate, and a `currentStep`; rendering must attach
@@ -122,6 +126,10 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 
 ## Update History
 
+- 2026-07-07T14:00+02:00 — agent-orchestration L17 (supplement): added a focused gate-hint regression test —
+  a lifecycle carrying a bare `ask` but no durable gate renders NO "Gate:" line (and the ask question does
+  not leak), locking the retired wait-loop fallback. Verification metadata pinned until closeout stamps the
+  L17 commit.
 - 2026-07-06T23:56:30+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the two tier tests —
   the three-level orchestration > master > leaf hierarchy (tier/depth/parent-key/22px-margin/badge
   assertions per row, uncommanded master untouched) and the D3 flat-run regression (zero tier

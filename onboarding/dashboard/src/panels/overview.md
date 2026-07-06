@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T10:55+02:00 |
-| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
-| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
+| lastUpdated            | 2026-07-07T14:00+02:00 |
+| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
+| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ and the `Chats` `SessionList` switcher).
   selector over `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` — never a cleanup-state proxy
   (a `cleanup: reopened` contract stays hidden until `worktree_start` recreates its worktrees), and each
   leaf renders at most ONE task entry per `enclosureId`: a lifecycle bound to a doc's enclosure
-  annotates the doc row (state/gate/ask/staleness via `lifecycleForEnclosure`) instead of duplicating it
+  annotates the doc row (state/gate/staleness via `lifecycleForEnclosure`; since L17 the row gate chip is the durable gate kind only — the wait-loop `ask` fallback was removed) instead of duplicating it
   as a lifecycle card.
   Runtime state attaches by structured lifecycle/enclosure binding when present. Other projected
   planning/inactive/worktree-less leaves stay readable through typed links and the master sub-task
@@ -118,16 +118,19 @@ and the `Chats` `SessionList` switcher).
   adds the master-level `series tokens` scalar, displayed from server-projected `seriesTokenTotal` on
   folder-keyed and concrete master readers without recomputing from lifecycle gauges.
   Agent-orchestration L9 moves the reader's trailing References into `TaskNotes` so notes-file
-  references become openable links, and appends `TaskNotes` to `MasterOverview` (list only).
-- `TaskNotes.tsx` — the **coordination-notes surface** inside the task reader (agent-orchestration
-  L9, friction F-M): lists the selected master's `tasks/<repo>/<master>/notes/**` tree (reports/
-  subfolders included, the server's `truncated` depth-cap flag surfaced honestly) over the L9
-  `/api/notes/*` API (`data/notes.ts`), and renders one opened note as formatted markdown via
-  `grammar/Markdown` — the File Viewer sidecar treatment — with preformatted text for non-markdown
-  notes and a byte-count placeholder for binary. Owns the doc's References section: a reference
-  string naming an existing notes file (resolved conservatively by `resolveNoteReference`) renders
-  as an openable link into the notes view; non-matching references stay plain text. GET-only, no
-  mutation surface; an unreachable API renders no notes surface at all.
+  references become openable links, and appends `TaskNotes` to `MasterOverview` (list only); L17 threads
+  an `onOpenNotes` prop (parallel to `onOpenChangeSet`) down through `TaskReader`/`MasterOverview`/
+  `TaskContent` so those surfaces open the `notes-reader/` takeover, and the GateResponder is
+  durable-gates-only (the header comment's wait-loop "ask fallback" phrasing removed).
+- `TaskNotes.tsx` — the compact **coordination-notes ENTRY SURFACE** inside the task reader
+  (agent-orchestration L9 friction F-M, reshaped by L17): lists the selected master's
+  `tasks/<repo>/<master>/notes/**` tree (reports/ subfolders included, the server's `truncated`
+  depth-cap flag surfaced honestly) over the L9 `/api/notes/*` API (`data/notes.ts`), and owns the
+  doc's References section (a reference naming an existing notes file, resolved conservatively by
+  `resolveNoteReference`, renders as a link; non-matching references stay plain text). **L17 retired
+  its inline reader:** both the list rows and the resolved references now call `onOpenNotes` to open
+  the `notes-reader/` takeover (which renders the note); TaskNotes itself no longer reads a note.
+  GET-only, no mutation surface; an unreachable API renders no notes surface at all.
 - `EngineRoom.tsx` + **`engine-room/`** — the enclosure-centered **Engine Room process map** (slice
   5e): an official-line strip (workspace providers grouped by provider label + runtime state, so duplicate
   same-state CGCs render as counted chips with repo-label hover detail) + a React Aria `ListBox` of worktree
@@ -152,6 +155,14 @@ and the `Chats` `SessionList` switcher).
   reusing the L2 File Viewer primitives. Opened from a `DetailPanel` change-set button as a Cockpit
   full-bleed takeover (back link restores Operations); master scope is accumulated-only. See
   [changeset/ overview](changeset/overview.md).
+- `notes-reader/` — the **Notes Reader** screen (agent-orchestration L17): a task-scoped takeover that
+  rebuilds the L9 notes reading experience on the file-viewer pattern — a notes-tree rail (from
+  `/api/notes/list`, reports/ included, highlight-follows-selection) + a content pane that REUSES the L2
+  File Viewer `DualPane` (markdown as a partnerless overview, text through CodeSide, binary placeholder)
+  over the **unchanged** `/api/notes/read`. Opened from a `TaskNotes` list row / reference via
+  `onOpenNotes`; controlled by `CockpitShell` (selection lifted, retained mounted-hidden after Back so it
+  survives back/forward). Replaces the retired inline `TaskNotes` reader. See
+  [notes-reader/ overview](notes-reader/overview.md).
 - `MemoryMirror.tsx` — the segmented coverage/drift bar per repo + ledger currency + stalest
   sidecars (slice-3b analytics); drift classes mapped by record (forward-compatible).
 - `EventRiver.tsx` + `eventSummary.ts` — right-rail readable activity feed over the raw observer
@@ -328,6 +339,14 @@ an idle dashboard at zero store writes.
 
 ## Update History
 
+- 2026-07-07T14:00+02:00 — agent-orchestration L17 route impact: the route gains the **`notes-reader/`**
+  child route (the Notes Reader takeover — a notes-tree rail + a content pane that REUSES the File Viewer
+  `DualPane`, over the unchanged L9 `/api/notes/*` API). `TaskNotes.tsx` becomes the compact ENTRY SURFACE
+  only (its inline reader retired; list + references now call `onOpenNotes`), `DetailPanel.tsx` threads
+  `onOpenNotes` to it, and `LifecycleList.tsx`'s `gateHint` drops the wait-loop `ask` fallback (durable gate
+  kind only). Added the `notes-reader/` bullet + child-route link, rewrote the `TaskNotes` bullet, and
+  de-staled the `DetailPanel`/`LifecycleList` bullets. Verification metadata pinned until closeout stamps the
+  L17 commit.
 - 2026-07-07T10:55+02:00 — L15 route impact (body): the four age panels' served-ages local-advance pattern documented. Verification metadata pinned until closeout stamps the L15 commit.
 
 - 2026-07-07T05:40+02:00 — 260703-L15 route impact (small): the four age-display panels

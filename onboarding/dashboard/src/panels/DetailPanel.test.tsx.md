@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026                           |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastUpdated            | 2026-07-07T14:00+02:00                           |
+| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
+| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -109,9 +109,10 @@ The L9 series-notes block (`stubNotes` — a per-URL fetch stub answering `/api/
 `/api/notes/read`, everything else a bare ok) proves the DetailPanel wiring: a leaf reader fetches
 the notes list for the doc's OWN series (the exact
 `/api/notes/list?repo=agents-remember&master=260703_agent-orchestration` URL is asserted, pinning
-the repo/master derivation from the doc node), a notes-file reference renders as `note-ref-1` and
-opens `note-view` with the fetched body while a code-path reference gets no link, and a master
-overview shows the "Series notes" list.
+the repo/master derivation from the doc node), and — since L17 — a notes-file reference renders as
+`note-ref-1` whose click fires the `onOpenNotes` callback with `{repo, master, path}` (the
+notes-reader takeover; no inline `note-view` remains) while a code-path reference gets no link
+(`note-ref-2` absent), and a master overview shows the "Series notes" list.
 
 ### Invariants And Boundaries
 
@@ -145,6 +146,10 @@ archived documents.
 
 ## Update History
 
+- 2026-07-07T14:00+02:00 — agent-orchestration L17: the "series notes" test's resolved-reference click now
+  asserts the `onOpenNotes` callback fires with `{repo, master, path}` (the reader takeover opens) instead
+  of an inline `note-view`; the master-overview list test is unchanged. (Also normalized the malformed
+  `lastUpdated` frontmatter value.) Verification metadata pinned until closeout stamps the L17 commit.
 - 2026-07-06T10:45+02:00 — L11 body note: the enclosure fixture carries the required existence flags (default true); no assertion change. Verification metadata pinned until closeout stamps the L11 commit.
 - 2026-07-06T03:05+02:00 — 260703-L11: the local `enclosure(...)` fixture now defaults the new required
   `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags to `true` (a live worktree), matching
