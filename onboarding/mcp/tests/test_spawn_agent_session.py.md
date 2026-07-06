@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-06T23:59:00+02:00                            |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`        |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00                            |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`        |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -26,7 +26,10 @@ the repo-local file (selected via the qualified leaf key against a configured `R
 overrides global, leafless/unconfigured-repo spawns read global only, an explicit argument beats
 every layer, no-settings falls back to the first DETECTED registry harness, nothing-detected and
 configured-but-undetected both REFUSE (`harness-not-detected`, the latter naming
-`orchestration.spawn.harness` and the source file) — never a silent default.
+`orchestration.spawn.harness` and the source file) — never a silent default. 260703-L16 adds three
+classes: `SpawnKnobApplicationTests` (per-harness knob application + the free-form escape hatch),
+`SettingsDefinedHarnessTests` (orchestration.harnesses registry openness), and
+`SpawnLevelResolutionTests` (the dispatch `level` + rolesPerLevel resolution chain).
 
 ## Code Commentary
 
@@ -47,6 +50,38 @@ L2 contracts:
 - **draft** (`test_draft_paste_does_not_submit`): `submit=False` pastes without submitting and omits the
   `submitted` key.
 - **no context** (`test_spawn_without_context_skips_paste`): no paste is attempted.
+
+`SpawnKnobApplicationTests` (L16) pin the dispatch-seam knob application: a flag-vocabulary effort
+(`max`) rides the argv as `--model`/`--effort` with NO session command; `ultracode` stays OFF the
+flag and arrives as the FIRST paste (`/effort ultracode`, submitted) before the brief with
+`sessionCommands`/`sessionCommandsDelivered` reported; an unknown effort (`turbo`) refuses
+`effort-invalid` naming claude and BOTH value sets with nothing spawned; a mapping-less builtin
+(codex) stays env-only; `launchArgs` ride the argv verbatim and are recorded (payload + row);
+`promptKeywords` prepend to the brief paste (the original acceptance case: strategist as
+effort:max + promptKeywords:["ultracode"] → `--effort max` + the keyword riding the paste; keywords
+alone still deliver with no brief); the session-layer order is effort vehicle → caller
+sessionCommands → keyword-bearing brief with the RESOLVED list as provenance; and an undelivered
+session command reports `sessionCommandsDelivered: false`.
+
+`SettingsDefinedHarnessTests` (L16 registry openness) write REAL settings files: a new
+`orchestration.harnesses.hermes` entry spawns with its declared argv; a builtin override replaces
+claude's argv while the curated knob mapping survives; an unknown-everywhere id refuses
+`harness-unknown` naming the known set + `orchestration.harnesses` + the
+`docs/reference/harnesses.md` manual; a vocab-less settings harness refuses effort
+(`effort-invalid`) and model (`model-invalid`) with declare-or-launchArgs guidance; a declared
+custom vocabulary maps the knobs onto the harness's own flags; and a repo-local entry overrides the
+global one via the qualified leaf key (leafless spawns read global).
+
+`SpawnLevelResolutionTests` (L16 rolesPerLevel, the developer's reviewer economics as the canonical
+fixture) pin the resolution chain: a master-level dispatch deep-merges the level override over the
+flat default (harness inherited, model/effort overridden, resolved knobs riding env + argv); the
+leaf default uses the flat knobs with `spawnLevel: leaf` / `spawnLevelSource: default`; the
+portfolio tier delivers `fable` + the `ultracode` session vehicle end-to-end; explicit args beat
+every settings rung; a repo-local level override beats the global level override; provenance
+records the resolved level + source on payload and row; default-level dispatch is unchanged for
+existing callers; an unknown level refuses `level-invalid` pre-spawn; and the strategist
+acceptance case expressed purely in settings (effort ultracode + promptKeywords) dispatches with
+the session command + keyword-bearing brief and full provenance.
 - **leaf-taken** (`test_leaf_taken_is_surfaced_never_overridden`): a running chat already owning the leaf
   makes the spawn return `ok: false` / `leaf-taken` with the owner, and nothing is spawned, pasted, or
   upserted (the never-override invariant).
@@ -105,6 +140,14 @@ No meaningful cross-repo references found.
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `SpawnKnobApplicationTests`,
+  `SettingsDefinedHarnessTests`, and `SpawnLevelResolutionTests` (see Logic) covering the
+  per-harness flag mapping, the two-vehicle claude effort vocabulary, the dispatch refusals
+  (`effort-invalid`/`model-invalid`/`level-invalid`/`harness-unknown` with the manual pointer),
+  the free-form escape hatch + provenance, orchestration.harnesses openness, and the rolesPerLevel
+  resolution chain. Existing spawn/paste tests unmodified (one typed-access narrowing for pyright
+  in a NEW L16 test only). Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-06T23:59:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): added
   `test_spawn_records_role_from_env_and_reports_it` — an `env={"AR_SPAWN_ROLE": "manager"}` spawn

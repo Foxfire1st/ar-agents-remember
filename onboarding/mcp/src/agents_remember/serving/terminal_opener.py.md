@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_opener.py`    |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-06T23:58:18+02:00                                  |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`              |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00                                  |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`              |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -33,16 +33,25 @@ conflicting `owner_session_id`, or a `detail` string for a bad kind. The opener 
 `app.py` maps the result to an HTTP `JSONResponse` (200 / 409 / 400) and the MCP tool maps it to a
 validated tool payload.
 
-`resolve_terminal_launch(kind, *, workspace_root, shell, harness, which)` resolves a launch `kind` to
-`(cwd, argv)` server-side — the server owns the command, never the wire. `terminal` spawns `shell` at
-the workspace root; `harness` spawns the registered TUI harness by **id** (`find_harness` +
-`is_detected`, `which` defaulting to `shutil.which`), rejecting an absent id, an unknown id, or an
-uninstalled CLI; every other kind raises `ValueError`. It moved here verbatim from `app.py` so the
-opener owns launch resolution and both callers share it without importing `app`.
+`resolve_terminal_launch(kind, *, workspace_root, shell, harness, which, model, effort, launch_args,
+harnesses)` resolves a launch `kind` to `(cwd, argv)` server-side — the server owns the command,
+never the wire. `terminal` spawns `shell` at the workspace root; `harness` spawns the TUI harness by
+**id** against the EFFECTIVE registry (`harnesses` = builtin table merged with
+`orchestration.harnesses`, `None` = builtin only), rejecting an absent id, an id known nowhere (the
+`unknown_harness_detail` teach-it-via-settings refusal), or an uninstalled CLI; every other kind
+raises `ValueError`. Since 260703-L16 it is ALSO the knob-application point: `model`/`effort` are
+validated first (`invalid_model_detail`/`invalid_effort_detail` — an out-of-vocabulary effort raises
+naming the harness and both value sets instead of letting the CLI warn-and-silently-degrade), then
+mapped onto the harness's flags via `knob_argv` (session-vocabulary values stay off the flag;
+env-only harnesses get no flags), and `launch_args` is appended VERBATIM (the free-form escape —
+never validated). A plain `terminal` spawn ignores the knobs.
 
 `open_terminal_session(*, catalog, host, session_id, kind, workspace_root, shell, harness, label,
-lifecycle_id, leaf_key, env, spawned_by_session, spawned_by_lifecycle, which)` is the composition. It
-resolves the launch (a `ValueError` becomes `bad-kind` with the detail), computes the role-scoped
+lifecycle_id, leaf_key, env, launch_args, prompt_keywords, session_commands, spawn_level,
+spawn_level_source, spawned_by_session, spawned_by_lifecycle, which, harnesses)` is the composition.
+It resolves the launch — passing `env["AR_SPAWN_MODEL"]`/`env["AR_SPAWN_EFFORT"]` into the knob
+mapping while the env keeps riding for session-start visibility (a `ValueError` becomes `bad-kind`
+with the detail) — computes the role-scoped
 `leaf_conflict_owner` **before** any spawn (a taken leaf returns `leaf-taken` WITHOUT ensuring tmux or
 mutating the catalog — the server-authoritative uniqueness check), calls `host.ensure(...)` seeding
 `env` at spawn (the L2 knob-injection seam) with `suspend_unsafe=(kind == "harness")`, then upserts a
@@ -51,14 +60,19 @@ re-open and sets `spawned_by_session`/`spawned_by_lifecycle` **once at first spa
 the original provenance, never clobbers it with `None`). Since L14 the same rule covers the role:
 the opener reads `AR_SPAWN_ROLE` out of the caller's `env` (the value the dispatch seam already rides
 into tmux) and records it as the row's `spawn_role`, preserving an existing value across a role-less
-re-open — a hand-opened session (no env role) records `None`.
+re-open — a hand-opened session (no env role) records `None`. L16 extends the same
+write-once-preserve rule to the free-form spawn provenance (`launch_args`/`prompt_keywords`/
+`session_commands`, recorded verbatim, never validated) and the resolved dispatch level
+(`spawn_level` + `spawn_level_source` — the rolesPerLevel resolution input).
 
 ### Conventions
 
 This file sits in `serving/` because the durable catalog, tmux host, and launch resolution are
 serving-layer runtime state. MCP tools call it, but response shaping stays in `mcp/tools/terminal.py`
 and Pydantic modeling stays in `models/terminal.py`. `env` is a `Mapping[str, str]` seam threaded into
-`TerminalHost.ensure`; the model/effort → env mapping is the caller's job (`mcp/tools/terminal.py`).
+`TerminalHost.ensure`; the settings-rung knob RESOLUTION (role/level → model/effort/free-form) is
+the caller's job (`mcp/tools/terminal.py`) — the opener consumes the resolved env values and applies
+them at the argv boundary.
 
 ### Invariants And Boundaries
 
@@ -70,7 +84,11 @@ and Pydantic modeling stays in `models/terminal.py`. `env` is a `Mapping[str, st
 - Provenance is write-once: set at first spawn, preserved across a re-open, never nulled — the L14
   `spawn_role` (from env `AR_SPAWN_ROLE`) follows the same rule as the spawned-by pair.
 - The opener resolves a harness **id** to its fixed argv — never a wire-supplied command (no injection
-  surface, the 6d posture).
+  surface, the 6d posture); knob values ride as discrete argv elements, and argv customization exists
+  ONLY through the fail-loud `orchestration.harnesses` settings family.
+- Effort/model vocabulary enforcement is duplicated here as defense in depth (the MCP tool
+  pre-validates for the named `effort-invalid`/`model-invalid` statuses; the opener's `ValueError`
+  → `bad-kind` covers any residual caller so the warn-and-degrade path can never be reached).
 
 ### Todos
 
@@ -107,6 +125,16 @@ No meaningful cross-repo references found.
 | This helper spawns tmux + mutates only the local dashboard terminal catalog. | — | — |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `resolve_terminal_launch` now
+  applies the per-harness knob mapping (env `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` → registry flags via
+  `knob_argv`; dispatch-time vocabulary refusal naming the harness and both value sets; verbatim
+  `launch_args`) and resolves ids against an injected EFFECTIVE registry (`harnesses` param —
+  builtin merged with `orchestration.harnesses`; unknown-everywhere ids get the manual-pointing
+  refusal). `open_terminal_session` records the free-form escape hatch
+  (`launch_args`/`prompt_keywords`/`session_commands`) and the resolved dispatch level
+  (`spawn_level`/`spawn_level_source`) as write-once spawn provenance on the catalog row.
+  Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-06T23:58:18+02:00 — 260703-L14 (visual hierarchy + chat grouping): `open_terminal_session`
   now records `env["AR_SPAWN_ROLE"]` onto the catalog row as `spawn_role` (write-once like the

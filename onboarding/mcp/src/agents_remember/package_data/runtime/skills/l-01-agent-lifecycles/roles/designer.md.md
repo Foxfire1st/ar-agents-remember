@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e3b11ab9e2f3f89d45c6de01c21040600f2b3c7a` |
-| lastVerifiedCommitDate | 2026-07-05T17:03:17+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00 |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 
 ## Purpose
 
@@ -25,6 +25,15 @@ As of cycle 4 the knob footer resolution reads role-file defaults < settings (de
 
 As of cycle 5: the knob tools row gains the inbox (the no-brief announce path is executable).
 
+### L16 Knob Additions
+
+260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
+`sessionCommands` — lines pasted + submitted into the fresh session before the brief;
+`promptKeywords` — prepended as the first line of the dispatch brief paste; all settings-only,
+never validated, recorded in spawn provenance), and the knob footer now names the per-level
+override (`orchestration.rolesPerLevel.<level>.<role>`; role-file defaults < settings < level
+override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -34,6 +43,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
+  free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never
+  validated) and the knob footer now includes the rolesPerLevel per-level override and the
+  harnesses.md manual pointer. Sync-propagated bundle copy. Verification metadata pinned until
+  closeout stamps the L16 commit.
 
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the knob tools row gains the inbox (the no-brief announce path is executable).. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): knob footer variant rung removed. Verification metadata pinned until closeout stamps the L8 commit.

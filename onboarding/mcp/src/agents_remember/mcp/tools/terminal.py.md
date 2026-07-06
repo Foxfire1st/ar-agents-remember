@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-06T23:58:24+02:00                            |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`        |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00                            |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`        |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -34,28 +34,52 @@ catalog at `terminal_catalog_path(config.coordination_root)`, calls the serving-
 includes the requested session/leaf plus optional `previousLeafKey`, `ownerSession`, and role.
 
 `spawn_agent_session_payload(config, *, harness=None, leaf_key, context, submit, label, model, effort,
-env, spawned_by_session, spawned_by_lifecycle, kind, session_id, host, paster, which)` composes the L2
-dispatch. For a `harness` kind it first RESOLVES the harness (`_resolve_spawn_harness`, 260703-L13):
-an explicit argument is validated against the detection set (`find_harness` / `is_detected`) as
-before; an OMITTED harness resolves per-use through the agentic-settings loader
-(`kernel/agentic_settings.load_agentic_settings`) as repo-local `orchestration.spawn.harness` over
-the global value — the repo-local layer is selected by the qualified leaf key's repository segment
-(`_spawn_repo_root`; `<repository>/<master>/<docId>` is the l-01 catalog-binding contract, leafless
-or unconfigured-repo spawns read the global layer only) — and falls back to the detection-gated
-default (the first registry harness on PATH). The loader validates settings values against the
-registry ids, so a settings value can never inject a command; a configured-but-undetected
-preference refuses `harness-not-detected` naming the settings source, and nothing-anywhere refuses
-rather than silently defaulting. An unknown or uninstalled harness still short-circuits to
-`harness-unknown` / `harness-not-detected` **before any spawn** (`_spawn_refusal`). It then folds `model`/`effort`/`env`
-into the spawn env (`_spawn_env` — model/effort ride as namespaced `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`
-vars, caller `env` keys win), defaults spawned-by-lifecycle to the active ambient lifecycle
-(`_ambient_lifecycle_id`, best-effort), and calls the shared `serving.terminal_opener`
-`open_terminal_session` (the SAME opener the dashboard route uses — no parallel spawn path). On the
-opener's `bad-kind`/`leaf-taken` it returns the matching `ok: false` payload (surfacing the
-server-arbitrated `leaf-taken` owner, never overriding it). On `opened`, when `context` is present it
-delivers the packet through a `TerminalPaster` echo-confirmed paste (`submit` presses Enter so a worker
-auto-starts; a draft leaves `submit=False`) and reports `contextDelivered`/`submitted`. `host` /
-`paster` / `which` / `session_id` are injectable seams for fake-driven tests.
+env, launch_args, prompt_keywords, session_commands, level, spawned_by_session, spawned_by_lifecycle,
+kind, session_id, host, paster, which)` composes the L2 dispatch, now the full 260703-L16 knob
+resolution + application seam. For a `harness` kind it:
+
+1. **Resolves the dispatch level** (`level` param, `leaf|master|portfolio`, default `leaf`;
+   `_SPAWN_LEVELS` mirrors the `loops.perLevel` vocabulary) — an unknown level refuses
+   `level-invalid` before anything else; the resolved level + its source (`explicit`/`default`) ride
+   to spawn provenance.
+2. **Reads the agentic settings per-use** (`load_agentic_settings`, repo-local layer selected by the
+   qualified leaf key via `_spawn_repo_root`) and computes the settings rungs:
+   `settings.resolved_role_knobs(env["AR_SPAWN_ROLE"], level)` — the `rolesPerLevel[level]` override
+   deep-merged over the flat `roles` default (no role riding = no settings rung). Unset explicit
+   args fold in from the knobs (model, effort, launchArgs, promptKeywords, sessionCommands), giving
+   the chain explicit args > repo-local level override > global level override > repo-local role
+   default > global role default > spawn preference > detection-gated default.
+3. **Resolves the harness against the EFFECTIVE registry** (`_resolve_spawn_harness(settings,
+   harness or knobs.harness, which)` — `settings.harnesses` is the builtin table merged with
+   `orchestration.harnesses`, so settings-defined harnesses and pre-customized builtins resolve;
+   an id known nowhere refuses `harness-unknown` with the `unknown_harness_detail` text naming the
+   known set + the `docs/reference/harnesses.md` manual; undetected → `harness-not-detected`,
+   configured-preference refusals still name the settings source).
+4. **Validates the knobs pre-spawn**: `invalid_model_detail`/`invalid_effort_detail` on the
+   EFFECTIVE values (env wins over arg wins over settings) — `model-invalid`/`effort-invalid`
+   refusals name the harness and its valid sets (the L16 silent-degrade prevention); a
+   session-vocabulary effort (claude `ultracode`) contributes `effort_session_commands` as the FIRST
+   post-launch session command instead of a flag.
+5. **Spawns through the shared opener** (`open_terminal_session`, the SAME opener the dashboard
+   route uses — no parallel spawn path) with the env-folded knobs (`_spawn_env` — resolved
+   model/effort ride as `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, caller env keys win), the verbatim
+   `launch_args`, the free-form provenance, the level provenance, and the effective registry.
+6. **Delivers the session layer**: each resolved session command is its own echo-confirmed paste
+   with `submit=True` (an unexecuted `/effort ultracode` would be a silent downgrade;
+   `sessionCommandsDelivered` aggregates delivered+submitted), THEN the brief — `prompt_keywords`
+   are prepended as its first line (delivered alone when no `context` is given) — with the existing
+   `submit` semantics and `contextDelivered`/`submitted` reporting.
+
+On the opener's `bad-kind`/`leaf-taken` it returns the matching `ok: false` payload (surfacing the
+server-arbitrated `leaf-taken` owner, never overriding it). The `spawned` payload echoes the
+recorded provenance: `launchArgs`/`promptKeywords`/`sessionCommands` (the RESOLVED list, effort
+vehicle first), `spawnLevel`/`spawnLevelSource`. `host` / `paster` / `which` / `session_id` remain
+injectable seams for fake-driven tests.
+
+Helper decomposition (CRAP-gate driven): steps 1-4 live in `_resolve_harness_dispatch` (returning a
+frozen `_HarnessDispatch` bundle or a refusal, with `_knob_refusal` for the model/effort checks);
+step 6 is `_brief_packet` (keyword prepending) + `_deliver_spawn_pastes` (session commands then
+brief); the `spawned` response dict is `_spawned_payload`.
 
 ### Conventions
 
@@ -79,9 +103,17 @@ is `_tool_payload` + `models/terminal.py`, and server registration lives in `mcp
   L14 the `spawned` payload also reports `spawnRole` — the `AR_SPAWN_ROLE` the opener persisted from
   the caller's `env` (omitted when the spawn carried no role), the Chats command-tree grouping key.
 - The responses remain AR-owned and strict; provider-flexible models are not used here.
-- Harness resolution precedence is explicit arg > repo-local settings > global settings >
-  detection-gated default; settings are read PER-USE (an edit applies to the next spawn, no
-  restart), and `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` env riding is unchanged by the L13 seam.
+- Knob resolution precedence (L16) is explicit args > repo-local level override > global level
+  override > repo-local role default > global role default > spawn preference > detection-gated
+  default; settings are read PER-USE (an edit applies to the next spawn, no restart), and the
+  `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` env riding is preserved — L16 ADDS the argv application on top
+  (per-harness flags via the effective registry; env-only harnesses unchanged at the argv).
+- The free-form escape hatch (`launchArgs`/`promptKeywords`/`sessionCommands`) is NEVER validated —
+  only recorded in spawn provenance (catalog row + payload); the validated-enum refusals
+  (`effort-invalid`/`model-invalid`/`level-invalid`) fire before any spawn, naming the harness and
+  its valid sets with launchArgs/sessionCommands guidance.
+- Paste ordering is a contract: session commands (effort vehicle first, then the caller's) BEFORE
+  the promptKeywords-bearing brief — session-level modes must be active before the brief submits.
 
 ### Todos
 
@@ -120,6 +152,19 @@ No meaningful cross-repo references found.
 | The tool operates on the local dashboard terminal catalog only. | - | - |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application; four developer rulings 2026-07-07):
+  the dispatch seam now RESOLVES role knobs from settings (`resolved_role_knobs(AR_SPAWN_ROLE,
+  level)` — `rolesPerLevel` over flat `roles`; new `level` param leaf|master|portfolio with
+  provenance), resolves harnesses against the EFFECTIVE registry (`orchestration.harnesses` — new
+  ids add, builtin ids pre-customize; unknown-everywhere ids refuse pointing at the
+  `docs/reference/harnesses.md` manual), VALIDATES model/effort per-harness before spawning
+  (`effort-invalid`/`model-invalid`/`level-invalid` refusal statuses; claude's two-vehicle effort
+  vocabulary with `ultracode` delivered as a post-launch `/effort` session command), and delivers
+  the free-form escape hatch (`launch_args` verbatim argv; `session_commands` pasted+submitted
+  before the brief; `prompt_keywords` prepended to the brief paste) — never validated, recorded in
+  spawn provenance and echoed on the payload. Verification metadata pinned until closeout stamps
+  the L16 commit.
 
 - 2026-07-06T23:58:24+02:00 — 260703-L14 (visual hierarchy + chat grouping): the `spawned` payload now
   reports `spawnRole` (`entry.spawn_role` — the AR_SPAWN_ROLE the shared opener recorded on the

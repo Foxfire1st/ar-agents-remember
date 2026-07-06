@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-06T23:58:54+02:00                            |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`        |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00                            |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`        |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -20,7 +20,8 @@
 ONE spawn path both the dashboard `POST /api/terminal/{session}` route and the agent-facing
 `spawn_agent_session` MCP tool compose over. It drives `open_terminal_session` against a fake host
 (records the `ensure` call, no real tmux) + a real JSON catalog, pinning the leaf-claim / provenance /
-env-seed behaviour both call paths inherit.
+env-seed behaviour both call paths inherit — and, since 260703-L16, the per-harness knob→argv
+application (`KnobApplicationTests`).
 
 ## Code Commentary
 
@@ -38,6 +39,18 @@ cwd / command / env, adds the tmux name to a known set) + a real `TerminalCatalo
 - **role preservation** (`test_reopen_preserves_spawn_role_and_hand_open_records_none`, L14): a
   role-less re-open keeps the recorded `spawn_role` (write-once, like the spawned-by pair), and a
   hand-opened session (no env role) records `None` with `spawnRole` absent from its JSON.
+
+`KnobApplicationTests` (L16) pin the opener-side knob application: env `AR_SPAWN_MODEL`/
+`AR_SPAWN_EFFORT` become `--model`/`--effort` on claude's ensured command while the env keeps
+riding; a session-vocabulary effort (`ultracode`) stays OFF the flag; an unknown effort refuses
+`bad-kind` BEFORE any spawn with the detail naming claude and both value sets; a mapping-less
+builtin (codex) is env-only; `launch_args` append verbatim after the knob flags; the free-form
+provenance (`launch_args`/`prompt_keywords`/`session_commands`) is recorded on the row, JSON
+round-trips camelCase, survives a free-form-less re-open, and stays absent for hand-opened rows;
+an injected effective registry resolves a settings-defined harness (custom argv) while an
+unknown-everywhere id refuses pointing at `orchestration.harnesses` + the
+`docs/reference/harnesses.md` manual; and a vocab-less settings-defined harness refuses the effort
+knob with declare-or-launchArgs guidance.
 - **leaf-taken** (`test_leaf_taken_surfaces_owner_without_spawning`): a running chat already owning the
   leaf makes the opener return `leaf-taken` with the owner and never spawn or upsert the intruder.
 - **bad kind** (`test_bad_kind_reports_detail`): an unknown launch kind returns `bad-kind` with a detail
@@ -88,6 +101,14 @@ No meaningful cross-repo references found.
 | The tests cover local serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `KnobApplicationTests` —
+  env-knob→argv flag mapping (env still riding), session-vocabulary effort off the flag, the
+  pre-spawn refusal naming both value sets, env-only mapping-less builtins, verbatim `launch_args`,
+  free-form provenance recording/round-trip/preservation, effective-registry resolution of
+  settings-defined harnesses, the unknown-everywhere manual-pointing refusal, and the vocab-less
+  settings-harness guidance refusal. Existing opener tests unmodified. Verification metadata pinned
+  until closeout stamps the L16 commit.
 
 - 2026-07-06T23:58:54+02:00 — 260703-L14 (visual hierarchy + chat grouping): the opened case now seeds
   `AR_SPAWN_ROLE` and asserts it lands on the row + round-trips as `spawnRole`; added

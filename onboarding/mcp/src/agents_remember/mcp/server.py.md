@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T22:42+02:00 |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00 |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -21,13 +21,20 @@ agent-facing hosted chat reassignment path: it forwards to `attach_terminal_sess
 reuses the dashboard terminal catalog's role-scoped leaf uniqueness rules, and returns
 `attached`/`leaf-taken`/`unknown-session` without spawning a session or requiring a worktree enclosure.
 L2 registers `spawn_agent_session(harness?, leaf_key?, context?, submit, label?, model?, effort?, env?,
-spawned_by_session?, spawned_by_lifecycle?, kind)` right after attach: the agent-facing **dispatch**
+launch_args?, prompt_keywords?, session_commands?, level?, spawned_by_session?,
+spawned_by_lifecycle?, kind)` right after attach: the agent-facing **dispatch**
 path that CREATES a role-configured, leaf-attached, context-primed hosted session by composing the
 existing serving primitives (opener + leaf claim + echo-confirmed paste), forwarding to
 `spawn_agent_session_payload`. Since 260703-L13 `harness` is OPTIONAL: omitted, the payload
-builder resolves it per-use from the agentic settings (repo-local over global
+builder resolves it per-use from the agentic settings (role knobs, repo-local over global
 `orchestration.spawn.harness`, repo selected by the qualified leaf key) and falls back to the
-detection-gated default — the docstring documents the resolution chain.
+detection-gated default — the docstring documents the resolution chain. 260703-L16 grew the knob
+surface: `level` (leaf|master|portfolio, default leaf) selects the `rolesPerLevel` settings rung;
+model/effort are applied onto the harness argv per-harness AND validated pre-spawn (the docstring
+names the `effort-invalid`/`model-invalid`/`level-invalid` refusals and the claude two-vehicle
+effort vocabulary incl. the session-level `ultracode`); the free-form escape hatch
+(`launch_args` verbatim argv, `session_commands` pasted+submitted before the brief,
+`prompt_keywords` prepended to the brief) is never validated, only recorded in spawn provenance.
 
 ## Code Commentary
 
@@ -263,6 +270,13 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 As of cycle 5 the lifecycle_gate registration exposes wait (default true) with the raise-and-continue contract documented in the docstring; cycle 6 makes both gate docstrings match the payload layer exactly — `lifecycle_gate` says wait=false is reserved for delegated seam kinds (any other kind blocks), and `gate_list` says a missing lifecycle_id defaults to the ACTIVE (ambient) lifecycle with the workspace log as the no-ambient fallback; cycle 7 extends the `lifecycle_gate` docstring with the new wait=false requirement that `enclosure=<master task name>` be supplied (the address integration enforcement matches the gate by), keeping the registration truthful about the payload layer's refusal.
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `spawn_agent_session` gained the
+  free-form escape-hatch parameters (`launch_args`, `prompt_keywords`, `session_commands`) and the
+  dispatch `level` parameter; its docstring now documents the per-harness knob application, the
+  pre-spawn `effort-invalid`/`model-invalid`/`level-invalid` refusals, and the rolesPerLevel
+  resolution chain. Registration forwarding only — behavior lives in the payload builder.
+  Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-06T22:42+02:00 — 260703-L13 (settings unification): `spawn_agent_session.harness`
   became optional (`str | None = None`) and the tool docstring documents the explicit >

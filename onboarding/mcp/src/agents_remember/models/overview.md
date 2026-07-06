@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-06T23:59:42+02:00 |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00 |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -50,7 +50,10 @@ three `operator_inbox_*` external-chat response contracts (task 10),
 `lifecycle_finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
 `attach_terminal_session_to_leaf` hosted-chat/terminal reassignment response AND the L2
 `spawn_agent_session` dispatch response (`SpawnAgentSessionResponse` — spawned-by provenance +
-context-delivery outcome + the server-arbitrated `leaf-taken`/pre-spawn refusal statuses), and
+context-delivery outcome + the server-arbitrated `leaf-taken`/pre-spawn refusal statuses; since
+260703-L16 also the `effort-invalid`/`model-invalid`/`level-invalid` refusals, the free-form spawn
+provenance `launchArgs`/`promptKeywords`/`sessionCommands` + `sessionCommandsDelivered`, and the
+level provenance `spawnLevel`/`spawnLevelSource`), and
 `tokens.py` for response token accounting.
 
 ## Route Model
@@ -110,6 +113,11 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application) route impact: `terminal.py`'s
+  `SpawnAgentSessionResponse` gained three refusal statuses (`effort-invalid`/`model-invalid`/
+  `level-invalid`) and the free-form + level provenance fields (all additive, `None`-omitted). No
+  other model changed. Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-06T23:59:58+02:00 — L14 route impact (body): optional orchestrates + spawnRole on the response models. Verification metadata pinned until closeout stamps the L14 commit.
 

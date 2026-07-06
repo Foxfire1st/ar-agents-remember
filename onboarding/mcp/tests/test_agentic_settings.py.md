@@ -5,16 +5,19 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T23:45+02:00 |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00 |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
 
 `test_agentic_settings.py` covers the two-layer agentic settings loader
 (`kernel/agentic_settings.py`, 260703-L13): merge precedence, the fail-loud
-unknown-key discipline, absent-file defaults, and the typed models.
+unknown-key discipline, absent-file defaults, and the typed models — plus, since
+260703-L16, the free-form role knobs (`FreeFormRoleKnobTests`), the per-level
+overrides (`RolesPerLevelTests`), and the harness-definition family
+(`HarnessesFamilyTests`).
 
 ## Code Commentary
 
@@ -22,7 +25,7 @@ unknown-key discipline, absent-file defaults, and the typed models.
 
 L13 review follow-up adds `test_local_gate_delegation_is_refused_global_layer_only` (L13R-2): a repo-local gateDelegation raises AgenticSettingsError naming the local file.
 
-Four test classes, each writing real settings files into a temp coordination
+Seven test classes, each writing real settings files into a temp coordination
 root / repo root (no mocking — the loader's file I/O is the unit under test):
 
 - `MergePrecedenceTests` — global-only, local-only, local-leaf-overrides-global
@@ -47,6 +50,28 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   documented-but-wrong `claude-code` id is the regression case), and
   gateDelegation parsing in its new home (named policy, at-seams binding,
   human-pinned and unsupported-kind refusals as `AgenticSettingsError`).
+- `FreeFormRoleKnobTests` (L16) — launchArgs/promptKeywords/sessionCommands
+  parse ADDITIVELY into `RoleKnobs` tuples (old files unchanged, empty-tuple
+  defaults), effort stays a FREE string at load (the developer's `ultracode`
+  file boots; per-harness vocabulary is dispatch-time), and shape violations
+  (non-list, empty member, non-string member) fail loud naming the knob.
+- `RolesPerLevelTests` (L16, the developer's reviewer-economics fixture) —
+  a level override deep-merges over the flat default (harness inherited,
+  model/effort replaced per level: sonnet/high leaf → opus/xhigh master →
+  fable/ultracode portfolio), the default level is leaf, an absent family
+  changes nothing, unknown level keys and unknown roles inside a level fail
+  loud, and free-form lists REPLACE (never concatenate) per level.
+- `HarnessesFamilyTests` (L16 registry openness) — an absent family means the
+  builtin registry; a new id ADDS a harness (command⇄argv derivation, name
+  defaulting, `defined_in="settings"`, builtin order preserved + new ids
+  appended); a builtin override replaces declared fields and keeps the rest
+  (claude keeps its knob mapping and `defined_in="registry"`); a new id with
+  neither command nor argv, unknown entry keys, and unpaired delivery-vehicle
+  fields (effortFlag without values, session values without their command)
+  all fail loud; roles/spawn references accept settings-defined ids; a LOCAL
+  layer may reference/partially override a GLOBAL entry (per-file validation
+  is shape-only, cross-references bind on the merged block); and a reference
+  to an id known nowhere fails naming the harnesses.md manual.
 - `SeedTests` — `default_agentic_settings_seed()` round-trips through the
   loader to the SAME posture an absent file yields, except
   `gate_delegation_configured` is True (the seed explicitly claims the key's
@@ -91,6 +116,14 @@ No meaningful cross-repo references found.
 | Loader-local behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `FreeFormRoleKnobTests`
+  (additive escape-hatch parsing, free-string effort at load, shape fail-loud),
+  `RolesPerLevelTests` (per-level deep-merge over flat defaults, the reviewer-economics walk,
+  level/role fail-loud, list-replace), and `HarnessesFamilyTests` (registry openness: add/override
+  semantics, vehicle-pair rules, effective-id references, cross-layer partial overrides, the
+  manual-naming refusal). Existing loader tests unmodified. Verification metadata pinned until
+  closeout stamps the L16 commit.
 
 - 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up: local-gateDelegation refusal test added (L13R-2). Verification metadata pinned until closeout stamps the L13 commit.
 

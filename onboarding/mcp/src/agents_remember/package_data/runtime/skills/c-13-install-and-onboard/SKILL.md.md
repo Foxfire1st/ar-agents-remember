@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T23:45+02:00                     |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00                     |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 
 ## Purpose
 
@@ -23,6 +23,14 @@ needed, and configures providers.
 ### Logic
 
 L13 review follow-up (L13R-2): Stage 2's gate-delegation item now states GLOBAL file only — the loader refuses it repo-locally, so the interview can never imply a per-repo gate posture.
+
+260703-L16: Stage 2 item 4 grew from "harness preference" to the full knob interview — per-role
+`orchestration.roles` AND per-level `orchestration.rolesPerLevel` (leaf|master|portfolio tiered
+economics), harness values as builtin ids OR developer-defined `orchestration.harnesses` entries,
+the per-harness dispatch-time effort validation (claude's flag set + session-level `ultracode`),
+and the never-validated free-form escape hatch (`launchArgs`/`sessionCommands`/`promptKeywords`,
+recorded in spawn provenance) — pointing at `docs/reference/harnesses.md` as the spawn-surface
+manual.
 
 The skill starts with a package-first contract: harness-native files are already
 the copied and rendered starter package's responsibility. Rendering can be done
@@ -110,6 +118,12 @@ No sibling repository evidence is needed for this skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Stage 2 item 4 now interviews the
+  full knob surface (roles + rolesPerLevel, orchestration.harnesses extensibility, per-harness
+  effort vocabularies, the free-form escape hatch) and references the `docs/reference/harnesses.md`
+  manual. Sync-propagated bundle copy of the canonical skill. Verification metadata pinned until
+  closeout stamps the L16 commit.
 
 - 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up (L13R-2): Stage 2 gate-delegation item marked global-layer only. Verification metadata pinned until closeout stamps the L13 commit.
 
