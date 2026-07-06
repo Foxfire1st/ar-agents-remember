@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T23:57:36+02:00 |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T05:38+02:00 |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -118,6 +118,18 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   34 then bounds the raw Event River store (`store.ts`) to a **sliding window** of the newest ~2000 rows
   (memory-bounded rather than unbounded session growth), which `EventRiver` virtualizes over so there is
   still no hard display cap.
+  **260703-L15 (long-session memory) adds `servedAges.ts`** (+ unit suite), the client half of the
+  change-gate volatile-age contract: `VOLATILE_AGE_FIELDS` (the byte mirror of
+  `serving/delta.py`'s set), `stableEquals` (deep equality that skips them), WeakMap arrival
+  anchors (`stampServed`/`servedAgeSeconds`), and the `useNowMs` display ticker. `store.ts`'s two
+  apply paths became identity-preserving and change-gated on `stableEquals` — an idle reconnect
+  snapshot or redundant delta performs ZERO store writes and keeps every node identity (the
+  long-session flatness contract, guarded by the 500-tick test in `store.test.ts`) — and the
+  store carries the wire-optional `servingBuild` boot stamp the cockpit top bar renders muted
+  (`cockpit/Cockpit.tsx` `ServingBuildStamp`, `types/projection.ts` `ServingBuild`). Age-display
+  panels (Hangar / AttentionQueue / MemoryMirror / LifecycleList) advance served ages locally via
+  `servedAgeSeconds` + `useNowMs` because the gated server no longer re-serves a node just to age
+  it.
   260703-L11 adds `selectors.hasLiveWorktree`, the shared tasks-surface visibility rule
   (`EnclosureNode.codeWorktreeExists || memoryWorktreeExists` — server-stat'ed existence truth, never a
   cleanup-state proxy) consumed by both `Hangar` and `LifecycleList`.
@@ -213,6 +225,14 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-07T05:38+02:00 — 260703-L15 route impact (long-session memory): `data/` gains
+  `servedAges.ts` (+ suite; the volatile-age mirror, stable equality, arrival anchors, display
+  ticker); `store.ts` apply paths became identity-preserving/change-gated (zero writes on idle
+  payloads) and carry `servingBuild`; `types/projection.ts` mirrors the app-injected
+  `ServingBuild`; `cockpit/Cockpit.tsx` renders the muted serving-build stamp; the four
+  age-display panels advance served ages locally. NOTE: `data/` has no route overview of its own —
+  this file governs it directly, so the genuine body update lives here (same call as L14).
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T23:57:36+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): `data/` gains
   `sessionGroups.ts` (+ unit suite, the G1 command-tree derivation) and `taskHierarchy.ts` gains the
   orchestration-command helpers; `grammar/` gains `RankBadge.tsx` (+ test, the V4 chevron insignia);

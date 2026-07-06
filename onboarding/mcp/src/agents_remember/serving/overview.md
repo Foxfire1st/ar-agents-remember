@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T23:59:24+02:00 |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T05:36+02:00 |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -83,8 +83,12 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 ## Route Model
 
 - `app.py` — `create_app(config, *, interval, now, before_tick, refresh_provider_state)` builds the FastAPI app: a
-  lifespan that primes + runs one shared `Projector`, `GET /api/state` (one-shot),
-  `GET /api/stream` (the `state` SSE endpoint, delegating to the testable `stream_events`),
+  lifespan that primes + runs one shared `Projector`, `GET /api/state` (one-shot; **260703-L15
+  change-gated** — weak `ETag: W/"<projector.revision(seq)>"` + `Cache-Control: no-cache`,
+  `If-None-Match` weak-matches → `304` empty-body via `_if_none_match_matches`, and the body
+  carries the boot-time `servingBuild` stamp),
+  `GET /api/stream` (the `state` SSE endpoint, delegating to the testable
+  `stream_events(projector, build=…)` — the snapshot carries `servingBuild` too),
   `GET /api/events` (the raw channel, delegating to `stream_raw_events`; fresh
   connections start from lifecycle-aware retained offsets while valid
   `Last-Event-ID` cursors still resume exactly and emit a backend `ready` event after retained replay),
@@ -134,16 +138,30 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   config types, never uvicorn/FastAPI), so `mcp/server.py`'s boot hook
   (`maybe_autostart_dashboard`, threaded/total/stderr-only, gated by the `dashboard.autoStart`
   settings key) never pulls the serving stack into MCP startup.
-- `projector.py` — `Projector`: owns the latest projection, a monotonic sequence, and the
-  subscriber fan-out. `prime()`, `run()` (tick: re-project → diff → broadcast), `current()`,
-  `subscribe()`. The `now`/`before_tick` seams + `_tick_sync(moment)` keep one loop generic
-  across live and sim. Live projectors can pass a provider refresher into the observer store; sim projectors
-  keep fixture state deterministic by omitting it. One re-projection per tick regardless of client count.
-- `delta.py` — the **pure** `diff_projection(previous, current) -> list[DeltaEvent]`: the
-  per-entity diff over the flat id-keyed collections (upserts in projection order, removals
-  sorted for determinism). A transport concern kept out of the reducer. Task 33: it also emits an
-  `activeWorktreeGroups` whole-value delta (a bare list wrapped as `{"activeWorktreeGroups": [...]}`)
-  when that set changes, alongside the `metrics`/`analytics` whole-block events.
+- `projector.py` — `Projector`: owns the atomically-published `(seq, projection)` tuple, the
+  previous tick's stable form, a boot nonce, and the subscriber fan-out. `prime()`, `run()`
+  (tick: re-project → ONE stable dump → stable diff → broadcast → publish), `current()`,
+  `revision(seq)` (the `"{boot}-{seq}"` content fingerprint behind the `/api/state` ETag — seq
+  only advances on stable-content change since L15), `subscribe()`. The `now`/`before_tick`
+  seams + `_tick_sync(moment)` keep one loop generic across live and sim. Live projectors can
+  pass a provider refresher into the observer store; sim projectors keep fixture state
+  deterministic by omitting it. One re-projection per tick regardless of client count.
+- `delta.py` — the **pure** `diff_projection(previous, current, *, previous_state=None,
+  current_state=None) -> list[DeltaEvent]`: the per-entity diff over the flat id-keyed
+  collections (upserts in projection order, removals sorted for determinism). A transport concern
+  kept out of the reducer. Task 33: it also emits an `activeWorktreeGroups` whole-value delta
+  (a bare list wrapped as `{"activeWorktreeGroups": [...]}`) when that set changes, alongside the
+  `metrics`/`analytics` whole-block events. **260703-L15 (the change gate):** comparison runs
+  over *stable forms* — `VOLATILE_AGE_FIELDS` (`staleSeconds`/`snapshotStaleSeconds`/`ageSeconds`/
+  `waitSeconds`/`heartbeatAgeSeconds`, mirrored client-side in `dashboard/src/data/servedAges.ts`)
+  stripped recursively — so a tick where only ages advanced emits NOTHING (live measurement:
+  ~780 KB/tick → 0; the dashboard-tab OOM driver). `StableProjectionState` +
+  `stable_projection_state` are the projector's per-tick cache.
+- `build_info.py` — the boot-time **serving build stamp** (260703-L15 S3, the July-4
+  ghost-process lesson): `ServingBuild` (version / best-effort git short-hash / boot time) +
+  `resolve_serving_build`, resolved ONCE in `create_app` and injected on `/api/state` + the SSE
+  snapshot as `servingBuild` so a stale serving process is visible in the cockpit top bar. A
+  failed hash resolve serves version-only (`commit` omitted), never a fake.
 - `events.py` — the raw `event` channel: the **pure** byte-offset tail `read_new_events` (a
   composite per-source offset cursor, `encode_cursor`/`decode_cursor`) + the `stream_raw_events`
   async tailer. Fresh connections use `observer.event_retention.initial_event_offsets` so expired
@@ -320,6 +338,15 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-07T05:36+02:00 — 260703-L15 route impact (the change gate + the build stamp): `delta.py`
+  compares stable forms (`VOLATILE_AGE_FIELDS` stripped; volatile-only ticks emit nothing —
+  measured ~780 KB/tick → 0), `projector.py` caches the stable form per tick, publishes
+  `(seq, projection)` atomically and exposes `revision(seq)` (boot nonce + content seq),
+  `app.py`'s `/api/state` honors `If-None-Match` → 304 under a weak ETag and carries
+  `servingBuild`, and NEW `build_info.py` resolves the boot-time serving stamp (version +
+  best-effort short-hash + boot time) the SSE snapshot also carries. Updated the
+  `app.py`/`projector.py`/`delta.py` Route Model bullets and added the `build_info.py` bullet.
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T23:59:54+02:00 — L14 review follow-up (L14R-3): the catalog column census now names `spawn_role`/`spawnRole` in both places (columns sentence + sessions-wire sentence) — a body edit, superseding the attestation-only entry. Verification metadata pinned until closeout stamps the L14 commit.
 
 - 2026-07-06T23:59:24+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `terminal_catalog.py` gained the migration-safe `spawn_role` column (JSON `spawnRole`) and `terminal_opener.py` records `env["AR_SPAWN_ROLE"]` onto the row at first spawn (write-once, preserved across a role-less re-open) — the Chats command-tree grouping key; the sessions listing exposes it automatically via `entry.to_json()`. Verification metadata pinned until closeout stamps the L14 commit.

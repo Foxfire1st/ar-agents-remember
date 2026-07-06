@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-03T11:45+02:00                           |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6`       |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-07T10:30+02:00                           |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -23,19 +23,39 @@ umbrella `agents-remember dashboard` CLI.
 
 ### Logic
 
+L15 review follow-up (L15R-1): a reflection guard partitions every projection-model `*Seconds` field into VOLATILE_AGE_FIELDS or a curated content allow-list (`ttlSeconds`) — a new now-relative field that skips the volatile set (and its client mirror) now fails loudly instead of silently re-degrading the SSE diff.
+
 `DeltaTests` assert `diff_projection`: the empty first tick, no-delta-on-unchanged, per-kind
 upserts/changes/removals (lifecycle/provider/enclosure), whole-block `metrics`/`analytics`
 events, and deterministic sorted removals. Task 33 extends this: the `_projection` test helper gained an
 `active_worktree_groups` param, and two new cases cover the `activeWorktreeGroups` whole-value delta — a
 changed set emits a single `DeltaEvent("activeWorktreeGroups", {"activeWorktreeGroups": [...]})`
-(the wrapped marker the client unwraps), and an unchanged set emits nothing. `ProjectorTests` (async) assert `prime()` sets the
+(the wrapped marker the client unwraps), and an unchanged set emits nothing. **260703-L15 (the
+change gate)** adds four cases: a volatile-only lifecycle change (`staleSeconds` via `model_copy`)
+emits nothing; a volatile-only analytics change (a task doc's `ageSeconds`) emits nothing; a real
+change emits the full current node WITH its fresh ages riding along; and the precomputed
+`previous_state`/`current_state` call form produces byte-identical deltas to the pure two-argument
+form. `ProjectorTests` (async) assert `prime()` sets the
 latest projection — pinning `latest.version == 2` (slice 5e bumped the projection schema version
 from 1 to 2) — `subscribe()` receives a broadcast, and Task 31 proves an injected provider refresher
 runs before projection. `StreamEventsTests` (async) assert
-`stream_events` emits an `event:snapshot` then a per-entity delta. `AppTests` use `TestClient`
+`stream_events` emits an `event:snapshot` then a per-entity delta, and (L15 S3) that the snapshot
+carries the injected `servingBuild` payload when a `ServingBuild` is passed. `AppTests` use `TestClient`
 (lifespan-triggered prime) for `/api/state` (asserting `body["version"] == 2`, the same bumped
 schema version) and `/` (now the shipped React bundle, not the slice-04 placeholder); `StaticTests`
-assert `dashboard_static_dir`. `CliTests`/`CliRunTests` assert the umbrella parser, the `dashboard`
+assert `dashboard_static_dir`.
+
+**`StateEtagTests` (260703-L15 S1)** drive the `/api/state` change gate end-to-end via
+`TestClient` over a mocked `project_and_write` returning a held projection (a `held[0]` closure the
+test swaps mid-run, `interval=0.02` so the real tick loop publishes): 200 carries a weak
+`ETag: W/"…"` + `Cache-Control: no-cache`; `If-None-Match` with that tag → 304 with the SAME tag
+and an EMPTY body; swapping in a volatile-only change (staleSeconds) keeps returning 304 with the
+same tag after several ticks; swapping in a real change (tokens) makes a deadline-polled
+`_get_until` see 200 with a NEW tag and the fresh body. Plus the `servingBuild` presence on the
+state body and the pure `_if_none_match_matches` table (weak/strong forms, comma lists, `*`,
+mismatch, None). **`BuildInfoTests`** pin `resolve_serving_build`: in this checkout the commit
+short-hash resolves and rides `payload()`; anchored at a non-git tmp dir the commit is `None` and
+OMITTED from the payload (never faked); the payload shape is camelCase (`bootedAt`). `CliTests`/`CliRunTests` assert the umbrella parser, the `dashboard`
 flags, and `run()` (uvicorn/create_app mocked: launch + ConfigError + dispatch). Task 26 added
 `--reload`: `CliRunTests._args` is now a `**overrides` builder seeding `reload: False`, and three
 tests cover the dev path — `test_run_reload_launches_the_dev_factory` asserts `--reload` hands
@@ -145,6 +165,16 @@ exercising the branch. Daemon dispatch itself is covered in `test_dashboard_daem
 
 ## Update History
 
+- 2026-07-07T10:30+02:00 — L15 adversarial-review follow-up (L15R-1): volatile-vs-content reflection guard added for *Seconds projection fields. Verification metadata pinned until closeout stamps the L15 commit.
+
+- 2026-07-07T05:14+02:00 — 260703-L15: `DeltaTests` gained the four change-gate cases
+  (volatile-only lifecycle/analytics emit nothing; real change carries fresh ages; precomputed
+  stable-state parity), `StreamEventsTests` the snapshot `servingBuild` case, and NEW
+  `StateEtagTests` (the 200→ETag→304 cycle, volatile-only stays 304, real change mints a new
+  tag, `servingBuild` on the body, `_if_none_match_matches` table) + `BuildInfoTests`
+  (checkout hash, off-checkout None-omitted, camelCase payload). `import httpx`/`import time` and
+  the `TaskDocNode` import joined the header.
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-03T11:45+02:00 — 260703 L2: both CLI Namespace fixtures gained the daemon-era keys
   (`daemon`/`status`/`stop`/`no_access_log`, all off) so `dashboard.run()`'s new reads stay
   exercised; no assertion changes. Verification metadata pinned until closeout stamps the code

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:57:12+02:00                           |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T05:22+02:00                           |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -49,7 +49,8 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 - `agentPickups` is also server-derived. Clients render the projected `waiting-for-agent` or `check-chat`
   state, role/message/delivery metadata, and do not run their own pickup TTL timers.
 - `EngineProcessNode.id` is the stable enclosure id and the join key to `EnclosureNode.enclosure`; `ProviderNode.worktreeGroup` is the join key to the owning enclosure and takes precedence over `ProviderNode.repoId` in topology parenting.
-- Ages (`*Seconds`) and fact-state are server-computed (never `Date.now()`); `nextAction` is display/copy-only until slice 06.
+- Ages (`*Seconds`) and fact-state are server-computed (never `Date.now()`); `nextAction` is display/copy-only until slice 06. Since 260703-L15 the served age fields are also *volatile* to the change gate (excluded from server diff + client merge equality — `data/servedAges.ts`), and displays advance them locally from arrival anchors.
+- `servingBuild?` (260703-L15) is the ONE field NOT mirrored from `projection.py`: it is injected app-side (`serving/build_info.py` via `serving/app.py`) onto `/api/state` and the SSE snapshot only, so it is optional here and absent from persisted `latest-state.json` (a pre-L15 server also sends none).
 
 ## Repo-Internal References
 
@@ -72,6 +73,10 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 
 ## Update History
 
+- 2026-07-07T05:22+02:00 — 260703-L15 S3: added `ServingBuild` (`version`, `bootedAt`,
+  `commit?`) and the optional `WorkspaceProjection.servingBuild?` — the app-injected boot-time
+  serving stamp (NOT a `projection.py` mirror; wire-only, absent in persisted projections).
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T23:57:12+02:00 — 260703-L14 (visual hierarchy + chat grouping): mirrored
   `TaskDocNode.orchestrates?: string[]` — the orchestration-command relation from `projection.py`;
   optional for forward-compat with pre-L14 persisted projections (consumers guard with

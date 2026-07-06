@@ -13,6 +13,7 @@
     "mcp/src/agents_remember/serving/__init__.py",
     "mcp/src/agents_remember/serving/actions.py",
     "mcp/src/agents_remember/serving/app.py",
+    "mcp/src/agents_remember/serving/build_info.py",
     "mcp/src/agents_remember/serving/changeset.py",
     "mcp/src/agents_remember/serving/daemon.py",
     "mcp/src/agents_remember/serving/delta.py",
@@ -32,8 +33,8 @@
     "mcp/src/agents_remember/serving/terminal_paste.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 20,
-    "fileSidecars": 20,
+    "sourceFilesInScope": 21,
+    "fileSidecars": 21,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -42,6 +43,8 @@
     "agents_remember",
     "app",
     "assignment",
+    "build",
+    "build_info",
     "catalog",
     "changeset",
     "daemon",
@@ -52,6 +55,7 @@
     "harnesses",
     "inbox",
     "inbox_delivery",
+    "info",
     "init",
     "init__",
     "leaf",
@@ -79,6 +83,7 @@
       "mcp/src/agents_remember/serving/__init__.py",
       "mcp/src/agents_remember/serving/actions.py",
       "mcp/src/agents_remember/serving/app.py",
+      "mcp/src/agents_remember/serving/build_info.py",
       "mcp/src/agents_remember/serving/changeset.py",
       "mcp/src/agents_remember/serving/daemon.py",
       "mcp/src/agents_remember/serving/delta.py",
@@ -104,6 +109,8 @@
       "actions",
       "app.py",
       "app",
+      "build_info.py",
+      "build_info",
       "changeset.py",
       "changeset",
       "daemon.py",
@@ -143,9 +150,7 @@
       "serving.app.create_app(config",
       "project_and_write",
       "--interval",
-      "serving.delta.diff_projection",
-      "GET /api/stream",
-      "event:snapshot"
+      "serving.delta.diff_projection"
     ]
   },
   "fallback": {

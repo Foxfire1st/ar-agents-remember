@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T23:59:18+02:00 |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T10:55+02:00 |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -396,6 +396,11 @@ The slice-3a projection read side:
   setup-progress, or historical contract files do not page or feed process facts unless the enclosure's
   lifecycle is still active under the relevant provider/Engine Room boundary.
 
+Since L15 the projection's now-relative `*Seconds` fields are formally classified: the serving
+delta layer strips VOLATILE_AGE_FIELDS from the stable forms it diffs, and a reflection guard in
+the serving tests forces every new `*Seconds` projection field to declare itself volatile or
+content — an unclassified addition fails loudly instead of silently re-degrading the SSE stream.
+
 ## Repo-Internal References
 
 | Finding | Source Path |
@@ -411,6 +416,13 @@ The slice-3a projection read side:
 
 ## Update History
 
+- 2026-07-07T10:55+02:00 — L15 route impact (body): the volatile-vs-content classification of projection *Seconds fields documented. Verification metadata pinned until closeout stamps the L15 commit.
+
+- 2026-07-07T05:42+02:00 — 260703-L15 attestation + one bound: reviewed this overview against the
+  L15 reducer change — `reducer.py`'s `token_series` now decimates the served fuel gauge past
+  `TOKEN_SERIES_MAX` (512; newest 256 exact, older history uniform-thinned, log untouched). The
+  route model's reducer description otherwise still holds; details live in the `reducer.py`
+  sidecar. Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T23:59:18+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact:
   `TaskDocNode.orchestrates` (additive `list[str]`, projection.py) + the `snapshots._task_doc_node`
   pass-through — the orchestration-command relation rides the served projection so the dashboard

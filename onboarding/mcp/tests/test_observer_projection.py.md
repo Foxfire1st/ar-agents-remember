@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:58:42+02:00                     |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T05:16+02:00                     |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -48,7 +48,11 @@ seeds the real series shape — lowercase enclosure leaf id, uppercase doc id, n
 matching neither, no lifecycleId/enclosures[] on the doc — and asserts `read_task_documents` still
 attaches the enclosure's lifecycle.
 
-Slice 3b adds: `TokenSeriesTests` (cumulative fuel gauge from `tool.completed`),
+Slice 3b adds: `TokenSeriesTests` (cumulative fuel gauge from `tool.completed`; **260703-L15**
+extends the suite with the served bound — `_tool_log(count)` builds token-bearing logs, a series
+at exactly `TOKEN_SERIES_MAX` is untouched, and a 3000-call series decimates to the bound with
+the newest `TOKEN_SERIES_RECENT` cumulative values exact, the first sample kept, the sequence
+still monotonic, and the final cumulative equal to the full fold's),
 `StalenessHistogramTests` (age bucketing), `AnalyticsAssemblyTests` (bounded
 stalest leaderboard, `project_workspace` wiring analytics + histogram, and 3a
 callers getting empty analytics), the seven reader suites
@@ -243,6 +247,12 @@ still projects — it is NOT archived — but with both flags False until `workt
 directories).
 
 ## Update History
+
+- 2026-07-07T05:16+02:00 — 260703-L15 S2: `TokenSeriesTests` gained the served-bound coverage —
+  `_tool_log` builder, at-the-bound untouched, and the 3000-sample decimation case (length ==
+  `TOKEN_SERIES_MAX`, newest `TOKEN_SERIES_RECENT` exact, first sample kept, monotonic, total
+  preserved); `TOKEN_SERIES_MAX`/`TOKEN_SERIES_RECENT` joined the reducer imports.
+  Verification metadata pinned until closeout stamps the L15 commit.
 
 - 2026-07-06T23:58:42+02:00 — 260703-L14 (visual hierarchy + chat grouping): added
   `TaskDocumentsReaderTests.test_exposes_orchestrates_on_the_task_doc_node` — a master doc with

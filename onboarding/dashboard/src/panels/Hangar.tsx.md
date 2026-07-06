@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Hangar.tsx`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:25+02:00                           |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastUpdated            | 2026-07-07T10:50+02:00                           |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -28,6 +28,8 @@ count reflects worktrees that physically exist / still need action, and a reopen
 ## Code Commentary
 
 ### Logic
+
+Since L15 the panel's served ages advance LOCALLY: the wire carries stable forms without the volatile *Seconds fields, so the panel derives display ages from per-object arrival anchors (data/servedAges.ts) refreshed by a 10-second useNowMs ticker — the deliberate, disclosed deviation from the no-re-render ideal that replaced the per-second whole-payload churn.
 
 First **filters to enclosures whose worktrees physically exist**, then lists the rest (sorted) with
 closeout/integration/cleanup `badge`s + the cross-ref lifecycle's staleness. The filter is the shared
@@ -64,6 +66,13 @@ instructional chat injections through `GateResponder`, not enclosure status muta
 
 ## Update History
 
+- 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
+
+- 2026-07-07T05:28+02:00 — 260703-L15 S1: the row staleness readout now advances locally —
+  `fmtWait(servedAgeSeconds(lifecycle, lifecycle?.staleSeconds, nowMs))` with a panel-level
+  `useNowMs()` (10 s tick). The change gate stopped re-serving nodes whose only movement is
+  their age, so the served value is an anchor, not a live feed.
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T02:25+02:00 — 260703-L11: visibility flipped from the `ARCHIVED_CLEANUP` cleanup-state
   proxy to worktree-existence truth — rows filter through the shared `hasLiveWorktree` selector over the
   new `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags, so a reopened contract

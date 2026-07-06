@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`       |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-07T05:12+02:00 |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -71,7 +71,13 @@ enclosures with their actions, and rolls up `Metrics`.
 
 **Slice-3b rollups** keep the fold pure: `token_series(events)` builds a
 lifecycle's cumulative-token fuel gauge from its `tool.completed` events (set on
-the projection in `project_lifecycle`); `staleness_histogram` buckets sidecar
+the projection in `project_lifecycle`). **Served bounded since 260703-L15:** past
+`TOKEN_SERIES_MAX` (512) points, `_decimate_token_series` uniform-thins the older
+history (first sample always kept, `cumulative` stays exact per retained sample —
+still a monotonic gauge) while the newest `TOKEN_SERIES_RECENT` (256) samples stay
+complete; the observer LOG keeps every event — only the served projection is
+bounded (an uncapped series rode ~60 B/sample on EVERY lifecycle delta while its
+agent worked: 10k tool calls ≈ 600 KB/delta). `staleness_histogram` buckets sidecar
 verification ages (fed into `Metrics.stalenessHistogram`); and `build_analytics`
 assembles the `Analytics` block, collapsing the full sidecar list to a bounded
 stalest-first leaderboard (`_stalest`). `project_workspace` gained
@@ -273,6 +279,12 @@ prior structural/analytical callers remain unchanged.
 As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks generic lifecycle vocabulary ("the lifecycle phase") rather than naming the retired session-job skill; the inference logic itself is unchanged.
 
 ## Update History
+
+- 2026-07-07T05:12+02:00 — 260703-L15 S2 (bounded served buffers): `token_series` now decimates
+  past `TOKEN_SERIES_MAX` (512) via `_decimate_token_series` — newest `TOKEN_SERIES_RECENT`
+  (256) exact, older history uniform-thinned with the first sample kept; cumulative stays
+  monotonic. Bounds the fuel gauge riding every lifecycle delta; the observer log stays
+  complete. Verification metadata pinned until closeout stamps the L15 commit.
 
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: phase-inference comment re-worded (lifecycle phase, not l-01 phase); behavior unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: `_gate_node` passes gate

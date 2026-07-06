@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:24+02:00                     |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T10:50+02:00                           |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -51,6 +51,8 @@ cannot consume the whole title lane.
 ## Code Commentary
 
 ### Logic
+
+Since L15 the panel's served ages advance LOCALLY: the wire carries stable forms without the volatile *Seconds fields, so the panel derives display ages from per-object arrival anchors (data/servedAges.ts) refreshed by a 10-second useNowMs ticker — the deliberate, disclosed deviation from the no-re-render ideal that replaced the per-second whole-payload churn.
 
 L11 review follow-up (L11R-2): `lifecycleForEnclosure`'s anchor fallback is now deterministic — among lifecycles anchoring one enclosure without a contract `lifecycleId`, the greatest `lastEventTs` (most recently active) annotates the row, never projection order.
 
@@ -199,6 +201,14 @@ list.
 
 ## Update History
 
+- 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
+
+- 2026-07-07T05:34+02:00 — 260703-L15 S1: row staleness advances locally — `OperationRowsInput`
+  gained `nowMs` (from a component-level `useNowMs()`, 10 s tick), threaded through
+  `docRow`/`seriesRow`/`lifecycleRow` into `rowMetaText` via
+  `servedAgeSeconds(lifecycle, …staleSeconds, nowMs)`; the change gate stopped re-serving
+  lifecycles whose only movement is their age.
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T23:56:24+02:00 — 260703-L14 (visual hierarchy + chat grouping): the tasks tab gained the
   orchestration tier — `OperationRow.tier` derived by `commandFacts` (orchestration = a master doc
   with `orchestrates`; management = a master an orchestration doc names, matched folder/id/title,
