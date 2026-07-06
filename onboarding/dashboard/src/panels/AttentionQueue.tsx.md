@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/AttentionQueue.tsx`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-07T10:50+02:00                           |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,6 +27,8 @@ their source condition clears.
 ## Code Commentary
 
 ### Logic
+
+Since L15 the panel's served ages advance LOCALLY: the wire carries stable forms without the volatile *Seconds fields, so the panel derives display ages from per-object arrival anchors (data/servedAges.ts) refreshed by a 10-second useNowMs ticker — the deliberate, disclosed deviation from the no-re-render ideal that replaced the per-second whole-payload churn.
 
 Reads `selectQueue` (the reducer's `analytics.attentionQueue`, already severity-sorted) plus
 `analytics.taskDocuments`. `taskForAttention` resolves a lifecycle-bound attention item to its
@@ -64,6 +66,12 @@ by this component.
 
 ## Update History
 
+- 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
+
+- 2026-07-07T05:30+02:00 — 260703-L15 S1: item wait times now advance locally —
+  `fmtWait(servedAgeSeconds(q, q.waitSeconds, nowMs))` with a panel-level `useNowMs()` (10 s
+  tick), because the change gate no longer re-serves the queue every tick just to age the waits.
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `Dismiss`/`Clear all` now hide rows immediately via
   store-level optimistic suppression, release failed POSTs, and include targetless actionable-drift rows
   as the repo-level one-shot dismiss case. Verification metadata pinned until closeout stamps the task-29

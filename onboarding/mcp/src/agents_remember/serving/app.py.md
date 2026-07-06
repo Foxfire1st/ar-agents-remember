@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T01:30+02:00                    |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-07T05:10+02:00                    |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331` |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,9 +51,15 @@ constructs a `ProviderStateRefresher`, while sim mode disables provider refresh 
 fixtures stay deterministic. Tests can still force either branch explicitly.
 
 - `GET /api/state` returns the current projection once as `model_dump(by_alias=True,
-  exclude_none=True)` (503 until the first projection exists) — curl-friendly, no streaming.
+  exclude_none=True)` plus the boot-time `servingBuild` stamp (503 until the first projection
+  exists) — curl-friendly, no streaming. **Change-gated (260703-L15):** the response carries a
+  weak `ETag: W/"<projector.revision(seq)>"` + `Cache-Control: no-cache`, and an `If-None-Match`
+  that weak-matches (via the module-level `_if_none_match_matches` — `*`, comma lists, `W/`
+  prefixes) returns `304` with the same headers and an empty body, skipping the whole dump. The
+  revision only advances on stable-content change (delta.py's volatile-age-free diff), so a
+  poller of an unchanged projection pays a header exchange instead of a ~780 KB parse.
 - `GET /api/stream` (`response_class=EventSourceResponse`) delegates to the module-level
-  `stream_events(projector)` so the sequence is unit-testable without an HTTP client.
+  `stream_events(projector, build=build)` so the sequence is unit-testable without an HTTP client.
 - `GET /api/events` (`response_class=EventSourceResponse`) delegates to
   `serving.events.stream_raw_events(config, last_event_id=…)`, reading the `Last-Event-ID`
   header via `Annotated[str | None, Header()]` for exact byte-offset resume. It is a *separate*
@@ -155,10 +161,12 @@ fixtures stay deterministic. Tests can still force either branch explicitly.
   `GET /api/notes/{list,read}` coordination-notes routes after the change-set routes and still
   **before** `mount_static`. The handlers live in `serving/notes.py`.
 
-`stream_events(projector)` yields an `event:snapshot` with the full projection on connect, then
-per-entity delta events from `projector.subscribe()`. `_encode` dumps projection nodes by alias
-(camelCase, `exclude_none`) and passes removal markers (`{key: id}`) through as-is. SSE uses
-built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive).
+`stream_events(projector, *, build=None)` yields an `event:snapshot` with the full projection on
+connect — carrying `servingBuild` (the boot-time stamp from `serving/build_info.py`, resolved once
+in `create_app`; 260703-L15 stale-server visibility) when `build` is passed — then per-entity
+delta events from `projector.subscribe()`. `_encode` dumps projection nodes by alias (camelCase,
+`exclude_none`) and passes removal markers (`{key: id}`) through as-is. SSE uses built-in
+`fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive).
 
 ## Invariants And Boundaries
 
@@ -176,6 +184,10 @@ built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive
   *enforcement* — the mutating MCP tools bind it.
 - **Two SSE channels, two resume models:** the `state` channel re-snapshots on reconnect; the
   raw `event` channel resumes by exact byte offset (`Last-Event-ID`). They stay separate.
+- **The `/api/state` ETag is a content fingerprint, not a byte fingerprint (260703-L15):** two
+  200 bodies under one revision can differ in `generatedAt` and volatile ages (recomputed at
+  request time) — that is exactly the change-gating semantics, hence the WEAK ETag form. The
+  `servingBuild` stamp is app-layer only (never on `WorkspaceProjection`/`latest-state.json`).
 - **Terminal bridge (6d-2):** binary-out / JSON-text-in over one WebSocket; the wire carries only
   `stdin`/`resize` control shapes, never a command (the host spawns a fixed argv). Attach-only,
   localhost-bound like the rest; the bridge helpers (`_bridge_terminal` / `_terminal_to_socket` /
@@ -203,7 +215,8 @@ built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive
 
 | Finding | Source Path |
 | --- | --- |
-| The shared tick/fan-out loop the app drives (with the `now`/`before_tick` seams). | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| The shared tick/fan-out loop the app drives (with the `now`/`before_tick` seams) + the ETag revision. | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| The boot-time serving build stamp injected on `/api/state` + the SSE snapshot. | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
 | The raw `event` channel `/api/events` delegates to. | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
 | The pure action evaluation `/api/actions/{action}` delegates to. | [actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
 | The gate write-path the router calls for a gate-decision verb (slice 6b). | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
@@ -222,6 +235,11 @@ built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive
 
 ## Update History
 
+- 2026-07-07T05:10+02:00 — 260703-L15 (S1 + S3): `/api/state` gained the change gate — weak
+  `ETag` from `projector.revision(seq)`, `If-None-Match` → `304` via `_if_none_match_matches`,
+  `Cache-Control: no-cache` — and both `/api/state` and the SSE snapshot now carry the boot-time
+  `servingBuild` stamp (`resolve_serving_build()` once in `create_app`; `stream_events` gained
+  the `build` keyword). Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T01:30+02:00 — agent-orchestration L9: `create_app` now also calls
   `register_notes_routes(app, config)` between `register_changeset_routes` and `mount_static`,
   mounting the read-only `/api/notes/{list,read}` coordination-notes API (handlers in

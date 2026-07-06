@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-30                                       |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-07T10:50+02:00                           |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -25,6 +25,8 @@ drilling into a master's sub-task the rail heading is the drilled **leaf** id, n
 ## Code Commentary
 
 ### Logic
+
+L15 adds the servingBuild stamp assertions (renders commit + boot time when present; absent-field tolerance for old payloads).
 
 A local `seed(stateName)` applies a `GALLERY` fixture projection to the real Zustand store
 (`dashboardStore.getState().applySnapshot(...)`) — the same hydration the dev bench uses. The lazy
@@ -71,6 +73,13 @@ single-select), driven by `fireEvent.click`. Uses plain `container.querySelector
 
 ## Update History
 
+- 2026-07-07T10:50+02:00 — L15: servingBuild stamp tests added. Verification metadata pinned until closeout stamps the L15 commit.
+
+- 2026-07-07T05:26+02:00 — 260703-L15 S3: added the serving-build stamp describe — the muted
+  stamp renders the snapshot's commit short-hash + "up <boot time>", falls back to `v<version>`
+  when the stamp has no commit, and renders NOTHING when the wire carries no `servingBuild`
+  (a pre-L15 server; never faked).
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-06-30T00:00:00+02:00 — L5 follow-up: added a `seedDrillableMaster` (+ `taskDoc` factory) and a "rail chat keys by
   the drilled leaf, not the master" case — drilling a master's sub-task makes the `rail-chat-heading` the
   leaf id, not the master, pinning the displayed-leaf key (L5 fix 1). Also mocked the lazy

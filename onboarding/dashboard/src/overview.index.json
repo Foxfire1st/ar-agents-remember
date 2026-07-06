@@ -37,6 +37,8 @@
     "dashboard/src/data/selection.ts",
     "dashboard/src/data/selectors.test.ts",
     "dashboard/src/data/selectors.ts",
+    "dashboard/src/data/servedAges.test.ts",
+    "dashboard/src/data/servedAges.ts",
     "dashboard/src/data/sessionGroups.test.ts",
     "dashboard/src/data/sessionGroups.ts",
     "dashboard/src/data/sessions.test.ts",
@@ -67,8 +69,8 @@
     "dashboard/src/types/projection.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 131,
-    "fileSidecars": 44,
+    "sourceFilesInScope": 133,
+    "fileSidecars": 46,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -97,6 +99,7 @@
     "scenarios",
     "selection",
     "selectors",
+    "servedages",
     "sessiongroups",
     "sessions",
     "setup",
@@ -137,9 +140,9 @@
       "dashboard/src/data/selection.ts",
       "dashboard/src/data/selectors.test.ts",
       "dashboard/src/data/selectors.ts",
-      "dashboard/src/data/sessionGroups.test.ts",
-      "dashboard/src/data/sessionGroups.ts",
-      "dashboard/src/data/sessions.test.ts"
+      "dashboard/src/data/servedAges.test.ts",
+      "dashboard/src/data/servedAges.ts",
+      "dashboard/src/data/sessionGroups.test.ts"
     ],
     "anchorHints": [
       "Cockpit.test.tsx",
@@ -174,6 +177,10 @@
       "selectors.test",
       "selectors.ts",
       "selectors",
+      "servedAges.test.ts",
+      "servedAges.test",
+      "servedAges.ts",
+      "servedAges",
       "sessionGroups.test.ts",
       "sessionGroups.test",
       "sessionGroups.ts",
@@ -185,11 +192,7 @@
       "store.test.ts",
       "store.test",
       "store.ts",
-      "store",
-      "stream.ts",
-      "stream",
-      "taskHierarchy.ts",
-      "taskHierarchy"
+      "store"
     ]
   },
   "fallback": {

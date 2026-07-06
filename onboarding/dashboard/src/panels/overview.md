@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T23:57:24+02:00 |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T10:55+02:00 |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -311,6 +311,11 @@ and the `Chats` `SessionList` switcher).
 - **The Panel primitive owns chrome** — bg/border + scroll + the sticky header band; panels pass a
   sizing `className` (flex / max-height) for their rail/viewport slot.
 
+Since L15 the age-displaying panels (AttentionQueue, Hangar, LifecycleList, MemoryMirror) derive
+their served ages LOCALLY from per-object arrival anchors (`data/servedAges.ts`) on a 10-second
+ticker — the wire's stable forms carry no volatile `*Seconds` fields anymore, which is what keeps
+an idle dashboard at zero store writes.
+
 ## Repo-Internal References
 
 | Finding | Source Path |
@@ -323,6 +328,14 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-07T10:55+02:00 — L15 route impact (body): the four age panels' served-ages local-advance pattern documented. Verification metadata pinned until closeout stamps the L15 commit.
+
+- 2026-07-07T05:40+02:00 — 260703-L15 route impact (small): the four age-display panels
+  (`Hangar.tsx`, `AttentionQueue.tsx`, `MemoryMirror.tsx`, `LifecycleList.tsx`) now advance served
+  ages locally — `servedAgeSeconds(node, …Seconds, nowMs)` + a panel-level `useNowMs()` 10 s tick
+  (`data/servedAges.ts`) — because the L15 change gate stopped re-serving nodes whose only
+  movement is their age. No layout/behavior change otherwise; the panels route model is unchanged.
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T23:57:24+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): the tasks tab
   gained the orchestration tier (gold/purple V4 command rows over `TaskDocNode.orchestrates`, N-depth
   `BY REPO` hierarchy, 22px indent grammar, `grammar/RankBadge` insignia — see `LifecycleList.tsx`),

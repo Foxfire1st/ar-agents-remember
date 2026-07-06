@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:18+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-07T10:50+02:00                           |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -35,6 +35,8 @@ Add-to-chat composer.
 ## Code Commentary
 
 ### Logic
+
+Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance.
 
 `Cockpit` wires the two SSE streams (`connectState`, `connectEvents`→`pushEvent`) then renders
 `CockpitShell` (split out so the dev gallery renders the same surface against fixtures). `CockpitShell`
@@ -138,6 +140,15 @@ must derive it through the task-identity helper.
 
 ## Update History
 
+- 2026-07-07T10:50+02:00 — L15: servingBuild stamp in the top bar (build_info via /api/state). Verification metadata pinned until closeout stamps the L15 commit.
+
+- 2026-07-07T05:24+02:00 — 260703-L15 S3 (stale-server visibility): the top bar gained the muted
+  `ServingBuildStamp` (`data-testid="serving-build"`, rendered between the `@ hh:mm:ss` stamp and
+  the conn badge) — commit short-hash (or `v<version>` off-checkout) + "up <boot time>", read from
+  the store's snapshot-fed `servingBuild`; renders nothing when the wire carries no stamp (a
+  pre-L15 server), never fakes. Note: with the L15 change gate, the top bar's `@ hh:mm:ss`
+  (`generatedAt`) is the stamp of the last APPLIED content, frozen while idle by design.
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-02T16:18+02:00 — L8: `CockpitShell` now threads `viewedLeafKey` and active right-rail chat
   state into `HighlightComposer` beside `selectedLifecycleId`, so highlighted text from the displayed leaf
   can be routed to the adjacent leaf chat draft while global/off-leaf selections keep the generic

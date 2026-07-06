@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-06T23:59:48+02:00 |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T05:44+02:00 |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331` |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -432,6 +432,13 @@ into the role files.
 
 ## Update History
 
+- 2026-07-07T10:55+02:00 — No route impact: L15's mcp-side changes live in the serving/observer sub-routes (stable-form deltas, build info, tokenSeries decimation) — the mcp package route model is unchanged; details in the sub-route overviews and file sidecars.
+
+- 2026-07-07T05:44+02:00 — 260703-L15 attestation: reviewed this overview against the L15 test
+  changes — `tests/test_serving.py` gained the change-gate delta cases + `StateEtagTests` +
+  `BuildInfoTests`, and `tests/test_observer_projection.py` the token-series decimation cases;
+  the tests route model as described still holds (details in the two test sidecars).
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-07-06T23:59:58+02:00 — No route impact: L14's mcp-package changes live in the tools/controllers/models/serving sub-routes (orchestrates field, spawnRole seam) — the mcp package route model this overview describes is unchanged; details in the sub-route overviews and file sidecars.
 
 - 2026-07-06T23:59:48+02:00 — 260703-L14 (visual hierarchy + chat grouping) test-route impact: five suites extended — `test_task_document.py` (orchestrates schema/render/set_field), `test_observer_projection.py` (TaskDocNode.orchestrates exposure), `test_terminal_catalog.py` (spawnRole round-trip), `test_terminal_opener.py` (AR_SPAWN_ROLE recording + write-once preservation), `test_spawn_agent_session.py` (spawnRole in the payload). Verification metadata pinned until closeout stamps the L14 commit.

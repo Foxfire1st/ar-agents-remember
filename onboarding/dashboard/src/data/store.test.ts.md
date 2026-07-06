@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T13:54+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-07T05:20+02:00                           |
+| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
+| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -17,10 +17,12 @@
 ## Purpose
 
 Vitest unit tests for the dashboard Zustand store (`store.ts`). They pin the store's public reducer
-contract without rendering React: the bounded sliding-window `pushEvent` behavior, wholesale snapshot
+contract without rendering React: the bounded sliding-window `pushEvent` behavior, snapshot
 folding into id-keyed maps, the named-delta upsert/removed paths, whole-object metrics/analytics
-replacement, and the connection state channel. The sliding-window test is the task-34 guard that the
-raw Event-River buffer stays bounded.
+replacement, the connection state channel, and — since 260703-L15 — the **change gate** (idle
+payloads cost zero store writes, identity stays stable) plus the **long-session guard** (500
+simulated idle ticks with event traffic stay flat). The sliding-window test is the task-34 guard
+that the raw Event-River buffer stays bounded.
 
 ## Code Commentary
 
@@ -40,6 +42,18 @@ to an empty baseline (it does NOT reset `events`/`eventsHydrated`, so the event 
   `applyDelta`'s `lifecycle` upsert and `lifecycle.removed` paths.
 - `replaces metrics / analytics wholesale` — `applyDelta("metrics", …)` swaps the whole object.
 - `marks the connection signal-lost` — `setConn` flips the channel.
+
+**The change-gate describe (260703-L15):** `volatileBump(source, tick)` builds a byte-fresh copy
+(JSON round-trip, like a real wire parse) with `generatedAt` moved and every volatile age bumped —
+the exact shape of an idle tick. The cases: 50 idle re-snapshots fire ZERO subscriber
+notifications and leave `getState()` the SAME object (lifecycles/analytics/generatedAt identity
+included); a redundant volatile-only `lifecycle` delta and a removed-marker for an absent id are
+both no-writes; a real delta still applies exactly as before; a snapshot carrying ONE real change
+applies it while every untouched node keeps identity; and the `servingBuild` stamp rides the
+snapshot and keeps identity across stable re-sends. **The long-session guard describe:** 500
+simulated idle ticks interleaved with 2,500 `pushEvent` lines leave the lifecycles/analytics
+references untouched, the event window ≤ 2000, and the collection sizes constant — the
+CI-encoded "a working day stays flat" contract.
 
 ### Conventions
 
@@ -93,6 +107,12 @@ No meaningful cross-repo references found. These tests are local to the dashboar
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-07-07T05:20+02:00 — 260703-L15: added the change-gate describe (`volatileBump` idle-tick
+  builder; zero-writes/identity across 50 idle re-snapshots; redundant delta + absent removed-
+  marker no-writes; real-delta semantics preserved; per-node identity reuse; `servingBuild`
+  identity) and the long-session guard (500 idle ticks + 2,500 events stay flat); `beforeEach`
+  baseline gained `servingBuild: null`.
+  Verification metadata pinned until closeout stamps the L15 commit.
 - 2026-06-28T13:54+02:00 — Created for task 34: this previously-untracked store test file gained a
   bounded sliding-window guard (`slides the event window …`) asserting `EVENT_WINDOW` (2000) caps the
   client buffer (newest retained, oldest dropped), alongside the existing snapshot/delta/metrics/conn
