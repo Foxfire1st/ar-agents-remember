@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T12:05+02:00 |
-| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
-| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -132,6 +132,7 @@ The README describes external memory in general terms, but this file-level onboa
 
 ## Update History
 
+- 2026-07-07T21:10+02:00 — No content impact: release 4922146 bumped the Status/install version strings 3.0.0rc2 -> 3.0.0rc3; the body describes the version generically ('bumped every release'), so nothing goes stale. (Reconciliation: the bump landed as a direct owner commit between the L17 and L18 closeouts.)
 - 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep): the workflow sentence after the quickstart and the Workflows docs-index line now name the `l-01-agent-lifecycles` skill (orchestrator + role briefs; research-only exit / `w-02-light-task-workflow` task / master series — the chat build removed), and the Status 3.0-arc paragraph says "system-managed agent lifecycle". The `docs/**` pages (workflows, getting-started, features, llms.txt, FAQ, concepts, reference/skills, reference/runtime-layout, install/claude-code, docs/README) were swept in the same pass but stay outside file-level onboarding per path rules. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-03T12:05+02:00 — 260703 L4: Status version string bumped to 3.0.0rc2 (structure
   unchanged); the sidecar's Status reference row became version-generic so release bumps stop

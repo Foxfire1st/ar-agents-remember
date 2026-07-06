@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-07T05:44+02:00 |
-| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc` |
-| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -438,6 +438,11 @@ into the role files.
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 (review fix batch) hardens
+  `kernel/agentic_settings.py` (finding 6: a `null` at a known `orchestration.*` family key refuses
+  loudly in either layer; finding 4: `effortSessionCommand` templates are validated post-merge) and
+  adds regression tests across the mcp suites; no mcp route surface or module split changed (detail in
+  the file sidecars).
 - 2026-07-07T16:20+02:00 — No route impact: 260703-L17 is frontend-only — the only mcp-side change is the generated `package_data/dashboard` mirror advancing with the rebuilt dashboard dist (sync-dashboard); no mcp source or behavior changed.
 - 2026-07-07T10:55+02:00 — No route impact: L15's mcp-side changes live in the serving/observer sub-routes (stable-form deltas, build info, tokenSeries decimation) — the mcp package route model is unchanged; details in the sub-route overviews and file sidecars.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application) route impact: the L13 knob chain is

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
-| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb`       |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -70,6 +70,10 @@ the reader kept mounted-hidden so selection survives.
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 2 renders the "Showing the first 2 MiB"
+  truncation banner above the DualPane for a truncated markdown note (DualPane's banner lives only in
+  CodeSide, which the markdown path never reaches); the Notes Reader takeover this overview describes is
+  unchanged (detail in the file sidecar).
 - 2026-07-07T14:00+02:00 — Created for agent-orchestration L17 (Notes reader v2): the Notes Reader child
   route — a task-scoped takeover over the unchanged L9 `/api/notes/*` API (a notes-tree rail with
   highlight-follows-selection + reports/, a content pane that REUSES `DualPane`), replacing the retired

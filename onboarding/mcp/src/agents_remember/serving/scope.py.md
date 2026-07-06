@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/scope.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T09:30+02:00                     |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00                     |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -52,8 +52,16 @@ code_repository_root` as the code root, and **degrades to a code-only scope**
 longer exists, tolerating a malformed contract (`ContractError`/`OSError` → skip).
 `_resolve_within(root, rel)` (L156-L164) is the per-call confinement: `""`/`"."` is the
 root, everything else goes through `confine_rel` (so an absolute or escaping path is
-rejected, never silently re-rooted). `language_for(path)` (L61-L63) maps a file extension
-to the dashboard language id via `_LANG_BY_EXT` (`text` fallback).
+rejected, never silently re-rooted). `language_for(path)` maps a file extension
+to the dashboard language id via `_LANG_BY_EXT` (`text` fallback). `decode_capped(raw, cap)
+-> (text, truncated)` is the shared read-cap decoder (260703-L18 finding 5): it decodes the
+first `cap` bytes as UTF-8 but backward-scans off any partial trailing character first (UTF-8
+continuation bytes are `0b10xxxxxx`, a character is ≤4 bytes, so it steps `end` back ≤3 bytes
+to a lead byte). This keeps a multi-byte character straddling the cap from raising
+`UnicodeDecodeError` and misreporting an oversize TEXT file as empty `binary`; genuinely
+non-UTF-8 content still raises (the callers keep classifying that as binary). Both
+`serving/notes.py::read_note` and `serving/files.py::read_file`/`_onboarding_doc_body` call it,
+staying in lockstep.
 
 ### Conventions
 
@@ -88,6 +96,13 @@ modules.
 | The test asserting the extraction (files.py re-exports `FileScope`/`_resolve_within`). | [test_serving_changeset.py](agents-remember/mcp/tests/test_serving_changeset.py) |
 
 ## Update History
+
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): added the shared
+  `decode_capped(raw, cap)` helper — a codepoint-boundary read cap (backward-scan ≤3 bytes) so a
+  multi-byte char straddling the 2-MiB cap no longer misdecodes an oversize text/markdown file into
+  empty `binary`. `read_note`, `read_file`, and `_onboarding_doc_body` now share it (lockstep).
+  Boundary tests live in the notes + files suites. Verification metadata pinned until closeout stamps
+  the L18 commit.
 
 - 2026-07-06T09:30+02:00 — L9 adversarial-review ride-along (L9R-1): ValueError (null-byte path) now maps to 400 bad-path in the shared scope status mapper; regression test added. Verification metadata pinned until closeout stamps the L9 commit.
 

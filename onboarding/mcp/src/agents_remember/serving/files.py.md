@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/files.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00                     |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -71,7 +71,10 @@ contract (`ContractError`/`OSError` → skip, never abort).
 plus the parallel onboarding children from `onboarding_root` when present.
 `read_file(scope, rel)` serves a file's content (capped at `_MAX_FILE_BYTES` = 2
 MiB with a `truncated` flag; a non-UTF-8 file degrades to `language:"binary"`,
-empty content) and `_onboarding_meta` (the drift-bearing
+empty content) — since 260703-L18 (finding 5) the cap goes through the shared
+`scope.decode_capped`, cutting at a UTF-8 codepoint boundary so a multi-byte char
+straddling the cap returns the first ~2 MiB + `truncated:true` instead of empty
+`binary` — and `_onboarding_meta` (the drift-bearing
 `lastVerifiedCommitHash`/`Date` when a sidecar is present, else `status:"missing"`).
 `resolve_onboarding` (forward) returns a code path's sidecar status + body;
 `resolve_partner` (reverse) maps a sidecar to its partner code path (with an
@@ -81,9 +84,10 @@ carries its own `"body"` (via `_onboarding_doc_body`) — the File Viewer render
 markdown directly instead of showing an empty "no code partner" placeholder, so a
 route overview is readable, not just an unopenable tree leaf.
 `_onboarding_doc_body(scope, rel)` reads that raw text from the onboarding root with the
-same guards as `read_file` — confined through `_resolve_within`, capped at `_MAX_FILE_BYTES`,
-and binary-tolerant — returning `None` for a missing / unreadable / non-UTF-8 file (the reader
-then falls back to the placeholder) and `None` when the scope has no onboarding root.
+same guards as `read_file` — confined through `_resolve_within`, capped at `_MAX_FILE_BYTES`
+via the same `scope.decode_capped` codepoint-boundary cut, and binary-tolerant — returning
+`None` for a missing / unreadable / non-UTF-8 file (the reader then falls back to the
+placeholder) and `None` when the scope has no onboarding root.
 `_resolve_within(root, rel)` is the per-call confinement: `""`/`"."` is the root,
 everything else goes through `confine_rel` (so an absolute or escaping path is
 rejected, never silently re-rooted).
@@ -125,6 +129,12 @@ rejected, never silently re-rooted).
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): `read_file` and
+  `_onboarding_doc_body` now cap through the shared `scope.decode_capped`, which cuts at a UTF-8
+  codepoint boundary — an oversize text file (or overview) whose multi-byte char straddles the 2-MiB
+  cap returns its first ~2 MiB with `truncated:true` instead of misdecoding into empty `binary`.
+  Boundary test added to `test_serving_files.py`. Verification metadata pinned until closeout stamps
+  the L18 commit.
 - 2026-06-30T00:00:00+02:00 — operations-integration L5: the reverse-pairing overview node now carries its own
   markdown `body` via the new `_onboarding_doc_body(scope, rel)` (confined, size-capped,
   binary-tolerant; `None` on missing/unreadable/binary or no onboarding root), so the File Viewer can

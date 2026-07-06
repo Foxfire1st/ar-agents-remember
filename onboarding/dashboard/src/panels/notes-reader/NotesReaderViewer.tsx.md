@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
-| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00                           |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb`       |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -46,6 +46,11 @@ selection survives back/forward.
   (`noteAsFileContent`) rendered through DualPane's `CodeSide` (read-only CodeMirror); a **binary** note
   degrades to DualPane's byte-count placeholder. Loading/failed render a local `note-status` placeholder
   (a distinct testid from DualPane's `pane-placeholder` so a binary note's placeholder is unambiguous).
+- **Truncation banner** (260703-L18 finding 2): DualPane's "Showing the first 2 MiB" banner lives only in
+  `CodeSide`, which the markdown path never reaches — so a truncated MARKDOWN note (the dominant note type)
+  would silently drop the truncation contract. When `note.truncated && note.language === "markdown"` the
+  view renders the same banner (`notes-trunc-banner`, matching CodeSide's wording/style) ABOVE the DualPane;
+  text notes keep CodeSide's own banner.
 
 ### Conventions
 
@@ -82,6 +87,12 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 2): render the "Showing the first 2 MiB"
+  truncation banner (`notes-trunc-banner`) above the DualPane when a note is `truncated && markdown` —
+  DualPane's banner lives only in `CodeSide`, which markdown (the dominant note type) never reaches, so the
+  banner is added here for that case (CodeSide's exact wording/style). Component test asserts the banner
+  for a truncated markdown note and its absence for a normal one. Verification metadata pinned until
+  closeout stamps the L18 commit.
 - 2026-07-07T14:00+02:00 — Created for agent-orchestration L17: the Notes Reader takeover on the file-viewer
   chrome — a notes-tree rail (highlight-follows-selection, reports/ included) + a content pane that REUSES
   `DualPane` (markdown as a partnerless overview, text through CodeSide, binary placeholder). Controlled by

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_serving_notes.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T09:30+02:00                     |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00                     |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -41,7 +41,10 @@ the real HTTP surface, never against hand-aligned internals. Coverage groups:
 - **Reading** — a markdown note round-trips content + `language: "markdown"`; a nested
   `reports/` note reads; a binary blob answers `language: "binary"` with empty content
   and the true `size`; an oversize file truncates at `_MAX_FILE_BYTES` while reporting
-  the full size; an absent note is `404 not-found`.
+  the full size; an absent note is `404 not-found`. **260703-L18 (finding 5):**
+  `test_read_oversize_multibyte_boundary_returns_text_not_binary` seeds an oversize markdown
+  note whose multi-byte char straddles the cap and asserts `language: "markdown"` (NOT
+  `binary`) with non-empty content — the codepoint-boundary cut.
 - **Confinement + selector** — `../` traversal and an absolute path are `400 bad-path`;
   a symlink escape on read is `400 bad-path`; an unknown repo is `404 unknown-repo`; a
   multi-segment / dot-prefixed / empty `master` is `400 bad-request` (subTest sweep);
@@ -76,6 +79,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): added
+  `test_read_oversize_multibyte_boundary_returns_text_not_binary` — an oversize markdown note with a
+  multi-byte char straddling the 2-MiB cap reads back as `markdown` + non-empty content, pinning the
+  codepoint-boundary cut. Verification metadata pinned until closeout stamps the L18 commit.
 - 2026-07-06T09:30+02:00 — L9 adversarial-review follow-up: null-byte path regression test added (L9R-1). Verification metadata pinned until closeout stamps the L9 commit.
 
 - 2026-07-06T01:20+02:00 — Created for agent-orchestration L9: 15 API-layer tests over

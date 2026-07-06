@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
-| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00 |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -41,7 +41,10 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   top-level key coexists while a typo'd `orchestration.*` key still fails),
   malformed JSON and non-object roots fail loud with the path, and per-family
   unknown-key refusals (gateDelegation, loop defaults, role names,
-  concurrency caps).
+  concurrency caps). **260703-L18 (finding 6):** a JSON `null` at a known family
+  key refuses loudly — one test walks concurrency/roles/loops/spawn/rolesPerLevel/
+  harnesses in the repo-local layer (proving no silent global wipe), a second
+  proves the global layer refuses too.
 - `TypedModelTests` — the full L12 loop schema round-trips (defaults,
   perLevel, perMaster), partial perLevel keeps the other level defaults,
   maxRounds/concurrency positive-integer validation (bools rejected),
@@ -71,7 +74,11 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   all fail loud; roles/spawn references accept settings-defined ids; a LOCAL
   layer may reference/partially override a GLOBAL entry (per-file validation
   is shape-only, cross-references bind on the merged block); and a reference
-  to an id known nowhere fails naming the harnesses.md manual.
+  to an id known nowhere fails naming the harnesses.md manual. **260703-L18
+  (finding 4):** the `effortSessionCommand` template is validated post-merge —
+  the three bad shapes (`/set {mode}={value}`, `{}`, an unmatched brace) refuse
+  naming the harness, the builtin-override-supplying-only-the-command path is
+  validated, and a `{value}`-only template is accepted.
 - `SeedTests` — `default_agentic_settings_seed()` round-trips through the
   loader to the SAME posture an absent file yields, except
   `gate_delegation_configured` is True (the seed explicitly claims the key's
@@ -116,6 +123,12 @@ No meaningful cross-repo references found.
 | Loader-local behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): `FailLoudTests` gained the
+  null-family refusal tests (repo-local walk across the six families + a global-layer case, proving no
+  silent wipe); `HarnessesFamilyTests` gained the `effortSessionCommand` template-validation tests
+  (three bad shapes, the builtin-override path, and a valid `{value}`-only template). Verification
+  metadata pinned until closeout stamps the L18 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `FreeFormRoleKnobTests`
   (additive escape-hatch parsing, free-string effort at load, shape fail-loud),

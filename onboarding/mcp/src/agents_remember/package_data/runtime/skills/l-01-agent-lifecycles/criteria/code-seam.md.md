@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T15:35+02:00 |
-| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
-| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 
 ## Purpose
 
@@ -26,9 +26,15 @@ real call path, never a hand-aligned harness — AR3-1, the inert integrate cons
 passing hand-aligned test), **CS-2 fail-open hunt** (absent/mistyped addresses must fail closed —
 AR4-1, the exact-string enclosure contract + enclosure-less raise refusal), **CS-3
 validate-then-mutate** (refusal checks before any durable effect — the cycle-6 `wait=false`
-rework). Plus the exploratory mandate (N novel lenses owed, default 2) and the promotion ratchet
-(candidate → standing at ≥2 catches; standing → spot-check after N dry engagements, default 5;
-mechanizable criteria graduate into gates — the closeout body gate is the working example).
+rework). A **Candidate Criteria** tier carries **CS-4 reused-primitive affordance parity**
+(seeded at 260703-L17's review — single catch L17R-2, the DualPane markdown path silently
+dropping the truncation banner) and **CS-5 cross-repo side-effect safety** (seeded at
+260703-L18 from finding 7's CLEAN exemplar — the mid-`worktree_start` official-memory-repo
+ledger write passing validate-then-mutate, partial-failure, dirty-target, and format-round-trip
+analysis; 0 catches). Plus the exploratory mandate (N novel lenses owed, default 2) and the
+promotion ratchet (candidate → standing at ≥2 catches; standing → spot-check after N dry
+engagements, default 5; mechanizable criteria graduate into gates — the closeout body gate is
+the working example).
 
 ### Conventions
 
@@ -71,4 +77,5 @@ No sibling repository evidence is needed for this catalog.
 
 ## Update History
 
+- 2026-07-07T20:55+02:00 — agent-orchestration L18: body de-staled to the current catalog — the Candidate tier now carries CS-4 (reused-primitive affordance parity, seeded at L17's review, one catch) and CS-5 (cross-repo side-effect safety, seeded at L18 from finding 7's clean exemplar). Covers both the 984a303 direct commit (CS-4, previously unreflected in this sidecar) and this leaf's sync. Verification metadata pinned until closeout stamps the L18 commit.
 - 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `criteria/code-seam.md` seed catalog (leaf 260703-L12): CS-1 production-wiring walk (AR3-1), CS-2 fail-open hunt (AR4-1), CS-3 validate-then-mutate, with the exploratory mandate and the promotion ratchet. Verification metadata pinned until closeout stamps the L12 commit.

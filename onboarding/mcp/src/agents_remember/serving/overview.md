@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-07T05:36+02:00 |
-| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`       |
-| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb`       |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -352,6 +352,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 5 adds the shared
+  `scope.decode_capped` codepoint-boundary read cap and wires it through `notes.read_note` /
+  `files.read_file` + `_onboarding_doc_body` — an oversize file whose multi-byte char straddles the
+  2-MiB cap now returns its first ~2 MiB with `truncated:true` instead of empty `binary`; the serving
+  route model this overview describes is unchanged (detail in the file sidecars).
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `harnesses.py` grew the per-harness
   knob→flag mapping (two-vehicle claude effort vocabulary incl. session-level `ultracode`),
   effective-registry lookups, and the dispatch refusal helpers; `terminal_opener.py` applies the

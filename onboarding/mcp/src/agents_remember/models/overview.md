@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
-| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -114,6 +114,10 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 1 declares the additive optional
+  `removedSubtask`/`deletedFiles`/`wouldDeleteFiles` fields on `TaskDocResponse` so a `remove_subtask`
+  success validates against `extra="forbid"`; it stays a STRICT `ToolResponse`, so the strict/flexible
+  split this overview describes is unchanged (detail in the file sidecar).
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application) route impact: `terminal.py`'s
   `SpawnAgentSessionResponse` gained three refusal statuses (`effort-invalid`/`model-invalid`/
   `level-invalid`) and the free-form + level provenance fields (all additive, `None`-omitted). No

@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T12:05+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -88,6 +88,7 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-07-07T21:10+02:00 — No content impact: release 4922146 bumped version 3.0.0rc2 -> 3.0.0rc3 (PEP 440 prerelease); no dependency or build-system change. (Reconciliation: direct owner commit between the L17 and L18 closeouts.)
 - 2026-07-03T12:05+02:00 — No content impact: 260703 L4 bumped version 3.0.0rc1 -> 3.0.0rc2 (PEP
   440 prerelease); no dependency or build-system change.
 - 2026-07-03T11:20+02:00 — No content impact: L14 bumped version 2.9.3 -> 3.0.0rc1 (PEP 440 prerelease); no dependency or build-system change.

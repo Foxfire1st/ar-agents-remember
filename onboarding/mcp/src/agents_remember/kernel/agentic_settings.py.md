@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
-| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00 |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -54,7 +54,16 @@ not foreclose them. Absent files (or an absent `orchestration` key) yield the do
 defaults: all-human gate policy, the L12 loop defaults (`maxRounds` 3, `delta-verify`
 reviewer reuse, complexity high/medium, perLevel scored/seam-required/strategist), no role
 overrides, uncapped concurrency, no spawn preference. Malformed JSON and non-object roots
-fail loud with the path.
+fail loud with the path. A JSON `null` at ANY known `orchestration.*` family key (either
+layer) is REFUSED by `_refuse_null_families` in `_validated_orchestration_block` (260703-L18
+finding 6, developer-ruled `null` = refuse): `null` reads as *absent* to every family parser
+and `merge_settings` REPLACES a non-object, so `"concurrency": null` in the repo-local layer
+would otherwise SILENTLY wipe the global caps — the one scalar collision that used to defeat
+both the deep-merge and fail-loud invariants. The refusal names the offending file with the
+guidance "remove the key to inherit the global value". Ordering: `_refuse_null_families` runs
+inside `_validated_orchestration_block`, so a repo-local `gateDelegation: null` hits the null
+refusal FIRST; the dedicated repo-local `gateDelegation` presence refusal in
+`load_agentic_settings` still fires for any non-null value.
 
 `parse_gate_delegation(raw, source=...)` is the gateDelegation parser MOVED here from
 `mcp/config.py` (its logic is unchanged: named policy via `named_gate_policy`, per-kind
@@ -84,7 +93,13 @@ builtin `HARNESSES`): entries merge over the builtin table by id — a NEW id mu
 `command` and/or `argv` (`command` defaults to `argv[0]`, `argv` to `(command,)`) and is tagged
 `defined_in="settings"`; a builtin id overrides per field. Delivery-vehicle pairs must resolve
 together post-merge (`effortFlag`+`effortFlagValues`, `effortSessionValues`+`effortSessionCommand`
-— a flag without a vocabulary would reintroduce the silent-degrade risk). Harness references
+— a flag without a vocabulary would reintroduce the silent-degrade risk). The
+`effortSessionCommand` TEMPLATE is additionally validated post-merge by `_refuse_bad_effort_template`
+(260703-L18 finding 4): it must render with `.format(value=…)` and reference no replacement field
+other than `{value}` — a stray field (`/set {mode}={value}`), a positional `{}`, or an unmatched
+brace refuses naming the harness. A builtin override may supply just the command, so the check lives
+here beside the pairing rule; once validated, the raw `KeyError` at `serving/harnesses.py`
+(`effort_session_commands`' `.format`) is unreachable from settings. Harness references
 (`orchestration.spawn.harness`, `roles.<role>.harness`) are validated against the EFFECTIVE id set
 (`_require_harness_id` with the merged ids; the per-file pass passes `None` = shape-only), so a
 settings value can never inject argv through a reference — argv is definable only in the explicit,
@@ -114,6 +129,10 @@ subclass). The kernel→serving import is a constant-table + frozen-dataclass im
   `mcp/config.py`'s gateDelegation (documented restart-required semantics).
 - Fail-loud is `orchestration.*`-scoped; top-level families are tolerated
   (reserved: contextProviders returns here in a follow-up).
+- A `null` at a known family key is REFUSED (either layer) — never a silent
+  wipe, never a reset-to-default; remove the key to inherit the global value.
+- `effortSessionCommand` templates are template-validated post-merge, so a bad
+  template refuses at load, not at spawn (raw `str.format` crash unreachable).
 - Doctrine floors are not knobs: no key touches the master-exit seam gate or the
   strategist's mandatory pre-run (L12 ruling, restated in the module docstring).
 - Arrays REPLACE on merge, never concatenate; sibling leaves survive an override.
@@ -149,6 +168,16 @@ No meaningful cross-repo references found.
 | The loader operates on coordinator/repo-local files only. | - | - |
 
 ## Update History
+
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): added
+  `_refuse_null_families` (`_validated_orchestration_block`) — a JSON `null` at any known
+  `orchestration.*` family key refuses loudly in either layer with "remove the key to inherit the
+  global value" (developer-ruled `null` = refuse, closing the silent-global-wipe collision); and
+  `_refuse_bad_effort_template` (`_merged_harness`) — the `effortSessionCommand` template must render
+  with only `{value}`, so a stray/positional/unmatched-brace template refuses at load naming the
+  harness instead of a raw `KeyError` at spawn. Regression tests for both (null across
+  concurrency/roles/loops/spawn/rolesPerLevel/harnesses; the three bad-template shapes + the
+  builtin-override path). Verification metadata pinned until closeout stamps the L18 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application; rulings 2026-07-07T05:30/07:30/08:15):
   role knobs gained the free-form escape hatch (`launchArgs`/`promptKeywords`/`sessionCommands` —

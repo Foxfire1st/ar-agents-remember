@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-07-06T23:58:36+02:00 |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated | 2026-07-07T18:40+02:00 |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -69,7 +69,10 @@ and tool registration.
   `set_subtask` rejected on a non-master, `set_section` now allowed on a leaf (freeform-only, R4),
   the argument-error paths, and the `remove_subtask` CRUD-delete cases (deletes the leaf doc + master
   row, `keep_file` retains the doc, dry-run reports `wouldDeleteFiles` without deleting, absent number
-  raises, non-master rejected).
+  raises, non-master rejected). **260703-L18 (finding 1 / F-N):**
+  `test_remove_subtask_response_validates_on_both_paths` validates the `remove_subtask` result against
+  `TaskDocResponse` (`extra="forbid"`) on the delete-with-files AND `keep_file` paths (and the dry-run
+  preview) — the regression proving the destructive success no longer surfaces a false tool error.
 - `RegistrationTests` — `task_doc` is in `PUBLIC_TOOLS` + the registry, and the
   payload builder returns a token-stamped payload that validates against
   `TaskDocResponse` (ambient reset first).
@@ -97,6 +100,11 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 1 / friction F-N): added
+  `MasterControllerTests.test_remove_subtask_response_validates_on_both_paths` — validates the
+  `remove_subtask` payload against `TaskDocResponse` on the delete-with-files, `keep_file`, and dry-run
+  paths, locking the response contract for the destructive success. Verification metadata pinned until
+  closeout stamps the L18 commit.
 - 2026-07-06T23:58:36+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the `orchestrates`
   coverage — `SchemaTests` round-trip on a master + master-only rejection + `[]` default,
   `MasterRenderTests` `**Orchestrates:**` header line (present when set, absent otherwise), and

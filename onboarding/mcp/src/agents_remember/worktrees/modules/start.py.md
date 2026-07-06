@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T00:30+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00 |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -84,6 +84,23 @@ branch → `merge --ff-only`; parked branch → `branch -f`, safe because state
 `start_result` rebuilds the contract so recorded base commits reflect the
 recovered tips.
 
+The **ledger-mapping gate** in `prepare_memory_for_start`: when `find_mapping(ledger,
+code_base_commit)` is `None` (the code base is a SHA the ledger never recorded — e.g. two
+code-only owner commits ahead of the last memory closeout), the recovery block now
+consumes BOTH advertised choices (260703-L18 finding 7 / friction F-R; previously only
+`disabled-memory` was wired and `reconciliation`/`custom` dead-ended). `disabled-memory`
+drops external memory; `memory_choice="reconciliation"` calls `_reconcile_missing_mapping`,
+which records the mapping the way closeout ledger syncs do — `prepend_mapping(ledger,
+code_base_commit, ledger.last_memory_content_commit)` (memory CONTENT tip unchanged; header
+`lastVerifiedCodeCommit` advances) written to the OFFICIAL memory repo's `memory.md`, `git
+add` + a `[<task_id>] Ledger sync: <code> -> <memory>` commit in the memory SOURCE repo
+(mirroring `memory/carryover.py` and the owner's hand precedent, memory commit `af50a05`) —
+then advances the contract's `memory_base_commit` to the post-reconciliation tip (threaded
+back via `reconciledMemoryBaseCommit` → `_contract_after_memory_start`) and PROCEEDS to a
+started worktree on the now-present mapping. `_missing_mapping_state` advertises only the two
+executable choices (`custom`, wired nowhere, was removed). A dry-run reconciliation records
+nothing and just reports `compatible`.
+
 `_ensure_memory_source_branch` (issue #54) runs inside
 `prepare_memory_for_start` after the ledger mapping gate: a missing external
 memory source branch is auto-created at the validated official checkout tip
@@ -126,6 +143,16 @@ For master task starts, `start.py` creates or loads the root series contract, cr
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 7 / friction F-R): implemented the
+  missing-mapping recovery `memory_choice="reconciliation"` (`_reconcile_missing_mapping`) — records
+  the unmapped code base -> the ledger's memory content tip in the OFFICIAL memory repo the same way
+  closeout ledger syncs do (header advance + newest-first row + a `Ledger sync` commit in the memory
+  source repo; mirrors the owner's hand precedent `af50a05`), advances the contract's
+  `memory_base_commit` (via `reconciledMemoryBaseCommit` → `_contract_after_memory_start`), and
+  proceeds to a started worktree. The missing-mapping block now also consumes `disabled-memory` and
+  advertises ONLY those two executable choices (`custom`, wired nowhere, removed). Tests: every
+  advertised choice is consumable; reconciliation produces a valid mapping + a started worktree.
+  Verification metadata pinned until closeout stamps the L18 commit.
 - 2026-07-03T00:30+02:00 — L11: recreate-fresh admits `cleanup: reopened` beside `abandoned`, and a post-write hook restamps the existing leaf doc's lifecycleId with the newly minted lifecycle (explicit linkage across restarts).
 - 2026-06-29T23:18+02:00 — Memory-base fix (L3): `start.py` now derives both the root and leaf `memory_base_commit` from the memory source branch tip via `_memory_base_for_source` (mirroring the code base) instead of the memory repo HEAD, so a memory repo checked out on an unrelated branch no longer records a divergent base that breaks closeout's "memory source branch moved" preflight. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: start now creates or loads a root series contract for master tasks, creates the integration branch from the protected/source branch, starts each leaf from that integration branch, writes leaf contracts under `enclosures/<leaf-id>/series-contract.md`, and reports `enclosure_path`/`leaf_id`. Verification metadata pinned until closeout stamps the code commit.

@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -192,6 +192,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 7 implements `start.py`'s
+  missing-ledger-mapping recovery `memory_choice="reconciliation"` (records the unmapped code base ->
+  the ledger's memory content tip the way closeout ledger syncs do, then proceeds to a started worktree)
+  and prunes the block to only executable choices (`custom` removed). It reuses the existing
+  `memory_choice` arg and adds no module, so the modules route model this overview describes is unchanged
+  (detail in the `start.py` file sidecar).
 - 2026-07-06T03:30+02:00 — No route impact: 260703-L11 reviewed `guidance.status_payload`'s `code_worktree_exists`/`memory_worktree_exists` probes as the existence-reporting contract the new projection flags mirror; no file in this route changed — the stat happens in `observer/snapshots.py`.
 - 2026-07-05T19:55+02:00 — 260703-L8 route impact (cycle 7, small): integrate's dry run now evaluates-and-reports the seam guard (`handover_gate` in the preview; enforcement stays real-run-only; no dry-run contract mutation, AR4-2), and the new pure `unmatched_handover_gate_warning` surfaces unmatched OPEN handover gates as a `handover_gate_warning` enclosure spelling check on gateless results (AR4-1b). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): the integrate seam guard is re-addressed — the pure `handover_gate_guard` folds every gate log (`GateStore.all_current`) and matches `master-handover-approval` gates by `enclosure` against the contract's `task_name`/`parent_task_name`, replacing the inert `contract.lifecycle_id` lookup; the configured policy now reaches it from the controller. Verification metadata pinned until closeout stamps the L8 commit.
