@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T23:45+02:00 |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00 |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 
 ## Purpose
 
@@ -75,6 +75,15 @@ No external domain documentation applies to this repository-local orchestration 
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
+### L16 Knob Additions
+
+260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
+`sessionCommands` — lines pasted + submitted into the fresh session before the brief;
+`promptKeywords` — prepended as the first line of the dispatch brief paste; all settings-only,
+never validated, recorded in spawn provenance), and the knob footer now names the per-level
+override (`orchestration.rolesPerLevel.<level>.<role>`; role-file defaults < settings < level
+override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
+
 ## Repo-Internal References
 
 The manager spawns workers, spawns the master-exit reviewer, and hands its master up to the orchestrator.
@@ -106,6 +115,12 @@ No sibling repository evidence is needed for this orchestration job file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
+  free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never
+  validated) and the knob footer now includes the rolesPerLevel per-level override and the
+  harnesses.md manual pointer. Sync-propagated bundle copy. Verification metadata pinned until
+  closeout stamps the L16 commit.
 
 - 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up (L13R-1): knob-table harness example fixed to the registry id `claude`. Verification metadata pinned until closeout stamps the L13 commit.
 

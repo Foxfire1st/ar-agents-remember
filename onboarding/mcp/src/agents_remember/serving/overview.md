@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-07T05:36+02:00 |
-| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
-| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`       |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -273,11 +273,17 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   to a new durable `leafKey`, returns `leaf-taken` without mutation when another running same-role session
   owns the target leaf, and is reused by the dashboard route and MCP tool.
 - `terminal_opener.py` — the shared **L2 hosted-session opener**: `open_terminal_session(...)` resolves
-  the launch (`resolve_terminal_launch` — a harness **id** to its fixed argv, moved here from `app.py`),
+  the launch (`resolve_terminal_launch` — a harness **id** to its fixed argv, moved here from `app.py`;
+  since 260703-L16 the knob-application point: env `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` map onto the
+  harness's registry flags, out-of-vocabulary effort/model REFUSE naming the harness and its valid
+  sets, `launch_args` appends verbatim, and ids resolve against an injected EFFECTIVE registry —
+  builtin merged with `orchestration.harnesses`),
   claims `leaf_key` under the role-scoped per-(leaf, role) uniqueness rule **before** any spawn (a taken
   leaf returns `leaf-taken` without ensuring tmux or mutating the catalog), seeds `env` at
   `TerminalHost.ensure` (the L2 knob-injection seam), and upserts a durable `TerminalCatalogEntry`
-  carrying write-once spawned-by provenance. Transport-agnostic (`OpenTerminalResult` → HTTP 200/409/400
+  carrying write-once spawned-by provenance (L16 adds the free-form escape hatch —
+  `launchArgs`/`promptKeywords`/`sessionCommands`, recorded verbatim — and the resolved dispatch
+  level `spawnLevel`/`spawnLevelSource`). Transport-agnostic (`OpenTerminalResult` → HTTP 200/409/400
   in `app.py`, a validated payload in the MCP tool). The ONE opener both the dashboard `POST
   /api/terminal/{session}` route and the agent-facing `spawn_agent_session` tool compose — no parallel
   spawn path.
@@ -289,11 +295,19 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   tmux op + the clock are injectable so the loop is fake-driven and sleepless in tests. Never submits an
   unconfirmed paste; never raises on a gone session. Backs the `spawn_agent_session` context delivery and
   the `POST /api/terminal/{session}/paste` endpoint.
-- `harnesses.py` — the **harness launch registry** (slice 6e-2b): the curated `HARNESSES` set (Claude
-  Code / Codex / Pi.dev) + `find_harness` / `is_detected` / `detect_harnesses` (injectable, call-time
-  `shutil.which`). The data behind `GET /api/harnesses` detection + the `kind="harness"` opener
-  resolution — a harness **id** is on the wire, the fixed argv stays here (the 6d posture). Deliberately
-  *not* a mirror of `scripts/sync-skills.py`.
+- `harnesses.py` — the **harness launch registry + per-harness knob mapping** (slice 6e-2b;
+  260703-L16): the curated `HARNESSES` set (Claude Code / Codex / Pi.dev) + `find_harness` /
+  `is_detected` / `detect_harnesses` (injectable, call-time `shutil.which`; both accept an injected
+  EFFECTIVE registry since the `orchestration.harnesses` openness ruling — good defaults, not a
+  wall), plus the L16 knob surface: per-harness `model_flag`/`effort_flag`+values/session-vehicle
+  effort values (claude: `--model`/`--effort` with `low..max` on the flag and `ultracode` via a
+  post-launch `/effort` paste; codex/pi env-only) and the enforcement helpers (`knob_argv`,
+  `effort_session_commands`, `invalid_effort_detail`/`invalid_model_detail` — the
+  silent-degrade-prevention refusals, `unknown_harness_detail` — the teach-it-via-settings refusal
+  naming `docs/reference/harnesses.md`). The data behind `GET /api/harnesses` detection + the
+  `kind="harness"` opener resolution — a harness **id** is on the wire, the fixed argv stays here
+  or in the fail-loud settings family (the 6d posture). Deliberately *not* a mirror of
+  `scripts/sync-skills.py`.
 - `__init__.py` — package docstring only; `delta`/`projector` stay importable without FastAPI.
 
 ## Invariants And Boundaries
@@ -338,6 +352,15 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `harnesses.py` grew the per-harness
+  knob→flag mapping (two-vehicle claude effort vocabulary incl. session-level `ultracode`),
+  effective-registry lookups, and the dispatch refusal helpers; `terminal_opener.py` applies the
+  env-riding knobs onto the harness argv at launch resolution (validating effort/model, appending
+  verbatim `launch_args`) and records the free-form + level spawn provenance on the catalog row;
+  `terminal_catalog.py` carries the five new optional provenance columns; `app.py`'s
+  `GET /api/harnesses` + open route resolve against the effective GLOBAL registry. Route relations
+  unchanged (one opener, no parallel spawn path). Verification metadata pinned until closeout
+  stamps the L16 commit.
 - 2026-07-07T05:36+02:00 — 260703-L15 route impact (the change gate + the build stamp): `delta.py`
   compares stable forms (`VOLATILE_AGE_FIELDS` stripped; volatile-only ticks emit nothing —
   measured ~780 KB/tick → 0), `projector.py` caches the stable form per tick, publishes

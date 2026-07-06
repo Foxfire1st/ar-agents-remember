@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T22:20+02:00 |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00 |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -111,6 +111,14 @@ startup, whichever file they come from.
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
 ## Update History
+
+- 2026-07-07T12:50+02:00 — No content impact: L16's config.py change is message-wording only (the boot error/warning text now points at the harnesses manual); the parsing behavior and the boot-snapshot contract this sidecar describes are unchanged (review L16R-4 concurred the body is not stale).
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application, message-only): the authority-file
+  unsupported-`orchestration.*` refusal now enumerates the grown agentic family
+  (gateDelegation, loops, roles, rolesPerLevel, concurrency, spawn, harnesses) when pointing at the
+  global settings file. No parsing behavior changed. Verification metadata pinned until closeout
+  stamps the L16 commit.
 
 - 2026-07-06T22:20+02:00 — 260703-L13 (settings unification): gateDelegation re-homed to the
   global agentic settings file (boot-snapshot through the kernel loader; authority-file value

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-07T05:44+02:00 |
-| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331` |
-| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -96,7 +96,10 @@ The MCP package separates three surfaces:
 - `agents_remember.mcp` owns transport wiring, tool registration, and trusted
   settings parsing. Since 260703-L13 the authority file owns BOOT INFRASTRUCTURE
   only: the agentic orchestration family (`orchestration.*` — gate delegation,
-  loop knobs, role knobs, concurrency caps, spawn harness preference) lives in
+  loop knobs, role knobs flat + per-level (`roles`/`rolesPerLevel`, incl. the
+  L16 free-form launchArgs/promptKeywords/sessionCommands escape hatch),
+  concurrency caps, spawn harness preference, and the L16 harness-definition
+  table `orchestration.harnesses`) lives in
   the GLOBAL `<coordinationRoot>/system/settings.json` with
   `<code-repo>/system/settings.json` repo-local overrides, parsed PER-USE by the
   kernel loader `kernel/agentic_settings.py` (leaf-key deep merge, arrays
@@ -105,8 +108,11 @@ The MCP package separates three surfaces:
   there). `mcp/config.py` keeps ONE boot-snapshot consumer: gateDelegation is
   read from the global file at boot, with a warned one-cycle authority-file
   legacy fallback; `runtime_install` seeds the global file copy-if-missing and
-  `spawn_agent_session` resolves an omitted harness through the loader
-  (explicit > repo-local > global > detection-gated).
+  `spawn_agent_session` resolves its knobs through the loader (260703-L16:
+  explicit args > repo-local level override > global level override >
+  repo-local role default > global role default > detection-gated; ids against
+  the EFFECTIVE registry; model/effort validated per-harness at dispatch and
+  APPLIED onto the harness argv — manual: `docs/reference/harnesses.md`).
 - `agents_remember.controllers` owns operation-level composition such as
   `context_packet`, provider tools, worktree tools, memory tools, benchmarks,
   and `runtime_install`.
@@ -433,7 +439,20 @@ into the role files.
 ## Update History
 
 - 2026-07-07T10:55+02:00 — No route impact: L15's mcp-side changes live in the serving/observer sub-routes (stable-form deltas, build info, tokenSeries decimation) — the mcp package route model is unchanged; details in the sub-route overviews and file sidecars.
-
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application) route impact: the L13 knob chain is
+  now APPLIED at the harness boundary. `kernel/agentic_settings.py` gained the free-form role-knob
+  fields, `orchestration.rolesPerLevel`, and the `orchestration.harnesses` effective-registry
+  family; `serving/harnesses.py` carries the per-harness knob→flag mapping (two-vehicle claude
+  effort vocabulary incl. session-level `ultracode`) + dispatch refusal helpers;
+  `serving/terminal_opener.py` applies env-riding knobs onto the argv and records free-form + level
+  provenance (`serving/terminal_catalog.py` columns); `mcp/tools/terminal.py` + `mcp/server.py`
+  grew the `launch_args`/`prompt_keywords`/`session_commands`/`level` parameters with pre-spawn
+  `effort-invalid`/`model-invalid`/`level-invalid` refusals (`models/terminal.py`);
+  `serving/app.py` resolves the dashboard surface against the effective global registry;
+  `mcp/config.py` message-only. Suites extended unmodified-existing: `test_agentic_settings.py`,
+  `test_harnesses.py`, `test_terminal_opener.py`, `test_spawn_agent_session.py`. New manual
+  `docs/reference/harnesses.md`; `docs/reference/settings-json.md` documents the three-layer knob
+  model. Verification metadata pinned until closeout stamps the L16 commit.
 - 2026-07-07T05:44+02:00 — 260703-L15 attestation: reviewed this overview against the L15 test
   changes — `tests/test_serving.py` gained the change-gate delta cases + `StateEtagTests` +
   `BuildInfoTests`, and `tests/test_observer_projection.py` the token-series decimation cases;

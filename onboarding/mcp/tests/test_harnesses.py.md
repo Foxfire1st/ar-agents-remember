@@ -5,16 +5,17 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_harnesses.py`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-18T21:27+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00                           |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`       |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
 
 `test_harnesses.py` covers the harness launch registry (`serving/harnesses.py`, slice 6e-2b): the
-curated supported set, `find_harness`, and detection (`is_detected` / `detect_harnesses`) driven by
-an injected `which` so the suite is deterministic regardless of what is installed on the test box.
+curated supported set, `find_harness`, detection (`is_detected` / `detect_harnesses`) driven by
+an injected `which` so the suite is deterministic regardless of what is installed on the test box,
+and — since 260703-L16 — the per-harness knob→flag mapping (`KnobMappingTests`).
 
 ## Code Commentary
 
@@ -25,7 +26,13 @@ A `_which(*installed)` factory returns a `shutil.which` fake that resolves only 
 has a name + an `argv` equal to `(command,)`, and `find_harness` returns the known harness / `None`
 for an unknown id. `DetectionTests` assert `is_detected` reflects the injected `which`, and
 `detect_harnesses(which=_which("claude","codex"))` marks claude+codex detected and pi not, in
-registry order (a full `DetectedHarness` list equality).
+registry order (a full `DetectedHarness` list equality). `KnobMappingTests` (L16) pin the knob
+surface: claude's `knob_argv` emits `--model`/`--effort` (empty with no knobs), its effort
+vocabulary is the two-vehicle union `low|medium|high|xhigh|max` + `ultracode`,
+`effort_session_commands` routes `ultracode` to `/effort ultracode` while flag values never leak
+into the session vehicle, `invalid_effort_detail` names the harness and BOTH value sets (and passes
+in-vocabulary values from either vehicle), and mapping-less codex/pi are env-only and unvalidated
+(empty argv/vocabulary, `None` detail for anything).
 
 ### Conventions
 
@@ -42,6 +49,12 @@ in `test_terminal_ws.py`.
 | The endpoint-level harness tests (GET detection + the harness opener). | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `KnobMappingTests` — claude
+  model/effort flag mapping, the two-vehicle effort vocabulary (flag set + session-only
+  `ultracode`), session-command routing, the refusal detail naming both value sets, and the
+  env-only/unvalidated posture of mapping-less builtins. Existing registry/detection tests
+  unmodified. Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-06-18T21:27+02:00 — Created for task 6 slice 6e-2b: covers `serving/harnesses.py` (the curated
   set, `find_harness`, `is_detected`/`detect_harnesses` via an injected `which`). Verification

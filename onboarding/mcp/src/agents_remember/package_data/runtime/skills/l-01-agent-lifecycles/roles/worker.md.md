@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T15:35+02:00 |
-| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
-| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00 |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 
 ## Purpose
 
@@ -27,6 +27,15 @@ As of cycle 5: the fan-out fallback clarifies workers do not spawn AR sessions (
 
 As of 260703-L12 the file carries a **Loop Position** section (between Fan-Out and Default Behavior): on a builder-verified or full-loop leaf this seat is the three-party loop's BUILDER — fix rounds resume the SAME session and round-2+ reports APPEND to the report file (loop history stays legible); the cap, the convergence call, and escalation are the OWNER's controls, not the worker's; disagreement with a handed reviewer finding is stated with evidence in the report — the owner rules, the worker never argues a verdict into the code.
 
+### L16 Knob Additions
+
+260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
+`sessionCommands` — lines pasted + submitted into the fresh session before the brief;
+`promptKeywords` — prepended as the first line of the dispatch brief paste; all settings-only,
+never validated, recorded in spawn provenance), and the knob footer now names the per-level
+override (`orchestration.rolesPerLevel.<level>.<role>`; role-file defaults < settings < level
+override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -36,6 +45,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
+  free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never
+  validated) and the knob footer now includes the rolesPerLevel per-level override and the
+  harnesses.md manual pointer. Sync-propagated bundle copy. Verification metadata pinned until
+  closeout stamps the L16 commit.
 
 - 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): a Loop Position section makes the worker the loop's BUILDER — fix rounds resume the same session, reports append, cap/convergence/escalation stay the owner's, and disagreement with a finding goes into the report as evidence. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the fan-out fallback clarifies workers do not spawn AR sessions (spawning is the seats' channel).. Verification metadata pinned until closeout stamps the L8 commit.

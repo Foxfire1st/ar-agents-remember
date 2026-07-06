@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T11:10+02:00                           |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`       |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-07T12:40+02:00                           |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`       |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -19,6 +19,8 @@ Starlette's TestClient against a `socketpair`-backed fake host (no real PTY).
 ## Code Commentary
 
 ### Logic
+
+L16 review follow-up adds MalformedSettingsScratchTerminalTests: a broken settings.json + kind=terminal open reaches the opener with harnesses=None (builtin fallback), proving the registry load is scoped to harness-resolving requests (L16R-1).
 
 `ApplyTerminalInputTests` drive `_apply_terminal_input` against a `_RecordingHost`: a
 `stdin` frame writes the decoded bytes, a `resize` frame forwards `(cols, rows)`, and
@@ -88,6 +90,8 @@ primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py
 | The 6d-1 real-PTY/tmux host tests (the other half of Mode B2). | [test_terminal.py](agents-remember/mcp/tests/test_terminal.py) |
 
 ## Update History
+
+- 2026-07-07T12:40+02:00 — L16 adversarial-review follow-up: malformed-settings scratch-terminal regression test (L16R-1). Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-04T11:10+02:00 — L2 (agent-facing dispatch): `resolve_terminal_launch` is now imported from
   `serving.terminal_opener` (the opener extraction moved it out of `serving.app`), and the

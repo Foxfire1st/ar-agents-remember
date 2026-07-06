@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-06T23:58:30+02:00                       |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`   |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00                       |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`   |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -32,13 +32,20 @@ role (`chat` or `terminal`).
 
 `SpawnAgentSessionStatus` is the L2 vocabulary: `spawned` (the only `ok: true` case), `leaf-taken`
 (the server-arbitrated refusal, never overridden), and the pre-spawn validation refusals
-`harness-unknown` / `harness-not-detected` / `bad-kind`. `SpawnAgentSessionResponse` is a strict
+`harness-unknown` / `harness-not-detected` / `effort-invalid` (L16 — effort outside the resolved
+harness's vocabulary, or any effort for a mapping-less settings-defined harness) / `model-invalid`
+(L16 — model knob for a settings-defined harness with no modelFlag) / `level-invalid` (L16 — a
+dispatch level outside leaf|master|portfolio) / `bad-kind`. `SpawnAgentSessionResponse` is a strict
 `ToolResponse` with operation `spawn_agent_session`, the `session`, optional `harness`/`kind`/`leafKey`/
 `label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) recorded
 on the catalog row for the dashboard orchestration tree, the optional `spawnRole` (L14 — the
-`AR_SPAWN_ROLE` persisted on the row, the Chats command-tree grouping key), the `ownerSession` set on
-`leaf-taken`, the context-delivery outcome (`contextDelivered` / `submitted`), and a `detail` for the
-refusals.
+`AR_SPAWN_ROLE` persisted on the row, the Chats command-tree grouping key), the L16 level provenance
+(`spawnLevel` + `spawnLevelSource` — the resolved dispatch level and whether it was explicit or
+defaulted), the L16 free-form spawn provenance as recorded on the row (`launchArgs` verbatim argv,
+`promptKeywords` prepended to the brief, `sessionCommands` — the RESOLVED post-launch paste list —
+plus `sessionCommandsDelivered`, whether every session command was echo-confirmed AND submitted),
+the `ownerSession` set on `leaf-taken`, the context-delivery outcome (`contextDelivered` /
+`submitted`), and a `detail` for the refusals.
 
 ### Conventions
 
@@ -82,6 +89,13 @@ No meaningful cross-repo references found.
 | The model validates a local MCP response and has no external boundary. | - | - |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `SpawnAgentSessionStatus` gained the
+  pre-spawn refusals `effort-invalid` / `model-invalid` / `level-invalid`;
+  `SpawnAgentSessionResponse` gained the free-form spawn provenance (`launchArgs` /
+  `promptKeywords` / `sessionCommands` / `sessionCommandsDelivered`) and the level provenance
+  (`spawnLevel` / `spawnLevelSource`) — all additive `None`-default fields omitted when absent.
+  Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-06T23:58:30+02:00 — 260703-L14 (visual hierarchy + chat grouping): `SpawnAgentSessionResponse`
   gained the optional `spawnRole` field (`str | None = None`) mirroring the new catalog column —

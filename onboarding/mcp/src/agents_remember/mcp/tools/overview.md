@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-06T23:59:36+02:00 |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`                                      |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00 |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`                                      |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -45,7 +45,16 @@ context paste to create a role-configured, leaf-attached, context-primed hosted 
 PER-USE (`kernel/agentic_settings.py`; repo-local layer via the qualified leaf key) and resolves
 explicit arg > repo-local `orchestration.spawn.harness` > global > the first detected registry
 harness, refusing (never silently defaulting) when nothing resolves or the configured preference is
-not installed.
+not installed. Since 260703-L16 the builder is the full knob resolution + application seam:
+`_resolve_harness_dispatch` folds the settings rungs (`resolved_role_knobs(AR_SPAWN_ROLE, level)` —
+`rolesPerLevel` over flat `roles`; the new `level` parameter leaf|master|portfolio with recorded
+provenance) into explicit args, resolves ids against the EFFECTIVE registry
+(`orchestration.harnesses`; unknown-everywhere ids refuse naming the `docs/reference/harnesses.md`
+manual), validates model/effort per-harness BEFORE spawning
+(`model-invalid`/`effort-invalid`/`level-invalid`; claude's session-vocabulary `ultracode` becomes
+the first post-launch `/effort` paste), and delivers the free-form escape hatch (`launch_args`
+verbatim argv, `session_commands` pasted+submitted before the brief, `prompt_keywords` prepended to
+the brief) — never validated, recorded in spawn provenance and echoed on the payload.
 L3 adds `orchestration.py` and public `orchestration_nudge_manager`, a rate-limited manager nudge helper
 that records an orchestration nudge event and enqueues a manager-addressed inbox message.
 
@@ -66,7 +75,7 @@ that records an orchestration nudge event and enqueues a manager-addressed inbox
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a delegated SEAM kind (`SEAM_GATE_KINDS` only; plan-approval keeps its blocking brake) carrying a required non-empty `enclosure` (the master task name the integrate guard matches the gate by — an addressless raise refuses), validates-then-raises and continues, returning the gateId the handover packet carries — a refused raise persists no orphan gate and expires no sibling), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds; list defaults to the ambient lifecycle when no id is passed, workspace only without an ambient), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
-| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session`) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck) — it validates the harness against detection, composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure) then a `serving.terminal_paste.TerminalPaster` echo-confirmed context paste, records spawned-by provenance, and returns `spawned` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `bad-kind` through the strict response model. |
+| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session`) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16: `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-rung knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, free-form + level provenance) — it composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure with per-harness argv knob application) then a `serving.terminal_paste.TerminalPaster` echo-confirmed paste sequence, records spawned-by provenance, and returns `spawned` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `effort-invalid` / `model-invalid` / `level-invalid` / `bad-kind` through the strict response model. |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
 Since 2.5.1 this route also owns the response token-budget layer: the verbose
@@ -115,6 +124,14 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The linear-half hint delegates to the worktree guidance state machine. | [guidance/lifecycle_guidance](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `terminal.py`'s spawn builder became
+  the knob resolution + application seam (rolesPerLevel via the new `level` parameter,
+  orchestration.harnesses effective registry, per-harness dispatch-time model/effort validation
+  with the claude two-vehicle effort vocabulary, the free-form launchArgs/promptKeywords/
+  sessionCommands escape hatch with provenance, session commands pasted before the brief), and
+  `server.py`'s registration grew the matching parameters. Verification metadata pinned until
+  closeout stamps the L16 commit.
 
 - 2026-07-06T23:59:58+02:00 — L14 route impact (body): task_doc row notes the `orchestrates` field; terminal row notes the persisted `spawnRole`. Verification metadata pinned until closeout stamps the L14 commit.
 

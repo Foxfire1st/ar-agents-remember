@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T05:10+02:00                    |
-| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331` |
-| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,6 +35,8 @@ just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 
 ## Code Commentary
+
+L16 review follow-up (L16R-1): the terminal-open route loads the effective harness registry ONLY when the request resolves a harness (kind=harness or an explicit harness id) — a malformed agentic settings file fails the launches that use it, never a plain scratch terminal.
 
 `create_app(config, *, interval=1.0, now=None, before_tick=None, refresh_provider_state=None,
 terminal_host=None, terminal_catalog=None, terminal_paster=None)`
@@ -139,9 +141,15 @@ fixtures stay deterministic. Tests can still force either branch explicitly.
 - `POST /api/terminal/{session}/terminate` is the destructive terminal action. It accepts either a live
   host session or a catalog row, kills the tmux session through `TerminalHost.terminate`, marks the
   catalog row `terminated`, and returns `404 unknown-session` only when neither exists.
-- `GET /api/harnesses` (slice 6e-2b) returns `{"harnesses":[{id,name,detected}]}` from
-  `serving.harnesses.detect_harnesses()` (`shutil.which` per harness) — the dashboard renders a launch
-  button per *detected* harness.
+- `GET /api/harnesses` (slice 6e-2b; effective registry 260703-L16) returns
+  `{"harnesses":[{id,name,detected}]}` from `serving.harnesses.detect_harnesses(registry=...)`
+  (`shutil.which` per harness) over the EFFECTIVE registry — the builtin table merged with
+  `orchestration.harnesses` in the GLOBAL agentic settings, loaded per request — so settings-defined
+  harnesses get launch buttons too; the dashboard renders a button per *detected* harness. The
+  `POST /api/terminal/{session}` opener passes the same effective global registry into
+  `open_terminal_session`, keeping dashboard launches and MCP dispatches on one argv truth
+  (repo-local harness overrides remain leaf-scoped dispatch material via the MCP tool). A malformed
+  settings file raises the loader's fail-loud error (never a silent fallback).
 - `POST /api/terminal/{session}/image` (slice 6f) saves a pasted screenshot under the session cwd so the
   highlight composer can inject its on-disk path (the terminal channel is text-only). It validates the
   live host session or catalog row (unknown ⇒ 404), the declared `Content-Length` (over
@@ -235,6 +243,13 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 
 ## Update History
 
+- 2026-07-07T12:40+02:00 — L16 adversarial-review follow-up (L16R-1): registry load scoped to harness-resolving opens; scratch terminals immune to settings errors; regression test added. Verification metadata pinned until closeout stamps the L16 commit.
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `GET /api/harnesses` and the
+  `POST /api/terminal/{session}` opener now resolve against the EFFECTIVE harness registry
+  (builtin merged with `orchestration.harnesses` from the global agentic settings, read per
+  request via `load_agentic_settings`) so settings-defined harnesses spawn from the dashboard and
+  argv customizations apply on both spawn paths. Two call sites; no route shapes changed.
+  Verification metadata pinned until closeout stamps the L16 commit.
 - 2026-07-07T05:10+02:00 — 260703-L15 (S1 + S3): `/api/state` gained the change gate — weak
   `ETag` from `projector.revision(seq)`, `If-None-Match` → `304` via `_if_none_match_matches`,
   `Cache-Control: no-cache` — and both `/api/state` and the SSE snapshot now carry the boot-time

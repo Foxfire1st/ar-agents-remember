@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-06T23:58:12+02:00                                  |
-| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`              |
-| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
+| lastUpdated            | 2026-07-07T09:45+02:00                                  |
+| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e`              |
+| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -34,9 +34,16 @@ provenance** — `spawned_by_session` + `spawned_by_lifecycle`, set when the row
 `spawn_agent_session` tool (an orchestrator spawning a manager, a manager spawning a worker), and since
 **L14** a `spawn_role` column — the l-01 role this session was spawned AS (the `AR_SPAWN_ROLE` value the
 dispatching seat seeded into the spawn env), recorded so the Chats command tree can group command chats
-(orchestrator/strategist/manager) by role provenance without re-reading tmux env. `from_json`/`to_json` translate between Python
-snake_case and the dashboard API's camelCase fields. `to_json` writes `leafKey` / `spawnedBySession` /
-`spawnedByLifecycle` / `spawnRole` **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
+(orchestrator/strategist/manager) by role provenance without re-reading tmux env. Since **L16** five
+more optional spawn-provenance columns follow the same pattern: the free-form escape hatch —
+`launch_args` (`launchArgs`, the verbatim argv passthrough that rode the launch), `prompt_keywords`
+(`promptKeywords`, prepended to the brief paste), `session_commands` (`sessionCommands`, the
+post-launch pastes, resolved list incl. a session-vehicle effort) — plus the resolved dispatch level
+`spawn_level` (`spawnLevel`, leaf|master|portfolio) and `spawn_level_source` (`spawnLevelSource`,
+explicit|default), the rolesPerLevel knob-resolution provenance. `from_json`/`to_json` translate between Python
+snake_case and the dashboard API's camelCase fields (`_string_tuple` reads the free-form lists back,
+`None` for absent/legacy rows). `to_json` writes `leafKey` / `spawnedBySession` /
+`spawnedByLifecycle` / `spawnRole` / the five L16 keys **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
 with no such key read back as `None` — no schema bump, migration-safe, the SAME pattern for all optional
 columns; the dashboard groups the Chats sidebar by `spawnRole` (L14) and reads the spawned-by pair to
 render the spawner → spawned edges once that surface lands. `with_attachment` restores a row to `running`,
@@ -124,6 +131,14 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local dashboard catalog. | — | — |
 
 ## Update History
+
+- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): five optional spawn-provenance
+  columns — `launch_args`/`prompt_keywords`/`session_commands` (the free-form escape hatch, recorded
+  VERBATIM, never validated) and `spawn_level`/`spawn_level_source` (the resolved dispatch level +
+  whether the dispatcher supplied it) — written only when set (JSON `launchArgs`/`promptKeywords`/
+  `sessionCommands`/`spawnLevel`/`spawnLevelSource`), read back via the `_string_tuple` helper,
+  preserved through re-attach/status changes by the `replace`-based copiers by construction.
+  Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-06T23:58:12+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TerminalCatalogEntry`
   gained an optional `spawn_role` column (JSON `spawnRole`, written only when set — the same
