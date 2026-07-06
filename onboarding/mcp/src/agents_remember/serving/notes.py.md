@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/notes.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-06T09:30+02:00                         |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`     |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00                         |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb`     |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -54,7 +54,11 @@ are pruned with `truncated: true` so the listing never lies about completeness.
 idiom: `..` traversal, absolute paths, and symlink escapes all raise `AuthorityError`),
 then serves the file size-capped (`_MAX_FILE_BYTES` = 2 MiB, mirroring `serving/files.py`)
 and binary-tolerant (`UnicodeDecodeError` → `language: "binary"`, empty content — the
-reader shows a placeholder, never raw bytes).
+reader shows a placeholder, never raw bytes). Since 260703-L18 (finding 5) the cap is
+applied through the shared `scope.decode_capped`, which cuts at a UTF-8 codepoint boundary
+(backward-scan) — a multi-byte char straddling the 2-MiB cap no longer misdecodes an oversize
+markdown note (the dominant type) into empty `binary`; it returns the first ~2 MiB with
+`truncated: true`.
 
 ### Conventions
 
@@ -94,6 +98,11 @@ No meaningful cross-repo references found.
 | The test suite for this module (API-layer coverage). | [test_serving_notes.py](agents-remember/mcp/tests/test_serving_notes.py) |
 
 ## Update History
+
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): `read_note` now caps through the
+  shared `scope.decode_capped`, cutting at a UTF-8 codepoint boundary so an oversize markdown note whose
+  multi-byte char straddles the 2-MiB cap returns text + `truncated: true` instead of empty `binary`.
+  Boundary test added to the notes suite. Verification metadata pinned until closeout stamps the L18 commit.
 
 - 2026-07-06T09:30+02:00 — L9 adversarial-review follow-up (L9R-1): ValueError from Path.resolve() (null-byte input) now maps to 400 bad-path in the status mapper; regression test added. Verification metadata pinned until closeout stamps the L9 commit.
 

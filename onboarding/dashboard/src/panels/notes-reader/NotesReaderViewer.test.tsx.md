@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
-| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb`       |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -30,7 +30,10 @@ retired.
 - **Content pane** — a markdown note renders formatted through the reused `DualPane` sidecar (`sidecar-pane`);
   a text note renders through the shared file pane (`file-pane`); a binary note degrades to DualPane's
   `pane-placeholder`. The CodeMirror leaf `../file-viewer/FilePane` is `vi.mock`ed to a `<pre>` — the house
-  jsdom accommodation (mirrors `ChangeSetViewer.test` mocking `ChangeSetPane`).
+  jsdom accommodation (mirrors `ChangeSetViewer.test` mocking `ChangeSetPane`). Since 260703-L18
+  (finding 2, the L17R-2 remedy): a `truncated: true` MARKDOWN note renders the "Showing the first
+  2 MiB" banner above the DualPane, and the negative case pins that a non-truncated markdown note
+  renders no banner.
 - **Back** — `notes-reader-back` calls `onBack`.
 - **Cockpit takeover** — renders `CockpitShell`, asserts the reader is absent initially (rails intact), then
   drives select-master → open-note → **Back** → re-open and asserts the reader node is the SAME element
@@ -58,6 +61,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T20:50+02:00 — agent-orchestration L18 (finding 2 / L17R-2 remedy): added the
+  truncated-markdown banner cases — `truncated: true` markdown renders the first-2-MiB banner above
+  the DualPane; the negative case pins no banner on non-truncated markdown. Verification metadata
+  pinned until closeout stamps the L18 commit.
 - 2026-07-07T14:00+02:00 — Created for agent-orchestration L17: rail listing + highlight-follows-selection,
   rail-click switch, markdown/text/binary content rendering (FilePane mocked), back, and the CockpitShell
   takeover open→back→reopen survival test. Verification metadata pinned until closeout stamps the L17 commit.

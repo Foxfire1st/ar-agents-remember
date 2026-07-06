@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T00:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00                     |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,8 +33,14 @@ fields — `dryRun`, `rendered`, `diff`, `wouldLose` — are additive optional d
 `dry_run=true` preview (a real op leaves them at their defaults, so its response is unchanged).
 `TaskDocMasterSync` is the optional nested leaf-to-master result: status, master doc path,
 rendered path, subtask number, and preview-only rendered/diff/wouldLose fields. It is omitted when a
-write has no same-root master impact. It is the registered model for the `task_doc` row in
-`PUBLIC_TOOL_RESPONSE_MODELS`. The
+write has no same-root master impact. The **`remove_subtask` outcome** fields — `removedSubtask`
+(the dropped row number), `deletedFiles` (the real op: the leaf json+md paths unlinked, or `[]` under
+`keep_file`), and `wouldDeleteFiles` (the dry-run preview) — are additive optional defaults declared
+so the destructive success VALIDATES against `extra="forbid"` (260703-L18 finding 1, closing friction
+F-N): the controller emits them, and without the declaration the envelope rejected the payload,
+surfacing a tool error after the removal already happened (a caller could retry an already-done op).
+Every non-`remove_subtask` operation leaves them `None` (excluded by `exclude_none`). It is the
+registered model for the `task_doc` row in `PUBLIC_TOOL_RESPONSE_MODELS`. The
 persisted task document itself (`tasks.TaskDocument`) is deliberately not returned.
 
 ### Invariants And Boundaries
@@ -55,6 +61,12 @@ persisted task document itself (`tasks.TaskDocument`) is deliberately not return
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 1 / friction F-N): declared the
+  `remove_subtask` outcome fields `removedSubtask` / `deletedFiles` / `wouldDeleteFiles` on
+  `TaskDocResponse` so the destructive success validates against `extra="forbid"` — no more false
+  tool error after a real removal. Regression test validates the response on both the delete-with-files
+  and `keep_file` paths (and the dry-run preview). Verification metadata pinned until closeout stamps
+  the L18 commit.
 - 2026-07-03T00:30+02:00 — L11 adds `TaskReopenResponse` (task_reopen envelope; WorktreeCommandResponse shape, task-domain home).
 - 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: added `TaskDocMasterSync` and optional
   `TaskDocResponse.masterSync` so leaf writes can report same-root master-row changes and dry-run master

@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-06T23:55+02:00 |
-| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc` |
-| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 
 > **Status:** active baseline
 
@@ -376,6 +376,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-07T21:05+02:00 — No route impact: 260703-L18 changes root-scope files only in place — skills/l-01 criteria catalogs gain candidate/standing tier updates (described in their package_data mirror sidecars) and docs/reference/settings-json.md + harnesses.md gain one rule sentence each (null refusal; effortSessionCommand template); the code fixes live in their own child routes (mcp, dashboard/src). The root route model and this overview's descriptions are unaffected.
 - 2026-07-07T12:55+02:00 — L16 route impact (body): the root index names docs/reference/harnesses.md, the new spawn-parameters manual (the docs/reference route has no onboarding overview of its own — pre-existing gap, follow-up registered). Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-06T23:59:58+02:00 — No route impact: L14 is dashboard + mcp-internal (insignia, command tree, additive doc/session fields) — the repo surface this root overview describes is unchanged; details live in the dashboard/src and mcp sub-route overviews.

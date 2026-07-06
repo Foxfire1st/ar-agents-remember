@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-04T12:31+02:00                |
-| lastVerifiedCommitHash |                                       `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
-| lastVerifiedCommitDate |                                       2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00                |
+| lastVerifiedCommitHash |                                       `575a9a44b71910d151c878eda4da4ebf32bef1cb`|
+| lastVerifiedCommitDate |                                       2026-07-07T01:41:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -30,7 +30,14 @@ the lower-level store consume path appends a
 consumed snapshot and repeated consume calls are idempotent. Task 23/24 adds the public payload
 semantics: `operator_inbox_consume_payload` returns the consumed entry and then physically deletes the
 throwaway pending row from the public inbox log. `OperatorInboxToolTests` patches `_store` to an in-memory temp
-store and drives the real post, poll, and consume payload builders.
+store and drives the real post, poll, and consume payload builders. `OperatorInboxDeliveryTests`
+drives `deliver_inbox_entry` against a temp store + a fake catalog/host: one case pushes an
+echo-confirmed paste (state `delivered`) and — since 260703-L18 (finding 3, pinning the friction
+F-A echo-confirm seam) — a second case pushes an UN-ECHOED paste (`PasteResult(delivered=False)`)
+and asserts the recorded `deliveryState` is `unconfirmed` with detail `paste was not echoed`. That
+un-echoed case is the regression: it FAILS if `serving/inbox_delivery.py`'s delivered/unconfirmed
+branch is ever collapsed to always-`delivered` (the boot-discard failure echo-confirmation exists to
+catch).
 
 ### Conventions
 
@@ -76,6 +83,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 3, test-only): added
+  `test_deliver_inbox_entry_records_unconfirmed_when_paste_is_not_echoed` — pins the
+  delivered-vs-unconfirmed distinction in `serving/inbox_delivery.py` so an un-echoed paste records
+  `unconfirmed`, and the suite FAILS if that branch collapses to always-`delivered` (verified by
+  mutation). Verification metadata pinned until closeout stamps the L18 commit.
 - 2026-07-04T12:31+02:00 - L3: expanded inbox coverage for role addressing,
   delivery-state snapshots, hosted-session push, and role/message response
   metadata. Verification metadata pinned until closeout stamps the L3 commit.

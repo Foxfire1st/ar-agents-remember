@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T12:05+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -40,6 +40,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-07T21:10+02:00 — No content impact: release 4922146 bumped the SERVER_VERSION source-checkout fallback to 3.0.0rc3; resolution order unchanged. (Reconciliation: direct owner commit between the L17 and L18 closeouts.)
 - 2026-07-03T12:05+02:00 — 260703 L4: SERVER_VERSION fallback bumped to 3.0.0rc2 (resolution order
   unchanged); the body's stale `(now 2.7.0)` parenthetical became version-generic so release bumps
   stop drifting it.

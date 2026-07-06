@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-06-29T23:18+02:00|
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00|
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 
 ## Purpose
 
@@ -18,6 +18,16 @@ This unittest file validates the first worktree-support helper slice.
 ### Logic
 
 The tests cover memory ledger roundtrip/prepend behavior, branchless canonical ledger output, legacy branch-metadata ledger parsing without branch-metadata blocking, malformed ledger metadata, invalid ledger top-row detection, repo-specific `c-08-ar-coordination-context-resolver` skill `task_root` output without a task name, installed-runtime coordination-root defaults, source-checkout `.env` and `.env.example` ignore behavior, dirty external-memory start blocking, compatible external-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview with typed MCP next hints, approval-note, onboarding metadata refresh, route overview/index refresh, memory quality gating before memory commits, missing-onboarding blocking behavior, memory-worktree settings during closeout planning, long Windows path changed-file and sidecar detection, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, deterministic overview/entity drift checks including entity inventory coverage, `c-09-git-worktree-manager` skill integration fast-forward/replay/conflict behavior, non-fast-forward integration refusal at `_merge_integrated_commits` without advancing the code branch, `c-09-git-worktree-manager` skill cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching checkout branches and ledger commit metadata, `c-10-adopt-memory-baseline` skill adoption status/block/adopt behavior, `c-11-memory-carryover-from-branch` skill memory carryover plan/apply behavior including earlier-only-landed same-path commits staying `same-path-changed`/`review-required` rather than exact-landed, and benchmark runner portability coverage for non-string/unsafe manifest path guards, Windows-safe generated tree removal, stale directory symlink cleanup, Windows Codex shim resolution, cached benchmark repository reuse, missing-commit fetch behavior, force-clone behavior, copy-only skill exposure, Codex `PATH` resolution and benchmark-only execution metadata, default-sandbox omission, variant-scoped benchmark provider selection, generated benchmark provider settings with central provider log paths, workspace-local `.codex` benchmark MCP registration, and temp-file provider setup handoff.
+
+**260703-L18 (finding 7 / friction F-R)** adds the missing-ledger-mapping recovery coverage via a
+`_unmapped_external_contract` helper (a code base commit the ledger never recorded, real tmp code +
+memory repos): `test_missing_mapping_block_advertises_only_consumable_choices` proves the block names
+ONLY executable choices (`reconciliation`, `disabled-memory`; `custom` removed) and that passing each
+does something other than return the identical block, and
+`test_reconciliation_records_the_mapping_and_starts_the_worktree` proves `memory_choice="reconciliation"`
+maps the unmapped code base to the ledger's memory content tip, writes + commits a `Ledger sync` in the
+memory SOURCE repo (header advance + newest-first row, content tip unchanged), and proceeds to a real
+started memory worktree.
 
 `RequireUpdatedSidecarContentTests` covers the four-case closeout content gate:
 in a temporary memory Git repo with a committed sidecar,
@@ -143,6 +153,12 @@ Worktree support coverage includes the master-start path that creates a root int
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 7 / friction F-R): added the
+  missing-mapping recovery coverage — `_unmapped_external_contract` helper plus
+  `test_missing_mapping_block_advertises_only_consumable_choices` (only executable choices named,
+  `custom` gone, each consumable) and `test_reconciliation_records_the_mapping_and_starts_the_worktree`
+  (reconciliation records the ledger mapping + `Ledger sync` commit and proceeds to a started worktree).
+  Verification metadata pinned until closeout stamps the L18 commit.
 - 2026-06-29T23:18+02:00 — Memory-base fix (L3): added `test_memory_base_for_source_uses_source_branch_tip_not_head` — proves `worktree_start` records the memory base from the source-branch tip, not the repo HEAD (repo on a divergent branch). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-28T20:30+02:00 — Post-landing cleanup (task 260628_post-landing-cleanup): added `test_find_worktree_contract_skips_archived_contract` covering the `0_archive/` skip in `find_worktree_contract`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): documented the MCP 2.9.3 worktree-name resolution tests (`test_resolver_resolves_contract_by_worktree_name`, `…returns_empty_for_unknown_worktree_name`, `…prefers_task_name_over_worktree_name`, `test_find_worktree_contract_matches_group_or_returns_none`) and the `worktree_group_for` import. Grafted onto the series' task-30 re-closeout / leaf-enclosure coverage.

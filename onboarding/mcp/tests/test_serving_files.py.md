@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_serving_files.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T09:30+02:00                     |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45` |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-07T18:40+02:00                     |
+| lastVerifiedCommitHash | `575a9a44b71910d151c878eda4da4ebf32bef1cb` |
+| lastVerifiedCommitDate | 2026-07-07T01:41:35+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -37,7 +37,10 @@ up the resolver:
   and an absolute path, a `../` traversal, and a **symlink escape** each raise
   `AuthorityError` (the load-bearing security test). `ListAndReadTests` and
   `PairingTests` assert the `hasSidecar` split, the drift metadata, the
-  oversize-truncation cap, the binary marker, the missing-sidecar-is-not-an-error
+  oversize-truncation cap (plus **260703-L18 finding 5**:
+  `test_read_file_oversize_multibyte_boundary_returns_text_not_binary` — an oversize text file
+  whose multi-byte char straddles the cap reads back as `text` + non-empty content, never empty
+  `binary`), the binary marker, the missing-sidecar-is-not-an-error
   result, and both pairing directions (sidecar→code, orphan, overview-without-code).
   The overview-without-code case also asserts the node carries its own markdown
   `body` (`"# repo overview\n"`) so the File Viewer can render a route overview
@@ -77,6 +80,11 @@ Run with `PYTHONPATH=mcp/src python -m pytest mcp/tests/test_serving_files.py -q
 
 ## Update History
 
+- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): added
+  `test_read_file_oversize_multibyte_boundary_returns_text_not_binary` — an oversize text file with a
+  multi-byte char straddling the 2-MiB cap reads back as `text` + non-empty content, pinning the
+  codepoint-boundary cut shared with the notes API. Verification metadata pinned until closeout stamps
+  the L18 commit.
 - 2026-07-06T09:30+02:00 — L9 adversarial-review ride-along: null-byte path regression test added (L9R-1). Verification metadata pinned until closeout stamps the L9 commit.
 
 - 2026-06-30T00:00:00+02:00 — operations-integration L5: documented that the reverse-pairing overview-without-code case
