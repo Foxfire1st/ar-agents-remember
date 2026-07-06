@@ -16,11 +16,13 @@
     "dashboard/src/grammar/ModeBar.tsx",
     "dashboard/src/grammar/Panel.tsx",
     "dashboard/src/grammar/ProgressFill.tsx",
+    "dashboard/src/grammar/RankBadge.test.tsx",
+    "dashboard/src/grammar/RankBadge.tsx",
     "dashboard/src/grammar/TokenGauge.tsx"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 7,
-    "fileSidecars": 7,
+    "sourceFilesInScope": 9,
+    "fileSidecars": 9,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -32,7 +34,9 @@
     "modebar",
     "panel",
     "progressfill",
+    "rankbadge",
     "src",
+    "test",
     "tokengauge",
     "tsx"
   ],
@@ -46,6 +50,8 @@
       "dashboard/src/grammar/ModeBar.tsx",
       "dashboard/src/grammar/Panel.tsx",
       "dashboard/src/grammar/ProgressFill.tsx",
+      "dashboard/src/grammar/RankBadge.test.tsx",
+      "dashboard/src/grammar/RankBadge.tsx",
       "dashboard/src/grammar/TokenGauge.tsx"
     ],
     "anchorHints": [
@@ -61,11 +67,15 @@
       "Panel",
       "ProgressFill.tsx",
       "ProgressFill",
+      "RankBadge.test.tsx",
+      "RankBadge.test",
+      "RankBadge.tsx",
+      "RankBadge",
       "TokenGauge.tsx",
       "TokenGauge",
       "dashboard/src/grammar/",
       "route-local-overview",
-      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2",
       "/overview.md",
       "grammar/",
       "css",
@@ -84,19 +94,15 @@
       "aria-disabled",
       "inline",
       "React.memo",
+      "orchestration",
+      "management",
+      "row",
+      "sm",
       "rail > .panel > h2",
       "pulse",
       "?effects=off",
       "cx",
-      "observer/projection.py",
-      "agents-remember/mcp/src/agents_remember/observer/projection.py",
-      "sourceRoute",
-      "doc_type",
-      "lastUpdated",
-      "T02",
-      "lastVerifiedCommitHash",
-      "e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
-      "lastVerifiedCommitDate"
+      "panels/LifecycleList"
     ]
   },
   "fallback": {

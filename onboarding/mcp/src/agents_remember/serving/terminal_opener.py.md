@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_opener.py`    |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-04T11:10+02:00                                  |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`              |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-06T23:58:18+02:00                                  |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`              |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -48,7 +48,10 @@ mutating the catalog — the server-authoritative uniqueness check), calls `host
 `env` at spawn (the L2 knob-injection seam) with `suspend_unsafe=(kind == "harness")`, then upserts a
 `TerminalCatalogEntry`. The entry preserves an existing row's `created_at`/`label`/`leaf_key` on
 re-open and sets `spawned_by_session`/`spawned_by_lifecycle` **once at first spawn** (a re-open keeps
-the original provenance, never clobbers it with `None`).
+the original provenance, never clobbers it with `None`). Since L14 the same rule covers the role:
+the opener reads `AR_SPAWN_ROLE` out of the caller's `env` (the value the dispatch seam already rides
+into tmux) and records it as the row's `spawn_role`, preserving an existing value across a role-less
+re-open — a hand-opened session (no env role) records `None`.
 
 ### Conventions
 
@@ -64,7 +67,8 @@ and Pydantic modeling stays in `models/terminal.py`. `env` is a `Mapping[str, st
   overrides it. The check runs immediately before the ensure/upsert in the single-process app + atomic
   JSON store, so check-then-write is effectively atomic (the client guard stays advisory).
 - `leaf-taken` and `bad-kind` are no-spawn, no-mutation outcomes.
-- Provenance is write-once: set at first spawn, preserved across a re-open, never nulled.
+- Provenance is write-once: set at first spawn, preserved across a re-open, never nulled — the L14
+  `spawn_role` (from env `AR_SPAWN_ROLE`) follows the same rule as the spawned-by pair.
 - The opener resolves a harness **id** to its fixed argv — never a wire-supplied command (no injection
   surface, the 6d posture).
 
@@ -104,6 +108,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T23:58:18+02:00 — 260703-L14 (visual hierarchy + chat grouping): `open_terminal_session`
+  now records `env["AR_SPAWN_ROLE"]` onto the catalog row as `spawn_role` (write-once like the
+  spawned-by pair; preserved across a role-less re-open; `None` for hand-opened sessions) — the
+  Chats command tree groups command chats by this role provenance.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-04T11:10+02:00 — L2: created as the shared hosted-session opener. Extracted
   `resolve_terminal_launch` + the leaf-claim/ensure/upsert composition out of `app.py` so the dashboard
   route and the new agent-facing `spawn_agent_session` tool spawn through ONE opener (no parallel spawn

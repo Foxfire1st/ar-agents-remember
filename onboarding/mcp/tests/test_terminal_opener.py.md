@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-04T11:10+02:00                            |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`        |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-06T23:58:54+02:00                            |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`        |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -31,9 +31,13 @@ cwd / command / env, adds the tmux name to a known set) + a real `TerminalCatalo
 `_detected` `which`. The cases:
 
 - **opened** (`test_opened_records_provenance_env_and_leaf`): the result is `opened`, the catalog row
-  carries the leaf, the spawned-by session/lifecycle, and the harness; the knob env was seeded into the
+  carries the leaf, the spawned-by session/lifecycle, the harness, and (L14) the `spawn_role` read
+  from the env's `AR_SPAWN_ROLE`; the knob env was seeded into the
   detached tmux spawn; and the provenance survives the catalog camelCase round-trip
-  (`spawnedBySession` / `spawnedByLifecycle`).
+  (`spawnedBySession` / `spawnedByLifecycle` / `spawnRole`).
+- **role preservation** (`test_reopen_preserves_spawn_role_and_hand_open_records_none`, L14): a
+  role-less re-open keeps the recorded `spawn_role` (write-once, like the spawned-by pair), and a
+  hand-opened session (no env role) records `None` with `spawnRole` absent from its JSON.
 - **leaf-taken** (`test_leaf_taken_surfaces_owner_without_spawning`): a running chat already owning the
   leaf makes the opener return `leaf-taken` with the owner and never spawn or upsert the intruder.
 - **bad kind** (`test_bad_kind_reports_detail`): an unknown launch kind returns `bad-kind` with a detail
@@ -85,6 +89,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T23:58:54+02:00 — 260703-L14 (visual hierarchy + chat grouping): the opened case now seeds
+  `AR_SPAWN_ROLE` and asserts it lands on the row + round-trips as `spawnRole`; added
+  `test_reopen_preserves_spawn_role_and_hand_open_records_none` (write-once role across a role-less
+  re-open; hand-opened rows record none).
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-04T11:10+02:00 — L2: created coverage for the shared `open_terminal_session` opener —
   opened+provenance+env-seed+leaf, leaf-taken-surfaces-owner-without-spawning, bad-kind, and
   undetected-harness — against a fake host + real JSON catalog. Verification metadata pinned until

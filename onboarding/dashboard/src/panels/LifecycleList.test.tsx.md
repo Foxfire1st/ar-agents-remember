@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:40+02:00                     |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastUpdated            | 2026-07-06T23:56:30+02:00                     |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -29,7 +29,11 @@ title/gate/staleness instead of rendering a duplicate card). It also keeps stand
 documents visible and selectable through typed `taskdoc:<docPath>` keys. The long-title fixture is now enclosure-backed, proving that the
 native `title` tooltip survives the stricter sidebar admission rule and that the row/title carry the
 minimum-width, flex-basis, and metadata-ellipsis classes required for the browser to ellipsize inside
-the left rail.
+the left rail. 260703-L14 adds the orchestration-tier contract: the three-level hierarchy (an
+`orchestrates`-carrying master gold at depth 0, the commanded master purple at depth 1 with a 22px
+margin, its leaf at depth 2 one step further, an uncommanded master untouched) and the D3 flat-run
+regression (no `orchestrates` anywhere ⇒ zero `data-tier` attributes, zero rank badges, pre-L14
+depths and margins).
 
 ## Code Commentary
 
@@ -69,6 +73,13 @@ numbered doc slug matching neither — and asserts the doc renders as a clickabl
 than a doc-less runtime lifecycle fallback. The orphan case seeds a doc-less,
 enclosure-backed runtime lifecycle and asserts that `lifecycleRow`'s computed `parentKey` nests it under
 its master instead of floating as a top-level row.
+The two 260703-L14 tier tests: the hierarchy case seeds an orchestration master
+(`orchestrates: ["260610_browser-dashboard"]`), the named master, an unnamed "Free Standing" master,
+and one enclosure-backed leaf, then asserts per row `data-tier` / `data-depth` /
+`data-parent-key` / inline `style.marginLeft` ("22px" at each indent step) and the presence (or
+absence) of the `[data-rank-tier]` badge — the uncommanded master must be attribute-identical to a
+pre-L14 root row. The flat-run case seeds the same shapes WITHOUT `orchestrates` and asserts the
+container has zero `[data-tier]`/`[data-rank-tier]` matches and today's depths/margins (D3).
 The third test seeds only task documents and asserts that a standalone root `task.json` document remains
 visible while a loose sibling leaf doc is absent. The fourth test seeds an active-enclosure-backed blocked
 task document with an intentionally long title, a durable gate, and a `currentStep`; rendering must attach
@@ -111,6 +122,10 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 
 ## Update History
 
+- 2026-07-06T23:56:30+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the two tier tests —
+  the three-level orchestration > master > leaf hierarchy (tier/depth/parent-key/22px-margin/badge
+  assertions per row, uncommanded master untouched) and the D3 flat-run regression (zero tier
+  attributes or badges without `orchestrates`). Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T02:40+02:00 — 260703-L11 (worktree truth): the enclosure fixture defaults the new
   existence flags true; the reopened-leaf test flipped to hidden-until-restart plus a re-admitted-after-
   restart case (existence truth supersedes the render-as-planned-doc-row behavior below); added the

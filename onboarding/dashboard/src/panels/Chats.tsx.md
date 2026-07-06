@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T17:04+02:00                          |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T23:56:48+02:00                          |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -38,6 +38,9 @@ session list resolves leaf names — the same per-leaf session the right-rail `R
 L9 keeps that leaf selector visible after a chat is already attached, changing it into a move/reassign
 control. Successful moves reuse the backend catalog claim rules, update the local session store, keep the
 xterm/WebSocket session mounted, and broadcast a `"leaf"` catalog invalidation for other open tabs.
+260703-L14 turns the sidebar into the **G1 command tree**: `Chats` derives a `GroupedSessions` model
+per render and passes it to `SessionList`, so an orchestrated run's chats read grouped (command deck /
+per-master groups / landed archive) in EVERY run — grouping-always is the ratified baseline (L14R-1); only the gold sprint deck is orchestration-gated, and claim-less sessions keep the flat list placement.
 
 ## Code Commentary
 
@@ -91,7 +94,12 @@ success, and broadcasts a `"terminate"` catalog invalidation with that id to oth
 
 The layout is a top **strip** of launch buttons, then a **body** that splits into the `SessionList`
 side-rail (rendered only when sessions exist) and the terminal area. `SessionList` is the open-session
-switcher (`onSelect` → `sessionStore.setActive`, `onTerminate`/End → `terminateSession`). Running
+switcher (`onSelect` → `sessionStore.setActive`, `onTerminate`/End → `terminateSession`). L14: the
+component also reads `enclosures` from the `useDashboard` projection store (its first projection-store
+read — live-vs-landed truth for grouping) and computes `grouped = groupSessions({sessions,
+taskDocuments, enclosures})` (`data/sessionGroups`, pure) into `SessionList`'s `grouped` prop; with no
+orchestration task and no leaf claims the derivation yields zero groups and the sidebar renders
+unchanged, which is why the pre-L14 Chats tests still pass without seeding the projection store. Running
 sessions mount `<Terminal>` the first time they become active in the current page;
 visited terminals stay mounted in `terminalLayer` divs while inactive (`display:none` +
 `aria-hidden`) so their xterm buffers survive tab switches. Restored rows that have not been selected
@@ -141,6 +149,11 @@ current browser session. The dashboard does not share arbitrary local store stat
 
 ## Update History
 
+- 2026-07-06T23:56:48+02:00 — 260703-L14 (visual hierarchy + chat grouping): the sidebar became the G1
+  command tree — `Chats` now reads `enclosures` from the `useDashboard` projection store, derives
+  `grouped = groupSessions({sessions, taskDocuments, enclosures})` per render, and threads it into
+  `SessionList`; zero derived groups (flat run, no claims) leaves the sidebar rendering unchanged.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-02T17:04+02:00 — L9: kept the leaf picker visible for attached chats as a "Move leaf" control,
   switched successful attach/move broadcasts to the `"leaf"` catalog reason, and documented the polling
   catalog refresh that makes out-of-band backend leaf changes visible without a page reload. Successful

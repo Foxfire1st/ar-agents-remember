@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-30                                       |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T23:56:36+02:00                           |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -24,7 +24,13 @@ session; each row carries one explicit destructive Terminate control. Task 11 ad
 tag when a session is attached to a lifecycle for gate-response routing, and task 22 adds a compact
 non-running status tag for restored exited rows. The Task 22 follow-up removed the old local-only Hide
 action; End is now the only per-row command. Slice L5 adds an optional `leafNameFor` resolver so a
-leaf-bound session's row appends the attached leaf's name ("who works on what").
+leaf-bound session's row appends the attached leaf's name ("who works on what"). 260703-L14 adds the
+**G1 command tree**: an optional `grouped` prop (the `data/sessionGroups` model) renders sessions
+inside collapsible groups — the sprint's command deck (gold insignia) on top, one group per claimed
+master (purple insignia + one 22px indent step when commanded), landed work in one
+collapsed-by-default archive — while unattached sessions keep the flat placement below; with no
+`grouped` model or zero derived groups the component renders the pre-L14 flat list unchanged. Rows
+with `spawnRole` provenance also wear a role chip.
 
 ## Code Commentary
 
@@ -43,6 +49,24 @@ Slice L5 adds the optional `leafNameFor?: (leafKey: string) => string` prop: whe
 `chats-session-leaf-{id}` span) — the bound leaf's task-doc title, or the raw key when no resolver is
 supplied — so the side rail shows which leaf each chat is working on.
 
+260703-L14 restructures rendering around the `grouped` prop. The row markup is extracted into a
+`renderRow` closure and `gridListFor(members, ariaLabel)` builds one React Aria `GridList` per
+member set (every list shares `selectedKeys={activeId}` — only the list containing the active id
+shows a selection). No `grouped`, or `grouped.groups.length === 0`, returns the single flat
+`GridList` exactly as before. Otherwise a `chats-session-tree` column renders each `SessionGroup` as
+a `<section>` (`chats-group-{key}`, `data-nested` + a 22px `marginLeft` class when `group.nested`)
+headed by a native toggle button (`chats-group-toggle-{key}`, `aria-expanded`): a rotating chevron
+span, a `RankBadge size="sm"` when `group.tier` is set, the ellipsized group label, and the
+precomputed `countLabel` ("n chats · n live" / "· archived"). Collapse state is a UI-local
+`useState<Record<string, boolean>>` keyed by group key — deliberately not persisted (L14 scope);
+`isCollapsed` prefers the user's explicit toggle, else `group.defaultCollapsed` **unless the group
+holds the ACTIVE session** — the landed archive defaults collapsed but must never hide the active
+chat (the auto-expand rule; an explicit user collapse still wins). Collapsed groups unmount their
+`GridList`; `grouped.ungrouped` renders as a trailing flat `GridList` below the groups. `renderRow`
+also gained the spawn-role chip: `session.spawnRole` renders a `chats-session-role-{id}` chip via
+the `roleChip` cva (orchestrator/strategist gold — orchestrator also gold-bordered, manager purple,
+worker cyan, reviewer amber; unknown roles fall to the muted base, never throw).
+
 ### Conventions
 
 `GridList`, not `ListBox` — each row has a focusable End action, and a `ListBox` row
@@ -60,7 +84,12 @@ unit-tested directly (`SessionList.test.tsx`), unlike the Chats render-only test
 the active session; an empty `activeId` shows no selected row (when the active session is closed,
 `Chats` clears `activeId` and the terminal falls back to its empty hint). End only reports intent; the
 actual backend terminate call, local row removal, cross-tab broadcast, and terminal/WS teardown stay in
-`Chats`.
+`Chats`. L14 additions keep that split: group MEMBERSHIP is decided entirely by `data/sessionGroups`
+(this component renders the model verbatim and derives nothing but collapse visibility); collapse
+state is UI-local and unpersisted; the active session must never be hidden by a collapse **default**
+(only an explicit user toggle may hide it); and the group-less flat list (no `grouped` prop, or a
+model with zero groups — every flat run) stays byte-identical to pre-L14. Insignia render only
+through the shared `grammar/RankBadge` (size `sm`).
 
 ## Repo-Internal References
 
@@ -69,9 +98,17 @@ actual backend terminate call, local row removal, cross-tab broadcast, and termi
 | The Chats view that owns session state and composes this switcher. | L318-L326 | [Chats.tsx](Chats.tsx) |
 | The React Aria `ListBox` single-select idiom this mirrors (selectedKeys ↔ onSelectionChange). | — | [LifecycleList.tsx](LifecycleList.tsx) |
 | The render + interaction tests for this switcher. | L17-L82 | [SessionList.test.tsx](SessionList.test.tsx) |
+| The pure grouping model this renders (`SessionGroup`/`GroupedSessions`, membership + countLabels). | `groupSessions` | [sessionGroups.ts](../data/sessionGroups.ts) |
+| The V4 chevron insignia on group headers (size `sm`). | — | [RankBadge.tsx](../grammar/RankBadge.tsx) |
 
 ## Update History
 
+- 2026-07-06T23:56:36+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the G1 command tree —
+  an optional `grouped` prop rendering collapsible group sections (chevron + `RankBadge sm` + label +
+  countLabel headers; one GridList per group; 22px nested indent), UI-local collapse with the
+  active-session auto-expand exception for default-collapsed groups, the ungrouped flat remainder,
+  the zero-group flat fallback (pre-L14 rendering), and the spawn-role chip (`roleChip` cva) on rows
+  with `spawnRole`. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added an optional `leafNameFor` resolver prop; a leaf-bound row now
   appends ` · {leaf name}` (the bound leaf's task-doc title, fallback the raw leaf key) so the side rail
   shows which leaf each chat works on. Verification metadata pinned until closeout stamps the L5 commit.

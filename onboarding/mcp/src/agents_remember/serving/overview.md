@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T09:30+02:00 |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastUpdated            | 2026-07-06T23:59:24+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -43,7 +43,9 @@ hosted-session **opener** (leaf claim + env-seeded tmux ensure + catalog upsert)
 there is **no parallel spawn path** — and `terminal_paste.py`, the server-side echo-confirmed stdin paste
 that backs the new `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery. `terminal.py`
 gains an `env` knob-injection seam (`tmux new-session -e KEY=VALUE`) and `terminal_catalog.py` gains
-spawned-by provenance columns for the orchestration tree. Run via
+spawned-by provenance columns for the orchestration tree (L14 adds `spawn_role` beside them —
+written only when AR_SPAWN_ROLE is set, preserved on re-open, riding the sessions wire for the
+chats command tree). Run via
 `agents-remember dashboard` (the `cli/` umbrella); `--sim` replays a recorded fixture
 through the byte-identical path.
 
@@ -103,7 +105,7 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   MCP tool spawn through ONE opener; the route maps `bad-kind`→400 / `leaf-taken`→409 / `opened`→200.
   Server-resolved harness id, never on the wire; the opener passes `suspend_unsafe=(kind=="harness")` so
   later host writes strip Ctrl-Z for bare-pane harnesses, slice 6f, and persists a `TerminalCatalogEntry`
-  carrying label/lifecycle/cwd/tmux/command/status/leafKey + L2 spawned-by provenance without opening a
+  carrying label/lifecycle/cwd/tmux/command/status/leafKey + L2 spawned-by provenance + the L14 `spawnRole` without opening a
   starter PTY client; **slice L5** uniqueness is per (leaf, role) so a terminal never collides with the
   leaf's chat, and the `leafKey` is persisted (preserving an existing binding when none is sent) and
   echoed),
@@ -318,6 +320,9 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-06T23:59:54+02:00 — L14 review follow-up (L14R-3): the catalog column census now names `spawn_role`/`spawnRole` in both places (columns sentence + sessions-wire sentence) — a body edit, superseding the attestation-only entry. Verification metadata pinned until closeout stamps the L14 commit.
+
+- 2026-07-06T23:59:24+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `terminal_catalog.py` gained the migration-safe `spawn_role` column (JSON `spawnRole`) and `terminal_opener.py` records `env["AR_SPAWN_ROLE"]` onto the row at first spawn (write-once, preserved across a role-less re-open) — the Chats command-tree grouping key; the sessions listing exposes it automatically via `entry.to_json()`. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T09:30+02:00 — L9 adversarial-review follow-up (L9R-1): both the notes and files status mappers now map ValueError (null-byte paths) to 400 bad-path; regression tests in both suites. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-06T03:30+02:00 — No route impact: 260703-L11's additive `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags pass through the serving layer unchanged (booleans are never `exclude_none`-dropped); `test_serving.py` re-run green with no serving-code change.
 - 2026-07-06T01:40+02:00 — agent-orchestration L9 route impact: the route gains `notes.py`, the

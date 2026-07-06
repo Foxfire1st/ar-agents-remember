@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-04T11:10+02:00                                  |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`              |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-06T23:58:12+02:00                                  |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`              |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -31,12 +31,15 @@ name, fixed command argv, creation and last-attach timestamps, status (`running`
 leaf-identity key (qualified leaf id `repo/master/leaf-id`) the catalog uses as the **leaf→chat
 registry** key; it is opaque to the backend. Since **L2** the row also carries **spawned-by
 provenance** — `spawned_by_session` + `spawned_by_lifecycle`, set when the row was created by the
-`spawn_agent_session` tool (an orchestrator spawning a manager, a manager spawning a worker). `from_json`/`to_json` translate between Python
+`spawn_agent_session` tool (an orchestrator spawning a manager, a manager spawning a worker), and since
+**L14** a `spawn_role` column — the l-01 role this session was spawned AS (the `AR_SPAWN_ROLE` value the
+dispatching seat seeded into the spawn env), recorded so the Chats command tree can group command chats
+(orchestrator/strategist/manager) by role provenance without re-reading tmux env. `from_json`/`to_json` translate between Python
 snake_case and the dashboard API's camelCase fields. `to_json` writes `leafKey` / `spawnedBySession` /
-`spawnedByLifecycle` **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
+`spawnedByLifecycle` / `spawnRole` **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
 with no such key read back as `None` — no schema bump, migration-safe, the SAME pattern for all optional
-columns; the dashboard reads the spawned-by pair to render the orchestration tree (spawner → spawned
-edges) once that surface lands. `with_attachment` restores a row to `running`,
+columns; the dashboard groups the Chats sidebar by `spawnRole` (L14) and reads the spawned-by pair to
+render the spawner → spawned edges once that surface lands. `with_attachment` restores a row to `running`,
 refreshes `lastAttachedAt`, and clears `terminatedAt`; `with_status` changes status and records
 `terminatedAt` only for explicit termination. **L2** rewrote all three copiers
 (`with_attachment` / `with_status` / `with_leaf_key`) to use `dataclasses.replace(self, …)` instead of
@@ -122,6 +125,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T23:58:12+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TerminalCatalogEntry`
+  gained an optional `spawn_role` column (JSON `spawnRole`, written only when set — the same
+  migration-safe pattern as `leaf_key`): the `AR_SPAWN_ROLE` recorded at spawn, the Chats
+  command-tree grouping key. The `replace`-based copiers preserve it by construction.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-04T11:10+02:00 — L2 (agent-orchestration provenance): `TerminalCatalogEntry` gained optional
   `spawned_by_session` + `spawned_by_lifecycle` columns (the spawning session/lifecycle when the
   `spawn_agent_session` tool created the row) — `to_json`/`from_json` handle them migration-safe (written

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/grammar/`                         |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-21T02:44+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-06T23:57:30+02:00                           |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -43,6 +43,12 @@ these rather than re-styling raw elements (the slice-5d analogue of the device-m
   Panda descendant-selector styling, GFM tables wrapped in a horizontal-scroll box, and an `inline`
   variant (unwraps the paragraph) for list items / decision cells. `React.memo` keeps the projection
   tick from re-parsing stable section strings (the source of the scroll-jank it fixed). No raw HTML.
+- `RankBadge.tsx` — the rank insignia (260703-L14, the developer-picked V4 chevrons): tier
+  `orchestration` = three gold chevrons under a filled command pip, tier `management` = two purple
+  chevrons; inline SVG on fixed viewBoxes with a soft token-mixed glow, sizes `row` (16px, task rows)
+  and `sm` (~13px, Chats group headers). The ONE insignia component both the tasks tab and the Chats
+  command tree render rank through; only ever visible when an orchestration task exists (D3).
+  Covered by `RankBadge.test.tsx` (glyph anatomy is the contract).
 
 ## Invariants And Boundaries
 
@@ -63,6 +69,10 @@ these rather than re-styling raw elements (the slice-5d analogue of the device-m
 
 ## Update History
 
+- 2026-07-06T23:57:30+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): the library
+  gained `RankBadge.tsx` (+ `RankBadge.test.tsx`) — the V4 chevron rank insignia (gold orchestration
+  / purple management tiers, `row`/`sm` sizes) shared by `panels/LifecycleList` rows and
+  `panels/SessionList` group headers, coloured by the new gold/purple Panda tokens. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T03:20+02:00 — No route impact: 260703-L9 reuses `Markdown.tsx` unchanged as the renderer for the task reader's opened notes (the sidecar-view treatment); no grammar primitive was added or modified.
 - 2026-06-21T02:44+02:00 — slice 6g: added the `Markdown.tsx` primitive (memoized react-markdown + remark-gfm renderer for task-doc prose; GFM tables, `inline` variant). Verification metadata pinned until closeout stamps the 6g code commit.
 - 2026-06-17T22:45 — engine-room visual-parity: `Panel` gained an opt-in `fill` variant (a bounded flex

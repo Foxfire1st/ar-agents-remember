@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-03T12:50+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T23:58:48+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -35,7 +35,9 @@ explicit termination must keep `status="terminated"` and remain filtered even if
 bookkeeping runs.
 Slice L5 adds `leaf_key` coverage: a row with a `leaf_key` round-trips through `to_json`/`from_json`,
 an unset `leaf_key` is **omitted** from the serialized JSON, and a legacy row with no `leafKey` reads
-back as `None` (migration-safe). `with_leaf_key` is asserted to bind and to unbind (`None`). The L5 fix
+back as `None` (migration-safe). L14 adds the same coverage for the `spawn_role` column
+(`test_spawn_role_round_trips_and_is_omitted_when_unset`): a row with `spawn_role` serializes
+`spawnRole` and reads back, an unset row omits the key and reads `None`. `with_leaf_key` is asserted to bind and to unbind (`None`). The L5 fix
 pass makes uniqueness per **(leaf, role)**, so the `_entry` helper now takes a `kind` (a `harness` row is
 chat-role, a `terminal` row is terminal-role) and the `active_for_leaf` coverage is role-aware:
 `test_active_for_leaf_returns_running_owner` proves the **default role is `"chat"`** (resolving the harness
@@ -62,6 +64,10 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 
 ## Update History
 
+- 2026-07-06T23:58:48+02:00 — 260703-L14 (visual hierarchy + chat grouping): added
+  `test_spawn_role_round_trips_and_is_omitted_when_unset` — the `spawn_role` column serializes as
+  `spawnRole` when set, is omitted when unset, and reads back migration-safe (mirrors the L5
+  `leaf_key` cases). Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-03T12:50+02:00 — No content impact: L15 hoisted a function-local `import threading` to module top for the PLC0415 gate; no test logic change.
 - 2026-06-30T00:00:00+02:00 — L5 follow-up: `active_for_leaf` coverage is now role-aware — `_entry` takes a `kind`
   (harness ⇒ chat, terminal), `test_active_for_leaf_returns_running_owner` pins the default `"chat"` role,

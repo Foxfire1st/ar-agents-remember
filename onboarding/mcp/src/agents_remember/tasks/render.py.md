@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-19T06:03                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-06T23:57:48+02:00                     |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,9 @@ the rendered markdown; the JSON document is the source of truth.
 
 `render_markdown(doc)` assembles the document section by section, mirroring
 `worktrees.worktree_contract.contract_to_text`: a header block (Status/Repo/Type/
-Created, plus a `**Master:**` line for a sub-task, an optional `statusNote` suffix on the
+Created, plus a `**Master:**` line for a sub-task, an `**Orchestrates:**` line listing the
+commanded master names in backticks when `doc.orchestrates` is non-empty (L14; master-only by
+schema), an optional `statusNote` suffix on the
 `**Status:**` line, and `headerNotes` as extra `**Key:** value` lines — R4), then one `_section()` per
 `w-02-light-task-workflow` `template.md` heading (Objective, Requirements, Design,
 Implementation Steps, Proposed Code Examples, Decision Log, Open Questions,
@@ -66,6 +68,10 @@ blank-line normalization that would corrupt blank lines inside code fences.
 
 ## Update History
 
+- 2026-07-06T23:57:48+02:00 — 260703-L14 (visual hierarchy + chat grouping): `_header_lines` renders
+  `**Orchestrates:** \`name\`, …` after the `**Master:**` line when `doc.orchestrates` is non-empty
+  — the orchestration-command relation surfaces in the rendered markdown; absent field ⇒ no line,
+  existing renders byte-identical. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-06-19T06:03 — Slice 3c reopened (R4, leaf-doc fidelity): `_header_lines` now appends a `statusNote` suffix on `**Status:**` + the `headerNotes` lines, and leaf `render_markdown` appends freeform `sections` after References. Verification metadata pinned until closeout stamps the R4 code commit.
 - 2026-06-19T05:15 — Slice 3c reopened (R3, deferred-examples honesty): `_code_example_lines` gained a `note` parameter — for an empty `codeExamples` it renders `doc.codeExamplesNote` when set (e.g. "Drafted at the plan gate.") instead of the "no code examples are needed" default; `render_markdown` passes `doc.codeExamplesNote` through. Verification metadata pinned until closeout stamps the R3 code commit.
 - 2026-06-19T04:18 — Slice 3c reopened (R2, heading-vs-outcome): `_step_lines` now puts the distinct `Step.outcome` on the checkbox line (`- [x] {outcome or title}`) and drops the line for a bare step (no outcome, no substeps) — the heading is the step, no redundant title echo. Verification metadata pinned until closeout stamps the R2 code commit.

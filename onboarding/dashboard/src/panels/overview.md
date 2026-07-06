@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T15:40+02:00 |
-| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523`       |
-| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
+| lastUpdated            | 2026-07-06T23:57:24+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -60,7 +60,14 @@ and the `Chats` `SessionList` switcher).
   planning/inactive/worktree-less leaves stay readable through typed links and the master sub-task
   index instead of flooding the sidebar. In `BY REPO`, active leaf task-document rows are
   grouped beneath their parent/root task with a visual indent and the child task document id matching
-  the master task list; `BY PHASE` remains flat. Archived/deleted docs disappear because the
+  the master task list; `BY PHASE` remains flat. 260703-L14 adds the **orchestration tier** on top:
+  a master doc carrying a non-empty `orchestrates` list (the orchestration task) renders as a
+  gold-tier command row — folded corner, ghost wash, gold top hairline, and the `grammar/RankBadge`
+  three-chevron insignia — and every master it names (matched by folder / doc id / title through
+  `data/taskHierarchy`'s command helpers) nests one 22px step below with the purple two-chevron
+  management tier; leaves keep today's rendering one step further. Uncommanded masters, and every
+  run with no orchestration task, render exactly as pre-L14 (the D3 ruling; pinned by a flat-run
+  regression test). Archived/deleted docs disappear because the
   observer stops projecting them; completed/abandoned status alone is not the sidebar disappearance rule.
   Long task titles are bounded to a single-line ellipsis in the row title span, with the listbox,
   section, and row containers constrained so a long title cannot widen the left panel and create a
@@ -173,7 +180,14 @@ and the `Chats` `SessionList` switcher).
   surface: a full-bleed **"＋ Terminal"** control that asks the `POST /api/terminal` opener to spawn +
   own a session (a shell at the workspace root, 6e-2a), a left-rail **`SessionList`** switcher of open
   sessions (slice 6e-2c — a React Aria `GridList`, single-select = active session, with Task 22
-  per-row End action; covered by `SessionList.test.tsx`), and the selected session's
+  per-row End action; covered by `SessionList.test.tsx`; since 260703-L14 the switcher renders the
+  **G1 command tree** when `Chats` derives a grouped model from `data/sessionGroups` — the sprint's
+  command deck on top (gold insignia; command-role `spawnRole` provenance + chats claiming the
+  orchestration task), one collapsible group per claimed master (purple insignia + 22px indent when
+  commanded; live enclosures only), landed/absent-enclosure chats rolled into one collapsed archive,
+  unattached sessions flat below, spawn-role chips on rows, and UI-local collapse where a
+  default-collapsed group still auto-expands to keep the ACTIVE chat visible; zero derived groups —
+  every flat run — renders the pre-L14 flat list unchanged), and the selected session's
   lazy-mounted `Terminal` — an
   imperative `@xterm/xterm` terminal (FitAddon + `ResizeObserver` → `sendResize`, the known resize
   risk) over the `data/terminal` WebSocket client (binary PTY bytes in, `{type:stdin|resize}` out).
@@ -309,6 +323,13 @@ and the `Chats` `SessionList` switcher).
 
 ## Update History
 
+- 2026-07-06T23:57:24+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): the tasks tab
+  gained the orchestration tier (gold/purple V4 command rows over `TaskDocNode.orchestrates`, N-depth
+  `BY REPO` hierarchy, 22px indent grammar, `grammar/RankBadge` insignia — see `LifecycleList.tsx`),
+  and the Chats sidebar gained the G1 command tree (`SessionList` collapsible groups over the new
+  `data/sessionGroups` model threaded by `Chats.tsx`, spawn-role chips from the catalog's
+  AR_SPAWN_ROLE). The GOLD tier is orchestration-gated (D3): the orchestration row and the sprint deck appear only when an orchestration task exists; master grouping + the landed archive are the chats pane's BASELINE organization (grouping-always, owner-ratified at review L14R-1), mirroring the tasks tab's master>leaf nesting. The tasks tab itself renders flat runs exactly as before.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T15:40+02:00 — 260703-L12 route impact (three-party loops, canvas ride-along): `flowModels.ts` gains the STRATEGIST model (FLOW_MODELS census 7 → 8; placed between designer and orchestrator) and loop-doctrine lines on the manager/worker/reviewer/comms/orchestrator drawings; `FlowTab.test.tsx` grows to 11 cases (strategist model + cross-model loop invariants). FlowTab.tsx itself is unchanged (pure renderer over the registry). Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T12:10+02:00 — 260703-L10 route impact (small): the FlowTab canvas was verified against the converged `l-01-agent-lifecycles` doctrine (S2 reduced to verification after L8 shipped the redraw); the one residual vocabulary drift fixed is the designer model's reframe-agreement node phase label, `"frame"` → `"reframe"`. Tests (41 files / 385) stay green — no invariant string changed. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-06T10:30+02:00 — L11 adversarial-review follow-up: the anchor fallback annotation is deterministic (greatest lastEventTs), closing L11R-2. Verification metadata pinned until closeout stamps the L11 commit.

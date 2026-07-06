@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-03T00:35+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T23:59:12+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -47,9 +47,12 @@ together.
   the progress helpers (`step_total`/`step_done`/`current_step` for leaves; `series_total`/`series_done`
   for a master's `subTasks` checkboxes — R1), the optional leaf-only `codeExamplesNote`
   (R3) plus the leaf header companions `statusNote`/`headerNotes` (`HeaderNote`) and freeform leaf
-  `sections` (R4 — bespoke prose appended after the template), and an after-validator
+  `sections` (R4 — bespoke prose appended after the template), the master-only `orchestrates`
+  list (L14 — the orchestration-command relation: a master with a non-empty list IS an
+  orchestration task naming the masters it commands; additive, no new kind), and an after-validator
   that keeps the three kinds disjoint (master ⇒ `subTasks` + structured `sections`, no
-  `steps`/`codeExamples`/`codeExamplesNote`/`lifecycleId`; light/subTask ⇒ no `subTasks` + freeform-only
+  `steps`/`codeExamples`/`codeExamplesNote`/`lifecycleId`; light/subTask ⇒ no `subTasks`, no
+  `orchestrates`, freeform-only
   `sections` (R4), and no `codeExamplesNote` alongside non-empty `codeExamples`). A persisted/served
   contract, **not** an MCP response model (peer of `observer.projection`). Leaf docs can name their root
   `seriesContractPath` and one or more `enclosures[]` leaf enclosure contracts.
@@ -59,7 +62,8 @@ together.
   heading + a `- [ ] {outcome or title}` checkbox carrying the distinct `Step.outcome` (R2; a bare step with no
   outcome and no substeps is heading-only). An empty Proposed Code Examples section renders
   `codeExamplesNote` when set (a deferred slice) instead of the default "no code examples are
-  needed" placeholder (R3). The header carries an optional `statusNote` suffix + the `headerNotes` lines,
+  needed" placeholder (R3). The header carries an optional `statusNote` suffix + the `headerNotes` lines
+  (and, on an orchestration master, an `**Orchestrates:**` line listing the commanded names — L14),
   and a leaf appends its freeform `sections` after References (R4). A `master`
   dispatches to `_render_master`: an ordered `sections` walk where `freeform` bodies
   render verbatim and `subTasks`/`sharedDecisions` render the generated list/table.
@@ -106,6 +110,12 @@ together.
 
 ## Update History
 
+- 2026-07-06T23:59:12+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: the schema
+  now carries the ORCHESTRATION-COMMAND relation — `document.py` gained the master-only
+  `orchestrates` list (an orchestration task is a master doc with a non-empty list; owner ruling —
+  additive, no new kind, no migration) and `render.py` renders it as an `**Orchestrates:**` header
+  line. `set_field` (controllers route) mutates it; the observer projects it onto `TaskDocNode`
+  for the dashboard hierarchy. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T03:30+02:00 — No route impact: 260703-L11 (tasks tab shows worktree truth) reviewed `reopen.py`'s `cleanup: reopened` semantics as the projection's documented meaning (contract-reset-awaiting-restart); no file in this route changed — the existence flags live in the observer route.
 - 2026-07-03T00:35+02:00 — L11 route impact: `reopen.py` and `leaf_doc.py` join the route — reopening is a TASK operation (contract + doc reset; worktree recreation stays with worktree_start), and the doc-to-lifecycle binding is explicit-restamp, never heuristic.
 - 2026-06-29T21:24+02:00 — No route impact: `document.py` gained a comment noting `DocKind`'s `light` is

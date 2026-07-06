@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-06T22:46+02:00                            |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345`        |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-06T23:59:00+02:00                            |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`        |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -41,6 +41,9 @@ L2 contracts:
   carries the leaf, spawned-by session/lifecycle, and delivered+submitted flags; the model/effort knobs
   are seeded as `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` in the spawn env; the provenance persists on the
   catalog row; and the packet was pasted-and-submitted into the session's tmux pane.
+- **spawn role** (`test_spawn_records_role_from_env_and_reports_it`, L14): a spawn whose `env`
+  carries `AR_SPAWN_ROLE` persists it on the catalog row (`spawn_role`) and reports it as
+  `spawnRole` in the `spawned` payload — the Chats command-tree grouping key.
 - **draft** (`test_draft_paste_does_not_submit`): `submit=False` pastes without submitting and omits the
   `submitted` key.
 - **no context** (`test_spawn_without_context_skips_paste`): no paste is attempted.
@@ -103,6 +106,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T23:59:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): added
+  `test_spawn_records_role_from_env_and_reports_it` — an `env={"AR_SPAWN_ROLE": "manager"}` spawn
+  persists `spawn_role` on the catalog row and reports `spawnRole` in the payload.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T22:46+02:00 — 260703-L13 (settings unification): added
   `SpawnHarnessResolutionTests` — eight cases pinning explicit > repo-local > global >
   detection-gated resolution, refusal-not-fallback behavior, and source-naming refusal

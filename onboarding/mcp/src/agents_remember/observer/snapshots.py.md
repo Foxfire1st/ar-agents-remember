@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:10+02:00                           |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastUpdated            | 2026-07-06T23:58:06+02:00                           |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -107,7 +107,9 @@ does not start or repair providers.
 `read_task_documents` now carries the **full task content** (objective /
 requirements / design / steps+substeps / codeExamples / decisions / openQuestions / references) into
 `TaskDocNode`, so the dashboard is the task reader — the JSON content is read in the UI, never the
-filesystem.
+filesystem. Since L14 `_task_doc_node` also copies `doc.orchestrates` (as a fresh list) onto
+`TaskDocNode.orchestrates` — the orchestration-command relation the dashboard nests masters by;
+docs without the field project `[]`.
 
 **Slice-5e** added two Engine Room readers. `read_engine_process_facts(coordination_root, *, active_worktree_groups=None)` iterates the
 *same* active leaf enclosure contracts as `read_enclosures`, but instead of the structural `EnclosureNode`
@@ -252,6 +254,10 @@ work while archived roots and contract folders stay out of the JSON scan.
 
 ## Update History
 
+- 2026-07-06T23:58:06+02:00 — 260703-L14 (visual hierarchy + chat grouping): `_task_doc_node` passes
+  `orchestrates=list(doc.orchestrates)` through to `TaskDocNode` — the schema's master-only
+  orchestration-command list rides the projection unchanged; no reader logic or admission rules
+  touched. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T02:10+02:00 — 260703-L11: `_enclosure_from_contract` now stats
   `codeWorktreeExists`/`memoryWorktreeExists` onto each `EnclosureNode` at snapshot
   time (the same `exists()` probes `status_payload` uses) so the tasks surface can

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T02:15+02:00 |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088`       |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastUpdated            | 2026-07-06T23:59:18+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -279,6 +279,9 @@ The slice-3a projection read side:
   actionable-drift attention detail. 260703-L11 adds `EnclosureNode.codeWorktreeExists`/
   `memoryWorktreeExists` — worktree-existence truth stat'ed by the snapshots I/O layer, the tasks
   surface's visibility rule (`cleanup: reopened` = contract-reset-awaiting-restart, not live work).
+  260703-L14 adds `TaskDocNode.orchestrates` (`list[str]`, default `[]`) — the schema's master-only
+  orchestration-command list passed through by `snapshots._task_doc_node`, from which the dashboard
+  derives the orchestration > master > leaf hierarchy and rank insignia (additive, no bump).
   `version` is 2.
 - `reducer.py` — the pure fold: `project_lifecycle` (events → projection, with the
   inferred paused/abandoned layer, corrections, and token aggregation),
@@ -408,6 +411,11 @@ The slice-3a projection read side:
 
 ## Update History
 
+- 2026-07-06T23:59:18+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact:
+  `TaskDocNode.orchestrates` (additive `list[str]`, projection.py) + the `snapshots._task_doc_node`
+  pass-through — the orchestration-command relation rides the served projection so the dashboard
+  can nest commanded masters under their orchestration task; no reader/admission logic changed, no
+  version bump. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T02:15+02:00 — 260703-L11 route impact: `EnclosureNode` gains additive
   `codeWorktreeExists`/`memoryWorktreeExists`, stat'ed by
   `snapshots._enclosure_from_contract` at snapshot time (the `status_payload`

@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-04T11:10+02:00                       |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`   |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-06T23:58:30+02:00                       |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`   |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -35,8 +35,10 @@ role (`chat` or `terminal`).
 `harness-unknown` / `harness-not-detected` / `bad-kind`. `SpawnAgentSessionResponse` is a strict
 `ToolResponse` with operation `spawn_agent_session`, the `session`, optional `harness`/`kind`/`leafKey`/
 `label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) recorded
-on the catalog row for the dashboard orchestration tree, the `ownerSession` set on `leaf-taken`, the
-context-delivery outcome (`contextDelivered` / `submitted`), and a `detail` for the refusals.
+on the catalog row for the dashboard orchestration tree, the optional `spawnRole` (L14 — the
+`AR_SPAWN_ROLE` persisted on the row, the Chats command-tree grouping key), the `ownerSession` set on
+`leaf-taken`, the context-delivery outcome (`contextDelivered` / `submitted`), and a `detail` for the
+refusals.
 
 ### Conventions
 
@@ -81,6 +83,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T23:58:30+02:00 — 260703-L14 (visual hierarchy + chat grouping): `SpawnAgentSessionResponse`
+  gained the optional `spawnRole` field (`str | None = None`) mirroring the new catalog column —
+  additive, omitted from payloads when the spawn carried no AR_SPAWN_ROLE.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-04T11:10+02:00 — L2: added `SpawnAgentSessionStatus` + the strict `SpawnAgentSessionResponse`
   contract for the agent-facing `spawn_agent_session` dispatch tool (spawned-by provenance,
   context-delivery outcome, and the server-arbitrated `leaf-taken` / pre-spawn refusal statuses). Follows

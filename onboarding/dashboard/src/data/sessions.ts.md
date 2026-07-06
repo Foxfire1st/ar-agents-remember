@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:35+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T23:56:54+02:00                           |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -48,8 +48,13 @@ agent-facing MCP tool can rehydrate open dashboard stores without a full page re
 ### Logic
 
 `sessionStore = createStore<SessionState>(...)` (zustand vanilla) holds `sessions: OpenSession[]`
-(`{id, label, kind?, harness?, lifecycleId?, leafKey?, status?}`), `activeId: string | null`, a coarse
-`count`, the highest live ordinal retained for coarse inspection.
+(`{id, label, kind?, harness?, lifecycleId?, leafKey?, spawnRole?, status?}`), `activeId: string |
+null`, a coarse `count`, the highest live ordinal retained for coarse inspection. 260703-L14 adds
+`OpenSession.spawnRole?` — the AR_SPAWN_ROLE the backend recorded on the catalog row at spawn
+(orchestrator/strategist/manager/worker/reviewer…), read-only provenance this store merely carries:
+it is the Chats command-tree grouping key (`data/sessionGroups` decks command roles) and the
+`SessionList` role chip, mapped in by `fromTerminalSessionInfo` (set only when present, like
+`leafKey`).
 `add(prefix, id, lifecycleId?)` appends a session labelled with the lowest available live ordinal for
 that prefix, optionally tags it with a lifecycle, updates the tracked ordinal, and makes it active.
 `upsert(session, activate=true)` inserts/replaces a server-owned session row while clearing any older
@@ -156,6 +161,10 @@ object with the action methods on it, not a separate actions slice.
 
 ## Update History
 
+- 2026-07-06T23:56:54+02:00 — 260703-L14 (visual hierarchy + chat grouping): `OpenSession` gained
+  `spawnRole?` (the AR_SPAWN_ROLE recorded on the backend catalog row — the command-tree grouping
+  key + role chip), carried through `fromTerminalSessionInfo` when present; no store action reads
+  or mutates it. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-02T17:04+02:00 — L9: added `"leaf"` as a first-class terminal-catalog invalidation reason and
   clarified that hosted chat leaf moves update this store only after server success or catalog rehydrate.
   The `leafKey` uniqueness guard remains advisory and role-scoped, while `applyLeafAssignment` applies

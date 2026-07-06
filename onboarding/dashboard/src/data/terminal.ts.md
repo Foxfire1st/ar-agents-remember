@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:35+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-06T23:57:00+02:00                           |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2`       |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -47,7 +47,9 @@ harness. Pure helpers: `terminalSocketUrl` (same-origin
 `ws(s)://<host>/api/terminal/{id}`, id-encoded) and `parseTerminalControl` (`"exit"` | `null`).
 `TerminalSessionInfo` mirrors the server catalog payload (`id`, `label`, `kind`, optional
 `harness`/`lifecycleId`, optional `leafKey` (the durable qualified leaf id the chat claims, slice L5),
-`cwd`, `tmuxName`, timestamps, `status`, optional `terminatedAt`) and
+`cwd`, `tmuxName`, timestamps, `status`, optional `terminatedAt`, and — 260703-L14 — optional
+`spawnRole`, the AR_SPAWN_ROLE the backend recorded on the catalog row at spawn, absent on
+hand-opened sessions) and
 `TerminalSessionStatus` is `"running" | "exited" | "terminated"`. `fetchTerminalSessions(base)` GETs
 `/api/terminal/sessions` and returns an array or `[]` on failure, letting `Chats` hydrate rows after a
 page/dashboard refresh without treating the session list as projected lifecycle truth.
@@ -102,6 +104,11 @@ imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-
 | The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
 
 ## Update History
+
+- 2026-07-06T23:57:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TerminalSessionInfo`
+  gained optional `spawnRole` (the AR_SPAWN_ROLE recorded server-side on the catalog row; the
+  Chats command-tree grouping key), a read-only wire mirror — no fetch/open call changed.
+  Verification metadata pinned until closeout stamps the L14 commit.
 
 - 2026-07-02T16:35+02:00 — Reopened L6 paste-loss fix: added `pasteAndConfirm(conn, packageText)` — the
   confirmed draft-paste loop (quiet-gated attempt → echo confirmation past the pre-paste `lastOutputAt`

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T23:45+02:00 |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastUpdated            | 2026-07-06T23:59:06+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 
 ## Purpose
 
@@ -29,6 +29,14 @@ As of cycle 5: the master-exit decide call is named exactly (gate_decide(gate_id
 
 As of 260703-L12 the **strategist seat is REAL** (the "(planned seat — leaf L12)" marker is gone): Job P carries the MANDATORY strategist pre-run — before implementation starts on any designed master, `spawn_agent_session` with `AR_SPAWN_ROLE=strategist` and a portfolio brief of refs (never pasted state); the strategist returns the ORCHESTRATION TASK (sprint plan + scope, `templates/orchestration-task.md`), reviewed in the portfolio three-party loop (plan-review catalog) and converged over drawing-board rounds; this seat ADOPTS the draft (reader-not-mutator strategist); re-evaluation rules (in-sprint pre-implementation addition → re-plan; out-of-sprint → next sprint); Job O's entry requires the adopted orchestration task unconditionally (even a single master; the hat-collapse Portfolio bullet now says an orchestrated run never skips the pass — only session-scale hands-on work does). The **super-exit handover is ruled** (2026-07-06, resolves L8-Q9): all leaf→master and master→super integrations are orchestrator-delegated (happy path under the series' standing approval; a raised durable `integration-approval` gate still awaits the developer — human-pinned as-built); the developer reviews ONCE at the fully integrated super branch on the PR/carry-over gate, **visible-behavior-first in a REVIEWABLE ENVIRONMENT** (for agents-remember: the dashboard) with **demo notes ("what changed visibly", per master)**, code second. Round 2 (L12R-6) adds the standing-approval carve-out to the Hand-Off Protocol intro itself: in an orchestrated run, leaf→master and master→super integrations ride the series' standing approval — no per-edge developer hand-off; the table's integration row governs when a hand-off DOES happen (solo runs; a raised durable gate). The Comms escalation swaps "genuinely stumped" for the written QUO-VADIS test (a high-blast-radius truth goes up immediately; presentation-grade never), and the dispatch loop states how a manager-escalated loop (cap hit / non-convergence, round history attached) is re-run at this level's agent set or taken to the developer.
 
+As of 260703-L14 the Job P Output bullet states the orchestration task's DURABLE FORM: a
+`kind:"master"` task doc carrying a top-level `orchestrates` list naming the master tasks it
+commands — the dashboard derives the orchestration > master > leaf hierarchy (and the rank
+insignia) from that field, so setting it is part of adoption. This onboarded package_data copy is
+the mirror of the canonical `skills/l-01-agent-lifecycles/roles/orchestrator.md`; the other
+sync-propagated harness-dir copies (`.claude/`, `.codex/`, …) are generated and not
+onboarding-covered.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -39,6 +47,11 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-06T23:59:06+02:00 — 260703-L14 (visual hierarchy + chat grouping): Job P's Output bullet now
+  names the orchestration task's durable form — a `kind:"master"` task doc with a top-level
+  `orchestrates` list (the dashboard's hierarchy/insignia source), so setting it is part of
+  adoption. Sync-propagated from the canonical skills/ copy.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up (L13R-1): knob-table harness example fixed to the registry id `claude`. Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-6): the Hand-Off Protocol intro carries the orchestrated-run standing-approval carve-out cross-ref (integrations concentrate the developer hand-off at the super PR/carry-over gate; the integration table row governs the hand-off cases that remain). Verification metadata pinned until closeout stamps the L12 commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-06-29T22:57+02:00 |
-| lastVerifiedCommitHash | `026b2468a8d456e35a4f80a86e66a574b1e81f4b` |
-| lastVerifiedCommitDate | 2026-06-30T00:57:11+02:00|
+| lastUpdated | 2026-07-06T23:58:36+02:00 |
+| lastVerifiedCommitHash | `278a7bf789ceca4378b0de44ba9fae4ec2f1d4b2` |
+| lastVerifiedCommitDate | 2026-07-06T13:30:12+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -29,8 +29,9 @@ and tool registration.
   leaf-counting logic, a master round-trip, and the kind guards (master ⇒ no
   steps/lifecycleId; light/subTask ⇒ no subTasks + freeform-only `sections`, R4), plus the **R3**
   `codeExamplesNote` cases (round-trip + `exclude_none` omission, master-forbids,
-  note-requires-empty-`codeExamples`) and the **R4** extension round-trip
-  (`statusNote`/`headerNotes`/freeform `sections`).
+  note-requires-empty-`codeExamples`), the **R4** extension round-trip
+  (`statusNote`/`headerNotes`/freeform `sections`), and the **L14** `orchestrates` cases
+  (master round-trip, master-only rejection on a leaf, `[]` default on docs without the field).
 - `RenderTests` — a byte-exact golden for a small light doc, determinism, the
   `(Sub-task <id>)` title + `**Master:**` line, checkbox + substep-note rendering, the **R2**
   outcome-on-the-checkbox + bare-step-heading-only case, decision-cell pipe/newline escaping,
@@ -40,12 +41,15 @@ and tool registration.
   real-sub-task fixture round-trips content-complete.
 - `MasterRenderTests` — a byte-exact golden master (header + ordered sections, the
   `subTasks` list with ✅/🔨/⬜ markers incl. the `3c` number, and the Shared Decisions
-  table), determinism, the status→marker map, the empty-subtasks placeholder, and
-  verbatim preservation of bespoke multi-paragraph prose (the S4 acceptance).
+  table), determinism, the status→marker map, the empty-subtasks placeholder,
+  verbatim preservation of bespoke multi-paragraph prose (the S4 acceptance), and the **L14**
+  `**Orchestrates:**` header line (renders backticked names when set; absent field ⇒ no line).
 - `StoreTests` — `doc_stem` light-vs-subtask (and master → `task`), and a write→read
   round-trip that leaves no `.tmp` file.
 - `ControllerTests` — `create` (+ duplicate refusal), `set_status`, `set_field`
-  (incl. `codeExamplesNote`/`statusNote`), `set_step` insert-then-update (no duplication),
+  (incl. `codeExamplesNote`/`statusNote`, and the **L14** `orchestrates` cases: set on a master —
+  persisted + rendered — and rejected on a leaf via the schema backstop), `set_step`
+  insert-then-update (no duplication),
   `append_decision`, non-mutating
   `get`, contract `lifecycle_id` pickup, `contract_path` resolution, the error
   paths, and the **R5** dry-run cases (`create` renders without writing either file; a mutating
@@ -93,6 +97,11 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 
 ## Update History
 
+- 2026-07-06T23:58:36+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the `orchestrates`
+  coverage — `SchemaTests` round-trip on a master + master-only rejection + `[]` default,
+  `MasterRenderTests` `**Orchestrates:**` header line (present when set, absent otherwise), and
+  `ControllerTests` `set_field` on a master (persisted + rendered) with the leaf rejection.
+  Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-06-29T22:57+02:00 — CRUD completion (L2): added `MasterControllerTests` cases for `remove_subtask`
   — deletes the leaf doc + master row, `keep_file` retains the doc, dry-run previews `wouldDeleteFiles`
   without deleting, absent number raises, non-master rejected. Verification metadata pinned until closeout
