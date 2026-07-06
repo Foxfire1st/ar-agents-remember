@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T22:15+02:00|
-| lastVerifiedCommitHash | `0eba27a75a37ebc4ce1baeb9da9d7b7a879a8974` |
-| lastVerifiedCommitDate | 2026-06-04T22:38:48+02:00|
+| lastUpdated            | 2026-07-06T22:40+02:00|
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -28,7 +28,15 @@ through package-local lifecycle functions.
 
 The service copies package runtime skills, provider defaults, and runtime
 `AGENTS.md` templates from the source/package runtime tree into the configured
-coordinator. Runtime sync removes stale coordinator `scripts/` remnants because
+coordinator. After the `AGENTS.md` copies and the user-owned directory ensures,
+`seed_agentic_settings` (260703-L13) seeds the GLOBAL agentic settings file at
+`<coordinationRoot>/system/settings.json` COPY-IF-MISSING with the documented
+defaults (`kernel/agentic_settings.default_agentic_settings_seed_text` —
+all-human gate delegation, the L12 loop defaults, no spawn preference): an
+existing file is never touched whatever it contains (user-owned posture, like
+`memory-repos/`), a missing one counts as a copied file in the summary, and
+dry-run reports without writing. The c-13 install skill's Stage 2 interview
+then edits the seeded file with the developer. Runtime sync removes stale coordinator `scripts/` remnants because
 the old source-side installer and skill-install script are no longer valid
 runtime entry points. Dependency-skipped syncs preserve live provider runner
 state under `providers/runners`, while stale `providers/_bin` and
@@ -92,6 +100,12 @@ clients reach it through the `runtime_install` tool.
 | Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, unrecovered failure reporting, and dependency-install failure recovery. | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
 
 ## Update History
+
+- 2026-07-06T22:40+02:00 — 260703-L13 (settings unification): added `seed_agentic_settings`
+  — the global agentic settings file is seeded copy-if-missing at the user-owned insertion
+  point (after AGENTS.md targets + user-owned dirs), sharing the seed content with the
+  kernel loader so installer and parser cannot drift. Verification metadata pinned until
+  closeout stamps the L13 commit.
 
 - 2026-06-04T22:15+02:00 — Documented provider watcher rebind orchestration for `install_provider_deps=true`, including the extracted helper, non-destructive retry, recovery reporting, and preserved provider data.
 - 2026-05-31T12:30+02:00 — Dropped the provider runner integrity-manifest write from `install_runtime_from_config` and the `integrity` return field, and removed the stale integrity.py reference (1.0.0 review remediation).

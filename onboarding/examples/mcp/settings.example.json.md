@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T12:32+02:00                     |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-06T22:52+02:00                     |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,7 +18,10 @@
 
 `settings.example.json` is the public MCP settings template. It is the
 machine-readable authority shape for the MCP server and replaces the old
-coordinator `system/settings.json` provider template.
+coordinator `system/settings.json` provider template. Since 260703-L13 it
+carries NO `orchestration` block (gateDelegation moved to the global agentic
+settings file; an authority-file value is only a warned one-cycle legacy
+fallback) and no `memorySettingsIncludes` key (dead plumbing removed).
 
 ## Code Commentary
 
@@ -75,6 +78,11 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 | Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | n/a | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 
 ## Update History
+
+- 2026-07-06T22:52+02:00 — 260703-L13 (settings unification): dropped the `orchestration`
+  example block (the agentic family's home is the coordinator's global settings file now)
+  and the removed `memorySettingsIncludes` key. Verification metadata pinned until closeout
+  stamps the L13 commit.
 
 - 2026-07-04T12:32+02:00 — 260703-L4: the template now carries the
   opt-in `orchestration.gateDelegation` shape, shipped at `all-human` defaults

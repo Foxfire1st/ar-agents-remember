@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-04T11:10+02:00                            |
-| lastVerifiedCommitHash | `3c592f76ed607e4c0391fd26d77b869ee837a5af`        |
-| lastVerifiedCommitDate | 2026-07-04T11:44:59+02:00|
+| lastUpdated            | 2026-07-06T22:25+02:00                            |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345`        |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -33,11 +33,20 @@ catalog at `terminal_catalog_path(config.coordination_root)`, calls the serving-
 `attach_terminal_session_to_leaf` operation. The payload reports `ok` only for `attached`, and always
 includes the requested session/leaf plus optional `previousLeafKey`, `ownerSession`, and role.
 
-`spawn_agent_session_payload(config, *, harness, leaf_key, context, submit, label, model, effort, env,
-spawned_by_session, spawned_by_lifecycle, kind, session_id, host, paster, which)` composes the L2
-dispatch. It first validates a `harness` kind against the detection set (`find_harness` /
-`is_detected`) — an unknown or uninstalled harness short-circuits to `harness-unknown` /
-`harness-not-detected` **before any spawn** (`_spawn_refusal`). It then folds `model`/`effort`/`env`
+`spawn_agent_session_payload(config, *, harness=None, leaf_key, context, submit, label, model, effort,
+env, spawned_by_session, spawned_by_lifecycle, kind, session_id, host, paster, which)` composes the L2
+dispatch. For a `harness` kind it first RESOLVES the harness (`_resolve_spawn_harness`, 260703-L13):
+an explicit argument is validated against the detection set (`find_harness` / `is_detected`) as
+before; an OMITTED harness resolves per-use through the agentic-settings loader
+(`kernel/agentic_settings.load_agentic_settings`) as repo-local `orchestration.spawn.harness` over
+the global value — the repo-local layer is selected by the qualified leaf key's repository segment
+(`_spawn_repo_root`; `<repository>/<master>/<docId>` is the l-01 catalog-binding contract, leafless
+or unconfigured-repo spawns read the global layer only) — and falls back to the detection-gated
+default (the first registry harness on PATH). The loader validates settings values against the
+registry ids, so a settings value can never inject a command; a configured-but-undetected
+preference refuses `harness-not-detected` naming the settings source, and nothing-anywhere refuses
+rather than silently defaulting. An unknown or uninstalled harness still short-circuits to
+`harness-unknown` / `harness-not-detected` **before any spawn** (`_spawn_refusal`). It then folds `model`/`effort`/`env`
 into the spawn env (`_spawn_env` — model/effort ride as namespaced `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`
 vars, caller `env` keys win), defaults spawned-by-lifecycle to the active ambient lifecycle
 (`_ambient_lifecycle_id`, best-effort), and calls the shared `serving.terminal_opener`
@@ -68,6 +77,9 @@ is `_tool_payload` + `models/terminal.py`, and server registration lives in `mcp
 - Spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) is recorded on the catalog row so
   the dashboard can render the orchestration tree; the tool also carries it on its response.
 - The responses remain AR-owned and strict; provider-flexible models are not used here.
+- Harness resolution precedence is explicit arg > repo-local settings > global settings >
+  detection-gated default; settings are read PER-USE (an edit applies to the next spawn, no
+  restart), and `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` env riding is unchanged by the L13 seam.
 
 ### Todos
 
@@ -90,7 +102,8 @@ catalog.
 | The spawn builder composes the shared serving opener, then an echo-confirmed context paste. | L82-L189 | [terminal.py](terminal.py) |
 | The shared opener (create + leaf claim + env-seeded tmux ensure + catalog upsert) both call paths reuse. | L84-L174 | [../../serving/terminal_opener.py](../../serving/terminal_opener.py) |
 | The server-side echo-confirmed paste helper that delivers the context packet. | L133-L229 | [../../serving/terminal_paste.py](../../serving/terminal_paste.py) |
-| The harness detection registry (`find_harness` / `is_detected`) that gates a spawn before tmux. | L60-L72 | [../../serving/harnesses.py](../../serving/harnesses.py) |
+| The harness detection registry (`find_harness` / `is_detected` / `HARNESSES` order) that gates a spawn before tmux and orders the detection-gated default. | L41-L72 | [../../serving/harnesses.py](../../serving/harnesses.py) |
+| The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | load_agentic_settings | [../../kernel/agentic_settings.py](../../kernel/agentic_settings.py) |
 | The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | L18-L20 | [base.py](base.py) |
 | The facade re-exports both payload builders. | L86; L94 | [__init__.py](__init__.py) |
 | The FastMCP server registers `attach_terminal_session_to_leaf` and the L2 `spawn_agent_session(harness, leaf_key, context, submit, model, effort, env, …)`. | L146-L189 | [../server.py](../server.py) |
@@ -106,6 +119,12 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T22:25+02:00 — 260703-L13 (settings unification): `harness` became optional —
+  `_resolve_spawn_harness` implements explicit arg > repo-local settings > global settings >
+  detection-gated default, reading the agentic settings per-use with the repo-local layer
+  derived from the qualified leaf key (`_spawn_repo_root`); refusal payloads name the
+  settings source; `_spawn_refusal` accepts a None harness. Verification metadata pinned
+  until closeout stamps the L13 commit.
 - 2026-07-04T11:10+02:00 — L2: added `spawn_agent_session_payload` (+ `_spawn_env` / `_ambient_lifecycle_id`
   / `_spawn_refusal` helpers) — the agent-facing dispatch tool that composes the shared serving opener
   (`terminal_opener.open_terminal_session`) plus an echo-confirmed context paste

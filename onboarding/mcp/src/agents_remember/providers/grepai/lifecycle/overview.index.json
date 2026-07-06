@@ -75,7 +75,7 @@
       "MCP",
       "mcp/src/agents_remember/providers/grepai/lifecycle/",
       "route-local-overview",
-      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "9d58058e3ce4815b0356794fc21973ebe9c71345",
       "/overview.md",
       "grepai/lifecycle/",
       "Performing initial scan",
@@ -89,19 +89,19 @@
       "61434",
       "5432",
       "11434",
+      "--from-settings",
       "grepai.context",
       "context.common",
       "providers.context",
+      "grepai_layout_from_args",
+      "--root",
+      "--runtime-root",
       "providers/context_common.py",
       "providers/grepai/lifecycle/",
       "grepai_*",
       "lifecycle_modules/grepai/",
       "agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py",
-      "test_provider_lifecycle.py",
-      "agents-remember/mcp/tests/test_provider_lifecycle.py",
-      "agents_remember",
-      "sourceRoute",
-      "doc_type"
+      "test_provider_lifecycle.py"
     ]
   },
   "fallback": {

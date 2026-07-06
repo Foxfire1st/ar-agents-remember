@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/watchers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `3f09b75461760479b443f1b04b180772724e7a24` |
-| lastVerifiedCommitDate | 2026-05-28T15:10:01+02:00|
+| lastUpdated            | 2026-07-06T22:32+02:00                     |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,8 +23,11 @@ GrepAI and CodeGraphContext.
 
 ### Logic
 
-The module reads provider enablement from lifecycle settings, maps generic
-watcher actions to provider-specific actions, calls GrepAI or CGC lifecycle
+The module reads provider enablement from lifecycle settings
+(`context_provider_enabled` with the explicit `--from-settings` path — since
+260703-L13 there is no coordination-root fallback, so watcher commands need the
+generated settings file), maps generic watcher actions to provider-specific
+actions, calls GrepAI or CGC lifecycle
 functions, normalizes provider errors into structured results, and collects
 recovery actions from partial failures. Non-dry-run long-running actions require
 a durable process namespace. CGC aggregate status now includes FalkorDB backend
@@ -51,6 +54,11 @@ configured repo watchers to be ok.
 | Tests cover aggregate watcher partial result and recovery-action behavior. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
+
+- 2026-07-06T22:32+02:00 — 260703-L13 ride-along: `watcher_enabled_providers` calls
+  `context_provider_enabled` without the dropped `coordination_root` parameter (the implicit
+  coordinator-settings fallback was deleted; behavior with an explicit `--from-settings` is
+  unchanged). Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-05-28T12:32+02:00: Updated after CGC watcher status began including FalkorDB backend health in aggregate status packets.
 - 2026-05-26T12:51+02:00: Updated after watcher CGC args stopped carrying a Python executable and references moved to process-control/status modules.

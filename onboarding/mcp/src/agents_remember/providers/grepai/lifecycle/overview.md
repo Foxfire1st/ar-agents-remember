@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-25T09:55+02:00|
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-06T23:55+02:00|
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ service ports (`5432` and `11434`) used inside the Docker network.
 
 ## Route Model
 
-- `core.py` is configuration, layout, and workspace derivation.
+- `core.py` is configuration, layout, and workspace derivation. Since L13 its settings-backed path requires an EXPLICIT `--from-settings` file — the implicit coordination-root fallback (fail-open on a missing file) is removed.
 - `backend.py` owns the Postgres container.
 - `embedder.py` owns the Ollama container and configured model.
 - `runner.py` owns the GrepAI image and watcher container.
@@ -69,6 +69,15 @@ service ports (`5432` and `11434`) used inside the Docker network.
 | Provider lifecycle tests cover Docker-only GrepAI install, run, and watcher behavior. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Update History
+
+- 2026-07-06T23:55+02:00 — L13 owner follow-up (body): core.py's explicit --from-settings requirement stated in the route model (the earlier ride-along was history-only). Verification metadata pinned until closeout stamps the L13 commit.
+
+- 2026-07-06T23:10+02:00 — 260703-L13 ride-along: `core.py`'s
+  `grepai_layout_from_args` reads provider settings via the explicit `--from-settings` path
+  only (the implicit coordinator-settings fallback was deleted; manual `--root`/
+  `--runtime-root` layouts now require the flag — an empty JSON object reproduces the old
+  empty-default behavior explicitly). Route model unchanged. Verification metadata pinned
+  until closeout stamps the L13 commit.
 
 - 2026-06-25T09:55+02:00 — GrepAI backend/embedder startup now prefer host `61432`/`61434` for auto host publication while keeping Postgres/Ollama container ports at `5432`/`11434`.
 - 2026-06-10T07:40+02:00 — No route impact: `actions.py`/`backend.py`/`core.py`/`embedder.py` only updated the shared-helper import path to `providers/context_common.py` (GitHub #58).

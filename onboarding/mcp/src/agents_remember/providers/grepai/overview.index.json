@@ -79,7 +79,7 @@
       "GrepAI",
       "mcp/src/agents_remember/providers/grepai/",
       "route-local-overview",
-      "84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "9d58058e3ce4815b0356794fc21973ebe9c71345",
       "/../../../overview.md",
       "grepai_setup.py",
       "context_modules/grepai",
@@ -103,9 +103,9 @@
       "lastUpdated",
       "T19",
       "lastVerifiedCommitHash",
-      "e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1",
+      "d58058e3ce4815b0356794fc21973ebe9c71345",
       "lastVerifiedCommitDate",
-      "T18",
+      "T11",
       "governingOverview"
     ]
   },

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T17:35+02:00 |
-| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
-| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
+| lastUpdated            | 2026-07-06T23:45+02:00 |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 
 ## Purpose
 
@@ -24,6 +24,8 @@ mutator** — it drafts the orchestration task as a notes artifact; the orchestr
 ## Code Commentary
 
 ### Logic
+
+L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
 
 The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
 `skills/l-01-agent-lifecycles/roles/strategist.md`; it is model-interpreted markdown, never an
@@ -103,6 +105,8 @@ No sibling repository evidence is needed for this orchestration role file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up (L13R-1): knob-table harness example fixed to the registry id `claude`. Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-8): duty 6 aligned with the Tool Surface — the orchestration-task artifact write is unconditional; inbox posting is the when-wired delivery channel, the final playback message the fallback. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `roles/strategist.md` (leaf 260703-L12): the spawn-first sprint planner, mandatory precondition for any orchestrated run; the eight-phase method with two-sided touch surfaces and evidence-cited edges; reader-not-mutator boundary; drawing-board rounds with the 3-full-round cap. Verification metadata pinned until closeout stamps the L12 commit.

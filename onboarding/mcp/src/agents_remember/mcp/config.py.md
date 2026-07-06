@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T16:30+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-06T22:20+02:00 |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -26,7 +26,11 @@ paths inside the coordinator, infers harness skill roots from harness-local
 `mcp/<settings>.json` placement such as `.codex/mcp/<settings>.json`, derives
 provider runtime roots under `providers/runners/<provider>/<instance>` and
 provider log roots under `logs/providers/<provider>/<instance>`, and exposes
-sorted allowed repo/provider ids.
+sorted allowed repo/provider ids. The former
+`repositories.<id>.memorySettingsIncludes` parse (dead plumbing — parsed, never
+consumed) was REMOVED with 260703-L13: a leftover key in an existing settings
+file is tolerated-ignored like any other unknown repository field, and
+`RepositoryScope` no longer carries the field.
 
 `parse_timeout_caps` validates the optional `timeoutCaps` object into the
 `timeout_caps` map: every cap must be a non-negative integer, cap names outside
@@ -50,15 +54,26 @@ off. It follows the `timeoutCaps` fail-loud discipline: keys outside
 `autostart` must surface at boot, not silently leave the daemon unsupervised),
 `autoStart` must be a boolean, and `port` a non-bool integer in 1..65535.
 
-`parse_orchestration_settings` (260703-L4) validates the optional
-`orchestration` object into `McpRuntimeConfig.orchestration`. The L4 field is
-`gateDelegation`: omitted means `DEFAULT_GATE_POLICY` (all-human). It accepts a
-built-in `policy` name (`all-human` or `manager-decides-leaf-gates`), optional
-per-kind overrides under `kinds`, and
-`requireReviewerVerdictAtSeams`. Per-kind entries may be a role string or an
-object with `role` and `requireReviewerVerdict`; unknown keys, bad roles,
-human-pinned gate delegation, and unsupported delegated kinds raise
-`ConfigError` at startup.
+`parse_orchestration_settings` (260703-L4, re-homed by 260703-L13) resolves the
+boot-snapshot `orchestration.gateDelegation`. Its HOME is now the GLOBAL agentic
+settings file (`<coordinationRoot>/system/settings.json`), read ONCE at boot
+through `kernel/agentic_settings.load_agentic_settings` (per-use semantics do
+not apply to this one key; a change needs a restart — documented). The parse
+itself (`parse_gate_delegation` — named policy, per-kind overrides,
+`requireReviewerVerdictAtSeams` via `apply_seam_verdict_requirement`) MOVED to
+`kernel/agentic_settings.py` and is imported back; `AgenticSettingsError` is
+wrapped into `ConfigError` so the boot contract is unchanged. An authority-file
+`orchestration.gateDelegation` is honored as a ONE-CYCLE legacy fallback with a
+`warnings.warn` boot warning naming the new home
+(`_warn_legacy_gate_delegation`); when the global file also sets the key the
+global value wins and the shadowed authority value warns as IGNORED. Every
+other `orchestration.*` key in the authority file
+(`KNOWN_AUTHORITY_ORCHESTRATION_FIELDS` = gateDelegation only) fails loud
+pointing at the global file — including `roles`/`concurrency`, which were
+previously reserved-and-silently-dropped (that trap is closed), and `loops`,
+which never belonged there. Unknown keys, bad roles, human-pinned gate
+delegation, and unsupported delegated kinds still raise `ConfigError` at
+startup, whichever file they come from.
 
 ### Invariants And Boundaries
 
@@ -66,8 +81,6 @@ human-pinned gate delegation, and unsupported delegated kinds raise
 - Coordinator files may teach agents what to ask for, but they do not grant MCP
   authority.
 - Provider path fields are derived by the server, not repeated in settings.
-- Memory settings includes must stay inside the configured code repo or memory
-  repo boundaries.
 - `timeoutCaps.providerSetupSeconds` caps only provider setup (image build /
   dependency install); seed/clone/indexing are never time-capped. The old
   `providerSeconds` key must keep being rejected, not silently mapped.
@@ -80,6 +93,10 @@ human-pinned gate delegation, and unsupported delegated kinds raise
 - `orchestration.gateDelegation` defaults to all-human. Delegation is opt-in,
   validates through `controlplane.gate_policy`, and fail-loud rejects policies
   that would weaken human-pinned gate kinds.
+- The gateDelegation home is the global agentic settings file (boot-snapshot);
+  the authority-file value is a one-cycle legacy fallback that always warns.
+  The `gate_policy` wiring downstream of `McpRuntimeConfig.orchestration` is
+  unchanged by the re-homing.
 
 ## Repo-Internal References
 
@@ -89,11 +106,20 @@ human-pinned gate delegation, and unsupported delegated kinds raise
 | Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
 | The daemon supervisor consuming `DashboardSettings` (autoStart/port). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
 | Gate delegation policy validation lives in controlplane. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
+| The agentic-settings loader supplying the boot-snapshot gateDelegation and the shared `parse_gate_delegation`. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
 ## Update History
 
+- 2026-07-06T22:20+02:00 — 260703-L13 (settings unification): gateDelegation re-homed to the
+  global agentic settings file (boot-snapshot through the kernel loader; authority-file value
+  = one-cycle legacy fallback with a boot warning, shadowed values warn as IGNORED); the
+  gate-delegation parse functions moved to `kernel/agentic_settings.py`; authority-file
+  `orchestration` now accepts gateDelegation ONLY (roles/concurrency/loops fail loud naming
+  the new home — the silent-drop trap closed); the dead `memorySettingsIncludes` plumbing and
+  `parse_path_list` removed (leftover keys tolerated-ignored). Verification metadata pinned
+  until closeout stamps the L13 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): requireReviewerVerdictAtSeams wired through the parse path (no longer inert). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: added optional
   `orchestration.gateDelegation` parsing into `OrchestrationSettings`, defaulting

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-07-04T12:32+02:00                     |
-| lastVerifiedCommitHash | `7679eb76a4c3137f7a4a5e02e455e7759f9d9c19` |
-| lastVerifiedCommitDate | 2026-07-04T12:58:55+02:00|
+| lastUpdated            | 2026-07-06T23:06+02:00                     |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 
 ## Purpose
 
@@ -22,9 +22,11 @@ replaces the removed coordinator `system/settings.json` provider example.
 repository ids, allowed provider ids, transcript log root, timeout caps, a
 top-level `benchmarksEnabled` flag (defaulting to `false`), and (260703 L2) the
 `dashboard` object shipped at its defaults (`autoStart: false`, `port: 8765`) so
-dashboard daemon supervision stays opt-in, and the L4
-`orchestration.gateDelegation` object shipped at `policy: "all-human"` with no
-delegated kinds so delegated gate approvals stay opt-in.
+dashboard daemon supervision stays opt-in. Since 260703-L13 the template
+carries NO `orchestration` block and no `memorySettingsIncludes` key: the
+agentic family (including gateDelegation) lives in the global agentic settings
+file (`docs/reference/settings-json.md`, Agentic Settings), and the dead
+includes plumbing was removed.
 Repository source roots are derived from `workspaceRoot/<repo-id>`, and external
 memory roots are derived from `coordinationRoot/memory-repos/ar-<repo-id>`.
 Provider entries stay empty because the MCP server derives provider runtime
@@ -38,6 +40,12 @@ that teams can adapt for a memory repo. It is documentation-shaped example
 content, not a runtime input.
 
 ## Update History
+
+- 2026-07-06T23:06+02:00 — 260703-L13 route impact: the settings template drops the L4
+  `orchestration.gateDelegation` block (moved to the global agentic settings file; the
+  authority-file value is only a warned one-cycle legacy fallback) and the removed
+  `memorySettingsIncludes` key. Verification metadata pinned until closeout stamps the L13
+  commit.
 
 - 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — the settings/guideline examples carry no lifecycle vocabulary at all, so nothing changed on this route.
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: the settings template gains

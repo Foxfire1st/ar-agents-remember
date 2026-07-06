@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-06T12:15                           |
-| lastVerifiedCommitHash | `04f736d5fdaf23002b0e4172b7475a1108da0d9e` |
-| lastVerifiedCommitDate | 2026-06-09T22:16:49+02:00|
+| lastUpdated            | 2026-07-06T23:55+02:00                     |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ visualizer commands.
 
 ## Route Model
 
-- `core.py` is configuration and layout only.
+- `core.py` is configuration and layout only. Since L13 its settings-backed layout requires an EXPLICIT `--from-settings` path — `cgc_settings_from_file` dropped the coordination-root fallback argument (the old implicit fallback was fail-open: empty config on a missing file).
 - `backend.py` owns the managed FalkorDB container, backend state, and shared
   CGC Docker network attachment.
 - `runner.py` owns the CGC Docker runner image, patch script, networked mounts,
@@ -65,6 +65,14 @@ visualizer commands.
 | Watcher aggregation imports CGC all-root start/status/stop behavior from this package. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
 
 ## Update History
+
+- 2026-07-06T23:55+02:00 — L13 owner follow-up (body): core.py's settings-backed layout now states the explicit --from-settings requirement in the route model (the earlier ride-along was history-only). Verification metadata pinned until closeout stamps the L13 commit.
+
+- 2026-07-06T23:08+02:00 — 260703-L13 ride-along: `core.py`'s settings-backed layout reads
+  call `cgc_settings_from_file` with the explicit `--from-settings` path only (the implicit
+  coordinator-settings fallback was deleted route-wide; the manual
+  `--repo-id`/`--code-repo-root` override path is unaffected). Route model unchanged.
+  Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-06-06T12:15: Re-verified against the current CGC lifecycle package; backend, runner, installation, process, refresh, and query boundaries still match.
 - 2026-05-28T12:32+02:00: Updated after CGC status began surfacing backend/watcher container state for provider current-state reporting.

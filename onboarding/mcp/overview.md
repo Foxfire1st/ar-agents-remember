@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-06T17:40+02:00 |
-| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
-| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
+| lastUpdated            | 2026-07-06T23:00+02:00 |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -94,7 +94,19 @@ pre-commit/pre-push and CI `--check`.
 The MCP package separates three surfaces:
 
 - `agents_remember.mcp` owns transport wiring, tool registration, and trusted
-  settings parsing.
+  settings parsing. Since 260703-L13 the authority file owns BOOT INFRASTRUCTURE
+  only: the agentic orchestration family (`orchestration.*` — gate delegation,
+  loop knobs, role knobs, concurrency caps, spawn harness preference) lives in
+  the GLOBAL `<coordinationRoot>/system/settings.json` with
+  `<code-repo>/system/settings.json` repo-local overrides, parsed PER-USE by the
+  kernel loader `kernel/agentic_settings.py` (leaf-key deep merge, arrays
+  replace, unknown `orchestration.*` keys fail loud naming the file; unknown
+  top-level families tolerated — `contextProviders` is reserved to return
+  there). `mcp/config.py` keeps ONE boot-snapshot consumer: gateDelegation is
+  read from the global file at boot, with a warned one-cycle authority-file
+  legacy fallback; `runtime_install` seeds the global file copy-if-missing and
+  `spawn_agent_session` resolves an omitted harness through the loader
+  (explicit > repo-local > global > detection-gated).
 - `agents_remember.controllers` owns operation-level composition such as
   `context_packet`, provider tools, worktree tools, memory tools, benchmarks,
   and `runtime_install`.
@@ -420,6 +432,17 @@ into the role files.
 
 ## Update History
 
+- 2026-07-06T23:00+02:00 — 260703-L13 route impact (settings unification): NEW kernel module
+  `kernel/agentic_settings.py` (the two-layer agentic settings loader + typed models + the
+  install seed) with its suite `mcp/tests/test_agentic_settings.py`; `mcp/config.py` re-homes
+  gateDelegation to the global file (boot-snapshot, warned legacy fallback, authority-file
+  loops/roles/concurrency now fail loud) and drops the dead `memorySettingsIncludes`
+  plumbing; `mcp/tools/terminal.py` + `mcp/server.py` make `spawn_agent_session.harness`
+  optional with settings-driven resolution; `install/runtime.py` seeds the global file
+  copy-if-missing; the provider lifecycle readers lose the implicit coordinator-settings
+  fallback (GQ3 — see the providers/lifecycle route overview); synced c-13 (new Stage 2
+  interview) and l-01 (knob home fixed) skill mirrors ride along. Verification metadata
+  pinned until closeout stamps the L13 commit.
 - 2026-07-06T17:40+02:00 — 260703-L12 round 2 route impact (doctrine deltas inside already-covered synced skills): OM-1 re-cited to the verifiable record and OM-3/RV-2/RV-3 re-tiered to candidates in the two criteria catalogs; verdict.md gains Rule 6 + the Criteria Catalog Results section + the Loop-Review Adaptation; manager/SKILL direct-tier glosses pinned (worker implements, manager never builds); reviewer opening made count-honest; the orchestrator Hand-Off Protocol and the c-09 Integration section carry the orchestrated-run standing-approval carve-out; strategist duty 6 aligned with its Tool Surface. All via sync-skills (9 targets); no new files, no route-model change. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T15:40+02:00 — 260703-L12 route impact (three-party loops): the synced `package_data/runtime/skills/l-01-agent-lifecycles/` tree gains 7 files (roles/strategist.md, templates/orchestration-task.md, criteria/{code-seam,doctrine,onboarding-memory,report-verification,plan-review}.md) and rewrites SKILL.md (loop doctrine home, six-role registry, 10-template + criteria companions) plus the four woven role files, all via `scripts/sync-skills.py` (9 targets); in mcp source the controlplane role vocabularies gain `strategist` (see the controlplane route overview and the two file sidecars) with a new test in `test_orchestration_comms.py`. No MCP tool signature or route model changed. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T13:40+02:00 — 260703-L10 round 2 route impact (L10R-2, small): the `read_ar_files` docstring in `mcp/server.py` and the synced coordinator-template / `c-04` mirrors under `package_data/runtime/` now say "build decision" instead of the pre-convergence "build/job decision" (docstring/prose only — no tool signature, payload, or schema change; wrapper re-run green). Detail lives in the `server.py` and template/skill sidecars. Verification metadata pinned until closeout stamps the L10 commit.

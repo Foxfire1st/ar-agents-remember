@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T06:20+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastUpdated            | 2026-07-06T22:36+02:00                     |
+| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
+| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,8 +23,10 @@
 ### Logic
 
 The module resolves CGC runtime layout from either settings-backed provider
-roots or manual CLI overrides, validates configured roots, selects the active
-root by repo ID, and derives managed backend settings such as FalkorDB image,
+roots (`cgc_settings_from_file(from_settings)` — since 260703-L13 the reader
+takes the explicit path only; the manual `--repo-id`/`--code-repo-root`
+override path stays settings-free), validates configured roots, selects the
+active root by repo ID, and derives managed backend settings such as FalkorDB image,
 ports, data roots, container name, `dataDestination` (the container path the
 data volume binds to, default `/var/lib/falkordb/data` — where FalkorDB v4
 actually writes), and image lock path. It also derives Docker
@@ -52,6 +54,11 @@ runner image/build/lock/container settings for CGC command execution.
 | CGC Docker runner helpers consume runner image/build/lock/container fields from this layout. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
 
 ## Update History
+
+- 2026-07-06T22:36+02:00 — 260703-L13 ride-along: the three `cgc_settings_from_file` call
+  sites dropped the `coordination_root` argument (the implicit coordinator-settings fallback
+  was deleted; explicit `--from-settings` behavior unchanged, manual override path
+  unaffected). Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-06-10T06:20+02:00 — Body-quality pass: `dataDestination` now named in the Logic list of derived backend settings (documentation only).
 - 2026-06-09T22:10+02:00 — `cgc_backend_settings()` gained `dataDestination` (default `/var/lib/falkordb/data`, mirroring the GrepAI `dataDestination` pattern): the container path the FalkorDB data volume binds to, fixing graph persistence across container recreates.
