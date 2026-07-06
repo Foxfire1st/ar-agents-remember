@@ -5,19 +5,19 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T16:20+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0` |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastUpdated            | 2026-07-06T17:35+02:00 |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 
 ## Purpose
 
-This template is the **adversarial reviewer's** artifact of the `l-01-agent-lifecycles` report-template library. It lands under the series `notes/reports/` directory and attaches to the handover gate as **judge evidence** at either of the two review seams — **master-exit** (before a manager hands to the orchestrator) and **super-exit** (before the orchestrator hands to the developer). The two variants now share rules but carry different review shapes because master-exit reviews one completed master branch while super-exit reviews the accumulated super branch.
+This template is the **adversarial reviewer's** artifact of the `l-01-agent-lifecycles` report-template library. It lands under the series `notes/reports/` directory and attaches to the handover gate as **judge evidence** at either of the two review seams — **master-exit** (before a manager hands to the orchestrator) and **super-exit** (before the orchestrator hands to the developer). The two variants now share rules but carry different review shapes because master-exit reviews one completed master branch while super-exit reviews the accumulated super branch. Since 260703-L12 round 2 the template also serves three-party-loop reviews via the Loop-Review Adaptation note (master-exit shape minus the gate machinery; decider = the loop owner) and forces the criteria-catalog results the reviewer doctrine demands.
 
 ## Code Commentary
 
 ### Logic
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/verdict.md`. It carries a prose header naming the writer (`roles/adversarial-reviewer.md`), a numbered **Rules** block, and two fenced variants. The **Master-Exit Variant** records the master integration branch, master/leaf task docs, recommendation, decider, artifact path, and exact gate evidence ref (`kind=reviewer-verdict`, `ref=...`, `verdict=...`), then reviews completion against master task docs, code quality for the master branch, onboarding-vs-code for master-side sidecars/route overviews, ranked refute-tested findings, and manager fix leaves for a BLOCK. The **Super-Exit Variant** records the super branch, portfolio/master task docs, recommendation, decider, artifact path, and the same gate evidence ref shape, then reviews portfolio completion, whole-super branch quality, accumulated onboarding/carry-over/ledger coherence, ranked findings, and orchestrator-routed fix leaves for a BLOCK.
+The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/verdict.md`. It carries a prose header naming the writer (`roles/adversarial-reviewer.md`), a numbered **Rules** block, and two fenced variants. The **Master-Exit Variant** records the master integration branch, master/leaf task docs, recommendation, decider, artifact path, and exact gate evidence ref (`kind=reviewer-verdict`, `ref=...`, `verdict=...`), then reviews completion against master task docs, code quality for the master branch, onboarding-vs-code for master-side sidecars/route overviews, ranked refute-tested findings, and manager fix leaves for a BLOCK. The **Super-Exit Variant** records the super branch, portfolio/master task docs, recommendation, decider, artifact path, and the same gate evidence ref shape, then reviews portfolio completion, whole-super branch quality, accumulated onboarding/carry-over/ledger coherence, ranked findings, and orchestrator-routed fix leaves for a BLOCK. As of 260703-L12 round 2 (L12R-3) BOTH variants carry a **Criteria Catalog Results** section (one row per bound criterion — Criterion id · catalog · Ran · Finding · Evidence — plus a proposed-amendments line for the promotion ratchet), Rule 6 makes reporting every bound catalog criterion mandatory (the binding table lives in `roles/reviewer.md`), and a closing **Loop-Review Adaptation** section defines the loop-review shape: the master-exit variant minus the gate-evidence row and Judge-Evidence Note, decider = the loop owner (owning seat / orchestrator for the plan review), delta-verifies appending a dated delta section to the same artifact.
 
 ### Conventions
 
@@ -63,6 +63,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-3): Rule 6 (report every bound catalog criterion) + the Criteria Catalog Results section in both variants + the Loop-Review Adaptation note (master-exit shape minus gate machinery; decider = loop owner; delta sections append). The ruled-deciders shape is unchanged. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): decider rows ruled per the seam decision; L4 shorthand replaced. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/; role-file reference now roles/adversarial-reviewer.md. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T13:16+02:00: 260703-L6 split the verdict shape into explicit master-exit and super-exit

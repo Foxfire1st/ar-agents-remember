@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`   |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash |                                                                     `277f27a33b35aed8235cbb3c1ae2b5633cc88b22`|
-| lastVerifiedCommitDate |                                                                     2026-07-05T01:30:08+02:00|
+| lastUpdated            | 2026-07-06T15:35+02:00 |
+| lastVerifiedCommitHash |                                                                     `bcaa78070f77c76f1c4db0af93786bb193b92523`|
+| lastVerifiedCommitDate |                                                                     2026-07-06T07:51:05+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -30,7 +30,10 @@ Pydantic contracts. `template_path(...)` resolves the runtime
 the standard `notes/reports/<leaf>-worker-report.md` path, `escalation_packet(...)`
 routes one role up the worker -> manager -> orchestrator -> developer ladder, and
 `render_master_handover_packet(...)` emits Markdown in the bundled master-handover
-template shape.
+template shape. As of 260703-L12 the `OrchestrationRole` literal carries
+`strategist` (between `designer` and `orchestrator`) and `_ROLE_ESCALATION`
+maps `strategist -> orchestrator` — the spawn-first sprint planner escalates
+one rung to its spawner, like the designer and reviewer rungs.
 
 ### Conventions
 
@@ -55,5 +58,6 @@ their own workflow.
 
 ## Update History
 
+- 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): `OrchestrationRole` gains the `strategist` literal and `_ROLE_ESCALATION` gains `strategist -> orchestrator`; covered by the new strategist-escalation test in `test_orchestration_comms.py`. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: template_path now resolves under runtime skills/l-01-agent-lifecycles/templates/ (the unified skill folder replaced l-02-agent-orchestration). Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:31+02:00 - L3: created the typed orchestration artifact and escalation packet helper card. Verification metadata pinned until closeout stamps the L3 commit.

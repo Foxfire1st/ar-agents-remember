@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64` |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastUpdated            | 2026-07-06T17:35+02:00 |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 
 ## Purpose
 
@@ -93,6 +93,8 @@ As of cycle 4 the master-exit procedure is operable as-built: the manager RAISES
 
 As of cycle 5: the seam channel is exact: raise with lifecycle_gate(..., wait=false) → carry the returned gateId in the handover packet; identity truth restated (gate ids are model-visible, lifecycle ids stay server-side); the integrate-step sentence now defines the series' standing approval (the developer's portfolio-gate approval recorded in the planner master) and the seat's own hand-off idiom (gates + inbox, never the developer-facing notification). Cycle 6 completes the raise's address: §3's call now carries `enclosure="<master task name>"` — the master identity integration enforcement matches the gate by — and adds the all-human conditional (under an all-human policy the raise blocks and the developer decides; do not pass wait=false). Cycle 7 pins the address as a contract, not a convention: §3 now states the match is exact-string — the EXACT master task name as the contracts carry it (`worktree_start`'s `task_name`) — and that a wait=false raise without an enclosure is refused.
 
+As of 260703-L12 the leaf dispatch loop opens with **loop-tier scoring at dispatch** (blast radius · novelty · size → direct | builder-verified | full loop; round 2 (L12R-4) pins the direct tier so it cannot read manager-implements: NO loop machinery — the leaf's worker implements as usual, this seat still dispatches per leaf and never grows a build surface; the strategist's blast-radius register is the scoring input when an orchestration task exists; the mark — tier + scope manager|orchestrator — lands on the leaf doc with a decision-log entry; **a master whose leaves all score direct is a workflow-free manager**), and a full-loop leaf runs under this level's loop controls: hard cap 3 FULL rounds (delta-verifies by the same reviewer close rounds and do not count; fix rounds resume the same builder), and a non-shrinking round escalates to the orchestrator immediately with the full round history. The Comms escalation bullet adds the **quo-vadis test** — a high-blast-radius truth is flagged as quo-vadis when raised so the orchestrator relays it to the developer immediately; presentation-grade choices are decided and logged, never escalated.
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration job file.
@@ -103,6 +105,8 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-4): the direct-tier gloss reworded per the ruling — the leaf's worker implements without loop machinery; the manager still dispatches per leaf and never grows a build surface (the worker-per-leaf framing stays unconditional). Verification metadata pinned until closeout stamps the L12 commit.
+- 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): the leaf dispatch loop gains loop-tier scoring at dispatch (direct / builder-verified / full loop; strategist blast-radius register as input; all-direct = workflow-free manager) and the full-loop controls (3-full-round cap, delta-verify/builder-resume, convergence escalation with round history); the escalation bullet carries the written quo-vadis test. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T19:55+02:00 - L8 builder cycle 7: §3 pins the enclosure as the EXACT contract task name (exact-string match) and states the enclosure-less raise refusal (AR4-1c). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: §3 raise now carries enclosure=<master task name> (the integration guard's address) + the do-not-pass-wait=false-under-all-human conditional (AR3-1/AR3-2). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the seam channel is exact: raise with lifecycle_gate(..., wait=false) → carry the returned gateId in the handover packet. Verification metadata pinned until closeout stamps the L8 commit.

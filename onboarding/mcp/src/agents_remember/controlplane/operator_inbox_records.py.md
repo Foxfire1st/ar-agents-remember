@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-04T12:31+02:00                                              |
-| lastVerifiedCommitHash |                                                                     `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
-| lastVerifiedCommitDate |                                                                     2026-07-04T12:52:03+02:00|
+| lastUpdated            | 2026-07-06T15:35+02:00                                              |
+| lastVerifiedCommitHash |                                                                     `bcaa78070f77c76f1c4db0af93786bb193b92523`|
+| lastVerifiedCommitDate |                                                                     2026-07-06T07:51:05+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -27,9 +27,11 @@ session and/or polled by an external chat.
 `OPERATOR_INBOX_RECORD_SCHEMA` is the wire tag. `OperatorInboxState` is
 `pending | consumed`, `OperatorInboxVia` is `chat | dashboard | cli`,
 `AgentRole` addresses orchestration identities (`orchestrator`, `manager`,
-`worker`, etc.), `InboxMessageKind` classifies the row, and
-`InboxDeliveryState` records hosted push state. `require_inbox_address(...)`
-rejects entries with no lifecycle id, agent id, or recipient role.
+`worker`, and — as of 260703-L12 — `strategist`, so the spawn-first sprint
+planner can post/receive role-addressed inbox rows), `InboxMessageKind`
+classifies the row, and `InboxDeliveryState` records hosted push state.
+`require_inbox_address(...)` rejects entries with no lifecycle id, agent id, or
+recipient role.
 
 `OperatorInboxEntry` is a strict Pydantic record. It stores the mailbox keys
 (`lifecycleId`, `agentId`, `recipientRole`), optional `gateId`, sender role/id,
@@ -86,6 +88,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): `AgentRole` gains the `strategist` literal so the new spawn-first portfolio seat is addressable on the inbox like the other orchestration roles. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-04T12:31+02:00 - L3: generalized the inbox record from external-chat
   operator responses to agent-addressed durable messages with sender/recipient
   role metadata, message kinds, artifact paths, and hosted delivery state.

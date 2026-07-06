@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-05T19:25+02:00                      |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8`     |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastUpdated            | 2026-07-06T15:40+02:00                      |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523`     |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -60,7 +60,9 @@ delivery state while pending, and are deleted when the agent consumes them, the
 developer dismisses the stale pickup warning, or TTL compaction removes them.
 L3 adds `orchestration_nudges.py` for rate-limited manager nudges and
 `orchestration_artifacts.py` for turn-report, master-handover, and escalation
-packet helpers.
+packet helpers. Since 260703-L12 both role vocabularies carry the new
+`strategist` seat: `AgentRole` (inbox addressing) and `OrchestrationRole`
+(escalation packets, ladder rung `strategist -> orchestrator`).
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -135,6 +137,7 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-06T15:40+02:00 — 260703-L12 route impact (small): the `strategist` role joins `AgentRole` (`operator_inbox_records.py`) and `OrchestrationRole` + `_ROLE_ESCALATION` (`orchestration_artifacts.py`, escalating to the orchestrator) so the new spawn-first portfolio seat is addressable and ladder-routable; pinned by a new test in `test_orchestration_comms.py`. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): the cross-lifecycle seam fold added as an invariant bullet (`all_current()` + enclosure addressing) and the Layout table de-duplicated (the older `enforcement.py`/`operator_inbox_records.py`/`operator_inbox_store.py` rows removed; the newer kind-generic + role/delivery-metadata descriptions kept). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): `GateStore.all_current()` folds every gate log (workspace + all lifecycles, last-wins per gate id) — the cross-lifecycle fold the integrate-side seam guard reads so an enclosure-addressed handover gate is visible from a different consuming lifecycle. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:24+02:00 — 260703-L8 route impact (cycle 5, small): `GateStore.find` resolves a gate id across the workspace and every lifecycle log — the packet-carried-id decide path. Verification metadata pinned until closeout stamps the L8 commit.

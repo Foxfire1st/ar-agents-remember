@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2` |
-| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
+| lastUpdated            | 2026-07-06T17:40+02:00 |
+| lastVerifiedCommitHash | `bcaa78070f77c76f1c4db0af93786bb193b92523` |
+| lastVerifiedCommitDate | 2026-07-06T07:51:05+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -336,7 +336,14 @@ replaces the corresponding package-data folders and reports missing, extra, or
 changed files in check mode. Since the 260703-L10 one-vocabulary sweep the
 synced coordinator and skills `AGENTS.md` templates speak the converged
 `l-01-agent-lifecycles` vocabulary (Start Here — Route By Role; orchestrator
-plan gate; reframe-research phase) with no retired skill names.
+plan gate; reframe-research phase) with no retired skill names. Since
+260703-L12 the synced `l-01-agent-lifecycles` tree carries the three-party-loop
+build: `roles/strategist.md` (the sixth role — the spawn-first sprint planner,
+mandatory before any orchestrated run), `templates/orchestration-task.md` (the
+tenth template), and the new `criteria/` folder (five reviewer criteria
+catalogs: code-seam, doctrine, onboarding-memory, report-verification,
+plan-review), with the loop doctrine homed in the skill's SKILL.md and woven
+into the role files.
 
 ## Invariants And Boundaries
 
@@ -413,6 +420,8 @@ plan gate; reframe-research phase) with no retired skill names.
 
 ## Update History
 
+- 2026-07-06T17:40+02:00 — 260703-L12 round 2 route impact (doctrine deltas inside already-covered synced skills): OM-1 re-cited to the verifiable record and OM-3/RV-2/RV-3 re-tiered to candidates in the two criteria catalogs; verdict.md gains Rule 6 + the Criteria Catalog Results section + the Loop-Review Adaptation; manager/SKILL direct-tier glosses pinned (worker implements, manager never builds); reviewer opening made count-honest; the orchestrator Hand-Off Protocol and the c-09 Integration section carry the orchestrated-run standing-approval carve-out; strategist duty 6 aligned with its Tool Surface. All via sync-skills (9 targets); no new files, no route-model change. Verification metadata pinned until closeout stamps the L12 commit.
+- 2026-07-06T15:40+02:00 — 260703-L12 route impact (three-party loops): the synced `package_data/runtime/skills/l-01-agent-lifecycles/` tree gains 7 files (roles/strategist.md, templates/orchestration-task.md, criteria/{code-seam,doctrine,onboarding-memory,report-verification,plan-review}.md) and rewrites SKILL.md (loop doctrine home, six-role registry, 10-template + criteria companions) plus the four woven role files, all via `scripts/sync-skills.py` (9 targets); in mcp source the controlplane role vocabularies gain `strategist` (see the controlplane route overview and the two file sidecars) with a new test in `test_orchestration_comms.py`. No MCP tool signature or route model changed. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T13:40+02:00 — 260703-L10 round 2 route impact (L10R-2, small): the `read_ar_files` docstring in `mcp/server.py` and the synced coordinator-template / `c-04` mirrors under `package_data/runtime/` now say "build decision" instead of the pre-convergence "build/job decision" (docstring/prose only — no tool signature, payload, or schema change; wrapper re-run green). Detail lives in the `server.py` and template/skill sidecars. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-06T12:10+02:00 — 260703-L10 route impact (generated mirrors only): `sync-runtime.py` re-synced `package_data/runtime/agents-md-files/` after the root templates' one-vocabulary sweep — the coordinator template's Start Here became Route By Role (unified `l-01-agent-lifecycles` skill, orchestrator plan gate, reframe-research routing bullet) and the skills template's Reference Style example cites the `l-01-agent-lifecycles` skill. No MCP tool, controller, or schema changed; detail lives in the two template sidecars. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-06T10:50+02:00 — No route impact: L11's mcp-side changes are test-layer only (observer projection test updates, the new mcp/tests/test_sim_fixture_builder.py regression suite, and build_rich_sim.py's materialize_worktrees fixture fix) — the mcp package route model this overview describes is unchanged; details live in the file sidecars.
