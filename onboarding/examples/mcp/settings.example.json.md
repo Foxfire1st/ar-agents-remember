@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T22:52+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00                     |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -61,6 +61,15 @@ delegated approvals remain opt-in. Operators can switch to a built-in delegated
 policy or add per-kind role entries in real settings files; config validation
 rejects unsupported or human-pinned delegation.
 
+The template also ships a `providerDegradation` object (260707-HFX-L7):
+`{"enabled": true, "failSafeEnabled": true, "memoryDegradedRatio": 0.8, "memoryCriticalRatio": 0.92}`
+— a representative subset of the full 15-key `providerDegradation` shape (the remaining keys take
+their conservative defaults when omitted: sample-count thresholds, watcher-lag commit/minute
+pairs, probe-latency pair, setup-failure-streak pair, and `recentSampleLimit`). This is the
+provider-only degradation detector's settings surface; `agents_remember.mcp.provider_degradation_settings`
+fail-loud rejects unknown keys and wrong per-field shapes the same way `timeoutCaps`/`dashboard`
+do.
+
 ### Invariants And Boundaries
 
 This file must not be placed inside the coordinator root, and it must not carry
@@ -76,9 +85,15 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 | --- | --- | --- |
 | MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | n/a | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | n/a | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
+| The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7). | n/a | [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py) |
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): the template now ships a
+  representative `providerDegradation` block (`enabled`, `failSafeEnabled`,
+  `memoryDegradedRatio`, `memoryCriticalRatio`); the remaining allowed keys take their
+  conservative defaults when omitted. Verification metadata pinned until closeout stamps the
+  HFX-L7 commit.
 - 2026-07-06T22:52+02:00 — 260703-L13 (settings unification): dropped the `orchestration`
   example block (the agentic family's home is the coordinator's global settings file now)
   and the removed `memorySettingsIncludes` key. Verification metadata pinned until closeout

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-06T15:35+02:00                                              |
-| lastVerifiedCommitHash |                                                                     `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                                     2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00                                              |
+| lastVerifiedCommitHash |                                                                     `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`|
+| lastVerifiedCommitDate |                                                                     2026-07-08T01:34:58+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -27,9 +27,14 @@ session and/or polled by an external chat.
 `OPERATOR_INBOX_RECORD_SCHEMA` is the wire tag. `OperatorInboxState` is
 `pending | consumed`, `OperatorInboxVia` is `chat | dashboard | cli`,
 `AgentRole` addresses orchestration identities (`orchestrator`, `manager`,
-`worker`, and — as of 260703-L12 — `strategist`, so the spawn-first sprint
-planner can post/receive role-addressed inbox rows), `InboxMessageKind`
-classifies the row, and `InboxDeliveryState` records hosted push state.
+`worker`, `reviewer`, and — as of 260703-L12 — `strategist`, so the spawn-first sprint
+planner can post/receive role-addressed inbox rows). **260707-HFX-L7** adds
+`system-specialist`: the investigate-first provider-degradation seat needs its own inbox address
+alongside `orchestrator`/`manager` since it is dispatched and reports through the same durable
+mailbox as every other role. `InboxMessageKind` classifies the row, and now also carries
+`degradation-alert` (260707-HFX-L7) — the row kind the provider degradation detector posts to the
+orchestrator and every active manager on a state-change transition (see
+`providers/degradation.py`). `InboxDeliveryState` records hosted push state.
 `require_inbox_address(...)` rejects entries with no lifecycle id, agent id, or
 recipient role.
 
@@ -88,6 +93,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `AgentRole` gains
+  `system-specialist` so the provider-degradation investigator is inbox-addressable, and
+  `InboxMessageKind` gains `degradation-alert` for the detector's role-addressed state-change
+  alerts. No shape/behavior change to the record helpers themselves — two Literal members added.
+  Verification metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): `AgentRole` gains the `strategist` literal so the new spawn-first portfolio seat is addressable on the inbox like the other orchestration roles. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-04T12:31+02:00 - L3: generalized the inbox record from external-chat
   operator responses to agent-addressed durable messages with sender/recipient

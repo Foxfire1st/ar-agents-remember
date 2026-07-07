@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T16:30+02:00 |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -45,6 +45,15 @@ field. The module defines the defaults `DEFAULT_PROVIDER_SETUP_SECONDS = 1800`
 and `DEFAULT_DOCKER_CONTROL_SECONDS = 120`. All failures raise `ConfigError`,
 now a member of the typed `AgentsRememberError` family (itself a `ValueError`
 subclass), so the server fails loudly at startup on unsafe settings.
+
+`config_from_mapping` (260707-HFX-L7) parses the optional `providerDegradation` block through
+`agents_remember.mcp.provider_degradation_settings.parse_provider_degradation_settings`,
+wrapping any `ProviderDegradationSettingsError` into `ConfigError` at the call site so the
+boot fail-loud contract is unchanged; the result is stored on the new
+`McpRuntimeConfig.provider_degradation` field (default `ProviderDegradationSettings()` — detector
+enabled, failsafe armed, conservative thresholds). This follows the same fail-loud-allowlist
+pattern as `timeoutCaps`/`dashboard` below, just with its own dedicated settings module rather
+than an inline parser in this file.
 
 `parse_dashboard_settings` (260703 L2) validates the optional `dashboard` object
 into `McpRuntimeConfig.dashboard` — a frozen `DashboardSettings(auto_start=False,
@@ -110,6 +119,10 @@ armed. Stop/status/cleanup paths must not call it — stopping is always legal.
 - `dashboard` accepts only `KNOWN_DASHBOARD_FIELDS` (`autoStart`, `port`) with the
   same fail-loud rejection; its defaults keep dashboard supervision off, so
   existing settings files are untouched by the feature.
+- `providerDegradation` accepts only the 15-key allowlist in
+  `provider_degradation_settings.KNOWN_PROVIDER_DEGRADATION_FIELDS`; its defaults keep the
+  degradation detector enabled with the critical failsafe armed at conservative thresholds, so
+  existing settings files inherit the protection without an explicit opt-in.
 - `orchestration.gateDelegation` defaults to all-human. Delegation is opt-in,
   validates through `controlplane.gate_policy`, and fail-loud rejects policies
   that would weaken human-pinned gate kinds.
@@ -131,6 +144,8 @@ armed. Stop/status/cleanup paths must not call it — stopping is always legal.
 | Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
 | The daemon supervisor consuming `DashboardSettings` (autoStart/port). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
 | Gate delegation policy validation lives in controlplane. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
+| The dedicated `providerDegradation` settings parser this file wraps into `ConfigError` (260707-HFX-L7). | [mcp/provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py) |
+| The degradation detector consuming `McpRuntimeConfig.provider_degradation` every evaluation. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
 | The agentic-settings loader supplying the boot-snapshot gateDelegation and the shared `parse_gate_delegation`. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | Launch-authority consumers: worktree start, watcher/query gating, benchmark filtering, runtime rebind derivation. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py); [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py); [benchmark_tools.py](agents-remember/mcp/src/agents_remember/controllers/benchmark_tools.py); [install/runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 | Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
@@ -139,6 +154,12 @@ As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewer
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `config_from_mapping` now parses
+  the optional `providerDegradation` block through the new dedicated
+  `provider_degradation_settings.parse_provider_degradation_settings` (wrapped into `ConfigError`)
+  and stores it on the new `McpRuntimeConfig.provider_degradation` field
+  (default `ProviderDegradationSettings()`). No change to any existing field's parsing behavior.
+  Verification metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): added `ProviderAuthority`,
   `reload_provider_authority` (re-reads only the providers map from the authority file;
   unreadable/invalid ⇒ empty map + `error`, fail-closed), and

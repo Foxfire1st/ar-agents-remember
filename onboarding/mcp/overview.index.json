@@ -118,6 +118,7 @@
     "mcp/src/agents_remember/mcp/command_capture.py",
     "mcp/src/agents_remember/mcp/compact_content.py",
     "mcp/src/agents_remember/mcp/config.py",
+    "mcp/src/agents_remember/mcp/provider_degradation_settings.py",
     "mcp/src/agents_remember/mcp/server.py",
     "mcp/src/agents_remember/mcp/tool_reports.py",
     "mcp/src/agents_remember/memory/baseline.py",
@@ -180,6 +181,7 @@
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md",
+    "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md",
@@ -208,6 +210,7 @@
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md",
     "mcp/src/agents_remember/providers/context_common.py",
     "mcp/src/agents_remember/providers/current_state.py",
+    "mcp/src/agents_remember/providers/degradation.py",
     "mcp/src/agents_remember/providers/identity.py",
     "mcp/src/agents_remember/providers/lifecycle_service.py",
     "mcp/src/agents_remember/providers/metrics.py",
@@ -272,6 +275,7 @@
     "mcp/tests/test_provider_containment.py",
     "mcp/tests/test_provider_context_imports.py",
     "mcp/tests/test_provider_current_state.py",
+    "mcp/tests/test_provider_degradation.py",
     "mcp/tests/test_provider_index_lifecycle.py",
     "mcp/tests/test_provider_lifecycle.py",
     "mcp/tests/test_provider_setup.py",
@@ -317,8 +321,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 544,
-    "fileSidecars": 229,
+    "sourceFilesInScope": 549,
+    "fileSidecars": 233,
     "childRoutes": 15
   },
   "routingTerms": [

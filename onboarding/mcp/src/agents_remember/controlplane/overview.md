@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-06T15:40+02:00                      |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`     |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00                      |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`     |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -65,7 +65,13 @@ seat, and HFX-L6 extends the orchestration artifact role vocabulary with
 `architect` and `curator` so turn reports, handover packets, and escalation packets can name the
 split developer-facing/default seat and the curator closeout seat. `AgentRole` remains the inbox
 addressing vocabulary; `OrchestrationRole` owns escalation packet roles and the ladder rung
-`strategist -> orchestrator`.
+`strategist -> orchestrator`. **260707-HFX-L7** adds the `system-specialist` investigate-first
+provider-degradation seat to both vocabularies: `AgentRole` gains `system-specialist` so the
+degradation detector (`providers/degradation.py`, governed by the `mcp/` package overview) can
+address it on the inbox, `InboxMessageKind` gains `degradation-alert` for the detector's
+role-addressed state-change alerts (posted to `orchestrator` and every active `manager`), and
+`OrchestrationRole`/`_ROLE_ESCALATION` in `orchestration_artifacts.py` gain
+`system-specialist -> orchestrator` so the seat's escalations/blockers route correctly.
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -137,9 +143,18 @@ response models are `models/operator_inbox.py`.
 | Gate response models. | [models/gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
 | The inbox record/store pair provides the external-chat pull return channel. | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) and [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | [attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
+| The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `AgentRole` gains
+  `system-specialist` and `InboxMessageKind` gains `degradation-alert`
+  (`operator_inbox_records.py`); `OrchestrationRole`/`_ROLE_ESCALATION` gain
+  `system-specialist -> orchestrator` (`orchestration_artifacts.py`, R2 fix round closing
+  reviewer F5) so the new provider-degradation investigator seat is addressable and
+  ladder-routable; pinned by `test_system_specialist_escalates_to_orchestrator` in
+  `test_orchestration_comms.py`. Gate policy and inbox storage behavior are unchanged.
+  Verification metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: orchestration artifacts can
   now name `architect` and `curator` alongside the existing orchestration roles in turn-report,
   handover, and escalation packet payloads; gate policy and inbox storage behavior are unchanged.

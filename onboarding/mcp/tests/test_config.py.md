@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T22:44+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -52,6 +52,13 @@ timeout cap" `ConfigError`. `DashboardSettingsTests` (260703 L2) covers the
 optional `dashboard` object: absent → defaults off (autoStart False, port 8765),
 happy parse, unknown-key rejection (`autostart` typo), non-bool `autoStart`
 rejection, invalid ports (bool/0/65536/string), and non-object shapes.
+`ProviderDegradationSettingsTests` (260707-HFX-L7) covers the optional `providerDegradation`
+object: absent → the conservative enabled/failsafe-armed defaults
+(`memoryDegradedRatio=0.80`, `memoryCriticalRatio=0.92`); a full explicit-value parse round-trips
+all 15 keys; an unknown key (`memoryDegradedRato` typo) raises `ConfigError` naming it; a
+non-object shape (a list) raises `ConfigError`; and four representative bad-type cases
+(non-bool `enabled`, an out-of-range ratio, a zero sample count, a bool where an int is required)
+each raise `ConfigError`.
 `OrchestrationSettingsTests` (260703-L4) covers `orchestration.gateDelegation`:
 defaults to all-human, named manager leaf-gate policy, per-kind
 reviewer-verdict requirements, and fail-loud rejection for human-pinned
@@ -70,6 +77,7 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 | --- | --- |
 | The tested loader lives in MCP config. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
+| The `providerDegradation` parser under test (260707-HFX-L7). | [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py) |
 
 ## Series-Contract Notes
 
@@ -79,6 +87,10 @@ As of the 260703-L8 seam ruling the orchestration settings tests prove the parse
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact: added `ProviderDegradationSettingsTests`
+  covering the new `providerDegradation` settings block — defaults, explicit-value round-trip,
+  unknown-key rejection, non-object shape rejection, and per-field type rejection. Verification
+  metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-06T22:44+02:00 — 260703-L13 (settings unification): OrchestrationSettingsTests
   rewritten for the two-source boot flow (global agentic file + legacy authority fallback,
   warning assertions both ways, new-home fail-loud for loops/roles/concurrency, malformed

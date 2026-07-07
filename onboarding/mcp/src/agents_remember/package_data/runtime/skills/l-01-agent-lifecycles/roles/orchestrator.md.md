@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:00+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T02:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 
 ## Purpose
 
@@ -52,6 +52,32 @@ the mirror of the canonical `skills/l-01-agent-lifecycles/roles/orchestrator.md`
 sync-propagated harness-dir copies (`.claude/`, `.codex/`, …) are generated and not
 onboarding-covered.
 
+**260707-HFX-L7 (provider degradation protocol)** adds a new "## Provider Degradation Alert"
+section, placed right after the trust-checkpoint/hand-off paragraph that closes the opening-move
+description and before the "Decision-Item Relay To The Architect" section. On a `degradation-alert`
+inbox row the orchestrator keeps portfolio attention on OBSERVATION AND DELEGATION — it must never
+become the fixer itself, echoing the file's core framing (an event loop over durable state, never a
+hands-on builder). The section is a four-step procedure: (1) dispatch the new `system-specialist`
+role via `spawn_agent_session` with `env={"AR_SPAWN_ROLE": "system-specialist"}`, the degradation
+event id/payload, current metrics and provider log paths, and a report path under the active
+master's `notes/reports/` (or an orchestrator-designated folder when no master owns the incident);
+(2) require the specialist to investigate and write the report BEFORE any remediation — this is
+the same investigate-first discipline `roles/system-specialist.md` itself carries; (3) read the
+report and, only if it says the issue is fixable in session, send the specialist exactly ONE
+explicit fix order; (4) otherwise — not fixable, or critical pressure continues — stop providers
+through the always-legal teardown path (`provider_watchers stop` / provider teardown) before they
+take the system down, noting that a critical detector event may already have executed the
+automated failsafe stop (`providers/degradation.py`'s critical-threshold behavior), in which case
+the orchestrator verifies and records what happened rather than re-issuing a redundant stop. The
+section closes three composition points: managers receiving the same alert only stop STARTING
+providers and have no kill authority (the asymmetry with this seat's step 4 is deliberate — kill
+authority is exclusively the orchestrator's escalation path); the system-specialist seat never
+mutates task docs, lifecycle state, or memory beyond its report (so this dispatch is safe under
+the orchestrator's existing decision-item-relay and gate-decision machinery — the specialist
+cannot make an irreversible AR-state change on its own); and the whole protocol is scoped
+providers-only this iteration, with Sentry/system-monitoring integration recorded as a future
+detection source, not part of this role's response procedure.
+
 ### L16 Knob Additions
 
 260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
@@ -71,6 +97,13 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-08T02:00+02:00 — 260707-HFX-L7 (provider degradation protocol): documented the new
+  "## Provider Degradation Alert" section (placed after the opening-move paragraph, before
+  Decision-Item Relay) — the four-step dispatch-system-specialist / investigate-first /
+  fix-or-stop procedure, the deliberate manager/orchestrator kill-authority asymmetry, the
+  system-specialist's report-only mutation boundary, and the critical-failsafe-may-have-already-run
+  note. Sync-propagated bundle copy. Verification metadata pinned until closeout stamps the
+  HFX-L7 commit.
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: reframed
   orchestrator.md as a spawned backend lifecycle, never the normal developer-facing seat; design
   and drawing-board questions now emit decision/design items to the architect; developer-worthy

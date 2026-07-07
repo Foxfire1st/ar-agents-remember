@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-07-06T23:06+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T01:35+02:00                     |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 
 ## Purpose
 
@@ -34,12 +34,26 @@ roots, data roots, central logs, Docker backends, and watch settings internally.
 The `timeoutCaps` block uses `toolSeconds` and `providerSetupSeconds` (the
 renamed `providerSeconds`); `providerSetupSeconds` caps only provider image
 build / dependency install, never indexing.
+Since 260707-HFX-L7 the template also carries a `providerDegradation` object
+(`enabled: true`, `failSafeEnabled: true`, `memoryDegradedRatio: 0.8`,
+`memoryCriticalRatio: 0.92`) — a conservative-default illustration of the
+degradation-detector thresholds parsed by `mcp/provider_degradation_settings.py`
+(the healthy/degraded/critical state machine over the L1/L2 provider metrics
+store). Shipping it enabled-by-default in the example (unlike `dashboard`,
+which ships opt-in) matches the requirement that the critical-threshold
+failsafe defaults ON at a conservative bound.
 
 `coding-guidelines.example.md` is an example `system/coding-guidelines.md` body
 that teams can adapt for a memory repo. It is documentation-shaped example
 content, not a runtime input.
 
 ## Update History
+
+- 2026-07-08T01:35+02:00 — 260707-HFX-L7 route impact: the settings template gains the
+  `providerDegradation` block (enabled/failSafeEnabled/memoryDegradedRatio/memoryCriticalRatio)
+  illustrating the new provider degradation detector's settings surface, shipped enabled-by-default
+  matching the conservative-default critical failsafe requirement. Verification metadata pinned
+  until closeout stamps the HFX-L7 commit.
 
 - 2026-07-06T23:06+02:00 — 260703-L13 route impact: the settings template drops the L4
   `orchestration.gateDelegation` block (moved to the global agentic settings file; the
