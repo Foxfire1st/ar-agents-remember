@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-07T23:45+02:00 |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -28,7 +28,9 @@ existing serving primitives (the shared session opener + optional leaf attach wi
 server-arbitrated `leaf-taken` + a capture-VERIFIED context paste (260707-HFX-L3) with optional
 submit), injects the model/effort/env role knobs at spawn, and records spawned-by
 provenance — so orchestrators spawn managers and managers spawn workers without
-dashboard clicks. The package-data runtime skill mirror now carries the L5
+dashboard clicks. HFX-L6 splits the developer-facing architect from spawned backend
+orchestrators and adds the curator role to the runtime skill/package mirrors, settings role vocabulary,
+dashboard role projection, and manager/worker dispatch chain. The package-data runtime skill mirror now carries the L5
 super-integration doctrine for orchestrated series: super branches from main,
 masters branch from super, leaves branch from masters, C-11 carries every edge,
 the orchestrator integrates completed masters from a super-sourced worktree, and
@@ -484,6 +486,11 @@ into the role files.
 
 ## Update History
 
+- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: the package role surface now
+  distinguishes developer-facing architect sessions from spawned backend orchestrators and includes
+  curator in the runtime skill mirrors, settings role vocabulary, dashboard role projection, and
+  manager/worker closeout chain. Verification metadata pinned until closeout stamps the HFX-L6
+  commit.
 - 2026-07-07T23:45+02:00 — 260707-HFX-L4R2 route impact: the qualified leaf-ref resolver now skips
   non-task sibling JSON artifacts by raw task-document schema marker, keeps malformed marker-bearing task
   docs loud, indexes standalone/light `task.json` docs, and preserves read-path legacy contracts when

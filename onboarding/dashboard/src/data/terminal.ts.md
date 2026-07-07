@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:57:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T22:21+02:00                           |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -49,7 +49,8 @@ harness. Pure helpers: `terminalSocketUrl` (same-origin
 `harness`/`lifecycleId`, optional `leafKey` (the durable qualified leaf id the chat claims, slice L5),
 `cwd`, `tmuxName`, timestamps, `status`, optional `terminatedAt`, and — 260703-L14 — optional
 `spawnRole`, the AR_SPAWN_ROLE the backend recorded on the catalog row at spawn, absent on
-hand-opened sessions) and
+hand-opened sessions; the documented role examples include architect/orchestrator/strategist/manager/
+worker/curator/reviewer/designer) and
 `TerminalSessionStatus` is `"running" | "exited" | "terminated"`. `fetchTerminalSessions(base)` GETs
 `/api/terminal/sessions` and returns an array or `[]` on failure, letting `Chats` hydrate rows after a
 page/dashboard refresh without treating the session list as projected lifecycle truth.
@@ -104,6 +105,15 @@ imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-
 | The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
 
 ## Update History
+
+- 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: updated the
+  `spawnRole` catalog comment/documentation to include `curator` as a recorded AR_SPAWN_ROLE value.
+  Verification metadata pinned until closeout stamps the HFX-L6 commit.
+
+- 2026-07-07T21:32+02:00 — 260707-HFX-L6 L6R2 review remediation: updated the `spawnRole`
+  catalog comment/documentation to include `architect` as a recorded AR_SPAWN_ROLE value alongside
+  backend orchestrator and the other role seats. Verification metadata pinned until closeout stamps
+  the HFX-L6 commit.
 
 - 2026-07-06T23:57:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TerminalSessionInfo`
   gained optional `spawnRole` (the AR_SPAWN_ROLE recorded server-side on the catalog row; the

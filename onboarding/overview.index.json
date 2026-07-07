@@ -38,14 +38,15 @@
   "coveredFiles": [
     "AGENTS.md",
     "README.md",
+    "docs/reference/skills.md",
     "pyproject.toml",
     "scripts/sync-dashboard.py",
     "scripts/sync-runtime.py",
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1391,
-    "fileSidecars": 6,
+    "sourceFilesInScope": 1530,
+    "fileSidecars": 7,
     "childRoutes": 5
   },
   "routingTerms": [
@@ -58,6 +59,7 @@
     "mcp",
     "pyproject",
     "readme",
+    "reference",
     "runtime",
     "scripts",
     "skills",
@@ -75,6 +77,8 @@
       "examples/mcp",
       "AGENTS.md",
       "README.md",
+      "docs/reference",
+      "docs/reference/skills.md",
       "pyproject.toml",
       "scripts",
       "scripts/sync-dashboard.py",
@@ -86,6 +90,8 @@
       "AGENTS",
       "README.md",
       "README",
+      "skills.md",
+      "skills",
       "pyproject.toml",
       "pyproject",
       "sync-dashboard.py",
@@ -112,7 +118,7 @@
       "agents_remember",
       "package_data",
       "repo-overview",
-      "52911a15091de8d065afc6cbc0f8d6ac34690039",
+      "2c464cf4c29b60165fecae722bf76c307aaac6f1",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -127,9 +133,7 @@
       "c-10-adopt-memory-baseline",
       "memory.md",
       "providers/runners/",
-      "providers/data/",
-      "logs/mcp/",
-      "logs/providers/"
+      "providers/data/"
     ]
   },
   "fallback": {

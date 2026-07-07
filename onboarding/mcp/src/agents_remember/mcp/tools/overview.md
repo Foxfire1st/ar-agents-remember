@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-07T23:30+02:00 |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`                                      |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`                                      |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -67,7 +67,7 @@ that records an orchestration nudge event and enqueues a manager-addressed inbox
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
 | `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (52 with L9 `attach_terminal_session_to_leaf`), `RESERVED_TOOLS`, and `_tool_payload` — the choke point that, after the ambient emission hook, runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification`) and then attaches the `next_step.py`-computed `nextStep` hint to every active-lifecycle response (exception-safe; never raises into the tool path). |
-| `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`); linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. |
+| `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`), and HFX-L6 rewrites that role framing around the architect-default developer-facing lifecycle with spawned backend orchestrators and curator closeout seats. Linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. |
 | `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `compact_runtime_install_payload`. |
 | `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
 | `providers.py`  | provider status/diagnostics/watchers, GrepAI search/trace, CGC query tools; `compact_diagnostics_payload`, `compact_watchers_payload`. |
@@ -130,6 +130,11 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: `next_step.py`'s
+  front-half role wording and the terminal/spawn role path now align with the architect-default
+  developer-facing lifecycle, spawned backend orchestrators, and curator closeout seat; public tool
+  registration and payload-builder boundaries are unchanged. Verification metadata pinned until
+  closeout stamps the HFX-L6 commit.
 - 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: terminal attach/spawn payloads now normalize
   leaf refs through the task tree before catalog writes and spawn provenance, returning
   `leaf-ref-not-found` / `leaf-ref-ambiguous` refusals with the expected

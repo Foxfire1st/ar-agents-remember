@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`   |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-06T15:35+02:00 |
-| lastVerifiedCommitHash |                                                                     `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                                     2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T22:21+02:00 |
+| lastVerifiedCommitHash |                                                                     `2c464cf4c29b60165fecae722bf76c307aaac6f1`|
+| lastVerifiedCommitDate |                                                                     2026-07-07T22:59:19+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -28,12 +28,17 @@ packets.
 Pydantic contracts. `template_path(...)` resolves the runtime
 `l-01-agent-lifecycles/templates/` file, `turn_report_artifact(...)` derives
 the standard `notes/reports/<leaf>-worker-report.md` path, `escalation_packet(...)`
-routes one role up the worker -> manager -> orchestrator -> developer ladder, and
+routes one role up the worker -> manager -> orchestrator -> architect -> developer ladder, and
 `render_master_handover_packet(...)` emits Markdown in the bundled master-handover
 template shape. As of 260703-L12 the `OrchestrationRole` literal carries
 `strategist` (between `designer` and `orchestrator`) and `_ROLE_ESCALATION`
 maps `strategist -> orchestrator` — the spawn-first sprint planner escalates
 one rung to its spawner, like the designer and reviewer rungs.
+As of HFX-L6 the literal also carries `architect`; `_ROLE_ESCALATION` maps
+`orchestrator -> architect`, `architect -> developer`, and `designer -> architect`.
+As of L6R4 the literal also carries `curator`; `_ROLE_ESCALATION` maps
+`curator -> manager`, so onboarding-writer blockers return to the owning manager instead of
+skipping a rung or falling outside the typed role set.
 
 ### Conventions
 
@@ -57,6 +62,15 @@ their own workflow.
 | The bundled master-handover template is rendered by the helper. | [master-handover-packet.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md) |
 
 ## Update History
+
+- 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: added
+  `curator` to `OrchestrationRole` and routed curator escalations/blockers to `manager` in
+  `_ROLE_ESCALATION`. Verification metadata pinned until closeout stamps the HFX-L6 commit.
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
+  `architect` to `OrchestrationRole` and changed the escalation ladder to route backend
+  orchestrator and designer escalations through architect before developer. Verification
+  metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): `OrchestrationRole` gains the `strategist` literal and `_ROLE_ESCALATION` gains `strategist -> orchestrator`; covered by the new strategist-escalation test in `test_orchestration_comms.py`. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: template_path now resolves under runtime skills/l-01-agent-lifecycles/templates/ (the unified skill folder replaced l-02-agent-orchestration). Verification metadata pinned until closeout stamps the L9 commit.

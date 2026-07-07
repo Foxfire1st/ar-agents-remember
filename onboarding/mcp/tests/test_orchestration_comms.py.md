@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_orchestration_comms.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T15:35+02:00 |
-| lastVerifiedCommitHash |                                            `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                            2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T22:21+02:00 |
+| lastVerifiedCommitHash |                                            `2c464cf4c29b60165fecae722bf76c307aaac6f1`|
+| lastVerifiedCommitDate |                                            2026-07-07T22:59:19+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -30,7 +30,11 @@ rate-limit behavior, and the `orchestration_nudge_manager_payload(...)` path tha
 records an event and queues a manager-addressed inbox message. As of 260703-L12
 it also pins the strategist rung: `test_strategist_escalates_to_orchestrator`
 asserts an `escalation_packet(from_role="strategist", ...)` routes to the
-orchestrator (the new `OrchestrationRole` literal's ladder entry).
+orchestrator (the new `OrchestrationRole` literal's ladder entry). HFX-L6 adds
+`test_orchestrator_escalates_to_architect` and `test_architect_escalates_to_developer`
+to pin the new architect rung. L6R4 adds `test_curator_escalates_to_manager` so the
+dedicated onboarding-writer seat is typed by the artifact helper and returns blockers to the
+owning manager.
 
 ### Conventions
 
@@ -56,6 +60,15 @@ workspace.
 As of the 260703-L9 lifecycle convergence, the artifact-helper test pins the turn-report template path under `runtime/skills/l-01-agent-lifecycles/templates/` (the unified skill folder that replaced the l-02 tree).
 
 ## Update History
+
+- 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: added
+  `test_curator_escalates_to_manager` for the artifact helper's curator role/escalation coverage.
+  Verification metadata pinned until closeout stamps the HFX-L6 commit.
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
+  escalation tests for orchestrator -> architect and architect -> developer, matching the
+  updated backend-to-owner ladder. Verification metadata pinned until closeout stamps the
+  HFX-L6 commit.
 
 - 2026-07-06T15:35+02:00 — 260703-L12 (three-party loops): added `test_strategist_escalates_to_orchestrator` pinning the new strategist ladder rung in `escalation_packet`. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the pinned turn-report template path expectation moved to runtime skills/l-01-agent-lifecycles/templates/. Verification metadata pinned until closeout stamps the L9 commit.

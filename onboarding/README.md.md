@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T12:05+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:17+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -60,7 +60,13 @@ default.
 
 A `## What It Looks Like In Practice` mini-transcript sits between Core Features and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
 
-Since the 260703-L10 one-vocabulary sweep, the post-quickstart workflow sentence and the Workflows docs link speak the unified `l-01-agent-lifecycles` vocabulary: a developer-facing session is the orchestrator, spawned agents follow their role briefs, and the named build modes are the research-only exit, the `w-02-light-task-workflow` skill task, and the master + light sub-task series (the chat build is retired — chat is never a build route). The Status section's 3.0-arc paragraph likewise says "a system-managed agent lifecycle" instead of the retired "session job lifecycle" phrase.
+Since the HFX-L6 review remediation, the post-quickstart workflow sentence and the Workflows docs
+link speak the current `l-01-agent-lifecycles` vocabulary: the developer-facing session is the
+architect, and spawned backend orchestrators plus other role seats follow their role briefs. The
+named build modes remain the research-only exit, the `w-02-light-task-workflow` skill task, and the
+master + light sub-task series (the chat build is retired — chat is never a build route). The
+Status section's 3.0-arc paragraph likewise says "a system-managed agent lifecycle" instead of the
+retired "session job lifecycle" phrase.
 
 A ToC-linked `## Run The Dashboard` section (260703 L3) sits between Quickstart and
 Documentation. It leads with the **unpinned** install as the first-class citizen —
@@ -131,6 +137,12 @@ The README describes external memory in general terms, but this file-level onboa
 | No meaningful cross-repo references found for the README itself. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: the public workflow sentence
+  after the quickstart now says the developer-facing session is the architect, while spawned
+  backend orchestrators and other role seats follow their role briefs. The docs pages swept in
+  the same review remain outside file-level onboarding per path rules. Verification metadata
+  pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-07T21:10+02:00 — No content impact: release 4922146 bumped the Status/install version strings 3.0.0rc2 -> 3.0.0rc3; the body describes the version generically ('bumped every release'), so nothing goes stale. (Reconciliation: the bump landed as a direct owner commit between the L17 and L18 closeouts.)
 - 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep): the workflow sentence after the quickstart and the Workflows docs-index line now name the `l-01-agent-lifecycles` skill (orchestrator + role briefs; research-only exit / `w-02-light-task-workflow` task / master series — the chat build removed), and the Status 3.0-arc paragraph says "system-managed agent lifecycle". The `docs/**` pages (workflows, getting-started, features, llms.txt, FAQ, concepts, reference/skills, reference/runtime-layout, install/claude-code, docs/README) were swept in the same pass but stay outside file-level onboarding per path rules. Verification metadata pinned until closeout stamps the L10 commit.

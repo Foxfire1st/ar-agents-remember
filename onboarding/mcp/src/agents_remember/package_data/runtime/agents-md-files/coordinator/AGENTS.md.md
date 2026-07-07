@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:00+02:00                     |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -29,13 +29,13 @@ runtime guidance. It now opens with a concise `Start Here — Route By Role`
 section: sessions route by role through the `l-01-agent-lifecycles` skill — a
 spawned agent (the `AR_SPAWN_ROLE` env var, or a role brief as first message)
 follows its brief as its session start, and a developer-facing session is the
-orchestrator, entering `skills/l-01-agent-lifecycles/roles/orchestrator.md`
+architect, entering `skills/l-01-agent-lifecycles/roles/architect.md`
 before working in any managed repository. An already-running session must stay
 aware of managed-repo boundaries so a turn or tool target that crosses from
-outside Agents Remember scope into a managed repository enters the orchestrator
+outside Agents Remember scope into a managed repository enters the architect
 lifecycle first. The detailed build-mode explanation lives in
 the lifecycle skill rather than being repeated in this coordinator entrypoint.
-It requires agents to enter the orchestrator lifecycle and clear its plan gate before
+It requires agents to enter the architect lifecycle and clear its plan gate before
 changing code, points agents to the sibling installed `system/`, `tasks/`, and
 `skills/` `AGENTS.md` files when those scopes become relevant, resolves active
 repository context with `c-08-ar-coordination-context-resolver` skill before trusting memory or task surfaces, checks
@@ -117,7 +117,7 @@ This onboarding is backed by the source template itself.
 
 | Finding                                                                                                                       | Citations | Source Path |
 | ----------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The template routes sessions by role through the `l-01-agent-lifecycles` skill (spawned agents follow their briefs; a developer-facing session is the orchestrator and enters `roles/orchestrator.md`) and requires orchestrator-lifecycle entry when an already-running session crosses from outside Agents Remember scope into a managed repository. | L3-L15 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
+| The template routes sessions by role through the `l-01-agent-lifecycles` skill (spawned agents follow their briefs; a developer-facing session is the architect and enters `roles/architect.md`) and requires architect-lifecycle entry when an already-running session crosses from outside Agents Remember scope into a managed repository. | L3-L15 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | L28-L38   | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | L40-L49 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. | L50-L60 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
@@ -136,6 +136,12 @@ No sibling repository evidence is needed for this package template.
 | No meaningful cross-repo references found. | n/a       | n/a         |
 
 ## Update History
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split (synced via
+  `sync-runtime.py`): the installed coordinator template now routes developer-facing
+  sessions and managed-repo boundary crossings to the architect lifecycle (`roles/architect.md`)
+  and points the plan gate at the architect, while spawned role briefs remain authoritative.
+  Verification metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-06T13:35+02:00 — 260703-L10 round 2 (L10R-2, synced via `sync-runtime.py`): the Onboarding Documentation section's "Until the build/job decision" became "Until the build decision" — the same dead-vocabulary class as the retired names, missed by round 1 in a template the sweep otherwise rewrote. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep, synced from root `agents-md-files/` via `sync-runtime.py`): the template's `Start Here` section became `Route By Role`, matching the landed `ar-coordination/AGENTS.md` — sessions route through the unified `l-01-agent-lifecycles` skill (spawned agents follow briefs; a developer session is the orchestrator entering `roles/orchestrator.md`), the retired `l-01-session-job-lifecycle` name and the nonexistent `frame` plan-gate phase are gone, and the tasks/AGENTS.md routing bullet points at the orchestrator lifecycle's reframe-research phase. Verification metadata pinned until closeout stamps the L10 commit.

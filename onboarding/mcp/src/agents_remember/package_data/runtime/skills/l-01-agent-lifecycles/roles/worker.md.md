@@ -5,19 +5,25 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:40+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
 ## Purpose
 
-The self-contained worker lifecycle: one leaf, one session, one report. The brief is the worker's ENTIRE session start - it replaces the front half the spawner already ran. The worker builds; it owns no lifecycle machinery: closeout, integration, finalization, gates, and task-doc bookkeeping belong to the owning seat. Terminal state: checks green + mandatory turn report.
+The self-contained worker lifecycle: one leaf, one session, one report. The brief is the worker's ENTIRE session start - it replaces the front half the spawner already ran. The worker builds code and writes the builder turn report; it owns no lifecycle machinery and no official onboarding memory pass. Closeout, integration, finalization, gates, task-doc bookkeeping, and the curator memory pass belong to separate owning/spawned seats. Terminal state: checks green + mandatory turn report with changed paths for the curator.
 
 ## Code Commentary
 
 ### Logic
 
-Sync-propagated copy of the canonical `skills/l-01-agent-lifecycles/roles/worker.md`. The worker loop: intake (brief + leaf task_doc + predecessor report - never a transcript) -> orient (paired reads via read_ar_files, which serves the OFFICIAL baseline, plus native worktree reads as the edit precondition; evidence tally per brief) -> build (leaf plan exactly; same-pass c-05 onboarding incl. the literal '- <ISO> - No route impact: <reason>' attestation form; generated indexes via local build_route_indexes; NEVER git commit) -> checks green (brief-prescribed focused + full wrapper; a red check outside leaf scope is an escalation) -> mandatory turn report (../templates/turn-report.md, written even when blocked) -> end. Tool surface stated positively: native file tools in the two worktrees, read-only AR retrieval, shell for checks, inbox when wired; no worktree_*/lifecycle_*/task_doc/gate_*/memory_*/route_index_refresh. Default behavior: fulfill the task, fill small blanks; plan deltas escalate one rung to the owning seat (spirit test is orchestrator-only). Knob default harness is codex (the practiced worker economics); `roles/worker.claude-code.md` overlays Claude Code.
+Sync-propagated copy of the canonical `skills/l-01-agent-lifecycles/roles/worker.md`. The worker loop: intake (brief + leaf task_doc + predecessor report - never a transcript) -> orient (paired reads via read_ar_files, which serves the OFFICIAL baseline, plus native worktree reads as the edit precondition; evidence tally per brief) -> build code (leaf plan exactly; produce changed paths, code-diff summary, tests, and route/onboarding observations for the downstream curator; NEVER git commit) -> checks green (brief-prescribed focused + full wrapper; a red check outside leaf scope is an escalation) -> mandatory turn report (../templates/turn-report.md, written even when blocked) -> end. Tool surface stated positively: native file tools in the code worktree, memory reads for context/changelog hints, read-only AR retrieval, shell for checks, inbox when wired; no worktree_*/lifecycle_*/task_doc/gate_*/memory_*/route_index_refresh. Default behavior: fulfill the task, fill small blanks; plan deltas escalate one rung to the owning seat (spirit test belongs to the backend orchestrator or architect owner seat). Knob default harness is codex (the practiced worker economics); `roles/worker.claude-code.md` overlays Claude Code.
+
+HFX-L6 adds role-seat immutability for dashboard-owned worker sessions and names architect as the
+owning seat in solo/flat dispatch. L6R3 keeps the worker as the builder only: a worker never absorbs
+curator/onboarding-writer work, and the official manager -> builder -> reviewer -> curator chain puts
+onboarding writes in a fresh curator session. A worker still escalates only one rung to its owner
+(manager, backend orchestrator, or architect in solo flat mode), never directly to the developer.
 
 As of the L8 de-harnessing pass the file carries a Fan-Out capability-doctrine section (read/search sub-agents only, scoped to the leaf; durable notes + compact summaries; the main loop owns every durable act incl. the never-delegated turn report) — formerly the deleted roles/worker.claude-code.md overlay, generalized off the vendor.
 
@@ -45,6 +51,17 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: reframed the worker
+  as code builder only in the manager -> builder -> reviewer -> curator chain. The worker report now
+  supplies changed paths, code-diff summary, tests, and observations for the curator memory pass;
+  the curator, not the worker, writes onboarding. Sync-propagated bundle copy. Verification metadata
+  pinned until closeout stamps the HFX-L6 commit.
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
+  role-seat immutability and updated worker dispatch/escalation language for architect-owned
+  flat runs while preserving the one-leaf/one-report worker loop. Sync-propagated bundle copy.
+  Verification metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
   free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never

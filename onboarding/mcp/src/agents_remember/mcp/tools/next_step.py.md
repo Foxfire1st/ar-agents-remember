@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/mcp/tools/next_step.py`       |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`             |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:00+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`             |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -172,7 +172,10 @@ and the ambient lifecycle / phase definitions.
 | `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …). | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
 | Engine tests. | [test_next_step.py](agents-remember/mcp/tests/test_next_step.py) |
 
-As of the 260703-L9 lifecycle convergence, the FRONT_HALF_RUNDOWN reframe bullet names the orchestrator lifecycle explicitly (`l-01-agent-lifecycles` `roles/orchestrator.md`); the rundown's flow semantics are unchanged — the front half it describes is now the orchestrator lifecycle's front half, since spawned roles never call `lifecycle_start`.
+As of HFX-L6, the FRONT_HALF_RUNDOWN reframe bullet names the architect lifecycle explicitly
+(`l-01-agent-lifecycles` `roles/architect.md`); the rundown's flow semantics are unchanged — the
+front half it describes is now the architect lifecycle's front half, since spawned backend roles
+do not own the developer-facing front half.
 
 As of the 260703-L8 remediation the FRONT_HALF_RUNDOWN speaks the event-loop vocabulary: the third item routes the event (no doc → design one; approved + code change → build; no code change → research-only exit; triage may route/spawn/escalate) instead of the retired job-selection table, and the task-file item states the ladder explicitly (task doc → branch → worktree, worktree_start only after the plan gate).
 
@@ -183,6 +186,10 @@ As of cycle 5 the front-half summary speaks event-routing (the last job-selectio
 No meaningful cross-repo references found.
 
 ## Update History
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: updated the
+  front-half rundown reframe pointer from the orchestrator lifecycle to the architect lifecycle
+  (`roles/architect.md`). Verification metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): front-half summary vocabulary aligned. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): rundown re-worded to the event-loop + ladder vocabulary (AR-13). Verification metadata pinned until closeout stamps the L8 commit.

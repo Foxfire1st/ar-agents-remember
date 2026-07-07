@@ -106,7 +106,7 @@
       "GateStore",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "e358c4ac520d94ae2e597ae3cbe186e07a4d1063",
+      "2c464cf4c29b60165fecae722bf76c307aaac6f1",
       "/../../overview.md",
       "controlplane/",
       "master-handover-approval",
@@ -122,7 +122,7 @@
       "agentId",
       "recipientRole",
       "strategist",
-      "AgentRole"
+      "architect"
     ]
   },
   "fallback": {

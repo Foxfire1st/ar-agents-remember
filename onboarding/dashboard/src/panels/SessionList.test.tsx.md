@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:42+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T22:21+02:00                           |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ separately and does not select the row.
 `fireEvent.click` is the repo idiom for driving
 React Aria interaction (see `Cockpit.test.tsx` / `DetailPanel.test.tsx`).
 
-The L14 command-tree describe adds six grouped cases over a `group()` fixture builder: (1) group
+The L14 command-tree describe adds seven grouped cases over a `group()` fixture builder: (1) group
 headers render chevron + insignia + name + counts (`aria-expanded`, `data-rank-tier`/`data-rank-size`
 hooks, the commanded master section carrying `data-nested` and containing its member row); (2) the
 landed archive is collapsed by default (rows unmounted, no insignia) and each header click toggles
@@ -49,7 +49,10 @@ landed archive is collapsed by default (rows unmounted, no insignia) and each he
 and the user's explicit collapse still wins afterwards; (4) ungrouped sessions render outside every
 `chats-group-*` section (the flat placement below); (5) a zero-group model renders the pre-L14 flat
 list (no `chats-session-tree`, selection intact); (6) a `spawnRole` session renders its
-`chats-session-role-{id}` chip and a role-less one renders none.
+`chats-session-role-{id}` chip and a role-less one renders none; (7) an `architect` spawn-role chip
+renders with `data-known-role="true"` while an unknown role renders `data-known-role="false"`; (8) a
+`curator` spawn-role chip also renders with `data-known-role="true"` while an unknown role remains
+`false`.
 
 ### Invariants And Boundaries
 
@@ -63,6 +66,15 @@ Aria's emitted `data-selected` rather than a CSS class, so it tracks the primiti
 | The component under test. | — | [SessionList.tsx](SessionList.tsx) |
 
 ## Update History
+
+- 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: added
+  focused coverage that `spawnRole="curator"` renders as a known role chip while an unknown
+  spawnRole remains on the unknown/default chip path. Verification metadata pinned until closeout
+  stamps the HFX-L6 commit.
+
+- 2026-07-07T21:32+02:00 — 260707-HFX-L6 L6R2 review remediation: added focused coverage that
+  `spawnRole="architect"` renders as a known role chip, while an unknown spawnRole keeps the
+  unknown/default chip path. Verification metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-06T23:56:42+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the "SessionList
   command tree (L14)" describe — grouped headers with insignia + counts, landed default-collapse +
