@@ -438,6 +438,12 @@ into the role files.
 
 ## Update History
 
+- 2026-07-07T06:10+02:00 — No route impact: PR #100 review fixes (merge `e358c4a`, landing the
+  260703_agent-orchestration series) added an empty-list refusal to `kernel/agentic_settings.py`'s
+  free-form knob parsing and a memory-source-branch guard to `worktrees/modules/start.py`'s
+  reconciliation, with matching tests. Package surface and route model unchanged (detail in the
+  file sidecars). Post-merge onboarding refresh, developer-approved.
+
 - 2026-07-07T18:40+02:00 — No route impact: 260703-L18 (review fix batch) hardens
   `kernel/agentic_settings.py` (finding 6: a `null` at a known `orchestration.*` family key refuses
   loudly in either layer; finding 4: `effortSessionCommand` templates are validated post-merge) and

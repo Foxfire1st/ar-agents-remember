@@ -57,7 +57,10 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   parse ADDITIVELY into `RoleKnobs` tuples (old files unchanged, empty-tuple
   defaults), effort stays a FREE string at load (the developer's `ultracode`
   file boots; per-harness vocabulary is dispatch-time), and shape violations
-  (non-list, empty member, non-string member) fail loud naming the knob.
+  (non-list, empty member, non-string member) fail loud naming the knob. **PR #100 review
+  (Codex P2):** an EMPTY list refuses with omit-to-inherit guidance — covered flat
+  (`launchArgs: []`) and as a per-level override (`sessionCommands: []`, which would silently
+  inherit the flat default through the field-wise `or` merge).
 - `RolesPerLevelTests` (L16, the developer's reviewer-economics fixture) —
   a level override deep-merges over the flat default (harness inherited,
   model/effort replaced per level: sonnet/high leaf → opus/xhigh master →
@@ -123,6 +126,11 @@ No meaningful cross-repo references found.
 | Loader-local behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P2, merge `e358c4a`): `FreeFormRoleKnobTests`
+  gained `test_empty_free_form_list_is_refused` and `test_empty_per_level_list_override_is_refused`
+  (an empty free-form list refuses with omit-to-inherit guidance, flat and per-level). Post-merge
+  onboarding refresh (developer-approved) verified against main @ e358c4a.
 
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): `FailLoudTests` gained the
   null-family refusal tests (repo-local walk across the six families + a global-layer case, proving no

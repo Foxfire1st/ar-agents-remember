@@ -41,7 +41,7 @@
       "settings.example",
       "route-local-overview",
       "examples/mcp",
-      "9d58058e3ce4815b0356794fc21973ebe9c71345",
+      "e358c4ac520d94ae2e597ae3cbe186e07a4d1063",
       "examples/mcp/",
       "system/settings.json",
       "benchmarksEnabled",
@@ -67,9 +67,8 @@
       "lastUpdated",
       "T23",
       "lastVerifiedCommitHash",
-      "d58058e3ce4815b0356794fc21973ebe9c71345",
       "lastVerifiedCommitDate",
-      "T11",
+      "T05",
       "MCP",
       "autoStart",
       "L13",
@@ -78,6 +77,7 @@
       "coordinationRoot",
       "T12",
       "L10",
+      "T11",
       "T14"
     ]
   },

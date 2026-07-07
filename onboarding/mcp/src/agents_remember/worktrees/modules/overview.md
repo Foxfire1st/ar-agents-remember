@@ -192,6 +192,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-07T06:10+02:00 — No route impact: PR #100 review fixes (merge `e358c4a`) hardened
+  `start.py`'s `_reconcile_missing_mapping` with a memory-source-branch guard (refuses when the
+  official memory repo is checked out elsewhere; detail in the start.py sidecar). No module added;
+  the modules route model is unchanged. Post-merge onboarding refresh, developer-approved.
 - 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 7 implements `start.py`'s
   missing-ledger-mapping recovery `memory_choice="reconciliation"` (records the unmapped code base ->
   the ledger's memory content tip the way closeout ledger syncs do, then proceeds to a started worktree)

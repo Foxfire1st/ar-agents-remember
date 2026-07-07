@@ -27,7 +27,10 @@ does something other than return the identical block, and
 `test_reconciliation_records_the_mapping_and_starts_the_worktree` proves `memory_choice="reconciliation"`
 maps the unmapped code base to the ledger's memory content tip, writes + commits a `Ledger sync` in the
 memory SOURCE repo (header advance + newest-first row, content tip unchanged), and proceeds to a real
-started memory worktree.
+started memory worktree. **PR #100 review (Codex P1)** adds
+`test_reconciliation_refuses_when_memory_repo_is_on_another_branch`: with the official memory repo
+checkout moved to another branch, reconciliation raises `LedgerError` naming both branches and
+commits nothing to the wrong branch.
 
 `RequireUpdatedSidecarContentTests` covers the four-case closeout content gate:
 in a temporary memory Git repo with a committed sidecar,
@@ -153,6 +156,11 @@ Worktree support coverage includes the master-start path that creates a root int
 
 ## Update History
 
+- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P1, merge `e358c4a`): added
+  `test_reconciliation_refuses_when_memory_repo_is_on_another_branch` — reconciliation refuses
+  (naming both branches, nothing committed) when the official memory repo is checked out off the
+  memory source branch. Post-merge onboarding refresh (developer-approved) verified against main
+  @ e358c4a.
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 7 / friction F-R): added the
   missing-mapping recovery coverage — `_unmapped_external_contract` helper plus
   `test_missing_mapping_block_advertises_only_consumable_choices` (only executable choices named,
