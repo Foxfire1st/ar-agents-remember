@@ -5,18 +5,19 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:40+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
 ## Purpose
 
 This is the portable **manager** job file the `l-01-agent-lifecycles` frame houses at the master
 tier. Like every job file it carries **both axes in one file** — the **role** (drive exactly one master
-series) and the **lens** (leaf loop: dispatch · review · delegated gates · master-exit handover) — plus
-an opening move, duties, artifact obligations, a comms protocol, and a harness-agnostic knob block. The
-central doctrine the card must protect: **the spirit test does NOT apply to the manager** — the default
-agent behavior stands, with no creative-liberty prompting in either direction.
+series) and the **lens** (leaf loop: dispatch · review · curator memory pass · delegated gates ·
+master-exit handover) — plus an opening move, duties, artifact obligations, a comms protocol, and a
+harness-agnostic knob block. The central doctrine the card must protect: **the spirit test does NOT
+apply to the manager** — the default agent behavior stands, with no creative-liberty prompting in either
+direction.
 
 ## Code Commentary
 
@@ -26,6 +27,12 @@ L13 review follow-up (L13R-1): the knob table's `harness` example is the registr
 
 The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
 `skills/l-01-agent-lifecycles/roles/manager.md`; it is model-interpreted markdown, never an executor.
+HFX-L6 adds role-seat immutability: dashboard-owned manager sessions stay manager, pasted role
+briefs are refused/escalated, roles expand horizontally into new chats, and a spawned orchestrator
+does not absorb manager work in place. Flat-run manager hat-collapse belongs to the architect owner
+seat when no separate manager exists. L6R3 adds the curator step: the manager runs the manager ->
+builder -> reviewer -> curator closeout chain and closes each leaf from builder code + reviewer
+verdict + curator memory pass.
 The body defines: the seat (**one per master task**, its own coordination leaf + chat, **no worktree**);
 the lens (opening move = read the master `task_doc` + leaf docs and order the leaves; retrieval lean =
 intent-confirmation on the master's own routes, no bird's-eye view; decide default = dispatch the next
@@ -36,7 +43,10 @@ nudge), reviews the artifact vs the `task_doc` (the manager's own **leaf-level r
 adversarial seam**), decides the leaf's **DELEGATED** gates **attributed** (`decidedBy: <manager
 lifecycle>`, `decidedVia: orchestration`; the owning agent never self-approves, a distinct configured
 role — the manager — may), and integrates leaf → master integration branch via the
-`c-11-memory-carryover-from-branch` skill. At master exit it spawns the **adversarial reviewer**
+`c-11-memory-carryover-from-branch` skill. As of L6R3, after builder code is ready and the reviewer
+verdict exists, the manager spawns a fresh curator (`roles/curator.md`, `AR_SPAWN_ROLE=curator`) for
+the onboarding-only memory pass and treats that report as the third leaf closeout input. At master exit
+it spawns the **adversarial reviewer**
 (master-exit seam); a blocking verdict **decomposes into fix leaves** the manager dispatches, and
 verdicts are **evidence, not decisions** (the manager decides the handover gate with the verdict as judge
 evidence). It then posts the **master-handover packet** (`templates/master-handover-packet.md`) up to the
@@ -53,14 +63,15 @@ is documented here but **enforced in leaf L4**; until then hand-offs follow the
 
 ### Invariants And Boundaries
 
-**The spirit test does NOT apply to this seat — it is orchestrator-only.** The manager gets **no
+**The spirit test does NOT apply to this seat — it belongs to the backend orchestrator or architect owner seat.** The manager gets **no
 creative-liberty prompting in either direction**: the **default agent behavior stands** (fulfill the
 task, fill small unambiguous blanks a competent implementer would fill, and no more). A **plan delta
 beyond blank-filling ESCALATES to the orchestrator** — never a reshape, and **never straight to the
 developer**. The manager has **no bird's-eye view** (one master, not the portfolio); the breadth /
 blast-radius reasoning belongs to the orchestrator. The **owning agent never self-approves**; the manager
 decides its leaves' delegated gates as the distinct configured role. Escalation resolves within the
-master's own view first, then rises up the ladder to the orchestrator.
+master's own view first, then rises up the ladder to the orchestrator. The manager does not write the
+curator's onboarding pass; it spawns the curator and consumes the resulting memory-pass report.
 
 ### Todos
 
@@ -115,6 +126,18 @@ No sibling repository evidence is needed for this orchestration job file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: documented the manager
+  -> builder -> reviewer -> curator leaf closeout chain; manager spawns a fresh curator after
+  builder code and reviewer verdict are available, and leaf closeout inputs are builder code +
+  reviewer verdict + curator memory pass. Sync-propagated bundle copy. Verification metadata
+  pinned until closeout stamps the HFX-L6 commit.
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
+  role-seat immutability; updated flat-run hat-collapse to the architect owner seat; and adjusted
+  escalation wording so manager deltas rise to the backend orchestrator and then architect relay
+  when needed. Sync-propagated bundle copy. Verification metadata pinned until closeout stamps
+  the HFX-L6 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
   free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never

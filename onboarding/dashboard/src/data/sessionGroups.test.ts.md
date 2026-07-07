@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionGroups.test.ts`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:18+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:17+02:00                           |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -27,9 +27,10 @@ here as data-in/data-out cases — the component suite (`SessionList.test.tsx`) 
 Six cases over small doc/enclosure/session builders (a sprint doc carrying
 `orchestrates: ["260706_management-repo"]`, a commanded and a free master, live enclosures):
 
-1. **Deck membership** — command-role provenance (strategist/manager `spawnRole`) plus the
-   developer-facing chat claiming the orchestration task's own qualified leaf all land on the deck
-   (label `{sprint title} · command deck`, gold tier, `3 chats · 3 live`); a worker with a master
+1. **Deck membership** — command-role provenance (backend orchestrator/strategist/manager
+   `spawnRole`) plus the developer-facing architect chat claiming the orchestration task's own
+   qualified leaf all land on the deck
+   (label `{sprint title} · command deck`, gold tier, `4 chats · 4 live`); a worker with a master
    leaf claim does NOT (role provenance is the deck gate) and its master group is `management` +
    `nested` because the sprint names it.
 2. **Uncommanded master** — a leaf claim groups under its master with no tier and no indent when
@@ -58,6 +59,11 @@ Pure logic tests (no DOM, no store). Fixture builders satisfy the full `TaskDocN
 | The component-level rendering/collapse coverage that complements this suite. | L14 describe | [SessionList.test.tsx](../panels/SessionList.test.tsx) |
 
 ## Update History
+
+- 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: deck membership tests now
+  expect the developer-facing architect chat plus backend orchestrator/strategist/manager command
+  seats on the deck, and the at-scale fixture uses an architect command session. Verification
+  metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-06T23:56:18+02:00 — 260703-L14 (visual hierarchy + chat grouping): created — deck
   membership by role provenance + orchestration claim, uncommanded-master grouping, the D3

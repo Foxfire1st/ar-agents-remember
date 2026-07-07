@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:36+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T22:21+02:00                           |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -30,7 +30,9 @@ inside collapsible groups — the sprint's command deck (gold insignia) on top, 
 master (purple insignia + one 22px indent step when commanded), landed work in one
 collapsed-by-default archive — while unattached sessions keep the flat placement below; with no
 `grouped` model or zero derived groups the component renders the pre-L14 flat list unchanged. Rows
-with `spawnRole` provenance also wear a role chip.
+with `spawnRole` provenance also wear a role chip; HFX-L6/L6R2 makes `architect` a known gold
+owner-tier chip alongside the backend command seats, and L6R4 makes `curator` a known role chip
+instead of the unknown/default path.
 
 ## Code Commentary
 
@@ -64,8 +66,10 @@ holds the ACTIVE session** — the landed archive defaults collapsed but must ne
 chat (the auto-expand rule; an explicit user collapse still wins). Collapsed groups unmount their
 `GridList`; `grouped.ungrouped` renders as a trailing flat `GridList` below the groups. `renderRow`
 also gained the spawn-role chip: `session.spawnRole` renders a `chats-session-role-{id}` chip via
-the `roleChip` cva (orchestrator/strategist gold — orchestrator also gold-bordered, manager purple,
-worker cyan, reviewer amber; unknown roles fall to the muted base, never throw).
+the `roleChip` cva (`architect` and `orchestrator` gold owner-tier with gold borders, strategist
+gold, manager purple, worker cyan, curator cyan, reviewer amber; unknown roles fall to the muted
+base, never throw). The chip carries `data-known-role="true|false"` so tests can distinguish known role
+provenance from an unknown/default chip without depending on generated class names.
 
 ### Conventions
 
@@ -102,6 +106,16 @@ through the shared `grammar/RankBadge` (size `sm`).
 | The V4 chevron insignia on group headers (size `sm`). | — | [RankBadge.tsx](../grammar/RankBadge.tsx) |
 
 ## Update History
+
+- 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: added
+  `curator` to the known spawn-role set and role chip variants using the existing restrained cyan
+  lane styling, preserving the unknown/default chip path for unrecognized roles. Verification
+  metadata pinned until closeout stamps the HFX-L6 commit.
+
+- 2026-07-07T21:32+02:00 — 260707-HFX-L6 L6R2 review remediation: added `architect` to the
+  known spawn-role chip set with the gold owner-tier mapping, and exposed `data-known-role` on the
+  chip so the dashboard test can pin architect as a known role rather than the unknown/default chip.
+  Verification metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-06T23:56:36+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the G1 command tree —
   an optional `grouped` prop rendering collapsible group sections (chevron + `RankBadge sm` + label +

@@ -5,19 +5,23 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:00+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
 ## Purpose
 
-The design lifecycle as a HAT the orchestrator pulls inline whenever design is needed - front of the pipeline or mid-flight. Not a seat: it cannot sit in a coordination leaf because the task is what it exists to create; no leaf, no worktree, no branch, no spawn required. A heavy design may run the same hat in a separate session (AR_SPAWN_ROLE=designer - chair logistics, not a role distinction).
+The design lifecycle as a HAT the architect pulls inline whenever design is needed - front of the
+pipeline or mid-flight. Not a coordination leaf by default: it cannot sit in a coordination leaf
+because the task is what it exists to create; no leaf, no worktree, no branch, no spawn required. A
+heavy design may run the same hat in a separate session (AR_SPAWN_ROLE=designer - chair logistics,
+not a role distinction).
 
 ## Code Commentary
 
 ### Logic
 
-Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/designer.md. Content unchanged in substance: the tasks/AGENTS.md co-think doctrine as a job (meta-question, reframe, evidence-first via c-04), blast-radius bounded to the one master, task_doc authorship with a code example per distinct change, decision-needing questions into the task doc's openQuestions (notes/ carries the analysis), the declared master-scoped limit (cross-master collisions are owned downstream at the orchestrator's bulwark). Re-framed in this pass from seat to hat: headers and entry conditions name the orchestrator as the wearer, escalation is simply the handover into the portfolio job, and the knob table's harness row is 'the wearer's'.
+Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/designer.md. Content remains the tasks/AGENTS.md co-think doctrine as a job (meta-question, reframe, evidence-first via c-04), blast-radius bounded to the one master, task_doc authorship with a code example per distinct change, decision-needing questions into the task doc's openQuestions (notes/ carries the analysis), and the declared master-scoped limit (cross-master collisions are owned downstream at the backend orchestrator's bulwark). HFX-L6 changes the wearer from orchestrator to architect, adds role-seat immutability for spawned designer sessions, and makes the primary channel the architect chat/relay.
 
 As of the L8 de-harnessing pass the overlay-authoring sentence is gone: no per-harness designer files; the hat is fully portable.
 
@@ -43,6 +47,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: the designer
+  hat is now pulled by the architect, not the backend orchestrator; spawned designer seats keep
+  role-seat immutability; handoff goes through the architect to the backend orchestrator's
+  portfolio review. Sync-propagated bundle copy. Verification metadata pinned until closeout
+  stamps the HFX-L6 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
   free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never

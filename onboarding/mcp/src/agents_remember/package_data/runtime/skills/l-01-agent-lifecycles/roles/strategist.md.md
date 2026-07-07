@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:00+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
 ## Purpose
 
@@ -50,6 +50,10 @@ convergence expected; the drawing board IS this loop's escalation; 3-full-round 
 adopted-plan handover (round 2, L12R-8: the artifact write is unconditional; the inbox is the
 delivery channel when the brief wires it, otherwise the final playback message carries the ref). Re-evaluation rules: an in-sprint master added before implementation starts
 re-plans; an out-of-sprint master waits for the next sprint.
+
+HFX-L6 keeps the strategist as the portfolio planner but routes developer-visible drawing-board
+feedback through the architect. The strategist is still spawned for backend portfolio planning,
+remains reader-not-mutator, and keeps role-seat immutability in dashboard-owned sessions.
 
 ### Conventions
 
@@ -114,6 +118,12 @@ No sibling repository evidence is needed for this orchestration role file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
+  role-seat immutability; clarified that drawing-board feedback and quo-vadis contradictions go
+  through the architect relay while the strategist remains the reader-not-mutator portfolio
+  planner for backend orchestration. Sync-propagated bundle copy. Verification metadata pinned
+  until closeout stamps the HFX-L6 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
   free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T18:40+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:40+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -66,7 +66,8 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   model/effort replaced per level: sonnet/high leaf → opus/xhigh master →
   fable/ultracode portfolio), the default level is leaf, an absent family
   changes nothing, unknown level keys and unknown roles inside a level fail
-  loud, and free-form lists REPLACE (never concatenate) per level.
+  loud, `architect` and `curator` are accepted and deep-merged inside a level
+  (HFX-L6/L6R3), and free-form lists REPLACE (never concatenate) per level.
 - `HarnessesFamilyTests` (L16 registry openness) — an absent family means the
   builtin registry; a new id ADDS a harness (command⇄argv derivation, name
   defaulting, `defined_in="settings"`, builtin order preserved + new ids
@@ -127,6 +128,16 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: role-knob parsing tests
+  now include a flat `curator` entry, and `RolesPerLevelTests` adds
+  `test_curator_is_allowed_inside_a_level` to pin per-level curator overrides while preserving
+  unknown-role refusals. Verification metadata pinned until closeout stamps the HFX-L6 commit.
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: role-knob
+  parsing tests now include an `architect` flat role entry, and `RolesPerLevelTests` adds
+  `test_architect_is_allowed_inside_a_level` to pin per-level architect overrides while
+  preserving unknown-role refusals. Verification metadata pinned until closeout stamps the
+  HFX-L6 commit.
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): `FailLoudTests` gained the
   null-family refusal tests (repo-local walk across the six families + a global-layer case, proving no
   silent wipe); `HarnessesFamilyTests` gained the `effortSessionCommand` template-validation tests

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:00+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
 ## Purpose
 
@@ -47,6 +47,11 @@ file also defines five duties, artifact obligations, the comms protocol, and the
 out sub-agents that write durable reports** (`templates/impact-analysis.md`,
 `templates/onboarding-coherency.md`) backing the verdict (`templates/verdict.md`) under the series
 `notes/reports/` directory.
+
+HFX-L6 keeps verdicts as evidence, not decisions, and makes the super-exit handoff
+architect/developer mediated: the backend orchestrator hands the reviewable environment and verdict
+to the architect before developer review. Reviewer seats also carry role-seat immutability in
+dashboard-owned sessions.
 
 ### Conventions
 
@@ -118,6 +123,12 @@ No sibling repository evidence is needed for this orchestration job file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
+  role-seat immutability and adjusted super-exit wording so the backend orchestrator hands
+  verdict/demo evidence to the architect for developer review; the reviewer remains evidence,
+  never the decider. Sync-propagated bundle copy. Verification metadata pinned until closeout
+  stamps the HFX-L6 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
   free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never

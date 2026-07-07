@@ -5,13 +5,16 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:00+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
 ## Purpose
 
-The developer-facing lifecycle, restructured (260703-L8 reopened pass) as an EVENT LOOP over durable portfolio state - not a request-to-close pipeline. Each turn routes the incoming event (developer message, worker report, verdict, own finding) into one of three jobs under one roof: Design (pull the designer hat), Portfolio (streamline + the planner master), Orchestrate (execute the plan). Solo work is the same jobs with hats collapsed. Supersedes the transplanted session-job phase spine the first L8/L9 landing shipped.
+The spawned backend orchestrator lifecycle: an EVENT LOOP over durable portfolio state, not a
+developer-facing conversation. Each turn routes backend events (architect dispatch, manager
+handover, worker report, verdict, own finding) into portfolio/orchestration work. Developer-worthy
+decisions go to the architect as one-at-a-time decision items over the operator inbox.
 
 ## Code Commentary
 
@@ -19,7 +22,19 @@ The developer-facing lifecycle, restructured (260703-L8 reopened pass) as an EVE
 
 L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
 
-Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/orchestrator.md. Opening move every session (resumption is the common case): trust checkpoint -> lifecycle_start -> PORTFOLIO ORIENTATION (read the task tree: in flight / blocked / awaiting whom; say it back) -> route the event by a four-row condition table (no doc -> D; docs + coherence question -> P; approved series -> O; no code change -> research-only exit, chat is the right medium). THE INVARIANT LADDER: approved task doc -> branch (intent) -> worktree only where something is built; D and P never touch git; chat is never a build route (260628 T7). Job D: run roles/designer.md inline as a hat (egg/hen: a designer cannot sit in a leaf the task does not exist yet); orchestrator bulwark-checks the design planned-vs-planned/past before acceptance; gate = developer accepts. Job P: coherence scan, bulwark, reshape (leaf moves + ORDERED-LIST renumbering: numbers ARE positions, contiguous while unlanded, maps in the decision log, freeze at main-landing); output = the planner master task (coordination leaves as subTasks, DAG + dispatch order in the body); gate = wholesale portfolio review; still no git. Job O: first act = the super-branch INTENT creating a BRANCH only (managers base off it); dispatch loop with AR_SPAWN_ROLE + qualified leaf keys; the FAILED-DELIVERABLE RULE (task_reopen + reshape, never redo siblings); integration duty master->super in a per-edge orchestrator worktree (C-11, the topology's single home with the strict branch stack and two conflict modes); super-exit seam; developer-gated landing tail; self-improvement close. Hat-collapse rule: flat run -> manager hat; session scale -> hands-on build with the worker's discipline and the owner's closeout tail. Spirit test remains this seat only; hand-off protocol (dry-run -> notify-and-stop -> report + junction table) unchanged.
+Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/orchestrator.md. HFX-L6
+reframes this file as a spawned backend seat. Opening move every session (resumption is the common
+case): trust checkpoint -> lifecycle_start -> PORTFOLIO ORIENTATION (read the task tree: in flight /
+blocked / awaiting whom; say it back) -> route backend events from the architect, managers, workers,
+reviewers, or the orchestrator's own findings. The invariant ladder still holds: approved task doc
+-> branch intent -> worktree only where something is built; chat is never a build route. Design and
+drawing-board items go to the architect. Job P performs coherence scan, bulwark, strategist
+pre-run, orchestration-task adoption, and portfolio plan work with drawing-board rounds relayed
+through architect decision items. Job O executes approved backend plans: super-branch intent,
+dispatch loop with AR_SPAWN_ROLE + qualified leaf keys, failed-deliverable reopen/reshape, C-11
+master->super integration duty, super-exit seam, architect-mediated developer landing tail, and
+self-improvement close. Backend operational handoffs still use durable gates and inbox surfaces.
+Hat-collapse is forbidden for spawned backend orchestrator sessions.
 
 As of the L8 de-harnessing pass the file carries a Sub-Agent Fan-Out capability-doctrine section (any harness that has fan-out: sub-agents write templated durable reports and return compact summaries; AR mutations stay in the main loop; capped by orchestration.concurrency.maxSubAgents; a harness without the ability runs the analyses sequentially) — the content formerly held by the deleted roles/orchestrator.claude-code.md overlay, generalized off the vendor.
 
@@ -55,6 +70,13 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: reframed
+  orchestrator.md as a spawned backend lifecycle, never the normal developer-facing seat; design
+  and drawing-board questions now emit decision/design items to the architect; developer-worthy
+  items use the existing inbox with `decision-item` / `decision-ruling`; super-exit review is
+  architect-mediated; and spawned backend hat-collapse is explicitly forbidden. Sync-propagated
+  bundle copy. Verification metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Knobs table gained the three
   free-form escape-hatch rows (launchArgs / sessionCommands / promptKeywords, settings-only, never

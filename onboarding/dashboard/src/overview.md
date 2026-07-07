@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-07T14:00+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -112,7 +112,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   the cockpit text-selection hook
   (`selection.ts`, slice 6f; since L8 a selection anchored inside a task reader marked
   `data-task-leaf-key` carries that qualified `leafKey`, the signal the direct leaf-chat highlight
-  paste resolves its target from). The serving **read clients** `files.ts` (the L1 files API, L2),
+  paste resolves its target from). HFX-L6 extends the role-aware session grouping/chip inputs so
+  architect and curator spawn-role provenance can ride the same Chats sidebar model as orchestrator,
+  manager, worker, strategist, designer, and reviewer sessions. The serving **read clients** `files.ts` (the L1 files API, L2),
   `changeset.ts` (the L3 change-set API, L4), and `notes.ts` (the agent-orchestration L9
   coordination-notes API — `listNotes`/`readNote` plus the pure conservative
   `resolveNoteReference` behind the task reader's reference links) are same-origin typed wrappers
@@ -231,6 +233,11 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: the `data/sessionGroups`
+  model and terminal data mirror now include architect/curator role provenance so Chats grouping and
+  row chips can represent the split developer-facing architect, backend orchestrator, and curator
+  closeout seat without changing the cockpit route structure. Verification metadata pinned until
+  closeout stamps the HFX-L6 commit.
 - 2026-07-07T14:00+02:00 — agent-orchestration L17 route impact: `panels/` gains the **`notes-reader/`**
   child route (the Notes Reader takeover, reusing the File Viewer `DualPane` over the unchanged L9
   `/api/notes/*` API), and `cockpit/Cockpit.tsx` gains a second full-bleed takeover hosting it (retained

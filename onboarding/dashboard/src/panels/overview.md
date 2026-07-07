@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-07T14:00+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -23,7 +23,9 @@ same leaf id, so the suffixed-leaf heuristic is gone),
 rendered into the shell's rails/viewport — plus the slice-6e **Chats** terminal view (the one
 interactive, full-bleed panel). `FlowTab.tsx` is no longer a cockpit view — Task 29 S7 hid the Lifecycle
 Flow tab from the shell, and orchestration leaf 260703-L0 reworked it into a **dev-only multi-model
-design canvas** (`FlowTab.tsx` renderer/nav + the new `flowModels.ts` registry) mounted at `/dev/flows`.
+design canvas** (`FlowTab.tsx` renderer/nav + the new `flowModels.ts` registry) mounted at `/dev/flows`;
+HFX-L6 updates that dormant model and the Chats role rendering to distinguish the developer-facing
+architect, backend orchestrator, and curator seats.
 As of slice 5d every presentational
 panel renders through the shared
 `grammar/Panel` chrome (self-scrolling box + sticky header) and styles itself with co-located
@@ -197,7 +199,8 @@ and the `Chats` `SessionList` switcher).
   orchestration task), one collapsible group per claimed master (purple insignia + 22px indent when
   commanded; live enclosures only), landed/absent-enclosure chats rolled into one collapsed archive,
   unattached sessions flat below, spawn-role chips on rows, and UI-local collapse where a
-  default-collapsed group still auto-expands to keep the ACTIVE chat visible; zero derived groups —
+  default-collapsed group still auto-expands to keep the ACTIVE chat visible; HFX-L6 adds architect
+  and curator role labels/chip handling beside the existing orchestration roles; zero derived groups —
   every flat run — renders the pre-L14 flat list unchanged), and the selected session's
   lazy-mounted `Terminal` — an
   imperative `@xterm/xterm` terminal (FitAddon + `ResizeObserver` → `sendResize`, the known resize
@@ -339,6 +342,10 @@ an idle dashboard at zero store writes.
 
 ## Update History
 
+- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: `SessionList`/`Chats`
+  role rendering and the dormant `FlowTab` model now carry architect/curator seats, matching the
+  architect/default developer-facing split and curator closeout chain while keeping the panels route
+  inventory unchanged. Verification metadata pinned until closeout stamps the HFX-L6 commit.
 - 2026-07-07T14:00+02:00 — agent-orchestration L17 route impact: the route gains the **`notes-reader/`**
   child route (the Notes Reader takeover — a notes-tree rail + a content pane that REUSES the File Viewer
   `DualPane`, over the unchanged L9 `/api/notes/*` API). `TaskNotes.tsx` becomes the compact ENTRY SURFACE

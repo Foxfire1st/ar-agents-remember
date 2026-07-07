@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`                                  |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:40+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`                                  |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
 ## Purpose
 
@@ -27,7 +27,8 @@ Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
 manager` header line (the router's condition-2 recognizer). Placeholder slots: the master + its
 leaf list with dependency notes; orchestrator-compiled trust facts (no checkpoint re-run); the
 branch base block (master branch off the CURRENT super @ tip); dispatch defaults (worker-brief
-template, `AR_SPAWN_ROLE=worker`, qualified leaf keys, concurrency); the exit block (spawn the
+template, `AR_SPAWN_ROLE=worker`, qualified leaf keys, the manager -> builder -> reviewer ->
+curator leaf closeout chain, fresh curator spawns with `AR_SPAWN_ROLE=curator`, concurrency); the exit block (spawn the
 reviewer with `AR_SPAWN_ROLE=reviewer`, RAISE `master-handover-approval` with the verdict attached
 — the ORCHESTRATOR decides; escalation to the orchestrator, never the developer; the human-pinned
 kinds named); the report obligations (master-handover packet, leaf-review notes, decision-log
@@ -45,6 +46,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: dispatch defaults now
+  name the manager -> builder -> reviewer -> curator leaf closeout chain, the exact closeout
+  inputs (builder code + reviewer verdict + curator memory pass), and the fresh per-leaf curator
+  spawn. Sync-propagated bundle copy. Verification metadata pinned until closeout stamps the
+  HFX-L6 commit.
 
 - 2026-07-05T19:55+02:00 - L8 builder cycle 7: exit block pins the enclosure to the EXACT contract task name + states the enclosure-less raise refusal (AR4-1c). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: enclosure on the raise, all-human conditional, planner-master slot (AR3-1/AR3-2/AR3-6b). Verification metadata pinned until closeout stamps the L8 commit.

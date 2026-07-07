@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-06T15:40+02:00                      |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`     |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`     |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -60,9 +60,12 @@ delivery state while pending, and are deleted when the agent consumes them, the
 developer dismisses the stale pickup warning, or TTL compaction removes them.
 L3 adds `orchestration_nudges.py` for rate-limited manager nudges and
 `orchestration_artifacts.py` for turn-report, master-handover, and escalation
-packet helpers. Since 260703-L12 both role vocabularies carry the new
-`strategist` seat: `AgentRole` (inbox addressing) and `OrchestrationRole`
-(escalation packets, ladder rung `strategist -> orchestrator`).
+packet helpers. Since 260703-L12 both role vocabularies carry the `strategist`
+seat, and HFX-L6 extends the orchestration artifact role vocabulary with
+`architect` and `curator` so turn reports, handover packets, and escalation packets can name the
+split developer-facing/default seat and the curator closeout seat. `AgentRole` remains the inbox
+addressing vocabulary; `OrchestrationRole` owns escalation packet roles and the ladder rung
+`strategist -> orchestrator`.
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -80,7 +83,7 @@ signal, while targetless provider-down dismissals are not accepted.
 | `store.py`    | `GateStore`: lifecycle/workspace gate logs beside the event log; `current()` folds by gate id (last-wins), while `delete`/`compact` physically remove throwaway interaction rows. |
 | `operator_inbox_records.py` | `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/consume helpers for durable operator/agent inbox snapshots, including role/message/artifact and delivery metadata. |
 | `operator_inbox_store.py` | `OperatorInboxStore`: workspace inbox log, pending filters by lifecycle/agent/recipient role, delivery-state snapshots, idempotent store consume, public delete/dismiss paths, and TTL compaction. |
-| `orchestration_artifacts.py` | Strict turn-report, master-handover, and escalation packet helpers for the L2/L3 orchestration frame. |
+| `orchestration_artifacts.py` | Strict turn-report, master-handover, and escalation packet helpers for the L2/L3 orchestration frame, with HFX-L6 architect/curator role literals in the artifact vocabulary. |
 | `orchestration_nudges.py` | `OrchestrationNudgeRecord` + `OrchestrationNudgeStore`: append-only, rate-limited manager nudge attempts plus message/artifact helpers. |
 | `gate_policy.py` | `GatePolicy` / `GatePolicyRule`, built-in policy names, human-pinned/delegable kind validation, and delegated-decision attribution/evidence checks. |
 | `enforcement.py` | `evaluate_gate` (pure kind-generic gate policy resolver) + `GateGuard`; `evaluate_closeout_gate` / `CloseoutGuard` remain the closeout wrapper `worktree_closeout_apply` reads. |
@@ -137,6 +140,10 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: orchestration artifacts can
+  now name `architect` and `curator` alongside the existing orchestration roles in turn-report,
+  handover, and escalation packet payloads; gate policy and inbox storage behavior are unchanged.
+  Verification metadata pinned until closeout stamps the HFX-L6 commit.
 - 2026-07-06T15:40+02:00 — 260703-L12 route impact (small): the `strategist` role joins `AgentRole` (`operator_inbox_records.py`) and `OrchestrationRole` + `_ROLE_ESCALATION` (`orchestration_artifacts.py`, escalating to the orchestrator) so the new spawn-first portfolio seat is addressable and ladder-routable; pinned by a new test in `test_orchestration_comms.py`. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): the cross-lifecycle seam fold added as an invariant bullet (`all_current()` + enclosure addressing) and the Layout table de-duplicated (the older `enforcement.py`/`operator_inbox_records.py`/`operator_inbox_store.py` rows removed; the newer kind-generic + role/delivery-metadata descriptions kept). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): `GateStore.all_current()` folds every gate log (workspace + all lifecycles, last-wins per gate id) — the cross-lifecycle fold the integrate-side seam guard reads so an enclosure-addressed handover gate is visible from a different consuming lifecycle. Verification metadata pinned until closeout stamps the L8 commit.

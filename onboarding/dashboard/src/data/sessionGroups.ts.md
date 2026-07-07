@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionGroups.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:12+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:17+02:00                           |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -34,11 +34,11 @@ Membership is decided per session, in precedence order:
 
 1. **Command deck** (`kind:"command"`, gold `orchestration` tier) — exists ONLY when an
    orchestration task exists (a `kind:"master"` doc with non-empty `orchestrates`; the D3 ruling).
-   A session joins it by command-role spawn provenance (`spawnRole` ∈ orchestrator / strategist /
-   manager — the `COMMAND_ROLES` set, from the AR_SPAWN_ROLE recorded on the catalog row) OR by a
+   A session joins it by command-role spawn provenance (`spawnRole` ∈ architect / orchestrator /
+   strategist / manager — the `COMMAND_ROLES` set, from the AR_SPAWN_ROLE recorded on the catalog row) OR by a
    leaf claim resolving INTO the orchestration task itself: its own qualified leaf key
    (`qualifiedLeafKey(orchestrationDoc)`) or any leaf in the orchestration task's folder — that
-   second arm is how the developer-facing orchestrator chat lands on the deck. Label:
+   second arm is how the developer-facing architect chat lands on the deck. Label:
    `{orchestration doc title} · command deck`.
 2. **Master groups** (`master:{folder}`) — sessions whose qualified leaf key
    (`repo/master/leaf-id`, parsed by `leafKeySegments`) resolves to a **live** enclosure:
@@ -85,6 +85,11 @@ archive reading `"· archived"` instead. Only non-empty groups are emitted.
 | The membership/scale unit suite incl. the 30-chat fixture. | all cases | [sessionGroups.test.ts](sessionGroups.test.ts) |
 
 ## Update History
+
+- 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: command-deck membership now
+  includes `architect` spawn-role provenance alongside backend orchestrator/strategist/manager,
+  and the orchestration-task claim is described as the developer-facing architect chat rather than
+  an orchestrator chat. Verification metadata pinned until closeout stamps the HFX-L6 commit.
 
 - 2026-07-06T23:59:56+02:00 — L14 review follow-up (L14R-5): first-wins double-command semantics documented. Verification metadata pinned until closeout stamps the L14 commit.
 

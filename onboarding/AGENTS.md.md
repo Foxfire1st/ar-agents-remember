@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-11T14:07+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:00+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
 ## Purpose
 
@@ -32,14 +32,17 @@ A `Start Here — Route By Role` section now sits where Task Format Routing used
 to: sessions route by role through the `l-01-agent-lifecycles` skill — a spawned
 agent (the `AR_SPAWN_ROLE` env var, or a role brief as first message) follows
 its brief as its session start, and a developer-facing session is the
-**orchestrator**, running `skills/l-01-agent-lifecycles/roles/orchestrator.md`
+**architect**, running `skills/l-01-agent-lifecycles/roles/architect.md`
 on the request → trust-checkpoint → reframe-research → decide → build → close
 phase axis. The job type is a lens during reframe-research, and the build
 decision at `decide` has two shapes — a research-only exit (no worktree, no task
 file) or a durable `w-02-light-task-workflow` skill task; chat is never a build
 route, so small code work takes the minimal artifact and larger work escalates
 to a master + light sub-task series. The `tasks/AGENTS.md` collaboration
-doctrine applies in the orchestrator lifecycle's reframe-research phase.
+doctrine applies in the architect lifecycle's reframe-research phase.
+The HFX-L6 role split keeps spawned roles on their briefs while making the
+owner/developer-facing seat the architect; the backend orchestrator is no
+longer the normal developer-facing lifecycle.
 The memory section also carries a `Memory Retrieval Strategies` list — Semantics
 (GrepAI), Relationship (cgc), and Intent (onboarding plus bounded source
 confirmation) — that points to the same `c-04-retrieval-strategy-router` skill router.
@@ -114,7 +117,7 @@ file.
 | Finding                                                                                                                                        | Citations | Source Path                               |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
 | The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember/AGENTS.md) |
-| The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the orchestrator lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | L16-L40 | [AGENTS.md](agents-remember/AGENTS.md) |
+| The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the architect lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | L16-L40 | [AGENTS.md](agents-remember/AGENTS.md) |
 | Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember/AGENTS.md) |
 | Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L84-L91 | [AGENTS.md](agents-remember/AGENTS.md) |
 | Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | L95-L123 | [AGENTS.md](agents-remember/AGENTS.md) |
@@ -131,6 +134,12 @@ delegates sibling-repository work to the installed runtime instructions.
 | No sibling repository citation is required; the cross-repo behavior is a handoff instruction in this file. | n/a       | n/a         |
 
 ## Update History
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: the repo-root
+  session-start contract now routes developer-facing sessions to the architect lifecycle
+  (`roles/architect.md`) and points the plan gate at the architect, while spawned role
+  sessions still follow their briefs. Verification metadata pinned until closeout stamps
+  the HFX-L6 commit.
 
 - 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep): the `Start Here` section became `Route By Role` — sessions route through the unified `l-01-agent-lifecycles` skill (spawned agents follow briefs; a developer session is the orchestrator on the request → trust-checkpoint → reframe-research → decide → build → close axis), the dead `orient → ground → frame → decide` axis and the retired skill name are gone, the chat build is removed from the build modes (chat is never a build route; research-only exit or `w-02-light-task-workflow` task), and the IMPORTANT block names the orchestrator lifecycle's plan gate. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-06-11T14:07+02:00: No content impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.

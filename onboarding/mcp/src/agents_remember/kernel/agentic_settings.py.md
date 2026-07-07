@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T18:40+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T21:40+02:00 |
+| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
+| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -43,7 +43,7 @@ membership) bind on the merged block, with the merged source label in errors.
 The fail-loud rule is scoped to `orchestration.*`: every nesting level has a frozen
 known-key set (`KNOWN_ORCHESTRATION_FIELDS` = gateDelegation/loops/roles/rolesPerLevel/
 concurrency/spawn/harnesses, plus per-family sets for gateDelegation kinds, loop
-defaults/complexity/levels, the six l-01 role names, the role-knob fields
+defaults/complexity/levels, the eight l-01 role names, the role-knob fields
 harness/model/effort/launchArgs/promptKeywords/sessionCommands, the harness-entry fields, and
 concurrency caps) and `_refuse_unknown` raises
 `AgenticSettingsError` naming the unknown keys, the allowed set, and the offending file.
@@ -87,6 +87,10 @@ vocabulary = `KNOWN_LOOP_LEVELS` leaf|master|portfolio, congruent with `loops.pe
 flat default field-wise (harness inherited unless overridden, lists REPLACE) — realizing the
 dispatch chain repo-local level override > global level override > repo-local role default >
 global role default on top of the file merge.
+
+HFX-L6 adds `architect` and L6R3 adds `curator` to the closed role vocabulary for both flat
+`orchestration.roles` and per-level `orchestration.rolesPerLevel`; unknown-role behavior remains
+fail-loud.
 
 **Harness definitions (L16 registry openness).** `_parse_harnesses` (decomposed into
 `_parse_harness_entry` → frozen `_HarnessEntry` shape record, `_resolved_launch` command/argv
@@ -175,6 +179,15 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: added `curator` to the
+  closed `KNOWN_ROLES` vocabulary beside `architect`, preserving fail-loud unknown-role behavior
+  for flat role knobs and per-level overrides. Verification metadata pinned until closeout stamps
+  the HFX-L6 commit.
+
+- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
+  `architect` to the closed `KNOWN_ROLES` vocabulary for flat role knobs and per-level role
+  overrides, preserving fail-loud unknown-role behavior. Verification metadata pinned until
+  closeout stamps the HFX-L6 commit.
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): added
   `_refuse_null_families` (`_validated_orchestration_block`) — a JSON `null` at any known
   `orchestration.*` family key refuses loudly in either layer with "remove the key to inherit the
