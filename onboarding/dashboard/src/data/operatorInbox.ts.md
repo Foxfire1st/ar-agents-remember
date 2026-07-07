@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/operatorInbox.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-04T12:31+02:00                           |
-| lastVerifiedCommitHash |                                                  `6b940141fc319f1d2d18b2c94fd9e9a213d43141`|
-| lastVerifiedCommitDate |                                                  2026-07-04T12:52:03+02:00|
+| lastVerifiedCommitHash |                                                  `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
+| lastVerifiedCommitDate |                                                  2026-07-07T05:26:14+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview

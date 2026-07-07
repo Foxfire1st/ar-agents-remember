@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T19:10+02:00                     |
-| lastVerifiedCommitHash | `0347c7e627c0278c29a9c72d0a3494d65638d7f8` |
-| lastVerifiedCommitDate | 2026-07-05T18:02:19+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose

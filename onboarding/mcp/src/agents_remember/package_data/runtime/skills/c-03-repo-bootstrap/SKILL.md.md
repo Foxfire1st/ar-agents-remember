@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `277f27a33b35aed8235cbb3c1ae2b5633cc88b22` |
-| lastVerifiedCommitDate | 2026-07-05T01:30:08+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 
 ## Purpose
 

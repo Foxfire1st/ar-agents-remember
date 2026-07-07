@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T22:38+02:00     |
-| lastVerifiedCommitHash | `9d58058e3ce4815b0356794fc21973ebe9c71345` |
-| lastVerifiedCommitDate | 2026-07-06T11:47:10+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

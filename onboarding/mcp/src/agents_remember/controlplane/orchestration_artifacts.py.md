@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`   |
 | doc_type               | `file-level-onboarding`                                             |
 | lastUpdated            | 2026-07-06T15:35+02:00 |
-| lastVerifiedCommitHash |                                                                     `bcaa78070f77c76f1c4db0af93786bb193b92523`|
-| lastVerifiedCommitDate |                                                                     2026-07-06T07:51:05+02:00|
+| lastVerifiedCommitHash |                                                                     `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
+| lastVerifiedCommitDate |                                                                     2026-07-07T05:26:14+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview

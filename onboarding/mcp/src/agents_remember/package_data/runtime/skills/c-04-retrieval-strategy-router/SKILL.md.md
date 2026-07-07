@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `c09d23a026b4e663ab32313dd651b9e00693cfb2`             |
-| lastVerifiedCommitDate | 2026-07-06T02:57:49+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`             |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
