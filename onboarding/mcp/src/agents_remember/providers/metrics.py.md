@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/metrics.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T17:40+02:00                     |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-07T20:45+02:00                     |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -49,6 +49,18 @@ missing/invalid file; `read_recent(limit=120)` returns the newest samples
 oldest-first and skips invalid lines, so a torn append (the crash class this
 master exists for) costs one sample row, never the store.
 
+`record_index_state(payload)` (260707-HFX-L2) appends one index-lifecycle row
+— seed catch-up, index staleness — to the SAME `metrics.jsonl`: the row is
+stamped `schema = PROVIDER_INDEX_STATE_SCHEMA` (`ar-provider-index-state/v1`,
+beside the container-sample schema) so consumers such as the degradation
+detector and the statistics board tell the row kinds apart, and a `sampledAt`
+default is filled in when the payload carries none. The rolling
+`metrics-current.json` stays container-only; index rows ride the append log
+only. `read_recent_index_states(limit=20)` is the read side: the newest
+index-lifecycle rows oldest-first, schema-filtered out of the shared log (it
+scans the last 500 rows through `read_recent`) — `provider_status` attaches
+the last 10 as the packet's `indexState`.
+
 `sample_provider_containers(cwd=..., timeout=DOCKER_SAMPLE_TIMEOUT_SECONDS)`
 is one read-only sampling pass. Discovery is label-based: every provider
 container carries the ownership labels from `identity.provider_ownership_labels`
@@ -87,6 +99,9 @@ each docker call.
 - `metrics-current.json` writes are replace-atomic; readers of `metrics.jsonl`
   must skip invalid lines, so a torn append line costs one sample row, never
   the store.
+- `metrics.jsonl` carries BOTH row kinds — container samples and index-state
+  rows — distinguished by the `schema` field; the rolling current-state file
+  stays container-only (260707-HFX-L2).
 - One `docker ps` plus at most one `docker stats` pass per sample; stats is
   fed only running names so a stopped container can never fail it, and a stats
   failure degrades the numbers, not the snapshot.
@@ -102,9 +117,20 @@ each docker call.
 | The serving daemon's lifespan runs the 30s sampling loop into this store. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | `provider_status_packet` attaches `read_current()` to the status packet. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Containment tests pin the parsers, the sampler paths (incl. dockerless), and the store's torn-line tolerance. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
+| The seed catch-up stage records index-state rows through `_record_index_state`. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
+| Index-lifecycle tests pin the `record_index_state` row landing in the log with its schema. | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
 
 ## Update History
 
+- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review follow-up: added `read_recent_index_states`
+  (newest index-lifecycle rows oldest-first, schema-filtered from the shared log) — the read
+  seam `provider_status`'s new `indexState` packet field consumes. Verification metadata pinned
+  until closeout stamps the HFX-L2 commit.
+- 2026-07-07T19:30+02:00 — 260707-HFX-L2 (index lifecycle): added `PROVIDER_INDEX_STATE_SCHEMA`
+  (`ar-provider-index-state/v1`) and `ProviderMetricsStore.record_index_state` — index-lifecycle
+  rows (seed catch-up, staleness) ride the same `metrics.jsonl` distinguished by the `schema`
+  field; the rolling current-state file stays container-only. Verification metadata pinned until
+  closeout stamps the HFX-L2 commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix: `sample_provider_containers` now feeds
   `docker stats` ONLY running container names (`State == running`), because a stopped name can
   fail the whole stats command and blind every pressure number; stopped containers ride the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
-| lastUpdated            | 2026-07-07T17:40+02:00                     |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-07T20:45+02:00                     |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -76,6 +76,11 @@ source-level behavior is local to `agents-remember`.
 
 ## Update History
 
+- 2026-07-07T20:45+02:00 — No route impact: 260707-HFX-L2's only change under this route is
+  `mcp_registration.py`'s `prepare_configured_providers` opting INTO the synchronous cgc
+  refresh fallback (hermetic-cold benchmarks need the timeout-bounded graph build now that
+  the fallback default is off) — the prepare/registration model this overview narrates is
+  unchanged; detail in the file sidecar.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes (B3/B4): `workspace.py`'s filter now treats
   `None` FAIL-CLOSED with the `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` env escape (B4), and
   `mcp_registration.py` gained `disarm_stale_benchmark_registrations` — the stale-registration

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T16:30+02:00|
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-07T20:45+02:00|
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -38,7 +38,12 @@ snapshot exists, rides it on the packet as `metrics`. The read is deliberately
 unconditional — leftover container stacks from a dead session are exactly what
 must stay observable, so the metrics ride the packet even when providers are
 disabled — and read-only; the field is simply absent until the serving
-daemon's first sample lands.
+daemon's first sample lands. Beside `metrics`, the packet carries `indexState`
+(260707-HFX-L2): the newest index-lifecycle rows (last 10, via
+`store.read_recent_index_states`) — seed catch-up outcomes, `staleIndex`
+blocks, watcher readiness — because index staleness is a reportable STATE: an
+operator sees behind-ness from status instead of reading setup logs. Absent
+when no index rows exist yet.
 
 The projection's global `ok` requires both signals to pass: the raw watchers
 `ok` (are the containers up) AND the aggregated current-state `ok` (does the
@@ -107,6 +112,9 @@ surface.
 - The `metrics` block is daemon-sampled and read-only from the status path; it
   must stay attached even when providers are disabled so leftover container
   stacks remain observable (containment R4).
+- Index staleness is a reportable state (260707-HFX-L2): the `indexState`
+  rows surface behind-ness on the status packet; they never gate or degrade
+  the projection's `ok`.
 
 ## Repo-Internal References
 
@@ -124,6 +132,11 @@ surface.
 
 ## Update History
 
+- 2026-07-07T20:45+02:00 — 260707-HFX-L2 (index lifecycle): the status packet gains `indexState` —
+  the newest 10 index-lifecycle rows (`ProviderMetricsStore.read_recent_index_states`) beside
+  `metrics`, so seed catch-up outcomes, `staleIndex` blocks, and watcher readiness are reportable
+  state instead of log archaeology; absent until index rows exist. Verification metadata pinned
+  until closeout stamps the HFX-L2 commit.
 - 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R4): `provider_status_packet` now
   attaches the daemon-sampled containment metrics (`ProviderMetricsStore.read_current()`) as the
   packet's `metrics` field, unconditionally — even when providers are disabled — so leftover

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T18:40+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T20:45+02:00 |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -122,7 +122,23 @@ make every file look modified and force a full re-embed — defeating the DB clo
 finds each file's counterpart in the source memory repo, and calls `os.utime` to
 copy the source mtime onto the worktree file. Files absent in the source are left
 untouched and counted as `filesMissingInSource`. The `.git` subtree is skipped.
-The result is returned as `mtimeSync` in the `prepare_memory_for_start` payload.
+Since 260707-HFX-L2 files whose CONTENT diverges between the worktree checkout
+and the source checkout are deliberately LEFT with their fresh checkout
+mtimes: stamping the source's old mtime onto changed content made the watcher
+skip exactly the delta — silent staleness — while fresh mtimes make GrepAI's
+incremental scan re-embed precisely the divergence (a small diff becomes an
+index UPDATE, never a full re-embed and never silent staleness).
+`_memory_divergence_paths(source, target)` computes that changed-path set via
+`git diff --name-only` of the two HEADs run in the source repo (worktrees
+share its object database); equal heads yield the empty set, and `None`
+(unrelatable heads) falls back to syncing everything — the pre-L2 behavior —
+with a `divergenceState` note in the result rather than guessing. The guard's
+scope is deliberately HEAD vs HEAD: uncommitted changes in the SOURCE
+checkout sit outside it, and the mtime copied from such a dirty file is at
+least as new as its content, so the watcher still re-embeds it —
+over-embedding, never silent staleness. The payload
+counts `divergentLeftFresh` beside `filesSynced`/`filesMissingInSource` and is
+returned as `mtimeSync` in the `prepare_memory_for_start` payload.
 
 ## Docs References
 
@@ -138,6 +154,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Launcher, ordering, retry, and guard coverage for the async path. | [test_provider_async.py](agents-remember/mcp/tests/test_provider_async.py) |
 | Background launcher and status projection. | [provider_async.py](provider_async.py.md) |
 | mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | [test_worktree_mtime_sync.py](agents-remember/mcp/tests/test_worktree_mtime_sync.py) |
+| Index-lifecycle tests pin the divergence exclusion (real git worktree fixtures: divergent files stay fresh, equal heads sync everything). | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
 | Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | [test_worktree_stale_base.py](agents-remember/mcp/tests/test_worktree_stale_base.py) |
 | Branch freshness facts come from the shared kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
 
@@ -147,6 +164,18 @@ For master task starts, `start.py` creates or loads the root series contract, cr
 
 ## Update History
 
+- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review follow-up: the mtime-sync narration makes the
+  guard's HEAD-vs-HEAD scope explicit — uncommitted SOURCE-checkout changes sit outside it and
+  can only over-embed (their copied mtimes are at least as new as their content), never go
+  silently stale. Documentation nuance on the source docstring; behavior unchanged from the
+  19:30 entry.
+- 2026-07-07T19:30+02:00 — 260707-HFX-L2 (index lifecycle): `_sync_worktree_memory_mtimes` now
+  leaves DIVERGENT-content files with their fresh checkout mtimes (new
+  `_memory_divergence_paths` via git diff of the two heads in the source repo; `None` →
+  sync-all fallback with a `divergenceState` note; payload gains `divergentLeftFresh`) — stamping
+  old mtimes onto changed content made the watcher skip exactly the delta (silent staleness);
+  fresh mtimes make grepai re-embed precisely the divergence. Verification metadata pinned until
+  closeout stamps the HFX-L2 commit.
 - 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P1, merge `e358c4a`): `_reconcile_missing_mapping`
   gained a memory-source-branch guard — reconciliation refuses (`LedgerError` naming both branches)
   when the official memory repo is checked out on a branch other than the contract's memory source

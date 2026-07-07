@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36` |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastUpdated            | 2026-07-07T20:45+02:00     |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,7 +33,17 @@ dry-runs report unwritten summary paths, real runs write compact setup
 summaries under `logs/providers/setup`, and recovered final watcher status is
 reported separately from strict phase `ok`. CGC prepare fallback coverage
 asserts that a missing seed source does not fail the whole prepare payload when
-refresh fallback remains enabled and dry-run refresh is planned.
+the refresh fallback is EXPLICITLY opted in — since 260707-HFX-L2 both
+fallback tests pass `cgc_refresh_fallback=True`, because the fallback no
+longer fires by default — and dry-run refresh is planned.
+`test_cgc_refresh_fallback_is_off_by_default` pins the flip itself: the
+`ProviderSetupRequest` dataclass default is `False`, the parser default is
+`False`, and the positive `--cgc-refresh-fallback` flag is the opt-in.
+`test_benign_seed_skips_never_fail_a_prepare` pins `result_ok_for_prepare`'s
+forgiveness split directly: a benign skip (no seed intended — no `sourceHead`)
+passes without any fallback, a REFUSAL (unrelatable heads, carrying
+`sourceHead`/`targetHead`) fails without the opt-in and passes with
+`cgc_refresh_fallback=True`.
 
 `test_rewrite_cgc_bundle_paths_rewrites_json_jsonl_and_text` builds a synthetic `.cgc` zip bundle containing JSON, JSONL, and text entries with source repository paths, runs `rewrite_cgc_bundle_paths`, then asserts that the rewritten bundle removes the source root and contains the target root.
 
@@ -67,8 +77,9 @@ The tests use temporary directories and synthetic settings; they do not require 
 The tests protect provider setup boundaries: provider setup must not silently
 fall back to coordinator `system/settings.json`, typed setup requests must work
 without CLI round-tripping, setup summaries must make failed phases
-diagnosable, CGC seed failure must not fail prepare when the existing refresh
-fallback is enabled, seeded CGC bundles must not retain source checkout paths
+diagnosable, CGC seed failure must not fail prepare when the refresh fallback
+is explicitly opted in (and the fallback must stay OFF by default,
+260707-HFX-L2), seeded CGC bundles must not retain source checkout paths
 after being adapted to a target worktree, worktree provider setup must isolate
 runtime/data/log roots, and lifecycle subprocesses must run with UTF-8
 environment overrides. These tests should stay side-effect free, should not
@@ -110,6 +121,15 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review follow-up: added
+  `test_benign_seed_skips_never_fail_a_prepare`, pinning `result_ok_for_prepare` directly — a
+  benign skip (no `sourceHead`) passes with the fallback off, a refusal fails without the opt-in
+  and passes with it. Verification metadata pinned until closeout stamps the HFX-L2 commit.
+- 2026-07-07T19:30+02:00 — 260707-HFX-L2 (index lifecycle): the two refresh-fallback tests now opt
+  IN explicitly (`cgc_refresh_fallback=True`) because the fallback default flipped off; new
+  `test_cgc_refresh_fallback_is_off_by_default` pins the dataclass default, the parser default,
+  and the positive `--cgc-refresh-fallback` opt-in flag. Verification metadata pinned until
+  closeout stamps the HFX-L2 commit.
 - 2026-06-19T13:42: Added `BenchmarkSeedGuardTests` — asserts the GrepAI clone and CGC seed resolvers refuse a benchmark-scoped target (return a `skipped` hermetic result) even with a source configured (task 260619).
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-10T07:30+02:00 — Added `test_prepare_announces_phases_in_order_with_seed_fallback`: a recording `SetupProgress` driven through a full dry-run prepare (mocked seed/clone bundles) pins the phase order (grepai install, cgc install-all, grepai clone-db, cgc seed, cgc refresh-all, watchers start/status) and that ONLY the refresh-all fallback start carries `seed_fallback` with the seed's refusal reason (GitHub #53).
