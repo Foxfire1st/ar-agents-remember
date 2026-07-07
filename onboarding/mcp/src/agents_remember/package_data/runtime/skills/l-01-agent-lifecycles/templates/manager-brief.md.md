@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `91b29d026a5733cc3ccea3d3275efd5057334f64`                                  |
-| lastVerifiedCommitDate | 2026-07-05T18:49:20+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`                                  |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 
 ## Purpose
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T05:12+02:00 |
-| lastVerifiedCommitHash | `6ea2a422210b4b9797d2c7c8df5f9994813f9331`       |
-| lastVerifiedCommitDate | 2026-07-06T21:07:46+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose

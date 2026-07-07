@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `5160dbbbb06695742fea9aed9bd8e9efc78f29bc`       |
-| lastVerifiedCommitDate | 2026-07-06T23:12:58+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview

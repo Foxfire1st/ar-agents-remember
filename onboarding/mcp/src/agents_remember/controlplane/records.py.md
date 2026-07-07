@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-07-05T16:30+02:00 |
-| lastVerifiedCommitHash | `19d76dbd73673ffc72d0ee1b6a868ac2fdf15ad0`         |
-| lastVerifiedCommitDate | 2026-07-05T16:23:40+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`         |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose

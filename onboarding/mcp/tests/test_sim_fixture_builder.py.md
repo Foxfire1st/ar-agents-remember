@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_sim_fixture_builder.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T10:30+02:00                     |
-| lastVerifiedCommitHash | `4cdb1ef68e2c5f661ea11e12d46a68441ef18088` |
-| lastVerifiedCommitDate | 2026-07-06T01:49:54+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 
 ## Purpose
 

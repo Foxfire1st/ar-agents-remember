@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `49a5e476b918f740bda6eec584eb7bf185aecb6e` |
-| lastVerifiedCommitDate | 2026-07-06T21:48:46+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 
 ## Purpose
 

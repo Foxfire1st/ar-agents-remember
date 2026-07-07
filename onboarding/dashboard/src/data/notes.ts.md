@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/notes.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-06T01:50+02:00                           |
-| lastVerifiedCommitHash | `7c63f64935f362c418e9852bf3820a769a437f45`       |
-| lastVerifiedCommitDate | 2026-07-06T01:34:58+02:00|
+| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
+| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
