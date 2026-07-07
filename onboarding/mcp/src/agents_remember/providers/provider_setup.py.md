@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T17:40+02:00     |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-07T20:45+02:00     |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -37,9 +37,19 @@ path argument (`args.from_settings`); the `coordination_root` parameter was
 dropped from both helpers.
 
 During `prepare`, the facade runs install steps, GrepAI refresh, CGC seed or
-refresh fallback, and watcher start/status in sequence. CGC seed failure still
-does not fail the whole prepare operation when `cgc_refresh_fallback` is enabled
-and the fallback refresh path succeeds. Setup payload finalization now delegates
+explicit refresh fallback, watcher start/status, and finally the seed
+catch-up stage in sequence. `cgc_refresh_fallback` defaults to FALSE
+(260707-HFX-L2): a refused seed must never cost a from-zero reindex on its
+own — the implicit refresh-all fallback turned every seed refusal into a full
+re-index. Opting in is the positive `--cgc-refresh-fallback` flag (the
+`--no-cgc-refresh-fallback` negative is kept), and only under that explicit
+opt-in does a REFUSED seed (unrelatable heads, carrying
+`sourceHead`/`targetHead`) stop failing the prepare.
+`result_ok_for_prepare` additionally forgives benign skips regardless of the
+flag: a seed that was never intended or possible (hermetic benchmark, no
+source configured — `skipped` without a `sourceHead`) never fails a prepare,
+because the watcher building the index from scratch is that path's designed
+behavior. Setup payload finalization now delegates
 to `setup_reporting.py`, which keeps strict phase `ok`, records separate
 readiness from final watcher status, stores failed phases and result counts, and
 writes compact summaries under `logs/providers/setup/`.
@@ -52,6 +62,46 @@ and rides it on the args namespace (the established state-carrier pattern);
 `_watcher_results` announces the `watchers start`/`watchers status` phases.
 Without a sink every announcement is a no-op, so CLI behavior is unchanged
 (GitHub #53).
+
+`_seed_catchup_results(args, settings)` (260707-HFX-L2) runs after
+`_watcher_results`: when the cgc seed recorded a relatable HEAD divergence
+(`args._cgc_seed_divergence`), it first classifies the delta — touchable
+paths (additions/modifications/rename-targets that exist on disk) versus
+RESIDUALS a touch cannot deliver (`deleted-phantom`,
+`rename-source-phantom`, `missing-on-disk`) — and then WAITS for the cgc
+watcher's post-subscribe log marker before touching anything (review L2/B1):
+`_wait_for_cgc_watcher_ready` polls `docker logs --since 15m --tail 200` on
+the container resolved by `_cgc_watcher_container_name` (the provider's
+`runtime.runner.containerNameTemplate` expanded with the stable repo id) for
+the SINGLE `_CGC_WATCH_READY_MARKERS` entry — `"monitoring"`, the one
+post-subscribe line verified against the pinned codegraphcontext wheel;
+speculative extra markers risked a false-positive on some future
+pre-subscribe line, silently re-opening the attach race, so the marker is
+re-verified on every cgc version bump — on a 2s cadence up to
+`CGC_WATCHER_READY_TIMEOUT_SECONDS` (90). `--since` bounds the window to THIS
+boot's output, so a marker left by a previous boot cannot satisfy a fresh
+one; inotify has no replay and seeded graphs skip the initial scan, so a
+touch before subscription is silently lost. No marker within the bound (or an
+unresolved container name, or a dockerless host) means NO touch and an honest
+`staleIndex` ("watcher not ready before the touch window; delta not
+delivered"). With a ready watcher it `os.utime`-touches exactly the touchable
+files — the watcher is event-driven, so it re-indexes just the delta; a small
+diff becomes an index UPDATE, never a teardown — and claims `caughtUp: true`
+ONLY for a clean delta (zero residuals) delivered to a ready watcher;
+residuals keep `caughtUp: false` with the `staleIndex.residuals` list. Above
+the bound
+(`--cgc-seed-delta-max-files`; `0` = `DEFAULT_SEED_DELTA_MAX_FILES`, 200;
+threaded through `normalized`/`request_from_args`/`args_from_request` into
+`CgcSeedOptions.delta_max_files`) nothing is touched: the clone still serves
+and the payload carries a `staleIndex` block (`served: true`, `behindFiles`,
+`deltaMaxFiles`, and `reindex: "explicit 'cgc refresh' only"`) so the
+staleness is surfaced, never silent — a from-zero rebuild stays an explicit
+`cgc refresh`. Dry runs and no-divergence are no-ops. Every outcome is
+recorded through `_record_index_state`, a best-effort
+(`contextlib.suppress(Exception)`) `ProviderMetricsStore.record_index_state`
+row carrying the repoId and provider instance id beside
+divergence/touched/caughtUp/watcherReady/staleIndex — observability must
+never break a setup.
 
 `_fleet_setup_lock(lock_path, timeout)` (containment R2, 260707-HFX-L1)
 serializes provider setup host-wide: `_action_payload_from_args` wraps
@@ -87,8 +137,17 @@ provider stack is POSIX-hosted anyway.
 - This module is a typed provider setup facade; CGC seed, CGC bundle rewrite,
   GrepAI setup, setup reporting, and shared command helpers belong in their own
   modules.
-- A failed CGC seed must not fail the whole prepare operation when the existing
-  refresh fallback is enabled and then runs.
+- The refresh-all fallback is explicit opt-in (`cgc_refresh_fallback=False`
+  default, 260707-HFX-L2): a refused seed alone must never trigger a
+  from-zero reindex. Benign seed skips (`skipped` without `sourceHead`) never
+  fail a prepare; a refused seed is forgiven only under the explicit opt-in.
+- The seed catch-up stage touches only diff files at or below the delta
+  bound AND only after the watcher's post-subscribe marker (inotify has no
+  replay — an early touch is a silent lie); `caughtUp` is claimed only for a
+  clean, fully-deliverable delta to a ready watcher. Deletions,
+  rename-sources, missing-on-disk paths, a not-ready watcher, and
+  above-bound deltas are all surfaced (`staleIndex`), never torn down —
+  rebuilds stay explicit.
 - Setup summaries record historical setup attempts; current provider truth is
   reported through provider status/current-state files.
 - Isolated workflow settings should have one canonical payload shape:
@@ -111,9 +170,31 @@ provider stack is POSIX-hosted anyway.
 | Shared settings and command helpers live in the setup common module. | [setup_common.py](setup_common.py.md) |
 | Setup payload summaries and failed-phase compaction live in the setup reporting module. | [setup_reporting.py](setup_reporting.py.md) |
 | Containment tests pin the fleet setup lock's contention timeout and uncontended no-op. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
+| The index-state metrics rows the catch-up stage records best-effort. | [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
+| Index-lifecycle tests pin the catch-up touch/stale/no-op paths and the metrics row. | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
 
 ## Update History
 
+- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review fixes (L2/B1+B2 + round-2 verdict): the catch-up
+  stage now WAITS for the cgc watcher's post-subscribe log marker before touching
+  (`_wait_for_cgc_watcher_ready` + `_cgc_watcher_container_name`,
+  `CGC_WATCHER_READY_TIMEOUT_SECONDS` = 90; the marker set was NARROWED to the single
+  wheel-verified `"monitoring"` line — speculative markers risked false-positives re-opening the
+  race — and the poll is bounded `docker logs --since 15m` so a previous boot's marker cannot
+  satisfy a fresh one; no marker ⇒ no touch + an honest "watcher not ready" `staleIndex`),
+  classifies touchable vs residual (deleted-phantom / rename-source-phantom / missing-on-disk)
+  and claims `caughtUp` only for a clean delta to a ready watcher; the `_record_index_state`
+  rows carry repoId + instance identity; `result_ok_for_prepare`'s benign-skip rule is unchanged
+  and now test-pinned. Verification metadata pinned until closeout stamps the HFX-L2 commit.
+- 2026-07-07T19:30+02:00 — 260707-HFX-L2 (index lifecycle): `cgc_refresh_fallback` default flipped
+  FALSE (a refused seed must never cost a from-zero reindex on its own) with the positive
+  `--cgc-refresh-fallback` opt-in flag; new `--cgc-seed-delta-max-files` plumbed through
+  `normalized`/`request_from_args`/`args_from_request`; new `_seed_catchup_results` stage after
+  `_watcher_results` (touch exactly the diff files ≤ bound — watcher-event catch-up; above it
+  `staleIndex` served + explicit `cgc refresh` only) with best-effort `_record_index_state`
+  metrics rows; `result_ok_for_prepare` forgives benign skips (no `sourceHead`) and forgives
+  refusals only under the explicit fallback. Verification metadata pinned until closeout stamps
+  the HFX-L2 commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes B1/B2: the setup lock moved HOST-scoped —
   new `fleet_setup_lock_path()` at `<tempdir>/agents-remember-provider-setup-<uid>.lock` and
   `_fleet_setup_lock` now takes the explicit `lock_path` (B1: `runtime_install` prunes

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T17:40+02:00 |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-07T19:30+02:00 |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -49,7 +49,14 @@ at a time bounds the aggregate container load — the 2026-07-07 OOM was
 concurrent setups summing past the host; the lock lives outside every
 coordination root because those trees are prunable/per-workspace), and the
 serving daemon centrally samples labeled provider containers
-into a metrics store that provider status attaches.
+into a metrics store that provider status attaches. 260707-HFX-L2 extends the
+same posture to the INDEX lifecycle: a HEAD difference between a seed source
+and a worktree checkout is a state to catch up from, not a teardown — small
+diffs become index UPDATES via watcher-event catch-up (the seed clones the
+near-perfect graph and fresh mtimes/touches drive the event-driven watchers
+over exactly the delta), the implicit refresh-all fallback is off by default,
+and from-zero rebuilds are explicit only (`cgc refresh` or the opt-in
+fallback flag); index-lifecycle rows ride the same central metrics log.
 
 ## Hot Path Summary
 
@@ -473,6 +480,15 @@ into the role files.
 
 ## Update History
 
+- 2026-07-07T19:30+02:00 — 260707-HFX-L2 route impact (provider index lifecycle): a HEAD
+  difference is a state to catch up from, not a teardown — `providers/cgc/seed.py` seeds through
+  relatable divergence (refusing only unrelatable heads) and `providers/provider_setup.py` adds
+  the post-watcher diff-scoped catch-up stage (touch ≤ `delta_max_files`; above: `staleIndex`
+  served + explicit `cgc refresh`), flips `cgc_refresh_fallback` off by default, and records
+  index-state rows into `providers/metrics.py`'s log (`ar-provider-index-state/v1`);
+  `worktrees/modules/start.py`'s mtime sync leaves divergent-content memory files fresh so
+  grepai re-embeds exactly the delta. NEW suite `mcp/tests/test_provider_index_lifecycle.py`
+  pins the cycle. Verification metadata pinned until closeout stamps the HFX-L2 commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes: the setup lock moved HOST-scoped
   (`fleet_setup_lock_path()` in the system temp dir — B1: `runtime_install` prunes `providers/`;
   B2: benchmark workspace roots must serialize on the same host lock); the benchmark filter's

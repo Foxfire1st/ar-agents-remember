@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T19:30+02:00 |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -192,6 +192,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-07T19:30+02:00 — No route impact: 260707-HFX-L2 refines `start.py`'s memory mtime sync
+  in place — divergent-content files keep fresh checkout mtimes so the grepai watcher re-embeds
+  exactly the delta instead of silently skipping it (detail in the start.py sidecar and the new
+  `test_provider_index_lifecycle.py`). No module added; the modules route model is unchanged.
 - 2026-07-07T06:10+02:00 — No route impact: PR #100 review fixes (merge `e358c4a`) hardened
   `start.py`'s `_reconcile_missing_mapping` with a memory-source-branch guard (refuses when the
   official memory repo is checked out elsewhere; detail in the start.py sidecar). No module added;

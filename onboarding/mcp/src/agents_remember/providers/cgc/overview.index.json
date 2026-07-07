@@ -48,7 +48,7 @@
     "src"
   ],
   "hotPath": {
-    "summary": "Use `setup.py` for enabled-provider wiring and isolated worktree settings, `seed.py` plus `bundle.py` for CGC index export/rewrite/import seeding, and `context/` for runtime layout, materialization, cleanup, and patch helpers. Use `lifecycle/` for backend, install/status, and process/watch commands. Seeding refuses when the workspace and worktree repository HEADs differ (a copied graph must match the code it describes) and the worktree then falls back to a full reindex; seed export/load is capped by the configurable `providerSetupSeconds`, while actual indexing is never duration-capped. See...",
+    "summary": "Use `setup.py` for enabled-provider wiring and isolated worktree settings, `seed.py` plus `bundle.py` for CGC index export/rewrite/import seeding, and `context/` for runtime layout, materialization, cleanup, and patch helpers. Use `lifecycle/` for backend, install/status, and process/watch commands. Seeding treats a HEAD difference as a state to CATCH UP from, not a teardown (260707-HFX-L2): a relatable divergence seeds anyway and records the changed files for `provider_setup`'s post-watcher catch-up stage (the event-driven watchers re-index just the touched delta; above the delta bound the...",
     "candidateHints": [
       "mcp/src/agents_remember/providers/cgc",
       "mcp/src/agents_remember/providers/cgc/context",
@@ -71,17 +71,21 @@
       "lifecycle",
       "context/",
       "lifecycle/",
-      "providerSetupSeconds",
+      "provider_setup",
       "CGC",
-      "HEADs",
+      "HEAD",
+      "CATCH",
+      "HFX",
       "mcp/src/agents_remember/providers/cgc/",
       "route-local-overview",
-      "e358c4ac520d94ae2e597ae3cbe186e07a4d1063",
+      "915e841a45cec40283902b69fe98e761672904af",
       "/../../../overview.md",
       "cgc/",
       "cgc_*",
       "context_modules/cgc",
       "lifecycle_modules/cgc",
+      "cgc refresh",
+      "providerSetupSeconds",
       "--",
       "to_container_path",
       "providers/context_common.py",
@@ -100,13 +104,9 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T01",
+      "T19",
       "lastVerifiedCommitHash",
-      "lastVerifiedCommitDate",
-      "T05",
-      "governingOverview",
-      "L12",
-      "OOM"
+      "e841a45cec40283902b69fe98e761672904af"
     ]
   },
   "fallback": {

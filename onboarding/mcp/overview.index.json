@@ -268,6 +268,7 @@
     "mcp/tests/test_provider_containment.py",
     "mcp/tests/test_provider_context_imports.py",
     "mcp/tests/test_provider_current_state.py",
+    "mcp/tests/test_provider_index_lifecycle.py",
     "mcp/tests/test_provider_lifecycle.py",
     "mcp/tests/test_provider_setup.py",
     "mcp/tests/test_provider_watcher_actions.py",
@@ -311,8 +312,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 540,
-    "fileSidecars": 223,
+    "sourceFilesInScope": 541,
+    "fileSidecars": 224,
     "childRoutes": 15
   },
   "routingTerms": [

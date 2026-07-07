@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T19:30+02:00 |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -30,9 +30,14 @@ Use `setup.py` for enabled-provider wiring and isolated worktree settings,
 `seed.py` plus `bundle.py` for CGC index export/rewrite/import seeding, and
 `context/` for runtime layout, materialization, cleanup, and patch helpers.
 Use `lifecycle/` for backend, install/status, and process/watch commands.
-Seeding refuses when the workspace and worktree repository HEADs differ (a
-copied graph must match the code it describes) and the worktree then falls
-back to a full reindex; seed export/load is capped by the configurable
+Seeding treats a HEAD difference as a state to CATCH UP from, not a teardown
+(260707-HFX-L2): a relatable divergence seeds anyway and records the changed
+files for `provider_setup`'s post-watcher catch-up stage (the event-driven
+watchers re-index just the touched delta; above the delta bound the clone
+serves stale and surfaced), only UNRELATABLE heads refuse (a copied graph
+must describe the same repository), and a from-zero reindex is explicit only
+— `cgc refresh` or the opt-in refresh fallback; seed export/load is capped by
+the configurable
 `providerSetupSeconds`, while actual indexing is never duration-capped.
 Seed argv after `--` executes inside the Linux runner container and is
 rendered via `to_container_path` (`providers/context_common.py`) — host-form
@@ -67,6 +72,12 @@ rendered via `to_container_path` (`providers/context_common.py`) — host-form
 
 ## Update History
 
+- 2026-07-07T19:30+02:00 — 260707-HFX-L2 route impact (index lifecycle): the seed's HEAD-mismatch
+  refusal narrowed to UNRELATABLE heads only — `seed.py` computes the relatable divergence (git
+  diff in the source repo) and stashes it for the post-watcher catch-up stage, so small diffs
+  become index updates via watcher events; the full-reindex fallback is opt-in and `cgc refresh`
+  stays the explicit rebuild. Verification metadata pinned until closeout stamps the HFX-L2
+  commit.
 - 2026-07-03T01:55+02:00 — L12 route impact: compose memory caps across the CGC stack; watch hygiene fixes live in cgc/context (enriched cgcignore reaches the watch context, timer-pop patch, bundle exclusion).
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the `_seed_skip` benchmark-scoped hermetic guard (task 260619 / MCP 2.9.2) that the series carryover had reverted. The merged tree at 84e95ad keeps main's hermetic seed behavior (the series did not touch this route's source).
 - 2026-06-19T13:42 — `seed.py` now refuses a benchmark-scoped seed target (`_seed_skip`) before any source/backend work, mirroring the GrepAI guard (hermetic; task 260619).

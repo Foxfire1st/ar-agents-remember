@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T17:40+02:00                     |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-07T20:45+02:00                     |
+| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
+| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -31,7 +31,11 @@ calls package-local provider setup with generated settings. Generated
 `providerSeconds`). `prepare_configured_providers` runs `run_provider_setup`
 with **no seed options** — it takes only `provider_ids` and never wires
 `cgc_seed`/`grepai_seed` — so a benchmark builds each provider index cold from
-its own generated settings and never touches another coordination root.
+its own generated settings and never touches another coordination root. It
+opts INTO `cgc_refresh_fallback=True` (260707-HFX-L2 review): hermetic-cold
+needs the synchronous, timeout-bounded graph build — with the fleet default
+now off, `cgc watch` would self-index asynchronously and the benchmarked
+agent would query a half-built graph errorlessly.
 
 `disarm_stale_benchmark_registrations(benchmarks_root, allowed_provider_ids)`
 (containment R1, 260707-HFX-L1 review B3) narrows persisted benchmark MCP
@@ -59,6 +63,10 @@ direct script use) leaves every file untouched.
   never start or clone the live workspace provider backends (task 260619). The
   former `default_cgc_seed_source_coordination_root` helper (which resolved the
   live workspace as the seed source) was removed.
+- Benchmark prepare keeps `cgc_refresh_fallback=True`: the hermetic-cold path
+  depends on the synchronous bounded refresh building the whole graph before
+  the run; an async self-indexing watcher would hand the benchmarked agent a
+  half-built graph with no error (260707-HFX-L2 review).
 - Persisted workspace registrations must be re-narrowed to the live authority
   on every prepare/run pass (containment R1, review B3): the sweep is
   idempotent, reports loudly per rewritten file, and `None` (no authority
@@ -85,6 +93,11 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review fix: `prepare_configured_providers` opts INTO
+  `cgc_refresh_fallback=True` — hermetic-cold benchmarks need the synchronous timeout-bounded
+  graph build; with the new fleet default off, `cgc watch` would self-index asynchronously and
+  agents would query a half-built graph errorlessly. Verification metadata pinned until closeout
+  stamps the HFX-L2 commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B3: added
   `disarm_stale_benchmark_registrations` — sweeps all persisted workspace registrations
   (`workspaces/*/{,*/}<CODEX_HARNESS_DIR>/mcp/<BENCHMARK_MCP_SETTINGS_NAME>`), narrows each
