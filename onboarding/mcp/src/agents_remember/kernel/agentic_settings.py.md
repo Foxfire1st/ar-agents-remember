@@ -76,8 +76,11 @@ whether a FILE set the key (vs. the default) — the boot-snapshot consumer bran
 **Role knobs (L16 three-layer model).** `RoleKnobs` carries the validated enums (`harness` — a
 known id; `model`/`effort` — free strings HERE, the per-harness effort vocabulary is enforced at
 DISPATCH where the harness is known) plus the free-form escape hatch (`launchArgs`/
-`promptKeywords`/`sessionCommands` — `_require_string_list` shape-checks a non-empty string list,
-content is NEVER validated; the spawn path records it in provenance). `orchestration.rolesPerLevel`
+`promptKeywords`/`sessionCommands` — `_require_string_list` requires a non-empty LIST of non-empty
+strings; an EMPTY list REFUSES (PR #100 review, Codex P2: `RoleKnobs` cannot distinguish absent from
+cleared — empty tuple = not configured — so a per-level `[]` meant to clear a flat default would
+silently INHERIT it through the field-wise `or` merge; omit the key to inherit, list values to
+override); content is NEVER validated; the spawn path records it in provenance). `orchestration.rolesPerLevel`
 (ruling 2026-07-07T08:15) parses the same knob shape per level (`_parse_roles_per_level`, level
 vocabulary = `KNOWN_LOOP_LEVELS` leaf|master|portfolio, congruent with `loops.perLevel`);
 `AgenticSettings.resolved_role_knobs(role, level="leaf")` deep-merges the level override over the
@@ -136,6 +139,9 @@ subclass). The kernel→serving import is a constant-table + frozen-dataclass im
 - Doctrine floors are not knobs: no key touches the master-exit seam gate or the
   strategist's mandatory pre-run (L12 ruling, restated in the module docstring).
 - Arrays REPLACE on merge, never concatenate; sibling leaves survive an override.
+- An EMPTY free-form list is REFUSED (either layer, flat or per-level): `()` is the
+  not-configured sentinel, so `[]` cannot express "cleared" and would silently inherit —
+  omit the key to inherit (PR #100 review).
 - `sources` records the files actually read (global first) for error/refusal messages.
 
 ### Todos
@@ -168,6 +174,12 @@ No meaningful cross-repo references found.
 | The loader operates on coordinator/repo-local files only. | - | - |
 
 ## Update History
+
+- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P2, merge `e358c4a`): `_require_string_list`
+  now REFUSES an empty list with omit-to-inherit guidance — `[]` at a flat or per-level free-form
+  knob would silently inherit the default it meant to clear (empty tuple = not configured, the
+  null-family ruling's shape). Body + invariant updated; post-merge onboarding refresh
+  (developer-approved) verified against main @ e358c4a.
 
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): added
   `_refuse_null_families` (`_validated_orchestration_block`) — a JSON `null` at any known

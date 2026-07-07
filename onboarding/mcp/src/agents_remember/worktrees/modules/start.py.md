@@ -90,7 +90,11 @@ code-only owner commits ahead of the last memory closeout), the recovery block n
 consumes BOTH advertised choices (260703-L18 finding 7 / friction F-R; previously only
 `disabled-memory` was wired and `reconciliation`/`custom` dead-ended). `disabled-memory`
 drops external memory; `memory_choice="reconciliation"` calls `_reconcile_missing_mapping`,
-which records the mapping the way closeout ledger syncs do — `prepend_mapping(ledger,
+which FIRST requires the official memory repo's checked-out branch to BE the contract's memory
+source branch (PR #100 review, Codex P1: the worktree is created FROM that branch, so committing
+to whatever is checked out would leave the source branch unmapped while start reports compatible —
+it refuses loudly with a `LedgerError` naming both branches), then records the mapping the way
+closeout ledger syncs do — `prepend_mapping(ledger,
 code_base_commit, ledger.last_memory_content_commit)` (memory CONTENT tip unchanged; header
 `lastVerifiedCodeCommit` advances) written to the OFFICIAL memory repo's `memory.md`, `git
 add` + a `[<task_id>] Ledger sync: <code> -> <memory>` commit in the memory SOURCE repo
@@ -143,6 +147,11 @@ For master task starts, `start.py` creates or loads the root series contract, cr
 
 ## Update History
 
+- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P1, merge `e358c4a`): `_reconcile_missing_mapping`
+  gained a memory-source-branch guard — reconciliation refuses (`LedgerError` naming both branches)
+  when the official memory repo is checked out on a branch other than the contract's memory source
+  branch, instead of committing the mapping to the wrong branch. Body updated; post-merge onboarding
+  refresh (developer-approved) verified against main @ e358c4a.
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 7 / friction F-R): implemented the
   missing-mapping recovery `memory_choice="reconciliation"` (`_reconcile_missing_mapping`) — records
   the unmapped code base -> the ledger's memory content tip in the OFFICIAL memory repo the same way

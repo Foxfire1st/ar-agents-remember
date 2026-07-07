@@ -376,6 +376,10 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-07T06:10+02:00 — No route impact: PR #100 merged the 260703_agent-orchestration series
+  to main (`e358c4a`); the post-575a9a4 delta is two review fixes inside `mcp/` (agentic-settings
+  empty-list refusal; reconciliation memory-source-branch guard) plus tests. Repo surface and
+  Feature Inventory unchanged (detail under `mcp/`). Post-merge onboarding refresh, developer-approved.
 - 2026-07-07T21:05+02:00 — No route impact: 260703-L18 changes root-scope files only in place — skills/l-01 criteria catalogs gain candidate/standing tier updates (described in their package_data mirror sidecars) and docs/reference/settings-json.md + harnesses.md gain one rule sentence each (null refusal; effortSessionCommand template); the code fixes live in their own child routes (mcp, dashboard/src). The root route model and this overview's descriptions are unaffected.
 - 2026-07-07T12:55+02:00 — L16 route impact (body): the root index names docs/reference/harnesses.md, the new spawn-parameters manual (the docs/reference route has no onboarding overview of its own — pre-existing gap, follow-up registered). Verification metadata pinned until closeout stamps the L16 commit.
 
