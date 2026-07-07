@@ -175,12 +175,6 @@ No meaningful cross-repo references found.
 
 ## Update History
 
-- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P2, merge `e358c4a`): `_require_string_list`
-  now REFUSES an empty list with omit-to-inherit guidance — `[]` at a flat or per-level free-form
-  knob would silently inherit the default it meant to clear (empty tuple = not configured, the
-  null-family ruling's shape). Body + invariant updated; post-merge onboarding refresh
-  (developer-approved) verified against main @ e358c4a.
-
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): added
   `_refuse_null_families` (`_validated_orchestration_block`) — a JSON `null` at any known
   `orchestration.*` family key refuses loudly in either layer with "remove the key to inherit the
@@ -201,6 +195,12 @@ No meaningful cross-repo references found.
   validate against the EFFECTIVE id set, and per-file validation became shape-only
   (`strict=False`) so partial cross-layer overrides merge correctly. Verification metadata pinned
   until closeout stamps the L16 commit.
+
+- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P2, merge `e358c4a`): `_require_string_list`
+  now REFUSES an empty list with omit-to-inherit guidance — `[]` at a flat or per-level free-form
+  knob would silently inherit the default it meant to clear (empty tuple = not configured, the
+  null-family ruling's shape). Body + invariant updated; post-merge onboarding refresh
+  (developer-approved) verified against main @ e358c4a.
 
 - 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up (L13R-2): repo-local gateDelegation refused loudly (global-layer only); regression test added. Verification metadata pinned until closeout stamps the L13 commit.
 

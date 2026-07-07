@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T23:20+02:00                    |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5` |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-07T20:50+02:00                    |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -126,8 +126,11 @@ and the statistics board later; sampling is read-only and dockerless-safe.
   carries a `kind` (+ optional `harness`), a display `label`, `lifecycleId`, and (L5) `leafKey`. **Since
   L2 the whole leaf-claim + tmux-ensure + catalog-upsert composition moved into
   `serving.terminal_opener.open_terminal_session`** (`resolve_terminal_launch`, `_terminal_label`, and the
-  role-scoped conflict check all left `app.py` for that module) — the route now just calls it with the
-  request fields + the resolved `shell` and maps the `OpenTerminalResult`: `bad-kind` ⇒ `400`,
+  role-scoped conflict check all left `app.py` for that module) — the route first normalizes any supplied
+  `leafKey` through `leaf_ref_validation.resolve_catalog_leaf_key`, returning `400` with
+  `leaf-ref-not-found` / `leaf-ref-ambiguous` detail before any tmux/catalog mutation when it cannot
+  resolve. It then calls the opener with the request fields + the resolved `shell` and maps the
+  `OpenTerminalResult`: `bad-kind` ⇒ `400`,
   `leaf-taken` ⇒ `409 {"status":"leaf-taken","leafKey","session":<owner>}` (server-arbitrated,
   role-scoped, self-reclaim allowed — a `kind="terminal"` open never 409s against the leaf's agent chat),
   and `opened` ⇒ `200` echoing the persisted `leafKey`/`cwd`/`tmuxName`. This is the same opener the
@@ -147,8 +150,10 @@ and the statistics board later; sampling is read-only and dockerless-safe.
   snapshot) as loud-failure evidence, omitted when delivered.
 - `POST /api/terminal/{session}/attach-leaf` claims or **moves** a leaf for an **existing** session from
   the Chats page — enclosure-free, no respawn. `TerminalAttachLeafRequest` carries the required `leafKey`;
-  the route delegates to `assign_terminal_session_to_leaf(catalog, session_id, leaf_key)`, so browser
-  actions and the agent-facing MCP tool share one server-authoritative catalog policy. The result maps to
+  the route normalizes it to the canonical qualified task-doc id before delegating to
+  `assign_terminal_session_to_leaf(catalog, session_id, leaf_key)`, so browser actions and the
+  agent-facing MCP tool share one server-authoritative catalog policy. Invalid or ambiguous leaf refs
+  return `400` before mutating the row. The result maps to
   `404 {"status":"unknown-session"}` for an unknown/terminated session, `409 {"status":"leaf-taken",...}`
   when a different running session of the same role owns the target leaf, and
   `200 {"session","status":"attached","leafKey"}` after persisting `entry.with_leaf_key(leaf_key)`.
@@ -251,6 +256,7 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The durable terminal-session catalog persisted by the opener, sessions endpoint, and terminate route. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
 | The shared hosted-session opener (L2) both this route and the `spawn_agent_session` tool compose. | L84-L174 | [terminal_opener.py](terminal_opener.py) |
+| The serving leaf-ref adapter normalizes terminal open/attach leaf keys before catalog writes. | resolve_catalog_leaf_key | [leaf_ref_validation.py](leaf_ref_validation.py.md) |
 | The server-side capture-verified paste helper the L2 `/paste` endpoint drives (260707-HFX-L3: unconfirmed ships the pane capture). | L133-L229 | [terminal_paste.py](terminal_paste.py) |
 | The harness launch registry the opener + `/api/harnesses` consume (slice 6e-2b). | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
 | The static-bundle resolver/mount. | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
@@ -270,6 +276,10 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
   evidence (omitted on delivered); same paster mechanic as the spawn tool, no separate path. The
   route shape is otherwise unchanged. Verification metadata pinned until closeout stamps the
   HFX-L3 commit.
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: dashboard terminal open and attach-leaf routes now
+  normalize accepted `leafKey` refs to canonical qualified task-doc ids before opener/catalog writes and
+  return `400` leaf-ref refusals before mutation when refs are missing or ambiguous. Verification metadata
+  pinned until closeout stamps the 260707-HFX-L4 commit.
 - 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R4): the lifespan now starts a
   provider metrics sampling task beside the projector — `sample_provider_containers` →
   `ProviderMetricsStore.record` every `DEFAULT_SAMPLE_INTERVAL_SECONDS` (30s, decoupled from the

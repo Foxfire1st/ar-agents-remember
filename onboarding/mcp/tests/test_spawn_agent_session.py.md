@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T23:20+02:00                            |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`        |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-07T20:50+02:00                            |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`        |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -47,6 +47,11 @@ L2 contracts:
 - **spawn role** (`test_spawn_records_role_from_env_and_reports_it`, L14): a spawn whose `env`
   carries `AR_SPAWN_ROLE` persists it on the catalog row (`spawn_role`) and reports it as
   `spawnRole` in the `spawned` payload — the Chats command-tree grouping key.
+- **leaf-ref normalization** (`test_spawn_normalizes_legacy_leaf_slug_before_persisting`, HFX-L4):
+  a legacy leaf slug is resolved through a real temp task tree and the spawned row/payload persist the
+  canonical qualified `repo/master/doc-id` key.
+- **leaf-ref refusal** (`test_spawn_rejects_unmatchable_leaf_ref_before_spawning`, HFX-L4): a missing
+  leaf returns `leaf-ref-not-found` with expected-form detail before host ensure, paste, or catalog upsert.
 - **draft** (`test_draft_paste_does_not_submit`): `submit=False` pastes without submitting and omits the
   `submitted` key.
 - **no context** (`test_spawn_without_context_skips_paste`): no paste is attempted.
@@ -117,6 +122,7 @@ seams (or `create_app`'s injectable params for the endpoint).
 
 - No real tmux, no real daemon, no real sleep — the whole spawn/paste composition runs against fakes.
 - `leaf-taken` must not spawn, paste, or upsert; the test asserts all three did not happen.
+- Invalid leaf refs must not spawn, paste, or upsert; they fail before the opener path.
 - Provenance defaults to the active ambient lifecycle only when not explicitly supplied.
 
 ### Todos
@@ -136,6 +142,7 @@ No relevant external/domain documentation found; the behavior is local MCP/servi
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The tool under test composes the opener + echo-confirmed paste and returns the strict spawn payload. | L82-L211 | [../src/agents_remember/mcp/tools/terminal.py](../src/agents_remember/mcp/tools/terminal.py) |
+| The leaf-ref serving adapter normalizes accepted spawn leaf keys before settings lookup and catalog writes. | resolve_catalog_leaf_key | [../src/agents_remember/serving/leaf_ref_validation.py](../src/agents_remember/serving/leaf_ref_validation.py) |
 | The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | L84-L174 | [../src/agents_remember/serving/terminal_opener.py](../src/agents_remember/serving/terminal_opener.py) |
 | The `PasteResult` the fake paster returns + the paste helper the endpoint drives. | L62-L67; L133-L229 | [../src/agents_remember/serving/terminal_paste.py](../src/agents_remember/serving/terminal_paste.py) |
 | The `POST /api/terminal/{session}/paste` endpoint under test. | L653-L676 | [../src/agents_remember/serving/app.py](../src/agents_remember/serving/app.py) |
@@ -160,6 +167,10 @@ No meaningful cross-repo references found.
   regression); the undelivered session-command case now asserts the attached `deliveryCapture`; the
   endpoint tests pin capture-on-unconfirmed / omitted-on-delivered. Verification metadata pinned
   until closeout stamps the HFX-L3 commit.
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: spawn fixtures now write representative task docs so
+  leaf-key settings and spawn paths can normalize legacy refs to canonical qualified ids, and invalid refs
+  are covered as pre-spawn refusals. Verification metadata pinned until closeout stamps the
+  260707-HFX-L4 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `SpawnKnobApplicationTests`,
   `SettingsDefinedHarnessTests`, and `SpawnLevelResolutionTests` (see Logic) covering the
   per-harness flag mapping, the two-vehicle claude effort vocabulary, the dispatch refusals

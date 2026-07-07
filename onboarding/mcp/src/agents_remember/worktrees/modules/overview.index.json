@@ -22,16 +22,18 @@
     "mcp/src/agents_remember/worktrees/modules/guidance.py",
     "mcp/src/agents_remember/worktrees/modules/integrate.py",
     "mcp/src/agents_remember/worktrees/modules/landing.py",
+    "mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py",
     "mcp/src/agents_remember/worktrees/modules/models.py",
     "mcp/src/agents_remember/worktrees/modules/onboarding.py",
     "mcp/src/agents_remember/worktrees/modules/provider_async.py",
     "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
     "mcp/src/agents_remember/worktrees/modules/start.py",
+    "mcp/src/agents_remember/worktrees/modules/start_contract.py",
     "mcp/src/agents_remember/worktrees/modules/sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 18,
-    "fileSidecars": 18,
+    "sourceFilesInScope": 20,
+    "fileSidecars": 20,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -44,6 +46,7 @@
     "cli",
     "closeout",
     "context",
+    "contract",
     "finalize",
     "git",
     "guidance",
@@ -51,6 +54,8 @@
     "init__",
     "integrate",
     "landing",
+    "leaf",
+    "leaf_ref_start",
     "mcp",
     "models",
     "modules",
@@ -58,9 +63,11 @@
     "provider",
     "provider_async",
     "provider_teardown",
+    "ref",
     "remember",
     "src",
     "start",
+    "start_contract",
     "sync",
     "teardown",
     "worktrees"
@@ -81,11 +88,13 @@
       "mcp/src/agents_remember/worktrees/modules/guidance.py",
       "mcp/src/agents_remember/worktrees/modules/integrate.py",
       "mcp/src/agents_remember/worktrees/modules/landing.py",
+      "mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py",
       "mcp/src/agents_remember/worktrees/modules/models.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
       "mcp/src/agents_remember/worktrees/modules/provider_async.py",
       "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
       "mcp/src/agents_remember/worktrees/modules/start.py",
+      "mcp/src/agents_remember/worktrees/modules/start_contract.py",
       "mcp/src/agents_remember/worktrees/modules/sync.py"
     ],
     "anchorHints": [
@@ -113,6 +122,8 @@
       "integrate",
       "landing.py",
       "landing",
+      "leaf_ref_start.py",
+      "leaf_ref_start",
       "models.py",
       "models",
       "onboarding.py",
@@ -123,6 +134,8 @@
       "provider_teardown",
       "start.py",
       "start",
+      "start_contract.py",
+      "start_contract",
       "sync.py",
       "sync",
       "committed_changed_paths",
@@ -132,11 +145,7 @@
       "changed_files_with_counts(repo, base, head=None",
       "_rename_aware_path",
       "serving/changeset.py",
-      "path, insertions, deletions, status",
-      "git diff --numstat --name-status --find-renames",
-      "HEAD",
-      "changed_files_with_counts",
-      "rename_aware_path"
+      "path, insertions, deletions, status"
     ]
   },
   "fallback": {

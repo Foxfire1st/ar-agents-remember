@@ -120,7 +120,7 @@
       "JSON",
       "mcp/src/agents_remember/kernel/coordination_context/",
       "route-local-overview",
-      "ad30dd38c3dcfa13fb85f44b281488499e92519a",
+      "52911a15091de8d065afc6cbc0f8d6ac34690039",
       "/../../../overview.md",
       "coordination_context/",
       "c-08-ar-coordination-context-resolver",
@@ -130,11 +130,11 @@
       "env",
       "env.example",
       "settings.json",
+      "worktrees.leaf_refs",
       "find_worktree_contract",
       "0_archive/",
       "series-contract.md",
-      "worktree_name",
-      "resolve_contract"
+      "worktree_name"
     ]
   },
   "fallback": {

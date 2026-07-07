@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-07T19:30+02:00 |
-| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
-| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
+| lastUpdated            | 2026-07-07T23:45+02:00 |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -15,7 +15,7 @@
 The `worktrees/modules` package contains the extracted implementation modules
 behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycle
 status guidance, start preparation, onboarding refresh, closeout, integration,
-cleanup, lifecycle finalization, abandon, provider teardown, the typed cross-layer argument DTO, and CLI
+cleanup, lifecycle finalization, abandon, provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
 `task_reopen` lives in the tasks package (L11) because it reopens a task, and this route's start path
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
@@ -72,9 +72,17 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   ref carries gh's own open/merge timestamp (`at` = `mergedAt` once merged, else
   `createdAt`). It re-fires every projector tick (~1s), so no milestone hook is
   needed for cadence.
-- `start.py`, `closeout.py`, `integrate.py`, `cleanup.py`, `finalize.py`, and `abandon.py`
+- `start.py`, `start_contract.py`, `leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
+  `finalize.py`, and `abandon.py`
   own the named `c-09-git-worktree-manager` skill lifecycle operations.
-  `start.py` runs a synchronous provider preflight, writes the contract, and
+  `start.py` calls `start_contract.build_start_contract` to resolve the requested leaf ref through the
+  `worktrees/leaf_refs.py` task-tree resolver before any start write; accepted refs persist the canonical
+  task doc id in the leaf contract, while no-match/ambiguous refs return a `WorktreeCommandResult`
+  refusal naming the expected `<repo>/<master-folder>/<doc-id>` form and candidates. Standalone/light
+  task roots resolve through their non-master `task.json` doc id, slug/folder, and enclosure aliases, and
+  resolver indexing skips sibling JSON artifacts unless they carry the task-document schema marker. After
+  that, `start.py` runs a synchronous
+  provider preflight, writes the contract, and
   then launches provider setup in the background (GitHub #53): dry runs stay
   synchronous, real starts return `starting` within seconds, and
   `retry_provider_setup` relaunches a failed/stale setup on an existing
@@ -83,7 +91,7 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   block the start with `stale_base_choice` recoveries (`fast-forward` /
   `proceed-stale`), and a missing external memory source branch is
   auto-created at the official memory tip using the code branch name as
-  template. For master tasks, `start.py` now creates or loads the root
+  template. For master tasks, `start_contract.py` creates or loads the root
   `series-contract.md` integration contract first, creates the integration branch from the protected/source
   branch, and then starts each leaf from that integration branch with its own
   `enclosures/<leaf-id>/series-contract.md`. `cleanup.py`/`abandon.py` refuse to tear down while a live
@@ -192,20 +200,29 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-07T23:45+02:00 — 260707-HFX-L4R2 route impact: start leaf-ref resolution now accepts
+  standalone/light `task.json` roots through doc-id/slug/folder aliases and the shared resolver skips
+  non-task sibling JSON artifacts by schema marker while keeping malformed task docs loud. Verification
+  metadata pinned until closeout stamps the 260707-HFX-L4 commit.
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4 route impact: worktree start contract construction and
+  leaf-ref validation moved out of `start.py` into `start_contract.py`/`leaf_ref_start.py`, backed by
+  the dedicated `worktrees/leaf_refs.py` resolver; accepted refs
+  persist doc ids, and invalid refs refuse before start writes. Verification metadata pinned until
+  closeout stamps the 260707-HFX-L4 commit.
 - 2026-07-07T19:30+02:00 — No route impact: 260707-HFX-L2 refines `start.py`'s memory mtime sync
   in place — divergent-content files keep fresh checkout mtimes so the grepai watcher re-embeds
   exactly the delta instead of silently skipping it (detail in the start.py sidecar and the new
   `test_provider_index_lifecycle.py`). No module added; the modules route model is unchanged.
-- 2026-07-07T06:10+02:00 — No route impact: PR #100 review fixes (merge `e358c4a`) hardened
-  `start.py`'s `_reconcile_missing_mapping` with a memory-source-branch guard (refuses when the
-  official memory repo is checked out elsewhere; detail in the start.py sidecar). No module added;
-  the modules route model is unchanged. Post-merge onboarding refresh, developer-approved.
 - 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 7 implements `start.py`'s
   missing-ledger-mapping recovery `memory_choice="reconciliation"` (records the unmapped code base ->
   the ledger's memory content tip the way closeout ledger syncs do, then proceeds to a started worktree)
   and prunes the block to only executable choices (`custom` removed). It reuses the existing
   `memory_choice` arg and adds no module, so the modules route model this overview describes is unchanged
   (detail in the `start.py` file sidecar).
+- 2026-07-07T06:10+02:00 — No route impact: PR #100 review fixes (merge `e358c4a`) hardened
+  `start.py`'s `_reconcile_missing_mapping` with a memory-source-branch guard (refuses when the
+  official memory repo is checked out elsewhere; detail in the start.py sidecar). No module added;
+  the modules route model is unchanged. Post-merge onboarding refresh, developer-approved.
 - 2026-07-06T03:30+02:00 — No route impact: 260703-L11 reviewed `guidance.status_payload`'s `code_worktree_exists`/`memory_worktree_exists` probes as the existence-reporting contract the new projection flags mirror; no file in this route changed — the stat happens in `observer/snapshots.py`.
 - 2026-07-05T19:55+02:00 — 260703-L8 route impact (cycle 7, small): integrate's dry run now evaluates-and-reports the seam guard (`handover_gate` in the preview; enforcement stays real-run-only; no dry-run contract mutation, AR4-2), and the new pure `unmatched_handover_gate_warning` surfaces unmatched OPEN handover gates as a `handover_gate_warning` enclosure spelling check on gateless results (AR4-1b). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): the integrate seam guard is re-addressed — the pure `handover_gate_guard` folds every gate log (`GateStore.all_current`) and matches `master-handover-approval` gates by `enclosure` against the contract's `task_name`/`parent_task_name`, replacing the inert `contract.lifecycle_id` lookup; the configured policy now reaches it from the controller. Verification metadata pinned until closeout stamps the L8 commit.

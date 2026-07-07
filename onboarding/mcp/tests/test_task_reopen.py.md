@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T12:50+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-07T20:50+02:00 |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,7 +39,9 @@ overwrite-idempotent restamp. `AbandonAmbientLifecycleTests` installs a real
 ends only the anchored lifecycle (owner-written `lifecycle.ended` tail).
 `StartAfterReopenTests` run the real `start_result` against an initialized git repo:
 a `cleanup: reopened` contract recreates fresh with the new lifecycle and restamps the
-doc's `lifecycleId`, while a live contract still attaches unchanged.
+doc's `lifecycleId`, while a live contract still attaches unchanged. HFX-L4 pins legacy
+stem-shaped contract loading by expecting a reopened legacy enclosure to load with the canonical
+task doc id when the task tree proves the mapping.
 
 ### Invariants And Boundaries
 
@@ -56,10 +58,14 @@ doc's `lifecycleId`, while a live contract still attaches unchanged.
 | The module under test. | [reopen.py](agents-remember/mcp/src/agents_remember/tasks/reopen.py) |
 | The lookup/restamp helpers under test. | [leaf_doc.py](agents-remember/mcp/src/agents_remember/tasks/leaf_doc.py) |
 | The recreate-fresh + restamp start path under test. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
+| Contract load/write normalization for legacy leaf ids. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | The abandon-side ambient end helper under test. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
 
 ## Update History
 
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: legacy reopened contract fixtures now expect `load_contract`
+  to normalize a proven stem-shaped leaf id to the canonical task doc id. Verification metadata pinned
+  until closeout stamps the 260707-HFX-L4 commit.
 - 2026-07-03T12:50+02:00 — No content impact: L15 typed the blockers payload access (cast to list[str]) at three join sites for pyright; assertions unchanged.
 - 2026-07-03T00:30+02:00 — Created for L11: guards/resets for task_reopen, leaf-doc lookup/restamp,
   start-after-reopen recreation with doc restamp, and abandon's ambient lifecycle end. Verification

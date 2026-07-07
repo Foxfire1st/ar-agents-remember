@@ -21,6 +21,7 @@
     "mcp/src/agents_remember/serving/files.py",
     "mcp/src/agents_remember/serving/harnesses.py",
     "mcp/src/agents_remember/serving/inbox_delivery.py",
+    "mcp/src/agents_remember/serving/leaf_ref_validation.py",
     "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/projector.py",
     "mcp/src/agents_remember/serving/scope.py",
@@ -33,8 +34,8 @@
     "mcp/src/agents_remember/serving/terminal_paste.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 21,
-    "fileSidecars": 21,
+    "sourceFilesInScope": 22,
+    "fileSidecars": 22,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -59,11 +60,13 @@
     "init",
     "init__",
     "leaf",
+    "leaf_ref_validation",
     "mcp",
     "notes",
     "opener",
     "paste",
     "projector",
+    "ref",
     "remember",
     "scope",
     "serving",
@@ -74,7 +77,8 @@
     "terminal_catalog",
     "terminal_leaf_assignment",
     "terminal_opener",
-    "terminal_paste"
+    "terminal_paste",
+    "validation"
   ],
   "hotPath": {
     "summary": "`agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diffs each projection against the last (`serving.delta.diff_projection`), and fans **per-entity deltas** out to every SSE client. Beside the projector task, the same lifespan runs the **provider containment metrics sampler** (260707-HFX-L1, containment R4): every 30s (`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the 1s...",
@@ -91,6 +95,7 @@
       "mcp/src/agents_remember/serving/files.py",
       "mcp/src/agents_remember/serving/harnesses.py",
       "mcp/src/agents_remember/serving/inbox_delivery.py",
+      "mcp/src/agents_remember/serving/leaf_ref_validation.py",
       "mcp/src/agents_remember/serving/notes.py",
       "mcp/src/agents_remember/serving/projector.py",
       "mcp/src/agents_remember/serving/scope.py",
@@ -125,6 +130,8 @@
       "harnesses",
       "inbox_delivery.py",
       "inbox_delivery",
+      "leaf_ref_validation.py",
+      "leaf_ref_validation",
       "notes.py",
       "notes",
       "projector.py",
@@ -148,9 +155,7 @@
       "agents-remember dashboard --config <settings.json>",
       "cli/dashboard.py",
       "serving.app.create_app(config",
-      "project_and_write",
-      "--interval",
-      "serving.delta.diff_projection"
+      "project_and_write"
     ]
   },
   "fallback": {

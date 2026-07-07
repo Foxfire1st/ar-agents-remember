@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T23:20+02:00                            |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`        |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-07T20:50+02:00                            |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`        |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -27,16 +27,22 @@ clicks.
 
 ### Logic
 
-`attach_terminal_session_to_leaf_payload(config, session_id, leaf_key)` opens the dashboard terminal
-catalog at `terminal_catalog_path(config.coordination_root)`, calls the serving-layer
+`attach_terminal_session_to_leaf_payload(config, session_id, leaf_key)` first normalizes the requested
+leaf ref through `serving.leaf_ref_validation.resolve_catalog_leaf_key`. Accepted qualified refs, doc ids,
+and unambiguous legacy stems/slugs persist as the canonical `repo/master/doc-id` catalog key; no-match or
+ambiguous refs return a strict `leaf-ref-not-found` / `leaf-ref-ambiguous` refusal before opening or
+mutating the catalog. On success it opens the dashboard terminal catalog at
+`terminal_catalog_path(config.coordination_root)`, calls the serving-layer
 `assign_terminal_session_to_leaf` helper, and returns the result through `_tool_payload` under the
 `attach_terminal_session_to_leaf` operation. The payload reports `ok` only for `attached`, and always
-includes the requested session/leaf plus optional `previousLeafKey`, `ownerSession`, and role.
+includes the persisted canonical session/leaf plus optional `previousLeafKey`, `ownerSession`, and role.
 
 `spawn_agent_session_payload(config, *, harness=None, leaf_key, context, submit, label, model, effort,
 env, launch_args, prompt_keywords, session_commands, level, spawned_by_session, spawned_by_lifecycle,
 kind, session_id, host, paster, which)` composes the L2 dispatch, now the full 260703-L16 knob
-resolution + application seam. For a `harness` kind it:
+resolution + application seam. When `leaf_key` is supplied it is normalized to the canonical qualified
+leaf id before harness/settings resolution, opener claims, catalog writes, and spawned payload/provenance.
+Invalid or ambiguous refs return a strict refusal before any spawn. For a `harness` kind it:
 
 1. **Resolves the dispatch level** (`level` param, `leaf|master|portfolio`, default `leaf`;
    `_SPAWN_LEVELS` mirrors the `loops.perLevel` vocabulary) — an unknown level refuses
@@ -104,6 +110,8 @@ is `_tool_payload` + `models/terminal.py`, and server registration lives in `mcp
   branch on `status`, not exceptions.
 - Leaf uniqueness stays server-arbitrated: `spawn_agent_session` surfaces `leaf-taken` (with the owning
   session) and never overrides it.
+- Leaf keys written by attach/spawn are canonical qualified task-doc ids; legacy refs are accepted only
+  when the task-tree resolver can prove one match.
 - Spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) is recorded on the catalog row so
   the dashboard can render the orchestration tree; the tool also carries it on its response. Since
   L14 the `spawned` payload also reports `spawnRole` — the `AR_SPAWN_ROLE` the opener persisted from
@@ -142,8 +150,9 @@ catalog.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The attach builder delegates durable assignment to the shared serving helper and returns previous leaf, owner, status, and role. | L25-L51 | [terminal.py](terminal.py) |
-| The spawn builder composes the shared serving opener, then a capture-verified context paste. | L82-L189 | [terminal.py](terminal.py) |
+| The attach builder normalizes leaf refs before delegating durable assignment to the shared serving helper and returning previous leaf, owner, status, and role. | attach_terminal_session_to_leaf_payload | [terminal.py](terminal.py) |
+| The spawn builder normalizes leaf refs before composing the shared serving opener and capture-verified context paste. | spawn_agent_session_payload | [terminal.py](terminal.py) |
+| Leaf-ref refusal payloads are shared by attach and spawn. | leaf_ref_refusal_payload | [leaf_ref.py](leaf_ref.py.md) |
 | The shared opener (create + leaf claim + env-seeded tmux ensure + catalog upsert) both call paths reuse. | L84-L174 | [../../serving/terminal_opener.py](../../serving/terminal_opener.py) |
 | The server-side capture-verified paste helper that delivers the context packet (and attaches the failure capture). | L133-L229 | [../../serving/terminal_paste.py](../../serving/terminal_paste.py) |
 | The harness detection registry (`find_harness` / `is_detected` / `HARNESSES` order) that gates a spawn before tmux and orders the detection-gated default. | L41-L72 | [../../serving/harnesses.py](../../serving/harnesses.py) |
@@ -174,6 +183,10 @@ No meaningful cross-repo references found.
   full success). Closes the SF-1 blind seat: `contextDelivered: true` once masked a codex pane that
   booted clean with no payload. Verification metadata pinned until closeout stamps the HFX-L3
   commit.
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: attach and spawn now normalize accepted leaf refs to
+  canonical qualified task-doc ids before catalog writes/spawn provenance, and return strict
+  `leaf-ref-not-found` / `leaf-ref-ambiguous` refusals with expected form plus candidates before any
+  mutation. Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application; four developer rulings 2026-07-07):
   the dispatch seam now RESOLVES role knobs from settings (`resolved_role_knobs(AR_SPAWN_ROLE,
   level)` — `rolesPerLevel` over flat `roles`; new `level` param leaf|master|portfolio with

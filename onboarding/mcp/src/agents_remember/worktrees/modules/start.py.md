@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T20:45+02:00 |
-| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
-| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
+| lastUpdated            | 2026-07-07T23:45+02:00 |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -23,7 +23,7 @@ via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle.
 Every entry point and helper takes the typed `WorktreeArgs` dataclass (imported
 from `agents_remember.worktrees.modules.args`), replacing the former
 `argparse.Namespace`; `import argparse` is gone. `start_result()` resolves
-context, builds the default contract, prepares code and optional memory
+context, asks `start_contract.build_start_contract` for the normalized contract, prepares code and optional memory
 worktrees, runs the synchronous provider preflight, writes the contract for
 real starts, and then LAUNCHES provider setup in the background (GitHub #53).
 The ordering is deliberate: the contract is the durable anchor
@@ -36,10 +36,12 @@ fast); `run_or_launch_provider_setup` keeps dry runs fully synchronous
 file. The settings path transfers to the launcher's cleanup only when
 `provider_setup_config.unlink_settings_after_setup` is set (the controller's
 temp-file ownership handshake). `prepare_providers_for_start` remains as the
-facade/CLI wrapper composing both halves in one call. `_build_start_contract`
-asserts `args.task_name`/`args.worktree_name` are non-`None` and stamps
-`args.lifecycle_id` into the contract (slice 2c — the observable-lifecycle
-enclosure anchor, default `""`), and `_provider_start_paths` asserts
+facade/CLI wrapper composing both halves in one call. Contract construction moved
+out to `start_contract.py`: it validates `args.leaf_id or args.worktree_name`
+through the shared leaf-ref resolver, persists the canonical task doc id into
+the leaf contract, and returns a loud `leaf-ref-not-found` / `leaf-ref-ambiguous`
+`WorktreeCommandResult` before any worktree write when the ref cannot resolve.
+`_provider_start_paths` asserts
 `args.provider_setup_config` is non-`None`, before use. Provider setup remains typed through `ProviderSetupRequest`; there is
 no coordinator script or host-binary fallback path here. `provider_setup.load_settings`
 and `provider_setup.settings_path` are now called with the settings path alone
@@ -160,10 +162,18 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Series-Contract Notes
 
-For master task starts, `start.py` creates or loads the root series contract, creates the integration branch from the protected/source branch, and then builds the leaf contract from that integration branch with `leaf_id` recorded. Both the root and leaf `memory_base_commit` come from `_memory_base_for_source` — the tip of the **memory source branch** the worktree is created off (mirroring the code base), **not** the memory repo's current HEAD, which may sit on an unrelated in-flight branch and would record a divergent base that breaks closeout's "memory source branch moved" preflight; it falls back to the repo HEAD only when external memory is off or the source branch is not present yet.
+For master task starts, `start_contract.py` creates or loads the root series contract, creates the integration branch from the protected/source branch, and then builds the leaf contract from that integration branch with the canonical doc-id `leaf_id` recorded. Both the root and leaf `memory_base_commit` come from `memory_base_for_source` — the tip of the **memory source branch** the worktree is created off (mirroring the code base), **not** the memory repo's current HEAD, which may sit on an unrelated in-flight branch and would record a divergent base that breaks closeout's "memory source branch moved" preflight; it falls back to the repo HEAD only when external memory is off or the source branch is not present yet.
 
 ## Update History
 
+- 2026-07-07T23:45+02:00 — 260707-HFX-L4R2: `start.py` now imports the public
+  `start_contract.memory_base_for_source` helper for the reconciliation path instead of reaching across
+  modules for a private helper. Verification metadata pinned until closeout stamps the 260707-HFX-L4
+  commit.
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: refactored worktree-start contract construction and
+  leaf-ref normalization out of `start.py` into `start_contract.py`/`leaf_ref_start.py`; `start.py`
+  now only calls the extracted builder and returns its leaf-ref refusal payloads. The file shrank rather
+  than grew. Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.
 - 2026-07-07T20:45+02:00 — 260707-HFX-L2 review follow-up: the mtime-sync narration makes the
   guard's HEAD-vs-HEAD scope explicit — uncommitted SOURCE-checkout changes sit outside it and
   can only over-embed (their copied mtimes are at least as new as their content), never go
@@ -176,11 +186,6 @@ For master task starts, `start.py` creates or loads the root series contract, cr
   old mtimes onto changed content made the watcher skip exactly the delta (silent staleness);
   fresh mtimes make grepai re-embed precisely the divergence. Verification metadata pinned until
   closeout stamps the HFX-L2 commit.
-- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P1, merge `e358c4a`): `_reconcile_missing_mapping`
-  gained a memory-source-branch guard — reconciliation refuses (`LedgerError` naming both branches)
-  when the official memory repo is checked out on a branch other than the contract's memory source
-  branch, instead of committing the mapping to the wrong branch. Body updated; post-merge onboarding
-  refresh (developer-approved) verified against main @ e358c4a.
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 7 / friction F-R): implemented the
   missing-mapping recovery `memory_choice="reconciliation"` (`_reconcile_missing_mapping`) — records
   the unmapped code base -> the ledger's memory content tip in the OFFICIAL memory repo the same way
@@ -191,6 +196,11 @@ For master task starts, `start.py` creates or loads the root series contract, cr
   advertises ONLY those two executable choices (`custom`, wired nowhere, removed). Tests: every
   advertised choice is consumable; reconciliation produces a valid mapping + a started worktree.
   Verification metadata pinned until closeout stamps the L18 commit.
+- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P1, merge `e358c4a`): `_reconcile_missing_mapping`
+  gained a memory-source-branch guard — reconciliation refuses (`LedgerError` naming both branches)
+  when the official memory repo is checked out on a branch other than the contract's memory source
+  branch, instead of committing the mapping to the wrong branch. Body updated; post-merge onboarding
+  refresh (developer-approved) verified against main @ e358c4a.
 - 2026-07-03T00:30+02:00 — L11: recreate-fresh admits `cleanup: reopened` beside `abandoned`, and a post-write hook restamps the existing leaf doc's lifecycleId with the newly minted lifecycle (explicit linkage across restarts).
 - 2026-06-29T23:18+02:00 — Memory-base fix (L3): `start.py` now derives both the root and leaf `memory_base_commit` from the memory source branch tip via `_memory_base_for_source` (mirroring the code base) instead of the memory repo HEAD, so a memory repo checked out on an unrelated branch no longer records a divergent base that breaks closeout's "memory source branch moved" preflight. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: start now creates or loads a root series contract for master tasks, creates the integration branch from the protected/source branch, starts each leaf from that integration branch, writes leaf contracts under `enclosures/<leaf-id>/series-contract.md`, and reports `enclosure_path`/`leaf_id`. Verification metadata pinned until closeout stamps the code commit.

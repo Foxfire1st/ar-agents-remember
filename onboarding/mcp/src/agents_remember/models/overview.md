@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T23:20+02:00 |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5` |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-07T23:30+02:00 |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -50,7 +50,8 @@ three `operator_inbox_*` external-chat response contracts (task 10),
 `lifecycle_finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
 `attach_terminal_session_to_leaf` hosted-chat/terminal reassignment response AND the L2
 `spawn_agent_session` dispatch response (`SpawnAgentSessionResponse` — spawned-by provenance +
-context-delivery outcome (since 260707-HFX-L3 incl. the failure-evidence `deliveryCapture` field) + the server-arbitrated `leaf-taken`/pre-spawn refusal statuses; since
+context-delivery outcome (since 260707-HFX-L3 incl. the failure-evidence `deliveryCapture` field) + the server-arbitrated `leaf-taken`/pre-spawn refusal statuses; since HFX-L4 the attach/spawn models also accept
+`leaf-ref-not-found` / `leaf-ref-ambiguous` refusals with the original `leafKey` and optional detail; since
 260703-L16 also the `effort-invalid`/`model-invalid`/`level-invalid` refusals, the free-form spawn
 provenance `launchArgs`/`promptKeywords`/`sessionCommands` + `sessionCommandsDelivered`, and the
 level provenance `spawnLevel`/`spawnLevelSource`), and
@@ -114,6 +115,10 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 ## Update History
 
+- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: `models/terminal.py` accepts
+  `leaf-ref-not-found` / `leaf-ref-ambiguous` statuses on terminal attach and spawn responses, with
+  optional detail for attach refusals. Verification metadata pinned until closeout stamps the
+  260707-HFX-L4 commit.
 - 2026-07-07T23:20+02:00 — 260707-HFX-L3 route impact (additive field): `terminal.py`'s
   `SpawnAgentSessionResponse` gained `deliveryCapture` — the pane-capture evidence attached whenever
   context delivery or submit fails (never a bare false-success boolean); the response model shape is

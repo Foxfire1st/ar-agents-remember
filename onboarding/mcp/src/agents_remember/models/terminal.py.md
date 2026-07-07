@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-07T22:15+02:00                       |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`   |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-07T20:50+02:00                       |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`   |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -25,10 +25,11 @@ terminal-session catalog operations. It models the hosted-chat/terminal leaf rea
 ### Logic
 
 `LeafAssignmentStatus` is the closed response vocabulary for assignment attempts:
-`attached`, `leaf-taken`, or `unknown-session`. `AttachTerminalSessionToLeafResponse` is a strict
+`attached`, `leaf-taken`, `unknown-session`, `leaf-ref-not-found`, or `leaf-ref-ambiguous`.
+`AttachTerminalSessionToLeafResponse` is a strict
 `ToolResponse` with operation `attach_terminal_session_to_leaf`, the requested session and `leafKey`,
-the optional prior binding (`previousLeafKey`), optional conflict owner (`ownerSession`), and optional
-role (`chat` or `terminal`).
+the optional prior binding (`previousLeafKey`), optional conflict owner (`ownerSession`), optional
+role (`chat` or `terminal`), and optional `detail` for validation refusals.
 
 `SpawnAgentSessionStatus` is the L2 vocabulary: `spawned` (the only `ok: true` case), `leaf-taken`
 (the server-arbitrated refusal, never overridden), and the pre-spawn validation refusals
@@ -36,6 +37,9 @@ role (`chat` or `terminal`).
 harness's vocabulary, or any effort for a mapping-less settings-defined harness) / `model-invalid`
 (L16 — model knob for a settings-defined harness with no modelFlag) / `level-invalid` (L16 — a
 dispatch level outside leaf|master|portfolio) / `bad-kind`. `SpawnAgentSessionResponse` is a strict
+The HFX-L4 leaf-ref refusals (`leaf-ref-not-found` / `leaf-ref-ambiguous`) are also modeled for spawn
+because a bad leaf key is refused before tmux or catalog mutation.
+`SpawnAgentSessionResponse` is a strict
 `ToolResponse` with operation `spawn_agent_session`, the `session`, optional `harness`/`kind`/`leafKey`/
 `label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) recorded
 on the catalog row for the dashboard orchestration tree, the optional `spawnRole` (L14 — the
@@ -79,8 +83,8 @@ No relevant external/domain documentation found; this is an internal response co
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The attach payload builder returns the exact fields modeled here: status, session, leafKey, previousLeafKey, ownerSession, and role. | L39-L51 | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
-| The spawn payload builder returns the `SpawnAgentSessionResponse` fields incl. spawned-by provenance and context-delivery outcome. | L171-L211 | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
+| The attach payload builder returns the exact fields modeled here, including leaf-ref refusal statuses and details. | attach_terminal_session_to_leaf_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
+| The spawn payload builder returns the `SpawnAgentSessionResponse` fields incl. leaf-ref refusals, spawned-by provenance, and context-delivery outcome. | spawn_agent_session_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
 | The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | L82-L88; L111-L114 | [tool_registry.py](tool_registry.py) |
 | Conformance coverage includes a representative missing-session (attach) and unknown-harness (spawn) refusal payload for the models. | L88-L107 | [../../../tests/test_tool_response_conformance.py](../../../tests/test_tool_response_conformance.py) |
 
@@ -99,6 +103,9 @@ No meaningful cross-repo references found.
   delivery outcome reports `False`, absent on full success — and the delivery-field comments now
   state the capture-verified contract. Additive; omitted when `None`. Verification metadata pinned
   until closeout stamps the HFX-L3 commit.
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: terminal response models gained the strict leaf-ref refusal
+  statuses (`leaf-ref-not-found` / `leaf-ref-ambiguous`), and attach responses gained optional `detail`
+  for resolver errors. Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `SpawnAgentSessionStatus` gained the
   pre-spawn refusals `effort-invalid` / `model-invalid` / `level-invalid`;
   `SpawnAgentSessionResponse` gained the free-form spawn provenance (`launchArgs` /

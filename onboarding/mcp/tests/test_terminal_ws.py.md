@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T12:40+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T20:50+02:00                           |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`       |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -37,7 +37,8 @@ code `4404`; PTY output arrives as a **binary** frame (raw VT bytes preserved); 
 then disconnects; two websocket clients can attach to the same catalog row and closing one leaves the
 other usable; and app teardown calls `host.shutdown()`. Slice 6e-2a adds `test_post_open_*` (the fake host gains
 `open`; `POST /api/terminal/{id}` `{kind:"terminal"}` records `host.open` with the workspace-root cwd +
-a shell argv; an unknown kind ⇒ 400) and `ResolveTerminalLaunchTests` (the pure `resolve_terminal_launch`).
+a shell argv; an unknown kind ⇒ 400; HFX-L4 invalid `leafKey` refs return `leaf-ref-not-found` before
+host ensure or catalog upsert) and `ResolveTerminalLaunchTests` (the pure `resolve_terminal_launch`).
 Slice 6e-2b adds the harness path: `GET /api/harnesses` lists the supported set with detection
 (monkeypatching `shutil.which`), a `{kind:"harness"}` POST spawns the registry argv at the
 workspace root, and an uninstalled / unknown harness ⇒ 400 — plus harness cases in
@@ -62,7 +63,8 @@ Slice L5 adds the leaf-registry cases over the same fake host + temp `TerminalCa
 leaf opener still succeeds (back-compatible), the opener and `POST /api/terminal/{session}/attach-leaf`
 both return `409 leaf-taken` when a *different* running session of the **same role** already owns the leaf,
 the same session re-claiming its own leaf is allowed (self-reclaim, no 409), and `attach-leaf` returns
-`200 attached` for a known running session while a `404` covers an unknown / terminated session. The L5
+`200 attached` for a known running session while a `404` covers an unknown / terminated session; HFX-L4
+adds invalid-ref coverage proving `/attach-leaf` returns `400` without mutating the row. The L5
 fix pass adds the **per-(leaf, role)** cases: `test_terminal_shares_a_leaf_with_its_chat_but_two_chats_conflict`
 opens a `harness` chat + a `terminal` on one leaf (both `200` — they share the leaf), then proves a
 **second chat** and a **second terminal** each `409` (reporting the existing owner `chat-1` / `term-1`);
@@ -87,10 +89,15 @@ primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py
 | The WebSocket endpoint + bridge helpers under test. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The terminal host the bridge drives (faked here). | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
 | The durable terminal catalog injected into the app for route tests. | [serving/terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| The serving leaf-ref adapter exercised by invalid opener/attach route tests. | [serving/leaf_ref_validation.py](agents-remember/mcp/src/agents_remember/serving/leaf_ref_validation.py) |
 | The 6d-1 real-PTY/tmux host tests (the other half of Mode B2). | [test_terminal.py](agents-remember/mcp/tests/test_terminal.py) |
 
 ## Update History
 
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: app fixtures now write representative task docs and cover
+  invalid `leafKey` rejection for `POST /api/terminal/{session}` and `/attach-leaf`, proving no host ensure
+  or catalog mutation happens before resolver success. Verification metadata pinned until closeout stamps
+  the 260707-HFX-L4 commit.
 - 2026-07-07T12:40+02:00 — L16 adversarial-review follow-up: malformed-settings scratch-terminal regression test (L16R-1). Verification metadata pinned until closeout stamps the L16 commit.
 
 - 2026-07-04T11:10+02:00 — L2 (agent-facing dispatch): `resolve_terminal_launch` is now imported from

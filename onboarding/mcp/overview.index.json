@@ -217,6 +217,7 @@
     "mcp/src/agents_remember/providers/setup_reporting.py",
     "mcp/src/agents_remember/providers/status.py",
     "mcp/src/agents_remember/worktrees/git_worktree_manager.py",
+    "mcp/src/agents_remember/worktrees/leaf_refs.py",
     "mcp/src/agents_remember/worktrees/start_progress.py",
     "mcp/src/agents_remember/worktrees/status.py",
     "mcp/src/agents_remember/worktrees/task_resolver.py",
@@ -248,6 +249,7 @@
     "mcp/tests/test_install_runtime.py",
     "mcp/tests/test_interaction_retention.py",
     "mcp/tests/test_landing.py",
+    "mcp/tests/test_leaf_ref_resolution.py",
     "mcp/tests/test_lifecycle_finalize.py",
     "mcp/tests/test_log_capture.py",
     "mcp/tests/test_markdown_settings.py",
@@ -312,8 +314,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 541,
-    "fileSidecars": 224,
+    "sourceFilesInScope": 540,
+    "fileSidecars": 226,
     "childRoutes": 15
   },
   "routingTerms": [

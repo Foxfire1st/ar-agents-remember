@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-07T18:40+02:00|
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T23:45+02:00|
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 
 ## Purpose
 
@@ -85,6 +85,11 @@ or returns `None`. The post-landing cleanup (task 260628_post-landing-cleanup)
 adds `test_find_worktree_contract_skips_archived_contract`, proving a
 group-matching contract moved under `0_archive/` is not resurrected.
 
+HFX-L4R2 adds end-to-end default light-task start coverage: a standalone `kind: light` task doc can
+start with default `workflow_kind` and no explicit `leaf_id`, persisting the task doc id into the leaf
+contract, while a wrong default ref refuses with `leaf-ref-not-found` and reports the doc-id candidate.
+The memory-base regression target now imports the public `start_contract.memory_base_for_source` helper.
+
 `RequireUpdatedRouteOverviewContentTests` covers the route-overview body gate:
 with committed root and `src/app` overviews, the nearest-governing overview of
 a changed path fails when stale or when its body update lacks a history entry,
@@ -152,21 +157,33 @@ No sibling repository evidence is needed for the test itself.
 
 ## Series-Contract Notes
 
-Worktree support coverage includes the master-start path that creates a root integration contract plus a leaf enclosure contract, and keeps closeout/onboarding/status tests aligned with leaf contract paths. It also covers the L3 memory-base regression: `_memory_base_for_source` records the memory base from the source-branch tip, not the repo HEAD when the memory repo is checked out on an unrelated branch.
+Worktree support coverage includes the master-start path that creates a root integration contract plus a
+leaf enclosure contract, and keeps closeout/onboarding/status tests aligned with leaf contract paths.
+HFX-L4 updates that path so a legacy-shaped leaf ref (`15_leaf`) resolves through the task tree and the
+new contract persists the canonical doc id (`15`) under the canonical leaf enclosure path. It also covers
+the L3 memory-base regression: `memory_base_for_source` records the memory base from the source-branch
+tip, not the repo HEAD when the memory repo is checked out on an unrelated branch.
 
 ## Update History
 
-- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P1, merge `e358c4a`): added
-  `test_reconciliation_refuses_when_memory_repo_is_on_another_branch` — reconciliation refuses
-  (naming both branches, nothing committed) when the official memory repo is checked out off the
-  memory source branch. Post-merge onboarding refresh (developer-approved) verified against main
-  @ e358c4a.
+- 2026-07-07T23:45+02:00 — 260707-HFX-L4R2: added default light-task `start_result` coverage for
+  doc-id persistence and wrong-ref refusal, and retargeted the memory-base helper regression to the
+  public `start_contract.memory_base_for_source` name. Verification metadata pinned until closeout
+  stamps the 260707-HFX-L4 commit.
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: master-start coverage now expects canonical doc-id leaf
+  contract persistence and the canonical leaf enclosure path after resolving a legacy leaf ref. Verification
+  metadata pinned until closeout stamps the 260707-HFX-L4 commit.
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 7 / friction F-R): added the
   missing-mapping recovery coverage — `_unmapped_external_contract` helper plus
   `test_missing_mapping_block_advertises_only_consumable_choices` (only executable choices named,
   `custom` gone, each consumable) and `test_reconciliation_records_the_mapping_and_starts_the_worktree`
   (reconciliation records the ledger mapping + `Ledger sync` commit and proceeds to a started worktree).
   Verification metadata pinned until closeout stamps the L18 commit.
+- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P1, merge `e358c4a`): added
+  `test_reconciliation_refuses_when_memory_repo_is_on_another_branch` — reconciliation refuses
+  (naming both branches, nothing committed) when the official memory repo is checked out off the
+  memory source branch. Post-merge onboarding refresh (developer-approved) verified against main
+  @ e358c4a.
 - 2026-06-29T23:18+02:00 — Memory-base fix (L3): added `test_memory_base_for_source_uses_source_branch_tip_not_head` — proves `worktree_start` records the memory base from the source-branch tip, not the repo HEAD (repo on a divergent branch). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-28T20:30+02:00 — Post-landing cleanup (task 260628_post-landing-cleanup): added `test_find_worktree_contract_skips_archived_contract` covering the `0_archive/` skip in `find_worktree_contract`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): documented the MCP 2.9.3 worktree-name resolution tests (`test_resolver_resolves_contract_by_worktree_name`, `…returns_empty_for_unknown_worktree_name`, `…prefers_task_name_over_worktree_name`, `test_find_worktree_contract_matches_group_or_returns_none`) and the `worktree_group_for` import. Grafted onto the series' task-30 re-closeout / leaf-enclosure coverage.
