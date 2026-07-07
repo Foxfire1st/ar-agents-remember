@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_paste.py`                |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-04T12:31+02:00                            |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`        |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T23:20+02:00                            |
+| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`        |
+| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -16,28 +16,47 @@
 
 ## Purpose
 
-`test_terminal_paste.py` covers the server-side echo-confirmed paste helper (`serving.terminal_paste`,
-L2). The paster mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` over tmux primitives; every
-tmux operation is injectable, so the confirmation loop runs against an in-memory fake pane — no real
-tmux server and no real sleeping (an injected clock + a no-op sleep make the timeouts deterministic).
+`test_terminal_paste.py` covers the server-side capture-verified paste helper
+(`serving.terminal_paste`, L2, hardened by 260707-HFX-L3). The paster mirrors the frontend
+`pasteAndConfirm` / `submitAndConfirm` over tmux primitives; every tmux operation is injectable, so
+the confirmation loop runs against in-memory fake panes — no real tmux server and no real sleeping
+(an injected clock + a no-op sleep make the timeouts deterministic). The `DeliveryIntegrityTests`
+class encodes 260707-HFX-L3: the SF-1 blind seat (codex chip vocabulary unrecognized → false
+verdicts) and the F-V duplicate stack (blind retry re-pasted a landed paste up to 7 times) — each
+scenario failed against the pre-fix seam by construction.
 
 ## Code Commentary
 
 ### Logic
 
-`_FakePane` is an in-memory pane: `set_buffer` / `paste_buffer` (appends a `[Pasted text #1]` echo when
-`echo` is on) / `send_key` (appends output on `Enter` when `submit_echo` is on) / `capture` (returns the
-growing visible content). `_Clock` advances a fixed step per call so timeouts are hit deterministically,
-and `_paster` wires all four tmux callables + the clock + a no-op sleep into a `TerminalPaster`.
+`_FakePane` is an in-memory pane: `load_buffer` (the renamed injectable seam) / `paste_buffer`
+(appends a `[Pasted text #1]` echo when `echo` is on) / `send_key` (appends output on `Enter` when
+`submit_echo` is on) / `capture` (returns the growing visible content). Two 260707-HFX-L3 fakes model
+the forensic panes: `_CodexChipPane` renders a large paste ONLY as the codex
+`[Pasted Content N chars]` chip (the SF-1 shape), and `_LaggyChipPane` renders that chip a
+configurable number of captures BEHIND the paste — past the first attempt's echo window, so only the
+retry path's re-capture guard can see it landed (the F-V race). `_Clock` advances a fixed step per
+call so timeouts are hit deterministically, and `_paster` wires all four tmux callables + the clock +
+a no-op sleep into a `TerminalPaster`.
 
 - `SanitizeTests` pins `sanitize_for_injection`: it strips the `0x1a` suspend byte, the bracketed-paste
   markers, and CR while keeping NEWLINE and TAB (and ordinary text).
+- `ChipCountTests` pins `count_paste_chips` across BOTH harness chip vocabularies — claude
+  `[Pasted text #N]` (with and without the number) and codex `[Pasted Content N chars]`
+  (case-tolerant) count; near-miss strings do not; a plain pane counts zero.
 - `PasteTests` pin the loop: an echo-confirmed paste **without** submit delivers and leaves a draft (one
   bracketed paste of the sanitized text, no `Enter`); a paste **with** submit presses `Enter` and
-  confirms; an **unechoed** paste re-pastes across the boot window and reports unconfirmed delivery,
-  boot output without a pasted draft/chip does not count as delivered (never submitting either case),
-  and a submit whose `Enter` produces no output reports `delivered=True,
-  submitted=False`.
+  confirms; a **verifiably-unlanded** paste re-pastes across the boot window (the idempotence guard
+  re-captured first and found no trace each time) and reports unconfirmed delivery, boot output
+  without a pasted draft/chip does not count as delivered (never submitting either case), and a
+  submit whose `Enter` produces no output reports `delivered=True, submitted=False`.
+- `DeliveryIntegrityTests` pin the 260707-HFX-L3 contract: the codex chip confirms delivery with
+  exactly ONE paste (`_CodexChipPane`, `len(pane.pasted) == 1`); a late-rendering chip is seen by
+  the retry path's re-capture and NEVER re-pasted (`_LaggyChipPane` — one paste, one chip; duplicate
+  stacking impossible); an unverifiable delivery returns `delivered=False` WITH the final pane
+  capture attached (`result.capture == pane.content`); a successful delivery also carries its
+  confirming capture; `_press("Escape")` raises `ValueError` with no key sent (run discipline —
+  Escape interrupts a codex session); and a full paste+submit flow sends ONLY `Enter`.
 
 ### Conventions
 
@@ -49,8 +68,12 @@ so the boot-window retry and unconfirmed-submit cases terminate quickly against 
 
 ### Invariants And Boundaries
 
-- No real tmux, no real sleep — the loop runs against the fake pane + injected clock/sleep.
+- No real tmux, no real sleep — the loop runs against the fake panes + injected clock/sleep.
 - The loop must never submit an unconfirmed paste; the unechoed case asserts no `Enter` was sent.
+- Delivery truth is capture-based (260707-HFX-L3): a landed chip in either vocabulary confirms with
+  one paste, a landed-late chip must not be re-pasted, and a failed verification must carry the
+  final capture — the pre-fix seam fails each of these by construction.
+- Only `Enter` may cross the seam; the Escape refusal is itself the contract under test.
 - Sanitization keeps NEWLINE + TAB and drops control noise, mirroring the frontend.
 
 ### Todos
@@ -83,6 +106,17 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2: `_ScrollingCodexPane` (bounded suffix window with
+  tmux-faithful top-eviction) pins the scroll-out case — delivered with exactly ONE paste even when
+  the final window shows no net generic chip growth (the payload-specific probe rescue); the test
+  asserts the blindness premise itself, so dropping the specific probe fails it with duplicates.
+  `CaptureWindowTests` pins the literal `capture-pane -p -S -200` argv.
+- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): added `ChipCountTests` (both
+  chip vocabularies) and `DeliveryIntegrityTests` — `_CodexChipPane` single-paste confirmation,
+  `_LaggyChipPane` retry-after-partial with exactly one paste (the F-V race, re-capture sees the
+  landed chip), verification-failure capture attachment, the Escape refusal, and only-Enter across
+  paste+submit; the fake pane's injectable seam renamed `set_buffer` → `load_buffer` with the
+  paster. Verification metadata pinned until closeout stamps the HFX-L3 commit.
 - 2026-07-04T12:31+02:00 - L3: added the harness-boot false-positive regression
   where pane output advances but no pasted draft/chip appears. Verification
   metadata pinned until closeout stamps the L3 commit.

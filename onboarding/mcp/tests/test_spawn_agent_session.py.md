@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T09:45+02:00                            |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`        |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T23:20+02:00                            |
+| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`        |
+| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 `test_spawn_agent_session.py` covers the agent-facing `spawn_agent_session` MCP tool (L2 dispatch) and
 the serving `POST /api/terminal/{session}/paste` endpoint. It exercises the whole composition —
-opener + leaf claim + echo-confirmed paste + submit — against a fake host + fake paster + a fake
+opener + leaf claim + capture-verified paste + submit — against a fake host + fake paster + a fake
 `which`, so no real tmux server, no real daemon, and no real sleeping are involved. Since 260703-L13
 `SpawnHarnessResolutionTests` pins the settings-driven harness seam through the payload builder with
 REAL settings files in temp roots: omitted harness reads the global `orchestration.spawn.harness`,
@@ -50,6 +50,13 @@ L2 contracts:
 - **draft** (`test_draft_paste_does_not_submit`): `submit=False` pastes without submitting and omits the
   `submitted` key.
 - **no context** (`test_spawn_without_context_skips_paste`): no paste is attempted.
+- **verified delivery ships no capture** (`test_verified_delivery_omits_the_failure_capture`,
+  260707-HFX-L3): the capture is failure evidence — a verified delivery omits `deliveryCapture`.
+- **loud failure** (`test_unverified_delivery_reports_false_with_the_pane_capture_attached`,
+  260707-HFX-L3/SF-1 — reviewer 46b2e267 got `contextDelivered: true` over a codex pane that booted
+  clean with no payload): an unverified delivery on a spawned session reports
+  `contextDelivered: false` / `submitted: false` WITH `deliveryCapture` carrying the fake paster's
+  pane snapshot.
 
 `SpawnKnobApplicationTests` (L16) pin the dispatch-seam knob application: a flag-vocabulary effort
 (`max`) rides the argv as `--model`/`--effort` with NO session command; `ultracode` stays OFF the
@@ -61,7 +68,8 @@ flag and arrives as the FIRST paste (`/effort ultracode`, submitted) before the 
 effort:max + promptKeywords:["ultracode"] → `--effort max` + the keyword riding the paste; keywords
 alone still deliver with no brief); the session-layer order is effort vehicle → caller
 sessionCommands → keyword-bearing brief with the RESOLVED list as provenance; and an undelivered
-session command reports `sessionCommandsDelivered: false`.
+session command reports `sessionCommandsDelivered: false` WITH the failing pane capture as
+`deliveryCapture` (`test_undelivered_session_command_is_reported_with_capture`, 260707-HFX-L3).
 
 `SettingsDefinedHarnessTests` (L16 registry openness) write REAL settings files: a new
 `orchestration.harnesses.hermes` entry spawns with its declared argv; a builtin override replaces
@@ -94,8 +102,9 @@ the session command + keyword-bearing brief and full provenance.
 
 `TerminalPasteEndpointTests` builds the app with `create_app(..., terminal_host=fake,
 terminal_catalog=…, terminal_paster=fake)` and drives `POST /api/terminal/{session}/paste` through
-`TestClient`: a known running session delivers+submits (200), and an unknown session is `404`
-`unknown-session` with no paste attempted.
+`TestClient`: a known running session delivers+submits (200), an unknown session is `404`
+`unknown-session` with no paste attempted, and — 260707-HFX-L3 — an unconfirmed paste ships the
+pane `capture` in the body while a delivered one omits it.
 
 ### Conventions
 
@@ -141,6 +150,16 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2: two evidence pins added —
+  `test_unconfirmed_submit_attaches_the_capture_even_when_delivered` and
+  `test_failed_delivery_with_empty_capture_ships_an_explicit_marker` (the
+  `"(empty pane capture)"` wording, aligned with inbox delivery).
+- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): `_FakePaster` gained a scripted
+  `capture`; new `test_verified_delivery_omits_the_failure_capture` and
+  `test_unverified_delivery_reports_false_with_the_pane_capture_attached` (the SF-1 blind-seat
+  regression); the undelivered session-command case now asserts the attached `deliveryCapture`; the
+  endpoint tests pin capture-on-unconfirmed / omitted-on-delivered. Verification metadata pinned
+  until closeout stamps the HFX-L3 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `SpawnKnobApplicationTests`,
   `SettingsDefinedHarnessTests`, and `SpawnLevelResolutionTests` (see Logic) covering the
   per-harness flag mapping, the two-vehicle claude effort vocabulary, the dispatch refusals

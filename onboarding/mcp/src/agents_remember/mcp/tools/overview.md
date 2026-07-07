@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`                                      |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T23:20+02:00 |
+| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`                                      |
+| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -39,8 +39,8 @@ public agent-facing gate junction; split gate/block/wait builders remain exporte
 for internal compatibility and tests but are not registered as public MCP tools. L9 adds the
 `terminal.py` submodule and public `attach_terminal_session_to_leaf` builder, an agent-facing wrapper over
 the dashboard terminal catalog move policy. L2 adds the public `spawn_agent_session` builder to that same
-submodule — the agent-facing dispatch tool that composes the shared serving opener + an echo-confirmed
-context paste to create a role-configured, leaf-attached, context-primed hosted session. Since
+submodule — the agent-facing dispatch tool that composes the shared serving opener + a capture-verified
+context paste (260707-HFX-L3: `contextDelivered` only after the pane provably shows the paste; failures ship `deliveryCapture`) to create a role-configured, leaf-attached, context-primed hosted session. Since
 260703-L13 its `harness` argument is optional: `_resolve_spawn_harness` reads the agentic settings
 PER-USE (`kernel/agentic_settings.py`; repo-local layer via the qualified leaf key) and resolves
 explicit arg > repo-local `orchestration.spawn.harness` > global > the first detected registry
@@ -125,6 +125,10 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-07T23:20+02:00 — 260707-HFX-L3 route impact: `terminal.py`'s spawn delivery is
+  capture-verified (no more echo-confirm false success — the SF-1 blind seat); a False outcome always
+  carries evidence (`deliveryCapture`, explicit `"(empty pane capture)"` marker when empty) and the
+  capture also attaches on submit-failure.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `terminal.py`'s spawn builder became
   the knob resolution + application seam (rolesPerLevel via the new `level` parameter,
   orchestration.harnesses effective registry, per-harness dispatch-time model/effort validation

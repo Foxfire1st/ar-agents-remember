@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-07T18:40+02:00                |
-| lastVerifiedCommitHash |                                       `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                       2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T22:15+02:00                |
+| lastVerifiedCommitHash |                                       `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`|
+| lastVerifiedCommitDate |                                       2026-07-07T20:09:01+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -31,13 +31,18 @@ consumed snapshot and repeated consume calls are idempotent. Task 23/24 adds the
 semantics: `operator_inbox_consume_payload` returns the consumed entry and then physically deletes the
 throwaway pending row from the public inbox log. `OperatorInboxToolTests` patches `_store` to an in-memory temp
 store and drives the real post, poll, and consume payload builders. `OperatorInboxDeliveryTests`
-drives `deliver_inbox_entry` against a temp store + a fake catalog/host: one case pushes an
-echo-confirmed paste (state `delivered`) and — since 260703-L18 (finding 3, pinning the friction
-F-A echo-confirm seam) — a second case pushes an UN-ECHOED paste (`PasteResult(delivered=False)`)
-and asserts the recorded `deliveryState` is `unconfirmed` with detail `paste was not echoed`. That
-un-echoed case is the regression: it FAILS if `serving/inbox_delivery.py`'s delivered/unconfirmed
-branch is ever collapsed to always-`delivered` (the boot-discard failure echo-confirmation exists to
-catch).
+drives `deliver_inbox_entry` against a temp store + a fake catalog/host: one case pushes a
+verified paste (state `delivered`) and — since 260703-L18 (finding 3, pinning the friction
+F-A confirm seam) — a second case pushes an UNVERIFIED paste
+(`PasteResult(delivered=False, capture="claude> (booting)")`) and asserts the recorded
+`deliveryState` is `unconfirmed` with a `deliveryDetail` that — since 260707-HFX-L3 — contains
+"paste was not capture-verified" AND the pane capture itself (the durable row is the forensic
+record a re-briefing operator reads, never a bare "not echoed"). A third case
+(`test_unverified_delivery_with_empty_capture_still_records_a_loud_detail`) pushes an
+empty-capture failure (a vanished session) and asserts the dedicated wording
+"paste was not capture-verified (empty pane capture)". The unverified cases are the regression:
+they FAIL if `serving/inbox_delivery.py`'s delivered/unconfirmed branch is ever collapsed to
+always-`delivered` or its detail drops the capture evidence.
 
 ### Conventions
 
@@ -83,6 +88,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): the unverified-push case now
+  asserts the durable `deliveryDetail` carries the pane capture ("paste was not capture-verified"
+  + the capture text, replacing the bare "paste was not echoed" truth), and the new
+  `test_unverified_delivery_with_empty_capture_still_records_a_loud_detail` pins the
+  empty-capture wording. Verification metadata pinned until closeout stamps the HFX-L3 commit.
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 3, test-only): added
   `test_deliver_inbox_entry_records_unconfirmed_when_paste_is_not_echoed` — pins the
   delivered-vs-unconfirmed distinction in `serving/inbox_delivery.py` so an un-echoed paste records

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T16:50+02:00 |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021`       |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-07T22:15+02:00 |
+| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`       |
+| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -40,8 +40,10 @@ lists. L9 adds `terminal_leaf_assignment.py`, the shared catalog move policy use
 durable leaves without respawn. L2 (agent-facing dispatch) adds `terminal_opener.py` — the shared
 hosted-session **opener** (leaf claim + env-seeded tmux ensure + catalog upsert) that both the
 `POST /api/terminal/{session}` route and the agent-facing `spawn_agent_session` MCP tool compose over so
-there is **no parallel spawn path** — and `terminal_paste.py`, the server-side echo-confirmed stdin paste
-that backs the new `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery. `terminal.py`
+there is **no parallel spawn path** — and `terminal_paste.py`, the server-side capture-verified stdin
+paste (260707-HFX-L3: success only after the pane provably shows the paste; one origin baseline per
+delivery makes duplicate stacking impossible; failures ship the pane capture) that backs the
+`POST /api/terminal/{session}/paste` endpoint and the tool's context delivery. `terminal.py`
 gains an `env` knob-injection seam (`tmux new-session -e KEY=VALUE`) and `terminal_catalog.py` gains
 spawned-by provenance columns for the orchestration tree (L14 adds `spawn_role` beside them —
 written only when AR_SPAWN_ROLE is set, preserved on re-open, riding the sessions wire for the
@@ -123,10 +125,12 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   starter PTY client; **slice L5** uniqueness is per (leaf, role) so a terminal never collides with the
   leaf's chat, and the `leafKey` is persisted (preserving an existing binding when none is sent) and
   echoed),
-  `POST /api/terminal/{session}/paste` (**L2/L3** — server-side echo-confirmed context-packet delivery to a
-  hosted session with no attached browser client, over `terminal_paste.TerminalPaster`; L3 requires a
-  real pasted draft/chip echo across the boot retry window, not mere pane output; 404 on
-  unknown/gone session, else `{delivered, submitted}`),
+  `POST /api/terminal/{session}/paste` (**L2, 260707-HFX-L3** — server-side capture-verified
+  context-packet delivery to a hosted session with no attached browser client, over
+  `terminal_paste.TerminalPaster`; delivery is confirmed against the pre-delivery origin capture —
+  a new chip in either harness vocabulary or the payload head, not mere pane output; 404 on
+  unknown/gone session, else `{delivered, submitted}` plus the pane `capture` on an unconfirmed
+  outcome),
   `POST /api/terminal/{session}/attach-leaf` (**slice L5/L9** — claim or move a leaf for an existing
   session, enclosure-free / no respawn; delegates to `terminal_leaf_assignment.assign_terminal_session_to_leaf`,
   returning `404 unknown-session`, `409 leaf-taken` without mutation, or `200 attached`), `GET
@@ -297,14 +301,21 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   in `app.py`, a validated payload in the MCP tool). The ONE opener both the dashboard `POST
   /api/terminal/{session}` route and the agent-facing `spawn_agent_session` tool compose — no parallel
   spawn path.
-- `terminal_paste.py` — the **L2/L3 server-side echo-confirmed paste**: `TerminalPaster.paste(tmux_name,
-  text, submit=…)` mirrors the frontend `pasteAndConfirm`/`submitAndConfirm` over tmux primitives
-  (`set-buffer` + `paste-buffer -p` + `capture-pane` looking for a pasted draft fragment or new paste
-  chip, `send-keys Enter` on submit), re-pasting across the harness boot window because a booting harness
-  can discard stdin while still producing output. Every
-  tmux op + the clock are injectable so the loop is fake-driven and sleepless in tests. Never submits an
-  unconfirmed paste; never raises on a gone session. Backs the `spawn_agent_session` context delivery and
-  the `POST /api/terminal/{session}/paste` endpoint.
+- `terminal_paste.py` — the **capture-verified server-side paste** (L2, hardened by 260707-HFX-L3):
+  `TerminalPaster.paste(tmux_name, text, submit=…)` mirrors the frontend
+  `pasteAndConfirm`/`submitAndConfirm` over tmux primitives — the payload rides STDIN into
+  `load-buffer` (never argv/ARG_MAX) then `paste-buffer -p -d`, and `capture-pane` verification
+  against ONE pre-delivery origin baseline held for the whole delivery: a NEW paste chip in either
+  harness vocabulary (`[Pasted text #N]` claude, `[Pasted Content N chars]` codex) or the payload's
+  own head confirms; before any re-paste across the boot window the pane is re-captured first, so a
+  landed paste is never re-sent (duplicate stacking impossible — the F-V run stacked 7 via
+  per-attempt re-baselining). `PasteResult.capture` attaches the final pane snapshot so a failed
+  delivery is loud evidence, never a bare boolean (the SF-1 blind seat); Escape is refused by
+  construction — only Enter is ever sent. Every tmux op + the clock are injectable so the loop is
+  fake-driven and sleepless in tests. Never submits an unconfirmed paste; never raises on a gone
+  session. Backs the `spawn_agent_session` context delivery, the
+  `POST /api/terminal/{session}/paste` endpoint, and the inbox hosted push (whose durable failure
+  detail embeds a bounded capture tail).
 - `harnesses.py` — the **harness launch registry + per-harness knob mapping** (slice 6e-2b;
   260703-L16): the curated `HARNESSES` set (Claude Code / Codex / Pi.dev) + `find_harness` /
   `is_detected` / `detect_harnesses` (injectable, call-time `shutil.which`; both accept an injected
@@ -367,6 +378,14 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-07T22:15+02:00 — 260707-HFX-L3 route impact (capture-verified delivery):
+  `terminal_paste.py` reports delivery only after pane capture-verification against ONE
+  pre-delivery origin baseline (both harness chip vocabularies; re-capture before any re-paste, so
+  duplicate stacking is impossible; payload via stdin `load-buffer`; Escape refused, only Enter);
+  failures are loud — `PasteResult.capture` rides the spawn tool's `deliveryCapture`, the `/paste`
+  endpoint's unconfirmed `capture`, and the inbox push's bounded capture-tail `deliveryDetail`
+  (`inbox_delivery.py`); `app.py`'s paste route is the same paster mechanic, no separate path.
+  Verification metadata pinned until closeout stamps the HFX-L3 commit.
 - 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 5 adds the shared
   `scope.decode_capped` codepoint-boundary read cap and wires it through `notes.read_note` /
   `files.read_file` + `_onboarding_doc_body` — an oversize file whose multi-byte char straddles the
