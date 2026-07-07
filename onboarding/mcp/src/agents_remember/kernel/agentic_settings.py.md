@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:40+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -90,7 +90,11 @@ global role default on top of the file merge.
 
 HFX-L6 adds `architect` and L6R3 adds `curator` to the closed role vocabulary for both flat
 `orchestration.roles` and per-level `orchestration.rolesPerLevel`; unknown-role behavior remains
-fail-loud.
+fail-loud. **260707-HFX-L7** adds `system-specialist` — the ninth `KNOWN_ROLES` member — so the
+provider-degradation investigator can carry its own spawn knob overrides
+(`orchestration.roles.system-specialist` / `orchestration.rolesPerLevel.<level>.system-specialist`)
+the same way every other role does; the module-docstring comment naming the role count was
+corrected from "eight" to "nine" in the R2 fix round (closes reviewer F6).
 
 **Harness definitions (L16 registry openness).** `_parse_harnesses` (decomposed into
 `_parse_harness_entry` → frozen `_HarnessEntry` shape record, `_resolved_launch` command/argv
@@ -179,6 +183,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): added `system-specialist` to
+  `KNOWN_ROLES` (now nine roles) for both flat and per-level role-knob vocabularies; the R2 fix
+  round also corrected the stale "eight" role-count comment to "nine" (reviewer F6). Verification
+  metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: added `curator` to the
   closed `KNOWN_ROLES` vocabulary beside `architect`, preserving fail-loud unknown-role behavior
   for flat role knobs and per-level overrides. Verification metadata pinned until closeout stamps

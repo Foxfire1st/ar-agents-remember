@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:40+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -53,6 +53,10 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   documented-but-wrong `claude-code` id is the regression case), and
   gateDelegation parsing in its new home (named policy, at-seams binding,
   human-pinned and unsupported-kind refusals as `AgenticSettingsError`).
+  **260707-HFX-L7** adds a flat `system-specialist` role-knob entry
+  (`{"harness": "claude", "model": "fable"}`) to the settings fixture and asserts
+  `settings.roles["system-specialist"] == RoleKnobs(harness="claude", model="fable")`, pinning
+  the ninth `KNOWN_ROLES` member's flat role-knob parsing.
 - `FreeFormRoleKnobTests` (L16) — launchArgs/promptKeywords/sessionCommands
   parse ADDITIVELY into `RoleKnobs` tuples (old files unchanged, empty-tuple
   defaults), effort stays a FREE string at load (the developer's `ultracode`
@@ -128,6 +132,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `TypedModelTests` role-knob
+  fixture gained a flat `system-specialist` entry asserting `RoleKnobs(harness="claude",
+  model="fable")`, pinning the ninth `KNOWN_ROLES` member's flat role-knob parsing. Verification
+  metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: role-knob parsing tests
   now include a flat `curator` entry, and `RolesPerLevelTests` adds
   `test_curator_is_allowed_inside_a_level` to pin per-level curator overrides while preserving

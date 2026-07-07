@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:40+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T02:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 
 ## Purpose
 
@@ -20,6 +20,26 @@ The spine of the unified `l-01-agent-lifecycles` skill: lifecycle and job are ON
 Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/SKILL.md`. HFX-L6 adds the **architect** as the developer-facing owner seat and reframes the **orchestrator** as a spawned backend seat; L6R3 adds **curator** as the dedicated onboarding writer. The router still has exactly three conditions, in order: (1) `AR_SPAWN_ROLE` env set -> run `roles/<value>.md`; (2) a fresh-session role brief -> run that role; (3) otherwise the session is developer-facing -> run `roles/architect.md`. Solo hat-collapse belongs only to the architect. The minimal frame is the only shared machinery: the six `lifecycle_*` signals, fleeting->persistent promotion at `worktree_start`, `awaiting-developer` auto-resume on the next AR call, server-side identity; a spawned role that never touches mutating AR tools never instantiates a lifecycle (designed shape), and a spawned role never adopts its spawner's lifecycle - the session<->leaf association is the catalog binding via the QUALIFIED leaf key `<repository>/<master>/<docId>`. Shared invariants: continuity in task_doc + durable artifacts (never transcripts); the escalation ladder worker -> manager -> orchestrator -> architect -> developer with no rung skipped; role-seat immutability for dashboard-owned sessions (roles expand horizontally into new chats, sub-agents drill vertically inside one seat); the manager -> builder -> reviewer -> curator leaf closeout chain; and the minimal decision-item relay over the existing operator inbox (one item at a time: decision/options/consequences/evidence refs, with a durable ruling back). Also carries the knob-block resolution (role-file defaults < global agentic settings < repo-local settings — since 260703-L13 the settings home is the GLOBAL agentic settings file `<coordination-root>/system/settings.json` with `<code-repo>/system/settings.json` overrides, not the MCP authority file), the as-built settings documentation (`orchestration.gateDelegation` parsed + enforced by `controlplane/gate_policy.py`, boot-snapshot from the global file with a one-cycle warned authority fallback; `roles`/`concurrency`/`spawn`/`loops` PARSED per-use by `kernel/agentic_settings.py` — the backlog closed; `spawn_agent_session` resolves its knobs explicit args > repo-local level override > global level override > repo-local role default > global role default > detection-gated — since 260703-L16 the knobs are APPLIED at the harness boundary: model/effort ride `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` env AND map onto the launch argv per-harness via the effective registry, unknown effort values REFUSE at dispatch naming the harness's vocabulary (claude's two-vehicle set incl. the session-level `ultracode` delivered as a post-launch `/effort` paste), the free-form escape hatch (`launchArgs`/`promptKeywords`/`sessionCommands`) is never validated only recorded in spawn provenance, `orchestration.rolesPerLevel` expresses per-LEVEL agent sets, and `orchestration.harnesses` teaches new TUIs / pre-customizes builtin launches — manual `docs/reference/harnesses.md`; example harness ids are registry ids claude/codex), a 6-line super-branch orientation diagram (the full topology's single home is `roles/orchestrator.md`), and the credits lineage (260619 spec -> Archon / agent-control-plane).
 
 As of the L8 de-harnessing pass there are deliberately NO per-harness role files (developer decision 2026-07-05): knob resolution is role-file defaults < settings.json orchestration block (the variant layer is gone), harness ABILITIES are capability-conditional doctrine inside the portable files, and harness PREFERENCE is deployment configuration in settings. As of HFX-L6/L6R3 the registry lists EIGHT portable role files — architect, orchestrator, designer, strategist, manager, worker, curator, reviewer — with the strategist row still spawn-first and mandatory before any orchestrated run, the curator row dedicated to fresh per-leaf onboarding writes, and the reviewer row extending to the loop-reviewer seat (the two seams AND any three-party loop's review, criteria catalogs bound per review type).
+
+As of 260707-HFX-L7 (provider degradation protocol) the registry grows to **NINE** portable role
+files: a new `system-specialist` row is inserted after `curator` and before the adversarial
+reviewer — "backend provider-degradation investigator; report first, fixes only after explicit
+orchestrator order; spawn value `system-specialist`" — pointing at `roles/system-specialist.md`.
+The frontmatter `description` and the "Companion Files" sentence are both updated in lockstep
+("architect, orchestrator, designer, strategist, manager, worker, curator, system-specialist,
+adversarial reviewer" / "the nine self-contained role lifecycles"), so a reader scanning either
+the frontmatter or the companion-files footer sees the same count as the registry table. The
+shared-invariants escalation-ladder bullet, which previously stated only the single chain
+`worker -> manager -> orchestrator -> architect -> developer`, now carries a second clause for the
+new seat: "worker → manager → orchestrator → architect → developer; system-specialist →
+orchestrator" — `system-specialist` is NOT inserted into the main worker-ladder chain (it never
+sits between manager and orchestrator in the normal build sense); it is a standalone one-rung
+escalation like the designer/reviewer/strategist rungs documented in
+`controlplane/orchestration_artifacts.py`'s `_ROLE_ESCALATION` map. The as-built settings-block
+worked example (`orchestration.roles.<role>`) gains a `system-specialist` entry
+(`{"harness": "claude", "model": "fable", "effort": "high"}`) alongside the existing
+architect/strategist/reviewer/curator/worker rows, giving the reader a concrete spawn-knob shape
+for the new role rather than only the registry mention.
 
 As of 260703-L12 the file is also the **three-party-loop doctrine's single home** (a new section between Shared Invariants and the knob block, referenced per seat): OWNER → BUILDER → REVIEWER at every level that owns work (leaf/master/portfolio table); complexity-scored tiers at dispatch (direct / builder-verified / full loop, scored on blast radius · novelty · size; round 2 glosses direct as no-loop-machinery through the level's ordinary build channel — hands-on at session scale, the leaf's worker under a manager — so it cannot read manager-implements; a master whose leaves all score direct = workflow-free manager); the HARD 3-round cap where ONLY full end-to-end rounds count (delta-verifies by the SAME reviewer close rounds; fix rounds resume the SAME builder); the CONVERGENCE rule (every round must shrink the finding set — a non-shrinking round escalates immediately; the cap is the backstop); escalation one seat up the ladder with the full round history attached; the written QUO-VADIS criterion (a high-blast-radius truth escalates immediately; presentation-grade never); the criteria-catalog binding (`criteria/` — code-seam · doctrine · onboarding-memory · report-verification · plan-review) and the per-level agent sets (knobs in `orchestration.loops`, schema in `docs/reference/settings-json.md`, stored in the global agentic file with repo-local override and parsed by the kernel loader since L13 — the strategist's mandatory pre-run is doctrine, not a knob).
 
@@ -37,6 +57,15 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-07-08T02:00+02:00 — 260707-HFX-L7 (provider degradation protocol): the role registry table
+  gains the `system-specialist` row (backend provider-degradation investigator; spawn value
+  `system-specialist`; points at the new `roles/system-specialist.md`); frontmatter `description`
+  and the Companion Files sentence both now say nine role lifecycles (was eight); the escalation
+  ladder bullet gains a standalone `system-specialist -> orchestrator` clause beside the existing
+  worker->manager->orchestrator->architect->developer chain; the settings-block worked example
+  gains a `system-specialist` roles entry (`claude`/`fable`/`high`). Sync-propagated bundle copy of
+  the canonical `skills/l-01-agent-lifecycles/SKILL.md`. Verification metadata pinned until
+  closeout stamps the HFX-L7 commit.
 - 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: added curator to the
   l-01 registry/settings example as the fresh per-leaf onboarding writer, and recorded the
   manager -> builder -> reviewer -> curator closeout chain. Sync-propagated bundle copy.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T23:45+02:00                    |
-| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b` |
-| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00                    |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -69,6 +69,15 @@ The loop is exception-tolerant: any failure is logged through the module `logger
 (`logger.exception`) and the loop retries next interval, so one failed docker probe never
 kills sampling. The store feeds `provider_status`, the degradation protocol (260707-HFX-L7),
 and the statistics board later; sampling is read-only and dockerless-safe.
+
+**260707-HFX-L7 (provider degradation protocol):** immediately after
+`metrics_store.record(snapshot)` in the same sampling-loop iteration, the loop calls
+`await asyncio.to_thread(evaluate_provider_degradation, config)` — one call per tick, no extra
+task, sharing the same exception-tolerant `try/except` as the metrics record call above, so a
+degradation-evaluation failure never kills sampling either. This is the ONLY caller of the
+detector's entry point; the detector itself owns state persistence, inbox alerting, and the
+critical-threshold failsafe stop (`providers/degradation.py`) — `app.py` only wires the call into
+the loop it already owns.
 
 - `GET /api/state` returns the current projection once as `model_dump(by_alias=True,
   exclude_none=True)` plus the boot-time `servingBuild` stamp (503 until the first projection
@@ -288,9 +297,15 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The served projection shape + `ActionAvailability`. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 | The CLI adapter that builds and serves this app (and wires sim). | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
 | The central containment metrics store + sampler the lifespan loop drives (containment R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
+| The provider degradation detector this loop calls once per tick after recording a metrics sample (260707-HFX-L7). | evaluate_provider_degradation | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): the metrics sampling loop's `try`
+  block now also calls `await asyncio.to_thread(evaluate_provider_degradation, config)` right
+  after `metrics_store.record(snapshot)`, sharing the loop's existing exception-tolerant handling.
+  This is a two-line addition (import + one call); no route shape, endpoint, or lifespan
+  structure changed. Verification metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-07T23:45+02:00 — 260707-HFX-L5 (catalog liveness hysteresis): deleted
   `_refresh_catalog_entries` (the immediate exit-mark refresh); `create_app` now wires
   `liveness_clock = now or utc_now`, one `TerminalCatalogLivenessConfig`, and one

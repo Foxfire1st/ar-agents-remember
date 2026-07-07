@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:40+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T02:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 
 ## Purpose
 
@@ -45,7 +45,21 @@ lifecycle>`, `decidedVia: orchestration`; the owning agent never self-approves, 
 role — the manager — may), and integrates leaf → master integration branch via the
 `c-11-memory-carryover-from-branch` skill. As of L6R3, after builder code is ready and the reviewer
 verdict exists, the manager spawns a fresh curator (`roles/curator.md`, `AR_SPAWN_ROLE=curator`) for
-the onboarding-only memory pass and treats that report as the third leaf closeout input. At master exit
+the onboarding-only memory pass and treats that report as the third leaf closeout input.
+**260707-HFX-L7 (provider degradation protocol)** inserts a new "Provider Degradation Alert"
+subsection right after the seat definition/opening-move paragraph, before the leaf dispatch loop:
+on a `degradation-alert` inbox row, the manager immediately stops **starting** any more providers
+until an all-clear/healthy event arrives — no `worktree_start` with provider setup, no
+`provider_watchers start`, no watcher restart, no `retry_provider_setup` — while continuing any
+providerless/native-read work that remains valid and reporting provider-dependent blockers up to
+the orchestrator. The subsection is explicit that this is an ADDITION to, not a relaxation of, the
+manager's existing no-kill-authority boundary (see Invariants And Boundaries below): the manager
+must not docker-kill, must not stop containers, and must not call any provider teardown path
+either before or during a degradation alert — investigation, remediation orders, and provider
+stops belong exclusively to the orchestrator via the new system-specialist protocol
+(`roles/orchestrator.md`). This composes cleanly with the manager's pre-existing "no bird's-eye
+view" limit (Invariants And Boundaries): the manager reacts locally (stop starting) and escalates
+rather than reasoning about portfolio-wide provider health itself. At master exit
 it spawns the **adversarial reviewer**
 (master-exit seam); a blocking verdict **decomposes into fix leaves** the manager dispatches, and
 verdicts are **evidence, not decisions** (the manager decides the handover gate with the verdict as judge
@@ -68,7 +82,10 @@ creative-liberty prompting in either direction**: the **default agent behavior s
 task, fill small unambiguous blanks a competent implementer would fill, and no more). A **plan delta
 beyond blank-filling ESCALATES to the orchestrator** — never a reshape, and **never straight to the
 developer**. The manager has **no bird's-eye view** (one master, not the portfolio); the breadth /
-blast-radius reasoning belongs to the orchestrator. The **owning agent never self-approves**; the manager
+blast-radius reasoning belongs to the orchestrator. **260707-HFX-L7:** the manager has **NO
+provider kill authority, full stop** — this holds both in ordinary operation and during a
+provider-degradation alert; a degradation alert only ADDS a stop-starting duty on top of an
+already-absolute boundary, it does not create a new exception either direction. The **owning agent never self-approves**; the manager
 decides its leaves' delegated gates as the distinct configured role. Escalation resolves within the
 master's own view first, then rises up the ladder to the orchestrator. The manager does not write the
 curator's onboarding pass; it spawns the curator and consumes the resulting memory-pass report.
@@ -127,6 +144,14 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
+- 2026-07-08T02:00+02:00 — 260707-HFX-L7 (provider degradation protocol): documented the new
+  "Provider Degradation Alert" subsection landed right after the seat/opening-move paragraph — on
+  a `degradation-alert` inbox row the manager stops starting providers (no worktree provider
+  setup, no watcher start/restart, no `retry_provider_setup`) until an all-clear, continues valid
+  providerless work, and escalates provider blockers to the orchestrator; reinforced in Invariants
+  And Boundaries that this is additive to the manager's pre-existing absolute no-kill-authority
+  boundary, not a new carve-out. Sync-propagated bundle copy. Verification metadata pinned until
+  closeout stamps the HFX-L7 commit.
 - 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: documented the manager
   -> builder -> reviewer -> curator leaf closeout chain; manager spawns a fresh curator after
   builder code and reviewer verdict are available, and leaf closeout inputs are builder code +

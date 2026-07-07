@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T00:05+02:00 |
-| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b` |
-| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -59,6 +59,21 @@ near-perfect graph and fresh mtimes/touches drive the event-driven watchers
 over exactly the delta), the implicit refresh-all fallback is off by default,
 and from-zero rebuilds are explicit only (`cgc refresh` or the opt-in
 fallback flag); index-lifecycle rows ride the same central metrics log.
+260707-HFX-L7 builds the RESPONSE protocol on top of that same central metrics log: NEW
+`providers/degradation.py` is a provider-only detector/state-machine
+(healthy/degraded/critical, hysteresis-gated so alerts do not flap) that `serving/app.py`'s
+sampling loop calls once per tick; on a state-change transition it writes a durable event/state
+pair under `logs/observer/providers/degradation-*` (survives daemon restart), posts
+role-addressed `degradation-alert` inbox rows to the orchestrator and every active manager
+(instructing managers to stop starting providers with no kill authority, and the orchestrator to
+dispatch the new `system-specialist` role before ordering a fix or stopping providers), and — at
+`critical` with the failsafe armed — stops provider stacks through the always-legal teardown path,
+capturing (never losing) a raising stopper's failure inside the durable event. NEW
+`mcp/provider_degradation_settings.py` is the dedicated `providerDegradation` settings parser
+(15-key fail-loud allowlist, conservative enabled/armed defaults) `mcp/config.py` wraps into
+`ConfigError`. This iteration is providers-only by developer ruling; Sentry
+(260703_spotlight-dev-observability) is the designated future detection source that can
+replace/feed the same response protocol without redoing it.
 
 ## Hot Path Summary
 
@@ -493,9 +508,18 @@ into the role files.
 | Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 | The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py); [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py); [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py); [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
+| The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact: the package gains the provider degradation
+  protocol — NEW `providers/degradation.py` (detector/state-machine + durable events +
+  role-addressed inbox alerts + critical-threshold failsafe stop) and NEW
+  `mcp/provider_degradation_settings.py` (the `providerDegradation` settings parser
+  `mcp/config.py` now wraps); `serving/app.py`'s metrics sampling loop calls the detector once per
+  tick. Providers-only this iteration; Sentry (260703_spotlight-dev-observability) is the
+  designated future detection source. Verification metadata pinned until closeout stamps the
+  HFX-L7 commit.
 - 2026-07-08T00:05+02:00 — 260707-HFX-L5 route impact (catalog liveness hysteresis): the serving
   domain gains `serving.terminal_liveness` — a rate-limited, non-overlapping liveness sweeper
   behind `GET /api/terminal/sessions` plus the shared per-row observation path WebSocket attach

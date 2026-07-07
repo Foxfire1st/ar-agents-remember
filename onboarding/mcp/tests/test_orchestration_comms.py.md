@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_orchestration_comms.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T22:21+02:00 |
-| lastVerifiedCommitHash |                                            `2c464cf4c29b60165fecae722bf76c307aaac6f1`|
-| lastVerifiedCommitDate |                                            2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00 |
+| lastVerifiedCommitHash |                                            `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`|
+| lastVerifiedCommitDate |                                            2026-07-08T01:34:58+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -34,7 +34,9 @@ orchestrator (the new `OrchestrationRole` literal's ladder entry). HFX-L6 adds
 `test_orchestrator_escalates_to_architect` and `test_architect_escalates_to_developer`
 to pin the new architect rung. L6R4 adds `test_curator_escalates_to_manager` so the
 dedicated onboarding-writer seat is typed by the artifact helper and returns blockers to the
-owning manager.
+owning manager. 260707-HFX-L7's R2 fix round adds `test_system_specialist_escalates_to_orchestrator`
+(closes reviewer F5): asserts `escalation_packet(from_role="system-specialist", ...).toRole ==
+"orchestrator"`, pinning the provider-degradation investigator's escalation rung.
 
 ### Conventions
 
@@ -61,6 +63,10 @@ As of the 260703-L9 lifecycle convergence, the artifact-helper test pins the tur
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 R2 fix round (closes reviewer F5): added
+  `test_system_specialist_escalates_to_orchestrator` pinning the new
+  `system-specialist -> orchestrator` escalation rung in `escalation_packet`. Verification
+  metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: added
   `test_curator_escalates_to_manager` for the artifact helper's curator role/escalation coverage.
   Verification metadata pinned until closeout stamps the HFX-L6 commit.

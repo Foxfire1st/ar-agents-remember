@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`   |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-07T22:21+02:00 |
-| lastVerifiedCommitHash |                                                                     `2c464cf4c29b60165fecae722bf76c307aaac6f1`|
-| lastVerifiedCommitDate |                                                                     2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00 |
+| lastVerifiedCommitHash |                                                                     `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`|
+| lastVerifiedCommitDate |                                                                     2026-07-08T01:34:58+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -39,6 +39,11 @@ As of HFX-L6 the literal also carries `architect`; `_ROLE_ESCALATION` maps
 As of L6R4 the literal also carries `curator`; `_ROLE_ESCALATION` maps
 `curator -> manager`, so onboarding-writer blockers return to the owning manager instead of
 skipping a rung or falling outside the typed role set.
+As of 260707-HFX-L7 (R2 fix round, closes reviewer F5) the literal also carries
+`system-specialist`; `_ROLE_ESCALATION` maps `system-specialist -> orchestrator` — the
+provider-degradation investigator escalates to its dispatcher, matching the SKILL.md escalation
+ladder (`system-specialist → orchestrator`) that R1 had landed in doctrine without the matching
+code-side enum/ladder entry.
 
 ### Conventions
 
@@ -63,6 +68,12 @@ their own workflow.
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 R2 fix round (closes reviewer F5, role-enum sibling
+  gap): added `system-specialist` to `OrchestrationRole` and routed
+  `system-specialist -> orchestrator` in `_ROLE_ESCALATION`, matching the SKILL.md escalation
+  ladder the R1 builder pass had already landed in doctrine. Pinned by
+  `test_system_specialist_escalates_to_orchestrator` in `test_orchestration_comms.py`.
+  Verification metadata pinned until closeout stamps the HFX-L7 commit.
 - 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: added
   `curator` to `OrchestrationRole` and routed curator escalations/blockers to `manager` in
   `_ROLE_ESCALATION`. Verification metadata pinned until closeout stamps the HFX-L6 commit.

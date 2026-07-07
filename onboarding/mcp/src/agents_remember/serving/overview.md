@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T23:45+02:00 |
-| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b`       |
-| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
+| lastUpdated            | 2026-07-08T01:00+02:00 |
+| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`       |
+| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -66,7 +66,13 @@ it snapshots labeled provider containers read-only
 (`providers/metrics.sample_provider_containers`) into the `ProviderMetricsStore` under
 `logs/observer/providers/` — exception-tolerant (a failed docker probe logs and retries
 next interval), dockerless-safe, cancelled at shutdown; `provider_status` and the
-HFX-L7 degradation protocol read that store. `GET /api/stream` emits `event:snapshot` then per-entity `lifecycle`/`enclosure`/
+HFX-L7 degradation protocol read that store. **260707-HFX-L7 (landed):** the same sampling-loop
+iteration, in the same exception-tolerant `try` block, now also calls
+`await asyncio.to_thread(evaluate_provider_degradation, config)` immediately after the metrics
+record — no separate task, no separate cadence; the degradation detector's durable
+events/state/inbox-alerts/critical-failsafe live entirely in `providers/degradation.py` (governed
+by the `mcp/` package overview), this route's `app.py` only wires the one extra call into the
+loop it already owns. `GET /api/stream` emits `event:snapshot` then per-entity `lifecycle`/`enclosure`/
 `provider`/`metrics`/`analytics` (and `*.removed`) events; `GET /api/state` returns the
 projection once; `GET /api/events` tails the raw `ar-observer-event/v1` log with exact
 byte-offset `Last-Event-ID` resume (`serving.events`), doing one retained-backlog scan per connect,
@@ -408,9 +414,17 @@ the only destructive terminal action.
 | The umbrella CLI entry that launches the server (and wires `--sim`). | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
 | The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
 | The containment metrics sampler + store the lifespan loop drives (260707-HFX-L1 R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
+| The provider degradation detector the sampling loop now also calls once per tick (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
 
 ## Update History
 
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `app.py`'s metrics sampling loop
+  now also calls `await asyncio.to_thread(evaluate_provider_degradation, config)` right after
+  recording the metrics snapshot, sharing the loop's existing exception-tolerant handling and 30s
+  cadence — no new task, no new endpoint. The detector's own behavior (state machine, durable
+  events, inbox alerts, critical failsafe) is owned by `providers/degradation.py` under the `mcp/`
+  package overview, not this route. Verification metadata pinned until closeout stamps the
+  HFX-L7 commit.
 - 2026-07-07T23:45+02:00 — 260707-HFX-L5 route impact (catalog liveness hysteresis): the route
   gains `terminal_liveness.py` — `TerminalCatalogLivenessSweeper` (rate-limited 10s, non-overlapping;
   rate-limited/concurrent callers get the persisted catalog without probing) +
