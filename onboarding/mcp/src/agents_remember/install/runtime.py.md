@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T22:40+02:00|
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T16:30+02:00|
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -54,8 +54,13 @@ preserve durable `providers/data` and central logs under `logs/`.
 `source_root_from_package()` locates the packaged runtime assets by walking
 upward from the installed module until it finds the source/runtime asset tree.
 `install_runtime_from_config()` is the MCP entrypoint: it derives the target root
-from `McpRuntimeConfig`, generates provider lifecycle settings from MCP
-settings, and calls package-local provider lifecycle install functions when
+from `McpRuntimeConfig`, generates provider lifecycle settings from the LIVE
+on-disk provider authority (`reload_provider_authority(config).apply(config)`;
+containment R1, 260707-HFX-L1 — the watcher rebind's stop→start cycle is a
+launch path, so it must never run off a stale boot snapshot; an empty or
+unreadable fail-closed live map yields disabled settings that turn the rebind
+off while the runtime install itself proceeds), and calls package-local
+provider lifecycle install functions when
 provider deps are enabled. It threads `no_cache` through to the provider
 lifecycle install calls:
 by default image builds skip any image whose tag already exists, and
@@ -71,7 +76,10 @@ clients reach it through the `runtime_install` tool.
 - The MCP package path is the runtime-install owner; source checkout installer
   scripts must not remain as a parallel route.
 - MCP provider dependency install must use generated settings from
-  `McpRuntimeConfig`.
+  `McpRuntimeConfig`, with the providers map re-read from the on-disk
+  authority (containment R1): the watcher rebind is a launch path, so a
+  disk-disabled or unreadable authority disables the rebind while the install
+  itself still proceeds.
 - Full provider reinstall can replace Docker runner instances and image build
   roots, but must stop/restart enabled watchers around that replacement and
   must preserve `providers/data` and central logs under `logs/`.
@@ -100,6 +108,13 @@ clients reach it through the `runtime_install` tool.
 | Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, unrecovered failure reporting, and dependency-install failure recovery. | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
 
 ## Update History
+
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `install_runtime_from_config`
+  now derives the rebind `provider_settings` from the live on-disk authority
+  (`reload_provider_authority(config).apply(config)`) instead of the boot snapshot, so the
+  watcher stop→start rebind cannot launch off stale config; a disabled/unreadable live map
+  disables the rebind while the install proceeds. Verification metadata pinned until closeout
+  stamps the HFX-L1 commit.
 
 - 2026-07-06T22:40+02:00 — 260703-L13 (settings unification): added `seed_agentic_settings`
   — the global agentic settings file is seeded copy-if-missing at the user-owned insertion

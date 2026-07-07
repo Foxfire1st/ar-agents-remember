@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-06T23:59:30+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T16:50+02:00 |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -59,6 +59,9 @@ authoring writes `seriesContractPath` plus `enclosures[]` instead of the retired
   directly rather than CLI `main(argv)` wrappers.
 - Keep each controller file scoped by domain; do not rebuild the former
   `skill_tools.py` mega-facade.
+- Launch-capable provider operations re-read the on-disk authority fail-closed
+  (containment R1, 260707-HFX-L1); controllers must never launch providers off
+  the boot-snapshot config, while stop/status/cleanup stay ungated.
 
 L14: the task-doc controller accepts the additive `orchestrates` field (master-only) through create/set_field, feeding the dashboard's command hierarchy; docs without it are untouched.
 
@@ -89,7 +92,29 @@ passthrough on either path silently reverts that guard to human-only semantics,
 which is exactly the inert-consumer defect adversarial review 3 caught on the
 integrate side.
 
+Provider launch containment (260707-HFX-L1, containment R1): the provider,
+worktree, and benchmark controllers all treat the ON-DISK authority settings —
+not the boot-snapshot config — as the provider launch authority.
+`provider_tools.py` gates watcher `start`/`restart`/`invalidate-indexes` and
+the launch-capable GrepAI/CGC query tools (one-shot runner containers) through
+`require_provider_launch_authority` — fail-closed `ConfigError` when the disk
+disables providers or cannot be read; `stop`/`status`/`shutdown-all` stay
+legal. `worktree_tools.py` re-reads the authority before provider setup and
+writes lifecycle settings from the LIVE map only when armed, attaching a
+`providersAuthority` veto block to the result when the disk vetoed an armed
+boot snapshot (the worktree itself is still created). `benchmark_tools.py`
+passes the live authority's provider ids as `allowed_provider_ids` on both
+benchmark requests, so a case manifest cannot arm providers disabled on disk.
+
 ## Update History
+
+- 2026-07-07T16:50+02:00 — 260707-HFX-L1 route impact (provider containment R1): `provider_tools.py`
+  gates launch-capable watcher actions and query tools on the live on-disk authority
+  (`require_provider_launch_authority`, fail-closed; stop/status/shutdown-all ungated),
+  `worktree_tools.py` re-reads the authority before provider setup (live-map settings when armed,
+  `providersAuthority` veto block otherwise, worktree creation unaffected), and
+  `benchmark_tools.py` threads the live provider-id set as `allowed_provider_ids` into both
+  benchmark requests. Verification metadata pinned until closeout stamps the HFX-L1 commit.
 
 - 2026-07-06T23:59:58+02:00 — L14 route impact (body): task_doc_tools carries the additive master-only `orchestrates` field end-to-end. Verification metadata pinned until closeout stamps the L14 commit.
 

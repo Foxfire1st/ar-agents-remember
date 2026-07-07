@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T05:10+02:00                    |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T16:30+02:00                    |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -45,12 +45,24 @@ both default to live behaviour) plus a `TerminalHost` (`terminal_host` defaults 
 tests inject a fake), a `TerminalCatalog` at `coordination_root/logs/dashboard/terminal-sessions.json`
 (`terminal_catalog` is test-injectable), and (L2) a `TerminalPaster` (`terminal_paster` defaults to a
 fresh one; tests inject a fake for the paste endpoint). It wires a FastAPI `lifespan` that `prime()`s the projector
-(one initial projection), runs its tick loop as a task, and on shutdown cancels that task and calls
+(one initial projection), runs its tick loop as a task beside the provider metrics sampling task,
+and on shutdown cancels both tasks (awaiting each under `CancelledError` suppression) and calls
 `host.shutdown()`. Endpoints:
 
 When `refresh_provider_state` is left as `None`, live mode (`before_tick is None`)
 constructs a `ProviderStateRefresher`, while sim mode disables provider refresh so replayed
 fixtures stay deterministic. Tests can still force either branch explicitly.
+
+The provider metrics loop (containment R4, 260707-HFX-L1) makes the serving daemon the
+central containment sampler: `create_app` builds a
+`ProviderMetricsStore(config.coordination_root)` and the lifespan runs `metrics_loop()` as a
+task beside the projector — each pass calls `sample_provider_containers` and
+`ProviderMetricsStore.record` via `asyncio.to_thread`, then sleeps
+`DEFAULT_SAMPLE_INTERVAL_SECONDS` (30s, deliberately decoupled from the 1s projection tick).
+The loop is exception-tolerant: any failure is logged through the module `logger`
+(`logger.exception`) and the loop retries next interval, so one failed docker probe never
+kills sampling. The store feeds `provider_status`, the degradation protocol (260707-HFX-L7),
+and the statistics board later; sampling is read-only and dockerless-safe.
 
 - `GET /api/state` returns the current projection once as `model_dump(by_alias=True,
   exclude_none=True)` plus the boot-time `servingBuild` stamp (503 until the first projection
@@ -217,6 +229,9 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
   dead/exited session frees its slot because `active_for_leaf` gates on `status == "running"`.
 - **Sim is a seam, not a fork:** `now`/`before_tick` default to live; `cli.dashboard` passes a
   replay clock + fixture feeder under `--sim` and the path is otherwise byte-identical.
+- **Metrics sampling is observation, not control (containment R4):** the loop is read-only and
+  dockerless-safe, runs on its own 30s cadence (never the 1s tick), and must survive sampling
+  failures — a failed pass logs and retries next interval; shutdown cancels it cleanly.
 - `McpRuntimeConfig`/`datetime` are imported under `TYPE_CHECKING` (config is only passed on).
 
 ## Repo-Internal References
@@ -240,9 +255,15 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The read-only change-set API registered right after the files routes (operations-integration L3). | [changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
 | The served projection shape + `ActionAvailability`. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 | The CLI adapter that builds and serves this app (and wires sim). | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
+| The central containment metrics store + sampler the lifespan loop drives (containment R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
 
 ## Update History
 
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R4): the lifespan now starts a
+  provider metrics sampling task beside the projector — `sample_provider_containers` →
+  `ProviderMetricsStore.record` every `DEFAULT_SAMPLE_INTERVAL_SECONDS` (30s, decoupled from the
+  1s tick), exception-tolerant loop (module `logger` added), cancelled and awaited at shutdown.
+  Verification metadata pinned until closeout stamps the HFX-L1 commit.
 - 2026-07-07T12:40+02:00 — L16 adversarial-review follow-up (L16R-1): registry load scoped to harness-resolving opens; scratch terminals immune to settings errors; regression test added. Verification metadata pinned until closeout stamps the L16 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `GET /api/harnesses` and the
   `POST /api/terminal/{session}` opener now resolve against the EFFECTIVE harness registry

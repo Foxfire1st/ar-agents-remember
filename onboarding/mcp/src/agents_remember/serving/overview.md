@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T05:36+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T16:50+02:00 |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021`       |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -56,7 +56,14 @@ through the byte-identical path.
 `project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diffs each
 projection against the last
 (`serving.delta.diff_projection`), and fans **per-entity deltas** out to every SSE
-client. `GET /api/stream` emits `event:snapshot` then per-entity `lifecycle`/`enclosure`/
+client. Beside the projector task, the same lifespan runs the **provider containment
+metrics sampler** (260707-HFX-L1, containment R4): every 30s
+(`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the 1s projection tick)
+it snapshots labeled provider containers read-only
+(`providers/metrics.sample_provider_containers`) into the `ProviderMetricsStore` under
+`logs/observer/providers/` — exception-tolerant (a failed docker probe logs and retries
+next interval), dockerless-safe, cancelled at shutdown; `provider_status` and the
+HFX-L7 degradation protocol read that store. `GET /api/stream` emits `event:snapshot` then per-entity `lifecycle`/`enclosure`/
 `provider`/`metrics`/`analytics` (and `*.removed`) events; `GET /api/state` returns the
 projection once; `GET /api/events` tails the raw `ar-observer-event/v1` log with exact
 byte-offset `Last-Event-ID` resume (`serving.events`), doing one retained-backlog scan per connect,
@@ -83,7 +90,10 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 ## Route Model
 
 - `app.py` — `create_app(config, *, interval, now, before_tick, refresh_provider_state)` builds the FastAPI app: a
-  lifespan that primes + runs one shared `Projector`, `GET /api/state` (one-shot; **260703-L15
+  lifespan that primes + runs one shared `Projector` plus the 30s provider containment
+  metrics loop (260707-HFX-L1 R4 — `sample_provider_containers` → `ProviderMetricsStore.record`
+  via `asyncio.to_thread`, exception-tolerant, both tasks cancelled + awaited at shutdown),
+  `GET /api/state` (one-shot; **260703-L15
   change-gated** — weak `ETag: W/"<projector.revision(seq)>"` + `Cache-Control: no-cache`,
   `If-None-Match` weak-matches → `304` empty-body via `_if_none_match_matches`, and the body
   carries the boot-time `servingBuild` stamp),
@@ -337,6 +347,10 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   historical raw row, and then emit a `ready` marker. They stay separate.
 - **Sim is a seam, not a fork.** Only `now` + `coordination_root` differ from live, so the
   SSE output is byte-identical and replay is deterministic.
+- **Containment metrics are observation, not control (260707-HFX-L1 R4).** The lifespan's
+  sampler is read-only + dockerless-safe, discovers stacks by ownership label (no settings
+  needed, leftover stacks stay visible), runs on its own 30s cadence — never the projection
+  tick — and never gates or launches providers; a failed pass logs and retries.
 
 ## Repo-Internal References
 
@@ -349,6 +363,7 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 | The `--config` → `McpRuntimeConfig` contract the CLI mirrors. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | The umbrella CLI entry that launches the server (and wires `--sim`). | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
 | The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| The containment metrics sampler + store the lifespan loop drives (260707-HFX-L1 R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
 
 ## Update History
 
@@ -357,6 +372,14 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   `files.read_file` + `_onboarding_doc_body` — an oversize file whose multi-byte char straddles the
   2-MiB cap now returns its first ~2 MiB with `truncated:true` instead of empty `binary`; the serving
   route model this overview describes is unchanged (detail in the file sidecars).
+  (Stamp is part of the known pre-L2 timestamp-rot corpus condition — the entry predates the
+  16:50 one below despite its stamp; MHR-L2 owns the forensic restamp.)
+- 2026-07-07T16:50+02:00 — 260707-HFX-L1 route impact (containment R4): `app.py`'s lifespan now
+  runs the provider metrics sampling task beside the projector — `sample_provider_containers` →
+  `ProviderMetricsStore.record` every 30s (decoupled from the projection tick),
+  exception-tolerant, cancelled at shutdown — making the serving daemon the central containment
+  sampler feeding `provider_status`, the statistics board, and the HFX-L7 degradation protocol.
+  Verification metadata pinned until closeout stamps the HFX-L1 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `harnesses.py` grew the per-harness
   knob→flag mapping (two-vehicle claude effort vocabulary incl. session-level `ultracode`),
   effective-registry lookups, and the dispatch refusal helpers; `terminal_opener.py` applies the

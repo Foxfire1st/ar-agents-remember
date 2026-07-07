@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T05:44+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T17:40+02:00 |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -39,6 +39,17 @@ land in series `notes/reports/`, and the handover gate carries
 `reviewer-verdict` evidence refs that L4 policy may require. Since L12 every managed
 provider container carries an explicit compose memory cap (watchers 512m,
 falkordb/ollama 2g, runner 1g, postgres 512m) with self-recycling OOM behavior.
+260707-HFX-L1 adds the containment layer above those per-container caps: the
+on-disk authority settings — never a running server's boot snapshot — are the
+provider LAUNCH authority (launch-capable operations re-read them fail-closed;
+stop/status/cleanup are never gated, so `providers: {}` on disk is a live
+fleet-wide kill-switch), provider setup is serialized host-wide by a
+HOST-scoped setup-lock flock in the system temp dir (one non-dry-run prepare
+at a time bounds the aggregate container load — the 2026-07-07 OOM was
+concurrent setups summing past the host; the lock lives outside every
+coordination root because those trees are prunable/per-workspace), and the
+serving daemon centrally samples labeled provider containers
+into a metrics store that provider status attaches.
 
 ## Hot Path Summary
 
@@ -53,6 +64,12 @@ and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned
 runtime installation. Provider status is composed in `providers/status.py`; the serving/observer path can
 refresh the persisted provider current-state snapshot before live dashboard projection so provider rows are
 not limited to the last explicit diagnostics/status command.
+`providers/metrics.py` (260707-HFX-L1, containment R4) is the central
+containment metrics module: the serving daemon samples labeled provider
+containers (label-discovered, read-only, dockerless-safe) into its store under
+`logs/observer/providers/` (`metrics.jsonl` + replace-atomic
+`metrics-current.json`), and `provider_status` attaches the current snapshot
+even while providers are disabled so leftover stacks stay observable.
 provider lifecycle settings are generated from MCP settings in
 `providers/settings.py`. Provider lifecycle implementation is now split between
 the `providers/lifecycle/` facade/shared helpers and provider-owned
@@ -107,7 +124,13 @@ The MCP package separates three surfaces:
   top-level families tolerated — `contextProviders` is reserved to return
   there). `mcp/config.py` keeps ONE boot-snapshot consumer: gateDelegation is
   read from the global file at boot, with a warned one-cycle authority-file
-  legacy fallback; `runtime_install` seeds the global file copy-if-missing and
+  legacy fallback. The authority file's `providers` map runs the OPPOSITE way
+  since 260707-HFX-L1 (containment R1): the boot snapshot is NOT launch
+  authority — launch-capable operations re-read the map from disk through
+  `reload_provider_authority`/`require_provider_launch_authority` (unreadable
+  or invalid ⇒ fail-closed refusal, never a snapshot fallback), so editing
+  `providers` to `{}` bites running servers immediately while stop/status/
+  cleanup stay legal; `runtime_install` seeds the global file copy-if-missing and
   `spawn_agent_session` resolves its knobs through the loader (260703-L16:
   explicit args > repo-local level override > global level override >
   repo-local role default > global role default > detection-gated; ids against
@@ -419,6 +442,17 @@ into the role files.
   provider runner command executes inside the Linux container, so paths are
   rendered via `to_container_path` (`providers/context_common.py`) — host-form
   `C:/` paths fail silently into expensive fallbacks (GitHub #58).
+- Provider containment (260707-HFX-L1): every launch-capable operation —
+  watcher start/restart/invalidate-indexes, the one-shot GrepAI/CGC query
+  runners, worktree provider setup, the runtime-install watcher rebind, and
+  benchmark provider synthesis — re-reads the on-disk authority fail-closed
+  (R1); stop/status/cleanup are never gated. Non-dry-run provider setup is
+  serialized host-wide through the host-scoped `fleet_setup_lock_path()`
+  flock in the system temp dir — never under a coordination root, which
+  `runtime_install` prunes, nor a per-workspace benchmark root
+  (R2). Containment metrics are daemon-sampled, label-discovered, and
+  read-only (R4) so leftover stacks from dead sessions stay observable
+  without any settings file.
 
 ## Repo-Internal References
 
@@ -435,9 +469,26 @@ into the role files.
 | Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
+| The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py); [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py); [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py); [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 
 ## Update History
 
+- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes: the setup lock moved HOST-scoped
+  (`fleet_setup_lock_path()` in the system temp dir — B1: `runtime_install` prunes `providers/`;
+  B2: benchmark workspace roots must serialize on the same host lock); the benchmark filter's
+  `None` default is fail-closed with an env escape (B4); `mcp_registration.py` gained the
+  stale-registration sweep opened by both service entry points (B3); query funnels gate on their
+  SPECIFIC provider; `docker stats` is fed only running names. Detail in the file sidecars.
+  Verification metadata pinned until closeout stamps the HFX-L1 commit.
+- 2026-07-07T16:50+02:00 — 260707-HFX-L1 (provider containment) route impact: the on-disk
+  authority's `providers` map is now the LIVE launch authority (`mcp/config.py`:
+  `ProviderAuthority`/`reload_provider_authority`/`require_provider_launch_authority`,
+  fail-closed) consumed by the provider/worktree/benchmark controllers, the runtime-install
+  rebind, and worktree provider setup; provider setup is serialized fleet-wide
+  (`providers/provider_setup.py` `.setup.lock`, R2); NEW `providers/metrics.py` (R4) is the
+  central containment metrics store/sampler, fed by the serving daemon's 30s loop and attached
+  to `provider_status`; NEW suite `mcp/tests/test_provider_containment.py` pins the layer.
+  Verification metadata pinned until closeout stamps the HFX-L1 commit.
 - 2026-07-07T06:10+02:00 — No route impact: PR #100 review fixes (merge `e358c4a`, landing the
   260703_agent-orchestration series) added an empty-list refusal to `kernel/agentic_settings.py`'s
   free-form knob parsing and a memory-source-branch guard to `worktrees/modules/start.py`'s

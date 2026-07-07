@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-07T17:40+02:00     |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -53,6 +53,26 @@ and rides it on the args namespace (the established state-carrier pattern);
 Without a sink every announcement is a no-op, so CLI behavior is unchanged
 (GitHub #53).
 
+`_fleet_setup_lock(lock_path, timeout)` (containment R2, 260707-HFX-L1)
+serializes provider setup host-wide: `_action_payload_from_args` wraps
+`_action_results` in the lock for `action="prepare"` non-dry runs, passing
+`fleet_setup_lock_path()` — a HOST-scoped path,
+`<tempdir>/agents-remember-provider-setup-<uid>.lock` (`tempfile.gettempdir()`;
+uid from `os.getuid()`, `shared` where the platform has none). The lock
+deliberately lives outside every coordination root: `runtime_install` prunes
+`providers/`, so a coordination-root lock file was deleted mid-hold (review
+B1), and benchmark prepares run against workspace-local coordination roots
+that must still serialize with fleet setups because the guarded resource is
+the HOST's memory/docker daemon, not any one root (review B2). The lock is an
+`fcntl` exclusive flock; the holder writes its pid and UTC timestamp into the
+file, and a waiter polls non-blocking every 2s up to the setup timeout, then
+raises a loud `RuntimeError` naming the lock path instead of piling on. The
+2026-07-07 OOM was an aggregate storm — several sessions launched provider
+stacks concurrently, each inside its per-container caps (L12) but summing
+past the host — so one setup at a time bounds the aggregate. On non-POSIX
+hosts (`fcntl` unavailable) the lock is a guarded no-op; the docker-backed
+provider stack is POSIX-hosted anyway.
+
 ### Invariants And Boundaries
 
 - MCP worktree provider setup must pass `--from-settings`; it must not depend on
@@ -73,6 +93,11 @@ Without a sink every announcement is a no-op, so CLI behavior is unchanged
   reported through provider status/current-state files.
 - Isolated workflow settings should have one canonical payload shape:
   `isolatedProviderSettings`.
+- Non-dry-run `prepare` actions are serialized host-wide through the
+  `fleet_setup_lock_path()` flock (containment R2); the lock must never live
+  under a coordination root or benchmark workspace — those trees are prunable
+  or per-workspace while the guarded resource is the host — and a waiter that
+  exhausts the setup timeout must fail loudly, never queue silently past it.
 
 ## Repo-Internal References
 
@@ -85,9 +110,22 @@ Without a sink every announcement is a no-op, so CLI behavior is unchanged
 | Provider-specific setup branches live in provider-owned setup modules. | [CGC setup](cgc/setup.py.md); [GrepAI setup](grepai/setup.py.md) |
 | Shared settings and command helpers live in the setup common module. | [setup_common.py](setup_common.py.md) |
 | Setup payload summaries and failed-phase compaction live in the setup reporting module. | [setup_reporting.py](setup_reporting.py.md) |
+| Containment tests pin the fleet setup lock's contention timeout and uncontended no-op. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 
 ## Update History
 
+- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes B1/B2: the setup lock moved HOST-scoped —
+  new `fleet_setup_lock_path()` at `<tempdir>/agents-remember-provider-setup-<uid>.lock` and
+  `_fleet_setup_lock` now takes the explicit `lock_path` (B1: `runtime_install` prunes
+  `providers/`, so the coordination-root lock died mid-hold; B2: benchmark prepares run against
+  workspace-local coordination roots and must serialize on the same host lock — the guarded
+  resource is the host). Verification metadata pinned until closeout stamps the HFX-L1 commit.
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R2): added the `_fleet_setup_lock`
+  context manager (fcntl flock at `<coordinationRoot>/providers/.setup.lock`, holder pid+timestamp
+  written, waiter deadline = the setup timeout then a loud `RuntimeError`, POSIX-guarded no-op
+  elsewhere) and wrapped `_action_results` in it for non-dry-run `prepare` actions, so provider
+  setup is serialized fleet-wide. Verification metadata pinned until closeout stamps the HFX-L1
+  commit.
 - 2026-06-10T07:30+02:00 — `run_provider_setup(request, progress=None)` accepts a `SetupProgress` sink and rides it on the args namespace (the established state-carrier pattern); `_watcher_results` announces `watchers start`/`watchers status` phases. With no sink everything is a no-op, so CLI behavior is unchanged (GitHub #53).
 - 2026-06-01T20:45+02:00 — Provider setup no longer starts the grepai watcher early; it starts once at `_watcher_results` after the DB clone, cgc seed, and index-root copy, so the watcher never sees files mid-copy (OQ7 copy-first / watch-last ordering).
 - 2026-05-31T12:50+02:00 — Pruned unused compatibility re-exports (`command_display`, `expand_template`, `load_json`, `parse_json_stdout`, `stable_provider_id`, `subprocess_env`, `cgc_seed_source_extra_args`, `cgc_seed_source_settings_path`, `configured_cgc_repo_root`, `git_head`, `write_isolated_cgc_settings`, `path_replacements`, `rewrite_json_value`, `rewrite_string`) and dropped the `coordination_root` argument from `load_settings`/`settings_path` calls; corrected the Logic prose's "preserves the public symbols ... subprocess helper exports" claim to the narrowed export set (1.0.0 review remediation).
