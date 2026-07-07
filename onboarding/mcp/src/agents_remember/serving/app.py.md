@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T16:30+02:00                    |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-07T23:20+02:00                    |
+| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5` |
+| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ detached tmux session — a shell or a detected harness (6e-2a/6e-2b), and since
 `serving.terminal_opener.open_terminal_session` so this route and the agent-facing `spawn_agent_session`
 MCP tool spawn through ONE opener — the L5/L9
 `POST /api/terminal/{session}/attach-leaf` leaf-claim/move route, the **L2**
-`POST /api/terminal/{session}/paste` server-side echo-confirmed context-packet paste, the `GET /api/harnesses` detection
+`POST /api/terminal/{session}/paste` server-side capture-verified context-packet paste, the `GET /api/harnesses` detection
 endpoint (6e-2b), image upload under a live or catalog-restored cwd, the read-only `/api/files/*` files API
 (operations-integration L1) and the read-only `/api/changeset/*` change-set API (L3) — both registered
 just before the static mount — and the static mount. It is the
@@ -141,7 +141,10 @@ and the statistics board later; sampling is read-only and dockerless-safe.
   tmux session that has no attached browser client. `TerminalPasteRequest` carries `text` + `submit`
   (default false). It `404 {"status":"unknown-session"}`s when the row is unknown/non-running or its tmux
   session is gone (marking a stale running row `exited`); otherwise it runs `paster.paste(entry.tmux_name,
-  text, submit=submit)` and returns `{session, status:"delivered"|"unconfirmed", delivered, submitted}`.
+  text, submit=submit)` — the same capture-verified paster mechanic as the spawn tool, no separate
+  path — and returns `{session, status:"delivered"|"unconfirmed", delivered, submitted}`; since
+  260707-HFX-L3 an unconfirmed outcome additionally ships `capture` (the paster's final pane
+  snapshot) as loud-failure evidence, omitted when delivered.
 - `POST /api/terminal/{session}/attach-leaf` claims or **moves** a leaf for an **existing** session from
   the Chats page — enclosure-free, no respawn. `TerminalAttachLeafRequest` carries the required `leafKey`;
   the route delegates to `assign_terminal_session_to_leaf(catalog, session_id, leaf_key)`, so browser
@@ -248,7 +251,7 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The durable terminal-session catalog persisted by the opener, sessions endpoint, and terminate route. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
 | The shared hosted-session opener (L2) both this route and the `spawn_agent_session` tool compose. | L84-L174 | [terminal_opener.py](terminal_opener.py) |
-| The server-side echo-confirmed paste helper the L2 `/paste` endpoint drives. | L133-L229 | [terminal_paste.py](terminal_paste.py) |
+| The server-side capture-verified paste helper the L2 `/paste` endpoint drives (260707-HFX-L3: unconfirmed ships the pane capture). | L133-L229 | [terminal_paste.py](terminal_paste.py) |
 | The harness launch registry the opener + `/api/harnesses` consume (slice 6e-2b). | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
 | The static-bundle resolver/mount. | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
 | The read-only files API registered just before the static mount (operations-integration L1). | [files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
@@ -259,6 +262,14 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 
 ## Update History
 
+- 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2: the paste endpoint attaches the pane `capture`
+  on submit-failure too (`not delivered or (submit and not submitted)`), tested in both directions;
+  the per-field `status` stays truthful (`"delivered"` even when submit failed).
+- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): the `/paste` endpoint's
+  unconfirmed response now ships `capture` — the paster's final pane snapshot — as loud-failure
+  evidence (omitted on delivered); same paster mechanic as the spawn tool, no separate path. The
+  route shape is otherwise unchanged. Verification metadata pinned until closeout stamps the
+  HFX-L3 commit.
 - 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R4): the lifespan now starts a
   provider metrics sampling task beside the projector — `sample_provider_containers` →
   `ProviderMetricsStore.record` every `DEFAULT_SAMPLE_INTERVAL_SECONDS` (30s, decoupled from the

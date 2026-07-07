@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-04T12:31+02:00                                 |
-| lastVerifiedCommitHash |                                                        `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                        2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T22:15+02:00                                 |
+| lastVerifiedCommitHash |                                                        `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`|
+| lastVerifiedCommitDate |                                                        2026-07-07T20:09:01+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -30,7 +30,14 @@ exists through `TerminalHost.has_session`, formats an inbox block with message
 kind, sender, optional artifact path, ask, and response, then calls
 `TerminalPaster.paste(..., submit=True)`. The same inbox entry is updated through
 `OperatorInboxStore.record_delivery(...)` with `delivered`, `unconfirmed`, or
-`no-hosted-session` metadata.
+`no-hosted-session` metadata. Since 260707-HFX-L3 the unconfirmed
+`deliveryDetail` is the loud-failure forensic record: `_unconfirmed_detail`
+embeds the paster's final pane capture, TAIL-bounded to
+`_CAPTURE_EVIDENCE_LIMIT` (2000 chars — the freshest pane output), so the
+re-briefing operator reads what the pane actually showed rather than a bare
+"not echoed"; an empty capture (vanished session) records
+"paste was not capture-verified (empty pane capture)". The SUCCESS detail
+string stays exactly `"echo-confirmed"` — dashboard copy references it.
 
 ### Conventions
 
@@ -42,8 +49,11 @@ missing or unconfirmed.
 
 - A catalog row alone is not enough; the tmux session must also pass
   `TerminalHost.has_session`.
-- `delivered` means the terminal paster saw a real composer echo, not merely pane
-  output during harness boot.
+- `delivered` means the terminal paster capture-verified the paste on the pane,
+  not merely pane output during harness boot.
+- An unconfirmed push must carry its evidence: the durable `deliveryDetail`
+  embeds the bounded pane-capture tail (260707-HFX-L3), and the success detail
+  stays the exact string `"echo-confirmed"` (dashboard copy depends on it).
 - The formatted stdin text is simple Markdown-ish text for agents, not a hidden
   protocol.
 
@@ -57,4 +67,9 @@ missing or unconfirmed.
 
 ## Update History
 
+- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): the unconfirmed
+  `deliveryDetail` now embeds the paster's pane capture, tail-bounded to 2000 chars
+  (`_unconfirmed_detail` + `_CAPTURE_EVIDENCE_LIMIT`; empty capture gets its own loud wording);
+  the success detail string `"echo-confirmed"` is unchanged. Verification metadata pinned until
+  closeout stamps the HFX-L3 commit.
 - 2026-07-04T12:31+02:00 - L3: created the hosted inbox push-delivery helper card. Verification metadata pinned until closeout stamps the L3 commit.

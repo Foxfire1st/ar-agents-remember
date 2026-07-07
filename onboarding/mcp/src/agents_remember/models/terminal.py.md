@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-07T09:45+02:00                       |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`   |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T22:15+02:00                       |
+| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`   |
+| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -43,9 +43,13 @@ on the catalog row for the dashboard orchestration tree, the optional `spawnRole
 (`spawnLevel` + `spawnLevelSource` — the resolved dispatch level and whether it was explicit or
 defaulted), the L16 free-form spawn provenance as recorded on the row (`launchArgs` verbatim argv,
 `promptKeywords` prepended to the brief, `sessionCommands` — the RESOLVED post-launch paste list —
-plus `sessionCommandsDelivered`, whether every session command was echo-confirmed AND submitted),
+plus `sessionCommandsDelivered`, whether every session command was capture-verified AND submitted),
 the `ownerSession` set on `leaf-taken`, the context-delivery outcome (`contextDelivered` /
-`submitted`), and a `detail` for the refusals.
+`submitted` — `contextDelivered` is true ONLY after a pane capture proves the payload landed, the
+260707-HFX-L3 contract; the SF-1 blind seat was a `true` here over a clean-booted pane), the
+`deliveryCapture` loud-failure evidence (the final pane capture, attached whenever any delivery
+outcome reports `False`; absent on full success — a blind seat is diagnosed from the payload
+itself, never trusted from a bare boolean), and a `detail` for the refusals.
 
 ### Conventions
 
@@ -90,6 +94,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): `SpawnAgentSessionResponse`
+  gained `deliveryCapture` (`str | None = None`) — the final pane capture attached whenever any
+  delivery outcome reports `False`, absent on full success — and the delivery-field comments now
+  state the capture-verified contract. Additive; omitted when `None`. Verification metadata pinned
+  until closeout stamps the HFX-L3 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `SpawnAgentSessionStatus` gained the
   pre-spawn refusals `effort-invalid` / `model-invalid` / `level-invalid`;
   `SpawnAgentSessionResponse` gained the free-form spawn provenance (`launchArgs` /

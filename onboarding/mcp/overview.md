@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T19:30+02:00 |
-| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
-| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
+| lastUpdated            | 2026-07-07T23:20+02:00 |
+| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5` |
+| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ whose worktree recreation stays with `worktree_start`. The agent-orchestration L
 adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
 role-configured, leaf-attached, context-primed hosted session by composing the
 existing serving primitives (the shared session opener + optional leaf attach with
-server-arbitrated `leaf-taken` + an echo-confirmed context paste with optional
+server-arbitrated `leaf-taken` + a capture-VERIFIED context paste (260707-HFX-L3) with optional
 submit), injects the model/effort/env role knobs at spawn, and records spawned-by
 provenance — so orchestrators spawn managers and managers spawn workers without
 dashboard clicks. The package-data runtime skill mirror now carries the L5
@@ -298,7 +298,7 @@ The MCP package separates three surfaces:
   through the same catalog uniqueness rules as the dashboard attach route. Agent-orchestration L2 adds the
   shared `serving.terminal_opener` (the single hosted-session opener the `POST /api/terminal/{session}`
   route and the agent-facing `spawn_agent_session` MCP tool both compose — no parallel spawn path) plus
-  `serving.terminal_paste` (server-side echo-confirmed stdin paste, backing a new
+  `serving.terminal_paste` (server-side capture-verified stdin paste — one origin baseline per delivery, history-inclusive window, probe ladder; 260707-HFX-L3 — backing a new
   `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery); `serving.terminal` gains
   a `tmux new-session -e KEY=VALUE` env knob-injection seam and `serving.terminal_catalog` gains spawned-by
   provenance columns. A service domain with its own
@@ -480,6 +480,13 @@ into the role files.
 
 ## Update History
 
+- 2026-07-07T23:20+02:00 — 260707-HFX-L3 route impact (delivery integrity): the dispatch/paste
+  narration upgrades from "echo-confirmed" to CAPTURE-VERIFIED — `contextDelivered` flows only from
+  a pane capture proving the paste landed (one origin baseline per delivery over a history-inclusive
+  window, strongest-first probe ladder incl. the payload-specific codex chip; a landed paste is never
+  re-sent), failures ship the pane capture as evidence (spawn `deliveryCapture`, inbox capture tail,
+  endpoint capture on delivery/submit failure), and Escape is refused at the paster (the SF-1/F-V
+  blind-seat + 7-paste-stacking class is dead at this seam).
 - 2026-07-07T19:30+02:00 — 260707-HFX-L2 route impact (provider index lifecycle): a HEAD
   difference is a state to catch up from, not a teardown — `providers/cgc/seed.py` seeds through
   relatable divergence (refusing only unrelatable heads) and `providers/provider_setup.py` adds

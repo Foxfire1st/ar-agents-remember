@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T09:45+02:00                            |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`        |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T23:20+02:00                            |
+| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`        |
+| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -64,11 +64,17 @@ resolution + application seam. For a `harness` kind it:
    route uses — no parallel spawn path) with the env-folded knobs (`_spawn_env` — resolved
    model/effort ride as `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, caller env keys win), the verbatim
    `launch_args`, the free-form provenance, the level provenance, and the effective registry.
-6. **Delivers the session layer**: each resolved session command is its own echo-confirmed paste
+6. **Delivers the session layer**: each resolved session command is its own capture-verified paste
    with `submit=True` (an unexecuted `/effort ultracode` would be a silent downgrade;
    `sessionCommandsDelivered` aggregates delivered+submitted), THEN the brief — `prompt_keywords`
    are prepended as its first line (delivered alone when no `context` is given) — with the existing
-   `submit` semantics and `contextDelivered`/`submitted` reporting.
+   `submit` semantics and `contextDelivered`/`submitted` reporting. Since 260707-HFX-L3
+   `_deliver_spawn_pastes` returns the frozen `_SpawnDelivery` bundle: every `True` is
+   capture-verified by the paster (a `False` means the pane provably shows no trace of the paste),
+   and `failure_capture` carries the pane capture of the latest failed paste. `_spawned_payload`
+   ships it as `deliveryCapture` — attached on ANY `False` outcome, `None` (omitted) on full
+   success — so a blind seat (SF-1: `contextDelivered: true` over a clean-booted codex pane) is
+   diagnosable from the result itself, never trusted from a boolean.
 
 On the opener's `bad-kind`/`leaf-taken` it returns the matching `ok: false` payload (surfacing the
 server-arbitrated `leaf-taken` owner, never overriding it). The `spawned` payload echoes the
@@ -79,7 +85,7 @@ injectable seams for fake-driven tests.
 Helper decomposition (CRAP-gate driven): steps 1-4 live in `_resolve_harness_dispatch` (returning a
 frozen `_HarnessDispatch` bundle or a refusal, with `_knob_refusal` for the model/effort checks);
 step 6 is `_brief_packet` (keyword prepending) + `_deliver_spawn_pastes` (session commands then
-brief); the `spawned` response dict is `_spawned_payload`.
+brief, returning `_SpawnDelivery`); the `spawned` response dict is `_spawned_payload`.
 
 ### Conventions
 
@@ -114,6 +120,10 @@ is `_tool_payload` + `models/terminal.py`, and server registration lives in `mcp
   its valid sets with launchArgs/sessionCommands guidance.
 - Paste ordering is a contract: session commands (effort vehicle first, then the caller's) BEFORE
   the promptKeywords-bearing brief — session-level modes must be active before the brief submits.
+- Delivery booleans are capture-verified, never optimistic (260707-HFX-L3): `contextDelivered` /
+  `sessionCommandsDelivered` report `True` only after the paster proved the paste on the pane, and
+  any `False` outcome ships the failing pane capture as `deliveryCapture` — callers must treat such
+  a seat as blind, never assume the brief landed.
 
 ### Todos
 
@@ -133,9 +143,9 @@ catalog.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The attach builder delegates durable assignment to the shared serving helper and returns previous leaf, owner, status, and role. | L25-L51 | [terminal.py](terminal.py) |
-| The spawn builder composes the shared serving opener, then an echo-confirmed context paste. | L82-L189 | [terminal.py](terminal.py) |
+| The spawn builder composes the shared serving opener, then a capture-verified context paste. | L82-L189 | [terminal.py](terminal.py) |
 | The shared opener (create + leaf claim + env-seeded tmux ensure + catalog upsert) both call paths reuse. | L84-L174 | [../../serving/terminal_opener.py](../../serving/terminal_opener.py) |
-| The server-side echo-confirmed paste helper that delivers the context packet. | L133-L229 | [../../serving/terminal_paste.py](../../serving/terminal_paste.py) |
+| The server-side capture-verified paste helper that delivers the context packet (and attaches the failure capture). | L133-L229 | [../../serving/terminal_paste.py](../../serving/terminal_paste.py) |
 | The harness detection registry (`find_harness` / `is_detected` / `HARNESSES` order) that gates a spawn before tmux and orders the detection-gated default. | L41-L72 | [../../serving/harnesses.py](../../serving/harnesses.py) |
 | The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | load_agentic_settings | [../../kernel/agentic_settings.py](../../kernel/agentic_settings.py) |
 | The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | L18-L20 | [base.py](base.py) |
@@ -153,6 +163,17 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2: a False outcome never ships evidence-less —
+  `_deliver_spawn_pastes` gained a `failed` flag and the explicit `"(empty pane capture)"` marker
+  (wording aligned with `inbox_delivery`) so `deliveryCapture` is present on every failure, and the
+  capture also attaches on submit-failure (not only undelivered).
+- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): `_deliver_spawn_pastes` returns
+  the frozen `_SpawnDelivery` bundle — `contextDelivered`/`sessionCommandsDelivered` are `True` only
+  from verified delivery, and `failure_capture` (the paster's final pane snapshot from the latest
+  failed paste) rides `_spawned_payload` as `deliveryCapture` on any `False` outcome (omitted on
+  full success). Closes the SF-1 blind seat: `contextDelivered: true` once masked a codex pane that
+  booted clean with no payload. Verification metadata pinned until closeout stamps the HFX-L3
+  commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application; four developer rulings 2026-07-07):
   the dispatch seam now RESOLVES role knobs from settings (`resolved_role_knobs(AR_SPAWN_ROLE,
   level)` — `rolesPerLevel` over flat `roles`; new `level` param leaf|master|portfolio with
