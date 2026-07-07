@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-30T21:51+02:00                     |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36` |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastUpdated            | 2026-07-07T17:40+02:00                     |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,6 +33,21 @@ with **no seed options** — it takes only `provider_ids` and never wires
 `cgc_seed`/`grepai_seed` — so a benchmark builds each provider index cold from
 its own generated settings and never touches another coordination root.
 
+`disarm_stale_benchmark_registrations(benchmarks_root, allowed_provider_ids)`
+(containment R1, 260707-HFX-L1 review B3) narrows persisted benchmark MCP
+settings to the live authority set. The registration written at prepare time
+persists in the workspace and acts as the AUTHORITY file for every session
+later booted there — the one place the fleet kill-switch cannot reach, because
+those servers re-read *this* file, not the developer's. Any prepare/run pass
+(the `services.py` entry points call it first) therefore sweeps ALL workspace
+registrations — `workspaces/*/<CODEX_HARNESS_DIR>/mcp/<BENCHMARK_MCP_SETTINGS_NAME>`
+at one and two directory levels under `workspaces/` — strips providers the
+live authority no longer enables, rewrites the file (sorted, indented),
+reports each rewrite loudly, and returns the rewritten paths. The sweep is
+idempotent (an already-narrowed file is untouched), skips unreadable or
+non-object files, and `allowed_provider_ids=None` (no authority context,
+direct script use) leaves every file untouched.
+
 ### Invariants And Boundaries
 
 - Benchmark provider authority comes from generated MCP/provider settings, not coordinator `system/settings.json`.
@@ -44,6 +59,10 @@ its own generated settings and never touches another coordination root.
   never start or clone the live workspace provider backends (task 260619). The
   former `default_cgc_seed_source_coordination_root` helper (which resolved the
   live workspace as the seed source) was removed.
+- Persisted workspace registrations must be re-narrowed to the live authority
+  on every prepare/run pass (containment R1, review B3): the sweep is
+  idempotent, reports loudly per rewritten file, and `None` (no authority
+  context) leaves files untouched.
 
 ## Docs References
 
@@ -56,6 +75,8 @@ No external Domain Documentation source is configured for this memory repo.
 | The public benchmark facade re-exports this module's public functions and classes for compatibility. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
 | The route-local overview summarizes how this module fits into the benchmark runner split. | [runner_modules overview](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
 | The shared seed resolvers also refuse a benchmark-scoped target as defense-in-depth. | [grepai/seed.py](agents-remember/mcp/src/agents_remember/providers/grepai/seed.py) |
+| The service entry points open every prepare/run pass with the registration sweep. | [services.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/services.py) |
+| Containment tests pin the sweep's narrow/idempotent/None behavior. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 | Benchmark behavior is covered through the existing worktree/tool test slices. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
@@ -64,6 +85,13 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B3: added
+  `disarm_stale_benchmark_registrations` — sweeps all persisted workspace registrations
+  (`workspaces/*/{,*/}<CODEX_HARNESS_DIR>/mcp/<BENCHMARK_MCP_SETTINGS_NAME>`), narrows each
+  providers map to the live authority set (the persisted registration is the authority file for
+  sessions booted in the workspace — the one place the fleet kill-switch cannot reach),
+  idempotent, loud per-file report, None = untouched. Verification metadata pinned until
+  closeout stamps the HFX-L1 commit.
 - 2026-06-19T13:42: Removed `default_cgc_seed_source_coordination_root` and dropped all seed wiring from `prepare_configured_providers` (no `cgc_seed_*` / `provider_seed_source_settings_path` params). Benchmark provider setup is hermetic-cold: it calls `run_provider_setup` with no seed options, so it never seeds from / starts the live workspace stack (task 260619).
 - 2026-05-30T21:51+02:00: Documented that benchmark-generated `timeoutCaps` now use the renamed `providerSetupSeconds` key (was `providerSeconds`). Verified against `825a172`.
 - 2026-05-28T12:32+02:00: Updated after benchmark-generated MCP/provider settings moved logs under `logs/mcp` and `logs/providers/`.

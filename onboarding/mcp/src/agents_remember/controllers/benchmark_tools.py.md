@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/benchmark_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-07-07T17:40+02:00                     |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -25,6 +25,14 @@ guard, temporarily sets benchmark root context when needed, and delegates to
 the package benchmark runner. It preserves the benchmark-only Codex execution
 policy and sandbox allowlist behavior owned by the benchmark service.
 
+Both request payloads carry `allowed_provider_ids=_live_provider_ids(config)`
+(containment R1, 260707-HFX-L1): the sorted provider ids of the live on-disk
+authority, re-read per call through `reload_provider_authority`. A fail-closed
+read error yields an empty set, so no case manifest can arm providers the
+developer has disabled on disk — the filter itself is applied downstream by
+`runner_modules/workspace.filter_benchmark_provider_ids` before any workspace
+registration or provider launch.
+
 ## Invariants And Boundaries
 
 - Benchmark tools are disabled unless `benchmarks_enabled` is set; the gate is enforced before any benchmark work runs.
@@ -32,6 +40,11 @@ policy and sandbox allowlist behavior owned by the benchmark service.
 - The controller must not accept arbitrary Codex executable paths or free-form
   execution flags.
 - Benchmark response payloads stay modeled but flexible around runner details.
+- MCP-driven benchmark provider synthesis is bounded by the live on-disk
+  authority (containment R1): the controller always passes
+  `allowed_provider_ids` (empty on a failed read, fail-closed); direct script
+  use outside the MCP is fail-closed too since review B4 unless the explicit
+  `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` env escape is set.
 
 ## Repo-Internal References
 
@@ -40,8 +53,21 @@ policy and sandbox allowlist behavior owned by the benchmark service.
 | Benchmark response models define prepare/run envelopes and Codex execution policy fields. | [benchmarks.py](agents-remember/mcp/src/agents_remember/models/benchmarks.py) |
 | Benchmark service behavior lives under the benchmarks package. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
 | Shared coordination-confinement guard used for benchmark root overrides. | [_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
+| The live-authority reload behind `_live_provider_ids` (containment R1). | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| The workspace-side filter that consumes `allowed_provider_ids`. | [workspace.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/workspace.py) |
+| Containment tests pin the manifest filter and the fail-closed-None + env-escape contract. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 
 ## Update History
 
+- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B4 (downstream): the workspace filter's
+  `None` semantics flipped to fail-closed with the `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1`
+  env escape; this controller's behavior is unchanged (it always passes the live set) — the
+  direct-script invariant wording updated to match. Verification metadata pinned until closeout
+  stamps the HFX-L1 commit.
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): added `_live_provider_ids`
+  (the live on-disk authority's sorted provider ids; fail-closed empty set on a read error) and
+  both benchmark requests now carry `allowed_provider_ids`, so a case manifest can never arm
+  providers disabled on disk. Verification metadata pinned until closeout stamps the HFX-L1
+  commit.
 - 2026-05-31T12:30+02:00 — Documented benchmarks_enabled disabled-tools gate and switch to shared require_within_coordination guard (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created when benchmark MCP controllers moved into their own domain module.

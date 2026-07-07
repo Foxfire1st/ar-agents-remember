@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T02:00+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-07T17:40+02:00                     |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -33,6 +33,27 @@ dependency analyzer subcommand, `analyze deps <module>`.
 start, indexes preserved) or `invalidate-indexes` (destructive full rebuild,
 formerly called `refresh`). The `_provider_invalidate_indexes` function
 implements the destructive path under its new name.
+
+Launch-capable operations are gated on the live on-disk authority (containment
+R1, 260707-HFX-L1). `provider_watchers_tool` calls
+`require_provider_launch_authority` for `start`, `restart`, and
+`invalidate-indexes` (rebuilding launches indexers): a disk-disabled or
+unreadable authority file refuses with `ConfigError`, an armed one swaps the
+LIVE providers map into the config the action runs on. `stop`, `status`, and
+`shutdown-all` are never gated — stopping is always legal. The GrepAI/CGC
+query tools (`grepai_search`, `grepai_trace`, `cgc_visualize`, and every typed
+wrapper through `_cgc_run_tool`) pass `launch_capable=True` into
+`_provider_operation_result`, because a query spins a one-shot runner
+container and a worktree's persisted settings file is stamped `enabled: true`
+forever — neither is launch authority. Each funnel also names its
+`launch_capable_provider` — the GrepAI funnels pass `grepai-memory`, the CGC
+funnels (`cgc_visualize` and `_cgc_run_tool`) pass `codegraphcontext-code` —
+and the gate refuses with `ConfigError` when that SPECIFIC provider is missing
+from the live map (review follow-up): an armed grepai authority no longer
+authorizes a cgc one-shot runner. The gate always runs for
+launch-capable operations; when a worktree `settings_path_override` resolved,
+the worktree's own stack settings still drive the run (the live map replaces
+the config only on the temp-settings path), but only under an armed authority.
 
 All CGC and GrepAI query tools accept an optional `worktree` parameter. When a
 `worktree` name is given (or a single stack is discoverable for the repo),
@@ -66,6 +87,17 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 - `action="refresh"` is permanently rejected with guidance; the destructive
   rebuild path is now `action="invalidate-indexes"` and the non-destructive
   restart path is `action="restart"`.
+- `start`/`restart`/`invalidate-indexes` and every launch-capable query tool
+  re-read the on-disk authority fail-closed (containment R1); `stop`,
+  `status`, and `shutdown-all` must stay ungated so teardown and observation
+  are always legal.
+- A launch-capable query is gated on its SPECIFIC provider
+  (`launch_capable_provider`), not on any-provider-armed: an authority that
+  enables only `grepai-memory` must not authorize a `codegraphcontext-code`
+  one-shot runner.
+- A worktree `settings_path_override` is honored only under an armed live
+  authority; it never bypasses the launch gate, because the persisted worktree
+  settings file always says `enabled: true`.
 - When a worktree target is resolved, its already-persisted settings file is
   used as-is and never deleted; only workspace-scope settings files are temp
   files that the controller writes and removes.
@@ -83,10 +115,25 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 | Provider summary and diagnostics projection live in the provider status module. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Provider response models distinguish compact summaries from diagnostics/native payloads. | [providers.py](agents-remember/mcp/src/agents_remember/models/providers.py) |
 | MCP payload builders validate this controller output through the model registry. | [tools/providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py) |
-| Unit tests guard action naming (refresh rejected, invalidate-indexes dispatches) and worktree routing resolution. | [test_provider_watcher_actions.py](agents-remember/mcp/tests/test_provider_watcher_actions.py); [test_provider_worktree_routing.py](agents-remember/mcp/tests/test_provider_worktree_routing.py) |
+| Unit tests guard action naming (refresh rejected), the disk-disabled invalidate-indexes refusal, the always-legal stop, and worktree routing resolution. | [test_provider_watcher_actions.py](agents-remember/mcp/tests/test_provider_watcher_actions.py); [test_provider_worktree_routing.py](agents-remember/mcp/tests/test_provider_worktree_routing.py) |
+| The launch-authority reload/gate the watcher and query controllers call (containment R1). | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| Containment tests pin the launch gate's refusal and armed-path semantics. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 
 ## Update History
 
+- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix: `_provider_operation_result` gained
+  `launch_capable_provider` — the SPECIFIC provider must be armed in the live map (GrepAI
+  funnels pass `grepai-memory`, CGC funnels pass `codegraphcontext-code`; missing ⇒
+  `ConfigError` before the runner is invoked), so an armed grepai no longer authorizes a cgc
+  one-shot. Verification metadata pinned until closeout stamps the HFX-L1 commit.
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `provider_watchers_tool`
+  gates `start`/`restart`/`invalidate-indexes` through `require_provider_launch_authority`
+  (disk-disabled ⇒ `ConfigError`; armed ⇒ the action runs on the live map) while
+  `stop`/`status`/`shutdown-all` stay legal; `_provider_operation_result` gained
+  `launch_capable` and `grepai_search`/`grepai_trace`/`cgc_visualize`/`_cgc_run_tool` pass
+  `True`, so one-shot runner containers are gated too; a worktree `settings_path_override` is
+  honored only under an armed live authority. Updated Code Commentary and Invariants.
+  Verification metadata pinned until closeout stamps the HFX-L1 commit.
 - 2026-07-02T15:40+02:00 — `cgc_dependencies_tool` now emits CodeGraphContext's
   current `analyze deps <module>` command instead of the stale
   `analyze dependencies <module>` spelling. Updated Code Commentary and

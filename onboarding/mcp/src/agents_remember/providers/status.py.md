@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-28T19:10+02:00|
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-07T16:30+02:00|
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -30,6 +30,15 @@ recovery-action, raw-status, and per-provider raw status detail.
 When provider details are intentionally skipped, compact summary item
 construction returns an empty `items` list instead of synthesizing provider rows
 from absent current-state detail.
+
+`provider_status_packet()` also attaches the daemon-sampled containment
+metrics (containment R4, 260707-HFX-L1): it reads
+`ProviderMetricsStore(config.coordination_root).read_current()` and, when a
+snapshot exists, rides it on the packet as `metrics`. The read is deliberately
+unconditional — leftover container stacks from a dead session are exactly what
+must stay observable, so the metrics ride the packet even when providers are
+disabled — and read-only; the field is simply absent until the serving
+daemon's first sample lands.
 
 The projection's global `ok` requires both signals to pass: the raw watchers
 `ok` (are the containers up) AND the aggregated current-state `ok` (does the
@@ -95,6 +104,9 @@ surface.
 - `indexing` is informational, never degrading: a busy target stays `ok` and
   appears in the busy list, so "wait" and "intervene" remain distinguishable
   signals.
+- The `metrics` block is daemon-sampled and read-only from the status path; it
+  must stay attached even when providers are disabled so leftover container
+  stacks remain observable (containment R4).
 
 ## Repo-Internal References
 
@@ -105,12 +117,18 @@ surface.
 | Provider MCP controllers expose status, diagnostics, watcher, GrepAI, and CGC tools. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
 | Current-state projection and persistence live in the current-state module. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 | Restart/rebind recovery wording is shared with runtime-install recovery reporting. | [recovery.py](agents-remember/mcp/src/agents_remember/providers/recovery.py) |
+| The containment metrics store whose rolling current snapshot rides the status packet (containment R4). | [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
 | Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | `refresh_current_provider_state` calls the regular provider-status projection and returns the current-state payload for dashboard-owned refreshes. | L138-L176 | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 
 ## Update History
 
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R4): `provider_status_packet` now
+  attaches the daemon-sampled containment metrics (`ProviderMetricsStore.read_current()`) as the
+  packet's `metrics` field, unconditionally — even when providers are disabled — so leftover
+  stacks stay observable; absent until the first daemon sample. Verification metadata pinned
+  until closeout stamps the HFX-L1 commit.
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): documented `_last_refresh_summary`, which flattens a structured CGC `lastRefresh` object (`{updatedAt, returncode, durationSeconds}`) into a scalar summary string inside `_cgc_watcher_state` (MCP 2.9.x). Grafted onto the series' task-31 `refresh_current_provider_state` content.
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: documented `refresh_current_provider_state`, the shared writer-backed seam used by dashboard projection ticks. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the dual-gate global `ok`, `partial`, `indexing` busy-list, and per-repo CGC recovery mechanics into Code Commentary and Invariants (documentation only).

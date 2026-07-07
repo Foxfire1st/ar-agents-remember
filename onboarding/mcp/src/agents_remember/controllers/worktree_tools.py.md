@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T19:10+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T16:30+02:00                     |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,7 +31,18 @@ and path confinement use the shared `_guards` helpers (`require_repo`,
 `require_within_coordination`) so the security boundary lives in one place.
 Worktree start can include provider setup by writing MCP-derived lifecycle
 settings and handing a package-local provider setup config to the worktree
-manager. `worktree_start_tool` forwards `stale_base_choice` (GitHub #54) into
+manager. Since 260707-HFX-L1 (containment R1) the boot-snapshot config is NOT
+launch authority for that setup: `worktree_start_tool` calls
+`reload_provider_authority(config)` first and writes the lifecycle settings
+from the LIVE providers map (`authority.apply(config)`) only when the on-disk
+map is readable and non-empty. An empty or unreadable (fail-closed) live map
+skips provider setup outright — no settings file, no setup config — while the
+worktree itself is still created. When the disk vetoed an armed boot snapshot
+or the read failed, the result carries a `providersAuthority` block
+(`source`, `bootSnapshotProviders`, and `error` when the read failed) so a
+stale-snapshot session sees WHY setup was skipped instead of silently
+diverging from its boot config. `worktree_start_tool` forwards
+`stale_base_choice` (GitHub #54) into
 `WorktreeArgs` for the stale-base preflight recovery; the controller adds no
 behavior of its own. `worktree_sync_tool` (GitHub #54 sub-task D) is the
 contract-path-based controller for the mid-task base sync: it confines
@@ -72,6 +83,11 @@ ambient is installed (CLI/tests).
 - `worktree_start_tool`/`worktree_integrate_tool`/`worktree_cleanup_tool`/`lifecycle_finalize_task_tool` default
   `dry_run=False` (act-by-default); the `*_closeout_apply` controllers keep
   `dry_run=False` paired with their `*_preview` tools. `dry_run=true` previews.
+- Provider setup inside worktree start launches only under the live on-disk
+  providers authority (containment R1): a disk-disabled or unreadable
+  authority skips setup fail-closed and is surfaced via the
+  `providersAuthority` result block; worktree creation itself is never blocked
+  by the provider gate.
 
 ## Repo-Internal References
 `worktree_start_tool` marks the temp lifecycle settings file with
@@ -90,6 +106,8 @@ the documented setup cap now actually governs the worktree flow.
 | Worktree response models define the public tool envelopes and context summary. | [worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | [_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | [finalize.py](agents-remember/mcp/src/agents_remember/worktrees/modules/finalize.py) |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| Containment tests pin the worktree-start veto and the armed-path live-map launch. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 
 ## Series-Contract Notes
 
@@ -97,6 +115,12 @@ Worktree start/attach/status controllers accept `parent_task` and `leaf_id` and 
 
 ## Update History
 
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `worktree_start_tool` now
+  re-reads the on-disk authority (`reload_provider_authority`) before provider setup, writes the
+  lifecycle settings from the LIVE providers map only when armed, skips setup fail-closed on an
+  empty/unreadable live map (the worktree is still created), and attaches a `providersAuthority`
+  veto block when the disk vetoed an armed boot snapshot or the read failed. Verification
+  metadata pinned until closeout stamps the HFX-L1 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: `worktree_integrate_tool` now passes `gate_policy=config.orchestration.gate_policy` into `WorktreeArgs`, mirroring the closeout path (AR3-1(a)). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — No route impact: 260703-L4 only forwards the parsed
   gate delegation policy from MCP config into worktree closeout args; controller

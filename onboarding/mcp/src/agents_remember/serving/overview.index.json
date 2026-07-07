@@ -77,7 +77,7 @@
     "terminal_paste"
   ],
   "hotPath": {
-    "summary": "`agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diffs each projection against the last (`serving.delta.diff_projection`), and fans **per-entity deltas** out to every SSE client. `GET /api/stream` emits `event:snapshot` then per-entity `lifecycle`/`enclosure`/ `provider`/`metrics`/`analytics` (and `*.removed`) events; `GET /api/state` returns the projection once; `GET /api/events` tai...",
+    "summary": "`agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diffs each projection against the last (`serving.delta.diff_projection`), and fans **per-entity deltas** out to every SSE client. Beside the projector task, the same lifespan runs the **provider containment metrics sampler** (260707-HFX-L1, containment R4): every 30s (`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the 1s...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

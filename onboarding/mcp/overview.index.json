@@ -208,6 +208,7 @@
     "mcp/src/agents_remember/providers/current_state.py",
     "mcp/src/agents_remember/providers/identity.py",
     "mcp/src/agents_remember/providers/lifecycle_service.py",
+    "mcp/src/agents_remember/providers/metrics.py",
     "mcp/src/agents_remember/providers/provider_setup.py",
     "mcp/src/agents_remember/providers/recovery.py",
     "mcp/src/agents_remember/providers/settings.py",
@@ -264,6 +265,7 @@
     "mcp/tests/test_operator_inbox.py",
     "mcp/tests/test_orchestration_comms.py",
     "mcp/tests/test_provider_async.py",
+    "mcp/tests/test_provider_containment.py",
     "mcp/tests/test_provider_context_imports.py",
     "mcp/tests/test_provider_current_state.py",
     "mcp/tests/test_provider_lifecycle.py",
@@ -309,8 +311,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 538,
-    "fileSidecars": 221,
+    "sourceFilesInScope": 540,
+    "fileSidecars": 223,
     "childRoutes": 15
   },
   "routingTerms": [
@@ -370,6 +372,7 @@
     "config",
     "conformance",
     "conftest",
+    "containment",
     "content",
     "context",
     "context_common",
@@ -392,8 +395,7 @@
     "cross",
     "curator",
     "current",
-    "current_state",
-    "daemon"
+    "current_state"
   ],
   "hotPath": {
     "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T16:30+02:00 |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -75,6 +75,26 @@ which never belonged there. Unknown keys, bad roles, human-pinned gate
 delegation, and unsupported delegated kinds still raise `ConfigError` at
 startup, whichever file they come from.
 
+`ProviderAuthority` / `reload_provider_authority` / `require_provider_launch_authority`
+(containment R1, task 260707-HFX-L1) make the on-disk settings file — not the
+boot snapshot — the provider launch authority. A server process loads its
+config once and closes over it, so editing the authority file to
+`"providers": {}` (the operator's only fleet-wide kill-switch) previously
+changed nothing until every running server restarted.
+`reload_provider_authority(config)` re-reads ONLY the providers map from
+`config.config_path` (through the same `parse_providers`, against the boot
+config's coordination/workspace roots) into the frozen `ProviderAuthority`
+dataclass; an unreadable file, a non-object root, or a `ConfigError` from the
+parse yields an empty map with the reason in the `error` field — fail-closed,
+callers must treat that as "no launch authority" and never fall back to the
+snapshot. `ProviderAuthority.apply(config)` returns the boot config with the
+live providers map swapped in (`dataclasses.replace`).
+`require_provider_launch_authority(config, operation=...)` is the gate
+launch-capable operations call: it raises `ConfigError` when the read failed
+or when the live map is empty (the refusal names the operation, the authority
+path, and the stale boot-snapshot ids) and returns the live-map config when
+armed. Stop/status/cleanup paths must not call it — stopping is always legal.
+
 ### Invariants And Boundaries
 
 - MCP settings are the authority for the server path.
@@ -97,6 +117,11 @@ startup, whichever file they come from.
   the authority-file value is a one-cycle legacy fallback that always warns.
   The `gate_policy` wiring downstream of `McpRuntimeConfig.orchestration` is
   unchanged by the re-homing.
+- The boot-snapshot `providers` map is NOT launch authority (containment R1):
+  launch-capable operations must go through
+  `require_provider_launch_authority`, which re-reads the on-disk file
+  fail-closed (unreadable/invalid ⇒ refusal, never a snapshot fallback).
+  Stop/status/cleanup operations are never gated on the reload.
 
 ## Repo-Internal References
 
@@ -107,10 +132,19 @@ startup, whichever file they come from.
 | The daemon supervisor consuming `DashboardSettings` (autoStart/port). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
 | Gate delegation policy validation lives in controlplane. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
 | The agentic-settings loader supplying the boot-snapshot gateDelegation and the shared `parse_gate_delegation`. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
+| Launch-authority consumers: worktree start, watcher/query gating, benchmark filtering, runtime rebind derivation. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py); [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py); [benchmark_tools.py](agents-remember/mcp/src/agents_remember/controllers/benchmark_tools.py); [install/runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
 ## Update History
+
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): added `ProviderAuthority`,
+  `reload_provider_authority` (re-reads only the providers map from the authority file;
+  unreadable/invalid ⇒ empty map + `error`, fail-closed), and
+  `require_provider_launch_authority` (refuses with `ConfigError` when the disk disables
+  providers or cannot be read; returns the live-map config when armed). Verification metadata
+  pinned until closeout stamps the HFX-L1 commit.
 
 - 2026-07-07T12:50+02:00 — No content impact: L16's config.py change is message-wording only (the boot error/warning text now points at the harnesses manual); the parsing behavior and the boot-snapshot contract this sidecar describes are unchanged (review L16R-4 concurred the body is not stale).
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/execution.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T02:26+02:00                     |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36` |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastUpdated            | 2026-07-07T16:30+02:00                     |
+| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
+| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ Codex benchmark execution policy, command construction, per-run metadata, and ru
 ### Logic
 
 `execution.py` resolves `codex` from PATH, validates the allowlisted sandbox modes, writes per-run metadata, runs prompt variants, builds batches, executes them concurrently, writes summaries, and reports subprocess failures. `benchmark_mcp_config_overrides(cwd)` reads the benchmark workspace's `.codex/config.toml` `mcp_servers` table and emits `-c mcp_servers.<name>.<key>=<literal>` overrides (scalars, `env`, and `env_vars`), which `codex_command` appends so the benchmarked Codex talks to the benchmark's **own** isolated MCP server rather than inheriting the host workspace's MCP configuration.
+
+`maybe_prepare_case` and `run_case` accept `allowed_provider_ids` (default
+`None`) and thread it into `prepare_case`, carrying the containment R1
+(260707-HFX-L1) live-authority set from the service request down to the
+workspace provider filter.
 
 ### Invariants And Boundaries
 
@@ -48,5 +53,8 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `maybe_prepare_case` and
+  `run_case` gained the pass-through `allowed_provider_ids` parameter feeding the workspace
+  provider filter. Verification metadata pinned until closeout stamps the HFX-L1 commit.
 - 2026-06-19T13:42: Added `benchmark_mcp_config_overrides()` and wired it into `codex_command`: it reads the benchmark workspace `.codex/config.toml` `mcp_servers` table and emits `-c mcp_servers.<name>.<key>=<literal>` overrides so the benchmarked Codex uses the benchmark's own isolated MCP server, not the host workspace's.
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.
