@@ -15,6 +15,7 @@
     "mcp/src/agents_remember/mcp/tools/benchmark.py",
     "mcp/src/agents_remember/mcp/tools/core.py",
     "mcp/src/agents_remember/mcp/tools/gates.py",
+    "mcp/src/agents_remember/mcp/tools/leaf_ref.py",
     "mcp/src/agents_remember/mcp/tools/lifecycle.py",
     "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py",
     "mcp/src/agents_remember/mcp/tools/memory.py",
@@ -28,8 +29,8 @@
     "mcp/src/agents_remember/mcp/tools/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 16,
-    "fileSidecars": 16,
+    "sourceFilesInScope": 17,
+    "fileSidecars": 17,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -45,6 +46,8 @@
     "inbox",
     "init",
     "init__",
+    "leaf",
+    "leaf_ref",
     "lifecycle",
     "lifecycle_finalize",
     "mcp",
@@ -57,6 +60,7 @@
     "providers",
     "read",
     "read_files",
+    "ref",
     "remember",
     "src",
     "step",
@@ -75,6 +79,7 @@
       "mcp/src/agents_remember/mcp/tools/benchmark.py",
       "mcp/src/agents_remember/mcp/tools/core.py",
       "mcp/src/agents_remember/mcp/tools/gates.py",
+      "mcp/src/agents_remember/mcp/tools/leaf_ref.py",
       "mcp/src/agents_remember/mcp/tools/lifecycle.py",
       "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py",
       "mcp/src/agents_remember/mcp/tools/memory.py",
@@ -98,6 +103,8 @@
       "core",
       "gates.py",
       "gates",
+      "leaf_ref.py",
+      "leaf_ref",
       "lifecycle.py",
       "lifecycle",
       "lifecycle_finalize.py",
@@ -133,9 +140,7 @@
       "tool_payload",
       "NOTIFY",
       "AND",
-      "CONTINUE",
-      "mcp/src/agents_remember/mcp/tools",
-      "route-local-overview"
+      "CONTINUE"
     ]
   },
   "fallback": {

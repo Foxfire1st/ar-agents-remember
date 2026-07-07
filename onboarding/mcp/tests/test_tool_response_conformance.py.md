@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-04T12:31+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`         |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T20:50+02:00 |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`         |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -35,14 +35,17 @@ collects one representative payload per tool into `cls.payloads`:
 - `_base_fixture` / `_simple_payloads`: a code repo, memory layer, and
   `.codex/mcp` settings drive the directly runnable tools (core, context,
   runtime, memory, skills, provider status/diagnostics/watchers, GrepAI/CGC
-  dry-run, baseline, benchmarks, the L9 terminal leaf reassignment builder's missing-session
+  dry-run, baseline, benchmarks, HFX-L4 representative task docs for canonical leaf-ref validation,
+  the L9 terminal leaf reassignment builder's missing-session
   payload, and (L2) the `spawn_agent_session` builder's `harness-unknown` refusal payload — an
   unknown harness id short-circuits before any tmux spawn, so the fixture never touches a real
   terminal host).
-- `_worktree_payloads`: a real worktree lifecycle in disabled-memory mode
+- `_worktree_payloads`: a real worktree lifecycle in explicit disabled-memory mode
+  with task-doc leaf fixtures for the worktree-start leaves
   produces `worktree_start`, `worktree_status`, `worktree_attach`,
   `worktree_sync` (dry-run, GitHub #54 sub-task D), `worktree_closeout_preview`,
-  `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, and
+  `worktree_closeout_apply`, an explicit checkout of the parent integration branch before
+  `worktree_integrate`, `worktree_cleanup`, and
   `lifecycle_finalize_task` (dry-run) against a real contract.
 - `_carryover_payloads`: a landed-branch fixture drives `memory_carryover_plan`
   and `memory_carryover_apply` (a docstring names the
@@ -117,6 +120,11 @@ declared nor part of the input."
 
 ## Update History
 
+- 2026-07-07T20:50+02:00 — 260707-HFX-L4: representative fixtures now write task docs for terminal
+  leaf assignment and worktree-start payloads, and worktree-start conformance explicitly requests disabled
+  memory, so strict response conformance runs through canonical leaf-ref validation without creating
+  external-memory parent branches. Verification metadata pinned until closeout stamps the 260707-HFX-L4
+  commit.
 - 2026-07-04T12:31+02:00 - L3: added a representative
   `orchestration_nudge_manager` payload and kept the expanded inbox responses in
   the modeled conformance path. Verification metadata pinned until closeout

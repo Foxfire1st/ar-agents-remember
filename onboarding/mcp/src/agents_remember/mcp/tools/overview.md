@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-07T23:20+02:00 |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`                                      |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-07T23:30+02:00 |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`                                      |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -55,6 +55,10 @@ manual), validates model/effort per-harness BEFORE spawning
 the first post-launch `/effort` paste), and delivers the free-form escape hatch (`launch_args`
 verbatim argv, `session_commands` pasted+submitted before the brief, `prompt_keywords` prepended to
 the brief) — never validated, recorded in spawn provenance and echoed on the payload.
+260707-HFX-L4 adds qualified leaf-ref validation at the terminal write boundary: attach/spawn accept
+canonical qualified ids, doc ids, and unambiguous legacy stems/slugs, persist canonical qualified
+`repo/master/doc-id` catalog keys, and return strict `leaf-ref-not-found` / `leaf-ref-ambiguous`
+refusals with the expected `<repo>/<master-folder>/<doc-id>` form before any mutation.
 L3 adds `orchestration.py` and public `orchestration_nudge_manager`, a rate-limited manager nudge helper
 that records an orchestration nudge event and enqueues a manager-addressed inbox message.
 
@@ -75,7 +79,8 @@ that records an orchestration nudge event and enqueues a manager-addressed inbox
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a delegated SEAM kind (`SEAM_GATE_KINDS` only; plan-approval keeps its blocking brake) carrying a required non-empty `enclosure` (the master task name the integrate guard matches the gate by — an addressless raise refuses), validates-then-raises and continues, returning the gateId the handover packet carries — a refused raise persists no orphan gate and expires no sibling), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds; list defaults to the ambient lifecycle when no id is passed, workspace only without an ambient), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
-| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session`) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16: `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-rung knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, free-form + level provenance) — it composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure with per-harness argv knob application) then a `serving.terminal_paste.TerminalPaster` echo-confirmed paste sequence, records spawned-by provenance, and returns `spawned` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `effort-invalid` / `model-invalid` / `level-invalid` / `bad-kind` through the strict response model. |
+| `leaf_ref.py`   | shared MCP refusal-payload helper for `leaf-ref-not-found` / `leaf-ref-ambiguous`, keeping strict leaf-ref error envelopes out of the already-large terminal tool module. |
+| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16: `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-rung knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, free-form + level provenance) — it normalizes leaf refs before catalog writes, composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure with per-harness argv knob application) then a `serving.terminal_paste.TerminalPaster` capture-verified paste sequence, records spawned-by provenance, and returns `spawned` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `effort-invalid` / `model-invalid` / `level-invalid` / `leaf-ref-not-found` / `leaf-ref-ambiguous` / `bad-kind` through the strict response model. |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
 Since 2.5.1 this route also owns the response token-budget layer: the verbose
@@ -125,6 +130,11 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: terminal attach/spawn payloads now normalize
+  leaf refs through the task tree before catalog writes and spawn provenance, returning
+  `leaf-ref-not-found` / `leaf-ref-ambiguous` refusals with the expected
+  `<repo>/<master-folder>/<doc-id>` form; `leaf_ref.py` carries the shared refusal payload helper.
+  Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.
 - 2026-07-07T23:20+02:00 — 260707-HFX-L3 route impact: `terminal.py`'s spawn delivery is
   capture-verified (no more echo-confirm false success — the SF-1 blind seat); a False outcome always
   carries evidence (`deliveryCapture`, explicit `"(empty pane capture)"` marker when empty) and the

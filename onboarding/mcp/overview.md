@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T23:20+02:00 |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5` |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-07T23:45+02:00 |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -208,8 +208,11 @@ The MCP package separates three surfaces:
   pending inbox entries as waiting-for-agent/check-chat feedback for the dashboard, including L3
   sender/recipient role, message kind, artifact, and hosted-delivery metadata.
   The series-contract resolver helpers in `worktrees/task_resolver.py` now own task-name lookup,
-  nested parent-task disambiguation, leaf `enclosures/<leaf-id>/series-contract.md` paths, archive
-  exclusion, and root-task archival into `tasks/<repo>/0_archive/`.
+  nested parent-task disambiguation, raw leaf `enclosures/<leaf-id>/series-contract.md` paths, archive
+  exclusion, and root-task archival into `tasks/<repo>/0_archive/`; `worktrees/leaf_refs.py` owns
+  qualified/doc-id/legacy-stem leaf-ref validation and canonical id normalization for write surfaces,
+  including schema-marker screening for sibling task-document JSON and standalone/light `task.json`
+  doc-id candidates.
   Slice 09 (gate-signal
   adoption) removes the dirty-tree → `commit-approval-pending` branch from
   `worktrees/modules/guidance.py` (a visibility bug): a dirty worktree now projects its honest
@@ -301,7 +304,8 @@ The MCP package separates three surfaces:
   `serving.terminal_paste` (server-side capture-verified stdin paste — one origin baseline per delivery, history-inclusive window, probe ladder; 260707-HFX-L3 — backing a new
   `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery); `serving.terminal` gains
   a `tmux new-session -e KEY=VALUE` env knob-injection seam and `serving.terminal_catalog` gains spawned-by
-  provenance columns. A service domain with its own
+  provenance columns; HFX-L4 normalizes opener/attach leaf keys to canonical qualified task-doc ids
+  before catalog mutation. A service domain with its own
   route overview.
 - `agents_remember.controlplane` owns the **gate control plane** (task 6): the durable,
   append-only `ar-gate-record/v1` `GateRecord` + `GateStore` (co-located with the observer
@@ -480,6 +484,16 @@ into the role files.
 
 ## Update History
 
+- 2026-07-07T23:45+02:00 — 260707-HFX-L4R2 route impact: the qualified leaf-ref resolver now skips
+  non-task sibling JSON artifacts by raw task-document schema marker, keeps malformed marker-bearing task
+  docs loud, indexes standalone/light `task.json` docs, and preserves read-path legacy contracts when
+  active-task resolution cannot prove a mapping. Verification metadata pinned until closeout stamps the
+  260707-HFX-L4 commit.
+- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: added dedicated
+  `worktrees/leaf_refs.py` ownership for qualified leaf-ref validation, moved start leaf-ref handling out
+  of `start.py`, normalized terminal catalog writes/spawn provenance to canonical qualified ids, and
+  expanded terminal response models for leaf-ref refusals. Verification metadata pinned until closeout
+  stamps the 260707-HFX-L4 commit.
 - 2026-07-07T23:20+02:00 — 260707-HFX-L3 route impact (delivery integrity): the dispatch/paste
   narration upgrades from "echo-confirmed" to CAPTURE-VERIFIED — `contextDelivered` flows only from
   a pane capture proving the paste landed (one origin baseline per delivery over a history-inclusive
@@ -496,6 +510,11 @@ into the role files.
   `worktrees/modules/start.py`'s mtime sync leaves divergent-content memory files fresh so
   grepai re-embeds exactly the delta. NEW suite `mcp/tests/test_provider_index_lifecycle.py`
   pins the cycle. Verification metadata pinned until closeout stamps the HFX-L2 commit.
+- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 (review fix batch) hardens
+  `kernel/agentic_settings.py` (finding 6: a `null` at a known `orchestration.*` family key refuses
+  loudly in either layer; finding 4: `effortSessionCommand` templates are validated post-merge) and
+  adds regression tests across the mcp suites; no mcp route surface or module split changed (detail in
+  the file sidecars).
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes: the setup lock moved HOST-scoped
   (`fleet_setup_lock_path()` in the system temp dir — B1: `runtime_install` prunes `providers/`;
   B2: benchmark workspace roots must serialize on the same host lock); the benchmark filter's
@@ -512,17 +531,6 @@ into the role files.
   central containment metrics store/sampler, fed by the serving daemon's 30s loop and attached
   to `provider_status`; NEW suite `mcp/tests/test_provider_containment.py` pins the layer.
   Verification metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-07T06:10+02:00 — No route impact: PR #100 review fixes (merge `e358c4a`, landing the
-  260703_agent-orchestration series) added an empty-list refusal to `kernel/agentic_settings.py`'s
-  free-form knob parsing and a memory-source-branch guard to `worktrees/modules/start.py`'s
-  reconciliation, with matching tests. Package surface and route model unchanged (detail in the
-  file sidecars). Post-merge onboarding refresh, developer-approved.
-
-- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 (review fix batch) hardens
-  `kernel/agentic_settings.py` (finding 6: a `null` at a known `orchestration.*` family key refuses
-  loudly in either layer; finding 4: `effortSessionCommand` templates are validated post-merge) and
-  adds regression tests across the mcp suites; no mcp route surface or module split changed (detail in
-  the file sidecars).
 - 2026-07-07T16:20+02:00 — No route impact: 260703-L17 is frontend-only — the only mcp-side change is the generated `package_data/dashboard` mirror advancing with the rebuilt dashboard dist (sync-dashboard); no mcp source or behavior changed.
 - 2026-07-07T10:55+02:00 — No route impact: L15's mcp-side changes live in the serving/observer sub-routes (stable-form deltas, build info, tokenSeries decimation) — the mcp package route model is unchanged; details in the sub-route overviews and file sidecars.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application) route impact: the L13 knob chain is
@@ -539,6 +547,12 @@ into the role files.
   `test_harnesses.py`, `test_terminal_opener.py`, `test_spawn_agent_session.py`. New manual
   `docs/reference/harnesses.md`; `docs/reference/settings-json.md` documents the three-layer knob
   model. Verification metadata pinned until closeout stamps the L16 commit.
+- 2026-07-07T06:10+02:00 — No route impact: PR #100 review fixes (merge `e358c4a`, landing the
+  260703_agent-orchestration series) added an empty-list refusal to `kernel/agentic_settings.py`'s
+  free-form knob parsing and a memory-source-branch guard to `worktrees/modules/start.py`'s
+  reconciliation, with matching tests. Package surface and route model unchanged (detail in the
+  file sidecars). Post-merge onboarding refresh, developer-approved.
+
 - 2026-07-07T05:44+02:00 — 260703-L15 attestation: reviewed this overview against the L15 test
   changes — `tests/test_serving.py` gained the change-gate delta cases + `StateEtagTests` +
   `BuildInfoTests`, and `tests/test_observer_projection.py` the token-series decimation cases;

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-28T19:10+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-07T23:30+02:00                     |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ The package is intentionally split by responsibility:
 - `markdown_cross_repo.py` and `markdown_global_rules.py` keep the Markdown
   parser below complexity and maintainability thresholds.
 - `storage.py` owns storage/path-rule decisions.
-- `contracts.py` and `cross_repo.py` load external facts used by the resolver; contract lookup goes through active task-root and leaf-enclosure resolution, excluding archived task roots.
+- `contracts.py` and `cross_repo.py` load external facts used by the resolver; contract lookup goes through active task-root resolution plus alias-aware leaf-enclosure resolution, excluding archived task roots.
 - `serialize.py` and `cli.py` adapt the context to text/JSON output.
 
 ## Invariants And Boundaries
@@ -69,6 +69,10 @@ The package is intentionally split by responsibility:
 
 ## Update History
 
+- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: `contracts.py` now uses the dedicated
+  `worktrees.leaf_refs` adapter for explicit leaf-id contract lookup, so qualified/doc-id/legacy refs can
+  find the correct enclosure while the package structure stays unchanged. Verification metadata pinned
+  until closeout stamps the 260707-HFX-L4 commit.
 - 2026-06-28T20:30+02:00 — No route impact: `find_worktree_contract` now skips archived (`0_archive/`) contracts and its docstring was corrected to `series-contract.md`; the route's module structure and model are unchanged (detail in the contracts.py file sidecar; task 260628_post-landing-cleanup).
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): re-recorded main's worktree_name route note that the series carryover dropped — `contracts.py` gained a `worktree_name` fallback in `resolve_contract` plus `find_worktree_contract`, `resolver.py` forwards `worktree_name`, and the facade re-exports it (#90, MCP 2.9.3); **no route impact** (module responsibilities, structure, and invariants unchanged), detail lives in the `contracts.py` / `resolver.py` file sidecars.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: coordination context now resolves active task names, optional nested `parent_task`, and optional `leaf_id` into root or leaf `series-contract.md` paths instead of looking for sibling `contract.md` files. Verification metadata pinned until closeout stamps the code commit.

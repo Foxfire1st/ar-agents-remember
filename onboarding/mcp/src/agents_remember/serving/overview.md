@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T22:15+02:00 |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`       |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-07T23:30+02:00 |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`       |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -37,7 +37,8 @@ hydrates the UI after refresh, the opener creates detached tmux sessions, each W
 tmux client only after a tmux probe, and explicit terminate kills tmux and hides the row from normal
 lists. L9 adds `terminal_leaf_assignment.py`, the shared catalog move policy used by both
 `POST /api/terminal/{session}/attach-leaf` and the agent-facing MCP tool so hosted chats can move between
-durable leaves without respawn. L2 (agent-facing dispatch) adds `terminal_opener.py` — the shared
+durable leaves without respawn. HFX-L4 adds `leaf_ref_validation.py`, the serving adapter that normalizes
+terminal opener/attach leaf keys to canonical qualified task-doc ids before catalog mutation. L2 (agent-facing dispatch) adds `terminal_opener.py` — the shared
 hosted-session **opener** (leaf claim + env-seeded tmux ensure + catalog upsert) that both the
 `POST /api/terminal/{session}` route and the agent-facing `spawn_agent_session` MCP tool compose over so
 there is **no parallel spawn path** — and `terminal_paste.py`, the server-side capture-verified stdin
@@ -123,17 +124,18 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   later host writes strip Ctrl-Z for bare-pane harnesses, slice 6f, and persists a `TerminalCatalogEntry`
   carrying label/lifecycle/cwd/tmux/command/status/leafKey + L2 spawned-by provenance + the L14 `spawnRole` without opening a
   starter PTY client; **slice L5** uniqueness is per (leaf, role) so a terminal never collides with the
-  leaf's chat, and the `leafKey` is persisted (preserving an existing binding when none is sent) and
-  echoed),
+  leaf's chat, and the `leafKey` is normalized through `leaf_ref_validation.resolve_catalog_leaf_key`
+  before persistence (preserving an existing binding when none is sent) and echoed),
   `POST /api/terminal/{session}/paste` (**L2, 260707-HFX-L3** — server-side capture-verified
   context-packet delivery to a hosted session with no attached browser client, over
   `terminal_paste.TerminalPaster`; delivery is confirmed against the pre-delivery origin capture —
   a new chip in either harness vocabulary or the payload head, not mere pane output; 404 on
   unknown/gone session, else `{delivered, submitted}` plus the pane `capture` on an unconfirmed
   outcome),
-  `POST /api/terminal/{session}/attach-leaf` (**slice L5/L9** — claim or move a leaf for an existing
-  session, enclosure-free / no respawn; delegates to `terminal_leaf_assignment.assign_terminal_session_to_leaf`,
-  returning `404 unknown-session`, `409 leaf-taken` without mutation, or `200 attached`), `GET
+  `POST /api/terminal/{session}/attach-leaf` (**slice L5/L9/HFX-L4** — normalize the requested leaf ref,
+  then claim or move a leaf for an existing session, enclosure-free / no respawn; delegates to
+  `terminal_leaf_assignment.assign_terminal_session_to_leaf`, returning `400 leaf-ref-not-found` /
+  `400 leaf-ref-ambiguous`, `404 unknown-session`, `409 leaf-taken` without mutation, or `200 attached`), `GET
   /api/terminal/sessions` (task 22 — refresh stale catalog rows and return non-terminated sessions),
   `POST /api/terminal/{session}/terminate` (task 22 — kill tmux and mark the catalog row terminated),
   `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), `POST /api/terminal/{session}/image`
@@ -286,6 +288,9 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 - `terminal_leaf_assignment.py` — the shared L9 catalog reassignment helper: moves an existing catalog row
   to a new durable `leafKey`, returns `leaf-taken` without mutation when another running same-role session
   owns the target leaf, and is reused by the dashboard route and MCP tool.
+- `leaf_ref_validation.py` — the HFX-L4 serving adapter for terminal catalog write surfaces: resolves
+  qualified ids, doc ids, and unambiguous legacy stems/slugs through `worktrees.leaf_refs`, returning the
+  canonical qualified leaf key that opener/attach routes persist.
 - `terminal_opener.py` — the shared **L2 hosted-session opener**: `open_terminal_session(...)` resolves
   the launch (`resolve_terminal_launch` — a harness **id** to its fixed argv, moved here from `app.py`;
   since 260703-L16 the knob-application point: env `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` map onto the
@@ -378,6 +383,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: terminal opener and attach-leaf routes now
+  normalize accepted leaf refs to canonical qualified task-doc ids before catalog mutation and return
+  `400 leaf-ref-not-found` / `400 leaf-ref-ambiguous` before any mutation on invalid refs; added
+  `leaf_ref_validation.py` as the serving adapter. Verification metadata pinned until closeout stamps the
+  260707-HFX-L4 commit.
 - 2026-07-07T22:15+02:00 — 260707-HFX-L3 route impact (capture-verified delivery):
   `terminal_paste.py` reports delivery only after pane capture-verification against ONE
   pre-delivery origin baseline (both harness chip vocabularies; re-capture before any re-paste, so

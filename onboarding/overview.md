@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-07T17:40+02:00 |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5` |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 
 > **Status:** active baseline
 
@@ -376,6 +376,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-07T21:05+02:00 — No route impact: 260703-L18 changes root-scope files only in place — skills/l-01 criteria catalogs gain candidate/standing tier updates (described in their package_data mirror sidecars) and docs/reference/settings-json.md + harnesses.md gain one rule sentence each (null refusal; effortSessionCommand template); the code fixes live in their own child routes (mcp, dashboard/src). The root route model and this overview's descriptions are unaffected.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes (delta): the setup lock is HOST-scoped in
   the system temp dir (not `providers/.setup.lock` — that root is pruned by `runtime_install`
   and benchmark roots are per-workspace), and the benchmark filter's no-authority default is
@@ -390,13 +391,12 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
   (`providers/metrics.py`, new) that ride `provider_status`. Detail lives under the `mcp/`,
   `controllers/`, `serving/`, and `runner_modules/` route overviews and the file sidecars.
   Verification metadata pinned until closeout stamps the HFX-L1 commit.
+- 2026-07-07T12:55+02:00 — L16 route impact (body): the root index names docs/reference/harnesses.md, the new spawn-parameters manual (the docs/reference route has no onboarding overview of its own — pre-existing gap, follow-up registered). Verification metadata pinned until closeout stamps the L16 commit.
+
 - 2026-07-07T06:10+02:00 — No route impact: PR #100 merged the 260703_agent-orchestration series
   to main (`e358c4a`); the post-575a9a4 delta is two review fixes inside `mcp/` (agentic-settings
   empty-list refusal; reconciliation memory-source-branch guard) plus tests. Repo surface and
   Feature Inventory unchanged (detail under `mcp/`). Post-merge onboarding refresh, developer-approved.
-- 2026-07-07T21:05+02:00 — No route impact: 260703-L18 changes root-scope files only in place — skills/l-01 criteria catalogs gain candidate/standing tier updates (described in their package_data mirror sidecars) and docs/reference/settings-json.md + harnesses.md gain one rule sentence each (null refusal; effortSessionCommand template); the code fixes live in their own child routes (mcp, dashboard/src). The root route model and this overview's descriptions are unaffected.
-- 2026-07-07T12:55+02:00 — L16 route impact (body): the root index names docs/reference/harnesses.md, the new spawn-parameters manual (the docs/reference route has no onboarding overview of its own — pre-existing gap, follow-up registered). Verification metadata pinned until closeout stamps the L16 commit.
-
 - 2026-07-06T23:59:58+02:00 — No route impact: L14 is dashboard + mcp-internal (insignia, command tree, additive doc/session fields) — the repo surface this root overview describes is unchanged; details live in the dashboard/src and mcp sub-route overviews.
 
 - 2026-07-06T23:55+02:00 — L13 owner follow-up (body): the root index names kernel/agentic_settings.py, the new two-layer agentic-settings loader (the builder's entry was history-only for this route). Verification metadata pinned until closeout stamps the L13 commit.

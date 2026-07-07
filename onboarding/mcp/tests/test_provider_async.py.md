@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-07T23:30+02:00                     |
+| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
+| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -30,7 +30,7 @@ with the typed error and still unlinks settings. Projection tests cover
 None (no progress, no state file), legacy `prepared`, and the failed-state
 `retryArgs` (worktree_name from `code_worktree.name`).
 
-`StartOrderingTests` pins the GitHub #53 core: with start internals mocked,
+`StartOrderingTests` pins the GitHub #53 core: with the extracted start-contract builder mocked,
 the contract file must exist on disk at the moment `run_or_launch_provider_setup`
 is invoked, and the started payload carries providers `starting` plus the
 background summary. Dry-run stays synchronous (`planned`, launcher never
@@ -63,4 +63,7 @@ No external documentation is needed for these standard-library unit tests.
 
 ## Update History
 
+- 2026-07-07T23:30+02:00 — 260707-HFX-L4: updated the start-ordering mock target to the extracted
+  `build_start_contract` call site after contract construction moved out of `start.py`. Verification
+  metadata pinned until closeout stamps the 260707-HFX-L4 commit.
 - 2026-06-10T07:30+02:00 — Created with the GitHub #53 async provider setup.

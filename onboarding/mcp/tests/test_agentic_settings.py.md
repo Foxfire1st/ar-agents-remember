@@ -127,11 +127,6 @@ No meaningful cross-repo references found.
 
 ## Update History
 
-- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P2, merge `e358c4a`): `FreeFormRoleKnobTests`
-  gained `test_empty_free_form_list_is_refused` and `test_empty_per_level_list_override_is_refused`
-  (an empty free-form list refuses with omit-to-inherit guidance, flat and per-level). Post-merge
-  onboarding refresh (developer-approved) verified against main @ e358c4a.
-
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): `FailLoudTests` gained the
   null-family refusal tests (repo-local walk across the six families + a global-layer case, proving no
   silent wipe); `HarnessesFamilyTests` gained the `effortSessionCommand` template-validation tests
@@ -145,6 +140,11 @@ No meaningful cross-repo references found.
   semantics, vehicle-pair rules, effective-id references, cross-layer partial overrides, the
   manual-naming refusal). Existing loader tests unmodified. Verification metadata pinned until
   closeout stamps the L16 commit.
+
+- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P2, merge `e358c4a`): `FreeFormRoleKnobTests`
+  gained `test_empty_free_form_list_is_refused` and `test_empty_per_level_list_override_is_refused`
+  (an empty free-form list refuses with omit-to-inherit guidance, flat and per-level). Post-merge
+  onboarding refresh (developer-approved) verified against main @ e358c4a.
 
 - 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up: local-gateDelegation refusal test added (L13R-2). Verification metadata pinned until closeout stamps the L13 commit.
 
