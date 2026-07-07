@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T23:45+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T00:05+02:00 |
+| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b` |
+| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -307,7 +307,17 @@ The MCP package separates three surfaces:
   `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery); `serving.terminal` gains
   a `tmux new-session -e KEY=VALUE` env knob-injection seam and `serving.terminal_catalog` gains spawned-by
   provenance columns; HFX-L4 normalizes opener/attach leaf keys to canonical qualified task-doc ids
-  before catalog mutation. A service domain with its own
+  before catalog mutation. 260707-HFX-L5 replaces task 22's immediate stale-row exit marking with
+  **catalog liveness hysteresis**: the new `serving.terminal_liveness` module owns a rate-limited
+  (10s default), non-overlapping probe sweeper behind `GET /api/terminal/sessions` plus the shared
+  per-row observation path WebSocket attach and `/paste` use; `serving.terminal`'s probe becomes
+  evidence-bearing and stderr-aware (`TmuxProbeResult` — only explicit missing-session stderr is
+  definitive `pane-gone`, everything else is transient `tmux-command-failed`), and
+  `serving.terminal_catalog` persists the hysteresis state via `record_liveness_probe` (3 command
+  failures across ≥5s before an exit mark, pane-gone marks fast, false exits self-heal on the next
+  alive probe, `terminated` never revives) — a tmux command-failure storm can no longer mass-exit
+  a live fleet, and the dashboard's 1s polling no longer implies 1s tmux probing; pinned by the
+  new `mcp/tests/test_terminal_liveness.py` suite. A service domain with its own
   route overview.
 - `agents_remember.controlplane` owns the **gate control plane** (task 6): the durable,
   append-only `ar-gate-record/v1` `GateRecord` + `GateStore` (co-located with the observer
@@ -486,6 +496,15 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T00:05+02:00 — 260707-HFX-L5 route impact (catalog liveness hysteresis): the serving
+  domain gains `serving.terminal_liveness` — a rate-limited, non-overlapping liveness sweeper
+  behind `GET /api/terminal/sessions` plus the shared per-row observation path WebSocket attach
+  and `/paste` use — replacing `serving.app`'s immediate stale-row exit marking;
+  `serving.terminal`'s probe is now evidence-bearing/stderr-aware (`TmuxProbeResult`) and
+  `serving.terminal_catalog` persists hysteresis state via `record_liveness_probe`
+  (evidence-scaled thresholds, self-healing false exits, `terminated` never revived). NEW suite
+  `mcp/tests/test_terminal_liveness.py` pins storm/pane-gone/self-heal/rate-limit/overlap/stderr
+  behavior. Verification metadata pinned until closeout stamps the HFX-L5 commit.
 - 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: the package role surface now
   distinguishes developer-facing architect sessions from spawned backend orchestrators and includes
   curator in the runtime skill mirrors, settings role vocabulary, dashboard role projection, and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T11:10+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T23:45+02:00                           |
+| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b`       |
+| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -74,8 +74,21 @@ exits (`OSError`/EIO once the slave closes) — callers use `is_alive` to disamb
 `resize` packs `struct.pack("HHHH", rows, cols, 0, 0)` into a `TIOCSWINSZ` ioctl
 (SIGWINCH to the child / tmux client). `_tmux_session_name` sanitizes an arbitrary sid
 into a tmux-legal name (`.`/`:` collapse to `-`, `ar-` prefix). Registry views:
-`get`/`sessions`/`for_lifecycle`. Durability helpers: `has_session(tmux_name)` delegates to the
-injectable tmux probe (`tmux has-session -t <name>` by default), `ensure` delegates missing-session
+`get`/`sessions`/`for_lifecycle`. Durability helpers: since **260707-HFX-L5** the probe is
+**evidence-bearing** — `TmuxProbeResult(exists, evidence)` with
+`TmuxProbeEvidence = "alive" | "pane-gone" | "tmux-command-failed"`.
+`probe_session(tmux_name)` returns the full result and `has_session(tmux_name)` keeps the old
+boolean view over it. The production default `_tmux_probe_session` runs
+`tmux has-session -t <name>` with **stderr captured** (`stderr=subprocess.PIPE, text=True`) and
+classifies: returncode 0 ⇒ `alive`; a nonzero exit whose stderr matches
+`_tmux_missing_session_stderr` (case-insensitive `can't find session` / `session not found`) ⇒
+`pane-gone` (the session is definitively missing); any other nonzero exit — including a transient
+`error connecting to tmux server` — and any `OSError`/`SubprocessError`/timeout ⇒
+`tmux-command-failed` (transient, so catalog liveness hysteresis applies rather than an immediate
+exit mark; an unrecognized future tmux stderr wording degrades toward hysteresis, i.e. toward
+FEWER false exits). An injected legacy boolean `TmuxProbe` is wrapped via
+`_tmux_probe_result_from_bool` (`True` ⇒ `alive`, `False` ⇒ `pane-gone`), preserving old fake/test
+semantics. `ensure` delegates missing-session
 creation to the injectable creator (`tmux new-session -d -s <name> ...` by default), and
 `terminate(sid, tmux_name=None)` kills the resolved tmux name via the injectable killer
 (`tmux kill-session -t <name>` by default), then drops/discards any in-process PTY client. `close`
@@ -86,9 +99,11 @@ option pick it up — and `attach` re-asserts against the existing session (atta
 With per-session `mouse on`, tmux requests mouse tracking from the browser client, so wheel input
 scrolls tmux's own pane history (copy-mode) for normal-buffer TUIs (Codex) and passes through to panes
 whose app tracks the mouse itself (Claude Code); the known tradeoff is Shift+drag for pane text
-selection. All four default tmux helpers
-(`_tmux_has_session`/`_tmux_kill_session`/`_tmux_create_detached`/`_tmux_enable_mouse`) run
-`subprocess.run(..., stdin=subprocess.DEVNULL, stdout=..., stderr=subprocess.DEVNULL)` — the
+selection. All default tmux helpers
+(`_tmux_probe_session` — which `_tmux_has_session` now delegates to —
+/`_tmux_kill_session`/`_tmux_create_detached`/`_tmux_enable_mouse`) run
+`subprocess.run(..., stdin=subprocess.DEVNULL, ...)` — the probe pipes stderr for evidence
+classification (HFX-L5) while the fire-and-forget helpers keep `stderr=DEVNULL`; the
 `stdin=DEVNULL` is the subprocess-hygiene guard (GitHub #49): under the stdio MCP transport the
 parent's stdin *is* the JSON-RPC protocol pipe, so a fire-and-forget tmux call must never inherit and
 consume it.
@@ -144,6 +159,18 @@ so a fake spawner can back a session with any process object.
 
 ## Update History
 
+- 2026-07-07T23:45+02:00 — 260707-HFX-L5 (catalog liveness hysteresis): the tmux probe is now
+  **evidence-bearing** — new `TmuxProbeResult(exists, evidence)` +
+  `TmuxProbeEvidence = "alive"|"pane-gone"|"tmux-command-failed"`, `TerminalHost.probe_session`
+  beside the boolean `has_session`. The production `_tmux_probe_session` captures stderr and is
+  **stderr-aware** (L5R2 fix round): only explicit missing-session stderr
+  (`can't find session` / `session not found`, via `_tmux_missing_session_stderr`) classifies as
+  `pane-gone`; every other nonzero exit and every subprocess error/timeout classifies as the
+  transient `tmux-command-failed` so catalog hysteresis applies — an unrecognized future tmux
+  wording fails toward fewer false exits. Injected legacy boolean probes are wrapped by
+  `_tmux_probe_result_from_bool` (back-compat for fakes/tests). Consumed by
+  `terminal_liveness.py`'s sweeper + shared observation path. Verification metadata pinned until
+  closeout stamps the HFX-L5 commit.
 - 2026-07-04T11:10+02:00 — L2 (agent-orchestration knob injection): `TmuxCreator` gained an `env`
   parameter and `_tmux_create_detached`/`_build_tmux_command` now emit `tmux new-session -e KEY=VALUE`
   flags (via the new pure `_env_flags`); `ensure`/`open`/`_ensure_binding` thread an optional

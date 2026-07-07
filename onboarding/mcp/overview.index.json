@@ -299,6 +299,7 @@
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
     "mcp/tests/test_terminal_leaf_assignment.py",
+    "mcp/tests/test_terminal_liveness.py",
     "mcp/tests/test_terminal_opener.py",
     "mcp/tests/test_terminal_paste.py",
     "mcp/tests/test_terminal_ws.py",
@@ -316,8 +317,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 542,
-    "fileSidecars": 228,
+    "sourceFilesInScope": 544,
+    "fileSidecars": 229,
     "childRoutes": 15
   },
   "routingTerms": [

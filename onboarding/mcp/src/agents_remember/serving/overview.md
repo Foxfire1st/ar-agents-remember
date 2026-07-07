@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T23:30+02:00 |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`       |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-07T23:45+02:00 |
+| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b`       |
+| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -88,7 +88,10 @@ JSON `stdin`/`resize` in (the `websockets` dep is uvicorn's WS impl). The bridge
 rows after a dashboard restart, but only after `TerminalHost.has_session` proves the tmux name still
 exists; normal browser disconnect closes only that websocket's PTY client while leaving the tmux/catalog
 row running so refreshes and second browser tabs get fresh independent attaches; stale running rows
-become `exited`, and `POST /api/terminal/{session}/terminate` is the only destructive terminal action.
+become `exited` only through the **catalog liveness hysteresis** path (260707-HFX-L5,
+`terminal_liveness.py`: evidence-scaled thresholds, ≤1 probe sweep per 10s regardless of the
+dashboard's 1s polling, self-healing false exits), and `POST /api/terminal/{session}/terminate` is
+the only destructive terminal action.
 
 ## Route Model
 
@@ -136,7 +139,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   then claim or move a leaf for an existing session, enclosure-free / no respawn; delegates to
   `terminal_leaf_assignment.assign_terminal_session_to_leaf`, returning `400 leaf-ref-not-found` /
   `400 leaf-ref-ambiguous`, `404 unknown-session`, `409 leaf-taken` without mutation, or `200 attached`), `GET
-  /api/terminal/sessions` (task 22 — refresh stale catalog rows and return non-terminated sessions),
+  /api/terminal/sessions` (task 22; **260707-HFX-L5** — return non-terminated sessions via
+  `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()`: ≤1 probe sweep per 10s,
+  non-overlapping, rate-limited callers get the persisted catalog; WebSocket attach + the paste
+  endpoint run direct `observe_terminal_liveness` observations on the app's ONE injected clock,
+  replacing the deleted `_refresh_catalog_entries` immediate exit-marks),
   `POST /api/terminal/{session}/terminate` (task 22 — kill tmux and mark the catalog row terminated),
   `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), `POST /api/terminal/{session}/image`
   (6f — save a validated screenshot under `<cwd>/.dashboard-pastes/<uuid>.<ext>` using either a live host
@@ -256,7 +263,11 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   Task 22 adds injectable tmux probe/create/kill hooks, `has_session`, `ensure`, `terminate`, and
   unregistered per-connection `attach` clients so the durable catalog can create a detached tmux
   session, prove it still exists before attach, kill one explicitly, and serve multiple browser tabs
-  without sharing one PTY fd. **L2** threads an optional `env: Mapping[str, str]` through
+  without sharing one PTY fd. **260707-HFX-L5** makes the probe evidence-bearing:
+  `TmuxProbeResult(exists, evidence)` / `probe_session` beside the boolean `has_session`, with
+  stderr-aware classification — only explicit missing-session stderr is definitive `pane-gone`;
+  every other failure (subprocess error, timeout, non-missing nonzero exit) is the transient
+  `tmux-command-failed` that feeds catalog hysteresis instead of an immediate exit mark. **L2** threads an optional `env: Mapping[str, str]` through
   `ensure`/`open`/`_build_tmux_command` (`_tmux_create_detached` emits `tmux new-session -e KEY=VALUE`
   via the pure `_env_flags`), seeded only at creation and inert on re-attach — the minimal
   env-passthrough seam the agent-facing spawn tool injects role knobs through (empty-safe: an empty
@@ -284,7 +295,24 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
   `role_for_kind` / `entry.role` — a shell is a terminal, a harness is a chat) scopes
   `active_for_leaf(leaf_key, role="chat")` so it returns the single **running** owner *of that role* — the
   per-(leaf, role) single-owner probe the opener + attach-leaf routes call before an upsert, letting one
-  leaf hold a running chat AND a running terminal at once.
+  leaf hold a running chat AND a running terminal at once. **260707-HFX-L5** adds persisted liveness
+  state (`livenessFailures`/`livenessFirstFailedAt`/`livenessLastFailedAt`/`livenessEvidence` +
+  `exitEvidence` on exited rows, all migration-safe write-when-set) and the locked
+  `record_liveness_probe` write point with the `with_liveness_success`/`with_liveness_failure`
+  transition copiers — hysteresis survives a daemon restart and a false exit self-heals on the next
+  alive probe.
+- `terminal_liveness.py` — the **catalog liveness hysteresis** module (260707-HFX-L5):
+  `TerminalCatalogLivenessSweeper` (rate-limited — 10s default interval — and non-overlapping via a
+  non-blocking lock; a rate-limited or concurrent `refresh()` serves the persisted catalog without
+  probing, so the dashboard's 1s cadence never implies 1s tmux probing) +
+  `observe_terminal_liveness`, the shared single-row observation path (in-process `is_alive` →
+  evidence-bearing `probe_session` → legacy boolean `has_session`) that persists transitions
+  through `TerminalCatalog.record_liveness_probe`. Evidence-scaled hysteresis: transient
+  `tmux-command-failed` probes need 3 consecutive failures across ≥5s before an exit mark (a
+  command-failure storm cannot mass-exit a live fleet), definitive `pane-gone` marks fast, and a
+  falsely exited row self-heals to `running` within one sweep (exited rows are probed too;
+  `terminated` is never revived). Constants are code defaults, not settings knobs. Replaces
+  `app.py`'s deleted `_refresh_catalog_entries`.
 - `terminal_leaf_assignment.py` — the shared L9 catalog reassignment helper: moves an existing catalog row
   to a new durable `leafKey`, returns `leaf-taken` without mutation when another running same-role session
   owns the target leaf, and is reused by the dashboard route and MCP tool.
@@ -383,6 +411,18 @@ become `exited`, and `POST /api/terminal/{session}/terminate` is the only destru
 
 ## Update History
 
+- 2026-07-07T23:45+02:00 — 260707-HFX-L5 route impact (catalog liveness hysteresis): the route
+  gains `terminal_liveness.py` — `TerminalCatalogLivenessSweeper` (rate-limited 10s, non-overlapping;
+  rate-limited/concurrent callers get the persisted catalog without probing) +
+  `observe_terminal_liveness`, the shared observation path behind `GET /api/terminal/sessions`,
+  WebSocket attach, and `/paste` (all on the app's ONE injected clock). `terminal.py`'s probe is now
+  evidence-bearing and stderr-aware (`TmuxProbeResult`; only explicit missing-session stderr ⇒
+  definitive `pane-gone`, everything else ⇒ transient `tmux-command-failed`), and
+  `terminal_catalog.py` persists the hysteresis state (`livenessFailures`/timestamps/evidence +
+  `exitEvidence`) with `record_liveness_probe` + the success/failure transition copiers — a tmux
+  command-failure storm can no longer mass-exit the fleet, false exits self-heal within one sweep,
+  and `app.py`'s `_refresh_catalog_entries` is deleted. Covered by `test_terminal_liveness.py`.
+  Verification metadata pinned until closeout stamps the HFX-L5 commit.
 - 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: terminal opener and attach-leaf routes now
   normalize accepted leaf refs to canonical qualified task-doc ids before catalog mutation and return
   `400 leaf-ref-not-found` / `400 leaf-ref-ambiguous` before any mutation on invalid refs; added

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T20:50+02:00                    |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-07T23:45+02:00                    |
+| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b` |
+| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,7 +44,13 @@ constructs a `Projector` (threading `now`/`before_tick` straight through — the
 both default to live behaviour) plus a `TerminalHost` (`terminal_host` defaults to a fresh one;
 tests inject a fake), a `TerminalCatalog` at `coordination_root/logs/dashboard/terminal-sessions.json`
 (`terminal_catalog` is test-injectable), and (L2) a `TerminalPaster` (`terminal_paster` defaults to a
-fresh one; tests inject a fake for the paste endpoint). It wires a FastAPI `lifespan` that `prime()`s the projector
+fresh one; tests inject a fake for the paste endpoint). Since **260707-HFX-L5** it also builds the
+catalog-liveness wiring: `liveness_clock = now or utc_now` (ONE timestamp base per app instance —
+sim/replay wires its replay clock through liveness too, the L5R2 fix), one
+`TerminalCatalogLivenessConfig` (the code-default hysteresis knobs), and one
+`TerminalCatalogLivenessSweeper(catalog, host, now=now, config=…)` shared by the sessions endpoint;
+attach + paste run direct per-row `observe_terminal_liveness` calls with `checked_at=liveness_clock()`.
+It wires a FastAPI `lifespan` that `prime()`s the projector
 (one initial projection), runs its tick loop as a task beside the provider metrics sampling task,
 and on shutdown cancels both tasks (awaiting each under `CancelledError` suppression) and calls
 `host.shutdown()`. Endpoints:
@@ -103,10 +109,14 @@ and the statistics board later; sampling is read-only and dockerless-safe.
   This is the trusted dashboard path used by the dismissible `check chat` task-row warning; it clears
   developer-side noise without marking the entry as agent-consumed.
 - `@app.websocket("/api/terminal/{session}")` (slice 6d-2) bridges the Mode B2 terminal host to
-  the browser: it `accept()`s, looks up the catalog row, probes tmux, and calls
+  the browser: it `accept()`s, looks up the catalog row, runs a direct liveness observation
+  (`_attach_terminal_session` takes `checked_at` + `liveness_config` and calls
+  `observe_terminal_liveness` — HFX-L5: a transient tmux command failure records hysteresis
+  evidence instead of immediately exit-marking the row; a dead probe still refuses), and calls
   `host.attach(..., name=entry.tmux_name)` so this WebSocket gets its own tmux client PTY attached to
-  the same durable tmux session. If the row is unknown/non-running or tmux no longer has the session, it
-  marks a stale catalog row `exited` and `close(code=4404)`. PTY output is queued via
+  the same durable tmux session. If the row is unknown/non-running or the observation says
+  not-alive/not-running, it `close(code=4404)` (exit marks now come only from the evidence-backed
+  liveness path, revivable by the sweeper's self-heal). PTY output is queued via
   `loop.add_reader(master_fd)` (no polling) and sent as **binary** frames (raw VT bytes for
   xterm.js); an EOF sentinel emits the `{"type":"exit"}` text frame then closes. Inbound text
   frames go through `_apply_terminal_session_input` → `host.write_session` (a `{type:"stdin",data}`) /
@@ -118,9 +128,13 @@ and the statistics board later; sampling is read-only and dockerless-safe.
   leaving the tmux session and catalog row running, so refreshes and second browser tabs attach with
   their own clients instead of competing to read or close one fd; child exit updates the durable catalog
   status to `exited`.
-- `GET /api/terminal/sessions` returns catalog rows after refreshing stale `running` rows. A running row
-  with an in-process dead child or no in-process session and no tmux match becomes `exited`; explicitly
-  terminated rows are filtered by the catalog.
+- `GET /api/terminal/sessions` returns catalog rows via `liveness_sweeper.refresh()` (HFX-L5): a
+  full probe sweep runs at most every 10s (default) and never overlaps — a rate-limited or
+  concurrent call serves the persisted catalog without probing, so the dashboard's 1s polling
+  cadence no longer implies 1s tmux probing. A running row exit-marks only after the hysteresis
+  evidence threshold (3 command failures across ≥5s, or one definitive pane-gone probe); a falsely
+  exited row self-heals to `running` on the next alive probe; explicitly terminated rows are
+  filtered by the catalog.
 - `POST /api/terminal/{session}` (slice 6e-2a/6e-2b) is the **opener**: the dashboard ensures a
   detached durable tmux session, then the WebSocket attaches with a per-tab client. `TerminalOpenRequest`
   carries a `kind` (+ optional `harness`), a display `label`, `lifecycleId`, and (L5) `leafKey`. **Since
@@ -142,8 +156,10 @@ and the statistics board later; sampling is read-only and dockerless-safe.
 - `POST /api/terminal/{session}/paste` (**L2**) delivers a context packet to a hosted session
   server-side — the mirror of the frontend WebSocket `pasteAndConfirm`/`submitAndConfirm` for a durable
   tmux session that has no attached browser client. `TerminalPasteRequest` carries `text` + `submit`
-  (default false). It `404 {"status":"unknown-session"}`s when the row is unknown/non-running or its tmux
-  session is gone (marking a stale running row `exited`); otherwise it runs `paster.paste(entry.tmux_name,
+  (default false). It `404 {"status":"unknown-session"}`s when the row is unknown/non-running, and
+  otherwise runs a direct `observe_terminal_liveness` check (HFX-L5: `checked_at=liveness_clock()`;
+  a transient tmux command failure records hysteresis evidence — no immediate exit mark — but a
+  not-alive observation still 404s); on an alive running row it runs `paster.paste(entry.tmux_name,
   text, submit=submit)` — the same capture-verified paster mechanic as the spawn tool, no separate
   path — and returns `{session, status:"delivered"|"unconfirmed", delivered, submitted}`; since
   260707-HFX-L3 an unconfirmed outcome additionally ships `capture` (the paster's final pane
@@ -225,7 +241,13 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
   PTY client but does not mark the row exited; the fd reader is removed at most once during cleanup; tmux
   remains the persistence boundary and can serve multiple browser tabs at once.
 - **Terminal catalog boundary:** `terminal_catalog.py` owns JSON persistence and filtering semantics;
-  this module owns HTTP/WebSocket orchestration and status refresh.
+  this module owns HTTP/WebSocket orchestration. Status refresh is delegated to
+  `terminal_liveness.py` (HFX-L5): one sweeper instance behind the sessions endpoint, direct
+  observations on attach/paste, one injected clock — the deleted `_refresh_catalog_entries`
+  immediate-exit-mark path no longer exists, so a tmux command-failure storm cannot mass-exit the
+  fleet and a false exit self-heals within one sweep interval. The WebSocket-close `mark_exited`
+  (dead PTY — process evidence, not a probe) remains and is itself sweep-revivable while tmux still
+  holds the session.
 - **Leaf registry (L5):** the catalog is the leaf→chat registry and the server is the uniqueness
   arbiter — at most one *running* session per **(leaf, role)**. Since **L2** the opener's claim lives in
   `terminal_opener.open_terminal_session` (via the shared `leaf_conflict_owner`, `role=role_for_kind(kind)`)
@@ -254,6 +276,7 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The operator inbox payload builder used by `/api/operator-inbox`. | [mcp/tools/operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
 | The Mode B2 terminal host the `/api/terminal` WebSocket bridges to (slice 6d), including tmux probe/kill hooks used for durability. | L86-L121; L230-L239; L287-L289; L340-L347 | [terminal.py](terminal.py) |
 | The durable terminal-session catalog persisted by the opener, sessions endpoint, and terminate route. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
+| The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
 | The shared hosted-session opener (L2) both this route and the `spawn_agent_session` tool compose. | L84-L174 | [terminal_opener.py](terminal_opener.py) |
 | The serving leaf-ref adapter normalizes terminal open/attach leaf keys before catalog writes. | resolve_catalog_leaf_key | [leaf_ref_validation.py](leaf_ref_validation.py.md) |
@@ -268,6 +291,16 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 
 ## Update History
 
+- 2026-07-07T23:45+02:00 — 260707-HFX-L5 (catalog liveness hysteresis): deleted
+  `_refresh_catalog_entries` (the immediate exit-mark refresh); `create_app` now wires
+  `liveness_clock = now or utc_now`, one `TerminalCatalogLivenessConfig`, and one
+  `TerminalCatalogLivenessSweeper` — `GET /api/terminal/sessions` returns
+  `liveness_sweeper.refresh()` (≤1 probe sweep per 10s, non-overlapping; rate-limited callers get
+  the persisted catalog), and WebSocket attach (`_attach_terminal_session` gained `checked_at` +
+  `liveness_config`) and the `/paste` endpoint run direct `observe_terminal_liveness` observations
+  with the injected clock (L5R2: no hard `utc_now()` beside a sim replay clock). Transient tmux
+  command failures now record hysteresis evidence instead of exit-marking; false exits self-heal.
+  Verification metadata pinned until closeout stamps the HFX-L5 commit.
 - 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2: the paste endpoint attaches the pane `capture`
   on submit-failure too (`not delivered or (submit and not submitted)`), tested in both directions;
   the per-field `status` stays truthful (`"delivered"` even when submit failed).

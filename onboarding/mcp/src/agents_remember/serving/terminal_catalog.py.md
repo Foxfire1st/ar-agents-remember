@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-07T09:45+02:00                                  |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`              |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-07T23:45+02:00                                  |
+| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b`              |
+| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -40,15 +40,46 @@ more optional spawn-provenance columns follow the same pattern: the free-form es
 (`promptKeywords`, prepended to the brief paste), `session_commands` (`sessionCommands`, the
 post-launch pastes, resolved list incl. a session-vehicle effort) — plus the resolved dispatch level
 `spawn_level` (`spawnLevel`, leaf|master|portfolio) and `spawn_level_source` (`spawnLevelSource`,
-explicit|default), the rolesPerLevel knob-resolution provenance. `from_json`/`to_json` translate between Python
+explicit|default), the rolesPerLevel knob-resolution provenance. Since **260707-HFX-L5** the row
+also carries **liveness probe state**: `liveness_failures` (consecutive failed probes,
+`_non_negative_int` on read), `liveness_first_failed_at` / `liveness_last_failed_at` (ISO
+timestamps), `liveness_evidence` and `exit_evidence`
+(`TerminalLivenessEvidence = "tmux-command-failed" | "pane-gone"`, validated by
+`_liveness_evidence` on read). Persisting the failure state means a daemon restart cannot erase
+hysteresis progress; JSON keys are `livenessFailures` / `livenessFirstFailedAt` /
+`livenessLastFailedAt` / `livenessEvidence` written only when set, and `exitEvidence` written only
+when the row is actually `exited` — all migration-safe like the other optional columns.
+`from_json`/`to_json` translate between Python
 snake_case and the dashboard API's camelCase fields (`_string_tuple` reads the free-form lists back,
 `None` for absent/legacy rows). `to_json` writes `leafKey` / `spawnedBySession` /
 `spawnedByLifecycle` / `spawnRole` / the five L16 keys **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
 with no such key read back as `None` — no schema bump, migration-safe, the SAME pattern for all optional
 columns; the dashboard groups the Chats sidebar by `spawnRole` (L14) and reads the spawned-by pair to
 render the spawner → spawned edges once that surface lands. `with_attachment` restores a row to `running`,
-refreshes `lastAttachedAt`, and clears `terminatedAt`; `with_status` changes status and records
-`terminatedAt` only for explicit termination. **L2** rewrote all three copiers
+refreshes `lastAttachedAt`, clears `terminatedAt`, and (HFX-L5) resets all liveness state — a
+fresh attach is direct evidence of life; `with_status` changes status and records
+`terminatedAt` only for explicit termination.
+
+The **liveness transition copiers** (260707-HFX-L5) own the hysteresis math.
+`with_liveness_success()` clears all failure state and restores a non-`terminated` `exited` row to
+`running` — the **self-heal**: a false exit mark recovers automatically when a later probe finds
+the tmux session alive; a `terminated` row is never revived (explicit `End` stays terminal).
+`with_liveness_failure(evidence=…, checked_at=…, failure_threshold, minimum_failure_window_seconds,
+pane_gone_failure_threshold)` records one failed probe on a `running` row (non-running rows are
+untouched): it increments `liveness_failures`, pins `liveness_first_failed_at` on the first
+failure, and marks `exited` only when `failures >= threshold` AND
+`_elapsed_seconds(first_failed_at, checked_at) >= minimum_window`. The threshold/window pair is
+**evidence-dependent**: `pane-gone` (a definitive missing-session probe) uses
+`pane_gone_failure_threshold` with a zero window so it marks fast, while `tmux-command-failed`
+(transient — a subprocess error, timeout, or non-missing-session nonzero exit) needs the full
+`failure_threshold` across at least the minimum window, so a transient command-failure storm never
+mass-exits a live fleet. On marking, the producing evidence is stamped into `exit_evidence`.
+`TerminalCatalog.record_liveness_probe(session_id, *, alive, checked_at, evidence=None,
+failure_threshold=3, minimum_failure_window_seconds=5.0, pane_gone_failure_threshold=1)` is the
+store-level write point: under the catalog lock it reads, applies `with_liveness_success` (alive)
+or `with_liveness_failure` (dead with evidence; a dead probe with `evidence=None` is a no-op), and
+writes only when the row actually changed; an unknown id returns `None`. Callers are the
+`terminal_liveness.py` sweeper + shared observation path. **L2** rewrote all three copiers
 (`with_attachment` / `with_status` / `with_leaf_key`) to use `dataclasses.replace(self, …)` instead of
 field-by-field reconstruction, so a newly added column (like the spawned-by pair) is preserved through a
 re-attach/status change **by construction** rather than silently dropped. `with_leaf_key(leaf_key)` is
@@ -62,9 +93,10 @@ terminal can share a leaf without colliding. `active_for_leaf(leaf_key, *, role=
 role-scoped registry lookup the opener + `attach-leaf` routes call before an upsert: the first `list()`
 row whose `leaf_key == leaf_key and status == "running" and role == role`, else `None` (the default
 `"chat"` is the agent slot). Because `list()` already excludes terminated rows and the probe gates on
-`running`, an exited/terminated session frees its leaf for that role (a stale `running` row is downgraded
-to `exited` by `serving.app`'s `_refresh_catalog_entries` when its tmux session is gone), giving
-server-authoritative single-owner-per-role uniqueness.
+`running`, an exited/terminated session frees its leaf for that role (a stale `running` row is
+downgraded to `exited` by the `terminal_liveness.py` sweeper / direct liveness observations once
+the hysteresis evidence threshold is met — never by a single transient tmux command failure),
+giving server-authoritative single-owner-per-role uniqueness.
 
 `terminal_catalog_path(coordination_root)` places the runtime file under
 `logs/dashboard/terminal-sessions.json`. `TerminalCatalog` is a small JSON store over that file:
@@ -84,7 +116,13 @@ The catalog is JSON-primary and API-shaped: persisted keys use the same camelCas
 ### Invariants And Boundaries
 
 - The catalog does not probe tmux and does not spawn or kill sessions. `serving.app` coordinates those
-  effects through `TerminalHost`.
+  effects through `TerminalHost`; `record_liveness_probe` only *persists* probe outcomes handed to it
+  by `terminal_liveness.py`.
+- Liveness self-heal revives any non-`terminated` `exited` row on an alive probe (broader than a
+  probe-caused exit alone — the WebSocket-close exit path's marks are also revivable when tmux still
+  holds the session, which is semantically correct); `terminated` is never revived. Known narrow
+  race (HFX-L5 review F2): a false exit + a fast same-(leaf, role) respawn inside one sweep interval
+  could revive into a momentary two-running-rows state for that slot.
 - Terminated rows stay available only when explicitly requested with `include_terminated=True`; exited
   rows remain listed so the UI can show an honest ended state.
 - Explicit termination is terminal for catalog visibility: later exit bookkeeping must preserve the
@@ -121,6 +159,8 @@ operations that keep catalog state honest.
 | The FastAPI app injects/creates the catalog, refreshes stale rows, rehydrates WebSockets from catalog metadata, persists opener rows, marks terminations, and uses catalog cwd for image uploads. | L334-L351; L291-L331; L481-L515; L528-L638 | [app.py](app.py) |
 | The terminal host exposes the tmux probe and terminate hooks that app.py uses before rehydrate and during explicit termination. | L86-L121; L230-L239; L287-L289; L340-L347 | [terminal.py](terminal.py) |
 | Unit tests pin catalog path, JSON schema/order, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | L46-L95 | [../../../tests/test_terminal_catalog.py](../../../tests/test_terminal_catalog.py) |
+| The liveness sweeper + shared observation path that drive `record_liveness_probe` (HFX-L5) and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
+| Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
 
 ## Cross-Repo References
 
@@ -132,6 +172,19 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-07T23:45+02:00 — 260707-HFX-L5 (catalog liveness hysteresis): `TerminalCatalogEntry`
+  gained persisted liveness state — `liveness_failures` / `liveness_first_failed_at` /
+  `liveness_last_failed_at` / `liveness_evidence` / `exit_evidence`
+  (`TerminalLivenessEvidence = "tmux-command-failed"|"pane-gone"`; JSON camelCase keys written
+  only when set, `exitEvidence` only on an exited row — migration-safe) — plus the transition
+  copiers `with_liveness_success` (clear failures; self-heal a non-terminated exited row back to
+  `running`; never revive `terminated`) and `with_liveness_failure` (increment + pin
+  first-failure; exit only at evidence-dependent threshold AND minimum window — pane-gone marks
+  fast, command failures need 3 across ≥5s by default), and the locked store write point
+  `TerminalCatalog.record_liveness_probe(...)` (writes only on actual change; unknown id ⇒
+  `None`). `with_attachment` now also resets liveness state. The `active_for_leaf` docstring was
+  refreshed to cite the liveness sweeper (L5R2 — `_refresh_catalog_entries` is deleted).
+  Verification metadata pinned until closeout stamps the HFX-L5 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): five optional spawn-provenance
   columns — `launch_args`/`prompt_keywords`/`session_commands` (the free-form escape hatch, recorded
   VERBATIM, never validated) and `spawn_level`/`spawn_level_source` (the resolved dispatch level +
