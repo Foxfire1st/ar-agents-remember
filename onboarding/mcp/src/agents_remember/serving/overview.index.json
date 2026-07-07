@@ -30,12 +30,13 @@
     "mcp/src/agents_remember/serving/terminal.py",
     "mcp/src/agents_remember/serving/terminal_catalog.py",
     "mcp/src/agents_remember/serving/terminal_leaf_assignment.py",
+    "mcp/src/agents_remember/serving/terminal_liveness.py",
     "mcp/src/agents_remember/serving/terminal_opener.py",
     "mcp/src/agents_remember/serving/terminal_paste.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 22,
-    "fileSidecars": 22,
+    "sourceFilesInScope": 23,
+    "fileSidecars": 23,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -61,6 +62,7 @@
     "init__",
     "leaf",
     "leaf_ref_validation",
+    "liveness",
     "mcp",
     "notes",
     "opener",
@@ -76,6 +78,7 @@
     "terminal",
     "terminal_catalog",
     "terminal_leaf_assignment",
+    "terminal_liveness",
     "terminal_opener",
     "terminal_paste",
     "validation"
@@ -104,6 +107,7 @@
       "mcp/src/agents_remember/serving/terminal.py",
       "mcp/src/agents_remember/serving/terminal_catalog.py",
       "mcp/src/agents_remember/serving/terminal_leaf_assignment.py",
+      "mcp/src/agents_remember/serving/terminal_liveness.py",
       "mcp/src/agents_remember/serving/terminal_opener.py",
       "mcp/src/agents_remember/serving/terminal_paste.py"
     ],
@@ -148,14 +152,14 @@
       "terminal_catalog",
       "terminal_leaf_assignment.py",
       "terminal_leaf_assignment",
+      "terminal_liveness.py",
+      "terminal_liveness",
       "terminal_opener.py",
       "terminal_opener",
       "terminal_paste.py",
       "terminal_paste",
       "agents-remember dashboard --config <settings.json>",
-      "cli/dashboard.py",
-      "serving.app.create_app(config",
-      "project_and_write"
+      "cli/dashboard.py"
     ]
   },
   "fallback": {

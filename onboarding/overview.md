@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-07T17:40+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated | 2026-07-08T00:05+02:00 |
+| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b` |
+| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
 
 > **Status:** active baseline
 
@@ -378,6 +378,12 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-08T00:05+02:00 — No route impact: 260707-HFX-L5 (catalog liveness hysteresis) is
+  serving-internal — the dashboard terminal catalog's stale-row handling moved from immediate
+  exit marks to the evidence-scaled hysteresis owned by `serving.terminal_liveness`; this
+  repo-overview's dashboard/terminal framing (Task 22 durability, Mode B2) stays accurate at this
+  altitude, and the detail lives in the `mcp/` and `serving/` route overviews + file sidecars.
+  Body reviewed, no change needed; route indexes regenerated for the HFX-L5 sidecar additions.
 - 2026-07-07T23:05+02:00 — 260707-HFX-L6 curator follow-up (body): remaining pre-split routing
   wording corrected to the HFX-L6 seat split — the Workflow modes row's build decision belongs to
   the architect lifecycle; the Agent lifecycles row lists the eight role lifecycles
