@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/inbox_backoff.py`            |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-08T14:20+02:00                                             |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                                             |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`|
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -30,14 +30,16 @@ redelivery. `backoff_seconds_for_attempt(attempt_count)` returns the wait before
 `next_attempt_at(now=, attempt_count=)` stamps the durable `nextAttemptAt` ISO timestamp
 `record_delivery` writes onto the entry — a row, never an in-memory timer.
 
-`is_due(entry, now=)` is true for a `pending` entry whose `deliveryState` is anything but a
-terminal one (there ISN'T one but `state=="consumed"` — see below) and whose `nextAttemptAt` has
-elapsed (or is unset, i.e. never attempted). `is_rate_limited(entry, now=, rate_limit_seconds=)`
+`is_ladder_resolved(entry)` is the explicit terminal predicate for rows that reached the terminal
+escalation rung against a non-live target seat. `is_due(entry, now=)` is true only for a `pending`
+entry that is not ladder-resolved, whose `deliveryState` is one of the redeliverable states, and
+whose `nextAttemptAt` has elapsed (or is unset, i.e. never attempted).
+`is_rate_limited(entry, now=, rate_limit_seconds=)`
 mirrors the `OrchestrationNudgeStore.record` rate-limit pattern
 (`orchestration_nudges.py:81-99`): compare elapsed time since `lastAttemptAt` against a per-target
 floor, independent of the backoff schedule, so a burst of posts to the same target cannot become a
 burst of redeliveries. `redeliverable(entries, now=, rate_limit_seconds=)` composes both: due AND
-not rate-limited.
+not ladder-resolved AND not rate-limited.
 
 ### Conventions
 
@@ -53,6 +55,7 @@ schedules and remains redeliverable; only `consume` (an inbox `state` transition
 - This module computes WHETHER to redeliver; it never redelivers itself — `OperatorInboxStore.
   list_redeliverable` selects candidates, and the actual re-push through `deliver_inbox_entry` is
   L2's job.
+- Ladder-resolved rows are terminal and never redeliverable even though they are not consumed/acked.
 
 ### Todos
 
@@ -85,5 +88,8 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: added `is_ladder_resolved` and made due/redeliverable
+  selection explicitly exclude ladder-resolved terminal rows. Verification metadata pinned until
+  closeout stamps the HFX2-L8 commit.
 - 2026-07-08T14:20+02:00 — 260707-HFX2-L1: created for R3 redelivery backoff math + per-target
   rate limiting. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

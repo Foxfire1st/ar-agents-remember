@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T23:15+02:00 |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`       |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`       |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -443,16 +443,19 @@ the only destructive terminal action.
   or in the fail-loud settings family (the 6d posture). Deliberately *not* a mirror of
   `scripts/sync-skills.py`.
 - `supervisor.py` — the **260707-HFX2-L2** deterministic supervisor sweep, now also the
-  **260707-HFX2-L4** P-15 tier-3 ladder + dead-man-respawn host: `SupervisorContext` (the
+  **260707-HFX2-L4** P-15 tier-3 ladder + dead-man-respawn host and the **260707-HFX2-L8**
+  bounded dead-seat-storm terminator: `SupervisorContext` (the
   one seam every predicate/action reads through — stores + catalog/host/paster, injected directly,
   never the projection, plus L4's `escalation_sla_seconds`/`escalation_rung_seconds`/
-  `respawn_after_rung` plain-primitive knobs), the seven R2 predicate functions
+  `respawn_after_rung` plain-primitive knobs and L8's `redeliver_budget`), the eight predicate functions
   (`evaluate_pane_findings`/`evaluate_expectation_findings`/`evaluate_turn_report_findings`/
   `evaluate_inbox_findings`/`evaluate_seat_liveness_findings`/`evaluate_escalation_findings`/
-  `evaluate_dead_upstream_findings`), the R4 action dispatcher (`act_on_finding` →
-  `_redeliver`/`_auto_nudge`/`_signal_emit`/`_escalate_rung`/`_signal_dead_upstream`, each logging an
+  `evaluate_dead_upstream_findings`/`evaluate_ladder_terminal_findings`), the R4 action dispatcher (`act_on_finding` →
+  `_redeliver`/`_auto_nudge`/`_signal_emit`/`_escalate_rung`/`_signal_dead_upstream`/
+  `_resolve_ladder_terminal`, each logging an
   `orchestration.supervisor.*` or `orchestration.escalation.rung` event), and `run_supervisor_sweep`
-  (evaluate → act → tick the heartbeat unconditionally, R5). Gives `missing_artifact()` its first
+  (one in-sweep inbox snapshot/index → evaluate → bounded act → tick the heartbeat unconditionally,
+  now including inbox backlog counts and last sweep duration). Gives `missing_artifact()` its first
   caller; `mark_missed` stays the L2 sweep's own reserved transition, while `mark_escalated` and the
   ladder's own `advance_rung`/respawn/orphan-surfacing (via `escalation_ladder.py`/
   `orphan_policy.py`, governed by the `controlplane/` overview) are now genuinely landed here. Still
@@ -468,7 +471,8 @@ the only destructive terminal action.
   atomic-overwrite single-row `SupervisorHeartbeatStore` (`logs/observer/workspace/
   supervisor-heartbeat.json`), `heartbeat_age_seconds`, and `supervisor_staleness_banner` (silent
   when never-ticked, a fail-loud one-liner past the staleness cutoff) — consumed by the MCP tool
-  choke point and the dashboard header payload.
+  choke point and the dashboard header payload. HFX2-L8 extends the heartbeat row with volatile
+  `pendingInboxCount`, `redeliverableInboxCount`, and `lastSweepDurationSeconds`.
 - `harness_adapters.py` — the **260707-HFX2-L3** per-harness delivery adapter (R2): `HarnessAdapter`
   (`boot_ready`/`composer_state`/`mid_turn`/`mid_turn_behavior`/`blocked_reason`/`turn_started`), a
   thin composition over `pane_signals.py`/`turn_state.py` with NO new pattern table of its own, plus
@@ -523,6 +527,10 @@ the only destructive terminal action.
   anywhere in the loop, level-triggered (a missed action is caught by the next sweep). The
   heartbeat's staleness is a volatile age (same posture as `servingBuild`): never gates the
   `/api/state` ETag revision.
+- **Dead-seat storm termination is narrower than escalation (260707-HFX2-L8).** A pending row only
+  becomes `ladder-resolved` when it is both at the terminal rung and addressed to a provably dead/no-
+  hosted-session seat. Live seats and rows still climbing stay pending; redelivery is merely bounded by
+  budget/rate limit, not dropped.
 - **The escalation ladder never absorbs a dead owner's role (260707-HFX2-L4 R4, HFX-L6 capture
   hardening).** A spawned seat with a dead owner continues its own brief and escalates to its
   grandparent — `_signal_dead_upstream` only ever signals, never reassigns. Rung 3 (developer
@@ -553,11 +561,18 @@ the only destructive terminal action.
 | The containment metrics sampler + store the lifespan loop drives (260707-HFX-L1 R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
 | The provider degradation detector the sampling loop now also calls once per tick (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
 | The stores the supervisor sweep's predicates read directly (R3): expectation rows, operator inbox, orchestration nudges, and the observer event log the sweep appends `orchestration.supervisor.*` events to. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py); [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [controlplane/orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py); [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
+| The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R6): `supervisor.py`
+  now builds one in-sweep inbox snapshot/index, resolves terminal-rung dead/no-hosted-session rows
+  to durable `ladder-resolved`, limits redelivery actions by `redeliver_budget`, and ticks heartbeat
+  metrics with pending/redeliverable backlog counts and last sweep duration. `supervisor_heartbeat.py`
+  carries the new volatile fields; `app.py` forwards the budget from settings and surfaces the
+  metrics on `/api/state`/SSE; `inbox_delivery.py` accepts the shared current snapshot. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (P-15 tier 3 escalation ladder + dead-man
   respawn, R1-R6): `supervisor.py` gains two predicates (`evaluate_escalation_findings`/
   `evaluate_dead_upstream_findings`) and two actions (`_escalate_rung`/`_signal_dead_upstream`),

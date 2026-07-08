@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:15+02:00 |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -22,7 +22,8 @@ typed models. It is the single parser
 for the agentic family; the MCP authority file, memory-topology settings, and provider
 lifecycle settings are separate families with separate parsers. **260707-HFX2-L2 (R1/R5)** adds the
 `orchestration.supervisor` family — the deterministic sweep loop's own knobs (enabled, interval
-seconds, self-liveness staleness cutoff, inbox-redelivery rate limit).
+seconds, self-liveness staleness cutoff, inbox-redelivery rate limit, and since HFX2-L8 a
+conservative per-sweep redelivery budget).
 
 ## Code Commentary
 
@@ -68,7 +69,8 @@ are consumed elsewhere in this file.
 **260707-HFX2-L2 (R1/R5, supervisor sweep knobs)**: `orchestration.supervisor` configures the
 deterministic sweep loop hosted beside the serving daemon's projector/metrics loops —
 `SupervisorSettings` (`enabled` default `true`, `interval_seconds` default 10.0,
-`stale_cutoff_seconds` default 60.0, `redeliver_rate_limit_seconds` default `None`). `_parse_supervisor`
+`stale_cutoff_seconds` default 60.0, `redeliver_rate_limit_seconds` default `None`,
+`redeliver_budget` default 250). `_parse_supervisor`
 validates each key via the new `_require_bool`/`_require_positive_number` helpers against
 `KNOWN_SUPERVISOR_FIELDS`; absent block or absent key both fall back to the documented default
 (`SupervisorSettings()`'s field defaults). `redeliver_rate_limit_seconds=None` is a deliberate
@@ -76,7 +78,9 @@ inherit-not-duplicate choice: the sweep passes `None` straight through to
 `OperatorInboxStore.list_redeliverable`, which already owns its own default
 (`inbox_backoff.DEFAULT_RATE_LIMIT_SECONDS`) — the same "`None` = uncapped/inherit" convention
 `ConcurrencySettings` already uses elsewhere in this file, so the two numbers are never duplicated
-as separate sources of truth.
+as separate sources of truth. `redeliver_budget` is parsed from `redeliverBudget` as a positive
+integer and is intentionally present in the empty-block default so a default incident deployment
+gets bounded sweep work without needing a new knob.
 
 **260707-HFX2-L1 (R2, expectation-row SLAs)**: `orchestration.expectations.defaults` configures
 the per-kind SLA seconds every dispatch surface's durable expectation row uses (`briefed-by`,
@@ -227,6 +231,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R4): added
+  `DEFAULT_SUPERVISOR_REDELIVER_BUDGET`, `SupervisorSettings.redeliver_budget`, and the
+  `orchestration.supervisor.redeliverBudget` parser field. Empty/default supervisor settings now
+  remain safe under large redeliverable inbox backlogs. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R1, escalation ladder): added the `orchestration.escalation`
   family — `EscalationSettings`/`_parse_escalation`, `KNOWN_ESCALATION_FIELDS`,
   `KNOWN_ESCALATION_MESSAGE_KINDS`, `KNOWN_ESCALATION_RUNGS`, `DEFAULT_ESCALATION_SLA_SECONDS`,

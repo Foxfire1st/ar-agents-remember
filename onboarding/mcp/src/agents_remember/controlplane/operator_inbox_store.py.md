@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-08T23:15+02:00                                            |
-| lastVerifiedCommitHash |                                                                   `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
-| lastVerifiedCommitDate |                                                                   2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                                            |
+| lastVerifiedCommitHash |                                                                   `5f9163882857114319552d303e2e301082b588ba`|
+| lastVerifiedCommitDate |                                                                   2026-07-08T18:21:20+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -60,6 +60,14 @@ rung's SLA/dwell check is measured from this transition, not the row's original 
 from `mark_escalated` (HFX2-L2's reserved, rung-agnostic "this row is now escalatable" stamp) —
 `escalation_ladder`/`serving/supervisor.py`'s `_escalate_rung` is the only caller of `advance_rung`.
 
+260707-HFX2-L8 adds sweep-scale operation support and the ladder terminal state. `record_delivery`,
+`list_redeliverable`, `mark_escalated`, and `advance_rung` accept an optional folded `current`
+snapshot so the supervisor can reuse one in-sweep index instead of refolding
+`operator-inbox.jsonl` once per finding. `mark_ladder_resolved(entry_id, now, reason, current=...)`
+appends a `state="ladder-resolved"` snapshot, clears `nextAttemptAt`, and reports whether this call
+performed the terminal transition. `compact(now=...)` prunes those ladder-resolved ids through the
+shared retention policy, bounding the log after a fleet of retired seats has terminated.
+
 ### Conventions
 
 The store follows the gate store's append/read/fold pattern, but uses a shared
@@ -70,6 +78,8 @@ by lifecycle, agent, role, or combinations of those keys.
 
 - Current state is a fold while entries are pending; consumed/dismissed/expired
   entries are throwaway interaction data and can be physically removed.
+- A `ladder-resolved` row is terminal but not acked; it is excluded from redelivery and eligible for
+  compaction.
 - Polling without `lifecycle_id`, `agent_id`, or `recipient_role` is invalid
   because it has no mailbox boundary.
 - This store owns persistence only; MCP payload shapes and attribution routing
@@ -107,6 +117,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: added optional snapshot-aware mutation/selection paths,
+  `mark_ladder_resolved`, and compaction of ladder-resolved terminal ids so supervisor sweeps avoid
+  per-finding log folds and dead-seat storms leave bounded inbox logs. Verification metadata pinned
+  until closeout stamps the HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R1/R2, escalation ladder): added `advance_rung` — stamps
   the ladder's next rung and re-anchors `escalatedAt` in the same snapshot, distinct from HFX2-L2's
   rung-agnostic `mark_escalated`. `serving/supervisor.py::_escalate_rung` is the sole caller.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-08T23:15+02:00                |
-| lastVerifiedCommitHash |                                       `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
-| lastVerifiedCommitDate |                                       2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                |
+| lastVerifiedCommitHash |                                       `5f9163882857114319552d303e2e301082b588ba`|
+| lastVerifiedCommitDate |                                       2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -75,6 +75,10 @@ ladder's own transition: `advance_rung` sets BOTH `rung` and re-anchors `escalat
 re-anchoring `escalatedAt` to its own call's `now`) so a stale prior anchor can never leak into the
 next rung's SLA check. `test_advance_rung_unknown_entry_raises` pins the `KeyError` on an entry id
 the store has never seen.
+HFX2-L8 adds `test_ladder_resolved_is_terminal_without_ack` and
+`test_compaction_prunes_ladder_resolved_rows`: a row can become durable
+`state="ladder-resolved"` without being an ack/consume, redelivery queries exclude it, and
+compaction prunes it while still preserving live pending rows.
 `test_compaction_never_removes_a_pending_unacked_row_regardless_of_age` is the R1 regression proper:
 an unacked row survives `store.compact()` even when it is far past the retention TTL, exercised
 against the real post-time compaction path (`operator_inbox_post_payload` calls `store.compact()`
@@ -116,7 +120,7 @@ listed as Domain Documentation.
 | --- | --- | --- |
 | Record tests cover create/consume purity, required addressing, and schema alias round-trip. | L22-L74 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 | Store tests cover lifecycle/agent filters, idempotent consume, missing entry, and missing address errors. | L77-L163 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
-| Store tests (R1/R3) cover attempt/backoff stamping, redeliverable filtering, escalation stamping, and the never-prune-pending-row compaction regression. | L220-L290 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Store tests (R1/R3 plus HFX2-L8) cover attempt/backoff stamping, redeliverable filtering, escalation stamping, ladder-resolved terminal state, and compaction pruning for terminal rows while preserving pending rows. | L220-L290 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 | Tool tests cover post, poll, consume payload deletion, and no-address poll validation. | L166-L220 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 
 ## Cross-Repo References
@@ -129,6 +133,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R1/R3): added regressions for
+  `mark_ladder_resolved` as a terminal non-ack state and compaction pruning ladder-resolved rows
+  while preserving live pending rows. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (escalation ladder, R1/R2): added
   `test_advance_rung_stamps_rung_and_reanchors_escalated_at` (two successive rung transitions each
   re-anchor `escalatedAt` to their own call's `now`) and `test_advance_rung_unknown_entry_raises`

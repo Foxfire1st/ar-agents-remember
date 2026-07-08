@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/leaf_refs.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T23:45+02:00                     |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                     |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -32,8 +32,9 @@ returns `ResolvedLeafRef` with both the qualified catalog identity and the doc i
 contracts.
 
 Candidate indexing identifies task-document JSON by the raw `schema: ar-task-document/v1` marker before
-model validation. Sibling JSON artifacts without that marker are ignored; marker-bearing malformed task
-documents still run through `read_task_doc` and fail loudly.
+model validation. Sibling JSON artifacts without that marker are ignored; malformed or unreadable
+non-task JSON siblings are skipped as inert artifacts, while marker-bearing malformed task documents
+still run through `read_task_doc` and fail loudly.
 
 `LeafRefResolutionError` is the loud failure surface for no-match and ambiguous refs. Its message names the
 expected form and candidate qualified ids, and its `status` is either `leaf-ref-not-found` or
@@ -49,6 +50,7 @@ enclosure path so old contracts remain loadable.
 - Terminal catalog assignments and spawn provenance persist `ResolvedLeafRef.qualified_id`.
 - Worktree contracts persist `ResolvedLeafRef.doc_id`.
 - Missing optional master `task.json` files and sibling non-task JSON artifacts are skipped; malformed
+  non-task JSON artifacts are tolerated for boot safety, but malformed
   marker-bearing task documents are not swallowed.
 - `task_resolver.py` owns task roots and raw contract paths; this module owns leaf-ref matching and
   candidate policy.
@@ -65,6 +67,10 @@ enclosure path so old contracts remain loadable.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (minimal projection robustness): `_has_task_doc_schema_marker`
+  now tolerates malformed/unreadable non-task JSON siblings while preserving loud failures for
+  marker-bearing task documents, allowing the current active-task corpus to boot with artifact JSON
+  beside task docs. Verification metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-07T23:45+02:00 — 260707-HFX-L4R2: candidate indexing now screens JSON siblings by the
   raw task-document schema marker before validation, ignores legitimate non-task JSON artifacts, keeps
   marker-bearing malformed task docs loud, and indexes standalone/light `task.json` docs as leaf

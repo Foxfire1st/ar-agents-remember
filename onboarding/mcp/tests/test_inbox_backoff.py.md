@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_inbox_backoff.py`             |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-08T16:15+02:00                        |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                        |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`|
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -32,7 +32,9 @@ in-range attempt counts and clamps at the ladder's final (ceiling) value for any
 `nextAttemptAt` is still in the future is not due; one whose `nextAttemptAt` has already passed is
 due; a `consumed` entry is never due regardless of its schedule (redelivery only ever targets
 unacked rows). `is_rate_limited` covers the separate per-target cooldown: an entry whose
-`lastAttemptAt` is inside the rate-limit window is limited; one outside the window is not.
+`lastAttemptAt` is inside the rate-limit window is limited; one outside the window is not. HFX2-L8
+adds the terminal predicate regression: a `ladder-resolved` row is never due/redeliverable, regardless
+of schedule or delivery state.
 `test_redeliverable_filters_due_and_unlimited_entries_only` drives `redeliverable(...)` — the
 combinator a sweep actually calls — against three entries (due-and-clear, due-but-rate-limited,
 not-yet-due) and asserts only the due-and-clear entry survives, proving `is_due` and
@@ -50,7 +52,8 @@ matching the fixture style of `test_operator_inbox.py`.
 - The backoff ladder clamps at its ceiling rather than raising or wrapping past its final index —
   the regression that would catch an off-by-one or unclamped lookup.
 - `is_due` and `is_rate_limited` are independent predicates; `redeliverable` requires BOTH
-  (due AND not rate-limited) — a sweep that checked only one would over- or under-deliver.
+  (due AND not rate-limited), after the ladder-resolved exclusion — a sweep that checked only one
+  would over- or under-deliver.
 - A `consumed` row is categorically excluded from `is_due`, independent of any stamped schedule.
 
 ### Todos
@@ -70,7 +73,7 @@ No meaningful external design-doc references found yet (created this leaf).
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Backoff ladder climbs then clamps at its ceiling; `next_attempt_at` adds the ladder offset. | L43-L58 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
-| `is_due`/`is_rate_limited`/`redeliverable` combinator semantics, including the consumed-row exclusion. | L62-L103 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
+| `is_due`/`is_rate_limited`/`redeliverable` combinator semantics, including the consumed-row and ladder-resolved exclusions. | L62-L103 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
 
 ## Cross-Repo References
 
@@ -82,6 +85,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R1): added the ladder-resolved
+  exclusion regression asserting terminal rows are never due/redeliverable. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T16:15+02:00 — Created for 260707-HFX2-L1 (curator delta round 2, closeout-preview
   gap): backoff-ladder math and due/rate-limit predicate coverage for the R3 redelivery module.
   Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

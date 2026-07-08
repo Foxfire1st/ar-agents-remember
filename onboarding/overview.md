@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-08T05:10+02:00 |
-| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
-| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
+| lastUpdated | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 
 > **Status:** active baseline
 
@@ -383,6 +383,13 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
 ## Update History
+
+- 2026-07-08T23:59+02:00 — No route impact: reviewed the repo overview as the nearest governing
+  overview for `docs/reference/settings-json.md` (the `docs/reference` route has no local overview).
+  The source doc gained the already-route-local `orchestration.supervisor.redeliverBudget` table row
+  for HFX2-L8; this does not change the root feature inventory or routing model. A file-level sidecar
+  now covers the settings reference directly. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L8 commit.
 
 - 2026-07-08T15:27+02:00 — 260707-HFX2-L6 doctrine impact: the root approval-gated
   closeout row now reflects applicable authority rather than unconditional explicit approval:

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                        |
 | path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
 | doc_type               | `file-level-onboarding`                                                |
-| lastUpdated            | 2026-07-08T14:10+02:00                                                 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                                                 |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`|
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `overview.md`                                                          |
 
 ## Purpose
@@ -27,7 +27,9 @@ to consume/apply.
 **260707-HFX2-L1 (R1 ack semantics)**: `_keep_inbox_entry` no longer ages out a `pending` row at
 all — a pending/unacked row is now kept by compaction REGARDLESS OF AGE, since consume=ack is the
 only terminal delivery outcome and an unacked row must outlive any cleanup until it is acked or
-ladder-resolved. The 24h TTL now applies only to `consumed` rows (kept as an audit grace window;
+ladder-resolved. **260707-HFX2-L8** makes that terminal concrete: `_keep_inbox_entry` returns
+`False` for `state=="ladder-resolved"`, so compaction drops the terminal id while preserving any
+external/quarantined backup as the audit trail. The 24h TTL now applies only to `consumed` rows (kept as an audit grace window;
 the ordinary consume path already deletes its row explicitly and rarely reaches this TTL branch at
 all). This is a behavior change from the prior "pending ages out after 24h" shape — exercised
 directly against `operator_inbox_post_payload`'s post-time compaction call in
@@ -41,9 +43,13 @@ directly against `operator_inbox_post_payload`'s post-time compaction call in
   outside this policy.
 - A `pending` inbox row is NEVER pruned by age (260707-HFX2-L1, R1) — only `consumed` rows are
   TTL-bounded.
+- A `ladder-resolved` inbox row is neither pending nor acked; compaction drops it immediately.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: `_keep_inbox_entry` now drops `ladder-resolved` terminal
+  rows during compaction while continuing to protect pending/unacked rows. Verification metadata
+  pinned until closeout stamps the HFX2-L8 commit.
 - 2026-07-08T14:10+02:00 — 260707-HFX2-L1: `_keep_inbox_entry` now keeps every `pending` row
   regardless of age (R1: compaction never removes an unacked row); the 24h TTL applies only to
   `consumed` rows. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

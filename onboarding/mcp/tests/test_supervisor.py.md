@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:15+02:00                     |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                     |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -19,6 +19,7 @@ predicate simultaneously and asserts the full finding→action→heartbeat chain
 anywhere; every fixture is a plain store write or a fake pane capturer/paster. 260707-HFX2-L4 (R2-R6)
 adds the escalation ladder's two new predicate families plus a dedicated `LadderWalkIntegrationTests`
 suite: the R6-mandated silent-seat, dead-intermediate, and dead-manager-with-live-workers fixtures.
+260707-HFX2-L8 adds terminal-dead-seat and budget/backlog coverage for the dead-seat storm fix.
 
 ## Code Commentary
 
@@ -38,7 +39,9 @@ datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
   overdue-ness), `test_malformed_leaf_key_is_skipped_not_guessed`
   (`turn_report_path_for_leaf_key` returns `None` for a key not in the `repo/master/leaf-id` shape,
   and the predicate skips rather than guessing a path).
-- **Inbox predicate (R2d):** `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`.
+- **Inbox predicate (R2d + HFX2-L8):** `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`
+  plus terminal-ladder coverage proving a pending row at the final rung for a provably dead/no-hosted
+  seat fires `inbox-ladder-terminal` instead of redelivery.
 - **Seat-liveness predicate (R2e):** `test_stale_turn_state_past_cutoff_fires`,
   `test_recently_stale_does_not_fire_yet` (stale but still inside the grace window is silent),
   `test_degraded_row_with_no_turn_state_uses_liveness_failures` (the graceful-degradation path: a
@@ -73,7 +76,10 @@ datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
   drift across pane-signal, expectation-overdue, inbox-redeliverable, AND seat-liveness
   simultaneously in one sweep and asserts the expected action set, delivery outcomes, the
   `mark_missed` side effect, and the heartbeat tick — the R6-mandated "seeded drift → expected
-  actions" integration case.
+  actions" integration case. HFX2-L8 adds a dead-seat terminal integration asserting the row becomes
+  durable `ladder-resolved`, emits one supervisor observer event, and is not redelivered, plus a
+  budget integration asserting a low `redeliver_budget` caps attempts while heartbeat backlog metrics
+  still tick.
 - **Edge cases:** `test_finding_with_no_routable_owner_skips_its_action` (a finding whose owner
   cannot be derived produces a `"skipped"`/`"no routable owner"` result rather than raising —
   covers `_signal_emit`'s no-owner branch specifically, added after the CRAP-Calculator flagged its
@@ -104,6 +110,8 @@ convention from `test_terminal_ws.py`.
   path must preserve this per-call-plus-monotonic counting, not regress to a shared flag.
 - Predicate-family tests are independent of the integration test — each can fail in isolation and
   point at exactly one `evaluate_*_findings` function.
+- The L8 terminal-dead-seat tests deliberately require both terminal ladder rung and proven dead seat;
+  live seats and rows still climbing remain protected by the older redelivery/escalation tests.
 - `LadderWalkIntegrationTests` deliberately drives the FULL sweep (`run_supervisor_sweep`), not the
   isolated `_escalate_rung`/`_respawn_suspect` action functions directly — the R6 fixtures are about
   proving the finding→action→durable-row-stamp chain end to end, matching the existing
@@ -136,6 +144,7 @@ spec.
 | The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `cast(TerminalHost, fake)` | [test_terminal_ws.py](test_terminal_ws.py.md) |
 | The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | [../src/agents_remember/controlplane/escalation_ladder.py](../src/agents_remember/controlplane/escalation_ladder.py.md) |
 | The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | [../src/agents_remember/controlplane/orphan_policy.py](../src/agents_remember/controlplane/orphan_policy.py.md) |
+| The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py.md) |
 
 ## Cross-Repo References
 
@@ -147,6 +156,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R1/R2/R4/R6): added terminal-ladder
+  predicate/integration tests proving dead/no-hosted-session terminal-rung rows become
+  `ladder-resolved` and are not redelivered, plus a redeliver-budget integration proving attempts are
+  capped per sweep while heartbeat backlog/duration metrics advance. Verification metadata pinned
+  until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (escalation ladder + dead-man respawn, R2-R6): added
   `EscalationPredicateTests` (SLA-due/not-yet-due), `DeadUpstreamPredicateTests` (dead-owner fires,
   live-owner and no-provenance stay silent), and `LadderWalkIntegrationTests` — the R6 fixtures: a

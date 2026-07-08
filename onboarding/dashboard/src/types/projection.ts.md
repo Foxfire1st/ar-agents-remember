@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T18:45+02:00                           |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                           |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`       |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -51,14 +51,15 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 - `EngineProcessNode.id` is the stable enclosure id and the join key to `EnclosureNode.enclosure`; `ProviderNode.worktreeGroup` is the join key to the owning enclosure and takes precedence over `ProviderNode.repoId` in topology parenting.
 - Ages (`*Seconds`) and fact-state are server-computed (never `Date.now()`); `nextAction` is display/copy-only until slice 06. Since 260703-L15 the served age fields are also *volatile* to the change gate (excluded from server diff + client merge equality — `data/servedAges.ts`), and displays advance them locally from arrival anchors.
 - `servingBuild?` (260703-L15) is the ONE field NOT mirrored from `projection.py`: it is injected app-side (`serving/build_info.py` via `serving/app.py`) onto `/api/state` and the SSE snapshot only, so it is optional here and absent from persisted `latest-state.json` (a pre-L15 server also sends none).
-- `supervisorHeartbeat?` (260707-HFX2-L2 R5) is a SECOND app-injected, non-`projection.py` field,
+- `supervisorHeartbeat?` (260707-HFX2-L2 R5, expanded by HFX2-L8 R6) is a SECOND app-injected, non-`projection.py` field,
   same posture as `servingBuild?`: `serving/supervisor_heartbeat.py` via `serving/app.py` attaches it
   onto `/api/state` and the SSE snapshot at RESPONSE time, deliberately excluded from the ETag
   change-gate revision (it is a live tick age, not stable content) — so `ageSeconds` can be stale
   relative to the header's cached revision until a real reconnect or another content change forces
   a fresh response. `lastTickAt: null` means the supervisor has never ticked in this workspace
   (opt-in autostart) — that is NOT `stale: true`, and consumers must not treat the two as
-  equivalent.
+  equivalent. The L8 fields (`pendingInboxCount`, `redeliverableInboxCount`,
+  `lastSweepDurationSeconds`) are forward storm-pressure signals, not projection-stable content.
 
 ## Repo-Internal References
 
@@ -74,7 +75,7 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 | `ProcessFactState` / `ProcessHealth` honesty enums (5e) | L269-L287 | [projection.ts](projection.ts) |
 | Drift snapshot metadata mirrors the backend provenance fields used by actionable-drift rows. | L98-L108 | [projection.ts](projection.ts) |
 | `AttentionItem.signalTs?` remains the server-computed current-occurrence anchor. | L260-L274 | [projection.ts](projection.ts) |
-| `SupervisorHeartbeat` (`lastTickAt`/`ageSeconds`/`staleCutoffSeconds`/`stale`) mirrors the app-injected wire shape `serving/app.py::_supervisor_heartbeat_payload` builds, not a `projection.py` model. | L435-L444 | [projection.ts](projection.ts) |
+| `SupervisorHeartbeat` (`lastTickAt`/`ageSeconds`/`staleCutoffSeconds`/`stale` plus L8 backlog/duration fields) mirrors the app-injected wire shape `serving/app.py::_supervisor_heartbeat_payload` builds, not a `projection.py` model. | L435-L444 | [projection.ts](projection.ts) |
 | The app-side payload builder this type mirrors. | `_supervisor_heartbeat_payload` | [../../../../agents-remember/mcp/src/agents_remember/serving/app.py](../../../../agents-remember/mcp/src/agents_remember/serving/app.py) |
 
 ## Series-Contract Notes
@@ -83,6 +84,10 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6): extended
+  `SupervisorHeartbeat` with `pendingInboxCount`, `redeliverableInboxCount`, and
+  `lastSweepDurationSeconds`, matching the app-injected `/api/state` payload. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added `SupervisorHeartbeat`
   (`lastTickAt: string | null`, `ageSeconds: number | null`, `staleCutoffSeconds: number`,
   `stale: boolean`) and the optional `WorkspaceProjection.supervisorHeartbeat?` — a SECOND

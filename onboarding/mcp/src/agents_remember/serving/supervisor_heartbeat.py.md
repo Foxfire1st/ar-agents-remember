@@ -5,9 +5,9 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/serving/supervisor_heartbeat.py`    |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-07-08T18:45+02:00                                        |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`                    |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                                        |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`                    |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -34,8 +34,10 @@ per tick via a temp-file-then-`os.replace` swap (`supervisor-heartbeat.json` und
 `observer_root/workspace/`), never an append log: there is exactly one current tick, no history
 worth folding. `read()` returns `None` on any read/parse failure (`OSError`, `ValueError`,
 `KeyError`, `TypeError`) rather than raising — a corrupt or absent file degrades to "never ticked".
-`tick(now=)` increments `sweepCount` from the previous read (or starts at 1) and persists
-`lastTickAt`/`sweepCount`.
+`tick(now=, pending_inbox_count=, redeliverable_inbox_count=, last_sweep_duration_seconds=)`
+increments `sweepCount` from the previous read (or starts at 1) and persists `lastTickAt`,
+`sweepCount`, the latest inbox backlog counts, and the latest sweep duration. `read()` defaults the
+L8 fields when it sees an older heartbeat file, so existing runtime rows remain readable.
 
 `heartbeat_age_seconds(heartbeat, *, now)` returns `None` for a `None` heartbeat (never ticked) or
 an unparseable `lastTickAt`, else the plain `(now - last).total_seconds()`.
@@ -65,6 +67,9 @@ Same atomic-overwrite JSON pattern used elsewhere in this codebase for single-cu
 - **Read-side never raises.** `read()` swallows every plausible corruption mode and returns `None`;
   callers must treat `None` as "no evidence", never propagate an exception from a heartbeat check.
 - **One current row, not a log.** `tick()` overwrites; there is no history to prune or retain.
+- **Backlog metrics are volatile status.** Pending/redeliverable inbox counts and last sweep
+  duration describe the last completed sweep; they are surfaced through `/api/state`, not treated as
+  reducer truth.
 
 ### Todos
 
@@ -102,6 +107,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: heartbeat rows now carry
+  `pendingInboxCount`, `redeliverableInboxCount`, and `lastSweepDurationSeconds`, with backward
+  compatible reads for older two-field heartbeat files. Verification metadata pinned until closeout
+  stamps the HFX2-L8 commit.
 - 2026-07-08T18:45+02:00 — Created for 260707-HFX2-L2 (supervisor sweep + predicates, R5): the
   self-liveness heartbeat — `SupervisorHeartbeatStore` (atomic-overwrite single-row JSON store),
   `heartbeat_age_seconds`, and `supervisor_staleness_banner` (silent when never-ticked, a

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T18:45+02:00                           |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                           |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`       |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ back/forward, and a fresh entry re-shows it on the clicked note.
 
 ### Logic
 
-Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from the store and renders nothing when `lastTickAt` is `null` (the supervisor has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"supervisor ok/stale <age>m"`, styled with the existing `caution({sev:"alarm"})` pulsing-red class past the staleness cutoff (`heartbeat.stale`) or the muted `dim` class otherwise, with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
+Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from the store and renders nothing when `lastTickAt` is `null` (the supervisor has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"supervisor ok/stale <age>m"`, styled with the existing `caution({sev:"alarm"})` pulsing-red class past the staleness cutoff (`heartbeat.stale`) or the muted `dim` class otherwise, with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. **260707-HFX2-L8 (R6)** extends the same badge with `inbox redeliverable/pending` and latest sweep duration, so a growing operator-inbox storm is visible beside the heartbeat before staleness fires. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
 
 `Cockpit` wires the two SSE streams (`connectState`, `connectEvents`→`pushEvent`) then renders
 `CockpitShell` (split out so the dev gallery renders the same surface against fixtures). `CockpitShell`
@@ -145,11 +145,15 @@ follows for a pre-L15 server.
 | The hosted chat view that receives `selectedLifecycleId` + `selectedLeafKey` + `taskDocuments`. | — | [panels/Chats.tsx](../panels/Chats.tsx) |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | — | [panels/HighlightComposer.tsx](../panels/HighlightComposer.tsx) |
 | The frontend projection type exposes `Analytics.engineProcesses`, the process-map input Cockpit now threads into `RailChat`. | L395-L408 | [types/projection.ts](../types/projection.ts) |
-| `SupervisorHeartbeatBadge` reads `useDashboard((s) => s.supervisorHeartbeat)`, the store field this top-bar indicator renders (260707-HFX2-L2 R5). | — | [../data/store.ts](../data/store.ts.md) |
+| `SupervisorHeartbeatBadge` reads `useDashboard((s) => s.supervisorHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | — | [../data/store.ts](../data/store.ts.md) |
 | The `SupervisorHeartbeat` type this badge's props shape mirrors. | — | [../types/projection.ts](../types/projection.ts.md) |
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6):
+  `SupervisorHeartbeatBadge` now includes the latest redeliverable/pending inbox backlog counts and
+  last sweep duration next to the heartbeat age, with the tooltip carrying the same forward signal.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added `SupervisorHeartbeatBadge`
   to the `TopBar`, rendered between the `@ hh:mm:ss` stamp and `ServingBuildStamp` — reads
   `s.supervisorHeartbeat`, renders nothing for a never-ticked heartbeat (`lastTickAt === null`), else

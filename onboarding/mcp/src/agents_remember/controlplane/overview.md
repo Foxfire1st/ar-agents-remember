@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-08T23:15+02:00                      |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`     |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                      |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`     |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -116,6 +116,13 @@ workers -- no auto re-parent action exists yet. `OperatorInboxEntry` gains `rung
 snapshot, distinct from L2's rung-agnostic `mark_escalated`). All of this is pure/derivation-only in
 this route; the actual predicate evaluation, delivery, and durable-row mutation happen in
 `serving/supervisor.py`, this route's sole caller.
+**260707-HFX2-L8** closes the dead-seat storm gap on that substrate: `OperatorInboxEntry` gains the
+durable terminal `state="ladder-resolved"` plus `ladderResolvedAt`/`ladderResolvedReason`; `inbox_backoff.py`
+excludes ladder-resolved rows via an explicit predicate; `OperatorInboxStore` mutations accept an
+optional in-sweep `current()` snapshot and add idempotent `mark_ladder_resolved`; and
+`interaction_retention.py`/`compact()` prune ladder-resolved terminal rows while still preserving live
+pending rows. Mid-climb rows and live-seat rows remain pending/redeliverable under the older L1/L4
+contracts.
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -193,10 +200,16 @@ response models are `models/operator_inbox.py`.
 | The inbox record/store pair provides the external-chat pull return channel. | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) and [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | [attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream predicates, performs delivery, and stamps the durable `advance_rung`/retire transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
+| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R3): operator inbox rows
+  gain the terminal non-ack `ladder-resolved` state and resolution metadata; `inbox_backoff.py`
+  excludes it explicitly; store mutations accept an optional in-sweep current snapshot; the store adds
+  idempotent `mark_ladder_resolved`; and compaction prunes ladder-resolved terminal rows while still
+  preserving pending/unacked live rows. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact: two new modules — `escalation_ladder.py`
   (the pure P-15 tier-3 rung walker) and `orphan_policy.py` (detection-only orphan-worker hook) —
   plus R2/R4 extensions to `signal_routing.py` (`is_seat_dead`, `derive_skip_level_owner` — a
