@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated | 2026-07-08T02:10+02:00 |
+| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
+| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
 
 > **Status:** active baseline
 
@@ -378,6 +378,14 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-08T02:10+02:00 — No route impact: 260707-HFX-L11 (curator activation: change-set feeding
+  + c-12/c-05 process rewiring) is entirely doctrine/dispatch-template prose inside `skills/`
+  (roles/curator.md, roles/manager.md, templates/manager-brief.md, the new
+  templates/curator-brief.md, c-12-closeout/SKILL.md, c-05-create-or-update-onboarding-files/SKILL.md,
+  the l-01 SKILL.md companion-files list) — it changes WHICH SEAT writes onboarding and WHEN, not
+  any package/route structure or public surface this root overview describes. Route detail (the
+  new curator-brief template, the c-12/c-05 seat-routing wording) lives in the `mcp/` route
+  overview's package_data/runtime/skills pillar and the touched file sidecars.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass (body): the Agent lifecycles Feature
   Inventory row and the root-index l-01 paragraph now name all nine role lifecycles including
   **system-specialist** (the investigate-first provider-degradation responder dispatched by the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`                                  |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:10+02:00 |
+| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2`                                  |
+| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
 
 ## Purpose
 
@@ -49,6 +49,14 @@ brief section (branch base, exit block, report obligations) changed for this add
 
 As of cycle 5: the exit block states the wait=false raise and the gateId-in-packet hand-off. Cycle 6: the raise call carries `enclosure="<master task name>"` (the integration guard's address), the exit block adds the all-human conditional (the raise blocks; do not pass wait=false), and "The master" block gains a planner-master path slot (`<path or n/a (flat run)>`), resolving the planner-master reach for a seat that must not read orchestrator.md. Cycle 7: the exit block pins the address to the EXACT master task name as the contracts carry it and states that the raise refuses without one (AR4-1c).
 
+As of 260707-HFX-L11 (curator activation, R1/R4) the "Dispatch defaults" section's curator lines
+were rewritten: the leaf closeout chain line now adds "— never before the curator pass exists"; the
+curator-spawn line now points at `../templates/curator-brief.md` (not just `roles/curator.md`) and
+states explicitly what the brief FEEDS — the landed change set (leaf contract's base-to-head
+range) + the leaf task doc + notes/ — and that the curator routes each piece to the right onboarding
+home (specific sidecar or governing overview; L3 Operational-Notes last-resort only) before writing
+onboarding.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -59,7 +67,18 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
-- 2026-07-08T02:00+02:00 — 260707-HFX-L7 (provider degradation protocol): dispatch defaults gain a
+- 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation (R1/R4): Dispatch defaults section
+  updated to match the new curator-brief template — curator spawns now point at
+  `../templates/curator-brief.md` and name the fed inputs (landed change set over the leaf
+  contract's base-to-head range, task doc, notes/) and the mgmt-L4 routing rule; the leaf closeout
+  chain line adds "never before the curator pass exists." Doctrine-only change set (7 canonical
+  `skills/` files: 6 edits + 1 new template, each synced to 9 mirrors, 0 Python); sync-propagated
+  (`scripts/sync-skills.py`) bundle copy of the canonical
+  `skills/l-01-agent-lifecycles/templates/manager-brief.md`. Verification metadata pinned — no
+  commit yet on `ar/260707-hfx-l11-curator-activation` (working-tree change, synced onto the landed
+  HFX-L7 base).
+
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 (provider degradation protocol): dispatch defaults gain a
   one-line "Provider degradation:" bullet (no provider starts/watchers/retry until all-clear; no
   manager kill authority; stops and fixes route through the orchestrator/system-specialist),
   mirroring `roles/manager.md`'s fuller "Provider Degradation Alert" subsection in compact

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:10+02:00 |
+| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
+| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -512,6 +512,15 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T02:10+02:00 — No route impact: 260707-HFX-L11 (curator activation) adds one new
+  package-data-mirrored doctrine file (`templates/curator-brief.md`, propagated by
+  `scripts/sync-skills.py` into `package_data/runtime/skills/l-01-agent-lifecycles/templates/`
+  alongside the existing worker-brief/manager-brief templates) and edits the prose bodies of six
+  existing package_data-mirrored skill files (`roles/curator.md`, `roles/manager.md`,
+  `templates/manager-brief.md`, `SKILL.md`, `c-12-closeout/SKILL.md`,
+  `c-05-create-or-update-onboarding-files/SKILL.md`) — same mechanism (sync-propagated bundle
+  copies of the canonical `skills/` tree) this package already documents; no new module, package
+  boundary, or route shape. Per-file detail lives in the touched file sidecars.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact: the package gains the provider degradation
   protocol — NEW `providers/degradation.py` (detector/state-machine + durable events +
   role-addressed inbox alerts + critical-threshold failsafe stop) and NEW

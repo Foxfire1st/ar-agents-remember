@@ -5,15 +5,30 @@
 | repository             | agents-remember                                                        |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
-| lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-08T00:00+02:00                     |
+| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2`                                |
+| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
 
 ## Purpose
 
 This skill defines `c-05-create-or-update-onboarding-files` skill, the onboarding creation and maintenance skill. It routes file-level onboarding and repo-level entity catalogs to the appropriate workflow, points file-level onboarding at inline adapter additions when storage-specific syntax is needed, records the nearest governing route-local overview for file-level onboarding, maintains deterministic entity fingerprints, keeps entity inventory entries matched to fingerprint rows, routes structural source-slice maintenance to `c-03-repo-bootstrap` skill, preserves useful onboarding across refactors before deletion, and requires documentation discovery to follow the target repository's resolved `Domain Documentation` sources without hard-coding a provider.
 
 ## Code Commentary
+
+### Seat Routing (260707-HFX-L11)
+
+A new "Seat routing" paragraph, inserted immediately after the context-resolver intro, states that
+in the manager -> builder -> reviewer -> curator chain (`l-01-agent-lifecycles` `roles/curator.md`)
+onboarding create/update duty during leaf work belongs to the curator seat, not the builder — the
+builder produces code and a turn report only. The curator runs this skill's workflows from a change
+set (landed diff), the leaf task doc, and notes/ fed to it by the manager, and routes each item to
+the right onboarding home (a concrete sidecar or the governing overview whose subject it is; the L3
+Operational-Notes target is last-resort only, never a default). This is an additive paragraph only
+— the strict 1-to-1 source mapping, governing-overview links, and metadata rules below are
+unchanged; only the writing seat moved. A solo flat session with no separate curator seat runs this
+skill itself, exactly as before. No workflow/template file under
+`skills/c-05-create-or-update-onboarding-files/` needed edits — the mapping/metadata machinery is
+role-agnostic by construction.
 
 ### Logic
 
@@ -65,6 +80,15 @@ No external domain documentation applies to the repository-local onboarding main
 
 ## Update History
 
+- 2026-07-08T00:00+02:00 — 260707-HFX-L11 curator activation (c-05 rewiring, R3): added the "Seat
+  routing" paragraph documenting that onboarding create/update duty during leaf work routes to the
+  curator seat, not the builder, in the manager -> builder -> reviewer -> curator chain. Single
+  additive block only — the strict 1-to-1 mapping, governing-overview-link, and metadata rules are
+  unchanged (diff confirms no rule lines touched, verified independently by the doctrine reviewer).
+  Doctrine-only change set (60 files: 6 canonical `skills/` edits + 1 new template, each synced to 9
+  mirrors, 0 Python); sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
+  `skills/c-05-create-or-update-onboarding-files/SKILL.md`. Verification metadata pinned — no
+  commit yet on `ar/260707-hfx-l11-curator-activation` (working-tree change).
 - 2026-06-23T22:50+02:00 — Dashboard task 14: documented the worktree pre-write rule for onboarding maintenance: check `worktree_status` and run any needed `worktree_sync` before starting memory entries so onboarding/ledger rows land on the current parent branch. Verification metadata pinned until closeout stamps the source commit.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added the body-before-metadata lifecycle rules and the `No content impact:` / `No route impact:` reviewed-no-impact marker doctrine (Quick Rule 19 + When-code-changes rules 4-5), matching the new closeout body gates.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the `c-05-create-or-update-onboarding-files` skill `route_index_refresh` example now omits `dry_run=false` and notes preview-first (`dry_run=true`).

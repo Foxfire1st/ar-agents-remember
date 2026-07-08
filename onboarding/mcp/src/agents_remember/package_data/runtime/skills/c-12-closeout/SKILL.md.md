@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T00:00+02:00 |
+| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
+| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
 
 ## Purpose
 
@@ -15,6 +15,22 @@ This skill documents `c-12-closeout` skill, the shared closeout contract for app
 Remember edits in repositories that use external memory.
 
 ## Code Commentary
+
+### Seat Note (260707-HFX-L11)
+
+In the manager -> builder -> reviewer -> curator chain, onboarding authorship happens in the
+curator's prior pass (`l-01-agent-lifecycles` `roles/curator.md`), not in this closeout seat. A
+new "Seat note" at the top of the skill body states this explicitly. Every place the body used to
+read as "create"/"update onboarding here" was reworded to **verify** the curator's already-landed
+output: `check_missing_onboarding` and the changed-sidecar-body check confirm the curator's pass,
+they are not the trigger for the closing seat to author onboarding inline. A check that still
+fails after the curator pass is a closeout failure — escalate to run/rerun the curator's pass,
+never patch onboarding from the closing seat. A solo flat session with no separate curator seat is
+called out as unchanged: it still runs `c-05-create-or-update-onboarding-files` itself before
+closing out. This is a doctrinal binding only — `check_missing_onboarding` and the changed-sidecar
+gate remain role-agnostic on-disk checks (they do not verify who authored a sidecar); see the
+doctrine-review Note C on this leaf for the promotion-ratchet candidate ("mechanize when
+authorship can be attributed").
 
 ### Logic
 
@@ -56,7 +72,12 @@ The missing-onboarding check is scoped to current additions so newly added
 eligible source files cannot escape the gradual onboarding adoption boundary. A
 parallel content gate covers changed (already-onboarded) files: a changed source
 whose existing sidecar body was not updated this task fails closeout, so
-verification metadata is never advanced over stale onboarding content.
+verification metadata is never advanced over stale onboarding content. As of
+260707-HFX-L11, in the manager -> builder -> reviewer -> curator chain both checks are expected to
+already be satisfied by the curator's prior memory pass when the closing seat runs them here —
+they verify that pass, they do not cue the closing seat to author sidecars inline. A solo flat
+session with no separate curator seat is unaffected and still authors onboarding itself before
+closing out.
 
 The closeout worklist covers the working tree plus the contract-recorded
 committed range (issue #83): paths changed between the last verified commit and
@@ -125,7 +146,9 @@ pre-closeout code, must not commit memory before route overview metadata,
 generated route indexes, and `memory_quality_check` are clean for the new code
 commit, must not advance verification metadata for a changed source file whose
 sidecar content was not updated in the task, and must not push automatically. It does not create worktrees, integrate
-worktrees, finalize lifecycles, clean up worktrees, or initialize memory roots.
+worktrees, finalize lifecycles, clean up worktrees, or initialize memory roots. In the curator
+chain it must not author onboarding inline to satisfy a still-failing missing-onboarding or
+changed-sidecar check — that failure escalates to a respawned curator pass.
 
 ## Repo-Internal References
 
@@ -152,6 +175,21 @@ Closeout instructions now target the leaf enclosure `series-contract.md`; the ro
 
 ## Update History
 
+- 2026-07-08T00:00+02:00 — 260707-HFX-L11 curator activation (c-12 rewiring, R2): added the Seat
+  note (manager -> builder -> reviewer -> curator chain: builder = code + report only, curator
+  authors onboarding, this seat verifies). Reworded the Preconditions block, the External-Memory
+  Order steps 1-2 and 5, and the Failure Conditions section so `check_missing_onboarding` and the
+  changed-sidecar-body check are framed as verifying the curator's already-landed onboarding, not
+  triggering inline authoring by the closing seat; a still-failing check now names "escalate to
+  run/rerun the curator's pass" explicitly, never "write it here." Solo flat sessions with no
+  separate curator seat are called out as unchanged. Doctrinal only —
+  `check_missing_onboarding`/the changed-sidecar gate remain role-agnostic on-disk checks (see
+  doctrine-review Note C: mechanized authorship attribution is a promotion-ratchet candidate, not
+  landed here). Doctrine-only change set (60 files: 6 canonical `skills/` edits + 1 new template,
+  each synced to 9 mirrors, 0 Python); sync-propagated (`scripts/sync-skills.py`) bundle copy of the
+  canonical `skills/c-12-closeout/SKILL.md`. Verification metadata pinned — the branch
+  `ar/260707-hfx-l11-curator-activation` has no commits yet (working-tree change); this pass is the
+  memory side of the leaf, code commit is the closing seat's job.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the relay reference now names the l-01-agent-lifecycles orchestrator hand-off protocol. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-27T22:00+02:00 — Order fix (notify-then-report): corrected the Task 28
   notify-and-continue hand-off ORDER for the closeout commit and push hand-offs to

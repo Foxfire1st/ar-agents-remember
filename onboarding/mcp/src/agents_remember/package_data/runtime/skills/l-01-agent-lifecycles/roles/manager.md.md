@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:10+02:00 |
+| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
+| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
 
 ## Purpose
 
@@ -22,6 +22,14 @@ direction.
 ## Code Commentary
 
 ### Logic
+
+260707-HFX-L11 curator activation (R4, manager wiring made real): the curator-spawn duty bullet is
+no longer a description — it names the exact brief template (`../templates/curator-brief.md`), the
+exact fed inputs (leaf contract base-to-head diff with paths/counters, task doc, notes/), and states
+plainly **"do not run the closeout preview before this pass exists."** The bullet's opening phrase
+is now "mandatory, not skippable." This closes the gap the developer ruling named directly: without
+it, a manager could dispatch a spawnable curator that never actually runs while the builder keeps
+writing onboarding, paying builder context twice for no reason.
 
 L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
 
@@ -144,7 +152,17 @@ No sibling repository evidence is needed for this orchestration job file.
 
 ## Update History
 
-- 2026-07-08T02:00+02:00 — 260707-HFX-L7 (provider degradation protocol): documented the new
+- 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation (R4): the curator-spawn duty bullet
+  reworded from descriptive to enforced — "Curator memory pass — mandatory, not skippable," naming
+  `../templates/curator-brief.md`, the exact fed inputs (leaf contract base-to-head diff w/
+  paths/counters, task doc, notes/), and the hard gate "do not run the closeout preview before this
+  pass exists." Doctrine-only change set (7 canonical `skills/` files: 6 edits + 1 new template,
+  each synced to 9 mirrors, 0 Python); sync-propagated (`scripts/sync-skills.py`) bundle copy of the
+  canonical `skills/l-01-agent-lifecycles/roles/manager.md`. Verification metadata pinned — no
+  commit yet on `ar/260707-hfx-l11-curator-activation` (working-tree change, synced onto the landed
+  HFX-L7 base).
+
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 (provider degradation protocol): documented the new
   "Provider Degradation Alert" subsection landed right after the seat/opening-move paragraph — on
   a `degradation-alert` inbox row the manager stops starting providers (no worktree provider
   setup, no watcher start/restart, no `retry_provider_setup`) until an all-clear, continues valid

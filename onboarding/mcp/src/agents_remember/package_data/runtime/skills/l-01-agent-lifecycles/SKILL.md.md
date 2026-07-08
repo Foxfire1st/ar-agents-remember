@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:10+02:00 |
+| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
+| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
 
 ## Purpose
 
@@ -43,6 +43,15 @@ for the new role rather than only the registry mention.
 
 As of 260703-L12 the file is also the **three-party-loop doctrine's single home** (a new section between Shared Invariants and the knob block, referenced per seat): OWNER → BUILDER → REVIEWER at every level that owns work (leaf/master/portfolio table); complexity-scored tiers at dispatch (direct / builder-verified / full loop, scored on blast radius · novelty · size; round 2 glosses direct as no-loop-machinery through the level's ordinary build channel — hands-on at session scale, the leaf's worker under a manager — so it cannot read manager-implements; a master whose leaves all score direct = workflow-free manager); the HARD 3-round cap where ONLY full end-to-end rounds count (delta-verifies by the SAME reviewer close rounds; fix rounds resume the SAME builder); the CONVERGENCE rule (every round must shrink the finding set — a non-shrinking round escalates immediately; the cap is the backstop); escalation one seat up the ladder with the full round history attached; the written QUO-VADIS criterion (a high-blast-radius truth escalates immediately; presentation-grade never); the criteria-catalog binding (`criteria/` — code-seam · doctrine · onboarding-memory · report-verification · plan-review) and the per-level agent sets (knobs in `orchestration.loops`, schema in `docs/reference/settings-json.md`, stored in the global agentic file with repo-local override and parsed by the kernel loader since L13 — the strategist's mandatory pre-run is doctrine, not a knob).
 
+As of 260707-HFX-L11 (curator activation, R1/R4) the Companion Files `templates/…` list gains
+`curator-brief` — the first dedicated curator dispatch-pack template
+(`skills/l-01-agent-lifecycles/templates/curator-brief.md`, new file), documented as: `ROLE BRIEF —
+curator`; the manager compiles a curator's session start from it, feeding the leaf's landed change
+set + task doc + notes/ — never spawned before builder code and the reviewer verdict exist. Before
+this leaf the curator role file (HFX-L6/L6R3) had no matching template, so "change-set feeding"
+was a doctrine sentence with no concrete brief shape; this closes that gap the same way
+`worker-brief.md`/`manager-brief.md` closed it for their seats.
+
 As of cycle 4 the router decides its edge cases in writing (unresolvable AR_SPAWN_ROLE falls through to the brief; a briefless role-env session announces itself on the inbox and waits; AR_SPAWN_ROLE=orchestrator is takeover-only), the brief header form is canonical (`ROLE BRIEF — <role>` or a templates/*-brief.md shape), the hat/seat exception to the no-cross-reading rule is stated, the reviewer registry row carries spawn value `reviewer` -> roles/reviewer.md, the six lifecycle signals are enumerated by name, the dead variant rung is gone from the precedence line, and the as-built settings text documents the wired requireReviewerVerdictAtSeams + the named policy routing the handover to the orchestrator.
 
 As of cycle 5: the takeover pointer names the real section (Profile check (takeover), The Event Loop); the no-cross-reading exception says 'above'; the capability paragraph states the spawn-as-fan-out backdoor (DBMS principle). As of cycle 7 the Companion Files template registry lists all nine on-disk templates: `manager-brief` joins the line with its header-consistent description (`ROLE BRIEF — manager`; the orchestrator compiles a manager's session start from it) — the ninth template added in cycle 4 without extending the registry (AR4-5). As of 260703-L12 the Companion Files registry lists TEN templates (`orchestration-task` — the strategist's sprint plan — joins) plus the new `criteria/…` line (the five reviewer criteria catalogs), and the as-built settings paragraph documents `orchestration.loops` as documented-schema-with-L13-storage. As of HFX-L6/L6R3 the frontmatter description says eight role lifecycles and developer-facing sessions are architect sessions.
@@ -57,7 +66,14 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
-- 2026-07-08T02:00+02:00 — 260707-HFX-L7 (provider degradation protocol): the role registry table
+- 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation: Companion Files template registry
+  gains `curator-brief` (new file, R1/R4) with its header-consistent description. Doctrine-only
+  change set (7 canonical `skills/` files across 6 edits + 1 new template, synced to 9 mirrors, 0
+  Python touched); sync-propagated bundle copy of the canonical `skills/l-01-agent-lifecycles/SKILL.md`.
+  Verification metadata pinned — no commit yet on `ar/260707-hfx-l11-curator-activation`
+  (working-tree change, synced onto the landed HFX-L7 base).
+
+- 2026-07-08T01:00+02:00 — 260707-HFX-L7 (provider degradation protocol): the role registry table
   gains the `system-specialist` row (backend provider-degradation investigator; spawn value
   `system-specialist`; points at the new `roles/system-specialist.md`); frontmatter `description`
   and the Companion Files sentence both now say nine role lifecycles (was eight); the escalation
