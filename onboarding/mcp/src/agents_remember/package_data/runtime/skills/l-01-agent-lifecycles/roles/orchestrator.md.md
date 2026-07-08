@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:55+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 
 ## Purpose
 
@@ -78,6 +78,22 @@ cannot make an irreversible AR-state change on its own); and the whole protocol 
 providers-only this iteration, with Sentry/system-monitoring integration recorded as a future
 detection source, not part of this role's response procedure.
 
+
+### 260707-HFX-L8 Seat Cleanup Addition
+
+Issue #12 (retirement authority split): the "Integration duty (master → super)" list gains step 6
+naming the orchestrator's PORTFOLIO-WIDE retire authority — unlike the manager (scoped to only its
+own master's worker/reviewer seats), the orchestrator may retire ANY seat in the portfolio,
+including a completed manager, via `session_retire(actor_session_id=<own session>, session_id=<the
+seat>, reason=...)`. This is usually automatic: `lifecycle_finalize_task` now auto-retires the
+finalizing master's manager + master-level reviewer seats at the master→super finalize edge
+(config-gated `retirement.autoRetireOnFinalize`, default ON) — the step-6 text exists for the
+by-hand case (a stuck/abandoned seat the automation missed). Owner-never-self-retires still holds
+unconditionally: the orchestrator can never retire its own seat, mirroring the same server-side
+policy (`serving/retire_policy.py::check_retire_authority`) the manager's cleanup duty relies on.
+The Knobs table's `tools` row gained `session_retire` (any seat, portfolio-wide) alongside the
+existing `spawn_agent_session` entry.
+
 ### L16 Knob Additions
 
 260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
@@ -96,6 +112,14 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
+  issue #12): "Integration duty (master → super)" gains step 6 — the orchestrator's portfolio-wide
+  `session_retire` authority (any seat, including a completed manager; owner-never-self-retires
+  still holds), usable by hand when `lifecycle_finalize_task`'s auto-retire hook (config-gated,
+  default ON) misses a stuck/abandoned seat. Knobs `tools` row updated. Sync-propagated bundle
+  copy from the canonical `skills/l-01-agent-lifecycles/roles/orchestrator.md`. Verification
+  metadata pinned until closeout stamps the HFX-L8 commit.
 
 - 2026-07-08T02:00+02:00 — 260707-HFX-L7 (provider degradation protocol): documented the new
   "## Provider Degradation Alert" section (placed after the opening-move paragraph, before

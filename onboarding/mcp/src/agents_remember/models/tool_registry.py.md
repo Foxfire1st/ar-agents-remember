@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T12:31+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00                     |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -37,7 +37,9 @@ plus the task-28 `lifecycle_turn_end_notification` → `LifecycleTurnEndNotifica
 (the public NOTIFY-AND-CONTINUE turn-end response), plus L9
 `attach_terminal_session_to_leaf` → `AttachTerminalSessionToLeafResponse` and L2
 `spawn_agent_session` → `SpawnAgentSessionResponse`
-(both `models/terminal.py`). `INTERNAL_COMPAT_TOOL_NAMES` identifies the four lower-level split
+(both `models/terminal.py`), plus 260707-HFX-L8 `session_retire` → `SessionRetireResponse` and
+`session_rename` → `SessionRenameResponse` (both `models/terminal.py`, right after the
+`spawn_agent_session` row). `INTERNAL_COMPAT_TOOL_NAMES` identifies the four lower-level split
 builders that remain modeled but are not advertised MCP tools:
 `lifecycle_block`, `gate_create`, `gate_wait`, and `gate_response_wait`
 (`lifecycle_turn_end_notification` is deliberately NOT among them — it is a real
@@ -82,10 +84,15 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 | Inbox responses registered here are strict AR-owned tool responses. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
 | Gate responses, including the combined wait helper, are strict AR-owned tool responses. | [gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
 | Lifecycle finalizer response registered here is a strict AR-owned tool response. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
-| Terminal responses registered here (`AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`) are strict AR-owned tool responses. | [terminal.py](terminal.py) |
+| Terminal responses registered here (`AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`, `SessionRetireResponse`, `SessionRenameResponse`) are strict AR-owned tool responses. | [terminal.py](terminal.py) |
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state):
+  registered `session_retire` → `SessionRetireResponse` and `session_rename` →
+  `SessionRenameResponse` (both `models/terminal.py`), right after the `spawn_agent_session` row;
+  `PUBLIC_TOOL_RESPONSE_MODELS` still exactly matches `PUBLIC_TOOLS` (both new tools are public).
+  Verification metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-04T12:31+02:00 - L3: registered
   `orchestration_nudge_manager` to the strict orchestration response model while
   the inbox response rows gained delivery metadata. Verification metadata pinned

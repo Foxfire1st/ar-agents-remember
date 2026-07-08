@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -233,6 +233,17 @@ sub-task row and deletes its leaf doc (json+md) unless `subtask.keep_file`; `set
 (act-by-default `False`, R5) builds + validates and returns `rendered`/`diff`/`wouldLose` **without**
 writing — the preview before adopting a hand `.md`.
 
+260707-HFX-L8 registers two seat-lifecycle tools right after `spawn_agent_session`:
+`session_retire(actor_session_id, session_id, reason="manual retire")` forwards to
+`session_retire_payload`. Its docstring is the model-visible statement of the authority policy —
+owner-never-self-retires; a manager may retire only worker/reviewer seats of its OWN master; the
+orchestrator may retire any seat, including a completed manager — and the full status vocabulary
+(`retired`/`already-retired`/`unknown-session`/`unknown-actor`/`retire-refused`). `session_rename(
+session_id, label)` forwards to `session_rename_payload`; its docstring states rename is identity
+text only (the seat's spawned role never changes, L6 role-seat immutability) and that the FIRST
+rename freezes the original spawn-time label into provenance. Both are registration/forwarding
+only — behavior lives in the payload builders (`mcp/tools/terminal.py`).
+
 ### Invariants And Boundaries
 
 - Server functions should perform registration and argument forwarding only.
@@ -262,6 +273,7 @@ writing — the preview before adopting a hand `.md`.
 | The `runtime_install` tool docstring names preserved user data, managed provider scaffold replacement, watcher rebind behavior, and non-index-rebuilding post-install watcher checks. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | The inbox tools are registered after the gate tools with fixed model/cli attribution. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | Gate delegation policy is parsed from trusted settings and enforced in payload builders. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) and [tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
+| `session_retire`/`session_rename` forward to the payload builders that implement the authority check and catalog mechanics. | [tools/terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 
 ## Series-Contract Notes
 
@@ -271,6 +283,12 @@ As of cycle 5 the lifecycle_gate registration exposes wait (default true) with t
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity): registered
+  `session_retire(actor_session_id, session_id, reason)` and `session_rename(session_id, label)`
+  right after `spawn_agent_session`, forwarding to `session_retire_payload`/`session_rename_payload`.
+  Docstrings state the retire authority policy and status vocabulary, and the rename identity-only/
+  role-immutability contract. Registration/forwarding only. Verification metadata pinned until
+  closeout stamps the HFX-L8 commit.
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `spawn_agent_session` gained the
   free-form escape-hatch parameters (`launch_args`, `prompt_keywords`, `session_commands`) and the
   dispatch `level` parameter; its docstring now documents the per-harness knob application, the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T23:30+02:00 |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -55,7 +55,13 @@ context-delivery outcome (since 260707-HFX-L3 incl. the failure-evidence `delive
 260703-L16 also the `effort-invalid`/`model-invalid`/`level-invalid` refusals, the free-form spawn
 provenance `launchArgs`/`promptKeywords`/`sessionCommands` + `sessionCommandsDelivered`, and the
 level provenance `spawnLevel`/`spawnLevelSource`), and
-`tokens.py` for response token accounting.
+`tokens.py` for response token accounting. **260707-HFX-L8** adds two more strict models to
+`terminal.py`: `SessionRetireResponse` (`retired`/`already-retired`/`unknown-session`/
+`unknown-actor`/`retire-refused` statuses, retirement provenance fields, `detail` naming the exact
+authority-policy clause on refusal) and `SessionRenameResponse` (`renamed`/`unknown-session`,
+`label`/`spawnedLabel` — identity text only, no `spawn_role` field on this response since a rename
+never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gains an additive
+`autoRetiredSeats: list[str]` field for the master→super finalize edge's auto-retire hook.
 
 ## Route Model
 
@@ -115,6 +121,13 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
+  turn-state, issues #12/#4): `models/terminal.py` adds `SessionRetireResponse`/`SessionRenameResponse`
+  (strict `ToolResponse`), `tool_registry.py` registers `session_retire`/`session_rename` → those
+  models; `models/lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gains additive
+  `autoRetiredSeats: list[str]`. Follows the existing STRICT `ToolResponse` pattern, so the
+  strict/flexible split this overview describes is unchanged. Verification metadata pinned until
+  closeout stamps the HFX-L8 commit.
 - 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: `models/terminal.py` accepts
   `leaf-ref-not-found` / `leaf-ref-ambiguous` statuses on terminal attach and spawn responses, with
   optional detail for attach refusals. Verification metadata pinned until closeout stamps the

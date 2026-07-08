@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:10+02:00 |
-| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2`                                  |
-| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
+| lastUpdated            | 2026-07-08T02:55+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`                                  |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 
 ## Purpose
 
@@ -57,6 +57,13 @@ range) + the leaf task doc + notes/ — and that the curator routes each piece t
 home (specific sidecar or governing overview; L3 Operational-Notes last-resort only) before writing
 onboarding.
 
+As of 260707-HFX-L8 (issue #12): the "Dispatch defaults" section gains a "Cleanup" line —
+`worktree_integrate` auto-retires a landed leaf's worker/reviewer seats (config-gated, default ON);
+`session_retire` is available for a stuck/abandoned seat of the manager's OWN master only, server
+policy refuses any other target. This is placed in Dispatch defaults (not the exit block) because
+the automation rides the per-leaf integrate edge, the same section that already documents the
+worker-brief/AR_SPAWN_ROLE/qualified-leaf-key/curator-chain dispatch defaults.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -66,6 +73,13 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement, issue #12): the "Dispatch
+  defaults" section gains a "Cleanup" line — `worktree_integrate` auto-retires a landed leaf's
+  worker/reviewer seats (config-gated, default ON); `session_retire` is available for a
+  stuck/abandoned seat of the manager's OWN master only, server policy refuses any other target.
+  Sync-propagated bundle copy. Verification metadata pinned until closeout stamps the HFX-L8
+  commit.
 
 - 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation (R1/R4): Dispatch defaults section
   updated to match the new curator-brief template — curator spawns now point at

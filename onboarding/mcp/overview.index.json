@@ -286,6 +286,7 @@
     "mcp/tests/test_read_ar_files.py",
     "mcp/tests/test_resolver_parity.py",
     "mcp/tests/test_route_index.py",
+    "mcp/tests/test_seat_lifecycle.py",
     "mcp/tests/test_seed_timeouts.py",
     "mcp/tests/test_serving.py",
     "mcp/tests/test_serving_changeset.py",
@@ -322,8 +323,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 556,
-    "fileSidecars": 234,
+    "sourceFilesInScope": 561,
+    "fileSidecars": 235,
     "childRoutes": 15
   },
   "routingTerms": [

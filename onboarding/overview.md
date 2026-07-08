@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-08T02:10+02:00 |
-| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
-| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
+| lastUpdated | 2026-07-08T03:05+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 
 > **Status:** active baseline
 
@@ -354,7 +354,13 @@ refresh/server restart, lets multiple browser tabs attach independent tmux clien
 and keeps explicit `End`/terminate hidden across later exit bookkeeping. **Task 26** adds a
 **hot-reload dev env** — a `--reload` flag on the `agents-remember dashboard` CLI. Task 29 S7 hides the
 former **Lifecycle Flow** tab from the cockpit while leaving
-[FlowTab.tsx](agents-remember/dashboard/src/panels/FlowTab.tsx) dormant in source. Detail
+[FlowTab.tsx](agents-remember/dashboard/src/panels/FlowTab.tsx) dormant in source.
+**260707-HFX-L8** adds explicit seat lifecycle management on top of the catalog: server-authoritative
+retirement (`POST /api/terminal/{session}/retire`, authority-policy-checked, provenance-stamped,
+never a zombie row) with automated cleanup at the leaf-integrate and master-finalize completion
+edges, post-spawn identity rename (`POST /api/terminal/{session}/rename`, label only, never role),
+and a live turn-state badge (working/turn-ended/awaiting-input/stale) classified from pane text on
+the existing liveness-sweep cadence. Detail
 lives in the `serving/` + `observer/` + `dashboard/src/` route overviews.
 
 ## Cross-Repo References
@@ -378,6 +384,12 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-08T03:05+02:00 — 260707-HFX-L8 root route impact (seat lifecycle: retirement + live
+  identity + turn-state, issues #12/#4): the Dashboard Serving Layer paragraph now records
+  server-authoritative seat retirement (authority-policy-checked, provenance-stamped, automated at
+  the leaf-integrate and master-finalize completion edges), post-spawn identity rename, and a live
+  turn-state badge riding the existing L5 liveness-sweep cadence. Detailed behavior lives in the
+  `serving/` route overview and the touched file sidecars.
 - 2026-07-08T02:10+02:00 — No route impact: 260707-HFX-L11 (curator activation: change-set feeding
   + c-12/c-05 process rewiring) is entirely doctrine/dispatch-template prose inside `skills/`
   (roles/curator.md, roles/manager.md, templates/manager-brief.md, the new

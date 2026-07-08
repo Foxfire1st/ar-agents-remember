@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-07-08T01:00+02:00|
+| lastUpdated | 2026-07-08T02:55+02:00|
 | status      | active                 |
 
 ## Purpose
@@ -30,6 +30,7 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Worktree Integration                | `git-blob-set-v1` | `sha256:b19a3d6bbd1bec49050bad7d67e9272991a496d56d67f87d5339457ddd944eb0` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`                                                                                                                                                                                                                                                                                     |
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:e23cab68a6f2d0b6a724973840cacae02ecee3118528f7b779236047aefd6988` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Provider Degradation Protocol       | `git-blob-set-v1` | sha256:ca46a7da5af8ec3b95347e72b13276302c1d87b8d09efeb8630f2aac31e3b578 | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/mcp/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
+| Seat Retirement                     | `git-blob-set-v1` | `sha256:b3d69d4437778acc11270e3a5afa3909b19742e1aaf072a62f65b04b32dc51c7 | `mcp/src/agents_remember/controllers/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`                                                                                                                                                                 |
 
 ## Entity Inventory
 
@@ -228,6 +229,21 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Source References            | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py); [orchestration_artifacts.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_artifacts.py); [system-specialist.md](agents-remember/skills/l-01-agent-lifecycles/roles/system-specialist.md) |
 | Migration Notes              | When Sentry-based detection lands (260703_spotlight-dev-observability), it should feed this same event/alert/failsafe response protocol rather than duplicate it; the setup-failure-streak and probe-latency evidence paths in `classify_degradation` are the designated seams (currently producer-less/disclosed). |
 
+### Seat Retirement
+
+| Field                        | Value                                                                                                                                                                                                                                                                                                                                            |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Category                     | Terminal-catalog lifecycle protocol                                                                                                                                                                                                                                                                                                              |
+| Represents In Reality        | The full server-authoritative lifecycle by which a dashboard-owned worker/reviewer/manager chat seat is explicitly retired — killed and marked with provenance — once it has no further purpose, plus the authority policy that decides who may retire whom.                                                                                  |
+| Description                  | 260707-HFX-L8 (issues #12/#4) introduces seat retirement as a genuine cross-layer entity, not just a new catalog field: a retire is a terminal mark (`status == "terminated"` plus `retired_at`/`retired_by_session`/`retired_reason`/`retired_edge` provenance) layered onto the existing catalog terminal state — never a fourth status value — so it composes for free with the pre-existing L5 liveness hysteresis (a retired row can never be resurrected). Authority is enforced server-side via `retire_policy.check_retire_authority`: owner-never-self-retires checked first unconditionally; a manager may retire only worker/reviewer seats of its own master (`master_of(leaf_key)` — the qualified leaf key's second path segment, uniform whether the key names a leaf or a master); only the orchestrator has portfolio-wide authority, including over a completed manager. Retirement is reachable three ways that all funnel through the same `retire.retire_entry`/`retire_seats_for_leaf` mechanics: the manual `session_retire` MCP tool + `POST /api/terminal/{session}/retire` route (actor-declared, policy-checked), and two config-gated (default ON) automation hooks — `worktree_integrate` auto-retires a landed leaf's worker/reviewer seats, `lifecycle_finalize_task` auto-retires a finalizing master's manager/reviewer seats. Both automation hooks are best-effort: the ENTIRE retire body is wrapped in a broad exception guard (widened in this leaf's own R2/F1 fix round) so a catalog I/O fault can never fail an already-succeeded completion edge — retirement is a cleanup courtesy riding the edge, never a gate on it. Doctrine (`roles/manager.md`, `roles/orchestrator.md`, `templates/manager-brief.md`) documents the authority split for the agents that call the tool by hand. |
+| Canonical Source Of Truth    | `mcp/src/agents_remember/serving/retire_policy.py`, `mcp/src/agents_remember/serving/retire.py`, the retirement fields/copiers on `TerminalCatalogEntry` in `mcp/src/agents_remember/serving/terminal_catalog.py`, the `_auto_retire_completed_seats` hook in `mcp/src/agents_remember/controllers/worktree_tools.py`, and the `roles/manager.md`/`roles/orchestrator.md` doctrine.                                                                                                                                                                                                                                     |
+| Current Naming Drift         | None yet — this is the entity's introducing leaf. Distinguish from a plain `/terminate`/`session_retire`-less kill: both land on `status == "terminated"`, but only a retire carries the four retirement-provenance fields.                                                                                                                                                 |
+| Key Identifiers              | `retired_at`, `retired_by_session`, `retired_reason`, `retired_edge`, `SeatRef`, `master_of(leaf_key)`, `RetirePolicyError`, `RETIRABLE_ROLES`, `autoRetiredSeats`, `retirement.autoRetireOnIntegration`/`autoRetireOnFinalize` settings.                                                                                                                                                          |
+| Parent / Child Relationships | A specialization of the pre-existing `TerminalCatalogEntry` terminal state (composes with, does not replace, the L5 liveness-hysteresis terminal invariant); consumed by `worktree_integrate`/`lifecycle_finalize_task` (automation edges) and the `session_retire` MCP tool/`POST /retire` route (manual path); documented in the manager/orchestrator role doctrine.                                                                                                                                                                    |
+| Often Confused With          | A plain `/terminate` (no authority check, no retirement provenance); the L5 liveness "exited" state (a probe-observed, self-healing, NON-terminal state — retirement is always terminal and never self-heals); a rename (identity-only, does not touch `status`).                                                                                                                                                                                                                          |
+| Source References            | [retire_policy.py](agents-remember/mcp/src/agents_remember/serving/retire_policy.py); [retire.py](agents-remember/mcp/src/agents_remember/serving/retire.py); [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) L81-L104, L262-L308; [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py); [roles/manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md); [roles/orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md); [260707-HFX-L8 doctrine review](ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/notes/reports/260707-HFX-L8-doctrine-review.md) |
+| Migration Notes              | Should a fourth catalog status value ever be proposed for retirement, it would break the "composes for free with L5 hysteresis" invariant this entity relies on — any future change here should preserve the terminal-mark-plus-provenance shape rather than inventing a parallel status.                                                                                              |
+
 ## Cross-Layer Projections
 
 ### Onboarding Unit
@@ -302,6 +318,16 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Response            | Role-addressed `degradation-alert` inbox rows (orchestrator + active managers) and the critical-threshold failsafe stop. |
 | Investigation seat  | `system-specialist` role: reports first, fixes only on explicit orchestrator order.                        |
 | Future detection    | Sentry (260703_spotlight-dev-observability) is designed to replace/feed detection without changing this response protocol. |
+### Seat Retirement
+
+| Layer              | Representation                                                                                            |
+| ------------------ | --------------------------------------------------------------------------------------------------------- |
+| Catalog storage    | `TerminalCatalogEntry.status == "terminated"` plus `retired_at`/`retired_by_session`/`retired_reason`/`retired_edge`, written only when set (migration-safe). |
+| Authority policy   | `retire_policy.check_retire_authority(SeatRef, SeatRef)` — owner-never-self-retires, manager-scoped-to-own-master, orchestrator-portfolio-wide. |
+| Manual surface     | `session_retire` MCP tool + `POST /api/terminal/{session}/retire` — both actor-declared, both policy-checked before mutation. |
+| Automation surface | `worktree_integrate` (worker/reviewer at the leaf edge) and `lifecycle_finalize_task` (manager/reviewer at the master edge) — config-gated (default ON), best-effort, never blocks the edge it rides. |
+| Doctrine           | `roles/manager.md`/`roles/orchestrator.md` document the authority split for agents calling the tool by hand; `templates/manager-brief.md` names the cleanup default. |
+| Composition        | Rides the pre-existing L5 liveness-hysteresis terminal invariant (`with_liveness_success` never revives `terminated`) rather than adding a new terminal state. |
 
 ## Ownership Notes
 
@@ -312,6 +338,19 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 
 ## Update History
 
+- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
+  issues #12/#4): added the `Seat Retirement` entity — the first genuine new cross-layer entity this
+  leaf introduces per the mgmt-L4 routing rule (catalog + policy + automation hooks + doctrine all
+  cross-cut). Live identity (rename) and live turn-state were judged NOT independently catalog-worthy
+  entities: rename is a simple identity-text field on the existing catalog row with no new protocol
+  of its own, and turn-state is a derived/observational signal (classification + projection), not a
+  load-bearing structural entity with its own authority/lifecycle — both are documented in the
+  relevant file sidecars and the `serving/` route overview instead. `git-blob-set-v1` fingerprint for
+  `Seat Retirement` was computed manually (sorted `path:blob_hash` pairs over `git hash-object` output
+  on the leaf's uncommitted working tree, joined `\n`, sha256) since no commit exists yet for this
+  leaf's diff to run the canonical `compute_git_blob_set_fingerprint` tool against; flagged for
+  recompute via the actual `c-02-memory-quality-control` skill tooling at closeout, same as several
+  prior entries in this history that left fingerprints pending a tooled recompute.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass: added the `Provider Degradation
   Protocol` entity (detector/state-machine, `providerDegradation` settings surface,
   `system-specialist` role, `degradation-alert` inbox kind) with its Entity Inventory row and

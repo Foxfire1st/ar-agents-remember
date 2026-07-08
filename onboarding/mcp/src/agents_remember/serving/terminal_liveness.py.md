@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-07T23:45+02:00                                   |
-| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b`               |
-| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00                                   |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`               |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -60,12 +60,33 @@ ladder: an in-process host session with `is_alive` (via the duck-typed `_host_se
 to the caller's entry (with `with_liveness_success()` applied on the alive side) without phantom
 writes.
 
+**Live turn-state classification (260707-HFX-L8)** rides this SAME sweep call — no new hot loop, no
+new tmux round-trip cadence. `TerminalLivenessObservation` gained `turn_state_changed: bool = False`
+(true only when THIS observation's classification differs from the row's previous `turn_state`, so
+the caller can emit an observer event only on an actual transition, never once per sweep tick).
+`observe_terminal_liveness` now routes every ALIVE result — both the direct in-process `is_alive`
+branch and the tmux-probe-exists branch — through a new `_observe_alive(catalog, entry, *,
+checked_at, pane_capturer)` helper instead of constructing the observation inline. `_observe_alive`
+returns the entry unchanged (no classification, `turn_state_changed=False`) for `kind != "harness"`
+rows — plain shell terminals are never classified; for a harness row it captures the pane via
+`pane_capturer or _default_capture_pane` (the injected seam defaults to
+`terminal_paste.capture_pane`, the SAME history-inclusive capture paste-verification already uses —
+one capture-command shape, not two), classifies via `turn_state.classify_turn_state(pane_text,
+harness=entry.harness)`, persists via `catalog.record_turn_state(entry.id, state, changed_at=...)`,
+and sets `turn_state_changed` by comparing the previous vs. updated `turn_state`.
+`TerminalCatalogLivenessSweeper.__init__` gained `pane_capturer` (the injectable capture seam,
+threaded through every `observe_terminal_liveness` call) and `on_turn_state_change` (a callback
+fired, from `refresh()`, for every observation whose `turn_state_changed` is true — `serving/app.py`
+wires this to `log_turn_state_change_event`). `refresh()` now collects the full observation list
+before returning entries, so it can fan the turn-state-change callback out over all of them in one
+pass, still inside the sweeper's rate-limited/non-overlapping cadence.
+
 ### Conventions
 
 Pure orchestration over injected seams: catalog writes stay in `terminal_catalog.py`, probe
-classification stays in `terminal.py`; this module only sequences them under cadence/overlap
-control. Everything (host, catalog, clock, config) is constructor-injected so tests run
-fake-driven and sleepless.
+classification stays in `terminal.py`, turn-state text classification stays in `turn_state.py`; this
+module only sequences them under cadence/overlap control. Everything (host, catalog, clock, config,
+pane_capturer, on_turn_state_change) is constructor-injected so tests run fake-driven and sleepless.
 
 ### Invariants And Boundaries
 
@@ -78,7 +99,11 @@ fake-driven and sleepless.
 - **Self-heal is one sweep away**: exited rows are probed too, so a false mark recovers
   automatically; `terminated` rows are excluded by `catalog.list()` and never revived.
 - The module never spawns, kills, or attaches tmux sessions and never mutates anything but
-  liveness state through `record_liveness_probe`.
+  liveness state through `record_liveness_probe` (and, since HFX-L8, turn-state through
+  `record_turn_state` for harness rows).
+- Turn-state classification rides the SAME rate-limited sweep cadence as liveness — no separate
+  cadence, no extra tmux round-trip beyond the one `pane_capturer` call per alive harness row per
+  sweep. Only `kind == "harness"` rows are ever classified; plain `terminal` rows are untouched.
 
 ### Todos
 
@@ -102,6 +127,10 @@ record.
 | The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | [terminal_catalog.py](terminal_catalog.py) |
 | The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | [app.py](app.py) |
 | Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
+| The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | [turn_state.py](turn_state.py) |
+| The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | `capture_pane` | [terminal_paste.py](terminal_paste.py) |
+| `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `TerminalCatalogLivenessSweeper(...)` construction | [app.py](app.py) |
+| Failing-first tests for turn-state classification wiring: scripted pane fixtures, precedence ordering, "plain terminals never classified", `turn_state_changed` gating. | `test_seat_lifecycle.py` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
 
 ## Cross-Repo References
 
@@ -113,6 +142,15 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: live turn-state): live turn-state
+  classification folded into the existing alive-probe path via a new `_observe_alive` helper —
+  harness rows only, classified with `turn_state.classify_turn_state` over `pane_capturer`'s
+  captured text, persisted via `catalog.record_turn_state`. `TerminalLivenessObservation` gained
+  `turn_state_changed`; `TerminalCatalogLivenessSweeper` gained `pane_capturer` +
+  `on_turn_state_change` constructor seams, and `refresh()` fans the change callback out after
+  collecting the full observation list. No new hot loop, no new tmux round-trip cadence beyond one
+  capture per alive harness row per existing sweep. Verification metadata pinned until closeout
+  stamps the HFX-L8 commit.
 - 2026-07-07T23:45+02:00 — Created for 260707-HFX-L5 (catalog liveness hysteresis):
   `TerminalCatalogLivenessSweeper` (rate-limited by `sweep_interval_seconds` — default 10s —
   non-overlapping via a non-blocking lock with a double-checked rate limit; rate-limited/overlapped

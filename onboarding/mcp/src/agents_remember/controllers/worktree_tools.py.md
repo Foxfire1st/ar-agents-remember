@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T16:30+02:00                     |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00                     |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -60,6 +60,38 @@ the configured policy too (the dataclass default is all-human, which would
 refuse the exact delegated master-handover approval the seam channel produces),
 so both gate consumers evaluate the deployment's policy, not the default.
 
+260707-HFX-L8 adds a completion-edge auto-retire hook to both success paths. After a successful
+non-dry-run `worktree_integrate_tool` call (`result["ok"]` true), the controller — gated by
+`config.retirement.auto_retire_on_integration` (default ON) — calls the new
+`_auto_retire_completed_seats(config, confined_contract, roles=frozenset({"worker", "reviewer"}),
+reason="leaf integrated into master", edge="leaf-integration")` and stores its return into
+`result["autoRetiredSeats"]`. `lifecycle_finalize_task_tool` does the analogous thing on its own
+success, gated by `config.retirement.auto_retire_on_finalize`, with
+`roles=frozenset({"manager", "reviewer"})`, `reason="master finalized into super"`,
+`edge="master-finalization"`. `worktree_integrate_tool` was refactored to bind
+`confined_contract = require_within_coordination(...)` once (previously inlined directly into
+`WorktreeArgs(...)`) so the same confined path is reused by the auto-retire call without
+re-deriving it.
+
+`_auto_retire_completed_seats(config, contract_path, *, roles, reason, edge) -> list[str]`
+resolves the contract's own qualified leaf key
+(`f"{contract.repo_name}/{contract.task_root.name}/{contract.task_id}"` via
+`worktree_contract.load_contract`), builds a `TerminalCatalog` (at
+`terminal_catalog_path(config.coordination_root)`) and a `TerminalHost`, calls
+`retire.retire_seats_for_leaf(catalog, host, leaf_key=..., roles=roles, reason=reason, edge=edge,
+at=now_iso())`, logs each retired entry via `seat_events.log_retire_event(config, entry)`, and
+returns the retired session ids.
+
+**F1 fix round (260707-HFX-L8, reviewer finding F1, LOW/MEDIUM):** the FIRST build round only
+wrapped `load_contract` in a narrow `try/except (ContractError, OSError)`, leaving
+`retire_seats_for_leaf`'s catalog file I/O (the `_read`/`_write` calls inside it can raise
+`OSError`/JSON-decode errors) and the `log_retire_event` loop OUTSIDE any guard. That let a rare
+catalog I/O fault propagate out of `worktree_integrate_tool`/`lifecycle_finalize_task_tool` and
+make the TOOL report failure for an edge (branch integration / task-doc reconciliation) that had
+already landed successfully. The fix, now in the code, widens the guard to wrap the ENTIRE helper
+body — contract load through the `log_retire_event` loop — in a single `try: ... except Exception:
+return []`, so nothing inside the helper can ever raise out of it.
+
 Slice 2c wires the observable lifecycle here while the git module stays
 observer-free: `worktree_start_tool` resolves a `lifecycle_id` (the active
 lifecycle's id, or a fresh `new_ulid()` when none is active), threads it into
@@ -88,6 +120,13 @@ ambient is installed (CLI/tests).
   authority skips setup fail-closed and is surfaced via the
   `providersAuthority` result block; worktree creation itself is never blocked
   by the provider gate.
+- Auto-retire must NEVER be able to fail a completion edge that has already succeeded (260707-HFX-L8,
+  F1 doctrine): `_auto_retire_completed_seats` wraps its ENTIRE body — contract load, catalog
+  construction, `retire_seats_for_leaf`, and the `log_retire_event` loop — in one
+  `try: ... except Exception: return []`. Retirement is a cleanup courtesy that rides the
+  `worktree_integrate`/`lifecycle_finalize_task` edge; it is never itself a gate on that edge, and
+  the current code achieves this by construction (guard wraps everything, catches everything,
+  always returns `[]` on any failure rather than raising).
 
 ## Repo-Internal References
 `worktree_start_tool` marks the temp lifecycle settings file with
@@ -108,6 +147,11 @@ the documented setup cap now actually governs the worktree flow.
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | [finalize.py](agents-remember/mcp/src/agents_remember/worktrees/modules/finalize.py) |
 | The on-disk provider authority reload consumed before provider setup (containment R1). | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | Containment tests pin the worktree-start veto and the armed-path live-map launch. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
+| `retire_seats_for_leaf`, the seat-retirement domain function the auto-retire hook calls. | [retire.py](agents-remember/mcp/src/agents_remember/serving/retire.py) |
+| Retirement eligibility/role policy consumed by `retire_seats_for_leaf`. | [retire_policy.py](agents-remember/mcp/src/agents_remember/serving/retire_policy.py) |
+| `log_retire_event`, called once per retired entry after a successful auto-retire. | [seat_events.py](agents-remember/mcp/src/agents_remember/serving/seat_events.py) |
+| `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-retire hook reads and writes. | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| `RetirementSettings`/`config.retirement` gating the two auto-retire hooks. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 
 ## Series-Contract Notes
 
@@ -115,6 +159,16 @@ Worktree start/attach/status controllers accept `parent_task` and `leaf_id` and 
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state),
+  INCLUDING the R2/F1 fix round: `worktree_integrate_tool` and `lifecycle_finalize_task_tool` now
+  call the new `_auto_retire_completed_seats` helper on their own success (gated by
+  `config.retirement.auto_retire_on_integration` / `auto_retire_on_finalize`), storing retired
+  session ids into `result["autoRetiredSeats"]`; `worktree_integrate_tool` binds
+  `confined_contract` once for reuse. The F1 fix round widened the helper's guard from just
+  `load_contract` to the ENTIRE body (contract load through the `log_retire_event` loop) under one
+  `try/except Exception: return []`, closing a gap where `retire_seats_for_leaf`'s catalog I/O or
+  the event-log loop could otherwise raise out of an already-succeeded completion edge. Verification
+  metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `worktree_start_tool` now
   re-reads the on-disk authority (`reload_provider_authority`) before provider setup, writes the
   lifecycle settings from the LIVE providers map only when armed, skips setup fail-closed on an
