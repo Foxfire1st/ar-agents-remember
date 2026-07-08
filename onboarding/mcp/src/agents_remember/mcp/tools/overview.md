@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`                                      |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`                                      |
+| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -145,6 +145,11 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-08T22:30+02:00 — No route impact: 260707-HFX2-L3 (paste injector hardening) changes only
+  `terminal.py::_deliver_spawn_pastes`'s INTERNAL delivery mechanic (now routes through
+  `serving.injector.deliver`, the one delivery path, instead of calling `TerminalPaster.paste`
+  directly) — `spawn_agent_session_payload`'s public parameters, response shape, and every existing
+  test assertion are unchanged; detail on the file's own sidecar.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep, R5, issue #15): the
   shared `base.py::_tool_payload` choke point gains a third attachment, `supervisorBanner`, surfaced
   on every public tool response when the serving daemon's supervisor sweep heartbeat has gone

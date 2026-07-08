@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/turn_state.py`         |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`              |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`              |
+| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -48,6 +48,13 @@ keyed by `Harness.id`) checked BEFORE the shared generic patterns for that famil
 for every known harness (every harness classifies off the shared markers), wired and ready for a
 future harness with a distinctive pane shape to add its own table without touching the classifier
 itself.
+
+**`boot_ready(pane_text, *, harness=None) -> bool`** (260707-HFX2-L3, R2): the per-harness delivery
+adapter's boot-readiness signature (the P-5 window) — has the composer rendered ANY recognizable
+state yet? A thin composition, not a new marker table: `True` whenever `classify_turn_state(...)
+.state != "stale"` (working/awaiting-input/turn-ended all count as "the composer has mounted
+something"; only `stale` — no marker matched at all — means "still booting, nothing to read yet").
+Consumed by `harness_adapters.HarnessAdapter.boot_ready`.
 
 ### Conventions
 
@@ -102,6 +109,9 @@ path — with pane text captured by `terminal_paste.capture_pane`.
 | The classification result is persisted via `TerminalCatalog.record_turn_state`, which returns a no-op when the state did not transition (so `_observe_alive` can detect and emit an observer event only on an actual change). | `record_turn_state`; `with_turn_state` | [terminal_catalog.py](terminal_catalog.py) |
 | `Harness.id` is the key namespace the per-harness override dicts are keyed by, even though every override dict is currently empty. | `Harness` | [harnesses.py](harnesses.py) |
 | Failing-first tests for classification precedence (busy > awaiting-input > turn-ended > stale), each marker family, and the empty-per-harness-override fallback, from scripted pane-text fixtures. | `TurnStateClassificationTests` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
+| `boot_ready` is composed into the one delivery adapter interface's `boot_ready` method, alongside `pane_signals.composer_state`/`classify_pane_signal`. | `HarnessAdapter.boot_ready` | [harness_adapters.py](harness_adapters.py.md) |
+| `classify_turn_state` is also reused by `HarnessAdapter.turn_started` (post-submit confirmation: a busy/spinner marker in the post-submit capture corroborates a turn start even before the generic pane-advance diff fires). | `HarnessAdapter.turn_started` | [harness_adapters.py](harness_adapters.py.md) |
+| Boot/ready/mid-turn/chip-stacked/quota-modal fixtures for both known harnesses, exercised through the adapter (not this module directly). | `ClaudeCodeAdapterTests`; `CodexAdapterTests` | [../../../tests/test_harness_adapters.py](../../../tests/test_harness_adapters.py.md) |
 
 ## Cross-Repo References
 
@@ -113,6 +123,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R2): added `boot_ready`, a thin
+  composition over `classify_turn_state` (ready = state != "stale") — the per-harness delivery
+  adapter's boot-readiness signature. No change to `classify_turn_state` itself or its precedence;
+  the accuracy-gap Todo above is unchanged/unactioned. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L3 commit.
 - 2026-07-08T02:43+02:00 — Created for 260707-HFX-L8 (live identity + turn-state, issue #4): the
   marker-based turn-state classifier — `classify_turn_state`, `TurnStateClassification`, the
   precedence-ordered pattern tables (working > awaiting-input > turn-ended > stale) plus empty

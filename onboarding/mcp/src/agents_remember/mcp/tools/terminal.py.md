@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`        |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`        |
+| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -81,6 +81,19 @@ Invalid or ambiguous refs return a strict refusal before any spawn. For a `harne
    ships it as `deliveryCapture` — attached on ANY `False` outcome, `None` (omitted) on full
    success — so a blind seat (SF-1: `contextDelivered: true` over a clean-booted codex pane) is
    diagnosable from the result itself, never trusted from a boolean.
+
+   260707-HFX2-L3 (R3, ONE PATH): `_deliver_spawn_pastes` no longer calls `TerminalPaster.paste`
+   directly — each session-command/brief paste is now a `DeliveryRow` (`envelope=False`: a fresh
+   harness's very first paste is the raw text unchanged, no synthetic header) passed to
+   `serving.injector.deliver`, the SAME delivery path `serving/inbox_delivery.py` calls. The
+   raw-spawn seam's separate delivery loop is retired: nothing in this module talks to
+   `TerminalPaster` except by constructing it as the seam parameter (`paster if paster is not None
+   else TerminalPaster()`) — the paste/blocked/turn-started classification lives one level down in
+   `serving.injector` + `serving.harness_adapters`. `_SpawnDelivery`'s boolean fields keep their
+   EXACT pre-existing meaning (`context_delivered`/`submitted`/`failure_capture`), mapped from the
+   richer `DeliveryOutcome` (`acked`/`landed-unacked` → still counted "delivered"; `blocked`/`failed`
+   → still counted a failure) so every pre-260707-HFX2-L3 test (`test_spawn_agent_session.py`)
+   passes UNCHANGED.
 
 On the opener's `bad-kind`/`leaf-taken` it returns the matching `ok: false` payload (surfacing the
 server-arbitrated `leaf-taken` owner, never overriding it). The `spawned` payload echoes the
@@ -203,6 +216,7 @@ catalog.
 | Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | [../../serving/seat_events.py](../../serving/seat_events.py) |
 | The strict `SessionRetireResponse`/`SessionRenameResponse` response models these two builders conform to. | `SessionRetireResponse`; `SessionRenameResponse` | [../../models/terminal.py](../../models/terminal.py) |
 | Failing-first tests for the retire policy matrix, idempotent retire, and rename provenance/role-immutability. | `test_seat_lifecycle.py` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
+| 260707-HFX2-L3: `_deliver_spawn_pastes` builds `DeliveryRow`s and calls the ONE delivery path, `serving.injector.deliver`, instead of `TerminalPaster.paste` directly — the same path `serving/inbox_delivery.py` uses. | `deliver` | [../../serving/injector.py](../../serving/injector.py.md) |
 
 ## Cross-Repo References
 
@@ -214,6 +228,13 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R3): `_deliver_spawn_pastes`
+  gained `entry_id`/`harness` parameters and now builds `DeliveryRow`s (`envelope=False`, raw text
+  unchanged) passed to `serving.injector.deliver` — the raw-spawn seam's separate delivery loop is
+  retired; the SAME one path `serving/inbox_delivery.py` uses. `_SpawnDelivery`'s boolean fields keep
+  their exact pre-existing meaning, mapped from the richer `DeliveryOutcome`. Every existing
+  `test_spawn_agent_session.py` assertion (including exact `paster.calls[...]["text"]` equality)
+  passes UNCHANGED. Verification metadata pinned until closeout stamps the 260707-HFX2-L3 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `spawn_agent_session_payload` now atomically writes R2 expectation rows via `_write_spawn_expectation_rows` — always a `briefed-by` row, plus a `turn-report-by` row when the spawn claims a leaf (`leaf_key` set). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity): two new
   payload builders, `session_retire_payload` (authority-checked retire: unknown-session/
