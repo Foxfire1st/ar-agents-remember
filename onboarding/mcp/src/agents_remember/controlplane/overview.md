@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-08T01:00+02:00                      |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`     |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T04:15+02:00                      |
+| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`     |
+| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -72,6 +72,12 @@ address it on the inbox, `InboxMessageKind` gains `degradation-alert` for the de
 role-addressed state-change alerts (posted to `orchestrator` and every active `manager`), and
 `OrchestrationRole`/`_ROLE_ESCALATION` in `orchestration_artifacts.py` gain
 `system-specialist -> orchestrator` so the seat's escalations/blockers route correctly.
+**260707-HFX-L12** closes a master-exit BLOCK finding: `AgentRole` gains `architect` and `curator`,
+and `InboxMessageKind` gains `decision-item`/`decision-ruling`, so the HFX-L6-landed decision-item
+relay doctrine (orchestrator posts `decision-item` to `architect`; architect posts
+`decision-ruling` back) is now representable and round-trippable through the inbox, not just
+documented in `architect.md`/`orchestrator.md`/`SKILL.md`. Gate policy and inbox storage behavior
+are unchanged — a pure Literal extension.
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -147,6 +153,15 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-08T04:15+02:00 — 260707-HFX-L12 route impact (small, master-exit BLOCK fix leaf):
+  `AgentRole` gains `architect`/`curator` and `InboxMessageKind` gains
+  `decision-item`/`decision-ruling` (`operator_inbox_records.py`) so the HFX-L6-landed
+  decision-item/decision-ruling relay doctrine is representable and round-trippable through the
+  inbox, closing master-exit Finding 1
+  (`notes/reports/260707-HFX-master-exit-verdict.md`); pinned by
+  `test_decision_item_relay_round_trip_between_orchestrator_and_architect` in
+  `mcp/tests/test_operator_inbox.py`. Gate policy and inbox storage behavior are unchanged.
+  Verification metadata pinned until closeout stamps the HFX-L12 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `AgentRole` gains
   `system-specialist` and `InboxMessageKind` gains `degradation-alert`
   (`operator_inbox_records.py`); `OrchestrationRole`/`_ROLE_ESCALATION` gain

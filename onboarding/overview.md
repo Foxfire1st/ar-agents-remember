@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-08T03:05+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated | 2026-07-08T04:25+02:00 |
+| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2` |
+| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
 
 > **Status:** active baseline
 
@@ -384,6 +384,13 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-08T04:25+02:00 — No route impact: 260707-HFX-L12 (master-exit fix leaf) closes a schema
+  gap in the operator-inbox `AgentRole`/`InboxMessageKind` Literals so the ARCHITECT/ORCHESTRATOR
+  decision-item relay this root overview's Agent lifecycles row already describes actually
+  round-trips through the inbox — the row's own prose was already correct about the DESIGN; this
+  leaf makes the CODE match it. No new role, no role-census change, no repository structure or
+  routing delta. Route detail (the two new Literal members, the new round-trip test) lives in the
+  `mcp/` route overview and the touched file sidecars.
 - 2026-07-08T03:05+02:00 — 260707-HFX-L8 root route impact (seat lifecycle: retirement + live
   identity + turn-state, issues #12/#4): the Dashboard Serving Layer paragraph now records
   server-authoritative seat retirement (authority-policy-checked, provenance-stamped, automated at

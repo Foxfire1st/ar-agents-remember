@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T03:05+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T04:25+02:00 |
+| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2` |
+| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -85,6 +85,14 @@ best-effort so a catalog fault can never fail the edge it rides). NEW `session_r
 its role. NEW `serving/turn_state.py` classifies live seat turn-state (working/turn-ended/
 awaiting-input/stale) from pane text on the existing L5 liveness-sweep cadence; NEW
 `serving/seat_events.py` emits observer events on retire/rename/turn-state transitions.
+260707-HFX-L12 closes a master-exit-review-caught gap: `controlplane/operator_inbox_records.py`'s
+`AgentRole` gains `"architect"` and `"curator"`; `InboxMessageKind` gains `"decision-item"` and
+`"decision-ruling"`. The HFX-L6-ratified minimal decision-item relay (orchestrator posts a
+decision-item to the architect; architect posts a decision-ruling back) was landed as doctrine but
+the schema previously rejected both calls with `ValidationError` — the architect seat could not
+receive any typed inbox row. No other consumer of these Literals enumerates them exhaustively, so
+this is a pure schema extension with no downstream edits; a new round-trip test in
+`mcp/tests/test_operator_inbox.py` pins the fix through the real tool-payload seam.
 
 ## Hot Path Summary
 
@@ -523,6 +531,14 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (master-exit fix leaf, closes Finding 1):
+  `controlplane/operator_inbox_records.py`'s `AgentRole` gains `architect`/`curator`;
+  `InboxMessageKind` gains `decision-item`/`decision-ruling` — making the HFX-L6-ratified minimal
+  decision-item relay representable and round-trippable through the operator inbox for the first
+  time (previously the exact doctrine-mandated call raised `ValidationError`). Pure schema
+  extension; no other consumer enumerates these Literals exhaustively. Pinned by a new round-trip
+  test in `mcp/tests/test_operator_inbox.py`. Verification metadata pinned until closeout stamps
+  the HFX-L12 commit.
 - 2026-07-08T03:05+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issues #12/#4): NEW `serving/retire.py`, `serving/retire_policy.py`,
   `serving/turn_state.py`, `serving/seat_events.py`; new `session_retire`/`session_rename` MCP tools
