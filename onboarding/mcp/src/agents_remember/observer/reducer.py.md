@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T05:12+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -118,7 +118,11 @@ same freshness comparison to whitelisted repo-level rows: actionable drift ids i
 `signalTs` is the snapshot `checkedAt`. Targetless dismissal never applies to provider/setup/start rows.
 `build_analytics`
 also passes `agentPickups` through unchanged; pickup age/state is computed by
-`snapshots.read_agent_pickups`, not inferred in the reducer or frontend.
+`snapshots.read_agent_pickups`, not inferred in the reducer or frontend. Since 260707-HFX2-L1 (R5),
+`project_workspace`/`build_analytics` also accept an `expectation_rows` keyword (default `[]`),
+passed through unchanged into `Analytics.expectationRows` — the durable deadline-row projection
+computed entirely by `snapshots.read_expectation_rows`; the reducer performs no expectation-row
+logic of its own.
 
 **Task-28 turn-end branch + gate-open/blocked-gate dedup:** `_lifecycle_attention`
 gains an `awaiting-developer` branch — one `info` `AttentionItem` ("Turn complete
@@ -280,6 +284,7 @@ As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks ge
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `build_analytics`/`project_workspace` gained an `expectation_rows` keyword threading `ExpectationRowNode`s into `Analytics.expectationRows` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-07T05:12+02:00 — 260703-L15 S2 (bounded served buffers): `token_series` now decimates
   past `TOKEN_SERIES_MAX` (512) via `_decimate_token_series` — newest `TOKEN_SERIES_RECENT`
   (256) exact, older history uniform-thinned with the first sample kept; cumulative stays

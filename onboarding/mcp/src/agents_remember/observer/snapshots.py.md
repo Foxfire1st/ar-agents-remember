@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:58:06+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -179,7 +179,13 @@ projects pending operator-inbox responses as `AgentPickupNode`s for task-row fee
 entries show `waiting-for-agent`, entries older than the 5-minute pickup TTL show `check-chat`, L3
 metadata (sender/recipient roles, message kind, artifact path, delivery state/session/detail) is carried
 through from the inbox row, and consumed/dismissed/24h-expired entries disappear because the inbox store
-physically removes them.
+physically removes them. Since 260707-HFX2-L1, `read_agent_pickups` also carries the R1 ack/backoff
+fields (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`) and the R4 owner fields
+(`ownerRole`/`ownerAgentId`/`ownerLifecycleId`) straight off the entry. A new
+`read_expectation_rows(coordination_root, *, now)` (R5) reads `ExpectationRowStore.pending()`,
+computes an `overdue` flag per row (`now >= dueAt`), and returns `ExpectationRowNode`s sorted by
+`dueAt` — surfacing only, for dashboard/architect observability; an L2 predicate reads the store
+directly and never this projection.
 
 **Task 28 S5.2** adds `read_attention_dismissals(coordination_root)`, returning the compact
 `{itemId: AttentionDismissalRecord}` acknowledgement map from
@@ -254,6 +260,7 @@ work while archived roots and contract folders stay out of the JSON scan.
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `read_agent_pickups` now populates the R1/R4 ack/backoff/owner fields; added `read_expectation_rows` (R5) reading `ExpectationRowStore.pending()` for dashboard/architect observability — surfacing only, an L2 predicate reads the store directly. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-06T23:58:06+02:00 — 260703-L14 (visual hierarchy + chat grouping): `_task_doc_node` passes
   `orchestrates=list(doc.orchestrates)` through to `TaskDocNode` — the schema's master-only
   orchestration-command list rides the projection unchanged; no reader logic or admission rules

@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-07-08T02:55+02:00|
+| lastUpdated | 2026-07-08T16:15+02:00|
 | status      | active                 |
 
 ## Purpose
@@ -29,7 +29,7 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Worktree Contract                   | `git-blob-set-v1` | `sha256:9b08e71200904115d2113b16564dadecab4393e5779f59320ad34533eabf90e6` | `mcp/src/agents_remember/worktrees/worktree_contract.py`; `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`                                                                                                                                                                                                     |
 | Worktree Integration                | `git-blob-set-v1` | `sha256:b19a3d6bbd1bec49050bad7d67e9272991a496d56d67f87d5339457ddd944eb0` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`                                                                                                                                                                                                                                                                                     |
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:e23cab68a6f2d0b6a724973840cacae02ecee3118528f7b779236047aefd6988` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
-| Provider Degradation Protocol       | `git-blob-set-v1` | sha256:a4cb402e06b58be3251d8fcb91a4b080fd1d5ee8b7508d1eec37c39723b6be79 | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/mcp/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
+| Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:9824762923ed605fd470b7f6f5b0d287d117571fba2d150754fd86e4bb83cf93` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/mcp/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | Seat Retirement                     | `git-blob-set-v1` | `sha256:b3d69d4437778acc11270e3a5afa3909b19742e1aaf072a62f65b04b32dc51c7 | `mcp/src/agents_remember/controllers/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`                                                                                                                                                                 |
 
 ## Entity Inventory
@@ -227,7 +227,7 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Parent / Child Relationships | Reads `providers/metrics.py`'s central metrics log; posts through `controlplane/operator_inbox_store.py` and `serving/inbox_delivery.py`; stops stacks through `controllers/provider_tools.py`'s always-legal teardown path; consumed once per tick by `serving/app.py`.                       |
 | Often Confused With          | The lower-level per-container containment metrics sampler (260707-HFX-L1, `providers/metrics.py`) — that module only samples and stores; this entity is the decision/response layer built on top of it. Also not the future Sentry integration, which is a detection-source replacement, not this entity's response protocol. |
 | Source References            | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py); [orchestration_artifacts.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_artifacts.py); [system-specialist.md](agents-remember/skills/l-01-agent-lifecycles/roles/system-specialist.md) |
-| Migration Notes              | When Sentry-based detection lands (260703_spotlight-dev-observability), it should feed this same event/alert/failsafe response protocol rather than duplicate it; the setup-failure-streak and probe-latency evidence paths in `classify_degradation` are the designated seams (currently producer-less/disclosed). |
+| Migration Notes              | When Sentry-based detection lands (260703_spotlight-dev-observability), it should feed this same event/alert/failsafe response protocol rather than duplicate it; the setup-failure-streak and probe-latency evidence paths in `classify_degradation` are the designated seams (currently producer-less/disclosed). 260707-HFX2-L1 added `attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`/`ownerRole`/`ownerAgentId`/`ownerLifecycleId` fields to `OperatorInboxEntry` in this entity's shared `operator_inbox_records.py` evidence file — purely additive record fields for the unrelated R1 ack-semantics/R4 hierarchical-routing feature, touching neither the `AgentRole`/`InboxMessageKind` Literals this entity's `system-specialist`/`degradation-alert` values live on nor the degradation detector/response protocol itself; no entity prose change warranted. |
 
 ### Seat Retirement
 
@@ -338,6 +338,19 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 
 ## Update History
 
+- 2026-07-08T16:15+02:00 — 260707-HFX2-L1 (curator delta round 2, closeout-preview gap): refreshed
+  the `Provider Degradation Protocol` `git-blob-set-v1` fingerprint (`sha256:98247629…`) after this
+  leaf's diff touched the entity's shared `operator_inbox_records.py` evidence path. Reviewed the
+  diff directly: the change adds `attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`
+  (R1 ack-semantics) and `ownerRole`/`ownerAgentId`/`ownerLifecycleId` (R4 hierarchical routing)
+  fields to `OperatorInboxEntry` — purely additive record fields for an unrelated feature, touching
+  neither the `AgentRole`/`InboxMessageKind` Literals this entity's `system-specialist`/
+  `degradation-alert` values live on, nor the detector/response protocol itself — so no entity
+  prose change beyond a short Migration Notes disclosure of the touch. Fingerprint computed
+  manually (sorted `path:blob_hash` pairs over `git hash-object` output on the leaf's uncommitted
+  working tree, joined `\0`, sha256), same as the Seat Retirement precedent, since no commit exists
+  yet for this leaf's diff to run the canonical `compute_git_blob_set_fingerprint` tool against;
+  flagged for recompute via the actual `c-02-memory-quality-control` skill tooling at closeout.
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
   issues #12/#4): added the `Seat Retirement` entity — the first genuine new cross-layer entity this
   leaf introduces per the mgmt-L4 routing rule (catalog + policy + automation hooks + doctrine all

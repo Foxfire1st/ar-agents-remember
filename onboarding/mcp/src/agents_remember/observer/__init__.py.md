@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/__init__.py`   |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-25T13:20+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -34,7 +34,10 @@ projection read side — `observer_root` (`paths.py`), the schema
 `DriftSnapshotNode`, `SidecarStaleNode`, `SetupSummaryNode`, `SetupProgressNode`,
 `RouteCoverageNode`, `ToolReportNode`, `LedgerNode`, `TokenSample`, and task-23/24
 `AgentPickupNode`) and the rollup
-functions (`build_analytics`, `staleness_histogram`, `token_series`). Slice 3c
+functions (`build_analytics`, `staleness_histogram`, `token_series`). Since
+260707-HFX2-L1, `ExpectationRowNode` (the R2 durable expectation/deadline-row
+projection surface) is re-exported alongside `AgentPickupNode` and pinned in
+`__all__`. Slice 3c
 re-exports `TaskDocNode` — and, R1, `SeriesNode` (the series-master surface node).
 Slice 07 re-exports the served-onboarding ledger surface — `SERVED_RECORD_SCHEMA`,
 `ServedRecord`, `ServedStore`, and `served_key` (`served_store.py`) — the dedup
@@ -69,6 +72,7 @@ importing the package never drags in the providers/worktrees machinery.
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: re-exports `ExpectationRowNode` alongside `AgentPickupNode` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-06-25T13:20+02:00 — Task 23/24: re-exported `AgentPickupNode`, the projection surface for waiting-for-agent/check-chat task-row feedback.
 - 2026-06-22T22:33+02:00 — Slice 07: re-export the served-onboarding ledger surface (`SERVED_RECORD_SCHEMA`, `ServedRecord`, `ServedStore`, `served_key`) and pin it in `__all__`; the I/O readers stay unexported by design. Body and references only — verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-06-19T03:17+02:00 — Slice 3c reopened (R1): re-export `SeriesNode` (the series-master surface node); the I/O readers (incl. `read_series_documents`) stay unexported by design. Verification metadata pinned until closeout stamps the R1 code commit.

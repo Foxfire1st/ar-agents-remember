@@ -5,17 +5,19 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-08T04:15+02:00                      |
-| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`     |
-| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
+| lastUpdated            | 2026-07-08T14:40+02:00                      |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`     |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
 
 `controlplane/` owns control-plane records: the gate control plane (task 6), the
 operator/agent inbox (task 10/L3), orchestration artifact/nudge helpers (L3), the
-task-23/24 interaction-retention policy, and task-28 lifecycle-scoped attention
-acknowledgements. Gates are attributed decision points on a lifecycle — the kind vocabulary
+task-23/24 interaction-retention policy, task-28 lifecycle-scoped attention
+acknowledgements, and — since 260707-HFX2-L1 — the durable expectation-row
+substrate (R2), inbox redelivery backoff math (R3), and hierarchical signal
+routing derivation (R4) the L2 supervisor sweep (a sibling leaf) drives from. Gates are attributed decision points on a lifecycle — the kind vocabulary
 includes the delegable `master-handover-approval` seam gate (the manager raises it with the
 reviewer verdict attached; the orchestrator decides per the gate delegation policy, and
 `requireReviewerVerdictAtSeams` binds delegated seam decisions to that evidence); the inbox
@@ -79,6 +81,23 @@ relay doctrine (orchestrator posts `decision-item` to `architect`; architect pos
 documented in `architect.md`/`orchestrator.md`/`SKILL.md`. Gate policy and inbox storage behavior
 are unchanged — a pure Literal extension.
 
+**260707-HFX2-L1** makes the operator inbox the durable signal substrate the L2 supervisor sweep
+drives: R1 extends `OperatorInboxEntry` with ack/backoff fields (`attemptCount`/`lastAttemptAt`/
+`nextAttemptAt`/`escalatedAt`) so consume=ack is the ONLY terminal outcome (`delivered` is never
+terminal — pasted != perceived) and fixes `interaction_retention._keep_inbox_entry` to never prune
+a `pending` row regardless of age. R2 adds `expectation_rows.py`
+(`ExpectationRowStore`/`write_expectation_row`): every dispatch surface (spawn, gate open, signal
+post) atomically writes a durable what-must-happen-by-when row (kinds `briefed-by` /
+`turn-report-by` / `verdict-by` / `ack-by`), configurable per-kind SLA via
+`orchestration.expectations` in `kernel/agentic_settings.py`. R3 adds `inbox_backoff.py`: pure
+backoff-ladder math + a per-target rate-limit gate mirroring `OrchestrationNudgeStore`'s pattern,
+consumed by `OperatorInboxStore.list_redeliverable`/`record_delivery`. R4 adds
+`signal_routing.py::derive_signal_owner`: the routed owner address (worker -> its manager, manager
+-> its orchestrator, decision-item -> architect) derived from catalog spawn provenance, stamped
+onto new `OperatorInboxEntry.ownerRole`/`ownerAgentId`/`ownerLifecycleId` fields at post time.
+Neither this leaf's redelivery driver nor its ladder escalation exist here — L2 (a sibling leaf)
+drives the actual sweep; this route only builds the durable substrate + surfacing it reads.
+
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
 set rather than history. Dismissing a lifecycle-bound attention row upserts one acknowledgement; each
@@ -100,7 +119,10 @@ signal, while targetless provider-down dismissals are not accepted.
 | `gate_policy.py` | `GatePolicy` / `GatePolicyRule`, built-in policy names, human-pinned/delegable kind validation, and delegated-decision attribution/evidence checks. |
 | `enforcement.py` | `evaluate_gate` (pure kind-generic gate policy resolver) + `GateGuard`; `evaluate_closeout_gate` / `CloseoutGuard` remain the closeout wrapper `worktree_closeout_apply` reads. |
 | `attention_dismissals.py` | `AttentionDismissalRecord` + `AttentionDismissalStore`: compact current acknowledgement rows for attention queue dismissals, with physical prune by live lifecycle id and a targetless actionable-drift exception. |
-| `interaction_retention.py` | Shared 5-minute pickup/wait and 24-hour interaction TTL policy helpers. |
+| `interaction_retention.py` | Shared 5-minute pickup/wait and 24-hour interaction TTL policy helpers; since 260707-HFX2-L1 a `pending` inbox row is NEVER pruned by age (only `consumed` rows are TTL-bounded). |
+| `expectation_rows.py` | (260707-HFX2-L1, R2) `ExpectationRow`/`ExpectationRowStore`/`write_expectation_row`: durable what-must-happen-by-when rows written atomically at every dispatch surface, an L2 sweep scans, never in-memory timers. |
+| `inbox_backoff.py` | (260707-HFX2-L1, R3) Pure redelivery backoff-ladder math + per-target rate limiting, mirroring the `OrchestrationNudgeStore` pattern. |
+| `signal_routing.py` | (260707-HFX2-L1, R4) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). |
 | `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store). |
 
 The `gate_*` MCP tools live in `mcp/tools/gates.py` (config-rooted, building a
@@ -153,6 +175,13 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-08T14:40+02:00 — 260707-HFX2-L1 route impact: three new modules —
+  `expectation_rows.py` (R2 durable deadline rows), `inbox_backoff.py` (R3 redelivery backoff +
+  rate limiting), `signal_routing.py` (R4 hierarchical routing derivation) — plus R1 ack-semantics
+  extensions to `OperatorInboxEntry`/`OperatorInboxStore`/`interaction_retention.py` making
+  consume=ack the only terminal delivery outcome and compaction never remove a pending/unacked
+  row. Gate/inbox record shapes otherwise unchanged. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L1 commit.
 - 2026-07-08T04:15+02:00 — 260707-HFX-L12 route impact (small, master-exit BLOCK fix leaf):
   `AgentRole` gains `architect`/`curator` and `InboxMessageKind` gains
   `decision-item`/`decision-ruling` (`operator_inbox_records.py`) so the HFX-L6-landed

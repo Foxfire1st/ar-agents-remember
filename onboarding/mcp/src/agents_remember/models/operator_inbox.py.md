@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/models/operator_inbox.py`      |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-04T12:31+02:00                                  |
-| lastVerifiedCommitHash |                                                         `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                         2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash |                                                         `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
+| lastVerifiedCommitDate |                                                         2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -25,7 +25,11 @@ agent-to-agent metadata and hosted-delivery status.
 
 `OperatorInboxPostResponse` returns the queued entry id, state, mailbox keys,
 sender/recipient role metadata, message kind, optional artifact path, and
-optional hosted-delivery fields. `OperatorInboxPollResponse` returns the mailbox
+optional hosted-delivery fields. Since 260707-HFX2-L1 (R4) it also carries the routed-owner
+address — `ownerRole`/`ownerAgentId`/`ownerLifecycleId`, derived by
+`controlplane/signal_routing.py::derive_signal_owner` from catalog spawn provenance and stamped
+onto the entry at post time — distinct from the caller-supplied `recipientRole`; all three are
+`None` when routing derived nothing. `OperatorInboxPollResponse` returns the mailbox
 key, optional recipient role, pending entry count, and serialized entry
 dictionaries. `OperatorInboxConsumeResponse`
 returns the entry id, final state, whether this call consumed it now, and the
@@ -75,6 +79,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `OperatorInboxPostResponse` gained `ownerRole`/`ownerAgentId`/`ownerLifecycleId` (R4 routed-owner address) alongside the existing `recipientRole`. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-04T12:31+02:00 - L3: extended inbox response models with role/message
   metadata and hosted-delivery fields. Verification metadata pinned until
   closeout stamps the L3 commit.

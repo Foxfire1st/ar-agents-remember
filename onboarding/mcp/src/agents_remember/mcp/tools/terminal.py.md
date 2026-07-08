@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-08T02:43+02:00                            |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`        |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`        |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -92,6 +92,16 @@ Helper decomposition (CRAP-gate driven): steps 1-4 live in `_resolve_harness_dis
 frozen `_HarnessDispatch` bundle or a refusal, with `_knob_refusal` for the model/effort checks);
 step 6 is `_brief_packet` (keyword prepending) + `_deliver_spawn_pastes` (session commands then
 brief, returning `_SpawnDelivery`); the `spawned` response dict is `_spawned_payload`.
+
+Since 260707-HFX2-L1 (R2): right after the opener upserts the catalog row (`entry`), before the
+brief/delivery step, `spawn_agent_session_payload` calls `_write_spawn_expectation_rows(config,
+entry)` — atomically writing a `briefed-by` expectation row (the composer must show the brief
+within its SLA) ALWAYS, plus a `turn-report-by` row when the spawn claims a leaf (`entry.leaf_key`
+is set; a bare scratch/command chat owes no turn report). Both rows read their SLA from
+`orchestration.expectations.defaults` (`kernel/agentic_settings.py`), falling back to
+`DEFAULT_EXPECTATION_SLA_SECONDS`. This durable substrate is written here only — nothing in this
+file marks either row `met`/`missed`; that is the consuming surface's job (a gate open / L2 sweep,
+sibling leaves).
 
 **Seat lifecycle (260707-HFX-L8, issues #12/#4)** adds two more agent-facing payload builders,
 sharing this file's transport-thin posture — both delegate the actual mechanics to `serving/`.
@@ -204,6 +214,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `spawn_agent_session_payload` now atomically writes R2 expectation rows via `_write_spawn_expectation_rows` — always a `briefed-by` row, plus a `turn-report-by` row when the spawn claims a leaf (`leaf_key` set). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity): two new
   payload builders, `session_retire_payload` (authority-checked retire: unknown-session/
   unknown-actor/already-retired/retire-refused/retired statuses, kills the tmux session + persists

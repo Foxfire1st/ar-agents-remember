@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-08T04:15+02:00                                              |
-| lastVerifiedCommitHash |                                                                     `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`|
-| lastVerifiedCommitDate |                                                                     2026-07-08T04:09:43+02:00|
+| lastUpdated            | 2026-07-08T14:05+02:00                                              |
+| lastVerifiedCommitHash |                                                                     `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
+| lastVerifiedCommitDate |                                                                     2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -56,6 +56,15 @@ caller-minted `entry_id` and `now`. `consume_operator_inbox_entry(...)` returns 
 later `consumed` snapshot while preserving the original post and delivery
 metadata.
 
+**260707-HFX2-L1** (R1 ack semantics + R4 routing): adds `attemptCount`,
+`lastAttemptAt`, `nextAttemptAt`, and `escalatedAt` — the redelivery schedule
+riding every entry, because `delivered` is never terminal and consume=ack is
+the only terminal outcome (F-A/F-V proved pasted != perceived). Also adds
+`ownerRole`/`ownerAgentId`/`ownerLifecycleId`: the ROUTED address
+(`controlplane/signal_routing.py`) stamped once at post time from catalog
+spawn provenance, distinct from the caller-supplied `recipientRole`.
+`create_operator_inbox_entry(...)` gained matching `owner_*` keyword params.
+
 ### Conventions
 
 The record mirrors gate records: camelCase persisted fields, a `schema` alias,
@@ -102,6 +111,12 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T14:05+02:00 — 260707-HFX2-L1: `OperatorInboxEntry` gains the R1
+  ack/backoff fields (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/
+  `escalatedAt`) and the R4 routed-owner fields
+  (`ownerRole`/`ownerAgentId`/`ownerLifecycleId`); `create_operator_inbox_entry`
+  gained matching `owner_*` params. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L1 commit.
 - 2026-07-08T04:15+02:00 — 260707-HFX-L12 (master-exit BLOCK fix leaf): `AgentRole` gains
   `architect` and `curator`; `InboxMessageKind` gains `decision-item` and `decision-ruling`. Closes
   master-exit Finding 1 — the HFX-L6-landed decision-item relay doctrine was unrepresentable in this
