@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`       |
+| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -442,12 +442,29 @@ the only destructive terminal action.
   answers which of the four P-15 intervention triggers (`never-briefed`/`delivery-stalled`/
   `mid-turn`/`blocked`) a captured pane shows, reusing `terminal_paste.count_paste_chips` for the
   chip-count trigger. Distinct from `turn_state.py`'s `classify_turn_state` (a different question
-  over the same captured text — deliberately not merged).
+  over the same captured text — deliberately not merged). **260707-HFX2-L3** populated
+  `_HARNESS_BLOCKED_PATTERNS["codex"]` with the issue #20 quota/rate-limit modal markers and added
+  `blocked_reason_label` + `composer_state`, the two new signatures `harness_adapters.py` composes.
 - `supervisor_heartbeat.py` — the **260707-HFX2-L2** self-liveness primitive (R5, issue #15): an
   atomic-overwrite single-row `SupervisorHeartbeatStore` (`logs/observer/workspace/
   supervisor-heartbeat.json`), `heartbeat_age_seconds`, and `supervisor_staleness_banner` (silent
   when never-ticked, a fail-loud one-liner past the staleness cutoff) — consumed by the MCP tool
   choke point and the dashboard header payload.
+- `harness_adapters.py` — the **260707-HFX2-L3** per-harness delivery adapter (R2): `HarnessAdapter`
+  (`boot_ready`/`composer_state`/`mid_turn`/`mid_turn_behavior`/`blocked_reason`/`turn_started`), a
+  thin composition over `pane_signals.py`/`turn_state.py` with NO new pattern table of its own, plus
+  `get_adapter` (named `CLAUDE_CODE_ADAPTER`/`CODEX_ADAPTER`, generic fallback for any other id) and
+  the NEW-HARNESS CHECKLIST (R4: a future harness is one adapter registration, never a new delivery
+  path).
+- `injector.py` — the **260707-HFX2-L3** ONE delivery path (R1 + R3): `deliver(row) -> {acked,
+  landed-unacked, blocked(reason), failed(reason)}` — the four-way `DeliveryOutcome` contract every
+  payload class (spawn briefs, inbox dispatch/nudge/redelivery/signal rows) now funnels through
+  instead of two independent `TerminalPaster.paste` call sites. Wraps `TerminalPaster.paste`
+  unchanged, reads `harness_adapters.get_adapter` for the blocked-check (against the FINAL capture)
+  and the turn-started corroboration, and never retries itself — retries stay the caller's (the L2
+  supervisor's) decision. `DeliveryRow`'s `envelope=False` on both current callers keeps the exact
+  pre-existing wire format for the spawn-brief path and avoids double-heading the inbox path's own
+  `_push_text` header.
 - `__init__.py` — package docstring only; `delta`/`projector` stay importable without FastAPI.
 
 ## Invariants And Boundaries
@@ -515,6 +532,24 @@ the only destructive terminal action.
 
 ## Update History
 
+- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 route impact (paste injector hardening, R1-R5): route
+  gains `harness_adapters.py` (the one per-harness delivery adapter interface — claude-code, codex,
+  generic fallback) and `injector.py` (the ONE delivery path, `deliver(row) -> {acked, landed-
+  unacked, blocked(reason), failed(reason)}`). `inbox_delivery.py::deliver_inbox_entry` and
+  `mcp/tools/terminal.py::_deliver_spawn_pastes` (the spawn-brief path) both now route through
+  `injector.deliver` instead of calling `terminal_paste.TerminalPaster.paste` directly — the
+  raw-spawn seam's separate delivery loop is retired into the same path the inbox/supervisor side
+  already used. `pane_signals.py` gained `_HARNESS_BLOCKED_PATTERNS["codex"]` (issue #20 quota/
+  rate-limit modal markers), `blocked_reason_label`, and `composer_state`; `turn_state.py` gained
+  `boot_ready`. `TerminalPaster`/`terminal_paste.py` and `InboxDeliveryState`'s four existing values
+  are UNCHANGED (a `blocked` outcome rides as a `NEEDS-ATTENTION:`-prefixed `deliveryDetail` string,
+  a deliberate scoping decision to keep this leaf off the dashboard type and `inbox_backoff.py`).
+  Every pre-existing test in `test_terminal_paste.py`, `test_pane_signals.py`, `test_supervisor.py`,
+  `test_terminal.py`, `test_spawn_agent_session.py`, and `test_operator_inbox.py` passes UNCHANGED.
+  Covered by two new suites: `test_harness_adapters.py` (per-harness fixtures: boot/ready/mid-turn/
+  chip-stacked/quota-modal for both harnesses) and `test_injector.py` (every `DeliveryOutcome`
+  branch + an end-to-end injection test against a scripted in-memory tmux pane). Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L3 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep + predicates, R1-R6):
   route gains `supervisor.py` (the deterministic sweep — five R2 predicate families, R4 action
   dispatcher, `run_supervisor_sweep`), `pane_signals.py` (the R2a pane-state classifier), and

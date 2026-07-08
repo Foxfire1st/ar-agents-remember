@@ -19,8 +19,10 @@
     "mcp/src/agents_remember/serving/delta.py",
     "mcp/src/agents_remember/serving/events.py",
     "mcp/src/agents_remember/serving/files.py",
+    "mcp/src/agents_remember/serving/harness_adapters.py",
     "mcp/src/agents_remember/serving/harnesses.py",
     "mcp/src/agents_remember/serving/inbox_delivery.py",
+    "mcp/src/agents_remember/serving/injector.py",
     "mcp/src/agents_remember/serving/leaf_ref_validation.py",
     "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/pane_signals.py",
@@ -42,12 +44,13 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 30,
-    "fileSidecars": 30,
+    "sourceFilesInScope": 32,
+    "fileSidecars": 32,
     "childRoutes": 0
   },
   "routingTerms": [
     "actions",
+    "adapters",
     "agents",
     "agents_remember",
     "app",
@@ -61,6 +64,8 @@
     "delta",
     "events",
     "files",
+    "harness",
+    "harness_adapters",
     "harnesses",
     "heartbeat",
     "inbox",
@@ -68,6 +73,7 @@
     "info",
     "init",
     "init__",
+    "injector",
     "leaf",
     "leaf_ref_validation",
     "liveness",
@@ -117,8 +123,10 @@
       "mcp/src/agents_remember/serving/delta.py",
       "mcp/src/agents_remember/serving/events.py",
       "mcp/src/agents_remember/serving/files.py",
+      "mcp/src/agents_remember/serving/harness_adapters.py",
       "mcp/src/agents_remember/serving/harnesses.py",
       "mcp/src/agents_remember/serving/inbox_delivery.py",
+      "mcp/src/agents_remember/serving/injector.py",
       "mcp/src/agents_remember/serving/leaf_ref_validation.py",
       "mcp/src/agents_remember/serving/notes.py",
       "mcp/src/agents_remember/serving/pane_signals.py",
@@ -128,9 +136,7 @@
       "mcp/src/agents_remember/serving/scope.py",
       "mcp/src/agents_remember/serving/seat_events.py",
       "mcp/src/agents_remember/serving/sim.py",
-      "mcp/src/agents_remember/serving/static.py",
-      "mcp/src/agents_remember/serving/supervisor.py",
-      "mcp/src/agents_remember/serving/supervisor_heartbeat.py"
+      "mcp/src/agents_remember/serving/static.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -151,10 +157,14 @@
       "events",
       "files.py",
       "files",
+      "harness_adapters.py",
+      "harness_adapters",
       "harnesses.py",
       "harnesses",
       "inbox_delivery.py",
       "inbox_delivery",
+      "injector.py",
+      "injector",
       "leaf_ref_validation.py",
       "leaf_ref_validation",
       "notes.py",
@@ -176,11 +186,7 @@
       "static.py",
       "static",
       "supervisor.py",
-      "supervisor",
-      "supervisor_heartbeat.py",
-      "supervisor_heartbeat",
-      "terminal.py",
-      "terminal"
+      "supervisor"
     ]
   },
   "fallback": {

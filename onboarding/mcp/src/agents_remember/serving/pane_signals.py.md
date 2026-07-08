@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/pane_signals.py` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-07-08T18:45+02:00                             |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`         |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`         |
+| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -48,10 +48,23 @@ unreadable/vanished pane is a liveness concern for `evaluate_seat_liveness_findi
 5. **normal** — nothing matched.
 
 Per-harness override tables (`_HARNESS_MID_TURN_PATTERNS`/`_HARNESS_BLOCKED_PATTERNS`/
-`_HARNESS_EMPTY_COMPOSER_PATTERNS`) mirror `turn_state.py`'s pattern exactly and are all currently
-empty — every known harness (claude-code, codex) classifies off the shared markers; an unknown or
+`_HARNESS_EMPTY_COMPOSER_PATTERNS`) mirror `turn_state.py`'s pattern exactly. 260707-HFX2-L3 (R2)
+populated `_HARNESS_BLOCKED_PATTERNS["codex"]` with the issue #20 quota/rate-limit modal markers
+("approaching rate limits", "switch model?", "hit your usage limit", "usage limit") — every other
+family/harness combination is still empty and classifies off the shared markers; an unknown or
 uncustomized harness still gets a best-effort signal via the shared tables (checked before them per
 family, so a future per-harness entry can override without touching the classifier body).
+
+**`blocked_reason_label(evidence)`** (260707-HFX2-L3, R2): a pure lookup, not a re-scan — maps the
+`evidence` regex-source string a `"blocked"` classification already carries onto a structured
+NEEDS-ATTENTION reason: `"codex-quota-limit"` when the evidence text mentions a rate/usage-limit
+marker, else `"permission-prompt"` (or `"modal-dialog"` for `evidence=None`). Never reads pane text
+again — reuses the same evidence `classify_pane_signal` already computed.
+
+**`composer_state(pane_text, *, harness=None) -> ComposerState`** (260707-HFX2-L3, R2): the delivery
+adapter's composer-state signature — `"empty"` / `"has-content"` / `"chip-stacked"`. Reuses this
+module's own `STACKED_CHIP_THRESHOLD` and `_EMPTY_COMPOSER_PATTERNS`/per-harness override rather
+than a second pattern table; blank/`None` text is `"empty"`.
 
 ### Conventions
 
@@ -98,6 +111,8 @@ leaf task doc's R2a is the source of truth), same posture as `turn_state.py`.
 | `count_paste_chips` is the shared chip-counting helper this classifier's delivery-stalled trigger reuses rather than re-implementing (the same F-V/N1 duplicate-paste diagnostic `terminal_paste.py` already owns). | `count_paste_chips` | [terminal_paste.py](terminal_paste.py.md) |
 | `classify_turn_state` is the SEPARATE L8 UI-state classifier over the same captured pane text — distinct precedence, distinct question, deliberately not merged (see Invariants). | `classify_turn_state` | [turn_state.py](turn_state.py.md) |
 | Failing-first unit tests for every trigger family plus the empty-per-harness-override fallback, from scripted pane-text fixtures. | `PaneSignalClassifierTests` | [../../../tests/test_pane_signals.py](../../../tests/test_pane_signals.py.md) |
+| `composer_state` and `blocked_reason_label` are composed into the one per-harness delivery adapter interface (`HarnessAdapter.composer_state` / `.blocked_reason`); `classify_pane_signal` itself is reused there too (`.mid_turn`, `.blocked_reason`). | `HarnessAdapter` | [harness_adapters.py](harness_adapters.py.md) |
+| The R1 delivery contract (`serving/injector.deliver`) reads `HarnessAdapter.blocked_reason` off the FINAL paste capture to classify a modal trap as `blocked(reason)` rather than a bare failed/delivered boolean. | `deliver` | [injector.py](injector.py.md) |
 
 ## Cross-Repo References
 
@@ -109,6 +124,13 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R2): populated
+  `_HARNESS_BLOCKED_PATTERNS["codex"]` with the issue #20 quota/rate-limit modal markers; added
+  `blocked_reason_label` (evidence → structured NEEDS-ATTENTION reason) and `composer_state`
+  (`empty`/`has-content`/`chip-stacked`) as the two new signatures the per-harness delivery adapter
+  (`harness_adapters.py`) composes. No change to `classify_pane_signal`'s own precedence or the
+  existing empty per-harness tables for other families. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L3 commit.
 - 2026-07-08T18:45+02:00 — Created for 260707-HFX2-L2 (supervisor sweep + predicates, R2a): the
   pane-state classifier — `classify_pane_signal`, `PaneSignalClassification`, the
   precedence-ordered marker tables (mid-turn > blocked > delivery-stalled > never-briefed > normal)

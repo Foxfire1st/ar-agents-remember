@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188` |
+| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -562,6 +562,14 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T22:30+02:00 — No route impact: 260707-HFX2-L3 (paste injector
+  hardening, R1-R5) adds two `serving/` modules (`harness_adapters.py`, `injector.py`) and refactors
+  `serving/inbox_delivery.py` + `mcp/tools/terminal.py::_deliver_spawn_pastes` onto the one delivery
+  path they introduce; no new package-level settings family, no change to `kernel/agentic_settings.py`
+  or any tool's public parameter/response shape. Fully documented in `serving/overview.md`, which
+  this file governs. New test sidecars: `mcp/tests/test_harness_adapters.py`,
+  `mcp/tests/test_injector.py`. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L3 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep + predicates): the
   package-level `kernel/agentic_settings.py` loader (governed here, since `kernel/` has no own
   route-local overview) gains the `orchestration.supervisor` family — `SupervisorSettings` (enabled/
