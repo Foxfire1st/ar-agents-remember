@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
-| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
+| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
+| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
 
 ## Purpose
 
@@ -28,6 +28,13 @@ is safe" bullet plus an explicit **watcher ban** line (uniform-mechanism ruling 
 added right after it. Pure doctrine reword — the worker's own build loop and artifact obligation are
 unchanged; only the language describing what happens to a missing/late artifact inverts to name the
 supervisor sweep as the one mechanism.
+
+260707-HFX2-L6 adds the same developer-declared takeover guard to worker intake. If a developer
+walks into or reuses a dashboard chat as the worker for a named leaf, the worker first runs the
+shared Developer-Declared Task-Seat Takeover checklist from `../SKILL.md`, attaching the current
+terminal catalog session to the leaf's qualified key and verifying the catalog/dashboard row before
+reading the brief and leaf `task_doc`. This does not widen the worker's authority: worktree,
+closeout, gate, lifecycle, and memory operations still belong to the owning seat.
 
 Sync-propagated copy of the canonical `skills/l-01-agent-lifecycles/roles/worker.md`. The worker loop: intake (brief + leaf task_doc + predecessor report - never a transcript) -> orient (paired reads via read_ar_files, which serves the OFFICIAL baseline, plus native worktree reads as the edit precondition; evidence tally per brief) -> build code (leaf plan exactly; produce changed paths, code-diff summary, tests, and route/onboarding observations for the downstream curator; NEVER git commit) -> checks green (brief-prescribed focused + full wrapper; a red check outside leaf scope is an escalation) -> mandatory turn report (../templates/turn-report.md, written even when blocked) -> end. Tool surface stated positively: native file tools in the code worktree, memory reads for context/changelog hints, read-only AR retrieval, shell for checks, inbox when wired; no worktree_*/lifecycle_*/task_doc/gate_*/memory_*/route_index_refresh. Default behavior: fulfill the task, fill small blanks; plan deltas escalate one rung to the owning seat (spirit test belongs to the backend orchestrator or architect owner seat). Knob default harness is codex (the practiced worker economics); `roles/worker.claude-code.md` overlays Claude Code.
 
@@ -71,6 +78,13 @@ No sibling repository evidence is needed for this doctrine file.
   Doctrine-only change set (5 canonical `skills/` files synced to 9 downstream copies, 0 Python);
   sync-propagated bundle copy of the canonical `skills/l-01-agent-lifecycles/roles/worker.md`.
   Verification metadata pinned until closeout stamps the 260707-HFX2-L5 commit.
+
+- 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (seat takeover doctrine): worker intake now starts a
+  developer-declared takeover by running the shared task-seat checklist, attaching the current
+  dashboard terminal catalog session to the qualified leaf key and verifying the dashboard row
+  before reading the brief/task doc. The worker remains a build-only seat; the note does not grant
+  worktree, closeout, gate, lifecycle, or memory authority. Verification metadata pinned until
+  closeout stamps the 260707-HFX2-L6 commit.
 
 - 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: reframed the worker
   as code builder only in the manager -> builder -> reviewer -> curator chain. The worker report now

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
-| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
+| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
+| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
 
 ## Purpose
 
@@ -59,6 +59,22 @@ appear anywhere in this skill before this leaf. The role files this doctrine tou
 `templates/turn-report.md` artifact each carry their own matching inversion, documented in their own
 sidecars.
 
+As of 260707-HFX2-L6 the router carries three linked doctrine corrections. First,
+Developer-Declared Task-Seat Takeover: when the developer says "you are the
+orchestrator/manager/worker for task X", the named task leaf is the seat. The agent opens the
+named task doc first, resolves the qualified leaf key `<repository>/<master>/<docId>`, uses the
+dashboard terminal catalog session id (not `CLAUDE_CODE_SESSION_ID` or `CODEX_THREAD_ID`), calls
+`attach_terminal_session_to_leaf`, renames the session to the expected seat label, and verifies the
+terminal catalog/dashboard row before continuing lifecycle work. Second, Developer Clarification
+Triage: during an active task, close/current/small developer clarifications that fit the same
+doctrine or code path are implemented in the current leaf instead of downgraded into future notes;
+future/larger/unclear items are queued or clarified with the developer. Third, Delegated Series
+Authority: once the developer accepts an orchestrated series/portfolio plan, managers and the
+orchestrator govern subordinate closeout, integration, finalization, and cleanup under that
+standing series authority, while final super/PR-carryover, raised human-pinned gates, scope changes,
+red checks outside scope, and quo-vadis decisions still stop for the developer. This is operational
+doctrine only; no runtime attachment behavior changed in this leaf.
+
 As of 260707-HFX-L11 (curator activation, R1/R4) the Companion Files `templates/…` list gains
 `curator-brief` — the first dedicated curator dispatch-pack template
 (`skills/l-01-agent-lifecycles/templates/curator-brief.md`, new file), documented as: `ROLE BRIEF —
@@ -91,6 +107,18 @@ No sibling repository evidence is needed for this doctrine file.
   downstream package copies, 0 Python); sync-propagated bundle copy of the canonical
   `skills/l-01-agent-lifecycles/SKILL.md`. Verification metadata pinned until closeout stamps the
   260707-HFX2-L5 commit.
+
+- 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (task-seat takeover + delegated authority
+  doctrine): added Developer-Declared Task-Seat Takeover, Developer Clarification Triage, and
+  Delegated Series Authority sections to the lifecycle router. A developer-declared role takeover
+  anchors on the named task leaf and verifies dashboard terminal attachment before lifecycle work.
+  Close/current/small developer clarifications that fit the active leaf are implemented now rather
+  than filed as future notes. Accepted orchestrated series authority lets owning seats close out,
+  integrate, finalize, and clean up subordinate edges without repeated developer formality, while
+  final super/PR-carryover, raised human-pinned gates, scope changes, red checks outside scope, and
+  quo-vadis decisions remain developer stops. Doctrine-only change set propagated by
+  `scripts/sync-skills.py`; no runtime attachment path changed. Verification metadata pinned until
+  closeout stamps the 260707-HFX2-L6 commit.
 
 - 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation: Companion Files template registry
   gains `curator-brief` (new file, R1/R4) with its header-consistent description. Doctrine-only
