@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-08T23:15+02:00                                              |
-| lastVerifiedCommitHash |                                                                     `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
-| lastVerifiedCommitDate |                                                                     2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                                              |
+| lastVerifiedCommitHash |                                                                     `5f9163882857114319552d303e2e301082b588ba`|
+| lastVerifiedCommitDate |                                                                     2026-07-08T18:21:20+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ session and/or polled by an external chat.
 ### Logic
 
 `OPERATOR_INBOX_RECORD_SCHEMA` is the wire tag. `OperatorInboxState` is
-`pending | consumed`, `OperatorInboxVia` is `chat | dashboard | cli`,
+`pending | consumed | ladder-resolved`, `OperatorInboxVia` is `chat | dashboard | cli`,
 `AgentRole` addresses orchestration identities (`orchestrator`, `manager`,
 `worker`, `reviewer`, and — as of 260703-L12 — `strategist`, so the spawn-first sprint
 planner can post/receive role-addressed inbox rows). **260707-HFX-L7** adds
@@ -71,6 +71,12 @@ surfaced to the developer attention queue, terminal). `escalatedAt` (reserved by
 genuinely re-stamped by `OperatorInboxStore.advance_rung` on EVERY rung transition, so it always
 names "since when has this row sat at its CURRENT rung" — the anchor the ladder's own SLA/dwell
 check (`escalation_ladder.rung_due`) reads — rather than merely "was this row ever escalated."
+
+**260707-HFX2-L8** (dead-seat storm fix): adds the terminal non-ack state
+`ladder-resolved` plus `ladderResolvedAt`/`ladderResolvedReason`. This is the durable end state for
+a pending row whose ladder has reached the terminal rung and whose target seat is provably not live;
+it is distinct from `consumed`, so the ack path remains the only "agent picked this up" terminal.
+`consume_operator_inbox_entry` now returns any non-pending row unchanged, preserving that separation.
 
 ### Conventions
 
@@ -118,6 +124,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: `OperatorInboxState` gains `ladder-resolved` plus
+  `ladderResolvedAt`/`ladderResolvedReason`; consume no longer converts non-pending terminal rows
+  into acked rows. Verification metadata pinned until closeout stamps the HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (P-15 tier 3, escalation ladder): `OperatorInboxEntry`
   gains `rung: int = 0`, the ladder's own position marker; `escalatedAt` (reserved since HFX2-L2) is
   now genuinely re-stamped on every rung transition by `OperatorInboxStore.advance_rung`. No shape

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T05:20+02:00                           |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                           |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`       |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ to an empty baseline (it does NOT reset `events`/`eventsHydrated`, so the event 
 the exact shape of an idle tick. The cases: 50 idle re-snapshots fire ZERO subscriber
 notifications and leave `getState()` the SAME object (lifecycles/analytics/generatedAt identity
 included); an idle re-snapshot with an unchanged `supervisorHeartbeat` (including the `null`/`null`
-case, i.e. no supervisor attached) is also zero store writes and the state object stays identical —
+case, i.e. no supervisor attached, and since HFX2-L8 the backlog/duration fields) is also zero store writes and the state object stays identical —
 this pins the `applySnapshot` early-return branch's `heartbeatEquals(a, b)` guard (added in the
 260707-HFX2-L2 fix round) that gates the `set({ supervisorHeartbeat })` call on the heartbeat
 literally changing, comparing `lastTickAt`/`ageSeconds`/`staleCutoffSeconds`/`stale` field-for-field
@@ -124,6 +124,10 @@ No meaningful cross-repo references found. These tests are local to the dashboar
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6): updated the
+  `supervisorHeartbeat` change-gate fixtures to include the inbox backlog count fields and last sweep
+  duration that `heartbeatEquals` now compares. Verification metadata pinned until closeout stamps
+  the 260707-HFX2-L8 commit.
 - 2026-07-08T05:36+02:00 — 260707-HFX2-L2 fix round (`260707-HFX2-L2-fix2-report.md`): added two
   `supervisorHeartbeat` regression cases to the change-gate describe, covering the
   `store.ts` `applySnapshot` idle-branch fix that gates `set({ supervisorHeartbeat })` on

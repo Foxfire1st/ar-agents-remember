@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T18:45+02:00                           |
-| lastVerifiedCommitHash |                                                  `8b7c1933611a13ada98dcd6fc3476c0457e136ac`|
-| lastVerifiedCommitDate |                                                  2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                           |
+| lastVerifiedCommitHash |                                                  `5f9163882857114319552d303e2e301082b588ba`|
+| lastVerifiedCommitDate |                                                  2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -50,7 +50,8 @@ in `useStore` for React subscribers. State mutates through these actions:
   `stableEquals` strips `ageSeconds` (it's in `VOLATILE_AGE_FIELDS`), which is exactly the field a
   genuine heartbeat tick advances — reusing `stableEquals` here would silently treat every
   advancing tick as unchanged. `heartbeatEquals` compares `lastTickAt`/`ageSeconds`/
-  `staleCutoffSeconds`/`stale` literally, ages included. Every other field on that early-return
+  `staleCutoffSeconds`/`stale` and, since HFX2-L8, the latest pending inbox count,
+  redeliverable inbox count, and sweep duration literally, ages included. Every other field on that early-return
   path stays untouched (identity-preserving). On the normal (changed-content) path, `generatedAt`
   advances only when content applied (it is the "ages as of" stamp the top bar shows — coherence
   rule); `supervisorHeartbeat` is set alongside it.
@@ -122,11 +123,16 @@ orphaning and bleeding through the scenario dropdown. `reset()` also clears `act
 | Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | L29-L31; L120-L122 | [store.ts](store.ts) |
 | `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | L42-L46; L139-L180 | [store.ts](store.ts) |
 | `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | — | [../panels/EventRiver.tsx](../panels/EventRiver.tsx) |
-| `SupervisorHeartbeat` type this store carries, and the app-injected payload it mirrors. | — | [../types/projection.ts](../types/projection.ts.md) |
-| `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from this store to render the top-bar tick-age indicator. | — | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx.md) |
+| `SupervisorHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors. | — | [../types/projection.ts](../types/projection.ts.md) |
+| `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | — | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx.md) |
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6): `heartbeatEquals`
+  now compares `pendingInboxCount`, `redeliverableInboxCount`, and `lastSweepDurationSeconds` so
+  idle snapshots still write through real backlog/duration changes while preserving the no-op idle
+  path for unchanged heartbeat payloads. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L8 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added
   `supervisorHeartbeat: SupervisorHeartbeat | null` to `DashboardState` (init `null`, reset-cleared).
   Deliberately EXCLUDED from the `unchanged` change-gate equality check — `applySnapshot`'s

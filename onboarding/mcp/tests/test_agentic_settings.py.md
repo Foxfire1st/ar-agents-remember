@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:15+02:00 |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -91,8 +91,9 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   validated, and a `{value}`-only template is accepted.
 - `SupervisorFamilyTests` (260707-HFX2-L2, R1/R5) — an absent `orchestration.supervisor` block
   yields the documented defaults (`enabled=True`, `interval_seconds=10.0`,
-  `stale_cutoff_seconds=60.0`, `redeliver_rate_limit_seconds=None`); a full block parses every knob
-  (`enabled=False`, `intervalSeconds=5`, `staleCutoffSeconds=30`, `redeliverRateLimitSeconds=45`);
+  `stale_cutoff_seconds=60.0`, `redeliver_rate_limit_seconds=None`, `redeliver_budget=250`);
+  a full block parses every knob (`enabled=False`, `intervalSeconds=5`, `staleCutoffSeconds=30`,
+  `redeliverRateLimitSeconds=45`, `redeliverBudget=75`);
   `enabled` rejects a non-boolean (`"yes"`) naming `supervisor.enabled`; `intervalSeconds` rejects a
   non-positive value naming `intervalSeconds`; and an unknown key (`sweepSeconds`) fails loud naming
   itself against `KNOWN_SUPERVISOR_FIELDS`.
@@ -149,6 +150,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R4): updated supervisor settings
+  regressions for the conservative `redeliver_budget` default and `redeliverBudget` positive-int
+  parsing/refusal. Verification metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (escalation ladder, R1): added `EscalationSettingsTests` —
   absent-block defaults, full-block parsing of `slaSeconds`/`rungSeconds`/
   `nudgeRateLimitSeconds`/`respawnAfterRung` (with per-kind fallback for an unconfigured

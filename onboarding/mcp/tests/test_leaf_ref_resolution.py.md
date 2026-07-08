@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_leaf_ref_resolution.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T23:45+02:00                     |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039` |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                     |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,8 +18,9 @@
 
 `test_leaf_ref_resolution.py` pins the shared task-tree leaf-ref resolver introduced by HFX-L4. It is
 focused coverage for accepted canonical forms, legacy aliases, no-match reporting, ambiguity reporting,
-start-scope task-root consistency, sibling JSON artifact handling, read-path contract tolerance, light-task
-candidate indexing, and loud marker-bearing malformed-doc handling.
+start-scope task-root consistency, sibling JSON artifact handling, read-path contract tolerance,
+light-task candidate indexing, loud marker-bearing malformed-doc handling, and HFX2-L8's boot-safety
+skip for malformed non-task JSON artifacts.
 
 ## Code Commentary
 
@@ -32,7 +33,8 @@ The temp fixtures write real `TaskDocument` master and subtask JSON/Markdown pai
 - ambiguous legacy slugs use `leaf-ref-ambiguous` and list both candidate qualified ids;
 - a fully qualified ref outside the caller's requested `task_name` is rejected instead of being attached
   to the wrong start contract;
-- a missing optional master `task.json` is skipped, while a malformed schema-marked leaf JSON file raises;
+- a missing optional master `task.json` is skipped, malformed non-task sibling JSON is ignored for boot
+  safety, while a malformed schema-marked leaf JSON file raises;
 - sibling JSON artifacts without the task-document schema marker are ignored by resolver and
   `load_contract` normalization;
 - `load_contract` keeps a legacy leaf id unchanged when active-task resolution cannot prove the mapping;
@@ -52,6 +54,10 @@ The temp fixtures write real `TaskDocument` master and subtask JSON/Markdown pai
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (minimal projection robustness): added a regression for
+  malformed sibling JSON without the task-document schema marker being ignored, while schema-marked
+  malformed task docs still fail loud. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L8 commit.
 - 2026-07-07T23:45+02:00 — 260707-HFX-L4R2: added regressions for schema-marked malformed task docs,
   non-task sibling JSON artifacts, live-style contract loading with sibling artifact JSON, unproven
   read-path contract mapping, and standalone/light task-doc candidate aliases. Verification metadata

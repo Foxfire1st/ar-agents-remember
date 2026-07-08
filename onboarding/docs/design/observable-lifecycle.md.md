@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `docs/design/observable-lifecycle.md`   |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-06-26T14:16+02:00                      |
+| lastUpdated            | 2026-07-08T23:59+02:00                      |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                           |
@@ -28,7 +28,11 @@ state while keeping durable gate kind (`plan-approval`, `worktree-intent`,
 `closeout-approval`, etc.) separate from answer-shape kind (`question`,
 `decision`, `conflict`). Task 23/24 retention still applies: durable work records
 stay, while gate/operator-inbox interaction records are throwaway data with
-response/dismiss/clear/consume deletion paths plus a 24-hour passive TTL.
+response/dismiss/clear/consume deletion paths plus a 24-hour passive TTL. HFX2-L8
+adds the non-destructive operator-inbox storm recovery runbook: save live work,
+quarantine the inbox jsonl to `.bak` rather than deleting it, park/terminate only
+provably dead terminal rows, restart cleanly, then verify heartbeat/backlog
+metrics and compact normally.
 
 ## Invariants And Boundaries
 
@@ -36,6 +40,8 @@ response/dismiss/clear/consume deletion paths plus a 24-hour passive TTL.
   for dashboard lifecycle semantics.
 - Interaction retention applies to prompt/response handshakes only; tasks,
   contracts, closeout commits, and ledger mappings remain durable lifecycle records.
+- Recovery guidance never deletes transcripts or unsaved live-agent state; inbox storm handling is
+  quarantine plus audited terminal-row resolution.
 
 ## Repo-Internal References
 
@@ -47,5 +53,10 @@ response/dismiss/clear/consume deletion paths plus a 24-hour passive TTL.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R6): added the documented
+  non-destructive operator-inbox storm recovery runbook: save live work first, quarantine
+  `operator-inbox.jsonl` to `.bak`, resolve only provably dead terminal rows, restart cleanly, verify
+  heartbeat/backlog metrics, and compact without deleting transcripts. Verification metadata pinned
+  until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-06-26T14:16+02:00 — Task 25: design now names `lifecycle_gate` as the public lifecycle-gate junction and removes the split create/block/wait choreography from the documented public path.
 - 2026-06-25T13:20+02:00 — Created for task 23/24 after the design doc gained interaction-retention tiers and the five-minute `gate_response_wait` default.

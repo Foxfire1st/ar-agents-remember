@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:15+02:00                    |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                    |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -101,7 +101,10 @@ interval cannot make the liveness predicate trigger-happy. **260707-HFX2-L4:** t
 `_supervisor_context()` call now also resolves `settings.escalation.sla_seconds`/`rung_seconds`/
 `respawn_after_rung` straight onto `SupervisorContext`'s plain-primitive escalation knobs — no new
 settings read of its own, the same per-sweep `load_agentic_settings` call this function already
-made for the supervisor family. The lifespan cancels
+made for the supervisor family. **260707-HFX2-L8 (R4/R6):** that same context wiring also threads
+`settings.supervisor.redeliver_budget`, the conservative per-sweep inbox-redelivery budget that keeps
+large redeliverable backlogs spread across sweeps while preserving the supervisor heartbeat cadence.
+The lifespan cancels
 `supervisor_task` (added to the existing metrics/projector cancel set, same
 `contextlib.suppress(asyncio.CancelledError)` await pattern) on shutdown.
 
@@ -109,7 +112,9 @@ made for the supervisor family. The lifespan cancels
 constructed once in `create_app` (shared by the loop and the read side below).
 `_supervisor_heartbeat_payload()` reads the current tick via `heartbeat_age_seconds` at RESPONSE
 time (using `liveness_clock()`, the same `now or utc_now` base every other liveness call in this
-file shares) and returns `{lastTickAt, ageSeconds, staleCutoffSeconds, stale}` — `stale` is `True`
+file shares) and returns `{lastTickAt, ageSeconds, staleCutoffSeconds, stale}` plus, since
+**260707-HFX2-L8 (R6)**, `{pendingInboxCount, redeliverableInboxCount, lastSweepDurationSeconds}` —
+the forward signal that shows inbox storm pressure before a stale banner trips. `stale` is `True`
 when there is no tick yet OR the age has passed `settings.supervisor.stale_cutoff_seconds`. This
 payload is attached as `supervisorHeartbeat` on both `GET /api/state`'s JSON body and the SSE
 snapshot (`stream_events` gained a `supervisor_heartbeat` keyword, attached the same way
@@ -367,12 +372,17 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The observer-event loggers the retire/rename endpoints and the turn-state sweeper callback fire. | `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | [seat_events.py](seat_events.py) |
 | The deterministic supervisor sweep + predicate library `supervisor_loop`/`_supervisor_context` drive every interval (260707-HFX2-L2 R1-R4). | `SupervisorContext`; `run_supervisor_sweep` | [supervisor.py](supervisor.py.md) |
 | The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `supervisor.py`) calls. | `classify_pane_signal` | [pane_signals.py](pane_signals.py.md) |
-| The self-liveness heartbeat store both the loop (tick) and the read side (`_supervisor_heartbeat_payload`) share (260707-HFX2-L2 R5). | `SupervisorHeartbeatStore`; `heartbeat_age_seconds` | [supervisor_heartbeat.py](supervisor_heartbeat.py.md) |
+| The self-liveness heartbeat store both the loop (tick) and the read side (`_supervisor_heartbeat_payload`) share, including L8 inbox backlog and sweep-duration fields. | `SupervisorHeartbeatStore`; `heartbeat_age_seconds` | [supervisor_heartbeat.py](supervisor_heartbeat.py.md) |
 | The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | [../kernel/agentic_settings.py](../kernel/agentic_settings.py.md) |
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../observer/store.py](../observer/store.py) |
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R4/R6): `_supervisor_context()`
+  now threads `settings.supervisor.redeliver_budget` into `SupervisorContext`; `_supervisor_heartbeat_payload()`
+  includes the supervisor heartbeat's latest pending inbox count, redeliverable inbox count, and sweep
+  duration so `/api/state` and SSE consumers can see backlog pressure before the stale banner trips.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (small): `_supervisor_context()` now also
   resolves `settings.escalation.sla_seconds`/`rung_seconds`/`respawn_after_rung` onto
   `SupervisorContext`'s new escalation-ladder knobs — no new lifespan task, no new settings read of

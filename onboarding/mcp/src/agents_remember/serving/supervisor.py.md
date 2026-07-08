@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-08T23:15+02:00                            |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`        |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00                            |
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`        |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -53,6 +53,12 @@ plain primitives (dicts/int), NOT a typed `EscalationSettings` object, matching 
 or a store swap is added as a new `evaluate_*_findings` function plus a branch in `act_on_finding` —
 never by reaching into the projection.
 
+**260707-HFX2-L8 (dead-seat storm fix)** adds `_SweepState`, a mutable per-sweep inbox index with
+the configured redelivery budget, pre-action pending count, and pre-action redeliverable list.
+Inbox-mutating actions update this index after appending snapshots, so one sweep folds
+`operator-inbox.jsonl` once instead of refolding the whole log for each finding. The sweep result
+and heartbeat tick now carry pending/redeliverable inbox counts and last-sweep wall-clock duration.
+
 **R2 predicates** (`evaluate_predicates` runs all seven every sweep, concatenating their findings):
 
 - `evaluate_pane_findings` (R2a) — every `RUNNING` `kind == "harness"` catalog row's captured pane
@@ -68,7 +74,11 @@ never by reaching into the projection.
   missing/empty, so a worker who wrote the report before the row was consumed does not trip a false
   stale-report action.
 - `evaluate_inbox_findings` (R2d) — `OperatorInboxStore.list_redeliverable(now=,
-  rate_limit_seconds=)` directly.
+  rate_limit_seconds=)` directly; in the real sweep L8 feeds it from `_SweepState` and schedules at
+  most `SupervisorContext.redeliver_budget` delivery attempts.
+- `evaluate_ladder_terminal_findings` (260707-HFX2-L8, R1) — pending rows already at the terminal
+  ladder rung whose concrete `agentId` is dead/absent per `signal_routing.is_seat_dead`; live-seat,
+  still-climbing, and role-only rows are not terminated.
 - `evaluate_seat_liveness_findings` (R2e) — the L5 hysteresis + L8 turn-state join with graceful
   degradation: a row the L8 prober has classified fires when `turn_state == "stale"` past
   `stale_seconds`; a row it has NEVER classified (legacy/degraded) falls back to the L5 primitive
@@ -87,7 +97,12 @@ never by reaching into the projection.
   current injector entry point over `TerminalPaster`); on a failing redeliver past
   `PERSISTENT_FAILURE_ATTEMPTS` (5), calls `_escalate_inbox_entry` (`OperatorInboxStore
   .mark_escalated` — a distinct, rung-agnostic "this row is now escalatable" stamp; the ladder's own
-  rung transitions go through the separate `advance_rung`, not this call).
+  rung transitions go through the separate `advance_rung`, not this call). In L8 this path uses the
+  sweep index and refuses to push a terminal-rung dead-seat row.
+- `inbox-ladder-terminal` → `_resolve_ladder_terminal` (260707-HFX2-L8): calls
+  `OperatorInboxStore.mark_ladder_resolved`, updates the sweep index, and logs one
+  `orchestration.supervisor.ladder-resolved` event for the terminal transition. This is distinct
+  from ack/consume.
 - `expectation-overdue` / `turn-report-stale` → `_auto_nudge`: derives the owner via
   `signal_routing.derive_signal_owner`, records through `OrchestrationNudgeStore.record` (the
   EXISTING per-target rate limit — `missing_artifact()` finally gets its caller here too, via the
@@ -131,10 +146,11 @@ Every action calls `_log_event` to append one `orchestration.supervisor.redelive
 kind for auto-nudge, matching that tool's own event shape) via `EventStore.append` — so the
 dashboard river shows what code did on whose behalf with no separate reporting path.
 
-**`run_supervisor_sweep(ctx, *, now)`** is the sweep entry point: evaluate every predicate, act on
-every finding, then tick `ctx.heartbeat_store.tick(now=now)` LAST and UNCONDITIONALLY — even a
-zero-finding sweep proves supervisor liveness (R5). Returns a `SupervisorSweepResult` (findings +
-actions + `swept_at`).
+**`run_supervisor_sweep(ctx, *, now)`** is the sweep entry point: fold the inbox once into
+`_SweepState`, evaluate every predicate, act on terminal rows and the budgeted redelivery set, then
+tick `ctx.heartbeat_store.tick(...)` LAST and UNCONDITIONALLY — even a zero-finding sweep proves
+supervisor liveness (R5). Returns a `SupervisorSweepResult` (findings + actions + `swept_at` +
+backlog counts + duration).
 
 ### Conventions
 
@@ -214,6 +230,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: added `_SweepState`, redeliver budgeting,
+  ladder-terminal dead-seat resolution, the `orchestration.supervisor.ladder-resolved` event, and
+  backlog/duration heartbeat metrics. Verification metadata pinned until closeout stamps the HFX2-L8
+  commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (P-15 tier 3, escalation ladder + dead-man respawn,
   R1-R6): two new predicates (`evaluate_escalation_findings`/`evaluate_dead_upstream_findings`) and
   two new actions (`_escalate_rung`/`_signal_dead_upstream`), calling through the new

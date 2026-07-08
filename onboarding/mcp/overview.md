@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
-| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -149,6 +149,29 @@ proven hybrid (predicate-unit classify + real downstream sweep response) because
 hardcodes a real, non-injectable `tmux capture-pane` call — documented as a real product gap and the
 natural next leaf (make the pane capturer injectable through `SupervisorContext`), not silently
 worked around. Results are filed in `notes/reports/260707-HFX2-L5-liveness-report.md`.
+260707-HFX2-L8 closes the two liveness gaps a live dead-seat-storm incident (2026-07-08) exposed in
+the supervisor loop itself, spanning four package routes. `kernel/agentic_settings.py` gains one
+`orchestration.supervisor` field — `redeliverBudget` (default 250, defaults-safe) — the per-sweep
+redelivery floor so a large redeliverable set degrades gracefully instead of one sweep grinding the
+whole backlog. `controlplane/operator_inbox_records.py` gains a durable `ladder-resolved` terminal
+inbox state (distinct from ack): a pending row at the terminal escalation rung whose target seat is
+provably dead (retired / no hosted session) terminates instead of redelivering forever — excluded
+from `redeliverable()`/`is_due()` via a state-keyed predicate in `controlplane/inbox_backoff.py`
+(mid-climb / live-seat rows untouched, L1-R1 preserved) and dropped by
+`controlplane/interaction_retention.py` compaction (pending/unacked rows are always preserved).
+`serving/supervisor.py` threads ONE in-sweep operator-inbox snapshot/index through every
+finding/mutator (`record_delivery`, `mark_escalated`, `advance_rung`, `mark_ladder_resolved`,
+respawn reads), killing the per-finding full-log re-fold (O(n^2)) so a sweep's cost is bounded by
+finding count and the self-liveness heartbeat ticks unconditionally under backlog;
+`serving/supervisor_heartbeat.py` surfaces `pendingInboxCount`/`redeliverableInboxCount`/
+`lastSweepDurationSeconds` onto `/api/state` and the dashboard header as a forward backlog signal.
+`worktrees/leaf_refs.py` gains a minimal boot-safety skip of non-task JSON siblings (schema-marked
+malformed task docs still fail loud). The cross-route change is documented in the `controlplane/`,
+`serving/`, and `dashboard/src/` overviews this file governs; a non-destructive recovery runbook
+lands in `docs/design/observable-lifecycle.md` and the settings table in
+`docs/reference/settings-json.md`. New scale regression: a 2000-row dead-seat-storm sim in
+`mcp/tests/test_liveness_simulations.py`. Results filed in
+`notes/reports/260707-HFX2-L8-worker-report.md` and `-reviewer-report.md`.
 
 ## Hot Path Summary
 
@@ -587,6 +610,21 @@ into the role files.
 
 ## Update History
 
+- 2026-07-09T00:20+02:00 — 260707-HFX2-L8 route impact (dead-seat redeliver termination + bounded
+  inbox sweep): the package-level `kernel/agentic_settings.py` loader gains one `orchestration.
+  supervisor` field — `redeliverBudget` (default 250, defaults-safe, `_require_positive_int`). NEW
+  durable `ladder-resolved` terminal inbox state on `controlplane/operator_inbox_records.py`,
+  excluded from redelivery via a state-keyed `is_ladder_resolved` predicate in
+  `controlplane/inbox_backoff.py` and compacted by `controlplane/interaction_retention.py` (pending/
+  unacked always preserved). `serving/supervisor.py` threads one in-sweep inbox snapshot through all
+  mutators (kills the per-finding O(n^2) re-fold); `serving/supervisor_heartbeat.py` surfaces backlog
+  counts + last-sweep duration onto `/api/state` and the dashboard header. Minimal boot-safety
+  non-task-JSON skip in `worktrees/leaf_refs.py` (schema-marked malformed docs still fail loud).
+  Cross-route change fully documented in `controlplane/`, `serving/`, and `dashboard/src/` overviews
+  this file governs; recovery runbook in `docs/design/observable-lifecycle.md`, settings row in
+  `docs/reference/settings-json.md`. New scale regression: a 2000-row dead-seat-storm sim in
+  `mcp/tests/test_liveness_simulations.py`. Reviewer verdict APPROVE-WITH-NITS, R1-R6 all PASS.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L5 route impact (doctrine rewrite + focused liveness
   simulations): the `l-01-agent-lifecycles` package-data doctrine mirror inverts from active
   owner-side vigilance to a passive process-and-ack contract across 5 canonical files (`SKILL.md`,

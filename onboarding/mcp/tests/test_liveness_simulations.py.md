@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T23:59+02:00                     |
-| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
-| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
+| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
+| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -18,9 +18,10 @@
 
 New file (260707-HFX2-L5, R3/S4): the P-15 "predicate fixture zoo" mandate realized as focused,
 END-TO-END liveness simulations of the whole L1-L4 supervisor stack (expectation rows → supervisor
-sweep → paste injector → escalation ladder). 610 lines, 11 tests across 8 named incident classes,
-each asserting the whole chain converges to acked-or-escalated within simulated SLA with zero
-human/model intervention, gated by `notes/reports/260707-HFX2-L5-liveness-report.md`.
+sweep → paste injector → escalation ladder). HFX2-L8 extends the suite with the dead-seat storm
+simulation: 12 tests across 9 named incident classes, including a >=2000-row terminal-dead-seat
+backlog proving the supervisor sweep returns, heartbeat metrics advance, redeliverable rows converge
+to empty, and compaction bounds the inbox file.
 
 ## Code Commentary
 
@@ -28,7 +29,7 @@ human/model intervention, gated by `notes/reports/260707-HFX2-L5-liveness-report
 
 Drives `run_supervisor_sweep` (`serving/supervisor.py`) across MULTIPLE simulated ticks per named
 incident, reusing the exact `SupervisorContext`/store-fixture shape `test_supervisor.py`'s
-`LadderWalkIntegrationTests` already establishes rather than inventing a second harness. Eight test
+`LadderWalkIntegrationTests` already establishes rather than inventing a second harness. Nine test
 classes, one per incident:
 
 - **`NeverBriefedSeatTests`** (P-5/P-14) — an overdue `briefed-by` expectation row nudges, then
@@ -61,6 +62,11 @@ classes, one per incident:
   stale-past-window seat still fires, proving the HFX-L5 hysteresis holds when consumed through the
   supervisor's own R2e predicate (on top of the existing probe-layer proof in
   `test_terminal_liveness.py`).
+- **`DeadSeatStormTests`** (HFX2-L8) — seeds 2000 terminal-rung, no-hosted-session rows addressed to
+  retired/dead seats and asserts within a wall-clock bound that the sweep returns and increments
+  `sweepCount`, no redelivery is attempted, rows transition to `ladder-resolved`, the redeliverable
+  set converges to empty, the heartbeat never goes stale and reports backlog/duration metrics, and
+  compaction reduces `operator-inbox.jsonl` to the bounded live set.
 
 Shared fixtures: `_entry()` builds a `TerminalCatalogEntry`; `_FakeHost` is a reachable-by-default
 tmux host a scenario can flip to unreachable (#16); `_landing_paster()` is the healthy-delivery
@@ -89,6 +95,9 @@ class — matching the project's existing fixture conventions (`test_supervisor.
 - `FalseDeadSeatHysteresisTests`' control case (`test_seat_actually_stale_past_the_window_still_fires`)
   is the regression a naive "flicker never fires" implementation would fail — hysteresis holding must
   never become "never fires at all."
+- `DeadSeatStormTests` is intentionally wall-clock bounded because its regression is supervisor loop
+  liveness under backlog, not just row semantics. It still uses temp-rooted stores and fake catalog
+  rows; no real daemon, tmux session, or operator inbox is touched.
 
 ### Todos
 
@@ -114,6 +123,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 | The escalation ladder every incident's rung-3 assertion walks through. | `rung_due`/`next_step` | [../src/agents_remember/controlplane/escalation_ladder.py](../src/agents_remember/controlplane/escalation_ladder.py.md) |
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `SupervisorHeartbeatStore`, `supervisor_staleness_banner` | [../src/agents_remember/serving/supervisor_heartbeat.py](../src/agents_remember/serving/supervisor_heartbeat.py.md) |
 | The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | [test_supervisor.py](test_supervisor.py.md) |
+| The terminal state and compaction semantics the HFX2-L8 storm simulation proves at scale. | `OperatorInboxStore.compact`; `mark_ladder_resolved`; `redeliverable` | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py.md) |
 
 ## Cross-Repo References
 
@@ -125,6 +135,12 @@ No sibling repository evidence is needed for this same-repository test suite.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R5): added
+  `DeadSeatStormTests.test_dead_seat_storm_terminates_and_compacts_without_stale_heartbeat`, seeding
+  2000 dead/no-hosted-session terminal-rung rows and asserting bounded wall-clock sweep completion,
+  sweep-count advancement, redeliverable convergence to empty, fresh heartbeat backlog/duration
+  metrics, and bounded inbox after compaction. Verification metadata pinned until closeout stamps
+  the 260707-HFX2-L8 commit.
 - 2026-07-08T23:59+02:00 — Created for 260707-HFX2-L5 (R3/S4): 11 new tests across 8 named P-15
   incident classes, driving `run_supervisor_sweep` across multiple simulated ticks; 6/8 fully
   end-to-end, 2/8 honestly hybrid (predicate-unit classify + real downstream sweep response) because
