@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:58:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -95,9 +95,20 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
   agent-side operator-inbox consumption. It carries entry/lifecycle/agent/gate ids, sender/recipient
   role metadata, message kind, artifact path, hosted delivery state, delivered session id/detail,
   server-computed age, pickup TTL, and state (`waiting-for-agent` or `check-chat`) without echoing the
-  message body.
+  message body. Since 260707-HFX2-L1, it also carries the R1 ack/backoff fields
+  (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`) and the R4 routed-owner fields
+  (`ownerRole`/`ownerAgentId`/`ownerLifecycleId`), read straight off the underlying
+  `OperatorInboxEntry` — a pending pickup row already IS the "pending/unacked signal" view, so no
+  second surface was needed for that half of R5.
   `AttentionItem` also carries optional `gateId` so dashboard Clear/Dismiss actions can target gate
   records directly.
+- `ExpectationRowNode` + `Analytics.expectationRows` (260707-HFX2-L1, R2/R5) — one durable
+  what-must-happen-by-when row (`controlplane/expectation_rows.py::ExpectationRow`) projected for
+  dashboard/architect observability: `kind` (`briefed-by`/`turn-report-by`/`verdict-by`/`ack-by`),
+  `state`, `sourceId` (the dispatch surface's own id this row is a deadline FOR), optional
+  subject/leaf keys, `dueAt`, and a server-computed `overdue` flag. Surfacing only — an L2
+  predicate (a sibling leaf) reads `ExpectationRowStore` directly for correctness and never this
+  node.
 - **Slice-05 (5c) detail surfaces:** `ProviderNode` gained `scope`/`role`/`repoId`/`worktreeGroup`
   so a provider can be bound to a workspace repo, or to a worktree + repo + role (the workspace stack
   vs a worktree's isolated CGC/GrepAI). Task 12 S2 gives `repoId` an active workspace meaning for
@@ -261,6 +272,7 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `AgentPickupNode` gained the R1 ack/backoff fields (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`) and R4 owner fields (`ownerRole`/`ownerAgentId`/`ownerLifecycleId`); added `ExpectationRowNode` + `Analytics.expectationRows` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-06T23:58:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TaskDocNode` gains
   additive `orchestrates: list[str]` (default `[]`) — the orchestration-command relation from the
   `ar-task-document/v1` schema, exposed so the dashboard can nest commanded masters under their

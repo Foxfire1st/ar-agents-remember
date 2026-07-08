@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T02:43+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T14:45+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674` |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -121,6 +121,7 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 ## Update History
 
+- 2026-07-08T14:45+02:00 — No route impact: 260707-HFX2-L1 adds `ownerRole`/`ownerAgentId`/`ownerLifecycleId` to `OperatorInboxPostResponse` (`models/operator_inbox.py.md` documents the field addition); the response-contract pattern and module layout are unchanged.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issues #12/#4): `models/terminal.py` adds `SessionRetireResponse`/`SessionRenameResponse`
   (strict `ToolResponse`), `tool_registry.py` registers `session_retire`/`session_rename` → those

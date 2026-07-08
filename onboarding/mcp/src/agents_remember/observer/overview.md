@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T10:55+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T14:50+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -128,6 +128,16 @@ surface, and `read_agent_pickups` projects each pending inbox entry as `waiting-
 deletes it. L3 carries sender/recipient roles, message kind, artifact path, and hosted-delivery
 state/session/detail through that node so agent-to-agent inbox push attempts are dashboard-visible.
 Durable tasks, contracts, and ledgers remain outside this cleanup path.
+
+**260707-HFX2-L1 (R5 projection surfacing)**: `AgentPickupNode` now also carries the R1/R4 fields
+(`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`/`ownerRole`/`ownerAgentId`/
+`ownerLifecycleId`) straight off the underlying `OperatorInboxEntry`, so a pending pickup row
+already IS the surfaced "pending/unacked signal" view — no second surface was needed for that half
+of R5. A new `ExpectationRowNode` + `Analytics.expectationRows` (populated by
+`snapshots.read_expectation_rows`, reading `ExpectationRowStore.pending()`) surfaces R2's durable
+deadline rows for dashboard/architect observability, each stamped with a computed `overdue` flag.
+Both are surfacing ONLY — an L2 predicate (a sibling leaf) reads the underlying stores directly
+and never this projection; that is the #22 correctness/visibility split this leaf's R5 documents.
 
 Slice 6g extends the task-document surface for **series navigation**: `read_series_documents` remains the
 folder-keyed master aggregation surface, while `read_task_documents` projects every active JSON-primary
@@ -282,7 +292,8 @@ The slice-3a projection read side:
   260703-L14 adds `TaskDocNode.orchestrates` (`list[str]`, default `[]`) — the schema's master-only
   orchestration-command list passed through by `snapshots._task_doc_node`, from which the dashboard
   derives the orchestration > master > leaf hierarchy and rank insignia (additive, no bump).
-  `version` is 2.
+  260707-HFX2-L1 adds R1/R4 fields to `AgentPickupNode` (attempt/backoff/escalation/owner) and a new
+  `ExpectationRowNode` + `Analytics.expectationRows` (R2/R5 durable deadline surfacing). `version` is 2.
 - `reducer.py` — the pure fold: `project_lifecycle` (events → projection, with the
   inferred paused/abandoned layer, corrections, and token aggregation),
   `project_workspace` (tree assembly, including current-enclosure reconciliation for
@@ -415,6 +426,14 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
 
 ## Update History
+
+- 2026-07-08T14:50+02:00 — 260707-HFX2-L1 route impact: R5 projection surfacing —
+  `AgentPickupNode` gained the R1 ack/backoff fields + R4 owner fields (already-derived, read
+  straight off `OperatorInboxEntry`); a new `ExpectationRowNode` + `Analytics.expectationRows`
+  (from `snapshots.read_expectation_rows`) surfaces R2's durable deadline rows for dashboard/
+  architect observability. Surfacing only — L2 (a sibling leaf) reads the underlying stores
+  directly for correctness, never this projection. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L1 commit.
 
 - 2026-07-07T10:55+02:00 — L15 route impact (body): the volatile-vs-content classification of projection *Seconds fields documented. Verification metadata pinned until closeout stamps the L15 commit.
 

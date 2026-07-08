@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T04:25+02:00 |
-| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2` |
-| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
+| lastUpdated            | 2026-07-08T16:15+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674` |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -93,6 +93,29 @@ the schema previously rejected both calls with `ValidationError` — the archite
 receive any typed inbox row. No other consumer of these Literals enumerates them exhaustively, so
 this is a pure schema extension with no downstream edits; a new round-trip test in
 `mcp/tests/test_operator_inbox.py` pins the fix through the real tool-payload seam.
+260707-HFX2-L1 adds a durable what-must-happen-by-when layer that spans three tool families at
+once, not just one route: NEW `controlplane/expectation_rows.py` is the `ExpectationRowStore`
+primitive (`briefed-by`/`turn-report-by`/`verdict-by`/`ack-by` rows, `pending`/`overdue`/
+`find_by_source` queries, idempotent `mark_met`/`mark_missed`); `mcp/tools/terminal.py`'s
+`spawn_agent_session_payload`, `mcp/tools/gates.py`'s `gate_create_payload`/`gate_decide_payload`,
+and `mcp/tools/operator_inbox.py`'s `operator_inbox_post_payload`/`operator_inbox_consume_payload`
+each now write (or meet) their expectation row in the SAME call as the dispatch/decision/ack
+itself (R2) — a deadline is a durable row an L2 sweep can scan, never an in-memory timer a
+daemon/MCP restart would erase. R1 sharpens the operator-inbox ack contract to match: `consume` is
+the ONLY terminal outcome on `OperatorInboxEntry` (new `attemptCount`/`lastAttemptAt`/
+`nextAttemptAt`/`escalatedAt` fields) — a confirmed `delivered` paste still schedules a further
+redelivery attempt, since pasted is not perceived. NEW `controlplane/inbox_backoff.py` (R3) is the
+redelivery backoff-ladder math and per-target rate limiting a future sweep will drive; NEW
+`controlplane/signal_routing.py` (R4) derives a one-hop routed owner (worker→its manager,
+manager→its orchestrator, `decision-item`→architect) from `serving/terminal_catalog.py` spawn
+provenance, and `OperatorInboxEntry` gains `ownerRole`/`ownerAgentId`/`ownerLifecycleId` fields
+stamped once at post time from that derivation. `kernel/agentic_settings.py` gains the
+`orchestration.expectations` settings family (`ExpectationSettings`,
+`DEFAULT_EXPECTATION_SLA_SECONDS`) — an SLA-per-kind duplicated by hand against
+`ExpectationKind` to avoid a kernel↔controlplane import cycle. The redelivery sweep, escalation
+ladder, and dashboard consumption of `escalatedAt` are explicitly OUT of scope for this leaf (a
+sibling leaf's job); this leaf only lands the durable rows, the backoff math, and the routing
+derivation the sweep will consume.
 
 ## Hot Path Summary
 
@@ -531,6 +554,16 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T16:15+02:00 — 260707-HFX2-L1 route impact (curator delta round 2, closeout-preview
+  gap; not reviewed in this leaf's first curator pass, which only touched the child
+  `controlplane/overview.md`/`observer/overview.md`): the new durable expectation-row/backoff/
+  routing stack (R1-R4) is genuinely package-level shape, not confined to one child route — it adds
+  a new controlplane primitive (`expectation_rows.py`) consumed atomically by THREE separate
+  `mcp/tools/` payload builders (`terminal.py`, `gates.py`, `operator_inbox.py`), plus two more new
+  controlplane modules (`inbox_backoff.py`, `signal_routing.py`) and new `OperatorInboxEntry`
+  fields. Added a Purpose paragraph naming all four R-numbers and the cross-tool dispatch pattern,
+  matching this file's established per-leaf narrative convention. Verification metadata pinned
+  until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (master-exit fix leaf, closes Finding 1):
   `controlplane/operator_inbox_records.py`'s `AgentRole` gains `architect`/`curator`;
   `InboxMessageKind` gains `decision-item`/`decision-ruling` — making the HFX-L6-ratified minimal

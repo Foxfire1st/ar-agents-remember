@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/mcp/tools/gates.py`       |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`         |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`         |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -36,10 +36,17 @@ do not infer one state from another. `gate_create_payload` is now a lower-level 
 `GateKind`, resolves the lifecycle from the explicit argument or the active ambient lifecycle,
 expires any existing open gate on that lifecycle, mints a ULID, opens a gate, and appends it; a
 lifecycle-less server process fails fast instead of writing a workspace gate by accident.
-`gate_decide_payload`
+Since 260707-HFX2-L1 (R2): `gate_create_payload` and `lifecycle_gate_payload` both call
+`_write_verdict_by_row(config, gate)` right after appending the newly opened gate, in the SAME
+call — writing a durable `verdict-by` expectation row (`controlplane/expectation_rows.py`) keyed to
+the gate's own id, with its SLA read from `orchestration.expectations.defaults` (falling back to
+`DEFAULT_EXPECTATION_SLA_SECONDS` when the config carries no coordination root). `gate_decide_payload`
 validates the decision against `DECISION_STATES`, folds `current()` to find the
 gate (missing → `KeyError`), and appends a decided snapshot; it takes explicit
-`decided_by` / `decided_via`. L4 extends it with optional `deciding_role` and
+`decided_by` / `decided_via`. Since 260707-HFX2-L1 it also looks up that gate's pending `verdict-by`
+row (`ExpectationRowStore.find_by_source`) and marks it `met` on ANY terminal decision
+(approve/reject/cancel) — the expectation is fulfilled by the decision itself, not by a separate
+step. L4 extends it with optional `deciding_role` and
 `evidence_refs`: when `decided_via="orchestration"`, the deciding actor is the
 active lifecycle/session (or an explicit test override), the resulting snapshot
 is checked against the configured `GatePolicy` before append, and owner
@@ -101,6 +108,7 @@ As of cycle 5 the seam channel is operable: lifecycle_gate accepts wait=false (r
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `gate_create_payload`/`lifecycle_gate_payload` now atomically write an R2 `verdict-by` expectation row alongside the opened gate; `gate_decide_payload` marks that row `met` on any terminal decision (approve/reject/cancel). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-05T19:55+02:00 - L8 builder cycle 7: wait=false additionally requires a non-empty `enclosure` (the integrate guard's address, AR4-1a) — refused before the expire-sweep/append, so a mis-called raise still mutates nothing. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: wait=false restricted to delegated seam kinds and validated before mutating (AR3-2/AR3-5); gate_list defaults to the ambient lifecycle (AR3-3). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): wait=false raise, cross-lifecycle decide-by-id, cli refusal on delegated kinds. Verification metadata pinned until closeout stamps the L8 commit.

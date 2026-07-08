@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-04T12:31+02:00                                       |
-| lastVerifiedCommitHash |                                                              `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                              2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash |                                                              `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
+| lastVerifiedCommitDate |                                                              2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -32,13 +32,25 @@ own route. When catalog/host/paster seams are supplied and
 `deliver_to_hosted=True`, it attempts immediate hosted-session push through
 `serving.inbox_delivery`.
 
+Since 260707-HFX2-L1: before creating the entry, `operator_inbox_post_payload` resolves (or reuses
+the caller-supplied) `TerminalCatalog` and calls `signal_routing.derive_signal_owner(catalog,
+sender_agent_id=, message_kind=)` (R4) to derive the routed owner address, stamped onto the entry's
+`owner_role`/`owner_agent_id`/`owner_lifecycle_id` fields and echoed on the response. Right after
+the store append + compaction, in the SAME call, it writes an `ack-by` expectation row
+(`expectation_rows.write_expectation_row`, R2) keyed to the new entry id, with its SLA read from
+`orchestration.expectations.defaults` (falling back to `DEFAULT_EXPECTATION_SLA_SECONDS` when
+`config` carries no coordination root) — so the deadline is never a forgettable follow-up step.
+
 `operator_inbox_poll_payload(...)` lists pending entries for a lifecycle, agent,
 recipient role, or combined mailbox key, serializes each record with the `schema`
 alias, and returns `entryCount` plus the entry list.
 `operator_inbox_consume_payload(...)` marks
 one entry consumed through the store, reports whether this call consumed it now
 or observed an already-consumed entry, then deletes the inbox row because the
-agent has received the throwaway response.
+agent has received the throwaway response. Since 260707-HFX2-L1 (R1/R2): when this call is the one
+that actually consumed the entry (`consumed_now`), it looks up that entry's pending `ack-by`
+expectation row (`ExpectationRowStore.find_by_source`) and marks it `met` — consume=ack is the
+ONLY terminal delivery outcome, so this is the one place the ack-by deadline is fulfilled.
 
 ### Conventions
 
@@ -92,6 +104,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `operator_inbox_post_payload` now derives R4 routing (`signal_routing.derive_signal_owner`) and writes an atomic R2 `ack-by` expectation row (`expectation_rows.write_expectation_row`) in the SAME call; `operator_inbox_consume_payload` marks that row `met` on ack (consume=ack is the only terminal outcome, R1). Response payload gained `ownerRole`/`ownerAgentId`/`ownerLifecycleId`. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-04T12:31+02:00 - L3: generalized posting/polling for agent roles and
   message kinds, added optional hosted-session delivery through
   `serving.inbox_delivery`, and returned delivery metadata. Verification metadata

@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-08T04:25+02:00                |
-| lastVerifiedCommitHash |                                       `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`|
-| lastVerifiedCommitDate |                                       2026-07-08T04:09:43+02:00|
+| lastUpdated            | 2026-07-08T16:15+02:00                |
+| lastVerifiedCommitHash |                                       `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
+| lastVerifiedCommitDate |                                       2026-07-08T05:51:44+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -57,6 +57,26 @@ Both tests are the regression for `controlplane/operator_inbox_records.py`'s `Ag
 rejecting `'architect'`, `messageKind` rejecting `'decision-item'`) — this is the exact live repro
 the master-exit adversarial review's Finding 1 (BLOCK) named, and these tests are the proof it is
 closed, not just the schema edit in isolation.
+`OperatorInboxStoreTests` (260707-HFX2-L1, R1/R3) gains ack/backoff/redelivery/escalation coverage
+for the new `attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt` fields on
+`OperatorInboxEntry`: `test_record_delivery_bumps_attempt_and_schedules_next_attempt` pins that
+`record_delivery` bumps `attemptCount` and stamps a further-out `nextAttemptAt` on EVERY delivery
+attempt — including a confirmed `delivered` paste — because consume=ack is the only terminal
+outcome, `delivered` is never terminal. `test_record_delivery_clears_schedule_only_via_consume`
+pins the corollary: only `consume` (never another `record_delivery` call) transitions the entry to
+the `consumed` state. `test_list_redeliverable_returns_pending_rows_past_backoff` and
+`test_list_redeliverable_excludes_consumed_rows` cover the store-level redelivery query the L2
+sweep will use — a pending row past its backoff schedule is redeliverable, a consumed row never is.
+`test_mark_escalated_stamps_the_reserved_field` pins that `mark_escalated` stamps `escalatedAt`
+(the field this leaf only RESERVES for a future escalation-ladder leaf to set on its own trigger).
+`test_compaction_never_removes_a_pending_unacked_row_regardless_of_age` is the R1 regression proper:
+an unacked row survives `store.compact()` even when it is far past the retention TTL, exercised
+against the real post-time compaction path (`operator_inbox_post_payload` calls `store.compact()`
+immediately after append) — this is the test that FAILS if `_keep_inbox_entry` is ever changed to
+prune pending rows by age instead of by consumed state.
+`test_compaction_still_prunes_a_stale_consumed_row` is the paired control: a `consumed` row past
+the TTL is still pruned, proving the fix is a targeted pending-row exemption, not a blanket
+compaction disable.
 
 ### Conventions
 
@@ -90,6 +110,7 @@ listed as Domain Documentation.
 | --- | --- | --- |
 | Record tests cover create/consume purity, required addressing, and schema alias round-trip. | L22-L74 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 | Store tests cover lifecycle/agent filters, idempotent consume, missing entry, and missing address errors. | L77-L163 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Store tests (R1/R3) cover attempt/backoff stamping, redeliverable filtering, escalation stamping, and the never-prune-pending-row compaction regression. | L220-L290 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 | Tool tests cover post, poll, consume payload deletion, and no-address poll validation. | L166-L220 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 
 ## Cross-Repo References
@@ -102,6 +123,14 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T16:15+02:00 — 260707-HFX2-L1 (curator delta round 2, closeout-preview gap): added
+  coverage for `OperatorInboxStoreTests`' six new R1/R3 tests — `record_delivery` attempt/backoff
+  stamping (every attempt, including a confirmed `delivered` paste, bumps `attemptCount` and
+  reschedules `nextAttemptAt`, since consume=ack is the only terminal outcome), `list_redeliverable`
+  filtering, `mark_escalated` field stamping, and the paired
+  never-prune-pending-vs-still-prunes-consumed compaction regression proving the R1 retention fix
+  is a targeted pending-row exemption. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L1 commit.
 - 2026-07-08T04:25+02:00 — 260707-HFX-L12 (operator-inbox relay schema, master-exit fix leaf):
   added `test_decision_item_relay_round_trip_between_orchestrator_and_architect` and
   `test_plain_message_addressed_to_architect_and_curator_succeeds` to `OperatorInboxToolTests` —

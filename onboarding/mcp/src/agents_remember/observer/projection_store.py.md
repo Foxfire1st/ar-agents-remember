@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-06-28T05:38+02:00                                 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`             |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`             |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Purpose
@@ -57,7 +57,11 @@ keyword — including the slice-5e `engine_process_facts=` / `engine_start_progr
 arguments, the R1 `series=read_series_documents(coordination_root, now=…)`
 (the master series surface), and the slice-6c `gates=read_gates(coordination_root)`
 argument. Task 23/24 adds `agent_pickups=read_agent_pickups(coordination_root, now=…)`, the pending
-operator-inbox projection that drives task-row waiting-for-agent/check-chat feedback. Task 28 S5.2
+operator-inbox projection that drives task-row waiting-for-agent/check-chat feedback. Since
+260707-HFX2-L1 (R5) it also threads `expectation_rows=read_expectation_rows(coordination_root,
+now=moment)` — the durable deadline-row projection surfaced for dashboard/architect observability;
+this is surfacing only, an L2 predicate reads `ExpectationRowStore` directly and never this
+projection. Task 28 S5.2
 constructs `AttentionDismissalStore(root)`, threads `attention_store.current()` into the reducer, then
 calls `attention_store.prune_lifecycles(...)` with the projected non-terminal lifecycle ids before the
 atomic write, so completed/abandoned lifecycle acknowledgement rows are physically removed as part of the
@@ -154,6 +158,7 @@ enclosure state in `worktree_provider_admission`; this file only reorders the re
 
 ## Update History
 
+- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `project_and_write` now also calls `read_expectation_rows` and threads it into `project_workspace` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): `read_enclosures` hoisted above the retention prune
   so `prune_expired_lifecycle_event_logs` receives
   `protected_lifecycle_ids=series_retained_lifecycle_ids(enclosures, now=moment)`; a not-yet-retired

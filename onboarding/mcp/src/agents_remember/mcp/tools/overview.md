@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-08T02:43+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`                                      |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T14:45+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`                                      |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -139,6 +139,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-08T14:45+02:00 — No route impact: 260707-HFX2-L1 adds R1/R2/R4 field extensions and new expectation-row/routing calls inside `gates.py`/`operator_inbox.py`/`terminal.py` (each module's own sidecar documents the change); the route's module layout, tool registry, and facade contract are unchanged.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issues #12/#4): `terminal.py` gains two public builders, `session_retire_payload` and
   `session_rename_payload`; `base.py`'s `PUBLIC_TOOLS` grows to 54; the facade `__init__.py` and

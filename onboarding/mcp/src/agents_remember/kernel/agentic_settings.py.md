@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T14:30+02:00 |
+| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674` |
+| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -42,11 +42,20 @@ membership) bind on the merged block, with the merged source label in errors.
 
 The fail-loud rule is scoped to `orchestration.*`: every nesting level has a frozen
 known-key set (`KNOWN_ORCHESTRATION_FIELDS` = gateDelegation/loops/roles/rolesPerLevel/
-concurrency/spawn/harnesses, plus per-family sets for gateDelegation kinds, loop
-defaults/complexity/levels, the eight l-01 role names, the role-knob fields
-harness/model/effort/launchArgs/promptKeywords/sessionCommands, the harness-entry fields, and
-concurrency caps) and `_refuse_unknown` raises
+concurrency/spawn/harnesses/**expectations** (260707-HFX2-L1, R2), plus per-family sets for
+gateDelegation kinds, loop defaults/complexity/levels, the eight l-01 role names, the role-knob
+fields harness/model/effort/launchArgs/promptKeywords/sessionCommands, the harness-entry fields,
+concurrency caps, and the four expectation-row kinds) and `_refuse_unknown` raises
 `AgenticSettingsError` naming the unknown keys, the allowed set, and the offending file.
+
+**260707-HFX2-L1 (R2, expectation-row SLAs)**: `orchestration.expectations.defaults` configures
+the per-kind SLA seconds every dispatch surface's durable expectation row uses (`briefed-by`,
+`turn-report-by`, `verdict-by`, `ack-by`) — `ExpectationSettings.sla_for(kind)` falls back to
+`DEFAULT_EXPECTATION_SLA_SECONDS` (`ack-by` mirrors the existing `AGENT_PICKUP_TTL_SECONDS`
+convention, 300s) for any kind the settings omit. `_parse_expectations` validates every key
+against `KNOWN_EXPECTATION_KINDS` (fail-loud on an unknown kind or non-positive SLA). This literal
+kind set is duplicated in `controlplane/expectation_rows.py::ExpectationKind` rather than imported,
+to avoid a kernel<->controlplane import cycle — the two must be kept in sync by hand.
 Unknown TOP-LEVEL keys are deliberately tolerated-not-parsed: the same coordinator file is
 the c-08 memory-settings fallback and the earmarked future home of further families
 (`contextProviders` first in line — gate amendment 2026-07-06), so the fail-loud scope must
@@ -183,6 +192,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T14:30+02:00 — 260707-HFX2-L1: added the `orchestration.expectations` family (R2) —
+  `ExpectationSettings`/`_parse_expectations`, `KNOWN_EXPECTATION_KINDS`,
+  `DEFAULT_EXPECTATION_SLA_SECONDS` — the per-kind SLA-seconds config every dispatch surface's
+  durable expectation row reads. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L1 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): added `system-specialist` to
   `KNOWN_ROLES` (now nine roles) for both flat and per-level role-knob vocabularies; the R2 fix
   round also corrected the stale "eight" role-count comment to "nine" (reviewer F6). Verification

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-04T12:31+02:00                                            |
-| lastVerifiedCommitHash |                                                                   `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                                   2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T14:00+02:00                                            |
+| lastVerifiedCommitHash |                                                                   `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
+| lastVerifiedCommitDate |                                                                   2026-07-08T05:51:44+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -41,6 +41,18 @@ one inbox entry, `delete_by_gate(gate_id)` removes entries associated with a
 cleared/dismissed gate, and `compact(now=...)` prunes consumed or 24h-expired
 entries through `interaction_retention.inbox_keep_ids`. The public consume tool
 now deletes the entry after returning the consumed payload.
+
+260707-HFX2-L1 (R1/R3 ack semantics + redelivery): `record_delivery(...)` now
+bumps `attemptCount`, stamps `lastAttemptAt`, and schedules a durable
+`nextAttemptAt` (via `inbox_backoff.next_attempt_at`) on EVERY attempt,
+including a confirmed `delivered` paste -- consume is the only call that stops
+the schedule, because `delivered` is never terminal (pasted != perceived).
+`list_redeliverable(now=..., rate_limit_seconds=...)` selects pending rows past
+their backoff window and clear of the per-target rate limit
+(`inbox_backoff.redeliverable`) -- the pure selection L2's sweep drives
+redelivery from; this store itself never redelivers on its own (no in-memory
+timer). `mark_escalated(entry_id, now=...)` stamps the reserved `escalatedAt`
+field the ladder (HFX2-L4) will set -- this store only reserves the transition.
 
 ### Conventions
 
@@ -89,6 +101,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T14:00+02:00 — 260707-HFX2-L1: R1 ack semantics (attempt/backoff
+  fields on `record_delivery`, delivered is never terminal) + R3 redelivery
+  (`list_redeliverable`, `mark_escalated`), reusing the `inbox_backoff` module's
+  pure math. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L1 commit.
 - 2026-07-04T12:31+02:00 - L3: added recipient-role pending filters and
   `record_delivery(...)` snapshots so hosted push outcomes stay attached to the
   durable inbox row. Verification metadata pinned until closeout stamps the L3
