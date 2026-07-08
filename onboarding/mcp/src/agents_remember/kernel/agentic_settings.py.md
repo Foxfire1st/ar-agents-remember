@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00 |
+| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
+| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -44,11 +44,26 @@ membership) bind on the merged block, with the merged source label in errors.
 
 The fail-loud rule is scoped to `orchestration.*`: every nesting level has a frozen
 known-key set (`KNOWN_ORCHESTRATION_FIELDS` = gateDelegation/loops/roles/rolesPerLevel/
-concurrency/spawn/harnesses/expectations/**supervisor** (260707-HFX2-L2, R1/R5), plus per-family sets for
+concurrency/spawn/harnesses/expectations/supervisor/**escalation** (260707-HFX2-L4, R1), plus per-family sets for
 gateDelegation kinds, loop defaults/complexity/levels, the eight l-01 role names, the role-knob
 fields harness/model/effort/launchArgs/promptKeywords/sessionCommands, the harness-entry fields,
 concurrency caps, and the four expectation-row kinds) and `_refuse_unknown` raises
 `AgenticSettingsError` naming the unknown keys, the allowed set, and the offending file.
+
+**260707-HFX2-L4 (R1, escalation ladder knobs)**: `orchestration.escalation` configures P-15 tier
+3's ladder — `EscalationSettings` (`sla_seconds` per `message_kind`, defaulting from
+`DEFAULT_ESCALATION_SLA_SECONDS`; `rung_seconds` keyed 1/2/3, defaulting from
+`DEFAULT_ESCALATION_RUNG_SECONDS`; `nudge_rate_limit_seconds` default 900; `respawn_after_rung`
+default 2). `_parse_escalation` validates `slaSeconds` keys against `KNOWN_ESCALATION_MESSAGE_KINDS`
+(a literal set duplicated by hand against `InboxMessageKind`, the same kernel<->controlplane
+cycle-avoidance reason `KNOWN_EXPECTATION_KINDS` already uses), `rungSeconds` keys against the
+closed `KNOWN_ESCALATION_RUNGS = (1, 2, 3)`, and `respawnAfterRung` against that same closed set (a
+respawn cannot trigger at a rung that doesn't exist); every value must be a positive number/int,
+and the whole block is checked against `KNOWN_ESCALATION_FIELDS` for unknown top-level keys. Absent
+block or absent key falls back to the documented default (`EscalationSettings()`'s field
+defaults) — `sla_for(kind)`/`rung_dwell(rung)` are the accessor methods `serving/supervisor.py`'s
+`_supervisor_context()` reads per-use, mirroring how `SupervisorSettings`/`ExpectationSettings`
+are consumed elsewhere in this file.
 
 **260707-HFX2-L2 (R1/R5, supervisor sweep knobs)**: `orchestration.supervisor` configures the
 deterministic sweep loop hosted beside the serving daemon's projector/metrics loops —
@@ -187,6 +202,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 | --- | --- | --- |
 | The schema reference for the agentic family (two-layer model, merge semantics, fail-loud rule, loop schema, reserved families). | Agentic Settings section | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
 | **Known gap (260707-HFX2-L2):** the new `orchestration.supervisor` family is NOT yet documented in this schema reference — the builder confirmed no doc-sync test enforces schema/doc parity in this repo before skipping the doc update as leaf-scope-appropriate. A follow-up doc pass should add an `orchestration.supervisor` section alongside `orchestration.expectations`. | — | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
+| **Known gap (260707-HFX2-L4):** the new `orchestration.escalation` family is likewise NOT yet documented in this schema reference, same no-doc-sync-test posture as the supervisor gap above. A follow-up doc pass should add an `orchestration.escalation` section alongside `orchestration.supervisor`. | — | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
 
 ## Repo-Internal References
 
@@ -199,6 +215,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 | The install seeding consumer (copy-if-missing global file). | seed_agentic_settings | [../install/runtime.py](../install/runtime.py) |
 | The supervisor sweep's `SupervisorContext` construction reads `settings.supervisor.*` per loop iteration (interval, enable flag, staleness cutoff, redeliver rate limit) — the per-use read contract this loader guarantees. | `_supervisor_context`; `supervisor_loop` | [../serving/app.py](../serving/app.py.md) |
 | The MCP tool choke point reads `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS` (this file's constant, not `settings.supervisor.stale_cutoff_seconds`) for the opportunistic banner check (260707-HFX2-L2 R5) — a deliberate simplification so the banner check needs no settings read on every tool call. | `_tool_payload` | [../mcp/tools/base.py](../mcp/tools/base.py.md) |
+| The escalation ladder's per-use consumer: `_supervisor_context()` resolves `settings.escalation.sla_seconds`/`rung_seconds`/`respawn_after_rung` into `SupervisorContext`'s plain-primitive escalation knobs every sweep. | `_supervisor_context` | [../serving/app.py](../serving/app.py.md) |
 
 ## Cross-Repo References
 
@@ -210,6 +227,15 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R1, escalation ladder): added the `orchestration.escalation`
+  family — `EscalationSettings`/`_parse_escalation`, `KNOWN_ESCALATION_FIELDS`,
+  `KNOWN_ESCALATION_MESSAGE_KINDS`, `KNOWN_ESCALATION_RUNGS`, `DEFAULT_ESCALATION_SLA_SECONDS`,
+  `DEFAULT_ESCALATION_RUNG_SECONDS`, `DEFAULT_RESPAWN_AFTER_RUNG` — the P-15 tier-3 ladder's own
+  knobs (per-kind ack SLA, per-rung dwell timings, the renudge rate limit, the respawn-after-rung
+  threshold), consumed per-use by `serving/app.py`'s `_supervisor_context()`. `docs/reference/
+  settings-json.md` was NOT updated for this family (flagged follow-up, same no-doc-sync-test
+  posture as the supervisor family gap). Verification metadata pinned until closeout stamps the
+  260707-HFX2-L4 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (R1/R5, supervisor sweep): added the
   `orchestration.supervisor` family — `SupervisorSettings`/`_parse_supervisor`,
   `KNOWN_SUPERVISOR_FIELDS`, `DEFAULT_SUPERVISOR_INTERVAL_SECONDS`/

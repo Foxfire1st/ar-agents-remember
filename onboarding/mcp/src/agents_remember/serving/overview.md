@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`       |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00 |
+| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`       |
+| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -72,6 +72,19 @@ hand off to the L4 escalation ladder's reserved stub, logging every action as an
 `orchestration.supervisor.*` observer event. New `supervisor_heartbeat.py` gives the sweep its own
 self-liveness tick row (issue #15, "the watcher must be code AND watched"), surfaced as a fail-loud
 MCP-tool banner (`mcp/tools/base.py`) and a dashboard header badge (`/api/state`/SSE).
+**260707-HFX2-L4** fills that reserved stub in: `supervisor.py` gains two more predicates
+(`evaluate_escalation_findings`/`evaluate_dead_upstream_findings`) and two more actions
+(`_escalate_rung`/`_signal_dead_upstream`), calling through the new
+`controlplane/escalation_ladder.py` walker (governed by the `controlplane/` overview) for rung
+decisions and `controlplane/signal_routing.py`'s new two-hop `derive_skip_level_owner`/`is_seat_dead`
+for skip-level/grandparent addressing. Past the respawn threshold, `_escalate_rung` calls new
+`_respawn_suspect`: retires the suspect seat's husk via `serving/retire.py::retire_entry`,
+re-delivers its pending inbox queue to the successor via the signal payload, and — when the retired
+seat was a manager — surfaces its still-running workers (new `controlplane/orphan_policy.py::
+find_orphaned_workers`) as orphans in the same respawn event, never auto re-parenting them or
+absorbing the dead manager's role. No new hot loop, no new `InboxMessageKind` values — rung 1 reuses
+`nudge`, rung 2/3/respawn/dead-upstream reuse `escalation`, distinguishable via the dedicated
+`orchestration.escalation.rung`/`.respawn`/`.dead-upstream` events.
 
 ## Hot Path Summary
 
@@ -429,15 +442,21 @@ the only destructive terminal action.
   `kind="harness"` opener resolution — a harness **id** is on the wire, the fixed argv stays here
   or in the fail-loud settings family (the 6d posture). Deliberately *not* a mirror of
   `scripts/sync-skills.py`.
-- `supervisor.py` — the **260707-HFX2-L2** deterministic supervisor sweep: `SupervisorContext` (the
+- `supervisor.py` — the **260707-HFX2-L2** deterministic supervisor sweep, now also the
+  **260707-HFX2-L4** P-15 tier-3 ladder + dead-man-respawn host: `SupervisorContext` (the
   one seam every predicate/action reads through — stores + catalog/host/paster, injected directly,
-  never the projection), the five R2 predicate functions (`evaluate_pane_findings`/
-  `evaluate_expectation_findings`/`evaluate_turn_report_findings`/`evaluate_inbox_findings`/
-  `evaluate_seat_liveness_findings`), the R4 action dispatcher (`act_on_finding` →
-  `_redeliver`/`_auto_nudge`/`_signal_emit`, each logging an `orchestration.supervisor.*` event),
-  and `run_supervisor_sweep` (evaluate → act → tick the heartbeat unconditionally, R5). Gives
-  `missing_artifact()` its first caller and reserves the `mark_missed`/`mark_escalated` transitions
-  HFX2-L4's ladder will read. Builds no ladder itself and touches no `terminal_paste.py` internals.
+  never the projection, plus L4's `escalation_sla_seconds`/`escalation_rung_seconds`/
+  `respawn_after_rung` plain-primitive knobs), the seven R2 predicate functions
+  (`evaluate_pane_findings`/`evaluate_expectation_findings`/`evaluate_turn_report_findings`/
+  `evaluate_inbox_findings`/`evaluate_seat_liveness_findings`/`evaluate_escalation_findings`/
+  `evaluate_dead_upstream_findings`), the R4 action dispatcher (`act_on_finding` →
+  `_redeliver`/`_auto_nudge`/`_signal_emit`/`_escalate_rung`/`_signal_dead_upstream`, each logging an
+  `orchestration.supervisor.*` or `orchestration.escalation.rung` event), and `run_supervisor_sweep`
+  (evaluate → act → tick the heartbeat unconditionally, R5). Gives `missing_artifact()` its first
+  caller; `mark_missed` stays the L2 sweep's own reserved transition, while `mark_escalated` and the
+  ladder's own `advance_rung`/respawn/orphan-surfacing (via `escalation_ladder.py`/
+  `orphan_policy.py`, governed by the `controlplane/` overview) are now genuinely landed here. Still
+  touches no `terminal_paste.py` internals.
 - `pane_signals.py` — the **260707-HFX2-L2** pane-state classifier (R2a): `classify_pane_signal`
   answers which of the four P-15 intervention triggers (`never-briefed`/`delivery-stalled`/
   `mid-turn`/`blocked`) a captured pane shows, reusing `terminal_paste.count_paste_chips` for the
@@ -504,6 +523,13 @@ the only destructive terminal action.
   anywhere in the loop, level-triggered (a missed action is caught by the next sweep). The
   heartbeat's staleness is a volatile age (same posture as `servingBuild`): never gates the
   `/api/state` ETag revision.
+- **The escalation ladder never absorbs a dead owner's role (260707-HFX2-L4 R4, HFX-L6 capture
+  hardening).** A spawned seat with a dead owner continues its own brief and escalates to its
+  grandparent — `_signal_dead_upstream` only ever signals, never reassigns. Rung 3 (developer
+  attention) is a hard ceiling: `escalation_ladder.rung_due` refuses to advance a row past it, so
+  re-surfacing happens via the row's own rung-3 dwell SLA firing the same signal again, never a
+  state change past the developer. Orphaned workers of a respawned manager are surfaced, never
+  auto re-parented.
 - **Retirement is a terminal mark, never a new status value (260707-HFX-L8).** A retire rides the
   EXISTING `status == "terminated"` catalog state plus provenance, so it composes for free with the
   L5 liveness hysteresis (never resurrected) and the "never a zombie row" `list()` filter — no new
@@ -532,6 +558,20 @@ the only destructive terminal action.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (P-15 tier 3 escalation ladder + dead-man
+  respawn, R1-R6): `supervisor.py` gains two predicates (`evaluate_escalation_findings`/
+  `evaluate_dead_upstream_findings`) and two actions (`_escalate_rung`/`_signal_dead_upstream`),
+  calling through NEW `controlplane/escalation_ladder.py` (the pure rung walker) and
+  `controlplane/signal_routing.py`'s NEW two-hop `derive_skip_level_owner`/`is_seat_dead` (a
+  SEPARATE function from L1's one-hop `derive_signal_owner`, which is unchanged). Past the respawn
+  threshold, `_escalate_rung` calls new `_respawn_suspect`: retires the suspect seat via
+  `retire.py::retire_entry`, re-delivers its pending queue to the successor, and — via NEW
+  `controlplane/orphan_policy.py::find_orphaned_workers` — surfaces (never auto-reparents) a retired
+  manager's still-running workers in the same respawn event. `SupervisorContext` gains
+  `escalation_sla_seconds`/`escalation_rung_seconds`/`respawn_after_rung`; `OperatorInboxEntry`
+  gains `rung`; `OperatorInboxStore` gains `advance_rung`. No new lifespan task, no new
+  `InboxMessageKind` values. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L4 commit.
 - 2026-07-08T22:30+02:00 — 260707-HFX2-L3 route impact (paste injector hardening, R1-R5): route
   gains `harness_adapters.py` (the one per-harness delivery adapter interface — claude-code, codex,
   generic fallback) and `injector.py` (the ONE delivery path, `deliver(row) -> {acked, landed-

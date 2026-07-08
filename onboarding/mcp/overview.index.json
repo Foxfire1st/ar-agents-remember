@@ -250,6 +250,7 @@
     "mcp/tests/test_dashboard_daemon.py",
     "mcp/tests/test_dispatch_expectation_rows.py",
     "mcp/tests/test_docker_runtime_parsers.py",
+    "mcp/tests/test_escalation_ladder.py",
     "mcp/tests/test_expectation_rows.py",
     "mcp/tests/test_git_freshness.py",
     "mcp/tests/test_harness_adapters.py",
@@ -331,8 +332,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 570,
-    "fileSidecars": 243,
+    "sourceFilesInScope": 573,
+    "fileSidecars": 244,
     "childRoutes": 15
   },
   "routingTerms": [

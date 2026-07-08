@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-08T16:15+02:00                |
-| lastVerifiedCommitHash |                                       `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate |                                       2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00                |
+| lastVerifiedCommitHash |                                       `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
+| lastVerifiedCommitDate |                                       2026-07-08T09:40:32+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -69,6 +69,12 @@ the `consumed` state. `test_list_redeliverable_returns_pending_rows_past_backoff
 sweep will use — a pending row past its backoff schedule is redeliverable, a consumed row never is.
 `test_mark_escalated_stamps_the_reserved_field` pins that `mark_escalated` stamps `escalatedAt`
 (the field this leaf only RESERVES for a future escalation-ladder leaf to set on its own trigger).
+260707-HFX2-L4 (R1/R2) adds `test_advance_rung_stamps_rung_and_reanchors_escalated_at` — the
+ladder's own transition: `advance_rung` sets BOTH `rung` and re-anchors `escalatedAt` to the new
+`now` in the SAME snapshot, asserted across two successive transitions (rung 1 then rung 2, each
+re-anchoring `escalatedAt` to its own call's `now`) so a stale prior anchor can never leak into the
+next rung's SLA check. `test_advance_rung_unknown_entry_raises` pins the `KeyError` on an entry id
+the store has never seen.
 `test_compaction_never_removes_a_pending_unacked_row_regardless_of_age` is the R1 regression proper:
 an unacked row survives `store.compact()` even when it is far past the retention TTL, exercised
 against the real post-time compaction path (`operator_inbox_post_payload` calls `store.compact()`
@@ -123,6 +129,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (escalation ladder, R1/R2): added
+  `test_advance_rung_stamps_rung_and_reanchors_escalated_at` (two successive rung transitions each
+  re-anchor `escalatedAt` to their own call's `now`) and `test_advance_rung_unknown_entry_raises`
+  (`KeyError` on an unknown entry id) — coverage for the new `OperatorInboxStore.advance_rung`
+  method. Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T16:15+02:00 — 260707-HFX2-L1 (curator delta round 2, closeout-preview gap): added
   coverage for `OperatorInboxStoreTests`' six new R1/R3 tests — `record_delivery` attempt/backoff
   stamping (every attempt, including a confirmed `delivered` paste, bumps `attemptCount` and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00 |
+| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
+| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -17,8 +17,9 @@
 unknown-key discipline, absent-file defaults, and the typed models — plus, since
 260703-L16, the free-form role knobs (`FreeFormRoleKnobTests`), the per-level
 overrides (`RolesPerLevelTests`), the harness-definition family
-(`HarnessesFamilyTests`), and — since 260707-HFX2-L2 — the supervisor sweep's own knob family
-(`SupervisorFamilyTests`).
+(`HarnessesFamilyTests`), the supervisor sweep's own knob family (since 260707-HFX2-L2,
+`SupervisorFamilyTests`), and — since 260707-HFX2-L4 — the escalation ladder's own knob family
+(`EscalationSettingsTests`).
 
 ## Code Commentary
 
@@ -95,6 +96,14 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   `enabled` rejects a non-boolean (`"yes"`) naming `supervisor.enabled`; `intervalSeconds` rejects a
   non-positive value naming `intervalSeconds`; and an unknown key (`sweepSeconds`) fails loud naming
   itself against `KNOWN_SUPERVISOR_FIELDS`.
+- `EscalationSettingsTests` (260707-HFX2-L4, R1) — an absent `orchestration.escalation` block
+  yields the documented defaults (`sla_for("nudge") == 300.0`, `rung_dwell(1) == 300.0`,
+  `rung_dwell(2) == 900.0`, `nudge_rate_limit_seconds == 900`, `respawn_after_rung == 2`); a full
+  block parses `slaSeconds`/`rungSeconds`/`nudgeRateLimitSeconds`/`respawnAfterRung`, with an
+  unconfigured `message_kind` still falling back to its own documented default alongside the
+  configured ones; an unknown `slaSeconds` key, a non-positive `slaSeconds` value, an out-of-range
+  `rungSeconds` key, an out-of-range `respawnAfterRung`, and an unknown top-level `escalation` key
+  all fail loud naming the offending path.
 - `SeedTests` — `default_agentic_settings_seed()` round-trips through the
   loader to the SAME posture an absent file yields, except
   `gate_delegation_configured` is True (the seed explicitly claims the key's
@@ -140,6 +149,12 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (escalation ladder, R1): added `EscalationSettingsTests` —
+  absent-block defaults, full-block parsing of `slaSeconds`/`rungSeconds`/
+  `nudgeRateLimitSeconds`/`respawnAfterRung` (with per-kind fallback for an unconfigured
+  `message_kind`), and fail-loud coverage for an unknown SLA kind, a non-positive SLA value, an
+  out-of-range rung key, an out-of-range `respawnAfterRung`, and an unknown top-level escalation
+  key. Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R1/R5): added `SupervisorFamilyTests` —
   absent-block defaults, full-block parsing of all four knobs, `enabled`-must-be-boolean,
   `intervalSeconds`-must-be-positive, and unknown-key fail-loud (`sweepSeconds`). Verification
