@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:40+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
+| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
 
 ## Purpose
 
@@ -16,6 +16,18 @@ The self-contained worker lifecycle: one leaf, one session, one report. The brie
 ## Code Commentary
 
 ### Logic
+
+260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the mandatory
+turn-report paragraph's "A missing report gets nudged." is reworded to name the actual mechanism —
+"A missing report gets nudged by the supervisor sweep (HFX2-L2), never by a seat-local watcher — no
+owning seat, and no worker, hand-rolls its own polling loop over this artifact; ending your turn
+once the report is written is safe, not a risk you have to cover for." The Comms Protocol's "Stdin
+push" line is reworded the same way (the L2 sweep's injector delivers on its own tick, in the
+owning seat's name, never the owning seat or the worker watching/polling by hand), and a new "Idle
+is safe" bullet plus an explicit **watcher ban** line (uniform-mechanism ruling 2026-07-07) are
+added right after it. Pure doctrine reword — the worker's own build loop and artifact obligation are
+unchanged; only the language describing what happens to a missing/late artifact inverts to name the
+supervisor sweep as the one mechanism.
 
 Sync-propagated copy of the canonical `skills/l-01-agent-lifecycles/roles/worker.md`. The worker loop: intake (brief + leaf task_doc + predecessor report - never a transcript) -> orient (paired reads via read_ar_files, which serves the OFFICIAL baseline, plus native worktree reads as the edit precondition; evidence tally per brief) -> build code (leaf plan exactly; produce changed paths, code-diff summary, tests, and route/onboarding observations for the downstream curator; NEVER git commit) -> checks green (brief-prescribed focused + full wrapper; a red check outside leaf scope is an escalation) -> mandatory turn report (../templates/turn-report.md, written even when blocked) -> end. Tool surface stated positively: native file tools in the code worktree, memory reads for context/changelog hints, read-only AR retrieval, shell for checks, inbox when wired; no worktree_*/lifecycle_*/task_doc/gate_*/memory_*/route_index_refresh. Default behavior: fulfill the task, fill small blanks; plan deltas escalate one rung to the owning seat (spirit test belongs to the backend orchestrator or architect owner seat). Knob default harness is codex (the practiced worker economics); `roles/worker.claude-code.md` overlays Claude Code.
 
@@ -51,6 +63,14 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
+  process-and-ack): "A missing report gets nudged." reworded to name the HFX2-L2 supervisor sweep
+  as the actual mechanism (never a seat-local watcher); Comms "Stdin push" line reworded the same
+  way, plus a new "Idle is safe" bullet and watcher-ban line (uniform-mechanism ruling 2026-07-07).
+  Doctrine-only change set (5 canonical `skills/` files synced to 9 downstream copies, 0 Python);
+  sync-propagated bundle copy of the canonical `skills/l-01-agent-lifecycles/roles/worker.md`.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L5 commit.
 
 - 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: reframed the worker
   as code builder only in the manager -> builder -> reviewer -> curator chain. The worker report now

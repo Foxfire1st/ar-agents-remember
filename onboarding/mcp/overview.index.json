@@ -263,6 +263,7 @@
     "mcp/tests/test_landing.py",
     "mcp/tests/test_leaf_ref_resolution.py",
     "mcp/tests/test_lifecycle_finalize.py",
+    "mcp/tests/test_liveness_simulations.py",
     "mcp/tests/test_log_capture.py",
     "mcp/tests/test_markdown_settings.py",
     "mcp/tests/test_mcp_stdio_transport.py",
@@ -332,8 +333,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 573,
-    "fileSidecars": 244,
+    "sourceFilesInScope": 574,
+    "fileSidecars": 245,
     "childRoutes": 15
   },
   "routingTerms": [

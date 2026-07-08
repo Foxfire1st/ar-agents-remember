@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:10+02:00 |
-| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
-| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
+| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
 
 ## Purpose
 
@@ -43,6 +43,22 @@ for the new role rather than only the registry mention.
 
 As of 260703-L12 the file is also the **three-party-loop doctrine's single home** (a new section between Shared Invariants and the knob block, referenced per seat): OWNER → BUILDER → REVIEWER at every level that owns work (leaf/master/portfolio table); complexity-scored tiers at dispatch (direct / builder-verified / full loop, scored on blast radius · novelty · size; round 2 glosses direct as no-loop-machinery through the level's ordinary build channel — hands-on at session scale, the leaf's worker under a manager — so it cannot read manager-implements; a master whose leaves all score direct = workflow-free manager); the HARD 3-round cap where ONLY full end-to-end rounds count (delta-verifies by the SAME reviewer close rounds; fix rounds resume the SAME builder); the CONVERGENCE rule (every round must shrink the finding set — a non-shrinking round escalates immediately; the cap is the backstop); escalation one seat up the ladder with the full round history attached; the written QUO-VADIS criterion (a high-blast-radius truth escalates immediately; presentation-grade never); the criteria-catalog binding (`criteria/` — code-seam · doctrine · onboarding-memory · report-verification · plan-review) and the per-level agent sets (knobs in `orchestration.loops`, schema in `docs/reference/settings-json.md`, stored in the global agentic file with repo-local override and parsed by the kernel loader since L13 — the strategist's mandatory pre-run is doctrine, not a knob).
 
+As of 260707-HFX2-L5 (doctrine inversion: active vigilance → passive process-and-ack) the Shared
+Invariants section gains a new "Notify-and-stop is safe by design" paragraph right after the
+lifecycle-adoption sentence: ending a turn on `lifecycle_turn_end_notification`, or simply stopping
+once the artifact is written and nothing is pending, is never a liveness gap, because the HFX2-L2
+supervisor sweep evaluates every expected artifact/signal on its own mechanical tick and the
+HFX2-L4 escalation ladder (renudge → skip-level → developer attention, then respawn) handles
+inactivity. The paragraph states the **watcher ban** in the same breath (uniform-mechanism ruling
+2026-07-07: no role watches, polls, or nudges on its own initiative — that is a banned seat-local
+mechanism) and the inversion this leaf drives through every role file: **every role's own liveness
+duty inverts to passive** — be woken with pending signals, process and ack every item, then end the
+turn. This is the doctrine's canonical home for the literal phrase "notify-and-stop"; it did not
+appear anywhere in this skill before this leaf. The role files this doctrine touches
+(`roles/manager.md`, `roles/orchestrator.md`, `roles/worker.md`) and the mandatory
+`templates/turn-report.md` artifact each carry their own matching inversion, documented in their own
+sidecars.
+
 As of 260707-HFX-L11 (curator activation, R1/R4) the Companion Files `templates/…` list gains
 `curator-brief` — the first dedicated curator dispatch-pack template
 (`skills/l-01-agent-lifecycles/templates/curator-brief.md`, new file), documented as: `ROLE BRIEF —
@@ -65,6 +81,16 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
+  process-and-ack): Shared Invariants section gains the new "Notify-and-stop is safe by design"
+  paragraph — ending a turn once the artifact is written is never a liveness gap because the
+  HFX2-L2 sweep + HFX2-L4 escalation ladder supervise silence; states the watcher ban
+  (uniform-mechanism ruling 2026-07-07) and the passive-duty inversion every role file now carries.
+  Doctrine-only change set (5 canonical `skills/` files, propagated by `scripts/sync-skills.py` to 9
+  downstream package copies, 0 Python); sync-propagated bundle copy of the canonical
+  `skills/l-01-agent-lifecycles/SKILL.md`. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L5 commit.
 
 - 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation: Companion Files template registry
   gains `curator-brief` (new file, R1/R4) with its header-consistent description. Doctrine-only

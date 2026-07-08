@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:55+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
+| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
 
 ## Purpose
 
@@ -22,6 +22,22 @@ direction.
 ## Code Commentary
 
 ### Logic
+
+260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the leaf-dispatch
+loop's "Monitor the worker" bullet is gone. In its place, "Process and ack the worker's signals —
+passive contract": a turn-report artifact is expected at every hand-off, but the manager does not
+watch for it — the HFX2-L2 supervisor sweep evaluates each expected artifact
+(`evaluate_turn_report_findings`/`missing_artifact()`) on its own mechanical tick and, on
+inactivity, injects the nudge and walks the HFX2-L4 escalation ladder (renudge → skip-level →
+developer attention, then respawn). The manager's own job inverts to being woken with its pending
+signals and processing/acking every item before ending its turn. A new **watcher ban** line
+(uniform-mechanism ruling 2026-07-07) states this in the file directly: no seat-local watcher of
+any kind, the L2 sweep is the one mechanism, no per-seat variance. The Comms Protocol's "Stdin
+push" line is reworded the same way — nudges are delivered by the L2 supervisor's injector on its
+own tick, never the manager's own initiative; a non-hosted seat gets the inbox equivalent. This is
+purely a doctrine reword — the mechanical detection/escalation machinery itself (the sweep, the
+ladder) already landed in HFX2-L2/L4; this leaf only inverts the seat's OWN duty language to match
+what those leaves already built.
 
 260707-HFX-L11 curator activation (R4, manager wiring made real): the curator-spawn duty bullet is
 no longer a description — it names the exact brief template (`../templates/curator-brief.md`), the
@@ -166,6 +182,16 @@ No sibling repository evidence is needed for this orchestration job file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
+  process-and-ack): "Monitor the worker" replaced with the passive contract — the HFX2-L2 sweep
+  detects missing/stale turn reports mechanically, the HFX2-L4 ladder handles inactivity, and the
+  manager's duty inverts to processing/acking supervisor-injected signals; new watcher-ban line
+  (uniform-mechanism ruling 2026-07-07); Comms "Stdin push" line reworded to name the L2 injector as
+  the delivery mechanism. Doctrine-only change set (5 canonical `skills/` files synced to 9
+  downstream copies, 0 Python); sync-propagated bundle copy of the canonical
+  `skills/l-01-agent-lifecycles/roles/manager.md`. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L5 commit.
 
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
   issue #12): leaf-dispatch-loop section gains a "Seat cleanup" bullet — `worktree_integrate`

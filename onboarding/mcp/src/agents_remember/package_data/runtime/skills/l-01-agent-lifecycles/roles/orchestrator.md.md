@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:55+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
+| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
 
 ## Purpose
 
@@ -19,6 +19,21 @@ decisions go to the architect as one-at-a-time decision items over the operator 
 ## Code Commentary
 
 ### Logic
+
+260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the dispatch-loop
+bullet "monitor turn-report artifacts, nudges, escalation intake" is gone. In its place: "process
+and ack the pending signals the L2 supervisor sweep wakes you with — turn-report artifacts,
+nudges, escalation intake — before ending your turn; you never watch for these yourself," with an
+explicit **watcher ban** (uniform-mechanism ruling 2026-07-07: the supervisor sweep is the one
+mechanism, no seat-local polling/monitoring). The **spirit test survives as the one surviving
+MODEL-judgment duty** — it is explicitly called out as NOT ported down to a watching duty; the
+sentence now reads "apply the spirit test — a model-judgment duty, not a watching one — to
+escalated deltas." The Comms Protocol section gains two changes: the "Stdin push" line is reworded
+to name the L2 supervisor's injector (HFX2-L3) as the actual delivery mechanism (never this seat's
+own initiative), and a new "Idle is safe" bullet states plainly that silence is supervised (the L2
+sweep + L4 ladder), so `lifecycle_turn_end_notification` / ending a turn with nothing pending is
+correct, not a risk to cover by watching — restating the same watcher ban. Pure doctrine reword;
+the underlying sweep/ladder mechanics were already landed by HFX2-L2/L4.
 
 L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
 
@@ -112,6 +127,15 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
+  process-and-ack): "monitor turn-report artifacts, nudges, escalation intake" replaced with the
+  passive process-and-ack contract + watcher ban (uniform-mechanism ruling 2026-07-07); the spirit
+  test is explicitly retained as the one surviving model-judgment (not watching) duty; Comms gains
+  a reworded "Stdin push" line naming the L2 injector and a new "Idle is safe" bullet. Doctrine-only
+  change set (5 canonical `skills/` files synced to 9 downstream copies, 0 Python); sync-propagated
+  bundle copy of the canonical `skills/l-01-agent-lifecycles/roles/orchestrator.md`. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L5 commit.
 
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
   issue #12): "Integration duty (master → super)" gains step 6 — the orchestrator's portfolio-wide
