@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-07-08T16:15+02:00|
+| lastUpdated | 2026-07-08T18:45+02:00|
 | status      | active                 |
 
 ## Purpose
@@ -31,6 +31,7 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:e23cab68a6f2d0b6a724973840cacae02ecee3118528f7b779236047aefd6988` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:9824762923ed605fd470b7f6f5b0d287d117571fba2d150754fd86e4bb83cf93` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/mcp/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | Seat Retirement                     | `git-blob-set-v1` | `sha256:b3d69d4437778acc11270e3a5afa3909b19742e1aaf072a62f65b04b32dc51c7 | `mcp/src/agents_remember/controllers/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`                                                                                                                                                                 |
+| Supervisor Sweep                    | `git-blob-set-v1` | `sha256:b940f1f85fe2b40f957b53963ae9abdae0bcfcab508b8ec068c62c0aa8c01ed8` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/supervisor.py`; `mcp/src/agents_remember/serving/supervisor_heartbeat.py`                                                                                                                                                                                                                                                                                    |
 
 ## Entity Inventory
 
@@ -244,6 +245,21 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Source References            | [retire_policy.py](agents-remember/mcp/src/agents_remember/serving/retire_policy.py); [retire.py](agents-remember/mcp/src/agents_remember/serving/retire.py); [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) L81-L104, L262-L308; [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py); [roles/manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md); [roles/orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md); [260707-HFX-L8 doctrine review](ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/notes/reports/260707-HFX-L8-doctrine-review.md) |
 | Migration Notes              | Should a fourth catalog status value ever be proposed for retirement, it would break the "composes for free with L5 hysteresis" invariant this entity relies on — any future change here should preserve the terminal-mark-plus-provenance shape rather than inventing a parallel status.                                                                                              |
 
+### Supervisor Sweep
+
+| Field                        | Value                                                                                                                                                                                                                                                                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Category                     | Runtime detection/response protocol                                                                                                                                                                                                                                                                                                              |
+| Represents In Reality        | The deterministic, zero-model reconciliation loop hosted in the serving daemon that sweeps authoritative control-plane stores on its own cadence, evaluates mechanical predicates over what it finds, and acts (redeliver, auto-nudge, signal-emit, escalate) — "the model is never the polling layer" (P-15 tiers 1+2) — plus its own self-liveness heartbeat. |
+| Description                  | 260707-HFX2-L2 lands `serving/supervisor.py` (`SupervisorContext`, five R2 predicate families — pane-state, expectation-deadline expiry, turn-report staleness, unacked-row redelivery, seat-liveness — and the R4 action dispatcher, each action logging an `orchestration.supervisor.*` observer event), `serving/pane_signals.py` (the R2a pane-state classifier, distinct from `turn_state.py`'s UI-state classifier over the same captured text), and `serving/supervisor_heartbeat.py` (the R5 self-liveness tick store, issue #15 "the watcher must be code AND watched"). The sweep is hosted as a third decoupled-cadence lifespan task in `serving/app.py` beside the projector and metrics loops, configured by the new `orchestration.supervisor` settings family in `kernel/agentic_settings.py`, and surfaced two ways: a fail-loud MCP-tool banner (`mcp/tools/base.py::_tool_payload`, reading `AmbientLifecycle.root`) and a dashboard header badge (`/api/state`/SSE `supervisorHeartbeat`, `cockpit/Cockpit.tsx`'s `SupervisorHeartbeatBadge`). Level-triggered by design: any event lost anywhere (a dropped push, a crashed dispatch call) is caught by the next sweep — the backstop even protocol-grade push (A2A/MCP) needs. |
+| Canonical Source Of Truth    | `mcp/src/agents_remember/serving/supervisor.py`, `mcp/src/agents_remember/serving/pane_signals.py`, `mcp/src/agents_remember/serving/supervisor_heartbeat.py`, the `orchestration.supervisor` family in `mcp/src/agents_remember/kernel/agentic_settings.py`, and the surfacing call sites in `mcp/src/agents_remember/mcp/tools/base.py` and `mcp/src/agents_remember/serving/app.py`.                                                                                                                                                     |
+| Current Naming Drift         | None yet — this is the entity's introducing leaf. Sibling leaves HFX2-L3 (terminal_paste.py hardening) and HFX2-L4 (the actual escalation ladder) are not yet landed; this entity calls through their current public surfaces only (`deliver_inbox_entry`, `mark_escalated`/`mark_missed`) and builds no ladder itself. |
+| Key Identifiers              | `SupervisorContext`, `SupervisorFinding`/`SupervisorActionResult`, `run_supervisor_sweep`, `classify_pane_signal`, `SupervisorHeartbeatStore`, `supervisor_staleness_banner`, `orchestration.supervisor.{enabled,intervalSeconds,staleCutoffSeconds,redeliverRateLimitSeconds}`, `orchestration.supervisor.*` event kinds, `supervisorBanner`, `supervisorHeartbeat`.                                                                          |
+| Parent / Child Relationships | Reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the nudge store directly (never the projection, R3); gives `orchestration_nudges.missing_artifact()` its first caller and reserves the `ExpectationRowStore.mark_missed`/`OperatorInboxStore.mark_escalated` transitions for HFX2-L4's ladder; hosted by `serving/app.py`'s lifespan; consumed by `mcp/tools/base.py` and the dashboard cockpit.                            |
+| Often Confused With          | The lower-level catalog liveness hysteresis sweep (260707-HFX-L5, `terminal_liveness.py`) — that module only probes tmux/pane aliveness and persists status transitions; this entity is a broader cross-store reconciliation-and-action layer built partly ON TOP of that liveness state (R2e). Also not the escalation ladder itself (HFX2-L4, not yet landed) — this entity only reserves the transition hooks the ladder will read. |
+| Source References            | [supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py); [pane_signals.py](agents-remember/mcp/src/agents_remember/serving/pane_signals.py); [supervisor_heartbeat.py](agents-remember/mcp/src/agents_remember/serving/supervisor_heartbeat.py); [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py); [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py); [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| Migration Notes              | When HFX2-L3/L4 land, this entity's evidence paths and Description should be revisited: L4's actual ladder logic will likely deserve either its own cross-reference here or a merge into this entity's "Response" layer, and L3's `terminal_paste.py` hardening may change the injector contract `_redeliver` calls through. |
+
 ## Cross-Layer Projections
 
 ### Onboarding Unit
@@ -329,6 +345,16 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Doctrine           | `roles/manager.md`/`roles/orchestrator.md` document the authority split for agents calling the tool by hand; `templates/manager-brief.md` names the cleanup default. |
 | Composition        | Rides the pre-existing L5 liveness-hysteresis terminal invariant (`with_liveness_success` never revives `terminated`) rather than adding a new terminal state. |
 
+### Supervisor Sweep
+
+| Layer              | Representation                                                                                            |
+| ------------------ | --------------------------------------------------------------------------------------------------------- |
+| Detection          | Five R2 predicates evaluated every sweep directly over `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the nudge store (never the projection). |
+| Durable record      | `orchestration.supervisor.redeliver`/`.escalate`/`.signal` observer events (plus the reused `orchestration.nudge` kind) under `logs/observer/`; the sweep's own tick row under `logs/observer/workspace/supervisor-heartbeat.json`. |
+| Response            | Redeliver via the L3 injector, auto-nudge with a per-target rate limit, owner-addressed signal-emit, or a reserved hand-off stub for HFX2-L4's escalation ladder. |
+| Self-liveness       | `SupervisorHeartbeatStore` ticks unconditionally at the end of every sweep; surfaced as an MCP-tool banner and a dashboard header badge, silent when never-ticked. |
+| Settings            | `orchestration.supervisor` family in `kernel/agentic_settings.py` (enabled/interval/staleness cutoff/redeliver rate limit), re-read per-use. |
+
 ## Ownership Notes
 
 - This catalog intentionally excludes the eight worktree task files as onboarding subjects.
@@ -338,6 +364,16 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep + predicates): added the `Supervisor
+  Sweep` entity — a new load-bearing cross-layer protocol (predicate library + action executors +
+  self-liveness heartbeat + settings family + MCP-tool and dashboard surfacing) judged against the
+  same bar `Provider Degradation Protocol` (HFX-L7) and `Seat Retirement` (HFX-L8) were added under:
+  a genuine detection/response subsystem crossing multiple package routes (`serving/`, `kernel/`,
+  `mcp/tools/`, `dashboard/`), not a single-file feature. Fingerprint computed via `git hash-object`
+  over the five evidence paths' current worktree content (the code worktree has no commit yet at
+  this leaf; the blob hashes match what `HEAD:<path>` will resolve to once closeout commits land) —
+  `sha256:b940f1f8…`. Added the matching Cross-Layer Projections entry. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L2 commit.
 - 2026-07-08T16:15+02:00 — 260707-HFX2-L1 (curator delta round 2, closeout-preview gap): refreshed
   the `Provider Degradation Protocol` `git-blob-set-v1` fingerprint (`sha256:98247629…`) after this
   leaf's diff touched the entity's shared `operator_inbox_records.py` evidence path. Reviewed the

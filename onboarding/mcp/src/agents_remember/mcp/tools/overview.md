@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-08T14:45+02:00 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`                                      |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00 |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`                                      |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -28,7 +28,12 @@ Server registration imports advertised `*_payload` builders from
 domain controller and validates the result through `base._tool_payload`. Since
 task 27 that choke point also attaches the engine-computed `nextStep` hint (after
 the ambient emission hook) onto every active-lifecycle response, computed by
-`next_step.py`. Task 28 makes `lifecycle_turn_end_notification` the active
+`next_step.py`. **260707-HFX2-L2 (R5)** adds a third thing this same choke point
+surfaces on every call: a `supervisorBanner` string when the serving daemon's
+supervisor-sweep heartbeat has gone stale (`serving.supervisor_heartbeat
+.supervisor_staleness_banner`, exception-contained at the call site) — issue #15's
+"the watcher must be code AND watched" surfaced at the one place every MCP tool
+response already passes through. Task 28 makes `lifecycle_turn_end_notification` the active
 NOTIFY-AND-CONTINUE turn-end tool: `_tool_payload` auto-dismisses an
 `awaiting-developer` lifecycle on the next call (`resume_from_await`, name-guarded
 to skip the notification itself), and `next_step.py`'s active hints repoint onto
@@ -136,9 +141,15 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
 | The next-step engine computes the `nextStep` hint the `_tool_payload` choke point attaches. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 | The linear-half hint delegates to the worktree guidance state machine. | [guidance/lifecycle_guidance](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep, R5, issue #15): the
+  shared `base.py::_tool_payload` choke point gains a third attachment, `supervisorBanner`, surfaced
+  on every public tool response when the serving daemon's supervisor sweep heartbeat has gone
+  stale. No new tool, no module-layout change — see `base.py`'s own sidecar for the exact call
+  shape. Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
 - 2026-07-08T14:45+02:00 — No route impact: 260707-HFX2-L1 adds R1/R2/R4 field extensions and new expectation-row/routing calls inside `gates.py`/`operator_inbox.py`/`terminal.py` (each module's own sidecar documents the change); the route's module layout, tool registry, and facade contract are unchanged.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issues #12/#4): `terminal.py` gains two public builders, `session_retire_payload` and

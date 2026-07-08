@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T05:20+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -21,8 +21,11 @@ contract without rendering React: the bounded sliding-window `pushEvent` behavio
 folding into id-keyed maps, the named-delta upsert/removed paths, whole-object metrics/analytics
 replacement, the connection state channel, and — since 260703-L15 — the **change gate** (idle
 payloads cost zero store writes, identity stays stable) plus the **long-session guard** (500
-simulated idle ticks with event traffic stay flat). The sliding-window test is the task-34 guard
-that the raw Event-River buffer stays bounded.
+simulated idle ticks with event traffic stay flat). Since the 260707-HFX2-L2 fix round, the change
+gate also pins the **`supervisorHeartbeat` no-op/write-through split**: an idle re-snapshot with an
+unchanged heartbeat costs zero writes, but a genuinely advanced heartbeat still rides through as
+exactly one write. The sliding-window test is the task-34 guard that the raw Event-River buffer
+stays bounded.
 
 ## Code Commentary
 
@@ -47,8 +50,18 @@ to an empty baseline (it does NOT reset `events`/`eventsHydrated`, so the event 
 (JSON round-trip, like a real wire parse) with `generatedAt` moved and every volatile age bumped —
 the exact shape of an idle tick. The cases: 50 idle re-snapshots fire ZERO subscriber
 notifications and leave `getState()` the SAME object (lifecycles/analytics/generatedAt identity
-included); a redundant volatile-only `lifecycle` delta and a removed-marker for an absent id are
-both no-writes; a real delta still applies exactly as before; a snapshot carrying ONE real change
+included); an idle re-snapshot with an unchanged `supervisorHeartbeat` (including the `null`/`null`
+case, i.e. no supervisor attached) is also zero store writes and the state object stays identical —
+this pins the `applySnapshot` early-return branch's `heartbeatEquals(a, b)` guard (added in the
+260707-HFX2-L2 fix round) that gates the `set({ supervisorHeartbeat })` call on the heartbeat
+literally changing, comparing `lastTickAt`/`ageSeconds`/`staleCutoffSeconds`/`stale` field-for-field
+rather than reusing the general `stableEquals` helper (which strips `ageSeconds` as a
+`VOLATILE_AGE_FIELDS` entry and would wrongly treat a real tick advance as unchanged); a companion
+case then advances `ageSeconds` on an otherwise-identical heartbeat and asserts exactly ONE
+notification, a new state object, `supervisorHeartbeat` equal to the advanced value, and that
+`lifecycles`/`analytics`/`generatedAt` keep their prior identity — only the heartbeat rode through.
+A redundant volatile-only `lifecycle` delta and a removed-marker for an absent id are both
+no-writes; a real delta still applies exactly as before; a snapshot carrying ONE real change
 applies it while every untouched node keeps identity; and the `servingBuild` stamp rides the
 snapshot and keeps identity across stable re-sends. **The long-session guard describe:** 500
 simulated idle ticks interleaved with 2,500 `pushEvent` lines leave the lifecycles/analytics
@@ -69,6 +82,9 @@ rendered output.
   explicitly so it is independent of prior tests.
 - These are store-contract tests; the Event-River rendering/virtualization is covered separately by
   `../panels/EventRiver.test.tsx`.
+- The two `supervisorHeartbeat` cases pin that `applySnapshot`'s idle early-return branch must use a
+  field-literal comparator (`heartbeatEquals`) for the heartbeat, never `stableEquals` — reusing
+  `stableEquals` would strip `ageSeconds` and silently defeat detection of a genuinely advancing tick.
 
 ### Todos
 
@@ -93,6 +109,7 @@ the bounded buffer documented in the store sidecar.
 | System under test: the Zustand store these reducers belong to. | — | [store.ts](store.ts) |
 | Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | L22-L35 | [store.test.ts](store.test.ts) |
 | Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | L37-L68 | [store.test.ts](store.test.ts) |
+| `supervisorHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | L106-L146 | [store.test.ts](store.test.ts) |
 | Projection / observer-event types the store maps over. | — | [../types/projection.ts](../types/projection.ts) |
 
 ## Cross-Repo References
@@ -107,6 +124,13 @@ No meaningful cross-repo references found. These tests are local to the dashboar
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-07-08T05:36+02:00 — 260707-HFX2-L2 fix round (`260707-HFX2-L2-fix2-report.md`): added two
+  `supervisorHeartbeat` regression cases to the change-gate describe, covering the
+  `store.ts` `applySnapshot` idle-branch fix that gates `set({ supervisorHeartbeat })` on
+  `heartbeatEquals` (field-literal comparison) instead of writing unconditionally on every idle
+  re-snapshot — one case pins the zero-write no-op (incl. `null`/`null`), the other pins the
+  single-write pass-through on a genuine `ageSeconds` advance. Verification metadata pinned until
+  closeout stamps the fix-round commit.
 - 2026-07-07T05:20+02:00 — 260703-L15: added the change-gate describe (`volatileBump` idle-tick
   builder; zero-writes/identity across 50 idle re-snapshots; redundant delta + absent removed-
   marker no-writes; real-delta semantics preserved; per-node identity reuse; `servingBuild`

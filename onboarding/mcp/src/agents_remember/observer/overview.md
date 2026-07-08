@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T14:50+02:00 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00 |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -266,7 +266,10 @@ enclosure-backed work; fleeting/standalone logs (no `taskName`) keep the ordinar
   `ambient()`/`install_ambient`/`require_ambient`/`reset_ambient` registry. Task 28
   adds the `await_developer(*, summary)` / `resume_from_await` NOTIFY-AND-CONTINUE
   turn-end pair (no gate, no wait; a second resume path so `resume` keeps its
-  blocked-only guard).
+  blocked-only guard). 260707-HFX2-L2 adds a read-only `root` property
+  (`self._store.root`) so a consumer outside this route — the MCP tool choke point in
+  `mcp/tools/base.py` — can resolve the observer root and check the sibling `serving/` package's
+  supervisor-sweep heartbeat on every tool call without constructing its own `McpRuntimeConfig`.
 
 The slice-3a projection read side:
 
@@ -427,6 +430,12 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (small): `ambient.py`'s `AmbientLifecycle`
+  gained a read-only `root` property (`self._store.root`) so the MCP tool choke point
+  (`mcp/tools/base.py`) can resolve the observer root and check the sibling `serving/` package's
+  supervisor-sweep heartbeat on every tool call, without constructing its own `McpRuntimeConfig`.
+  One-line accessor, no new state, no change to the write/read-side contract this overview
+  describes. Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
 - 2026-07-08T14:50+02:00 — 260707-HFX2-L1 route impact: R5 projection surfacing —
   `AgentPickupNode` gained the R1 ack/backoff fields + R4 owner fields (already-derived, read
   straight off `OperatorInboxEntry`); a new `ExpectationRowNode` + `Analytics.expectationRows`

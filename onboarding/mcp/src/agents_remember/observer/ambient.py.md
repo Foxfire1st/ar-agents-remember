@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T13:54+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00                      |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -124,6 +124,14 @@ the ticker and the TTL sweep, plus `age_seconds`/`Clock`; `STALE_AFTER_SECONDS`
 attribute, not a module `global`); `ambient()` / `install_ambient` /
 `require_ambient` / `reset_ambient` read and set it.
 
+**260707-HFX2-L2 R5:** `AmbientLifecycle` gained a read-only `root` property returning
+`self._store.root` (the observer store root, `logs/observer`) — a one-line accessor, no new state.
+It exists so the `mcp/tools/base.py::_tool_payload` choke point can resolve the observer root and
+check the supervisor sweep's heartbeat row (`serving/supervisor_heartbeat.py`) opportunistically on
+every tool call, without constructing its own `McpRuntimeConfig` just to find that path. `ambient()`
+was already the process-singleton entry point every tool call goes through, so this reuses that
+existing seam rather than adding a second one.
+
 ## Invariants And Boundaries
 
 - **The model never handles ids.** `start` is guarded; ids are minted and tracked
@@ -165,7 +173,8 @@ attribute, not a module `global`); `ambient()` / `install_ambient` /
 | The state/phase vocabulary, `LifecycleState`, and typed errors this module drives. | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
 | The append-only store the ambient writes events to. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
 | The `ar-observer-event/v1` envelope every signal emits. | [events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
-| The choke point that calls `ambient().emit_tool(...)` for every public tool. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| The choke point that calls `ambient().emit_tool(...)` for every public tool, and (260707-HFX2-L2) reads `.root` to check the supervisor heartbeat. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| The supervisor heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | [serving/supervisor_heartbeat.py](../serving/supervisor_heartbeat.py.md) |
 | The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | [served_store.py](agents-remember/mcp/src/agents_remember/observer/served_store.py) |
 | The `read_ar_files` controller that calls `emit_read_packet` + the `is_served`/`record_served`/`reset_served` dedup surface. | [controllers/read_files.py](agents-remember/mcp/src/agents_remember/controllers/read_files.py) |
 | The heartbeat/stale idiom this generalizes. | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
@@ -176,6 +185,11 @@ attribute, not a module `global`); `ambient()` / `install_ambient` /
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added a read-only `root` property
+  (`self._store.root`) so `mcp/tools/base.py`'s `_tool_payload` choke point can resolve the observer
+  root and surface a stale-supervisor banner on any tool call without its own `McpRuntimeConfig`.
+  No other behavior changed. Verification metadata pinned until closeout stamps the 260707-HFX2-L2
+  commit.
 - 2026-06-28T13:54+02:00 — Task 34: the heartbeat ticker now DECAYS with activity. Added
   `_inactive_seconds_locked()` and the `inactivity_cutoff_seconds` ctor param (+ module consts
   `INACTIVITY_CUTOFF_SECONDS`=600 and `_HEARTBEAT_KIND`); `_emit_locked` stamps `_last_activity_iso`

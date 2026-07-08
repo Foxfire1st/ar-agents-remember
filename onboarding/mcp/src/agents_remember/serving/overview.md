@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T02:55+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`       |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00 |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -60,7 +60,18 @@ text only, `spawn_role` never changes). Live turn-state (`working`/`turn-ended`/
 `stale`) rides the EXISTING `terminal_liveness.py` alive-probe sweep — no new hot loop — classifying
 harness rows from the same `terminal_paste.capture_pane` history-inclusive pane view paste
 verification already uses, and firing `seat_events.py` observer events (`seat.retired`/
-`seat.renamed`/`seat.turn-state-changed`) only on an actual transition.
+`seat.renamed`/`seat.turn-state-changed`) only on an actual transition. **260707-HFX2-L2** adds the
+**deterministic supervisor sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
+third decoupled-cadence lifespan task (`supervisor.py::run_supervisor_sweep`, default ~10s,
+settings-controlled) that reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the
+nudge store DIRECTLY (never the projection), evaluates five mechanical predicates — pane-state
+(new `pane_signals.py`), expectation-deadline expiry, turn-report staleness (`missing_artifact()`
+gets its first caller), unacked-row redelivery, and seat-liveness (the L5/L8 join with graceful
+degradation) — and acts: redeliver via the L3 injector, auto-nudge, owner-addressed signal-emit, or
+hand off to the L4 escalation ladder's reserved stub, logging every action as an
+`orchestration.supervisor.*` observer event. New `supervisor_heartbeat.py` gives the sweep its own
+self-liveness tick row (issue #15, "the watcher must be code AND watched"), surfaced as a fail-loud
+MCP-tool banner (`mcp/tools/base.py`) and a dashboard header badge (`/api/state`/SSE).
 
 ## Hot Path Summary
 
@@ -418,6 +429,25 @@ the only destructive terminal action.
   `kind="harness"` opener resolution — a harness **id** is on the wire, the fixed argv stays here
   or in the fail-loud settings family (the 6d posture). Deliberately *not* a mirror of
   `scripts/sync-skills.py`.
+- `supervisor.py` — the **260707-HFX2-L2** deterministic supervisor sweep: `SupervisorContext` (the
+  one seam every predicate/action reads through — stores + catalog/host/paster, injected directly,
+  never the projection), the five R2 predicate functions (`evaluate_pane_findings`/
+  `evaluate_expectation_findings`/`evaluate_turn_report_findings`/`evaluate_inbox_findings`/
+  `evaluate_seat_liveness_findings`), the R4 action dispatcher (`act_on_finding` →
+  `_redeliver`/`_auto_nudge`/`_signal_emit`, each logging an `orchestration.supervisor.*` event),
+  and `run_supervisor_sweep` (evaluate → act → tick the heartbeat unconditionally, R5). Gives
+  `missing_artifact()` its first caller and reserves the `mark_missed`/`mark_escalated` transitions
+  HFX2-L4's ladder will read. Builds no ladder itself and touches no `terminal_paste.py` internals.
+- `pane_signals.py` — the **260707-HFX2-L2** pane-state classifier (R2a): `classify_pane_signal`
+  answers which of the four P-15 intervention triggers (`never-briefed`/`delivery-stalled`/
+  `mid-turn`/`blocked`) a captured pane shows, reusing `terminal_paste.count_paste_chips` for the
+  chip-count trigger. Distinct from `turn_state.py`'s `classify_turn_state` (a different question
+  over the same captured text — deliberately not merged).
+- `supervisor_heartbeat.py` — the **260707-HFX2-L2** self-liveness primitive (R5, issue #15): an
+  atomic-overwrite single-row `SupervisorHeartbeatStore` (`logs/observer/workspace/
+  supervisor-heartbeat.json`), `heartbeat_age_seconds`, and `supervisor_staleness_banner` (silent
+  when never-ticked, a fail-loud one-liner past the staleness cutoff) — consumed by the MCP tool
+  choke point and the dashboard header payload.
 - `__init__.py` — package docstring only; `delta`/`projector` stay importable without FastAPI.
 
 ## Invariants And Boundaries
@@ -451,6 +481,12 @@ the only destructive terminal action.
   sampler is read-only + dockerless-safe, discovers stacks by ownership label (no settings
   needed, leftover stacks stay visible), runs on its own 30s cadence — never the projection
   tick — and never gates or launches providers; a failed pass logs and retries.
+- **The supervisor sweep is stores-not-projections, code-not-model (260707-HFX2-L2 R1/R3).**
+  `supervisor.py` imports nothing from `projector.py`/`observer/reducer.py`; every predicate reads
+  its store directly. Own decoupled cadence (settings-controlled, default 10s), zero model calls
+  anywhere in the loop, level-triggered (a missed action is caught by the next sweep). The
+  heartbeat's staleness is a volatile age (same posture as `servingBuild`): never gates the
+  `/api/state` ETag revision.
 - **Retirement is a terminal mark, never a new status value (260707-HFX-L8).** A retire rides the
   EXISTING `status == "terminated"` catalog state plus provenance, so it composes for free with the
   L5 liveness hysteresis (never resurrected) and the "never a zombie row" `list()` filter — no new
@@ -473,9 +509,22 @@ the only destructive terminal action.
 | The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
 | The containment metrics sampler + store the lifespan loop drives (260707-HFX-L1 R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
 | The provider degradation detector the sampling loop now also calls once per tick (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
+| The stores the supervisor sweep's predicates read directly (R3): expectation rows, operator inbox, orchestration nudges, and the observer event log the sweep appends `orchestration.supervisor.*` events to. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py); [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [controlplane/orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py); [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
+| The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
+| The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep + predicates, R1-R6):
+  route gains `supervisor.py` (the deterministic sweep — five R2 predicate families, R4 action
+  dispatcher, `run_supervisor_sweep`), `pane_signals.py` (the R2a pane-state classifier), and
+  `supervisor_heartbeat.py` (the R5 self-liveness store). `app.py` gains a third lifespan task
+  (`supervisor_loop`, following the `metrics_loop` template) and `supervisorHeartbeat` on
+  `/api/state`/the SSE snapshot. Gives `missing_artifact()` its first caller and reserves the
+  `mark_missed`/`mark_escalated` transitions for HFX2-L4's ladder. Covered by
+  `test_pane_signals.py` (8 tests) and `test_supervisor.py` (16 tests, including one seeded-drift
+  sweep integration test). Verification metadata pinned until closeout stamps the 260707-HFX2-L2
+  commit.
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issues #12/#4): route gains `retire_policy.py` (server-side retire authority policy),
   `retire.py` (shared retire mechanics), `turn_state.py` (marker-based live turn-state classifier),

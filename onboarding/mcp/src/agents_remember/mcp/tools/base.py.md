@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-08T02:43+02:00                     |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`                                      |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00                     |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`                                      |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -67,6 +67,19 @@ hint path never raises into a tool call. Because this is the single choke point
 every public payload passes through, that one path also gives every MCP response
 a real `tokens`/`tokenizer`/`tokenCountExact` rather than the model defaults.
 
+**260707-HFX2-L2 R5** adds a third thing this one choke point surfaces on every call: after the
+next-step attachment, `_tool_payload` calls `supervisor_heartbeat.supervisor_staleness_banner(amb.root,
+now=datetime.now(UTC), stale_cutoff_seconds=DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS)` (imported from
+`serving.supervisor_heartbeat`; the cutoff constant from `kernel.agentic_settings`) wrapped in a bare
+`try/except Exception: banner = None` — an unreadable/absent heartbeat file must never block a tool
+response. When the sweep's heartbeat tick has gone stale past the cutoff, the result is attached as
+`finalized["supervisorBanner"]` (a short string, e.g. `"supervisor stale 2.3m (past the 60s
+cutoff)"`); a heartbeat that has never ticked (supervisor never run in this workspace) stays silent
+by the helper's own design (see `supervisor_heartbeat.py`'s doc), so this choke point never needs to
+special-case "never ticked" itself. This is issue #15's "the watcher must be code AND watched" —
+the fail-loud surface for the supervisor's OWN liveness, reachable from any seat's next AR call
+regardless of whether it happens to look at the dashboard.
+
 ### Invariants And Boundaries
 
 - `PUBLIC_TOOLS` must match server registration in `server.py` and the public
@@ -88,6 +101,10 @@ a real `tokens`/`tokenizer`/`tokenCountExact` rather than the model defaults.
   next-step attachment. The `tool_name != "lifecycle_turn_end_notification"`
   name-guard is mandatory — it is what keeps the notification from self-dismissing
   in the same call that parked the lifecycle.
+- The supervisor-banner check (260707-HFX2-L2) runs last and is exception-contained by its own
+  `try/except Exception` at the call site (not inside the helper) — a banner failure must never
+  prevent `nextStep`/token accounting from reaching the caller. It is attached only when non-`None`,
+  same pattern as `nextStep`.
 
 ## Repo-Internal References
 
@@ -99,9 +116,16 @@ a real `tokens`/`tokenizer`/`tokenCountExact` rather than the model defaults.
 | The ambient lifecycle the emission hook tags every tool call onto. | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
 | The next-step engine whose hint is attached after emission. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 | The two new public tools' payload builders. | [terminal.py](terminal.py.md) |
+| The supervisor heartbeat store + the `supervisor_staleness_banner` helper this choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
+| The `AmbientLifecycle.root` accessor this helper call resolves the observer root through. | [../../observer/ambient.py](../../observer/ambient.py.md) |
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5, issue #15): `_tool_payload` now
+  attaches `finalized["supervisorBanner"]` when the supervisor heartbeat has gone stale past
+  `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS`, via `supervisor_heartbeat.supervisor_staleness_banner`
+  and `amb.root`; exception-contained at the call site, silent when the supervisor has never ticked.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8: `PUBLIC_TOOLS` now advertises `session_retire` and
   `session_rename` right after `spawn_agent_session`; `_tool_payload` behavior is unchanged.
   Verification metadata pinned until closeout stamps the HFX-L8 commit.
