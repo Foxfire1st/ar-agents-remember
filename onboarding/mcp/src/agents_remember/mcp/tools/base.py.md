@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-04T12:31+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`                                      |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00                     |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`                                      |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -27,7 +27,9 @@ Declares `TRANSPORT = "stdio"`, the `PUBLIC_TOOLS` tuple (advertised MCP tools:
 core/context/runtime/memory/provider/worktree/baseline/carryover/benchmark tools,
 the L9 `attach_terminal_session_to_leaf` hosted-chat/terminal leaf reassignment tool,
 the L2 `spawn_agent_session` agent-facing dispatch tool (create + leaf-attach +
-context-prime a hosted session, listed right after attach), the L3
+context-prime a hosted session, listed right after attach), the 260707-HFX-L8
+`session_retire`/`session_rename` seat-lifecycle tools (listed right after
+`spawn_agent_session`: authority-checked terminate+provenance, and post-spawn identity rename), the L3
 `orchestration_nudge_manager` communication helper,
 the public lifecycle signals `lifecycle_start`/`lifecycle_resume`/
 `lifecycle_turn_end_notification` (task-28 NOTIFY-AND-CONTINUE turn end)/
@@ -96,9 +98,13 @@ a real `tokens`/`tokenizer`/`tokenCountExact` rather than the model defaults.
 | Token-accounting finalizer applied to every dumped payload. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
 | The ambient lifecycle the emission hook tags every tool call onto. | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
 | The next-step engine whose hint is attached after emission. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
+| The two new public tools' payload builders. | [terminal.py](terminal.py.md) |
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8: `PUBLIC_TOOLS` now advertises `session_retire` and
+  `session_rename` right after `spawn_agent_session`; `_tool_payload` behavior is unchanged.
+  Verification metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-04T12:31+02:00 - L3: `PUBLIC_TOOLS` now advertises
   `orchestration_nudge_manager`; `_tool_payload` behavior is unchanged.
   Verification metadata pinned until closeout stamps the L3 commit.

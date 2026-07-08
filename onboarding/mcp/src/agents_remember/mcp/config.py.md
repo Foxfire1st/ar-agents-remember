@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:55+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -104,6 +104,22 @@ or when the live map is empty (the refusal names the operation, the authority
 path, and the stale boot-snapshot ids) and returns the live-map config when
 armed. Stop/status/cleanup paths must not call it — stopping is always legal.
 
+`parse_retirement_settings` (260707-HFX-L8) validates the optional `retirement` object into
+`McpRuntimeConfig.retirement` — a frozen `RetirementSettings(auto_retire_on_integration=True,
+auto_retire_on_finalize=True)`, both defaulting ON per the developer ruling that spawn/cleanup
+symmetry is the happy path (a completed leaf/master should leave zero spent chats without anyone
+remembering to clean up). It follows the same fail-loud-unknown-key discipline as
+`parse_dashboard_settings`: a non-dict `retirement` value, any key outside
+`KNOWN_RETIREMENT_FIELDS` (`autoRetireOnIntegration`, `autoRetireOnFinalize`), or a non-bool value
+for either known field raises `ConfigError`. `config_from_mapping` calls
+`parse_retirement_settings(data.get("retirement"))` and threads the result into the constructed
+`McpRuntimeConfig`. This is a deliberate design choice, not an oversight: `retirement` stays a
+LOCAL MCP-authority boot-snapshot setting (like `dashboard`), NOT the global agentic-orchestration
+settings file (unlike `orchestration.gateDelegation`, which moved there in 260703-L13) — these are
+per-process server-behavior toggles for THIS server's completion-edge hooks
+(`worktree_integrate_tool`/`lifecycle_finalize_task_tool`'s `_auto_retire_completed_seats` calls in
+`controllers/worktree_tools.py`), not portfolio-wide policy.
+
 ### Invariants And Boundaries
 
 - MCP settings are the authority for the server path.
@@ -135,6 +151,10 @@ armed. Stop/status/cleanup paths must not call it — stopping is always legal.
   `require_provider_launch_authority`, which re-reads the on-disk file
   fail-closed (unreadable/invalid ⇒ refusal, never a snapshot fallback).
   Stop/status/cleanup operations are never gated on the reload.
+- `retirement` accepts only `KNOWN_RETIREMENT_FIELDS` (`autoRetireOnIntegration`,
+  `autoRetireOnFinalize`) with the same fail-loud rejection as `dashboard`/`timeoutCaps`; both
+  fields default to `True` — existing settings files with no `retirement` key keep auto-retire ON,
+  not off, unlike `dashboard`'s off-by-default posture.
 
 ## Repo-Internal References
 
@@ -149,11 +169,20 @@ armed. Stop/status/cleanup paths must not call it — stopping is always legal.
 | The agentic-settings loader supplying the boot-snapshot gateDelegation and the shared `parse_gate_delegation`. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | Launch-authority consumers: worktree start, watcher/query gating, benchmark filtering, runtime rebind derivation. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py); [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py); [benchmark_tools.py](agents-remember/mcp/src/agents_remember/controllers/benchmark_tools.py); [install/runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 | Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
+| `RetirementSettings`/`config.retirement` is consumed by the two completion-edge auto-retire hooks. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
 ## Update History
 
+- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity +
+  turn-state): added `KNOWN_RETIREMENT_FIELDS`, the frozen `RetirementSettings` dataclass
+  (`auto_retire_on_integration`/`auto_retire_on_finalize`, both default `True`), the
+  `McpRuntimeConfig.retirement` field, and `parse_retirement_settings` (same fail-loud-unknown-key
+  pattern as `parse_dashboard_settings`); `config_from_mapping` now threads
+  `parse_retirement_settings(data.get("retirement"))` into the constructed config. `retirement`
+  deliberately stays a local MCP-authority boot-snapshot setting, not the global agentic settings
+  file. Verification metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `config_from_mapping` now parses
   the optional `providerDegradation` block through the new dedicated
   `provider_degradation_settings.parse_provider_degradation_settings` (wrapped into `ConfigError`)

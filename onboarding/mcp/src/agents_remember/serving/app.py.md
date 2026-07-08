@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:00+02:00                    |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:55+02:00                    |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,7 +29,9 @@ detached tmux session — a shell or a detected harness (6e-2a/6e-2b), and since
 MCP tool spawn through ONE opener — the L5/L9
 `POST /api/terminal/{session}/attach-leaf` leaf-claim/move route, the **L2**
 `POST /api/terminal/{session}/paste` server-side capture-verified context-packet paste, the `GET /api/harnesses` detection
-endpoint (6e-2b), image upload under a live or catalog-restored cwd, the read-only `/api/files/*` files API
+endpoint (6e-2b), the **260707-HFX-L8** `POST /api/terminal/{session}/retire` (server-authoritative
+seat retirement with authority policy) and `POST /api/terminal/{session}/rename` (post-spawn
+identity rename) endpoints, image upload under a live or catalog-restored cwd, the read-only `/api/files/*` files API
 (operations-integration L1) and the read-only `/api/changeset/*` change-set API (L3) — both registered
 just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
@@ -48,7 +50,10 @@ fresh one; tests inject a fake for the paste endpoint). Since **260707-HFX-L5** 
 catalog-liveness wiring: `liveness_clock = now or utc_now` (ONE timestamp base per app instance —
 sim/replay wires its replay clock through liveness too, the L5R2 fix), one
 `TerminalCatalogLivenessConfig` (the code-default hysteresis knobs), and one
-`TerminalCatalogLivenessSweeper(catalog, host, now=now, config=…)` shared by the sessions endpoint;
+`TerminalCatalogLivenessSweeper(catalog, host, now=now, config=…,
+on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry))`
+shared by the sessions endpoint — the **260707-HFX-L8** callback is what turns a sweep-detected live
+turn-state transition into an `ar-observer-event/v1` record without adding a second code path;
 attach + paste run direct per-row `observe_terminal_liveness` calls with `checked_at=liveness_clock()`.
 It wires a FastAPI `lifespan` that `prime()`s the projector
 (one initial projection), runs its tick loop as a task beside the provider metrics sampling task,
@@ -186,6 +191,21 @@ the loop it already owns.
 - `POST /api/terminal/{session}/terminate` is the destructive terminal action. It accepts either a live
   host session or a catalog row, kills the tmux session through `TerminalHost.terminate`, marks the
   catalog row `terminated`, and returns `404 unknown-session` only when neither exists.
+- `POST /api/terminal/{session}/retire` (**260707-HFX-L8**, issue #12) is the server-authoritative
+  seat retirement surface: a `TerminalRetireRequest` (`actorSession` alias, `reason` default
+  "manual retire"). 404 `unknown-session`/`unknown-actor` when either row is missing; if the target
+  is already `terminated` it short-circuits to `200 already-retired` with its existing provenance
+  BEFORE any authority check (idempotent, read-only fast path); otherwise `check_retire_authority`
+  runs against `SeatRef`s built from each entry's `spawn_role`/`leaf_key` (via `master_of`) — a
+  `RetirePolicyError` returns `403 retire-refused` with `detail` naming the exact clause; on success
+  `retire_entry` kills the tmux session + persists the terminal mark, `log_retire_event` fires, and
+  the route returns `200 retired` + the four retirement provenance fields. Same underlying
+  `retire_entry`/`check_retire_authority` mechanics as the `session_retire` MCP tool
+  (`mcp/tools/terminal.py`) so the dashboard-button path and the agent-tool path retire identically.
+- `POST /api/terminal/{session}/rename` (**260707-HFX-L8**, issue #4) is the post-spawn identity
+  surface: a `TerminalRenameRequest` (`label`). `404 unknown-session` when the row is missing or
+  already `terminated`; else `catalog.set_label` + `log_rename_event`, returns `200 renamed` +
+  `label`/`spawnedLabel`. Identity text only — never touches `spawn_role` (L6 immutability).
 - `GET /api/harnesses` (slice 6e-2b; effective registry 260703-L16) returns
   `{"harnesses":[{id,name,detected}]}` from `serving.harnesses.detect_harnesses(registry=...)`
   (`shutil.which` per harness) over the EFFECTIVE registry — the builtin table merged with
@@ -298,9 +318,20 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The CLI adapter that builds and serves this app (and wires sim). | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
 | The central containment metrics store + sampler the lifespan loop drives (containment R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
 | The provider degradation detector this loop calls once per tick after recording a metrics sample (260707-HFX-L7). | evaluate_provider_degradation | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
+| The retire/rename mechanics + authority policy the two new endpoints call into (260707-HFX-L8). | `retire_entry`; `check_retire_authority`/`SeatRef`/`master_of` | [retire.py](retire.py); [retire_policy.py](retire_policy.py) |
+| The observer-event loggers the retire/rename endpoints and the turn-state sweeper callback fire. | `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | [seat_events.py](seat_events.py) |
 
 ## Update History
 
+- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state):
+  new `TerminalRetireRequest`/`TerminalRenameRequest` models and two new routes,
+  `POST /api/terminal/{session}/retire` (authority-checked via `check_retire_authority`, idempotent
+  already-retired fast path, 403 retire-refused with a named policy clause on refusal) and
+  `POST /api/terminal/{session}/rename` (identity text only). `create_app`'s
+  `TerminalCatalogLivenessSweeper` construction gained `on_turn_state_change=lambda observation:
+  log_turn_state_change_event(config, observation.entry)`, wiring sweep-detected turn-state
+  transitions into observer events. Verification metadata pinned until closeout stamps the HFX-L8
+  commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): the metrics sampling loop's `try`
   block now also calls `await asyncio.to_thread(evaluate_provider_degradation, config)` right
   after `metrics_store.record(snapshot)`, sharing the loop's existing exception-tolerant handling.

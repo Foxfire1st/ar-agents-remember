@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`       |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:55+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`       |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -50,7 +50,17 @@ spawned-by provenance columns for the orchestration tree (L14 adds `spawn_role` 
 written only when AR_SPAWN_ROLE is set, preserved on re-open, riding the sessions wire for the
 chats command tree). Run via
 `agents-remember dashboard` (the `cli/` umbrella); `--sim` replays a recorded fixture
-through the byte-identical path.
+through the byte-identical path. **260707-HFX-L8** adds the seat-lifecycle surface (issues #12/#4):
+`POST /api/terminal/{session}/retire` and `POST /api/terminal/{session}/rename` — server-authoritative
+retirement (kill tmux + a retirement-provenance mark layered on the existing `terminated` status,
+authority enforced via `retire_policy.check_retire_authority`: owner-never-self-retires, a manager
+retires only worker/reviewer seats of its own master, the orchestrator retires anything) and
+post-spawn identity rename (`spawned_label` freezes the original label on first rename, identity
+text only, `spawn_role` never changes). Live turn-state (`working`/`turn-ended`/`awaiting-input`/
+`stale`) rides the EXISTING `terminal_liveness.py` alive-probe sweep — no new hot loop — classifying
+harness rows from the same `terminal_paste.capture_pane` history-inclusive pane view paste
+verification already uses, and firing `seat_events.py` observer events (`seat.retired`/
+`seat.renamed`/`seat.turn-state-changed`) only on an actual transition.
 
 ## Hot Path Summary
 
@@ -154,7 +164,14 @@ the only destructive terminal action.
   `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), `POST /api/terminal/{session}/image`
   (6f — save a validated screenshot under `<cwd>/.dashboard-pastes/<uuid>.<ext>` using either a live host
   session cwd or a catalog-restored cwd so the composer can inject its path; the terminal channel is
-  text-only), and the static mount.
+  text-only), `POST /api/terminal/{session}/retire` (**260707-HFX-L8**, issue #12 — the
+  server-authoritative retire surface: 404 unknown-session/unknown-actor, 200 `already-retired`
+  idempotent fast-path on an already-terminated target BEFORE any authority check, 403
+  `retire-refused` naming the exact policy clause via `retire_policy.check_retire_authority`, else
+  `retire.retire_entry` kills tmux + marks the catalog row + `seat_events.log_retire_event`),
+  `POST /api/terminal/{session}/rename` (**260707-HFX-L8**, issue #4 — 404 unknown-session on a
+  missing/terminated target, else `catalog.set_label` + `seat_events.log_rename_event`; identity
+  text only, never `spawn_role`), and the static mount.
   SSE uses built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`).
 - `daemon.py` — the dashboard daemon supervisor (260703 L2): `ensure()` adopts a healthy detached
   daemon, spawns a missing one, and restarts on version/host/port mismatch, behind one
@@ -318,7 +335,37 @@ the only destructive terminal action.
   command-failure storm cannot mass-exit a live fleet), definitive `pane-gone` marks fast, and a
   falsely exited row self-heals to `running` within one sweep (exited rows are probed too;
   `terminated` is never revived). Constants are code defaults, not settings knobs. Replaces
-  `app.py`'s deleted `_refresh_catalog_entries`.
+  `app.py`'s deleted `_refresh_catalog_entries`. **260707-HFX-L8** folds live turn-state
+  classification into the SAME alive-probe call (`_observe_alive`, no new hot loop, no new tmux
+  round-trip cadence): `kind == "harness"` rows only get `terminal_paste.capture_pane` +
+  `turn_state.classify_turn_state` on every ALIVE observation, persisted via
+  `catalog.record_turn_state`; `TerminalLivenessObservation.turn_state_changed` is true only on an
+  actual transition, and `TerminalCatalogLivenessSweeper` gained an `on_turn_state_change` callback
+  (wired in `app.py`'s `create_app` to `seat_events.log_turn_state_change_event`) fired only for
+  those transitioning rows, never per sweep tick.
+- `retire_policy.py` — the **260707-HFX-L8** server-side retire authority policy: `SeatRef`,
+  `master_of(leaf_key)` (the qualified leaf key's 2nd path segment — uniform for a leaf-level or
+  master-level `leaf_key`), `check_retire_authority(actor, target)` (owner-never-self-retires
+  checked FIRST unconditionally; a manager may retire only worker/reviewer seats of its own master;
+  only the orchestrator has portfolio-wide authority; every refusal names the exact clause via
+  `RetirePolicyError`).
+- `retire.py` — the **260707-HFX-L8** shared retire mechanics: `retire_entry` (kill the tmux session
+  best-effort/idempotent, then `catalog.mark_retired`) and `retire_seats_for_leaf` (auto-retire every
+  non-terminated seat bound to a leaf key whose `spawn_role` is in a caller-supplied role set,
+  `by_session=None` for the automation paths) — used identically by the manual retire routes/tool and
+  the `worktree_integrate`/`lifecycle_finalize_task` completion-edge hooks (`controllers/worktree_tools.py`).
+- `turn_state.py` — the **260707-HFX-L8** live turn-state classifier: `classify_turn_state(pane_text,
+  harness=)` is marker-regex-based (precedence working > awaiting-input > turn-ended > stale; blank/
+  unreadable pane ⇒ `stale`), with empty per-harness override dicts ready for future tuning. Rides
+  the EXISTING `terminal_liveness.py` sweep cadence via `terminal_paste.capture_pane` — no new
+  tmux round-trip. Patterns are a first-cut, not verified against live harness panes (reviewer F2,
+  accepted, folded into a follow-up calibration task — the classifier is fed the full history-inclusive
+  capture rather than just the pane tail).
+- `seat_events.py` — the **260707-HFX-L8** observer-event emitters for the seat surface:
+  `log_retire_event`/`log_rename_event`/`log_turn_state_change_event` write `ar-observer-event/v1`
+  records (`seat.retired`/`seat.renamed`/`seat.turn-state-changed`) mirroring the existing
+  `orchestration_nudge_manager` event-logging pattern, feeding the watcher/architect
+  NEEDS-ATTENTION feed.
 - `terminal_leaf_assignment.py` — the shared L9 catalog reassignment helper: moves an existing catalog row
   to a new durable `leafKey`, returns `leaf-taken` without mutation when another running same-role session
   owns the target leaf, and is reused by the dashboard route and MCP tool.
@@ -354,7 +401,10 @@ the only destructive terminal action.
   fake-driven and sleepless in tests. Never submits an unconfirmed paste; never raises on a gone
   session. Backs the `spawn_agent_session` context delivery, the
   `POST /api/terminal/{session}/paste` endpoint, and the inbox hosted push (whose durable failure
-  detail embeds a bounded capture tail).
+  detail embeds a bounded capture tail). **260707-HFX-L8** adds the public `capture_pane(tmux_name)`
+  wrapper around the existing private `_tmux_capture_pane`, so turn-state classification
+  (`terminal_liveness.py`) reads the identical history-inclusive pane view paste verification
+  already uses — one capture-command shape in the codebase, not two.
 - `harnesses.py` — the **harness launch registry + per-harness knob mapping** (slice 6e-2b;
   260703-L16): the curated `HARNESSES` set (Claude Code / Codex / Pi.dev) + `find_harness` /
   `is_detected` / `detect_harnesses` (injectable, call-time `shutil.which`; both accept an injected
@@ -401,6 +451,14 @@ the only destructive terminal action.
   sampler is read-only + dockerless-safe, discovers stacks by ownership label (no settings
   needed, leftover stacks stay visible), runs on its own 30s cadence — never the projection
   tick — and never gates or launches providers; a failed pass logs and retries.
+- **Retirement is a terminal mark, never a new status value (260707-HFX-L8).** A retire rides the
+  EXISTING `status == "terminated"` catalog state plus provenance, so it composes for free with the
+  L5 liveness hysteresis (never resurrected) and the "never a zombie row" `list()` filter — no new
+  interplay logic. Retire authority is enforced server-side, never trusted from the caller; refusals
+  are loud and name the exact policy clause. Rename is identity text only — `spawn_role` (L6
+  role-seat immutability) never changes on a rename. Turn-state classification is best-effort and
+  fail-safe (an unreadable/blank pane classifies `stale`, never raises) — it rides the existing L5
+  sweep cadence and classifies `kind == "harness"` rows only, never plain terminals.
 
 ## Repo-Internal References
 
@@ -418,6 +476,19 @@ the only destructive terminal action.
 
 ## Update History
 
+- 2026-07-08T02:55+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
+  turn-state, issues #12/#4): route gains `retire_policy.py` (server-side retire authority policy),
+  `retire.py` (shared retire mechanics), `turn_state.py` (marker-based live turn-state classifier),
+  and `seat_events.py` (observer event emitters); `app.py` gains `POST /api/terminal/{session}/retire`
+  and `POST /api/terminal/{session}/rename`; `terminal_catalog.py` gains retirement provenance +
+  `spawned_label` + `turn_state`/`turn_state_changed_at` columns and their copiers/write-points;
+  `terminal_liveness.py` folds turn-state classification into the existing alive-probe sweep (no new
+  hot loop) and gains an `on_turn_state_change` callback; `terminal_paste.py` gains the public
+  `capture_pane` wrapper reused by the classifier. Covered by `test_seat_lifecycle.py` (45 tests / 5
+  subtests). R2 fix round (F1, `controllers/worktree_tools.py`) widened the auto-retire completion-edge
+  guard to the whole retire body so a catalog I/O fault can never fail an already-succeeded
+  integrate/finalize — see that file's own sidecar for detail (out of this route's file list).
+  Verification metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `app.py`'s metrics sampling loop
   now also calls `await asyncio.to_thread(evaluate_provider_degradation, config)` right after
   recording the metrics snapshot, sharing the loop's existing exception-tolerant handling and 30s

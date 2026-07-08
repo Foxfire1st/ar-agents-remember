@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-07T20:50+02:00                       |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`   |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00                       |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`   |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -55,6 +55,19 @@ the `ownerSession` set on `leaf-taken`, the context-delivery outcome (`contextDe
 outcome reports `False`; absent on full success — a blind seat is diagnosed from the payload
 itself, never trusted from a bare boolean), and a `detail` for the refusals.
 
+**Seat lifecycle (260707-HFX-L8)** adds two new strict response contracts. `SessionRetireStatus =
+Literal["retired","already-retired","unknown-session","unknown-actor","retire-refused"]`;
+`SessionRetireResponse` models `session_retire` (issue #12): `operation: Literal["session_retire"]`,
+`status`, `session`, and the four retirement provenance fields
+`retiredAt`/`retiredBySession`/`retiredReason`/`retiredEdge` (all `None`-default, populated on
+success/already-retired), plus `detail` (populated on `retire-refused`, naming the exact
+authority-policy clause `check_retire_authority` raised). `ok` is true for `retired`/
+`already-retired` (idempotent), false for every refusal status. `SessionRenameStatus =
+Literal["renamed","unknown-session"]`; `SessionRenameResponse` models `session_rename` (issue #4):
+`operation: Literal["session_rename"]`, `status`, `session`, `label`/`spawnedLabel` (`None`-default).
+Identity text only — `spawn_role` (the L6 role-seat-immutability field) never appears in this
+response because a rename never touches it.
+
 ### Conventions
 
 The model duplicates the status literal locally rather than importing the serving helper, keeping the
@@ -87,6 +100,8 @@ No relevant external/domain documentation found; this is an internal response co
 | The spawn payload builder returns the `SpawnAgentSessionResponse` fields incl. leaf-ref refusals, spawned-by provenance, and context-delivery outcome. | spawn_agent_session_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
 | The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | L82-L88; L111-L114 | [tool_registry.py](tool_registry.py) |
 | Conformance coverage includes a representative missing-session (attach) and unknown-harness (spawn) refusal payload for the models. | L88-L107 | [../../../tests/test_tool_response_conformance.py](../../../tests/test_tool_response_conformance.py) |
+| `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | session_retire_payload; session_rename_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
+| The response registry maps `session_retire`/`session_rename` to these strict models. | TOOL_RESPONSE_MODELS | [tool_registry.py](tool_registry.py) |
 
 ## Cross-Repo References
 
@@ -98,6 +113,13 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state):
+  added `SessionRetireStatus`/`SessionRetireResponse` (issue #12) and `SessionRenameStatus`/
+  `SessionRenameResponse` (issue #4) — both strict `ToolResponse` subclasses following the existing
+  local-status-literal convention. `SessionRetireResponse` carries the four retirement provenance
+  fields (`retiredAt`/`retiredBySession`/`retiredReason`/`retiredEdge`) plus `detail` for the
+  authority-refusal case; `SessionRenameResponse` carries `label`/`spawnedLabel` only — identity
+  text, never `spawn_role`. Verification metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): `SpawnAgentSessionResponse`
   gained `deliveryCapture` (`str | None = None`) — the final pane capture attached whenever any
   delivery outcome reports `False`, absent on full success — and the delivery-field comments now

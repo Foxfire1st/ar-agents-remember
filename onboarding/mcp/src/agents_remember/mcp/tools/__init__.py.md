@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T12:31+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`                                        |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00                     |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`                                        |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -23,7 +23,8 @@ module — not from `.worktree`.
 Re-exports the shared constants and `_tool_payload` from `base`, and every
 `*_payload` builder from the domain submodules (`core`, `gates`, `lifecycle`,
 `lifecycle_finalize`, `memory`, `operator_inbox`, `orchestration`, `providers`, `terminal`, `worktree`, `benchmark`,
-`task_doc`).
+`task_doc`). 260707-HFX-L8 adds `session_rename_payload`/`session_retire_payload` to the `terminal`
+import block and `__all__`, exactly per the documented re-export pattern.
 Task 25 keeps the split gate/block/wait builders re-exported for internal
 compatibility and tests while making `lifecycle_gate_payload` the only public
 agent-facing gate junction. `__all__` lists the full builder import surface, not
@@ -49,10 +50,14 @@ only the advertised MCP tools.
 | The inbox payload builders re-exported by this facade. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
 | The orchestration nudge payload builder re-exported by this facade. | [orchestration.py](agents-remember/mcp/src/agents_remember/mcp/tools/orchestration.py) |
 | The lifecycle finalizer payload builder re-exported by this facade. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
-| The terminal payload builders (`attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`) re-exported by this facade. | [terminal.py](terminal.py) |
+| The terminal payload builders (`attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) re-exported by this facade. | [terminal.py](terminal.py) |
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — No content impact: 260707-HFX-L8 adds `session_rename_payload`/
+  `session_retire_payload` to the `terminal` import block and `__all__` exactly per the documented
+  re-export pattern; the facade contract this sidecar describes is unchanged. Verification metadata
+  pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-04T12:31+02:00 - L3: the new `orchestration` tools submodule joins
   the facade exports with `orchestration_nudge_manager_payload`, preserving the
   package-wide import surface pattern. Verification metadata pinned until

@@ -24,7 +24,10 @@
     "mcp/src/agents_remember/serving/leaf_ref_validation.py",
     "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/projector.py",
+    "mcp/src/agents_remember/serving/retire.py",
+    "mcp/src/agents_remember/serving/retire_policy.py",
     "mcp/src/agents_remember/serving/scope.py",
+    "mcp/src/agents_remember/serving/seat_events.py",
     "mcp/src/agents_remember/serving/sim.py",
     "mcp/src/agents_remember/serving/static.py",
     "mcp/src/agents_remember/serving/terminal.py",
@@ -32,11 +35,12 @@
     "mcp/src/agents_remember/serving/terminal_leaf_assignment.py",
     "mcp/src/agents_remember/serving/terminal_liveness.py",
     "mcp/src/agents_remember/serving/terminal_opener.py",
-    "mcp/src/agents_remember/serving/terminal_paste.py"
+    "mcp/src/agents_remember/serving/terminal_paste.py",
+    "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 23,
-    "fileSidecars": 23,
+    "sourceFilesInScope": 27,
+    "fileSidecars": 27,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -67,13 +71,19 @@
     "notes",
     "opener",
     "paste",
+    "policy",
     "projector",
     "ref",
     "remember",
+    "retire",
+    "retire_policy",
     "scope",
+    "seat",
+    "seat_events",
     "serving",
     "sim",
     "src",
+    "state",
     "static",
     "terminal",
     "terminal_catalog",
@@ -81,6 +91,8 @@
     "terminal_liveness",
     "terminal_opener",
     "terminal_paste",
+    "turn",
+    "turn_state",
     "validation"
   ],
   "hotPath": {
@@ -101,15 +113,15 @@
       "mcp/src/agents_remember/serving/leaf_ref_validation.py",
       "mcp/src/agents_remember/serving/notes.py",
       "mcp/src/agents_remember/serving/projector.py",
+      "mcp/src/agents_remember/serving/retire.py",
+      "mcp/src/agents_remember/serving/retire_policy.py",
       "mcp/src/agents_remember/serving/scope.py",
+      "mcp/src/agents_remember/serving/seat_events.py",
       "mcp/src/agents_remember/serving/sim.py",
       "mcp/src/agents_remember/serving/static.py",
       "mcp/src/agents_remember/serving/terminal.py",
       "mcp/src/agents_remember/serving/terminal_catalog.py",
-      "mcp/src/agents_remember/serving/terminal_leaf_assignment.py",
-      "mcp/src/agents_remember/serving/terminal_liveness.py",
-      "mcp/src/agents_remember/serving/terminal_opener.py",
-      "mcp/src/agents_remember/serving/terminal_paste.py"
+      "mcp/src/agents_remember/serving/terminal_leaf_assignment.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -140,8 +152,14 @@
       "notes",
       "projector.py",
       "projector",
+      "retire.py",
+      "retire",
+      "retire_policy.py",
+      "retire_policy",
       "scope.py",
       "scope",
+      "seat_events.py",
+      "seat_events",
       "sim.py",
       "sim",
       "static.py",
@@ -153,13 +171,7 @@
       "terminal_leaf_assignment.py",
       "terminal_leaf_assignment",
       "terminal_liveness.py",
-      "terminal_liveness",
-      "terminal_opener.py",
-      "terminal_opener",
-      "terminal_paste.py",
-      "terminal_paste",
-      "agents-remember dashboard --config <settings.json>",
-      "cli/dashboard.py"
+      "terminal_liveness"
     ]
   },
   "fallback": {

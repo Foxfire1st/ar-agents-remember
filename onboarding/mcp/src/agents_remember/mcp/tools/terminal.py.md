@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T20:50+02:00                            |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`        |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00                            |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`        |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -93,6 +93,34 @@ frozen `_HarnessDispatch` bundle or a refusal, with `_knob_refusal` for the mode
 step 6 is `_brief_packet` (keyword prepending) + `_deliver_spawn_pastes` (session commands then
 brief, returning `_SpawnDelivery`); the `spawned` response dict is `_spawned_payload`.
 
+**Seat lifecycle (260707-HFX-L8, issues #12/#4)** adds two more agent-facing payload builders,
+sharing this file's transport-thin posture — both delegate the actual mechanics to `serving/`.
+`session_retire_payload(config, *, actor_session_id, session_id, reason="manual retire", host=None)`:
+looks up target + actor rows via `TerminalCatalog.get` (`unknown-session`/`unknown-actor` `ok:
+false` when either id has no catalog row); if the target is already `terminated` it short-circuits
+to `already-retired` (`ok: true`, existing provenance echoed, never re-stamped — idempotent); else
+it builds `SeatRef`s from each row's `spawn_role`/`leaf_key` (`master_of(leaf_key)` derives the
+master identity) and calls `check_retire_authority` — a `RetirePolicyError` returns `ok: false`,
+`status: "retire-refused"`, `detail` naming the exact clause (owner-never-self-retires /
+manager-scoped-to-own-master / no-retire-authority); on success it calls `retire.retire_entry`
+(kills the tmux session via `TerminalHost.terminate`, best-effort/idempotent against an
+already-gone session, then `catalog.mark_retired`) and `seat_events.log_retire_event`, returning
+`status: "retired"` plus the full retirement provenance. `session_rename_payload(config, *,
+session_id, label)`: `unknown-session` when the row is missing OR already terminated (a retired
+seat cannot be renamed), else `catalog.set_label` + `log_rename_event`, returning the new `label`
+and `spawnedLabel` (the frozen original, set on the first rename only). Both return through the
+same `_tool_payload` envelope every other builder in this file uses.
+
+Design note carried from the builder/reviewer record: `actor_session_id` is SELF-DECLARED by the
+caller, mirroring `spawn_agent_session`'s `spawned_by_session` provenance pattern — there is no
+ambient "who is calling me" session-id resolution anywhere in this codebase (`AR_SPAWN_ROLE` is
+only ever read from an explicit `env` dict passed to a *child* at spawn, never the caller's own
+env). This means `session_retire` trusts the caller's self-declaration for AUTHORITY, not merely
+provenance; both the builder and the adversarial reviewer flagged and accepted this as a residual
+risk for this leaf (recoverable action — transcripts preserved, seat re-spawnable; logged; existing
+precedent in `spawn_agent_session`), worth a stronger identity-binding pass if/when an ambient
+session-identity primitive is built.
+
 ### Conventions
 
 Builders stay transport-thin: durable spawn/paste behavior lives in `serving.terminal_opener` +
@@ -161,6 +189,10 @@ catalog.
 | The facade re-exports both payload builders. | L86; L94 | [__init__.py](__init__.py) |
 | The FastMCP server registers `attach_terminal_session_to_leaf` and the L2 `spawn_agent_session(harness, leaf_key, context, submit, model, effort, env, …)`. | L146-L189 | [../server.py](../server.py) |
 | The strict response models (`AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`) are registered for conformance validation. | L82-L88; L111-L114 | [../../models/tool_registry.py](../../models/tool_registry.py) |
+| `session_retire_payload`/`session_rename_payload` delegate the actual catalog/tmux mechanics to `retire_entry`/`TerminalCatalog.set_label` and the authority check to `check_retire_authority`/`SeatRef`/`master_of`. | `retire_entry`; `check_retire_authority` | [../../serving/retire.py](../../serving/retire.py); [../../serving/retire_policy.py](../../serving/retire_policy.py) |
+| Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | [../../serving/seat_events.py](../../serving/seat_events.py) |
+| The strict `SessionRetireResponse`/`SessionRenameResponse` response models these two builders conform to. | `SessionRetireResponse`; `SessionRenameResponse` | [../../models/terminal.py](../../models/terminal.py) |
+| Failing-first tests for the retire policy matrix, idempotent retire, and rename provenance/role-immutability. | `test_seat_lifecycle.py` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
 
 ## Cross-Repo References
 
@@ -172,6 +204,15 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity): two new
+  payload builders, `session_retire_payload` (authority-checked retire: unknown-session/
+  unknown-actor/already-retired/retire-refused/retired statuses, kills the tmux session + persists
+  retirement provenance, idempotent) and `session_rename_payload` (unknown-session/renamed,
+  identity text only). Both delegate mechanics to the new `serving/retire.py` + `retire_policy.py` +
+  `seat_events.py` modules and conform to the new `SessionRetireResponse`/`SessionRenameResponse`
+  models. `actor_session_id` is self-declared (no ambient caller-identity resolution exists in this
+  codebase) — an accepted residual risk per the leaf's builder/reviewer record. Verification
+  metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2: a False outcome never ships evidence-less —
   `_deliver_spawn_pastes` gained a `failed` flag and the explicit `"(empty pane capture)"` marker
   (wording aligned with `inbox_delivery`) so `deliveryCapture` is present on every failure, and the

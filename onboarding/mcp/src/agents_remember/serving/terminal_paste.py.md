@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-07T23:20+02:00                                  |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`              |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00                                  |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`              |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Purpose
@@ -83,6 +83,13 @@ a codex session (260707-HFX-L3 run discipline, dispatch-pack PASTE DISCIPLINE) �
 key this seam ever sends. It never raises on a missing/gone session — an unverifiable delivery
 reports `delivered=False` with the final pane capture attached.
 
+**`capture_pane(tmux_name)` (260707-HFX-L8)** is a new PUBLIC wrapper around the existing PRIVATE
+`_tmux_capture_pane` — added so live turn-state classification (`terminal_liveness.py`'s
+`_observe_alive`) reads the IDENTICAL history-inclusive pane view (`-S -200`) that paste
+verification already uses, rather than growing a second capture-command shape. It carries no new
+behavior of its own; it exists purely to make the one existing capture primitive callable from
+outside this module.
+
 ### Conventions
 
 The `terminal.py` injectable-seam posture: every side-effecting tmux op is a constructor-injected
@@ -108,6 +115,9 @@ collide.
 - The payload rides stdin into `tmux load-buffer -` — never argv — so packet size is unbounded by
   ARG_MAX and free of shell-quoting seams.
 - No PTY client is attached; this operates on the durable tmux session by name over tmux CLI primitives.
+- `capture_pane` is the only sanctioned external entry point for raw pane text; a future caller
+  needing pane text (as `terminal_liveness.py` now does) uses this public wrapper, never the
+  private `_tmux_capture_pane` directly.
 
 ### Todos
 
@@ -131,6 +141,7 @@ No relevant external/domain documentation defines this local paste policy; the f
 | It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop. | — | [../../../../dashboard/src/data/terminal.ts](../../../../dashboard/src/data/terminal.ts) |
 | Unit tests drive the loop against in-memory fake panes + injected clock — incl. the `DeliveryIntegrityTests` (codex chip confirms with ONE paste, laggy chip seen by re-capture and never re-pasted, failure capture attached, Escape refused, only-Enter) and the chip-vocabulary counter. | whole module | [../../../tests/test_terminal_paste.py](../../../tests/test_terminal_paste.py) |
 | The inbox hosted push records the capture tail in its durable delivery detail on an unverified push. | [inbox_delivery.py](inbox_delivery.py) | [inbox_delivery.py](inbox_delivery.py) |
+| `capture_pane` is called from the liveness sweeper's alive-harness-row turn-state classification path. | `_observe_alive`'s default `pane_capturer` | [terminal_liveness.py](terminal_liveness.py) |
 
 ## Cross-Repo References
 
@@ -142,6 +153,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: live turn-state): added a public
+  `capture_pane(tmux_name)` wrapper around the existing private `_tmux_capture_pane`, so
+  `terminal_liveness.py`'s turn-state classification reads the identical history-inclusive capture
+  paste verification already uses — one capture-command shape, not two. No change to any existing
+  behavior. Verification metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2 (review N1/N3): verification captures are
   history-inclusive (`capture-pane -p -S -200`, shared by origin and every re-capture — viewport-only
   capture let origin chips scroll out and blinded both growth math and the idempotence guard);

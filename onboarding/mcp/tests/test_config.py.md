@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T02:55+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -62,7 +62,13 @@ each raise `ConfigError`.
 `OrchestrationSettingsTests` (260703-L4) covers `orchestration.gateDelegation`:
 defaults to all-human, named manager leaf-gate policy, per-kind
 reviewer-verdict requirements, and fail-loud rejection for human-pinned
-`push-approval` or unsupported `agent-question` delegation.
+`push-approval` or unsupported `agent-question` delegation. `RetirementSettingsTests`
+(260707-HFX-L8, 6 tests) covers `parse_retirement_settings`: defaults are both `True` when the
+`retirement` key is absent, explicit `False`/`False` parses through, an unknown key
+(`autoRetireOnLaunch`) is rejected with an "unsupported retirement setting" `ConfigError`, a
+non-bool value for either `autoRetireOnIntegration` or `autoRetireOnFinalize` is rejected with a
+"must be a boolean" `ConfigError`, and a non-object `retirement` value (a list) is rejected with a
+"retirement settings must be an object" `ConfigError`.
 
 ### Invariants And Boundaries
 
@@ -87,6 +93,11 @@ As of the 260703-L8 seam ruling the orchestration settings tests prove the parse
 
 ## Update History
 
+- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity +
+  turn-state): added `RetirementSettingsTests` (6 tests) covering `parse_retirement_settings` —
+  both-True defaults, explicit-bool parsing, unknown-key rejection, non-bool-value rejection,
+  non-dict rejection, and the `McpRuntimeConfig.retirement` wiring. Verification metadata pinned
+  until closeout stamps the HFX-L8 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact: added `ProviderDegradationSettingsTests`
   covering the new `providerDegradation` settings block — defaults, explicit-value round-trip,
   unknown-key rejection, non-object shape rejection, and per-field type rejection. Verification

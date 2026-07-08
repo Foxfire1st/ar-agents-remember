@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T16:50+02:00 |
-| lastVerifiedCommitHash | `946ecca65e02faf864ea024ae1056600cd0c8021` |
-| lastVerifiedCommitDate | 2026-07-07T17:26:18+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -39,6 +39,15 @@ schema-validated task resets/replans (slice 3c) and same-root leaf-to-master row
 in the controller so a later dashboard `GET /api/files` route can reuse it).
 Context and worktree controllers forward `parent_task`/`leaf_id` into the source resolver, and task-doc
 authoring writes `seriesContractPath` plus `enclosures[]` instead of the retired `contractPath`.
+**260707-HFX-L8** (issue #12): `worktree_tools.py`'s `worktree_integrate_tool`/
+`lifecycle_finalize_task_tool` gained a completion-edge cleanup composition — after a successful
+non-dry-run edge, when the new `config.retirement.auto_retire_on_integration`/`auto_retire_on_finalize`
+gate is on (both default ON), a new `_auto_retire_completed_seats` helper resolves the qualified leaf
+key and calls `serving.retire.retire_seats_for_leaf` for the edge's own role set (worker/reviewer at
+integrate, manager/reviewer at finalize), returning the retired session ids as `autoRetiredSeats` on
+the result. The ENTIRE helper body is wrapped in `except Exception: return []` (widened in an R2 fix
+round, F1) so a catalog I/O fault can never fail an already-succeeded edge — retirement is a cleanup
+courtesy riding the edge, never a gate on it.
 
 ## Route Model
 
@@ -108,6 +117,13 @@ benchmark requests, so a case manifest cannot arm providers disabled on disk.
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
+  turn-state, issue #12): `worktree_tools.py`'s integrate/finalize controllers gained a completion-edge
+  auto-retire composition (`_auto_retire_completed_seats`, config-gated default ON, best-effort —
+  the ENTIRE retire body is exception-guarded, widened in the R2/F1 fix round so a catalog I/O fault
+  can never fail an already-succeeded edge) returning `autoRetiredSeats` on both tool results. The
+  controller still stays a typed operation facade — retire mechanics live in `serving/retire.py`, this
+  is composition only. Verification metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-07T16:50+02:00 — 260707-HFX-L1 route impact (provider containment R1): `provider_tools.py`
   gates launch-capable watcher actions and query tools on the live on-disk authority
   (`require_provider_launch_authority`, fail-closed; stop/status/shutdown-all ungated),

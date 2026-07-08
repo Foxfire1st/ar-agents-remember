@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-07T20:50+02:00 |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`         |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-08T02:43+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`         |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -37,9 +37,13 @@ collects one representative payload per tool into `cls.payloads`:
   runtime, memory, skills, provider status/diagnostics/watchers, GrepAI/CGC
   dry-run, baseline, benchmarks, HFX-L4 representative task docs for canonical leaf-ref validation,
   the L9 terminal leaf reassignment builder's missing-session
-  payload, and (L2) the `spawn_agent_session` builder's `harness-unknown` refusal payload — an
+  payload, (L2) the `spawn_agent_session` builder's `harness-unknown` refusal payload — an
   unknown harness id short-circuits before any tmux spawn, so the fixture never touches a real
-  terminal host).
+  terminal host — and (260707-HFX-L8) representative `session_retire`/`session_rename` refusal
+  payloads: `tools.session_retire_payload(config, actor_session_id="missing-actor",
+  session_id="missing-session")` and `tools.session_rename_payload(config,
+  session_id="missing-session", label="New Label")`, both short-circuiting before touching a real
+  tmux host because neither session id has a catalog row).
 - `_worktree_payloads`: a real worktree lifecycle in explicit disabled-memory mode
   with task-doc leaf fixtures for the worktree-start leaves
   produces `worktree_start`, `worktree_status`, `worktree_attach`,
@@ -120,6 +124,12 @@ declared nor part of the input."
 
 ## Update History
 
+- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity +
+  turn-state): `_simple_payloads` gained two new representative payloads —
+  `session_retire`/`session_rename` — so the conformance sweep (which walks
+  `TOOL_RESPONSE_MODELS` and validates every registered tool has at least one representative
+  payload round-tripping through its Pydantic model) covers the two new seat-lifecycle tools.
+  Verification metadata pinned until closeout stamps the HFX-L8 commit.
 - 2026-07-07T20:50+02:00 — 260707-HFX-L4: representative fixtures now write task docs for terminal
   leaf assignment and worktree-start payloads, and worktree-start conformance explicitly requests disabled
   memory, so strict response conformance runs through canonical leaf-ref validation without creating

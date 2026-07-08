@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T02:10+02:00 |
-| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
-| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
+| lastUpdated            | 2026-07-08T03:05+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -74,6 +74,17 @@ capturing (never losing) a raising stopper's failure inside the durable event. N
 `ConfigError`. This iteration is providers-only by developer ruling; Sentry
 (260703_spotlight-dev-observability) is the designated future detection source that can
 replace/feed the same response protocol without redoing it.
+260707-HFX-L8 adds seat lifecycle management to the terminal catalog tool surface: NEW
+`session_retire` (+ `POST /api/terminal/{session}/retire`) terminates a tracked chat session and
+marks the catalog row retired with provenance, authority-checked server-side (owner-never-self-
+retires; a manager may retire only its own master's worker/reviewer seats; the orchestrator may
+retire any seat) via NEW `serving/retire_policy.py` + `serving/retire.py`; automated at the
+`worktree_integrate` and `lifecycle_finalize_task` completion edges (config-gated, both default ON,
+best-effort so a catalog fault can never fail the edge it rides). NEW `session_rename` (+
+`POST /api/terminal/{session}/rename`) updates a chat's display label post-spawn without touching
+its role. NEW `serving/turn_state.py` classifies live seat turn-state (working/turn-ended/
+awaiting-input/stale) from pane text on the existing L5 liveness-sweep cadence; NEW
+`serving/seat_events.py` emits observer events on retire/rename/turn-state transitions.
 
 ## Hot Path Summary
 
@@ -512,6 +523,16 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T03:05+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
+  turn-state, issues #12/#4): NEW `serving/retire.py`, `serving/retire_policy.py`,
+  `serving/turn_state.py`, `serving/seat_events.py`; new `session_retire`/`session_rename` MCP tools
+  (+ matching `POST /api/terminal/{session}/retire`/`rename` routes); server-side retirement
+  authority policy (owner-never-self-retires; manager scoped to its own master; orchestrator
+  portfolio-wide); automated retirement at the `worktree_integrate` and `lifecycle_finalize_task`
+  completion edges (config-gated, best-effort, never able to fail the edge it rides); a live
+  turn-state classifier riding the existing L5 liveness-sweep cadence. Per-file detail lives in the
+  `serving/`, `mcp/tools/`, `models/`, and `controllers/` route overviews and the touched file
+  sidecars.
 - 2026-07-08T02:10+02:00 — No route impact: 260707-HFX-L11 (curator activation) adds one new
   package-data-mirrored doctrine file (`templates/curator-brief.md`, propagated by
   `scripts/sync-skills.py` into `package_data/runtime/skills/l-01-agent-lifecycles/templates/`

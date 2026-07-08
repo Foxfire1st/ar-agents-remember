@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:10+02:00 |
-| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
-| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
+| lastUpdated            | 2026-07-08T02:55+02:00 |
+| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
+| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
 
 ## Purpose
 
@@ -142,6 +142,21 @@ As of cycle 5: the seam channel is exact: raise with lifecycle_gate(..., wait=fa
 
 As of 260703-L12 the leaf dispatch loop opens with **loop-tier scoring at dispatch** (blast radius · novelty · size → direct | builder-verified | full loop; round 2 (L12R-4) pins the direct tier so it cannot read manager-implements: NO loop machinery — the leaf's worker implements as usual, this seat still dispatches per leaf and never grows a build surface; the strategist's blast-radius register is the scoring input when an orchestration task exists; the mark — tier + scope manager|orchestrator — lands on the leaf doc with a decision-log entry; **a master whose leaves all score direct is a workflow-free manager**), and a full-loop leaf runs under this level's loop controls: hard cap 3 FULL rounds (delta-verifies by the same reviewer close rounds and do not count; fix rounds resume the same builder), and a non-shrinking round escalates to the orchestrator immediately with the full round history. The Comms escalation bullet adds the **quo-vadis test** — a high-blast-radius truth is flagged as quo-vadis when raised so the orchestrator relays it to the developer immediately; presentation-grade choices are decided and logged, never escalated.
 
+### 260707-HFX-L8 Seat Cleanup Addition
+
+Issue #12 (retirement authority split): the leaf-dispatch-loop section gains a "Seat cleanup" bullet.
+A landed leaf's worker/reviewer chats have no further purpose — `worktree_integrate` auto-retires
+them the moment the leaf lands (config-gated `retirement.autoRetireOnIntegration`, default ON), so
+this is usually automatic. For a stuck/abandoned leaf seat before integration (a dead-end retry, a
+duplicate spawn), the manager retires it by hand: `session_retire(actor_session_id=<own session>,
+session_id=<the seat>, reason=...)`. Server-side policy (`serving/retire_policy.py`) enforces the
+authority split: the manager lives OUTSIDE the master stack it manages, so it may retire ONLY the
+worker/reviewer seats of its OWN master — it can never unseat itself by construction
+(owner-never-self-retires), and a target of any other role or a different master is refused loudly,
+naming the exact policy clause. Transcripts are never deleted; retiring only terminates the tmux
+session and marks the catalog row terminated with retirement provenance. The Knobs table's `tools`
+row gained `session_retire` (scoped to the manager's own master's worker/reviewer seats).
+
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration job file.
@@ -151,6 +166,14 @@ No sibling repository evidence is needed for this orchestration job file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
+  issue #12): leaf-dispatch-loop section gains a "Seat cleanup" bullet — `worktree_integrate`
+  auto-retires a landed leaf's worker/reviewer seats (config-gated, default ON); manual
+  `session_retire` for a stuck/abandoned seat is scoped server-side to only the manager's own
+  master's worker/reviewer seats (owner-never-self-retires unconditional). Knobs `tools` row
+  updated. Sync-propagated bundle copy from the canonical `skills/l-01-agent-lifecycles/roles/
+  manager.md`. Verification metadata pinned until closeout stamps the HFX-L8 commit.
 
 - 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation (R4): the curator-spawn duty bullet
   reworded from descriptive to enforced — "Curator memory pass — mandatory, not skippable," naming
