@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T23:15+02:00 |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
+| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -132,6 +132,23 @@ seam. The family backs the P-15 tier-3 escalation ladder (`controlplane/escalati
 `controlplane/orphan_policy.py`, and a new two-hop `signal_routing.derive_skip_level_owner`/
 `is_seat_dead` pair kept SEPARATE from the existing one-hop `derive_signal_owner`), fully documented
 in the `controlplane/` and `serving/` route overviews this file governs.
+260707-HFX2-L5 closes the loop on the same P-15 mandate from the doctrine side: the role files this
+package data ships (`package_data/runtime/skills/l-01-agent-lifecycles/{SKILL.md, roles/manager.md,
+roles/orchestrator.md, roles/worker.md, templates/turn-report.md}`) invert from active owner-side
+vigilance ("Monitor the worker" / "monitor turn-report artifacts") to a passive process-and-ack
+contract: the HFX2-L2 sweep + HFX2-L4 ladder do the watching, and a role's own duty is to be woken
+with its pending signals, process and ack every one, then end its turn — silence is supervised, so
+`lifecycle_turn_end_notification` is never a liveness gap. An explicit watcher ban (uniform-mechanism
+ruling 2026-07-07) forbids any seat-local watcher/poll/monitor of any kind, one mechanism for
+everyone. Doctrine-only change set, propagated by `scripts/sync-skills.py` to all 9 downstream
+package copies plus the canonical `skills/` source — zero Python touched. The SAME leaf adds NEW
+`mcp/tests/test_liveness_simulations.py` (11 tests, 8 named P-15 fixture-zoo incident classes),
+driving `run_supervisor_sweep` across multiple simulated ticks per incident: 6/8 pass fully
+end-to-end; 2/8 (chip-stacked delivery stall, and the pane-classified half of never-briefed) are
+proven hybrid (predicate-unit classify + real downstream sweep response) because `evaluate_predicates`
+hardcodes a real, non-injectable `tmux capture-pane` call — documented as a real product gap and the
+natural next leaf (make the pane capturer injectable through `SupervisorContext`), not silently
+worked around. Results are filed in `notes/reports/260707-HFX2-L5-liveness-report.md`.
 
 ## Hot Path Summary
 
@@ -570,6 +587,16 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L5 route impact (doctrine rewrite + focused liveness
+  simulations): the `l-01-agent-lifecycles` package-data doctrine mirror inverts from active
+  owner-side vigilance to a passive process-and-ack contract across 5 canonical files (`SKILL.md`,
+  `roles/manager.md`, `roles/orchestrator.md`, `roles/worker.md`, `templates/turn-report.md`), synced
+  to all 9 downstream package copies; explicit watcher ban (uniform-mechanism ruling 2026-07-07).
+  Zero Python touched. New test sidecar: `mcp/tests/test_liveness_simulations.py` (11 tests, 8 named
+  P-15 fixture-zoo incidents, 6/8 fully end-to-end through `run_supervisor_sweep`, 2/8 honestly
+  hybrid pending a pane-capturer injection follow-up — see `Supervisor Sweep`'s Migration Notes in
+  `entities.md`). Results filed in `notes/reports/260707-HFX2-L5-liveness-report.md`. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L5 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (P-15 tier 3 escalation ladder + dead-man
   respawn): the package-level `kernel/agentic_settings.py` loader gains the `orchestration.escalation`
   family (`EscalationSettings` — per-kind SLA, per-rung dwell, renudge rate limit,

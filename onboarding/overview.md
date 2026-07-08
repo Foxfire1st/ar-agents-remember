@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-08T04:25+02:00 |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated | 2026-07-08T05:10+02:00 |
+| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
+| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
 
 > **Status:** active baseline
 
@@ -384,6 +384,21 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-08T05:10+02:00 — No route impact: 260707-HFX2-L5 (doctrine inversion: "Monitor
+  the worker"/"monitor turn-report artifacts" duty language across `skills/l-01-agent-lifecycles/
+  {SKILL.md, roles/manager.md, roles/orchestrator.md, roles/worker.md, templates/turn-report.md}`
+  rewritten to a passive process-and-ack contract, a new "no seat-local watcher" invariant
+  (uniform-mechanism ruling 2026-07-07), and "idle is safe" framing — mechanically synced by
+  `scripts/sync-skills.py` to the 9 downstream package copies — plus the new
+  `mcp/tests/test_liveness_simulations.py`) is a doctrine consistency/wording pass formalizing an
+  already-existing HFX2-L1..L4 supervisor-sweep/escalation-ladder mechanism this root overview does
+  not itself narrate at any altitude. It changes HOW a seat reacts to missing signals (passive
+  wake-and-ack vs. hand-rolled watching), not any package/route structure, and it does not touch the
+  Observable Session Lifecycle paragraph's notify-and-continue interaction model this root overview
+  already carries (that model — gate choreography, `lifecycle_turn_end_notification` — is unaffected;
+  this leaf only bans ad hoc watchers layered on top of it). Route detail (the doctrine paragraphs,
+  the new liveness-simulation test coverage, the Supervisor Sweep entity) lives in the `mcp/` route
+  overview, `onboarding/entities.md`, and the touched file sidecars.
 - 2026-07-08T04:25+02:00 — No route impact: 260707-HFX-L12 (master-exit fix leaf) closes a schema
   gap in the operator-inbox `AgentRole`/`InboxMessageKind` Literals so the ARCHITECT/ORCHESTRATOR
   decision-item relay this root overview's Agent lifecycles row already describes actually

@@ -5,13 +5,13 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T23:59+02:00 |
+| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
+| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
 
 ## Purpose
 
-This template is the **mandatory worker hand-off artifact** of the `l-01-agent-lifecycles` report-template library. A worker fills it at **every** hand-off so a leaf's work survives session death and a respawned successor onboards from **state, not the transcript**. It is the leaf's single artifact of record; a missing turn report is nudged by the manager.
+This template is the **mandatory worker hand-off artifact** of the `l-01-agent-lifecycles` report-template library. A worker fills it at **every** hand-off so a leaf's work survives session death and a respawned successor onboards from **state, not the transcript**. It is the leaf's single artifact of record; a missing turn report is nudged by the HFX2-L2 supervisor sweep, never by a manager watching for it (uniform-mechanism ruling 2026-07-07).
 
 ## Code Commentary
 
@@ -25,7 +25,9 @@ The report is written in the **main loop** from the worker's own work plus any s
 
 ### Invariants And Boundaries
 
-The report is mandatory at every hand-off, and a missing one is nudged. The **Respawn State** section must let a fresh successor continue **without reading any transcript**. A plan delta beyond blank-filling does not belong in *Solved On The Spot* — it is escalated to the manager and recorded under *Escalations*.
+The report is mandatory at every hand-off, and a missing one is nudged — by the HFX2-L2 supervisor
+sweep mechanically, never a manager hand-rolling its own watch over the artifact (uniform-mechanism
+ruling 2026-07-07, 260707-HFX2-L5). The **Respawn State** section must let a fresh successor continue **without reading any transcript**. A plan delta beyond blank-filling does not belong in *Solved On The Spot* — it is escalated to the manager and recorded under *Escalations*.
 
 ### Todos
 
@@ -58,6 +60,14 @@ No sibling repository evidence is needed for this report template.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
+  process-and-ack): "A missing turn report is nudged by the manager" reworded to name the HFX2-L2
+  supervisor sweep as the actual mechanism, never a manager watching for it (uniform-mechanism
+  ruling 2026-07-07); Invariants And Boundaries updated to match. Doctrine-only change set (5
+  canonical `skills/` files synced to 9 downstream copies, 0 Python); sync-propagated bundle copy of
+  the canonical `skills/l-01-agent-lifecycles/templates/turn-report.md`. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L5 commit.
 
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/; role-file reference now roles/worker.md. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T12:31+02:00 - L3: pinned the default
