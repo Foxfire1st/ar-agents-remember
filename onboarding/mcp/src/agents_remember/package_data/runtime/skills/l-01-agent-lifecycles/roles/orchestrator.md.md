@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
-| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
+| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
+| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
 
 ## Purpose
 
@@ -34,6 +34,18 @@ own initiative), and a new "Idle is safe" bullet states plainly that silence is 
 sweep + L4 ladder), so `lifecycle_turn_end_notification` / ending a turn with nothing pending is
 correct, not a risk to cover by watching — restating the same watcher ban. Pure doctrine reword;
 the underlying sweep/ladder mechanics were already landed by HFX2-L2/L4.
+
+260707-HFX2-L6 adds step 0 to the opening move for developer-declared orchestrator takeovers. If
+the developer declares this chat the orchestrator for a named task, the task leaf is the seat: run
+the shared Developer-Declared Task-Seat Takeover checklist from `../SKILL.md` before trust
+checkpoint/profile work, attaching the current dashboard terminal catalog session to the qualified
+leaf key, renaming the session, and verifying the catalog/dashboard row. The same leaf adds the
+Delegated Series Authority paragraph: after the developer accepts an orchestration plan, this seat
+owns subordinate execution without repeated developer formality, including manager handovers,
+direct-work closeout when wearing a build hat, subordinate finalize/cleanup, and master→super
+integration. It still stops for final super/PR-carryover, raised human-pinned gates, plan-meaning
+changes, red checks outside scope, and quo-vadis truths. This is a doctrine-only correction; the
+existing attachment and worktree command paths are unchanged.
 
 L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
 
@@ -136,6 +148,17 @@ No sibling repository evidence is needed for this doctrine file.
   change set (5 canonical `skills/` files synced to 9 downstream copies, 0 Python); sync-propagated
   bundle copy of the canonical `skills/l-01-agent-lifecycles/roles/orchestrator.md`. Verification
   metadata pinned until closeout stamps the 260707-HFX2-L5 commit.
+
+- 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (seat takeover + delegated series authority):
+  opening move gains a task-seat takeover step before the trust checkpoint. A developer-declared
+  orchestrator takeover now explicitly opens the named task doc, attaches this dashboard terminal
+  catalog session to the qualified leaf key, renames the session, and verifies the catalog/dashboard
+  row before continuing. The role also now states that accepted orchestrated-series authority lets
+  the orchestrator govern subordinate closeout/finalize/cleanup and master→super integrations
+  without repeated developer formality, while final super/PR-carryover, raised human-pinned gates,
+  scope shifts, out-of-scope red checks, and quo-vadis decisions remain developer stops.
+  Doctrine-only; existing runtime attachment behavior unchanged. Verification metadata pinned until
+  closeout stamps the 260707-HFX2-L6 commit.
 
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
   issue #12): "Integration duty (master → super)" gains step 6 — the orchestrator's portfolio-wide

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-06T17:35+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
+| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
 
 ## Purpose
 
@@ -15,7 +15,10 @@ This skill documents `c-09-git-worktree-manager` skill, the Git worktree lifecyc
 Remember tasks. `c-09-git-worktree-manager` skill now owns worktree start, attach/status, external-memory
 compatibility before worktree start, integration, lifecycle finalization, and cleanup. Since L11 it also documents reopening: `task_reopen` resets a fully landed leaf back
 to planning under its exact leaf id, and a normal `worktree_start` then recreates the
-worktrees. Closeout
+worktrees. HFX2-L6 changes the approval wording to applicable authority: standalone/new/final work
+still stops for developer approval, while subordinate accepted-series work can record standing
+series authority and continue through worktree start, integration, and finalize/cleanup after clean
+previews. Closeout
 sequencing belongs to `c-12-closeout` skill; `c-09-git-worktree-manager` skill only supplies the worktree-specific
 `contract.md` path and the integration/finalization follow-up rules. Slice 2c adds a
 Lifecycle Resume And Promotion section: `worktree_start` promotes the current
@@ -42,7 +45,14 @@ path; `memory_sync_choice` recoveries when local memory commits diverge). It sta
 begins after the normal intake and onboarding gate, uses context resolved by the `c-08-ar-coordination-context-resolver` skill
 through the MCP worktree tools, refuses external-memory worktree start while
 the source memory repo has uncommitted content or ledger changes, and reports
-recoverable lifecycle state through typed next-operation hints. It now also
+recoverable lifecycle state through typed next-operation hints. 260707-HFX2-L6 broadens the
+approval wording from all-human per-junction approval to **applicable authority**: standalone or
+new work still uses the developer Worktree Intent Gate, but subordinate leaves/edges inside an
+accepted orchestrated series record accepted-series authority and continue without a new developer
+stop. The same authority distinction now governs integration and lifecycle finalization/cleanup:
+accepted-series leaf→master and master→super edges may proceed after clean dry-runs under standing
+series authority, while final super→main cleanup, standalone work, and deliberately raised
+human-pinned gates still stop for the developer. It now also
 requires agents to identify the branch that `worktree_integrate` would move
 before `worktree_start`; when that branch is protected, PR-gated, or otherwise
 not directly landable, agents must first create or check out a pushable
@@ -211,6 +221,16 @@ No sibling repository evidence is needed for the skill itself.
 The packaged worktree-manager skill defines the new operating model: master tasks own an integration branch via root `series-contract.md`, and each active leaf owns a distinct enclosure contract/worktree under `enclosures/<leaf-id>/`.
 
 ## Update History
+
+- 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (delegated worktree lifecycle
+  authority): frontmatter and worktree-intent/integration/finalization sections now distinguish
+  standalone/new/final developer-gated work from subordinate accepted-series work. For accepted
+  orchestrated series edges, agents record the planner/series authority and continue after clean
+  dry-runs instead of stopping for every worktree start, closeout-adjacent edge, integration, or
+  cleanup/finalize command. Final super→main cleanup, standalone work, and raised human-pinned
+  gates remain developer stops. Sync-propagated bundle copy of the canonical
+  `skills/c-09-git-worktree-manager/SKILL.md`; no Python worktree behavior changed. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L6 commit.
 
 - 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-6): the Integration section gains the orchestrated-run standing-approval carve-out sentence (ruled 2026-07-06, resolves L8-Q9's practiced path) — the developer hand-off concentrates at the super PR/carry-over gate; a raised durable integration-approval gate still awaits the developer. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T12:30+02:00 — L10 owner ruling (builder escalation #1): the chat-build option is swept from the intro and intake decision — chat never builds; single-session work takes a thin w-02 doc. Verification metadata pinned until closeout stamps the L10 commit.

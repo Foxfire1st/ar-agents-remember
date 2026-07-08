@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
-| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
+| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
+| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -636,6 +636,16 @@ into the role files.
   fields. Added a Purpose paragraph naming all four R-numbers and the cross-tool dispatch pattern,
   matching this file's established per-leaf narrative convention. Verification metadata pinned
   until closeout stamps the 260707-HFX2-L1 commit.
+- 2026-07-08T15:27+02:00 — No route impact: 260707-HFX2-L6 is a package-data lifecycle doctrine
+  clarification only. The synced runtime skill mirrors now tell agents that a developer-declared
+  role takeover means the named task leaf is the seat and the current dashboard terminal catalog
+  session must be attached/renamed/verified before lifecycle work continues; close/current/small
+  developer clarifications that fit the active leaf should be implemented in that leaf instead of
+  filed as future notes; and accepted orchestrated-series authority lets owning seats perform
+  subordinate closeout/integration/finalization/cleanup after clean previews without repeated
+  developer formality. Final super/PR-carryover, raised human-pinned gates, scope changes,
+  out-of-scope red checks, and quo-vadis decisions still stop for the developer. No MCP tool
+  signature, controller, schema, provider, worktree, or serving route behavior changed.
 - 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (master-exit fix leaf, closes Finding 1):
   `controlplane/operator_inbox_records.py`'s `AgentRole` gains `architect`/`curator`;
   `InboxMessageKind` gains `decision-item`/`decision-ruling` — making the HFX-L6-ratified minimal

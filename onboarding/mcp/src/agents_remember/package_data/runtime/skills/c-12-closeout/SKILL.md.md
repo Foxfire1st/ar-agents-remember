@@ -6,13 +6,15 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-08T00:00+02:00 |
-| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
-| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
+| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
+| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
 
 ## Purpose
 
 This skill documents `c-12-closeout` skill, the shared closeout contract for approved Agents
-Remember edits in repositories that use external memory.
+Remember edits in repositories that use external memory. As of HFX2-L6, "approved" means the
+applicable authority for the context: explicit developer approval for standalone/final/unclear
+work, or recorded delegated series authority for subordinate accepted-series work.
 
 ## Code Commentary
 
@@ -36,8 +38,8 @@ authorship can be attributed").
 
 `c-12-closeout` skill owns closeout sequencing for worktree-backed tasks. It
 uses the worktree closeout preview/apply tools against the task contract,
-requires a non-mutating preview before real commits, requires explicit commit
-approval with an intent note, runs the package-local missing-onboarding gate,
+requires a non-mutating preview before real commits, requires applicable closeout
+authority with an intent note, runs the package-local missing-onboarding gate,
 commits code, refreshes affected onboarding metadata, entity fingerprints, route
 overview metadata, and generated route indexes, runs the full memory quality
 check, commits memory content only after the quality gate is clean, prepends the
@@ -56,17 +58,22 @@ carryover are complete.
 
 Closeout approval is separate from implementation approval. Agents must not
 treat a previous "looks good", implementation approval, or their own judgment
-as commit approval. The matching preview tool is the approval prompt surface:
-it reports the proposed code, memory, and ledger commit messages before the
-apply tool mutates Git. The relay follows the `l-01-agent-lifecycles`
-skill hand-off protocol in the corrected order — run the preview/dry-run first,
-call `lifecycle_turn_end_notification` as the **last tool call**, then report the
-preview facts and proposed messages as the **final prose** ending with the
-approval question. `worktree_closeout_apply`
-is never invoked in the same turn as the relay; the next turn auto-resumes to run
-it (the parked dashboard `lifecycle_gate` path instead raises the durable gate
-after the report and is then cleared with `lifecycle_resume`), because harnesses
-can hide approval-prompted reports.
+as authority. 260707-HFX2-L6 changes the current approval model from unconditional per-closeout
+developer hand-off to contextual authority: standalone work, final super-branch landing, unclear
+series authority, deliberately raised `closeout-approval`, out-of-scope changes, unresolved red
+checks, unrepaired memory-quality blockers, and quo-vadis decisions still stop for explicit
+developer commit approval; subordinate work inside an accepted orchestrated series may apply
+closeout after a clean preview/checks under delegated series authority, with the `intent_note`
+recording the accepted planner/series source and owning-seat review. For a developer-gated
+closeout, the matching preview tool is the approval prompt surface: it reports the proposed code,
+memory, and ledger commit messages before the apply tool mutates Git. The relay follows the
+`l-01-agent-lifecycles` skill hand-off protocol in the corrected order — run the preview/dry-run
+first, call `lifecycle_turn_end_notification` as the **last tool call**, then report the preview
+facts and proposed messages as the **final prose** ending with the approval question.
+`worktree_closeout_apply` is never invoked in the same turn as the developer-gated relay; the next
+turn auto-resumes to run it (the parked dashboard `lifecycle_gate` path instead raises the durable
+gate after the report and is then cleared with `lifecycle_resume`), because harnesses can hide
+approval-prompted reports.
 
 The missing-onboarding check is scoped to current additions so newly added
 eligible source files cannot escape the gradual onboarding adoption boundary. A
@@ -174,6 +181,16 @@ No sibling repository evidence is needed for the skill itself.
 Closeout instructions now target the leaf enclosure `series-contract.md`; the root series contract is integration-branch state and is not the path used for leaf code/memory closeout.
 
 ## Update History
+
+- 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (delegated closeout authority):
+  frontmatter and Approval Authority guidance now distinguish explicit developer commit approval
+  for standalone/final/unclear work from delegated accepted-series authority for subordinate
+  orchestrated work. Subordinate managers/orchestrators may apply closeout after clean previews
+  while recording the series authority in `intent_note`; final super/PR-carryover, raised
+  `closeout-approval`, out-of-scope changes, red checks outside scope, unrepaired memory-quality
+  blockers, and quo-vadis decisions remain developer stops. Sync-propagated bundle copy of the
+  canonical `skills/c-12-closeout/SKILL.md`; no Python closeout enforcement changed. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L6 commit.
 
 - 2026-07-08T00:00+02:00 — 260707-HFX-L11 curator activation (c-12 rewiring, R2): added the Seat
   note (manager -> builder -> reviewer -> curator chain: builder = code + report only, curator

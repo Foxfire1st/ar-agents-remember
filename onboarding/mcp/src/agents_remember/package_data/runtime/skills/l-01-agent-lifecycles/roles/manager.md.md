@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `987980909bf73a431984e3d7a8693c5ee89f50f8` |
-| lastVerifiedCommitDate | 2026-07-08T10:26:33+02:00|
+| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
+| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
 
 ## Purpose
 
@@ -38,6 +38,16 @@ own tick, never the manager's own initiative; a non-hosted seat gets the inbox e
 purely a doctrine reword — the mechanical detection/escalation machinery itself (the sweep, the
 ladder) already landed in HFX2-L2/L4; this leaf only inverts the seat's OWN duty language to match
 what those leaves already built.
+
+260707-HFX2-L6 adds the developer-declared takeover pre-step to the manager opening move. A manager
+entered by the developer through an existing dashboard chat first runs the shared
+Developer-Declared Task-Seat Takeover checklist from `../SKILL.md`, so the current terminal catalog
+session is attached to the master's qualified coordination-leaf key and visibly renamed/verified
+before the manager reads the master `task_doc` and orders leaves. The same leaf tightens delegated
+leaf authority: under accepted series authority, the manager owns leaf closeout preview/apply for
+in-scope green leaves and records the accepted planner/series authority in the closeout intent note
+instead of handing every routine leaf commit back to the developer. This is doctrine-only; it relies
+on existing attachment and closeout command paths and does not change manager runtime behavior.
 
 260707-HFX-L11 curator activation (R4, manager wiring made real): the curator-spawn duty bullet is
 no longer a description — it names the exact brief template (`../templates/curator-brief.md`), the
@@ -192,6 +202,15 @@ No sibling repository evidence is needed for this orchestration job file.
   downstream copies, 0 Python); sync-propagated bundle copy of the canonical
   `skills/l-01-agent-lifecycles/roles/manager.md`. Verification metadata pinned until closeout
   stamps the 260707-HFX2-L5 commit.
+
+- 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (seat takeover + delegated leaf closeout):
+  manager opening move now points developer-declared takeovers to the shared task-seat checklist
+  before reading the master `task_doc`: attach the current dashboard terminal catalog session to the
+  qualified leaf key, rename it to the expected seat label, and verify the catalog/dashboard row.
+  The delegated leaf-gates paragraph now states that, under accepted series authority, the manager
+  owns leaf closeout preview/apply for in-scope green leaves and records the accepted planner/series
+  authority in the closeout intent note. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L6 commit.
 
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
   issue #12): leaf-dispatch-loop section gains a "Seat cleanup" bullet — `worktree_integrate`
