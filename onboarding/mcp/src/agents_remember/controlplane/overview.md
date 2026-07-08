@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-08T14:40+02:00                      |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`     |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00                      |
+| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`     |
+| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -17,7 +17,14 @@ operator/agent inbox (task 10/L3), orchestration artifact/nudge helpers (L3), th
 task-23/24 interaction-retention policy, task-28 lifecycle-scoped attention
 acknowledgements, and — since 260707-HFX2-L1 — the durable expectation-row
 substrate (R2), inbox redelivery backoff math (R3), and hierarchical signal
-routing derivation (R4) the L2 supervisor sweep (a sibling leaf) drives from. Gates are attributed decision points on a lifecycle — the kind vocabulary
+routing derivation (R4) the L2 supervisor sweep drives from. **260707-HFX2-L4** adds the P-15
+tier-3 escalation ladder ON TOP of that L1 substrate: `escalation_ladder.py` (the pure rung walker —
+`rung_due`/`next_step`/`seat_is_suspect`) and `orphan_policy.py` (a detection-only hook for a dead
+manager's live workers), plus a second, two-hop dead-node-skipping owner derivation
+(`signal_routing.derive_skip_level_owner` + `is_seat_dead`) deliberately kept separate from L1's
+one-hop `derive_signal_owner`. The L2 supervisor sweep (`serving/supervisor.py`, governed by the
+`serving/` overview) is the sole caller of all of this — no ladder logic lives outside this route,
+and no delivery/store-write happens inside it. Gates are attributed decision points on a lifecycle — the kind vocabulary
 includes the delegable `master-handover-approval` seam gate (the manager raises it with the
 reviewer verdict attached; the orchestrator decides per the gate delegation policy, and
 `requireReviewerVerdictAtSeams` binds delegated seam decisions to that evidence); the inbox
@@ -97,6 +104,18 @@ consumed by `OperatorInboxStore.list_redeliverable`/`record_delivery`. R4 adds
 onto new `OperatorInboxEntry.ownerRole`/`ownerAgentId`/`ownerLifecycleId` fields at post time.
 Neither this leaf's redelivery driver nor its ladder escalation exist here — L2 (a sibling leaf)
 drives the actual sweep; this route only builds the durable substrate + surfacing it reads.
+**260707-HFX2-L4** lands that ladder escalation: `escalation_ladder.py::rung_due`/`next_step` climb
+an unacked row rung 1 (renudge) -> rung 2 (skip-level, via new `signal_routing.
+derive_skip_level_owner` -- a SEPARATE two-hop walk from L1's one-hop `derive_signal_owner`, walking
+PAST any dead intermediate the new `is_seat_dead` helper detects) -> rung 3 (developer attention,
+terminal); `seat_is_suspect` marks a seat past the respawn threshold as suspect only on an actually
+observed dead/stalled catalog signal, never from silence alone. `orphan_policy.py::
+find_orphaned_workers` is a pure, detection-only hook for a respawned/dead manager's still-running
+workers -- no auto re-parent action exists yet. `OperatorInboxEntry` gains `rung: int = 0` and
+`OperatorInboxStore` gains `advance_rung` (stamps the next rung AND re-anchors `escalatedAt` in one
+snapshot, distinct from L2's rung-agnostic `mark_escalated`). All of this is pure/derivation-only in
+this route; the actual predicate evaluation, delivery, and durable-row mutation happen in
+`serving/supervisor.py`, this route's sole caller.
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -122,7 +141,9 @@ signal, while targetless provider-down dismissals are not accepted.
 | `interaction_retention.py` | Shared 5-minute pickup/wait and 24-hour interaction TTL policy helpers; since 260707-HFX2-L1 a `pending` inbox row is NEVER pruned by age (only `consumed` rows are TTL-bounded). |
 | `expectation_rows.py` | (260707-HFX2-L1, R2) `ExpectationRow`/`ExpectationRowStore`/`write_expectation_row`: durable what-must-happen-by-when rows written atomically at every dispatch surface, an L2 sweep scans, never in-memory timers. |
 | `inbox_backoff.py` | (260707-HFX2-L1, R3) Pure redelivery backoff-ladder math + per-target rate limiting, mirroring the `OrchestrationNudgeStore` pattern. |
-| `signal_routing.py` | (260707-HFX2-L1, R4) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). |
+| `signal_routing.py` | (260707-HFX2-L1, R4; 260707-HFX2-L4, R2/R4) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). `is_seat_dead`/`derive_skip_level_owner`: the ladder's liveness check and SEPARATE two-hop, dead-node-skipping owner's-owner walk. |
+| `escalation_ladder.py` | (260707-HFX2-L4, R2/R3) `rung_due`/`next_step`/`seat_is_suspect`: the pure P-15 tier-3 ladder walker -- rung-due dwell/SLA logic, per-rung routing (including the hierarchy-ceiling jump-to-developer fallback), and dead/stalled-seat respawn-candidate detection. |
+| `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
 | `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store). |
 
 The `gate_*` MCP tools live in `mcp/tools/gates.py` (config-rooted, building a
@@ -172,9 +193,18 @@ response models are `models/operator_inbox.py`.
 | The inbox record/store pair provides the external-chat pull return channel. | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) and [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | [attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
+| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream predicates, performs delivery, and stamps the durable `advance_rung`/retire transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact: two new modules — `escalation_ladder.py`
+  (the pure P-15 tier-3 rung walker) and `orphan_policy.py` (detection-only orphan-worker hook) —
+  plus R2/R4 extensions to `signal_routing.py` (`is_seat_dead`, `derive_skip_level_owner` — a
+  SEPARATE two-hop, dead-node-skipping walk, L1's one-hop `derive_signal_owner` unchanged) and R1/R2
+  extensions to `operator_inbox_records.py`/`operator_inbox_store.py` (`rung` field,
+  `advance_rung` transition). `serving/supervisor.py` (a sibling route) is the sole caller; no
+  ladder logic, delivery, or store mutation lives outside this route's pure derivation/hook
+  functions. Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T14:40+02:00 — 260707-HFX2-L1 route impact: three new modules —
   `expectation_rows.py` (R2 durable deadline rows), `inbox_backoff.py` (R3 redelivery backoff +
   rate limiting), `signal_routing.py` (R4 hierarchical routing derivation) — plus R1 ack-semantics

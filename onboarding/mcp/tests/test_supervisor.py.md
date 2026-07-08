@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T18:45+02:00                     |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00                     |
+| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
+| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -16,13 +16,16 @@
 `serving/supervisor_heartbeat.py`, 260707-HFX2-L2 R2-R6): one unit test per predicate family, the
 heartbeat's own read/tick/staleness behavior, and one integration test that seeds drift across every
 predicate simultaneously and asserts the full finding→action→heartbeat chain — no model in the loop
-anywhere; every fixture is a plain store write or a fake pane capturer/paster.
+anywhere; every fixture is a plain store write or a fake pane capturer/paster. 260707-HFX2-L4 (R2-R6)
+adds the escalation ladder's two new predicate families plus a dedicated `LadderWalkIntegrationTests`
+suite: the R6-mandated silent-seat, dead-intermediate, and dead-manager-with-live-workers fixtures.
 
 ## Code Commentary
 
 ### Logic
 
-Sixteen tests, `NOW = datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
+Twenty-five tests (sixteen original R2/R6 tests plus nine new 260707-HFX2-L4 tests), `NOW =
+datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
 
 - **Pane predicate (R2a):** `test_mid_turn_pane_fires_a_finding`, `test_normal_pane_fires_nothing`,
   `test_terminal_kind_rows_are_never_pane_classified` (a `kind="terminal"` row is skipped
@@ -40,6 +43,32 @@ Sixteen tests, `NOW = datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared 
   `test_recently_stale_does_not_fire_yet` (stale but still inside the grace window is silent),
   `test_degraded_row_with_no_turn_state_uses_liveness_failures` (the graceful-degradation path: a
   row the L8 prober never classified falls back to the L5 `liveness_failures > 0` signal alone).
+- **Escalation predicate (260707-HFX2-L4, R2):** `EscalationPredicateTests` —
+  `test_pending_row_past_sla_fires` (a rung-0 row past its per-kind SLA fires an `escalation-due`
+  finding naming its own entry id), `test_not_yet_due_row_is_silent` (a row still inside its SLA
+  window is silent).
+- **Dead-upstream predicate (260707-HFX2-L4, R4):** `DeadUpstreamPredicateTests` —
+  `test_worker_with_dead_manager_fires` (a live worker whose recorded owner is `terminated` fires a
+  `dead-upstream` finding naming the WORKER's own session id, not the dead owner's),
+  `test_live_owner_does_not_fire` (a live owner is silent), `test_no_provenance_at_all_does_not_fire`
+  (a row with no `spawned_by_session` recorded at all is a legacy/unrouted case, not a dead-owner
+  case, and stays silent).
+- **Ladder walk integration (260707-HFX2-L4, R6 fixtures):** `LadderWalkIntegrationTests` drives the
+  ladder through `run_supervisor_sweep` end-to-end, not the pure predicates in isolation —
+  `test_silent_seat_climbs_rung_one_then_two_then_three` runs four successive sweeps over one
+  unacked row and asserts it climbs rung 1 -> 2 -> 3 exactly on schedule, then proves rung 3 is a
+  hard ceiling (a fifth sweep, far past every threshold, still reads rung 3).
+  `test_dead_intermediate_manager_is_skipped_at_rung_two` seeds a row already at rung 1 whose
+  addressee's manager is `terminated`, and asserts the rung-2 transition's owner event lands on the
+  ORCHESTRATOR, never the dead manager. `test_dead_manager_with_live_workers_respawns_and_surfaces_
+  orphans` is the R3+orphan-policy fixture: a manager-addressed row past the respawn threshold with
+  the manager's OWN turn-state stale triggers `_respawn_suspect` — the manager's catalog row flips
+  to `terminated`, a SINGLE `orchestration.supervisor.respawn` event carries both live workers under
+  `orphanedWorkers`, and the workers themselves are asserted UNCHANGED (`status == "running"`) —
+  proving they are surfaced, never auto-retired or re-parented themselves.
+  `test_dead_upstream_signals_the_grandparent` seeds the same dead-manager-with-live-worker shape
+  and asserts the sweep's OWN `dead-upstream` finding (not the ladder) fires for the worker and the
+  `orchestration.supervisor.dead-upstream` event names the orchestrator as `grandparentAgentId`.
 - **Sweep integration:** `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` seeds
   drift across pane-signal, expectation-overdue, inbox-redeliverable, AND seat-liveness
   simultaneously in one sweep and asserts the expected action set, delivery outcomes, the
@@ -75,6 +104,10 @@ convention from `test_terminal_ws.py`.
   path must preserve this per-call-plus-monotonic counting, not regress to a shared flag.
 - Predicate-family tests are independent of the integration test — each can fail in isolation and
   point at exactly one `evaluate_*_findings` function.
+- `LadderWalkIntegrationTests` deliberately drives the FULL sweep (`run_supervisor_sweep`), not the
+  isolated `_escalate_rung`/`_respawn_suspect` action functions directly — the R6 fixtures are about
+  proving the finding→action→durable-row-stamp chain end to end, matching the existing
+  `SweepIntegrationTests` posture for the other five predicate families.
 
 ### Todos
 
@@ -101,6 +134,8 @@ spec.
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `SupervisorHeartbeatStore` | [../src/agents_remember/serving/supervisor_heartbeat.py](../src/agents_remember/serving/supervisor_heartbeat.py) |
 | The catalog entry fixture builder's typed fields come from this module's `Literal` aliases. | `TerminalCatalogEntry` | [../src/agents_remember/serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
 | The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `cast(TerminalHost, fake)` | [test_terminal_ws.py](test_terminal_ws.py.md) |
+| The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | [../src/agents_remember/controlplane/escalation_ladder.py](../src/agents_remember/controlplane/escalation_ladder.py.md) |
+| The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | [../src/agents_remember/controlplane/orphan_policy.py](../src/agents_remember/controlplane/orphan_policy.py.md) |
 
 ## Cross-Repo References
 
@@ -112,6 +147,13 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (escalation ladder + dead-man respawn, R2-R6): added
+  `EscalationPredicateTests` (SLA-due/not-yet-due), `DeadUpstreamPredicateTests` (dead-owner fires,
+  live-owner and no-provenance stay silent), and `LadderWalkIntegrationTests` — the R6 fixtures: a
+  silent seat climbing all three rungs then hitting the rung-3 ceiling, a dead intermediate manager
+  skipped at rung 2, a dead manager with live workers triggering respawn + orphan surfacing (workers
+  themselves asserted unchanged), and the dead-upstream sweep signaling the grandparent. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T18:45+02:00 — Created for 260707-HFX2-L2 (supervisor sweep + predicates, R2-R6):
   sixteen tests — one per predicate family (pane/expectation/turn-report/inbox/seat-liveness, each
   with its fire + silent + edge-case variants), one seeded-drift sweep integration test asserting

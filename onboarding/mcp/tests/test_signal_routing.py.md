@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-08T16:15+02:00                        |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00                        |
+| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
+| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -19,7 +19,9 @@
 R4 (260707-HFX2-L1) unit tests for `controlplane/signal_routing.py`'s `derive_signal_owner` —
 deriving the ONE-HOP owner address a signal should route to (worker's signal goes to its manager,
 manager's goes to its orchestrator, a `decision-item` always goes to the architect) from the
-terminal catalog's spawn provenance, entirely without a caller-supplied address.
+terminal catalog's spawn provenance, entirely without a caller-supplied address. 260707-HFX2-L4
+(R2/R4) adds coverage for the module's new two-hop, dead-node-skipping `derive_skip_level_owner`
+and its `is_seat_dead` liveness helper.
 
 ## Code Commentary
 
@@ -41,6 +43,22 @@ no `spawned_by_session` provenance (e.g. an orchestrator's own signal — the ca
 `recipient_role` stands instead), and a `None` `sender_agent_id` all derive an empty `RoutedOwner()`
 rather than a wrong or partial address.
 
+**`SkipLevelOwnerTests`** (260707-HFX2-L4) seeds a three-tier orchestrator/manager/worker chain via
+`_chain(...)`. `test_live_chain_lands_on_the_owners_owner` proves the base two-hop case (worker ->
+manager -> orchestrator). `test_dead_intermediate_manager_is_skipped_not_addressed` marks the
+manager `terminated` and asserts the walk still lands on the orchestrator, never the dead manager
+itself. `test_dead_grandparent_walks_further_but_hits_the_hierarchy_ceiling` marks the orchestrator
+itself dead and proves the walk cannot climb past it either way — the orchestrator has no owner-role
+mapping of its own, dead or alive, so the result is an empty `RoutedOwner()` (the developer, the top
+rung, is never modeled in catalog provenance). `test_unknown_sender_derives_no_skip_level_route`
+covers an unregistered sender. `test_no_second_hop_session_still_resolves_a_role_only_address`
+proves a manager with no recorded `spawned_by_session` still yields a ROLE-only
+`RoutedOwner(role="orchestrator")` rather than discarding the known role mapping.
+
+**`IsSeatDeadTests`** (260707-HFX2-L4) pins the three `is_seat_dead` cases directly: an unknown
+agent id, a `None` agent id, and a `running` catalog row (not dead) — the liveness primitive both
+the ladder and the two-hop walk share.
+
 ### Conventions
 
 A single `unittest.TestCase` with a local `_upsert(**overrides)` helper that layers overrides onto
@@ -55,6 +73,9 @@ test modules (`test_terminal_catalog.py`, `test_signal_routing.py`'s own module)
   other message kind routes structurally off `spawn_role`.
 - No sender id, an unknown sender, or a sender with no spawn provenance all derive an empty
   `RoutedOwner()` — the caller's own explicit addressing is the fallback, never a guessed owner.
+- `SkipLevelOwnerTests` is a genuinely separate suite from `SignalRoutingTests` above — it never
+  asserts anything about `derive_signal_owner`'s own one-hop behavior, only the new two-hop walker's
+  dead-node-skipping and hierarchy-ceiling behavior.
 
 ### Todos
 
@@ -75,6 +96,8 @@ No meaningful external design-doc references found yet (created this leaf).
 | Worker-to-manager and manager-to-orchestrator one-hop routing from catalog spawn provenance. | L42-L61 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
 | One-hop-only regression: a worker's signal never chases the chain past its manager. | L64-L82 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
 | `decision-item` reserved-role routing and the three no-route negative cases. | L84-L104 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
+| Two-hop, dead-node-skipping owner derivation: live chain, dead intermediate, dead-ceiling, unknown sender, and role-only-address cases. | `SkipLevelOwnerTests` | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
+| The shared liveness primitive both the ladder and the two-hop walk read. | `IsSeatDeadTests` | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
 
 ## Cross-Repo References
 
@@ -86,6 +109,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R2/R4, escalation ladder + dead-upstream detection):
+  added `SkipLevelOwnerTests` (live two-hop chain, dead-intermediate skip, dead-hierarchy-ceiling,
+  unknown sender, role-only-address-with-no-session cases) and `IsSeatDeadTests` (unknown/`None`/
+  running-agent liveness cases) for the module's new `derive_skip_level_owner`/`is_seat_dead`.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T16:15+02:00 — Created for 260707-HFX2-L1 (curator delta round 2, closeout-preview
   gap): one-hop hierarchical routing derivation coverage for the R4 signal-routing module.
   Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

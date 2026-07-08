@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-08T14:05+02:00                                              |
-| lastVerifiedCommitHash |                                                                     `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate |                                                                     2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00                                              |
+| lastVerifiedCommitHash |                                                                     `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
+| lastVerifiedCommitDate |                                                                     2026-07-08T09:40:32+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -65,6 +65,13 @@ the only terminal outcome (F-A/F-V proved pasted != perceived). Also adds
 spawn provenance, distinct from the caller-supplied `recipientRole`.
 `create_operator_inbox_entry(...)` gained matching `owner_*` keyword params.
 
+**260707-HFX2-L4** (R1/R2, escalation ladder rung marker): adds `rung: int = 0` — the ladder's own
+position marker for the row (0 = not yet escalated; 1 = renudged; 2 = skip-level re-addressed; 3 =
+surfaced to the developer attention queue, terminal). `escalatedAt` (reserved by HFX2-L2) is now
+genuinely re-stamped by `OperatorInboxStore.advance_rung` on EVERY rung transition, so it always
+names "since when has this row sat at its CURRENT rung" — the anchor the ladder's own SLA/dwell
+check (`escalation_ladder.rung_due`) reads — rather than merely "was this row ever escalated."
+
 ### Conventions
 
 The record mirrors gate records: camelCase persisted fields, a `schema` alias,
@@ -111,6 +118,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (P-15 tier 3, escalation ladder): `OperatorInboxEntry`
+  gains `rung: int = 0`, the ladder's own position marker; `escalatedAt` (reserved since HFX2-L2) is
+  now genuinely re-stamped on every rung transition by `OperatorInboxStore.advance_rung`. No shape
+  change to `create_operator_inbox_entry`/`consume_operator_inbox_entry` themselves. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T14:05+02:00 — 260707-HFX2-L1: `OperatorInboxEntry` gains the R1
   ack/backoff fields (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/
   `escalatedAt`) and the R4 routed-owner fields

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T18:45+02:00                    |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00                    |
+| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
+| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -97,7 +97,11 @@ already owns plus fresh `OperatorInboxStore`/`ExpectationRowStore`/`Orchestratio
 synchronous, so it never blocks the event loop). `stale_seat_seconds` is derived as
 `max(settings.supervisor.interval_seconds * 4, 60.0)` — four sweep intervals of grace before a
 turn-state-stale row fires the seat-liveness predicate (R2e), floored at 60s so a very fast sweep
-interval cannot make the liveness predicate trigger-happy. The lifespan cancels
+interval cannot make the liveness predicate trigger-happy. **260707-HFX2-L4:** the same
+`_supervisor_context()` call now also resolves `settings.escalation.sla_seconds`/`rung_seconds`/
+`respawn_after_rung` straight onto `SupervisorContext`'s plain-primitive escalation knobs — no new
+settings read of its own, the same per-sweep `load_agentic_settings` call this function already
+made for the supervisor family. The lifespan cancels
 `supervisor_task` (added to the existing metrics/projector cancel set, same
 `contextlib.suppress(asyncio.CancelledError)` await pattern) on shutdown.
 
@@ -369,6 +373,11 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (small): `_supervisor_context()` now also
+  resolves `settings.escalation.sla_seconds`/`rung_seconds`/`respawn_after_rung` onto
+  `SupervisorContext`'s new escalation-ladder knobs — no new lifespan task, no new settings read of
+  its own; reuses the exact per-sweep `load_agentic_settings` call already wired for the supervisor
+  family. Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep + predicates, R1/R3/R4/R5): added
   `supervisor_loop()` (a third decoupled-cadence lifespan task, following the `metrics_loop`
   template exactly — settings-driven interval/enable, exception-tolerant, cancelled at shutdown)

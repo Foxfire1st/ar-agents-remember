@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188` |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00 |
+| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
+| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -124,6 +124,14 @@ dispatcher, and self-liveness heartbeat — is documented in full in `serving/ov
 this file governs) and `mcp/tools/base.py`'s per-tool-call staleness banner attachment
 (`supervisorBanner`, exception-contained at the call site). Same cross-route-consumption shape as
 the 260707-HFX2-L1 expectation-row family documented above.
+260707-HFX2-L4 adds the `orchestration.escalation` family to the same loader (`EscalationSettings`
+— per-`message_kind` ack SLA, per-rung dwell timings, the renudge rate limit, the
+respawn-after-rung threshold), consumed by the SAME `serving/app.py::_supervisor_context()` call
+site the supervisor family already wires through — no new lifespan task, no new settings-read
+seam. The family backs the P-15 tier-3 escalation ladder (`controlplane/escalation_ladder.py`,
+`controlplane/orphan_policy.py`, and a new two-hop `signal_routing.derive_skip_level_owner`/
+`is_seat_dead` pair kept SEPARATE from the existing one-hop `derive_signal_owner`), fully documented
+in the `controlplane/` and `serving/` route overviews this file governs.
 
 ## Hot Path Summary
 
@@ -562,6 +570,16 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (P-15 tier 3 escalation ladder + dead-man
+  respawn): the package-level `kernel/agentic_settings.py` loader gains the `orchestration.escalation`
+  family (`EscalationSettings` — per-kind SLA, per-rung dwell, renudge rate limit,
+  respawn-after-rung), consumed by the SAME `serving/app.py::_supervisor_context()` call site the
+  supervisor family already wires through (no new lifespan task). Backs two new `controlplane/`
+  modules (`escalation_ladder.py`, `orphan_policy.py`) and a new two-hop `signal_routing.
+  derive_skip_level_owner`/`is_seat_dead` pair, plus two new `serving/supervisor.py` predicates/
+  actions. Fully documented in `controlplane/overview.md` and `serving/overview.md`, both governed
+  by this file. New test sidecar: `mcp/tests/test_escalation_ladder.py`. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T22:30+02:00 — No route impact: 260707-HFX2-L3 (paste injector
   hardening, R1-R5) adds two `serving/` modules (`harness_adapters.py`, `injector.py`) and refactors
   `serving/inbox_delivery.py` + `mcp/tools/terminal.py::_deliver_spawn_pastes` onto the one delivery

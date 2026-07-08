@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-08T14:00+02:00                                            |
-| lastVerifiedCommitHash |                                                                   `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate |                                                                   2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T23:15+02:00                                            |
+| lastVerifiedCommitHash |                                                                   `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
+| lastVerifiedCommitDate |                                                                   2026-07-08T09:40:32+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -53,6 +53,12 @@ their backoff window and clear of the per-target rate limit
 redelivery from; this store itself never redelivers on its own (no in-memory
 timer). `mark_escalated(entry_id, now=...)` stamps the reserved `escalatedAt`
 field the ladder (HFX2-L4) will set -- this store only reserves the transition.
+
+260707-HFX2-L4 (R1/R2, the ladder's own transition): `advance_rung(entry_id, *, rung, now)` stamps
+the ladder's next rung AND re-anchors `escalatedAt` to `now` in the SAME snapshot, so the next
+rung's SLA/dwell check is measured from this transition, not the row's original creation. Distinct
+from `mark_escalated` (HFX2-L2's reserved, rung-agnostic "this row is now escalatable" stamp) —
+`escalation_ladder`/`serving/supervisor.py`'s `_escalate_rung` is the only caller of `advance_rung`.
 
 ### Conventions
 
@@ -101,6 +107,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R1/R2, escalation ladder): added `advance_rung` — stamps
+  the ladder's next rung and re-anchors `escalatedAt` in the same snapshot, distinct from HFX2-L2's
+  rung-agnostic `mark_escalated`. `serving/supervisor.py::_escalate_rung` is the sole caller.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
 - 2026-07-08T14:00+02:00 — 260707-HFX2-L1: R1 ack semantics (attempt/backoff
   fields on `record_delivery`, delivered is never terminal) + R3 redelivery
   (`list_redeliverable`, `mark_escalated`), reusing the `inbox_backoff` module's
