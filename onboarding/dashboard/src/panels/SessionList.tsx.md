@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T22:21+02:00                           |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T04:15+02:00                           |
+| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`       |
+| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -32,7 +32,12 @@ collapsed-by-default archive — while unattached sessions keep the flat placeme
 `grouped` model or zero derived groups the component renders the pre-L14 flat list unchanged. Rows
 with `spawnRole` provenance also wear a role chip; HFX-L6/L6R2 makes `architect` a known gold
 owner-tier chip alongside the backend command seats, and L6R4 makes `curator` a known role chip
-instead of the unknown/default path.
+instead of the unknown/default path. **260707-HFX-L12** (optional R6 fold-in from the master-exit
+verdict) makes `designer` and `system-specialist` known role chips too — both previously fell
+through to the muted default chip; `designer` gets the same gold-with-border tier as
+architect/orchestrator (doctrine elsewhere in this dashboard, `flowModels.ts`, calls designer "the
+same hat" the architect wears), `system-specialist` gets bare `cyan` matching worker/curator. No
+new color token; cosmetic only, never throws.
 
 ## Code Commentary
 
@@ -67,7 +72,8 @@ chat (the auto-expand rule; an explicit user collapse still wins). Collapsed gro
 `GridList`; `grouped.ungrouped` renders as a trailing flat `GridList` below the groups. `renderRow`
 also gained the spawn-role chip: `session.spawnRole` renders a `chats-session-role-{id}` chip via
 the `roleChip` cva (`architect` and `orchestrator` gold owner-tier with gold borders, strategist
-gold, manager purple, worker cyan, curator cyan, reviewer amber; unknown roles fall to the muted
+gold, `designer` gold-with-border (260707-HFX-L12), manager purple, worker cyan, curator cyan,
+`system-specialist` cyan (260707-HFX-L12), reviewer amber; unknown roles fall to the muted
 base, never throw). The chip carries `data-known-role="true|false"` so tests can distinguish known role
 provenance from an unknown/default chip without depending on generated class names.
 
@@ -106,6 +112,13 @@ through the shared `grammar/RankBadge` (size `sm`).
 | The V4 chevron insignia on group headers (size `sm`). | — | [RankBadge.tsx](../grammar/RankBadge.tsx) |
 
 ## Update History
+
+- 2026-07-08T04:15+02:00 — 260707-HFX-L12 (optional R6 fold-in, master-exit verdict Finding 3):
+  registered `designer` and `system-specialist` in `ROLE_VALUES`/`roleChip` so both render their own
+  chip color instead of falling through to the muted base — `designer` gold-with-border (same tier
+  as architect/orchestrator), `system-specialist` bare cyan (same tier as worker/curator). No new
+  color token; cosmetic only, never throws. Verification metadata pinned until closeout stamps the
+  HFX-L12 commit.
 
 - 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: added
   `curator` to the known spawn-role set and role chip variants using the existing restrained cyan

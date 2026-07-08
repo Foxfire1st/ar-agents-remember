@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T14:00+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-08T04:25+02:00 |
+| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`       |
+| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -200,7 +200,11 @@ and the `Chats` `SessionList` switcher).
   commanded; live enclosures only), landed/absent-enclosure chats rolled into one collapsed archive,
   unattached sessions flat below, spawn-role chips on rows, and UI-local collapse where a
   default-collapsed group still auto-expands to keep the ACTIVE chat visible; HFX-L6 adds architect
-  and curator role labels/chip handling beside the existing orchestration roles; zero derived groups —
+  and curator role labels/chip handling beside the existing orchestration roles; HFX-L12 (docs-parity
+  fold-in) registers `designer` (gold, matching the architect/orchestrator tier) and
+  `system-specialist` (cyan, matching the worker/curator tier) in the same `ROLE_VALUES`/`roleChip`
+  registry — both roles were spawnable since earlier leaves but rendered as the muted base chip
+  until this fold-in; zero derived groups —
   every flat run — renders the pre-L14 flat list unchanged), and the selected session's
   lazy-mounted `Terminal` — an
   imperative `@xterm/xterm` terminal (FitAddon + `ResizeObserver` → `sendResize`, the known resize
@@ -342,6 +346,12 @@ an idle dashboard at zero store writes.
 
 ## Update History
 
+- 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (docs-parity fold-in, master-exit Finding
+  3): `SessionList`'s `ROLE_VALUES`/`roleChip` registry gains `designer` (gold) and
+  `system-specialist` (cyan), matching the existing four-tier color convention (no new token) —
+  both roles were already spawnable but rendered as the muted base chip; the panels route inventory
+  itself is unchanged (same mechanism, two more registered Literal members). Verification metadata
+  pinned until closeout stamps the HFX-L12 commit.
 - 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: `SessionList`/`Chats`
   role rendering and the dormant `FlowTab` model now carry architect/curator seats, matching the
   architect/default developer-facing split and curator closeout chain while keeping the panels route

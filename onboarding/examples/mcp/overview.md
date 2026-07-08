@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-07-08T01:35+02:00                     |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T04:25+02:00                     |
+| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2` |
+| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
 
 ## Purpose
 
@@ -43,11 +43,23 @@ store). Shipping it enabled-by-default in the example (unlike `dashboard`,
 which ships opt-in) matches the requirement that the critical-threshold
 failsafe defaults ON at a conservative bound.
 
+Since 260707-HFX-L12 the template also carries a `retirement` object
+(`autoRetireOnIntegration: true`, `autoRetireOnFinalize: true`) — the auto-retire hook gates
+HFX-L8 parsed but left undocumented here until the master-exit review caught the parity gap
+against the `providerDegradation` precedent above; both flags ship ON (spawn/cleanup symmetry is
+the happy path) unlike `dashboard`'s off-by-default posture.
+
 `coding-guidelines.example.md` is an example `system/coding-guidelines.md` body
 that teams can adapt for a memory repo. It is documentation-shaped example
 content, not a runtime input.
 
 ## Update History
+
+- 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (docs-parity fold-in, master-exit Finding
+  2): the settings template gains the `retirement` block
+  (`autoRetireOnIntegration`/`autoRetireOnFinalize`, both `true`), closing the parity gap between
+  HFX-L8 (which parsed the setting) and its docs (which never shipped it, unlike L7's
+  `providerDegradation`). Verification metadata pinned until closeout stamps the HFX-L12 commit.
 
 - 2026-07-08T01:35+02:00 — 260707-HFX-L7 route impact: the settings template gains the
   `providerDegradation` block (enabled/failSafeEnabled/memoryDegradedRatio/memoryCriticalRatio)

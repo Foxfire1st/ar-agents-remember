@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-08T01:00+02:00                                              |
-| lastVerifiedCommitHash |                                                                     `9a0e6ca69ccc690fc0466db5051571fa2d9902dc`|
-| lastVerifiedCommitDate |                                                                     2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T04:15+02:00                                              |
+| lastVerifiedCommitHash |                                                                     `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`|
+| lastVerifiedCommitDate |                                                                     2026-07-08T04:09:43+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -31,10 +31,19 @@ session and/or polled by an external chat.
 planner can post/receive role-addressed inbox rows). **260707-HFX-L7** adds
 `system-specialist`: the investigate-first provider-degradation seat needs its own inbox address
 alongside `orchestrator`/`manager` since it is dispatched and reports through the same durable
-mailbox as every other role. `InboxMessageKind` classifies the row, and now also carries
-`degradation-alert` (260707-HFX-L7) — the row kind the provider degradation detector posts to the
-orchestrator and every active manager on a state-change transition (see
-`providers/degradation.py`). `InboxDeliveryState` records hosted push state.
+mailbox as every other role. **260707-HFX-L12** adds `architect` and `curator`: HFX-L6 landed
+doctrine (`architect.md`, `orchestrator.md`, `SKILL.md`) instructing the orchestrator to post a
+`decision-item` inbox row to `recipient_role="architect"` and the architect to post a
+`decision-ruling` back, but the schema itself still rejected both roles — a master-exit BLOCK
+finding (Finding 1, `notes/reports/260707-HFX-master-exit-verdict.md`) that this leaf closes.
+`InboxMessageKind` classifies the row, and now also carries `degradation-alert` (260707-HFX-L7) —
+the row kind the provider degradation detector posts to the orchestrator and every active manager
+on a state-change transition (see `providers/degradation.py`) — and, as of 260707-HFX-L12,
+`decision-item`/`decision-ruling` — the architect/orchestrator decision relay pair the doctrine
+above mandates, now genuinely round-trippable (proven by
+`test_decision_item_relay_round_trip_between_orchestrator_and_architect` in
+`mcp/tests/test_operator_inbox.py`, which posts a `decision-item` to `architect`, polls it, then
+posts a `decision-ruling` back to `orchestrator`). `InboxDeliveryState` records hosted push state.
 `require_inbox_address(...)` rejects entries with no lifecycle id, agent id, or
 recipient role.
 
@@ -93,6 +102,13 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T04:15+02:00 — 260707-HFX-L12 (master-exit BLOCK fix leaf): `AgentRole` gains
+  `architect` and `curator`; `InboxMessageKind` gains `decision-item` and `decision-ruling`. Closes
+  master-exit Finding 1 — the HFX-L6-landed decision-item relay doctrine was unrepresentable in this
+  schema, so the exact call `architect.md`/`orchestrator.md`/`SKILL.md` instruct agents to make
+  raised `pydantic.ValidationError`. No shape/behavior change to the record helpers themselves — four
+  Literal members added, pinned by the new round-trip test in `test_operator_inbox.py`. Verification
+  metadata pinned until closeout stamps the HFX-L12 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `AgentRole` gains
   `system-specialist` so the provider-degradation investigator is inbox-addressable, and
   `InboxMessageKind` gains `degradation-alert` for the detector's role-addressed state-change
