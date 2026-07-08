@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T16:15+02:00 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674` |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00 |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -116,6 +116,14 @@ stamped once at post time from that derivation. `kernel/agentic_settings.py` gai
 ladder, and dashboard consumption of `escalatedAt` are explicitly OUT of scope for this leaf (a
 sibling leaf's job); this leaf only lands the durable rows, the backoff math, and the routing
 derivation the sweep will consume.
+260707-HFX2-L2 adds the `orchestration.supervisor` settings family to the same package-level
+loader — `SupervisorSettings` (enabled/interval/staleness-cutoff/redeliver-rate-limit) parsed by
+`kernel/agentic_settings.py` — consumed across TWO other package routes: `serving/app.py`'s new
+supervisor-sweep lifespan task (the sweep subsystem itself — the predicate library, action
+dispatcher, and self-liveness heartbeat — is documented in full in `serving/overview.md`, which
+this file governs) and `mcp/tools/base.py`'s per-tool-call staleness banner attachment
+(`supervisorBanner`, exception-contained at the call site). Same cross-route-consumption shape as
+the 260707-HFX2-L1 expectation-row family documented above.
 
 ## Hot Path Summary
 
@@ -554,6 +562,17 @@ into the role files.
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep + predicates): the
+  package-level `kernel/agentic_settings.py` loader (governed here, since `kernel/` has no own
+  route-local overview) gains the `orchestration.supervisor` family — `SupervisorSettings` (enabled/
+  interval/staleness-cutoff/redeliver-rate-limit), consumed across TWO other package routes:
+  `serving/app.py`'s new supervisor-sweep lifespan task and `mcp/tools/base.py`'s per-tool-call
+  staleness banner. Same cross-route-consumption shape the L1 entry above documents for the
+  expectation-row family — a genuine package-level settings addition, not confined to one child
+  route's onboarding. The sweep subsystem itself (`serving/supervisor.py`,
+  `serving/pane_signals.py`, `serving/supervisor_heartbeat.py`) is documented in full in
+  `serving/overview.md`, which this file governs. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L2 commit.
 - 2026-07-08T16:15+02:00 — 260707-HFX2-L1 route impact (curator delta round 2, closeout-preview
   gap; not reviewed in this leaf's first curator pass, which only touched the child
   `controlplane/overview.md`/`observer/overview.md`): the new durable expectation-row/backoff/

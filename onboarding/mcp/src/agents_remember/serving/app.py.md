@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:55+02:00                    |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00                    |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -83,6 +83,36 @@ degradation-evaluation failure never kills sampling either. This is the ONLY cal
 detector's entry point; the detector itself owns state persistence, inbox alerting, and the
 critical-threshold failsafe stop (`providers/degradation.py`) — `app.py` only wires the call into
 the loop it already owns.
+
+**260707-HFX2-L2 (R1, supervisor sweep host):** `create_app` builds a third decoupled-cadence
+lifespan task, `supervisor_loop()`, following the exact `metrics_loop()` template — its own
+`settings.supervisor.interval_seconds` sleep (default 10s, re-read from `load_agentic_settings`
+every iteration so a settings edit takes effect without a restart), an `enabled` early-continue when
+the family is switched off, and the same `try/except Exception: logger.exception(...)` resilience
+posture so a sweep failure never crashes the daemon and simply retries next interval. Each iteration
+builds a fresh `SupervisorContext` (`_supervisor_context()`) wiring the catalog/host/paster the app
+already owns plus fresh `OperatorInboxStore`/`ExpectationRowStore`/`OrchestrationNudgeStore`/
+`EventStore` instances and the shared `SupervisorHeartbeatStore`, then runs
+`run_supervisor_sweep(ctx, now=(now or utc_now)())` via `asyncio.to_thread` (the sweep's store I/O is
+synchronous, so it never blocks the event loop). `stale_seat_seconds` is derived as
+`max(settings.supervisor.interval_seconds * 4, 60.0)` — four sweep intervals of grace before a
+turn-state-stale row fires the seat-liveness predicate (R2e), floored at 60s so a very fast sweep
+interval cannot make the liveness predicate trigger-happy. The lifespan cancels
+`supervisor_task` (added to the existing metrics/projector cancel set, same
+`contextlib.suppress(asyncio.CancelledError)` await pattern) on shutdown.
+
+**260707-HFX2-L2 (R5, self-liveness surfacing):** a module-level `SupervisorHeartbeatStore` is
+constructed once in `create_app` (shared by the loop and the read side below).
+`_supervisor_heartbeat_payload()` reads the current tick via `heartbeat_age_seconds` at RESPONSE
+time (using `liveness_clock()`, the same `now or utc_now` base every other liveness call in this
+file shares) and returns `{lastTickAt, ageSeconds, staleCutoffSeconds, stale}` — `stale` is `True`
+when there is no tick yet OR the age has passed `settings.supervisor.stale_cutoff_seconds`. This
+payload is attached as `supervisorHeartbeat` on both `GET /api/state`'s JSON body and the SSE
+snapshot (`stream_events` gained a `supervisor_heartbeat` keyword, attached the same way
+`servingBuild` already is). It is deliberately computed at response/connect time rather than folded
+into the change-gated projection: like `servingBuild`, it never affects `/api/state`'s ETag
+revision (delta.py's "volatile ages excluded" posture) — a live tick age must never make an
+otherwise-unchanged projection look changed.
 
 - `GET /api/state` returns the current projection once as `model_dump(by_alias=True,
   exclude_none=True)` plus the boot-time `servingBuild` stamp (503 until the first projection
@@ -291,6 +321,17 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 - **Metrics sampling is observation, not control (containment R4):** the loop is read-only and
   dockerless-safe, runs on its own 30s cadence (never the 1s tick), and must survive sampling
   failures — a failed pass logs and retries next interval; shutdown cancels it cleanly.
+- **The supervisor sweep is stores-not-projections, code-not-model (260707-HFX2-L2 R1/R3):**
+  `supervisor_loop` and `_supervisor_context` wire the app's OWN store instances directly into
+  `SupervisorContext` — `app.py` never reaches into `serving/projector.py` or
+  `observer/reducer.py` for the sweep's predicates. Own decoupled cadence (settings-controlled,
+  default 10s), never the 1s tick; exception-tolerant like the metrics loop; zero model calls
+  anywhere in the loop.
+- **The supervisor heartbeat is a volatile age, same posture as `servingBuild` (R5):** computed at
+  response/connect time via `liveness_clock()`, never folded into the `/api/state` ETag revision —
+  an idle dashboard tab whose OTHER content never changes will not see `ageSeconds` advance until a
+  real reconnect or an unrelated content change forces a fresh `200` (the same accepted limitation
+  `servingBuild` already has).
 - `McpRuntimeConfig`/`datetime` are imported under `TYPE_CHECKING` (config is only passed on).
 
 ## Repo-Internal References
@@ -320,9 +361,26 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The provider degradation detector this loop calls once per tick after recording a metrics sample (260707-HFX-L7). | evaluate_provider_degradation | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
 | The retire/rename mechanics + authority policy the two new endpoints call into (260707-HFX-L8). | `retire_entry`; `check_retire_authority`/`SeatRef`/`master_of` | [retire.py](retire.py); [retire_policy.py](retire_policy.py) |
 | The observer-event loggers the retire/rename endpoints and the turn-state sweeper callback fire. | `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | [seat_events.py](seat_events.py) |
+| The deterministic supervisor sweep + predicate library `supervisor_loop`/`_supervisor_context` drive every interval (260707-HFX2-L2 R1-R4). | `SupervisorContext`; `run_supervisor_sweep` | [supervisor.py](supervisor.py.md) |
+| The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `supervisor.py`) calls. | `classify_pane_signal` | [pane_signals.py](pane_signals.py.md) |
+| The self-liveness heartbeat store both the loop (tick) and the read side (`_supervisor_heartbeat_payload`) share (260707-HFX2-L2 R5). | `SupervisorHeartbeatStore`; `heartbeat_age_seconds` | [supervisor_heartbeat.py](supervisor_heartbeat.py.md) |
+| The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | [../kernel/agentic_settings.py](../kernel/agentic_settings.py.md) |
+| The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../observer/store.py](../observer/store.py) |
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep + predicates, R1/R3/R4/R5): added
+  `supervisor_loop()` (a third decoupled-cadence lifespan task, following the `metrics_loop`
+  template exactly — settings-driven interval/enable, exception-tolerant, cancelled at shutdown)
+  and `_supervisor_context()` wiring `SupervisorContext` from the app's own catalog/host/paster plus
+  fresh `ExpectationRowStore`/`OperatorInboxStore`/`OrchestrationNudgeStore`/`EventStore` instances
+  (stores-not-projections, R3). Added the shared `SupervisorHeartbeatStore` and
+  `_supervisor_heartbeat_payload()` (R5): `supervisorHeartbeat` now rides both `GET /api/state`'s
+  JSON body and the SSE snapshot (`stream_events` gained a `supervisor_heartbeat` keyword),
+  computed at response/connect time and deliberately excluded from the `/api/state` ETag revision
+  (same volatile-age posture as `servingBuild`). New imports: `serving.supervisor`,
+  `serving.supervisor_heartbeat`, `ExpectationRowStore`, `OrchestrationNudgeStore`, `EventStore`.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state):
   new `TerminalRetireRequest`/`TerminalRenameRequest` models and two new routes,
   `POST /api/terminal/{session}/retire` (authority-checked via `check_retire_authority`, idempotent

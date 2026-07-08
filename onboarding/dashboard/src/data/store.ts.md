@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T05:18+02:00                           |
-| lastVerifiedCommitHash |                                                  `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                  2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00                           |
+| lastVerifiedCommitHash |                                                  `8b7c1933611a13ada98dcd6fc3476c0457e136ac`|
+| lastVerifiedCommitDate |                                                  2026-07-08T07:43:47+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -42,9 +42,18 @@ in `useStore` for React subscribers. State mutates through these actions:
   (`stampServed`) and swapped in, and an entirely-unchanged collection returns the EXISTING map
   object. `metrics`/`analytics`/`activeWorktreeGroups`/`servingBuild` go through the same `reuse`
   gate (a replaced analytics re-anchors all its age-bearing nodes via `stampAnalytics`). When
-  NOTHING changed and `conn` is already live, the action returns without calling `set` at all —
-  an idle reconnect re-snapshot costs zero writes/re-renders. `generatedAt` advances only when
-  content applied (it is the "ages as of" stamp the top bar shows — coherence rule).
+  NOTHING changed and `conn` is already live, the action returns early (260707-HFX2-L2 R5, fix
+  round 2): it calls `set({ supervisorHeartbeat })` only when `heartbeatEquals(state.
+  supervisorHeartbeat, supervisorHeartbeat)` is false, then always returns — a truly idle
+  heartbeat (including `null`/`null`) still performs zero store writes on this path. A dedicated
+  `heartbeatEquals` comparator is used instead of the general `stableEquals` gate because
+  `stableEquals` strips `ageSeconds` (it's in `VOLATILE_AGE_FIELDS`), which is exactly the field a
+  genuine heartbeat tick advances — reusing `stableEquals` here would silently treat every
+  advancing tick as unchanged. `heartbeatEquals` compares `lastTickAt`/`ageSeconds`/
+  `staleCutoffSeconds`/`stale` literally, ages included. Every other field on that early-return
+  path stays untouched (identity-preserving). On the normal (changed-content) path, `generatedAt`
+  advances only when content applied (it is the "ages as of" stamp the top bar shows — coherence
+  rule); `supervisorHeartbeat` is set alongside it.
 - `applyDelta` — routes the server's named deltas through `reduceDelta`, which now returns
   `null` for a no-op (a stable-equal node, a removed-marker for an absent id, an equal
   whole-value) — the caller then skips `set` entirely. Real upserts stamp the node and merge as
@@ -82,6 +91,17 @@ orphaning and bleeding through the scenario dropdown. `reset()` also clears `act
   displays can advance locally; nodes reused by identity keep their original (correct) anchor.
 - `servingBuild` is wire-optional (a pre-L15 server sends none → `null`, the stamp renders
   nothing); `reset()` clears it like every other collection.
+- **`supervisorHeartbeat` is deliberately EXCLUDED from the general `unchanged` change-gate check
+  (260707-HFX2-L2 R5)** — it is a live tick age injected app-side at response time (mirroring the
+  backend's own `delta.py` "volatile ages excluded" posture), so it is evaluated even on the
+  content-unchanged early-return path. Unlike a bypass of the identity-preserving no-write
+  guarantee, it has its OWN dedicated equality check gating the write (`heartbeatEquals`, fixed in
+  fix round 2 — see Update History): `if (unchanged && state.conn === "live") { if
+  (!heartbeatEquals(state.supervisorHeartbeat, supervisorHeartbeat)) { set({ supervisorHeartbeat
+  }); } return; }`. So the store still writes only when something actually changed — just via a
+  heartbeat-specific comparator that (unlike `stableEquals`) does not strip `ageSeconds`, since
+  that's precisely the field a genuine tick advance shows up in. `reset()` clears it to `null` like
+  every other collection.
 - The store keeps only a bounded sliding window of received Event River rows (`EVENT_WINDOW`), dropping
   the oldest past the bound — a memory bound for a long-lived tab, NOT the removed silent newest-N display
   cap. The real history bound is backend observer-log retention; `EventRiver` virtualizes this window, so
@@ -102,9 +122,27 @@ orphaning and bleeding through the scenario dropdown. `reset()` also clears `act
 | Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | L29-L31; L120-L122 | [store.ts](store.ts) |
 | `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | L42-L46; L139-L180 | [store.ts](store.ts) |
 | `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | — | [../panels/EventRiver.tsx](../panels/EventRiver.tsx) |
+| `SupervisorHeartbeat` type this store carries, and the app-injected payload it mirrors. | — | [../types/projection.ts](../types/projection.ts.md) |
+| `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from this store to render the top-bar tick-age indicator. | — | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx.md) |
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added
+  `supervisorHeartbeat: SupervisorHeartbeat | null` to `DashboardState` (init `null`, reset-cleared).
+  Deliberately EXCLUDED from the `unchanged` change-gate equality check — `applySnapshot`'s
+  content-unchanged early-return path now still `set({ supervisorHeartbeat })` before returning, so
+  the live tick age rides through even when nothing else in the projection changed. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
+- 2026-07-08T05:36+02:00 — 260707-HFX2-L2 fix round 2 (manager-caught regression, see
+  `260707-HFX2-L2-fix2-report.md`): corrected the R5 entry below — the content-unchanged
+  early-return path in `applySnapshot` does NOT unconditionally `set({ supervisorHeartbeat })`.
+  It now only writes when `heartbeatEquals(state.supervisorHeartbeat, supervisorHeartbeat)` is
+  false, then always returns, so a truly idle heartbeat (incl. `null`/`null`) across an idle
+  re-snapshot performs zero store writes. Added `heartbeatEquals`, a dedicated field-literal
+  comparator over `lastTickAt`/`ageSeconds`/`staleCutoffSeconds`/`stale`, used instead of the
+  general `stableEquals` gate specifically because `stableEquals` strips `ageSeconds` (a
+  `VOLATILE_AGE_FIELDS` member) — the exact field a genuine tick advance must be detected in, so
+  reusing `stableEquals` here would have silently defeated the point of a live tick.
 - 2026-07-07T05:18+02:00 — 260703-L15 (S1 + S3): both apply paths became identity-preserving and
   change-gated — `mergeKeyed`/`reuse` over `stableEquals`, `reduceDelta` returns `null` for
   no-ops, an unchanged snapshot performs zero store writes, applied nodes are age-anchored via

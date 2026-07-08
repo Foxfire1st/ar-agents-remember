@@ -275,6 +275,7 @@
     "mcp/tests/test_onboarding_drift.py",
     "mcp/tests/test_operator_inbox.py",
     "mcp/tests/test_orchestration_comms.py",
+    "mcp/tests/test_pane_signals.py",
     "mcp/tests/test_provider_async.py",
     "mcp/tests/test_provider_containment.py",
     "mcp/tests/test_provider_context_imports.py",
@@ -301,6 +302,7 @@
     "mcp/tests/test_spawn_agent_session.py",
     "mcp/tests/test_starter_renderers.py",
     "mcp/tests/test_subprocess_hygiene.py",
+    "mcp/tests/test_supervisor.py",
     "mcp/tests/test_sync_dashboard.py",
     "mcp/tests/test_sync_runtime.py",
     "mcp/tests/test_sync_scripts.py",
@@ -327,8 +329,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 561,
-    "fileSidecars": 239,
+    "sourceFilesInScope": 566,
+    "fileSidecars": 241,
     "childRoutes": 15
   },
   "routingTerms": [

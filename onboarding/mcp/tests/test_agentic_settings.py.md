@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00 |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -16,8 +16,9 @@
 (`kernel/agentic_settings.py`, 260703-L13): merge precedence, the fail-loud
 unknown-key discipline, absent-file defaults, and the typed models — plus, since
 260703-L16, the free-form role knobs (`FreeFormRoleKnobTests`), the per-level
-overrides (`RolesPerLevelTests`), and the harness-definition family
-(`HarnessesFamilyTests`).
+overrides (`RolesPerLevelTests`), the harness-definition family
+(`HarnessesFamilyTests`), and — since 260707-HFX2-L2 — the supervisor sweep's own knob family
+(`SupervisorFamilyTests`).
 
 ## Code Commentary
 
@@ -87,6 +88,13 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   the three bad shapes (`/set {mode}={value}`, `{}`, an unmatched brace) refuse
   naming the harness, the builtin-override-supplying-only-the-command path is
   validated, and a `{value}`-only template is accepted.
+- `SupervisorFamilyTests` (260707-HFX2-L2, R1/R5) — an absent `orchestration.supervisor` block
+  yields the documented defaults (`enabled=True`, `interval_seconds=10.0`,
+  `stale_cutoff_seconds=60.0`, `redeliver_rate_limit_seconds=None`); a full block parses every knob
+  (`enabled=False`, `intervalSeconds=5`, `staleCutoffSeconds=30`, `redeliverRateLimitSeconds=45`);
+  `enabled` rejects a non-boolean (`"yes"`) naming `supervisor.enabled`; `intervalSeconds` rejects a
+  non-positive value naming `intervalSeconds`; and an unknown key (`sweepSeconds`) fails loud naming
+  itself against `KNOWN_SUPERVISOR_FIELDS`.
 - `SeedTests` — `default_agentic_settings_seed()` round-trips through the
   loader to the SAME posture an absent file yields, except
   `gate_delegation_configured` is True (the seed explicitly claims the key's
@@ -132,6 +140,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R1/R5): added `SupervisorFamilyTests` —
+  absent-block defaults, full-block parsing of all four knobs, `enabled`-must-be-boolean,
+  `intervalSeconds`-must-be-positive, and unknown-key fail-loud (`sweepSeconds`). Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `TypedModelTests` role-knob
   fixture gained a flat `system-specialist` entry asserting `RoleKnobs(harness="claude",
   model="fable")`, pinning the ninth `KNOWN_ROLES` member's flat role-knob parsing. Verification

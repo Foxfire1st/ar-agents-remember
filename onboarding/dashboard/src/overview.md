@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T14:00+02:00 |
-| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`       |
-| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
+| lastUpdated            | 2026-07-08T18:45+02:00 |
+| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
+| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -27,6 +27,11 @@ Chats terminal (slice 6e — an xterm.js view over the Mode B2
 `/api/terminal` WebSocket): a persistent top bar + left rail (attention queue + lifecycle list) + a
 switchable centre viewport (operations / file viewer / engine room / memory mirror / topology / hangar / chats) +
 a right-rail event river + a bottom mode bar (note 06 model C). The unit is the lifecycle (note 01).
+**260707-HFX2-L2 (R5)** adds a second top-bar liveness indicator beside the boot-time `servingBuild`
+stamp: `SupervisorHeartbeatBadge` (`cockpit/Cockpit.tsx`) renders the serving daemon's supervisor
+sweep's own tick age (`store.ts`'s `supervisorHeartbeat` field, mirroring `types/projection.ts`'s
+app-injected `SupervisorHeartbeat` shape) — red/pulsing past its staleness cutoff, silent when the
+supervisor has never ticked (opt-in autostart) rather than a false alarm.
 
 ## The Layered Architecture (slice 5d)
 
@@ -230,9 +235,20 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 | The topology pure model that maps provider bindings to constellation parents. | [topology/model.ts](topology/model.ts) |
 | The serving layer (SSE + static mount) the frontend consumes. | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
 | The built bundle is synced into package_data by this script. | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
+| The app-injected `supervisorHeartbeat` payload builder `SupervisorHeartbeatBadge` renders (260707-HFX2-L2 R5). | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 
 ## Update History
 
+- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep, R5): `cockpit/Cockpit.tsx`
+  gains `SupervisorHeartbeatBadge` in the `TopBar` (beside `ServingBuildStamp`); `data/store.ts`
+  gains the `supervisorHeartbeat` field, deliberately excluded from the change-gate `unchanged`
+  check so the live tick age still applies on a content-unchanged reconnect; `types/projection.ts`
+  gains the `SupervisorHeartbeat` type and optional `WorkspaceProjection.supervisorHeartbeat?` — a
+  second app-injected, non-`projection.py` field alongside `servingBuild?`. No route/component-tree
+  shape change beyond the one new top-bar badge. **Known limitation (builder-flagged, unverified
+  in this environment):** these TS changes are unverified by `tsc`/a build (no `dashboard/
+  node_modules` installed); a follow-up should run the dashboard's own build/test suite once
+  available. Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
 - 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: the `data/sessionGroups`
   model and terminal data mirror now include architect/curator role provenance so Chats grouping and
   row chips can represent the split developer-facing architect, backend orchestrator, and curator
