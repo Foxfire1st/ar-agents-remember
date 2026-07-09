@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T04:25+02:00                     |
-| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2` |
-| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00                     |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -70,16 +70,14 @@ provider-only degradation detector's settings surface; `agents_remember.mcp.prov
 fail-loud rejects unknown keys and wrong per-field shapes the same way `timeoutCaps`/`dashboard`
 do.
 
-The template also ships a `retirement` object (260707-HFX-L8, docs-parity fold-in landed by
-260707-HFX-L12): `{"autoRetireOnIntegration": true, "autoRetireOnFinalize": true}` — both flags
-default `true`, unlike `dashboard`'s off-by-default posture, because spawn/cleanup symmetry is the
-happy path (a completed leaf/master should leave zero spent chats without anyone remembering to
-clean up). `agents_remember.mcp.config`'s `parse_retirement_settings` fail-loud rejects unknown
-`retirement` keys and non-boolean values for either known field the same way `timeoutCaps`/
-`dashboard`/`providerDegradation` do. This block was originally parsed by HFX-L8 but left
-undocumented here (and in `docs/reference/settings-json.md`) until the master-exit adversarial
-review caught the parity gap against L7's `providerDegradation` precedent (Finding 2) and HFX-L12
-folded in the fix.
+The template also ships a `retirement` object (260707-HFX2-L11):
+`{"autoLandOnIntegration": true, "autoLandOnFinalize": true}` — both flags default `true`, unlike
+`dashboard`'s off-by-default posture, because successful completion should preserve spent chats in
+the landed archive automatically. `agents_remember.mcp.config`'s `parse_retirement_settings`
+fail-loud rejects unknown `retirement` keys and non-boolean values for either known field the same
+way `timeoutCaps`/`dashboard`/`providerDegradation` do, while still accepting the old
+`autoRetireOnIntegration`/`autoRetireOnFinalize` spellings as compatibility aliases. The template
+uses the current `autoLand*` keys so new settings files do not teach completion-edge termination.
 
 ### Invariants And Boundaries
 
@@ -100,6 +98,10 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: the template's `retirement` example
+  now documents `autoLandOnIntegration`/`autoLandOnFinalize`, preserving successful chats in the
+  landed archive; legacy `autoRetire*` keys are compatibility aliases only. Verification metadata
+  pinned until closeout stamps the HFX2-L11 commit.
 - 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (docs-parity fold-in, master-exit Finding
   2): the template now ships a `retirement` block (`autoRetireOnIntegration`/
   `autoRetireOnFinalize`, both `true`) — the settings object HFX-L8 parsed but left undocumented

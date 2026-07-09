@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T11:19+02:00                    |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00                    |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -31,7 +31,8 @@ MCP tool spawn through ONE opener — the L5/L9
 `POST /api/terminal/{session}/paste` server-side capture-verified context-packet paste, the `GET /api/harnesses` detection
 endpoint (6e-2b), the **260707-HFX-L8** `POST /api/terminal/{session}/retire` (server-authoritative
 seat retirement with authority policy) and `POST /api/terminal/{session}/rename` (post-spawn
-identity rename) endpoints, image upload under a live or catalog-restored cwd, the read-only `/api/files/*` files API
+identity rename) endpoints, the **260707-HFX2-L11** landed-archive cleanup endpoint
+(`POST /api/terminal/landed-cleanup`), image upload under a live or catalog-restored cwd, the read-only `/api/files/*` files API
 (operations-integration L1) and the read-only `/api/changeset/*` change-set API (L3) — both registered
 just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
@@ -171,7 +172,10 @@ otherwise-unchanged projection look changed.
   `observe_terminal_liveness` — HFX-L5: a transient tmux command failure records hysteresis
   evidence instead of immediately exit-marking the row; a dead probe still refuses), and calls
   `host.attach(..., name=entry.tmux_name)` so this WebSocket gets its own tmux client PTY attached to
-  the same durable tmux session. If the row is unknown/non-running or the observation says
+  the same durable tmux session. Since **260707-HFX2-L11**, a row with `status:"landed"` is also
+  attachable for read-only archive inspection; the background liveness sweeper deliberately skips
+  these rows, but attach still performs an on-demand tmux check before connecting. If the row is
+  unknown, not `running`/`landed`, or the observation says
   not-alive/not-running, it `close(code=4404)` (exit marks now come only from the evidence-backed
   liveness path, revivable by the sweeper's self-heal). PTY output is queued via
   `loop.add_reader(master_fd)` (no polling) and sent as **binary** frames (raw VT bytes for
@@ -188,7 +192,8 @@ otherwise-unchanged projection look changed.
 - `GET /api/terminal/sessions` returns catalog rows via `liveness_sweeper.refresh()` (HFX-L5): a
   full probe sweep runs at most every 10s (default) and never overlaps — a rate-limited or
   concurrent call serves the persisted catalog without probing, so the dashboard's 1s polling
-  cadence no longer implies 1s tmux probing. A running row exit-marks only after the hysteresis
+  cadence no longer implies 1s tmux probing. Landed rows are returned without background probing or
+  turn-state classification, preserving the inspectable archive as a cold list. A running row exit-marks only after the hysteresis
   evidence threshold (3 command failures across ≥5s, or one definitive pane-gone probe); a falsely
   exited row self-heals to `running` on the next alive probe; explicitly terminated rows are
   filtered by the catalog.
@@ -227,7 +232,7 @@ otherwise-unchanged projection look changed.
   `assign_terminal_session_to_leaf(catalog, session_id, leaf_key)`, so browser actions and the
   agent-facing MCP tool share one server-authoritative catalog policy. Invalid or ambiguous leaf refs
   return `400` before mutating the row. The result maps to
-  `404 {"status":"unknown-session"}` for an unknown/terminated session, `409 {"status":"leaf-taken",...}`
+  `404 {"status":"unknown-session"}` for an unknown/non-running session, `409 {"status":"leaf-taken",...}`
   when a different running session of the same role owns the target leaf, and
   `200 {"session","status":"attached","leafKey"}` after persisting `entry.with_leaf_key(leaf_key)`.
   A conflict does not mutate the catalog.
@@ -245,6 +250,12 @@ otherwise-unchanged projection look changed.
   the route returns `200 retired` + the four retirement provenance fields. Same underlying
   `retire_entry`/`check_retire_authority` mechanics as the `session_retire` MCP tool
   (`mcp/tools/terminal.py`) so the dashboard-button path and the agent-tool path retire identically.
+- `POST /api/terminal/landed-cleanup` (**260707-HFX2-L11**) closes the dashboard's collapsed landed
+  archive group. `TerminalLandedCleanupRequest` carries `sessions`; the route re-reads each catalog
+  row and only calls `retire_entry(..., reason="landed group cleanup", edge="landed-group-cleanup")`
+  when the current row is still `status:"landed"`. Rows that vanished or changed status are returned
+  in `skipped`; successfully closed rows are logged through `log_retire_event`. This is explicit
+  cleanup, not completion-edge automation.
 - `POST /api/terminal/{session}/rename` (**260707-HFX-L8**, issue #4) is the post-spawn identity
   surface: a `TerminalRenameRequest` (`label`). `404 unknown-session` when the row is missing or
   already `terminated`; else `catalog.set_label` + `log_rename_event`, returns `200 renamed` +
@@ -324,7 +335,8 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
   arbiter — at most one *running* session per **(leaf, role)**. Since **L2** the opener's claim lives in
   `terminal_opener.open_terminal_session` (via the shared `leaf_conflict_owner`, `role=role_for_kind(kind)`)
   rather than the removed local `_claim_leaf_or_409`; `attach-leaf` still delegates to
-  `assign_terminal_session_to_leaf` (`role=entry.role`). A **chat** (any harness) and a **terminal** (a
+  `assign_terminal_session_to_leaf` (`role=entry.role`). Landed rows are non-active and cannot claim
+  a new leaf; cleanup is separate from leaf ownership. A **chat** (any harness) and a **terminal** (a
   shell) are separate slots, so a leaf can hold one running chat AND one running terminal, and a terminal
   never conflicts with the leaf's chat. `leaf_key` is opaque here (a qualified leaf id or a reserved
   `master:<…>` key flow identically); the binding is enclosure-independent and survives finalize, and a
@@ -358,7 +370,7 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The gate write-path the router calls for a gate-decision verb (slice 6b). | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | The operator inbox payload builder used by `/api/operator-inbox`. | [mcp/tools/operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
 | The Mode B2 terminal host the `/api/terminal` WebSocket bridges to (slice 6d), including tmux probe/kill hooks used for durability. | L86-L121; L230-L239; L287-L289; L340-L347 | [terminal.py](terminal.py) |
-| The durable terminal-session catalog persisted by the opener, sessions endpoint, and terminate route. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
+| The durable terminal-session catalog persisted by the opener, sessions endpoint, landed cleanup, and terminate route. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
 | The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
 | The shared hosted-session opener (L2) both this route and the `spawn_agent_session` tool compose. | L84-L174 | [terminal_opener.py](terminal_opener.py) |
@@ -372,8 +384,9 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The CLI adapter that builds and serves this app (and wires sim). | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
 | The central containment metrics store + sampler the lifespan loop drives (containment R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
 | The provider degradation detector this loop calls once per tick after recording a metrics sample (260707-HFX-L7). | evaluate_provider_degradation | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The retire/rename mechanics + authority policy the two new endpoints call into (260707-HFX-L8). | `retire_entry`; `check_retire_authority`/`SeatRef`/`master_of` | [retire.py](retire.py); [retire_policy.py](retire_policy.py) |
-| The observer-event loggers the retire/rename endpoints and the turn-state sweeper callback fire. | `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | [seat_events.py](seat_events.py) |
+| The landed archive helper records completion-edge seats without terminating them. | `land_seats_for_leaf` | [landing.py](landing.py) |
+| The retire/rename mechanics + authority policy the explicit retire and landed-cleanup endpoints call into. | `retire_entry`; `check_retire_authority`/`SeatRef`/`master_of` | [retire.py](retire.py); [retire_policy.py](retire_policy.py) |
+| The observer-event loggers the landed, retire, rename, and turn-state paths fire. | `log_landed_event`; `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | [seat_events.py](seat_events.py) |
 | The deterministic supervisor sweep + predicate library `supervisor_loop`/`_supervisor_context` drive every interval (260707-HFX2-L2 R1-R4). | `SupervisorContext`; `run_supervisor_sweep` | [supervisor.py](supervisor.py.md) |
 | The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `supervisor.py`) calls. | `classify_pane_signal` | [pane_signals.py](pane_signals.py.md) |
 | The self-liveness heartbeat store both the loop (tick) and the read side (`_supervisor_heartbeat_payload`) share, including L8 inbox backlog and sweep-duration fields. | `SupervisorHeartbeatStore`; `heartbeat_age_seconds` | [supervisor_heartbeat.py](supervisor_heartbeat.py.md) |
@@ -382,6 +395,11 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: documented the landed archive
+  surfaces in `app.py`: WebSocket attach now admits `running` and `landed` rows for inspection,
+  `GET /api/terminal/sessions` returns sweep-cold landed rows, `attach-leaf` refuses non-running
+  rows, and `POST /api/terminal/landed-cleanup` explicitly retires only rows still marked landed
+  after a catalog re-read. Verification metadata pinned until closeout stamps the HFX2-L11 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: `_supervisor_context()` now constructs
   `SupervisorSignalCooldownStore` and threads `settings.supervisor.signal_cooldown_seconds` into
   `SupervisorContext`; the existing redelivery floor setting continues through

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-08T02:43+02:00                                   |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`               |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00                                 |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                             |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -44,8 +44,11 @@ current `catalog.list()` **without probing** when the sweep is rate-limited
 (`_rate_limited(moment)` — last sweep younger than `sweep_interval_seconds`) or when another
 refresh already holds the non-blocking `threading.Lock` (`acquire(blocking=False)`); inside the
 lock it double-checks the rate limit (two callers can pass the unlocked check), stamps
-`_last_sweep_at`, and runs `observe_terminal_liveness` over **every** `catalog.list()` row —
-including `exited` rows, which is what lets a false exit self-heal within one sweep interval.
+`_last_sweep_at`, and runs `_observe_catalog_entry` over every `catalog.list()` row. That helper
+passes `status:"landed"` rows through unchanged without probing; landed/archive seats are frozen
+inspection artifacts, so the background sweep must not spend per-row tmux capture or catalog-write
+work on them. Non-landed rows still go through `observe_terminal_liveness`, including `exited` rows,
+which is what lets a false exit self-heal within one sweep interval.
 
 `observe_terminal_liveness(catalog, host, entry, *, checked_at, config=None)` probes ONE row and
 persists the matching hysteresis transition via `catalog.record_liveness_probe(...)`. Evidence
@@ -98,6 +101,11 @@ pane_capturer, on_turn_state_change) is constructor-injected so tests run fake-d
   before rows mark exited — the deliberate bias away from false exits (HFX-L5 review, disclosed).
 - **Self-heal is one sweep away**: exited rows are probed too, so a false mark recovers
   automatically; `terminated` rows are excluded by `catalog.list()` and never revived.
+- **Landed archive rows are sweep-cold**: `refresh()` returns them in the same list shape but never
+  calls `observe_terminal_liveness`, `tmux capture-pane`, or turn-state classification for them.
+  On-demand WebSocket attach/read inspection remains outside this background-sweep exclusion.
+  Known limitation: a landed row whose tmux session dies later stays in the archive until explicit
+  cleanup; attach performs the live check and fails instead of the sweeper reclaiming it.
 - The module never spawns, kills, or attaches tmux sessions and never mutates anything but
   liveness state through `record_liveness_probe` (and, since HFX-L8, turn-state through
   `record_turn_state` for harness rows).
@@ -126,7 +134,7 @@ record.
 | The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `_tmux_probe_session` | [terminal.py](terminal.py) |
 | The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | [terminal_catalog.py](terminal_catalog.py) |
 | The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | [app.py](app.py) |
-| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
+| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
 | The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | [turn_state.py](turn_state.py) |
 | The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | `capture_pane` | [terminal_paste.py](terminal_paste.py) |
 | `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `TerminalCatalogLivenessSweeper(...)` construction | [app.py](app.py) |
@@ -142,6 +150,15 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: recorded the known landed-archive
+  limitation from review — sweep-cold rows are not reclaimed when their tmux session later dies;
+  attach performs the on-demand check and explicit cleanup remains the reclamation path.
+  Verification metadata pinned until closeout stamps the HFX2-L11 commit.
+- 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: `TerminalCatalogLivenessSweeper`
+  now passes `status:"landed"` rows through without calling `observe_terminal_liveness`; the landed
+  archive remains returned to callers but no longer adds per-row tmux capture, turn-state
+  classification, or catalog-write work to each background sweep. Verification metadata pinned until
+  closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: live turn-state): live turn-state
   classification folded into the existing alive-probe path via a new `_observe_alive` helper —
   harness rows only, classified with `turn_state.classify_turn_state` over `pane_capturer`'s

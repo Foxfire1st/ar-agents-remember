@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`       |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -240,6 +240,13 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — No route impact: 260707-HFX2-L11 (landed chat archive + group cleanup)
+  extends `data/{sessionGroups,sessions,terminal}.ts` (new `"landed"` status, landing provenance
+  fields, `cleanupLandedTerminalSessions()`) and `panels/{Chats,SessionList,Terminal}.tsx` (landed
+  archive group, group-cleanup control, read-only landed terminals). This is data-shape and panel
+  behavior content, not a change to this route's own module layout or routing; per-file detail lives
+  in the already-updated `dashboard/src/data/` and `dashboard/src/panels/` sidecars/sub-overview.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm observability, R6):
   `SupervisorHeartbeat` now includes pending/redeliverable inbox backlog counts and last sweep
   duration; `data/store.ts` compares those fields in `heartbeatEquals`; and

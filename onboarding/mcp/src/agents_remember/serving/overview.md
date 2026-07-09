@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-09T11:19+02:00 |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`       |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T13:07:21+02:00 |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -60,7 +60,12 @@ text only, `spawn_role` never changes). Live turn-state (`working`/`turn-ended`/
 `stale`) rides the EXISTING `terminal_liveness.py` alive-probe sweep — no new hot loop — classifying
 harness rows from the same `terminal_paste.capture_pane` history-inclusive pane view paste
 verification already uses, and firing `seat_events.py` observer events (`seat.retired`/
-`seat.renamed`/`seat.turn-state-changed`) only on an actual transition. **260707-HFX2-L2** adds the
+`seat.renamed`/`seat.turn-state-changed`) only on an actual transition. **260707-HFX2-L11** replaces
+normal completion cleanup with landed/archive classification: successful integrate/finalize marks
+matching seats `status:"landed"` via `landing.py` + `seat.landed`, keeps them visible/inspectable in
+the dashboard, and leaves manual retire as the explicit terminating path for stuck/abandoned/duplicate
+or harmful seats; `POST /api/terminal/landed-cleanup` closes only rows still marked landed and reports
+closed/skipped counts. **260707-HFX2-L2** adds the
 **deterministic supervisor sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
 third decoupled-cadence lifespan task (`supervisor.py::run_supervisor_sweep`, default ~10s,
 settings-controlled) that reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the
@@ -379,11 +384,13 @@ the only destructive terminal action.
   checked FIRST unconditionally; a manager may retire only worker/reviewer seats of its own master;
   only the orchestrator has portfolio-wide authority; every refusal names the exact clause via
   `RetirePolicyError`).
-- `retire.py` — the **260707-HFX-L8** shared retire mechanics: `retire_entry` (kill the tmux session
-  best-effort/idempotent, then `catalog.mark_retired`) and `retire_seats_for_leaf` (auto-retire every
-  non-terminated seat bound to a leaf key whose `spawn_role` is in a caller-supplied role set,
-  `by_session=None` for the automation paths) — used identically by the manual retire routes/tool and
-  the `worktree_integrate`/`lifecycle_finalize_task` completion-edge hooks (`controllers/worktree_tools.py`).
+- `retire.py` — the **260707-HFX-L8** shared manual retire mechanics: `retire_entry` kills the tmux
+  session best-effort/idempotent, then `catalog.mark_retired`. This path backs explicit retire/tool and
+  landed-cleanup closure, not normal successful completion.
+- `landing.py` — the **260707-HFX2-L11** shared landing mechanics: `land_seats_for_leaf` marks matching
+  non-terminated catalog rows `status:"landed"` with reason/edge provenance, without constructing a
+  `TerminalHost` and without killing tmux. `controllers/worktree_tools.py` calls it from successful
+  `worktree_integrate`/`lifecycle_finalize_task` completion edges.
 - `turn_state.py` — the **260707-HFX-L8** live turn-state classifier: `classify_turn_state(pane_text,
   harness=)` is marker-regex-based (precedence working > awaiting-input > turn-ended > stale; blank/
   unreadable pane ⇒ `stale`), with empty per-harness override dicts ready for future tuning. Rides
@@ -544,11 +551,13 @@ the only destructive terminal action.
   re-surfacing happens via the row's own rung-3 dwell SLA firing the same signal again, never a
   state change past the developer. Orphaned workers of a respawned manager are surfaced, never
   auto re-parented.
-- **Retirement is a terminal mark, never a new status value (260707-HFX-L8).** A retire rides the
-  EXISTING `status == "terminated"` catalog state plus provenance, so it composes for free with the
-  L5 liveness hysteresis (never resurrected) and the "never a zombie row" `list()` filter — no new
-  interplay logic. Retire authority is enforced server-side, never trusted from the caller; refusals
-  are loud and name the exact policy clause. Rename is identity text only — `spawn_role` (L6
+- **Manual retirement is terminal; landed completion is inspectable archive (260707-HFX-L8/HFX2-L11).**
+  A retire rides the EXISTING `status == "terminated"` catalog state plus provenance, so it composes
+  for free with the L5 liveness hysteresis (never resurrected) and the "never a zombie row" `list()`
+  filter — no new interplay logic. Normal successful completion instead sets `status == "landed"` with
+  landing provenance, keeps the row visible for dashboard/WebSocket inspection, and releases leaf
+  ownership because active lookup is running-only. Retire authority is enforced server-side, never
+  trusted from the caller; refusals are loud and name the exact policy clause. Rename is identity text only — `spawn_role` (L6
   role-seat immutability) never changes on a rename. Turn-state classification is best-effort and
   fail-safe (an unreadable/blank pane classifies `stale`, never raises) — it rides the existing L5
   sweep cadence and classifies `kind == "harness"` rows only, never plain terminals.
@@ -571,6 +580,13 @@ the only destructive terminal action.
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
 ## Update History
+
+- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): route gained `landing.py`,
+  `TerminalCatalog.status == "landed"` + landing provenance, `seat_events.log_landed_event`, and
+  `POST /api/terminal/landed-cleanup`. Successful integrate/finalize paths now auto-land seats for
+  archive inspection instead of auto-retiring/killing them; manual retire remains the terminating path.
+  Verification metadata remains pinned until closeout stamps the HFX2-L11 commit; route index was not
+  refreshed in this worker seat because the brief forbids route-index tools.
 
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: supervisor redelivery now passes the
   configured/shared 900-second floor through delivery snapshots; pane/seat-liveness signal emission

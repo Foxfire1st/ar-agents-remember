@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:55+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T13:07:21+02:00 |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -104,20 +104,23 @@ or when the live map is empty (the refusal names the operation, the authority
 path, and the stale boot-snapshot ids) and returns the live-map config when
 armed. Stop/status/cleanup paths must not call it — stopping is always legal.
 
-`parse_retirement_settings` (260707-HFX-L8) validates the optional `retirement` object into
-`McpRuntimeConfig.retirement` — a frozen `RetirementSettings(auto_retire_on_integration=True,
-auto_retire_on_finalize=True)`, both defaulting ON per the developer ruling that spawn/cleanup
-symmetry is the happy path (a completed leaf/master should leave zero spent chats without anyone
-remembering to clean up). It follows the same fail-loud-unknown-key discipline as
+`parse_retirement_settings` (260707-HFX-L8, renamed by HFX2-L11) validates the optional `retirement`
+object into `McpRuntimeConfig.retirement` — a frozen
+`RetirementSettings(auto_land_on_integration=True, auto_land_on_finalize=True)`, both defaulting ON
+per the developer ruling that successful completion should classify spent chats as landed/archive
+without anyone remembering to clean them up. It follows the same fail-loud-unknown-key discipline as
 `parse_dashboard_settings`: a non-dict `retirement` value, any key outside
-`KNOWN_RETIREMENT_FIELDS` (`autoRetireOnIntegration`, `autoRetireOnFinalize`), or a non-bool value
-for either known field raises `ConfigError`. `config_from_mapping` calls
+`KNOWN_RETIREMENT_FIELDS` (`autoLandOnIntegration`, `autoLandOnFinalize`, and one-cycle legacy aliases
+`autoRetireOnIntegration`, `autoRetireOnFinalize`), or a non-bool value for any present known field
+raises `ConfigError`. When both a new and legacy key are present, the new `autoLandOn*` key wins.
+The legacy aliases are deliberate compatibility, not defensive slop: existing authority files using
+the HFX-L8 names would otherwise fail boot during this semantic rename. `config_from_mapping` calls
 `parse_retirement_settings(data.get("retirement"))` and threads the result into the constructed
 `McpRuntimeConfig`. This is a deliberate design choice, not an oversight: `retirement` stays a
 LOCAL MCP-authority boot-snapshot setting (like `dashboard`), NOT the global agentic-orchestration
 settings file (unlike `orchestration.gateDelegation`, which moved there in 260703-L13) — these are
 per-process server-behavior toggles for THIS server's completion-edge hooks
-(`worktree_integrate_tool`/`lifecycle_finalize_task_tool`'s `_auto_retire_completed_seats` calls in
+(`worktree_integrate_tool`/`lifecycle_finalize_task_tool`'s `_auto_land_completed_seats` calls in
 `controllers/worktree_tools.py`), not portfolio-wide policy.
 
 ### Invariants And Boundaries
@@ -151,10 +154,11 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
   `require_provider_launch_authority`, which re-reads the on-disk file
   fail-closed (unreadable/invalid ⇒ refusal, never a snapshot fallback).
   Stop/status/cleanup operations are never gated on the reload.
-- `retirement` accepts only `KNOWN_RETIREMENT_FIELDS` (`autoRetireOnIntegration`,
-  `autoRetireOnFinalize`) with the same fail-loud rejection as `dashboard`/`timeoutCaps`; both
-  fields default to `True` — existing settings files with no `retirement` key keep auto-retire ON,
-  not off, unlike `dashboard`'s off-by-default posture.
+- `retirement` accepts only `KNOWN_RETIREMENT_FIELDS` (`autoLandOnIntegration`,
+  `autoLandOnFinalize`, plus legacy `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases) with
+  the same fail-loud rejection as `dashboard`/`timeoutCaps`; both fields default to `True` —
+  existing settings files with no `retirement` key keep auto-land ON, not off, unlike `dashboard`'s
+  off-by-default posture.
 
 ## Repo-Internal References
 
@@ -169,11 +173,18 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | The agentic-settings loader supplying the boot-snapshot gateDelegation and the shared `parse_gate_delegation`. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | Launch-authority consumers: worktree start, watcher/query gating, benchmark filtering, runtime rebind derivation. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py); [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py); [benchmark_tools.py](agents-remember/mcp/src/agents_remember/controllers/benchmark_tools.py); [install/runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 | Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
-| `RetirementSettings`/`config.retirement` is consumed by the two completion-edge auto-retire hooks. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
+| `RetirementSettings`/`config.retirement` is consumed by the two completion-edge auto-land hooks. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
 ## Update History
+
+- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): renamed the completion toggles to
+  `auto_land_on_integration`/`auto_land_on_finalize` and the settings keys to
+  `autoLandOnIntegration`/`autoLandOnFinalize`. The parser still accepts HFX-L8's
+  `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases so already-written authority files do not
+  fail boot during the semantic rename; the new keys take precedence when both are present.
+  Verification metadata remains pinned until closeout stamps the HFX2-L11 commit.
 
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity +
   turn-state): added `KNOWN_RETIREMENT_FIELDS`, the frozen `RetirementSettings` dataclass

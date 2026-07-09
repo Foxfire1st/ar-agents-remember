@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
-| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00 |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 
 ## Purpose
 
@@ -168,20 +168,21 @@ As of cycle 5: the seam channel is exact: raise with lifecycle_gate(..., wait=fa
 
 As of 260703-L12 the leaf dispatch loop opens with **loop-tier scoring at dispatch** (blast radius · novelty · size → direct | builder-verified | full loop; round 2 (L12R-4) pins the direct tier so it cannot read manager-implements: NO loop machinery — the leaf's worker implements as usual, this seat still dispatches per leaf and never grows a build surface; the strategist's blast-radius register is the scoring input when an orchestration task exists; the mark — tier + scope manager|orchestrator — lands on the leaf doc with a decision-log entry; **a master whose leaves all score direct is a workflow-free manager**), and a full-loop leaf runs under this level's loop controls: hard cap 3 FULL rounds (delta-verifies by the same reviewer close rounds and do not count; fix rounds resume the same builder), and a non-shrinking round escalates to the orchestrator immediately with the full round history. The Comms escalation bullet adds the **quo-vadis test** — a high-blast-radius truth is flagged as quo-vadis when raised so the orchestrator relays it to the developer immediately; presentation-grade choices are decided and logged, never escalated.
 
-### 260707-HFX-L8 Seat Cleanup Addition
+### 260707-HFX2-L11 Seat Cleanup Addition
 
-Issue #12 (retirement authority split): the leaf-dispatch-loop section gains a "Seat cleanup" bullet.
-A landed leaf's worker/reviewer chats have no further purpose — `worktree_integrate` auto-retires
-them the moment the leaf lands (config-gated `retirement.autoRetireOnIntegration`, default ON), so
-this is usually automatic. For a stuck/abandoned leaf seat before integration (a dead-end retry, a
-duplicate spawn), the manager retires it by hand: `session_retire(actor_session_id=<own session>,
-session_id=<the seat>, reason=...)`. Server-side policy (`serving/retire_policy.py`) enforces the
-authority split: the manager lives OUTSIDE the master stack it manages, so it may retire ONLY the
-worker/reviewer seats of its OWN master — it can never unseat itself by construction
-(owner-never-self-retires), and a target of any other role or a different master is refused loudly,
-naming the exact policy clause. Transcripts are never deleted; retiring only terminates the tmux
-session and marks the catalog row terminated with retirement provenance. The Knobs table's `tools`
-row gained `session_retire` (scoped to the manager's own master's worker/reviewer seats).
+Issue #12's authority split still governs explicit retirement, but normal successful completion no
+longer terminates chats. A landed leaf's worker/reviewer chats are marked `status:"landed"` by
+`worktree_integrate` (config-gated `retirement.autoLandOnIntegration`, default ON) and move into the
+dashboard's collapsed landed archive for later inspection; tmux stays alive until an explicit archive
+cleanup. For a stuck/abandoned leaf seat before integration (a dead-end retry, a duplicate spawn), the
+manager retires it by hand: `session_retire(actor_session_id=<own session>, session_id=<the seat>,
+reason=...)`. Server-side policy (`serving/retire_policy.py`) enforces the authority split: the
+manager lives OUTSIDE the master stack it manages, so it may retire ONLY the worker/reviewer seats of
+its OWN master — it can never unseat itself by construction (owner-never-self-retires), and a target
+of any other role or a different master is refused loudly, naming the exact policy clause.
+Transcripts are never deleted; retiring only terminates the tmux session and marks the catalog row
+terminated with retirement provenance. The Knobs table's `tools` row includes `session_retire`
+(scoped to the manager's own master's worker/reviewer seats) for those exceptional by-hand cases.
 
 ## Cross-Repo References
 
@@ -192,6 +193,12 @@ No sibling repository evidence is needed for this orchestration job file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: the package-data manager role
+  sidecar now states that `worktree_integrate` auto-lands successful worker/reviewer chats into the
+  landed archive (`autoLandOnIntegration`) rather than auto-retiring them; manual `session_retire`
+  remains only for stuck/abandoned seats inside the manager's authority. Verification metadata
+  pinned until closeout stamps the HFX2-L11 commit.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
   process-and-ack): "Monitor the worker" replaced with the passive contract — the HFX2-L2 sweep

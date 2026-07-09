@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T04:15+02:00                           |
-| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`       |
-| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
+| lastUpdated            | 2026-07-09T13:07:21+02:00                           |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -38,6 +38,9 @@ through to the muted default chip; `designer` gets the same gold-with-border tie
 architect/orchestrator (doctrine elsewhere in this dashboard, `flowModels.ts`, calls designer "the
 same hat" the architect wears), `system-specialist` gets bare `cyan` matching worker/curator. No
 new color token; cosmetic only, never throws.
+HFX2-L11 adds a landed-archive group action: when the rendered group key is `landed`, the group
+header includes a separate `Close landed archive` button that reports the group's sessions through
+`onCleanupLanded` without toggling collapse.
 
 ## Code Commentary
 
@@ -62,9 +65,11 @@ member set (every list shares `selectedKeys={activeId}` — only the list contai
 shows a selection). No `grouped`, or `grouped.groups.length === 0`, returns the single flat
 `GridList` exactly as before. Otherwise a `chats-session-tree` column renders each `SessionGroup` as
 a `<section>` (`chats-group-{key}`, `data-nested` + a 22px `marginLeft` class when `group.nested`)
-headed by a native toggle button (`chats-group-toggle-{key}`, `aria-expanded`): a rotating chevron
-span, a `RankBadge size="sm"` when `group.tier` is set, the ellipsized group label, and the
-precomputed `countLabel` ("n chats · n live" / "· archived"). Collapse state is a UI-local
+headed by a small header row: a native toggle button (`chats-group-toggle-{key}`, `aria-expanded`)
+with a rotating chevron span, a `RankBadge size="sm"` when `group.tier` is set, the ellipsized group
+label, and the precomputed `countLabel` ("n chats · n live" / "· archived"); and, only for the
+`landed` group, a separate cleanup button (`chats-group-cleanup-landed`) that calls
+`onCleanupLanded(group.sessions)`. Collapse state is a UI-local
 `useState<Record<string, boolean>>` keyed by group key — deliberately not persisted (L14 scope);
 `isCollapsed` prefers the user's explicit toggle, else `group.defaultCollapsed` **unless the group
 holds the ACTIVE session** — the landed archive defaults collapsed but must never hide the active
@@ -75,7 +80,9 @@ the `roleChip` cva (`architect` and `orchestrator` gold owner-tier with gold bor
 gold, `designer` gold-with-border (260707-HFX-L12), manager purple, worker cyan, curator cyan,
 `system-specialist` cyan (260707-HFX-L12), reviewer amber; unknown roles fall to the muted
 base, never throw). The chip carries `data-known-role="true|false"` so tests can distinguish known role
-provenance from an unknown/default chip without depending on generated class names.
+provenance from an unknown/default chip without depending on generated class names. Row hover text also
+includes leaf identity, turn state, landing provenance, and spawned-by provenance when present so a
+collapsed/archive inspection still exposes why a row was classified.
 
 ### Conventions
 
@@ -94,7 +101,7 @@ unit-tested directly (`SessionList.test.tsx`), unlike the Chats render-only test
 the active session; an empty `activeId` shows no selected row (when the active session is closed,
 `Chats` clears `activeId` and the terminal falls back to its empty hint). End only reports intent; the
 actual backend terminate call, local row removal, cross-tab broadcast, and terminal/WS teardown stay in
-`Chats`. L14 additions keep that split: group MEMBERSHIP is decided entirely by `data/sessionGroups`
+`Chats`; landed archive cleanup likewise only reports intent and remains owned by `Chats`. L14 additions keep that split: group MEMBERSHIP is decided entirely by `data/sessionGroups`
 (this component renders the model verbatim and derives nothing but collapse visibility); collapse
 state is UI-local and unpersisted; the active session must never be hidden by a collapse **default**
 (only an explicit user toggle may hide it); and the group-less flat list (no `grouped` prop, or a
@@ -112,6 +119,11 @@ through the shared `grammar/RankBadge` (size `sm`).
 | The V4 chevron insignia on group headers (size `sm`). | — | [RankBadge.tsx](../grammar/RankBadge.tsx) |
 
 ## Update History
+
+- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): the landed group header gained the
+  `Close landed archive` action wired through `onCleanupLanded`, while the toggle remains a separate
+  button. Row hover detail now includes landing/turn/provenance context for archive inspection.
+  Verification metadata remains pinned until closeout stamps the HFX2-L11 commit.
 
 - 2026-07-08T04:15+02:00 — 260707-HFX-L12 (optional R6 fold-in, master-exit verdict Finding 3):
   registered `designer` and `system-specialist` in `ROLE_VALUES`/`roleChip` so both render their own

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8` |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -78,9 +78,16 @@ replace/feed the same response protocol without redoing it.
 `session_retire` (+ `POST /api/terminal/{session}/retire`) terminates a tracked chat session and
 marks the catalog row retired with provenance, authority-checked server-side (owner-never-self-
 retires; a manager may retire only its own master's worker/reviewer seats; the orchestrator may
-retire any seat) via NEW `serving/retire_policy.py` + `serving/retire.py`; automated at the
-`worktree_integrate` and `lifecycle_finalize_task` completion edges (config-gated, both default ON,
-best-effort so a catalog fault can never fail the edge it rides). NEW `session_rename` (+
+retire any seat) via NEW `serving/retire_policy.py` + `serving/retire.py`. **Superseded by
+260707-HFX2-L11**: the `worktree_integrate`/`lifecycle_finalize_task` completion edges no longer
+call `retire`/terminate a successful seat automatically; they call NEW `serving/landing.py::
+land_seats_for_leaf` instead, which marks the row `status:"landed"` (kept alive, non-terminated,
+fully inspectable) — successful completion is not chat cleanup (ruled design constraint 10);
+explicit `session_retire` or the dashboard's landed-archive group-cleanup control are what actually
+reclaim chat volume. Settings are `autoLandOn{Integration,Finalize}` (still config-gated, both
+default ON, still best-effort so a catalog fault can never fail the edge it rides; legacy
+`autoRetireOn*` keys are honored as aliases). `serving/retire.py`'s manual/authority-checked retire
+behavior described above is otherwise unchanged. NEW `session_rename` (+
 `POST /api/terminal/{session}/rename`) updates a chat's display label post-spawn without touching
 its role. NEW `serving/turn_state.py` classifies live seat turn-state (working/turn-ended/
 awaiting-input/stale) from pane text on the existing L5 liveness-sweep cadence; NEW
@@ -612,6 +619,17 @@ into the role files.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact (landed chat archive + group cleanup):
+  `controllers/worktree_tools.py`'s completion-edge hooks (`worktree_integrate`/
+  `lifecycle_finalize_task`) now call `serving/landing.py::land_seats_for_leaf` (new file) instead of
+  auto-retiring successful worker/reviewer/manager seats; `serving/terminal_catalog.py` gains a
+  `status:"landed"` state with landing provenance; `serving/terminal_liveness.py`'s background sweep
+  skips landed rows (a CS-6-class fix, see the leaf's reviewer verdict); `mcp/config.py` renames the
+  auto-behavior settings to `autoLandOn{Integration,Finalize}` (legacy `autoRetireOn*` aliased);
+  `serving/retire.py` keeps manual/explicit retire authority unchanged and drops the now-dead
+  `retire_seats_for_leaf` bulk helper. Per-file detail lives in the already-updated `serving/`
+  sub-route overview and file sidecars. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L11 commit.
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 route impact (spawn settings authority): refreshed the
   package overview's spawn-dispatch and agentic-settings route model so settings are the spend
   authority; caller spend fields/env overrides now refuse with `spend-override-unsupported` instead

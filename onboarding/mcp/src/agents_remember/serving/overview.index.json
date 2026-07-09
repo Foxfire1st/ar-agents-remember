@@ -23,6 +23,7 @@
     "mcp/src/agents_remember/serving/harnesses.py",
     "mcp/src/agents_remember/serving/inbox_delivery.py",
     "mcp/src/agents_remember/serving/injector.py",
+    "mcp/src/agents_remember/serving/landing.py",
     "mcp/src/agents_remember/serving/leaf_ref_validation.py",
     "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/pane_signals.py",
@@ -44,8 +45,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 32,
-    "fileSidecars": 32,
+    "sourceFilesInScope": 33,
+    "fileSidecars": 33,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -74,6 +75,7 @@
     "init",
     "init__",
     "injector",
+    "landing",
     "leaf",
     "leaf_ref_validation",
     "liveness",
@@ -127,6 +129,7 @@
       "mcp/src/agents_remember/serving/harnesses.py",
       "mcp/src/agents_remember/serving/inbox_delivery.py",
       "mcp/src/agents_remember/serving/injector.py",
+      "mcp/src/agents_remember/serving/landing.py",
       "mcp/src/agents_remember/serving/leaf_ref_validation.py",
       "mcp/src/agents_remember/serving/notes.py",
       "mcp/src/agents_remember/serving/pane_signals.py",
@@ -135,8 +138,7 @@
       "mcp/src/agents_remember/serving/retire_policy.py",
       "mcp/src/agents_remember/serving/scope.py",
       "mcp/src/agents_remember/serving/seat_events.py",
-      "mcp/src/agents_remember/serving/sim.py",
-      "mcp/src/agents_remember/serving/static.py"
+      "mcp/src/agents_remember/serving/sim.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -165,6 +167,8 @@
       "inbox_delivery",
       "injector.py",
       "injector",
+      "landing.py",
+      "landing",
       "leaf_ref_validation.py",
       "leaf_ref_validation",
       "notes.py",
@@ -184,9 +188,7 @@
       "sim.py",
       "sim",
       "static.py",
-      "static",
-      "supervisor.py",
-      "supervisor"
+      "static"
     ]
   },
   "fallback": {

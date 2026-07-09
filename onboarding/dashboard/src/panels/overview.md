@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-08T04:25+02:00 |
-| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2`       |
-| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -197,7 +197,12 @@ and the `Chats` `SessionList` switcher).
   **G1 command tree** when `Chats` derives a grouped model from `data/sessionGroups` — the sprint's
   command deck on top (gold insignia; command-role `spawnRole` provenance + chats claiming the
   orchestration task), one collapsible group per claimed master (purple insignia + 22px indent when
-  commanded; live enclosures only), landed/absent-enclosure chats rolled into one collapsed archive,
+  commanded; live enclosures only), **HFX2-L11**-narrowed: only genuinely `status:"landed"` chats roll into one collapsed
+  "landed archive" group, each with a **"Close" group-cleanup** control that POSTs the backend's
+  landed-cleanup endpoint (which rechecks live status per row and reports closed/skipped counts);
+  legacy `exited`/absent-enclosure rows route to the flat unattached bucket instead, since the
+  archive group is meant to hold only what the cleanup control can actually close; a landed row's
+  `Terminal` mounts `readOnly` (output/scrollback stay visible, no keystroke/wheel input forwarded),
   unattached sessions flat below, spawn-role chips on rows, and UI-local collapse where a
   default-collapsed group still auto-expands to keep the ACTIVE chat visible; HFX-L6 adds architect
   and curator role labels/chip handling beside the existing orchestration roles; HFX-L12 (docs-parity
@@ -346,6 +351,13 @@ an idle dashboard at zero store writes.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact (landed chat archive + group cleanup):
+  `Chats.tsx` and `SessionList.tsx` gain a collapsed "landed archive" group for `status:"landed"`
+  rows (role/leaf/master/label/turn-state/landed-reason/timestamp/provenance surfaced, non-live but
+  inspectable) plus a "Close landed archive" group-cleanup control (backend-rechecked, reports
+  closed/skipped); `Terminal.tsx` gains a `readOnly` prop so a landed seat's terminal stays viewable
+  without accepting input. No new panel module or routing change — per-file detail lives in each
+  file's own sidecar. Verification metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (docs-parity fold-in, master-exit Finding
   3): `SessionList`'s `ROLE_VALUES`/`roleChip` registry gains `designer` (gold) and
   `system-specialist` (cyan), matching the existing four-tier color convention (no new token) —

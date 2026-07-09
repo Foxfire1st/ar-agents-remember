@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:54+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-09T13:07:21+02:00                           |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ parallel **leaf identity**: an `OpenSession` may carry a durable `leafKey` (the 
 `repo/master/leaf-id`), so one chat is bound to a leaf and `findSessionForLeaf(leafKey)` resolves the
 shared session both the Chats page row and the right-rail `RailChat` render. Task 22 extends this
 store into the hydrated dashboard view of the backend catalog: sessions can carry kind/harness/status,
-catalog rows can be merged in after a refresh, exited/terminated rows are not used for lifecycle
+catalog rows can be merged in after a refresh, exited/landed/terminated rows are not used for lifecycle
 injection, chat labels reuse released ordinals after destructive termination, and backend-persisted
 create/terminate changes are broadcast to other browser tabs as catalog invalidation events that include
 the changed session id. The reopened L6 follow-up separates **draft paste** from confirmed submit:
@@ -48,7 +48,8 @@ agent-facing MCP tool can rehydrate open dashboard stores without a full page re
 ### Logic
 
 `sessionStore = createStore<SessionState>(...)` (zustand vanilla) holds `sessions: OpenSession[]`
-(`{id, label, kind?, harness?, lifecycleId?, leafKey?, spawnRole?, status?}`), `activeId: string |
+(`{id, label, kind?, harness?, lifecycleId?, leafKey?, spawnRole?, status?, landedAt?,
+landedReason?, landedEdge?}`), `activeId: string |
 null`, a coarse `count`, the highest live ordinal retained for coarse inspection. 260703-L14 adds
 `OpenSession.spawnRole?` — the AR_SPAWN_ROLE the backend recorded on the catalog row at spawn
 (orchestrator/strategist/manager/worker/reviewer…), read-only provenance this store merely carries:
@@ -60,9 +61,11 @@ that prefix, optionally tags it with a lifecycle, updates the tracked ordinal, a
 `upsert(session, activate=true)` inserts/replaces a server-owned session row while clearing any older
 owner of the same lifecycle, and `hydrate(sessions, preferredActiveId?)` replaces local rows with
 catalog rows, restores the preferred or current active live session when possible, and recomputes the
-tracked ordinal from live rows. `setStatus` updates a row and moves focus away from the active session
-when it stops running. `fromTerminalSessionInfo` converts the API shape from `data/terminal.ts` into an
-`OpenSession`.
+tracked ordinal from live rows. Live means `status` absent/`running`; `landed` is intentionally
+non-live, so it releases labels, lifecycle routing, and leaf lookup while remaining renderable.
+`setStatus` updates a row and moves focus away from the active session when it stops running.
+`fromTerminalSessionInfo` converts the API shape from `data/terminal.ts` into an `OpenSession`,
+including landed provenance when present.
 `close(id)` drops the local row and clears `activeId` **only if** it was the one removed. It never kills
 tmux by itself; destructive termination is the caller-owned backend route through `data/terminal.ts`
 and `serving.app`.
@@ -121,7 +124,7 @@ object with the action methods on it, not a separate actions slice.
 ### Invariants And Boundaries
 
 - Ephemeral UI state only — never persisted, never the projected lifecycle truth (`data/store.ts`).
-- Labels allocate per prefix from live rows only. End/terminated and exited rows release labels so a
+- Labels allocate per prefix from live rows only. End/terminated, landed, and exited rows release labels so a
   fresh chat can become `Claude Code 1` again once prior Claude chats are gone.
 - Closing a local row forgets it here but does **not** kill the backend tmux session; explicit terminate
   goes through `data/terminal.ts` + `serving.app`.
@@ -130,14 +133,14 @@ object with the action methods on it, not a separate actions slice.
 - Cross-tab sync is catalog invalidation, not shared local state. Backend-persisted create/terminate/leaf
   broadcasts tell other tabs which session changed, then those tabs re-fetch the durable catalog.
 - `lifecycleId` is a routing tag for AR-hosted chats only. It is not projected truth, and external
-  non-hosted chats use the task-10 operator inbox path outside this store. Exited/terminated sessions
+  non-hosted chats use the task-10 operator inbox path outside this store. Exited/landed/terminated sessions
   must not receive lifecycle-routed injection.
 - `leafKey` is the durable chat⇄leaf binding (qualified leaf id), enclosure-independent so it survives
   finalize. Uniqueness is **server-authoritative** and per **(leaf, role)** (`409 leaf-taken`,
   running-only); `setLeaf`'s local guard is advisory and role-scoped (a chat and a terminal never block
   each other on one leaf). L9 moves use `applyLeafAssignment` and mutate the store only after the backend
   accepts the catalog change or after catalog rehydration observes the new binding. `findSessionForLeaf` resolves only **live** sessions
-  (optionally filtered by role), so an exited/terminated session frees its slot for a new claim.
+  (optionally filtered by role), so an exited/landed/terminated session frees its slot for a new claim.
 - Draft paste and submitted delivery are intentionally separate seams. Leaf-context handoff must not press
   Enter on the operator's behalf; highlight/gate delivery can still call `deliverToSession` when the UI
   action is explicitly a send.
@@ -160,6 +163,12 @@ object with the action methods on it, not a separate actions slice.
 | The backend tmux session that persists after `close` and is killed only by explicit terminate. | L330-L347 | [serving/terminal.py](../../../mcp/src/agents_remember/serving/terminal.py) |
 
 ## Update History
+
+- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): `OpenSession` and
+  `fromTerminalSessionInfo` now carry landed provenance, and live-session tests treat
+  `status:"landed"` as non-live. Landed rows remain in the store for inspection but release labels,
+  lifecycle routing, and leaf ownership like exited rows. Verification metadata remains pinned until
+  closeout stamps the HFX2-L11 commit.
 
 - 2026-07-06T23:56:54+02:00 — 260703-L14 (visual hierarchy + chat grouping): `OpenSession` gained
   `spawnRole?` (the AR_SPAWN_ROLE recorded on the backend catalog row — the command-tree grouping

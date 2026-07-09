@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8` |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 
 > **Status:** active baseline
 
@@ -357,10 +357,14 @@ former **Lifecycle Flow** tab from the cockpit while leaving
 [FlowTab.tsx](agents-remember/dashboard/src/panels/FlowTab.tsx) dormant in source.
 **260707-HFX-L8** adds explicit seat lifecycle management on top of the catalog: server-authoritative
 retirement (`POST /api/terminal/{session}/retire`, authority-policy-checked, provenance-stamped,
-never a zombie row) with automated cleanup at the leaf-integrate and master-finalize completion
-edges, post-spawn identity rename (`POST /api/terminal/{session}/rename`, label only, never role),
-and a live turn-state badge (working/turn-ended/awaiting-input/stale) classified from pane text on
-the existing liveness-sweep cadence. Detail
+never a zombie row), post-spawn identity rename (`POST /api/terminal/{session}/rename`, label only,
+never role), and a live turn-state badge (working/turn-ended/awaiting-input/stale) classified from
+pane text on the existing liveness-sweep cadence. **260707-HFX2-L11** reverses the leaf-integrate
+and master-finalize completion edges' automated behavior: a successful worker/reviewer/manager seat
+is no longer auto-retired there — it is **landed** (`status:"landed"`, kept alive, non-terminated,
+inspectable in a dashboard "landed archive" group with a group-cleanup control), since successful
+completion is not chat cleanup (ruled design constraint 10); explicit `session_retire` or that
+cleanup control are what actually reclaim chat volume. Detail
 lives in the `serving/` + `observer/` + `dashboard/src/` route overviews.
 
 ## Cross-Repo References
@@ -384,6 +388,13 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 root route impact: reverses the prior (260707_hotfix-
+  orchestration-stack HFX-L8) auto-retire-on-success completion edge — successful worker/reviewer/
+  manager seat completion now lands the seat (inspectable, non-terminated) instead of retiring it;
+  manual explicit retire and its authority policy are unchanged. Ruled design constraint 10 records
+  this reversal at the master level. Per-file/route detail lives in the already-updated `mcp/`,
+  `dashboard/src/`, and `dashboard/src/panels/` sub-route overviews and file sidecars. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 root route impact: refreshed the Agent-facing session
   dispatch inventory row so spawned-seat spend is settings-resolved and caller spend overrides refuse
   before side effects with `spend-override-unsupported`. Detailed behavior remains under the `mcp/`

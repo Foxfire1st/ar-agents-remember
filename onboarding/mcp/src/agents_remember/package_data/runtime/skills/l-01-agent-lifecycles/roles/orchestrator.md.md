@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `0fd5b9d7f50432ad8518bb287109a1d84b2ff6f5` |
-| lastVerifiedCommitDate | 2026-07-08T15:31:40+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00 |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 
 ## Purpose
 
@@ -106,20 +106,20 @@ providers-only this iteration, with Sentry/system-monitoring integration recorde
 detection source, not part of this role's response procedure.
 
 
-### 260707-HFX-L8 Seat Cleanup Addition
+### 260707-HFX2-L11 Seat Cleanup Addition
 
-Issue #12 (retirement authority split): the "Integration duty (master → super)" list gains step 6
-naming the orchestrator's PORTFOLIO-WIDE retire authority — unlike the manager (scoped to only its
-own master's worker/reviewer seats), the orchestrator may retire ANY seat in the portfolio,
-including a completed manager, via `session_retire(actor_session_id=<own session>, session_id=<the
-seat>, reason=...)`. This is usually automatic: `lifecycle_finalize_task` now auto-retires the
-finalizing master's manager + master-level reviewer seats at the master→super finalize edge
-(config-gated `retirement.autoRetireOnFinalize`, default ON) — the step-6 text exists for the
-by-hand case (a stuck/abandoned seat the automation missed). Owner-never-self-retires still holds
-unconditionally: the orchestrator can never retire its own seat, mirroring the same server-side
-policy (`serving/retire_policy.py::check_retire_authority`) the manager's cleanup duty relies on.
-The Knobs table's `tools` row gained `session_retire` (any seat, portfolio-wide) alongside the
-existing `spawn_agent_session` entry.
+Issue #12's authority split still names the orchestrator's PORTFOLIO-WIDE retire authority, but
+normal successful master→super finalization no longer terminates chats. `lifecycle_finalize_task`
+marks the finalizing master's manager + master-level reviewer seats `status:"landed"` at the
+finalize edge (config-gated `retirement.autoLandOnFinalize`, default ON), putting them in the
+dashboard's collapsed landed archive for inspection until explicit archive cleanup. The by-hand
+`session_retire(actor_session_id=<own session>, session_id=<the seat>, reason=...)` path remains for
+stuck/abandoned seats and for exceptional cleanup; unlike the manager (scoped to its own master's
+worker/reviewer seats), the orchestrator may retire any seat in the portfolio. Owner-never-self-retires
+still holds unconditionally: the orchestrator can never retire its own seat, mirroring the
+same server-side policy (`serving/retire_policy.py::check_retire_authority`) the manager's cleanup
+duty relies on. The Knobs table's `tools` row includes `session_retire` (any seat, portfolio-wide)
+alongside the existing `spawn_agent_session` entry for explicit by-hand cases.
 
 ### L16 Knob Additions
 
@@ -139,6 +139,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: the package-data orchestrator role
+  sidecar now states that `lifecycle_finalize_task` auto-lands completed manager/reviewer seats into
+  the landed archive (`autoLandOnFinalize`) rather than auto-retiring them; explicit
+  `session_retire` remains the portfolio-wide by-hand cleanup path. Verification metadata pinned
+  until closeout stamps the HFX2-L11 commit.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
   process-and-ack): "monitor turn-report artifacts, nudges, escalation intake" replaced with the
