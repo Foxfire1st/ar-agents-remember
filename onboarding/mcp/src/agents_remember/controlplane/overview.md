@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-09T11:19+02:00                      |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`     |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`     |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -37,6 +37,8 @@ across that prune boundary because their source item is repository/branch-scoped
 than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
 
 ## Hot Path Summary
+
+260707-HFX2-L12 closes the previously recorded supervisor-signal cooldown scaling gap and extends the same pattern to neighboring control-plane stores: signal cooldown rows compact to the active cooldown window, expectation rows compact to pending plus recent terminal rows, gate projection can fold and compact-current in one read, and disposable dashboard-tolerant logs skip torn rows instead of poisoning a sweep or projection tick.
 
 A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `GateStore.find` giving deciders cross-lifecycle resolution by gate id), which
 creates the `GateRecord`, blocks the ambient lifecycle with the ask, and
@@ -212,6 +214,7 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: added the shared 900-second redelivery
   floor/fail-loud validation in `inbox_backoff.py`, threaded the floor through
   `OperatorInboxStore.record_delivery`, and added `supervisor_signals.py` as the persisted

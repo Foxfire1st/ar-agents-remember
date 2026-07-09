@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-09T13:07:21+02:00                                  |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`              |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`              |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -21,6 +21,10 @@ It records enough metadata to show sessions after a browser/dashboard restart an
 still-live tmux session without asking the browser to remember process-local state.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`TerminalCatalog.batch()` is a read-once/write-once unit of work for full-catalog sweeps, and `compact()` reclaims aged `terminated` tombstones while preserving running, exited, and landed/archive rows. Landed row cleanup remains the explicit L11 manual path.
 
 ### Logic
 
@@ -212,6 +216,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): added `landed` as a visible
   non-live `TerminalSessionStatus`, landing provenance (`landed_at`/`landed_reason`/`landed_edge`),
   `with_landing`, and `TerminalCatalog.mark_landed`. Attach/liveness/exit transitions now preserve

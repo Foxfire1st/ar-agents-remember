@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/served_store.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-22T22:33+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Purpose
@@ -21,6 +21,10 @@ read does not re-spam onboarding the model already holds. The ledger is on-disk
 which the same lifecycle continues in place.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`ServedStore.read()` now skips a malformed served row instead of raising. The fallback consequence is at most re-serving an onboarding packet once, not failing `read_ar_files` or the dashboard path.
 
 `SERVED_RECORD_SCHEMA` is the versioned wire tag (`ar-served-record/v1`).
 `now_iso()` is the record timestamp (ISO 8601, UTC). `served_key(kind, path,
@@ -75,5 +79,6 @@ is the working manual reset; the controller-side marker consumer
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-23T00:53+02:00 — Slice 07 (S5): retargeted the module-docstring compact-reset note — the `compact-reset.json` **producer** is **not** planned at the session-hook level; it is deferred to the post-3.0 agentic-control-plane follow-up (fresh-worker / new-lifecycle = fresh ledger). The controller-side consumer + `refresh=true` stay as defensive scaffolding. Docstring text only; the `ServedRecord`/`ServedStore` surface is unchanged. Verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-06-22T22:33+02:00 — Created for slice 07: the `ServedRecord` + `ServedStore` per-lifecycle append-only `served.jsonl` content-hash dedup ledger (GateStore pattern, beside the events/gates logs). Verification metadata pinned until closeout stamps the slice-07 code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_nudges.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-04T12:31+02:00                                            |
-| lastVerifiedCommitHash |                                                                   `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                                   2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash |                                                                   `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`|
+| lastVerifiedCommitDate |                                                                   2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -20,6 +20,10 @@ Persists rate-limited orchestration nudge attempts for inactivity and missing
 turn-report artifacts.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`OrchestrationNudgeStore.read()` is now a dashboard-tolerant reader: one torn or legacy nudge row is skipped instead of raising through the supervisor/projection path, while valid rows remain available to the rate-limit lookup.
 
 ### Logic
 
@@ -52,4 +56,5 @@ helpers for message/artifact policy.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-04T12:31+02:00 - L3: created the orchestration nudge store card for rate-limited manager nudges. Verification metadata pinned until closeout stamps the L3 commit.

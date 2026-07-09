@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-08T14:15+02:00                                             |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`|
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -21,6 +21,10 @@ surface (spawn, gate open, signal post) so a deadline is a durable ROW an L2 swe
 in-memory timer that a daemon/MCP restart would erase (the Restate durable-timer lesson).
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`ExpectationRowStore` gained a retention owner for met/missed rows (`compact()` keeps pending plus recent terminal rows), and `mark_missed(current=...)` lets the supervisor act phase reuse the sweep snapshot instead of re-folding the append log once per overdue finding.
 
 ### Logic
 
@@ -93,6 +97,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T14:15+02:00 — 260707-HFX2-L1: created for R2 durable expectation/deadline rows —
   the store + atomic-write helper every dispatch surface (spawn, gate open, signal post) calls.
   Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

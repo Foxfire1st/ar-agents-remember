@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-09T14:05+02:00                                 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                             |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`                                             |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -26,6 +26,10 @@ projection tick / `/api/terminal/sessions` polling no longer implies 1s tmux pro
 failure could mass-exit a live fleet during a transient tmux command-failure storm.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+The liveness sweeper now wraps refresh work in `TerminalCatalog.batch()` and runs catalog compaction inside the batch, so per-entry liveness and turn-state updates hit the in-memory buffer and commit once.
 
 ### Logic
 
@@ -150,6 +154,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: recorded the known landed-archive
   limitation from review — sweep-cold rows are not reclaimed when their tmux session later dies;
   attach performs the on-demand check and explicit cleanup remains the reclamation path.

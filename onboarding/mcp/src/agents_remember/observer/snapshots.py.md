@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -23,6 +23,10 @@ worktree-start blocks, §5.4). Every reader reuses the producing subsystem's own
 parser rather than re-parsing.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+Snapshot readers gained three CS-6 hot-path bounds: gate logs fold through `compact_current()` with rewrite throttled by `GATE_COMPACT_TTL_SECONDS`, task and series document readers share a short TTL task-json cache, and engine-process git status probes are TTL-cached and pruned to live leaf contracts.
 
 `read_providers(config, *, now)` reads the persisted provider snapshot at
 `providers.current_state.current_state_path(config)`, stamps `snapshotStaleSeconds`
@@ -260,6 +264,7 @@ work while archived roots and contract folders stay out of the JSON scan.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `read_agent_pickups` now populates the R1/R4 ack/backoff/owner fields; added `read_expectation_rows` (R5) reading `ExpectationRowStore.pending()` for dashboard/architect observability — surfacing only, an L2 predicate reads the store directly. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-06T23:58:06+02:00 — 260703-L14 (visual hierarchy + chat grouping): `_task_doc_node` passes
   `orchestrates=list(doc.orchestrates)` through to `TaskDocNode` — the schema's master-only

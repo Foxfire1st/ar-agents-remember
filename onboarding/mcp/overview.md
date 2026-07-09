@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -181,6 +181,8 @@ lands in `docs/design/observable-lifecycle.md` and the settings table in
 `notes/reports/260707-HFX2-L8-worker-report.md` and `-reviewer-report.md`.
 
 ## Hot Path Summary
+
+260707-HFX2-L12 generalized the CS-6 scaling/reclamation floor across MCP package hot paths: supervisor escalation gained `escalationBudget`, provider metrics/degradation logs gained bounded reads/compaction, projection readers gained task/gate/lifecycle/git caches, the workspace river gained a startup compactor, and the new CS-6 test files under `mcp/tests/` provide reusable regression helpers for future durable stores and process/session surfaces.
 
 Start in `src/agents_remember/mcp/config.py` for trusted settings parsing,
 `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed
@@ -619,6 +621,7 @@ into the role files.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact (landed chat archive + group cleanup):
   `controllers/worktree_tools.py`'s completion-edge hooks (`worktree_integrate`/
   `lifecycle_finalize_task`) now call `serving/landing.py::land_seats_for_leaf` (new file) instead of

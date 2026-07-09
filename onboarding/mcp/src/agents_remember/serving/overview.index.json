@@ -113,7 +113,7 @@
     "validation"
   ],
   "hotPath": {
-    "summary": "`agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diffs each projection against the last (`serving.delta.diff_projection`), and fans **per-entity deltas** out to every SSE client. Beside the projector task, the same lifespan runs the **provider containment metrics sampler** (260707-HFX-L1, containment R4): every 30s (`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the 1s...",
+    "summary": "260707-HFX2-L12 adds the serving-layer CS-6 controls: the supervisor sweep reuses one-read store snapshots and caps escalation-rung emission, terminal liveness runs inside a catalog batch plus tombstone compaction, raw-event fresh-connect scans are offloaded, provider metrics compaction runs on the metrics cadence, and startup performs the only currently cursor-safe workspace-river compaction. `agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`,...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -28,6 +28,10 @@ production-safe: `redeliverRateLimitSeconds` and the new `signalCooldownSeconds`
 below the shared 900-second floor.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`orchestration.supervisor.escalationBudget` is now a known supervisor setting with default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
 
 ### Logic
 
@@ -235,6 +239,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T12:04+02:00 — No source change in `agentic_settings.py` for 260707-HFX2-L10; updated
   repo-internal references after the terminal spawn consumer changed from explicit caller spend
   precedence to settings-only spend authority plus `spend-override-unsupported` refusals. Also

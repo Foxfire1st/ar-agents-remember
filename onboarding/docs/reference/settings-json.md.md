@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-09T12:04+02:00                  |
+| lastUpdated            | 2026-07-09T19:31+02:00 |
 | lastVerifiedCommitHash |                                         |
 | lastVerifiedCommitDate |                                         |
 | governingOverview      | `../../overview.md`                     |
@@ -22,6 +22,10 @@ authority, memory topology, agentic orchestration, provider lifecycle), document
 cadence, and gives examples for internal/external memory and MCP authority files.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+Documented the new `orchestration.supervisor.escalationBudget` reference row: the supervisor now has a settings-owned per-sweep cap for escalation-rung emissions, distinct from `redeliverBudget`, and deferred rung-due rows stay level-triggered for the next sweep.
 
 The page is documentation, not parser code. Runtime parsing lives in `kernel/agentic_settings.py`
 for `orchestration.*` and the MCP authority/config loaders for boot infrastructure. HFX2-L8 added the
@@ -63,6 +67,7 @@ spawn-surface manual.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): the settings reference now
   states that role/level settings are the ordinary spend surface for spawned seats and that legacy
   caller spend fields plus maintained harness-native spend/endpoint env keys return

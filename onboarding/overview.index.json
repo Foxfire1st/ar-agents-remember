@@ -47,7 +47,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1581,
+    "sourceFilesInScope": 1462,
     "fileSidecars": 9,
     "childRoutes": 5
   },
@@ -129,7 +129,7 @@
       "agents_remember",
       "package_data",
       "repo-overview",
-      "c392985424896e9f392507295a23c4902d0c0696",
+      "dbe750e4cd7fb777b8f39e7ba6279d1080502d8e",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",

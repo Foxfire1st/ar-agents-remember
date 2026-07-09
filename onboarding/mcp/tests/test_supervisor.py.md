@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T11:19+02:00                     |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -24,6 +24,10 @@ suite: the R6-mandated silent-seat, dead-intermediate, and dead-manager-with-liv
 mid-turn pane suppression, and fast sweep cadence without per-second owner inbox noise.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`Cs6SweepScalingTests` now pins the supervisor CS-6 floor: signal-cooldown reads stay at most one per sweep across many findings, expectation-store reads stay flat across overdue rows, and `escalation_budget` caps rung emissions under backlog.
 
 ### Logic
 
@@ -170,6 +174,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: added supervisor regressions for one signal per cooldown,
   mid-turn pane-signal suppression with no owner inbox row, restart/backlog non-burst before the
   900-second floor, and one-second sweeps that tick heartbeat without minting per-second signal

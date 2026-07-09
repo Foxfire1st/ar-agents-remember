@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/metrics.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T20:45+02:00                     |
-| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
-| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,6 +26,10 @@ and the dashboard statistics board (260703_statistics-component) consume the
 same rows later.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`ProviderMetricsStore` now reads recent samples from a bounded EOF tail instead of materializing the whole `metrics.jsonl`, and `compact()` rewrites oversized logs to newest retained rows behind an O(1) byte-budget check.
 
 ### Logic
 
@@ -122,6 +126,7 @@ each docker call.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-07T20:45+02:00 — 260707-HFX-L2 review follow-up: added `read_recent_index_states`
   (newest index-lifecycle rows oldest-first, schema-filtered from the shared log) — the read
   seam `provider_status`'s new `indexState` packet field consumes. Verification metadata pinned

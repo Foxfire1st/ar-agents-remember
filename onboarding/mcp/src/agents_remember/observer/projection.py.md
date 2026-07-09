@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -20,6 +20,10 @@ enclosure-centered `EngineProcessNode` (+ `CommitRefNode`, `ProviderBootNode`,
 served `WorkspaceProjection.version` from `1` to `2`.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`TASK_DOCUMENTS_PAYLOAD_BUDGET_BYTES` and `task_documents_body_bytes()` characterize the `analytics.taskDocuments` body payload that still rides the always-on projection. This is an observability guardrail for F6 until HFX2-L13 moves full task bodies behind an on-demand endpoint.
 
 The models are the persisted/served peer of `events.py` — Pydantic with
 `extra="forbid"`, camelCase wire fields — and, like `events.py`, are deliberately
@@ -272,6 +276,7 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `AgentPickupNode` gained the R1 ack/backoff fields (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`) and R4 owner fields (`ownerRole`/`ownerAgentId`/`ownerLifecycleId`); added `ExpectationRowNode` + `Analytics.expectationRows` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-06T23:58:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TaskDocNode` gains
   additive `orchestrates: list[str]` (default `[]`) — the orchestration-command relation from the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-09T13:07:21+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -98,6 +98,8 @@ and skips `pane-signal: mid-turn` as busy-state noise. `app.py` wires the new st
 the redelivery floor into every stored delivery snapshot.
 
 ## Hot Path Summary
+
+260707-HFX2-L12 adds the serving-layer CS-6 controls: the supervisor sweep reuses one-read store snapshots and caps escalation-rung emission, terminal liveness runs inside a catalog batch plus tombstone compaction, raw-event fresh-connect scans are offloaded, provider metrics compaction runs on the metrics cadence, and startup performs the only currently cursor-safe workspace-river compaction.
 
 `agents-remember dashboard --config <settings.json>` → `cli/dashboard.py` →
 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks
@@ -581,6 +583,7 @@ the only destructive terminal action.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): route gained `landing.py`,
   `TerminalCatalog.status == "landed"` + landing provenance, `seat_events.log_landed_event`, and
   `POST /api/terminal/landed-cleanup`. Successful integrate/finalize paths now auto-land seats for

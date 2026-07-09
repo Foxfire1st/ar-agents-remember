@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/attention_dismissals.py`      |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-06-28T07:32+02:00                                             |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`                         |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -25,6 +25,10 @@ current acknowledgements, because their occurrence is anchored by the drift snap
 timestamp instead of by a lifecycle.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`AttentionDismissalStore.read()` now treats this disposable UI acknowledgement log as dashboard-tolerant: malformed or torn JSONL rows are skipped, while valid acknowledgement rows still fold by `itemId` and prune by live lifecycle id.
 
 `AttentionDismissalRecord` is the compact `ar-attention-dismissal/v1` row keyed by
 `itemId`, carrying `dismissedAt` plus optional `kind`, `lifecycleId`, and `gateId`
@@ -63,6 +67,7 @@ not need a row in this store.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `prune_lifecycles` now retains targetless
   actionable-drift current acknowledgements while still pruning lifecycle rows whose lifecycle left the
   live projection. Verification metadata pinned until closeout stamps the task-29 code commit.

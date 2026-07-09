@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`             |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`             |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Purpose
@@ -18,6 +18,10 @@ the pure reduction + the atomic write together, and writes the projection where
 the dashboard reads it (slice 3a).
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+Projection now caches unchanged lifecycle logs by `(mtime_ns, size)`, rate-limits warnings for over-budget task-document body payloads, and passes the projection clock to engine-process facts so the git-status cache can bound per-tick subprocess fan-out.
 
 `read_lifecycle_logs(root)` enumerates `lifecycles/<id>/events.jsonl` under the
 store root (via `EventStore.read`), returning one validated `list[Event]` per
@@ -158,6 +162,7 @@ enclosure state in `worktree_provider_admission`; this file only reorders the re
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `project_and_write` now also calls `read_expectation_rows` and threads it into `project_workspace` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): `read_enclosures` hoisted above the retention prune
   so `prune_expired_lifecycle_event_logs` receives

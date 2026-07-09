@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated | 2026-07-09T19:41+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 
 > **Status:** active baseline
 
@@ -102,6 +102,16 @@ emits a ready marker after retained backlog replay, actionable-drift notices nam
 repository/memory pair, and only actionable drift can be dismissed without a lifecycle/worktree target.
 The former Lifecycle Flow tab is hidden from the cockpit; `FlowTab.tsx` remains dormant source.
 
+HFX2-L12 updates the root runtime-scaling story for mission-control operation: supervisor signal and
+expectation stores compact on read while escalation/cooldown budgets bound repeated work; raw Event
+River data is startup-compacted and served through bounded/offloaded paths; projection hot paths cache
+lifecycle, task-document, gate, and Git-status reads while guarding task-document body payload size;
+terminal catalog/liveness reads batch and compact active sessions; and provider metric/degradation logs
+compact instead of growing without reclamation. Remaining follow-up scope is explicit: live Event River
+compaction, full task-document body windowing/on-demand retrieval, and heartbeat coalescing are routed to
+the next HFX2 leaf rather than claimed complete here. Detail lives in the `mcp/`, `controlplane/`,
+`observer/`, `serving/`, and provider route overviews plus their file sidecars.
+
 The 260628_operations-integration series (L1–L4 covered above under the files/Change-Set surfaces) adds
 **L5**: the **sidebar leaf-keyed chat registry** — chat sessions are keyed to leaf enclosures and shown
 in a left-rail switcher with a leaf-attach picker (`panels/RailChat.tsx`, `panels/LeafAttachPicker.tsx`,
@@ -121,6 +131,8 @@ overviews.
 ## Hot Path Summary
 
 Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, the hidden harness starter package roots (`.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`) cover first-run harness files and startup directives, the flat `mcp/src/agents_remember/package_data/runtime/skills/C-*` skills cover core support (resolver, memory quality control, bootstrap, onboarding, route-index, memory, and worktree tasks), `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles` is the unified agent-lifecycles skill (the three-condition router — architect default since 260707-HFX-L6 — + minimal frame + the three-party-loop doctrine + nine `roles/` lifecycles (260707-HFX-L7 adds `system-specialist`) + `lenses.md` + ten report templates + the `criteria/` reviewer catalogs; there are deliberately no per-harness role files since the L8 de-harnessing; the canonical source is the root `skills/` tree synced by `scripts/sync-skills.py`), and `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow` is the durable task workflow. Since L13 the kernel also hosts `agentic_settings.py` — the per-use two-layer agentic-settings loader (global `ar-coordination/system/settings.json` merged with `<repo>/system/settings.json`; the L12 orchestration knobs' parser; gateDelegation global-layer-only). Since L16 the repo also ships `docs/reference/harnesses.md` — the spawn-parameters manual (harness registry defaults + the `orchestration.harnesses` settings extension, every role knob and its delivery vehicle, the worked add-hermes example). For route-index behavior start at `mcp/src/agents_remember/kernel/route_index.py`, the `route_index_refresh` MCP tool, `c-05-create-or-update-onboarding-files` skill, and `c-04-retrieval-strategy-router` skill.
+
+For HFX2-L12 store scaling/reclamation, route from this root overview into `mcp/`, then the `controlplane/`, `observer/`, `serving/`, and provider file sidecars for supervisor budgets, expectation/signal compaction, Event River startup compaction, projection/task-document payload bounds, terminal catalog batching, and provider log compaction; the known live-compaction/windowing/heartbeat-coalescing residuals are deliberately follow-up scope.
 
 ## Architecture At A Glance
 
@@ -388,6 +400,14 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 ## Update History
 
+- 2026-07-09T19:41+02:00 — 260707-HFX2-L12 root route impact: refreshed the root runtime-scaling
+  story for the store-scaling and reclamation audit. The overview now routes HFX2-L12's bounded
+  supervisor signal/expectation stores, startup Event River compaction, projection/task-document hot
+  path bounds, terminal catalog/liveness batching, and provider metric/degradation log compaction to
+  the already-updated `mcp/`, `controlplane/`, `observer/`, `serving/`, and provider route sidecars.
+  It also records the explicit residual boundary for HFX2-L13: live Event River compaction, full
+  task-document body windowing/on-demand retrieval, and heartbeat coalescing. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L12 commit.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 root route impact: reverses the prior (260707_hotfix-
   orchestration-stack HFX-L8) auto-retire-on-success completion edge — successful worker/reviewer/
   manager seat completion now lands the seat (inspectable, non-terminated) instead of retiring it;

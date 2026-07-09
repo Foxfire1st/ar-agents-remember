@@ -228,6 +228,7 @@
     "mcp/src/agents_remember/worktrees/status.py",
     "mcp/src/agents_remember/worktrees/task_resolver.py",
     "mcp/src/agents_remember/worktrees/worktree_contract.py",
+    "mcp/tests/_scaling.py",
     "mcp/tests/conftest.py",
     "mcp/tests/fixtures/build_rich_sim.py",
     "mcp/tests/test_agentic_settings.py",
@@ -280,6 +281,7 @@
     "mcp/tests/test_operator_inbox.py",
     "mcp/tests/test_orchestration_comms.py",
     "mcp/tests/test_pane_signals.py",
+    "mcp/tests/test_projection_scaling_cs6.py",
     "mcp/tests/test_provider_async.py",
     "mcp/tests/test_provider_containment.py",
     "mcp/tests/test_provider_context_imports.py",
@@ -305,6 +307,7 @@
     "mcp/tests/test_sim_fixture_builder.py",
     "mcp/tests/test_spawn_agent_session.py",
     "mcp/tests/test_starter_renderers.py",
+    "mcp/tests/test_store_scaling_cs6.py",
     "mcp/tests/test_subprocess_hygiene.py",
     "mcp/tests/test_supervisor.py",
     "mcp/tests/test_sync_dashboard.py",
@@ -333,8 +336,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 576,
-    "fileSidecars": 245,
+    "sourceFilesInScope": 579,
+    "fileSidecars": 248,
     "childRoutes": 15
   },
   "routingTerms": [
@@ -420,7 +423,7 @@
     "cross"
   ],
   "hotPath": {
-    "summary": "Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result text; verbose tools additionally file bulk diagnostics under `temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes with a `reportPath`), `models/tool_registry.py` for public response contracts, `controllers/context_packet.py` for compact `ContextPacketV2` startup packets, and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-o...",
+    "summary": "260707-HFX2-L12 generalized the CS-6 scaling/reclamation floor across MCP package hot paths: supervisor escalation gained `escalationBudget`, provider metrics/degradation logs gained bounded reads/compaction, projection readers gained task/gate/lifecycle/git caches, the workspace river gained a startup compactor, and the new CS-6 test files under `mcp/tests/` provide reusable regression helpers for future durable stores and process/session surfaces. Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for...",
     "candidateHints": [
       "mcp",
       "mcp/src/agents_remember/controllers",
