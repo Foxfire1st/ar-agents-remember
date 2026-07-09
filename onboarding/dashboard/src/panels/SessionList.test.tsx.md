@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/SessionList.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T22:21+02:00                           |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -36,8 +36,10 @@ Aria's `data-selected`; (2) an attached session renders its `lifecycleId`; (3) a
 renders its status tag; (4) `fireEvent.click` on a row reports the new id via `onSelect`; (5) a long
 label is truncated but its full text is exposed via a hover `title` — `getByTitle(longLabel)` resolves
 (fix 4); (6) a bound session passes a `leafNameFor` resolver and `getByTitle("Claude Code 1 · Sidebar
-chat")` proves the `title` appends the resolved leaf name (fix 4); (7) Terminate reports `onTerminate`
-separately and does not select the row.
+chat · master: master · leaf: leaf-1")` proves the `title` appends the resolved leaf name plus the
+`sessionTitle()` master/leaf breakdown parsed from `leafKey` (fix 4, extended by **HFX2-L11**'s
+`sessionTitle()` helper, which also appends turn-state/landed-reason/landed-at/landed-edge/spawned-by
+segments when present); (7) Terminate reports `onTerminate` separately and does not select the row.
 `fireEvent.click` is the repo idiom for driving
 React Aria interaction (see `Cockpit.test.tsx` / `DetailPanel.test.tsx`).
 
@@ -52,7 +54,13 @@ list (no `chats-session-tree`, selection intact); (6) a `spawnRole` session rend
 `chats-session-role-{id}` chip and a role-less one renders none; (7) an `architect` spawn-role chip
 renders with `data-known-role="true"` while an unknown role renders `data-known-role="false"`; (8) a
 `curator` spawn-role chip also renders with `data-known-role="true"` while an unknown role remains
-`false`.
+`false`. **HFX2-L11** renames the landed group's fixture label to `"landed archive"` (matching
+`sessionGroups.ts`'s new label) and adds case (9),
+`test_runs_landed_cleanup_without_toggling_the_archive_group_or_selecting_a_row`: clicking a new
+`chats-group-cleanup-{key}` control on the landed group calls `onCleanupLanded` with that group's member
+sessions, without calling `onSelect` and without expanding the group (`aria-expanded` stays `"false"`,
+the member row stays unmounted) — the cleanup action is deliberately decoupled from the
+expand/collapse toggle and from row selection.
 
 ### Invariants And Boundaries
 
@@ -67,6 +75,11 @@ Aria's emitted `data-selected` rather than a CSS class, so it tracks the primiti
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added coverage for the new
+  `sessionTitle()` landed-row rendering — label · master · leaf · turn-state · landed reason/at/edge ·
+  spawned-by all surfaced, with a status badge distinguishing landed/non-running rows from active
+  ones, while the row remains clickable/inspectable. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L11 commit.
 - 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: added
   focused coverage that `spawnRole="curator"` renders as a known role chip while an unknown
   spawnRole remains on the unknown/default chip path. Verification metadata pinned until closeout

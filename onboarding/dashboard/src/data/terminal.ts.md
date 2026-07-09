@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T22:21+02:00                           |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-09T13:07:21+02:00                           |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -47,11 +47,13 @@ harness. Pure helpers: `terminalSocketUrl` (same-origin
 `ws(s)://<host>/api/terminal/{id}`, id-encoded) and `parseTerminalControl` (`"exit"` | `null`).
 `TerminalSessionInfo` mirrors the server catalog payload (`id`, `label`, `kind`, optional
 `harness`/`lifecycleId`, optional `leafKey` (the durable qualified leaf id the chat claims, slice L5),
-`cwd`, `tmuxName`, timestamps, `status`, optional `terminatedAt`, and — 260703-L14 — optional
+`cwd`, `tmuxName`, timestamps, `status`, optional `terminatedAt`, optional `landedAt`/
+`landedReason`/`landedEdge`, and — 260703-L14 — optional
 `spawnRole`, the AR_SPAWN_ROLE the backend recorded on the catalog row at spawn, absent on
 hand-opened sessions; the documented role examples include architect/orchestrator/strategist/manager/
 worker/curator/reviewer/designer) and
-`TerminalSessionStatus` is `"running" | "exited" | "terminated"`. `fetchTerminalSessions(base)` GETs
+`TerminalSessionStatus` is `"running" | "exited" | "landed" | "terminated"`.
+`fetchTerminalSessions(base)` GETs
 `/api/terminal/sessions` and returns an array or `[]` on failure, letting `Chats` hydrate rows after a
 page/dashboard refresh without treating the session list as projected lifecycle truth.
 `fetchTerminalSessionsOrNull(base)` uses the same endpoint but returns `null` on non-ok/network failure;
@@ -66,6 +68,9 @@ open (the opener returns `409` when a different running chat already owns it). T
 socket — best-effort because the dev bench has no backend yet renders its mock.
 `terminateTerminalSession(id, base)` POSTs
 `/api/terminal/{id}/terminate` and returns success/failure for the destructive UI action.
+`cleanupLandedTerminalSessions(sessionIds, base)` POSTs `/api/terminal/landed-cleanup` and returns
+the backend's `{closed, skipped, closedSessions, skippedSessions}` result; the endpoint only closes
+rows that are still `status:"landed"` when the backend rechecks them.
 `attachSessionToLeaf(sessionId, leafKey, base)` (slice L5) POSTs `/api/terminal/{id}/attach-leaf {leafKey}`
 to claim a leaf for an **existing** session (enclosure-free, no respawn): the server is the uniqueness
 arbiter, so it maps `200 → "ok"` (bound), `409 → "leaf-taken"` (another running chat owns it), and any
@@ -105,6 +110,11 @@ imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-
 | The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
 
 ## Update History
+
+- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): `TerminalSessionStatus` now includes
+  `landed`, catalog payloads carry landed provenance, and the client exposes
+  `cleanupLandedTerminalSessions` for the landed-archive cleanup button. Verification metadata remains
+  pinned until closeout stamps the HFX2-L11 commit.
 
 - 2026-07-07T22:21+02:00 — 260707-HFX-L6R4 curator spawnability fix: updated the
   `spawnRole` catalog comment/documentation to include `curator` as a recorded AR_SPAWN_ROLE value.

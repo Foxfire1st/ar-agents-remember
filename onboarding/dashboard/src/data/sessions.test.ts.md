@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-02T16:35+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -72,7 +72,13 @@ the fake's output clock advances past the post-CR-echo baseline; and a never-reg
 resolves `"unconfirmed"` (never hangs) after the connection timeout (driven with fake timers). The L6
 follow-up adds a paired draft case that registers a live fake connection, calls `pasteDraftToSession`, and
 asserts the only injected input is the sanitized bracketed paste — no trailing newline or confirmation
-submit.
+submit. **HFX2-L11** adds two `status:"landed"` cases: hydrating a `"landed"` row still resolves
+`findSessionForLifecycle` as `undefined` (landed is deliberately not a live/routable status, alongside
+`"exited"`), and hydrating a `"landed"` owner on a leaf frees that leaf immediately so a fresh session can
+bind it (`findSessionForLeaf` returns `undefined` for a landed owner, then a new `add`+`setLeaf` succeeds) —
+plus a `fromTerminalSessionInfo` conversion case round-tripping the full landing-provenance field set
+(`landedAt`/`landedReason`/`landedEdge`/`spawnedBySession`/`spawnedByLifecycle`/`spawnedLabel`/`turnState`/
+`turnStateChangedAt`) from catalog JSON into the store row shape unchanged.
 
 ### Conventions
 
@@ -98,6 +104,11 @@ where the suite can prove no submit input was appended.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added coverage confirming `isLiveSession`
+  stays `status==="running"` only (a landed row is deliberately NOT "live") and pins the new
+  `status:"landed"` shape (landing provenance fields) round-tripping through the session data layer
+  consistently with the terminal-catalog model. Verification metadata pinned until closeout stamps
+  the 260707-HFX2-L11 commit.
 - 2026-07-02T17:04+02:00 — L9: updated catalog-sync coverage to assert remote `"leaf"` invalidations for
   moved hosted chats are delivered with their session id while local broadcasts are still ignored, and
   added `applyLeafAssignment` coverage for server-authoritative moves over stale local owners. Verification

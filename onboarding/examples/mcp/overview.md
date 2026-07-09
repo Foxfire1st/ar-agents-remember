@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-07-08T04:25+02:00                     |
-| lastVerifiedCommitHash | `1f8121ef5132a1be6a3d5b0829935d73c4556ff2` |
-| lastVerifiedCommitDate | 2026-07-08T04:09:43+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00                     |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 
 ## Purpose
 
@@ -43,17 +43,23 @@ store). Shipping it enabled-by-default in the example (unlike `dashboard`,
 which ships opt-in) matches the requirement that the critical-threshold
 failsafe defaults ON at a conservative bound.
 
-Since 260707-HFX-L12 the template also carries a `retirement` object
-(`autoRetireOnIntegration: true`, `autoRetireOnFinalize: true`) — the auto-retire hook gates
-HFX-L8 parsed but left undocumented here until the master-exit review caught the parity gap
-against the `providerDegradation` precedent above; both flags ship ON (spawn/cleanup symmetry is
-the happy path) unlike `dashboard`'s off-by-default posture.
+Since 260707-HFX2-L11 the template also carries a `retirement` object
+(`autoLandOnIntegration: true`, `autoLandOnFinalize: true`) — the completion-edge landing gates
+that mark successful worker/reviewer/manager chats `landed` for the collapsed archive instead of
+terminating them. Both flags ship ON (completion/archive symmetry is the happy path) unlike
+`dashboard`'s off-by-default posture; the parser still accepts the older `autoRetire*` names as
+compatibility aliases, but the example uses the current `autoLand*` keys.
 
 `coding-guidelines.example.md` is an example `system/coding-guidelines.md` body
 that teams can adapt for a memory repo. It is documentation-shaped example
 content, not a runtime input.
 
 ## Update History
+
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: the settings template's `retirement`
+  example now shows `autoLandOnIntegration`/`autoLandOnFinalize`, matching landed archive behavior;
+  old `autoRetire*` names remain parser aliases only. Verification metadata pinned until closeout
+  stamps the HFX2-L11 commit.
 
 - 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (docs-parity fold-in, master-exit Finding
   2): the settings template gains the `retirement` block

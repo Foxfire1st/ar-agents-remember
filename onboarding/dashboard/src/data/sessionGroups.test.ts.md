@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionGroups.test.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T21:17+02:00                           |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -37,12 +37,17 @@ Six cases over small doc/enclosure/session builders (a sprint doc carrying
    no orchestration doc names it.
 3. **D3 flat-run regression** — with NO orchestration task, a manager-role session and a plain one
    derive zero groups (all ungrouped): the sidebar's unchanged-flat contract.
-4. **Archive roll-up** — a claim on a dead-worktree enclosure and a claim on an absent master both
-   roll into one `landed` group (unmarked, `defaultCollapsed`, `2 chats · archived`).
+4. **Archive roll-up (HFX2-L11 round-2 F4 narrowed)** — only a `status:"landed"` claim rolls into
+   the `landed` archive group (unmarked, `defaultCollapsed`, label `"landed archive"`,
+   `1 chat · archived`); a legacy `status:"exited"` claim and a claim on an absent master with no
+   status both route to the pre-existing `ungrouped` bucket instead. Before L11, `exited`/absent
+   rows were folded into the archive too — that let sessions the backend's landed-cleanup endpoint
+   can't actually close pile up in the group the cleanup button targets, so the derivation now only
+   ever admits genuinely `landed` rows.
 5. **Case-insensitive leaf join** — an uppercase doc-id claim matches the slugified lowercase
    enclosure `leafId`.
-6. **30-chat scale fixture** — 4 deck + 6 + 7 master + 13 landed sessions collapse into exactly
-   four groups in deck→masters→landed order with per-group counts (`4 chats · 2 live`,
+6. **30-chat scale fixture** — 4 deck + 6 + 7 master + 13 `status:"landed"` sessions collapse into
+   exactly four groups in deck→masters→landed order with per-group counts (`4 chats · 2 live`,
    `6 chats · 2 live`, `7 chats · 1 live`, `13 chats · archived`) and nothing ungrouped — the
    "reads at a glance at 30 chats" requirement as data.
 
@@ -60,6 +65,12 @@ Pure logic tests (no DOM, no store). Fixture builders satisfy the full `TaskDocN
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive, round 2 F4 fix): `status:"landed"` rows
+  route into the new collapsed "landed archive" group; legacy `status:"exited"`/absent-enclosure rows
+  no longer fold into that group (round-1 behavior) and instead route to the pre-existing `ungrouped`
+  ("Open sessions") bucket, so the landed-archive group only ever contains rows the backend
+  landed-cleanup endpoint can actually close. Asserts `ungrouped == ["legacy-exited","active-absent"]`
+  style expectations. Verification metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: deck membership tests now
   expect the developer-facing architect chat plus backend orchestrator/strategist/manager command
   seats on the deck, and the at-scale fixture uses an architect command session. Verification

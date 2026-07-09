@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T20:50+02:00                           |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`       |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -70,6 +70,18 @@ opens a `harness` chat + a `terminal` on one leaf (both `200` — they share the
 **second chat** and a **second terminal** each `409` (reporting the existing owner `chat-1` / `term-1`);
 `test_attach_leaf_terminal_does_not_conflict_with_existing_chat` proves the attach path is role-scoped too —
 a terminal can `attach-leaf` to a leaf already held by a running chat (`200`, the row persists the leaf).
+**HFX2-L11** adds three cases: `test_websocket_attaches_landed_catalog_session_for_inspection` proves a
+`status:"landed"` row can still be attached and read over the WebSocket for inspection (landing keeps the
+tmux pane alive; only the background liveness sweep skips it), and the row's status stays `"landed"`
+afterward (attach never reanimates it to `"running"`). `test_landed_cleanup_closes_only_landed_rows_and_reports_skips`
+covers `POST /api/terminal/landed-cleanup`: given a landed, a running, and an exited row plus one unknown
+id, it asserts the endpoint rechecks live catalog status per id rather than trusting the caller's list —
+only the landed row is terminated (`host.terminated == ["ar-landed"]`, `retired_reason` set to
+`"landed group cleanup"`) while running/exited/unknown ids are reported as skipped with a
+`status:<status>` / `unknown-session` reason each, and the response totals (`closed`/`skipped`,
+`closedSessions`/`skippedSessions`) match exactly. `test_attach_leaf_404_for_landed_session` asserts
+`POST /api/terminal/{id}/attach-leaf` returns `404` for a landed session (a landed row cannot be
+re-claimed onto a new leaf assignment).
 
 ### Conventions
 
@@ -94,6 +106,14 @@ primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added coverage for
+  `POST /api/terminal/landed-cleanup` — asserts the endpoint rechecks live catalog `status` per
+  session (not client-supplied group membership) and closes ONLY rows still `status:"landed"`,
+  skipping running/exited/unknown rows with a reported reason, returning accurate `closed`/`skipped`
+  counts and session-id lists; also confirms `test_websocket_attaches_landed_catalog_session_for_inspection`
+  still passes (landed WS attach re-probes tmux/turn-state on demand, unaffected by the round-2
+  background-sweep exclusion fix in `terminal_liveness.py`). Verification metadata pinned until
+  closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-07T20:50+02:00 — 260707-HFX-L4: app fixtures now write representative task docs and cover
   invalid `leafKey` rejection for `POST /api/terminal/{session}` and `/attach-leaf`, proving no host ensure
   or catalog mutation happens before resolver success. Verification metadata pinned until closeout stamps

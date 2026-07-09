@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:55+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00 |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -63,12 +63,13 @@ each raise `ConfigError`.
 defaults to all-human, named manager leaf-gate policy, per-kind
 reviewer-verdict requirements, and fail-loud rejection for human-pinned
 `push-approval` or unsupported `agent-question` delegation. `RetirementSettingsTests`
-(260707-HFX-L8, 6 tests) covers `parse_retirement_settings`: defaults are both `True` when the
-`retirement` key is absent, explicit `False`/`False` parses through, an unknown key
-(`autoRetireOnLaunch`) is rejected with an "unsupported retirement setting" `ConfigError`, a
-non-bool value for either `autoRetireOnIntegration` or `autoRetireOnFinalize` is rejected with a
-"must be a boolean" `ConfigError`, and a non-object `retirement` value (a list) is rejected with a
-"retirement settings must be an object" `ConfigError`.
+(260707-HFX2-L11, 8 tests) covers `parse_retirement_settings`: defaults are both `True` when the
+`retirement` key is absent, explicit `autoLandOnIntegration`/`autoLandOnFinalize`
+`False`/`False` parses through, legacy `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases
+parse into the new fields for compatibility, an unknown key (`autoRetireOnLaunch`) is rejected with
+an "unsupported retirement setting" `ConfigError`, non-bool values for either current or legacy key
+shape are rejected with a "must be a boolean" `ConfigError`, and a non-object `retirement` value (a
+list) is rejected with a "retirement settings must be an object" `ConfigError`.
 
 ### Invariants And Boundaries
 
@@ -93,6 +94,10 @@ As of the 260703-L8 seam ruling the orchestration settings tests prove the parse
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: `RetirementSettingsTests` now
+  document the current `autoLandOnIntegration`/`autoLandOnFinalize` keys plus compatibility parsing
+  for legacy `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases; defaults and fail-loud
+  validation stay covered. Verification metadata pinned until closeout stamps the HFX2-L11 commit.
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity +
   turn-state): added `RetirementSettingsTests` (6 tests) covering `parse_retirement_settings` —
   both-True defaults, explicit-bool parsing, unknown-key rejection, non-bool-value rejection,

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T23:45+02:00                           |
-| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b`       |
-| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -21,7 +21,8 @@ semantics of `serving/terminal_liveness.py` + the liveness transitions in
 `serving/terminal_catalog.py` and the stderr-aware probe classification in
 `serving/terminal.py`. It is the regression net against the false-dead-fleet failure mode: a
 transient tmux command-failure storm must never mass-exit live sessions, and a false exit must
-self-heal.
+self-heal. **260707-HFX2-L11** extends the regression net to a second failure mode: landed rows
+must cost the sweeper nothing per-row, at any fleet size, since they now accumulate by design.
 
 ## Code Commentary
 
@@ -59,6 +60,17 @@ pane-gone 1 / interval 0 unless overridden). Cases:
   parks inside the host probe (via the `entered`/`release` events); the concurrent `refresh()`
   returns the current catalog with NO second probe (`calls == 1`), then the parked sweep completes
   without error.
+- `test_landed_rows_do_not_add_per_row_sweep_probe_or_catalog_reads` (HFX2-L11 round-2 F1 fix) —
+  a `_CountingCatalog` (subclasses `TerminalCatalog`, counts `_read()` calls) is seeded with N
+  `status="landed"` rows plus one `running` row, then swept; run at N=5 and N=500 the result is
+  byte-identical: exactly one host probe call, one pane capture (the running row only), and
+  exactly 3 catalog `_read()` calls, regardless of how many landed rows exist. This pins
+  `refresh()`'s `_observe_catalog_entry` short-circuit for `status=="landed"` (returns
+  `TerminalLivenessObservation(entry=entry, alive=True)` without calling
+  `observe_terminal_liveness`) as a genuinely flat-cost skip, not just a probe-count reduction —
+  closing the round-1 BLOCK where landed seats were silently enrolled into the sweeper's
+  per-cycle O(N) subprocess / O(N^2) catalog-read cost as they accumulated by design (the 3rd
+  CS-6-class catch on this master after L7/L9).
 
 ### Conventions
 
@@ -84,6 +96,16 @@ classification, self-heal, and sweep cadence/overlap only.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive), round-2 F1 fix: added
+  `test_landed_rows_do_not_add_per_row_sweep_probe_or_catalog_reads`, a flat-cost scaling
+  regression run at 5 vs 500 `landed`-status rows plus one `running` row. Both sizes assert the
+  exact same result — one host probe call (`host.calls == 1`), one pane capture (only for the
+  running row), and exactly 3 `_read()` calls on the catalog — proving `refresh()` no longer
+  fans out per-row tmux/catalog work across landed rows (the round-1 BLOCK: landed seats were
+  silently enrolled into the sweeper's O(N)-subprocess/O(N^2)-catalog-read per-cycle cost as they
+  accumulated by design — the 3rd CS-6-class catch on this master after L7/L9). Uses a new
+  `_CountingCatalog` subclass to count `_read()` calls and a `status=` kwarg added to `_entry(...)`.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-07T23:45+02:00 — Created for 260707-HFX-L5 (catalog liveness hysteresis): pins the
   14-session transient command-failure storm staying `running`, pane-gone marking immediately,
   alive-again self-heal of a false exit, sweep rate limiting (1 probe across 3 fast ticks), and

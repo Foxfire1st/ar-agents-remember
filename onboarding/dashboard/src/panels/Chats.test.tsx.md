@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Chats.test.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-02T17:04+02:00                          |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -68,6 +68,16 @@ L9 adds a second task leaf fixture and two reassignment cases: an already-attach
 leaf picker, selecting another leaf updates the store on a stubbed `200`, and a remote `"leaf"`
 BroadcastChannel invalidation causes the view to re-fetch `/api/terminal/sessions` and hydrate the moved
 `leafKey`.
+**HFX2-L11** adds two landed-archive cases. The `Terminal` mock is extended to forward `readOnly` as a
+`data-readonly` attribute so tests can observe it. The first hydrates a catalog row with
+`status:"landed"` and asserts its `Terminal` mounts with `data-readonly="true"`, with no status badge or
+composer rendered for it (a landed row is a read-only inspection attachment, not an interactive session).
+The second seeds a landed row and a running row via both the store and a stubbed catalog `GET`, clicks
+the group's `chats-group-cleanup-landed` control, and asserts: the backend `POST
+/api/terminal/landed-cleanup` receives only the landed row's id, the local store drops the closed row
+(only `"active"` remains) once the stubbed response reports `closed:1`, a `chats-landed-cleanup-status`
+node renders the "1 closed · 0 skipped" summary, and a `terminal-catalog-changed`/`"terminate"`
+broadcast is posted so other tabs converge.
 
 ### Conventions
 
@@ -88,6 +98,11 @@ resets the `sessions` store to its current shape (`sessions`, `activeId`, `count
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added ~129 lines of coverage for the
+  landed-archive view — a `status:"landed"` row renders as non-live/inspectable with landing
+  reason/timestamp/provenance, mounts its `Terminal` with `readOnly` (no write affordances/composer),
+  and the "Close landed archive" group-cleanup control invokes the backend endpoint and surfaces
+  closed/skipped counts. Verification metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-02T17:04+02:00 — L9: added coverage that an attached chat still renders the leaf picker and
   moves to another leaf on server `200`, plus a BroadcastChannel `"leaf"` invalidation case that rehydrates
   the moved catalog binding. Verification metadata pinned until closeout stamps the L9 commit.

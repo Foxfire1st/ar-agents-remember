@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Terminal.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-02T16:35+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -59,7 +59,12 @@ terminal. An optional `onConnection(conn|null)` prop (slice 6e-3) hands the live
 up to `Chats` on mount and retracts it (`null`) on teardown/switch — the seam the context composer
 injects through; held in a ref so a changing callback identity never re-runs the connect effect.
 `cursorBlink` follows `html[data-effects]` (off under calm/`?effects=off`) for
-deterministic screenshots.
+deterministic screenshots. **HFX2-L11** adds an optional `readOnly` prop (default `false`): when
+`true`, the host `wheel` handler's alternate-buffer PageUp/PageDown send is gated by `!readOnly`, and
+`term.onData` is never subscribed (`dataSub` is `null` and skipped on cleanup) — so a landed/archived
+seat's terminal renders output and remains scrollable/inspectable but cannot forward any keystroke or
+wheel-driven input to the PTY. `readOnly` is listed in the effect's dependency array so a prop flip
+tears down and reconnects the data subscription correctly.
 
 ### Conventions
 
@@ -87,6 +92,11 @@ observer's job.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added the `readOnly` prop so a landed/
+  archived seat's terminal stays fully inspectable (output rendered, scrollback intact) but cannot
+  send input — `onData` is not subscribed and the wheel-driven PageUp/PageDown send is gated when
+  `readOnly` is true. `Chats.tsx` passes `readOnly` for non-`running` sessions. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-02T16:35+02:00 — Reopened L6 wheel-precedence fix: the wheel handler now yields to xterm's
   native mouse-report path when `term.modes.mouseTrackingMode !== "none"` instead of synthesizing
   PageUp/PageDown for every alternate-buffer pane. Rationale: tmux hosts every dashboard session and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionGroups.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T21:17+02:00                           |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`       |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-09T13:36:16+02:00                        |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                    |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -51,8 +51,9 @@ Membership is decided per session, in precedence order:
    projected) — mirroring the tasks-tab grammar exactly. Label: master doc title, folder fallback;
    ordered by master `createdAt` then folder.
 3. **Landed archive** (`kind:"landed"`, `defaultCollapsed: true`, unmarked — no tier) — sessions
-   whose claimed enclosure is gone (`!hasLiveWorktree`) or absent entirely: the work left the
-   hangar, the chat rolls up instead of cluttering the rail.
+   whose catalog status is explicitly `landed` always join the archive, even if their old enclosure
+   is still projected. Legacy `exited` rows no longer join this archive; they stay ungrouped so the
+   archive contains only rows the landed-cleanup endpoint can close.
 4. **Ungrouped** — sessions with no leaf claim (and no deck membership) return in `ungrouped` and
    keep today's flat placement below the groups.
 
@@ -68,9 +69,11 @@ archive reading `"· archived"` instead. Only non-empty groups are emitted.
 - Pure derivation over projected truth + the session registry: no persistence, no collapse state
   (collapse is UI-local in `SessionList`), no filesystem reads, and it never re-derives liveness
   from cleanup states — `hasLiveWorktree` is the only liveness rule.
-- The absent-enclosure ⇒ archive rule means leaf-claimed chats group as "landed" before the first
-  projection snapshot delivers enclosures; the SessionList's active-session auto-expand keeps the
-  active chat visible through that transient.
+- A running row with a missing enclosure is not inferred as landed anymore; it stays ungrouped unless
+  the catalog says `status:"landed"`. This prevents projection gaps from prematurely archiving live
+  chats.
+- Legacy `exited` rows are not inferred as landed either; cleanup is intentionally aligned with the
+  explicit `status:"landed"` backend recheck.
 
 ## Repo-Internal References
 
@@ -85,6 +88,17 @@ archive reading `"· archived"` instead. Only non-empty groups are emitted.
 | The membership/scale unit suite incl. the 30-chat fixture. | all cases | [sessionGroups.test.ts](sessionGroups.test.ts) |
 
 ## Update History
+
+- 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: stopped folding legacy
+  `status:"exited"` rows into the landed archive because the cleanup endpoint closes only rows still
+  `status:"landed"`; exited rows now remain ungrouped and individually closable. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
+
+- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): landed grouping is now
+  catalog-status-backed. `status:"landed"` wins over command/master membership and goes to the
+  collapsed archive; legacy `exited` rows with missing/non-live enclosures still archive, but running
+  rows with projection gaps remain ungrouped. Verification metadata remains pinned until closeout stamps
+  the HFX2-L11 commit.
 
 - 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: command-deck membership now
   includes `architect` spawn-role provenance alongside backend orchestrator/strategist/manager,

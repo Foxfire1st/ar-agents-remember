@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/terminal.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-02T16:35+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -45,6 +45,11 @@ The resize-handshake-race case (slice 6e-4) sets the `FakeSocket` to `CONNECTING
 `sendResize`s (both dropped while not OPEN), then `fireOpen()` and asserts only the **latest** size is
 replayed once OPEN (the `FakeSocket` gains `onopen`/`fireOpen`). A `whenReady` case (slice 6f, fake
 timers) pushes boot output, then asserts `whenReady()` resolves only after ~700ms of quiet.
+**HFX2-L11** adds the `cleanupLandedTerminalSessions` suite: a success case stubs `fetch` and asserts a
+`POST /api/terminal/landed-cleanup` with `{sessionIds}` in the body, resolving the normalized
+`{closed, skipped, closedSessions, skippedSessions}` shape verbatim from the JSON body; a failure case
+covers both a non-ok response and a rejected `fetch` promise, both resolving `null` (matching the
+`fetchTerminalSessionsOrNull` fail-soft convention elsewhere in this file) rather than throwing.
 
 ### Conventions
 
@@ -60,6 +65,13 @@ real socket is built lazily.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): `TerminalSessionStatus` gains `"landed"`
+  (between `"exited"` and `"terminated"`); `TerminalSessionInfo` gains landing provenance
+  (`landedAt`/`landedReason`/`landedEdge`/`spawnedBySession`/`spawnedByLifecycle`/`spawnedLabel`/
+  `turnState`/`turnStateChangedAt`). New `cleanupLandedTerminalSessions()` calls
+  `POST /api/terminal/landed-cleanup` and returns `{closed, skipped, closedSessions, skippedSessions}`.
+  Test coverage added for the new type shape and the cleanup call. Verification metadata pinned until
+  closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-02T16:35+02:00 — Reopened L6 paste-loss fix: added the `pasteAndConfirm` suite under fake
   timers — a quiet-gated paste confirmed by its echo resolves `true` with exactly one bracketed-paste
   frame and never a `\r`; a discarded first attempt is retried and the echoing attempt confirms without

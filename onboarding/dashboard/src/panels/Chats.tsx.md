@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:48+02:00                          |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-09T13:07:21+02:00                          |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -41,6 +41,9 @@ xterm/WebSocket session mounted, and broadcast a `"leaf"` catalog invalidation f
 260703-L14 turns the sidebar into the **G1 command tree**: `Chats` derives a `GroupedSessions` model
 per render and passes it to `SessionList`, so an orchestrated run's chats read grouped (command deck /
 per-master groups / landed archive) in EVERY run — grouping-always is the ratified baseline (L14R-1); only the gold sprint deck is orchestration-gated, and claim-less sessions keep the flat list placement.
+HFX2-L11 makes landed rows inspectable archive rows: catalog `status:"landed"` sessions still mount
+read-only terminals, hide attach/composer write controls, and expose a landed-archive cleanup action
+that asks the backend to close only rows still marked landed.
 
 ## Code Commentary
 
@@ -91,6 +94,10 @@ from the catalog every 2.5s so agent-facing MCP moves or browser sessions withou
 back to localStorage. `terminateSession(id)` calls `terminateTerminalSession(id)`, marks the row
 `terminated` so the session store releases its label, removes it locally only when the backend confirms
 success, and broadcasts a `"terminate"` catalog invalidation with that id to other tabs.
+`cleanupLandedSessions(groupSessions)` calls `cleanupLandedTerminalSessions` with the visible landed
+group ids, closes only the backend-returned `closedSessions`, broadcasts a catalog invalidation, then
+rehydrates while filtering closed ids. The status note reports the backend's closed/skipped counts so
+stale archive rows or races are visible rather than silently disappearing.
 
 The layout is a top **strip** of launch buttons, then a **body** that splits into the `SessionList`
 side-rail (rendered only when sessions exist) and the terminal area. `SessionList` is the open-session
@@ -100,11 +107,14 @@ read — live-vs-landed truth for grouping) and computes `grouped = groupSession
 taskDocuments, enclosures})` (`data/sessionGroups`, pure) into `SessionList`'s `grouped` prop; with no
 orchestration task and no leaf claims the derivation yields zero groups and the sidebar renders
 unchanged, which is why the pre-L14 Chats tests still pass without seeding the projection store. Running
-sessions mount `<Terminal>` the first time they become active in the current page;
+and landed sessions mount `<Terminal>` the first time they become active in the current page;
 visited terminals stay mounted in `terminalLayer` divs while inactive (`display:none` +
 `aria-hidden`) so their xterm buffers survive tab switches. Restored rows that have not been selected
 yet stay unmounted, avoiding hidden 0x0 xterm hydration for TUI harnesses after refresh. Exited or
-terminated rows render a `statusPanel` instead of opening a WebSocket. Each
+terminated rows render a `statusPanel` instead of opening a WebSocket. Landed rows pass
+`readOnly` into `<Terminal>`, so the archive can be inspected without sending keystrokes or wheel
+PageUp/PageDown input; the attach/move picker and `SessionComposer` are hidden for non-running active
+sessions. Each
 `<Terminal>` is wrapped in `<Suspense>` because it is **`lazy`-imported** — xterm is heavy + probes the
 canvas on import, so it is code-split and only pulled in when a session opens (also keeps it out of the
 jsdom module graph). No active session → the empty-state hint renders inside a shared
@@ -129,6 +139,8 @@ surface (keystrokes → PTY).
 Cross-tab updates are catalog-based: another tab's create/end/leaf event causes local id-aware cleanup or a
 server re-fetch, and the L9 polling fallback also picks up backend catalog leaf moves made outside the
 current browser session. The dashboard does not share arbitrary local store state between tabs.
+Landed cleanup is backend-confirmed and scoped to `status:"landed"` rows; `Chats` only removes the
+returned `closedSessions` locally, preserving skipped rows for inspection.
 
 ## Repo-Internal References
 
@@ -148,6 +160,12 @@ current browser session. The dashboard does not share arbitrary local store stat
 | The shared empty-state backdrop the no-session state renders (adjutant boomerang). | — | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 
 ## Update History
+
+- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): landed sessions are now inspectable
+  read-only terminal mounts, not status panels. The view hides write controls for non-running sessions,
+  wires `SessionList`'s landed cleanup button to `/api/terminal/landed-cleanup`, closes only the
+  backend-confirmed `closedSessions`, and displays closed/skipped counts. Verification metadata remains
+  pinned until closeout stamps the HFX2-L11 commit.
 
 - 2026-07-06T23:56:48+02:00 — 260703-L14 (visual hierarchy + chat grouping): the sidebar became the G1
   command tree — `Chats` now reads `enclosures` from the `useDashboard` projection store, derives

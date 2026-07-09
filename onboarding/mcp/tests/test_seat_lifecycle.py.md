@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-08T02:43+02:00                        |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`    |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T13:36:16+02:00                     |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                 |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -16,12 +16,13 @@
 
 ## Purpose
 
-`test_seat_lifecycle.py` is the failing-first + regression suite for 260707-HFX-L8 (seat
-retirement, live identity/rename, live turn-state). It covers every item in the leaf task doc's
-failing-first list in one file: the retire authority matrix, the `session_retire`/`session_rename`
-MCP tools end-to-end, turn-state classification from scripted pane fixtures, the terminal-mark vs.
-liveness-hysteresis interplay, and the `worktree_integrate`/`lifecycle_finalize_task` auto-retire
-automation hooks (including the R2/F1 exception-guard-widening regression tests).
+`test_seat_lifecycle.py` is the failing-first + regression suite for seat lifecycle behavior:
+retirement authority/manual retire, landed completion classification, live identity/rename, and
+live turn-state. It covers the retire authority matrix, the `session_retire`/`session_rename` MCP
+tools end-to-end, turn-state classification from scripted pane fixtures, the terminal-mark vs.
+liveness-hysteresis interplay, and the `worktree_integrate`/`lifecycle_finalize_task` auto-land
+hooks (including the best-effort guard that prevents a landing failure from failing an already
+succeeded completion edge).
 
 ## Code Commentary
 
@@ -67,28 +68,22 @@ Test classes, in file order:
   SUBSEQUENT alive `record_liveness_probe` (hysteresis never resurrects a retire); retiring an
   already-`terminated` row (via a plain `/terminate`, i.e. `mark_terminated`, not a prior retire)
   never back-fills retroactive retirement provenance — `retired_at` stays `None`.
-- **`RetireSeatsForLeafTests`** — `retire_seats_for_leaf` role/leaf-key scoping: retires only rows
-  matching BOTH `leaf_key` and `roles`, leaving a manager row and a different-leaf worker row
-  untouched, and calling `host.terminate` only for the retired ids; already-terminated seats are
-  skipped (never re-terminated, never re-added to the returned list).
-- **`AutoRetireHookIntegrationTests`** — the completion-edge wiring in
+- **`LandSeatsForLeafTests`** — `land_seats_for_leaf` role/leaf-key scoping: lands only rows
+  matching BOTH `leaf_key` and `roles`, leaves a manager row and a different-leaf worker row
+  untouched, records landing provenance, and skips already-terminated seats.
+- **`AutoLandHookIntegrationTests`** — the completion-edge wiring in
   `controllers/worktree_tools.py`, built around a fake `WorktreeContract` and mocked
-  `git_worktree_manager.integrate_result`/`finalize_result`: `worktree_integrate_tool` auto-retires
-  worker+reviewer seats (manager untouched) and reports them in `autoRetiredSeats`; skipped when
-  `auto_retire_on_integration=False` (key absent from the result entirely, not an empty list) or on
-  a `dry_run` (same absent-key shape); `lifecycle_finalize_task_tool` auto-retires manager+reviewer
+  `git_worktree_manager.integrate_result`/`finalize_result`: `worktree_integrate_tool` auto-lands
+  worker+reviewer seats (manager untouched) and reports them in `autoLandedSeats`; skipped when
+  `auto_land_on_integration=False` (key absent from the result entirely, not an empty list) or on a
+  `dry_run` (same absent-key shape); `lifecycle_finalize_task_tool` auto-lands manager+reviewer
   seats; an unreadable contract (`load_contract` raising `OSError`) skips silently — `ok: True`,
-  `autoRetiredSeats: []`, the edge itself unblocked. **R2/F1 regression tests** (added in the fix
-  round, per the doctrine review): `test_worktree_integrate_survives_a_raising_retire_seats_for_leaf`
-  and `test_lifecycle_finalize_survives_a_raising_retire_seats_for_leaf` monkeypatch
-  `worktree_tools.retire_seats_for_leaf` itself to raise (`OSError` and `RuntimeError` respectively
-  — deliberately two different exception types to prove the guard is genuinely `Exception`-wide, not
-  narrowly typed to I/O errors), asserting the integrate/finalize call still returns `ok: True` with
-  `autoRetiredSeats: []` and the seeded catalog row untouched — proving the widened guard (not just
-  `load_contract`) actually catches a raise from the retire body itself.
+  `autoLandedSeats: []`, the edge itself unblocked. Best-effort regression tests monkeypatch
+  `worktree_tools.land_seats_for_leaf` itself to raise (`OSError` and `RuntimeError` respectively),
+  asserting integrate/finalize still return `ok: True` with `autoLandedSeats: []` and the seeded
+  catalog row untouched.
 - **`RetirementSettingsConfigTests`** — `RetirementSettings()` defaults: both
-  `auto_retire_on_integration`/`auto_retire_on_finalize` default `True` (spawn/cleanup symmetry is
-  the happy path).
+  `auto_land_on_integration`/`auto_land_on_finalize` default `True`.
 
 ### Conventions
 
@@ -98,11 +93,10 @@ rather than a shared fixture, so catalog file state never leaks between tests.
 
 ### Invariants And Boundaries
 
-This file tests behavior across FIVE source files (`retire_policy.py`, `retire.py`,
-`turn_state.py`, `terminal_catalog.py`'s new methods, `controllers/worktree_tools.py`'s auto-retire
-hooks) plus the `session_retire`/`session_rename` MCP tool payloads and `RetirementSettings` config
-parsing — it is intentionally the single consolidated suite for the whole leaf rather than one file
-per source module, matching the leaf task doc's own framing of the failing-first list as one set.
+This file tests behavior across the seat lifecycle source files (`retire_policy.py`, `retire.py`,
+`landing.py`, `turn_state.py`, `terminal_catalog.py`, `terminal_liveness.py`, and
+`controllers/worktree_tools.py`'s auto-land hooks) plus the `session_retire`/`session_rename` MCP
+tool payloads and `RetirementSettings` config parsing.
 
 ### Todos
 
@@ -124,11 +118,11 @@ This suite directly exercises five source files and the leaf task doc's requirem
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | `RetirePolicyMatrixTests` exercises `check_retire_authority`/`master_of`/`RetirePolicyError` directly. | `RetirePolicyMatrixTests` | [../src/agents_remember/serving/retire_policy.py](../src/agents_remember/serving/retire_policy.py) |
-| `RetireSeatsForLeafTests` exercises `retire_seats_for_leaf` directly; `SessionRetireToolTests` exercises it indirectly through `session_retire_payload`. | `RetireSeatsForLeafTests` | [../src/agents_remember/serving/retire.py](../src/agents_remember/serving/retire.py) |
+| `LandSeatsForLeafTests` exercises `land_seats_for_leaf` directly. | `LandSeatsForLeafTests` | [../src/agents_remember/serving/landing.py](../src/agents_remember/serving/landing.py) |
 | `TurnStateClassificationTests` exercises `classify_turn_state` directly. | `TurnStateClassificationTests` | [../src/agents_remember/serving/turn_state.py](../src/agents_remember/serving/turn_state.py) |
 | `TurnStateSweepWiringTests` exercises `observe_terminal_liveness`'s alive-classification path with an injected `pane_capturer`. | `TurnStateSweepWiringTests` | [../src/agents_remember/serving/terminal_liveness.py](../src/agents_remember/serving/terminal_liveness.py) |
 | `TerminalMarkVsLivenessInterplayTests` exercises `mark_retired`/`record_liveness_probe` interplay on `TerminalCatalog` directly. | `TerminalMarkVsLivenessInterplayTests` | [../src/agents_remember/serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
-| `AutoRetireHookIntegrationTests` exercises `worktree_integrate_tool`/`lifecycle_finalize_task_tool`/`_auto_retire_completed_seats` including the F1 exception-guard-widening fix. | `AutoRetireHookIntegrationTests` | [../src/agents_remember/controllers/worktree_tools.py](../src/agents_remember/controllers/worktree_tools.py) |
+| `AutoLandHookIntegrationTests` exercises `worktree_integrate_tool`/`lifecycle_finalize_task_tool`/`_auto_land_completed_seats` including the best-effort landing guard. | `AutoLandHookIntegrationTests` | [../src/agents_remember/controllers/worktree_tools.py](../src/agents_remember/controllers/worktree_tools.py) |
 | `RetirementSettingsConfigTests` exercises `RetirementSettings` defaults (config parsing itself is covered separately in `test_config.py::RetirementSettingsTests`). | `RetirementSettingsConfigTests` | [../src/agents_remember/mcp/config.py](../src/agents_remember/mcp/config.py) |
 | `SessionRetireToolTests`/`SessionRenameToolTests` exercise `session_retire_payload`/`session_rename_payload` end-to-end. | `SessionRetireToolTests`; `SessionRenameToolTests` | [../src/agents_remember/mcp/tools/terminal.py](../src/agents_remember/mcp/tools/terminal.py) |
 | The leaf task doc's failing-first requirement list this suite implements. | Requirements | [../../../../../../../../../tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md](../../../../../../../../../tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md) |
@@ -143,6 +137,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: removed the direct
+  `retire_seats_for_leaf` tests with the deleted helper, documented the current `LandSeatsForLeafTests`
+  and `AutoLandHookIntegrationTests`, and kept manual retire/authority coverage unchanged.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-08T02:43+02:00 — Created for 260707-HFX-L8 (seat lifecycle: retirement + live chat
   identity, status, turn-state): the consolidated failing-first + regression suite (45 tests / 5
   subtests per the builder report) covering the retire authority matrix, `session_retire`/

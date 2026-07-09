@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-06T23:58:48+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -45,6 +45,14 @@ owner) and a differently-keyed leaf returns `None`; `test_active_for_leaf_is_sco
 **and** a terminal on the same leaf and asserts `active_for_leaf(leaf, role="chat")` /
 `role="terminal"` resolve each independently; and `test_active_for_leaf_ignores_exited_and_terminated`
 proves an exited or terminated owner frees its leaf (the running-only, single-owner-per-role contract).
+**HFX2-L11** adds `test_mark_landed_keeps_row_visible_and_non_active`: `mark_landed(id, at=, reason=,
+edge=)` sets `status="landed"` + `landed_reason`, the row stays in `catalog.list()` (unlike terminated
+rows, which are filtered by default), and `active_for_leaf` no longer resolves it as the live owner —
+landing frees the leaf without hiding the row. `test_landed_state_round_trips_and_is_not_reanimated`
+round-trips the full `landedAt`/`landedReason`/`landedEdge` provenance through the JSON file, then
+proves `landed` is terminal-forward: `mark_attached`, `record_liveness_probe(alive=True)`, and
+`mark_exited` are each called on a landed row and each returns the row still `status="landed"` —
+none of the ordinary running/exited transition helpers can reanimate or downgrade a landed row.
 
 ### Conventions
 
@@ -64,6 +72,11 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added 46 lines of coverage for the new
+  `status:"landed"` state — `mark_landed`/`with_landing` provenance round-trip, and confirms landed
+  is preserved (never reverted) across `with_attachment`, `with_liveness_success`, and `mark_exited`
+  (the terminal-forward guarantee the reviewer's D-3 probe and delta-verify both confirmed). Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
 - 2026-07-06T23:58:48+02:00 — 260703-L14 (visual hierarchy + chat grouping): added
   `test_spawn_role_round_trips_and_is_omitted_when_unset` — the `spawn_role` column serializes as
   `spawnRole` when set, is omitted when unset, and reads back migration-safe (mirrors the L5

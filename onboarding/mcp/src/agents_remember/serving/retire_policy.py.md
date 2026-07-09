@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/retire_policy.py`      |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`              |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00                                  |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -22,7 +22,8 @@ developer-ruled authority split (a manager retires only its own master's worker/
 orchestrator retires any seat; no seat ever retires itself) is enforced here, not trusted from the
 caller, and both the manual `session_retire` MCP tool / `POST /api/terminal/{session}/retire`
 endpoint and any future retire entry point must route through `check_retire_authority` before
-mutating the catalog.
+mutating the catalog. Completion-edge `landed` archive marking is not a retire entry point and is
+documented in `serving/landing.py`.
 
 ## Code Commentary
 
@@ -97,7 +98,7 @@ encodes.
 | `session_retire_payload` builds actor/target `SeatRef`s from `TerminalCatalogEntry.spawn_role`/`leaf_key` and calls `check_retire_authority` before any catalog mutation, translating `RetirePolicyError` into a `retire-refused` tool status. | `session_retire_payload` | [../../mcp/tools/terminal.py](../../mcp/tools/terminal.py) |
 | `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | `api_terminal_retire` | [app.py](app.py) |
 | `TerminalCatalogEntry.spawn_role` and `leaf_key` are the fields `SeatRef`/`master_of` read; `with_retirement` is the terminal mark this policy gates access to. | `spawn_role`; `leaf_key`; `with_retirement` | [terminal_catalog.py](terminal_catalog.py) |
-| `retire_entry`/`retire_seats_for_leaf` are the mechanics this policy gates: the manual path calls `check_retire_authority` before `retire_entry`; the automation hooks (`retire_seats_for_leaf`) bypass this policy entirely by design (an automated completion edge is not an actor seat — see that file's Invariants). | `retire_entry`; `retire_seats_for_leaf` | [retire.py](retire.py) |
+| `retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement. | `retire_entry`; `land_seats_for_leaf` | [retire.py](retire.py); [landing.py](landing.py) |
 | The leaf task doc's E1 code example matches `check_retire_authority` near-verbatim; the developer ruling on the authority split (manager lives outside its master stack, orchestrator holds the portfolio view) is recorded there. | Objective; Requirements; E1 | [../../../../../../../../../tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md](../../../../../../../../../tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md) |
 | Failing-first tests for the exact authority matrix (manager-own-worker/reviewer ✓, other-master ✗, self-retire ✗ checked first, orchestrator-any-role ✓, unprivileged role ✗) and `master_of` segment extraction. | `RetirePolicyMatrixTests` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
 
@@ -111,6 +112,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: clarified that this policy gates
+  explicit retire entry points only; completion-edge success now routes through `serving/landing.py`
+  and marks seats `landed` rather than bypassing policy through an automation retire helper.
+  Verification metadata pinned until closeout stamps the HFX2-L11 commit.
 - 2026-07-08T02:43+02:00 — Created for 260707-HFX-L8 (seat lifecycle: retirement, issue #12): the
   server-side retire authority policy — `SeatRef`, `master_of`, `check_retire_authority`,
   `RetirePolicyError`. Encodes the developer-ruled authority split: owner-never-self-retires

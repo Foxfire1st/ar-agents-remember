@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T02:43+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00 |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -39,15 +39,16 @@ schema-validated task resets/replans (slice 3c) and same-root leaf-to-master row
 in the controller so a later dashboard `GET /api/files` route can reuse it).
 Context and worktree controllers forward `parent_task`/`leaf_id` into the source resolver, and task-doc
 authoring writes `seriesContractPath` plus `enclosures[]` instead of the retired `contractPath`.
-**260707-HFX-L8** (issue #12): `worktree_tools.py`'s `worktree_integrate_tool`/
-`lifecycle_finalize_task_tool` gained a completion-edge cleanup composition — after a successful
-non-dry-run edge, when the new `config.retirement.auto_retire_on_integration`/`auto_retire_on_finalize`
-gate is on (both default ON), a new `_auto_retire_completed_seats` helper resolves the qualified leaf
-key and calls `serving.retire.retire_seats_for_leaf` for the edge's own role set (worker/reviewer at
-integrate, manager/reviewer at finalize), returning the retired session ids as `autoRetiredSeats` on
-the result. The ENTIRE helper body is wrapped in `except Exception: return []` (widened in an R2 fix
-round, F1) so a catalog I/O fault can never fail an already-succeeded edge — retirement is a cleanup
-courtesy riding the edge, never a gate on it.
+**260707-HFX2-L11**: `worktree_tools.py`'s `worktree_integrate_tool`/
+`lifecycle_finalize_task_tool` now compose completion-edge landing — after a successful non-dry-run
+edge, when `config.retirement.auto_land_on_integration`/`auto_land_on_finalize` is on (both default
+ON), `_auto_land_completed_seats` resolves the qualified leaf key and calls
+`serving.landing.land_seats_for_leaf` for the edge's own role set (worker/reviewer at integrate,
+manager/reviewer at finalize). Matching sessions are marked `status:"landed"` with provenance and
+returned as `autoLandedSeats`; tmux sessions are not killed, so the dashboard can show an inspectable
+landed archive. The helper body remains best-effort (`except Exception: return []`) so a catalog
+fault can never fail an already-succeeded edge — landing is archive bookkeeping riding the edge,
+never a gate on it.
 
 ## Route Model
 
@@ -117,6 +118,10 @@ benchmark requests, so a case manifest cannot arm providers disabled on disk.
 
 ## Update History
 
+- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: controller overview now documents
+  `_auto_land_completed_seats`, `serving.landing.land_seats_for_leaf`, the `auto_land_on_*` gates,
+  and `autoLandedSeats`; successful completion lands chats for archive inspection instead of
+  retiring them. Verification metadata pinned until closeout stamps the HFX2-L11 commit.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issue #12): `worktree_tools.py`'s integrate/finalize controllers gained a completion-edge
   auto-retire composition (`_auto_retire_completed_seats`, config-gated default ON, best-effort —

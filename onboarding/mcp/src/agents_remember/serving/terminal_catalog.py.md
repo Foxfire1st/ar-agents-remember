@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`              |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T13:07:21+02:00                                  |
+| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`              |
+| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -26,8 +26,8 @@ still-live tmux session without asking the browser to remember process-local sta
 
 `TerminalCatalogEntry` is the immutable row model. It stores the browser-visible session id and label,
 the launch kind (`terminal` or `harness`), optional harness id and lifecycle id, cwd, tmux session
-name, fixed command argv, creation and last-attach timestamps, status (`running`, `exited`, or
-`terminated`), optional termination timestamp, and (slice L5) an optional `leaf_key` — the durable
+name, fixed command argv, creation and last-attach timestamps, status (`running`, `exited`,
+`landed`, or `terminated`), optional termination timestamp, and (slice L5) an optional `leaf_key` — the durable
 leaf-identity key (qualified leaf id `repo/master/leaf-id`) the catalog uses as the **leaf→chat
 registry** key; it is opaque to the backend. Since **L2** the row also carries **spawned-by
 provenance** — `spawned_by_session` + `spawned_by_lifecycle`, set when the row was created by the
@@ -55,15 +55,17 @@ snake_case and the dashboard API's camelCase fields (`_string_tuple` reads the f
 `spawnedByLifecycle` / `spawnRole` / the five L16 keys **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
 with no such key read back as `None` — no schema bump, migration-safe, the SAME pattern for all optional
 columns; the dashboard groups the Chats sidebar by `spawnRole` (L14) and reads the spawned-by pair to
-render the spawner → spawned edges once that surface lands. `with_attachment` restores a row to `running`,
-refreshes `lastAttachedAt`, clears `terminatedAt`, and (HFX-L5) resets all liveness state — a
-fresh attach is direct evidence of life; `with_status` changes status and records
+render the spawner → spawned edges once that surface lands. `with_attachment` restores a normal row to
+`running`, but preserves a row already classified as `landed`; it refreshes `lastAttachedAt`, clears
+`terminatedAt`, and (HFX-L5) resets all liveness state — a fresh attach is direct evidence of life
+without reopening archived successful seats. `with_status` changes status and records
 `terminatedAt` only for explicit termination.
 
 The **liveness transition copiers** (260707-HFX-L5) own the hysteresis math.
 `with_liveness_success()` clears all failure state and restores a non-`terminated` `exited` row to
 `running` — the **self-heal**: a false exit mark recovers automatically when a later probe finds
-the tmux session alive; a `terminated` row is never revived (explicit `End` stays terminal).
+the tmux session alive; a `landed` row stays `landed` and a `terminated` row is never revived
+(explicit `End` stays terminal).
 `with_liveness_failure(evidence=…, checked_at=…, failure_threshold, minimum_failure_window_seconds,
 pane_gone_failure_threshold)` records one failed probe on a `running` row (non-running rows are
 untouched): it increments `liveness_failures`, pins `liveness_first_failed_at` on the first
@@ -92,18 +94,19 @@ role)** — a leaf may hold at most one running chat AND one running terminal, s
 terminal can share a leaf without colliding. `active_for_leaf(leaf_key, *, role="chat")` is the
 role-scoped registry lookup the opener + `attach-leaf` routes call before an upsert: the first `list()`
 row whose `leaf_key == leaf_key and status == "running" and role == role`, else `None` (the default
-`"chat"` is the agent slot). Because `list()` already excludes terminated rows and the probe gates on
-`running`, an exited/terminated session frees its leaf for that role (a stale `running` row is
+`"chat"` is the agent slot). Because `active_for_leaf` gates on `running`, an exited/landed/terminated
+session frees its leaf for that role (a stale `running` row is
 downgraded to `exited` by the `terminal_liveness.py` sweeper / direct liveness observations once
 the hysteresis evidence threshold is met — never by a single transient tmux command failure),
 giving server-authoritative single-owner-per-role uniqueness.
 
-**Seat lifecycle (260707-HFX-L8)** adds three more optional column groups, all written-only-when-set
+**Seat lifecycle (260707-HFX-L8/HFX2-L11)** adds optional column groups, all written-only-when-set
 via the same `to_json`/`from_json` migration-safe pattern: **retirement provenance**
 (`retired_at`/`retired_by_session`/`retired_reason`/`retired_edge`, JSON `retiredAt`/
-`retiredBySession`/`retiredReason`/`retiredEdge`) layered onto the existing `status == "terminated"`
-state rather than a new fourth `TerminalSessionStatus` value — a retire IS a terminate, with
-provenance added; **live identity** (`spawned_label`, JSON `spawnedLabel`) frozen on the FIRST
+`retiredBySession`/`retiredReason`/`retiredEdge`) layered onto `status == "terminated"` for manual
+retire/cleanup; **landing provenance** (`landed_at`/`landed_reason`/`landed_edge`, JSON `landedAt`/
+`landedReason`/`landedEdge`) layered onto the visible `status == "landed"` archive state for normal
+successful completion; **live identity** (`spawned_label`, JSON `spawnedLabel`) frozen on the FIRST
 rename only; and **live turn-state** (`turn_state: SeatTurnState = "working"|"turn-ended"|
 "awaiting-input"|"stale"`, `turn_state_changed_at`, JSON `turnState`/`turnStateChangedAt`,
 `_turn_state` validates the literal on read). Three new copiers follow the `dataclasses.replace`
@@ -115,16 +118,17 @@ label` — the ORIGINAL label survives every later rename; `with_turn_state(stat
 no-op returning `self` when `state` already equals `turn_state` (so callers can detect an actual
 transition by identity comparison, not by chasing a separate "changed" flag on the entry itself).
 `TerminalCatalog` gained matching locked store write points: `mark_retired(session_id, at,
-by_session, reason, edge)`, `set_label(session_id, label)`, `record_turn_state(session_id, state,
-changed_at)` — same shape as `record_liveness_probe`: read under lock, apply the copier, write only
-when the row actually changed, unknown id returns `None`. Because retirement rides `status ==
-"terminated"`, it composes for free with the existing liveness hysteresis: `with_liveness_success`
-already refuses to revive a `terminated` row (see Invariants), so a retired seat can never be
-resurrected by a later alive probe without any new guard.
+by_session, reason, edge)`, `mark_landed(session_id, at, reason, edge)`, `set_label(session_id,
+label)`, `record_turn_state(session_id, state, changed_at)` — same shape as
+`record_liveness_probe`: read under lock, apply the copier, write only when the row actually changed,
+unknown id returns `None`. Manual retirement rides `status == "terminated"` and successful completion
+rides `status == "landed"`; both compose with liveness because neither path is revived by
+`with_liveness_success`.
 
 `terminal_catalog_path(coordination_root)` places the runtime file under
 `logs/dashboard/terminal-sessions.json`. `TerminalCatalog` is a small JSON store over that file:
-`list(include_terminated=False)` filters terminated rows by default while keeping exited rows visible,
+`list(include_terminated=False)` filters terminated rows by default while keeping exited and landed
+rows visible,
 `get` finds one row, `upsert` replaces by id, and the `mark_*` helpers persist status transitions.
 `mark_exited` deliberately leaves an already terminated row untouched so the passive WebSocket/PTY exit
 path cannot downgrade an explicit `End` action back to an `exited` row that would rehydrate in the UI.
@@ -142,13 +146,13 @@ The catalog is JSON-primary and API-shaped: persisted keys use the same camelCas
 - The catalog does not probe tmux and does not spawn or kill sessions. `serving.app` coordinates those
   effects through `TerminalHost`; `record_liveness_probe` only *persists* probe outcomes handed to it
   by `terminal_liveness.py`.
-- Liveness self-heal revives any non-`terminated` `exited` row on an alive probe (broader than a
+- Liveness self-heal revives any non-`landed`/non-`terminated` `exited` row on an alive probe (broader than a
   probe-caused exit alone — the WebSocket-close exit path's marks are also revivable when tmux still
-  holds the session, which is semantically correct); `terminated` is never revived. Known narrow
+  holds the session, which is semantically correct); `landed` and `terminated` are never revived. Known narrow
   race (HFX-L5 review F2): a false exit + a fast same-(leaf, role) respawn inside one sweep interval
   could revive into a momentary two-running-rows state for that slot.
 - Terminated rows stay available only when explicitly requested with `include_terminated=True`; exited
-  rows remain listed so the UI can show an honest ended state.
+  and landed rows remain listed so the UI can show an honest ended/archive state.
 - Explicit termination is terminal for catalog visibility: later exit bookkeeping must preserve the
   `terminated` status and `terminatedAt` timestamp.
 - The command is stored as a tuple/list of fixed argv parts, not a shell string.
@@ -159,11 +163,11 @@ The catalog is JSON-primary and API-shaped: persisted keys use the same camelCas
 - Uniqueness is per **(leaf, role)**, not per leaf: a chat (any harness) and a terminal (a shell) are
   distinct slots and never conflict with each other on the same leaf; `role` is always derived from kind
   (`role_for_kind` / `entry.role`), never stored separately.
-- Retirement is a TERMINAL mark, not a new status value: `with_retirement` only ever sets
-  `status="terminated"`, so a retired row is filtered out of `list()`'s active rail exactly like any
-  other terminated row and can never be resurrected by `with_liveness_success` (HFX-L5 hysteresis
-  already refuses to revive `terminated`). Retirement provenance is what distinguishes a retire from
-  a plain `/terminate`, never the status field itself.
+- Manual retirement is a TERMINAL mark: `with_retirement` sets `status="terminated"`, so a retired
+  row is filtered out of `list()` exactly like any other terminated row and can never be resurrected by
+  `with_liveness_success`. Normal successful completion is separate and non-destructive:
+  `with_landing` sets `status="landed"` plus landing provenance, keeps the row listed for dashboard
+  inspection, and releases the leaf slot because active lookup is running-only.
 - Rename (`with_label`) touches only `label`/`spawned_label` — it must never touch `spawn_role` (the
   L6 role-seat-immutability field); a seat's role is fixed at spawn for its lifetime.
 - Turn-state is classified for `kind == "harness"` rows only (see `terminal_liveness.py`); plain
@@ -194,7 +198,7 @@ operations that keep catalog state honest.
 | Unit tests pin catalog path, JSON schema/order, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | L46-L95 | [../../../tests/test_terminal_catalog.py](../../../tests/test_terminal_catalog.py) |
 | The liveness sweeper + shared observation path that drive `record_liveness_probe` (HFX-L5) and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
 | Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
-| `mark_retired`/`set_label`/`record_turn_state` are called from the `session_retire`/`session_rename` MCP tools, the `POST /api/terminal/{session}/retire`/`rename` endpoints, and the integrate/finalize auto-retire hooks. | `retire_entry`; `TerminalCatalog.set_label`; `record_turn_state` | [retire.py](retire.py); [terminal.py (mcp/tools)](../../mcp/tools/terminal.py); [worktree_tools.py](../../controllers/worktree_tools.py) |
+| `mark_retired`/`mark_landed`/`set_label`/`record_turn_state` are called from the manual retire/rename tools and endpoints, the landed cleanup endpoint, and the integrate/finalize auto-land hooks. | `retire_entry`; `TerminalCatalog.mark_landed`; `TerminalCatalog.set_label`; `record_turn_state` | [retire.py](retire.py); [landing.py](landing.py); [terminal.py (mcp/tools)](../../mcp/tools/terminal.py); [worktree_tools.py](../../controllers/worktree_tools.py); [app.py](app.py) |
 | The retire authority policy (`check_retire_authority`) is evaluated against `SeatRef`s built from this catalog's `spawn_role`/`leaf_key` fields before any `mark_retired` call. | `SeatRef`; `master_of` | [retire_policy.py](retire_policy.py) |
 | Failing-first + regression tests for the retire/rename/turn-state mechanics, the retire-vs-liveness interplay, and idempotent provenance. | `test_seat_lifecycle.py` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
 
@@ -207,6 +211,13 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local dashboard catalog. | — | — |
 
 ## Update History
+
+- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): added `landed` as a visible
+  non-live `TerminalSessionStatus`, landing provenance (`landed_at`/`landed_reason`/`landed_edge`),
+  `with_landing`, and `TerminalCatalog.mark_landed`. Attach/liveness/exit transitions now preserve
+  landed rows instead of reanimating them, while manual retire remains a terminating action. Landed
+  rows stay in `list()` for dashboard inspection and release leaf ownership because active lookup is
+  running-only. Verification metadata remains pinned until closeout stamps the HFX2-L11 commit.
 
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state):
   three new optional column groups (retirement provenance `retired_at`/`retired_by_session`/
