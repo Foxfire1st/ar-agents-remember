@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:59+02:00                     |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00                     |
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -20,6 +20,8 @@ anywhere; every fixture is a plain store write or a fake pane capturer/paster. 2
 adds the escalation ladder's two new predicate families plus a dedicated `LadderWalkIntegrationTests`
 suite: the R6-mandated silent-seat, dead-intermediate, and dead-manager-with-live-workers fixtures.
 260707-HFX2-L8 adds terminal-dead-seat and budget/backlog coverage for the dead-seat storm fix.
+260707-HFX2-L9 adds regressions for the 900-second redelivery floor, repeated signal cooldown,
+mid-turn pane suppression, and fast sweep cadence without per-second owner inbox noise.
 
 ## Code Commentary
 
@@ -79,7 +81,15 @@ datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
   actions" integration case. HFX2-L8 adds a dead-seat terminal integration asserting the row becomes
   durable `ladder-resolved`, emits one supervisor observer event, and is not redelivered, plus a
   budget integration asserting a low `redeliver_budget` caps attempts while heartbeat backlog metrics
-  still tick.
+  still tick. HFX2-L9 adds four more sweep/action regressions:
+  `test_repeated_seat_liveness_sweeps_emit_one_signal_per_cooldown` posts one owner signal during
+  the cooldown and a second only after 901 seconds;
+  `test_mid_turn_pane_signal_is_observed_without_owner_inbox_noise` proves `pane-signal: mid-turn`
+  returns skipped with no inbox row;
+  `test_pending_backlog_does_not_burst_redeliver_before_floor_after_restart` seeds delivered rows at
+  +900s and proves a +60s restarted sweep performs no redelivery; and
+  `test_one_second_sweeps_do_not_emit_per_second_signal_rows` runs 180 one-second sweeps and still
+  has one signal row while the heartbeat reaches sweep count 180.
 - **Edge cases:** `test_finding_with_no_routable_owner_skips_its_action` (a finding whose owner
   cannot be derived produces a `"skipped"`/`"no routable owner"` result rather than raising —
   covers `_signal_emit`'s no-owner branch specifically, added after the CRAP-Calculator flagged its
@@ -112,6 +122,8 @@ convention from `test_terminal_ws.py`.
   point at exactly one `evaluate_*_findings` function.
 - The L8 terminal-dead-seat tests deliberately require both terminal ladder rung and proven dead seat;
   live seats and rows still climbing remain protected by the older redelivery/escalation tests.
+- The HFX2-L9 signal-cooldown tests use a real temp-rooted `SupervisorSignalCooldownStore`; they do
+  not fake the cooldown decision.
 - `LadderWalkIntegrationTests` deliberately drives the FULL sweep (`run_supervisor_sweep`), not the
   isolated `_escalate_rung`/`_respawn_suspect` action functions directly — the R6 fixtures are about
   proving the finding→action→durable-row-stamp chain end to end, matching the existing
@@ -145,6 +157,8 @@ spec.
 | The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | [../src/agents_remember/controlplane/escalation_ladder.py](../src/agents_remember/controlplane/escalation_ladder.py.md) |
 | The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | [../src/agents_remember/controlplane/orphan_policy.py](../src/agents_remember/controlplane/orphan_policy.py.md) |
 | The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py.md) |
+| The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `SupervisorSignalCooldownStore` | [../src/agents_remember/controlplane/supervisor_signals.py](../src/agents_remember/controlplane/supervisor_signals.py.md) |
+| HFX2-L9 tests cover signal cooldown, mid-turn suppression, restart non-burst before the 900-second floor, and one-second sweeps without per-second signal rows. | L531-L636 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
 
 ## Cross-Repo References
 
@@ -156,6 +170,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: added supervisor regressions for one signal per cooldown,
+  mid-turn pane-signal suppression with no owner inbox row, restart/backlog non-burst before the
+  900-second floor, and one-second sweeps that tick heartbeat without minting per-second signal
+  rows. Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R1/R2/R4/R6): added terminal-ladder
   predicate/integration tests proving dead/no-hosted-session terminal-rung rows become
   `ladder-resolved` and are not redelivered, plus a redeliver-budget integration proving attempts are

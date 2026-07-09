@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `acda395304f8dd01cd2ba45ff9e65c7097093d8c` |
-| lastVerifiedCommitDate | 2026-07-09T10:50:44+02:00|
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 
 > **Status:** active baseline
 
@@ -947,6 +947,13 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 
 ## Update History
 
+- 2026-07-09T11:45+02:00 — No route impact: 260707-HFX2-L9 (supervisor redelivery cadence + signal
+  throttling) touches `docs/reference/settings-json.md` (documents the 900s redelivery floor,
+  `signalCooldownSeconds`, and the current supervisor kill-switch mitigation status) and the
+  `mcp/`, `controlplane/`, and `serving/` sub-routes. This is a doctrine/reference-doc and sub-route
+  behavior change, not a change to the root's own structure or routing; per-file detail lives in the
+  already-updated sidecars and sub-route overviews (curator pass, 260707-HFX2-L9). Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
 - 2026-07-09T11:25+02:00 — No route impact: 260707-HFX2-L8 (stability/bounded-resource/
   guaranteed-reclamation doctrine) adds one cross-reference sentence to root `AGENTS.md`'s Code
   Quality Instructions section (naming the new `system/coding-guidelines.md` Stability/Reclamation

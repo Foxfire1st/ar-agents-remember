@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00 |
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -23,7 +23,9 @@ for the agentic family; the MCP authority file, memory-topology settings, and pr
 lifecycle settings are separate families with separate parsers. **260707-HFX2-L2 (R1/R5)** adds the
 `orchestration.supervisor` family — the deterministic sweep loop's own knobs (enabled, interval
 seconds, self-liveness staleness cutoff, inbox-redelivery rate limit, and since HFX2-L8 a
-conservative per-sweep redelivery budget).
+conservative per-sweep redelivery budget). HFX2-L9 makes the supervisor cadence knobs explicitly
+production-safe: `redeliverRateLimitSeconds` and the new `signalCooldownSeconds` both refuse values
+below the shared 900-second floor.
 
 ## Code Commentary
 
@@ -66,21 +68,23 @@ defaults) — `sla_for(kind)`/`rung_dwell(rung)` are the accessor methods `servi
 `_supervisor_context()` reads per-use, mirroring how `SupervisorSettings`/`ExpectationSettings`
 are consumed elsewhere in this file.
 
-**260707-HFX2-L2 (R1/R5, supervisor sweep knobs)**: `orchestration.supervisor` configures the
+**260707-HFX2-L2/R8/R9 (supervisor sweep knobs)**: `orchestration.supervisor` configures the
 deterministic sweep loop hosted beside the serving daemon's projector/metrics loops —
 `SupervisorSettings` (`enabled` default `true`, `interval_seconds` default 10.0,
 `stale_cutoff_seconds` default 60.0, `redeliver_rate_limit_seconds` default `None`,
-`redeliver_budget` default 250). `_parse_supervisor`
-validates each key via the new `_require_bool`/`_require_positive_number` helpers against
-`KNOWN_SUPERVISOR_FIELDS`; absent block or absent key both fall back to the documented default
-(`SupervisorSettings()`'s field defaults). `redeliver_rate_limit_seconds=None` is a deliberate
-inherit-not-duplicate choice: the sweep passes `None` straight through to
-`OperatorInboxStore.list_redeliverable`, which already owns its own default
-(`inbox_backoff.DEFAULT_RATE_LIMIT_SECONDS`) — the same "`None` = uncapped/inherit" convention
-`ConcurrencySettings` already uses elsewhere in this file, so the two numbers are never duplicated
-as separate sources of truth. `redeliver_budget` is parsed from `redeliverBudget` as a positive
-integer and is intentionally present in the empty-block default so a default incident deployment
-gets bounded sweep work without needing a new knob.
+`signal_cooldown_seconds` default `DEFAULT_RATE_LIMIT_SECONDS` / 900, `redeliver_budget` default
+250). `_parse_supervisor` validates boolean/positive fields and checks
+`redeliverRateLimitSeconds` plus `signalCooldownSeconds` through `_require_supervisor_floor_seconds`,
+which refuses any value below `inbox_backoff.MIN_REDELIVERY_INTERVAL_SECONDS` (900). Absent block or
+absent key both fall back to the documented default (`SupervisorSettings()`'s field defaults).
+`redeliver_rate_limit_seconds=None` is a deliberate inherit-not-duplicate choice: the sweep passes
+`None` straight through to `OperatorInboxStore.list_redeliverable`, which already owns its own
+default (`inbox_backoff.DEFAULT_RATE_LIMIT_SECONDS`) — the same "`None` = uncapped/inherit"
+convention `ConcurrencySettings` already uses elsewhere in this file, so the floor is never copied
+as an unrelated second source of truth. `signal_cooldown_seconds` is an explicit settings value
+because repeated owner-signal minting has its own cooldown store. `redeliver_budget` is parsed from
+`redeliverBudget` as a positive integer and is intentionally present in the empty-block default so a
+default incident deployment gets bounded sweep work without needing a new knob.
 
 **260707-HFX2-L1 (R2, expectation-row SLAs)**: `orchestration.expectations.defaults` configures
 the per-kind SLA seconds every dispatch surface's durable expectation row uses (`briefed-by`,
@@ -204,8 +208,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The schema reference for the agentic family (two-layer model, merge semantics, fail-loud rule, loop schema, reserved families). | Agentic Settings section | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
-| **Known gap (260707-HFX2-L2):** the new `orchestration.supervisor` family is NOT yet documented in this schema reference — the builder confirmed no doc-sync test enforces schema/doc parity in this repo before skipping the doc update as leaf-scope-appropriate. A follow-up doc pass should add an `orchestration.supervisor` section alongside `orchestration.expectations`. | — | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
+| The schema reference for the agentic family documents the supervisor fields, including the 900-second redelivery floor, `signalCooldownSeconds`, and kill-switch mitigation text. | L380-L397 | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
 | **Known gap (260707-HFX2-L4):** the new `orchestration.escalation` family is likewise NOT yet documented in this schema reference, same no-doc-sync-test posture as the supervisor gap above. A follow-up doc pass should add an `orchestration.escalation` section alongside `orchestration.supervisor`. | — | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
 
 ## Repo-Internal References
@@ -217,9 +220,10 @@ dashboard settings write path are tracked outside as follow-ups.)
 | The boot-snapshot consumer: gateDelegation sourced from the global file at boot with the legacy authority fallback. | parse_orchestration_settings | [../mcp/config.py](../mcp/config.py) |
 | The per-use spawn consumer: explicit arg > repo-local > global > detection-gated default. | _resolve_spawn_harness | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
 | The install seeding consumer (copy-if-missing global file). | seed_agentic_settings | [../install/runtime.py](../install/runtime.py) |
-| The supervisor sweep's `SupervisorContext` construction reads `settings.supervisor.*` per loop iteration (interval, enable flag, staleness cutoff, redeliver rate limit) — the per-use read contract this loader guarantees. | `_supervisor_context`; `supervisor_loop` | [../serving/app.py](../serving/app.py.md) |
+| The supervisor sweep's `SupervisorContext` construction reads `settings.supervisor.*` per loop iteration (interval, enable flag, staleness cutoff, redeliver rate limit, signal cooldown, redeliver budget) — the per-use read contract this loader guarantees. | `_supervisor_context`; `supervisor_loop` | [../serving/app.py](../serving/app.py.md) |
 | The MCP tool choke point reads `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS` (this file's constant, not `settings.supervisor.stale_cutoff_seconds`) for the opportunistic banner check (260707-HFX2-L2 R5) — a deliberate simplification so the banner check needs no settings read on every tool call. | `_tool_payload` | [../mcp/tools/base.py](../mcp/tools/base.py.md) |
 | The escalation ladder's per-use consumer: `_supervisor_context()` resolves `settings.escalation.sla_seconds`/`rung_seconds`/`respawn_after_rung` into `SupervisorContext`'s plain-primitive escalation knobs every sweep. | `_supervisor_context` | [../serving/app.py](../serving/app.py.md) |
+| `KNOWN_SUPERVISOR_FIELDS`, `SupervisorSettings`, and `_parse_supervisor` include `signalCooldownSeconds` and reject sub-900 redelivery/cooldown values through `_require_supervisor_floor_seconds`. | L124-L134; L295-L308; L1210-L1250 | [../src/agents_remember/kernel/agentic_settings.py](../src/agents_remember/kernel/agentic_settings.py) |
 
 ## Cross-Repo References
 
@@ -231,6 +235,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: added `signalCooldownSeconds` to
+  `orchestration.supervisor`, defaulting to the shared 900-second floor, and made both
+  `redeliverRateLimitSeconds` and `signalCooldownSeconds` fail loud below that floor. Also removed
+  the stale "supervisor docs missing" note now that `docs/reference/settings-json.md` documents the
+  family. Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R4): added
   `DEFAULT_SUPERVISOR_REDELIVER_BUDGET`, `SupervisorSettings.redeliver_budget`, and the
   `orchestration.supervisor.redeliverBudget` parser field. Empty/default supervisor settings now

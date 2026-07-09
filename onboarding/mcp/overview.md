@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `acda395304f8dd01cd2ba45ff9e65c7097093d8c` |
-| lastVerifiedCommitDate | 2026-07-09T10:50:44+02:00|
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -610,6 +610,12 @@ into the role files.
 
 ## Update History
 
+- 2026-07-09T11:45+02:00 — No route impact: 260707-HFX2-L9 (supervisor redelivery cadence + signal
+  throttling) adds a 900-second redelivery floor and a new persisted signal cooldown store
+  (`controlplane/supervisor_signals.py`). Per-file detail lives in the already-updated
+  `controlplane/` and `serving/` sub-route overviews and their sidecars (curator pass,
+  260707-HFX2-L9); the mcp package's own layout and routing are unchanged. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L9 commit.
 - 2026-07-09T11:25+02:00 — No route impact: 260707-HFX2-L8 (stability/bounded-resource/guaranteed-
   reclamation doctrine) touches `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-
   lifecycles/criteria/code-seam.md` and `.../plan-review.md` (CS-6/PR-6 candidate criteria added) and

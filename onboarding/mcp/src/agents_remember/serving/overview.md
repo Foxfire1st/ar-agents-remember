@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`       |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00 |
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`       |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -85,6 +85,12 @@ find_orphaned_workers`) as orphans in the same respawn event, never auto re-pare
 absorbing the dead manager's role. No new hot loop, no new `InboxMessageKind` values — rung 1 reuses
 `nudge`, rung 2/3/respawn/dead-upstream reuse `escalation`, distinguishable via the dedicated
 `orchestration.escalation.rung`/`.respawn`/`.dead-upstream` events.
+**260707-HFX2-L9** keeps the supervisor's observation cadence independent from its delivery/escalation
+cadence: `supervisor.py` passes the redelivery floor into hosted delivery, checks the new
+`controlplane/supervisor_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
+and skips `pane-signal: mid-turn` as busy-state noise. `app.py` wires the new store plus
+`settings.supervisor.signal_cooldown_seconds` into `SupervisorContext`; `inbox_delivery.py` threads
+the redelivery floor into every stored delivery snapshot.
 
 ## Hot Path Summary
 
@@ -560,12 +566,18 @@ the only destructive terminal action.
 | The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
 | The containment metrics sampler + store the lifespan loop drives (260707-HFX-L1 R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
 | The provider degradation detector the sampling loop now also calls once per tick (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The stores the supervisor sweep's predicates read directly (R3): expectation rows, operator inbox, orchestration nudges, and the observer event log the sweep appends `orchestration.supervisor.*` events to. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py); [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [controlplane/orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py); [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
+| The stores the supervisor sweep's predicates read directly (R3): expectation rows, operator inbox, orchestration nudges, supervisor signal cooldowns, and the observer event log the sweep appends `orchestration.supervisor.*` events to. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py); [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [controlplane/orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py); [controlplane/supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py); [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
+| The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: supervisor redelivery now passes the
+  configured/shared 900-second floor through delivery snapshots; pane/seat-liveness signal emission
+  checks persisted cooldown state before posting repeated owner inbox rows; `pane-signal: mid-turn`
+  is skipped as busy-state noise; and `app.py` wires the new cooldown store/settings into
+  `SupervisorContext`. Verification metadata pinned until closeout stamps the 260707-HFX2-L9
+  commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R6): `supervisor.py`
   now builds one in-sweep inbox snapshot/index, resolves terminal-rung dead/no-hosted-session rows
   to durable `ladder-resolved`, limits redelivery actions by `redeliver_budget`, and ticks heartbeat

@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-08T23:59+02:00                |
-| lastVerifiedCommitHash |                                       `5f9163882857114319552d303e2e301082b588ba`|
-| lastVerifiedCommitDate |                                       2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00                |
+| lastVerifiedCommitHash |                                       `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
+| lastVerifiedCommitDate |                                       2026-07-09T11:38:39+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -62,7 +62,9 @@ for the new `attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt` fields 
 `OperatorInboxEntry`: `test_record_delivery_bumps_attempt_and_schedules_next_attempt` pins that
 `record_delivery` bumps `attemptCount` and stamps a further-out `nextAttemptAt` on EVERY delivery
 attempt — including a confirmed `delivered` paste — because consume=ack is the only terminal
-outcome, `delivered` is never terminal. `test_record_delivery_clears_schedule_only_via_consume`
+outcome, `delivered` is never terminal. HFX2-L9 strengthens that assertion so the first stamped
+`nextAttemptAt` is at least 900 seconds after `lastAttemptAt`, proving first send is treated as
+in-flight for the redelivery floor. `test_record_delivery_clears_schedule_only_via_consume`
 pins the corollary: only `consume` (never another `record_delivery` call) transitions the entry to
 the `consumed` state. `test_list_redeliverable_returns_pending_rows_past_backoff` and
 `test_list_redeliverable_excludes_consumed_rows` cover the store-level redelivery query the L2
@@ -120,7 +122,7 @@ listed as Domain Documentation.
 | --- | --- | --- |
 | Record tests cover create/consume purity, required addressing, and schema alias round-trip. | L22-L74 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 | Store tests cover lifecycle/agent filters, idempotent consume, missing entry, and missing address errors. | L77-L163 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
-| Store tests (R1/R3 plus HFX2-L8) cover attempt/backoff stamping, redeliverable filtering, escalation stamping, ladder-resolved terminal state, and compaction pruning for terminal rows while preserving pending rows. | L220-L290 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Store tests (R1/R3 plus HFX2-L8/L9) cover attempt/backoff stamping, the 900-second first-send floor, redeliverable filtering, escalation stamping, ladder-resolved terminal state, and compaction pruning for terminal rows while preserving pending rows. | L220-L290 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 | Tool tests cover post, poll, consume payload deletion, and no-address poll validation. | L166-L220 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 
 ## Cross-Repo References
@@ -133,6 +135,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: strengthened
+  `test_record_delivery_bumps_attempt_and_schedules_next_attempt` to assert the first delivered row
+  schedules `nextAttemptAt` at least 900 seconds out. Verification metadata pinned until closeout
+  stamps the 260707-HFX2-L9 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R1/R3): added regressions for
   `mark_ladder_resolved` as a terminal non-ack state and compaction pruning ladder-resolved rows
   while preserving live pending rows. Verification metadata pinned until closeout stamps the
