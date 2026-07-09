@@ -81,7 +81,7 @@
     "supervisor_signals"
   ],
   "hotPath": {
-    "summary": "A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `GateStore.find` giving deciders cross-lifecycle resolution by gate id), which creates the `GateRecord`, blocks the ambient lifecycle with the ask, and keeps the public tool call waiting until the gate is decided or a gate-specific inbox response exists. Decisions (`gate_decide`) and listing (`gate_list`) remain public control-plane tools; lower-level create/wait builders are compatibility internals in `mcp/tools/gates.py`. The builders...",
+    "summary": "260707-HFX2-L12 closes the previously recorded supervisor-signal cooldown scaling gap and extends the same pattern to neighboring control-plane stores: signal cooldown rows compact to the active cooldown window, expectation rows compact to pending plus recent terminal rows, gate projection can fold and compact-current in one read, and disposable dashboard-tolerant logs skip torn rows instead of poisoning a sweep or projection tick. A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `Gate...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -138,19 +138,19 @@
       "supervisor_signals.py",
       "supervisor_signals",
       "lifecycle_gate",
-      "GateStore.find",
-      "GateRecord",
-      "gate_decide",
-      "gate_list",
-      "mcp/tools/gates.py",
-      "GateStore",
+      "HFX2",
+      "L12",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "8dce306e203c35ffc95f84e610b4d3683e9521b5",
+      "dbe750e4cd7fb777b8f39e7ba6279d1080502d8e",
       "/../../overview.md",
       "controlplane/",
       "rung_due",
-      "next_step"
+      "next_step",
+      "seat_is_suspect",
+      "signal_routing.derive_skip_level_owner",
+      "is_seat_dead",
+      "derive_signal_owner"
     ]
   },
   "fallback": {

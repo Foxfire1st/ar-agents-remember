@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:00+02:00                     |
-| lastVerifiedCommitHash | `9a0e6ca69ccc690fc0466db5051571fa2d9902dc` |
-| lastVerifiedCommitDate | 2026-07-08T01:34:58+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -29,6 +29,10 @@ redoing the response protocol (task doc `08_degradation-protocol-and-system-spec
 objective).
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`ProviderDegradationStore` now has a bounded event-log compactor retaining the newest degradation events, and `evaluate_provider_degradation()` compacts after writing a state-change event so the provider alert audit log cannot grow forever.
 
 ### Logic
 
@@ -168,6 +172,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass: created after the builder R1 pass
   plus the R2 manager-recovery fix round (hosted-delivery parity closing reviewer F1, failsafe
   stop-failure capture closing F2) and the R2 delta-verify PASS. Verification metadata pinned

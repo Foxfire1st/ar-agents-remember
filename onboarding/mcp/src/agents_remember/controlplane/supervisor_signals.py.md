@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                |
 | path                   | `mcp/src/agents_remember/controlplane/supervisor_signals.py`   |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-07-09T11:19+02:00                                         |
-| lastVerifiedCommitHash |                                                                `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
-| lastVerifiedCommitDate |                                                                2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash |                                                                `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`|
+| lastVerifiedCommitDate |                                                                2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -21,6 +21,10 @@ deterministic supervisor sweep from minting a new owner-addressed inbox row ever
 target owner, leaf, finding kind, and detail.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`SupervisorSignalCooldownStore` is no longer an unbounded per-finding full-file fold: reads skip malformed rows, `in_cooldown(records=...)` consumes a sweep snapshot, and `compact()` atomically retains only records inside the cooldown window.
 
 ### Logic
 
@@ -90,6 +94,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: created for the new persisted supervisor signal
   cooldown store, including the known unbounded-log/no-compactor limitation tracked for HFX2-L11.
   Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.

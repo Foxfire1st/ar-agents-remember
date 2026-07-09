@@ -5,9 +5,9 @@
 | repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/observer/event_retention.py` |
 | doc_type               | `file-level-onboarding`                             |
-| lastUpdated            | 2026-06-28T13:54+02:00                              |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`          |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`          |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Governing Overview
@@ -27,6 +27,10 @@ Active logs remain replayable, but a fresh connection only re-streams a bounded 
 window per active source rather than an entire long-lived log from byte zero.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`compact_workspace_river()` physically reclaims aged `workspace/events.jsonl` rows at serving startup, the one cursor-safe boundary before SSE clients and serving writers exist. The always-on live compactor remains HFX2-L13 scope because byte-offset cursors and cross-process appenders need a larger contract change.
 
 ### Logic
 
@@ -142,6 +146,7 @@ log layout.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): `prune_expired_lifecycle_event_logs` gained a
   `protected_lifecycle_ids` exemption checked before dormancy. A not-yet-retired master series' leaf
   ids (from `series_retained_lifecycle_ids`) are passed in by `projection_store.project_and_write`, so a

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/controlplane/store.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-05T19:10+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -18,6 +18,10 @@ compact short-lived interaction gates when the retention policy says they are no
 longer needed.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`GateStore.compact_current()` combines the gate keep-filter and current-fold in one read, with physical rewrite gated by the caller. Projection can now read each gate log once per tick while still seeing expired/consumed rows filtered out.
 
 `GateStore(observer_root)` holds the observer root. `log_path(lifecycle_id)`
 routes to `lifecycles/<id>/gates.jsonl` beside that lifecycle's `events.jsonl`,
@@ -54,6 +58,7 @@ As of cycle 5 GateStore.find(gate_id) resolves one gate id across the workspace 
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: added `GateStore.all_current()` — the whole-workspace fold the integrate seam guard uses (AR3-1(b)). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): GateStore.find cross-lifecycle resolution added. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-06-25T13:10+02:00 — Task 23/24: added physical gate deletion, atomic log replacement, lifecycle-log enumeration, and retention compaction for throwaway gate interactions.

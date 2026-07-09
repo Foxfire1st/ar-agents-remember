@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-09T11:19+02:00                            |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`        |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`        |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -36,6 +36,10 @@ Oct-2025 incident is the reference case for "at-least-once push still needs a re
 sweep").
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+The supervisor sweep now compacts and snapshots signal-cooldown and expectation stores once per sweep, threads those snapshots into cooldown and mark-missed actions, and caps escalation-rung findings by `escalation_budget` while leaving deferred rows level-triggered.
 
 ### Logic
 
@@ -250,6 +254,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: `_redeliver`/`_post_owner_signal` now pass the
   configured redelivery floor into hosted delivery; `_signal_emit` skips `pane-signal: mid-turn`,
   checks the persisted signal cooldown store by owner/leaf/kind/detail, and records the delivery

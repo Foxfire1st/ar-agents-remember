@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/serving/events.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-06-28T13:54+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`  |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`  |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -27,6 +27,10 @@ runs on a slow cadence, and the backlog drains in bounded chunks — so a large 
 the loop before the first byte. It powers the future event-log panel + sim scrubbing.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`stream_raw_events()` now offloads fresh-connect pruning and initial-offset scans to a worker thread, matching the existing `read_new_events` offload so a large retained river does not block the shared asyncio loop.
 
 The tail is a **pure** function so resume, multi-source ordering, and partial-line handling are
 testable without an HTTP client:
@@ -102,6 +106,7 @@ testable without an HTTP client:
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-28T13:54+02:00 — Task 34: `read_new_events` now filters `lifecycle.heartbeat` lines via
   `_is_heartbeat_line` (compact-wire substring fast-path + tolerant JSON fallback) and takes a `limit`
   for bounded chunks (offset still advances past skipped/consumed lines). `stream_raw_events` computes the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/store.py`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Purpose
@@ -16,6 +16,10 @@
 and appends it as one JSONL line.
 
 ## Code Commentary
+
+### 260707-HFX2-L12 CS-6 Update
+
+`EventStore.read()` now skips corrupt, legacy, or torn JSONL lines. That keeps one bad lifecycle event row from freezing the projection tick fleet-wide while preserving append-only write semantics for valid rows.
 
 `EventStore(observer_root)` holds the `logs/observer/` root. `log_path(lifecycle_id)`
 routes to `lifecycles/<id>/events.jsonl` when a lifecycle id is present, else the
@@ -44,5 +48,6 @@ will read more richly).
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
   until closeout stamps the 2a code commit.

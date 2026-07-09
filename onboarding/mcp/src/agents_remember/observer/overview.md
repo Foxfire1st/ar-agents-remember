@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac`       |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
+| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -15,6 +15,8 @@
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
+
+260707-HFX2-L12 bounds several observer/projection hot paths without changing the served projection contract: lifecycle logs are cached while unchanged, gate folds are single-read with throttled physical rewrite, task/series document scans share a TTL cache, git status probes are TTL-cached, task-document body bytes are measured and warned on, and the workspace event river is physically compacted only at serving startup while live cursor-safe compaction remains HFX2-L13 scope.
 
 `observer/` is the observable session lifecycle substrate (the 3.0
 browser-dashboard direction). It owns **both sides**: the **write side** — an
@@ -430,6 +432,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 
 ## Update History
 
+- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (small): `ambient.py`'s `AmbientLifecycle`
   gained a read-only `root` property (`self._store.root`) so the MCP tool choke point
   (`mcp/tools/base.py`) can resolve the observer root and check the sibling `serving/` package's
