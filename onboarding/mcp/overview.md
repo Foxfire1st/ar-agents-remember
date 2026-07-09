@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastVerifiedCommitHash | `acda395304f8dd01cd2ba45ff9e65c7097093d8c` |
+| lastVerifiedCommitDate | 2026-07-09T10:50:44+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -610,7 +610,19 @@ into the role files.
 
 ## Update History
 
-- 2026-07-09T00:20+02:00 — 260707-HFX2-L8 route impact (dead-seat redeliver termination + bounded
+- 2026-07-09T11:25+02:00 — No route impact: 260707-HFX2-L8 (stability/bounded-resource/guaranteed-
+  reclamation doctrine) touches `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-
+  lifecycles/criteria/code-seam.md` and `.../plan-review.md` (CS-6/PR-6 candidate criteria added) and
+  root `AGENTS.md` (one cross-reference sentence). This is a skill-catalog CONTENT change synced from
+  the canonical repo-root `skills/` tree via `scripts/sync-skills.py`, not a package structure or
+  module-responsibility change; the package layout and routing this overview describes are
+  unchanged. Per-file detail lives in the already-updated `code-seam.md`/`plan-review.md` package-
+  data sidecars (curator pass, 260707-HFX2-L8). Verification metadata pinned until closeout stamps
+  the 260707-HFX2-L8 commit.
+- 2026-07-09T00:20+02:00 — 260707-HFX2-L7 route impact (CORRECTED LABEL 2026-07-09: this entry was
+  written and landed while the dead-seat-storm fix leaf was still numbered L8, before the same-day
+  positional renumbering moved it to L7; the content below is L7's, not the current L8 doctrine
+  leaf) (dead-seat redeliver termination + bounded
   inbox sweep): the package-level `kernel/agentic_settings.py` loader gains one `orchestration.
   supervisor` field — `redeliverBudget` (default 250, defaults-safe, `_require_positive_int`). NEW
   durable `ladder-resolved` terminal inbox state on `controlplane/operator_inbox_records.py`,
@@ -624,7 +636,7 @@ into the role files.
   this file governs; recovery runbook in `docs/design/observable-lifecycle.md`, settings row in
   `docs/reference/settings-json.md`. New scale regression: a 2000-row dead-seat-storm sim in
   `mcp/tests/test_liveness_simulations.py`. Reviewer verdict APPROVE-WITH-NITS, R1-R6 all PASS.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L7 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L5 route impact (doctrine rewrite + focused liveness
   simulations): the `l-01-agent-lifecycles` package-data doctrine mirror inverts from active
   owner-side vigilance to a passive process-and-ack contract across 5 canonical files (`SKILL.md`,

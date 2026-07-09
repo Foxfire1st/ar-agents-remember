@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:00+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-09T10:40+02:00 |
+| lastVerifiedCommitHash | `acda395304f8dd01cd2ba45ff9e65c7097093d8c` |
+| lastVerifiedCommitDate | 2026-07-09T10:50:44+02:00|
 
 ## Purpose
 
@@ -16,7 +16,9 @@
 source package from the installed coordination runtime and tells agents who
 arrive through a workspace-level pointer to follow the installed
 `ar-coordination/AGENTS.md` instead when they are working on a sibling
-repository.
+repository. It also points store, queue, append-only-log, and loop-over-store
+changes at the resolved memory layer's stability/reclamation coding doctrine
+before implementation.
 
 ## Code Commentary
 
@@ -72,7 +74,12 @@ runtime-asset sync boundary. The final code-quality section tells agents working
 in this source checkout to run Ruff, Pyright, and Radon after Python code
 changes, then routes exact command details and broader validation guidance to
 the resolved memory layer's `system/tools.md` and optional
-`system/coding-guidelines.md`.
+`system/coding-guidelines.md`. HFX2-L8 adds a stability/reclamation
+cross-reference there: before adding or editing any store, loop-over-a-store,
+queue, or append-only log, agents must read the memory layer's
+`system/coding-guidelines.md` "Stability, Bounded Resources, and Reclamation"
+section. This is a doctrine read requirement, not a new gate or runtime
+behavior.
 
 ### Conventions
 
@@ -118,11 +125,11 @@ file.
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
 | The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember/AGENTS.md) |
 | The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the architect lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | L16-L40 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L28-L62 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L84-L91 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | L95-L123 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | L100-L123 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Code-quality routing tells agents to run Ruff, Pyright, and Radon after Python code changes in this source checkout and sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`. | L127-L135 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L51-L89 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L122-L137 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | L101-L127; L124-L131 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | L106-L118; L128-L129 | [AGENTS.md](agents-remember/AGENTS.md) |
+| Code-quality routing tells agents to run Ruff, Pyright, and Radon after Python code changes in this source checkout, sends exact command details plus coding rules to the resolved memory layer's `system/tools.md` and optional `system/coding-guidelines.md`, and requires the Stability/Reclamation doctrine before store, loop-over-store, queue, or append-only-log changes. | L139-L150 | [AGENTS.md](agents-remember/AGENTS.md) |
 
 ## Cross-Repo References
 
@@ -134,6 +141,11 @@ delegates sibling-repository work to the installed runtime instructions.
 | No sibling repository citation is required; the cross-repo behavior is a handoff instruction in this file. | n/a       | n/a         |
 
 ## Update History
+
+- 2026-07-09T10:40+02:00 — 260707-HFX2-L8 stability/reclamation doctrine: documented the new
+  Code Quality Instructions MUST-READ sentence that points store, loop-over-store, queue, and
+  append-only-log changes at the resolved memory layer's "Stability, Bounded Resources, and
+  Reclamation" doctrine. Verification metadata pinned until closeout stamps the HFX2-L8 commit.
 
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: the repo-root
   session-start contract now routes developer-facing sessions to the architect lifecycle
