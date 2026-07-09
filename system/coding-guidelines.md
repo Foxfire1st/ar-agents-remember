@@ -180,6 +180,8 @@ The following patterns are not acceptable:
 8. "I added another mode flag instead of creating separate strategies."
 9. "I passed more booleans instead of introducing a request/options object."
 10. "I changed unrelated logic because it was nearby."
+11. Accidentally quadratic: superlinear cost from cross-layer composition — each layer looks O(1) or O(n) in isolation, but the composed call path (e.g. a sweep that re-reads a growing store per item) is O(n^2) or worse.
+12. An unbounded append-only log without a named compactor: a store that only grows, with no declared cap, eviction policy, or retention owner landed in the same change that introduces it.
 
 These are drift behaviors. Agents must call them out before continuing.
 
@@ -356,3 +358,14 @@ A code smell is not automatically a defect.
 1. Before "fixing" a pattern, confirm it is actually wrong. Some indirection is intentional — a flexible-by-design model boundary, a deliberate test seam. Verify against the code and its tests first.
 2. If a flagged smell turns out to be intentional, document the intent at the site (a short comment, or a note here) instead of refactoring it into something worse.
 3. Behavior-preserving cleanups keep the suite green at each step; do not bundle a risky structural change with unrelated edits.
+4. Correct-but-superlinear is a DEFECT, not a smell: a change that passes every correctness test but composes into an accidentally-quadratic call path (see Anti-Patterns and "Stability, Bounded Resources, and Reclamation" below) ships broken even with a fully green suite. Do not wave it through as style.
+
+## Stability, Bounded Resources, and Reclamation
+
+D1 — Stability precedes delivery. The liveness and stability of a shared substrate outrank the delivery of any single signal that rides on it. There is no communication with a dead system, so agent communication is best-effort under a system-stability budget: no delivery, retry, escalation, or logging mechanism may threaten the CPU, memory, disk, or I/O of the substrate it runs on. When the two conflict, shed the signal, not the system.
+
+D2 — Bounded by construction. Unbounded growth is a design defect, not a tuning problem. Every store is capped and evictable; every loop over a store carries a per-cycle budget; every append-only log names its compactor and retention owner in the same change that introduces it. Correct-but-superlinear is its own defect class (algorithmic slop) independent of functional correctness — an O(n^2) that passes every correctness test is still broken.
+
+D3 — Guaranteed reclamation, proven by scaling. No feature may create data — durable or temporary — without a named, bounded reclamation path landed in the same change. Scaling is a property, so it is proven by scaling: assert behaviour across >=2 input sizes (never a single-N smoke), and bound worst-case time and on-disk / in-memory size. If you can make it, you must be able to guarantee getting rid of it.
+
+See Anti-Patterns above (accidentally-quadratic composition, unbounded append-only log without a named compactor) and Smell vs Defect above (correct-but-superlinear is a defect) for the cross-linked failure modes this doctrine rules out. Cross-referenced from `AGENTS.md` "Code Quality Instructions" as MUST-READ before adding or editing a store, a loop over a store, a queue, or an append-only log. Catching engagement: 260707-HFX2-L7 (dead-seat storm) — see `criteria/code-seam.md` CS-6 and `criteria/plan-review.md` PR-6 for the reviewer-facing counterpart of D1/D2/D3.

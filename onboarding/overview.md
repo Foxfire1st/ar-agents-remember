@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastVerifiedCommitHash | `acda395304f8dd01cd2ba45ff9e65c7097093d8c` |
+| lastVerifiedCommitDate | 2026-07-09T10:50:44+02:00|
 
 > **Status:** active baseline
 
@@ -944,6 +944,19 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 - The current source registry is useful as a discovery index but has no direct external domain evidence for this repo's own skill/workflow mechanics.
 - External-memory onboarding for `agents-remember` is ledgered; future closeouts must keep the code-to-memory mapping current.
 - The memory quality package is now the home for drift integrity and update-history style checks; further quality checks should be added under `memory_quality/style` or `memory_quality/integrity`.
+
+## Update History
+
+- 2026-07-09T11:25+02:00 — No route impact: 260707-HFX2-L8 (stability/bounded-resource/
+  guaranteed-reclamation doctrine) adds one cross-reference sentence to root `AGENTS.md`'s Code
+  Quality Instructions section (naming the new `system/coding-guidelines.md` Stability/Reclamation
+  section as MUST-READ before adding/editing a store, loop-over-a-store, queue, or append-only log)
+  and candidate reviewer criteria (CS-6, PR-6) to the canonical `skills/l-01-agent-lifecycles/
+  criteria/` catalogs. This is a doctrine/cross-reference content addition, not a change to the
+  root's own structure, routing, or module responsibilities described by this overview; per-file
+  detail lives in the already-updated `AGENTS.md`/`code-seam.md`/`plan-review.md` sidecars (curator
+  pass, 260707-HFX2-L8). Verification metadata pinned until closeout stamps the 260707-HFX2-L8
+  commit.
 
 ## Last Verified
 
