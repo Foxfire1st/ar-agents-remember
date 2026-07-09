@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-08T23:59+02:00                                 |
-| lastVerifiedCommitHash |                                                        `5f9163882857114319552d303e2e301082b588ba`|
-| lastVerifiedCommitDate |                                                        2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00                                 |
+| lastVerifiedCommitHash |                                                        `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
+| lastVerifiedCommitDate |                                                        2026-07-09T11:38:39+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -42,6 +42,10 @@ one supervisor sweep reuse its in-memory operator-inbox index instead of re-fold
 each redelivery finding. `_delivery_state`
 maps the injector's four-way `DeliveryOutcome` back onto it: `acked → delivered`,
 everything else (`landed-unacked`/`blocked`/`failed`) → `unconfirmed`.
+HFX2-L9 adds `redelivery_floor_seconds`: every delivery outcome path, including `no-hosted-session`,
+passes that optional floor through to `OperatorInboxStore.record_delivery`, so a first push attempt
+is scheduled minutes out instead of letting the old 30/60-second ladder re-fire while the message may
+still be queued or under model processing.
 `_delivery_detail` keeps the exact `"echo-confirmed"` success string and the
 exact `_unconfirmed_detail` wording for a `failed` outcome (tail-bounded pane
 capture, `_CAPTURE_EVIDENCE_LIMIT` = 2000 chars; empty capture gets
@@ -79,6 +83,8 @@ now lives one level down, in `serving.injector.deliver` + `serving.harness_adapt
   protocol.
 - The optional `current` snapshot is only a caller-supplied performance seam; omitted callers keep the
   previous read-modify-append behavior.
+- The optional `redelivery_floor_seconds` is scheduling policy only; this module still maps delivery
+  outcomes onto the unchanged `InboxDeliveryState` vocabulary.
 
 ## Repo-Internal References
 
@@ -89,9 +95,14 @@ now lives one level down, in `serving.injector.deliver` + `serving.harness_adapt
 | The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | 260707-HFX2-L3: `deliver_inbox_entry` now builds a `DeliveryRow` and calls the ONE delivery path, `serving.injector.deliver`, instead of calling `TerminalPaster.paste` directly. | `deliver` | [injector.py](injector.py.md) |
 | `serving.supervisor`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit action the supervisor takes rides through this same translation layer. | `_redeliver`; `_post_owner_signal` | [supervisor.py](supervisor.py.md) |
+| `deliver_inbox_entry` threads `redelivery_floor_seconds` into every `record_delivery` path. | L42-L90 | [inbox_delivery.py](agents-remember/mcp/src/agents_remember/serving/inbox_delivery.py) |
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: added the optional `redelivery_floor_seconds` scheduling
+  parameter and passed it through to `OperatorInboxStore.record_delivery` for hosted delivery,
+  missing-session, and unconfirmed paths. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L9 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (bounded inbox sweep, R2): `deliver_inbox_entry`
   accepts an optional operator-inbox `current` snapshot and passes it through to
   `OperatorInboxStore.record_delivery`, so supervisor redelivery can update rows against one

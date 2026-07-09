@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:59+02:00                     |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00                     |
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -72,7 +72,10 @@ Shared fixtures: `_entry()` builds a `TerminalCatalogEntry`; `_FakeHost` is a re
 tmux host a scenario can flip to unreachable (#16); `_landing_paster()` is the healthy-delivery
 capture-verified paste every non-stuck scenario reuses; `_StubPaster` returns one fixed
 `PasteResult` for scenarios needing the same pane state on every attempt (a stuck modal, a busy
-pane); `_LivenessSimulationCase` is the shared `SupervisorContext` scaffolding base class.
+pane); `_LivenessSimulationCase` is the shared `SupervisorContext` scaffolding base class. HFX2-L9
+adds `SupervisorSignalCooldownStore` to that scaffolding so the multi-tick supervisor contexts
+match the production context shape after signal cooldown landed; it does not add a new liveness
+scenario in this file.
 
 ### Conventions
 
@@ -124,6 +127,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `SupervisorHeartbeatStore`, `supervisor_staleness_banner` | [../src/agents_remember/serving/supervisor_heartbeat.py](../src/agents_remember/serving/supervisor_heartbeat.py.md) |
 | The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | [test_supervisor.py](test_supervisor.py.md) |
 | The terminal state and compaction semantics the HFX2-L8 storm simulation proves at scale. | `OperatorInboxStore.compact`; `mark_ladder_resolved`; `redeliverable` | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py.md) |
+| The shared simulation context now wires the supervisor signal cooldown store expected by `SupervisorContext`. | L162-L190 | [test_liveness_simulations.py](agents-remember/mcp/tests/test_liveness_simulations.py) |
 
 ## Cross-Repo References
 
@@ -135,6 +139,9 @@ No sibling repository evidence is needed for this same-repository test suite.
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: updated the shared liveness-simulation context to wire
+  `SupervisorSignalCooldownStore` into `SupervisorContext`; no scenario semantics changed in this
+  file. Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R5): added
   `DeadSeatStormTests.test_dead_seat_storm_terminates_and_compacts_without_stale_heartbeat`, seeding
   2000 dead/no-hosted-session terminal-rung rows and asserting bounded wall-clock sweep completion,

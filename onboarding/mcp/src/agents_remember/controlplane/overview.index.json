@@ -25,11 +25,12 @@
     "mcp/src/agents_remember/controlplane/orphan_policy.py",
     "mcp/src/agents_remember/controlplane/records.py",
     "mcp/src/agents_remember/controlplane/signal_routing.py",
-    "mcp/src/agents_remember/controlplane/store.py"
+    "mcp/src/agents_remember/controlplane/store.py",
+    "mcp/src/agents_remember/controlplane/supervisor_signals.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 16,
-    "fileSidecars": 16,
+    "sourceFilesInScope": 17,
+    "fileSidecars": 17,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -73,8 +74,11 @@
     "rows",
     "signal",
     "signal_routing",
+    "signals",
     "src",
-    "store"
+    "store",
+    "supervisor",
+    "supervisor_signals"
   ],
   "hotPath": {
     "summary": "A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `GateStore.find` giving deciders cross-lifecycle resolution by gate id), which creates the `GateRecord`, blocks the ambient lifecycle with the ask, and keeps the public tool call waiting until the gate is decided or a gate-specific inbox response exists. Decisions (`gate_decide`) and listing (`gate_list`) remain public control-plane tools; lower-level create/wait builders are compatibility internals in `mcp/tools/gates.py`. The builders...",
@@ -95,7 +99,8 @@
       "mcp/src/agents_remember/controlplane/orphan_policy.py",
       "mcp/src/agents_remember/controlplane/records.py",
       "mcp/src/agents_remember/controlplane/signal_routing.py",
-      "mcp/src/agents_remember/controlplane/store.py"
+      "mcp/src/agents_remember/controlplane/store.py",
+      "mcp/src/agents_remember/controlplane/supervisor_signals.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -130,6 +135,8 @@
       "signal_routing",
       "store.py",
       "store",
+      "supervisor_signals.py",
+      "supervisor_signals",
       "lifecycle_gate",
       "GateStore.find",
       "GateRecord",
@@ -139,13 +146,11 @@
       "GateStore",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "5f9163882857114319552d303e2e301082b588ba",
+      "8dce306e203c35ffc95f84e610b4d3683e9521b5",
       "/../../overview.md",
       "controlplane/",
       "rung_due",
-      "next_step",
-      "seat_is_suspect",
-      "signal_routing.derive_skip_level_owner"
+      "next_step"
     ]
   },
   "fallback": {

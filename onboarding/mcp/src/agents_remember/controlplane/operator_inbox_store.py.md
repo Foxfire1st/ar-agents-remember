@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-08T23:59+02:00                                            |
-| lastVerifiedCommitHash |                                                                   `5f9163882857114319552d303e2e301082b588ba`|
-| lastVerifiedCommitDate |                                                                   2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00                                            |
+| lastVerifiedCommitHash |                                                                   `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
+| lastVerifiedCommitDate |                                                                   2026-07-09T11:38:39+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -53,6 +53,10 @@ their backoff window and clear of the per-target rate limit
 redelivery from; this store itself never redelivers on its own (no in-memory
 timer). `mark_escalated(entry_id, now=...)` stamps the reserved `escalatedAt`
 field the ladder (HFX2-L4) will set -- this store only reserves the transition.
+HFX2-L9 extends that path with the 900-second production floor: `record_delivery` accepts
+`redelivery_floor_seconds` and passes it into `next_attempt_at`, while `list_redeliverable` still
+defaults through `inbox_backoff.DEFAULT_RATE_LIMIT_SECONDS` when the caller supplies no override.
+Below-floor values are refused in `inbox_backoff`, not silently shortened here.
 
 260707-HFX2-L4 (R1/R2, the ladder's own transition): `advance_rung(entry_id, *, rung, now)` stamps
 the ladder's next rung AND re-anchors `escalatedAt` to `now` in the SAME snapshot, so the next
@@ -80,6 +84,8 @@ by lifecycle, agent, role, or combinations of those keys.
   entries are throwaway interaction data and can be physically removed.
 - A `ladder-resolved` row is terminal but not acked; it is excluded from redelivery and eligible for
   compaction.
+- Delivery scheduling may inherit the store default or take a caller floor, but the effective floor is
+  validated in `inbox_backoff` and cannot be below 900 seconds.
 - Polling without `lifecycle_id`, `agent_id`, or `recipient_role` is invalid
   because it has no mailbox boundary.
 - This store owns persistence only; MCP payload shapes and attribution routing
@@ -106,6 +112,7 @@ agents that cannot receive dashboard session injection.
 | The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | L15-L53 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | Pending filters match supplied lifecycle and/or agent keys. | L55-L70 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | Consume is idempotent and appends a consumed snapshot only once. | L72-L93 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Delivery snapshots thread `redelivery_floor_seconds` into `next_attempt_at`, and redeliverable selection defaults to the shared backoff floor. | L89-L155 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 
 ## Cross-Repo References
 
@@ -117,6 +124,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: threaded the effective 900-second redelivery floor
+  through `record_delivery(..., redelivery_floor_seconds=...)` and preserved the shared default for
+  `list_redeliverable`. Verification metadata pinned until closeout stamps the 260707-HFX2-L9
+  commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8: added optional snapshot-aware mutation/selection paths,
   `mark_ladder_resolved`, and compaction of ladder-resolved terminal ids so supervisor sweeps avoid
   per-finding log folds and dead-seat storms leave bounded inbox logs. Verification metadata pinned

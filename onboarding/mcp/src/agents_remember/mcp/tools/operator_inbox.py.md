@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash |                                                              `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate |                                                              2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00 |
+| lastVerifiedCommitHash |                                                              `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
+| lastVerifiedCommitDate |                                                              2026-07-09T11:38:39+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -52,6 +52,12 @@ that actually consumed the entry (`consumed_now`), it looks up that entry's pend
 expectation row (`ExpectationRowStore.find_by_source`) and marks it `met` — consume=ack is the
 ONLY terminal delivery outcome, so this is the one place the ack-by deadline is fulfilled.
 
+HFX2-L9 adds `_redelivery_floor_seconds(config)`: hosted push attempts made directly by this MCP
+tool read `settings.supervisor.redeliver_rate_limit_seconds` and pass it into
+`deliver_inbox_entry`, so the first send's durable `nextAttemptAt` is scheduled at the same
+floor-aware cadence as supervisor redelivery. A missing/injected test config still passes `None`,
+which inherits the store default.
+
 ### Conventions
 
 The builders stay config-rooted and transport-thin like `gates.py`: persistence
@@ -69,7 +75,8 @@ and attribution is explicit rather than inferred.
 - Consumed inbox rows are not durable task records; the payload is returned to
   the caller, then the row is physically deleted.
 - Hosted push delivery is opportunistic; the durable row remains pollable unless
-  the consumer explicitly consumes it.
+  the consumer explicitly consumes it, and its retry schedule is floor-aware when a runtime config is
+  present.
 
 ### Todos
 
@@ -91,6 +98,7 @@ cannot receive direct session injection.
 | --- | --- | --- |
 | The tool module roots the inbox store under `observer_root(config)` and serializes entries with aliases. | L23-L29 | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
 | Post, poll, and consume payloads append/list/acknowledge inbox entries and return through `_tool_payload`. | L31-L111 | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
+| Hosted delivery reads the supervisor redelivery floor from agentic settings and passes it to `deliver_inbox_entry`. | L52-L55; L124-L133 | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
 | The MCP server fixes public-route attribution to model/cli. | L932-L977 | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | The dashboard serving endpoint fixes trusted developer/dashboard attribution for no-hosted-session responses. | L358-L376 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 
@@ -104,6 +112,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: threaded the configured supervisor redelivery floor into
+  immediate hosted inbox delivery so first-send scheduling uses the same 900-second floor as later
+  redelivery. Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `operator_inbox_post_payload` now derives R4 routing (`signal_routing.derive_signal_owner`) and writes an atomic R2 `ack-by` expectation row (`expectation_rows.write_expectation_row`) in the SAME call; `operator_inbox_consume_payload` marks that row `met` on ack (consume=ack is the only terminal outcome, R1). Response payload gained `ownerRole`/`ownerAgentId`/`ownerLifecycleId`. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-04T12:31+02:00 - L3: generalized posting/polling for agent roles and
   message kinds, added optional hosted-session delivery through

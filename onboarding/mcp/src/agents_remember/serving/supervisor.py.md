@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-08T23:59+02:00                            |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`        |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00                            |
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`        |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -26,6 +26,10 @@ persistently silent seat being respawned rather than waited on, a dead owner's s
 and its grandparent signaled) is detectable by a mechanical predicate over an authoritative store,
 and this module evaluates those predicates every sweep and acts — redeliver, auto-nudge,
 signal-emit, escalate-rung, signal-grandparent — logging every action as an observer event.
+HFX2-L9 makes the sweep safe at fast observation cadence: redelivery calls pass the configured
+900-second floor into the delivery path, repeated pane/seat-liveness signals use persisted
+cooldown state before minting another owner inbox row, and `pane-signal: mid-turn` is treated as a
+busy observation rather than immediate escalation noise.
 Level-triggered by design: any event lost anywhere (a dropped push, a crashed dispatch call) is
 caught by the NEXT sweep, the backstop even protocol-grade push (A2A/MCP) needs (the Inngest
 Oct-2025 incident is the reference case for "at-least-once push still needs a reconciliation
@@ -37,15 +41,18 @@ sweep").
 
 **R3 (#22 root-cause rule, non-negotiable and structurally enforced by import discipline, not a
 runtime guard):** every predicate takes a store/catalog object directly — `TerminalCatalog`,
-`OperatorInboxStore`, `ExpectationRowStore`, `OrchestrationNudgeStore` — and this module imports
+`OperatorInboxStore`, `ExpectationRowStore`, `OrchestrationNudgeStore`,
+`SupervisorSignalCooldownStore` — and this module imports
 nothing from `serving/projector.py` or `observer/reducer.py`. The projection is a consumer of the
 `orchestration.supervisor.*` events this module emits, never a source.
 
 **`SupervisorContext`** is the one seam every predicate/action function reads through: catalog,
-host, paster, the four stores, the heartbeat store, `coordination_root`, plus tunables —
+host, paster, the control-plane stores, the heartbeat store, `coordination_root`, plus tunables —
 `stale_seat_seconds` (seat-liveness grace, derived by the caller as `4x` the sweep interval floored
 at 60s), `redeliver_rate_limit_seconds` (passed straight to `OperatorInboxStore
-.list_redeliverable`, `None` inherits that store's own default), and — since 260707-HFX2-L4 —
+.list_redeliverable` and `deliver_inbox_entry`, `None` inherits that store's own default),
+`signal_cooldown_seconds` (passed to `SupervisorSignalCooldownStore.in_cooldown` before owner signal
+posts), and — since 260707-HFX2-L4 —
 `escalation_sla_seconds`/`escalation_rung_seconds`/`respawn_after_rung`: the ladder's own knobs as
 plain primitives (dicts/int), NOT a typed `EscalationSettings` object, matching the existing
 `stale_seat_seconds`-style decoupling from the kernel settings loader; `serving/app.py`'s
@@ -98,7 +105,9 @@ and heartbeat tick now carry pending/redeliverable inbox counts and last-sweep w
   `PERSISTENT_FAILURE_ATTEMPTS` (5), calls `_escalate_inbox_entry` (`OperatorInboxStore
   .mark_escalated` — a distinct, rung-agnostic "this row is now escalatable" stamp; the ladder's own
   rung transitions go through the separate `advance_rung`, not this call). In L8 this path uses the
-  sweep index and refuses to push a terminal-rung dead-seat row.
+  sweep index and refuses to push a terminal-rung dead-seat row. In HFX2-L9 it passes
+  `ctx.redeliver_rate_limit_seconds` into the hosted delivery path, so retry scheduling stays at the
+  configured/shared 900-second floor.
 - `inbox-ladder-terminal` → `_resolve_ladder_terminal` (260707-HFX2-L8): calls
   `OperatorInboxStore.mark_ladder_resolved`, updates the sweep index, and logs one
   `orchestration.supervisor.ladder-resolved` event for the terminal transition. This is distinct
@@ -111,8 +120,11 @@ and heartbeat tick now carry pending/redeliverable inbox counts and last-sweep w
   `ExpectationRowStore.mark_missed`, idempotent every sweep the row stays overdue — per
   `expectation_rows.py:93-97`'s own docstring: "this leaf only reserves the transition — the L2
   sweep is the actual caller").
-- `pane-signal` / `seat-liveness` → `_signal_emit`: derives the owner, posts an owner-addressed
-  `escalation`-kind inbox row via the same `_post_owner_signal` helper.
+- `pane-signal` / `seat-liveness` → `_signal_emit`: derives the owner, skips `pane-signal:
+  mid-turn` as a busy pane state before posting, consults `SupervisorSignalCooldownStore` by
+  owner/leaf/kind/detail, posts an owner-addressed `escalation`-kind inbox row via the same
+  `_post_owner_signal` helper only when outside cooldown, then appends the cooldown record with the
+  resulting delivery state.
 - `escalation-due` → `_escalate_rung` (260707-HFX2-L4, R2/R3): calls `escalation_ladder.next_step`
   for the row's next rung/owner (skipping the action entirely if nothing is routable), posts the
   signal via `_post_owner_signal` (rung 1 reuses `message_kind="nudge"`, rung 2/3 reuse
@@ -164,6 +176,9 @@ convention. Private action helpers are prefixed `_` and take `ctx`/`finding`/`no
   contract; keep any new predicate reading a store directly, never the projection.
 - **Level-triggered, not edge-triggered:** every predicate re-evaluates the CURRENT store state
   every sweep; a missed action on one sweep is simply re-found and re-acted-on the next.
+- **Observation cadence is not delivery/escalation cadence:** short sweeps may observe every second,
+  but redelivery and repeated owner signals are floor-gated at 900 seconds by durable row/cooldown
+  state.
 - **The escalation ladder's logic lives in `controlplane/escalation_ladder.py`, not here.** This
   module is the sole caller (`evaluate_escalation_findings`/`_escalate_rung`) that reads the pure
   walker's `rung_due`/`next_step`/`seat_is_suspect` and performs the delivery + durable
@@ -189,6 +204,9 @@ developer surfacing rides the existing dashboard-visible `OperatorInboxStore` ro
 (`recipientRole="developer"`) rather than a dedicated attention-queue tile, since the 260628
 developer-notification seam does not exist in this repo; and `orphan_policy.find_orphaned_workers`
 is detection/surfacing only — no leaf yet auto-reparents an orphaned worker to a respawned manager.
+Tracked HFX2-L11 gap: `_signal_emit` currently calls the new signal-cooldown store once per
+pane/seat-liveness finding, and that store is an unbounded append-only full-file read with no
+compactor yet. The precise limitation lives in `controlplane/supervisor_signals.py`'s sidecar.
 
 ## Docs References
 
@@ -217,6 +235,8 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 | The standard turn-report artifact path helper `turn_report_path_for_leaf_key` resolves against, reused rather than re-derived. | `turn_report_artifact` | [../controlplane/orchestration_artifacts.py](../controlplane/orchestration_artifacts.py) |
 | The owner-derivation helper both `_auto_nudge` and `_signal_emit` call before posting an owner-addressed inbox row. | `derive_signal_owner` | [../controlplane/signal_routing.py](../controlplane/signal_routing.py) |
 | The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | [inbox_delivery.py](inbox_delivery.py.md) |
+| The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | L61-L113 | [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md) |
+| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | L500-L513; L655-L698; L701-L747 | [supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 | The terminal catalog every pane/seat-liveness predicate reads directly (R3). | `TerminalCatalog.list` | [terminal_catalog.py](terminal_catalog.py.md) |
 | Failing-first predicate unit tests (one per family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included. | `SupervisorTests`; sweep integration test | [../../../tests/test_supervisor.py](../../../tests/test_supervisor.py.md) |
 
@@ -230,6 +250,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: `_redeliver`/`_post_owner_signal` now pass the
+  configured redelivery floor into hosted delivery; `_signal_emit` skips `pane-signal: mid-turn`,
+  checks the persisted signal cooldown store by owner/leaf/kind/detail, and records the delivery
+  state after posting. Also documented the HFX2-L11 scaling deferral for the new signal store.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8: added `_SweepState`, redeliver budgeting,
   ladder-terminal dead-seat resolution, the `orchestration.supervisor.ladder-resolved` event, and
   backlog/duration heartbeat metrics. Verification metadata pinned until closeout stamps the HFX2-L8

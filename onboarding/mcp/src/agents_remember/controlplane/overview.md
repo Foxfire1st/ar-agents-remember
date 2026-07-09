@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-08T23:59+02:00                      |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`     |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-09T11:19+02:00                      |
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`     |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -123,6 +123,13 @@ optional in-sweep `current()` snapshot and add idempotent `mark_ladder_resolved`
 `interaction_retention.py`/`compact()` prune ladder-resolved terminal rows while still preserving live
 pending rows. Mid-climb rows and live-seat rows remain pending/redeliverable under the older L1/L4
 contracts.
+**260707-HFX2-L9** adds the redelivery-cadence floor and supervisor signal cooldown substrate:
+`inbox_backoff.py` now owns the 900-second `MIN_REDELIVERY_INTERVAL_SECONDS` and refuses sub-floor
+values, `OperatorInboxStore.record_delivery` threads that floor into stored `nextAttemptAt`
+scheduling, and new `supervisor_signals.py` stores pane/seat-liveness signal cooldown records keyed
+by owner/leaf/finding kind/detail. Known deferral: `supervisor_signals.py` is currently an unbounded
+append-only log with no compactor and performs full-file reads through `in_cooldown`; HFX2-L11 tracks
+that CS-6-class scaling gap before the supervisor is re-enabled.
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -147,7 +154,8 @@ signal, while targetless provider-down dismissals are not accepted.
 | `attention_dismissals.py` | `AttentionDismissalRecord` + `AttentionDismissalStore`: compact current acknowledgement rows for attention queue dismissals, with physical prune by live lifecycle id and a targetless actionable-drift exception. |
 | `interaction_retention.py` | Shared 5-minute pickup/wait and 24-hour interaction TTL policy helpers; since 260707-HFX2-L1 a `pending` inbox row is NEVER pruned by age (only `consumed` rows are TTL-bounded). |
 | `expectation_rows.py` | (260707-HFX2-L1, R2) `ExpectationRow`/`ExpectationRowStore`/`write_expectation_row`: durable what-must-happen-by-when rows written atomically at every dispatch surface, an L2 sweep scans, never in-memory timers. |
-| `inbox_backoff.py` | (260707-HFX2-L1, R3) Pure redelivery backoff-ladder math + per-target rate limiting, mirroring the `OrchestrationNudgeStore` pattern. |
+| `inbox_backoff.py` | (260707-HFX2-L1, R3; HFX2-L9) Pure redelivery backoff-ladder math + the shared 900-second redelivery floor/fail-loud validation, mirroring the `OrchestrationNudgeStore` pattern while refusing sub-floor retry cadences. |
+| `supervisor_signals.py` | (260707-HFX2-L9) Persisted supervisor pane/seat-liveness signal cooldown records keyed by owner/leaf/finding kind/detail; known unbounded/no-compactor limitation tracked for HFX2-L11. |
 | `signal_routing.py` | (260707-HFX2-L1, R4; 260707-HFX2-L4, R2/R4) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). `is_seat_dead`/`derive_skip_level_owner`: the ladder's liveness check and SEPARATE two-hop, dead-node-skipping owner's-owner walk. |
 | `escalation_ladder.py` | (260707-HFX2-L4, R2/R3) `rung_due`/`next_step`/`seat_is_suspect`: the pure P-15 tier-3 ladder walker -- rung-due dwell/SLA logic, per-rung routing (including the hierarchy-ceiling jump-to-developer fallback), and dead/stalled-seat respawn-candidate detection. |
 | `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
@@ -204,6 +212,12 @@ response models are `models/operator_inbox.py`.
 
 ## Update History
 
+- 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: added the shared 900-second redelivery
+  floor/fail-loud validation in `inbox_backoff.py`, threaded the floor through
+  `OperatorInboxStore.record_delivery`, and added `supervisor_signals.py` as the persisted
+  owner-signal cooldown store. The new store's unbounded/no-compactor scaling gap is documented as
+  a tracked HFX2-L11 deferral, not treated as already bounded. Verification metadata pinned until
+  closeout stamps the 260707-HFX2-L9 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R3): operator inbox rows
   gain the terminal non-ack `ladder-resolved` state and resolution metadata; `inbox_backoff.py`
   excludes it explicitly; store mutations accept an optional in-sweep current snapshot; the store adds

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`                                      |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`                                      |
+| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -145,6 +145,12 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-09T11:45+02:00 — No route impact: 260707-HFX2-L9 (supervisor redelivery cadence + signal
+  throttling) changes `operator_inbox.py`'s delivery call to thread the configured supervisor
+  redelivery floor through to hosted delivery — an internal parameter addition to an existing call,
+  not a change to this route's public tool surface, response shape, or module responsibilities;
+  detail lives on the file's own sidecar. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L9 commit.
 - 2026-07-08T22:30+02:00 — No route impact: 260707-HFX2-L3 (paste injector hardening) changes only
   `terminal.py::_deliver_spawn_pastes`'s INTERNAL delivery mechanic (now routes through
   `serving.injector.deliver`, the one delivery path, instead of calling `TerminalPaster.paste`
