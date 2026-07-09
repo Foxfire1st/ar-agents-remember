@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-08T18:45+02:00 |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`                                      |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T12:04+02:00 |
+| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`                                      |
+| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -45,21 +45,22 @@ for internal compatibility and tests but are not registered as public MCP tools.
 `terminal.py` submodule and public `attach_terminal_session_to_leaf` builder, an agent-facing wrapper over
 the dashboard terminal catalog move policy. L2 adds the public `spawn_agent_session` builder to that same
 submodule — the agent-facing dispatch tool that composes the shared serving opener + a capture-verified
-context paste (260707-HFX-L3: `contextDelivered` only after the pane provably shows the paste; failures ship `deliveryCapture`) to create a role-configured, leaf-attached, context-primed hosted session. Since
-260703-L13 its `harness` argument is optional: `_resolve_spawn_harness` reads the agentic settings
-PER-USE (`kernel/agentic_settings.py`; repo-local layer via the qualified leaf key) and resolves
-explicit arg > repo-local `orchestration.spawn.harness` > global > the first detected registry
-harness, refusing (never silently defaulting) when nothing resolves or the configured preference is
-not installed. Since 260703-L16 the builder is the full knob resolution + application seam:
-`_resolve_harness_dispatch` folds the settings rungs (`resolved_role_knobs(AR_SPAWN_ROLE, level)` —
-`rolesPerLevel` over flat `roles`; the new `level` parameter leaf|master|portfolio with recorded
-provenance) into explicit args, resolves ids against the EFFECTIVE registry
-(`orchestration.harnesses`; unknown-everywhere ids refuse naming the `docs/reference/harnesses.md`
-manual), validates model/effort per-harness BEFORE spawning
+context paste (260707-HFX-L3: `contextDelivered` only after the pane provably shows the paste; failures ship `deliveryCapture`) to create a role-configured, leaf-attached, context-primed hosted session. HFX2-L10 makes
+settings the spend authority for ordinary callers: legacy non-null `harness`/`model`/`effort`,
+direct `launch_args`/`prompt_keywords`/`session_commands`, `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, and
+maintained harness-native spend/endpoint env keys refuse with `spend-override-unsupported` before
+leaf resolution, host spawn, catalog writes, expectation rows, or paste delivery. Since 260703-L16
+the builder is the full settings-rung knob resolution + application seam: `_resolve_harness_dispatch`
+folds `resolved_role_knobs(AR_SPAWN_ROLE, level)` (`rolesPerLevel` over flat `roles`; the `level`
+parameter leaf|master|portfolio with recorded provenance), then falls through to repo-local/global
+`orchestration.spawn.harness` and the first detected registry harness, resolves ids against the
+EFFECTIVE registry (`orchestration.harnesses`; unknown-everywhere ids refuse naming the
+`docs/reference/harnesses.md` manual), validates model/effort per-harness BEFORE spawning
 (`model-invalid`/`effort-invalid`/`level-invalid`; claude's session-vocabulary `ultracode` becomes
-the first post-launch `/effort` paste), and delivers the free-form escape hatch (`launch_args`
-verbatim argv, `session_commands` pasted+submitted before the brief, `prompt_keywords` prepended to
-the brief) — never validated, recorded in spawn provenance and echoed on the payload.
+the first post-launch `/effort` paste), and delivers the settings-owned free-form escape hatch
+(`launchArgs` verbatim argv, `sessionCommands` pasted+submitted before the brief,
+`promptKeywords` prepended to the brief) — never validated, recorded in spawn provenance and echoed
+on the payload.
 260707-HFX-L4 adds qualified leaf-ref validation at the terminal write boundary: attach/spawn accept
 canonical qualified ids, doc ids, and unambiguous legacy stems/slugs, persist canonical qualified
 `repo/master/doc-id` catalog keys, and return strict `leaf-ref-not-found` / `leaf-ref-ambiguous`
@@ -94,7 +95,7 @@ calling me" session-id resolution anywhere in this codebase.
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
 | `leaf_ref.py`   | shared MCP refusal-payload helper for `leaf-ref-not-found` / `leaf-ref-ambiguous`, keeping strict leaf-ref error envelopes out of the already-large terminal tool module. |
-| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16: `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-rung knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, free-form + level provenance) — it normalizes leaf refs before catalog writes, composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure with per-harness argv knob application) then a `serving.terminal_paste.TerminalPaster` capture-verified paste sequence, records spawned-by provenance, and returns `spawned` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `effort-invalid` / `model-invalid` / `level-invalid` / `leaf-ref-not-found` / `leaf-ref-ambiguous` / `bad-kind` through the strict response model. |
+| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16/HFX2-L10: `_caller_spend_override_refusal` + `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-only knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, settings-owned free-form + level provenance) — it normalizes leaf refs before catalog writes, composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure with per-harness argv knob application) then a `serving.terminal_paste.TerminalPaster` capture-verified paste sequence, records spawned-by provenance, and returns `spawned` / `spend-override-unsupported` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `effort-invalid` / `model-invalid` / `level-invalid` / `leaf-ref-not-found` / `leaf-ref-ambiguous` / `bad-kind` through the strict response model. |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
 Since 2.5.1 this route also owns the response token-budget layer: the verbose
@@ -145,6 +146,12 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Update History
 
+- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 route impact (spawn settings authority):
+  `terminal.py::spawn_agent_session_payload` no longer treats caller `harness`/`model`/`effort`,
+  direct launch/session controls, or spend-affecting env keys as a precedence rung. Those values
+  refuse with `spend-override-unsupported` before any side effect; settings supply the spend chain
+  and free-form launch/session controls. Module layout and public tool name are unchanged.
+  Verification metadata pinned until closeout stamps the 260707-HFX2-L10 commit.
 - 2026-07-09T11:45+02:00 — No route impact: 260707-HFX2-L9 (supervisor redelivery cadence + signal
   throttling) changes `operator_inbox.py`'s delivery call to thread the configured supervisor
   redelivery floor through to hosted delivery — an internal parameter addition to an existing call,

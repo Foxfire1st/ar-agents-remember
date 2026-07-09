@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`        |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastUpdated            | 2026-07-09T12:04+02:00 |
+| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`        |
+| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -40,37 +40,49 @@ includes the persisted canonical session/leaf plus optional `previousLeafKey`, `
 `spawn_agent_session_payload(config, *, harness=None, leaf_key, context, submit, label, model, effort,
 env, launch_args, prompt_keywords, session_commands, level, spawned_by_session, spawned_by_lifecycle,
 kind, session_id, host, paster, which)` composes the L2 dispatch, now the full 260703-L16 knob
-resolution + application seam. When `leaf_key` is supplied it is normalized to the canonical qualified
-leaf id before harness/settings resolution, opener claims, catalog writes, and spawned payload/provenance.
-Invalid or ambiguous refs return a strict refusal before any spawn. For a `harness` kind it:
+application seam under the HFX2-L10 settings-only authority rule. The legacy `harness`/`model`/
+`effort` and free-form caller parameters remain in the Python signature only so old callers fail
+loudly with `spend-override-unsupported`; ordinary callers declare `env.AR_SPAWN_ROLE`, `level`,
+leaf/context/label/provenance, and non-spend env only. When `leaf_key` is supplied it is normalized to
+the canonical qualified leaf id before harness/settings resolution, opener claims, catalog writes, and
+spawned payload/provenance. Invalid or ambiguous refs return a strict refusal before any spawn. For a
+`harness` kind it:
 
-1. **Resolves the dispatch level** (`level` param, `leaf|master|portfolio`, default `leaf`;
-   `_SPAWN_LEVELS` mirrors the `loops.perLevel` vocabulary) — an unknown level refuses
-   `level-invalid` before anything else; the resolved level + its source (`explicit`/`default`) ride
-   to spawn provenance.
-2. **Reads the agentic settings per-use** (`load_agentic_settings`, repo-local layer selected by the
+1. **Rejects caller spend overrides before any side effect** via `_caller_spend_override_refusal`:
+   non-null `harness`/`model`/`effort`/`launch_args`/`prompt_keywords`/`session_commands`,
+   `env.AR_SPAWN_MODEL`/`env.AR_SPAWN_EFFORT`, and the maintained `_HARNESS_NATIVE_SPEND_ENV_KEYS`
+   for Claude/Anthropic and Codex/OpenAI model, effort, endpoint, credential, org, and project knobs
+   all return `spend-override-unsupported`. This runs before leaf resolution, host spawn, catalog
+   mutation, expectation rows, or paste delivery. The blocklist is a maintained boundary, not a
+   mathematical guarantee that every future harness-native spend variable is known.
+2. **Resolves the dispatch level** (`level` param, `leaf|master|portfolio`, default `leaf`;
+   `_SPAWN_LEVELS` mirrors the `loops.perLevel` vocabulary) — after the spend-override guard, an
+   unknown level refuses `level-invalid` before settings resolution or spawn; the resolved level +
+   its source (`explicit`/`default`) ride to spawn provenance.
+3. **Reads the agentic settings per-use** (`load_agentic_settings`, repo-local layer selected by the
    qualified leaf key via `_spawn_repo_root`) and computes the settings rungs:
    `settings.resolved_role_knobs(env["AR_SPAWN_ROLE"], level)` — the `rolesPerLevel[level]` override
-   deep-merged over the flat `roles` default (no role riding = no settings rung). Unset explicit
-   args fold in from the knobs (model, effort, launchArgs, promptKeywords, sessionCommands), giving
-   the chain explicit args > repo-local level override > global level override > repo-local role
-   default > global role default > spawn preference > detection-gated default.
-3. **Resolves the harness against the EFFECTIVE registry** (`_resolve_spawn_harness(settings,
-   harness or knobs.harness, which)` — `settings.harnesses` is the builtin table merged with
+   deep-merged over the flat `roles` default (no role riding = no settings rung). Model, effort,
+   launchArgs, promptKeywords, and sessionCommands come from those settings only, giving the chain
+   repo-local level override > global level override > repo-local role default > global role default
+   > spawn preference > detection-gated default.
+4. **Resolves the harness against the EFFECTIVE registry** (`_resolve_spawn_harness(settings,
+   knobs.harness, which)` — `settings.harnesses` is the builtin table merged with
    `orchestration.harnesses`, so settings-defined harnesses and pre-customized builtins resolve;
    an id known nowhere refuses `harness-unknown` with the `unknown_harness_detail` text naming the
    known set + the `docs/reference/harnesses.md` manual; undetected → `harness-not-detected`,
    configured-preference refusals still name the settings source).
-4. **Validates the knobs pre-spawn**: `invalid_model_detail`/`invalid_effort_detail` on the
-   EFFECTIVE values (env wins over arg wins over settings) — `model-invalid`/`effort-invalid`
+5. **Validates the settings-resolved knobs pre-spawn**: `invalid_model_detail`/
+   `invalid_effort_detail` on the resolved settings values — `model-invalid`/`effort-invalid`
    refusals name the harness and its valid sets (the L16 silent-degrade prevention); a
    session-vocabulary effort (claude `ultracode`) contributes `effort_session_commands` as the FIRST
    post-launch session command instead of a flag.
-5. **Spawns through the shared opener** (`open_terminal_session`, the SAME opener the dashboard
+6. **Spawns through the shared opener** (`open_terminal_session`, the SAME opener the dashboard
    route uses — no parallel spawn path) with the env-folded knobs (`_spawn_env` — resolved
-   model/effort ride as `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, caller env keys win), the verbatim
-   `launch_args`, the free-form provenance, the level provenance, and the effective registry.
-6. **Delivers the session layer**: each resolved session command is its own capture-verified paste
+   model/effort overwrite any absent namespaced keys as `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, after
+   caller spend env keys have already been refused), the settings-owned `launch_args`, the free-form
+   provenance, the level provenance, and the effective registry.
+7. **Delivers the session layer**: each resolved session command is its own capture-verified paste
    with `submit=True` (an unexecuted `/effort ultracode` would be a silent downgrade;
    `sessionCommandsDelivered` aggregates delivered+submitted), THEN the brief — `prompt_keywords`
    are prepended as its first line (delivered alone when no `context` is given) — with the existing
@@ -168,15 +180,20 @@ is `_tool_payload` + `models/terminal.py`, and server registration lives in `mcp
   L14 the `spawned` payload also reports `spawnRole` — the `AR_SPAWN_ROLE` the opener persisted from
   the caller's `env` (omitted when the spawn carried no role), the Chats command-tree grouping key.
 - The responses remain AR-owned and strict; provider-flexible models are not used here.
-- Knob resolution precedence (L16) is explicit args > repo-local level override > global level
-  override > repo-local role default > global role default > spawn preference > detection-gated
-  default; settings are read PER-USE (an edit applies to the next spawn, no restart), and the
+- Ordinary callers cannot select spend knobs: non-null legacy caller `harness`/`model`/`effort`,
+  direct free-form launch/session controls, `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, and maintained
+  harness-native spend/endpoint env keys refuse before any spawn or catalog write. The blocklist
+  keeps the retained operational `env` surface from bypassing settings, but it must be maintained as
+  harnesses add new spend-affecting env variables.
+- Knob resolution precedence (HFX2-L10 over L16) is repo-local level override > global level override
+  > repo-local role default > global role default > spawn preference > detection-gated default;
+  settings are read PER-USE (an edit applies to the next spawn, no restart), and the resolved
   `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` env riding is preserved — L16 ADDS the argv application on top
   (per-harness flags via the effective registry; env-only harnesses unchanged at the argv).
-- The free-form escape hatch (`launchArgs`/`promptKeywords`/`sessionCommands`) is NEVER validated —
-  only recorded in spawn provenance (catalog row + payload); the validated-enum refusals
-  (`effort-invalid`/`model-invalid`/`level-invalid`) fire before any spawn, naming the harness and
-  its valid sets with launchArgs/sessionCommands guidance.
+- The free-form escape hatch (`launchArgs`/`promptKeywords`/`sessionCommands`) is settings-owned and
+  NEVER validated — only recorded in spawn provenance (catalog row + payload); the validated-enum
+  refusals (`effort-invalid`/`model-invalid`/`level-invalid`) fire before any spawn, naming the
+  harness and its valid sets with launchArgs/sessionCommands guidance.
 - Paste ordering is a contract: session commands (effort vehicle first, then the caller's) BEFORE
   the promptKeywords-bearing brief — session-level modes must be active before the brief submits.
 - Delivery booleans are capture-verified, never optimistic (260707-HFX-L3): `contextDelivered` /
@@ -210,7 +227,7 @@ catalog.
 | The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | load_agentic_settings | [../../kernel/agentic_settings.py](../../kernel/agentic_settings.py) |
 | The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | L18-L20 | [base.py](base.py) |
 | The facade re-exports both payload builders. | L86; L94 | [__init__.py](__init__.py) |
-| The FastMCP server registers `attach_terminal_session_to_leaf` and the L2 `spawn_agent_session(harness, leaf_key, context, submit, model, effort, env, …)`. | L146-L189 | [../server.py](../server.py) |
+| The FastMCP server registers `attach_terminal_session_to_leaf` and documents the HFX2-L10 settings-only authority rule for `spawn_agent_session`, including `spend-override-unsupported` refusals for legacy spend fields and harness-native spend env keys. | L170-L197 | [../server.py](../server.py) |
 | The strict response models (`AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`) are registered for conformance validation. | L82-L88; L111-L114 | [../../models/tool_registry.py](../../models/tool_registry.py) |
 | `session_retire_payload`/`session_rename_payload` delegate the actual catalog/tmux mechanics to `retire_entry`/`TerminalCatalog.set_label` and the authority check to `check_retire_authority`/`SeatRef`/`master_of`. | `retire_entry`; `check_retire_authority` | [../../serving/retire.py](../../serving/retire.py); [../../serving/retire_policy.py](../../serving/retire_policy.py) |
 | Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | [../../serving/seat_events.py](../../serving/seat_events.py) |
@@ -228,6 +245,14 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): `spawn_agent_session_payload`
+  now rejects ordinary caller spend overrides before any side effect (`harness`/`model`/`effort`,
+  direct launch/session controls, `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, and maintained Claude/Anthropic
+  + Codex/OpenAI harness-native spend/env keys) with `spend-override-unsupported`. Harness/model/
+  effort/free-form resolution is settings-only: repo-local level override > global level override >
+  repo-local role default > global role default > spawn preference/detection. Documented the accepted
+  reviewer note that the blocklist is maintained but not mathematically exhaustive. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L10 commit.
 - 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R3): `_deliver_spawn_pastes`
   gained `entry_id`/`harness` parameters and now builds `DeliveryRow`s (`envelope=False`, raw text
   unchanged) passed to `serving.injector.deliver` — the raw-spawn seam's separate delivery loop is

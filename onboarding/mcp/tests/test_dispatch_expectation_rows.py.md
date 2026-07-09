@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/tests/test_dispatch_expectation_rows.py`             |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-07-08T16:15+02:00                                    |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`|
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastUpdated            | 2026-07-09T12:04+02:00                                    |
+| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`|
+| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
 | governingOverview      | `../overview.md`                                          |
 
 ## Governing Overview
@@ -85,6 +85,12 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-09T12:04+02:00 — No content impact: 260707-HFX2-L10 adjusted the spawn expectation-row
+  fixture to use settings-resolved harness selection instead of the now-refused legacy explicit
+  `harness` argument. The expectation-row contract is unchanged: spawn still writes `briefed-by`
+  and, when leaf-attached, `turn-report-by` inside the dispatch call. Verification metadata pinned
+  until closeout stamps the 260707-HFX2-L10 commit.
 
 - 2026-07-08T16:15+02:00 — Created for 260707-HFX2-L1 (curator delta round 2, closeout-preview
   gap): the R2 atomic write-with-dispatch regression across spawn/gate/inbox. Verification metadata

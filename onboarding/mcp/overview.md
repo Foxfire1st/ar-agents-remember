@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-09T12:04+02:00 |
+| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8` |
+| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -26,9 +26,9 @@ adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
 role-configured, leaf-attached, context-primed hosted session by composing the
 existing serving primitives (the shared session opener + optional leaf attach with
 server-arbitrated `leaf-taken` + a capture-VERIFIED context paste (260707-HFX-L3) with optional
-submit), injects the model/effort/env role knobs at spawn, and records spawned-by
-provenance — so orchestrators spawn managers and managers spawn workers without
-dashboard clicks. HFX-L6 splits the developer-facing architect from spawned backend
+submit), resolves model/effort/free-form spend controls from settings only, rejects caller spend
+overrides before spawning, and records spawned-by provenance — so orchestrators spawn managers and
+managers spawn workers without dashboard clicks. HFX-L6 splits the developer-facing architect from spawned backend
 orchestrators and adds the curator role to the runtime skill/package mirrors, settings role vocabulary,
 dashboard role projection, and manager/worker dispatch chain. The package-data runtime skill mirror now carries the L5
 super-integration doctrine for orchestrated series: super branches from main,
@@ -253,11 +253,13 @@ The MCP package separates three surfaces:
   or invalid ⇒ fail-closed refusal, never a snapshot fallback), so editing
   `providers` to `{}` bites running servers immediately while stop/status/
   cleanup stay legal; `runtime_install` seeds the global file copy-if-missing and
-  `spawn_agent_session` resolves its knobs through the loader (260703-L16:
-  explicit args > repo-local level override > global level override >
-  repo-local role default > global role default > detection-gated; ids against
+  `spawn_agent_session` resolves its spend knobs through the loader (260703-L16 + HFX2-L10:
+  repo-local level override > global level override > repo-local role default >
+  global role default > spawn preference/detection-gated default; ids against
   the EFFECTIVE registry; model/effort validated per-harness at dispatch and
-  APPLIED onto the harness argv — manual: `docs/reference/harnesses.md`).
+  APPLIED onto the harness argv; legacy caller spend fields, direct launch/session controls, and
+  maintained harness-native spend/endpoint env keys refuse with `spend-override-unsupported` before
+  spawning — manual: `docs/reference/harnesses.md`).
 - `agents_remember.controllers` owns operation-level composition such as
   `context_packet`, provider tools, worktree tools, memory tools, benchmarks,
   and `runtime_install`.
@@ -610,6 +612,12 @@ into the role files.
 
 ## Update History
 
+- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 route impact (spawn settings authority): refreshed the
+  package overview's spawn-dispatch and agentic-settings route model so settings are the spend
+  authority; caller spend fields/env overrides now refuse with `spend-override-unsupported` instead
+  of forming an explicit-argument precedence rung. Detail lives in `mcp/tools/terminal.py`, the
+  settings/harnesses reference docs, and the spawn tests. Verification metadata pinned until
+  closeout stamps the 260707-HFX2-L10 commit.
 - 2026-07-09T11:45+02:00 — No route impact: 260707-HFX2-L9 (supervisor redelivery cadence + signal
   throttling) adds a 900-second redelivery floor and a new persisted signal cooldown store
   (`controlplane/supervisor_signals.py`). Per-file detail lives in the already-updated
