@@ -38,6 +38,7 @@
   "coveredFiles": [
     "AGENTS.md",
     "README.md",
+    "docs/reference/harnesses.md",
     "docs/reference/settings-json.md",
     "docs/reference/skills.md",
     "pyproject.toml",
@@ -47,7 +48,7 @@
   ],
   "coverageCounts": {
     "sourceFilesInScope": 1458,
-    "fileSidecars": 8,
+    "fileSidecars": 9,
     "childRoutes": 5
   },
   "routingTerms": [
@@ -57,6 +58,7 @@
     "dev",
     "docs",
     "examples",
+    "harnesses",
     "json",
     "mcp",
     "pyproject",
@@ -81,6 +83,7 @@
       "AGENTS.md",
       "README.md",
       "docs/reference",
+      "docs/reference/harnesses.md",
       "docs/reference/settings-json.md",
       "docs/reference/skills.md",
       "pyproject.toml",
@@ -94,6 +97,8 @@
       "AGENTS",
       "README.md",
       "README",
+      "harnesses.md",
+      "harnesses",
       "settings-json.md",
       "settings-json",
       "skills.md",
@@ -124,7 +129,7 @@
       "agents_remember",
       "package_data",
       "repo-overview",
-      "8dce306e203c35ffc95f84e610b4d3683e9521b5",
+      "04f78993c54ef6f98773b0208e66e97d19686be8",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -135,9 +140,7 @@
       "memory_root",
       "coordination_root",
       "c-09-git-worktree-manager",
-      "task_reopen",
-      "c-10-adopt-memory-baseline",
-      "memory.md"
+      "task_reopen"
     ]
   },
   "fallback": {

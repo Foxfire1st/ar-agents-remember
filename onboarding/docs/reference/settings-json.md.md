@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-09T11:19+02:00                  |
+| lastUpdated            | 2026-07-09T12:04+02:00                  |
 | lastVerifiedCommitHash |                                         |
 | lastVerifiedCommitDate |                                         |
 | governingOverview      | `../../overview.md`                     |
@@ -25,12 +25,19 @@ cadence, and gives examples for internal/external memory and MCP authority files
 
 The page is documentation, not parser code. Runtime parsing lives in `kernel/agentic_settings.py`
 for `orchestration.*` and the MCP authority/config loaders for boot infrastructure. HFX2-L8 added the
-`orchestration.supervisor` table documenting safe defaults for the deterministic supervisor sweep.
-HFX2-L9 updates that table for the production redelivery incident: `redeliverRateLimitSeconds`
-inherits a store default of 900 seconds, `signalCooldownSeconds` defaults to 900 seconds, both reject
-below-floor values, `redeliverBudget` remains the per-sweep backlog cap, and `enabled: false` is
-documented as the emergency supervisor kill switch used until the cadence/cooldown fix lands and
-passes smoke.
+`orchestration.supervisor` table documenting safe defaults for the deterministic supervisor sweep:
+`enabled`, `intervalSeconds`, `staleCutoffSeconds`, `redeliverRateLimitSeconds`, and
+`redeliverBudget` (default 250) so an empty supervisor block remains bounded during large inbox
+backlogs. HFX2-L9 updates that table for the production redelivery incident:
+`redeliverRateLimitSeconds` inherits a store default of 900 seconds, `signalCooldownSeconds` defaults
+to 900 seconds, both reject below-floor values, `redeliverBudget` remains the per-sweep backlog cap,
+and `enabled: false` is documented as the emergency supervisor kill switch used until the
+cadence/cooldown fix lands and passes smoke. HFX2-L10 updates the role-knob and spawn sections to
+make settings the ordinary developer-controlled spend surface: callers declare role/level, while
+legacy `harness`/`model`/`effort`, direct launch/session controls, namespaced spawn model/effort env,
+and maintained Claude/Anthropic + Codex/OpenAI harness-native spend/endpoint env keys refuse with
+`spend-override-unsupported`; the doc points readers to `docs/reference/harnesses.md` for the full
+spawn-surface manual.
 
 ## Invariants And Boundaries
 
@@ -40,18 +47,28 @@ passes smoke.
 - The supervisor redelivery and repeated-signal cadence floor is 900 seconds; docs must not suggest
   a sub-15-minute setting can run.
 - The supervisor redelivery budget is a conservative default, not a required operator knob.
+- The settings reference should not describe caller-supplied `spawn_agent_session` spend fields as
+  a valid precedence rung; HFX2-L10 makes settings the spend authority and treats those caller
+  fields as compatibility refusals.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
 | Agentic settings parser that implements the documented `orchestration.*` families. | [../../mcp/src/agents_remember/kernel/agentic_settings.py](../../mcp/src/agents_remember/kernel/agentic_settings.py.md) |
+| Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | [../../mcp/src/agents_remember/mcp/tools/terminal.py](../../mcp/src/agents_remember/mcp/tools/terminal.py.md) |
 | Serving app that reads supervisor settings per sweep. | [../../mcp/src/agents_remember/serving/app.py](../../mcp/src/agents_remember/serving/app.py.md) |
 | Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | [../../mcp/src/agents_remember/serving/supervisor.py](../../mcp/src/agents_remember/serving/supervisor.py.md) |
 | Backoff math enforcing the shared 900-second redelivery floor documented here. | [../../mcp/src/agents_remember/controlplane/inbox_backoff.py](../../mcp/src/agents_remember/controlplane/inbox_backoff.py.md) |
 
 ## Update History
 
+- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): the settings reference now
+  states that role/level settings are the ordinary spend surface for spawned seats and that legacy
+  caller spend fields plus maintained harness-native spend/endpoint env keys return
+  `spend-override-unsupported`. It also removes the old explicit-argument precedence rung from
+  `orchestration.spawn.harness`. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L10 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9 (settings docs): refreshed the supervisor settings
   reference for the 900-second redelivery floor, new `signalCooldownSeconds`, fail-loud sub-floor
   validation, and `enabled: false` kill-switch mitigation wording. Verification metadata pinned

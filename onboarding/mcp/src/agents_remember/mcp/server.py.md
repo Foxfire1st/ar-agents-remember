@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:43+02:00 |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019` |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T12:04+02:00 |
+| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8` |
+| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -25,16 +25,16 @@ launch_args?, prompt_keywords?, session_commands?, level?, spawned_by_session?,
 spawned_by_lifecycle?, kind)` right after attach: the agent-facing **dispatch**
 path that CREATES a role-configured, leaf-attached, context-primed hosted session by composing the
 existing serving primitives (opener + leaf claim + echo-confirmed paste), forwarding to
-`spawn_agent_session_payload`. Since 260703-L13 `harness` is OPTIONAL: omitted, the payload
-builder resolves it per-use from the agentic settings (role knobs, repo-local over global
-`orchestration.spawn.harness`, repo selected by the qualified leaf key) and falls back to the
-detection-gated default — the docstring documents the resolution chain. 260703-L16 grew the knob
-surface: `level` (leaf|master|portfolio, default leaf) selects the `rolesPerLevel` settings rung;
-model/effort are applied onto the harness argv per-harness AND validated pre-spawn (the docstring
-names the `effort-invalid`/`model-invalid`/`level-invalid` refusals and the claude two-vehicle
-effort vocabulary incl. the session-level `ultracode`); the free-form escape hatch
-(`launch_args` verbatim argv, `session_commands` pasted+submitted before the brief,
-`prompt_keywords` prepended to the brief) is never validated, only recorded in spawn provenance.
+`spawn_agent_session_payload`. Since 260707-HFX2-L10 ordinary callers do not choose spend controls
+on this transport surface: non-null legacy `harness`/`model`/`effort`, direct free-form
+launch/session fields, `env.AR_SPAWN_MODEL`/`env.AR_SPAWN_EFFORT`, and maintained
+harness-native spend/endpoint env keys refuse with `spend-override-unsupported` before spawning.
+The docstring now documents the settings-only chain: `level` (leaf|master|portfolio, default leaf)
+selects the `rolesPerLevel` settings rung; model/effort/free-form values come from agentic settings
+only, are applied onto the harness argv per-harness, and are validated pre-spawn
+(`effort-invalid`/`model-invalid`/`level-invalid`; claude's session-level `ultracode` still becomes
+the first post-launch `/effort` paste). If role settings do not choose a harness, dispatch falls
+through to repo-local/global `orchestration.spawn.harness`, then the detected registry default.
 
 ## Code Commentary
 
@@ -282,6 +282,13 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 As of cycle 5 the lifecycle_gate registration exposes wait (default true) with the raise-and-continue contract documented in the docstring; cycle 6 makes both gate docstrings match the payload layer exactly — `lifecycle_gate` says wait=false is reserved for delegated seam kinds (any other kind blocks), and `gate_list` says a missing lifecycle_id defaults to the ACTIVE (ambient) lifecycle with the workspace log as the no-ambient fallback; cycle 7 extends the `lifecycle_gate` docstring with the new wait=false requirement that `enclosure=<master task name>` be supplied (the address integration enforcement matches the gate by), keeping the registration truthful about the payload layer's refusal.
 
 ## Update History
+
+- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): `spawn_agent_session`
+  registration retains legacy spend parameters only as compatibility tripwires. The docstring now
+  states that ordinary callers declare role/level and that harness/model/effort, direct
+  launch/session controls, namespaced spawn model/effort env, and maintained harness-native
+  spend/endpoint env keys return `spend-override-unsupported` before spawning. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L10 commit.
 
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity): registered
   `session_retire(actor_session_id, session_id, reason)` and `session_rename(session_id, label)`

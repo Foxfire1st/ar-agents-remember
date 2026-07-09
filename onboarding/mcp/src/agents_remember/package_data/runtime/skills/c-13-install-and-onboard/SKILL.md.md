@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T09:45+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-09T12:04+02:00                     |
+| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8` |
+| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
 
 ## Purpose
 
@@ -30,7 +30,9 @@ economics), harness values as builtin ids OR developer-defined `orchestration.ha
 the per-harness dispatch-time effort validation (claude's flag set + session-level `ultracode`),
 and the never-validated free-form escape hatch (`launchArgs`/`sessionCommands`/`promptKeywords`,
 recorded in spawn provenance) — pointing at `docs/reference/harnesses.md` as the spawn-surface
-manual.
+manual. HFX2-L10 clarifies the interview's authority boundary: ordinary spawning seats cannot pass
+`harness`/`model`/`effort`, direct launch/session spend controls, or harness-native spend/endpoint
+env keys directly; settings are the spend surface.
 
 The skill starts with a package-first contract: harness-native files are already
 the copied and rendered starter package's responsibility. Rendering can be done
@@ -118,6 +120,12 @@ No sibling repository evidence is needed for this skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): Stage 2's knob interview now
+  says `orchestration.spawn.harness` is the fallback when no role/level knob supplies a harness and
+  that ordinary spawned seats cannot pass harness/model/effort, launch/session spend controls, or
+  harness-native spend/endpoint env keys directly. Sync-propagated bundle copy of the canonical
+  skill. Verification metadata pinned until closeout stamps the 260707-HFX2-L10 commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Stage 2 item 4 now interviews the
   full knob surface (roles + rolesPerLevel, orchestration.harnesses extensibility, per-harness

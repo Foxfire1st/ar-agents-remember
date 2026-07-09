@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T20:50+02:00                            |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`        |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-09T12:04+02:00                            |
+| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`        |
+| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -21,12 +21,14 @@ the serving `POST /api/terminal/{session}/paste` endpoint. It exercises the whol
 opener + leaf claim + capture-verified paste + submit — against a fake host + fake paster + a fake
 `which`, so no real tmux server, no real daemon, and no real sleeping are involved. Since 260703-L13
 `SpawnHarnessResolutionTests` pins the settings-driven harness seam through the payload builder with
-REAL settings files in temp roots: omitted harness reads the global `orchestration.spawn.harness`,
-the repo-local file (selected via the qualified leaf key against a configured `RepositoryScope`)
-overrides global, leafless/unconfigured-repo spawns read global only, an explicit argument beats
-every layer, no-settings falls back to the first DETECTED registry harness, nothing-detected and
-configured-but-undetected both REFUSE (`harness-not-detected`, the latter naming
-`orchestration.spawn.harness` and the source file) — never a silent default. 260703-L16 adds three
+REAL settings files in temp roots: role/level settings can choose the harness, otherwise omitted
+harness reads the global `orchestration.spawn.harness`; the repo-local file (selected via the
+qualified leaf key against a configured `RepositoryScope`) overrides global, leafless/
+unconfigured-repo spawns read global only, no-settings falls back to the first DETECTED registry
+harness, nothing-detected and configured-but-undetected both REFUSE (`harness-not-detected`, the
+latter naming `orchestration.spawn.harness` and the source file) — never a silent default. HFX2-L10
+changes the former explicit-argument cases into pre-spawn `spend-override-unsupported` refusals.
+260703-L16 adds three
 classes: `SpawnKnobApplicationTests` (per-harness knob application + the free-form escape hatch),
 `SettingsDefinedHarnessTests` (orchestration.harnesses registry openness), and
 `SpawnLevelResolutionTests` (the dispatch `level` + rolesPerLevel resolution chain).
@@ -63,18 +65,22 @@ L2 contracts:
   `contextDelivered: false` / `submitted: false` WITH `deliveryCapture` carrying the fake paster's
   pane snapshot.
 
-`SpawnKnobApplicationTests` (L16) pin the dispatch-seam knob application: a flag-vocabulary effort
-(`max`) rides the argv as `--model`/`--effort` with NO session command; `ultracode` stays OFF the
-flag and arrives as the FIRST paste (`/effort ultracode`, submitted) before the brief with
-`sessionCommands`/`sessionCommandsDelivered` reported; an unknown effort (`turbo`) refuses
+`SpawnKnobApplicationTests` (L16 + HFX2-L10) pin the dispatch-seam knob application under
+settings-only authority: a flag-vocabulary effort (`max`) from role settings rides the argv as
+`--model`/`--effort` with NO session command; `ultracode` stays OFF the flag and arrives as the
+FIRST paste (`/effort ultracode`, submitted) before the brief with `sessionCommands`/
+`sessionCommandsDelivered` reported; an unknown settings effort (`turbo`) refuses
 `effort-invalid` naming claude and BOTH value sets with nothing spawned; a mapping-less builtin
-(codex) stays env-only; `launchArgs` ride the argv verbatim and are recorded (payload + row);
-`promptKeywords` prepend to the brief paste (the original acceptance case: strategist as
-effort:max + promptKeywords:["ultracode"] → `--effort max` + the keyword riding the paste; keywords
-alone still deliver with no brief); the session-layer order is effort vehicle → caller
-sessionCommands → keyword-bearing brief with the RESOLVED list as provenance; and an undelivered
-session command reports `sessionCommandsDelivered: false` WITH the failing pane capture as
-`deliveryCapture` (`test_undelivered_session_command_is_reported_with_capture`, 260707-HFX-L3).
+(codex) stays env-only; settings-owned `launchArgs` ride the argv verbatim and are recorded
+(payload + row); settings-owned `promptKeywords` prepend to the brief paste (the acceptance case:
+strategist settings with effort max + promptKeywords:["ultracode"] → `--effort max` + the keyword
+riding the paste; keywords alone still deliver with no brief); the session-layer order is effort
+vehicle → settings `sessionCommands` → keyword-bearing brief with the RESOLVED list as provenance;
+and an undelivered session command reports `sessionCommandsDelivered: false` WITH the failing pane
+capture as `deliveryCapture` (`test_undelivered_session_command_is_reported_with_capture`,
+260707-HFX-L3). HFX2-L10 adds explicit refusal coverage for non-null legacy caller
+`harness`/`model`/`effort`/free-form args, `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, and maintained
+Claude/Anthropic + Codex/OpenAI native spend/endpoint env keys.
 
 `SettingsDefinedHarnessTests` (L16 registry openness) write REAL settings files: a new
 `orchestration.harnesses.hermes` entry spawns with its declared argv; a builtin override replaces
@@ -86,15 +92,15 @@ custom vocabulary maps the knobs onto the harness's own flags; and a repo-local 
 global one via the qualified leaf key (leafless spawns read global).
 
 `SpawnLevelResolutionTests` (L16 rolesPerLevel, the developer's reviewer economics as the canonical
-fixture) pin the resolution chain: a master-level dispatch deep-merges the level override over the
-flat default (harness inherited, model/effort overridden, resolved knobs riding env + argv); the
-leaf default uses the flat knobs with `spawnLevel: leaf` / `spawnLevelSource: default`; the
-portfolio tier delivers `fable` + the `ultracode` session vehicle end-to-end; explicit args beat
-every settings rung; a repo-local level override beats the global level override; provenance
-records the resolved level + source on payload and row; default-level dispatch is unchanged for
-existing callers; an unknown level refuses `level-invalid` pre-spawn; and the strategist
-acceptance case expressed purely in settings (effort ultracode + promptKeywords) dispatches with
-the session command + keyword-bearing brief and full provenance.
+fixture) pin the settings-only resolution chain: a master-level dispatch deep-merges the level
+override over the flat default (harness inherited, model/effort overridden, resolved knobs riding
+env + argv); the leaf default uses the flat knobs with `spawnLevel: leaf` / `spawnLevelSource:
+default`; the portfolio tier delivers `fable` + the `ultracode` session vehicle end-to-end; a
+repo-local level override beats the global level override; provenance records the resolved level +
+source on payload and row; default-level dispatch is unchanged for callers that did not pass spend
+fields; an unknown level refuses `level-invalid` pre-spawn; and the strategist acceptance case
+expressed purely in settings (effort ultracode + promptKeywords) dispatches with the session
+command + keyword-bearing brief and full provenance.
 - **leaf-taken** (`test_leaf_taken_is_surfaced_never_overridden`): a running chat already owning the leaf
   makes the spawn return `ok: false` / `leaf-taken` with the owner, and nothing is spawned, pasted, or
   upserted (the never-override invariant).
@@ -123,6 +129,8 @@ seams (or `create_app`'s injectable params for the endpoint).
 - No real tmux, no real daemon, no real sleep — the whole spawn/paste composition runs against fakes.
 - `leaf-taken` must not spawn, paste, or upsert; the test asserts all three did not happen.
 - Invalid leaf refs must not spawn, paste, or upsert; they fail before the opener path.
+- Caller spend overrides must not resolve leaves, spawn, paste, write expectation rows, or upsert the
+  catalog; they fail at the new `spend-override-unsupported` guard first.
 - Provenance defaults to the active ambient lifecycle only when not explicitly supplied.
 
 ### Todos
@@ -156,6 +164,13 @@ No meaningful cross-repo references found.
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): spawn tests now pin the
+  settings-only spend chain and the pre-side-effect `spend-override-unsupported` guard for legacy
+  caller spend fields, direct free-form launch/session controls, `AR_SPAWN_MODEL`/
+  `AR_SPAWN_EFFORT`, and maintained Claude/Anthropic + Codex/OpenAI harness-native spend/env keys.
+  Existing knob-application cases now express spend through settings. Verification metadata pinned
+  until closeout stamps the 260707-HFX2-L10 commit.
 
 - 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2: two evidence pins added —
   `test_unconfirmed_submit_attaches_the_capture_even_when_delivered` and

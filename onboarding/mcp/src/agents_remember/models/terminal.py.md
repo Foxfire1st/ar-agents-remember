@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-08T02:43+02:00                       |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`   |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-09T12:04+02:00                       |
+| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`   |
+| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -33,12 +33,14 @@ role (`chat` or `terminal`), and optional `detail` for validation refusals.
 
 `SpawnAgentSessionStatus` is the L2 vocabulary: `spawned` (the only `ok: true` case), `leaf-taken`
 (the server-arbitrated refusal, never overridden), and the pre-spawn validation refusals
-`harness-unknown` / `harness-not-detected` / `effort-invalid` (L16 — effort outside the resolved
-harness's vocabulary, or any effort for a mapping-less settings-defined harness) / `model-invalid`
-(L16 — model knob for a settings-defined harness with no modelFlag) / `level-invalid` (L16 — a
-dispatch level outside leaf|master|portfolio) / `bad-kind`. `SpawnAgentSessionResponse` is a strict
-The HFX-L4 leaf-ref refusals (`leaf-ref-not-found` / `leaf-ref-ambiguous`) are also modeled for spawn
-because a bad leaf key is refused before tmux or catalog mutation.
+`spend-override-unsupported` (HFX2-L10 — a caller supplied legacy spend fields, direct
+launch/session controls, namespaced spawn model/effort env, or a maintained harness-native spend env
+key), `harness-unknown` / `harness-not-detected` / `effort-invalid` (L16 — effort outside the
+resolved harness's vocabulary, or any effort for a mapping-less settings-defined harness) /
+`model-invalid` (L16 — model knob for a settings-defined harness with no modelFlag) /
+`level-invalid` (L16 — a dispatch level outside leaf|master|portfolio) / `bad-kind`. The HFX-L4
+leaf-ref refusals (`leaf-ref-not-found` / `leaf-ref-ambiguous`) are also modeled for spawn because
+a bad leaf key is refused before tmux or catalog mutation.
 `SpawnAgentSessionResponse` is a strict
 `ToolResponse` with operation `spawn_agent_session`, the `session`, optional `harness`/`kind`/`leafKey`/
 `label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) recorded
@@ -99,7 +101,7 @@ No relevant external/domain documentation found; this is an internal response co
 | The attach payload builder returns the exact fields modeled here, including leaf-ref refusal statuses and details. | attach_terminal_session_to_leaf_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
 | The spawn payload builder returns the `SpawnAgentSessionResponse` fields incl. leaf-ref refusals, spawned-by provenance, and context-delivery outcome. | spawn_agent_session_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
 | The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | L82-L88; L111-L114 | [tool_registry.py](tool_registry.py) |
-| Conformance coverage includes a representative missing-session (attach) and unknown-harness (spawn) refusal payload for the models. | L88-L107 | [../../../tests/test_tool_response_conformance.py](../../../tests/test_tool_response_conformance.py) |
+| Conformance coverage includes a representative missing-session (attach) and caller-spend-override (spawn) refusal payload for the models. | L88-L107 | [../../../tests/test_tool_response_conformance.py](../../../tests/test_tool_response_conformance.py) |
 | `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | session_retire_payload; session_rename_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
 | The response registry maps `session_retire`/`session_rename` to these strict models. | TOOL_RESPONSE_MODELS | [tool_registry.py](tool_registry.py) |
 
@@ -112,6 +114,11 @@ No meaningful cross-repo references found.
 | The model validates a local MCP response and has no external boundary. | - | - |
 
 ## Update History
+
+- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority):
+  `SpawnAgentSessionStatus` gained `spend-override-unsupported`, the pre-spawn refusal for legacy
+  caller spend fields and maintained harness-native spend env keys. Response shape otherwise stays
+  additive/strict. Verification metadata pinned until closeout stamps the 260707-HFX2-L10 commit.
 
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state):
   added `SessionRetireStatus`/`SessionRetireResponse` (issue #12) and `SessionRenameStatus`/

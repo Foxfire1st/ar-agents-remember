@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T11:19+02:00 |
+| lastUpdated            | 2026-07-09T12:04+02:00 |
 | lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
 | lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -208,7 +208,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The schema reference for the agentic family documents the supervisor fields, including the 900-second redelivery floor, `signalCooldownSeconds`, and kill-switch mitigation text. | L380-L397 | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
+| The schema reference for the agentic family (two-layer model, merge semantics, fail-loud rule, loop schema, role/level spend knobs, harnesses, supervisor settings including the 900-second redelivery floor / `signalCooldownSeconds` / kill-switch mitigation text, reserved families). | Agentic Settings section, L380-L397 | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
 | **Known gap (260707-HFX2-L4):** the new `orchestration.escalation` family is likewise NOT yet documented in this schema reference, same no-doc-sync-test posture as the supervisor gap above. A follow-up doc pass should add an `orchestration.escalation` section alongside `orchestration.supervisor`. | — | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
 
 ## Repo-Internal References
@@ -218,7 +218,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 | The gate policy primitives the gateDelegation parse builds on (named policies, rule construction, seam verdict binding). | L1-L120 | [../controlplane/gate_policy.py](../controlplane/gate_policy.py) |
 | The harness registry whose ids bound every harness preference value. | L41-L48 | [../serving/harnesses.py](../serving/harnesses.py) |
 | The boot-snapshot consumer: gateDelegation sourced from the global file at boot with the legacy authority fallback. | parse_orchestration_settings | [../mcp/config.py](../mcp/config.py) |
-| The per-use spawn consumer: explicit arg > repo-local > global > detection-gated default. | _resolve_spawn_harness | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
+| The per-use spawn consumer: HFX2-L10 makes caller spend fields a `spend-override-unsupported` refusal; settings resolve spend as repo-local level override > global level override > repo-local role default > global role default > spawn preference/detection. | _caller_spend_override_refusal; _resolve_harness_dispatch | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
 | The install seeding consumer (copy-if-missing global file). | seed_agentic_settings | [../install/runtime.py](../install/runtime.py) |
 | The supervisor sweep's `SupervisorContext` construction reads `settings.supervisor.*` per loop iteration (interval, enable flag, staleness cutoff, redeliver rate limit, signal cooldown, redeliver budget) — the per-use read contract this loader guarantees. | `_supervisor_context`; `supervisor_loop` | [../serving/app.py](../serving/app.py.md) |
 | The MCP tool choke point reads `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS` (this file's constant, not `settings.supervisor.stale_cutoff_seconds`) for the opportunistic banner check (260707-HFX2-L2 R5) — a deliberate simplification so the banner check needs no settings read on every tool call. | `_tool_payload` | [../mcp/tools/base.py](../mcp/tools/base.py.md) |
@@ -235,6 +235,12 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-09T12:04+02:00 — No source change in `agentic_settings.py` for 260707-HFX2-L10; updated
+  repo-internal references after the terminal spawn consumer changed from explicit caller spend
+  precedence to settings-only spend authority plus `spend-override-unsupported` refusals. Also
+  corrected the docs-reference row now that `docs/reference/settings-json.md` documents
+  `orchestration.supervisor`; the `orchestration.escalation` docs gap remains. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L10 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: added `signalCooldownSeconds` to
   `orchestration.supervisor`, defaulting to the shared 900-second floor, and made both
   `redeliverRateLimitSeconds` and `signalCooldownSeconds` fail loud below that floor. Also removed
