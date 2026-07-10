@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`       |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -104,6 +104,14 @@ Unbound reviewer/curator progress is credited in the subject worktree; unbound w
 credit remains the accepted HFX2-L14 S7 follow-up.
 
 ## Hot Path Summary
+
+260707-HFX2-L15 makes harness JSONL the only submitted-delivery authority across spawn, inbox,
+supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
+Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0
+s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace
+re-paste, with pane capture restricted to duplicate prevention and failure diagnostics. The catalog
+persists resolved knobs, log id/path, and `replacementForLeaf`; safe binding re-reads the latest row.
+Codex knobs ride explicit argv, and the supervisor's synchronous redelivery budget defaults to one.
 
 260707-HFX2-L13 adds a live sixty-second workspace-river compactor over virtual locked cursors, serves
 full task bodies only through `GET /api/task-document`, and makes the supervisor current-manager-first,
@@ -595,6 +603,11 @@ the only destructive terminal action.
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 serving route impact: replaced pane-rendering acceptance
+  with bound harness-log evidence, added calibrated duplicate-safe recovery and catalog provenance,
+  explicit Codex argv, replacement-leaf support, and one-row supervisor redelivery. Verification
+  metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: added live virtual-cursor river
   compaction, the on-demand task-body endpoint, chain-aware/current-manager supervisor behavior, and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_paste.py`                |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T23:20+02:00                            |
-| lastVerifiedCommitHash | `551695279f403ab19c0eba4ce6f6cfde6a8bb1f5`        |
-| lastVerifiedCommitDate | 2026-07-07T20:09:01+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                            |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -28,6 +28,12 @@ scenario failed against the pre-fix seam by construction.
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** The suite now drives an acceptance callback rather than pane echo.
+It pins the full calibrated-window order, one Enter re-press, one re-paste only after verified
+absence, final failure capture, payload-specific/generic chip duplicate blocking, clear-before-
+replacement, unobservable fail-closed behavior, the >=100 ms settle floor, pre-bind command
+non-acceptance, sanitization, and Escape refusal.
 
 `_FakePane` is an in-memory pane: `load_buffer` (the renamed injectable seam) / `paste_buffer`
 (appends a `[Pasted text #1]` echo when `echo` is on) / `send_key` (appends output on `Enter` when
@@ -94,7 +100,7 @@ paste loop, a local convention.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The paster + sanitizer under test (injectable tmux ops + confirmation loop). | L57-L229 | [../src/agents_remember/serving/terminal_paste.py](../src/agents_remember/serving/terminal_paste.py) |
-| The frontend paste/submit loop this helper mirrors server-side. | — | [../../../dashboard/src/data/terminal.ts](../../../dashboard/src/data/terminal.ts) |
+| The frontend paste/submit loop remains a separately ruled follow-up surface. | — | [terminal.ts](agents-remember/dashboard/src/data/terminal.ts) |
 
 ## Cross-Repo References
 
@@ -105,6 +111,11 @@ No meaningful cross-repo references found.
 | The tests cover local serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round + case (f): replaced capture-echo tests
+  with log-probe acceptance and bounded retry-order tests, including duplicate-chip blocking,
+  clear-and-verify replacement, unobservable failure, settle floor, and no-Escape. Verification
+  metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2: `_ScrollingCodexPane` (bounded suffix window with
   tmux-faithful top-eviction) pins the scroll-out case — delivered with exactly ONE paste even when

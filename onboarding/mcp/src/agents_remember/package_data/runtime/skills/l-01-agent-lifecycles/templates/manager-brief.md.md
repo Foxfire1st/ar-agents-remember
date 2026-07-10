@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T14:05+02:00 |
+| lastUpdated            | 2026-07-10T13:03+02:00 |
 | lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                  |
 | lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
 
@@ -21,6 +21,11 @@ the reconciliation anchor), never off main.
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 reviewer N7 current-source debt.** The source brief still says hosted delivery is
+counted from a post-boot echo. L15's current runtime accepts the unique id only from the bound
+harness log; a future doctrine edit must align this template without reviving screen predicates.
+This note documents the mismatch on the unchanged source.
 
 Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
 `skills/l-01-agent-lifecycles/templates/manager-brief.md`. Opens with the canonical `ROLE BRIEF —
@@ -74,6 +79,9 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale post-boot-echo
+  instruction as doctrine debt; no source behavior changed.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: the manager brief template sidecar
   now describes `worktree_integrate` as auto-landing successful worker/reviewer seats into the

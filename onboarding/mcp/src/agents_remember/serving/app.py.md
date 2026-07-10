@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ detached tmux session — a shell or a detected harness (6e-2a/6e-2b), and since
 `serving.terminal_opener.open_terminal_session` so this route and the agent-facing `spawn_agent_session`
 MCP tool spawn through ONE opener — the L5/L9
 `POST /api/terminal/{session}/attach-leaf` leaf-claim/move route, the **L2**
-`POST /api/terminal/{session}/paste` server-side capture-verified context-packet paste, the `GET /api/harnesses` detection
+`POST /api/terminal/{session}/paste` server-side harness-log-verified context-packet delivery, the `GET /api/harnesses` detection
 endpoint (6e-2b), the **260707-HFX-L8** `POST /api/terminal/{session}/retire` (server-authoritative
 seat retirement with authority policy) and `POST /api/terminal/{session}/rename` (post-spawn
 identity rename) endpoints, the **260707-HFX2-L11** landed-archive cleanup endpoint
@@ -38,6 +38,20 @@ just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 
 ## Code Commentary
+
+### 260707-HFX2-L15 Harness-Log Paste Endpoint
+
+Submitted `POST /api/terminal/{session}/paste` input receives a fresh delivery id and routes through
+the same `injector.deliver` path as spawn and durable inbox traffic. The endpoint builds
+`HarnessSessionLog` from the catalog row, reuses any existing bound log, persists a newly bound
+entry id/path with `TerminalCatalog.bind_session_log`, and reports `submitted:true` only when the
+id-bearing user record exists. Pane capture is returned only for an unconfirmed failure. Drafts
+remain transport-only and intentionally unacked.
+
+Reviewer residual N3: a submitted request for a harness-less `kind=terminal` row has no candidate
+harness log, so it exhausts the bounded ladder and remains unconfirmed; submitted REST text also
+gains the visible delivery-id envelope required for verification. The owner still owes an explicit
+short-circuit/documentation disposition; this sidecar does not present that residual as fixed.
 
 ### 260707-HFX2-L13 Live Compaction And Task-Body Endpoint
 
@@ -410,6 +424,11 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: routed the REST terminal paste endpoint through the
+  shared log-verified injector, added per-request delivery ids and safe catalog log binding, and
+  removed pane movement/rendering as submitted authority. Verification metadata remains pinned
+  until closeout stamps the eventual L15 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F6: added the live workspace-river compaction loop
   and the projection-gated, path-confined on-demand task-document endpoint. Verification metadata

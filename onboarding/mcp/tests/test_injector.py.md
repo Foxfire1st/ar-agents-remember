@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_injector.py`               |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T22:30+02:00                     |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188` |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                     |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -20,6 +20,11 @@ Created for 260707-HFX2-L3 (paste injector hardening, R1 + R3 + R5): covers the 
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** Scripted harness logs prove id-envelope message acceptance and returned
+binding provenance; absence fails with diagnostic capture even when the pane moves. Separate tests
+pin deferred pre-bind commands, successful retroactive verification without reissue, isolated
+reissue after errored evidence, draft behavior, and failure-only modal labeling.
 
 Four test classes:
 
@@ -91,6 +96,10 @@ No meaningful cross-repo references found.
 | Delivery-path-local behavior only. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: rewrote injector tests around bound-log
+  message/command evidence and targeted command reissue; removed pane-turn acceptance fixtures.
+  Verification metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-08T22:30+02:00 — Created for 260707-HFX2-L3 (paste injector hardening, R1 + R3 + R5): the
   payload-envelope rendering tests, every `DeliveryOutcome` branch (including the codex-quota-modal

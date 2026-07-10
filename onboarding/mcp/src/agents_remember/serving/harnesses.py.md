@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/harnesses.py`   |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T09:45+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                           |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`       |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -30,6 +30,12 @@ run in a PTY).
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 Codex mapping.** The Codex builtin now carries `model_flag="--model"` and an
+effort `--config` vehicle with `model_reasoning_effort={value}`. Its accepted effort values are
+exactly `none|minimal|low|medium|high|xhigh`; `max`, `ultracode`, and `auto` are excluded because
+the first-turn API enum does not accept them. `knob_argv` renders the optional value template while
+Pi.dev remains the only env-only builtin.
 
 A frozen `Harness` dataclass carries `id` / `name` / `command` (the PATH command to detect) /
 `argv` (the fixed launch argv) plus the L16 knob-mapping fields: `model_flag`, `effort_flag` +
@@ -81,11 +87,15 @@ session value `ultracode` → `/effort {value}`), codex/pi carry none (env-only)
 | The `orchestration.harnesses` parser that builds the effective registry over these defaults. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | The `GET /api/harnesses` + open endpoints that consume the effective registry. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The terminal host the resolved argv is spawned through (fixed-argv posture). | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
-| The serving layer this joins (localhost transport). | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
+| The serving layer this joins (localhost transport). | [serving overview](overview.md) |
 | The spawn-surface manual documenting entries, vocabularies, and refusals. | [docs/reference/harnesses.md](agents-remember/docs/reference/harnesses.md) |
 | The skill-install target list this is intentionally *not* a mirror of. | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added Codex's explicit model/effort argv mapping,
+  value-template support, and first-turn-safe effort enum; Pi.dev remains env-only. Verification
+  metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): grew the per-harness knob→flag
   mapping (`model_flag`/`effort_flag`+values/`effort_session_values`+command/`defined_in` on

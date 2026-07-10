@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastUpdated            | 2026-07-10T13:03+02:00 |
 | lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
 | lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
@@ -24,6 +24,11 @@ decisions go to the architect as one-at-a-time decision items over the operator 
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 reviewer N7 current-source debt.** The source role still describes supervisor
+hosted delivery as an echo-confirmed paste. L15's runtime now grants submitted acceptance only from
+the bound harness log; pane capture is retry-safety/failure evidence. This sidecar records that the
+role doctrine is stale until a separate canonical skill edit and sync pass lands.
 
 260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the dispatch-loop
 bullet "monitor turn-report artifacts, nudges, escalation intake" is gone. In its place: "process
@@ -153,6 +158,9 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale echo-confirmed
+  supervisor-delivery wording as doctrine debt; no source behavior changed.
 
 - 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: replaced the mandatory strategist pre-run
   with architect-proposed/developer-approved Job P, documented the orchestrator-owned task

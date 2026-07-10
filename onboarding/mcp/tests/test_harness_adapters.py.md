@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_harness_adapters.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T22:30+02:00                     |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188` |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                     |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -20,6 +20,10 @@ mid-turn, chip-stacked, and a modal trap (codex quota #20 / a permission prompt)
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** The suite now pins only stable known/generic adapter selection and
+failure-only blocked-reason labeling. Boot/composer/mid-turn/turn-start delivery tests were removed
+with the screen-acceptance mechanism.
 
 Three test classes:
 
@@ -79,6 +83,10 @@ No meaningful cross-repo references found.
 | Adapter-local behavior only. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: deleted screen-acceptance fixtures and
+  retained only adapter identity plus failure-diagnostic modal labeling. Verification metadata
+  remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-08T22:30+02:00 — Created for 260707-HFX2-L3 (paste injector hardening, R2 + R5): fixtures
   for both harnesses across boot/ready/mid-turn/chip-stacked/quota-modal, the codex-quota-vs-

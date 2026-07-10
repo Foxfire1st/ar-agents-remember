@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/serving/pane_signals.py` |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-08T18:45+02:00                             |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`         |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                             |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`         |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -16,19 +16,22 @@
 
 ## Purpose
 
-`pane_signals.py` is the supervisor sweep's pane-state classifier (260707-HFX2-L2, R2a): the P-15
-fixture-zoo predicate that answers, mechanically, which of the pilot run's four intervention
-triggers a captured harness pane shows right now — `never-briefed` (empty composer post-boot,
-P-5/P-14), `delivery-stalled` (≥2 stacked un-consumed paste chips, the F-V duplicate-paste class),
-`mid-turn` (an "esc to interrupt"-style marker — actively generating, do not intervene), `blocked`
-(a modal confirmation/permission dialog, issue #20), or `normal` (no trigger). It is deliberately a
-separate classifier from `turn_state.py`'s `classify_turn_state`: that module answers the L8
-catalog's own UI question (`working`/`turn-ended`/`awaiting-input`/`stale`), while this one answers
-the supervisor's distinct action-triggering question over the same raw pane text.
+`pane_signals.py` is the supervisor's narrow failure/intervention classifier. After
+260707-HFX2-L15 it recognizes only `mid-turn`, `blocked`, and `normal`; empty-composer
+`never-briefed`, stacked-chip `delivery-stalled`, and composer-state APIs were removed because pane
+rendering is not dispatch-acceptance evidence. Submitted delivery is verified in harness JSONL.
 
 ## Code Commentary
 
-### Logic
+### 260707-HFX2-L15 Current Logic
+
+`classify_pane_signal` is pure and precedence-ordered: mid-turn markers suppress intervention,
+then generic/per-harness modal markers yield `blocked`, otherwise the result is `normal`. Blank
+panes are `normal` here and remain a separate liveness concern. `blocked_reason_label` maps the
+already-matched modal evidence to `codex-quota-limit`, `permission-prompt`, or `modal-dialog` for
+failure diagnostics. No composer, paste-chip, brief-presence, or turn-start inference remains.
+
+### Historical Pre-L15 Logic (Superseded)
 
 `classify_pane_signal(pane_text, *, harness=None)` returns a frozen `PaneSignalClassification(signal,
 evidence)`. Blank/`None` pane text classifies as `normal` (no evidence of any trigger — an
@@ -72,7 +75,14 @@ Marker-based regex `.search()` over captured text, the same cheap, no-parser pos
 `turn_state.py` uses — this classifier is meant to run on the supervisor's own sweep cadence
 (default ~10s), not a hot loop.
 
-### Invariants And Boundaries
+### Current Invariants And Boundaries
+
+- Pane classification never grants dispatch acceptance or `submitted:true`.
+- `mid-turn` and `blocked` are retained for supervisor intervention/failure labeling only.
+- Empty composer, paste chips, and payload visibility are not durable workflow truth.
+- Harness-log record parsing belongs to `harness_logs.py`, not this regex classifier.
+
+### Historical Invariants And Boundaries (Superseded)
 
 - Fail-safe by construction: every input (including blank/`None`) resolves to a
   `PaneSignalClassification`, never raises.
@@ -88,10 +98,8 @@ Marker-based regex `.search()` over captured text, the same cheap, no-parser pos
 
 ### Todos
 
-Same first-cut caveat as `turn_state.py`: the shared marker regexes are a best-effort guess at
-common TUI shapes (builder report Design Decision 5), not calibrated against real captured
-Claude/Codex panes. Whoever tunes `turn_state.py`'s markers against live harness access should tune
-these alongside it, since both classifiers read the same captured text.
+The retained modal/mid-turn regexes are best-effort diagnostic hints. No correctness or acceptance
+claim may be added on top of them.
 
 ## Docs References
 
@@ -123,6 +131,11 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local pane-signal classifier. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: deleted `never-briefed`,
+  `delivery-stalled`, composer-state, and paste-chip dispatch grammars. Retained only mid-turn and
+  blocked diagnostics; harness logs now own acceptance. Verification metadata remains pinned until
+  closeout stamps the eventual L15 code commit.
 
 - 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R2): populated
   `_HARNESS_BLOCKED_PATTERNS["codex"]` with the issue #20 quota/rate-limit modal markers; added

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T01:14+02:00                     |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                     |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -32,6 +32,10 @@ manager appears. Orphan/dead-upstream signals must name and target that current 
 address-time hierarchy repair replaces stale manager provenance instead of skipping directly upward.
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** Simulation delivery fakes now provide log-backed acceptance context.
+The obsolete empty-composer and stacked-chip supervisor scenarios were removed, and a busy pane
+without a matching log record is explicitly unconfirmed rather than treated as accepted.
 
 Drives `run_supervisor_sweep` (`serving/supervisor.py`) across MULTIPLE simulated ticks per named
 incident, reusing the exact `SupervisorContext`/store-fixture shape `test_supervisor.py`'s
@@ -144,6 +148,10 @@ No sibling repository evidence is needed for this same-repository test suite.
 | Same-repository integration-test suite only. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: aligned simulations with harness-log acceptance and
+  removed the retired `never-briefed`/`delivery-stalled` pane predicates. Verification metadata
+  remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: extended the respawn simulation through
   successor-manager targeting for orphan signals. Verification metadata remains pinned until closeout

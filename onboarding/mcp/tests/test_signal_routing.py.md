@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-10T01:14+02:00                        |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`|
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                        |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`|
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -34,6 +34,10 @@ progress. No test claims equivalent unbound-worker credit; the accepted exclusio
 S7 follow-up.
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** Production-shaped same-cwd fixtures prove a declared unbound
+replacement with `replacementForLeaf` counts as this leaf's progress, while a worker for a parallel
+leaf under the same manager never suppresses this leaf.
 
 `SignalRoutingTests` seeds a temp `TerminalCatalog` and upserts entries carrying `spawn_role` +
 `spawned_by_session`/`spawned_by_lifecycle` provenance. `test_worker_signal_routes_to_its_manager`
@@ -116,6 +120,10 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added positive and parallel-leaf-negative regressions
+  for explicit replacement-leaf chain credit. Verification metadata remains pinned until closeout
+  stamps the eventual L15 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: added current-manager, no-direct-skip, and
   unbound-reviewer chain-progress regressions; preserved the explicit unbound-worker S1 follow-up.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`        |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -26,6 +26,18 @@ clicks.
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 spawn delivery protocol.** `_deliver_spawn_pastes` sends session commands as
+separate first inputs, sends the brief with its existing unique id envelope, binds the spawn-cwd
+harness log on that brief, and then verifies/reissues only missing or errored commands. A spawn
+reports context delivered/submitted only from the bound user-message record; it persists
+`sessionLogEntryId`/`sessionLogPath`, resolved model/effort, and optional `replacementForLeaf` on
+the catalog/payload. Declared replacement leaves also receive the normal brief/turn-report
+expectation rows without claiming the occupied leaf. The per-input documented upper bounds are
+`<=171.1 s` Claude and `<=137.2 s` Codex plus scheduler overhead for the post-case-(f) ladder, but
+reviewer residual N4 shows the clear-success branch adds a `C-u` transport and can reach roughly
+`176 s` for Claude. Treat the exact numeric docstring as unsettled until the owner corrects or
+accepts that nit; the qualitative one-input boundedness and one-row sweep budget remain verified.
 
 `attach_terminal_session_to_leaf_payload(config, session_id, leaf_key)` first normalizes the requested
 leaf ref through `serving.leaf_ref_validation.resolve_catalog_leaf_key`. Accepted qualified refs, doc ids,
@@ -232,7 +244,7 @@ catalog.
 | `session_retire_payload`/`session_rename_payload` delegate the actual catalog/tmux mechanics to `retire_entry`/`TerminalCatalog.set_label` and the authority check to `check_retire_authority`/`SeatRef`/`master_of`. | `retire_entry`; `check_retire_authority` | [../../serving/retire.py](../../serving/retire.py); [../../serving/retire_policy.py](../../serving/retire_policy.py) |
 | Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | [../../serving/seat_events.py](../../serving/seat_events.py) |
 | The strict `SessionRetireResponse`/`SessionRenameResponse` response models these two builders conform to. | `SessionRetireResponse`; `SessionRenameResponse` | [../../models/terminal.py](../../models/terminal.py) |
-| Failing-first tests for the retire policy matrix, idempotent retire, and rename provenance/role-immutability. | `test_seat_lifecycle.py` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
+| Failing-first tests for the retire policy matrix, idempotent retire, and rename provenance/role-immutability. | `test_seat_lifecycle.py` | [test_seat_lifecycle.py](../../../../tests/test_seat_lifecycle.py) |
 | 260707-HFX2-L3: `_deliver_spawn_pastes` builds `DeliveryRow`s and calls the ONE delivery path, `serving.injector.deliver`, instead of `TerminalPaster.paste` directly — the same path `serving/inbox_delivery.py` uses. | `deliver` | [../../serving/injector.py](../../serving/injector.py.md) |
 
 ## Cross-Repo References
@@ -244,6 +256,11 @@ No meaningful cross-repo references found.
 | The tool operates on the local dashboard terminal catalog only. | - | - |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: replaced capture/turn-start spawn credit with bound-log
+  user/command evidence, added targeted command reissue and catalog log binding, recorded resolved
+  knobs plus `replacementForLeaf`, and extended expectation rows to declared replacements.
+  Verification metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): `spawn_agent_session_payload`
   now rejects ordinary caller spend overrides before any side effect (`harness`/`model`/`effort`,

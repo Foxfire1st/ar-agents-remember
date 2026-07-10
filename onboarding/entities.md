@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-07-10T02:39+02:00|
+| lastUpdated | 2026-07-10T13:03+02:00|
 | status      | active                 |
 
 ## Purpose
@@ -30,11 +30,11 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Worktree Integration                | `git-blob-set-v1` | `sha256:966dabe2212719ed95f1c9eb4a66a3bc875a5c2a9331204f4ba4bc19c2d363a1` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`                                                                                                                                                                                                                                                                                     |
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:e23cab68a6f2d0b6a724973840cacae02ecee3118528f7b779236047aefd6988` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:455d4a3d34b9b84bc765308c4f97e76254d5f38ba8297a43a81578c2ad0f7181` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/mcp/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
-| Seat Retirement                     | `git-blob-set-v1` | `sha256:4999686e3db3985158a5308bbda3fc32e114028a113344f267a5229b03173c8b` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Seat Landing Archive                | `git-blob-set-v1` | `sha256:13fd7f3af7fd179ff37e2f5ea8474eb2ca9bb2212a9af7b7b6d6473fb9ba1d8f` | `dashboard/src/data/sessionGroups.ts`; `dashboard/src/panels/Chats.tsx`; `mcp/src/agents_remember/controllers/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Supervisor Sweep                    | `git-blob-set-v1` | `sha256:1a7b6468b82bddf18c7b49a5e66e1ed8b37c60ba3634bca116451de6cbb07762` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/supervisor.py`; `mcp/src/agents_remember/serving/supervisor_heartbeat.py`; `mcp/src/agents_remember/controlplane/escalation_ladder.py`; `mcp/src/agents_remember/controlplane/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/orphan_policy.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/supervisor_signals.py` |
-| Task Document                       | `git-blob-set-v1` | `sha256:b5e8c822f8209b2f311b08e79bf5a8799d94c4d89b72fd567a9093458a26b22e` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/panels/DetailPanel.tsx`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/snapshots.py`; `mcp/src/agents_remember/serving/app.py` |
-| Delivery Injector                   | `git-blob-set-v1` | `sha256:ac3a1f0189116137837a9552ef727213a1e2e403b3e0f4f2b44adb240897fa2c` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`                                                                                                                                                                                                                                                                                    |
+| Seat Retirement                     | `git-blob-set-v1` | `sha256:9a13857d522a87cb583985750612d70042253db9b265e3f145a2e61403d7f55d` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
+| Seat Landing Archive                | `git-blob-set-v1` | `sha256:535327d742e3ec2956a8d80928bb6846785bb791088ced6b16170288b33d78c4` | `dashboard/src/data/sessionGroups.ts`; `dashboard/src/panels/Chats.tsx`; `mcp/src/agents_remember/controllers/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
+| Supervisor Sweep                    | `git-blob-set-v1` | `sha256:9dedc8e0b5861d7ca95804f9257d26d0a5e0ce239bb0149313974a6f66a25a96` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/supervisor.py`; `mcp/src/agents_remember/serving/supervisor_heartbeat.py`; `mcp/src/agents_remember/controlplane/escalation_ladder.py`; `mcp/src/agents_remember/controlplane/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/orphan_policy.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/supervisor_signals.py` |
+| Task Document                       | `git-blob-set-v1` | `sha256:6561adc5c578f756e0c1d14cad66c4c7ba04785106be1b5adcc1f1709de41dec` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/panels/DetailPanel.tsx`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/snapshots.py`; `mcp/src/agents_remember/serving/app.py` |
+| Delivery Injector                   | `git-blob-set-v1` | `sha256:bad873407eca5eefbd7b5b5c6803a15f8405e14468c07777b0d463184b7750a7` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/harness_logs.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_paste.py` |
 
 ## Entity Inventory
 
@@ -215,7 +215,7 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Key Identifiers              | `repo`, `expectedBranch`, `includeCode`, `includeMemory`, result state.                                                                                                            |
 | Parent / Child Relationships | Uses committed memory settings, resolver context, worktree context, and memory ledger metadata.                                                                                    |
 | Often Confused With          | Local coordinator path hints or implicit repository browsing.                                                                                                                      |
-| Source References            | [cross-repo design spec](agents-remember/roadmap/agents-remember-cross-repo-mode-design-spec.md) L14-L34; L185-L217; L604-L648; L904-L907; [setting_values.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/setting_values.py); [cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py) |
+| Source References            | [setting_values.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/setting_values.py); [cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py). The former roadmap design-spec link was removed after reference health checking proved the target no longer exists. |
 | Migration Notes              | Cross-repo inclusion must remain read-only toward external repos.                                                                                                                  |
 
 ### Provider Degradation Protocol
@@ -285,6 +285,14 @@ worker, so bounded false-inactivity refires remain possible until HFX2-L14 S7; t
 claim that residual is fixed. The fingerprint above uses current worktree blobs and closeout must
 verify/recompute it against the eventual L13 commit.
 
+**260707-HFX2-L15 current disposition.** The S7 boundary is now closed through explicit catalog
+provenance: an unbound worker/reviewer/curator counts only when the current manager spawned it and
+`replacementForLeaf` names this leaf. Same cwd never grants credit. The supervisor's default
+redelivery budget is one because each delivery may synchronously wait on calibrated harness-log
+evidence; `never-briefed` and stacked-chip pane triggers are removed, while mid-turn/blocked remain
+intervention/diagnostic signals. The candidate fingerprint above uses current worktree blobs and
+must be recomputed against the eventual L15 commit.
+
 ### Task Document
 
 | Field                        | Value |
@@ -314,6 +322,17 @@ verify/recompute it against the eventual L13 commit.
 | Often Confused With          | The lower-level transport it wraps, `terminal_paste.py`'s `TerminalPaster` (that module owns the actual capture-verify/idempotent-retry paste mechanics; this entity owns outcome classification and per-harness interpretation on top of it, never re-implementing the paste itself). Also not the `Supervisor Sweep` entity — that entity is the polling/predicate/action loop that is ONE caller of this entity via `deliver_inbox_entry`, not this entity itself. |
 | Source References            | [injector.py](agents-remember/mcp/src/agents_remember/serving/injector.py); [harness_adapters.py](agents-remember/mcp/src/agents_remember/serving/harness_adapters.py); [inbox_delivery.py](agents-remember/mcp/src/agents_remember/serving/inbox_delivery.py); [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 | Migration Notes              | `InboxDeliveryState` (`controlplane/operator_inbox_records.py`) is deliberately left unchanged by this leaf — a `blocked` outcome rides as a `NEEDS-ATTENTION:`-prefixed `deliveryDetail` string rather than a first-class enum value; a future leaf could widen the dashboard-visible schema to surface `blocked` directly (bigger blast radius: `dashboard/src/types/projection.ts`, `inbox_backoff.py`'s redeliverable-state set). |
+
+**260707-HFX2-L15 current disposition (supersedes the L3 screen-acceptance details above).** The
+entity remains one delivery protocol, but `HarnessSessionLog` is now its acceptance authority.
+Messages carry their existing unique id; commands are separate and require command plus non-error
+stdout evidence; `TerminalPaster` owns one Enter re-press and one verified-absence clear/replace
+re-paste; `HarnessAdapter` labels only final failure captures. Spawn, inbox, supervisor, and REST
+paste all compose `injector.deliver`, while `TerminalCatalog.bind_session_log` persists the exact
+bound id/path without clobbering newer liveness. Reviewer residuals N1/N2/N3/N5 remain documented in
+the concrete sidecars rather than becoming alternate entity semantics. The candidate fingerprint
+above adds the log, transport, and catalog evidence and must be recomputed against the eventual L15
+commit.
 
 ## Cross-Layer Projections
 
@@ -434,10 +453,10 @@ verify/recompute it against the eventual L13 commit.
 
 | Layer          | Representation                                                                                            |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| Transport      | `terminal_paste.TerminalPaster.paste` — the capture-verified tmux paste; retry loop and boot-window handling are unchanged by this entity. |
-| Classification | `injector.deliver`'s four-way `DeliveryOutcome` (`acked`/`landed-unacked`/`blocked(reason)`/`failed(reason)`) — a `blocked` reading overrides every other reading. |
-| Per-harness    | `harness_adapters.HarnessAdapter` (`boot_ready`/`composer_state`/`mid_turn`/`mid_turn_behavior`/`blocked_reason`/`turn_started`) — one interface, no per-harness subclass or branch; a future harness is one adapter registration. |
-| Callers        | `mcp/tools/terminal.py::_deliver_spawn_pastes` (spawn briefs/session commands) and `serving/inbox_delivery.py::deliver_inbox_entry` (dispatch/nudge/redelivery/signal rows, called from `supervisor.py`). |
+| Transport      | `terminal_paste.TerminalPaster.paste` — sanitized tmux input with one Enter re-press and one verified-absence clear/replace re-paste; pane text cannot grant acceptance. |
+| Classification | `injector.deliver` retains the four-way outcome, but `acked` requires a unique-id user record or command+non-error-stdout evidence in the bound harness log. |
+| Per-harness    | `harness_logs.HarnessSessionLog` parses real Claude/Codex record schemas; `HarnessAdapter` is failure-modal labeling only. |
+| Callers        | Spawn (`mcp/tools/terminal.py`), durable inbox/supervisor (`inbox_delivery.py`), and REST paste (`serving/app.py`) all compose the same injector. |
 
 ## Ownership Notes
 
@@ -447,6 +466,13 @@ verify/recompute it against the eventual L13 commit.
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: refreshed Delivery Injector and Supervisor Sweep for
+  harness-log acceptance, duplicate-safe bounded recovery, explicit replacement-leaf chain credit,
+  and one-row redelivery. Refreshed their candidate-worktree fingerprints and the shared changed
+  evidence fingerprints for Seat Retirement, Seat Landing Archive, and Task Document after review
+  confirmed those three entity meanings were unchanged. Closeout must recompute all five against
+  the eventual code commit.
 
 - 2026-07-10T02:39+02:00 — HFX3 retro curation: refreshed `Runtime AGENTS Template Package` for
   the coordinator template's otherwise-free-chat launcher and settings-owned architect spawn;

@@ -20,6 +20,7 @@
     "mcp/src/agents_remember/serving/events.py",
     "mcp/src/agents_remember/serving/files.py",
     "mcp/src/agents_remember/serving/harness_adapters.py",
+    "mcp/src/agents_remember/serving/harness_logs.py",
     "mcp/src/agents_remember/serving/harnesses.py",
     "mcp/src/agents_remember/serving/inbox_delivery.py",
     "mcp/src/agents_remember/serving/injector.py",
@@ -45,8 +46,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 33,
-    "fileSidecars": 33,
+    "sourceFilesInScope": 34,
+    "fileSidecars": 34,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -67,6 +68,7 @@
     "files",
     "harness",
     "harness_adapters",
+    "harness_logs",
     "harnesses",
     "heartbeat",
     "inbox",
@@ -79,6 +81,7 @@
     "leaf",
     "leaf_ref_validation",
     "liveness",
+    "logs",
     "mcp",
     "notes",
     "opener",
@@ -113,7 +116,7 @@
     "validation"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L13 adds a live sixty-second workspace-river compactor over virtual locked cursors, serves full task bodies only through `GET /api/task-document`, and makes the supervisor current-manager-first, chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains body-free for task documents. `agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diff...",
+    "summary": "260707-HFX2-L15 makes harness JSONL the only submitted-delivery authority across spawn, inbox, supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0 s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace re-paste, with pane capture restricted to duplicate prevention and failure diagnostics. The catalog persists resolved knobs, log id/path, and `replacementForLeaf`; safe binding re-reads the latest row. Codex knobs...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",
@@ -126,6 +129,7 @@
       "mcp/src/agents_remember/serving/events.py",
       "mcp/src/agents_remember/serving/files.py",
       "mcp/src/agents_remember/serving/harness_adapters.py",
+      "mcp/src/agents_remember/serving/harness_logs.py",
       "mcp/src/agents_remember/serving/harnesses.py",
       "mcp/src/agents_remember/serving/inbox_delivery.py",
       "mcp/src/agents_remember/serving/injector.py",
@@ -137,8 +141,7 @@
       "mcp/src/agents_remember/serving/retire.py",
       "mcp/src/agents_remember/serving/retire_policy.py",
       "mcp/src/agents_remember/serving/scope.py",
-      "mcp/src/agents_remember/serving/seat_events.py",
-      "mcp/src/agents_remember/serving/sim.py"
+      "mcp/src/agents_remember/serving/seat_events.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -161,6 +164,8 @@
       "files",
       "harness_adapters.py",
       "harness_adapters",
+      "harness_logs.py",
+      "harness_logs",
       "harnesses.py",
       "harnesses",
       "inbox_delivery.py",
@@ -186,9 +191,7 @@
       "seat_events.py",
       "seat_events",
       "sim.py",
-      "sim",
-      "static.py",
-      "static"
+      "sim"
     ]
   },
   "fallback": {

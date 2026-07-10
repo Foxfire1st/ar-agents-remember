@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -34,6 +34,12 @@ below the shared 900-second floor.
 `orchestration.supervisor.escalationBudget` is now a known supervisor setting with default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
 
 ### Logic
+
+**260707-HFX2-L15 dispatch bounds and harness overrides.** The default supervisor redelivery budget
+is `1`, matching the synchronous calibrated log-verification envelope of one input. When settings
+replace the Codex builtin's `effortFlag`, `_merged_harness` clears Codex's
+`model_reasoning_effort={value}` template so the custom flag receives the ordinary discrete value
+instead of leaking a builtin-specific argument shape.
 
 L13 review follow-up (L13R-2): the loader REFUSES `gateDelegation` in the repo-local layer — a local value would validate and then silently do nothing (the boot snapshot reads the global file only), a fail-open shape; the refusal names the local file and states "global-layer only".
 
@@ -212,8 +218,8 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The schema reference for the agentic family (two-layer model, merge semantics, fail-loud rule, loop schema, role/level spend knobs, harnesses, supervisor settings including the 900-second redelivery floor / `signalCooldownSeconds` / kill-switch mitigation text, reserved families). | Agentic Settings section, L380-L397 | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
-| **Known gap (260707-HFX2-L4):** the new `orchestration.escalation` family is likewise NOT yet documented in this schema reference, same no-doc-sync-test posture as the supervisor gap above. A follow-up doc pass should add an `orchestration.escalation` section alongside `orchestration.supervisor`. | — | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
+| The schema reference for the agentic family (two-layer model, merge semantics, fail-loud rule, loop schema, role/level spend knobs, harnesses, supervisor settings including the 900-second redelivery floor / `signalCooldownSeconds` / kill-switch mitigation text, reserved families). | Agentic Settings section | [settings-json.md](agents-remember/docs/reference/settings-json.md) |
+| **Known gap (260707-HFX2-L4):** the `orchestration.escalation` family is not yet documented in this schema reference. A follow-up doc pass should add it alongside `orchestration.supervisor`. | — | [settings-json.md](agents-remember/docs/reference/settings-json.md) |
 
 ## Repo-Internal References
 
@@ -227,7 +233,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 | The supervisor sweep's `SupervisorContext` construction reads `settings.supervisor.*` per loop iteration (interval, enable flag, staleness cutoff, redeliver rate limit, signal cooldown, redeliver budget) — the per-use read contract this loader guarantees. | `_supervisor_context`; `supervisor_loop` | [../serving/app.py](../serving/app.py.md) |
 | The MCP tool choke point reads `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS` (this file's constant, not `settings.supervisor.stale_cutoff_seconds`) for the opportunistic banner check (260707-HFX2-L2 R5) — a deliberate simplification so the banner check needs no settings read on every tool call. | `_tool_payload` | [../mcp/tools/base.py](../mcp/tools/base.py.md) |
 | The escalation ladder's per-use consumer: `_supervisor_context()` resolves `settings.escalation.sla_seconds`/`rung_seconds`/`respawn_after_rung` into `SupervisorContext`'s plain-primitive escalation knobs every sweep. | `_supervisor_context` | [../serving/app.py](../serving/app.py.md) |
-| `KNOWN_SUPERVISOR_FIELDS`, `SupervisorSettings`, and `_parse_supervisor` include `signalCooldownSeconds` and reject sub-900 redelivery/cooldown values through `_require_supervisor_floor_seconds`. | L124-L134; L295-L308; L1210-L1250 | [../src/agents_remember/kernel/agentic_settings.py](../src/agents_remember/kernel/agentic_settings.py) |
+| `KNOWN_SUPERVISOR_FIELDS`, `SupervisorSettings`, and `_parse_supervisor` include `signalCooldownSeconds` and reject sub-900 redelivery/cooldown values through `_require_supervisor_floor_seconds`. | L126-L141; L301-L314; L1196-L1238 | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 
 ## Cross-Repo References
 
@@ -238,6 +244,10 @@ No meaningful cross-repo references found.
 | The loader operates on coordinator/repo-local files only. | - | - |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: reduced the default redelivery sweep budget to one and
+  made custom Codex effort-flag overrides drop the builtin `--config` value template. Verification
+  metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T12:04+02:00 — No source change in `agentic_settings.py` for 260707-HFX2-L10; updated

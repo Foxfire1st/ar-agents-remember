@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-10T01:14+02:00                                             |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`|
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                                             |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`|
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -42,6 +42,11 @@ floor, and completion wake bound it; HFX2-L14 S7 owns extending same-worktree/cu
 to the unbound worker without cross-leaf suppression. Do not document or infer that S1 is fixed here.
 
 ### Logic
+
+**260707-HFX2-L15 replacement-chain discriminator.** An unbound worker, reviewer, or curator counts
+as progress for a leaf only when it was spawned by the current manager and its catalog row carries
+`replacementForLeaf == leafKey`. The former same-`cwd` comparison was removed because production
+seats share the workspace root and could let activity on a parallel leaf suppress this leaf.
 
 `_OWNER_ROLE_BY_SENDER_SPAWN_ROLE` maps the SENDER's own spawned-as role to its owner's role:
 `worker -> manager`, `manager -> orchestrator`. Any other spawn role (orchestrator, strategist,
@@ -131,6 +136,11 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: replaced same-worktree unbound-seat credit with the
+  explicit `replacementForLeaf` + same-manager discriminator and extended the allowed replacement
+  roles to worker/reviewer/curator without cross-leaf suppression. Verification metadata remains
+  pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: replaced stale one-hop leaf addressing with
   current-manager resolution, separated historical skip-level provenance, and added chain-progress

@@ -5,14 +5,19 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `2322ffc15ef803ea29bf900beeae84de19b43019`              |
-| lastVerifiedCommitDate | 2026-07-08T03:14:39+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                                  |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`              |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Purpose
 
-`terminal_paste.py` is the **server-side capture-verified stdin paste** into a durable tmux session
+`terminal_paste.py` is the bounded tmux input transport for log-verified dispatch. It controls
+sanitized bytes and Enter/C-u keypresses, but the caller-supplied harness-log probe is the only
+submitted-acceptance authority. Pane text is captured only to prove absence before the one allowed
+re-paste, clear visible prior content before replacement, or attach final failure evidence.
+
+**Historical pre-L15 context (superseded by the contract above):** `terminal_paste.py` was the **server-side capture-verified stdin paste** into a durable tmux session
 (slice L2 dispatch, hardened by 260707-HFX-L3). The browser delivers a context packet over the live
 WebSocket (`data/terminal.ts` `pasteAndConfirm` / `submitAndConfirm`); the agent-facing
 `spawn_agent_session` tool has **no live WebSocket** — it drives a freshly-spawned, PTY-clientless
@@ -32,7 +37,20 @@ per-attempt re-baselining stacked up to 7 duplicate pastes). It backs the tool's
 
 ## Code Commentary
 
-### Logic
+### 260707-HFX2-L15 Current Logic
+
+`TerminalPaster.paste` sanitizes the input, optionally short-circuits when the acceptance probe
+already sees the id, captures one origin only for later retry safety, and transports through a
+uniquely named tmux buffer. Submitted input waits at least 100 ms before Enter, then polls the
+caller probe on a 100 ms cadence for its calibrated window. Recovery is fixed: one Enter re-press,
+then at most one re-paste. Before that re-paste, `_payload_presence` compares the current pane to
+the original baseline using the payload-specific Codex chip, generic chip-count growth, or payload
+head. Unobservable state fails closed. Visible evidence triggers one `C-u`, a settle, and a second
+absence check; if evidence remains, delivery fails rather than appending a duplicate. Escape is
+refused. Drafts and pre-bind commands may transport with `accepted=None`, but can never report
+`submitted=True`.
+
+### Historical Logic Through HFX2-L3 (Superseded By L15)
 
 `sanitize_for_injection(text)` mirrors the frontend `sanitizeForInjection`: it strips embedded
 bracketed-paste markers (`_PASTE_MARKER`, so injected text can't break out of tmux's own bracketing)
@@ -97,7 +115,18 @@ callable defaulting to a `subprocess.run` wrapper. Timeouts/cadence are module c
 per call. `os.getpid()` + a `uuid4` hex name the throwaway tmux buffer so concurrent pastes never
 collide.
 
-### Invariants And Boundaries
+### 260707-HFX2-L15 Current Invariants And Boundaries
+
+- Only the harness-log callback may grant submitted acceptance.
+- Pane reads can withhold/clear/rewrite transport or provide failure evidence; they never grant
+  acceptance.
+- Recovery is bounded to initial Enter, one Enter re-press, and one verified-absence re-paste.
+- Re-paste requires verified absence; visible payload is cleared and verified absent before
+  replacement, and unobservable/uncleared state fails closed.
+- The settle floor is 100 ms and `Escape` is structurally forbidden.
+- Payload bytes ride stdin into `tmux load-buffer`, never argv or a shell.
+
+### Historical Invariants And Boundaries (Superseded By L15)
 
 - **Never submit an unconfirmed paste.** `Enter` is sent only after a capture proves the paste landed.
 - **One origin baseline per delivery.** Every landed/not-landed verdict compares against the same
@@ -121,7 +150,10 @@ collide.
 
 ### Todos
 
-No known follow-up in this file.
+Reviewer note N5 remains outside this candidate: a later independent `deliver()` invocation can
+still encounter an unlogged payload idling in a composer before its initial paste. The current
+within-invocation retry ladder is guarded; the cross-invocation case is bounded by supervisor
+redelivery pacing and awaits an owner disposition/follow-up.
 
 ## Docs References
 
@@ -133,6 +165,14 @@ No relevant external/domain documentation defines this local paste policy; the f
 | No external/domain document defines this server-side tmux paste/submit loop. | L133-L229 | [terminal_paste.py](terminal_paste.py) |
 
 ## Repo-Internal References
+
+The current acceptance/retry contract is implemented and tested locally; the older capture-echo
+rows below are retained only as historical provenance for the superseded L3 mechanism.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Submitted acceptance is callback-driven; recovery is one Enter re-press then one verified-absence clear/replace re-paste. | L130-L218 | [terminal_paste.py](terminal_paste.py) |
+| Duplicate-chip, clear-before-replacement, unobservable-pane, settle-floor, and Escape regressions pin the current ladder. | L64-L210 | [../../../tests/test_terminal_paste.py](../../../tests/test_terminal_paste.py.md) |
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
@@ -152,6 +192,12 @@ No meaningful cross-repo references found.
 | This helper drives only a local tmux session over the tmux CLI. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round + case (f): replaced pane-echo/output
+  acceptance with a caller-supplied harness-log probe; bounded recovery to one Enter re-press and
+  one verified-absence re-paste; added clear-and-recheck duplicate prevention, unobservable
+  fail-closed behavior, 100 ms settle/poll floors, and failure-only capture. Verification metadata
+  remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: live turn-state): added a public
   `capture_pane(tmux_name)` wrapper around the existing private `_tmux_capture_pane`, so

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -183,6 +183,14 @@ lands in `docs/design/observable-lifecycle.md` and the settings table in
 `notes/reports/260707-HFX2-L8-worker-report.md` and `-reviewer-report.md`.
 
 ## Hot Path Summary
+
+HFX2-L15 replaces screen-grammar dispatch credit with one repository-wide acceptance path:
+`HarnessSessionLog` binds the unique id-bearing message in the spawn cwd, `injector.deliver`
+applies calibrated Claude/Codex windows, and `TerminalPaster` permits one Enter re-press plus one
+verified-absence clear/replace re-paste. Spawn, durable inbox, supervisor redelivery, and REST paste
+all compose that path. Catalog provenance records resolved knobs, log binding, and an optional
+`replacementForLeaf`; tests are pinned to this checkout so the full gate cannot import a sibling
+editable install.
 
 260707-HFX2-L13 closes the L12 package residuals and reconciles the reviewed HFX3 runtime seams that
 round 2 actually changed. Observer storage now coalesces lifecycle heartbeats into bounded sidecars,
@@ -636,6 +644,11 @@ into the role files.
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 package route impact: documented the harness-log
+  acceptance path, calibrated duplicate-safe recovery, explicit Codex argv, catalog/replacement
+  provenance, and checkout-local test pin. Verification metadata remains pinned until closeout
+  stamps the eventual L15 code commit.
 
 - 2026-07-10T02:39+02:00 — HFX3/L14 combined route impact: reconciled packaged runtime doctrine
   to the free-chat launcher, approval-gated strategist with sanctioned-skip authoring, architect

@@ -47,7 +47,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1463,
+    "sourceFilesInScope": 1465,
     "fileSidecars": 9,
     "childRoutes": 5
   },
@@ -73,7 +73,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover source-checkout and public contracts; `mcp/` covers the package-managed server and runtime; `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates; hidden harness roots cover first-run files; and `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles` carries the unified lifecycle router, minimal frame, loop doctrine, nine role lifecycles, templates, and criteria catalogs. Its current condition 3 is the free-chat launcher, not an architect default. Canoni...",
+    "summary": "260707-HFX2-L15 makes submitted terminal dispatch acceptance deterministic: every message carries its unique id, binds the spawn-cwd Claude/Codex harness JSONL, and receives credit only from that record. Session commands remain separate and require command plus non-error stdout evidence; resolved knobs are pinned on argv/session commands and recorded in the catalog. The bounded retry ladder uses pane text only to prevent duplicate re-pastes or attach failure diagnostics. An unbound replacement seat names `replacementForLeaf`, and the supervisor processes one synchronous redelivery per sweep...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,13 +115,12 @@
       "mcp",
       "src",
       "design",
-      "mcp/",
-      "mcp/src/agents_remember/package_data/runtime/agents-md-files",
-      "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles",
-      "agents_remember",
-      "package_data",
+      "replacementForLeaf",
+      "HFX2",
+      "L15",
+      "JSONL",
       "repo-overview",
-      "5b49fa85a51d527a5a216a88c361c08246c759d0",
+      "c881828542f0ca916ce8b1d4fd5ab8a914e24110",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -140,7 +139,8 @@
       "logs/mcp/",
       "logs/providers/",
       "providers/_bin/",
-      "providers/_venvs/"
+      "providers/_venvs/",
+      "onboarding/"
     ]
   },
   "fallback": {

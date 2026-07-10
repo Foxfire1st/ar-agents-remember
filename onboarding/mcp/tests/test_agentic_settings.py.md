@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T11:19+02:00 |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -24,6 +24,10 @@ overrides (`RolesPerLevelTests`), the harness-definition family
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** The harness-family tests pin the redelivery default of one and prove
+that replacing the Codex builtin's effort flag clears its builtin `--config` value template,
+preserving the normal two-argument custom-flag contract.
 
 L13 review follow-up adds `test_local_gate_delegation_is_refused_global_layer_only` (L13R-2): a repo-local gateDelegation raises AgenticSettingsError naming the local file.
 
@@ -152,6 +156,10 @@ No meaningful cross-repo references found.
 | Loader-local behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: covered the one-row supervisor default and safe Codex
+  effort-flag template override. Verification metadata remains pinned until closeout stamps the
+  eventual L15 code commit.
 
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: updated `SupervisorFamilyTests` for
   `signalCooldownSeconds`, the 900-second default/floor, and fail-loud sub-floor refusals for both

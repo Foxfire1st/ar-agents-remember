@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 
 > **Status:** active baseline
 
@@ -130,6 +130,14 @@ overviews.
 
 ## Hot Path Summary
 
+260707-HFX2-L15 makes submitted terminal dispatch acceptance deterministic: every message carries
+its unique id, binds the spawn-cwd Claude/Codex harness JSONL, and receives credit only from that
+record. Session commands remain separate and require command plus non-error stdout evidence;
+resolved knobs are pinned on argv/session commands and recorded in the catalog. The bounded retry
+ladder uses pane text only to prevent duplicate re-pastes or attach failure diagnostics. An unbound
+replacement seat names `replacementForLeaf`, and the supervisor processes one synchronous
+redelivery per sweep.
+
 Use the root index to route quickly: `AGENTS.md` and `README.md` cover source-checkout and public contracts; `mcp/` covers the package-managed server and runtime; `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates; hidden harness roots cover first-run files; and `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles` carries the unified lifecycle router, minimal frame, loop doctrine, nine role lifecycles, templates, and criteria catalogs. Its current condition 3 is the free-chat launcher, not an architect default. Canonical doctrine lives under root `skills/` and is synchronized by `scripts/sync-skills.py`; only path-rule-eligible package-data copies receive file sidecars. The kernel's `agentic_settings.py` owns per-use orchestration concurrency and role settings. For route-index behavior start at `mcp/src/agents_remember/kernel/route_index.py`, `route_index_refresh`, c-05, and c-04.
 
 For HFX2-L13, route from this root overview into `mcp/`, then `controlplane/`, `observer/`,
@@ -189,7 +197,6 @@ workspace ar-coordination/
 | MCP package          | [mcp](agents-remember/mcp)                                                                                                                                                       | Package-managed MCP server exposing context, runtime install, skills install, provider, worktree, memory, benchmark, settings-derived lifecycle, and memory quality tools. |
 | Core skills (C-*)    | [mcp/src/agents_remember/package_data/runtime/skills](agents-remember/mcp/src/agents_remember/package_data/runtime/skills)                                                                                                           | Resolver, memory quality control, repo bootstrap, onboarding maintenance, and related support skills — flat directly under `skills/`. |
 | Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles (router + minimal frame + per-role lifecycles), and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
-| Roadmap and specs    | [roadmap](agents-remember/roadmap)                                                                                                                                           | Design specs, migration notes, and historical task plans. These are references, not onboarding substitutes.    |
 | Runtime AGENTS templates | [mcp/src/agents_remember/package_data/runtime/agents-md-files](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files)                                                                                                        | Package-owned coordinator, skills, system, and tasks `AGENTS.md` templates for runtime installation.           |
 | System defaults      | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples)                                                                                          | Example settings, sources, and tools files used as scaffolding material.                                       |
 
@@ -408,6 +415,11 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 root route impact: added the log-backed dispatch,
+  duplicate-safe retry, settings-pinned knob provenance, replacement-leaf chain credit, and one-row
+  supervisor redelivery contract. Verification metadata remains pinned until closeout stamps the
+  eventual L15 code commit.
 
 - 2026-07-10T02:39+02:00 — HFX3/L14 combined root impact: reconciled the lifecycle entity,
   root hot-path summary, and harness-starter description with the free-chat launcher,

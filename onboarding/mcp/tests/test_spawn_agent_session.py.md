@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-09T12:04+02:00                            |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`        |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                            |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -36,6 +36,13 @@ classes: `SpawnKnobApplicationTests` (per-harness knob application + the free-fo
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** The spawn composition now proves worker/manager/curator settings tiers
+reach distinct argv, resolved knobs and the unique id/log binding persist on the response/catalog,
+and missing log evidence fails without screen fallback. `replacementForLeaf` is recorded for an
+unbound replacement and feeds expectations without claiming the occupied leaf. Session commands
+remain separate pre-brief inputs and are verified after the brief binds the log. REST paste tests
+exercise the same id-bearing log-confirmed path.
 
 `SpawnAgentSessionTests` drives `spawn_agent_session_payload` with a `_FakeHost` (records `ensure`
 calls + the seeded `env`), a `_FakePaster` (records paste calls + returns a scripted
@@ -164,6 +171,11 @@ No meaningful cross-repo references found.
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: rewrote spawn/REST coverage around explicit Codex argv,
+  bound-log acceptance/provenance, isolated command verification, and unbound replacement-leaf
+  declarations; removed pane-grammar acceptance. Verification metadata remains pinned until
+  closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): spawn tests now pin the
   settings-only spend chain and the pre-side-effect `spend-override-unsupported` guard for legacy

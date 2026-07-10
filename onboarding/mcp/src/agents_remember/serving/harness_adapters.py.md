@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/serving/harness_adapters.py`       |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-07-08T22:30+02:00                                      |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`                  |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                                      |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`                  |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -16,64 +16,36 @@
 
 ## Purpose
 
-Created for 260707-HFX2-L3 (paste injector hardening, R2): the ONE per-harness adapter interface
-`serving/injector.py` reads through to decide whether/how to deliver a paste. Developer ruling
-(2026-07-07T22:45, verbatim): "As injector we will then use the paste into chat method. It's the
-one that is harness independent as long as you get its method right." This module is where "get its
-method right" lives — boot-readiness, composer state, mid-turn behavior, modal dialog traps
-(codex quota #20, permission prompts), and post-submit turn-started confirmation, each per-harness
-(claude-code, codex) but behind one shared interface.
+`harness_adapters.py` is the failure-diagnostic adapter for the one log-verified delivery path.
+It may label a final pane capture as a quota/permission modal, but it never decides boot readiness,
+composer state, turn start, knob truth, or delivery acceptance. Harness-owned JSONL is the only
+submitted-acceptance authority.
 
 ## Code Commentary
 
 ### Logic
 
-`HarnessAdapter` is a frozen dataclass holding only `harness_id: str | None`; every method is a
-THIN COMPOSITION over the existing pane classifiers, parameterized by that id — there is no
-subclass per harness and no if/elif ladder here:
-
-- `boot_ready(pane_text)` → `turn_state.boot_ready(pane_text, harness=harness_id)`.
-- `composer_state(pane_text)` → `pane_signals.composer_state(pane_text, harness=harness_id)`.
-- `mid_turn(pane_text)` → `pane_signals.classify_pane_signal(...).signal == "mid-turn"`.
-- `mid_turn_behavior(pane_text)` → `"queued-next-turn"` when mid-turn, else `None` (both known
-  harnesses queue a paste sent while generating as next-turn input; a typed slot for a future
-  harness that behaves differently, not a branch that exists yet).
-- `blocked_reason(pane_text)` → `None` unless `classify_pane_signal(...).signal == "blocked"`, in
-  which case `pane_signals.blocked_reason_label(evidence)` (`"codex-quota-limit"` /
-  `"permission-prompt"` / `"modal-dialog"`).
-- `turn_started(capture, *, advanced)` → `True` if `advanced` (the paster's own generic pane-advance
-  diff already fired), else falls back to `turn_state.classify_turn_state(capture, harness=
-  harness_id).state == "working"` — a busy/spinner marker in the capture corroborates a turn start
-  even in the single poll window before the byte-diff visibly fires.
-
-`get_adapter(harness_id)` returns `GENERIC_ADAPTER` for `None`, the named `CLAUDE_CODE_ADAPTER` /
-`CODEX_ADAPTER` for `"claude"`/`"codex"` (identity-preserving, useful for tests), or a fresh
-`HarnessAdapter(harness_id=harness_id)` for any other id — an uncustomized/unknown harness still
-classifies correctly off the shared marker tables (never a refusal).
+`HarnessAdapter` stores only `harness_id` and exposes `blocked_reason(pane_text)`. That method
+delegates to `pane_signals.classify_pane_signal` and `blocked_reason_label`, returning a structured
+modal reason only for a final failure capture. `get_adapter` preserves named Claude/Codex/generic
+instances and returns a lightweight adapter for unknown ids; no screen grammar can turn an input
+into an acknowledged delivery.
 
 ### Conventions
 
-Owns NO regex table of its own. Every pattern lives where the codebase's existing convention
-already puts per-harness pane-text overrides: `pane_signals.py` (`_HARNESS_BLOCKED_PATTERNS`,
-`_HARNESS_EMPTY_COMPOSER_PATTERNS`) and `turn_state.py` (`_HARNESS_WORKING_PATTERNS`,
-`_HARNESS_AWAITING_INPUT_PATTERNS`, `_HARNESS_TURN_ENDED_PATTERNS`), both `dict[harness_id,
-patterns]` checked before the shared generic patterns for that family. Adding a harness here means
-the id flows through to those tables — the module docstring carries the full NEW-HARNESS CHECKLIST.
+The adapter owns no regex table. Modal patterns remain in `pane_signals.py`; acceptance parsing
+lives separately in `harness_logs.py` and is never reached through this diagnostic interface.
 
 ### Invariants And Boundaries
 
-- R4 non-goals (developer-ruled): harness hooks, Agent SDK sessions, and the codex app-server
-  protocol are NOT delivery channels this adapter (or `injector.py`) ever reads through.
-- `HarnessAdapter` is stateless/pure — no I/O, no catalog access; every method is a function of the
-  pane text (+ harness id) passed in.
-- A future harness never touches this file's logic, only its pattern-table dependencies (see
-  Conventions) and, optionally, `_ADAPTERS` for a named instance (not required — the fallback path
-  already works).
+- `HarnessAdapter` is stateless/pure: no I/O, catalog access, acceptance polling, or retries.
+- A blocked label may enrich a failure result; it must never override positive/negative harness-log
+  evidence or grant `submitted:true`.
+- Boot/composer/turn/knob screen grammars removed by L15 must not be reintroduced here.
 
 ### Todos
 
-Same first-cut caveat as `pane_signals.py`/`turn_state.py`: the underlying marker regexes are a
-best-effort guess at common TUI shapes, not calibrated against real captured Claude/Codex panes.
+Modal labels remain best-effort failure diagnostics; no correctness claim depends on them.
 
 ## Docs References
 
@@ -103,6 +75,11 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local delivery adapter. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: deleted boot/composer/mid-turn/turn-start
+  delivery signatures. The adapter now labels only final failure captures; harness JSONL owns all
+  submitted acceptance. Verification metadata remains pinned until closeout stamps the eventual
+  L15 code commit.
 
 - 2026-07-08T22:30+02:00 — Created for 260707-HFX2-L3 (paste injector hardening, R2): the one
   per-harness adapter interface — `HarnessAdapter` (boot_ready, composer_state, mid_turn,

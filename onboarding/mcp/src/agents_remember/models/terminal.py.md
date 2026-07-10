@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-09T12:04+02:00                       |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`   |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                       |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`   |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ terminal-session catalog operations. It models the hosted-chat/terminal leaf rea
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 response provenance.** `SpawnAgentSessionResponse` now exposes
+`replacementForLeaf`, `resolvedModel`, `resolvedEffort`, `sessionLogEntryId`, and
+`sessionLogPath`. `contextDelivered` means the id-bearing user record exists in the bound harness
+log; `sessionCommandsDelivered` means command record plus non-error stdout, not pane rendering.
 
 `LeafAssignmentStatus` is the closed response vocabulary for assignment attempts:
 `attached`, `leaf-taken`, `unknown-session`, `leaf-ref-not-found`, or `leaf-ref-ambiguous`.
@@ -114,6 +119,10 @@ No meaningful cross-repo references found.
 | The model validates a local MCP response and has no external boundary. | - | - |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added replacement-leaf, resolved-knob, and bound-log
+  provenance fields and corrected delivery field semantics to log evidence. Verification metadata
+  remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority):
   `SpawnAgentSessionStatus` gained `spend-override-unsupported`, the pre-spawn refusal for legacy

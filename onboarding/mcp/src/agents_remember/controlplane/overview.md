@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`     |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`     |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -40,6 +40,11 @@ across that prune boundary because their source item is repository/branch-scoped
 than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
 
 ## Hot Path Summary
+
+260707-HFX2-L15 closes the active-phase unbound-worker gap without reviving same-cwd inference.
+Leaf-chain progress credits an unbound worker/reviewer/curator only when the current manager spawned
+it and its catalog row explicitly names `replacementForLeaf == leafKey`; parallel-leaf activity
+under the same manager remains isolated.
 
 260707-HFX2-L13 makes leaf completion and liveness routing current-manager-first, records durable
 leaf/subject provenance, separates address-time routing from historical skip-level walking, and
@@ -219,6 +224,11 @@ response models are `models/operator_inbox.py`.
 | The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 control-plane route impact: replaced same-cwd unbound
+  seat credit with explicit replacement-leaf plus same-manager provenance and covered the
+  parallel-leaf negative. Verification metadata remains pinned until closeout stamps the eventual
+  L15 code commit.
 
 - 2026-07-10T02:39+02:00 — HFX3 retro curation: reconciled route truth with the health-first
   48-hour pending TTL and 500-row cap, architect terminal custody, and the L13 redundant

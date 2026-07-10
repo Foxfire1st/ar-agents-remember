@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`                                             |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`                                             |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -153,6 +153,11 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local liveness plumbing. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — No content impact: 260707-HFX2-L15 removed a stale comment that called
+  liveness pane capture part of dispatch acceptance. Runtime liveness behavior is unchanged;
+  harness-log acceptance is owned by the delivery path. Verification metadata remains pinned until
+  closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: recorded the known landed-archive
