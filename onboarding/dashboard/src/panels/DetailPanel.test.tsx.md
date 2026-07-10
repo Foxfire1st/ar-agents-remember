@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T01:14+02:00                           |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:41+02:00                           |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -62,6 +62,15 @@ The shared fetch doubles used by the detail-panel and notes integrations now rec
 falling through to change-set or notes responses. This is test-harness plumbing for the reader's new
 on-demand body request; it keeps all pre-existing interaction assertions meaningful without making a
 real network request.
+
+### 260707-HFX2-L16 R7 Reader Completion
+
+The on-demand reader tests now distinguish the bounded summary from a fetched full body. One async
+case first observes the summary, then verifies fetched objective, requirements, decision, and
+reference content while the implementation step remains single-rendered. A second case returns 404,
+waits for the explicit unavailable-body message, and proves the summary remains visible. Existing
+step-label assertions were corrected from two copies to one after removal of the duplicate Progress
+section.
 
 ### Logic
 
@@ -131,10 +140,15 @@ readable task content, but it does not exercise the Python reader that populates
 The planning-doc cases are also component-level; observer reader tests prove projection of unbound and
 archived documents.
 
+The new body cases stub `fetch` and prove component behavior only; they do not re-test the Python
+endpoint. Failure coverage is one request plus honest fallback, not a retry-loop test.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
+| The L16 cases pin merged body rendering, unavailable-body fallback, retained summary content, and one step copy. | L650-L865 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The component records body availability, merges absent arrays from the summary, and renders the fallback message. | L343-L417; L1261-L1359 | [DetailPanel.tsx](DetailPanel.tsx) |
 | The drawer under test renders selected series from `analytics.series`, maps only selected root-task lifecycles through enclosure `taskId`/`taskName`, displays child task-document id labels in creation order, and shows top-level task-doc progress. | L305-L452; L496-L508; L553-L556; L717-L785 | [DetailPanel.tsx](DetailPanel.tsx) |
 | The task/series fixture factories include `TaskDocNode.createdAt`, `SeriesNode`, optional task-id/name enclosure mapping, and a nested-progress fixture where top-level progress intentionally differs from backend `stepsDone/stepsTotal`. | L21-L57; L77-L190 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
 | The ordering assertion pins creation-time placement while expecting child task-document id labels and rejecting generated local counters. | L671-L678 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
@@ -153,6 +167,10 @@ archived documents.
 | The `gate-review` / `blocked` fixtures seeded. | L151-L290 | [dev/fixtures.ts](../dev/fixtures.ts) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 R7: added async full-body merge and 404 summary-fallback
+  regressions, and changed step assertions to require exactly one Implementation steps copy.
+  Verification metadata stays pinned until closeout stamps the eventual L16 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13: taught the shared fetch stubs to serve full task
   documents for the on-demand reader path while preserving change-set and notes API behavior.

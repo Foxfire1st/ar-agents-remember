@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T22:21+02:00                           |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T13:41+02:00                           |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -23,9 +23,8 @@ Task 11 adds a render assertion for the optional lifecycle tag badge. Task 22 ad
 badge coverage; the Task 22 follow-up removes the old local Hide assertion and keeps only destructive
 Terminate action coverage. The L5 fix pass adds **hover-title (fix 4)** coverage: a long label exposes its
 full text through a `title` so the row's CSS ellipsis stays readable, and a bound session's `title` also
-appends the resolved leaf name. 260703-L14 adds a second describe, **"SessionList command tree
-(L14)"**, driving the grouped rendering with hand-built `SessionGroup` fixtures (membership
-derivation is covered separately in `data/sessionGroups.test.ts`).
+appends the resolved leaf name. The grouped describe now tracks L16 and drives hand-built
+`SessionGroup` fixtures; membership derivation remains in `data/sessionGroups.test.ts`.
 
 ## Code Commentary
 
@@ -62,18 +61,35 @@ sessions, without calling `onSelect` and without expanding the group (`aria-expa
 the member row stays unmounted) — the cleanup action is deliberately decoupled from the
 expand/collapse toggle and from row selection.
 
+L16 adds two promotion-ratchet cases. The first feeds an orchestrator→manager→worker chain and
+asserts all three rows render, the manager/worker clamp to depth 1, and only the manager owns a child
+caret. The second runs at 16rem and 24rem, checks the horizontal-overflow marker, asserts hover titles
+for long role/lifecycle/turn/status values, and rerenders with changed width/content so the row remains
+readable after layout/content change.
+
 ### Invariants And Boundaries
 
 Render + interaction only; no backend, no WebSocket, no xterm. The selection assertion reads React
 Aria's emitted `data-selected` rather than a CSS class, so it tracks the primitive's real state.
 
+Reviewer D-N2 is a known evidence limitation: jsdom pins the component's `data-overflow-x` marker and
+Panda recipe rather than computed layout, and the committed forest fixture is three sessions. The
+reviewer's independent 30-member probe supplied the fleet-size proof; a future browser layout test can
+replace the marker proxy when the suite has that seam.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The component under test. | — | [SessionList.tsx](SessionList.tsx) |
+| The component under test implements forest ordering, manager collapse, bounded layout, and hover titles. | L242-L484 | [SessionList.tsx](SessionList.tsx) |
+| Pure data grouping is tested separately, including the 30-chat fleet shape. | L184-L277 | [sessionGroups.test.ts](../data/sessionGroups.test.ts) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16: added the orchestrator-parented manager-subtree
+  exact-once regression and two-width bounded/hover-complete rerender case; retitled the suite for
+  the L16 forest contract and recorded the jsdom/fleet-size evidence limits from reviewer D-N2.
+  Verification metadata stays pinned until closeout stamps the eventual L16 code commit.
 
 - 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added coverage for the new
   `sessionTitle()` landed-row rendering — label · master · leaf · turn-state · landed reason/at/edge ·

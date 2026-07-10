@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:41+02:00 |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -325,6 +325,16 @@ and the `Chats` `SessionList` switcher).
   shipped cockpit panel. Covered by `FlowTab.test.tsx` (default model, nav switching, `initialModel`
   fallback, per-model render census, and verbatim invariant assertions).
 
+## 260707-HFX2-L16 Panel Contract
+
+`SessionList` now renders every supplied member through one complete spawn-edge forest in both grouped
+and flat paths. Non-manager ancestry never suppresses descendants; manager rows alone own collapse;
+visual depth clamps to one child indent; live rows sort first; and row/chip truncation is horizontally
+bounded with full values exposed on hover. `DetailPanel` completes the on-demand reader by merging
+fetched bodies with absent-array preservation, surfacing an honest summary fallback when the body is
+unavailable, and removing the duplicate Progress step list. The panel inventory and cockpit routing
+are unchanged.
+
 ## Invariants And Boundaries
 
 - **Presentational, near-read-only** — panels read the store and render (no clock; ages are
@@ -345,15 +355,20 @@ an idle dashboard at zero store writes.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The shared panel chrome every panel renders through. | [grammar/Panel.tsx](agents-remember/dashboard/src/grammar/Panel.tsx) |
-| The pure selectors the panels read (queue, tree, engine state, drift segments). | [data/selectors.ts](agents-remember/dashboard/src/data/selectors.ts) |
-| The projection node shapes the panels render. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The lifecycle next-step engine (historically specced by the retired build-job model). | [tools/next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| The flow-model registry that holds the `FlowTab` canvas content (8 static models + segment/model types). | [flowModels.ts](agents-remember/dashboard/src/panels/flowModels.ts) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| SessionList implements the complete forest, collapse, order, and width/hover contract. | L242-L484 | [SessionList.tsx](agents-remember/dashboard/src/panels/SessionList.tsx) |
+| DetailPanel implements body availability, summary merge, fallback copy, and one step list. | L343-L417; L1261-L1359 | [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
+| The session-list tests pin forest completeness and the two-width hover/overflow contract. | L353-L420 | [SessionList.test.tsx](agents-remember/dashboard/src/panels/SessionList.test.tsx) |
+| The detail-panel tests pin body merge, fallback, and single-rendered implementation steps. | L650-L865 | [DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
+| The shared panel chrome remains the route's presentation frame. | L1-L120 | [grammar/Panel.tsx](agents-remember/dashboard/src/grammar/Panel.tsx) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 route impact: refreshed the existing SessionList and
+  DetailPanel responsibilities for complete spawn forests, manager-only collapse, bounded hover-
+  recoverable rows, merged task bodies, explicit summary fallback, and one implementation-step list.
+  Panel inventory/routing is unchanged. Verification metadata stays pinned until closeout.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6 route impact: migrated `DetailPanel` to fetch only
   the displayed task body on demand, cache it by path/revision, and keep summary fallback behavior;

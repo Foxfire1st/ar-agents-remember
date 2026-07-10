@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `scripts/sync-dashboard.py`                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-28T16:17+02:00                     |
+| lastUpdated            | 2026-07-10T13:41+02:00                     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../overview.md`                              |
@@ -52,6 +52,16 @@ recorded fingerprint to the current one and is skipped (returns 0) until a finge
 placeholder) or when no `src` tree is present (a packaged install). `sync()` replaces the target, calls
 `write_fingerprint()` to record the current build inputs, then re-checks; `main` exposes `--check`.
 
+### 260707-HFX2-L16 Final Combined Package Proof
+
+The final L16 candidate was rebuilt after synchronizing onto landed L15 base `c8818285`. The shipped
+`package_data/dashboard/` tree was byte-identical to `dashboard/dist/`; `--check` passed both its
+source-fingerprint and tree-digest gates; the packaged entry asset carried the L16 sprint-rail and R7
+reader markers; and worktree package resolution proved the landed L15 Python code plus the rebuilt
+L16 bytes ship from one `agents_remember` package root. L15 changed no dashboard or packaged-dashboard
+path, so no L15 JavaScript marker exists or should be invented. The `/api/task-document` source marker
+belongs to `dashboard/src/data/taskDocuments.ts`, not `DetailPanel.tsx` (reviewer CD-N1 correction).
+
 ### Build present vs. absent `dist`
 
 The slice-05 Vite build now exists and the shipped bundle is its output; the `--check` call is wired
@@ -77,17 +87,33 @@ against the (possibly missing) build output. The historical placeholder
 - The source-freshness gate is skipped (returns 0) without a recorded fingerprint or without a
   `dashboard/src` tree, so legacy placeholders and packaged installs are never falsely failed.
 
+### Todos
+
+- Reviewer D2-N1: `sync()` records the source fingerprint after copying the already-built tree. A
+  source edit between build and sync can therefore stamp current source beside stale build output.
+  This candidate closes that evidence gap with source-to-served-byte markers; a future build-time
+  fingerprint or embedded build manifest would close it mechanically.
+- Reviewer CD-N2/D2-N3: generated hashed assets are an atomic replacement set. Closeout must stage
+  every new asset together with every deleted asset, `index.html`, and the fingerprint; omitting the
+  untracked additions leaves a broken package tree.
+- Reviewer D2-N2: run `python3 -m unittest mcp.tests.test_sync_dashboard` from the repo root with
+  system Python. The project venv's installed `mcp` package shadows the local `mcp.tests` namespace.
+
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The sync pattern this mirrors. | [scripts/sync-runtime.py](agents-remember/scripts/sync-runtime.py) |
-| The skills gate whose canonical-source hashing the fingerprint mirrors. | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
-| The commit/push gate that runs `--check` (skills + runtime + dashboard). | [.githooks/pre-commit](agents-remember/.githooks/pre-commit) |
-| The static mount that serves the synced bundle. | [serving/static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The frontend sub-project home + build/ship contract. | [dashboard/README.md](agents-remember/dashboard/README.md) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The script digests build inputs, records the sibling fingerprint during sync, and checks fingerprint plus dist/package tree equality. | L30-L52; L79-L130; L151-L179 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
+| The isolated unit suite covers tree replacement, fingerprint staleness, config inputs, test exclusion, and sync/check round trips. | L24-L210 | [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
+| The static resolver serves the committed package-data directory at the root after API routes. | L18-L35 | [serving/static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
+| The API literal used in the L16 source-to-package marker proof is owned by the dashboard data adapter. | L10-L17 | [taskDocuments.ts](agents-remember/dashboard/src/data/taskDocuments.ts) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 reviewed-no-source-change boundary update: recorded the
+  final L15+L16 build/sync/package proof, corrected the `/api/task-document` marker attribution, and
+  captured the fingerprint sequencing, Python invocation, and atomic hashed-asset staging notes.
+  The script itself is unchanged at the L16 base; verification metadata stays pinned until closeout.
 
 - 2026-06-28T16:17+02:00 — Task 35 source-freshness gate: `sync` now fingerprints the dashboard build
   inputs (the `src` tree minus `.test.`/`.spec.`/`.stories.` modules, plus the production config files)

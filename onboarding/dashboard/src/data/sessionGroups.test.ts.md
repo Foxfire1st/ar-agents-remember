@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionGroups.test.ts`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T21:17+02:00                           |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T13:41+02:00                           |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,40 +16,19 @@
 
 ## Purpose
 
-Unit tests for the pure G1 command-tree derivation (`data/sessionGroups.ts`, 260703-L14). The
-grouping is deliberately store-free, so membership, tiering, and the at-scale shape are all pinned
-here as data-in/data-out cases — the component suite (`SessionList.test.tsx`) only covers rendering.
+Unit tests for the pure L16 rail grouping in `data/sessionGroups.ts`. The grouping is store-free, so
+repo isolation, membership, tiering, malformed-claim handling, enclosure independence, and the
+30-chat shape are pinned as data-in/data-out cases; `SessionList.test.tsx` covers rendering.
 
 ## Code Commentary
 
 ### Logic
 
-Six cases over small doc/enclosure/session builders (a sprint doc carrying
-`orchestrates: ["260706_management-repo"]`, a commanded and a free master, live enclosures):
-
-1. **Deck membership** — command-role provenance (backend orchestrator/strategist/manager
-   `spawnRole`) plus the developer-facing architect chat claiming the orchestration task's own
-   qualified leaf all land on the deck
-   (label `{sprint title} · command deck`, gold tier, `4 chats · 4 live`); a worker with a master
-   leaf claim does NOT (role provenance is the deck gate) and its master group is `management` +
-   `nested` because the sprint names it.
-2. **Uncommanded master** — a leaf claim groups under its master with no tier and no indent when
-   no orchestration doc names it.
-3. **D3 flat-run regression** — with NO orchestration task, a manager-role session and a plain one
-   derive zero groups (all ungrouped): the sidebar's unchanged-flat contract.
-4. **Archive roll-up (HFX2-L11 round-2 F4 narrowed)** — only a `status:"landed"` claim rolls into
-   the `landed` archive group (unmarked, `defaultCollapsed`, label `"landed archive"`,
-   `1 chat · archived`); a legacy `status:"exited"` claim and a claim on an absent master with no
-   status both route to the pre-existing `ungrouped` bucket instead. Before L11, `exited`/absent
-   rows were folded into the archive too — that let sessions the backend's landed-cleanup endpoint
-   can't actually close pile up in the group the cleanup button targets, so the derivation now only
-   ever admits genuinely `landed` rows.
-5. **Case-insensitive leaf join** — an uppercase doc-id claim matches the slugified lowercase
-   enclosure `leafId`.
-6. **30-chat scale fixture** — 4 deck + 6 + 7 master + 13 `status:"landed"` sessions collapse into
-   exactly four groups in deck→masters→landed order with per-group counts (`4 chats · 2 live`,
-   `6 chats · 2 live`, `7 chats · 1 live`, `13 chats · archived`) and nothing ungrouped — the
-   "reads at a glance at 30 chats" requirement as data.
+Eight cases cover: a command-claiming sprint beside claim-less command roles; an uncommanded sprint;
+the no-orchestration flat run; explicit landed-only archive membership; valid grouping without
+consulting enclosure casing/liveness; a 30-chat fleet split into two sprint boxes plus the landed
+archive and a flat command remainder; identical master folders isolated by repository (including
+the repo guard on `orchestrates`); and an explicit error group for malformed leaf claims.
 
 ### Invariants And Boundaries
 
@@ -60,10 +39,15 @@ Pure logic tests (no DOM, no store). Fixture builders satisfy the full `TaskDocN
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The derivation under test. | — | [sessionGroups.ts](sessionGroups.ts) |
-| The component-level rendering/collapse coverage that complements this suite. | L14 describe | [SessionList.test.tsx](../panels/SessionList.test.tsx) |
+| The derivation under test. | L48-L159 | [sessionGroups.ts](sessionGroups.ts) |
+| The component suite pins forest completeness, manager collapse, width bounding, and hover recovery. | L114-L420 | [SessionList.test.tsx](../panels/SessionList.test.tsx) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16: rewrote the grouping expectations for one
+  repo-qualified box per sprint, enclosure-independent valid claims, claim-less command rows, the
+  malformed-claim error box, same-folder cross-repo isolation, and the revised 30-chat shape.
+  Verification metadata stays pinned until closeout stamps the eventual L16 code commit.
 
 - 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive, round 2 F4 fix): `status:"landed"` rows
   route into the new collapsed "landed archive" group; legacy `status:"exited"`/absent-enclosure rows
