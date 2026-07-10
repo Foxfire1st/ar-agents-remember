@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-10T13:03+02:00                                 |
-| lastVerifiedCommitHash |                                                        `c881828542f0ca916ce8b1d4fd5ab8a914e24110`|
-| lastVerifiedCommitDate |                                                        2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash |                                                        `fdff55f2921d7aaa8ba240c11087d02c15a170d7`|
+| lastVerifiedCommitDate |                                                        2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ into a matching hosted terminal session through the server-side echo-confirmed
 paste seam.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Injected Delivery Time
+
+`deliver_inbox_entry` accepts optional `delivery_at` and uses it for persisted delivery metadata.
+The supervisor supplies its sweep timestamp, preventing wall-clock drift from changing fixture
+retention or retry behavior; ordinary callers retain the existing current-time default.
 
 ### Logic
 
@@ -104,6 +110,9 @@ now lives one level down, in `serving.injector.deliver` + `serving.harness_adapt
 | `deliver_inbox_entry` threads `redelivery_floor_seconds` into every `record_delivery` path. | L42-L90 | [inbox_delivery.py](agents-remember/mcp/src/agents_remember/serving/inbox_delivery.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added an optional injected delivery timestamp so
+  supervisor simulation and production decisions persist on the same clock.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: changed hosted inbox acceptance from pane echo/turn
   evidence to bound harness-log evidence and persisted the binding without replacing newer catalog

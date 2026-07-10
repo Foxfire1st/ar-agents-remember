@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/landing.py`            |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-09T13:36:16+02:00                               |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                           |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                                           |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ catalog rows as `status:"landed"` after successful worktree integration/finaliza
 into the dashboard archive while tmux remains available for inspection.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Binding-Role Landing Filter
+
+Completion-edge seat selection now matches the current binding role rather than immutable spawn
+provenance. Rebound or hand-opened typed pipeline seats therefore land with their actual leaf role;
+landing status/provenance and tmux-preservation behavior are unchanged.
 
 ### Logic
 
@@ -45,12 +51,15 @@ landed row is an archive classification, not terminal cleanup.
 
 | Finding | Source Path |
 | --- | --- |
-| Completion-edge controllers call `land_seats_for_leaf` after successful integrate/finalize and log each landed entry. | [../../controllers/worktree_tools.py](../../controllers/worktree_tools.py) |
+| Completion-edge controllers call `land_seats_for_leaf` after successful integrate/finalize and log each landed entry. | [worktree_tools.py](../controllers/worktree_tools.py) |
 | The catalog status transition and landing provenance fields live in `TerminalCatalog`. | [terminal_catalog.py](terminal_catalog.py) |
 | Manual retire remains the destructive/session-closing path. | [retire.py](retire.py) |
 | Tests cover leaf/role selection and completion-edge auto-land results. | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: moved landing role selection to current binding
+  identity; no change to archive lifecycle semantics.
 
 - 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: corrected the callable contract after
   reviewer F2. `roles` is a required completion-edge role set; the unused `LANDABLE_ROLES`

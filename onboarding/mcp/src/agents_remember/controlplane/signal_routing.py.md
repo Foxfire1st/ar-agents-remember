@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-10T13:03+02:00                                             |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`|
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`|
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -24,6 +24,14 @@ ladder's rung-2 skip-level target and the dead-upstream grandparent signal, plus
 liveness check both the ladder and that two-hop walk use to skip past a confirmed-dead node.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Current-Seat Routing
+
+Current discovery, leaf anchoring, chain credit, manager scoping, and architect lookup use
+`binding_role`/`binding_leaf_key`. Different roles on one leaf are visible and unbound replacements
+still credit their declared leaf. The historical `_derive_spawn_owner` ladder hop intentionally
+continues to use `spawn_role`: that walk reconstructs who spawned a dead seat, not who occupies its
+current binding.
 
 ### 260707-HFX2-L13 Manager-First Routing And Chain Progress
 
@@ -136,6 +144,9 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: moved current routing and chain credit to binding
+  identity while preserving the one intentional historical spawn-provenance ladder hop.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: replaced same-worktree unbound-seat credit with the
   explicit `replacementForLeaf` + same-manager discriminator and extended the allowed replacement

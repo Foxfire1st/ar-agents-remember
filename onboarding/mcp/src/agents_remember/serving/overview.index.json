@@ -32,6 +32,7 @@
     "mcp/src/agents_remember/serving/retire.py",
     "mcp/src/agents_remember/serving/retire_policy.py",
     "mcp/src/agents_remember/serving/scope.py",
+    "mcp/src/agents_remember/serving/seat_binding.py",
     "mcp/src/agents_remember/serving/seat_events.py",
     "mcp/src/agents_remember/serving/sim.py",
     "mcp/src/agents_remember/serving/static.py",
@@ -46,8 +47,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 34,
-    "fileSidecars": 34,
+    "sourceFilesInScope": 35,
+    "fileSidecars": 35,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -57,6 +58,7 @@
     "agents_remember",
     "app",
     "assignment",
+    "binding",
     "build",
     "build_info",
     "catalog",
@@ -96,6 +98,7 @@
     "retire_policy",
     "scope",
     "seat",
+    "seat_binding",
     "seat_events",
     "serving",
     "signals",
@@ -116,7 +119,7 @@
     "validation"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L15 makes harness JSONL the only submitted-delivery authority across spawn, inbox, supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0 s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace re-paste, with pane capture restricted to duplicate prevention and failure diagnostics. The catalog persists resolved knobs, log id/path, and `replacementForLeaf`; safe binding re-reads the latest row. Codex knobs...",
+    "summary": "260707-HFX2-L17 centralizes seat normalization in `seat_binding.py`: `spawnRole` is immutable provenance, `seatRole` is current binding, and uniqueness is one live owner per canonical leaf-role pair. `terminal_catalog.py` migrates old rows; opener/assignment liveness-check the same-role holder; attach requires identity for an untyped hand-opened harness; retire/supervisor/ landing paths consume binding identity. The supervisor also preserves role in findings, rows, cooldowns, coalescing, and events, and uses one injected sweep timestamp for delivery writes. 260707-HFX2-L15 makes harness JSO...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",
@@ -141,7 +144,7 @@
       "mcp/src/agents_remember/serving/retire.py",
       "mcp/src/agents_remember/serving/retire_policy.py",
       "mcp/src/agents_remember/serving/scope.py",
-      "mcp/src/agents_remember/serving/seat_events.py"
+      "mcp/src/agents_remember/serving/seat_binding.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -188,10 +191,10 @@
       "retire_policy",
       "scope.py",
       "scope",
+      "seat_binding.py",
+      "seat_binding",
       "seat_events.py",
-      "seat_events",
-      "sim.py",
-      "sim"
+      "seat_events"
     ]
   },
   "fallback": {

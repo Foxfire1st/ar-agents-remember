@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionGroups.test.ts`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T13:41+02:00                           |
-| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
-| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -21,6 +21,11 @@ repo isolation, membership, tiering, malformed-claim handling, enclosure indepen
 30-chat shape are pinned as data-in/data-out cases; `SessionList.test.tsx` covers rendering.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Binding-Role Grouping Proof
+
+Adds a stale-provenance case proving command-deck classification follows current `seatRole`, so a
+session rebound as a command seat is not misgrouped by its original spawn role.
 
 ### Logic
 
@@ -43,6 +48,9 @@ Pure logic tests (no DOM, no store). Fixture builders satisfy the full `TaskDocN
 | The component suite pins forest completeness, manager collapse, width bounding, and hover recovery. | L114-L420 | [SessionList.test.tsx](../panels/SessionList.test.tsx) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: proved sprint group classification is binding-role
+  authoritative when spawn provenance disagrees.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16: rewrote the grouping expectations for one
   repo-qualified box per sprint, enclosure-independent valid claims, claim-less command rows, the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_opener.py`    |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T13:03+02:00                                  |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`              |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`              |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -24,6 +24,16 @@ used to live inline in `app.py`'s opener handler so neither call path duplicates
 serving-layer policy helper reused by both transports instead of a route-local copy.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Spawn Pair Arbitration
+
+The opener derives the binding role from persisted binding state, the current
+`AR_SPAWN_ROLE`, or legacy transport fallback, then liveness-checks only the same leaf-role owner.
+A dead same-role holder is marked exited and routine replacement proceeds; a live same-role holder
+still returns `leaf-taken`, while different roles coexist. The opened catalog row persists
+`seat_role` and returns it in the result. Reviewer O3 is intentional current behavior: when an
+existing session id is reopened with a different role env, its persisted binding outranks the new
+env; role changes use attach/rebind, and normal spawning uses fresh ids.
 
 ### Logic
 
@@ -130,6 +140,11 @@ No meaningful cross-repo references found.
 | This helper spawns tmux + mutates only the local dashboard terminal catalog. | — | — |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made spawn arbitration live and pair-scoped, persisted
+  current seat identity, and documented reviewer O3's deliberate existing-binding precedence on
+  the atypical same-id reopen path. Verification metadata remains pinned until closeout stamps the
+  eventual L17 commit.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: threaded replacement-leaf, resolved-knob, and existing
   bound-log provenance through the shared terminal opener. Verification metadata remains pinned

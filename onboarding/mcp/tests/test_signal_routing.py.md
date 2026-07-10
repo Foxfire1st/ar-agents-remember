@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-10T13:03+02:00                        |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`|
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`|
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ terminal catalog's spawn provenance, entirely without a caller-supplied address.
 and its `is_seat_dead` liveness helper.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair Credit And Addressing At Scale
+
+New cases exercise binding-role manager/architect discovery and prove a pair-bound worker credits
+its leaf and resolves the correct manager at fleet sizes 3 and 30. Historical spawn-parent walking
+remains separately tested.
 
 ### 260707-HFX2-L13 Manager Resolution And Chain Credit
 
@@ -120,6 +126,9 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added pair-bound chain-credit/manager-addressing proof
+  at two fleet sizes and current-role discovery coverage.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added positive and parallel-leaf-negative regressions
   for explicit replacement-leaf chain credit. Verification metadata remains pinned until closeout

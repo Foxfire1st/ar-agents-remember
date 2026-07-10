@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-09T13:36:16+02:00                     |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                 |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                                 |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -25,6 +25,12 @@ hooks (including the best-effort guard that prevents a landing failure from fail
 succeeded completion edge).
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair Retirement Regressions
+
+The authority matrix now uses binding leaf/role, covers manager retirement of own-master pipeline
+roles, and proves an unbound failed dispatch resolves its master through `replacementForLeaf`.
+Owner-never-self-retires and portfolio authority remain pinned.
 
 ### Logic
 
@@ -125,7 +131,7 @@ This suite directly exercises five source files and the leaf task doc's requirem
 | `AutoLandHookIntegrationTests` exercises `worktree_integrate_tool`/`lifecycle_finalize_task_tool`/`_auto_land_completed_seats` including the best-effort landing guard. | `AutoLandHookIntegrationTests` | [../src/agents_remember/controllers/worktree_tools.py](../src/agents_remember/controllers/worktree_tools.py) |
 | `RetirementSettingsConfigTests` exercises `RetirementSettings` defaults (config parsing itself is covered separately in `test_config.py::RetirementSettingsTests`). | `RetirementSettingsConfigTests` | [../src/agents_remember/mcp/config.py](../src/agents_remember/mcp/config.py) |
 | `SessionRetireToolTests`/`SessionRenameToolTests` exercise `session_retire_payload`/`session_rename_payload` end-to-end. | `SessionRetireToolTests`; `SessionRenameToolTests` | [../src/agents_remember/mcp/tools/terminal.py](../src/agents_remember/mcp/tools/terminal.py) |
-| The leaf task doc's failing-first requirement list this suite implements. | Requirements | [../../../../../../../../../tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md](../../../../../../../../../tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md) |
+| The leaf task doc's original failing-first requirement list this suite extends. | Requirements | [10_seat-retirement-and-chat-cleanup.md](ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md) |
 
 ## Cross-Repo References
 
@@ -136,6 +142,9 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is exercised by this local test suite. | — | — |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: converted retirement tests to pair identity and added
+  unbound failed-dispatch manager cleanup coverage.
 
 - 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: removed the direct
   `retire_seats_for_leaf` tests with the deleted helper, documented the current `LandSeatsForLeafTests`

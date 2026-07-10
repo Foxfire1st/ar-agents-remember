@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-10T01:14+02:00                                            |
-| lastVerifiedCommitHash |                                                                   `5b49fa85a51d527a5a216a88c361c08246c759d0`|
-| lastVerifiedCommitDate |                                                                   2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash |                                                                   `fdff55f2921d7aaa8ba240c11087d02c15a170d7`|
+| lastVerifiedCommitDate |                                                                   2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -20,6 +20,12 @@ File-backed operator inbox store for short-lived polling plus hosted-session
 delivery metadata.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair-Preserving Renewal
+
+`renew` can refresh `seatRole` with `leafKey` and subject identity when one coalesced supervisor
+condition re-fires. Pair identity therefore survives readdressing to a replacement manager and
+prevents same-text findings for different roles from becoming one row.
 
 ### 260707-HFX2-L13 Transition And Readdress Mutations
 
@@ -131,6 +137,9 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made coalesced inbox renewal preserve the current
+  leaf-role subject pair through owner readdressing.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: made rung advancement stamp both dwell anchors
   and allowed coalesced supervisor rows to preserve chain fields and readdress the current manager.

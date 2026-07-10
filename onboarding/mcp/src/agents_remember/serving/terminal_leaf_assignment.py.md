@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_leaf_assignment.py` |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-09T14:05+02:00                                  |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`              |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`              |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -22,6 +22,14 @@ dashboard route and the agent-facing MCP tool on the same catalog uniqueness rul
 duplicating conflict logic in separate call paths.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Role-Aware Attach
+
+Assignment now accepts an explicit role, defaults a spawned harness to its provenance role, keeps a
+previously typed binding, fixes terminals to `terminal`, and returns `role-required` for an untyped
+hand-opened harness. Conflict detection is pair-scoped and probes the recorded tmux owner before
+refusing: a dead same-role row is marked exited, whereas a live same-role row owns the pair.
+Successful reattachment writes leaf and role in one catalog upsert and reports both previous values.
 
 ### Logic
 
@@ -87,6 +95,10 @@ No meaningful cross-repo references found.
 | This helper mutates only the local dashboard terminal catalog. | - | - |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added explicit/defaulted seat-role attachment,
+  `role-required` for untyped hand-opened harnesses, live same-pair arbitration, and atomic
+  leaf-plus-role moves. Verification metadata remains pinned until closeout stamps L17.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: updated the assignment boundary from
   "missing or terminated" to "missing or non-running" to match landed archive semantics; landed rows

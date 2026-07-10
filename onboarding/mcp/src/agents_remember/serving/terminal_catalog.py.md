@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`              |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`              |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -21,6 +21,18 @@ It records enough metadata to show sessions after a browser/dashboard restart an
 still-live tmux session without asking the browser to remember process-local state.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair-Binding Identity
+
+`TerminalCatalogEntry.seat_role` is mutable binding identity while `spawn_role` remains immutable
+origin provenance. Legacy rows migrate in place from `spawnRole` (or `chat`; terminals remain
+`terminal`), `binding_leaf_key` includes an unbound replacement's declared target, and
+`with_leaf_binding` moves leaf and role atomically. `active_for_leaf` now arbitrates one live owner
+per `(leaf_key, seat_role)`, allowing different pipeline roles to coexist on the canonical leaf.
+The one-time read migration writes normalized `seatRole` values back without changing row count,
+order, ids, or other fields. Reviewer O1 is retained as a low-severity concurrency note: that
+self-limiting migration rewrite occurs from the lock-free read path and could theoretically race a
+concurrent mutator at first upgrade read, though unique-temp atomic replace prevents corruption.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -221,6 +233,12 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local dashboard catalog. | — | — |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: split mutable `seatRole` binding identity from
+  immutable `spawnRole` provenance, migrated legacy rows in place, added atomic leaf-role moves and
+  replacement-aware binding lookup, and changed live uniqueness to the pair. Recorded reviewer O1
+  accurately as a low one-time migration lost-update risk, not a blocker. Verification metadata
+  remains pinned until closeout stamps the eventual L17 commit.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added replacement-leaf, resolved-knob, and bound-log
   provenance plus a targeted lock-safe `bind_session_log` update that preserves concurrent liveness

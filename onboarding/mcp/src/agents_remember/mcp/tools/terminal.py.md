@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`        |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -24,6 +24,14 @@ serving primitives so an orchestrator can spawn a manager and a manager a worker
 clicks.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 MCP Pair-Binding Surface
+
+Attach accepts an optional role, delegates live arbitration through `LeafAssignmentHost`, and
+returns `seatRole` plus `previousSeatRole`. Spawn responses expose the derived seat role and write
+brief/turn-report expectations with that role. Retire authority consumes current binding identity
+rather than spawn provenance, so an explicitly typed hand-opened seat and an unbound failed
+dispatch resolve through the same pair model.
 
 ### Logic
 
@@ -256,6 +264,10 @@ No meaningful cross-repo references found.
 | The tool operates on the local dashboard terminal catalog only. | - | - |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: threaded seat role through attach/spawn payloads and
+  expectation rows, and switched retirement checks to binding identity with replacement-leaf
+  recovery. Verification metadata remains pinned until closeout stamps L17.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: replaced capture/turn-start spawn credit with bound-log
   user/command evidence, added targeted command reissue and catalog log binding, recorded resolved

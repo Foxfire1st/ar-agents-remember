@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -28,6 +28,13 @@ suite: the R6-mandated silent-seat, dead-intermediate, and dead-manager-with-liv
 mid-turn pane suppression, and fast sweep cadence without per-second owner inbox noise.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair-Scoped Supervisor Regressions
+
+Tests prove same-leaf findings for different seat roles do not coalesce, current binding identity
+drives suspect/orphan/owner behavior, and injected sweep time reaches delivery records. The
+fixed-point ceiling changes from `seeded*8` to `seeded*9` because pair-scoped rows add one bounded
+snapshot per seed; reviewer O4 correctly classifies this as informational, not divergence.
 
 ### 260707-HFX2-L13 Chain, Ladder, And Manager-First Regressions
 
@@ -191,6 +198,9 @@ No meaningful cross-repo references found.
 | Sweep-local behavior only. | — | — |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: covered pair-scoped findings/coalescing/routing and
+  sweep-clock delivery; recorded the bounded O4 fixed-point adjustment.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: covered replacement-leaf progress suppression and the
   one-row redelivery budget on the log-confirmed delivery path. Verification metadata remains pinned

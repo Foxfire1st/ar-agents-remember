@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -29,6 +29,12 @@ redoing the response protocol (task doc `08_degradation-protocol-and-system-spec
 objective).
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Current-Role Degradation Recipients
+
+Provider degradation recipient discovery uses `binding_role`, making a hand-opened seat explicitly
+attached as orchestrator/manager discoverable and avoiding phantom absence caused by missing
+`spawnRole`. The degradation state machine and thresholds are unchanged.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -151,15 +157,15 @@ documentation, so it is cited as a repo-internal reference below rather than her
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The developer plan-gate ruling defining the detector/response protocol, the providers-only scope, and the Sentry-replaceable seam requirement this module is shaped around. | objective; decisions[] | [../../../../../../ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/08_degradation-protocol-and-system-specialist.json](../../../../../../../ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/08_degradation-protocol-and-system-specialist.json) |
-| The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes). | whole module | [metrics.py](../metrics.py) |
-| The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). | action="stop" | [../../controllers/provider_tools.py](../../controllers/provider_tools.py) |
-| The inbox record schema (`system-specialist` `AgentRole`, `degradation-alert` `InboxMessageKind`) this module posts against. | L19-L33 | [../../controlplane/operator_inbox_records.py](../../controlplane/operator_inbox_records.py) |
-| The store this module appends/compacts durable inbox rows through. | whole module | [../../controlplane/operator_inbox_store.py](../../controlplane/operator_inbox_store.py) |
-| The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. | whole module | [../../serving/inbox_delivery.py](../../serving/inbox_delivery.py) |
-| The terminal catalog this module reads to resolve running orchestrator/manager sessions as alert recipients. | whole module | [../../serving/terminal_catalog.py](../../serving/terminal_catalog.py) |
+| The developer plan-gate ruling defining the detector/response protocol, the providers-only scope, and the Sentry-replaceable seam requirement this module is shaped around. | objective; decisions[] | [08_degradation-protocol-and-system-specialist.json](ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/08_degradation-protocol-and-system-specialist.json) |
+| The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes). | whole module | [metrics.py](metrics.py) |
+| The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). | action="stop" | [provider_tools.py](../controllers/provider_tools.py) |
+| The inbox record schema (`system-specialist` `AgentRole`, `degradation-alert` `InboxMessageKind`) this module posts against. | L19-L33 | [operator_inbox_records.py](../controlplane/operator_inbox_records.py) |
+| The store this module appends/compacts durable inbox rows through. | whole module | [operator_inbox_store.py](../controlplane/operator_inbox_store.py) |
+| The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. | whole module | [inbox_delivery.py](../serving/inbox_delivery.py) |
+| The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role. | whole module | [terminal_catalog.py](../serving/terminal_catalog.py) |
 | `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). | whole module | [../mcp/provider_degradation_settings.py](../mcp/provider_degradation_settings.py.md) |
-| The serving sampling loop that invokes `evaluate_provider_degradation` once per tick after recording a metrics sample. | L455-L458 (app.py) | [../../serving/app.py](../../serving/app.py.md) |
+| The serving sampling loop that invokes `evaluate_provider_degradation` once per tick after recording a metrics sample. | L455-L458 (app.py) | [app.py](../serving/app.py.md) |
 | Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. | whole module | [../../../tests/test_provider_degradation.py](../../../tests/test_provider_degradation.py.md) |
 
 ## Cross-Repo References
@@ -171,6 +177,9 @@ No meaningful cross-repo references found.
 | This protocol is providers-only this iteration; Sentry integration is a future detection source in a separate task (`260703_spotlight-dev-observability`), not yet a cross-repo/cross-system boundary this module touches. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: switched live orchestrator/manager recipient discovery
+  to binding identity; no route-level degradation-protocol change.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass: created after the builder R1 pass

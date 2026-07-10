@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_leaf_assignment.py`      |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T20:50+02:00                            |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`        |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`        |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ wrapper. It is pure filesystem/unit coverage for moving a hosted terminal/chat s
 `leafKey` without spawning a session or touching tmux.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Attach Pair Regressions
+
+Tests cover spawn-role defaulting, explicit role claim for a hand-opened harness, `role-required`
+when untyped, atomic role changes, different-role coexistence, live same-role refusal, and dead
+same-role supersession with the stale row marked exited.
 
 ### Logic
 
@@ -76,6 +82,9 @@ No meaningful cross-repo references found.
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: expanded assignment coverage across role resolution,
+  pair arbitration, dead-holder replacement, and atomic rebind.
 
 - 2026-07-07T20:50+02:00 — 260707-HFX-L4: added task-doc fixtures so the MCP attach payload
   normalizes a legacy leaf slug to the canonical qualified key, and added invalid-ref no-mutation

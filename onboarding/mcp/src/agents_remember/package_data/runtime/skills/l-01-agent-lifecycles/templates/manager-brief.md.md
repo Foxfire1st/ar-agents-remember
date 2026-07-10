@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                  |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:48+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                                  |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 
 ## Purpose
 
@@ -32,8 +32,9 @@ Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
 manager` header line (the router's condition-2 recognizer). Placeholder slots: the master + its
 leaf list with dependency notes; orchestrator-compiled trust facts (no checkpoint re-run); the
 branch base block (master branch off the CURRENT super @ tip); dispatch defaults (worker-brief
-template, `AR_SPAWN_ROLE=worker`, qualified leaf keys, the manager -> builder -> reviewer ->
-curator leaf closeout chain, fresh curator spawns with `AR_SPAWN_ROLE=curator`, concurrency,
+template, `AR_SPAWN_ROLE=worker`, pair claims from environment role plus qualified leaf keys, the
+manager -> builder -> reviewer -> curator leaf closeout chain, fresh curator spawns with
+`AR_SPAWN_ROLE=curator` on the curator `(leaf, role)` pair, concurrency,
 and — **260707-HFX-L7** — a one-line "Provider degradation:" bullet); the exit block (spawn the
 reviewer with `AR_SPAWN_ROLE=reviewer`, RAISE `master-handover-approval` with the verdict attached
 — the ORCHESTRATOR decides; escalation to the orchestrator, never the developer; the human-pinned
@@ -65,7 +66,8 @@ onboarding.
 As of 260707-HFX2-L11: the "Dispatch defaults" section's "Cleanup" line now states that
 `worktree_integrate` auto-lands successful worker/reviewer seats into the landed archive
 (`retirement.autoLandOnIntegration`, default ON); `session_retire` is available for a
-stuck/abandoned seat of the manager's OWN master only, and server policy refuses any other target.
+stuck/abandoned worker/reviewer/curator seat of the manager's OWN master only, and server policy
+refuses any other target.
 This is placed in Dispatch defaults (not the exit block) because the landing automation rides the
 per-leaf integrate edge, the same section that already documents the worker-brief/AR_SPAWN_ROLE/
 qualified-leaf-key/curator-chain dispatch defaults.
@@ -79,6 +81,11 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: manager, worker, and
+  curator dispatch defaults now describe the environment-role-plus-qualified-leaf pair claim, and
+  cleanup now names the manager's worker/reviewer/curator retirement boundary. Verification
+  metadata remains pinned until closeout stamps the L17 commit.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale post-boot-echo
   instruction as doctrine debt; no source behavior changed.

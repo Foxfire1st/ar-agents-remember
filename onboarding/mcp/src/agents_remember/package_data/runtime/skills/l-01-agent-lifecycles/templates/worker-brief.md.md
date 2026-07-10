@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`                                  |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-10T15:48+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                                  |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 
 ## Purpose
 
@@ -40,7 +40,8 @@ curator handoff-input block (changed paths, code-diff summary, tests, route/onbo
 and the pin idiom for the curator), and the mandatory turn-report path. Compiler notes bind the
 spawning seat: fill every placeholder (an unresolved placeholder is not dispatchable), verify the
 provider stack answers before naming it, spawn with `env={"AR_SPAWN_ROLE": "worker"}` and the
-qualified leaf key, deliver as an echo-confirmed paste and only count delivery on a post-boot echo.
+qualified leaf key as one pair claim for the worker's `(leaf, role)` seat, deliver as an
+echo-confirmed paste and only count delivery on a post-boot echo.
 
 As of cycle 5: the fenced brief opens with the canonical ROLE BRIEF — worker line (uniform with manager-brief).
 
@@ -53,6 +54,11 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: the worker dispatch
+  contract now states that `AR_SPAWN_ROLE=worker` and the qualified leaf together claim the
+  worker's `(leaf, role)` seat. Verification metadata remains pinned until closeout stamps the L17
+  commit.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale echo/paste-chip
   instruction as current source debt awaiting a doctrine follow-up. No source behavior changed.

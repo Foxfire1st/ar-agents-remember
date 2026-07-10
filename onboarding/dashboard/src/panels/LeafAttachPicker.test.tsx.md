@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LeafAttachPicker.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-30                                       |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -23,6 +23,12 @@ leaf surfaces its leaf key through `onPick`. Because the picker uses plain React
 overlay), the tests drive it directly with `fireEvent.click`.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Picker Identity Regressions
+
+Tests prove leaves are disabled until role selection, explicit worker/reviewer choices reach
+`onPick(leafKey, role)`, supplied identity preselects correctly, and restricted terminal options do
+not expose agent roles.
 
 ### Logic
 
@@ -57,6 +63,9 @@ key as opaque — they only check it round-trips through `onPick`.
 | The `TaskTreeNode` type the `TREE` fixture is built against. | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: expanded drill-down tests with mandatory/preselected
+  seat role and restricted role-option behavior.
 
 - 2026-06-30T00:00:00+02:00 — Operations Integration L5 (Sidebar chat): created — drill-down navigation tests over a
   nested master→leaf tree: masters list before leaves, drilling reveals a master's leaves + nested

@@ -71,7 +71,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "`spawn_agent_session` now sends separate session-command entries, binds the unique id-bearing brief in the spawn-cwd harness log, retroactively verifies/reissues only missing or errored commands, and persists resolved model/effort plus log id/path. An unbound replacement declares `replacement_for_leaf`; it receives normal leaf expectations without taking the occupied leaf key. Server registration imports advertised `*_payload` builders from `agents_remember.mcp.tools`; each builder forwards typed MCP arguments to its domain controller and validates the result through `base._tool_payload`. S...",
+    "summary": "HFX2-L17 makes the terminal tool surface pair-aware. Attach accepts explicit role and reports current/previous binding identity; spawned rows expose `seatRole`; brief and turn-report expectations preserve it; retire authority uses binding leaf/role including replacement-leaf recovery. Existing settings-owned launch provenance and delivery acceptance stay separate. `spawn_agent_session` now sends separate session-command entries, binds the unique id-bearing brief in the spawn-cwd harness log, retroactively verifies/reissues only missing or errored commands, and persists resolved model/effort...",
     "candidateHints": [
       "mcp/src/agents_remember/mcp/tools",
       "mcp/src/agents_remember/mcp/tools/__init__.py",
@@ -127,20 +127,20 @@
       "terminal",
       "worktree.py",
       "worktree",
+      "seatRole",
       "spawn_agent_session",
-      "replacement_for_leaf",
-      "*_payload",
-      "agents_remember.mcp.tools",
-      "base._tool_payload",
-      "agents_remember",
-      "MCP",
-      "tool_payload",
+      "HFX2",
+      "L17",
       "mcp/src/agents_remember/mcp/tools",
       "route-local-overview",
-      "c881828542f0ca916ce8b1d4fd5ab8a914e24110",
+      "fdff55f2921d7aaa8ba240c11087d02c15a170d7",
       "/../../../../overview.md",
       "mcp/tools/",
-      "mcp/tools.py"
+      "mcp/tools.py",
+      "01f503d",
+      "task_reopen_payload",
+      "PUBLIC_TOOLS",
+      "task_reopen"
     ]
   },
   "fallback": {

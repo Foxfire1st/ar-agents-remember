@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T13:03+02:00                            |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`        |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -34,6 +34,11 @@ classes: `SpawnKnobApplicationTests` (per-harness knob application + the free-fo
 `SpawnLevelResolutionTests` (the dispatch `level` + rolesPerLevel resolution chain).
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Spawn Seat-Role Payload
+
+Spawn cases now assert the derived binding role in success/refusal payloads and preserve the role
+through expectation creation without changing settings-resolved launch provenance.
 
 ### Logic
 
@@ -171,6 +176,9 @@ No meaningful cross-repo references found.
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added binding-role response and dispatch-row coverage
+  to spawn tests.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: rewrote spawn/REST coverage around explicit Codex argv,
   bound-log acceptance/provenance, isolated command verification, and unbound replacement-leaf

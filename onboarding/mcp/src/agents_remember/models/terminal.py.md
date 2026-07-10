@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-10T13:03+02:00                       |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`   |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`   |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ terminal-session catalog operations. It models the hosted-chat/terminal leaf rea
 — since L2 — the agent-facing `spawn_agent_session` dispatch tool.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Response Contract
+
+Attach responses add `role-required`, `seatRole`, and `previousSeatRole`; spawn responses add
+`seatRole`. The existing `role` field remains the transport kind (`chat`/`terminal`) for
+compatibility and must not be confused with orchestration binding identity.
 
 ### Logic
 
@@ -119,6 +125,9 @@ No meaningful cross-repo references found.
 | The model validates a local MCP response and has no external boundary. | - | - |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: modeled current/previous seat identity and the
+  role-required attach refusal without overloading the transport-role compatibility field.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added replacement-leaf, resolved-knob, and bound-log
   provenance fields and corrected delivery field semantics to log evidence. Verification metadata

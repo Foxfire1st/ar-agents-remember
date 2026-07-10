@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.test.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T17:04+02:00                          |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -32,6 +32,11 @@ attached-chat move coverage and live catalog refresh coverage for `"leaf"` inval
 browser tab or agent-facing reassignment.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Chats Role-Selection Proof
+
+Attach/move interaction now chooses a role before a leaf, verifies the role-bearing backend call,
+and checks role-specific same-pair conflict feedback.
 
 ### Logic
 
@@ -97,6 +102,9 @@ resets the `sessions` store to its current shape (`sessions`, `activeId`, `count
 | The `fetchHarnesses` / catalog hydrate / terminate client the view drives. | L253-L315 | [data/terminal.ts](../data/terminal.ts) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: updated Chats attach coverage for explicit role
+  selection and pair-scoped conflict copy.
 
 - 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added ~129 lines of coverage for the
   landed-archive view — a `status:"landed"` row renders as non-live/inspectable with landing

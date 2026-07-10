@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:35+02:00                           |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -37,6 +37,12 @@ the catalog-sync coverage so a remote `"leaf"` invalidation is delivered with th
 this tab's own catalog broadcast remains ignored by subscribers.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Client Pair-State Regressions
+
+Tests cover `seatRole` hydration, binding-first role derivation, explicit selection for an untyped
+chat, same-role replacement on assignment, and preservation of different-role seats sharing one
+leaf.
 
 ### Logic
 
@@ -103,6 +109,9 @@ where the suite can prove no submit input was appended.
 | The view-level persistence test (mounted-but-hidden terminals). | — | [panels/Chats.test.tsx](../panels/Chats.test.tsx) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added binding-role helper, hydration, and pair-scoped
+  assignment regressions including different-role coexistence.
 
 - 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added coverage confirming `isLiveSession`
   stays `status==="running"` only (a landed row is deliberately NOT "live") and pins the new

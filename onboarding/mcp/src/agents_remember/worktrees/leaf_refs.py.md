@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/leaf_refs.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:59+02:00                     |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba` |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ accepts canonical qualified ids, task document ids, and unambiguous legacy stems
 canonical identities each write surface persists.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Resolution Guidance Channel
+
+`LeafRefResolutionError` accepts optional guidance and appends it to the stable expected-form and
+candidate diagnostics. The pair-binding validator uses this only for a proven legacy role suffix;
+ordinary missing/ambiguous leaf behavior and status classification are unchanged.
 
 ### Logic
 
@@ -63,9 +69,12 @@ enclosure path so old contracts remain loadable.
 | Worktree start adapter returning doc ids or command refusals. | [modules/leaf_ref_start.py](modules/leaf_ref_start.py.md) |
 | Worktree contracts normalize legacy `leaf_id` values through this resolver. | [worktree_contract.py](worktree_contract.py.md) |
 | Terminal serving adapter persists qualified catalog keys from this resolver. | [../serving/leaf_ref_validation.py](../serving/leaf_ref_validation.py.md) |
-| Focused resolver tests pin accepted forms, ambiguity, no-match candidates, missing optional master docs, schema-marked malformed doc failures, sibling artifact skips, read-path contract tolerance, and light-task indexing. | [../../tests/test_leaf_ref_resolution.py](../../tests/test_leaf_ref_resolution.py.md) |
+| Focused resolver tests pin accepted forms, ambiguity, no-match candidates, missing optional master docs, schema-marked malformed doc failures, sibling artifact skips, read-path contract tolerance, and light-task indexing. | [test_leaf_ref_resolution.py](../../../tests/test_leaf_ref_resolution.py.md) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added an optional error-guidance channel so legacy
+  role-suffixed refs can name the canonical leaf-plus-role replacement without changing resolution.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (minimal projection robustness): `_has_task_doc_schema_marker`
   now tolerates malformed/unreadable non-task JSON siblings while preserving loud failures for

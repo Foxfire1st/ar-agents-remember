@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T13:41+02:00 |
-| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
-| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -363,7 +363,17 @@ an idle dashboard at zero store writes.
 | The detail-panel tests pin body merge, fallback, and single-rendered implementation steps. | L650-L865 | [DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
 | The shared panel chrome remains the route's presentation frame. | L1-L120 | [grammar/Panel.tsx](agents-remember/dashboard/src/grammar/Panel.tsx) |
 
+## 260707-HFX2-L17 Seat Binding Route Impact
+
+`LeafAttachPicker` now makes role selection part of attach/move and disables leaf choice until
+identity is known. `Chats` and `RailChat` post/apply the pair and name same-role conflicts;
+`RailChat` and `SessionList` render current binding identity before stale spawn provenance. This is
+an existing panel responsibility expansion, not a new panel route.
+
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 panels route impact: added explicit seat-role picker,
+  pair-aware attach/move, and binding-first rail/fleet rendering; no route layout change.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16 route impact: refreshed the existing SessionList and
   DetailPanel responsibilities for complete spawn forests, manager-only collapse, bounded hover-

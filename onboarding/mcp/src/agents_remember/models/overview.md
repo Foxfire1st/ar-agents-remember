@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -24,6 +24,10 @@ runtime and tested by schema. Model homes follow tool domains: `TaskReopenRespon
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
+
+HFX2-L17 adds binding identity to terminal responses: attach can return `role-required` and carries
+`seatRole`/`previousSeatRole`; spawn carries `seatRole`. The legacy `role` field still means
+transport (`chat` or `terminal`) and is not orchestration identity.
 
 HFX2-L15 extends the terminal spawn response with `replacementForLeaf`, resolved model/effort, and
 bound session-log entry/path provenance. Delivery booleans are evidence-specific: context is true
@@ -126,6 +130,9 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 models route impact: added pair-binding response fields
+  and the role-required attach status without changing the strict response-module layout.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 models route impact: added replacement, resolved-knob,
   and bound-log response fields and corrected delivery semantics. Verification metadata remains

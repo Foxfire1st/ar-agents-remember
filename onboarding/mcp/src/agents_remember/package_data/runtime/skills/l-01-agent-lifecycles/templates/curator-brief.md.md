@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
-| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
+| lastUpdated            | 2026-07-10T15:48+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 
 ## Purpose
 
@@ -61,6 +61,10 @@ deliver as an echo-confirmed paste; and this brief runs strictly AFTER builder c
 reviewer verdict (when the leaf tier requires one) is available — never before, never in place of
 either.
 
+As of 260707-HFX2-L17, spawning with `AR_SPAWN_ROLE=curator` and the qualified leaf key is
+documented as one pair claim for the curator's `(leaf, role)` seat. That pair identity lets the
+curator use the same canonical leaf as the worker and reviewer without role-suffixed leaf keys.
+
 ### Conventions
 
 Mirrors the `worker-brief.md`/`manager-brief.md` compiler-notes convention: a spawning seat compiles
@@ -75,7 +79,8 @@ The curator-brief template must not be dispatched with unresolved placeholders, 
 before builder code exists, and (when the leaf tier runs a loop) must not be used before the
 reviewer verdict is available. The curator it spawns is barred from inferring a change set from
 transcript memory and must ask the owning seat for one clarification row instead when the fed
-evidence is missing or ambiguous.
+evidence is missing or ambiguous. Its task-seat claim is the qualified leaf plus `curator` role,
+not a curator-suffixed leaf key.
 
 ## Repo-Internal References
 
@@ -96,6 +101,11 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: documented
+  `AR_SPAWN_ROLE=curator` plus the qualified leaf as the curator's `(leaf, role)` pair claim, with
+  no role-suffixed leaf key. Verification metadata remains pinned until closeout stamps the L17
+  commit.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale echo-confirmation footer
   as doctrine debt; no source behavior changed.

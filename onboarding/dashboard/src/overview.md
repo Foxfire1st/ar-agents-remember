@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T13:41+02:00 |
-| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
-| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -252,7 +252,20 @@ module boundary was added.
 | The serving layer supplies the projection and static package boundary consumed by this route. | L1-L80 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The built bundle is synced into package data and checked against source plus dist. | L30-L52; L151-L179 | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 
+## 260707-HFX2-L17 Seat Binding Route Impact
+
+Dashboard session data distinguishes current `seatRole` from origin `spawnRole`; local assignment,
+grouping, ordering, chips, and pane labels are binding-first. Attach/move includes an explicit role
+picker and posts `{leafKey, role}`, preserving different-role owners while surfacing same-role
+conflicts. These TypeScript sources are the durable UI behavior. `scripts/sync-dashboard.py` builds
+and copies them into package data, and serving mounts that synchronized output; generated hashed
+assets are not documented individually.
+
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 dashboard-source route impact: documented explicit
+  role claim, binding-first client identity, pair-scoped assignment/rendering, and the
+  source/build/serve package boundary. Verification metadata remains pinned until closeout.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16 route impact: documented repo-qualified sprint
   grouping, complete spawn-edge forest rendering, bounded/hover-complete rail rows, honest on-demand

@@ -47,7 +47,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1587,
+    "sourceFilesInScope": 1588,
     "fileSidecars": 9,
     "childRoutes": 5
   },
@@ -73,7 +73,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L15 makes submitted terminal dispatch acceptance deterministic: every message carries its unique id, binds the spawn-cwd Claude/Codex harness JSONL, and receives credit only from that record. Session commands remain separate and require command plus non-error stdout evidence; resolved knobs are pinned on argv/session commands and recorded in the catalog. The bounded retry ladder uses pane text only to prevent duplicate re-pastes or attach failure diagnostics. An unbound replacement seat names `replacementForLeaf`, and the supervisor processes one synchronous redelivery per sweep...",
+    "summary": "260707-HFX2-L17 makes hosted seat identity a pair: `leafKey` names the canonical task leaf and `seatRole` names the current occupant. `spawnRole` remains immutable origin provenance. Spawn and attach refuse only a live same-pair owner; worker, reviewer, curator, manager/architect anchors, and the plain terminal may coexist on one leaf. Hand-opened harnesses must declare a role at attach, retire/supervisor/expectation/inbox/dashboard behavior follows binding identity, and legacy role-suffixed leaf refs are rejected with canonical pair guidance. Per-role lifecycle wording such as \u201cone leaf, o...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,12 +115,13 @@
       "mcp",
       "src",
       "design",
-      "replacementForLeaf",
+      "leafKey",
+      "seatRole",
+      "spawnRole",
       "HFX2",
-      "L15",
-      "JSONL",
+      "L17",
       "repo-overview",
-      "375b3f5085550fbf68b77006bdd4accbd7f8d08b",
+      "fdff55f2921d7aaa8ba240c11087d02c15a170d7",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -139,8 +140,7 @@
       "logs/mcp/",
       "logs/providers/",
       "providers/_bin/",
-      "providers/_venvs/",
-      "onboarding/"
+      "providers/_venvs/"
     ]
   },
   "fallback": {

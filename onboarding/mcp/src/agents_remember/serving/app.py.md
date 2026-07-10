@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,6 +38,15 @@ just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 HTTP Seat Binding And Served Package Boundary
+
+Terminal open responses expose current `seatRole`. `POST /api/terminal/{session}/attach-leaf`
+accepts `{leafKey, role}`, returns `role-required` for an untyped hand-opened harness, and reports
+current/previous binding roles; `409` is restricted to a live same-pair owner. Retire endpoints
+construct authority refs from binding leaf/role, including replacement-leaf identity. The dashboard
+asset refresh remains a source-to-build-to-package operation performed by `scripts/sync-dashboard.py`;
+this app only serves the synchronized package tree, so generated hashed assets receive no sidecars.
 
 ### 260707-HFX2-L15 Harness-Log Paste Endpoint
 
@@ -424,6 +433,11 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: carried role through HTTP open/attach responses,
+  added explicit hand-opened role claims and pair-scoped conflicts, and keyed retire authority on
+  binding identity. Reconfirmed that packaged hashed assets are served output, not onboarding
+  subjects. Verification metadata remains pinned until closeout stamps L17.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: routed the REST terminal paste endpoint through the
   shared log-verified injector, added per-request delivery ids and safe catalog log binding, and
