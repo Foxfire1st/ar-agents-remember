@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`       |
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastUpdated            | 2026-07-10T21:52+02:00 |
+| lastVerifiedCommitHash | `b76c462acb2fb816331c6c078cba1fe779bb816a`       |
+| lastVerifiedCommitDate | 2026-07-10T22:09:47+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -44,6 +44,9 @@ per-master groups / landed archive) in EVERY run — grouping-always is the rati
 HFX2-L11 makes landed rows inspectable archive rows: catalog `status:"landed"` sessions still mount
 read-only terminals, hide attach/composer write controls, and expose a landed-archive cleanup action
 that asks the backend to close only rows still marked landed.
+HFX2-L21 makes the full-page session sidebar adjustable: the prior fixed `16rem` column is now a
+persisted, bounded pixel width with a centre-facing pointer/keyboard resize separator. The original
+256px width remains the default, while the terminal keeps a minimum usable slot on narrow layouts.
 
 ## Code Commentary
 
@@ -114,6 +117,12 @@ read — live-vs-landed truth for grouping) and computes `grouped = groupSession
 taskDocuments, enclosures})` (`data/sessionGroups`, pure) into `SessionList`'s `grouped` prop; with no
 orchestration task and no leaf claims the derivation yields zero groups and the sidebar renders
 unchanged, which is why the pre-L14 Chats tests still pass without seeding the projection store. Running
+HFX2-L21 replaces the rail's fixed CSS width with `usePersistedNumber("chats.sidebar-width", 256)`.
+`SidebarResizeHandle` clamps pointer drag and ArrowLeft/ArrowRight changes to 220–560px, reports the
+same bounds through separator ARIA values, and persists every accepted change immediately. The rail's
+CSS `maxWidth` and the terminal area's minimum width keep direct manipulation from consuming the
+terminal; only the gutter's hover/focus colour transitions — width itself never animates.
+Running
 and landed sessions mount `<Terminal>` the first time they become active in the current page;
 visited terminals stay mounted in `terminalLayer` divs while inactive (`display:none` +
 `aria-hidden`) so their xterm buffers survive tab switches. Restored rows that have not been selected
@@ -148,6 +157,9 @@ server re-fetch, and the L9 polling fallback also picks up backend catalog leaf 
 current browser session. The dashboard does not share arbitrary local store state between tabs.
 Landed cleanup is backend-confirmed and scoped to `status:"landed"` rows; `Chats` only removes the
 returned `closedSessions` locally, preserving skipped rows for inspection.
+Sidebar width is a browser-local presentation preference, not catalog or lifecycle state. It must stay
+bounded, keyboard-operable, and independent of session grouping/attachment; resizing must not remount
+terminal layers or animate the layout behind the pointer.
 
 ## Repo-Internal References
 
@@ -165,8 +177,16 @@ returned `closedSessions` locally, preserving skipped rows for inspection.
 | The store label allocator distinguishes hidden-live reservations from terminated/exited label release. | L57-L177; L324-L348 | [data/sessions.ts](../data/sessions.ts) |
 | The cockpit shell that registers the `chats` full-bleed view. | — | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
 | The shared empty-state backdrop the no-session state renders (adjutant boomerang). | — | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
+| The persisted numeric preference hook shared with the Operations rail widths. | L25-L52 | [file-viewer/usePersistedFlag.ts](file-viewer/usePersistedFlag.ts) |
+| The HFX2-L21 separator, clamp, persistence state, and sidebar render boundary. | L117-L238; L304-L315; L520-L539 | [Chats.tsx](Chats.tsx) |
+| Focused pointer, keyboard, restored-width, ARIA-value, and localStorage regressions. | L33-L40; L128-L165 | [Chats.test.tsx](Chats.test.tsx) |
 
 ## Update History
+
+- 2026-07-10T21:52+02:00 — 260707-HFX2-L21: replaced the static Chats sidebar width with a
+  220–560px persisted resize gutter, added pointer and keyboard operation plus ARIA bounds, and
+  preserved a minimum terminal slot without animating width. Verification metadata remains pinned
+  to the task base until closeout stamps the code commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: carried explicit seat role through Chats attach/move,
   pair-scoped local reconciliation, and role-specific conflict feedback.

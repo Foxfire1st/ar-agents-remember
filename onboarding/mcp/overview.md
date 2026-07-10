@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-10T19:49+02:00 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash | `b76c462acb2fb816331c6c078cba1fe779bb816a` |
+| lastVerifiedCommitDate | 2026-07-10T22:09:47+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -198,7 +198,8 @@ canonical pair guidance. Tests cover the workaround museum and supervisor behavi
 
 The regenerated dashboard assets are deliberately not onboarding subjects. Durable proof stays at
 the dashboard source, `scripts/sync-dashboard.py` build/package parity check, and serving static
-boundary.
+boundary. HFX2-L21 follows that existing boundary: its adjustable Chats sidebar is frontend-only,
+while this route carries only the regenerated `package_data/dashboard/` bundle and fingerprint.
 
 HFX2-L15 replaces screen-grammar dispatch credit with one repository-wide acceptance path:
 `HarnessSessionLog` binds the unique id-bearing message in the spawn cwd, `injector.deliver`
@@ -672,6 +673,11 @@ into the role files.
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 
 ## Update History
+
+- 2026-07-10T21:59+02:00 — No route impact: 260707-HFX2-L21 is frontend-only. The adjustable,
+  persisted Chats sidebar rebuild changes `package_data/dashboard/` and its fingerprint, but no MCP
+  Python source, tool surface, package route, or serving contract. `sync-dashboard.py --check` and
+  the package-sync tests verify the existing release boundary.
 
 - 2026-07-10T19:49+02:00 — No route impact: positional 260707-HFX2-L19 F1 adds one focused
   `test_supervisor.py` regression for the already-documented hosted-delivery retry-exhaustion

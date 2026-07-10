@@ -47,7 +47,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1672,
+    "sourceFilesInScope": 1588,
     "fileSidecars": 9,
     "childRoutes": 5
   },
@@ -121,7 +121,7 @@
       "HFX2",
       "L17",
       "repo-overview",
-      "e400ed0ce98752d1b65d00de97c9b84c7ea20814",
+      "b76c462acb2fb816331c6c078cba1fe779bb816a",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
