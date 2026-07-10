@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T12:05+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -88,6 +88,9 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 
 ## Update History
 
+- 2026-07-08T15:45+02:00 — No content impact: 260707-HFX2-L7 bumps version 3.0.0rc3 ->
+  3.0.0rc4 (PEP 440 prerelease) for the hotfix release tail; no dependency, entry point, package
+  data, or build-system contract changed.
 - 2026-07-07T21:10+02:00 — No content impact: release 4922146 bumped version 3.0.0rc2 -> 3.0.0rc3 (PEP 440 prerelease); no dependency or build-system change. (Reconciliation: direct owner commit between the L17 and L18 closeouts.)
 - 2026-07-03T12:05+02:00 — No content impact: 260703 L4 bumped version 3.0.0rc1 -> 3.0.0rc2 (PEP
   440 prerelease); no dependency or build-system change.

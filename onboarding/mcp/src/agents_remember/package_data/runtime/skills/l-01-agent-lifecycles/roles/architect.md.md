@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash |                                            `5b49fa85a51d527a5a216a88c361c08246c759d0`|
-| lastVerifiedCommitDate |                                            2026-07-10T05:00:02+02:00|
+| lastVerifiedCommitHash |                                            `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
+| lastVerifiedCommitDate |                                            2026-07-10T20:04:45+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -36,9 +36,13 @@ the developer to decide.
 Event routing maps developer shaping to **Design** (wear `roles/designer.md` inline), backend
 `decision-item` rows to **Decision relay**, approved portfolio execution to horizontal role spawns,
 no-state-change asks to research-only exit, and small unspawned work to architect-only solo/flat
-hat-collapse. Role-seat immutability is explicit: dashboard-owned architect sessions stay architect;
-pasted role briefs are refused/escalated through the inbox; roles expand horizontally by new chats;
-sub-agents drill vertically for analysis only.
+hat-collapse. Since 260707-HFX2-L7, developer clarifications during an active task first run the
+shared Developer Clarification Triage rule: if queue context shows the clarification is
+close/current/small, the architect folds it into the active task surface and implements under the
+current owner hat; if it is future queue, it is recorded durably for later planning; unclear fit is
+asked back to the developer directly. Role-seat immutability is explicit: dashboard-owned architect
+sessions stay architect; pasted role briefs are refused/escalated through the inbox; roles expand
+horizontally by new chats; sub-agents drill vertically for analysis only.
 
 The minimal decision-item relay uses the existing operator inbox, not a new queue schema. Backend
 seats post one `messageKind: decision-item` at a time with decision/options/consequences/evidence
@@ -91,6 +95,10 @@ No sibling repository evidence is needed for this orchestration role file.
   architect terminal custody. Added the governing-overview backlink. Verification metadata remains
   pinned until closeout stamps the eventual two-parent code commit.
 
+- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 doctrine refinement: event routing now tells the
+  developer-facing architect to run Developer Clarification Triage before choosing note-only
+  handling. Close/current/small clarifications fold into the active task and implementation; future
+  queue is recorded durably; unclear fit asks the developer which route they intend.
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: created onboarding
   for the new developer-facing architect lifecycle, including design ownership, role-seat
   immutability, one-at-a-time decision-item relay over the existing operator inbox, backend

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f` |
-| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
+| lastUpdated            | 2026-07-10T19:49+02:00 |
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -181,6 +181,10 @@ lands in `docs/design/observable-lifecycle.md` and the settings table in
 `docs/reference/settings-json.md`. New scale regression: a 2000-row dead-seat-storm sim in
 `mcp/tests/test_liveness_simulations.py`. Results filed in
 `notes/reports/260707-HFX2-L8-worker-report.md` and `-reviewer-report.md`.
+260707-HFX2-L7 is the hotfix release tail for `3.0.0rc4`: package/version strings move from rc3 to
+rc4, the packaged lifecycle doctrine refines Developer Clarification Triage to read the active
+queue before choosing note-only handling, and the serving supervisor defers generic unacked
+escalation for hosted-delivery failures until the persistent redelivery threshold has exhausted.
 
 ## Hot Path Summary
 
@@ -669,6 +673,12 @@ into the role files.
 
 ## Update History
 
+- 2026-07-10T19:49+02:00 — No route impact: positional 260707-HFX2-L19 F1 adds one focused
+  `test_supervisor.py` regression for the already-documented hosted-delivery retry-exhaustion
+  boundary. It changes no MCP tool, response model, package route, production behavior, or entity
+  split; the existing Supervisor Sweep entity is refreshed separately because its production
+  evidence path already changed in the release-tail candidate.
+
 - 2026-07-10T18:30+02:00 — No route impact: 260707-HFX2-L18 is a behavior-preserving strict-CRAP
   decomposition inside the existing spawn controller and terminal catalog plus two focused tests.
   It adds no MCP tool, response model, package route, threshold/configuration change, or L19
@@ -803,6 +813,13 @@ into the role files.
   fields. Added a Purpose paragraph naming all four R-numbers and the cross-tool dispatch pattern,
   matching this file's established per-leaf narrative convention. Verification metadata pinned
   until closeout stamps the 260707-HFX2-L1 commit.
+- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 release-tail route impact: `mcp/pyproject.toml`,
+  `mcp/src/agents_remember/mcp/__init__.py`, and README pins/status move to 3.0.0rc4; packaged
+  `l-01-agent-lifecycles` runtime doctrine now classifies developer clarifications by active queue
+  and current-diff fit before note-only handling; and `serving/supervisor.py` keeps
+  `"no-hosted-session"`/`"unconfirmed"` delivery-failure rows in the redelivery path until
+  `PERSISTENT_FAILURE_ATTEMPTS` or `escalatedAt`. No new MCP tool signature, settings family, or
+  inbox kind.
 - 2026-07-08T15:27+02:00 — No route impact: 260707-HFX2-L6 is a package-data lifecycle doctrine
   clarification only. The synced runtime skill mirrors now tell agents that a developer-declared
   role takeover means the named task leaf is the seat and the current dashboard terminal catalog
