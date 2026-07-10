@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash |                                                                   `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
-| lastVerifiedCommitDate |                                                                   2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash |                                                                   `79b2fd6c4da73c7845406f6c68b947b8bd0e1009`|
+| lastVerifiedCommitDate |                                                                   2026-07-10T22:22:16+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -20,6 +20,14 @@ File-backed operator inbox store for short-lived polling plus hosted-session
 delivery metadata.
 
 ## Code Commentary
+
+### 260707-HFX2-L20 Consume And Delivery Race
+
+`current()` now projects the append-only log through the shared terminal-dominant fold. Public
+consume retains its consumed snapshot instead of immediately deleting the id, so an in-flight
+delivery that finishes from an older pending snapshot cannot make the row pending or redeliverable
+again. Explicit dashboard dismissal still uses physical `delete`, and normal compaction owns audit
+expiry.
 
 ### 260707-HFX2-L17 Pair-Preserving Renewal
 
@@ -53,8 +61,8 @@ consumed entry with `False`.
 Task 23/24 added physical cleanup. `delete(entry_id)` removes all snapshots for
 one inbox entry, `delete_by_gate(gate_id)` removes entries associated with a
 cleared/dismissed gate, and `compact(now=...)` prunes consumed or 24h-expired
-entries through `interaction_retention.inbox_keep_ids`. The public consume tool
-now deletes the entry after returning the consumed payload.
+entries through `interaction_retention.inbox_keep_ids`. The public consume tool keeps the terminal
+snapshot until normal compaction so concurrent stale delivery writes cannot erase the acknowledgement.
 
 260707-HFX2-L1 (R1/R3 ack semantics + redelivery): `record_delivery(...)` now
 bumps `attemptCount`, stamps `lastAttemptAt`, and schedules a durable
@@ -137,6 +145,9 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T22:18+02:00 — 260707-HFX2-L20: made current-state folding terminal-dominant and kept
+  consumed snapshots append-only until compaction, closing the live resurrection/redelivery race.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made coalesced inbox renewal preserve the current
   leaf-role subject pair through owner readdressing.

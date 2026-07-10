@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-10T13:03+02:00                |
-| lastVerifiedCommitHash |                                       `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
-| lastVerifiedCommitDate |                                       2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash |                                       `79b2fd6c4da73c7845406f6c68b947b8bd0e1009`|
+| lastVerifiedCommitDate |                                       2026-07-10T22:22:16+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -20,6 +20,13 @@ Focused backend tests for the durable operator/agent inbox record, store, hosted
 delivery helper, and MCP payload builders.
 
 ## Code Commentary
+
+### 260707-HFX2-L20 Deterministic Concurrency Regression
+
+The in-flight delivery test blocks the paster in a worker thread, consumes the same row, then lets
+delivery append from its stale snapshot. It proves the physical log contains pending, consumed, and
+late pending records while `current`, polling, and redelivery all continue to expose the consumed
+terminal state.
 
 ### 260707-HFX2-L13 Transition And Completion-Wake Proof
 
@@ -39,9 +46,8 @@ the durable inbox state enum.
 validation, and schema alias round-trip. `OperatorInboxStoreTests` verifies
 pending filtering by lifecycle, agent, recipient role, and combined keys; delivery metadata snapshots;
 the lower-level store consume path appends a
-consumed snapshot and repeated consume calls are idempotent. Task 23/24 adds the public payload
-semantics: `operator_inbox_consume_payload` returns the consumed entry and then physically deletes the
-throwaway pending row from the public inbox log. `OperatorInboxToolTests` patches `_store` to an in-memory temp
+consumed snapshot and repeated consume calls are idempotent. `operator_inbox_consume_payload` returns
+the consumed entry and retains that terminal snapshot until compaction. `OperatorInboxToolTests` patches `_store` to an in-memory temp
 store and drives the real post, poll, and consume payload builders. `OperatorInboxDeliveryTests`
 drives `deliver_inbox_entry` against a temp store + a fake catalog/host: one case pushes a
 verified paste (state `delivered`) and — since 260703-L18 (finding 3, pinning the friction
@@ -135,7 +141,7 @@ listed as Domain Documentation.
 | Record tests cover create/consume purity, required addressing, and schema alias round-trip. | L22-L74 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 | Store tests cover lifecycle/agent filters, idempotent consume, missing entry, and missing address errors. | L77-L163 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 | Store tests (R1/R3 plus HFX2-L8/L9) cover attempt/backoff stamping, the 900-second first-send floor, redeliverable filtering, escalation stamping, ladder-resolved terminal state, and compaction pruning for terminal rows while preserving pending rows. | L220-L290 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
-| Tool tests cover post, poll, consume payload deletion, and no-address poll validation. | L166-L220 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Tool tests cover post, poll, durable consume payloads, and no-address poll validation. | L166-L220 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 
 ## Cross-Repo References
 
@@ -146,6 +152,9 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T22:18+02:00 — 260707-HFX2-L20: added deterministic consume-during-delivery coverage
+  and updated consume assertions for durable terminal snapshots.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: moved hosted inbox assertions from pane echo to bound
   harness-log evidence and persisted binding provenance. Verification metadata remains pinned
@@ -195,5 +204,6 @@ No meaningful cross-repo references found.
 - 2026-07-04T12:31+02:00 - L3: expanded inbox coverage for role addressing,
   delivery-state snapshots, hosted-session push, and role/message response
   metadata. Verification metadata pinned until closeout stamps the L3 commit.
-- 2026-06-25T13:20+02:00 — Task 23/24: added coverage that the public consume payload deletes throwaway pending inbox entries after returning them.
+- 2026-06-25T13:20+02:00 — Task 23/24 historical behavior: added coverage that public consume deleted
+  the throwaway row after returning it; superseded by HFX2-L20's durable terminal snapshot.
 - 2026-06-23T13:44+02:00 — Created for task 10 backend inbox: focused tests for record snapshots, store filtering/idempotent consume, and payload builders. Verification metadata pinned until closeout stamps the task-10 code commit.

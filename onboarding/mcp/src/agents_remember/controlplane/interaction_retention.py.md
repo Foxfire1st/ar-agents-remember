@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
 | doc_type               | `file-level-onboarding`                                                |
 | lastUpdated            | 2026-07-10T02:39+02:00                                                 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash | `79b2fd6c4da73c7845406f6c68b947b8bd0e1009`|
+| lastVerifiedCommitDate | 2026-07-10T22:22:16+02:00|
 | governingOverview      | `overview.md`                                                          |
 
 ## Governing Overview
@@ -19,6 +19,12 @@
 Central retention policy for short-lived gate and operator-inbox interaction data.
 
 ## Code Commentary
+
+### 260707-HFX2-L20 Monotonic Inbox Compaction
+
+`inbox_keep_ids` uses the same monotonic fold as the live inbox store. Once a consumed or
+ladder-resolved snapshot exists, a physically later pending snapshot produced by an in-flight
+delivery cannot extend that row's pending retention or return it to the redelivery pool.
 
 Defines the shared timing constants: `gate_response_wait` defaults to a 300-second wait and 5-second
 poll cadence, ordinary consumed interaction records have a 24-hour TTL, pending inbox rows have a
@@ -49,6 +55,9 @@ HFX2-L1 immortal-pending rule that contributed to the 2026-07-09 escalation stor
 - A `ladder-resolved` inbox row is neither pending nor acked; compaction drops it immediately.
 
 ## Update History
+
+- 2026-07-10T22:18+02:00 — 260707-HFX2-L20: made inbox compaction use the shared terminal-dominant
+  fold so stale in-flight delivery snapshots cannot resurrect pending retention.
 
 - 2026-07-10T02:39+02:00 — HFX3 retro curation: replaced the superseded immortal-pending account
   with the reviewed health-first contract: 48-hour pending TTL, 500-row hard cap, newest-first

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash |                                                              `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
-| lastVerifiedCommitDate |                                                              2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash |                                                              `79b2fd6c4da73c7845406f6c68b947b8bd0e1009`|
+| lastVerifiedCommitDate |                                                              2026-07-10T22:22:16+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -20,6 +20,12 @@ Payload builders for the `operator_inbox_*` MCP tools that post, poll, consume,
 and optionally push durable operator or agent-to-agent messages.
 
 ## Code Commentary
+
+### 260707-HFX2-L20 Durable Consume
+
+`operator_inbox_consume_payload` returns the same response contract but no longer physically deletes
+the inbox id after appending its consumed snapshot. Retaining that terminal fact until normal
+compaction prevents a concurrent in-flight delivery from recreating a pending current row.
 
 ### 260707-HFX2-L13 Completion Wake Routing
 
@@ -55,8 +61,8 @@ recipient role, or combined mailbox key, serializes each record with the `schema
 alias, and returns `entryCount` plus the entry list.
 `operator_inbox_consume_payload(...)` marks
 one entry consumed through the store, reports whether this call consumed it now
-or observed an already-consumed entry, then deletes the inbox row because the
-agent has received the throwaway response. Since 260707-HFX2-L1 (R1/R2): when this call is the one
+or observed an already-consumed entry, then retains the terminal snapshot until compaction. Since
+260707-HFX2-L1 (R1/R2): when this call is the one
 that actually consumed the entry (`consumed_now`), it looks up that entry's pending `ack-by`
 expectation row (`ExpectationRowStore.find_by_source`) and marks it `met` — consume=ack is the
 ONLY terminal delivery outcome, so this is the one place the ack-by deadline is fulfilled.
@@ -121,6 +127,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-10T22:18+02:00 — 260707-HFX2-L20: retained the consumed snapshot after public consume;
+  response shape is unchanged and compaction remains the cleanup owner.
+
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: made completion/artifact posts target and wake
   the current manager in the same call, and persisted leaf/subject provenance for later supervisor
   handling. Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
@@ -133,6 +142,7 @@ No meaningful cross-repo references found.
   message kinds, added optional hosted-session delivery through
   `serving.inbox_delivery`, and returned delivery metadata. Verification metadata
   pinned until closeout stamps the L3 commit.
-- 2026-06-25T13:10+02:00 — Task 23/24: post opportunistically compacts expired inbox rows and consume deletes the entry after returning the consumed response.
+- 2026-06-25T13:10+02:00 — Task 23/24 historical behavior: post opportunistically compacted expired
+  rows and consume deleted its entry; HFX2-L20 supersedes the latter behavior.
 - 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: clarified that `serving.app` now calls `operator_inbox_post_payload` with developer/dashboard attribution when Gate Respond has no hosted session to inject into. Verification metadata pinned until closeout stamps the task-10 code commit.
 - 2026-06-23T13:44+02:00 — Created for task 10 backend inbox: post, poll, and consume payload builders for the external-chat operator inbox. Verification metadata pinned until closeout stamps the task-10 code commit.

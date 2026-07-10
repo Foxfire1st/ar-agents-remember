@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash |                                                                     `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
-| lastVerifiedCommitDate |                                                                     2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash |                                                                     `79b2fd6c4da73c7845406f6c68b947b8bd0e1009`|
+| lastVerifiedCommitDate |                                                                     2026-07-10T22:22:16+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ durable operator or agent-to-agent message that can be pushed into a hosted
 session and/or polled by an external chat.
 
 ## Code Commentary
+
+### 260707-HFX2-L20 Terminal-Dominant Snapshot Fold
+
+`fold_operator_inbox_entries` centralizes the current-state projection. Pending snapshots remain
+last-wins until a terminal `consumed` or `ladder-resolved` snapshot is observed; later stale pending
+delivery snapshots are ignored, while later terminal snapshots preserve idempotent terminal updates.
 
 ### 260707-HFX2-L17 Seat-Scoped Inbox Rows
 
@@ -137,6 +143,9 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T22:18+02:00 — 260707-HFX2-L20: added the shared monotonic inbox fold that prevents a
+  stale pending delivery snapshot from reversing an already-recorded terminal transition.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added current seat-role subject identity to durable
   inbox rows without changing owner-routing or immutable sender provenance.

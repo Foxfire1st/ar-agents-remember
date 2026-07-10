@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`                                      |
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash | `79b2fd6c4da73c7845406f6c68b947b8bd0e1009`                                      |
+| lastVerifiedCommitDate | 2026-07-10T22:22:16+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -105,7 +105,7 @@ calling me" session-id resolution anywhere in this codebase.
 | `lifecycle_finalize.py` | the terminal `lifecycle_finalize_task` builder, forwarding to the worktree finalizer and strict response model. |
 | `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (L14: master docs accept the additive `orchestrates` list — the dashboard's command-hierarchy source) (create/set_status/set_step/set_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` controller. |
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a delegated SEAM kind (`SEAM_GATE_KINDS` only; plan-approval keeps its blocking brake) carrying a required non-empty `enclosure` (the master task name the integrate guard matches the gate by — an addressless raise refuses), validates-then-raises and continues, returning the gateId the handover packet carries — a refused raise persists no orphan gate and expires no sibling), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds; list defaults to the ambient lifecycle when no id is passed, workspace only without an ambient), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
-| `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the entry then deletes the pending throwaway row. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
+| `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the terminal snapshot and leaves physical expiry to compaction so concurrent delivery cannot resurrect it. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
 | `leaf_ref.py`   | shared MCP refusal-payload helper for `leaf-ref-not-found` / `leaf-ref-ambiguous`, keeping strict leaf-ref error envelopes out of the already-large terminal tool module. |
 | `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16/HFX2-L10: `_caller_spend_override_refusal` + `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-only knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, settings-owned free-form + level provenance) — it normalizes leaf refs before catalog writes, composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure with per-harness argv knob application) then a `serving.terminal_paste.TerminalPaster` capture-verified paste sequence, records spawned-by provenance, and returns `spawned` / `spend-override-unsupported` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `effort-invalid` / `model-invalid` / `level-invalid` / `leaf-ref-not-found` / `leaf-ref-ambiguous` / `bad-kind` through the strict response model. |
@@ -158,6 +158,9 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
 
 ## Update History
+
+- 2026-07-10T22:18+02:00 — 260707-HFX2-L20 MCP-tools route impact: public consume keeps its
+  terminal snapshot until compaction; the public response contract is unchanged.
 
 - 2026-07-10T18:30+02:00 — No route impact: 260707-HFX2-L18 decomposed the existing
   `spawn_agent_session_payload` controller and added a plain-terminal regression to satisfy the
