@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`         |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`         |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/turn_state.py`         |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `75587f00070ae0903e42a2a677c51c3125eb7188`              |
-| lastVerifiedCommitDate | 2026-07-08T08:46:23+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`              |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview

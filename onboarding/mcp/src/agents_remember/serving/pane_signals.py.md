@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/pane_signals.py` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-07-10T13:03+02:00                             |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`         |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`         |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview

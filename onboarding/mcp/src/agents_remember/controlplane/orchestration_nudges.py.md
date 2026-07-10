@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_nudges.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash |                                                                   `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`|
-| lastVerifiedCommitDate |                                                                   2026-07-09T19:42:39+02:00|
+| lastVerifiedCommitHash |                                                                   `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
+| lastVerifiedCommitDate |                                                                   2026-07-10T20:04:45+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
