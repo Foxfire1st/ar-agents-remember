@@ -5,10 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/store.py`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                     |
+
+## Governing Overview
+
+[observer overview](overview.md)
 
 ## Purpose
 
@@ -16,6 +20,19 @@
 and appends it as one JSONL line.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Workspace Cursor And Heartbeat Storage
+
+Workspace appends now take a POSIX `flock` on `workspace/events.lock`, the same cross-process lock
+used by physical compaction and live reads. `events.cursor.json` stores the non-negative virtual
+`baseOffset`, written atomically, and `workspace_logical_size` exposes virtual EOF. This lock is
+necessary rather than generic defensive code: serving and MCP processes both append while the live
+compactor replaces the file, so an unlocked rewrite can lose writes or tear cursor state.
+
+Lifecycle heartbeats no longer append to `events.jsonl`. They atomically overwrite one
+`heartbeat.json` sidecar per lifecycle; `read()` merges the newest sidecar event into the validated
+log, while `read_log()` and `read_heartbeat()` expose the two storage layers to the projection cache.
+Real lifecycle and workspace events retain their prior JSONL routing.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -47,6 +64,11 @@ will read more richly).
 | The store layout, retention tiers, and TTL prune rule. | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F7: added the shared cross-process workspace-river
+  lock and virtual base-offset sidecar, and coalesced lifecycle heartbeats into atomic per-lifecycle
+  sidecars with merged reads. Verification metadata remains pinned until closeout stamps the eventual
+  L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned

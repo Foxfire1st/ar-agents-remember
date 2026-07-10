@@ -5,9 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:00+02:00 |
-| lastVerifiedCommitHash |                                            `2c464cf4c29b60165fecae722bf76c307aaac6f1`|
-| lastVerifiedCommitDate |                                            2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastVerifiedCommitHash |                                            `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate |                                            2026-07-10T05:00:02+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -20,8 +25,10 @@ canonical `skills/l-01-agent-lifecycles/roles/architect.md`.
 
 ### Logic
 
-The file defines the HFX-L6 architect/orchestrator split. The architect is the only normal
-developer-facing seat; the backend orchestrator never talks to the developer directly. Opening move:
+The file defines the HFX-L6 architect/orchestrator split. The initial developer-facing free chat is
+a launcher, not this seat; it spawns a clean architect with the settings-owned profile for
+role-shaped work. Once spawned, the architect owns the developer conversation and the backend
+orchestrator never talks to the developer directly. Opening move:
 read workspace instructions, resolve active Agents Remember context, run the trust checkpoint,
 read portfolio state plus pending architect-addressed inbox items, and say back state before asking
 the developer to decide.
@@ -40,13 +47,20 @@ or notes, then returns one `messageKind: decision-ruling` row referencing the du
 items get a clarification row instead of a guessed decision.
 
 The architect can spawn backend roles with refs to durable state (`AR_SPAWN_ROLE=orchestrator`,
-`strategist`, `designer`, `manager`, `worker`, `reviewer`). Solo/flat hat-collapse is reserved here:
+`strategist`, `designer`, `manager`, `worker`, `reviewer`). It proposes the strategist pass as a
+developer question and never auto-runs it; it likewise proposes the short root when work is truly
+tiny. Solo/flat hat-collapse is reserved here:
 the architect may wear backend/build hats only when no spawned role owns that work, and
 owner-never-self-approves still holds.
 
 ### Invariants And Boundaries
 
-- Developer-facing session = architect; backend orchestrator is spawned/backend only.
+- The initial developer-facing session is a free-chat launcher; the spawned architect then owns the
+  developer conversation, while the orchestrator remains backend-only.
+- Strategist dispatch and the tiny-work short root are explicit developer decisions proposed by
+  the architect, never silent defaults.
+- Escalation terminal custody belongs to the architect; the developer is an authority, not a row
+  address.
 - Dashboard-owned role seats are immutable for the session lifetime.
 - Decision relay is one item at a time over existing inbox rows; durable ruling comes back before
   backend action.
@@ -71,6 +85,11 @@ No sibling repository evidence is needed for this orchestration role file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3 retro curation: reconciled the architect card with the free-chat
+  launcher, settings-owned clean spawn, propose-first strategist and short-root questions, and
+  architect terminal custody. Added the governing-overview backlink. Verification metadata remains
+  pinned until closeout stamps the eventual two-parent code commit.
 
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: created onboarding
   for the new developer-facing architect lifecycle, including design ownership, role-seat

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T04:25+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -115,6 +115,10 @@ and the `Chats` `SessionList` switcher).
   `TaskDocNode` renders the leaf reader, and no projected doc shows the no-doc fallback. A selected master
   resolves sub-task rows against the full projected sibling task-document pool, not the sidebar rows, so
   authored leaves remain clickable from the master while missing authored documents remain static rows.
+  **260707-HFX2-L13 F6:** those projection nodes are bounded summaries. The panel resolves the one
+  reader document actually on screen, fetches its full body through `data/taskDocuments.ts`, and
+  caches by `docPath + bodyRevision`; all render branches use the cached node when present and retain
+  the summary as a non-blocking fallback. The cache currently has no eviction (accepted N5 follow-up).
   Directly opened leaf documents and enclosure-backed leaf lifecycles show an `↑` parent/root backlink in
   the sticky header, resolved through structured series metadata rather than task-name parsing. Task 21
   adds the master-level `series tokens` scalar, displayed from server-projected `seriesTokenTotal` on
@@ -350,6 +354,11 @@ an idle dashboard at zero store writes.
 | The flow-model registry that holds the `FlowTab` canvas content (8 static models + segment/model types). | [flowModels.ts](agents-remember/dashboard/src/panels/flowModels.ts) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6 route impact: migrated `DetailPanel` to fetch only
+  the displayed task body on demand, cache it by path/revision, and keep summary fallback behavior;
+  test fetch doubles now serve that endpoint. Verification metadata remains pinned until closeout
+  stamps the eventual L13 code commit.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact (landed chat archive + group cleanup):
   `Chats.tsx` and `SessionList.tsx` gain a collapsed "landed archive" group for `status:"landed"`

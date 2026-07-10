@@ -5,9 +5,9 @@
 | repository             | agents-remember                           |
 | path                   | `mcp/tests/test_store_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                   |
-| lastUpdated            | 2026-07-09T19:31+02:00                    |
-| lastVerifiedCommitHash |                                           `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`|
-| lastVerifiedCommitDate |                                           2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                    |
+| lastVerifiedCommitHash |                                           `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate |                                           2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                          |
 
 ## Governing Overview
@@ -19,6 +19,14 @@
 `test_store_scaling_cs6.py` is the store-level CS-6 regression suite for HFX2-L12. It verifies bounded reads, compaction/reclamation, and malformed-line tolerance across the supervisor signal store, expectation rows, provider metrics/degradation stores, event river, terminal catalog, and dashboard-tolerant JSONL stores.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 F3/F7 Storage Bounds
+
+`LifecycleHeartbeatSidecarTests` proves at two heartbeat counts that the lifecycle log retains one
+real row, the sidecar stays bounded, and merged reads expose only the latest beat. The B1 regression
+creates 10 and 100 beaten lifecycle directories and proves pruning removes every directory before a
+later fleeting reap. Event-river cases prove live workspace cursors resume without duplicates or
+skips after compaction at two sizes and that the virtual base offset advances.
 
 ### Logic
 
@@ -61,5 +69,9 @@ No meaningful cross-repo references found.
 | Same-repository tests only. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F7/B1: added two-size heartbeat coalescing,
+  complete lifecycle-directory reclamation, and live virtual-cursor compaction regressions.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: created for the store, event-river, terminal-catalog, and tolerant-reader CS-6 regressions added by the L12 worker. Verification metadata pinned until closeout stamps the HFX2-L12 commit.

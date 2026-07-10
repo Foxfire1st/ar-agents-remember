@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/serving/events.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`  |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`  |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -27,6 +27,14 @@ runs on a slow cadence, and the backlog drains in bounded chunks — so a large 
 the loop before the first byte. It powers the future event-log panel + sim scrubbing.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Virtual Workspace Cursors
+
+Lifecycle sources continue to use physical byte offsets. Workspace reads take the shared river lock,
+load `baseOffset`, clamp a client virtual cursor into the current physical file, and translate every
+line/end offset back into the virtual coordinate system. A cursor inside reclaimed history therefore
+reseats at the retained head, while a cursor in retained/new history resumes exactly. Locking the base
+sidecar and file read as one pair prevents a live compaction from exposing mismatched coordinates.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -105,6 +113,10 @@ testable without an HTTP client:
 | Raw-event tests cover heartbeat skipping, limit batches, dormant pruning without a terminal event, bounded active replay, and no-heartbeat streaming. | L994-L1124 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3: moved workspace `/api/events` resume to locked
+  virtual offsets over the compacted physical river while leaving lifecycle cursors physical.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-28T13:54+02:00 — Task 34: `read_new_events` now filters `lifecycle.heartbeat` lines via

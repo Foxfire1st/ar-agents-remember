@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T11:19+02:00                     |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5` |
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                     |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ backlog proving the supervisor sweep returns, heartbeat metrics advance, redeliv
 to empty, and compaction bounds the inbox file.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Current-Manager Simulation
+
+The dead-manager respawn simulation now continues through the next supervisor tick after a successor
+manager appears. Orphan/dead-upstream signals must name and target that current manager, proving that
+address-time hierarchy repair replaces stale manager provenance instead of skipping directly upward.
 
 ### Logic
 
@@ -138,6 +144,10 @@ No sibling repository evidence is needed for this same-repository test suite.
 | Same-repository integration-test suite only. | — | — |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: extended the respawn simulation through
+  successor-manager targeting for orphan signals. Verification metadata remains pinned until closeout
+  stamps the eventual L13 code commit.
 
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: updated the shared liveness-simulation context to wire
   `SupervisorSignalCooldownStore` into `SupervisorContext`; no scenario semantics changed in this

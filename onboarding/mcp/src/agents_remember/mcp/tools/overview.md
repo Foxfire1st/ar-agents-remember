@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`                                      |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`                                      |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -33,7 +33,10 @@ surfaces on every call: a `supervisorBanner` string when the serving daemon's
 supervisor-sweep heartbeat has gone stale (`serving.supervisor_heartbeat
 .supervisor_staleness_banner`, exception-contained at the call site) — issue #15's
 "the watcher must be code AND watched" surfaced at the one place every MCP tool
-response already passes through. Task 28 makes `lifecycle_turn_end_notification` the active
+response already passes through. `operator_inbox_post_payload` is also the completion-wake edge:
+for `turn-report` and `master-handover`, 260707-HFX2-L13 resolves and addresses the current manager
+before creating the row/ack expectation and attempting hosted delivery, while ordinary peer messages
+retain explicit addressing. Task 28 makes `lifecycle_turn_end_notification` the active
 NOTIFY-AND-CONTINUE turn-end tool: `_tool_payload` auto-dismisses an
 `awaiting-developer` lifecycle on the next call (`resume_from_await`, name-guarded
 to skip the notification itself), and `next_step.py`'s active hints repoint onto
@@ -145,6 +148,11 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round-2 route impact: `operator_inbox.py` now treats
+  completion/artifact posts as current-owner hierarchy signals and persists leaf/subject provenance;
+  no public MCP tool name or request surface changed. Verification metadata remains pinned until
+  closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 route impact (spawn settings authority):
   `terminal.py::spawn_agent_session_payload` no longer treats caller `harness`/`model`/`effort`,

@@ -5,9 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8` |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| governingOverview      | `../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../overview.md)
 
 ## Purpose
 
@@ -17,9 +22,9 @@ The spine of the unified `l-01-agent-lifecycles` skill: lifecycle and job are ON
 
 ### Logic
 
-Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/SKILL.md`. HFX-L6 adds the **architect** as the developer-facing owner seat and reframes the **orchestrator** as a spawned backend seat; L6R3 adds **curator** as the dedicated onboarding writer. The router still has exactly three conditions, in order: (1) `AR_SPAWN_ROLE` env set -> run `roles/<value>.md`; (2) a fresh-session role brief -> run that role; (3) otherwise the session is developer-facing -> run `roles/architect.md`. Solo hat-collapse belongs only to the architect. The minimal frame is the only shared machinery: the six `lifecycle_*` signals, fleeting->persistent promotion at `worktree_start`, `awaiting-developer` auto-resume on the next AR call, server-side identity; a spawned role that never touches mutating AR tools never instantiates a lifecycle (designed shape), and a spawned role never adopts its spawner's lifecycle - the session<->leaf association is the catalog binding via the QUALIFIED leaf key `<repository>/<master>/<docId>`. Shared invariants: continuity in task_doc + durable artifacts (never transcripts); the escalation ladder worker -> manager -> orchestrator -> architect -> developer with no rung skipped; role-seat immutability for dashboard-owned sessions (roles expand horizontally into new chats, sub-agents drill vertically inside one seat); the manager -> builder -> reviewer -> curator leaf closeout chain; and the minimal decision-item relay over the existing operator inbox (one item at a time: decision/options/consequences/evidence refs, with a durable ruling back). Also carries the knob-block resolution (role-file defaults < global agentic settings < repo-local settings — since 260703-L13 the settings home is the GLOBAL agentic settings file `<coordination-root>/system/settings.json` with `<code-repo>/system/settings.json` overrides, not the MCP authority file), the as-built settings documentation (`orchestration.gateDelegation` parsed + enforced by `controlplane/gate_policy.py`, boot-snapshot from the global file with a one-cycle warned authority fallback; `roles`/`concurrency`/`spawn`/`loops` PARSED per-use by `kernel/agentic_settings.py` — the backlog closed; `spawn_agent_session` resolves spend settings as repo-local level override > global level override > repo-local role default > global role default > detection-gated; legacy caller-supplied harness/model/effort, direct launch/session controls, spawn model/effort env, and harness-native spend/endpoint env keys refuse with `spend-override-unsupported`; since 260703-L16 the resolved knobs are APPLIED at the harness boundary: model/effort ride `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` env AND map onto the launch argv per-harness via the effective registry, unknown effort values REFUSE at dispatch naming the harness's vocabulary (claude's two-vehicle set incl. the session-level `ultracode` delivered as a post-launch `/effort` paste), the free-form escape hatch (`launchArgs`/`promptKeywords`/`sessionCommands`) is settings-owned, never validated, and only recorded in spawn provenance, `orchestration.rolesPerLevel` expresses per-LEVEL agent sets, and `orchestration.harnesses` teaches new TUIs / pre-customizes builtin launches — manual `docs/reference/harnesses.md`; example harness ids are registry ids claude/codex), a 6-line super-branch orientation diagram (the full topology's single home is `roles/orchestrator.md`), and the credits lineage (260619 spec -> Archon / agent-control-plane).
+Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/SKILL.md`. The router has exactly three conditions, in order: (1) `AR_SPAWN_ROLE` selects the matching role; (2) a fresh-session role brief selects that role; (3) otherwise the session remains a research-capable **free-chat launcher** and spawns a clean architect with the settings-owned profile for role-shaped work. The spawned architect owns the developer conversation; the orchestrator remains backend-only; curator remains the dedicated onboarding writer. Solo hat-collapse belongs only to the architect after the developer approves the short-root question. The minimal frame is the only shared machinery: the six `lifecycle_*` signals, fleeting-to-persistent promotion at `worktree_start`, `awaiting-developer` auto-resume on the next AR call, and server-side identity. A spawned role that never touches mutating AR tools never instantiates a lifecycle, and no role adopts its spawner's lifecycle. Shared invariants include durable-artifact continuity, architect terminal custody, role-seat immutability, the manager -> builder -> reviewer -> curator leaf chain, the decision relay, and dependency-graph scheduling: independent work runs in parallel by default up to the applicable `orchestration.concurrency` cap; serial execution must name a gate, shared-file one-writer dependency, or explicit ruling. The architect proposes a strategist pass and it runs only after developer approval; settings cannot auto-run it.
 
-As of the L8 de-harnessing pass there are deliberately NO per-harness role files (developer decision 2026-07-05): knob resolution is role-file defaults < settings.json orchestration block (the variant layer is gone), harness ABILITIES are capability-conditional doctrine inside the portable files, and harness PREFERENCE is deployment configuration in settings. As of HFX-L6/L6R3 the registry lists EIGHT portable role files — architect, orchestrator, designer, strategist, manager, worker, curator, reviewer — with the strategist row still spawn-first and mandatory before any orchestrated run, the curator row dedicated to fresh per-leaf onboarding writes, and the reviewer row extending to the loop-reviewer seat (the two seams AND any three-party loop's review, criteria catalogs bound per review type).
+As of the L8 de-harnessing pass there are deliberately NO per-harness role files (developer decision 2026-07-05): knob resolution is role-file defaults < settings.json orchestration block (the variant layer is gone), harness ABILITIES are capability-conditional doctrine inside the portable files, and harness PREFERENCE is deployment configuration in settings. The registry has nine portable role files. The strategist is spawn-first only after developer approval of the architect's propose-first question; the curator is dedicated to fresh per-leaf onboarding writes; and the reviewer covers both exit seams and applicable three-party loops.
 
 As of 260707-HFX-L7 (provider degradation protocol) the registry grows to **NINE** portable role
 files: a new `system-specialist` row is inserted after `curator` and before the adversarial
@@ -41,14 +46,14 @@ worked example (`orchestration.roles.<role>`) gains a `system-specialist` entry
 architect/strategist/reviewer/curator/worker rows, giving the reader a concrete spawn-knob shape
 for the new role rather than only the registry mention.
 
-As of 260703-L12 the file is also the **three-party-loop doctrine's single home** (a new section between Shared Invariants and the knob block, referenced per seat): OWNER → BUILDER → REVIEWER at every level that owns work (leaf/master/portfolio table); complexity-scored tiers at dispatch (direct / builder-verified / full loop, scored on blast radius · novelty · size; round 2 glosses direct as no-loop-machinery through the level's ordinary build channel — hands-on at session scale, the leaf's worker under a manager — so it cannot read manager-implements; a master whose leaves all score direct = workflow-free manager); the HARD 3-round cap where ONLY full end-to-end rounds count (delta-verifies by the SAME reviewer close rounds; fix rounds resume the SAME builder); the CONVERGENCE rule (every round must shrink the finding set — a non-shrinking round escalates immediately; the cap is the backstop); escalation one seat up the ladder with the full round history attached; the written QUO-VADIS criterion (a high-blast-radius truth escalates immediately; presentation-grade never); the criteria-catalog binding (`criteria/` — code-seam · doctrine · onboarding-memory · report-verification · plan-review) and the per-level agent sets (knobs in `orchestration.loops`, schema in `docs/reference/settings-json.md`, stored in the global agentic file with repo-local override and parsed by the kernel loader since L13 — the strategist's mandatory pre-run is doctrine, not a knob).
+As of 260703-L12 the file is also the **three-party-loop doctrine's single home**: OWNER → BUILDER → REVIEWER at every level that owns work; complexity-scored tiers at dispatch; the hard three-full-round cap; same-reviewer delta verification; same-builder fix rounds; convergence and quo-vadis escalation; standing criteria catalogs; and per-level agent sets. HFX3 supersedes the old unconditional strategist sentence: Job P is approval-gated, and a developer-sanctioned skip authorizes the orchestrator to author and adopt the orchestration task from the ruled plan.
 
 As of 260707-HFX2-L5 (doctrine inversion: active vigilance → passive process-and-ack) the Shared
 Invariants section gains a new "Notify-and-stop is safe by design" paragraph right after the
 lifecycle-adoption sentence: ending a turn on `lifecycle_turn_end_notification`, or simply stopping
 once the artifact is written and nothing is pending, is never a liveness gap, because the HFX2-L2
 supervisor sweep evaluates every expected artifact/signal on its own mechanical tick and the
-HFX2-L4 escalation ladder (renudge → skip-level → developer attention, then respawn) handles
+HFX2-L4 escalation ladder (renudge → skip-level → architect custody/architect attention, then respawn) handles
 inactivity. The paragraph states the **watcher ban** in the same breath (uniform-mechanism ruling
 2026-07-07: no role watches, polls, or nudges on its own initiative — that is a banned seat-local
 mechanism) and the inversion this leaf drives through every role file: **every role's own liveness
@@ -86,7 +91,39 @@ was a doctrine sentence with no concrete brief shape; this closes that gap the s
 
 As of cycle 4 the router decides its edge cases in writing (unresolvable AR_SPAWN_ROLE falls through to the brief; a briefless role-env session announces itself on the inbox and waits; AR_SPAWN_ROLE=orchestrator is takeover-only), the brief header form is canonical (`ROLE BRIEF — <role>` or a templates/*-brief.md shape), the hat/seat exception to the no-cross-reading rule is stated, the reviewer registry row carries spawn value `reviewer` -> roles/reviewer.md, the six lifecycle signals are enumerated by name, the dead variant rung is gone from the precedence line, and the as-built settings text documents the wired requireReviewerVerdictAtSeams + the named policy routing the handover to the orchestrator.
 
-As of cycle 5: the takeover pointer names the real section (Profile check (takeover), The Event Loop); the no-cross-reading exception says 'above'; the capability paragraph states the spawn-as-fan-out backdoor (DBMS principle). As of cycle 7 the Companion Files template registry lists all nine on-disk templates: `manager-brief` joins the line with its header-consistent description (`ROLE BRIEF — manager`; the orchestrator compiles a manager's session start from it) — the ninth template added in cycle 4 without extending the registry (AR4-5). As of 260703-L12 the Companion Files registry lists TEN templates (`orchestration-task` — the strategist's sprint plan — joins) plus the new `criteria/…` line (the five reviewer criteria catalogs), and the as-built settings paragraph documents `orchestration.loops` as documented-schema-with-L13-storage. As of HFX-L6/L6R3 the frontmatter description says eight role lifecycles and developer-facing sessions are architect sessions.
+As of cycle 5: the takeover pointer names the real section (Profile check (takeover), The Event Loop); the no-cross-reading exception says 'above'; the capability paragraph states the spawn-as-fan-out backdoor (DBMS principle). As of cycle 7 the Companion Files template registry lists all nine on-disk templates. As of 260703-L12 it lists ten templates plus the five reviewer criteria catalogs. HFX3 aligns the frontmatter summary with the body: condition 3 is the otherwise-free-chat launcher, not an architect default.
+
+### Conventions
+
+Canonical doctrine is edited under root `skills/` and propagated with `scripts/sync-skills.py`.
+Package-data copies are eligible onboarding evidence; dot-prefixed harness mirrors remain excluded by
+path rules.
+
+### Invariants And Boundaries
+
+- Free chat launches roles but is not itself a role seat.
+- Strategist dispatch is propose-first and developer-approved; a sanctioned skip never blocks Job O.
+- The escalation ladder terminates in architect custody, not a developer mailbox.
+- Independent work is parallel by default within configured caps; sequential work names its reason.
+
+### Todos
+
+Reviewer notes N1-N5 and N-d1 remain nonblocking/out of scope for this curation pass.
+
+## Docs References
+
+No external domain documentation is configured for this repository-local lifecycle doctrine.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The packaged source carries the launcher, approval-gated strategist, architect-custody, and parallel-by-default invariants. | L12-L38; L90-L96; L156-L177; L229-L235 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| Canonical skills are propagated into package data and harness mirrors by the sync script. | L14-L55 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
 
 ## Cross-Repo Evidence
 
@@ -97,6 +134,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: reconciled the free-chat launcher,
+  settings-owned architect spawn, propose-first strategist approval, sanctioned-skip Job O path,
+  architect terminal custody, and dependency-graph parallel-by-default invariant. Added the
+  governing overview and required reference/boundary sections. Verification metadata remains
+  pinned until closeout stamps the eventual two-parent code commit.
 
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): the lifecycle skill spine now
   states that ordinary spawned seats use settings as the spend surface, with role/level declared on

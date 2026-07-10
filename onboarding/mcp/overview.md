@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -165,7 +165,9 @@ inbox state (distinct from ack): a pending row at the terminal escalation rung w
 provably dead (retired / no hosted session) terminates instead of redelivering forever — excluded
 from `redeliverable()`/`is_due()` via a state-keyed predicate in `controlplane/inbox_backoff.py`
 (mid-climb / live-seat rows untouched, L1-R1 preserved) and dropped by
-`controlplane/interaction_retention.py` compaction (pending/unacked rows are always preserved).
+`controlplane/interaction_retention.py` compaction. HFX3 supersedes the old immortal-pending
+contract: pending rows expire after 48 hours, the folded inbox is capped at 500 current ids, and
+durable truth lives in artifacts rather than notification rows.
 `serving/supervisor.py` threads ONE in-sweep operator-inbox snapshot/index through every
 finding/mutator (`record_delivery`, `mark_escalated`, `advance_rung`, `mark_ladder_resolved`,
 respawn reads), killing the per-finding full-log re-fold (O(n^2)) so a sweep's cost is bounded by
@@ -182,7 +184,18 @@ lands in `docs/design/observable-lifecycle.md` and the settings table in
 
 ## Hot Path Summary
 
-260707-HFX2-L12 generalized the CS-6 scaling/reclamation floor across MCP package hot paths: supervisor escalation gained `escalationBudget`, provider metrics/degradation logs gained bounded reads/compaction, projection readers gained task/gate/lifecycle/git caches, the workspace river gained a startup compactor, and the new CS-6 test files under `mcp/tests/` provide reusable regression helpers for future durable stores and process/session surfaces.
+260707-HFX2-L13 closes the L12 package residuals and reconciles the reviewed HFX3 runtime seams that
+round 2 actually changed. Observer storage now coalesces lifecycle heartbeats into bounded sidecars,
+fully reclaims dormant unprotected lifecycle directories, and lock-guards live workspace compaction
+with virtual cursor offsets. Projection/state broadcasts carry bounded body-free task/series summaries
+with `bodyRevision`; the serving package exposes the path-confined on-demand task-body endpoint and
+the dashboard fetches only the visible body. Control-plane/supervisor changes route leaf signals and
+completion wake to the current manager, suppress stale predicates when the leaf chain progressed,
+enforce a five-minute later-rung floor, and prevent duplicate same-sweep transitions. The CS-6 tests
+pin two-size river/heartbeat/task-payload bounds plus the corrected lifecycle-log cache property.
+Current code still excludes an unbound worker from active-phase chain credit; reviewer S1 remains the
+accepted HFX2-L14 S7 follow-up, and this summary does not certify the separate post-integration HFX3
+retro gate.
 
 Start in `src/agents_remember/mcp/config.py` for trusted settings parsing,
 `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed
@@ -526,9 +539,12 @@ synced coordinator and skills `AGENTS.md` templates speak the converged
 `l-01-agent-lifecycles` vocabulary (Start Here — Route By Role; orchestrator
 plan gate; reframe-research phase) with no retired skill names. Since
 260703-L12 the synced `l-01-agent-lifecycles` tree carries the three-party-loop
-build: `roles/strategist.md` (the sixth role — the spawn-first sprint planner,
-mandatory before any orchestrated run), `templates/orchestration-task.md` (the
-tenth template), and the new `criteria/` folder (five reviewer criteria
+build. HFX3/L14 makes the current routing explicit: otherwise-free-chat is a launcher; strategist
+dispatch happens only after developer approval; a sanctioned skip routes orchestration-task
+authorship to the orchestrator; the ladder ends in architect custody; and independent ready work
+runs in parallel by default within the applicable concurrency cap. The tree includes
+`roles/strategist.md`, `templates/orchestration-task.md` (the tenth template), and the
+`criteria/` folder (five reviewer criteria
 catalogs: code-seam, doctrine, onboarding-memory, report-verification,
 plan-review), with the loop doctrine homed in the skill's SKILL.md and woven
 into the role files.
@@ -620,6 +636,19 @@ into the role files.
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3/L14 combined route impact: reconciled packaged runtime doctrine
+  to the free-chat launcher, approval-gated strategist with sanctioned-skip authoring, architect
+  terminal custody, and parallel-by-default dependency scheduling. Replaced the superseded
+  immortal-pending route claim with the 48-hour TTL / 500-row health cap. Verification metadata
+  remains pinned until closeout stamps the eventual two-parent code commit.
+
+- 2026-07-10T01:27+02:00 — 260707-HFX2-L13 closeout-follow-up route impact: added the governing
+  package summary for live virtual-cursor river compaction, heartbeat coalescing/reclamation,
+  summary-only task broadcasts plus on-demand bodies, manager-first completion/signal routing,
+  chain-aware supervisor suppression, rung pacing, and the cross-route CS-6 regressions. Preserved
+  reviewer S1 as HFX2-L14 S7 and the separate HFX3 retro gate. Verification metadata remains pinned
+  until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact (landed chat archive + group cleanup):

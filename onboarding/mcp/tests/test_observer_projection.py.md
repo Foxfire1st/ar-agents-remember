@@ -5,10 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T05:16+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-10T01:14+02:00                     |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| governingOverview      | `../overview.md`                                 |
+
+## Governing Overview
+
+[mcp overview](../overview.md) — there is no route-local `mcp/tests/overview.md`.
 
 ## Purpose
 
@@ -20,6 +24,12 @@ an abandoned-enclosure lifecycle projects `abandoned`, and abandoned/reopened
 enclosures synthesize no paused persistent lifecycle.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Summary Contract Assertions
+
+Snapshot-reader assertions now expect task and series broadcast nodes to omit objective, sections,
+and decisions while preserving structural summary fields. Full-body behavior is exercised in the
+dedicated CS-6 projection suite through `read_task_document_body`.
 
 ### Logic
 
@@ -247,6 +257,10 @@ still projects — it is NOT archived — but with both flags False until `workt
 directories).
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: changed projection fixtures to assert summary-only
+  task/series bodies and repaired the governing-overview backlink. Verification metadata remains
+  pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-07T05:16+02:00 — 260703-L15 S2: `TokenSeriesTests` gained the served-bound coverage —
   `_tool_log` builder, at-the-bound untouched, and the 3000-sample decimation case (length ==

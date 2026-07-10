@@ -5,10 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                           |
+
+## Governing Overview
+
+[mcp overview](../overview.md) — there is no route-local `mcp/tests/overview.md`.
 
 ## Purpose
 
@@ -24,6 +28,15 @@ suite: the R6-mandated silent-seat, dead-intermediate, and dead-manager-with-liv
 mid-turn pane suppression, and fast sweep cadence without per-second owner inbox noise.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Chain, Ladder, And Manager-First Regressions
+
+Supervisor tests now prove an unbound reviewer's progress suppresses stale leaf inactivity and
+escalation, the rung walk respects the five-minute floor between transitions, duplicated due
+findings cannot advance one row twice in one sweep, and dead-upstream signals address the successor
+manager. These are full predicate/action/sweep assertions rather than isolated helper tests. Current
+coverage intentionally does not credit an unbound worker during its active phase; that accepted S1
+gap is routed to HFX2-L14 S7.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -173,6 +186,11 @@ No meaningful cross-repo references found.
 | Sweep-local behavior only. | — | — |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: added chain-progress suppression,
+  rung-floor/same-sweep guard, and current-manager dead-upstream regressions; recorded the unbound-
+  worker S1 follow-up. Verification metadata remains pinned until closeout stamps the eventual L13
+  code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: added supervisor regressions for one signal per cooldown,

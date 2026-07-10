@@ -47,7 +47,7 @@
       "CodeSide",
       "dashboard/src/panels/notes-reader/",
       "route-local-overview",
-      "e358c4ac520d94ae2e597ae3cbe186e07a4d1063",
+      "5b49fa85a51d527a5a216a88c361c08246c759d0",
       "/overview.md",
       "notes-reader/",
       "CockpitShell",
@@ -63,6 +63,9 @@
       "path",
       "onSelectNote",
       "notes-reader-back",
+      "fetch",
+      "/api/task-document",
+      "/api/notes/{list,read",
       "/api/notes/*",
       "data/notes.ts",
       "open",
@@ -80,10 +83,7 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
-      "lastVerifiedCommitHash",
-      "lastVerifiedCommitDate",
-      "T05"
+      "T01"
     ]
   },
   "fallback": {

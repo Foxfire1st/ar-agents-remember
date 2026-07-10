@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T23:59+02:00                           |
-| lastVerifiedCommitHash | `5f9163882857114319552d303e2e301082b588ba`       |
-| lastVerifiedCommitDate | 2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                           |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -19,6 +19,13 @@
 Hand-maintained TypeScript mirror of the served projection contract (`mcp/.../observer/projection.py`, the source of truth — D7: pydantic codegen deferred). camelCase matches the wire form, and because the server dumps with `exclude_none=True`, every `T | None` server field is modelled as optional (`?:`). Slice 5e extends the contract with the enclosure-centered Engine Room process map: `CommitRefNode` / `ProviderBootNode` / `EngineProcessEdge` / `EngineProcessNode`, the `ProcessFactState` / `ProcessHealth` honesty enums, and the `Analytics.engineProcesses` derived surface. Slice 6g mirrors the master-navigation additions: `TaskSubTaskRefNode` (with `linkedLifecycleId` and optional `createdAt`), `TaskSectionNode`, and `subTasks` / `sections` / `masterLifecycleId` on `TaskDocNode`. Task 17 makes `TaskDocNode.lifecycleId?` optional because runtime lifecycle state is attachment, not the condition for projecting a JSON-primary task document; planning-only leaves and masters can be listed/read before a worktree exists. Task 17 also mirrors `TaskDocNode.id`, the JSON-primary task id used as the authored leaf display number when parent sub-task refs are only fallback rows. The masters surface is still also exposed as `Analytics.series: SeriesNode[]`, carrying folder-keyed master content with `createdAt`, `objective`, sections, decisions, sub-task creation metadata for default oldest-first ordering, and `seriesTokenTotal` for the server-composed leaf-lifecycle token aggregate.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Task-Body Revision
+
+`TaskDocNode.bodyRevision?` mirrors the server-generated digest of reader-body fields omitted from
+the always-on summary. It is optional for compatibility with persisted/older projections. The detail
+reader combines it with `docPath` as the on-demand body cache key; summary fields such as identity,
+status, progress, steps, sub-task links, and routing metadata remain in the broadcast contract.
 
 ### Logic
 
@@ -83,6 +90,10 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 `EnclosureNode` separates leaf contract identity (`enclosureId` / `leafId`) from the containing `taskRoot`, which lets dashboard views handle root series tasks and leaf worktrees without deriving paths client-side. 260703-L11 adds the required `codeWorktreeExists` / `memoryWorktreeExists` booleans — the server-stat'ed worktree-existence truth (always on the wire: bool defaults are never `exclude_none`-dropped) that `hasLiveWorktree` filters tasks-surface visibility on, replacing every client-side cleanup-state proxy; `cleanup: reopened` means contract-reset-awaiting-restart, not live work.
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: added optional `TaskDocNode.bodyRevision`, the
+  cache invalidation token for on-demand reader bodies omitted from the summary broadcast.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6): extended
   `SupervisorHeartbeat` with `pendingInboxCount`, `redeliverableInboxCount`, and

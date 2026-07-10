@@ -5,9 +5,9 @@
 | repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/observer/event_retention.py` |
 | doc_type               | `file-level-onboarding`                             |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`          |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`          |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Governing Overview
@@ -27,6 +27,19 @@ Active logs remain replayable, but a fresh connection only re-streams a bounded 
 window per active source rather than an entire long-lived log from byte zero.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Live River And Complete Reclamation
+
+Workspace compaction is no longer startup-only. It runs under the shared cross-process river lock,
+rewrites only retained rows, and advances the persisted virtual base offset by the reclaimed bytes.
+Fresh-connect offsets therefore use `baseOffset + physicalOffset`, matching the live SSE cursor
+coordinate system. The serving layer owns the sixty-second live compaction cadence.
+
+Lifecycle pruning now removes the whole dormant, unprotected lifecycle directory with
+`shutil.rmtree` after the existing protection/dormancy gates. This closes the round-1 F7 leak where
+deleting only `events.jsonl` left `heartbeat.json` and served/gate sidecars permanently unreclaimable.
+The whole-directory deletion is intentional: protected or active lifecycles cannot reach this
+boundary.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -143,6 +156,11 @@ log layout.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F7: made workspace-river compaction live and
+  virtual-cursor-aware, then changed dormant unprotected lifecycle cleanup to reclaim the complete
+  sidecar-bearing directory. Verification metadata remains pinned until closeout stamps the eventual
+  L13 code commit.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

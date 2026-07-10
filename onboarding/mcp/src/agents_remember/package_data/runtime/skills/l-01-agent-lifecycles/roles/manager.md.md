@@ -5,9 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T14:05+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -29,7 +34,7 @@ passive contract": a turn-report artifact is expected at every hand-off, but the
 watch for it — the HFX2-L2 supervisor sweep evaluates each expected artifact
 (`evaluate_turn_report_findings`/`missing_artifact()`) on its own mechanical tick and, on
 inactivity, injects the nudge and walks the HFX2-L4 escalation ladder (renudge → skip-level →
-developer attention, then respawn). The manager's own job inverts to being woken with its pending
+architect custody/architect attention, then respawn). The manager's own job inverts to being woken with its pending
 signals and processing/acking every item before ending its turn. A new **watcher ban** line
 (uniform-mechanism ruling 2026-07-07) states this in the file directly: no seat-local watcher of
 any kind, the L2 sweep is the one mechanism, no per-seat variance. The Comms Protocol's "Stdin
@@ -68,9 +73,12 @@ seat when no separate manager exists. L6R3 adds the curator step: the manager ru
 builder -> reviewer -> curator closeout chain and closes each leaf from builder code + reviewer
 verdict + curator memory pass.
 The body defines: the seat (**one per master task**, its own coordination leaf + chat, **no worktree**);
-the lens (opening move = read the master `task_doc` + leaf docs and order the leaves; retrieval lean =
-intent-confirmation on the master's own routes, no bird's-eye view; decide default = dispatch the next
-ready leaf, exit through the master-exit seam); the **default-behavior rule**; four duty blocks; the
+the lens (opening move = read the master `task_doc` + leaf docs and derive ordering from the
+dependency graph; retrieval lean = intent-confirmation on the master's own routes, no bird's-eye
+view; dispatch independent ready leaves in parallel by default up to
+`orchestration.concurrency.maxParallelLeaves`; sequential execution must name a gate, shared-file
+one-writer dependency, or explicit ruling; exit through the master-exit seam); the
+**default-behavior rule**; four duty blocks; the
 artifact obligations; the comms protocol; and the knob block. The leaf dispatch loop spawns a **fresh
 worker per leaf**, monitors for the mandatory turn-report artifact (missing → a rate-limited stdin
 nudge), reviews the artifact vs the `task_doc` (the manager's own **leaf-level review — explicitly not an
@@ -155,7 +163,7 @@ The manager spawns workers, spawns the master-exit reviewer, and hands its maste
 | Canonical source this bundle copy is sync-propagated from. | n/a | [manager.md](agents-remember/skills/l-01-agent-lifecycles/roles/manager.md) |
 | The frame that houses this seat and owns the escalation ladder, gate-delegation doctrine, and the two adversarial seams. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
 | The worker seat the manager spawns fresh per leaf and whose turn report it reviews. | n/a | [worker.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md) |
-| The adversarial reviewer spawned at the master-exit seam, whose blocking verdict decomposes into fix leaves the manager dispatches. | n/a | [adversarial-reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md) |
+| The adversarial reviewer spawned at the master-exit seam, whose blocking verdict decomposes into fix leaves the manager dispatches. | L1-L35 | [reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md) |
 | The orchestrator seat the manager escalates to and hands the completed master over to. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
 
 As of the 260703-L8 reopened pass the file carries two additions: a flat-run note (in a flat series the ORCHESTRATOR wears this hat — same duties, same artifacts, one chair) and the reopen-and-reshape rule in the leaf-review bullet (a leaf whose deliverable came out wrong is reopened under its own id via task_reopen and its doc reshaped — never duplicated into a redo sibling; new leaves are for genuinely new changes).
@@ -193,6 +201,12 @@ No sibling repository evidence is needed for this orchestration job file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: manager leaf scheduling now follows the
+  dependency graph and dispatches independent ready leaves in parallel within
+  `maxParallelLeaves`; serial work must name its gate, one-writer dependency, or ruling. Corrected
+  the ladder terminal to architect custody and added the governing-overview backlink. Verification
+  metadata remains pinned until closeout stamps the eventual two-parent code commit.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: the package-data manager role
   sidecar now states that `worktree_integrate` auto-lands successful worker/reviewer chats into the

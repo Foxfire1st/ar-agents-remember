@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-09T11:19+02:00                |
-| lastVerifiedCommitHash |                                       `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
-| lastVerifiedCommitDate |                                       2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                |
+| lastVerifiedCommitHash |                                       `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate |                                       2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -20,6 +20,13 @@ Focused backend tests for the durable operator/agent inbox record, store, hosted
 delivery helper, and MCP payload builders.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Transition And Completion-Wake Proof
+
+Store coverage now asserts `advance_rung` stamps `rungTransitionAt` on consecutive transitions.
+The end-to-end completion test posts a reviewer turn-report with a stale manager address and proves
+the resulting row/owner metadata targets the successor manager, hosted delivery succeeds, and the
+paste lands in that manager's session.
 
 ### Logic
 
@@ -134,6 +141,10 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: pinned redundant rung stamps and the exact
+  stale-manager reviewer-completion wake path. Verification metadata remains pinned until closeout
+  stamps the eventual L13 code commit.
 
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: strengthened
   `test_record_delivery_bumps_attempt_and_schedules_next_attempt` to assert the first delivered row

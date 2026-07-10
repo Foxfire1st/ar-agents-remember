@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                           |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -46,6 +46,18 @@ decision controls still render for real `lifecycle.gate` requests. L8 also marks
 content with `data-task-leaf-key` so highlight capture can identify text selected from the displayed leaf.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 On-Demand Reader Contract
+
+The always-on `analytics.taskDocuments` collection is now summary-only. `DetailPanel` resolves the
+single document whose reader is actually visible, requests its full body through
+`fetchTaskDocument`, and caches the response under `docPath + bodyRevision`. Every render branch
+(direct task document, series master, lifecycle-bound master/leaf, and drilled slice) substitutes the
+cached full node when available and otherwise keeps the bounded summary as a non-blocking fallback.
+Changing `bodyRevision` creates a new cache key and causes the currently displayed document to be
+refetched. Fetch failure is intentionally quiet because the dashboard must remain navigable from the
+summary projection; the next projection/body-revision change retries. The cache currently has no
+eviction, the reviewer-accepted N5 follow-up for long-lived tabs that view many document revisions.
 
 ### Logic
 
@@ -214,6 +226,11 @@ panel must not recompute the aggregate from lifecycle token gauges or child task
 | The shared empty-state backdrop the no-selection state renders. | L1-L64 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: migrated every task-reader branch from broadcast
+  bodies to one on-demand full-body fetch, keyed the local cache by `docPath + bodyRevision`, and
+  documented the accepted no-eviction follow-up. Verification metadata remains pinned until closeout
+  stamps the eventual L13 code commit.
 
 - 2026-07-07T14:00+02:00 — agent-orchestration L17: `DetailPanel` now threads an `onOpenNotes` prop
   (parallel to `onOpenChangeSet`) from `CockpitShell` down through `TaskReader` / `MasterOverview` /

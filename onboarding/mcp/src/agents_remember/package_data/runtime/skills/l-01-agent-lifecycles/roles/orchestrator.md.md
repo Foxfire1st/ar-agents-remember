@@ -5,9 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T14:05+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -55,10 +60,13 @@ case): trust checkpoint -> lifecycle_start -> PORTFOLIO ORIENTATION (read the ta
 blocked / awaiting whom; say it back) -> route backend events from the architect, managers, workers,
 reviewers, or the orchestrator's own findings. The invariant ladder still holds: approved task doc
 -> branch intent -> worktree only where something is built; chat is never a build route. Design and
-drawing-board items go to the architect. Job P performs coherence scan, bulwark, strategist
-pre-run, orchestration-task adoption, and portfolio plan work with drawing-board rounds relayed
-through architect decision items. Job O executes approved backend plans: super-branch intent,
-dispatch loop with AR_SPAWN_ROLE + qualified leaf keys, failed-deliverable reopen/reshape, C-11
+drawing-board items go to the architect. Job P performs coherence scan, bulwark, and—only after
+developer approval of the architect's propose-first question—a strategist pass. Job O always
+requires an adopted orchestration task: it adopts the approved strategist draft, or after a
+developer-sanctioned skip this seat authors and adopts the task from the ruled plan and records the
+source in the decision log. Job O executes approved backend plans: super-branch intent,
+dependency-ordered dispatch with independent ready masters parallel by default up to
+`orchestration.concurrency.maxParallelMasters`, failed-deliverable reopen/reshape, C-11
 master->super integration duty, super-exit seam, architect-mediated developer landing tail, and
 self-improvement close. Backend operational handoffs still use durable gates and inbox surfaces.
 Hat-collapse is forbidden for spawned backend orchestrator sessions.
@@ -69,7 +77,13 @@ As of cycle 4 the orchestrator DECIDES the manager's `master-handover-approval` 
 
 As of cycle 5: the master-exit decide call is named exactly (gate_decide(gate_id=<packet-carried>, decision, deciding_role=orchestrator) with server-side cross-lifecycle resolution) and integration enforcement stated; a Profile check (takeover) paragraph exists in The Event Loop (the AR-10 pointers now resolve); the fan-out section names the framework backdoor: spawn_agent_session is the harness-independent fan-out (DBMS principle). Cycle 6 makes the enforcement sentence true as-built (`worktree_integrate` refuses while a `master-handover-approval` gate addressed to this master — its `enclosure` — is undecided or policy-invalid), moves the Profile check paragraph AFTER the routing table so strict CommonMark keeps the opening-move list intact, and disambiguates the fan-out fallback: analyses stay sequential-in-loop on a spawnless harness, the framework spawn is for ROLE seats only (an env-less spawned chat would be misrouted as an orchestrator).
 
-As of 260703-L12 the **strategist seat is REAL** (the "(planned seat — leaf L12)" marker is gone): Job P carries the MANDATORY strategist pre-run — before implementation starts on any designed master, `spawn_agent_session` with `AR_SPAWN_ROLE=strategist` and a portfolio brief of refs (never pasted state); the strategist returns the ORCHESTRATION TASK (sprint plan + scope, `templates/orchestration-task.md`), reviewed in the portfolio three-party loop (plan-review catalog) and converged over drawing-board rounds; this seat ADOPTS the draft (reader-not-mutator strategist); re-evaluation rules (in-sprint pre-implementation addition → re-plan; out-of-sprint → next sprint); Job O's entry requires the adopted orchestration task unconditionally (even a single master; the hat-collapse Portfolio bullet now says an orchestrated run never skips the pass — only session-scale hands-on work does). The **super-exit handover is ruled** (2026-07-06, resolves L8-Q9): all leaf→master and master→super integrations are orchestrator-delegated (happy path under the series' standing approval; a raised durable `integration-approval` gate still awaits the developer — human-pinned as-built); the developer reviews ONCE at the fully integrated super branch on the PR/carry-over gate, **visible-behavior-first in a REVIEWABLE ENVIRONMENT** (for agents-remember: the dashboard) with **demo notes ("what changed visibly", per master)**, code second. Round 2 (L12R-6) adds the standing-approval carve-out to the Hand-Off Protocol intro itself: in an orchestrated run, leaf→master and master→super integrations ride the series' standing approval — no per-edge developer hand-off; the table's integration row governs when a hand-off DOES happen (solo runs; a raised durable gate). The Comms escalation swaps "genuinely stumped" for the written QUO-VADIS test (a high-blast-radius truth goes up immediately; presentation-grade never), and the dispatch loop states how a manager-escalated loop (cap hit / non-convergence, round history attached) is re-run at this level's agent set or taken to the developer.
+As of 260703-L12 the **strategist seat is real** and returns an orchestration-task draft when
+dispatched. HFX3 supersedes the old mandatory-pre-run rule: the architect proposes Job P and the
+developer decides; a sanctioned skip routes directly to this seat's author-and-adopt path, so Job O
+never deadlocks. The dependency graph, not habit, decides sequencing: independent ready masters run
+in parallel within `maxParallelMasters`; serial execution must name a gate, shared-file one-writer
+dependency, or explicit ruling. The super-exit handover remains orchestrator-delegated under standing
+series authority, with human-pinned gates and the final visible-behavior-first super review preserved.
 
 As of 260703-L14 the Job P Output bullet states the orchestration task's DURABLE FORM: a
 `kind:"master"` task doc carrying a top-level `orchestrates` list naming the master tasks it
@@ -139,6 +153,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: replaced the mandatory strategist pre-run
+  with architect-proposed/developer-approved Job P, documented the orchestrator-owned task
+  author/adopt path after a sanctioned skip, and made independent ready masters parallel by default
+  within `maxParallelMasters`. Added the governing-overview backlink. Verification metadata remains
+  pinned until closeout stamps the eventual two-parent code commit.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: the package-data orchestrator role
   sidecar now states that `lifecycle_finalize_task` auto-lands completed manager/reviewer seats into

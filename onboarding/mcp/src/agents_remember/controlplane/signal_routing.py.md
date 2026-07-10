@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-08T23:15+02:00                                             |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                                             |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -24,6 +24,22 @@ ladder's rung-2 skip-level target and the dead-upstream grandparent signal, plus
 liveness check both the ladder and that two-hop walk use to skip past a confirmed-dead node.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Manager-First Routing And Chain Progress
+
+Worker, reviewer, and curator signals now resolve the live direct manager first, then a manager
+proven on the same qualified leaf/master, and otherwise the role-only manager mailbox. Address-time
+routing never guesses a manager from another master and never jumps directly to orchestrator or
+architect. The older spawn-provenance walk remains separate and is used only by later ladder
+skip-level derivation.
+
+`leaf_chain_has_progress` suppresses stale expectations, inactivity signals, redelivery, and rung
+escalation when another exact-leaf seat, the current manager, or an unbound reviewer/curator spawned
+by that manager in the subject worktree has progressed. Current code deliberately excludes unbound
+workers from that active-phase credit. The round-2 reviewer accepted the resulting bounded
+false-inactivity refire risk as non-blocking because manager addressing, cooldowns, the five-minute
+floor, and completion wake bound it; HFX2-L14 S7 owns extending same-worktree/current-manager credit
+to the unbound worker without cross-leaf suppression. Do not document or infer that S1 is fixed here.
 
 ### Logic
 
@@ -115,6 +131,11 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: replaced stale one-hop leaf addressing with
+  current-manager resolution, separated historical skip-level provenance, and added chain-progress
+  suppression. Recorded the accepted S1 truth that unbound workers remain excluded until HFX2-L14.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R2/R4, escalation ladder + dead-upstream detection):
   added `is_seat_dead` (liveness check — unknown or non-`running` reads as dead) and

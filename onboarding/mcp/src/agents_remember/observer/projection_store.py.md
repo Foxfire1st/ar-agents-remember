@@ -5,10 +5,14 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`             |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`             |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                          |
+
+## Governing Overview
+
+[observer overview](overview.md)
 
 ## Purpose
 
@@ -18,6 +22,15 @@ the pure reduction + the atomic write together, and writes the projection where
 the dashboard reads it (slice 3a).
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Heartbeat-Sidecar Merge
+
+The lifecycle-log cache now stores only parsed `events.jsonl` rows. A projection read reuses that
+parse while independently reading and merging the latest `heartbeat.json` sidecar, so every heartbeat
+tick remains visible to reducer staleness without changing the log fingerprint or forcing a full-log
+reparse. The merge copies the cached list before appending the sidecar. Current timestamp ordering is
+a raw string comparison; the round-1 reviewer accepted unifying it with `EventStore`'s parsed compare
+as non-blocking N6.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -161,6 +174,11 @@ enclosure state in `worktree_provider_admission`; this file only reorders the re
 | Projection tests prove cached repo surfaces do not cache provider reads. | L2283-L2324 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F7/B2: split cached log events from the coalesced
+  heartbeat merge so heartbeat updates refresh projection state without reparsing the JSONL log;
+  recorded the accepted raw-compare follow-up. Verification metadata remains pinned until closeout
+  stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `project_and_write` now also calls `read_expectation_rows` and threads it into `project_workspace` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

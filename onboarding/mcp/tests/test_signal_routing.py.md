@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-08T23:15+02:00                        |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`|
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                        |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -24,6 +24,14 @@ terminal catalog's spawn provenance, entirely without a caller-supplied address.
 and its `is_seat_dead` liveness helper.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Manager Resolution And Chain Credit
+
+New fixtures prove a reviewer signal with stale provenance resolves the current same-chain manager,
+an ambiguous/stale manager binding falls back to the role-only manager mailbox rather than
+orchestrator, and an unbound reviewer spawned by the manager in the subject worktree counts as leaf
+progress. No test claims equivalent unbound-worker credit; the accepted exclusion remains HFX2-L14
+S7 follow-up.
 
 ### Logic
 
@@ -108,6 +116,10 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: added current-manager, no-direct-skip, and
+  unbound-reviewer chain-progress regressions; preserved the explicit unbound-worker S1 follow-up.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R2/R4, escalation ladder + dead-upstream detection):
   added `SkipLevelOwnerTests` (live two-hop chain, dead-intermediate skip, dead-hierarchy-ceiling,

@@ -5,10 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[observer overview](overview.md)
 
 ## Purpose
 
@@ -23,6 +27,21 @@ worktree-start blocks, §5.4). Every reader reuses the producing subsystem's own
 parser rather than re-parsing.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Bounded Task Summaries And On-Demand Bodies
+
+Task-document scans still share the short TTL parse cache, but the always-on task and series surfaces
+now take the newest bounded window (250 nodes each) and omit reader bodies. `_task_doc_node` computes
+`bodyRevision` from the omitted fields and receives an explicit `include_body` choice. Lifecycle
+binding was factored into `_TaskDocumentLifecycleMaps` so summary and on-demand paths resolve the same
+runtime context.
+
+`read_task_document_body` accepts a projected `docPath`, resolves candidates, requires the final path
+to be a real file under `coordination_root/tasks` (including after symlink resolution), validates the
+task-document schema, and returns the full node. This confinement is necessary because the HTTP
+endpoint accepts a client-provided path. The summary window currently truncates silently and still
+carries full per-document step/sub-task lists; those are accepted round-1 N4 follow-ups, not claims of
+completion in L13.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -263,6 +282,11 @@ work while archived roots and contract folders stay out of the JSON scan.
 | The data-surface inventory the structural/analytical split follows. | L91-L118; L332-L344 | [docs/design/observable-lifecycle.md](../../../../docs/design/observable-lifecycle.md) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: bounded the always-on task/series summary windows,
+  removed reader bodies from them, added body revisions and the path-confined on-demand full-body
+  reader, and recorded accepted N4 limits. Verification metadata remains pinned until closeout stamps
+  the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `read_agent_pickups` now populates the R1/R4 ack/backoff/owner fields; added `read_expectation_rows` (R5) reading `ExpectationRowStore.pending()` for dashboard/architect observability — surfacing only, an L2 predicate reads the store directly. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

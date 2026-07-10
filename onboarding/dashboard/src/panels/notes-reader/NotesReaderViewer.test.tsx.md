@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                           |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -22,6 +22,12 @@ text fallback / binary placeholder) that used to live in `TaskNotes.test.tsx` be
 retired.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Fetch-Fixture Compatibility
+
+The notes-reader fetch stub now serves `/api/task-document` before its notes list/read branches. The
+notes viewer embeds task-reader flows whose `DetailPanel` dependency fetches full task bodies on
+demand, so this branch preserves the suite's isolation while leaving notes API assertions unchanged.
 
 ### Logic
 
@@ -60,6 +66,10 @@ No meaningful cross-repo references found.
 | The shell driven by the takeover-wiring test. | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13: extended the notes-reader fetch fixture for the
+  on-demand task-document body endpoint used by the embedded detail reader. Verification metadata
+  remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-07T20:50+02:00 — agent-orchestration L18 (finding 2 / L17R-2 remedy): added the
   truncated-markdown banner cases — `truncated: true` markdown renders the first-2-MiB banner above

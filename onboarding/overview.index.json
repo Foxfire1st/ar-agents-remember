@@ -47,7 +47,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1462,
+    "sourceFilesInScope": 1463,
     "fileSidecars": 9,
     "childRoutes": 5
   },
@@ -73,7 +73,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover the source-checkout and public contracts, `mcp/` covers the package-managed MCP server, context packet, runtime install, skills install, provider lifecycle/setup, benchmark tools, settings, route-index generation, memory quality, worktree services, and memory services, `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates, the hidden harness starter package roots (`.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`)...",
+    "summary": "Use the root index to route quickly: `AGENTS.md` and `README.md` cover source-checkout and public contracts; `mcp/` covers the package-managed server and runtime; `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates; hidden harness roots cover first-run files; and `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles` carries the unified lifecycle router, minimal frame, loop doctrine, nine role lifecycles, templates, and criteria catalogs. Its current condition 3 is the free-chat launcher, not an architect default. Canoni...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -117,19 +117,11 @@
       "design",
       "mcp/",
       "mcp/src/agents_remember/package_data/runtime/agents-md-files",
-      "claude/",
-      "codex/",
-      "cursor/",
-      "agents/",
-      "github-vscode/",
-      "vscode/",
-      "hermes/",
-      "pi/",
-      "openclaw/",
+      "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles",
       "agents_remember",
       "package_data",
       "repo-overview",
-      "dbe750e4cd7fb777b8f39e7ba6279d1080502d8e",
+      "5b49fa85a51d527a5a216a88c361c08246c759d0",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -140,7 +132,15 @@
       "memory_root",
       "coordination_root",
       "c-09-git-worktree-manager",
-      "task_reopen"
+      "task_reopen",
+      "c-10-adopt-memory-baseline",
+      "memory.md",
+      "providers/runners/",
+      "providers/data/",
+      "logs/mcp/",
+      "logs/providers/",
+      "providers/_bin/",
+      "providers/_venvs/"
     ]
   },
   "fallback": {

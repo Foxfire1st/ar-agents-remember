@@ -46,6 +46,7 @@
     "dashboard/src/data/store.test.ts",
     "dashboard/src/data/store.ts",
     "dashboard/src/data/stream.ts",
+    "dashboard/src/data/taskDocuments.ts",
     "dashboard/src/data/taskHierarchy.ts",
     "dashboard/src/data/taskIdentity.test.ts",
     "dashboard/src/data/taskIdentity.ts",
@@ -69,8 +70,8 @@
     "dashboard/src/types/projection.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 135,
-    "fileSidecars": 46,
+    "sourceFilesInScope": 136,
+    "fileSidecars": 47,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -107,6 +108,7 @@
     "store",
     "stream",
     "styles",
+    "taskdocuments",
     "taskhierarchy",
     "taskidentity",
     "terminal",

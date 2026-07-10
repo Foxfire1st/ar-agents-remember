@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -16,7 +16,11 @@
 
 ## Purpose
 
-260707-HFX2-L12 bounds several observer/projection hot paths without changing the served projection contract: lifecycle logs are cached while unchanged, gate folds are single-read with throttled physical rewrite, task/series document scans share a TTL cache, git status probes are TTL-cached, task-document body bytes are measured and warned on, and the workspace event river is physically compacted only at serving startup while live cursor-safe compaction remains HFX2-L13 scope.
+260707-HFX2-L13 closes the L12 observer residuals: workspace appends/compaction/live reads share a
+cross-process lock and virtual cursor base; lifecycle heartbeats coalesce into bounded sidecars whose
+latest value is merged into normal reads/projections; dormant unprotected lifecycle cleanup reclaims
+the whole sidecar-bearing directory; and task/series broadcasts are bounded summaries with full task
+bodies read on demand through a confined snapshot boundary.
 
 `observer/` is the observable session lifecycle substrate (the 3.0
 browser-dashboard direction). It owns **both sides**: the **write side** — an
@@ -61,9 +65,9 @@ projection boundary is current enclosure ownership: fleeting lifecycles still do
 fresh non-terminal promotion/gate lifecycles may bridge the enclosure materialization window, but older
 non-fleeting event-backed lifecycles drop from the live view when their enclosure is deleted or re-owned.
 `read_providers` reads each worktree's **isolated provider stack** (surface 4) bound to
-worktree/repo/role; and `TaskDocNode` carries the **full task content**
-(objective/requirements/design/steps/codeExamples/decisions/refs), so the dashboard reads the task in
-the UI rather than the filesystem.
+worktree/repo/role. Since 260707-HFX2-L13, `TaskDocNode` in the always-on projection is a bounded,
+body-free summary with `bodyRevision`; the dashboard reads one selected full body through
+`read_task_document_body`, while identity/progress/step/navigation fields remain in the summary.
 
 Slice 5e adds the **Engine Room process map** surface: `Analytics.engineProcesses` — a second derived
 analytics surface (like `attentionQueue`) composed by `reducer.build_engine_processes` into one
@@ -199,7 +203,9 @@ raw-event retention on **inactivity** rather than the post-termination pruning a
 `events.jsonl` is pruned after >1h with no real (non-heartbeat) activity (fleeting and enclosure alike,
 not on `lifecycle.ended`), the `ambient.py` heartbeat ticker decays after ~10 min idle so a dormant log
 goes quiet and ages out on its own, and a fresh `/api/events` connect replays only a bounded recent
-window.
+window. L13 changes heartbeat storage from repeated JSONL appends to one atomic `heartbeat.json`
+sidecar, merges that sidecar for reducer semantics without reparsing unchanged logs, and makes dormant
+unprotected pruning reclaim the complete lifecycle directory.
 
 Task 33 surfaces that active-enclosure admission to the dashboard Topology. `projection.py` gains the
 served `WorkspaceProjection.activeWorktreeGroups: list[str]` (the worktree-group basenames with a live
@@ -224,6 +230,14 @@ is archived (`cleanup` `completed`/`abandoned`, `ARCHIVED_CLEANUP_STATES`) **and
 (`MASTER_ARCHIVE_GRACE_SECONDS`, measured from the most recent finalized leaf contract mtime) has
 elapsed. This durable-state retention deliberately **supersedes** the per-log inactivity TTL for
 enclosure-backed work; fleeting/standalone logs (no `taskName`) keep the ordinary TTL.
+
+## Hot Path Summary
+
+Workspace event storage is bounded live by lock-guarded compaction plus virtual byte offsets;
+lifecycle heartbeats are one coalesced sidecar per lifecycle; projection log parses survive heartbeat
+ticks; and task/series broadcasts carry at most 250 body-free summaries with selected bodies loaded on
+demand. Accepted follow-ups remain explicit: task summary truncation/step-list bounds (N4), raw
+sidecar timestamp compare (N6), and the workspace crash-window ordering note (N2).
 
 ## Route Model
 
@@ -431,6 +445,11 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: documented live virtual-cursor river
+  compaction, coalesced heartbeat storage plus complete lifecycle reclamation, body-free bounded task
+  summaries, and the confined on-demand body reader; retained accepted N2/N4/N6 limits. Verification
+  metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (small): `ambient.py`'s `AmbientLifecycle`

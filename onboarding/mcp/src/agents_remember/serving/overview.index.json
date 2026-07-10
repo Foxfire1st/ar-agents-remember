@@ -113,7 +113,7 @@
     "validation"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L12 adds the serving-layer CS-6 controls: the supervisor sweep reuses one-read store snapshots and caps escalation-rung emission, terminal liveness runs inside a catalog batch plus tombstone compaction, raw-event fresh-connect scans are offloaded, provider metrics compaction runs on the metrics cadence, and startup performs the only currently cursor-safe workspace-river compaction. `agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`,...",
+    "summary": "260707-HFX2-L13 adds a live sixty-second workspace-river compactor over virtual locked cursors, serves full task bodies only through `GET /api/task-document`, and makes the supervisor current-manager-first, chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains body-free for task documents. `agents-remember dashboard --config <settings.json>` \u2192 `cli/dashboard.py` \u2192 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks `project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diff...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

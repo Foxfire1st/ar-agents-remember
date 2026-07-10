@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/escalation_ladder.py`        |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-08T23:15+02:00                                             |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`                           |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                                             |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`                           |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -25,6 +25,15 @@ addressee is; `serving/supervisor.py` (the only caller) reads the stores, calls 
 the delivery + durable row update.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Rung-Dwell Safety Floor
+
+Later-rung eligibility now requires both the configured rung dwell and a hard five-minute minimum
+since the newest valid `escalatedAt`/`rungTransitionAt` anchor. Rung zero still follows its per-kind
+SLA. Malformed timestamps fail closed. The redundant transition anchor is necessary because the live
+HFX3 incident showed stale escalation metadata collapsing several rungs into seconds; generic row
+`ts` is unsuitable because delivery and renewal also mutate it. Configured dwell values above five
+minutes remain authoritative.
 
 ### Logic
 
@@ -102,6 +111,11 @@ No meaningful cross-repo references found.
 | Same-repository control-plane logic only. | — | — |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: enforced the developer-ruled five-minute
+  later-rung floor with an independent transition anchor while retaining configured longer dwells and
+  rung-zero SLAs. Verification metadata remains pinned until closeout stamps the eventual L13 code
+  commit.
 
 - 2026-07-08T23:15+02:00 — Created for 260707-HFX2-L4 (P-15 tier 3, R2/R3): the pure ladder walker
   — `rung_due` (per-kind SLA at rung 0, re-anchored per-rung dwell thereafter, `MAX_RUNG` ceiling),

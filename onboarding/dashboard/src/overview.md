@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -184,7 +184,10 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   and folder-keyed master aggregation surfaces so the detail panel can render masters, label authored
   leaves from the child task id, and order leaves from structured creation metadata rather than task-name
   prefixes. Task 21 adds `SeriesNode.seriesTokenTotal`, the server-composed aggregate displayed by
-  master readers. Task 23/24/L3 adds `AttentionItem.gateId?` and `AgentPickupNode` /
+  master readers. **260707-HFX2-L13 F6** adds optional `TaskDocNode.bodyRevision` and
+  `data/taskDocuments.ts`: the always-on task/series projection is summary-only, while the visible
+  reader fetches one full body from `/api/task-document` and invalidates its cache by path + revision.
+  Task 23/24/L3 adds `AttentionItem.gateId?` and `AgentPickupNode` /
   `Analytics.agentPickups` for attention clear and task-row waiting-for-agent/check-chat feedback,
   including sender/recipient roles, message kind, artifact path, and hosted-delivery state. 260703-L14 mirrors `TaskDocNode.orchestrates?` — the orchestration-command relation (non-empty only
   on an orchestration-task master; optional for pre-L14 persisted-projection compatibility). Task
@@ -239,6 +242,10 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 | The app-injected `supervisorHeartbeat` payload builder `SupervisorHeartbeatBadge` renders, including HFX2-L8 inbox backlog/duration fields. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6 route impact: added the on-demand task-document data
+  adapter and `bodyRevision` wire field; full reader bodies no longer ride the always-on projection.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T14:05+02:00 — No route impact: 260707-HFX2-L11 (landed chat archive + group cleanup)
   extends `data/{sessionGroups,sessions,terminal}.ts` (new `"landed"` status, landing provenance

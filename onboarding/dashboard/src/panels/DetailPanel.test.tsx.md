@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                           |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -54,6 +54,14 @@ qualified id (`repo-a/series/1`, not the master), the breadcrumb back clears it 
 directly-opened leaf doc reports its own `repo/master/leaf-id`.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 On-Demand Task Bodies
+
+The shared fetch doubles used by the detail-panel and notes integrations now recognize
+`/api/task-document?path=...` and return the matching projected fixture as a full document before
+falling through to change-set or notes responses. This is test-harness plumbing for the reader's new
+on-demand body request; it keeps all pre-existing interaction assertions meaningful without making a
+real network request.
 
 ### Logic
 
@@ -145,6 +153,10 @@ archived documents.
 | The `gate-review` / `blocked` fixtures seeded. | L151-L290 | [dev/fixtures.ts](../dev/fixtures.ts) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13: taught the shared fetch stubs to serve full task
+  documents for the on-demand reader path while preserving change-set and notes API behavior.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-07T14:00+02:00 — agent-orchestration L17: the "series notes" test's resolved-reference click now
   asserts the `onOpenNotes` callback fires with `{repo, master, path}` (the reader takeover opens) instead

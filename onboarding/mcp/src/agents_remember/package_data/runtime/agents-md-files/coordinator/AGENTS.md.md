@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:00+02:00                     |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00                     |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -28,9 +28,10 @@ The template combines the checkout's lifecycle routing with coordinator
 runtime guidance. It now opens with a concise `Start Here — Route By Role`
 section: sessions route by role through the `l-01-agent-lifecycles` skill — a
 spawned agent (the `AR_SPAWN_ROLE` env var, or a role brief as first message)
-follows its brief as its session start, and a developer-facing session is the
-architect, entering `skills/l-01-agent-lifecycles/roles/architect.md`
-before working in any managed repository. An already-running session must stay
+follows its brief as its session start, while a developer-facing session is the
+free-chat launcher. Research-only asks stay inline; role-shaped work spawns a clean architect
+session with the settings-owned profile instead of turning the launcher into a role seat. An
+already-running session must stay
 aware of managed-repo boundaries so a turn or tool target that crosses from
 outside Agents Remember scope into a managed repository enters the architect
 lifecycle first. The detailed build-mode explanation lives in
@@ -117,7 +118,7 @@ This onboarding is backed by the source template itself.
 
 | Finding                                                                                                                       | Citations | Source Path |
 | ----------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The template routes sessions by role through the `l-01-agent-lifecycles` skill (spawned agents follow their briefs; a developer-facing session is the architect and enters `roles/architect.md`) and requires architect-lifecycle entry when an already-running session crosses from outside Agents Remember scope into a managed repository. | L3-L15 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
+| The template routes spawned agents by their role brief and keeps the developer-facing chat as a free-chat launcher that spawns a settings-profile architect for role-shaped work. | L3-L18 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | L28-L38   | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | L40-L49 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
 | The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. | L50-L60 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
@@ -136,6 +137,11 @@ No sibling repository evidence is needed for this package template.
 | No meaningful cross-repo references found. | n/a       | n/a         |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3 retro curation: corrected the installed coordinator-template
+  account to the otherwise-free-chat launcher contract. Research stays inline; role-shaped work
+  spawns a clean architect with the settings-owned profile. Updated the source citation range.
+  Verification metadata remains pinned until closeout stamps the eventual two-parent code commit.
 
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split (synced via
   `sync-runtime.py`): the installed coordinator template now routes developer-facing
