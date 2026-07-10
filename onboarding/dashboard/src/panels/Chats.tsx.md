@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T21:52+02:00 |
-| lastVerifiedCommitHash | `b76c462acb2fb816331c6c078cba1fe779bb816a`       |
-| lastVerifiedCommitDate | 2026-07-10T22:09:47+02:00|
+| lastVerifiedCommitHash | `79b2fd6c4da73c7845406f6c68b947b8bd0e1009`       |
+| lastVerifiedCommitDate | 2026-07-10T22:22:16+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
