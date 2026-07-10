@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T13:07:21+02:00                           |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T13:41+02:00                           |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -25,11 +25,10 @@ tag when a session is attached to a lifecycle for gate-response routing, and tas
 non-running status tag for restored exited rows. The Task 22 follow-up removed the old local-only Hide
 action; End is now the only per-row command. Slice L5 adds an optional `leafNameFor` resolver so a
 leaf-bound session's row appends the attached leaf's name ("who works on what"). 260703-L14 adds the
-**G1 command tree**: an optional `grouped` prop (the `data/sessionGroups` model) renders sessions
-inside collapsible groups — the sprint's command deck (gold insignia) on top, one group per claimed
-master (purple insignia + one 22px indent step when commanded), landed work in one
-collapsed-by-default archive — while unattached sessions keep the flat placement below; with no
-`grouped` model or zero derived groups the component renders the pre-L14 flat list unchanged. Rows
+    grouped rail: an optional `grouped` prop (the `data/sessionGroups` model) renders one section per
+    repo-qualified sprint, plus the landed archive and malformed-claim group. L16 renders each section's
+    sessions as a complete local spawn-edge forest, keeps manager-owned descendants collapsible, clamps
+    visual depth to one child indent, and uses that same forest renderer for the flat path. Rows
 with `spawnRole` provenance also wear a role chip; HFX-L6/L6R2 makes `architect` a known gold
 owner-tier chip alongside the backend command seats, and L6R4 makes `curator` a known role chip
 instead of the unknown/default path. **260707-HFX-L12** (optional R6 fold-in from the master-exit
@@ -59,11 +58,13 @@ Slice L5 adds the optional `leafNameFor?: (leafKey: string) => string` prop: whe
 `chats-session-leaf-{id}` span) — the bound leaf's task-doc title, or the raw key when no resolver is
 supplied — so the side rail shows which leaf each chat is working on.
 
-260703-L14 restructures rendering around the `grouped` prop. The row markup is extracted into a
-`renderRow` closure and `gridListFor(members, ariaLabel)` builds one React Aria `GridList` per
-member set (every list shares `selectedKeys={activeId}` — only the list containing the active id
-shows a selection). No `grouped`, or `grouped.groups.length === 0`, returns the single flat
-`GridList` exactly as before. Otherwise a `chats-session-tree` column renders each `SessionGroup` as
+The `grouped` prop controls section placement, while `orderedVisibleMembers` controls membership
+order inside every section and in the flat path. It builds child lists from `spawnedBySession`, sorts
+live rows before non-live rows and then by role rank/id, starts at roots, and recursively emits every
+descendant exactly once. Non-manager parents never own collapse; manager parents with children get a
+separate caret whose pointer/click handlers stop row selection. Deeper chains remain visible but
+render at depth 1. No `grouped`, or zero derived groups, returns one `GridList` using the same forest
+logic rather than a separate rendering algorithm. Otherwise a `chats-session-tree` column renders each `SessionGroup` as
 a `<section>` (`chats-group-{key}`, `data-nested` + a 22px `marginLeft` class when `group.nested`)
 headed by a small header row: a native toggle button (`chats-group-toggle-{key}`, `aria-expanded`)
 with a rotating chevron span, a `RankBadge size="sm"` when `group.tier` is set, the ellipsized group
@@ -79,10 +80,10 @@ also gained the spawn-role chip: `session.spawnRole` renders a `chats-session-ro
 the `roleChip` cva (`architect` and `orchestrator` gold owner-tier with gold borders, strategist
 gold, `designer` gold-with-border (260707-HFX-L12), manager purple, worker cyan, curator cyan,
 `system-specialist` cyan (260707-HFX-L12), reviewer amber; unknown roles fall to the muted
-base, never throw). The chip carries `data-known-role="true|false"` so tests can distinguish known role
-provenance from an unknown/default chip without depending on generated class names. Row hover text also
-includes leaf identity, turn state, landing provenance, and spawned-by provenance when present so a
-collapsed/archive inspection still exposes why a row was classified.
+base, never throw). The chip carries `data-known-role="true|false"`. L16 bounds the list, row, labels,
+and chips against horizontal overflow and supplies full-value `title` text for role, lifecycle, turn
+state, status, and the composed session identity. `sessionTitle` now includes role, lifecycle, turn,
+non-running status, leaf identity, landing provenance, and spawned-by provenance.
 
 ### Conventions
 
@@ -101,12 +102,21 @@ unit-tested directly (`SessionList.test.tsx`), unlike the Chats render-only test
 the active session; an empty `activeId` shows no selected row (when the active session is closed,
 `Chats` clears `activeId` and the terminal falls back to its empty hint). End only reports intent; the
 actual backend terminate call, local row removal, cross-tab broadcast, and terminal/WS teardown stay in
-`Chats`; landed archive cleanup likewise only reports intent and remains owned by `Chats`. L14 additions keep that split: group MEMBERSHIP is decided entirely by `data/sessionGroups`
-(this component renders the model verbatim and derives nothing but collapse visibility); collapse
-state is UI-local and unpersisted; the active session must never be hidden by a collapse **default**
-(only an explicit user toggle may hide it); and the group-less flat list (no `grouped` prop, or a
-model with zero groups — every flat run) stays byte-identical to pre-L14. Insignia render only
+`Chats`; landed archive cleanup likewise only reports intent and remains owned by `Chats`. Group
+membership is decided by `data/sessionGroups`; this component may only order that member set by spawn
+edges and collapse manager-owned descendants. Collapse state is UI-local and unpersisted; the active
+session must never be hidden by a group-collapse default (only an explicit user toggle may hide it).
+Each supplied member must render exactly once for valid acyclic spawn provenance. Insignia render only
 through the shared `grammar/RankBadge` (size `sm`).
+
+### Todos
+
+- Reviewer D-N1: cyclic/self-referential `spawnedBySession` corruption produces no root, so those
+  members are omitted. Real spawn provenance is a time-ordered DAG; if corrupted rows must remain
+  visible, add a final never-visited sweep without weakening exact-once rendering.
+- Owner-disposition notes remain outside the current L16 code contract: claim-less command seats stay
+  flat, manager collapse does not auto-protect the active child, and the rail shows catalog state rather
+  than a separate worktree-liveness badge.
 
 ## Repo-Internal References
 
@@ -114,11 +124,17 @@ through the shared `grammar/RankBadge` (size `sm`).
 | --- | --- | --- |
 | The Chats view that owns session state and composes this switcher. | L318-L326 | [Chats.tsx](Chats.tsx) |
 | The React Aria `ListBox` single-select idiom this mirrors (selectedKeys ↔ onSelectionChange). | — | [LifecycleList.tsx](LifecycleList.tsx) |
-| The render + interaction tests for this switcher. | L17-L82 | [SessionList.test.tsx](SessionList.test.tsx) |
-| The pure grouping model this renders (`SessionGroup`/`GroupedSessions`, membership + countLabels). | `groupSessions` | [sessionGroups.ts](../data/sessionGroups.ts) |
+| The render + interaction tests include forest completeness, manager caret separation, width bounds, and hover recovery. | L114-L420 | [SessionList.test.tsx](SessionList.test.tsx) |
+| The pure grouping model supplies repo-qualified member sets and archive/error groups. | L57-L159 | [sessionGroups.ts](../data/sessionGroups.ts) |
 | The V4 chevron insignia on group headers (size `sm`). | — | [RankBadge.tsx](../grammar/RankBadge.tsx) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16: added complete spawn-edge forest ordering to grouped
+  and flat paths, manager-only child collapse with a selection-independent caret, live-first order,
+  bounded horizontal layout, and full-value hover recovery for every truncating row field. Recorded
+  the corruption-only cyclic-edge residual without adding silent fallback code. Verification metadata
+  stays pinned until closeout stamps the eventual L16 code commit.
 
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): the landed group header gained the
   `Close landed archive` action wired through `onCleanupLanded`, while the toggle remains a separate

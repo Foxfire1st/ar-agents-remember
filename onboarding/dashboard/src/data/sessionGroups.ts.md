@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionGroups.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T13:36:16+02:00                        |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`                                    |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T13:41+02:00                           |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`                                    |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,78 +16,72 @@
 
 ## Purpose
 
-The pure **G1 command-tree derivation** for the Chats pane (260703-L14): `groupSessions({sessions,
-taskDocuments, enclosures})` turns the flat hosted-session list into the grouped sidebar model —
-the sprint's command deck on top, one collapsible group per claimed master, landed work rolled into
-one archive — so a 20–30-chat orchestrated run reads at a glance while a flat run derives **zero
-groups** and the sidebar renders exactly as before. Store-free and side-effect-free by design: the
-component layer (`panels/SessionList.tsx`) renders the returned `GroupedSessions` verbatim, and all
-the joins are unit-tested here rather than through the DOM.
+The pure L16 rail-grouping derivation for the Chats pane. `groupSessions({sessions,
+taskDocuments, enclosures})` partitions the flat hosted-session catalog into one box per
+repo-qualified sprint claim, the explicit landed archive, an explicit malformed-claim group, and
+the claim-less remainder. Grouping no longer depends on a live enclosure, so a valid
+`repo/master/leaf-id` claim stays with its sprint through worktree transitions. Store-free and
+side-effect-free by design: `panels/SessionList.tsx` owns rendering and collapse only.
 
 ## Code Commentary
 
 ### Logic
 
-Known semantics (review L14R-5): a master named by TWO orchestration docs nests under the first in projection order — accepted first-wins behavior until the L15 pilot pins the orchestrates naming convention.
-
 Membership is decided per session, in precedence order:
 
-1. **Command deck** (`kind:"command"`, gold `orchestration` tier) — exists ONLY when an
-   orchestration task exists (a `kind:"master"` doc with non-empty `orchestrates`; the D3 ruling).
-   A session joins it by command-role spawn provenance (`spawnRole` ∈ architect / orchestrator /
-   strategist / manager — the `COMMAND_ROLES` set, from the AR_SPAWN_ROLE recorded on the catalog row) OR by a
-   leaf claim resolving INTO the orchestration task itself: its own qualified leaf key
-   (`qualifiedLeafKey(orchestrationDoc)`) or any leaf in the orchestration task's folder — that
-   second arm is how the developer-facing architect chat lands on the deck. Label:
-   `{orchestration doc title} · command deck`.
-2. **Master groups** (`master:{folder}`) — sessions whose qualified leaf key
-   (`repo/master/leaf-id`, parsed by `leafKeySegments`) resolves to a **live** enclosure:
-   `enclosureForLeafKey` matches `basename(taskRoot)` to the master segment, `leafId`
-   case-insensitively (enclosure ids are slugified lowercase, doc ids authored uppercase — the same
-   normalization the tasks tab uses), and `repoName` when the enclosure carries one; liveness is the
-   shared `hasLiveWorktree` selector. The group takes the purple `management` tier + `nested: true`
-   (one 22px indent step) ONLY when that master is commanded by an orchestration doc
-   (`orchestratorParentKey` over `masterCommandNames`, or a raw folder match when no master doc is
-   projected) — mirroring the tasks-tab grammar exactly. Label: master doc title, folder fallback;
-   ordered by master `createdAt` then folder.
-3. **Landed archive** (`kind:"landed"`, `defaultCollapsed: true`, unmarked — no tier) — sessions
+1. **Landed archive** (`kind:"landed"`, `defaultCollapsed: true`, unmarked) — sessions
    whose catalog status is explicitly `landed` always join the archive, even if their old enclosure
-   is still projected. Legacy `exited` rows no longer join this archive; they stay ungrouped so the
-   archive contains only rows the landed-cleanup endpoint can close.
-4. **Ungrouped** — sessions with no leaf claim (and no deck membership) return in `ungrouped` and
-   keep today's flat placement below the groups.
+   is still projected.
+2. **Malformed claim** — a non-empty leaf key with fewer than three path segments enters the
+   `error` group labelled `unresolvable session claims`; malformed rows are never silently orphaned.
+3. **Repo-qualified sprint** — every valid claim groups by `${repo}/${master}`, independent of
+   enclosure presence or liveness. The key is `sprint:${repo}/${master}`; a matching master doc
+   supplies title and creation order, otherwise the qualified key is the honest fallback.
+4. **Ungrouped** — sessions without a leaf claim remain in the flat remainder. Claim-less command
+   roles are not swept into an unrelated deck.
+
+A sprint becomes `kind:"command"` with the gold orchestration tier only when one of its own members
+has command-role provenance or claims the orchestration document itself. A commanded master uses
+the purple management tier and one indent step. Because `orchestrates` stores bare folder names,
+that fallback is guarded by `doc.repository === repo`; same-named masters in another repository
+cannot inherit command styling. Sprint groups sort by master `createdAt`, then qualified key.
 
 `countLabel` is precomputed per group — `"{n} chat(s) · {live} live"` with live derived from the
 existing session state (`status ?? "running" === "running"`), the live suffix omitted at 0, and the
 archive reading `"· archived"` instead. Only non-empty groups are emitted.
 
+### Todos
+
+- Reviewer D-N3: the rail's `commanded` fallback matches bare folder names plus repository, while
+  `LifecycleList` also accepts master id/title aliases through `masterCommandNames`. Current task docs
+  use folder names, so the surfaces agree on real data; align the name vocabulary if id/title entries
+  become supported orchestration input.
+
 ### Invariants And Boundaries
 
-- **D3**: no orchestration task ⇒ no command deck, ever — command-role sessions then fall through
-  the claim/ungrouped rules, and a claim-less flat run yields `{groups: [], ungrouped: sessions}`
-  (the SessionList's unchanged-flat-list contract).
-- Pure derivation over projected truth + the session registry: no persistence, no collapse state
-  (collapse is UI-local in `SessionList`), no filesystem reads, and it never re-derives liveness
-  from cleanup states — `hasLiveWorktree` is the only liveness rule.
-- A running row with a missing enclosure is not inferred as landed anymore; it stays ungrouped unless
-  the catalog says `status:"landed"`. This prevents projection gaps from prematurely archiving live
-  chats.
-- Legacy `exited` rows are not inferred as landed either; cleanup is intentionally aligned with the
-  explicit `status:"landed"` backend recheck.
+- Repo is part of the grouping and command-style key; folder names alone never cross repositories.
+- Valid claims survive absent or non-live enclosures; only explicit `status:"landed"` selects the
+  landed archive.
+- No orchestration task means no command deck. A claim-less flat run still yields zero groups.
+- Pure derivation only: no persistence, filesystem reads, liveness derivation, or collapse state.
+- `enclosures` remains in the public input for caller compatibility but L16 grouping does not consult it.
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The orchestration-command helpers (isOrchestrationDoc / masterCommandNames / orchestratorParentKey) shared with the tasks tab. | L14 helper block | [taskHierarchy.ts](taskHierarchy.ts) |
-| `qualifiedLeafKey` — the durable `repo/master/leaf-id` claim key this grouping parses. | `qualifiedLeafKey` | [taskIdentity.ts](taskIdentity.ts) |
-| `hasLiveWorktree` — the shared live-vs-landed rule (L11 worktree truth). | L24-L28 | [selectors.ts](selectors.ts) |
-| The `OpenSession` shape incl. the L14 `spawnRole` provenance field. | `OpenSession` | [sessions.ts](sessions.ts) |
-| The component that renders this model (collapsible groups + flat remainder). | grouped branch | [SessionList.tsx](../panels/SessionList.tsx) |
-| The Chats view that derives and threads the model. | `groupSessions` call | [Chats.tsx](../panels/Chats.tsx) |
-| The membership/scale unit suite incl. the 30-chat fixture. | all cases | [sessionGroups.test.ts](sessionGroups.test.ts) |
+| The derivation parses qualified claims, repo-guards command styling, emits sprint/archive/error groups, and leaves claim-less rows flat. | L48-L159 | [sessionGroups.ts](sessionGroups.ts) |
+| `qualifiedLeafKey` supplies the durable orchestration-document claim used for command-deck membership. | L1-L63 | [taskIdentity.ts](taskIdentity.ts) |
+| The renderer consumes these groups and builds a complete spawn-edge forest inside each member set. | L242-L484 | [SessionList.tsx](../panels/SessionList.tsx) |
+| The unit suite pins repo isolation, enclosure-independent grouping, malformed-claim surfacing, and the 30-chat shape. | L90-L277 | [sessionGroups.test.ts](sessionGroups.test.ts) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16: replaced the global G1 deck/live-enclosure join
+  with repo-qualified sprint groups, preserved valid claims without live enclosures, added the
+  explicit malformed-claim group, and repo-guarded the bare-folder `orchestrates` fallback.
+  Claim-less command roles remain flat; landed membership remains explicit-status-only. Verification
+  metadata stays pinned until closeout stamps the eventual L16 code commit.
 
 - 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: stopped folding legacy
   `status:"exited"` rows into the landed archive because the cleanup endpoint closes only rows still

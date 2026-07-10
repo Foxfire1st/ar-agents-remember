@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T01:14+02:00                           |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:41+02:00                           |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -53,11 +53,12 @@ The always-on `analytics.taskDocuments` collection is now summary-only. `DetailP
 single document whose reader is actually visible, requests its full body through
 `fetchTaskDocument`, and caches the response under `docPath + bodyRevision`. Every render branch
 (direct task document, series master, lifecycle-bound master/leaf, and drilled slice) substitutes the
-cached full node when available and otherwise keeps the bounded summary as a non-blocking fallback.
-Changing `bodyRevision` creates a new cache key and causes the currently displayed document to be
-refetched. Fetch failure is intentionally quiet because the dashboard must remain navigable from the
-summary projection; the next projection/body-revision change retries. The cache currently has no
-eviction, the reviewer-accepted N5 follow-up for long-lived tabs that view many document revisions.
+cached merged node when available and otherwise keeps the bounded summary as a non-blocking fallback.
+L16 merges the fetched body over the current summary while preserving each summary array when the body
+omits it. Changing `bodyRevision` creates a new cache key and causes the currently displayed document
+to be refetched. A failed fetch records `unavailable` for that key and shows the exact fallback line
+"Full task document details are unavailable; showing the available summary." while retaining the
+summary. Reselecting or changing revision retries; failure does not create an effect retry loop.
 
 ### Logic
 
@@ -119,8 +120,8 @@ uses the same helper so master-less leaf lists default to creation order when al
 `createdAt`. `topLevelStepProgress` counts `doc.steps` and completed top-level step statuses;
 `SubTaskIndex`, `SliceList`, and the `TaskReader` header `ProgressFill` use that top-level summary
 instead of `TaskDocNode.stepsDone/stepsTotal`, which may be the backend's nested progress-bearing leaf
-count. `TaskReader` renders a top **Progress** step list immediately under the head before
-Objective, then keeps the existing Implementation steps section later in the reader for continuity.
+count. `TaskReader` renders the top-level progress fill in its head and the step rows exactly once
+under **Implementation steps**; the former duplicate **Progress** step section is removed.
 L8 wraps the task-reader body in `data-task-leaf-key={qualifiedLeafKey(doc)}`, giving the selection
 capture helper a durable leaf identifier without changing any visible task content.
 `StepList` and `CodeExample` display labels from structured id + title (`S11 — ...`, `E4 — ...`) while
@@ -166,6 +167,13 @@ reference naming an existing `notes/` file becomes an openable link into the ser
 friction ledger, `reports/`) are browsable from the master overview too. All other sections are
 unchanged.
 
+### Todos
+
+- Reviewer D-N4: `mergeTaskDocumentBody` lets present body scalars overwrite the live projection
+  summary wholesale. A lagging body can display older scalar values until `bodyRevision` changes;
+  array fields alone use the explicit absent-body preservation rule.
+- The body cache remains unbounded for the browser session; revisions are keyed safely but not evicted.
+
 ### Invariants And Boundaries
 
 `GateResponder` is only for durable gate decisions after L8. Ask-only attention details must not regain
@@ -205,6 +213,9 @@ panel must not recompute the aggregate from lifecycle token gauges or child task
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
+| The visible document fetch merges body arrays with the live summary, records availability, and renders an honest summary fallback on failure. | L343-L417; L1261-L1359 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The API literal belongs to the fetch helper, not this panel; the panel consumes `fetchTaskDocument`. | L10-L17 | [taskDocuments.ts](../data/taskDocuments.ts) |
+| Component regressions pin body merge, fallback visibility, and single rendering of implementation steps. | L650-L865 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
 | DetailPanel resolves typed taskdoc/series/lifecycle selections before rendering by task-document `kind`. | L305-L361; L496-L508 | [DetailPanel.tsx](DetailPanel.tsx) |
 | Typed Operations selection helpers shared with Cockpit and LifecycleList. | L1-L76 | [taskIdentity.ts](../data/taskIdentity.ts) |
 | Selected series masters render directly from `analytics.series` by direct `seriesId` selection or by a selected root-task lifecycle whose enclosure `taskId`/`taskName` maps to the folder-keyed series, adapting a `SeriesNode` to the master overview shape and pairing only sibling slice docs. | L305-L361; L382-L452; L496-L506; L563-L571 | [DetailPanel.tsx](DetailPanel.tsx) |
@@ -226,6 +237,13 @@ panel must not recompute the aggregate from lifecycle token gauges or child task
 | The shared empty-state backdrop the no-selection state renders. | L1-L64 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 R7: merged on-demand body fields over the current
+  summary with absent-array preservation, surfaced an explicit summary fallback on fetch failure,
+  and removed the duplicate Progress step list so implementation steps render once. Recorded the
+  scalar-overwrite and cache-eviction reviewer notes. The `/api/task-document` literal remains owned
+  by `data/taskDocuments.ts` (CD-N1 attribution correction). Verification metadata stays pinned until
+  closeout stamps the eventual L16 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: migrated every task-reader branch from broadcast
   bodies to one on-demand full-body fetch, keyed the local cache by `docPath + bodyRevision`, and

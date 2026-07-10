@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:41+02:00 |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -215,6 +215,17 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   `analytics.series: []` beside `taskDocuments` so every dev projection satisfies the current served
   analytics shape.
 
+## 260707-HFX2-L16 Rail And Reader Contract
+
+The Chats data/panel seam now groups every valid session claim by repo-qualified sprint, independent
+of enclosure liveness; explicit landed rows retain the archive, malformed claims get an honest error
+group, and claim-less rows stay flat. `SessionList` renders each group and flat member set as a complete
+spawn-edge forest with manager-only collapse, live-first order, bounded width, and full-value hover
+recovery. The task reader now merges the on-demand body over its current summary, preserves omitted
+arrays, shows an explicit summary fallback on fetch failure, and renders implementation steps once.
+These are behavior changes within the existing `data/` and `panels/` routes; no new frontend route or
+module boundary was added.
+
 ## Invariants And Boundaries
 
 - **Near-read-only, two interactive surfaces** — the cockpit renders the projection read-only except
@@ -233,15 +244,20 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The served projection shapes the frontend renders. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The topology pure model that maps provider bindings to constellation parents. | [topology/model.ts](topology/model.ts) |
-| The serving layer (SSE + static mount) the frontend consumes. | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
-| The built bundle is synced into package_data by this script. | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| The app-injected `supervisorHeartbeat` payload builder `SupervisorHeartbeatBadge` renders, including HFX2-L8 inbox backlog/duration fields. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The L16 grouping derivation owns repo-qualified sprint/archive/error membership. | L48-L159 | [sessionGroups.ts](data/sessionGroups.ts) |
+| The L16 session renderer owns forest order, manager collapse, bounded layout, and hover details. | L242-L484 | [SessionList.tsx](panels/SessionList.tsx) |
+| The reader merge/fallback and single-step contract is implemented in the detail panel. | L343-L417; L1261-L1359 | [DetailPanel.tsx](panels/DetailPanel.tsx) |
+| The serving layer supplies the projection and static package boundary consumed by this route. | L1-L80 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The built bundle is synced into package data and checked against source plus dist. | L30-L52; L151-L179 | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 route impact: documented repo-qualified sprint
+  grouping, complete spawn-edge forest rendering, bounded/hover-complete rail rows, honest on-demand
+  task-body fallback, and single-rendered implementation steps. No new route was created.
+  Verification metadata stays pinned until closeout stamps the eventual L16 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6 route impact: added the on-demand task-document data
   adapter and `bodyRevision` wire field; full reader bodies no longer ride the always-on projection.

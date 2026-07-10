@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated | 2026-07-10T13:41+02:00 |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b` |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 
 > **Status:** active baseline
 
@@ -137,6 +137,13 @@ resolved knobs are pinned on argv/session commands and recorded in the catalog. 
 ladder uses pane text only to prevent duplicate re-pastes or attach failure diagnostics. An unbound
 replacement seat names `replacementForLeaf`, and the supervisor processes one synchronous
 redelivery per sweep.
+
+260707-HFX2-L16 makes the global chat rail sprint-local and preserves every valid claimed session
+through enclosure transitions. The final release candidate rebuilds the static dashboard after the
+landed L15 base, proves `dashboard/dist` and `package_data/dashboard` byte-identical, and ships L15
+Python plus the L16 rail/R7 reader markers from one `agents_remember` package root. Generated hashed
+assets remain excluded from file sidecars; their durable boundary is the sync script plus static
+serving sidecars. Closeout must stage the complete add/delete asset set atomically.
 
 Use the root index to route quickly: `AGENTS.md` and `README.md` cover source-checkout and public contracts; `mcp/` covers the package-managed server and runtime; `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates; hidden harness roots cover first-run files; and `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles` carries the unified lifecycle router, minimal frame, loop doctrine, nine role lifecycles, templates, and criteria catalogs. Its current condition 3 is the free-chat launcher, not an architect default. Canonical doctrine lives under root `skills/` and is synchronized by `scripts/sync-skills.py`; only path-rule-eligible package-data copies receive file sidecars. The kernel's `agentic_settings.py` owns per-use orchestration concurrency and role settings. For route-index behavior start at `mcp/src/agents_remember/kernel/route_index.py`, `route_index_refresh`, c-05, and c-04.
 
@@ -415,6 +422,11 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 root route impact: recorded the sprint-local chat rail,
+  honest task-reader fallback/single-step behavior, and final L15+L16 source-to-package proof. The
+  generated dashboard asset route stays excluded from file-level onboarding; sync/static boundary
+  docs carry the release-significant evidence. Verification metadata stays pinned until closeout.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 root route impact: added the log-backed dispatch,
   duplicate-safe retry, settings-pinned knob provenance, replacement-leaf chain credit, and one-row

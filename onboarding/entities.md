@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-07-10T13:03+02:00|
+| lastUpdated | 2026-07-10T13:41+02:00|
 | status      | active                 |
 
 ## Purpose
@@ -31,9 +31,9 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:e23cab68a6f2d0b6a724973840cacae02ecee3118528f7b779236047aefd6988` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:455d4a3d34b9b84bc765308c4f97e76254d5f38ba8297a43a81578c2ad0f7181` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/mcp/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | Seat Retirement                     | `git-blob-set-v1` | `sha256:9a13857d522a87cb583985750612d70042253db9b265e3f145a2e61403d7f55d` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Seat Landing Archive                | `git-blob-set-v1` | `sha256:535327d742e3ec2956a8d80928bb6846785bb791088ced6b16170288b33d78c4` | `dashboard/src/data/sessionGroups.ts`; `dashboard/src/panels/Chats.tsx`; `mcp/src/agents_remember/controllers/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
+| Seat Landing Archive                | `git-blob-set-v1` | `sha256:6f06df560265abb248828143cab8a3f96edc0ba3c91a07feb428dfdb6d8e2e20` | `dashboard/src/data/sessionGroups.ts`; `dashboard/src/panels/Chats.tsx`; `mcp/src/agents_remember/controllers/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
 | Supervisor Sweep                    | `git-blob-set-v1` | `sha256:9dedc8e0b5861d7ca95804f9257d26d0a5e0ce239bb0149313974a6f66a25a96` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/supervisor.py`; `mcp/src/agents_remember/serving/supervisor_heartbeat.py`; `mcp/src/agents_remember/controlplane/escalation_ladder.py`; `mcp/src/agents_remember/controlplane/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/orphan_policy.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/supervisor_signals.py` |
-| Task Document                       | `git-blob-set-v1` | `sha256:6561adc5c578f756e0c1d14cad66c4c7ba04785106be1b5adcc1f1709de41dec` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/panels/DetailPanel.tsx`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/snapshots.py`; `mcp/src/agents_remember/serving/app.py` |
+| Task Document                       | `git-blob-set-v1` | `sha256:89352b67d46760e9257ff5a94da39970892e59cf15b819076ab1b25173963413` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/panels/DetailPanel.tsx`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/snapshots.py`; `mcp/src/agents_remember/serving/app.py` |
 | Delivery Injector                   | `git-blob-set-v1` | `sha256:bad873407eca5eefbd7b5b5c6803a15f8405e14468c07777b0d463184b7750a7` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/harness_logs.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_paste.py` |
 
 ## Entity Inventory
@@ -299,14 +299,14 @@ must be recomputed against the eventual L15 commit.
 | ---------------------------- | ----- |
 | Category                     | Planning/runtime projection entity |
 | Represents In Reality        | One JSON-primary `ar-task-document/v1` planning record whose structural summary is continuously projected and whose full reader body is loaded only when selected. |
-| Description                  | 260707-HFX2-L13 splits the task document across two transport shapes without creating two entities. `observer.snapshots.read_task_documents` emits at most 250 body-free `TaskDocNode` summaries into `/api/state` and `/api/stream`; `bodyRevision` fingerprints the omitted reader fields. `serving.app` exposes `GET /api/task-document?path=...`, which delegates path confinement and schema validation to `read_task_document_body`. `dashboard/src/data/taskDocuments.ts` fetches that full node, and `DetailPanel` caches it by `docPath + bodyRevision` only for the visible reader. |
+| Description                  | 260707-HFX2-L13 splits the task document across two transport shapes without creating two entities. `observer.snapshots.read_task_documents` emits at most 250 body-free `TaskDocNode` summaries into `/api/state` and `/api/stream`; `bodyRevision` fingerprints the omitted reader fields. `serving.app` exposes `GET /api/task-document?path=...`, which delegates path confinement and schema validation to `read_task_document_body`. `dashboard/src/data/taskDocuments.ts` fetches that full node, and L16's `DetailPanel` merges it over the visible summary with absent-array preservation, caches by `docPath + bodyRevision`, and renders an explicit summary fallback when the body is unavailable. |
 | Canonical Source Of Truth    | The JSON-primary task file under `coordination_root/tasks`; `observer/snapshots.py` defines summary/full projection, `observer/projection.py` defines the wire node, `serving/app.py` exposes the body edge, and the dashboard adapter/panel consume it. |
 | Current Naming Drift         | `analytics.taskDocuments` still names the always-on collection, but its nodes are summaries after L13; `TaskDocNode` is used for both summary and full-body shapes, distinguished by endpoint and populated body fields rather than a second DTO name. `Analytics.series` is a compatibility master summary, not a second source of task truth. |
 | Key Identifiers              | `ar-task-document/v1`, `TaskDocNode`, `docPath`, `bodyRevision`, `TASK_DOCUMENT_SUMMARY_LIMIT`, `SERIES_DOCUMENT_SUMMARY_LIMIT`, `read_task_documents`, `read_task_document_body`, `/api/task-document`, `fetchTaskDocument`, `fullTaskDocs`. |
 | Parent / Child Relationships | The task JSON owns authored content; enclosure/lifecycle maps add optional runtime attachment; the always-on projection carries bounded navigation/progress summaries; the serving endpoint returns one confined full node; `DetailPanel` joins the body back to the selected summary by path/revision. |
 | Often Confused With          | A series/master aggregation (`SeriesNode`), an enclosure `series-contract.md`, rendered `task.md`, or a second browser-owned copy of the task. None replaces the JSON-primary document. |
 | Source References            | [projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py); [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py); [app.py](agents-remember/mcp/src/agents_remember/serving/app.py); [taskDocuments.ts](agents-remember/dashboard/src/data/taskDocuments.ts); [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
-| Migration Notes              | Broadcast bodies are removed end to end, but the 250-node window currently truncates silently and summary nodes retain full step/sub-task lists (reviewer N4). The panel cache has no eviction across body revisions (N5). These are accepted follow-ups, not alternate current contracts. The fingerprint uses current worktree blobs and closeout must verify/recompute it against the eventual L13 commit. |
+| Migration Notes              | Broadcast bodies are removed end to end, but the 250-node window currently truncates silently and summary nodes retain full step/sub-task lists. The panel cache has no eviction across body revisions. L16 reviewer D-N4 also notes that present body scalars overwrite live summary scalars until `bodyRevision` changes; arrays preserve the summary only when absent from the body. These are accepted follow-ups, not alternate current contracts. The fingerprint uses current L16 worktree blobs and closeout must verify/recompute it against the eventual code commit. |
 
 ### Delivery Injector
 
@@ -447,7 +447,7 @@ commit.
 | Durable source     | JSON-primary `ar-task-document/v1` under `coordination_root/tasks`; rendered Markdown and enclosure contracts are not content authority. |
 | Always-on backend  | At most 250 `TaskDocNode` summaries plus compatibility series summaries, body fields empty, `bodyRevision` populated. |
 | On-demand backend  | `GET /api/task-document?path=...` returns one full, schema-validated task node only after the resolved path is confined under `tasks/`. |
-| Frontend           | `fetchTaskDocument` retrieves the selected body; `DetailPanel` caches by `docPath + bodyRevision` and falls back to summary data while unavailable. |
+| Frontend           | `fetchTaskDocument` retrieves the selected body; `DetailPanel` merges it over the live summary with absent-array preservation, caches by `docPath + bodyRevision`, and visibly falls back to summary data when unavailable. |
 
 ### Delivery Injector
 
@@ -466,6 +466,13 @@ commit.
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 ## Update History
+
+- 2026-07-10T13:41+02:00 — 260707-HFX2-L16: refreshed the Task Document entity for merged
+  on-demand bodies, explicit unavailable-body fallback, and single-rendered steps; recorded the
+  scalar-overwrite/cache notes. Seat Landing Archive meaning is unchanged, but its shared
+  `sessionGroups.ts` evidence moved to repo-qualified sprint grouping. Candidate-worktree
+  fingerprints are `Task Document` `sha256:89352b...` and `Seat Landing Archive`
+  `sha256:6f06df...`; closeout must recompute both against the eventual code commit.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: refreshed Delivery Injector and Supervisor Sweep for
   harness-log acceptance, duplicate-safe bounded recovery, explicit replacement-leaf chain credit,

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T13:56+02:00 |
+| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b` |
+| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -624,6 +624,18 @@ into the role files.
   (R2). Containment metrics are daemon-sampled, label-discovered, and
   read-only (R4) so leftover stacks from dead sessions stay observable
   without any settings file.
+- The shipped dashboard has a three-stage release boundary: editable inputs under
+  `dashboard/src/` and the production config set build into `dashboard/dist/`;
+  `scripts/sync-dashboard.py` copy-swaps that complete tree into
+  `package_data/dashboard/` and records the build-input digest in the sibling
+  `package_data/dashboard.fingerprint`; `serving.static.dashboard_static_dir()` resolves that
+  packaged tree and `mount_static()` serves it at `/`. `sync-dashboard.py --check` must prove both
+  source-fingerprint currency and byte-for-byte `dist`/package equality. Because the generated
+  package tree is excluded from file-level onboarding, this route overview carries its release
+  boundary. A hashed-bundle refresh must stage `index.html`, the fingerprint, every new asset, and
+  every replaced asset deletion together; omitting either half can leave the installed wheel with
+  broken asset references. The fingerprint is written during sync, so the canonical evidence order
+  remains build, sync, `--check`, then served-package verification.
 
 ## Repo-Internal References
 
@@ -635,7 +647,7 @@ into the role files.
 | `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift and branch-freshness status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember/mcp/src/agents_remember/models/providers.py); [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 | Runtime package data is synchronized from canonical root asset folders, and tests verify missing, extra, changed, and target-scope behavior. | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [pre-commit hook](agents-remember/.githooks/pre-commit) |
-| The built dashboard cockpit bundle is synchronized from `dashboard/dist/` into `package_data/dashboard/` and gated by `--check` — the built-bundle digest **plus** a source-freshness fingerprint of the build inputs (the `src` tree minus tests + the production configs, recorded in a sibling `package_data/dashboard.fingerprint`), so a `dashboard/src` change shipped without a rebuild is flagged at the commit gate the way a changed skill is. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py); [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py); [pre-commit hook](agents-remember/.githooks/pre-commit) |
+| The built dashboard cockpit bundle is synchronized from `dashboard/dist/` into `package_data/dashboard/` and gated by `--check` — the built-bundle digest **plus** a source-freshness fingerprint of the build inputs (the `src` tree minus tests + the production configs, recorded in a sibling `package_data/dashboard.fingerprint`), so a `dashboard/src` change shipped without a rebuild is flagged at the commit gate the way a changed skill is. The serving app resolves and mounts this packaged tree rather than `dashboard/dist/`. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py); [static.py](agents-remember/mcp/src/agents_remember/serving/static.py); [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py); [test_serving.py](agents-remember/mcp/tests/test_serving.py); [pre-commit hook](agents-remember/.githooks/pre-commit) |
 | Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 | Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
@@ -644,6 +656,12 @@ into the role files.
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 
 ## Update History
+
+- 2026-07-10T13:56+02:00 — 260707-HFX2-L16 final package route impact: documented the complete
+  dashboard source-to-build-to-package boundary, runtime static resolution from the packaged tree,
+  the dual fingerprint/tree `--check`, and atomic staging of hashed additions with replaced-asset
+  deletions. Verification metadata remains pinned until closeout stamps the eventual L16 code
+  commit.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 package route impact: documented the harness-log
   acceptance path, calibrated duplicate-safe recovery, explicit Codex argv, catalog/replacement
