@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T15:48+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -60,6 +60,12 @@ reviewer and curator seats to coexist on the same canonical leaf without suffixe
 pre-integration cleanup, manager authority covers worker, reviewer, and curator seats of the
 manager's own master; owner-never-self-retires and cross-master refusal remain unchanged. The
 Knobs tool row carries the same three-role boundary.
+
+260707-HFX2-L7 adds the same Developer Clarification Triage hook to the manager's default-behavior
+rule. A manager now checks the current leaf queue before recording a mid-master clarification as a
+note: same-leaf or same-master refinements that are small and fit the current change are
+implementation work, later-release/separate-subsystem/dependency-blocked items are future queue,
+and unclear fit escalates one rung rather than being guessed.
 
 260707-HFX-L11 curator activation (R4, manager wiring made real): the curator-spawn duty bullet is
 no longer a description — it names the exact brief template (`../templates/curator-brief.md`), the
@@ -237,6 +243,11 @@ No sibling repository evidence is needed for this orchestration job file.
   downstream copies, 0 Python); sync-propagated bundle copy of the canonical
   `skills/l-01-agent-lifecycles/roles/manager.md`. Verification metadata pinned until closeout
   stamps the 260707-HFX2-L5 commit.
+
+- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 doctrine refinement: the manager's default-behavior rule
+  now runs Developer Clarification Triage against the current leaf queue before note-only handling.
+  Same-leaf/same-master refinements that are small and fit the active change are implementation
+  work; future/dependency-blocked items are queued; unclear fit escalates one rung.
 
 - 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (seat takeover + delegated leaf closeout):
   manager opening move now points developer-declared takeovers to the shared task-seat checklist

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T15:48+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -62,6 +62,13 @@ direct-work closeout when wearing a build hat, subordinate finalize/cleanup, and
 integration. It still stops for final super/PR-carryover, raised human-pinned gates, plan-meaning
 changes, red checks outside scope, and quo-vadis truths. This is a doctrine-only correction; the
 existing attachment and worktree command paths are unchanged.
+
+260707-HFX2-L7 adds the queue-aware clarification hook to the opening portfolio orientation step.
+When a developer or architect clarification arrives while a task is active, the orchestrator applies
+Developer Clarification Triage against the same portfolio/queue state it is already reading:
+close/current/small additions belong in the active task surface and implementation, future-queue
+items go to the durable backlog, and unclear fit becomes one clarification request through the
+architect relay.
 
 L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
 
@@ -194,6 +201,12 @@ No sibling repository evidence is needed for this doctrine file.
   change set (5 canonical `skills/` files synced to 9 downstream copies, 0 Python); sync-propagated
   bundle copy of the canonical `skills/l-01-agent-lifecycles/roles/orchestrator.md`. Verification
   metadata pinned until closeout stamps the 260707-HFX2-L5 commit.
+
+- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 doctrine refinement: the opening portfolio orientation
+  step now applies Developer Clarification Triage to developer/architect clarifications before
+  note-only handling. The orchestrator reads the active queue, implements close/current/small
+  additions in the active task, records true future queue durably, and asks through the architect
+  relay when the fit is unclear. Sync-propagated bundle copy.
 
 - 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (seat takeover + delegated series authority):
   opening move gains a task-seat takeover step before the trust checkpoint. A developer-declared

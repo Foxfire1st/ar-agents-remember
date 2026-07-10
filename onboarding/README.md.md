@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -137,6 +137,10 @@ The README describes external memory in general terms, but this file-level onboa
 | No meaningful cross-repo references found for the README itself. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-08T15:45+02:00 — No content impact: 260707-HFX2-L7 bumps the public Status/install pin
+  strings 3.0.0rc3 -> 3.0.0rc4 for the hotfix release tail; the body describes the release version
+  generically as "bumped every release," so README structure and guidance remain current.
 
 - 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: the public workflow sentence
   after the quickstart now says the developer-facing session is the architect, while spawned

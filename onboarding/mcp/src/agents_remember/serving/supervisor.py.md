@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`        |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`        |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -128,7 +128,11 @@ and heartbeat tick now carry pending/redeliverable inbox counts and last-sweep w
   alone — `liveness_failures > 0` on an otherwise-`running` row.
 - `evaluate_escalation_findings` (260707-HFX2-L4, R2) — every pending, unacked
   `OperatorInboxStore` row due for its NEXT ladder rung, per `escalation_ladder.rung_due` (the
-  per-`message_kind` SLA at rung 0, that rung's own re-anchored dwell thereafter).
+  per-`message_kind` SLA at rung 0, that rung's own re-anchored dwell thereafter). Since
+  260707-HFX2-L7, `_delivery_failure_still_retrying` skips delivery-failure rows whose
+  `deliveryState` is `"no-hosted-session"` or `"unconfirmed"` while `attemptCount` is still below
+  `PERSISTENT_FAILURE_ATTEMPTS` and `escalatedAt` is unset; those rows exhaust the redelivery
+  backoff path before the generic unacked ladder is allowed to advance them.
 - `evaluate_dead_upstream_findings` (260707-HFX2-L4, R4 — P-6 made mechanical) — every live
   (`status == "running"`) spawned worker/manager catalog row whose OWN recorded
   `spawned_by_session` is dead (`signal_routing.is_seat_dead`); a row with NO recorded provenance at
@@ -219,6 +223,10 @@ convention. Private action helpers are prefixed `_` and take `ctx`/`finding`/`no
   module is the sole caller (`evaluate_escalation_findings`/`_escalate_rung`) that reads the pure
   walker's `rung_due`/`next_step`/`seat_is_suspect` and performs the delivery + durable
   `advance_rung` stamp; no ladder decision logic is duplicated in this file.
+- **Delivery-failure rows exhaust redelivery before generic unacked escalation.** A hosted-delivery
+  failure (`"no-hosted-session"` or `"unconfirmed"`) below `PERSISTENT_FAILURE_ATTEMPTS` is still in
+  the inbox redelivery domain, so `evaluate_escalation_findings` defers it until the persistent
+  failure threshold or explicit `escalatedAt` stamp hands the row to the ladder.
 - **`_respawn_suspect` is a side effect of a rung transition, not its own dispatched finding** —
   it fires from inside `_escalate_rung` once `respawn_after_rung` + `seat_is_suspect` both hold,
   never from a separate `evaluate_*_findings` entry.
@@ -337,3 +345,9 @@ No meaningful cross-repo references found.
   caller. Builds no escalation ladder itself (HFX2-L4's job) and touches no
   `terminal_paste.py` internals (HFX2-L3's job) — calls through their current public surfaces only.
   Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
+- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 release-gate fix: added
+  `_delivery_failure_still_retrying` and taught `evaluate_escalation_findings` to skip
+  `"no-hosted-session"`/`"unconfirmed"` delivery-failure rows while their `attemptCount` is below
+  `PERSISTENT_FAILURE_ATTEMPTS` and `escalatedAt` is unset. This keeps the persistent redelivery
+  threshold authoritative before the generic unacked ladder takes over; it fixes the liveness
+  simulations that were escalating at attempt 2 instead of after the redelivery path exhausted.

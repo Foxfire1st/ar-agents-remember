@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f`       |
-| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`       |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -102,6 +102,11 @@ dead-upstream actions resolve the current responsible manager; one row can trans
 sweep; and completion/artifact posts are readdressed and hosted-delivered to the current manager.
 Unbound reviewer/curator progress is credited in the subject worktree; unbound worker active-phase
 credit remains the accepted HFX2-L14 S7 follow-up.
+
+260707-HFX2-L7 release-tail hardens the same supervisor path: delivery-failure inbox rows whose
+delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redelivery domain until
+`PERSISTENT_FAILURE_ATTEMPTS` or `escalatedAt`; the generic unacked escalation ladder skips them
+until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
 
@@ -502,7 +507,9 @@ the only destructive terminal action.
   caller; `mark_missed` stays the L2 sweep's own reserved transition, while `mark_escalated` and the
   ladder's own `advance_rung`/respawn/orphan-surfacing (via `escalation_ladder.py`/
   `orphan_policy.py`, governed by the `controlplane/` overview) are now genuinely landed here. Still
-  touches no `terminal_paste.py` internals.
+  touches no `terminal_paste.py` internals. HFX2-L7 adds `_delivery_failure_still_retrying`, a
+  guard inside `evaluate_escalation_findings` that lets delivery-failure rows exhaust the redelivery
+  threshold before the generic unacked ladder advances them.
 - `pane_signals.py` — the **260707-HFX2-L2** pane-state classifier (R2a): `classify_pane_signal`
   answers which of the four P-15 intervention triggers (`never-briefed`/`delivery-stalled`/
   `mid-turn`/`blocked`) a captured pane shows, reusing `terminal_paste.count_paste_chips` for the
@@ -694,6 +701,12 @@ the only destructive terminal action.
   `test_pane_signals.py` (8 tests) and `test_supervisor.py` (16 tests, including one seeded-drift
   sweep integration test). Verification metadata pinned until closeout stamps the 260707-HFX2-L2
   commit.
+- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 route impact (release-tail supervisor fix): the route's
+  existing `supervisor.py` path now defers generic unacked escalation for `"no-hosted-session"` and
+  `"unconfirmed"` delivery-failure rows until `PERSISTENT_FAILURE_ATTEMPTS` or an explicit
+  `escalatedAt` handoff. No new predicate family, lifespan task, setting, or inbox kind; this is a
+  liveness-contract fix inside `evaluate_escalation_findings`, covered by the existing HFX2-L5
+  liveness simulations.
 - 2026-07-08T02:55+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
   turn-state, issues #12/#4): route gains `retire_policy.py` (server-side retire authority policy),
   `retire.py` (shared retire mechanics), `turn_state.py` (marker-based live turn-state classifier),

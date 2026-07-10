@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f` |
-| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 
 > **Status:** active baseline
 
@@ -513,6 +513,12 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
   now covers the settings reference directly. Verification metadata pinned until closeout stamps the
   260707-HFX2-L8 commit.
 
+- 2026-07-08T15:45+02:00 — No route impact: 260707-HFX2-L7 release tail bumps README/package
+  version strings to 3.0.0rc4, refines the l-01 Developer Clarification Triage wording to classify
+  note-only vs immediate implementation from the active queue/current diff fit, and fixes the
+  supervisor redelivery-vs-escalation boundary. The root overview's feature inventory remains
+  accurate at this altitude; detail lives in the `mcp/` and `serving/` route overviews plus the
+  touched file sidecars.
 - 2026-07-08T15:27+02:00 — 260707-HFX2-L6 doctrine impact: the root approval-gated
   closeout row now reflects applicable authority rather than unconditional explicit approval:
   standalone/final work remains developer-approved, while subordinate accepted-series work can

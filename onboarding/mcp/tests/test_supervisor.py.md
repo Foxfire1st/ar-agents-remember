@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastUpdated            | 2026-07-10T19:49+02:00 |
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -26,6 +26,8 @@ suite: the R6-mandated silent-seat, dead-intermediate, and dead-manager-with-liv
 260707-HFX2-L8 adds terminal-dead-seat and budget/backlog coverage for the dead-seat storm fix.
 260707-HFX2-L9 adds regressions for the 900-second redelivery floor, repeated signal cooldown,
 mid-turn pane suppression, and fast sweep cadence without per-second owner inbox noise.
+Positional HFX2-L19 adds the F1 regression pin that keeps hosted-delivery failures in redelivery
+until the persistent-attempt threshold is exhausted, before the generic unacked ladder may fire.
 
 ## Code Commentary
 
@@ -50,6 +52,14 @@ gap is routed to HFX2-L14 S7.
 `Cs6SweepScalingTests` now pins the supervisor CS-6 floor: signal-cooldown reads stay at most one per sweep across many findings, expectation-store reads stay flat across overdue rows, and `escalation_budget` caps rung emissions under backlog.
 
 ### Logic
+
+**Positional HFX2-L19 F1 regression pin.**
+`test_delivery_failure_waits_for_retry_exhaustion_before_escalating` drives the public
+`evaluate_escalation_findings` boundary with two past-SLA `no-hosted-session` rows: the row at
+`PERSISTENT_FAILURE_ATTEMPTS - 1` remains silent, while the row at
+`PERSISTENT_FAILURE_ATTEMPTS` is the sole `escalation-due` finding. The call supplies no catalog,
+so chain-progress suppression cannot accidentally satisfy the assertion; removing or bypassing
+`_delivery_failure_still_retrying` makes the pre-exhaustion row appear and fails the test.
 
 **260707-HFX2-L15 coverage.** A declared unbound replacement suppresses false inactivity for its
 named leaf, and the redelivery sweep processes one row under the default budget instead of
@@ -78,6 +88,9 @@ datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
   `test_degraded_row_with_no_turn_state_uses_liveness_failures` (the graceful-degradation path: a
   row the L8 prober never classified falls back to the L5 `liveness_failures > 0` signal alone).
 - **Escalation predicate (260707-HFX2-L4, R2):** `EscalationPredicateTests` —
+  `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` (a past-SLA hosted-delivery
+  failure below the persistent-attempt threshold stays in redelivery while the exhausted row alone
+  becomes escalation-due),
   `test_pending_row_past_sla_fires` (a rung-0 row past its per-kind SLA fires an `escalation-due`
   finding naming its own entry id), `test_not_yet_due_row_is_silent` (a row still inside its SLA
   window is silent).
@@ -149,6 +162,9 @@ convention from `test_terminal_ws.py`.
   path must preserve this per-call-plus-monotonic counting, not regress to a shared flag.
 - Predicate-family tests are independent of the integration test — each can fail in isolation and
   point at exactly one `evaluate_*_findings` function.
+- The HFX2-L19 F1 test deliberately omits a terminal catalog. Its retrying-row assertion therefore
+  pins `_delivery_failure_still_retrying` itself rather than receiving accidental suppression from
+  leaf-chain progress; the threshold row must be the only emitted finding.
 - The L8 terminal-dead-seat tests deliberately require both terminal ladder rung and proven dead seat;
   live seats and rows still climbing remain protected by the older redelivery/escalation tests.
 - The HFX2-L9 signal-cooldown tests use a real temp-rooted `SupervisorSignalCooldownStore`; they do
@@ -187,6 +203,8 @@ spec.
 | The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | [../src/agents_remember/controlplane/orphan_policy.py](../src/agents_remember/controlplane/orphan_policy.py.md) |
 | The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py.md) |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `SupervisorSignalCooldownStore` | [../src/agents_remember/controlplane/supervisor_signals.py](../src/agents_remember/controlplane/supervisor_signals.py.md) |
+| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | L759-L789 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
+| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | L477-L505 | [supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 | HFX2-L9 tests cover signal cooldown, mid-turn suppression, restart non-burst before the 900-second floor, and one-second sweeps without per-second signal rows. | L531-L636 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
 
 ## Cross-Repo References
@@ -198,6 +216,12 @@ No meaningful cross-repo references found.
 | Sweep-local behavior only. | — | — |
 
 ## Update History
+
+- 2026-07-10T19:49+02:00 — Positional 260707-HFX2-L19 F1: documented the public-boundary
+  regression that keeps a past-SLA `no-hosted-session` row silent below
+  `PERSISTENT_FAILURE_ATTEMPTS` and emits only the exhausted counterpart. Recorded why the
+  no-catalog fixture mutation-pins `_delivery_failure_still_retrying`. Verification metadata remains
+  pinned until manager-owned closeout stamps the eventual L19 code commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: covered pair-scoped findings/coalescing/routing and
   sweep-clock delivery; recorded the bounded O4 fixed-point adjustment.

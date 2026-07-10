@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T15:48+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -80,10 +80,12 @@ role, uses the dashboard terminal catalog session id (not `CLAUDE_CODE_SESSION_I
 `CODEX_THREAD_ID`), calls `attach_terminal_session_to_leaf` with both leaf and role, renames the
 session to the expected seat label, and verifies the exact pair in the terminal catalog/dashboard
 before continuing lifecycle work. Second, Developer Clarification
-Triage: during an active task, close/current/small developer clarifications that fit the same
-doctrine or code path are implemented in the current leaf instead of downgraded into future notes;
-future/larger/unclear items are queued or clarified with the developer. Third, Delegated Series
-Authority: once the developer accepts an orchestrated series/portfolio plan, managers and the
+Triage: during an active task, the seat reads the active queue (current leaf, parent/master,
+neighboring leaves, decision log, open questions, in-flight branch state) before choosing a
+note-only path. Close/current/small clarifications that fit the same task, doctrine, code path, or
+current diff are implemented in the current leaf instead of downgraded into future notes, while
+future/larger/dependency-blocked items are queued and unclear fit asks the developer directly.
+Third, Delegated Series Authority: once the developer accepts an orchestrated series/portfolio plan, managers and the
 orchestrator govern subordinate closeout, integration, finalization, and cleanup under that
 standing series authority, while final super/PR-carryover, raised human-pinned gates, scope changes,
 red checks outside scope, and quo-vadis decisions still stop for the developer. This is operational
@@ -173,6 +175,12 @@ No sibling repository evidence is needed for this doctrine file.
   downstream package copies, 0 Python); sync-propagated bundle copy of the canonical
   `skills/l-01-agent-lifecycles/SKILL.md`. Verification metadata pinned until closeout stamps the
   260707-HFX2-L5 commit.
+
+- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 doctrine refinement: Developer Clarification Triage now
+  explicitly reads the active queue before choosing note-only handling; a small clarification that
+  plainly fits the same task/current diff is a strong immediate-implementation signal, true future
+  queue is recorded durably, and unclear fit asks the developer directly. Sync-propagated bundle
+  copy of the canonical `skills/l-01-agent-lifecycles/SKILL.md`.
 
 - 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (task-seat takeover + delegated authority
   doctrine): added Developer-Declared Task-Seat Takeover, Developer Clarification Triage, and
