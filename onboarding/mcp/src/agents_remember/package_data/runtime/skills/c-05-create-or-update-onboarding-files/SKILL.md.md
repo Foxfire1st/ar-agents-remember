@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
 | lastUpdated            | 2026-07-08T00:00+02:00                     |
-| lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2`                                |
-| lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
+| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                |
+| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
 
 ## Purpose
 

@@ -6,8 +6,8 @@
 | path                   | `docs/reference/skills.md`              |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-08T01:00+02:00                  |
-| lastVerifiedCommitHash |                                         |
-| lastVerifiedCommitDate |                                         |
+| lastVerifiedCommitHash |                                         `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
+| lastVerifiedCommitDate |                                         2026-07-10T22:30:19+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview

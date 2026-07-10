@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/next_step.py`       |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-07T21:00+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`             |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`             |
+| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview

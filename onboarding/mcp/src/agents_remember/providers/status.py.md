@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T20:45+02:00|
-| lastVerifiedCommitHash | `915e841a45cec40283902b69fe98e761672904af` |
-| lastVerifiedCommitDate | 2026-07-07T18:43:43+02:00|
+| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
+| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
