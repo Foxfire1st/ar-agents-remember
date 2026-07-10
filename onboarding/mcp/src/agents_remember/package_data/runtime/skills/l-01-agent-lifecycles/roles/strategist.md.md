@@ -5,21 +5,28 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:00+02:00 |
-| lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1` |
-| lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
 This is the portable **strategist** role file the `l-01-agent-lifecycles` frame houses at the
-portfolio tier — the SPRINT PLANNER (developer-named 2026-07-05; ruled mandatory 2026-07-06). Like
+portfolio tier — the SPRINT PLANNER. This seat runs only after the developer approves the
+architect's propose-first strategist question. Like
 every role file it carries both axes in one file — the **role** (verify the in-flight master set is
 coherent, resolve dependency chains, establish blast radius, shuffle leaves, deliver the
 orchestration task) and the **lens** (mechanical phases with real tools; judgment phases with
 mandatory citations) — plus duties, artifact obligations, a comms protocol, and a knob block. The
-central doctrine the card must protect: **a strategist run is a MANDATORY precondition for any
-orchestrated run** (even a single master gets the pass), and the strategist is a **reader, not a
-mutator** — it drafts the orchestration task as a notes artifact; the orchestrator adopts it.
+central doctrine the card must protect: strategist dispatch is approval-gated, and once dispatched
+the strategist is a **reader, not a mutator** — it drafts the orchestration task as a notes
+artifact; the orchestrator adopts it. A developer-sanctioned skip uses the orchestrator-owned
+author-and-adopt path instead.
 
 ## Code Commentary
 
@@ -69,8 +76,9 @@ push for round feedback.
 (`read_ar_files`, `grepai_*`, `cgc_*`, `context_packet`, `drift_check`), native reads, native
 writes ONLY to the own draft artifact, inbox. No `task_doc`, no `worktree_*`, no `lifecycle_*`, no
 gates, no spawn, no git — a seat that never touches mutating AR tools never instantiates a
-lifecycle (the designed shape). **No orchestration task, no orchestrated run** — the mandatory
-pre-run is doctrine, not a knob. Citation discipline binds the judgment phases: every claimed
+lifecycle (the designed shape). The architect proposes this seat and the developer approves its
+dispatch; settings cannot auto-run it. Once running, the artifact write remains unconditional.
+Citation discipline binds the judgment phases: every claimed
 edge carries a citation, and thin leaf scopes become explicit "unplannable as scoped" findings,
 never silent guesses.
 
@@ -98,14 +106,13 @@ override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
 
 ## Repo-Internal References
 
-The strategist is spawned by the orchestrator before any orchestrated run and hands its plan back
-for adoption.
+When approved, the strategist is spawned by the orchestrator and hands its plan back for adoption.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Canonical source this bundle copy is sync-propagated from. | n/a | [strategist.md](agents-remember/skills/l-01-agent-lifecycles/roles/strategist.md) |
 | The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| The orchestrator that dispatches the strategist (Job P mandatory pre-run) and adopts the plan. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
+| The orchestrator that dispatches an approved strategist, adopts its plan, or authors the orchestration task after a sanctioned skip. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
 | The deliverable's template — the orchestration task with the shown-work requirements. | n/a | [orchestration-task.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md) |
 | The plan-review criteria catalog the loop's reviewer runs against the orchestration task. | n/a | [plan-review.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md) |
 
@@ -118,6 +125,12 @@ No sibling repository evidence is needed for this orchestration role file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: superseded mandatory-precondition wording
+  with architect-proposed, developer-approved dispatch; preserved reader-not-mutator and the
+  unconditional artifact duty of an already-running strategist; recorded the orchestrator-owned
+  sanctioned-skip path and added the governing-overview backlink. Verification metadata remains
+  pinned until closeout stamps the eventual two-parent code commit.
 
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
   role-seat immutability; clarified that drawing-board feedback and quo-vadis contradictions go

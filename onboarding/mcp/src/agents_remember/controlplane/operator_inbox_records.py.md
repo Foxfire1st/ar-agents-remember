@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-08T23:59+02:00                                              |
-| lastVerifiedCommitHash |                                                                     `5f9163882857114319552d303e2e301082b588ba`|
-| lastVerifiedCommitDate |                                                                     2026-07-08T18:21:20+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                                              |
+| lastVerifiedCommitHash |                                                                     `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate |                                                                     2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -21,6 +21,14 @@ durable operator or agent-to-agent message that can be pushed into a hosted
 session and/or polled by an external chat.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Chain And Transition Fields
+
+Pending inbox rows may now carry `leafKey` and `subjectAgentId`, preserving the leaf whose progress
+must be checked and the seat whose inactivity/completion produced the signal. `rungTransitionAt` is
+the ladder-only redundant timestamp used by the five-minute safety floor; unlike general `ts`, it is
+not changed by delivery or renewal. `create_operator_inbox_entry` accepts and serializes the chain
+fields without changing older rows that omit them.
 
 ### Logic
 
@@ -123,6 +131,10 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: added leaf/subject routing provenance and the
+  independent rung-transition timestamp used by supervisor chain suppression and the dwell floor.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8: `OperatorInboxState` gains `ladder-resolved` plus
   `ladderResolvedAt`/`ladderResolvedReason`; consume no longer converts non-pending terminal rows

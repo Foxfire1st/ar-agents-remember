@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-09T11:19+02:00 |
-| lastVerifiedCommitHash |                                                              `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
-| lastVerifiedCommitDate |                                                              2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash |                                                              `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate |                                                              2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -20,6 +20,15 @@ Payload builders for the `operator_inbox_*` MCP tools that post, poll, consume,
 and optionally push durable operator or agent-to-agent messages.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Completion Wake Routing
+
+Posting now derives both the current owner and leaf anchor from the sender catalog row. For
+`turn-report` and `master-handover`, `_post_address` replaces stale caller-supplied addressing with
+the resolved current owner before the durable row, ack-by expectation, and optional hosted delivery
+are created. The row records `leafKey` and `subjectAgentId`, so later supervisor passes can re-check
+chain progress without trusting the old mailbox. Ordinary peer-message addressing remains explicit
+and unchanged.
 
 ### Logic
 
@@ -111,6 +120,10 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: made completion/artifact posts target and wake
+  the current manager in the same call, and persisted leaf/subject provenance for later supervisor
+  handling. Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: threaded the configured supervisor redelivery floor into
   immediate hosted inbox delivery so first-send scheduling uses the same 900-second floor as later

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -96,10 +96,19 @@ cadence: `supervisor.py` passes the redelivery floor into hosted delivery, check
 and skips `pane-signal: mid-turn` as busy-state noise. `app.py` wires the new store plus
 `settings.supervisor.signal_cooldown_seconds` into `SupervisorContext`; `inbox_delivery.py` threads
 the redelivery floor into every stored delivery snapshot.
+**260707-HFX2-L13** makes this supervisor chain-aware and manager-first: stale expectation/report/
+seat/inbox/escalation predicates defer when the same leaf chain has progressed; nudge, signal, and
+dead-upstream actions resolve the current responsible manager; one row can transition at most once per
+sweep; and completion/artifact posts are readdressed and hosted-delivered to the current manager.
+Unbound reviewer/curator progress is credited in the subject worktree; unbound worker active-phase
+credit remains the accepted HFX2-L14 S7 follow-up.
 
 ## Hot Path Summary
 
-260707-HFX2-L12 adds the serving-layer CS-6 controls: the supervisor sweep reuses one-read store snapshots and caps escalation-rung emission, terminal liveness runs inside a catalog batch plus tombstone compaction, raw-event fresh-connect scans are offloaded, provider metrics compaction runs on the metrics cadence, and startup performs the only currently cursor-safe workspace-river compaction.
+260707-HFX2-L13 adds a live sixty-second workspace-river compactor over virtual locked cursors, serves
+full task bodies only through `GET /api/task-document`, and makes the supervisor current-manager-first,
+chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains
+body-free for task documents.
 
 `agents-remember dashboard --config <settings.json>` → `cli/dashboard.py` →
 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks
@@ -121,8 +130,9 @@ events/state/inbox-alerts/critical-failsafe live entirely in `providers/degradat
 by the `mcp/` package overview), this route's `app.py` only wires the one extra call into the
 loop it already owns. `GET /api/stream` emits `event:snapshot` then per-entity `lifecycle`/`enclosure`/
 `provider`/`metrics`/`analytics` (and `*.removed`) events; `GET /api/state` returns the
-projection once; `GET /api/events` tails the raw `ar-observer-event/v1` log with exact
-byte-offset `Last-Event-ID` resume (`serving.events`), doing one retained-backlog scan per connect,
+projection once; `GET /api/events` tails the raw `ar-observer-event/v1` log with physical byte-offset
+resume for lifecycle sources and lock-consistent virtual byte offsets for the live-compacted workspace
+source (`serving.events`), doing one retained-backlog scan per connect,
 streaming that bounded backlog in chunks (no whole-history materialization), filtering
 `lifecycle.heartbeat` out of the river, and pruning expired logs on a slow cadence; `POST /api/actions/{action}`
 validates lifecycle transitions against `ActionAvailability` (no mutation) and records
@@ -133,7 +143,10 @@ them; Task 29 S7 also lets `/api/actions/dismiss` persist targetless actionable-
 and the raw `/api/events` stream sends a one-shot `ready` marker after retained backlog replay, so the
 frontend can avoid painting an empty feed before history has arrived. `POST /api/operator-inbox/{entry_id}/dismiss` deletes stale pending entries after the pickup TTL
 warning is shown. `--sim` swaps a replay clock + fixture feeder onto the projector's
-`now`/`before_tick` seams (`serving.sim`). Gate-id-only `cancel` requests are the explicit legacy
+`now`/`before_tick` seams (`serving.sim`). `GET /api/task-document?path=...` is the separate L13
+task-reader body edge: it requires a ready projection and delegates path confinement/schema
+validation to `observer.snapshots`; `/api/state` and `/api/stream` carry summaries only. Gate-id-only
+`cancel` requests are the explicit legacy
 cleanup path for workspace-shaped stale gates; approve/reject/revision stay lifecycle-targeted. The static bundle (`package_data/dashboard/`)
 mounts at `/`. The Mode B2 terminal bridge `@app.websocket("/api/terminal/{session}")` (6d-2)
 attaches one concrete `TerminalHost.attach` tmux client per browser WebSocket — binary PTY bytes out,
@@ -582,6 +595,11 @@ the only destructive terminal action.
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: added live virtual-cursor river
+  compaction, the on-demand task-body endpoint, chain-aware/current-manager supervisor behavior, and
+  one-rung-per-row-per-sweep enforcement; recorded the unbound-worker S1 follow-up. Verification
+  metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): route gained `landing.py`,

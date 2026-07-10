@@ -81,7 +81,7 @@
     "supervisor_signals"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L12 closes the previously recorded supervisor-signal cooldown scaling gap and extends the same pattern to neighboring control-plane stores: signal cooldown rows compact to the active cooldown window, expectation rows compact to pending plus recent terminal rows, gate projection can fold and compact-current in one read, and disposable dashboard-tolerant logs skip torn rows instead of poisoning a sweep or projection tick. A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `Gate...",
+    "summary": "260707-HFX2-L13 makes leaf completion and liveness routing current-manager-first, records durable leaf/subject provenance, separates address-time routing from historical skip-level walking, and enforces a redundant five-minute later-rung floor. Chain progress currently credits exact-leaf seats, the current manager, and same-worktree unbound reviewer/curator seats; unbound-worker active-phase credit remains the accepted HFX2-L14 S7 follow-up. A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds,...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -139,18 +139,18 @@
       "supervisor_signals",
       "lifecycle_gate",
       "HFX2",
-      "L12",
+      "L13",
+      "L14",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "dbe750e4cd7fb777b8f39e7ba6279d1080502d8e",
+      "5b49fa85a51d527a5a216a88c361c08246c759d0",
       "/../../overview.md",
       "controlplane/",
       "rung_due",
       "next_step",
       "seat_is_suspect",
-      "signal_routing.derive_skip_level_owner",
-      "is_seat_dead",
-      "derive_signal_owner"
+      "escalatedAt",
+      "rungTransitionAt"
     ]
   },
   "fallback": {

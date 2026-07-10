@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_escalation_ladder.py`      |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:15+02:00                     |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946` |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                     |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -21,6 +21,13 @@ R2/R3) and the orphan-detection hook (`controlplane/orphan_policy.py`, R3) — p
 with no supervisor-sweep scaffolding.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Floor Regression
+
+The later-rung test now reproduces the live stale-anchor shape: an hour-old `escalatedAt` plus a
+two-minute-old `rungTransitionAt` is not due, and becomes due only when the independent five-minute
+floor expires. Existing SLA/configured-dwell tests continue to prove rung-zero and longer settings
+authority.
 
 ### Logic
 
@@ -94,6 +101,10 @@ No meaningful cross-repo references found.
 | Same-repository unit-test suite only. | — | — |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: added the stale-anchor regression for the
+  redundant five-minute later-rung floor. Verification metadata remains pinned until closeout stamps
+  the eventual L13 code commit.
 
 - 2026-07-08T23:15+02:00 — Created for 260707-HFX2-L4 (R2/R3/R6): four test classes —
   `RungDueTests` (anchor/threshold/ceiling), `NextStepTests` (per-rung routing including the

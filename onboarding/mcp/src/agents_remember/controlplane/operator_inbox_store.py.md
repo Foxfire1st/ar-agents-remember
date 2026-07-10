@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-09T11:19+02:00                                            |
-| lastVerifiedCommitHash |                                                                   `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
-| lastVerifiedCommitDate |                                                                   2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                                            |
+| lastVerifiedCommitHash |                                                                   `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate |                                                                   2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -20,6 +20,14 @@ File-backed operator inbox store for short-lived polling plus hosted-session
 delivery metadata.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Transition And Readdress Mutations
+
+`advance_rung` atomically stamps `ts`, `rung`, `escalatedAt`, and `rungTransitionAt`, so every
+successful transition resets both the ordinary dwell and redundant minimum-floor anchors. `renew`
+can refresh `leafKey`/`subjectAgentId` and, when explicitly requested, rewrite both direct and owner
+addresses to the currently resolved manager while keeping the same durable row id. Normal renewal
+does not touch either rung anchor.
 
 ### Logic
 
@@ -123,6 +131,10 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: made rung advancement stamp both dwell anchors
+  and allowed coalesced supervisor rows to preserve chain fields and readdress the current manager.
+  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: threaded the effective 900-second redelivery floor
   through `record_delivery(..., redelivery_floor_seconds=...)` and preserved the shared default for

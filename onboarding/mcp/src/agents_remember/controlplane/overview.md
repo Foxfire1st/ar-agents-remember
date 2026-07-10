@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`     |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`     |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -20,9 +20,12 @@ substrate (R2), inbox redelivery backoff math (R3), and hierarchical signal
 routing derivation (R4) the L2 supervisor sweep drives from. **260707-HFX2-L4** adds the P-15
 tier-3 escalation ladder ON TOP of that L1 substrate: `escalation_ladder.py` (the pure rung walker —
 `rung_due`/`next_step`/`seat_is_suspect`) and `orphan_policy.py` (a detection-only hook for a dead
-manager's live workers), plus a second, two-hop dead-node-skipping owner derivation
-(`signal_routing.derive_skip_level_owner` + `is_seat_dead`) deliberately kept separate from L1's
-one-hop `derive_signal_owner`. The L2 supervisor sweep (`serving/supervisor.py`, governed by the
+manager's live workers). **260707-HFX2-L13 round 2** makes leaf-signal address-time routing
+manager-first (live direct manager, then exact leaf/master scope, else role-only manager), while a
+separate historical provenance walk remains reserved for later ladder skip-level traversal. Later
+rungs require the configured dwell plus a hard five-minute floor anchored by both `escalatedAt` and
+`rungTransitionAt`; rows also preserve `leafKey`/`subjectAgentId` for chain-aware supervisor checks.
+The L2 supervisor sweep (`serving/supervisor.py`, governed by the
 `serving/` overview) is the sole caller of all of this — no ladder logic lives outside this route,
 and no delivery/store-write happens inside it. Gates are attributed decision points on a lifecycle — the kind vocabulary
 includes the delegable `master-handover-approval` seam gate (the manager raises it with the
@@ -38,7 +41,11 @@ than lifecycle-scoped. These rows are throwaway interaction data, not durable ta
 
 ## Hot Path Summary
 
-260707-HFX2-L12 closes the previously recorded supervisor-signal cooldown scaling gap and extends the same pattern to neighboring control-plane stores: signal cooldown rows compact to the active cooldown window, expectation rows compact to pending plus recent terminal rows, gate projection can fold and compact-current in one read, and disposable dashboard-tolerant logs skip torn rows instead of poisoning a sweep or projection tick.
+260707-HFX2-L13 makes leaf completion and liveness routing current-manager-first, records durable
+leaf/subject provenance, separates address-time routing from historical skip-level walking, and
+enforces a redundant five-minute later-rung floor. Chain progress currently credits exact-leaf seats,
+the current manager, and same-worktree unbound reviewer/curator seats; unbound-worker active-phase
+credit remains the accepted HFX2-L14 S7 follow-up.
 
 A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `GateStore.find` giving deciders cross-lifecycle resolution by gate id), which
 creates the `GateRecord`, blocks the ambient lifecycle with the ask, and
@@ -90,11 +97,11 @@ relay doctrine (orchestrator posts `decision-item` to `architect`; architect pos
 documented in `architect.md`/`orchestrator.md`/`SKILL.md`. Gate policy and inbox storage behavior
 are unchanged — a pure Literal extension.
 
-**260707-HFX2-L1** makes the operator inbox the durable signal substrate the L2 supervisor sweep
-drives: R1 extends `OperatorInboxEntry` with ack/backoff fields (`attemptCount`/`lastAttemptAt`/
-`nextAttemptAt`/`escalatedAt`) so consume=ack is the ONLY terminal outcome (`delivered` is never
-terminal — pasted != perceived) and fixes `interaction_retention._keep_inbox_entry` to never prune
-a `pending` row regardless of age. R2 adds `expectation_rows.py`
+**260707-HFX2-L1** makes the operator inbox the signal substrate the L2 supervisor sweep drives:
+R1 extends `OperatorInboxEntry` with ack/backoff fields (`attemptCount`/`lastAttemptAt`/
+`nextAttemptAt`/`escalatedAt`) so delivered is not acknowledgement. HFX3 supersedes L1's
+immortal-pending retention: pending rows expire after 48 hours, the folded inbox is capped at 500
+current ids, and the durable artifact—not the row—is the record. R2 adds `expectation_rows.py`
 (`ExpectationRowStore`/`write_expectation_row`): every dispatch surface (spawn, gate open, signal
 post) atomically writes a durable what-must-happen-by-when row (kinds `briefed-by` /
 `turn-report-by` / `verdict-by` / `ack-by`), configurable per-kind SLA via
@@ -109,8 +116,8 @@ drives the actual sweep; this route only builds the durable substrate + surfacin
 **260707-HFX2-L4** lands that ladder escalation: `escalation_ladder.py::rung_due`/`next_step` climb
 an unacked row rung 1 (renudge) -> rung 2 (skip-level, via new `signal_routing.
 derive_skip_level_owner` -- a SEPARATE two-hop walk from L1's one-hop `derive_signal_owner`, walking
-PAST any dead intermediate the new `is_seat_dead` helper detects) -> rung 3 (developer attention,
-terminal); `seat_is_suspect` marks a seat past the respawn threshold as suspect only on an actually
+PAST any dead intermediate the new `is_seat_dead` helper detects) -> rung 3 (architect custody /
+architect attention, terminal); `seat_is_suspect` marks a seat past the respawn threshold as suspect only on an actually
 observed dead/stalled catalog signal, never from silence alone. `orphan_policy.py::
 find_orphaned_workers` is a pure, detection-only hook for a respawned/dead manager's still-running
 workers -- no auto re-parent action exists yet. `OperatorInboxEntry` gains `rung: int = 0` and
@@ -122,9 +129,8 @@ this route; the actual predicate evaluation, delivery, and durable-row mutation 
 durable terminal `state="ladder-resolved"` plus `ladderResolvedAt`/`ladderResolvedReason`; `inbox_backoff.py`
 excludes ladder-resolved rows via an explicit predicate; `OperatorInboxStore` mutations accept an
 optional in-sweep `current()` snapshot and add idempotent `mark_ladder_resolved`; and
-`interaction_retention.py`/`compact()` prune ladder-resolved terminal rows while still preserving live
-pending rows. Mid-climb rows and live-seat rows remain pending/redeliverable under the older L1/L4
-contracts.
+`interaction_retention.py`/`compact()` prune ladder-resolved terminal rows. Mid-climb rows and
+live-seat rows remain pending/redeliverable only within the HFX3 48-hour TTL and 500-row health cap.
 **260707-HFX2-L9** adds the redelivery-cadence floor and supervisor signal cooldown substrate:
 `inbox_backoff.py` now owns the 900-second `MIN_REDELIVERY_INTERVAL_SECONDS` and refuses sub-floor
 values, `OperatorInboxStore.record_delivery` threads that floor into stored `nextAttemptAt`
@@ -154,12 +160,12 @@ signal, while targetless provider-down dismissals are not accepted.
 | `gate_policy.py` | `GatePolicy` / `GatePolicyRule`, built-in policy names, human-pinned/delegable kind validation, and delegated-decision attribution/evidence checks. |
 | `enforcement.py` | `evaluate_gate` (pure kind-generic gate policy resolver) + `GateGuard`; `evaluate_closeout_gate` / `CloseoutGuard` remain the closeout wrapper `worktree_closeout_apply` reads. |
 | `attention_dismissals.py` | `AttentionDismissalRecord` + `AttentionDismissalStore`: compact current acknowledgement rows for attention queue dismissals, with physical prune by live lifecycle id and a targetless actionable-drift exception. |
-| `interaction_retention.py` | Shared 5-minute pickup/wait and 24-hour interaction TTL policy helpers; since 260707-HFX2-L1 a `pending` inbox row is NEVER pruned by age (only `consumed` rows are TTL-bounded). |
+| `interaction_retention.py` | Shared 5-minute pickup/wait, 24-hour consumed-row audit TTL, HFX3 48-hour pending-row TTL, and 500-current-row hard health cap; ladder-resolved rows drop immediately. |
 | `expectation_rows.py` | (260707-HFX2-L1, R2) `ExpectationRow`/`ExpectationRowStore`/`write_expectation_row`: durable what-must-happen-by-when rows written atomically at every dispatch surface, an L2 sweep scans, never in-memory timers. |
 | `inbox_backoff.py` | (260707-HFX2-L1, R3; HFX2-L9) Pure redelivery backoff-ladder math + the shared 900-second redelivery floor/fail-loud validation, mirroring the `OrchestrationNudgeStore` pattern while refusing sub-floor retry cadences. |
 | `supervisor_signals.py` | (260707-HFX2-L9) Persisted supervisor pane/seat-liveness signal cooldown records keyed by owner/leaf/finding kind/detail; known unbounded/no-compactor limitation tracked for HFX2-L11. |
 | `signal_routing.py` | (260707-HFX2-L1, R4; 260707-HFX2-L4, R2/R4) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). `is_seat_dead`/`derive_skip_level_owner`: the ladder's liveness check and SEPARATE two-hop, dead-node-skipping owner's-owner walk. |
-| `escalation_ladder.py` | (260707-HFX2-L4, R2/R3) `rung_due`/`next_step`/`seat_is_suspect`: the pure P-15 tier-3 ladder walker -- rung-due dwell/SLA logic, per-rung routing (including the hierarchy-ceiling jump-to-developer fallback), and dead/stalled-seat respawn-candidate detection. |
+| `escalation_ladder.py` | (260707-HFX2-L4 + L13/HFX3 correction) `rung_due`/`next_step`/`seat_is_suspect`: the pure tier-3 ladder walker, configured dwell plus redundant five-minute later-rung floor, architect terminal custody, and dead/stalled-seat respawn-candidate detection. |
 | `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
 | `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store). |
 
@@ -213,6 +219,17 @@ response models are `models/operator_inbox.py`.
 | The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3 retro curation: reconciled route truth with the health-first
+  48-hour pending TTL and 500-row cap, architect terminal custody, and the L13 redundant
+  five-minute later-rung floor. Historical HFX2-L1 immortal-pending entries remain as superseded
+  history only. Verification metadata remains pinned until closeout stamps the eventual two-parent
+  code commit.
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round-2 route impact: documented current-manager-first
+  leaf signals, historical-only skip-level provenance, leaf/subject row fields, redundant rung
+  anchors, and the accepted unbound-worker S1 follow-up. Verification metadata remains pinned until
+  closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: added the shared 900-second redelivery

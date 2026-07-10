@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-09T19:31+02:00                         |
-| lastVerifiedCommitHash |                                                `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`|
-| lastVerifiedCommitDate |                                                2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                         |
+| lastVerifiedCommitHash |                                                `5b49fa85a51d527a5a216a88c361c08246c759d0`|
+| lastVerifiedCommitDate |                                                2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                               |
 
 ## Governing Overview
@@ -19,6 +19,14 @@
 `test_projection_scaling_cs6.py` pins the projection tick fixes from HFX2-L12 fix round 2. It focuses on the 1-second projection path surfaces that previously double-folded gate logs, double-walked task JSON, re-ran git status per leaf, re-parsed unchanged lifecycle logs, and silently allowed task-document body payload growth.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 F6/F7 Two-Size And Cache Proof
+
+`LifecycleLogCacheTests` instruments the real `EventStore.read_log` parse boundary. A cold pass must
+parse once; a later heartbeat-sidecar change must update the merged event view without another log
+parse, closing round-1 B2. Task-document scaling cases at two corpus sizes assert the broadcast is
+windowed, every summary has a `bodyRevision`, and reader-body byte cost is zero. Separate cases prove
+series summaries are body-free and the on-demand reader returns full content.
 
 ### Logic
 
@@ -61,5 +69,10 @@ No meaningful cross-repo references found.
 | Same-repository tests only. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6/F7/B2: revived the lifecycle-log cache instrument,
+  proved sidecar merge without reparse, and added body-free/windowed broadcast plus on-demand body
+  regressions. Verification metadata remains pinned until closeout stamps the eventual L13 code
+  commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: created for the projection CS-6 scaling regressions added in fix round 2. Verification metadata pinned until closeout stamps the HFX2-L12 commit.

@@ -78,7 +78,7 @@
     "worktree_provider_admission"
   ],
   "hotPath": {
-    "summary": "",
+    "summary": "Workspace event storage is bounded live by lock-guarded compaction plus virtual byte offsets; lifecycle heartbeats are one coalesced sidecar per lifecycle; projection log parses survive heartbeat ticks; and task/series broadcasts carry at most 250 body-free summaries with selected bodies loaded on demand. Accepted follow-ups remain explicit: task summary truncation/step-list bounds (N4), raw sidecar timestamp compare (N6), and the workspace crash-window ordering note (N2).",
     "candidateHints": [
       "mcp/src/agents_remember/observer",
       "mcp/src/agents_remember/observer/__init__.py",
@@ -142,7 +142,7 @@
       "worktree_provider_admission",
       "mcp/src/agents_remember/observer/",
       "route-local-overview",
-      "dbe750e4cd7fb777b8f39e7ba6279d1080502d8e",
+      "5b49fa85a51d527a5a216a88c361c08246c759d0",
       "/../../../overview.md",
       "observer/",
       "abandoned",

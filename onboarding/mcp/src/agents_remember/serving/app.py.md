@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e` |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,6 +38,18 @@ just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Live Compaction And Task-Body Endpoint
+
+Dashboard lifespan still compacts the workspace river before accepting clients, then starts a
+separate sixty-second live compaction task beside projector, metrics, and supervisor tasks. Shutdown
+cancels and awaits that task with the same cancellation discipline as the other loops. Failures are
+logged and retried on the next cadence rather than terminating the serving daemon.
+
+`GET /api/task-document?path=...` requires a ready projection, delegates path confinement and schema
+validation to `read_task_document_body`, returns the full `TaskDocNode`, and maps missing/invalid
+documents to 404 (projection-not-ready to 503). This is the only dashboard route that carries task
+reader bodies; `/api/state` and `/api/stream` remain summary-only.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -398,6 +410,10 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F6: added the live workspace-river compaction loop
+  and the projection-gated, path-confined on-demand task-document endpoint. Verification metadata
+  remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: documented the landed archive

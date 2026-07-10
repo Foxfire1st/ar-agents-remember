@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T01:27+02:00                           |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -37,6 +37,13 @@ the compact `TaskNotes` list + resolved references remain the ENTRY surfaces tha
   **controlled** — the open `path` + rail `onSelectNote` are lifted to `CockpitShell`, so a rail click
   switches the pane in place and the selection survives back/forward (the reader stays mounted-hidden after
   Back, like the File Viewer). A sticky back link (`notes-reader-back`) restores the railed Operations body.
+
+260707-HFX2-L13 changes only `NotesReaderViewer.test.tsx` in this child route. Its shared `fetch`
+fixture now recognizes `/api/task-document` because the surrounding detail/task-reader composition
+loads the visible task body on demand before or alongside notes requests. The production Notes Reader
+component, its `/api/notes/{list,read}` transport, takeover state, and `DualPane` rendering are
+unchanged; the fixture branch prevents the parent reader's new request from leaking into or
+invalidating the notes-specific assertions.
 
 ## Invariants And Boundaries
 
@@ -69,6 +76,12 @@ the reader kept mounted-hidden so selection survives.
 | The entry surface (compact list + references) that opens this reader. | [panels/TaskNotes.tsx](agents-remember/dashboard/src/panels/TaskNotes.tsx) |
 
 ## Update History
+
+- 2026-07-10T01:27+02:00 — No route impact: reviewed 260707-HFX2-L13's changed
+  `NotesReaderViewer.test.tsx` fixture. It now serves the parent detail reader's on-demand
+  `/api/task-document` request, but no Notes Reader runtime source, notes endpoint, takeover state, or
+  rendering invariant changed. Verification metadata remains pinned until closeout stamps the
+  eventual L13 code commit.
 
 - 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 2 renders the "Showing the first 2 MiB"
   truncation banner above the DualPane for a truncated markdown note (DualPane's banner lives only in

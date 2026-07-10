@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`        |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`        |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -36,6 +36,22 @@ Oct-2025 incident is the reference case for "at-least-once push still needs a re
 sweep").
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Manager-First Wake And Chain-Aware Suppression
+
+Expectation, missing-report, seat-liveness, redelivery, and escalation predicates now consult
+leaf-chain progress before re-firing stale work. Supervisor-created inactivity rows preserve
+`leafKey`/`subjectAgentId`; renewals readdress the current manager. Auto-nudge, signal emission, and
+dead-upstream handling resolve the leaf's current manager first, with later upward movement left to
+the timed ladder. Completion wake itself is posted through the MCP tool path documented separately.
+
+`_SweepState.escalated_entry_ids` prevents duplicated findings from advancing one row twice in a
+single sweep, complementing the persistent rung timestamps. This narrowly scoped guard is necessary
+because multiple predicates can report the same durable row from one pre-sweep snapshot. Current
+chain credit includes exact-leaf seats/current manager/unbound reviewer or curator in the same
+worktree, but not unbound workers; the accepted S1 active-phase false-inactivity residual is routed to
+HFX2-L14 S7. Manager targeting, five-minute rung floor, cooldowns, and completion wake are current
+L13 truth.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -253,6 +269,11 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local sweep; the level-triggered-reconciliation design rationale cites an external incident (Inngest, Oct 2025) only as research justification, not a code boundary. | — | — |
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: made supervisor predicates chain-aware,
+  manager-first, and current-owner-readdressing; added the one-transition-per-row-per-sweep guard;
+  recorded the accepted unbound-worker S1 follow-up. Verification metadata remains pinned until
+  closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: `_redeliver`/`_post_owner_signal` now pass the

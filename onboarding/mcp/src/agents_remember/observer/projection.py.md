@@ -5,10 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`       |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[observer overview](overview.md)
 
 ## Purpose
 
@@ -20,6 +24,15 @@ enclosure-centered `EngineProcessNode` (+ `CommitRefNode`, `ProviderBootNode`,
 served `WorkspaceProjection.version` from `1` to `2`.
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Summary-Only Task Documents
+
+`TaskDocNode.bodyRevision` is the SHA-256 digest of the reader-body fields omitted from the
+always-on projection. The node still carries identity, status, progress, steps, sub-task links, and
+routing metadata, while objective/requirements/design/code examples/decisions/open questions/
+references/sections are empty in broadcast summaries and populated only by the on-demand read.
+`task_documents_body_bytes` remains a guardrail and must report zero for projected summaries while
+still detecting seeded full-body regressions.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -275,6 +288,11 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
 `EnclosureNode` now has explicit leaf identity and task-root fields, allowing the observer to serve active leaf enclosure records without making clients infer parent folders from contract paths. Leaf `series-contract.md` files are intentionally not `TaskDocNode`s; a promoted leaf needs a real `ar-task-document/v1` JSON document for the dashboard reader to show task content. `TaskDocNode.sections` can still render authored freeform sections from that JSON document. Master docs project as task documents and still project on `Analytics.series` for the legacy master surface. Master leaf ordering uses `createdAt` read from the referenced leaf JSON when available; task names remain display identity, not ordering metadata.
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: converted the broadcast `TaskDocNode` contract to a
+  body-free summary with a body-revision digest and retained the payload-budget measurement as a
+  zero-body regression guard. Verification metadata remains pinned until closeout stamps the
+  eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `AgentPickupNode` gained the R1 ack/backoff fields (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`) and R4 owner fields (`ownerRole`/`ownerAgentId`/`ownerLifecycleId`); added `ExpectationRowNode` + `Analytics.expectationRows` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

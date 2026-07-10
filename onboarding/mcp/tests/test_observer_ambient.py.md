@@ -5,10 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_ambient.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T13:54+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-10T01:14+02:00                           |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`       |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
 | governingOverview      | `../overview.md`                              |
+
+## Governing Overview
+
+[mcp overview](../overview.md) — there is no route-local `mcp/tests/overview.md`.
 
 ## Purpose
 
@@ -18,6 +22,12 @@ emission, the TTL project-and-prune sweep, the heartbeat ticker (2b), and the
 promotion, attach/resume, and save gate (2c).
 
 ## Code Commentary
+
+### 260707-HFX2-L13 Heartbeat-Sidecar Compatibility
+
+The activity-decay heartbeat test now reads the coalesced sidecar timestamp rather than scanning
+`events.jsonl`. It still proves the same behavioral contract: active lifecycle beats advance, idle
+time does not mint new heartbeats, and the next real signal resumes the ticker.
 
 ### Logic
 
@@ -76,6 +86,10 @@ reading. The task-34 decay tests inject a list-backed mutable clock and an expli
 Ambient observer tests use leaf enclosure paths when lifecycle promotion records an enclosure, matching the durable anchor consumed by dashboard projection.
 
 ## Update History
+
+- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F7: repointed heartbeat ticker assertions to the
+  coalesced sidecar while preserving active/idle/resume semantics. Verification metadata remains
+  pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-06-28T13:54+02:00 — Task 34: added two `HeartbeatTests` for the activity-decaying heartbeat —
   `test_inactive_seconds_tracks_real_activity_not_heartbeats` (deterministic clock: real events reset the

@@ -5,16 +5,21 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T15:35+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T02:39+02:00 |
+| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
+| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
-The tenth template: the **orchestration task** — the strategist's deliverable, the sprint plan and
-the sprint scope. A strategist run producing this artifact is the mandatory precondition for any
-orchestrated run; the orchestrator adopts the accepted draft into durable task form (the
-strategist is a reader, not a mutator). The template's defining property is that it **REQUIRES the
+The tenth template: the **orchestration task** — the sprint plan and scope. After an approved
+strategist pass, the orchestrator adopts the strategist's accepted draft into durable task form.
+After a developer-sanctioned strategist skip, the orchestrator authors and adopts it from the
+developer-ruled plan and records that source in the decision log. The template's defining property is that it **REQUIRES the
 shown work per section** — the plan is refutable evidence, not narrative.
 
 ## Code Commentary
@@ -50,9 +55,10 @@ placeholder slots. Lives beside the other templates; drafted under the series/co
 ### Invariants And Boundaries
 
 An uncited edge is refutable by default — the plan-review catalog's first standing criterion
-attacks exactly this. The artifact is a **notes draft until adopted**; only the orchestrator's
-adoption (with a decision-log entry) turns it into durable task form. Wiring it as a first-class
-dashboard/task-doc kind is deferred to the L14 hierarchy work.
+attacks exactly this. A strategist-produced artifact is a **notes draft until adopted**; the
+orchestrator also owns the alternate author-and-adopt path after a sanctioned skip. Either path
+requires an adoption decision-log entry before Job O. Wiring it as a first-class dashboard/task-doc
+kind is deferred to the L14 hierarchy work.
 
 ### Todos
 
@@ -83,5 +89,11 @@ No sibling repository evidence is needed for this template.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: replaced the mandatory-strategist premise
+  with the two valid authorship paths—approved strategist draft or orchestrator-authored task after
+  a sanctioned skip—and preserved adoption plus shown-work requirements. Added the governing
+  overview backlink. Verification metadata remains pinned until closeout stamps the eventual
+  two-parent code commit.
 
 - 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `templates/orchestration-task.md` (leaf 260703-L12): the tenth template — the strategist's sprint plan with mandatory shown work (evidence-cited edges incl. declaration cross-references, derivation-named blast radii, from→to leaf moves, honest unplannable-as-scoped findings). Verification metadata pinned until closeout stamps the L12 commit.

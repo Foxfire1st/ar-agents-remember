@@ -423,7 +423,7 @@
     "cross"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L12 generalized the CS-6 scaling/reclamation floor across MCP package hot paths: supervisor escalation gained `escalationBudget`, provider metrics/degradation logs gained bounded reads/compaction, projection readers gained task/gate/lifecycle/git caches, the workspace river gained a startup compactor, and the new CS-6 test files under `mcp/tests/` provide reusable regression helpers for future durable stores and process/session surfaces. Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, `src/agents_remember/mcp/server.py` and the `mcp/tools/` package for...",
+    "summary": "260707-HFX2-L13 closes the L12 package residuals and reconciles the reviewed HFX3 runtime seams that round 2 actually changed. Observer storage now coalesces lifecycle heartbeats into bounded sidecars, fully reclaims dormant unprotected lifecycle directories, and lock-guards live workspace compaction with virtual cursor offsets. Projection/state broadcasts carry bounded body-free task/series summaries with `bodyRevision`; the serving package exposes the path-confined on-demand task-body endpoint and the dashboard fetches only the visible body. Control-plane/supervisor changes route leaf sig...",
     "candidateHints": [
       "mcp",
       "mcp/src/agents_remember/controllers",
