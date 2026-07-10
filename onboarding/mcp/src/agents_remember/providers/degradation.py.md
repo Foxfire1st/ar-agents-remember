@@ -73,7 +73,7 @@ regardless of sample count; otherwise `_threshold_level` requires `critical_samp
 `_has_healthy_tail` requires a full trailing run of `healthy_samples` healthy rows before
 recovering — this is the hysteresis the task's failing-first test proves ("threshold crossing
 emits exactly one alert per state change"). An **empty metrics log short-circuits straight to
-`"healthy"`** with no evidence (`classify_degradation:199-200`) — disclosed as benign today only
+`"healthy"`** with no evidence (`classify_degradation:225-226`) — disclosed as benign today only
 because the sampler always writes a metrics row immediately before invoking the evaluator
 (decision log 2026-07-08T00:20, item 1); a genuinely missing/truncated log would skip the
 `healthySamples` hysteresis gate on an all-clear.
@@ -165,7 +165,7 @@ documentation, so it is cited as a repo-internal reference below rather than her
 | The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. | whole module | [inbox_delivery.py](../serving/inbox_delivery.py) |
 | The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role. | whole module | [terminal_catalog.py](../serving/terminal_catalog.py) |
 | `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). | whole module | [../mcp/provider_degradation_settings.py](../mcp/provider_degradation_settings.py.md) |
-| The serving sampling loop that invokes `evaluate_provider_degradation` once per tick after recording a metrics sample. | L455-L458 (app.py) | [app.py](../serving/app.py.md) |
+| The serving sampling loop that invokes `evaluate_provider_degradation` once per tick after recording a metrics sample. | L516-L518 (app.py) | [app.py](../serving/app.py.md) |
 | Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. | whole module | [../../../tests/test_provider_degradation.py](../../../tests/test_provider_degradation.py.md) |
 
 ## Cross-Repo References
@@ -177,6 +177,9 @@ No meaningful cross-repo references found.
 | This protocol is providers-only this iteration; Sentry integration is a future detection source in a separate task (`260703_spotlight-dev-observability`), not yet a cross-repo/cross-system boundary this module touches. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T21:05+02:00 — Super-exit curator correction: refreshed the `classify_degradation`
+  empty-log and `app.py` sampling-loop line citations against code commit `e400ed0`.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: switched live orchestrator/manager recipient discovery
   to binding identity; no route-level degradation-protocol change.

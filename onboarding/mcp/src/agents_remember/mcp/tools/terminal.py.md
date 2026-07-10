@@ -131,9 +131,10 @@ spawned payload/provenance. Invalid or ambiguous refs return a strict refusal be
    diagnosable from the result itself, never trusted from a boolean.
 
    260707-HFX2-L3 (R3, ONE PATH): `_deliver_spawn_pastes` no longer calls `TerminalPaster.paste`
-   directly — each session-command/brief paste is now a `DeliveryRow` (`envelope=False`: a fresh
-   harness's very first paste is the raw text unchanged, no synthetic header) passed to
-   `serving.injector.deliver`, the SAME delivery path `serving/inbox_delivery.py` calls. The
+   directly — each session-command paste is a `DeliveryRow` with `envelope=False`, while the
+   brief paste is a `DeliveryRow` with `envelope=True` carrying its existing unique id envelope.
+   A fresh harness's first session command remains raw text unchanged, with no synthetic header;
+   both rows pass to `serving.injector.deliver`, the SAME delivery path `serving/inbox_delivery.py` calls. The
    raw-spawn seam's separate delivery loop is retired: nothing in this module talks to
    `TerminalPaster` except by constructing it as the seam parameter (`paster if paster is not None
    else TerminalPaster()`) — the paste/blocked/turn-started classification lives one level down in
@@ -282,6 +283,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-10T21:05+02:00 — Super-exit curator correction: clarified that only session-command
+  rows use `envelope=False`; the brief row uses `envelope=True` with its existing unique id envelope.
+
 - 2026-07-10T18:30+02:00 — 260707-HFX2-L18: documented the behavior-preserving
   `_resolve_spawn_leaf` extraction and flat dispatch-local controller flow. The strict CRAP score for
   `spawn_agent_session_payload` fell from `34.25` to `23.02`; settings-owned spend protection, L17
@@ -306,8 +310,9 @@ No meaningful cross-repo references found.
   reviewer note that the blocklist is maintained but not mathematically exhaustive. Verification
   metadata pinned until closeout stamps the 260707-HFX2-L10 commit.
 - 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R3): `_deliver_spawn_pastes`
-  gained `entry_id`/`harness` parameters and now builds `DeliveryRow`s (`envelope=False`, raw text
-  unchanged) passed to `serving.injector.deliver` — the raw-spawn seam's separate delivery loop is
+  gained `entry_id`/`harness` parameters and now builds session-command `DeliveryRow`s
+  (`envelope=False`, raw text unchanged) plus a brief `DeliveryRow` (`envelope=True`, existing
+  unique id envelope), all passed to `serving.injector.deliver` — the raw-spawn seam's separate delivery loop is
   retired; the SAME one path `serving/inbox_delivery.py` uses. `_SpawnDelivery`'s boolean fields keep
   their exact pre-existing meaning, mapped from the richer `DeliveryOutcome`. Every existing
   `test_spawn_agent_session.py` assertion (including exact `paster.calls[...]["text"]` equality)
