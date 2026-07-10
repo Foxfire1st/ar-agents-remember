@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814` |
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash | `b76c462acb2fb816331c6c078cba1fe779bb816a` |
+| lastVerifiedCommitDate | 2026-07-10T22:09:47+02:00|
 
 > **Status:** active baseline
 
@@ -434,7 +434,15 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The repository quality configuration leaves Ruff on import/style/static hygiene, delegates branch/statement complexity pressure to Radon, gives tests targeted patched-callable/import-setup ignores, and configures Radon to report `B` through `F` complexity plus maintainability pressure. | L1-L39; L59-L68 | [pyproject.toml](agents-remember/pyproject.toml) |
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
+HFX2-L21 advances the existing Dashboard frontend feature: the Chats session rail is now a
+persisted, pointer- and keyboard-adjustable 220–560 px sidebar instead of a fixed 16 rem column. The
+resize separator preserves terminal working width and adds no new route or serving behavior.
+
 ## Update History
+
+- 2026-07-10T21:59+02:00 — 260707-HFX2-L21 root route impact: recorded the adjustable Chats
+  sidebar on the existing Dashboard frontend surface. The change is frontend-local; the MCP route
+  only receives the verified generated bundle and fingerprint.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 root route impact: documented current
   `(leafKey, seatRole)` identity, provenance/binding separation, multi-role coexistence, explicit

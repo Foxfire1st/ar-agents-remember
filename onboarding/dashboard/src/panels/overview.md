@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`       |
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastUpdated            | 2026-07-10T21:52+02:00 |
+| lastVerifiedCommitHash | `b76c462acb2fb816331c6c078cba1fe779bb816a`       |
+| lastVerifiedCommitDate | 2026-07-10T22:09:47+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -236,6 +236,10 @@ and the `Chats` `SessionList` switcher).
 	  and periodically re-fetches the catalog so out-of-session leaf moves converge without refresh.
 	  Receivers remove terminated ids immediately, re-fetch the catalog, and can clear rows on a successful empty response.
 	  Persistence is covered by `Chats.test.tsx`.
+  **HFX2-L21** makes the page's session-tree sidebar adjustable instead of fixed at `16rem`: a
+  centre-facing vertical separator supports pointer drag and ArrowLeft/ArrowRight, clamps to
+  220–560px, persists through `usePersistedNumber`, exposes ARIA min/max/current values, and reserves
+  a minimum terminal slot. Width changes are direct and unanimated.
   **Slice L5** adds leaf-keyed attachment: the cockpit passes the **displayed** leaf's `selectedLeafKey`
   (reported up from `DetailPanel` via `onViewLeaf`, not the master selection — L5 fix 1) + `taskDocuments`,
   so `Chats` can bind or move the active session to a leaf through the server (an **"Attach to leaf"** /
@@ -371,6 +375,11 @@ identity is known. `Chats` and `RailChat` post/apply the pair and name same-role
 an existing panel responsibility expansion, not a new panel route.
 
 ## Update History
+
+- 2026-07-10T21:52+02:00 — 260707-HFX2-L21 route impact: the existing Chats full-bleed layout now
+  has a bounded, persisted, pointer/keyboard-resizable session-tree rail. Panel inventory and routing
+  are unchanged; focused coverage pins restoration, ARIA values, drag, arrow steps, and persistence.
+  Verification metadata remains pinned to the task base until closeout.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 panels route impact: added explicit seat-role picker,
   pair-aware attach/move, and binding-first rail/fleet rendering; no route layout change.

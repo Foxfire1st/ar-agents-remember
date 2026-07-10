@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.test.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`       |
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastUpdated            | 2026-07-10T21:52+02:00 |
+| lastVerifiedCommitHash | `b76c462acb2fb816331c6c078cba1fe779bb816a`       |
+| lastVerifiedCommitDate | 2026-07-10T22:09:47+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -30,6 +30,9 @@ adds leaf-attach coverage: a `200` attach binds the leaf, a `409` is rejected wi
 chat" note, and the session-row leaf label resolves a task-doc title with an id fallback. L9 adds
 attached-chat move coverage and live catalog refresh coverage for `"leaf"` invalidations from another
 browser tab or agent-facing reassignment.
+HFX2-L21 adds direct layout-interaction coverage: a stored Chats sidebar width restores into the
+rendered rail and separator ARIA value; pointer drag and both horizontal arrow keys update the rail and
+persist the exact clamped pixel width.
 
 ## Code Commentary
 
@@ -83,6 +86,10 @@ the group's `chats-group-cleanup-landed` control, and asserts: the backend `POST
 (only `"active"` remains) once the stubbed response reports `closed:1`, a `chats-landed-cleanup-status`
 node renders the "1 closed · 0 skipped" summary, and a `terminal-catalog-changed`/`"terminate"`
 broadcast is posted so other tabs converge.
+The HFX2-L21 resize block seeds one session so the rail exists. One case preloads
+`localStorage["chats.sidebar-width"]` and verifies the rendered width plus `aria-valuenow`. The second
+uses a small synthetic pointer-event helper to exercise the native window move/up listeners, then checks
+ArrowRight/ArrowLeft steps and the persisted width after every interaction.
 
 ### Conventions
 
@@ -92,6 +99,9 @@ persistence case *does* open sessions, but `vi.mock("./Terminal")` swaps the laz
 so xterm stays out of jsdom. `afterEach` runs `cleanup` + `vi.unstubAllGlobals`, clears localStorage,
 resets the `sessions` store to its current shape (`sessions`, `activeId`, `count`), and resets the test
 `FakeBroadcastChannel`.
+The synthetic `pointerEvent` helper exists only because jsdom does not provide the browser's complete
+`PointerEvent` constructor; it supplies the two fields the real drag contract consumes (`clientX` and
+`pointerId`) and the test stubs `setPointerCapture` on the handle.
 
 ## Repo-Internal References
 
@@ -100,8 +110,14 @@ resets the `sessions` store to its current shape (`sessions`, `activeId`, `count
 | The Chats view under test keeps the picker visible for attached sessions, handles attach/move outcomes, and rehydrates catalog changes. | L256-L275; L303-L318; L374-L388 | [Chats.tsx](Chats.tsx) |
 | The L9 tests add a second leaf, move an attached chat on `200`, and rehydrate a `"leaf"` catalog invalidation from another tab. | L8-L31; L354-L381; L405-L451 | [Chats.test.tsx](Chats.test.tsx) |
 | The `fetchHarnesses` / catalog hydrate / terminate client the view drives. | L253-L315 | [data/terminal.ts](../data/terminal.ts) |
+| The test pointer-event helper and the two persisted resize regressions. | L33-L40; L128-L165 | [Chats.test.tsx](Chats.test.tsx) |
+| The separator, clamp, persisted width state, and sidebar render under test. | L185-L238; L304-L315; L520-L539 | [Chats.tsx](Chats.tsx) |
 
 ## Update History
+
+- 2026-07-10T21:52+02:00 — 260707-HFX2-L21: added restored-width/ARIA coverage and a direct
+  pointer-drag plus keyboard-step regression that verifies localStorage after every width change.
+  Verification metadata remains pinned to the task base until closeout stamps the code commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: updated Chats attach coverage for explicit role
   selection and pair-scoped conflict copy.

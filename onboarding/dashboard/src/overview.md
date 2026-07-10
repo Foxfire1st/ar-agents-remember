@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`       |
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash | `b76c462acb2fb816331c6c078cba1fe779bb816a`       |
+| lastVerifiedCommitDate | 2026-07-10T22:09:47+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -226,6 +226,10 @@ arrays, shows an explicit summary fallback on fetch failure, and renders impleme
 These are behavior changes within the existing `data/` and `panels/` routes; no new frontend route or
 module boundary was added.
 
+HFX2-L21 replaces the Chats session rail's fixed width with a persisted 220–560 px width. A visible
+separator supports pointer dragging and Left/Right keyboard steps, while the adjacent terminal keeps
+a 20 rem minimum when space permits. Direct manipulation does not animate the panel width.
+
 ## Invariants And Boundaries
 
 - **Near-read-only, two interactive surfaces** — the cockpit renders the projection read-only except
@@ -248,6 +252,7 @@ module boundary was added.
 | --- | --- | --- |
 | The L16 grouping derivation owns repo-qualified sprint/archive/error membership. | L48-L159 | [sessionGroups.ts](data/sessionGroups.ts) |
 | The L16 session renderer owns forest order, manager collapse, bounded layout, and hover details. | L242-L484 | [SessionList.tsx](panels/SessionList.tsx) |
+| The L21 Chats shell owns the persisted sidebar width plus pointer and keyboard separator behavior. | L1-L588 | [Chats.tsx](panels/Chats.tsx) |
 | The reader merge/fallback and single-step contract is implemented in the detail panel. | L343-L417; L1261-L1359 | [DetailPanel.tsx](panels/DetailPanel.tsx) |
 | The serving layer supplies the projection and static package boundary consumed by this route. | L1-L80 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The built bundle is synced into package data and checked against source plus dist. | L30-L52; L151-L179 | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
@@ -262,6 +267,11 @@ and copies them into package data, and serving mounts that synchronized output; 
 assets are not documented individually.
 
 ## Update History
+
+- 2026-07-10T21:59+02:00 — 260707-HFX2-L21 dashboard-source route impact: documented the
+  persisted, bounded Chats sidebar and its pointer/keyboard separator. The behavior stays inside the
+  existing `panels/` route and preserves terminal working width without animating direct manipulation.
+  Verification metadata remains pinned until closeout.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 dashboard-source route impact: documented explicit
   role claim, binding-first client identity, pair-scoped assignment/rendering, and the
