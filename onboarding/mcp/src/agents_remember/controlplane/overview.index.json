@@ -81,7 +81,7 @@
     "supervisor_signals"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L13 makes leaf completion and liveness routing current-manager-first, records durable leaf/subject provenance, separates address-time routing from historical skip-level walking, and enforces a redundant five-minute later-rung floor. Chain progress currently credits exact-leaf seats, the current manager, and same-worktree unbound reviewer/curator seats; unbound-worker active-phase credit remains the accepted HFX2-L14 S7 follow-up. A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds,...",
+    "summary": "260707-HFX2-L15 closes the active-phase unbound-worker gap without reviving same-cwd inference. Leaf-chain progress credits an unbound worker/reviewer/curator only when the current manager spawned it and its catalog row explicitly names `replacementForLeaf == leafKey`; parallel-leaf activity under the same manager remains isolated. 260707-HFX2-L13 makes leaf completion and liveness routing current-manager-first, records durable leaf/subject provenance, separates address-time routing from historical skip-level walking, and enforces a redundant five-minute later-rung floor. Chain progress cur...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -137,20 +137,20 @@
       "store",
       "supervisor_signals.py",
       "supervisor_signals",
-      "lifecycle_gate",
+      "replacementForLeaf == leafKey",
       "HFX2",
+      "L15",
+      "replacementForLeaf",
+      "leafKey",
       "L13",
-      "L14",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "5b49fa85a51d527a5a216a88c361c08246c759d0",
+      "c881828542f0ca916ce8b1d4fd5ab8a914e24110",
       "/../../overview.md",
       "controlplane/",
       "rung_due",
       "next_step",
-      "seat_is_suspect",
-      "escalatedAt",
-      "rungTransitionAt"
+      "seat_is_suspect"
     ]
   },
   "fallback": {

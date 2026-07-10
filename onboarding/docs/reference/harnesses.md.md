@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/harnesses.md`           |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-09T12:04+02:00                  |
+| lastUpdated            | 2026-07-10T13:03+02:00                  |
 | lastVerifiedCommitHash |                                         |
 | lastVerifiedCommitDate |                                         |
 | governingOverview      | `../../overview.md`                     |
@@ -22,6 +22,14 @@ Manual for the agent-facing spawn surface: what a harness is, the built-in harne
 statuses, and the worked example for adding a new harness id such as `hermes`.
 
 ## Code Commentary
+
+**260707-HFX2-L15 current contract.** Codex is no longer an env-only builtin: resolved model and
+effort ride `--model` and `--config model_reasoning_effort=<value>`, with the first-turn-safe enum
+`none|minimal|low|medium|high|xhigh`. Spawn session commands remain separate inputs before the
+brief, but submitted acceptance now comes only from the unique id in the bound harness JSONL;
+command acceptance additionally requires its command record plus non-error stdout. Pane text is
+used only to prevent a duplicate re-paste and to attach failure diagnostics, never to grant
+acceptance or prove model/effort.
 
 The page is documentation, not parser code. Runtime parsing lives in
 `kernel/agentic_settings.py`, the built-in registry and per-harness delivery vehicles live in
@@ -56,6 +64,11 @@ settings-owned escape hatches that are recorded in spawn provenance.
 | Spawn tests pin settings-owned launch/session knobs and `spend-override-unsupported` refusals. | [../../mcp/tests/test_spawn_agent_session.py](../../mcp/tests/test_spawn_agent_session.py.md) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: documented Codex's explicit argv mapping and exact
+  effort enum, the bound-harness-log acceptance protocol, separate command verification, and the
+  verified-absence/clear-before-replacement retry boundary. Verification metadata remains pinned
+  until closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T12:04+02:00 — Created for 260707-HFX2-L10 (spawn settings authority) after the
   harness manual changed from explicit caller spend precedence to settings-only spend authority and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_opener.py`    |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-07T09:45+02:00                                  |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`              |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                                  |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`              |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -26,6 +26,11 @@ serving-layer policy helper reused by both transports instead of a route-local c
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 opener provenance.** `open_terminal_session` accepts and preserves an optional
+`replacement_for_leaf`, settings-resolved model/effort, and any existing session-log binding while
+building the catalog row. These are provenance fields only: `replacement_for_leaf` does not claim
+the occupied leaf, and reopening must not discard an established log binding.
 
 `OpenTerminalStatus` is the `Literal["opened", "leaf-taken", "bad-kind"]` outcome tag and
 `OpenTerminalResult` is the small frozen result object — an upserted `entry`, the resolved `kind`, a
@@ -125,6 +130,10 @@ No meaningful cross-repo references found.
 | This helper spawns tmux + mutates only the local dashboard terminal catalog. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: threaded replacement-leaf, resolved-knob, and existing
+  bound-log provenance through the shared terminal opener. Verification metadata remains pinned
+  until closeout stamps the eventual L15 code commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `resolve_terminal_launch` now
   applies the per-harness knob mapping (env `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` → registry flags via

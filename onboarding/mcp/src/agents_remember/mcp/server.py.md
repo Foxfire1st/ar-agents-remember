@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8` |
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -39,6 +39,11 @@ through to repo-local/global `orchestration.spawn.harness`, then the detected re
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 public spawn contract.** `spawn_agent_session` exposes
+`replacement_for_leaf` for a deliberately unbound replacement seat and describes the brief as an
+id-bearing, harness-log-confirmed input. Model/effort remain settings-owned launch/session
+provenance; the replacement leaf is a chain-credit discriminator, not a second leaf claim.
 
 `create_server()` first calls `install_compact_content()` (idempotent) so the
 JSON text mirror of every tool result is emitted without FastMCP's hardcoded
@@ -282,6 +287,10 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 As of cycle 5 the lifecycle_gate registration exposes wait (default true) with the raise-and-continue contract documented in the docstring; cycle 6 makes both gate docstrings match the payload layer exactly — `lifecycle_gate` says wait=false is reserved for delegated seam kinds (any other kind blocks), and `gate_list` says a missing lifecycle_id defaults to the ACTIVE (ambient) lifecycle with the workspace log as the no-ambient fallback; cycle 7 extends the `lifecycle_gate` docstring with the new wait=false requirement that `enclosure=<master task name>` be supplied (the address integration enforcement matches the gate by), keeping the registration truthful about the payload layer's refusal.
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added the public `replacement_for_leaf` argument and
+  updated the tool contract from pane/capture confirmation to unique-id harness-log confirmation.
+  Verification metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): `spawn_agent_session`
   registration retains legacy spend parameters only as compatibility tripwires. The docstring now

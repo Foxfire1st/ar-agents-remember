@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`              |
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`              |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -27,6 +27,12 @@ still-live tmux session without asking the browser to remember process-local sta
 `TerminalCatalog.batch()` is a read-once/write-once unit of work for full-catalog sweeps, and `compact()` reclaims aged `terminated` tombstones while preserving running, exited, and landed/archive rows. Landed row cleanup remains the explicit L11 manual path.
 
 ### Logic
+
+**260707-HFX2-L15 dispatch provenance.** `TerminalCatalogEntry` persists
+`replacementForLeaf`, resolved model/effort, and the bound harness-log entry id/path with
+migration-safe optional JSON fields. `bind_session_log` locks and re-reads the latest catalog row,
+then replaces only the two log fields; it must not replay an open-time snapshot over newer liveness,
+exit, failure-count, or pane evidence.
 
 `TerminalCatalogEntry` is the immutable row model. It stores the browser-visible session id and label,
 the launch kind (`terminal` or `harness`), optional harness id and lifecycle id, cwd, tmux session
@@ -202,7 +208,7 @@ operations that keep catalog state honest.
 | Unit tests pin catalog path, JSON schema/order, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | L46-L95 | [../../../tests/test_terminal_catalog.py](../../../tests/test_terminal_catalog.py) |
 | The liveness sweeper + shared observation path that drive `record_liveness_probe` (HFX-L5) and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
 | Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
-| `mark_retired`/`mark_landed`/`set_label`/`record_turn_state` are called from the manual retire/rename tools and endpoints, the landed cleanup endpoint, and the integrate/finalize auto-land hooks. | `retire_entry`; `TerminalCatalog.mark_landed`; `TerminalCatalog.set_label`; `record_turn_state` | [retire.py](retire.py); [landing.py](landing.py); [terminal.py (mcp/tools)](../../mcp/tools/terminal.py); [worktree_tools.py](../../controllers/worktree_tools.py); [app.py](app.py) |
+| `mark_retired`/`mark_landed`/`set_label`/`record_turn_state` are called from the manual retire/rename tools and endpoints, the landed cleanup endpoint, and the integrate/finalize auto-land hooks. | `retire_entry`; `TerminalCatalog.mark_landed`; `TerminalCatalog.set_label`; `record_turn_state` | [retire.py](retire.py); [landing.py](landing.py); [terminal.py (mcp/tools)](../mcp/tools/terminal.py.md); [worktree_tools.py](../controllers/worktree_tools.py.md); [app.py](app.py) |
 | The retire authority policy (`check_retire_authority`) is evaluated against `SeatRef`s built from this catalog's `spawn_role`/`leaf_key` fields before any `mark_retired` call. | `SeatRef`; `master_of` | [retire_policy.py](retire_policy.py) |
 | Failing-first + regression tests for the retire/rename/turn-state mechanics, the retire-vs-liveness interplay, and idempotent provenance. | `test_seat_lifecycle.py` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
 
@@ -215,6 +221,10 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local dashboard catalog. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added replacement-leaf, resolved-knob, and bound-log
+  provenance plus a targeted lock-safe `bind_session_log` update that preserves concurrent liveness
+  state. Verification metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): added `landed` as a visible

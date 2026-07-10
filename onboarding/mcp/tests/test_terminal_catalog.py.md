@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:58:48+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`       |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -23,6 +23,10 @@
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** Optional replacement-leaf, resolved-knob, and session-log fields
+round-trip through catalog JSON. `bind_session_log` is regression-tested against a stale open-time
+snapshot so newer exited/failure/pane evidence survives the targeted binding update.
 
 The `_entry` helper builds a running `TerminalCatalogEntry` with deterministic timestamps and tmux
 name. `TerminalCatalogTests` creates a temp catalog path per case and verifies: `terminal_catalog_path`
@@ -71,6 +75,10 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 | The FastAPI route tests that exercise catalog rows through open/list/rehydrate/terminate/image endpoints. | L325-L415; L571-L583 | [test_terminal_ws.py](test_terminal_ws.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added dispatch-provenance round-trip and lock-safe
+  log-binding race coverage. Verification metadata remains pinned until closeout stamps the eventual
+  L15 code commit.
 
 - 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added 46 lines of coverage for the new
   `status:"landed"` state — `mark_landed`/`with_landing` provenance round-trip, and confirms landed

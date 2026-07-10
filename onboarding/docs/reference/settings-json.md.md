@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastUpdated            | 2026-07-10T13:03+02:00 |
 | lastVerifiedCommitHash |                                         |
 | lastVerifiedCommitDate |                                         |
 | governingOverview      | `../../overview.md`                     |
@@ -22,6 +22,12 @@ authority, memory topology, agentic orchestration, provider lifecycle), document
 cadence, and gives examples for internal/external memory and MCP authority files.
 
 ## Code Commentary
+
+**260707-HFX2-L15 current contract.** The settings reference now names Codex's explicit
+`--model`/`--config model_reasoning_effort=` mapping, describes post-bind harness-log verification
+for session commands, and sets the default supervisor `redeliverBudget` to `1`. The single-row
+budget is part of the delivery latency bound: one log-confirmed input may consume three calibrated
+acceptance windows, so one sweep must not multiply that synchronous wait across a backlog.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -66,6 +72,10 @@ spawn-surface manual.
 | Backoff math enforcing the shared 900-second redelivery floor documented here. | [../../mcp/src/agents_remember/controlplane/inbox_backoff.py](../../mcp/src/agents_remember/controlplane/inbox_backoff.py.md) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: refreshed the settings contract for Codex argv knobs,
+  bound-log command verification, and the supervisor's one-row redelivery budget. Verification
+  metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): the settings reference now

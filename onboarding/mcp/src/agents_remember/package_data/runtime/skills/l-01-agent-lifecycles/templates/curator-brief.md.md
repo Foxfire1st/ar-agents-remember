@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:10+02:00 |
+| lastUpdated            | 2026-07-10T13:03+02:00 |
 | lastVerifiedCommitHash | `c72deebadb4a96740cf955999d51a00d93c181d2` |
 | lastVerifiedCommitDate | 2026-07-08T02:19:03+02:00|
 
@@ -20,6 +20,11 @@ from transcript memory, it is FED the landed change set, the leaf task doc, and 
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 reviewer N7 current-source debt.** The source brief's delivery footer still says
+`echo-confirmed`/post-boot echo. The current runtime contract is unique-id evidence in the bound
+harness log; pane text is not acceptance. This note preserves the mismatch for the doctrine owner
+without changing the brief from the curator seat.
 
 New file, sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
 `skills/l-01-agent-lifecycles/templates/curator-brief.md`. Opens with the canonical `ROLE BRIEF —
@@ -91,6 +96,9 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale echo-confirmation footer
+  as doctrine debt; no source behavior changed.
 
 - 2026-07-08T00:00+02:00 — 260707-HFX-L11 curator activation (R1/R4): created file-level onboarding
   for the new `curator-brief.md` dispatch-pack template — the first dedicated curator session-start

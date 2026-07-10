@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-07T09:45+02:00                            |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`        |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                            |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -26,6 +26,10 @@ application (`KnobApplicationTests`).
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** The Codex opener now asserts explicit `--model` plus
+`--config model_reasoning_effort=...` argv and catalog persistence of replacement-leaf,
+resolved-knob, and existing log-binding provenance.
 
 `OpenTerminalSessionTests` drives `open_terminal_session` with a `_FakeHost` (records `ensure`'s sid /
 cwd / command / env, adds the tmux name to a known set) + a real `TerminalCatalog` over a temp dir + a
@@ -101,6 +105,10 @@ No meaningful cross-repo references found.
 | The tests cover local serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: replaced env-only Codex expectations with explicit
+  argv and covered the new opener provenance fields. Verification metadata remains pinned until
+  closeout stamps the eventual L15 code commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `KnobApplicationTests` —
   env-knob→argv flag mapping (env still riding), session-vocabulary effort off the flag, the

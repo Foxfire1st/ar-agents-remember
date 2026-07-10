@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-09T14:05+02:00 |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696` |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -24,6 +24,10 @@ runtime and tested by schema. Model homes follow tool domains: `TaskReopenRespon
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
+
+HFX2-L15 extends the terminal spawn response with `replacementForLeaf`, resolved model/effort, and
+bound session-log entry/path provenance. Delivery booleans are evidence-specific: context is true
+only for the id-bearing user record, and commands require command plus non-error stdout evidence.
 
 Start with `tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled builder
 to one response model, while `PUBLIC_TOOL_RESPONSE_MODELS` filters out retained
@@ -122,6 +126,10 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 models route impact: added replacement, resolved-knob,
+  and bound-log response fields and corrected delivery semantics. Verification metadata remains
+  pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: `models/lifecycle_finalize.py` now
   exposes `autoLandedSeats` for completion-edge archive landing; the former `autoRetiredSeats`

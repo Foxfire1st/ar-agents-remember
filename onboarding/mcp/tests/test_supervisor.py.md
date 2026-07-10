@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -43,6 +43,11 @@ gap is routed to HFX2-L14 S7.
 `Cs6SweepScalingTests` now pins the supervisor CS-6 floor: signal-cooldown reads stay at most one per sweep across many findings, expectation-store reads stay flat across overdue rows, and `escalation_budget` caps rung emissions under backlog.
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** A declared unbound replacement suppresses false inactivity for its
+named leaf, and the redelivery sweep processes one row under the default budget instead of
+multiplying the calibrated synchronous log wait across a backlog. Delivery fakes use log evidence,
+not pane movement.
 
 Twenty-five tests (sixteen original R2/R6 tests plus nine new 260707-HFX2-L4 tests), `NOW =
 datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
@@ -186,6 +191,10 @@ No meaningful cross-repo references found.
 | Sweep-local behavior only. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: covered replacement-leaf progress suppression and the
+  one-row redelivery budget on the log-confirmed delivery path. Verification metadata remains pinned
+  until closeout stamps the eventual L15 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: added chain-progress suppression,
   rung-floor/same-sweep guard, and current-manager dead-upstream regressions; recorded the unbound-

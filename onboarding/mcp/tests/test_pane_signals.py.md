@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_pane_signals.py`           |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T18:45+02:00                     |
-| lastVerifiedCommitHash | `8b7c1933611a13ada98dcd6fc3476c0457e136ac` |
-| lastVerifiedCommitDate | 2026-07-08T07:43:47+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                     |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -20,6 +20,10 @@ marker families.
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** Empty-composer and paste-chip classifier cases were deleted with the
+retired `never-briefed`/`delivery-stalled` signals. The remaining suite pins only mid-turn,
+blocked/modal labeling, and normal fallback diagnostics.
 
 One test class, `PaneSignalClassifierTests`, eight tests, each a plain scripted pane-text string (no
 model, no tmux, no fixtures beyond a literal string):
@@ -81,6 +85,10 @@ No meaningful cross-repo references found.
 | Classifier-local behavior only. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: removed screen-delivery predicate tests;
+  retained supervisor intervention/failure diagnostics only. Verification metadata remains pinned
+  until closeout stamps the eventual L15 code commit.
 
 - 2026-07-08T18:45+02:00 — Created for 260707-HFX2-L2 (supervisor sweep + predicates, R2a/R6): eight
   tests over `classify_pane_signal` — every trigger family (mid-turn, blocked, delivery-stalled,

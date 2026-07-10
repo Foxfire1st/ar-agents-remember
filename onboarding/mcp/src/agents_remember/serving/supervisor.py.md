@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`        |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -58,6 +58,12 @@ L13 truth.
 The supervisor sweep now compacts and snapshots signal-cooldown and expectation stores once per sweep, threads those snapshots into cooldown and mark-missed actions, and caps escalation-rung findings by `escalation_budget` while leaving deferred rows level-triggered.
 
 ### Logic
+
+**260707-HFX2-L15 bounded redelivery.** The sweep's redelivery path now delegates to a
+harness-log-confirmed input that may synchronously consume three calibrated windows. The configured
+default budget is therefore one inbox row per sweep; deferred rows remain level-triggered for later
+sweeps. Chain-progress suppression also recognizes an unbound worker/reviewer/curator only through
+the explicit same-manager `replacementForLeaf` discriminator, never shared cwd.
 
 **R3 (#22 root-cause rule, non-negotiable and structurally enforced by import discipline, not a
 runtime guard):** every predicate takes a store/catalog object directly — `TerminalCatalog`,
@@ -269,6 +275,10 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local sweep; the level-triggered-reconciliation design rationale cites an external incident (Inngest, Oct 2025) only as research justification, not a code boundary. | — | — |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: aligned supervisor redelivery with the one-row
+  harness-log wait budget and documented explicit replacement-leaf chain credit. Verification
+  metadata remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: made supervisor predicates chain-aware,
   manager-first, and current-owner-readdressing; added the one-transition-per-row-per-sweep guard;

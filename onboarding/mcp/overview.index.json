@@ -255,6 +255,7 @@
     "mcp/tests/test_expectation_rows.py",
     "mcp/tests/test_git_freshness.py",
     "mcp/tests/test_harness_adapters.py",
+    "mcp/tests/test_harness_logs.py",
     "mcp/tests/test_harnesses.py",
     "mcp/tests/test_identity.py",
     "mcp/tests/test_inbox_backoff.py",
@@ -336,8 +337,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 579,
-    "fileSidecars": 248,
+    "sourceFilesInScope": 581,
+    "fileSidecars": 249,
     "childRoutes": 15
   },
   "routingTerms": [
@@ -423,7 +424,7 @@
     "cross"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L13 closes the L12 package residuals and reconciles the reviewed HFX3 runtime seams that round 2 actually changed. Observer storage now coalesces lifecycle heartbeats into bounded sidecars, fully reclaims dormant unprotected lifecycle directories, and lock-guards live workspace compaction with virtual cursor offsets. Projection/state broadcasts carry bounded body-free task/series summaries with `bodyRevision`; the serving package exposes the path-confined on-demand task-body endpoint and the dashboard fetches only the visible body. Control-plane/supervisor changes route leaf sig...",
+    "summary": "HFX2-L15 replaces screen-grammar dispatch credit with one repository-wide acceptance path: `HarnessSessionLog` binds the unique id-bearing message in the spawn cwd, `injector.deliver` applies calibrated Claude/Codex windows, and `TerminalPaster` permits one Enter re-press plus one verified-absence clear/replace re-paste. Spawn, durable inbox, supervisor redelivery, and REST paste all compose that path. Catalog provenance records resolved knobs, log binding, and an optional `replacementForLeaf`; tests are pinned to this checkout so the full gate cannot import a sibling editable install. 2607...",
     "candidateHints": [
       "mcp",
       "mcp/src/agents_remember/controllers",

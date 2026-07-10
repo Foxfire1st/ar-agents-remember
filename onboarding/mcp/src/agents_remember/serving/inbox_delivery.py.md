@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-09T11:19+02:00                                 |
-| lastVerifiedCommitHash |                                                        `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
-| lastVerifiedCommitDate |                                                        2026-07-09T11:38:39+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                                 |
+| lastVerifiedCommitHash |                                                        `c881828542f0ca916ce8b1d4fd5ab8a914e24110`|
+| lastVerifiedCommitDate |                                                        2026-07-10T13:18:50+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -23,6 +23,12 @@ paste seam.
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 hosted inbox delivery.** `deliver_inbox_entry` builds a `HarnessSessionLog` from
+the target catalog row, passes it into the shared injector, and persists a newly bound log id/path
+through `TerminalCatalog.bind_session_log`. Durable delivery detail now says
+`harness-log-confirmed`; an unconfirmed result carries only failure-pane diagnostics, while a draft
+is explicitly landed but unsubmitted.
 
 `deliver_inbox_entry(...)` resolves a target running `TerminalCatalogEntry` by
 exact agent id first and lifecycle id second. It verifies the tmux session still
@@ -98,6 +104,11 @@ now lives one level down, in `serving.injector.deliver` + `serving.harness_adapt
 | `deliver_inbox_entry` threads `redelivery_floor_seconds` into every `record_delivery` path. | L42-L90 | [inbox_delivery.py](agents-remember/mcp/src/agents_remember/serving/inbox_delivery.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: changed hosted inbox acceptance from pane echo/turn
+  evidence to bound harness-log evidence and persisted the binding without replacing newer catalog
+  liveness state. Verification metadata remains pinned until closeout stamps the eventual L15 code
+  commit.
 
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: added the optional `redelivery_floor_seconds` scheduling
   parameter and passed it through to `OperatorInboxStore.record_delivery` for hosted delivery,

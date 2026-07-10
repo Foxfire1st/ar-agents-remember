@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_harnesses.py`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T09:45+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                           |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`       |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -20,6 +20,10 @@ and — since 260703-L16 — the per-harness knob→flag mapping (`KnobMappingTe
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 coverage.** Codex model/effort are asserted as explicit argv with the
+`model_reasoning_effort=` template and exact first-turn-safe enum; Pi.dev remains the env-only
+builtin. Invalid Codex values refuse before spawn.
 
 A `_which(*installed)` factory returns a `shutil.which` fake that resolves only the named commands.
 `HarnessRegistryTests` assert the supported ids are exactly `["claude", "codex", "pi"]`, each harness
@@ -49,6 +53,10 @@ in `test_terminal_ws.py`.
 | The endpoint-level harness tests (GET detection + the harness opener). | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: replaced mapping-less-Codex expectations with explicit
+  argv/template/enum coverage while preserving Pi.dev's env-only behavior. Verification metadata
+  remains pinned until closeout stamps the eventual L15 code commit.
 
 - 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): added `KnobMappingTests` — claude
   model/effort flag mapping, the two-vehicle effort vocabulary (flag set + session-only

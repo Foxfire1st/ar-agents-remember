@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:40+02:00 |
+| lastUpdated            | 2026-07-10T13:03+02:00 |
 | lastVerifiedCommitHash | `2c464cf4c29b60165fecae722bf76c307aaac6f1`                                  |
 | lastVerifiedCommitDate | 2026-07-07T22:59:19+02:00|
 
@@ -22,6 +22,12 @@ provider-stack keying confusion (F-H), and the missing `python` shim in spawn en
 ## Code Commentary
 
 ### Logic
+
+**260707-HFX2-L15 reviewer N7 current-source debt.** The source brief still instructs an
+`echo-confirmed`/paste-chip dispatch check. L15 removes screen rendering as acceptance authority;
+the future doctrine edit must say that the id-bearing input is accepted from the bound harness log,
+with pane text restricted to duplicate-retry safety and failure diagnostics. This onboarding note
+records the mismatch; it does not pretend the unchanged source has already been fixed.
 
 Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
 `skills/l-01-agent-lifecycles/templates/worker-brief.md`. The template body is a fenced markdown
@@ -47,6 +53,9 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale echo/paste-chip
+  instruction as current source debt awaiting a doctrine follow-up. No source behavior changed.
 
 - 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: worker briefs now state
   the manager -> builder -> reviewer -> curator closeout chain, mark the memory worktree as

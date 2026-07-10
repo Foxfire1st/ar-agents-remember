@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`                                      |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`                                      |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -22,6 +22,11 @@ task-domain `task_doc.py` submodule, and `PUBLIC_TOOLS` lists `task_reopen` besi
 re-export remain importable from `agents_remember.mcp.tools`.
 
 ## Hot Path Summary
+
+`spawn_agent_session` now sends separate session-command entries, binds the unique id-bearing brief
+in the spawn-cwd harness log, retroactively verifies/reissues only missing or errored commands, and
+persists resolved model/effort plus log id/path. An unbound replacement declares
+`replacement_for_leaf`; it receives normal leaf expectations without taking the occupied leaf key.
 
 Server registration imports advertised `*_payload` builders from
 `agents_remember.mcp.tools`; each builder forwards typed MCP arguments to its
@@ -138,7 +143,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | --- | --- |
 | FastMCP server registration calls these payload builders. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | Public response model registry maps each tool name to a Pydantic model. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| Domain controllers own the tool behavior the builders forward to. | [controllers overview](agents-remember/mcp/src/agents_remember/controllers/overview.md) |
+| Domain controllers own the tool behavior the builders forward to. | [controllers overview](../../controllers/overview.md) |
 | Schema tests assert public tool and response model coverage. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
 | Conformance test validates every builder routes through `_tool_payload`. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 | The external-chat inbox builders post, poll, and consume operator responses. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
@@ -148,6 +153,11 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 MCP-tools route impact: documented bound-log spawn
+  acceptance, isolated command verification, resolved/log provenance, and replacement-leaf
+  expectations. Verification metadata remains pinned until closeout stamps the eventual L15 code
+  commit.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round-2 route impact: `operator_inbox.py` now treats
   completion/artifact posts as current-owner hierarchy signals and persists leaf/subject provenance;

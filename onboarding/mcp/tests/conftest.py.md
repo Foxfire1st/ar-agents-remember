@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T02:58+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
+| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -17,6 +17,10 @@ run from any environment. It is the single guard that prevents the
 temporary-git-repo fixtures from ever committing into a real repository.
 
 ## Code Commentary
+
+**260707-HFX2-L15 checkout-source pin.** The test bootstrap removes any previously imported
+`agents_remember` modules and places this worktree's `mcp/src` first on `sys.path`. Re-verifiers
+therefore test the candidate checkout instead of the official repo's editable-installed package.
 
 At conftest import time (before any test is collected or run) the module mutates
 `os.environ`:
@@ -53,6 +57,10 @@ At conftest import time (before any test is collected or run) the module mutates
 | The pre-push hook runs the suite via the quality wrapper, the original trigger of the ambient-`GIT_DIR` clobber. | [pre-push](agents-remember/.githooks/pre-push) |
 
 ## Update History
+
+- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added the worktree-local source/import pin so pytest
+  cannot silently exercise a sibling editable install. Verification metadata remains pinned until
+  closeout stamps the eventual L15 code commit.
 
 - 2026-07-03T02:58+02:00 — No content impact: L13 reopen drill second cycle extended the marker comment; the reopened leaf ran under its original id with a fresh lifecycle.
 - 2026-07-03T02:40+02:00 — No content impact: L13 reopen drill appended a marker comment at the end of conftest.py (no fixtures, env handling, or behavior touched); the drill exercises task_reopen mechanics, not this file.
