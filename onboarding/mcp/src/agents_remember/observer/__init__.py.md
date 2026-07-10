@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/__init__.py`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `45708bbddf1ddb8a2045faa9fad88fe72603b674`       |
-| lastVerifiedCommitDate | 2026-07-08T05:51:44+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`       |
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose

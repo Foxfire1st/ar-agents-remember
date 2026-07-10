@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_inbox_backoff.py`             |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-07-09T11:19+02:00                        |
-| lastVerifiedCommitHash | `8dce306e203c35ffc95f84e610b4d3683e9521b5`|
-| lastVerifiedCommitDate | 2026-07-09T11:38:39+02:00|
+| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
+| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash |                                         |
-| lastVerifiedCommitDate |                                         |
+| lastVerifiedCommitHash |                                         `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
+| lastVerifiedCommitDate |                                         2026-07-10T20:04:45+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview

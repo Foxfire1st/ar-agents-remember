@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-08T23:59+02:00                           |
-| lastVerifiedCommitHash |                                                  `5f9163882857114319552d303e2e301082b588ba`|
-| lastVerifiedCommitDate |                                                  2026-07-08T18:21:20+02:00|
+| lastVerifiedCommitHash |                                                  `e400ed0ce98752d1b65d00de97c9b84c7ea20814`|
+| lastVerifiedCommitDate |                                                  2026-07-10T20:04:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
