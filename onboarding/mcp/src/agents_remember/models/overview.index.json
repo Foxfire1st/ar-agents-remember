@@ -79,7 +79,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "HFX2-L15 extends the terminal spawn response with `replacementForLeaf`, resolved model/effort, and bound session-log entry/path provenance. Delivery booleans are evidence-specific: context is true only for the id-bearing user record, and commands require command plus non-error stdout evidence. Start with `tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled builder to one response model, while `PUBLIC_TOOL_RESPONSE_MODELS` filters out retained compatibility builders so it matches `mcp.tools.PUBLIC_TOOLS`. `base.py` defines strict response envelopes, intentionally flexible detail env...",
+    "summary": "HFX2-L17 adds binding identity to terminal responses: attach can return `role-required` and carries `seatRole`/`previousSeatRole`; spawn carries `seatRole`. The legacy `role` field still means transport (`chat` or `terminal`) and is not orchestration identity. HFX2-L15 extends the terminal spawn response with `replacementForLeaf`, resolved model/effort, and bound session-log entry/path provenance. Delivery booleans are evidence-specific: context is true only for the id-bearing user record, and commands require command plus non-error stdout evidence. Start with `tool_registry.py`: `TOOL_RESP...",
     "candidateHints": [
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/models/__init__.py",
@@ -147,12 +147,12 @@
       "tool_registry",
       "worktree.py",
       "worktree",
-      "replacementForLeaf",
-      "TOOL_RESPONSE_MODELS",
-      "PUBLIC_TOOL_RESPONSE_MODELS",
-      "mcp.tools.PUBLIC_TOOLS",
-      "HFX2",
-      "L15"
+      "role-required",
+      "seatRole",
+      "previousSeatRole",
+      "role",
+      "chat",
+      "replacementForLeaf"
     ]
   },
   "fallback": {

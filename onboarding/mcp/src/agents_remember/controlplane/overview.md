@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`     |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`     |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -40,6 +40,12 @@ across that prune boundary because their source item is repository/branch-scoped
 than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
 
 ## Hot Path Summary
+
+260707-HFX2-L17 carries `seatRole` beside `leafKey` through expectation rows, operator inbox rows,
+renewal, supervisor cooldown records, and routing. Current manager/architect/worker discovery and
+chain credit use binding identity; only the escalation ladder's historical parent hop reads
+`spawnRole`. Same-text supervisor conditions on one leaf coalesce only within the same role, so
+parallel seats remain independently observable and addressable.
 
 260707-HFX2-L15 closes the active-phase unbound-worker gap without reviving same-cwd inference.
 Leaf-chain progress credits an unbound worker/reviewer/curator only when the current manager spawned
@@ -224,6 +230,10 @@ response models are `models/operator_inbox.py`.
 | The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 control-plane route impact: made rows, renewal,
+  cooldowns, current discovery, chain credit, and coalescing pair-aware while retaining the one
+  historical spawn-provenance ladder walk. Verification metadata remains pinned until closeout.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 control-plane route impact: replaced same-cwd unbound
   seat credit with explicit replacement-leaf plus same-manager provenance and covered the

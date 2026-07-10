@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T13:41+02:00                           |
-| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
-| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -42,6 +42,12 @@ header includes a separate `Close landed archive` button that reports the group'
 `onCleanupLanded` without toggling collapse.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Binding-First Fleet Rendering
+
+Role chips, role ordering, manager collapse, and hover identity prefer current `seatRole` over
+`spawnRole`. A hand-opened manager/orchestrator attached after launch therefore renders and groups
+like a spawned seat, while spawn edges continue to use immutable `spawnedBySession` provenance.
 
 ### Logic
 
@@ -129,6 +135,9 @@ through the shared `grammar/RankBadge` (size `sm`).
 | The V4 chevron insignia on group headers (size `sm`). | — | [RankBadge.tsx](../grammar/RankBadge.tsx) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: switched fleet role chips/order/manager collapse to
+  current binding identity while retaining spawned-by edges as historical provenance.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16: added complete spawn-edge forest ordering to grouped
   and flat paths, manager-only child collapse with a selection-independent caret, live-first order,

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:35+02:00                           |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -24,6 +24,11 @@ paste, confirmation of the echoing attempt without further sends, `false` past t
 and never a `\r` on any path.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Attach Payload Regression
+
+The request test now proves `attachSessionToLeaf` sends both `leafKey` and the selected role while
+retaining `409`/network result classification.
 
 ### Logic
 
@@ -64,6 +69,8 @@ real socket is built lazily.
 | The WebSocket client under test. | — | [terminal.ts](terminal.ts) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: pinned the role-bearing attach JSON contract.
 
 - 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): `TerminalSessionStatus` gains `"landed"`
   (between `"exited"` and `"terminated"`); `TerminalSessionInfo` gains landing provenance

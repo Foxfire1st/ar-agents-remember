@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`                                      |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                                      |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -22,6 +22,11 @@ task-domain `task_doc.py` submodule, and `PUBLIC_TOOLS` lists `task_reopen` besi
 re-export remain importable from `agents_remember.mcp.tools`.
 
 ## Hot Path Summary
+
+HFX2-L17 makes the terminal tool surface pair-aware. Attach accepts explicit role and reports
+current/previous binding identity; spawned rows expose `seatRole`; brief and turn-report
+expectations preserve it; retire authority uses binding leaf/role including replacement-leaf
+recovery. Existing settings-owned launch provenance and delivery acceptance stay separate.
 
 `spawn_agent_session` now sends separate session-command entries, binds the unique id-bearing brief
 in the spawn-cwd harness log, retroactively verifies/reissues only missing or errored commands, and
@@ -153,6 +158,9 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 MCP-tools route impact: threaded binding role through
+  attach/spawn/expectation responses and pair-based retirement without changing settings authority.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 MCP-tools route impact: documented bound-log spawn
   acceptance, isolated command verification, resolved/log provenance, and replacement-leaf

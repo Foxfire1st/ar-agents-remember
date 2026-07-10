@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/orphan_policy.py`             |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-08T23:15+02:00                                             |
-| lastVerifiedCommitHash | `69314ba144d9461a0daec43f1d1aa5ce1ab18946`                           |
-| lastVerifiedCommitDate | 2026-07-08T09:40:32+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                           |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -23,6 +23,12 @@ successor and do NOT absorb the manager's role (R4 doctrine, HFX-L6 capture hard
 only finds and surfaces the orphaned set; the caller decides what happens to it.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Binding-Role Worker Discovery
+
+Orphan discovery now classifies current worker seats by `binding_role`, so a hand-opened session
+explicitly attached as worker and a session rebound from stale provenance participate correctly.
+Spawner provenance remains the parent edge used to identify the dead manager.
 
 ### Logic
 
@@ -65,7 +71,7 @@ truth for this module's deliberately narrow surface.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The sole caller: gathers the orphan list once a manager seat is retired as suspect and surfaces it in the respawn observer event. | `_respawn_suspect` | [../serving/supervisor.py](../serving/supervisor.py.md) |
-| Unit test: running workers of the named manager are returned; a terminated sibling and another manager's worker are excluded. | `test_finds_running_workers_of_the_named_manager` | [../../tests/test_escalation_ladder.py](../../tests/test_escalation_ladder.py.md) |
+| Unit test: running workers of the named manager are returned; a terminated sibling and another manager's worker are excluded. | `test_finds_running_workers_of_the_named_manager` | [test_escalation_ladder.py](../../../tests/test_escalation_ladder.py.md) |
 
 ## Cross-Repo References
 
@@ -76,6 +82,9 @@ No meaningful cross-repo references found.
 | Same-repository control-plane logic only. | — | — |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: moved current worker classification to binding role
+  while retaining spawned-by provenance for parentage.
 
 - 2026-07-08T23:15+02:00 — Created for 260707-HFX2-L4 (R3, orphan policy): `find_orphaned_workers` —
   a pure catalog read for a dead/respawned manager's still-running worker seats, wired into

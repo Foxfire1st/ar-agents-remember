@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LeafAttachPicker.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-30                                       |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,6 +27,13 @@ pre-drilled to it. It deliberately uses plain React state (no React Aria overlay
 testable: click the trigger, drill, click a leaf.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Explicit Seat Role Picker
+
+The popover now pairs the leaf drill-down with a seat-role chip row. Leaf buttons stay disabled
+until a role is selected; spawned/previously typed sessions may preselect a role, untyped
+hand-opened harnesses require an operator choice, and plain terminal consumers restrict options to
+`terminal`. `onPick` returns both the opaque leaf key and selected role.
 
 ### Logic
 
@@ -95,6 +102,9 @@ folder/leaf id inside the tree builder, so this component renders `node.title` d
 No meaningful cross-repo references found. This is a self-contained presentational dashboard component.
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added explicit/preselected seat-role choice to leaf
+  attach/move, disabled leaf selection until identity is known, and returned the leaf-role pair.
 
 - 2026-06-30T00:00:00+02:00 — Operations Integration L5 (Sidebar chat): created — the dark drill-down leaf-attach
   picker. One Panda-themed popover (portaled to `document.body`, `position: fixed`, edge-pinned via

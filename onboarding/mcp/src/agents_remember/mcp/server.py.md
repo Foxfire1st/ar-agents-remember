@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110` |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -37,6 +37,13 @@ the first post-launch `/effort` paste). If role settings do not choose a harness
 through to repo-local/global `orchestration.spawn.harness`, then the detected registry default.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Public Attach Signature
+
+`attach_terminal_session_to_leaf` now exposes optional `role` and forwards it to the payload
+builder. Omitting it is valid only when spawn provenance or a previously typed binding can supply
+identity; hand-opened untyped harnesses receive `role-required`. The tool remains enclosure-free
+and moves one existing session atomically.
 
 ### Logic
 
@@ -287,6 +294,9 @@ FastMCP registrations expose `parent_task` and `leaf_id` on `resolve_context`, `
 As of cycle 5 the lifecycle_gate registration exposes wait (default true) with the raise-and-continue contract documented in the docstring; cycle 6 makes both gate docstrings match the payload layer exactly — `lifecycle_gate` says wait=false is reserved for delegated seam kinds (any other kind blocks), and `gate_list` says a missing lifecycle_id defaults to the ACTIVE (ambient) lifecycle with the workspace log as the no-ambient fallback; cycle 7 extends the `lifecycle_gate` docstring with the new wait=false requirement that `enclosure=<master task name>` be supplied (the address integration enforcement matches the gate by), keeping the registration truthful about the payload layer's refusal.
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: widened the public attach tool with role-aware binding
+  while preserving provenance-defaulted callers and explicit refusal for untyped hand-opened seats.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added the public `replacement_for_leaf` argument and
   updated the tool contract from pane/capture confirmation to unique-id harness-log confirmation.

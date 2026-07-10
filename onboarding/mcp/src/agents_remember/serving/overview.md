@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`       |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -104,6 +104,13 @@ Unbound reviewer/curator progress is credited in the subject worktree; unbound w
 credit remains the accepted HFX2-L14 S7 follow-up.
 
 ## Hot Path Summary
+
+260707-HFX2-L17 centralizes seat normalization in `seat_binding.py`: `spawnRole` is immutable
+provenance, `seatRole` is current binding, and uniqueness is one live owner per canonical
+leaf-role pair. `terminal_catalog.py` migrates old rows; opener/assignment liveness-check the
+same-role holder; attach requires identity for an untyped hand-opened harness; retire/supervisor/
+landing paths consume binding identity. The supervisor also preserves role in findings, rows,
+cooldowns, coalescing, and events, and uses one injected sweep timestamp for delivery writes.
 
 260707-HFX2-L15 makes harness JSONL the only submitted-delivery authority across spawn, inbox,
 supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
@@ -603,6 +610,11 @@ the only destructive terminal action.
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 serving route impact: added the seat-binding module,
+  pair catalog/open/attach/retire semantics, binding-first supervisor/landing behavior, explicit
+  role-required attach, and sweep-clock delivery persistence. Verification metadata remains pinned
+  until closeout stamps L17.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 serving route impact: replaced pane-rendering acceptance
   with bound harness-log evidence, added calibrated duplicate-safe recovery and catalog provenance,

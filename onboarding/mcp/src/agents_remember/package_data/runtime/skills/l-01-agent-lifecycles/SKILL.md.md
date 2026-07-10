@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T15:48+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -48,6 +48,14 @@ for the new role rather than only the registry mention.
 
 As of 260703-L12 the file is also the **three-party-loop doctrine's single home**: OWNER → BUILDER → REVIEWER at every level that owns work; complexity-scored tiers at dispatch; the hard three-full-round cap; same-reviewer delta verification; same-builder fix rounds; convergence and quo-vadis escalation; standing criteria catalogs; and per-level agent sets. HFX3 supersedes the old unconditional strategist sentence: Job P is approval-gated, and a developer-sanctioned skip authorizes the orchestrator to author and adopt the orchestration task from the ruled plan.
 
+As of 260707-HFX2-L17 the catalog binding that identifies a task seat is explicitly the pair
+`(qualified leaf key, seat role)`, not the leaf key alone. Developer-declared takeovers resolve the
+claimed lifecycle role, pass it with the qualified leaf key to
+`attach_terminal_session_to_leaf`, and verify the exact pair in the terminal catalog/dashboard.
+Different roles may coexist on one canonical leaf; only a second live owner of the same pair
+collides. This is the packaged runtime copy of the canonical doctrine propagated by
+`scripts/sync-skills.py`.
+
 As of 260707-HFX2-L5 (doctrine inversion: active vigilance → passive process-and-ack) the Shared
 Invariants section gains a new "Notify-and-stop is safe by design" paragraph right after the
 lifecycle-adoption sentence: ending a turn on `lifecycle_turn_end_notification`, or simply stopping
@@ -67,10 +75,11 @@ sidecars.
 As of 260707-HFX2-L6 the router carries three linked doctrine corrections. First,
 Developer-Declared Task-Seat Takeover: when the developer says "you are the
 orchestrator/manager/worker for task X", the named task leaf is the seat. The agent opens the
-named task doc first, resolves the qualified leaf key `<repository>/<master>/<docId>`, uses the
-dashboard terminal catalog session id (not `CLAUDE_CODE_SESSION_ID` or `CODEX_THREAD_ID`), calls
-`attach_terminal_session_to_leaf`, renames the session to the expected seat label, and verifies the
-terminal catalog/dashboard row before continuing lifecycle work. Second, Developer Clarification
+named task doc first, resolves the qualified leaf key `<repository>/<master>/<docId>` and claimed
+role, uses the dashboard terminal catalog session id (not `CLAUDE_CODE_SESSION_ID` or
+`CODEX_THREAD_ID`), calls `attach_terminal_session_to_leaf` with both leaf and role, renames the
+session to the expected seat label, and verifies the exact pair in the terminal catalog/dashboard
+before continuing lifecycle work. Second, Developer Clarification
 Triage: during an active task, close/current/small developer clarifications that fit the same
 doctrine or code path are implemented in the current leaf instead of downgraded into future notes;
 future/larger/unclear items are queued or clarified with the developer. Third, Delegated Series
@@ -105,6 +114,8 @@ path rules.
 - Strategist dispatch is propose-first and developer-approved; a sanctioned skip never blocks Job O.
 - The escalation ladder terminates in architect custody, not a developer mailbox.
 - Independent work is parallel by default within configured caps; sequential work names its reason.
+- Task-seat identity is `(qualified leaf key, seat role)`; different roles may share one leaf, but
+  the same live pair may not have two owners.
 
 ### Todos
 
@@ -134,6 +145,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: documented
+  task-seat identity as `(qualified leaf key, seat role)`, made developer-declared takeover pass
+  and verify the claimed role with the qualified leaf, and recorded same-pair-only live collision.
+  Sync-propagated bundle copy; verification metadata remains pinned until closeout stamps the L17
+  commit.
 
 - 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: reconciled the free-chat launcher,
   settings-owned architect spawn, propose-first strategist approval, sanctioned-skip Job O path,

@@ -5,7 +5,7 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/serving/static.py`  |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-10T13:41+02:00                       |
+| lastUpdated            | 2026-07-10T15:07+02:00                       |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`   |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `overview.md`                                |
@@ -21,6 +21,12 @@
 built cockpit replaces it.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Served Pair-Role Dashboard
+
+The synchronized package tree now carries the L17 seat-role picker and binding-first fleet UI.
+`static.py` is unchanged: it serves that tree through the same `importlib.resources` boundary, so
+verification belongs here and in `scripts/sync-dashboard.py`, never in sidecars for hashed assets.
 
 `dashboard_static_dir()` resolves `package_data/dashboard` via
 `importlib.resources.files("agents_remember").joinpath(...)` — the same idiom as
@@ -54,6 +60,9 @@ file-level onboarding by path policy.
 | The serving app owns API registration before the static mount. | L1-L80 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — No source impact: 260707-HFX2-L17 recorded the unchanged serving
+  boundary for the synchronized pair-role dashboard; generated asset filenames remain opaque.
 
 - 2026-07-10T13:41+02:00 — No source impact: 260707-HFX2-L16 recorded the verified final combined
   package boundary—landed L15 Python and regenerated L16 dashboard bytes resolve from one worktree

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T13:07:21+02:00                          |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -46,6 +46,13 @@ read-only terminals, hide attach/composer write controls, and expose a landed-ar
 that asks the backend to close only rows still marked landed.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair-Aware Chats Attach
+
+The Chats attach/move flow receives a selected role, posts it with the leaf key, applies the
+server-accepted pair locally, and names same-role `409` conflicts. Typed sessions preselect their
+current/provenance role; terminal rows expose only the terminal role. Different-role sessions on
+the same leaf remain intact.
 
 ### Logic
 
@@ -160,6 +167,9 @@ returned `closedSessions` locally, preserving skipped rows for inspection.
 | The shared empty-state backdrop the no-session state renders (adjutant boomerang). | — | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: carried explicit seat role through Chats attach/move,
+  pair-scoped local reconciliation, and role-specific conflict feedback.
 
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): landed sessions are now inspectable
   read-only terminal mounts, not status panels. The view hides write controls for non-running sessions,

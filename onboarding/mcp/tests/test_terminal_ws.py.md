@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T20:50+02:00                           |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -17,6 +17,12 @@ parser `_apply_terminal_input` and the `@app.websocket("/api/terminal/{session}"
 Starlette's TestClient against a `socketpair`-backed fake host (no real PTY).
 
 ## Code Commentary
+
+### 260707-HFX2-L17 HTTP Pair Attach Regressions
+
+HTTP tests send explicit role, assert role-required behavior for untyped hand-opened sessions,
+exercise same-pair `409` only with live host evidence, and verify current/previous seat-role fields
+in successful attach responses.
 
 ### Logic
 
@@ -105,6 +111,9 @@ primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py
 | The 6d-1 real-PTY/tmux host tests (the other half of Mode B2). | [test_terminal.py](agents-remember/mcp/tests/test_terminal.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: updated HTTP attach coverage for explicit role claims,
+  live pair conflicts, and role-aware response fields.
 
 - 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added coverage for
   `POST /api/terminal/landed-cleanup` — asserts the endpoint rechecks live catalog `status` per

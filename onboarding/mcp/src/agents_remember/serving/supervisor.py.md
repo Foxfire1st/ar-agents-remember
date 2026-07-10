@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`        |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -36,6 +36,16 @@ Oct-2025 incident is the reference case for "at-least-once push still needs a re
 sweep").
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair-Scoped Supervisor
+
+Every finding carries `seat_role`; expectations, inbox rows, signal cooldowns, coalescing, events,
+and owner posts preserve the pair. Same-text findings on the same leaf coalesce only when the role
+also matches, current discovery uses binding identity, and unbound replacements retain their
+declared leaf. Redelivery and owner-signal writes now receive the sweep's injected timestamp, so
+simulation and production retention decisions share one clock. Reviewer O4 is informational and
+test-only: pair-scoped coalescing requires one extra bounded fixed-point snapshot, reflected by the
+test limit moving from `seeded*8` to `seeded*9`; it is not an unbounded-growth signal.
 
 ### 260707-HFX2-L13 Manager-First Wake And Chain-Aware Suppression
 
@@ -275,6 +285,10 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local sweep; the level-triggered-reconciliation design rationale cites an external incident (Inngest, Oct 2025) only as research justification, not a code boundary. | — | — |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: propagated leaf-role identity through all supervisor
+  predicates/actions/coalescing/cooldowns/events, switched current seat tests to binding role, and
+  unified delivery writes on the sweep clock. Recorded reviewer O4 as a bounded test consequence.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: aligned supervisor redelivery with the one-row
   harness-log wait budget and documented explicit replacement-leaf chain credit. Verification

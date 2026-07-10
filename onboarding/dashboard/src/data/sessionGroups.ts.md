@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionGroups.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T13:41+02:00                           |
-| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`                                    |
-| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                                    |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -24,6 +24,13 @@ the claim-less remainder. Grouping no longer depends on a live enclosure, so a v
 side-effect-free by design: `panels/SessionList.tsx` owns rendering and collapse only.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Current-Seat Group Classification
+
+Command-deck classification now uses `sessionSeatRole`, so a hand-opened/rebound architect,
+orchestrator, strategist, or manager is grouped by current binding identity instead of stale or
+missing spawn provenance. Sprint qualification, archive grouping, and malformed-claim handling are
+unchanged.
 
 ### Logic
 
@@ -76,6 +83,9 @@ archive reading `"· archived"` instead. Only non-empty groups are emitted.
 | The unit suite pins repo isolation, enclosure-independent grouping, malformed-claim surfacing, and the 30-chat shape. | L90-L277 | [sessionGroups.test.ts](sessionGroups.test.ts) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made command-deck role classification binding-first;
+  no change to L16 sprint grouping or archive semantics.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16: replaced the global G1 deck/live-enclosure join
   with repo-qualified sprint groups, preserved valid claims without live enclosures, added the

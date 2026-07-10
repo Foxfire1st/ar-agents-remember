@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionList.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T13:41+02:00                           |
-| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b`       |
-| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,6 +27,11 @@ appends the resolved leaf name. The grouped describe now tracks L16 and drives h
 `SessionGroup` fixtures; membership derivation remains in `data/sessionGroups.test.ts`.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Fleet Binding-Role Proof
+
+Tests pin binding-role chips, ordering, and manager-child collapse when `seatRole` overrides absent
+or stale spawn provenance.
 
 ### Logic
 
@@ -85,6 +90,9 @@ replace the marker proxy when the suite has that seam.
 | Pure data grouping is tested separately, including the 30-chat fleet shape. | L184-L277 | [sessionGroups.test.ts](../data/sessionGroups.test.ts) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: proved fleet rendering and hierarchy controls use
+  current binding identity.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16: added the orchestrator-parented manager-subtree
   exact-once regression and two-width bounded/hover-complete rerender case; retitled the suite for

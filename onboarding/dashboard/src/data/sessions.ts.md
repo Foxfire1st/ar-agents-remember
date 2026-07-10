@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T13:07:21+02:00                           |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -44,6 +44,14 @@ catalog invalidation contract with a `"leaf"` reason so hosted chat leaf moves m
 agent-facing MCP tool can rehydrate open dashboard stores without a full page refresh.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Binding Role In The Client Registry
+
+`OpenSession.seatRole` is current leaf-seat identity; `spawnRole` remains origin provenance.
+`sessionSeatRole` prefers binding, then provenance, then transport fallback for legacy rows, while
+`attachSeatRole` intentionally leaves an untyped generic chat unselected so the operator must
+choose. Local uniqueness and `applyLeafAssignment` compare the selected seat role, clearing only a
+same-role owner and preserving different roles on the leaf. Catalog hydration carries `seatRole`.
 
 ### Logic
 
@@ -163,6 +171,10 @@ object with the action methods on it, not a separate actions slice.
 | The backend tmux session that persists after `close` and is killed only by explicit terminate. | L330-L347 | [serving/terminal.py](../../../mcp/src/agents_remember/serving/terminal.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added authoritative binding-role state and helpers,
+  made advisory/apply assignment pair-scoped, preserved different-role owners, and required
+  explicit role choice for an untyped hand-opened chat.
 
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): `OpenSession` and
   `fromTerminalSessionInfo` now carry landed provenance, and live-session tests treat

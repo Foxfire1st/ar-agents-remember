@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `scripts/sync-dashboard.py`                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:41+02:00                     |
+| lastUpdated            | 2026-07-10T15:07+02:00                     |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../overview.md`                              |
@@ -31,6 +31,14 @@ skill is flagged. This is the pre-commit/pre-push `--check` behavior, so the com
 shipped bundle, not just the push gate.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair-Role Package Proof
+
+The L17 dashboard source adds role selection plus binding-first grouping/rendering and was rebuilt
+and synchronized by the worker. This script remains the only durable build/package proof: its
+source fingerprint covers the TypeScript inputs and its tree digest compares `dashboard/dist`
+against `package_data/dashboard`. Individual hashed assets are replaceable output and intentionally
+receive no file-level onboarding.
 
 ### Logic
 
@@ -109,6 +117,10 @@ against the (possibly missing) build output. The historical placeholder
 | The API literal used in the L16 source-to-package marker proof is owned by the dashboard data adapter. | L10-L17 | [taskDocuments.ts](agents-remember/dashboard/src/data/taskDocuments.ts) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — No source impact: 260707-HFX2-L17 recorded the dashboard
+  role-selection/binding-role build as a source-fingerprint plus dist/package tree proof at this
+  sync boundary. Generated hashed assets remain excluded from onboarding.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16 reviewed-no-source-change boundary update: recorded the
   final L15+L16 build/sync/package proof, corrected the `/api/task-document` marker attribution, and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/leaf_ref_validation.py` |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-07T20:50+02:00                                  |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`              |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`              |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -21,6 +21,13 @@ write surfaces persist them. It converts accepted refs into the canonical qualif
 `<repo>/<master-folder>/<doc-id>`.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Anti-Suffix Guidance
+
+Normal leaf resolution still runs first. Only after it fails does the validator recognize a
+role-suffixed workaround whose de-suffixed base is canonical, then refuse it with guidance to pass
+the canonical leaf key and role separately. This avoids misclassifying legitimate leaf ids while
+retiring the old suffix hack.
 
 `repo_scope_for_leaf_key(config, leaf_key)` uses the configured repository only for unqualified refs; a
 qualified ref carries its own repo segment. `resolve_catalog_leaf_key(config, leaf_key)` delegates to
@@ -41,6 +48,9 @@ catch `LeafRefResolutionError` and return transport-specific refusals.
 | MCP terminal payload builders that call this adapter. | [../mcp/tools/terminal.py](../mcp/tools/terminal.py.md) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added bounded legacy role-suffix detection and
+  canonical leaf-plus-role refusal guidance shared by spawn and attach.
 
 - 2026-07-07T20:50+02:00 — 260707-HFX-L4: created to normalize terminal catalog leaf keys at serving
   and MCP write boundaries before persistence. Verification metadata pinned until closeout stamps the

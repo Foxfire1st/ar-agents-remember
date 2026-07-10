@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T17:04+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -30,6 +30,11 @@ draft-paste helper rather than the submit-and-confirm delivery helper. L9 adds c
 already-attached chat to another leaf, including drafting the destination leaf's context after the move.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Rail Seat Identity Proof
+
+Rail tests select an explicit role during attach/move, assert the role-bearing request and local
+assignment, and verify pane headings prefer binding identity over stale spawn provenance.
 
 ### Logic
 
@@ -87,6 +92,9 @@ session rely on the `./Terminal` stub, the same posture as `Chats.test.tsx`. `af
 | The attach client path whose 200/409 outcomes the tests mock. | L329-L357 | [data/terminal.ts](../data/terminal.ts) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: covered role-explicit rail attachment and
+  binding-first pane identity.
 
 - 2026-07-02T17:04+02:00 — L9: added coverage that an attached chat still offers the picker as a move
   control, moves to another leaf on server `200`, and drafts the destination leaf context through

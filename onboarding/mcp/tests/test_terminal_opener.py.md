@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T13:03+02:00                            |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`        |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`        |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ env-seed behaviour both call paths inherit — and, since 260703-L16, the per-ha
 application (`KnobApplicationTests`).
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Multi-Role Pipeline And Replacement Proof
+
+The opener suite now places worker, reviewer, curator, and manager on one canonical leaf, refuses a
+live same-role duplicate, replaces a dead worker without ceremony, and opens curator after worker
+completion without suffix hacks. It also checks persisted binding role in opener results.
 
 ### Logic
 
@@ -105,6 +111,9 @@ No meaningful cross-repo references found.
 | The tests cover local serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added the workaround-museum multi-role, same-role,
+  dead-replacement, and no-suffix pipeline regressions.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: replaced env-only Codex expectations with explicit
   argv and covered the new opener provenance fields. Verification metadata remains pinned until

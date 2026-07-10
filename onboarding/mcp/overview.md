@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-10T13:56+02:00 |
-| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b` |
-| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -183,6 +183,18 @@ lands in `docs/design/observable-lifecycle.md` and the settings table in
 `notes/reports/260707-HFX2-L8-worker-report.md` and `-reviewer-report.md`.
 
 ## Hot Path Summary
+
+HFX2-L17 splits immutable `spawnRole` provenance from current `seatRole` binding. The catalog
+migrates legacy rows in place; spawn/attach liveness-check only the same `(leafKey, seatRole)`;
+retire authority, expectations, inbox/supervisor findings, chain credit, landing, provider role
+discovery, and dashboard rendering use the binding. The MCP/HTTP attach surfaces accept role and
+return `role-required` for an untyped hand-opened harness, while role-suffixed leaf refs refuse with
+canonical pair guidance. Tests cover the workaround museum and supervisor behavior at fleet sizes
+3 and 30.
+
+The regenerated dashboard assets are deliberately not onboarding subjects. Durable proof stays at
+the dashboard source, `scripts/sync-dashboard.py` build/package parity check, and serving static
+boundary.
 
 HFX2-L15 replaces screen-grammar dispatch credit with one repository-wide acceptance path:
 `HarnessSessionLog` binds the unique id-bearing message in the spawn cwd, `injector.deliver`
@@ -656,6 +668,11 @@ into the role files.
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 package route impact: documented end-to-end pair
+  binding across catalog, tools, control plane, supervisor, provider discovery, dashboard, and
+  tests, plus the source/build/serve-only package-sync evidence boundary. Verification metadata
+  remains pinned until closeout stamps L17.
 
 - 2026-07-10T13:56+02:00 — 260707-HFX2-L16 final package route impact: documented the complete
   dashboard source-to-build-to-package boundary, runtime static resolution from the packaged tree,

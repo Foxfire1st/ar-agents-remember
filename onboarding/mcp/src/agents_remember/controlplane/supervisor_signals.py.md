@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                |
 | path                   | `mcp/src/agents_remember/controlplane/supervisor_signals.py`   |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash |                                                                `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`|
-| lastVerifiedCommitDate |                                                                2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash |                                                                `fdff55f2921d7aaa8ba240c11087d02c15a170d7`|
+| lastVerifiedCommitDate |                                                                2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ deterministic supervisor sweep from minting a new owner-addressed inbox row ever
 target owner, leaf, finding kind, and detail.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Pair-Scoped Cooldown Identity
+
+Signal records and cooldown lookups add `seatRole`, so two roles with the same leaf, finding kind,
+and detail retain independent cooldown slots. Existing bounded snapshot/compaction behavior is
+unchanged.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -93,6 +99,9 @@ No meaningful cross-repo references found.
 | Same-repository supervisor state only. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: extended persisted cooldown identity with seat role so
+  different seats on one leaf do not suppress one another.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: created for the new persisted supervisor signal

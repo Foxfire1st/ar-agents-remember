@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T13:07:21+02:00                           |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`       |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -25,6 +25,12 @@ xterm rendering. It also carries the small Mode B2 control-plane fetches the Cha
 termination (`terminateTerminalSession`), and (slice 6e-2b) the `fetchHarnesses` detection helper.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Role-Carrying Attach Transport
+
+Catalog rows expose optional `seatRole`, and `attachSessionToLeaf` requires a role in the JSON body.
+The result remains a compact `ok | leaf-taken | error`; `leaf-taken` now means a live owner of the
+same leaf-role pair rather than any chat on the leaf.
 
 ### Logic
 
@@ -110,6 +116,9 @@ imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-
 | The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: carried binding role in catalog types and attach POST
+  bodies, with pair-scoped refusal semantics.
 
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): `TerminalSessionStatus` now includes
   `landed`, catalog payloads carry landed provenance, and the client exposes

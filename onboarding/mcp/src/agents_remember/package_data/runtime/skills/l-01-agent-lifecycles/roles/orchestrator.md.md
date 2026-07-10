@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T15:48+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,12 @@ decisions go to the architect as one-at-a-time decision items over the operator 
 hosted delivery as an echo-confirmed paste. L15's runtime now grants submitted acceptance only from
 the bound harness log; pane capture is retry-safety/failure evidence. This sidecar records that the
 role doctrine is stale until a separate canonical skill edit and sync pass lands.
+
+260707-HFX2-L17 aligns orchestrator takeover and manager dispatch with pair-identified task seats.
+A hand-opened orchestrator takeover explicitly claims the `orchestrator` role while attaching to
+the qualified leaf, then verifies that `(leaf, role)` pair in the catalog/dashboard. Manager
+dispatch likewise treats `AR_SPAWN_ROLE=manager` plus the qualified coordination leaf as the
+manager's pair claim; the qualified leaf is no longer described as the whole task-seat identity.
 
 260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the dispatch-loop
 bullet "monitor turn-report artifacts, nudges, escalation intake" is gone. In its place: "process
@@ -134,8 +140,8 @@ finalize edge (config-gated `retirement.autoLandOnFinalize`, default ON), puttin
 dashboard's collapsed landed archive for inspection until explicit archive cleanup. The by-hand
 `session_retire(actor_session_id=<own session>, session_id=<the seat>, reason=...)` path remains for
 stuck/abandoned seats and for exceptional cleanup; unlike the manager (scoped to its own master's
-worker/reviewer seats), the orchestrator may retire any seat in the portfolio. Owner-never-self-retires
-still holds unconditionally: the orchestrator can never retire its own seat, mirroring the
+worker/reviewer/curator seats), the orchestrator may retire any seat in the portfolio.
+Owner-never-self-retires still holds unconditionally: the orchestrator can never retire its own seat, mirroring the
 same server-side policy (`serving/retire_policy.py::check_retire_authority`) the manager's cleanup
 duty relies on. The Knobs table's `tools` row includes `session_retire` (any seat, portfolio-wide)
 alongside the existing `spawn_agent_session` entry for explicit by-hand cases.
@@ -158,6 +164,12 @@ No sibling repository evidence is needed for this doctrine file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: explicit
+  orchestrator takeover now claims and verifies the `orchestrator` role with the qualified leaf;
+  manager dispatch now states the environment-role-plus-leaf pair claim. Reconciled the documented
+  manager retirement boundary to include curator seats. Verification metadata remains pinned until
+  closeout stamps the L17 commit.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale echo-confirmed
   supervisor-delivery wording as doctrine debt; no source behavior changed.

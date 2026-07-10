@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T17:04+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -33,6 +33,13 @@ an already-attached chat as a move control; a successful move updates the durabl
 the newly selected leaf's context without respawning the terminal session.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Role-Aware Rail Attach And Identity
+
+Rail attach/move posts the selected role and applies the server-authoritative pair. The picker
+preselects declared identity but requires a choice for a hand-opened generic chat, and pane headers
+render current binding role before label. The focused rail still shows one chat plus optional
+terminal; the complete multi-role fleet remains available in the session list.
 
 ### Logic
 
@@ -127,6 +134,9 @@ canvas on import and cannot mount under jsdom). `data-testid`s: `rail-chat`, `ra
 | The cockpit shell that toggles this in for the Event River and passes the displayed `leafKey`, `taskDocuments`, `engineProcesses`, `contextMaster`, and `selectedLifecycleId`. | L346-L356; L479-L485 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made rail attach/move role-explicit, preserved
+  pair-scoped local state, and displayed current seat identity in pane headers.
 
 - 2026-07-02T17:04+02:00 — L9: kept the picker visible for attached chats as a move control. Successful
   moves use `applyLeafAssignment`, broadcast `"leaf"`, preserve the live terminal session, and draft the

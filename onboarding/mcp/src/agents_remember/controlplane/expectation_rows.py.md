@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `dbe750e4cd7fb777b8f39e7ba6279d1080502d8e`|
-| lastVerifiedCommitDate | 2026-07-09T19:42:39+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`|
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ surface (spawn, gate open, signal post) so a deadline is a durable ROW an L2 swe
 in-memory timer that a daemon/MCP restart would erase (the Restate durable-timer lesson).
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Seat-Scoped Expectations
+
+Expectation rows persist optional `seatRole` beside `leafKey`, and both pure creation and
+write-at-dispatch helpers carry it. Supervisor findings can therefore retain the exact pair whose
+deadline expired instead of collapsing different roles on one leaf.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -96,6 +102,9 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added durable seat-role identity to expectation rows
+  and their atomic dispatch writer.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-08T14:15+02:00 — 260707-HFX2-L1: created for R2 durable expectation/deadline rows —

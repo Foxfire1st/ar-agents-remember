@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/seat_events.py`        |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-09T14:05+02:00                                  |
-| lastVerifiedCommitHash | `c392985424896e9f392507295a23c4902d0c0696`              |
-| lastVerifiedCommitDate | 2026-07-09T14:31:11+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`              |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ liveness-sweep turn-state wiring
 records, rather than each caller hand-rolling its own event shape.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Event Identity
+
+Seat observer events now include current `seatRole` beside historical `spawnRole`, allowing event
+consumers to distinguish origin provenance from the leaf-role binding that rename/retire/turn-state
+operations currently affect.
 
 ### Logic
 
@@ -103,6 +109,9 @@ No meaningful cross-repo references found.
 | The observer event feed is consumed by the local dashboard/watcher surface, not a cross-repo boundary. | — | — |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added current binding-role provenance to seat events
+  while retaining immutable spawn-role history.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: documented `log_landed_event`
   (`seat.landed`) and corrected the completion-edge reference from auto-retire to auto-land; retire

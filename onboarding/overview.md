@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-10T13:41+02:00 |
-| lastVerifiedCommitHash | `375b3f5085550fbf68b77006bdd4accbd7f8d08b` |
-| lastVerifiedCommitDate | 2026-07-10T13:59:26+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 
 > **Status:** active baseline
 
@@ -129,6 +129,19 @@ chat once for the successful bind. Detail lives in the `observer/`, `serving/`, 
 overviews.
 
 ## Hot Path Summary
+
+260707-HFX2-L17 makes hosted seat identity a pair: `leafKey` names the canonical task leaf and
+`seatRole` names the current occupant. `spawnRole` remains immutable origin provenance. Spawn and
+attach refuse only a live same-pair owner; worker, reviewer, curator, manager/architect anchors, and
+the plain terminal may coexist on one leaf. Hand-opened harnesses must declare a role at attach,
+retire/supervisor/expectation/inbox/dashboard behavior follows binding identity, and legacy
+role-suffixed leaf refs are rejected with canonical pair guidance. Per-role lifecycle wording such
+as “one leaf, one session” describes that role's fresh pass, not global leaf exclusivity.
+
+Dashboard package generation remains downstream evidence only: `dashboard/src` defines the role
+picker and binding-first rendering, `scripts/sync-dashboard.py` proves source build and packaged
+tree parity, and the serving package mounts the synchronized output. Hashed generated assets stay
+outside file-level onboarding.
 
 260707-HFX2-L15 makes submitted terminal dispatch acceptance deterministic: every message carries
 its unique id, binds the spawn-cwd Claude/Codex harness JSONL, and receives credit only from that
@@ -422,6 +435,12 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 root route impact: documented current
+  `(leafKey, seatRole)` identity, provenance/binding separation, multi-role coexistence, explicit
+  hand-opened role claim, and the source/build/serve package boundary. Clarified that per-role
+  one-leaf/one-session lifecycle prose is role-local, not global uniqueness. Verification metadata
+  remains pinned until closeout stamps L17.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16 root route impact: recorded the sprint-local chat rail,
   honest task-reader fallback/single-step behavior, and final L15+L16 source-to-package proof. The

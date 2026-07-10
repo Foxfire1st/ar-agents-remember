@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/tests/test_dispatch_expectation_rows.py`             |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-07-09T12:04+02:00                                    |
-| lastVerifiedCommitHash | `04f78993c54ef6f98773b0208e66e97d19686be8`|
-| lastVerifiedCommitDate | 2026-07-09T12:35:59+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`|
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                          |
 
 ## Governing Overview
@@ -22,6 +22,11 @@ that the matching fulfillment call marks that same row `met`, never leaving the 
 forgettable follow-up step.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Seat-Scoped Dispatch Rows
+
+Spawn expectation assertions now include the derived seat role, proving brief and turn-report
+deadlines retain the same leaf-role subject as the spawned catalog row.
 
 ### Logic
 
@@ -85,6 +90,9 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added seat-role assertions to dispatch expectation
+  rows.
 
 - 2026-07-09T12:04+02:00 — No content impact: 260707-HFX2-L10 adjusted the spawn expectation-row
   fixture to use settings-resolved harness selection instead of the now-refused legacy explicit

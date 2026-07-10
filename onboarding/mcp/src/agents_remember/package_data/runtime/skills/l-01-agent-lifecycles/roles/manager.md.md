@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0` |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T15:48+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -53,6 +53,13 @@ leaf authority: under accepted series authority, the manager owns leaf closeout 
 in-scope green leaves and records the accepted planner/series authority in the closeout intent note
 instead of handing every routine leaf commit back to the developer. This is doctrine-only; it relies
 on existing attachment and closeout command paths and does not change manager runtime behavior.
+
+260707-HFX2-L17 makes the manager's dispatch and cleanup wording match the pair-keyed runtime.
+`AR_SPAWN_ROLE=worker` plus the qualified leaf claims the worker's `(leaf, role)` seat, allowing
+reviewer and curator seats to coexist on the same canonical leaf without suffixes. For exceptional
+pre-integration cleanup, manager authority covers worker, reviewer, and curator seats of the
+manager's own master; owner-never-self-retires and cross-master refusal remain unchanged. The
+Knobs tool row carries the same three-role boundary.
 
 260707-HFX-L11 curator activation (R4, manager wiring made real): the curator-spawn duty bullet is
 no longer a description — it names the exact brief template (`../templates/curator-brief.md`), the
@@ -185,12 +192,14 @@ dashboard's collapsed landed archive for later inspection; tmux stays alive unti
 cleanup. For a stuck/abandoned leaf seat before integration (a dead-end retry, a duplicate spawn), the
 manager retires it by hand: `session_retire(actor_session_id=<own session>, session_id=<the seat>,
 reason=...)`. Server-side policy (`serving/retire_policy.py`) enforces the authority split: the
-manager lives OUTSIDE the master stack it manages, so it may retire ONLY the worker/reviewer seats of
-its OWN master — it can never unseat itself by construction (owner-never-self-retires), and a target
-of any other role or a different master is refused loudly, naming the exact policy clause.
+manager lives OUTSIDE the master stack it manages, so it may retire ONLY the
+worker/reviewer/curator seats of its OWN master — it can never unseat itself by construction
+(owner-never-self-retires), and a target of any other role or a different master is refused loudly,
+naming the exact policy clause.
 Transcripts are never deleted; retiring only terminates the tmux session and marks the catalog row
 terminated with retirement provenance. The Knobs table's `tools` row includes `session_retire`
-(scoped to the manager's own master's worker/reviewer seats) for those exceptional by-hand cases.
+(scoped to the manager's own master's worker/reviewer/curator seats) for those exceptional by-hand
+cases.
 
 ## Cross-Repo References
 
@@ -201,6 +210,11 @@ No sibling repository evidence is needed for this orchestration job file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: worker dispatch now
+  records the environment-role-plus-qualified-leaf pair claim, and manager cleanup authority now
+  consistently includes worker/reviewer/curator seats of the manager's own master in both prose and
+  the tools row. Verification metadata remains pinned until closeout stamps the L17 commit.
 
 - 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: manager leaf scheduling now follows the
   dependency graph and dispatches independent ready leaves in parallel within

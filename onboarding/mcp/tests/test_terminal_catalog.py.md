@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `c881828542f0ca916ce8b1d4fd5ab8a914e24110`       |
-| lastVerifiedCommitDate | 2026-07-10T13:18:50+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -21,6 +21,12 @@
 `test_terminal_ws.py`.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Catalog Pair And Migration Proof
+
+Catalog tests cover `seatRole` serialization, legacy migration from spawn provenance or chat,
+terminal preservation, in-place rewrite with stable ids/order/row count, binding-first lookup, and
+different-role coexistence under same-role exclusivity.
 
 ### Logic
 
@@ -75,6 +81,9 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 | The FastAPI route tests that exercise catalog rows through open/list/rehydrate/terminate/image endpoints. | L325-L415; L571-L583 | [test_terminal_ws.py](test_terminal_ws.py) |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added durable seat-role migration and pair-lookup
+  regressions, including stable in-place catalog rewrite.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added dispatch-provenance round-trip and lock-safe
   log-binding race coverage. Verification metadata remains pinned until closeout stamps the eventual

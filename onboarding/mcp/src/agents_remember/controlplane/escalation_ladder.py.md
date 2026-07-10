@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/escalation_ladder.py`        |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-10T01:14+02:00                                             |
-| lastVerifiedCommitHash | `5b49fa85a51d527a5a216a88c361c08246c759d0`                           |
-| lastVerifiedCommitDate | 2026-07-10T05:00:02+02:00|
+| lastUpdated            | 2026-07-10T15:07+02:00 |
+| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                           |
+| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -25,6 +25,12 @@ addressee is; `serving/supervisor.py` (the only caller) reads the stores, calls 
 the delivery + durable row update.
 
 ## Code Commentary
+
+### 260707-HFX2-L17 Architect Binding Identity
+
+The never-suspect architect exemption now checks current `binding_role`, making a hand-opened seat
+attached as architect visible even when it has no spawn provenance. Ladder parent walking remains
+provenance-based elsewhere because it reconstructs historical ownership.
 
 ### 260707-HFX2-L13 Rung-Dwell Safety Floor
 
@@ -100,7 +106,7 @@ log (tier 3, dead-man ladder) are the source of truth.
 | The two-hop, dead-node-skipping owner derivation `next_step`'s rung-2 branch calls, and the liveness check `seat_is_suspect` calls. | `derive_skip_level_owner`; `is_seat_dead` | [signal_routing.py](signal_routing.py.md) |
 | The `OperatorInboxEntry.rung`/`escalatedAt` fields this walker reads, and the `advance_rung` transition its caller stamps. | `rung`; `escalatedAt` | [operator_inbox_records.py](operator_inbox_records.py.md); [operator_inbox_store.py](operator_inbox_store.py.md) |
 | The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect` | [../serving/supervisor.py](../serving/supervisor.py.md) |
-| Unit tests: rung-due dwell/anchor/ceiling cases, next-step routing per rung including the hierarchy-ceiling jump, and seat-suspect liveness/staleness cases. | whole module | [../../tests/test_escalation_ladder.py](../../tests/test_escalation_ladder.py.md) |
+| Unit tests: rung-due dwell/anchor/ceiling cases, next-step routing per rung including the hierarchy-ceiling jump, and seat-suspect liveness/staleness cases. | whole module | [test_escalation_ladder.py](../../../tests/test_escalation_ladder.py.md) |
 
 ## Cross-Repo References
 
@@ -111,6 +117,9 @@ No meaningful cross-repo references found.
 | Same-repository control-plane logic only. | — | — |
 
 ## Update History
+
+- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made the architect never-suspect rule honor current
+  seat binding rather than origin provenance.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: enforced the developer-ruled five-minute
   later-rung floor with an independent transition anchor while retaining configured longer dwells and
