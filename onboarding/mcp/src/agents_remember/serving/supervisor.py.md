@@ -102,7 +102,7 @@ Inbox-mutating actions update this index after appending snapshots, so one sweep
 `operator-inbox.jsonl` once instead of refolding the whole log for each finding. The sweep result
 and heartbeat tick now carry pending/redeliverable inbox counts and last-sweep wall-clock duration.
 
-**R2 predicates** (`evaluate_predicates` runs all seven every sweep, concatenating their findings):
+**R2 predicates** (`evaluate_predicates` runs all eight every sweep, concatenating their findings):
 
 - `evaluate_pane_findings` (R2a) — every `RUNNING` `kind == "harness"` catalog row's captured pane
   text through `pane_signals.classify_pane_signal`; a `normal` classification produces no finding.
@@ -179,7 +179,7 @@ and heartbeat tick now carry pending/redeliverable inbox counts and last-sweep w
   doctrine carried verbatim into the action's `ask` text: "a spawned seat NEVER absorbs its dead
   owner's role — it continues its own brief and escalates."
 - Anything else → a `"none"`/`"skipped"` no-op result (defensive default, not currently reachable
-  from `evaluate_predicates`'s seven kinds).
+  from `evaluate_predicates`'s eight kinds).
 
 `_respawn_suspect(ctx, agent_id, *, now)` (260707-HFX2-L4, R3, called from inside `_escalate_rung`,
 not dispatched via `act_on_finding` — it is a side effect of a rung transition, not its own
@@ -293,6 +293,9 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local sweep; the level-triggered-reconciliation design rationale cites an external incident (Inngest, Oct 2025) only as research justification, not a code boundary. | — | — |
 
 ## Update History
+
+- 2026-07-10T21:05+02:00 — Super-exit curator correction: reconciled the predicate-count prose
+  with the eight landed `evaluate_predicates` families, including ladder-terminal and dead-upstream.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: propagated leaf-role identity through all supervisor
   predicates/actions/coalescing/cooldowns/events, switched current seat tests to binding role, and
