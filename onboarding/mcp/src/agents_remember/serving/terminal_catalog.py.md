@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`              |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastUpdated            | 2026-07-10T18:30+02:00 |
+| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f`              |
+| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -21,6 +21,23 @@ It records enough metadata to show sessions after a browser/dashboard restart an
 still-live tmux session without asking the browser to remember process-local state.
 
 ## Code Commentary
+
+### 260707-HFX2-L18 JSON Projection Decomposition
+
+`TerminalCatalogEntry.from_json` now reuses `_optional_str` and `_optional_path` for migration-safe
+optional scalar/path reads while retaining the existing typed tuple, status, liveness, turn-state,
+and non-negative-integer parsers. Required/base fields still use direct indexing, and
+`migrated_seat_role` remains the sole authority for deriving legacy `seatRole` from persisted role,
+`spawnRole`, and terminal kind.
+
+`to_json` now builds the required mapping first and folds optional values through `_present_fields`;
+tuple and path conversions use `_optional_list` / `_optional_path_text`. Filtering is strictly on
+`None`, so empty tuples and strings remain present. `seatRole` remains required,
+`livenessFailures` remains truth-gated, and `exitEvidence` remains exited-only. The only observed
+serialization difference is insertion order for those two conditionally added keys; catalog
+consumers parse JSON objects and do not use byte-order golden files. Independent review measured
+both target methods at CRAP `4.00` / CC `4` / `100%` coverage, down from `30.00` and `34.00`, with
+every extracted helper at Radon rank A.
 
 ### 260707-HFX2-L17 Pair-Binding Identity
 
@@ -201,8 +218,8 @@ No known follow-up in this file.
 
 ## Docs References
 
-No relevant external documentation found after checking the repo Domain Documentation (`docs/design/`)
-for terminal-catalog-specific behavior; this file is same-repository runtime plumbing.
+No Domain Documentation entries are configured in the resolved `system/sources.md`; this catalog's
+shape and migration rules are same-repository runtime behavior proven by source and tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
@@ -217,7 +234,7 @@ operations that keep catalog state honest.
 | --- | --- | --- |
 | The FastAPI app injects/creates the catalog, refreshes stale rows, rehydrates WebSockets from catalog metadata, persists opener rows, marks terminations, and uses catalog cwd for image uploads. | L334-L351; L291-L331; L481-L515; L528-L638 | [app.py](app.py) |
 | The terminal host exposes the tmux probe and terminate hooks that app.py uses before rehydrate and during explicit termination. | L86-L121; L230-L239; L287-L289; L340-L347 | [terminal.py](terminal.py) |
-| Unit tests pin catalog path, JSON schema/order, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | L46-L95 | [../../../tests/test_terminal_catalog.py](../../../tests/test_terminal_catalog.py) |
+| Unit tests pin catalog path, JSON schema/order, complete optional-field round-trip, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | `TerminalCatalogTests` | [../../../tests/test_terminal_catalog.py](../../../tests/test_terminal_catalog.py) |
 | The liveness sweeper + shared observation path that drive `record_liveness_probe` (HFX-L5) and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
 | Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
 | `mark_retired`/`mark_landed`/`set_label`/`record_turn_state` are called from the manual retire/rename tools and endpoints, the landed cleanup endpoint, and the integrate/finalize auto-land hooks. | `retire_entry`; `TerminalCatalog.mark_landed`; `TerminalCatalog.set_label`; `record_turn_state` | [retire.py](retire.py); [landing.py](landing.py); [terminal.py (mcp/tools)](../mcp/tools/terminal.py.md); [worktree_tools.py](../controllers/worktree_tools.py.md); [app.py](app.py) |
@@ -233,6 +250,12 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local dashboard catalog. | — | — |
 
 ## Update History
+
+- 2026-07-10T18:30+02:00 — 260707-HFX2-L18: documented typed optional-field readers and
+  required/optional JSON projection helpers. Required fields, `seatRole`, legacy migration,
+  absent-field semantics, truth-gated liveness failures, and exited-only evidence remain unchanged;
+  `from_json` / `to_json` CRAP fell from `30.00` / `34.00` to `4.00` / `4.00`. Verification
+  metadata remains pinned until closeout stamps the eventual L18 code commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: split mutable `seatRole` binding identity from
   immutable `spawnRole` provenance, migrated legacy rows in place, added atomic leaf-role moves and

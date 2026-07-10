@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7` |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastUpdated            | 2026-07-10T18:30+02:00 |
+| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f` |
+| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -668,6 +668,11 @@ into the role files.
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 
 ## Update History
+
+- 2026-07-10T18:30+02:00 — No route impact: 260707-HFX2-L18 is a behavior-preserving strict-CRAP
+  decomposition inside the existing spawn controller and terminal catalog plus two focused tests.
+  It adds no MCP tool, response model, package route, threshold/configuration change, or L19
+  release-tail behavior.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 package route impact: documented end-to-end pair
   binding across catalog, tools, control plane, supervisor, provider discovery, dashboard, and

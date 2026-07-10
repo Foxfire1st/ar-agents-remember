@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`        |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastUpdated            | 2026-07-10T18:30+02:00 |
+| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f`        |
+| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -24,6 +24,22 @@ serving primitives so an orchestrator can spawn a manager and a manager a worker
 clicks.
 
 ## Code Commentary
+
+### 260707-HFX2-L18 Strict-CRAP Decomposition
+
+`spawn_agent_session_payload` keeps its controller contract while moving optional leaf-reference
+normalization into `_resolve_spawn_leaf`. The helper accepts either the claimed leaf or declared
+replacement leaf and returns the same `leaf-ref-not-found` / `leaf-ref-ambiguous` payload built from
+the original unresolved ref. The controller still rejects caller spend overrides first, performs
+harness dispatch only for `kind == "harness"`, and then opens, writes expectations, binds the
+session log, delivers the settings-owned session commands/brief, and projects the public response.
+
+The non-harness path now initializes its resolved dispatch locals explicitly before the harness-only
+branch. This is a behavior-preserving flattening: plain terminals still launch the configured shell
+without harness metadata, while harness spawns retain settings-owned model/effort/free-form controls,
+L17 `(leafKey, seatRole)` arbitration, and the same refusal/success payload fields. Independent review
+confirmed the target CRAP score fell from `34.25` (CC `34`, coverage `94%`) to `23.02` (CC `23`,
+coverage `96.4%`) without threshold/configuration changes or a displaced helper hotspot.
 
 ### 260707-HFX2-L17 MCP Pair-Binding Surface
 
@@ -133,10 +149,11 @@ recorded provenance: `launchArgs`/`promptKeywords`/`sessionCommands` (the RESOLV
 vehicle first), `spawnLevel`/`spawnLevelSource`. `host` / `paster` / `which` / `session_id` remain
 injectable seams for fake-driven tests.
 
-Helper decomposition (CRAP-gate driven): steps 1-4 live in `_resolve_harness_dispatch` (returning a
+Helper decomposition (CRAP-gate driven): optional leaf/replacement normalization lives in
+`_resolve_spawn_leaf`; settings/harness resolution lives in `_resolve_harness_dispatch` (returning a
 frozen `_HarnessDispatch` bundle or a refusal, with `_knob_refusal` for the model/effort checks);
-step 6 is `_brief_packet` (keyword prepending) + `_deliver_spawn_pastes` (session commands then
-brief, returning `_SpawnDelivery`); the `spawned` response dict is `_spawned_payload`.
+brief construction/delivery lives in `_brief_packet` + `_deliver_spawn_pastes`; and the final
+`spawned` response dict is `_spawned_payload`.
 
 Since 260707-HFX2-L1 (R2): right after the opener upserts the catalog row (`entry`), before the
 brief/delivery step, `spawn_agent_session_payload` calls `_write_spawn_expectation_rows(config,
@@ -264,6 +281,12 @@ No meaningful cross-repo references found.
 | The tool operates on the local dashboard terminal catalog only. | - | - |
 
 ## Update History
+
+- 2026-07-10T18:30+02:00 — 260707-HFX2-L18: documented the behavior-preserving
+  `_resolve_spawn_leaf` extraction and flat dispatch-local controller flow. The strict CRAP score for
+  `spawn_agent_session_payload` fell from `34.25` to `23.02`; settings-owned spend protection, L17
+  pair arbitration/log binding, public payloads, and threshold/configuration remain unchanged.
+  Verification metadata remains pinned until closeout stamps the eventual L18 code commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: threaded seat role through attach/spawn payloads and
   expectation rows, and switched retirement checks to binding identity with replacement-leaf

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`       |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastUpdated            | 2026-07-10T18:30+02:00 |
+| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f`       |
+| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -21,6 +21,16 @@
 `test_terminal_ws.py`.
 
 ## Code Commentary
+
+### 260707-HFX2-L18 Complete Optional Projection Proof
+
+`test_complete_optional_projection_round_trips_without_contract_loss` constructs an exited harness
+entry with every optional provenance, dispatch, session-log, liveness, retirement, landing, label,
+turn-state, tuple, and path field populated. It asserts `from_json(to_json(entry)) == entry` and
+spot-checks required `seatRole`, tuple-to-list conversion, path-to-string conversion, and
+exited-only evidence. Existing tests continue to prove omitted/legacy fields read as `None`, so the
+new case covers the complementary all-present direction without weakening migration semantics.
+Remaining changes in this test file are Ruff formatting only.
 
 ### 260707-HFX2-L17 Catalog Pair And Migration Proof
 
@@ -77,10 +87,16 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The catalog implementation under test. | L15-L30; L110-L185 | [serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
+| The catalog implementation under test, including typed optional reads and required/optional JSON projection. | `TerminalCatalogEntry.from_json`; `TerminalCatalogEntry.to_json` | [serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
 | The FastAPI route tests that exercise catalog rows through open/list/rehydrate/terminate/image endpoints. | L325-L415; L571-L583 | [test_terminal_ws.py](test_terminal_ws.py) |
 
 ## Update History
+
+- 2026-07-10T18:30+02:00 — 260707-HFX2-L18: added one complete optional-field projection and
+  round-trip regression covering role/provenance, tuples, paths, liveness, retirement/landing,
+  labels, and turn state. Existing omission/legacy cases remain the complementary absent-field
+  proof; other diffs are formatting only. Verification metadata remains pinned until closeout
+  stamps the eventual L18 code commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added durable seat-role migration and pair-lookup
   regressions, including stable in-place catalog rewrite.
