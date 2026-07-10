@@ -81,7 +81,7 @@
     "supervisor_signals"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L17 carries `seatRole` beside `leafKey` through expectation rows, operator inbox rows, renewal, supervisor cooldown records, and routing. Current manager/architect/worker discovery and chain credit use binding identity; only the escalation ladder's historical parent hop reads `spawnRole`. Same-text supervisor conditions on one leaf coalesce only within the same role, so parallel seats remain independently observable and addressable. 260707-HFX2-L15 closes the active-phase unbound-worker gap without reviving same-cwd inference. Leaf-chain progress credits an unbound worker/review...",
+    "summary": "260707-HFX2-L20 makes inbox state monotonic across concurrent consume and hosted delivery. The append-only log retains the terminal consume snapshot; a shared fold used by live reads and compaction ignores physically later pending snapshots once an id is consumed or ladder-resolved. Explicit dismissal remains physical deletion, and time-based compaction remains audit cleanup. 260707-HFX2-L17 carries `seatRole` beside `leafKey` through expectation rows, operator inbox rows, renewal, supervisor cooldown records, and routing. Current manager/architect/worker discovery and chain credit use bind...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -139,18 +139,18 @@
       "supervisor_signals",
       "seatRole",
       "leafKey",
-      "spawnRole",
       "HFX2",
+      "L20",
       "L17",
-      "L15",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "e400ed0ce98752d1b65d00de97c9b84c7ea20814",
+      "79b2fd6c4da73c7845406f6c68b947b8bd0e1009",
       "/../../overview.md",
       "controlplane/",
       "rung_due",
       "next_step",
-      "seat_is_suspect"
+      "seat_is_suspect",
+      "escalatedAt"
     ]
   },
   "fallback": {

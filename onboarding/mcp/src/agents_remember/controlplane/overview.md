@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `e400ed0ce98752d1b65d00de97c9b84c7ea20814`     |
-| lastVerifiedCommitDate | 2026-07-10T20:04:45+02:00|
+| lastVerifiedCommitHash | `79b2fd6c4da73c7845406f6c68b947b8bd0e1009`     |
+| lastVerifiedCommitDate | 2026-07-10T22:22:16+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -41,6 +41,11 @@ than lifecycle-scoped. These rows are throwaway interaction data, not durable ta
 
 ## Hot Path Summary
 
+260707-HFX2-L20 makes inbox state monotonic across concurrent consume and hosted delivery. The
+append-only log retains the terminal consume snapshot; a shared fold used by live reads and
+compaction ignores physically later pending snapshots once an id is consumed or ladder-resolved.
+Explicit dismissal remains physical deletion, and time-based compaction remains audit cleanup.
+
 260707-HFX2-L17 carries `seatRole` beside `leafKey` through expectation rows, operator inbox rows,
 renewal, supervisor cooldown records, and routing. Current manager/architect/worker discovery and
 chain credit use binding identity; only the escalation ladder's historical parent hop reads
@@ -72,7 +77,7 @@ delegated gate kinds, never for human-pinned integration/push/cleanup gates, and
 never by the owning lifecycle itself. Gate records can attach reviewer-verdict
 evidence refs, and policies may require that evidence before a delegated decision
 binds. Task 23/24 adds the retention boundary: cancel,
-non-enforcement wait pickup, dismiss, clear, consume, and the 24-hour TTL physically delete throwaway
+non-enforcement wait pickup, dismiss, clear, and the 24-hour TTL physically delete throwaway
 interaction rows. Start at `records.py` for the
 entity, then `store.py` for the append-only log (co-located with the observer
 event log under `observer_root`). `gate_policy.py` owns the validated
@@ -196,7 +201,8 @@ response models are `models/operator_inbox.py`.
 - **Interaction records are disposable.** Gate/inbox rows remain modeled records while pending, and
   lifecycle-bound attention acknowledgement rows remain only while their lifecycle is live; targetless
   actionable-drift acknowledgement rows are current repo/branch records, not history. Response, cancel,
-  dismiss, clear, consume, lifecycle prune, and TTL cleanup physically delete them. Durable task docs, contracts,
+  dismiss, clear, lifecycle prune, and TTL cleanup physically delete them; inbox consume instead keeps
+  a terminal audit snapshot until TTL cleanup. Durable task docs, contracts,
   commits, and ledgers carry lifecycle history.
 - **Single current lifecycle gate.** A lifecycle may have only one open durable gate; creating a new
   lifecycle-scoped gate appends an `expired` snapshot for older open gates rather than deleting them.
@@ -230,6 +236,9 @@ response models are `models/operator_inbox.py`.
 | The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
 ## Update History
+
+- 2026-07-10T22:18+02:00 — 260707-HFX2-L20 control-plane route impact: documented the shared
+  terminal-dominant inbox fold and durable consume snapshot that close the in-flight redelivery race.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 control-plane route impact: made rows, renewal,
   cooldowns, current discovery, chain credit, and coalescing pair-aware while retaining the one

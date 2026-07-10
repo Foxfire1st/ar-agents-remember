@@ -424,7 +424,7 @@
     "cross"
   ],
   "hotPath": {
-    "summary": "HFX2-L17 splits immutable `spawnRole` provenance from current `seatRole` binding. The catalog migrates legacy rows in place; spawn/attach liveness-check only the same `(leafKey, seatRole)`; retire authority, expectations, inbox/supervisor findings, chain credit, landing, provider role discovery, and dashboard rendering use the binding. The MCP/HTTP attach surfaces accept role and return `role-required` for an untyped hand-opened harness, while role-suffixed leaf refs refuse with canonical pair guidance. Tests cover the workaround museum and supervisor behavior at fleet sizes 3 and 30. The r...",
+    "summary": "HFX2-L20 closes the live consume/redelivery resurrection race without changing a public payload: consume remains an append-only terminal fact, and the shared current-state/retention fold refuses to let a later stale pending delivery snapshot reverse it. Polling and supervisor redelivery therefore stay terminal after acknowledgement; compaction remains the cleanup boundary. HFX2-L17 splits immutable `spawnRole` provenance from current `seatRole` binding. The catalog migrates legacy rows in place; spawn/attach liveness-check only the same `(leafKey, seatRole)`; retire authority, expectations,...",
     "candidateHints": [
       "mcp",
       "mcp/src/agents_remember/controllers",
