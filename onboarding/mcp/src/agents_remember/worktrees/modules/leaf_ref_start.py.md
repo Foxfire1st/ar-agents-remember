@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-07T20:50+02:00                                      |
-| lastVerifiedCommitHash | `52911a15091de8d065afc6cbc0f8d6ac34690039`                  |
-| lastVerifiedCommitDate | 2026-07-07T22:29:35+02:00|
+| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                  |
+| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview

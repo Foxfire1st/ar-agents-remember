@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T23:45+02:00                           |
-| lastVerifiedCommitHash | `607cab0d32d0527930e336b382c26362cf0ca22b`       |
-| lastVerifiedCommitDate | 2026-07-07T23:29:25+02:00|
+| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
+| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
