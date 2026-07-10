@@ -508,6 +508,11 @@ commit.
 
 ## Update History
 
+- 2026-07-10T21:05+02:00 — Super-exit curator fingerprint reconciliation against code commit
+  `e400ed0ce98752d1b65d00de97c9b84c7ea20814`: recomputed all 19 `git-blob-set-v1` entity rows
+  with the canonical ref-pinned algorithm; every stored fingerprint matched, every inventory entry
+  had exactly one row, and no evidence path was missing. Entity prose was reviewed as unchanged.
+
 - 2026-07-10T19:49+02:00 — Positional 260707-HFX2-L19: refreshed the existing `Supervisor Sweep`
   entity for the hosted-delivery retry-before-escalation boundary; added the guard/attempt threshold
   identifiers, detection and inbox-state relationships, and the F1 regression-pin disposition.
