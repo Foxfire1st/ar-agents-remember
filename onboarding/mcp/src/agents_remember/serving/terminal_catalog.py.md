@@ -126,14 +126,14 @@ field-by-field reconstruction, so a newly added column (like the spawned-by pair
 re-attach/status change **by construction** rather than silently dropped. `with_leaf_key(leaf_key)` is
 the leaf-attach write point: a copy bound to `leaf_key`, or unbound when `None`.
 
-The **leaf-uniqueness role** (L5 fix 2) splits one slot into two: `TerminalSessionRole = "chat" |
-"terminal"`, `role_for_kind(kind)` maps a shell (`kind == "terminal"`) to `"terminal"` and any harness to
-`"chat"`, and the `entry.role` property derives a row's role from its kind. Uniqueness is per **(leaf,
-role)** — a leaf may hold at most one running chat AND one running terminal, so an agent chat and a scratch
-terminal can share a leaf without colliding. `active_for_leaf(leaf_key, *, role="chat")` is the
-role-scoped registry lookup the opener + `attach-leaf` routes call before an upsert: the first `list()`
-row whose `leaf_key == leaf_key and status == "running" and role == role`, else `None` (the default
-`"chat"` is the agent slot). Because `active_for_leaf` gates on `running`, an exited/landed/terminated
+The **leaf-uniqueness role** (L5, superseded by HFX2-L17 pair binding) splits one slot into role-scoped
+bindings: `TerminalSessionRole = "chat" | "terminal"` remains the legacy kind mapping, while the
+persisted `seat_role`/JSON `seatRole` is the current mutable binding identity. Uniqueness is per
+**(leaf, seat role)** — a leaf may hold one live owner for each declared pipeline role, so different
+roles can coexist without colliding. `active_for_leaf(leaf_key, *, seat_role)` is the required-role
+registry lookup the opener + `attach-leaf` routes call before an upsert: the first `list()` row whose
+`leaf_key == leaf_key`, `status == "running"`, and `binding_role == seat_role`, else `None`. Because
+`active_for_leaf` gates on `running`, an exited/landed/terminated
 session frees its leaf for that role (a stale `running` row is
 downgraded to `exited` by the `terminal_liveness.py` sweeper / direct liveness observations once
 the hysteresis evidence threshold is met — never by a single transient tmux command failure),
@@ -196,12 +196,13 @@ The catalog is JSON-primary and API-shaped: persisted keys use the same camelCas
   `terminated` status and `terminatedAt` timestamp.
 - The command is stored as a tuple/list of fixed argv parts, not a shell string.
 - `leaf_key` is opaque (the catalog never parses it) and optional — omitted from JSON when unset so the
-  schema stays back-compatible. The catalog only *reports* the single running owner **of a given role** via
-  `active_for_leaf(leaf_key, role=…)`; the `409 leaf-taken` decision + the claim-then-write atomicity live
-  in `serving.app`.
-- Uniqueness is per **(leaf, role)**, not per leaf: a chat (any harness) and a terminal (a shell) are
-  distinct slots and never conflict with each other on the same leaf; `role` is always derived from kind
-  (`role_for_kind` / `entry.role`), never stored separately.
+  schema stays back-compatible. The catalog only *reports* the single running owner **of a declared seat
+  role** via `active_for_leaf(leaf_key, seat_role=…)`; the `409 leaf-taken` decision + the claim-then-write
+  atomicity live in `serving.app`.
+- Uniqueness is per **(leaf, seat_role)**, not per leaf: the persisted `seatRole` binding identity is
+  distinct from immutable `spawnRole` provenance, and different roles never conflict on the same leaf.
+  Legacy rows migrate `seatRole` from persisted role/provenance and the terminal kind, then the normalized
+  value is written back; role is no longer derived-only or omitted from storage.
 - Manual retirement is a TERMINAL mark: `with_retirement` sets `status="terminated"`, so a retired
   row is filtered out of `list()` exactly like any other terminated row and can never be resurrected by
   `with_liveness_success`. Normal successful completion is separate and non-destructive:
@@ -250,6 +251,10 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes this local dashboard catalog. | — | — |
 
 ## Update History
+
+- 2026-07-10T21:05+02:00 — Super-exit curator correction: replaced the pre-L17 default-role and
+  derived-only uniqueness prose with the landed required `seat_role` lookup and persisted `(leaf,
+  seatRole)` binding model.
 
 - 2026-07-10T18:30+02:00 — 260707-HFX2-L18: documented typed optional-field readers and
   required/optional JSON projection helpers. Required fields, `seatRole`, legacy migration,
