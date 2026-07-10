@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`        |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastUpdated            | 2026-07-10T18:30+02:00 |
+| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f`        |
+| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -34,6 +34,15 @@ classes: `SpawnKnobApplicationTests` (per-harness knob application + the free-fo
 `SpawnLevelResolutionTests` (the dispatch `level` + rolesPerLevel resolution chain).
 
 ## Code Commentary
+
+### 260707-HFX2-L18 Plain-Terminal Regression
+
+`test_plain_terminal_spawn_skips_harness_dispatch` pins the controller branch exposed by the L18
+decomposition. A `kind="terminal"` spawn succeeds without a `harness` response field, launches the
+plain `/bin/bash` command through the fake host, and persists a terminal-kind catalog row whose
+binding role is `terminal`. The test proves that flattening the dispatch locals did not route plain
+terminals through settings-owned harness resolution or disturb terminal binding/payload behavior.
+The remainder of this file's diff is Ruff formatting only; no existing assertion changed.
 
 ### 260707-HFX2-L17 Spawn Seat-Role Payload
 
@@ -176,6 +185,11 @@ No meaningful cross-repo references found.
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-07-10T18:30+02:00 — 260707-HFX2-L18: added the plain-terminal dispatch regression for the
+  extracted controller flow; it proves harness resolution stays skipped and shell/catalog/payload
+  behavior is preserved. Other test-file changes are formatting only. Verification metadata remains
+  pinned until closeout stamps the eventual L18 code commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added binding-role response and dispatch-row coverage
   to spawn tests.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `fdff55f2921d7aaa8ba240c11087d02c15a170d7`                                      |
-| lastVerifiedCommitDate | 2026-07-10T15:53:23+02:00|
+| lastUpdated            | 2026-07-10T18:30+02:00 |
+| lastVerifiedCommitHash | `c2f5b64b9ba923c937e1c6af20a9123c3aedaf3f`                                      |
+| lastVerifiedCommitDate | 2026-07-10T18:52:44+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -158,6 +158,11 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
 
 ## Update History
+
+- 2026-07-10T18:30+02:00 — No route impact: 260707-HFX2-L18 decomposed the existing
+  `spawn_agent_session_payload` controller and added a plain-terminal regression to satisfy the
+  strict CRAP gate; public tool names, payload/refusal shapes, settings-owned spend authority,
+  pair arbitration, and this route's module responsibilities are unchanged.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 MCP-tools route impact: threaded binding role through
   attach/spawn/expectation responses and pair-based retirement without changing settings authority.
