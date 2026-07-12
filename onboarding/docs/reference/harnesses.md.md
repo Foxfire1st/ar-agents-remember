@@ -6,8 +6,8 @@
 | path                   | `docs/reference/harnesses.md`           |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-10T13:03+02:00                  |
-| lastVerifiedCommitHash |                                         `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                         2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -64,6 +64,7 @@ settings-owned escape hatches that are recorded in spawn provenance.
 | Spawn tests pin settings-owned launch/session knobs and `spend-override-unsupported` refusals. | [../../mcp/tests/test_spawn_agent_session.py](../../mcp/tests/test_spawn_agent_session.py.md) |
 
 ## Update History
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: documented Codex's explicit argv mapping and exact
   effort enum, the bound-harness-log acceptance protocol, separate command verification, and the

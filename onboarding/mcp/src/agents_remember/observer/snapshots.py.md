@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -225,6 +225,10 @@ lifecycle when the enclosure lifecycle id equals the task id/name. No binding is
 The file iterator is recursive but excludes `0_archive/` and `enclosures/`, so nested active task folders
 work while archived roots and contract folders stay out of the JSON scan.
 
+### 260712-TRH-L7 landing merge boundary
+
+Snapshot readers merge the refresher's immutable fact for each contract inside the contract-local status boundary. If the landing reader is invalid, the local status remains available and the landing detail is omitted with a warning rather than freezing the whole tick or inventing success.
+
 ## Invariants And Boundaries
 
 - **Reuse, don't re-parse:** providers come through `current_state`, contracts
@@ -282,6 +286,7 @@ work while archived roots and contract folders stay out of the JSON scan.
 | The data-surface inventory the structural/analytical split follows. | L91-L118; L332-L344 | [docs/design/observable-lifecycle.md](../../../../docs/design/observable-lifecycle.md) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: recurring snapshot assembly merges immutable landing observations per contract, logs invalid snapshot readers, and keeps local status truthful when landing data cannot be read.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: bounded the always-on task/series summary windows,
   removed reader bodies from them, added body revisions and the path-confined on-demand full-body

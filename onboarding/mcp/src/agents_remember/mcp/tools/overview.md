@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                      |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -157,7 +157,16 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The linear-half hint delegates to the worktree guidance state machine. | [guidance/lifecycle_guidance](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
 
+## 260712-TRH-L4 Route Impact
+
+The public tool route now exposes spawn-only creation, exact-session hosted_session_readiness, and an explicit dispatch-brief kind. Legacy context/submit refuses before side effects; promptKeywords apply once after readiness; completion requires delivered plus harness-log-confirmed proof.
+
+
 ## Update History
++## 260712-TRH-L4 Route Impact
+
+The public tool route now exposes spawn-only creation, exact-session hosted_session_readiness, and an explicit dispatch-brief kind. Legacy context/submit refuses before side effects; promptKeywords apply once after readiness; completion requires delivered plus harness-log-confirmed proof.
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20 MCP-tools route impact: public consume keeps its
   terminal snapshot until compaction; the public response contract is unchanged.

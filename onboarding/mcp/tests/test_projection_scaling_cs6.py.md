@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-07-10T01:14+02:00                         |
-| lastVerifiedCommitHash |                                                `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                                2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash |                                                `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate |                                                2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                               |
 
 ## Governing Overview
@@ -17,6 +17,10 @@
 ## Purpose
 
 `test_projection_scaling_cs6.py` pins the projection tick fixes from HFX2-L12 fix round 2. It focuses on the 1-second projection path surfaces that previously double-folded gate logs, double-walked task JSON, re-ran git status per leaf, re-parsed unchanged lifecycle logs, and silently allowed task-document body payload growth.
+
+### 260712-TRH-L7 invalid landing containment
+
+The scaling suite adds a raising landing snapshot reader case. It proves local status survives with a warning and the projection tick does not lose unrelated contracts.
 
 ## Code Commentary
 
@@ -69,6 +73,7 @@ No meaningful cross-repo references found.
 | Same-repository tests only. | N/A | N/A |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: scaling regressions prove invalid landing snapshots sacrifice only one contract's landing detail and do not block the projection tick.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6/F7/B2: revived the lifecycle-log cache instrument,
   proved sidecar merge without reparse, and added body-free/windowed broadcast plus on-demand body

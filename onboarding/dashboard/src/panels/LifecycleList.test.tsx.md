@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-12T17:50 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -92,6 +92,24 @@ and current step. It also asserts the admitted row has `min-w_0` / `max-w_100%` 
 `flex_1_1_0`, while the row metadata span uses ellipsis and no auto left margin, which pins the
 structural part of the no-horizontal-scroll contract that jsdom can see.
 
+The 260712-TRH-L3 block adds the disclosure contract: groups default expanded; only descendant-bearing
+BY REPO sprint/master rows expose native buttons; sprint and master collapse remain independent; stable
+typed keys persist across remounts; disclosure activation never calls `onSelect`; selected detail remains
+selected while hidden and returns under BY PHASE; the total heading count stays unchanged; and empty
+masters/leaves have no false controls. This test sidecar is refreshed because the test file is a changed
+source contract, while generated package assets receive no sidecars.
+
+### 260712-TRH-L6 Operations signaling matrix
+
+The L6 regressions keep the three Operations row signals independent. They pair a running task with an
+idle hosted chat, and a pending inbox acknowledgment with that idle chat, so neither durable progress nor
+delivery state can imply model work. Identity cases prove exact qualified-leaf binding wins, an unclaimed
+same-lifecycle seat is only a fallback, and a session claimed by another leaf cannot leak across the join.
+Multi-seat cases pin deterministic precedence and per-seat detail. Missing, landed, exited, terminated,
+stale, and unknown sessions omit the indicator or render `unknown` rather than inventing activity. A live
+shared-store transition test updates the same catalog snapshot used by Chats and proves Operations follows
+`turnState` without adding a poller or classifier.
+
 ### Conventions
 
 The fixture builders stay local to the test file because this is a focused component contract rather
@@ -125,6 +143,19 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 | The frontend mirror of `WorkspaceProjection`, `LifecycleProjection`, and `EnclosureNode`. | L1-L80; L360-L390 | [types/projection.ts](../types/projection.ts) |
 
 ## Update History
+
+- 2026-07-12T17:50 — 260712-TRH-L6: added Operations integration coverage for running-task versus idle-chat
+  separation, pending inbox versus idle chat, shared-store live transitions, and the three-axis row
+  contract. Candidate source remains uncommitted; metadata is pinned until closeout.
+- 2026-07-12T18:00+02:00 — 260712-TRH-L6 manager availability exception: paired the substantive
+  Operations signaling-matrix body with the task-progress/chat/inbox separation, exact-leaf and lifecycle
+  fallback rules, multi-seat precedence, omission behavior, and shared-store transition coverage required
+  by the closeout body gate. Both dedicated curator chats were quota-blocked after the main curation pass.
+- 2026-07-12T12:58+02:00 — 260712-TRH-L3: added focused regressions for expanded defaults, sprint/master
+  and nested-independent collapse, stable-key persistence, selection/detail stability, BY PHASE flatness,
+  total-count preservation, native keyboard/accessibility semantics, and rows without descendants.
+  Candidate source is uncommitted; verification metadata is pinned to the last committed source touch
+  until closeout.
 
 - 2026-07-07T14:00+02:00 — agent-orchestration L17 (supplement): added a focused gate-hint regression test —
   a lifecycle carrying a bare `ask` but no durable gate renders NO "Gate:" line (and the ask question does

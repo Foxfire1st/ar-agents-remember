@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-23T07:25+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -102,6 +102,10 @@ landing window, so the build-phase poll stays network-free like `freshness`.
 observable-lifecycle enclosure anchor, surfaced snake_case (like its sibling
 keys) so `worktree_attach` can resume it; `""` for contracts written before 2c.
 
+### 260712-TRH-L7 projected versus interactive landing
+
+`status_payload` remains the interactive, fresh-observation surface. `projected_status_payload` accepts a pre-observed landing snapshot for recurring projection, so guidance preserves landing semantics without synchronously invoking remote commands.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -122,6 +126,7 @@ No external Domain Documentation source is configured for this memory repo.
 Guidance/status payloads now expose contract `kind`, `leaf_id`, `enclosure_path`, and optional `parent_contract_path`, making the leaf/root split visible to dashboard and tool callers.
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: separated interactive status landing probes from projected status, which accepts only the latest immutable observation and its freshness truth.
 
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: status and next-action payloads now include `kind`, `leaf_id`, `enclosure_path`, and `parent_contract_path`, while retaining `contract_path` for callers that have not yet renamed the field. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-23T07:25+02:00 — slice 09 (gate-signal adoption, S1 visibility fix): removed the dirty-tree → `commit-approval-pending` branch from `lifecycle_guidance` — a dirty worktree no longer fabricates a commit-approval gate and instead falls through to its honest lifecycle-position phase (closeout-completed → `integration-pending`, etc.). `commit-approval-pending` is owned by the closeout preview (`closeout.py`) and, once the gate plane is adopted, by a raised `closeout-approval` `GateNode` — never `git status`. Dropped the now-unused `contract_has_worktree_changes` import (`worktree_dirty`/`run_git` stay). Corrected the stale Code Commentary opening that still claimed the module reads worktree dirtiness into phases. Verification metadata pinned until closeout stamps the slice-09 code commit.

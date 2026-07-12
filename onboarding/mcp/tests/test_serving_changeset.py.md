@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_serving_changeset.py`      |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-12T12:55+02:00 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -26,6 +26,12 @@ behaviour is exercised end-to-end rather than mocked.
 ## Code Commentary
 
 ### Logic
+
+The regression suite now pins the real mixed-case persisted leaf-id shape,
+rejects lookup across another master enclosure, and verifies the route-level
+`includeLeaves=false` opt-out without invoking per-leaf summaries. Existing
+real-git committed, working, and coherent master range assertions remain the
+guards against changing diff semantics.
 
 Real git repos are built per case (`_init_repo` / `_commit_all` via the `safe.directory`
 `_git` helper), so the diff numbers are produced by git, not stubs:
@@ -96,6 +102,8 @@ this checkout, `unittest.TestCase` with a `tempfile.TemporaryDirectory` per case
 | The L1 files test whose harness/style this mirrors. | [test_serving_files.py](agents-remember/mcp/tests/test_serving_files.py) |
 
 ## Update History
+
+- 2026-07-12T12:55+02:00 — 260712-TRH-L2: added regressions for mixed-case leaf normalization, exact master enclosure scoping, and the master summary opt-out while retaining the existing real-git range tests. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-07-04T23:43+02:00 — L8 content update: `MasterChangesetTests` now models an in-flight series with source at base and code/memory work branches ahead, asserts master counters equal the real base→work-tip git diff, checks `master_file_diff` AFTER content from the same work tip, and covers the landed fallback after source fast-forward plus work-branch deletion. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-03T12:50+02:00 — No content impact: L15 sorted the third-party import block (everything stays below the load-bearing sys.path.insert); no test logic change.

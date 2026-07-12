@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-06-29T23:00+02:00                                      |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                  |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-12T12:55+02:00                                      |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`                  |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -24,6 +24,10 @@ master-mode row inspection, the DetailPanel button → target, and the Cockpit t
 ## Code Commentary
 
 ### Logic
+
+The viewer tests cover loading-before-data, explicit request errors, the
+master `includeLeaves=false` request, and a fake-timer working refresh that
+proves no next cycle begins while the prior list/file requests remain pending.
 
 `stubChangeset()` installs a `vi.fn` `fetch` that returns `MASTER_CHANGESET` for `/api/changeset/master`,
 `TASK_CHANGESET` for `/api/changeset/task`, and `{}` otherwise. Cases:
@@ -69,6 +73,8 @@ design).
 | Subject under test: the screen. | L144-L293 | [ChangeSetViewer.tsx](ChangeSetViewer.tsx) |
 
 ## Update History
+
+- 2026-07-12T12:55+02:00 — 260712-TRH-L2: added loading/error, master query-shape, and non-overlapping working-refresh regressions while retaining task, master, leaf, and DetailPanel entry coverage. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-06-30T00:00:00+02:00 — L5 (diff-viewer polish): the empty-state assertions in the **task-scope** and
   **master-mode** cases now match `container.textContent` for "Select a changed file" instead of

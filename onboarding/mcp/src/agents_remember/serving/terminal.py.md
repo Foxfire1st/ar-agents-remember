@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T23:45+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -157,7 +157,12 @@ so a fake spawner can back a session with any process object.
 | The shared opener that seeds this host's `env` at `ensure` (the L2 knob-injection call site). | L137-L146 | [terminal_opener.py](terminal_opener.py) |
 | The slice authority (Mode B2 = embedded real TUI, render-not-scrape, tmux persistence). | [tasks/260610_task6-control-plane/task.md](agents-remember/../tasks/agents-remember/260610_task6-control-plane/task.md) |
 
+## 260712-TRH-L4 Final Candidate
+
+This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+
 ## Update History
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-07T23:45+02:00 — 260707-HFX-L5 (catalog liveness hysteresis): the tmux probe is now
   **evidence-bearing** — new `TmuxProbeResult(exists, evidence)` +

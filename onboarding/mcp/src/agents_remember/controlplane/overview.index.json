@@ -81,7 +81,7 @@
     "supervisor_signals"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L20 makes inbox state monotonic across concurrent consume and hosted delivery. The append-only log retains the terminal consume snapshot; a shared fold used by live reads and compaction ignores physically later pending snapshots once an id is consumed or ladder-resolved. Explicit dismissal remains physical deletion, and time-based compaction remains audit cleanup. 260707-HFX2-L17 carries `seatRole` beside `leafKey` through expectation rows, operator inbox rows, renewal, supervisor cooldown records, and routing. Current manager/architect/worker discovery and chain credit use bind...",
+    "summary": "260712-TRH-L5 adds a secondary confirmed-gone retention predicate without changing fallback retention: only pending supervisor nudge/escalation rows with a subject id qualify, catalog `terminated` is direct proof, and a compacted tombstone needs one successful exact-name tmux snapshot. `OperatorInboxStore.reconcile_and_compact` resolves and compacts under one lock and reuses the folded current before redelivery; consumed/durable/protected rows and indeterminate evidence remain visible. 260707-HFX2-L20 makes inbox state monotonic across concurrent consume and hosted delivery. The append-only...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -137,20 +137,20 @@
       "store",
       "supervisor_signals.py",
       "supervisor_signals",
-      "seatRole",
-      "leafKey",
+      "terminated",
+      "OperatorInboxStore.reconcile_and_compact",
+      "TRH",
+      "OperatorInboxStore",
+      "reconcile_and_compact",
       "HFX2",
       "L20",
-      "L17",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "0d5ce6784930aa4e9006ab4bbf2b788a3296abce",
+      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
       "/../../overview.md",
       "controlplane/",
       "rung_due",
-      "next_step",
-      "seat_is_suspect",
-      "escalatedAt"
+      "next_step"
     ]
   },
   "fallback": {

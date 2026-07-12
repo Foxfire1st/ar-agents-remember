@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`        |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -36,6 +36,22 @@ Oct-2025 incident is the reference case for "at-least-once push still needs a re
 sweep").
 
 ## Code Commentary
+
+### 260712-TRH-L5 Confirmed-Gone Inbox Reclamation
+
+Before predicates and redelivery, `run_supervisor_sweep` passes one folded inbox snapshot through
+`reconcile_and_compact`. The narrow resolver considers only pending supervisor-created nudge or
+escalation rows with a subject id; catalog `terminated` is direct proof, while a compacted
+tombstone needs one successful exact-name `ar-<subject-id>` tmux snapshot. Running, landed,
+exited, tmux-present, and tmux-command-failed evidence keeps rows. Resolved rows use the existing
+`ladder-resolved` state and `subject-session-confirmed-gone` reason, then disappear in the same
+sweep before redelivery is selected. The body-free aggregate `inbox-compacted` event reports
+counts and evidence only, and is silent when a sweep has no physical removals or resolutions;
+the existing TTL/cap fallback remains in force.
+
+The lock-held reconcile callback performs one catalog read and at most one deduplicated tmux
+snapshot. The callback is deliberately store-independent because the inbox lock can be held for
+up to the tmux's 5-second timeout; future callbacks must not re-enter the store.
 
 ### 260707-HFX2-L17 Pair-Scoped Supervisor
 
@@ -292,7 +308,17 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local sweep; the level-triggered-reconciliation design rationale cites an external incident (Inngest, Oct 2025) only as research justification, not a code boundary. | — | — |
 
+## 260712-TRH-L4 Final Candidate
+
+This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+
 ## Update History
+- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented the final confirmed-gone
+  reconciliation ordering, fail-closed evidence matrix, body-free/no-op-silent event contract,
+  bounded snapshot behavior, and non-blocking F3-F6 follow-ups (canonical tmux naming, stale
+  append-mutator refold, lock-read characteristics, and duplicated terminal-update shape).
+  Verification metadata remains pinned until closeout stamps the candidate commit.
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T21:05+02:00 — Super-exit curator correction: reconciled the predicate-count prose
   with the eight landed `evaluate_predicates` families, including ladder-terminal and dead-upstream.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-04T11:10+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -80,7 +80,12 @@ failures where the binaries or required terminal capabilities are absent (the sl
 | The terminal host under test. | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
 | The serving layer the host joins. | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
 
+## 260712-TRH-L4 Final Candidate
+
+This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+
 ## Update History
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-04T11:10+02:00 — L2 (knob injection): the registry fixture's fake tmux `_create_tmux` creator
   gained the `env` parameter (and a `created_env` recorder) to match the `TmuxCreator` seam now carrying

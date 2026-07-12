@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T01:14+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -22,6 +22,10 @@ precomputed action availability, workspace tree assembly, the atomic projection
 write, and the structural surface readers. L11 adds abandon-terminality coverage:
 an abandoned-enclosure lifecycle projects `abandoned`, and abandoned/reopened
 enclosures synthesize no paused persistent lifecycle.
+
+### 260712-TRH-L7 landing snapshot integration
+
+The projection tests now exercise projected status receiving immutable landing facts rather than invoking remote landing probes during the recurring read.
 
 ## Code Commentary
 
@@ -257,6 +261,7 @@ still projects — it is NOT archived — but with both flags False until `workt
 directories).
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: projection tests cover the new network-free landing snapshot integration while preserving existing observer projection contracts.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: changed projection fixtures to assert summary-only
   task/series bodies and repaired the governing-overview backlink. Verification metadata remains

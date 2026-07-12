@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -334,6 +334,10 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 `exclude_none`) and passes removal markers (`{key: id}`) through as-is. SSE uses built-in
 `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive).
 
+### 260712-TRH-L7 refresher lifecycle wiring
+
+Live app creation enables the landing refresher; simulation supplies a feeder and disables remote observation. Lifespan shutdown tolerates a failed refresher task and still reaches `TerminalHost.shutdown`.
+
 ## Invariants And Boundaries
 
 - **Local-first:** bound to `127.0.0.1` by the CLI default, no auth in v1; the module docstring
@@ -433,6 +437,7 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: live app lifecycles enable the landing refresher while simulation remains observation-disabled; shutdown retains host cleanup if the refresher has already failed.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: carried role through HTTP open/attach responses,
   added explicit hand-opened role claims and pair-scoped conflicts, and keyed retire authority on

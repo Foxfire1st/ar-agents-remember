@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -110,6 +110,13 @@ until then, so hosted-delivery failures do not escalate before the persistent re
 
 ## Hot Path Summary
 
+260712-TRH-L5 inserts confirmed-gone inbox reconciliation at the front of the deterministic
+supervisor sweep. The bounded policy resolves only eligible supervisor nudge/escalation rows:
+catalog termination is direct proof, compacted tombstones require one successful exact-name tmux
+snapshot, and command failure fails closed. Resolve-plus-compact runs under the inbox lock before
+redelivery; the body-free aggregate event is silent on no-op sweeps. The existing TTL/cap fallback
+and active/landed/exited retention remain unchanged.
+
 260707-HFX2-L17 centralizes seat normalization in `seat_binding.py`: `spawnRole` is immutable
 provenance, `seatRole` is current binding, and uniqueness is one live owner per canonical
 leaf-role pair. `terminal_catalog.py` migrates old rows; opener/assignment liveness-check the
@@ -178,6 +185,10 @@ become `exited` only through the **catalog liveness hysteresis** path (260707-HF
 `terminal_liveness.py`: evidence-scaled thresholds, ≤1 probe sweep per 10s regardless of the
 dashboard's 1s polling, self-healing false exits), and `POST /api/terminal/{session}/terminate` is
 the only destructive terminal action.
+
+### 260712-TRH-L7 projection/observation split
+
+The serving layer starts one lifecycle-managed landing refresher for live projection, passes its latest immutable snapshot into the network-free projector tick, and cancels it during shutdown. Simulation disables remote observation; interactive status remains the fresh-probe path. A failed refresher is logged without preventing host shutdown.
 
 ## Route Model
 
@@ -335,6 +346,9 @@ the only destructive terminal action.
   (`HEAD → worktree`, uncommitted only) change-set straight off the persisted enclosure contract
   (`_load_leaf_contract`, by leaf-id — works with no live worktree, for a completed leaf), with the
   selector validated (`leaf` needs `master` + a valid `mode` → `400`, no-live-worktree `working` → `404`).
+  Master and leaf contract discovery is confined to the requested repo/master enclosure and
+  canonicalizes both requested and persisted leaf ids; `/api/changeset/master?includeLeaves=false`
+  skips the optional per-leaf breakdown while preserving the coherent net range.
   Reuses `scope.py` + the L1 posture; the change-detection primitive is
   `worktrees/modules/git.changed_files_with_counts`. Feeds the dashboard Change-Set Viewer (L4/L4a).
 - `notes.py` — the **read-only coordination-notes API** (agent-orchestration L9, friction F-M) (its status mapper, like `scope.py`'s files-API mapper, answers `400 bad-path` for `ValueError` input such as null bytes — the L9 review's L9R-1 fix, applied to both):
@@ -616,7 +630,23 @@ the only destructive terminal action.
 | The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
+## 260712-TRH-L4 Route Impact
+
+Serving implements exact-session readiness, copy-mode rechecks, calibrated settling beyond the shipped 120 ms suppression window, harness-log proof, and pending-without-respawn recovery. Catalog writers serialize the complete one-read/one-write batch across processes while atomic readers remain lock-free.
+
+
 ## Update History
+- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the serving route for the new
+  inbox-reclamation policy, one-catalog-read/one-snapshot boundedness, same-sweep compaction before
+  redelivery, body-free aggregate telemetry, no-op silence, 5-second lock-hold characteristics,
+  and F3-F6 non-blocking reviewer residuals. Verification metadata remains pinned until closeout.
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: serving lifecycle wiring starts and cancels the landing refresher outside the projection tick and preserves host shutdown after refresher failure.
++## 260712-TRH-L4 Route Impact
+
+Serving implements exact-session readiness, copy-mode rechecks, calibrated settling beyond the shipped 120 ms suppression window, harness-log proof, and pending-without-respawn recovery. Catalog writers serialize the complete one-read/one-write batch across processes while atomic readers remain lock-free.
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
+
+- 2026-07-12T12:55+02:00 — 260712-TRH-L2 route impact: `changeset.py` now scopes contract discovery to the requested master enclosure, canonicalizes persisted/requested leaf ids, and exposes an opt-out for expensive master leaf summaries while retaining the net range semantics. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-07-10T18:30+02:00 — No route impact: 260707-HFX2-L18 replaced repeated terminal-catalog
   optional-field parsing/projection branches with typed helpers and added a complete round-trip

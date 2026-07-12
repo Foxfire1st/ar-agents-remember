@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureCanvas.tsx` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-06-27T23:08+02:00                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`             |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -341,6 +341,10 @@ in `EnclosureProcessMap`. **G4** added the engine fault/reroute: a `down` provid
 (isolated), `seedFallback` puts the CGC gauge in an amber `reindex` pulse, and `retryArgs` adds a retry chip.
 Branch text truncates to the box with the full string in a `<title>` (hover).
 
+### 260712-TRH-L7 stale landing honesty
+
+Landing refs with `factState: stale` remain visible, carry an explicit state word and age, and use alarm-toned styling. `landingFlowState` permits motion only for observed facts, so stale and missing facts do not animate as current while the enclosure remains inspectable.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -371,6 +375,8 @@ Branch text truncates to the box with the full string in a `<title>` (hover).
 The canvas renders the official/source branch from the projected `CommitRefNode` instead of forcing the label to `main`, so a master series leaf can display its integration branch as the official line.
 
 ## Update History
+
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: stale landing facts now render with an explicit stale tone/state and age, and stale or missing facts are excluded from landing-flow motion so the UI remains visible but motion-inert while projection stays fresh.
 
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: `runtimeState` now accepts `missing`, allowing expected provider slots to render as explicit missing gauges instead of disappearing or becoming generic unknown. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T08:09+02:00 — Engine Room leaf identity: the SVG root `aria-label` now names the selected leaf when `leafId` is present, keeping the canvas accessibility label aligned with the rail and header. Verification metadata pinned until closeout stamps the code commit.

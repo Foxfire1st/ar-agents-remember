@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:07+02:00 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -137,6 +137,10 @@ The README describes external memory in general terms, but this file-level onboa
 | No meaningful cross-repo references found for the README itself. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-12T12:07+02:00 — No content impact: 260712-TRH-L1 bumps the public Status/install pin
+  strings 3.0.0rc4 -> 3.0.0rc5 for the task-reader priority release; the body describes the release
+  version generically, so README structure and guidance remain current.
 
 - 2026-07-08T15:45+02:00 — No content impact: 260707-HFX2-L7 bumps the public Status/install pin
   strings 3.0.0rc3 -> 3.0.0rc4 for the hotfix release tail; the body describes the release version

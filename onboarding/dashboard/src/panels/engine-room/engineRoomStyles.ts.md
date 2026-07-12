@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/engineRoomStyles.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-27T23:08+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -146,6 +146,10 @@ value under `initial={false}`. The fleeting atoms read in the ghost/alarm regist
 enclosure is visually distinct from a live one (§2.1). Colour-as-state is load-bearing (note 08). This
 module exports style objects/recipes only — no React, no data, no panel logic.
 
+### 260712-TRH-L7 fact-state styling
+
+The fact-state recipes include a visibly distinct stale variant used by landing refs. This keeps freshness truth in the semantic style axis instead of hiding it in ad-hoc component chrome.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -162,6 +166,7 @@ module exports style objects/recipes only — no React, no data, no panel logic.
 | The GSAP hook + the canvas that read these now-static recipes and drive the motion. | — | [useEngineTimeline.ts](useEngineTimeline.ts) · [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: extended Engine Room fact-state styling for visibly distinct stale landing observations.
 
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: added `missing` runtime variants for the engine gauge outer, charge, and petals so missing provider slots are visible but not confused with nominal or indexing engines. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T09:53+02:00 - Body review for closeout: documented the slice-16 `stackList`

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:28+02:00 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 
 > **Status:** active baseline
 
@@ -438,7 +438,26 @@ HFX2-L21 advances the existing Dashboard frontend feature: the Chats session rai
 persisted, pointer- and keyboard-adjustable 220–560 px sidebar instead of a fixed 16 rem column. The
 resize separator preserves terminal working width and adds no new route or serving behavior.
 
+260712-TRH-L1 restores the existing Dashboard task reader's functional contract without enlarging
+the recurring projection: the selected document hydrates its complete body on demand before notes or
+change-set counters mount, shows honest loading/fallback state, and caches by path plus body revision.
+The implementation stays within the established `dashboard/src/data` and `dashboard/src/panels`
+routes and ships through the existing generated-dashboard package boundary.
+
+## 260712-TRH-L4 Route Impact
+
+Repository onboarding now records spawned-unbriefed → harness-ready → briefed hosted dispatch, exact session-id continuity, delivered-plus-harness-log-confirmed assignment, canonical l-01 ownership with generated mirrors, and fully serialized catalog writers with lock-free atomic readers.
+
+
 ## Update History
++## 260712-TRH-L4 Route Impact
+
+Repository onboarding now records spawned-unbriefed → harness-ready → briefed hosted dispatch, exact session-id continuity, delivered-plus-harness-log-confirmed assignment, canonical l-01 ownership with generated mirrors, and fully serialized catalog writers with lock-free atomic readers.
+
+- 2026-07-12T13:36+02:00 — No route impact: 260712-TRH-L2 body review confirms the changeset and dashboard reader refinements are fully documented in their existing child routes; the repository-level onboarding route model is unchanged. Verification metadata remains pinned until closeout.
+- 2026-07-12T12:28+02:00 — 260712-TRH-L1 root route impact: documented body-first complete task
+  hydration, delayed ancillary reader requests, honest loading/fallback state, revision caching, and
+  the unchanged source-to-package dashboard boundary. The public release pin advances to rc5.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20 root route impact: recorded monotonic consumed inbox
   state across concurrent hosted delivery; public communication surfaces remain unchanged.

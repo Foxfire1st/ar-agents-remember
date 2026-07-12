@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-12T17:50 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -123,18 +123,30 @@ sits one 22px step past the master, and a flat run's rows keep byte-identical st
 feeding React Aria `selectedKeys`, so raw lifecycle ids from older surfaces still highlight the right
 typed row when a matching row exists.
 
+After hierarchy flattening, `descendantBearingKeys` identifies parent rows with visible descendants.
+In `BY REPO`, `visibleHierarchyRows` walks the depth-first rows with a collapsed-depth stack, hiding
+descendants of collapsed sprint/orchestration or master rows while preserving nested keys' independent
+state. `TaskGroupDisclosure` is a native button with an accurate label and `aria-expanded`; its event
+handlers stop pointer, keyboard, and click propagation so disclosure is not ListBox selection. The
+heading still uses the full `rows.length`, and switching to `BY PHASE` uses the unfiltered flat rows.
+`useCollapsedTaskGroups` defaults to expanded and persists stable typed selection keys in
+`operations.tasks.collapsed.v1`; selectedId and task detail remain controlled by the parent.
+
 Task document rows attach runtime state by structured data: direct `doc.lifecycleId`, or for root
 masters the sibling enclosure whose `taskRoot` matches the doc directory and whose lifecycle id is the
 root task id/name. `taskLabel` is used only for runtime-only lifecycle fallback rows. Progress hints use
 top-level implementation steps for leaf docs and sub-task done/total for master docs; nested substeps do
-not drive the row progress number. `gateHint(gate?.kind, ask)` returns the gate kind, the ask question,
-or `ask`, and renders as a small amber row badge before row metadata.
+not drive the row progress number. `gateHint(gate?.kind, ask)` returns only the durable gate kind and
+renders as a small amber row badge; the wait-loop-era bare `ask` payload is not a task-row affordance.
 
 Task 23/24 adds backend-driven agent-pickup feedback. `analytics.agentPickups` is grouped by
 `lifecycleId`; the first matching `AgentPickupNode` is carried on `OperationRow.pickup` and rendered by
 `AgentPickupIndicator` between the secondary column and gate badge. Fresh pending operator-inbox entries
-show `waiting for agent`; entries past the five-minute pickup TTL show the dismissible `check chat`
-notice. The row does not infer this state locally from clicks.
+show static delivery/acknowledgment wording; entries past the five-minute pickup TTL show the
+dismissible `check chat` notice. Separately, `useSessions` subscribes to the shared Chats-owned catalog
+and `summarizeChatActivity` maps exact live harness `turnState` onto a compact chat indicator. Task
+progress, chat turn activity, and inbox acknowledgment are three independent axes; the row never adds a
+poller or derives chat activity from lifecycle state.
 
 The listbox and list sections use `gridTemplateColumns: minmax(0, 1fr)`, `width:100%`, and
 `minWidth:0` so React Aria section grid tracks cannot size themselves to a long row's min-content
@@ -168,7 +180,11 @@ all drop out through the same existence rule, one leaf renders at most one task 
 `taskRoot`/series join; a shared master lifecycle by itself must never admit a document or re-parent a
 row, so unrelated leaves under one master stay distinct rather than collapsing onto each other.
 Spawned-session provenance stays visible where sessions are shown (the chats sidebar keeps its own
-qualified-leaf-key rule); this list only de-duplicates task entries. The L14 tier treatment is
+qualified-leaf-key rule); this list only de-duplicates task entries. Chat activity uses exact
+qualified-leaf identity first, then only unclaimed lifecycle-bound fallback sessions, and omits
+missing/terminal/non-harness seats. Collapse state is presentation
+state only: it must not mutate task documents, task status, selection, detail, or hierarchy projection.
+The L14 tier treatment is
 strictly additive and orchestration-gated (D3): tier/badge/indent render only when a projected doc
 carries `orchestrates` — no doc may be styled as a command row from titles, folder conventions, or
 lifecycle shape, and a run without an orchestration task must render exactly as pre-L14 (pinned by
@@ -200,8 +216,22 @@ list.
 | Shared typed selection and label helpers used by the list and detail panel. | L1-L76 | [taskIdentity.ts](../data/taskIdentity.ts) |
 | The shared `Panel` head/sticky band the pivot sits in. | L1-L64 | [grammar/Panel.tsx](../grammar/Panel.tsx) |
 | Task-row pickup spinner/check-chat notice. | — | [AgentPickupIndicator.tsx](AgentPickupIndicator.tsx) |
+| Native disclosure control and stable persisted collapse hook used by the hierarchy renderer. | L21-L45; L1-L28 | [TaskGroupDisclosure.tsx](TaskGroupDisclosure.tsx); [useCollapsedTaskGroups.ts](useCollapsedTaskGroups.ts) |
 
 ## Update History
+
+- 2026-07-12T17:50 — 260712-TRH-L6: Operations now subscribes to the shared Chats session catalog and
+  renders separate task-progress, live turn-activity, and inbox acknowledgment axes. Exact-leaf-first
+  identity, unclaimed lifecycle fallback, deterministic multi-seat precedence, no second poller, and
+  static pickup wording are documented here. Reviewer residuals F1 (task-label role), F2 (palette), F4
+  (live-region scale), F5 (poll rerenders), and F6 (undefined-status omission) remain follow-up notes;
+  F3 is recorded on the pickup sidecar. Candidate source remains uncommitted; metadata is pinned until
+  closeout.
+- 2026-07-12T12:58+02:00 — 260712-TRH-L3: added BY REPO-only sprint/master disclosure controls,
+  depth-aware descendant filtering, and stable-key persistence under `operations.tasks.collapsed.v1`.
+  The heading count, typed selection/detail, nested independence, and BY PHASE flatness remain unchanged.
+  Candidate source is uncommitted; verification metadata is pinned to the last committed source touch
+  until closeout.
 
 - 2026-07-07T14:00+02:00 — agent-orchestration L17 (supplement): `gateHint` no longer falls back to the
   lifecycle's bare `ask` payload — it returns the durable `gate.kind` or `""`. The wait-loop-era chip (a

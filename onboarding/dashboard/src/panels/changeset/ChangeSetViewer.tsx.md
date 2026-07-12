@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-06-29T23:00+02:00                                 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`             |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-12T12:55+02:00                                 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`             |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -25,6 +25,12 @@ clears it, restoring the rails).
 ## Code Commentary
 
 ### Logic
+
+Series loads request the net change-set with `includeLeaves=false`. The
+working leaf view now waits for its initial data, then runs list and active-file
+refreshes together and schedules the next cycle only after both settle. The
+viewer renders a loading placeholder until data arrives and retains the
+explicit error state, while stale refresh results are ignored after teardown.
 
 Props are `{ repo, scope?, master?, leaf?, mode?, onBack }` (`ChangeSetTarget` + `onBack`). Selection
 precedence is **`leaf > master > scope`**: on mount / target change an effect fetches `leaf ?
@@ -95,6 +101,8 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 | The render/back/master-placeholder behaviour pinned in the test. | L44-L108 | [ChangeSetViewer.test.tsx](ChangeSetViewer.test.tsx) |
 
 ## Update History
+
+- 2026-07-12T12:55+02:00 — 260712-TRH-L2: added honest loading state, kept explicit errors, opted series loads out of per-leaf summaries, and replaced overlapping working polling with settle-then-schedule refreshes. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-06-30T00:00:00+02:00 — L5 (diff-viewer polish): the no-file column-2 placeholder is replaced by an
   `EmptyStateBackdrop` (the faint `/assets/sc2-siege-tank-boomerang.mp4` loop at `opacity={0.18}`,

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -86,6 +86,12 @@ Both are empty/`None` until the lifecycle reaches a landing phase, so every prio
 feed render unchanged. Slice 5l P2 adds the display-only `LandingRefNode.at` (gh's PR milestone
 timestamp — `mergedAt` once merged, else `createdAt`; `None` for branch refs); the reducer's
 `LandingRefNode(**ref)` splat picks it up from the probe's emitted dict with no reducer change.
+
+260712-TRH-L7 keeps that landing model honest without putting remote work in the projection tick:
+`LandingStateRefresher` publishes bounded, exact-contract immutable observations in the background;
+projection reads the latest snapshot and carries explicit missing/stale freshness fields, while
+interactive status retains its fresh probe behavior. Refresher startup, cancellation, and failed-cycle
+containment are lifecycle-managed by serving.
 
 Slice 05l Part 1 closes the **backend teardown-visibility** gaps in this surface. The reducer's
 `_GUIDANCE_PHASE` gains `"abandoned": "abandoned"`, surfacing `worktrees/modules/guidance.py`'s new
@@ -445,6 +451,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: observer projection now consumes a network-free immutable landing snapshot; `LandingStateRefresher` owns bounded background observation, exact-contract isolation, stale carry-forward, and safe cancellation.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: documented live virtual-cursor river
   compaction, coalesced heartbeat storage plus complete lifecycle reclamation, body-free bounded task

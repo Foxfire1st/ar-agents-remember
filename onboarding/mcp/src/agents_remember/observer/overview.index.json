@@ -15,6 +15,7 @@
     "mcp/src/agents_remember/observer/drift_snapshots.py",
     "mcp/src/agents_remember/observer/event_retention.py",
     "mcp/src/agents_remember/observer/events.py",
+    "mcp/src/agents_remember/observer/landing_state.py",
     "mcp/src/agents_remember/observer/lifecycle_state.py",
     "mcp/src/agents_remember/observer/paths.py",
     "mcp/src/agents_remember/observer/projection.py",
@@ -31,8 +32,8 @@
     "mcp/src/agents_remember/observer/worktree_provider_admission.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 19,
-    "fileSidecars": 19,
+    "sourceFilesInScope": 20,
+    "fileSidecars": 20,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -48,6 +49,8 @@
     "gate",
     "init",
     "init__",
+    "landing",
+    "landing_state",
     "lifecycle",
     "lifecycle_state",
     "mcp",
@@ -86,6 +89,7 @@
       "mcp/src/agents_remember/observer/drift_snapshots.py",
       "mcp/src/agents_remember/observer/event_retention.py",
       "mcp/src/agents_remember/observer/events.py",
+      "mcp/src/agents_remember/observer/landing_state.py",
       "mcp/src/agents_remember/observer/lifecycle_state.py",
       "mcp/src/agents_remember/observer/paths.py",
       "mcp/src/agents_remember/observer/projection.py",
@@ -112,6 +116,8 @@
       "event_retention",
       "events.py",
       "events",
+      "landing_state.py",
+      "landing_state",
       "lifecycle_state.py",
       "lifecycle_state",
       "paths.py",
@@ -142,14 +148,12 @@
       "worktree_provider_admission",
       "mcp/src/agents_remember/observer/",
       "route-local-overview",
-      "0d5ce6784930aa4e9006ab4bbf2b788a3296abce",
+      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
       "/../../../overview.md",
       "observer/",
       "abandoned",
       "lifecycle.ended",
-      "docs/design/observable-lifecycle.md",
-      "lifecycle_*",
-      "promote"
+      "docs/design/observable-lifecycle.md"
     ]
   },
   "fallback": {

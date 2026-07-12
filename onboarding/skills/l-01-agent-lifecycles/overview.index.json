@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "skills/l-01-agent-lifecycles",
+  "overview": "skills/l-01-agent-lifecycles/overview.md",
+  "index": "skills/l-01-agent-lifecycles/overview.index.json",
+  "sourceScope": [
+    "skills/l-01-agent-lifecycles/**"
+  ],
+  "childRoutes": [
+    {
+      "route": "skills/l-01-agent-lifecycles/roles",
+      "overview": "skills/l-01-agent-lifecycles/roles/overview.md",
+      "index": "skills/l-01-agent-lifecycles/roles/overview.index.json"
+    }
+  ],
+  "coveredFiles": [
+    "skills/l-01-agent-lifecycles/SKILL.md"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 27,
+    "fileSidecars": 1,
+    "childRoutes": 1
+  },
+  "routingTerms": [
+    "agent",
+    "lifecycles",
+    "roles",
+    "skill",
+    "skills"
+  ],
+  "hotPath": {
+    "summary": "Canonical lifecycle doctrine for hosted role dispatch. L4 requires spawn-only creation, an explicit readiness gate, then one exact-session dispatch brief; generated mirrors are outputs, not owners.",
+    "candidateHints": [
+      "skills/l-01-agent-lifecycles",
+      "skills/l-01-agent-lifecycles/roles",
+      "skills/l-01-agent-lifecycles/SKILL.md"
+    ],
+    "anchorHints": [
+      "SKILL.md",
+      "SKILL",
+      "roles",
+      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "e63f2dbb5f0701d37bbc17ff5358960c77",
+      "lastVerifiedCommitDate",
+      "T18",
+      "TRH"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "skills/l-01-agent-lifecycles/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T13:41+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:07+02:00                           |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -71,6 +71,17 @@ reference content while the implementation step remains single-rendered. A secon
 waits for the explicit unavailable-body message, and proves the summary remains visible. Existing
 step-label assertions were corrected from two copies to one after removal of the duplicate Progress
 section.
+
+### 260712-TRH-L1 Body-First Reader Regression
+
+A lifecycle-backed reader test holds `/api/task-document` unresolved while an active enclosure,
+change-set handler, and notes-capable reader are present. It proves the summary and loading status are
+visible, the body endpoint is the only request started, and neither notes nor any change-set endpoint
+runs ahead of it. After resolving the body, the test proves complete content replaces the summary and
+both ancillary request classes resume. The complete-body case now covers objective, requirements,
+design, code examples, decisions, open questions, references, freeform sections, and exactly one
+implementation-step row. A cache case proves unchanged path/revision reuse and refetch on revision
+change. Existing change-set cases await hydration before asserting their buttons.
 
 ### Logic
 
@@ -140,15 +151,17 @@ readable task content, but it does not exercise the Python reader that populates
 The planning-doc cases are also component-level; observer reader tests prove projection of unbound and
 archived documents.
 
-The new body cases stub `fetch` and prove component behavior only; they do not re-test the Python
-endpoint. Failure coverage is one request plus honest fallback, not a retry-loop test.
+The body cases stub `fetch` and prove component behavior only; they do not re-test the Python endpoint.
+Failure coverage is one request plus honest fallback, not a retry-loop test. The ordering case proves
+which requests mount first in jsdom; the separate task evidence records the natural-browser smoke over
+the real live backend.
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The L16 cases pin merged body rendering, unavailable-body fallback, retained summary content, and one step copy. | L650-L865 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The component records body availability, merges absent arrays from the summary, and renders the fallback message. | L343-L417; L1261-L1359 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The body-first cases pin request ordering, complete-field rendering, unavailable fallback, retained summary content, one step copy, and revision cache invalidation. | L799-L1038 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The hook records body availability and merges absent arrays; the component delays ancillary mounts and renders loading/fallback messages. | L1-L72; L380-L388; L670-L687; L1044-L1085; L1309-L1388 | [useTaskDocumentBody.ts](../data/useTaskDocumentBody.ts); [DetailPanel.tsx](DetailPanel.tsx) |
 | The drawer under test renders selected series from `analytics.series`, maps only selected root-task lifecycles through enclosure `taskId`/`taskName`, displays child task-document id labels in creation order, and shows top-level task-doc progress. | L305-L452; L496-L508; L553-L556; L717-L785 | [DetailPanel.tsx](DetailPanel.tsx) |
 | The task/series fixture factories include `TaskDocNode.createdAt`, `SeriesNode`, optional task-id/name enclosure mapping, and a nested-progress fixture where top-level progress intentionally differs from backend `stepsDone/stepsTotal`. | L21-L57; L77-L190 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
 | The ordering assertion pins creation-time placement while expecting child task-document id labels and rejecting generated local counters. | L671-L678 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
@@ -167,6 +180,11 @@ endpoint. Failure coverage is one request plus honest fallback, not a retry-loop
 | The `gate-review` / `blocked` fixtures seeded. | L151-L290 | [dev/fixtures.ts](../dev/fixtures.ts) |
 
 ## Update History
+
+- 2026-07-12T12:07+02:00 — 260712-TRH-L1: added the deferred-body request-order regression, expanded
+  complete-content coverage to every reader field class, pinned path/revision cache behavior, and made
+  affected change-set assertions await body hydration. Verification metadata stays pinned until
+  closeout stamps the code commit.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16 R7: added async full-body merge and 404 summary-fallback
   regressions, and changed step assertions to require exactly one Implementation steps copy.

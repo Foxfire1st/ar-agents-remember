@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T16:45+02:00 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -187,6 +187,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   master readers. **260707-HFX2-L13 F6** adds optional `TaskDocNode.bodyRevision` and
   `data/taskDocuments.ts`: the always-on task/series projection is summary-only, while the visible
   reader fetches one full body from `/api/task-document` and invalidates its cache by path + revision.
+  **260712-TRH-L1** adds `data/useTaskDocumentBody.ts`, which owns that visible-body hydration and
+  terminal availability state so `DetailPanel` can keep notes and eager change-set requests unmounted
+  until complete task content either arrives or falls back honestly.
   Task 23/24/L3 adds `AttentionItem.gateId?` and `AgentPickupNode` /
   `Analytics.agentPickups` for attention clear and task-row waiting-for-agent/check-chat feedback,
   including sender/recipient roles, message kind, artifact path, and hosted-delivery state. 260703-L14 mirrors `TaskDocNode.orchestrates?` — the orchestration-command relation (non-empty only
@@ -221,14 +224,28 @@ The Chats data/panel seam now groups every valid session claim by repo-qualified
 of enclosure liveness; explicit landed rows retain the archive, malformed claims get an honest error
 group, and claim-less rows stay flat. `SessionList` renders each group and flat member set as a complete
 spawn-edge forest with manager-only collapse, live-first order, bounded width, and full-value hover
-recovery. The task reader now merges the on-demand body over its current summary, preserves omitted
-arrays, shows an explicit summary fallback on fetch failure, and renders implementation steps once.
-These are behavior changes within the existing `data/` and `panels/` routes; no new frontend route or
-module boundary was added.
+recovery. The task reader merges the on-demand body over its current summary, preserves omitted arrays,
+shows an explicit summary fallback on fetch failure, and renders implementation steps once.
+260712-TRH-L1 moves that hydration state into a focused data hook and makes it the visible reader's
+first request priority: summary content plus loading status render immediately, while notes and every
+eager reader/enclosure change-set counter wait for body success or failure. These are behavior changes
+within the existing `data/` and `panels/` routes; no new frontend route was added.
+The reopened correction keys request lifetime and body-payload caching by `docPath + bodyRevision`,
+not projected `TaskDocNode` identity; body payloads merge into the current summary at render time.
+Late abandoned responses are discarded, unchanged analytics-object replacement does not restart the
+request, and failure remains terminal for that key until selection or revision changes. The cockpit
+composition regression covers direct leaf, master, drilled subtask, lifecycle-bound, and pending
+A-to-B selection paths. Full fetch-time status/steps/title fields may still mask fresher summary
+values because the revision hashes authored body fields only; that pre-existing staleness window is
+not fixed here.
 
 HFX2-L21 replaces the Chats session rail's fixed width with a persisted 220–560 px width. A visible
 separator supports pointer dragging and Left/Right keyboard steps, while the adjacent terminal keeps
 a 20 rem minimum when space permits. Direct manipulation does not animate the panel width.
+
+### 260712-TRH-L7 landing freshness boundary
+
+The dashboard consumes additive landing freshness truth from the projection: stale refs remain visible and age-labeled, while Engine Room landing-flow motion is limited to observed refs. Remote observation remains a server-side background concern; this route documents the client rendering and wire-type contract.
 
 ## Invariants And Boundaries
 
@@ -253,7 +270,8 @@ a 20 rem minimum when space permits. Direct manipulation does not animate the pa
 | The L16 grouping derivation owns repo-qualified sprint/archive/error membership. | L48-L159 | [sessionGroups.ts](data/sessionGroups.ts) |
 | The L16 session renderer owns forest order, manager collapse, bounded layout, and hover details. | L242-L484 | [SessionList.tsx](panels/SessionList.tsx) |
 | The L21 Chats shell owns the persisted sidebar width plus pointer and keyboard separator behavior. | L1-L588 | [Chats.tsx](panels/Chats.tsx) |
-| The reader merge/fallback and single-step contract is implemented in the detail panel. | L343-L417; L1261-L1359 | [DetailPanel.tsx](panels/DetailPanel.tsx) |
+| The visible-body hook owns availability, merge, and revision-aware cache state. | L1-L72 | [useTaskDocumentBody.ts](data/useTaskDocumentBody.ts) |
+| The detail panel resolves the displayed document and delays notes plus all eager change-set requests until body hydration is terminal. | L380-L388; L629-L687; L1044-L1085; L1309-L1388 | [DetailPanel.tsx](panels/DetailPanel.tsx) |
 | The serving layer supplies the projection and static package boundary consumed by this route. | L1-L80 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The built bundle is synced into package data and checked against source plus dist. | L30-L52; L151-L179 | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 
@@ -267,6 +285,19 @@ and copies them into package data, and serving mounts that synchronized output; 
 assets are not documented individually.
 
 ## Update History
+- 2026-07-12T18:00+02:00 — 260712-TRH-L7: paired the landing-freshness body update with this history entry; projection landing refs remain visible and age-labeled when stale, while Engine Room motion is limited to observed refs and remote observation stays server-side.
+
+- 2026-07-12T16:45+02:00 — 260712-TRH-L1 reopened-memory refresh: clarified stable path/revision
+  request identity, separate body storage plus current-summary merge, late-response discard,
+  terminal failure semantics, composition regression coverage, and the pre-existing scalar
+  staleness window. Verification metadata remains blank until closeout stamps the code commit.
+
+- 2026-07-12T13:36+02:00 — No route impact: 260712-TRH-L2 body review confirms the changeset refinements remain inside the existing `data/changeset` and `panels/changeset` surfaces; the `dashboard/src` route model and top-level organization are unchanged. Verification metadata remains pinned until closeout.
+- 2026-07-12T12:55+02:00 — No additional route impact from 260712-TRH-L2: its changeset refinements stay inside the existing `data/changeset` and `panels/changeset` surfaces; the dashboard/src route model and top-level organization remain unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
+- 2026-07-12T12:07+02:00 — 260712-TRH-L1 dashboard-source route impact: added the focused
+  `data/useTaskDocumentBody.ts` state seam and documented complete visible task content as the first
+  reader request priority. Notes and change-set counters resume after success or fallback; no new
+  frontend route was created. Verification metadata remains pinned until closeout.
 
 - 2026-07-10T21:59+02:00 — 260707-HFX2-L21 dashboard-source route impact: documented the
   persisted, bounded Chats sidebar and its pointer/keyboard separator. The behavior stays inside the

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-08T02:43+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                        |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -52,7 +52,12 @@ only the advertised MCP tools.
 | The lifecycle finalizer payload builder re-exported by this facade. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
 | The terminal payload builders (`attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) re-exported by this facade. | [terminal.py](terminal.py) |
 
+## 260712-TRH-L4 Final Candidate
+
+This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+
 ## Update History
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-08T02:43+02:00 — No content impact: 260707-HFX-L8 adds `session_rename_payload`/
   `session_retire_payload` to the `terminal` import block and `__all__` exactly per the documented

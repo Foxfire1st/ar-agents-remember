@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-29T23:00+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-12T12:55+02:00                           |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ served by `serving/changeset.py`) and reuses the L2 File Viewer primitives (`Fil
 `langByExtension`, `usePersistedFlag`, `grammar/Markdown`). It is opened as a **takeover** from a
 `DetailPanel` change-set button: `CockpitShell` renders it full-bleed in place of the railed Operations
 body, and the screen's back link restores the rails.
+
+The viewer renders an explicit loading placeholder until its first change-set
+response and preserves request errors. Working leaf refreshes run the list and
+active-file requests together, then schedule the next cycle only after both
+settle; series requests omit the unused per-leaf summary.
 
 ## Route Model
 
@@ -93,6 +98,8 @@ until a file is picked; the back link restores the railed Operations view.
 | The siege-tank empty-state backdrop shown until a file is picked. | [panels/EmptyStateBackdrop.tsx](agents-remember/dashboard/src/panels/EmptyStateBackdrop.tsx) |
 
 ## Update History
+
+- 2026-07-12T12:55+02:00 — 260712-TRH-L2 route impact: the existing Change-Set Viewer now makes series net requests without unused per-leaf summaries, exposes loading before the first response, preserves errors, and refreshes working data only after the prior cycle settles. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-06-30T00:00:00+02:00 — L5 (diff-viewer polish): three viewer refinements — (1) `ChangeSetPane` gains a
   **rendered-markdown** toggle (`changeset-rendered-toggle`) that, for `.md` diffs, swaps the raw merge

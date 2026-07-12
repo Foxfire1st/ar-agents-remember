@@ -52,6 +52,7 @@
     "dashboard/src/data/taskIdentity.ts",
     "dashboard/src/data/terminal.test.ts",
     "dashboard/src/data/terminal.ts",
+    "dashboard/src/data/useTaskDocumentBody.ts",
     "dashboard/src/dev/Bench.tsx",
     "dashboard/src/dev/DevApp.tsx",
     "dashboard/src/dev/ScenarioPlayer.tsx",
@@ -70,8 +71,8 @@
     "dashboard/src/types/projection.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 136,
-    "fileSidecars": 47,
+    "sourceFilesInScope": 141,
+    "fileSidecars": 48,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -116,7 +117,8 @@
     "tokens",
     "topology",
     "tsx",
-    "types"
+    "types",
+    "usetaskdocumentbody"
   ],
   "hotPath": {
     "summary": "",

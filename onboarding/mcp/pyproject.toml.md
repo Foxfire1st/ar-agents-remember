@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T12:05+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:07+02:00 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,9 +51,10 @@ assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 — so `runtime_install` can reconcile those package-owned assets into a
 coordinator from a pip/uvx install with no source checkout.
 
-The package `version` tracks the release line; at this verification it is
-`2.9.3`. It is the same string `runtime_install` and `server_info` report, and
-it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below).
+The package `version` tracks the release line. Its exact current value lives in
+the source rather than being repeated here; it is the same string
+`runtime_install` and `server_info` report, and it stays aligned with
+`agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### Invariants And Boundaries
 
@@ -87,6 +88,10 @@ it stays aligned with `agents_remember.mcp.SERVER_VERSION` (see invariant below)
 | `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 
 ## Update History
+
+- 2026-07-12T12:07+02:00 — 260712-TRH-L1 bumps version 3.0.0rc4 -> 3.0.0rc5 (PEP 440 prerelease)
+  with no dependency, entry-point, package-data, or build-system contract change. Corrected the stale
+  `2.9.3` commentary to version-generic wording so later release bumps do not drift it.
 
 - 2026-07-08T15:45+02:00 — No content impact: 260707-HFX2-L7 bumps version 3.0.0rc3 ->
   3.0.0rc4 (PEP 440 prerelease) for the hotfix release tail; no dependency, entry point, package

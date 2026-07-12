@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "docs/reference",
+  "overview": "docs/reference/overview.md",
+  "index": "docs/reference/overview.index.json",
+  "sourceScope": [
+    "docs/reference/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "docs/reference/harnesses.md",
+    "docs/reference/mcp-tools.md",
+    "docs/reference/settings-json.md",
+    "docs/reference/skills.md"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 10,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "docs",
+    "harnesses",
+    "json",
+    "mcp",
+    "reference",
+    "settings",
+    "skills",
+    "tools"
+  ],
+  "hotPath": {
+    "summary": "Reference contract for harnesses, MCP tools, and settings. L4 documents the three-state dispatch protocol, hosted readiness, and catalog concurrency ruling.",
+    "candidateHints": [
+      "docs/reference",
+      "docs/reference/harnesses.md",
+      "docs/reference/mcp-tools.md",
+      "docs/reference/settings-json.md",
+      "docs/reference/skills.md"
+    ],
+    "anchorHints": [
+      "harnesses.md",
+      "harnesses",
+      "mcp-tools.md",
+      "mcp-tools",
+      "settings-json.md",
+      "settings-json",
+      "skills.md",
+      "skills",
+      "MCP",
+      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "e63f2dbb5f0701d37bbc17ff5358960c77",
+      "lastVerifiedCommitDate",
+      "T18",
+      "TRH"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "docs/reference/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
 | doc_type               | `file-level-onboarding`                                                |
 | lastUpdated            | 2026-07-10T02:39+02:00                                                 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                                          |
 
 ## Governing Overview
@@ -19,6 +19,14 @@
 Central retention policy for short-lived gate and operator-inbox interaction data.
 
 ## Code Commentary
+
+### 260712-TRH-L5 Confirmed-Gone Secondary Retention
+
+`inbox_keep_ids` remains the final retention boundary after the supervisor's same-lock
+confirmed-gone reconciliation. The 48-hour pending TTL and 500-row folded-current cap are
+unchanged; `current=` lets the transaction reuse its single authoritative fold rather than
+reading the append-only log again. Ladder-resolved snapshots, including the stable
+`subject-session-confirmed-gone` reason, are still removed immediately by this policy.
 
 ### 260707-HFX2-L20 Monotonic Inbox Compaction
 
@@ -55,6 +63,11 @@ HFX2-L1 immortal-pending rule that contributed to the 2026-07-09 escalation stor
 - A `ladder-resolved` inbox row is neither pending nor acked; compaction drops it immediately.
 
 ## Update History
+
+- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented the unchanged 48-hour pending TTL
+  and 500-row cap as fallback retention and the pre-folded-current transaction seam used after
+  confirmed-gone resolution. Verification metadata remains pinned until closeout stamps the
+  candidate commit.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20: made inbox compaction use the shared terminal-dominant
   fold so stale in-flight delivery snapshots cannot resurrect pending retention.

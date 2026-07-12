@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/taskDocuments.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T01:14+02:00                           |
-| lastVerifiedCommitHash |                                                  `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                                  2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:07+02:00                           |
+| lastVerifiedCommitHash |                                                  `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate |                                                  2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -33,19 +33,20 @@ without changing the production same-origin default.
 ### Conventions
 
 This module follows the other `dashboard/src/data` adapters: one narrow transport operation, browser
-`fetch`, typed return data, and no React state. Cache ownership and fallback behavior remain in the
-panel that chooses the visible document.
+`fetch`, typed return data, and no React state. `useTaskDocumentBody.ts` owns cache and availability
+state; `DetailPanel` chooses the visible document and consumes that state.
 
 ### Invariants And Boundaries
 
 The helper does not decide which document is visible, cache bodies, retry, or validate path
-confinement. `DetailPanel` owns selection/cache policy; the serving snapshot layer resolves and
-confines the client-supplied path under `coordination_root/tasks` before reading.
+confinement. `DetailPanel` owns selection, `useTaskDocumentBody` owns hydration/cache policy, and the
+serving snapshot layer resolves and confines the client-supplied path under `coordination_root/tasks`
+before reading.
 
 ### Todos
 
-No file-local follow-up. Long-lived body-cache eviction is a `DetailPanel` concern (reviewer N5),
-not transport behavior for this adapter.
+No file-local follow-up. Long-lived body-cache eviction belongs to `useTaskDocumentBody`, not this
+transport adapter.
 
 ## Docs References
 
@@ -68,7 +69,7 @@ link state is recorded rather than silently treated as already landed.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node. | L1-L9 | [taskDocuments.ts](agents-remember/dashboard/src/data/taskDocuments.ts) |
-| `DetailPanel` calls the adapter for the visible document and keys cached bodies by path plus revision. | L373-L401; L812-L813 | [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
+| `useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision. | L1-L72 | [useTaskDocumentBody.ts](agents-remember/dashboard/src/data/useTaskDocumentBody.ts) |
 | The serving route maps projection readiness and the confined snapshot read to HTTP responses. | L655-L670 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | L1091-L1130 | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 
@@ -82,6 +83,10 @@ No meaningful cross-repo boundary exists; the client, endpoint, and task-documen
 | Same-repository dashboard-to-serving contract only. | — | — |
 
 ## Update History
+
+- 2026-07-12T12:07+02:00 — 260712-TRH-L1 current-state clarification: cache and availability
+  ownership moved from `DetailPanel` into `useTaskDocumentBody`; this transport helper remains
+  unchanged. Verification metadata stays pinned until closeout.
 
 - 2026-07-10T01:14+02:00 — Created for 260707-HFX2-L13 F6: documented the on-demand task-document
   fetch adapter, its selection/cache boundary, and the server/snapshot confinement seam. Verification

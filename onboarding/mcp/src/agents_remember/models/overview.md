@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -129,7 +129,16 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
 | The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 
+## 260712-TRH-L4 Route Impact
+
+Models now distinguish spawned-unbriefed, harness-ready, and briefed and carry the readiness/dispatch statuses, exact-session proof fields, dispatch kind, and separated supervisor state surface.
+
+
 ## Update History
++## 260712-TRH-L4 Route Impact
+
+Models now distinguish spawned-unbriefed, harness-ready, and briefed and carry the readiness/dispatch statuses, exact-session proof fields, dispatch kind, and separated supervisor state surface.
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 models route impact: added pair-binding response fields
   and the role-required attach status without changing the strict response-module layout.
