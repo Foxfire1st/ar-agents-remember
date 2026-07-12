@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-10T19:49+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:28+02:00 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -677,7 +677,35 @@ into the role files.
 | The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py); [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py); [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py); [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 
+## 260712-TRH-L4 Route Impact
+
+L4 changes the MCP package public dispatch contract: spawn-only creation, exact-session hosted_session_readiness, and durable harness-log-confirmed dispatch-brief. The terminal catalog writer/reader contract is part of this boundary because readiness requires durable addressability.
+
+
 ## Update History
+
+- 2026-07-12T17:50 — No route impact: 260712-TRH-L6 only changed the frontend `dashboard/src/panels`
+  Operations presentation and its generated `package_data/dashboard` bundle. No MCP Python module,
+  serving contract, tool surface, package route, or generated MCP artifact changed; the dashboard route
+  and its six handwritten sidecars carry the behavior detail.
+- 2026-07-12T17:45+02:00 — No route impact: L7's required dashboard prepare/build/sync regenerated `package_data/dashboard/`, its fingerprint, index, and hashed assets only; the mcp package route contract and Python-serving responsibilities are unchanged. L7 behavior remains documented by the in-scope `dashboard/src/`, `observer/`, `serving/`, and `worktrees/modules/` routes.
+
+- 2026-07-12T16:55+02:00 — No route impact: L1's dashboard build/sync changes only the generated
+  `package_data/dashboard/` assets and sibling fingerprint within the already-documented static
+  build/package/serve boundary; no MCP route, tool, Python package, or serving contract changed.
+
++## 260712-TRH-L4 Route Impact
+
+L4 changes the MCP package public dispatch contract: spawn-only creation, exact-session hosted_session_readiness, and durable harness-log-confirmed dispatch-brief. The terminal catalog writer/reader contract is part of this boundary because readiness requires durable addressability.
+
+- 2026-07-12T13:46+02:00 — No route impact: 260712-TRH-L3 is dashboard-only. The collapsible task-group
+  source change and the generated `package_data/dashboard` hash rollover do not change MCP routing or
+  runtime responsibilities. Verification metadata remains pinned until closeout.
+- 2026-07-12T13:36+02:00 — No route impact: 260712-TRH-L2 body review confirms the changeset API refinement is documented at the governing `mcp/src/agents_remember/serving/` route; the broader `mcp/` package route inventory and purpose are unchanged. Verification metadata remains pinned until closeout.
+- 2026-07-12T12:28+02:00 — No route impact: 260712-TRH-L1 changes the MCP package only through
+  the rc5 version/fallback bump, the already-established generated dashboard bundle boundary, and a
+  calendar-stable harness-log test fixture. No MCP tool, response model, Python package route, or
+  serving contract changes in this leaf.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20 package route impact: documented monotonic terminal
   inbox folding and durable consume retention across the control-plane store and MCP consume tool.

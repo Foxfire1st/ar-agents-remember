@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-06-28T03:21+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -191,6 +191,10 @@ route before editing.
 > The parent `EngineRoom.tsx` (in `panels/`) composes these into the §4.2 3-zone room; the cockpit
 > rails-hide (§4.1) lives in `cockpit/Cockpit.tsx`.
 
+### 260712-TRH-L7 stale landing rendering
+
+The process map keeps stale landing facts inspectable with explicit stale styling, state text, and age, but excludes stale and missing refs from directional landing motion. This preserves honest visible state without presenting an unavailable remote observation as current.
+
 ## Invariants And Boundaries
 
 - **Semantics live on the server** — the client renders `analytics.engineProcesses`, never infers.
@@ -220,6 +224,7 @@ route before editing.
 | The cockpit shell that hides the rails for the Engine Room view (§4.1). | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: Engine Room now types and visibly renders stale landing facts, exposes their age, and suppresses stale/missing landing motion while retaining the node.
 
 - 2026-06-28T03:21+02:00 — Task 31 route impact: `BootTimeline`, `EnclosureCanvas`, and the shared
   recipes now render `ProviderBootNode.runtimeState` / `factState` values of `missing`, so an expected

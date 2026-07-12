@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-07-07T05:08+02:00                         |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`     |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`     |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -50,6 +50,10 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
 - `subscribe()` is an async generator: it registers a fresh queue, yields `(seq, delta)` items,
   and discards the queue in `finally` when the consumer stops.
 
+### 260712-TRH-L7 projector/observer boundary
+
+`Projector.run` starts the bounded refresher once, passes its current snapshot into each local projection tick, and cancels it during shutdown. A stored refresher exception is logged rather than replacing the projector cancellation path.
+
 ## Invariants And Boundaries
 
 - **One re-projection per tick**, regardless of client count (fan-out, not per-connection
@@ -73,6 +77,7 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
 | The sim clock + feeder that drive the `now`/`before_tick` seams. | [sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: Projector owns refresher startup/cancellation, consumes network-free snapshots, and logs a dead refresher during cancellation so lifecycle shutdown continues safely.
 
 - 2026-07-07T05:08+02:00 — 260703-L15 S1: stable-form diffing with a per-tick cache
   (`_latest_stable`), atomic `(seq, projection)` publish (`_published` tuple; threadpool tear

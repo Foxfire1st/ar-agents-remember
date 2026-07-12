@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-27T23:08+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -25,6 +25,10 @@ deterministic.
 ## Code Commentary
 
 ### Logic
+
+### 260712-TRH-L7 stale landing regression
+
+The focused canvas case renders a stale landing ref with its stale tone, literal state, and age, then asserts no landing-flow packet is active. This pins the contract that unavailable remote truth stays visible without being animated as current.
 
 `nodeFrom(name)` pulls the first `EngineProcessNode` from a named `ENGINE_ROOM_SCENARIOS` fixture;
 `WORKSPACE_ENGINES` is a two-element `ProviderNode[]` (CGC code + GrepAI memory) for the official-line
@@ -161,6 +165,7 @@ assertions stay right-world-only).
 | The jsdom stubs + determinism freeze. | — | [test/setup.ts](../../test/setup.ts) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: added the stale landing rendering regression, covering visible stale styling, freshness age, and suppression of landing-flow packets.
 
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: added coverage for `runtimeState="missing"` and a regression proving missing code/memory provider slots render as visible gauges. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-22T11:00 — slice 05o failure-mode primitives: added five render-test `describe` blocks (~11 cases)

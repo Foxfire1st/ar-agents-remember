@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-04T11:10+02:00                      |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -102,7 +102,12 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 | Inbox tool names are now pinned in the public tool subset. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
 | Terminal leaf reassignment and agent-facing session spawn are pinned in the public tool subset. | [test_tools.py](test_tools.py) |
 
+## 260712-TRH-L4 Final Candidate
+
+This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+
 ## Update History
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-04T11:10+02:00 — L2: the expected public-tool subset now includes `spawn_agent_session`,
   pinning the agent-facing session-dispatch surface in `PUBLIC_TOOLS` beside

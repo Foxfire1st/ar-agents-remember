@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T05:30+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -67,6 +67,10 @@ invented — so the cockpit never animates a planned PR as a live one. For a mid
 opened yet) the live arc honestly shows the source `pushed`, `origin/<base>` `planned` (observed
 directly), and the PR `planned`.
 
+### 260712-TRH-L7 observer ownership
+
+The existing landing probe remains the bounded remote observation primitive, but recurring projection no longer calls it inline. The background observer retains its planned/missing failure semantics and exact contract identity while interactive commands continue to request fresh facts.
+
 ## Invariants And Boundaries
 
 - **Best-effort + honest:** every probe failure degrades to `factState: "missing"` / `"planned"`;
@@ -93,6 +97,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The `run_git` subprocess style the git probe mirrors (`safe.directory` + DEVNULL). | [git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: retained landing probe semantics for bounded background observation and repaired the landing-ref commentary; unavailable facts remain planned/missing rather than invented.
 
 - 2026-06-21T05:30+02:00 — Slice 5l P2 (landing-arc probe hardening, so the dashboard follows a REAL remote landing): added `_default_branch` (origin default via `git ls-remote --symref origin HEAD`, fallback `"main"`) and `_main_ref` — the protected target `origin/<base>` is now probed **directly** via `_remote_branch` (base = PR `baseRefName` or `_default_branch`), visible across the whole landing window before any PR and even when `gh` is absent, its `state` tracking whether THIS work landed (`merged`/`planned`/`unknown`, tip in `detail`). This replaces the PR-base-derived origin-main that used to live in `_pr_ref` (now `pr`-only). `_pr_for` requests + returns `createdAt`/`mergedAt`, and `_pr_ref` adds an `at` = gh's milestone time (mergedAt once merged, else createdAt). `landing_refs` hoists the single `_pr_for` lookup then appends `_main_ref` + `_pr_ref`. Module docstring notes the per-tick (~1s) re-probe needs no milestone hook. Verification metadata pinned until closeout stamps the 05l-P2 code commit.
 - 2026-06-18T08:51+02:00 — Created for slice 5h H1: best-effort successful-landing arc observation (`git ls-remote` branch tips + best-effort `gh` PR state, timeout-bounded, `stdin=DEVNULL`, gated to the landing window, honest `factState`). Verification metadata pinned until closeout stamps the 5h code commit.

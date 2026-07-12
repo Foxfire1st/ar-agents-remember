@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/changeset.ts`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-29T23:00+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-12T12:55+02:00                           |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -26,6 +26,11 @@ calls these helpers directly.
 
 ### Logic
 
+`masterChangeset` accepts typed options and serializes `includeLeaves=false`
+when a caller needs only the coherent series net range. The default remains
+the full response with per-leaf summaries, preserving callers that inspect
+that breakdown.
+
 Data contracts plus three fetch helpers:
 
 - Result interfaces mirror the L3 JSON shape one-for-one: `ChangedFile` (`insertions`/`deletions` are
@@ -35,7 +40,7 @@ Data contracts plus three fetch helpers:
   added/deleted file — feeds CodeMirror MergeView a/b), `MasterChangeset` (`leaves[]` per-leaf counters +
   the NET series `code`/`memory` as plain `ChangedFile[]` + `counters`). (L12-L50)
 - `taskChangeset(repo, scope, base?)`, `fileDiff(repo, scope, kind, path, base?)`,
-  `masterChangeset(repo, master, base?)`, and `masterFileDiff(repo, master, kind, path, base?)` (the series
+  `masterChangeset(repo, master, options?, base?)`, and `masterFileDiff(repo, master, kind, path, base?)` (the series
   net before/after via `/file-diff?master=`) each build their query string with `qs` (`URLSearchParams`)
   and delegate to `getJson` (imported from `./files`).
 - L4a leaf helpers: `leafChangeset(repo, master, leaf, mode, base?)` and
@@ -70,6 +75,8 @@ FastAPI dashboard server owns repo/scope resolution and path safety.
 | The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. | L16-L36 | [changeset.test.ts](changeset.test.ts) |
 
 ## Update History
+
+- 2026-07-12T12:55+02:00 — 260712-TRH-L2: added the typed master query options and `includeLeaves` serialization so dashboard net-range callers can omit expensive per-leaf summaries without changing the default response. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-06-29T23:00+02:00 — L4a: added the leaf helpers `leafChangeset(repo, master, leaf, mode, base?)` +
   `leafFileDiff(repo, master, leaf, kind, path, mode, base?)` and the `LeafMode` (`"committed" | "working"`)

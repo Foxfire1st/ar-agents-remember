@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-12T16:45+02:00                           |
+| lastVerifiedCommitHash |                                                   `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate |                                                   2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,17 +16,25 @@
 
 ## Purpose
 
-Vitest + `@testing-library/react` render test pinning the slice 5f S1 full-bleed behaviour: the
-machine-map views drop the cockpit rails while the others keep them. The first component-render test in
-the dashboard suite (prior tests are pure logic/selector). Slice L5 adds the right-rail River⇄Chat toggle
-and (L5 fix 1) a regression that the rail chat keys by the leaf the detail panel is **displaying**: after
-drilling into a master's sub-task the rail heading is the drilled **leaf** id, not the master.
+Vitest + `@testing-library/react` render tests for cockpit composition, including the slice 5f S1
+full-bleed behavior, serving-build stamp, rail/chat persistence, drilled-leaf chat identity, and the
+260712-TRH-L1 click-to-detail body-hydration contract. The body cases exercise the real `CockpitShell`
+and dashboard store update path rather than rendering `DetailPanel` in isolation.
 
 ## Code Commentary
 
 ### Logic
 
 L15 adds the servingBuild stamp assertions (renders commit + boot time when present; absent-field tolerance for old payloads).
+
+260712-TRH-L1 adds a shape-accurate Operations projection and fetch stub for the permanently mounted
+cockpit surfaces. It clicks a direct leaf, master, drilled subtask, and lifecycle-bound row while
+changing only summary projection objects; each path proves one body request for the unchanged revision
+and renders the complete objective after resolution. A second case holds task A, switches to task B,
+resolves A late, and proves A cannot contaminate B; B remains one request and hydrates only after its
+own response. The fetch fixture returns the response shapes required by the mounted file, harness,
+terminal, change-set, and notes surfaces, modeling composition rather than adding production fallback
+behavior.
 
 A local `seed(stateName)` applies a `GALLERY` fixture projection to the real Zustand store
 (`dashboardStore.getState().applySnapshot(...)`) — the same hydration the dev bench uses. The lazy
@@ -59,9 +67,11 @@ dashboard store.
 ### Invariants And Boundaries
 
 Relies on the shared jsdom stubs in `test/setup.ts` (`matchMedia` for `useShouldAnimate`, `ResizeObserver`
-for React Aria). The ModeBar items are queried by `role="radio"` (React Aria `ToggleButtonGroup`,
+ for React Aria). The ModeBar items are queried by `role="radio"` (React Aria `ToggleButtonGroup`,
 single-select), driven by `fireEvent.click`. Uses plain `container.querySelector` + vitest `expect`
-(no `@testing-library/jest-dom`). Pure render assertions — no network, no live stream.
+(no `@testing-library/jest-dom`). Older cases are pure render assertions; the new body cases stub
+browser `fetch` and drive `dashboardStore.applyDelta("analytics", ...)` to reproduce analytics churn
+and selection timing.
 
 ## Repo-Internal References
 
@@ -70,8 +80,14 @@ single-select), driven by `fireEvent.click`. Uses plain `container.querySelector
 | `CockpitShell` under test (full-bleed rails-hide). | L124-L205 | [Cockpit.tsx](Cockpit.tsx) |
 | `GALLERY` fixtures + the `applySnapshot` hydration pattern. | — | [dev/fixtures.ts](../dev/fixtures.ts) |
 | The shared jsdom stubs the render relies on. | — | [test/setup.ts](../test/setup.ts) |
+| The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | L329-L434 | [Cockpit.test.tsx](Cockpit.test.tsx) |
 
 ## Update History
+
+- 2026-07-12T16:45+02:00 — 260712-TRH-L1 reopen correction: added Operations click-to-detail
+  composition coverage for direct leaf, master, drilled, and lifecycle-bound readers under analytics
+  summary churn, plus a pending A-to-B switch with late A resolution. Verification metadata remains
+  blank until closeout stamps the code commit.
 
 - 2026-07-07T10:50+02:00 — L15: servingBuild stamp tests added. Verification metadata pinned until closeout stamps the L15 commit.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T21:52+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T17:50 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -69,15 +69,23 @@ and the `Chats` `SessionList` switcher).
   `data/taskHierarchy`'s command helpers) nests one 22px step below with the purple two-chevron
   management tier; leaves keep today's rendering one step further. Uncommanded masters, and every
   run with no orchestration task, render exactly as pre-L14 (the D3 ruling; pinned by a flat-run
-  regression test). Archived/deleted docs disappear because the
+  regression test). L3 adds native disclosure controls only to descendant-bearing sprint/master rows
+  in BY REPO: groups start expanded, persist collapsed stable task-selection keys, hide descendants
+  without changing selection/detail, and keep BY PHASE flat with the total heading count unchanged.
+  Archived/deleted docs disappear because the
   observer stops projecting them; completed/abandoned status alone is not the sidebar disappearance rule.
   Long task titles are bounded to a single-line ellipsis in the row title span, with the listbox,
   section, and row containers constrained so a long title cannot widen the left panel and create a
   horizontal scrollbar; secondary/gate/progress chips are also bounded so they cannot crowd out the
   title. Hovering the title exposes the full label plus lifecycle/gate/repo/current-step context.
-  `AgentPickupIndicator.tsx` renders `analytics.agentPickups` beside affected rows: fresh pending inbox
-  entries show `waiting for agent`, stale entries switch to a dismissible `check chat` warning, and L3
-  fixtures/props carry message-kind plus delivery-state metadata from the backend projection.
+  `AgentPickupIndicator.tsx` renders `analytics.agentPickups` beside affected rows as static delivery/
+  acknowledgment state: dispatch briefs and messages remain distinguishable, stale entries switch to a
+  dismissible `check chat` warning, and L3 fixtures/props carry message-kind plus delivery-state metadata
+  from the backend projection. `LifecycleList.tsx` separately subscribes to the Chats-owned `OpenSession`
+  catalog and maps exact live-harness `turnState` to a chat activity indicator. Exact qualified-leaf
+  identity wins, unclaimed lifecycle fallback is only used when no exact match exists, and multiple seats
+  aggregate deterministically. Task progress, live chat turn activity, and inbox acknowledgment remain
+  separate axes; Operations adds no poller or classifier.
 - `GateResponder.tsx` — shared **Respond** control for lifecycle gates: one button opens a
   request dialog with a human-readable request preview and collapsed raw-JSON diagnostics. For durable
   gates, Yes records a targeted `approve` through `data/actions.postGateDecision`, No requires a reason
@@ -116,9 +124,12 @@ and the `Chats` `SessionList` switcher).
   resolves sub-task rows against the full projected sibling task-document pool, not the sidebar rows, so
   authored leaves remain clickable from the master while missing authored documents remain static rows.
   **260707-HFX2-L13 F6:** those projection nodes are bounded summaries. The panel resolves the one
-  reader document actually on screen, fetches its full body through `data/taskDocuments.ts`, and
-  caches by `docPath + bodyRevision`; all render branches use the cached node when present and retain
-  the summary as a non-blocking fallback. The cache currently has no eviction (accepted N5 follow-up).
+  reader document actually on screen and `data/useTaskDocumentBody.ts` fetches its full body through
+  `data/taskDocuments.ts`, caching by `docPath + bodyRevision`; all render branches use the cached node
+  when present and retain the summary as a visible fallback. **260712-TRH-L1:** while this primary body
+  request is loading, the panel does not mount `TaskNotes` or any reader/enclosure change-set counters;
+  those lower-priority request surfaces resume after body success or failure. The cache currently has
+  no eviction.
   Directly opened leaf documents and enclosure-backed leaf lifecycles show an `↑` parent/root backlink in
   the sticky header, resolved through structured series metadata rather than task-name parsing. Task 21
   adds the master-level `series tokens` scalar, displayed from server-projected `seriesTokenTotal` on
@@ -339,6 +350,11 @@ fetched bodies with absent-array preservation, surfacing an honest summary fallb
 unavailable, and removing the duplicate Progress step list. The panel inventory and cockpit routing
 are unchanged.
 
+260712-TRH-L1 moves body hydration/cache state into `data/useTaskDocumentBody.ts` and makes complete
+visible task content the panel's first request priority. The summary and an honest loading line remain
+visible while notes and all eager change-set counters are unmounted; ancillary surfaces resume after
+either body success or failure. This adds one data hook within the existing route and no new panel.
+
 ## Invariants And Boundaries
 
 - **Presentational, near-read-only** — panels read the store and render (no clock; ages are
@@ -351,6 +367,9 @@ are unchanged.
   `data-*` conditions; behavior (keyboard/focus/ARIA) is React Aria. No global panel CSS.
 - **The Panel primitive owns chrome** — bg/border + scroll + the sticky header band; panels pass a
   sizing `className` (flex / max-height) for their rail/viewport slot.
+- **Reader request priority follows function** — complete visible task content hydrates before notes
+  lists or change-set counters; summary fallback remains usable, and ancillary tools return after a
+  terminal body state.
 
 Since L15 the age-displaying panels (AttentionQueue, Hangar, LifecycleList, MemoryMirror) derive
 their served ages LOCALLY from per-object arrival anchors (`data/servedAges.ts`) on a 10-second
@@ -362,9 +381,10 @@ an idle dashboard at zero store writes.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | SessionList implements the complete forest, collapse, order, and width/hover contract. | L242-L484 | [SessionList.tsx](agents-remember/dashboard/src/panels/SessionList.tsx) |
-| DetailPanel implements body availability, summary merge, fallback copy, and one step list. | L343-L417; L1261-L1359 | [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
+| DetailPanel resolves the displayed reader, renders loading/fallback copy, and delays notes plus all eager change-set counters while the body is loading. | L380-L388; L629-L687; L1044-L1085; L1309-L1388 | [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
+| The data hook owns body fetch state, absent-array merge, and path-plus-revision caching. | L1-L72 | [useTaskDocumentBody.ts](agents-remember/dashboard/src/data/useTaskDocumentBody.ts) |
 | The session-list tests pin forest completeness and the two-width hover/overflow contract. | L353-L420 | [SessionList.test.tsx](agents-remember/dashboard/src/panels/SessionList.test.tsx) |
-| The detail-panel tests pin body merge, fallback, and single-rendered implementation steps. | L650-L865 | [DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
+| The detail-panel tests pin body-first request ordering, complete content, fallback, one step copy, and revision caching. | L799-L1038 | [DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
 | The shared panel chrome remains the route's presentation frame. | L1-L120 | [grammar/Panel.tsx](agents-remember/dashboard/src/grammar/Panel.tsx) |
 
 ## 260707-HFX2-L17 Seat Binding Route Impact
@@ -375,6 +395,22 @@ identity is known. `Chats` and `RailChat` post/apply the pair and name same-role
 an existing panel responsibility expansion, not a new panel route.
 
 ## Update History
+
+- 2026-07-12T17:50 — 260712-TRH-L6 route impact: documented the new Operations chat-activity indicator,
+  shared Chats catalog ownership, exact-leaf-first/lifecycle-fallback identity, deterministic multi-seat
+  precedence, static inbox acknowledgment state, missing/landed/stale omission behavior, and the three
+  independent signaling axes. No new dashboard route was introduced. Reviewer F1–F6 are recorded as
+  follow-up residuals in the relevant sidecars.
+- 2026-07-12T13:36+02:00 — No route impact: 260712-TRH-L2 body review confirms the `DetailPanel` change-set entry and `panels/changeset` child-route refinements do not alter the broader panels inventory or navigation model. Verification metadata remains pinned until closeout.
+- 2026-07-12T12:58+02:00 — 260712-TRH-L3 route impact: refreshed the existing `LifecycleList.tsx`
+  route model for BY REPO-only persisted sprint/master disclosure, independent nested collapse,
+  selection-safe native controls, and unchanged BY PHASE/total-count semantics. No new route or entity
+  was introduced; the two concrete helper modules are covered by file sidecars.
+- 2026-07-12T12:55+02:00 — No additional route impact from 260712-TRH-L2: its `DetailPanel` change-set entry and `panels/changeset` child-route refinements do not alter the broader panels inventory or navigation model. Verification metadata pinned until closeout stamps the L2 code commit.
+- 2026-07-12T12:07+02:00 — 260712-TRH-L1 route impact: added the body-state data hook and made
+  `DetailPanel` defer notes plus reader/enclosure change-set requests until visible body hydration
+  succeeds or fails. Summary fallback and panel inventory remain intact; verification metadata stays
+  pinned until closeout.
 
 - 2026-07-10T21:52+02:00 — 260707-HFX2-L21 route impact: the existing Chats full-bleed layout now
   has a bounded, persisted, pointer/keyboard-resizable session-tree rail. Panel inventory and routing

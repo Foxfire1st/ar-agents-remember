@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T01:14+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -68,6 +68,10 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
   equivalent. The L8 fields (`pendingInboxCount`, `redeliverableInboxCount`,
   `lastSweepDurationSeconds`) are forward storm-pressure signals, not projection-stable content.
 
+### 260712-TRH-L7 landing freshness wire contract
+
+`ProcessFactState` admits `stale`, and `LandingRefNode` carries `observedAt`, `lastAttemptAt`, and `staleSeconds`. These fields are additive projection data consumed by the Engine Room to distinguish stale truth from a fresh observation.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -90,6 +94,7 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 `EnclosureNode` separates leaf contract identity (`enclosureId` / `leafId`) from the containing `taskRoot`, which lets dashboard views handle root series tasks and leaf worktrees without deriving paths client-side. 260703-L11 adds the required `codeWorktreeExists` / `memoryWorktreeExists` booleans — the server-stat'ed worktree-existence truth (always on the wire: bool defaults are never `exclude_none`-dropped) that `hasLiveWorktree` filters tasks-surface visibility on, replacing every client-side cleanup-state proxy; `cleanup: reopened` means contract-reset-awaiting-restart, not live work.
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: kept the projection wire contract in lockstep by typing stale landing facts and observed/attempt/age freshness fields.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: added optional `TaskDocNode.bodyRevision`, the
   cache invalidation token for on-demand reader bodies omitted from the summary broadcast.

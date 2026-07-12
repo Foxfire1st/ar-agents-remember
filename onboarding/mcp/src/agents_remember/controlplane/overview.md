@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`     |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -40,6 +40,13 @@ across that prune boundary because their source item is repository/branch-scoped
 than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
 
 ## Hot Path Summary
+
+260712-TRH-L5 adds a secondary confirmed-gone retention predicate without changing fallback
+retention: only pending supervisor nudge/escalation rows with a subject id qualify, catalog
+`terminated` is direct proof, and a compacted tombstone needs one successful exact-name tmux
+snapshot. `OperatorInboxStore.reconcile_and_compact` resolves and compacts under one lock and
+reuses the folded current before redelivery; consumed/durable/protected rows and indeterminate
+evidence remain visible.
 
 260707-HFX2-L20 makes inbox state monotonic across concurrent consume and hosted delivery. The
 append-only log retains the terminal consume snapshot; a shared fold used by live reads and
@@ -235,7 +242,21 @@ response models are `models/operator_inbox.py`.
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
 | The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
+## 260712-TRH-L4 Route Impact
+
+Controlplane expectations now start at the durable exact-session dispatch-brief entry, using its timestamp and id; pending rows remain pinned and never enter generic readdressing or respawn escalation.
+
+
 ## Update History
+
+- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the control-plane route for the
+  confirmed-gone inbox predicate, same-lock terminal resolution/compaction, persisted folded-id
+  removal accounting, unchanged TTL/cap fallback, and the callback no-store-reentry contract.
+  Verification metadata remains pinned until closeout stamps the candidate commit.
++## 260712-TRH-L4 Route Impact
+
+Controlplane expectations now start at the durable exact-session dispatch-brief entry, using its timestamp and id; pending rows remain pinned and never enter generic readdressing or respawn escalation.
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20 control-plane route impact: documented the shared
   terminal-dominant inbox fold and durable consume snapshot that close the in-flight redelivery race.

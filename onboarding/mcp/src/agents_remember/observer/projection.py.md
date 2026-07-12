@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -235,6 +235,10 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
   derives the orchestration > master > leaf hierarchy (and rank insignia) from it. Additive — no
   `version` bump; docs without the field project `[]`.
 
+### 260712-TRH-L7 projected landing snapshot
+
+Projection assembly receives the latest landing facts as an input and does not call remote probes. Exact-contract fact state and freshness fields are carried into the engine-process model without changing the reducer's local-state publication cadence.
+
 ## Invariants And Boundaries
 
 - **Client-agnostic** (North-Star #2): no dashboard-bespoke fields; a TUI or an
@@ -288,6 +292,7 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
 `EnclosureNode` now has explicit leaf identity and task-root fields, allowing the observer to serve active leaf enclosure records without making clients infer parent folders from contract paths. Leaf `series-contract.md` files are intentionally not `TaskDocNode`s; a promoted leaf needs a real `ar-task-document/v1` JSON document for the dashboard reader to show task content. `TaskDocNode.sections` can still render authored freeform sections from that JSON document. Master docs project as task documents and still project on `Analytics.series` for the legacy master surface. Master leaf ordering uses `createdAt` read from the referenced leaf JSON when available; task names remain display identity, not ordering metadata.
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: projection reads the latest exact-contract landing snapshot and preserves additive freshness fields without performing remote work in the recurring tick.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: converted the broadcast `TaskDocNode` contract to a
   body-free summary with a body-revision digest and retained the payload-budget measurement as a

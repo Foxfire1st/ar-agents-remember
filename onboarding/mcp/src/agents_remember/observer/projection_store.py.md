@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`             |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`             |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -124,6 +124,10 @@ hour-long inactivity prune deleted a live task's log — and admission then keye
 making the worktree vanish from the Engine Room. The protection set is derived entirely from durable
 enclosure state in `worktree_provider_admission`; this file only reorders the read and threads the set.
 
+### 260712-TRH-L7 status-source split
+
+The recurring projection path uses projected status plus the latest landing snapshot, while explicit interactive status retains fresh landing probing. This preserves operator freshness without making remote latency part of the one-second projection tick.
+
 ## Invariants And Boundaries
 
 - **Atomic writes:** every projection file is written tmp + `os.replace`; readers
@@ -174,6 +178,7 @@ enclosure state in `worktree_provider_admission`; this file only reorders the re
 | Projection tests prove cached repo surfaces do not cache provider reads. | L2283-L2324 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: projection-store status paths now distinguish interactive fresh landing reads from pre-observed projected landing facts.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F7/B2: split cached log events from the coalesced
   heartbeat merge so heartbeat updates refresh projection state without reparsing the JSONL log;

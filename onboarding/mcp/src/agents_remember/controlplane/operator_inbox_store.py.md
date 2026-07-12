@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash |                                                                   `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                                                   2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash |                                                                   `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate |                                                                   2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -20,6 +20,18 @@ File-backed operator inbox store for short-lived polling plus hosted-session
 delivery metadata.
 
 ## Code Commentary
+
+### 260712-TRH-L5 Same-Lock Confirmed-Gone Reconciliation
+
+`reconcile_and_compact` owns one authoritative inbox transaction: it reads and folds the
+append-only log once, invokes the bounded resolver while the POSIX lock is held, appends
+`ladder-resolved` snapshots for still-pending ids, and compacts before returning the folded
+current used by redelivery selection. A concurrent consume that wins the lock remains
+authoritative, while stale pending snapshots cannot outrank the terminal-dominant fold.
+The returned `removed` count is the persisted folded-id delta, excluding transient terminal
+snapshots that were appended only inside the transaction. The resolver callback must not call
+back into this store: the exclusive lock is intentionally held across catalog/tmux evidence,
+with a worst-case 5-second tmux timeout.
 
 ### 260707-HFX2-L20 Consume And Delivery Race
 
@@ -145,6 +157,11 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented one-fold resolve-plus-compact
+  ordering, consume authority, persisted folded-id removal semantics, and the no-store-reentry
+  callback contract under the shared inbox lock. Verification metadata remains pinned until
+  closeout stamps the candidate commit.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20: made current-state folding terminal-dominant and kept
   consumed snapshots append-only until compaction, closing the live resurrection/redelivery race.

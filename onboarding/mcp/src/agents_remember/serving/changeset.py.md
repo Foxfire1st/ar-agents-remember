@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-04T23:43+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`     |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-12T12:55+02:00 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`     |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -29,6 +29,14 @@ so the viewer works with no live worktree.
 ## Code Commentary
 
 ### Logic
+
+The master and leaf contract iterators are bounded to the exact requested
+`tasks/<repo>/<master>/enclosures/*/series-contract.md` directory. Leaf lookup
+slugifies both the request and persisted contract id, preserving master/repo
+qualification for authored mixed-case ids. `master_changeset` keeps the
+coherent series net range and makes the per-leaf `leaves` breakdown opt-in;
+`includeLeaves=false` avoids the extra git work for callers rendering only the
+net files.
 
 `register_changeset_routes(app, config)` registers three GET routes and
 **must** be called before the greedy static `/` mount (it is, between
@@ -132,6 +140,8 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | The test suite for this module. | [test_serving_changeset.py](agents-remember/mcp/tests/test_serving_changeset.py) |
 
 ## Update History
+
+- 2026-07-12T12:55+02:00 — 260712-TRH-L2: bounded master/leaf contract discovery to the requested repo/master enclosure, normalized requested and persisted leaf ids, and made master per-leaf summaries optional through `includeLeaves`; committed/working/master range semantics remain unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-07-04T23:43+02:00 — L8 content update: master series net diffs now resolve a shared series tip through the work branch while it exists, falling back to the source branch after landing/deletion; `master_changeset` counters and `master_file_diff` BEFORE/AFTER content use the same resolved code/memory tip. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-03T12:50+02:00 — No content impact: L15 replaced the `live` boolean alias with visible `worktree is None` narrowing in the change-set file listing and file-diff functions so pyright proves the Optional[Path] uses; behavior identical (same guards, same fallbacks).

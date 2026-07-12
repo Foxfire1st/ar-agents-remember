@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/__init__.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T12:05+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:07+02:00 |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -39,6 +39,10 @@ No external Domain Documentation source is configured for this memory repo.
 | Tool tests assert the public version reported by `ping_payload()`. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
 
 ## Update History
+
+- 2026-07-12T12:07+02:00 — No content impact: 260712-TRH-L1 bumps the source-checkout
+  `SERVER_VERSION` fallback to 3.0.0rc5 in lockstep with `mcp/pyproject.toml`; installed package
+  metadata remains the primary version source and resolution order is unchanged.
 
 - 2026-07-08T15:45+02:00 — No content impact: 260707-HFX2-L7 bumps the source-checkout
   `SERVER_VERSION` fallback to 3.0.0rc4 in lockstep with `mcp/pyproject.toml`; installed package

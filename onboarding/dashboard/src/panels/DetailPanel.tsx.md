@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T13:41+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:07+02:00                           |
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -49,18 +49,25 @@ content with `data-task-leaf-key` so highlight capture can identify text selecte
 
 ### 260707-HFX2-L13 On-Demand Reader Contract
 
-The always-on `analytics.taskDocuments` collection is now summary-only. `DetailPanel` resolves the
-single document whose reader is actually visible, requests its full body through
-`fetchTaskDocument`, and caches the response under `docPath + bodyRevision`. Every render branch
-(direct task document, series master, lifecycle-bound master/leaf, and drilled slice) substitutes the
-cached merged node when available and otherwise keeps the bounded summary as a non-blocking fallback.
-L16 merges the fetched body over the current summary while preserving each summary array when the body
-omits it. Changing `bodyRevision` creates a new cache key and causes the currently displayed document
-to be refetched. A failed fetch records `unavailable` for that key and shows the exact fallback line
-"Full task document details are unavailable; showing the available summary." while retaining the
-summary. Reselecting or changing revision retries; failure does not create an effect retry loop.
+The always-on `analytics.taskDocuments` collection is summary-only. `DetailPanel` resolves the single
+document whose reader is actually visible and passes it to `useTaskDocumentBody`, which requests the
+full body and caches the merged response under `docPath + bodyRevision`. Every render branch (direct
+task document, series master, lifecycle-bound master/leaf, and drilled slice) substitutes the cached
+node when available and otherwise keeps the bounded summary visible. L16's absent-array preservation,
+revision invalidation, explicit unavailable fallback, and no-effect-retry-loop behavior now live in
+that hook.
+
+260712-TRH-L1 makes this hydration the reader's first request priority. While the hook reports
+`loading`, `DetailPanel` renders the available summary plus the exact status line "Loading complete
+task document…" but does not mount `TaskNotes`, document change-set counters, or enclosure-spine
+change-set counters. Those lower-priority request surfaces mount after the body succeeds or fails; a
+failure still shows "Full task document details are unavailable; showing the available summary."
 
 ### Logic
+
+The series change-set entry point requests the master net counters without the
+optional per-leaf breakdown because this reader only opens the net viewer; the
+existing task and leaf entry behavior is unchanged.
 
 Resolves `selectedId` through `parseTaskSelection` before choosing content. A `taskdoc:<docPath>` key
 selects a concrete `TaskDocNode`, `series:<seriesId>` selects the legacy folder-keyed series surface,
@@ -154,7 +161,10 @@ landed delta) plus a **working** button only when its enclosure is live (`DocCha
 `enclosures` + `activeWorktreeGroups` itself, matching `repoName` + lowercased `leafId` + the worktree
 group). `ChangeSetButton`'s target is the shared `ChangeSetTarget` (now `{repo, scope?, master?, leaf?,
 mode?}`) and its counters fetch routes `leaf → leafChangeset`, else `master → masterChangeset`, else
-`taskChangeset`; the bar is omitted entirely when `onOpenChangeSet` is not wired. Step status is
+`taskChangeset`; the bar is omitted entirely when `onOpenChangeSet` is not wired. Since
+260712-TRH-L1, both reader-local and enclosure-spine change-set buttons stay unmounted while the visible
+body is loading, so their eager counter effects cannot occupy the body request's connection slot.
+Step status is
 data-driven so `STEP_MARK`/
 `STEP_TITLE`/`SUBSTEP` are record lookups (not cvas). `badge` + `laneMeta` are local (the old
 `.badge`/`.engine__meta` were removed with their panels).
@@ -164,15 +174,14 @@ own References bullets — the trailing References block moved into `TaskNotes` 
 `repo = doc.repository`, `master = dirName(doc.docPath)`, `references = doc.references`) so a
 reference naming an existing `notes/` file becomes an openable link into the series-notes view;
 `MasterOverview` appends `TaskNotes` with empty references, so the series' notes (design records,
-friction ledger, `reports/`) are browsable from the master overview too. All other sections are
-unchanged.
+friction ledger, `reports/`) are browsable from the master overview too. `TaskNotes` is likewise
+unmounted while the visible body is loading and resumes after either terminal body state. All other
+sections are unchanged.
 
 ### Todos
 
-- Reviewer D-N4: `mergeTaskDocumentBody` lets present body scalars overwrite the live projection
-  summary wholesale. A lagging body can display older scalar values until `bodyRevision` changes;
-  array fields alone use the explicit absent-body preservation rule.
-- The body cache remains unbounded for the browser session; revisions are keyed safely but not evicted.
+Body merge and cache follow-ups are owned by `data/useTaskDocumentBody.ts`; this panel has no additional
+file-local follow-up.
 
 ### Invariants And Boundaries
 
@@ -208,14 +217,17 @@ code-example labels must compose structured ids with titles at render time; do n
 title strings and do not strip ids from display.
 Series token totals are displayed only from the server-projected `SeriesNode.seriesTokenTotal`; the
 panel must not recompute the aggregate from lifecycle token gauges or child task rows.
+Complete visible task content outranks optional reader metadata: `TaskNotes` and every eager
+`ChangeSetButton` under the selected reader remain unmounted only while body state is `loading`, then
+resume for both `available` and `unavailable` so fallback mode retains existing tools.
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The visible document fetch merges body arrays with the live summary, records availability, and renders an honest summary fallback on failure. | L343-L417; L1261-L1359 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The API literal belongs to the fetch helper, not this panel; the panel consumes `fetchTaskDocument`. | L10-L17 | [taskDocuments.ts](../data/taskDocuments.ts) |
-| Component regressions pin body merge, fallback visibility, and single rendering of implementation steps. | L650-L865 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| DetailPanel resolves the displayed reader document, consumes shared body state across every render branch, and delays notes plus document/enclosure change-set request surfaces while that state is loading. | L380-L388; L437-L466; L629-L687; L1044-L1085; L1309-L1388 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The hook owns fetch, merge, availability, and path-plus-revision caching; the API literal remains in the transport helper. | L1-L72; L1-L9 | [useTaskDocumentBody.ts](../data/useTaskDocumentBody.ts); [taskDocuments.ts](../data/taskDocuments.ts) |
+| Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching. | L799-L1038 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
 | DetailPanel resolves typed taskdoc/series/lifecycle selections before rendering by task-document `kind`. | L305-L361; L496-L508 | [DetailPanel.tsx](DetailPanel.tsx) |
 | Typed Operations selection helpers shared with Cockpit and LifecycleList. | L1-L76 | [taskIdentity.ts](../data/taskIdentity.ts) |
 | Selected series masters render directly from `analytics.series` by direct `seriesId` selection or by a selected root-task lifecycle whose enclosure `taskId`/`taskName` maps to the folder-keyed series, adapting a `SeriesNode` to the master overview shape and pairing only sibling slice docs. | L305-L361; L382-L452; L496-L506; L563-L571 | [DetailPanel.tsx](DetailPanel.tsx) |
@@ -237,6 +249,13 @@ panel must not recompute the aggregate from lifecycle token gauges or child task
 | The shared empty-state backdrop the no-selection state renders. | L1-L64 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 
 ## Update History
+
+- 2026-07-12T12:55+02:00 — 260712-TRH-L2: changed the existing series change-set counter call site to request `includeLeaves=false`; no new reader state or transport behavior was introduced. Verification metadata pinned until closeout stamps the L2 code commit.
+- 2026-07-12T12:07+02:00 — 260712-TRH-L1: moved hydration/cache ownership to
+  `data/useTaskDocumentBody.ts`, threaded explicit body state through every reader branch, added honest
+  loading copy, and deferred notes plus all eager change-set counters until body success or failure.
+  Moved the merge/cache Todos to the owning hook sidecar. Verification metadata stays pinned until
+  closeout stamps the code commit.
 
 - 2026-07-10T13:41+02:00 — 260707-HFX2-L16 R7: merged on-demand body fields over the current
   summary with absent-array preservation, surfaced an explicit summary fallback on fetch failure,

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash |                                                        `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                                        2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -109,7 +109,12 @@ now lives one level down, in `serving.injector.deliver` + `serving.harness_adapt
 | `serving.supervisor`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit action the supervisor takes rides through this same translation layer. | `_redeliver`; `_post_owner_signal` | [supervisor.py](supervisor.py.md) |
 | `deliver_inbox_entry` threads `redelivery_floor_seconds` into every `record_delivery` path. | L42-L90 | [inbox_delivery.py](agents-remember/mcp/src/agents_remember/serving/inbox_delivery.py) |
 
+## 260712-TRH-L4 Final Candidate
+
+This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+
 ## Update History
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added an optional injected delivery timestamp so
   supervisor simulation and production decisions persist on the same clock.

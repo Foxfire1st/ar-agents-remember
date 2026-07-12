@@ -6,8 +6,8 @@
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash |                                         `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                         2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -72,6 +72,7 @@ spawn-surface manual.
 | Backoff math enforcing the shared 900-second redelivery floor documented here. | [../../mcp/src/agents_remember/controlplane/inbox_backoff.py](../../mcp/src/agents_remember/controlplane/inbox_backoff.py.md) |
 
 ## Update History
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: refreshed the settings contract for Codex argv knobs,
   bound-log command verification, and the supervisor's one-row redelivery budget. Verification

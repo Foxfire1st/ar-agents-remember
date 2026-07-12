@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T10:30+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -18,6 +18,10 @@ event sequence (snapshot then deltas), the FastAPI app endpoints via `TestClient
 channel's byte-offset tail + cursor resume + heartbeat filtering + inactivity-based fresh-connect retention, sim-mode load/replay/determinism, the POST action
 skeleton, the trusted dashboard external-inbox endpoint, the shipped static-bundle resolver, and the
 umbrella `agents-remember dashboard` CLI.
+
+### 260712-TRH-L7 refresher shutdown regression
+
+Serving tests cover the real app lifespan with a dead landing refresher, asserting the failure is logged and `TerminalHost.shutdown()` still runs exactly once. Projector tests also pin startup, cancellation, and network-free tick integration.
 
 ## Code Commentary
 
@@ -164,6 +168,7 @@ exercising the branch. Daemon dispatch itself is covered in `test_dashboard_daem
 | The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: serving tests cover Projector refresher lifecycle and real app-lifespan shutdown after a dead refresher.
 
 - 2026-07-07T10:30+02:00 — L15 adversarial-review follow-up (L15R-1): volatile-vs-content reflection guard added for *Seconds projection fields. Verification metadata pinned until closeout stamps the L15 commit.
 

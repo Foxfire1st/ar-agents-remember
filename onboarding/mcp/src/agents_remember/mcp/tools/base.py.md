@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-07-08T18:45+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                      |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -119,7 +119,12 @@ regardless of whether it happens to look at the dashboard.
 | The supervisor heartbeat store + the `supervisor_staleness_banner` helper this choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
 | The `AmbientLifecycle.root` accessor this helper call resolves the observer root through. | [../../observer/ambient.py](../../observer/ambient.py.md) |
 
+## 260712-TRH-L4 Final Candidate
+
+This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+
 ## Update History
+- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5, issue #15): `_tool_payload` now
   attaches `finalized["supervisorBanner"]` when the supervisor heartbeat has gone stale past

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_harness_logs.py`        |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-10T13:03+02:00                  |
-| lastVerifiedCommitHash |                                         `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                         2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T12:16+02:00                  |
+| lastVerifiedCommitHash |                                         `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
+| lastVerifiedCommitDate |                                         2026-07-12T18:11:57+02:00|
 | governingOverview      | `../overview.md`                        |
 
 ## Governing Overview
@@ -25,7 +25,9 @@ hand-written pane grammars.
 
 Temporary Claude fixtures prove cwd-keyed log binding, exclusion-safe id-bearing user messages,
 successful `/effort ultracode` command+stdout evidence, and errored command rejection. Codex
-fixtures prove date-partitioned message binding only for the matching cwd. A partial final JSONL
+fixtures prove date-partitioned message binding only for the matching cwd; the binding fixture derives
+its date directory from the injected `started_at`, so the test remains aligned with production's
+spawn-date scan instead of expiring after a hardcoded calendar day. A partial final JSONL
 append is ignored until completed, while the same log then becomes acceptable when a complete user
 record is written.
 
@@ -39,6 +41,7 @@ roots and timestamps are injected so no user session history is read.
 - Tests use real record schema and cwd boundaries, not terminal-screen vocabulary.
 - Command presence alone is insufficient; success requires non-error stdout.
 - A different cwd cannot bind merely because the id text matches.
+- Date-partition fixtures must be derived from their injected session time, not wall-calendar literals.
 
 ### Todos
 
@@ -69,6 +72,11 @@ No meaningful cross-repo references found.
 | The fixtures and parser are local to this repository. | — | — |
 
 ## Update History
+
+- 2026-07-12T12:16+02:00 — Release-gate fixture correction for 260712-TRH-L1: replaced the
+  hardcoded `2026/07/10` Codex directory with the injected `started_at` date, preserving the intended
+  cwd-binding assertion without changing production harness behavior. Verification metadata stays
+  pinned until closeout.
 
 - 2026-07-10T13:03+02:00 — Created for 260707-HFX2-L15 with real-shape Claude/Codex binding,
   command success/error, cwd isolation, and partial-final-append regressions. Verification metadata

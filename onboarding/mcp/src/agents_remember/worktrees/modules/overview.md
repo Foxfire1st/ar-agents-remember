@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-07-07T23:45+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
+| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -71,7 +71,11 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   (`merged`/`planned`/`unknown`) rather than merely whether main exists; and the PR
   ref carries gh's own open/merge timestamp (`at` = `mergedAt` once merged, else
   `createdAt`). It re-fires every projector tick (~1s), so no milestone hook is
-  needed for cadence.
+needed for cadence.
+260712-TRH-L7 changes the landing guidance boundary: `status_payload` remains the explicit
+interactive fresh-probe surface, while `projected_status_payload` consumes only a pre-observed
+immutable landing snapshot. The recurring projector therefore never invokes `git ls-remote` or
+`gh` through guidance; missing and stale observations remain explicit.
 - `start.py`, `start_contract.py`, `leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
   `finalize.py`, and `abandon.py`
   own the named `c-09-git-worktree-manager` skill lifecycle operations.
@@ -199,6 +203,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | [test_lifecycle_finalize.py](agents-remember/mcp/tests/test_lifecycle_finalize.py) |
 
 ## Update History
+- 2026-07-12T17:30+02:00 — 260712-TRH-L7: worktree guidance separates fresh interactive landing probes from projected status, which consumes only pre-observed landing facts.
 
 - 2026-07-07T23:45+02:00 — 260707-HFX-L4R2 route impact: start leaf-ref resolution now accepts
   standalone/light `task.json` roots through doc-id/slug/folder aliases and the shared resolver skips

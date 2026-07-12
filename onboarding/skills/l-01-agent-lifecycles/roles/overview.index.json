@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "skills/l-01-agent-lifecycles/roles",
+  "overview": "skills/l-01-agent-lifecycles/roles/overview.md",
+  "index": "skills/l-01-agent-lifecycles/roles/overview.index.json",
+  "sourceScope": [
+    "skills/l-01-agent-lifecycles/roles/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "skills/l-01-agent-lifecycles/roles/architect.md",
+    "skills/l-01-agent-lifecycles/roles/curator.md",
+    "skills/l-01-agent-lifecycles/roles/designer.md",
+    "skills/l-01-agent-lifecycles/roles/manager.md",
+    "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+    "skills/l-01-agent-lifecycles/roles/reviewer.md",
+    "skills/l-01-agent-lifecycles/roles/strategist.md",
+    "skills/l-01-agent-lifecycles/roles/system-specialist.md",
+    "skills/l-01-agent-lifecycles/roles/worker.md"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 9,
+    "fileSidecars": 9,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agent",
+    "architect",
+    "curator",
+    "designer",
+    "lifecycles",
+    "manager",
+    "orchestrator",
+    "reviewer",
+    "roles",
+    "skills",
+    "specialist",
+    "strategist",
+    "system",
+    "worker"
+  ],
+  "hotPath": {
+    "summary": "Role-specific dispatch guidance shares the exact session-id handoff, ready proof, delivered-plus-harness-log-confirmed completion, launch-phase sessionCommands, and post-ready promptKeywords timing.",
+    "candidateHints": [
+      "skills/l-01-agent-lifecycles/roles",
+      "skills/l-01-agent-lifecycles/roles/architect.md",
+      "skills/l-01-agent-lifecycles/roles/curator.md",
+      "skills/l-01-agent-lifecycles/roles/designer.md",
+      "skills/l-01-agent-lifecycles/roles/manager.md",
+      "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+      "skills/l-01-agent-lifecycles/roles/reviewer.md",
+      "skills/l-01-agent-lifecycles/roles/strategist.md",
+      "skills/l-01-agent-lifecycles/roles/system-specialist.md",
+      "skills/l-01-agent-lifecycles/roles/worker.md"
+    ],
+    "anchorHints": [
+      "architect.md",
+      "architect",
+      "curator.md",
+      "curator",
+      "designer.md",
+      "designer",
+      "manager.md",
+      "manager",
+      "orchestrator.md",
+      "orchestrator",
+      "reviewer.md",
+      "reviewer",
+      "strategist.md",
+      "strategist",
+      "system-specialist.md",
+      "system-specialist",
+      "worker.md",
+      "worker",
+      "sessionCommands",
+      "promptKeywords",
+      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "e63f2dbb5f0701d37bbc17ff5358960c77",
+      "lastVerifiedCommitDate",
+      "T18",
+      "TRH"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "skills/l-01-agent-lifecycles/roles/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

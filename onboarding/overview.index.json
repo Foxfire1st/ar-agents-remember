@@ -30,43 +30,49 @@
       "index": "docs/design/overview.index.json"
     },
     {
+      "route": "docs/reference",
+      "overview": "docs/reference/overview.md",
+      "index": "docs/reference/overview.index.json"
+    },
+    {
       "route": "examples/mcp",
       "overview": "examples/mcp/overview.md",
       "index": "examples/mcp/overview.index.json"
+    },
+    {
+      "route": "skills/l-01-agent-lifecycles",
+      "overview": "skills/l-01-agent-lifecycles/overview.md",
+      "index": "skills/l-01-agent-lifecycles/overview.index.json"
     }
   ],
   "coveredFiles": [
     "AGENTS.md",
     "README.md",
-    "docs/reference/harnesses.md",
-    "docs/reference/settings-json.md",
-    "docs/reference/skills.md",
     "pyproject.toml",
     "scripts/sync-dashboard.py",
     "scripts/sync-runtime.py",
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1672,
-    "fileSidecars": 9,
-    "childRoutes": 5
+    "sourceFilesInScope": 1689,
+    "fileSidecars": 6,
+    "childRoutes": 7
   },
   "routingTerms": [
+    "agent",
     "agents",
     "dashboard",
     "design",
     "dev",
     "docs",
     "examples",
-    "harnesses",
-    "json",
+    "lifecycles",
     "mcp",
     "pyproject",
     "readme",
     "reference",
     "runtime",
     "scripts",
-    "settings",
     "skills",
     "src",
     "sync",
@@ -79,13 +85,11 @@
       "mcp",
       "dashboard/src",
       "docs/design",
+      "docs/reference",
       "examples/mcp",
+      "skills/l-01-agent-lifecycles",
       "AGENTS.md",
       "README.md",
-      "docs/reference",
-      "docs/reference/harnesses.md",
-      "docs/reference/settings-json.md",
-      "docs/reference/skills.md",
       "pyproject.toml",
       "scripts",
       "scripts/sync-dashboard.py",
@@ -97,12 +101,6 @@
       "AGENTS",
       "README.md",
       "README",
-      "harnesses.md",
-      "harnesses",
-      "settings-json.md",
-      "settings-json",
-      "skills.md",
-      "skills",
       "pyproject.toml",
       "pyproject",
       "sync-dashboard.py",
@@ -115,13 +113,15 @@
       "mcp",
       "src",
       "design",
+      "reference",
+      "l-01-agent-lifecycles",
       "leafKey",
       "seatRole",
       "spawnRole",
       "HFX2",
       "L17",
       "repo-overview",
-      "0d5ce6784930aa4e9006ab4bbf2b788a3296abce",
+      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -140,7 +140,11 @@
       "logs/mcp/",
       "logs/providers/",
       "providers/_bin/",
-      "providers/_venvs/"
+      "providers/_venvs/",
+      "onboarding/",
+      "c-05-create-or-update-onboarding-files",
+      "ar-coordination/memory-repos/ar-<repo>/",
+      "c-00-initialize-memory-repo"
     ]
   },
   "fallback": {
