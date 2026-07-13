@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T10:30+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T20:24+02:00                           |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -51,7 +51,11 @@ assert `dashboard_static_dir`.
 
 **`StateEtagTests` (260703-L15 S1)** drive the `/api/state` change gate end-to-end via
 `TestClient` over a mocked `project_and_write` returning a held projection (a `held[0]` closure the
-test swaps mid-run, `interval=0.02` so the real tick loop publishes): 200 carries a weak
+test swaps mid-run, `interval=0.02` so the real tick loop publishes; since 260712-PTS-L3 the app is
+built with `watch_changes=False` because this world changes only through the mocked
+`project_and_write`, which no filesystem watcher can observe — the tick loop must stay
+interval-paced, exactly the live contract for watcher-invisible changes whose bound is the
+heartbeat instead): 200 carries a weak
 `ETag: W/"…"` + `Cache-Control: no-cache`; `If-None-Match` with that tag → 304 with the SAME tag
 and an EMPTY body; swapping in a volatile-only change (staleSeconds) keeps returning 304 with the
 same tag after several ticks; swapping in a real change (tokens) makes a deadline-polled
@@ -138,8 +142,10 @@ imports follow it (the suite idiom). An empty-`coordination_root` `McpRuntimeCon
 `mcp/tests/fixtures/sim/logs/observer/...`. Async suites use `unittest.IsolatedAsyncioTestCase`,
 and CLI launch tests patch `uvicorn.run` + `cli.dashboard.create_app`/`load_config` so no server
 is actually started. Both CLI `run()` fixtures (`CliRunTests._args`, `CliSimTests._args`) build the
-`argparse.Namespace` with every flag `run()` reads, including `reload: False` and (260703 L2) the
-daemon-era keys `daemon`/`status`/`stop`: False + `no_access_log`: False, so the fixtures stay
+`argparse.Namespace` with every flag `run()` reads, including `reload: False`, (260703 L2) the
+daemon-era keys `daemon`/`status`/`stop`: False + `no_access_log`: False, and (260712-PTS-L3)
+`heartbeat: None` — `CliTests` also asserts the parsed `namespace.heartbeat` defaults to `None` —
+so the fixtures stay
 in lock-step with `dashboard.run()` reading those attrs; a missing attr would raise instead of
 exercising the branch. Daemon dispatch itself is covered in `test_dashboard_daemon.py`, not here.
 
@@ -168,6 +174,12 @@ exercising the branch. Daemon dispatch itself is covered in `test_dashboard_daem
 | The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
 
 ## Update History
+- 2026-07-12T20:24+02:00 — 260712-PTS-L3: `StateEtagTests` builds its app with
+  `watch_changes=False` (a mocked `project_and_write` is watcher-invisible, so the tick loop must
+  stay interval-paced), and the CLI fixtures/assertions gained the new `heartbeat: None` key
+  (`CliTests` pins the parser default). The change-driven pacing behaviour itself is covered in
+  `test_change_watcher.py`, not here. Verification metadata pinned until closeout stamps the
+  PTS-L3 commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: serving tests cover Projector refresher lifecycle and real app-lifespan shutdown after a dead refresher.
 
 - 2026-07-07T10:30+02:00 — L15 adversarial-review follow-up (L15R-1): volatile-vs-content reflection guard added for *Seconds projection fields. Verification metadata pinned until closeout stamps the L15 commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T12:07+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T20:24+02:00 |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,7 +35,12 @@ backs response token accounting, FastAPI/uvicorn serve the local dashboard, and
 `/api/terminal/{session}` terminal bridge (plain `uvicorn` ships no WS impl, so a
 live WebSocket needs it). Slice 6f adds `python-multipart`, which FastAPI requires to
 parse the `multipart/form-data` upload on `POST /api/terminal/{session}/image` (its
-`UploadFile`/`File` form support fails without it). The webstack is a **core** dependency (not an optional
+`UploadFile`/`File` form support fails without it). 260712-PTS-L3 adds `watchfiles`
+(`>=1.1,<2`), the inotify-backed filesystem watcher behind the dashboard's change-driven
+projection pacing (`serving/change_watcher.py`) — a decision-logged new runtime dependency
+(neither `watchfiles` nor `watchdog` existed in the tree before); the serving layer degrades
+loudly to fixed-interval ticking when it is missing, so the dep is core for the adaptive
+behaviour, not for the daemon to run at all. The webstack is a **core** dependency (not an optional
 extra) so `agents-remember dashboard` works on a plain install. Development-only
 quality tools live under the `dev` optional dependency group: Coverage.py, httpx
 (the FastAPI `TestClient` backend), pytest, pytest-cov, Pyright, Radon, and Ruff.
@@ -89,6 +94,11 @@ the source rather than being repeated here; it is the same string
 
 ## Update History
 
+- 2026-07-12T20:24+02:00 — 260712-PTS-L3: added `watchfiles` (`>=1.1,<2`) as a **core** runtime
+  dependency — the inotify backend for `serving/change_watcher.py`'s change-driven projection
+  pacing (decision-logged; no prior watch library in the tree). Missing-wheel behaviour is a loud
+  fixed-interval fallback, never a crash. Verification metadata pinned until closeout stamps the
+  PTS-L3 commit.
 - 2026-07-12T12:07+02:00 — 260712-TRH-L1 bumps version 3.0.0rc4 -> 3.0.0rc5 (PEP 440 prerelease)
   with no dependency, entry-point, package-data, or build-system contract change. Corrected the stale
   `2.9.3` commentary to version-generic wording so later release bumps do not drift it.

@@ -14,6 +14,7 @@
     "mcp/src/agents_remember/serving/actions.py",
     "mcp/src/agents_remember/serving/app.py",
     "mcp/src/agents_remember/serving/build_info.py",
+    "mcp/src/agents_remember/serving/change_watcher.py",
     "mcp/src/agents_remember/serving/changeset.py",
     "mcp/src/agents_remember/serving/daemon.py",
     "mcp/src/agents_remember/serving/delta.py",
@@ -52,8 +53,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 40,
-    "fileSidecars": 40,
+    "sourceFilesInScope": 41,
+    "fileSidecars": 41,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -68,6 +69,8 @@
     "build",
     "build_info",
     "catalog",
+    "change",
+    "change_watcher",
     "changeset",
     "daemon",
     "delivery",
@@ -133,16 +136,18 @@
     "terminal_paste",
     "turn",
     "turn_state",
-    "validation"
+    "validation",
+    "watcher"
   ],
   "hotPath": {
-    "summary": "260712-TRH-L5 inserts confirmed-gone inbox reconciliation at the front of the deterministic supervisor sweep. The bounded policy resolves only eligible supervisor nudge/escalation rows: catalog termination is direct proof, compacted tombstones require one successful exact-name tmux snapshot, and command failure fails closed. Resolve-plus-compact runs under the inbox lock before redelivery; the body-free aggregate event is silent on no-op sweeps. The existing TTL/cap fallback and active/landed/exited retention remain unchanged. 260707-HFX2-L17 centralizes seat normalization in `seat_binding....",
+    "summary": "260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/` \u2014 container data is unreadable + high-churn, 30s watch-set re-derivation), filters non-input churn, and paces wakes through `ChangePacer` (debounce 0.1s, max-delay = `--interval` so a busy world keeps the former 1s cadence, idle heartbeat default 15s via the new `--heartbeat` flag). The tick body is untouched; `/api/state` staleness and time-derived fields (ages, stale/overdue flips) are bounded by t...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",
       "mcp/src/agents_remember/serving/actions.py",
       "mcp/src/agents_remember/serving/app.py",
       "mcp/src/agents_remember/serving/build_info.py",
+      "mcp/src/agents_remember/serving/change_watcher.py",
       "mcp/src/agents_remember/serving/changeset.py",
       "mcp/src/agents_remember/serving/daemon.py",
       "mcp/src/agents_remember/serving/delta.py",
@@ -160,8 +165,7 @@
       "mcp/src/agents_remember/serving/leaf_ref_validation.py",
       "mcp/src/agents_remember/serving/notes.py",
       "mcp/src/agents_remember/serving/pane_signals.py",
-      "mcp/src/agents_remember/serving/projector.py",
-      "mcp/src/agents_remember/serving/retire.py"
+      "mcp/src/agents_remember/serving/projector.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -172,6 +176,8 @@
       "app",
       "build_info.py",
       "build_info",
+      "change_watcher.py",
+      "change_watcher",
       "changeset.py",
       "changeset",
       "daemon.py",
@@ -209,9 +215,7 @@
       "projector.py",
       "projector",
       "retire.py",
-      "retire",
-      "retire_policy.py",
-      "retire_policy"
+      "retire"
     ]
   },
   "fallback": {

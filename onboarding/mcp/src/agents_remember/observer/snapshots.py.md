@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T20:02+02:00 |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,6 +27,18 @@ worktree-start blocks, §5.4). Every reader reuses the producing subsystem's own
 parser rather than re-parsing.
 
 ## Code Commentary
+
+### 260712-PTS-L2 Shared Per-Tick Contract Snapshot
+
+`read_enclosures` and `read_engine_process_facts` gained a keyword-only
+`contracts: ContractSnapshot | None = None` parameter. The projection tick passes the ONE
+`ContractSnapshot` that `projection_store` builds per tick (see `contract_snapshot.py`), so these
+readers add ZERO contract enumerations or parses of their own; a standalone call (`contracts=None`)
+builds a local one-shot snapshot via `build_contract_snapshot`, preserving the public signature and
+the walk-and-skip behavior each reader had before. `_enclosure_from_contract` now takes an
+already-parsed `WorktreeContract` (the parse-and-skip moved into the snapshot builder). The snapshot's
+`WorktreeContract` instances are cached across ticks — readers must treat them as immutable and never
+mutate them.
 
 ### 260707-HFX2-L13 Bounded Task Summaries And On-Demand Bodies
 
@@ -72,10 +84,12 @@ files are ignored when the projection store supplies an active-group filter and 
 admitted from active enclosure + lifecycle state. Direct reader calls that omit the filter preserve the
 full file-surface read used by lower-level tests and diagnostics.
 
-`read_enclosures(coordination_root)` iterates active leaf enclosure contracts via
-`worktrees.task_resolver.iter_leaf_enclosure_contracts`, mapping each
-`enclosures/<leaf-id>/series-contract.md` through `worktrees.worktree_contract.load_contract` to an
-`EnclosureNode`. Root `series-contract.md` files represent integration branches and are not live worktree
+`read_enclosures(coordination_root, *, contracts=None)` maps each active leaf
+`enclosures/<leaf-id>/series-contract.md` to an `EnclosureNode` — since 260712-PTS-L2 the parsed
+contracts come from the shared per-tick `ContractSnapshot` when the projection passes one (a
+standalone call builds a local snapshot; the snapshot builder owns the
+`iter_leaf_enclosure_contracts` walk + `load_contract` parse). Root `series-contract.md` files
+represent integration branches and are not live worktree
 processes; `0_archive/` is excluded. A malformed contract is skipped (`ContractError`/`OSError`), never
 fatal to the whole projection. Since L11 `_enclosure_from_contract` also stats the worktree paths at
 snapshot time — `codeWorktreeExists = contract.code_worktree.exists()` and `memoryWorktreeExists =
@@ -134,8 +148,9 @@ filesystem. Since L14 `_task_doc_node` also copies `doc.orchestrates` (as a fres
 `TaskDocNode.orchestrates` — the orchestration-command relation the dashboard nests masters by;
 docs without the field project `[]`.
 
-**Slice-5e** added two Engine Room readers. `read_engine_process_facts(coordination_root, *, active_worktree_groups=None)` iterates the
-*same* active leaf enclosure contracts as `read_enclosures`, but instead of the structural `EnclosureNode`
+**Slice-5e** added two Engine Room readers. `read_engine_process_facts(coordination_root, *, active_worktree_groups=None, now=None, landing_state=None, contracts=None)` reads the
+*same* active leaf enclosure contracts as `read_enclosures` (since 260712-PTS-L2 via the same shared
+per-tick `ContractSnapshot`, so it adds no contract parses of its own), but instead of the structural `EnclosureNode`
 it builds an `EngineProcessFacts` bundle per contract carrying the status-guidance facts the map needs:
 `contract_payload(contract)` (code/memory branches, base commits, worktree paths) and
 `lifecycle_guidance(contract)` — both pure — plus `status` from `_safe_status_payload`. `status_payload`
@@ -232,7 +247,13 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 ## Invariants And Boundaries
 
 - **Reuse, don't re-parse:** providers come through `current_state`, contracts
-  through `load_contract` — one parser per surface, owned by its producer.
+  through `load_contract` — one parser per surface, owned by its producer. Since 260712-PTS-L2 the
+  contract parse itself happens at most once per projection tick: the enclosure and engine-facts
+  readers consume the shared `ContractSnapshot` the projection injects, and only build their own
+  when called standalone.
+- **Injected contracts are shared, immutable state:** the `WorktreeContract` instances inside a
+  passed `ContractSnapshot` are cached across ticks — a reader that mutated one would corrupt every
+  later tick. Readers only read.
 - **Resilient reads:** a missing/malformed surface degrades to empty/skip; one
   bad file never breaks the whole projection.
 - File I/O lives here at the call edge; the reducer fold stays pure.
@@ -277,6 +298,9 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 | Worktree provider readers derive isolated provider container names, inspect Docker, and convert observed runtime into ready/degraded/failed summaries. | L134-L187; L280-L375 | [snapshots.py](snapshots.py) |
 | `read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups. | L112-L203 | [snapshots.py](snapshots.py) |
 | `read_engine_process_facts` accepts an active group filter before status-guidance and git probes are built. | L496-L535 | [snapshots.py](snapshots.py) |
+| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot. | L476-L494; L639-L668 | [snapshots.py](snapshots.py) |
+| The shared per-tick contract snapshot + stat-identity parse cache these readers consume. | L1-L112 | [contract_snapshot.py](contract_snapshot.py) |
+| PTS-L2 tests pin reader-output parity with and without the shared snapshot and one enumeration per full projection tick. | L592-L663 | [test_projection_scaling_cs6.py](../../../tests/test_projection_scaling_cs6.py) |
 | `read_setup_progress_nodes` accepts the same active worktree-group filter used by provider setup projection. | L778-L805 | [snapshots.py](snapshots.py) |
 | `read_drift_snapshots` carries checked/source/memory/report provenance from the persisted snapshot. | L675-L711 | [snapshots.py](snapshots.py) |
 | Task 29 tests pin active-group provider admission, parked provider rejection, setup-progress filtering, and engine-process group filtering. | L169-L258; L1034-L1132; L1863-L1907; L3109-L3134 | [test_observer_projection.py](../../../tests/test_observer_projection.py) |
@@ -286,6 +310,13 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 | The data-surface inventory the structural/analytical split follows. | L91-L118; L332-L344 | [docs/design/observable-lifecycle.md](../../../../docs/design/observable-lifecycle.md) |
 
 ## Update History
+- 2026-07-12T20:02+02:00 — 260712-PTS-L2: `read_enclosures` + `read_engine_process_facts` gained
+  keyword-only `contracts: ContractSnapshot | None = None` — the projection tick injects the ONE
+  shared per-tick contract snapshot (built in `projection_store`, cached across ticks by
+  `(mtime_ns, size, ctime_ns)` stat identity in `contract_snapshot.py`) so neither reader walks or
+  parses contracts itself; `contracts=None` keeps the pre-L2 standalone behavior.
+  `_enclosure_from_contract` now takes a parsed contract. Injected contracts are shared across ticks
+  and must never be mutated. Verification metadata pinned until closeout stamps the PTS-L2 commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: recurring snapshot assembly merges immutable landing observations per contract, logs invalid snapshot readers, and keeps local status truthful when landing data cannot be read.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: bounded the always-on task/series summary windows,

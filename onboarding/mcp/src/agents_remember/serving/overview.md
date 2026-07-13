@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T20:24+02:00 |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`|
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -110,6 +110,16 @@ until then, so hosted-delivery failures do not escalate before the persistent re
 
 ## Hot Path Summary
 
+260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch
+roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/`
+— container data is unreadable + high-churn, 30s watch-set re-derivation), filters non-input churn, and paces wakes through `ChangePacer`
+(debounce 0.1s, max-delay = `--interval` so a busy world keeps the former 1s cadence, idle
+heartbeat default 15s via the new `--heartbeat` flag). The tick body is untouched; `/api/state`
+staleness and time-derived fields (ages, stale/overdue flips) are bounded by the heartbeat;
+watcher absence/failure degrades LOUDLY to legacy fixed-interval ticking; `--sim` stays
+time-driven; a running daemon picks the new pacing up only via explicit stop + spawn (ensure
+adopts healthy daemons).
+
 260712-TRH-L5 inserts confirmed-gone inbox reconciliation at the front of the deterministic
 supervisor sweep. The bounded policy resolves only eligible supervisor nudge/escalation rows:
 catalog termination is direct proof, compacted tombstones require one successful exact-name tmux
@@ -139,12 +149,15 @@ body-free for task documents.
 
 `agents-remember dashboard --config <settings.json>` → `cli/dashboard.py` →
 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks
-`project_and_write` on `--interval`, refreshing provider current-state first in live mode, then diffs each
+`project_and_write` — since **260712-PTS-L3** on change-or-heartbeat wakes when the live change
+watcher is healthy (`--interval` is the fast-path cadence floor a busy world still ticks at;
+`--heartbeat`, default 15s, is the quiet-world refresh) and on the legacy fixed `--interval`
+under `--sim` or a degraded watcher — refreshing provider current-state first in live mode, then diffs each
 projection against the last
 (`serving.delta.diff_projection`), and fans **per-entity deltas** out to every SSE
 client. Beside the projector task, the same lifespan runs the **provider containment
 metrics sampler** (260707-HFX-L1, containment R4): every 30s
-(`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the 1s projection tick)
+(`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the projection tick)
 it snapshots labeled provider containers read-only
 (`providers/metrics.sample_provider_containers`) into the `ProviderMetricsStore` under
 `logs/observer/providers/` — exception-tolerant (a failed docker probe logs and retries
@@ -192,7 +205,11 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 ## Route Model
 
-- `app.py` — `create_app(config, *, interval, now, before_tick, refresh_provider_state)` builds the FastAPI app: a
+- `app.py` — `create_app(config, *, interval, heartbeat, now, before_tick,
+  refresh_provider_state, refresh_landing_state, watch_changes)` builds the FastAPI app
+  (260712-PTS-L3: `watch_changes` defaults to `before_tick is None`, so live serving injects a
+  `ProjectionInputWatcher` for change-driven pacing while `--sim` stays time-driven;
+  `heartbeat` bounds quiet-world staleness): a
   lifespan that primes + runs one shared `Projector` plus the 30s provider containment
   metrics loop (260707-HFX-L1 R4 — `sample_provider_containers` → `ProviderMetricsStore.record`
   via `asyncio.to_thread`, exception-tolerant, both tasks cancelled + awaited at shutdown),
@@ -260,7 +277,10 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `<coordinationRoot>/logs/dashboard/` — an atomic `daemon.json` (pid/host/port/version/paths,
   written immediately after spawn) and a per-spawn-rotated `dashboard.log` (the child serves with
   `--no-access-log` so the log stays bounded). Liveness is kill-probe **plus** `/proc/<pid>/cmdline`
-  identity (pid reuse and zombies read as stale); stop is TERM → bounded wait → KILL. The child is
+  identity (pid reuse and zombies read as stale); stop is TERM → bounded wait → KILL. Since
+  260712-PTS-L3 `ensure`/`spawn` plumb an optional `heartbeat` onto the child argv
+  (`--heartbeat`, spawn/restart only — ensure ADOPTS a healthy daemon without cadence comparison,
+  so adaptive pacing reaches a live daemon only via explicit stop + spawn). The child is
   the plain foreground CLI addressed by module string — the module stays import-light (stdlib +
   config types, never uvicorn/FastAPI), so `mcp/server.py`'s boot hook
   (`maybe_autostart_dashboard`, threaded/total/stderr-only, gated by the `dashboard.autoStart`
@@ -273,6 +293,24 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   seams + `_tick_sync(moment)` keep one loop generic across live and sim. Live projectors can
   pass a provider refresher into the observer store; sim projectors keep fixture state
   deterministic by omitting it. One re-projection per tick regardless of client count.
+  **260712-PTS-L3:** with an injected `change_watcher` the pacemaker is `ChangePacer.wait()`
+  (change-or-heartbeat waking) instead of the unconditional `sleep(interval)`; the watch task's
+  lifecycle mirrors the landing refresher's, a dead watcher degrades loudly to fixed-interval
+  ticking (`_on_watch_task_done`), and `projection_count`/`last_wake_reason` instrument the loop.
+  Without a watcher (sim, injected-`now()` tests) the legacy pacing is byte-identical.
+- `change_watcher.py` — the **260712-PTS-L3 change-driven pacing module**:
+  `projection_input_roots` (watch roots derived reader-by-reader from `project_and_write`'s input
+  surfaces — tasks/, observer lifecycles/workspace/drift, provider status/setup, temp
+  worktree-start/tool-reports; nothing under `worktrees/` — container data is unreadable to the
+  daemon user and high-churn; the derivation
+  table lives in its docstring), `is_projection_input_event` (drops `*.tmp`, dotfiles, the
+  projection's own outputs, and workspace non-input churn incl. `operator-inbox.lock`),
+  `ChangePacer` (debounce 0.1s, max-delay = interval — a busy world keeps the former cadence —
+  heartbeat default 15s, degraded ⇒ fixed interval, starts degraded at boot), and
+  `ProjectionInputWatcher` on `watchfiles` (30s watch-set re-derivation; ANY failure — missing
+  wheel, derivation error, crashed watch — degrades LOUDLY to fixed-interval ticking and retries
+  every 30s). Heartbeat = the staleness bound for `/api/state` and time-derived fields (R4:
+  volatile ages already advance client-side via `servedAges.ts`).
 - `delta.py` — the **pure** `diff_projection(previous, current, *, previous_state=None,
   current_state=None) -> list[DeltaEvent]`: the per-entity diff over the flat id-keyed
   collections (upserts in projection order, removals sorted for determinism). A transport concern
@@ -585,6 +623,13 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   sampler is read-only + dockerless-safe, discovers stacks by ownership label (no settings
   needed, leftover stacks stay visible), runs on its own 30s cadence — never the projection
   tick — and never gates or launches providers; a failed pass logs and retries.
+- **Change-driven pacing changes when the projector wakes, never what a tick does
+  (260712-PTS-L3).** The tick body, prime, diff/broadcast, and ETag revision are untouched; a
+  busy world keeps the former `--interval` cadence (max-delay = interval + floor); a quiet
+  world's `/api/state` staleness and time-derived fields advance at heartbeat resolution
+  (default 15s); watcher absence or failure degrades LOUDLY to legacy fixed-interval ticking —
+  fail-open, never fail-silent, never a crash. `--sim` replay is always time-driven, and an
+  already-running daemon adopts the new pacing only through explicit stop + spawn.
 - **The supervisor sweep is stores-not-projections, code-not-model (260707-HFX2-L2 R1/R3).**
   `supervisor.py` imports nothing from `projector.py`/`observer/reducer.py`; every predicate reads
   its store directly. Own decoupled cadence (settings-controlled, default 10s), zero model calls
@@ -636,6 +681,20 @@ Serving implements exact-session readiness, copy-mode rechecks, calibrated settl
 
 
 ## Update History
+- 2026-07-12T20:24+02:00 — 260712-PTS-L3 route impact (change-driven projection pacing): route
+  gains `change_watcher.py` (derived watch roots + input-event filter + `ChangePacer` +
+  `ProjectionInputWatcher` on the new `watchfiles>=1.1,<2` core dep); `projector.py`'s
+  unconditional `sleep(interval)` became change-or-heartbeat waking when a watcher is injected
+  (tick body untouched; loud fixed-interval fallback; `projection_count`/`last_wake_reason`);
+  `app.py` gained `heartbeat=`/`watch_changes=` (watcher iff `before_tick is None`);
+  `cli/dashboard.py` + `daemon.py` gained `--heartbeat` (default 15s) with `--interval`
+  re-documented as the fast-path cadence floor. Why: the projector re-projected the whole world
+  every 1s regardless of change — py-spy 2026-07-12 showed `_tick_sync` at 11.1s of a 15s sample.
+  Change-driven delta latency ≈ debounce + projection time (measured ~0.2s); adaptive pacing
+  reaches a live daemon only via explicit stop + spawn. Adversarial review INTEGRATE with two
+  adopted hardenings (inbox-lock filter, retryable root derivation). Updated the Hot Path Summary,
+  the `app.py`/`daemon.py`/`projector.py` Route Model bullets, and added the `change_watcher.py`
+  bullet + pacing invariant. Verification metadata pinned until closeout stamps the PTS-L3 commit.
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the serving route for the new
   inbox-reclamation policy, one-catalog-read/one-snapshot boundedness, same-sweep compaction before
   redelivery, body-free aggregate telemetry, no-op silence, 5-second lock-hold characteristics,

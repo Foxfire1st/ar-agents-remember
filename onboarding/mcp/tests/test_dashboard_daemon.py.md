@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_dashboard_daemon.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-03T11:40+02:00                           |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6`       |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-12T20:24+02:00                           |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -39,11 +39,17 @@ minimal real settings JSON for CLI dispatch tests.
   parent; without reaping a dead child would zombie and read as alive).
 - `SpawnTests` — `subprocess.Popen` mocked: asserts the module-string command shape
   (`-m agents_remember.cli dashboard --config … --port … --interval … --no-access-log`),
-  `start_new_session=True`, immediate state write, and per-spawn log rotation.
+  `start_new_session=True`, immediate state write, and per-spawn log rotation. 260712-PTS-L3
+  adds the `--heartbeat` plumbing pair: the default spawn asserts `--heartbeat` is NOT in the
+  child argv (the child uses the serving default), and
+  `test_spawn_forwards_an_explicit_heartbeat_to_the_child` asserts `heartbeat=20.0` rides as
+  `--heartbeat 20.0` before `--no-access-log`.
 - `EnsureTests` — the decision matrix with `spawn`/`stop`/`probe`/`_wait_ready`
   patched: absent→`started`, healthy-match→`adopted` (no spawn), version-mismatch and
   port-mismatch→`restarted` (stop then spawn), child-death→`failed`+state cleared,
-  slow-start→`failed`+state kept, and a really-held flock→`lock-held` (no spawn).
+  slow-start→`failed`+state kept, and a really-held flock→`lock-held` (no spawn). The
+  absent→`started` case pins the full spawn call shape including the PTS-L3 `heartbeat=None`
+  pass-through.
 - `AutostartTests` — off→no-op (ensure never called); on→a joined worker thread that
   called `ensure` with the settings port and reported to captured stderr; an ensure
   exception is swallowed and reported (`failed: …`), never raised.
@@ -71,6 +77,12 @@ minimal real settings JSON for CLI dispatch tests.
 
 ## Update History
 
+- 2026-07-12T20:24+02:00 — 260712-PTS-L3: `SpawnTests` pins heartbeat argv plumbing (omitted by
+  default, `--heartbeat 20.0` when explicit) and `EnsureTests` pins the `heartbeat=None`
+  pass-through on the started path — the ensure-adopts-without-cadence-comparison behaviour that
+  makes adaptive pacing reach a live daemon only via explicit stop + spawn is unchanged and
+  documented in the daemon sidecar. Verification metadata pinned until closeout stamps the PTS-L3
+  commit.
 - 2026-07-03T11:40+02:00 — Created for 260703 L2 alongside `serving/daemon.py` (32 tests across
   state/probe/stop/spawn/ensure/autostart/CLI-dispatch). Verification metadata pinned until
   closeout stamps the code commit.

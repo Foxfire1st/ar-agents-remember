@@ -5,14 +5,14 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-10T01:14+02:00                         |
-| lastVerifiedCommitHash |                                                `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate |                                                2026-07-12T18:11:57+02:00|
-| governingOverview      | `../overview.md`                               |
+| lastUpdated            | 2026-07-12T20:02+02:00                         |
+| lastVerifiedCommitHash |                                                `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`|
+| lastVerifiedCommitDate |                                                2026-07-13T12:33:57+02:00|
+| governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
 
-[mcp overview](../overview.md) — there is no route-local `mcp/tests/overview.md`; existing test sidecars are governed by the package overview.
+[mcp/tests overview](overview.md) — the route-local `mcp/tests/overview.md` established on 2026-07-12 (260712-TRH-L4) now governs this test sidecar.
 
 ## Purpose
 
@@ -21,6 +21,17 @@
 ### 260712-TRH-L7 invalid landing containment
 
 The scaling suite adds a raising landing snapshot reader case. It proves local status survives with a warning and the projection tick does not lose unrelated contracts.
+
+### 260712-PTS-L2 shared contract snapshot
+
+`ContractSnapshotSharedPassTests` pins the one-shared-contract-pass-per-tick change: N parses on a
+cold build, zero on an unchanged build, exactly the changed file afterwards (R7/R2); one enumeration
+per full `project_and_write` tick with zero re-parses on the next tick (R1); reader-output parity for
+enclosures, engine facts, and prune keys with and without the injected snapshot, malformed contract
+skipped-never-fatal (R4); cache retention bounded to the live path set (R3); the two ctime-hardening
+adversarial cases — a `chmod 000` invalidates instead of serving the stale good parse forever, and an
+`os.utime`-pinned same-size rewrite is still detected; and parse failures retried every build, never
+cached.
 
 ## Code Commentary
 
@@ -34,7 +45,7 @@ series summaries are body-free and the on-demand reader returns full content.
 
 ### Logic
 
-`GateReadFoldTests` counts `GateStore.read()` calls and proves `read_gates()` folds each gate log once per tick. `TaskDocSharedCacheTests` proves task and series readers share the same parsed task-json cache. `GitStatusCacheTests` proves `_safe_status_payload()` is TTL-cached. `LifecycleLogCacheTests` proves unchanged lifecycle logs are not re-read at two event-log sizes. `TaskDocumentsPayloadBudgetTests` characterizes the still-unbounded task-doc body payload and proves the write-path guardrail logs only when over budget and is rate-limited.
+`GateReadFoldTests` counts `GateStore.read()` calls and proves `read_gates()` folds each gate log once per tick. `TaskDocSharedCacheTests` proves task and series readers share the same parsed task-json cache. `GitStatusCacheTests` proves `_safe_status_payload()` is TTL-cached. `LifecycleLogCacheTests` proves unchanged lifecycle logs are not re-read at two event-log sizes. `TaskDocumentsPayloadBudgetTests` characterizes the still-unbounded task-doc body payload and proves the write-path guardrail logs only when over budget and is rate-limited. `ContractSnapshotSharedPassTests` (PTS-L2) counts `contract_snapshot.load_contract` calls (the builder's only parse site) and `iter_leaf_enclosure_contracts` walks, seeds real contracts via `default_contract`/`write_contract`, forces stat-identity changes with `_bump_mtime`, and steps past the kernel's coarse-clock granule (`_step_past_ctime_granule`, 50ms) before chmod/rewrite cases because ctime cannot be set explicitly; the chmod case is skipped for root (root ignores file modes).
 
 ### Conventions
 
@@ -61,6 +72,9 @@ No external documentation governs these repo-local projection scaling regression
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The test file covers gate one-read folds, shared task-doc cache, git status TTL, lifecycle-log cache, and task-doc payload guardrail. | L44-L73; L76-L118; L121-L141; L144-L184; L186-L242 | [mcp/tests/test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
+| `ContractSnapshotSharedPassTests`: parse counting, one-enumeration-per-tick, output parity, live-set retention, chmod-000 and utime-pinned-rewrite ctime hardening, and malformed-retry regressions. | L495-L764 | [mcp/tests/test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
+| The shared per-tick contract snapshot + stat-identity parse cache under test. | L1-L145 | [mcp/src/agents_remember/observer/contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
+| The single per-tick build in `project_and_write` the full-tick regression instruments. | L102-L108; L211-L230 | [mcp/src/agents_remember/observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
 | Projection store implements lifecycle-log caching and over-budget task-document payload warnings. | L93-L130; L248-L274 | [mcp/src/agents_remember/observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
 | Snapshot readers implement the shared task-document cache, single-read gate fold, and git-status TTL cache. | L113-L155; L485-L516; L603-L665 | [mcp/src/agents_remember/observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 
@@ -73,6 +87,12 @@ No meaningful cross-repo references found.
 | Same-repository tests only. | N/A | N/A |
 
 ## Update History
+- 2026-07-12T20:02+02:00 — 260712-PTS-L2: added `ContractSnapshotSharedPassTests` — parse-count
+  N/zero/changed-only across builds, one contract enumeration per full projection tick, reader-output
+  parity with/without the injected snapshot, live-set cache retention, the chmod-000 and
+  utime-pinned-rewrite ctime-hardening cases, and failure-retried-every-build. Also repointed
+  `governingOverview` to the now-existing route-local `mcp/tests/overview.md`. Verification metadata
+  pinned until closeout stamps the PTS-L2 commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: scaling regressions prove invalid landing snapshots sacrifice only one contract's landing detail and do not block the projection tick.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6/F7/B2: revived the lifecycle-log cache instrument,

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-12T19:55+02:00                     |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -40,7 +40,11 @@ closeout surface — `closeout_changed_paths` (from `modules/closeout.py`),
 `committed_changed_paths` and `commit_text_or_none` (from `modules/git.py`),
 and `contract_memory_verified_commit` (from `modules/onboarding.py`) — so tests
 and callers reach the worklist and body-gate baseline helpers through the
-stable facade path. CLI command functions remain print adapters over those
+stable facade path. 260712-PTS-L1 adds the leaf-id heal to the same surface: the
+facade re-exports `heal_contract_leaf_ids` (from `worktrees/worktree_contract.py`)
+and `command_heal_leaf_ids` (from `modules/cli.py`) in `__all__`, so the explicit
+one-shot legacy-id migration is reachable through the stable facade path like
+the lifecycle operations. CLI command functions remain print adapters over those
 payloads, so MCP controllers do not need to run `main(argv)` and parse stdout.
 The former direct-closeout re-exports (`direct_closeout_result`,
 `direct_closeout_preview_payload`, `validate_direct_external_context`,
@@ -93,6 +97,10 @@ documented by the `modules/overview.md` route overview.
 
 ## Update History
 
+- 2026-07-12T19:55+02:00 — 260712-PTS-L1: re-exported `heal_contract_leaf_ids` (from
+  `worktree_contract.py`) and `command_heal_leaf_ids` (from `modules/cli.py`) and added both to
+  `__all__`, putting the explicit one-shot legacy leaf-id heal on the stable facade surface.
+  Verification metadata pinned until closeout stamps the 260712-PTS-L1 commit.
 - 2026-06-23T22:50+02:00 — Re-exported `FinalizeArgs` and `finalize_result` for the new `lifecycle_finalize_task` terminal operation. Verification metadata pinned until closeout stamps the source commit.
 
 - 2026-06-12T19:06+02:00 — Issue #83: re-exported the committed-range closeout surface (`closeout_changed_paths`, `committed_changed_paths`, `commit_text_or_none`, `contract_memory_verified_commit`) and added them to `__all__`.

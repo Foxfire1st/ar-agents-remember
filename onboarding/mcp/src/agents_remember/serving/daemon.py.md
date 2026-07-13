@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/daemon.py`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-03T11:40+02:00                           |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6`       |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-12T20:24+02:00                           |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -39,11 +39,13 @@ State lives under `<coordinationRoot>/logs/dashboard/`:
   concurrent MCP boots race-safe: losers return `EnsureResult(action="lock-held")`
   and skip; they never double-spawn.
 
-`spawn(config, *, host, port, version, interval=1.0)` launches the plain
+`spawn(config, *, host, port, version, interval=1.0, heartbeat=None)` launches the plain
 foreground CLI **by module string** (`sys.executable -m agents_remember.cli
 dashboard --config <config.config_path> --host … --port … --interval …
 --no-access-log`) with `start_new_session=True`, stdio to the log, cwd at the
-daemon dir. Spawned `Popen` handles are kept in `_spawned` so a long-lived
+daemon dir. **260712-PTS-L3:** an explicit `heartbeat` adds `--heartbeat <value>`
+to the child argv before `--no-access-log`; `None` omits the flag so the child
+uses the serving default (15s). Spawned `Popen` handles are kept in `_spawned` so a long-lived
 supervisor reaps exited children (`_reap_spawned`) instead of leaving zombies.
 
 Liveness (`probe` → `_state_alive`) is `kill(pid, 0)` (`_pid_alive`) **plus** a
@@ -60,8 +62,12 @@ the request: full match → `adopted`; mismatch → `stop` + `spawn` → `restar
 absent → `spawn` → `started`. After a spawn, `_wait_ready` requires the child to
 both **stay alive and accept TCP** before success; a dead child clears state and
 reports the log tail, a slow one keeps state with a "may still be starting"
-detail (`failed` either way). `interval` reaches the child only on
-spawn/restart; an adopted daemon keeps its cadence.
+detail (`failed` either way). `interval` / `heartbeat` reach the child only on
+spawn/restart; an adopted daemon keeps the cadences it was started with.
+**Deployment note (260712-PTS-L3):** because `ensure` adopts a healthy daemon
+without comparing cadence flags, the adaptive change-driven pacing (or a new
+`--heartbeat` value) reaches an already-running daemon only via an explicit
+stop + spawn — a pre-PTS-L3 daemon keeps fixed 1s ticking until restarted.
 
 `maybe_autostart_dashboard(config)` is the MCP boot hook: a no-op unless
 `config.dashboard.auto_start`, otherwise a **daemon thread** runs `ensure(host=
@@ -97,6 +103,12 @@ protocol.
 
 ## Update History
 
+- 2026-07-12T20:24+02:00 — 260712-PTS-L3: `spawn`/`ensure`/`_ensure_locked` gained
+  `heartbeat: float | None = None` — an explicit value rides the child argv as `--heartbeat`,
+  `None` omits the flag (serving default 15s). Like `interval`, it reaches the child only on
+  spawn/restart: `ensure` adopts healthy daemons without cadence comparison, so adaptive pacing
+  reaches a live daemon only via explicit stop + spawn. Verification metadata pinned until
+  closeout stamps the PTS-L3 commit.
 - 2026-07-03T11:40+02:00 — Created for 260703 L2 (daemon mode + MCP auto-start): pidfile store,
   identity-checked liveness, detached spawn via module string, TERM→KILL stop, the flock-guarded
   `ensure` decision function (adopt/start/restart), and the total, threaded, stderr-only

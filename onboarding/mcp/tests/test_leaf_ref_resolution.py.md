@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_leaf_ref_resolution.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:59+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-12T19:55+02:00                     |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,9 +18,11 @@
 
 `test_leaf_ref_resolution.py` pins the shared task-tree leaf-ref resolver introduced by HFX-L4. It is
 focused coverage for accepted canonical forms, legacy aliases, no-match reporting, ambiguity reporting,
-start-scope task-root consistency, sibling JSON artifact handling, read-path contract tolerance,
-light-task candidate indexing, loud marker-bearing malformed-doc handling, and HFX2-L8's boot-safety
-skip for malformed non-task JSON artifacts.
+start-scope task-root consistency, sibling JSON artifact handling, light-task candidate indexing, loud
+marker-bearing malformed-doc handling, and HFX2-L8's boot-safety skip for malformed non-task JSON
+artifacts. Since 260712-PTS-L1 it also pins the contract read/heal split: walk-free `load_contract`
+(zero tasks-tree traversal, legacy ids returned verbatim) and the explicit `heal_contract_leaf_ids`
+sweep (read-path-parity mapping, canonical-skip idempotence, dry-run, error tolerance, CLI seam).
 
 ## Code Commentary
 
@@ -35,10 +37,25 @@ The temp fixtures write real `TaskDocument` master and subtask JSON/Markdown pai
   to the wrong start contract;
 - a missing optional master `task.json` is skipped, malformed non-task sibling JSON is ignored for boot
   safety, while a malformed schema-marked leaf JSON file raises;
-- sibling JSON artifacts without the task-document schema marker are ignored by resolver and
-  `load_contract` normalization;
-- `load_contract` keeps a legacy leaf id unchanged when active-task resolution cannot prove the mapping;
 - standalone/light `task.json` docs resolve from their doc id, slug/folder, and enclosure aliases.
+
+The 260712-PTS-L1 read/heal-split tests build on a shared `_persisted_legacy_contract` fixture (a leaf
+contract persisted with a legacy stem-shaped id — the pre-heal on-disk state) and prove:
+
+- `load_contract` returns a legacy `leaf_id` verbatim — the read path never heals (R1/R5);
+- `load_contract` performs ZERO tree traversal (R6a): every walk entry point the old normalization
+  dragged in is patched to fail loud — `resolve_leaf_ref`, `resolve_active_task_root`, the
+  series-contract iterators, and `Path.glob`/`rglob`/`iterdir` themselves — so any regression that
+  re-adds a tasks-tree walk to the read path trips immediately;
+- `heal_contract_leaf_ids` maps a legacy stem id exactly like the removed read-time normalization
+  (R6b), including still ignoring sibling artifact JSON on the heal walk;
+- the heal is idempotent and skips canonical contracts without resolution (R6c): a second sweep
+  rewrites nothing and `resolve_leaf_ref` is patched to assert the canonical skip is walk-free;
+- an unprovable legacy id survives the heal unchanged with an empty error report;
+- `dry_run=True` reports the would-be rewrite without touching the file;
+- an unreadable/torn contract lands in `errors` while the sweep continues healing the rest;
+- the `heal-leaf-ids` CLI subcommand (R3) is the on-demand seam: `main([...])` returns 0, prints the
+  JSON report, and the contract is healed on disk.
 
 ## Invariants And Boundaries
 
@@ -50,10 +67,17 @@ The temp fixtures write real `TaskDocument` master and subtask JSON/Markdown pai
 | Finding | Source Path |
 | --- | --- |
 | Resolver under test. | [../src/agents_remember/worktrees/leaf_refs.py](../src/agents_remember/worktrees/leaf_refs.py.md) |
+| Walk-free `load_contract` and the `heal_contract_leaf_ids` sweep under test. | [../src/agents_remember/worktrees/worktree_contract.py](../src/agents_remember/worktrees/worktree_contract.py.md) |
+| The `heal-leaf-ids` CLI seam driven end to end via `main`. | [../src/agents_remember/worktrees/modules/cli.py](../src/agents_remember/worktrees/modules/cli.py.md) |
 | Task document writer used to create representative task trees. | [../src/agents_remember/tasks/overview.md](../src/agents_remember/tasks/overview.md) |
 
 ## Update History
 
+- 2026-07-12T19:55+02:00 — 260712-PTS-L1: replaced the two read-time-normalization contract tests with
+  the read/heal-split suite — legacy ids come back verbatim from `load_contract`, a loud zero-traversal
+  tripwire guards the walk-free read path, and `heal_contract_leaf_ids` is pinned for read-path parity,
+  canonical-skip idempotence, dry-run reporting, torn-contract tolerance, and the `heal-leaf-ids` CLI
+  seam. Verification metadata pinned until closeout stamps the 260712-PTS-L1 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (minimal projection robustness): added a regression for
   malformed sibling JSON without the task-document schema marker being ignored, while schema-marked
   malformed task docs still fail loud. Verification metadata pinned until closeout stamps the

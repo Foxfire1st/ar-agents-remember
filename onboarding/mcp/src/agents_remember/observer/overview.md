@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T20:02+02:00 |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -92,6 +92,18 @@ timestamp — `mergedAt` once merged, else `createdAt`; `None` for branch refs);
 projection reads the latest snapshot and carries explicit missing/stale freshness fields, while
 interactive status retains its fresh probe behavior. Refresher startup, cancellation, and failed-cycle
 containment are lifecycle-managed by serving.
+
+260712-PTS-L2 (master 260712-PTS) collapses the tick's contract reads to ONE shared pass. Before it,
+`read_enclosures`, `read_engine_process_facts`, and drift-snapshot pruning each ran their own
+`iter_leaf_enclosure_contracts` walk + `load_contract` parse every 1s tick (py-spy 2026-07-12:
+2.78s/3.68s/3.40s of total time in a 15s sample). `contract_snapshot.py` builds an immutable
+`ContractSnapshot` once per tick in `projection_store` and injects it into all three consumers via
+keyword-only `contracts=` parameters (standalone calls still build their own, behavior-identical), on
+top of a cross-tick parse cache keyed by `(mtime_ns, size, ctime_ns)` stat identity — unchanged
+contract files are not re-read or re-parsed at all; parse failures are never cached (skip + retry
+every tick). Cache mutation is confined to the serialized projection tick, and the cached
+`WorktreeContract` instances are shared across ticks, so consumers must never mutate them. The
+landing refresher and supervisor sweep deliberately keep their own passes.
 
 Slice 05l Part 1 closes the **backend teardown-visibility** gaps in this surface. The reducer's
 `_GUIDANCE_PHASE` gains `"abandoned": "abandoned"`, surfacing `worktrees/modules/guidance.py`'s new
@@ -242,7 +254,9 @@ enclosure-backed work; fleeting/standalone logs (no `taskName`) keep the ordinar
 Workspace event storage is bounded live by lock-guarded compaction plus virtual byte offsets;
 lifecycle heartbeats are one coalesced sidecar per lifecycle; projection log parses survive heartbeat
 ticks; and task/series broadcasts carry at most 250 body-free summaries with selected bodies loaded on
-demand. Accepted follow-ups remain explicit: task summary truncation/step-list bounds (N4), raw
+demand. Each projection tick now performs ONE shared leaf-contract enumeration+parse pass
+(`contract_snapshot.py`, stat-identity cached across ticks) consumed by enclosures, engine facts, and
+drift pruning. Accepted follow-ups remain explicit: task summary truncation/step-list bounds (N4), raw
 sidecar timestamp compare (N6), and the workspace crash-window ordering note (N2).
 
 ## Route Model
@@ -302,7 +316,17 @@ The slice-3a projection read side:
   the writer (`server`) and the reader; dependency-light (no read-side imports).
 - `drift_snapshots.py` — the shared drift-snapshot filename, exact removal, and
   worktree-orphan pruning helper used by the drift producer, projection tick,
-  cleanup, and tests.
+  cleanup, and tests. Pruning consumes the shared per-tick `ContractSnapshot`
+  when the projection injects one (PTS-L2), so it parses no contracts itself
+  inside a tick.
+- `contract_snapshot.py` — the shared per-tick leaf-enclosure-contract snapshot
+  (260712-PTS-L2): `ContractSnapshot` (immutable, enumeration-ordered contracts +
+  `skipped` parse failures) and `ContractSnapshotCache` (one enumeration +
+  at-most-one parse per contract per tick; cross-tick parse cache keyed by
+  `(mtime_ns, size, ctime_ns)` stat identity; failures never cached; entries
+  pruned to the live enumeration), plus `build_contract_snapshot` for standalone
+  reader calls. Mutated only inside the serialized projection tick; the cached
+  contracts are shared across ticks and must never be mutated by consumers.
 - `projection.py` — the projection schema (`LifecycleProjection`,
   `WorkspaceProjection`, `EnclosureNode`, `ProviderNode`, `Metrics`,
   `ActionAvailability`, slice 05 `AttentionItem` + `Analytics.attentionQueue`, and — slice 5e —
@@ -337,7 +361,9 @@ The slice-3a projection read side:
   lifecycles, and returns copied `SeriesNode`s with `seriesTokenTotal`.
 - `snapshots.py` — the file-surface readers reusing each producer's parser:
   structural (`read_providers` S1, `read_enclosures` S5/S6; enclosures now come from active leaf
-  `enclosures/<leaf-id>/series-contract.md`, not root series contracts) from 3a, plus the
+  `enclosures/<leaf-id>/series-contract.md`, not root series contracts; since PTS-L2 the enclosure
+  and engine-facts readers consume the shared per-tick `ContractSnapshot` instead of walking and
+  parsing contracts themselves) from 3a, plus the
   slice-3b analytical readers (drift snapshot S9, sidecar staleness S11, setup
   summaries S2 + progress S3, route coverage S10, tool reports S12, ledger S8), the
   slice-3c task-document reader (`read_task_documents` S7, active JSON-primary docs with optional
@@ -366,6 +392,9 @@ The slice-3a projection read side:
   orchestrator the serving layer drives. It prunes expired raw lifecycle event logs, derives admitted
   worktree groups before snapshot reads, and caches repository surfaces on a short TTL; live serving can
   install a TTL-gated provider refresher here before snapshot reads, while sim/tests can omit it.
+  Since PTS-L2 it owns the module-level `_contract_snapshot_cache` and builds the ONE shared
+  `ContractSnapshot` per tick that `read_enclosures`, drift-snapshot pruning, and
+  `read_engine_process_facts` consume.
 
 ## Invariants And Boundaries
 
@@ -448,9 +477,18 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | Active-enclosure worktree admission gates provider/setup/runtime facts before projection. | [worktree_provider_admission.py](worktree_provider_admission.py) |
 | Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | [series_tokens.py](series_tokens.py) |
 | Drift snapshot pathing and worktree-orphan pruning are centralized for producer/projection/cleanup parity. | [drift_snapshots.py](drift_snapshots.py) |
+| The shared per-tick contract snapshot and its cross-tick stat-identity parse cache (PTS-L2). | [contract_snapshot.py](contract_snapshot.py) |
 | The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
 
 ## Update History
+- 2026-07-12T20:02+02:00 — 260712-PTS-L2 route impact: added `contract_snapshot.py` to the route
+  model — ONE shared leaf-contract enumeration+parse pass per projection tick (built in
+  `projection_store`, consumed by `read_enclosures`, `read_engine_process_facts`, and drift-snapshot
+  pruning; previously three independent walks per 1s tick, py-spy 2026-07-12: 2.78s/3.68s/3.40s in a
+  15s sample), with a cross-tick parse cache keyed by `(mtime_ns, size, ctime_ns)` stat identity and
+  the consumers-never-mutate-contracts concurrency rule. Landing refresher and supervisor sweep
+  deliberately keep their own passes. Verification metadata pinned until closeout stamps the PTS-L2
+  commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: observer projection now consumes a network-free immutable landing snapshot; `LandingStateRefresher` owns bounded background observation, exact-contract isolation, stale carry-forward, and safe cancellation.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: documented live virtual-cursor river
