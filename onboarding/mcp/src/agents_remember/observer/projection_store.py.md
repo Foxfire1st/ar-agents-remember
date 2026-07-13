@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`             |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T20:02+02:00 |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`             |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -22,6 +22,23 @@ the pure reduction + the atomic write together, and writes the projection where
 the dashboard reads it (slice 3a).
 
 ## Code Commentary
+
+### 260712-PTS-L2 One Contract Pass Per Tick
+
+A module-level `_contract_snapshot_cache = ContractSnapshotCache()` now sits beside
+`_lifecycle_log_cache`, following the same module-cache discipline: it is mutated only on the
+projection worker thread (ticks are serialized by the projector's awaited `asyncio.to_thread`), so no
+locking is needed. `project_and_write` calls `_contract_snapshot_cache.build(coordination_root /
+"tasks")` at tick start — ONE leaf-enclosure-contract enumeration + at-most-one parse per contract
+per tick — and hands the resulting immutable `ContractSnapshot` to all three consumers:
+`read_enclosures(coordination_root, contracts=contract_snapshot)`,
+`prune_orphaned_drift_snapshots(config, contracts=contract_snapshot)`, and
+`read_engine_process_facts(..., contracts=contract_snapshot)`. Each of those previously ran its own
+walk + `load_contract` pass (3x per tick; a py-spy 15s sample on 2026-07-12 showed them at
+2.78s/3.68s/3.40s total). The cross-tick cache reuses a parsed contract while its
+`(mtime_ns, size, ctime_ns)` stat identity is unchanged and prunes to the live enumeration each
+build. The landing refresher and supervisor sweep are deliberately not consumers (event-loop thread
+would need locks; `serving/` territory) and keep their own passes.
 
 ### 260707-HFX2-L13 Heartbeat-Sidecar Merge
 
@@ -158,6 +175,10 @@ The recurring projection path uses projected status plus the latest landing snap
   pickups, task documents, and dismissals are still read every projection tick.
 - **Engine status probes are active-enclosure scoped:** `read_engine_process_facts` receives only
   non-terminal enclosure groups, preventing historical contracts from causing a long git/status tail.
+- **Contracts are read once per tick, and the shared snapshot is never mutated:** the module-level
+  `_contract_snapshot_cache` is touched only inside the serialized projection tick, the published
+  `ContractSnapshot` is immutable, and its `WorktreeContract` instances are shared across ticks —
+  any future consumer that mutated one would corrupt cross-tick state.
 
 ## Repo-Internal References
 
@@ -168,6 +189,8 @@ The recurring projection path uses projected status plus the latest landing snap
 | The pure fold this drives. | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
 | The surface readers it pulls — structural, analytical, and the slice-5e engine readers `read_engine_process_facts` / `read_start_progress_entries`. | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 | The projection-time drift snapshot pruner that removes valid snapshots for deleted worktrees before the analytical read. | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
+| The shared per-tick contract snapshot: module-level cache (L102-L108), one build per tick handed to enclosures/pruning/engine facts (L211-L230; L250-L258). | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py), [contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
+| PTS-L2 test proves a full `project_and_write` tick performs one contract enumeration and re-parses nothing unchanged on the next tick. | [test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) (L592-L630) |
 | The pure fold that consumes the threaded `engine_process_facts` / `engine_start_progress` keywords (slice 5e). | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
 | Compact lifecycle-scoped attention acknowledgement store pruned by `project_and_write`. | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 | The atomic-write design requirement + serving placement (§2.5, §5). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
@@ -178,6 +201,12 @@ The recurring projection path uses projected status plus the latest landing snap
 | Projection tests prove cached repo surfaces do not cache provider reads. | L2283-L2324 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 
 ## Update History
+- 2026-07-12T20:02+02:00 — 260712-PTS-L2: added the module-level `_contract_snapshot_cache`;
+  `project_and_write` builds ONE shared `ContractSnapshot` per tick and passes it to
+  `read_enclosures`, `prune_orphaned_drift_snapshots`, and `read_engine_process_facts`, replacing
+  their three independent walk+parse passes (py-spy 2026-07-12: 2.78s/3.68s/3.40s in a 15s sample).
+  Cache mutation stays inside the serialized tick; the snapshot and its contracts are immutable
+  shared state. Verification metadata pinned until closeout stamps the PTS-L2 commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: projection-store status paths now distinguish interactive fresh landing reads from pre-observed projected landing facts.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F7/B2: split cached log events from the coalesced

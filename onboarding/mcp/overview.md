@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-12T12:28+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T20:24+02:00 |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -382,6 +382,14 @@ The MCP package separates three surfaces:
   qualified/doc-id/legacy-stem leaf-ref validation and canonical id normalization for write surfaces,
   including schema-marker screening for sibling task-document JSON and standalone/light `task.json`
   doc-id candidates.
+  260712-PTS-L1 makes contract READS walk-free: `worktree_contract.load_contract` is
+  read+parse+validate at O(one file) — a 2026-07-12 py-spy sample had the old per-read leaf-id
+  resolution walk at ~9.7s of a 15s daemon sample — and leaf-id normalization is
+  write-time/migration-only (master 260712-PTS decision). Legacy stem-shaped `leaf_id`s therefore
+  surface RAW from reads until the explicit, idempotent `heal_contract_leaf_ids` sweep (CLI
+  `heal-leaf-ids`, also on the `git_worktree_manager` facade) or a `write_contract` rewrite heals the
+  file on disk; the heal cheap-skips canonical contracts via `leaf_refs.canonical_leaf_doc_ids`, one
+  bounded per-task-root doc-id scan.
   Slice 09 (gate-signal
   adoption) removes the dirty-tree → `commit-approval-pending` branch from
   `worktrees/modules/guidance.py` (a visibility bug): a dirty worktree now projects its honest
@@ -428,7 +436,12 @@ The MCP package separates three surfaces:
   adds same-root leaf-to-master row sync and batch leaf/master persistence for `task_doc` writes.
   A service domain with its own route overview.
 - `agents_remember.serving` owns the **dashboard serving layer** (slice 04): a FastAPI
-  app over the observer projection — one shared projector ticking `project_and_write`, a
+  app over the observer projection — one shared projector ticking `project_and_write`
+  (since 260712-PTS-L3 change-driven with an idle heartbeat: `serving/change_watcher.py` watches
+  the projection's input surfaces over the new `watchfiles` core dep, `--interval` is the busy
+  fast-path cadence floor, `--heartbeat` — default 15s — bounds quiet-world staleness, and any
+  watcher failure degrades loudly to the legacy fixed-interval ticking; `--sim` stays
+  time-driven), a
   multiplexed `state` SSE stream (snapshot + per-entity deltas via `serving.delta`), a
   one-shot state endpoint, a raw `event` SSE channel with byte-offset resume
   (`serving.events`) plus a Task 29 S7 `ready` event after retained raw backlog replay, a
@@ -684,6 +697,22 @@ L4 changes the MCP package public dispatch contract: spawn-only creation, exact-
 
 ## Update History
 
+- 2026-07-12T20:24+02:00 — 260712-PTS-L3 route impact: the serving projector's pacing is now
+  change-driven + heartbeat (new `serving/change_watcher.py`; `--heartbeat` on the dashboard CLI
+  and daemon ensure/spawn; `--interval` re-documented as the fast-path cadence floor) and
+  `pyproject.toml` gained the `watchfiles>=1.1,<2` core runtime dependency. The old behaviour
+  re-projected the whole world every 1s regardless of change (py-spy 2026-07-12: `_tick_sync`
+  11.1s of a 15s sample). Detail in the `serving/` route overview and the
+  `change_watcher.py`/`projector.py`/`app.py`/`daemon.py`/`cli/dashboard.py`/`pyproject.toml`
+  sidecars. Verification metadata pinned until closeout stamps the PTS-L3 commit.
+- 2026-07-12T19:55+02:00 — 260712-PTS-L1 route impact: worktree contract reads are now walk-free
+  (`load_contract` = read+parse+validate, O(one file); the removed per-read leaf-id resolution walk
+  cost ~9.7s of a 15s py-spy daemon sample on 2026-07-12), leaf-id normalization is
+  write-time/migration-only, and the explicit idempotent `heal_contract_leaf_ids` sweep (CLI
+  `heal-leaf-ids`; facade re-export) rewrites legacy stem-shaped leaf ids to doc ids once — legacy ids
+  surface RAW from reads until healed. Detail in the `worktrees/worktree_contract.py`,
+  `worktrees/leaf_refs.py`, `worktrees/modules/cli.py`, and `worktrees/git_worktree_manager.py`
+  sidecars. Verification metadata pinned until closeout stamps the 260712-PTS-L1 commit.
 - 2026-07-12T17:50 — No route impact: 260712-TRH-L6 only changed the frontend `dashboard/src/panels`
   Operations presentation and its generated `package_data/dashboard` bundle. No MCP Python module,
   serving contract, tool surface, package route, or generated MCP artifact changed; the dashboard route

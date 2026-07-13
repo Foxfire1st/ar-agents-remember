@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-07T23:45+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T19:55+02:00 |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -189,6 +189,11 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   for nested active task-root and leaf-enclosure resolution.
 - `cli.py` keeps command-line parsing and JSON print adapters out of operation
   modules and converts each parsed namespace into `WorktreeArgs` at the boundary.
+  Its `heal-leaf-ids` subcommand (260712-PTS-L1) is the deliberate invocation seam for
+  `worktree_contract.heal_contract_leaf_ids` (`--coordination-root`, `--dry-run`; prints the heal
+  report JSON) and intentionally bypasses `WorktreeArgs` — the heal is a one-shot legacy leaf-id
+  migration sweep, never a per-read side effect, now that `load_contract` is walk-free and never
+  normalizes.
 
 ## Docs References
 
@@ -203,6 +208,11 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | [test_lifecycle_finalize.py](agents-remember/mcp/tests/test_lifecycle_finalize.py) |
 
 ## Update History
+- 2026-07-12T19:55+02:00 — 260712-PTS-L1 route impact (small): `cli.py` gained the `heal-leaf-ids`
+  subcommand — the explicit one-shot seam for `worktree_contract.heal_contract_leaf_ids` now that
+  contract loads are walk-free and never normalize legacy leaf ids (detail in the `cli.py` and
+  `worktree_contract.py` sidecars). The module split this overview describes is unchanged.
+  Verification metadata pinned until closeout stamps the 260712-PTS-L1 commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: worktree guidance separates fresh interactive landing probes from projected status, which consumes only pre-observed landing facts.
 
 - 2026-07-07T23:45+02:00 — 260707-HFX-L4R2 route impact: start leaf-ref resolution now accepts

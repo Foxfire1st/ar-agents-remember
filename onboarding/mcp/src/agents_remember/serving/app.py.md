@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-12T20:24+02:00 |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -80,10 +80,17 @@ The serving lifespan now runs the startup-only workspace-river compactor before 
 
 L16 review follow-up (L16R-1): the terminal-open route loads the effective harness registry ONLY when the request resolves a harness (kind=harness or an explicit harness id) — a malformed agentic settings file fails the launches that use it, never a plain scratch terminal.
 
-`create_app(config, *, interval=1.0, now=None, before_tick=None, refresh_provider_state=None,
+`create_app(config, *, interval=1.0, heartbeat=None, now=None, before_tick=None,
+refresh_provider_state=None, refresh_landing_state=None, watch_changes=None,
 terminal_host=None, terminal_catalog=None, terminal_paster=None)`
 constructs a `Projector` (threading `now`/`before_tick` straight through — the **sim seams**;
-both default to live behaviour) plus a `TerminalHost` (`terminal_host` defaults to a fresh one;
+both default to live behaviour). **260712-PTS-L3:** `interval` is the fast-path projection cadence
+floor and `heartbeat` bounds quiet-world `/api/state` staleness (default
+`DEFAULT_HEARTBEAT_SECONDS`, 15s); `watch_changes` defaults to `before_tick is None` — exactly like
+the provider/landing refreshers — so LIVE serving gets a `ProjectionInputWatcher(config)` injected
+as the projector's `change_watcher` (change-driven + heartbeat waking) while `--sim` replay stays
+time-driven (the sim feeder only writes *inside* a tick, so a change-gated loop would never wake).
+It also builds a `TerminalHost` (`terminal_host` defaults to a fresh one;
 tests inject a fake), a `TerminalCatalog` at `coordination_root/logs/dashboard/terminal-sessions.json`
 (`terminal_catalog` is test-injectable), and (L2) a `TerminalPaster` (`terminal_paster` defaults to a
 fresh one; tests inject a fake for the paste endpoint). Since **260707-HFX-L5** it also builds the
@@ -109,7 +116,8 @@ central containment sampler: `create_app` builds a
 `ProviderMetricsStore(config.coordination_root)` and the lifespan runs `metrics_loop()` as a
 task beside the projector — each pass calls `sample_provider_containers` and
 `ProviderMetricsStore.record` via `asyncio.to_thread`, then sleeps
-`DEFAULT_SAMPLE_INTERVAL_SECONDS` (30s, deliberately decoupled from the 1s projection tick).
+`DEFAULT_SAMPLE_INTERVAL_SECONDS` (30s, deliberately decoupled from the projection tick —
+formerly a fixed 1s, change-driven + heartbeat since 260712-PTS-L3).
 The loop is exception-tolerant: any failure is logged through the module `logger`
 (`logger.exception`) and the loop retries next interval, so one failed docker probe never
 kills sampling. The store feeds `provider_status`, the degradation protocol (260707-HFX-L7),
@@ -387,14 +395,19 @@ Live app creation enables the landing refresher; simulation supplies a feeder an
 - **Sim is a seam, not a fork:** `now`/`before_tick` default to live; `cli.dashboard` passes a
   replay clock + fixture feeder under `--sim` and the path is otherwise byte-identical.
 - **Metrics sampling is observation, not control (containment R4):** the loop is read-only and
-  dockerless-safe, runs on its own 30s cadence (never the 1s tick), and must survive sampling
-  failures — a failed pass logs and retries next interval; shutdown cancels it cleanly.
+  dockerless-safe, runs on its own 30s cadence (never the projection tick), and must survive
+  sampling failures — a failed pass logs and retries next interval; shutdown cancels it cleanly.
+- **The projection watcher is a live-only seam with a loud fallback (260712-PTS-L3):**
+  `watch_changes` follows the refresher pattern (`before_tick is None`), the watcher task's
+  lifecycle is owned by `Projector.run` (not the lifespan), and any watcher absence/failure
+  degrades LOUDLY to the legacy fixed-`interval` ticking. The `heartbeat` (default 15s) is the
+  `/api/state` staleness bound and the resolution of time-derived fields for a quiet world.
 - **The supervisor sweep is stores-not-projections, code-not-model (260707-HFX2-L2 R1/R3):**
   `supervisor_loop` and `_supervisor_context` wire the app's OWN store instances directly into
   `SupervisorContext` — `app.py` never reaches into `serving/projector.py` or
   `observer/reducer.py` for the sweep's predicates. Own decoupled cadence (settings-controlled,
-  default 10s), never the 1s tick; exception-tolerant like the metrics loop; zero model calls
-  anywhere in the loop.
+  default 10s), never the projection tick; exception-tolerant like the metrics loop; zero model
+  calls anywhere in the loop.
 - **The supervisor heartbeat is a volatile age, same posture as `servingBuild` (R5):** computed at
   response/connect time via `liveness_clock()`, never folded into the `/api/state` ETag revision —
   an idle dashboard tab whose OTHER content never changes will not see `ageSeconds` advance until a
@@ -407,6 +420,7 @@ Live app creation enables the landing refresher; simulation supplies a feeder an
 | Finding | Source Path |
 | --- | --- |
 | The shared tick/fan-out loop the app drives (with the `now`/`before_tick` seams) + the ETag revision. | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| The live change watcher `create_app` injects when `watch_changes` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
 | The boot-time serving build stamp injected on `/api/state` + the SSE snapshot. | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
 | The raw `event` channel `/api/events` delegates to. | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
 | The pure action evaluation `/api/actions/{action}` delegates to. | [actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
@@ -437,6 +451,12 @@ Live app creation enables the landing refresher; simulation supplies a feeder an
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
 
 ## Update History
+- 2026-07-12T20:24+02:00 — 260712-PTS-L3: `create_app` gained `heartbeat=` (quiet-world staleness
+  bound, default 15s) and `watch_changes=` (defaults to `before_tick is None`, the refresher
+  pattern) — live serving injects a `ProjectionInputWatcher` as the projector's `change_watcher`
+  for change-driven + heartbeat pacing; `--sim` replay stays time-driven. Endpoints, lifespan
+  structure, and ETag semantics unchanged. Verification metadata pinned until closeout stamps the
+  PTS-L3 commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: live app lifecycles enable the landing refresher while simulation remains observation-disabled; shutdown retains host cleanup if the refresher has already failed.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: carried role through HTTP open/attach responses,

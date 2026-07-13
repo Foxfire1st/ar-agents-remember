@@ -20,6 +20,7 @@
     "mcp/tests/test_cgc_installation.py",
     "mcp/tests/test_cgc_seed_bundle_path.py",
     "mcp/tests/test_cgc_watch_guard.py",
+    "mcp/tests/test_change_watcher.py",
     "mcp/tests/test_cleanup_carryover.py",
     "mcp/tests/test_cli_discovery.py",
     "mcp/tests/test_code_quality_check.py",
@@ -123,8 +124,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 112,
-    "fileSidecars": 111,
+    "sourceFilesInScope": 113,
+    "fileSidecars": 112,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -152,6 +153,7 @@
     "carryover",
     "catalog",
     "cgc",
+    "change",
     "changeset",
     "check",
     "cleanup",
@@ -206,11 +208,10 @@
     "integration",
     "interaction",
     "ladder",
-    "landing",
-    "leaf"
+    "landing"
   ],
   "hotPath": {
-    "summary": "260712-TRH-L5 tests prove the narrow confirmed-gone eligibility boundary, terminal and tmux positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapshot boundedness, same-lock resolve-plus-compact ordering, stale-snapshot non-resurrection, unchanged TTL fallback, persisted folded-id removal counts, body-free aggregate events, and silence on no-op sweeps. L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.",
+    "summary": "260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without resolution, dry-run reporting, torn-contract tolerance, and the `heal-leaf-ids` CLI seam. 260712-TRH-L5 tests prove the narrow confirmed-gone eligibility boundary, terminal and tmux positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapshot boundedness, same-lock resolve...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",
@@ -224,6 +225,7 @@
       "mcp/tests/test_cgc_installation.py",
       "mcp/tests/test_cgc_seed_bundle_path.py",
       "mcp/tests/test_cgc_watch_guard.py",
+      "mcp/tests/test_change_watcher.py",
       "mcp/tests/test_cleanup_carryover.py",
       "mcp/tests/test_cli_discovery.py",
       "mcp/tests/test_code_quality_check.py",
@@ -234,8 +236,7 @@
       "mcp/tests/test_controller_guards.py",
       "mcp/tests/test_controlplane_gates.py",
       "mcp/tests/test_crap_calculator.py",
-      "mcp/tests/test_dashboard_daemon.py",
-      "mcp/tests/test_dispatch_brief.py"
+      "mcp/tests/test_dashboard_daemon.py"
     ],
     "anchorHints": [
       "_scaling.py",
@@ -258,6 +259,8 @@
       "test_cgc_seed_bundle_path",
       "test_cgc_watch_guard.py",
       "test_cgc_watch_guard",
+      "test_change_watcher.py",
+      "test_change_watcher",
       "test_cleanup_carryover.py",
       "test_cleanup_carryover",
       "test_cli_discovery.py",
@@ -283,9 +286,7 @@
       "test_dispatch_brief.py",
       "test_dispatch_brief",
       "test_dispatch_expectation_rows.py",
-      "test_dispatch_expectation_rows",
-      "test_docker_runtime_parsers.py",
-      "test_docker_runtime_parsers"
+      "test_dispatch_expectation_rows"
     ]
   },
   "fallback": {

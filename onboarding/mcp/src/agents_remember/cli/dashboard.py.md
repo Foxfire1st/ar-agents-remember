@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-03T11:45+02:00                       |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6`   |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-12T20:24+02:00                       |
+| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`   |
+| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -30,7 +30,15 @@ so the dashboard can outlive the terminal that started it.
 `add_arguments(parser)` registers `--config` (default `None`; its help documents the discovery
 fallback), `--host` (default `127.0.0.1`), `--port` (260703 L2: default `None` — resolved after
 config load as `args.port or config.dashboard.port`, so the settings key governs and an explicit
-flag wins), `--interval` (default `1.0s`), `--reload` (a `store_true` dev hot-reload flag, live
+flag wins), `--interval` (default `1.0s`; **re-documented by 260712-PTS-L3 as the fast-path
+projection cadence floor** — change-driven re-projections are never spaced closer than this, a
+continuously-busy world still projects once per interval, and it stays the fixed tick cadence
+under `--sim` or when the change watcher is unavailable; also the `/api/events` raw-tail poll
+cadence), `--heartbeat` (**260712-PTS-L3**, default `None` ⇒ the serving
+`DEFAULT_HEARTBEAT_SECONDS` = 15s: the idle re-projection cadence — with no detected input change
+the projection still refreshes at this cadence, the staleness bound for `/api/state` and for
+time-derived fields such as `ageSeconds`/`staleSeconds` and stale/overdue flips), `--reload` (a
+`store_true` dev hot-reload flag, live
 state only), the 4b sim flags `--sim` (a fixture dir with `logs/observer/...`, default `None`)
 and `--sim-speed` (default `"1"`; a multiplier or `"paused"`), a mutually exclusive daemon
 control group `--daemon` / `--status` / `--stop` (260703 L2), and `--no-access-log` (serve
@@ -42,29 +50,34 @@ always wins; `ConfigDiscoveryError` prints and returns `1`), then calls `load_co
 (printing the error and returning `1` on `ConfigError`), resolves the effective `port`, routes any
 daemon control flag to `_run_daemon_command(args, config, port)` — `--status` prints the probed
 state (exit 0 running / 1 not), `--stop` prints the stop outcome, `--daemon` runs
-`serving_daemon.ensure(config, host, port, interval=args.interval)` and exits 0 only for
-`adopted`/`started`/`restarted`; all three reject `--sim`/`--reload` combos — then dispatches in
-priority order:
+`serving_daemon.ensure(config, host, port, interval=args.interval, heartbeat=args.heartbeat)` and
+exits 0 only for `adopted`/`started`/`restarted` (heartbeat, like interval, reaches the child only
+when ensure spawns/restarts — an adopted daemon keeps its cadences); all three reject
+`--sim`/`--reload` combos — then dispatches in priority order:
 
 - **reload** (`--reload` set): rejects `--sim` (`error: --reload is not supported with --sim`,
   return `1`). Otherwise it sets `AR_DASHBOARD_DEV_CONFIG` (the resolved absolute settings path —
-  discovered or explicit) and `AR_DASHBOARD_DEV_INTERVAL` env vars, then calls
+  discovered or explicit) and `AR_DASHBOARD_DEV_INTERVAL` env vars — plus (260712-PTS-L3)
+  `AR_DASHBOARD_DEV_HEARTBEAT` only when `--heartbeat` was explicit — then calls
   `uvicorn.run("agents_remember.cli.dashboard:_dev_app", factory=True, reload=True,
   reload_dirs=[<package source dir>], host=..., port=...)` and returns `0`.
 - **sim** (`--sim` set): `build_sim(config, Path(args.sim), speed=parse_sim_speed(args.sim_speed))`
   (printing and returning `1` on `SimError` — bad speed or empty fixture), then
-  `create_app(sim.config, interval=..., now=sim.clock.now, before_tick=sim.feeder.feed)`. The
+  `create_app(sim.config, interval=..., now=sim.clock.now, before_tick=sim.feeder.feed)` — no
+  `heartbeat` and no watcher: replay stays time-driven on the fixed `--interval`. The
   `sim` setup stays referenced until `run` returns, so its throwaway temp coordination root lives
   for the whole server lifetime.
-- **live** (default): builds the app via `serving.app.create_app(config, interval=...)` and serves
-  with `uvicorn.run(app, host=..., port=...)`.
+- **live** (default): builds the app via `serving.app.create_app(config, interval=...,
+  heartbeat=args.heartbeat)` (260712-PTS-L3 — live serving gets change-driven + heartbeat pacing)
+  and serves with `uvicorn.run(app, host=..., port=...)`.
 
 `_dev_app()` is the zero-arg import-string app **factory** for the reload path: uvicorn's reloader
 re-imports the app per worker restart, so it needs a factory, not a pre-built app object (passing
 an object silently disables reload). The factory re-reads the resolved config from
-`AR_DASHBOARD_DEV_CONFIG` (`load_config(...)`) and the interval from `AR_DASHBOARD_DEV_INTERVAL`
-(default `1.0`) — the env vars the parent `run` set — and returns `create_app(config,
-interval=...)`. It is live-state only; it never builds a sim. `reload_dirs` watches only the
+`AR_DASHBOARD_DEV_CONFIG` (`load_config(...)`), the interval from `AR_DASHBOARD_DEV_INTERVAL`
+(default `1.0`), and (260712-PTS-L3) the optional heartbeat from `AR_DASHBOARD_DEV_HEARTBEAT`
+(absent/empty ⇒ `heartbeat=None`, the serving default) — the env vars the parent `run` set — and
+returns `create_app(config, interval=..., heartbeat=...)`. It is live-state only; it never builds a sim. `reload_dirs` watches only the
 package source dir (`Path(agents_remember.__file__).parent`) so unrelated trees don't churn the
 reloader. `os`, `uvicorn`, `create_app`, and the sim helpers are imported at module top (the
 established CLI convention); `import agents_remember` is local to the reload branch.
@@ -91,7 +104,8 @@ established CLI convention); `import agents_remember` is local to the reload bra
 | --- | --- |
 | The umbrella dispatcher that registers this subcommand. | [__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
 | The trusted-settings discovery the optional `--config` falls back to. | [discovery.py](agents-remember/mcp/src/agents_remember/cli/discovery.py) |
-| The daemon supervisor behind `--daemon`/`--status`/`--stop`. | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
+| The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
+| The heartbeat default (`DEFAULT_HEARTBEAT_SECONDS`) and the change-driven pacing (`ChangePacer`) that `--interval`/`--heartbeat` configure (260712-PTS-L3). | [serving/change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
 | Daemon CLI dispatch tests (status/stop/port precedence/failure exits/sim rejection). | [test_dashboard_daemon.py](agents-remember/mcp/tests/test_dashboard_daemon.py) |
 | Discovery unit tests (hits, precedence, template skip, miss error). | [test_cli_discovery.py](agents-remember/mcp/tests/test_cli_discovery.py) |
 | The app factory it serves (and the `now`/`before_tick` seams it passes). | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
@@ -101,6 +115,13 @@ established CLI convention); `import agents_remember` is local to the reload bra
 
 ## Update History
 
+- 2026-07-12T20:24+02:00 — 260712-PTS-L3: added `--heartbeat` (default `None` ⇒ serving default
+  15s — the idle re-projection cadence and the `/api/state`/time-derived-field staleness bound)
+  and re-documented `--interval` as the fast-path projection cadence floor (unchanged fixed
+  cadence under `--sim`/watcher-unavailable). Live `run` and `_dev_app` (via the new
+  `AR_DASHBOARD_DEV_HEARTBEAT` env) pass heartbeat to `create_app`; the sim branch deliberately
+  does not; `--daemon` forwards it to `serving_daemon.ensure` (reaches the child on spawn/restart
+  only). Verification metadata pinned until closeout stamps the PTS-L3 commit.
 - 2026-07-03T11:45+02:00 — 260703 L2: daemon mode — the mutually exclusive `--daemon`/`--status`/
   `--stop` group dispatches to `serving/daemon.py` after config resolution, `--port` defaults from
   the `dashboard.port` settings key (explicit flag wins), `--interval` is forwarded to the daemon
