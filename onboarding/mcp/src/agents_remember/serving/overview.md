@@ -16,6 +16,16 @@
 
 ## Purpose
 
+### Current L5 hosted-session contract
+
+The current hosted-session serving contract is protocol-backed: exact adapter snapshots govern
+readiness, liveness/activity, delivery evidence, interactions, and terminal projection. Durable
+operator-inbox rows are the only inter-agent message roots; the adapter is only their delivery wire,
+and explicit recipient `consume` is the sole acknowledgement. Pane text, terminal logs, copy mode,
+paste echoes, and timing windows are diagnostic-only and cannot authorize readiness, delivery,
+completion, or supervisor action. The older pane/log/paste descriptions retained below are historical
+route history, not current authority.
+
 `serving/` is the **local dashboard serving layer** (slice 04 of the 3.0
 browser-dashboard series): a FastAPI app over the observer projection read side. It
 is **transport only** — it adds no interpretation (the reducer owns that) and reads
@@ -626,6 +636,19 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 ## Invariants And Boundaries
 
+### Current L5 authority boundary
+
+- Protocol adapter snapshots, bridge receipts, reconciliation, and normalized transcript entries
+  are authoritative for hosted sessions.
+- Panes, logs, copy mode, paste echoes, and timing observations are diagnostic-only.
+- Hosted delivery starts from a durable inbox row and records adapter evidence without consuming it;
+  explicit recipient `consume` remains the sole acknowledgement.
+- Legacy raw-TUI and unsupported custom sessions remain explicitly unsupported, with no compatibility
+  raw-paste or timing fallback.
+
+The older route bullets below preserve historical implementation context and must not be read as
+current hosted-session authority.
+
 - **Control authority is protocol-backed.** Adapter state, bridge receipts, reconciliation, and
   normalized transcript entries are authoritative; tmux panes and terminal logs are diagnostics.
 - **Codex app-server remains leaf-local.** The pinned stable protocol path does not register a
@@ -715,7 +738,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 | The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 
-## 260712-TRH-L4 Route Impact
+## Historical — 260712-TRH-L4 Route Impact (superseded hosted authority)
 
 Serving implements exact-session readiness, copy-mode rechecks, calibrated settling beyond the shipped 120 ms suppression window, harness-log proof, and pending-without-respawn recovery. Catalog writers serialize the complete one-read/one-write batch across processes while atomic readers remain lock-free.
 
@@ -730,6 +753,8 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled the serving route's normative hosted authority to protocol
+  snapshots, inbox-rooted delivery, explicit consume acknowledgement, and diagnostic-only panes/logs.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed hosted cutover, bridge semantics, legacy unsupported,
   dashboard/package parity, R13 inbox-rooting, R14 explicit consume, and diagnostic-only pane signals.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: documented the unregistered, exact Claude Code

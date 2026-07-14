@@ -16,9 +16,10 @@
 
 ## Purpose
 
-Push-delivery helper that takes one durable operator inbox entry and injects it
-into a matching hosted terminal session through the server-side echo-confirmed
-paste seam.
+Inbox-rooted delivery helper that submits one pre-existing durable operator-inbox row through the
+matching hosted session's exact protocol adapter and records correlated acceptance, reconciliation,
+and completion evidence. The adapter is a delivery wire, not a second mailbox; explicit recipient
+`consume` is the sole acknowledgement.
 
 ## Code Commentary
 
@@ -30,7 +31,16 @@ retention or retry behavior; ordinary callers retain the existing current-time d
 
 ### Logic
 
-**260707-HFX2-L15 hosted inbox delivery.** `deliver_inbox_entry` builds a `HarnessSessionLog` from
+The current L5 path resolves the target catalog row, submits the existing inbox entry using its row
+id as the adapter request id, and records immediate, queued, rejected, unsupported, ambiguous, or
+completed evidence on that same durable row. Acceptance and terminal completion do not consume the
+row and do not imply acknowledgement. Pane text, terminal logs, copy mode, paste echoes, and timing
+windows are diagnostic evidence only and cannot authorize hosted delivery or completion.
+
+The following earlier descriptions are retained as historical implementation context only; they are
+not current authority after the L5 protocol cutover.
+
+**Historical — 260707-HFX2-L15 hosted inbox delivery (superseded).** `deliver_inbox_entry` built a `HarnessSessionLog` from
 the target catalog row, passes it into the shared injector, and persists a newly bound log id/path
 through `TerminalCatalog.bind_session_log`. Durable delivery detail now says
 `harness-log-confirmed`; an unconfirmed result carries only failure-pane diagnostics, while a draft
@@ -78,6 +88,18 @@ now lives one level down, in `serving.injector.deliver` + `serving.harness_adapt
 
 ### Invariants And Boundaries
 
+- Delivery always begins with an existing durable operator-inbox row and exact hosted-session
+  identity; the adapter supplies the delivery wire and correlated evidence.
+- Adapter acceptance or completion never calls `consume`; explicit recipient consumption remains the
+  sole acknowledgement and vendor-native queues remain session-ordering detail.
+- Pane, copy-mode, paste, and log observations are diagnostic-only. They may explain an unknown or
+  failed transport result but cannot turn it into accepted delivery or acknowledgement.
+- Unsupported legacy/custom sessions and ambiguous transport remain explicit states; no raw-paste or
+  timing compatibility fallback is permitted.
+
+The remaining historical bullets below document pre-L5 behavior and are retained for archaeology,
+not as normative delivery authority.
+
 - A catalog row alone is not enough; the tmux session must also pass
   `TerminalHost.has_session`.
 - `delivered` means the delivery outcome was `acked` (paste landed, submitted,
@@ -121,6 +143,8 @@ never invokes the compatibility paster. Adapter acceptance and completion do not
 explicit recipient consume remains the acknowledgement.
 
 ## Update History
+- 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled normative delivery to inbox-rooted adapter submission and
+  explicit consume acknowledgement; historicized pane/log/copy-mode/raw-paste authority.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: replaced log-window/raw-paste authority with adapter receipts and R13/R14 semantics.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
