@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-14T12:00+02:00 |
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -34,6 +34,13 @@ below the shared 900-second floor.
 `orchestration.supervisor.escalationBudget` is now a known supervisor setting with default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
 
 ### Logic
+
+**260713-PHA-L1 effort policy.** When a settings harness declares `effortFlagValues`, the effective
+merged harness switches to enumerated validation so invalid values are refused loudly and the
+declared menu is not bypassed. The builtin Codex path remains dynamic: it accepts any stripped
+non-empty model-advertised effort and forwards it, while an override with declared values is
+enumerated. This distinction is launch-world validation; bridge-era live model capability
+validation remains a later production-cutover concern.
 
 **260707-HFX2-L15 dispatch bounds and harness overrides.** The default supervisor redelivery budget
 is `1`, matching the synchronous calibrated log-verification envelope of one input. When settings
@@ -248,6 +255,8 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: recorded the merged-settings effort
+  validation rule that preserves declared vocabularies while leaving builtin Codex dynamic.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: reduced the default redelivery sweep budget to one and

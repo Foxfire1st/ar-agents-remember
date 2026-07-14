@@ -39,6 +39,7 @@
     "mcp/tests/test_expectation_rows.py",
     "mcp/tests/test_git_freshness.py",
     "mcp/tests/test_harness_adapters.py",
+    "mcp/tests/test_harness_control.py",
     "mcp/tests/test_harness_logs.py",
     "mcp/tests/test_harnesses.py",
     "mcp/tests/test_hosted_readiness.py",
@@ -124,8 +125,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 113,
-    "fileSidecars": 112,
+    "sourceFilesInScope": 114,
+    "fileSidecars": 113,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -169,6 +170,7 @@
     "content",
     "context",
     "contract",
+    "control",
     "controller",
     "controlplane",
     "crap",
@@ -207,8 +209,7 @@
     "installation",
     "integration",
     "interaction",
-    "ladder",
-    "landing"
+    "ladder"
   ],
   "hotPath": {
     "summary": "260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without resolution, dry-run reporting, torn-contract tolerance, and the `heal-leaf-ids` CLI seam. 260712-TRH-L5 tests prove the narrow confirmed-gone eligibility boundary, terminal and tmux positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapshot boundedness, same-lock resolve...",

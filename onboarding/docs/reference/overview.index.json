@@ -31,7 +31,7 @@
     "tools"
   ],
   "hotPath": {
-    "summary": "Reference contract for harnesses, MCP tools, and settings. L4 documents the three-state dispatch protocol, hosted readiness, and catalog concurrency ruling.",
+    "summary": "Reference contract for harnesses, MCP tools, and settings. L4 documents the three-state dispatch protocol, hosted readiness, and catalog concurrency ruling. Current harness documentation covers the declared-menu versus builtin-Codex effort policy and the additive control-bridge boundary.",
     "candidateHints": [
       "docs/reference",
       "docs/reference/harnesses.md",
@@ -49,15 +49,18 @@
       "skills.md",
       "skills",
       "MCP",
-      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
+      "409891a4bea54f3b6c3a125611afe54c41cca661",
+      "effortFlagValues",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
       "T14",
       "lastVerifiedCommitHash",
-      "e63f2dbb5f0701d37bbc17ff5358960c77",
+      "a4bea54f3b6c3a125611afe54c41cca661",
       "lastVerifiedCommitDate",
-      "T18",
+      "T10",
+      "T12",
+      "PHA",
       "TRH"
     ]
   },

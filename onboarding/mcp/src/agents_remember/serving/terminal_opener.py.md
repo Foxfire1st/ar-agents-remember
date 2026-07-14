@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_opener.py`    |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`              |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-14T12:00+02:00 |
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`              |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -89,6 +89,13 @@ and Pydantic modeling stays in `models/terminal.py`. `env` is a `Mapping[str, st
 the caller's job (`mcp/tools/terminal.py`) — the opener consumes the resolved env values and applies
 them at the argv boundary.
 
+### 260713-PHA-L1 control bridge metadata
+
+Harness opens derive additive control metadata from the exact harness id and existing catalog row:
+control state, private endpoint, and protocol version. An unregistered harness adapter is reported
+as `unsupported`; the opener does not substitute pane, regex, or log timing. Existing catalog rows
+retain their metadata on re-open.
+
 ### Invariants And Boundaries
 
 - Leaf uniqueness is **server-arbitrated and role-scoped** (`leaf_conflict_owner` over
@@ -140,6 +147,8 @@ No meaningful cross-repo references found.
 | This helper spawns tmux + mutates only the local dashboard terminal catalog. | — | — |
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented exact-harness control metadata
+  and explicit unsupported-adapter reporting in the opener path.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made spawn arbitration live and pair-scoped, persisted
   current seat identity, and documented reviewer O3's deliberate existing-binding precedence on

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/harnesses.py`   |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T13:03+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-14T12:00+02:00                           |
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`       |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -31,10 +31,11 @@ run in a PTY).
 
 ### Logic
 
-**260707-HFX2-L15 Codex mapping.** The Codex builtin now carries `model_flag="--model"` and an
-effort `--config` vehicle with `model_reasoning_effort={value}`. Its accepted effort values are
-exactly `none|minimal|low|medium|high|xhigh`; `max`, `ultracode`, and `auto` are excluded because
-the first-turn API enum does not accept them. `knob_argv` renders the optional value template while
+**260713-PHA-L1 Codex mapping.** The Codex builtin carries `model_flag="--model"` and an effort
+`--config` vehicle with `model_reasoning_effort={value}`. Its effort policy is stripped-non-empty,
+so model-advertised values such as `max` and future non-empty values are forwarded. A settings
+override that declares `effortFlagValues` is instead enumerated and refuses values outside that
+menu; settings declarations are never silently ignored. `knob_argv` renders the optional value template while
 Pi.dev remains the only env-only builtin.
 
 A frozen `Harness` dataclass carries `id` / `name` / `command` (the PATH command to detect) /
@@ -92,6 +93,8 @@ session value `ultracode` → `/effort {value}`), codex/pi carry none (env-only)
 | The skill-install target list this is intentionally *not* a mirror of. | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: corrected the Codex effort policy to
+  stripped-non-empty model-advertised values and documented enumerated settings overrides.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added Codex's explicit model/effort argv mapping,
   value-template support, and first-turn-safe effort enum; Pi.dev remains env-only. Verification

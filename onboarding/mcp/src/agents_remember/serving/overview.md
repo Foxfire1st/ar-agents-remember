@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`|
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-14T12:00+02:00 |
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -592,7 +592,25 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `_push_text` header.
 - `__init__.py` — package docstring only; `delta`/`projector` stay importable without FastAPI.
 
+- `harness_control_models.py` / `harness_control_adapter.py` — protocol-neutral identity,
+  handshake, normalized state, correlated receipts, reconciliation, and explicit adapter registry.
+  Missing vendor registrations are `unsupported`; additive raw detail is retained and pane/log text
+  is diagnostic only.
+- `harness_control_bridge.py` / `harness_control_queue.py` — one bridge per exact hosted session and
+  one bounded ordered queue for terminal and durable whole-message inputs. Acceptance is distinct
+  from completion; ambiguous sends are reconciled without automatic resend, runner exits resolve and
+  drain callers, and unsupported receipts remain bounded.
+- `harness_control_ipc.py` / `harness_terminal_surface.py` — user-private exact-identity Unix IPC
+  plus readable transcript/input rendering. The terminal surface owns uncommitted drafts: automated
+  delivery cannot inject into, submit, or discard a draft under R11.
+
 ## Invariants And Boundaries
+
+- **Control authority is protocol-backed.** Adapter state, bridge receipts, reconciliation, and
+  normalized transcript entries are authoritative; tmux panes and terminal logs are diagnostics.
+- **Shared input and draft custody.** Terminal and durable submissions merge as whole ordered
+  messages through one queue. The terminal surface owns an uncommitted human draft and preserves it
+  across automated delivery and ambiguous-send recovery.
 
 - **Transport only.** No interpretation here — the reducer produces full projections; this
   layer serves them, diffs consecutive snapshots, tails the raw log, and reads precomputed
@@ -681,6 +699,9 @@ Serving implements exact-session readiness, copy-mode rechecks, calibrated settl
 
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: added the normalized control contract,
+  one-adapter bridge, bounded shared queue, private IPC, transcript/draft surface, unsupported
+  adapter boundary, and deliberate no-production-cutover scope to the serving route.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3 route impact (change-driven projection pacing): route
   gains `change_watcher.py` (derived watch roots + input-event filter + `ChangePacer` +
   `ProjectionInputWatcher` on the new `watchfiles>=1.1,<2` core dep); `projector.py`'s

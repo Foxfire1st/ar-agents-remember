@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-05-31T12:30+02:00                |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                    |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-07-14T12:00+02:00                |
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`                    |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Purpose
@@ -21,7 +21,7 @@ raise and catch the typed members of this family.
 
 ### Logic
 
-The module declares two classes and no runtime behavior. `AgentsRememberError`
+The module declares the shared domain error family. `AgentsRememberError`
 is the base class for every domain error and subclasses the builtin
 `ValueError`. `AuthorityError` subclasses `AgentsRememberError` and marks a path
 or repo argument that violated the MCP authority settings — for example a caller
@@ -47,6 +47,21 @@ Each class documents its meaning in a docstring rather than carrying behavior.
 Subclasses name a specific failure category (e.g. `AuthorityError` for the F11
 authority boundary) and inherit from the nearest appropriate family member.
 
+### 260713-PHA-L1 control bridge errors
+
+`HarnessControlError` is the typed contract/identity/bridge failure used by the protocol, queue,
+IPC, and terminal surface. `HarnessAdapterDisconnectedError` preserves whether a prompt may have
+been sent and an optional vendor correlation id, so callers can reconcile without blind resend.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| Control seam using the typed errors. | [harness_control_bridge.py](serving/harness_control_bridge.py) |
+| Adapter disconnect semantics. | [harness_control_adapter.py](serving/harness_control_adapter.py) |
+
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented typed control-contract and
+  ambiguous-disconnect errors used by the new bridge surfaces.
 
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

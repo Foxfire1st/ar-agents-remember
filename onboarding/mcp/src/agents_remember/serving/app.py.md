@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-14T12:00+02:00 |
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -348,6 +348,13 @@ Live app creation enables the landing refresher; simulation supplies a feeder an
 
 ## Invariants And Boundaries
 
+### 260713-PHA-L1 control contract boundary
+
+The serving app exposes additive `/api/harnesses` control metadata while the protocol bridge,
+private IPC, and normalized terminal surface remain explicit seams rather than production cutover.
+Control state and receipts belong to the bridge/adapter contract; tmux pane and terminal-log text are
+diagnostics only. No vendor adapter is registered by this leaf.
+
 - **Local-first:** bound to `127.0.0.1` by the CLI default, no auth in v1; the module docstring
   records the "do not tunnel it" posture (it now also exposes the POST action surface). The UI
   is never the gate enforcement.
@@ -451,6 +458,8 @@ Live app creation enables the landing refresher; simulation supplies a feeder an
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented additive harness control
+  metadata and the deliberate no-production-wiring boundary for the new bridge seams.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: `create_app` gained `heartbeat=` (quiet-world staleness
   bound, default 15s) and `watch_changes=` (defaults to `before_tick is None`, the refresher
   pattern) — live serving injects a `ProjectionInputWatcher` as the projector's `change_watcher`
