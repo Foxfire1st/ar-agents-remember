@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:17+02:00 |
-| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc` |
-| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,14 @@ other launch configuration.
 ## Cross-Repo References
 No meaningful cross-repo references found; the external Pi contract is recorded under Docs References.
 
+### 260713-PHA-L6 Structured Pi Contract
+
+Pi does not expose a production package-version field in startup. Compatibility is negotiated from
+correlated `get_state` and `get_entries` responses plus documented event/interaction fields. The
+exact `0.80.6` fixture remains smoke evidence only; malformed required contract remains loud.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: replaced the pinned-version description with the structured
+  Pi startup contract and preserved exact fixture-only evidence.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for strict framing, pinned
   capability parsing, launch/session preservation, state/entry schemas, and extension UI mapping.

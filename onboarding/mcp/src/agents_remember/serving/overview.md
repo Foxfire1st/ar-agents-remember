@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -119,6 +119,12 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+260713-PHA-L6: Claude, Codex, and Pi built-ins negotiate the structured fields their adapters
+consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is
+limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the
+daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. R10 resource
+performance remains queued.
 
 260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch
 roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/`
@@ -753,6 +759,8 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the serving route for structured capability
+  negotiation and the complete reload boundary; recorded R10 as deferred.
 - 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled the serving route's normative hosted authority to protocol
   snapshots, inbox-rooted delivery, explicit consume acknowledgement, and diagnostic-only panes/logs.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed hosted cutover, bridge semantics, legacy unsupported,
@@ -1101,3 +1109,9 @@ Serving implements exact-session readiness, copy-mode rechecks, calibrated settl
   shared projector, snapshot + per-entity SSE deltas, the static mount, localhost posture.
   The raw `event` channel, sim mode, and the POST action skeleton land in 4b. Verification
   metadata pinned until closeout stamps the 4a code commit.
+### 260713-PHA-L6 Reload Boundary
+
+The serving cutover is shared by the dashboard daemon, MCP-owning clients, bridge-backed session
+runners/adapters, and browser tabs; reloading only the dashboard can leave in-memory inbox/catalog
+schemas incompatible with durable rows. This is an operational contract, not a resource-polling
+change.

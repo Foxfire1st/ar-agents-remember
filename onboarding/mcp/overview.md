@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -198,6 +198,11 @@ vendor driver is registered or production cutover is implied.
  scope.
 
 ## Hot Path Summary
+
+260713-PHA-L6 extends the package's protocol-backed serving contract with structured Claude,
+Codex, and Pi capability negotiation and a strict two-field rolling inbox-reader compatibility
+seam. The full cutover reload boundary includes the daemon, MCP-owning clients, per-session runners
+and adapters, and browser tabs; R10 resource performance remains queued.
 
 260713-PHA-L4 adds four unregistered serving modules for the pinned Pi 0.80.6 RPC boundary:
 strict framing/schema parsing, owned subprocess transport, normalized event settlement, and the
@@ -724,6 +729,8 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the package route body for
+  structured harness negotiation and the complete serving reload boundary; R10 remains deferred.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added the Codex app-server adapter to the MCP
   package route model, including the exact-version stable protocol boundary, protocol-only effort,

@@ -230,7 +230,7 @@
     "identity"
   ],
   "hotPath": {
-    "summary": "260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without resolution, dry-run reporting, torn-contract tolerance, and the `heal-leaf-ids` CLI seam. 260712-TRH-L5 tests prove the narrow confirmed-gone eligibility boundary, terminal and tmux positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapshot boundedness, same-lock resolve...",
+    "summary": "260713-PHA-L6 tests preserve exact Claude/Codex/Pi versions only as fixture and smoke baselines, while proving structured capability acceptance/rejection and the exact additive inbox allowlist. No test documents R10 resource performance as current behavior. 260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without resolution, dry-run reporting, torn-...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",

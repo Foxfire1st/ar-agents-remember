@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-10T13:03+02:00                |
-| lastVerifiedCommitHash |                                       `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate |                                       2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash |                                       `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate |                                       2026-07-14T16:16:44+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -158,7 +158,14 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260713-PHA-L6 Rolling Compatibility Evidence
+
+Tests prove legacy-reader projection preserves only optional `adapterDeliveryState` and
+`adapterDeliveryDetail`, while an unrelated `futureEvidence` extension remains rejected.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented the exact additive inbox compatibility regression
+  and negative allowlist proof.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20: added deterministic consume-during-delivery coverage

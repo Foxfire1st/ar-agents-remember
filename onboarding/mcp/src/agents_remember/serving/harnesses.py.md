@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/harnesses.py`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-14T12:00+02:00                           |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`       |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`       |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -92,7 +92,14 @@ session value `ultracode` → `/effort {value}`), codex/pi carry none (env-only)
 | The spawn-surface manual documenting entries, vocabularies, and refusals. | [docs/reference/harnesses.md](agents-remember/docs/reference/harnesses.md) |
 | The skill-install target list this is intentionally *not* a mirror of. | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
 
+### 260713-PHA-L6 Registry Boundary
+
+Codex's model-advertised effort is not tied to one package release; the structured adapter owns
+compatibility evidence and the registry remains the launch/effort vocabulary.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed the stale Codex package-version claim from the
+  registry commentary.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: corrected the Codex effort policy to
   stripped-non-empty model-advertised values and documented enumerated settings overrides.
 

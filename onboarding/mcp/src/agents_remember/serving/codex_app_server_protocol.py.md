@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:30+02:00 |
-| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`|
-| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,15 @@ The transport is an external-process boundary to the installed Codex CLI.
 | --- | --- | --- |
 | PASS review confirms the pinned stable-only protocol boundary. | L22-L30 | [260713-PHA-L3-reviewer-verdict.md](../../../../../../../../../../../../ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
+### 260713-PHA-L6 Capability Boundary
+
+The protocol identity is `codex-app-server`; the negotiated opaque CLI token is validated from
+structured initialization and thread evidence by the session layer. Exact package versions are
+fixture/smoke evidence, not production protocol pins.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed the stale pinned-version description and documented
+  the unversioned protocol boundary.
 
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for bounded JSON-RPC
   stdio transport, pinned protocol version, and loud failure boundaries. Verification remains

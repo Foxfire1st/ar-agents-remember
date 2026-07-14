@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -40,6 +40,11 @@ across that prune boundary because their source item is repository/branch-scoped
 than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
 
 ## Hot Path Summary
+
+260713-PHA-L6 keeps operator inbox rolling compatibility deliberately narrow: legacy readers may
+preserve optional `adapterDeliveryState` and `adapterDeliveryDetail`, while unrelated extensions
+remain forbidden. These delivery-evidence fields do not alter explicit consume or provider
+degradation state semantics.
 
 260712-TRH-L5 adds a secondary confirmed-gone retention predicate without changing fallback
 retention: only pending supervisor nudge/escalation rows with a subject id qualify, catalog
@@ -255,6 +260,8 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: recorded the exact two-field additive inbox-reader seam for
+  rolling serving compatibility; unrelated extensions remain rejected.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the control-plane route for the

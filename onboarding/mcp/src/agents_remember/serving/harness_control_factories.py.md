@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_factories.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T13:59+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,5 +36,12 @@ No relevant external/domain documentation was configured; adapter implementation
 ## Cross-Repo References
 No meaningful cross-repo references.
 
+### 260713-PHA-L6 Factory Boundary
+
+Factories no longer inject a synthetic or pinned vendor version. Each built-in adapter owns its
+structured startup evidence; unknown harness ids retain the loud unsupported result.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented version-free factory construction and the
+  unchanged explicit custom-harness boundary.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: recorded built-in adapter selection and explicit unsupported custom behavior.

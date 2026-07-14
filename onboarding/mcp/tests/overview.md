@@ -6,8 +6,8 @@
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 
 ## Purpose
 
@@ -46,6 +46,10 @@ utime-pinned-rewrite invalidation via ctime, and parse failures retried every bu
 
 ## Hot Path Summary
 
+260713-PHA-L6 tests preserve exact Claude/Codex/Pi versions only as fixture and smoke baselines,
+while proving structured capability acceptance/rejection and the exact additive inbox allowlist.
+No test documents R10 resource performance as current behavior.
+
 260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud
 tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim
 by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without
@@ -72,6 +76,8 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the test-route body for structured
+  capability negotiation, rolling inbox compatibility, and the deferred R10 boundary.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: added fake protocol, pinned JSONL fixture, and
   credential-safe `/cost` live-smoke coverage for Claude 2.1.207, including failed API-429 semantics.

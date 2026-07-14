@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:30+02:00 |
-| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`|
-| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,15 @@ No Domain Documentation entries are configured in the resolved source registry.
 | --- | --- | --- |
 | Reviewer PASS confirms stable protocol behavior and no cutover/registration escape. | L5-L15; L25-L32 | [260713-PHA-L3-reviewer-verdict.md](../../../../../../../../../../../../ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
+### 260713-PHA-L6 Capability Negotiation
+
+The adapter identity reports `codex-app-server:<negotiated opaque version>` after the structured
+session handshake. It does not require an exact installed package version; malformed or missing
+initialization, model, thread, policy, or cross-message identity evidence fails loudly.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented structured Codex identity and negotiated adapter
+  reporting; exact versions remain fixture/smoke baselines only.
 
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for normalized Codex
   lifecycle, correlated acceptance, busy policy, approvals, reconnect, and no-cutover boundary.

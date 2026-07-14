@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:30+02:00 |
-| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`|
-| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,16 @@ protocol snapshot is recorded in the repository fixture instead.
 | --- | --- | --- |
 | Reviewer confirmed exact-version initialize/model/thread behavior. | L17-L25 | [260713-PHA-L3-reviewer-verdict.md](../../../../../../../../../../../../ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
+### 260713-PHA-L6 Structured Identity
+
+The `initialize` user-agent token must have the documented client/opaque-version form and must
+agree with the `thread/start` or `thread/resume` `cliVersion`. Selected model, reasoning effort,
+cwd, sandbox, and approval policy remain concrete required evidence; no semver compatibility guess
+is made.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented cross-message Codex capability negotiation and
+  loud failure for inconsistent structured identity.
 
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for exact initialize,
   model/effort discovery, thread start/resume, and preserved settings. Verification remains unset

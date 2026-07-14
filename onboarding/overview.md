@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated            | 2026-07-12T12:28+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 
 > **Status:** active baseline
 
@@ -129,6 +129,12 @@ chat once for the successful bind. Detail lives in the `observer/`, `serving/`, 
 overviews.
 
 ## Hot Path Summary
+
+260713-PHA-L6 records the current protocol-backed harness boundary: Claude, Codex, and Pi
+negotiate structured capability evidence, rolling inbox readers allow only the two named optional
+adapter-delivery fields, and serving cutover reloads every long-lived daemon/client/session/browser
+consumer. Exact fixture versions and the queued R10 resource observations are not production
+behavior.
 
 260713-PHA-L4 adds a pinned, unregistered Pi RPC adapter slice under the serving route. For Pi
 protocol questions, route through `mcp/src/agents_remember/serving/pi_rpc_protocol.py` for strict
@@ -464,6 +470,8 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the root route body for the
+  negotiated harness contract, bounded rolling inbox compatibility, and deferred R10 boundary.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: recorded the repository-level routing impact of
   the new unregistered Pi RPC protocol slice; detailed behavior remains in the serving and tests

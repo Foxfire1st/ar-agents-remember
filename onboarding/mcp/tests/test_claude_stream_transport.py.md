@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_claude_stream_transport.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T13:59+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -30,5 +30,12 @@ No relevant external/domain documentation was configured.
 ## Cross-Repo References
 No meaningful cross-repo references.
 
+## 260713-PHA-L6 Evidence Boundary
+
+Transport tests cover strict stream framing only; production compatibility is proven by structured
+initialize/system-init tests, not an exact CLI probe.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: clarified the transport test boundary after removing the
+  production version preflight.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: added deterministic Claude transport coverage for the bridge.

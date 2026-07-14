@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:17+02:00 |
-| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc` |
-| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,6 +26,8 @@ sends are recorded with a pre-send cursor and reconciled only by exact post-curs
 duplicate resend is attempted. Extension responses route through mapper and transport.
 
 ## Invariants And Boundaries
+- Pi identity is the `pi-rpc` protocol, not a fabricated package version; startup compatibility
+  comes from correlated structured state/entries and consumed event fields.
 - `get_state` governs readiness/activity and corroborates `agent_settled` completion.
 - Reconnect uses the persisted session file and rejects changed session identity.
 - Ambiguous submissions remain unresolved without durable evidence.
@@ -42,5 +44,7 @@ duplicate resend is attempted. Extension responses route through mapper and tran
 No meaningful cross-repo references found.
 
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented version-free Pi production startup and retained
+  `0.80.6` only as fixture/smoke evidence.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for L1-backed handshake,
   queue behavior, settlement, extension UI, reconnect, cursor reconciliation, and no-resend policy.

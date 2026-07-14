@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:30+02:00 |
-| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`|
-| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,14 @@ No Domain Documentation entries are configured in the resolved source registry.
 | --- | --- | --- |
 | Reviewer reproduced the focused conformance and live no-prompt smoke passes. | L22-L29 | [260713-PHA-L3-reviewer-verdict.md](../../../../../../../../../../../../ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
+## 260713-PHA-L6 Evidence Boundary
+
+Adapter regressions prove a compatible newer structured Codex identity is accepted and malformed or
+inconsistent initialization/thread evidence is rejected; exact package strings are fixture evidence.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented negotiated-version acceptance and loud rejection
+  coverage.
 
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for fake-protocol
   conformance, R11 strictness, server requests, busy policy, terminal mapping, and no-resend

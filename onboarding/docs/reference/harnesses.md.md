@@ -54,6 +54,14 @@ settings-owned escape hatches that are recorded in spawn provenance.
 - The manual should point unknown or undetected harness readers to settings fixes, not to caller
   `spawn_agent_session(harness=...)` overrides.
 
+## 260713-PHA-L6 Current Contract
+
+Production compatibility is negotiated from structured protocol evidence for Claude, Codex, and
+Pi; exact package strings are fixture/smoke baselines only. The full reload boundary includes the
+dashboard daemon, every MCP-owning client, each bridge-backed per-session runner/adapter, and open
+browser tabs. This documentation does not authorize a restart or settings mutation. R10 resource
+performance remains queued and is not current behavior.
+
 ## Repo-Internal References
 
 | Finding | Source Path |
@@ -64,6 +72,8 @@ settings-owned escape hatches that are recorded in spawn provenance.
 | Spawn tests pin settings-owned launch/session knobs and `spend-override-unsupported` refusals. | [../../mcp/tests/test_spawn_agent_session.py](../../mcp/tests/test_spawn_agent_session.py.md) |
 
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented structured capability negotiation, full serving
+  reload boundary, and the explicit R10 deferred-performance boundary.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: documented Codex's explicit argv mapping and exact

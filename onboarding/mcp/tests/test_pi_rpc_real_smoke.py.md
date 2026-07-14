@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_pi_rpc_real_smoke.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:17+02:00 |
-| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc` |
-| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00 |
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,12 @@ temporary prefix/HOME/cache locations, launches the real child through RPC, and 
 | --- | --- |
 | Real package RPC documentation. | [Pi RPC](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/rpc.md) |
 
+## 260713-PHA-L6 Fixture Boundary
+
+The opt-in Pi `0.80.6` real-smoke baseline is non-production evidence only. Production compatibility
+comes from the structured RPC exchange and does not require this package version.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: marked the exact Pi smoke version as fixture-only evidence.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for the isolated pinned
   real-Pi readiness smoke and global-tool isolation boundary.
