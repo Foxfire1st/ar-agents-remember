@@ -6,8 +6,8 @@
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`|
-| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
+| lastVerifiedCommitHash | `21049f92238f35e8307c9ed489f4340544c1d147`|
+| lastVerifiedCommitDate | 2026-07-14T12:49:29+02:00|
 
 ## Purpose
 
@@ -22,6 +22,12 @@ exact initialize/model/thread setup, protocol-only effort validation and echoing
 status/completion and server requests, explicit busy behavior, bounded malformed/oversized input,
 and reconnect correlation without resend. An opt-in live smoke proves exact-version readiness using
 an ephemeral thread with no prompt or credential output.
+
+The 260713-PHA-L2 tests add pinned Claude Code 2.1.207 JSONL fixtures, fake-transport conformance,
+and an opt-in credential-safe live smoke. The smoke submits the advertised local `/cost` command
+through the same correlated acceptance/result path without a model API request. A mixed
+`success`/`is_error=true` API-429 regression remains failed and retains only safe terminal metadata;
+no result text, stderr, credentials, environment, or settings are emitted or retained.
 
 The L7 test route additionally proves the projection/landing boundary: slow or failed remote observations do not delay local publication; observer results remain exact-contract and freshness-labeled; stale landing rendering is visible but motion-inert; invalid snapshot reads preserve local status; and a failed refresher does not skip serving shutdown. These are focused leaf regressions; the manager owns the full repository gate.
 
@@ -59,6 +65,8 @@ prefix/HOME/cache and verifies `get_state` readiness without changing global too
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
 ## Update History
+- 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: added fake protocol, pinned JSONL fixture, and
+  credential-safe `/cost` live-smoke coverage for Claude 2.1.207, including failed API-429 semantics.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added route coverage for the Codex app-server
   fixture, adapter/protocol fake tests, and credential-safe live smoke. Verification remains pinned
   until closeout stamps the leaf commit.

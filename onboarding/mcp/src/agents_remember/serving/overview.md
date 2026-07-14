@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`|
-| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
+| lastVerifiedCommitHash | `21049f92238f35e8307c9ed489f4340544c1d147`|
+| lastVerifiedCommitDate | 2026-07-14T12:49:29+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -615,6 +615,15 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   adapter: correlated turns, explicit steer-or-queue policy, structured approvals/elicitation,
   status/completion mapping, bounded evidence, and reconnect reconciliation without blind resend.
 
+- `claude_stream_protocol.py` / `claude_stream_startup.py` / `claude_stream_transport.py` — the
+  260713-PHA-L2 exact Claude Code 2.1.207 stream-json path: version-probed subprocess launch,
+  structured `control_request/initialize` + `system/init` readiness, capability-driven commands,
+  and bounded stdio lifecycle with stderr discarded. `claude_stream_state.py` and
+  `harness_control_claude.py` preserve the distinction between replay acceptance and terminal result,
+  route permission/question interactions, reconcile ambiguous disconnects without resend, and keep
+  API-429 terminal frames failed while retaining only safe status metadata. The adapter remains
+  unregistered; production cutover is L5 scope.
+
 ## Invariants And Boundaries
 
 - **Control authority is protocol-backed.** Adapter state, bridge receipts, reconciliation, and
@@ -712,6 +721,11 @@ Serving implements exact-session readiness, copy-mode rechecks, calibrated settl
 
 
 ## Update History
+- 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: documented the unregistered, exact Claude Code
+  2.1.207 stream-json adapter. Readiness is structured initialize/system-init only; replay acceptance
+  is distinct from terminal completion; and disconnect reconciliation never resends. The pinned live
+  smoke uses the local `/cost` command. API-429 terminal frames remain failed and retain only safe
+  status metadata, never result text or credentials. Verification remains pinned until closeout.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added the stable Codex app-server route model,
   exact `0.144.3` protocol pin, protocol-only reasoning effort, structured interaction and
   reconnect boundaries, and explicit no-registration/no-cutover scope. Verification remains pinned
