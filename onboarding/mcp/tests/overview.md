@@ -6,8 +6,8 @@
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc`|
+| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
 
 ## Purpose
 
@@ -45,9 +45,18 @@ positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapsho
 same-lock resolve-plus-compact ordering, stale-snapshot non-resurrection, unchanged TTL fallback,
 persisted folded-id removal counts, body-free aggregate events, and silence on no-op sweeps.
 
+260713-PHA-L4 tests prove the Pi boundary at three levels: pinned capability/framing and schema
+policy, fake-adapter queue/retry/compaction/settlement, extension UI, disconnect, cursor
+reconciliation, and no-resend behavior, and the real subprocess's correlation, malformed stdout,
+EOF ambiguity, and clean stop. The opt-in real smoke installs Pi 0.80.6 under a temporary
+prefix/HOME/cache and verifies `get_state` readiness without changing global tools.
+
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
 ## Update History
+- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: added governing route coverage for the Pi RPC
+  protocol, subprocess, adapter, fixture, and isolated real-smoke regression files. Verification
+  metadata remains pinned until closeout stamps the L4 code commit.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: added route-body coverage for the
   bridge conformance suite and its five changed serving regression files.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3 curator: added route coverage for the change-driven

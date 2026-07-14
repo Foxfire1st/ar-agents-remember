@@ -235,7 +235,7 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 604,
+    "sourceFilesInScope": 613,
     "fileSidecars": 142,
     "childRoutes": 16
   },
@@ -322,7 +322,7 @@
     "findings"
   ],
   "hotPath": {
-    "summary": "HFX2-L20 closes the live consume/redelivery resurrection race without changing a public payload: consume remains an append-only terminal fact, and the shared current-state/retention fold refuses to let a later stale pending delivery snapshot reverse it. Polling and supervisor redelivery therefore stay terminal after acknowledgement; compaction remains the cleanup boundary. HFX2-L17 splits immutable `spawnRole` provenance from current `seatRole` binding. The catalog migrates legacy rows in place; spawn/attach liveness-check only the same `(leafKey, seatRole)`; retire authority, expectations,...",
+    "summary": "260713-PHA-L4 adds four unregistered serving modules for the pinned Pi 0.80.6 RPC boundary: strict framing/schema parsing, owned subprocess transport, normalized event settlement, and the L1-backed adapter with exact-session reconnect and post-cursor no-resend reconciliation. The paired tests and isolated smoke live under `mcp/tests`; production registration remains L5 scope. HFX2-L20 closes the live consume/redelivery resurrection race without changing a public payload: consume remains an append-only terminal fact, and the shared current-state/retention fold refuses to let a later stale pe...",
     "candidateHints": [
       "mcp",
       "mcp/tests",
