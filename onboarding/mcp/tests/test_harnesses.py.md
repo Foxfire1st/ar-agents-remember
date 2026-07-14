@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harnesses.py`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T13:03+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`       |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -19,11 +19,18 @@ and — since 260703-L16 — the per-harness knob→flag mapping (`KnobMappingTe
 
 ## Code Commentary
 
+### 260713-PHA-L1 Codex and settings-menu coverage
+
+The final tests distinguish builtin Codex's stripped-non-empty model-advertised effort policy from
+settings-defined `effortFlagValues`, which remain strict enumerations. They assert whitespace-only
+refusal, stripped emission, loud invalid-menu refusal, and unchanged Claude/Pi behavior.
+
 ### Logic
 
 **260707-HFX2-L15 coverage.** Codex model/effort are asserted as explicit argv with the
-`model_reasoning_effort=` template and exact first-turn-safe enum; Pi.dev remains the env-only
-builtin. Invalid Codex values refuse before spawn.
+`model_reasoning_effort=` template; the builtin accepts stripped non-empty advertised values while
+settings-declared menus remain enumerated. Pi.dev remains the env-only builtin. Invalid values refuse
+before spawn according to the effective policy.
 
 A `_which(*installed)` factory returns a `shutil.which` fake that resolves only the named commands.
 `HarnessRegistryTests` assert the supported ids are exactly `["claude", "codex", "pi"]`, each harness
@@ -53,6 +60,8 @@ in `test_terminal_ws.py`.
 | The endpoint-level harness tests (GET detection + the harness opener). | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: corrected Codex validation prose
+  and recorded dynamic-builtin versus declared-settings-menu coverage.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: replaced mapping-less-Codex expectations with explicit
   argv/template/enum coverage while preserving Pi.dev's env-only behavior. Verification metadata

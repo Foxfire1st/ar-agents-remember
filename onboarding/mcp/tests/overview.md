@@ -6,12 +6,17 @@
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`|
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 
 ## Purpose
 
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
+
+The L1 regression set adds a fake-adapter conformance suite for normalized harness control,
+correlated acceptance/reconciliation, private IPC, bounded queue/ledger behavior, shutdown failure
+paths, and R11 surface-owned draft preservation. Existing settings, harness, catalog, opener, and
+WebSocket tests pin the additive launch/API projections and preserve legacy behavior.
 
 The L7 test route additionally proves the projection/landing boundary: slow or failed remote observations do not delay local publication; observer results remain exact-contract and freshness-labeled; stale landing rendering is visible but motion-inert; invalid snapshot reads preserve local status; and a failed refresher does not skip serving shutdown. These are focused leaf regressions; the manager owns the full repository gate.
 
@@ -43,6 +48,8 @@ persisted folded-id removal counts, body-free aggregate events, and silence on n
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: added route-body coverage for the
+  bridge conformance suite and its five changed serving regression files.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3 curator: added route coverage for the change-driven
   projection pacing regressions — new `test_change_watcher.py` (roots/filter/pacer/projector/real
   inotify) plus the `test_serving.py` `watch_changes=False` ETag fixture note and the

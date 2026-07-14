@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -22,6 +22,13 @@ overrides (`RolesPerLevelTests`), the harness-definition family
 (`EscalationSettingsTests`).
 
 ## Code Commentary
+
+### 260713-PHA-L1 effort-policy regression coverage
+
+The harness-family tests exercise the real settings loader in both directions: a settings
+`effortFlagValues` declaration becomes enumerated validation and rejects an out-of-menu value, while
+an argv-only Codex override preserves the builtin stripped-non-empty dynamic policy. This prevents
+the merge path from silently bypassing a declared settings vocabulary.
 
 ### Logic
 
@@ -156,6 +163,8 @@ No meaningful cross-repo references found.
 | Loader-local behavior only. | - | - |
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented declared-menu versus
+  builtin-Codex dynamic effort regression coverage from the final candidate.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: covered the one-row supervisor default and safe Codex
   effort-flag template override. Verification metadata remains pinned until closeout stamps the

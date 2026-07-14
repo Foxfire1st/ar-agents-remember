@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-14T12:00+02:00 |
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -54,6 +54,12 @@ concurrent mutator at first upgrade read, though unique-temp atomic replace prev
 ### 260707-HFX2-L12 CS-6 Update
 
 `TerminalCatalog.batch()` is a read-once/write-once unit of work for full-catalog sweeps, and `compact()` reclaims aged `terminated` tombstones while preserving running, exited, and landed/archive rows. Landed row cleanup remains the explicit L11 manual path.
+
+### 260713-PHA-L1 additive control metadata
+
+Catalog entries may preserve optional control state, private control endpoint, and protocol version
+for harness sessions. Fields are additive and migration-safe: legacy rows remain readable, while
+the opener/API can report an explicit unsupported state without treating pane text as authority.
 
 ### Logic
 
@@ -255,6 +261,8 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented migration-safe control endpoint,
+  protocol, and unsupported-state metadata.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T21:05+02:00 — Super-exit curator correction: replaced the pre-L17 default-role and

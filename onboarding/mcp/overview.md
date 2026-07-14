@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -185,6 +185,11 @@ lands in `docs/design/observable-lifecycle.md` and the settings table in
 rc4, the packaged lifecycle doctrine refines Developer Clarification Triage to read the active
 queue before choosing note-only handling, and the serving supervisor defers generic unacked
 escalation for hosted-delivery failures until the persistent redelivery threshold has exhausted.
+
+The serving package also contains the protocol-neutral harness control seam: normalized state,
+one-adapter hosted bridges, bounded ordered input, private exact-identity IPC, and a surface-owned
+draft/transcript layer. L1 defines this contract and reports unsupported adapters explicitly; no
+vendor driver is registered or production cutover is implied.
 
 ## Hot Path Summary
 
@@ -696,6 +701,8 @@ L4 changes the MCP package public dispatch contract: spawn-only creation, exact-
 
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: refreshed the package route body for
+  the normalized harness-control contract, bounded bridge, private IPC, and no-cutover boundary.
 
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3 route impact: the serving projector's pacing is now
   change-driven + heartbeat (new `serving/change_watcher.py`; `--heartbeat` on the dashboard CLI

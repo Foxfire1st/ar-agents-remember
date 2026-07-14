@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -21,6 +21,13 @@
 `test_terminal_ws.py`.
 
 ## Code Commentary
+
+### 260713-PHA-L1 control metadata coverage
+
+The optional projection suite now round-trips `controlState`, `controlEndpoint`, and
+`controlProtocol` for harness rows, while legacy rows omit/read these fields as `None`. The test
+keeps the catalog migration-safe and proves the bridge metadata is additive rather than a schema
+replacement.
 
 ### 260707-HFX2-L18 Complete Optional Projection Proof
 
@@ -95,6 +102,8 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented additive control metadata
+  round-trip and legacy omission coverage.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T18:30+02:00 — 260707-HFX2-L18: added one complete optional-field projection and

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`       |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -25,6 +25,13 @@ exercise same-pair `409` only with live host evidence, and verify current/previo
 in successful attach responses.
 
 ### Logic
+
+### 260713-PHA-L1 control projection coverage
+
+The final serving tests cover additive control fields on `GET /api/harnesses` and terminal-open
+responses while preserving legacy terminal WebSocket behavior. The bridge-era control modules are
+tested separately by `test_harness_control.py`; this route suite pins only the app/catalog projection
+boundary and the absence of production vendor registration.
 
 L16 review follow-up adds MalformedSettingsScratchTerminalTests: a broken settings.json + kind=terminal open reaches the opener with harnesses=None (builtin fallback), proving the registry load is scoped to harness-resolving requests (L16R-1).
 
@@ -111,6 +118,8 @@ primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py
 | The 6d-1 real-PTY/tmux host tests (the other half of Mode B2). | [test_terminal.py](agents-remember/mcp/tests/test_terminal.py) |
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented additive harness-control
+  projection coverage and its boundary with the standalone bridge conformance suite.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: updated HTTP attach coverage for explicit role claims,
   live pair conflicts, and role-aware response fields.

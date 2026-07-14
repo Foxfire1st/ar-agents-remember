@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`        |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`        |
+| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ env-seed behaviour both call paths inherit — and, since 260703-L16, the per-ha
 application (`KnobApplicationTests`).
 
 ## Code Commentary
+
+### 260713-PHA-L1 control metadata coverage
+
+The opener tests now prove an unregistered harness is persisted and returned as explicit
+`unsupported` control state with protocol metadata, and that a supplied private endpoint is retained
+on re-open. This is additive catalog behavior; no pane or log fallback is accepted.
 
 ### 260707-HFX2-L17 Multi-Role Pipeline And Replacement Proof
 
@@ -111,6 +117,8 @@ No meaningful cross-repo references found.
 | The tests cover local serving behavior only. | - | - |
 
 ## Update History
+- 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented unsupported-adapter,
+  protocol, endpoint, and re-open preservation coverage.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added the workaround-museum multi-role, same-role,
   dead-replacement, and no-suffix pipeline regressions.
