@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc`|
-| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
+| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`|
+| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -609,11 +609,18 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 - `harness_control_ipc.py` / `harness_terminal_surface.py` — user-private exact-identity Unix IPC
   plus readable transcript/input rendering. The terminal surface owns uncommitted drafts: automated
   delivery cannot inject into, submit, or discard a draft under R11.
+- `codex_app_server_protocol.py` / `codex_app_server_session.py` — the 260713-PHA-L3 stable-only
+  Codex CLI 0.144.3 JSON-RPC transport and exact initialize/model/effort/thread session contract.
+- `codex_app_server_adapter.py` / `codex_app_server_state.py` — the 260713-PHA-L3 normalized
+  adapter: correlated turns, explicit steer-or-queue policy, structured approvals/elicitation,
+  status/completion mapping, bounded evidence, and reconnect reconciliation without blind resend.
 
 ## Invariants And Boundaries
 
 - **Control authority is protocol-backed.** Adapter state, bridge receipts, reconciliation, and
   normalized transcript entries are authoritative; tmux panes and terminal logs are diagnostics.
+- **Codex app-server remains leaf-local.** The pinned stable protocol path does not register a
+  production driver, perform cutover, or add terminal/pane/log fallback; L5 owns that integration.
 - **Shared input and draft custody.** Terminal and durable submissions merge as whole ordered
   messages through one queue. The terminal surface owns an uncommitted human draft and preserves it
   across automated delivery and ambiguous-send recovery.
@@ -705,6 +712,10 @@ Serving implements exact-session readiness, copy-mode rechecks, calibrated settl
 
 
 ## Update History
+- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added the stable Codex app-server route model,
+  exact `0.144.3` protocol pin, protocol-only reasoning effort, structured interaction and
+  reconnect boundaries, and explicit no-registration/no-cutover scope. Verification remains pinned
+  until closeout stamps the leaf commit.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: documented the unregistered pinned Pi RPC
   protocol/process/event/adapter chain, strict framing, settlement, UI, and cursor-reconciliation
   boundaries. Verification metadata remains pinned until closeout stamps the L4 code commit.

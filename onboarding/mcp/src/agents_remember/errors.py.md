@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-14T12:00+02:00                |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`                    |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`                    |
+| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Purpose
@@ -40,6 +40,8 @@ boundary violation the same way.
 - This module holds only error-type declarations. It carries no logic, no
   imports of package internals, and must stay dependency-free so any module can
   import it without creating import cycles.
+- `CodexAppServerError` identifies malformed, incompatible, or boundedness failures at the pinned
+  Codex app-server protocol boundary; disconnect errors preserve possible-send state for reconcile.
 
 ### Conventions
 
@@ -61,6 +63,8 @@ been sent and an optional vendor correlation id, so callers can reconcile withou
 | Adapter disconnect semantics. | [harness_control_adapter.py](serving/harness_control_adapter.py) |
 
 ## Update History
+- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: documented the typed Codex app-server
+  protocol failure addition. Verification remains pinned until the leaf code commit exists.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented typed control-contract and
   ambiguous-disconnect errors used by the new bridge surfaces.
 
