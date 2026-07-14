@@ -14,15 +14,20 @@
 [serving overview](overview.md)
 
 ## Purpose
-Facade for the unregistered Claude Code 2.1.207 long-lived stream-json adapter over the L1 contract.
+Facade for the Claude long-lived stream-json adapter over the L1 contract. Production compatibility
+is negotiated from the structured fields the adapter consumes; 2.1.207 is fixture/smoke evidence
+only.
 
 ## Code Commentary
-Validates version, preserves launch identity and options, negotiates structured startup, then delegates
-frame reduction, interactions, reconciliation, and shutdown to bounded components.
+Preserves launch identity and options, negotiates structured startup, then delegates frame
+reduction, interactions, reconciliation, and shutdown to bounded components. Missing or malformed
+required command, model, account, session, cwd, permission, tool, slash-command, or bootstrap
+evidence fails loudly and stops the transport.
 
 ## Invariants And Boundaries
-Exact 2.1.207 only; unsupported versions are explicit. L2 does not register or cut over production.
-Acceptance is not completion and disconnect never resends.
+The reported CLI version is opaque evidence, not an exact-version gate or semver range. Structured
+capability failures are explicit; pane/log fallback is forbidden. Acceptance is not completion and
+disconnect never resends.
 
 ## Repo-Internal References
 | Finding | Citations | Source Path |
@@ -37,6 +42,8 @@ version as evidence, requires the downstream command/model/account/session field
 transport on incompatible startup. It has no exact-version probe or pane/log fallback.
 
 ## Update History
+- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized the obsolete
+  exact-2.1.207 normative contract and made consumed structured capability evidence authoritative.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented direct launch and structured Claude capability
   negotiation replacing the production version preflight.
 - 2026-07-14T12:45:11+02:00 — 260713-PHA-L2 source-tip reconciliation: refreshed verification

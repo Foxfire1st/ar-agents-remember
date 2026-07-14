@@ -28,13 +28,14 @@ adapter.
 
 ## Conventions
 
-The runtime user-agent must prove Codex `0.144.3`. Reasoning effort is selected from the advertised
-model menu and travels through thread configuration and turn parameters; it is never mapped onto
-argv.
+The runtime user-agent must prove the documented client/opaque-version form; `0.144.3` is a
+fixture/smoke baseline only. The negotiated token must agree with the thread `cliVersion`.
+Reasoning effort is selected from the advertised model menu and travels through thread
+configuration and turn parameters; it is never mapped onto argv.
 
 ## Invariants And Boundaries
 
-- Experimental API remains false and unsupported capabilities fail explicitly.
+- Experimental API remains false and unsupported or malformed structured capabilities fail loudly.
 - Start/resume preserves exact thread identity, model, cwd, sandbox, approval, configuration, and
   effective reasoning effort.
 - Missing, conflicting, or unadvertised effort values fail loudly.
@@ -73,6 +74,9 @@ cwd, sandbox, and approval policy remain concrete required evidence; no semver c
 is made.
 
 ## Update History
+- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: replaced the exact-0.144.3
+  convention with consumed initialize/thread identity and field validation; fixture pins are
+  historical evidence only.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented cross-message Codex capability negotiation and
   loud failure for inconsistent structured identity.
 
