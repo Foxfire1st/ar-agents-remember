@@ -166,7 +166,7 @@
     "paste"
   ],
   "hotPath": {
-    "summary": "260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/` \u2014 container data is unreadable + high-churn, 30s watch-set re-derivation), filters non-input churn, and paces wakes through `ChangePacer` (debounce 0.1s, max-delay = `--interval` so a busy world keeps the former 1s cadence, idle heartbeat default 15s via the new `--heartbeat` flag). The tick body is untouched; `/api/state` staleness and time-derived fields (ages, stale/overdue flips) are bounded by t...",
+    "summary": "260713-PHA-L6: Claude, Codex, and Pi built-ins negotiate the structured fields their adapters consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. R10 resource performance remains queued. 260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktre...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_events.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:17+02:00 |
-| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc` |
-| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,8 @@ become notices. Event/transcript sequences, raw Pi detail, and bounded interacti
 maintained locally.
 
 ## Invariants And Boundaries
+- Event raw evidence records the structured Pi protocol and cursor without fabricating a package
+  version. Mapping remains responsible only for normalized state/events, not compatibility guesses.
 - Retry and compaction remain settling; `agent_end` is not sufficient for terminal idle.
 - Dialog responses are correlated; fire-and-forget UI events do not solicit responses.
 - Mapping does not launch processes, reconnect sessions, or register vendors.
@@ -40,5 +42,7 @@ maintained locally.
 No meaningful cross-repo references found.
 
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed version fabrication from mapped Pi event evidence and
+  documented the structured protocol boundary.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for normalized activity,
   queue, transcript, extension UI, retry/compaction, and settled completion mapping.

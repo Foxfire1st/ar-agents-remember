@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:17+02:00 |
-| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc` |
-| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,12 @@ failure.
 ## Cross-Repo References
 No meaningful cross-repo references found.
 
+## 260713-PHA-L6 Evidence Boundary
+
+Pi adapter tests prove startup from structured `get_state`/`get_entries` evidence without a
+fabricated package version; the exact `0.80.6` data is retained as fixture evidence.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented version-free Pi startup coverage.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for Pi fake adapter,
   protocol, activity, extension UI, disconnect, and reconciliation coverage.

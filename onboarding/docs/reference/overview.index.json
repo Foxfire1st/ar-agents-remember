@@ -31,7 +31,7 @@
     "tools"
   ],
   "hotPath": {
-    "summary": "Reference contract for harnesses, MCP tools, and settings. L4 documents the three-state dispatch protocol, hosted readiness, and catalog concurrency ruling. Current harness documentation covers the declared-menu versus builtin-Codex effort policy and the additive control-bridge boundary.",
+    "summary": "The reference route now governs structured Claude/Codex/Pi capability negotiation and the complete serving reload boundary. Exact versions remain fixture/smoke evidence; R9 compatibility is limited to the two optional adapter-delivery fields, and R10 resource performance remains queued. Reference contract for harnesses, MCP tools, and settings. L4 documents the three-state dispatch protocol, hosted readiness, and catalog concurrency ruling. Current harness documentation covers the declared-menu versus builtin-Codex effort policy and the additive control-bridge boundary.",
     "candidateHints": [
       "docs/reference",
       "docs/reference/harnesses.md",
@@ -48,19 +48,19 @@
       "settings-json",
       "skills.md",
       "skills",
+      "R10",
       "MCP",
-      "409891a4bea54f3b6c3a125611afe54c41cca661",
+      "bc2958ae2d90ab3d34bffde5402d2dc21100e41b",
       "effortFlagValues",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
       "T14",
       "lastVerifiedCommitHash",
-      "a4bea54f3b6c3a125611afe54c41cca661",
       "lastVerifiedCommitDate",
-      "T10",
-      "T12",
+      "T16",
       "PHA",
+      "T12",
       "TRH"
     ]
   },

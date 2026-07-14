@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1653,
+    "sourceFilesInScope": 1531,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260713-PHA-L4 adds a pinned, unregistered Pi RPC adapter slice under the serving route. For Pi protocol questions, route through `mcp/src/agents_remember/serving/pi_rpc_protocol.py` for strict LF JSONL and schemas, `pi_rpc_process.py` for the owned subprocess/disconnect seam, `pi_rpc_events.py` for normalized activity and settlement, and `pi_rpc_adapter.py` for L1-backed readiness, queueing, reconnect, and cursor reconciliation. L5 owns production registration and cutover. 260707-HFX2-L17 makes hosted seat identity a pair: `leafKey` names the canonical task leaf and `seatRole` names the cur...",
+    "summary": "260713-PHA-L6 records the current protocol-backed harness boundary: Claude, Codex, and Pi negotiate structured capability evidence, rolling inbox readers allow only the two named optional adapter-delivery fields, and serving cutover reloads every long-lived daemon/client/session/browser consumer. Exact fixture versions and the queued R10 resource observations are not production behavior. 260713-PHA-L4 adds a pinned, unregistered Pi RPC adapter slice under the serving route. For Pi protocol questions, route through `mcp/src/agents_remember/serving/pi_rpc_protocol.py` for strict LF JSONL and...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -116,23 +116,14 @@
       "reference",
       "l-01-agent-lifecycles",
       "mcp/src/agents_remember/serving/pi_rpc_protocol.py",
-      "pi_rpc_process.py",
-      "pi_rpc_events.py",
-      "pi_rpc_adapter.py",
-      "leafKey",
-      "seatRole",
       "PHA",
+      "R10",
       "RPC",
       "agents_remember",
       "pi_rpc_protocol",
       "JSONL",
-      "pi_rpc_process",
-      "pi_rpc_events",
-      "pi_rpc_adapter",
-      "HFX2",
-      "L17",
       "repo-overview",
-      "cff3e8f9a64258ea3e7d3007e2153b22c01e273b",
+      "bc2958ae2d90ab3d34bffde5402d2dc21100e41b",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -144,7 +135,16 @@
       "coordination_root",
       "c-09-git-worktree-manager",
       "task_reopen",
-      "c-10-adopt-memory-baseline"
+      "c-10-adopt-memory-baseline",
+      "memory.md",
+      "providers/runners/",
+      "providers/data/",
+      "logs/mcp/",
+      "logs/providers/",
+      "providers/_bin/",
+      "providers/_venvs/",
+      "onboarding/",
+      "c-05-create-or-update-onboarding-files"
     ]
   },
   "fallback": {

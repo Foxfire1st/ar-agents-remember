@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -151,7 +151,17 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 Inbox records retain additive adapter acceptance, reconciliation, and completion evidence while the
 row's explicit consume state remains independent.
 
+### 260713-PHA-L6 Rolling Reader Compatibility
+
+The compatibility base permits exactly the optional `adapterDeliveryState` and
+`adapterDeliveryDetail` fields for older readers during a serving cutover. Current
+`OperatorInboxEntry` fields remain explicitly typed, and unrelated extensions remain rejected;
+this is an additive two-field seam, not catch-all parsing. Delivery evidence remains separate from
+the explicit consume state.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented the exact two-field rolling-reader allowlist and
+  preserved rejection of unrelated inbox extensions.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented adapter evidence fields without changing consume semantics.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

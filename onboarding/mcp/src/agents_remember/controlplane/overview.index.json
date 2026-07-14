@@ -81,7 +81,7 @@
     "supervisor_signals"
   ],
   "hotPath": {
-    "summary": "260712-TRH-L5 adds a secondary confirmed-gone retention predicate without changing fallback retention: only pending supervisor nudge/escalation rows with a subject id qualify, catalog `terminated` is direct proof, and a compacted tombstone needs one successful exact-name tmux snapshot. `OperatorInboxStore.reconcile_and_compact` resolves and compacts under one lock and reuses the folded current before redelivery; consumed/durable/protected rows and indeterminate evidence remain visible. 260707-HFX2-L20 makes inbox state monotonic across concurrent consume and hosted delivery. The append-only...",
+    "summary": "260713-PHA-L6 keeps operator inbox rolling compatibility deliberately narrow: legacy readers may preserve optional `adapterDeliveryState` and `adapterDeliveryDetail`, while unrelated extensions remain forbidden. These delivery-evidence fields do not alter explicit consume or provider degradation state semantics. 260712-TRH-L5 adds a secondary confirmed-gone retention predicate without changing fallback retention: only pending supervisor nudge/escalation rows with a subject id qualify, catalog `terminated` is direct proof, and a compacted tombstone needs one successful exact-name tmux snapsh...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -137,20 +137,20 @@
       "store",
       "supervisor_signals.py",
       "supervisor_signals",
+      "adapterDeliveryState",
+      "adapterDeliveryDetail",
       "terminated",
-      "OperatorInboxStore.reconcile_and_compact",
+      "PHA",
       "TRH",
-      "OperatorInboxStore",
-      "reconcile_and_compact",
-      "HFX2",
-      "L20",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "cff3e8f9a64258ea3e7d3007e2153b22c01e273b",
+      "bc2958ae2d90ab3d34bffde5402d2dc21100e41b",
       "/../../overview.md",
       "controlplane/",
       "rung_due",
-      "next_step"
+      "next_step",
+      "seat_is_suspect",
+      "escalatedAt"
     ]
   },
   "fallback": {

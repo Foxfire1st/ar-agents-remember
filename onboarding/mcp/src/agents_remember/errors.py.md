@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-14T12:00+02:00                |
-| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`                    |
-| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
+| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`                    |
+| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Purpose
@@ -62,7 +62,14 @@ been sent and an optional vendor correlation id, so callers can reconcile withou
 | Control seam using the typed errors. | [harness_control_bridge.py](serving/harness_control_bridge.py) |
 | Adapter disconnect semantics. | [harness_control_adapter.py](serving/harness_control_adapter.py) |
 
+### 260713-PHA-L6 Error Boundary
+
+Errors carry structured harness capability failures loudly; they do not hide malformed protocol
+evidence behind version or parser fallbacks.
+
 ## Update History
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the error-sidecar body for the negotiated protocol
+  failure wording change.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: documented the typed Codex app-server
   protocol failure addition. Verification remains pinned until the leaf code commit exists.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented typed control-contract and

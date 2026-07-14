@@ -322,7 +322,7 @@
     "findings"
   ],
   "hotPath": {
-    "summary": "260713-PHA-L4 adds four unregistered serving modules for the pinned Pi 0.80.6 RPC boundary: strict framing/schema parsing, owned subprocess transport, normalized event settlement, and the L1-backed adapter with exact-session reconnect and post-cursor no-resend reconciliation. The paired tests and isolated smoke live under `mcp/tests`; production registration remains L5 scope. HFX2-L20 closes the live consume/redelivery resurrection race without changing a public payload: consume remains an append-only terminal fact, and the shared current-state/retention fold refuses to let a later stale pe...",
+    "summary": "260713-PHA-L6 extends the package's protocol-backed serving contract with structured Claude, Codex, and Pi capability negotiation and a strict two-field rolling inbox-reader compatibility seam. The full cutover reload boundary includes the daemon, MCP-owning clients, per-session runners and adapters, and browser tabs; R10 resource performance remains queued. 260713-PHA-L4 adds four unregistered serving modules for the pinned Pi 0.80.6 RPC boundary: strict framing/schema parsing, owned subprocess transport, normalized event settlement, and the L1-backed adapter with exact-session reconnect a...",
     "candidateHints": [
       "mcp",
       "mcp/tests",
