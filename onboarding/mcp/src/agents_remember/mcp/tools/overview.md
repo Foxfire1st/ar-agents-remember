@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -162,7 +162,15 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 The public tool route now exposes spawn-only creation, exact-session hosted_session_readiness, and an explicit dispatch-brief kind. Legacy context/submit refuses before side effects; promptKeywords apply once after readiness; completion requires delivered plus harness-log-confirmed proof.
 
 
+### 260713-PHA-L5 Route Contract Review
+
+The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
+readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
+gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
+only. Dashboard and packaged projections remain additive and synchronized.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 +## 260712-TRH-L4 Route Impact
 
 The public tool route now exposes spawn-only creation, exact-session hosted_session_readiness, and an explicit dispatch-brief kind. Legacy context/submit refuses before side effects; promptKeywords apply once after readiness; completion requires delivered plus harness-log-confirmed proof.

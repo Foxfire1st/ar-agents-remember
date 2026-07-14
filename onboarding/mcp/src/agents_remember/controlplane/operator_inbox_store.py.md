@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash |                                                                   `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate |                                                                   2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash |                                                                   `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate |                                                                   2026-07-14T14:23:24+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -156,7 +156,13 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | None. | N/A | N/A |
 
+### 260713-PHA-L5 Inbox-Rooted Adapter Evidence
+
+The store records accepted, queued, rejected, unsupported, ambiguous, and terminal-completion
+adapter evidence against an existing durable row. None of these transitions call `consume`.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed correlated delivery and explicit-consumption separation.
 
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented one-fold resolve-plus-compact
   ordering, consume authority, persisted folded-id removal semantics, and the no-store-reentry

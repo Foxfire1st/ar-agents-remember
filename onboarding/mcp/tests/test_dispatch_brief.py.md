@@ -6,8 +6,8 @@
 | path | mcp/tests/test_dispatch_brief.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview | mcp/tests/overview.md |
 
 ## Governing Overview
@@ -40,7 +40,14 @@ Worker source inventory, reviewer verdict, and governing route overview.
 
 No meaningful cross-repo references.
 
+### 260713-PHA-L5 Reviewed Hosted Cutover Impact
+
+Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
+contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
+legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
+inbox acceptance remains distinct from explicit consumption where applicable.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-

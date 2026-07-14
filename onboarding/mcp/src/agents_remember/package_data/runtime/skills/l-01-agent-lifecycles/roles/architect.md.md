@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash |                                            `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate |                                            2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash |                                            `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate |                                            2026-07-14T14:23:24+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -93,7 +93,15 @@ No sibling repository evidence is needed for this orchestration role file.
 This sidecar describes the generated runtime copy, not canonical ownership. It is synchronized from canonical l-01-agent-lifecycles doctrine. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
 
+### 260713-PHA-L5 Reviewed Hosted Cutover Impact
+
+Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
+contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
+legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
+inbox acceptance remains distinct from explicit consumption where applicable.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 +## 260712-TRH-L4 Generated-Copy Doctrine
 
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.

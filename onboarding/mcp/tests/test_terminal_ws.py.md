@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`       |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -117,7 +117,15 @@ primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py
 | The serving leaf-ref adapter exercised by invalid opener/attach route tests. | [serving/leaf_ref_validation.py](agents-remember/mcp/src/agents_remember/serving/leaf_ref_validation.py) |
 | The 6d-1 real-PTY/tmux host tests (the other half of Mode B2). | [test_terminal.py](agents-remember/mcp/tests/test_terminal.py) |
 
+### 260713-PHA-L5 Reviewed Hosted Cutover Impact
+
+Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
+contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
+legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
+inbox acceptance remains distinct from explicit consumption where applicable.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented additive harness-control
   projection coverage and its boundary with the standalone bridge conformance suite.
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-12T17:50 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -394,7 +394,15 @@ identity is known. `Chats` and `RailChat` post/apply the pair and name same-role
 `RailChat` and `SessionList` render current binding identity before stale spawn provenance. This is
 an existing panel responsibility expansion, not a new panel route.
 
+### 260713-PHA-L5 Route Contract Review
+
+The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
+readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
+gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
+only. Dashboard and packaged projections remain additive and synchronized.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 
 - 2026-07-12T17:50 — 260712-TRH-L6 route impact: documented the new Operations chat-activity indicator,
   shared Chats catalog ownership, exact-leaf-first/lifecycle-fallback identity, deterministic multi-seat

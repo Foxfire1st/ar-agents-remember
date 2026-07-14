@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -108,7 +108,15 @@ where the suite can prove no submit input was appended.
 | The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior. | L364-L417 | [sessions.test.ts](sessions.test.ts) |
 | The view-level persistence test (mounted-but-hidden terminals). | — | [panels/Chats.test.tsx](../panels/Chats.test.tsx) |
 
+### 260713-PHA-L5 Reviewed Hosted Cutover Impact
+
+Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
+contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
+legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
+inbox acceptance remains distinct from explicit consumption where applicable.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added binding-role helper, hydration, and pair-scoped
   assignment regressions including different-role coexistence.

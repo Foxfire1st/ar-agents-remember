@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -115,7 +115,14 @@ imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-
 | The xterm wrapper that adapts a `Terminal` to the `TerminalSink`. | — | [panels/Terminal.tsx](../panels/Terminal.tsx) |
 | The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
 
+### 260713-PHA-L5 Protocol Catalog Fields
+
+Terminal session API types expose additive adapter state, identity, interaction, sequence, and raw
+detail fields. The WebSocket and paste helpers remain ordinary-terminal mechanics; hosted delivery
+uses correlated backend protocol receipts.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented additive catalog projection and hosted-delivery split.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: carried binding role in catalog types and attach POST
   bodies, with pair-scoped refusal semantics.

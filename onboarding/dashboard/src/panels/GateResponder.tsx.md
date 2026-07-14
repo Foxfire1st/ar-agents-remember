@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/GateResponder.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-02T16:18+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -86,7 +86,13 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
 | Hangar secondary surface for worktree-bound gates. | — | [Hangar.tsx](Hangar.tsx) |
 | Projection gate and lifecycle shapes. | — | [types/projection.ts](../types/projection.ts) |
 
+### 260713-PHA-L5 Adapter Interaction Context
+
+Gate responses render adapter-owned interaction prompt, choices, and identity, and submit the chosen
+response through the durable gate path. Completion or acceptance does not consume an inbox row.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed adapter interaction rendering and response boundary.
 
 - 2026-07-02T16:18+02:00 — L8: removed the message-only `Chat` mode and its textarea/send path from
   the gate responder. The component still records explicit approve/reject/cancel decisions and notifies

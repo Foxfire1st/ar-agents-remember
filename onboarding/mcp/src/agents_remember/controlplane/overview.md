@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -247,7 +247,15 @@ response models are `models/operator_inbox.py`.
 Controlplane expectations now start at the durable exact-session dispatch-brief entry, using its timestamp and id; pending rows remain pinned and never enter generic readdressing or respawn escalation.
 
 
+### 260713-PHA-L5 Route Contract Review
+
+The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
+readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
+gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
+only. Dashboard and packaged projections remain additive and synchronized.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the control-plane route for the
   confirmed-gone inbox predicate, same-lock terminal resolution/compaction, persisted folded-id

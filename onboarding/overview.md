@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated            | 2026-07-12T12:28+02:00 |
-| lastVerifiedCommitHash | `21049f92238f35e8307c9ed489f4340544c1d147` |
-| lastVerifiedCommitDate | 2026-07-14T12:49:29+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 
 > **Status:** active baseline
 
@@ -456,7 +456,15 @@ routes and ships through the existing generated-dashboard package boundary.
 Repository onboarding now records spawned-unbriefed → harness-ready → briefed hosted dispatch, exact session-id continuity, delivered-plus-harness-log-confirmed assignment, canonical l-01 ownership with generated mirrors, and fully serialized catalog writers with lock-free atomic readers.
 
 
+### 260713-PHA-L5 Route Contract Review
+
+The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
+readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
+gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
+only. Dashboard and packaged projections remain additive and synchronized.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: recorded the repository-level routing impact of
   the new unregistered Pi RPC protocol slice; detailed behavior remains in the serving and tests
   route overviews and nine file sidecars. Verification metadata remains pinned until closeout.

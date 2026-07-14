@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -170,7 +170,14 @@ object with the action methods on it, not a separate actions slice.
 | `pasteDraftToSession` waits for the live connection and delegates to the confirmed `pasteAndConfirm` draft loop (echo-confirmed, boot-deadline retries, no Enter); `deliverToSession` keeps the submit-and-confirm path. | L433-L459 | [sessions.ts](sessions.ts) |
 | The backend tmux session that persists after `close` and is killed only by explicit terminate. | L330-L347 | [serving/terminal.py](../../../mcp/src/agents_remember/serving/terminal.py) |
 
+### 260713-PHA-L5 Protocol Projection
+
+Hosted rows carry additive adapter control, activity, acceptance, vendor identity, pending
+interaction, event sequence, and raw diagnostics. Hosted delivery is protocol-backed and accepts
+only immediate/queued receipts; ordinary shell connection behavior remains separate.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed hosted protocol projection and delivery boundary.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added authoritative binding-role state and helpers,
   made advisory/apply assignment pair-scoped, preserved different-role owners, and required

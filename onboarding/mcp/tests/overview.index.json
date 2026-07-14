@@ -27,6 +27,7 @@
     "mcp/tests/test_cgc_seed_bundle_path.py",
     "mcp/tests/test_cgc_watch_guard.py",
     "mcp/tests/test_change_watcher.py",
+    "mcp/tests/test_claude_stream_transport.py",
     "mcp/tests/test_cleanup_carryover.py",
     "mcp/tests/test_cli_discovery.py",
     "mcp/tests/test_code_quality_check.py",
@@ -51,8 +52,11 @@
     "mcp/tests/test_harness_control.py",
     "mcp/tests/test_harness_control_claude.py",
     "mcp/tests/test_harness_control_claude_smoke.py",
+    "mcp/tests/test_harness_control_runner.py",
     "mcp/tests/test_harness_logs.py",
     "mcp/tests/test_harnesses.py",
+    "mcp/tests/test_hosted_control_conformance.py",
+    "mcp/tests/test_hosted_interactions.py",
     "mcp/tests/test_hosted_readiness.py",
     "mcp/tests/test_identity.py",
     "mcp/tests/test_inbox_backoff.py",
@@ -139,8 +143,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 128,
-    "fileSidecars": 127,
+    "sourceFilesInScope": 132,
+    "fileSidecars": 131,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -249,9 +253,9 @@
       "mcp/tests/test_cgc_seed_bundle_path.py",
       "mcp/tests/test_cgc_watch_guard.py",
       "mcp/tests/test_change_watcher.py",
+      "mcp/tests/test_claude_stream_transport.py",
       "mcp/tests/test_cleanup_carryover.py",
-      "mcp/tests/test_cli_discovery.py",
-      "mcp/tests/test_code_quality_check.py"
+      "mcp/tests/test_cli_discovery.py"
     ],
     "anchorHints": [
       "_scaling.py",
@@ -288,6 +292,8 @@
       "test_cgc_watch_guard",
       "test_change_watcher.py",
       "test_change_watcher",
+      "test_claude_stream_transport.py",
+      "test_claude_stream_transport",
       "test_cleanup_carryover.py",
       "test_cleanup_carryover",
       "test_cli_discovery.py",
@@ -299,9 +305,7 @@
       "test_codex_app_server_live.py",
       "test_codex_app_server_live",
       "test_codex_app_server_protocol.py",
-      "test_codex_app_server_protocol",
-      "test_compact_content.py",
-      "test_compact_content"
+      "test_codex_app_server_protocol"
     ]
   },
   "fallback": {
