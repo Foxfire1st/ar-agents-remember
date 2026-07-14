@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T12:30+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastUpdated | 2026-07-14T17:18:47+02:00 |
+| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b`|
+| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,16 +25,28 @@ The adapter starts and snapshots the session, submits correlated turns, applies 
 bounded-queue busy policy, reduces status/turn/item/server-request events, resolves approvals and
 elicitation, and reconnects by reading the exact thread and reconciling evidence. It publishes
 normalized activity, terminal results, transcript entries, capability details, and interaction state.
+For a terminal completion with null protocol `requestId`, it resolves the protocol-owned vendor
+correlation against exactly one accepted inbox row in the same hosted session and records completion
+on that row. Production uses the consumed structured capabilities/messages/fields; exact 2.1.207,
+0.144.3, and 0.80.6 values are fixture/smoke evidence only.
 
 ## Conventions
 
-Acceptance is proven by correlated `turn/start`/`turn/steer` responses. Reconnect records
-`resend: false`; event and submission retention are bounded.
+Acceptance is proven by correlated `turn/start`/`turn/steer` responses. Null-requestId completion
+requires a present, text, exact, same-session vendor correlation; missing, non-text, unmatched, or
+ambiguous evidence fails loudly. Reconnect records `resend: false`; event and submission retention
+are bounded.
 
 ## Invariants And Boundaries
 
 - Protocol readiness and acceptance are authoritative; pane, terminal, or log text is not used.
 - No blind resend follows an ambiguous send.
+- Completion writes adapter delivery metadata on the matched row without consuming its explicit
+  inbox state; a completed turn with no actual queued replacement reports `idle` / `immediate`.
+  `settling` / `queued` is reserved for an actual replacement turn.
+- R9 rolling compatibility permits only optional `adapterDeliveryState` and
+  `adapterDeliveryDetail`; unrelated extras remain rejected. R10 resource performance is queued,
+  not implemented or current behavior.
 - The adapter is leaf-local: no production registration, cutover, credential handling, or vendor
   fallback is owned here.
 
@@ -70,6 +82,8 @@ session handshake. It does not require an exact installed package version; malfo
 initialization, model, thread, policy, or cross-message identity evidence fails loudly.
 
 ## Update History
+- 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented null-requestId/vendor-correlation completion,
+  loud correlation validation, terminal idle/immediate projection, and replacement-only queued state.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented structured Codex identity and negotiated adapter
   reporting; exact versions remain fixture/smoke baselines only.
 

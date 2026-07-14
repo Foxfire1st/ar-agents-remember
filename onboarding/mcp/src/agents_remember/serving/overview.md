@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b`|
+| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -125,6 +125,14 @@ consume; exact package versions are fixture/smoke evidence only. Rolling inbox c
 limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the
 daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. R10 resource
 performance remains queued.
+
+Codex terminal completion with a null protocol `requestId` is resolved only through its text vendor
+correlation on exactly one accepted inbox row for the same hosted session. Missing, non-text,
+unmatched, or ambiguous correlation fails loudly. Completion projects onto that same row as adapter
+delivery metadata while explicit inbox state remains `pending` and unconsumed. With no actual queued
+replacement the adapter reports `idle` / `immediate`; `settling` / `queued` means a replacement is
+actually queued. This is protocol-owned structured behavior, not a fixture-version, parser, pane,
+fallback, or R10 performance behavior.
 
 260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch
 roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/`
@@ -760,6 +768,16 @@ evidence only. R9 rolling inbox compatibility remains limited to optional `adapt
 and `adapterDeliveryDetail`; unrelated extras remain rejected. R10 resource performance is queued
 and not implemented or current behavior.
 
+### 260713-PHA-L6 Codex Completion Correlation
+
+The Codex adapter owns the null-requestId/vendor-correlation mapping and terminal projection. It
+must consume structured protocol messages and fields and fail loudly on missing, non-text,
+unmatched, or ambiguous correlation evidence; exact 2.1.207, 0.144.3, and 0.80.6 values remain
+fixture/smoke evidence only. The matched row receives adapter completion metadata without explicit
+inbox consumption, and only an actual replacement permits `settling` / `queued`; otherwise the
+terminal snapshot is `idle` / `immediate`. R9 remains limited to optional `adapterDeliveryState`
+and `adapterDeliveryDetail`, with unrelated extras rejected. R10 remains queued and unimplemented.
+
 ### 260713-PHA-L5 Hosted Protocol Cutover
 
 Claude, Codex, and Pi hosted sessions now launch through the shared bridge. Exact adapter snapshots
@@ -770,6 +788,8 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned Codex null-requestId
+  correlation, same-row pending completion, loud failures, and replacement-only queued state.
 - 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized obsolete exact-version
   language in the serving route model and made structured consumed capabilities normative.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the serving route for structured capability

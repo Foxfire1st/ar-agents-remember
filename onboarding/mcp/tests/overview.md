@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastUpdated | 2026-07-14T17:18:47+02:00 |
+| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b`|
+| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
 
 ## Purpose
 
@@ -22,6 +22,14 @@ exact initialize/model/thread setup, protocol-only effort validation and echoing
 status/completion and server requests, explicit busy behavior, bounded malformed/oversized input,
 and reconnect correlation without resend. An opt-in live smoke proves exact-version readiness using
 an ephemeral thread with no prompt or credential output.
+
+The current Codex completion regressions prove that a null protocol `requestId` is resolved only by
+the protocol-owned text vendor correlation on exactly one accepted inbox row in the same hosted
+session. Missing, non-text, unmatched, and ambiguous correlation evidence fails loudly. Completion
+records adapter delivery metadata on that same row while explicit inbox state remains `pending` and
+unconsumed; terminal state is `idle` / `immediate` without a queued replacement and
+`settling` / `queued` only for an actual replacement. Exact 2.1.207, 0.144.3, and 0.80.6 values
+remain fixture/smoke evidence, not production pins.
 
 The 260713-PHA-L2 tests add pinned Claude Code 2.1.207 JSONL fixtures, fake-transport conformance,
 and an opt-in credential-safe live smoke. The smoke submits the advertised local `/cost` command
@@ -48,7 +56,8 @@ utime-pinned-rewrite invalidation via ctime, and parse failures retried every bu
 
 260713-PHA-L6 tests preserve exact Claude/Codex/Pi versions only as fixture and smoke baselines,
 while proving structured capability acceptance/rejection and the exact additive inbox allowlist.
-No test documents R10 resource performance as current behavior.
+They preserve R9's optional-only `adapterDeliveryState` and `adapterDeliveryDetail` compatibility,
+reject unrelated extras, and do not document R10 resource performance as current behavior.
 
 260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud
 tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim
@@ -76,6 +85,8 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: added route-level Codex completion correlation,
+  same-row pending semantics, loud failure cases, replacement-only queue state, and fixture-only pins.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the test-route body for structured
   capability negotiation, rolling inbox compatibility, and the deferred R10 boundary.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
