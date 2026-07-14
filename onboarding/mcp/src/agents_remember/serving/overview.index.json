@@ -166,7 +166,7 @@
     "paste"
   ],
   "hotPath": {
-    "summary": "260713-PHA-L6: Claude, Codex, and Pi built-ins negotiate the structured fields their adapters consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. R10 resource performance remains queued. 260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktre...",
+    "summary": "260713-PHA-L6: Claude, Codex, and Pi built-ins negotiate the structured fields their adapters consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. R10 resource performance remains queued. Codex terminal completion with a null protocol `requestId` is resolved only through its text vendor correlation on exactly one accepted inbox row for the same hosted session. Missing, non-t...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

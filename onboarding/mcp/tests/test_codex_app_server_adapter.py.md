@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T12:30+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastUpdated | 2026-07-14T17:18:47+02:00 |
+| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b`|
+| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -23,7 +23,9 @@ Fake-transport conformance tests for the Codex app-server adapter.
 The suite drives stable handshake/model/thread setup, exact effort acceptance and loud rejection,
 start/resume preservation, busy steer/queue behavior, structured approvals and elicitation,
 experimental request rejection, reconnect reconciliation without resend, and terminal/transcript
-mapping using the pinned fixture.
+mapping. It also proves protocol-owned null-requestId completion maps by exact text vendor
+correlation to one same-session accepted row, while missing, non-text, unmatched, and ambiguous
+correlation fail loudly. The pinned 0.144.3 fixture is test evidence, not a production version pin.
 
 ## Conventions
 
@@ -35,6 +37,11 @@ the asyncio backend used by the adapter.
 - Tests prove protocol acceptance rather than pane/log readiness.
 - Experimental surfaces and absent/unconfirmed effort fail loudly.
 - Reconnect assertions require `resend: false`; no production registration is tested here.
+- Terminal completion leaves the matched inbox row explicitly `pending`/unconsumed while recording
+  `adapterDeliveryState=completed` and `adapterCompletedAt`; `idle` / `immediate` follows when no
+  replacement is queued, and `settling` / `queued` is asserted only for an actual replacement.
+- R9 allows only optional `adapterDeliveryState` and `adapterDeliveryDetail`; unrelated extras are
+  rejected. R10 performance is queued and is not covered as current behavior.
 
 ## Todos
 
@@ -67,6 +74,8 @@ Adapter regressions prove a compatible newer structured Codex identity is accept
 inconsistent initialization/thread evidence is rejected; exact package strings are fixture evidence.
 
 ## Update History
+- 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented null-requestId correlation, same-row
+  completion projection, loud failure cases, and no-replacement terminal state assertions.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented negotiated-version acceptance and loud rejection
   coverage.
 
