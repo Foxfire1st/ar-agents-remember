@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b`|
-| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
+| lastVerifiedCommitHash | `e35584a2efec5f2b4eb5ac7c4ee9a129757c92b0`|
+| lastVerifiedCommitDate | 2026-07-14T17:54:34+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -133,6 +133,13 @@ delivery metadata while explicit inbox state remains `pending` and unconsumed. W
 replacement the adapter reports `idle` / `immediate`; `settling` / `queued` means a replacement is
 actually queued. This is protocol-owned structured behavior, not a fixture-version, parser, pane,
 fallback, or R10 performance behavior.
+
+The exact-session Unix IPC response lifecycle contains peer-loss `BrokenPipeError` and
+`ConnectionResetError` only after accepted dispatch, across response write/drain and close/
+`wait_closed`. Request dispatch, identity/protocol validation, malformed input, serialization,
+cancellation, and unrelated failures remain loud. A delayed-reply disconnect leaves the accepted
+submission ambiguous but bridge-reconcilable, with no retry or fallback; bridge reconciliation
+returns the preserved vendor correlation.
 
 260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch
 roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/`
@@ -788,6 +795,8 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: documented the narrow IPC peer-disconnect reply/close
+  boundary and delayed-reply bridge reconciliation result.
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned Codex null-requestId
   correlation, same-row pending completion, loud failures, and replacement-only queued state.
 - 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized obsolete exact-version

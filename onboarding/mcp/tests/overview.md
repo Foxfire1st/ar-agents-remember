@@ -6,8 +6,8 @@
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-14T17:18:47+02:00 |
-| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b`|
-| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
+| lastVerifiedCommitHash | `e35584a2efec5f2b4eb5ac7c4ee9a129757c92b0`|
+| lastVerifiedCommitDate | 2026-07-14T17:54:34+02:00|
 
 ## Purpose
 
@@ -59,6 +59,12 @@ while proving structured capability acceptance/rejection and the exact additive 
 They preserve R9's optional-only `adapterDeliveryState` and `adapterDeliveryDetail` compatibility,
 reject unrelated extras, and do not document R10 resource performance as current behavior.
 
+The L6 IPC regression additionally proves that a delayed reply after accepted dispatch can lose its
+peer without an unhandled callback exception: only `BrokenPipeError`/`ConnectionResetError` during
+write/drain/close/`wait_closed` are contained, while dispatch, identity, protocol, validation, and
+unrelated failures remain loud. The accepted timeout remains ambiguous but bridge-reconcilable, and
+the regression confirms the preserved vendor correlation with no retry or fallback.
+
 260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud
 tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim
 by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without
@@ -85,6 +91,8 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: added route-level delayed-reply IPC peer-disconnect
+  containment and bridge reconciliation evidence.
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: added route-level Codex completion correlation,
   same-row pending semantics, loud failure cases, replacement-only queue state, and fixture-only pins.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the test-route body for structured

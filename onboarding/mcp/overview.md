@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b` |
-| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
+| lastVerifiedCommitHash | `e35584a2efec5f2b4eb5ac7c4ee9a129757c92b0` |
+| lastVerifiedCommitDate | 2026-07-14T17:54:34+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
