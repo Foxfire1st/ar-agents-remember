@@ -16,8 +16,8 @@
 
 ## Purpose
 
-`terminal_liveness.py` (new in **260707-HFX-L5**, catalog liveness hysteresis) owns liveness
-probing for durable dashboard terminal catalog rows: a **rate-limited, non-overlapping sweeper**
+`terminal_liveness.py` owns protocol-derived liveness/activity projection for durable dashboard
+terminal catalog rows through a **rate-limited, non-overlapping sweeper**
 (`TerminalCatalogLivenessSweeper`) plus the **shared single-row observation path**
 (`observe_terminal_liveness`) that the sessions endpoint, WebSocket attach, and server-side paste
 all route through. It decouples tmux probing cadence from the dashboard refresh cadence (the 1s
@@ -32,6 +32,16 @@ failure could mass-exit a live fleet during a transient tmux command-failure sto
 The liveness sweeper now wraps refresh work in `TerminalCatalog.batch()` and runs catalog compaction inside the batch, so per-entry liveness and turn-state updates hit the in-memory buffer and commit once.
 
 ### Logic
+
+For hosted harnesses, the current L5 liveness contract reads the exact adapter snapshot: control,
+activity, acceptance, vendor identity, sequence, pending interaction, and raw vendor detail are
+projected additively. Bridge failure becomes explicit disconnected/unknown state. Tmux/process
+existence remains process-liveness evidence only; pane text, turn-state classifiers, terminal logs,
+copy mode, and capture timing are diagnostic detail and cannot authorize readiness, delivery,
+completion, or supervisor action. Ordinary shell rows remain ordinary terminal rows.
+
+The detailed pane/turn-state path below is historical pre-L5 behavior and is retained only to explain
+the migration surface; it is not current hosted authority.
 
 Module constants are the **code-default hysteresis knobs** (deliberately not settings-backed in
 this leaf): `DEFAULT_LIVENESS_FAILURE_THRESHOLD = 3` (consecutive command failures before an exit
@@ -67,7 +77,7 @@ ladder: an in-process host session with `is_alive` (via the duck-typed `_host_se
 to the caller's entry (with `with_liveness_success()` applied on the alive side) without phantom
 writes.
 
-**Live turn-state classification (260707-HFX-L8)** rides this SAME sweep call — no new hot loop, no
+**Historical — live turn-state classification (260707-HFX-L8, superseded as hosted authority).** It rode this SAME sweep call — no new hot loop, no
 new tmux round-trip cadence. `TerminalLivenessObservation` gained `turn_state_changed: bool = False`
 (true only when THIS observation's classification differs from the row's previous `turn_state`, so
 the caller can emit an observer event only on an actual transition, never once per sweep tick).
@@ -96,6 +106,16 @@ module only sequences them under cadence/overlap control. Everything (host, cata
 pane_capturer, on_turn_state_change) is constructor-injected so tests run fake-driven and sleepless.
 
 ### Invariants And Boundaries
+
+- Hosted activity and turn state are adapter-derived; pane/log/copy-mode observations are
+  diagnostics-only and cannot drive readiness, delivery, completion, or supervisor action.
+- The sweeper remains rate-limited and non-overlapping, and process-liveness failures remain
+  explicit disconnected/unknown evidence rather than a hidden compatibility fallback.
+- Liveness projection never consumes inbox rows. Inbox delivery is inbox-rooted and explicit
+  recipient `consume` remains the sole acknowledgement.
+
+The remaining bullets below describe historical hysteresis and diagnostic mechanics retained for
+migration archaeology; they do not override the protocol-backed L5 contract above.
 
 - **Rate limit + non-overlap are advisory availability, not staleness**: a rate-limited or
   overlapped `refresh()` serves the persisted catalog as-is — callers always get a list, never a
@@ -159,6 +179,8 @@ adapter snapshot. Bridge failures remain explicit disconnected/unknown states; p
 stored only as diagnostics and cannot produce supervisor actions.
 
 ## Update History
+- 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled normative liveness/activity to adapter snapshots and marked
+  pane, log, copy-mode, and turn classifiers diagnostic-only.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented adapter-derived liveness and diagnostic-only pane signals.
 
 - 2026-07-10T13:03+02:00 — No content impact: 260707-HFX2-L15 removed a stale comment that called
