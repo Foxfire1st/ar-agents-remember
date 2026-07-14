@@ -625,15 +625,16 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 - `harness_control_ipc.py` / `harness_terminal_surface.py` — user-private exact-identity Unix IPC
   plus readable transcript/input rendering. The terminal surface owns uncommitted drafts: automated
   delivery cannot inject into, submit, or discard a draft under R11.
-- `codex_app_server_protocol.py` / `codex_app_server_session.py` — the 260713-PHA-L3 stable-only
-  Codex CLI 0.144.3 JSON-RPC transport and exact initialize/model/effort/thread session contract.
+- `codex_app_server_protocol.py` / `codex_app_server_session.py` — the structured Codex JSON-RPC
+  transport and initialize/model/effort/thread session contract. The 0.144.3 fixture/smoke value
+  is historical evidence only; consumed structured identity and fields decide compatibility.
 - `codex_app_server_adapter.py` / `codex_app_server_state.py` — the 260713-PHA-L3 normalized
   adapter: correlated turns, explicit steer-or-queue policy, structured approvals/elicitation,
   status/completion mapping, bounded evidence, and reconnect reconciliation without blind resend.
 
 - `claude_stream_protocol.py` / `claude_stream_startup.py` / `claude_stream_transport.py` — the
-  260713-PHA-L2 exact Claude Code 2.1.207 stream-json path: version-probed subprocess launch,
-  structured `control_request/initialize` + `system/init` readiness, capability-driven commands,
+  structured Claude Code stream-json path: installed/current subprocess launch, structured
+  `control_request/initialize` + `system/init` readiness, capability-driven commands,
   and bounded stdio lifecycle with stderr discarded. `claude_stream_state.py` and
   `harness_control_claude.py` preserve the distinction between replay acceptance and terminal result,
   route permission/question interactions, reconcile ambiguous disconnects without resend, and keep
@@ -657,8 +658,9 @@ current hosted-session authority.
 
 - **Control authority is protocol-backed.** Adapter state, bridge receipts, reconciliation, and
   normalized transcript entries are authoritative; tmux panes and terminal logs are diagnostics.
-- **Codex app-server remains leaf-local.** The pinned stable protocol path does not register a
-  production driver, perform cutover, or add terminal/pane/log fallback; L5 owns that integration.
+- **Codex app-server compatibility is structured.** The consumed initialize/model/thread messages
+  and fields decide compatibility; package-version text is fixture/smoke evidence only. No
+  terminal/pane/log fallback is permitted.
 - **Shared input and draft custody.** Terminal and durable submissions merge as whole ordered
   messages through one queue. The terminal surface owns an uncommitted human draft and preserves it
   across automated delivery and ambiguous-send recovery.
@@ -749,6 +751,15 @@ current hosted-session authority.
 Serving implements exact-session readiness, copy-mode rechecks, calibrated settling beyond the shipped 120 ms suppression window, harness-log proof, and pending-without-respawn recovery. Catalog writers serialize the complete one-read/one-write batch across processes while atomic readers remain lock-free.
 
 
+### 260713-PHA-L6 Current Capability Contract
+
+Claude, Codex, and Pi production adapters launch the installed/current harness and validate the
+structured capabilities, messages, and fields they consume. Missing, malformed, or contradictory
+required evidence fails loudly; exact 2.1.207, 0.144.3, and 0.80.6 values are fixture/smoke
+evidence only. R9 rolling inbox compatibility remains limited to optional `adapterDeliveryState`
+and `adapterDeliveryDetail`; unrelated extras remain rejected. R10 resource performance is queued
+and not implemented or current behavior.
+
 ### 260713-PHA-L5 Hosted Protocol Cutover
 
 Claude, Codex, and Pi hosted sessions now launch through the shared bridge. Exact adapter snapshots
@@ -759,6 +770,8 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized obsolete exact-version
+  language in the serving route model and made structured consumed capabilities normative.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the serving route for structured capability
   negotiation and the complete reload boundary; recorded R10 as deferred.
 - 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled the serving route's normative hosted authority to protocol

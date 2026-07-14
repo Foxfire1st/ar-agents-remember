@@ -16,7 +16,9 @@
 
 ## Purpose
 
-Owns the bounded newline-delimited JSON-RPC stdio transport for the pinned Codex CLI app-server.
+Owns the bounded newline-delimited JSON-RPC stdio transport for the Codex app-server. The transport
+is version-neutral; `0.144.3` is fixture/smoke evidence, while production compatibility is decided
+by the structured messages and fields consumed by the session and adapter.
 
 ## Code Commentary
 
@@ -27,8 +29,8 @@ production adapter without interpreting thread or turn semantics.
 
 ## Conventions
 
-The protocol version is pinned to `0.144.3`; JSON objects are validated at the transport boundary,
-and event delivery uses a bounded queue.
+JSON objects are validated at the transport boundary and event delivery uses a bounded queue. The
+transport does not infer compatibility from package text or provide a permissive fallback.
 
 ## Invariants And Boundaries
 
@@ -72,6 +74,8 @@ structured initialization and thread evidence by the session layer. Exact packag
 fixture/smoke evidence, not production protocol pins.
 
 ## Update History
+- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized the obsolete
+  exact-0.144.3 transport convention; structured initialize/thread evidence is authoritative.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed the stale pinned-version description and documented
   the unversioned protocol boundary.
 

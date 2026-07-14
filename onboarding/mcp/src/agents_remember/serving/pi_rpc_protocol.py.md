@@ -14,9 +14,10 @@
 [serving/ overview](overview.md)
 
 ## Purpose
-Defines the pinned Pi 0.80.6 RPC wire contract: strict JSONL framing, launch/session argv
-transforms, response/state/entry parsing, capability policy, activity vocabulary, and extension
-UI response shapes.
+Defines the Pi RPC wire contract: strict JSONL framing, launch/session argv transforms,
+response/state/entry parsing, capability policy, activity vocabulary, and extension UI response
+shapes. `0.80.6` is a fixture/smoke baseline only; production compatibility is negotiated from
+the structured responses and fields consumed by the adapter.
 
 ## Code Commentary
 `PiRpcJsonlDecoder` splits only on byte LF, accepts the documented final unterminated record and
@@ -27,7 +28,9 @@ dialog responses. Launch helpers add RPC mode and select the exact persisted ses
 other launch configuration.
 
 ## Invariants And Boundaries
-- Only version `0.80.6` is supported by this candidate.
+- `get_state`, `get_entries`, and required event/interaction fields are the production compatibility
+  authority; missing or malformed contract evidence fails loudly.
+- The exact `0.80.6` value is non-production fixture/smoke evidence, not a launch pin.
 - LF is the delimiter; U+2028/U+2029 remain JSON content.
 - Parsing fails loudly and does not provide generic framing recovery.
 - Extension responses require the matching interaction id and documented dialog method.
@@ -54,6 +57,8 @@ correlated `get_state` and `get_entries` responses plus documented event/interac
 exact `0.80.6` fixture remains smoke evidence only; malformed required contract remains loud.
 
 ## Update History
+- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: removed the obsolete
+  exact-0.80.6 supported-version invariant and made consumed structured Pi fields authoritative.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: replaced the pinned-version description with the structured
   Pi startup contract and preserved exact fixture-only evidence.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for strict framing, pinned

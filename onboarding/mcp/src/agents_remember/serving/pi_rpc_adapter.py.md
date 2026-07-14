@@ -14,8 +14,11 @@
 [serving/ overview](overview.md)
 
 ## Purpose
-Composes the Pi 0.80.6 process and event seams into the normalized L1 `HarnessProtocolAdapter`
+Composes the Pi RPC process and event seams into the normalized L1 `HarnessProtocolAdapter`
 contract without registering the vendor or introducing a pane/log fallback.
+
+The production adapter has no package-version requirement: Pi `0.80.6` is fixture/smoke evidence
+only. Compatibility comes from the structured startup responses and event fields it consumes.
 
 ## Code Commentary
 Startup adds RPC mode, reads `get_state` and `get_entries`, validates identity/capabilities, and
@@ -28,6 +31,8 @@ duplicate resend is attempted. Extension responses route through mapper and tran
 ## Invariants And Boundaries
 - Pi identity is the `pi-rpc` protocol, not a fabricated package version; startup compatibility
   comes from correlated structured state/entries and consumed event fields.
+- Missing or malformed required state, entries, or consumed event fields fail loudly; no version,
+  pane, or log fallback is permitted.
 - `get_state` governs readiness/activity and corroborates `agent_settled` completion.
 - Reconnect uses the persisted session file and rejects changed session identity.
 - Ambiguous submissions remain unresolved without durable evidence.
@@ -44,6 +49,8 @@ duplicate resend is attempted. Extension responses route through mapper and tran
 No meaningful cross-repo references found.
 
 ## Update History
+- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: made the version-neutral
+  structured Pi contract normative and retained 0.80.6 only as fixture/smoke evidence.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented version-free Pi production startup and retained
   `0.80.6` only as fixture/smoke evidence.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for L1-backed handshake,
