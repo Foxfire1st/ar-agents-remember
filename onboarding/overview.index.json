@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1493,
+    "sourceFilesInScope": 1502,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260707-HFX2-L17 makes hosted seat identity a pair: `leafKey` names the canonical task leaf and `seatRole` names the current occupant. `spawnRole` remains immutable origin provenance. Spawn and attach refuse only a live same-pair owner; worker, reviewer, curator, manager/architect anchors, and the plain terminal may coexist on one leaf. Hand-opened harnesses must declare a role at attach, retire/supervisor/expectation/inbox/dashboard behavior follows binding identity, and legacy role-suffixed leaf refs are rejected with canonical pair guidance. Per-role lifecycle wording such as \u201cone leaf, o...",
+    "summary": "260713-PHA-L4 adds a pinned, unregistered Pi RPC adapter slice under the serving route. For Pi protocol questions, route through `mcp/src/agents_remember/serving/pi_rpc_protocol.py` for strict LF JSONL and schemas, `pi_rpc_process.py` for the owned subprocess/disconnect seam, `pi_rpc_events.py` for normalized activity and settlement, and `pi_rpc_adapter.py` for L1-backed readiness, queueing, reconnect, and cursor reconciliation. L5 owns production registration and cutover. 260707-HFX2-L17 makes hosted seat identity a pair: `leafKey` names the canonical task leaf and `seatRole` names the cur...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,13 +115,24 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
+      "mcp/src/agents_remember/serving/pi_rpc_protocol.py",
+      "pi_rpc_process.py",
+      "pi_rpc_events.py",
+      "pi_rpc_adapter.py",
       "leafKey",
       "seatRole",
-      "spawnRole",
+      "PHA",
+      "RPC",
+      "agents_remember",
+      "pi_rpc_protocol",
+      "JSONL",
+      "pi_rpc_process",
+      "pi_rpc_events",
+      "pi_rpc_adapter",
       "HFX2",
       "L17",
       "repo-overview",
-      "409891a4bea54f3b6c3a125611afe54c41cca661",
+      "d5f8edf0ccab21f1cf71723615e394eba40fcebc",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -133,18 +144,7 @@
       "coordination_root",
       "c-09-git-worktree-manager",
       "task_reopen",
-      "c-10-adopt-memory-baseline",
-      "memory.md",
-      "providers/runners/",
-      "providers/data/",
-      "logs/mcp/",
-      "logs/providers/",
-      "providers/_bin/",
-      "providers/_venvs/",
-      "onboarding/",
-      "c-05-create-or-update-onboarding-files",
-      "ar-coordination/memory-repos/ar-<repo>/",
-      "c-00-initialize-memory-repo"
+      "c-10-adopt-memory-baseline"
     ]
   },
   "fallback": {

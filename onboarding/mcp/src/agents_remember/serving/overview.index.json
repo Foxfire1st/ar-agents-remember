@@ -38,6 +38,10 @@
     "mcp/src/agents_remember/serving/leaf_ref_validation.py",
     "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/pane_signals.py",
+    "mcp/src/agents_remember/serving/pi_rpc_adapter.py",
+    "mcp/src/agents_remember/serving/pi_rpc_events.py",
+    "mcp/src/agents_remember/serving/pi_rpc_process.py",
+    "mcp/src/agents_remember/serving/pi_rpc_protocol.py",
     "mcp/src/agents_remember/serving/projector.py",
     "mcp/src/agents_remember/serving/retire.py",
     "mcp/src/agents_remember/serving/retire_policy.py",
@@ -59,8 +63,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 47,
-    "fileSidecars": 47,
+    "sourceFilesInScope": 51,
+    "fileSidecars": 51,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -122,8 +126,14 @@
     "pane",
     "pane_signals",
     "paste",
+    "pi_rpc_adapter",
+    "pi_rpc_events",
+    "pi_rpc_process",
+    "pi_rpc_protocol",
     "policy",
+    "process",
     "projector",
+    "protocol",
     "queue",
     "readiness",
     "reclamation",
@@ -131,19 +141,13 @@
     "remember",
     "retire",
     "retire_policy",
+    "rpc",
     "scope",
     "seat",
     "seat_binding",
     "seat_events",
     "serving",
-    "signals",
-    "sim",
-    "src",
-    "state",
-    "static",
-    "supervisor",
-    "supervisor_heartbeat",
-    "supervisor_models"
+    "signals"
   ],
   "hotPath": {
     "summary": "260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/` \u2014 container data is unreadable + high-churn, 30s watch-set re-derivation), filters non-input churn, and paces wakes through `ChangePacer` (debounce 0.1s, max-delay = `--interval` so a busy world keeps the former 1s cadence, idle heartbeat default 15s via the new `--heartbeat` flag). The tick body is untouched; `/api/state` staleness and time-derived fields (ages, stale/overdue flips) are bounded by t...",

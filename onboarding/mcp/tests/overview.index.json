@@ -13,6 +13,8 @@
     "mcp/tests/_scaling.py",
     "mcp/tests/conftest.py",
     "mcp/tests/fixtures/build_rich_sim.py",
+    "mcp/tests/fixtures/pi_rpc/0.80.6-capabilities.json",
+    "mcp/tests/fixtures/pi_rpc/activity.jsonl",
     "mcp/tests/test_agentic_settings.py",
     "mcp/tests/test_benchmark_analysis.py",
     "mcp/tests/test_carryover.py",
@@ -70,6 +72,9 @@
     "mcp/tests/test_operator_inbox.py",
     "mcp/tests/test_orchestration_comms.py",
     "mcp/tests/test_pane_signals.py",
+    "mcp/tests/test_pi_rpc_adapter.py",
+    "mcp/tests/test_pi_rpc_process.py",
+    "mcp/tests/test_pi_rpc_real_smoke.py",
     "mcp/tests/test_projection_scaling_cs6.py",
     "mcp/tests/test_provider_async.py",
     "mcp/tests/test_provider_containment.py",
@@ -125,13 +130,15 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 114,
-    "fileSidecars": 113,
+    "sourceFilesInScope": 119,
+    "fileSidecars": 118,
     "childRoutes": 0
   },
   "routingTerms": [
     "abandon",
     "actions",
+    "activity",
+    "adapter",
     "adapters",
     "agent",
     "agentic",
@@ -150,6 +157,7 @@
     "builder",
     "bundle",
     "calculator",
+    "capabilities",
     "capture",
     "carryover",
     "catalog",
@@ -206,10 +214,7 @@
     "index",
     "injector",
     "install",
-    "installation",
-    "integration",
-    "interaction",
-    "ladder"
+    "installation"
   ],
   "hotPath": {
     "summary": "260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without resolution, dry-run reporting, torn-contract tolerance, and the `heal-leaf-ids` CLI seam. 260712-TRH-L5 tests prove the narrow confirmed-gone eligibility boundary, terminal and tmux positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapshot boundedness, same-lock resolve...",
@@ -219,6 +224,9 @@
       "mcp/tests/conftest.py",
       "mcp/tests/fixtures",
       "mcp/tests/fixtures/build_rich_sim.py",
+      "mcp/tests/fixtures/pi_rpc",
+      "mcp/tests/fixtures/pi_rpc/0.80.6-capabilities.json",
+      "mcp/tests/fixtures/pi_rpc/activity.jsonl",
       "mcp/tests/test_agentic_settings.py",
       "mcp/tests/test_benchmark_analysis.py",
       "mcp/tests/test_carryover.py",
@@ -234,10 +242,7 @@
       "mcp/tests/test_config.py",
       "mcp/tests/test_context_packet.py",
       "mcp/tests/test_context_providers.py",
-      "mcp/tests/test_controller_guards.py",
-      "mcp/tests/test_controlplane_gates.py",
-      "mcp/tests/test_crap_calculator.py",
-      "mcp/tests/test_dashboard_daemon.py"
+      "mcp/tests/test_controller_guards.py"
     ],
     "anchorHints": [
       "_scaling.py",
@@ -246,6 +251,10 @@
       "conftest",
       "build_rich_sim.py",
       "build_rich_sim",
+      "0.80.6-capabilities.json",
+      "0.80.6-capabilities",
+      "activity.jsonl",
+      "activity",
       "test_agentic_settings.py",
       "test_agentic_settings",
       "test_benchmark_analysis.py",
@@ -283,11 +292,7 @@
       "test_crap_calculator.py",
       "test_crap_calculator",
       "test_dashboard_daemon.py",
-      "test_dashboard_daemon",
-      "test_dispatch_brief.py",
-      "test_dispatch_brief",
-      "test_dispatch_expectation_rows.py",
-      "test_dispatch_expectation_rows"
+      "test_dashboard_daemon"
     ]
   },
   "fallback": {

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc` |
+| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -193,6 +193,11 @@ vendor driver is registered or production cutover is implied.
 
 ## Hot Path Summary
 
+260713-PHA-L4 adds four unregistered serving modules for the pinned Pi 0.80.6 RPC boundary:
+strict framing/schema parsing, owned subprocess transport, normalized event settlement, and the
+L1-backed adapter with exact-session reconnect and post-cursor no-resend reconciliation. The
+paired tests and isolated smoke live under `mcp/tests`; production registration remains L5 scope.
+
 HFX2-L20 closes the live consume/redelivery resurrection race without changing a public payload:
 consume remains an append-only terminal fact, and the shared current-state/retention fold refuses to
 let a later stale pending delivery snapshot reverse it. Polling and supervisor redelivery therefore
@@ -286,6 +291,11 @@ Vite/React bundle), covered by `mcp/tests/test_sync_dashboard.py` plus the
 pre-commit/pre-push and CI `--check`.
 
 ## Route Model
+
+- `serving/pi_rpc_protocol.py`, `serving/pi_rpc_process.py`, `serving/pi_rpc_events.py`, and
+  `serving/pi_rpc_adapter.py` — the unregistered Pi RPC protocol/process/event/adapter chain;
+  `mcp/tests/test_pi_rpc_adapter.py`, `test_pi_rpc_process.py`, `test_pi_rpc_real_smoke.py`, and
+  the two `fixtures/pi_rpc/` files provide the fake, subprocess, and isolated pinned-smoke proof.
 
 The MCP package separates three surfaces:
 
@@ -701,6 +711,9 @@ L4 changes the MCP package public dispatch contract: spawn-only creation, exact-
 
 
 ## Update History
+- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: documented the package-route impact of the
+  unregistered Pi RPC protocol/process/event/adapter chain and its fixtures/tests. Verification
+  metadata remains pinned until closeout stamps the L4 code commit.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: refreshed the package route body for
   the normalized harness-control contract, bounded bridge, private IPC, and no-cutover boundary.
 

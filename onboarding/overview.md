@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated            | 2026-07-12T12:28+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc` |
+| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
 
 > **Status:** active baseline
 
@@ -129,6 +129,13 @@ chat once for the successful bind. Detail lives in the `observer/`, `serving/`, 
 overviews.
 
 ## Hot Path Summary
+
+260713-PHA-L4 adds a pinned, unregistered Pi RPC adapter slice under the serving route. For Pi
+protocol questions, route through `mcp/src/agents_remember/serving/pi_rpc_protocol.py` for strict
+LF JSONL and schemas, `pi_rpc_process.py` for the owned subprocess/disconnect seam,
+`pi_rpc_events.py` for normalized activity and settlement, and `pi_rpc_adapter.py` for L1-backed
+readiness, queueing, reconnect, and cursor reconciliation. L5 owns production registration and
+cutover.
 
 260707-HFX2-L17 makes hosted seat identity a pair: `leafKey` names the canonical task leaf and
 `seatRole` names the current occupant. `spawnRole` remains immutable origin provenance. Spawn and
@@ -450,6 +457,9 @@ Repository onboarding now records spawned-unbriefed → harness-ready → briefe
 
 
 ## Update History
+- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: recorded the repository-level routing impact of
+  the new unregistered Pi RPC protocol slice; detailed behavior remains in the serving and tests
+  route overviews and nine file sidecars. Verification metadata remains pinned until closeout.
 +## 260712-TRH-L4 Route Impact
 
 Repository onboarding now records spawned-unbriefed → harness-ready → briefed hosted dispatch, exact session-id continuity, delivered-plus-harness-log-confirmed assignment, canonical l-01 ownership with generated mirrors, and fully serialized catalog writers with lock-free atomic readers.

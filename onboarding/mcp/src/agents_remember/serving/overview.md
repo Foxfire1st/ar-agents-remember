@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc`|
+| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -204,6 +204,12 @@ the only destructive terminal action.
 The serving layer starts one lifecycle-managed landing refresher for live projection, passes its latest immutable snapshot into the network-free projector tick, and cancels it during shutdown. Simulation disables remote observation; interactive status remains the fresh-probe path. A failed refresher is logged without preventing host shutdown.
 
 ## Route Model
+
+- `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
+  `pi_rpc_adapter.py` — the L4 Pi 0.80.6 protocol/process/event/adapter chain: strict LF JSONL,
+  bounded child transport, normalized retry/compaction/settlement and extension UI events,
+  `get_state` readiness, exact-session reconnect, and post-cursor reconciliation without resend.
+  This leaf deliberately does not register or cut over the adapter; L5 owns that seam.
 
 - `app.py` — `create_app(config, *, interval, heartbeat, now, before_tick,
   refresh_provider_state, refresh_landing_state, watch_changes)` builds the FastAPI app
@@ -699,6 +705,9 @@ Serving implements exact-session readiness, copy-mode rechecks, calibrated settl
 
 
 ## Update History
+- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: documented the unregistered pinned Pi RPC
+  protocol/process/event/adapter chain, strict framing, settlement, UI, and cursor-reconciliation
+  boundaries. Verification metadata remains pinned until closeout stamps the L4 code commit.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: added the normalized control contract,
   one-adapter bridge, bounded shared queue, private IPC, transcript/draft surface, unsupported
   adapter boundary, and deliberate no-production-cutover scope to the serving route.
