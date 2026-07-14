@@ -6,8 +6,8 @@
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc`|
-| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
+| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed`|
+| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
 
 ## Purpose
 
@@ -17,6 +17,11 @@ The L1 regression set adds a fake-adapter conformance suite for normalized harne
 correlated acceptance/reconciliation, private IPC, bounded queue/ledger behavior, shutdown failure
 paths, and R11 surface-owned draft preservation. Existing settings, harness, catalog, opener, and
 WebSocket tests pin the additive launch/API projections and preserve legacy behavior.
+The 260713-PHA-L3 additions add fake and stdio transport coverage for the pinned Codex app-server:
+exact initialize/model/thread setup, protocol-only effort validation and echoing, structured
+status/completion and server requests, explicit busy behavior, bounded malformed/oversized input,
+and reconnect correlation without resend. An opt-in live smoke proves exact-version readiness using
+an ephemeral thread with no prompt or credential output.
 
 The L7 test route additionally proves the projection/landing boundary: slow or failed remote observations do not delay local publication; observer results remain exact-contract and freshness-labeled; stale landing rendering is visible but motion-inert; invalid snapshot reads preserve local status; and a failed refresher does not skip serving shutdown. These are focused leaf regressions; the manager owns the full repository gate.
 
@@ -54,6 +59,9 @@ prefix/HOME/cache and verifies `get_state` readiness without changing global too
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
 ## Update History
+- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added route coverage for the Codex app-server
+  fixture, adapter/protocol fake tests, and credential-safe live smoke. Verification remains pinned
+  until closeout stamps the leaf commit.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: added governing route coverage for the Pi RPC
   protocol, subprocess, adapter, fixture, and isolated real-smoke regression files. Verification
   metadata remains pinned until closeout stamps the L4 code commit.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `d5f8edf0ccab21f1cf71723615e394eba40fcebc` |
-| lastVerifiedCommitDate | 2026-07-14T12:29:36+02:00|
+| lastVerifiedCommitHash | `acb308c50072d8cde0015c4828e39d12480872ed` |
+| lastVerifiedCommitDate | 2026-07-14T12:32:48+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -190,6 +190,12 @@ The serving package also contains the protocol-neutral harness control seam: nor
 one-adapter hosted bridges, bounded ordered input, private exact-identity IPC, and a surface-owned
 draft/transcript layer. L1 defines this contract and reports unsupported adapters explicitly; no
 vendor driver is registered or production cutover is implied.
+260713-PHA-L3 extends that seam with a stable-only Codex app-server adapter. The pinned 0.144.3
+ JSON-RPC transport and session own initialize, model/effort discovery, and exact thread
+ start/resume; the adapter/state pair own correlated turns, structured approvals and elicitation,
+ explicit steer-or-queue busy behavior, bounded evidence, and reconnect reconciliation without
+ blind resend. This is a leaf-local protocol path: production registration and cutover remain L5
+ scope.
 
 ## Hot Path Summary
 
@@ -711,6 +717,10 @@ L4 changes the MCP package public dispatch contract: spawn-only creation, exact-
 
 
 ## Update History
+- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added the Codex app-server adapter to the MCP
+  package route model, including the exact-version stable protocol boundary, protocol-only effort,
+  bounded state, and no-production-cutover ownership. Verification remains pinned until closeout
+  stamps the leaf commit.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: documented the package-route impact of the
   unregistered Pi RPC protocol/process/event/adapter chain and its fixtures/tests. Verification
   metadata remains pinned until closeout stamps the L4 code commit.
