@@ -31,7 +31,7 @@
     "skills"
   ],
   "hotPath": {
-    "summary": "Canonical lifecycle doctrine for hosted role dispatch. L4 requires spawn-only creation, an explicit readiness gate, then one exact-session dispatch brief; generated mirrors are outputs, not owners.",
+    "summary": "Canonical lifecycle doctrine for hosted role dispatch. L4 requires spawn-only creation, an explicit readiness gate, then one exact-session dispatch brief; generated mirrors are outputs, not owners. ### 260713-PHA-L5 Route Contract Review The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic only. Dashboard and packaged projections remain additive and s...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles",
       "skills/l-01-agent-lifecycles/roles",
@@ -41,15 +41,15 @@
       "SKILL.md",
       "SKILL",
       "roles",
-      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
+      "PHA",
+      "cff3e8f9a64258ea3e7d3007e2153b22c01e273b",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
       "T14",
       "lastVerifiedCommitHash",
-      "e63f2dbb5f0701d37bbc17ff5358960c77",
       "lastVerifiedCommitDate",
-      "T18",
+      "T13",
       "TRH"
     ]
   },

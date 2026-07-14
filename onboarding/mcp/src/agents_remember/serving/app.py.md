@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -457,7 +457,13 @@ diagnostics only. No vendor adapter is registered by this leaf.
 | The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | [../kernel/agentic_settings.py](../kernel/agentic_settings.py.md) |
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
 
+### 260713-PHA-L5 Hosted Projection And Interaction Routes
+
+Serving routes expose additive adapter catalog state, route hosted delivery through the durable
+inbox-backed bridge, and surface adapter interactions without making pane or log timing authoritative.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed dashboard/API projection and bridge-backed route composition.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented additive harness control
   metadata and the deliberate no-production-wiring boundary for the new bridge seams.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: `create_app` gained `heartbeat=` (quiet-world staleness

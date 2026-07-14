@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/injector.py`               |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-10T13:03+02:00                                      |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -88,7 +88,13 @@ No meaningful cross-repo references found.
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
+### 260713-PHA-L5 Diagnostic Boundary
+
+Legacy injector and pane/log timing helpers remain available for offline diagnostics and ordinary
+surfaces, but hosted dispatch no longer imports them as an authority or fallback.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented removal of hosted log-flush/paste authority.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: made harness JSONL the sole submitted

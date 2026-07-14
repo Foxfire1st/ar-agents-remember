@@ -6,8 +6,8 @@
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `21049f92238f35e8307c9ed489f4340544c1d147`|
-| lastVerifiedCommitDate | 2026-07-14T12:49:29+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 
 ## Purpose
 
@@ -64,7 +64,15 @@ prefix/HOME/cache and verifies `get_state` readiness without changing global too
 
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
+### 260713-PHA-L5 Route Contract Review
+
+The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
+readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
+gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
+only. Dashboard and packaged projections remain additive and synchronized.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: added fake protocol, pinned JSONL fixture, and
   credential-safe `/cost` live-smoke coverage for Claude 2.1.207, including failed API-429 semantics.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added route coverage for the Codex app-server

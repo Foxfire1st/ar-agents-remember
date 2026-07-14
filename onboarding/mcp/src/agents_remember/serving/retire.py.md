@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/retire.py`     |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-07-09T13:36:16+02:00                        |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                    |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`                                    |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -92,7 +92,13 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local retire-mechanics module. | — | — |
 
+### 260713-PHA-L5 Adapter Shutdown
+
+Retirement observes adapter-owned terminal state and uses the bridge shutdown path for hosted
+sessions; it does not infer completion from pane timing or create a parallel delivery channel.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented protocol-aware retirement boundary.
 
 - 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: removed the production-dead
   `retire_seats_for_leaf` helper and documentation-only `RETIRABLE_ROLES` constant after completion

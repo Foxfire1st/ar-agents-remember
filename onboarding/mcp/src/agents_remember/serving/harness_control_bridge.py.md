@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,14 @@ commands; graceful stop therefore cannot strand awaiters.
 | Terminal rendering/input surface. | [harness_terminal_surface.py](harness_terminal_surface.py) |
 | Bridge conformance tests. | [test_harness_control.py](../../../tests/test_harness_control.py) |
 
+### 260713-PHA-L5 Shared Protocol Bridge
+
+The bridge owns adapter lifecycle, exact identity, readiness, correlated immediate/queued/rejected/
+unknown receipts, pending interactions, transcript completion, and graceful recovery. It retains
+raw vendor detail as evidence without promoting pane diagnostics to authority.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented cross-adapter bridge lifecycle and receipt semantics.
 
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator pass: created onboarding for the one-adapter
   bridge, handshake gate, ordered inputs, ambiguous-send recovery, and bounded lifecycle behavior.

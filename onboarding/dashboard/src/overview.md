@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-12T16:45+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -284,7 +284,15 @@ conflicts. These TypeScript sources are the durable UI behavior. `scripts/sync-d
 and copies them into package data, and serving mounts that synchronized output; generated hashed
 assets are not documented individually.
 
+### 260713-PHA-L5 Route Contract Review
+
+The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
+readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
+gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
+only. Dashboard and packaged projections remain additive and synchronized.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 - 2026-07-12T18:00+02:00 — 260712-TRH-L7: paired the landing-freshness body update with this history entry; projection landing refs remain visible and age-labeled when stale, while Engine Room motion is limited to observed refs and remote observation stays server-side.
 
 - 2026-07-12T16:45+02:00 — 260712-TRH-L1 reopened-memory refresh: clarified stable path/revision

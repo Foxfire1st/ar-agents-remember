@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/serving/hosted_readiness.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -40,7 +40,13 @@ Worker source inventory, reviewer verdict, and governing route overview.
 
 No meaningful cross-repo references.
 
+### 260713-PHA-L5 Exact-Session Readiness
+
+Readiness is derived only from the identity-matching adapter snapshot: control ready and acceptance
+immediate or queued. Legacy/custom sessions are unsupported; pane glyphs, copy mode, footer text,
+and log flush windows cannot make a session ready.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed exact adapter handshake and unsupported behavior.
 
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-

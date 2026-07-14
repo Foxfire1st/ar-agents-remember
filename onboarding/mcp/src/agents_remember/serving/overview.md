@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `21049f92238f35e8307c9ed489f4340544c1d147`|
-| lastVerifiedCommitDate | 2026-07-14T12:49:29+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -720,7 +720,18 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 Serving implements exact-session readiness, copy-mode rechecks, calibrated settling beyond the shipped 120 ms suppression window, harness-log proof, and pending-without-respawn recovery. Catalog writers serialize the complete one-read/one-write batch across processes while atomic readers remain lock-free.
 
 
+### 260713-PHA-L5 Hosted Protocol Cutover
+
+Claude, Codex, and Pi hosted sessions now launch through the shared bridge. Exact adapter snapshots
+govern readiness, delivery, liveness, interactions, and terminal projection. Durable inbox rows are
+the only inter-agent message roots: adapter receipts record delivery evidence, while explicit consume
+acknowledges receipt. Custom and already-running raw-TUI sessions are explicitly unsupported, and
+pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets stay additive and
+must remain synchronized.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed hosted cutover, bridge semantics, legacy unsupported,
+  dashboard/package parity, R13 inbox-rooting, R14 explicit consume, and diagnostic-only pane signals.
 - 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: documented the unregistered, exact Claude Code
   2.1.207 stream-json adapter. Readiness is structured initialize/system-init only; replay acceptance
   is distinct from terminal completion; and disconnect reconciliation never resends. The pinned live

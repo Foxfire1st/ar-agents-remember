@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/GateResponder.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-02T16:18+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -64,7 +64,15 @@ old `Chat` control must stay absent.
 | Session store and delivery seam under test. | — | [data/sessions.ts](../data/sessions.ts) |
 | External inbox helper mocked for no-hosted-session routing. | L1-L25 | [data/operatorInbox.ts](../data/operatorInbox.ts) |
 
+### 260713-PHA-L5 Reviewed Hosted Cutover Impact
+
+Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
+contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
+legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
+inbox acceptance remains distinct from explicit consumption where applicable.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-02T16:18+02:00 — L8: replaced the message-only Chat route assertion with a regression that
   `gate-respond-chat` is absent while durable Yes/No/Dismiss behavior remains covered. Verification

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_opener.py`    |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`              |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`              |
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -146,7 +146,14 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | This helper spawns tmux + mutates only the local dashboard terminal catalog. | — | — |
 
+### 260713-PHA-L5 Bridge-Backed Launch
+
+New Claude, Codex, and Pi hosted sessions launch one bridge runner with exact catalog identity and
+private endpoint. Custom/settings-only ids are unsupported, existing raw-TUI rows remain legacy,
+and ordinary shell terminals retain direct launch/input behavior.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed bridge-backed launch, built-in adapters, and unsupported legacy/custom behavior.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented exact-harness control metadata
   and explicit unsupported-adapter reporting in the opener path.
 

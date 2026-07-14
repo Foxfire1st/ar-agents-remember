@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
+| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -260,7 +260,14 @@ No meaningful cross-repo references found.
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
+### 260713-PHA-L5 Additive Adapter Projection
+
+Catalog rows retain existing fields and add control state, endpoint/protocol, activity, acceptance,
+vendor identity, pending interaction, event sequence, and raw detail. Legacy raw-TUI rows project
+unsupported until a bridge-backed restart; ordinary terminal rows remain unwrapped.
+
 ## Update History
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed additive hosted projection and legacy semantics.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented migration-safe control endpoint,
   protocol, and unsupported-state metadata.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
