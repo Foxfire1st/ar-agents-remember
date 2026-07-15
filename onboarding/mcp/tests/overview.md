@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated | 2026-07-16T01:34+02:00 |
+| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892`|
+| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
 
 ## Purpose
 
@@ -60,6 +60,20 @@ utime-pinned-rewrite invalidation via ctime, and parse failures retried every bu
 
 ## Hot Path Summary
 
+260714-ACPUI-L3 tests the complete same-session setter delegate graph. Shared contract and queue
+coverage fail closed outside the five `SetResult` outcomes, reject contradictory effective values,
+preserve FIFO set/prompt order, and prove a cancelled waiter cannot poison later commands. Claude
+tests require exact session, UUID, canonical command replay, and terminal evidence; near-miss
+labels, late/duplicate replay, generic native refusal, and successful dynamic Fable-shaped rows are
+separate cases. Codex tests pin desired/pending/effective state, captured prompt selection epochs,
+fresh-turn status gating, reversal-to-effective behavior, unrelated drift rejection, and no
+reconnect. Pi tests bound mutation/state/catalog stalls, preserve requested-versus-clamped effort,
+reject incoherent catalogs atomically, and keep late cancelled responses from the next request.
+Scaling cases at 8 and 64 requests prove Codex/Pi cancellation reclamation without tombstone
+growth. A static 17-module dependency guard covers the full shared/Claude/Codex/Pi setter graph and
+rejects composer, tmux, session-command, terminal-paste, injector, and terminal-surface imports.
+Hosted setter conformance remains adapter scaffolding; L4 still owns daemon serving endpoints.
+
 260714-ACPUI-L2 adds focused and production-path coverage for settings-resolved initial
 configuration. `test_harness_launch.py` proves the normalized contract, Pi's exact
 provider-qualified identity, model-gated effort, honest echoes, and the complete Codex selector
@@ -111,6 +125,12 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: added route coverage for exact five-value
+  setter truth, FIFO/cancellation behavior, Claude correlated terminal and dynamic Fable evidence,
+  Codex ordered selection epochs and successful fresh-turn promotion, Pi bounded coherent
+  error/clamp readback, 8/64 reclamation scaling, and the transitive 17-module no-paste guard.
+  Daemon setter endpoints remain L4. Verification metadata remains pinned until closeout stamps
+  the L3 code commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: added route coverage for the normalized
   launch contract, complete settings fixtures, native per-harness application, Codex selector
   census and roleless defaults, Pi exact identity, Claude mismatch failure, no-paste enforcement,

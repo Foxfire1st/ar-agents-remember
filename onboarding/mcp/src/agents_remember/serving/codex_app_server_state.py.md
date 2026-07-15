@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T20:05+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated | 2026-07-16T01:19+02:00 |
+| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
+| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,8 +27,10 @@ terminal, transcript, and reconciliation parsing helpers used by the native adap
 effort, descriptive `EffortOption` rows, hidden state, and default state. `parse_model_page` validates
 every row and preserves that metadata while checking the default belongs to that model's own effort
 menu. Selection resolves exactly one configured id/model or exactly one visible advertised default.
-Thread parsing verifies echoed effective effort. The remaining helpers map structured activity and
-terminal statuses, transcript items, stable server requests, and bounded submission evidence.
+Thread parsing verifies echoed effective effort. `SubmissionEvidence` now captures the exact
+`CodexModelCapability` and effort selected when a prompt is reserved, and the bounded ledger stores
+that immutable selection epoch beside request state/turn identity. The remaining helpers map
+structured activity and terminal statuses, transcript items, and stable server requests.
 
 ### Conventions
 
@@ -42,11 +44,13 @@ requests are explicitly enumerated; `item/tool/requestUserInput` remains rejecte
 - Hidden models remain catalog evidence but are not eligible as the implicit default.
 - Advertised desired effort and echoed effective effort must agree exactly.
 - Reconciliation retains exact request/turn/item identity and never authorizes blind resend.
+- A queued prompt carries its own model/effort pair; later desired-state changes cannot rewrite the
+  selection under which that work entered the adapter.
 - Submission and interaction state is bounded and saturates loudly.
 
 ### Todos
 
-None known for the L1 capability parse.
+None known for the L3 submission-evidence model.
 
 ## Docs References
 
@@ -64,8 +68,8 @@ the same strict thread and event helpers.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Session reads all model pages, selects model-local effort, and retains the complete catalog. | L100-L239 | [codex_app_server_session.py](codex_app_server_session.py) |
-| Adapter uses parsed turns, activity, terminal, interaction, and transcript evidence. | L239-L408 | [codex_app_server_adapter.py](codex_app_server_adapter.py) |
+| Session reads all model pages and validates desired/effective model-local settings against these rows. | L106-L195; L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
+| Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. | L220-L272; L344-L413 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 
 ## Cross-Repo References
 
@@ -77,6 +81,8 @@ No external repository boundary is implemented by this parser module.
 
 ## Update History
 
+- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented model/effort selection epochs on
+  bounded prompt evidence so later setters cannot retroactively rewrite queued work.
 - 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented retained display/description
   metadata, descriptive model-local effort options, hidden/default selection, and default-menu
   validation.

@@ -235,7 +235,7 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 650,
+    "sourceFilesInScope": 651,
     "fileSidecars": 142,
     "childRoutes": 16
   },
@@ -322,7 +322,7 @@
     "findings"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L2 connects the existing role-settings authority to the native hosted launch boundary. A role-configured Claude, Codex, or Pi seat carries one complete typed `ResolvedLaunch`; the hosted runner performs token-free per-install discovery, validates effort under the selected model, refuses duplicate adapter-owned selectors before discovery, and applies Claude flags, Codex `thread/start` configuration, or Pi's provider-qualified flags before the configured vendor session starts. Missing selections refuse before tmux; later discovery/startup failures remain queryable as exact failed...",
+    "summary": "260714-ACPUI-L3 adds normalized same-session model/effort mutation to the native hosted-control package. `HarnessControlBridge` sends both setters through the same bounded FIFO as prompts, and the queue validates the exact five-value `SetResult` truth contract without inventing an effective value. Claude uses structured stream-json commands plus exact replay/terminal evidence; Codex binds each accepted prompt to its selection epoch and applies pending settings on a fresh `turn/start` without reconnecting; Pi holds mutation, state readback, and refreshed catalog inside one finite evidence tr...",
     "candidateHints": [
       "mcp",
       "mcp/tests",

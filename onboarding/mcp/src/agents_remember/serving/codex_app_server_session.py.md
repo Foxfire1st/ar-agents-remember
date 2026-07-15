@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated | 2026-07-16T01:19+02:00 |
+| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
+| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,28 +17,31 @@
 ## Purpose
 
 Owns Codex app-server initialization, complete paginated model discovery, dynamic model/effort
-resolution, configured thread start/resume, retained acceptance evidence, and a separate
-thread-free discovery path.
+resolution, configured thread start/resume, desired-versus-effective mutation state, retained
+acceptance evidence, and a separate thread-free discovery path.
 
 ## Code Commentary
 
 ### Logic
 
-`connect` starts transport, initializes the app-server, reads every `model/list` page including
-hidden models, selects either the requested model or the single visible advertised default, and
-resolves either the requested effort or that model's advertised default. It validates the pair,
-writes both values into `thread/start`/`thread/resume` config, rejects pre-existing conflicting
-config, and verifies echoed thread identity, CLI version, model, cwd, and effective effort before
-retaining the full catalog. The resolved desired effort is also the value used for later turns and
-settings-update checks. `discover` initializes/lists only and always stops transport; `advertise`
-normalizes retained running evidence without another RPC.
+`connect` initializes the app-server, reads every `model/list` page, resolves a model-local effort,
+and verifies the opened/resumed thread before retaining the catalog. The session then keeps
+`desired_model`/`desired_effort` separate from effective `model`/`effective_effort`.
+`set_desired_model` accepts only a dynamic catalog row and rebases an incompatible effort to that
+row's dynamic default; `set_desired_effort` validates against the desired row. `has_pending_settings`
+compares both pairs. `accept_settings_selection` promotes only the exact catalog model/effort carried
+by an accepted prompt submission. A matching settings notification may corroborate the desired
+pair; a stale effective echo while a deliberate change is pending is ignored, and unrelated drift
+fails loudly. Reconnect retains deliberate overrides while initial thread config remains the launch
+authority before any setter.
 
 ### Conventions
 
 The runtime user-agent proves the client/opaque-version form, and the token must agree with thread
 `cliVersion`. `model` is the normalized model key; descriptions and effort descriptions are retained.
 Reasoning effort travels through app-server session config and turn parameters. A roleless pre-L4
-open derives both defaults from the authenticated catalog, never ambient role-spawn environment.
+open derives both defaults from the authenticated catalog. `settingsPending` exposes comparison
+state; it is not acceptance evidence by itself.
 
 ### Invariants And Boundaries
 
@@ -48,12 +51,17 @@ open derives both defaults from the authenticated catalog, never ambient role-sp
 - Start/resume preserves exact thread, model, cwd, sandbox, approval, config, and effective effort.
 - Missing, conflicting, or unadvertised effort fails loudly; no global effort enum is accepted.
 - `config.model` and `config.model_reasoning_effort` must agree with the dynamically selected pair;
-  the session never accepts a second configuration authority.
+  before deliberate runtime override, the session never accepts a second launch authority.
+- Desired choices are always drawn from the retained dynamic catalog and effort remains model-gated.
+- Effective choices change only through an accepted turn selection or a matching deliberate
+  settings notification; vendor drift cannot silently become the new desired state.
+- Reconnect keeps deliberate desired overrides on the same thread rather than restoring stale
+  launch settings.
 - Failed connect/discover always stops its transient transport.
 
 ### Todos
 
-L3 adds same-thread switching while preserving this initial thread configuration and evidence.
+None known for the L3 desired/effective state owner.
 
 ## Docs References
 
@@ -71,8 +79,8 @@ catalog and thread evidence.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Model pages validate descriptions, per-model effort menus/defaults, visibility, and identity. | L142-L240 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
-| Adapter launch knobs supply the owned model/effort session config and later turns reuse the resolved effort. | L88-L146; L259-L280 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Model pages validate descriptions, per-model effort menus/defaults, visibility, and identity; submission evidence captures its selection epoch. | L38-L118; L155-L256 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
+| Adapter setters mutate desired state and fresh `turn/start` acceptance promotes the submission's captured pair. | L153-L211; L220-L272; L344-L413 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults. | L22-L56 | [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
 
 ## Cross-Repo References
@@ -85,6 +93,9 @@ No external repository boundary is implemented by this session owner.
 
 ## Update History
 
+- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented desired/effective separation,
+  model-local effort rebasing, pending comparison, accepted-selection promotion, supplementary
+  settings notifications, deliberate reconnect overrides, and vendor-drift refusal.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented settings-selected and roleless
   catalog-default resolution, native thread config for model/effort, duplicate config refusal, and
   retention of the resolved desired effort for later turns.

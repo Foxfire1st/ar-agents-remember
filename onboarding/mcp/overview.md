@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-16T01:34+02:00 |
+| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
+| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -198,6 +198,17 @@ vendor driver is registered or production cutover is implied.
  scope.
 
 ## Hot Path Summary
+
+260714-ACPUI-L3 adds normalized same-session model/effort mutation to the native hosted-control
+package. `HarnessControlBridge` sends both setters through the same bounded FIFO as prompts, and
+the queue validates the exact five-value `SetResult` truth contract without inventing an effective
+value. Claude uses structured stream-json commands plus exact replay/terminal evidence; Codex
+binds each accepted prompt to its selection epoch and applies pending settings on a fresh
+`turn/start` without reconnecting; Pi holds mutation, state readback, and refreshed catalog inside
+one finite evidence transaction so model errors and thinking clamps stay distinct. Cancellation or
+late vendor replies cannot poison the shared reader/queue, and no setter depends on composer,
+tmux, session-command, or injector paths. Existing role/leaf spawn provenance and the durable
+inter-agent inbox remain independent moats rather than alternate configuration transports.
 
 260714-ACPUI-L2 connects the existing role-settings authority to the native hosted launch
 boundary. A role-configured Claude, Codex, or Pi seat carries one complete typed
@@ -743,6 +754,12 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: documented the package-wide same-session set
+  port, shared FIFO ordering, exact `SetResult` vocabulary, Claude correlated terminal proof,
+  Codex desired/pending/effective fresh-turn state, Pi bounded response/readback/catalog coherence,
+  cancellation reclamation, and the complete no-paste delegate boundary. Role/leaf provenance and
+  the durable inbox bus remain unchanged. Verification metadata remains pinned until closeout
+  stamps the L3 code commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: added the package-wide settings-to-native
   launch path, model-gated token-free validation, pre-discovery conflict refusal, exact failed-state
   evidence, no-normalized-paste boundary, role/bus preservation, and synchronized packaged-doctrine

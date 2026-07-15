@@ -58,6 +58,7 @@
     "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/pane_signals.py",
     "mcp/src/agents_remember/serving/pi_rpc_adapter.py",
+    "mcp/src/agents_remember/serving/pi_rpc_configuration.py",
     "mcp/src/agents_remember/serving/pi_rpc_events.py",
     "mcp/src/agents_remember/serving/pi_rpc_process.py",
     "mcp/src/agents_remember/serving/pi_rpc_protocol.py",
@@ -82,8 +83,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 70,
-    "fileSidecars": 70,
+    "sourceFilesInScope": 71,
+    "fileSidecars": 71,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -118,6 +119,7 @@
     "codex_app_server_protocol",
     "codex_app_server_session",
     "codex_app_server_state",
+    "configuration",
     "control",
     "daemon",
     "delivery",
@@ -165,11 +167,10 @@
     "liveness",
     "lock",
     "logs",
-    "mcp",
-    "models"
+    "mcp"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L2 carries one settings-resolved `ResolvedLaunch{harness, model, effort, workspace}` through the shared opener into the exact-session runner. Before a configured vendor session starts, the runner applies adapter-owned selector conflict preflight, performs token-free dynamic discovery, validates model plus model-local launch effort, then starts Claude with native `--model/--effort`, Codex with `thread/start` model/config effort, or Pi with provider-qualified `--model/--thinking`. Effective startup evidence is honest: Pi echoes both, Codex echoes thread model/effort, and Claude e...",
+    "summary": "260714-ACPUI-L3 makes `set_model` and `set_effort` first-class operations on the normalized own-adapter port and serializes them with prompt submission through `HarnessControlQueue`. `SetResult` accepts exactly `echo-verified`, `immediate`, `queued`, `unknown`, or `unsupported`, with requested and effective values kept separate and contradictory combinations rejected. Claude sends ordinary structured `/model` and `/effort` user frames, then requires the same vendor session, retained UUID, canonical replay body, and native terminal result; the exact dynamic `claude-fable-5[1m]` row is a curr...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

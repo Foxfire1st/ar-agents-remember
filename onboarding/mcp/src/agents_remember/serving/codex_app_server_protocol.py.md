@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T12:30+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastUpdated | 2026-07-16T01:19+02:00 |
+| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892`|
+| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,26 +22,34 @@ by the structured messages and fields consumed by the session and adapter.
 
 ## Code Commentary
 
+### Logic
+
 `CodexStdioTransport` launches the supplied command and environment unchanged, correlates request
-responses, forwards notifications and server requests, and translates malformed, oversized, or
-unexpected input into typed failures. It exposes a protocol surface for fake transports and the
-production adapter without interpreting thread or turn semantics.
+responses, and forwards notifications/server requests. Cancellation removes the request's pending
+future immediately. A later response with a syntactically valid positive integer id but no live
+future is stale and ignored, so no unbounded abandoned-id tombstone is needed and the reader remains
+usable for subsequent requests. Invalid ids, malformed JSON/RPC objects, oversized lines, process
+failure, and live-request protocol errors remain loud typed failures. The transport does not
+interpret thread, turn, or setter semantics.
 
-## Conventions
+### Conventions
 
-JSON objects are validated at the transport boundary and event delivery uses a bounded queue. The
-transport does not infer compatibility from package text or provide a permissive fallback.
+JSON objects are validated at the transport boundary and event delivery uses a bounded queue. A
+missing pending future is treated as cancellation evidence only after the response id itself passes
+syntax validation. The transport does not infer compatibility from package text.
 
-## Invariants And Boundaries
+### Invariants And Boundaries
 
 - Unterminated, malformed, unknown-id, and over-limit messages fail loudly.
 - Queue saturation and subprocess disconnect resolve pending callers; no resend or compatibility
   fallback belongs here.
+- Cancelling a request reclaims its pending entry; a late response cannot satisfy another request or
+  kill the shared stdout reader.
 - Launch argv, cwd, environment, and authentication are supplied by the caller and preserved.
 
-## Todos
+### Todos
 
-None known for this leaf.
+None known for the L3 cancellation boundary.
 
 ## Docs References
 
@@ -56,8 +64,8 @@ protocol snapshot is recorded in the repository fixture instead.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Fixture pins the CLI version, protocol, and stable method inventory. | L1-L31 | [codex_app_server_0_144_3.json](../../../../tests/fixtures/codex_app_server_0_144_3.json) |
-| Adapter consumes the transport and reduces protocol events. | L63-L128; L315-L326 | [codex_app_server_adapter.py](codex_app_server_adapter.py) |
+| Fixture pins the CLI version, protocol, and stable method inventory. | L1-L31 | [codex_app_server_0_144_3.json](agents-remember/mcp/tests/fixtures/codex_app_server_0_144_3.json) |
+| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | L344-L413 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 
 ## Cross-Repo References
 
@@ -65,7 +73,7 @@ The transport is an external-process boundary to the installed Codex CLI.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| PASS review confirms the pinned stable-only protocol boundary. | L22-L30 | [260713-PHA-L3-reviewer-verdict.md](../../../../../../../../../../../../ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
+| PASS review confirms the pinned stable-only protocol boundary. | L22-L30 | [260713-PHA-L3-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
 ### 260713-PHA-L6 Capability Boundary
 
@@ -74,6 +82,9 @@ structured initialization and thread evidence by the session layer. Exact packag
 fixture/smoke evidence, not production protocol pins.
 
 ## Update History
+- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented cancellation reclamation,
+  syntactically valid late-response discard, absence of abandoned-id tombstones, and continued
+  strict failure for malformed correlation evidence.
 - 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized the obsolete
   exact-0.144.3 transport convention; structured initialize/thread evidence is authoritative.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed the stale pinned-version description and documented
