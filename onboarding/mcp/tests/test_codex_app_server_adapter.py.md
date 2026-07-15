@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated | 2026-07-16T01:21+02:00 |
+| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
+| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,11 +16,33 @@
 
 ## Purpose
 
-Fake-transport conformance tests for the native Codex app-server adapter. The suite proves both the
-hosted control lifecycle and the dynamic, token-free model/effort advertisement path used by the
-normalized harness capability contract.
+Fake-transport conformance tests for the native Codex app-server adapter. The suite proves the
+hosted control lifecycle, dynamic token-free advertisement, and ordered mid-thread model/effort
+switching used by the normalized harness capability contract.
 
 ## Code Commentary
+
+### 260714-ACPUI-L3 Ordered Mid-Thread Selection
+
+Setter tests distinguish desired state from effective state on the existing Codex thread. A valid
+model or effort change returns `queued` without an effective value, rebases effort to the new
+model's dynamic default when needed, and becomes effective only when a subsequent `turn/start`
+carrying that exact selection is accepted. The same transport and thread id remain in use; no
+resume or reconnect implements the switch.
+
+Ordering cases pin the selection epoch at prompt acceptance. A busy prompt accepted before a
+setter keeps the old model/effort even if it starts later, while a prompt accepted after the setter
+carries the new pair. Pending settings force a fresh turn instead of steering the active turn.
+`inProgress` and `completed` turn-start statuses promote the carried selection; `failed` and
+`interrupted` reject the prompt and leave desired state pending. Reversing desired model and effort
+back to their current effective values clears the fresh-turn barrier rather than manufacturing more
+queued work.
+
+Validation remains catalog-owned: unknown models and effort values outside the desired model's
+dynamic menu are `unsupported` without another RPC. Matching deliberate settings notifications
+may promote state, a notification echoing the still-effective pair leaves the pending selection
+alone, and unrelated external settings drift fails loudly. Idempotent setters return `immediate`
+without inventing effective-value evidence.
 
 ### 260714-ACPUI-L2 Codex Initial Configuration
 
@@ -61,6 +83,14 @@ schema evidence for the tests, not a production version enum or fallback catalog
   nested under the model that advertised them.
 - Repeated pagination cursors and absent or unconfirmed effort fail loudly; no static default model
   or effort menu is substituted.
+- Setter acceptance is honest: desired changes are queued without an effective value, and only an
+  accepted turn carrying the captured selection can promote that pair.
+- Prompt selection is captured when the prompt enters the adapter; a later setter cannot
+  retroactively change an already accepted busy-queue item.
+- Failed or interrupted turn starts preserve pending desired state, while reversing desired state
+  to the effective pair clears the fresh-turn barrier.
+- Mid-thread switching never reconnects, resumes, or pastes; it uses `turn/start` overrides on the
+  same thread and transport.
 - Existing reconnect coverage requires `resend: false`, and the tests do not register a production
   driver or exercise pane/log readiness.
 
@@ -84,10 +114,19 @@ thread-free discovery contract.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The started-adapter test verifies cached advertisement, retained descriptions, current model/effort, and no extra request after startup. | L186-L238 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Discovery retains a paginated hidden model, sends only initialize/model-list requests, opens no thread or turn, and rejects a repeated cursor while stopping the process. | L241-L305 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| The started-adapter test verifies cached advertisement, retained descriptions, current model/effort, and no extra request after startup. | L210-L263 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Discovery retains a paginated hidden model, sends only initialize/model-list requests, opens no thread or turn, and rejects a repeated cursor while stopping the process. | L294-L357 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Model and effort changes remain queued until one same-thread turn accepts their exact override, with no reconnect or resume. | L531-L566 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Turn statuses promote only `inProgress`/`completed`; failed/interrupted starts reject and retain the fresh-turn requirement. | L569-L608 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the barrier. | L611-L681 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | L684-L794 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Idempotent setters return immediate without falsely claiming an effective echo. | L797-L810 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
 | The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | L88-L126 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Session discovery performs initialize plus paged model-list only and always stops its transient transport; started advertisement requires a retained catalog. | L173-L183; L205-L213 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
+| Session discovery performs initialize plus paged model-list only and always stops its transient transport; started advertisement requires a retained catalog. | L173-L208; L311-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
+| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | L153-L208 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | L220-L272 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | L344-L415 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Session state validates dynamic model-local effort, separates desired from effective state, promotes only an accepted selection, and guards settings notifications against unrelated drift. | L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
 | The fixture path remains an explicit test baseline rather than a runtime catalog source. | L27-L29 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
 
 ## Cross-Repo References
@@ -101,6 +140,10 @@ protocol contract; it does not replace the current source tests.
 
 ## Update History
 
+- 2026-07-16T01:21+02:00 — 260714-ACPUI-L3 curator: documented queued desired-versus-effective
+  state, same-thread turn overrides, prompt selection epochs, successful-status-only promotion,
+  reversal collapse, model-local validation, and deliberate-notification drift guarding.
+  Verification metadata remains pinned until closeout stamps the L3 code commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: added the configured and roleless Codex
   `thread/start` launch contract, including model-local default effort and resume preservation.
   Verification metadata remains pinned until closeout stamps the L2 code commit.

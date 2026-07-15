@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1539,
+    "sourceFilesInScope": 1540,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L2 extends the role-based spawn moat with dynamically accurate native initial configuration. `settings.json` resolves a complete role/level selection; Claude, Codex, and Pi advertise token-free installed/account catalogs with model-local effort, refuse stale or conflicting selectors, and launch through their own native flags/thread config with honest effective evidence. The selected values remain catalog provenance, while readiness and the durable inter-agent brief bus still own assignment. L3 retains same-session mutation and L4 retains daemon capability/request exposure. 2607...",
+    "summary": "260714-ACPUI-L3 completes the own-adapter backend session-selection path after launch. Model and effort setters share the same ordered bridge queue as prompts and expose only the five normalized `SetResult` outcomes. Claude verifies same-session UUID-correlated canonical replay plus terminal evidence, including the dynamically advertised Fable row without a model-name policy; Codex keeps desired, pending, captured-prompt, and effective selection ordered across fresh turns on the same thread; Pi binds its mutation response to bounded state and refreshed-catalog readback so model errors and t...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,10 +115,11 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
-      "settings.json",
+      "SetResult",
       "ACPUI",
+      "UUID",
       "repo-overview",
-      "5fa7026c644edfb4eb884173b64d31c9a14a6585",
+      "06973f6886276d7b3670c2c1e19cbb76928a7892",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -143,8 +144,7 @@
       "ar-coordination/memory-repos/ar-<repo>/",
       "c-00-initialize-memory-repo",
       "kernel/memory_ledger.py",
-      "ContextPacketV2",
-      "resolve_context"
+      "ContextPacketV2"
     ]
   },
   "fallback": {

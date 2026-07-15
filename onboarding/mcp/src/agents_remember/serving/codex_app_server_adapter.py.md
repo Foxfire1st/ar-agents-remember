@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated | 2026-07-16T01:19+02:00 |
+| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
+| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,30 +17,31 @@
 ## Purpose
 
 Adapts one native Codex app-server session and JSON-RPC transport to the normalized hosted adapter
-contract, including cached model/effort advertisement, transient token-free catalog discovery, and
-settings-resolved initial model/effort carried through native app-server thread configuration.
+contract, including cached model/effort advertisement, transient token-free catalog discovery,
+settings-resolved initial configuration, and ordered same-thread model/effort switching.
 
 ## Code Commentary
 
 ### Logic
 
-The adapter delegates initialize/model discovery/thread ownership to `CodexAppServerSession`, then
-submits correlated turns, applies explicit steer or bounded-queue busy policy, reduces status/turn/
-item/server-request events, resolves approvals and elicitation, and reconnects through the exact
-thread. `launch_knobs` validates a complete selection, places `model` and
-`model_reasoning_effort` in app-server session config, and declares every adapter-owned model/config
-selector so free-form argv conflicts can be refused before discovery. `discover` initializes and
-lists models without starting a thread; `advertise` returns the catalog retained by the running
-session. Turns and settings-update validation reuse the session's resolved desired effort, keeping
-roleless dynamic defaults and settings-selected launches on the same thread-owned value.
+The adapter delegates initialize/model discovery/thread ownership to `CodexAppServerSession`.
+Setters mutate only the session's desired selection: an already-effective value is `immediate`,
+while a real pending change is `queued` for the next fresh `turn/start` on the existing thread.
+Each submitted prompt captures its model/effort selection when reserved, so later setters cannot
+rewrite earlier accepted queue work. A pending switch disables steer and queues behind an active
+turn. `turn/start` promotes only `inProgress` or `completed`; `failed`/`interrupted` reject the
+prompt and retain the prior effective selection plus pending fresh-turn barrier. Matching
+`thread/settings/updated` is supplementary evidence, while unrelated drift fails loudly.
+Launch-knob ownership, token-free discovery, interactions, events, and bounded reconciliation remain
+on their existing native paths.
 
 ### Conventions
 
-Acceptance is proven by correlated `turn/start`/`turn/steer` responses. Running advertise is a
+Acceptance is proven by correlated `turn/start`/`turn/steer` responses. A setter's `queued` result
+does not claim an effective value; the fresh turn is the effect boundary. Running advertise is a
 synchronous no-RPC read. Initial model/effort belongs to `thread/start`/`thread/resume` config; this
 native adapter never uses the codex-acp-only `CODEX_CONFIG` environment path. Adapter identity
-reports `codex-app-server:<opaque negotiated version>`; exact package values remain fixture/smoke
-evidence only.
+reports `codex-app-server:<opaque negotiated version>`.
 
 ### Invariants And Boundaries
 
@@ -51,6 +52,12 @@ evidence only.
   with the normalized launch selection; the runner preflights all accepted spellings.
 - The effort used for later turns and settings-update validation is the exact effort resolved while
   opening the thread, including a model-local dynamic default for a roleless pre-L4 session.
+- Model changes rebase an unavailable desired effort to the target row's dynamic default; effort
+  remains gated by the desired model's own menu.
+- Prompt-before-set and set-before-prompt preserve their captured selection order. No setter
+  reconnects or changes the thread id.
+- Failed/interrupted fresh turns cannot promote desired settings; reversing desired back to the
+  effective pair clears pending/fresh state and returns `immediate`.
 - Protocol readiness and acceptance are authoritative; pane, terminal, log, ACP transport, and Toad
   hosting are not used.
 - No blind resend follows an ambiguous send; retention remains bounded.
@@ -59,7 +66,7 @@ evidence only.
 
 ### Todos
 
-L3 adds honest same-thread model/effort mutation on top of this initial launch channel.
+None known for the L3 same-thread mutation seam.
 
 ## Docs References
 
@@ -77,8 +84,9 @@ policy.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Session connect resolves the selected model and model-local effort, while discover stops before thread creation. | L106-L195 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
-| Thread parameters persist model and effort in app-server config and reject conflicting values. | L295-L337 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
+| Session keeps desired and effective settings separate, validates dynamic model-local choices, and promotes only accepted selection evidence. | L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
+| Submission evidence captures the exact model/effort pair accepted at reservation time. | L74-L118 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
+| The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. | L93-L108; L220-L250 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
 | The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | L149-L226 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
 | Model pages preserve display/description metadata and model-local reasoning effort options. | L142-L213 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
 
@@ -93,6 +101,9 @@ runtime boundary contracts.
 
 ## Update History
 
+- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented desired/pending/effective settings,
+  next-fresh-turn application, captured prompt selection epochs, failed-turn non-promotion,
+  model-local effort rebasing, reversal collapse, and same-thread/no-reconnect switching.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented native thread config launch knobs,
   adapter-owned selector refusal, roleless model-local defaults, and reuse of the resolved effort
   for subsequent turns and settings-update evidence.

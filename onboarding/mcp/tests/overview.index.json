@@ -235,7 +235,7 @@
     "identity"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L2 adds focused and production-path coverage for settings-resolved initial configuration. `test_harness_launch.py` proves the normalized contract, Pi's exact provider-qualified identity, model-gated effort, honest echoes, and the complete Codex selector grammar. Runner, opener, spawn, settings, and registry suites prove pre-discovery conflict refusal, token-free discovery before configured vendor startup, native Claude/Codex/Pi launch channels, roleless Codex dynamic defaults, persistent exact failure evidence, and removal of normalized model/effort paste synthesis. Adapter tes...",
+    "summary": "260714-ACPUI-L3 tests the complete same-session setter delegate graph. Shared contract and queue coverage fail closed outside the five `SetResult` outcomes, reject contradictory effective values, preserve FIFO set/prompt order, and prove a cancelled waiter cannot poison later commands. Claude tests require exact session, UUID, canonical command replay, and terminal evidence; near-miss labels, late/duplicate replay, generic native refusal, and successful dynamic Fable-shaped rows are separate cases. Codex tests pin desired/pending/effective state, captured prompt selection epochs, fresh-turn...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",

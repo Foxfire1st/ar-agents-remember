@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-15T23:16+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-16T01:34+02:00 |
+| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892`|
+| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -119,6 +119,22 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+260714-ACPUI-L3 makes `set_model` and `set_effort` first-class operations on the normalized
+own-adapter port and serializes them with prompt submission through `HarnessControlQueue`.
+`SetResult` accepts exactly `echo-verified`, `immediate`, `queued`, `unknown`, or `unsupported`,
+with requested and effective values kept separate and contradictory combinations rejected. Claude
+sends ordinary structured `/model` and `/effort` user frames, then requires the same vendor
+session, retained UUID, canonical replay body, and native terminal result; the exact dynamic
+`claude-fable-5[1m]` row is a current successful path, while any real
+`noninteractive_set_blocked` result remains an honest generic refusal rather than an AR model
+policy. Codex keeps desired, pending, captured-prompt, and effective selections distinct, forces a
+fresh `turn/start` for pending settings on the same thread, and promotes only a successful turn.
+Pi serializes mutation response, bounded `get_state`, and refreshed catalog validation before one
+atomic model/thinking snapshot commit, preserving model-error versus thinking-clamp asymmetry.
+Cancelled and late responses are reclaimed without reader or queue failure. None of these setter
+delegates reaches composer paste, tmux input, session commands, terminal surfaces, or injectors;
+role-based spawn and the durable inbox/brief bus retain their separate ownership.
 
 260714-ACPUI-L2 carries one settings-resolved `ResolvedLaunch{harness, model, effort, workspace}`
 through the shared opener into the exact-session runner. Before a configured vendor session starts,
@@ -811,6 +827,12 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: documented the normalized same-session set
+  graph, exact `SetResult` truth table, shared queue ordering and cancellation reclamation, Claude
+  exact correlated replay-plus-terminal evidence with the live Fable correction, Codex ordered
+  desired/pending/effective fresh-turn behavior, Pi bounded coherent error/clamp readback, and the
+  transitive no-paste boundary. Preserved role-based spawn and durable-bus ownership. Verification
+  metadata remains pinned until closeout stamps the L3 code commit.
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the typed settings-resolved launch
   path, pre-discovery owned-selector refusal, token-free dynamic validation, Claude/Codex/Pi native
   launch channels and asymmetric acceptance evidence, persistent exact launch failures, roleless
