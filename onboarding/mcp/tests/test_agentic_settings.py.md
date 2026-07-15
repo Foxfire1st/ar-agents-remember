@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
-| governingOverview      | `../overview.md`                              |
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| governingOverview      | `overview.md`                               |
+
+## Governing Overview
+
+[MCP tests overview](overview.md)
 
 ## Purpose
 
@@ -23,12 +27,20 @@ overrides (`RolesPerLevelTests`), the harness-definition family
 
 ## Code Commentary
 
-### 260713-PHA-L1 effort-policy regression coverage
+### 260714-ACPUI-L2 Native Registry Regression
 
-The harness-family tests exercise the real settings loader in both directions: a settings
-`effortFlagValues` declaration becomes enumerated validation and rejects an out-of-menu value, while
-an argv-only Codex override preserves the builtin stripped-non-empty dynamic policy. This prevents
-the merge path from silently bypassing a declared settings vocabulary.
+The changed harness-family cases prove that partial overrides of built-in native rows preserve
+identity and command customization without resurrecting a static model/effort mapping. In
+particular, Claude no longer inherits a static `--effort` vocabulary and Codex no longer inherits
+the previous non-empty dynamic-effort placeholder. Dynamic, model-gated validation belongs to the
+native adapter launch path; settings-defined non-native mappings remain covered separately.
+
+### Settings-defined effort-policy regression coverage
+
+The harness-family tests exercise the real settings loader in both directions: a settings-defined
+`effortFlagValues` declaration remains enumerated and rejects an out-of-menu value, while a partial
+built-in native argv override preserves the absence of static model/effort policy. This prevents
+the merge path from bypassing an explicit custom vocabulary or recreating a retired builtin one.
 
 ### Logic
 
@@ -144,14 +156,14 @@ No known follow-up in this file.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The documented merge/fail-loud/default semantics these tests pin. | Agentic Settings section | [../../docs/reference/settings-json.md](../../docs/reference/settings-json.md) |
+| The documented merge/fail-loud/default semantics these tests pin. | Agentic Settings section | [settings-json.md](agents-remember/docs/reference/settings-json.md) |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The loader under test. | whole module | [../src/agents_remember/kernel/agentic_settings.py](../src/agents_remember/kernel/agentic_settings.py) |
-| The harness registry bounding harness-id validation. | L41-L48 | [../src/agents_remember/serving/harnesses.py](../src/agents_remember/serving/harnesses.py) |
+| The loader under test. | whole module | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
+| The harness registry bounding harness-id validation. | L41-L48 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
 | Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | L443-L488 | [test_agentic_settings.py](agents-remember/mcp/tests/test_agentic_settings.py) |
 
 ## Cross-Repo References
@@ -163,6 +175,9 @@ No meaningful cross-repo references found.
 | Loader-local behavior only. | - | - |
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented the partial-override regressions
+  that prevent built-in static effort policy from reappearing and corrected the nearest governing
+  overview link. Verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented declared-menu versus
   builtin-Codex dynamic effort regression coverage from the final candidate.
 

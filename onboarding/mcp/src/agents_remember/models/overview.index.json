@@ -79,7 +79,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "HFX2-L17 adds binding identity to terminal responses: attach can return `role-required` and carries `seatRole`/`previousSeatRole`; spawn carries `seatRole`. The legacy `role` field still means transport (`chat` or `terminal`) and is not orchestration identity. HFX2-L15 extends the terminal spawn response with `replacementForLeaf`, resolved model/effort, and bound session-log entry/path provenance. Delivery booleans are evidence-specific: context is true only for the id-bearing user record, and commands require command plus non-error stdout evidence. Start with `tool_registry.py`: `TOOL_RESP...",
+    "summary": "ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to carry settings provenance, while `sessionCommands` is now explicitly user-authored launch configuration rather than a normalized model/effort vehicle. Dynamic catalog and process failures remain hosted control evidence and do not inflate the pre-spawn status enum. HFX2-L17 adds binding identity to terminal responses: attach can return `role-required` and carries `seatRole`/`previousSeatRole`; spawn car...",
     "candidateHints": [
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/models/__init__.py",
@@ -147,12 +147,12 @@
       "tool_registry",
       "worktree.py",
       "worktree",
+      "launch-selection-invalid",
+      "resolvedModel",
+      "resolvedEffort",
+      "sessionCommands",
       "role-required",
-      "seatRole",
-      "previousSeatRole",
-      "role",
-      "chat",
-      "replacementForLeaf"
+      "seatRole"
     ]
   },
   "fallback": {

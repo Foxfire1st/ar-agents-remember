@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-15T23:16+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[MCP package overview](../../../overview.md)
 
 ## Purpose
 
@@ -37,6 +41,15 @@ the first post-launch `/effort` paste). If role settings do not choose a harness
 through to repo-local/global `orchestration.spawn.harness`, then the detected registry default.
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Launch Refusal Surface
+
+The public `spawn_agent_session` registration now documents
+`launch-selection-invalid` alongside the existing pre-spawn refusal statuses. That status is the
+structural settings refusal for a role-configured native launch that omits model or effort. Values
+that are complete but stale, unknown, model-gated, or conflicting are validated asynchronously by
+the hosted runner and surface through its persistent failed control snapshot; the MCP registration
+does not collapse those adapter-owned failures into a static enum or a generic paste fallback.
 
 ### 260707-HFX2-L17 Public Attach Signature
 
@@ -256,6 +269,12 @@ text only (the seat's spawned role never changes, L6 role-seat immutability) and
 rename freezes the original spawn-time label into provenance. Both are registration/forwarding
 only — behavior lives in the payload builders (`mcp/tools/terminal.py`).
 
+### Conventions
+
+Keep registrations thin: declare the public signature and truthful model-visible docstring, then
+forward unchanged inputs to one payload builder. New status values must be represented in the
+strict response model and the registration documentation together.
+
 ### Invariants And Boundaries
 
 - Server functions should perform registration and argument forwarding only.
@@ -273,6 +292,21 @@ only — behavior lives in the payload builders (`mcp/tools/terminal.py`).
 - Keep detailed provider troubleshooting behind `provider_diagnostics`; do not
   hide raw provider internals in `context_packet`.
 
+### Todos
+
+No file-local todos; the ACPUI serving request fields belong to L4 rather than this L2 registration
+change.
+
+## Docs References
+
+The resolved source registry has no Domain Documentation entries, so no live documentation source
+was available for this repository-specific MCP registration contract. Repository source and tests
+therefore provide the direct evidence.
+
+| Finding                                                        | Citations | Source Path |
+| -------------------------------------------------------------- | --------- | ----------- |
+| No Domain Documentation source is configured for this repository.       | n/a       | n/a         |
+
 ## Repo-Internal References
 
 | Finding | Source Path |
@@ -286,6 +320,14 @@ only — behavior lives in the payload builders (`mcp/tools/terminal.py`).
 | The inbox tools are registered after the gate tools with fixed model/cli attribution. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | Gate delegation policy is parsed from trusted settings and enforced in payload builders. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) and [tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | `session_retire`/`session_rename` forward to the payload builders that implement the authority check and catalog mechanics. | [tools/terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+
+## Cross-Repo References
+
+No sibling repository defines the MCP launch-refusal status surface.
+
+| Finding                                      | Citations | Source Path |
+| -------------------------------------------- | --------- | ----------- |
+| No meaningful cross-repo references found. | n/a       | n/a         |
 
 ## Series-Contract Notes
 
@@ -305,6 +347,10 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the additive
+  `launch-selection-invalid` public refusal and its boundary from runner-owned dynamic launch
+  failures. Added the missing governing-overview backlink and corrected the no-configured-domain-
+  source evidence; verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

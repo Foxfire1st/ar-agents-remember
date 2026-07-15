@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T15:48+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-15T23:16+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,17 @@
 The spine of the unified `l-01-agent-lifecycles` skill: lifecycle and job are ONE entity (one lifecycle per agent type). This file is the router + the minimal frame + the shared invariants; the per-role lifecycles live in `roles/`, the lenses in `lenses.md`, the report templates in `templates/`. It supersedes and replaces BOTH `l-01-session-job-lifecycle` and `l-02-agent-orchestration` (converged 2026-07-05, series 260703-L9).
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Dynamic Native Launch Doctrine
+
+This generated runtime copy now gives every illustrative role a complete harness/model/effort
+selection and labels those values as install/account-specific examples. The launch doctrine routes
+the settings selection through token-free model-gated advertise and the native initial-config
+channel: Claude `--model`/`--effort`, Pi provider-qualified `--model` plus `--thinking`, and Codex
+`thread/start` model plus `model_reasoning_effort`. `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` are retained
+as provenance only. Missing, stale, unsupported, or conflicting native selections fail loud, and
+normalized model/effort is never converted into composer paste or generated session commands.
+Explicit free-form commands remain user-authored.
 
 ### Logic
 
@@ -138,7 +149,7 @@ No external domain documentation is configured for this repository-local lifecyc
 | The packaged source carries the launcher, approval-gated strategist, architect-custody, and parallel-by-default invariants. | L12-L38; L90-L96; L156-L177; L229-L235 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
 | Canonical skills are propagated into package data and harness mirrors by the sync script. | L14-L55 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
 
-## Cross-Repo Evidence
+## Cross-Repo References
 
 No sibling repository evidence is needed for this doctrine file.
 
@@ -159,6 +170,11 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the synchronized dynamic
+  model-gated launch doctrine, complete role examples, native per-harness launch channels,
+  provenance-only spawn env, and the no-normalized-paste boundary; final-audited the nearest MCP
+  governing overview backlink. Verification metadata remains pinned until closeout stamps the L2
+  code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 +## 260712-TRH-L4 Generated-Copy Doctrine
 

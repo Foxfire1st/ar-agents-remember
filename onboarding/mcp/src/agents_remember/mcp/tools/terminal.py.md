@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -24,6 +24,21 @@ serving primitives so an orchestrator can spawn a manager and a manager a worker
 clicks.
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Typed Native Launch Dispatch
+
+Role-based native dispatch now resolves settings into one complete `ResolvedLaunch` and passes it
+through `open_terminal_session` to the hosted runner. Missing model or effort refuses before tmux
+as `launch-selection-invalid`; complete selections are validated later against the native
+adapter's dynamic model-gated catalog before the configured vendor process starts. The
+`AR_SPAWN_MODEL` and `AR_SPAWN_EFFORT` environment values remain provenance, not a second launch
+authority, and normalized model/effort never becomes a synthesized session command.
+
+The split is intentional. Built-in protocol harnesses (`claude`, `codex`, `pi`) use the typed
+native path. Settings-defined non-native harnesses keep their explicit static flag/session mapping,
+including `effort_session_commands`, because no normalized native adapter exists for them.
+Roleless opens carry no settings selection in this leaf; their native/default behavior remains
+available until the serving request boundary supplies a selection.
 
 ### 260707-HFX2-L18 Strict-CRAP Decomposition
 
@@ -108,21 +123,19 @@ spawned payload/provenance. Invalid or ambiguous refs return a strict refusal be
    an id known nowhere refuses `harness-unknown` with the `unknown_harness_detail` text naming the
    known set + the `docs/reference/harnesses.md` manual; undetected → `harness-not-detected`,
    configured-preference refusals still name the settings source).
-5. **Validates the settings-resolved knobs pre-spawn**: `invalid_model_detail`/
-   `invalid_effort_detail` on the resolved settings values — `model-invalid`/`effort-invalid`
-   refusals name the harness and its valid sets (the L16 silent-degrade prevention); a
-   session-vocabulary effort (claude `ultracode`) contributes `effort_session_commands` as the FIRST
-   post-launch session command instead of a flag.
+5. **Builds the launch authority**: a role-configured built-in protocol harness requires complete
+   model and effort and becomes one `ResolvedLaunch`; omission returns
+   `launch-selection-invalid` before tmux. Dynamic model/effort validity is checked by the runner's
+   native advertise path. A settings-defined non-native harness instead keeps its explicit
+   `invalid_model_detail`/`invalid_effort_detail` and optional `effort_session_commands` mapping.
 6. **Spawns through the shared opener** (`open_terminal_session`, the SAME opener the dashboard
-   route uses — no parallel spawn path) with the env-folded knobs (`_spawn_env` — resolved
-   model/effort overwrite any absent namespaced keys as `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, after
-   caller spend env keys have already been refused), the settings-owned `launch_args`, the free-form
-   provenance, the level provenance, and the effective registry.
-7. **Delivers the session layer**: each resolved session command is its own capture-verified paste
-   with `submit=True` (an unexecuted `/effort ultracode` would be a silent downgrade;
-   `sessionCommandsDelivered` aggregates delivered+submitted), THEN the brief — `prompt_keywords`
-   are prepended as its first line (delivered alone when no `context` is given) — with the existing
-   `submit` semantics and `contextDelivered`/`submitted` reporting. Since 260707-HFX-L3
+   route uses — no parallel spawn path) with the typed selection, provenance env
+   (`AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` after caller spend keys have been refused), settings-owned
+   `launch_args`, explicit free-form session commands, level provenance, and effective registry.
+   Adapter discovery/application occurs in the runner; this payload builder never pastes normalized
+   model or effort.
+7. **Preserves the older delivery evidence helpers for explicit content paths**. Since
+   260707-HFX-L3,
    `_deliver_spawn_pastes` returns the frozen `_SpawnDelivery` bundle: every `True` is
    capture-verified by the paster (a `False` means the pane provably shows no trace of the paste),
    and `failure_capture` carries the pane capture of the latest failed paste. `_spawned_payload`
@@ -250,27 +263,27 @@ catalog.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The operation is defined by same-repository serving/catalog behavior rather than external documentation. | L16-L42 | [terminal.py](terminal.py) |
+| The operation is defined by same-repository serving/catalog behavior rather than external documentation. | L16-L42 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The attach builder normalizes leaf refs before delegating durable assignment to the shared serving helper and returning previous leaf, owner, status, and role. | attach_terminal_session_to_leaf_payload | [terminal.py](terminal.py) |
-| The spawn builder normalizes leaf refs before composing the shared serving opener and capture-verified context paste. | spawn_agent_session_payload | [terminal.py](terminal.py) |
+| The attach builder normalizes leaf refs before delegating durable assignment to the shared serving helper and returning previous leaf, owner, status, and role. | attach_terminal_session_to_leaf_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| The spawn builder normalizes leaf refs before composing the shared serving opener and capture-verified context paste. | spawn_agent_session_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 | Leaf-ref refusal payloads are shared by attach and spawn. | leaf_ref_refusal_payload | [leaf_ref.py](leaf_ref.py.md) |
-| The shared opener (create + leaf claim + env-seeded tmux ensure + catalog upsert) both call paths reuse. | L84-L174 | [../../serving/terminal_opener.py](../../serving/terminal_opener.py) |
-| The server-side capture-verified paste helper that delivers the context packet (and attaches the failure capture). | L133-L229 | [../../serving/terminal_paste.py](../../serving/terminal_paste.py) |
-| The harness detection registry (`find_harness` / `is_detected` / `HARNESSES` order) that gates a spawn before tmux and orders the detection-gated default. | L41-L72 | [../../serving/harnesses.py](../../serving/harnesses.py) |
-| The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | load_agentic_settings | [../../kernel/agentic_settings.py](../../kernel/agentic_settings.py) |
-| The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | L18-L20 | [base.py](base.py) |
-| The facade re-exports both payload builders. | L86; L94 | [__init__.py](__init__.py) |
-| The FastMCP server registers `attach_terminal_session_to_leaf` and documents the HFX2-L10 settings-only authority rule for `spawn_agent_session`, including `spend-override-unsupported` refusals for legacy spend fields and harness-native spend env keys. | L170-L197 | [../server.py](../server.py) |
-| The strict response models (`AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`) are registered for conformance validation. | L82-L88; L111-L114 | [../../models/tool_registry.py](../../models/tool_registry.py) |
-| `session_retire_payload`/`session_rename_payload` delegate the actual catalog/tmux mechanics to `retire_entry`/`TerminalCatalog.set_label` and the authority check to `check_retire_authority`/`SeatRef`/`master_of`. | `retire_entry`; `check_retire_authority` | [../../serving/retire.py](../../serving/retire.py); [../../serving/retire_policy.py](../../serving/retire_policy.py) |
-| Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | [../../serving/seat_events.py](../../serving/seat_events.py) |
-| The strict `SessionRetireResponse`/`SessionRenameResponse` response models these two builders conform to. | `SessionRetireResponse`; `SessionRenameResponse` | [../../models/terminal.py](../../models/terminal.py) |
-| Failing-first tests for the retire policy matrix, idempotent retire, and rename provenance/role-immutability. | `test_seat_lifecycle.py` | [test_seat_lifecycle.py](../../../../tests/test_seat_lifecycle.py) |
+| The shared opener (create + leaf claim + env-seeded tmux ensure + catalog upsert) both call paths reuse. | L84-L174 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The server-side capture-verified paste helper that delivers the context packet (and attaches the failure capture). | L133-L229 | [terminal_paste.py](agents-remember/mcp/src/agents_remember/serving/terminal_paste.py) |
+| The harness detection registry (`find_harness` / `is_detected` / `HARNESSES` order) that gates a spawn before tmux and orders the detection-gated default. | L41-L72 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
+| The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | load_agentic_settings | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
+| The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | L18-L20 | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| The facade re-exports both payload builders. | L86; L94 | [__init__.py](agents-remember/mcp/src/agents_remember/mcp/tools/__init__.py) |
+| The FastMCP server registers `attach_terminal_session_to_leaf` and documents the HFX2-L10 settings-only authority rule for `spawn_agent_session`, including `spend-override-unsupported` refusals for legacy spend fields and harness-native spend env keys. | L170-L197 | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| The strict response models (`AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`) are registered for conformance validation. | L82-L88; L111-L114 | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| `session_retire_payload`/`session_rename_payload` delegate the actual catalog/tmux mechanics to `retire_entry`/`TerminalCatalog.set_label` and the authority check to `check_retire_authority`/`SeatRef`/`master_of`. | `retire_entry`; `check_retire_authority` | [retire.py](agents-remember/mcp/src/agents_remember/serving/retire.py); [retire_policy.py](agents-remember/mcp/src/agents_remember/serving/retire_policy.py) |
+| Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | [seat_events.py](agents-remember/mcp/src/agents_remember/serving/seat_events.py) |
+| The strict `SessionRetireResponse`/`SessionRenameResponse` response models these two builders conform to. | `SessionRetireResponse`; `SessionRenameResponse` | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
+| Failing-first tests for the retire policy matrix, idempotent retire, and rename provenance/role-immutability. | `test_seat_lifecycle.py` | [test_seat_lifecycle.py](agents-remember/mcp/tests/test_seat_lifecycle.py) |
 | 260707-HFX2-L3: `_deliver_spawn_pastes` builds `DeliveryRow`s and calls the ONE delivery path, `serving.injector.deliver`, instead of `TerminalPaster.paste` directly — the same path `serving/inbox_delivery.py` uses. | `deliver` | [../../serving/injector.py](../../serving/injector.py.md) |
 
 ## Cross-Repo References
@@ -293,6 +306,10 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented complete role selection,
+  typed native launch carriage, runner-side dynamic validation, provenance-only spawn env, the
+  no-synthesized-paste invariant, and the retained explicit non-native mapping path. Verification
+  metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

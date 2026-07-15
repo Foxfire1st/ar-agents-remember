@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-15T20:08+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa`|
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 
 ## Purpose
 
@@ -60,6 +60,15 @@ utime-pinned-rewrite invalidation via ctime, and parse failures retried every bu
 
 ## Hot Path Summary
 
+260714-ACPUI-L2 adds focused and production-path coverage for settings-resolved initial
+configuration. `test_harness_launch.py` proves the normalized contract, Pi's exact
+provider-qualified identity, model-gated effort, honest echoes, and the complete Codex selector
+grammar. Runner, opener, spawn, settings, and registry suites prove pre-discovery conflict refusal,
+token-free discovery before configured vendor startup, native Claude/Codex/Pi launch channels,
+roleless Codex dynamic defaults, persistent exact failure evidence, and removal of normalized
+model/effort paste synthesis. Adapter tests pin Codex thread/resume configuration and Claude
+effective-model mismatch classification. No launch test submits a prompt or turn.
+
 260714-ACPUI-L1 tests dynamic, token-free catalog discovery across all three native adapters.
 Claude uses the 2.1.210 initialize/bootstrap/`list_models` fixture, Codex proves paginated hidden
 catalog retention without thread creation, and Pi proves provider-qualified identity plus
@@ -102,6 +111,11 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: added route coverage for the normalized
+  launch contract, complete settings fixtures, native per-harness application, Codex selector
+  census and roleless defaults, Pi exact identity, Claude mismatch failure, no-paste enforcement,
+  and token-free failure/echo evidence. Verification metadata remains pinned until closeout stamps
+  the L2 code commit.
 - 2026-07-15T20:08+02:00 — 260714-ACPUI-L1 curator: made the 2.1.210 Claude JSONL cohort the
   active fake-transport fixture authority and documented token-free dynamic catalog coverage across
   Claude, Codex, and Pi. Verification metadata remains pinned until closeout stamps the L1 commit.

@@ -5,14 +5,14 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`        |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
-| governingOverview      | `../overview.md`                                  |
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`        |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
-[mcp overview](../overview.md)
+[MCP tests overview](overview.md)
 
 ## Purpose
 
@@ -24,6 +24,15 @@ env-seed behaviour both call paths inherit — and, since 260703-L16, the per-ha
 application (`KnobApplicationTests`).
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Opener Carriage Boundary
+
+The opener tests now assert carriage, not static vendor mapping. A Claude or Codex
+`ResolvedLaunch` enters the encoded runner payload unchanged while `argv` retains only the base
+command plus user-authored launch arguments; adapter preparation owns native flags and Codex
+thread configuration. No model/effort value is synthesized into `sessionCommands`. The environment
+still records resolved spend provenance, and settings-defined custom harnesses are opened without
+guessing a native mapping at this generic boundary.
 
 ### 260713-PHA-L1 control metadata coverage
 
@@ -56,17 +65,13 @@ cwd / command / env, adds the tmux name to a known set) + a real `TerminalCatalo
   role-less re-open keeps the recorded `spawn_role` (write-once, like the spawned-by pair), and a
   hand-opened session (no env role) records `None` with `spawnRole` absent from its JSON.
 
-`KnobApplicationTests` (L16) pin the opener-side knob application: env `AR_SPAWN_MODEL`/
-`AR_SPAWN_EFFORT` become `--model`/`--effort` on claude's ensured command while the env keeps
-riding; a session-vocabulary effort (`ultracode`) stays OFF the flag; an unknown effort refuses
-`bad-kind` BEFORE any spawn with the detail naming claude and both value sets; a mapping-less
-builtin (codex) is env-only; `launch_args` append verbatim after the knob flags; the free-form
-provenance (`launch_args`/`prompt_keywords`/`session_commands`) is recorded on the row, JSON
-round-trips camelCase, survives a free-form-less re-open, and stays absent for hand-opened rows;
-an injected effective registry resolves a settings-defined harness (custom argv) while an
-unknown-everywhere id refuses pointing at `orchestration.harnesses` + the
-`docs/reference/harnesses.md` manual; and a vocab-less settings-defined harness refuses the effort
-knob with declare-or-launchArgs guidance.
+`KnobApplicationTests` now pin opener-side carriage. A typed Claude or Codex selection round-trips
+inside `RunnerConfig`; the ensured command remains the base argv plus explicit `launch_args`, and
+the resolved env keeps riding as provenance. Normalized effort never becomes a session command.
+Free-form provenance (`launch_args`/`prompt_keywords`/`session_commands`) remains on the catalog
+row and survives JSON/re-open behavior. An injected effective registry still resolves a
+settings-defined harness without guessing native knob mapping, while an unknown-everywhere id
+refuses pointing at `orchestration.harnesses` and the harness manual.
 - **leaf-taken** (`test_leaf_taken_surfaces_owner_without_spawning`): a running chat already owning the
   leaf makes the opener return `leaf-taken` with the owner and never spawn or upsert the intruder.
 - **bad kind** (`test_bad_kind_reports_detail`): an unknown launch kind returns `bad-kind` with a detail
@@ -98,15 +103,15 @@ No relevant external/domain documentation found; the behavior is local opener po
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The tests pin the local shared-opener composition, not an external protocol. | L89-L149 | [test_terminal_opener.py](test_terminal_opener.py) |
+| The tests pin the local shared-opener composition, not an external protocol. | L89-L149 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The opener under test (resolve + leaf claim + env-seeded ensure + catalog upsert). | L84-L174 | [../src/agents_remember/serving/terminal_opener.py](../src/agents_remember/serving/terminal_opener.py) |
-| The catalog whose provenance/leaf columns the opener writes and the tests read back. | L47-L54; L108-L111 | [../src/agents_remember/serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
-| The role-scoped leaf-conflict probe the opener reuses. | L28-L42 | [../src/agents_remember/serving/terminal_leaf_assignment.py](../src/agents_remember/serving/terminal_leaf_assignment.py) |
+| The opener under test (resolve + leaf claim + env-seeded ensure + catalog upsert). | L84-L174 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The catalog whose provenance/leaf columns the opener writes and the tests read back. | L47-L54; L108-L111 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| The role-scoped leaf-conflict probe the opener reuses. | L28-L42 | [terminal_leaf_assignment.py](agents-remember/mcp/src/agents_remember/serving/terminal_leaf_assignment.py) |
 
 ## Cross-Repo References
 
@@ -124,6 +129,10 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented typed launch carriage, unchanged
+  base argv, adapter-owned native application, provenance env, no effort paste, and the custom
+  harness boundary; corrected the governing overview backlink. Verification metadata remains
+  pinned until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented unsupported-adapter,
   protocol, endpoint, and re-open preservation coverage.

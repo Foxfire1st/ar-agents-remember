@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T20:05:47+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,15 @@ hosted control lifecycle and the dynamic, token-free model/effort advertisement 
 normalized harness capability contract.
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Codex Initial Configuration
+
+The adapter tests now pin both settings-resolved and roleless initial configuration. A configured
+session sends model at `thread/start` and includes both `model` and
+`model_reasoning_effort` in its configuration, retaining the same pair on resume. A roleless
+session selects the single visible advertised default model and that model's own default effort
+after token-free discovery, ignoring any need for a reconnect or a TUI launch override. Assertions
+inspect the exact request and effective echo; no turn is submitted by this setup coverage.
 
 ### Logic
 
@@ -91,6 +100,10 @@ protocol contract; it does not replace the current source tests.
 | The prior reviewer verdict confirms initialize/model-list/thread behavior, protocol-only effort handling, normalized state, interactions, reconnect, and fixture provenance. | L24-L33 | [260713-PHA-L3 reviewer verdict](ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
 ## Update History
+
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: added the configured and roleless Codex
+  `thread/start` launch contract, including model-local default effort and resume preservation.
+  Verification metadata remains pinned until closeout stamps the L2 code commit.
 
 - 2026-07-15T20:05:47+02:00 — 260714-ACPUI-L1 curator: documented cached current-session
   advertisement, paginated hidden-model discovery, model-gated effort metadata, thread/turn-free

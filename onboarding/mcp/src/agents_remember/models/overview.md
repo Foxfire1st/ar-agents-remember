@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ runtime and tested by schema. Model homes follow tool domains: `TaskReopenRespon
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
+
+ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
+role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
+carry settings provenance, while `sessionCommands` is now explicitly user-authored launch
+configuration rather than a normalized model/effort vehicle. Dynamic catalog and process failures
+remain hosted control evidence and do not inflate the pre-spawn status enum.
 
 HFX2-L17 adds binding identity to terminal responses: attach can return `role-required` and carries
 `seatRole`/`previousSeatRole`; spawn carries `seatRole`. The legacy `role` field still means
@@ -142,6 +148,9 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: added the strict incomplete-selection status
+  and clarified resolved selection, user-authored session commands, and runner-owned dynamic
+  failure evidence. Verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 +## 260712-TRH-L4 Route Impact
 

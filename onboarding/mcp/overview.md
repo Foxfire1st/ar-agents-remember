@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -198,6 +198,20 @@ vendor driver is registered or production cutover is implied.
  scope.
 
 ## Hot Path Summary
+
+260714-ACPUI-L2 connects the existing role-settings authority to the native hosted launch
+boundary. A role-configured Claude, Codex, or Pi seat carries one complete typed
+`ResolvedLaunch`; the hosted runner performs token-free per-install discovery, validates effort
+under the selected model, refuses duplicate adapter-owned selectors before discovery, and applies
+Claude flags, Codex `thread/start` configuration, or Pi's provider-qualified flags before the
+configured vendor session starts. Missing selections refuse before tmux; later discovery/startup
+failures remain queryable as exact failed/rejected control snapshots. Normalized model/effort is
+never synthesized into a session command. Role/leaf provenance and the durable inter-agent inbox
+continue through their existing catalog and control-plane paths.
+
+The package-data lifecycle and install skills now teach the same dynamic/native contract. Their
+canonical sources and harness mirrors are sync products outside this onboarding slice; the
+eligible package-data copies remain the shipped runtime evidence documented here.
 
 260713-PHA-L6 extends the package's protocol-backed serving contract with structured Claude,
 Codex, and Pi capability negotiation and a strict two-field rolling inbox-reader compatibility
@@ -729,6 +743,10 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: added the package-wide settings-to-native
+  launch path, model-gated token-free validation, pre-discovery conflict refusal, exact failed-state
+  evidence, no-normalized-paste boundary, role/bus preservation, and synchronized packaged-doctrine
+  impact. Verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the package route body for
   structured harness negotiation and the complete serving reload boundary; R10 remains deferred.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.

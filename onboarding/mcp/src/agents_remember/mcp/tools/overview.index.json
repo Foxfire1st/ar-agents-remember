@@ -79,7 +79,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "HFX2-L17 makes the terminal tool surface pair-aware. Attach accepts explicit role and reports current/previous binding identity; spawned rows expose `seatRole`; brief and turn-report expectations preserve it; retire authority uses binding leaf/role including replacement-leaf recovery. Existing settings-owned launch provenance and delivery acceptance stay separate. `spawn_agent_session` now sends separate session-command entries, binds the unique id-bearing brief in the spawn-cwd harness log, retroactively verifies/reissues only missing or errored commands, and persists resolved model/effort...",
+    "summary": "ACPUI-L2 changes the terminal payload builder from static built-in knob mapping to typed native launch dispatch. Complete role settings become `ResolvedLaunch`; missing model/effort refuses before tmux, and complete values travel to runner-side dynamic model-gated validation. Spawn env and response fields preserve provenance, while normalized model/effort never joins `sessionCommands`. Settings-defined non-native harnesses retain only their explicitly declared legacy mappings, and roleless opens remain selectionless until the serving request layer owns that choice. HFX2-L17 makes the termin...",
     "candidateHints": [
       "mcp/src/agents_remember/mcp/tools",
       "mcp/src/agents_remember/mcp/tools/__init__.py",
@@ -141,16 +141,16 @@
       "terminal",
       "worktree.py",
       "worktree",
-      "seatRole",
-      "spawn_agent_session",
+      "ResolvedLaunch",
+      "sessionCommands",
+      "ACPUI",
       "HFX2",
       "L17",
       "mcp/src/agents_remember/mcp/tools",
       "route-local-overview",
-      "cff3e8f9a64258ea3e7d3007e2153b22c01e273b",
+      "5fa7026c644edfb4eb884173b64d31c9a14a6585",
       "/../../../../overview.md",
-      "mcp/tools/",
-      "mcp/tools.py"
+      "mcp/tools/"
     ]
   },
   "fallback": {

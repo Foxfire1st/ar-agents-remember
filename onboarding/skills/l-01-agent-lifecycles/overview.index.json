@@ -31,7 +31,7 @@
     "skills"
   ],
   "hotPath": {
-    "summary": "Canonical lifecycle doctrine for hosted role dispatch. L4 requires spawn-only creation, an explicit readiness gate, then one exact-session dispatch brief; generated mirrors are outputs, not owners. ### 260713-PHA-L5 Route Contract Review The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic only. Dashboard and packaged projections remain additive and s...",
+    "summary": "Hosted dispatch is role-first and exact-session throughout. Settings choose a complete native model/effort pair; discovery and model-gated validation happen before the configured vendor session starts; readiness precedes exactly one durable brief. Model/effort provenance is not configuration, and normalized selection is never pasted through the composer. Canonical `skills/` content remains the owner synchronized into package and harness mirrors. ### 260714-ACPUI-L2 Settings-Owned Native Launch The lifecycle settings example now uses complete installed-catalog selections for every configured...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles",
       "skills/l-01-agent-lifecycles/roles",
@@ -41,15 +41,23 @@
       "SKILL.md",
       "SKILL",
       "roles",
-      "PHA",
-      "cff3e8f9a64258ea3e7d3007e2153b22c01e273b",
+      "skills/",
+      "ACPUI",
+      "5fa7026c644edfb4eb884173b64d31c9a14a6585",
+      "--model",
+      "--effort",
+      "model_reasoning_effort",
+      "--thinking",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T23",
       "lastVerifiedCommitHash",
+      "fa7026c644edfb4eb884173b64d31c9a14a6585",
       "lastVerifiedCommitDate",
+      "PHA",
       "T13",
+      "T14",
       "TRH"
     ]
   },

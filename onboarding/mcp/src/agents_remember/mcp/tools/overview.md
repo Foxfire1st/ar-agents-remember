@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -22,6 +22,14 @@ task-domain `task_doc.py` submodule, and `PUBLIC_TOOLS` lists `task_reopen` besi
 re-export remain importable from `agents_remember.mcp.tools`.
 
 ## Hot Path Summary
+
+ACPUI-L2 changes the terminal payload builder from static built-in knob mapping to typed native
+launch dispatch. Complete role settings become `ResolvedLaunch`; missing model/effort refuses
+before tmux, and complete values travel to runner-side dynamic model-gated validation. Spawn env
+and response fields preserve provenance, while normalized model/effort never joins
+`sessionCommands`. Settings-defined non-native harnesses retain only their explicitly declared
+legacy mappings, and roleless opens remain selectionless until the serving request layer owns that
+choice.
 
 HFX2-L17 makes the terminal tool surface pair-aware. Attach accepts explicit role and reports
 current/previous binding identity; spawned rows expose `seatRole`; brief and turn-report
@@ -170,6 +178,10 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented typed native role launch
+  resolution, structural refusal, runner-side dynamic validation, provenance-only env, the
+  no-synthesized-command rule, explicit custom-harness mappings, and the roleless temporal
+  boundary. Verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 +## 260712-TRH-L4 Route Impact
 

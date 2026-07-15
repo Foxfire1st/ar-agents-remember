@@ -1,42 +1,99 @@
-# harness_control_runner.py
+# mcp/src/agents_remember/serving/harness_control_runner.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_runner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T13:59+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
-[serving overview](overview.md)
+
+[serving/ overview](overview.md)
 
 ## Purpose
-Process entrypoint that owns one adapter bridge, local control endpoint, vendor subprocess,
-transcript rendering, and correlated stdin/session-command submission for a hosted session.
+
+Process entrypoint for one hosted native harness session. It carries the typed settings-resolved
+launch across the tmux process boundary, performs token-free discovery and fail-loud validation,
+starts the configured adapter, and keeps exact startup failure evidence available over local IPC.
 
 ## Code Commentary
+
 ### Logic
-Runner configuration is encoded as a bounded command payload, decoded before launch, and bound to
-the exact catalog identity. The server starts before the adapter, renders state/transcript updates,
-and shuts down the endpoint and adapter in a final cleanup path. Codex TUI arguments are translated
-to app-server argv while non-TUI passthrough arguments remain intact.
+
+`RunnerConfig` serializes exact control identity, harness, cwd, base argv, endpoint root, explicit
+session commands, and optional `ResolvedLaunch`. Decode verifies that the typed launch names the
+same harness and workspace. `_prepare_controlled_launch` builds the unconfigured native
+`LaunchSpec`, asks a transient adapter for its native knobs, applies conflict preflight before any
+discovery process, enumerates the dynamic catalog without a prompt, validates model and model-local
+launch effort, then builds a fresh runtime adapter carrying expected-launch evidence. Roleless
+sessions skip typed validation; Codex resolves native catalog defaults inside its session until L4.
+
+`run_controlled_session` starts IPC before adapter startup. Any discovery, validation, conflict, or
+vendor-start exception becomes the bridge's persistent failed snapshot. Session commands are sent
+only after ready. A failed runner stays addressable and reads terminal input instead of exiting, so
+readiness/daemon consumers can retrieve `control=failed`, `acceptance=rejected`, and the exact
+`raw.bridgeError`. Codex argv conversion adds `app-server` but retains every supplied argument so
+duplicate authority is refused, never silently deleted.
+
+### Conventions
+
+The typed payload is URL-safe base64 JSON because tmux launches this module as a fixed argv command.
+Native selection ordering is preflight → discover → validate → runtime construction/start. The broad
+exception catches at the subprocess/IPC boundary preserve exact external failures; they do not
+retry, default, or continue the vendor launch.
+
 ### Invariants And Boundaries
-The runner is for built-in hosted harnesses; ordinary shells do not use it. Terminal input is
-submitted through the bridge, never treated as an inter-agent mailbox or readiness signal.
+
+- No configured real vendor session starts before token-free catalog validation succeeds.
+- Adapter-owned selector conflicts fail before even transient discovery starts.
+- Session commands and terminal input cannot run until the bridge is ready.
+- Launch failure remains observable over the exact private endpoint; it is not collapsed into a
+  generic process disconnect.
+- Model/effort is never delivered through composer paste or synthesized session commands.
+- The terminal catalog/tmux row may precede asynchronous discovery by design; the vendor session
+  does not.
+
+### Todos
+
+L4 supplies an explicit typed selection for roleless daemon opens; L3 adds same-session setters.
 
 ## Docs References
-No relevant external/domain documentation was configured; runner and adapter tests are authoritative.
+
+No Domain Documentation source is configured for this repository, so no live domain-documentation
+pass was available for this update.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
-- [terminal_opener.py](terminal_opener.py) composes the runner command.
-- [harness_control_bridge.py](harness_control_bridge.py) owns adapter state and receipts.
+
+Launch validation and adapter construction remain separate pure/data and vendor-specific seams.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `ResolvedLaunch`, model-gated validation, effective echo checks, and duplicate-selector preflight are centralized in the launch module. | L17-L226 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
+| The factory pairs a typed selection with adapter-produced knobs and ignores ambient role env as authority. | L22-L57 | [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
+| The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row. | L170-L216; L311-L460 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence. | L109-L121; L219-L226 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 
 ## Cross-Repo References
-No meaningful cross-repo references.
+
+No external repository boundary is implemented by the runner; it launches installed native
+harnesses owned by the local adapter process.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented typed launch serialization,
+  pre-discovery selector conflict refusal, token-free dynamic validation, fresh configured runtime
+  construction, ready-only session commands, and persistent exact launch-failure IPC evidence.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented bridge-owned hosted launch, exact identity,
   correlated commands, transcript rendering, and shutdown.

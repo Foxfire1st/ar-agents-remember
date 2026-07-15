@@ -5,14 +5,14 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/tests/test_dispatch_expectation_rows.py`             |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
-| governingOverview      | `../overview.md`                                          |
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
 
-[overview.md](../overview.md)
+[MCP tests overview](overview.md)
 
 ## Purpose
 
@@ -22,6 +22,13 @@ that the matching fulfillment call marks that same row `met`, never leaving the 
 forgettable follow-up step.
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Complete Role Fixture
+
+The spawn expectation-row fixture now writes a complete native Claude role selection
+(`harness`, `model`, and `effort`) into the temporary settings authority. This keeps the test on the
+real role-dispatch path after L2's structural preflight without changing its subject: spawning a
+seat still starts no assignment clocks until a separate durable brief is dispatched.
 
 ### 260707-HFX2-L17 Seat-Scoped Dispatch Rows
 
@@ -94,6 +101,9 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented the complete native role fixture
+  used to preserve expectation-row semantics and corrected the nearest governing overview link.
+  Verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added seat-role assertions to dispatch expectation
