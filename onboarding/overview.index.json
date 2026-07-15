@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1531,
+    "sourceFilesInScope": 1536,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -123,7 +123,7 @@
       "pi_rpc_protocol",
       "JSONL",
       "repo-overview",
-      "e35584a2efec5f2b4eb5ac7c4ee9a129757c92b0",
+      "fc2e8b22abf09cd1b6d8c547bca25e59877b34aa",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",

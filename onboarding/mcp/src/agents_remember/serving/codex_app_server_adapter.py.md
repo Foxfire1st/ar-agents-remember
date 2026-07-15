@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T17:18:47+02:00 |
-| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b`|
-| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
+| lastUpdated | 2026-07-15T20:05+02:00 |
+| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
+| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,77 +16,79 @@
 
 ## Purpose
 
-Adapts the Codex app-server session and JSON-RPC transport to the normalized hosted harness adapter
-contract.
+Adapts one native Codex app-server session and JSON-RPC transport to the normalized hosted adapter
+contract, including cached model/effort advertisement and transient token-free catalog discovery.
 
 ## Code Commentary
 
-The adapter starts and snapshots the session, submits correlated turns, applies explicit steer or
-bounded-queue busy policy, reduces status/turn/item/server-request events, resolves approvals and
-elicitation, and reconnects by reading the exact thread and reconciling evidence. It publishes
-normalized activity, terminal results, transcript entries, capability details, and interaction state.
-For a terminal completion with null protocol `requestId`, it resolves the protocol-owned vendor
-correlation against exactly one accepted inbox row in the same hosted session and records completion
-on that row. Production uses the consumed structured capabilities/messages/fields; exact 2.1.207,
-0.144.3, and 0.80.6 values are fixture/smoke evidence only.
+### Logic
 
-## Conventions
+The adapter delegates initialize/model discovery/thread ownership to `CodexAppServerSession`, then
+submits correlated turns, applies explicit steer or bounded-queue busy policy, reduces status/turn/
+item/server-request events, resolves approvals and elicitation, and reconnects through the exact
+thread. `discover` validates the Codex harness id and asks a transient session to initialize and list
+models without starting a thread. `advertise` requires ready state and returns the catalog retained
+by the running session. Existing terminal completion, transcript, interaction, and bounded
+submission-evidence behavior remains unchanged.
 
-Acceptance is proven by correlated `turn/start`/`turn/steer` responses. Null-requestId completion
-requires a present, text, exact, same-session vendor correlation; missing, non-text, unmatched, or
-ambiguous evidence fails loudly. Reconnect records `resend: false`; event and submission retention
-are bounded.
+### Conventions
 
-## Invariants And Boundaries
+Acceptance is proven by correlated `turn/start`/`turn/steer` responses. Running advertise is a
+synchronous no-RPC read. Adapter identity reports `codex-app-server:<opaque negotiated version>`;
+exact package values remain fixture/smoke evidence only.
 
-- Protocol readiness and acceptance are authoritative; pane, terminal, or log text is not used.
-- No blind resend follows an ambiguous send.
-- Completion writes adapter delivery metadata on the matched row without consuming its explicit
-  inbox state; a completed turn with no actual queued replacement reports `idle` / `immediate`.
-  `settling` / `queued` is reserved for an actual replacement turn.
-- R9 rolling compatibility permits only optional `adapterDeliveryState` and
-  `adapterDeliveryDetail`; unrelated extras remain rejected. R10 resource performance is queued,
-  not implemented or current behavior.
-- The adapter is leaf-local: no production registration, cutover, credential handling, or vendor
-  fallback is owned here.
+### Invariants And Boundaries
 
-## Todos
+- Cold discovery performs initialize plus paginated `model/list` only: no thread and no turn.
+- Running advertise uses the catalog fetched for that same connected session; it does not refetch,
+  hardcode, or silently filter the selected model's effort choices.
+- Protocol readiness and acceptance are authoritative; pane, terminal, log, ACP transport, and Toad
+  hosting are not used.
+- No blind resend follows an ambiguous send; retention remains bounded.
+- Completion metadata does not consume durable inbox state, and queued state requires an actual
+  replacement.
 
-None known for this leaf.
+### Todos
+
+L2 and L3 add settings-owned initial overrides and honest per-turn model/effort mutation.
 
 ## Docs References
 
-No Domain Documentation entries are configured in the resolved source registry.
+No Domain Documentation source is configured for this repository, so no live domain-documentation
+pass was available for this update.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
+Session ownership and strict model-page parsing remain dedicated modules rather than adapter-local
+policy.
+
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Protocol and session responsibilities are split into dedicated modules. | L87-L110 | [codex_app_server_session.py](codex_app_server_session.py) |
-| Fake and live tests cover handshake, R11, busy policy, approvals, reconnect, and terminal mapping. | L186-L477 | [test_codex_app_server_adapter.py](../../../../tests/test_codex_app_server_adapter.py) |
+| Session connect retains all model pages and current effort, while discover stops before thread creation. | L100-L239 | [codex_app_server_session.py](codex_app_server_session.py) |
+| Model pages preserve display/description metadata and model-local reasoning effort options. | L142-L213 | [codex_app_server_state.py](codex_app_server_state.py) |
 
 ## Cross-Repo References
 
+No external repository boundary is implemented by this adapter; prior task-review artifacts are not
+runtime boundary contracts.
+
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Reviewer PASS confirms stable protocol behavior and no cutover/registration escape. | L5-L15; L25-L32 | [260713-PHA-L3-reviewer-verdict.md](../../../../../../../../../../../../ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
-
-### 260713-PHA-L6 Capability Negotiation
-
-The adapter identity reports `codex-app-server:<negotiated opaque version>` after the structured
-session handshake. It does not require an exact installed package version; malformed or missing
-initialization, model, thread, policy, or cross-message identity evidence fails loudly.
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented harness-id validation,
+  initialize/list-only discovery, and cached same-session advertise while preserving correlated
+  delivery, boundedness, and inbox-consumption boundaries.
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented null-requestId/vendor-correlation completion,
   loud correlation validation, terminal idle/immediate projection, and replacement-only queued state.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented structured Codex identity and negotiated adapter
   reporting; exact versions remain fixture/smoke baselines only.
-
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for normalized Codex
   lifecycle, correlated acceptance, busy policy, approvals, reconnect, and no-cutover boundary.
   Verification remains unset until closeout stamps the code commit.

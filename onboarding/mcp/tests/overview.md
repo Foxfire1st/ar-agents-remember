@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-14T17:18:47+02:00 |
-| lastVerifiedCommitHash | `e35584a2efec5f2b4eb5ac7c4ee9a129757c92b0`|
-| lastVerifiedCommitDate | 2026-07-14T17:54:34+02:00|
+| lastUpdated | 2026-07-15T20:08+02:00 |
+| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa`|
+| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
 
 ## Purpose
 
@@ -37,6 +37,12 @@ through the same correlated acceptance/result path without a model API request. 
 `success`/`is_error=true` API-429 regression remains failed and retains only safe terminal metadata;
 no result text, stderr, credentials, environment, or settings are emitted or retained.
 
+260714-ACPUI-L1 moves the active Claude fake-transport fixture root to 2.1.210. Its initialization
+fixture is the current test authority for separate control initialization, `system/init`, a
+zero-turn bootstrap result, and correlated `list_models`; its interaction and turn companions keep
+durable gates and acceptance-versus-completion covered in the same versioned cohort. The 2.1.207
+fixtures remain historical evidence and are no longer loaded by the active adapter suite.
+
 The L7 test route additionally proves the projection/landing boundary: slow or failed remote observations do not delay local publication; observer results remain exact-contract and freshness-labeled; stale landing rendering is visible but motion-inert; invalid snapshot reads preserve local status; and a failed refresher does not skip serving shutdown. These are focused leaf regressions; the manager owns the full repository gate.
 
 The 260712-PTS-L3 additions (new `test_change_watcher.py`, plus touched `test_serving.py`/
@@ -53,6 +59,11 @@ without the injected snapshot, cache retention bounded to live contracts, chmod-
 utime-pinned-rewrite invalidation via ctime, and parse failures retried every build.
 
 ## Hot Path Summary
+
+260714-ACPUI-L1 tests dynamic, token-free catalog discovery across all three native adapters.
+Claude uses the 2.1.210 initialize/bootstrap/`list_models` fixture, Codex proves paginated hidden
+catalog retention without thread creation, and Pi proves provider-qualified identity plus
+model-gated thinking menus without prompting. Exact fixture versions remain test evidence only.
 
 260713-PHA-L6 tests preserve exact Claude/Codex/Pi versions only as fixture and smoke baselines,
 while proving structured capability acceptance/rejection and the exact additive inbox allowlist.
@@ -91,6 +102,9 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-15T20:08+02:00 — 260714-ACPUI-L1 curator: made the 2.1.210 Claude JSONL cohort the
+  active fake-transport fixture authority and documented token-free dynamic catalog coverage across
+  Claude, Codex, and Pi. Verification metadata remains pinned until closeout stamps the L1 commit.
 - 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: added route-level delayed-reply IPC peer-disconnect
   containment and bridge reconciliation evidence.
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: added route-level Codex completion correlation,

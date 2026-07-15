@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated | 2026-07-15T20:05+02:00 |
+| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
+| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,39 +16,74 @@
 
 ## Purpose
 
-Owns the vendor-neutral `HarnessProtocolAdapter` contract, explicit adapter registry, unsupported
-adapter behavior, and normalized event reducer used by one hosted control bridge.
+Owns the vendor-neutral protocol-adapter boundary, the separate capability-discovery and progressive
+capability ports, explicit adapter registration/unsupported behavior, and normalized event reduction
+used by hosted control bridges.
 
 ## Code Commentary
 
-The protocol covers start/handshake, snapshot/subscription, correlated submit/respond/reconcile,
-and shutdown. Registry absence is an explicit `unsupported` state; there is no pane, regex, or log
-timing fallback. The reducer enforces exact identity and monotonic event sequence, fails malformed
-known events, and preserves raw detail for additive unknown events.
+### Logic
 
-## Invariants And Boundaries
+`HarnessProtocolAdapter` now includes synchronous cached `advertise` beside start, snapshot,
+subscription, correlated submit/respond/reconcile, and shutdown. `HarnessCapabilityDiscoverer`
+separates transient token-free enumeration from a running session. `HarnessCapabilityPort` declares
+the L1/L2/L3 progression: advertise, native launch knobs, and honest model/effort setters. The
+registry returns a concrete unsupported adapter when no factory exists, and the reducer enforces
+identity plus monotonic event sequence while preserving additive raw event detail.
 
-- One bridge owns one adapter; later leaves register vendor factories explicitly.
-- Capability and protocol-version mismatches fail before the bridge adopts state.
-- Possible-send disconnects stay ambiguous and never trigger automatic duplicate submission.
+### Conventions
+
+Running advertise is synchronous because it reads a catalog retained during native startup; cold
+discovery is asynchronous because it owns a transient protocol process. Built-in ids are exactly
+`claude`, `codex`, and `pi`.
+
+### Invariants And Boundaries
+
+- One hosted bridge owns one native adapter; no Toad host, ACP transport, pane parser, regex, or log
+  timing fallback is introduced here.
+- Unsupported adapters fail catalog reads loudly and report unsupported delivery without pretending
+  capability support.
+- Capability/protocol/identity mismatches fail before state adoption.
+- Possible-send disconnects remain ambiguous and never authorize automatic duplicate submission.
+- Durable inbox acceptance and explicit consumption remain distinct from adapter delivery evidence.
+
+### Todos
+
+Concrete L2 launch-knob and L3 mutation implementations remain intentionally outside this L1
+foundation.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository, so no live domain-documentation
+pass was available for this update.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Normalized contract models. | [harness_control_models.py](harness_control_models.py) |
-| Bridge lifecycle and queue. | [harness_control_bridge.py](harness_control_bridge.py) |
-| Conformance coverage. | [test_harness_control.py](../../../tests/test_harness_control.py) |
+Capability data and mutation evidence have a dedicated model module; bridge lifecycle remains a
+separate consumer of the adapter protocol.
 
-### 260713-PHA-L5 Reviewed Hosted Cutover Impact
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Normalized model/effort catalogs, ACP-style options, launch knobs, and set evidence are declared separately. | L23-L150 | [harness_capabilities.py](harness_capabilities.py) |
+| The bridge validates handshake identity/version/capabilities before adopting adapter state. | L85-L104; L200-L213 | [harness_control_bridge.py](harness_control_bridge.py) |
 
-Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
-contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
-legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
-inbox acceptance remains distinct from explicit consumption where applicable.
+## Cross-Repo References
+
+No external repository boundary is implemented by this protocol contract.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
+- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented cached advertise, transient
+  discovery, and the progressive launch/set capability port while preserving the explicit
+  unsupported and hosted-bridge boundaries.
+- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator pass: created onboarding for the explicit
   adapter protocol, registry, unsupported path, handshake gate, and event reduction rules.
