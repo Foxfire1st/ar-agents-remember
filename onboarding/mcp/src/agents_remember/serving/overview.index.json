@@ -16,6 +16,7 @@
     "mcp/src/agents_remember/serving/build_info.py",
     "mcp/src/agents_remember/serving/change_watcher.py",
     "mcp/src/agents_remember/serving/changeset.py",
+    "mcp/src/agents_remember/serving/claude_stream_capabilities.py",
     "mcp/src/agents_remember/serving/claude_stream_limits.py",
     "mcp/src/agents_remember/serving/claude_stream_protocol.py",
     "mcp/src/agents_remember/serving/claude_stream_startup.py",
@@ -32,6 +33,7 @@
     "mcp/src/agents_remember/serving/events.py",
     "mcp/src/agents_remember/serving/files.py",
     "mcp/src/agents_remember/serving/harness_adapters.py",
+    "mcp/src/agents_remember/serving/harness_capabilities.py",
     "mcp/src/agents_remember/serving/harness_control_adapter.py",
     "mcp/src/agents_remember/serving/harness_control_bridge.py",
     "mcp/src/agents_remember/serving/harness_control_claude.py",
@@ -79,8 +81,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 67,
-    "fileSidecars": 67,
+    "sourceFilesInScope": 69,
+    "fileSidecars": 69,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -96,11 +98,13 @@
     "brief",
     "build",
     "build_info",
+    "capabilities",
     "catalog",
     "change",
     "change_watcher",
     "changeset",
     "claude",
+    "claude_stream_capabilities",
     "claude_stream_limits",
     "claude_stream_protocol",
     "claude_stream_startup",
@@ -124,6 +128,7 @@
     "files",
     "harness",
     "harness_adapters",
+    "harness_capabilities",
     "harness_control_adapter",
     "harness_control_bridge",
     "harness_control_claude",
@@ -160,13 +165,10 @@
     "mcp",
     "models",
     "notes",
-    "opener",
-    "pane",
-    "pane_signals",
-    "paste"
+    "opener"
   ],
   "hotPath": {
-    "summary": "260713-PHA-L6: Claude, Codex, and Pi built-ins negotiate the structured fields their adapters consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. R10 resource performance remains queued. Codex terminal completion with a null protocol `requestId` is resolved only through its text vendor correlation on exactly one accepted inbox row for the same hosted session. Missing, non-t...",
+    "summary": "260714-ACPUI-L1 adds one normalized, own-adapter capability layer without ACP transport. Claude `list_models`, Codex paginated `model/list`, and Pi `get_available_models` dynamically advertise the installed/authenticated model catalog without submitting a model turn. Effort is nested under each model; running adapters serve their retained startup catalog while transient discovery starts only the native protocol handshake/catalog path. The ACP Sense 1 projection uses the `model` and `thought_level` category shape; unknown current values are omitted rather than fabricated. 260713-PHA-L6: Clau...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",
@@ -175,6 +177,7 @@
       "mcp/src/agents_remember/serving/build_info.py",
       "mcp/src/agents_remember/serving/change_watcher.py",
       "mcp/src/agents_remember/serving/changeset.py",
+      "mcp/src/agents_remember/serving/claude_stream_capabilities.py",
       "mcp/src/agents_remember/serving/claude_stream_limits.py",
       "mcp/src/agents_remember/serving/claude_stream_protocol.py",
       "mcp/src/agents_remember/serving/claude_stream_startup.py",
@@ -190,8 +193,7 @@
       "mcp/src/agents_remember/serving/dispatch_brief.py",
       "mcp/src/agents_remember/serving/events.py",
       "mcp/src/agents_remember/serving/files.py",
-      "mcp/src/agents_remember/serving/harness_adapters.py",
-      "mcp/src/agents_remember/serving/harness_control_adapter.py"
+      "mcp/src/agents_remember/serving/harness_adapters.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -206,6 +208,8 @@
       "change_watcher",
       "changeset.py",
       "changeset",
+      "claude_stream_capabilities.py",
+      "claude_stream_capabilities",
       "claude_stream_limits.py",
       "claude_stream_limits",
       "claude_stream_protocol.py",
@@ -238,10 +242,8 @@
       "files",
       "harness_adapters.py",
       "harness_adapters",
-      "harness_control_adapter.py",
-      "harness_control_adapter",
-      "harness_control_bridge.py",
-      "harness_control_bridge"
+      "harness_capabilities.py",
+      "harness_capabilities"
     ]
   },
   "fallback": {

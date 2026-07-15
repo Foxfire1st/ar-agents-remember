@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-07-12T17:40+02:00|
+| lastUpdated | 2026-07-15T20:04+02:00|
 | status      | active                 |
 
 ## Purpose
@@ -36,6 +36,7 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Supervisor Sweep                    | `git-blob-set-v1` | `sha256:cbe43d2b92166a6697c530a78c39ee8dddc139de05c987d0630206271e6769b5` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/supervisor.py`; `mcp/src/agents_remember/serving/supervisor_heartbeat.py`; `mcp/src/agents_remember/controlplane/escalation_ladder.py`; `mcp/src/agents_remember/controlplane/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/orphan_policy.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/supervisor_signals.py` |
 | Task Document                       | `git-blob-set-v1` | `sha256:d88c5469bb115fff3a5c47dcc4a29b870d13f7ee5e761e1a287f50581ae9464a` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/panels/DetailPanel.tsx`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/snapshots.py`; `mcp/src/agents_remember/serving/app.py` |
 | Delivery Injector                   | `git-blob-set-v1` | `sha256:2e2c7ea7c13c566d23e90818f44b903d710ea37b8cdda6ec45da59b9825f5959` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/harness_logs.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_paste.py` |
+| Harness Capability Snapshot         | `git-blob-set-v1` | `sha256:b53a2787e8ae9c9e7ab182581e6a528674c3d5f3fbbb7ea00f10b67123ab3279` | `mcp/src/agents_remember/serving/claude_stream_capabilities.py`; `mcp/src/agents_remember/serving/codex_app_server_session.py`; `mcp/src/agents_remember/serving/harness_capabilities.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/pi_rpc_protocol.py` |
 
 ## Entity Inventory
 
@@ -379,6 +380,21 @@ the concrete sidecars rather than becoming alternate entity semantics. The candi
 above adds the log, transport, and catalog evidence and must be recomputed against the eventual L15
 commit.
 
+### Harness Capability Snapshot
+
+| Field                        | Value |
+| ---------------------------- | ----- |
+| Category                     | Runtime capability contract |
+| Represents In Reality        | The installed/authenticated model catalog and current model/effort state exposed by one native Claude, Codex, or Pi harness session through one normalized Agents Remember shape. |
+| Description                  | `CapabilitySnapshot` contains dynamic `ModelCapability` rows whose effort choices live under the model that accepts them. A running adapter returns the catalog retained during native startup through synchronous `advertise()`; pre-session discovery uses asynchronous `discover(launch)` and only the native handshake/catalog requests. The same data projects into ACP Sense 1 category-keyed select options without importing ACP transport. |
+| Canonical Source Of Truth    | `mcp/src/agents_remember/serving/harness_capabilities.py` defines the normalized shape and serializers; `harness_control_adapter.py` defines the progressive port; each native protocol catalog is authoritative for its vendor projection. |
+| Current Naming Drift         | `CapabilitySnapshot` is not `AdapterHandshake.capabilities`, which is the fixed set of control operations supported by an adapter. It is also not `serving.harnesses` installation detection, the pane-oriented `HarnessAdapter`, or the Delivery Injector entity. |
+| Key Identifiers              | `CapabilitySnapshot`, `ModelCapability`, `EffortOption`, `SessionConfigOption`, `LaunchKnobs`, `SetResult`, `HarnessCapabilityDiscoverer`, `HarnessCapabilityPort`, `advertise`, `discover` |
+| Parent / Child Relationships | Claude `list_models`, Codex `model/list`, and Pi `get_available_models` are vendor children of the normalized snapshot. `SessionConfigOption` is a derived view; model-local effort options remain the source. L1 adapters implement discovery/advertise while the port's launch and set methods are explicit later-layer boundaries. |
+| Often Confused With          | A hardcoded model enum, a global effort ladder, an ACP client/transport, or a prompt/composer command. Enumeration is native, dynamic, token-free, and prompt-free; no paste path participates. |
+| Source References            | [normalized contract](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py); [capability port](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py); [Claude projection](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py); [Codex projection](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py); [Pi projection](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
+| Migration Notes              | ACPUI-L1 currently implements only catalog discovery and cached advertise on the native adapters. `LaunchKnobs` and `SetResult` are contractual hand-off types; no adapter launch mutation, mid-session set operation, or daemon API route is implemented by this leaf. The fingerprint is computed from current worktree blobs and must be recomputed against the eventual code commit. |
+
 ## Cross-Layer Projections
 
 ### Onboarding Unit
@@ -513,6 +529,15 @@ commit.
 | Per-harness    | `harness_logs.HarnessSessionLog` parses real Claude/Codex record schemas; `HarnessAdapter` is failure-modal labeling only. |
 | Callers        | Spawn (`mcp/tools/terminal.py`), durable inbox/supervisor (`inbox_delivery.py`), and REST paste (`serving/app.py`) all compose the same injector. |
 
+### Harness Capability Snapshot
+
+| Layer              | Representation |
+| ------------------ | -------------- |
+| Native harness     | Claude `control_request/list_models`, Codex paginated `model/list`, or Pi `get_available_models`, with no model turn or prompt. |
+| Normalized adapter | `CapabilitySnapshot` with provider/model identity, selected state, and model-local effort options; running adapters return retained startup state while transient discovery owns a short-lived native process. |
+| ACP Sense 1 view   | Derived `SessionConfigOption` select rows use `model` and `thought_level`; unknown current values are omitted rather than fabricated. |
+| Serving hand-off   | JSON serializers exist in the normalized module, but ACPUI-L1 does not yet register a daemon capability route or frontend consumer. |
+
 ## Ownership Notes
 
 - This catalog intentionally excludes the eight worktree task files as onboarding subjects.
@@ -521,6 +546,11 @@ commit.
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 ## Update History
+- 2026-07-15T20:04+02:00 — 260714-ACPUI-L1 curator: added the selective Harness Capability
+  Snapshot entity for the normalized contract, three native dynamic catalog projections, cached
+  advertise versus transient discovery, ACP Sense 1 derived view, and explicit no-transport/no-
+  prompt boundary. Fingerprint uses current worktree blobs and closeout must recompute it against
+  the eventual L1 code commit.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: reviewed the Provider Degradation Protocol
   entity for the additive inbox reader seam; only the exact two delivery-evidence fields are
   tolerated and the fingerprint is refreshed by delegated closeout after the code commit.

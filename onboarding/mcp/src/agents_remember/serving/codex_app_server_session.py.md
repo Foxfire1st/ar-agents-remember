@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T12:30+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastUpdated | 2026-07-15T20:05+02:00 |
+| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
+| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,70 +16,78 @@
 
 ## Purpose
 
-Establishes and records the Codex app-server initialize, model discovery, and thread start/resume
-session contract.
+Owns Codex app-server initialization, complete paginated model discovery, selected model/effort
+evidence, thread start/resume, the retained running catalog, and a separate thread-free discovery
+path.
 
 ## Code Commentary
 
-`CodexAppServerSession.connect` performs stable initialize/initialized, paginated model discovery,
-exact model and advertised reasoning-effort selection, then starts or resumes the exact thread. It
-preserves launch configuration and exposes the capability/effective-settings snapshot used by the
-adapter.
+### Logic
 
-## Conventions
+`connect` starts transport, initializes the app-server, reads every `model/list` page including
+hidden models, selects the configured/default model, validates its advertised reasoning effort, and
+starts or resumes the exact thread. It validates echoed thread identity, CLI version, model, cwd, and
+effective effort before retaining the selected model plus full catalog. `discover` performs only
+transport start, initialize, and the same paginated model read, then returns a normalized snapshot
+with no current selection and always stops transport. `advertise` normalizes the retained running
+catalog and current evidence without another RPC.
 
-The runtime user-agent must prove the documented client/opaque-version form; `0.144.3` is a
-fixture/smoke baseline only. The negotiated token must agree with the thread `cliVersion`.
-Reasoning effort is selected from the advertised model menu and travels through thread
-configuration and turn parameters; it is never mapped onto argv.
+### Conventions
 
-## Invariants And Boundaries
+The runtime user-agent proves the client/opaque-version form, and the token must agree with thread
+`cliVersion`. `model` is the normalized model key; descriptions and effort descriptions are retained.
+Reasoning effort travels through session config and turn parameters rather than an invented argv map.
 
-- Experimental API remains false and unsupported or malformed structured capabilities fail loudly.
-- Start/resume preserves exact thread identity, model, cwd, sandbox, approval, configuration, and
-  effective reasoning effort.
-- Missing, conflicting, or unadvertised effort values fail loudly.
+### Invariants And Boundaries
 
-## Todos
+- `model/list` pagination includes hidden rows, rejects repeated cursors, and fails on the configured
+  page bound rather than returning a partial catalog.
+- Cold discovery never starts/resumes a thread or sends a turn.
+- Start/resume preserves exact thread, model, cwd, sandbox, approval, config, and effective effort.
+- Missing, conflicting, or unadvertised effort fails loudly; no global effort enum is accepted.
+- Failed connect/discover always stops its transient transport.
 
-None known for this leaf.
+### Todos
+
+L2/L3 extend how selected model/effort are applied; the L1 catalog and thread boundary is complete.
 
 ## Docs References
 
-No Domain Documentation entries are configured in the resolved source registry; the validated
-protocol snapshot is recorded in the repository fixture instead.
+No Domain Documentation source is configured for this repository, so no live domain-documentation
+pass was available for this update.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
+Strict model-page parsing is isolated from session lifecycle, while the adapter consumes retained
+catalog and thread evidence.
+
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Model effort menu and thread echoes are fixture evidence. | L39-L99 | [codex_app_server_0_144_3.json](../../../../tests/fixtures/codex_app_server_0_144_3.json) |
-| Session output is consumed by the adapter handshake and reconnect flow. | L87-L153; L490-L506 | [codex_app_server_adapter.py](codex_app_server_adapter.py) |
+| Model pages validate descriptions, per-model effort menus/defaults, visibility, and identity. | L142-L240 | [codex_app_server_state.py](codex_app_server_state.py) |
+| Adapter start, discover, and advertise consume this session boundary. | L88-L127 | [codex_app_server_adapter.py](codex_app_server_adapter.py) |
 
 ## Cross-Repo References
 
+No external repository boundary is implemented by this session owner.
+
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Reviewer confirmed exact-version initialize/model/thread behavior. | L17-L25 | [260713-PHA-L3-reviewer-verdict.md](../../../../../../../../../../../../ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
-
-### 260713-PHA-L6 Structured Identity
-
-The `initialize` user-agent token must have the documented client/opaque-version form and must
-agree with the `thread/start` or `thread/resume` `cliVersion`. Selected model, reasoning effort,
-cwd, sandbox, and approval policy remain concrete required evidence; no semver compatibility guess
-is made.
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented full retained model metadata,
+  include-hidden pagination, no-thread discovery, cached advertise, and fail-clean transport
+  ownership.
 - 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: replaced the exact-0.144.3
   convention with consumed initialize/thread identity and field validation; fixture pins are
   historical evidence only.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented cross-message Codex capability negotiation and
   loud failure for inconsistent structured identity.
-
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for exact initialize,
   model/effort discovery, thread start/resume, and preserved settings. Verification remains unset
   until closeout stamps the code commit.

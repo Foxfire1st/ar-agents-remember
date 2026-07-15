@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `e35584a2efec5f2b4eb5ac7c4ee9a129757c92b0`|
-| lastVerifiedCommitDate | 2026-07-14T17:54:34+02:00|
+| lastUpdated            | 2026-07-15T20:04+02:00 |
+| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa`|
+| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -119,6 +119,13 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+260714-ACPUI-L1 adds one normalized, own-adapter capability layer without ACP transport. Claude
+`list_models`, Codex paginated `model/list`, and Pi `get_available_models` dynamically advertise
+the installed/authenticated model catalog without submitting a model turn. Effort is nested under
+each model; running adapters serve their retained startup catalog while transient discovery starts
+only the native protocol handshake/catalog path. The ACP Sense 1 projection uses the `model` and
+`thought_level` category shape; unknown current values are omitted rather than fabricated.
 
 260713-PHA-L6: Claude, Codex, and Pi built-ins negotiate the structured fields their adapters
 consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is
@@ -236,11 +243,31 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 ## Route Model
 
+- `harness_capabilities.py` and `harness_control_adapter.py` — the normalized capability contract:
+  `CapabilitySnapshot` contains dynamic `ModelCapability` rows with model-local `EffortOption`
+  menus; ACP Sense 1 projects category-keyed select options; `LaunchKnobs` and `SetResult` establish
+  the progressive L2/L3 boundary. `HarnessProtocolAdapter.advertise()` is a synchronous cached read,
+  while `HarnessCapabilityDiscoverer.discover()` is the transient native enumeration seam. No ACP
+  transport, global effort enum, or composer-paste fallback belongs in this port.
+
+- `claude_stream_capabilities.py`, `claude_stream_protocol.py`, `claude_stream_startup.py`, and
+  `harness_control_claude.py` — correlate `control_request/list_models` before the steady-state
+  stdout reader starts, validate the live catalog/current-model relationship, map only each model's
+  advertised effort tokens, and retain the normalized catalog for running advertise. Cold discovery
+  performs initialization plus catalog enumeration and sends no bootstrap prompt.
+
+- `codex_app_server_state.py`, `codex_app_server_session.py`, and
+  `codex_app_server_adapter.py` — preserve descriptions and model-local reasoning efforts from every
+  `model/list` page (including hidden rows), retain the catalog at connect, and expose a cold
+  initialize/list-only discovery path that starts neither a thread nor a turn.
+
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
-  `pi_rpc_adapter.py` — the L4 Pi 0.80.6 protocol/process/event/adapter chain: strict LF JSONL,
-  bounded child transport, normalized retry/compaction/settlement and extension UI events,
-  `get_state` readiness, exact-session reconnect, and post-cursor reconciliation without resend.
-  This leaf deliberately does not register or cut over the adapter; L5 owns that seam.
+  `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
+  transport, normalized retry/compaction/settlement and extension UI events, `get_state` readiness,
+  exact-session reconnect, and post-cursor reconciliation without resend. ACPUI-L1 also consumes
+  `get_available_models`, preserves provider-qualified model identity, derives model-gated thinking
+  menus using Pi's own map rules, strips provider headers from retained state, and makes transient
+  discovery fail-clean and prompt-free.
 
 - `app.py` — `create_app(config, *, interval, heartbeat, now, before_tick,
   refresh_provider_state, refresh_landing_state, watch_changes)` builds the FastAPI app
@@ -795,6 +822,10 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-15T20:04+02:00 — 260714-ACPUI-L1 curator: documented the normalized own-adapter
+  capability port, dynamic token-free Claude/Codex/Pi catalog paths, model-gated effort, cached
+  running advertise, and transient prompt-free discovery. Verification metadata remains pinned
+  until closeout stamps the L1 code commit.
 - 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: documented the narrow IPC peer-disconnect reply/close
   boundary and delayed-reply bridge reconciliation result.
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned Codex null-requestId
