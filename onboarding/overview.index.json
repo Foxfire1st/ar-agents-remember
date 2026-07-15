@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1536,
+    "sourceFilesInScope": 1539,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260713-PHA-L6 records the current protocol-backed harness boundary: Claude, Codex, and Pi negotiate structured capability evidence, rolling inbox readers allow only the two named optional adapter-delivery fields, and serving cutover reloads every long-lived daemon/client/session/browser consumer. Exact fixture versions and the queued R10 resource observations are not production behavior. 260713-PHA-L4 adds a pinned, unregistered Pi RPC adapter slice under the serving route. For Pi protocol questions, route through `mcp/src/agents_remember/serving/pi_rpc_protocol.py` for strict LF JSONL and...",
+    "summary": "260714-ACPUI-L2 extends the role-based spawn moat with dynamically accurate native initial configuration. `settings.json` resolves a complete role/level selection; Claude, Codex, and Pi advertise token-free installed/account catalogs with model-local effort, refuse stale or conflicting selectors, and launch through their own native flags/thread config with honest effective evidence. The selected values remain catalog provenance, while readiness and the durable inter-agent brief bus still own assignment. L3 retains same-session mutation and L4 retains daemon capability/request exposure. 2607...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,15 +115,10 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
-      "mcp/src/agents_remember/serving/pi_rpc_protocol.py",
-      "PHA",
-      "R10",
-      "RPC",
-      "agents_remember",
-      "pi_rpc_protocol",
-      "JSONL",
+      "settings.json",
+      "ACPUI",
       "repo-overview",
-      "fc2e8b22abf09cd1b6d8c547bca25e59877b34aa",
+      "5fa7026c644edfb4eb884173b64d31c9a14a6585",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -144,7 +139,12 @@
       "providers/_bin/",
       "providers/_venvs/",
       "onboarding/",
-      "c-05-create-or-update-onboarding-files"
+      "c-05-create-or-update-onboarding-files",
+      "ar-coordination/memory-repos/ar-<repo>/",
+      "c-00-initialize-memory-repo",
+      "kernel/memory_ledger.py",
+      "ContextPacketV2",
+      "resolve_context"
     ]
   },
   "fallback": {

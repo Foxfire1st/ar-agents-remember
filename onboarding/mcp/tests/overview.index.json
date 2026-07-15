@@ -57,6 +57,7 @@
     "mcp/tests/test_harness_control_claude.py",
     "mcp/tests/test_harness_control_claude_smoke.py",
     "mcp/tests/test_harness_control_runner.py",
+    "mcp/tests/test_harness_launch.py",
     "mcp/tests/test_harness_logs.py",
     "mcp/tests/test_harnesses.py",
     "mcp/tests/test_hosted_control_conformance.py",
@@ -147,8 +148,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 136,
-    "fileSidecars": 135,
+    "sourceFilesInScope": 137,
+    "fileSidecars": 136,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -234,7 +235,7 @@
     "identity"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L1 tests dynamic, token-free catalog discovery across all three native adapters. Claude uses the 2.1.210 initialize/bootstrap/`list_models` fixture, Codex proves paginated hidden catalog retention without thread creation, and Pi proves provider-qualified identity plus model-gated thinking menus without prompting. Exact fixture versions remain test evidence only. 260713-PHA-L6 tests preserve exact Claude/Codex/Pi versions only as fixture and smoke baselines, while proving structured capability acceptance/rejection and the exact additive inbox allowlist. They preserve R9's option...",
+    "summary": "260714-ACPUI-L2 adds focused and production-path coverage for settings-resolved initial configuration. `test_harness_launch.py` proves the normalized contract, Pi's exact provider-qualified identity, model-gated effort, honest echoes, and the complete Codex selector grammar. Runner, opener, spawn, settings, and registry suites prove pre-discovery conflict refusal, token-free discovery before configured vendor startup, native Claude/Codex/Pi launch channels, roleless Codex dynamic defaults, persistent exact failure evidence, and removal of normalized model/effort paste synthesis. Adapter tes...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",

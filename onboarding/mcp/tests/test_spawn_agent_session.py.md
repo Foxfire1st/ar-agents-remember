@@ -5,14 +5,14 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
-| governingOverview      | `../overview.md`                                  |
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
-[mcp overview](../overview.md)
+[MCP tests overview](overview.md)
 
 ## Purpose
 
@@ -34,6 +34,19 @@ classes: `SpawnKnobApplicationTests` (per-harness knob application + the free-fo
 `SpawnLevelResolutionTests` (the dispatch `level` + rolesPerLevel resolution chain).
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Settings-to-Runner Launch Contract
+
+Role fixtures now provide a complete native harness/model/effort selection. The spawn assertions
+pin one typed `ResolvedLaunch` in the runner payload while the base harness argv stays unmodified;
+model/effort also remain visible in environment and catalog provenance without becoming a second
+authority. Missing model or effort refuses before tmux as `launch-selection-invalid`.
+
+The suite explicitly rejects the retired normalized-paste behavior: stale values such as
+`ultracode` remain unchanged for dynamic runner validation and are never synthesized into
+`/effort` or any other session command. Only settings-authored free-form commands remain. Separate
+cases preserve static validation and session mapping for settings-defined non-native harnesses,
+and roleless/plain-terminal behavior remains distinct from role-configured native dispatch.
 
 ### 260707-HFX2-L18 Plain-Terminal Regression
 
@@ -86,20 +99,14 @@ L2 contracts:
   `contextDelivered: false` / `submitted: false` WITH `deliveryCapture` carrying the fake paster's
   pane snapshot.
 
-`SpawnKnobApplicationTests` (L16 + HFX2-L10) pin the dispatch-seam knob application under
-settings-only authority: a flag-vocabulary effort (`max`) from role settings rides the argv as
-`--model`/`--effort` with NO session command; `ultracode` stays OFF the flag and arrives as the
-FIRST paste (`/effort ultracode`, submitted) before the brief with `sessionCommands`/
-`sessionCommandsDelivered` reported; an unknown settings effort (`turbo`) refuses
-`effort-invalid` naming claude and BOTH value sets with nothing spawned; a mapping-less builtin
-(codex) stays env-only; settings-owned `launchArgs` ride the argv verbatim and are recorded
-(payload + row); settings-owned `promptKeywords` prepend to the brief paste (the acceptance case:
-strategist settings with effort max + promptKeywords:["ultracode"] → `--effort max` + the keyword
-riding the paste; keywords alone still deliver with no brief); the session-layer order is effort
-vehicle → settings `sessionCommands` → keyword-bearing brief with the RESOLVED list as provenance;
-and an undelivered session command reports `sessionCommandsDelivered: false` WITH the failing pane
-capture as `deliveryCapture` (`test_undelivered_session_command_is_reported_with_capture`,
-260707-HFX-L3). HFX2-L10 adds explicit refusal coverage for non-null legacy caller
+`SpawnKnobApplicationTests` (L16 + HFX2-L10 + ACPUI-L2) pin settings-only launch authority. A
+complete native role selection becomes `ResolvedLaunch` while base argv stays untouched and
+model/effort remain response/env provenance. Missing model or effort refuses
+`launch-selection-invalid` before spawn. Stale values reach dynamic runner validation exactly as
+authored and never become a synthesized paste; only explicit settings `sessionCommands` remain in
+that channel. Settings-owned `launchArgs` and `promptKeywords` remain recorded, while roleless and
+plain-terminal cases retain their separate behavior. HFX2-L10 keeps explicit refusal coverage for
+non-null legacy caller
 `harness`/`model`/`effort`/free-form args, `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, and maintained
 Claude/Anthropic + Codex/OpenAI native spend/endpoint env keys.
 
@@ -164,17 +171,17 @@ No relevant external/domain documentation found; the behavior is local MCP/servi
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The tests pin the local agent-facing dispatch composition, not an external protocol. | L116-L273 | [test_spawn_agent_session.py](test_spawn_agent_session.py) |
+| The tests pin the local agent-facing dispatch composition, not an external protocol. | L116-L273 | [test_spawn_agent_session.py](agents-remember/mcp/tests/test_spawn_agent_session.py) |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The tool under test composes the opener + echo-confirmed paste and returns the strict spawn payload. | L82-L211 | [../src/agents_remember/mcp/tools/terminal.py](../src/agents_remember/mcp/tools/terminal.py) |
-| The leaf-ref serving adapter normalizes accepted spawn leaf keys before settings lookup and catalog writes. | resolve_catalog_leaf_key | [../src/agents_remember/serving/leaf_ref_validation.py](../src/agents_remember/serving/leaf_ref_validation.py) |
-| The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | L84-L174 | [../src/agents_remember/serving/terminal_opener.py](../src/agents_remember/serving/terminal_opener.py) |
-| The `PasteResult` the fake paster returns + the paste helper the endpoint drives. | L62-L67; L133-L229 | [../src/agents_remember/serving/terminal_paste.py](../src/agents_remember/serving/terminal_paste.py) |
-| The `POST /api/terminal/{session}/paste` endpoint under test. | L653-L676 | [../src/agents_remember/serving/app.py](../src/agents_remember/serving/app.py) |
+| The tool under test composes the opener + echo-confirmed paste and returns the strict spawn payload. | L82-L211 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| The leaf-ref serving adapter normalizes accepted spawn leaf keys before settings lookup and catalog writes. | resolve_catalog_leaf_key | [leaf_ref_validation.py](agents-remember/mcp/src/agents_remember/serving/leaf_ref_validation.py) |
+| The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | L84-L174 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The `PasteResult` the fake paster returns + the paste helper the endpoint drives. | L62-L67; L133-L229 | [terminal_paste.py](agents-remember/mcp/src/agents_remember/serving/terminal_paste.py) |
+| The `POST /api/terminal/{session}/paste` endpoint under test. | L653-L676 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 
 ## Cross-Repo References
 
@@ -196,6 +203,10 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented complete native role fixtures,
+  typed runner selection, structural fail-loud behavior, provenance-only env, no synthesized
+  model/effort command, and the retained custom-harness mapping path; corrected the governing
+  overview backlink. Verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

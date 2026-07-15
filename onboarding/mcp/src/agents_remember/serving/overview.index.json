@@ -43,6 +43,7 @@
     "mcp/src/agents_remember/serving/harness_control_models.py",
     "mcp/src/agents_remember/serving/harness_control_queue.py",
     "mcp/src/agents_remember/serving/harness_control_runner.py",
+    "mcp/src/agents_remember/serving/harness_launch.py",
     "mcp/src/agents_remember/serving/harness_logs.py",
     "mcp/src/agents_remember/serving/harness_terminal_surface.py",
     "mcp/src/agents_remember/serving/harnesses.py",
@@ -81,8 +82,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 69,
-    "fileSidecars": 69,
+    "sourceFilesInScope": 70,
+    "fileSidecars": 70,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -138,6 +139,7 @@
     "harness_control_models",
     "harness_control_queue",
     "harness_control_runner",
+    "harness_launch",
     "harness_logs",
     "harness_terminal_surface",
     "harnesses",
@@ -156,6 +158,7 @@
     "interactions",
     "ipc",
     "landing",
+    "launch",
     "leaf",
     "leaf_ref_validation",
     "limits",
@@ -163,12 +166,10 @@
     "lock",
     "logs",
     "mcp",
-    "models",
-    "notes",
-    "opener"
+    "models"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L1 adds one normalized, own-adapter capability layer without ACP transport. Claude `list_models`, Codex paginated `model/list`, and Pi `get_available_models` dynamically advertise the installed/authenticated model catalog without submitting a model turn. Effort is nested under each model; running adapters serve their retained startup catalog while transient discovery starts only the native protocol handshake/catalog path. The ACP Sense 1 projection uses the `model` and `thought_level` category shape; unknown current values are omitted rather than fabricated. 260713-PHA-L6: Clau...",
+    "summary": "260714-ACPUI-L2 carries one settings-resolved `ResolvedLaunch{harness, model, effort, workspace}` through the shared opener into the exact-session runner. Before a configured vendor session starts, the runner applies adapter-owned selector conflict preflight, performs token-free dynamic discovery, validates model plus model-local launch effort, then starts Claude with native `--model/--effort`, Codex with `thread/start` model/config effort, or Pi with provider-qualified `--model/--thinking`. Effective startup evidence is honest: Pi echoes both, Codex echoes thread model/effort, and Claude e...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

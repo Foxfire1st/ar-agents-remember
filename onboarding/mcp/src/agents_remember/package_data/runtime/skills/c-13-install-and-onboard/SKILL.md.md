@@ -5,9 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T12:04+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-15T23:16+02:00                     |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| governingOverview      | `../../../../../../overview.md`            |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../overview.md)
 
 ## Purpose
 
@@ -20,17 +25,28 @@ needed, and configures providers.
 
 ## Code Commentary
 
+### 260714-ACPUI-L2 Native Launch Interview
+
+Stage 2 no longer teaches a static builtin model/effort vocabulary or maps a normalized effort to
+a pasted command. A native role entry must provide a complete harness/model/effort selection from
+the adapter's token-free per-install/account advertisement, with effort chosen from the selected
+model and Pi using the exact provider-qualified model key. The native adapter validates and applies
+that selection through its launch channel before work begins. `launchArgs`, `sessionCommands`, and
+`promptKeywords` remain an explicit user-authored escape hatch and are never synthesized from the
+normalized selection.
+
 ### Logic
 
 L13 review follow-up (L13R-2): Stage 2's gate-delegation item now states GLOBAL file only — the loader refuses it repo-locally, so the interview can never imply a per-repo gate posture.
 
-260703-L16: Stage 2 item 4 grew from "harness preference" to the full knob interview — per-role
+260703-L16 originally grew Stage 2 item 4 from "harness preference" to the full knob interview — per-role
 `orchestration.roles` AND per-level `orchestration.rolesPerLevel` (leaf|master|portfolio tiered
 economics), harness values as builtin ids OR developer-defined `orchestration.harnesses` entries,
-the per-harness dispatch-time effort validation (claude's flag set + session-level `ultracode`),
 and the never-validated free-form escape hatch (`launchArgs`/`sessionCommands`/`promptKeywords`,
-recorded in spawn provenance) — pointing at `docs/reference/harnesses.md` as the spawn-surface
-manual. HFX2-L10 clarifies the interview's authority boundary: ordinary spawning seats cannot pass
+recorded in spawn provenance). ACPUI-L2 supersedes that original static-vocabulary description for
+builtins with dynamic model-gated advertise plus native launch application, while settings-defined
+non-native mappings stay explicit. The interview points at `docs/reference/harnesses.md` as the
+spawn-surface manual. HFX2-L10 clarifies the authority boundary: ordinary spawning seats cannot pass
 `harness`/`model`/`effort`, direct launch/session spend controls, or harness-native spend/endpoint
 env keys directly; settings are the spend surface.
 
@@ -91,7 +107,7 @@ the `c-10-adopt-memory-baseline` skill, and context resolution to the `c-08-ar-c
 
 No open file-local todos.
 
-### Docs References
+## Docs References
 
 Harness-native setup details now live in the install guides and starter packages.
 
@@ -120,6 +136,12 @@ No sibling repository evidence is needed for this skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: updated the packaged installer interview to
+  require complete dynamically advertised native selections, exact Pi provider identity, and
+  native launch application; removed the obsolete static Claude/paste teaching while preserving
+  explicitly user-authored free-form commands. Added and final-audited the nearest MCP governing
+  overview backlink. Verification metadata remains pinned until closeout stamps the L2 code commit.
 
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): Stage 2's knob interview now
   says `orchestration.spawn.harness` is the fallback when no role/level knob supplies a harness and

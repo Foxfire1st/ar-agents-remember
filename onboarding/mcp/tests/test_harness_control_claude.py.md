@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T20:05:47+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,14 @@ startup, token-free model catalog advertisement, correlated delivery, interactio
 limits, shutdown, and terminal normalization.
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Effective-Launch Mismatch
+
+The Claude suite can inject an expected `ResolvedLaunch` and now proves the fail-loud acceptance
+boundary. When `system/init` echoes a different effective model, the adapter force-closes its
+transport and propagates `HarnessControlError` so the runner can persist
+`control=failed`/`acceptance=rejected` with exact bridge evidence. Genuine protocol negotiation
+incompatibility remains the distinct `unsupported` result covered by the adjacent test.
 
 ### Logic
 
@@ -94,6 +102,10 @@ No sibling repository or transport implementation is required to prove this nati
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented expected-launch injection and the
+  force-close/propagate behavior that distinguishes an effective model mismatch from protocol
+  unsupported. Verification metadata remains pinned until closeout stamps the L2 code commit.
 
 - 2026-07-15T20:05:47+02:00 — 260714-ACPUI-L1 curator: documented the `2.1.210` catalog fixture,
   zero-turn/zero-cost discovery, cached model-gated advertisement, honest unknown effort, modern

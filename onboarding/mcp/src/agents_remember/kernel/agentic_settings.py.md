@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[MCP package overview](../../../overview.md)
 
 ## Purpose
 
@@ -29,24 +33,33 @@ below the shared 900-second floor.
 
 ## Code Commentary
 
+### 260714-ACPUI-L2 Dynamic Native Launch Authority
+
+`RoleKnobs.model` and `RoleKnobs.effort` remain stripped, non-empty settings values at this parser
+boundary. For the built-in Claude, Codex, and Pi protocol harnesses, this module deliberately does
+not impose a static model or effort vocabulary: dispatch carries the complete settings selection
+into the typed native launch boundary, where the adapter validates it against a token-free,
+per-install catalog and the selected model's own effort options. Settings-defined non-native
+harnesses retain their explicit registry mappings and dispatch-time validation. The free-form
+`launchArgs`, `sessionCommands`, and `promptKeywords` fields remain independently user-authored;
+the parser never derives a model/effort paste command from them.
+
 ### 260707-HFX2-L12 CS-6 Update
 
 `orchestration.supervisor.escalationBudget` is now a known supervisor setting with default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
 
 ### Logic
 
-**260713-PHA-L1 effort policy.** When a settings harness declares `effortFlagValues`, the effective
-merged harness switches to enumerated validation so invalid values are refused loudly and the
-declared menu is not bypassed. The builtin Codex path remains dynamic: it accepts any stripped
-non-empty model-advertised effort and forwards it, while an override with declared values is
-enumerated. This distinction is launch-world validation; bridge-era live model capability
-validation remains a later production-cutover concern.
+**260714-ACPUI-L2 effort policy.** When a settings-defined non-native harness declares
+`effortFlagValues`, the effective merged harness uses enumerated validation so its explicit menu is
+not bypassed. Built-in Claude, Codex, and Pi rows carry no static effort mapping; a partial command
+or argv override does not invent one. Their model-gated validation belongs to dynamic adapter
+discovery at launch.
 
 **260707-HFX2-L15 dispatch bounds and harness overrides.** The default supervisor redelivery budget
 is `1`, matching the synchronous calibrated log-verification envelope of one input. When settings
-replace the Codex builtin's `effortFlag`, `_merged_harness` clears Codex's
-`model_reasoning_effort={value}` template so the custom flag receives the ordinary discrete value
-instead of leaking a builtin-specific argument shape.
+introduce or replace a Codex `effortFlag`, `_merged_harness` keeps any retired native config-value
+template cleared so the explicit custom mapping receives an ordinary discrete value.
 
 L13 review follow-up (L13R-2): the loader REFUSES `gateDelegation` in the repo-local layer — a local value would validate and then silently do nothing (the boot snapshot reads the global file only), a fail-open shape; the refusal names the local file and states "global-layer only".
 
@@ -137,9 +150,11 @@ appended and is shared by this loader (the key's new home) and `mcp/config.py`'s
 legacy authority-file fallback. `AgenticSettings.gate_delegation_configured` records
 whether a FILE set the key (vs. the default) — the boot-snapshot consumer branches on it.
 
-**Role knobs (L16 three-layer model).** `RoleKnobs` carries the validated enums (`harness` — a
-known id; `model`/`effort` — free strings HERE, the per-harness effort vocabulary is enforced at
-DISPATCH where the harness is known) plus the free-form escape hatch (`launchArgs`/
+**Role knobs (L16 three-layer model, ACPUI-L2 launch boundary).** `RoleKnobs` carries the validated
+`harness` id plus `model`/`effort` as free strings at this parser boundary. Built-in native values
+are structurally required at role dispatch and validated against the model-gated dynamic catalog
+inside the hosted runner; explicit non-native registry mappings are validated at dispatch. The
+free-form escape hatch (`launchArgs`/
 `promptKeywords`/`sessionCommands` — `_require_string_list` requires a non-empty LIST of non-empty
 strings; an EMPTY list REFUSES (PR #100 review, Codex P2: `RoleKnobs` cannot distinguish absent from
 cleared — empty tuple = not configured — so a per-level `[]` meant to clear a flat default would
@@ -232,11 +247,11 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The gate policy primitives the gateDelegation parse builds on (named policies, rule construction, seam verdict binding). | L1-L120 | [../controlplane/gate_policy.py](../controlplane/gate_policy.py) |
-| The harness registry whose ids bound every harness preference value. | L41-L48 | [../serving/harnesses.py](../serving/harnesses.py) |
-| The boot-snapshot consumer: gateDelegation sourced from the global file at boot with the legacy authority fallback. | parse_orchestration_settings | [../mcp/config.py](../mcp/config.py) |
-| The per-use spawn consumer: HFX2-L10 makes caller spend fields a `spend-override-unsupported` refusal; settings resolve spend as repo-local level override > global level override > repo-local role default > global role default > spawn preference/detection. | _caller_spend_override_refusal; _resolve_harness_dispatch | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
-| The install seeding consumer (copy-if-missing global file). | seed_agentic_settings | [../install/runtime.py](../install/runtime.py) |
+| The gate policy primitives the gateDelegation parse builds on (named policies, rule construction, seam verdict binding). | L1-L120 | [gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
+| The harness registry whose ids bound every harness preference value. | L41-L48 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
+| The boot-snapshot consumer: gateDelegation sourced from the global file at boot with the legacy authority fallback. | parse_orchestration_settings | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| The per-use spawn consumer: HFX2-L10 makes caller spend fields a `spend-override-unsupported` refusal; settings resolve spend as repo-local level override > global level override > repo-local role default > global role default > spawn preference/detection. | _caller_spend_override_refusal; _resolve_harness_dispatch | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| The install seeding consumer (copy-if-missing global file). | seed_agentic_settings | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 | The supervisor sweep's `SupervisorContext` construction reads `settings.supervisor.*` per loop iteration (interval, enable flag, staleness cutoff, redeliver rate limit, signal cooldown, redeliver budget) — the per-use read contract this loader guarantees. | `_supervisor_context`; `supervisor_loop` | [../serving/app.py](../serving/app.py.md) |
 | The MCP tool choke point reads `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS` (this file's constant, not `settings.supervisor.stale_cutoff_seconds`) for the opportunistic banner check (260707-HFX2-L2 R5) — a deliberate simplification so the banner check needs no settings read on every tool call. | `_tool_payload` | [../mcp/tools/base.py](../mcp/tools/base.py.md) |
 | The escalation ladder's per-use consumer: `_supervisor_context()` resolves `settings.escalation.sla_seconds`/`rung_seconds`/`respawn_after_rung` into `SupervisorContext`'s plain-primitive escalation knobs every sweep. | `_supervisor_context` | [../serving/app.py](../serving/app.py.md) |
@@ -255,6 +270,11 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: replaced the stale static-dispatch description
+  with the split authority contract: settings parse model/effort as values, native adapters perform
+  dynamic model-gated launch validation, and explicit non-native mappings keep legacy validation.
+  Added the missing governing-overview backlink; verification metadata remains pinned until
+  closeout stamps the L2 code commit.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: recorded the merged-settings effort
   validation rule that preserves declared vocabularies while leaving builtin Codex dynamic.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

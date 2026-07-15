@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T20:05+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,8 +27,10 @@ used by hosted control bridges.
 `HarnessProtocolAdapter` now includes synchronous cached `advertise` beside start, snapshot,
 subscription, correlated submit/respond/reconcile, and shutdown. `HarnessCapabilityDiscoverer`
 separates transient token-free enumeration from a running session. `HarnessCapabilityPort` declares
-the L1/L2/L3 progression: advertise, native launch knobs, and honest model/effort setters. The
-registry returns a concrete unsupported adapter when no factory exists, and the reducer enforces
+the L1/L2/L3 progression: advertise, native launch knobs, and honest model/effort setters.
+`LaunchableHarnessProtocolAdapter` combines the running protocol, transient discovery, and launch
+knob seams required by the hosted L2 runner. The registry returns a concrete unsupported adapter
+when no factory exists; that adapter also refuses launch-knob requests. The reducer enforces
 identity plus monotonic event sequence while preserving additive raw event detail.
 
 ### Conventions
@@ -43,14 +45,15 @@ discovery is asynchronous because it owns a transient protocol process. Built-in
   timing fallback is introduced here.
 - Unsupported adapters fail catalog reads loudly and report unsupported delivery without pretending
   capability support.
+- A runner requiring native launch configuration must receive the combined launchable protocol;
+  unsupported/custom adapters cannot accidentally inherit a built-in launch path.
 - Capability/protocol/identity mismatches fail before state adoption.
 - Possible-send disconnects remain ambiguous and never authorize automatic duplicate submission.
 - Durable inbox acceptance and explicit consumption remain distinct from adapter delivery evidence.
 
 ### Todos
 
-Concrete L2 launch-knob and L3 mutation implementations remain intentionally outside this L1
-foundation.
+Concrete L3 mutation implementations remain; L2 now uses this combined launchable seam.
 
 ## Docs References
 
@@ -68,8 +71,9 @@ separate consumer of the adapter protocol.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Normalized model/effort catalogs, ACP-style options, launch knobs, and set evidence are declared separately. | L23-L150 | [harness_capabilities.py](harness_capabilities.py) |
-| The bridge validates handshake identity/version/capabilities before adopting adapter state. | L85-L104; L200-L213 | [harness_control_bridge.py](harness_control_bridge.py) |
+| Normalized model/effort catalogs, ACP-style options, owned launch knobs, and set evidence are declared separately. | L73-L156 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
+| The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. | L152-L191 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
+| The bridge validates handshake identity/version/capabilities before adopting adapter state. | L85-L104; L200-L213 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 
 ## Cross-Repo References
 
@@ -81,6 +85,8 @@ No external repository boundary is implemented by this protocol contract.
 
 ## Update History
 
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented the combined launchable adapter
+  protocol and explicit unsupported launch-knob refusal used by the hosted runner.
 - 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented cached advertise, transient
   discovery, and the progressive launch/set capability port while preserving the explicit
   unsupported and hosted-bridge boundaries.

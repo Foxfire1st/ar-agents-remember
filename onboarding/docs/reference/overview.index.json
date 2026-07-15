@@ -31,7 +31,7 @@
     "tools"
   ],
   "hotPath": {
-    "summary": "The reference route now governs structured Claude/Codex/Pi capability negotiation and the complete serving reload boundary. Exact versions remain fixture/smoke evidence; R9 compatibility is limited to the two optional adapter-delivery fields, and R10 resource performance remains queued. Reference contract for harnesses, MCP tools, and settings. L4 documents the three-state dispatch protocol, hosted readiness, and catalog concurrency ruling. Current harness documentation covers the declared-menu versus builtin-Codex effort policy and the additive control-bridge boundary.",
+    "summary": "For native launch questions, read `harnesses.md` for the dynamic catalog, model-gated effort, duplicate-selector refusal, and Claude/Codex/Pi launch/evidence matrix; read `settings-json.md` for the complete `roles.<role>` / `rolesPerLevel` model-and-effort authority. Exact harness versions are fixture/smoke evidence, not production pins. Structured hosted dispatch, complete serving reload, the bounded R9 compatibility exception, and queued R10 resource observations remain separate contracts.",
     "candidateHints": [
       "docs/reference",
       "docs/reference/harnesses.md",
@@ -48,19 +48,23 @@
       "settings-json",
       "skills.md",
       "skills",
+      "roles.<role>",
+      "rolesPerLevel",
       "R10",
-      "MCP",
-      "bc2958ae2d90ab3d34bffde5402d2dc21100e41b",
-      "effortFlagValues",
+      "5fa7026c644edfb4eb884173b64d31c9a14a6585",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T23",
       "lastVerifiedCommitHash",
+      "fa7026c644edfb4eb884173b64d31c9a14a6585",
       "lastVerifiedCommitDate",
+      "MCP",
+      "ACPUI",
       "T16",
       "PHA",
       "T12",
+      "T14",
       "TRH"
     ]
   },

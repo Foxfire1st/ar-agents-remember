@@ -235,7 +235,7 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 648,
+    "sourceFilesInScope": 650,
     "fileSidecars": 142,
     "childRoutes": 16
   },
@@ -322,7 +322,7 @@
     "findings"
   ],
   "hotPath": {
-    "summary": "260713-PHA-L6 extends the package's protocol-backed serving contract with structured Claude, Codex, and Pi capability negotiation and a strict two-field rolling inbox-reader compatibility seam. The full cutover reload boundary includes the daemon, MCP-owning clients, per-session runners and adapters, and browser tabs; R10 resource performance remains queued. 260713-PHA-L4 adds four unregistered serving modules for the pinned Pi 0.80.6 RPC boundary: strict framing/schema parsing, owned subprocess transport, normalized event settlement, and the L1-backed adapter with exact-session reconnect a...",
+    "summary": "260714-ACPUI-L2 connects the existing role-settings authority to the native hosted launch boundary. A role-configured Claude, Codex, or Pi seat carries one complete typed `ResolvedLaunch`; the hosted runner performs token-free per-install discovery, validates effort under the selected model, refuses duplicate adapter-owned selectors before discovery, and applies Claude flags, Codex `thread/start` configuration, or Pi's provider-qualified flags before the configured vendor session starts. Missing selections refuse before tmux; later discovery/startup failures remain queryable as exact failed...",
     "candidateHints": [
       "mcp",
       "mcp/tests",

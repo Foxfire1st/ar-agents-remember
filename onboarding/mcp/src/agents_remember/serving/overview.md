@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-15T20:04+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa`|
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated            | 2026-07-15T23:16+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -119,6 +119,16 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+260714-ACPUI-L2 carries one settings-resolved `ResolvedLaunch{harness, model, effort, workspace}`
+through the shared opener into the exact-session runner. Before a configured vendor session starts,
+the runner applies adapter-owned selector conflict preflight, performs token-free dynamic discovery,
+validates model plus model-local launch effort, then starts Claude with native `--model/--effort`,
+Codex with `thread/start` model/config effort, or Pi with provider-qualified
+`--model/--thinking`. Effective startup evidence is honest: Pi echoes both, Codex echoes thread
+model/effort, and Claude echoes model while its effort remains catalog-validated native-flag
+evidence because stream-json has no effort echo. Failures remain addressable as
+failed/rejected/exact `bridgeError`; normalized native model/effort is never composer-pasted.
 
 260714-ACPUI-L1 adds one normalized, own-adapter capability layer without ACP transport. Claude
 `list_models`, Codex paginated `model/list`, and Pi `get_available_models` dynamically advertise
@@ -245,21 +255,31 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 - `harness_capabilities.py` and `harness_control_adapter.py` — the normalized capability contract:
   `CapabilitySnapshot` contains dynamic `ModelCapability` rows with model-local `EffortOption`
-  menus; ACP Sense 1 projects category-keyed select options; `LaunchKnobs` and `SetResult` establish
-  the progressive L2/L3 boundary. `HarnessProtocolAdapter.advertise()` is a synchronous cached read,
-  while `HarnessCapabilityDiscoverer.discover()` is the transient native enumeration seam. No ACP
-  transport, global effort enum, or composer-paste fallback belongs in this port.
+  menus; ACP Sense 1 projects category-keyed select options; `LaunchKnobs` includes adapter-owned
+  selectors and `SetResult` establishes the L3 evidence boundary. The combined launchable adapter
+  seam joins synchronous cached advertise, transient native discovery, and native launch knobs. No
+  ACP transport, global effort enum, or composer-paste fallback belongs in this port.
+
+- `harness_launch.py`, `harness_control_factories.py`, and `harness_control_runner.py` — carry the
+  complete typed settings selection across tmux, reject adapter-owned selector conflicts before
+  discovery, validate against the live model/model-local effort catalog, construct a fresh
+  configured adapter, and preserve exact failure evidence over IPC. Roleless Codex uses the
+  authenticated catalog default temporarily until L4 supplies request/default authority.
 
 - `claude_stream_capabilities.py`, `claude_stream_protocol.py`, `claude_stream_startup.py`, and
   `harness_control_claude.py` — correlate `control_request/list_models` before the steady-state
   stdout reader starts, validate the live catalog/current-model relationship, map only each model's
   advertised effort tokens, and retain the normalized catalog for running advertise. Cold discovery
-  performs initialization plus catalog enumeration and sends no bootstrap prompt.
+  performs initialization plus catalog enumeration and sends no bootstrap prompt. Initial model and
+  effort use native `--model`/`--effort`; model echo is verified, while absent effort echo is
+  recorded honestly rather than fabricated.
 
 - `codex_app_server_state.py`, `codex_app_server_session.py`, and
   `codex_app_server_adapter.py` — preserve descriptions and model-local reasoning efforts from every
   `model/list` page (including hidden rows), retain the catalog at connect, and expose a cold
-  initialize/list-only discovery path that starts neither a thread nor a turn.
+  initialize/list-only discovery path that starts neither a thread nor a turn. Initial model and
+  model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
+  readiness; later turns reuse the resolved effort.
 
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
   `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
@@ -267,7 +287,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   exact-session reconnect, and post-cursor reconciliation without resend. ACPUI-L1 also consumes
   `get_available_models`, preserves provider-qualified model identity, derives model-gated thinking
   menus using Pi's own map rules, strips provider headers from retained state, and makes transient
-  discovery fail-clean and prompt-free.
+  discovery fail-clean and prompt-free. Configured startup uses exact provider-qualified
+  `--model` plus native `--thinking` and requires both effective values to echo, exposing Pi's
+  silent-clamp asymmetry rather than trusting it.
 
 - `app.py` — `create_app(config, *, interval, heartbeat, now, before_tick,
   refresh_provider_state, refresh_landing_state, watch_changes)` builds the FastAPI app
@@ -560,21 +582,15 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 - `leaf_ref_validation.py` — the HFX-L4 serving adapter for terminal catalog write surfaces: resolves
   qualified ids, doc ids, and unambiguous legacy stems/slugs through `worktrees.leaf_refs`, returning the
   canonical qualified leaf key that opener/attach routes persist.
-- `terminal_opener.py` — the shared **L2 hosted-session opener**: `open_terminal_session(...)` resolves
-  the launch (`resolve_terminal_launch` — a harness **id** to its fixed argv, moved here from `app.py`;
-  since 260703-L16 the knob-application point: env `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` map onto the
-  harness's registry flags, out-of-vocabulary effort/model REFUSE naming the harness and its valid
-  sets, `launch_args` appends verbatim, and ids resolve against an injected EFFECTIVE registry —
-  builtin merged with `orchestration.harnesses`),
-  claims `leaf_key` under the role-scoped per-(leaf, role) uniqueness rule **before** any spawn (a taken
-  leaf returns `leaf-taken` without ensuring tmux or mutating the catalog), seeds `env` at
-  `TerminalHost.ensure` (the L2 knob-injection seam), and upserts a durable `TerminalCatalogEntry`
-  carrying write-once spawned-by provenance (L16 adds the free-form escape hatch —
-  `launchArgs`/`promptKeywords`/`sessionCommands`, recorded verbatim — and the resolved dispatch
-  level `spawnLevel`/`spawnLevelSource`). Transport-agnostic (`OpenTerminalResult` → HTTP 200/409/400
-  in `app.py`, a validated payload in the MCP tool). The ONE opener both the dashboard `POST
-  /api/terminal/{session}` route and the agent-facing `spawn_agent_session` tool compose — no parallel
-  spawn path.
+- `terminal_opener.py` — the shared hosted-session opener: `open_terminal_session(...)` resolves a
+  harness **id** to settings-owned base argv, carries an optional typed
+  `ResolvedLaunch{harness,model,effort,workspace}` into the exact-session runner, claims `leaf_key`
+  under role-scoped per-(leaf, role) uniqueness before spawn, seeds namespaced provenance env at
+  `TerminalHost.ensure`, and upserts the durable catalog row with write-once role/lineage/free-form/
+  resolved-selection provenance. Static knob mapping is retained only for explicitly declared
+  settings-defined non-native harnesses; native Claude/Codex/Pi selection is dynamically validated
+  and applied by their adapters. Dashboard `POST /api/terminal/{session}` and
+  `spawn_agent_session` compose this same opener—no parallel spawn path.
 - `terminal_paste.py` — the **capture-verified server-side paste** (L2, hardened by 260707-HFX-L3):
   `TerminalPaster.paste(tmux_name, text, submit=…)` mirrors the frontend
   `pasteAndConfirm`/`submitAndConfirm` over tmux primitives — the payload rides STDIN into
@@ -593,19 +609,13 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   wrapper around the existing private `_tmux_capture_pane`, so turn-state classification
   (`terminal_liveness.py`) reads the identical history-inclusive pane view paste verification
   already uses — one capture-command shape in the codebase, not two.
-- `harnesses.py` — the **harness launch registry + per-harness knob mapping** (slice 6e-2b;
-  260703-L16): the curated `HARNESSES` set (Claude Code / Codex / Pi.dev) + `find_harness` /
-  `is_detected` / `detect_harnesses` (injectable, call-time `shutil.which`; both accept an injected
-  EFFECTIVE registry since the `orchestration.harnesses` openness ruling — good defaults, not a
-  wall), plus the L16 knob surface: per-harness `model_flag`/`effort_flag`+values/session-vehicle
-  effort values (claude: `--model`/`--effort` with `low..max` on the flag and `ultracode` via a
-  post-launch `/effort` paste; codex/pi env-only) and the enforcement helpers (`knob_argv`,
-  `effort_session_commands`, `invalid_effort_detail`/`invalid_model_detail` — the
-  silent-degrade-prevention refusals, `unknown_harness_detail` — the teach-it-via-settings refusal
-  naming `docs/reference/harnesses.md`). The data behind `GET /api/harnesses` detection + the
-  `kind="harness"` opener resolution — a harness **id** is on the wire, the fixed argv stays here
-  or in the fail-loud settings family (the 6d posture). Deliberately *not* a mirror of
-  `scripts/sync-skills.py`.
+- `harnesses.py` — the harness id/base-command registry and injectable executable detection behind
+  `GET /api/harnesses` and opener resolution. Built-in Claude/Codex/Pi rows intentionally contain no
+  static native model/effort vocabulary or mapping; the dynamic capability port and adapter-owned
+  launch channels are authoritative. The older mapping helpers remain only for explicit
+  settings-defined non-native harnesses. A harness id is on the wire, fixed argv stays in registry
+  or validated settings, and normalized native model/effort never becomes a generated session
+  command or paste.
 - `supervisor.py` — the **260707-HFX2-L2** deterministic supervisor sweep, now also the
   **260707-HFX2-L4** P-15 tier-3 ladder + dead-man-respawn host and the **260707-HFX2-L8**
   bounded dead-seat-storm terminator: `SupervisorContext` (the
@@ -656,33 +666,6 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `_push_text` header.
 - `__init__.py` — package docstring only; `delta`/`projector` stay importable without FastAPI.
 
-- `harness_control_models.py` / `harness_control_adapter.py` — protocol-neutral identity,
-  handshake, normalized state, correlated receipts, reconciliation, and explicit adapter registry.
-  Missing vendor registrations are `unsupported`; additive raw detail is retained and pane/log text
-  is diagnostic only.
-- `harness_control_bridge.py` / `harness_control_queue.py` — one bridge per exact hosted session and
-  one bounded ordered queue for terminal and durable whole-message inputs. Acceptance is distinct
-  from completion; ambiguous sends are reconciled without automatic resend, runner exits resolve and
-  drain callers, and unsupported receipts remain bounded.
-- `harness_control_ipc.py` / `harness_terminal_surface.py` — user-private exact-identity Unix IPC
-  plus readable transcript/input rendering. The terminal surface owns uncommitted drafts: automated
-  delivery cannot inject into, submit, or discard a draft under R11.
-- `codex_app_server_protocol.py` / `codex_app_server_session.py` — the structured Codex JSON-RPC
-  transport and initialize/model/effort/thread session contract. The 0.144.3 fixture/smoke value
-  is historical evidence only; consumed structured identity and fields decide compatibility.
-- `codex_app_server_adapter.py` / `codex_app_server_state.py` — the 260713-PHA-L3 normalized
-  adapter: correlated turns, explicit steer-or-queue policy, structured approvals/elicitation,
-  status/completion mapping, bounded evidence, and reconnect reconciliation without blind resend.
-
-- `claude_stream_protocol.py` / `claude_stream_startup.py` / `claude_stream_transport.py` — the
-  structured Claude Code stream-json path: installed/current subprocess launch, structured
-  `control_request/initialize` + `system/init` readiness, capability-driven commands,
-  and bounded stdio lifecycle with stderr discarded. `claude_stream_state.py` and
-  `harness_control_claude.py` preserve the distinction between replay acceptance and terminal result,
-  route permission/question interactions, reconcile ambiguous disconnects without resend, and keep
-  API-429 terminal frames failed while retaining only safe status metadata. The adapter remains
-  unregistered; production cutover is L5 scope.
-
 ## Invariants And Boundaries
 
 ### Current L5 authority boundary
@@ -694,6 +677,12 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   explicit recipient `consume` remains the sole acknowledgement.
 - Legacy raw-TUI and unsupported custom sessions remain explicitly unsupported, with no compatibility
   raw-paste or timing fallback.
+- `settings.json`/role resolution supplies the complete typed native initial selection; dynamic
+  adapter advertise validates it before the configured vendor session starts.
+- Native Claude/Codex/Pi model and effort are applied only through their owned launch channels.
+  Free-form duplicate selectors refuse before discovery, and normalized selection is never pasted.
+- Startup acceptance remains protocol-honest: Codex/Pi echo effective values; Claude has no effort
+  echo and reports exactly that narrower evidence.
 
 The older route bullets below preserve historical implementation context and must not be read as
 current hosted-session authority.
@@ -822,6 +811,11 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the typed settings-resolved launch
+  path, pre-discovery owned-selector refusal, token-free dynamic validation, Claude/Codex/Pi native
+  launch channels and asymmetric acceptance evidence, persistent exact launch failures, roleless
+  Codex temporal default, and retirement of static/paste native knob mapping. Final audit removed
+  a duplicate capability/adapter route inventory so the current contract has one governing home.
 - 2026-07-15T20:04+02:00 — 260714-ACPUI-L1 curator: documented the normalized own-adapter
   capability port, dynamic token-free Claude/Codex/Pi catalog paths, model-gated effort, cached
   running advertise, and transient prompt-free discovery. Verification metadata remains pinned

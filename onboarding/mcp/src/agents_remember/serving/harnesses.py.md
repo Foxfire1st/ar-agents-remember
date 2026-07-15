@@ -1,14 +1,14 @@
 # mcp/src/agents_remember/serving/harnesses.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/serving/harnesses.py`   |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-14T12:00+02:00                           |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`       |
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
-| governingOverview      | `overview.md`                                     |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/serving/harnesses.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-07-15T23:16+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
@@ -16,88 +16,81 @@
 
 ## Purpose
 
-`harnesses.py` is the **harness launch registry + per-harness knob mapping** (slice 6e-2b;
-knob application 260703-L16): the curated table of TUI coding agents the framework can spawn, plus
-`shutil.which` detection, plus — per harness — how the spawn knobs (`AR_SPAWN_MODEL`/
-`AR_SPAWN_EFFORT`) map onto that harness's concrete CLI. It is the data behind the dashboard launch
-buttons AND the `spawn_agent_session` dispatch seam. Since the L16 registry-openness ruling
-(2026-07-07) the table is **good defaults, not a wall**: the `orchestration.harnesses` settings
-family (parsed in `kernel/agentic_settings.py`, manual in `docs/reference/harnesses.md`) merges
-over it by id — new ids add harnesses, builtin ids can be pre-customized. Deliberately **not** a
-mirror of `scripts/sync-skills.py`'s skill-install targets (those include GUI editors that can't
-run in a PTY).
+Defines the settings-extensible harness id/base-command registry and local executable detection used
+by dashboard and role-based spawn. Native Claude, Codex, and Pi model/effort catalogs and launch
+channels do not live here; their own adapters derive those dynamically.
 
 ## Code Commentary
 
 ### Logic
 
-**260713-PHA-L1 Codex mapping.** The Codex builtin carries `model_flag="--model"` and an effort
-`--config` vehicle with `model_reasoning_effort={value}`. Its effort policy is stripped-non-empty,
-so model-advertised values such as `max` and future non-empty values are forwarded. A settings
-override that declares `effortFlagValues` is instead enumerated and refuses values outside that
-menu; settings declarations are never silently ignored. `knob_argv` renders the optional value template while
-Pi.dev remains the only env-only builtin.
+`Harness` carries the stable id, display name, executable to detect, fixed base argv, origin, and an
+optional legacy mapping surface for explicitly settings-defined non-native harnesses. `HARNESSES`
+contains only base rows for `claude`, `codex`, and `pi`; none carries a static native model/effort
+mapping. `find_harness`, `unknown_harness_detail`, `is_detected`, and `detect_harnesses` resolve the
+built-in or injected effective registry and keep executable detection injectable.
 
-A frozen `Harness` dataclass carries `id` / `name` / `command` (the PATH command to detect) /
-`argv` (the fixed launch argv) plus the L16 knob-mapping fields: `model_flag`, `effort_flag` +
-`effort_flag_values` (the values the flag ACCEPTS), `effort_session_values` +
-`effort_session_command` (values the flag rejects but the running session accepts as a pasted
-command — the `{value}` template renders it), and `defined_in` (`"registry"` for these curated
-defaults, `"settings"` for a new `orchestration.harnesses` id). `HARNESSES` is the curated tuple —
-**Claude Code (`claude`) / Codex (`codex`) / Pi.dev (`pi`)** — in display order, indexed by
-`_BY_ID`; claude carries the full mapping (`--model`, `--effort` with `low|medium|high|xhigh|max`,
-session value `ultracode` → `/effort {value}`), codex/pi carry none (env-only). Helpers:
+`invalid_model_detail`, `invalid_effort_detail`, `knob_argv`, and
+`effort_session_commands` remain the compatibility port for settings-defined non-native harnesses
+that explicitly declare flags, enumerated/non-empty policy, or a session command. They never supply
+a fallback vocabulary or paste path for the three native adapters. Native selections are validated
+against the dynamic capability catalog in `harness_launch.py` and applied through each adapter's
+`launch_knobs` method.
 
-- `find_harness(id, *, registry=None)` — lookup in the builtin table OR an injected EFFECTIVE
-  registry (`AgenticSettings.harnesses`).
-- `unknown_harness_detail(id, *, registry=None)` — the loud teach-it-via-settings refusal text
-  (names the known set + the manual; never a crash).
-- `is_detected` / `detect_harnesses(*, which=None, registry=None)` — call-time `shutil.which`
-  detection over the builtin or effective set, preserving order.
-- `effort_vocabulary(harness)` — flag values + session values (empty = no vocabulary).
-- `invalid_effort_detail(harness, effort)` — `None` when fine; the dispatch refusal text naming
-  the harness and BOTH value sets otherwise. Mapping-less BUILTINS pass everything (documented
-  env-only); a mapping-less SETTINGS-defined harness refuses with declare-or-launchArgs guidance.
-- `invalid_model_detail(harness, model)` — refuses only a settings-defined harness with no
-  `modelFlag` (explicit over guessing); model names are never enum-validated.
-- `knob_argv(harness, *, model, effort)` — the extra argv the knobs map to (session-vocabulary
-  effort values stay OFF the flag); `effort_session_commands(harness, effort)` — the post-launch
-  paste line(s) delivering a session-level effort value.
+### Conventions
+
+Only the harness id crosses serving request boundaries. Base argv comes from this registry or the
+validated `orchestration.harnesses` settings family. Values are discrete argv elements, never shell
+interpolation. `which` is resolved at call time or injected for deterministic tests.
 
 ### Invariants And Boundaries
 
-- **Curated defaults, settings-extensible.** The builtin set is hand-listed; users extend/override
-  it ONLY through `orchestration.harnesses` (fail-loud loader), never by wire input.
-- **Fixed argv, id on the wire (the 6d posture).** Callers send a harness **id**; argv lives in the
-  registry or the validated settings entry, so there is no command-injection surface. Knob values
-  are appended as discrete argv elements — never shell-interpolated.
-- **Silent-degrade prevention (the L16 defect).** The claude CLI warns-then-silently-degrades on
-  unknown `--effort` values (probed 2026-07-07), so `invalid_effort_detail` refuses BEFORE launch;
-  the two-vehicle vocabulary keeps `ultracode` (a session-only mode) off the flag entirely.
-- **Detection is injectable + deterministic.** `which` defaults to `shutil.which` resolved at call
-  time, so the unit tests pin detection regardless of what is installed on the test machine.
-- **Pure / no I/O beyond `which`.** No FastAPI, no PTY, no settings reads — `agentic_settings.py`
-  builds the effective registry; `terminal_opener.py`/`tools/terminal.py` enforce at spawn.
+- Built-in native model/effort catalogs are never hardcoded here; L1 advertise is authoritative.
+- Native model/effort is never synthesized into `effort_session_commands` or composer paste.
+- Settings-defined non-native mappings remain explicit and fail loudly when incomplete or
+  out-of-vocabulary; AR does not guess vendor flags.
+- The curated registry is extensible through settings but is not a wire-command injection surface.
+- This module performs no subprocess launch beyond executable presence lookup.
+
+### Todos
+
+No known follow-up in this file; L4 consumes the same id/detection surface while adding serving
+selection fields.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository, so no live domain-documentation
+pass was available for this update.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The opener that applies `knob_argv`/`launch_args` and enforces the vocabularies at launch resolution. | [serving/terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| The dispatch layer that pre-validates knobs and delivers session commands. | [mcp/tools/terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| The `orchestration.harnesses` parser that builds the effective registry over these defaults. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
-| The `GET /api/harnesses` + open endpoints that consume the effective registry. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The terminal host the resolved argv is spawned through (fixed-argv posture). | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
-| The serving layer this joins (localhost transport). | [serving overview](overview.md) |
-| The spawn-surface manual documenting entries, vocabularies, and refusals. | [docs/reference/harnesses.md](agents-remember/docs/reference/harnesses.md) |
-| The skill-install target list this is intentionally *not* a mirror of. | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
+The opener consumes only base command/custom compatibility mapping, while the normalized launch
+path owns dynamic native selection.
 
-### 260713-PHA-L6 Registry Boundary
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The shared opener resolves id/detection/base argv and passes typed native selection to the runner, reserving static mappings for explicit legacy inputs. | L70-L124; L311-L395 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The launch module validates native model and model-local effort against dynamic advertise and rejects duplicate owned selectors. | L78-L182 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
+| The adapter factory constructs only the three native protocol adapters and leaves unknown/custom ids unsupported. | L19-L57 | [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
+| The settings loader builds the effective registry and is the authority for explicit custom mappings. | L682-L824 | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 
-Codex's model-advertised effort is not tied to one package release; the structured adapter owns
-compatibility evidence and the registry remains the launch/effort vocabulary.
+## Cross-Repo References
+
+No external repository boundary is implemented by this local registry.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: removed the obsolete static native
+  model/effort and normalized-paste description; documented base-command/detection ownership,
+  adapter-owned dynamic native launch, and the retained explicit non-native settings extension.
+  Final audit restored every earlier history entry byte-for-byte below this prepend.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed the stale Codex package-version claim from the
   registry commentary.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: corrected the Codex effort policy to

@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -21,6 +21,15 @@ terminal-session catalog operations. It models the hosted-chat/terminal leaf rea
 — since L2 — the agent-facing `spawn_agent_session` dispatch tool.
 
 ## Code Commentary
+
+### 260714-ACPUI-L2 Launch Response Contract
+
+`SpawnAgentSessionStatus` adds `launch-selection-invalid` for an incomplete settings-resolved
+native launch. `resolvedModel` and `resolvedEffort` continue to expose the resolved selection in
+the response and catalog provenance. The free-form `sessionCommands` field now explicitly means
+user-authored launch configuration only: the dispatch path never synthesizes normalized
+model/effort into it. Dynamic catalog failures after the structural preflight remain control-runner
+failure evidence rather than additional pre-spawn enum values.
 
 ### 260707-HFX2-L17 Response Contract
 
@@ -103,18 +112,18 @@ No relevant external/domain documentation found; this is an internal response co
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The response fields are defined by the local MCP payload and catalog assignment behavior. | L9-L21 | [terminal.py](terminal.py) |
+| The response fields are defined by the local MCP payload and catalog assignment behavior. | L9-L21 | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The attach payload builder returns the exact fields modeled here, including leaf-ref refusal statuses and details. | attach_terminal_session_to_leaf_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
-| The spawn payload builder returns the `SpawnAgentSessionResponse` fields incl. leaf-ref refusals, spawned-by provenance, and context-delivery outcome. | spawn_agent_session_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
-| The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | L82-L88; L111-L114 | [tool_registry.py](tool_registry.py) |
-| Conformance coverage includes a representative missing-session (attach) and caller-spend-override (spawn) refusal payload for the models. | L88-L107 | [../../../tests/test_tool_response_conformance.py](../../../tests/test_tool_response_conformance.py) |
-| `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | session_retire_payload; session_rename_payload | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
-| The response registry maps `session_retire`/`session_rename` to these strict models. | TOOL_RESPONSE_MODELS | [tool_registry.py](tool_registry.py) |
+| The attach payload builder returns the exact fields modeled here, including leaf-ref refusal statuses and details. | attach_terminal_session_to_leaf_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| The spawn payload builder returns the `SpawnAgentSessionResponse` fields incl. leaf-ref refusals, spawned-by provenance, and context-delivery outcome. | spawn_agent_session_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | L82-L88; L111-L114 | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Conformance coverage includes a representative missing-session (attach) and caller-spend-override (spawn) refusal payload for the models. | L88-L107 | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
+| `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | session_retire_payload; session_rename_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| The response registry maps `session_retire`/`session_rename` to these strict models. | TOOL_RESPONSE_MODELS | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
 
 ## Cross-Repo References
 
@@ -136,6 +145,10 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented the additive
+  `launch-selection-invalid` status, resolved-selection provenance, and the user-authored-only
+  `sessionCommands` boundary. Verification metadata remains pinned until closeout stamps the L2
+  code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
