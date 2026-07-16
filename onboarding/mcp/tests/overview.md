@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-16T06:26+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-07-16T07:27+02:00 |
+| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25`|
+| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
 
 ## Purpose
 
@@ -59,6 +59,16 @@ without the injected snapshot, cache retention bounded to live contracts, chmod-
 utime-pinned-rewrite invalidation via ctime, and parse failures retried every build.
 
 ## Hot Path Summary
+
+260714-ACPUI-L5 adds the final live-conformance and Claude discovery-isolation regressions. Claude
+fake-transport cases cover separate variadic/repeated and equals-attached MCP selectors, the `--`
+suffix boundary, exactly one strict empty discovery config, and byte-preserved normal startup. The
+explicit-opt-in Codex live case performs dynamic initialize/model-list discovery without a thread or
+token event, validates a settings-shaped launch pair, then spends exactly two bounded turns to prove
+queued model/effort promotion and subsequent-turn retention on the same PID/thread. Its recorder
+retains only method, selection, thread, version, timing, and numeric token-usage evidence; ordinary
+suites skip the token-spending case. Captured versions, catalog rows, and counts remain live evidence
+rather than production constants.
 
 260714-ACPUI-L4 tests the frozen daemon consumer boundary and its production races. Capability
 catalog cases prove token-free current-environment discovery, install fingerprint invalidation,
@@ -136,6 +146,10 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: added route coverage for the complete Claude
+  discovery-selector grammar and normal-launch preservation, plus the explicit-opt-in two-turn
+  Codex live advertise/launch/queued-set/retention proof with sanitized evidence recording.
+  Verification metadata remains pinned until closeout stamps the L5 code commit.
 - 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: added route coverage for install/auth cache
   fencing, failed-refresh quarantine, complete-pair launch, live-reopen/dead-replacement truth,
   cross-process one-process publication, exact-session first-byte ambiguity, request-id idempotency,

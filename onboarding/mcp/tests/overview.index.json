@@ -238,7 +238,7 @@
     "hosted"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L4 tests the frozen daemon consumer boundary and its production races. Capability catalog cases prove token-free current-environment discovery, install fingerprint invalidation, bounded single-flight retention, failed-refresh quarantine/recovery, and protection of a later concurrent success. API/client/IPC/queue cases prove strict normalized advertise/set parsing, first-byte ambiguity without blind retry, whole UTF-8 multiline submit, pending and retained request-id idempotency, retained-known reconciliation without native resend, raw-free public serialization, and liveness-fir...",
+    "summary": "260714-ACPUI-L5 adds the final live-conformance and Claude discovery-isolation regressions. Claude fake-transport cases cover separate variadic/repeated and equals-attached MCP selectors, the `--` suffix boundary, exactly one strict empty discovery config, and byte-preserved normal startup. The explicit-opt-in Codex live case performs dynamic initialize/model-list discovery without a thread or token event, validates a settings-shaped launch pair, then spends exactly two bounded turns to prove queued model/effort promotion and subsequent-turn retention on the same PID/thread. Its recorder re...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",
