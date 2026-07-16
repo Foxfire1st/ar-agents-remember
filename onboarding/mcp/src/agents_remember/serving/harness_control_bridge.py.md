@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:19+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,8 @@ normalized snapshots/transcripts.
 ### Logic
 
 Start refuses identity, protocol, readiness, or capability mismatches and force-cleans a rejected
-adapter. `set_model` and `set_effort` require a running bridge and delegate to the same command queue
+adapter. `advertise` reads the already-running exact adapter instance and refuses outside running
+state. `set_model` and `set_effort` require that same running bridge and delegate to the command queue
 as prompt submission, interaction response, reconciliation, and stop. Submission receipts remain
 distinct from terminal completion; reconciliation and explicit unknown resolution handle ambiguous
 sends. Event reduction and transcript retention are bounded. Unexpected queue failures publish a
@@ -39,6 +40,8 @@ generic evidence validation/ordering belongs to the queue.
 ### Invariants And Boundaries
 
 - The bridge is control authority; pane content is never used to infer readiness or acceptance.
+- Live advertise addresses this exact adapter instance; pre-session cached discovery is owned by a
+  separate catalog and is never substituted here.
 - A model/effort mutation cannot bypass the serialized queue or race a prompt accepted through this
   bridge.
 - No automatic resend follows a disconnect after a possible send.
@@ -46,7 +49,7 @@ generic evidence validation/ordering belongs to the queue.
 
 ### Todos
 
-None known for the L3 bridge seam.
+None known for the L4 bridge seam.
 
 ## Docs References
 
@@ -65,6 +68,7 @@ The protocol owns vendor-specific setters; the queue owns order and result valid
 | --- | --- | --- |
 | The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | L31-L48; L157-L173 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The command queue serializes both setters and validates every returned `SetResult`. | L73-L180; L301-L386; L476-L508 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| Private IPC exposes bridge advertise/set actions under the same exact identity. | L127-L178 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 
 ## Cross-Repo References
 
@@ -82,6 +86,9 @@ raw vendor detail as evidence without promoting pane diagnostics to authority.
 
 ## Update History
 
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented exact-running-adapter advertise
+  beside the already ordered set, submit, and reconcile operations while keeping pre-session cache
+  ownership separate.
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented bridge-level model/effort methods,
   their shared command ordering with prompts and interactions, and the adapter/queue ownership split.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented cross-adapter bridge lifecycle and receipt semantics.

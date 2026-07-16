@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T17:52:13+02:00 |
-| lastVerifiedCommitHash | `e35584a2efec5f2b4eb5ac7c4ee9a129757c92b0` |
-| lastVerifiedCommitDate | 2026-07-14T17:54:34+02:00|
+| lastUpdated | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,19 +17,25 @@
 ## Purpose
 
 Provides user-private Unix-domain-socket IPC for one exact-session bridge, with bounded JSON-line
-requests and explicit handshake, snapshot, submit, respond, reconcile, transcript, and stop calls.
+requests and explicit snapshot, live advertise, model/effort set, submit, respond, reconcile,
+transcript, and stop actions.
 
 ## Code Commentary
 
+### Logic
+
 Endpoint names hash the complete control identity. Runtime directories are `0700`, sockets `0600`,
 and non-socket replacements are refused. Every request validates protocol and identity before
-dispatch; malformed, unknown, oversized, and wrong-session actions fail loudly. After accepted
-dispatch, the response lifecycle contains only peer-loss `BrokenPipeError` and
-`ConnectionResetError` from `writer.write`/`drain` and cleanup `close`/`wait_closed`; a client
-timeout cannot become an unhandled loop exception. IPC exposes bridge receipts and reconciliation
-without making the socket a second control authority.
+dispatch. `advertise`, `set-model`, and `set-effort` serialize the bridge's normalized capability
+and `SetResult` types; submit and reconcile retain full internal receipt evidence. After accepted
+dispatch, narrow peer-loss exceptions are contained while the bridge remains the truth owner.
 
-## Invariants And Boundaries
+### Conventions
+
+The wire is one bounded JSON object per line. Actions are kebab-case; payload field names are the
+normalized camel-case names. The socket transports commands but does not decide acceptance.
+
+### Invariants And Boundaries
 
 - Same-user filesystem permissions are the local endpoint security boundary.
 - Exact catalog/session identity is required on every request.
@@ -38,17 +44,44 @@ without making the socket a second control authority.
   contained after accepted dispatch; this is not a broad connection-error or fallback boundary.
 - A delayed reply disconnect leaves an ambiguous accepted submission reconcilable through the bridge;
   it does not retry or silently degrade the request.
+- Advertise and set address the exact running adapter instance; pre-session discovery does not use
+  this socket.
 - Endpoint transport is replaceable behind the protocol contract.
+
+### Todos
+
+None known for the L4 private IPC action set.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository, so no live domain-documentation
+pass was available for this update.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Bridge served by IPC. | [harness_control_bridge.py](harness_control_bridge.py) |
-| Additive endpoint metadata. | [terminal_catalog.py](terminal_catalog.py) |
-| IPC regression coverage. | [test_harness_control.py](../../../tests/test_harness_control.py) |
+The bridge supplies ordered native truth and the blocking client applies first-byte retry safety.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The bridge exposes live advertise and ordered setter operations only while running. | L158-L202 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | L58-L88; L205-L280 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | L988-L1285 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+
+## Cross-Repo References
+
+No external repository boundary is implemented by the local exact-session socket.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented exact-session advertise and set
+  actions, normalized serialization, and retained private receipt evidence for ambiguity closure.
 - 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: documented narrow post-dispatch peer-disconnect
   containment during reply and close lifecycle, with delayed-reply reconciliation preserved.
 

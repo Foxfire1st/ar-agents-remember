@@ -5,16 +5,20 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
-| governingOverview      | `../overview.md`                              |
+| lastUpdated            | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`       |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| governingOverview      | `overview.md`                                 |
+
+## Governing Overview
+
+[mcp/tests overview](overview.md)
 
 ## Purpose
 
-`test_terminal_ws.py` covers the Mode B2 WebSocket bridge (slice 6d-2): the pure client-frame
-parser `_apply_terminal_input` and the `@app.websocket("/api/terminal/{session}")` endpoint via
-Starlette's TestClient against a `socketpair`-backed fake host (no real PTY).
+`test_terminal_ws.py` covers the Mode B2 WebSocket bridge and the daemon terminal-open HTTP route:
+client-frame parsing, socketpair-backed PTY attachment, catalog lifecycle, role/leaf behavior, and
+the complete native model/effort launch-selection contract (no real PTY or vendor harness).
 
 ## Code Commentary
 
@@ -32,6 +36,17 @@ The final serving tests cover additive control fields on `GET /api/harnesses` an
 responses while preserving legacy terminal WebSocket behavior. The bridge-era control modules are
 tested separately by `test_harness_control.py`; this route suite pins only the app/catalog projection
 boundary and the absence of production vendor registration.
+
+### 260714-ACPUI-L4 launch-selection and reopen coverage
+
+The HTTP route accepts model and effort only as a complete pair for an AR native harness and carries
+that pair once into `RunnerConfig`. Partial selection, a plain terminal selection, and a non-native
+harness selection all fail before `host.ensure`. Reopening an already-live session with the same
+pair returns the actual retained model/effort and control endpoint; a changed pair returns `409
+launch-selection-conflict` with that same actual row and no second process. Once the host probe says
+the original process is dead, the route opens a fresh generation with the new pair and a new control
+endpoint. Direct concurrent race fencing is covered in `test_terminal_opener.py`; this file pins the
+public HTTP projection of the same shared opener behavior.
 
 L16 review follow-up adds MalformedSettingsScratchTerminalTests: a broken settings.json + kind=terminal open reaches the opener with harnesses=None (builtin fallback), proving the registry load is scoped to harness-resolving requests (L16R-1).
 
@@ -107,15 +122,52 @@ The fake's peer sockets carry a 2s timeout so `read_child_input` never hangs the
 `_config(tmp)` mirrors `test_serving.py` (a `McpRuntimeConfig` over a temp root; the projector
 primes empty). Real PTY/tmux behavior is covered separately by `test_terminal.py` (6d-1).
 
+### Invariants And Boundaries
+
+- Model and effort are an all-or-nothing launch pair for native harness sessions; invalid selection
+  is rejected before any host or catalog spawn mutation.
+- The route and role-based MCP tool compose the same opener. This suite covers the HTTP projection;
+  direct transaction races and role provenance are covered in `test_terminal_opener.py`.
+- Live reopen responses report the process's actual command, pair, and control endpoint. Changed
+  selection conflicts rather than rewriting provenance; dead replacement creates a fresh generation.
+- WebSocket stdin remains raw terminal input and is not the daemon's reliable control-submit API.
+- Existing leaf/role, terminal liveness, image, and landed-inspection behavior remains additive.
+
+### Todos
+
+None known for this leaf.
+
+## Docs References
+
+No Domain Documentation category is configured for this repository, so no live documentation
+source was available for this test-file curation pass.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source was available to cite. | — | — |
+
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The WebSocket endpoint + bridge helpers under test. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The terminal host the bridge drives (faked here). | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
-| The durable terminal catalog injected into the app for route tests. | [serving/terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The serving leaf-ref adapter exercised by invalid opener/attach route tests. | [serving/leaf_ref_validation.py](agents-remember/mcp/src/agents_remember/serving/leaf_ref_validation.py) |
-| The 6d-1 real-PTY/tmux host tests (the other half of Mode B2). | [test_terminal.py](agents-remember/mcp/tests/test_terminal.py) |
+This route suite remains broad, but L4's new authority is narrow: complete-pair carriage and truthful
+live/dead reopen projection over the shared opener.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| A complete native model/effort pair reaches the encoded runner exactly once and is returned as resolved launch truth. | L947-L968 | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
+| Same-pair live reopen preserves the original endpoint; changed-pair reopen conflicts with actual truth; dead replacement uses the new pair and a fresh endpoint. | L970-L1006 | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
+| Partial, plain-terminal, and non-native selections all fail before host ensure. | L1008-L1032 | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
+| WebSocket and catalog cases continue to cover raw PTY framing, parallel attachments, liveness, leaf/role claims, and landed inspection. | L439-L945 | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
+| `TerminalOpenRequest` carries optional model/effort, and the HTTP route validates them into one resolved launch before calling the shared opener. | L348-L365; L945-L991 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| A launch conflict returns 409 with the retained session's actual model, effort, control state, and endpoint. | L1006-L1026 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| Direct opener regressions provide the complementary same/different/dead/concurrent transaction and role-path authority. | L291-L400 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
+
+## Cross-Repo References
+
+No sibling repository is required for this local daemon/open/WebSocket suite.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact
 
@@ -125,6 +177,12 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the complete native launch-pair
+  request, pre-spawn partial/non-native refusal, same-pair live reopen, changed-pair 409 with actual
+  truth, fresh dead replacement, and the HTTP boundary from direct concurrent/role opener coverage;
+  added the governing overview and required reference sections. Body verified against the
+  uncommitted L4 candidate; verification metadata remains pinned to the latest committed source
+  revision until closeout.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented additive harness-control
   projection coverage and its boundary with the standalone bridge conformance suite.

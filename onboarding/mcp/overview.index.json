@@ -235,7 +235,7 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 651,
+    "sourceFilesInScope": 656,
     "fileSidecars": 142,
     "childRoutes": 16
   },
@@ -322,7 +322,7 @@
     "findings"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L3 adds normalized same-session model/effort mutation to the native hosted-control package. `HarnessControlBridge` sends both setters through the same bounded FIFO as prompts, and the queue validates the exact five-value `SetResult` truth contract without inventing an effective value. Claude uses structured stream-json commands plus exact replay/terminal evidence; Codex binds each accepted prompt to its selection epoch and applies pending settings on a fresh `turn/start` without reconnecting; Pi holds mutation, state readback, and refreshed catalog inside one finite evidence tr...",
+    "summary": "260714-ACPUI-L4 freezes the package's daemon-side own-adapter contract. A bounded `HarnessCapabilityCatalog` discovers the installed/authenticated native catalog without a model turn, fingerprints the executable/argv, single-flights by built-in harness, and quarantines the observed entry after failed explicit auth refresh. FastAPI routes expose that normalized catalog, an optional complete launch pair, exact-session advertise and honest setters, whole-message submit, and same-id reconciliation. Live reopen returns retained process truth or conflicts without rewriting it; request-byte ambigu...",
     "candidateHints": [
       "mcp",
       "mcp/tests",

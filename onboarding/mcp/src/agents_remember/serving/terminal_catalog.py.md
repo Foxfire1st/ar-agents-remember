@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -53,7 +53,13 @@ concurrent mutator at first upgrade read, though unique-temp atomic replace prev
 
 ### 260707-HFX2-L12 CS-6 Update
 
-`TerminalCatalog.batch()` is a read-once/write-once unit of work for full-catalog sweeps, and `compact()` reclaims aged `terminated` tombstones while preserving running, exited, and landed/archive rows. Landed row cleanup remains the explicit L11 manual path.
+`TerminalCatalog.batch()` is a read-once/write-once unit of work for full-catalog sweeps and L4
+session-open transactions. It holds both the cross-process file lock and the instance `RLock`
+across the complete body. Same-thread mutators re-enter safely; another request thread cannot see
+the process-wide batch buffer and mistake it for its own nested transaction. Other catalog
+instances may read only the last atomically committed file while the batch is in flight.
+`compact()` reclaims aged `terminated` tombstones while preserving running, exited, and
+landed/archive rows. Landed cleanup remains the explicit L11 manual path.
 
 ### 260713-PHA-L1 additive control metadata
 
@@ -218,6 +224,8 @@ The catalog is JSON-primary and API-shaped: persisted keys use the same camelCas
   L6 role-seat-immutability field); a seat's role is fixed at spawn for its lifetime.
 - Turn-state is classified for `kind == "harness"` rows only (see `terminal_liveness.py`); plain
   `terminal` (shell) rows never carry a meaningful `turn_state`.
+- A batch's file lock and instance lock span read, body, and final write. This is required when the
+  body performs live-process validation plus `ensure` before publishing launch provenance.
 
 ### Todos
 
@@ -258,7 +266,11 @@ No meaningful cross-repo references found.
 
 ## 260712-TRH-L4 Final Candidate
 
-This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+This sidecar was reviewed against the final uncommitted ACPUI L4 candidate. Catalog writers are
+serialized across one read/body/write transaction in both the file-lock and same-instance thread
+domains. A same-instance reader waits behind the held `RLock`; another instance sees the coherent
+last committed atomic-file snapshot until commit. This corrects the older overbroad claim that all
+atomic readers remain lock-free.
 
 ### 260713-PHA-L5 Additive Adapter Projection
 
@@ -267,6 +279,9 @@ vendor identity, pending interaction, event sequence, and raw detail. Legacy raw
 unsupported until a bridge-backed restart; ordinary terminal rows remain unwrapped.
 
 ## Update History
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the cross-process and
+  same-instance batch fence used by live session open, including coherent last-committed reads from
+  other instances and the correction to the earlier lock-free-reader overstatement.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed additive hosted projection and legacy semantics.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented migration-safe control endpoint,
   protocol, and unsupported-state metadata.

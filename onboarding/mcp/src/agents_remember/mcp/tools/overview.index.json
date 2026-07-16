@@ -79,7 +79,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "ACPUI-L2 changes the terminal payload builder from static built-in knob mapping to typed native launch dispatch. Complete role settings become `ResolvedLaunch`; missing model/effort refuses before tmux, and complete values travel to runner-side dynamic model-gated validation. Spawn env and response fields preserve provenance, while normalized model/effort never joins `sessionCommands`. Settings-defined non-native harnesses retain only their explicitly declared legacy mappings, and roleless opens remain selectionless until the serving request layer owns that choice. HFX2-L17 makes the termin...",
+    "summary": "ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request layer owns optional roleless selection. Complete role settings become `ResolvedLaunch`; missing model/effort refuses before tmux, and complete values travel through the same opener to runner-side dynamic model-gated validation. Spawn env and response fields preserve provenance, while normalized model/effort never joins `sessionCommands`. If the selected session id already names a live process with different launch identity, the opener returns `launch-conflict`; this builder maps it to `launch...",
     "candidateHints": [
       "mcp/src/agents_remember/mcp/tools",
       "mcp/src/agents_remember/mcp/tools/__init__.py",
@@ -143,14 +143,14 @@
       "worktree",
       "ResolvedLaunch",
       "sessionCommands",
+      "launch-conflict",
       "ACPUI",
-      "HFX2",
-      "L17",
       "mcp/src/agents_remember/mcp/tools",
       "route-local-overview",
-      "5fa7026c644edfb4eb884173b64d31c9a14a6585",
+      "a1b0aa9143fa777efd8389892e3283ff257ef44d",
       "/../../../../overview.md",
-      "mcp/tools/"
+      "mcp/tools/",
+      "mcp/tools.py"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-16T01:34+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892`|
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated            | 2026-07-16T06:26+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -119,6 +119,20 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+260714-ACPUI-L4 exposes the normalized port through the daemon without introducing ACP transport.
+`HarnessCapabilityCatalog` performs token-free native discovery, caches one successful snapshot per
+built-in harness under an executable/argv fingerprint, single-flights concurrent misses, and treats
+explicit refresh as the auth/account boundary: failure conditionally quarantines only the entry it
+observed. `harness_control_api` accepts an optional complete native launch pair and addresses exact
+live sessions for advertise, honest set, whole-message submit, and same-id reconcile. Public
+serializers omit private raw adapter evidence. The IPC client distinguishes pre-write failure from
+first-byte ambiguity, never blindly resends, and the queue makes duplicate request ids idempotent and
+reconciles retained known outcomes locally. The shared opener fences one read/probe/ensure/upsert
+transaction, so live reopens return immutable process truth or conflict and dead replacement starts
+a clean generation. Liveness precedes 404/409 support classification. Role spawn and the durable
+inbox/brief bus remain on their existing paths; no UI, settings authoring, paste fallback, Toad, or
+ACP transport rides this leaf.
 
 260714-ACPUI-L3 makes `set_model` and `set_effort` first-class operations on the normalized
 own-adapter port and serializes them with prompt submission through `HarnessControlQueue`.
@@ -276,11 +290,27 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   seam joins synchronous cached advertise, transient native discovery, and native launch knobs. No
   ACP transport, global effort enum, or composer-paste fallback belongs in this port.
 
+- `harness_capability_catalog.py` — the L4 pre-session discovery authority. It resolves only the
+  built-in native registry rows, fingerprints effective argv plus the canonical executable/stat
+  identity, passes the current environment into the own-adapter `discover()` port, and retains at
+  most one successful entry and lock per built-in harness. Ordinary misses are single-flight;
+  explicit refresh re-enumerates auth/account state, and a failed refresh conditionally evicts only
+  the exact observed entry so stale data cannot reappear as a healthy hit or erase a later success.
+
+- `harness_control_client.py`, `harness_control_api.py`, and `harness_control_models.py` — the L4
+  exact-session serving boundary. The client strictly parses normalized advertise/set results and
+  records whether a Unix-socket failure happened before or after the first accepted byte; only the
+  latter becomes honest unknown evidence under the same request id/value. The API exposes
+  pre-session/live capabilities, setter results, whole-message submit, and reconcile after
+  liveness-first session resolution. Public receipt/reconciliation serializers preserve normalized
+  acceptance, timestamps, detail, and correlation while omitting adapter-private `raw`.
+
 - `harness_launch.py`, `harness_control_factories.py`, and `harness_control_runner.py` — carry the
   complete typed settings selection across tmux, reject adapter-owned selector conflicts before
   discovery, validate against the live model/model-local effort catalog, construct a fresh
-  configured adapter, and preserve exact failure evidence over IPC. Roleless Codex uses the
-  authenticated catalog default temporarily until L4 supplies request/default authority.
+  configured adapter, and preserve exact failure evidence over IPC. The daemon request can now
+  supply an optional complete pair through this same launch path; a selectionless request still
+  lets the native authenticated catalog choose its default without creating a second authority.
 
 - `claude_stream_capabilities.py`, `claude_stream_protocol.py`, `claude_stream_startup.py`, and
   `harness_control_claude.py` — correlate `control_request/list_models` before the steady-state
@@ -308,7 +338,8 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   silent-clamp asymmetry rather than trusting it.
 
 - `app.py` — `create_app(config, *, interval, heartbeat, now, before_tick,
-  refresh_provider_state, refresh_landing_state, watch_changes)` builds the FastAPI app
+  refresh_provider_state, refresh_landing_state, watch_changes, harness_capability_catalog)` builds
+  the FastAPI app
   (260712-PTS-L3: `watch_changes` defaults to `before_tick is None`, so live serving injects a
   `ProjectionInputWatcher` for change-driven pacing while `--sim` stays time-driven;
   `heartbeat` bounds quiet-world staleness): a
@@ -338,8 +369,11 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   (6e-2a/6e-2b; **since L2** the leaf-claim + `host.ensure` + catalog-upsert composition delegates to the
   shared `terminal_opener.open_terminal_session` — `resolve_terminal_launch` / `_terminal_label` / the
   role-scoped conflict check all left `app.py` for that module — so this route and the `spawn_agent_session`
-  MCP tool spawn through ONE opener; the route maps `bad-kind`→400 / `leaf-taken`→409 / `opened`→200.
-  Server-resolved harness id, never on the wire; the opener passes `suspend_unsafe=(kind=="harness")` so
+  MCP tool spawn through ONE opener; L4 adds optional `model`/`effort`, requires a complete pair for
+  built-in native harnesses, and maps `bad-kind`→400 / `leaf-taken`→409 /
+  `launch-conflict`→409 / `opened`→200. Successful and conflicting responses report the actual
+  retained row's launch/control facts rather than echoing the attempted request. Server-resolved
+  harness id, never argv on the wire; the opener passes `suspend_unsafe=(kind=="harness")` so
   later host writes strip Ctrl-Z for bare-pane harnesses, slice 6f, and persists a `TerminalCatalogEntry`
   carrying label/lifecycle/cwd/tmux/command/status/leafKey + L2 spawned-by provenance + the L14 `spawnRole` without opening a
   starter PTY client; **slice L5** uniqueness is per (leaf, role) so a terminal never collides with the
@@ -361,7 +395,10 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   endpoint run direct `observe_terminal_liveness` observations on the app's ONE injected clock,
   replacing the deleted `_refresh_catalog_entries` immediate exit-marks),
   `POST /api/terminal/{session}/terminate` (task 22 — kill tmux and mark the catalog row terminated),
-  `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), `POST /api/terminal/{session}/image`
+  `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), the L4 native control
+  routes (`GET /api/harnesses/{harness}/capabilities`, live `GET .../capabilities`, `POST
+  .../set-model`, `POST .../set-effort`, `POST .../submit`, and `POST .../reconcile`) registered
+  before the static mount, `POST /api/terminal/{session}/image`
   (6f — save a validated screenshot under `<cwd>/.dashboard-pastes/<uuid>.<ext>` using either a live host
   session cwd or a catalog-restored cwd so the composer can inject its path; the terminal channel is
   text-only), `POST /api/terminal/{session}/retire` (**260707-HFX-L8**, issue #12 — the
@@ -547,7 +584,10 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `exitEvidence` on exited rows, all migration-safe write-when-set) and the locked
   `record_liveness_probe` write point with the `with_liveness_success`/`with_liveness_failure`
   transition copiers — hysteresis survives a daemon restart and a false exit self-heals on the next
-  alive probe.
+  alive probe. L4 reuses `batch()` as the complete session-open transaction fence: its file lock
+  plus process `RLock` spans read, live probe, host ensure, and upsert, so concurrent callers cannot
+  share one newly created process and then publish different attempted launch provenance. Other
+  processes see the coherent last committed atomic-file snapshot until the batch commits.
 - `terminal_liveness.py` — the **catalog liveness hysteresis** module (260707-HFX-L5):
   `TerminalCatalogLivenessSweeper` (rate-limited — 10s default interval — and non-overlapping via a
   non-blocking lock; a rate-limited or concurrent `refresh()` serves the persisted catalog without
@@ -606,7 +646,12 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   resolved-selection provenance. Static knob mapping is retained only for explicitly declared
   settings-defined non-native harnesses; native Claude/Codex/Pi selection is dynamically validated
   and applied by their adapters. Dashboard `POST /api/terminal/{session}` and
-  `spawn_agent_session` compose this same opener—no parallel spawn path.
+  `spawn_agent_session` compose this same opener—no parallel spawn path. L4 treats a live catalog
+  row as immutable process truth: a selectionless or exact-pair reopen returns it unchanged; a
+  changed kind, harness, cwd, or explicit pair returns `launch-conflict` without a second ensure or
+  catalog mutation. A dead row starts a fresh generation and drops process-specific control/log/raw
+  evidence. The full operation runs under the catalog batch fence so cross-thread/process races
+  create one process and one durable launch truth.
 - `terminal_paste.py` — the **capture-verified server-side paste** (L2, hardened by 260707-HFX-L3):
   `TerminalPaster.paste(tmux_name, text, submit=…)` mirrors the frontend
   `pasteAndConfirm`/`submitAndConfirm` over tmux primitives — the payload rides STDIN into
@@ -699,6 +744,17 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   Free-form duplicate selectors refuse before discovery, and normalized selection is never pasted.
 - Startup acceptance remains protocol-honest: Codex/Pi echo effective values; Claude has no effort
   echo and reports exactly that narrower evidence.
+- Pre-session daemon advertise uses only dynamic own-adapter discovery. Cache identity includes the
+  installed executable/effective argv; explicit refresh owns auth/account invalidation, and failure
+  quarantines the observed entry rather than serving it as a current hit.
+- A live session's persisted process launch is immutable. Reopen returns that actual row or a
+  conflict; only observed-dead replacement may publish a new model/effort/control generation.
+- Exact-session set and submit never retry after request bytes may have been sent. Same request ids
+  are idempotent, retained known outcomes reconcile locally, and only genuinely unknown outcomes
+  invoke native reconciliation without resubmission.
+- Public daemon responses are normalized and raw-free; adapter-private `raw` remains inside the
+  IPC/diagnostic boundary. Unknown/stopped/dead sessions are 404 before live unsupported sessions
+  are classified 409.
 
 The older route bullets below preserve historical implementation context and must not be read as
 current hosted-session authority.
@@ -827,6 +883,12 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented the daemon advertise/launch/set/
+  submit/reconcile boundary, bounded install/auth cache and failed-refresh quarantine, exact-session
+  first-byte ambiguity and request-id idempotency, raw-free public serialization, liveness-first
+  status ordering, and cross-process live-reopen truth with fresh dead replacement. Preserved
+  settings-owned role spawn and the durable inbox/brief bus. Verification metadata remains pinned
+  until closeout stamps the L4 code commit.
 - 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: documented the normalized same-session set
   graph, exact `SetResult` truth table, shared queue ordering and cancellation reclamation, Claude
   exact correlated replay-plus-terminal evidence with the live Fable correction, Codex ordered
