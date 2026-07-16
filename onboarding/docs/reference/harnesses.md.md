@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/harnesses.md`           |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-10T13:03+02:00                  |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-16T07:25+02:00                  |
+| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
+| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00              |
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -17,19 +17,30 @@ of its own (pre-existing registered gap; see the settings reference sidecar).
 
 ## Purpose
 
-Manual for the agent-facing spawn surface: what a harness is, the built-in harness registry, how
-`orchestration.harnesses` extends or overrides it, role/level spend knobs, dispatch refusal
-statuses, and the worked example for adding a new harness id such as `hermes`.
+Manual for the agent-facing spawn and native-capability surface: what a harness is, how the
+built-in registry and `orchestration.harnesses` interact, how role/level spend knobs reach native
+adapters, which dispatch refusals are fail-loud, and which structured evidence establishes runtime
+compatibility. It also distinguishes Claude's initialization, session-init, and dynamic catalog
+sources so readers do not infer account/model data from the wrong envelope.
 
 ## Code Commentary
 
+### Logic
+
+The current Claude compatibility section is deliberately three-part. A correlated
+`control_request/initialize` supplies command rows and pending interaction envelopes;
+`system/init` supplies session identity, version, cwd, current model, permission mode, tools, and
+slash commands; only a later correlated `control_request/list_models` supplies the dynamic model
+rows and each row's own effort metadata. Claude Code 2.1.210 provided no account or catalog payload
+in either initialization source. The catalog is live install/auth evidence, not a maintained model
+or effort enum, and its observed rows must not be copied into dispatch policy.
+
 **260707-HFX2-L15 current contract.** Codex is no longer an env-only builtin: resolved model and
-effort ride `--model` and `--config model_reasoning_effort=<value>`, with the first-turn-safe enum
-`none|minimal|low|medium|high|xhigh`. Spawn session commands remain separate inputs before the
-brief, but submitted acceptance now comes only from the unique id in the bound harness JSONL;
-command acceptance additionally requires its command record plus non-error stdout. Pane text is
-used only to prevent a duplicate re-paste and to attach failure diagnostics, never to grant
-acceptance or prove model/effort.
+effort ride `--model` and `--config model_reasoning_effort=<value>`. Spawn session commands remain
+separate inputs before the brief, but submitted acceptance now comes only from the unique id in the
+bound harness JSONL; command acceptance additionally requires its command record plus non-error
+stdout. Pane text is used only to prevent a duplicate re-paste and to attach failure diagnostics,
+never to grant acceptance or prove model/effort.
 
 The page is documentation, not parser code. Runtime parsing lives in
 `kernel/agentic_settings.py`, the built-in registry and per-harness delivery vehicles live in
@@ -43,7 +54,20 @@ keys. Those caller values return `spend-override-unsupported` before any spawn s
 manual still documents `launchArgs`, `sessionCommands`, and `promptKeywords`, but now as
 settings-owned escape hatches that are recorded in spawn provenance.
 
-## Invariants And Boundaries
+Production compatibility is negotiated from structured protocol evidence for Claude, Codex, and
+Pi; exact package strings are fixture/smoke baselines only. The full reload boundary includes the
+dashboard daemon, every MCP-owning client, each bridge-backed per-session runner/adapter, and open
+browser tabs. This documentation does not authorize a restart or settings mutation.
+
+### Conventions
+
+- Role and level selectors are settings authority; ordinary spawn callers cannot override spend.
+- Native adapter catalogs remain dynamic and model-gated. Version/account-specific observations
+  may be recorded as live evidence, but never become default-path enums.
+- Compatibility claims name the exact structured message that proves each field. Initialization,
+  current-session state, and catalog discovery are not collapsed into one synthetic payload.
+
+### Invariants And Boundaries
 
 - Harness ids are settings/launch identifiers, not commands; argv is defined only through the
   registry or `orchestration.harnesses`.
@@ -53,25 +77,59 @@ settings-owned escape hatches that are recorded in spawn provenance.
   Codex/OpenAI families; it is not a mathematical guarantee for every future env variable.
 - The manual should point unknown or undetected harness readers to settings fixes, not to caller
   `spawn_agent_session(harness=...)` overrides.
+- Claude command rows come from correlated initialize, session/runtime fields come from
+  `system/init`, and model/model-local-effort rows come only from correlated `list_models`.
+- Captured model keys, row counts, defaults, and effort menus are install/auth observations, not
+  normative enums or fallback data.
+- Pane/log text, exact package versions, and account assumptions cannot substitute for the
+  required structured evidence.
 
-## 260713-PHA-L6 Current Contract
+### Todos
 
-Production compatibility is negotiated from structured protocol evidence for Claude, Codex, and
-Pi; exact package strings are fixture/smoke baselines only. The full reload boundary includes the
-dashboard daemon, every MCP-owning client, each bridge-backed per-session runner/adapter, and open
-browser tabs. This documentation does not authorize a restart or settings mutation. R10 resource
-performance remains queued and is not current behavior.
+None known for the L5 manual correction.
+
+## Docs References
+
+The resolved source registry has no Domain Documentation entries, so no live external
+documentation source was available for this pass. The manual is grounded in the consumed protocol
+parsers, catalog normalizer, tests, and live/review evidence instead.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Agentic settings parser that validates role knobs, rolesPerLevel, and `orchestration.harnesses`. | [../../mcp/src/agents_remember/kernel/agentic_settings.py](../../mcp/src/agents_remember/kernel/agentic_settings.py.md) |
-| Built-in harness registry and delivery-vehicle vocabulary for model/effort application. | [../../mcp/src/agents_remember/serving/harnesses.py](../../mcp/src/agents_remember/serving/harnesses.py.md) |
-| Spawn payload builder that enforces settings-only spend authority and pre-side-effect refusals. | [../../mcp/src/agents_remember/mcp/tools/terminal.py](../../mcp/src/agents_remember/mcp/tools/terminal.py.md) |
-| Spawn tests pin settings-owned launch/session knobs and `spend-override-unsupported` refusals. | [../../mcp/tests/test_spawn_agent_session.py](../../mcp/tests/test_spawn_agent_session.py.md) |
+The settings parser, spawn path, and native Claude parsers jointly implement the manual. The
+references below use source evidence rather than treating this prose as runtime authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults. | L624-L714; L1130-L1152 | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
+| Built-in ids are registry identities, while native model validation is dynamic rather than a registry enum. | L75-L125; L203-L215 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
+| Spawn rejects caller spend overrides before side effects and sends settings-resolved model/effort through one typed native runner payload. | L400-L434; L474-L518 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| Claude initialize and `system/init` parse different required fields; the catalog request is a separate control message. | L90-L163 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
+| Startup orders correlated initialize/bootstrap before a separate correlated dynamic catalog request. | L59-L109 | [claude_stream_startup.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_startup.py) |
+| Catalog parsing preserves native model keys and nests each effort menu under its owning model row. | L15-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
+| Spawn regressions pin settings-only spend authority and pre-side-effect override refusal. | L1000-L1103 | [test_spawn_agent_session.py](agents-remember/mcp/tests/test_spawn_agent_session.py) |
+
+## Cross-Repo References
+
+The manual implements no runtime cross-repository boundary. The coordination task's independent
+review is retained as verification provenance because it found and closed the earlier false claim
+that initialize carried account/catalog data.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Final worker evidence separates command initialize, session init, and dynamic model/model-local-effort catalog sources. | L138-L153 | [260716-ACPUI-L5-worker-closeout-report.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
+| Independent review records the incorrect combined initialization claim and its correction rather than erasing the finding. | L165-L169 | [260716-ACPUI-L5-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
 ## Update History
+- 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 curator: corrected the manual onboarding to the
+  three-source Claude startup truth, made dynamic model/model-local-effort rows explicitly
+  non-enumerative, and retained the independent review history that caught the former combined
+  account/catalog claim. Verification remains pinned to the latest committed source touch until
+  the reviewed L5 working-tree candidate is committed.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented structured capability negotiation, full serving
   reload boundary, and the explicit R10 deferred-performance boundary.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

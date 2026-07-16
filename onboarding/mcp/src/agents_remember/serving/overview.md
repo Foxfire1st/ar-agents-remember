@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-16T06:26+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated            | 2026-07-16T07:27+02:00 |
+| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25`|
+| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -119,6 +119,19 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+260714-ACPUI-L5 closes the live native-capability gate and hardens Claude catalog discovery. Only
+the ephemeral discovery launch removes every Claude 2.1.210-supported pre-`--` MCP selector
+(`--mcp-config` separate/variadic/repeated or equals-attached, plus the exact strict flag), preserves
+unrelated argv and the complete positional suffix, and inserts one strict empty MCP set. Normal
+session startup remains byte-for-byte caller-owned and continues to load the installed MCP
+configuration. This prevents a token-free catalog refresh from launching unrelated configured MCP
+children while preserving the same dynamic model/model-local-effort rows. The final live matrix
+keeps Claude Fable switching native-result-driven, Codex selection queued until an accepted fresh
+turn on the same thread, and Pi requested/effective thinking readback distinct. Captured catalog
+counts and resource measurements are installation evidence, never maintained enums or capacity
+policy. A startup-failed bridge may still surface `control command queue is stopped` during graceful
+stop; terminate/retire retain that detail, reap the host, and reach terminal catalog state.
 
 260714-ACPUI-L4 exposes the normalized port through the daemon without introducing ACP transport.
 `HarnessCapabilityCatalog` performs token-free native discovery, caches one successful snapshot per
@@ -883,6 +896,10 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+- 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: recorded discovery-only Claude MCP-selector
+  replacement across the accepted argv grammar, byte-preserved normal startup, the live three-harness
+  acceptance asymmetries, dynamic evidence boundary, and the visible non-leaking startup-failed stop
+  residual. Verification metadata remains pinned until closeout stamps the L5 code commit.
 - 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented the daemon advertise/launch/set/
   submit/reconcile boundary, bounded install/auth cache and failed-refresh quarantine, exact-session
   first-byte ambiguity and request-id idempotency, raw-free public serialization, liveness-first

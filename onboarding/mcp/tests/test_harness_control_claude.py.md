@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:21+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-16T07:25+02:00 |
+| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25` |
+| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,11 +17,35 @@
 ## Purpose
 
 Fake-transport conformance coverage for the native Claude stream-JSON adapter, including structured
-startup, token-free model catalog advertisement, same-session model/effort setters with terminal
-evidence, correlated delivery, interactions, reconciliation, limits, shutdown, and terminal
-normalization.
+startup, token-free and MCP-isolated model catalog discovery, same-session model/effort setters with
+terminal evidence, correlated delivery, interactions, reconciliation, limits, shutdown, and
+terminal normalization.
 
 ## Code Commentary
+
+### 260714-ACPUI-L5 Discovery Isolation And Live Closure
+
+L5 keeps Claude catalog discovery token-free while preventing the transient probe from starting
+unrelated MCP servers inherited through the caller's native argv. The discovery-only regression
+table covers the selector grammar accepted by the observed Claude Code 2.1.210 install: one
+separate config, variadic and repeated separate configs, equals-attached configs, the exact strict
+flag, and the first `--` end-of-options separator. It requires all accepted selectors before the
+separator to be replaced by exactly one strict empty config. Unrelated options retain their order,
+an equals-attached config never consumes a following positional, and the entire post-`--` suffix
+remains byte-for-byte intact. The test deliberately does not invent rejected boolean or negated
+strict spellings.
+
+This isolation is scoped to `discover()`. A separate normal-start case requires existing caller MCP
+selectors to survive byte-for-byte, so ordinary settings-owned sessions continue to load their
+installed MCP configuration. The original fake discovery case still proves the synthetic bootstrap
+has zero turns and zero cost, uses one strict empty config, and force-stops the transient transport.
+
+Task-local live evidence closes the relationship between those fake pins and the native process:
+a two-marker A/B made normal startup create both configured markers while discovery created
+neither, returned the same model-gated catalog at zero turns/cost, and cleaned up. The independent
+reviewer then reproduced an adversarial marker collision against the corrected candidate; its
+marker stayed absent and the same five observed model keys returned. Those row counts and keys are
+live installation/auth observations, not production enums or expectations encoded by this suite.
 
 ### 260714-ACPUI-L3 Same-Session Setter Evidence
 
@@ -57,9 +81,9 @@ incompatibility remains the distinct `unsupported` result covered by the adjacen
 
 Pinned stream-JSON fixtures and a deterministic transport drive initialize, synthetic bootstrap,
 catalog, turn, interaction, replay, failure, and result frames. Existing cases cover launch
-preservation, compatible structured version negotiation, prompt correlation, busy ordering,
-durable interaction responses, supported commands, ambiguous disconnect reconciliation, bounded
-history, and safe terminal failure metadata.
+preservation, discovery-only MCP isolation, compatible structured version negotiation, prompt
+correlation, busy ordering, durable interaction responses, supported commands, ambiguous
+disconnect reconciliation, bounded history, and safe terminal failure metadata.
 
 ACPUI-L1 moves the fixture baseline to the live-confirmed `2.1.210` shape and adds catalog-specific
 coverage. Discovery performs only the synthetic `shouldQuery: false` bootstrap plus the
@@ -73,13 +97,19 @@ unsupported and fail advertisement loudly without a fallback.
 ### Conventions
 
 The module uses `unittest.IsolatedAsyncioTestCase`, fixed UUIDs/timestamps, and JSONL fixtures under
-the exact observed version directory. Fake writes are inspected structurally; secrets placed in the
-launch environment must never appear in handshake evidence.
+the exact observed version directory. Selector cases are table-driven by grammar shape rather than
+captured model names. Fake writes and argv are inspected structurally; secrets placed in the launch
+environment must never appear in handshake evidence.
 
 ### Invariants And Boundaries
 
 - Enumeration is token-free: the bootstrap is synthetic and non-querying, and the fixture proves
   zero turns and zero cost before `list_models` completes.
+- Discovery removes every installed-grammar MCP selector before the first `--`, inserts one strict
+  empty config, preserves unrelated argv and the complete positional suffix, and always stops the
+  transient transport.
+- Normal session startup must preserve caller MCP selectors byte-for-byte; discovery isolation is
+  never applied to the real settings-owned session path.
 - The adapter uses Claude's native control request; no ACP transport, composer paste, static enum,
   or Toad host is involved.
 - Effort options remain model-gated, and current effort remains absent when Claude does not report
@@ -117,30 +147,40 @@ advertisement contract.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Token-free discovery uses one non-querying synthetic user frame, records zero turns/cost, selects the current model, and stops the transient transport. | L195-L209 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Startup preserves native launch settings, issues `list_models`, caches the selected catalog, gates efforts by model, leaves current effort unknown, and marks disabled rows non-selectable. | L211-L256 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Current initialization omits stale model/account fields, while duplicate or rejected catalog evidence yields unsupported/loud failure with no fallback. | L258-L309 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Same-session model/effort setters require native replay plus terminal echo, update the model gate only on evidence, and refuse effort unavailable for the selected model without a write. | L509-L563 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Native failure and non-echo completion remain unsupported/immediate without promotion; provider-qualified Fable refusal and a successful alias named `fable` prove there is no name heuristic. | L565-L654 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Exact dynamic terminal aliases reject prefix impostors and arbitrary default labels. | L656-L739 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Timeout/cancellation late frames are neutralized before retry, strict replay correlation/body/session mismatches fail, and duplicate retained correlations are not written twice. | L741-L848 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Token-free discovery uses one non-querying synthetic user frame, records zero turns/cost, inserts one strict empty config, selects the current model, and stops the transient transport. | L195-L215 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Discovery replaces separate, variadic/repeated, and equals-attached MCP selectors; preserves unrelated argv and the full post-`--` suffix; and leaves exactly one strict empty config before the separator. | L217-L329 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Normal startup preserves caller MCP selectors byte-for-byte, proving isolation is discovery-only. | L331-L351 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Startup preserves native launch settings, issues `list_models`, caches the selected catalog, gates efforts by model, leaves current effort unknown, and marks disabled rows non-selectable. | L353-L401 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Current initialization omits stale model/account fields, while duplicate or rejected catalog evidence yields unsupported/loud failure with no fallback. | L402-L453 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Same-session model/effort setters require native replay plus terminal echo, update the model gate only on evidence, and refuse effort unavailable for the selected model without a write. | L653-L708 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Native failure and non-echo completion remain unsupported/immediate without promotion; provider-qualified Fable refusal and a successful alias named `fable` prove there is no name heuristic. | L709-L799 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Exact dynamic terminal aliases reject prefix impostors and arbitrary default labels. | L800-L884 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Timeout/cancellation late frames are neutralized before retry, strict replay correlation/body/session mismatches fail, and duplicate retained correlations are not written twice. | L885-L993 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 | The Claude catalog parser validates the native response, exact unique model keys, model-specific effort consistency, disabled state, and current-model membership. | L15-L31; L34-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
-| The adapter negotiates startup then catalog before readiness, retains the normalized snapshot, and provides transient discovery plus cached advertisement. | L96-L209 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| Native startup frames define the exact `list_models` control request and a synthetic non-querying bootstrap. | L56-L80 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
-| Claude setters validate the dynamic catalog/model gate, send structured commands, promote only echo-verified results, and derive exact model terminal aliases from the selected catalog row. | L223-L298; L457-L507; L519-L540 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| The adapter negotiates startup then catalog before readiness, isolates only transient discovery, force-stops that probe, and retains cached advertisement for started sessions. | L97-L215 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| The discovery argv builder removes only accepted pre-separator MCP selector spellings, preserves unrelated arguments/suffixes, and adds one strict empty set; the ordinary stream argv builder stays separate. | L41-L87 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
+| Native startup frames define the exact `list_models` control request and a synthetic non-querying bootstrap. | L90-L116 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
+| Claude setters validate the dynamic catalog/model gate, send structured commands, promote only echo-verified results, and derive exact model terminal aliases from the selected catalog row. | L233-L308; L467-L550 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
 | State submission retains canonical command replay text, waits for a terminal result, and marks timed-out commands abandoned. | L102-L168 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
 | Replayed-user handling requires exact retained correlation, session, and body; completed abandoned replays are ignored rather than requeued. | L412-L450 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
 
 ## Cross-Repo References
 
-No sibling repository or transport implementation is required to prove this native-adapter test.
+The task-local live and reviewer artifacts corroborate the fake selector grammar with real process
+side-effect markers. Their five-row result is a captured install/auth observation, not a test enum.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+| The corrected live two-marker A/B preserved normal configured startup, isolated discovery, returned the same zero-turn/model-gated catalog, and cleaned up. | L72-L96 | [L5 worker closeout report](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
+| Independent review caught the append-only selector collision, then closed it only after fake grammar cases plus an independent marker replay returned the same five observed keys with no marker side effect. | L148-L151; L163-L173 | [L5 reviewer verdict](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
 ## Update History
 
+- 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 test curator: documented discovery-only Claude MCP
+  selector isolation across separate, variadic/repeated, equals-attached, and end-of-options forms;
+  normal-start argv preservation; the zero-turn fake/live relationship; and the independent marker
+  collision closure. Live catalog counts/keys remain observations, not enums. Verification metadata
+  remains at the last landed source commit until closeout stamps the uncommitted L5 candidate.
 - 2026-07-16T01:21+02:00 — 260714-ACPUI-L3 curator: documented same-session structured setters,
   exact replay plus terminal-echo evidence, model-gated effort, native-result-driven Fable refusal,
   exact dynamic aliases, and cancellation/timeout/duplicate-correlation neutralization. Verification

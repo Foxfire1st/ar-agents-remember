@@ -172,7 +172,7 @@
     "limits"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L4 exposes the normalized port through the daemon without introducing ACP transport. `HarnessCapabilityCatalog` performs token-free native discovery, caches one successful snapshot per built-in harness under an executable/argv fingerprint, single-flights concurrent misses, and treats explicit refresh as the auth/account boundary: failure conditionally quarantines only the entry it observed. `harness_control_api` accepts an optional complete native launch pair and addresses exact live sessions for advertise, honest set, whole-message submit, and same-id reconcile. Public seriali...",
+    "summary": "260714-ACPUI-L5 closes the live native-capability gate and hardens Claude catalog discovery. Only the ephemeral discovery launch removes every Claude 2.1.210-supported pre-`--` MCP selector (`--mcp-config` separate/variadic/repeated or equals-attached, plus the exact strict flag), preserves unrelated argv and the complete positional suffix, and inserts one strict empty MCP set. Normal session startup remains byte-for-byte caller-owned and continues to load the installed MCP configuration. This prevents a token-free catalog refresh from launching unrelated configured MCP children while prese...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",
