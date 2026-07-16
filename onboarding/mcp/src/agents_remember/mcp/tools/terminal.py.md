@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -37,8 +37,11 @@ authority, and normalized model/effort never becomes a synthesized session comma
 The split is intentional. Built-in protocol harnesses (`claude`, `codex`, `pi`) use the typed
 native path. Settings-defined non-native harnesses keep their explicit static flag/session mapping,
 including `effort_session_commands`, because no normalized native adapter exists for them.
-Roleless opens carry no settings selection in this leaf; their native/default behavior remains
-available until the serving request boundary supplies a selection.
+Roleless opens are owned by the serving request boundary. This tool remains the settings-owned role
+path. If a repeated spawn targets an already-live session id whose process launch differs from the
+newly resolved role selection, the shared opener returns `launch-conflict`; this builder maps it to
+the existing `launch-selection-invalid` refusal. It does not retry, reconfigure, or enter another
+spawn path, so the actual catalog/process pair remains authoritative.
 
 ### 260707-HFX2-L18 Strict-CRAP Decomposition
 
@@ -224,6 +227,8 @@ is `_tool_payload` + `models/terminal.py`, and server registration lives in `mcp
   branch on `status`, not exceptions.
 - Leaf uniqueness stays server-arbitrated: `spawn_agent_session` surfaces `leaf-taken` (with the owning
   session) and never overrides it.
+- Live same-id launch conflict maps to `launch-selection-invalid` and returns before expectation,
+  log-binding, or brief delivery work; the tool never overwrites the actual process provenance.
 - Leaf keys written by attach/spawn are canonical qualified task-doc ids; legacy refs are accepted only
   when the task-tree resolver can prove one match.
 - Spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) is recorded on the catalog row so
@@ -272,7 +277,7 @@ catalog.
 | The attach builder normalizes leaf refs before delegating durable assignment to the shared serving helper and returning previous leaf, owner, status, and role. | attach_terminal_session_to_leaf_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 | The spawn builder normalizes leaf refs before composing the shared serving opener and capture-verified context paste. | spawn_agent_session_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 | Leaf-ref refusal payloads are shared by attach and spawn. | leaf_ref_refusal_payload | [leaf_ref.py](leaf_ref.py.md) |
-| The shared opener (create + leaf claim + env-seeded tmux ensure + catalog upsert) both call paths reuse. | L84-L174 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The shared opener validates live launch identity and fences create, leaf claim, tmux ensure, and catalog upsert; both role and dashboard paths reuse it. | L170-L648 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
 | The server-side capture-verified paste helper that delivers the context packet (and attaches the failure capture). | L133-L229 | [terminal_paste.py](agents-remember/mcp/src/agents_remember/serving/terminal_paste.py) |
 | The harness detection registry (`find_harness` / `is_detected` / `HARNESSES` order) that gates a spawn before tmux and orders the detection-gated default. | L41-L72 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
 | The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | load_agentic_settings | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
@@ -296,7 +301,11 @@ No meaningful cross-repo references found.
 
 ## 260712-TRH-L4 Final Candidate
 
-This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+This sidecar was reviewed against the final uncommitted ACPUI L4 candidate. The source still owns
+the settings-resolved role spawn path and maps a shared-opener live launch conflict to the existing
+launch-selection refusal without respawn. The older blanket claim that catalog readers remain
+lock-free is superseded: the opener's same-instance transaction holds the catalog `RLock`, while
+other instances may read the coherent last committed atomic-file snapshot.
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact
 
@@ -306,6 +315,9 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented role-spawn conflict mapping,
+  no alternate spawn or provenance rewrite, and corrected the inherited overbroad lock-free-reader
+  statement while preserving settings-owned role dispatch.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented complete role selection,
   typed native launch carriage, runner-side dynamic validation, provenance-only spawn env, the
   no-synthesized-paste invariant, and the retained explicit non-native mapping path. Verification

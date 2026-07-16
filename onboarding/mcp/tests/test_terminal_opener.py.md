@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`        |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`        |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -34,6 +34,21 @@ thread configuration. No model/effort value is synthesized into `sessionCommands
 still records resolved spend provenance, and settings-defined custom harnesses are opened without
 guessing a native mapping at this generic boundary.
 
+### 260714-ACPUI-L4 Live Launch Truth
+
+L4 pins reopen behavior to the process that actually exists. An identical selected pair returns the
+unchanged durable row and makes no second `ensure` call. A different pair or launch identity against
+the same live process returns `launch-conflict`, preserves the original command/pair/endpoint, and
+does not mutate the catalog. Once the process is dead, the same catalog id may start a fresh
+generation with the newly selected pair, new creation time and endpoint, `starting` control state,
+and no stale process-specific raw/session evidence.
+
+The concurrent different-pair case drives two opener calls through the catalog transaction fence.
+Exactly one wins `opened`, the other receives `launch-conflict`, the host creates one process, and
+both results agree with the one durable catalog row. The role-based worker/reviewer/curator/manager
+coverage remains on this same opener, so dashboard and `spawn_agent_session` cannot diverge into
+parallel launch paths.
+
 ### 260713-PHA-L1 control metadata coverage
 
 The opener tests now prove an unregistered harness is persisted and returned as explicit
@@ -48,9 +63,9 @@ completion without suffix hacks. It also checks persisted binding role in opener
 
 ### Logic
 
-**260707-HFX2-L15 coverage.** The Codex opener now asserts explicit `--model` plus
-`--config model_reasoning_effort=...` argv and catalog persistence of replacement-leaf,
-resolved-knob, and existing log-binding provenance.
+The historical L15 env-to-TUI flag expectation was superseded by ACPUI-L2. Current Codex coverage
+asserts the selection is structured inside `RunnerConfig`; the opener does not synthesize a TUI
+`--model` or effort config override.
 
 `OpenTerminalSessionTests` drives `open_terminal_session` with a `_FakeHost` (records `ensure`'s sid /
 cwd / command / env, adds the tmux name to a known set) + a real `TerminalCatalog` over a temp dir + a
@@ -92,6 +107,14 @@ required kwargs.
 - `leaf-taken` / `bad-kind` must not spawn or upsert; the tests assert `host.ensured == []` and no
   intruder row.
 - Provenance must survive the catalog JSON round-trip (migration-safe camelCase keys).
+- A live process owns immutable command, model/effort, creation, and endpoint truth. Same-pair
+  reopen is idempotent; a changed pair/identity conflicts without mutation or a second process.
+- Dead replacement starts a fresh control generation and must not inherit process-specific control
+  session or raw evidence.
+- The catalog batch spans read, liveness probe, ensure, and upsert so concurrent callers publish one
+  process and one catalog truth.
+- Role-based spawn and the daemon route both compose this opener; tests must not create or imply a
+  second launch path.
 
 ### Todos
 
@@ -99,19 +122,24 @@ No known follow-up in this file.
 
 ## Docs References
 
-No relevant external/domain documentation found; the behavior is local opener policy.
+No Domain Documentation category is configured for this repository, so no live documentation
+source was available for this test-file curation pass.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The tests pin the local shared-opener composition, not an external protocol. | L89-L149 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
+| No configured Domain Documentation source was available to cite. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The opener under test (resolve + leaf claim + env-seeded ensure + catalog upsert). | L84-L174 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| The catalog whose provenance/leaf columns the opener writes and the tests read back. | L47-L54; L108-L111 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The role-scoped leaf-conflict probe the opener reuses. | L28-L42 | [terminal_leaf_assignment.py](agents-remember/mcp/src/agents_remember/serving/terminal_leaf_assignment.py) |
+| Shared-opener tests preserve role/spawn provenance, role-scoped leaf ownership, dead-seat replacement, and the worker/reviewer/curator/manager pipeline on one canonical leaf. | L108-L255 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
+| Same-pair live reopen returns unchanged truth; changed pair/identity conflicts; dead replacement creates a fresh generation; concurrent differing pairs create one process and one durable truth. | L291-L400 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
+| The opener treats a live catalog row as immutable process truth and distinguishes idempotent reopen from launch conflict. | L170-L257 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The full open transaction owns leaf conflict, host ensure, resolved pair, control generation, and catalog upsert. | L425-L552 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The public opener runs the full transaction inside the catalog batch fence. | L555-L648 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The batch context serializes cross-thread/process access and commits one in-memory unit of work. | L695-L720 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| The agent-facing role spawn path passes its resolved launch and provenance into this same opener and maps launch conflict to `launch-selection-invalid`. | L569-L606 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 
 ## Cross-Repo References
 
@@ -119,7 +147,7 @@ No meaningful cross-repo references found.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The tests cover local serving behavior only. | - | - |
+| No meaningful cross-repo references found. | — | — |
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact
 
@@ -129,6 +157,12 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented same-pair idempotent reopen,
+  changed-pair/identity conflict without mutation, fresh dead replacement, concurrent one-process /
+  one-catalog truth, the batch fence, and preservation of the role-based shared opener path; also
+  corrected the superseded Codex TUI-argv statement. Body verified against the uncommitted L4
+  candidate; verification metadata remains pinned to the latest committed source revision until
+  closeout.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented typed launch carriage, unchanged
   base argv, adapter-owned native application, provenance env, no effort paste, and the custom
   harness boundary; corrected the governing overview backlink. Verification metadata remains

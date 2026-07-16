@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:21+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 Fake-adapter conformance suite for the protocol-neutral harness control contract, serialized
-model/effort setters, bridge, terminal surface, and private IPC boundary.
+model/effort setters, reliable whole-message submission, retained reconciliation, terminal surface,
+durable-inbox convergence, and the exact-session private IPC boundary.
 
 ## Code Commentary
 
@@ -44,6 +45,21 @@ not-ok, and unknown/unsupported results that falsely claim an effect. Each rejec
 the runner usable for the next prompt. The unregistered adapter remains explicitly unsupported for
 both setters.
 
+ACPUI-L4 extends the suite through the real local socket and daemon route composition. Duplicate
+request ids are idempotency keys: a retained duplicate returns the first receipt, and a duplicate
+arriving while the first submit is pending waits for that same result; neither path replaces the
+first payload or calls the adapter twice. Reconciliation maps retained immediate/queued receipts to
+accepted, rejected to rejected, and unsupported to unsupported without invoking native
+reconciliation; only genuinely unknown evidence delegates to the adapter.
+
+The exact-session IPC cases advertise the normalized snapshot and pass through honest queued and
+unsupported setter results. A deliberately dropped outer response proves the caller keeps the same
+request id as unknown, then recovers the bridge-retained vendor correlation without resend. The
+same loss is driven through `deliver_inbox_entry`: the durable bus moves from unknown to delivered /
+accepted with one adapter call and no paste fallback. A concurrent public duplicate test reaches
+the HTTP route, Unix socket, bridge queue, and adapter, proving identical responses and one native
+submission end to end.
+
 ### Conventions
 
 The module uses `unittest.IsolatedAsyncioTestCase`, fixed timestamps and identities, bounded fake
@@ -65,6 +81,12 @@ messages over transport timing heuristics.
   protocol, validation, dispatch, and unrelated failures remain loud.
 - Ambiguous sends remain reconcilable and are never blindly retried; draft-preservation tests keep
   surface ownership and whole-message ordering explicit.
+- A caller request id identifies one authoritative payload and one retained result. Pending and
+  completed duplicates cannot replace the text or create a second adapter call.
+- Known receipt reconciliation is local and correlation-preserving; adapter reconciliation is
+  reserved for a bridge-retained `unknown` outcome.
+- Exact-session advertise and setters travel through the private identity-checked endpoint, and
+  durable-bus recovery must converge without invoking terminal paste.
 
 ### Todos
 
@@ -86,16 +108,18 @@ advertisement and setter methods it now satisfies.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The fake adapter implements startup, snapshots, an intentionally empty normalized advertisement, prompt submission, and explicit setter results. | L55-L155 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Shared ordering coverage proves launch, model setter, and the following prompt execute in one FIFO sequence. | L286-L311 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Cancelling a caller while a setter is active does not terminate the command queue when the late adapter completion arrives. | L313-L340 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| The invalid-result matrix rejects dishonest evidence and arbitrary acceptance strings without poisoning the runner; unregistered adapters remain explicitly unsupported. | L342-L379 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| The core conformance path proves ordered terminal/durable acceptance and stable launch ownership. | L263-L284 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| State-event coverage proves running, blocked, settling, completion, readable terminal output, and escape stripping. | L481-L555 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| The delayed-reply IPC regression contains peer loss after accepted dispatch and reconciles the preserved vendor correlation without retry. | L867-L921 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| The fake adapter implements startup, snapshots, an intentionally empty normalized advertisement, prompt submission, reconciliation observation, and explicit setter results. | L77-L209 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Shared ordering and cancellation coverage proves launch, setter, and following prompt execute in one FIFO queue that survives a cancelled waiter. | L319-L394 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| The invalid-result matrix rejects dishonest evidence and arbitrary acceptance strings without poisoning the runner; unregistered adapters remain explicitly unsupported. | L396-L435 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Pending and retained duplicate ids return the first result and preserve the first payload with one adapter submission; known receipts reconcile locally without a native reconcile call. | L673-L748 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Exact-session IPC advertises and returns honest queued/unsupported setter acceptance through the blocking client. | L1000-L1034 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Outer response loss returns unknown, then retained reconciliation restores accepted state and vendor correlation with one adapter call. | L1036-L1076 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Durable-inbox redelivery converges from unknown to delivered/accepted through reconcile, makes one adapter submission, and never invokes paste. | L1078-L1153 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| The public concurrent duplicate case crosses HTTP and real Unix-socket IPC, returns identical correlated responses, and invokes the adapter once. | L1155-L1239 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Private endpoint permission, identity, peer-loss, and malformed-request cases preserve exact-session ownership and loud failure. | L1241-L1354 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | `HarnessProtocolAdapter` requires cached advertisement and model/effort setters alongside startup, snapshot, submit, reconciliation, and shutdown. | L31-L53 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The shared queue places model and effort commands beside prompts and routes them through the same runner. | L90-L112; L113-L172; L295-L316 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
-| Result validation enforces exact acceptance membership and evidence-shape rules, while late completion skips a caller future that is already cancelled. | L475-L509 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| The shared queue treats request ids as idempotency keys, retains one payload/result, and converts known receipts into reconciliation truth before considering the native port. | L114-L145; L378-L411 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| Exact-identity IPC dispatches advertise and setters separately from submit/reconcile while retaining private internal serializers. | L127-L192 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 
 ## Cross-Repo References
 
@@ -107,6 +131,11 @@ No sibling repository is required to prove this protocol-neutral test suite.
 
 ## Update History
 
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented exact-session advertise/set
+  acceptance, pending and retained request-id idempotency, known-receipt reconciliation, outer
+  response-loss recovery, durable-bus convergence without resend or paste, and the public
+  duplicate/one-adapter-call path. Body verified against the uncommitted L4 candidate; verification
+  metadata remains pinned to the latest committed source revision until closeout.
 - 2026-07-16T01:21+02:00 — 260714-ACPUI-L3 curator: documented one launch/set/prompt FIFO,
   cancellation-safe late completion, the complete SetResult truth matrix including arbitrary
   acceptance rejection, and explicit unsupported fallback setters. Verification metadata remains

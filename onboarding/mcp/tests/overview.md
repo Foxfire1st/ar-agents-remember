@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-16T01:34+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892`|
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-16T06:26+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 
 ## Purpose
 
@@ -60,6 +60,17 @@ utime-pinned-rewrite invalidation via ctime, and parse failures retried every bu
 
 ## Hot Path Summary
 
+260714-ACPUI-L4 tests the frozen daemon consumer boundary and its production races. Capability
+catalog cases prove token-free current-environment discovery, install fingerprint invalidation,
+bounded single-flight retention, failed-refresh quarantine/recovery, and protection of a later
+concurrent success. API/client/IPC/queue cases prove strict normalized advertise/set parsing,
+first-byte ambiguity without blind retry, whole UTF-8 multiline submit, pending and retained
+request-id idempotency, retained-known reconciliation without native resend, raw-free public
+serialization, and liveness-first 404/409 classification. Opener/app cases prove complete-pair
+pre-spawn validation, same-pair live reopen, changed launch conflict with actual retained truth,
+fresh dead replacement, and a cross-process different-pair race with one host creation/catalog row.
+Role-spawn uses that same opener and conflicts without an alternate launch path.
+
 260714-ACPUI-L3 tests the complete same-session setter delegate graph. Shared contract and queue
 coverage fail closed outside the five `SetResult` outcomes, reject contradictory effective values,
 preserve FIFO set/prompt order, and prove a cancelled waiter cannot poison later commands. Claude
@@ -72,7 +83,7 @@ reject incoherent catalogs atomically, and keep late cancelled responses from th
 Scaling cases at 8 and 64 requests prove Codex/Pi cancellation reclamation without tombstone
 growth. A static 17-module dependency guard covers the full shared/Claude/Codex/Pi setter graph and
 rejects composer, tmux, session-command, terminal-paste, injector, and terminal-surface imports.
-Hosted setter conformance remains adapter scaffolding; L4 still owns daemon serving endpoints.
+L4 now covers the daemon serving endpoints while retaining the same no-paste delegate graph.
 
 260714-ACPUI-L2 adds focused and production-path coverage for settings-resolved initial
 configuration. `test_harness_launch.py` proves the normalized contract, Pi's exact
@@ -125,6 +136,12 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: added route coverage for install/auth cache
+  fencing, failed-refresh quarantine, complete-pair launch, live-reopen/dead-replacement truth,
+  cross-process one-process publication, exact-session first-byte ambiguity, request-id idempotency,
+  retained reconciliation without resend, raw-free public responses, liveness-first status, and
+  shared role-spawn conflict behavior. Verification metadata remains pinned until closeout stamps
+  the L4 code commit.
 - 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: added route coverage for exact five-value
   setter truth, FIFO/cancellation behavior, Claude correlated terminal and dynamic Fable evidence,
   Codex ordered selection epochs and successful fresh-turn promotion, Pi bounded coherent

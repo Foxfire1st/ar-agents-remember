@@ -56,6 +56,7 @@
     "mcp/tests/test_harness_control.py",
     "mcp/tests/test_harness_control_claude.py",
     "mcp/tests/test_harness_control_claude_smoke.py",
+    "mcp/tests/test_harness_control_client.py",
     "mcp/tests/test_harness_control_runner.py",
     "mcp/tests/test_harness_launch.py",
     "mcp/tests/test_harness_logs.py",
@@ -113,6 +114,8 @@
     "mcp/tests/test_serving.py",
     "mcp/tests/test_serving_changeset.py",
     "mcp/tests/test_serving_files.py",
+    "mcp/tests/test_serving_harness_capabilities.py",
+    "mcp/tests/test_serving_harness_control_api.py",
     "mcp/tests/test_serving_notes.py",
     "mcp/tests/test_setup_progress.py",
     "mcp/tests/test_signal_routing.py",
@@ -148,8 +151,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 137,
-    "fileSidecars": 136,
+    "sourceFilesInScope": 140,
+    "fileSidecars": 139,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -163,6 +166,7 @@
     "agentic",
     "ambient",
     "analysis",
+    "api",
     "app",
     "assignment",
     "async",
@@ -189,6 +193,7 @@
     "claude_stream_json",
     "cleanup",
     "cli",
+    "client",
     "code",
     "codex",
     "codex_app_server_0_144_3",
@@ -230,12 +235,10 @@
     "guards",
     "harness",
     "harnesses",
-    "hosted",
-    "hygiene",
-    "identity"
+    "hosted"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L3 tests the complete same-session setter delegate graph. Shared contract and queue coverage fail closed outside the five `SetResult` outcomes, reject contradictory effective values, preserve FIFO set/prompt order, and prove a cancelled waiter cannot poison later commands. Claude tests require exact session, UUID, canonical command replay, and terminal evidence; near-miss labels, late/duplicate replay, generic native refusal, and successful dynamic Fable-shaped rows are separate cases. Codex tests pin desired/pending/effective state, captured prompt selection epochs, fresh-turn...",
+    "summary": "260714-ACPUI-L4 tests the frozen daemon consumer boundary and its production races. Capability catalog cases prove token-free current-environment discovery, install fingerprint invalidation, bounded single-flight retention, failed-refresh quarantine/recovery, and protection of a later concurrent success. API/client/IPC/queue cases prove strict normalized advertise/set parsing, first-byte ambiguity without blind retry, whole UTF-8 multiline submit, pending and retained request-id idempotency, retained-known reconciliation without native resend, raw-free public serialization, and liveness-fir...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",

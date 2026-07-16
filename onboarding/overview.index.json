@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1540,
+    "sourceFilesInScope": 1545,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L3 completes the own-adapter backend session-selection path after launch. Model and effort setters share the same ordered bridge queue as prompts and expose only the five normalized `SetResult` outcomes. Claude verifies same-session UUID-correlated canonical replay plus terminal evidence, including the dynamically advertised Fable row without a model-name policy; Codex keeps desired, pending, captured-prompt, and effective selection ordered across fresh turns on the same thread; Pi binds its mutation response to bounded state and refreshed-catalog readback so model errors and t...",
+    "summary": "260714-ACPUI-L4 exposes the own-adapter capability layer through the daemon request/response boundary. Pre-session advertise remains dynamic and token-free behind a fixed three-harness, install-fingerprinted cache; explicit refresh is the auth/account boundary and a failed refresh quarantines the observed entry. Terminal open accepts only a complete native model/effort pair and uses the same opener as settings-owned role spawn. Live same-id reopen returns the retained process truth or conflicts without mutation; exact-session advertise/set/whole-message submit/reconcile use private IPC with...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,11 +115,10 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
-      "SetResult",
       "ACPUI",
-      "UUID",
+      "IPC",
       "repo-overview",
-      "06973f6886276d7b3670c2c1e19cbb76928a7892",
+      "a1b0aa9143fa777efd8389892e3283ff257ef44d",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -144,7 +143,8 @@
       "ar-coordination/memory-repos/ar-<repo>/",
       "c-00-initialize-memory-repo",
       "kernel/memory_ledger.py",
-      "ContextPacketV2"
+      "ContextPacketV2",
+      "resolve_context"
     ]
   },
   "fallback": {

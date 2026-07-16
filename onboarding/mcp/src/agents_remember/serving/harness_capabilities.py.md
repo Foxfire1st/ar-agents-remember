@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_capabilities.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:19+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892`|
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,7 +36,10 @@ those ownership declarations to reject a competing free-form selector instead of
 one. `SetResult` carries explicit mutation acceptance evidence. `SET_ACCEPTANCE_VALUES` is the
 runtime authority for the same five tokens expressed by the static literal, and serialization
 rejects any out-of-vocabulary value before exposing a serving shape. Serializer helpers expose
-stable camel-case objects without inferring effective values.
+stable camel-case objects without inferring effective values. L4's strict inverse parsers rebuild
+snapshots and `SetResult` values from exact-session IPC. They validate required text and boolean
+fields, the five acceptance tokens, nested model-local effort lists, and any supplied
+`configOptions`; that projection must exactly equal what the catalog itself derives.
 
 ### Conventions
 
@@ -52,6 +55,8 @@ always a string when a select is emitted.
 - `echo-verified` is the only result category that may carry a proven effective value; the queue
   additionally enforces the `ok`/effective-value relationships for every category.
 - Unknown current model/effort values are omitted from the ACP-style projection rather than guessed.
+- IPC parsing rejects a config projection that disagrees with the model-gated catalog instead of
+  trusting two competing representations of the same state.
 - Adapter-owned launch selectors are explicit data; callers must conflict-check them before native
   discovery or startup rather than relying on argument order.
 - This module has no vendor subprocess, session lifecycle, ACP transport, composer-paste, daemon, or
@@ -59,7 +64,7 @@ always a string when a select is emitted.
 
 ### Todos
 
-None known for the normalized L3 set-result vocabulary.
+None known for the normalized L4 serialization/parsing boundary.
 
 ## Docs References
 
@@ -80,6 +85,8 @@ plus transient discovery through that boundary.
 | The protocol, discovery, and launchable adapter ports consume `CapabilitySnapshot`, `LaunchKnobs`, and `SetResult`. | L31-L80 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The ordered control queue validates the exact runtime vocabulary and the success/effective-value relationship before returning a setter result. | L476-L508 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
 | The launch boundary consumes owned selectors before token-free discovery and runtime construction. | L149-L182 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
+| The exact-session client uses the strict inverse parsers for live advertise and set responses. | L81-L96; L282-L308 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| The daemon emits this unchanged normalized shape for both pre-session and live capability reads. | L105-L137 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 | Claude produces native model/effort flags. | L188-L202 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
 | Codex declares session config plus owned CLI/config selectors. | L128-L146 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Pi declares provider-qualified model and thinking flags. | L181-L191 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
@@ -94,6 +101,8 @@ No external repository or ACP transport dependency is implemented by the normali
 
 ## Update History
 
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented strict exact-session inverse
+  parsing, model-gated config-projection validation, and unchanged normalized daemon serialization.
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented the executable five-value
   acceptance authority, fail-closed serialization, and the queue-enforced relationship between
   acceptance, success, and effective values.

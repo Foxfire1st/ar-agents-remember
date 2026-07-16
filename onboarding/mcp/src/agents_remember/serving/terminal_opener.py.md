@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T23:16+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,8 @@
 Owns the single hosted-session opener shared by the dashboard terminal route and agent-facing spawn
 tool. It resolves the server-owned base command, preserves role/lineage provenance, arbitrates one
 live seat per leaf-role pair, and carries a typed native launch selection into the exact-session
-control runner without creating a parallel spawn path.
+control runner without creating a parallel spawn path. It also treats an already-live process as
+immutable launch truth, so an idempotent reopen cannot rewrite model/effort or control provenance.
 
 ## Code Commentary
 
@@ -31,27 +32,37 @@ the runner payload; it applies `legacy_model`/`legacy_effort` only through an ex
 settings-defined non-native mapping. Free-form `launch_args` remain verbatim provenance but later
 adapter-owned conflicts are refused by the runner before discovery.
 
-`_session_command` preserves an already-running legacy raw-TUI row, launches ordinary shells
-directly, or wraps a fresh harness in `harness_control_runner` with exact control identity, cwd,
-base argv, session commands, and optional typed launch. `open_terminal_session` resolves that
-command, derives the immutable/current seat role, checks the same leaf-role owner immediately before
-spawn, calls `TerminalHost.ensure`, and upserts one durable catalog row. The row retains write-once
-spawned-by, replacement, role, level, free-form, resolved model/effort, and control-endpoint
-provenance. Different roles may coexist on one leaf; a live same-role owner returns `leaf-taken`
-without tmux or catalog mutation. Reopening the same session id preserves the existing binding;
-role changes use the explicit attach/rebind path.
+`open_terminal_session` resolves only the server-owned command before entering `TerminalCatalog.batch`.
+The batch fences the complete durable read, live-process check, leaf-role arbitration,
+`TerminalHost.ensure`, and catalog upsert across threads and processes. A live existing session is
+checked before command or provenance mutation. A selectionless or identical-pair reopen returns the
+actual retained row without calling `ensure`; changed kind, harness, cwd, or explicit pair returns
+`launch-conflict` with that same actual row. A dead row starts a fresh process generation with a new
+`createdAt`/control endpoint and does not inherit process-specific control, session-log, free-form,
+role-origin, level, or resolved-pair state.
+
+For a fresh generation, `_session_command` launches ordinary shells directly or wraps the native
+harness in `harness_control_runner` with exact identity, cwd, base argv, session commands, and typed
+launch. The opened row retains leaf/lineage binding where appropriate and records process-specific
+spawn role, free-form inputs, resolved model/effort, and endpoint from this generation. Different
+roles may coexist on one leaf; a live same-role owner returns `leaf-taken` without process or
+catalog mutation.
 
 ### Conventions
 
 The opener consumes settings-resolved inputs but does not read or mutate settings. The namespaced
 spawn environment still reaches tmux as provenance/runtime context, while the typed
 `ResolvedLaunch` is the native initial-selection authority. HTTP and MCP response shaping stay in
-their callers; this module returns `opened`, `leaf-taken`, or `bad-kind`.
+their callers; this module returns `opened`, `launch-conflict`, `leaf-taken`, or `bad-kind`.
 
 ### Invariants And Boundaries
 
 - Both dashboard and agent-facing spawn compose this same opener; there is no sibling launch path.
 - Harness ids—not commands—cross the request boundary; argv remains registry/settings owned.
+- A live process's kind, harness, cwd, command, model/effort, and control metadata are immutable
+  reopen truth; losing or later callers cannot overwrite them with attempted values.
+- The complete read/probe/ensure/upsert transaction is fenced by the catalog batch, not merely the
+  final write.
 - A live same leaf-role owner refuses before `TerminalHost.ensure` and catalog upsert.
 - Role-based spawn, spawned-by lineage, replacement lineage, and the durable catalog survive the
   launch-capability addition unchanged.
@@ -64,8 +75,7 @@ their callers; this module returns `opened`, `leaf-taken`, or `bad-kind`.
 
 ### Todos
 
-L4 adds model/effort fields to the daemon launch request and makes roleless serving opens construct
-the same typed selection.
+None known for the L4 shared opener boundary.
 
 ## Docs References
 
@@ -87,8 +97,10 @@ and caller-specific response shaping.
 | Native launch selection and fail-loud duplicate/catalog validation are centralized in the launch module. | L17-L226 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
 | Role-scoped leaf arbitration resolves only the same-role owner and marks dead owners exited. | L32-L50 | [terminal_leaf_assignment.py](agents-remember/mcp/src/agents_remember/serving/terminal_leaf_assignment.py) |
 | The catalog row owns durable seat, lineage, resolved knob, free-form, and control metadata. | L50-L120 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The dashboard route maps opener results without duplicating spawn composition. | L935-L967 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The agent-facing spawn tool resolves role settings and calls this same opener with the typed launch. | L500-L609 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| The catalog batch holds both the process lock and instance lock across the complete unit of work. | L696-L727 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | L946-L1049 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The agent-facing spawn tool resolves role settings, calls this opener, and maps live launch conflict to its existing launch-selection refusal. | L474-L628 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | L271-L407 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
 
 ## Cross-Repo References
 
@@ -100,6 +112,9 @@ dashboard terminal catalog.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented live-process launch truth,
+  selectionless/same-pair idempotence, explicit conflicting-pair refusal, dead-generation reset,
+  and the cross-thread/process batch fence around read, probe, ensure, and upsert.
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the typed `ResolvedLaunch` runner
   payload, native-vs-explicit-custom mapping boundary, preserved role/lineage/catalog provenance,
   and the rule that normalized native model/effort is never synthesized into a session paste.

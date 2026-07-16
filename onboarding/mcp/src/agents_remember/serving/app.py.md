@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ surface (`GET /api/terminal/sessions`, catalog-backed per-WebSocket tmux-client 
 `POST /api/terminal/{session}/terminate`), the `POST /api/terminal/{session}` opener that ensures a
 detached tmux session — a shell or a detected harness (6e-2a/6e-2b), and since **L2** through the shared
 `serving.terminal_opener.open_terminal_session` so this route and the agent-facing `spawn_agent_session`
-MCP tool spawn through ONE opener — the L5/L9
+MCP tool spawn through ONE opener — the native capability/control surface
+(`GET /api/harnesses/{harness}/capabilities`, live capability and model/effort set, whole-message
+submit, and same-id reconcile), the L5/L9
 `POST /api/terminal/{session}/attach-leaf` leaf-claim/move route, the **L2**
 `POST /api/terminal/{session}/paste` server-side harness-log-verified context-packet delivery, the `GET /api/harnesses` detection
 endpoint (6e-2b), the **260707-HFX-L8** `POST /api/terminal/{session}/retire` (server-authoritative
@@ -38,6 +40,31 @@ just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 
 ## Code Commentary
+
+### Logic
+
+`create_app` constructs the shared projector, terminal/catalog/liveness services, supervisor and
+metrics loops, then registers HTTP, SSE, WebSocket, and delegated route modules before the static
+mount. Request handlers stay composition-focused: domain behavior remains in the serving modules
+and stores they call.
+
+### 260714-ACPUI-L4 Native Capability And Control Composition
+
+`TerminalOpenRequest` accepts optional `model` and `effort`. The route requires either neither or a
+complete pair for an AR built-in native harness, resolves it once into the existing `ResolvedLaunch`,
+and passes it through the shared opener. A live same-id reopen returns facts from the retained
+catalog row; a changed kind, harness, cwd, or explicit pair maps to `409 launch-selection-conflict`
+with the actual row and no host/catalog mutation. Successful responses
+also source kind, harness, lifecycle, control endpoint/protocol, and resolved pair from that actual
+entry rather than echoing attempted request values.
+
+`create_app` registers `harness_control_api` before the static mount and may inject one
+`HarnessCapabilityCatalog` for tests. Pre-session advertise is dynamic, token-free, cached by the
+installed native executable fingerprint, and explicitly refreshable. Live advertise/set/submit/
+reconcile routes address the exact running control endpoint after liveness. Submit is one complete
+message with caller-owned request id, never composer paste. Public receipts preserve normalized
+acceptance/correlation while omitting private raw adapter evidence; async output remains on the
+existing SSE, terminal, transcript, and durable inter-agent bus surfaces.
 
 ### 260707-HFX2-L17 HTTP Seat Binding And Served Package Boundary
 
@@ -244,9 +271,11 @@ otherwise-unchanged projection look changed.
   evidence threshold (3 command failures across ≥5s, or one definitive pane-gone probe); a falsely
   exited row self-heals to `running` on the next alive probe; explicitly terminated rows are
   filtered by the catalog.
-- `POST /api/terminal/{session}` (slice 6e-2a/6e-2b) is the **opener**: the dashboard ensures a
+- `POST /api/terminal/{session}` (slice 6e-2a/6e-2b, extended by ACPUI L4) is the **opener**: the dashboard ensures a
   detached durable tmux session, then the WebSocket attaches with a per-tab client. `TerminalOpenRequest`
-  carries a `kind` (+ optional `harness`), a display `label`, `lifecycleId`, and (L5) `leafKey`. **Since
+  carries a `kind` (+ optional `harness`), optional complete `model`/`effort`, a display `label`,
+  `lifecycleId`, and (L5) `leafKey`. A partial pair or a pair on a plain/non-native session returns
+  `400 launch-selection-invalid` before spawn. **Since
   L2 the whole leaf-claim + tmux-ensure + catalog-upsert composition moved into
   `serving.terminal_opener.open_terminal_session`** (`resolve_terminal_launch`, `_terminal_label`, and the
   role-scoped conflict check all left `app.py` for that module) — the route first normalizes any supplied
@@ -256,12 +285,21 @@ otherwise-unchanged projection look changed.
   `OpenTerminalResult`: `bad-kind` ⇒ `400`,
   `leaf-taken` ⇒ `409 {"status":"leaf-taken","leafKey","session":<owner>}` (server-arbitrated,
   role-scoped, self-reclaim allowed — a `kind="terminal"` open never 409s against the leaf's agent chat),
-  and `opened` ⇒ `200` echoing the persisted `leafKey`/`cwd`/`tmuxName`. This is the same opener the
+  `launch-conflict` ⇒ `409 launch-selection-conflict` with the actual durable kind/harness/pair/
+  endpoint, and `opened` ⇒ `200` returning the persisted `leafKey`/`cwd`/`tmuxName` and actual
+  native selection/control provenance. This is the same opener the
   agent-facing `spawn_agent_session` MCP tool composes, so there is **no parallel spawn path**. Command
   resolution stays server-side (`kind="terminal"` ⇒ `[$SHELL]`, `kind="harness"` ⇒ the registry argv,
   rejecting absent/unknown/uninstalled ids; only ids on the wire), the leaf binding is preserved across a
   re-open when none is sent, there is no starter PTY client to close, and a bare-pane harness is opened
   suspend-unsafe (slice 6f).
+- The native capability/control routes are registered by `harness_control_api`: pre-session
+  `GET /api/harnesses/{harness}/capabilities` (optional `refresh=true`), live
+  `GET /api/terminal/{session}/capabilities`, `POST .../set-model`, `POST .../set-effort`,
+  `POST .../submit`, and `POST .../reconcile`. Live routes observe running-state/liveness before
+  endpoint support, so unknown/stopped/dead rows are `404`, live plain/legacy rows are `409`, and a
+  live native endpoint proceeds. Set responses retain honest adapter acceptance at `200`; endpoint
+  or discovery failure is `503`. Submit and reconcile use raw-free public serializers.
 - `POST /api/terminal/{session}/paste` (**L2**) delivers a context packet to a hosted session
   server-side — the mirror of the frontend WebSocket `pasteAndConfirm`/`submitAndConfirm` for a durable
   tmux session that has no attached browser client. `TerminalPasteRequest` carries `text` + `submit`
@@ -346,14 +384,15 @@ delta events from `projector.subscribe()`. `_encode` dumps projection nodes by a
 
 Live app creation enables the landing refresher; simulation supplies a feeder and disables remote observation. Lifespan shutdown tolerates a failed refresher task and still reaches `TerminalHost.shutdown`.
 
-## Invariants And Boundaries
+### Invariants And Boundaries
 
-### 260713-PHA-L1 control contract boundary
+### Native control contract boundary
 
-The serving app exposes additive `/api/harnesses` control metadata while the protocol bridge,
-private IPC, and normalized terminal surface remain explicit seams rather than production cutover.
-Control state and receipts belong to the bridge/adapter contract; tmux pane and terminal-log text are
-diagnostics only. No vendor adapter is registered by this leaf.
+The serving app now registers the L4 harness-neutral production routes, while protocol bridge,
+private IPC, pre-session cache, and normalized terminal surface remain explicit modules. Control
+state and receipts belong to the bridge/adapter contract; tmux pane and terminal-log text are
+diagnostics only. Vendor-specific behavior remains behind AR's native adapter port rather than in
+this app.
 
 - **Local-first:** bound to `127.0.0.1` by the CLI default, no auth in v1; the module docstring
   records the "do not tunnel it" posture (it now also exposes the POST action surface). The UI
@@ -422,10 +461,29 @@ diagnostics only. No vendor adapter is registered by this leaf.
   `servingBuild` already has).
 - `McpRuntimeConfig`/`datetime` are imported under `TYPE_CHECKING` (config is only passed on).
 
+### Conventions
+
+`create_app` composes route modules and shared stores; vendor protocol logic stays out of this file.
+Request/response routes carry immediate command evidence, while existing streams carry asynchronous
+output. Settings are read as authority where already established and are never mutated here.
+
+### Todos
+
+Frontend and settings-authoring consumers belong to the separate FEUI and CFGUI masters.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository, so no live domain-documentation
+pass was available for this update.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
+
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
 | The shared tick/fan-out loop the app drives (with the `now`/`before_tick` seams) + the ETag revision. | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
 | The live change watcher `create_app` injects when `watch_changes` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
 | The boot-time serving build stamp injected on `/api/state` + the SSE snapshot. | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
@@ -438,6 +496,9 @@ diagnostics only. No vendor adapter is registered by this leaf.
 | The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
 | The shared hosted-session opener (L2) both this route and the `spawn_agent_session` tool compose. | L84-L174 | [terminal_opener.py](terminal_opener.py) |
+| The L4 route module owns harness-neutral advertise, launch selection, exact-session set, submit, reconcile, and liveness-first status mapping. | L64-L249 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| The pre-session catalog owns bounded dynamic discovery and failed-refresh quarantine. | L80-L195 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
+| The shared opener owns live launch-truth checks and the fenced read/probe/ensure/upsert transaction. | L170-L648 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
 | The serving leaf-ref adapter normalizes terminal open/attach leaf keys before catalog writes. | resolve_catalog_leaf_key | [leaf_ref_validation.py](leaf_ref_validation.py.md) |
 | The server-side capture-verified paste helper the L2 `/paste` endpoint drives (260707-HFX-L3: unconfirmed ships the pane capture). | L133-L229 | [terminal_paste.py](terminal_paste.py) |
 | The harness launch registry the opener + `/api/harnesses` consume (slice 6e-2b). | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
@@ -457,12 +518,23 @@ diagnostics only. No vendor adapter is registered by this leaf.
 | The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | [../kernel/agentic_settings.py](../kernel/agentic_settings.py.md) |
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
 
+## Cross-Repo References
+
+No external repository boundary, Toad host, or ACP transport is implemented by the serving app.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
+
 ### 260713-PHA-L5 Hosted Projection And Interaction Routes
 
 Serving routes expose additive adapter catalog state, route hosted delivery through the durable
 inbox-backed bridge, and surface adapter interactions without making pane or log timing authoritative.
 
 ## Update History
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the daemon's dynamic advertise,
+  complete-pair launch, exact-session set, reliable submit/reconcile, raw-free public evidence,
+  live-reopen conflict response, and preserved streams, role spawn, and durable bus boundaries.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed dashboard/API projection and bridge-backed route composition.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented additive harness control
   metadata and the deliberate no-production-wiring boundary for the new bridge seams.

@@ -34,7 +34,9 @@
     "mcp/src/agents_remember/serving/files.py",
     "mcp/src/agents_remember/serving/harness_adapters.py",
     "mcp/src/agents_remember/serving/harness_capabilities.py",
+    "mcp/src/agents_remember/serving/harness_capability_catalog.py",
     "mcp/src/agents_remember/serving/harness_control_adapter.py",
+    "mcp/src/agents_remember/serving/harness_control_api.py",
     "mcp/src/agents_remember/serving/harness_control_bridge.py",
     "mcp/src/agents_remember/serving/harness_control_claude.py",
     "mcp/src/agents_remember/serving/harness_control_client.py",
@@ -83,8 +85,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 71,
-    "fileSidecars": 71,
+    "sourceFilesInScope": 73,
+    "fileSidecars": 73,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -93,6 +95,7 @@
     "adapters",
     "agents",
     "agents_remember",
+    "api",
     "app",
     "assignment",
     "binding",
@@ -101,6 +104,7 @@
     "build",
     "build_info",
     "capabilities",
+    "capability",
     "catalog",
     "change",
     "change_watcher",
@@ -132,7 +136,9 @@
     "harness",
     "harness_adapters",
     "harness_capabilities",
+    "harness_capability_catalog",
     "harness_control_adapter",
+    "harness_control_api",
     "harness_control_bridge",
     "harness_control_claude",
     "harness_control_client",
@@ -163,14 +169,10 @@
     "launch",
     "leaf",
     "leaf_ref_validation",
-    "limits",
-    "liveness",
-    "lock",
-    "logs",
-    "mcp"
+    "limits"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L3 makes `set_model` and `set_effort` first-class operations on the normalized own-adapter port and serializes them with prompt submission through `HarnessControlQueue`. `SetResult` accepts exactly `echo-verified`, `immediate`, `queued`, `unknown`, or `unsupported`, with requested and effective values kept separate and contradictory combinations rejected. Claude sends ordinary structured `/model` and `/effort` user frames, then requires the same vendor session, retained UUID, canonical replay body, and native terminal result; the exact dynamic `claude-fable-5[1m]` row is a curr...",
+    "summary": "260714-ACPUI-L4 exposes the normalized port through the daemon without introducing ACP transport. `HarnessCapabilityCatalog` performs token-free native discovery, caches one successful snapshot per built-in harness under an executable/argv fingerprint, single-flights concurrent misses, and treats explicit refresh as the auth/account boundary: failure conditionally quarantines only the entry it observed. `harness_control_api` accepts an optional complete native launch pair and addresses exact live sessions for advertise, honest set, whole-message submit, and same-id reconcile. Public seriali...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

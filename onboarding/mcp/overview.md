@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-16T01:34+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated            | 2026-07-16T06:26+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -198,6 +198,16 @@ vendor driver is registered or production cutover is implied.
  scope.
 
 ## Hot Path Summary
+
+260714-ACPUI-L4 freezes the package's daemon-side own-adapter contract. A bounded
+`HarnessCapabilityCatalog` discovers the installed/authenticated native catalog without a model
+turn, fingerprints the executable/argv, single-flights by built-in harness, and quarantines the
+observed entry after failed explicit auth refresh. FastAPI routes expose that normalized catalog,
+an optional complete launch pair, exact-session advertise and honest setters, whole-message submit,
+and same-id reconciliation. Live reopen returns retained process truth or conflicts without
+rewriting it; request-byte ambiguity never triggers blind resend; duplicate ids converge on the
+retained receipt; public responses strip adapter-private raw evidence; and liveness precedes
+support classification. The route is server-only and preserves role spawn and the durable bus.
 
 260714-ACPUI-L3 adds normalized same-session model/effort mutation to the native hosted-control
 package. `HarnessControlBridge` sends both setters through the same bounded FIFO as prompts, and
@@ -754,6 +764,11 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented package-wide daemon advertise,
+  complete-pair launch, exact-session set, reliable whole-message submit/reconcile, install/auth
+  cache fencing, live-reopen truth, first-byte ambiguity, idempotent request ids, public raw
+  stripping, and liveness-first status classification while preserving role spawn and the durable
+  bus. Verification metadata remains pinned until closeout stamps the L4 code commit.
 - 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: documented the package-wide same-session set
   port, shared FIFO ordering, exact `SetResult` vocabulary, Claude correlated terminal proof,
   Codex desired/pending/effective fresh-turn state, Pi bounded response/readback/catalog coherence,

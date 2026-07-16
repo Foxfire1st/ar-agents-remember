@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-16T06:26+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -23,13 +23,14 @@ re-export remain importable from `agents_remember.mcp.tools`.
 
 ## Hot Path Summary
 
-ACPUI-L2 changes the terminal payload builder from static built-in knob mapping to typed native
-launch dispatch. Complete role settings become `ResolvedLaunch`; missing model/effort refuses
-before tmux, and complete values travel to runner-side dynamic model-gated validation. Spawn env
-and response fields preserve provenance, while normalized model/effort never joins
-`sessionCommands`. Settings-defined non-native harnesses retain only their explicitly declared
-legacy mappings, and roleless opens remain selectionless until the serving request layer owns that
-choice.
+ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request
+layer owns optional roleless selection. Complete role settings become `ResolvedLaunch`; missing
+model/effort refuses before tmux, and complete values travel through the same opener to runner-side
+dynamic model-gated validation. Spawn env and response fields preserve provenance, while normalized
+model/effort never joins `sessionCommands`. If the selected session id already names a live process
+with different launch identity, the opener returns `launch-conflict`; this builder maps it to
+`launch-selection-invalid` and stops before expectations, log binding, brief delivery, or respawn.
+Settings-defined non-native harnesses retain only their explicitly declared legacy mappings.
 
 HFX2-L17 makes the terminal tool surface pair-aware. Attach accepts explicit role and reports
 current/previous binding identity; spawned rows expose `seatRole`; brief and turn-report
@@ -116,7 +117,7 @@ calling me" session-id resolution anywhere in this codebase.
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the terminal snapshot and leaves physical expiry to compaction so concurrent delivery cannot resurrect it. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
 | `leaf_ref.py`   | shared MCP refusal-payload helper for `leaf-ref-not-found` / `leaf-ref-ambiguous`, keeping strict leaf-ref error envelopes out of the already-large terminal tool module. |
-| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16/HFX2-L10: `_caller_spend_override_refusal` + `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-only knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, settings-owned free-form + level provenance) — it normalizes leaf refs before catalog writes, composes the shared `serving.terminal_opener.open_terminal_session` (create + leaf claim + env-seeded tmux ensure with per-harness argv knob application) then a `serving.terminal_paste.TerminalPaster` capture-verified paste sequence, records spawned-by provenance, and returns `spawned` / `spend-override-unsupported` / `leaf-taken` / `harness-unknown` / `harness-not-detected` / `effort-invalid` / `model-invalid` / `level-invalid` / `leaf-ref-not-found` / `leaf-ref-ambiguous` / `bad-kind` through the strict response model. |
+| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16/HFX2-L10: `_caller_spend_override_refusal` + `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-only knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, settings-owned free-form + level provenance) — it normalizes leaf refs, composes the shared `serving.terminal_opener.open_terminal_session` for live-identity validation, role-scoped leaf claim, native runner launch, and catalog upsert, then runs the capture-verified brief-delivery sequence. A live launch mismatch maps to `launch-selection-invalid` with no retry, expectation, or paste. Other strict response statuses remain `spawned`, `spend-override-unsupported`, `leaf-taken`, `harness-unknown`, `harness-not-detected`, `effort-invalid`, `model-invalid`, `level-invalid`, `leaf-ref-not-found`, `leaf-ref-ambiguous`, and `bad-kind`. |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
 Since 2.5.1 this route also owns the response token-budget layer: the verbose
@@ -178,6 +179,11 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented the serving-owned optional roleless
+  pair, immutable live launch truth, and `launch-conflict` to `launch-selection-invalid` mapping
+  without retry or alternate spawn. Settings-owned role dispatch, exact shared opener, and durable
+  brief/inbox delivery remain unchanged. Verification metadata remains pinned until closeout stamps
+  the L4 code commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented typed native role launch
   resolution, structural refusal, runner-side dynamic validation, provenance-only env, the
   no-synthesized-command rule, explicit custom-harness mappings, and the roleless temporal

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastUpdated | 2026-07-16T06:15+02:00 |
+| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
+| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,34 +16,69 @@
 
 ## Purpose
 
-Defines the protocol-neutral value objects and JSON projections for one hosted harness control
-session: exact identity, handshake, normalized control/activity/acceptance state, prompt and
-interaction requests, receipts, reconciliation, transcript entries, and shutdown mode.
+Defines protocol-neutral value objects and JSON projections for one hosted harness control session:
+exact identity, handshake, normalized state, prompt and interaction requests, receipts,
+reconciliation, transcript entries, and shutdown mode. L4 adds deliberately raw-free serializers
+for the daemon's public submit and reconciliation responses.
 
 ## Code Commentary
 
-The normalized snapshot keeps control (`starting`, `ready`, `disconnected`, `failed`, `unsupported`),
-activity (`idle`, `running`, `blocked`, `settling`, `unknown`), and acceptance orthogonal while
-retaining raw vendor detail. Request ids, vendor correlation ids, timestamps, and exact AR/session
-identity remain explicit. `UncommittedDraft` is surface-owned: R11 requires an automated delivery
-to be a whole ordered message that cannot inject into, submit, or discard a human draft.
+### Logic
 
-## Invariants And Boundaries
+The normalized snapshot keeps control (`starting`, `ready`, `disconnected`, `failed`,
+`unsupported`), activity, and acceptance orthogonal while retaining raw vendor detail internally.
+Request ids, correlation ids, timestamps, and exact AR/session identity remain explicit.
+`receipt_json` and `reconciliation_json` preserve full internal evidence for private IPC and durable
+diagnostics. `public_receipt_json` and `public_reconciliation_json` expose only normalized fields and
+intentionally omit `raw` from the daemon consumer contract.
+
+### Conventions
+
+Internal serializers preserve additive vendor evidence; public serializers are separate named
+functions rather than an exclusion flag so callers cannot accidentally leak the private mapping.
+Wire names are camel-case.
+
+### Invariants And Boundaries
 
 - Models carry protocol state; tmux pane text and terminal logs are diagnostic, not authoritative.
 - Additive raw event detail is retained without guessing semantics for unknown event kinds.
 - Disconnect-after-possible-send remains unknown and must be reconciled, never blindly resent.
+- Public receipt/reconciliation responses retain normalized correlation and detail but never `raw`.
+
+### Todos
+
+None known for the L4 public serialization boundary.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository, so no live domain-documentation
+pass was available for this update.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Adapter boundary and event reducer. | [harness_control_adapter.py](harness_control_adapter.py) |
-| Bridge and ordered delivery owner. | [harness_control_bridge.py](harness_control_bridge.py) |
-| Surface-owned draft contract. | [harness_terminal_surface.py](harness_terminal_surface.py) |
-| Leaf requirements and R11 ruling. | [task doc](../../../../../../../../../../tasks/agents-remember/260713_protocol-backed-harness-adapters/01_control-bridge-and-state-contract.json) |
+The API consumes only the public projections, while private IPC keeps full internal serializers.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The daemon submit and reconcile routes select the public raw-free serializers. | L173-L210 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| Private IPC still serializes full receipts and reconciliation evidence for exact-session peers. | L180-L227 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| Public route tests seed sensitive-looking raw mappings and prove they do not cross the boundary. | L166-L219 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+
+## Cross-Repo References
+
+No external repository boundary is implemented by these local protocol models.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the explicit public receipt and
+  reconciliation serializers that preserve normalized evidence while omitting adapter-private raw.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator pass: created onboarding for the normalized
   control models, identity/correlation state, raw vendor detail, and R11 draft ownership.
