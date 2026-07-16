@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-16T06:26+02:00 |
-| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25` |
-| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
+| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3` |
+| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -764,6 +764,13 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T00:50+02:00 — No route impact: 260715-FEUI-L1 shipped-dashboard bundle resync —
+  the `package_data/dashboard/**` asset churn plus the refreshed `package_data/dashboard.fingerprint`
+  are the generated artifact copy of the rebuilt `dashboard/dist` per `scripts/sync-dashboard.py`
+  (the source-aware sync invariant this overview already documents); no mcp source, server, or
+  architecture change. Reviewed and unaffected; hashed generated assets stay outside file-level
+  onboarding, and the frontend change itself is documented at the `dashboard/src/` route.
+  Verification metadata remains pinned until closeout stamps the L1 code commit.
 - 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented package-wide daemon advertise,
   complete-pair launch, exact-session set, reliable whole-message submit/reconcile, install/auth
   cache fencing, live-reopen truth, first-byte ambiguity, idempotent request ids, public raw

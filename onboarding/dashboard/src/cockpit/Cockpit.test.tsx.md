@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T16:45+02:00                           |
-| lastVerifiedCommitHash |                                                   `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate |                                                   2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-17T00:25+02:00                           |
+| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
+| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -57,6 +57,13 @@ dashboard store.
   default `rail--right` shows the Event River; clicking the `rail-toggle-chat` `role="radio"` segment
   swaps in the single-instance `RailChat` (`rail-chat` testid), and clicking `rail-toggle-river` swaps
   the Event River back, pinning the `railView` switch without unmounting the railed body.
+- "Sessions view: full-bleed keep-alive layer" (260715-FEUI-L1 R1) — seeds `engine-fleet` and pins
+  the Chats keep-alive pattern for the new Sessions view: the `sessions-view` node is mounted from
+  the start inside a `display:none` + `aria-hidden="true"` layer, already carrying the
+  `data-view="sessions"` WebTUI scope marker while hidden; clicking the "Sessions" mode-bar radio
+  goes full-bleed (`data-fullbleed="true"`, no `.rail--left`) and reveals the **same** DOM node
+  (`display:flex`, `aria-hidden="false"` — React renders aria booleans literally); leaving hides it
+  again without unmounting.
 - "rail chat keys by the drilled leaf, not the master" (L5 fix 1) — a local `seedDrillableMaster` (+ a
   `taskDoc` factory) seeds a lifecycle-bound master with one authored, drillable leaf. The test selects
   the master, toggles the rail to chat, and asserts the master overview shows no leaf slot yet
@@ -84,6 +91,10 @@ and selection timing.
 
 ## Update History
 
+- 2026-07-17T00:25+02:00 — 260715-FEUI-L1 (R1): added the "Sessions view: full-bleed keep-alive
+  layer" describe — same-node identity across switches, display/aria-hidden toggling, full-bleed
+  rails-hide, and the scope marker present while hidden. Pure addition; no existing case changed.
+  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
 - 2026-07-12T16:45+02:00 — 260712-TRH-L1 reopen correction: added Operations click-to-detail
   composition coverage for direct leaf, master, drilled, and lifecycle-bound readers under analytics
   summary churn, plus a pending A-to-B switch with late A resolution. Verification metadata remains

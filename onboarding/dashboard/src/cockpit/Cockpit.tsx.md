@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T23:59+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-17T00:25+02:00                           |
+| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
+| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -35,7 +35,10 @@ Add-to-chat composer. **L17** adds a second full-bleed **takeover** beside the C
 the threaded `onOpenNotes`. The shell holds its selection (`notes`) + a `notesOpen` visibility flag and a
 shared `takeover` flag hides the railed body for either screen; unlike the Change-Set takeover it is
 RETAINED mounted-hidden after Back (the File Viewer pattern) so its listing + open note survive
-back/forward, and a fresh entry re-shows it on the clicked note.
+back/forward, and a fresh entry re-shows it on the clicked note. **260715-FEUI-L1** registers the
+newest full-bleed view AND keep-alive layer: **Sessions** (`panels/session-cockpit/SessionsView.tsx`,
+last in the mode bar) — the terminal-first sessions cockpit whose future xterm buffers/WebSockets
+(L6) must survive view switches exactly like Chats.
 
 ## Code Commentary
 
@@ -83,6 +86,14 @@ and draft-paste into the existing leaf chat. The shell still does not submit cha
 context package. **Slice 6g** threads `open` into `DetailPanel` as `onOpenLifecycle`, so a
 cross-master `→` row or a parent `↑` breadcrumb in the task reader switches the selected lifecycle
 through the same `open(id)` path.
+**260715-FEUI-L1 (R1)** adds `"sessions"` to the `View` union and a `{ id: "sessions", label:
+"Sessions" }` entry LAST in `VIEWS` (matching the mockup mode bar); `fullBleed` now includes
+`sessions`. The view is NOT routed through `ViewBody`: a `sessionsLayer` (`= chatsLayer`, the same
+persistent-layer css) renders `<SessionsView active={view === "sessions"} />` once, toggled by
+`display` + `aria-hidden` and never unmounted — the exact Chats pattern — and the `active` prop
+gates the view's window-level tinykeys layer so the hidden layer never grabs keys. The view's own
+root carries `[data-view="sessions"]`, the WebTUI scope + keyboard home (that marker lives inside
+`SessionsView`, not on the shell's layer div).
 **Task 17** keeps `selectedId` as the shared Operations selection key, but normalizes raw ids from
 older surfaces through `lifecycleSelectionKey(id)` so the list/detail path can use typed keys
 (`taskdoc:` / `series:` / `lifecycle:`). `selectedLifecycleId` is derived through
@@ -134,7 +145,9 @@ follows for a pre-L15 server.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | `fullBleed` rails-hide + `bodyGrid` `bleed` variant + gated rail fade. | L194-L252 | [Cockpit.tsx](Cockpit.tsx) |
-| The visible view registry no longer includes `flow`; full-bleed views are Engine Room, Topology, and Chats. | L31-L40; L194-L197 | [Cockpit.tsx](Cockpit.tsx) |
+| The visible view registry no longer includes `flow`; full-bleed views are Engine Room, Topology, Chats, and — 260715-FEUI-L1 — Sessions. | L52-L71; L379-L386 | [Cockpit.tsx](Cockpit.tsx) |
+| The sessions keep-alive layer: `sessionsLayer = chatsLayer`, display/aria-hidden toggle, `active` gating. | L317-L323; L528-L541 | [Cockpit.tsx](Cockpit.tsx) |
+| The sessions cockpit view the shell mounts once. | — | [panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
 | `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | — | [Cockpit.tsx](Cockpit.tsx) |
 | The boot-time effects flag it persists to. | — | [main.tsx](../main.tsx) |
 | The honest-motion gate the rail transition + the toggle drive. | — | [panels/engine-room/useShouldAnimate.ts](../panels/engine-room/useShouldAnimate.ts) |
@@ -150,6 +163,13 @@ follows for a pre-L15 server.
 
 ## Update History
 
+- 2026-07-17T00:25+02:00 — 260715-FEUI-L1 (view shell, R1): registered the full-bleed **Sessions**
+  view — `View` gained `"sessions"`, `VIEWS` a last `Sessions` tab, `fullBleed` includes it, and
+  the view is kept mounted as the fourth persistent hidden layer (`sessionsLayer = chatsLayer`,
+  display/aria-hidden toggle, never unmounted) so the future xterm buffers/WebSockets survive view
+  switches; `active={view === "sessions"}` gates the view's window-level keyboard layer. Only
+  registration seams touched. Verification metadata pinned to the task base until closeout stamps
+  the L1 code commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6):
   `SupervisorHeartbeatBadge` now includes the latest redeliverable/pending inbox backlog counts and
   last sweep duration next to the heartbeat age, with the tooltip carrying the same forward signal.

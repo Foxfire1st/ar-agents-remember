@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1545,
+    "sourceFilesInScope": 1683,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -118,7 +118,7 @@
       "ACPUI",
       "IPC",
       "repo-overview",
-      "d99a1a7f3ac251957ae155ea9beb878b9ba1ab25",
+      "ee955085a2010f62e9ad4d2bdc6aa77975daa5f3",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",

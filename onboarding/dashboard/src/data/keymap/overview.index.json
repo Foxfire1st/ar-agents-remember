@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/src/data/keymap",
+  "overview": "dashboard/src/data/keymap/overview.md",
+  "index": "dashboard/src/data/keymap/overview.index.json",
+  "sourceScope": [
+    "dashboard/src/data/keymap/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "dashboard/src/data/keymap/chords.ts",
+    "dashboard/src/data/keymap/focus.test.ts",
+    "dashboard/src/data/keymap/focus.ts",
+    "dashboard/src/data/keymap/reserved.ts",
+    "dashboard/src/data/keymap/zones.test.ts",
+    "dashboard/src/data/keymap/zones.ts"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 6,
+    "fileSidecars": 6,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "chords",
+    "dashboard",
+    "data",
+    "focus",
+    "keymap",
+    "reserved",
+    "src",
+    "test",
+    "zones"
+  ],
+  "hotPath": {
+    "summary": "The keyboard zone contract: `zoneForTarget` resolves chrome/composer/pty from `data-kbzone` markers, `routeKey` handles a PTY key only when `matchReservedChord` matches the bound reserved set (everything else \u2014 including Esc \u2014 passes to the harness) and suppresses printable bindings in editable targets; `PTY_RESERVED` carries the five-source collision-verification records (the Ctrl+Alt+PageUp/PageDown replacement pair), `CHROME_CHORDS`/`COMPOSER_CHORDS` are the zone-scoped tables, and `nextRegion` drives the F6 cycle with collapsed panels dropping out.",
+    "candidateHints": [
+      "dashboard/src/data/keymap",
+      "dashboard/src/data/keymap/chords.ts",
+      "dashboard/src/data/keymap/focus.test.ts",
+      "dashboard/src/data/keymap/focus.ts",
+      "dashboard/src/data/keymap/reserved.ts",
+      "dashboard/src/data/keymap/zones.test.ts",
+      "dashboard/src/data/keymap/zones.ts"
+    ],
+    "anchorHints": [
+      "chords.ts",
+      "chords",
+      "focus.test.ts",
+      "focus.test",
+      "focus.ts",
+      "focus",
+      "reserved.ts",
+      "reserved",
+      "zones.test.ts",
+      "zones.test",
+      "zones.ts",
+      "zones",
+      "zoneForTarget",
+      "data-kbzone",
+      "routeKey",
+      "matchReservedChord",
+      "PTY_RESERVED",
+      "CHROME_CHORDS",
+      "COMPOSER_CHORDS",
+      "nextRegion",
+      "PTY",
+      "PageUp",
+      "PageDown",
+      "dashboard/src/data/keymap/",
+      "route-local-overview",
+      "ee955085a2010f62e9ad4d2bdc6aa77975daa5f3",
+      "/../overview.md",
+      "data/",
+      "dashboard/src",
+      "keymap/",
+      "data/keymap/",
+      "panels/session-cockpit/useKeyboardZones.ts",
+      "CommandPalette.tsx",
+      "attachCustomKeyEventHandler",
+      "verifiedAgainst",
+      "BROWSER_FORBIDDEN",
+      "isEditableTarget",
+      "isPrintable",
+      "slashOpensPalette",
+      "\\x1b\\x1b",
+      "5;7~",
+      "6;7~",
+      "KeyEventLike",
+      "ZoneElementLike",
+      "data-region",
+      "ZoneChord.printable",
+      "5.2",
+      "5.3"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/src/data/keymap/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

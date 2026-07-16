@@ -18,6 +18,11 @@
       "route": "dashboard/src/panels",
       "overview": "dashboard/src/panels/overview.md",
       "index": "dashboard/src/panels/overview.index.json"
+    },
+    {
+      "route": "dashboard/src/data/keymap",
+      "overview": "dashboard/src/data/keymap/overview.md",
+      "index": "dashboard/src/data/keymap/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -27,6 +32,8 @@
     "dashboard/src/data/actions.ts",
     "dashboard/src/data/changeset.test.ts",
     "dashboard/src/data/changeset.ts",
+    "dashboard/src/data/commands.test.ts",
+    "dashboard/src/data/commands.ts",
     "dashboard/src/data/files.test.ts",
     "dashboard/src/data/files.ts",
     "dashboard/src/data/notes.test.ts",
@@ -41,6 +48,8 @@
     "dashboard/src/data/servedAges.ts",
     "dashboard/src/data/sessionGroups.test.ts",
     "dashboard/src/data/sessionGroups.ts",
+    "dashboard/src/data/sessionLayout.test.ts",
+    "dashboard/src/data/sessionLayout.ts",
     "dashboard/src/data/sessions.test.ts",
     "dashboard/src/data/sessions.ts",
     "dashboard/src/data/store.test.ts",
@@ -64,22 +73,25 @@
     "dashboard/src/index.css",
     "dashboard/src/main.tsx",
     "dashboard/src/styles/tokens.css",
+    "dashboard/src/styles/webtui.css",
     "dashboard/src/test/setup.ts",
+    "dashboard/src/test/webtuiSpike.test.ts",
     "dashboard/src/topology/constel.ts",
     "dashboard/src/topology/model.test.ts",
     "dashboard/src/topology/model.ts",
     "dashboard/src/types/projection.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 141,
-    "fileSidecars": 48,
-    "childRoutes": 2
+    "sourceFilesInScope": 157,
+    "fileSidecars": 54,
+    "childRoutes": 3
   },
   "routingTerms": [
     "actions",
     "bench",
     "changeset",
     "cockpit",
+    "commands",
     "constel",
     "css",
     "dashboard",
@@ -90,6 +102,7 @@
     "fixtures",
     "grammar",
     "index",
+    "keymap",
     "main",
     "mockterminalsocket",
     "model",
@@ -103,6 +116,7 @@
     "selectors",
     "servedages",
     "sessiongroups",
+    "sessionlayout",
     "sessions",
     "setup",
     "src",
@@ -118,7 +132,9 @@
     "topology",
     "tsx",
     "types",
-    "usetaskdocumentbody"
+    "usetaskdocumentbody",
+    "webtui",
+    "webtuispike"
   ],
   "hotPath": {
     "summary": "",
@@ -126,6 +142,7 @@
       "dashboard/src",
       "dashboard/src/grammar",
       "dashboard/src/panels",
+      "dashboard/src/data/keymap",
       "dashboard/src/cockpit",
       "dashboard/src/cockpit/Cockpit.test.tsx",
       "dashboard/src/cockpit/Cockpit.tsx",
@@ -134,6 +151,8 @@
       "dashboard/src/data/actions.ts",
       "dashboard/src/data/changeset.test.ts",
       "dashboard/src/data/changeset.ts",
+      "dashboard/src/data/commands.test.ts",
+      "dashboard/src/data/commands.ts",
       "dashboard/src/data/files.test.ts",
       "dashboard/src/data/files.ts",
       "dashboard/src/data/notes.test.ts",
@@ -143,10 +162,7 @@
       "dashboard/src/data/selection.test.ts",
       "dashboard/src/data/selection.ts",
       "dashboard/src/data/selectors.test.ts",
-      "dashboard/src/data/selectors.ts",
-      "dashboard/src/data/servedAges.test.ts",
-      "dashboard/src/data/servedAges.ts",
-      "dashboard/src/data/sessionGroups.test.ts"
+      "dashboard/src/data/selectors.ts"
     ],
     "anchorHints": [
       "Cockpit.test.tsx",
@@ -161,6 +177,10 @@
       "changeset.test",
       "changeset.ts",
       "changeset",
+      "commands.test.ts",
+      "commands.test",
+      "commands.ts",
+      "commands",
       "files.test.ts",
       "files.test",
       "files.ts",
@@ -189,14 +209,10 @@
       "sessionGroups.test",
       "sessionGroups.ts",
       "sessionGroups",
-      "sessions.test.ts",
-      "sessions.test",
-      "sessions.ts",
-      "sessions",
-      "store.test.ts",
-      "store.test",
-      "store.ts",
-      "store"
+      "sessionLayout.test.ts",
+      "sessionLayout.test",
+      "sessionLayout.ts",
+      "sessionLayout"
     ]
   },
   "fallback": {
