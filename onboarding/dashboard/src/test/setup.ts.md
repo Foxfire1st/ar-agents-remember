@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/setup.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-16T02:30                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-17T00:25+02:00                           |
+| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
+| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -28,6 +28,9 @@ missing globals. Grown in slice 5f S1 from an empty placeholder to carry those s
   when one is absent — `useShouldAnimate`/`shouldAnimate` call `matchMedia("(prefers-reduced-motion …)")`,
   which jsdom does not implement.
 - Defines a no-op `ResizeObserver` class when absent — React Aria components reference it.
+- Defines an inert `Element.prototype.scrollIntoView` when absent (260715-FEUI-L1) — cmdk (the
+  sessions command palette) calls it on the selected item; tests assert selection state, never
+  scroll geometry.
 - Assigns inert SVG geometry stubs (`getBBox`/`getTotalLength`/`getPointAtLength`) across the SVG prototype
   chain (`SVGElement`/`SVGGraphicsElement`/`SVGGeometryElement`) — GSAP's DrawSVG/MotionPath (the engine-room
   timeline, 05n) call these when the effects-on GSAP-gate test builds the context, and jsdom omits or
@@ -53,6 +56,9 @@ override locally).
 
 ## Update History
 
+- 2026-07-17T00:25+02:00 — 260715-FEUI-L1: added a guarded inert `Element.prototype.scrollIntoView`
+  stub — jsdom omits it and cmdk (the sessions command palette) calls it on the selected item.
+  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
 - 2026-06-21T09:57+02:00 — slice 05n: added inert SVG geometry stubs
   (`getBBox`/`getTotalLength`/`getPointAtLength`) across `SVGElement`/`SVGGraphicsElement`/`SVGGeometryElement`
   so GSAP DrawSVG/MotionPath (the engine-room draw-on + packet) construct without throwing under the effects-on

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-12T16:45+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-17T00:30+02:00 |
+| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
+| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -57,12 +57,20 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   in `panels/engine-room/`. The last engine-room keyframe, `powerup` (a 05k/05f carve-out for the
   indexing→nominal engine flash), was then removed too — it is now a **Motion opacity pulse** on the charge
   rect — so only the app-wide `crt-overlay`/`flicker`/`pulse` keyframes remain here.)*
-- **Layer order** — `index.css` declares `@layer reset, base, effects, tokens, recipes, utilities`.
+- **Layer order** — `index.css` declares `@layer reset, base, effects, webtui, tokens, recipes,
+  utilities`. The `webtui` slot (260715-FEUI-L1 S1, OQ-D = **adopt WebTUI**) hosts the scoped
+  WebTUI skin for the sessions cockpit: `styles/webtui.css` is THE one mapping file — it imports
+  the used `@webtui/css@0.1.9` (exact pin) dist files with `layer(webtui)` and maps WebTUI's
+  palette vars onto the podracer tokens (one color system) — while `postcss-prefix-selector`
+  (options in `webtui-scope.config.cjs`, wired in `postcss.config.cjs`) confines every WebTUI rule
+  under `[data-view="sessions"]` at build time. Slotted between `effects` and `tokens` so Panda
+  always wins a conflict and the unlayered effects freeze stays sovereign; the four falsifiable
+  spike assertions live on as `test/webtuiSpike.test.ts`.
 
 ## Route Model
 
-- `main.tsx` — the entry: mounts `<App>`, imports `index.css` + `styles/tokens.css`, sets the
-  `effects=off` determinism flag.
+- `main.tsx` — the entry: mounts `<App>`, imports `index.css` + `styles/tokens.css` +
+  `styles/webtui.css` (260715-FEUI-L1), sets the `effects=off` determinism flag.
 - `App.tsx` — hand-rolled routing (D6): production serves `<Cockpit>`; `/dev/*` lazy-loads the
   DEV-only harness (statically dropped from the production bundle).
 - `cockpit/Cockpit.tsx` — the model-C shell (stream wiring + layout + top bar + mode bar); slice 5f S1
@@ -79,12 +87,17 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   standing view. 260703-L17 adds the second such takeover: a `notesOpen` state renders the full-bleed
   **Notes Reader** (`panels/notes-reader/`) from `DetailPanel` note links or the TaskNotes entry list; the
   two takeovers are mutually exclusive, and the reader is **kept mounted** after Back (File-Viewer-style)
-  so the selected note survives within the session.
+  so the selected note survives within the session. 260715-FEUI-L1 registers the newest full-bleed
+  view, **Sessions** (`panels/session-cockpit/`, last in the mode bar), as the fourth persistent
+  keep-alive layer (`sessionsLayer = chatsLayer` — display/aria-hidden toggle, never unmounted, so
+  the future xterm buffers/WebSockets survive switches); its `active` prop gates the view's
+  window-level keyboard layer so the hidden layer never grabs keys.
 - `test/` — the vitest (jsdom) bootstrap: `setup.ts` stubs `matchMedia`/`ResizeObserver` + the SVG geometry
   APIs jsdom omits (`getBBox`/`getTotalLength`/`getPointAtLength`, for the engine-room GSAP DrawSVG/MotionPath
-  plugins — 05n) for
+  plugins — 05n) + `scrollIntoView` (cmdk, 260715-FEUI-L1) for
   component-render tests (the rest of the suite — `smoke`, `contract`, and the `data/` store+selector
-  tests — is pure logic).
+  tests — is pure logic). `test/webtuiSpike.test.ts` (260715-FEUI-L1) keeps the four falsifiable
+  WebTUI-adoption assertions running against the exact shared build configuration.
 - `grammar/` — the shared primitives library (`Panel`, `ModeBar`, `Dot`, `Affordance`,
   `ProgressFill`, `TokenGauge`, `Markdown`, and — 260703-L14 — `RankBadge`, the V4 chevron rank
   insignia for the orchestration/management command tiers); see
@@ -99,7 +112,11 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   `@codemirror/merge` diff over the L3 change-set API, reusing the L2 `FilePane`). 260703-L17 adds the
   **`panels/notes-reader/`** sub-route — the Notes Reader takeover (rail = the master's notes from the
   unchanged L9 `/api/notes/list`, content pane = the same `DualPane`; `TaskNotes.tsx` shrinks to the
-  compact entry list that opens it). See
+  compact entry list that opens it). 260715-FEUI-L1 adds the **`panels/session-cockpit/`**
+  sub-route — the Sessions cockpit view shell (rail/stage/inspector `PanelGroup` + narrow rules +
+  the ~80-col floor chip, the non-portal cmdk `CommandPalette` with the commands/keys pages, and
+  the `useKeyboardZones` tinykeys binding), whose root carries `[data-view="sessions"]` (the
+  WebTUI scope root). See
   [panels/overview.md](panels/overview.md).
 - `data/` — the Zustand store, pure selectors, SSE stream wiring, the gate-action client
   (`actions.ts` POSTs targeted `gateId`/`note` decisions to `/api/actions/{verb}`, can omit `target`
@@ -163,6 +180,16 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   chats into one archive, and leaves claim-less sessions ungrouped; master grouping is the chats
   pane's baseline in every run (owner-ratified, L14R-1) while the gold sprint deck stays
   orchestration-gated, and the tasks tab renders flat runs unchanged.
+  **260715-FEUI-L1 adds the sessions-cockpit pure layer**: `commands.ts` (+ suite — the extensible
+  command registry, the single options source behind the cmdk palette AND chord dispatch; honest
+  L2/L4/L5 stubs routed through injected context actions), `sessionLayout.ts` (+ suite — the
+  narrow-width edge-transition rules, the ~80-col floor approximation, and the ~280px rail
+  percentage calibration), and the **`keymap/`** sub-route (see
+  [data/keymap/overview.md](data/keymap/overview.md)) — the xterm-free keyboard-zone contract:
+  `reserved.ts` (the PTY reserved set with five-source collision-verification records; the R6
+  replacement pair Ctrl+Alt+PageUp/PageDown), `zones.ts` (`routeKey` + generic printable
+  suppression + `slashOpensPalette`), `chords.ts` (zone-scoped chrome/composer tables), `focus.ts`
+  (the F6 region cycle).
 - `topology/` — the imperative constellation canvas + its pure model adapter. Task 33 reshapes it into an
   **active-enclosure** view: the constellation is now `workspace → source checkouts → active worktree
   enclosures (+ providers)`. The separate lifecycle/task rim is gone — each enclosure node folds in its
@@ -200,7 +227,11 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   Topology filters on — which `data/store.ts` carries (snapshot + a new `activeWorktreeGroups` delta case)
   and `data/stream.ts` threads through (`"activeWorktreeGroups"` added to `STATE_EVENTS`).
 - `index.css` — the Panda entry + global reset/base/effects layers.
-- `styles/tokens.css` — the `:root` design-token CSS vars.
+- `styles/tokens.css` — the `:root` design-token CSS vars (260715-FEUI-L1 adds `--muted`,
+  mirroring the Panda `muted` token).
+- `styles/webtui.css` — the ONE WebTUI mapping file (260715-FEUI-L1 S1): `layer(webtui)` imports of
+  the used `@webtui/css` dist files + the `[data-view="sessions"]` token mapping + the scoped
+  `:focus-visible` restore; build-time scoped by the prefixer.
 - `dev/` — the DEV-only harness: `DevApp` (router — `/dev/bench`, `/dev/reference`, plus the orchestration-L0
   `/dev/flows` lifecycle-design canvas mounting `panels/FlowTab`), `Reference` (mc2 mount), `dev.css`, and — slice **5i**
   — the **scenario player** (`scenarios.ts` model + `ScenarioPlayer.tsx` transport) that `Bench` drives the
@@ -292,6 +323,18 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T00:30+02:00 — 260715-FEUI-L1 route impact (view shell, WebTUI spike, keyboard/palette
+  foundation): the cascade gained the `webtui` layer slot (S1, OQ-D = adopt — `styles/webtui.css`
+  is the one mapping file, build-time scoped under `[data-view="sessions"]`, spike assertions kept
+  in `test/webtuiSpike.test.ts`); `cockpit/Cockpit.tsx` registered the full-bleed keep-alive
+  **Sessions** view; `panels/` gained the **`session-cockpit/`** child route and `data/` gained
+  `commands.ts`, `sessionLayout.ts`, and the **`keymap/`** child route (the PTY reserved set with
+  the R6 chord replacement Ctrl+Alt+[ / ] → Ctrl+Alt+PageUp/PageDown and five-source verification
+  records); `styles/tokens.css` gained `--muted`. Four exact-pinned deps entered `package.json`
+  (`@webtui/css@0.1.9`, `cmdk@1.1.1`, `tinykeys@4.0.0`, dev `postcss-prefix-selector@2.1.1`).
+  Detail lives in the `panels/session-cockpit/` + `data/keymap/` overviews and the touched
+  sidecars. Verification metadata pinned to the task base until closeout stamps the L1 code
+  commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 - 2026-07-12T18:00+02:00 — 260712-TRH-L7: paired the landing-freshness body update with this history entry; projection landing refs remain visible and age-labeled when stale, while Engine Room motion is limited to observed refs and remote observation stays server-side.
 

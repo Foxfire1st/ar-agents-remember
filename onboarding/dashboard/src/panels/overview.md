@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-12T17:50 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-17T00:30+02:00 |
+| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
+| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -180,6 +180,20 @@ and the `Chats` `SessionList` switcher).
   `onOpenNotes`; controlled by `CockpitShell` (selection lifted, retained mounted-hidden after Back so it
   survives back/forward). Replaces the retired inline `TaskNotes` reader. See
   [notes-reader/ overview](notes-reader/overview.md).
+- `session-cockpit/` — the **Sessions cockpit view** (260715-FEUI-L1): the terminal-first sessions
+  surface registered as the last mode-bar view and the fourth keep-alive full-bleed layer (the
+  Chats pattern — never unmounted, `active`-gated keys). `SessionsView.tsx` is the shell — a
+  react-resizable-panels rail/stage/inspector group (`autoSaveId="cockpit.sessions.panels"`) with
+  edge-transition auto-collapse (inspector <~1100px, rail <~900px, both reopenable), the ~80-col
+  PTY floor hint chip (re-measured via `onLayout` + a stage-observing ResizeObserver), a one-shot
+  ~280px rail percentage calibration that never overrides a persisted layout, and deliberate
+  labeled scaffolding panels (L2 rail rows, L4 controls, L5 composer, L6 PTY, L7 inspector/status
+  line); its root carries `[data-view="sessions"]` — the WebTUI scope root (S1) and keyboard home.
+  `CommandPalette.tsx` (cmdk, non-portal, commands/keys pages rendered from the live registry +
+  keymap data) and `useKeyboardZones.ts` (tinykeys at the window over the pure `data/keymap`
+  contract) complete the keyboard/palette foundation; all decisions live React-free in
+  `data/commands.ts` / `data/sessionLayout.ts` / `data/keymap/`. See
+  [session-cockpit/ overview](session-cockpit/overview.md).
 - `MemoryMirror.tsx` — the segmented coverage/drift bar per repo + ledger currency + stalest
   sidecars (slice-3b analytics); drift classes mapped by record (forward-compatible).
 - `EventRiver.tsx` + `eventSummary.ts` — right-rail readable activity feed over the raw observer
@@ -402,6 +416,13 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T00:30+02:00 — 260715-FEUI-L1 route impact: the route gains the **`session-cockpit/`**
+  child route — the Sessions cockpit view shell (rail/stage/inspector PanelGroup + narrow rules +
+  ~80-col floor chip + rail calibration), the non-portal cmdk CommandPalette (commands/keys pages
+  from one options source), and the useKeyboardZones tinykeys binding — registered in
+  `cockpit/Cockpit.tsx` as the fourth keep-alive full-bleed layer. Panel content is labeled
+  scaffolding for L2/L4/L5/L6/L7. Added the bullet + child-route link; no existing panel changed.
+  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
 
 - 2026-07-12T17:50 — 260712-TRH-L6 route impact: documented the new Operations chat-activity indicator,

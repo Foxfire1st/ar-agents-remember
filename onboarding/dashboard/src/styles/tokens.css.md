@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/styles/tokens.css`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:57:18+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-17T00:25+02:00                           |
+| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
+| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -25,7 +25,11 @@ moved to co-located Panda).
 ### Logic
 
 `:root { color-scheme: dark; --bg/--bg-panel/--ink/--grid; --amber/--cyan/--alarm/--mint/--dormant;
---font-mono; --glow-strength }`, plus — 260703-L14 — the six **rank-insignia tier vars** from the
+--font-mono; --glow-strength }`, plus — 260715-FEUI-L1 — **`--muted`** (`oklch(0.7 0.02 250)`,
+muted control text): it existed only as a Panda token (`panda.config.ts`) + a hardcoded literal in
+`index.css`, and the WebTUI mapping (`webtui.css` → `--foreground1: var(--muted)`) would have
+referenced an undefined var — the spike test's declared-token assertion caught it. Plus — 260703-L14
+— the six **rank-insignia tier vars** from the
 approved V4 sketch: `--gold` `oklch(0.87 0.15 95)` / `--gold-dim` / `--gold-ghost` (the orchestration
 tier: chevrons, hairline, row wash) and `--purple` `oklch(0.76 0.14 305)` / `--purple-dim` /
 `--purple-ghost` (management). These back `index.css`'s base layer (body/utilities) and a few Panda
@@ -43,9 +47,16 @@ Tokens only — no component/selector rules. Keep in sync with the Panda token p
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The Panda token mirror of this palette. | L30-L46 | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
+| The WebTUI mapping that consumes these vars (incl. `--muted`) — no raw literals allowed there. | L17-L34 | [webtui.css](webtui.css) |
+| The spike assertion that every mapped var is declared here. | L117-L128 | [../test/webtuiSpike.test.ts](../test/webtuiSpike.test.ts) |
 
 ## Update History
 
+- 2026-07-17T00:25+02:00 — 260715-FEUI-L1 S1: added `--muted` (`oklch(0.7 0.02 250)`), mirroring
+  panda.config's `muted` token — the WebTUI mapping references it and the spike test's
+  declared-token assertion caught that it existed only as a Panda token + a hardcoded literal.
+  Two-views-of-one-palette rule unchanged. Verification metadata pinned to the task base until
+  closeout stamps the L1 code commit.
 - 2026-07-06T23:57:18+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the six rank-insignia
   tier vars (`--gold`/`--gold-dim`/`--gold-ghost`, `--purple`/`--purple-dim`/`--purple-ghost` — the
   V4 sketch's OKLCH values), mirrored as typed Panda tokens in `panda.config.ts` (two views of one

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/src/panels/session-cockpit",
+  "overview": "dashboard/src/panels/session-cockpit/overview.md",
+  "index": "dashboard/src/panels/session-cockpit/overview.index.json",
+  "sourceScope": [
+    "dashboard/src/panels/session-cockpit/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "dashboard/src/panels/session-cockpit/CommandPalette.tsx",
+    "dashboard/src/panels/session-cockpit/SessionsView.test.tsx",
+    "dashboard/src/panels/session-cockpit/SessionsView.tsx",
+    "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "cockpit",
+    "commandpalette",
+    "dashboard",
+    "panels",
+    "session",
+    "sessionsview",
+    "src",
+    "test",
+    "tsx",
+    "usekeyboardzones"
+  ],
+  "hotPath": {
+    "summary": "The Sessions cockpit view shell: a keep-alive full-bleed rail/stage/inspector panel group under the `[data-view=\"sessions\"]` WebTUI scope root \u2014 narrow widths auto-collapse on threshold crossings (reopenable), an ~80-col floor chip re-measures on every layout change, ctrl+k/ctrl+; open the cmdk palette whose `?` page renders the real keymap tables, F6 cycles regions, and the PTY zone passes every key through except exactly the bound reserved set.",
+    "candidateHints": [
+      "dashboard/src/panels/session-cockpit",
+      "dashboard/src/panels/session-cockpit/CommandPalette.tsx",
+      "dashboard/src/panels/session-cockpit/SessionsView.test.tsx",
+      "dashboard/src/panels/session-cockpit/SessionsView.tsx",
+      "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
+    ],
+    "anchorHints": [
+      "CommandPalette.tsx",
+      "CommandPalette",
+      "SessionsView.test.tsx",
+      "SessionsView.test",
+      "SessionsView.tsx",
+      "SessionsView",
+      "useKeyboardZones.ts",
+      "useKeyboardZones",
+      "data-view=\"sessions",
+      "WebTUI",
+      "PTY",
+      "dashboard/src/panels/session-cockpit/",
+      "route-local-overview",
+      "ee955085a2010f62e9ad4d2bdc6aa77975daa5f3",
+      "/overview.md",
+      "session-cockpit/",
+      "Cockpit.tsx",
+      "sessionsLayer = chatsLayer",
+      "active={view === \"sessions",
+      "styles/webtui.css",
+      "sessions--view",
+      "PanelGroup",
+      "autoSaveId=\"cockpit.sessions.panels",
+      "CommandContext",
+      "data/sessionLayout.ts",
+      "onLayout",
+      "ResizeObserver",
+      "commands",
+      "keys",
+      "data/keymap",
+      "data/",
+      "data/commands.ts",
+      "data/keymap/",
+      "attachCustomKeyEventHandler",
+      "data/keymap/reserved.matchReservedChord",
+      "data-kbzone",
+      "data-region",
+      "data-focus-target",
+      "data-stage-header",
+      "active",
+      "panels/session-cockpit/",
+      "cockpit/Cockpit.tsx",
+      "agents-remember/dashboard/src/cockpit/Cockpit.tsx",
+      "agents-remember/dashboard/src/data/commands.ts",
+      "agents-remember/dashboard/src/data/sessionLayout.ts",
+      "agents-remember/dashboard/src/data/keymap/reserved.ts",
+      "agents-remember/dashboard/src/styles/webtui.css",
+      "sourceRoute"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/src/panels/session-cockpit/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

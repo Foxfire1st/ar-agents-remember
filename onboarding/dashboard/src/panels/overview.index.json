@@ -28,6 +28,11 @@
       "route": "dashboard/src/panels/notes-reader",
       "overview": "dashboard/src/panels/notes-reader/overview.md",
       "index": "dashboard/src/panels/notes-reader/overview.index.json"
+    },
+    {
+      "route": "dashboard/src/panels/session-cockpit",
+      "overview": "dashboard/src/panels/session-cockpit/overview.md",
+      "index": "dashboard/src/panels/session-cockpit/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -78,9 +83,9 @@
     "dashboard/src/panels/useCollapsedTaskGroups.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 76,
+    "sourceFilesInScope": 80,
     "fileSidecars": 45,
-    "childRoutes": 4
+    "childRoutes": 5
   },
   "routingTerms": [
     "agentpickupindicator",
@@ -88,6 +93,7 @@
     "changeset",
     "chatactivityindicator",
     "chats",
+    "cockpit",
     "dashboard",
     "detailpanel",
     "emptystatebackdrop",
@@ -110,6 +116,7 @@
     "railchat",
     "reader",
     "room",
+    "session",
     "sessioncomposer",
     "sessionlist",
     "src",
@@ -130,6 +137,7 @@
       "dashboard/src/panels/engine-room",
       "dashboard/src/panels/file-viewer",
       "dashboard/src/panels/notes-reader",
+      "dashboard/src/panels/session-cockpit",
       "dashboard/src/panels/AgentPickupIndicator.test.tsx",
       "dashboard/src/panels/AgentPickupIndicator.tsx",
       "dashboard/src/panels/AttentionQueue.test.tsx",
@@ -147,8 +155,7 @@
       "dashboard/src/panels/EventRiver.test.tsx",
       "dashboard/src/panels/EventRiver.tsx",
       "dashboard/src/panels/FlowTab.test.tsx",
-      "dashboard/src/panels/FlowTab.tsx",
-      "dashboard/src/panels/GateResponder.test.tsx"
+      "dashboard/src/panels/FlowTab.tsx"
     ],
     "anchorHints": [
       "AgentPickupIndicator.test.tsx",

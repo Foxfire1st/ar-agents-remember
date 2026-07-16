@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/index.css`                        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-21T23:35                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-17T00:25+02:00                           |
+| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
+| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -23,8 +23,11 @@ layer order and holds `reset` / `base` / `effects` — the layers Panda does not
 
 ### Logic
 
-`@layer reset, base, effects, tokens, recipes, utilities;` sets the order; Panda's PostCSS plugin
-injects the generated `tokens`/`recipes`/`utilities` layers. `@layer reset` (box-sizing + html/body
+`@layer reset, base, effects, webtui, tokens, recipes, utilities;` sets the order (260715-FEUI-L1
+S1 added the `webtui` slot); Panda's PostCSS plugin injects the generated
+`tokens`/`recipes`/`utilities` layers, and `styles/webtui.css`'s `layer(webtui)` imports fill
+`webtui` — slotted between `effects` and `tokens` so Panda tokens/recipes/utilities always beat
+WebTUI on a conflict, while the unlayered freeze below stays above it all. `@layer reset` (box-sizing + html/body
 reset), `@layer base` (body typography + the `h2`/`.muted`/`.raw-list` utilities moved here from the
 monolith), `@layer effects` (the global `.crt-overlay` — scanlines + the re-centred vignette +
 flicker). Two app-wide keyframes remain: `flicker` (the CRT overlay) and the shared `pulse` (the ≤3/s alarm
@@ -48,7 +51,11 @@ they win regardless. Token values are read as `var(--…)` from `styles/tokens.c
 ### Invariants And Boundaries
 
 Effects stay global + isolated (note 09), never per-component. The body/utility rules reference the
-`:root` vars from `styles/tokens.css`. Component styling is Panda, not here. Canvas animation is GSAP/Motion,
+`:root` vars from `styles/tokens.css`. Component styling is Panda, not here.
+The `webtui` slot must stay in the FIRST `@layer` statement, between `effects` and `tokens`, and
+the `data-effects=off` freeze must stay UNLAYERED and top-level — both are asserted by
+`test/webtuiSpike.test.ts` (for `!important` declarations, layered beats unlayered, so the freeze
+stays sovereign only while WebTUI ships no `!important` animation/transition — also asserted). Canvas animation is GSAP/Motion,
 not CSS keyframes (`05f` §8): only `flicker` + `pulse` remain as global keyframes, and `pulse` is still
 live (the rail / cockpit / topology + the engine-room `cva`s drive `animation: pulse …`), so it is NOT
 orphaned. *(Correcting the prior 5i note: `chargeSweep` was never an orphan — through 5i it backed
@@ -62,9 +69,18 @@ reindex pulse from GSAP `data-fx='reindex'`.)*
 | --- | --- | --- |
 | The `:root` vars referenced by the base layer. | — | [styles/tokens.css](styles/tokens.css) |
 | The Panda PostCSS plugin that fills the layers. | — | [postcss.config.cjs](agents-remember/dashboard/postcss.config.cjs) |
+| The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. | L12-L15 | [styles/webtui.css](styles/webtui.css) |
+| Asserts the exact layer-order statement and the unlayered freeze. | L131-L172 | [test/webtuiSpike.test.ts](test/webtuiSpike.test.ts) |
 
 ## Update History
 
+- 2026-07-17T00:25+02:00 — 260715-FEUI-L1 S1 (WebTUI adoption, OQ-D): the FIRST `@layer` statement
+  gained the `webtui` slot between `effects` and `tokens` (`reset, base, effects, webtui, tokens,
+  recipes, utilities`), hosting the scoped WebTUI skin from `styles/webtui.css` so Panda layers
+  always win a conflict and the unlayered freeze stays sovereign; the header comment documents the
+  slot. The production minifier drops the order statement but emits layer blocks in declaration
+  order — semantics preserved because all layered CSS lives in the one bundle. Verification
+  metadata pinned to the task base until closeout stamps the L1 code commit.
 - 2026-06-21T23:35 — removed the `@keyframes powerup` rule and updated the canvas-motion doctrine header
   comment: the indexing→nominal engine "powerup" is now a Motion opacity pulse owned by the charge rect, and
   the cyan→mint step is an instant `engineCharge`-class fill flip — so no `powerup` CSS keyframe remains and
