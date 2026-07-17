@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-17T23:54+02:00 |
+| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
+| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -41,6 +41,13 @@ free server status and performs authoritative Alt+Up withdrawal with revision-sa
 `submitRetention.ts` bounds settled projections without evicting live work. Chats, RailChat,
 HighlightComposer, and the Sessions stage use this path. PTY input remains valid only for a legacy
 raw session and is never a control-authority fallback.
+
+**260715-FEUI-L7 completes the Sessions inspector/status integration without expanding this packed
+root route.** `panels/session-cockpit/` owns the focused Evidence and Capabilities panes, fleet Bus,
+accessible stable-mounted tab host, shared 100/101 virtualization boundary, and contractual
+StatusLine. `types/projection.ts` mirrors additive optional pickup owner/redelivery facts, while
+`test/fixtures/busScenarios.ts` preserves coherent sender-address variants and legacy absence.
+The focused child-route overview is the detailed authority.
 
 ## The Layered Architecture (slice 5d)
 
@@ -120,7 +127,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   pack against the recorded L5 live-conformance samples (`catalogRows.ts` untouched by L3,
   builder reused). FEUI-L4 extends `capabilityEnvelopes.ts` with clamp/defensive-echo results,
   queued→immediate and unknown→confirm/disprove readback sequences, live Codex snapshots, and
-  exact-session 404/409/503 bodies; these remain fixtures, never product constants.
+  exact-session 404/409/503 bodies; these remain fixtures, never product constants. FEUI-L7 adds
+  `busScenarios.ts`: coherent sender-pair, sender-agent-only, sender-role-only, lifecycle-only,
+  escalation, legacy-absence, and supervisor-heartbeat projection fixtures.
 - `grammar/` — the shared primitives library (`Panel`, `ModeBar`, `Dot`, `Affordance`,
   `ProgressFill`, `TokenGauge`, `Markdown`, 260703-L14's `RankBadge` — the V4 chevron rank
   insignia for the orchestration/management command tiers — and 260715-FEUI-L3's
@@ -141,7 +150,10 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   the ~80-col floor chip, the non-portal cmdk `CommandPalette` with the commands/keys pages, and
   the `useKeyboardZones` tinykeys binding), whose root carries `[data-view="sessions"]` (the
   WebTUI scope root). FEUI-L4 fills its live model/effort surface, worded acceptance chips,
-  acknowledging ledger, set-attention/toasts, and dual live regions. See
+  explicit mark-seen ledger, set-attention/toasts, and dual live regions. FEUI-L7 adds the
+  stable-mounted Evidence/Capabilities/Bus inspector, full evidence and post-removal residual
+  audit, sender-addressed reverse reply, exact-session capability authority split, accessible
+  large-ledger virtualization, and contractual honest StatusLine. See
   [panels/overview.md](panels/overview.md).
 - `data/` — the Zustand store, pure selectors, SSE stream wiring, the gate-action client
   (`actions.ts` POSTs targeted `gateId`/`note` decisions to `/api/actions/{verb}`, can omit `target`
@@ -312,7 +324,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   until complete task content either arrives or falls back honestly.
   Task 23/24/L3 adds `AttentionItem.gateId?` and `AgentPickupNode` /
   `Analytics.agentPickups` for attention clear and task-row waiting-for-agent/check-chat feedback,
-  including sender/recipient roles, message kind, artifact path, and hosted-delivery state. 260703-L14 mirrors `TaskDocNode.orchestrates?` — the orchestration-command relation (non-empty only
+  including sender/recipient roles, message kind, artifact path, and hosted-delivery state.
+  FEUI-L7 adds optional owner role/agent/lifecycle and attempt/last/next/escalated facts; optionality
+  preserves persisted pre-field rows and consumers never synthesize absent values. 260703-L14 mirrors `TaskDocNode.orchestrates?` — the orchestration-command relation (non-empty only
   on an orchestration-task master; optional for pre-L14 persisted-projection compatibility). Task
   31 mirrors the provider boot-node `missing` state so Engine Room slots can distinguish expected-but-absent
   CGC/GrepAI roles from configured or observed provider rows. Task 33 mirrors the required top-level
@@ -446,6 +460,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 route impact: the existing
+  `panels/session-cockpit/` child route gains the stable-mounted three-pane inspector, complete
+  evidence/capability/Bus surfaces, sender-only reverse reply, shared accessible virtualization,
+  and honest StatusLine; `types/projection.ts` gains optional pickup owner/redelivery facts and
+  `test/fixtures/busScenarios.ts` adds coherent/legacy wire cases. Detailed organization remains
+  in the focused child overview rather than further loading this packed root file. Verification
+  metadata remains pinned to the leaf base until closeout.
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced stub/paste current-state claims with
   the shared CodeMirror reliable-submit path, central evidence fold, epoch/request transport,
   authoritative status/withdraw/pop-back, revision-safe recovery, and bounded retention. Recorded

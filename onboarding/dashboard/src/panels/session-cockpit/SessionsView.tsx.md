@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-17T23:54+02:00 |
+| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
+| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -18,12 +18,13 @@
 
 The **sessions cockpit view** (260715-FEUI-L1 S2 shell, FILLED by 260715-FEUI-L2, PTY stage +
 interactions by 260715-FEUI-L6, launch surfaces by 260715-FEUI-L3, set controls by
-260715-FEUI-L4): rail / stage / inspector as
+260715-FEUI-L4, reliable submit by 260715-FEUI-L5, and the tabbed inspector/status footer by
+260715-FEUI-L7): rail / stage / inspector as
 a react-resizable-panels group with the narrow-width rules (inspector auto-collapses <~1100px,
 rail <~900px — both reopenable) and the ~80-col PTY floor hint chip. **L2 fills the panels**:
 the rail hosts `SessionRail` (the ruled role hierarchy + fleet attention), the stage the
 `SessionStage` container + `HeaderStrip` with the sole `ModelEffortControl`, and the inspector the
-catalog-provenance card plus collapsible set ledger (the L7 tabbed inspector replaces it).
+stable mounted Evidence / Capabilities / Bus tab host.
 **L6 fills the stage body**: the focused seat renders a real `PtySurface` pane (carrying the
 `data-kbzone="pty"` contract), `StopResidualNotes` above it, the `InteractionBar` directly above
 the composer (never replacing it), and the `WorkingLine` into the stage's reserved slot; the PTY
@@ -42,6 +43,19 @@ and shared between the rail and the palette commands. The root div carries
 `sessions--view` and the marker classes and `sessions-*` testids.
 
 ## Code Commentary
+
+### 260715-FEUI-L7 Inspector And Status Composition
+
+- **Narrow data seam** (L203-L206): the view selects existing `pollHealth`, projected
+  `agentPickups`, and `supervisorHeartbeat` facts; it does not derive inspector-domain rows.
+- **Inspector composition** (L735-L740): passes the focused session/cockpit plus fleet pickups and
+  heartbeat into `SeatInspector`. The inspector owns its accessible stable-mounted tab host and
+  delegates Evidence, Capabilities, and Bus logic to focused files.
+- **Status composition** (L745-L757): the shell renders `StatusLine` once with focused-seat,
+  cockpit, and poll-health truth and supplies only the existing panel-reopen controls as its
+  action slot. Status ordering/telemetry honesty remain owned by `StatusLine`.
+- No L7 list virtualization, reverse-reply, capability, evidence, or clock logic lives in this
+  route file; this is intentionally the bounded composition seam for the already large route.
 
 ### 260715-FEUI-L4 Set-Control Wiring
 
@@ -229,7 +243,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | The one WebTUI mapping file whose scope root this component carries. | L17-L42 | [../../styles/webtui.css](../../styles/webtui.css) |
 | The rail renderer receiving the once-derived model/rollup as props. | L364-L372 | [SessionRail.tsx](SessionRail.tsx) |
 | The stage container + header line the stage panel mounts. | L46-L87 | [SessionStage.tsx](SessionStage.tsx) |
-| The inspector provenance/set-ledger card the inspector panel mounts. | L139-L218 | [SeatInspector.tsx](SeatInspector.tsx) |
+| The accessible stable-mounted Evidence / Capabilities / Bus tab host. | L18-L151 | [SeatInspector.tsx](SeatInspector.tsx) |
+| The contractual focused-seat footer composed by this route. | L76-L184 | [StatusLine.tsx](StatusLine.tsx) |
 | The pure derivations this view memoizes once per render. | L131-L464 | [../../data/railModel.ts](../../data/railModel.ts) |
 | The cockpit store (focus, mirrors, perSession) + the catalog mirror this view starts. | L107-L309 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
 | The shared poll driver subscription. | L60-L77 | [../../data/catalogPoll.ts](../../data/catalogPoll.ts) |
@@ -253,6 +268,11 @@ calls prompt submit; raw-session typing remains confined to the PTY surface.
 
 ## Update History
 
+- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 kept this packed route to a narrow composition seam:
+  it selects projected pickups, supervisor heartbeat, and poll health; passes them into the
+  stable-mounted inspector; and composes the contractual StatusLine with existing reopen actions.
+  Domain logic remains in focused files. Verification metadata remains pinned to the leaf base
+  until closeout.
 - 2026-07-17T21:39+02:00 — FEUI-L5: replaced the composer stub with live submit/pop-back wiring,
   slash palette query, queue/recovery UI, and explicit answer-channel separation.
 

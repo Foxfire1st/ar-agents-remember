@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-18T00:08+02:00 |
+| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
+| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -22,7 +22,8 @@ and joins docs to enclosures by exact case-insensitive ids only — reopen reuse
 same leaf id, so the suffixed-leaf heuristic is gone),
 rendered into the shell's rails/viewport — plus the slice-6e **Chats** terminal and the Sessions
 cockpit, the two interactive full-bleed views. Sessions owns explicit launch, structured-answer,
-lifecycle, and live model/effort controls while the remaining projection panels stay primarily
+lifecycle, live model/effort, reliable controlled-submit, and inspector/status surfaces while the
+remaining projection panels stay primarily
 observational. `FlowTab.tsx` is no longer a cockpit view — Task 29 S7 hid the Lifecycle
 Flow tab from the shell, and orchestration leaf 260703-L0 reworked it into a **dev-only multi-model
 design canvas** (`FlowTab.tsx` renderer/nav + the new `flowModels.ts` registry) mounted at `/dev/flows`;
@@ -188,7 +189,9 @@ structured channel, and legacy raw PTY input is never used as a controlled-submi
   survives back/forward). Replaces the retired inline `TaskNotes` reader. See
   [notes-reader/ overview](notes-reader/overview.md).
 - `session-cockpit/` — the **Sessions cockpit view** (260715-FEUI-L1 shell, filled by
-  260715-FEUI-L2, launch layer by 260715-FEUI-L3, live set-control layer by FEUI-L4): the
+  260715-FEUI-L2, launch layer by 260715-FEUI-L3, live set-control layer by FEUI-L4,
+  reliable-submit layer by FEUI-L5, PTY/lifecycle layer by FEUI-L6, and inspector/status
+  integration by FEUI-L7): the
   terminal-first sessions surface registered as the last mode-bar view and
   the fourth keep-alive full-bleed layer (the Chats pattern — never unmounted, `active`-gated
   keys). `SessionsView.tsx` is the shell + derivation seam — a react-resizable-panels
@@ -203,8 +206,8 @@ structured channel, and legacy raw PTY input is never used as a controlled-submi
   `HeaderStrip.tsx` (the ruled stage layer order with the mounted L4 ModelEffortControl + L6 WorkingLine
   slots; honest freshness + requested-tier provenance), `StateDot.tsx` (the ONE grammar renderer —
   2.4 s ease-in-out pulse ruling; rail dots speak the state word), and `SeatInspector.tsx`
-  (read-only catalog provenance plus the collapsed acknowledging set ledger until
-  L7). **260715-FEUI-L6 fills the stage surface + lifecycle actions**: `PtySurface.tsx`
+  (the stable-mounted accessible Evidence / Capabilities / Bus tab host). **260715-FEUI-L6 fills
+  the stage surface + lifecycle actions**: `PtySurface.tsx`
   (keep-alive real xterm panes through the SHARED `panels/Terminal.tsx`, DOM renderer by
   measurement, controlled vs legacy-raw archetypes, screen-reader opt-in, reserved-chord filter),
   `WorkingLine.tsx` (the single turn-theater home in the stage's reserved slot),
@@ -219,10 +222,18 @@ structured channel, and legacy raw PTY input is never used as a controlled-submi
   `grammar/EvidenceBadge`. **L4 adds the live set-control layer**: `ModelEffortControl.tsx`
   (one exact-session popover shared by header and palette), `AcceptanceChip.tsx` (worded pending/
   acceptance/pair/route evidence), `CockpitLiveRegions.tsx` (persistent polite + assertive
-  channels), and `SetOutcomeToasts.tsx` (unfocused outcomes persist and collapse until marked
-  seen). The rail uses its reserved attention slot for `set!`; the inspector ledger expansion is
-  the explicit acknowledgment gesture; effort chords cycle without a dialog. Remaining
-  scaffolding: L5 composer and L7 tabbed inspector/status line.
+  channels), and `SetOutcomeToasts.tsx` (unfocused outcomes persist and collapse until explicitly
+  marked seen). The rail uses its reserved attention slot for `set!`; focus, viewing, and tab
+  changes do not acknowledge outcomes; effort chords cycle without a dialog. **L5 fills the shared
+  controlled composer** with epoch-bound reliable submit/reconcile, authoritative queue projection,
+  and server-linearized Alt+Up pop-back. **L7 completes the inspector/status integration**:
+  `EvidencePane` carries the full audit including post-removal terminate/retire residuals,
+  `CapabilitiesPane` keeps exact-session truth separate from pre-session launch catalogs, and
+  `BusPane` keeps fleet-global pending pickups plus sender-only reverse replies whose entry state
+  survives filters, the 100/101 virtualization boundary, and hidden tabs. `StatusLine` renders the
+  contractual harness → pair/evidence → state/elapsed → leaf/seat → pending/queue → literal UA-5
+  context/cost slot order without fabricated telemetry. Component-level detail remains in the
+  child overview rather than expanding this already dense parent route.
   `CommandPalette.tsx` (cmdk, non-portal, commands/keys pages rendered from the live registry +
   keymap data) and `useKeyboardZones.ts` (tinykeys at the window over the pure `data/keymap`
   contract) complete the keyboard/palette foundation; all decisions live React-free in
@@ -422,6 +433,11 @@ either body success or failure. This adds one data hook within the existing rout
 - **Controlled messages are authoritative, not pasted** — panel call sites preserve the immutable
   epoch/request/text/source tuple, render normalized lifecycle evidence, and delegate pop-back to
   server withdrawal. Only raw sessions accept ordinary PTY typing as their message path.
+- **Inspector state is durable and non-acknowledging by observation** — the Evidence, Capabilities,
+  and Bus panes remain mounted beneath native `hidden`; viewing, focus, filtering, and tab changes
+  never mark outcomes seen. Capability authorities stay separated, stop residuals survive source
+  loss, Bus reverse replies address only the projected sender without consuming the pickup, and the
+  StatusLine preserves its fixed fact order plus explicit empty UA-5 slot.
 - **Panda + React Aria** — styling is co-located Panda `css`/`cva` keyed on tokens + React Aria
   `data-*` conditions; behavior (keyboard/focus/ARIA) is React Aria. No global panel CSS.
 - **The Panel primitive owns chrome** — bg/border + scroll + the sticky header band; panels pass a
@@ -446,6 +462,7 @@ an idle dashboard at zero store writes.
 | The detail-panel tests pin body-first request ordering, complete content, fallback, one step copy, and revision caching. | L799-L1038 | [DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
 | The shared panel chrome remains the route's presentation frame. | L1-L120 | [grammar/Panel.tsx](agents-remember/dashboard/src/grammar/Panel.tsx) |
 | The shared reliable composer, highlight sender, and rail integration own controlled-message UI. | — | [SessionComposer.tsx](agents-remember/dashboard/src/panels/SessionComposer.tsx); [HighlightComposer.tsx](agents-remember/dashboard/src/panels/HighlightComposer.tsx); [RailChat.tsx](agents-remember/dashboard/src/panels/RailChat.tsx) |
+| The Sessions child route owns the L7 inspector panes, entry-keyed fleet Bus state, accessible 100/101 virtualization boundary, and contractual status footer. | — | [session-cockpit overview](session-cockpit/overview.md) |
 
 ## 260707-HFX2-L17 Seat Binding Route Impact
 
@@ -463,6 +480,11 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-18T00:08+02:00 — 260715-FEUI-L7 curator closeout delta: replaced the interim inspector
+  scaffolding with the stable-mounted Evidence/Capabilities/Bus host, documented explicit mark-seen
+  and post-removal residual behavior, separated exact-session capability truth, recorded fleet Bus
+  sender-only reply and entry-state/virtualization invariants, and added the honest ordered StatusLine.
+  Detailed component and test routing remains in the `session-cockpit/` child overview.
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced current bracketed/draft-paste
   descriptions for SessionComposer, RailChat leaf context, and HighlightComposer with the shared
   epoch-bound reliable-submit path, provenance, create-ready handling, and the raw-PTY boundary.

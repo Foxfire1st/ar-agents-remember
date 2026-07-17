@@ -1,14 +1,14 @@
 # dashboard/src/panels/session-cockpit/SeatInspector.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/SeatInspector.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
-| governingOverview      | `overview.md`                                    |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `dashboard/src/panels/session-cockpit/SeatInspector.test.tsx` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-07-17T23:54+02:00 |
+| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
+| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
@@ -16,45 +16,60 @@
 
 ## Purpose
 
-The jsdom SeatInspector suite: L6 archetype/residual/raw-interaction facts plus FEUI-L4's
-collapsible set-ledger, explicit-view acknowledgment, and seat-switch isolation.
+Pins the integrated inspector contract: accessible tab navigation, native hidden semantics,
+off-tab Bus interaction continuity, no-focus honesty, and the carried-forward L6/L4 evidence rules.
 
 ## Code Commentary
 
 ### Logic
 
-- **Archetype fact (R1)** (L19-L28): controlled seats say "runner line-log", legacy raw "vendor
-  TUI" (`inspector-archetype`).
-- **Retire residual (R5)** (L30-L42): `L6_RETIRED_WITH_STOP_ERROR` renders state `retired` (not
-  failed), the stop note contains "informational" AND the verbatim server detail, and the
-  lowercase text NEVER contains "fail" — the residual-honesty regression net.
-- **Raw payload (R4)** (L44-L54): `inspector-pending-interaction-raw` carries the VERBATIM
-  JSON (`"kind": "vendor-custom"`, `"opaque": true`) — the unrepresentable fallback's target.
-- **Set ledger (L4 R6/F22)** (L58-L144): rendering alone does not acknowledge; expansion does.
-  Rows render newest first with the acceptance word, requested/effective split, detail, and
-  unacknowledged word. Switching seats remounts the new seat collapsed without acknowledging it;
-  the pure line formatter also pins unsupported wording.
+- Keyboard tests cover Right/Left wrap, Home/End focus movement, selected state, and stable tabpanel
+  relationships.
+- Draft, posted, and retained-error cases prove the same Bus instances settle on exact `entryId`s
+  while the panel is inactive. Accessibility queries prove hidden controls leave the active tree.
+- No-focus coverage keeps fleet Bus rows reachable while Evidence/Capabilities state their limits.
+- Carried-forward cases pin archetype/raw evidence, informational retire residuals, newest-first set
+  lines, explicit mark seen, and the rule that render or seat changes do not acknowledge.
 
 ### Invariants And Boundaries
 
-Catalog sections remain fixture-driven; the L4 ledger cases use the real cockpit store to prove
-the intentional acknowledgment side effect and per-seat reset. Test-only.
+- State continuity must be tested through real tab transitions, not an isolated pane render.
+- Native `hidden` semantics and mounted-instance persistence are both required.
+
+### Todos
+
+None recorded; browser integration smoke remains a leaf-level residual.
+
+## Docs References
+
+No Domain Documentation source is configured.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The card under test (ledger, archetype fact, stop note, raw payload). | L49-L218 | [SeatInspector.tsx](SeatInspector.tsx) |
-| The retired-with-stop-error + unrepresentable fixtures. | L243-L280 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
-| The archetype/residual copy asserted against. | L29-L32, L80-L84 | [lifecycleCopy.ts](lifecycleCopy.ts) |
+| Tab navigation and hidden-panel draft retention. | L28-L92 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
+| Off-tab success/error settlement and no-focus Bus. | L93-L185 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
+| Carried L6 evidence cases. | L187-L223 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
+| Explicit mark-seen and seat-switch regressions. | L225-L305 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
+| Composition host under test. | L18-L151 | [SeatInspector.tsx](SeatInspector.tsx) |
+
+## Cross-Repo References
+
+No meaningful cross-repo boundary is owned here.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No cross-repo evidence applies. | — | — |
 
 ## Update History
 
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R6/F22 added ledger expansion-as-viewing,
-  newest-first requested/effective lines, explicit unacknowledged wording, and a seat-switch
-  regression proving the next seat stays collapsed and unacknowledged. Verification metadata is
-  pinned to the contract base until code commit.
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 (R1/R4/R5): the inspector's L6 surface —
-  archetype naming per seat, the informational (never "fail") retire stop note on a retired row,
-  and the verbatim pending-interaction payload. Verification metadata pinned to the leaf base
-  until closeout stamps the L6 code commit.
+- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 added integrated tab/hidden/off-tab settlement/no-focus
+  coverage and retained the earlier evidence contracts. Verification metadata remains pinned to the
+  leaf base until closeout.
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 added set-ledger and explicit mark-seen coverage.
+- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 archetype, residual, and raw evidence.
