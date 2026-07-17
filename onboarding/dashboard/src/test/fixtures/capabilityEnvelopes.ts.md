@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/fixtures/capabilityEnvelopes.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ all three cache statuses, the fresh-Claude exact-session snapshot, SetResults in
 acceptance, and the verbatim 404/409/503 route-error bodies. FIXTURES ONLY: these keys/menus are
 evidence examples for tests — they must never enter production UI constants (dynamic-only
 invariant, byte-checked by the L3 review against the L5 conformance reports).
+FEUI-L4 extends the same pack with clamp/defensive-echo evidence, queued→immediate and
+unknown→readback sequences, live Codex snapshot construction, and exact-session error bodies.
 
 ## Code Commentary
 
@@ -46,7 +48,10 @@ invariant, byte-checked by the L3 review against the L5 conformance reports).
   config category.
 - `SET_RESULTS` (L211-L247): one per acceptance; `queued`/`unknown`/`unsupported` carry
   `effectiveValue: null` (evidence words, never a success boolean).
-- `CAPABILITY_ERROR_BODIES` (L251-L273): 404 `harness not installed: 'codex'`, 409 non-native,
+- **L4 extensions** (L249-L336): clamp and echo-without-value results, queued then immediate,
+  `codexLiveSessionSnapshot`, confirming/disproving unknown readbacks, and verbatim 404/409/503
+  exact-session bodies. `configOptions` remains present only to prove the effort menu ignores it.
+- `CAPABILITY_ERROR_BODIES` (L340-L358): 404 `harness not installed: 'codex'`, 409 non-native,
   503 control-unavailable — verbatim server wording with the HTTP status alongside.
 
 ### Invariants And Boundaries
@@ -61,7 +66,7 @@ invariant, byte-checked by the L3 review against the L5 conformance reports).
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Builders, harness rows, envelopes, snapshot, SetResults, error bodies. | L20-L273 | [capabilityEnvelopes.ts](capabilityEnvelopes.ts) |
+| Builders, catalogs, envelopes, snapshots, SetResults, L4 sequences, and both route-error families. | L20-L358 | [capabilityEnvelopes.ts](capabilityEnvelopes.ts) |
 | The wire mirrors everything is typed against. | L11-L117 | [../../types/harnessCapabilities.ts](../../types/harnessCapabilities.ts) |
 | The Python serializers the shapes mirror. | L59-L64, L162-L227 | [harness_capability_catalog.py](../../../../mcp/src/agents_remember/serving/harness_capability_catalog.py), [harness_capabilities.py](../../../../mcp/src/agents_remember/serving/harness_capabilities.py) |
 | The conformance suite pinning the pack to the recorded L5 samples. | L31-L161 | [../contractCapabilities.test.ts](../contractCapabilities.test.ts) |
@@ -70,6 +75,10 @@ invariant, byte-checked by the L3 review against the L5 conformance reports).
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R9 appended the clamp and defensive echo results,
+  queued→immediate sequence, live Codex snapshot helper, unknown confirming/disproving readbacks,
+  and exact-session 404/409/503 bodies. Verification metadata remains pinned to the contract base
+  until code commit.
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R3 (capability fixtures): recorded-L5
   Claude/Codex/Pi catalogs (effortless Haiku, hidden codex-auto-review + per-row defaults,
   provider-qualified Pi keys), envelopes in all three cache statuses, the null-selectedEffort

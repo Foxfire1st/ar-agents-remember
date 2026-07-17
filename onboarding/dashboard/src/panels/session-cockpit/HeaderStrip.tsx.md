@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -18,8 +18,9 @@
 
 The **HeaderStrip** (260715-FEUI-L2 S5, spec §1.2 — R10): the focused seat's stage header line in
 the RULED anatomy order — identity → controls → state → leaf/seat → diagnostics. The
-ModelEffortControl slot ships EMPTY (L4 fills it; reserving it now keeps the layout stable when
-the control arrives). Provenance badges (R7 — moat 1, read-only) ride the diagnostics cluster at
+controls slot now hosts FEUI-L4's single `ModelEffortControl`; an optional controlled-popover
+bridge lets palette commands open that same surface. Provenance badges (R7 — moat 1, read-only)
+ride the diagnostics cluster at
 the tier DERIVED from row control-state truth (260715-FEUI-L3: `launchTier(session)` + the
 EvidenceBadge glyph — no longer the L2 store default).
 
@@ -31,8 +32,9 @@ EvidenceBadge glyph — no longer the L2 store default).
   and the state cluster are `flex: none` — they NEVER elide; leaf/seat is `flex: 0 2 auto`;
   diagnostics is `flex: 0 4 auto; min-width:0` — the FIRST segment to elide (highest shrink),
   matching R10's diagnostics-first elision order.
-- **Controls slot** (L100-L106): `data-slot="model-effort-control"` — EMPTY by design, reserved
-  for L4.
+- **Controls slot** (L119-L133): `data-slot="model-effort-control"` mounts the one live
+  `ModelEffortControl`. It can shrink after diagnostics, clips overflowing chips, and preserves
+  the trigger's identity words; `controlPopover` optionally makes its open state view-controlled.
 - **State cluster** (L107-L110): `StateDot` + the grammar's state word (`seatVisualState`) — the
   same visuals as the rail row (cross-surface test).
 - **Leaf/seat** (L111-L117): `leaf <leaf-id> · seat <role>` from `leafKey`/`spawnRole ?? seatRole`.
@@ -54,10 +56,11 @@ EvidenceBadge glyph — no longer the L2 store default).
 
 - Identity and state never elide; diagnostics always elides first — layout-pinned by the flex
   factors, order-pinned by the anatomy test.
-- The requested pair must NEVER read as effective: the tier word is derived from control-state
-  truth via `launchTier` (weakest wins, never promoted without proof); per-knob SET evidence is
-  L4's domain (`cockpit.launchEvidence` is written on open but not read here).
-- The empty controls slot is a stable reservation — nothing may render into it before L4.
+- The requested launch pair must NEVER read as effective: its tier word derives from control-state
+  truth via `launchTier`; the adjacent L4 control separately renders per-knob snapshot/echo/set
+  evidence.
+- There is one model/effort control in the stable header slot. Palette actions control this same
+  popover rather than mounting a second surface.
 
 ## Repo-Internal References
 
@@ -69,10 +72,15 @@ EvidenceBadge glyph — no longer the L2 store default).
 | The pure tier machine the badge tier derives from. | L29-L41 | [../../data/launchEvidence.ts](../../data/launchEvidence.ts) |
 | The five-glyph badge rendered inside the provenance chip. | L13-L69 | [../../grammar/EvidenceBadge.tsx](../../grammar/EvidenceBadge.tsx) |
 | The stage container mounting this as the always-on header layer. | L62-L87 | [SessionStage.tsx](SessionStage.tsx) |
-| The suite: anatomy order, empty slot, grammar word, freshness honesty, derived provenance tiers. | L16-L115 | [HeaderStrip.test.tsx](HeaderStrip.test.tsx) |
+| The live exact-session model/effort control mounted in the slot. | L148-L383 | [ModelEffortControl.tsx](ModelEffortControl.tsx) |
+| The suite: anatomy order, mounted control, grammar word, freshness honesty, derived provenance tiers. | L16-L117 | [HeaderStrip.test.tsx](HeaderStrip.test.tsx) |
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2 filled the reserved controls slot with the sole
+  `ModelEffortControl`, added the controlled-popover bridge used by palette commands, and gave
+  its chips bounded shrink/overflow behavior without changing header anatomy. Verification
+  metadata is pinned to the contract base until code commit.
 - 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R7): the launch tier now DERIVES from row
   control-state truth (`launchTier(session)` — starting⇒pending/"(requested)", ready Claude
   pair⇒"(model-validated)", failed⇒refused) instead of the L2 store default, and the provenance

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T06:30+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00 |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -20,8 +20,10 @@
 Operations list admits active enclosures excluding cleanup completed AND abandoned,
 and joins docs to enclosures by exact case-insensitive ids only — reopen reuses the
 same leaf id, so the suffixed-leaf heuristic is gone),
-rendered into the shell's rails/viewport — plus the slice-6e **Chats** terminal view (the one
-interactive, full-bleed panel). `FlowTab.tsx` is no longer a cockpit view — Task 29 S7 hid the Lifecycle
+rendered into the shell's rails/viewport — plus the slice-6e **Chats** terminal and the Sessions
+cockpit, the two interactive full-bleed views. Sessions owns explicit launch, structured-answer,
+lifecycle, and live model/effort controls while the remaining projection panels stay primarily
+observational. `FlowTab.tsx` is no longer a cockpit view — Task 29 S7 hid the Lifecycle
 Flow tab from the shell, and orchestration leaf 260703-L0 reworked it into a **dev-only multi-model
 design canvas** (`FlowTab.tsx` renderer/nav + the new `flowModels.ts` registry) mounted at `/dev/flows`;
 HFX-L6 updates that dormant model and the Chats role rendering to distinguish the developer-facing
@@ -181,7 +183,8 @@ and the `Chats` `SessionList` switcher).
   survives back/forward). Replaces the retired inline `TaskNotes` reader. See
   [notes-reader/ overview](notes-reader/overview.md).
 - `session-cockpit/` — the **Sessions cockpit view** (260715-FEUI-L1 shell, filled by
-  260715-FEUI-L2, launch layer by 260715-FEUI-L3): the terminal-first sessions surface registered as the last mode-bar view and
+  260715-FEUI-L2, launch layer by 260715-FEUI-L3, live set-control layer by FEUI-L4): the
+  terminal-first sessions surface registered as the last mode-bar view and
   the fourth keep-alive full-bleed layer (the Chats pattern — never unmounted, `active`-gated
   keys). `SessionsView.tsx` is the shell + derivation seam — a react-resizable-panels
   rail/stage/inspector group (`autoSaveId="cockpit.sessions.panels"`) with edge-transition
@@ -192,9 +195,10 @@ and the `Chats` `SessionList` switcher).
   panels**: `SessionRail.tsx` (the RULED role hierarchy — flat command spine, active-first leaf
   clusters, completed folders + naming bulk end — plus fleet attention, gate/brief markers,
   poll-health banner, bus footer, and the spawn-tree provenance toggle), `SessionStage.tsx` +
-  `HeaderStrip.tsx` (the ruled stage layer order with the reserved L4 control + L6 WorkingLine
+  `HeaderStrip.tsx` (the ruled stage layer order with the mounted L4 ModelEffortControl + L6 WorkingLine
   slots; honest freshness + requested-tier provenance), `StateDot.tsx` (the ONE grammar renderer —
-  2.4 s ease-in-out pulse ruling), and `SeatInspector.tsx` (the read-only provenance card until
+  2.4 s ease-in-out pulse ruling; rail dots speak the state word), and `SeatInspector.tsx`
+  (read-only catalog provenance plus the collapsed acknowledging set ledger until
   L7). **260715-FEUI-L6 fills the stage surface + lifecycle actions**: `PtySurface.tsx`
   (keep-alive real xterm panes through the SHARED `panels/Terminal.tsx`, DOM renderer by
   measurement, controlled vs legacy-raw archetypes, screen-reader opt-in, reserved-chord filter),
@@ -207,15 +211,22 @@ and the `Chats` `SessionList` switcher).
   dynamic-only options, both-knobs-or-neither selection, uniform fail-loud response paths) and
   `FailedLaunchBanner.tsx` (verbatim bridgeError, Retire + 'Launch corrected…', no auto-retry),
   with header/inspector evidence tiers derived from row control-state truth through
-  `grammar/EvidenceBadge`. Remaining scaffolding: L4 controls, L5 composer, L7 tabbed
-  inspector/status line.
+  `grammar/EvidenceBadge`. **L4 adds the live set-control layer**: `ModelEffortControl.tsx`
+  (one exact-session popover shared by header and palette), `AcceptanceChip.tsx` (worded pending/
+  acceptance/pair/route evidence), `CockpitLiveRegions.tsx` (persistent polite + assertive
+  channels), and `SetOutcomeToasts.tsx` (unfocused outcomes persist and collapse until marked
+  seen). The rail uses its reserved attention slot for `set!`; the inspector ledger expansion is
+  the explicit acknowledgment gesture; effort chords cycle without a dialog. Remaining
+  scaffolding: L5 composer and L7 tabbed inspector/status line.
   `CommandPalette.tsx` (cmdk, non-portal, commands/keys pages rendered from the live registry +
   keymap data) and `useKeyboardZones.ts` (tinykeys at the window over the pure `data/keymap`
   contract) complete the keyboard/palette foundation; all decisions live React-free in
   `data/commands.ts` / `data/sessionLayout.ts` / `data/keymap/` / (L2) `data/railModel.ts` /
   `data/stateGrammar.ts` / `data/sessionCockpitStore.ts` / (L6) `data/interactionAnswer.ts` /
   `data/sessionLifecycle.ts` / `data/ptyHarvest.ts` / (L3) `data/capabilityCatalog.ts` /
-  `data/launchEvidence.ts` / `data/launchFlow.ts`. See
+  `data/launchEvidence.ts` / `data/launchFlow.ts` / (L4) `data/sessionCapabilities.ts` /
+  `data/setAcceptance.ts` / `data/pairChange.ts` / `data/setClient.ts` / `data/setChips.ts` /
+  `data/setControlsCopy.ts` / `data/announcer.ts`. See
   [session-cockpit/ overview](session-cockpit/overview.md).
 - `MemoryMirror.tsx` — the segmented coverage/drift bar per repo + ledger currency + stalest
   sidecars (slice-3b analytics); drift classes mapped by record (forward-compatible).
@@ -406,8 +417,10 @@ either body success or failure. This adds one data hook within the existing rout
   server-computed). The interactive exceptions are `GateResponder` (Yes/No POST developer-attributed
   gate decisions; Chat sends instructions through hosted chat or the external operator inbox) and the
   `Chats`/`Terminal` view (slice 6e
-  — a bidirectional Mode B2 WebSocket: keystrokes/resize out, PTY bytes in). Selection stays
-  ephemeral UI state lifted to the cockpit shell.
+  — a bidirectional Mode B2 WebSocket: keystrokes/resize out, PTY bytes in), plus the Sessions
+  cockpit's named launch, structured-interaction, lifecycle, and model/effort control routes.
+  Selection stays ephemeral UI state lifted to the cockpit shell; set evidence persists in the
+  dedicated cockpit store until readback or explicit acknowledgment.
 - **Panda + React Aria** — styling is co-located Panda `css`/`cva` keyed on tokens + React Aria
   `data-*` conditions; behavior (keyboard/focus/ARIA) is React Aria. No global panel CSS.
 - **The Panel primitive owns chrome** — bg/border + scroll + the sticky header band; panels pass a
@@ -447,6 +460,14 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 route impact: the `session-cockpit/` child route gains
+  `ModelEffortControl`, `AcceptanceChip`, `CockpitLiveRegions`, and `SetOutcomeToasts` with their
+  focused suites; existing HeaderStrip/SeatInspector/SessionRail/SessionsView surfaces gain the
+  one control, collapsed acknowledging ledger, worded rail attention/named dots, cycle-effort,
+  queued hint, watchers, and persistent outcome plumbing. Pure policy and I/O remain in the L4
+  `data/` layer named above. No other panel or MCP package-data route changed because the worker
+  did not run dashboard bundle sync. Verification metadata is pinned to the contract base until
+  code commit.
 - 2026-07-17T06:30+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
   flow): the `session-cockpit/` child route gains its LAUNCH layer — `LaunchFlow.tsx` (the
   palette-opened catalog-driven launch overlay) + `FailedLaunchBanner.tsx` (verbatim failed-seat

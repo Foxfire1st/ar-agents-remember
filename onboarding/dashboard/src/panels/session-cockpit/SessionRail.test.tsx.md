@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -24,7 +24,10 @@ the shared `FLEET` fixtures.
 ### Logic
 
 - **Rail-state matrix (R14)** — every fixture row's dot carries exactly the `stateGrammar` visual
-  (`data-state`/color/pulse per row).
+  (`data-state`/color/pulse per row); FEUI-L4 also pins `role="img"` and the literal
+  `aria-label="state: <word>"`, so the truncation-surviving dot is never color-only.
+- **Set attention (L4 R6)** — an unacknowledged unsupported ledger entry renders only that
+  seat's `set!` marker with a worded accessible name; explicit acknowledgment removes it.
 - **Vocabulary negative (R6)** — plants `resolvedModel`/`resolvedEffort` in fixtures and asserts
   they appear NOWHERE in the rail container; anatomy order dot | role | title | status | End
   proven via `compareDocumentPosition`; the `input?` chip tooltip carries the R16 prompt preview.
@@ -64,14 +67,17 @@ cases. Test-only.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The component under test. | L348-L854 | [SessionRail.tsx](SessionRail.tsx) |
+| The component under test. | L348-L889 | [SessionRail.tsx](SessionRail.tsx) |
 | The shared fixtures every case builds from. | L10-L172 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
 | The grammar the matrix compares against. | L44-L106 | [../../data/stateGrammar.ts](../../data/stateGrammar.ts) |
 | The notice store + harvest store the L6 block seeds. | L46-L118 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
-| The harvest store the bell/hint cases drive. | L51-L133 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
+| The harvest store the bell/hint cases drive. | L51-L126 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R6/R8 extended the state matrix with accessible dot
+  words and added the unacknowledged set-outcome marker/acknowledgment regression. Verification
+  metadata is pinned to the contract base until code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R5/R7): added the L6 block — arm/confirm with exact
   URL + zero-kills-while-armed, verbatim 502 failure + single-POST retry (review finding 4),
   cancel-without-fetch, closed+skipped cleanup outcome + dismiss, the text-equivalent bell

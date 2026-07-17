@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -24,7 +24,8 @@ The jsdom suite for the HeaderStrip AND the SessionStage container (260715-FEUI-
 ### Logic
 
 - **HeaderStrip (R10)** — the anatomy order identity → controls → state → (leaf/seat) →
-  diagnostics via DOM position; the ModelEffortControl slot ships EMPTY (L4 fills it); the state
+  diagnostics via DOM position; FEUI-L4 mounts the real `ModelEffortControl` and trigger inside
+  the reserved slot; the state
   dot + word come from the shared grammar; freshness honesty (R15): `ws —` with no pane, real
   state + quiet age when known, the 10 s sweep bound in the tooltip; a hand-opened session
   renders NO provenance chips (absent, never invented).
@@ -40,7 +41,7 @@ The jsdom suite for the HeaderStrip AND the SessionStage container (260715-FEUI-
 
 ### Invariants And Boundaries
 
-The anatomy-order and empty-slot cases are the R10 regression net; the no-provenance negative is
+The anatomy-order and mounted-control-slot cases are the R10/L4 regression net; the no-provenance negative is
 the R7 honesty net; the purpose-built derived-tier rows are the R7 control-state-gating net (they
 must not be swapped back to shared FLEET rows — finding 7). Test-only.
 
@@ -54,6 +55,10 @@ must not be swapped back to shared FLEET rows — finding 7). Test-only.
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2 replaced the empty-slot assertion with proof that
+  the reserved controls segment mounts one `ModelEffortControl` and its trigger; fixture state
+  also carries the L4 snapshot/echo defaults. Verification metadata remains pinned to the
+  contract base until code commit.
 - 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R7, fix round 1 finding 7): the derived-tier assertion
   rewritten in place onto a purpose-built claude/ready row asserting "(model-validated)" + the
   badge tier (the L2 `worker-l4` fixture quirk can no longer silently flip it), plus a new

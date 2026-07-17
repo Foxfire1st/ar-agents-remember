@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -22,7 +22,9 @@ indented per-leaf clusters with the active seat on top, per-master completed fol
 master+sprint bulk end — plus the fleet-attention strip (R12), gate badges (R13), the two-state
 brief column (R8), the poll-health stale banner (R15), and the bus-summary footer (R8). The
 orchestration-tree (spawn-edge) view stays available as a button/palette toggle for provenance
-inspection only (R5). All derivations live in `data/railModel.ts`; this file is DOM + wiring.
+inspection only (R5). FEUI-L4 consumes the existing attention slot with a worded `set!` marker
+for unacknowledged set evidence and makes each state dot speak its grammar word. All hierarchy
+derivations live in `data/railModel.ts`; this file is DOM + wiring.
 
 ## Code Commentary
 
@@ -38,9 +40,14 @@ inspection only (R5). All derivations live in `data/railModel.ts`; this file is 
   chip is the ONLY elidable segment (`flexShrink:1; min-width:0; max-width:7rem`); the full truth
   stays in the row tooltip (`railRowTooltip`). Status chips carry the grammar's status vocabulary
   ONLY — the DOM-negative test proves `resolvedModel`/`resolvedEffort` render NOWHERE in the rail.
-  The `data-slot="attention-marker"` slot (R6's reserved slot, consumed by L4) carries the
-  two-state brief marker (✉, R8) and the held-gate badge (R13, + `data-attention-gate` on the
-  row). The `input?` chip's tooltip carries the pending question's prompt preview (R16).
+  The `data-slot="attention-marker"` slot carries the two-state brief marker (✉, R8), held-gate
+  badge (R13), and FEUI-L4's `set!` marker when `hasUnackedSetAttention` finds unsupported,
+  clamp, unknown, or pair-failure evidence. Its accessible name directs the user to the set
+  ledger; viewing the ledger or dismissing the toast explicitly clears it. The `input?` chip's
+  tooltip carries the pending question's prompt preview (R16).
+- **Accessible state dot (L4 R8)** (L491-L501): the rail supplies `ariaLabel="state: <word>"`
+  to the shared `StateDot`, making the truncation-surviving signal a named image. Header dots stay
+  hidden because the visible state word already sits beside them.
 - **Honest single-End flow (L6 R5)** (L381-L385, L424-L432, L548-L614): the End segment renders
   on EVERY row (live `End`, dormant `✕`), but clicking now ARMS an inline confirm that NAMES
   session · leaf · state (`terminateConfirmCopy` — arming alone never kills); confirm runs
@@ -100,6 +107,8 @@ rail root carries `data-focus-target` (design §5.3 — always present, even emp
   the TOOLTIP, clearly labeled, never the dot.
 - The ruled anatomy order and the only-status-elides truncation contract are DOM-test-pinned; new
   row content must go through the reserved attention-marker slot or a ruling.
+- Set attention is presentation of existing ledger/pair evidence only; the rail never
+  acknowledges it and never renders requested/effective model or effort values.
 - Attention highlight must stay class-derived (never an id snapshot) — review finding 3.
 - Bulk end must keep the naming preview; the palette mirrors carry counts + names in the command
   title itself (`SessionsView`).
@@ -111,18 +120,23 @@ rail root carries `data-focus-target` (design §5.3 — always present, even emp
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Row anatomy, End confirm/failure, harvest markers, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | L348-L854 | [SessionRail.tsx](SessionRail.tsx) |
+| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | L348-L889 | [SessionRail.tsx](SessionRail.tsx) |
 | The pure model/rollup/join derivations this renders. | L17-L464 | [../../data/railModel.ts](../../data/railModel.ts) |
 | The single dot renderer + grammar. | L38-L49 | [StateDot.tsx](StateDot.tsx) |
 | The view deriving props and wiring focus + palette mirrors. | L206-L344 | [SessionsView.tsx](SessionsView.tsx) |
 | The detailed terminate/cleanup flows + notice store the End paths run through. | L120-L191 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
 | The confirm + cleanup-outcome copy. | L13-L47 | [lifecycleCopy.ts](lifecycleCopy.ts) |
-| The harvest store + hint words the markers/tooltips read. | L51-L133 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
+| The harvest store + hint words the markers/tooltips read. | L51-L126 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
+| Shared set-attention predicate feeding the `set!` marker. | L1-L232 | [../../data/setChips.ts](../../data/setChips.ts) |
 | The poll-health + tree-toggle store slices. | L107-L172 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
 | The jsdom suite: state matrix, anatomy order, model-leakage negative, hierarchy, attention, joins, completed/bulk, footer honesty, cross-surface dot, + the L6 block. | L61-L473 | [SessionRail.test.tsx](SessionRail.test.tsx) |
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R6/R8 filled the reserved attention slot with the
+  worded `set!` marker for unacknowledged evidence and named every rail dot `state: <word>` for
+  assistive technology. The rail remains model/effort-value-free and never acknowledges on its
+  own. Verification metadata is pinned to the contract base pending code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R5/R7; review finding 4 fixed in-leaf): single End
   now arms an inline honest confirm naming session · leaf · state and executes through
   `endSessionDetailed` (`endSession` signature: id → `OpenSession`; rail-only caller); a failed

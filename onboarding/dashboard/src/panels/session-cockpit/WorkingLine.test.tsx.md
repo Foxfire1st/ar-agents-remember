@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -40,7 +40,8 @@ with a frozen clock (`now` prop) over the shared `L6_CONTROLLED_WORKING` fixture
 ### Invariants And Boundaries
 
 `cockpitWorkingSince` builds a minimal `PerSessionCockpit` by hand — the suite depends on the
-store SHAPE, not the store. Test-only.
+store SHAPE, not the store. FEUI-L4 therefore added only the required `snapshotLoading: false`
+and empty `echoEvidence` defaults; WorkingLine behavior and assertions are unchanged. Test-only.
 
 ## Repo-Internal References
 
@@ -54,6 +55,9 @@ store SHAPE, not the store. Test-only.
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — No content impact: 260715-FEUI-L4 only extended this hand-built
+  store-shape fixture with `snapshotLoading` and `echoEvidence`; the WorkingLine contract is
+  unchanged. Verification metadata is pinned to the contract base until code commit.
 - 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R6/R9 (6 cases): the ~-labeled formatter
   matrix, working-only render, plain-"working" (never whimsy), elapsed presence/omission with
   the sweep-bound tooltip, the welded disabled stop with the exact UA-7 reason, and the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/commands.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -28,8 +28,8 @@ through the context (the view owns the DOM).
 ### Logic
 
 - `CommandContext` (L13-L31): view facts (`railCollapsed`/`inspectorCollapsed`/`paletteOpen`) +
-  injected actions — live panel/focus/palette actions plus the three L2/L4/L5 stub seams
-  (`switchSession`, `cycleEffort`, `submitComposer`).
+  injected action seams. Panel/focus/palette, session switching, and FEUI-L4 effort cycling are
+  live; `submitComposer` remains the FEUI-L5 seam.
 - `Command` (L33-L44): optional `keywords` (palette search), display-only `chord` label (binding
   lives in `keymap/`), and `keepsPaletteOpen` — the palette-page-switch marker (selection keeps
   the palette open; established by `keyboard.reference`).
@@ -43,16 +43,17 @@ through the context (the view owns the DOM).
   (composer Esc), `focus.exitToChrome` (PTY F6 — same landing as `focus.stageHeader`),
   `focus.terminal`, `session.prev/next` (alt+↑/↓ + the reserved ctrl+alt+pageup/pagedown — LIVE
   since 260715-FEUI-L2: the view's injected `switchSession` action cycles the rail order, and the
-  "(stub — L2)" title suffixes are gone), and the honest stubs `effort.decrease/increase`
-  (alt+,/.) and `composer.submit` (ctrl+↵) — each stub routes through an injected context action
-  so L4/L5 replace the ACTION, never the command id or chord.
+  "(stub — L2)" title suffixes are gone), live `effort.decrease/increase` (alt+,/.) with searchable
+  cycle/thinking/reasoning keywords (260715-FEUI-L4 R7), and the remaining honest
+  `composer.submit` stub (ctrl+↵). Each route uses an injected context action, so leaf work
+  replaces behavior without changing the stable command id or chord.
 
 ### Invariants And Boundaries
 
 - One options source: the palette lists `registry.list`, chords dispatch `registry.run` — never a
   second command list.
 - Registration order is presentation order; replace-by-id is the extension mechanism.
-- Stub command ids and chord labels are FINAL — later leaves swap the injected action only.
+- Command ids and chord labels are stable — leaf work swaps the injected action only.
 - Pure module: no React, no DOM, no store reads; everything observable arrives via
   `CommandContext`.
 
@@ -68,6 +69,10 @@ through the context (the view owns the DOM).
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R7 made `effort.decrease` and
+  `effort.increase` live: user-facing cycle titles and search keywords now dispatch -1/+1 into
+  the exact-session effort-cycle action without opening the dialog. The composer seam remains
+  stubbed for L5. Verification metadata is pinned to the contract base until L4 is committed.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2: `session.prev`/`session.next` titles dropped the
   "(stub — L2)" suffix — the commands are live (SessionsView injects a real `switchSession` that
   cycles `railModel.railCycleOrder`); ids and chords unchanged, exactly the stub-seam contract.

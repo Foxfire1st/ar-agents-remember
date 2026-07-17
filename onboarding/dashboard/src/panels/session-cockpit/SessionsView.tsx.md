@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -17,12 +17,13 @@
 ## Purpose
 
 The **sessions cockpit view** (260715-FEUI-L1 S2 shell, FILLED by 260715-FEUI-L2, PTY stage +
-interactions by 260715-FEUI-L6, launch surfaces by 260715-FEUI-L3): rail / stage / inspector as
+interactions by 260715-FEUI-L6, launch surfaces by 260715-FEUI-L3, set controls by
+260715-FEUI-L4): rail / stage / inspector as
 a react-resizable-panels group with the narrow-width rules (inspector auto-collapses <~1100px,
 rail <~900px — both reopenable) and the ~80-col PTY floor hint chip. **L2 fills the panels**:
 the rail hosts `SessionRail` (the ruled role hierarchy + fleet attention), the stage the
-`SessionStage` container + `HeaderStrip` (empty ModelEffortControl slot for L4), and the
-inspector the read-only `SeatInspector` provenance card (the L7 tabbed inspector replaces it).
+`SessionStage` container + `HeaderStrip` with the sole `ModelEffortControl`, and the inspector the
+catalog-provenance card plus collapsible set ledger (the L7 tabbed inspector replaces it).
 **L6 fills the stage body**: the focused seat renders a real `PtySurface` pane (carrying the
 `data-kbzone="pty"` contract), `StopResidualNotes` above it, the `InteractionBar` directly above
 the composer (never replacing it), and the `WorkingLine` into the stage's reserved slot; the PTY
@@ -30,12 +31,31 @@ placeholder now renders ONLY for the empty stage (no focused session), and the c
 remains L5's placeholder (now ref-exposed to the bar's answer-mode). **L3 appends the launch
 surfaces**: the `session.launch` palette command opens the `LaunchFlow` overlay, and a focused
 FAILED seat renders the `FailedLaunchBanner` inside the stage children above the pty surface.
+**L4 wires live controls and outcome surfaces**: palette model/effort commands open the same
+header popover; effort chords cycle through exact-session options; queued hints, persistent
+background toasts, and polite/assertive live regions consume the shared set evidence.
 The view owns the L2 derivation seam: rail model + attention rollup are derived ONCE per render
 and shared between the rail and the palette commands. The root div carries
 **`[data-view="sessions"]`** — the WebTUI scope root (S1) and the keyboard layer's home — plus
 `sessions--view` and the marker classes and `sessions-*` testids.
 
 ## Code Commentary
+
+### 260715-FEUI-L4 Set-Control Wiring
+
+- **One control, two entry surfaces** (L236-L239, L329-L355, L665-L672): view-owned
+  `controlPopoverOpen` is passed through SessionStage/HeaderStrip to the one
+  `ModelEffortControl`; the dynamic `control.setModel` and `control.setEffort` palette commands
+  open it only for a live harness session. Focus switches close the prior seat's popover.
+- **Promotion and announcements** (L247-L253): refcounted `startSetPromotionWatcher` and
+  `startSeatStateAnnouncer` live beside the existing feed/sweep subscriptions, covering
+  turn/focus snapshot rechecks and assertive failed/awaiting-input transitions.
+- **Attention and cycle wiring** (L262-L268, L519-L527): rail-rollup unacknowledged ids use the
+  shared `hasUnackedSetAttention` predicate, and the default effort commands now call
+  `cycleEffortRequested` for the focused session instead of the L4 stub.
+- **Composer hint and durable outcomes** (L718-L728, L816-L824): queued sets add the exact
+  promotion hint adjacent to the composer; `SetOutcomeToasts` persists unfocused results until
+  explicit acknowledgment; `CockpitLiveRegions` keeps both urgency channels mounted.
 
 ### 260715-FEUI-L6 PTY Stage, Interactions, And Lifecycle Wiring
 
@@ -123,9 +143,10 @@ and shared between the rail and the palette commands. The root div carries
   `railCollapsed`/`inspectorCollapsed`; the status-line footer surfaces `☰ rail` / `◫ inspector`
   reopen buttons while collapsed (R3 reopenable), alongside the `ctrl+k palette · ? keys · F6
   regions` hint.
-- **Command wiring** (L206-L296): one memoized `registerDefaultCommands(createCommandRegistry())`
+- **Command wiring**: one memoized `registerDefaultCommands(createCommandRegistry())`
   instance; `buildContext` supplies live actions (palette open/close, panel toggles via the
-  imperative refs, focus moves) and the honest L2/L4/L5 stubs — routed through a `contextRef` so
+  imperative refs, focus moves, session switch, and L4 effort cycle) plus the honest L5 composer
+  stub — routed through a `contextRef` so
   `dispatch(commandId)` always runs against fresh state; `useKeyboardZones({ active, dispatch })`
   installs the chords.
 - **Palette focus discipline** (L235-L251): `openPalette` records the ORIGINAL invoker only on a
@@ -173,6 +194,8 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
   ALL rail/attention/focus derivations live in `data/railModel.ts` — this file only measures,
   derives once, and wires.
 - Focus handoff must never fight a deliberate landed-row inspection (the F17 only-under-us rule).
+- Model/effort palette commands and the header trigger must share one popover; queued hints,
+  toasts, rail attention, and live regions must derive from the same cockpit evidence.
 
 ## Repo-Internal References
 
@@ -188,12 +211,15 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 | The shell that mounts this view as a keep-alive hidden layer and gates `active`. | — | [../../cockpit/Cockpit.tsx](../../cockpit/Cockpit.tsx) |
 | The pure decisions this shell feeds widths into. | L5-L85 | [../../data/sessionLayout.ts](../../data/sessionLayout.ts) |
 | The registry + default commands the context actions serve. | L56-L179 | [../../data/commands.ts](../../data/commands.ts) |
+| The L4 snapshot/set/pair/cycle/promotion driver mounted by this view. | L1-L433 | [../../data/setClient.ts](../../data/setClient.ts) |
+| The sole live model/effort UI controlled from this view. | L148-L383 | [ModelEffortControl.tsx](ModelEffortControl.tsx) |
+| Persistent background outcomes and screen-reader regions. | L58-L142; L19-L44 | [SetOutcomeToasts.tsx](SetOutcomeToasts.tsx), [CockpitLiveRegions.tsx](CockpitLiveRegions.tsx) |
 | The F6 cycle + focus selectors used by `cycleRegion`/`focusStageHeader`/`focusTerminal`. | L8-L34 | [../../data/keymap/focus.ts](../../data/keymap/focus.ts) |
 | The end-to-end suite: structure, chip re-measure paths, calibration, palette, zones, focus, + the L2 entry-focus/handoff/cycling cases. | L14-L300 | [SessionsView.test.tsx](SessionsView.test.tsx) |
 | The one WebTUI mapping file whose scope root this component carries. | L17-L42 | [../../styles/webtui.css](../../styles/webtui.css) |
 | The rail renderer receiving the once-derived model/rollup as props. | L364-L372 | [SessionRail.tsx](SessionRail.tsx) |
 | The stage container + header line the stage panel mounts. | L46-L87 | [SessionStage.tsx](SessionStage.tsx) |
-| The inspector provenance card the inspector panel mounts. | L45-L110 | [SeatInspector.tsx](SeatInspector.tsx) |
+| The inspector provenance/set-ledger card the inspector panel mounts. | L139-L218 | [SeatInspector.tsx](SeatInspector.tsx) |
 | The pure derivations this view memoizes once per render. | L131-L464 | [../../data/railModel.ts](../../data/railModel.ts) |
 | The cockpit store (focus, mirrors, perSession) + the catalog mirror this view starts. | L107-L309 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
 | The shared poll driver subscription. | L60-L77 | [../../data/catalogPoll.ts](../../data/catalogPoll.ts) |
@@ -202,6 +228,10 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2/R4/R6–R8 wired the one controlled model/effort
+  popover to header and palette, live effort cycling, promotion/drift and seat-state watchers,
+  queued composer hint, shared attention rollup, persistent background toasts, and dual live
+  regions. Verification metadata is pinned to the contract base until the uncommitted code lands.
 - 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R5/R6): launch surfaces appended — the `launch` state,
   the `session.launch` palette registration, the FailedLaunchBanner block for a focused failed
   seat (prepended inside the stage children before the pty placeholder; L6-adjacency merge note

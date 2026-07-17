@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T06:25+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00 |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -109,7 +109,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   `openResponses.ts` (every open 200/400/409 shape + failed rows ×3 harnesses with verbatim
   bridgeErrors) — plus `test/contractCapabilities.test.ts`, the conformance suite asserting the
   pack against the recorded L5 live-conformance samples (`catalogRows.ts` untouched by L3,
-  builder reused).
+  builder reused). FEUI-L4 extends `capabilityEnvelopes.ts` with clamp/defensive-echo results,
+  queued→immediate and unknown→confirm/disprove readback sequences, live Codex snapshots, and
+  exact-session 404/409/503 bodies; these remain fixtures, never product constants.
 - `grammar/` — the shared primitives library (`Panel`, `ModeBar`, `Dot`, `Affordance`,
   `ProgressFill`, `TokenGauge`, `Markdown`, 260703-L14's `RankBadge` — the V4 chevron rank
   insignia for the orchestration/management command tiers — and 260715-FEUI-L3's
@@ -129,7 +131,8 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   sub-route — the Sessions cockpit view shell (rail/stage/inspector `PanelGroup` + narrow rules +
   the ~80-col floor chip, the non-portal cmdk `CommandPalette` with the commands/keys pages, and
   the `useKeyboardZones` tinykeys binding), whose root carries `[data-view="sessions"]` (the
-  WebTUI scope root). See
+  WebTUI scope root). FEUI-L4 fills its live model/effort surface, worded acceptance chips,
+  acknowledging ledger, set-attention/toasts, and dual live regions. See
   [panels/overview.md](panels/overview.md).
 - `data/` — the Zustand store, pure selectors, SSE stream wiring, the gate-action client
   (`actions.ts` POSTs targeted `gateId`/`note` decisions to `/api/actions/{verb}`, can omit `target`
@@ -194,8 +197,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   pane's baseline in every run (owner-ratified, L14R-1) while the gold sprint deck stays
   orchestration-gated, and the tasks tab renders flat runs unchanged.
   **260715-FEUI-L1 adds the sessions-cockpit pure layer**: `commands.ts` (+ suite — the extensible
-  command registry, the single options source behind the cmdk palette AND chord dispatch; honest
-  L2/L4/L5 stubs routed through injected context actions), `sessionLayout.ts` (+ suite — the
+  command registry, the single options source behind the cmdk palette AND chord dispatch; stable
+  injected action seams — session switching and L4 effort cycling are live, L5 submit remains a
+  stub), `sessionLayout.ts` (+ suite — the
   narrow-width edge-transition rules, the ~80-col floor approximation, and the ~280px rail
   percentage calibration), and the **`keymap/`** sub-route (see
   [data/keymap/overview.md](data/keymap/overview.md)) — the xterm-free keyboard-zone contract:
@@ -250,6 +254,16 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   `openHostedSession` client (200/400/409×2/outcome-unknown F9 — no blind re-POST).
   `terminal.ts` also gains `OpenTerminalOptions.model/effort` (threaded into the open POST
   body), `fetchHarnessesOrNull`, and `HarnessInfo.control`.
+  **260715-FEUI-L4 adds the sessions-cockpit LIVE SET-CONTROL layer** (all + unit suites):
+  `sessionCapabilities.ts` reads only the exact live-session snapshot and derives each model
+  row's session-settable effort menu/effective marker; `setAcceptance.ts` is the exhaustive
+  five-value SetResult + HTTP/readback table; `pairChange.ts` serializes model → evidence/readback
+  → effort; `setClient.ts` is the sole snapshot/set I/O driver with supersede guards, one
+  unknown readback, cycle-effort, and turn/focus promotion watching; `setChips.ts` and
+  `setControlsCopy.ts` supply the shared visible evidence/hints; `announcer.ts` supplies
+  refcounted polite/assertive channels. `sessionCockpitStore.ts` gains typed snapshots,
+  loading/error, timestamped echo evidence, route/pair state, and selective acknowledgment;
+  `commands.ts` makes both effort cycle routes live.
 - `topology/` — the imperative constellation canvas + its pure model adapter. Task 33 reshapes it into an
   **active-enclosure** view: the constellation is now `workspace → source checkouts → active worktree
   enclosures (+ providers)`. The separate lifecycle/task rim is gone — each enclosure node folds in its
@@ -361,11 +375,11 @@ The dashboard consumes additive landing freshness truth from the projection: sta
 
 ## Invariants And Boundaries
 
-- **Near-read-only, two interactive surfaces** — the cockpit renders the projection read-only except
-  for (1) Gate Respond, whose Yes/No paths POST developer-attributed durable decisions while Chat stays
-  message-only through hosted chat or the external inbox, and
-  (2) the Chats terminal's bidirectional Mode B2 WebSocket (slice 6e — keystrokes/resize out, raw PTY
-  bytes in). Everything else stays display-only; the server enforces every effect.
+- **Near-read-only with named control surfaces** — projection panels remain display-only except
+  for Gate Respond decisions/messages, the Chats terminal's bidirectional Mode B2 WebSocket, and
+  the Sessions cockpit's explicit launch, structured-interaction, terminate/cleanup, and live
+  model/effort controls. Sessions mutations ride their typed HTTP/control routes; requested and
+  effective values remain separate, and the server still authorizes and proves every effect.
 - **Client-agnostic shapes** — the frontend consumes the `WorkspaceProjection` nodes verbatim (no
   dashboard-bespoke endpoints); North-Star #2.
 - **Build-time styling only** — Panda extracts static CSS at build; `styled-system/` is generated,
@@ -386,6 +400,8 @@ The dashboard consumes additive landing freshness truth from the projection: sta
 | The detail panel resolves the displayed document and delays notes plus all eager change-set requests until body hydration is terminal. | L380-L388; L629-L687; L1044-L1085; L1309-L1388 | [DetailPanel.tsx](panels/DetailPanel.tsx) |
 | The serving layer supplies the projection and static package boundary consumed by this route. | L1-L80 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The built bundle is synced into package data and checked against source plus dist. | L30-L52; L151-L179 | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
+| The L4 live-session set driver owns exact snapshot reads, model/effort POSTs, pair serialization, cycling, and promotion watching. | L1-L433 | [setClient.ts](data/setClient.ts) |
+| The Sessions cockpit route overview owns the live control, ledger, toast, and accessibility surface contract. | — | [session-cockpit overview](panels/session-cockpit/overview.md) |
 
 ## 260707-HFX2-L17 Seat Binding Route Impact
 
@@ -404,6 +420,14 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 route impact (live set controls; final reviewer PASS
+  after three fix rounds): `data/` gains the exact-session capability, five-state acceptance,
+  serialized pair, sole I/O driver, chip/copy, and announcer modules; the cockpit store gains
+  typed snapshot/echo/route/pair evidence; `panels/session-cockpit/` gains the live control,
+  accepting chip, ledger/rail attention, persistent background toasts, queued hint, and dual live
+  regions; capability fixtures gain clamp/queue/unknown readback sequences. Six nonblocking sev-4
+  observations remain preserved in file cards. Verification metadata is pinned to the contract
+  base until code commit.
 - 2026-07-17T06:25+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
   flow; review FINAL PASS after two fix rounds; 66 files / 753 tests green): `data/` gains the
   launch layer — `capabilityCatalog.ts` (memory-only envelope store, drop-on-error, verbatim
