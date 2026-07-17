@@ -6,8 +6,8 @@
   "repoName": "agents-remember",
   "baseCodeCommit": "9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e",
   "baseMemoryCommit": "988e2a452846ced092d4d477e80f4a2207c88d21",
-  "lastVerifiedCodeCommit": "7b62338310aff67ae8b66a450a52a1f1052137c4",
-  "lastMemoryContentCommit": "3da7f42bf02b5c47299aca0b5c89bb0832a72324",
+  "lastVerifiedCodeCommit": "96e1d6db63454438b57a7485382c27784a60776f",
+  "lastMemoryContentCommit": "ad38b68232113bbca41472563a6a1622cb47518f",
   "sortOrder": "newest-first"
 }
 ```
@@ -16,6 +16,7 @@ Newest entries are always inserted at the top.
 
 | Code commit | Memory commit |
 | ----------- | ------------- |
+| 96e1d6db63454438b57a7485382c27784a60776f | ad38b68232113bbca41472563a6a1622cb47518f |
 | 7b62338310aff67ae8b66a450a52a1f1052137c4 | 3da7f42bf02b5c47299aca0b5c89bb0832a72324 |
 | e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5 | 3e306373e3257313982ddfcc7b1a6e0532a33d4d |
 | ee955085a2010f62e9ad4d2bdc6aa77975daa5f3 | 3f1a011a62c9a6ca28ca98fc00a000e514f5f826 |
@@ -290,12 +291,3 @@ Newest entries are always inserted at the top.
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 3284c39ff546dc4398a8c9976bdf8a4ea3f42b7d |
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 64086bb8574042bc1147bff763123b4a2fe81d91 |
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 988e2a452846ced092d4d477e80f4a2207c88d21 |
-
-## Leaf Entries (pending closeout mapping)
-
-### 260715-FEUI-L3 — Capability catalog client and launch flow (2026-07-17)
-
-- **Scope shipped** (branch `ar/260715-feui-l3-capability-launch` off `ar/260715_react-tui-cockpit-frontend` @ `e2b99dcd`, uncommitted by design): the Sessions cockpit's capability-catalog client + launch flow (R1–R8) — `data/capabilityCatalog.ts` (memory-only per-harness envelope store; fetch states exactly `idle|loading|refreshing|error`; envelope DROPPED on any error, no fallback catalog anywhere; verbatim `{httpStatus, status, detail}` error surface; per-harness single-flight with honest refresh chaining; R2 generic miss-cost copy), `data/launchEvidence.ts` (the pure launch-tier machine — defaults/pending/refused/readback/model-validated from row control-state truth; Claude launch pairs never readback), `data/launchFlow.ts` (pure launch machines — advertised-order efforts, model-switch re-gating, BOTH-knobs-or-NEITHER `launchSelectionBody` — plus the classifying `openHostedSession` client: 200/400/409×2/F9 outcome-unknown, never a blind re-POST), `grammar/EvidenceBadge.tsx` (five distinct glyphs, tier word always in the accessible name), `types/{harnessCapabilities,terminalOpen}.ts` (capability/open wire mirrors; `terminalCatalog.ts` untouched), the R3 contract fixture pack + conformance suite (`test/fixtures/{capabilityEnvelopes,controlMessages,openResponses}.ts`, `test/contractCapabilities.test.ts`), and the cockpit surfaces `panels/session-cockpit/{LaunchFlow,FailedLaunchBanner}.tsx` (palette-opened dynamic-only launch overlay; verbatim failed-seat refusals, Retire + 'Launch corrected…', no auto-retry) — all + suites. Modified: `data/terminal.ts` (open POST gains the model/effort selection, `fetchHarnessesOrNull`, `HarnessInfo.control`), `SessionsView.tsx` (+2 integration tests), `SessionStage.tsx` (empty-state copy), `HeaderStrip.tsx`/`SeatInspector.tsx` (R7 tier DERIVED from control-state truth + badge; vendor-defaults fact), `HeaderStrip.test.tsx`.
-- **Review outcome:** PASS, then FINAL PASS after two fix rounds. Round 1 closed the sev-3 (F9 watcher gated on `open` — post-dismiss focus steal) and sev-4s 2/3/4/6 (readError `transport` default; explicit refresh chaining; per-model-row envelope validation; visible adapter status) + the test-hardening finding 7; finding 5 (L6 banner/pty adjacency) was ruled no-action (merge-time note). Incident: a killed delta-verify agent's revert experiment corrupted the two untracked fix-round files in the worktree; the fix round was restored from the verifier's /tmp backups and re-verified green. Round 2 closed the residual sev-4 (dismiss now clears `unknownId`; reopen starts clean).
-- **Test/build evidence:** vitest 66 files / 753 tests, all passing (base 59/643 → +7 files / +110 tests); `npm --prefix dashboard run build` passes (pre-existing >500 kB chunk warning only); eslint + `tsc -b` clean; dashboard bundle re-synced into `mcp/src/agents_remember/package_data/` (`sync-dashboard.py` ok: package_data matches dist).
-- **Upstream asks:** an operator retire ACTOR IDENTITY decision if provenance-recording retire (`POST /api/terminal/{id}/retire`, which requires `actor_session`) is wanted from the dashboard — the banner's Retire uses the established operator `/terminate` route (reviewer-accepted). Carried forward: the L2 sev-3 status-chip vocabulary-width ruling remains open with the developer.
