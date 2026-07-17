@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionStage.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T06:10+02:00                           |
+| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
+| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -26,11 +26,13 @@ markers survive and the zone contract stays testable.
 
 ### Logic
 
-- **Header row** (L62-L75): `data-stage-header tabIndex={-1}` (the F6/composer-Esc focus landing
+- **Header row** (L62-L76): `data-stage-header tabIndex={-1}` (the F6/composer-Esc focus landing
   from L1) hosting the `HeaderStrip` for the focused seat — or, with NO focused session, the
-  EXPLAINED empty identity ("no focused session — pick one on the rail, or launch from Chats";
-  R9 — never an unexplained empty stage). `headerExtra` renders view-owned chips after the strip
-  (the ~80-col floor hint stays owned by SessionsView).
+  EXPLAINED empty identity ("no focused session — pick one on the rail, or run “Launch session…”
+  from the palette (ctrl+k)"; R9 — never an unexplained empty stage; copy updated by L3, which
+  shipped the launcher the old "launch from Chats (cockpit launcher: L5)" hint deferred to).
+  `headerExtra` renders view-owned chips after the strip (the ~80-col floor hint stays owned by
+  SessionsView).
 - **Handoff note (F17)** (L76-L80): the one-line `role="status"` amber note when the previously
   focused seat retired/landed (text built by SessionsView's handoff effect).
 - **WorkingLine slot** (L84-L87): `data-slot="working-line"` directly under the header — L6's
@@ -58,6 +60,10 @@ markers survive and the zone contract stays testable.
 
 ## Update History
 
+- 2026-07-17T06:10+02:00 — 260715-FEUI-L3: one string literal — the empty-stage identity now
+  points at the palette's "Launch session…" command (the old "launch from Chats (cockpit
+  launcher: L5)" copy became false the moment L3 shipped the launcher). Structure untouched.
+  Verification metadata pinned to the leaf base until closeout stamps the L3 code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6: the reserved WorkingLine slot is FILLED — the ONE
   additive optional `workingLine` prop (the slot's only tenant) renders L6's turn theater inside
   `data-slot="working-line"`; layer order, empty identity, and handoff note unchanged.

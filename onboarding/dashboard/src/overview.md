@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T04:20+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T06:25+02:00 |
+| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
+| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -100,13 +100,21 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   WebTUI-adoption assertions running against the exact shared build configuration.
   `test/fixtures/` (260715-FEUI-L2) is the NEW shared-fixture home: `catalogRows.ts` — the
   full-wire-shape catalog builder + the mockup-mirroring `FLEET` scenario the rail/model suites
-  run on (to be shared with the L3 fixture pack); 260715-FEUI-L6 APPENDS the `L6_*` rows
-  (controlled/legacy-raw archetypes, choices/freetext/unrepresentable interactions, retired-with-
-  stop-error, terminate-with-residual) after a byte-identical `FLEET`.
+  run on; 260715-FEUI-L6 APPENDS the `L6_*` rows (controlled/legacy-raw archetypes,
+  choices/freetext/unrepresentable interactions, retired-with-stop-error,
+  terminate-with-residual) after a byte-identical `FLEET`. 260715-FEUI-L3 adds the R3 contract
+  fixture pack beside it — `capabilityEnvelopes.ts` (recorded-L5-shaped catalogs in all three
+  cacheStatus values, the null-selectedEffort snapshot, SET_RESULTS ×5 acceptances, verbatim
+  404/409/503 error bodies), `controlMessages.ts` (receipts ×5, reconciliations ×4), and
+  `openResponses.ts` (every open 200/400/409 shape + failed rows ×3 harnesses with verbatim
+  bridgeErrors) — plus `test/contractCapabilities.test.ts`, the conformance suite asserting the
+  pack against the recorded L5 live-conformance samples (`catalogRows.ts` untouched by L3,
+  builder reused).
 - `grammar/` — the shared primitives library (`Panel`, `ModeBar`, `Dot`, `Affordance`,
-  `ProgressFill`, `TokenGauge`, `Markdown`, and — 260703-L14 — `RankBadge`, the V4 chevron rank
-  insignia for the orchestration/management command tiers); see
-  [grammar/overview.md](grammar/overview.md).
+  `ProgressFill`, `TokenGauge`, `Markdown`, 260703-L14's `RankBadge` — the V4 chevron rank
+  insignia for the orchestration/management command tiers — and 260715-FEUI-L3's
+  `EvidenceBadge`, the five-glyph launch-evidence tier badge with the tier word always in the
+  accessible name); see [grammar/overview.md](grammar/overview.md).
 - `panels/` — the cockpit panels (incl. the slice-6e **Chats** terminal view + its lazy `Terminal`
   xterm wrapper + the 6e-2c `SessionList` session switcher, plus Task 11's shared `GateResponder`
   used by the detail panel, engine-room diagnostics, and Hangar worktree gates); `FlowTab.tsx` remains
@@ -230,6 +238,18 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   `onSocketState` option (per-pane `connected`/`dropped` freshness from the socket's own
   handshake/close; a deliberate `dispose()` reports nothing; `reconnecting` never fires — no
   auto-reconnect exists).
+  **260715-FEUI-L3 adds the sessions-cockpit LAUNCH layer** (all + unit suites):
+  `capabilityCatalog.ts` — the memory-only per-harness capability-envelope store (fetch states
+  exactly `idle|loading|refreshing|error`; the envelope is DROPPED on any error — NO fallback
+  catalog exists anywhere; verbatim `{httpStatus, status, detail}` error surface; per-harness
+  single-flight with honest refresh chaining; the R2 generic miss-cost copy); `launchEvidence.ts`
+  — the pure launch-evidence tier machine (`launchTier`: defaults/pending/refused/readback/
+  model-validated from row control-state truth; Claude launch pairs can NEVER read readback);
+  `launchFlow.ts` — the pure launch machines (advertised-order effort filtering, model-switch
+  re-gating, the BOTH-knobs-or-NEITHER `launchSelectionBody`) + the classifying
+  `openHostedSession` client (200/400/409×2/outcome-unknown F9 — no blind re-POST).
+  `terminal.ts` also gains `OpenTerminalOptions.model/effort` (threaded into the open POST
+  body), `fetchHarnessesOrNull`, and `HarnessInfo.control`.
 - `topology/` — the imperative constellation canvas + its pure model adapter. Task 33 reshapes it into an
   **active-enclosure** view: the constellation is now `workspace → source checkouts → active worktree
   enclosures (+ providers)`. The separate lifecycle/task rim is gone — each enclosure node folds in its
@@ -272,6 +292,14 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   keys, spawn/level provenance, the REQUESTED `resolvedModel`/`resolvedEffort` pair, and
   liveness/retirement/landing evidence. `data/terminal.ts` re-exports it
   (`TerminalSessionInfo` = `TerminalCatalogRow`), preserving import sites.
+- `types/harnessCapabilities.ts` + `types/terminalOpen.ts` (260715-FEUI-L3 R3) — the THIRD and
+  FOURTH hand-maintained wire mirrors: the capability-catalog envelope
+  (`CapabilityCatalogResult.to_json()`, `serving/harness_capability_catalog.py` — {schema,
+  harness, cacheStatus `hit|miss|refreshed`, installFingerprint, capabilities}) with the
+  snapshot/model/effort/config/SetResult shapes (`serving/harness_capabilities.py`), and the
+  open-request/response wire shapes (the model/effort launch-selection POST body + the
+  200/400/409 response bodies, `serving/app.py`). `terminalCatalog.ts` was deliberately left
+  untouched by L3 — new types went to new files.
 - `index.css` — the Panda entry + global reset/base/effects layers (260715-FEUI-L2 adds the
   ruled `pulseSlow` cockpit state-pulse keyframe beside `flicker`/`pulse`).
 - `styles/tokens.css` — the `:root` design-token CSS vars (260715-FEUI-L1 adds `--muted`,
@@ -376,6 +404,20 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T06:25+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
+  flow; review FINAL PASS after two fix rounds; 66 files / 753 tests green): `data/` gains the
+  launch layer — `capabilityCatalog.ts` (memory-only envelope store, drop-on-error, verbatim
+  errors, honest refresh semantics), `launchEvidence.ts` (the pure tier machine; Claude launch
+  pairs never readback), `launchFlow.ts` (pure launch machines + the classifying open client),
+  all + suites; `types/` gains `harnessCapabilities.ts` + `terminalOpen.ts` (the capability and
+  open wire mirrors; `terminalCatalog.ts` untouched); `grammar/` gains `EvidenceBadge.tsx`
+  (+ test); `test/fixtures/` gains the R3 contract pack (`capabilityEnvelopes`,
+  `controlMessages`, `openResponses`) + `test/contractCapabilities.test.ts`;
+  `panels/session-cockpit/` gains `LaunchFlow` + `FailedLaunchBanner` and derives the R7
+  evidence tier from control-state truth (see that overview); `data/terminal.ts` extends the
+  open POST with the model/effort selection. Upstream ask: an operator retire actor identity if
+  provenance-recording retire is wanted from the dashboard. Verification metadata pinned to the
+  leaf base until closeout stamps the L3 code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 route impact (PTY stage surface, structured
   interactions, session lifecycle actions; review FINAL PASS after a 1×sev-3 + 5×sev-4 fix
   round, all CLOSED): `data/` gains the interaction/lifecycle layer — `interactionAnswer.ts`

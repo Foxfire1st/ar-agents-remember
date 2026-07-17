@@ -12,6 +12,8 @@
   "coveredFiles": [
     "dashboard/src/grammar/Affordance.tsx",
     "dashboard/src/grammar/Dot.tsx",
+    "dashboard/src/grammar/EvidenceBadge.test.tsx",
+    "dashboard/src/grammar/EvidenceBadge.tsx",
     "dashboard/src/grammar/Markdown.tsx",
     "dashboard/src/grammar/ModeBar.tsx",
     "dashboard/src/grammar/Panel.tsx",
@@ -21,14 +23,15 @@
     "dashboard/src/grammar/TokenGauge.tsx"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 9,
-    "fileSidecars": 9,
+    "sourceFilesInScope": 11,
+    "fileSidecars": 11,
     "childRoutes": 0
   },
   "routingTerms": [
     "affordance",
     "dashboard",
     "dot",
+    "evidencebadge",
     "grammar",
     "markdown",
     "modebar",
@@ -46,6 +49,8 @@
       "dashboard/src/grammar",
       "dashboard/src/grammar/Affordance.tsx",
       "dashboard/src/grammar/Dot.tsx",
+      "dashboard/src/grammar/EvidenceBadge.test.tsx",
+      "dashboard/src/grammar/EvidenceBadge.tsx",
       "dashboard/src/grammar/Markdown.tsx",
       "dashboard/src/grammar/ModeBar.tsx",
       "dashboard/src/grammar/Panel.tsx",
@@ -59,6 +64,10 @@
       "Affordance",
       "Dot.tsx",
       "Dot",
+      "EvidenceBadge.test.tsx",
+      "EvidenceBadge.test",
+      "EvidenceBadge.tsx",
+      "EvidenceBadge",
       "Markdown.tsx",
       "Markdown",
       "ModeBar.tsx",
@@ -75,7 +84,7 @@
       "TokenGauge",
       "dashboard/src/grammar/",
       "route-local-overview",
-      "e358c4ac520d94ae2e597ae3cbe186e07a4d1063",
+      "96e1d6db63454438b57a7485382c27784a60776f",
       "/overview.md",
       "grammar/",
       "css",
@@ -98,11 +107,7 @@
       "management",
       "row",
       "sm",
-      "rail > .panel > h2",
-      "pulse",
-      "?effects=off",
-      "cx",
-      "panels/LifecycleList"
+      "pending /"
     ]
   },
   "fallback": {

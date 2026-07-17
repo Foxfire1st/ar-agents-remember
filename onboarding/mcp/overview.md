@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-16T06:26+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4` |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T06:35+02:00 |
+| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f` |
+| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -764,6 +764,14 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T06:35+02:00 — No route impact: 260715-FEUI-L3 shipped-dashboard bundle resync —
+  the `package_data/dashboard/**` asset churn plus the refreshed
+  `package_data/dashboard.fingerprint` are the generated artifact copy of the rebuilt
+  `dashboard/dist` per `scripts/sync-dashboard.py` (the source-aware sync invariant this overview
+  already documents); this leaf made NO mcp source, server, or architecture change. Reviewed and
+  unaffected; hashed generated assets stay outside file-level onboarding, and the frontend change
+  itself is documented at the `dashboard/src/` route. Verification metadata remains pinned until
+  closeout stamps the L3 code commit.
 - 2026-07-17T04:20+02:00 — No route impact: 260715-FEUI-L6 shipped-dashboard bundle resync —
   the `package_data/dashboard/**` asset churn plus the refreshed
   `package_data/dashboard.fingerprint` are the generated artifact copy of the rebuilt
