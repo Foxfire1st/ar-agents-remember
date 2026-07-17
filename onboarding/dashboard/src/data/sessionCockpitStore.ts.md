@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -24,6 +24,10 @@ SEPARATE from `sessionStore` (the catalog mirror) and `dashboardStore` (the proj
 HONESTY INVARIANTS live in this shape: server truth is mirrored, never invented — `requested` and
 `effective` are separate fields everywhere, **a queued set NEVER moves the effective marker**, and
 evidence tiers start at `pending` until server evidence or readback proves better.
+
+FEUI-L5 extends each session with bounded submission history, the authoritative queued projection,
+pending withdrawal, one explicit recovery slot, and draft/answer revision counters. These fields are
+projections of server lifecycle truth plus local CAS state; they are not a second queue authority.
 
 ## Code Commentary
 
@@ -91,6 +95,14 @@ first touch.
   object per 2.5 s beat (re-renders the banner subscriber); an identity-preserving write is a
   candidate follow-up, out of the leaf's minimal-fix mandate.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -106,7 +118,26 @@ first touch.
 | The answer round-trip driver (writes in-flight/error/answered; clears on interaction change). | L89-L180; L271 | [../panels/session-cockpit/InteractionBar.tsx](../panels/session-cockpit/InteractionBar.tsx) |
 | The answer path whose outcomes the round-trip state records. | L98-L130 | [interactionAnswer.ts](interactionAnswer.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Per-session state now includes `submitHistory`, the authoritative queue projection, pending
+withdrawal, and one recovery slot, with pure compactors protecting live rows and bounding settled
+tails. Draft and interaction-answer revisions support compare-and-swap clearing/restoration. Queue
+rows are server lifecycle projections only; locally sending or ambiguous requests never masquerade
+as withdrawable queued work.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented bounded submit history/queue state, pending
+  withdrawal, exact recovery, and draft/answer revision-CAS actions.
 
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 added the typed exact-session snapshot/error/loading
   slice, timestamped per-kind echo evidence, route errors, serialized pair state, selective

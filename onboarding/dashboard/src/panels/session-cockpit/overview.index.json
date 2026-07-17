@@ -26,6 +26,7 @@
     "dashboard/src/panels/session-cockpit/ModelEffortControl.tsx",
     "dashboard/src/panels/session-cockpit/PtySurface.test.tsx",
     "dashboard/src/panels/session-cockpit/PtySurface.tsx",
+    "dashboard/src/panels/session-cockpit/QueuePreview.tsx",
     "dashboard/src/panels/session-cockpit/SeatInspector.test.tsx",
     "dashboard/src/panels/session-cockpit/SeatInspector.tsx",
     "dashboard/src/panels/session-cockpit/SessionRail.test.tsx",
@@ -43,8 +44,8 @@
     "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 31,
-    "fileSidecars": 31,
+    "sourceFilesInScope": 32,
+    "fileSidecars": 32,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -61,6 +62,7 @@
     "modeleffortcontrol",
     "panels",
     "ptysurface",
+    "queuepreview",
     "seatinspector",
     "session",
     "sessionrail",
@@ -95,13 +97,13 @@
       "dashboard/src/panels/session-cockpit/ModelEffortControl.tsx",
       "dashboard/src/panels/session-cockpit/PtySurface.test.tsx",
       "dashboard/src/panels/session-cockpit/PtySurface.tsx",
+      "dashboard/src/panels/session-cockpit/QueuePreview.tsx",
       "dashboard/src/panels/session-cockpit/SeatInspector.test.tsx",
       "dashboard/src/panels/session-cockpit/SeatInspector.tsx",
       "dashboard/src/panels/session-cockpit/SessionRail.test.tsx",
       "dashboard/src/panels/session-cockpit/SessionRail.tsx",
       "dashboard/src/panels/session-cockpit/SessionStage.tsx",
-      "dashboard/src/panels/session-cockpit/SessionsView.test.tsx",
-      "dashboard/src/panels/session-cockpit/SessionsView.tsx"
+      "dashboard/src/panels/session-cockpit/SessionsView.test.tsx"
     ],
     "anchorHints": [
       "AcceptanceChip.tsx",
@@ -136,6 +138,8 @@
       "PtySurface.test",
       "PtySurface.tsx",
       "PtySurface",
+      "QueuePreview.tsx",
+      "QueuePreview",
       "SeatInspector.test.tsx",
       "SeatInspector.test",
       "SeatInspector.tsx",
@@ -149,9 +153,7 @@
       "SessionsView.test.tsx",
       "SessionsView.test",
       "SessionsView.tsx",
-      "SessionsView",
-      "SetOutcomeToasts.test.tsx",
-      "SetOutcomeToasts.test"
+      "SessionsView"
     ]
   },
   "fallback": {

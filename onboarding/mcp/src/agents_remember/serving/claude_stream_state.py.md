@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/claude_stream_state.py` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-16T01:19+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,18 @@ No external repository boundary is implemented by this state reducer.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+Claude now accepts at most one authority operation, runs sole-operation preflight, records the full
+ref before guarded write, and correlates exact terminal result/replay evidence back to it. Prompt,
+interaction response, model, and effort writes share the transport lock. Prepared/correlation state
+is not a FIFO and cannot admit a hidden second prompt; late/cancelled frames complete only their exact
+operation.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: replaced multi-queued implications with sole-operation
+  preflight, guarded writes, full-ref correlation, and exact terminal completion.
 
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented exact session/UUID/body command
   correlation, separate terminal evidence, abandoned-command tombstones, duplicate-replay

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:19+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892`|
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,16 @@ The protocol identity is `codex-app-server`; the negotiated opaque CLI token is 
 structured initialization and thread evidence by the session layer. Exact package versions are
 fixture/smoke evidence, not production protocol pins.
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+JSON-RPC request writes share a transport lock and accept a final authority guard immediately before
+the first byte. A rejected guard removes the pending request without writing. No await occurs between
+the final claim and write, making withdrawal-vs-dispatch linearization observable and exact.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented the guarded first-write seam, shared lock, and
+  pending-request cleanup when authority rejects dispatch.
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented cancellation reclamation,
   syntactically valid late-response discard, absence of abandoned-id tombstones, and continued
   strict failure for malformed correlation evidence.

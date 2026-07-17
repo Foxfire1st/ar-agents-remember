@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_serving_harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash |  `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
-| lastVerifiedCommitDate |  2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash |  `f8196d98982f834d68152d307ff8025ea69440d5`|
+| lastVerifiedCommitDate |  2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,17 @@ No sibling repository, Toad host, or ACP transport is involved in this own-adapt
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+API tests now cover epoch-bound submit, authority/status/withdraw raw-free privacy, 64-id batches,
+epoch mismatch/id conflict, invalid batches, certified pre-dispatch retry, post-write unknown, and
+the complete reconciliation/status lifecycle matrix. They prove errors are mapped before private
+state leaks.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added public lifecycle, privacy, epoch/conflict, batch-bound,
+  retry-certificate, ambiguity, and status-matrix coverage.
 
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: created the one-to-one sidecar for the frozen
   pre-session envelope, live normalized advertise/set, honest acceptance, whole multiline submit,

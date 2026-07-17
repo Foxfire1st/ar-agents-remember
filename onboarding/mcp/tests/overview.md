@@ -5,13 +5,20 @@
 | repository | agents-remember |
 | sourceRoute | mcp/tests |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-16T07:27+02:00 |
-| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25`|
-| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 
 ## Purpose
 
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
+
+260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
+focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
+prompt/setter timeline, atomic queued-withdraw versus dispatch, exact full-ref completion,
+completion-before-receipt dominance, no native queue/steer fallback, bounded privacy-aware retention,
+and browser-visible status semantics. The backend blockers found during review rounds 1–5 are closed;
+round 6 is canonical PASS.
 
 The L1 regression set adds a fake-adapter conformance suite for normalized harness control,
 correlated acceptance/reconciliation, private IPC, bounded queue/ledger behavior, shutdown failure
@@ -59,6 +66,15 @@ without the injected snapshot, cache retention bounded to live contracts, chmod-
 utime-pinned-rewrite invalidation via ctime, and parse failures retried every build.
 
 ## Hot Path Summary
+
+260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness,
+dispatch/withdraw races, early terminal completion, full-ref id reuse, ordering, idempotency/source-
+payload conflicts, certified pre-dispatch retry, impossible safe retry after possible bytes, epoch
+mismatch, privacy, and retention. `test_harness_control.py` extends the same timeline across IPC,
+outer response loss, durable sources, reconcile, and raw-free projection. API tests pin 64-id
+status/withdraw and typed 409/503 mapping. Claude/Codex/Pi suites each prove their guarded write and
+exact completion semantics; Codex/Pi live smokes remain opt-in installation evidence, not generic
+authority.
 
 260714-ACPUI-L5 adds the final live-conformance and Claude discovery-isolation regressions. Claude
 fake-transport cases cover separate variadic/repeated and equals-attached MCP selectors, the `--`
@@ -138,6 +154,28 @@ prefix/HOME/cache and verifies `get_state` readiness without changing global too
 
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
+## Invariants And Boundaries
+
+- Authority races use explicit synchronization at the preflight/claim/write seams; sleep timing is
+  not accepted as proof of withdrawal linearization.
+- Every completion test carries epoch + sequence + id + kind. Bare-id/FIFO completion must fail to
+  release a successor.
+- Safe retry tests distinguish the exact certified pre-dispatch error from first-byte ambiguity and
+  assert native submit call counts to catch duplication.
+- Bounds may trim terminal history but never live, active, or unknown work; public fixtures remain
+  raw-free and terminal records do not retain full prompt text.
+- Live smokes are credential-safe, explicit opt-in evidence for installed harnesses. Deterministic
+  protocol truth remains in fake/stdio tests.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
+| Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Public API epoch/conflict/certificate/privacy/status matrix. | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Native adapter exact-operation coverage. | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py); [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py); [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
+
 ### 260713-PHA-L5 Route Contract Review
 
 The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
@@ -146,6 +184,10 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: added the authoritative submit/withdraw
+  adversarial matrix, exact-ref and early-completion proofs, safe-retry/first-byte split, raw-free
+  status/API bounds, native no-queue guarded-write semantics, and retention/privacy invariants after
+  canonical review round 6 PASS.
 - 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: added route coverage for the complete Claude
   discovery-selector grammar and normal-launch preservation, plus the explicit-opt-in two-turn
   Codex live advertise/launch/queued-set/retention proof with sanitized evidence recording.

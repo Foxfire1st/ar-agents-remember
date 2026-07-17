@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:19+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,17 @@ No external repository boundary is implemented by this protocol contract.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+Adapter methods now accept full operation refs and a final guarded-write claim. Preflight is async
+and advisory; the authority lock-linearizes the subsequent claim before any native byte. The base
+unsupported implementation and reducer callback preserve exact refs so adapters cannot release work
+by FIFO or request id alone.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented op-aware setter/prompt ports, async preflight, final
+  guarded claim, and exact completion refs.
 
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented setters on the live protocol seam,
   explicit unsupported-adapter results, and queue-routed mutation ownership.

@@ -90,6 +90,14 @@
     "dashboard/src/data/store.test.ts",
     "dashboard/src/data/store.ts",
     "dashboard/src/data/stream.ts",
+    "dashboard/src/data/submissionLifecycleClient.test.ts",
+    "dashboard/src/data/submissionLifecycleClient.ts",
+    "dashboard/src/data/submitClient.test.ts",
+    "dashboard/src/data/submitClient.ts",
+    "dashboard/src/data/submitMachine.test.ts",
+    "dashboard/src/data/submitMachine.ts",
+    "dashboard/src/data/submitRetention.test.ts",
+    "dashboard/src/data/submitRetention.ts",
     "dashboard/src/data/taskDocuments.ts",
     "dashboard/src/data/taskHierarchy.ts",
     "dashboard/src/data/taskIdentity.test.ts",
@@ -116,6 +124,7 @@
     "dashboard/src/test/fixtures/catalogRows.ts",
     "dashboard/src/test/fixtures/controlMessages.ts",
     "dashboard/src/test/fixtures/openResponses.ts",
+    "dashboard/src/test/fixtures/submitScenarios.ts",
     "dashboard/src/test/setup.ts",
     "dashboard/src/test/webtuiSpike.test.ts",
     "dashboard/src/topology/constel.ts",
@@ -127,8 +136,8 @@
     "dashboard/src/types/terminalOpen.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 231,
-    "fileSidecars": 99,
+    "sourceFilesInScope": 241,
+    "fileSidecars": 108,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -194,6 +203,11 @@
     "store",
     "stream",
     "styles",
+    "submissionlifecycleclient",
+    "submitclient",
+    "submitmachine",
+    "submitretention",
+    "submitscenarios",
     "taskdocuments",
     "taskhierarchy",
     "taskidentity",
@@ -206,8 +220,7 @@
     "tsx",
     "types",
     "usetaskdocumentbody",
-    "webtui",
-    "webtuispike"
+    "webtui"
   ],
   "hotPath": {
     "summary": "",

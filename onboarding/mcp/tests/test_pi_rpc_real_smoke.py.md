@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_pi_rpc_real_smoke.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T12:17+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b` |
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,14 @@ temporary prefix/HOME/cache locations, launches the real child through RPC, and 
 - Installation is isolated and never changes global Pi/tools state.
 - This proves protocol readiness only; production registration/cutover remains L5 scope.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 | Finding | Source Path |
 | --- | --- |
@@ -41,7 +49,16 @@ temporary prefix/HOME/cache locations, launches the real child through RPC, and 
 The opt-in Pi `0.80.6` real-smoke baseline is non-production evidence only. Production compatibility
 comes from the structured RPC exchange and does not require this package version.
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The installed Pi 0.80.7 smoke proves the stale-guard path emits zero candidate bytes and exposes no
+native prompt queue. It records readiness/resource evidence without treating installed-version facts
+as generic protocol authority.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: updated installed evidence to Pi 0.80.7 and added zero-byte/
+  no-native-queue guarded-write smoke coverage.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: marked the exact Pi smoke version as fixture-only evidence.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for the isolated pinned
   real-Pi readiness smoke and global-tool isolation boundary.

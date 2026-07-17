@@ -34,7 +34,7 @@
     "zones"
   ],
   "hotPath": {
-    "summary": "The keyboard zone contract: `zoneForTarget` resolves chrome/composer/pty from `data-kbzone` markers, `routeKey` handles a PTY key only when `matchReservedChord` matches the bound reserved set (everything else \u2014 including Esc \u2014 passes to the harness) and suppresses printable bindings in editable targets; `PTY_RESERVED` carries the five-source collision-verification records (the Ctrl+Alt+PageUp/PageDown replacement pair), `CHROME_CHORDS`/`COMPOSER_CHORDS` are the zone-scoped tables, and `nextRegion` drives the F6 cycle with collapsed panels dropping out.",
+    "summary": "The keyboard zone contract: `zoneForTarget` resolves chrome/composer/pty from `data-kbzone` markers, `routeKey` handles a PTY key only when `matchReservedChord` matches the bound reserved set (everything else \u2014 including Esc \u2014 passes to the harness) and suppresses printable bindings in editable targets; `PTY_RESERVED` carries the five-source collision-verification records (the Ctrl+Alt+PageUp/PageDown replacement pair), `CHROME_CHORDS`/`COMPOSER_CHORDS` are the zone-scoped tables (including the composer/chrome Alt+Up split), and `nextRegion` drives the F6 cycle with collapsed panels droppin...",
     "candidateHints": [
       "dashboard/src/data/keymap",
       "dashboard/src/data/keymap/chords.ts",
@@ -70,7 +70,7 @@
       "PageDown",
       "dashboard/src/data/keymap/",
       "route-local-overview",
-      "ee955085a2010f62e9ad4d2bdc6aa77975daa5f3",
+      "f8196d98982f834d68152d307ff8025ea69440d5",
       "/../overview.md",
       "data/",
       "dashboard/src",
@@ -87,12 +87,12 @@
       "\\x1b\\x1b",
       "5;7~",
       "6;7~",
+      "composer.popBack",
       "KeyEventLike",
       "ZoneElementLike",
       "data-region",
       "ZoneChord.printable",
-      "5.2",
-      "5.3"
+      "5.2"
     ]
   },
   "fallback": {

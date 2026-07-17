@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T07:25+02:00 |
-| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25` |
-| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,7 +118,16 @@ review found the selector-collision class that the first implementation missed.
 | Resource proof distinguishes cheap strict-empty discovery from materially heavier normal sessions and records the corrected live two-marker closure. | L65-L109 | [260716-ACPUI-L5-worker-closeout-report.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
 | Independent review confirms the copied discovery path, normal-start preservation, absent marker, complete live catalog, and final repository gates. | L70-L88 | [260716-ACPUI-L5-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The Claude hosted adapter passes full operation refs through prompt, response, model, and effort
+methods and delegates sole-operation preflight to stream state. An unknown setter remains the common
+authority barrier until exact resolution; it is not released merely because a caller timed out.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented op-aware Claude control and the exact unknown-
+  setter barrier.
 
 - 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 curator: documented adapter wiring through a copied
   discovery launch, native MCP selector normalization, forced transient teardown, token/resource

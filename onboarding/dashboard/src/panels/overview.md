@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T08:33+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -33,6 +33,11 @@ panel renders through the shared
 `grammar/Panel` chrome (self-scrolling box + sticky header) and styles itself with co-located
 Panda `css()` / `cva()`; several add React Aria behavior (the `LifecycleList`/`EngineRoom` `ListBox`es
 and the `Chats` `SessionList` switcher).
+
+FEUI-L5 gives every controlled-chat panel one shared reliable composer. Chats and RailChat mount the
+same CodeMirror surface; HighlightComposer uses the same transport with explicit provenance; the
+Sessions child route adds authoritative queue/pop-back/recovery. Gate answers remain a distinct
+structured channel, and legacy raw PTY input is never used as a controlled-submit fallback.
 
 ## Route Model
 
@@ -283,9 +288,11 @@ and the `Chats` `SessionList` switcher).
   beside ＋ Terminal (6e-2b), each spawning that agent at the workspace root; the detection-driven
   render is covered by `Chats.test.tsx`. When the cockpit has a selected lifecycle, newly launched
   sessions inherit that `lifecycleId`, and an active untagged session can be attached; `SessionList`
-  shows the tag. A **`SessionComposer`** (slice 6e-3) docks below the terminal
-  and injects a block of text into the active session's stdin as a bracketed paste (the on-ramp to 6f);
-  covered by `SessionComposer.test.tsx`. The session registry lives in the `data/sessions` store.
+  shows the tag. FEUI-L5's shared **`SessionComposer`** docks below controlled sessions as a
+  CodeMirror Markdown editor and submits exact epoch-bound whole messages through the reliable
+  client. It renders normalized lifecycle/endgame state plus authoritative queue/pop-back/recovery;
+  no controlled prompt uses PTY paste. Covered by `SessionComposer.test.tsx`. The session registry
+  lives in the `data/sessions` store.
 	  Task 22 hydrates this registry from the backend terminal catalog after a browser reload/dashboard
 	  restart, persists the last active session id, renders exited/terminated rows as status panels instead
 	  of trying to reconnect, and now mounts restored rows on first selection: the restored active row
@@ -318,13 +325,12 @@ and the `Chats` `SessionList` switcher).
   surfaced sessions stay mounted-but-hidden across leaf switches. **L6** adds bind-time leaf context
   handoff: when a harness chat is started while a leaf is displayed, or a free chat is successfully attached
   to a picked leaf, `RailChat` builds a package from `taskDocuments` + `engineProcesses` (task metadata,
-  requirements, top-level steps, lifecycle, and worktree paths) and pastes it as a draft through the
-  shared session registry so the operator can add an instruction before submitting; free/off-leaf creation,
-  terminal creation, and rejected attaches do not inject. L9 keeps the picker visible for attached chats
-  too, so successful moves preserve the same xterm/WebSocket session and draft the destination leaf's
-  context while `leaf-taken` leaves local state untouched. The draft paste is delivered through
-  `data/terminal.ts`'s `pasteAndConfirm` — echo-confirmed attempts retried over a 30s boot deadline,
-  because a booting Claude Code discards stdin — and only a confirmed echo reports "delivered". The
+  requirements, top-level steps, lifecycle, and worktree paths) and FEUI-L5 submits it through
+  `submitSessionText` with `leaf-context` provenance after exact bridge readiness; free/off-leaf
+  creation, terminal creation, and rejected attaches do not inject. L9 keeps the picker visible for
+  attached chats too, so successful moves preserve the same xterm/WebSocket session and deliver the
+  destination leaf context while `leaf-taken` leaves local state untouched. Source provenance keeps
+  this automatic context from clearing or restoring the operator's composer draft. The
   shared `Terminal` wrapper enables xterm viewport scrollback for normal buffers and captures wheel
   input with a precedence: an app with active mouse tracking keeps the wheel (xterm reports it as mouse
   events — with the backend's per-session tmux `mouse on`, tmux scrolls pane history for normal-buffer
@@ -347,20 +353,12 @@ and the `Chats` `SessionList` switcher).
   `DetailPanel`'s no-selection state (battle cruiser) and `Chats`'s no-session state (adjutant); the host
   slot must be a flex column so its `flex:1` canvas fills. Covered by `EmptyStateBackdrop.test.tsx`.
 - `HighlightComposer.tsx` — the slice-6f **highlight → context-package** composer. Every selection
-  raises the same **"Add to chat" pill**; nothing pastes on selection alone (the L8-r1 correction of
-  L8's invisible auto-paste). The pill CLICK routes one of two ways. **Direct leaf-chat paste:** when
-  the selection carries the viewed leaf's `data-task-leaf-key`, the right-rail leaf chat is active, and
-  that leaf has a bound running chat, the click pastes straight into that chat's draft via
-  `pasteDraftToSession` (echo-confirmed, no Enter) with no target selector or message box; an
-  unconfirmed paste opens the generic composer for the same selection. **Generic composer:** selections
-  without a confident leaf-chat target open the React Aria `Popover` composer (mounted cockpit-wide in
-  `CockpitShell`) to send the selection + a message into a chat session's stdin — single chat / a
-  selector / create-on-Enter when none is open, plus a ＋ new-chat button; **deliver + submit** over the
-  live `{type:stdin}` channel via `data/sessions`. When a lifecycle is selected, open-chat targets are
-  filtered to sessions tagged with that lifecycle and create targets inherit the lifecycle id. No
-  silent action (a selection only raises the pill; pastes and sends happen on explicit clicks). Covered
-  by `HighlightComposer.test.tsx`; the pure selection rules (including leaf-key tagging) by
-  `data/selection.test.ts`.
+  raises the same explicit **"Add to chat" pill**; FEUI-L5 sends only on click and only to a harness
+  chat. Existing targets use reliable whole-message submission with `highlight` provenance; new
+  targets wait for the exact bridge to become ready and keep one request id through retry/endgame.
+  There is no terminal/image/paste fallback, and highlight delivery cannot clear or restore the
+  operator's draft. Lifecycle filtering and create inheritance remain unchanged. Covered by
+  `HighlightComposer.test.tsx`; selection/leaf-key rules remain in `data/selection.test.ts`.
 - `FlowTab.tsx` + `flowModels.ts` — the **lifecycle-design canvas** (task 26, generalized by orchestration
   leaf 260703-L0): the surface where a lifecycle/interaction is **drawn and reviewed with the developer
   before it is built**. `FlowTab.tsx` is now a **pure segment renderer + radiogroup model nav** (the
@@ -421,6 +419,9 @@ either body success or failure. This adds one data hook within the existing rout
   cockpit's named launch, structured-interaction, lifecycle, and model/effort control routes.
   Selection stays ephemeral UI state lifted to the cockpit shell; set evidence persists in the
   dedicated cockpit store until readback or explicit acknowledgment.
+- **Controlled messages are authoritative, not pasted** — panel call sites preserve the immutable
+  epoch/request/text/source tuple, render normalized lifecycle evidence, and delegate pop-back to
+  server withdrawal. Only raw sessions accept ordinary PTY typing as their message path.
 - **Panda + React Aria** — styling is co-located Panda `css`/`cva` keyed on tokens + React Aria
   `data-*` conditions; behavior (keyboard/focus/ARIA) is React Aria. No global panel CSS.
 - **The Panel primitive owns chrome** — bg/border + scroll + the sticky header band; panels pass a
@@ -444,6 +445,7 @@ an idle dashboard at zero store writes.
 | The session-list tests pin forest completeness and the two-width hover/overflow contract. | L353-L420 | [SessionList.test.tsx](agents-remember/dashboard/src/panels/SessionList.test.tsx) |
 | The detail-panel tests pin body-first request ordering, complete content, fallback, one step copy, and revision caching. | L799-L1038 | [DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
 | The shared panel chrome remains the route's presentation frame. | L1-L120 | [grammar/Panel.tsx](agents-remember/dashboard/src/grammar/Panel.tsx) |
+| The shared reliable composer, highlight sender, and rail integration own controlled-message UI. | — | [SessionComposer.tsx](agents-remember/dashboard/src/panels/SessionComposer.tsx); [HighlightComposer.tsx](agents-remember/dashboard/src/panels/HighlightComposer.tsx); [RailChat.tsx](agents-remember/dashboard/src/panels/RailChat.tsx) |
 
 ## 260707-HFX2-L17 Seat Binding Route Impact
 
@@ -460,6 +462,10 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+
+- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced current bracketed/draft-paste
+  descriptions for SessionComposer, RailChat leaf context, and HighlightComposer with the shared
+  epoch-bound reliable-submit path, provenance, create-ready handling, and the raw-PTY boundary.
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 route impact: the `session-cockpit/` child route gains
   `ModelEffortControl`, `AcceptanceChip`, `CockpitLiveRegions`, and `SetOutcomeToasts` with their
   focused suites; existing HeaderStrip/SeatInspector/SessionRail/SessionsView surfaces gain the

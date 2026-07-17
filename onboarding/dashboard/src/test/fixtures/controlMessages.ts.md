@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/fixtures/controlMessages.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -43,6 +43,14 @@ founded here because L3 is the first API-consuming leaf.
 - The `requestId` reuse across all reconciliation fixtures is deliberate contract teaching — a
   new fixture with a fresh id would erode the no-resend lesson.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -52,7 +60,24 @@ founded here because L3 is the first API-consuming leaf.
 | The Python serializers mirrored (`public_receipt_json`/`public_reconciliation_json`). | L274-L296 | [harness_control_models.py](../../../../mcp/src/agents_remember/serving/harness_control_models.py) |
 | The vocabulary-equality suite (five/four by sorted keys, shared requestId). | L141-L160 | [../contractCapabilities.test.ts](../contractCapabilities.test.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+All five receipt fixtures now carry bridge epoch; reconciliation fixtures carry epoch plus the
+normalized submission lifecycle state. This keeps frontend tests aligned to generation-bound public
+responses and prevents fixtures from silently accepting pre-L5 unversioned shapes.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added epoch and lifecycle-state coverage to normalized control
+  message fixtures.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R3 (reliable-submit fixtures):
   SUBMISSION_RECEIPTS across the five acceptance states and RECONCILIATIONS across the four

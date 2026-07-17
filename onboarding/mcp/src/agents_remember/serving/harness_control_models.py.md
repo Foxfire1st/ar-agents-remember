@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,17 @@ No external repository boundary is implemented by these local protocol models.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The normalized model now carries bridge epoch on prompts, receipts, and reconciliation; defines full
+operation references, authority/status/batch/withdraw/event records; and separates private internal
+serialization from raw-free public lifecycle projection. The public alphabet is intentionally
+smaller than vendor evidence and sufficient for monotonic cockpit rendering.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added generation-bound submit records, full operation refs,
+  normalized status/withdraw DTOs, and explicit public/private serialization boundaries.
 
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the explicit public receipt and
   reconciliation serializers that preserve normalized evidence while omitting adapter-private raw.

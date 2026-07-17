@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-17T10:21+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -197,7 +197,21 @@ vendor driver is registered or production cutover is implied.
  blind resend. This is a leaf-local protocol path: production registration and cutover remain L5
  scope.
 
+260715-FEUI-L5 is the current production authority over that historical seam. One
+`HarnessSubmissionAuthority` per bridge generation orders prompt/model/effort work, linearizes
+withdrawal against guarded native dispatch, completes only exact full operation refs, and exposes
+bounded raw-free lifecycle status. `HarnessControlQueue` is a facade, not a second actor. The shared
+typed error family now distinguishes certified pre-dispatch busy, immutable-id conflict, and epoch
+mismatch so only the exact certificate is retry-safe.
+
 ## Hot Path Summary
+
+260715-FEUI-L5 routes exact-session submit/reconcile/status/withdraw through the daemon and private
+IPC into one epoch-bound authority. Async adapter preflight precedes a lock-linearized final write
+claim; Codex, Claude, and Pi dispatch now without native queues. Direct exact-ref completion reaches
+authority before coalesced publication, early terminal truth can dominate unknown, and bounded
+retention never evicts live/active/unknown work. Public responses remain cockpit-only/raw-free;
+post-write loss remains ambiguous and reconciles under the same request id.
 
 260714-ACPUI-L4 freezes the package's daemon-side own-adapter contract. A bounded
 `HarnessCapabilityCatalog` discovers the installed/authenticated native catalog without a model
@@ -657,6 +671,9 @@ into the role files.
 
 - MCP settings are authority; coordinator files can teach the model what to ask
   for but cannot grant provider or path authority.
+- Hosted prompt/model/effort ordering has one bridge-generation authority. Only full operation refs
+  complete work; only a certified pre-dispatch error retries; queue withdrawal is atomic with the
+  native write claim; adapter/native queues and PTY paste cannot become fallback authority.
 - MCP tool calls must not accept `coordinationRoot`, `sourceRoot`, provider
   runtime roots, or arbitrary filesystem paths.
 - Provider install/status must use generated lifecycle settings from
@@ -750,6 +767,7 @@ into the role files.
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 | The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py); [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py); [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py); [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
+| FEUI-L5 submission authority, typed lifecycle errors, public boundary, and focused race matrix. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py); [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py); [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py); [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -764,6 +782,9 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: documented the package-level sole submission
+  authority, epoch/full-ref identity, atomic dispatch/withdraw, certified retry/error family,
+  raw-free bounded lifecycle API, and dispatch-now native adapter boundary.
 - 2026-07-17T10:21+02:00 — No route impact: 260715-FEUI-L4 fix round 4 rebuilt and
   synchronized the accepted dashboard source into `package_data/dashboard/**` and refreshed
   `package_data/dashboard.fingerprint` with `scripts/sync-dashboard.py`. The hashed asset churn is

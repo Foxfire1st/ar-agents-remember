@@ -235,7 +235,7 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 657,
+    "sourceFilesInScope": 661,
     "fileSidecars": 142,
     "childRoutes": 16
   },
@@ -322,7 +322,7 @@
     "findings"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L4 freezes the package's daemon-side own-adapter contract. A bounded `HarnessCapabilityCatalog` discovers the installed/authenticated native catalog without a model turn, fingerprints the executable/argv, single-flights by built-in harness, and quarantines the observed entry after failed explicit auth refresh. FastAPI routes expose that normalized catalog, an optional complete launch pair, exact-session advertise and honest setters, whole-message submit, and same-id reconciliation. Live reopen returns retained process truth or conflicts without rewriting it; request-byte ambigu...",
+    "summary": "260715-FEUI-L5 routes exact-session submit/reconcile/status/withdraw through the daemon and private IPC into one epoch-bound authority. Async adapter preflight precedes a lock-linearized final write claim; Codex, Claude, and Pi dispatch now without native queues. Direct exact-ref completion reaches authority before coalesced publication, early terminal truth can dominate unknown, and bounded retention never evicts live/active/unknown work. Public responses remain cockpit-only/raw-free; post-write loss remains ambiguous and reconciles under the same request id. 260714-ACPUI-L4 freezes the pa...",
     "candidateHints": [
       "mcp",
       "mcp/tests",

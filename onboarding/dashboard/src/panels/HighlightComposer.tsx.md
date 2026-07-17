@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/HighlightComposer.tsx`     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T20:55+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -16,16 +16,19 @@
 
 ## Purpose
 
-The slice-6f **"send a context package by highlighting"** composer. Every selection raises the same
+The slice-6f **"send a context package by highlighting"** composer, migrated by FEUI-L5 to the
+reliable whole-message submission path. Every selection raises the same
 small **Add to chat** pill — a selection alone never sends anything (the L8-r1 correction: the earlier
 auto-paste-on-selection was invisible and fired on unintended highlights). What differs is what the
 pill CLICK does. When the captured selection came from the displayed task leaf and the right rail is
-actively showing that leaf's live chat, the click pastes the context block directly into that chat's
-draft with no target selector, no message box, and no Enter/submission. Otherwise the click opens the
-generic composer stage, and Send delivers to a chosen/open/new chat. The composer lives on a snapshot from
+actively showing that leaf's live chat, the click submits the context through the same reliable
+session-text client rather than PTY paste. Otherwise the click opens the generic composer stage, and
+Send delivers to a chosen/open/new chat, waiting for a newly created bridge to become ready when
+necessary. The composer lives on a snapshot from
 `useSelectionCapture`, so clicking into the message box never dismisses it. Mounted once in
 `CockpitShell`; lifecycle-aware target filtering still limits generic open-chat targets to sessions
-tagged with `selectedLifecycleId` when present.
+tagged with `selectedLifecycleId` when present. Request ids, ambiguous response loss, and endgame
+copy follow the same no-blind-resend contract as the shared composer.
 
 ## Code Commentary
 
@@ -82,6 +85,14 @@ outside-click/Escape or Send in fallback mode (snapshot-driven, not live-selecti
 reuses the live B2 `{type:stdin}` channel via `data/sessions` — no new transport, not ACP. With a
 selected lifecycle, unrelated open chats are not offered; the create target becomes the routeable chat.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -92,7 +103,25 @@ selected lifecycle, unrelated open chats are not offered; the create target beco
 | Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | L491-L499 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
 | The behavior tests cover direct leaf paste and fallback routing. | L132-L163 | [HighlightComposer.test.tsx](HighlightComposer.test.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Highlight delivery now calls the reliable session-text client with `highlight` provenance. Existing
+targets submit through the exact bridge; newly created targets wait for submission readiness. A
+possible-post-write loss stays ambiguous and enters the same reconcile/endgame UI instead of falling
+back to paste or minting a second request.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: replaced highlight PTY paste with reliable, provenance-aware
+  create-ready submission and no-resend endgame handling.
 
 - 2026-07-02T20:55+02:00 — L8-r1 correction (developer feedback): the direct leaf-chat path no longer
   auto-pastes on selection and no longer hides the pill — every selection raises the same "Add to chat"

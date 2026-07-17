@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -63,6 +63,14 @@ pointing at the inspector's verbatim payload — never dead chrome.
 - Unrepresentable payloads must keep pointing at the inspector's raw payload — honesty over
   chrome.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -75,7 +83,25 @@ pointing at the inspector's verbatim payload — never dead chrome.
 | The inspector's verbatim payload the unrepresentable fallback points at. | L113-L136 | [SeatInspector.tsx](SeatInspector.tsx) |
 | The 13-case jsdom suite (kind-awareness, round-trip, focus, stale clear). | L51-L227 | [InteractionBar.test.tsx](InteractionBar.test.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Free-text/confirm interactions now use the shared composer handle and its explicit answer mode,
+rather than a bar-owned draft. The exact interaction, stored answer text, and revision survive a
+failed gate call for retry; a later edit wins through revision-CAS clearing. Choice interactions
+remain direct gate decisions and ordinary submission stays disabled as an answer channel.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented shared-composer answer mode, exact retry state, and
+  revision-safe clearing.
 
 - 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R4 (F7/F8; review findings 2 + 5 fixed
   in-leaf): the single interaction axis above the composer — gate-only answers with the answer

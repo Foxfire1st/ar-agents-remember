@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:19+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,18 @@ runtime boundary contracts.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+Codex is now dispatch-now under the shared authority: it does not queue or steer an active turn.
+Prompt/setter writes are guarded and carry the exact operation ref; native turn ids bind to that ref.
+Synchronous or asynchronous terminal events share one once-only completion latch. Live correlations
+and terminal dedupe are bounded, removed on completion, and keyed strongly enough that stale events
+or turn-id reuse cannot release a successor.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: replaced adapter-queue/steer semantics with guarded fresh-turn
+  dispatch, exact turn-operation binding, once-only completion, and bounded correlation maps.
 
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented desired/pending/effective settings,
   next-fresh-turn application, captured prompt selection epochs, failed-turn non-promotion,

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:21+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -122,7 +122,16 @@ No sibling repository or external transport implementation is required for these
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+Pi tests now cover guarded model/effort readback, timeout/unknown barrier resolution, zero candidate
+bytes on stale idle, absence of a native queue/steer flag, activity-token settlement, exact
+interaction completion, certified disconnect before dispatch, and no resend after acknowledgement.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: corrected timeout-release assumptions and added fresh-state,
+  token, no-native-queue, certificate, and exact-settlement proof.
 
 - 2026-07-16T01:21+02:00 — 260714-ACPUI-L3 curator: documented exact provider/model mutation,
   vendor-error mapping, model-gated exact/clamped thinking readback, one finite mutation/readback

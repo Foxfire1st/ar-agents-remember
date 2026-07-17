@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-16T07:27+02:00 |
-| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25`|
-| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -25,6 +25,13 @@ and explicit recipient `consume` is the sole acknowledgement. Pane text, termina
 paste echoes, and timing windows are diagnostic-only and cannot authorize readiness, delivery,
 completion, or supervisor action. The older pane/log/paste descriptions retained below are historical
 route history, not current authority.
+
+**260715-FEUI-L5 adds `HarnessSubmissionAuthority` as the sole epoch-bound prompt/setter
+timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
+dispatch claim, exact full-operation-ref completion, early-terminal dominance, response bypass,
+raw-free cockpit status, and bounded privacy-aware retention. `HarnessControlQueue` is now only a
+compatibility facade. Codex, Claude, and Pi are dispatch-now adapters with guarded first-byte seams;
+none may create a native/adapter queue or release work by FIFO/id alone.
 
 `serving/` is the **local dashboard serving layer** (slice 04 of the 3.0
 browser-dashboard series): a FastAPI app over the observer projection read side. It
@@ -119,6 +126,19 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+260715-FEUI-L5 reliable submission enters one bridge-generation authority. Async native preflight is
+followed by a lifecycle-lock claim and final adapter write guard; a queued withdrawal and dispatch
+compete at that exact point. Each prompt/model/effort operation is identified by epoch + monotonic
+sequence + id + kind. Direct adapter completion reaches authority before coalesced publication and
+can dominate a later unknown receipt when the ref is exact. Cockpit status/withdraw are raw-free,
+epoch-gated, and batched to 64 ids. Timeline/duplicate retention is bounded (64/256 defaults) without
+evicting live, active, or unknown rows; terminal prompt text is discarded while digest/correlation
+remain. Only a certified pre-dispatch busy failure is retry-safe. Codex uses fresh-turn guarded
+writes and bounded turn correlation, Claude accepts one guarded operation under the shared transport
+lock, and Pi requires fresh state plus generation/activity/event tokens and settled+fresh-idle
+completion. The ACPUI-L3/L4 queue descriptions below are historical provenance superseded by this
+authority model.
 
 260714-ACPUI-L5 closes the live native-capability gate and hardens Claude catalog discovery. Only
 the ephemeral discovery launch removes every Claude 2.1.210-supported pre-`--` MCP selector
@@ -296,6 +316,12 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 ## Route Model
 
+- `harness_submission_authority.py` — the FEUI-L5 sole prompt/setter timeline: epoch/idempotency
+  admission, lock-linearized dispatch/withdraw, full operation refs, response bypass, early exact
+  completion, raw-free status/withdraw projection, and bounded live-safe retention.
+- `harness_control_queue.py` — compatibility facade over `HarnessSubmissionAuthority`; it owns no
+  independent command queue or receipt ledger.
+
 - `harness_capabilities.py` and `harness_control_adapter.py` — the normalized capability contract:
   `CapabilitySnapshot` contains dynamic `ModelCapability` rows with model-local `EffortOption`
   menus; ACP Sense 1 projects category-keyed select options; `LaunchKnobs` includes adapter-owned
@@ -410,7 +436,8 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `POST /api/terminal/{session}/terminate` (task 22 — kill tmux and mark the catalog row terminated),
   `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), the L4 native control
   routes (`GET /api/harnesses/{harness}/capabilities`, live `GET .../capabilities`, `POST
-  .../set-model`, `POST .../set-effort`, `POST .../submit`, and `POST .../reconcile`) registered
+  .../set-model`, `POST .../set-effort`, `POST .../submit`, `POST .../reconcile`, FEUI-L5
+  authority/status, and authoritative withdraw) registered
   before the static mount, `POST /api/terminal/{session}/image`
   (6f — save a validated screenshot under `<cwd>/.dashboard-pastes/<uuid>.<ext>` using either a live host
   session cwd or a catalog-restored cwd so the composer can inject its path; the terminal channel is
@@ -777,9 +804,14 @@ current hosted-session authority.
 - **Codex app-server compatibility is structured.** The consumed initialize/model/thread messages
   and fields decide compatibility; package-version text is fixture/smoke evidence only. No
   terminal/pane/log fallback is permitted.
-- **Shared input and draft custody.** Terminal and durable submissions merge as whole ordered
-  messages through one queue. The terminal surface owns an uncommitted human draft and preserves it
-  across automated delivery and ambiguous-send recovery.
+- **One epoch-bound submission authority.** Prompt/model/effort work shares the authority timeline;
+  adapters dispatch now and may not retain a second queue. Browser drafts are local revisioned state,
+  while server status/withdrawal owns delivery and pop-back truth.
+- **Exact operation completion.** Only the full epoch/sequence/id/kind ref can release active work;
+  early exact terminal evidence may dominate unknown, but stale/id-only/FIFO evidence cannot.
+- **Retention and privacy are load-bearing.** Timeline and duplicate ledgers are bounded without
+  evicting live/active/unknown work; terminal prompt text is dropped; public status/withdraw is
+  cockpit-only and raw-free.
 
 - **Transport only.** No interpretation here — the reducer produces full projections; this
   layer serves them, diffs consecutive snapshots, tails the raw log, and reads precomputed
@@ -861,6 +893,8 @@ current hosted-session authority.
 | The stores the supervisor sweep's predicates read directly (R3): expectation rows, operator inbox, orchestration nudges, supervisor signal cooldowns, and the observer event log the sweep appends `orchestration.supervisor.*` events to. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py); [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [controlplane/orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py); [controlplane/supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py); [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
 | The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py); [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py); [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 
 ## Historical — 260712-TRH-L4 Route Impact (superseded hosted authority)
 
@@ -896,6 +930,12 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+
+- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: established the sole
+  `HarnessSubmissionAuthority` current contract; documented epoch/full-ref identity, atomic
+  withdrawal-vs-dispatch, event-before-publication completion, early-terminal dominance, response
+  bypass, safe-retry certificate, raw-free status, bounded retention, and dispatch-now native
+  adapters. Marked the former queue facade and ACPUI queue semantics historical.
 - 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: recorded discovery-only Claude MCP-selector
   replacement across the accepted argv grammar, byte-preserved normal startup, the live three-harness
   acceptance asymmetries, dynamic evidence boundary, and the visible non-leaking startup-failed stop

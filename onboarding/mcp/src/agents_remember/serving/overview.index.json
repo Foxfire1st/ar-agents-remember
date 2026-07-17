@@ -47,6 +47,7 @@
     "mcp/src/agents_remember/serving/harness_control_runner.py",
     "mcp/src/agents_remember/serving/harness_launch.py",
     "mcp/src/agents_remember/serving/harness_logs.py",
+    "mcp/src/agents_remember/serving/harness_submission_authority.py",
     "mcp/src/agents_remember/serving/harness_terminal_surface.py",
     "mcp/src/agents_remember/serving/harnesses.py",
     "mcp/src/agents_remember/serving/hosted_control_projection.py",
@@ -85,8 +86,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 73,
-    "fileSidecars": 73,
+    "sourceFilesInScope": 74,
+    "fileSidecars": 74,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -98,6 +99,7 @@
     "api",
     "app",
     "assignment",
+    "authority",
     "binding",
     "bridge",
     "brief",
@@ -149,6 +151,7 @@
     "harness_control_runner",
     "harness_launch",
     "harness_logs",
+    "harness_submission_authority",
     "harness_terminal_surface",
     "harnesses",
     "heartbeat",
@@ -167,12 +170,10 @@
     "ipc",
     "landing",
     "launch",
-    "leaf",
-    "leaf_ref_validation",
-    "limits"
+    "leaf"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L5 closes the live native-capability gate and hardens Claude catalog discovery. Only the ephemeral discovery launch removes every Claude 2.1.210-supported pre-`--` MCP selector (`--mcp-config` separate/variadic/repeated or equals-attached, plus the exact strict flag), preserves unrelated argv and the complete positional suffix, and inserts one strict empty MCP set. Normal session startup remains byte-for-byte caller-owned and continues to load the installed MCP configuration. This prevents a token-free catalog refresh from launching unrelated configured MCP children while prese...",
+    "summary": "260715-FEUI-L5 reliable submission enters one bridge-generation authority. Async native preflight is followed by a lifecycle-lock claim and final adapter write guard; a queued withdrawal and dispatch compete at that exact point. Each prompt/model/effort operation is identified by epoch + monotonic sequence + id + kind. Direct adapter completion reaches authority before coalesced publication and can dominate a later unknown receipt when the ref is exact. Cockpit status/withdraw are raw-free, epoch-gated, and batched to 64 ids. Timeline/duplicate retention is bounded (64/256 defaults) without...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/__init__.py",

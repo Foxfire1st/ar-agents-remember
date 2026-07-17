@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -50,8 +50,10 @@ snapshots supply model rows and per-model session-settable effort menus; request
 echo-evidenced effective, and readback-confirmed values remain distinct through the five-value
 SetResult table; pair changes serialize model → evidence/readback → effort; and shared chips,
 ledger/rail attention, background toasts, cycle-effort commands, and polite/assertive live regions
-surface the result without color-only meaning. Remaining scaffolding: L5 the real composer (CM6)
-+ queue and L7 the tabbed inspector/status line. All pure derivations live in `data/` (`railModel`,
+surface the result without color-only meaning. **260715-FEUI-L5 fills the real controlled-session
+composer**: shared CodeMirror Markdown editing, epoch-bound whole-message submit/reconcile, one
+evidence fold, `QueuePreview`, authoritative Alt+Up withdrawal/pop-back, and revision-safe recovery;
+only the L7 tabbed inspector/status line remains scaffolded. All pure derivations live in `data/` (`railModel`,
 `stateGrammar`, `catalogPoll`, `seatEvents`, `sessionCockpitStore`, the L6
 `interactionAnswer`/`sessionLifecycle`/`ptyHarvest`, and the L3
 `capabilityCatalog`/`launchEvidence`/`launchFlow`, plus L4 `announcer`/`pairChange`/
@@ -66,8 +68,8 @@ DOM + wiring only.
   percentage calibration) / stage (min 35%) / inspector (24%, collapsible), a status-line footer
   with reopen buttons, the non-portal `CommandPalette`, and the `useKeyboardZones` binding. Owns
   the command registry instance + the `CommandContext` actions (panel toggles, focus moves, the
-  LIVE alt+↑/↓ `switchSession` over `railCycleOrder`, live L4 effort cycle, honest L5 submit
-  stub), the narrow-width
+  zone-sensitive alt+↑/↓ (`switchSession` in chrome; authoritative `composer.popBack` in the editor),
+  live L4 effort cycle, and live FEUI-L5 submit), the narrow-width
   auto-collapse (pure decisions in `data/sessionLayout.ts`), the ~80-col floor chip re-measured
   from every width-changing path (`onLayout` + a stage-observing `ResizeObserver`), and — L2 —
   the shared poll-driver/mirror subscriptions, the ONCE-derived rail model + attention rollup
@@ -75,7 +77,7 @@ DOM + wiring only.
   the one-way layout/palette store mirrors, and the dynamic palette commands (tree toggle,
   attention.jump, bulk-end mirrors with counts+names in the title, question triage). **L6 fills
   the stage body**: `StopResidualNotes` + `PtySurface` (or the explained placeholder for the
-  EMPTY stage only) + `InteractionBar` directly above the still-L5-placeholder composer; the
+  EMPTY stage only) + `InteractionBar` directly above the shared FEUI-L5 composer; the
   floor chip now prefers the pane's REAL column count (`pane N cols (< 80)`) over the pixel
   estimate; the `workingLine` prop fills the stage slot; `turn.stop` joins the palette gated on
   the WorkingLine's OWN grammar predicate (`seatVisualState().key === "working"`) with the
@@ -88,6 +90,10 @@ DOM + wiring only.
   and palette, mounts the promotion/drift + seat-state announcer watchers, drives alt+,/.
   `cycleEffortRequested`, renders the queued composer hint, and mounts persistent background
   `SetOutcomeToasts` plus `CockpitLiveRegions`.
+- `QueuePreview.tsx` (L5) — the read-only raw-free queue projection beside the composer. It shows
+  only explicit server-authoritative `queued` records, never invents a queue position, and points
+  the operator to Alt+Up; dispatching, ambiguous, settled, and availability-loss records are not
+  rendered as withdrawable work.
 - `SessionRail.tsx` (L2) — the rail renderer over `data/railModel`: ruled row anatomy (dot ·
   role(3) · title · attention-slot · status · End; only the status chip elides, truth in the row
   tooltip), flat spine, hairline-indented leaf clusters (active seat on top), per-master
@@ -284,6 +290,11 @@ DOM + wiring only.
   final reviewer PASS retains six
   nonblocking sev-4 observations on rare supersede/coalescing/visual/announcement edges, recorded
   in the governing file cards rather than promoted into false guarantees here.
+- **Reliable-submit honesty invariants** (L5): one immutable request id/text/source/epoch survives
+  retry and reconcile; only the exact pre-dispatch certificate retries; every response/poll uses the
+  same monotonic fold; queue UI contains only authoritative queued rows; Alt+Up asks the server to
+  withdraw and restores only by draft-revision CAS. Dispatching, not-found, and generation loss
+  never become safe-pop-back evidence, and controlled prompt delivery never falls back to PTY paste.
 - **Retire from the banner = the operator `/terminate` route** (reviewer-accepted): a true
   provenance-recording `/retire` needs an `actor_session` identity the dashboard operator does
   not have — an upstream decision, recorded as an ask, not a defect.
@@ -298,7 +309,10 @@ arm→confirm End flow (verbatim failure + retry); the stage renders the HeaderS
 WorkingLine turn theater (working-only, welded UA-7-gated stop), keep-alive real xterm panes
 through PtySurface (DOM renderer by measurement, controlled vs legacy-raw archetypes, per-pane
 screen-reader opt-in, real-cols floor chip), informational stop-residual notes, and the
-InteractionBar above the composer whose ONLY answer path is the gate channel; the inspector a
+InteractionBar above the shared CodeMirror composer whose ONLY answer path is the gate channel;
+the composer submits exact epoch-bound whole messages, shows authoritative queued work, reconciles
+ambiguous delivery without resend, and runs server-linearized Alt+Up pop-back with explicit recovery;
+the inspector a
 catalog-provenance card plus collapsed set ledger (+ archetype, retire residuals, verbatim raw
 payloads); the header's one L4 model/effort control reads the exact live snapshot, serializes pair
 changes, and renders worded acceptance chips; narrow widths
@@ -327,6 +341,8 @@ seen, while persistent polite/assertive regions announce focused set and seat tr
 | The pure rail/attention/focus/join derivations the L2 surfaces render. | [data/railModel.ts](agents-remember/dashboard/src/data/railModel.ts) |
 | The one seat-state grammar + pulse ruling behind every dot. | [data/stateGrammar.ts](agents-remember/dashboard/src/data/stateGrammar.ts) |
 | The cockpit client store (focus, evidence tiers, freshness, poll health, toggle). | [data/sessionCockpitStore.ts](agents-remember/dashboard/src/data/sessionCockpitStore.ts) |
+| Reliable submit transport, evidence fold, authority polling/withdrawal, and retention. | [data/submitClient.ts](agents-remember/dashboard/src/data/submitClient.ts); [data/submitMachine.ts](agents-remember/dashboard/src/data/submitMachine.ts); [data/submissionLifecycleClient.ts](agents-remember/dashboard/src/data/submissionLifecycleClient.ts); [data/submitRetention.ts](agents-remember/dashboard/src/data/submitRetention.ts) |
+| The shared composer and authoritative queue projection. | [panels/SessionComposer.tsx](agents-remember/dashboard/src/panels/SessionComposer.tsx); [QueuePreview.tsx](agents-remember/dashboard/src/panels/session-cockpit/QueuePreview.tsx) |
 | The shared poll driver + seat-event reconciler feeding this view's rows. | [data/catalogPoll.ts](agents-remember/dashboard/src/data/catalogPoll.ts) |
 | The full catalog wire mirror the rows are typed by. | [types/terminalCatalog.ts](agents-remember/dashboard/src/types/terminalCatalog.ts) |
 | The gate-channel answer path (find gate, kind-awareness, NOT-YET vs CANNOT copy). | [data/interactionAnswer.ts](agents-remember/dashboard/src/data/interactionAnswer.ts) |
@@ -344,6 +360,11 @@ seen, while persistent polite/assertive regions announce focused set and seat tr
 | The sole live set I/O driver plus shared chip/copy/announcement layers (L4). | [data/setClient.ts](agents-remember/dashboard/src/data/setClient.ts), [data/setChips.ts](agents-remember/dashboard/src/data/setChips.ts), [data/setControlsCopy.ts](agents-remember/dashboard/src/data/setControlsCopy.ts), [data/announcer.ts](agents-remember/dashboard/src/data/announcer.ts) |
 
 ## Update History
+
+- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced the composer/queue stub with the live
+  shared CodeMirror surface, exact submit/reconcile lifecycle, QueuePreview, zone-sensitive Alt+Up,
+  authoritative withdrawal, response-loss convergence, revision-CAS recovery, and no-PTY-fallback
+  invariants.
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 (live set controls; final reviewer PASS after three
   fix rounds): filled the header control with exact-session model/effort sourcing, the exhaustive
   SetResult/readback table and serialized pair flow; added shared worded chips/copy, per-seat

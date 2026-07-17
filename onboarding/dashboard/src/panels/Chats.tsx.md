@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -53,6 +53,11 @@ refcounted `startCatalogPollDriver()`, `hydrateTerminalSessionsFromCatalog` +
 `read/writeLastActiveSessionId` moved there verbatim, and the initial mount hydrate goes through
 the same shared helper so every catalog read records a poll-health beat. The L8 Chats-cutover
 decision explicitly depends on this hoist having landed.
+
+**260715-FEUI-L5 replaces hosted-chat PTY paste with the shared reliable composer.** Chats now
+supplies exact session identity to `SessionComposer`; whole messages use epoch-bound authority,
+ambiguous response loss is reconciled without blind resend, and a pending vendor interaction can be
+answered only through the gate-backed answer mode.
 
 ## Code Commentary
 
@@ -176,6 +181,14 @@ Sidebar width is a browser-local presentation preference, not catalog or lifecyc
 bounded, keyboard-operable, and independent of session grouping/attachment; resizing must not remount
 terminal layers or animate the layout behind the pointer.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -196,7 +209,25 @@ terminal layers or animate the layout behind the pointer.
 | The HFX2-L21 separator, clamp, persistence state, and sidebar render boundary. | L117-L238; L304-L315; L520-L539 | [Chats.tsx](Chats.tsx) |
 | Focused pointer, keyboard, restored-width, ARIA-value, and localStorage regressions. | L33-L40; L128-L165 | [Chats.test.tsx](Chats.test.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Hosted chat composition now mounts the shared CodeMirror composer and supplies exact session
+identity to reliable submission. The previous bracketed-paste delivery path is no longer authority.
+Pending interactions reuse the gate-only answer mode, preserving the rule that ordinary chat or PTY
+input cannot answer an interaction.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: migrated Chats to the shared reliable composer and explicit
+  interaction-answer boundary.
 
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (review finding F6, one-prop call-site change): the
   `<Terminal>` mount now passes ``ariaLabel={`terminal: ${session.label}`}`` so the terminal's

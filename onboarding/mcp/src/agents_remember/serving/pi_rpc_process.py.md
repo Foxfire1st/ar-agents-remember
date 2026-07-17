@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/pi_rpc_process.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:19+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,17 @@ No external repository boundary is implemented beyond the installed Pi child pro
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+Pi writes now share one process lock and accept a generation/activity/event-token guard immediately
+before the first byte. Stop/restart invalidates tokens and cleans pending requests. The write result
+preserves whether no byte or a possible first byte crossed the boundary for certified retry versus
+unknown classification.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented token-guarded shared writes, cleanup, and first-byte
+  classification.
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented pending-future reclamation on
   cancellation, tombstone-free late-response discard, and preservation of the shared stdout reader
   for subsequent requests.

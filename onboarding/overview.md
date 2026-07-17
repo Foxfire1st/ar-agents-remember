@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-17T08:33+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 
 > **Status:** active baseline
 
@@ -62,6 +62,7 @@ onboarding pass.
 | Hosted chat leaf reassignment | Running dashboard-hosted chats can move their durable `leafKey` after creation without respawning their tmux/xterm session. The dashboard route and the public `attach_terminal_session_to_leaf` MCP tool share the same server-authoritative catalog policy, surface `leaf-taken` without local mutation, and broadcast/rehydrate `"leaf"` catalog changes so open tabs stay synchronized. | `attach_terminal_session_to_leaf`, `serving.terminal_leaf_assignment`, `dashboard/src/data/sessions.ts`, `dashboard/src/panels/Chats.tsx`, `dashboard/src/panels/RailChat.tsx` |
 | Agent-facing session dispatch | One MCP tool spawns a role-configured, leaf-attached, context-primed hosted agent session through the shared serving opener. Settings resolve one complete typed harness/model/effort selection; the own adapter discovers its token-free per-install/account catalog, validates effort under the selected model, and applies native Claude/Codex/Pi initial configuration before the real vendor session starts. The same exact-session bridge serializes `set_model` and `set_effort` with prompt submission and returns a normalized `SetResult` whose acceptance is one of `echo-verified`, `immediate`, `queued`, `unknown`, or `unsupported`: Claude requires correlated structured-command replay plus native terminal evidence, Codex carries ordered desired/pending/effective selection through a fresh turn without reconnecting, and Pi coherently reads back model/thinking after its asymmetric error-or-clamp mutation. Spawn model/effort env stays provenance, explicit free-form launch/session controls remain separate, caller spend overrides refuse before side effects, and neither initial nor mid-session selection is composer-pasted. The durable inter-agent inbox/brief bus remains the assignment path after readiness. Each spawned session is its own harness process, and dashboard and agent-facing launches still share one opener. | `spawn_agent_session`, `serving.harness_launch`, `serving.harness_control_runner`, `serving.harness_control_bridge`, `serving.harness_control_queue`, `serving.terminal_opener`, `operator_inbox_*`, `mcp/tools/terminal.py`, `models/terminal.py` |
 | Daemon harness capability and control API | The serving daemon exposes the own-adapter contract without ACP transport: dynamic token-free pre-session catalogs use an install-aware bounded cache with explicit auth refresh; terminal open accepts an optional complete native model/effort pair; exact live sessions advertise and return honest model/effort `SetResult` evidence; whole-message submit and same-id reconciliation use the native control socket with no paste fallback. Live reopen reports immutable process truth or conflicts, failed refresh quarantines stale data, duplicate request ids are idempotent, public responses omit adapter-private raw payloads, and liveness is established before 404/409 support classification. | `serving.harness_capability_catalog`, `serving.harness_control_api`, `serving.harness_control_client`, `serving.terminal_opener`, `serving.app` |
+| Reliable controlled-session submission (260715-FEUI-L5) | One `HarnessSubmissionAuthority` per bridge generation owns prompt/model/effort ordering, immutable request/source/payload idempotency, atomic queued-withdraw versus dispatch, exact full-operation-ref completion, early-terminal dominance, raw-free status, and bounded privacy-aware retention. The dashboard's shared CodeMirror composer keeps one epoch/id/text through retry/reconcile, treats only the exact pre-dispatch certificate as retry-safe, and implements authoritative Alt+Up pop-back with revision-CAS recovery. Claude, Codex, and Pi dispatch now under guarded write seams; no adapter/native queue or PTY-paste fallback is authority. | `serving.harness_submission_authority`, `serving.harness_control_{api,bridge,client,models,queue}`, `dashboard/src/data/{submitMachine,submitClient,submissionLifecycleClient,submitRetention}.ts`, `dashboard/src/panels/SessionComposer.tsx` |
 | Agent orchestration communications | Durable agent-to-agent inbox messages address orchestrator/manager/worker roles, carry message-kind and artifact metadata, and remain pollable while also attempting hosted-session stdin push through the echo-confirmed paste seam. Consume is a monotonic terminal snapshot: a concurrent in-flight delivery may append stale physical evidence but cannot resurrect pending/redelivery state. Turn reports and master handovers have typed artifact helpers/templates; inactivity or missing report nudges are rate-limited, logged as `orchestration.nudge`, and delivered to manager inboxes. | `operator_inbox_*`, `orchestration_nudge_manager`, `serving.inbox_delivery`, `controlplane/orchestration_artifacts.py`, `controlplane/orchestration_nudges.py`, `l-01-agent-lifecycles` templates |
 | Event River lifecycle task labels | Event River readable history rows translate lifecycle-bound activity into task-facing context. When a retained event still has a lifecycle id but its live lifecycle projection is gone, the formatter uses projected task documents to show the task title before falling back to raw enclosure or lifecycle ids. The panel waits for raw-stream hydration before showing an empty feed and renders all retained rows it receives; backend lifecycle retention owns the cutoff. | `dashboard/src/panels/eventSummary.ts`, `dashboard/src/data/taskIdentity.ts`, `dashboard/src/panels/EventRiver.test.tsx` |
 | Runtime and skill installation | MCP-owned install of coordinator `AGENTS.md` templates, packaged skills, system defaults, provider defaults, optional benchmark fixtures, and harness skill layouts. | `runtime_install`, `skills_install`, `install/`, `package_data/runtime/` |
@@ -131,6 +132,14 @@ chat once for the successful bind. Detail lives in the `observer/`, `serving/`, 
 overviews.
 
 ## Hot Path Summary
+
+260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound
+request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic
+state machine. The serving bridge admits it to one authority timeline; queued withdrawal and native
+dispatch race at the guarded first-byte claim; completion releases only the exact epoch/sequence/id/
+kind operation. Status/withdraw are cockpit-only and raw-free, terminal text retention is bounded,
+and ambiguous response loss reconciles without resend. Pop-back restores only the exact composer text
+under draft revision CAS; not-found/generation loss never masquerade as safe restoration.
 
 260714-ACPUI-L4 exposes the own-adapter capability layer through the daemon request/response
 boundary. Pre-session advertise remains dynamic and token-free behind a fixed three-harness,
@@ -500,6 +509,11 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+
+- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: added the repository-level reliable submission
+  feature, end-to-end hot path, and sole-authority invariant covering epoch/idempotency, guarded
+  dispatch/withdrawal, full refs, raw-free bounded status, no-resend reconciliation, and revision-
+  safe pop-back.
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 curator: added the repository inventory entry for
   exact-session model/effort controls, the five-state evidence/readback contract, serialized pair
   changes, shared worded outcomes, ledger/rail/toast attention, cycle-effort, and live regions.
@@ -1164,6 +1178,11 @@ Repository onboarding now records spawned-unbriefed → harness-ready → briefe
 - `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when `docs/design/` was brought into onboarding scope, slice 05k); `system/tools.md` is unchanged.
 
 ## Key Invariants
+
+- Controlled prompt delivery has one epoch-bound authority. Request identity/payload is immutable;
+  only certified pre-dispatch failure retries; full operation refs complete work; pop-back is an
+  atomic server withdrawal of an explicit queued row; PTY paste and adapter/native queues are never
+  fallback authority.
 
 - Onboarding should describe current repository state; task files describe planned or in-progress future work.
 - `c-08-ar-coordination-context-resolver` skill owns topology and path resolution facts; it must not perform Git worktree operations.

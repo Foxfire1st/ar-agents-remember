@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-16T06:15+02:00                |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`                    |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`                    |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -81,7 +81,16 @@ No external repository boundary is implemented by the error declarations.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The shared error family now distinguishes certified native busy/pre-dispatch failure, immutable
+request-id conflict, and bridge-epoch mismatch. These types preserve the first-byte boundary: only a
+certified pre-dispatch condition may advertise retry safety; possible-write failures remain unknown.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented typed busy certificate, id-conflict, and epoch-
+  mismatch errors used by the reliable submit boundary.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the client-side first-byte
   ambiguity type and its retry-safe versus reconcile-required evidence boundary.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the error-sidecar body for the negotiated protocol

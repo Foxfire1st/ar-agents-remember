@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionCockpitStore.test.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -42,6 +42,14 @@ pinned as store behavior.
 Store reset between cases; localStorage cleared. The marker-invariance case must keep failing if
 any ledger path ever writes `launchEvidence`. Test-only.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -49,7 +57,24 @@ any ledger path ever writes `launchEvidence`. Test-only.
 | The module under test. | L14-L309 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
 | The registry the mirror case writes through. | — | [sessions.ts](sessions.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+The store suite now locks authoritative queue derivation, protected-active retention, pending
+withdrawal, one-slot recovery, and exact draft/answer revision-CAS behavior. It also proves newer
+edits and successor requests cannot be cleared, restored, or dismissed by stale actions.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added store regression coverage for reliable-submit state,
+  retention, withdrawal, recovery, and revision guards.
 
 - 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S3 (R11): skeleton defaults, per-kind
   pending sets, ledger acknowledgment + the queued-never-moves-the-marker invariant, queue

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -43,6 +43,14 @@ with a frozen clock (`now` prop) over the shared `L6_CONTROLLED_WORKING` fixture
 store SHAPE, not the store. FEUI-L4 therefore added only the required `snapshotLoading: false`
 and empty `echoEvidence` defaults; WorkingLine behavior and assertions are unchanged. Test-only.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -53,7 +61,22 @@ and empty `echoEvidence` defaults; WorkingLine behavior and assertions are uncha
 | The working fixture. | L179-L194 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
 | The view-level cases (slot containment, `turn.stop` gate alignment). | L320-L400 | [SessionsView.test.tsx](SessionsView.test.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+No WorkingLine behavior changed. Its session fixture gained empty `submitHistory` for the expanded
+cockpit state; working-line liveness/stream assertions remain semantically unchanged.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5 fixture-only refresh; no WorkingLine semantic impact.
 
 - 2026-07-17T08:33+02:00 — No content impact: 260715-FEUI-L4 only extended this hand-built
   store-shape fixture with `snapshotLoading` and `echoEvidence`; the WorkingLine contract is

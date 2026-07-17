@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,6 +45,14 @@ The anatomy-order and mounted-control-slot cases are the R10/L4 regression net; 
 the R7 honesty net; the purpose-built derived-tier rows are the R7 control-state-gating net (they
 must not be swapped back to shared FLEET rows — finding 7). Test-only.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -53,7 +61,22 @@ must not be swapped back to shared FLEET rows — finding 7). Test-only.
 | The stage container (slot order, handoff note, empty identity). | L62-L87 | [SessionStage.tsx](SessionStage.tsx) |
 | The tier machine whose derivation the R7 cases pin. | L29-L41 | [../../data/launchEvidence.ts](../../data/launchEvidence.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+No HeaderStrip behavior changed. Its session fixture gained empty `submitHistory` to satisfy the
+expanded cockpit state while keeping model/effort header assertions independent of prompt lifecycle.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5 fixture-only refresh; no HeaderStrip semantic impact.
 
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2 replaced the empty-slot assertion with proof that
   the reserved controls segment mounts one `ModelEffortControl` and its trigger; fixture state

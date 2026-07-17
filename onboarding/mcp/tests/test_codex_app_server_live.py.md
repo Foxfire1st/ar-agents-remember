@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_live.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T07:25+02:00 |
-| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25`|
-| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -110,7 +110,16 @@ that its captured catalog is observation evidence rather than a maintained model
 | The final matrix labels the eight captured rows and exact keys as account-visible live evidence; consumers must not promote them into static policy. | L28-L34 | [L5 worker closeout report](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
 | Independent review audited the environment gate, recorder allowlist, two-turn bound, PID/thread assertions, token accounting, and cleanup, confirming default runs skip the turns and retain no secret/raw/prompt body. | L155-L161 | [L5 reviewer verdict](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The installed Codex smoke now exercises settings with an operation ref and no busy-queue
+configuration. It remains an opt-in live proof; deterministic lifecycle races stay in fake-adapter
+tests.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: aligned the live Codex path to op-aware control without native
+  queue configuration.
 
 - 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 test curator: documented the separately opted-in
   dynamic advertise/launch/same-thread conformance path, safe evidence recorder, two bounded turns,

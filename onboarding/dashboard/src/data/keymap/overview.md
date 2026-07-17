@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/keymap/`                     |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -37,11 +37,12 @@ exactly the bound reserved set; no bare-Esc sequence is ever claimed).
   `BROWSER_FORBIDDEN` lists the chords no zone may ever bind.
 - `zones.ts` — `zoneForTarget` (nearest `data-kbzone` container; default chrome), `routeKey` (the
   routing contract), `isEditableTarget`/`isPrintable` (the generic R7 printable suppression), and
-  `slashOpensPalette` (the pure `/`-at-line-start composer rule shared by the placeholder textarea
-  and the future CM6 composer).
+  `slashOpensPalette` (the pure `/`-at-line-start rule consumed by the live FEUI-L5 CodeMirror
+  composer).
 - `chords.ts` — the chrome/composer chord tables (`CHROME_CHORDS`, `COMPOSER_CHORDS`) with
-  per-chord zone lists: harness-owned chords (Alt+↑/↓, Alt+,/.) are deliberately chrome-only so
-  they always pass through over a live PTY.
+  per-chord zone lists. Chrome Alt+↑/↓ retains session cycling; composer Alt+Up owns FEUI-L5
+  authoritative pop-back. PTY receives both unchanged because only its explicit reserved set is
+  intercepted.
 - `focus.ts` — the F6 region cycle (rail → stage → inspector → statusline, collapsed panels drop
   out) + the region/stage-header/PTY-host focus selectors.
 - `zones.test.ts` / `focus.test.ts` — the contract suites (PTY passthrough invariants,
@@ -61,6 +62,8 @@ exactly the bound reserved set; no bare-Esc sequence is ever claimed).
   sequences (`5;7~`/`6;7~`) no audited harness binds, so even a leaked event is inert.
 - Every bound chord must be verified fully clear across all five sources; collisions may exist
   only on unbound reserved slots (tested).
+- **Alt+Up ownership is zone-specific** — composer dispatches `composer.popBack`, chrome dispatches
+  session navigation, and PTY passes the native key through. No global handler may collapse them.
 - **Pure and DOM-light** — structural `KeyEventLike`/`ZoneElementLike` surfaces keep tests free of
   real DOM events; no React, no xterm, no window access in this route.
 
@@ -71,7 +74,8 @@ markers, `routeKey` handles a PTY key only when `matchReservedChord` matches the
 set (everything else — including Esc — passes to the harness) and suppresses printable bindings in
 editable targets; `PTY_RESERVED` carries the five-source collision-verification records (the
 Ctrl+Alt+PageUp/PageDown replacement pair), `CHROME_CHORDS`/`COMPOSER_CHORDS` are the zone-scoped
-tables, and `nextRegion` drives the F6 cycle with collapsed panels dropping out.
+tables (including the composer/chrome Alt+Up split), and `nextRegion` drives the F6 cycle with
+collapsed panels dropping out.
 
 ## Repo-Internal References
 
@@ -81,8 +85,13 @@ tables, and `nextRegion` drives the F6 cycle with collapsed panels dropping out.
 | The `?` reference page that renders these same tables (one source, two surfaces). | [panels/session-cockpit/CommandPalette.tsx](agents-remember/dashboard/src/panels/session-cockpit/CommandPalette.tsx) |
 | The command ids the chord tables dispatch into. | [data/commands.ts](agents-remember/dashboard/src/data/commands.ts) |
 | The DOM that carries the `data-kbzone`/`data-region` markers this contract resolves. | [panels/session-cockpit/SessionsView.tsx](agents-remember/dashboard/src/panels/session-cockpit/SessionsView.tsx) |
+| The live CodeMirror surface that owns composer Alt+Up and slash handling. | [panels/SessionComposer.tsx](agents-remember/dashboard/src/panels/SessionComposer.tsx) |
 
 ## Update History
+
+- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced the future-composer note with the live
+  CodeMirror consumer and documented zone-sensitive Alt+Up ownership: authoritative pop-back in the
+  composer, session cycling in chrome, untouched native input in PTY.
 
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4 (tinykeys zones + focus model + collision
   audit): the new `data/keymap/` slice — reserved set with per-chord five-source verification

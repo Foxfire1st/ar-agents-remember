@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1760,
+    "sourceFilesInScope": 1775,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L4 exposes the own-adapter capability layer through the daemon request/response boundary. Pre-session advertise remains dynamic and token-free behind a fixed three-harness, install-fingerprinted cache; explicit refresh is the auth/account boundary and a failed refresh quarantines the observed entry. Terminal open accepts only a complete native model/effort pair and uses the same opener as settings-owned role spawn. Live same-id reopen returns the retained process truth or conflicts without mutation; exact-session advertise/set/whole-message submit/reconcile use private IPC with...",
+    "summary": "260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic state machine. The serving bridge admits it to one authority timeline; queued withdrawal and native dispatch race at the guarded first-byte claim; completion releases only the exact epoch/sequence/id/ kind operation. Status/withdraw are cockpit-only and raw-free, terminal text retention is bounded, and ambiguous response loss reconciles without resend. Pop-back restores only the exact composer te...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,10 +115,9 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
-      "ACPUI",
-      "IPC",
+      "FEUI",
       "repo-overview",
-      "4293c53b9d6ef2bf0fee7aca11c2677322c4e786",
+      "f8196d98982f834d68152d307ff8025ea69440d5",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -144,7 +143,8 @@
       "c-00-initialize-memory-repo",
       "kernel/memory_ledger.py",
       "ContextPacketV2",
-      "resolve_context"
+      "resolve_context",
+      "context_packet"
     ]
   },
   "fallback": {

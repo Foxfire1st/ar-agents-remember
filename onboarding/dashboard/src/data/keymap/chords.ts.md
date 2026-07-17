@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/keymap/chords.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -51,6 +51,14 @@ zone passes it through.
 - Command ids must exist in `data/commands.ts`'s registry — the chord layer dispatches ids, never
   functions.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -60,7 +68,23 @@ zone passes it through.
 | The `?` page renders these tables under the Chrome/Composer group headings. | L179-L194 | [../../panels/session-cockpit/CommandPalette.tsx](../../panels/session-cockpit/CommandPalette.tsx) |
 | The command ids these chords dispatch (registered defaults). | L87-L179 | [../commands.ts](../commands.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Alt+Up is now zone-sensitive: the composer owns authoritative pop-back, while chrome retains
+`session.prev`. The keymap records both bindings explicitly so global navigation cannot intercept a
+withdrawal gesture inside CodeMirror and the composer cannot steal the chord outside its zone.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: recorded the composer/chrome Alt+Up ownership split.
 
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4: the chrome/composer chord tables with
   per-chord zone lists (harness-owned Alt chords chrome-only; ctrl+k never over PTY; composer Esc
