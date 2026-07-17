@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/file-viewer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-29T09:06+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -83,6 +83,12 @@ a file is selected; kept mounted so state survives a tab switch.
 
 ## Update History
 
+- 2026-07-17T02:30+02:00 — No route impact: 260715-FEUI-L2's only touch under file-viewer/ is a
+  reviewer-accepted one-line defensive guard in `FileViewer.tsx` (a `repos`-less catalog response
+  degrades to `[]` instead of crash-looping `repos.find` — a latent robustness bug the leaf's
+  test-timing shift surfaced). The route model (selectors, two trees, dual-pane, pairing) is
+  unchanged; detail lives in the `FileViewer.tsx` sidecar. Verification metadata pinned to the
+  leaf base until closeout stamps the L2 code commit.
 - 2026-07-06T03:20+02:00 — No route impact: 260703-L9 reviewed `DualPane.tsx`/`FilePane.tsx` as the sidecar-markdown precedent for the new task-reader notes view (`panels/TaskNotes.tsx`); nothing under file-viewer/ changed.
 - 2026-06-30T00:00:00+02:00 — operations-integration L5: the file-viewer now (a) renders an opened partnerless overview/onboarding doc as **markdown full-pane** (`openSidecar` carries the body; `DualPane` shows it in single and split mode) instead of an empty placeholder, and (b) fills the pane with a faint, effects-gated **siege-tank empty-state backdrop** (`/assets/sc2-siege-tank-boomerang.mp4`) until a file is selected, replacing the per-side "select a file" placeholders. `usePersistedFlag.ts` also gained `usePersistedNumber` (Cockpit rail widths). New `DualPane.test.tsx` covers the backdrop + overview rendering. Detail in the `DualPane.tsx` / `FileViewer.tsx` / `usePersistedFlag.ts` sidecars. Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-06-29T17:00+02:00 — No route impact: the L4 follow-up only adjusted the shared `codemirrorTheme.ts` comment + operators/punctuation colours (readability — `--grid` → an `ink`/`bg` blend); the file-viewer route model (the selectors, the two trees, the dual-pane, the read-only CodeMirror) is unchanged. Detail in the `codemirrorTheme.ts` sidecar. Verification metadata pinned until closeout stamps the L4 follow-up commit.

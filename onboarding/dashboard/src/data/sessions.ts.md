@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00 |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -176,7 +176,28 @@ Hosted rows carry additive adapter control, activity, acceptance, vendor identit
 interaction, event sequence, and raw diagnostics. Hosted delivery is protocol-backed and accepts
 only immediate/queued receipts; ordinary shell connection behavior remains separate.
 
+### 260715-FEUI-L2 Full-Row Mirror + Seat-Event Patch Seam
+
+`OpenSession` now mirrors the FULL catalog row the sessions cockpit consumes (R4): `createdAt`
+(smart-focus/jump ordering fallback), retirement provenance (`retiredAt/BySession/Reason/Edge`),
+`spawnLevel`+`spawnLevelSource`, the REQUESTED `resolvedModel`/`resolvedEffort` pair (never proof
+of the effective pair — evidence tiers live in `sessionCockpitStore`), and liveness evidence
+(`livenessFailures/FirstFailedAt/LastFailedAt/Evidence`, `exitEvidence`); `fromTerminalSessionInfo`
+maps each field only-when-set, as before. A new **`patch(id, partial)`** action is the seat-event
+reconciler's merge seam (`data/seatEvents.ts`, L2 S2): it merges server-observed fields into one
+row — pre-applied UI state the authoritative 2500 ms poll confirms or replaces on the next
+hydrate. Known reviewer-noted nit (deliberately unchanged): `hydrate` replaces the sessions array
+every beat even when content is identical, so subscribers re-render per beat; ordering stays
+deterministic over states, and an identity-preserving hydrate (the dashboardStore change-gate
+pattern) is a follow-up candidate, not attempted to keep Chats' behavior byte-identical.
+
 ## Update History
+
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R4/S2): `OpenSession` extended to the full catalog
+  mirror (`createdAt`, retirement provenance, spawn level + source, requested model/effort,
+  liveness evidence) with `fromTerminalSessionInfo` mapping the new fields when present, and the
+  `patch` action added as the seat-event pre-apply seam (poll stays authoritative). Verification
+  metadata pinned to the leaf base until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed hosted protocol projection and delivery boundary.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added authoritative binding-role state and helpers,

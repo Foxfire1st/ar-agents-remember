@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00 |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -25,6 +25,11 @@ and no Enter, and `"unconfirmed"` with bounded retries and still no `\r` when no
 Task 11 adds lifecycle identity tests for attach, clear, uniqueness, and lookup by lifecycle id. Task 22
 adds catalog-hydration tests for server-owned sessions, live-only lifecycle routing, status-driven
 focus changes, API-row conversion, and `createSession` sending label/lifecycle metadata to the opener.
+Since 260715-FEUI-L2 the three exact-shape `toEqual` API-row conversion fixtures (the terminal row,
+the harness row, and the landed row) also demand the mapped **`createdAt`** field —
+`fromTerminalSessionInfo` now carries it for the cockpit's smart-focus/jump ordering fallbacks, so
+the shape assertions were STRENGTHENED by one required-correct field each (no assertion weakened;
+mapping behavior otherwise unchanged, reviewer-verified line-by-line).
 It also covers the tab-sync helpers that broadcast id-bearing catalog invalidations after persisted
 backend changes. Slice L5 adds the parallel **leaf identity** tests: `setLeaf`/`findSessionForLeaf`
 advisory uniqueness, freeing a leaf after the owner exits, clearing a binding, and `leafKey` mapping
@@ -116,6 +121,11 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2: three exact-shape `toEqual` catalog-conversion fixtures
+  gained the one `createdAt` field `fromTerminalSessionInfo` now maps (needed by the cockpit's
+  smart-focus/jump ordering fallbacks) — assertions STRENGTHENED (one more correct field
+  demanded), none weakened; reviewer-verified line-by-line. Verification metadata pinned to the
+  leaf base until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added binding-role helper, hydration, and pair-scoped

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T00:30+02:00 |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00 |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -98,6 +98,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   component-render tests (the rest of the suite — `smoke`, `contract`, and the `data/` store+selector
   tests — is pure logic). `test/webtuiSpike.test.ts` (260715-FEUI-L1) keeps the four falsifiable
   WebTUI-adoption assertions running against the exact shared build configuration.
+  `test/fixtures/` (260715-FEUI-L2) is the NEW shared-fixture home: `catalogRows.ts` — the
+  full-wire-shape catalog builder + the mockup-mirroring `FLEET` scenario the rail/model suites
+  run on (to be shared with the L3 fixture pack).
 - `grammar/` — the shared primitives library (`Panel`, `ModeBar`, `Dot`, `Affordance`,
   `ProgressFill`, `TokenGauge`, `Markdown`, and — 260703-L14 — `RankBadge`, the V4 chevron rank
   insignia for the orchestration/management command tiers); see
@@ -190,6 +193,24 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   replacement pair Ctrl+Alt+PageUp/PageDown), `zones.ts` (`routeKey` + generic printable
   suppression + `slashOpensPalette`), `chords.ts` (zone-scoped chrome/composer tables), `focus.ts`
   (the F6 region cycle).
+  **260715-FEUI-L2 adds the sessions-cockpit DATA layer** (all + unit suites): `catalogPoll.ts` —
+  the 2500 ms terminal-catalog poll driver HOISTED out of `panels/Chats.tsx` (refcounted; every
+  read records a poll-health beat; the poll is the AUTHORITATIVE session-row reconciler; the L8
+  Chats cutover depends on this hoist); `seatEvents.ts` — the `/api/events` seat-event reconciler
+  (retired/landed/renamed/turn-state-changed, riding the Event River's EventSource as a second
+  consumer behind a per-connection backlog gate; pre-applies only, never resurrects/invents/
+  regresses); `stateGrammar.ts` — THE one seat-state grammar (R14: state → word/chip/color/pulse;
+  the ruled 2.4 s ease-in-out `pulseSlow`, blocked-on-human steady; the sev-3 chip-vocabulary
+  width ruling is pending with the developer); `railModel.ts` — the pure RULED rail hierarchy
+  (flat command spine / per-leaf clusters, active-first deterministic sort, completed folders),
+  fleet-attention rollup + jump priority, gate/brief/critical-bus projection joins, smart-default
+  focus, and question triage; and `sessionCockpitStore.ts` — the per-seat cockpit client store
+  (per-kind pending sets, acknowledged set ledger that NEVER moves the five-tier launch evidence,
+  composer shell, turn clock, per-pane freshness, client queue, poll health, the persisted
+  orchestration-tree toggle, one-way view mirrors). `sessions.ts` gains the full-row mirror fields
+  + the `patch` seat-event seam; `terminal.ts`'s catalog wire shape moved to
+  `types/terminalCatalog.ts` (re-exported, import sites unchanged); `stream.ts`'s `connectEvents`
+  gains `onInterrupt` (the reconnect signal the backlog gate re-closes on).
 - `topology/` — the imperative constellation canvas + its pure model adapter. Task 33 reshapes it into an
   **active-enclosure** view: the constellation is now `workspace → source checkouts → active worktree
   enclosures (+ providers)`. The separate lifecycle/task rim is gone — each enclosure node folds in its
@@ -226,7 +247,14 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   `WorkspaceProjection.activeWorktreeGroups: string[]` — the bounded active worktree-group set the
   Topology filters on — which `data/store.ts` carries (snapshot + a new `activeWorktreeGroups` delta case)
   and `data/stream.ts` threads through (`"activeWorktreeGroups"` added to `STATE_EVENTS`).
-- `index.css` — the Panda entry + global reset/base/effects layers.
+- `types/terminalCatalog.ts` (260715-FEUI-L2 R4) — the SECOND hand-maintained wire mirror: the
+  FULL `TerminalCatalogEntry.to_json()` row (`serving/terminal_catalog.py` is the source of
+  truth) — status/control/turn-state vocabularies, named-but-opaque `controlRaw` diagnostics
+  keys, spawn/level provenance, the REQUESTED `resolvedModel`/`resolvedEffort` pair, and
+  liveness/retirement/landing evidence. `data/terminal.ts` re-exports it
+  (`TerminalSessionInfo` = `TerminalCatalogRow`), preserving import sites.
+- `index.css` — the Panda entry + global reset/base/effects layers (260715-FEUI-L2 adds the
+  ruled `pulseSlow` cockpit state-pulse keyframe beside `flicker`/`pulse`).
 - `styles/tokens.css` — the `:root` design-token CSS vars (260715-FEUI-L1 adds `--muted`,
   mirroring the Panda `muted` token).
 - `styles/webtui.css` — the ONE WebTUI mapping file (260715-FEUI-L1 S1): `layer(webtui)` imports of
@@ -323,6 +351,20 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 route impact (session data layer, rail, and stage
+  container; review FINAL PASS): `data/` gains the sessions-cockpit data layer —
+  `catalogPoll.ts` (the poll driver hoisted OUT of Chats; Chats is now a consumer),
+  `seatEvents.ts` (the gated `/api/events` seat reconciler; poll stays authoritative),
+  `stateGrammar.ts` (the one dot grammar + 2.4 s pulse ruling), `railModel.ts` (the ruled
+  hierarchy/attention/joins), `sessionCockpitStore.ts` (per-seat honesty-invariant client state),
+  all + suites; `types/` gains `terminalCatalog.ts` (the full catalog wire mirror,
+  `data/terminal.ts` re-exports); `test/fixtures/` is the new shared-fixture home
+  (`catalogRows.ts`); `panels/session-cockpit/` gains the rail/stage/inspector components (see
+  that overview); `sessions.ts`/`stream.ts`/`commands.ts`/`index.css` extended as their sidecars
+  describe; plus a reviewer-accepted one-line defensive fix in `panels/file-viewer/FileViewer.tsx`.
+  Open sev-3 developer ruling: status-chip vocabulary width (`stale`/`exited`/`retired`/
+  `starting`). Verification metadata pinned to the leaf base until closeout stamps the L2 code
+  commit.
 - 2026-07-17T00:30+02:00 — 260715-FEUI-L1 route impact (view shell, WebTUI spike, keyboard/palette
   foundation): the cascade gained the `webtui` layer slot (S1, OQ-D = adopt — `styles/webtui.css`
   is the one mapping file, build-time scoped under `[data-view="sessions"]`, spike assertions kept

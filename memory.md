@@ -288,3 +288,33 @@ Newest entries are always inserted at the top.
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 3284c39ff546dc4398a8c9976bdf8a4ea3f42b7d |
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 64086bb8574042bc1147bff763123b4a2fe81d91 |
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 988e2a452846ced092d4d477e80f4a2207c88d21 |
+
+## Leaf Entries (pending closeout mapping)
+
+### 2026-07-17 — 260715-FEUI-L2 · Session data layer, rail, and stage container
+
+- **Shipped** (branch `ar/260715-feui-l2-data-layer-rail` @ base
+  `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`, uncommitted until closeout): the sessions cockpit's
+  data layer + rail + stage — the 2500 ms catalog poll hoisted out of Chats into the shared
+  refcounted `dashboard/src/data/catalogPoll.ts` (Chats now a consumer; L8 cutover dependency),
+  the gated `/api/events` seat-event pre-apply layer (`seatEvents.ts`, poll authoritative), the
+  full catalog wire mirror (`types/terminalCatalog.ts`), the honesty-invariant cockpit client
+  store (`sessionCockpitStore.ts`), THE one seat-state grammar + 2.4 s ease-in-out pulse ruling
+  (`stateGrammar.ts` + `StateDot`), the ruled role-driven rail (`railModel.ts` + `SessionRail` —
+  flat spine, active-first clusters, completed folders + naming bulk end, fleet attention,
+  gate/brief joins, bus footer), and the stage container (`SessionStage` + `HeaderStrip` with the
+  empty L4 control slot + reserved L6 WorkingLine slot) + `SeatInspector`; SessionsView wired as
+  the one-derivation seam with smart-default focus, focus handoff, and dynamic palette commands.
+- **Review**: adversarial FINAL PASS — 0 sev-1/2; one fix round closed all 5 sev-4 findings
+  (per-connection SSE backlog gate, live-derived attention-highlight expiry, every-class
+  oldest-first jump tiebreak, End segment restored on dormant rows, mount hydrate records poll
+  beats); the sev-3 status-chip vocabulary width (`stale`/`exited`/`retired`/`starting` beyond
+  the closed six-word list) is CARRIED as a developer ruling request — honest mirroring kept, the
+  one-switch remap point is `stateGrammar.ts`.
+- **Evidence**: `vitest run` 59 files / 643 tests all passing, 0 unhandled errors (551-baseline
+  +88 new, +4 fix-round); production build passes; eslint + tsc clean.
+- **Collateral**: one reviewer-accepted defensive line in `panels/file-viewer/FileViewer.tsx`
+  (`cat.repos ?? []`) fixing a latent repos-catalog crash loop the leaf's test-timing shift
+  surfaced.
+- **Memory pass**: 19 sidecars created, 11 refreshed, 6 overviews + entities.md updated; the
+  code↔memory commit-pair row above is appended by closeout (`worktree_closeout_apply`).
