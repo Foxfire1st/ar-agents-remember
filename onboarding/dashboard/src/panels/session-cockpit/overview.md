@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T06:20+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -29,9 +29,9 @@ registry (S3), and the tinykeys keyboard-zone/focus wiring (S4). **260715-FEUI-L
 panels**: the rail hosts `SessionRail` — the RULED role-driven hierarchy (flat command spine,
 per-leaf clusters with the active seat on top, per-master completed folders + bulk end) plus fleet
 attention, gate/brief markers, poll-health banner, and the bus footer; the stage hosts the
-`SessionStage` container + `HeaderStrip` (identity → EMPTY ModelEffortControl slot → grammar
-state → leaf/seat → diagnostics; reserved WorkingLine slot); the inspector hosts the read-only
-`SeatInspector` provenance card; and `StateDot` renders the ONE seat-state grammar
+`SessionStage` container + `HeaderStrip` (identity → live ModelEffortControl → grammar state →
+leaf/seat → diagnostics; reserved WorkingLine slot); the inspector hosts catalog provenance
+plus the collapsed set ledger; and `StateDot` renders the ONE seat-state grammar
 (`data/stateGrammar.ts` — 2.4 s ease-in-out pulse, never steps()). **260715-FEUI-L6 fills the
 stage surface and the lifecycle actions**: `PtySurface` renders keep-alive real xterm panes
 (DOM renderer BY MEASUREMENT, two server-truth archetypes — controlled line-log vs legacy raw),
@@ -45,11 +45,18 @@ fail-loud response paths incl. both 409s and the F9 outcome-unknown reconciliati
 `FailedLaunchBanner` for focused failed seats (verbatim bridgeError, Retire + 'Launch
 corrected…', no auto-retry), and launch-evidence tiers derived from row control-state truth
 (`data/launchEvidence.launchTier`) rendered by `grammar/EvidenceBadge` in the header provenance
-chip and the inspector. Remaining scaffolding: L4 the controls, L5 the real composer (CM6) +
-queue, L7 the tabbed inspector/status line. All pure derivations live in `data/` (`railModel`,
+chip and the inspector. **260715-FEUI-L4 fills live set controls**: exact-session capability
+snapshots supply model rows and per-model session-settable effort menus; requested, pending,
+echo-evidenced effective, and readback-confirmed values remain distinct through the five-value
+SetResult table; pair changes serialize model → evidence/readback → effort; and shared chips,
+ledger/rail attention, background toasts, cycle-effort commands, and polite/assertive live regions
+surface the result without color-only meaning. Remaining scaffolding: L5 the real composer (CM6)
++ queue and L7 the tabbed inspector/status line. All pure derivations live in `data/` (`railModel`,
 `stateGrammar`, `catalogPoll`, `seatEvents`, `sessionCockpitStore`, the L6
 `interactionAnswer`/`sessionLifecycle`/`ptyHarvest`, and the L3
-`capabilityCatalog`/`launchEvidence`/`launchFlow`); this route holds DOM + wiring only.
+`capabilityCatalog`/`launchEvidence`/`launchFlow`, plus L4 `announcer`/`pairChange`/
+`sessionCapabilities`/`setAcceptance`/`setChips`/`setClient`/`setControlsCopy`); this route holds
+DOM + wiring only.
 
 ## Route Model
 
@@ -59,7 +66,8 @@ queue, L7 the tabbed inspector/status line. All pure derivations live in `data/`
   percentage calibration) / stage (min 35%) / inspector (24%, collapsible), a status-line footer
   with reopen buttons, the non-portal `CommandPalette`, and the `useKeyboardZones` binding. Owns
   the command registry instance + the `CommandContext` actions (panel toggles, focus moves, the
-  LIVE alt+↑/↓ `switchSession` over `railCycleOrder`, honest L4/L5 stubs), the narrow-width
+  LIVE alt+↑/↓ `switchSession` over `railCycleOrder`, live L4 effort cycle, honest L5 submit
+  stub), the narrow-width
   auto-collapse (pure decisions in `data/sessionLayout.ts`), the ~80-col floor chip re-measured
   from every width-changing path (`onLayout` + a stage-observing `ResizeObserver`), and — L2 —
   the shared poll-driver/mirror subscriptions, the ONCE-derived rail model + attention rollup
@@ -76,13 +84,17 @@ queue, L7 the tabbed inspector/status line. All pure derivations live in `data/`
   data-layer, focus-independent — fix round F1). L3 appends (pure inserts, no L1/L2 node
   reshaped): the `session.launch` palette command + `launch` state, the `FailedLaunchBanner`
   block for any focused failed seat (above the pty surface), and the `<LaunchFlow>` overlay
-  mounted after the palette.
+  mounted after the palette. **L4** owns the one controlled model/effort popover shared by header
+  and palette, mounts the promotion/drift + seat-state announcer watchers, drives alt+,/.
+  `cycleEffortRequested`, renders the queued composer hint, and mounts persistent background
+  `SetOutcomeToasts` plus `CockpitLiveRegions`.
 - `SessionRail.tsx` (L2) — the rail renderer over `data/railModel`: ruled row anatomy (dot ·
   role(3) · title · attention-slot · status · End; only the status chip elides, truth in the row
   tooltip), flat spine, hairline-indented leaf clusters (active seat on top), per-master
   collapsed completed folders, master+sprint bulk end with honest NAMING previews, the
   zero-state-suppressed attention strip with live-derived highlight expiry, gate badges +
-  two-state brief markers in the reserved attention-marker slot, the poll-stale banner, the
+  two-state brief markers + L4's worded `set!` marker in the attention slot, accessible named
+  state dots, the poll-stale banner, the
   anchored bus footer, and the spawn-edge provenance tree toggle. **L6**: the End action is an
   arm→confirm→execute flow whose confirm NAMES session · leaf · state (arming never kills); a
   FAILED terminate POST renders the server's words verbatim inline (`role="alert"`) with
@@ -124,8 +136,8 @@ queue, L7 the tabbed inspector/status line. All pure derivations live in `data/`
 - `SessionStage.tsx` + `HeaderStrip.tsx` (L2) — the stage container's RULED layer order
   (HeaderStrip → `data-slot="working-line"` — FILLED by L6 via the additive `workingLine` prop →
   surface → composer; explained empty identity, F17 handoff note; the empty-state copy points at
-  the palette's "Launch session…" command) and the §1.2 header anatomy (identity → EMPTY
-  `data-slot="model-effort-control"` for L4 → grammar state → leaf/seat → diagnostics-first
+  the palette's "Launch session…" command) and the §1.2 header anatomy (identity → the sole
+  live `ModelEffortControl` → grammar state → leaf/seat → diagnostics-first
   elision; honest `ws —`/quiet freshness). L3 (R7): the provenance chip's tier is DERIVED from
   row control-state truth via `data/launchEvidence.launchTier(session)` — not the L2 store
   default — and renders a `grammar/EvidenceBadge` (`size="sm"`) beside the requested pair.
@@ -147,16 +159,28 @@ queue, L7 the tabbed inspector/status line. All pure derivations live in `data/`
   + leaf; the operator `/terminate` route — see the upstream actor-identity ask) and 'Launch
   corrected…' (prefill from the refused pair, only where still advertised). NO timer, NO
   auto-retry; the row stays visible until retired.
-- `StateDot.tsx` (L2) — the ONLY renderer of `data/stateGrammar` visuals (rail + header +
-  inspector; StatusLine joins in L7); Panda-literal 2.4 s ease-in-out pulse pinned to
-  `PULSE_ANIMATION`, steady under reduced motion, frozen by effects-off.
-- `SeatInspector.tsx` (L2, extended by L6) — the read-only provenance card in the inspector pane
+- `ModelEffortControl.tsx` + `AcceptanceChip.tsx` (L4) — exact-session trigger/menu and shared
+  visible evidence primitive. Popover open re-GETs the session snapshot; staged model changes
+  re-gate effort options to that row; apply sends one knob or the serialized pair; fetch errors
+  remain verbatim with retry; acceptance words, requested/effective values, spinner, mark-seen,
+  and 503 retry all render in text.
+- `CockpitLiveRegions.tsx` + `SetOutcomeToasts.tsx` (L4) — persistent auditory and background
+  outcome surfaces. The two mounted regions subscribe to polite/assertive stores; unfocused
+  outcomes persist until explicit dismiss/mark-seen and several sessions collapse into one stack.
+- `StateDot.tsx` (L2, extended by L4) — the ONLY dot renderer for `data/stateGrammar` visuals
+  (rail + header; StatusLine joins in L7; SeatInspector consumes only the grammar word);
+  Panda-literal 2.4 s ease-in-out pulse pinned to
+  `PULSE_ANIMATION`, steady under reduced motion, frozen by effects-off. L4 adds the optional
+  named-image mode for rail dots; redundant header dots stay aria-hidden.
+- `SeatInspector.tsx` (L2, extended by L6/L4) — catalog provenance remains read-only while a
+  collapsed set-ledger section makes expansion the explicit viewing/acknowledgment act
   (spawn role/level/requested pair at its honest tier, spawned-by, landed/retired reasons,
   liveness evidence; L6 adds the pane archetype line, retire stop-error residuals for retired
   rows, and the VERBATIM raw interaction payload the unrepresentable-interaction notice points
   at); replaced by the L7 tabbed inspector. L3: the tier is the same `launchTier(session)`
   derivation as the header, plus the honest "vendor defaults — no selection sent" model fact
-  for pairless harness rows.
+  for pairless harness rows. L4 ledger rows are newest-first, acceptance-first, and keep requested
+  and effective values distinct; switching seats remounts the next ledger collapsed.
 - `CommandPalette.tsx` — the cmdk palette, deliberately **not a portal** (the overlay stays inside
   the scope root; focus return stays local). Two pages: `commands` renders the live registry (the
   one options source); `keys` renders the SAME chord tables tinykeys binds (`data/keymap`), so the
@@ -195,6 +219,11 @@ queue, L7 the tabbed inspector/status line. All pure derivations live in `data/`
   transport-then-row-appears reconciliation + dismiss-ends-watch regressions), visible adapter
   status; banner verbatim ×3 harnesses, refused-not-validated label, prefill, honest confirm +
   single terminate POST, decline sends nothing, absent bridgeError stated.
+- L4 adds focused suites for `ModelEffortControl`, `CockpitLiveRegions`, and `SetOutcomeToasts`,
+  while the expanded HeaderStrip/SeatInspector/SessionRail suites pin one mounted control,
+  ledger-view acknowledgment with seat-switch isolation, named rail dots, and the worded set
+  marker. Data-layer tables cover all five acceptances, exact-session classification, serialized
+  pair termination, unknown/queued readback, cycling, and announcement transitions.
 
 ## Invariants And Boundaries
 
@@ -246,6 +275,15 @@ queue, L7 the tabbed inspector/status line. All pure derivations live in `data/`
   never hidden and never auto-retried; evidence tiers come only from
   `data/launchEvidence.launchTier` over row control-state truth — a Claude launch pair can NEVER
   read `readback` (no launch-effort echo), and nothing promotes without proof.
+- **Set-control honesty invariants** (L4): live menus read only the exact-session snapshot and
+  each model row's `sessionSettable` effort options; `configOptions` is never a menu. Requests and
+  pendings never move effective markers. Every valid SetResult remains evidence, HTTP failures
+  remain route failures, unknown triggers one readback, and pair effort waits for model evidence.
+  Unacknowledged outcomes persist until an explicit mark-seen action: inline chip acknowledgment,
+  toast dismissal, or ledger expansion. State/acceptance meaning is always present in words. The
+  final reviewer PASS retains six
+  nonblocking sev-4 observations on rare supersede/coalescing/visual/announcement edges, recorded
+  in the governing file cards rather than promoted into false guarantees here.
 - **Retire from the banner = the operator `/terminate` route** (reviewer-accepted): a true
   provenance-recording `/retire` needs an `actor_session` identity the dashboard operator does
   not have — an upstream decision, recorded as an ask, not a defect.
@@ -261,7 +299,9 @@ WorkingLine turn theater (working-only, welded UA-7-gated stop), keep-alive real
 through PtySurface (DOM renderer by measurement, controlled vs legacy-raw archetypes, per-pane
 screen-reader opt-in, real-cols floor chip), informational stop-residual notes, and the
 InteractionBar above the composer whose ONLY answer path is the gate channel; the inspector a
-read-only provenance card (+ archetype, retire residuals, verbatim raw payloads); narrow widths
+catalog-provenance card plus collapsed set ledger (+ archetype, retire residuals, verbatim raw
+payloads); the header's one L4 model/effort control reads the exact live snapshot, serializes pair
+changes, and renders worded acceptance chips; narrow widths
 auto-collapse on threshold crossings (reopenable), ctrl+k/ctrl+; open the cmdk palette (attention
 jump, bulk-end mirrors, question triage focusing the bar, grammar-gated turn.stop), alt+↑/↓
 cycles the rail order, F6 cycles regions, and the PTY zone passes every key through except
@@ -271,6 +311,9 @@ exclusively from the live capability envelope (or explicit vendor defaults), POS
 both-or-neither selection, and land on the new row at tier 'pending'; a failed seat surfaces the
 FailedLaunchBanner (verbatim refusal, Retire / Launch corrected…), and the header/inspector wear
 the derived evidence tier through EvidenceBadge.
+Queued set evidence adds a composer hint and promotes by exact-session readback; alt+,/. cycle the
+requested effort without a dialog; background outcomes persist in one toast stack until marked
+seen, while persistent polite/assertive regions announce focused set and seat transitions.
 
 ## Repo-Internal References
 
@@ -296,8 +339,18 @@ the derived evidence tier through EvidenceBadge.
 | The pure launch-evidence tier machine the header/inspector derive from (L3). | [data/launchEvidence.ts](agents-remember/dashboard/src/data/launchEvidence.ts) |
 | The five-glyph tier badge rendered in the provenance chip, inspector, and banner (L3). | [grammar/EvidenceBadge.tsx](agents-remember/dashboard/src/grammar/EvidenceBadge.tsx) |
 | The capability-envelope wire mirror (`CapabilityCatalogResult.to_json()`) (L3). | [types/harnessCapabilities.ts](agents-remember/dashboard/src/types/harnessCapabilities.ts) |
+| The exact-session capability/menu/effective-marker derivations (L4). | [data/sessionCapabilities.ts](agents-remember/dashboard/src/data/sessionCapabilities.ts) |
+| The five-value acceptance/readback table and serialized pair machine (L4). | [data/setAcceptance.ts](agents-remember/dashboard/src/data/setAcceptance.ts), [data/pairChange.ts](agents-remember/dashboard/src/data/pairChange.ts) |
+| The sole live set I/O driver plus shared chip/copy/announcement layers (L4). | [data/setClient.ts](agents-remember/dashboard/src/data/setClient.ts), [data/setChips.ts](agents-remember/dashboard/src/data/setChips.ts), [data/setControlsCopy.ts](agents-remember/dashboard/src/data/setControlsCopy.ts), [data/announcer.ts](agents-remember/dashboard/src/data/announcer.ts) |
 
 ## Update History
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 (live set controls; final reviewer PASS after three
+  fix rounds): filled the header control with exact-session model/effort sourcing, the exhaustive
+  SetResult/readback table and serialized pair flow; added shared worded chips/copy, per-seat
+  ledger/rail attention, persistent background toasts, queued composer hint, cycle-effort, and
+  polite/assertive live regions. The six remaining sev-4 observations are preserved on their
+  governing file cards. Verification metadata is pinned to the contract base until the
+  uncommitted code lands.
 - 2026-07-17T06:20+02:00 — 260715-FEUI-L3 (capability catalog client and launch flow; review
   FINAL PASS after two fix rounds): the route gains `LaunchFlow` (the palette-opened
   catalog-driven launch overlay) and `FailedLaunchBanner` (+ their jsdom suites); `SessionsView`

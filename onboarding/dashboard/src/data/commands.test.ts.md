@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/commands.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T08:33+02:00                           |
+| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
+| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-The command-registry unit suite (260715-FEUI-L1 S3/S5, 8 cases): registration order, when-gating,
-replace-by-id semantics, and the default command set later leaves extend.
+The command-registry unit suite (260715-FEUI-L1 S3/S5, extended by FEUI-L4): registration order,
+when-gating, replace-by-id semantics, and the default command routing contract, including the live
+cycle-effort directions.
 
 ## Code Commentary
 
@@ -32,6 +33,8 @@ A `ctx()` factory builds a `CommandContext` with `vi.fn()` actions. The describe
 - **registerDefaultCommands** — the v1 id census is present; commands route into the injected
   actions (`rail.toggle` → `toggleRail`, `focus.nextRegion` → `cycleRegion(1)`,
   `keyboard.reference` → `openPalette("keys")`, `session.next` → `switchSession(1)`);
+  FEUI-L4 additionally pins `effort.decrease` → `cycleEffort(-1)` and
+  `effort.increase` → `cycleEffort(1)` so both chords use the live no-dialog action;
   `palette.open` is gated on the palette being closed; `keyboard.reference` is the only default
   marked `keepsPaletteOpen`.
 
@@ -49,6 +52,9 @@ Pure logic suite — the rendered palette behavior (open/close/focus-return/page
 
 ## Update History
 
+- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R7: extended the default-routing case with both live
+  cycle-effort directions. Verification metadata is pinned to the contract base until the
+  uncommitted L4 code lands.
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S3/S5: registry order/gating/replace-by-id
   (incl. the stale-unregister guard) and default-set routing/gating/page-switch marker cases.
   Verification metadata pinned to the task base until closeout stamps the L1 code commit.
