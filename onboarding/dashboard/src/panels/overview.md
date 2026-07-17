@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T02:30+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00 |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -195,12 +195,21 @@ and the `Chats` `SessionList` switcher).
   `HeaderStrip.tsx` (the ruled stage layer order with the reserved L4 control + L6 WorkingLine
   slots; honest freshness + requested-tier provenance), `StateDot.tsx` (the ONE grammar renderer —
   2.4 s ease-in-out pulse ruling), and `SeatInspector.tsx` (the read-only provenance card until
-  L7). Remaining scaffolding: L4 controls, L5 composer, L6 PTY, L7 tabbed inspector/status line.
+  L7). **260715-FEUI-L6 fills the stage surface + lifecycle actions**: `PtySurface.tsx`
+  (keep-alive real xterm panes through the SHARED `panels/Terminal.tsx`, DOM renderer by
+  measurement, controlled vs legacy-raw archetypes, screen-reader opt-in, reserved-chord filter),
+  `WorkingLine.tsx` (the single turn-theater home in the stage's reserved slot),
+  `InteractionBar.tsx` (the ONE structured-interaction axis — answers ride the gate channel
+  only), `StopResidualNotes.tsx` (informational stop residuals), and `lifecycleCopy.ts`
+  (centralized lifecycle copy); the rail gains the honest End arm→confirm flow with verbatim
+  failure + retry, cleanup outcomes, and legacy-raw bell/hint markers. Remaining scaffolding:
+  L4 controls, L5 composer, L7 tabbed inspector/status line.
   `CommandPalette.tsx` (cmdk, non-portal, commands/keys pages rendered from the live registry +
   keymap data) and `useKeyboardZones.ts` (tinykeys at the window over the pure `data/keymap`
   contract) complete the keyboard/palette foundation; all decisions live React-free in
   `data/commands.ts` / `data/sessionLayout.ts` / `data/keymap/` / (L2) `data/railModel.ts` /
-  `data/stateGrammar.ts` / `data/sessionCockpitStore.ts`. See
+  `data/stateGrammar.ts` / `data/sessionCockpitStore.ts` / (L6) `data/interactionAnswer.ts` /
+  `data/sessionLifecycle.ts` / `data/ptyHarvest.ts`. See
   [session-cockpit/ overview](session-cockpit/overview.md).
 - `MemoryMirror.tsx` — the segmented coverage/drift bar per repo + ledger currency + stalest
   sidecars (slice-3b analytics); drift classes mapped by record (forward-compatible).
@@ -307,6 +316,11 @@ and the `Chats` `SessionList` switcher).
   covered by `Chats.test.tsx`; the rail's harness-choice start, chat/terminal split, role-independent
   terminate, L6/L9 context handoff and move behavior, and terminal scrollback/wheel behavior are covered
   by `RailChat.test.tsx`, `sessions.test.ts`, `terminal.test.ts`, and `Terminal.test.tsx`.
+  Since 260715-FEUI-L6 the shared `Terminal.tsx` is ALSO the cockpit's pane component (lazy-loaded
+  through `session-cockpit/PtySurface.tsx`): all new props are optional with byte-compatible
+  defaults — the Chats/RailChat call sites changed by exactly one prop, a real
+  `ariaLabel="terminal: <label>"`, and the component guarantees a named `role="group"` landmark
+  with a `terminal session <id>` fallback.
 - `EmptyStateBackdrop.tsx` — a **shared empty-state panel** (slice 07b polish): a faint, effects-gated
   boomerang-video atmosphere behind centered empty-state text, lifted from the engine-room G6 backdrop
   (`engine-room/engineRoomStyles` `backdrop`/`backdropVideo`). The message children always render; the
@@ -427,6 +441,18 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 route impact (PTY stage surface, structured
+  interactions, session lifecycle actions): the `session-cockpit/` child route gains
+  `PtySurface`/`InteractionBar`/`WorkingLine`/`StopResidualNotes`/`lifecycleCopy` (+ four jsdom
+  suites) — the stage body is filled with keep-alive real xterm panes (DOM renderer by
+  measurement) and the gate-only interaction bar; `Terminal.tsx` gains additive optional props
+  (renderer seam with lazy webgl escalation, screenReaderMode live options mutation, observe-only
+  harvesting hooks, keyEventFilter, onResizeCols, ariaLabel) with byte-compatible defaults for
+  the legacy call sites, plus a guaranteed named `role="group"` landmark (sessionId fallback);
+  `Chats.tsx`/`RailChat.tsx` pass real `ariaLabel`s at their Terminal call sites (one prop per
+  call site — review F6). No panel was removed; per-file detail lives in the sidecars and the
+  `session-cockpit/` overview. Verification metadata pinned to the leaf base until closeout
+  stamps the L6 code commit.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 route impact (session data layer, rail, and stage
   container): the `session-cockpit/` child route is FILLED — `SessionRail`/`SessionStage`/
   `HeaderStrip`/`StateDot`/`SeatInspector` (+ two jsdom suites) land and `SessionsView` becomes

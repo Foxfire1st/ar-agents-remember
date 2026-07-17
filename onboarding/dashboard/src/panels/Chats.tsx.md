@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00 |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -135,7 +135,12 @@ terminal; only the gutter's hover/focus colour transitions — width itself neve
 Running
 and landed sessions mount `<Terminal>` the first time they become active in the current page;
 visited terminals stay mounted in `terminalLayer` divs while inactive (`display:none` +
-`aria-hidden`) so their xterm buffers survive tab switches. Restored rows that have not been selected
+`aria-hidden`) so their xterm buffers survive tab switches. Since 260715-FEUI-L6 (review F6) the
+mount passes ``ariaLabel={`terminal: ${session.label}`}`` so the terminal host's `role="group"`
+landmark carries a real name in this legacy view (`Terminal.tsx` additionally guarantees a
+`terminal session <sessionId>` fallback, so the landmark can never be unnamed); this is the ONLY
+L6 change to this file — all other Terminal props and the mount/keep-alive behavior are
+byte-unchanged. Restored rows that have not been selected
 yet stay unmounted, avoiding hidden 0x0 xterm hydration for TUI harnesses after refresh. Exited or
 terminated rows render a `statusPanel` instead of opening a WebSocket. Landed rows pass
 `readOnly` into `<Terminal>`, so the archive can be inspected without sending keystrokes or wheel
@@ -193,6 +198,11 @@ terminal layers or animate the layout behind the pointer.
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (review finding F6, one-prop call-site change): the
+  `<Terminal>` mount now passes ``ariaLabel={`terminal: ${session.label}`}`` so the terminal's
+  `role="group"` landmark carries a real name in the legacy view (Terminal.tsx also guarantees a
+  sessionId fallback). No other Chats behavior changed. Verification metadata pinned to the leaf
+  base until closeout stamps the L6 code commit.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R1 poll-driver hoist + review finding 6): the catalog
   poll no longer lives here — the interval effect was replaced 1:1 by the shared refcounted
   `startCatalogPollDriver()` from `data/catalogPoll.ts`, where

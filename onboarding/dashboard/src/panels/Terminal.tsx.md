@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Terminal.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:35+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -19,11 +19,17 @@
 The imperative **xterm.js terminal** (slice 6e-1): a render-not-scrape view of the 6d PTY stream.
 xterm is a DOM/canvas emulator that probes the canvas on import and cannot mount under jsdom, so —
 like the topology constellation canvas — it stays an imperative engine wrapped in a thin React
-component via refs, and is **code-split** (lazy-loaded by `Chats.tsx`) out of the initial bundle. The
+component via refs, and is **code-split** (lazy-loaded by `Chats.tsx` AND by the cockpit's
+`PtySurface`, the same `lazy(() => import("../Terminal"))` idiom) out of the initial bundle. The
 reopened L6 follow-up makes the terminal scrollback explicit and captures wheel input with a clear
 precedence: an application that tracks the mouse owns the wheel (xterm reports it as mouse events —
 the tmux-hosted-session path), normal-buffer scrollback scrolls the xterm viewport, and only an
 alternate-buffer pane without mouse tracking receives synthesized PageUp/PageDown navigation.
+**260715-FEUI-L6** makes this the cockpit's pane engine THROUGH `PtySurface` (which owns
+archetypes, keep-alive layers, and chrome) while keeping every legacy call site byte-compatible:
+all new props are optional with prior-behavior defaults (`renderer="dom"`,
+`screenReaderMode=false`, hooks/filters undefined), and the refit/ResizeObserver/fonts.ready
+keep-alive/fit block is unchanged except for additively reporting the pane's REAL column count.
 
 ## Code Commentary
 
@@ -66,6 +72,41 @@ seat's terminal renders output and remains scrollable/inspectable but cannot for
 wheel-driven input to the PTY. `readOnly` is listed in the effect's dependency array so a prop flip
 tears down and reconnects the data subscription correctly.
 
+### 260715-FEUI-L6 Cockpit Pane Engine (Additive Props)
+
+- **PtySurface relationship:** cockpit panes render Terminal THROUGH
+  `session-cockpit/PtySurface.tsx` — PtySurface owns the two-archetype switch, keep-alive layers,
+  and pane chrome; this component stays the one xterm engine. Chats/RailChat call sites are
+  unchanged in behavior (they gained only `ariaLabel`).
+- **Accessible-name guarantee (F6)** (L302-L318): the host div is now `role="group"` with
+  `aria-label={ariaLabel ?? `terminal session ${sessionId}`}` — the landmark can NEVER be unnamed
+  regardless of caller. The cockpit passes the full `paneAccessibleName` (label + harness +
+  state); legacy views pass `terminal: <label>`. The host also carries `tabIndex={-1}` with focus
+  delegation into xterm's own textarea (`onFocus` → `term.focus()` when the host itself was the
+  target) — the focus-terminal command / region routing lands here.
+- **`screenReaderMode` (R2), applied LIVE** (L149-L155, L168): a dedicated effect mutates
+  `term.options.screenReaderMode` on the existing instance — never a teardown/reconnect; the
+  creation option seeds from a ref so the connect effect needn't depend on it.
+- **`renderer` (R1 / master OQ-B)** (L190-L212): `"dom"` (default — the measured baseline) or
+  `"webgl"`, which lazily imports `@xterm/addon-webgl` (its own code-split chunk) and demotes
+  itself back to DOM on load failure, constructor throw, or `onContextLoss` — never a dead pane.
+  `renderer` joins the effect deps; it is constant at every current call site, so no new teardown
+  path exists in practice.
+- **Stream-observation hooks (R7)** (L85-L96, L179-L189): `TerminalStreamHooks`
+  (`onBell`/`onTitle`/`onOsc133`/`onOsc9`) registered unconditionally-cheap via `term.onBell`,
+  `term.onTitleChange`, and `parser.registerOscHandler(133)`/`(9)` — the OSC handlers `return
+  false` (observe only, never swallowing the sequence from other handlers). PtySurface wires them
+  ONLY for legacy-raw panes; held in refs so changing identities never re-run the effect.
+- **`keyEventFilter`** (L173-L177): when provided, `term.attachCustomKeyEventHandler` gives the
+  caller a veto — PtySurface's `reservedChordFilter` returns false only for the BOUND reserved
+  set, so a reserved chord is never consumed by (or leaked into) the pane even when the
+  window-capture tinykeys layer is inactive.
+- **Freshness/floor reporting**: `onOutput` fires on every PTY write chunk (the caller throttles
+  → `lastOutputAt`); `onSocketState` relays the socket's own `connected`/`dropped` (from
+  `data/terminal.ts`'s additive option; a deliberate `dispose()` reports nothing);
+  `onResizeCols(term.cols)` fires after EVERY successful `refit()` (L271) — the R8 ~80-col floor
+  chip's real-pane truth.
+
 ### Conventions
 
 `socketFactory` comes from `TerminalSocketContext` (dev bench supplies a mock; production = `null`
@@ -76,22 +117,40 @@ height and viewport scrollability.
 ### Invariants And Boundaries
 
 xterm never renders in jsdom — there is no render test here; the protocol logic is tested in
-`data/terminal.test.ts`, while `Terminal.test.tsx` mocks xterm to pin wrapper options and host wheel
-behavior that affect scrollback. The component is the *only* importer of `@xterm/xterm` (so the lazy
-chunk isolates it). Output is rendered, never scraped; the structured "who's doing what" view stays the
-observer's job.
+`data/terminal.test.ts`, while `Terminal.test.tsx` mocks xterm to pin wrapper options, host wheel
+behavior, and the L6 surface (hooks, filter, live screenReaderMode, named landmark). The component
+is the *only* product importer of `@xterm/xterm` (so the lazy chunk isolates it; the dev-only
+bench probe imports it inside `/dev/*`, which never ships). Output is rendered, never scraped; the
+structured "who's doing what" view stays the observer's job. The refit/keep-alive rules are a
+PRESERVED contract: refit skips hidden hosts, runs mount + rAF + `fonts.ready` + ResizeObserver,
+and keeps the PTY winsize in lockstep — L6 changed none of it (only the additive `onResizeCols`
+call after `fit.fit()`).
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The WebSocket client this adapts a `Terminal` onto. | — | [data/terminal.ts](../data/terminal.ts) |
-| The view that lazy-loads + mounts this per session. | — | [Chats.tsx](Chats.tsx) |
-| The wrapper enables xterm viewport scrolling, creates the terminal with explicit scrollback, defers wheel to xterm when mouse tracking is active, scrolls the viewport for normal scrollback, and maps mouse-less alternate-buffer wheel input to PageUp/PageDown. | L13-L26; L44-L89; L110-L155 | [Terminal.tsx](Terminal.tsx) |
-| The focused component test mocks xterm (including `modes.mouseTrackingMode`) and asserts scrollback, normal-buffer wheel scrolling, mouse-tracking non-interception, alternate-buffer PageUp routing, and partial-pixel swallowing. | L22-L64; L80-L200 | [Terminal.test.tsx](Terminal.test.tsx) |
+| The WebSocket client this adapts a `Terminal` onto (incl. the L6 `onSocketState` option). | — | [data/terminal.ts](../data/terminal.ts) |
+| The legacy view that lazy-loads + mounts this per session (now passing `ariaLabel`). | L522-L528 | [Chats.tsx](Chats.tsx) |
+| The cockpit surface that mounts this per seat: archetypes, keep-alive layers, hooks/filter wiring, accessible names. | L40-L47; L102-L108; L110-L244 | [session-cockpit/PtySurface.tsx](session-cockpit/PtySurface.tsx) |
+| The wrapper enables xterm viewport scrolling, creates the terminal with explicit scrollback, defers wheel to xterm when mouse tracking is active, scrolls the viewport for normal scrollback, and maps mouse-less alternate-buffer wheel input to PageUp/PageDown. | L13-L26; L44-L83; L229-L258 | [Terminal.tsx](Terminal.tsx) |
+| The L6 additive surface: props, live screenReaderMode, hooks, filter, webgl escalation, named group landmark. | L85-L129; L149-L155; L173-L212; L302-L318 | [Terminal.tsx](Terminal.tsx) |
+| The focused component test mocks xterm (extended for options/parser/onBell/onTitleChange/attachCustomKeyEventHandler) and asserts scrollback, wheel precedence, hooks, and the always-named landmark. | L22-L70; L80-L240 | [Terminal.test.tsx](Terminal.test.tsx) |
+| The renderer measurement behind the DOM default (master OQ-B). | L108-L189 | [../dev/PtyRenderBench.tsx](../dev/PtyRenderBench.tsx) |
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (PTY stage surface): additive cockpit-pane surface —
+  `renderer` prop (DOM default by OQ-B measurement; lazy webgl escalation demoting to DOM on
+  failure/context loss), opt-in `screenReaderMode` applied LIVE via options mutation (never a
+  reconnect), the always-named `role="group"` host (`ariaLabel` with the
+  `terminal session <sessionId>` fallback — review finding F6) + focus delegation into xterm,
+  `keyEventFilter` (reserved-chord veto seam), observe-only `TerminalStreamHooks`
+  (onBell/onTitleChange/OSC 133/OSC 9, `return false`), and freshness/floor reporting
+  (`onOutput`, `onSocketState`, `onResizeCols` after every fit). The refit/keep-alive block is
+  unchanged; all new props default to prior behavior, Chats/RailChat call sites byte-compatible
+  (plus `ariaLabel`). Cockpit panes mount this through `PtySurface`. Verification metadata pinned
+  to the leaf base until closeout stamps the L6 code commit.
 - 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added the `readOnly` prop so a landed/
   archived seat's terminal stays fully inspectable (output rendered, scrollback intact) but cannot
   send input — `onData` is not subscribed and the wheel-driven PageUp/PageDown send is gated when

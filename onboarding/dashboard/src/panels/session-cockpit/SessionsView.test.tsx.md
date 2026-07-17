@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -17,12 +17,16 @@
 ## Purpose
 
 The sessions view end-to-end jsdom suite (260715-FEUI-L1 S2–S5, 18 cases after review round 2;
-+3 integration cases from 260715-FEUI-L2): scaffold structure + the keyboard/palette foundation
-wired end-to-end — zones resolved from real DOM markers, tinykeys at the window, cmdk palette
-pages, and the F6 focus cycle — now running against the REAL rail/stage (all 21 L1 cases pass
-unchanged against the L2-filled panels). The L2 cases: R9 view-entry focus lands on the
-awaiting-input seat first, F17 focus handoff when the focused seat retires/lands (reason-bearing
-stage note + smart refocus), and alt+↑/↓ rail-order session cycling.
++3 integration cases from 260715-FEUI-L2; +7 from 260715-FEUI-L6 incl. the fix round): scaffold
+structure + the keyboard/palette foundation wired end-to-end — zones resolved from real DOM
+markers, tinykeys at the window, cmdk palette pages, and the F6 focus cycle — now running against
+the REAL rail/stage (all 21 L1 cases pass unchanged against the L2-filled panels; the pty-zone
+cases still exercise the placeholder, which hydrating no sessions keeps on screen). The L2 cases:
+R9 view-entry focus lands on the awaiting-input seat first, F17 focus handoff when the focused
+seat retires/lands (reason-bearing stage note + smart refocus), and alt+↑/↓ rail-order session
+cycling. The L6 block covers the stage fill: the real `PtySurface` (xterm mocked out of jsdom via
+`vi.mock("../Terminal")`), the WorkingLine slot, the InteractionBar axis, stop residuals (incl.
+the unfocused-seat sweep), and the grammar-gated Stop-turn palette command.
 
 ## Code Commentary
 
@@ -51,6 +55,17 @@ stage note + smart refocus), and alt+↑/↓ rail-order session cycling.
   **preventDefault observation** (`fireEvent` return value), not palette state alone.
 - **Focus model (S4)** — the full F6 cycle across rendered regions (stage lands on the
   composer), Shift+F6 backward, and composer-Esc → stage header.
+- **L6 stage surface + lifecycle honesty (L308-L422)** — seven cases against the real store
+  patch path: (1) a focused seat mounts the REAL `PtySurface` and the placeholder covers only
+  the empty stage (the surface carries the `data-kbzone="pty"` contract); (2) the WorkingLine
+  renders in the reserved stage slot ONLY for a working focused seat; (3) the InteractionBar
+  renders on the interaction axis ABOVE the composer, never replacing it (DOM-position
+  assertion); (4) a retired seat's stop residual renders as an INFORMATIONAL `role="status"`
+  line — asserts the word "fail" never appears; (5) the UA-7-gated Stop-turn palette command is
+  offered with the gap named in its title; (6) Stop-turn gates on the WorkingLine's OWN grammar
+  state (review F3): patching a pending interaction onto a working seat unmounts the line AND
+  removes the command; (7) an UNFOCUSED seat's retire residual is captured by the sweep — the
+  note renders with no handoff fired and no failure wording (review F1, sev-3).
 
 ### Conventions
 
@@ -58,7 +73,9 @@ stage note + smart refocus), and alt+↑/↓ rail-order session cycling.
 carry explicit `code` (tinykeys v4 drops synthetic events without it). `afterEach` clears
 localStorage (react-resizable-panels persists under autoSaveId). Relies on the vitest-only
 react-resizable-panels browser-build alias (`vitest.config.ts`) — the edge-light node build skips
-layout effects and would break the imperative panel API.
+layout effects and would break the imperative panel API. Since L6, `vi.mock("../Terminal")` (L15)
+keeps xterm entirely out of jsdom — the mock renders an inert marker div, so `PtySurface` mounts
+for real while the canvas emulator never loads.
 
 ### Invariants And Boundaries
 
@@ -69,13 +86,24 @@ layout change WITHOUT a root resize. Test-only.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The component under test. | L190-L506 | [SessionsView.tsx](SessionsView.tsx) |
+| The component under test. | L192-L660 | [SessionsView.tsx](SessionsView.tsx) |
+| The L6 block: surface/WorkingLine/InteractionBar/residual/stop-gate cases (+ the Terminal jsdom mock). | L15-L19; L308-L422 | [SessionsView.test.tsx](SessionsView.test.tsx) |
+| The notice store the residual cases reset and assert against. | L47-L146 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
 | The keys-page data the drift-proof assertions read. | L62-L150 | [../../data/keymap/reserved.ts](../../data/keymap/reserved.ts) |
 | The shared jsdom stubs (incl. the cmdk `scrollIntoView` stub) this suite relies on. | — | [../../test/setup.ts](../../test/setup.ts) |
 | The vitest alias to the browser development build of react-resizable-panels. | — | [vitest.config.ts](../../../vitest.config.ts) |
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (incl. fix round): +7 cases in the L6 block — real
+  PtySurface for the focused seat vs empty-stage placeholder (zone contract carried by the real
+  surface), WorkingLine only-while-working in the reserved slot, InteractionBar above the
+  never-replaced composer, informational stop residual ("fail" asserted absent), the UA-7-gated
+  Stop-turn command naming its gap, Stop-turn disappearing with the WorkingLine's own grammar
+  state (F3), and the unfocused-seat retire-residual sweep capture (F1). xterm stays out of jsdom
+  via `vi.mock("../Terminal")`; the placeholder-copy update kept every L1 zone case passing (the
+  pty-zone cases hydrate no sessions). Verification metadata pinned to the leaf base until
+  closeout stamps the L6 code commit.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2: +3 integration cases against the real rail/stage —
   "view entry focuses the awaiting-input seat first" (R9), the F17 retire/land focus handoff with
   the reason-bearing `stage-handoff-note`, and alt+↑/↓ cycling over the rail order; all 21

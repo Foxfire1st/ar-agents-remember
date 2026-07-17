@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -36,8 +36,16 @@ evidence tiers start at `pending` until control state proves better (L4 wires th
   `pending`); composer draft shell (`draft` + `draftRevision`; submit lifecycle lands in L5);
   `surfaceTab: 'terminal'` (transcript joins when UA-1 lands); client `turnClock` (~-labeled,
   observed transitions only); `freshness {ptyWs: none|connected|reconnecting|dropped, lastOutputAt}`
-  (R15 — `none` until L6 attaches a pane); the client `queue` of `QueuedSubmit`s (a LIST, not a
-  chip — F13; `supersedeLastQueued` = the alt+↑ pop-back, requestId never resent).
+  (R15 — fed by the pane's real WS state since L6, via `terminal.ts`'s `onSocketState`); the
+  client `queue` of `QueuedSubmit`s (a LIST, not a chip — F13; `supersedeLastQueued` = the alt+↑
+  pop-back, requestId never resent); and (260715-FEUI-L6 R4, design §4.3's F7 field)
+  **`interactionAnswer?: InteractionAnswerState`** (L69-L79) — the InteractionBar's answer
+  round-trip: `{interactionId, inflight, error?, answeredAt?}` — in-flight → verbatim POST error
+  (cleared by retry) → `answeredAt` on 202 ("answered — waiting for the agent" until the row
+  clears). Store-backed rather than component state so it SURVIVES VIEW SWITCHES (worker decision
+  3); the bar clears it whenever the row's interactionId changes under it (including to
+  undefined — fix round finding 5). Appended via `setInteractionAnswer` (L148, L291-L294);
+  `emptyPerSession` untouched (absent = nothing in flight).
 - **`appendSetLedger`** (L196-L204) — deliberately NEVER touches `launchEvidence`: a set outcome —
   even `immediate` — is its own ledger fact; the effective marker moves only via
   `setLaunchEvidence` with proof (the "QUEUED NEVER MOVES THE EFFECTIVE MARKER" test).
@@ -85,9 +93,17 @@ first touch.
 | The view that mirrors layout/palette in and consumes focus + perSession. | L206-L344 | [../panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
 | The freshness/provenance consumers (HeaderStrip diagnostics, inspector tiers). | L66-L143 | [../panels/session-cockpit/HeaderStrip.tsx](../panels/session-cockpit/HeaderStrip.tsx) |
 | The unit suite incl. the QUEUED-never-moves-the-marker and per-kind clobber cases. | L25-L150 | [sessionCockpitStore.test.ts](sessionCockpitStore.test.ts) |
+| The answer round-trip driver (writes in-flight/error/answered; clears on interaction change). | L89-L180; L271 | [../panels/session-cockpit/InteractionBar.tsx](../panels/session-cockpit/InteractionBar.tsx) |
+| The answer path whose outcomes the round-trip state records. | L98-L130 | [interactionAnswer.ts](interactionAnswer.ts) |
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R4, F7): appended the optional per-seat
+  `interactionAnswer` slice (`InteractionAnswerState` + `setInteractionAnswer`) — the
+  InteractionBar's answer round-trip (in-flight → verbatim error → answered-waiting), store-backed
+  so it survives view switches and cleared when the interactionId changes under it. Append-only;
+  `emptyPerSession` untouched. Verification metadata pinned to the leaf base until closeout
+  stamps the L6 code commit.
 - 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S3 (R3/R15/F13/F22): the cockpit client
   store — per-kind pending sets, acknowledged set ledger that never moves launch evidence,
   five-tier evidence starting pending, composer shell, turn clock, per-pane freshness, client

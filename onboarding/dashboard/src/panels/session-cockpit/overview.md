@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -32,10 +32,17 @@ attention, gate/brief markers, poll-health banner, and the bus footer; the stage
 `SessionStage` container + `HeaderStrip` (identity → EMPTY ModelEffortControl slot → grammar
 state → leaf/seat → diagnostics; reserved WorkingLine slot); the inspector hosts the read-only
 `SeatInspector` provenance card; and `StateDot` renders the ONE seat-state grammar
-(`data/stateGrammar.ts` — 2.4 s ease-in-out pulse, never steps()). Remaining scaffolding: L4 the
-controls, L5 the real composer (CM6) + queue, L6 the PtySurface + WorkingLine, L7 the tabbed
+(`data/stateGrammar.ts` — 2.4 s ease-in-out pulse, never steps()). **260715-FEUI-L6 fills the
+stage surface and the lifecycle actions**: `PtySurface` renders keep-alive real xterm panes
+(DOM renderer BY MEASUREMENT, two server-truth archetypes — controlled line-log vs legacy raw),
+`WorkingLine` is the single home of turn theater in the stage's reserved slot, `InteractionBar`
+is the ONE structured-interaction axis (gate-channel answers only — never a terminal write),
+`StopResidualNotes` renders informational stop residuals, and `lifecycleCopy.ts` centralizes
+every lifecycle/interaction copy string (honest terminate confirms naming session · leaf · state).
+Remaining scaffolding: L4 the controls, L5 the real composer (CM6) + queue, L7 the tabbed
 inspector/status line. All pure derivations live in `data/` (`railModel`, `stateGrammar`,
-`catalogPoll`, `seatEvents`, `sessionCockpitStore`); this route holds DOM + wiring only.
+`catalogPoll`, `seatEvents`, `sessionCockpitStore`, and — L6 — `interactionAnswer`,
+`sessionLifecycle`, `ptyHarvest`); this route holds DOM + wiring only.
 
 ## Route Model
 
@@ -51,25 +58,72 @@ inspector/status line. All pure derivations live in `data/` (`railModel`, `state
   the shared poll-driver/mirror subscriptions, the ONCE-derived rail model + attention rollup
   (shared between rail and palette), R9 smart-default focus + F17 reason-bearing focus handoff,
   the one-way layout/palette store mirrors, and the dynamic palette commands (tree toggle,
-  attention.jump, bulk-end mirrors with counts+names in the title, question triage).
+  attention.jump, bulk-end mirrors with counts+names in the title, question triage). **L6 fills
+  the stage body**: `StopResidualNotes` + `PtySurface` (or the explained placeholder for the
+  EMPTY stage only) + `InteractionBar` directly above the still-L5-placeholder composer; the
+  floor chip now prefers the pane's REAL column count (`pane N cols (< 80)`) over the pixel
+  estimate; the `workingLine` prop fills the stage slot; `turn.stop` joins the palette gated on
+  the WorkingLine's OWN grammar predicate (`seatVisualState().key === "working"`) with the
+  honest "unavailable: interrupt requires UA-7" title; triage now focuses the bar in place; and
+  `startRetireResidualSweep()` is mounted beside the cockpit mirror (residual capture is
+  data-layer, focus-independent — fix round F1).
 - `SessionRail.tsx` (L2) — the rail renderer over `data/railModel`: ruled row anatomy (dot ·
   role(3) · title · attention-slot · status · End; only the status chip elides, truth in the row
   tooltip), flat spine, hairline-indented leaf clusters (active seat on top), per-master
   collapsed completed folders, master+sprint bulk end with honest NAMING previews, the
   zero-state-suppressed attention strip with live-derived highlight expiry, gate badges +
   two-state brief markers in the reserved attention-marker slot, the poll-stale banner, the
-  anchored bus footer, and the spawn-edge provenance tree toggle.
+  anchored bus footer, and the spawn-edge provenance tree toggle. **L6**: the End action is an
+  arm→confirm→execute flow whose confirm NAMES session · leaf · state (arming never kills); a
+  FAILED terminate POST renders the server's words verbatim inline (`role="alert"`) with
+  retry + dismiss — never a silent disarm; the landed-cleanup route's own outcome (closed +
+  skipped with reasons) renders after bulk end; legacy-raw bell → attention marker with a text
+  equivalent (cleared by focusing the seat); OSC title/turn HINTS join the row tooltip clearly
+  labeled — never the grammar dot.
+- `PtySurface.tsx` (L6) — the keep-alive PTY stage surface: mirrors Chats' mountedIds /
+  display:none / aria-hidden layer idiom (prune on tombstone only — scrollback survives focus
+  switches), lazy-loads the SAME `panels/Terminal.tsx`, renders the two archetypes off server
+  truth (`isControlledSession`; harvesting hooks wired ONLY for legacy raw), holds the measured
+  `PTY_RENDERER = "dom"` decision record (webgl = lazy escalation path), the reserved EMPTY
+  `scrollback — paused` badge slot, the reserved-chord filter (filters ONLY bound reserved
+  chords; Ctrl+Shift+C passes to the harness), the persisted per-pane screen-reader-mode toggle
+  (applied live, cost named), bell acknowledge-on-focus, and the real-cols wiring for the floor
+  chip.
+- `InteractionBar.tsx` (L6) — the ONE interaction axis, rendered above the composer (never
+  replacing it): kind-aware (choices→buttons, no-choices→composer answer-mode, no
+  interactionId→honest "unrepresentable" pointing at the inspector's verbatim payload); the
+  SOLE answer path is the landed gate channel (`data/interactionAnswer.ts` →
+  `POST /api/actions/approve`, answer as decision note — ZERO terminal writes); store-backed
+  round trip (`answering…` → verbatim error + retry with the SAME answer → "answered — waiting"
+  poll-bounded copy); always-present honesty hint; never steals focus, returns focus to the
+  invoker; `role="alert"` announce.
+- `WorkingLine.tsx` (L6) — the SINGLE home of turn theater, mounted into the stage's reserved
+  slot: renders ONLY while `seatVisualState(session).key === "working"`; real activity form when
+  known else plain "working" (typed seam — never whimsy); `~`-labeled tabular-nums elapsed from
+  L2's client turnClock (omitted when unobserved); the stop control WELDED at the fixed end
+  position, disabled with the stated UA-7 reason; the slow-pulse `◐` glyph pinned to the ruled
+  `pulseSlow 2.4s ease-in-out infinite` literal. No turn theater renders per rail row.
+- `StopResidualNotes.tsx` (L6) — dismissable INFORMATIONAL `role="status"` residual lines on the
+  stage (control-stop details from terminate responses + retire-time stop errors, fed by
+  `data/sessionLifecycle.ts`'s notice store); never auto-dropped, never styled as failure.
+- `lifecycleCopy.ts` (L6) — the ONE lifecycle/interaction copy module: terminate confirm
+  (session · leaf · state), cleanup-outcome lines, "(informational)" residual copy, answered /
+  honesty-hint / stop-disabled-reason strings, `paneAccessibleName` (label + harness + state),
+  `isControlledSession` (the archetype switch off the server's `controlState`), and the
+  screen-reader-mode cost note.
 - `SessionStage.tsx` + `HeaderStrip.tsx` (L2) — the stage container's RULED layer order
-  (HeaderStrip → reserved `data-slot="working-line"` → surface → composer; explained empty
-  identity, F17 handoff note) and the §1.2 header anatomy (identity → EMPTY
-  `data-slot="model-effort-control"` for L4 → grammar state → leaf/seat → diagnostics-first
-  elision; honest `ws —`/quiet freshness + requested-tier provenance badges).
+  (HeaderStrip → `data-slot="working-line"` — FILLED by L6 via the additive `workingLine` prop →
+  surface → composer; explained empty identity, F17 handoff note) and the §1.2 header anatomy
+  (identity → EMPTY `data-slot="model-effort-control"` for L4 → grammar state → leaf/seat →
+  diagnostics-first elision; honest `ws —`/quiet freshness + requested-tier provenance badges).
 - `StateDot.tsx` (L2) — the ONLY renderer of `data/stateGrammar` visuals (rail + header +
   inspector; StatusLine joins in L7); Panda-literal 2.4 s ease-in-out pulse pinned to
   `PULSE_ANIMATION`, steady under reduced motion, frozen by effects-off.
-- `SeatInspector.tsx` (L2) — the read-only provenance card in the inspector pane (spawn
-  role/level/requested pair at its honest tier, spawned-by, landed/retired reasons, liveness
-  evidence); replaced by the L7 tabbed inspector.
+- `SeatInspector.tsx` (L2, extended by L6) — the read-only provenance card in the inspector pane
+  (spawn role/level/requested pair at its honest tier, spawned-by, landed/retired reasons,
+  liveness evidence; L6 adds the pane archetype line, retire stop-error residuals for retired
+  rows, and the VERBATIM raw interaction payload the unrepresentable-interaction notice points
+  at); replaced by the L7 tabbed inspector.
 - `CommandPalette.tsx` — the cmdk palette, deliberately **not a portal** (the overlay stays inside
   the scope root; focus return stays local). Two pages: `commands` renders the live registry (the
   one options source); `keys` renders the SAME chord tables tinykeys binds (`data/keymap`), so the
@@ -80,12 +134,24 @@ inspector/status line. All pure derivations live in `data/` (`railModel`, `state
 - `SessionsView.test.tsx` — end-to-end jsdom coverage: zones resolved from real DOM markers,
   tinykeys at the window, palette pages, F6 cycle, PTY non-interception via preventDefault
   observation, floor-chip re-measure paths, and rail calibration; +3 L2 integration cases (R9
-  entry focus, F17 handoff, alt+↑/↓ cycling) — all 21 L1 cases pass against the real rail/stage.
+  entry focus, F17 handoff, alt+↑/↓ cycling) — all 21 L1 cases pass against the real rail/stage;
+  + the L6 block (bar above the composer never replacing it, `turn.stop` gating on the
+  WorkingLine's own grammar incl. the disappearance case, the UNFOCUSED retire residual, the
+  real surface carrying the `data-kbzone="pty"` contract). xterm stays OUT of jsdom
+  (`vi.mock("../Terminal")` here and in `PtySurface.test.tsx`).
 - `SessionRail.test.tsx` + `HeaderStrip.test.tsx` (L2) — the jsdom rail-state matrix (every
   fixture row's dot ≡ grammar), the anatomy-order and model-leakage DOM negatives, hierarchy /
   attention / joins / completed-folder / bulk-end / footer-honesty coverage, the cross-surface
   dot consistency case, and the HeaderStrip/SessionStage anatomy + honesty cases — over the
-  shared `test/fixtures/catalogRows.ts` FLEET.
+  shared `test/fixtures/catalogRows.ts` FLEET; + the L6 rail block (arm/confirm never kills,
+  verbatim terminate failure + retry, cleanup outcome, bell marker/tooltip hints, dot purity).
+- `PtySurface.test.tsx` + `InteractionBar.test.tsx` + `WorkingLine.test.tsx` +
+  `SeatInspector.test.tsx` (L6) — the jsdom suites over the L6_* fixtures: archetype hook
+  presence, keep-alive layers, badge slot, chord filter, accessible names; the 13 InteractionBar
+  cases (exact URL+body, verbatim failure + same-answer retry, in-flight disable, no blind POST,
+  focus both ways, stale-answered clear); the WorkingLine state matrix (working-only render,
+  UA-7-disabled stop, no whimsy, elapsed omission, pulse literal pin); the inspector
+  residual/provenance/raw-payload cases (residual copy never says "fail").
 
 ## Invariants And Boundaries
 
@@ -114,19 +180,38 @@ inspector/status line. All pure derivations live in `data/` (`railModel`, `state
   words `stale`/`exited`/`retired`/`starting` beyond the closed six-word §1.6b list — honest
   mirroring kept pending the developer's call; the one-switch remap point is
   `data/stateGrammar.ts`.
+- **L6 honesty invariants**: ONE answer path — every structured-interaction answer rides the
+  landed gate channel (`POST /api/actions/approve`, answer as decision note); NOTHING in the
+  answer path writes to a terminal. Two archetypes derive from server truth
+  (`controlState !== undefined && !== "unsupported"`), never a heuristic; harvesting
+  (`data/ptyHarvest.ts` — bell, OSC 0/2 title, OSC 133/9;4 turn hints) is client-side,
+  observe-only, and wired ONLY for legacy-raw panes. Stop residuals are INFORMATIONAL
+  (`role="status"`, "(informational)", the word "fail" never appears) and are never silently
+  discarded — capture is data-layer and focus-independent. Retire is NOT an operator action from
+  the cockpit (the route requires an authorized actor SEAT the dashboard doesn't have) — the
+  cockpit terminates with the honest confirm and RENDERS retirement. The renderer decision is
+  BY MEASUREMENT: `PTY_RENDERER = "dom"` holds a locked 60 Hz budget at 12 concurrent line-log
+  panes (headless webgl rows were SwiftShader software GL — caveat recorded in the code); webgl
+  stays a lazy escalation path with DOM fallback. Screen-reader mode is a prominent per-pane
+  opt-in with its cost named, applied live without teardown; every pane carries an accessible
+  name (label + harness + state).
 
 ## Hot Path Summary
 
 The Sessions cockpit view: a keep-alive full-bleed rail/stage/inspector panel group under the
 `[data-view="sessions"]` WebTUI scope root — the rail renders the ruled role hierarchy (flat
-spine, active-first leaf clusters, completed folders + naming bulk end) with fleet attention and
-one shared state grammar (2.4 s ease-in-out dot pulse, blocked-on-human steady), the stage renders
-the HeaderStrip + reserved L4/L6 slots for the smart-default-focused seat with reason-bearing
-focus handoff, the inspector a read-only provenance card; narrow widths auto-collapse on threshold
-crossings (reopenable), an ~80-col floor chip re-measures on every layout change, ctrl+k/ctrl+;
-open the cmdk palette (now incl. attention jump, bulk-end mirrors, question triage), alt+↑/↓
-cycles the rail order, F6 cycles regions, and the PTY zone passes every key through except exactly
-the bound reserved set.
+spine, active-first leaf clusters, completed folders + naming bulk end) with fleet attention, one
+shared state grammar (2.4 s ease-in-out dot pulse, blocked-on-human steady), and an honest
+arm→confirm End flow (verbatim failure + retry); the stage renders the HeaderStrip, the
+WorkingLine turn theater (working-only, welded UA-7-gated stop), keep-alive real xterm panes
+through PtySurface (DOM renderer by measurement, controlled vs legacy-raw archetypes, per-pane
+screen-reader opt-in, real-cols floor chip), informational stop-residual notes, and the
+InteractionBar above the composer whose ONLY answer path is the gate channel; the inspector a
+read-only provenance card (+ archetype, retire residuals, verbatim raw payloads); narrow widths
+auto-collapse on threshold crossings (reopenable), ctrl+k/ctrl+; open the cmdk palette (attention
+jump, bulk-end mirrors, question triage focusing the bar, grammar-gated turn.stop), alt+↑/↓
+cycles the rail order, F6 cycles regions, and the PTY zone passes every key through except
+exactly the bound reserved set (clipboard chords stay reserved-unbound).
 
 ## Repo-Internal References
 
@@ -142,9 +227,28 @@ the bound reserved set.
 | The cockpit client store (focus, evidence tiers, freshness, poll health, toggle). | [data/sessionCockpitStore.ts](agents-remember/dashboard/src/data/sessionCockpitStore.ts) |
 | The shared poll driver + seat-event reconciler feeding this view's rows. | [data/catalogPoll.ts](agents-remember/dashboard/src/data/catalogPoll.ts) |
 | The full catalog wire mirror the rows are typed by. | [types/terminalCatalog.ts](agents-remember/dashboard/src/types/terminalCatalog.ts) |
+| The gate-channel answer path (find gate, kind-awareness, NOT-YET vs CANNOT copy). | [data/interactionAnswer.ts](agents-remember/dashboard/src/data/interactionAnswer.ts) |
+| Terminate/landed-cleanup detailed helpers, the residual notice store, the retire sweep. | [data/sessionLifecycle.ts](agents-remember/dashboard/src/data/sessionLifecycle.ts) |
+| The client-side legacy-raw harvesting store + pure OSC parsers. | [data/ptyHarvest.ts](agents-remember/dashboard/src/data/ptyHarvest.ts) |
+| The one xterm component PtySurface lazy-loads (fit rules, renderer seam, named landmark). | [panels/Terminal.tsx](agents-remember/dashboard/src/panels/Terminal.tsx) |
+| The in-repo renderer measurement harness behind the DOM decision (/dev/pty-bench). | [dev/PtyRenderBench.tsx](agents-remember/dashboard/src/dev/PtyRenderBench.tsx) |
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (PTY stage surface, structured interactions, session
+  lifecycle actions; review FINAL PASS after a 1×sev-3 + 5×sev-4 fix round, all CLOSED): the
+  route gains `PtySurface`, `InteractionBar`, `WorkingLine`, `StopResidualNotes`,
+  `lifecycleCopy.ts` (+ the PtySurface/InteractionBar/WorkingLine/SeatInspector jsdom suites);
+  the stage body is filled (keep-alive real xterm panes, two server-truth archetypes, gate-only
+  interaction answers, informational stop residuals), the rail gains the honest End
+  arm→confirm flow with verbatim failure + retry, cleanup outcomes, and bell/hint markers, and
+  the reserved WorkingLine slot is filled. Renderer decision by measurement: `PTY_RENDERER =
+  "dom"` (12-pane 60 Hz lock; headless webgl rows are SwiftShader software GL — caveat
+  recorded; webgl kept as lazy escalation). Retire stays render-only (no actor seat in the
+  dashboard — upstream ask recorded); gates on lifecycle-less seats are honestly unanswerable
+  (gate-id-only projection = upstream ask). Pure logic landed at `data/` (`interactionAnswer`,
+  `sessionLifecycle`, `ptyHarvest`) — see the `dashboard/src/` overview. Verification metadata
+  pinned to the leaf base until closeout stamps the L6 code commit.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (session data layer, rail, and stage container; review
   FINAL PASS after a 5×sev-4 fix round): the route gains `SessionRail`, `SessionStage`,
   `HeaderStrip`, `StateDot`, and `SeatInspector` (+ the `SessionRail`/`HeaderStrip` jsdom suites),
