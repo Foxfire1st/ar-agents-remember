@@ -60,6 +60,7 @@
     "mcp/tests/test_harness_control_runner.py",
     "mcp/tests/test_harness_launch.py",
     "mcp/tests/test_harness_logs.py",
+    "mcp/tests/test_harness_submission_authority.py",
     "mcp/tests/test_harnesses.py",
     "mcp/tests/test_hosted_control_conformance.py",
     "mcp/tests/test_hosted_interactions.py",
@@ -151,8 +152,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 140,
-    "fileSidecars": 139,
+    "sourceFilesInScope": 141,
+    "fileSidecars": 140,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -171,6 +172,7 @@
     "assignment",
     "async",
     "attribution",
+    "authority",
     "backoff",
     "base",
     "benchmark",
@@ -234,11 +236,10 @@
     "guard",
     "guards",
     "harness",
-    "harnesses",
-    "hosted"
+    "harnesses"
   ],
   "hotPath": {
-    "summary": "260714-ACPUI-L5 adds the final live-conformance and Claude discovery-isolation regressions. Claude fake-transport cases cover separate variadic/repeated and equals-attached MCP selectors, the `--` suffix boundary, exactly one strict empty discovery config, and byte-preserved normal startup. The explicit-opt-in Codex live case performs dynamic initialize/model-list discovery without a thread or token event, validates a settings-shaped launch pair, then spends exactly two bounded turns to prove queued model/effort promotion and subsequent-turn retention on the same PID/thread. Its recorder re...",
+    "summary": "260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness, dispatch/withdraw races, early terminal completion, full-ref id reuse, ordering, idempotency/source- payload conflicts, certified pre-dispatch retry, impossible safe retry after possible bytes, epoch mismatch, privacy, and retention. `test_harness_control.py` extends the same timeline across IPC, outer response loss, durable sources, reconcile, and raw-free projection. API tests pin 64-id status/withdraw and typed 409/503 mapping. Claude/Codex/Pi suites each prove their guarded write and exact comple...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",

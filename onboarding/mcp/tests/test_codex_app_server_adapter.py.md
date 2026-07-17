@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:21+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -138,7 +138,17 @@ protocol contract; it does not replace the current source tests.
 | --- | --- | --- |
 | The prior reviewer verdict confirms initialize/model-list/thread behavior, protocol-only effort handling, normalized state, interactions, reconnect, and fixture provenance. | L24-L33 | [260713-PHA-L3 reviewer verdict](ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The suite now proves Codex has no vendor queue/steer path: settings and prompts bind full operation
+refs to fresh turns, terminal evidence promotes exactly once, early completion is retained, rejected
+guards clean pending state, and stale/duplicate/reused turn ids cannot release a successor. Both
+synchronous and async correlation maps are bounded.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: replaced busy-queue/steer expectations with fresh-turn,
+  exact-ref, early-completion, cleanup, id-reuse, and bounded-correlation proofs.
 
 - 2026-07-16T01:21+02:00 — 260714-ACPUI-L3 curator: documented queued desired-versus-effective
   state, same-thread turn overrides, prompt selection epochs, successful-status-only promotion,

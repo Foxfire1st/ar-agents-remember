@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_hosted_control_conformance.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:21+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -93,7 +93,16 @@ No sibling repository is needed for this same-repository conformance matrix.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+Shared hosted fakes now conform to the epoch/full-operation-ref port, including restart generation,
+op-aware preflight, guarded write, and exact completion. The matrix prevents one adapter from
+quietly retaining native queue or id-only release behavior.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: extended conformance to epoch, full refs, guarded preflight/
+  write, restart, and exact completion.
 
 - 2026-07-16T01:21+02:00 — 260714-ACPUI-L3 curator: documented the generic fake setter methods as
   protocol scaffolding only and preserved the boundary that keeps acceptance evidence in focused

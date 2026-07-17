@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/CommandPalette.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -51,6 +51,14 @@ stays local (R7 — the view's `closePalette` hands focus back to the invoker).
 - Focus-return ownership sits in the VIEW (`closePalette` + the invoker ref kept across page
   switches); this component only reports close.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -61,7 +69,23 @@ stays local (R7 — the view's `closePalette` hands focus back to the invoker).
 | The view that owns open/page state and the invoker focus-return. | L235-L251; L496-L503 | [SessionsView.tsx](SessionsView.tsx) |
 | Palette behavior coverage: open, Esc + focus return, keys page from real tables, suppression, `/` rule. | L112-L175 | [SessionsView.test.tsx](SessionsView.test.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Each palette open now normalizes and seeds the query passed by the composer slash command. Reopen
+replaces stale query state; filtering applies the normalized text to command titles and keywords.
+The palette executes registered commands but never interprets a slash line as prompt delivery.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented slash-normalized initial-query handling.
 
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S3 (R4): the non-portal cmdk palette with
   the commands/keys page pattern (one options source; the `?` reference rendered from the live

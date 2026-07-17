@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,8 +27,9 @@ a **vertical split** (chat on top, terminal below); when none exists the empty s
 choice** to start a chat plus a separate **＋ Terminal** to open a shell. L6 adds the leaf-chat context
 handoff: when an agent chat is created for the displayed leaf, or a free chat is attached to a picked
 leaf, the rail builds a concise context package from the matching task document plus active process
-projection and pastes it into that chat as **draft input**. It does not submit on the operator's behalf;
-the operator can add an instruction and then press Enter manually. L9 keeps the attach picker visible for
+projection. FEUI-L5 routes that leaf-context message and the shared composer through reliable
+epoch-bound submission rather than terminal paste; source provenance keeps non-composer text from
+clearing or restoring the operator's draft. L9 keeps the attach picker visible for
 an already-attached chat as a move control; a successful move updates the durable leaf binding and drafts
 the newly selected leaf's context without respawning the terminal session.
 
@@ -126,6 +127,14 @@ canvas on import and cannot mount under jsdom). `data-testid`s: `rail-chat`, `ra
 - Presentational over the store + the lazy terminal; backend calls go through the openers
   (`createSession`) and the terminate client (`terminateTerminalSession`), never arbitrating ownership.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -139,7 +148,24 @@ canvas on import and cannot mount under jsdom). `data-testid`s: `rail-chat`, `ra
 | The Chats page that surfaces the same leaf sessions via the shared registry + offers leaf attach. | — | [Chats.tsx](Chats.tsx) |
 | The cockpit shell that toggles this in for the Event River and passes the displayed `leafKey`, `taskDocuments`, `engineProcesses`, `contextMaster`, and `selectedLifecycleId`. | L346-L356; L479-L485 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+RailChat now uses the same reliable `SessionComposer` as the full Chats view. Automatic leaf-context
+delivery carries `leaf-context` provenance through epoch-bound submission, so it cannot clear or
+restore the visible composer draft. Neither path uses terminal paste or a native hidden queue.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: migrated rail composition and leaf-context delivery to the
+  shared reliable client with source-aware draft boundaries.
 
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (review finding F6, one-prop call-site change): both
   `<Terminal>` mounts (the chat slot and the split terminal `Pane`) now pass

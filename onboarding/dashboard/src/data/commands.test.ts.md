@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/commands.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -43,6 +43,14 @@ A `ctx()` factory builds a `CommandContext` with `vi.fn()` actions. The describe
 Pure logic suite — the rendered palette behavior (open/close/focus-return/pages) lives in
 `SessionsView.test.tsx`. Test-only.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -50,7 +58,23 @@ Pure logic suite — the rendered palette behavior (open/close/focus-return/page
 | The registry + default set under test. | L56-L179 | [commands.ts](commands.ts) |
 | The DOM-level palette counterpart (ctrl+k open, Enter run, Esc close + focus return). | L112-L175 | [../panels/session-cockpit/SessionsView.test.tsx](../panels/session-cockpit/SessionsView.test.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+The suite now proves the pop-back command dispatches the authority-backed withdrawal path and that
+slash-opened palette commands receive the intended initial query. It guards the collision boundary:
+composer Alt+Up is pop-back, while the chrome/session navigation chord remains separate.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added command-level pop-back and slash-query regression proof.
 
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R7: extended the default-routing case with both live
   cycle-effort directions. Verification metadata is pinned to the contract base until the

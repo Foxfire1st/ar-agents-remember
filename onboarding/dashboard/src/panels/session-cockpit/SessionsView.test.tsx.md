@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -89,6 +89,14 @@ for real while the canvas emulator never loads.
 The F1a/F1b cases are the round-2 regression net for the floor chip: they must keep driving a
 layout change WITHOUT a root resize. Test-only.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -102,7 +110,24 @@ layout change WITHOUT a root resize. Test-only.
 | The L3 launch dialog + banner the integration cases exercise. | — | [LaunchFlow.tsx](LaunchFlow.tsx), [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
 | The envelope fixture the stubbed capability fetch serves. | — | [../../test/fixtures/capabilityEnvelopes.ts](../../test/fixtures/capabilityEnvelopes.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+View tests now cover the empty-stage/no-composer boundary, slash-opened palette query, real
+CodeMirror focus, PTY plus interaction plus composer ordering, and a single gate-only answer. They
+exercise the actual shared composer rather than the former textarea placeholder.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: updated the stage integration matrix for the real composer,
+  palette, PTY ordering, and sole interaction-answer path.
 
 - 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R5/R6): +2 appended integration cases — the palette's
   "Launch session…" opens the flow, and the focused FLEET failed scout renders the banner with

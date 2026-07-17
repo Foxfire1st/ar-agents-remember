@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T07:25+02:00 |
-| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25` |
-| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -174,7 +174,16 @@ side-effect markers. Their five-row result is a captured install/auth observatio
 | The corrected live two-marker A/B preserved normal configured startup, isolated discovery, returned the same zero-turn/model-gated catalog, and cleaned up. | L72-L96 | [L5 worker closeout report](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
 | Independent review caught the append-only selector collision, then closed it only after fake grammar cases plus an independent marker replay returned the same five observed keys with no marker side effect. | L148-L151; L163-L173 | [L5 reviewer verdict](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+Claude hosted-control tests now prove sole-operation authority across prompt/interaction/setter
+traffic, exact terminal completion, late/cancel/duplicate immunity, and bounded retained history.
+Unknown setter evidence remains the shared barrier until exact resolution.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added Claude sole-authority, exact completion, stale-event, and
+  bounded-history regression proof.
 
 - 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 test curator: documented discovery-only Claude MCP
   selector isolation across separate, variadic/repeated, equals-attached, and end-of-options forms;

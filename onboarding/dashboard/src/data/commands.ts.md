@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/commands.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -57,6 +57,14 @@ through the context (the view owns the DOM).
 - Pure module: no React, no DOM, no store reads; everything observable arrives via
   `CommandContext`.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -67,7 +75,25 @@ through the context (the view owns the DOM).
 | The chord tables that carry these command ids per zone. | L20-L86 | [keymap/chords.ts](keymap/chords.ts) |
 | The unit suite: order, when-gating, replace-by-id, default-set routing, palette gating. | L36-L115 | [commands.test.ts](commands.test.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+The command registry now owns `composer.popBack` on Alt+Up and carries an `initialQuery` when slash
+text opens the palette. Pop-back delegates to the authoritative withdrawal client; it is not a local
+queue splice. Palette normalization removes the leading slash exactly once so command filtering and
+keyboard invocation share one query contract.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented `composer.popBack`, Alt+Up authority, and slash-
+  initiated palette query normalization.
 
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R7 made `effort.decrease` and
   `effort.increase` live: user-facing cycle titles and search keywords now dispatch -1/+1 into

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -82,6 +82,14 @@ session rely on the `./Terminal` stub, the same posture as `Chats.test.tsx`. `af
 + `vi.unstubAllGlobals`, resets the `sessions` store to its current shape (`sessions`, `activeId`,
 `count`), clears mocks (including `pasteDraftToSession`), and resets the test `FakeBroadcastChannel`.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -91,7 +99,23 @@ session rely on the `./Terminal` stub, the same posture as `Chats.test.tsx`. `af
 | The session store it resolves leaves through and the draft-paste helper being mocked. | L329-L342; L433-L443 | [data/sessions.ts](../data/sessions.ts) |
 | The attach client path whose 200/409 outcomes the tests mock. | L329-L357 | [data/terminal.ts](../data/terminal.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+RailChat tests now prove create-and-ready leaf-context submission, attach/move delivery through the
+same reliable client, rejection honesty, and gate-only non-choice answers. They no longer model
+bracketed paste or Enter as delivery authority.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added reliable rail/context and sole-answer-channel coverage.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: covered role-explicit rail attachment and
   binding-first pane identity.

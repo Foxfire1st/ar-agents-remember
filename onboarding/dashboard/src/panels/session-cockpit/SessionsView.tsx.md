@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,8 +27,10 @@ catalog-provenance card plus collapsible set ledger (the L7 tabbed inspector rep
 **L6 fills the stage body**: the focused seat renders a real `PtySurface` pane (carrying the
 `data-kbzone="pty"` contract), `StopResidualNotes` above it, the `InteractionBar` directly above
 the composer (never replacing it), and the `WorkingLine` into the stage's reserved slot; the PTY
-placeholder now renders ONLY for the empty stage (no focused session), and the composer textarea
-remains L5's placeholder (now ref-exposed to the bar's answer-mode). **L3 appends the launch
+placeholder now renders ONLY for the empty stage (no focused session). **FEUI-L5 replaces the
+composer placeholder with the shared CodeMirror reliable-submit surface**, mounts authoritative
+queue/recovery UI, routes slash text into the palette, and keeps gate-only answer mode explicit.
+**L3 appends the launch
 surfaces**: the `session.launch` palette command opens the `LaunchFlow` overlay, and a focused
 FAILED seat renders the `FailedLaunchBanner` inside the stage children above the pty surface.
 **L4 wires live controls and outcome surfaces**: palette model/effort commands open the same
@@ -197,6 +199,14 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 - Model/effort palette commands and the header trigger must share one popover; queued hints,
   toasts, rail attention, and live regions must derive from the same cockpit evidence.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -226,7 +236,25 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 | The L3 launch dialog this view opens (palette command / corrected-launch prefill). | L165-L613 | [LaunchFlow.tsx](LaunchFlow.tsx) |
 | The L3 failed-launch banner mounted above the pty placeholder for a failed focused seat. | L70-L182 | [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+The view now wires the real shared composer to the focused controlled session, injects
+`composer.popBack` into the command registry, hands slash query text to the palette, and preserves
+the axis ordering PTY → interaction → composer. Gate-only answer mode shares the editor but never
+calls prompt submit; raw-session typing remains confined to the PTY surface.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: replaced the composer stub with live submit/pop-back wiring,
+  slash palette query, queue/recovery UI, and explicit answer-channel separation.
 
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2/R4/R6–R8 wired the one controlled model/effort
   popover to header and palette, live effort cycling, promotion/drift and seat-state watchers,

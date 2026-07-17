@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/harnessCapabilities.ts`     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -64,6 +64,14 @@ setter/submit/reconcile evidence shapes (`SetResultWire`, `SubmissionReceiptWire
   serializers, not invent fields.
 - `types/terminalCatalog.ts` was deliberately NOT touched by L3 — new wire shapes go to new files.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -77,7 +85,24 @@ setter/submit/reconcile evidence shapes (`SetResultWire`, `SubmissionReceiptWire
 | The conformance suite asserting the pack against the recorded L5 samples. | — | [../test/contractCapabilities.test.ts](../test/contractCapabilities.test.ts) |
 | The sibling hand-mirrored wire type this follows the posture of. | — | [terminalCatalog.ts](terminalCatalog.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Prompt receipt and reconciliation types now include the bridge epoch, and the public submission
+lifecycle union names the normalized authority states consumed by polling and withdrawal. The union
+is deliberately raw-free and does not expose vendor queue details or adapter evidence.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented generation-bound receipt/reconcile types and the
+  normalized lifecycle-state union.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R1/R3 (capability wire mirror): the
   envelope (`schema`/`harness`/`cacheStatus hit|miss|refreshed`/`installFingerprint`/

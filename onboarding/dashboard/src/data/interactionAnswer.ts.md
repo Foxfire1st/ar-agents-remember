@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/interactionAnswer.ts`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -61,6 +61,14 @@ never answer the interaction; no terminal code exists in this module, by constru
 - Copy honesty: NOT-YET (lifecycle present, poll-bounded) vs CANNOT (no lifecycle) must stay
   distinct; error text keeps the server's words verbatim.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -72,7 +80,25 @@ never answer the interaction; no terminal code exists in this module, by constru
 | The round-trip state slice this path's outcomes land in. | L71-L79; L288-L294 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
 | The suite: kind matrix, gate matching, exact URL+body, verbatim failure, no blind POST, NOT-YET vs CANNOT. | L46-L190 | [interactionAnswer.test.ts](interactionAnswer.test.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Answer delivery now preserves the exact pending interaction plus answer text and draft revision
+across a retry. The shared lock admits only the matching gate-backed interaction, and successful
+clearing is revision-CAS so a concurrent operator edit survives. This remains wholly separate from
+prompt submission and PTY input: a normal message can never satisfy a vendor interaction.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented stored answer/revision retry, shared answer lock,
+  and revision-safe clearing on the gate-only path.
 
 - 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R4 (incl. fix round 1 finding 2): the sole
   gate-channel answer path — kind-aware representation (choices / composer / honestly

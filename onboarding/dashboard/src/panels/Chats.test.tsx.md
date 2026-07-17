@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.test.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T21:52+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -103,6 +103,14 @@ The synthetic `pointerEvent` helper exists only because jsdom does not provide t
 `PointerEvent` constructor; it supplies the two fields the real drag contract consumes (`clientX` and
 `pointerId`) and the test stubs `setPointerCapture` on the handle.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -113,7 +121,23 @@ The synthetic `pointerEvent` helper exists only because jsdom does not provide t
 | The test pointer-event helper and the two persisted resize regressions. | L33-L40; L128-L165 | [Chats.test.tsx](Chats.test.tsx) |
 | The separator, clamp, persisted width state, and sidebar render under test. | L185-L238; L304-L315; L520-L539 | [Chats.tsx](Chats.tsx) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+Chats integration tests now exercise shared-composer submission and prove a pending interaction is
+represented through the matching gate-only answer path. The fixture no longer treats terminal paste
+as hosted-chat delivery authority.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added shared-composer and gate-only interaction proof.
 
 - 2026-07-10T21:52+02:00 — 260707-HFX2-L21: added restored-width/ARIA coverage and a direct
   pointer-drag plus keyboard-step regression that verifies localStorage after every width change.

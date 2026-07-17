@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/setChips.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T08:33+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,16 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
+## 260715-FEUI-L5 Reliable Submit Delta
+
+No set-chip behavior changed. The test fixture gained the required empty `submitHistory` field so it
+continues to construct the expanded cockpit session state without claiming any relationship between
+model/effort chips and prompt lifecycle authority.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5 fixture-only refresh for the expanded session state; no
+  set-chip semantic impact.
 
 - 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R2/R5/R6/R9 through the final PASS;
   metadata awaits the uncommitted code's real commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/HighlightComposer.test.tsx`|
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T20:55+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -55,6 +55,14 @@ is reset in `beforeEach`/`afterEach`.
 Logic + render only — no real selection, no xterm, no backend (the session effects are spies). The
 pure selection rules live in `data/selection.test.ts`.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -62,7 +70,24 @@ pure selection rules live in `data/selection.test.ts`.
 | The composer under test. | — | [HighlightComposer.tsx](HighlightComposer.tsx) |
 | The mocked inject seam, draft-paste seam, and create helper. | — | [data/sessions.ts](../data/sessions.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+The suite now covers existing-session and create-then-ready reliable highlight submission, stable
+request correlation, ambiguous endgame copy, and the absence of PTY paste fallback. It verifies that
+highlight provenance never clears or restores the operator's composer draft.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added reliable highlight delivery, readiness, endgame, and
+  non-composer draft-provenance regression coverage.
 
 - 2026-07-02T20:55+02:00 — L8-r1 correction: the direct-branch cases now pin click semantics — the pill
   renders and nothing pastes on selection alone; the pill click draft-pastes without the

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,17 @@ The bridge owns adapter lifecycle, exact identity, readiness, correlated immedia
 unknown receipts, pending interactions, transcript completion, and graceful recovery. It retains
 raw vendor detail as evidence without promoting pane diagnostics to authority.
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The bridge now exposes one epoch-bound authority facade for submit, reconcile, status, withdrawal,
+model/effort sets, and exact operation resolution. Direct adapter completion events enter authority
+before coalesced snapshot publication, preventing publication latency or loss from stranding the
+active operation. Startup failure and graceful stop clean the same authority instance.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented the sole authority facade, exact operation routing,
+  event-before-publish completion, and lifecycle cleanup.
 
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented exact-running-adapter advertise
   beside the already ordered set, submit, and reconcile operations while keeping pre-session cache

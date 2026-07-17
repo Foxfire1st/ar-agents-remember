@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T08:33+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -34,6 +34,14 @@ app-injected `SupervisorHeartbeat` shape) — red/pulsing past its staleness cut
 supervisor has never ticked (opt-in autostart) rather than a false alarm. **260707-HFX2-L8 (R6)**
 extends that same header signal with pending/redeliverable inbox backlog counts and last sweep duration.
 
+**260715-FEUI-L5 makes controlled prompt delivery an authoritative end-to-end feature.** The shared
+CodeMirror composer submits exact epoch/request/text messages through `data/submitClient.ts`;
+`submitMachine.ts` provides one monotonic evidence fold; `submissionLifecycleClient.ts` polls raw-
+free server status and performs authoritative Alt+Up withdrawal with revision-safe recovery;
+`submitRetention.ts` bounds settled projections without evicting live work. Chats, RailChat,
+HighlightComposer, and the Sessions stage use this path. PTY input remains valid only for a legacy
+raw session and is never a control-authority fallback.
+
 ## The Layered Architecture (slice 5d)
 
 Styling was re-architected from a single ~1,200-line global `tokens.css` into the layered blueprint:
@@ -48,8 +56,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
 - **Behavior** — **React Aria** (`react-aria-components`): the mode bar + the lifecycle pivot are
   `ToggleButtonGroup`s; the lifecycle list is a `ListBox`, and the Chats session switcher is a
   `GridList` (arrow-nav + type-ahead — a `GridList`, not a `ListBox`, so each session row's action
-  stays keyboard-reachable, slice 6e-2c); the context composer is a `TextField`/`TextArea` + `Button`
-  (slice 6e-3). Panda conditions
+  stays keyboard-reachable, slice 6e-2c); the controlled-session composer is CodeMirror 6 Markdown
+  with an explicit submit/withdraw lifecycle (FEUI-L5), while legacy raw typing remains in xterm.
+  Panda conditions
   (`_selected`/`_focusVisible`) target React Aria's `data-*` state, so the CRT look is unchanged.
 - **Effects** — `index.css` `@layer effects`: the global `crt-overlay` (scanlines + vignette +
   flicker) and the `?effects=off` determinism freeze, isolated from components. *(Slice 05k removed the
@@ -146,7 +155,7 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   slice 6e-4 — now also the Task 11 lifecycle-tagged hosted-chat routing table for direct gate
   responses, the slice-6f cockpit-wide inject seam, and the Task 22 catalog hydration/status plus
   per-prefix label-reuse and cross-tab catalog-invalidation layer; the L6 follow-up adds a
-  draft-paste handoff seam that inserts leaf context into the selected hosted chat without submitting it,
+  reliable leaf-context submission seam carrying non-composer provenance into the selected hosted chat,
   and L9 adds `"leaf"` catalog invalidations so open tabs can rehydrate hosted-chat leaf moves) +
   the cockpit text-selection hook
   (`selection.ts`, slice 6f; since L8 a selection anchored inside a task reader marked
@@ -198,8 +207,8 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   orchestration-gated, and the tasks tab renders flat runs unchanged.
   **260715-FEUI-L1 adds the sessions-cockpit pure layer**: `commands.ts` (+ suite — the extensible
   command registry, the single options source behind the cmdk palette AND chord dispatch; stable
-  injected action seams — session switching and L4 effort cycling are live, L5 submit remains a
-  stub), `sessionLayout.ts` (+ suite — the
+  injected action seams — session switching, L4 effort cycling, FEUI-L5 reliable submit, and
+  authoritative pop-back are live), `sessionLayout.ts` (+ suite — the
   narrow-width edge-transition rules, the ~80-col floor approximation, and the ~280px rail
   percentage calibration), and the **`keymap/`** sub-route (see
   [data/keymap/overview.md](data/keymap/overview.md)) — the xterm-free keyboard-zone contract:
@@ -225,6 +234,16 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   + the `patch` seat-event seam; `terminal.ts`'s catalog wire shape moved to
   `types/terminalCatalog.ts` (re-exported, import sites unchanged); `stream.ts`'s `connectEvents`
   gains `onInterrupt` (the reconnect signal the backlog gate re-closes on).
+  **260715-FEUI-L5 adds the reliable-submission data layer** (all + unit suites):
+  `submitMachine.ts` owns the five-receipt/four-reconcile lifecycle and evidence partial order;
+  `submitClient.ts` owns exact epoch-bound transport, the sole certified pre-dispatch retry, real
+  deadlines, and provenance-aware store driving; `submissionLifecycleClient.ts` owns raw-free
+  status polling, authoritative withdraw/pop-back, lost-response convergence, and revision-CAS
+  recovery; `submitRetention.ts` protects active work while bounding settled history/queue text to
+  64. `sessionCockpitStore.ts` projects history, authoritative queue, pending withdrawal, recovery,
+  and draft/answer revisions. `test/fixtures/submitScenarios.ts` is the shared normalized fixture
+  pack. These files remain governed by this overview for the current leaf; the final master route-
+  architecture pass should assess a focused source route before introducing a `data/` overview.
   **260715-FEUI-L6 adds the sessions-cockpit INTERACTION/LIFECYCLE data layer** (all + unit
   suites): `interactionAnswer.ts` — the SOLE structured-interaction answer path (finds the open
   `agent-question` gate by `packet.adapterInteraction.{sessionId,interactionId}`, answers via
@@ -380,6 +399,10 @@ The dashboard consumes additive landing freshness truth from the projection: sta
   the Sessions cockpit's explicit launch, structured-interaction, terminate/cleanup, and live
   model/effort controls. Sessions mutations ride their typed HTTP/control routes; requested and
   effective values remain separate, and the server still authorizes and proves every effect.
+- **Reliable submit is generation-bound and monotonic** — a controlled prompt keeps one immutable
+  request id/text/source/epoch; only the exact server pre-dispatch certificate can retry; every
+  response/poll enters one evidence fold; pop-back is server withdrawal of an authoritatively queued
+  row and restores drafts only by revision CAS. PTY paste is never a fallback.
 - **Client-agnostic shapes** — the frontend consumes the `WorkspaceProjection` nodes verbatim (no
   dashboard-bespoke endpoints); North-Star #2.
 - **Build-time styling only** — Panda extracts static CSS at build; `styled-system/` is generated,
@@ -396,6 +419,8 @@ The dashboard consumes additive landing freshness truth from the projection: sta
 | The L16 grouping derivation owns repo-qualified sprint/archive/error membership. | L48-L159 | [sessionGroups.ts](data/sessionGroups.ts) |
 | The L16 session renderer owns forest order, manager collapse, bounded layout, and hover details. | L242-L484 | [SessionList.tsx](panels/SessionList.tsx) |
 | The L21 Chats shell owns the persisted sidebar width plus pointer and keyboard separator behavior. | L1-L588 | [Chats.tsx](panels/Chats.tsx) |
+| Reliable submit transport, evidence folding, authority polling/withdrawal, and bounded retention. | — | [submitClient.ts](data/submitClient.ts); [submitMachine.ts](data/submitMachine.ts); [submissionLifecycleClient.ts](data/submissionLifecycleClient.ts); [submitRetention.ts](data/submitRetention.ts) |
+| The shared controlled-session composer renders queue, lifecycle, endgame, pop-back, and recovery. | — | [SessionComposer.tsx](panels/SessionComposer.tsx); [QueuePreview.tsx](panels/session-cockpit/QueuePreview.tsx) |
 | The visible-body hook owns availability, merge, and revision-aware cache state. | L1-L72 | [useTaskDocumentBody.ts](data/useTaskDocumentBody.ts) |
 | The detail panel resolves the displayed document and delays notes plus all eager change-set requests until body hydration is terminal. | L380-L388; L629-L687; L1044-L1085; L1309-L1388 | [DetailPanel.tsx](panels/DetailPanel.tsx) |
 | The serving layer supplies the projection and static package boundary consumed by this route. | L1-L80 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
@@ -420,6 +445,12 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+
+- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced stub/paste current-state claims with
+  the shared CodeMirror reliable-submit path, central evidence fold, epoch/request transport,
+  authoritative status/withdraw/pop-back, revision-safe recovery, and bounded retention. Recorded
+  `dashboard/src/data` route pressure for the final master route-architecture pass rather than
+  inventing a non-mirrored route during this leaf.
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 route impact (live set controls; final reviewer PASS
   after three fix rounds): `data/` gains the exact-session capability, five-state acceptance,
   serialized pair, sole I/O driver, chip/copy, and announcer modules; the cockpit store gains

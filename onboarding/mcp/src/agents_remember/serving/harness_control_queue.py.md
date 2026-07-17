@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,47 +16,38 @@
 
 ## Purpose
 
-Implements the bridge's bounded ordered command runner, honest setter-result gate, and bounded
-receipt/reconciliation ledger.
+Provides the legacy `HarnessControlQueue` surface as a thin lifecycle/runner facade over
+`HarnessSubmissionAuthority`. FEUI-L5 removes its former independent command queue, prompt ledger,
+and execution-order authority so one bridge has exactly one prompt/setter timeline.
 
 ## Code Commentary
 
 ### Logic
 
-Terminal and durable messages enter the same queue as whole commands. `requestId` is the submission
-idempotency key: a duplicate arriving while the first is pending waits on the first shielded future;
-a retained duplicate returns the original receipt. The first whole-message payload remains
-authoritative, so a differing duplicate payload never becomes a second adapter call. Submit, respond, reconcile,
-resolve, model-set, effort-set, and stop commands are executed by one runner against the single
-adapter. Setter results must preserve the requested value and use exactly the five normalized
-acceptance tokens. `echo-verified` requires success plus an effective value; `immediate`/`queued`
-require success without one; `unknown`/`unsupported` cannot claim success or effect. Accepted setter
-results refresh and publish the same-identity adapter snapshot. Reconciliation returns retained
-known truth locally (`immediate`/`queued` to accepted, `rejected` to rejected, and `unsupported` to
-unsupported); only a genuinely bridge-unknown receipt invokes native reconciliation. A cancelled caller does not cancel
-the already-running command or poison the queue: completion writes only to a still-open future.
-Unexpected adapter errors fail the bridge and drain remaining commands explicitly.
+Construction creates one `HarnessSubmissionAuthority` with the configured timeline and duplicate-
+ledger bounds. Submit, response, model/effort set, status, reconcile, resolve-operation, and withdraw
+methods delegate to that authority. The facade retains bridge start/stop and adapter lifecycle
+compatibility, but it neither admits its own prompt FIFO nor stores a competing receipt ledger.
+Authority events and exact operation references flow through the bridge to the same underlying
+instance.
 
 ### Conventions
 
-One command object represents one semantic operation. Ordering is message/operation-level, never
-keystroke-level. Result validation is runtime enforcement; static `Literal` typing alone is not
-treated as authority.
+The historical class name is retained for call-site compatibility. “Queue” now names the facade,
+not an additional actor. Ordering, idempotency, withdrawal linearization, safe-retry classification,
+and retention all live in `harness_submission_authority.py`.
 
 ### Invariants And Boundaries
 
-- Queue order is message-level, never keystroke-level.
-- Prompt, interaction, reconciliation, model-set, and effort-set operations share one order.
-- Duplicate request ids are idempotent while pending or retained and never resubmit the prompt.
-- Setter acceptance is fail-closed outside `echo-verified | immediate | queued | unknown |
-  unsupported`, with no invented effective values.
-- A receipt records acceptance, not completion; unknown remains unresolved until reconciliation.
-- Retained known receipts reconcile without native I/O; only unknown delegates to the adapter.
-- Ledger and command/subscriber paths are bounded by configured limits.
+- One authority instance owns the epoch-bound prompt/setter timeline.
+- This facade cannot enqueue work behind the authority or release its active operation.
+- Response bypass and status/withdrawal responsiveness are authority behavior, not a second queue.
+- Stop delegates through the authority/adapter lifecycle and leaves no stranded facade futures.
 
 ### Todos
 
-None known for the L4 ordered control and idempotency gate.
+The compatibility class can be renamed only in a separately scoped API migration; it must not regain
+independent queue semantics.
 
 ## Docs References
 
@@ -86,7 +77,16 @@ No external repository boundary is implemented by the queue.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+Current authority lives in `HarnessSubmissionAuthority`; this class is only the bridge-compatible
+facade and lifecycle wrapper. Earlier history describing an independent command runner remains
+historical and must not be read as current architecture.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: rewrote current purpose/logic/invariants for the thin facade
+  and removed the obsolete second-queue/ledger authority claim.
 
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented request-id idempotency for
   pending and retained duplicates, first-payload authority, one adapter call, and local

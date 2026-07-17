@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -51,6 +51,14 @@ Fetch is stubbed per case (`vi.unstubAllGlobals` in afterEach); stores reset in 
 URL/body assertions are the regression net against any drift toward a terminal/queue write.
 Test-only.
 
+## Docs References
+
+No Domain Documentation source is configured for this repository; repository code and tests are the authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured live domain-documentation source was available. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -60,7 +68,24 @@ Test-only.
 | The L6 interaction fixtures (choices / freetext / unrepresentable). | L205-L257 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
 | The copy constants asserted verbatim (honesty hint). | L54-L71 | [lifecycleCopy.ts](lifecycleCopy.ts) |
 
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| This file implements a repository-local contract. | — | — |
+
+## 260715-FEUI-L5 Reliable Submit Delta
+
+The suite now drives the shared composer handle across the interaction kind matrix and proves one
+exact gate round trip, retained failed-answer text/revision, newer-draft preservation, focus changes,
+and stale-interaction rejection. It asserts that `/submit` is not an answer fallback.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: added shared answer-mode, exact retry, revision, and sole-
+  channel regression coverage.
 
 - 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R4/R9 (13 cases): kind-awareness incl. the
   honest unrepresentable fallback, the exact-URL/body gate-channel assertions, the deferred

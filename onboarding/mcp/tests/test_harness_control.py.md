@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -129,7 +129,17 @@ No sibling repository is required to prove this protocol-neutral test suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The common control suite now treats one `HarnessSubmissionAuthority` as the prompt/setter timeline.
+It covers ordered terminal outcomes, unknown-setter barriers, no-resend idempotency/reconciliation,
+bounded ambiguity, private status/withdraw, IPC and outer-response loss, durable-source interaction,
+and duplicate raw-free projection. Earlier second-runner queue semantics are historical only.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: rewrote the common matrix around the sole authority,
+  idempotency, withdrawal, response loss, bounded retention, and privacy.
 
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented exact-session advertise/set
   acceptance, pending and retained request-id idempotency, known-receipt reconciliation, outer

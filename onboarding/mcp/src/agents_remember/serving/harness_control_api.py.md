@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
+| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,17 @@ catalog state.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260715-FEUI-L5 Submission Authority Delta
+
+The daemon API now exposes authority metadata plus cockpit-only raw-free status and withdrawal, with
+status batches limited to 64 ids. Submit/reconcile are epoch-bound and source-tagged. Epoch/id
+conflicts return 409 before lifecycle disclosure; only the exact pre-dispatch certificate returns a
+retry-safe 503, while possible-write loss remains unknown. The prior frontend-submit todo is closed.
+
 ## Update History
+
+- 2026-07-17T21:39+02:00 — FEUI-L5: documented authority/status/withdraw routes, epoch/privacy
+  gates, 64-id bounds, conflicts, and the sole retry-safe certificate.
 
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: created the daemon contract sidecar for
   complete-pair launch, pre/live advertise, honest exact-session set, reliable whole-message submit,
