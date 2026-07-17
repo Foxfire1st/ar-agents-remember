@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T02:30+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00 |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -100,7 +100,9 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   WebTUI-adoption assertions running against the exact shared build configuration.
   `test/fixtures/` (260715-FEUI-L2) is the NEW shared-fixture home: `catalogRows.ts` — the
   full-wire-shape catalog builder + the mockup-mirroring `FLEET` scenario the rail/model suites
-  run on (to be shared with the L3 fixture pack).
+  run on (to be shared with the L3 fixture pack); 260715-FEUI-L6 APPENDS the `L6_*` rows
+  (controlled/legacy-raw archetypes, choices/freetext/unrepresentable interactions, retired-with-
+  stop-error, terminate-with-residual) after a byte-identical `FLEET`.
 - `grammar/` — the shared primitives library (`Panel`, `ModeBar`, `Dot`, `Affordance`,
   `ProgressFill`, `TokenGauge`, `Markdown`, and — 260703-L14 — `RankBadge`, the V4 chevron rank
   insignia for the orchestration/management command tiers); see
@@ -211,6 +213,23 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   + the `patch` seat-event seam; `terminal.ts`'s catalog wire shape moved to
   `types/terminalCatalog.ts` (re-exported, import sites unchanged); `stream.ts`'s `connectEvents`
   gains `onInterrupt` (the reconnect signal the backlog gate re-closes on).
+  **260715-FEUI-L6 adds the sessions-cockpit INTERACTION/LIFECYCLE data layer** (all + unit
+  suites): `interactionAnswer.ts` — the SOLE structured-interaction answer path (finds the open
+  `agent-question` gate by `packet.adapterInteraction.{sessionId,interactionId}`, answers via
+  `POST /api/actions/approve` with the answer as the decision note — ZERO terminal writes;
+  kind-awareness choices/freetext/unrepresentable; NOT-YET vs CANNOT copy split on the seat's
+  `lifecycleId` — a gate on a lifecycle-less seat never projects, the gate-id-only projection is
+  a recorded upstream ask); `sessionLifecycle.ts` — terminate/landed-cleanup DETAILED helpers
+  that keep the response bodies (stop residuals + verbatim failure text) plus the
+  `lifecycleNoticeStore` residual store (residuals outlive tombstoned rows) and the refcounted
+  focus-INDEPENDENT `startRetireResidualSweep()` over every registry row (dedup by sessionId,
+  dismissals stick across poll beats, reload resurfaces deliberately); and `ptyHarvest.ts` — the
+  client-side-only legacy-raw harvesting store + pure OSC 133 / OSC 9;4 / title / bell parsers
+  (observe-only; controlled panes get none). `actions.ts` gains `postGateDecisionDetailed`
+  (verbatim error capture behind the retry affordances); `terminal.ts` gains the additive
+  `onSocketState` option (per-pane `connected`/`dropped` freshness from the socket's own
+  handshake/close; a deliberate `dispose()` reports nothing; `reconnecting` never fires — no
+  auto-reconnect exists).
 - `topology/` — the imperative constellation canvas + its pure model adapter. Task 33 reshapes it into an
   **active-enclosure** view: the constellation is now `workspace → source checkouts → active worktree
   enclosures (+ providers)`. The separate lifecycle/task rim is gone — each enclosure node folds in its
@@ -275,7 +294,13 @@ Styling was re-architected from a single ~1,200-line global `tokens.css` into th
   (the `refusedPolarity` edge field + a `refused` state) are likewise additive, so the change stays data within
   the existing `dev/` (and `data/` projection-type) route model. The hand-authored fixtures default
   `analytics.series: []` beside `taskDocuments` so every dev projection satisfies the current served
-  analytics shape.
+  analytics shape. **260715-FEUI-L6 adds `/dev/pty-bench`** — `PtyRenderBench.tsx`, the in-repo
+  PTY renderer-measurement harness behind the master OQ-B DOM-vs-webgl decision (N REAL
+  `panels/Terminal` components in a `minmax(0,1fr)` grid fed by `lineLogFixture.ts`, the
+  controlled line-log content verbatim-faithful to `harness_control_runner.py`, through the mock
+  WS; rAF-delta stats on `window.__ptyBench`; a `?probe=serialize` reattach probe), driven by
+  `dashboard/e2e/ptyRenderBench.mjs` (a plain node script, never collected by `npm run e2e`; its
+  header records the headless-SwiftShader software-GL caveat).
 
 ## 260707-HFX2-L16 Rail And Reader Contract
 
@@ -351,6 +376,23 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 route impact (PTY stage surface, structured
+  interactions, session lifecycle actions; review FINAL PASS after a 1×sev-3 + 5×sev-4 fix
+  round, all CLOSED): `data/` gains the interaction/lifecycle layer — `interactionAnswer.ts`
+  (the SOLE gate-channel answer path), `sessionLifecycle.ts` (detailed terminate/cleanup +
+  residual notice store + the focus-independent retire-residual sweep), `ptyHarvest.ts`
+  (client-side legacy-raw OSC/bell/title harvesting), all + suites; `actions.ts` gains
+  `postGateDecisionDetailed`, `terminal.ts` the additive `onSocketState`;
+  `panels/session-cockpit/` gains PtySurface/InteractionBar/WorkingLine/StopResidualNotes/
+  lifecycleCopy (see that overview); `panels/Terminal.tsx` gains additive optional props (DOM
+  default, lazy webgl escalation, live screenReaderMode, harvesting hooks, named `role="group"`
+  landmark); `test/fixtures/catalogRows.ts` appends the `L6_*` rows (FLEET byte-identical);
+  `dev/` gains `/dev/pty-bench` (`PtyRenderBench.tsx` + `lineLogFixture.ts`; driver at
+  `dashboard/e2e/ptyRenderBench.mjs`). Two exact-pinned deps entered `package.json`:
+  `@xterm/addon-webgl` (lazy escalation chunk, loaded only if the renderer constant flips) and
+  `@xterm/addon-serialize` (bench probe only — evaluated cheap-enough, deliberately NOT adopted
+  in product code until an LRU cap or the pane-freeze repaint package defines the discipline).
+  Verification metadata pinned to the leaf base until closeout stamps the L6 code commit.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 route impact (session data layer, rail, and stage
   container; review FINAL PASS): `data/` gains the sessions-cockpit data layer —
   `catalogPoll.ts` (the poll driver hoisted OUT of Chats; Chats is now a consumer),

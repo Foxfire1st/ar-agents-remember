@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00 |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -86,6 +86,12 @@ completed without leaving the rail. A `Pane` (`rail-pane-{role}`) is a header ro
 control (`rail-terminate-{role}`, fix 3) — over the `<Suspense>`-wrapped lazy `Terminal` registered through
 `onConnection`, and that pane's `SessionComposer`, which injects into
 *that* session's stdin via `sendToSession(session.id, bracketedPaste(sanitizeForInjection(text)))`.
+Since 260715-FEUI-L6 (review F6) BOTH `Terminal` mounts — the chat slot and the split terminal
+`Pane` — pass ``ariaLabel={`terminal: ${session.label}`}`` so each pane's `role="group"` landmark
+carries a real name in the rail surface (`Terminal.tsx` additionally guarantees a
+`terminal session <sessionId>` fallback, so the landmark can never be unnamed); this is the ONLY
+L6 change to this file — pane behavior, registries, and every other Terminal prop are
+byte-unchanged.
 `terminate(id)` awaits `terminateTerminalSession(id)`, then marks the row `terminated` + `close`s it
 locally and posts a `notifySessionCatalogChanged("terminate", id)` broadcast — so ending one slot frees
 only that slot. The heading shows `Chat · {leafIdFromKey(leafKey)}`.
@@ -135,6 +141,12 @@ canvas on import and cannot mount under jsdom). `data-testid`s: `rail-chat`, `ra
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (review finding F6, one-prop call-site change): both
+  `<Terminal>` mounts (the chat slot and the split terminal `Pane`) now pass
+  ``ariaLabel={`terminal: ${session.label}`}`` so the terminal's `role="group"` landmark carries
+  a real name in the rail surface (Terminal.tsx also guarantees a sessionId fallback). No other
+  rail behavior changed. Verification metadata pinned to the leaf base until closeout stamps the
+  L6 code commit.
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made rail attach/move role-explicit, preserved
   pair-scoped local state, and displayed current seat identity in pane headers.
 

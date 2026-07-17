@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -16,21 +16,57 @@
 
 ## Purpose
 
-The **sessions cockpit view** (260715-FEUI-L1 S2 shell, FILLED by 260715-FEUI-L2): rail / stage /
-inspector as a react-resizable-panels group with the narrow-width rules (inspector auto-collapses
-<~1100px, rail <~900px — both reopenable) and the ~80-col PTY floor hint chip. **L2 fills the
-panels**: the rail hosts `SessionRail` (the ruled role hierarchy + fleet attention), the stage the
-`SessionStage` container + `HeaderStrip` (empty ModelEffortControl slot for L4, reserved
-WorkingLine slot for L6), and the inspector the read-only `SeatInspector` provenance card (the L7
-tabbed inspector replaces it). The PTY/composer placeholders REMAIN — they are the keyboard-zone
-anchors L6/L5 fill. The view owns the L2 derivation seam: rail model + attention rollup are
-derived ONCE per render and shared between the rail and the palette commands. The root div
-carries **`[data-view="sessions"]`** — the WebTUI scope root (S1) and the keyboard layer's home —
-plus `sessions--view` and the marker classes and `sessions-*` testids.
+The **sessions cockpit view** (260715-FEUI-L1 S2 shell, FILLED by 260715-FEUI-L2, PTY stage +
+interactions by 260715-FEUI-L6): rail / stage / inspector as a react-resizable-panels group with
+the narrow-width rules (inspector auto-collapses <~1100px, rail <~900px — both reopenable) and
+the ~80-col PTY floor hint chip. **L2 fills the panels**: the rail hosts `SessionRail` (the ruled
+role hierarchy + fleet attention), the stage the `SessionStage` container + `HeaderStrip` (empty
+ModelEffortControl slot for L4), and the inspector the read-only `SeatInspector` provenance card
+(the L7 tabbed inspector replaces it). **L6 fills the stage body**: the focused seat renders a
+real `PtySurface` pane (carrying the `data-kbzone="pty"` contract), `StopResidualNotes` above it,
+the `InteractionBar` directly above the composer (never replacing it), and the `WorkingLine` into
+the stage's reserved slot; the PTY placeholder now renders ONLY for the empty stage (no focused
+session), and the composer textarea remains L5's placeholder (now ref-exposed to the bar's
+answer-mode). The view owns the L2 derivation seam: rail model + attention rollup are derived
+ONCE per render and shared between the rail and the palette commands. The root div carries
+**`[data-view="sessions"]`** — the WebTUI scope root (S1) and the keyboard layer's home — plus
+`sessions--view` and the marker classes and `sessions-*` testids.
 
 ## Code Commentary
 
-### 260715-FEUI-L2 Data Layer, Rail, And Stage Wiring
+### 260715-FEUI-L6 PTY Stage, Interactions, And Lifecycle Wiring
+
+- **Stage body fill** (L622-L649): `SessionStage` now receives `workingLine`
+  (`<WorkingLine session={focused} cockpit={perSession[focused.id]}>` — L2's reserved slot,
+  rendered only with a focused seat) and children in the ruled order: `<StopResidualNotes />`
+  (the dismissable informational stop-residual lines), then `<PtySurface focused={…}
+  onVisibleCols={setPtyCols}>` for a focused seat OR the explained placeholder (copy updated:
+  "no focused session — the terminal renders here once a seat is focused…") — the placeholder is
+  now the EMPTY-stage identity only, and the real surface carries the same `data-kbzone="pty"`
+  contract (jsdom-tested both ways; no L1 zone test weakened), then
+  `<InteractionBar session={focused} composerRef={composerRef}>` directly ABOVE the composer —
+  the composer is never replaced (R4; position pinned by test), and the textarea now carries
+  `ref={composerRef}` (L646) so the bar's no-choices answer-mode can mark it and read its text.
+- **R8 floor chip prefers pane truth** (L205, L606-L619): `ptyCols` state is fed by the VISIBLE
+  pane's real column count (`PtySurface`'s `onVisibleCols`, from `Terminal`'s post-fit
+  `onResizeCols`); when a pane reports, the chip renders `pane N cols (< 80)` with the measured
+  count in the tooltip — the L1 pixel estimate (`stageNarrow`) remains the pane-less fallback
+  only.
+- **F1 retire-residual sweep** (L229, L279): `useEffect(() => startRetireResidualSweep(), [])`
+  mounts the focus-independent data-layer sweep beside the poll driver/mirror — the former
+  focused-handoff residual-capture block is REMOVED (ownership moved to
+  `data/sessionLifecycle.ts`; an unfocused/tombstoned seat's `retireControlStopError` still
+  surfaces, and resurfaces after a reload).
+- **`turn.stop` palette command** (L317-L331): registered UA-7-honest — the title names the gap
+  (`Stop turn — unavailable: <STOP_TURN_DISABLED_REASON>`), the `when` gate is the WorkingLine's
+  OWN render condition `seatVisualState(focused).key === "working"` (review finding F3 — never
+  `turnState` directly, which would offer a command whose control is not on screen), and `run()`
+  focuses the welded disabled `working-line-stop` control so the reason is seen where the
+  control lives (design §9.7). The registration effect's deps gained `focused`.
+- **Triage focuses the bar in place** (L364-L376): the L2 per-seat question-triage commands now
+  focus the seat AND then the `interaction-bar` button — answering was the user's explicit
+  palette intent, so this is the invoked action, not a focus steal (R4's never-steal rule is
+  about spontaneous arrival).
 
 - **The shared feed** (L212-L215): `startCatalogPollDriver()` + `startCockpitMirror()` —
   refcounted, shared with Cockpit's unconditional subscription, so the keep-alive layer never
@@ -53,8 +89,8 @@ plus `sessions--view` and the marker classes and `sessions-*` testids.
   toggle (title flips with state), `attention.jump` (when-gated on a live target), sprint- and
   per-master bulk-end mirrors whose titles carry the HONEST counts + names (`End N completed —
   sprint: a, b, …` — the palette row IS the preview), and per-seat question triage
-  (`Answer pending question — <label>: “<preview>”`, newest first; selecting focuses the seat —
-  answering itself is L6's InteractionBar). All disposed and re-registered per dependency change.
+  (`Answer pending question — <label>: “<preview>”`, newest first; since L6, selecting focuses
+  the seat AND its InteractionBar in place). All disposed and re-registered per dependency change.
 - **Live `switchSession`** (L404-L416): alt+↑/↓ now cycles `railCycleOrder(model)` around the
   focused seat (the former L1 stub replaced — command ids/chords unchanged).
 
@@ -112,8 +148,9 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
   anchor (`position: relative`).
 - The component must stay safe as a never-unmounted hidden layer: 0-width measures are ignored;
   `active` (from `Cockpit.tsx`) gates all key bindings.
-- The remaining PTY/composer placeholders are the keyboard-zone anchors (`data-kbzone`); L6/L5
-  fill them WITHOUT moving the markers/testids.
+- The keyboard-zone contract (`data-kbzone="pty"/"composer"`) survives the L6 fill: the real
+  `PtySurface` carries the pty zone marker (tested), the placeholder keeps it for the empty
+  stage, and the composer textarea (L5's placeholder, now ref-exposed) keeps the composer zone.
 - All decisions (thresholds, floor, calibration percentages) live in `data/sessionLayout.ts`, and
   ALL rail/attention/focus derivations live in `data/railModel.ts` — this file only measures,
   derives once, and wires.
@@ -123,7 +160,13 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Panel group, floor chip, calibration, narrow rules, palette + keyboard wiring. | L190-L506 | [SessionsView.tsx](SessionsView.tsx) |
+| Panel group, floor chip, calibration, narrow rules, palette + keyboard wiring. | L192-L660 | [SessionsView.tsx](SessionsView.tsx) |
+| The L6 stage fill: sweep mount, `turn.stop` + triage-bar focus, pane-cols chip, workingLine + surface/bar/notes children. | L205-L206; L229; L317-L331; L364-L376; L601-L649 | [SessionsView.tsx](SessionsView.tsx) |
+| The pane surface the stage mounts per focused seat (archetypes, keep-alive, cols reporting). | L110-L244 | [PtySurface.tsx](PtySurface.tsx) |
+| The one interaction axis rendered above the composer. | L79-L293 | [InteractionBar.tsx](InteractionBar.tsx) |
+| The turn theater rendered into the stage's reserved slot (its grammar gate is the `turn.stop` gate). | L76-L126 | [WorkingLine.tsx](WorkingLine.tsx) |
+| The dismissable informational stop-residual lines above the surface. | — | [StopResidualNotes.tsx](StopResidualNotes.tsx) |
+| The focus-independent retire-residual sweep this view mounts (F1). | L47-L146 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
 | The shell that mounts this view as a keep-alive hidden layer and gates `active`. | — | [../../cockpit/Cockpit.tsx](../../cockpit/Cockpit.tsx) |
 | The pure decisions this shell feeds widths into. | L5-L85 | [../../data/sessionLayout.ts](../../data/sessionLayout.ts) |
 | The registry + default commands the context actions serve. | L56-L179 | [../../data/commands.ts](../../data/commands.ts) |
@@ -139,6 +182,16 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (incl. review fix round F1/F3): the stage body is
+  FILLED — `PtySurface` for the focused seat (placeholder now empty-stage-only, zone contract
+  carried by the real surface), `StopResidualNotes` above it, `InteractionBar` above the
+  never-replaced composer (textarea ref-exposed for answer-mode), `WorkingLine` into the
+  reserved slot; the ~80-col chip prefers the visible pane's REAL cols (`pane N cols (< 80)`)
+  over the pixel estimate; `startRetireResidualSweep()` mounted focus-independent (the
+  handoff-effect capture block removed — F1); `turn.stop` palette command gated on the
+  WorkingLine's own grammar state (F3) with the UA-7 gap named in the title and run() focusing
+  the welded control; triage commands now focus the InteractionBar in place. Verification
+  metadata pinned to the leaf base until closeout stamps the L6 code commit.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2: the shell's panels are FILLED — SessionRail (model +
   rollup derived once and shared with the palette), SessionStage + HeaderStrip (floor chip moves
   into `headerExtra`), SeatInspector in the inspector pane; added the shared poll-driver/mirror

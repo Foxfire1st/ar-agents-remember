@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -46,22 +46,36 @@ the shared `FLEET` fixtures.
   dots' `data-state`/color/pulse attributes (two surfaces, not one function twice).
 - **Zero state (R9)** — the empty rail explains itself; waiting(reason) renders steady
   muted-amber when supplied.
+- **L6 block (R5/R7, 6 cases)** (L361-L473) — End arms an inline confirm NAMING session · leaf ·
+  state with ZERO terminates while armed and the exact terminate URL after confirm; a FAILED
+  terminate POST (502 + body) renders `role="alert"` with the VERBATIM server words and retry
+  fires exactly one terminate after recovery (review finding 4's net); cancel disarms without a
+  fetch; the landed-cleanup outcome renders closed + skipped-with-reasons and dismisses; a
+  harvested bell renders the text-equivalent attention marker; harvested title/turn hints join
+  the row TOOLTIP as labeled parts while the dot stays pure grammar.
 
 ### Invariants And Boundaries
 
 DOM-position and DOM-negative assertions are the anatomy/vocabulary regression net; fetch is
-stubbed per case; stores reset between cases. Test-only.
+stubbed per case; stores (incl. the L6 `lifecycleNoticeStore` + `ptyHarvestStore`) reset between
+cases. Test-only.
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The component under test. | L342-L744 | [SessionRail.tsx](SessionRail.tsx) |
+| The component under test. | L348-L854 | [SessionRail.tsx](SessionRail.tsx) |
 | The shared fixtures every case builds from. | L10-L172 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
 | The grammar the matrix compares against. | L44-L106 | [../../data/stateGrammar.ts](../../data/stateGrammar.ts) |
+| The notice store + harvest store the L6 block seeds. | L46-L118 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
+| The harvest store the bell/hint cases drive. | L51-L133 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R5/R7): added the L6 block — arm/confirm with exact
+  URL + zero-kills-while-armed, verbatim 502 failure + single-POST retry (review finding 4),
+  cancel-without-fetch, closed+skipped cleanup outcome + dismiss, the text-equivalent bell
+  marker, and labeled tooltip hints with the dot-purity pin.
 - 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S4 (R11; fix round 1 added the
   highlight-expiry case and the dormant-✕ assertion): the rail-state matrix, anatomy +
   model-leakage negatives, ruled hierarchy + tree toggle, attention strip incl. expiry +

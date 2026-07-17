@@ -289,3 +289,57 @@ Newest entries are always inserted at the top.
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 3284c39ff546dc4398a8c9976bdf8a4ea3f42b7d |
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 64086bb8574042bc1147bff763123b4a2fe81d91 |
 | 9ab2d2ceddc5dd0b83e14b64b44f5087e4d1935e | 988e2a452846ced092d4d477e80f4a2207c88d21 |
+
+## Leaf Entries (pending closeout mapping)
+
+### 260715-FEUI-L6 — PTY stage surface, structured interactions, session lifecycle actions (2026-07-17)
+
+- **Scope shipped (code branch `ar/260715-feui-l6-pty-interactions`, base `e2b99dcd`, uncommitted
+  pending closeout):** the Sessions cockpit's stage surface + lifecycle actions — `PtySurface`
+  (keep-alive real xterm panes mirroring the Chats layer idiom; two server-truth archetypes:
+  controlled line-log vs legacy raw; reserved scrollback-paused badge slot; reserved-chord filter;
+  persisted per-pane screen-reader opt-in applied live; real-cols floor-chip wiring),
+  `InteractionBar` (the ONE interaction axis above the composer; kind-aware
+  choices/freetext/unrepresentable; answers ride ONLY the landed gate channel —
+  `data/interactionAnswer.ts` → `POST /api/actions/approve` with the answer as decision note,
+  zero terminal writes; store-backed round trip with verbatim failure + same-answer retry),
+  `WorkingLine` (single home of turn theater in the stage's reserved slot; welded UA-7-gated
+  disabled stop; ruled 2.4 s slow-pulse glyph), `StopResidualNotes` + `data/sessionLifecycle.ts`
+  (honest terminate arm→confirm naming session · leaf · state; verbatim terminate failures with
+  retry; landed-cleanup outcome rendering; INFORMATIONAL stop residuals that outlive tombstoned
+  rows via the focus-independent refcounted retire-residual sweep), `lifecycleCopy.ts` (ONE copy
+  module), `data/ptyHarvest.ts` (client-side observe-only legacy-raw OSC/bell/title harvesting),
+  additive `Terminal.tsx` extensions (renderer seam, live screenReaderMode, harvesting hooks,
+  keyEventFilter, onResizeCols, always-named `role="group"` landmark; Chats/RailChat call sites
+  +1 `ariaLabel` prop), `L6_*` fixtures appended after a byte-identical FLEET, and the
+  `/dev/pty-bench` measurement harness (`dev/PtyRenderBench.tsx` + `dev/lineLogFixture.ts` +
+  driver `dashboard/e2e/ptyRenderBench.mjs`). Two exact-pinned deps: `@xterm/addon-webgl`,
+  `@xterm/addon-serialize`.
+- **Review outcome:** adversarial review PASS (0 sev-1/2, 1 sev-3, 5 sev-4) → fix round 1 closed
+  ALL SIX findings (F1 focus-independent retire-residual sweep; F2 NOT-YET vs CANNOT missing-gate
+  copy; F3 turn.stop gate aligned to the WorkingLine's grammar predicate; F4 verbatim terminate
+  failure + retry; F5 stale answered-state clear incl. undefined interactionId; F6 always-named
+  terminal group landmark) → delta-verify FINAL PASS. The one deliberate skip (no re-answer
+  affordance for an answered-but-never-clears interaction) was ACCEPTED with server-mechanics
+  rationale: the decided gate would 409 any re-answer by construction, and the synchronizer
+  itself retries vendor delivery every observe cycle.
+- **Evidence:** `npx vitest run` 66 files / 715 tests, all passing (baseline 59/643; fix round
+  706 → 715); `npm --prefix dashboard run build` + `eslint src` + `tsc -b` clean; real-browser
+  smoke clean.
+- **Renderer decision (master OQ-B):** `PTY_RENDERER = "dom"` BY MEASUREMENT — DOM holds a locked
+  60 Hz budget at 12 concurrent line-log panes (mean 16.7 ms, 0 frames > 33.4 ms). CAVEAT
+  (recorded in code + driver): the headless webgl rows measured SwiftShader software GL, so the
+  decision rests on the hardware-honest DOM rows + the per-pane WebGL context cap, not on webgl
+  losing a software race; webgl stays a lazy escalation path with DOM fallback.
+  `@xterm/addon-serialize` measured cheap (234 KB / ~27 ms / ~23 ms at 5000 lines) and
+  deliberately NOT adopted until an LRU cap or the pane-freeze repaint package defines the
+  discipline.
+- **Upstream asks (for the developer/orchestrator):** (1) retire stays RENDER-ONLY in the cockpit
+  — the retire route requires a catalog actor seat the dashboard doesn't have; an operator retire
+  UI needs an actor-seat path upstream. (2) Interactions on lifecycle-less seats never project an
+  answerable gate — a gate-id-only projection surface is the upstream fix (the server already
+  accepts gate-id-only decisions); the bar's copy says CANNOT honestly.
+- **Memory:** 17 sidecars created, 15 refreshed, 5 overviews + entities.md updated (mcp/ carries
+  the No-route-impact bundle-resync attestation), route indexes regenerated; gates at the
+  pre-commit floor (0 actionable findings; the local-unstaged-changes warning class clears at the
+  code commit). Details: `notes/reports/260717-FEUI-L6-curator-report.md` (coordination root).

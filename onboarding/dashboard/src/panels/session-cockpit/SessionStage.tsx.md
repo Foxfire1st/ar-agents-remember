@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionStage.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -17,10 +17,10 @@
 ## Purpose
 
 The **SessionStage container** (260715-FEUI-L2 S5, spec §1.2): the stage's FIXED layer order —
-HeaderStrip (always) → the reserved WorkingLine slot (rendered by L6) → the surface (the PTY, L6)
-→ the composer (L5). This leaf ships the container + HeaderStrip; the PTY/composer placeholders
-stay OWNED BY SessionsView (passed as `children`) so L1's keyboard-zone markers survive and the
-zone contract stays testable.
+HeaderStrip (always) → the WorkingLine slot (FILLED by L6 via the `workingLine` prop) → the
+surface (the PTY — L6's PtySurface) → the composer (L5). L2 shipped the container + HeaderStrip;
+the surface/composer stay OWNED BY SessionsView (passed as `children`) so L1's keyboard-zone
+markers survive and the zone contract stays testable.
 
 ## Code Commentary
 
@@ -33,9 +33,10 @@ zone contract stays testable.
   (the ~80-col floor hint stays owned by SessionsView).
 - **Handoff note (F17)** (L76-L80): the one-line `role="status"` amber note when the previously
   focused seat retired/landed (text built by SessionsView's handoff effect).
-- **WorkingLine slot** (L81-L83): `data-slot="working-line"` directly under the header —
-  zero-height until L6 renders the turn theater (verb, ~elapsed, ⏹ stop) into it.
-- **Children** (L84): the PTY/composer placeholders from SessionsView.
+- **WorkingLine slot** (L84-L87): `data-slot="working-line"` directly under the header — L6's
+  ONE additive optional `workingLine` prop renders the turn theater (verb, ~elapsed, ⏹ stop)
+  inside it; the slot is the prop's ONLY tenant and stays zero-height when no line renders.
+- **Children** (L88): the PTY surface/composer from SessionsView.
 
 ### Invariants And Boundaries
 
@@ -48,14 +49,18 @@ zone contract stays testable.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The layer order, empty identity, handoff note, and reserved slot. | L46-L87 | [SessionStage.tsx](SessionStage.tsx) |
+| The layer order, empty identity, handoff note, and the filled slot. | L46-L91 | [SessionStage.tsx](SessionStage.tsx) |
 | The header line rendered for the focused seat. | L79-L145 | [HeaderStrip.tsx](HeaderStrip.tsx) |
-| The owner passing focused/cockpit/handoff/children + the floor chip. | L546-L590 | [SessionsView.tsx](SessionsView.tsx) |
+| The owner passing focused/cockpit/handoff/workingLine/children + the floor chip. | L606-L657 | [SessionsView.tsx](SessionsView.tsx) |
+| The slot's only tenant — L6's turn theater. | L76-L129 | [WorkingLine.tsx](WorkingLine.tsx) |
 | The focus selectors that target `data-stage-header`. | — | [../../data/keymap/focus.ts](../../data/keymap/focus.ts) |
 | The suite covering slot position, handoff, and the explained empty state. | L83-L107 | [HeaderStrip.test.tsx](HeaderStrip.test.tsx) |
 
 ## Update History
 
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6: the reserved WorkingLine slot is FILLED — the ONE
+  additive optional `workingLine` prop (the slot's only tenant) renders L6's turn theater inside
+  `data-slot="working-line"`; layer order, empty identity, and handoff note unchanged.
 - 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S5 (R9/R10/F17): the stage container with
   the ruled layer order, the always-on header hosting HeaderStrip or the explained no-focus
   identity, the F17 handoff note, and the reserved zero-height WorkingLine slot for L6.

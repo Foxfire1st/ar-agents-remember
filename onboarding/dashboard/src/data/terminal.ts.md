@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-17T04:20+02:00 |
+| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
+| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -86,6 +86,13 @@ other status / network failure → `"error"` (the `AttachLeafResult` union the C
 (id/name/detected) the Chats strip turns into a button per *detected* harness; `[]` on any failure.
 `TerminalSocketContext` is the dev/test seam — a provider supplies a fake factory (the bench mock);
 `null` in production ⇒ a real same-origin socket.
+**`ConnectTerminalOptions.onSocketState`** (260715-FEUI-L6, R15 freshness wiring, L36-L43) is an
+additive hook reporting the socket's OWN truth: `"connected"` fires from `socket.onopen` (the
+real handshake), `"dropped"` from the shared `end()` path (a non-deliberate close/exit). A
+deliberate `dispose()` pre-sets the `ended` guard, so it reports NOTHING — a removed pane is not
+a dropped one. There is no auto-reconnect anywhere in this client, so `"reconnecting"` never
+fires — the wire stays honest. The cockpit routes it into
+`sessionCockpitStore.setPtyWs` (per-pane `freshness.ptyWs`).
 `bracketedPaste(text)` (slice 6e-3) is a pure helper wrapping text in `ESC[200~…ESC[201~` so a TUI
 treats composer-injected context as one paste (used by `Chats`; typed keystrokes stay raw).
 `pasteAndConfirm(conn, packageText)` (reopened L6) is the confirmed **draft** delivery loop for the
@@ -115,6 +122,8 @@ imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-
 | The serving API that returns terminal catalog rows and accepts terminate requests. | L509-L515; L587-L604 | [serving/app.py](../../../mcp/src/agents_remember/serving/app.py) |
 | The xterm wrapper that adapts a `Terminal` to the `TerminalSink`. | — | [panels/Terminal.tsx](../panels/Terminal.tsx) |
 | The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
+| The freshness consumers: Terminal forwards `onSocketState`, PtySurface routes it into the cockpit store. | L127; L224 | [panels/Terminal.tsx](../panels/Terminal.tsx) |
+| The per-pane `freshness.ptyWs` field this hook feeds. | L67 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
 
 ### 260713-PHA-L5 Protocol Catalog Fields
 
@@ -123,6 +132,12 @@ detail fields. The WebSocket and paste helpers remain ordinary-terminal mechanic
 uses correlated backend protocol receipts.
 
 ## Update History
+- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R15 freshness wiring): added the additive
+  `ConnectTerminalOptions.onSocketState` hook — `connected` on the WS handshake, `dropped` on a
+  non-deliberate close/exit, NOTHING on a deliberate `dispose()` (a removed pane is not a dropped
+  one), and `reconnecting` never fires because no auto-reconnect exists. All other mechanics
+  untouched (6 lines). Verification metadata pinned to the leaf base until closeout stamps the L6
+  code commit.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R4): the catalog wire shape moved out to
   `types/terminalCatalog.ts` (the full `TerminalCatalogEntry.to_json()` mirror); this module now
   re-exports the types (`TerminalSessionInfo` = `TerminalCatalogRow`) so import sites are
