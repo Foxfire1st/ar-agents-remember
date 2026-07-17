@@ -11,10 +11,14 @@
   "childRoutes": [],
   "coveredFiles": [
     "dashboard/src/panels/session-cockpit/CommandPalette.tsx",
+    "dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx",
+    "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx",
     "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx",
     "dashboard/src/panels/session-cockpit/HeaderStrip.tsx",
     "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx",
     "dashboard/src/panels/session-cockpit/InteractionBar.tsx",
+    "dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx",
+    "dashboard/src/panels/session-cockpit/LaunchFlow.tsx",
     "dashboard/src/panels/session-cockpit/PtySurface.test.tsx",
     "dashboard/src/panels/session-cockpit/PtySurface.tsx",
     "dashboard/src/panels/session-cockpit/SeatInspector.test.tsx",
@@ -32,16 +36,18 @@
     "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 20,
-    "fileSidecars": 20,
+    "sourceFilesInScope": 24,
+    "fileSidecars": 24,
     "childRoutes": 0
   },
   "routingTerms": [
     "cockpit",
     "commandpalette",
     "dashboard",
+    "failedlaunchbanner",
     "headerstrip",
     "interactionbar",
+    "launchflow",
     "lifecyclecopy",
     "panels",
     "ptysurface",
@@ -63,10 +69,14 @@
     "candidateHints": [
       "dashboard/src/panels/session-cockpit",
       "dashboard/src/panels/session-cockpit/CommandPalette.tsx",
+      "dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx",
+      "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx",
       "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx",
       "dashboard/src/panels/session-cockpit/HeaderStrip.tsx",
       "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx",
       "dashboard/src/panels/session-cockpit/InteractionBar.tsx",
+      "dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx",
+      "dashboard/src/panels/session-cockpit/LaunchFlow.tsx",
       "dashboard/src/panels/session-cockpit/PtySurface.test.tsx",
       "dashboard/src/panels/session-cockpit/PtySurface.tsx",
       "dashboard/src/panels/session-cockpit/SeatInspector.test.tsx",
@@ -80,12 +90,15 @@
       "dashboard/src/panels/session-cockpit/StopResidualNotes.tsx",
       "dashboard/src/panels/session-cockpit/WorkingLine.test.tsx",
       "dashboard/src/panels/session-cockpit/WorkingLine.tsx",
-      "dashboard/src/panels/session-cockpit/lifecycleCopy.ts",
-      "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
+      "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
     ],
     "anchorHints": [
       "CommandPalette.tsx",
       "CommandPalette",
+      "FailedLaunchBanner.test.tsx",
+      "FailedLaunchBanner.test",
+      "FailedLaunchBanner.tsx",
+      "FailedLaunchBanner",
       "HeaderStrip.test.tsx",
       "HeaderStrip.test",
       "HeaderStrip.tsx",
@@ -94,6 +107,10 @@
       "InteractionBar.test",
       "InteractionBar.tsx",
       "InteractionBar",
+      "LaunchFlow.test.tsx",
+      "LaunchFlow.test",
+      "LaunchFlow.tsx",
+      "LaunchFlow",
       "PtySurface.test.tsx",
       "PtySurface.test",
       "PtySurface.tsx",
@@ -123,15 +140,7 @@
       "lifecycleCopy.ts",
       "lifecycleCopy",
       "useKeyboardZones.ts",
-      "useKeyboardZones",
-      "data-view=\"sessions",
-      "2.4",
-      "WebTUI",
-      "DOM",
-      "dashboard/src/panels/session-cockpit/",
-      "route-local-overview",
-      "7b62338310aff67ae8b66a450a52a1f1052137c4",
-      "/overview.md"
+      "useKeyboardZones"
     ]
   },
   "fallback": {

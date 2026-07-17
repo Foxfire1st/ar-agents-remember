@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T06:10+02:00                           |
+| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
+| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -17,16 +17,18 @@
 ## Purpose
 
 The sessions view end-to-end jsdom suite (260715-FEUI-L1 S2–S5, 18 cases after review round 2;
-+3 integration cases from 260715-FEUI-L2; +7 from 260715-FEUI-L6 incl. the fix round): scaffold
-structure + the keyboard/palette foundation wired end-to-end — zones resolved from real DOM
-markers, tinykeys at the window, cmdk palette pages, and the F6 focus cycle — now running against
-the REAL rail/stage (all 21 L1 cases pass unchanged against the L2-filled panels; the pty-zone
-cases still exercise the placeholder, which hydrating no sessions keeps on screen). The L2 cases:
-R9 view-entry focus lands on the awaiting-input seat first, F17 focus handoff when the focused
-seat retires/lands (reason-bearing stage note + smart refocus), and alt+↑/↓ rail-order session
-cycling. The L6 block covers the stage fill: the real `PtySurface` (xterm mocked out of jsdom via
-`vi.mock("../Terminal")`), the WorkingLine slot, the InteractionBar axis, stop residuals (incl.
-the unfocused-seat sweep), and the grammar-gated Stop-turn palette command.
++3 integration cases from 260715-FEUI-L2; +7 from 260715-FEUI-L6 incl. the fix round; +2
+launch-integration cases from 260715-FEUI-L3): scaffold structure + the keyboard/palette
+foundation wired end-to-end — zones resolved from real DOM markers, tinykeys at the window, cmdk
+palette pages, and the F6 focus cycle — now running against the REAL rail/stage (all 21 L1 cases
+pass unchanged against the L2-filled panels; the pty-zone cases still exercise the placeholder,
+which hydrating no sessions keeps on screen). The L2 cases: R9 view-entry focus lands on the
+awaiting-input seat first, F17 focus handoff when the focused seat retires/lands (reason-bearing
+stage note + smart refocus), and alt+↑/↓ rail-order session cycling. The L6 block covers the
+stage fill: the real `PtySurface` (xterm mocked out of jsdom via `vi.mock("../Terminal")`), the
+WorkingLine slot, the InteractionBar axis, stop residuals (incl. the unfocused-seat sweep), and
+the grammar-gated Stop-turn palette command. The L3 cases wire the launch flow and failed-launch
+banner through the real view.
 
 ## Code Commentary
 
@@ -66,6 +68,11 @@ the unfocused-seat sweep), and the grammar-gated Stop-turn palette command.
   state (review F3): patching a pending interaction onto a working seat unmounts the line AND
   removes the command; (7) an UNFOCUSED seat's retire residual is captured by the sweep — the
   note renders with no handoff fired and no failure wording (review F1, sev-3).
+- **Launch integration (L3: R5/R6)** (L299-L346 on the L3 code state) — the palette lists
+  "Launch session…" and running it opens the flow (`launch-flow` appears); focusing the FLEET
+  failed scout renders the banner with its bridgeError VERBATIM (and never on a healthy seat —
+  asserted first), and 'Launch corrected…' opens the flow with the failed seat's harness
+  pre-selected against a live stubbed capability fetch.
 
 ### Conventions
 
@@ -92,9 +99,15 @@ layout change WITHOUT a root resize. Test-only.
 | The keys-page data the drift-proof assertions read. | L62-L150 | [../../data/keymap/reserved.ts](../../data/keymap/reserved.ts) |
 | The shared jsdom stubs (incl. the cmdk `scrollIntoView` stub) this suite relies on. | — | [../../test/setup.ts](../../test/setup.ts) |
 | The vitest alias to the browser development build of react-resizable-panels. | — | [vitest.config.ts](../../../vitest.config.ts) |
+| The L3 launch dialog + banner the integration cases exercise. | — | [LaunchFlow.tsx](LaunchFlow.tsx), [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
+| The envelope fixture the stubbed capability fetch serves. | — | [../../test/fixtures/capabilityEnvelopes.ts](../../test/fixtures/capabilityEnvelopes.ts) |
 
 ## Update History
 
+- 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R5/R6): +2 appended integration cases — the palette's
+  "Launch session…" opens the flow, and the focused FLEET failed scout renders the banner with
+  its verbatim bridgeError plus 'Launch corrected…' opening the flow pre-selected. Verification
+  metadata pinned to the leaf base until closeout stamps the L3 code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (incl. fix round): +7 cases in the L6 block — real
   PtySurface for the focused seat vs empty-stage placeholder (zone contract carried by the real
   surface), WorkingLine only-while-working in the reserved slot, InteractionBar above the

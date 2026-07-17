@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T04:20+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T06:30+02:00 |
+| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
+| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -181,7 +181,7 @@ and the `Chats` `SessionList` switcher).
   survives back/forward). Replaces the retired inline `TaskNotes` reader. See
   [notes-reader/ overview](notes-reader/overview.md).
 - `session-cockpit/` — the **Sessions cockpit view** (260715-FEUI-L1 shell, filled by
-  260715-FEUI-L2): the terminal-first sessions surface registered as the last mode-bar view and
+  260715-FEUI-L2, launch layer by 260715-FEUI-L3): the terminal-first sessions surface registered as the last mode-bar view and
   the fourth keep-alive full-bleed layer (the Chats pattern — never unmounted, `active`-gated
   keys). `SessionsView.tsx` is the shell + derivation seam — a react-resizable-panels
   rail/stage/inspector group (`autoSaveId="cockpit.sessions.panels"`) with edge-transition
@@ -202,14 +202,20 @@ and the `Chats` `SessionList` switcher).
   `InteractionBar.tsx` (the ONE structured-interaction axis — answers ride the gate channel
   only), `StopResidualNotes.tsx` (informational stop residuals), and `lifecycleCopy.ts`
   (centralized lifecycle copy); the rail gains the honest End arm→confirm flow with verbatim
-  failure + retry, cleanup outcomes, and legacy-raw bell/hint markers. Remaining scaffolding:
-  L4 controls, L5 composer, L7 tabbed inspector/status line.
+  failure + retry, cleanup outcomes, and legacy-raw bell/hint markers. **L3 adds the launch
+  layer**: `LaunchFlow.tsx` (the palette-opened, capability-catalog-driven launch overlay —
+  dynamic-only options, both-knobs-or-neither selection, uniform fail-loud response paths) and
+  `FailedLaunchBanner.tsx` (verbatim bridgeError, Retire + 'Launch corrected…', no auto-retry),
+  with header/inspector evidence tiers derived from row control-state truth through
+  `grammar/EvidenceBadge`. Remaining scaffolding: L4 controls, L5 composer, L7 tabbed
+  inspector/status line.
   `CommandPalette.tsx` (cmdk, non-portal, commands/keys pages rendered from the live registry +
   keymap data) and `useKeyboardZones.ts` (tinykeys at the window over the pure `data/keymap`
   contract) complete the keyboard/palette foundation; all decisions live React-free in
   `data/commands.ts` / `data/sessionLayout.ts` / `data/keymap/` / (L2) `data/railModel.ts` /
   `data/stateGrammar.ts` / `data/sessionCockpitStore.ts` / (L6) `data/interactionAnswer.ts` /
-  `data/sessionLifecycle.ts` / `data/ptyHarvest.ts`. See
+  `data/sessionLifecycle.ts` / `data/ptyHarvest.ts` / (L3) `data/capabilityCatalog.ts` /
+  `data/launchEvidence.ts` / `data/launchFlow.ts`. See
   [session-cockpit/ overview](session-cockpit/overview.md).
 - `MemoryMirror.tsx` — the segmented coverage/drift bar per repo + ledger currency + stalest
   sidecars (slice-3b analytics); drift classes mapped by record (forward-compatible).
@@ -441,6 +447,15 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T06:30+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
+  flow): the `session-cockpit/` child route gains its LAUNCH layer — `LaunchFlow.tsx` (the
+  palette-opened catalog-driven launch overlay) + `FailedLaunchBanner.tsx` (verbatim failed-seat
+  refusal surface) with their jsdom suites; `SessionsView` registers `session.launch` and mounts
+  both (pure appends); `HeaderStrip`/`SeatInspector` derive the R7 evidence tier from row
+  control-state truth and render `grammar/EvidenceBadge`; `SessionStage`'s empty-state copy
+  points at the palette launcher. No OTHER panel changed in this leaf (Chats/Terminal untouched).
+  Detail lives in the `session-cockpit/` overview and the touched sidecars. Verification
+  metadata pinned to the leaf base until closeout stamps the L3 code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 route impact (PTY stage surface, structured
   interactions, session lifecycle actions): the `session-cockpit/` child route gains
   `PtySurface`/`InteractionBar`/`WorkingLine`/`StopResidualNotes`/`lifecycleCopy` (+ four jsdom

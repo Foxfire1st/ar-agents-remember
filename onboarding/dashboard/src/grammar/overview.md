@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/grammar/`                         |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T23:57:30+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-17T06:20+02:00                           |
+| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
+| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -49,6 +49,13 @@ these rather than re-styling raw elements (the slice-5d analogue of the device-m
   and `sm` (~13px, Chats group headers). The ONE insignia component both the tasks tab and the Chats
   command tree render rank through; only ever visible when an orchestration task exists (D3).
   Covered by `RankBadge.test.tsx` (glyph anatomy is the contract).
+- `EvidenceBadge.tsx` — the launch-evidence tier badge (260715-FEUI-L3, R7): five DISTINCT glyphs
+  (`…` pending / `✓` readback / `◇` model-validated / `·` defaults / `✕` refused) with the tier
+  WORD always in the accessible name (`aria-label`) at EVERY size and the glyph `aria-hidden`;
+  sizes `row`/`sm`, podracer token colors. The ONLY renderer of `data/launchEvidence` tiers —
+  consumed by the cockpit HeaderStrip provenance chip, SeatInspector, and FailedLaunchBanner.
+  Covered by `EvidenceBadge.test.tsx` (glyph Set-distinctness + the word at both sizes for all
+  five tiers).
 
 ## Invariants And Boundaries
 
@@ -69,6 +76,12 @@ these rather than re-styling raw elements (the slice-5d analogue of the device-m
 
 ## Update History
 
+- 2026-07-17T06:20+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
+  flow): the library gained `EvidenceBadge.tsx` (+ `EvidenceBadge.test.tsx`) — the five-glyph
+  launch-evidence tier badge (tier word always in the accessible name, glyph aria-hidden,
+  `row`/`sm` sizes) shared by the session-cockpit HeaderStrip, SeatInspector, and
+  FailedLaunchBanner; tiers come exclusively from `data/launchEvidence.launchTier`. Verification
+  metadata pinned to the leaf base until closeout stamps the L3 code commit.
 - 2026-07-06T23:57:30+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): the library
   gained `RankBadge.tsx` (+ `RankBadge.test.tsx`) — the V4 chevron rank insignia (gold orchestration
   / purple management tiers, `row`/`sm` sizes) shared by `panels/LifecycleList` rows and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T06:10+02:00                           |
+| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
+| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -17,18 +17,21 @@
 ## Purpose
 
 The **sessions cockpit view** (260715-FEUI-L1 S2 shell, FILLED by 260715-FEUI-L2, PTY stage +
-interactions by 260715-FEUI-L6): rail / stage / inspector as a react-resizable-panels group with
-the narrow-width rules (inspector auto-collapses <~1100px, rail <~900px — both reopenable) and
-the ~80-col PTY floor hint chip. **L2 fills the panels**: the rail hosts `SessionRail` (the ruled
-role hierarchy + fleet attention), the stage the `SessionStage` container + `HeaderStrip` (empty
-ModelEffortControl slot for L4), and the inspector the read-only `SeatInspector` provenance card
-(the L7 tabbed inspector replaces it). **L6 fills the stage body**: the focused seat renders a
-real `PtySurface` pane (carrying the `data-kbzone="pty"` contract), `StopResidualNotes` above it,
-the `InteractionBar` directly above the composer (never replacing it), and the `WorkingLine` into
-the stage's reserved slot; the PTY placeholder now renders ONLY for the empty stage (no focused
-session), and the composer textarea remains L5's placeholder (now ref-exposed to the bar's
-answer-mode). The view owns the L2 derivation seam: rail model + attention rollup are derived
-ONCE per render and shared between the rail and the palette commands. The root div carries
+interactions by 260715-FEUI-L6, launch surfaces by 260715-FEUI-L3): rail / stage / inspector as
+a react-resizable-panels group with the narrow-width rules (inspector auto-collapses <~1100px,
+rail <~900px — both reopenable) and the ~80-col PTY floor hint chip. **L2 fills the panels**:
+the rail hosts `SessionRail` (the ruled role hierarchy + fleet attention), the stage the
+`SessionStage` container + `HeaderStrip` (empty ModelEffortControl slot for L4), and the
+inspector the read-only `SeatInspector` provenance card (the L7 tabbed inspector replaces it).
+**L6 fills the stage body**: the focused seat renders a real `PtySurface` pane (carrying the
+`data-kbzone="pty"` contract), `StopResidualNotes` above it, the `InteractionBar` directly above
+the composer (never replacing it), and the `WorkingLine` into the stage's reserved slot; the PTY
+placeholder now renders ONLY for the empty stage (no focused session), and the composer textarea
+remains L5's placeholder (now ref-exposed to the bar's answer-mode). **L3 appends the launch
+surfaces**: the `session.launch` palette command opens the `LaunchFlow` overlay, and a focused
+FAILED seat renders the `FailedLaunchBanner` inside the stage children above the pty surface.
+The view owns the L2 derivation seam: rail model + attention rollup are derived ONCE per render
+and shared between the rail and the palette commands. The root div carries
 **`[data-view="sessions"]`** — the WebTUI scope root (S1) and the keyboard layer's home — plus
 `sessions--view` and the marker classes and `sessions-*` testids.
 
@@ -93,6 +96,21 @@ ONCE per render and shared between the rail and the palette commands. The root d
   the seat AND its InteractionBar in place). All disposed and re-registered per dependency change.
 - **Live `switchSession`** (L404-L416): alt+↑/↓ now cycles `railCycleOrder(model)` around the
   focused seat (the former L1 stub replaced — command ids/chords unchanged).
+
+### 260715-FEUI-L3 Launch Surfaces (pure appends — no L1/L2 node reshaped or reordered)
+
+- **The `launch` state** (L213-L217): `{open, prefill?}` — the LaunchFlow dialog's open state,
+  set by the palette command or the banner's corrected-launch prefill.
+- **The `session.launch` palette command** (L287-L296): one self-contained registry effect
+  ("Launch session…") — the palette is the flow's entry point (design §7.1); no chord minted
+  (consistent with L2's chord-audit posture).
+- **FailedLaunchBanner for a focused FAILED seat** (L589-L597): mounted inside the stage children
+  BEFORE the pty placeholder when `focused?.controlState === "failed"` (R6 — the refusal renders
+  verbatim, never hidden, never auto-retried); `onLaunchCorrected` opens the flow pre-filled.
+  NOTE for the L6 sync-merge: this insert sits textually adjacent to the pty placeholder L6 owns —
+  structurally additive; resolution is "banner above pty surface" (review finding 5, no-action).
+- **`<LaunchFlow>`** (L687-L693): mounted after `<CommandPalette>` with the live `sessions` list
+  (the F9 unknown-outcome reconciler watches it) and `focusSession` as the focus sink.
 
 ### Logic
 
@@ -179,9 +197,18 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 | The pure derivations this view memoizes once per render. | L131-L464 | [../../data/railModel.ts](../../data/railModel.ts) |
 | The cockpit store (focus, mirrors, perSession) + the catalog mirror this view starts. | L107-L309 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
 | The shared poll driver subscription. | L60-L77 | [../../data/catalogPoll.ts](../../data/catalogPoll.ts) |
+| The L3 launch dialog this view opens (palette command / corrected-launch prefill). | L165-L613 | [LaunchFlow.tsx](LaunchFlow.tsx) |
+| The L3 failed-launch banner mounted above the pty placeholder for a failed focused seat. | L70-L182 | [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
 
 ## Update History
 
+- 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R5/R6): launch surfaces appended — the `launch` state,
+  the `session.launch` palette registration, the FailedLaunchBanner block for a focused failed
+  seat (prepended inside the stage children before the pty placeholder; L6-adjacency merge note
+  recorded — post-merge resolution: banner above the pty surface), and the `<LaunchFlow>` element
+  after the palette. Pure appends — no existing L1/L2 node reshaped or reordered
+  (reviewer-verified hunk by hunk). Verification metadata pinned to the leaf base until closeout
+  stamps the L3 code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (incl. review fix round F1/F3): the stage body is
   FILLED — `PtySurface` for the focused seat (placeholder now empty-stage-only, zone contract
   carried by the real surface), `StopResidualNotes` above it, `InteractionBar` above the

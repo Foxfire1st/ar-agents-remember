@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-17T06:10+02:00 |
+| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
+| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -22,7 +22,9 @@ terminal bridge at `/api/terminal/{session}`. It writes raw PTY bytes into an in
 the mirror of the backend's pure `_apply_terminal_input`. `panels/Terminal.tsx` owns the actual
 xterm rendering. It also carries the small Mode B2 control-plane fetches the Chats view needs — the
 `openTerminalSession` opener, durable-session hydration (`fetchTerminalSessions`), explicit session
-termination (`terminateTerminalSession`), and (slice 6e-2b) the `fetchHarnesses` detection helper.
+termination (`terminateTerminalSession`), and (slice 6e-2b) the `fetchHarnesses` detection helper
+(260715-FEUI-L3: plus the failure-distinguishing `fetchHarnessesOrNull` and the launch-pair knobs
+on the opener body).
 
 ## Code Commentary
 
@@ -73,6 +75,12 @@ the optional `options` object sends the friendly label, `lifecycleId`, and (slic
 backend catalog can persist the same identity the store will hydrate later — `leafKey` claims a leaf at
 open (the opener returns `409` when a different running chat already owns it). The caller then opens the
 socket — best-effort because the dev bench has no backend yet renders its mock.
+**(260715-FEUI-L3 R5)** `OpenTerminalOptions` also carries the launch pair — optional `model` +
+`effort` threaded into the POST body: a COMPLETE pair or neither knob (a partial pair is refused
+synchronously by the server as `400 launch-selection-invalid`; catalog validity is NOT checked at
+open time — a bad-but-complete pair opens 200/'starting' and fails asynchronously on every native
+harness). The launch flow itself uses the classifying client (`data/launchFlow.ts`
+`openHostedSession`); this boolean-result path stays for legacy callers.
 `terminateTerminalSession(id, base)` POSTs
 `/api/terminal/{id}/terminate` and returns success/failure for the destructive UI action.
 `cleanupLandedTerminalSessions(sessionIds, base)` POSTs `/api/terminal/landed-cleanup` and returns
@@ -83,7 +91,12 @@ to claim a leaf for an **existing** session (enclosure-free, no respawn): the se
 arbiter, so it maps `200 → "ok"` (bound), `409 → "leaf-taken"` (another running chat owns it), and any
 other status / network failure → `"error"` (the `AttachLeafResult` union the Chats page surfaces).
 `fetchHarnesses(base)` (slice 6e-2b) GETs `/api/harnesses` → the `HarnessInfo[]`
-(id/name/detected) the Chats strip turns into a button per *detected* harness; `[]` on any failure.
+(id/name/detected, plus — 260715-FEUI-L3 — an optional `control` word: the native
+protocol-adapter status `protocol_adapter_status`, absent on older servers, rendered verbatim in
+the launch flow's harness buttons) the Chats strip turns into a button per *detected* harness;
+`[]` on any failure. `fetchHarnessesOrNull(base)` (260715-FEUI-L3) is the same read but
+failure-distinguishing (`null` = failed): the launch flow must render a fetch failure loudly
+rather than an empty — and therefore lying — harness list; `fetchHarnesses` now delegates to it.
 `TerminalSocketContext` is the dev/test seam — a provider supplies a fake factory (the bench mock);
 `null` in production ⇒ a real same-origin socket.
 **`ConnectTerminalOptions.onSocketState`** (260715-FEUI-L6, R15 freshness wiring, L36-L43) is an
@@ -124,6 +137,8 @@ imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-
 | The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
 | The freshness consumers: Terminal forwards `onSocketState`, PtySurface routes it into the cockpit store. | L127; L224 | [panels/Terminal.tsx](../panels/Terminal.tsx) |
 | The per-pane `freshness.ptyWs` field this hook feeds. | L67 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
+| The launch flow consuming `fetchHarnessesOrNull` + `HarnessInfo.control` (adapter word rendered verbatim). | — | [../panels/session-cockpit/LaunchFlow.tsx](../panels/session-cockpit/LaunchFlow.tsx) |
+| The classifying open client the launch flow uses instead of this module's boolean opener. | L192-L222 | [launchFlow.ts](launchFlow.ts) |
 
 ### 260713-PHA-L5 Protocol Catalog Fields
 
@@ -132,6 +147,14 @@ detail fields. The WebSocket and paste helpers remain ordinary-terminal mechanic
 uses correlated backend protocol receipts.
 
 ## Update History
+- 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R5): additive launch-selection surface —
+  `OpenTerminalOptions` gained optional `model`/`effort` threaded into the POST body (complete
+  pair or neither; partial pairs are the server's synchronous 400, catalog validity is not
+  checked at open time), `HarnessInfo` gained the optional `control` adapter-status word, and
+  `fetchHarnessesOrNull` distinguishes a failed harness read (`null`) from an empty list so the
+  launch flow fails loudly (`fetchHarnesses` now delegates to it). WebSocket/paste/terminate/
+  cleanup mechanics untouched; the launch flow's own opener is `data/launchFlow.ts`.
+  Verification metadata pinned to the leaf base until closeout stamps the L3 code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R15 freshness wiring): added the additive
   `ConnectTerminalOptions.onSocketState` hook — `connected` on the WS handshake, `dropped` on a
   non-deliberate close/exit, NOTHING on a deliberate `dispose()` (a removed pane is not a dropped
