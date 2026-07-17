@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/commands.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -41,10 +41,11 @@ through the context (the view owns the DOM).
   ctrl+k), `keyboard.reference` (`keepsPaletteOpen`, opens the `keys` page), `rail.toggle`,
   `inspector.toggle`, `focus.nextRegion`/`prevRegion` (F6/Shift+F6), `focus.stageHeader`
   (composer Esc), `focus.exitToChrome` (PTY F6 — same landing as `focus.stageHeader`),
-  `focus.terminal`, and the honest stubs `session.prev/next` (alt+↑/↓ + the reserved
-  ctrl+alt+pageup/pagedown), `effort.decrease/increase` (alt+,/.) and `composer.submit` (ctrl+↵)
-  — each stub routes through an injected context action so L2/L4/L5 replace the ACTION, never the
-  command id or chord.
+  `focus.terminal`, `session.prev/next` (alt+↑/↓ + the reserved ctrl+alt+pageup/pagedown — LIVE
+  since 260715-FEUI-L2: the view's injected `switchSession` action cycles the rail order, and the
+  "(stub — L2)" title suffixes are gone), and the honest stubs `effort.decrease/increase`
+  (alt+,/.) and `composer.submit` (ctrl+↵) — each stub routes through an injected context action
+  so L4/L5 replace the ACTION, never the command id or chord.
 
 ### Invariants And Boundaries
 
@@ -67,6 +68,13 @@ through the context (the view owns the DOM).
 
 ## Update History
 
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2: `session.prev`/`session.next` titles dropped the
+  "(stub — L2)" suffix — the commands are live (SessionsView injects a real `switchSession` that
+  cycles `railModel.railCycleOrder`); ids and chords unchanged, exactly the stub-seam contract.
+  L2 also registers DYNAMIC commands through this registry from the view (tree toggle,
+  attention.jump, bulk-end mirrors with counts+names in the title, per-seat question triage) —
+  registration stays the extension mechanism. Verification metadata pinned to the leaf base until
+  closeout stamps the L2 code commit.
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S3 (R4): the pure extensible command
   registry (register/replace-by-id with stale-unregister protection, when-gated list/run,
   registration order) + `registerDefaultCommands` (palette/panels/focus live; session/effort/

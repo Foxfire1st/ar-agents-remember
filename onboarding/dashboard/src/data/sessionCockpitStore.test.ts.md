@@ -1,0 +1,58 @@
+# dashboard/src/data/sessionCockpitStore.test.ts
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `dashboard/src/data/sessionCockpitStore.test.ts` |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| governingOverview      | `../overview.md`                                 |
+
+## Governing Overview
+
+[dashboard/src overview](../overview.md)
+
+## Purpose
+
+Unit suite for the cockpit client store (260715-FEUI-L2 S3) — the design-§4.3 honesty invariants
+pinned as store behavior.
+
+## Code Commentary
+
+### Logic
+
+- **perSession skeleton** — honest defaults materialize on first touch (evidence tier `pending`,
+  empty ledgers); pending sets are PER KIND (a model set never clobbers an in-flight effort set).
+- **Set ledger + acknowledgment (F22)** — entries append unacknowledged and are acknowledged
+  explicitly; **"QUEUED NEVER MOVES THE EFFECTIVE MARKER"** — ledger writes leave `launchEvidence`
+  untouched (the core L4-honesty regression case).
+- **Client queue (F13)** — enqueue, supersede the LAST live item (the alt+↑ pop-back; requestId
+  never resent), dequeue by requestId.
+- **Freshness + poll health (R15)** — per-pane ws state + last output; three missed beats flip
+  `healthy`, one success restores it.
+- **Turn clock** — starts on an observed transition INTO working, clears on leaving it; the
+  `startCockpitMirror` case drives it through a real `sessionStore` write.
+- **Orchestration-tree toggle** — persists per user via localStorage (the leaf's open-question
+  decision).
+
+### Invariants And Boundaries
+
+Store reset between cases; localStorage cleared. The marker-invariance case must keep failing if
+any ledger path ever writes `launchEvidence`. Test-only.
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The module under test. | L14-L309 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
+| The registry the mirror case writes through. | — | [sessions.ts](sessions.ts) |
+
+## Update History
+
+- 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S3 (R11): skeleton defaults, per-kind
+  pending sets, ledger acknowledgment + the queued-never-moves-the-marker invariant, queue
+  supersession, freshness/poll-health cutoffs, turn-clock observation + mirror, and toggle
+  persistence. Verification metadata pinned to the leaf base until closeout stamps the L2 code
+  commit.

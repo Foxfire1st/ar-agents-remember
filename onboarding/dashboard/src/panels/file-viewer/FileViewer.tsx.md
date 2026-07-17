@@ -5,9 +5,9 @@
 | repository             | agents-remember                                      |
 | path                   | `dashboard/src/panels/file-viewer/FileViewer.tsx`    |
 | doc_type               | `file-level-onboarding`                              |
-| lastUpdated            | 2026-06-29T09:06+02:00                               |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`           |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00                               |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`           |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -36,7 +36,12 @@ Holds all view state with `useState`: `repos` (the catalog), `repo`, `scope` (de
 mount effect calls **`fetchRepos()`**, stores the catalog, and selects the first repo; an `alive` flag
 guards against a setState after unmount. A second effect **resets `code`/`sidecar` to empty when `repo` or
 `scope` changes** so a re-root never shows a stale file. `scopeItems` derives the scope picker from the
-current repo's `mainline` + `worktrees`. **`openCode(entry)`** guards non-file / same-file, then
+current repo's `mainline` + `worktrees`. 260715-FEUI-L2 hardened the repos fetch: a catalog
+response WITHOUT `repos` (an unexpected server shape or a generic test stub) degrades to `[]`
+instead of poisoning state with `undefined` — the old `setRepos(cat.repos)` put every later
+render's `repos.find` into a crash loop (a real latent robustness bug the L2 leaf's timing shift
+surfaced via `ChangeSetViewer.test.tsx`'s generic fetch stub; reviewer-accepted collateral fix).
+**`openCode(entry)`** guards non-file / same-file, then
 `readFile` → `resolveForward` and sets the sidecar to `markdown` (when found with a body) or `missing`.
 **`openSidecar(entry)`** calls `resolveReverse`; a `kind:"sidecar"` hit with `exists` re-enters `openCode`
 on the partner code path (closing the loop), otherwise it clears `code` and sets the sidecar to
@@ -78,5 +83,11 @@ switches and is full-bleed (drops the rails), like the Engine Room / Topology / 
 
 ## Update History
 
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (collateral, reviewer-accepted): one defensive line in
+  the repos mount effect — `cat.repos ?? []` — so a `repos`-less catalog response degrades to the
+  empty list instead of an `undefined` state that crash-looped `repos.find` on the next render
+  (deterministic latent bug; surfaced by the L2 leaf's microtask-timing shift under
+  `ChangeSetViewer.test.tsx`'s generic fetch stub, suite back to zero unhandled errors).
+  Verification metadata pinned to the leaf base until closeout stamps the L2 code commit.
 - 2026-06-30T00:00:00+02:00 — operations-integration L5: `openSidecar`'s overview branch now carries the doc body — it sets the sidecar to `{ state: "markdown", body }` when a `kind:"overview"` reverse-pairing has a non-null `body` (so opening an `overview.md` renders its prose full-pane), falling back to `{ state: "overview" }` only when the body is unreadable.
 - 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the File Viewer page — repo/scope selectors driving two Headless Tree explorers (code + onboarding) over the L1 files API, a reusable `DualPane` on the right, bidirectional code↔onboarding pairing, and a persisted split/single mode; kept mounted full-bleed across tab switches. Verification metadata pinned to the task base until closeout stamps the L2 code commit.

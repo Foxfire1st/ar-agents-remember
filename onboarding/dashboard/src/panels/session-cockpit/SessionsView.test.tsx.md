@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -16,9 +16,13 @@
 
 ## Purpose
 
-The sessions view shell end-to-end jsdom suite (260715-FEUI-L1 S2–S5; 18 cases after review
-round 2): scaffold structure + the keyboard/palette foundation wired end-to-end — zones resolved
-from real DOM markers, tinykeys at the window, cmdk palette pages, and the F6 focus cycle.
+The sessions view end-to-end jsdom suite (260715-FEUI-L1 S2–S5, 18 cases after review round 2;
++3 integration cases from 260715-FEUI-L2): scaffold structure + the keyboard/palette foundation
+wired end-to-end — zones resolved from real DOM markers, tinykeys at the window, cmdk palette
+pages, and the F6 focus cycle — now running against the REAL rail/stage (all 21 L1 cases pass
+unchanged against the L2-filled panels). The L2 cases: R9 view-entry focus lands on the
+awaiting-input seat first, F17 focus handoff when the focused seat retires/lands (reason-bearing
+stage note + smart refocus), and alt+↑/↓ rail-order session cycling.
 
 ## Code Commentary
 
@@ -72,6 +76,11 @@ layout change WITHOUT a root resize. Test-only.
 
 ## Update History
 
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2: +3 integration cases against the real rail/stage —
+  "view entry focuses the awaiting-input seat first" (R9), the F17 retire/land focus handoff with
+  the reason-bearing `stage-handoff-note`, and alt+↑/↓ cycling over the rail order; all 21
+  pre-existing L1 shell cases pass unchanged against the filled panels. Verification metadata
+  pinned to the leaf base until closeout stamps the L2 code commit.
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S5 (extended in review round 2 with the
   F1a/F1b floor-chip layout-path cases and the two rail-calibration cases): the end-to-end shell
   suite — structure/markers, palette pages + focus return, printable suppression, `/` rule, PTY

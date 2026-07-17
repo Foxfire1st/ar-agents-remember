@@ -1,0 +1,51 @@
+# dashboard/src/data/stateGrammar.test.ts
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `dashboard/src/data/stateGrammar.test.ts`        |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| governingOverview      | `../overview.md`                                 |
+
+## Governing Overview
+
+[dashboard/src overview](../overview.md)
+
+## Purpose
+
+Unit suite for the seat-state grammar (260715-FEUI-L2 R14) — the spec §2.4 mapping and the
+developer pulse ruling pinned as behavior.
+
+## Code Commentary
+
+### Logic
+
+- **Mapping cases** — working = cyan SLOW PULSE; awaiting-input = STEADY amber (the
+  blocked-on-human-never-flickers doctrine); waiting(reason) = STEADY muted-amber with the reason
+  rendered into word AND chip; failed = alarm SLOW PULSE and outranks turn-state; ready/turn-ended
+  = steady mint; landed/retired = dormant and outrank every live signal; starting = cyan steady;
+  unclassified stays unclassified and stale stays stale (mirrors, never invents).
+- **The pulse ruling** — asserts `PULSE_ANIMATION` is the 2.4 s ease-in-out string and contains NO
+  `steps(` — the reviewer additionally greps the diff for `steps(` additions at review time.
+
+### Invariants And Boundaries
+
+The ruling case pins constants exported for exactly this purpose; changing pulse timing or easing
+must fail here first. Test-only.
+
+## Repo-Internal References
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The module under test. | L12-L106 | [stateGrammar.ts](stateGrammar.ts) |
+| The renderer whose Panda literal the cross-surface suite pins to the same string. | L27-L33 | [../panels/session-cockpit/StateDot.tsx](../panels/session-cockpit/StateDot.tsx) |
+
+## Update History
+
+- 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 (R14/R11): the per-state mapping matrix,
+  precedence checks, the rendered-ready waiting(reason) case, and the no-steps 2.4 s ease-in-out
+  pulse-ruling pin. Verification metadata pinned to the leaf base until closeout stamps the L2
+  code commit.

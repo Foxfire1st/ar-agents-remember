@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Chats.tsx`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T21:52+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00 |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -47,6 +47,12 @@ that asks the backend to close only rows still marked landed.
 HFX2-L21 makes the full-page session sidebar adjustable: the prior fixed `16rem` column is now a
 persisted, bounded pixel width with a centre-facing pointer/keyboard resize separator. The original
 256px width remains the default, while the terminal keeps a minimum usable slot on narrow layouts.
+**260715-FEUI-L2 (R1) hoists the catalog poll OUT of this file: the 2500 ms poll driver now lives
+in `data/catalogPoll.ts` and Chats is a CONSUMER** — the interval effect was replaced 1:1 by the
+refcounted `startCatalogPollDriver()`, `hydrateTerminalSessionsFromCatalog` +
+`read/writeLastActiveSessionId` moved there verbatim, and the initial mount hydrate goes through
+the same shared helper so every catalog read records a poll-health beat. The L8 Chats-cutover
+decision explicitly depends on this hoist having landed.
 
 ## Code Commentary
 
@@ -91,16 +97,20 @@ IS open, its `selectedLeafKey` is surfaced first as the "(current)" quick defaul
 independent of selection. A bound session still renders a `leaf <name>` badge (`chats-leaf-badge`), and the
 `leafNameFor` resolver is passed into `SessionList` so each row shows its attached leaf's name.
 
-Task 22 adds a second mount effect that calls `fetchTerminalSessionsOrNull()` and hydrates the store from
-`fromTerminalSessionInfo`, using `localStorage["ar-dashboard:last-active-chat-session"]` as a preferred
+Task 22 adds a second mount effect that hydrates the store from the catalog — since 260715-FEUI-L2
+via the SHARED `hydrateTerminalSessionsFromCatalog(false)` from `data/catalogPoll.ts` (so the
+mount read records a poll-health beat like every other read; L2 review finding 6) — using
+`localStorage["ar-dashboard:last-active-chat-session"]` as a preferred
 active id. Initial mount ignores failed or empty responses so the dev/test bench does not erase local
 mock sessions. A catalog-sync effect subscribes to `subscribeSessionCatalogChanges`; remote create/end
 events trigger a fresh catalog fetch where an empty successful list is allowed to hydrate and clear rows
 (needed when another tab ends the last session). Remote terminate events include the terminated
 `sessionId`; the subscriber immediately marks/closes that row locally and filters the same id from the
-catalog hydrate so a stale re-fetch cannot repaint a ghost row. A separate L9 polling effect rehydrates
-from the catalog every 2.5s so agent-facing MCP moves or browser sessions without a shared
-`BroadcastChannel` still converge without a full refresh. A separate effect writes the active id
+catalog hydrate so a stale re-fetch cannot repaint a ghost row. The L9 2.5s polling rehydrate (so
+agent-facing MCP moves or browser sessions without a shared `BroadcastChannel` still converge
+without a full refresh) is since 260715-FEUI-L2 the shared refcounted driver:
+`useEffect(() => startCatalogPollDriver(), [])` — one interval however many consumers
+(Cockpit/Chats/SessionsView), stopped by the last release. A separate effect writes the active id
 back to localStorage. `terminateSession(id)` calls `terminateTerminalSession(id)`, marks the row
 `terminated` so the session store releases its label, removes it locally only when the backend confirms
 success, and broadcasts a `"terminate"` catalog invalidation with that id to other tabs.
@@ -183,6 +193,15 @@ terminal layers or animate the layout behind the pointer.
 
 ## Update History
 
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R1 poll-driver hoist + review finding 6): the catalog
+  poll no longer lives here — the interval effect was replaced 1:1 by the shared refcounted
+  `startCatalogPollDriver()` from `data/catalogPoll.ts`, where
+  `hydrateTerminalSessionsFromCatalog`, `readLastActiveSessionId`/`writeLastActiveSessionId`, and
+  `CATALOG_REFRESH_INTERVAL_MS` moved verbatim (the local copies deleted); the initial mount
+  hydrate now routes through the same shared helper so every catalog read records a poll-health
+  beat (semantics unchanged: empty/failed reads never clobber). Chats' consumer behavior is
+  byte-equivalent — exclude-set, allowEmpty guard, and last-active handling untouched.
+  Verification metadata pinned to the leaf base until closeout stamps the L2 code commit.
 - 2026-07-10T21:52+02:00 — 260707-HFX2-L21: replaced the static Chats sidebar width with a
   220–560px persisted resize gutter, added pointer and keyboard operation plus ARIA bounds, and
   preserved a minimum terminal slot without animating width. Verification metadata remains pinned

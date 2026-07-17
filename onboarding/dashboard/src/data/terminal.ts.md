@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00 |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -51,14 +51,15 @@ output activity and resolves once output has been quiet for ~700ms (the harness 
 or an 8s timeout — the highlight composer awaits it so a package isn't dropped into a still-**booting**
 harness. Pure helpers: `terminalSocketUrl` (same-origin
 `ws(s)://<host>/api/terminal/{id}`, id-encoded) and `parseTerminalControl` (`"exit"` | `null`).
-`TerminalSessionInfo` mirrors the server catalog payload (`id`, `label`, `kind`, optional
-`harness`/`lifecycleId`, optional `leafKey` (the durable qualified leaf id the chat claims, slice L5),
-`cwd`, `tmuxName`, timestamps, `status`, optional `terminatedAt`, optional `landedAt`/
-`landedReason`/`landedEdge`, and — 260703-L14 — optional
-`spawnRole`, the AR_SPAWN_ROLE the backend recorded on the catalog row at spawn, absent on
-hand-opened sessions; the documented role examples include architect/orchestrator/strategist/manager/
-worker/curator/reviewer/designer) and
-`TerminalSessionStatus` is `"running" | "exited" | "landed" | "terminated"`.
+**The catalog-row wire shape moved to `types/terminalCatalog.ts`** (260715-FEUI-L2 R4: the
+cockpit consumes the FULL `TerminalCatalogEntry.to_json()` mirror). This module RE-EXPORTS the
+types so existing consumers keep their import site — `TerminalSessionInfo` is now an alias of the
+full `TerminalCatalogRow` (identity/transport, leaf/seat identity, spawn + level provenance, the
+requested model/effort pair, control metadata, liveness evidence, retirement/landing provenance,
+turn state), and `TerminalOpenKind`/`TerminalSessionStatus`/`HarnessControlState`/
+`HarnessActivityState`/`HarnessAcceptanceState`/`SeatTurnState`/`TerminalLivenessEvidence` are
+re-exported from there; `fetchTerminalSessions(OrNull)` now returns `TerminalCatalogRow[]`.
+`TerminalSessionStatus` remains `"running" | "exited" | "landed" | "terminated"`.
 `fetchTerminalSessions(base)` GETs
 `/api/terminal/sessions` and returns an array or `[]` on failure, letting `Chats` hydrate rows after a
 page/dashboard refresh without treating the session list as projected lifecycle truth.
@@ -122,6 +123,12 @@ detail fields. The WebSocket and paste helpers remain ordinary-terminal mechanic
 uses correlated backend protocol receipts.
 
 ## Update History
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R4): the catalog wire shape moved out to
+  `types/terminalCatalog.ts` (the full `TerminalCatalogEntry.to_json()` mirror); this module now
+  re-exports the types (`TerminalSessionInfo` = `TerminalCatalogRow`) so import sites are
+  unchanged, and the catalog fetches return the full row. WebSocket/paste/open/terminate/cleanup
+  mechanics untouched. Verification metadata pinned to the leaf base until closeout stamps the L2
+  code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented additive catalog projection and hosted-delivery split.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: carried binding role in catalog types and attach POST

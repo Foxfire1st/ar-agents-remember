@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:25+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -46,8 +46,18 @@ last in the mode bar) — the terminal-first sessions cockpit whose future xterm
 
 Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from the store and renders nothing when `lastTickAt` is `null` (the supervisor has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"supervisor ok/stale <age>m"`, styled with the existing `caution({sev:"alarm"})` pulsing-red class past the staleness cutoff (`heartbeat.stale`) or the muted `dim` class otherwise, with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. **260707-HFX2-L8 (R6)** extends the same badge with `inbox redeliverable/pending` and latest sweep duration, so a growing operator-inbox storm is visible beside the heartbeat before staleness fires. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
 
-`Cockpit` wires the two SSE streams (`connectState`, `connectEvents`→`pushEvent`) then renders
-`CockpitShell` (split out so the dev gallery renders the same surface against fixtures). `CockpitShell`
+`Cockpit` wires the two SSE streams (`connectState`, `connectEvents`) then renders
+`CockpitShell` (split out so the dev gallery renders the same surface against fixtures).
+**260715-FEUI-L2 (S1/S2)** makes `Cockpit` the standing owner of the shared session feed: the
+`/api/events` EventSource now feeds TWO consumers on ONE connection — the Event River
+(`pushEvent`, unchanged, still receives backlog lines) and the seat-event reconciler
+(`data/seatEvents.applySeatEventLine`), whose application is routed through
+`createGatedSeatEventApplier()` — a PER-CONNECTION backlog gate: `ready` opens it,
+the EventSource `error` (`connectEvents`' new `onInterrupt`) re-closes it, so a reconnect's
+pre-`ready` backlog replay (incl. the undecodable-cursor full-window replay) can never regress
+live rows (L2 review finding 2). A third effect starts the refcounted 2500 ms catalog poll driver
+(`data/catalogPoll.startCatalogPollDriver`) unconditionally, so the session feed stays alive with
+ANY view — or none — in front; Chats/SessionsView share the same interval by refcount. `CockpitShell`
 holds `view` + `selectedId` state and derives `fullBleed = view === "files" || view === "engine" ||
 view === "topology" || view === "chats"`. Both the **File Viewer** (slice L2) and **Chats** views are
 full-bleed AND kept mounted as persistent CSS-hidden layers in `CockpitShell` (a `filesLayer` / `chatsLayer`
@@ -151,7 +161,9 @@ follows for a pre-L15 server.
 | `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | — | [Cockpit.tsx](Cockpit.tsx) |
 | The boot-time effects flag it persists to. | — | [main.tsx](../main.tsx) |
 | The honest-motion gate the rail transition + the toggle drive. | — | [panels/engine-room/useShouldAnimate.ts](../panels/engine-room/useShouldAnimate.ts) |
-| The SSE stream wiring includes an Event River ready callback. | L172-L181 | [Cockpit.tsx](Cockpit.tsx) |
+| The SSE stream wiring: one `/api/events` connection, two consumers (river + gated seat events), poll driver start. | L328-L354 | [Cockpit.tsx](Cockpit.tsx) |
+| The seat-event application + per-connection backlog gate this shell holds. | L106-L130 | [../data/seatEvents.ts](../data/seatEvents.ts) |
+| The refcounted catalog poll driver started unconditionally here. | L60-L77 | [../data/catalogPoll.ts](../data/catalogPoll.ts) |
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | — | [panels/DetailPanel.tsx](../panels/DetailPanel.tsx) |
 | The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; L6 receives `engineProcesses` here for leaf-context worktree facts. | L479-L485 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
@@ -163,6 +175,13 @@ follows for a pre-L15 server.
 
 ## Update History
 
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (S1/S2, incl. review finding 2): `Cockpit` now owns the
+  shared session feed — the `/api/events` EventSource carries the Event River AND the seat-event
+  reconciler (one connection, two consumers), with seat application behind the per-connection
+  backlog gate (`ready` opens, `error`/interrupt re-closes; replayed history never touches live
+  rows), and starts the refcounted 2500 ms catalog poll driver unconditionally so the feed lives
+  with any view — or none — in front. Verification metadata pinned to the leaf base until
+  closeout stamps the L2 code commit.
 - 2026-07-17T00:25+02:00 — 260715-FEUI-L1 (view shell, R1): registered the full-bleed **Sessions**
   view — `View` gained `"sessions"`, `VIEWS` a last `Sessions` tab, `fullBleed` includes it, and
   the view is kept mounted as the fourth persistent hidden layer (`sessionsLayer = chatsLayer`,

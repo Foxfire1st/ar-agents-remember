@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/stream.ts`                   |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T15:30+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -33,7 +33,11 @@ active-enclosure set the Topology constellation filters on; its delta arrives as
 `store.applyDelta`, and maps EventSource `open`/`error` to the connection badge state. `connectEvents`
 opens `GET /api/events`, forwards each raw `event` payload to the supplied `onLine` callback, and invokes
 the optional `onReady` callback when the backend emits its explicit `ready` marker after retained backlog
-delivery.
+delivery. 260715-FEUI-L2 (review finding 2) adds the optional **`onInterrupt`** callback, fired on
+the EventSource `error` event: every connection replays a backlog before its own `ready` (an
+undecodable `Last-Event-ID` cursor makes the server fall back to the full initial window), so a
+consumer gating application on `ready` must RE-CLOSE its gate on interrupt — the seat-event
+reconciler's per-connection backlog gate in `Cockpit.tsx` is the consumer this exists for.
 
 ### Conventions
 
@@ -75,6 +79,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (review finding 2): `connectEvents` gained the optional
+  `onInterrupt` callback wired to the EventSource `error` event — the reconnect signal the
+  seat-event per-connection backlog gate re-closes on (a reconnect replays backlog before its own
+  `ready`; an undecodable cursor replays the full initial window). Verification metadata pinned
+  to the leaf base until closeout stamps the L2 code commit.
 - 2026-06-28T15:30+02:00 — Task 33: documented the `activeWorktreeGroups` entry added to `STATE_EVENTS`
   (the bounded active-enclosure set the Topology filters on; delivered as a wrapped whole-value delta the
   store unwraps). Verification metadata pinned until closeout stamps the code commit.

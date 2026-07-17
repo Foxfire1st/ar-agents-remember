@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T00:30+02:00 |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00 |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -180,19 +180,27 @@ and the `Chats` `SessionList` switcher).
   `onOpenNotes`; controlled by `CockpitShell` (selection lifted, retained mounted-hidden after Back so it
   survives back/forward). Replaces the retired inline `TaskNotes` reader. See
   [notes-reader/ overview](notes-reader/overview.md).
-- `session-cockpit/` — the **Sessions cockpit view** (260715-FEUI-L1): the terminal-first sessions
-  surface registered as the last mode-bar view and the fourth keep-alive full-bleed layer (the
-  Chats pattern — never unmounted, `active`-gated keys). `SessionsView.tsx` is the shell — a
-  react-resizable-panels rail/stage/inspector group (`autoSaveId="cockpit.sessions.panels"`) with
-  edge-transition auto-collapse (inspector <~1100px, rail <~900px, both reopenable), the ~80-col
-  PTY floor hint chip (re-measured via `onLayout` + a stage-observing ResizeObserver), a one-shot
-  ~280px rail percentage calibration that never overrides a persisted layout, and deliberate
-  labeled scaffolding panels (L2 rail rows, L4 controls, L5 composer, L6 PTY, L7 inspector/status
-  line); its root carries `[data-view="sessions"]` — the WebTUI scope root (S1) and keyboard home.
+- `session-cockpit/` — the **Sessions cockpit view** (260715-FEUI-L1 shell, filled by
+  260715-FEUI-L2): the terminal-first sessions surface registered as the last mode-bar view and
+  the fourth keep-alive full-bleed layer (the Chats pattern — never unmounted, `active`-gated
+  keys). `SessionsView.tsx` is the shell + derivation seam — a react-resizable-panels
+  rail/stage/inspector group (`autoSaveId="cockpit.sessions.panels"`) with edge-transition
+  auto-collapse (inspector <~1100px, rail <~900px, both reopenable), the ~80-col PTY floor hint
+  chip (re-measured via `onLayout` + a stage-observing ResizeObserver), a one-shot ~280px rail
+  percentage calibration that never overrides a persisted layout; its root carries
+  `[data-view="sessions"]` — the WebTUI scope root (S1) and keyboard home. **L2 fills the
+  panels**: `SessionRail.tsx` (the RULED role hierarchy — flat command spine, active-first leaf
+  clusters, completed folders + naming bulk end — plus fleet attention, gate/brief markers,
+  poll-health banner, bus footer, and the spawn-tree provenance toggle), `SessionStage.tsx` +
+  `HeaderStrip.tsx` (the ruled stage layer order with the reserved L4 control + L6 WorkingLine
+  slots; honest freshness + requested-tier provenance), `StateDot.tsx` (the ONE grammar renderer —
+  2.4 s ease-in-out pulse ruling), and `SeatInspector.tsx` (the read-only provenance card until
+  L7). Remaining scaffolding: L4 controls, L5 composer, L6 PTY, L7 tabbed inspector/status line.
   `CommandPalette.tsx` (cmdk, non-portal, commands/keys pages rendered from the live registry +
   keymap data) and `useKeyboardZones.ts` (tinykeys at the window over the pure `data/keymap`
   contract) complete the keyboard/palette foundation; all decisions live React-free in
-  `data/commands.ts` / `data/sessionLayout.ts` / `data/keymap/`. See
+  `data/commands.ts` / `data/sessionLayout.ts` / `data/keymap/` / (L2) `data/railModel.ts` /
+  `data/stateGrammar.ts` / `data/sessionCockpitStore.ts`. See
   [session-cockpit/ overview](session-cockpit/overview.md).
 - `MemoryMirror.tsx` — the segmented coverage/drift bar per repo + ledger currency + stalest
   sidecars (slice-3b analytics); drift classes mapped by record (forward-compatible).
@@ -260,7 +268,10 @@ and the `Chats` `SessionList` switcher).
 	  id-bearing catalog invalidations across browser tabs; L9 also broadcasts `"leaf"` for reassignment
 	  and periodically re-fetches the catalog so out-of-session leaf moves converge without refresh.
 	  Receivers remove terminated ids immediately, re-fetch the catalog, and can clear rows on a successful empty response.
-	  Persistence is covered by `Chats.test.tsx`.
+	  Persistence is covered by `Chats.test.tsx`. Since 260715-FEUI-L2 the 2.5s catalog poll is
+	  HOISTED to `data/catalogPoll.ts` — Chats consumes the shared refcounted driver unchanged
+	  (Cockpit and the Sessions view hold the same interval), and its mount hydrate routes through
+	  the shared helper so every read records a poll-health beat.
   **HFX2-L21** makes the page's session-tree sidebar adjustable instead of fixed at `16rem`: a
   centre-facing vertical separator supports pointer drag and ArrowLeft/ArrowRight, clamps to
   220–560px, persists through `usePersistedNumber`, exposes ARIA min/max/current values, and reserves
@@ -416,6 +427,15 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 route impact (session data layer, rail, and stage
+  container): the `session-cockpit/` child route is FILLED — `SessionRail`/`SessionStage`/
+  `HeaderStrip`/`StateDot`/`SeatInspector` (+ two jsdom suites) land and `SessionsView` becomes
+  the once-derived model/rollup seam with smart-default focus, focus handoff, and dynamic palette
+  commands; `Chats.tsx` hands its 2.5s catalog poll to the shared `data/catalogPoll.ts` driver
+  (consumer semantics byte-equivalent); `file-viewer/FileViewer.tsx` gains a reviewer-accepted
+  one-line defensive repos-catalog guard. Detail lives in the `session-cockpit/` overview and the
+  touched sidecars; no panel was removed. Verification metadata pinned to the leaf base until
+  closeout stamps the L2 code commit.
 - 2026-07-17T00:30+02:00 — 260715-FEUI-L1 route impact: the route gains the **`session-cockpit/`**
   child route — the Sessions cockpit view shell (rail/stage/inspector PanelGroup + narrow rules +
   ~80-col floor chip + rail calibration), the non-portal cmdk CommandPalette (commands/keys pages

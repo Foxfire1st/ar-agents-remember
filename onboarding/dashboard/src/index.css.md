@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/index.css`                        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:25+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
+| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -30,8 +30,13 @@ S1 added the `webtui` slot); Panda's PostCSS plugin injects the generated
 WebTUI on a conflict, while the unlayered freeze below stays above it all. `@layer reset` (box-sizing + html/body
 reset), `@layer base` (body typography + the `h2`/`.muted`/`.raw-list` utilities moved here from the
 monolith), `@layer effects` (the global `.crt-overlay` — scanlines + the re-centred vignette +
-flicker). Two app-wide keyframes remain: `flicker` (the CRT overlay) and the shared `pulse` (the ≤3/s alarm
-flash used by blocked/alarm dots, signal-lost, `caution--alarm`, and the cockpit rail / topology). **Slice
+flicker). Three app-wide keyframes now live here: `flicker` (the CRT overlay), the shared `pulse` (the ≤3/s alarm
+flash used by blocked/alarm dots, signal-lost, `caution--alarm`, and the cockpit rail / topology), and —
+260715-FEUI-L2 — **`pulseSlow`** (the cockpit STATE pulse, developer ruling 2026-07-16): a SLOW
+ease-in-out opacity dip to 0.45 at 50%, driven at 2.4 s by `data/stateGrammar.ts`'s
+`PULSE_ANIMATION` and rendered only by `panels/session-cockpit/StateDot.tsx` — NEVER
+steps()/on-off blinking; frozen by the unlayered effects-off rule below and steady under
+`_motionReduce` at the consumer. **Slice
 05k deleted the nine Engine Room canvas `@keyframes`** — `chargeSweep`, `conduitDraw`, `pktRun`, `attnBreath`,
 `stopFlash`, `closeoutSweep`, `warpSurgeUp`, `warpSurgeDown`, and `landingIn` — because the canvas motion now
 lives in GSAP (`useEngineTimeline`) + Motion (`EnclosureCanvas`), never CSS (`05f` §8). A header comment
@@ -56,9 +61,10 @@ The `webtui` slot must stay in the FIRST `@layer` statement, between `effects` a
 the `data-effects=off` freeze must stay UNLAYERED and top-level — both are asserted by
 `test/webtuiSpike.test.ts` (for `!important` declarations, layered beats unlayered, so the freeze
 stays sovereign only while WebTUI ships no `!important` animation/transition — also asserted). Canvas animation is GSAP/Motion,
-not CSS keyframes (`05f` §8): only `flicker` + `pulse` remain as global keyframes, and `pulse` is still
-live (the rail / cockpit / topology + the engine-room `cva`s drive `animation: pulse …`), so it is NOT
-orphaned. *(Correcting the prior 5i note: `chargeSweep` was never an orphan — through 5i it backed
+not CSS keyframes (`05f` §8): `flicker` + `pulse` + (260715-FEUI-L2) `pulseSlow` are the global
+keyframes — `pulse` is still live (the rail / cockpit / topology + the engine-room `cva`s drive
+`animation: pulse …`), and `pulseSlow` is the RULED cockpit state pulse whose only sanctioned
+driver is the grammar/StateDot pair (2.4 s ease-in-out, never steps()). *(Correcting the prior 5i note: `chargeSweep` was never an orphan — through 5i it backed
 `engineReindexCharge`, the amber reindex pulse, so only `conduitDraw` was truly orphaned after the conduit
 draw-on moved to GSAP. 05k makes the point moot by deleting all nine canvas keyframes and re-driving the
 reindex pulse from GSAP `data-fx='reindex'`.)*
@@ -74,6 +80,11 @@ reindex pulse from GSAP `data-fx='reindex'`.)*
 
 ## Update History
 
+- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R14): added the `pulseSlow` keyframe — the cockpit
+  seat-state pulse (2.4 s ease-in-out opacity, ruled 2026-07-16, never steps()) consumed by the
+  grammar's single renderer `StateDot`; the header comment names the ruling and the
+  effects-off/motion-reduce freeze paths. Verification metadata pinned to the leaf base until
+  closeout stamps the L2 code commit.
 - 2026-07-17T00:25+02:00 — 260715-FEUI-L1 S1 (WebTUI adoption, OQ-D): the FIRST `@layer` statement
   gained the `webtui` slot between `effects` and `tokens` (`reset, base, effects, webtui, tokens,
   recipes, utilities`), hosting the scoped WebTUI skin from `styles/webtui.css` so Panda layers
