@@ -120,6 +120,7 @@
     "dashboard/src/styles/tokens.css",
     "dashboard/src/styles/webtui.css",
     "dashboard/src/test/contractCapabilities.test.ts",
+    "dashboard/src/test/fixtures/busScenarios.ts",
     "dashboard/src/test/fixtures/capabilityEnvelopes.ts",
     "dashboard/src/test/fixtures/catalogRows.ts",
     "dashboard/src/test/fixtures/controlMessages.ts",
@@ -136,14 +137,15 @@
     "dashboard/src/types/terminalOpen.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 241,
-    "fileSidecars": 108,
+    "sourceFilesInScope": 254,
+    "fileSidecars": 109,
     "childRoutes": 3
   },
   "routingTerms": [
     "actions",
     "announcer",
     "bench",
+    "busscenarios",
     "capabilitycatalog",
     "capabilityenvelopes",
     "catalogpoll",
@@ -219,8 +221,7 @@
     "topology",
     "tsx",
     "types",
-    "usetaskdocumentbody",
-    "webtui"
+    "usetaskdocumentbody"
   ],
   "hotPath": {
     "summary": "",

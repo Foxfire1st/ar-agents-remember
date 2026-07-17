@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-18T00:08+02:00 |
+| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
+| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -782,6 +782,13 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-18T00:08+02:00 — No route impact: 260715-FEUI-L7 rebuilt and synchronized the accepted
+  dashboard source into `package_data/dashboard/**` and refreshed
+  `package_data/dashboard.fingerprint` through the existing `scripts/sync-dashboard.py` boundary.
+  The generated bundle churn is excluded from file-level onboarding and changes no MCP Python
+  source, server contract, tool surface, serving boundary, or package architecture; the L7
+  inspector/status behavior is documented under `dashboard/src/`. Verification metadata remains
+  pinned until closeout stamps the L7 code commit.
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: documented the package-level sole submission
   authority, epoch/full-ref identity, atomic dispatch/withdraw, certified retry/error family,
   raw-free bounded lifecycle API, and dispatch-now native adapter boundary.

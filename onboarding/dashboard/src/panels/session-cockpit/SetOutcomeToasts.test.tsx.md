@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/SetOutcomeToasts.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T08:33+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated | 2026-07-17T23:54+02:00 |
+| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
+| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,9 +22,9 @@ Regression contract for background set-outcome persistence, acknowledgment, and 
 
 ### Logic
 
-Proves that no toast appears without attention or for the focused seat, that focus and dismiss are
-separate actions, that dismiss acknowledges the ledger, and that several affected sessions share
-one stack.
+Proves that no toast appears without attention or for the focused seat, that focus and `mark seen`
+are separate actions, that only mark seen acknowledges the ledger, and that several affected
+sessions share one stack.
 
 ### Conventions
 
@@ -51,7 +51,7 @@ No Domain Documentation source is configured.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Visibility, persistence, dismissal, focus, and collapse cases. | L33-L74 | [SetOutcomeToasts.test.tsx](SetOutcomeToasts.test.tsx) |
+| Visibility, persistence, mark-seen, focus, and collapse cases. | L33-L74 | [SetOutcomeToasts.test.tsx](SetOutcomeToasts.test.tsx) |
 | Component under test. | L58-L142 | [SetOutcomeToasts.tsx](SetOutcomeToasts.tsx) |
 
 ## Cross-Repo References
@@ -64,5 +64,8 @@ No meaningful cross-repo boundary is owned here.
 
 ## Update History
 
+- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 updated the regression contract to the explicit
+  `mark seen` wording while preserving focus/view as non-acknowledging. Verification metadata
+  remains pinned to the leaf base until closeout.
 - 2026-07-17T08:33+02:00 — Created for the 260715-FEUI-L4 R6 background-outcome regression
   after final reviewer PASS. Base verification metadata is temporary until code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-17T23:54+02:00 |
+| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
+| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -30,8 +30,8 @@ panels**: the rail hosts `SessionRail` — the RULED role-driven hierarchy (flat
 per-leaf clusters with the active seat on top, per-master completed folders + bulk end) plus fleet
 attention, gate/brief markers, poll-health banner, and the bus footer; the stage hosts the
 `SessionStage` container + `HeaderStrip` (identity → live ModelEffortControl → grammar state →
-leaf/seat → diagnostics; reserved WorkingLine slot); the inspector hosts catalog provenance
-plus the collapsed set ledger; and `StateDot` renders the ONE seat-state grammar
+leaf/seat → diagnostics; reserved WorkingLine slot); the inspector is now the accessible
+Evidence / Capabilities / Bus tab host; and `StateDot` renders the ONE seat-state grammar
 (`data/stateGrammar.ts` — 2.4 s ease-in-out pulse, never steps()). **260715-FEUI-L6 fills the
 stage surface and the lifecycle actions**: `PtySurface` renders keep-alive real xterm panes
 (DOM renderer BY MEASUREMENT, two server-truth archetypes — controlled line-log vs legacy raw),
@@ -52,8 +52,12 @@ SetResult table; pair changes serialize model → evidence/readback → effort; 
 ledger/rail attention, background toasts, cycle-effort commands, and polite/assertive live regions
 surface the result without color-only meaning. **260715-FEUI-L5 fills the real controlled-session
 composer**: shared CodeMirror Markdown editing, epoch-bound whole-message submit/reconcile, one
-evidence fold, `QueuePreview`, authoritative Alt+Up withdrawal/pop-back, and revision-safe recovery;
-only the L7 tabbed inspector/status line remains scaffolded. All pure derivations live in `data/` (`railModel`,
+evidence fold, `QueuePreview`, authoritative Alt+Up withdrawal/pop-back, and revision-safe recovery.
+**260715-FEUI-L7 completes the inspector/status integration**: an accessible stable-mounted
+three-tab inspector separates the full evidence audit, exact-session capabilities, and fleet Bus;
+the Bus preserves per-entry reply state through filtering, virtualization, and off-tab settlement;
+and the persistent StatusLine renders its contractual honest segment order and reserved UA-5 slot.
+All pure derivations live in `data/` (`railModel`,
 `stateGrammar`, `catalogPoll`, `seatEvents`, `sessionCockpitStore`, the L6
 `interactionAnswer`/`sessionLifecycle`/`ptyHarvest`, and the L3
 `capabilityCatalog`/`launchEvidence`/`launchFlow`, plus L4 `announcer`/`pairChange`/
@@ -65,8 +69,8 @@ DOM + wiring only.
 - `SessionsView.tsx` — the view shell + the L2 derivation seam. Root = the scope/testid/marker
   carrier (`sessions--view`, `data-view="sessions"`). A `PanelGroup`
   (`autoSaveId="cockpit.sessions.panels"`) of rail (collapsible, ~280px target via a one-shot
-  percentage calibration) / stage (min 35%) / inspector (24%, collapsible), a status-line footer
-  with reopen buttons, the non-portal `CommandPalette`, and the `useKeyboardZones` binding. Owns
+  percentage calibration) / stage (min 35%) / inspector (24%, collapsible), the real `StatusLine`
+  footer with reopen buttons, the non-portal `CommandPalette`, and the `useKeyboardZones` binding. Owns
   the command registry instance + the `CommandContext` actions (panel toggles, focus moves, the
   zone-sensitive alt+↑/↓ (`switchSession` in chrome; authoritative `composer.popBack` in the editor),
   live L4 effort cycle, and live FEUI-L5 submit), the narrow-width
@@ -89,7 +93,10 @@ DOM + wiring only.
   mounted after the palette. **L4** owns the one controlled model/effort popover shared by header
   and palette, mounts the promotion/drift + seat-state announcer watchers, drives alt+,/.
   `cycleEffortRequested`, renders the queued composer hint, and mounts persistent background
-  `SetOutcomeToasts` plus `CockpitLiveRegions`.
+  `SetOutcomeToasts` plus `CockpitLiveRegions`. **L7 keeps this packed route narrow**: it selects
+  only poll health, projected pickups, and supervisor heartbeat; passes them to `SeatInspector`;
+  and composes `StatusLine`. Inspector-domain projection, virtualization, and reply state remain
+  in focused files.
 - `QueuePreview.tsx` (L5) — the read-only raw-free queue projection beside the composer. It shows
   only explicit server-authoritative `queued` records, never invents a queue position, and points
   the operator to Alt+Up; dispatching, ambiguous, settled, and availability-loss records are not
@@ -170,23 +177,40 @@ DOM + wiring only.
   re-gate effort options to that row; apply sends one knob or the serialized pair; fetch errors
   remain verbatim with retry; acceptance words, requested/effective values, spinner, mark-seen,
   and 503 retry all render in text.
-- `CockpitLiveRegions.tsx` + `SetOutcomeToasts.tsx` (L4) — persistent auditory and background
+- `CockpitLiveRegions.tsx` + `SetOutcomeToasts.tsx` (L4/L7) — persistent auditory and background
   outcome surfaces. The two mounted regions subscribe to polite/assertive stores; unfocused
-  outcomes persist until explicit dismiss/mark-seen and several sessions collapse into one stack.
+  outcomes persist until the explicitly labelled `mark seen` action and several sessions collapse
+  into one stack. Focusing or viewing never acknowledges.
 - `StateDot.tsx` (L2, extended by L4) — the ONLY dot renderer for `data/stateGrammar` visuals
   (rail + header; StatusLine joins in L7; SeatInspector consumes only the grammar word);
   Panda-literal 2.4 s ease-in-out pulse pinned to
   `PULSE_ANIMATION`, steady under reduced motion, frozen by effects-off. L4 adds the optional
   named-image mode for rail dots; redundant header dots stay aria-hidden.
-- `SeatInspector.tsx` (L2, extended by L6/L4) — catalog provenance remains read-only while a
-  collapsed set-ledger section makes expansion the explicit viewing/acknowledgment act
-  (spawn role/level/requested pair at its honest tier, spawned-by, landed/retired reasons,
-  liveness evidence; L6 adds the pane archetype line, retire stop-error residuals for retired
-  rows, and the VERBATIM raw interaction payload the unrepresentable-interaction notice points
-  at); replaced by the L7 tabbed inspector. L3: the tier is the same `launchTier(session)`
-  derivation as the header, plus the honest "vendor defaults — no selection sent" model fact
-  for pairless harness rows. L4 ledger rows are newest-first, acceptance-first, and keep requested
-  and effective values distinct; switching seats remounts the next ledger collapsed.
+- `SeatInspector.tsx` (L7, carrying L2/L6/L4 evidence) — composition-only accessible tab host for
+  Evidence / Capabilities / Bus. Native `hidden` removes inactive controls from layout, the
+  accessibility tree, and keyboard traversal while all three panels stay mounted, preserving Bus
+  drafts and in-flight settlement. Arrow keys plus Home/End implement roving tab focus. With no
+  focused seat, seat-bound panes state their limit while the fleet Bus remains reachable.
+- `EvidencePane.tsx` + `InspectorPrimitives.tsx` (L7) — the complete audit surface: launch,
+  SetResult, submit receipts/reconciliation, bridge/pane/liveness facts, raw interaction payload,
+  and both terminate/retire stop residual classes. Viewing is read-only; `mark seen` is explicit;
+  exact `(sessionId, at)` residual dismissal is shared with the stage; fleet residuals survive
+  source-row removal and no-focus mode. Primitives keep fact/raw/action semantics consistent.
+- `CapabilitiesPane.tsx` (L7) — read-only exact-session snapshot and model-local effort truth,
+  deliberately separated from the pre-session harness envelope. Refresh reuses the established
+  reads; missing echo stays worded and native-process cost has no invented seconds.
+- `BusPane.tsx` + `BusDeveloperReply.tsx` (L7) — fleet-global projected-pending pickup ledger with
+  an exact focused-seat filter and separately rendered heartbeat. Entry-keyed reply state lives
+  above filters/virtual rows and prunes only against the full authoritative projection. Reverse
+  replies use projected sender agent/role only, POST a new operator-inbox message, never copy the
+  target lifecycle, and never consume or acknowledge the source row.
+- `VirtualizedInspectorList.tsx` (L7) — ordinary DOM list through 100 rows; TanStack virtualized
+  rendering above 100 with full logical totals and `aria-posinset`/`aria-setsize`. It is reused by
+  Evidence and Bus and never slices the underlying data.
+- `StatusLine.tsx` (L7) — persistent order: harness → model/effort + EvidenceBadge → state/observed
+  elapsed → leaf/seat → pending sets + queued messages → exact `ctx — / cost — (UA-5 slot)`;
+  freshness, reopen actions, and keyboard hint follow. Tabular numbers and explicit absence replace
+  fabricated telemetry.
 - `CommandPalette.tsx` — the cmdk palette, deliberately **not a portal** (the overlay stays inside
   the scope root; focus return stays local). Two pages: `commands` renders the live registry (the
   one options source); `keys` renders the SAME chord tables tinykeys binds (`data/keymap`), so the
@@ -230,6 +254,11 @@ DOM + wiring only.
   ledger-view acknowledgment with seat-switch isolation, named rail dots, and the worded set
   marker. Data-layer tables cover all five acceptances, exact-session classification, serialized
   pair termination, unknown/queued readback, cycling, and announcement transitions.
+- L7 adds focused suites for the Evidence/Capabilities/Bus panes, StatusLine, and the shared
+  virtualized list. `SeatInspector.test.tsx` is the integration guard: tab keyboard semantics,
+  native hidden behavior, draft/post/error persistence while Bus is inactive, and no-focus fleet
+  access. Bus request tests pin sender-only reverse addressing and zero POST for lifecycle-only rows;
+  virtualization is pinned at exactly 100/101 rows.
 
 ## Invariants And Boundaries
 
@@ -285,8 +314,8 @@ DOM + wiring only.
   each model row's `sessionSettable` effort options; `configOptions` is never a menu. Requests and
   pendings never move effective markers. Every valid SetResult remains evidence, HTTP failures
   remain route failures, unknown triggers one readback, and pair effort waits for model evidence.
-  Unacknowledged outcomes persist until an explicit mark-seen action: inline chip acknowledgment,
-  toast dismissal, or ledger expansion. State/acceptance meaning is always present in words. The
+  Unacknowledged outcomes persist until an explicitly labelled mark-seen action; focus, viewing,
+  and tab/seat changes never acknowledge. State/acceptance meaning is always present in words. The
   final reviewer PASS retains six
   nonblocking sev-4 observations on rare supersede/coalescing/visual/announcement edges, recorded
   in the governing file cards rather than promoted into false guarantees here.
@@ -295,6 +324,11 @@ DOM + wiring only.
   same monotonic fold; queue UI contains only authoritative queued rows; Alt+Up asks the server to
   withdraw and restores only by draft-revision CAS. Dispatching, not-found, and generation loss
   never become safe-pop-back evidence, and controlled prompt delivery never falls back to PTY paste.
+- **Inspector/status honesty invariants** (L7): Bus is fleet-global pending projection by default,
+  never full history or a health verdict; exact-seat filtering never broad-matches; reverse replies
+  address only the projected sender and never consume the source; all pane instances stay mounted
+  under native `hidden`; capability authorities remain separate; stop residuals survive focus/source
+  loss; the status segment order and literal UA-5 absence slot remain contractual.
 - **Retire from the banner = the operator `/terminate` route** (reviewer-accepted): a true
   provenance-recording `/retire` needs an `actor_session` identity the dashboard operator does
   not have — an upstream decision, recorded as an ask, not a defect.
@@ -312,9 +346,11 @@ screen-reader opt-in, real-cols floor chip), informational stop-residual notes, 
 InteractionBar above the shared CodeMirror composer whose ONLY answer path is the gate channel;
 the composer submits exact epoch-bound whole messages, shows authoritative queued work, reconciles
 ambiguous delivery without resend, and runs server-linearized Alt+Up pop-back with explicit recovery;
-the inspector a
-catalog-provenance card plus collapsed set ledger (+ archetype, retire residuals, verbatim raw
-payloads); the header's one L4 model/effort control reads the exact live snapshot, serializes pair
+the inspector is a stable-mounted accessible Evidence / Capabilities / Bus tab host: the full audit
+surface with post-removal stop residuals and explicit mark seen, exact-session capability truth
+separate from the launch envelope, and a fleet-first pending Bus with sender-addressed developer
+reply; the persistent StatusLine ends the shell with proven pair/state/queue/freshness facts and the
+literal empty UA-5 context/cost slot; the header's one L4 model/effort control reads the exact live snapshot, serializes pair
 changes, and renders worded acceptance chips; narrow widths
 auto-collapse on threshold crossings (reopenable), ctrl+k/ctrl+; open the cmdk palette (attention
 jump, bulk-end mirrors, question triage focusing the bar, grammar-gated turn.stop), alt+↑/↓
@@ -358,9 +394,16 @@ seen, while persistent polite/assertive regions announce focused set and seat tr
 | The exact-session capability/menu/effective-marker derivations (L4). | [data/sessionCapabilities.ts](agents-remember/dashboard/src/data/sessionCapabilities.ts) |
 | The five-value acceptance/readback table and serialized pair machine (L4). | [data/setAcceptance.ts](agents-remember/dashboard/src/data/setAcceptance.ts), [data/pairChange.ts](agents-remember/dashboard/src/data/pairChange.ts) |
 | The sole live set I/O driver plus shared chip/copy/announcement layers (L4). | [data/setClient.ts](agents-remember/dashboard/src/data/setClient.ts), [data/setChips.ts](agents-remember/dashboard/src/data/setChips.ts), [data/setControlsCopy.ts](agents-remember/dashboard/src/data/setControlsCopy.ts), [data/announcer.ts](agents-remember/dashboard/src/data/announcer.ts) |
+| The L7 tab host and focused evidence/capability/fleet Bus panes. | [panels/session-cockpit/SeatInspector.tsx](agents-remember/dashboard/src/panels/session-cockpit/SeatInspector.tsx); [panels/session-cockpit/EvidencePane.tsx](agents-remember/dashboard/src/panels/session-cockpit/EvidencePane.tsx); [panels/session-cockpit/CapabilitiesPane.tsx](agents-remember/dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx); [panels/session-cockpit/BusPane.tsx](agents-remember/dashboard/src/panels/session-cockpit/BusPane.tsx) |
+| The L7 contractual footer and shared inspector virtualization boundary. | [panels/session-cockpit/StatusLine.tsx](agents-remember/dashboard/src/panels/session-cockpit/StatusLine.tsx); [panels/session-cockpit/VirtualizedInspectorList.tsx](agents-remember/dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx) |
 
 ## Update History
 
+- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 (Round 3 reviewer PASS): replaced the interim inspector
+  with stable-mounted Evidence/Capabilities/Bus panes, added the contractual StatusLine, preserved
+  per-entry reply state through filter/virtual/off-tab unmount pressure, restricted reverse replies
+  to sender identity, surfaced post-removal stop residuals, and documented the 100/101 accessible
+  virtualization boundary. Verification metadata remains pinned to the leaf base until closeout.
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced the composer/queue stub with the live
   shared CodeMirror surface, exact submit/reconcile lifecycle, QueuePreview, zone-sensitive Alt+Up,
   authoritative withdrawal, response-loss convergence, revision-CAS recovery, and no-PTY-fallback

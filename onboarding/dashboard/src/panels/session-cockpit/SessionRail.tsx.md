@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated            | 2026-07-17T23:54+02:00                           |
+| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
+| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -43,7 +43,8 @@ derivations live in `data/railModel.ts`; this file is DOM + wiring.
   The `data-slot="attention-marker"` slot carries the two-state brief marker (✉, R8), held-gate
   badge (R13), and FEUI-L4's `set!` marker when `hasUnackedSetAttention` finds unsupported,
   clamp, unknown, or pair-failure evidence. Its accessible name directs the user to the set
-  ledger; viewing the ledger or dismissing the toast explicitly clears it. The `input?` chip's
+  ledger; only an explicitly labelled `mark seen` action clears it. Viewing/focusing never does.
+  The `input?` chip's
   tooltip carries the pending question's prompt preview (R16).
 - **Accessible state dot (L4 R8)** (L491-L501): the rail supplies `ariaLabel="state: <word>"`
   to the shared `StateDot`, making the truncation-surviving signal a named image. Header dots stay
@@ -133,6 +134,9 @@ rail root carries `data-focus-target` (design §5.3 — always present, even emp
 
 ## Update History
 
+- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 aligned the rail's set-attention contract with the
+  explicit `mark seen` action now shared by Evidence and background outcomes. Viewing/focusing
+  stays non-acknowledging. Verification metadata remains pinned to the leaf base until closeout.
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R6/R8 filled the reserved attention slot with the
   worded `set!` marker for unacknowledged evidence and named every rail dot `state: <word>` for
   assistive technology. The rail remains model/effort-value-free and never acknowledges on its
