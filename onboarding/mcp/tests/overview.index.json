@@ -20,6 +20,9 @@
     "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions.jsonl",
     "mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl",
     "mcp/tests/fixtures/codex_app_server_0_144_3.json",
+    "mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json",
+    "mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json",
+    "mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json",
     "mcp/tests/fixtures/pi_rpc/0.80.6-capabilities.json",
     "mcp/tests/fixtures/pi_rpc/activity.jsonl",
     "mcp/tests/test_agentic_settings.py",
@@ -43,6 +46,8 @@
     "mcp/tests/test_context_providers.py",
     "mcp/tests/test_controller_guards.py",
     "mcp/tests/test_controlplane_gates.py",
+    "mcp/tests/test_conversation_contracts.py",
+    "mcp/tests/test_conversation_foundation.py",
     "mcp/tests/test_crap_calculator.py",
     "mcp/tests/test_dashboard_daemon.py",
     "mcp/tests/test_dispatch_brief.py",
@@ -152,8 +157,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 141,
-    "fileSidecars": 140,
+    "sourceFilesInScope": 146,
+    "fileSidecars": 145,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -209,9 +214,12 @@
     "content",
     "context",
     "contract",
+    "contracts",
     "control",
     "controller",
     "controlplane",
+    "conversation",
+    "conversation_runtime",
     "crap",
     "cs6",
     "current",
@@ -230,16 +238,13 @@
     "finalize",
     "fixture",
     "fixtures",
+    "foundation",
     "freshness",
     "gates",
-    "git",
-    "guard",
-    "guards",
-    "harness",
-    "harnesses"
+    "git"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness, dispatch/withdraw races, early terminal completion, full-ref id reuse, ordering, idempotency/source- payload conflicts, certified pre-dispatch retry, impossible safe retry after possible bytes, epoch mismatch, privacy, and retention. `test_harness_control.py` extends the same timeline across IPC, outer response loss, durable sources, reconcile, and raw-free projection. API tests pin 64-id status/withdraw and typed 409/503 mapping. Claude/Codex/Pi suites each prove their guarded write and exact comple...",
+    "summary": "260715-FEUI-L9 centers `test_conversation_contracts.py` for semantic authority and `test_conversation_foundation.py` for package/router/helper/fixture topology. The three `fixtures/conversation_runtime/*.json` files are allow-listed installed observations with `enablesCapabilities:false`; exact versions and observed counts are evidence, never maintained feature declarations. Helper protocol behavior is also covered in its own Node test package. 260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness, dispatch/withdraw races, early terminal completion, full...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",
@@ -255,16 +260,16 @@
       "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl",
       "mcp/tests/fixtures/codex_app_server_0_144_3.json",
+      "mcp/tests/fixtures/conversation_runtime",
+      "mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json",
+      "mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json",
+      "mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json",
       "mcp/tests/fixtures/pi_rpc",
       "mcp/tests/fixtures/pi_rpc/0.80.6-capabilities.json",
       "mcp/tests/fixtures/pi_rpc/activity.jsonl",
       "mcp/tests/test_agentic_settings.py",
       "mcp/tests/test_benchmark_analysis.py",
-      "mcp/tests/test_carryover.py",
-      "mcp/tests/test_cgc_index_concurrency.py",
-      "mcp/tests/test_cgc_installation.py",
-      "mcp/tests/test_cgc_seed_bundle_path.py",
-      "mcp/tests/test_cgc_watch_guard.py"
+      "mcp/tests/test_carryover.py"
     ],
     "anchorHints": [
       "_scaling.py",
@@ -281,6 +286,12 @@
       "turn",
       "codex_app_server_0_144_3.json",
       "codex_app_server_0_144_3",
+      "claude-2.1.211.json",
+      "claude-2.1.211",
+      "codex-0.144.5.json",
+      "codex-0.144.5",
+      "pi-0.80.7.json",
+      "pi-0.80.7",
       "0.80.6-capabilities.json",
       "0.80.6-capabilities",
       "activity.jsonl",
@@ -308,13 +319,7 @@
       "test_cli_discovery.py",
       "test_cli_discovery",
       "test_code_quality_check.py",
-      "test_code_quality_check",
-      "test_codex_app_server_adapter.py",
-      "test_codex_app_server_adapter",
-      "test_codex_app_server_live.py",
-      "test_codex_app_server_live",
-      "test_codex_app_server_protocol.py",
-      "test_codex_app_server_protocol"
+      "test_code_quality_check"
     ]
   },
   "fallback": {

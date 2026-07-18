@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-18T07:43+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T10:55+02:00 |
+| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b` |
+| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -15,6 +15,14 @@
 [overview.md](../overview.md)
 
 ## Purpose
+
+260715-FEUI-L9 adds two deliberately bounded package routes. Under `serving/conversation/`, strict
+wire models, exactly two read ports, and three behavior-empty child routers establish the stable
+protocol-neutral contract roof for active transcript, conversation library, and future control
+behavior. Under `native_helpers/conversation_library/`, a locked private Node helper normalizes
+repository-resolved harness observations into redacted evidence; it is not a second server, store,
+or capability authority. The existing harness-control application factory registers the new root
+once. L9 does not yet claim a native-history projector, control implementation, or Chats renderer.
 
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
@@ -206,6 +214,13 @@ mismatch so only the exact certificate is retry-safe.
 
 ## Hot Path Summary
 
+260715-FEUI-L9 is a contract/foundation path, not yet a runtime projection path. Python consumers
+validate normalized products and address separate active/library cursors through the new serving
+route. The repository-only native helper and three installed-runtime fixtures supply redacted,
+non-enabling evidence. Hostile contract tests and topology tests fail closed on provenance,
+identity, generation, contradictory status/capability state, router drift, helper path drift, and
+fixture promotion.
+
 260715-FEUI-L5 routes exact-session submit/reconcile/status/withdraw through the daemon and private
 IPC into one epoch-bound authority. Async adapter preflight precedes a lock-linearized final write
 claim; Codex, Claude, and Pi dispatch now without native queues. Direct exact-ref completion reaches
@@ -352,6 +367,11 @@ pre-commit/pre-push and CI `--check`.
 
 ## Route Model
 
+- `src/agents_remember/serving/conversation/` — strict normalized structured-conversation models,
+  exactly two read ports, and one root composing the independently owned `active`, `library`, and
+  `control` child routers. The serving overview carries the detailed authority boundaries.
+- `native_helpers/conversation_library/` — private locked Node helper for redacted repository-only
+  runtime observations. Its output and fixture versions are evidence, never capability promotion.
 - `serving/pi_rpc_protocol.py`, `serving/pi_rpc_process.py`, `serving/pi_rpc_events.py`, and
   `serving/pi_rpc_adapter.py` — the unregistered Pi RPC protocol/process/event/adapter chain;
   `mcp/tests/test_pi_rpc_adapter.py`, `test_pi_rpc_process.py`, `test_pi_rpc_real_smoke.py`, and
@@ -669,6 +689,12 @@ into the role files.
 
 ## Invariants And Boundaries
 
+- L9 conversation products are strict normalized contracts; package presence does not imply a
+  projector, historical store, control service, or renderer.
+- Active and library cursors are separate purpose-bound authorities. Exactly two read ports and
+  three owned behavior-empty child routers prevent later leaves from collapsing those seams.
+- The conversation-library helper resolves only inside this repository and emits redacted evidence.
+  Runtime fixture versions/counts never become maintained capability declarations.
 - MCP settings are authority; coordinator files can teach the model what to ask
   for but cannot grant provider or path authority.
 - Hosted prompt/model/effort ordering has one bridge-generation authority. Only full operation refs
@@ -771,6 +797,17 @@ implementation governs its hash rollover or static mount.
 
 ## Repo-Internal References
 
+### Current L9 evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The serving conversation route owns strict normalized products, exactly two read ports, and three behavior-empty child routers beneath one root. | L1-L1270; L1-L87; L1-L24 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py); [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py); [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
+| The private locked helper normalizes redacted observations and validates its protocol without becoming a runtime server or store. | L1-L272 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
+| Foundation tests pin helper resolution, fixture redaction/non-promotion, two ports, three routers, and one registration seam. | L1-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Hostile normalized-product matrices pin semantic authority and contradiction rejection. | L1-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
+
+### Legacy package map
+
 | Finding | Source Path |
 | --- | --- |
 | MCP settings reject coordinator `system/settings.json`, forbid settings inside the coordinator, and derive provider runtime roots under `providers/runners/<provider>`. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
@@ -801,6 +838,11 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the package-level structured
+  conversation contract route, repository-only locked observation helper, exact two-port/
+  three-router topology, single registration seam, hostile contract/foundation gates, and the
+  non-promotion boundary for redacted runtime fixtures. Verification remains pinned to committed
+  source truth until closeout stamps the candidate.
 - 2026-07-18T07:43+02:00 — No route impact: 260715-FEUI-L8 rebuilt and synchronized the accepted
   dashboard source into `package_data/dashboard/**` and refreshed `package_data/dashboard.fingerprint`
   through the existing `scripts/sync-dashboard.py` boundary. The hashed asset churn is generated output

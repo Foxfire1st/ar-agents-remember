@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-18T10:55+02:00 |
+| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
+| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -15,6 +15,17 @@
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
+
+### Current L9 structured-conversation contract
+
+260715-FEUI-L9 adds `serving/conversation/` as the protocol-neutral contract roof for the future
+Chats interface. Strict Pydantic wire models normalize harness identity, active transcript/event
+pages, independent active/library cursor scopes, evidence-backed status and capabilities,
+operation queue/withdrawal recovery, attachments, and telemetry without claiming that native
+history/control implementations or a renderer already exist. Exactly two read ports define the
+active and library seams. Three behavior-empty owned child routers (`active`, `library`, `control`)
+compose under one root router, registered exactly once by `harness_control_api.py`, so later leaves
+can add behavior without restructuring the serving route.
 
 ### Current L5 hosted-session contract
 
@@ -126,6 +137,13 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+260715-FEUI-L9 establishes structure rather than a live endpoint path: consumers validate hostile
+normalized products through `conversation/models.py`; future active and library implementations
+must satisfy their separate read ports and cursor purposes; future mutations stay on the control
+router. The root composition is mounted once beside existing harness-control routes. The locked
+repository helper and redacted installed-runtime fixtures are compatibility evidence only and may
+not promote a capability by being present.
 
 260715-FEUI-L5 reliable submission enters one bridge-generation authority. Async native preflight is
 followed by a lifecycle-lock claim and final adapter write guard; a queued withdrawal and dispatch
@@ -771,6 +789,14 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 ### Current L5 authority boundary
 
+- L9 conversation products are strict normalized contracts, not proof of a live projector,
+  historical store, control service, or renderer.
+- Active-transcript and conversation-library cursors are purpose-bound and non-interchangeable;
+  status, capability, operation, attachment, and metric claims require their modeled evidence.
+- The route owns exactly two read ports and three behavior-empty child routers. Production behavior
+  must land in the owning child without creating a second root registration seam.
+- Runtime observations and the locked native helper are evidence boundaries. Their versions and
+  observed counts do not become feature flags or maintained capability declarations.
 - Protocol adapter snapshots, bridge receipts, reconciliation, and normalized transcript entries
   are authoritative for hosted sessions.
 - Panes, logs, copy mode, paste echoes, and timing observations are diagnostic-only.
@@ -877,7 +903,36 @@ current hosted-session authority.
   fail-safe (an unreadable/blank pane classifies `stale`, never raises) — it rides the existing L5
   sweep cadence and classifies `kind == "harness"` rows only, never plain terminals.
 
+## Docs References
+
+The resolved Domain Documentation registry has no configured entries for this route. L9's
+structured-conversation contract is grounded in repository code, tests, and redacted observations.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation governed the L9 contract update. | — | — |
+
+## Cross-Repo References
+
+The L9 contract, helper package, fixtures, and tests are all owned by `agents-remember`; no
+neighboring repository governs this route.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repository reference was found. | — | — |
+
 ## Repo-Internal References
+
+### Current L9 evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | L1-L1270 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Exactly two protocol read ports separate active transcript reads from conversation-library reads. | L1-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
+| Three owned child routers compose beneath one stable root and one explicit registration function. | L1-L24 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
+| The existing harness-control application factory mounts the conversation root once. | L1-L396 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+
+### Legacy route map
 
 | Finding | Source Path |
 | --- | --- |
@@ -931,6 +986,11 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the strict normalized
+  structured-conversation roof, separate active/library read ports and cursor purposes, three
+  behavior-empty owned child routers, single harness-control registration seam, and the rule that
+  helper/fixture observations cannot promote capabilities. Verification remains pinned to the
+  last committed source until closeout stamps the candidate.
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: established the sole
   `HarnessSubmissionAuthority` current contract; documented epoch/full-ref identity, atomic
   withdrawal-vs-dispatch, event-before-publication completion, early-terminal dominance, response

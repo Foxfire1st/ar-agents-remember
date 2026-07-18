@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1788,
+    "sourceFilesInScope": 1685,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -117,7 +117,7 @@
       "l-01-agent-lifecycles",
       "FEUI",
       "repo-overview",
-      "e3f94568a0f5f78efc5ce7c26d94e6d103caae5f",
+      "91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
