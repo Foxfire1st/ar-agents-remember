@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/railModel.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
 | lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -47,6 +47,16 @@ as a pure-function case over the shared catalog fixtures.
 Pure-logic suite over `test/fixtures/catalogRows.ts` (`catalogRow`/`FLEET`) — no DOM. The
 determinism and tiebreak cases are the anti-reflow / R12 regression net. Test-only.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -54,7 +64,20 @@ determinism and tiebreak cases are the anti-reflow / R12 regression net. Test-on
 | The module under test. | L17-L464 | [railModel.ts](railModel.ts) |
 | The shared full-wire-shape fixtures (`catalogRow` builder + `FLEET`). | L10-L172 | [../test/fixtures/catalogRows.ts](../test/fixtures/catalogRows.ts) |
 
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S4 (R11; +1 tiebreak case in fix round 1):
   hierarchy/ordering/determinism, cycle order, spawn tree, anatomy invariants, attention rollup +

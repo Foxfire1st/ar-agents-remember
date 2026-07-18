@@ -88,13 +88,23 @@ folder/leaf id inside the tree builder, so this component renders `node.title` d
   just a master node sitting inside another master node.
 - **Leaf key is opaque.** It passes `node.leafKey` straight through to `onPick` without parsing it.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The `TaskTreeNode` shape it drills and `findMasterPath` it pre-drills with (and `buildTaskTree` that produces the `tree` prop). | L104-L176 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 | The right-rail consumer: builds the tree, passes `contextMaster` + `align="right"`, and attaches the free chat to the picked leaf via `onPick`. | L258, L329-L335 | [RailChat.tsx](RailChat.tsx) |
-| The Chats-page consumer: builds the tree, passes `align="left"`, and attaches the active session to the picked leaf. | L316, L372-L378 | [Chats.tsx](Chats.tsx) |
+| The canonical Chats duty-bar consumer builds the tree and attaches/moves the focused session server-first. | — | [ChatContextBar.tsx](session-cockpit/ChatContextBar.tsx) |
 | The render + drill interaction tests for this picker. | — | [LeafAttachPicker.test.tsx](LeafAttachPicker.test.tsx) |
 
 ## Cross-Repo References

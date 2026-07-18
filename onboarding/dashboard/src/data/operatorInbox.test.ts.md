@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/operatorInbox.test.ts`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-25T13:20+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash |                                                  `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
 | lastVerifiedCommitDate |                                                  2026-06-28T18:49:06+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -71,6 +71,10 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-06-25T13:20+02:00 — Task 23/24: added coverage for `dismissOperatorInboxEntry`, the client-side delete path for stale pickup warnings.
 - 2026-06-23T15:05+02:00 — Created for task 10 dashboard fallback: coverage for the `postOperatorInbox` request body and error mapping.

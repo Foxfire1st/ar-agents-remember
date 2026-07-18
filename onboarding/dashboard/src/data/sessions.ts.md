@@ -5,43 +5,26 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
-The open-terminal/chat **session registry** for the Chats view (slice 6e-4): a module-level zustand
-store holding which sessions exist and which one is active. Same store pattern as the observer
-projection store (`data/store.ts`) but deliberately **separate** — ephemeral client UI state, not
-projected truth — so the Chats surface and its tests share one source of session state instead of
-`Chats` local `useState`. Terminal persistence across refresh, view switches, and session switches is
-owned by the backend catalog + tmux; this store tracks the list + active id while `<Chats>` mounts a
-row's terminal on first selection and keeps visited terminals mounted while hidden. Slice 6f also makes it the
-**cockpit-wide inject seam**: it holds
-the live per-session `TerminalConnection`s plus a `sendToSession` / `createSession` API, so a surface
-outside `<Chats>` (the highlight composer) can inject into — or spawn — a session.
-Task 11 adds the AR-hosted gate-response route: an `OpenSession` may carry `lifecycleId`, letting
-`gate.lifecycleId` resolve back to one hosted chat via `findSessionForLifecycle`. Slice L5 adds the
-parallel **leaf identity**: an `OpenSession` may carry a durable `leafKey` (the qualified leaf id
-`repo/master/leaf-id`), so one chat is bound to a leaf and `findSessionForLeaf(leafKey)` resolves the
-shared session both the Chats page row and the right-rail `RailChat` render. Task 22 extends this
-store into the hydrated dashboard view of the backend catalog: sessions can carry kind/harness/status,
-catalog rows can be merged in after a refresh, exited/landed/terminated rows are not used for lifecycle
-injection, chat labels reuse released ordinals after destructive termination, and backend-persisted
-create/terminate changes are broadcast to other browser tabs as catalog invalidation events that include
-the changed session id. The reopened L6 follow-up separates **draft paste** from confirmed submit:
-leaf-context handoff uses `pasteDraftToSession` to place the context package in the chat input without
-pressing Enter — delivery is confirmed via the paste's own echo and retried through the harness boot
-window (`pasteAndConfirm` in `data/terminal.ts`) — while existing highlight/gate delivery keeps the
-submit-and-confirm path. L9 extends the
-catalog invalidation contract with a `"leaf"` reason so hosted chat leaf moves made by another tab or the
-agent-facing MCP tool can rehydrate open dashboard stores without a full page refresh.
+The catalog-backed open-session registry shared by the canonical Chats cockpit, contextual RailChat,
+highlight delivery, and lifecycle/gate lookups. It normalizes durable terminal rows and leaf/lifecycle
+identity while keeping browser-only active id as the live action/reload route; richer cockpit focus
+may inspect landed or ended evidence separately. Backend catalog + tmux own persistence.
+
+The module also owns cross-tab catalog invalidations and the non-reactive live connection registry
+used by keep-alive PTYs. Reliable controlled messages go through the submit clients, not this raw
+connection seam. The dev-only reset clears connections, queued input, and waiters so old scenario
+transport cannot cross into a successor fixture.
 
 ## Code Commentary
 
@@ -153,13 +136,23 @@ object with the action methods on it, not a separate actions slice.
   Enter on the operator's behalf; highlight/gate delivery can still call `deliverToSession` when the UI
   action is explicitly a send.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The Chats view that reads this store + drives session actions including server-confirmed leaf moves. | — | [panels/Chats.tsx](../panels/Chats.tsx) |
+| The canonical Chats view reads this store and separates live action routing from inspection focus. | — | [SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
 | The right-rail leaf chat resolves sessions via leaf role and now uses `pasteDraftToSession` for bind-time context after start, attach, or move. | L309-L315; L317-L353 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
-| The session switcher that renders `sessions` + reports select/close. | — | [panels/SessionList.tsx](../panels/SessionList.tsx) |
+| The replacement rail renders catalog sessions and lifecycle actions through the shared model. | — | [SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx) |
 | The leaf-identity helper that mints the qualified `leafKey` this store binds. | — | [data/taskIdentity.ts](taskIdentity.ts) |
 | The gate responder that resolves `gate.lifecycleId` through `findSessionForLifecycle`. | — | [panels/GateResponder.tsx](../panels/GateResponder.tsx) |
 | The projection store this mirrors in pattern but stays separate from. | — | [data/store.ts](store.ts) |
@@ -191,7 +184,26 @@ every beat even when content is identical, so subscribers re-render per beat; or
 deterministic over states, and an identity-preserving hydrate (the dashboardStore change-gate
 pattern) is a follow-up candidate, not attempted to keep Chats' behavior byte-identical.
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Clarifies `activeId` as the live action/reload route while cockpit focus may inspect other rows. Adds a dev-scenario reset for connections, queued input, and waiters so transport work cannot cross fixture authorities.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R4/S2): `OpenSession` extended to the full catalog
   mirror (`createdAt`, retirement provenance, spawn level + source, requested model/effort,

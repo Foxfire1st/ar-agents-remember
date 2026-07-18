@@ -95,7 +95,7 @@ that now mount it.
 | The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). | L82-L88 | [engine-room/EnclosureProcessMap.tsx](engine-room/EnclosureProcessMap.tsx) |
 | The honest-motion gate that decides whether the backdrop mounts at all. | L19-L37 | [engine-room/useShouldAnimate.ts](engine-room/useShouldAnimate.ts) |
 | The no-selection empty state that mounts this with the battle-cruiser clip (inside `Panel` `fill`), passing `opacity={0.18}`. | L446-L449 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The no-session empty state that mounts this with the adjutant clip (inside `terminalArea`); no `opacity` prop, so it keeps the `0.14` default. | L435-L438 | [Chats.tsx](Chats.tsx) |
+| The remaining task-detail empty-state consumer; the legacy Chats consumer was retired by FEUI-L8. | — | [DetailPanel.tsx](DetailPanel.tsx) |
 | The File-viewer no-selection empty state that mounts this with the siege-tank clip, passing `opacity={0.18}` (the clip reads darker). | L105-L109 | [file-viewer/DualPane.tsx](file-viewer/DualPane.tsx) |
 | The Diff (change-set) viewer empty state that mounts this with the siege-tank clip, passing `opacity={0.18}`. | L337-L339 | [changeset/ChangeSetViewer.tsx](changeset/ChangeSetViewer.tsx) |
 | The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. | L6-L12; L31-L40; L51-L59 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |

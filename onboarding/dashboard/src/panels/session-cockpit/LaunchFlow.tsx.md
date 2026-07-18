@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -100,6 +100,16 @@ element (`launch-*`); the dialog stops click propagation and handles its own Esc
 - The 409-conflict path writes NO evidence for the live session.
 - Advertised order is render order; nothing here sorts, ranks, or emphasizes an effort.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -114,7 +124,26 @@ element (`launch-*`); the dialog stops click propagation and handles its own Esc
 | The jsdom matrix: dynamic-only, cost parity, pair rules, all response paths, F9 dismiss/reopen. | L85-L425 | [LaunchFlow.test.tsx](LaunchFlow.test.tsx) |
 | The open-response fixtures the classifier paths render. | L1-L178 | [../../test/fixtures/openResponses.ts](../../test/fixtures/openResponses.ts) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+New hosted chats inherit the selected lifecycle on the server and broadcast catalog creation. A captured catalog authority gates every post-await edge so a launch settling after scenario reset cannot adopt or mutate the successor fixture.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 S2/S3 (R1/R2/R4/R5, incl. fix rounds 1-2):
   the palette-opened launch dialog with daemon-only pickers (detected-gated harnesses with the

@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/Bench.tsx`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-21T02:27+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
 
@@ -56,6 +56,16 @@ against the **real** store (no private copy / not a live client) so what's revie
 `?effects=off` (read in `main.tsx`) freezes animation so Playwright assertions on the settled end-state
 stay deterministic.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -68,7 +78,26 @@ stay deterministic.
 | The dev terminal mock provided via context (slice 6e-1). | — | [mockTerminalSocket.ts](mockTerminalSocket.ts) |
 | Picker/player styles. | — | [dev.css](dev.css) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+The bench now registers dedicated Chats scenarios through an authority harness and applies an exit boundary when returning to ordinary gallery scenarios. Cockpit scenarios enter Chats directly; other scenarios keep Operations.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-06-21T02:27+02:00 — slice 05k: added the `happy-build`→`build-up` legacy-deep-link alias
   (`raw === "happy-build" ? "build-up" : raw`) so the old `?scenario=happy-build` link still resolves after

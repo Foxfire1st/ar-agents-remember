@@ -5,14 +5,14 @@
 | repository             | agents-remember                           |
 | path                   | `dashboard/src/data/taskHierarchy.ts`     |
 | doc_type               | `file-level-onboarding`                   |
-| lastUpdated            | 2026-07-06T23:57:06+02:00                    |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash |                                           `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
 | lastVerifiedCommitDate |                                           2026-07-07T05:26:14+02:00|
-| governingOverview      | `../overview.md`                          |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -104,6 +104,10 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is involved. | — | — |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-06T23:57:06+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the
   orchestration-command helpers — `isOrchestrationDoc`, `masterCommandNames` (folder / doc id /

@@ -5,24 +5,25 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/keymap/`                     |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
-| governingOverview      | `../../overview.md`                              |
+| lastUpdated            | 2026-07-18T07:22+02:00 |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
-[dashboard/src overview](../../overview.md) — `data/` has no route overview of its own; the
-`dashboard/src` overview governs it directly, and this overview governs the `keymap/` slice.
+[data overview](../overview.md) — this child owns keyboard contracts while the data overview owns
+the surrounding cockpit state and authority boundaries.
 
 ## Purpose
 
-`data/keymap/` is the **pure, xterm-free keyboard-ownership contract** for the Sessions cockpit
+`data/keymap/` is the **xterm-free keyboard-ownership contract** for the canonical Chats cockpit
 (260715-FEUI-L1 S4, design §5.2/§5.3). Everything here is data + pure functions so vitest covers
 the routing contract without a terminal, and so every consumer — the tinykeys binding
 (`panels/session-cockpit/useKeyboardZones.ts`), the `?` keyboard-reference palette page
 (`CommandPalette.tsx`), and the future L6 xterm `attachCustomKeyEventHandler` — reads ONE source
-and can never drift apart. Three zones own keys: **chrome** (the shell — chords may be handled,
+and can never drift apart. FEUI-L8 adds a versioned effective-keymap preference layer consumed by
+those same surfaces and by CodeMirror. Three zones own keys: **chrome** (the shell — chords may be handled,
 printable bindings never fire in editable targets), **composer** (the editor owns its keys; only
 composer-declared chords are handled), and **pty** (EVERY key passes to the hosted harness except
 exactly the bound reserved set; no bare-Esc sequence is ever claimed).
@@ -45,8 +46,14 @@ exactly the bound reserved set; no bare-Esc sequence is ever claimed).
   intercepted.
 - `focus.ts` — the F6 region cycle (rail → stage → inspector → statusline, collapsed panels drop
   out) + the region/stage-header/PTY-host focus selectors.
+- `preferences.ts` — strict `cockpit.sessions.keymap.v1` persistence, same-tab external-store and
+  cross-tab storage subscription, user overrides, Emacs/Vim composer profile, CodeMirror chord
+  conversion, and the effective signature used for live reconfiguration. Browser-reserved,
+  printable-composer, collision, and F6-removal/rebind attempts fall back with visible issues.
 - `zones.test.ts` / `focus.test.ts` — the contract suites (PTY passthrough invariants,
   reserved-set hygiene, printable suppression, region cycle).
+- `preferences.test.ts` — effective-map parsing, validation, profile, immutable-F6, Meta/browser
+  safety, and same-/cross-tab update coverage.
 
 ## Invariants And Boundaries
 
@@ -64,12 +71,15 @@ exactly the bound reserved set; no bare-Esc sequence is ever claimed).
   only on unbound reserved slots (tested).
 - **Alt+Up ownership is zone-specific** — composer dispatches `composer.popBack`, chrome dispatches
   session navigation, and PTY passes the native key through. No global handler may collapse them.
-- **Pure and DOM-light** — structural `KeyEventLike`/`ZoneElementLike` surfaces keep tests free of
-  real DOM events; no React, no xterm, no window access in this route.
+- **F6 is immutable** — user preferences and Vim mode may not remove or rebind the focus escape.
+  Vim owns Escape for insert/normal transitions; F6 remains active from every composer mode.
+- The core routing modules remain pure/DOM-light. `preferences.ts` is the intentional browser/React
+  boundary for localStorage and external-store subscription; no module in this route imports xterm.
 
 ## Hot Path Summary
 
-The keyboard zone contract: `zoneForTarget` resolves chrome/composer/pty from `data-kbzone`
+The keyboard zone contract: `preferences.ts` first resolves defaults, validated overrides, and the
+composer profile into one effective map; `zoneForTarget` resolves chrome/composer/pty from `data-kbzone`
 markers, `routeKey` handles a PTY key only when `matchReservedChord` matches the bound reserved
 set (everything else — including Esc — passes to the harness) and suppresses printable bindings in
 editable targets; `PTY_RESERVED` carries the five-source collision-verification records (the
@@ -77,17 +87,40 @@ Ctrl+Alt+PageUp/PageDown replacement pair), `CHROME_CHORDS`/`COMPOSER_CHORDS` ar
 tables (including the composer/chrome Alt+Up split), and `nextRegion` drives the F6 cycle with
 collapsed panels dropping out.
 
+## Docs References
+
+The curator checked `system/sources.md`; no Domain Documentation entries are configured. Keyboard
+claims were therefore verified against the repository's collision records, source, and tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for the effective keymap. | `system/sources.md` checked | — |
+
+## Cross-Repo References
+
+The keymap is repository-local. Vendor/browser collision evidence is recorded in `reserved.ts`, but
+no cross-repository implementation source is imported or treated as governing code.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source governs this route. | Import and collision-record review | — |
+
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
-| The thin React binding that installs these tables via tinykeys (capture phase, ignore disabled). | [panels/session-cockpit/useKeyboardZones.ts](agents-remember/dashboard/src/panels/session-cockpit/useKeyboardZones.ts) |
-| The `?` reference page that renders these same tables (one source, two surfaces). | [panels/session-cockpit/CommandPalette.tsx](agents-remember/dashboard/src/panels/session-cockpit/CommandPalette.tsx) |
-| The command ids the chord tables dispatch into. | [data/commands.ts](agents-remember/dashboard/src/data/commands.ts) |
-| The DOM that carries the `data-kbzone`/`data-region` markers this contract resolves. | [panels/session-cockpit/SessionsView.tsx](agents-remember/dashboard/src/panels/session-cockpit/SessionsView.tsx) |
-| The live CodeMirror surface that owns composer Alt+Up and slash handling. | [panels/SessionComposer.tsx](agents-remember/dashboard/src/panels/SessionComposer.tsx) |
+| The effective-keymap preference and validation boundary. | [preferences.ts](preferences.ts) |
+| The thin React binding that installs the effective tables via tinykeys. | [useKeyboardZones.ts](../../panels/session-cockpit/useKeyboardZones.ts) |
+| The `?` reference/profile page that renders the same effective map. | [CommandPalette.tsx](../../panels/session-cockpit/CommandPalette.tsx) |
+| The command ids the chord tables dispatch into. | [commands.ts](../commands.ts) |
+| The DOM that carries the `data-kbzone`/`data-region` markers. | [SessionsView.tsx](../../panels/session-cockpit/SessionsView.tsx) |
+| The live CodeMirror surface that consumes profile and chord reconfiguration. | [SessionComposer.tsx](../../panels/SessionComposer.tsx) |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8: added the versioned effective-keymap preference layer,
+  browser/Meta safety, immutable F6, same-/cross-tab updates, and Emacs/Vim CodeMirror profiles;
+  moved governance under the new data overview. Verification remains pinned to the leaf base.
 
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced the future-composer note with the live
   CodeMirror consumer and documented zone-sensitive Alt+Up ownership: authoritative pop-back in the

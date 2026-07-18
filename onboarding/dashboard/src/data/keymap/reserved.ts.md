@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/keymap/reserved.ts`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -80,6 +80,16 @@ observed, not a verdict alone.
   on a bound chord means replacing the chord (the R6 rule), never shipping it.
 - `KeyEventLike` stays a structural type so tests need no real DOM events.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -90,7 +100,26 @@ observed, not a verdict alone.
 | The `?` reference page renders this set verbatim (bound + reserved-unbound rows). | L195-L205 | [../../panels/session-cockpit/CommandPalette.tsx](../../panels/session-cockpit/CommandPalette.tsx) |
 | The hygiene suite: five-source records, bound-must-be-clear, no bare Esc, no browser-forbidden chord. | L84-L111 | [zones.test.ts](zones.test.ts) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Extends browser-forbidden safety to the macOS Meta equivalents of reserved browser chords. Effective user bindings must reject these just as they reject their Control variants.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4 (R5/R6): the PTY reserved set with
   per-chord five-source verification records, `matchReservedChord`, `BROWSER_FORBIDDEN`, the two

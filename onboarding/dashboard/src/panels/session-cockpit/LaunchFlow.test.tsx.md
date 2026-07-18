@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -67,6 +67,16 @@ before the daemon answers, not merely if options eventually differ); the vendor-
 pins wire-level key ABSENCE; the two F9 cases are the fix-round nets and fail against pre-fix
 code in exactly the reviewed failure modes.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -77,7 +87,26 @@ code in exactly the reviewed failure modes.
 | The shared row builder used for the F9 appeared-row rerenders. | L10-L27 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
 | The store the 200-path evidence assertion reads. | — | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Adds lifecycle inheritance and create-invalidation assertions plus a deferred-open race proving a launch owned by a retired dev scenario cannot hydrate, focus, close, broadcast, or alter successor poll health.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 S6 (R1/R2/R4/R5, extended in fix rounds 1-2
   with the dismiss-ends-watch and reopen-starts-clean F9 regression cases and the visible

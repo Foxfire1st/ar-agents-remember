@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00 |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
 | lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -102,6 +102,16 @@ or opener behavior is under test. The terminal-persistence behavior (mounted-but
 covered in `panels/Chats.test.tsx`, not here. The draft-paste regression stays at the connection seam,
 where the suite can prove no submit input was appended.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -111,7 +121,7 @@ where the suite can prove no submit input was appended.
 | The catalog-sync test now receives a remote `"leaf"` event and ignores the sender tab's own broadcast. | L315-L336 | [sessions.test.ts](sessions.test.ts) |
 | The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths. | L433-L459 | [data/sessions.ts](sessions.ts) |
 | The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior. | L364-L417 | [sessions.test.ts](sessions.test.ts) |
-| The view-level persistence test (mounted-but-hidden terminals). | — | [panels/Chats.test.tsx](../panels/Chats.test.tsx) |
+| View-level keep-alive and transient-handoff persistence coverage. | — | [PtySurface.test.tsx](../panels/session-cockpit/PtySurface.test.tsx) |
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact
 
@@ -120,7 +130,20 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2: three exact-shape `toEqual` catalog-conversion fixtures
   gained the one `createdAt` field `fromTerminalSessionInfo` now maps (needed by the cockpit's
   smart-focus/jump ordering fallbacks) — assertions STRENGTHENED (one more correct field

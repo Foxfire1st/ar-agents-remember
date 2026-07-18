@@ -42,8 +42,6 @@
     "dashboard/src/panels/AttentionQueue.tsx",
     "dashboard/src/panels/ChatActivityIndicator.test.tsx",
     "dashboard/src/panels/ChatActivityIndicator.tsx",
-    "dashboard/src/panels/Chats.test.tsx",
-    "dashboard/src/panels/Chats.tsx",
     "dashboard/src/panels/DetailPanel.test.tsx",
     "dashboard/src/panels/DetailPanel.tsx",
     "dashboard/src/panels/EmptyStateBackdrop.test.tsx",
@@ -70,8 +68,6 @@
     "dashboard/src/panels/RailChat.tsx",
     "dashboard/src/panels/SessionComposer.test.tsx",
     "dashboard/src/panels/SessionComposer.tsx",
-    "dashboard/src/panels/SessionList.test.tsx",
-    "dashboard/src/panels/SessionList.tsx",
     "dashboard/src/panels/TaskGroupDisclosure.tsx",
     "dashboard/src/panels/TaskNotes.test.tsx",
     "dashboard/src/panels/TaskNotes.tsx",
@@ -84,7 +80,7 @@
   ],
   "coverageCounts": {
     "sourceFilesInScope": 120,
-    "fileSidecars": 45,
+    "fileSidecars": 41,
     "childRoutes": 5
   },
   "routingTerms": [
@@ -92,7 +88,6 @@
     "attentionqueue",
     "changeset",
     "chatactivityindicator",
-    "chats",
     "cockpit",
     "dashboard",
     "detailpanel",
@@ -118,7 +113,6 @@
     "room",
     "session",
     "sessioncomposer",
-    "sessionlist",
     "src",
     "taskgroupdisclosure",
     "tasknotes",
@@ -144,8 +138,6 @@
       "dashboard/src/panels/AttentionQueue.tsx",
       "dashboard/src/panels/ChatActivityIndicator.test.tsx",
       "dashboard/src/panels/ChatActivityIndicator.tsx",
-      "dashboard/src/panels/Chats.test.tsx",
-      "dashboard/src/panels/Chats.tsx",
       "dashboard/src/panels/DetailPanel.test.tsx",
       "dashboard/src/panels/DetailPanel.tsx",
       "dashboard/src/panels/EmptyStateBackdrop.test.tsx",
@@ -155,7 +147,9 @@
       "dashboard/src/panels/EventRiver.test.tsx",
       "dashboard/src/panels/EventRiver.tsx",
       "dashboard/src/panels/FlowTab.test.tsx",
-      "dashboard/src/panels/FlowTab.tsx"
+      "dashboard/src/panels/FlowTab.tsx",
+      "dashboard/src/panels/GateResponder.test.tsx",
+      "dashboard/src/panels/GateResponder.tsx"
     ],
     "anchorHints": [
       "AgentPickupIndicator.test.tsx",
@@ -170,10 +164,6 @@
       "ChatActivityIndicator.test",
       "ChatActivityIndicator.tsx",
       "ChatActivityIndicator",
-      "Chats.test.tsx",
-      "Chats.test",
-      "Chats.tsx",
-      "Chats",
       "DetailPanel.test.tsx",
       "DetailPanel.test",
       "DetailPanel.tsx",
@@ -205,7 +195,11 @@
       "Hangar.tsx",
       "Hangar",
       "HighlightComposer.test.tsx",
-      "HighlightComposer.test"
+      "HighlightComposer.test",
+      "HighlightComposer.tsx",
+      "HighlightComposer",
+      "LeafAttachPicker.test.tsx",
+      "LeafAttachPicker.test"
     ]
   },
   "fallback": {

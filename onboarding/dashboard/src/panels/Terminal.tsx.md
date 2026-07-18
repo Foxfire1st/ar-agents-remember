@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Terminal.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -16,20 +16,15 @@
 
 ## Purpose
 
-The imperative **xterm.js terminal** (slice 6e-1): a render-not-scrape view of the 6d PTY stream.
-xterm is a DOM/canvas emulator that probes the canvas on import and cannot mount under jsdom, so —
-like the topology constellation canvas — it stays an imperative engine wrapped in a thin React
-component via refs, and is **code-split** (lazy-loaded by `Chats.tsx` AND by the cockpit's
-`PtySurface`, the same `lazy(() => import("../Terminal"))` idiom) out of the initial bundle. The
-reopened L6 follow-up makes the terminal scrollback explicit and captures wheel input with a clear
-precedence: an application that tracks the mouse owns the wheel (xterm reports it as mouse events —
-the tmux-hosted-session path), normal-buffer scrollback scrolls the xterm viewport, and only an
-alternate-buffer pane without mouse tracking receives synthesized PageUp/PageDown navigation.
-**260715-FEUI-L6** makes this the cockpit's pane engine THROUGH `PtySurface` (which owns
-archetypes, keep-alive layers, and chrome) while keeping every legacy call site byte-compatible:
-all new props are optional with prior-behavior defaults (`renderer="dom"`,
-`screenReaderMode=false`, hooks/filters undefined), and the refit/ResizeObserver/fonts.ready
-keep-alive/fit block is unchanged except for additively reporting the pane's REAL column count.
+The imperative xterm.js wrapper over a same-origin PTY socket. It is lazy-loaded by the canonical
+cockpit's PtySurface and contextual RailChat, reports resize/freshness/harvest hooks, and preserves
+normal/mouse/alternate-buffer wheel precedence. Controlled panes expose a runner line-log; legacy raw
+panes may host a vendor TUI. This component is not a structured conversation renderer.
+
+FEUI-L8 defers final xterm object disposal by one task only after application listeners and socket
+ownership are detached. That narrow workaround is necessary because xterm 5.5 leaves an uncancelled
+Viewport timer during React StrictMode probe teardown; synchronous disposal otherwise reads an
+already-disposed RenderService.
 
 ## Code Commentary
 
@@ -126,19 +121,48 @@ PRESERVED contract: refit skips hidden hosts, runs mount + rAF + `fonts.ready` +
 and keeps the PTY winsize in lockstep — L6 changed none of it (only the additive `onResizeCols`
 call after `fit.fit()`).
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The WebSocket client this adapts a `Terminal` onto (incl. the L6 `onSocketState` option). | — | [data/terminal.ts](../data/terminal.ts) |
-| The legacy view that lazy-loads + mounts this per session (now passing `ariaLabel`). | L522-L528 | [Chats.tsx](Chats.tsx) |
+| The canonical keep-alive owner lazy-loads and mounts this per inspectable session. | — | [PtySurface.tsx](session-cockpit/PtySurface.tsx) |
 | The cockpit surface that mounts this per seat: archetypes, keep-alive layers, hooks/filter wiring, accessible names. | L40-L47; L102-L108; L110-L244 | [session-cockpit/PtySurface.tsx](session-cockpit/PtySurface.tsx) |
 | The wrapper enables xterm viewport scrolling, creates the terminal with explicit scrollback, defers wheel to xterm when mouse tracking is active, scrolls the viewport for normal scrollback, and maps mouse-less alternate-buffer wheel input to PageUp/PageDown. | L13-L26; L44-L83; L229-L258 | [Terminal.tsx](Terminal.tsx) |
 | The L6 additive surface: props, live screenReaderMode, hooks, filter, webgl escalation, named group landmark. | L85-L129; L149-L155; L173-L212; L302-L318 | [Terminal.tsx](Terminal.tsx) |
 | The focused component test mocks xterm (extended for options/parser/onBell/onTitleChange/attachCustomKeyEventHandler) and asserts scrollback, wheel precedence, hooks, and the always-named landmark. | L22-L70; L80-L240 | [Terminal.test.tsx](Terminal.test.tsx) |
 | The renderer measurement behind the DOM default (master OQ-B). | L108-L189 | [../dev/PtyRenderBench.tsx](../dev/PtyRenderBench.tsx) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Defers only xterm object disposal by one task after detaching application listeners and the socket. This is necessary for xterm 5.5's uncancelled Viewport timer during React StrictMode probe teardown; it prevents a disposed RenderService read without masking transport cleanup.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (PTY stage surface): additive cockpit-pane surface —
   `renderer` prop (DOM default by OQ-B measurement; lazy webgl escalation demoting to DOM on

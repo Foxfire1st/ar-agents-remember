@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/notes.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T01:50+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
 | lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -60,6 +60,16 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | A same-origin browser client; nothing crosses repositories. | — | — |
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Source Path |
@@ -70,6 +80,10 @@ No meaningful cross-repo references found.
 | The test suite for this module. | [data/notes.test.ts](agents-remember/dashboard/src/data/notes.test.ts) |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-06T01:50+02:00 — Created for agent-orchestration L9 (friction F-M): the
   `/api/notes/{list,read}` client (`listNotes`/`readNote` over the shared

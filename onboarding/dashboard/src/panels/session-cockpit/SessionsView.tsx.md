@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -16,31 +16,17 @@
 
 ## Purpose
 
-The **sessions cockpit view** (260715-FEUI-L1 S2 shell, FILLED by 260715-FEUI-L2, PTY stage +
-interactions by 260715-FEUI-L6, launch surfaces by 260715-FEUI-L3, set controls by
-260715-FEUI-L4, reliable submit by 260715-FEUI-L5, and the tabbed inspector/status footer by
-260715-FEUI-L7): rail / stage / inspector as
-a react-resizable-panels group with the narrow-width rules (inspector auto-collapses <~1100px,
-rail <~900px — both reopenable) and the ~80-col PTY floor hint chip. **L2 fills the panels**:
-the rail hosts `SessionRail` (the ruled role hierarchy + fleet attention), the stage the
-`SessionStage` container + `HeaderStrip` with the sole `ModelEffortControl`, and the inspector the
-stable mounted Evidence / Capabilities / Bus tab host.
-**L6 fills the stage body**: the focused seat renders a real `PtySurface` pane (carrying the
-`data-kbzone="pty"` contract), `StopResidualNotes` above it, the `InteractionBar` directly above
-the composer (never replacing it), and the `WorkingLine` into the stage's reserved slot; the PTY
-placeholder now renders ONLY for the empty stage (no focused session). **FEUI-L5 replaces the
-composer placeholder with the shared CodeMirror reliable-submit surface**, mounts authoritative
-queue/recovery UI, routes slash text into the palette, and keeps gate-only answer mode explicit.
-**L3 appends the launch
-surfaces**: the `session.launch` palette command opens the `LaunchFlow` overlay, and a focused
-FAILED seat renders the `FailedLaunchBanner` inside the stage children above the pty surface.
-**L4 wires live controls and outcome surfaces**: palette model/effort commands open the same
-header popover; effort chords cycle through exact-session options; queued hints, persistent
-background toasts, and polite/assertive live regions consume the shared set evidence.
-The view owns the L2 derivation seam: rail model + attention rollup are derived ONCE per render
-and shared between the rail and the palette commands. The root div carries
-**`[data-view="sessions"]`** — the WebTUI scope root (S1) and the keyboard layer's home — plus
-`sessions--view` and the marker classes and `sessions-*` testids.
+The canonical full-page Chats composition seam (internal filename and data-view=sessions marker
+retained for implementation/test stability). It renders the role/spawn rail, persistent stage,
+reliable composer, interaction/lifecycle surfaces, status line, and optional
+Evidence/Capabilities/Bus inspector. Operations is the shell default; this route replaces both the
+legacy Chats page and the separate Sessions navigation concept.
+
+FEUI-L8 makes inspector intent default closed and toggleable, separate from responsive geometry;
+separates live action/reload routing from landed-row inspection focus; mounts ChatContextBar for
+launch/task/leaf duties; keeps PtySurface unconditional across transient focus handoff; gates
+controls/composer to live rows; and hosts landed-cleanup recovery outside the rail. The route derives
+rail/attention once from the shared data plane and never owns a second catalog.
 
 ## Code Commentary
 
@@ -266,7 +252,17 @@ The view now wires the real shared composer to the focused controlled session, i
 the axis ordering PTY → interaction → composer. Gate-only answer mode shares the editor but never
 calls prompt submit; raw-session typing remains confined to the PTY surface.
 
+## FEUI-L8 Reviewed Candidate Delta
+
+This is now the canonical Chats composition seam. It separates live action routing from landed inspection focus, mounts `ChatContextBar`, keeps `PtySurface` unconditional across handoff gaps, gates live-only controls, persists default-closed inspector intent separately from responsive collapse, and hosts root-level cleanup recovery.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T23:54+02:00 — 260715-FEUI-L7 kept this packed route to a narrow composition seam:
   it selects projected pickups, supervisor heartbeat, and poll health; passes them into the

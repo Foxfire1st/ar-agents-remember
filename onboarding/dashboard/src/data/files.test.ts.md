@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/files.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-29T09:06+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
 | lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -40,6 +40,16 @@ mapped to a thrown `FilesApiError` carrying the server status code.
   semantics.
 - Globals are restored after every test so stubs never leak across cases.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -50,6 +60,19 @@ mapped to a thrown `FilesApiError` carrying the server status code.
 | Subject under test: the helpers, result types, and `FilesApiError` mapping pinned here. | L72-L124 | [files.ts](files.ts) |
 | Contract counterpart: the serving layer emits the 404/400 status codes this test stubs. | L298-L332 | [serving/files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
 
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): vitest contract test that stubs `fetch` and pins the `data/files` client's endpoint URLs and `FilesApiError` mapping. Verification metadata pinned to the task base until closeout stamps the L2 code commit.

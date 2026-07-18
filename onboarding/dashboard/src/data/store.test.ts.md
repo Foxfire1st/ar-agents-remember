@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T23:59+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
 | lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -121,6 +121,10 @@ No meaningful cross-repo references found. These tests are local to the dashboar
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

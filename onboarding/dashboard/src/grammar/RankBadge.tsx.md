@@ -47,14 +47,33 @@ chevrons — do not restyle per call-site; consumers pick only `tier` and `size`
 list (`LifecycleList`, size `row`) and the Chats command tree (`SessionList` group headers, size
 `sm`) must render rank through this one component.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The gold/purple tier tokens (+dim/ghost) this badge colours by. | theme.tokens.colors | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
 | Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`. | render body + `commandFacts` | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
-| Chats group headers render the badge at `sm` size from `SessionGroup.tier`. | group header button | [SessionList.tsx](../panels/SessionList.tsx) |
+| The canonical Chats rail renders rank treatment for orchestration/management rows. | role/master headers | [SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx) |
 | Glyph-anatomy and sizing tests. | all cases | [RankBadge.test.tsx](RankBadge.test.tsx) |
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
 
