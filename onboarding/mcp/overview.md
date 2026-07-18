@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-18T20:03+02:00 |
+| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
+| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -364,11 +364,21 @@ branch current with its upstream, plus ahead/behind counts) lives in
 `kernel/git_freshness.py` beside `kernel/git_facts.py`; the `context_packet`
 controller surfaces it as the opt-in `include_freshness` packet section
 together with a `ledgerMapsCodeHead` check, forming the lifecycle-start
-staleness checkpoint. Branch-memory carryover
-(`memory/carryover.py`) plans route-overview candidates beside file sidecars
-(route-keyed, never auto-carried when content differs), regenerates
-official-side route indexes after a carry, guarded on a clean official-ref
-checkout, and fast-forwards memory `main` to the official checkout tip
+staleness checkpoint. Route-index generation is split between
+`kernel/route_index.py`, which renders route-local metadata, and
+`kernel/route_index_census.py`, which validates the repository root and freezes
+one exact Git/path-rule source snapshot for membership, coverage, and counts.
+Tracked and untracked records are NUL-delimited, ignored/generated paths are
+excluded by Git plus resolved storage rules, symlinks are classified without
+following their targets, and ambient Git repository selectors are scrubbed by
+`kernel/git_command.py`. Controllers and worktree closeout pass the resolved
+repository identity and `StorageSettings` explicitly rather than rediscovering
+authority inside the builder. Branch-memory carryover (`memory/carryover.py`)
+plans route-overview candidates beside file sidecars (route-keyed, never
+auto-carried when content differs), requires effective official-memory storage
+authority through `memory/carryover_authority.py` before any write, regenerates
+official-side route indexes after a carry from that same authority, guarded on
+a clean official-ref checkout, and fast-forwards memory `main` to the official checkout tip
 (`memory_main_advance`, issue #54) so non-main cycles no longer leave memory
 main behind. Worktree lifecycle finalization lives in
 `worktrees/modules/finalize.py` and is exposed as `lifecycle_finalize_task`;
@@ -707,6 +717,13 @@ into the role files.
 
 ## Invariants And Boundaries
 
+- Route-index identity is one validated Git snapshot: repository membership and path-rule
+  eligibility must not be recounted through a filesystem walk or at different moments. Git failures,
+  timeouts, path-classification failures, and root mismatches stay typed and preserve their causes.
+- Official-memory carryover is a write-authority boundary. Missing, invalid, unsupported, or
+  semantically empty JSON/Markdown onboarding storage rules refuse before ledger, content,
+  route-index, or commit mutation; parser defaults used for read/topology convenience cannot grant
+  write authority.
 - L9 conversation products are strict normalized contracts; package presence does not imply a
   projector, historical store, control service, or renderer.
 - Active and library cursors are separate purpose-bound authorities. Exactly two read ports and
@@ -839,6 +856,8 @@ implementation governs its hash rollover or static mount.
 | Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
+| Deterministic route indexes consume one validated tracked/untracked Git census and resolved path-rule authority; route rendering reuses the frozen repository and eligible-path sets. | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py); [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py); [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Carryover validates effective official-memory JSON or Markdown storage authority before mutation and reuses it for official route-index refresh. | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py); [carryover_authority.py](agents-remember/mcp/src/agents_remember/memory/carryover_authority.py); [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
 | The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py); [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py); [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py); [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
 | FEUI-L5 submission authority, typed lifecycle errors, public boundary, and focused race matrix. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py); [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py); [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py); [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
@@ -857,6 +876,10 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: documented the one-snapshot Git/path-rule route-index
+  boundary, explicit caller authority, typed census failures, and fail-closed official-memory
+  carryover settings preflight. The kernel and memory folders remain governed by this package
+  overview; no additional shallow route overview was introduced.
 - 2026-07-18T15:22+02:00 — No route impact: FEUI-MX-FIX-2 only rolls the generated synchronized
   dashboard index, fingerprint, and hashed assets under `package_data/dashboard/`; authoritative
   session-open behavior lives in `dashboard/src/`, and package parity is proven by the dashboard

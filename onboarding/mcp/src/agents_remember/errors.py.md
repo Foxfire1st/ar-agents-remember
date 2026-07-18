@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`                    |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-18T20:03+02:00 |
+| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`                    |
+| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -16,9 +16,9 @@
 
 ## Purpose
 
-Defines the shared typed error family for Agents Remember. In the harness-control slice it
-distinguishes contract failures, adapter disconnect ambiguity, Codex protocol failures, and the L4
-client-side first-byte boundary used to decide whether a request is safe to retry.
+Defines the shared typed error family for Agents Remember. It distinguishes route-index census
+failures from authority failures while retaining the harness-control contract, adapter disconnect,
+Codex protocol, and client-side first-byte ambiguity families.
 
 ## Code Commentary
 
@@ -29,7 +29,9 @@ extends `HarnessControlError` with `may_have_sent`: failures before the Unix soc
 remain retryable, while failures after the first accepted byte must be reported as unknown and
 reconciled under the same request id. `HarnessAdapterDisconnectedError` carries the equivalent
 native-adapter ambiguity plus optional vendor correlation. Codex-specific subclasses preserve
-app-server method/code evidence.
+app-server method/code evidence. `RouteIndexCensusError` identifies a validated-root census failure
+without conflating it with `AuthorityError`, which remains the type for a root mismatch or missing
+write authority.
 
 ### Conventions
 
@@ -50,6 +52,9 @@ an explicit constructor argument, not inferred later from exception text.
   Codex app-server protocol boundary; disconnect errors preserve possible-send state for reconcile.
 - `may_have_sent=True` is never permission to retry; it is evidence that the same request id must be
   reconciled.
+- Route-index root/official-settings refusal remains `AuthorityError`; Git record, command, or path
+  classification failure after authority is established remains `RouteIndexCensusError` with the
+  original cause attached.
 
 ### Todos
 
@@ -72,6 +77,7 @@ The blocking client uses the new stage evidence; the bridge/queue keep the nativ
 | --- | --- | --- |
 | The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | L237-L280 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The ordered queue converts native disconnect evidence into rejected or unknown receipts without blind resend. | L340-L365 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
 
 ## Cross-Repo References
 
@@ -89,6 +95,8 @@ certified pre-dispatch condition may advertise retry safety; possible-write fail
 
 ## Update History
 
+- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: documented `RouteIndexCensusError` as the typed
+  post-authority census failure, distinct from root and official-settings `AuthorityError`.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented typed busy certificate, id-conflict, and epoch-
   mismatch errors used by the reliable submit boundary.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the client-side first-byte

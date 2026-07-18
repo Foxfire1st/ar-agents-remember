@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-12T19:55+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-18T20:03+02:00 |
+| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
+| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -161,7 +161,9 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   Ancestor-matched overviews are reported as `stamped_without_body_review`
   rather than gating. Previews and apply payloads surface marker-attested
   documents. Shared metadata/route parsing lives in `kernel/onboarding_doc.py`
-  and is re-exported here.
+  and is re-exported here. Closeout preview and apply also pass
+  `context.storage` explicitly to route-index generation, preserving the same
+  repository/path-rule authority used when the onboarding plan was resolved.
 - The closeout worklist (issue #83) is `closeout.py`'s
   `closeout_changed_paths`: working tree ∪ the unverified committed range, so
   transported history (merges, pre-committed slices) gates and stamps like
@@ -206,8 +208,11 @@ No external Domain Documentation source is configured for this memory repo.
 | The package is imported through the public worktree manager facade. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 | Focused worktree tests exercise the facade and operation payloads. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | [test_lifecycle_finalize.py](agents-remember/mcp/tests/test_lifecycle_finalize.py) |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py); [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 
 ## Update History
+- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: closeout route-index preview and apply now forward the
+  resolved `context.storage` authority explicitly to the deterministic builder.
 - 2026-07-12T19:55+02:00 — 260712-PTS-L1 route impact (small): `cli.py` gained the `heal-leaf-ids`
   subcommand — the explicit one-shot seam for `worktree_contract.heal_contract_leaf_ids` now that
   contract loads are walk-free and never normalize legacy leaf ids (detail in the `cli.py` and

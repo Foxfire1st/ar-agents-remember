@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-09T14:05+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-18T20:03+02:00 |
+| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
+| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -27,7 +27,10 @@ abandon now also ends the ambient lifecycle it anchors).
 
 Use `context_packet.py` for compact `ContextPacketV2` assembly,
 `coordination_tools.py` for resolver calls, `memory_tools.py` for drift,
-memory quality, route-index, init, baseline, and carryover operations,
+memory quality, route-index, init, baseline, and carryover operations. Its
+route-index refresh resolves coordination context first and forwards the exact
+`code_repository_name` plus `StorageSettings`, so controller transport cannot
+silently replace repository/path-rule authority,
 `provider_tools.py` for provider status/diagnostics/watchers and GrepAI/CGC
 operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree operations
 including the terminal `lifecycle_finalize_task` path,
@@ -65,6 +68,9 @@ never a gate on it.
 
 - Controllers resolve repo IDs through `McpRuntimeConfig`; they should not
   accept arbitrary source or coordination roots from tool callers.
+- Route-index controllers must pass the resolver-owned repository identity and storage/path-rule
+  settings into the kernel builder explicitly; the builder does not infer write authority from a
+  filesystem location.
 - Provider, benchmark, and worktree controllers should call package services
   directly rather than CLI `main(argv)` wrappers.
 - Keep each controller file scoped by domain; do not rebuild the former
@@ -81,6 +87,7 @@ L14: the task-doc controller accepts the additive `orchestrates` field (master-o
 | --- | --- |
 | MCP payload builders call these controllers and then validate responses through the model registry. | [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/) |
 | Public tool response models live in the models package. | [models overview](../models/overview.md) |
+| `route_index_refresh_tool` resolves context and supplies repository/storage authority to the deterministic builder. | [memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py); [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 
 Worktree start is async (GitHub #53): `worktree_tools.py` transfers the temp
 lifecycle settings file to the background setup thread on a `starting` result,
@@ -118,6 +125,8 @@ benchmark requests, so a case manifest cannot arm providers disabled on disk.
 
 ## Update History
 
+- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: `memory_tools.py` now forwards the resolved code
+  repository identity and storage/path-rule authority into deterministic route-index generation.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: controller overview now documents
   `_auto_land_completed_seats`, `serving.landing.land_seats_for_leaf`, the `auto_land_on_*` gates,
   and `autoLandedSeats`; successful completion lands chats for archive inspection instead of
