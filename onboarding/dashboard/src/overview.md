@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastUpdated            | 2026-07-18T07:22+02:00 |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -16,449 +16,133 @@
 
 ## Purpose
 
-`dashboard/src/` is the **browser-dashboard frontend** (the 3.0 mission-control cockpit) — a
-Vite + React 19 + TypeScript-strict app that renders the observer projection served by the
-`serving/` layer. It renders reopened leaves (L11) as ordinary planned task rows — leaf identity is
-stable across reopens, so no dashboard-side reopen special-casing exists anymore. It
-is a near-read-only cockpit whose **interactive surfaces** are now
-gate responses (`GateResponder` records durable Yes/No gate decisions through `data/actions` and
-routes Chat/informational responses through hosted chats or the external operator inbox) and the
-Chats terminal (slice 6e — an xterm.js view over the Mode B2
-`/api/terminal` WebSocket): a persistent top bar + left rail (attention queue + lifecycle list) + a
-switchable centre viewport (operations / file viewer / engine room / memory mirror / topology / hangar / chats) +
-a right-rail event river + a bottom mode bar (note 06 model C). The unit is the lifecycle (note 01).
-**260707-HFX2-L2 (R5)** adds a second top-bar liveness indicator beside the boot-time `servingBuild`
-stamp: `SupervisorHeartbeatBadge` (`cockpit/Cockpit.tsx`) renders the serving daemon's supervisor
-sweep's own tick age (`store.ts`'s `supervisorHeartbeat` field, mirroring `types/projection.ts`'s
-app-injected `SupervisorHeartbeat` shape) — red/pulsing past its staleness cutoff, silent when the
-supervisor has never ticked (opt-in autostart) rather than a false alarm. **260707-HFX2-L8 (R6)**
-extends that same header signal with pending/redeliverable inbox backlog counts and last sweep duration.
+The dashboard frontend is the operator-facing React cockpit. It projects server-composed observer,
+task, provider, terminal-catalog, adapter, and control evidence into Operations, Chats, Detail,
+Engine Room, file/notes/change-set readers, and supporting panels.
 
-**260715-FEUI-L5 makes controlled prompt delivery an authoritative end-to-end feature.** The shared
-CodeMirror composer submits exact epoch/request/text messages through `data/submitClient.ts`;
-`submitMachine.ts` provides one monotonic evidence fold; `submissionLifecycleClient.ts` polls raw-
-free server status and performs authoritative Alt+Up withdrawal with revision-safe recovery;
-`submitRetention.ts` bounds settled projections without evicting live work. Chats, RailChat,
-HighlightComposer, and the Sessions stage use this path. PTY input remains valid only for a legacy
-raw session and is never a control-authority fallback.
+FEUI-L8 deliberately separates strategic ownership:
 
-**260715-FEUI-L7 completes the Sessions inspector/status integration without expanding this packed
-root route.** `panels/session-cockpit/` owns the focused Evidence and Capabilities panes, fleet Bus,
-accessible stable-mounted tab host, shared 100/101 virtualization boundary, and contractual
-StatusLine. `types/projection.ts` mirrors additive optional pickup owner/redelivery facts, while
-`test/fixtures/busScenarios.ts` preserves coherent sender-address variants and legacy absence.
-The focused child-route overview is the detailed authority.
+- [data overview](data/overview.md) — catalog/session state, reliable submit and withdrawal,
+  lifecycle cleanup, controls, announcements, and authority boundaries.
+- [panels overview](panels/overview.md) — shared panel composition.
+- [session-cockpit overview](panels/session-cockpit/overview.md) — the sole full-page Chats product.
+- Existing focused child overviews under panels, grammar, cockpit, dev, and data own their routes.
 
-## The Layered Architecture (slice 5d)
+## Layered Architecture
 
-Styling was re-architected from a single ~1,200-line global `tokens.css` into the layered blueprint:
+1. Types mirror server wire/projection shapes; they do not infer missing evidence.
+2. Data modules normalize, reconcile, and retain browser projection state around explicit server
+   authorities.
+3. Grammar primitives provide shared state words, badges, panels, and markdown treatment.
+4. Panels compose focused operator surfaces over the shared stores.
+5. CockpitShell owns navigation, persistent keep-alive layers, selection routing, and shell-wide
+   drivers.
 
-- **Tokens** — `panda.config.ts` holds the OKLCH podracer palette (note 08) as typed Panda tokens;
-  `styles/tokens.css` keeps the matching `:root` CSS vars (the global var layer used by `index.css`
-  base + a few Panda text-shadows).
-- **Primitive recipes / component styling** — **Panda CSS** (build-time, zero-runtime atomic CSS):
-  each component carries co-located `css()` / `cva()` styles; `grammar/Panel.tsx` is the shared
-  panel chrome (shell + sticky head). Generated runtime lands in `styled-system/` (gitignored,
-  outside memory scope).
-- **Behavior** — **React Aria** (`react-aria-components`): the mode bar + the lifecycle pivot are
-  `ToggleButtonGroup`s; the lifecycle list is a `ListBox`, and the Chats session switcher is a
-  `GridList` (arrow-nav + type-ahead — a `GridList`, not a `ListBox`, so each session row's action
-  stays keyboard-reachable, slice 6e-2c); the controlled-session composer is CodeMirror 6 Markdown
-  with an explicit submit/withdraw lifecycle (FEUI-L5), while legacy raw typing remains in xterm.
-  Panda conditions
-  (`_selected`/`_focusVisible`) target React Aria's `data-*` state, so the CRT look is unchanged.
-- **Effects** — `index.css` `@layer effects`: the global `crt-overlay` (scanlines + vignette +
-  flicker) and the `?effects=off` determinism freeze, isolated from components. *(Slice 05k removed the
-  engine-room canvas `@keyframes` that 5g–5i had parked in this layer — that motion now lives on GSAP/Motion
-  in `panels/engine-room/`. The last engine-room keyframe, `powerup` (a 05k/05f carve-out for the
-  indexing→nominal engine flash), was then removed too — it is now a **Motion opacity pulse** on the charge
-  rect — so only the app-wide `crt-overlay`/`flicker`/`pulse` keyframes remain here.)*
-- **Layer order** — `index.css` declares `@layer reset, base, effects, webtui, tokens, recipes,
-  utilities`. The `webtui` slot (260715-FEUI-L1 S1, OQ-D = **adopt WebTUI**) hosts the scoped
-  WebTUI skin for the sessions cockpit: `styles/webtui.css` is THE one mapping file — it imports
-  the used `@webtui/css@0.1.9` (exact pin) dist files with `layer(webtui)` and maps WebTUI's
-  palette vars onto the podracer tokens (one color system) — while `postcss-prefix-selector`
-  (options in `webtui-scope.config.cjs`, wired in `postcss.config.cjs`) confines every WebTUI rule
-  under `[data-view="sessions"]` at build time. Slotted between `effects` and `tokens` so Panda
-  always wins a conflict and the unlayered effects freeze stays sovereign; the four falsifiable
-  spike assertions live on as `test/webtuiSpike.test.ts`.
+The terminal catalog and adapter/control routes remain authoritative. Browser state may cache and
+project them, but is not a replacement conversation-history database.
 
 ## Route Model
 
-- `main.tsx` — the entry: mounts `<App>`, imports `index.css` + `styles/tokens.css` +
-  `styles/webtui.css` (260715-FEUI-L1), sets the `effects=off` determinism flag.
-- `App.tsx` — hand-rolled routing (D6): production serves `<Cockpit>`; `/dev/*` lazy-loads the
-  DEV-only harness (statically dropped from the production bundle).
-- `cockpit/Cockpit.tsx` — the model-C shell (stream wiring + layout + top bar + mode bar); slice 5f S1
-  makes the machine-map views (Engine Room / Topology) **full-bleed** (rails hidden, §4.1), render-tested
-  by `cockpit/Cockpit.test.tsx`. Slice 6e registers the full-bleed **Chats** view, and Task 11 derives
-  the selected lifecycle id so chat creation, highlight delivery, and gate responses share the same
-  lifecycle/session identity. Task 29 S7 hides the former **Lifecycle Flow** tab from the cockpit
-  navigation and removes the `flow` view from the shell; `panels/FlowTab.tsx` remains dormant source
-  material only. Operations-integration L2 registers the full-bleed **File Viewer** view
-  (`panels/file-viewer/`) between Operations and Engine Room, **kept mounted** (CSS-hidden) like Chats so
-  its repo/scope/open-file/tree state survives a tab switch. Operations-integration L4 adds a **Change-Set
-  Viewer** TAKEOVER (a `changeSet` state): a `DetailPanel` change-set button replaces the railed Operations
-  body with a full-bleed `<ChangeSetViewer>` (a back link restores the rails) — a task-scoped screen, not a
-  standing view. 260703-L17 adds the second such takeover: a `notesOpen` state renders the full-bleed
-  **Notes Reader** (`panels/notes-reader/`) from `DetailPanel` note links or the TaskNotes entry list; the
-  two takeovers are mutually exclusive, and the reader is **kept mounted** after Back (File-Viewer-style)
-  so the selected note survives within the session. 260715-FEUI-L1 registers the newest full-bleed
-  view, **Sessions** (`panels/session-cockpit/`, last in the mode bar), as the fourth persistent
-  keep-alive layer (`sessionsLayer = chatsLayer` — display/aria-hidden toggle, never unmounted, so
-  the future xterm buffers/WebSockets survive switches); its `active` prop gates the view's
-  window-level keyboard layer so the hidden layer never grabs keys.
-- `test/` — the vitest (jsdom) bootstrap: `setup.ts` stubs `matchMedia`/`ResizeObserver` + the SVG geometry
-  APIs jsdom omits (`getBBox`/`getTotalLength`/`getPointAtLength`, for the engine-room GSAP DrawSVG/MotionPath
-  plugins — 05n) + `scrollIntoView` (cmdk, 260715-FEUI-L1) for
-  component-render tests (the rest of the suite — `smoke`, `contract`, and the `data/` store+selector
-  tests — is pure logic). `test/webtuiSpike.test.ts` (260715-FEUI-L1) keeps the four falsifiable
-  WebTUI-adoption assertions running against the exact shared build configuration.
-  `test/fixtures/` (260715-FEUI-L2) is the NEW shared-fixture home: `catalogRows.ts` — the
-  full-wire-shape catalog builder + the mockup-mirroring `FLEET` scenario the rail/model suites
-  run on; 260715-FEUI-L6 APPENDS the `L6_*` rows (controlled/legacy-raw archetypes,
-  choices/freetext/unrepresentable interactions, retired-with-stop-error,
-  terminate-with-residual) after a byte-identical `FLEET`. 260715-FEUI-L3 adds the R3 contract
-  fixture pack beside it — `capabilityEnvelopes.ts` (recorded-L5-shaped catalogs in all three
-  cacheStatus values, the null-selectedEffort snapshot, SET_RESULTS ×5 acceptances, verbatim
-  404/409/503 error bodies), `controlMessages.ts` (receipts ×5, reconciliations ×4), and
-  `openResponses.ts` (every open 200/400/409 shape + failed rows ×3 harnesses with verbatim
-  bridgeErrors) — plus `test/contractCapabilities.test.ts`, the conformance suite asserting the
-  pack against the recorded L5 live-conformance samples (`catalogRows.ts` untouched by L3,
-  builder reused). FEUI-L4 extends `capabilityEnvelopes.ts` with clamp/defensive-echo results,
-  queued→immediate and unknown→confirm/disprove readback sequences, live Codex snapshots, and
-  exact-session 404/409/503 bodies; these remain fixtures, never product constants. FEUI-L7 adds
-  `busScenarios.ts`: coherent sender-pair, sender-agent-only, sender-role-only, lifecycle-only,
-  escalation, legacy-absence, and supervisor-heartbeat projection fixtures.
-- `grammar/` — the shared primitives library (`Panel`, `ModeBar`, `Dot`, `Affordance`,
-  `ProgressFill`, `TokenGauge`, `Markdown`, 260703-L14's `RankBadge` — the V4 chevron rank
-  insignia for the orchestration/management command tiers — and 260715-FEUI-L3's
-  `EvidenceBadge`, the five-glyph launch-evidence tier badge with the tier word always in the
-  accessible name); see [grammar/overview.md](grammar/overview.md).
-- `panels/` — the cockpit panels (incl. the slice-6e **Chats** terminal view + its lazy `Terminal`
-  xterm wrapper + the 6e-2c `SessionList` session switcher, plus Task 11's shared `GateResponder`
-  used by the detail panel, engine-room diagnostics, and Hangar worktree gates); `FlowTab.tsx` remains
-  present but unreferenced after Task 29 S7 hides the Lifecycle Flow tab. Operations-integration L2 adds
-  the **`panels/file-viewer/`** sub-route — the File Viewer centre tab (a read-only code+onboarding
-  dual-pane over the L1 files API) + the reusable `FilePane`/`DualPane` the Change-Set Viewer (L4) will
-  reuse; L4 then adds the **`panels/changeset/`** sub-route — the Change-Set Viewer screen (a read-only
-  `@codemirror/merge` diff over the L3 change-set API, reusing the L2 `FilePane`). 260703-L17 adds the
-  **`panels/notes-reader/`** sub-route — the Notes Reader takeover (rail = the master's notes from the
-  unchanged L9 `/api/notes/list`, content pane = the same `DualPane`; `TaskNotes.tsx` shrinks to the
-  compact entry list that opens it). 260715-FEUI-L1 adds the **`panels/session-cockpit/`**
-  sub-route — the Sessions cockpit view shell (rail/stage/inspector `PanelGroup` + narrow rules +
-  the ~80-col floor chip, the non-portal cmdk `CommandPalette` with the commands/keys pages, and
-  the `useKeyboardZones` tinykeys binding), whose root carries `[data-view="sessions"]` (the
-  WebTUI scope root). FEUI-L4 fills its live model/effort surface, worded acceptance chips,
-  explicit mark-seen ledger, set-attention/toasts, and dual live regions. FEUI-L7 adds the
-  stable-mounted Evidence/Capabilities/Bus inspector, full evidence and post-removal residual
-  audit, sender-addressed reverse reply, exact-session capability authority split, accessible
-  large-ledger virtualization, and contractual honest StatusLine. See
-  [panels/overview.md](panels/overview.md).
-- `data/` — the Zustand store, pure selectors, SSE stream wiring, the gate-action client
-  (`actions.ts` POSTs targeted `gateId`/`note` decisions to `/api/actions/{verb}`, can omit `target`
-  for gate-id-only cancel cleanup and targetless actionable-drift dismissal, and distinguishes stale
-  gates from no-open-gate), the external-inbox client (`operatorInbox.ts` -> `POST
-  /api/operator-inbox` for message-only Chat, agent-to-agent inbox rows with role/message/artifact
-  metadata, and missing-hosted-session gate notifications plus `/api/operator-inbox/{entryId}/dismiss`
-  for stale pickup-warning deletion), the Mode B2 terminal WebSocket
-  client (`terminal.ts`, slice 6e; Task 22 also lists/terminates durable catalog rows, sends
-  opener labels/lifecycle ids, and exposes a nullable catalog fetch for sync), and the open-terminal **session registry** store (`sessions.ts`,
-  slice 6e-4 — now also the Task 11 lifecycle-tagged hosted-chat routing table for direct gate
-  responses, the slice-6f cockpit-wide inject seam, and the Task 22 catalog hydration/status plus
-  per-prefix label-reuse and cross-tab catalog-invalidation layer; the L6 follow-up adds a
-  reliable leaf-context submission seam carrying non-composer provenance into the selected hosted chat,
-  and L9 adds `"leaf"` catalog invalidations so open tabs can rehydrate hosted-chat leaf moves) +
-  the cockpit text-selection hook
-  (`selection.ts`, slice 6f; since L8 a selection anchored inside a task reader marked
-  `data-task-leaf-key` carries that qualified `leafKey`, the signal the direct leaf-chat highlight
-  paste resolves its target from). HFX-L6 extends the role-aware session grouping/chip inputs so
-  architect and curator spawn-role provenance can ride the same Chats sidebar model as orchestrator,
-  manager, worker, strategist, designer, and reviewer sessions. The serving **read clients** `files.ts` (the L1 files API, L2),
-  `changeset.ts` (the L3 change-set API, L4), and `notes.ts` (the agent-orchestration L9
-  coordination-notes API — `listNotes`/`readNote` plus the pure conservative
-  `resolveNoteReference` behind the task reader's reference links) are same-origin typed wrappers
-  sharing one `getJson`/`qs`
-  transport + `FilesApiError`, feeding the File Viewer + Change-Set Viewer + the task reader's
-  notes view; they hold no store state. Task
-  29 S7 tracks a raw-stream hydration flag from the backend
-  `ready` event and applies optimistic attention suppression while dismiss/clear POSTs are pending; Task
-  34 then bounds the raw Event River store (`store.ts`) to a **sliding window** of the newest ~2000 rows
-  (memory-bounded rather than unbounded session growth), which `EventRiver` virtualizes over so there is
-  still no hard display cap.
-  **260703-L15 (long-session memory) adds `servedAges.ts`** (+ unit suite), the client half of the
-  change-gate volatile-age contract: `VOLATILE_AGE_FIELDS` (the byte mirror of
-  `serving/delta.py`'s set), `stableEquals` (deep equality that skips them), WeakMap arrival
-  anchors (`stampServed`/`servedAgeSeconds`), and the `useNowMs` display ticker. `store.ts`'s two
-  apply paths became identity-preserving and change-gated on `stableEquals` — an idle reconnect
-  snapshot or redundant delta performs ZERO store writes and keeps every node identity (the
-  long-session flatness contract, guarded by the 500-tick test in `store.test.ts`) — and the
-  store carries the wire-optional `servingBuild` boot stamp the cockpit top bar renders muted
-  (`cockpit/Cockpit.tsx` `ServingBuildStamp`, `types/projection.ts` `ServingBuild`). Age-display
-  panels (Hangar / AttentionQueue / MemoryMirror / LifecycleList) advance served ages locally via
-  `servedAgeSeconds` + `useNowMs` because the gated server no longer re-serves a node just to age
-  it.
-  260703-L11 adds `selectors.hasLiveWorktree`, the shared tasks-surface visibility rule
-  (`EnclosureNode.codeWorktreeExists || memoryWorktreeExists` — server-stat'ed existence truth, never a
-  cleanup-state proxy) consumed by both `Hangar` and `LifecycleList`.
-  `taskIdentity.ts` centralizes lifecycle-visible labels plus typed
-  Operations selection keys (`taskdoc:` / `series:` / `lifecycle:`), so task documents, series masters,
-  and runtime-only lifecycles are not inferred from one overloaded id string; Event River also reuses
-  it to show task document titles for lifecycle-only history rows before falling back to raw lifecycle
-  ids. `taskHierarchy.ts` centralizes the structured parent-series join used by Operations and Detail:
-  active leaf rows can show the child task document's own id and link back to the parent/root task
-  without parsing task slugs or parent label strings; 260703-L14 adds its orchestration-command
-  helpers (`isOrchestrationDoc` / `masterCommandNames` / `orchestratorParentKey` — the
-  `orchestrates`-list match both command surfaces share). 260703-L14 also adds
-  **`sessionGroups.ts`** (+ unit suite), the pure G1 command-tree derivation for the Chats sidebar:
-  `groupSessions({sessions, taskDocuments, enclosures})` decks command-role/orchestration-claiming
-  chats (only when an orchestration task exists — D3), groups leaf-claimed chats under their live
-  master (via `hasLiveWorktree` + the case-insensitive leaf join), rolls landed/absent-enclosure
-  chats into one archive, and leaves claim-less sessions ungrouped; master grouping is the chats
-  pane's baseline in every run (owner-ratified, L14R-1) while the gold sprint deck stays
-  orchestration-gated, and the tasks tab renders flat runs unchanged.
-  **260715-FEUI-L1 adds the sessions-cockpit pure layer**: `commands.ts` (+ suite — the extensible
-  command registry, the single options source behind the cmdk palette AND chord dispatch; stable
-  injected action seams — session switching, L4 effort cycling, FEUI-L5 reliable submit, and
-  authoritative pop-back are live), `sessionLayout.ts` (+ suite — the
-  narrow-width edge-transition rules, the ~80-col floor approximation, and the ~280px rail
-  percentage calibration), and the **`keymap/`** sub-route (see
-  [data/keymap/overview.md](data/keymap/overview.md)) — the xterm-free keyboard-zone contract:
-  `reserved.ts` (the PTY reserved set with five-source collision-verification records; the R6
-  replacement pair Ctrl+Alt+PageUp/PageDown), `zones.ts` (`routeKey` + generic printable
-  suppression + `slashOpensPalette`), `chords.ts` (zone-scoped chrome/composer tables), `focus.ts`
-  (the F6 region cycle).
-  **260715-FEUI-L2 adds the sessions-cockpit DATA layer** (all + unit suites): `catalogPoll.ts` —
-  the 2500 ms terminal-catalog poll driver HOISTED out of `panels/Chats.tsx` (refcounted; every
-  read records a poll-health beat; the poll is the AUTHORITATIVE session-row reconciler; the L8
-  Chats cutover depends on this hoist); `seatEvents.ts` — the `/api/events` seat-event reconciler
-  (retired/landed/renamed/turn-state-changed, riding the Event River's EventSource as a second
-  consumer behind a per-connection backlog gate; pre-applies only, never resurrects/invents/
-  regresses); `stateGrammar.ts` — THE one seat-state grammar (R14: state → word/chip/color/pulse;
-  the ruled 2.4 s ease-in-out `pulseSlow`, blocked-on-human steady; the sev-3 chip-vocabulary
-  width ruling is pending with the developer); `railModel.ts` — the pure RULED rail hierarchy
-  (flat command spine / per-leaf clusters, active-first deterministic sort, completed folders),
-  fleet-attention rollup + jump priority, gate/brief/critical-bus projection joins, smart-default
-  focus, and question triage; and `sessionCockpitStore.ts` — the per-seat cockpit client store
-  (per-kind pending sets, acknowledged set ledger that NEVER moves the five-tier launch evidence,
-  composer shell, turn clock, per-pane freshness, client queue, poll health, the persisted
-  orchestration-tree toggle, one-way view mirrors). `sessions.ts` gains the full-row mirror fields
-  + the `patch` seat-event seam; `terminal.ts`'s catalog wire shape moved to
-  `types/terminalCatalog.ts` (re-exported, import sites unchanged); `stream.ts`'s `connectEvents`
-  gains `onInterrupt` (the reconnect signal the backlog gate re-closes on).
-  **260715-FEUI-L5 adds the reliable-submission data layer** (all + unit suites):
-  `submitMachine.ts` owns the five-receipt/four-reconcile lifecycle and evidence partial order;
-  `submitClient.ts` owns exact epoch-bound transport, the sole certified pre-dispatch retry, real
-  deadlines, and provenance-aware store driving; `submissionLifecycleClient.ts` owns raw-free
-  status polling, authoritative withdraw/pop-back, lost-response convergence, and revision-CAS
-  recovery; `submitRetention.ts` protects active work while bounding settled history/queue text to
-  64. `sessionCockpitStore.ts` projects history, authoritative queue, pending withdrawal, recovery,
-  and draft/answer revisions. `test/fixtures/submitScenarios.ts` is the shared normalized fixture
-  pack. These files remain governed by this overview for the current leaf; the final master route-
-  architecture pass should assess a focused source route before introducing a `data/` overview.
-  **260715-FEUI-L6 adds the sessions-cockpit INTERACTION/LIFECYCLE data layer** (all + unit
-  suites): `interactionAnswer.ts` — the SOLE structured-interaction answer path (finds the open
-  `agent-question` gate by `packet.adapterInteraction.{sessionId,interactionId}`, answers via
-  `POST /api/actions/approve` with the answer as the decision note — ZERO terminal writes;
-  kind-awareness choices/freetext/unrepresentable; NOT-YET vs CANNOT copy split on the seat's
-  `lifecycleId` — a gate on a lifecycle-less seat never projects, the gate-id-only projection is
-  a recorded upstream ask); `sessionLifecycle.ts` — terminate/landed-cleanup DETAILED helpers
-  that keep the response bodies (stop residuals + verbatim failure text) plus the
-  `lifecycleNoticeStore` residual store (residuals outlive tombstoned rows) and the refcounted
-  focus-INDEPENDENT `startRetireResidualSweep()` over every registry row (dedup by sessionId,
-  dismissals stick across poll beats, reload resurfaces deliberately); and `ptyHarvest.ts` — the
-  client-side-only legacy-raw harvesting store + pure OSC 133 / OSC 9;4 / title / bell parsers
-  (observe-only; controlled panes get none). `actions.ts` gains `postGateDecisionDetailed`
-  (verbatim error capture behind the retry affordances); `terminal.ts` gains the additive
-  `onSocketState` option (per-pane `connected`/`dropped` freshness from the socket's own
-  handshake/close; a deliberate `dispose()` reports nothing; `reconnecting` never fires — no
-  auto-reconnect exists).
-  **260715-FEUI-L3 adds the sessions-cockpit LAUNCH layer** (all + unit suites):
-  `capabilityCatalog.ts` — the memory-only per-harness capability-envelope store (fetch states
-  exactly `idle|loading|refreshing|error`; the envelope is DROPPED on any error — NO fallback
-  catalog exists anywhere; verbatim `{httpStatus, status, detail}` error surface; per-harness
-  single-flight with honest refresh chaining; the R2 generic miss-cost copy); `launchEvidence.ts`
-  — the pure launch-evidence tier machine (`launchTier`: defaults/pending/refused/readback/
-  model-validated from row control-state truth; Claude launch pairs can NEVER read readback);
-  `launchFlow.ts` — the pure launch machines (advertised-order effort filtering, model-switch
-  re-gating, the BOTH-knobs-or-NEITHER `launchSelectionBody`) + the classifying
-  `openHostedSession` client (200/400/409×2/outcome-unknown F9 — no blind re-POST).
-  `terminal.ts` also gains `OpenTerminalOptions.model/effort` (threaded into the open POST
-  body), `fetchHarnessesOrNull`, and `HarnessInfo.control`.
-  **260715-FEUI-L4 adds the sessions-cockpit LIVE SET-CONTROL layer** (all + unit suites):
-  `sessionCapabilities.ts` reads only the exact live-session snapshot and derives each model
-  row's session-settable effort menu/effective marker; `setAcceptance.ts` is the exhaustive
-  five-value SetResult + HTTP/readback table; `pairChange.ts` serializes model → evidence/readback
-  → effort; `setClient.ts` is the sole snapshot/set I/O driver with supersede guards, one
-  unknown readback, cycle-effort, and turn/focus promotion watching; `setChips.ts` and
-  `setControlsCopy.ts` supply the shared visible evidence/hints; `announcer.ts` supplies
-  refcounted polite/assertive channels. `sessionCockpitStore.ts` gains typed snapshots,
-  loading/error, timestamped echo evidence, route/pair state, and selective acknowledgment;
-  `commands.ts` makes both effort cycle routes live.
-- `topology/` — the imperative constellation canvas + its pure model adapter. Task 33 reshapes it into an
-  **active-enclosure** view: the constellation is now `workspace → source checkouts → active worktree
-  enclosures (+ providers)`. The separate lifecycle/task rim is gone — each enclosure node folds in its
-  1:1 lifecycle (id click-through, status, phase·state) — and `model.ts`'s new `activeTopologyInputs`
-  seam filters the inputs to the served `activeWorktreeGroups` set so only live work renders (the shared
-  store maps keep all-time history for other views). The worktree-group join is normalised to basenames
-  (`groupKey`), fixing a latent task-12-S1 join bug. Task 12 S1 makes worktree-scoped provider satellites
-  parent to the matching enclosure node via `ProviderNode.worktreeGroup` → `EnclosureNode.worktreeGroup`;
-  task 12 S2 then lets repo-covered workspace providers parent to repo nodes via `ProviderNode.repoId`,
-  while aggregate workspace providers remain on the workspace core. Repo-covered GrepAI nodes represent
-  addressable `targetRepos` inside one aggregate provider instance, not separate per-repo provider
-  processes.
-- `types/projection.ts` — the frontend mirror of the served projection schema. `EnclosureNode` carries
-  `enclosureId`, `leafId`, and `taskRoot` so frontend routes can distinguish a root task folder from a leaf
-  enclosure contract without deriving path structure in the browser, and — 260703-L11 — the required
-  `codeWorktreeExists`/`memoryWorktreeExists` existence-truth flags the tasks surface filters on. `TaskDocNode.lifecycleId?` is
-  optional runtime attachment, while `TaskDocNode.id`, `TaskDocNode.createdAt`,
-  `TaskSubTaskRefNode.createdAt`, and `SeriesNode`/`Analytics.series` mirror the active task-document
-  and folder-keyed master aggregation surfaces so the detail panel can render masters, label authored
-  leaves from the child task id, and order leaves from structured creation metadata rather than task-name
-  prefixes. Task 21 adds `SeriesNode.seriesTokenTotal`, the server-composed aggregate displayed by
-  master readers. **260707-HFX2-L13 F6** adds optional `TaskDocNode.bodyRevision` and
-  `data/taskDocuments.ts`: the always-on task/series projection is summary-only, while the visible
-  reader fetches one full body from `/api/task-document` and invalidates its cache by path + revision.
-  **260712-TRH-L1** adds `data/useTaskDocumentBody.ts`, which owns that visible-body hydration and
-  terminal availability state so `DetailPanel` can keep notes and eager change-set requests unmounted
-  until complete task content either arrives or falls back honestly.
-  Task 23/24/L3 adds `AttentionItem.gateId?` and `AgentPickupNode` /
-  `Analytics.agentPickups` for attention clear and task-row waiting-for-agent/check-chat feedback,
-  including sender/recipient roles, message kind, artifact path, and hosted-delivery state.
-  FEUI-L7 adds optional owner role/agent/lifecycle and attempt/last/next/escalated facts; optionality
-  preserves persisted pre-field rows and consumers never synthesize absent values. 260703-L14 mirrors `TaskDocNode.orchestrates?` — the orchestration-command relation (non-empty only
-  on an orchestration-task master; optional for pre-L14 persisted-projection compatibility). Task
-  31 mirrors the provider boot-node `missing` state so Engine Room slots can distinguish expected-but-absent
-  CGC/GrepAI roles from configured or observed provider rows. Task 33 mirrors the required top-level
-  `WorkspaceProjection.activeWorktreeGroups: string[]` — the bounded active worktree-group set the
-  Topology filters on — which `data/store.ts` carries (snapshot + a new `activeWorktreeGroups` delta case)
-  and `data/stream.ts` threads through (`"activeWorktreeGroups"` added to `STATE_EVENTS`).
-- `types/terminalCatalog.ts` (260715-FEUI-L2 R4) — the SECOND hand-maintained wire mirror: the
-  FULL `TerminalCatalogEntry.to_json()` row (`serving/terminal_catalog.py` is the source of
-  truth) — status/control/turn-state vocabularies, named-but-opaque `controlRaw` diagnostics
-  keys, spawn/level provenance, the REQUESTED `resolvedModel`/`resolvedEffort` pair, and
-  liveness/retirement/landing evidence. `data/terminal.ts` re-exports it
-  (`TerminalSessionInfo` = `TerminalCatalogRow`), preserving import sites.
-- `types/harnessCapabilities.ts` + `types/terminalOpen.ts` (260715-FEUI-L3 R3) — the THIRD and
-  FOURTH hand-maintained wire mirrors: the capability-catalog envelope
-  (`CapabilityCatalogResult.to_json()`, `serving/harness_capability_catalog.py` — {schema,
-  harness, cacheStatus `hit|miss|refreshed`, installFingerprint, capabilities}) with the
-  snapshot/model/effort/config/SetResult shapes (`serving/harness_capabilities.py`), and the
-  open-request/response wire shapes (the model/effort launch-selection POST body + the
-  200/400/409 response bodies, `serving/app.py`). `terminalCatalog.ts` was deliberately left
-  untouched by L3 — new types went to new files.
-- `index.css` — the Panda entry + global reset/base/effects layers (260715-FEUI-L2 adds the
-  ruled `pulseSlow` cockpit state-pulse keyframe beside `flicker`/`pulse`).
-- `styles/tokens.css` — the `:root` design-token CSS vars (260715-FEUI-L1 adds `--muted`,
-  mirroring the Panda `muted` token).
-- `styles/webtui.css` — the ONE WebTUI mapping file (260715-FEUI-L1 S1): `layer(webtui)` imports of
-  the used `@webtui/css` dist files + the `[data-view="sessions"]` token mapping + the scoped
-  `:focus-visible` restore; build-time scoped by the prefixer.
-- `dev/` — the DEV-only harness: `DevApp` (router — `/dev/bench`, `/dev/reference`, plus the orchestration-L0
-  `/dev/flows` lifecycle-design canvas mounting `panels/FlowTab`), `Reference` (mc2 mount), `dev.css`, and — slice **5i**
-  — the **scenario player** (`scenarios.ts` model + `ScenarioPlayer.tsx` transport) that `Bench` drives the
-  real cockpit through phase-transition timelines with, plus `scenarios.test.ts`. (`fixtures.ts` gained the
-  shared `engineRoomProjection` wrap.) `scenarios.ts` now also carries the recoverable failure-mode timelines —
-  the `memory-block` ledger-gate (T3B) and the `stale-base` preflight→fast-forward (T1B, slice 05o) — each a
-  named `Scenario` of frames wrapped from the engine-room fixtures, i.e. data within the existing `dev/` route
-  model, not a shape change. Slice 05o (T7B–T18) extends this with six more failure-mode timelines —
-  `seed-fault` (T9B GrepAI red fault→retry), `reindex-reroute` (T9C CGC seed refused→soft amber reindex),
-  `provider-block` (T7B pre-contract plan→retry), `live-sync` (T12B memory moved→fast-forward merge),
-  `integration-conflict` (T14C replay→terminal STOP), and `abandon` (T18 dissolve, no landing) — all the same
-  `erFrame`-wrapped `Scenario` shape registered in `SCENARIOS`; the matching `types/projection.ts` additions
-  (the `refusedPolarity` edge field + a `refused` state) are likewise additive, so the change stays data within
-  the existing `dev/` (and `data/` projection-type) route model. The hand-authored fixtures default
-  `analytics.series: []` beside `taskDocuments` so every dev projection satisfies the current served
-  analytics shape. **260715-FEUI-L6 adds `/dev/pty-bench`** — `PtyRenderBench.tsx`, the in-repo
-  PTY renderer-measurement harness behind the master OQ-B DOM-vs-webgl decision (N REAL
-  `panels/Terminal` components in a `minmax(0,1fr)` grid fed by `lineLogFixture.ts`, the
-  controlled line-log content verbatim-faithful to `harness_control_runner.py`, through the mock
-  WS; rAF-delta stats on `window.__ptyBench`; a `?probe=serialize` reattach probe), driven by
-  `dashboard/e2e/ptyRenderBench.mjs` (a plain node script, never collected by `npm run e2e`; its
-  header records the headless-SwiftShader software-GL caveat).
+### Operations
 
-## 260707-HFX2-L16 Rail And Reader Contract
+Operations remains the initial destination. Its task list, detail reader, attention, diagnostics,
+and contextual RailChat retain their existing contracts. RailChat is useful task-local context, not
+a second full-page chat destination.
 
-The Chats data/panel seam now groups every valid session claim by repo-qualified sprint, independent
-of enclosure liveness; explicit landed rows retain the archive, malformed claims get an honest error
-group, and claim-less rows stay flat. `SessionList` renders each group and flat member set as a complete
-spawn-edge forest with manager-only collapse, live-first order, bounded width, and full-value hover
-recovery. The task reader merges the on-demand body over its current summary, preserves omitted arrays,
-shows an explicit summary fallback on fetch failure, and renders implementation steps once.
-260712-TRH-L1 moves that hydration state into a focused data hook and makes it the visible reader's
-first request priority: summary content plus loading status render immediately, while notes and every
-eager reader/enclosure change-set counter wait for body success or failure. These are behavior changes
-within the existing `data/` and `panels/` routes; no new frontend route was added.
-The reopened correction keys request lifetime and body-payload caching by `docPath + bodyRevision`,
-not projected `TaskDocNode` identity; body payloads merge into the current summary at render time.
-Late abandoned responses are discarded, unchanged analytics-object replacement does not restart the
-request, and failure remains terminal for that key until selection or revision changes. The cockpit
-composition regression covers direct leaf, master, drilled subtask, lifecycle-bound, and pending
-A-to-B selection paths. Full fetch-time status/steps/title fields may still mask fresher summary
-values because the revision hashes authored body fields only; that pre-existing staleness window is
-not fixed here.
+### Chats
 
-HFX2-L21 replaces the Chats session rail's fixed width with a persisted 220–560 px width. A visible
-separator supports pointer dragging and Left/Right keyboard steps, while the adjacent terminal keeps
-a 20 rem minimum when space permits. Direct manipulation does not animate the panel width.
+FEUI-L8 removes the legacy Chats/SessionList path and the separate Sessions navigation concept.
+CockpitShell exposes one Chats item backed by the persistent session-cockpit layer. That layer keeps
+the mechanics built through L1–L7 — role/spawn rail, reliable composer and authoritative pop-back,
+interaction answers, persistent PTYs, lifecycle controls, evidence/capabilities/bus, and status —
+while adding L8 hardening, accessibility, scenarios, and product-duty transfer.
 
-### 260712-TRH-L7 landing freshness boundary
+The inspector is supplementary evidence, closed by default, toggleable, and responsive without
+overwriting deliberate user intent. The stage is the primary space.
 
-The dashboard consumes additive landing freshness truth from the projection: stale refs remain visible and age-labeled, while Engine Room landing-flow motion is limited to observed refs. Remote observation remains a server-side background concern; this route documents the client rendering and wire-type contract.
+### Other Full-Page Surfaces
+
+Detail/Operations takeovers, Engine Room, File Viewer, Notes Reader, Change-Set Viewer, and dev-only
+design/bench routes retain their existing focused overviews. The L8 split does not introduce another
+production view.
+
+## Product Truth And Future Conversation Boundary
+
+The current canonical Chats stage renders controlled runner line-logs and legacy raw vendor TUIs
+through xterm. It now offers a coherent single visual roof and end-to-end interaction mechanics, but
+it is not yet the requested structured conversation renderer.
+
+Recovered project history requires one shared visual message model across Claude, Codex, and Pi,
+with visible harness identity and adapter-mapped behavior. Active transcript and previous-conversation
+library/index are separate capabilities. The preferred architecture obtains normalized history,
+index, and resume from adapters and uses browser state as a projection/cache instead of duplicating
+vendor history. UA-1 capability is absent in FEUI-L8, so no dashboard component may claim those
+features yet.
+
+User submissions, agent-to-agent bus messages, lifecycle/control commands, and adapter-interaction
+answers remain distinct paths. The original orchestration failure mode was collisions caused by
+routing agent communication through the same paste/input channel as operator typing; the dashboard
+must not recreate that coupling.
 
 ## Invariants And Boundaries
 
-- **Near-read-only with named control surfaces** — projection panels remain display-only except
-  for Gate Respond decisions/messages, the Chats terminal's bidirectional Mode B2 WebSocket, and
-  the Sessions cockpit's explicit launch, structured-interaction, terminate/cleanup, and live
-  model/effort controls. Sessions mutations ride their typed HTTP/control routes; requested and
-  effective values remain separate, and the server still authorizes and proves every effect.
-- **Reliable submit is generation-bound and monotonic** — a controlled prompt keeps one immutable
-  request id/text/source/epoch; only the exact server pre-dispatch certificate can retry; every
-  response/poll enters one evidence fold; pop-back is server withdrawal of an authoritatively queued
-  row and restores drafts only by revision CAS. PTY paste is never a fallback.
-- **Client-agnostic shapes** — the frontend consumes the `WorkspaceProjection` nodes verbatim (no
-  dashboard-bespoke endpoints); North-Star #2.
-- **Build-time styling only** — Panda extracts static CSS at build; `styled-system/` is generated,
-  gitignored, and excluded from memory scope. The shipped bundle is static CSS + JS.
-- **Determinism** — `?effects=off` / the calm-cockpit toggle freezes every animation/transition so
-  screenshots + visual assertions are stable.
-- **Provider/state are never faked** — colour + silhouette carry state (note 08); `inferred` states
-  are visibly marked; ages are server-computed, never `Date.now()`.
+- Operations is the default and there is exactly one full-page Chats destination.
+- The shell owns one catalog poll/reconciler for its lifetime. Views do not create competing feeds.
+- Focus/inspection may name a landed row; only a live row owns action routing and reload preference.
+- Reliable submit and withdrawal preserve request/epoch identity and never blind-resend or locally
+  fake an authoritative result.
+- PTYs stay mounted across focus and transient handoff gaps; ended rows never create a live socket.
+- Inspector visibility is optional presentation. Core Chats actions remain usable with it closed.
+- State words and evidence remain explicit; absent transport/capability/history facts are not
+  inferred.
+- No Domain Documentation source is configured; direct source/tests, reviewed task evidence, and
+  recovered same-repository history are the authority for FEUI-L8 curation.
 
-## Repo-Internal References
+## Child Route Onboarding Map
+
+| Child route | Governing overview |
+| --- | --- |
+| `data/` | [Cockpit state and authority](data/overview.md) |
+| `panels/` | [Panel composition](panels/overview.md) |
+| `grammar/` | [Grammar](grammar/overview.md) |
+| `cockpit/` | File cards governed by this overview; shell ownership starts at [Cockpit.tsx](cockpit/Cockpit.tsx.md). |
+| `dev/` | File cards governed by this overview; dev scenario authority starts at [cockpitScenarios.ts](dev/cockpitScenarios.ts.md). |
+
+## Docs References
+
+The curator checked `system/sources.md`; it contains no configured Domain Documentation entries.
+The L8 architecture statements were verified from repository-local source/tests, task/reports, and
+the recovered same-repository history pack.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The L16 grouping derivation owns repo-qualified sprint/archive/error membership. | L48-L159 | [sessionGroups.ts](data/sessionGroups.ts) |
-| The L16 session renderer owns forest order, manager collapse, bounded layout, and hover details. | L242-L484 | [SessionList.tsx](panels/SessionList.tsx) |
-| The L21 Chats shell owns the persisted sidebar width plus pointer and keyboard separator behavior. | L1-L588 | [Chats.tsx](panels/Chats.tsx) |
-| Reliable submit transport, evidence folding, authority polling/withdrawal, and bounded retention. | — | [submitClient.ts](data/submitClient.ts); [submitMachine.ts](data/submitMachine.ts); [submissionLifecycleClient.ts](data/submissionLifecycleClient.ts); [submitRetention.ts](data/submitRetention.ts) |
-| The shared controlled-session composer renders queue, lifecycle, endgame, pop-back, and recovery. | — | [SessionComposer.tsx](panels/SessionComposer.tsx); [QueuePreview.tsx](panels/session-cockpit/QueuePreview.tsx) |
-| The visible-body hook owns availability, merge, and revision-aware cache state. | L1-L72 | [useTaskDocumentBody.ts](data/useTaskDocumentBody.ts) |
-| The detail panel resolves the displayed document and delays notes plus all eager change-set requests until body hydration is terminal. | L380-L388; L629-L687; L1044-L1085; L1309-L1388 | [DetailPanel.tsx](panels/DetailPanel.tsx) |
-| The serving layer supplies the projection and static package boundary consumed by this route. | L1-L80 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The built bundle is synced into package data and checked against source plus dist. | L30-L52; L151-L179 | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| The L4 live-session set driver owns exact snapshot reads, model/effort POSTs, pair serialization, cycling, and promotion watching. | L1-L433 | [setClient.ts](data/setClient.ts) |
-| The Sessions cockpit route overview owns the live control, ledger, toast, and accessibility surface contract. | — | [session-cockpit overview](panels/session-cockpit/overview.md) |
+| No configured Domain Documentation source exists for `dashboard/src`. | `system/sources.md` checked | — |
 
-## 260707-HFX2-L17 Seat Binding Route Impact
+## Cross-Repo References
 
-Dashboard session data distinguishes current `seatRole` from origin `spawnRole`; local assignment,
-grouping, ordering, chips, and pane labels are binding-first. Attach/move includes an explicit role
-picker and posts `{leafKey, role}`, preserving different-role owners while surfacing same-role
-conflicts. These TypeScript sources are the durable UI behavior. `scripts/sync-dashboard.py` builds
-and copies them into package data, and serving mounts that synchronized output; generated hashed
-assets are not documented individually.
+No cross-repository implementation is imported as the dashboard authority. Historical Toad/T3
+references informed product framing only; current code truth stays in agents-remember.
 
-### 260713-PHA-L5 Route Contract Review
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository implementation source governs this route. | Import and history review | — |
 
-The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
-readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
-gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
-only. Dashboard and packaged projections remain additive and synchronized.
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| Shell navigation, default, persistent layers, and shared drivers. | [cockpit/Cockpit.tsx](cockpit/Cockpit.tsx) |
+| State and authority architecture. | [data overview](data/overview.md) |
+| Panel composition. | [panels overview](panels/overview.md) |
+| Sole Chats route, deletion map, and future boundary. | [session-cockpit overview](panels/session-cockpit/overview.md) |
+| Dev scenario authority and end-to-end states. | [dev/cockpitScenarios.ts](dev/cockpitScenarios.ts) |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — 260715-FEUI-L8 strategic refactor: split data authority and canonical
+  Chats detail into focused child overviews, recorded one Chats/Operations-default product truth,
+  and preserved the future adapter-normalized conversation/history boundary without claiming UA-1.
+  Metadata remains pinned to the leaf base.
 
 - 2026-07-17T23:54+02:00 — 260715-FEUI-L7 route impact: the existing
   `panels/session-cockpit/` child route gains the stable-mounted three-pane inspector, complete

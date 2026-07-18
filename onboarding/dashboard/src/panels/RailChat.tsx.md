@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -16,22 +16,11 @@
 
 ## Purpose
 
-The **single-instance right-rail chat** (slice L5): the surface the cockpit's `RailToggle` swaps in for
-the Event River. It is anchored on the durable **qualified leaf id** (`leafKey` = `repo/master/leaf-id`),
-not the enclosure, so it resolves with no live worktree and after finalize. It reuses the **same**
-`Terminal` + `SessionComposer` and the shared `data/sessions` connection registry as the Chats page —
-there is exactly one xterm/WebSocket per session, so the Chats-page row and this rail surface drive the
-same live session. After the L5 fix pass a leaf has **two** distinct slots: a **chat** (an agent harness —
-Claude Code / Codex / Pi.dev) and an optional **terminal** (a plain shell). When both exist they render as
-a **vertical split** (chat on top, terminal below); when none exists the empty state offers a **harness
-choice** to start a chat plus a separate **＋ Terminal** to open a shell. L6 adds the leaf-chat context
-handoff: when an agent chat is created for the displayed leaf, or a free chat is attached to a picked
-leaf, the rail builds a concise context package from the matching task document plus active process
-projection. FEUI-L5 routes that leaf-context message and the shared composer through reliable
-epoch-bound submission rather than terminal paste; source provenance keeps non-composer text from
-clearing or restoring the operator's draft. L9 keeps the attach picker visible for
-an already-attached chat as a move control; a successful move updates the durable leaf binding and drafts
-the newly selected leaf's context without respawning the terminal session.
+The single contextual right-rail chat surface beside Operations. It is anchored on durable qualified
+leaf identity and shares the same catalog, reliable composer, and connection registry as the full-page
+Chats cockpit. A leaf may expose an agent chat plus optional raw terminal, with keep-alive panes and
+server-first leaf attachment/context handoff. It is deliberately not another full-page destination
+and does not own a second conversation/session index.
 
 ## Code Commentary
 
@@ -145,7 +134,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | The durable leaf-key helpers and task tree builder used for packet lookup, heading labels, and the attach picker. | L60-L70; L102-L105; L126-L165 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 | The lazy xterm terminal it mounts per pane (shared with Chats). | — | [Terminal.tsx](Terminal.tsx) |
 | The composer docked below each pane that injects into that session's stdin. | — | [SessionComposer.tsx](SessionComposer.tsx) |
-| The Chats page that surfaces the same leaf sessions via the shared registry + offers leaf attach. | — | [Chats.tsx](Chats.tsx) |
+| The canonical Chats duty bar and view surface the same registry and authoritative leaf attach. | — | [ChatContextBar.tsx](session-cockpit/ChatContextBar.tsx) · [SessionsView.tsx](session-cockpit/SessionsView.tsx) |
 | The cockpit shell that toggles this in for the Event River and passes the displayed `leafKey`, `taskDocuments`, `engineProcesses`, `contextMaster`, and `selectedLifecycleId`. | L346-L356; L479-L485 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
 
 ## Cross-Repo References
@@ -162,7 +151,17 @@ RailChat now uses the same reliable `SessionComposer` as the full Chats view. Au
 delivery carries `leaf-context` provenance through epoch-bound submission, so it cannot clear or
 restore the visible composer draft. Neither path uses terminal paste or a native hidden queue.
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Updates contextual-chat ownership language for the one-roof cutover: RailChat shares the canonical Chats connection/session registry and keep-alive semantics. It remains a task-side contextual surface, not a second destination.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: migrated rail composition and leaf-context delivery to the
   shared reliable client with source-aware draft boundaries.

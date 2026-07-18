@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/submissionLifecycleClient.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview | `overview.md`                                   |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -59,7 +59,17 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | This is a repository-local frontend integration suite. | — | — |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Pins same-id poller isolation: an old poll completion neither applies to new per-seat truth nor deletes/reschedules the successor poller after a dev authority reset.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T21:39+02:00 — Created for 260715-FEUI-L5; captured authoritative poll ordering,
   withdrawal race/loss convergence, epoch loss, revision-CAS restoration, recovery-slot decisions,

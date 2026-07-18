@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/actions.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
 | lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -54,6 +54,16 @@ decides safety — the gate's state, lifecycle-scoped acknowledgement rules, and
 enforcement are the boundary; this helper only transports the request. Never reports a fake "sent":
 only `202` reads as successful.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -63,7 +73,20 @@ only `202` reads as successful.
 | The attention queue that calls `postAttentionDismiss`. | — | [panels/AttentionQueue.tsx](../panels/AttentionQueue.tsx) |
 | The interaction answer path riding `postGateDecisionDetailed` (approve + note). | L119-L129 | [interactionAnswer.ts](interactionAnswer.ts) |
 
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R4): added `postGateDecisionDetailed` — the additive
   gate-decision POST variant that keeps the server's words (body / HTTP status / network error)

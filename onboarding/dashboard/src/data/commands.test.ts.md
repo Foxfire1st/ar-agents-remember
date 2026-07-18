@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/commands.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
 | lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -73,6 +73,10 @@ slash-opened palette commands receive the intended initial query. It guards the 
 composer Alt+Up is pop-back, while the chrome/session navigation chord remains separate.
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: added command-level pop-back and slash-query regression proof.
 

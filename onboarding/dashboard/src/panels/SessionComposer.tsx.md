@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionComposer.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -57,7 +57,7 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The view that mounts this + wires `onSend` to the active session's stdin. | — | [Chats.tsx](Chats.tsx) |
+| The canonical Chats view mounts this over the reliable-submit client for the focused live seat. | — | [SessionsView.tsx](session-cockpit/SessionsView.tsx) |
 | The connection whose `sendInput` receives the bracketed-paste injection (+ the `bracketedPaste` helper). | — | [data/terminal.ts](../data/terminal.ts) |
 | The render + interaction tests for this composer. | — | [SessionComposer.test.tsx](SessionComposer.test.tsx) |
 
@@ -77,7 +77,17 @@ It renders `QueuePreview`, five-value receipt/reconcile progress, bounded retry/
 the exact withdrawal recovery slot. In answer mode it delegates only to the gate-backed answer
 callback. No path writes prompt text into the PTY.
 
+## FEUI-L8 Reviewed Candidate Delta
+
+CodeMirror now consumes the effective keymap through compartments and reconfigures profile/bindings without recreating the editor. House commands retain highest precedence; Vim owns Escape while immutable F6 exits, and the send hint reflects the active binding.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: rewrote the sidecar from the obsolete textarea/paste model to
   the shared CodeMirror reliable-submit, queue, pop-back, recovery, and answer-mode contract.

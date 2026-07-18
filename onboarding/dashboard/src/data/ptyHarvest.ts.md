@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/ptyHarvest.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
 | lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -58,6 +58,16 @@ wired only for the raw archetype in `PtySurface`.
   rail's grammar dot (the reviewer's "dot stays pure grammar" case pins this).
 - Wired for the legacy-raw archetype only; controlled panes' truth is the runner line-log.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -69,7 +79,20 @@ wired only for the raw archetype in `PtySurface`.
 | The grammar this store must never feed. | — | [stateGrammar.ts](stateGrammar.ts) |
 | The unit suite: parser matrices, clamps, no-fabrication, bell/ack semantics. | L11-L70 | [ptyHarvest.test.ts](ptyHarvest.test.ts) |
 
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R7: the client-side legacy-raw harvest
   store (bell/ack-on-focus, OSC 0/2 title, turn hints) + the pure OSC 133 / OSC 9;4 parsers and

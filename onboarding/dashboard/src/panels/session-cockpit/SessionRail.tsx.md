@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T23:54+02:00                           |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -16,15 +16,12 @@
 
 ## Purpose
 
-The **session rail** (260715-FEUI-L2 S4; L6 adds the honest lifecycle flows R5 + legacy-raw
-harvest markers R7): renders the RULED role-driven hierarchy (spec §1.6b) — flat command spine,
-indented per-leaf clusters with the active seat on top, per-master completed folders with
-master+sprint bulk end — plus the fleet-attention strip (R12), gate badges (R13), the two-state
-brief column (R8), the poll-health stale banner (R15), and the bus-summary footer (R8). The
-orchestration-tree (spawn-edge) view stays available as a button/palette toggle for provenance
-inspection only (R5). FEUI-L4 consumes the existing attention slot with a worded `set!` marker
-for unacknowledged set evidence and makes each state dot speak its grammar word. All hierarchy
-derivations live in `data/railModel.ts`; this file is DOM + wiring.
+The sole canonical Chats rail, replacing the retired SessionList/sessionGroups renderer. It consumes
+data/railModel.ts to render the ruled role/spawn hierarchy, master/leaf clusters, completed folders,
+attention rollups, gates/briefs, poll health, bus summary, and provenance tree toggle. Lifecycle
+actions keep exact per-row terminate failures/confirmation and exact landed-cleanup target/outcome
+truth. Browser rendering optimization begins only above 50 rows actually emitted by the selected
+rail view.
 
 ## Code Commentary
 
@@ -117,6 +114,16 @@ rail root carries `data-focus-target` (design §5.3 — always present, even emp
   must stay verbatim-visible with retry — never a silent disarm.
 - NO turn theater renders per rail row — the WorkingLine is its single home (R6).
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -132,7 +139,26 @@ rail root carries `data-focus-target` (design §5.3 — always present, even emp
 | The poll-health + tree-toggle store slices. | L107-L172 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
 | The jsdom suite: state matrix, anatomy order, model-leakage negative, hierarchy, attention, joins, completed/bulk, footer honesty, cross-surface dot, + the L6 block. | L61-L473 | [SessionRail.test.tsx](SessionRail.test.tsx) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Becomes the sole Chats rail replacing SessionList/sessionGroups rendering. It consumes `railModel`, renders role/spawn/master/leaf/completed truth and attention rollups, preserves exact terminate/cleanup targets, and enables browser rendering optimization only beyond 50 actually emitted rows.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T23:54+02:00 — 260715-FEUI-L7 aligned the rail's set-attention contract with the
   explicit `mark seen` action now shared by Evidence and background outcomes. Viewing/focusing

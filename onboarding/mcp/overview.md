@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-18T00:08+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastUpdated            | 2026-07-18T07:43+02:00 |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -750,6 +750,25 @@ into the role files.
   broken asset references. The fingerprint is written during sync, so the canonical evidence order
   remains build, sync, `--check`, then served-package verification.
 
+## Docs References
+
+The active memory repository's `system/sources.md` has no configured Domain Documentation entries. The
+generated dashboard-package boundary is established by same-repository sync code, tests, and the reviewed
+FEUI-L8 build output.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured external Domain Documentation source governs this generated package refresh. | `system/sources.md` checked | — |
+
+## Cross-Repo References
+
+The generated dashboard bundle is produced and served entirely inside `agents-remember`; no cross-repository
+implementation governs its hash rollover or static mount.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Same-repository sync/build review | — |
+
 ## Repo-Internal References
 
 | Finding | Source Path |
@@ -782,6 +801,12 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-18T07:43+02:00 — No route impact: 260715-FEUI-L8 rebuilt and synchronized the accepted
+  dashboard source into `package_data/dashboard/**` and refreshed `package_data/dashboard.fingerprint`
+  through the existing `scripts/sync-dashboard.py` boundary. The hashed asset churn is generated output
+  excluded from file-level onboarding; it changes no MCP Python source, server contract, tool surface, or
+  package architecture. Canonical Chats behavior is documented under `dashboard/src/` and its design
+  evidence route. Verification metadata remains pinned until closeout stamps the L8 code commit.
 - 2026-07-18T00:08+02:00 — No route impact: 260715-FEUI-L7 rebuilt and synchronized the accepted
   dashboard source into `package_data/dashboard/**` and refreshed
   `package_data/dashboard.fingerprint` through the existing `scripts/sync-dashboard.py` boundary.

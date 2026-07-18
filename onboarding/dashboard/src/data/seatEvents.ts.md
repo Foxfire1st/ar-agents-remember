@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/seatEvents.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
 | lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -61,6 +61,16 @@ holds — one connection, two consumers.
 - Only seat-state application is gated — the Event River (`pushEvent`) correctly still receives
   backlog lines on the same connection.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -72,7 +82,20 @@ holds — one connection, two consumers.
 | The `patch`/`setStatus` store actions this applies through. | — | [sessions.ts](sessions.ts) |
 | The unit suite: never-resurrect, unknown-session, strict-newer dedup, vocabulary guard, malformed lines, per-connection gate. | L34-L185 | [seatEvents.test.ts](seatEvents.test.ts) |
 
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S2 (R2, incl. review-finding-2 fix): the
   seat-event reconciler over the shared `/api/events` connection — terminal-mark guards, rename

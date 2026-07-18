@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/stream.ts`                   |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
 | lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -78,6 +78,10 @@ No meaningful cross-repo references found.
 | This client transport module talks only to this package's dashboard serving endpoints. | N/A | [stream.ts](stream.ts) |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (review finding 2): `connectEvents` gained the optional
   `onInterrupt` callback wired to the EventSource `error` event — the reconnect signal the

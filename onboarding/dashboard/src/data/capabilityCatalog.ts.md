@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/capabilityCatalog.ts`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -80,6 +80,16 @@ exports the launch flow renders.
   callers); `refresh: true` is a PROMISE of daemon-side invalidation — never silently satisfied
   by a joined plain read.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -91,7 +101,26 @@ exports the launch flow renders.
 | Envelope/error fixtures (all three cacheStatus values; verbatim 404/409/503 bodies). | — | [../test/fixtures/capabilityEnvelopes.ts](../test/fixtures/capabilityEnvelopes.ts) |
 | The unit suite (state transitions, verbatim errors, drop-on-error, refresh chaining, malformed rows, cost honesty). | — | [capabilityCatalog.test.ts](capabilityCatalog.test.ts) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+`resetCapabilityCatalogForDev` clears rendered and single-flight capability state and advances a generation. A request owned by the prior bench scenario may resolve, but cannot populate or chain into the successor catalog.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R1/R2 (capability catalog client): the
   memory-only per-harness envelope store (fetch states `idle|loading|refreshing|error`, loaded =

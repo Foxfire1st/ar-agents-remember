@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/taskDocuments.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T12:07+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash |                                                  `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
 | lastVerifiedCommitDate |                                                  2026-07-12T18:11:57+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md) — the `data/` folder has no route-local overview, so the
+[data overview](overview.md)
 frontend source overview governs this client helper.
 
 ## Purpose
@@ -83,6 +83,10 @@ No meaningful cross-repo boundary exists; the client, endpoint, and task-documen
 | Same-repository dashboard-to-serving contract only. | — | — |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-12T12:07+02:00 — 260712-TRH-L1 current-state clarification: cache and availability
   ownership moved from `DetailPanel` into `useTaskDocumentBody`; this transport helper remains

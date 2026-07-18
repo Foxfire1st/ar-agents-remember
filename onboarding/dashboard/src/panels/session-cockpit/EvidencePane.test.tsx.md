@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/EvidencePane.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -63,7 +63,17 @@ No meaningful cross-repo boundary is owned here.
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Updates lifecycle notice fixtures for the new `cleanupFailure` state so evidence tests exercise the complete notice-store shape.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
   metadata remains pinned to the leaf base until closeout.

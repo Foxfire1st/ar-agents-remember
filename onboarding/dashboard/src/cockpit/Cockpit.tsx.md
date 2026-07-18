@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
 
@@ -16,29 +16,16 @@
 
 ## Purpose
 
-The model-C cockpit shell (note 06): persistent chrome that never hides the alarms — top bar, left
-rail (attention queue + lifecycle list), switchable centre viewport, right-rail event river, bottom
-mode bar. Owns the ephemeral selection + view UI state and the live SSE wiring. As of slice 5f S1 the
-two "machine map" views (Engine Room / Topology) drop the rails and span the full body width (§4.1);
-slice 6e adds a third full-bleed view, **Chats** (the xterm.js Mode B2 terminal). Task 29 hides the
-Task 26 Lifecycle Flow diagnostic from normal dashboard navigation; `FlowTab.tsx` remains in the source
-tree but `Cockpit.tsx` no longer imports or routes it. **Slice L5** makes the right rail itself
-switchable: a `railView` River⇄Chat toggle swaps the standing Event River for a single-instance,
-leaf-keyed `RailChat`, and the shell tracks the leaf the **detail panel is displaying** (reported up from
-`DetailPanel`) so both the rail chat and the Chats page bind to the same per-leaf session. L6 keeps that
-timing and adds one extra projection thread: the shell passes `analytics.engineProcesses` into `RailChat`
-so a newly created or newly attached leaf chat can receive worktree facts in its context package. L8 also
-threads the displayed leaf key and active rail-chat state into `HighlightComposer`, letting obvious
-task-reader selections paste straight into the adjacent leaf chat draft instead of opening the generic
-Add-to-chat composer. **L17** adds a second full-bleed **takeover** beside the Change-Set Viewer: the
-**Notes Reader** (`panels/notes-reader/NotesReaderViewer.tsx`), opened from a `TaskNotes` note/reference via
-the threaded `onOpenNotes`. The shell holds its selection (`notes`) + a `notesOpen` visibility flag and a
-shared `takeover` flag hides the railed body for either screen; unlike the Change-Set takeover it is
-RETAINED mounted-hidden after Back (the File Viewer pattern) so its listing + open note survive
-back/forward, and a fresh entry re-shows it on the clicked note. **260715-FEUI-L1** registers the
-newest full-bleed view AND keep-alive layer: **Sessions** (`panels/session-cockpit/SessionsView.tsx`,
-last in the mode bar) — the terminal-first sessions cockpit whose future xterm buffers/WebSockets
-(L6) must survive view switches exactly like Chats.
+The production cockpit shell owns persistent chrome, route/takeover selection, live projection
+wiring, and keep-alive full-page layers. FEUI-L8 exposes Operations, Engine Room, Files, and exactly
+one Chats destination; Operations is initial, the former Sessions item is retired, and the canonical
+Chats layer is the persistently mounted session cockpit. The shell owns the one catalog poll plus
+eager/cross-tab reconciler, threads selected lifecycle/leaf/task context into Chats and RailChat, and
+moves highlight focus/view only after accepted delivery names an exact live session.
+
+RailChat remains the contextual right-rail surface beside Operations; Notes/Change-Set takeovers and
+the other existing routes retain their established ownership. The dev lifecycle-design canvas stays
+outside production navigation.
 
 ## Code Commentary
 
@@ -150,6 +137,16 @@ must derive it through the task-identity helper.
 false "stale" alarm — the same "absence is not evidence of a problem" posture `servingBuild` already
 follows for a pre-L15 server.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -167,13 +164,32 @@ follows for a pre-L15 server.
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | — | [panels/DetailPanel.tsx](../panels/DetailPanel.tsx) |
 | The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; L6 receives `engineProcesses` here for leaf-context worktree facts. | L479-L485 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
-| The hosted chat view that receives `selectedLifecycleId` + `selectedLeafKey` + `taskDocuments`. | — | [panels/Chats.tsx](../panels/Chats.tsx) |
+| The sole Chats layer receives selected lifecycle/leaf/task context while staying persistently mounted. | — | [SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | — | [panels/HighlightComposer.tsx](../panels/HighlightComposer.tsx) |
 | The frontend projection type exposes `Analytics.engineProcesses`, the process-map input Cockpit now threads into `RailChat`. | L395-L408 | [types/projection.ts](../types/projection.ts) |
 | `SupervisorHeartbeatBadge` reads `useDashboard((s) => s.supervisorHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | — | [../data/store.ts](../data/store.ts.md) |
 | The `SupervisorHeartbeat` type this badge's props shape mirrors. | — | [../types/projection.ts](../types/projection.ts.md) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+The shell now exposes `operations | engine | files | chats`; the former Sessions destination and legacy Chats layer are gone. It owns both catalog poll and eager/cross-tab reconciliation for its lifetime, keeps one persistent `SessionsView` as Chats, and moves highlight route/focus only after accepted delivery to an exact live id.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (S1/S2, incl. review finding 2): `Cockpit` now owns the
   shared session feed — the `/api/events` EventSource carries the Event River AND the seat-event

@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/pairChange.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T08:33+02:00 |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
 | lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
-| governingOverview | `../overview.md` |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -68,6 +68,10 @@ No meaningful cross-repo boundary is owned here.
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R5/R9 through fix round 3; the final PASS
   confirmed route-error outcomes remain unknown-effectiveness while SetResult-backed unsupported

@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/scenarios.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-21T02:27+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
 
@@ -89,6 +89,16 @@ animates from wherever it currently is. The captions are load-bearing for `scena
 `cleanup-pending` phase frame (the de-materialise beat). Stays in lockstep with the engine-room fixture
 names: a renamed/removed fixture must be reflected here or `erFrame` throws.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -99,7 +109,26 @@ names: a renamed/removed fixture must be reflected here or `erFrame` throws.
 | Consumed by the player transport + the bench picker. | — | [ScenarioPlayer.tsx](ScenarioPlayer.tsx) · [Bench.tsx](Bench.tsx) |
 | `WorkspaceProjection` / `ObserverEvent` types each frame carries. | — | [projection.ts](../types/projection.ts) · [event.ts](../types/event.ts) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Folds the dedicated Chats scenario catalog into the existing picker and projects the interaction-answer gate only for that scenario. The large Engine Room timeline file remains a registry, not a duplicate transport fixture.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-06-22T11:00 — slice 05o: rewrote `seedFault` as the **T9B** single boot-demo identity (charge → RED
   GrepAI fault → re-seed → nominal; the CGC reroute that used to live here is now its own mode) and added five

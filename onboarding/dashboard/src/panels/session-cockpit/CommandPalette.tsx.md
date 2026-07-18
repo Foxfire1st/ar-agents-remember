@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/CommandPalette.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -83,7 +83,17 @@ Each palette open now normalizes and seeds the query passed by the composer slas
 replaces stale query state; filtering applies the normalized text to command titles and keywords.
 The palette executes registered commands but never interprets a slash line as prompt delivery.
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Consumes the effective keymap for command labels/reference rows and exposes the Emacs/Vim profile plus validation issues. The modal dialog traps Tab focus; action palettes close before focus commands run so invoker restoration cannot overwrite the command's destination.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented slash-normalized initial-query handling.
 

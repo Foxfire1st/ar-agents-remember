@@ -53,7 +53,7 @@ The shared session store and Chats surface are the canonical hydration and turn-
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Chats renders the same `OpenSession.turnState` catalog used here. | SessionList source and panels overview | [SessionList.tsx](SessionList.tsx); [panels overview](overview.md) |
+| The canonical Chats rail renders the same normalized session-state catalog used here. | SessionRail source and panels overview | [SessionRail.tsx](session-cockpit/SessionRail.tsx); [panels overview](overview.md) |
 | Focused tests cover mapping, exact-leaf-first identity, lifecycle fallback, precedence, missing classification, and omission. | L22-L117 | [ChatActivityIndicator.test.tsx](ChatActivityIndicator.test.tsx) |
 
 ## Cross-Repo References

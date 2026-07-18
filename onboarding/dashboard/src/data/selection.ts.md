@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/selection.ts`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:18+02:00                           |
+| lastUpdated | 2026-07-18T07:22+02:00 |
 | lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
 | lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[data overview](overview.md)
 
 ## Purpose
 
@@ -54,6 +54,16 @@ re-capturing the still-present range (the multi-click-to-dismiss bug). Capture o
 keeps it open while the operator interacts with it. Keyboard-only selection is a follow-up
 (no clean "selection complete" event); mouse selection is covered.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -62,7 +72,20 @@ keeps it open while the operator interacts with it. Keyboard-only selection is a
 | The rules + capture tests. | — | [selection.test.ts](selection.test.ts) |
 | The task reader marker that supplies task leaf ownership. | L1149-L1225 | [panels/DetailPanel.tsx](../panels/DetailPanel.tsx) |
 
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
+  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
+  is unchanged by this memory-only governance move; verification hash/date remain pinned.
 
 - 2026-07-02T16:18+02:00 — L8: `SelectionContext` now carries an optional `leafKey` from the nearest
   `data-task-leaf-key` ancestor. This lets `HighlightComposer` distinguish viewed task-leaf selections

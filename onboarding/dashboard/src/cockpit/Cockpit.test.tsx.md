@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:25+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
 
@@ -16,10 +16,10 @@
 
 ## Purpose
 
-Vitest + `@testing-library/react` render tests for cockpit composition, including the slice 5f S1
-full-bleed behavior, serving-build stamp, rail/chat persistence, drilled-leaf chat identity, and the
-260712-TRH-L1 click-to-detail body-hydration contract. The body cases exercise the real `CockpitShell`
-and dashboard store update path rather than rendering `DetailPanel` in isolation.
+Vitest + Testing Library coverage for production cockpit composition, persistent layers, selection
+routing, takeovers, and store updates. The FEUI-L8 cases pin Operations as initial, one Chats item,
+no Sessions item or legacy Chats layer, persistent Chats mounting, shell-level reconciliation, and
+accepted-id-only highlight routing.
 
 ## Code Commentary
 
@@ -80,6 +80,16 @@ single-select), driven by `fireEvent.click`. Uses plain `container.querySelector
 browser `fetch` and drive `dashboardStore.applyDelta("analytics", ...)` to reproduce analytics churn
 and selection timing.
 
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -89,7 +99,26 @@ and selection timing.
 | The shared jsdom stubs the render relies on. | — | [test/setup.ts](../test/setup.ts) |
 | The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | L329-L434 | [Cockpit.test.tsx](Cockpit.test.tsx) |
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Pins the L8 product cutover: Operations is the initial route, the mode bar has one Chats item and no Sessions item, and one persistent Chats layer survives route changes. Highlight delivery switches/focuses only the accepted exact session.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T00:25+02:00 — 260715-FEUI-L1 (R1): added the "Sessions view: full-bleed keep-alive
   layer" describe — same-node identity across switches, display/aria-hidden toggling, full-bleed

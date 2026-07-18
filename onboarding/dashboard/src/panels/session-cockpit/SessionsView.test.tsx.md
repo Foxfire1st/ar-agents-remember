@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated            | 2026-07-18T07:22+02:00                           |
+| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
+| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
@@ -124,7 +124,17 @@ View tests now cover the empty-stage/no-composer boundary, slash-opened palette 
 CodeMirror focus, PTY plus interaction plus composer ordering, and a single gate-only answer. They
 exercise the actual shared composer rather than the former textarea placeholder.
 
+## FEUI-L8 Reviewed Candidate Delta
+
+Pins the L8 canonical Chats contract end to end: default-closed/toggleable inspector intent across responsive changes, focus/reload/handoff separation, inherited launch/routing, cleanup failure recovery, ended-versus-landed stage behavior, effective keymaps, and persistent PTY ownership.
+
+The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
+leaf base; closeout owns commit stamping.
+
 ## Update History
+
+- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
+  source/test/task evidence; no Domain Documentation source is configured.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: updated the stage integration matrix for the real composer,
   palette, PTY ordering, and sole interaction-answer path.
