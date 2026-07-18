@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-18T13:04+02:00 |
-| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3` |
-| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -213,6 +213,13 @@ typed error family now distinguishes certified pre-dispatch busy, immutable-id c
 mismatch so only the exact certificate is retry-safe.
 
 ## Hot Path Summary
+
+FEUI-MX-FIX-2 changes no MCP package source contract. Its `package_data/dashboard/` index,
+fingerprint, and content-hashed assets are synchronized shipped output from the reviewed
+`dashboard/src/` build. They are deliberately excluded from one-to-one onboarding: browser open
+authority is documented under the dashboard source cards and overviews, while
+`scripts/sync-dashboard.py --check` proves package parity. The generated rollover must land as one
+complete add/delete set; it is not a second implementation route.
 
 260715-FEUI-L9R crosses `mcp/` through the existing `agents_remember.serving` route and the shipped
 dashboard boundary. Serving resolves the optional packaged dashboard fingerprint into
@@ -849,6 +856,12 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — No route impact: FEUI-MX-FIX-2 only rolls the generated synchronized
+  dashboard index, fingerprint, and hashed assets under `package_data/dashboard/`; authoritative
+  session-open behavior lives in `dashboard/src/`, and package parity is proven by the dashboard
+  sync check. Verification metadata remains pinned pending candidate closeout.
+
 - 2026-07-18T13:04+02:00 — 260715-FEUI-L9R ancestor route repair: documented the MCP package's
   existing serving boundary for optional shipped-dashboard identity, HTML revalidation, narrow
   pre-session harness discovery, server-owned raw-event records, and clean dashboard tmux client

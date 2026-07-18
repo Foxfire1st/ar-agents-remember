@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -39,6 +39,14 @@ Existing PTY panes keep their mounted xterm and scrollback across a serving rest
 Terminal component asks the current connection for one boot-owned reattach; stale socket callbacks
 cannot demote the replacement, and a transport close never fabricates durable terminal exit.
 
+## FEUI-MX-FIX-2 Accepted-Row Focus Contract
+
+`ChatContextBar.tsx` owns the raw-chat create gesture and renders typed open failures in place. It
+passes only a validated accepted session id upward. `SessionsView.tsx` no longer contains a parallel
+raw opener: its callback focuses the accepted row produced by the shared session store. The chooser
+path reaches the same `terminalOpen.ts` authority through `LaunchFlow`, so raw and harness creates
+share one parser and one zero-ghost invariant.
+
 ## Route Model
 
 ### One Product Roof
@@ -49,6 +57,8 @@ cannot demote the replacement, and a transport close never fabricates durable te
 - `ChatContextBar.tsx` carries the useful duties moved from the retired Chats page: launch hosted
   Chat/raw Terminal, show task/leaf context, explicitly local lifecycle routing for old rows, and
   server-first leaf attach/move with cross-tab invalidation.
+- `ChatContextBar.tsx` reports create failures locally and emits only accepted session ids;
+  `SessionsView.tsx` focuses that accepted row and never reconstructs success from request fields.
 - `SessionRail.tsx` replaces the legacy `SessionList`/`sessionGroups` forest. It renders the
   `railModel` role/spawn hierarchy, master/leaf groupings, completed folders, attention rollups,
   bounded fleet optimization, termination confirmation, and landed cleanup.
@@ -121,6 +131,8 @@ The existing PTY remains a useful fallback/diagnostic surface, not the final mes
 ## Invariants And Boundaries
 
 - Exactly one full-page Chats destination; no second Sessions tab or legacy Chats layer.
+- Exactly one browser open authority; rejected raw or harness creates produce no registry row,
+  focus change, readiness transition, or dependent delivery.
 - Operations is the default destination; the Chats inspector is closed by default and always
   toggleable/reopenable. Responsive collapse cannot erase deliberate operator intent.
 - Cockpit focus and the live action route are separate: a landed row may remain focused while a live
@@ -136,14 +148,16 @@ The existing PTY remains a useful fallback/diagnostic surface, not the final mes
 
 ## Hot Path Summary
 
-1. Shell reconciliation hydrates catalog rows and the persistent Chats layer.
-2. `SessionsView` resolves deliberate/smart focus and live action ownership, then derives one rail
+1. A create gesture crosses the shared opener; only an accepted server row reaches the registry and
+   the context bar's focus callback.
+2. Shell reconciliation hydrates catalog rows and the persistent Chats layer.
+3. `SessionsView` resolves deliberate/smart focus and live action ownership, then derives one rail
    model/attention rollup for rail and palette.
-3. `SessionRail` selects a row; the stage keeps visited inspectable PTYs alive and shows ended-state
+4. `SessionRail` selects a row; the stage keeps visited inspectable PTYs alive and shows ended-state
    overview when no terminal exists.
-4. Composer, interaction, attach, set, terminate, cleanup, and bus actions cross their own authority
+5. Composer, interaction, attach, set, terminate, cleanup, and bus actions cross their own authority
    routes and project results back into shared stores.
-5. Palette/keymap, status, inspector, and live regions expose the same evidence without inventing a
+6. Palette/keymap, status, inspector, and live regions expose the same evidence without inventing a
    second operational truth.
 
 ## Child Route Onboarding Map
@@ -194,6 +208,10 @@ references, not imported governing implementations, so no cross-repository sourc
 | Dev end-to-end scenario authority. | [../../dev/cockpitScenarios.ts](../../dev/cockpitScenarios.ts) |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded ChatContextBar as the raw-create gesture owner,
+  SessionsView as accepted-row-only focus, shared raw/harness parsing through LaunchFlow, and the
+  zero-row/zero-focus failure contract. Verification metadata remains pinned pending closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: added the one-owner chooser recovery state machine, narrow
   accessibility exception, fixed viewport boundary, and xterm-preserving boot reattach contract.

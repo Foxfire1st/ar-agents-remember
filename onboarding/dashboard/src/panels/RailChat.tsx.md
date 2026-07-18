@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -23,6 +23,13 @@ server-first leaf attachment/context handoff. It is deliberately not another ful
 and does not own a second conversation/session index.
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Visible Open Failure
+
+Both contextual harness start and raw-terminal open now clear prior error copy, await the
+discriminated create result, and render `rail-session-open-error` on failure. Leaf-context delivery
+starts only from the accepted `result.session.id`; rejected opens cannot produce a pane, binding,
+draft delivery, or false success. The existing attach and terminate routes remain separate.
 
 ### 260707-HFX2-L17 Role-Aware Rail Attach And Identity
 
@@ -52,9 +59,10 @@ WebSocket; ids whose sessions have left the store are pruned.
 case-normalized leaf id, and renders task id/title/status, leaf key, task-document path, lifecycle id,
 worktree group, code worktree, memory worktree, objective, requirements, and top-level steps. The package
 ends with a direct instruction to attach to the lifecycle/leaf before working. `deliverLeafContext`
-pastes that packet with `pasteDraftToSession`; an `"unconfirmed"` result surfaces a small
-`rail-leaf-context-note` status instead of silently claiming delivery. Because this path is draft-only, it
-does not call the submit-and-confirm delivery helper and does not press Enter.
+waits for native submission readiness and sends that packet through `submitSessionText` with
+`source: "leaf-context"` and `clearDraftOnAccept: false`. Accepted, queued, blocked, empty, refused,
+route-error, and unresolved outcomes produce honest `rail-leaf-context-note` copy; the rail never
+falls back to PTY paste or mutates the operator's visible composer draft.
 
 `startChat(harness)` calls `createSession(harness.name, "harness", harness.id, selectedLifecycleId,
 leafKey)` — an **agent chat** that claims the leaf's chat slot (and inherits the selected lifecycle tag)
@@ -74,8 +82,9 @@ by `contextMaster`) and attaches or moves that chat to the picked leaf. Otherwis
 completed without leaving the rail. A `Pane` (`rail-pane-{role}`) is a header row — a **truncating**
 `paneTitle` carrying the full `session.label` as a hover-reveal `title` (fix 4) and an **End** terminate
 control (`rail-terminate-{role}`, fix 3) — over the `<Suspense>`-wrapped lazy `Terminal` registered through
-`onConnection`, and that pane's `SessionComposer`, which injects into
-*that* session's stdin via `sendToSession(session.id, bracketedPaste(sanitizeForInjection(text)))`.
+`onConnection`, and that pane's shared reliable `SessionComposer`. The xterm remains the hosted runner
+line-log/raw fallback surface; controlled composer text crosses the native submit authority rather
+than that terminal connection.
 Since 260715-FEUI-L6 (review F6) BOTH `Terminal` mounts — the chat slot and the split terminal
 `Pane` — pass ``ariaLabel={`terminal: ${session.label}`}`` so each pane's `role="group"` landmark
 carries a real name in the rail surface (`Terminal.tsx` additionally guarantees a
@@ -109,12 +118,17 @@ canvas on import and cannot mount under jsdom). `data-testid`s: `rail-chat`, `ra
   buffers survive a leaf switch; only a session that leaves the store is dropped.
 - **Context delivery happens only at leaf bind time:** start-on-leaf and successful attach/move are the
   packet-delivery points. Free/off-leaf chat creation, plain terminal creation, and rejected attaches/moves
-  do not inject leaf context. The packet is pasted as editable draft input, not submitted.
+  do not submit leaf context. The packet uses reliable `leaf-context` provenance and never overwrites
+  the operator's visible composer draft.
 - **Context packet is projected-state only:** the rail reads `taskDocuments` and `engineProcesses`; it does
   not fetch task files, inspect worktrees, or invent missing worktree facts. A missing task document means
   no packet is sent.
 - Presentational over the store + the lazy terminal; backend calls go through the openers
   (`createSession`) and the terminate client (`terminateTerminalSession`), never arbitrating ownership.
+
+### Todos
+
+No task-independent technical debt was identified during MX-FIX-2 review.
 
 ## Docs References
 
@@ -129,8 +143,9 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The rail builds the leaf context package, pastes it as draft input after start-on-leaf or successful attach/move, and surfaces unconfirmed delivery status. | L204-L243; L309-L315; L317-L353; L413-L423 | [RailChat.tsx](RailChat.tsx) |
-| The session store it resolves the chat/terminal slots from + spawns/delivers through (`sessionRole`, `createSession`, `registerConnection`, `sendToSession`, `pasteDraftToSession`). | L112-L118; L302-L315; L340-L415; L418-L431 | [data/sessions.ts](../data/sessions.ts) |
-| The harness-detection, opener, terminate, and attach clients the rail drives (`fetchHarnesses`, `openTerminalSession`, `terminateTerminalSession`, `attachSessionToLeaf`). | L252-L316; L318-L357 | [data/terminal.ts](../data/terminal.ts) |
+| The session store it resolves the chat/terminal slots from and the accepted-row create helper. | L112-L180; L598-L621 | [data/sessions.ts](../data/sessions.ts) |
+| Reliable readiness and leaf-context submission. | L314-L333 | [data/submitClient.ts](../data/submitClient.ts) |
+| The harness-detection, terminate, and attach clients the rail drives. | L252-L357 | [data/terminal.ts](../data/terminal.ts) |
 | The durable leaf-key helpers and task tree builder used for packet lookup, heading labels, and the attach picker. | L60-L70; L102-L105; L126-L165 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 | The lazy xterm terminal it mounts per pane (shared with Chats). | — | [Terminal.tsx](Terminal.tsx) |
 | The composer docked below each pane that injects into that session's stdin. | — | [SessionComposer.tsx](SessionComposer.tsx) |
@@ -159,6 +174,10 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: gated contextual raw/harness creation and leaf-context
+  delivery on an accepted server row and added a visible typed failure alert. Verification metadata
+  remains pinned until closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

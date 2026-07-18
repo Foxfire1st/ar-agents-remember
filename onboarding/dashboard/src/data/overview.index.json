@@ -92,11 +92,12 @@
     "dashboard/src/data/taskIdentity.ts",
     "dashboard/src/data/terminal.test.ts",
     "dashboard/src/data/terminal.ts",
+    "dashboard/src/data/terminalOpen.ts",
     "dashboard/src/data/useTaskDocumentBody.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 85,
-    "fileSidecars": 77,
+    "sourceFilesInScope": 86,
+    "fileSidecars": 78,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -145,11 +146,12 @@
     "taskhierarchy",
     "taskidentity",
     "terminal",
+    "terminalopen",
     "test",
     "usetaskdocumentbody"
   ],
   "hotPath": {
-    "summary": "1. `CockpitShell` starts catalog polling/reconciliation and receives authoritative terminal rows. 2. `sessions.ts` normalizes rows; data-layer stores derive focus, lifecycle, control, and delivery evidence without replacing daemon truth. 3. The canonical Chats cockpit projects the same stores into rail, stage, inspector, composer, and status surfaces. 4. Submit, answer, set, attach, terminate, cleanup, and withdrawal operations cross their dedicated authority routes before local state commits. 5. Cross-tab invalidations trigger one confirming catalog read; generation guards discard results...",
+    "summary": "1. `terminalOpen.ts` validates the sole open request and yields an accepted server row or a typed failure without mutating browser state. 2. `sessions.ts` commits only the accepted row; catalog reconciliation then keeps terminal truth current while data-layer stores derive focus, lifecycle, control, and delivery evidence without replacing daemon truth. 3. The canonical Chats cockpit projects those stores into rail, stage, inspector, composer, and status surfaces. 4. Submit, answer, set, attach, terminate, cleanup, and withdrawal operations cross their dedicated authority routes before local...",
     "candidateHints": [
       "dashboard/src/data",
       "dashboard/src/data/keymap",

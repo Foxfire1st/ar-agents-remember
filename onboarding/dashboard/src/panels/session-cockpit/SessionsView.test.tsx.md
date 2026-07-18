@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -31,6 +31,12 @@ the grammar-gated Stop-turn palette command. The L3 cases wire the launch flow a
 banner through the real view.
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Accepted Raw Integration Fixture
+
+The legacy-duty integration case now returns a complete accepted raw-session response carrying
+the selected lifecycle and server seat role. It continues to prove persistence and focus, but only
+through the accepted-row path rather than an empty `ok` response.
 
 ### Logic
 
@@ -89,6 +95,10 @@ for real while the canvas emulator never loads.
 The F1a/F1b cases are the round-2 regression net for the floor chip: they must keep driving a
 layout change WITHOUT a root resize. Test-only.
 
+### Todos
+
+No task-independent technical debt was identified during MX-FIX-2 review.
+
 ## Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
@@ -132,6 +142,10 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: updated raw-terminal integration to a complete accepted
+  server row so lifecycle inheritance and focus are proven behind the authority gate. Verification
+  metadata remains pinned until closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

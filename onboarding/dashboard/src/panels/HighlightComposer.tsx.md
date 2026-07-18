@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/HighlightComposer.tsx`     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -32,16 +32,22 @@ copy follow the same no-blind-resend contract as the shared composer.
 
 ## Code Commentary
 
+### FEUI MX-FIX-2 Create-Result Gate
+
+When the chosen target requires a new harness session, `send()` now branches on the discriminated
+create result. A failure renders `terminalOpenFailureMessage(result)` and returns before readiness,
+submission, route change, or selection clearing. Only `result.session.id` from an accepted server
+row reaches `waitForSubmissionReady` and the reliable submit path.
+
 ### Logic
 
 Driven by `useSelectionCapture()` (`data/selection`) — renders `null` with no snapshot. If
 `selection.leafKey` equals the `viewedLeafKey` supplied by `CockpitShell`, `leafChatActive` is true, and
 `findSessionForLeaf(viewedLeafKey, "chat")` finds a live chat, that session becomes `directLeafChat`:
-the pill's `onPress` then calls `directPaste(id)` —
-`pasteDraftToSession(id, buildContextPackage({selectionText}))` behind a `sendingRef` in-flight guard
-(the pill disables while `status === "sending"`) — and clears the selection after a confirmed draft
-paste, never entering the composer stage. An unconfirmed direct paste opens the generic composer for
-the same selection instead of dying silently. Without a `directLeafChat`, the pill click opens the
+the pill's `onPress` then calls `directSubmit(id)` behind a `sendingRef` in-flight guard. It submits
+the context with `source: "highlight"` through the shared reliable client; accepted/queued commits
+finish, while rejection, route error, or unresolved endgame keeps the selection and opens/retains the
+generic composer with honest recovery copy. Without a `directLeafChat`, the pill click opens the
 composer stage as before.
 
 The fallback path uses a fixed-position 0-area `<span>` at the snapshot rect as the React Aria
@@ -52,19 +58,18 @@ a single **Add to chat** button; **composer** renders the captured selection (`<
 control**, an autofocused message `TextField`/`TextArea` (**Enter = send + submit**, **Shift+Enter =
 newline**), and **Send**.
 
-**Target** — one React Aria `ToggleButtonGroup` lists open chats **and** a create option per
-**detected** harness (`fetchHarnesses` on mount: ＋ Claude Code / ＋ Codex / …) plus a plain `＋
-Terminal` shell. The default is the active chat, else the first open chat, else the first create option
-— a detected harness (an agent), **never silently a shell**, so the package doesn't go into the void.
+**Target** — one React Aria `ToggleButtonGroup` lists running harness chats **and** a create option per
+**detected** harness (`fetchHarnesses` on mount: ＋ Claude Code / ＋ Codex / …). Raw terminals are not
+submission targets. The default is the active routed chat, else the first routed chat, else the first
+detected harness create option.
 When `selectedLifecycleId` is set, "open chats" means sessions whose `lifecycleId` matches; create
 targets pass that lifecycle to `createSession`.
 **`send()`** resolves the selected target: an open chat → `setActive` + deliver; a create option →
-`createSession(prefix, "harness"|"terminal", harnessId?, selectedLifecycleId?)` then deliver. The
-always-sendable minimum holds because there is always a default. Send builds the package, resolves the
-target, and calls `deliverToSession(id, pkg)`, which bracket-pastes and submits through the terminal
-confirmation path; on `delivered`, `finish()` dismisses and `onSent?.()` switches to Chats. Direct
-leaf-chat paste deliberately uses `pasteDraftToSession`, not `deliverToSession`, so it never synthesizes
-Enter.
+`createSession(prefix, "harness", harnessId, selectedLifecycleId?)`, then waits for native submission
+readiness. Only an accepted server row supplies the id. `submitSessionText` owns the exact request id,
+highlight provenance, route-error retry, and ambiguous endgame reconciliation. `finish()` dismisses,
+activates the target, and invokes `onSent` only after accepted/queued truth; every other outcome leaves
+route, selection, and operator composer draft intact.
 
 ### Conventions
 
@@ -77,13 +82,17 @@ so it never tracks the selection's width) with the amber active border. The mess
 
 ### Invariants And Boundaries
 
-Both paths keep the no-silent-action invariant: a selection only raises the pill, and nothing is pasted
-or sent before an explicit click. The L8 direct path acts on the pill click alone — only when the
-selected DOM was tagged with the same leaf the visible rail chat is serving — drafts without ever
-synthesizing Enter, and keeps one consistent "Add to chat" label. The composer persists until
+Both paths keep the no-silent-action invariant: a selection only raises the pill, and nothing is
+submitted before an explicit click. The direct path acts on the pill click alone only when the
+selected DOM was tagged with the same leaf the visible rail chat is serving, and keeps one consistent
+"Add to chat" label. The composer persists until
 outside-click/Escape or Send in fallback mode (snapshot-driven, not live-selection-driven). Delivery
-reuses the live B2 `{type:stdin}` channel via `data/sessions` — no new transport, not ACP. With a
-selected lifecycle, unrelated open chats are not offered; the create target becomes the routeable chat.
+uses the reliable native-control submission client, never PTY paste. With a selected lifecycle,
+unrelated open chats are not offered; the create target becomes the routeable chat.
+
+### Todos
+
+No task-independent technical debt was identified during MX-FIX-2 review.
 
 ## Docs References
 
@@ -98,8 +107,9 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The mouse-up selection snapshot it attaches to, including optional task leaf metadata. | L9-L44 | [data/selection.ts](../data/selection.ts) |
-| The inject seams: `pasteDraftToSession` for no-submit direct leaf paste and `deliverToSession` for fallback send+submit. | L403-L431 | [data/sessions.ts](../data/sessions.ts) |
-| `bracketedPaste` + `fetchHarnesses` (package wrap + harness create options). | — | [data/terminal.ts](../data/terminal.ts) |
+| Session creation supplies only accepted server ids; session lookup supplies routed targets. | L1-L180; L598-L621 | [data/sessions.ts](../data/sessions.ts) |
+| Reliable highlight submission, readiness, same-id retry, and endgame reconciliation. | L395-L510 | [data/submitClient.ts](../data/submitClient.ts) |
+| Harness discovery supplies detected create options. | — | [data/terminal.ts](../data/terminal.ts) |
 | Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | L491-L499 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
 | The behavior tests cover direct leaf paste and fallback routing. | L132-L163 | [HighlightComposer.test.tsx](HighlightComposer.test.tsx) |
 
@@ -126,6 +136,10 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: gated new-target highlight delivery on the accepted
+  server session id and surfaced typed open failure before readiness or submit. Verification
+  metadata remains pinned until closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

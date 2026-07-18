@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,8 @@ FEUI-L8 deliberately separates strategic ownership:
   lifecycle cleanup, controls, announcements, and authority boundaries.
 - [panels overview](panels/overview.md) — shared panel composition.
 - [session-cockpit overview](panels/session-cockpit/overview.md) — the sole full-page Chats product.
-- Existing focused child overviews under panels, grammar, cockpit, dev, and data own their routes.
+- Existing focused child overviews under data, grammar, and panels own their routes. The bounded
+  `cockpit/` and `dev/` source slices remain governed here rather than gaining thin overview files.
 
 ## FEUI-L9R Runtime Truth Repair
 
@@ -36,6 +37,19 @@ definite mismatch offers an explicit reload, and absence remains unknown. A new 
 cause exactly one chooser catalog reread and one explicit terminal-socket reattach, but neither is
 coupled to SSE loss or a background retry loop. Reattach preserves the mounted xterm and durable
 tmux session; transport close alone is not terminal exit.
+
+## FEUI-MX-FIX-2 Authoritative Session Open
+
+Every browser create entrance now converges on `data/terminalOpen.ts`, the sole client for
+`POST /api/terminal`. The opener validates exact request/response identity and accepts only the
+server row it returns; raw responses that claim harness/control state are contradictions. The
+session store commits and broadcasts only an accepted row, while callers display typed failures and
+withhold focus, readiness, submit, and contextual delivery. Request-shaped local rows are not an
+alternate success path.
+
+The dev cockpit scenarios replace transport with request-matched raw and harness responses through
+the real client seam. They remain fixtures governed by this root overview, not a production authority
+or a reason to create a separate `dev/` overview for two files.
 
 ## Layered Architecture
 
@@ -100,6 +114,8 @@ must not recreate that coupling.
 - Focus/inspection may name a landed row; only a live row owns action routing and reload preference.
 - Reliable submit and withdrawal preserve request/epoch identity and never blind-resend or locally
   fake an authoritative result.
+- Session open is accepted-response-authoritative: failed requests cause no registry row, focus
+  movement, readiness transition, or dependent delivery.
 - PTYs stay mounted across focus and transient handoff gaps; ended rows never create a live socket.
 - Inspector visibility is optional presentation. Core Chats actions remain usable with it closed.
 - State words and evidence remain explicit; absent transport/capability/history facts are not
@@ -148,6 +164,11 @@ references informed product framing only; current code truth stays in agents-rem
 | Dev scenario authority and end-to-end states. | [dev/cockpitScenarios.ts](dev/cockpitScenarios.ts) |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded the sole authoritative browser opener,
+  accepted-server-row-only materialization, contradiction handling, and request-matched dev fixture
+  seam; corrected route ownership so bounded cockpit/dev files remain governed here. Verification
+  metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: added bundle comparison, bounded boot-owned reread/reattach,
   explicit reload, and durable-session transport boundaries. Verification metadata remains pinned

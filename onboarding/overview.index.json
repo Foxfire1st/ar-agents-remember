@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1813,
+    "sourceFilesInScope": 1814,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L9R repairs runtime truth across the established dashboard/serving split. Start at the `dashboard/src/` overview for browser build-identity comparison, operator-owned reload, pre-session harness-catalog request ownership, and terminal reattach behavior; its data, panels, and session-cockpit governors own the detailed client state machines. Start at the `mcp/src/agents_remember/serving/` overview for shipped build identity, HTML revalidation, raw-event record boundaries, the pre-session harness wire shape, and dashboard-owned tmux client identity; the `mcp/tests/` overview owns t...",
+    "summary": "FEUI-MX-FIX-2 routes all dashboard session creation through one accepted-response authority. Start at `dashboard/src/data/terminalOpen.ts` for exact identity and failure classification, then `sessions.ts` for accepted-row-only registry mutation, and the data/panels/session-cockpit overviews for caller behavior and zero-ghost focus/delivery gates. Request-matched dev fixtures exercise the same client seam. The synchronized index, fingerprint, and hashed files under `mcp/.../package_data/dashboard/` are generated shipped evidence only; they have no file cards and must remain in parity through...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,15 +115,15 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
-      "dashboard/src/",
-      "mcp/src/agents_remember/serving/",
-      "mcp/tests/",
+      "dashboard/src/data/terminalOpen.ts",
+      "sessions.ts",
+      "mcp/.../package_data/dashboard/",
       "FEUI",
-      "L9R",
-      "agents_remember",
-      "HTML",
+      "FIX",
+      "terminalOpen",
+      "package_data",
       "repo-overview",
-      "ec409b11a1e700a33ec9b775fc5ebe096f10f3f3",
+      "31f58834f86c0d98e26b0896e099a2403a8729ee",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",

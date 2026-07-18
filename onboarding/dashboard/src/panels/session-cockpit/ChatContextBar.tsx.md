@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f` |
-| lastVerifiedCommitDate |  2026-07-18T13:07:00+02:00|
+| lastUpdated | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
+| lastVerifiedCommitDate |  2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,13 @@ authoritatively attach or move a running row to a leaf.
 
 ## Code Commentary
 
+### FEUI MX-FIX-2 Raw Open Ownership
+
+The duty bar now owns raw-terminal creation so it can branch at the authority result. It renders
+`chats-session-open-error` for a typed failure and calls `onSessionOpened` only with the accepted
+server id. This keeps visible failure and focus beside the triggering control; request ids never
+become focus ids by assumption.
+
 ### FEUI-L9R Reviewed Candidate Delta
 
 The compact `＋ Chat` control now exposes the accessible name
@@ -34,15 +41,11 @@ remains explicitly local because no server endpoint exists. Leaf attach/move cal
 patches the registry only on success, broadcasts a `leaf` invalidation, and renders same-role conflict
 without changing the row.
 
-## Invariants And Boundaries
-
-Do not present local lifecycle routing as durable server authority. Leaf ownership is authoritative:
-no optimistic local mutation and no hidden 409 refusal.
-
 ### Logic
 
 The bar combines the sole chooser entrance with current task, lifecycle, leaf, and attachment
-context. FEUI-L9R changes only the chooser button's accessible name.
+context. Raw creation crosses `createSession`, renders failure locally, and emits only the accepted
+server id; harness creation remains in the canonical LaunchFlow.
 
 ### Conventions
 
@@ -52,11 +55,13 @@ fit the bar; stable data attributes remain the browser-test seam.
 ### Invariants And Boundaries
 
 This remains one launch entrance. It does not create harness-specific launch buttons or bypass the
-canonical LaunchFlow.
+canonical LaunchFlow. Local lifecycle routing is not durable server authority; leaf ownership is
+server-authoritative, with no optimistic mutation or hidden 409 refusal. Failed raw opens neither
+create nor focus a session.
 
 ### Todos
 
-No task-independent technical debt was identified during FEUI-L9R review.
+No task-independent technical debt was identified during MX-FIX-2 review.
 
 ## Docs References
 
@@ -84,6 +89,10 @@ The bar composes repository-local task/session helpers and same-origin terminal 
 | Session patch/broadcast and server leaf route. | L1-L80 | [../../data/sessions.ts](../../data/sessions.ts) · [../../data/terminal.ts](../../data/terminal.ts) |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: moved raw creation into the duty bar, surfaced typed
+  failures locally, and emitted a focus callback only for the accepted server id. Verification
+  metadata remains pinned until closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: recorded the chooser entrance's explicit accessible name and
   sole-launch-path boundary; verification metadata remains pinned pending candidate closeout.

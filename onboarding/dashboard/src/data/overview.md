@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -37,6 +37,22 @@ and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
 - `terminal.ts` separates WebSocket transport loss from durable terminal exit. Only an explicit
   server exit ends the session; a boot-owned reattach consumes each identity once, rejects stale
   callbacks, and replays resize before buffered input without a timer loop.
+
+## FEUI-MX-FIX-2 Authoritative Session Open
+
+- `terminalOpen.ts` is the sole browser authority for `POST /api/terminal`. It preserves the exact
+  requested identity, validates HTTP and protocol outcomes, and returns a normalized accepted
+  server row or one typed failure. A raw request must return neither harness nor control state;
+  contradictory server evidence fails closed.
+- `terminal.ts` is now the transport/facade layer over that opener. `launchFlow.ts` delegates to the
+  same authority, so the raw button, harness chooser, and contextual launch callers share one
+  response grammar instead of reconstructing acceptance locally.
+- `sessions.ts` materializes and broadcasts a session only from the accepted server row. Network,
+  HTTP, protocol, identity, and server-declared failures leave the registry unchanged; a request is
+  never enough to create a ghost row.
+- The `/dev/bench` injector in `dev/cockpitScenarios.ts` supplies request-matched raw and harness
+  responses through the real client boundary. It does not weaken production validation or grant a
+  second open authority.
 
 ## Route Model
 
@@ -98,6 +114,8 @@ code must not use them as ordinary recovery APIs.
 
 - The terminal catalog and bridge responses are authoritative; browser state is a projection and
   cache, never a replacement history database.
+- Session creation is response-authoritative: only a validated accepted server row may enter the
+  browser registry, receive focus, or become a delivery target. Failed requests create no row.
 - One shell-level catalog driver/reconciler serves every route and tab. View remounts must not create
   a second timer or listener.
 - `focusedSessionId` may name a landed/ended row for inspection; `activeId` must name a live row for
@@ -112,10 +130,12 @@ code must not use them as ordinary recovery APIs.
 
 ## Hot Path Summary
 
-1. `CockpitShell` starts catalog polling/reconciliation and receives authoritative terminal rows.
-2. `sessions.ts` normalizes rows; data-layer stores derive focus, lifecycle, control, and delivery
+1. `terminalOpen.ts` validates the sole open request and yields an accepted server row or a typed
+   failure without mutating browser state.
+2. `sessions.ts` commits only the accepted row; catalog reconciliation then keeps terminal truth
+   current while data-layer stores derive focus, lifecycle, control, and delivery
    evidence without replacing daemon truth.
-3. The canonical Chats cockpit projects the same stores into rail, stage, inspector, composer, and
+3. The canonical Chats cockpit projects those stores into rail, stage, inspector, composer, and
    status surfaces.
 4. Submit, answer, set, attach, terminate, cleanup, and withdrawal operations cross their dedicated
    authority routes before local state commits.
@@ -140,6 +160,7 @@ code must not use them as ordinary recovery APIs.
 | Role/spawn rail derivation | [railModel.ts](railModel.ts.md) |
 | Runtime bundle identity | [buildIdentity.ts](buildIdentity.ts.md) |
 | Strict pre-session harness discovery | [harnessCatalog.ts](harnessCatalog.ts.md) |
+| Authoritative terminal open | [terminalOpen.ts](terminalOpen.ts.md) · [terminal.ts](terminal.ts.md) · [sessions.ts](sessions.ts.md) · [launchFlow.ts](launchFlow.ts.md) |
 | Durable terminal transport | [terminal.ts](terminal.ts.md) · [terminal.test.ts](terminal.test.ts.md) |
 
 ## Docs References
@@ -185,6 +206,11 @@ the UI composition owner. Detailed legacy grouping knowledge was preserved here 
 session-cockpit overview before the six obsolete sidecars were removed.
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: documented `terminalOpen.ts` as the sole browser open
+  authority, accepted-server-row-only registry mutation, raw-response contradiction checks, shared
+  launch delegation, and request-matched dev fixtures. Verification metadata remains pinned pending
+  candidate closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: added browser build identity, strict harness discovery, and
   explicit durable-terminal recovery ownership. Verification metadata remains pinned pending

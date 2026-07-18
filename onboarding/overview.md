@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-18T13:04+02:00 |
-| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3` |
-| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 
 > **Status:** active baseline
 
@@ -67,6 +67,7 @@ onboarding pass.
 | Canonical Chats cockpit and hardening (260715-FEUI-L8) | One product-facing `Chats` destination now uses the keep-alive session cockpit; the old Chats component, session-list grouping, and separate Sessions navigation are retired. Operations remains the default and RailChat remains contextual. The inspector defaults closed, is toggleable and responsive without losing deliberate intent; authoritative launch, attach, highlight routing, landed cleanup, ended/restored states, accessibility, scenario coverage, and performance/fetch tripwires are pinned end to end. Controlled sessions still expose the runner line-log in xterm because UA-1 structured transcript/history authority is not implemented; the UI does not relabel that stream as a conversation model. | `dashboard/src/panels/session-cockpit/` overview, `dashboard/src/data/` overview, `docs/design/dashboard/{scenario-catalog,session-cockpit-upstream-register,session-cockpit-closeout-evidence}.md` |
 | Agent orchestration communications | Durable agent-to-agent inbox messages address orchestrator/manager/worker roles, carry message-kind and artifact metadata, and remain pollable while also attempting hosted-session stdin push through the echo-confirmed paste seam. Consume is a monotonic terminal snapshot: a concurrent in-flight delivery may append stale physical evidence but cannot resurrect pending/redelivery state. Turn reports and master handovers have typed artifact helpers/templates; inactivity or missing report nudges are rate-limited, logged as `orchestration.nudge`, and delivered to manager inboxes. | `operator_inbox_*`, `orchestration_nudge_manager`, `serving.inbox_delivery`, `controlplane/orchestration_artifacts.py`, `controlplane/orchestration_nudges.py`, `l-01-agent-lifecycles` templates |
 | Event River lifecycle task labels | Event River readable history rows translate lifecycle-bound activity into task-facing context. When a retained event still has a lifecycle id but its live lifecycle projection is gone, the formatter uses projected task documents to show the task title before falling back to raw enclosure or lifecycle ids. The panel waits for raw-stream hydration before showing an empty feed and renders all retained rows it receives; backend lifecycle retention owns the cutoff. | `dashboard/src/panels/eventSummary.ts`, `dashboard/src/data/taskIdentity.ts`, `dashboard/src/panels/EventRiver.test.tsx` |
+| Authoritative browser session open | Every dashboard raw or harness create entrance crosses one `POST /api/terminal` client, validates exact request/response identity, and materializes only the accepted server row. Network, HTTP, protocol, identity, or server-declared failure creates no registry row, focus change, readiness/submit transition, or dependent context delivery. | `dashboard/src/data/terminalOpen.ts`, `dashboard/src/data/sessions.ts`, dashboard data/panels/session-cockpit overviews |
 | Runtime and skill installation | MCP-owned install of coordinator `AGENTS.md` templates, packaged skills, system defaults, provider defaults, optional benchmark fixtures, and harness skill layouts. | `runtime_install`, `skills_install`, `install/`, `package_data/runtime/` |
 | Harness starter packages | Harness-native first-run packages for Claude Code, Codex, Cursor, Antigravity, VS Code + Copilot, Hermes, Pi.dev, and OpenClaw. Each package carries MCP settings templates, skill folders, and either startup hooks or always-on instruction files that load the coordinator first-action directive. | `.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`, `docs/install/` |
 | MCP server and authority settings | Installable stdio MCP server with trusted settings outside the coordinator root, allowed repo/provider scopes, timeout caps, transcript roots, and path containment. | `agents-remember-mcp`, `mcp/config.py`, `mcp/server.py` |
@@ -134,6 +135,14 @@ chat once for the successful bind. Detail lives in the `observer/`, `serving/`, 
 overviews.
 
 ## Hot Path Summary
+
+FEUI-MX-FIX-2 routes all dashboard session creation through one accepted-response authority. Start
+at `dashboard/src/data/terminalOpen.ts` for exact identity and failure classification, then
+`sessions.ts` for accepted-row-only registry mutation, and the data/panels/session-cockpit overviews
+for caller behavior and zero-ghost focus/delivery gates. Request-matched dev fixtures exercise the
+same client seam. The synchronized index, fingerprint, and hashed files under
+`mcp/.../package_data/dashboard/` are generated shipped evidence only; they have no file cards and
+must remain in parity through `scripts/sync-dashboard.py --check`.
 
 260715-FEUI-L9R repairs runtime truth across the established dashboard/serving split. Start at the
 `dashboard/src/` overview for browser build-identity comparison, operator-owned reload, pre-session
@@ -522,6 +531,11 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2 ancestor route repair: added the repository-level sole
+  browser open authority and zero-ghost accepted-row invariant, while retaining synchronized
+  package dashboard files as generated output rather than a second implementation source.
+  Verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T13:04+02:00 — 260715-FEUI-L9R ancestor route repair: added the repository-level
   dashboard/serving routing boundary for browser build identity and recovery, pre-session harness

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -22,6 +22,12 @@ four open-response paths, and the F9 unknown-outcome catalog reconciliation — 
 fix-round regression nets (dismiss ends the watch; reopen starts clean).
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Canonical Response Fixture
+
+The URL router now returns real `Response` text bodies rather than a partial object with only
+`json()`. Existing chooser, refusal, conflict, and unknown-outcome cases therefore cross the sole
+opener's body-read/parser boundary without changing their launch-flow expectations.
 
 ### FEUI-L9R Reviewed Candidate Delta
 
@@ -119,6 +125,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: changed the launch-flow router to real HTTP responses so
+  the full component matrix exercises the sole authoritative opener. Verification metadata remains
+  pinned until closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: replaced the retired adapter-word claim with the complete
   catalog timeout/abort/retry/boot-replacement regression matrix; verification metadata remains

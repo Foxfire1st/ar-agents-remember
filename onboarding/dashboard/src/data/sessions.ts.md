@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -28,6 +28,15 @@ transport cannot cross into a successor fixture.
 
 ## Code Commentary
 
+### FEUI MX-FIX-2 Fail-Closed Creation
+
+`createSession` now returns the same `TerminalOpenResult` as the sole opener. It still proposes a
+caller id and next label, but it upserts, activates, and broadcasts only `result.session` after an
+`opened` result. Every failure returns before mutation. The accepted server row therefore owns id,
+label, kind, harness, lifecycle/leaf/seat identity, control state, and resolved launch facts; a
+request proposal cannot fabricate a running row. The stable failure formatter is re-exported for
+visible production caller copy.
+
 ### 260707-HFX2-L17 Binding Role In The Client Registry
 
 `OpenSession.seatRole` is current leaf-seat identity; `spawnRole` remains origin provenance.
@@ -38,15 +47,16 @@ same-role owner and preserving different roles on the leaf. Catalog hydration ca
 
 ### Logic
 
-`sessionStore = createStore<SessionState>(...)` (zustand vanilla) holds `sessions: OpenSession[]`
-(`{id, label, kind?, harness?, lifecycleId?, leafKey?, spawnRole?, status?, landedAt?,
-landedReason?, landedEdge?}`), `activeId: string |
-null`, a coarse `count`, the highest live ordinal retained for coarse inspection. 260703-L14 adds
+`sessionStore = createStore<SessionState>(...)` (zustand vanilla) holds the full catalog-backed
+`sessions: OpenSession[]`, `activeId: string | null`, and a coarse `count` retaining the highest live
+ordinal for inspection. `OpenSession` carries transport identity, lifecycle/leaf/seat binding,
+spawn provenance, status, control, liveness, and landing/retirement evidence only when supplied by
+the catalog. 260703-L14 adds
 `OpenSession.spawnRole?` — the AR_SPAWN_ROLE the backend recorded on the catalog row at spawn
 (orchestrator/strategist/manager/worker/reviewer…), read-only provenance this store merely carries:
-it is the Chats command-tree grouping key (`data/sessionGroups` decks command roles) and the
-`SessionList` role chip, mapped in by `fromTerminalSessionInfo` (set only when present, like
-`leafKey`).
+it is a legacy fallback behind current `seatRole`; `railModel.ts` derives the canonical Chats
+hierarchy and `SessionRail.tsx` renders binding-first role identity. `fromTerminalSessionInfo` maps
+both fields only when present, like `leafKey`.
 `add(prefix, id, lifecycleId?)` appends a session labelled with the lowest available live ordinal for
 that prefix, optionally tags it with a lifecycle, updates the tracked ordinal, and makes it active.
 `upsert(session, activate=true)` inserts/replaces a server-owned session row while clearing any older
@@ -76,8 +86,8 @@ absent leaf is truly unset). L9 adds `applyLeafAssignment(id, leafKey|null)` for
 updates after a successful attach/move: it assigns the target session and clears any same-role local owner
 of the destination leaf because the backend result has already won. `findSessionForLeaf(leafKey, role?)` returns the single **live** session
 bound to a leaf (mirrors `findSessionForLifecycle`); the optional `role` filter resolves the leaf's chat
-vs. its terminal independently. `createSession(prefix, kind?, harness?, lifecycleId?, leafKey?)` takes a
-`leafKey` it sends to the opener and stamps on the new running row. `fromTerminalSessionInfo` maps the
+vs. its terminal independently. `createSession(prefix, kind?, harness?, lifecycleId?, leafKey?)` sends
+the proposal to the opener and materializes only the accepted server row. `fromTerminalSessionInfo` maps the
 catalog row's `leafKey` onto the store row alongside harness/lifecycle.
 `useSessions(selector)` is the React seam — `useStore(sessionStore, selector)` so components subscribe
 to a slice; non-React callers (`Chats` event handlers) read `sessionStore.getState()` directly.
@@ -95,8 +105,8 @@ registration never re-renders): `registerConnection(id, conn|null)` — called b
 **queues** the text in `pending` when the session's terminal has not registered yet (the
 create-then-send race; the connection itself buffers anything sent before its WebSocket opens, see
 `data/terminal.ts`), flushed on register. `createSession(prefix, kind?, harness?, lifecycleId?)` mints a UUID,
-posts the opener with the generated label/lifecycle, upserts the running local row, and broadcasts
-`"create"` only if the backend opener persisted the catalog row — the shared spawn used by both the
+posts the opener with the generated label/lifecycle, then upserts, activates, and broadcasts
+`"create"` only from the accepted server row — the shared spawn used by both the
 Chats launch buttons and the highlight composer's create-a-chat path. `pasteDraftToSession(id,
 packageText)` is the leaf-context draft path: it waits for the session's terminal to register (bounded by
 `CONNECTION_TIMEOUT_MS`), then delegates to `data/terminal.ts`'s `pasteAndConfirm` — quiet-gated paste
@@ -132,9 +142,14 @@ object with the action methods on it, not a separate actions slice.
   each other on one leaf). L9 moves use `applyLeafAssignment` and mutate the store only after the backend
   accepts the catalog change or after catalog rehydration observes the new binding. `findSessionForLeaf` resolves only **live** sessions
   (optionally filtered by role), so an exited/landed/terminated session frees its slot for a new claim.
-- Draft paste and submitted delivery are intentionally separate seams. Leaf-context handoff must not press
-  Enter on the operator's behalf; highlight/gate delivery can still call `deliverToSession` when the UI
-  action is explicitly a send.
+- Legacy raw connection helpers remain distinct from controlled submission. Current highlight and
+  leaf-context callers use the reliable submit client; this registry must not promote PTY echo or
+  bracketed paste into controlled delivery authority.
+
+### Todos
+
+The older raw connection helpers remain for legacy terminal surfaces, but no new task-independent
+debt was introduced by the authoritative-open change.
 
 ## Docs References
 
@@ -201,6 +216,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: made `createSession` fail closed around the sole
+  discriminated opener; only the accepted server row can be upserted, activated, or broadcast, and
+  every failed result leaves the session store unchanged. Verification metadata remains pinned
+  until closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

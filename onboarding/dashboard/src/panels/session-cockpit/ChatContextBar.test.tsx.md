@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate |  2026-07-18T07:47:42+02:00|
+| lastUpdated | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
+| lastVerifiedCommitDate |  2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,9 +20,35 @@ Pins lifecycle-routing honesty and server-first leaf attachment for the canonica
 
 ## Code Commentary
 
+### FEUI MX-FIX-2 Raw Caller Matrix
+
+The suite proves one accepted raw response creates and focuses the exact server id once. A network
+failure and the Round 1 contradictory raw harness/control response both render their typed alerts,
+leave the registry empty, and never invoke the focus callback.
+
 Tests distinguish the explicitly local lifecycle patch from leaf authority, prove successful leaf
 move sends the exact route/body and broadcasts invalidation, and prove a 409 same-role refusal leaves
 the local row unchanged while surfacing an alert.
+
+### Logic
+
+The suite drives the raw create control through the real session store with request-matched
+`Response` fixtures, then observes registry rows, alert copy, and the `onSessionOpened` callback. Leaf
+attach/move cases use URL-aware fetch fixtures and broadcast doubles.
+
+### Conventions
+
+Stable `data-testid` seams locate the raw control and alert. Store and global transport state are
+reset between cases so exact-one focus and zero-ghost assertions remain isolated.
+
+### Invariants And Boundaries
+
+Only an accepted server id may reach the focus callback. Network, protocol, and same-role attach
+failure must leave the prior registry/focus state unchanged and visible to the operator.
+
+### Todos
+
+No task-independent technical debt was identified during MX-FIX-2 review.
 
 ## Docs References
 
@@ -49,6 +75,10 @@ The suite exercises repository-local routing and browser broadcast doubles; no c
 | Unit under test. | [ChatContextBar.tsx](ChatContextBar.tsx) |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: added exact-one accepted raw focus plus network and
+  contradictory-authority failure regressions with zero row and zero focus. Verification metadata
+  remains pinned until closeout.
 
 - 2026-07-18T07:22+02:00 — Created for FEUI-L8 Chats duty-bar regressions; verification metadata
   remains blank until commit.

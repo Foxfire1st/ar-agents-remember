@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -35,6 +35,13 @@ explicit socket reattach for each changed serving boot. The canonical Chats choo
 bounded viewport dialog with explicit loading/empty/timeout/error states and operator Retry; it does
 not render a pre-session adapter process or create a second catalog store. On an empty narrow
 cockpit, responsive layout keeps the sole chat-creation entrance available.
+
+## FEUI-MX-FIX-2 Open Failure Composition
+
+Shared callers do not infer session creation from a completed request. `HighlightComposer.tsx`
+shows a failed create before readiness or submit and sends no selected context. `RailChat.tsx`
+shows the same typed failure and withholds contextual delivery. Both consume the accepted-row result
+from the data route; neither writes a private row, focuses a requested id, or retries through paste.
 
 ## Route Model
 
@@ -75,6 +82,8 @@ the Chats refactor does not move those routes.
 - Operations is initial. The Chats inspector is supplementary, default closed, and toggleable.
 - Shared panels consume canonical data stores and authority clients; they do not create private
   session catalogs, conversation indexes, or submission ledgers.
+- Create-dependent panel actions proceed only after the shared opener returns an accepted server
+  row; visible failure precedes readiness, focus, and delivery.
 - PTY output remains a line-log/vendor fallback, not the future adapter-normalized conversation and
   history UI. UA-1 history/index/resume support is absent.
 - Reliable submit, withdrawal, interaction answers, bus replies, and control actions remain separate
@@ -120,6 +129,10 @@ inside agents-remember.
 | Shared terminal, composer, selection-send, and contextual chat. | [Terminal.tsx](Terminal.tsx) · [SessionComposer.tsx](SessionComposer.tsx) · [HighlightComposer.tsx](HighlightComposer.tsx) · [RailChat.tsx](RailChat.tsx) |
 | Operations task navigation and reader. | [LifecycleList.tsx](LifecycleList.tsx) · [DetailPanel.tsx](DetailPanel.tsx) |
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded visible create failures and accepted-row gates
+  for HighlightComposer and RailChat, including zero context delivery and zero private row/focus
+  mutation on failure. Verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: recorded xterm-preserving boot reattach, bounded chooser
   recovery, and empty-narrow entrance preservation. Verification metadata remains pinned pending
