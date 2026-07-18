@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -15,6 +15,15 @@
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
+
+### Current FEUI-L9R runtime-truth repair
+
+The serving boundary exposes a packaged dashboard fingerprint without fabricating one when the
+artifact is absent, sends revalidation policy only on successful HTML, and keeps pre-session harness
+discovery to `id`/`name`/`detected`. Raw event cursors realign to server-owned record boundaries and
+advance past malformed, undecodable, blank, heartbeat, and non-object records; accepted top-level
+objects are parsed once and reused by SSE. Dashboard-owned tmux clients strip inherited tmux
+identity and force the browser PTY grammar while preserving unrelated environment settings.
 
 ### Current L9 structured-conversation contract
 
@@ -985,6 +994,10 @@ pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets
 must remain synchronized.
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: added packaged-client identity, HTML revalidation, narrow
+  pre-session discovery, record-safe raw cursor semantics, and owned tmux-client environment.
+  Verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the strict normalized
   structured-conversation roof, separate active/library read ports and cursor purposes, three

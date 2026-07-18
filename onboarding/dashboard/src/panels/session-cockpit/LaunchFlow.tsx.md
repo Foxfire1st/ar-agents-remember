@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -19,9 +19,8 @@
 The **LaunchFlow dialog** (260715-FEUI-L3 S2/S3, design §7.1): harness → model → effort → open,
 with every picker populated EXCLUSIVELY from the daemon — the harness list from
 `GET /api/harnesses`, models/efforts from the live capability envelope. No hardcoded menu, no
-client fallback, no invented default exists anywhere in this file. It is a dedicated overlay
-dialog (non-portal, absolutely positioned inside the `[data-view="sessions"]` scope root — the
-same posture as the palette) opened by the palette command `session.launch` registered in
+client fallback, no invented default exists anywhere in this file. It is a fixed viewport overlay
+with bounded height and internal scrolling, opened by the palette command `session.launch` registered in
 SessionsView, or pre-filled by the failed-launch banner's 'Launch corrected…'. The pair rules
 themselves are PURE and live in `data/launchFlow.ts`; this component renders them plus all four
 open-response paths and the F9 transport-unknown reconciliation (the session id is CALLER-MINTED,
@@ -29,15 +28,21 @@ so "does the row exist" resolves an unanswered POST — never a blind re-POST wi
 
 ## Code Commentary
 
+### FEUI-L9R Reviewed Candidate Delta
+
+The chooser now uses a fixed `100vw`/`100dvh` viewport overlay. `useHarnessCatalogRead` owns one
+catalog request per open, a distinct timeout, abort on close/supersession, one replacement read for
+a changed serving boot, and explicit operator Retry. Rendering distinguishes loading, ready, valid
+empty, timeout, and network/HTTP/protocol failure. Submit requires a currently advertised detected
+harness plus a complete selection; pre-session buttons no longer claim adapter process state.
+
 ### Logic
 
-- **Reset + harness load on every open** (L198-L218): each open clears all selection/outcome
-  state and re-fetches `/api/harnesses` via `fetchHarnessesOrNull` — live data, never a kept
-  snapshot; a `null` result renders as the harness-list error line (L326-L329), not an empty menu.
-- **Harness buttons** (L331-L354): detection GATES the button (`disabled={!harness.detected}`,
-  "— not installed"); the server's adapter `control` word renders VISIBLY inside the button
-  (`adapter <word>`, L348-L350 + the `adapterWord` css L96-L98) — review finding 6 replaced the
-  hover-only `title` (invisible to keyboard/touch); the word is the server's own, verbatim.
+- **Reset + harness load on every open** (L170-L225): form reset and catalog request ownership are
+  separate. The hook performs one live read, revokes it on close or supersession, and exposes
+  explicit loading/empty/timeout/error/retry states.
+- **Harness buttons** (L332-L420): detection gates each button (`disabled={!harness.detected}`,
+  "— not installed"). The narrow pre-session contract intentionally has no adapter process word.
 - **Envelope read** (L192-L195, L221-L224): selecting a harness calls
   `fetchHarnessCapabilities(harnessId)` (single-flighted; a daemon cache hit is cheap) and the
   component subscribes to that harness's `perHarness` entry only.
@@ -59,8 +64,8 @@ so "does the row exist" resolves an unanswered POST — never a blind re-POST wi
   ONLY where the live catalog still advertises it (`chooseModel` returns empty for an absent row)
   — the flow can never re-offer a key the catalog no longer advertises. Consumed once per open
   via `prefillPairRef`.
-- **Launch** (L252-L299): `readyToLaunch` = harness + `selectionComplete` + not posting + no
-  pending unknown (L254-L255). `launch()` mints the id (`crypto.randomUUID`, L163;
+- **Launch** (L258-L299): `readyToLaunch` requires a currently advertised detected harness plus
+  `selectionComplete`, not posting, and no pending unknown. `launch()` mints the id (`crypto.randomUUID`, L163;
   `mintSessionId` is the test seam) and calls `openHostedSession`. A 200 records the retained
   pair in `sessionCockpitStore.setLaunchEvidence` at the tier `launchTier` derives from the
   RESPONSE controlState ('starting' ⇒ pending — never promoted by the open response itself,
@@ -100,6 +105,10 @@ element (`launch-*`); the dialog stops click propagation and handles its own Esc
 - The 409-conflict path writes NO evidence for the live session.
 - Advertised order is render order; nothing here sorts, ranks, or emphasizes an effort.
 
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -108,7 +117,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for this file. | Source discovery checked | — |
 
 ## Repo-Internal References
 
@@ -118,7 +127,8 @@ the reviewed task evidence for any current behavioral claim.
 | The pure pair reducers + open classifier this renders (`chooseModel`/`chooseEffort`/`selectionComplete`/`openHostedSession`). | L33-L222 | [../../data/launchFlow.ts](../../data/launchFlow.ts) |
 | The envelope store + R2 cost/cache copy (`fetchHarnessCapabilities`, `capabilityCostNote`, `capabilityLoadingCopy`, `cacheStatusNote`). | L69-L243 | [../../data/capabilityCatalog.ts](../../data/capabilityCatalog.ts) |
 | The tier machine stamping the retained pair at 'pending' on a 200. | L29-L41 | [../../data/launchEvidence.ts](../../data/launchEvidence.ts) |
-| The harness list fetch (`fetchHarnessesOrNull`, `HarnessInfo.control`). | — | [../../data/terminal.ts](../../data/terminal.ts) |
+| The typed narrow harness catalog read and explicit result states. | L1-L74 | [../../data/harnessCatalog.ts](../../data/harnessCatalog.ts) |
+| The hook owning timeout, abort, Retry, and one replacement per serving boot. | L5-L83 | [useHarnessCatalogRead.ts](useHarnessCatalogRead.ts) |
 | The owner registering `session.launch` and mounting the dialog after the palette. | L287-L296, L687-L693 | [SessionsView.tsx](SessionsView.tsx) |
 | The banner handing in the refused-pair prefill. | L127-L143 | [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
 | The jsdom matrix: dynamic-only, cost parity, pair rules, all response paths, F9 dismiss/reopen. | L85-L425 | [LaunchFlow.test.tsx](LaunchFlow.test.tsx) |
@@ -141,6 +151,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: corrected overlay geometry and catalog authority: fixed
+  bounded viewport, typed read states, abortable timeout/operator retry, one reread per serving
+  boot, detected-row submit gate, and no pre-session adapter projection. Verification metadata
+  remains pinned pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

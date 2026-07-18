@@ -57,11 +57,12 @@
     "dashboard/src/panels/session-cockpit/WorkingLine.test.tsx",
     "dashboard/src/panels/session-cockpit/WorkingLine.tsx",
     "dashboard/src/panels/session-cockpit/lifecycleCopy.ts",
+    "dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts",
     "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 48,
-    "fileSidecars": 48,
+    "sourceFilesInScope": 49,
+    "fileSidecars": 49,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -99,6 +100,7 @@
     "stopresidualnotes",
     "test",
     "tsx",
+    "useharnesscatalogread",
     "usekeyboardzones",
     "virtualizedinspectorlist",
     "workingline"

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
+| lastUpdated | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -77,6 +77,13 @@ snapshot: one contract enumeration and at most one parse per contract per projec
 re-parses while the `(mtime_ns, size, ctime_ns)` stat identity holds, reader-output parity with and
 without the injected snapshot, cache retention bounded to live contracts, chmod-000 and
 utime-pinned-rewrite invalidation via ctime, and parse failures retried every build.
+
+## FEUI-L9R Runtime-Truth Regression Gate
+
+The candidate expands serving coverage across four exact boundaries: client/build fingerprint and
+HTML revalidation; raw-event record realignment and invalid/non-object cursor progression; owned
+tmux client environment under contaminated launcher state; and omission of fictitious pre-session
+adapter control. Integration coverage skips only when tmux itself is absent.
 
 ## Hot Path Summary
 
@@ -227,6 +234,10 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded the build/static, raw-event, tmux-environment, and
+  narrow harness-discovery regression matrix. Verification metadata remains pinned pending
+  candidate closeout.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the hostile normalized-contract
   matrix, exact two-port/three-router topology, repository-only helper resolution, and redacted
   non-enabling runtime fixtures. Added current governing/reference structure; verification remains

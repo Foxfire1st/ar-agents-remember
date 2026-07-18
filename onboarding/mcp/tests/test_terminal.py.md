@@ -5,10 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-04T11:10+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
-| governingOverview      | `../overview.md`                              |
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[mcp tests overview](overview.md)
 
 ## Purpose
 
@@ -25,6 +29,14 @@ still writes through), another scroll re-arms the cancel, and a mixed mouse+typi
 typing.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+The unit suite proves that the tmux client environment strips `TMUX`/`TMUX_PANE`, forces
+`TERM=xterm-256color`, and preserves unrelated variables. A six-client matrix checks probe, kill,
+detached create, mouse enable, copy-mode cancel, and pane-mode probe. The real tmux integration now
+skips only when tmux itself is unavailable and runs ensure plus attach under a contaminated launcher
+environment, reading output from the concrete attached PTY before closing it.
 
 ### Logic
 
@@ -73,18 +85,47 @@ Inserts `mcp/src` on `sys.path` (the suite idiom) before importing
 integration case, so the slice's PTY/tmux integration tests degrade to skips rather than
 failures where the binaries or required terminal capabilities are absent (the slice-plan CI rule).
 
+### Invariants And Boundaries
+
+Unit subprocess fakes must inspect the exact environment, while the optional real-tmux case skips
+only for missing tmux and owns/cleans its attached client explicitly.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
+## Docs References
+
+No relevant documentation was found after checking the configured sources; the regression claims
+are proven by repository source and the test suite itself.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external or domain documentation was found for this repository-local test module. | Source discovery checked | — |
+
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The terminal host under test. | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
-| The serving layer the host joins. | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The terminal host under test. | L123-L136; L397-L430 | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
+| The serving layer the host joins. | Current FEUI-L9R runtime-truth repair | [serving overview](../src/agents_remember/serving/overview.md) |
 
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
+## Cross-Repo References
+
+No meaningful cross-repository implementation source governs this repository-local test module.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: documented owned-environment unit coverage and contaminated
+  launcher end-to-end ensure/attach proof; verification metadata remains pinned pending closeout.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-04T11:10+02:00 — L2 (knob injection): the registry fixture's fake tmux `_create_tmux` creator

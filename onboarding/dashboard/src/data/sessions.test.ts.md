@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,12 @@ the catalog-sync coverage so a remote `"leaf"` invalidation is delivered with th
 this tab's own catalog broadcast remains ignored by subscribers.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+The local `TerminalConnection` fake now supplies the additive `reattach()` interface and returns
+`false`. Session-store behavior is otherwise unchanged; this is an intentional interface-seam
+update, not restart-behavior coverage.
 
 ### 260707-HFX2-L17 Client Pair-State Regressions
 
@@ -102,6 +108,10 @@ or opener behavior is under test. The terminal-persistence behavior (mounted-but
 covered in `panels/Chats.test.tsx`, not here. The draft-paste regression stays at the connection seam,
 where the suite can prove no submit input was appended.
 
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -110,7 +120,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for this file. | Source discovery checked | — |
 
 ## Repo-Internal References
 
@@ -140,6 +150,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: documented the inert fake connection seam for the new explicit
+  reattach method; verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

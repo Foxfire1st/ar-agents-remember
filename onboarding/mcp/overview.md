@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b` |
-| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
+| lastUpdated            | 2026-07-18T13:04+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f` |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -213,6 +213,17 @@ typed error family now distinguishes certified pre-dispatch busy, immutable-id c
 mismatch so only the exact certificate is retry-safe.
 
 ## Hot Path Summary
+
+260715-FEUI-L9R crosses `mcp/` through the existing `agents_remember.serving` route and the shipped
+dashboard boundary. Serving resolves the optional packaged dashboard fingerprint into
+`build.dashboardBuild`, revalidates entry HTML while leaving content-hashed assets on ordinary
+static caching, keeps pre-session `GET /api/harnesses` rows to `id`/`name`/`detected`, treats raw
+event offsets as untrusted hints and emits only server-aligned top-level-object records parsed once,
+and gives every dashboard-owned tmux client a clean tmux identity with `TERM=xterm-256color`.
+Product mismatch/reattach behavior and request ownership remain governed by `dashboard/src/`; the
+implementation contract lives in `mcp/src/agents_remember/serving/` and its regression boundary in
+`mcp/tests/`. The synchronized `package_data/dashboard/` rollover is shipped output, not a second
+source implementation.
 
 260715-FEUI-L9 is a contract/foundation path, not yet a runtime projection path. Python consumers
 validate normalized products and address separate active/library cursors through the new serving
@@ -838,6 +849,12 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-18T13:04+02:00 — 260715-FEUI-L9R ancestor route repair: documented the MCP package's
+  existing serving boundary for optional shipped-dashboard identity, HTML revalidation, narrow
+  pre-session harness discovery, server-owned raw-event records, and clean dashboard tmux client
+  identity. Browser recovery remains under `dashboard/src/`; serving detail and regression proof
+  remain under `mcp/src/agents_remember/serving/` and `mcp/tests/`; synchronized dashboard assets
+  remain generated package output.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the package-level structured
   conversation contract route, repository-only locked observation helper, exact two-port/
   three-router topology, single registration seam, hostile contract/foundation gates, and the

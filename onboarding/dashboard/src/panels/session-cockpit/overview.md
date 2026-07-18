@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -26,6 +26,18 @@ The route composes a role/spawn rail, persistent stage, default-closed toggleabl
 CodeMirror reliable composer, command/key reference palette, status line, interaction and lifecycle
 notices, and real PTY panes. It projects the shared data plane documented by the
 [data overview](../../data/overview.md); it does not own a second session catalog or delivery ledger.
+
+## FEUI-L9R Chooser And Continuity Contract
+
+`LaunchFlow` and `useHarnessCatalogRead` form one dialog-local catalog owner. Each open performs one
+abortable read; timeout, network/HTTP/protocol error, valid empty, and ready stay distinct; Retry is
+explicit; and a changed or first-observed serving boot causes one superseding reread. SSE loss does
+not trigger discovery. The fixed viewport dialog remains usable on short/narrow screens, while an
+empty narrow cockpit keeps the sole `＋ Chat` entrance visible and accessible.
+
+Existing PTY panes keep their mounted xterm and scrollback across a serving restart. The shared
+Terminal component asks the current connection for one boot-owned reattach; stale socket callbacks
+cannot demote the replacement, and a transport close never fabricates durable terminal exit.
 
 ## Route Model
 
@@ -148,6 +160,7 @@ this overview is their governing pillar.
 | PTY and ended presentation | [PtySurface.tsx](PtySurface.tsx.md) · [EndedSessionState.tsx](EndedSessionState.tsx.md) |
 | Cleanup/lifecycle copy | [LandedCleanupNotice.tsx](LandedCleanupNotice.tsx.md) · [lifecycleCopy.ts](lifecycleCopy.ts.md) |
 | Palette and keyboard binding | [CommandPalette.tsx](CommandPalette.tsx.md) · [useKeyboardZones.ts](useKeyboardZones.ts.md) |
+| Launch chooser and request ownership | [LaunchFlow.tsx](LaunchFlow.tsx.md) · [useHarnessCatalogRead.ts](useHarnessCatalogRead.ts.md) |
 
 ## Docs References
 
@@ -157,7 +170,7 @@ task evidence, and the recovered same-repository history pack.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for the canonical Chats route. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for the canonical Chats route. | Source discovery checked | — |
 
 ## Cross-Repo References
 
@@ -181,6 +194,10 @@ references, not imported governing implementations, so no cross-repository sourc
 | Dev end-to-end scenario authority. | [../../dev/cockpitScenarios.ts](../../dev/cockpitScenarios.ts) |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: added the one-owner chooser recovery state machine, narrow
+  accessibility exception, fixed viewport boundary, and xterm-preserving boot reattach contract.
+  Verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — 260715-FEUI-L8 final curator pass: promoted this route to the sole
   product-facing Chats destination, recorded Operations/default-closed-inspector decisions, folded

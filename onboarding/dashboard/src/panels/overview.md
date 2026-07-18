@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -27,6 +27,14 @@ This route contains reusable cockpit panels plus focused child routes. Its strat
 
 Detailed session state, submission, withdrawal, cleanup, and authority behavior belongs in the
 [data overview](../data/overview.md). This parent intentionally keeps only composition boundaries.
+
+## FEUI-L9R Recovery Composition
+
+The shared `Terminal` panel preserves its mounted xterm and scrollback while performing at most one
+explicit socket reattach for each changed serving boot. The canonical Chats chooser owns a fixed,
+bounded viewport dialog with explicit loading/empty/timeout/error states and operator Retry; it does
+not render a pre-session adapter process or create a second catalog store. On an empty narrow
+cockpit, responsive layout keeps the sole chat-creation entrance available.
 
 ## Route Model
 
@@ -91,7 +99,7 @@ parent was refreshed from its repository-local child overviews, source/tests, an
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for panels. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for panels. | Source discovery checked | — |
 
 ## Cross-Repo References
 
@@ -112,6 +120,10 @@ inside agents-remember.
 | Shared terminal, composer, selection-send, and contextual chat. | [Terminal.tsx](Terminal.tsx) · [SessionComposer.tsx](SessionComposer.tsx) · [HighlightComposer.tsx](HighlightComposer.tsx) · [RailChat.tsx](RailChat.tsx) |
 | Operations task navigation and reader. | [LifecycleList.tsx](LifecycleList.tsx) · [DetailPanel.tsx](DetailPanel.tsx) |
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded xterm-preserving boot reattach, bounded chooser
+  recovery, and empty-narrow entrance preservation. Verification metadata remains pinned pending
+  candidate closeout.
 
 - 2026-07-18T07:22+02:00 — 260715-FEUI-L8 strategic refactor: reduced this packed parent to
   composition boundaries, made session-cockpit the sole Chats owner, routed data-plane detail to

@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1685,
+    "sourceFilesInScope": 1812,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic state machine. The serving bridge admits it to one authority timeline; queued withdrawal and native dispatch race at the guarded first-byte claim; completion releases only the exact epoch/sequence/id/ kind operation. Status/withdraw are cockpit-only and raw-free, terminal text retention is bounded, and ambiguous response loss reconciles without resend. Pop-back restores only the exact composer te...",
+    "summary": "260715-FEUI-L9R repairs runtime truth across the established dashboard/serving split. Start at the `dashboard/src/` overview for browser build-identity comparison, operator-owned reload, pre-session harness-catalog request ownership, and terminal reattach behavior; its data, panels, and session-cockpit governors own the detailed client state machines. Start at the `mcp/src/agents_remember/serving/` overview for shipped build identity, HTML revalidation, raw-event record boundaries, the pre-session harness wire shape, and dashboard-owned tmux client identity; the `mcp/tests/` overview owns t...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,9 +115,15 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
+      "dashboard/src/",
+      "mcp/src/agents_remember/serving/",
+      "mcp/tests/",
       "FEUI",
+      "L9R",
+      "agents_remember",
+      "HTML",
       "repo-overview",
-      "91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b",
+      "82f2de40a666ea00754f364cfe764cea9294235f",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -138,13 +144,7 @@
       "providers/_bin/",
       "providers/_venvs/",
       "onboarding/",
-      "c-05-create-or-update-onboarding-files",
-      "ar-coordination/memory-repos/ar-<repo>/",
-      "c-00-initialize-memory-repo",
-      "kernel/memory_ledger.py",
-      "ContextPacketV2",
-      "resolve_context",
-      "context_packet"
+      "c-05-create-or-update-onboarding-files"
     ]
   },
   "fallback": {

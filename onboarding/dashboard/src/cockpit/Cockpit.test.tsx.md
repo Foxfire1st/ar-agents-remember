@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -22,6 +22,13 @@ no Sessions item or legacy Chats layer, persistent Chats mounting, shell-level r
 accepted-id-only highlight routing.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+The serving-build suite now distinguishes a stale executing bundle from a matching one. It pins
+`data-client-build-current="false"` plus an explicit reload control for a mismatch, and `true` with
+no reload control for an exact fingerprint match. The test never exercises an automatic reload
+because the product contract requires operator timing.
 
 ### Logic
 
@@ -57,13 +64,11 @@ dashboard store.
   default `rail--right` shows the Event River; clicking the `rail-toggle-chat` `role="radio"` segment
   swaps in the single-instance `RailChat` (`rail-chat` testid), and clicking `rail-toggle-river` swaps
   the Event River back, pinning the `railView` switch without unmounting the railed body.
-- "Sessions view: full-bleed keep-alive layer" (260715-FEUI-L1 R1) — seeds `engine-fleet` and pins
-  the Chats keep-alive pattern for the new Sessions view: the `sessions-view` node is mounted from
-  the start inside a `display:none` + `aria-hidden="true"` layer, already carrying the
-  `data-view="sessions"` WebTUI scope marker while hidden; clicking the "Sessions" mode-bar radio
-  goes full-bleed (`data-fullbleed="true"`, no `.rail--left`) and reveals the **same** DOM node
-  (`display:flex`, `aria-hidden="false"` — React renders aria booleans literally); leaving hides it
-  again without unmounting.
+- "canonical Chats route: full-bleed keep-alive cockpit" — proves Operations remains default,
+  there is no Sessions mode-bar route, and exactly one `sessions-view` implementation node is
+  mounted behind the Chats product label. Clicking Chats reveals that same full-bleed node; leaving
+  hides it with `aria-hidden="true"` without unmounting the PTY owner. The internal `sessions-*`
+  markers remain stable implementation/test identities only.
 - "rail chat keys by the drilled leaf, not the master" (L5 fix 1) — a local `seedDrillableMaster` (+ a
   `taskDoc` factory) seeds a lifecycle-bound master with one authored, drillable leaf. The test selects
   the master, toggles the rail to chat, and asserts the master overview shows no leaf slot yet
@@ -80,6 +85,14 @@ single-select), driven by `fireEvent.click`. Uses plain `container.querySelector
 browser `fetch` and drive `dashboardStore.applyDelta("analytics", ...)` to reproduce analytics churn
 and selection timing.
 
+### Conventions
+
+Shell tests drive the shared gallery fixtures and query stable test ids rather than private styles.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -88,7 +101,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for this file. | Source discovery checked | — |
 
 ## Repo-Internal References
 
@@ -116,6 +129,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: documented the client/server fingerprint match and mismatch
+  regressions; verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/serving/static.py`  |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-10T15:07+02:00                       |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`   |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                       |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`   |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -21,6 +21,13 @@
 built cockpit replaces it.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+`DashboardStaticFiles` adds `Cache-Control: no-cache` only to successful HTML responses. This makes
+the entry document revalidate its dashboard identity while preserving ordinary caching semantics
+for content-hashed JavaScript and CSS assets. The mount remains catch-all HTML static serving; only
+the response-header policy changed.
 
 ### 260707-HFX2-L17 Served Pair-Role Dashboard
 
@@ -51,6 +58,34 @@ file-level onboarding by path policy.
 - The static mount is registered last; API routes take precedence.
 - A missing bundle degrades gracefully (no mount) rather than failing startup.
 
+### Logic
+
+The static mount resolves the packaged dashboard and delegates file serving to Starlette, adding
+revalidation only when a successful response is HTML.
+
+### Conventions
+
+The custom subclass changes response headers at the one static-serving seam rather than adding a
+parallel root route.
+
+### Invariants And Boundaries
+
+HTML revalidates; content-hashed assets retain normal static caching; absent package data leaves the
+dashboard mount absent as before.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
+## Docs References
+
+No relevant documentation was found after checking the configured sources; static-serving behavior
+is proven by repository source and tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external or domain documentation was found for this repository-local static mount. | Source discovery checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -59,7 +94,18 @@ file-level onboarding by path policy.
 | The sync bridge copies `dashboard/dist` into the directory this module resolves and records its source fingerprint. | L30-L52; L151-L179 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 | The serving app owns API registration before the static mount. | L1-L80 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 
+## Cross-Repo References
+
+No meaningful cross-repository implementation source governs this repository-local static mount.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: documented HTML revalidation without weakening hashed-asset
+  caching; verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-10T15:07+02:00 — No source impact: 260707-HFX2-L17 recorded the unchanged serving
   boundary for the synchronized pair-role dashboard; generated asset filenames remain opaque.

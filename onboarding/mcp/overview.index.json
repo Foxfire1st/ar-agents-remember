@@ -327,7 +327,7 @@
     "filesystem"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L9 is a contract/foundation path, not yet a runtime projection path. Python consumers validate normalized products and address separate active/library cursors through the new serving route. The repository-only native helper and three installed-runtime fixtures supply redacted, non-enabling evidence. Hostile contract tests and topology tests fail closed on provenance, identity, generation, contradictory status/capability state, router drift, helper path drift, and fixture promotion. 260715-FEUI-L5 routes exact-session submit/reconcile/status/withdraw through the daemon and privat...",
+    "summary": "260715-FEUI-L9R crosses `mcp/` through the existing `agents_remember.serving` route and the shipped dashboard boundary. Serving resolves the optional packaged dashboard fingerprint into `build.dashboardBuild`, revalidates entry HTML while leaving content-hashed assets on ordinary static caching, keeps pre-session `GET /api/harnesses` rows to `id`/`name`/`detected`, treats raw event offsets as untrusted hints and emits only server-aligned top-level-object records parsed once, and gives every dashboard-owned tmux client a clean tmux identity with `TERM=xterm-256color`. Product mismatch/reatta...",
     "candidateHints": [
       "mcp",
       "mcp/tests",

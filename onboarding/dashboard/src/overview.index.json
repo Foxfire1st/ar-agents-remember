@@ -60,11 +60,12 @@
     "dashboard/src/types/harnessCapabilities.ts",
     "dashboard/src/types/projection.ts",
     "dashboard/src/types/terminalCatalog.ts",
-    "dashboard/src/types/terminalOpen.ts"
+    "dashboard/src/types/terminalOpen.ts",
+    "dashboard/src/vite-env.d.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 257,
-    "fileSidecars": 35,
+    "sourceFilesInScope": 260,
+    "fileSidecars": 36,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -83,6 +84,7 @@
     "data",
     "dev",
     "devapp",
+    "env",
     "fixtures",
     "grammar",
     "harnesscapabilities",
@@ -108,6 +110,7 @@
     "topology",
     "tsx",
     "types",
+    "vite",
     "webtui",
     "webtuispike"
   ],

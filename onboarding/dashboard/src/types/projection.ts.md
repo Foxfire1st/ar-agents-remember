@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T23:54+02:00                           |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176`       |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -19,6 +19,13 @@
 Hand-maintained TypeScript mirror of the served projection contract (`mcp/.../observer/projection.py`, the source of truth — D7: pydantic codegen deferred). camelCase matches the wire form, and because the server dumps with `exclude_none=True`, every `T | None` server field is modelled as optional (`?:`). Slice 5e extends the contract with the enclosure-centered Engine Room process map: `CommitRefNode` / `ProviderBootNode` / `EngineProcessEdge` / `EngineProcessNode`, the `ProcessFactState` / `ProcessHealth` honesty enums, and the `Analytics.engineProcesses` derived surface. Slice 6g mirrors the master-navigation additions: `TaskSubTaskRefNode` (with `linkedLifecycleId` and optional `createdAt`), `TaskSectionNode`, and `subTasks` / `sections` / `masterLifecycleId` on `TaskDocNode`. Task 17 makes `TaskDocNode.lifecycleId?` optional because runtime lifecycle state is attachment, not the condition for projecting a JSON-primary task document; planning-only leaves and masters can be listed/read before a worktree exists. Task 17 also mirrors `TaskDocNode.id`, the JSON-primary task id used as the authored leaf display number when parent sub-task refs are only fallback rows. The masters surface is still also exposed as `Analytics.series: SeriesNode[]`, carrying folder-keyed master content with `createdAt`, `objective`, sections, decisions, sub-task creation metadata for default oldest-first ordering, and `seriesTokenTotal` for the server-composed leaf-lifecycle token aggregate.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+`ServingBuild` now optionally mirrors `dashboardBuild`, the fingerprint of the shipped dashboard
+inputs. Like the containing `servingBuild` block, it is app-injected wire truth rather than persisted
+`projection.py` reducer state. Absence means a legacy or otherwise non-comparable server and must
+remain unknown; it is not evidence of mismatch.
 
 ### 260707-HFX2-L13 Task-Body Revision
 
@@ -75,11 +82,29 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 
 `ProcessFactState` admits `stale`, and `LandingRefNode` carries `observedAt`, `lastAttemptAt`, and `staleSeconds`. These fields are additive projection data consumed by the Engine Room to distinguish stale truth from a fresh observation.
 
+### Conventions
+
+Optional fields preserve compatibility with older persisted or serving payloads; app-injected fields
+remain explicitly distinguished from projection-reducer output.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
+## Docs References
+
+No relevant documentation was found after checking the configured sources; the wire-shape claims
+are proven by repository source and tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external or domain documentation was found for this repository-local type mirror. | Source discovery checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Source of truth + `exclude_none` optional-field rule | L1-L5 | [projection.py](../../../../agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| Source of truth + `exclude_none` optional-field rule | L1-L5 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
 | `TaskSubTaskRefNode.createdAt`, `TaskDocNode.id`/`createdAt`, and `SeriesNode.seriesTokenTotal` mirror the served task/series identity, creation-order, and aggregate-token fields. | L196-L250 | [projection.ts](projection.ts) |
 | `Analytics.series` carries the folder-keyed master aggregation surface alongside active task documents with optional lifecycle binding. | L375-L386 | [projection.ts](projection.ts) |
 | `ProviderNode` comments mirror the served `repoId` and `worktreeGroup` binding semantics consumed by topology. | L76-L87 | [projection.ts](projection.ts) |
@@ -91,13 +116,24 @@ Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRef
 | `AttentionItem.signalTs?` remains the server-computed current-occurrence anchor. | L260-L274 | [projection.ts](projection.ts) |
 | `SupervisorHeartbeat` (`lastTickAt`/`ageSeconds`/`staleCutoffSeconds`/`stale` plus L8 backlog/duration fields) mirrors the app-injected wire shape `serving/app.py::_supervisor_heartbeat_payload` builds, not a `projection.py` model. | L435-L444 | [projection.ts](projection.ts) |
 | FEUI-L7 optional owner identity and redelivery/escalation fields on `AgentPickupNode`. | L285-L307 | [projection.ts](projection.ts) |
-| The app-side payload builder this type mirrors. | `_supervisor_heartbeat_payload` | [../../../../agents-remember/mcp/src/agents_remember/serving/app.py](../../../../agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The app-side payload builder this type mirrors. | `_supervisor_heartbeat_payload` | [serving/app.py](../../../mcp/src/agents_remember/serving/app.py) |
 
 ## Series-Contract Notes
 
 `EnclosureNode` separates leaf contract identity (`enclosureId` / `leafId`) from the containing `taskRoot`, which lets dashboard views handle root series tasks and leaf worktrees without deriving paths client-side. 260703-L11 adds the required `codeWorktreeExists` / `memoryWorktreeExists` booleans — the server-stat'ed worktree-existence truth (always on the wire: bool defaults are never `exclude_none`-dropped) that `hasLiveWorktree` filters tasks-surface visibility on, replacing every client-side cleanup-state proxy; `cleanup: reopened` means contract-reset-awaiting-restart, not live work.
 
+## Cross-Repo References
+
+No meaningful cross-repository implementation source governs this repository-local type mirror.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded the optional app-injected dashboard fingerprint and
+  its unknown-on-absence boundary; verification metadata remains pinned pending closeout.
 - 2026-07-17T23:54+02:00 — 260715-FEUI-L7 mirrored optional pickup owner identity and
   redelivery/escalation timestamps/counts. Optionality preserves pre-field persisted projections;
   consumers must not synthesize missing facts. Verification metadata remains pinned to the leaf

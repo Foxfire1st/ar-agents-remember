@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Terminal.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -27,6 +27,14 @@ Viewport timer during React StrictMode probe teardown; synchronous disposal othe
 already-disposed RenderService.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+The mounted xterm surface now observes `servingBuild.bootedAt` and asks its current connection to
+reattach once for each changed boot identity. The first observed identity adopts an already-open
+socket without replacement; later identities may supersede stale OPEN or CONNECTING sockets.
+Reattach preserves the xterm instance and scrollback and has no timer or generic retry loop.
+Conditional ref cleanup prevents stale teardown from erasing a replacement connection.
 
 ### Logic
 
@@ -97,8 +105,9 @@ tears down and reconnects the data subscription correctly.
   set, so a reserved chord is never consumed by (or leaked into) the pane even when the
   window-capture tinykeys layer is inactive.
 - **Freshness/floor reporting**: `onOutput` fires on every PTY write chunk (the caller throttles
-  → `lastOutputAt`); `onSocketState` relays the socket's own `connected`/`dropped` (from
-  `data/terminal.ts`'s additive option; a deliberate `dispose()` reports nothing);
+  → `lastOutputAt`); `onSocketState` relays the socket's own
+  `connected`/`reconnecting`/`dropped` (from `data/terminal.ts`'s additive option; a deliberate
+  `dispose()` reports nothing);
   `onResizeCols(term.cols)` fires after EVERY successful `refit()` (L271) — the R8 ~80-col floor
   chip's real-pane truth.
 
@@ -121,6 +130,10 @@ PRESERVED contract: refit skips hidden hosts, runs mount + rAF + `fonts.ready` +
 and keeps the PTY winsize in lockstep — L6 changed none of it (only the additive `onResizeCols`
 call after `fit.fit()`).
 
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -129,7 +142,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for this file. | Source discovery checked | — |
 
 ## Repo-Internal References
 
@@ -160,6 +173,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: documented xterm-preserving, once-per-serving-boot socket
+  reattach and stale-ref-safe teardown; verification metadata remains pinned pending closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

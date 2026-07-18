@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f` |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -40,6 +40,13 @@ just before the static mount — and the static mount. It is the
 slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+`GET /api/harnesses` now returns only the server-owned pre-session discovery facts `id`, `name`,
+and `detected`. It no longer calls `protocol_adapter_status` or emits `control`, because no session
+adapter process exists before open. Runtime session/control evidence remains on its existing
+post-open authorities; this endpoint is deliberately narrow.
 
 ### Logic
 
@@ -532,6 +539,9 @@ Serving routes expose additive adapter catalog state, route hosted delivery thro
 inbox-backed bridge, and surface adapter interactions without making pane or log timing authoritative.
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: documented removal of fictitious pre-session adapter state
+  from the harness discovery endpoint; verification metadata remains pinned pending closeout.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the daemon's dynamic advertise,
   complete-pair launch, exact-session set, reliable submit/reconcile, raw-free public evidence,
   live-reopen conflict response, and preserved streams, role spawn, and durable bus boundaries.
