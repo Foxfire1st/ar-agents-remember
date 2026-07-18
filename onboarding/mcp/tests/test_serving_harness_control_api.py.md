@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_serving_harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash |  `f8196d98982f834d68152d307ff8025ea69440d5`|
-| lastVerifiedCommitDate |  2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-19T00:06+02:00 |
+| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
+| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,9 @@ native row reaches its exact-session control helper.
 ### Conventions
 
 The module registers only the focused routes on a small `FastAPI` app, uses a temporary real
-`TerminalCatalog`, and patches the blocking client/liveness seams. Assertions compare complete
+`TerminalCatalog`, and patches the blocking client/liveness seams. Since 260718-CHATS-L0 the
+registration call passes the required `coordination_root` keyword so the seam constructs the
+immutable conversation runtime scope. Assertions compare complete
 public JSON where the contract is frozen and explicitly search serialized output for forbidden
 private data.
 
@@ -107,6 +109,11 @@ the complete reconciliation/status lifecycle matrix. They prove errors are mappe
 state leaks.
 
 ## Update History
+
+- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-line call-shape follow —
+  the focused route registration passes the new required `coordination_root` keyword. No HTTP
+  contract, privacy, or status-ordering behavior changed. Verification metadata remains pinned
+  until closeout stamps the candidate commit.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: added public lifecycle, privacy, epoch/conflict, batch-bound,
   retry-certificate, ambiguity, and status-matrix coverage.

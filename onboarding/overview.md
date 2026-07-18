@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-18T21:05+02:00 |
-| lastVerifiedCommitHash | `522959ce7dac7402b8085089c1835310adee858b` |
-| lastVerifiedCommitDate | 2026-07-18T21:21:15+02:00|
+| lastUpdated            | 2026-07-19T00:37+02:00 |
+| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1` |
+| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
 
 > **Status:** active baseline
 
@@ -164,6 +164,16 @@ the `mcp/tests/` overview owns the cross-boundary proof. The `mcp/` overview rem
 boundary, and `package_data/dashboard/` remains synchronized generated output rather than a second
 frontend source route. This repository overview routes that cross-cutting seam without duplicating
 the focused governors' implementation detail.
+
+260718-CHATS-L0 repairs the production composition boundary under the structured-conversation
+contract roof: the existing harness-control registration now constructs and installs one immutable
+app-scoped conversation runtime authority, plus a server-resolved local-operator authorization
+ruling, exactly once per app, and child leaves consume both through narrow request dependencies
+without further shared-composition edits. This repository overview routes that package-level seam
+without duplicating detail: the `mcp/` overview owns the package boundary, the
+`mcp/src/agents_remember/serving/` and `mcp/src/agents_remember/serving/conversation/` overviews
+own the composition and authorization facts, and the `mcp/tests/` overview owns the contract-suite
+proof. No feature surface, MCP tool, or public doc is added, renamed, or removed.
 
 260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound
 request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic
@@ -542,6 +552,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T00:37+02:00 — 260718-CHATS-L0 curator: reviewed the root body against the leaf diff
+  and added the repository-level ancestor routing for the conversation runtime composition repair
+  — install-once immutable runtime plus server-resolved local-operator ruling under the existing
+  harness-control registration, with detail routed to the `mcp/`, `serving/`, `conversation/`, and
+  `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata remains
+  pinned until closeout stamps the candidate commit.
 - 2026-07-18T21:05+02:00 — FEUI-MX-FIX-5 root route impact: documented Vite as the semantic
   generated-byte owner, raw sync as the byte-equality boundary, the rejection of generic EOL
   normalization, and the root attribute's direct shipped-JavaScript-only `blank-at-eol` exception.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-18T21:05+02:00 |
-| lastVerifiedCommitHash | `522959ce7dac7402b8085089c1835310adee858b`|
-| lastVerifiedCommitDate | 2026-07-18T21:21:15+02:00|
+| lastUpdated | 2026-07-19T00:06+02:00 |
+| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
+| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -152,6 +152,13 @@ close/cancellation cleanup against the production `Projector` and `stream_events
 `enablesCapabilities:false`; exact versions and observed counts are evidence, never maintained
 feature declarations. Helper protocol behavior is also covered in its own Node test package.
 
+260718-CHATS-L0 adds `test_conversation_runtime_composition.py` and
+`test_conversation_authorization.py` for the runtime composition repair: single install-once
+binding at both composition seams, duplicate/missing/foreign/missing-member fail-closed shapes,
+per-app child isolation over real HTTP, no import-time singleton, no production identity-injection
+or fixture/PTY/browser-identity reliance, server-resolved local-operator identity, loopback-only
+resolution, and cross-principal rejection in both directions through an injected seam double.
+
 260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness,
 dispatch/withdraw races, early terminal completion, full-ref id reuse, ordering, idempotency/source-
 payload conflicts, certified pre-dispatch retry, impossible safe retry after possible bytes, epoch
@@ -291,6 +298,8 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | --- | --- | --- |
 | Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
 | Foundation coverage pins two ports, three empty child routers, one registration seam, exact helper resolution, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Composition contract coverage pins install-once, fail-closed binding shapes, per-app isolation, no singleton, and no injected identity or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
+| Authorization contract coverage pins local-operator identity, loopback-only resolution, no identity channel, ignored browser claims, and cross-principal rejection. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
 | Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | L1-L687 | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
 | Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | L1-L1180 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Public API epoch/conflict/certificate/privacy/status matrix. | L1-L700 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
@@ -313,6 +322,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: added the conversation runtime composition
+  and authorization contract suites — install-once/fail-closed composition shapes, per-app
+  isolation, no-singleton and no-injected-identity proofs, loopback-only local-operator resolution,
+  and cross-principal rejection — plus the one-line `coordination_root` call-shape follows in the
+  two harness-control suites. Verification metadata remains pinned until closeout stamps the
+  candidate commit.
 - 2026-07-18T21:05+02:00 — FEUI-MX-FIX-5 added the real-Git generated-positive/authored-negative
   whitespace regression, the direct shipped-JavaScript `blank-at-eol` boundary, Vite/raw-sync byte
   ownership, the rejected-normalization rationale, retained near-miss checks, and the two-build

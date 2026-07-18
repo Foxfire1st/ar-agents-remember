@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_foundation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
+| lastUpdated | 2026-07-19T00:06+02:00 |
+| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
+| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,9 @@ allow-listed installed-runtime fixtures that cannot enable capabilities.
 ### Logic
 
 The suite introspects exported port types and router objects, reads the global serving source to
-prove one registration call, parses the helper manifest/lock to prove exact pins, scans production
+prove one registration call — since 260718-CHATS-L0 pinning the exact
+`register_conversation_routes(app, conversation_runtime)` call that carries the immutable runtime
+through the same single seam — parses the helper manifest/lock to prove exact pins, scans production
 helper TypeScript for forbidden ambient resolution, validates all three runtime fixtures through
 the production Pydantic contract, and rejects raw secret/path/conversation material by pattern.
 
@@ -61,7 +63,7 @@ contract are direct evidence.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Root conversation composition defines the exact child tuple and single registration function. | L7-L24 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
+| Root conversation composition defines the exact child tuple and single registration function. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The helper manifest owns the exact direct runtime dependencies checked against the lock. | L1-L22 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
 | Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | L1233-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
@@ -75,5 +77,10 @@ No neighboring repository participates in this topology suite.
 
 ## Update History
 
+- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the updated registration-seam
+  assertion pinning the exact `register_conversation_routes(app, conversation_runtime)` call after
+  the L0 one-time binding; both other invariants (no `register_conversation_routes`, no
+  `include_router` in `app.py`) are unchanged. Verification metadata remains pinned until closeout
+  stamps the candidate commit.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the structured-conversation foundation
   test sidecar. Verification is blank until closeout commits and stamps the new source.

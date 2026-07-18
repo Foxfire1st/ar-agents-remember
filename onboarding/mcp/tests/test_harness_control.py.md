@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-19T00:06+02:00 |
+| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1` |
+| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,9 @@ request ids are idempotency keys: a retained duplicate returns the first receipt
 arriving while the first submit is pending waits for that same result; neither path replaces the
 first payload or calls the adapter twice. Reconciliation maps retained immediate/queued receipts to
 accepted, rejected to rejected, and unsupported to unsupported without invoking native
-reconciliation; only genuinely unknown evidence delegates to the adapter.
+reconciliation; only genuinely unknown evidence delegates to the adapter. 260718-CHATS-L0 follows
+the registration call shape: the daemon route composition now passes the required
+`coordination_root` keyword so the seam constructs the immutable conversation runtime scope.
 
 The exact-session IPC cases advertise the normalized snapshot and pass through honest queued and
 unsupported setter results. A deliberately dropped outer response proves the caller keeps the same
@@ -137,6 +139,11 @@ bounded ambiguity, private status/withdraw, IPC and outer-response loss, durable
 and duplicate raw-free projection. Earlier second-runner queue semantics are historical only.
 
 ## Update History
+
+- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-line call-shape follow —
+  the IPC daemon route composition passes the new required `coordination_root` keyword. No
+  protocol, queue, or reconciliation behavior changed. Verification metadata remains pinned until
+  closeout stamps the candidate commit.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: rewrote the common matrix around the sole authority,
   idempotency, withdrawal, response loss, bounded retention, and privacy.
