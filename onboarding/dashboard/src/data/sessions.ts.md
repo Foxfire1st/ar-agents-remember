@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastUpdated            | 2026-07-18T16:02+02:00                           |
 | lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
 | lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
@@ -90,7 +90,11 @@ vs. its terminal independently. `createSession(prefix, kind?, harness?, lifecycl
 the proposal to the opener and materializes only the accepted server row. `fromTerminalSessionInfo` maps the
 catalog row's `leafKey` onto the store row alongside harness/lifecycle.
 `useSessions(selector)` is the React seam — `useStore(sessionStore, selector)` so components subscribe
-to a slice; non-React callers (`Chats` event handlers) read `sessionStore.getState()` directly.
+to a slice. External production readers/mutators using `sessionStore.getState()` are `catalogPoll`,
+`sessionLifecycle`, `seatEvents`, `setClient`, `submitClient`, `announcer`, `RailChat`,
+`HighlightComposer`, `GateResponder`, and `ChatContextBar`. Separately, development-only
+`dev/cockpitScenarios` snapshots `sessions` and `activeId` to restore scenario authority. There is no
+legacy `Chats` event-handler owner.
 
 Task 22 follow-up adds a `BroadcastChannel` catalog-sync seam, extended by L9 for leaf moves:
 `notifySessionCatalogChanged(reason, sessionId?)` posts `"create"`/`"terminate"`/`"leaf"` events after a
@@ -100,14 +104,15 @@ session id; receivers still re-fetch `/api/terminal/sessions` instead of trustin
 store state.
 
 Slice 6f adds a non-reactive **connection registry** beside the store (module-level maps, so a
-registration never re-renders): `registerConnection(id, conn|null)` — called by `<Chats>` via
-`onConnection` — records each live `TerminalConnection`; `sendToSession(id, text)` injects into it, or
+registration never re-renders): `registerConnection(id, conn|null)` — called by `RailChat` for its
+visible and hidden keep-alive terminals — records each live `TerminalConnection`; `sendToSession(id, text)` injects into it, or
 **queues** the text in `pending` when the session's terminal has not registered yet (the
 create-then-send race; the connection itself buffers anything sent before its WebSocket opens, see
 `data/terminal.ts`), flushed on register. `createSession(prefix, kind?, harness?, lifecycleId?)` mints a UUID,
 posts the opener with the generated label/lifecycle, then upserts, activates, and broadcasts
-`"create"` only from the accepted server row — the shared spawn used by both the
-Chats launch buttons and the highlight composer's create-a-chat path. `pasteDraftToSession(id,
+`"create"` only from the accepted server row. Current production callers are `RailChat` (chat and
+terminal launches), `HighlightComposer` (create-then-deliver), and `ChatContextBar` (full-page
+terminal launch). `pasteDraftToSession(id,
 packageText)` is the leaf-context draft path: it waits for the session's terminal to register (bounded by
 `CONNECTION_TIMEOUT_MS`), then delegates to `data/terminal.ts`'s `pasteAndConfirm` — quiet-gated paste
 attempts confirmed by the draft's own echo and retried through a ~30s harness boot deadline, because a
@@ -129,8 +134,9 @@ object with the action methods on it, not a separate actions slice.
   fresh chat can become `Claude Code 1` again once prior Claude chats are gone.
 - Closing a local row forgets it here but does **not** kill the backend tmux session; explicit terminate
   goes through `data/terminal.ts` + `serving.app`.
-- Owns the *registry*, not terminal lifetime: tmux/catalog own durability, and `<Chats>` owns which
-  selected/visited rows currently have live xterm + WebSocket attachments.
+- Owns the *registry*, not terminal lifetime: tmux/catalog own durability. `RailChat` registers the
+  raw `TerminalConnection` instances used by this legacy connection seam; the canonical full-page
+  session cockpit independently keeps visited PTYs mounted through `SessionsView`/`PtySurface`.
 - Cross-tab sync is catalog invalidation, not shared local state. Backend-persisted create/terminate/leaf
   broadcasts tell other tabs which session changed, then those tabs re-fetch the durable catalog.
 - `lifecycleId` is a routing tag for AR-hosted chats only. It is not projected truth, and external
@@ -165,11 +171,15 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The canonical Chats view reads this store and separates live action routing from inspection focus. | — | [SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
+| The canonical Chats view reads this store and separates live action routing from inspection focus. | L247-L293 | [SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
 | The right-rail leaf chat resolves sessions via leaf role and now uses `pasteDraftToSession` for bind-time context after start, attach, or move. | L309-L315; L317-L353 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
 | The replacement rail renders catalog sessions and lifecycle actions through the shared model. | — | [SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx) |
+| `RailChat` is the only production owner of this module's raw connection registry, for visible and hidden keep-alive terminals. | L489-L503; L540-L546 | [RailChat.tsx](../panels/RailChat.tsx) |
+| Production creation callers are `RailChat`, `HighlightComposer`, and the full-page `ChatContextBar`. | L336-L367; L452-L471; L98-L106 | [RailChat.tsx](../panels/RailChat.tsx); [HighlightComposer.tsx](../panels/HighlightComposer.tsx); [ChatContextBar.tsx](../panels/session-cockpit/ChatContextBar.tsx) |
+| The full-page cockpit's keep-alive PTY owner is `PtySurface`, separate from the raw RailChat registry. | L145-L227 | [PtySurface.tsx](../panels/session-cockpit/PtySurface.tsx) |
 | The leaf-identity helper that mints the qualified `leafKey` this store binds. | — | [data/taskIdentity.ts](taskIdentity.ts) |
-| The gate responder that resolves `gate.lifecycleId` through `findSessionForLifecycle`. | — | [panels/GateResponder.tsx](../panels/GateResponder.tsx) |
+| The gate responder resolves `gate.lifecycleId` and directly mutates lifecycle routing through `sessionStore.getState()`. | L300 | [panels/GateResponder.tsx](../panels/GateResponder.tsx) |
+| Development scenario isolation snapshots this store's session ids and active id; it is not a production consumer. | L304-L305 | [dev/cockpitScenarios.ts](../dev/cockpitScenarios.ts) |
 | The projection store this mirrors in pattern but stays separate from. | — | [data/store.ts](store.ts) |
 | The terminal client types/source that provide catalog rows and terminate/open/attach helpers. | L228-L315 | [terminal.ts](terminal.ts) |
 | Catalog-change messages accept the L9 `"leaf"` reason and carry the changed session id for out-of-band reassignment invalidation. | L32-L85 | [sessions.ts](sessions.ts) |
@@ -197,14 +207,15 @@ row — pre-applied UI state the authoritative 2500 ms poll confirms or replaces
 hydrate. Known reviewer-noted nit (deliberately unchanged): `hydrate` replaces the sessions array
 every beat even when content is identical, so subscribers re-render per beat; ordering stays
 deterministic over states, and an identity-preserving hydrate (the dashboardStore change-gate
-pattern) is a follow-up candidate, not attempted to keep Chats' behavior byte-identical.
+pattern) is a follow-up candidate; FEUI-L2 deliberately left that optimization outside the
+authoritative session-cockpit cutover rather than treating the retired component as current ownership.
 
-## FEUI-L8 Reviewed Candidate Delta
+## Historical FEUI-L8 Reviewed Candidate Delta
 
 Clarifies `activeId` as the live action/reload route while cockpit focus may inspect other rows. Adds a dev-scenario reset for connections, queued input, and waiters so transport work cannot cross fixture authorities.
 
-The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
-leaf base; closeout owns commit stamping.
+This section records the FEUI-L8 review point. That candidate subsequently landed in code authority
+`31f58834f86c0d98e26b0896e099a2403a8729ee`, which this card now verifies.
 
 ## Cross-Repo References
 
@@ -216,6 +227,14 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: replaced retired `<Chats>` connection/create/PTY
+  ownership with the landed split: `RailChat` alone registers raw connections; `RailChat`,
+  `HighlightComposer`, and `ChatContextBar` call `createSession`; `SessionsView`/`PtySurface` own the
+  canonical full-page keep-alive path. Completed the external production `sessionStore.getState()`
+  census with `GateResponder` and classified development-only `cockpitScenarios` separately. The
+  former uncommitted-candidate note is now explicitly historical after landing. Verified against code commit
+  `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: made `createSession` fail closed around the sole
   discriminated opener; only the accepted server row can be upserted, activated, or broadcast, and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/catalogPoll.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T16:02+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -31,27 +31,33 @@ prevent retired scenario reads from mutating successor rows or poll health.
 - `readLastActiveSessionId`/`writeLastActiveSessionId` (L18-L33) — the
   `ar-dashboard:last-active-chat-session` localStorage preference, moved with the hydrate (a UI
   preference only; failures swallowed for private contexts).
-- `hydrateTerminalSessionsFromCatalog(allowEmpty, excludeSessionIds)` (L40-L51) — ONE catalog
-  fetch → session-store hydrate, moved verbatim from Chats. Every read ALSO records a poll-health
-  beat (`sessionCockpitStore.recordPollBeat(list !== null)`, R15/F3): a `null` (network/HTTP
-  failure) counts as a missed beat so a dead poll surfaces as the rail's stale banner instead of
-  freezing rows silently. Guards preserved byte-for-byte from Chats: an empty list applies only
-  when `allowEmpty`; `excludeSessionIds` filters just-terminated ids so a stale snapshot cannot
-  resurrect them; the hydrate keeps the last-active preference.
-- `startCatalogPollDriver()` (L60-L77) — the refcounted subscription: the FIRST subscriber starts
+- `hydrateTerminalSessionsFromCatalog(allowEmpty, excludeSessionIds, authority)` (L79-L96) — ONE
+  catalog fetch → session-store hydrate. Its extraction from the retired `Chats` component is
+  historical provenance; current behavior also carries a generation-scoped dev authority so a
+  superseded scenario cannot mutate successor rows or poll health. Every accepted read records a
+  poll-health beat; an empty list applies only when `allowEmpty`; `excludeSessionIds` filters
+  just-terminated ids so a stale snapshot cannot resurrect them; hydration keeps the last-active
+  preference.
+- `startCatalogPollDriver()` (L105-L122) — the refcounted subscription: the FIRST subscriber starts
   the `window.setInterval`, the LAST release clears it; each returned release is idempotent (a
   `released` latch), so React StrictMode double-mount (start/release/start) and double-release are
   safe. Consumers never see each other.
+- `startCatalogReconciler()` (L136-L160) — the refcounted eager hydrate plus cross-tab invalidation
+  owner. Remote termination is removed before and excluded from its confirming read; create/leaf
+  invalidations rehydrate with `allowEmpty`.
 
 ### Invariants And Boundaries
 
 - The poll is AUTHORITATIVE for session rows; push (seatEvents) is a pre-apply layer only. Nothing
   here may be replaced by an event channel without a design ruling.
 - One interval regardless of subscriber count; zero subscribers ⇒ no timer (no leak).
-- Every catalog read — driver tick or manual hydrate (Chats mount, post-bulk-end refresh) —
-  records a beat; `hydrateTerminalSessionsFromCatalog` is the ONLY sanctioned read path.
-- Consumers: `cockpit/Cockpit.tsx` (unconditional), `panels/Chats.tsx`, and
-  `panels/session-cockpit/SessionsView.tsx` — all via `useEffect(() => startCatalogPollDriver(), [])`.
+- Every catalog read — driver tick, eager/cross-tab reconciliation, post-bulk-end confirmation, or
+  launch/failure refresh — records a beat through `hydrateTerminalSessionsFromCatalog`, the only
+  sanctioned read path.
+- `CockpitShell` is the sole production owner of `startCatalogPollDriver` and
+  `startCatalogReconciler`. Current manual-hydrate callers are `sessionLifecycle.ts`,
+  `session-cockpit/LaunchFlow.tsx`, and `session-cockpit/FailedLaunchBanner.tsx`; `SessionsView`
+  consumes the shared store and starts no catalog timer.
 
 ## Docs References
 
@@ -67,20 +73,22 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The refcount driver, hydrate helper, beat recording, and localStorage preference. | L14-L77 | [catalogPoll.ts](catalogPoll.ts) |
+| The refcount driver, reconciler, hydrate helper, beat recording, and localStorage preference. | L15-L160 | [catalogPoll.ts](catalogPoll.ts) |
 | The catalog fetch this wraps (`fetchTerminalSessionsOrNull`, null on failure). | — | [terminal.ts](terminal.ts) |
 | The session-store hydrate + row conversion the helper feeds. | — | [sessions.ts](sessions.ts) |
 | The poll-health state the beats update (`recordPollBeat`, 3 misses ⇒ stale). | L83-L84, L162-L172 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
 | The shell owns the shared timer and eager/cross-tab reconciler for every view lifetime. | — | [Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| The unconditional shell subscription keeping the feed alive with no view in front. | L352-L354 | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
+| The sole shell subscriptions keep both the poll driver and reconciler alive with no view in front. | L366-L370 | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
+| Current manual hydration after bulk termination. | L239-L244 | [sessionLifecycle.ts](sessionLifecycle.ts) |
+| Current manual hydration after launch confirmation or failed-launch recovery. | L300-L316; L88-L98 | [LaunchFlow.tsx](../panels/session-cockpit/LaunchFlow.tsx); [FailedLaunchBanner.tsx](../panels/session-cockpit/FailedLaunchBanner.tsx) |
 | The unit suite: hydrate/beat recording, guards, exclusion set, refcount single-interval. | L29-L100 | [catalogPoll.test.ts](catalogPoll.test.ts) |
 
-## FEUI-L8 Reviewed Candidate Delta
+## Historical FEUI-L8 Reviewed Candidate Delta
 
 Adds a generation-scoped dev authority, separates live action preference from cockpit inspection focus, and owns one refcounted eager/cross-tab reconciler beside the timer. Terminated ids are removed before and excluded from confirmation so stale catalog echoes cannot resurrect them.
 
-The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
-leaf base; closeout owns commit stamping.
+This section records the FEUI-L8 review point. That candidate subsequently landed in code authority
+`31f58834f86c0d98e26b0896e099a2403a8729ee`, which this card now verifies.
 
 ## Cross-Repo References
 
@@ -92,6 +100,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: labeled the old `Chats` extraction as historical,
+  recorded `CockpitShell` as the sole driver/reconciler owner, and replaced the deleted consumer
+  list with the current manual-hydrate callers; labeled the former uncommitted-candidate note as
+  historical after landing. Verified against code commit
+  `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

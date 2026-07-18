@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-24T15:16+02:00                           |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                        |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-18T16:02+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`                                        |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -20,8 +20,8 @@ The shared **empty-state backdrop** (slice 07b polish): a faint, effects-gated b
 atmosphere behind centered empty-state text, so a panel with nothing to show reads as a quiet,
 intentional canvas rather than a blank box. It lifts the engine-room G6 backdrop treatment
 (`engine-room/EnclosureProcessMap` + `engineRoomStyles` `backdrop`/`backdropVideo`) out into a reusable
-panel two empty states share: `DetailPanel`'s no-selection state (battle-cruiser clip) and `Chats`'s
-no-session state (adjutant clip).
+panel primitive. Current production consumers are exactly `DetailPanel` (battle-cruiser clip),
+file-viewer `DualPane` (siege-tank clip), and change-set `ChangeSetViewer` (siege-tank clip).
 
 ## Code Commentary
 
@@ -38,14 +38,14 @@ filter, `screen` blend, and a centered radial mask that vignettes the edges into
 `backdropVideo` css sets the default faint video opacity to `0.14`; the optional `opacity?: number` prop
 overrides that per-caller via an inline `style={{ opacity }}` on the `<video>` (applied only when the prop
 is non-null), so a clip that reads darker can be given a touch more presence without changing the default.
-The File/Diff viewer's siege-tank backdrops and the Operations `DetailPanel`'s battle-cruiser backdrop
-pass `0.18`; the `Chats` adjutant backdrop omits the prop and keeps the `0.14` default.
+All three current production consumers pass `opacity={0.18}`. The component's `0.14` default remains
+part of its public contract in source, but no current production caller relies on it.
 
 Any slow zoom and playback cadence belong to the MP4 assets themselves. `EmptyStateBackdrop`
 intentionally does **not** mount a Motion wrapper, run `requestAnimationFrame`, or apply a runtime
 transform to the backdrop video. Keeping the browser layer static avoids scaling a filtered
-video/compositing stack while preserving the existing `objectFit:cover` presentation. Because both empty
-states share this one component, the static layer contract applies to **both** backdrops.
+video/compositing stack while preserving the existing `objectFit:cover` presentation. Because all three
+current empty states share this one component, the static layer contract applies to every consumer.
 
 ### Conventions
 
@@ -56,9 +56,9 @@ bake their slow zoom into the media file and are finalized as 60fps loops (curre
 12.016667s). The zoom is baked into those generated frames to peak around scale `1.03`, so this React
 component stays static: no Motion import, no wrapper node, no CSS keyframe/transition, and no rAF loop.
 The host slot that mounts this component must be a **flex column** so the component's `flex:1` `canvas`
-fills the slot (the `DetailPanel` mounts it inside `Panel` `fill`; `Chats` inside its flex-column
-`terminalArea`). The battle-cruiser and adjutant backdrop clips were re-rendered into the same
-`sc2-*-boomerang.mp4` paths, so callers keep their existing `src` values.
+fills the slot. `DetailPanel` mounts it inside `Panel` `fill`; `DualPane` and `ChangeSetViewer` provide
+their own bounded empty-state slots. The tracked battle-cruiser and siege-tank clips retain their
+`sc2-*-boomerang.mp4` paths.
 
 ### Invariants And Boundaries
 
@@ -81,23 +81,22 @@ backdrop treatment this reuses.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The engine-room visual-language spec the G6 atmospheric backdrop (reused here) is drawn from. | — | [engine-room-visual-language.html](https://github.com/readeas/agents-remember/blob/main/docs/design/engine-room/engine-room-visual-language.html) |
+| The engine-room visual-language spec the G6 atmospheric backdrop (reused here) is drawn from. | — | [engine-room-visual-language.html](https://github.com/Foxfire1st/agents-remember/blob/main/docs/design/engine-room/engine-room-visual-language.html) |
 
 ## Repo-Internal References
 
 This component generalizes the engine-room G6 backdrop into a shared panel; its closest evidence is the
-engine-room backdrop styles + their usage, the honest-motion gate it shares, and the two empty states
-that now mount it.
+engine-room backdrop styles + their usage, the honest-motion gate it shares, and the three current
+empty states that mount it.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors. | L1230-L1247 | [engine-room/engineRoomStyles.ts](engine-room/engineRoomStyles.ts) |
 | The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). | L82-L88 | [engine-room/EnclosureProcessMap.tsx](engine-room/EnclosureProcessMap.tsx) |
 | The honest-motion gate that decides whether the backdrop mounts at all. | L19-L37 | [engine-room/useShouldAnimate.ts](engine-room/useShouldAnimate.ts) |
-| The no-selection empty state that mounts this with the battle-cruiser clip (inside `Panel` `fill`), passing `opacity={0.18}`. | L446-L449 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The remaining task-detail empty-state consumer; the legacy Chats consumer was retired by FEUI-L8. | — | [DetailPanel.tsx](DetailPanel.tsx) |
-| The File-viewer no-selection empty state that mounts this with the siege-tank clip, passing `opacity={0.18}` (the clip reads darker). | L105-L109 | [file-viewer/DualPane.tsx](file-viewer/DualPane.tsx) |
-| The Diff (change-set) viewer empty state that mounts this with the siege-tank clip, passing `opacity={0.18}`. | L337-L339 | [changeset/ChangeSetViewer.tsx](changeset/ChangeSetViewer.tsx) |
+| `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. | L476-L479 | [DetailPanel.tsx](DetailPanel.tsx) |
+| File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. | L107-L110 | [file-viewer/DualPane.tsx](file-viewer/DualPane.tsx) |
+| Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. | L347-L350 | [changeset/ChangeSetViewer.tsx](changeset/ChangeSetViewer.tsx) |
 | The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. | L6-L12; L31-L40; L51-L59 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 | The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`. | L39-L55 | [EmptyStateBackdrop.test.tsx](EmptyStateBackdrop.test.tsx) |
 
@@ -108,6 +107,12 @@ No meaningful cross-repo references found. This is a self-contained presentation
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3 / missing FEUI-L8 history repair: replaced the retired
+  Chats/adjutant consumer with the exact three landed consumers (`DetailPanel`, `DualPane`, and
+  `ChangeSetViewer`), all using `opacity={0.18}`; the `0.14` default remains supported but has no
+  production caller. This explicitly repairs the FEUI-L8 body/reference edit that had no matching
+  history entry. Verified against code commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-06-30T00:00:00+02:00 — Operations Integration L5: added an optional `opacity?: number` prop. When supplied it
   overrides the `backdropVideo` css default (`0.14`) via an inline `style={{ opacity }}` on the `<video>`

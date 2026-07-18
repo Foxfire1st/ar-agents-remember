@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T16:02+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -18,8 +18,9 @@
 
 Vitest + Testing Library coverage for production cockpit composition, persistent layers, selection
 routing, takeovers, and store updates. The FEUI-L8 cases pin Operations as initial, one Chats item,
-no Sessions item or legacy Chats layer, persistent Chats mounting, shell-level reconciliation, and
-accepted-id-only highlight routing.
+no Sessions item or legacy Chats component, persistent same-node `SessionsView` behavior behind the
+Chats product label, shell-level reconciliation, and accepted-id-only highlight routing. The sole
+JSX mount in `Cockpit.tsx`, not this test's singular query, establishes exact-one source cardinality.
 
 ## Code Commentary
 
@@ -55,20 +56,15 @@ dashboard store.
   asserts `data-fullbleed="true"`, both rails gone, and the room's `engine-room-header` +
   `engine-room-diagnostics` zones present.
 - "keeps the rails for Operations and Memory" — switching to Memory stays railed (`data-fullbleed="false"`).
-- "keeps <Chats> mounted (hidden) on other views and shows the same node on Chats" (slice 6e-4) —
-  asserts `[data-testid="chats"]`'s parent layer is `display:none` on the default Operations view,
-  clicks the "Chats" mode-bar radio and asserts the **same** DOM node is now `display:flex` (never
-  remounted), then switching back to Operations hides it again — pinning that a view switch never tears
-  down the live terminal.
+- "canonical Chats route: full-bleed keep-alive cockpit" (FEUI-L8 S5) — asserts there is no Sessions
+  route and finds a `[data-testid="sessions-view"]` implementation node. Its parent layer is hidden on
+  Operations, the same captured node is revealed full-bleed under the Chats product label, and
+  returning to Operations hides that same node without remounting the PTY owner. The test proves
+  existence and same-node persistence; the sole JSX mount/source census proves cardinality.
 - "toggles the right rail between the Event River and the leaf chat" (slice L5) — on a railed view the
   default `rail--right` shows the Event River; clicking the `rail-toggle-chat` `role="radio"` segment
   swaps in the single-instance `RailChat` (`rail-chat` testid), and clicking `rail-toggle-river` swaps
   the Event River back, pinning the `railView` switch without unmounting the railed body.
-- "canonical Chats route: full-bleed keep-alive cockpit" — proves Operations remains default,
-  there is no Sessions mode-bar route, and exactly one `sessions-view` implementation node is
-  mounted behind the Chats product label. Clicking Chats reveals that same full-bleed node; leaving
-  hides it with `aria-hidden="true"` without unmounting the PTY owner. The internal `sessions-*`
-  markers remain stable implementation/test identities only.
 - "rail chat keys by the drilled leaf, not the master" (L5 fix 1) — a local `seedDrillableMaster` (+ a
   `taskDoc` factory) seeds a lifecycle-bound master with one authored, drillable leaf. The test selects
   the master, toggles the rail to chat, and asserts the master overview shows no leaf slot yet
@@ -111,13 +107,17 @@ the reviewed task evidence for any current behavioral claim.
 | `GALLERY` fixtures + the `applySnapshot` hydration pattern. | — | [dev/fixtures.ts](../dev/fixtures.ts) |
 | The shared jsdom stubs the render relies on. | — | [test/setup.ts](../test/setup.ts) |
 | The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | L329-L434 | [Cockpit.test.tsx](Cockpit.test.tsx) |
+| The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | L640-L667 | [Cockpit.test.tsx](Cockpit.test.tsx) |
+| The production source census, separately from the singular test query, establishes the sole `SessionsView` JSX mount. | L551-L560 | [Cockpit.tsx](Cockpit.tsx) |
 
-## FEUI-L8 Reviewed Candidate Delta
+## Historical FEUI-L8 Reviewed Candidate Delta
 
-Pins the L8 product cutover: Operations is the initial route, the mode bar has one Chats item and no Sessions item, and one persistent Chats layer survives route changes. Highlight delivery switches/focuses only the accepted exact session.
+Pins the L8 product cutover: Operations is the initial route, the mode bar has one Chats item and no
+Sessions item, and one persistent `SessionsView` layer survives route changes. Highlight delivery
+switches/focuses only the accepted exact session.
 
-The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
-leaf base; closeout owns commit stamping.
+This section records the FEUI-L8 review point. That candidate subsequently landed in code authority
+`31f58834f86c0d98e26b0896e099a2403a8729ee`, which this card now verifies.
 
 ## Cross-Repo References
 
@@ -129,6 +129,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: replaced the retired `<Chats>`/`data-testid="chats"`
+  keep-alive claim with the landed S5 evidence: the test proves a found `sessions-view` node persists
+  through hide/reveal with no Sessions route, while the separate source census establishes the sole
+  JSX mount. Also labeled the former uncommitted-candidate note as historical after landing. Verified
+  against code commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: documented the client/server fingerprint match and mismatch
   regressions; verification metadata remains pinned pending candidate closeout.

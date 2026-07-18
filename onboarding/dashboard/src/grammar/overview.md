@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/grammar/`                         |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T06:20+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated            | 2026-07-18T16:02+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -18,9 +18,10 @@
 
 `grammar/` is the **shared primitives library** (note 08 "state grammar" — state carried by colour
 + silhouette, never chrome). Each primitive is a small, reusable React component styled by
-co-located Panda `css()` / `cva()`; two wrap React Aria for behavior. Panels and the shell compose
-these rather than re-styling raw elements (the slice-5d analogue of the device-management
-`libs/` discipline, minus Material).
+co-located Panda `css()` / `cva()`. `ModeBar` is the route's sole React Aria wrapper; the remaining
+primitives are presentational or use native behavior. Panels and the shell compose these rather than
+re-styling raw elements (the slice-5d analogue of the device-management `libs/` discipline, minus
+Material).
 
 ## Route Model
 
@@ -46,23 +47,24 @@ these rather than re-styling raw elements (the slice-5d analogue of the device-m
 - `RankBadge.tsx` — the rank insignia (260703-L14, the developer-picked V4 chevrons): tier
   `orchestration` = three gold chevrons under a filled command pip, tier `management` = two purple
   chevrons; inline SVG on fixed viewBoxes with a soft token-mixed glow, sizes `row` (16px, task rows)
-  and `sm` (~13px, Chats group headers). The ONE insignia component both the tasks tab and the Chats
-  command tree render rank through; only ever visible when an orchestration task exists (D3).
-  Covered by `RankBadge.test.tsx` (glyph anatomy is the contract).
+  and `sm` (~13px, supported/tested but currently unused in production). `LifecycleList` is the sole
+  production consumer and renders `row`; the retired Chats command tree and current `SessionRail` do
+  not import it. It is only visible when an orchestration task exists (D3). Covered by
+  `RankBadge.test.tsx` (glyph anatomy and both dimensions are the contract).
 - `EvidenceBadge.tsx` — the launch-evidence tier badge (260715-FEUI-L3, R7): five DISTINCT glyphs
   (`…` pending / `✓` readback / `◇` model-validated / `·` defaults / `✕` refused) with the tier
   WORD always in the accessible name (`aria-label`) at EVERY size and the glyph `aria-hidden`;
   sizes `row`/`sm`, podracer token colors. The ONLY renderer of `data/launchEvidence` tiers —
-  consumed by the cockpit HeaderStrip provenance chip, SeatInspector, and FailedLaunchBanner.
-  Covered by `EvidenceBadge.test.tsx` (glyph Set-distinctness + the word at both sizes for all
-  five tiers).
+  directly consumed in production by `HeaderStrip`, `EvidencePane`, `StatusLine`, and
+  `FailedLaunchBanner`. Covered by `EvidenceBadge.test.tsx` (glyph Set-distinctness + the word at
+  both sizes for all five tiers).
 
 ## Invariants And Boundaries
 
 - **Reusable + presentational** — primitives take data props and render; no store reads, no mutation.
-- **Panda + React Aria** — visuals via co-located Panda tokens/conditions; behavior (where present)
-  via React Aria. `Panel`'s sticky-header contract replaces the old `.rail > .panel > h2` descendant
-  rule — each Panel is self-contained.
+- **Panda + one React Aria owner** — visuals use co-located Panda tokens/conditions; `ModeBar` alone
+  imports React Aria for toggle-group behavior. `Panel`'s sticky-header contract replaces the old
+  `.rail > .panel > h2` descendant rule — each Panel is self-contained.
 - **Determinism-safe** — animations (blocked/alarm `pulse`) use the shared global keyframe and freeze
   under `?effects=off`.
 
@@ -72,9 +74,19 @@ these rather than re-styling raw elements (the slice-5d analogue of the device-m
 | --- | --- |
 | The Panda runtime these primitives import (`css`/`cva`/`cx`). | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
 | The React Aria condition reconciliation (data-hovered/-focused). | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
+| The route's sole React Aria import wraps the viewport toggle group. | [ModeBar.tsx](ModeBar.tsx) |
+| The complete direct production `EvidenceBadge` renderer set. | [HeaderStrip.tsx](../panels/session-cockpit/HeaderStrip.tsx); [EvidencePane.tsx](../panels/session-cockpit/EvidencePane.tsx); [StatusLine.tsx](../panels/session-cockpit/StatusLine.tsx); [FailedLaunchBanner.tsx](../panels/session-cockpit/FailedLaunchBanner.tsx) |
 | The action-availability shape `Affordance` renders. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: refreshed the directly affected RankBadge route claim:
+  `LifecycleList` is the sole production consumer at `row`, while `sm` remains a supported/tested
+  dimension without a current production caller. The bounded route census also records `ModeBar` as
+  the sole React Aria importer and the exact four direct EvidenceBadge consumers (`HeaderStrip`,
+  `EvidencePane`, `StatusLine`, and `FailedLaunchBanner`). These direct import/caller claims, rather
+  than every grammar behavior, were verified against code commit
+  `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-17T06:20+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
   flow): the library gained `EvidenceBadge.tsx` (+ `EvidenceBadge.test.tsx`) — the five-glyph

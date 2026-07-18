@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/ChatActivityIndicator.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-12T17:50 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated | 2026-07-18T16:02+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,7 +33,8 @@ The component is a pure mapping/presentation seam over `OpenSession`; it uses th
 - It must not infer activity from lifecycle state, task progress, inbox age, terminal status, labels, position, or selection.
 - Only live `kind="harness"`, `status="running"` sessions count; plain terminals, landed/exited sessions, and missing seats produce no indicator.
 - Exact qualified leaf identity is isolated before lifecycle fallback; a session claiming another leaf must not leak through a shared lifecycle id.
-- Chats owns catalog hydration. This component adds no poller, classifier, or backend projection.
+- `CockpitShell` owns catalog hydration through `catalogPoll`; this component adds no poller,
+  classifier, or backend projection. `LifecycleList` is its sole production renderer.
 
 ### Todos
 
@@ -49,11 +50,15 @@ No relevant domain documentation was configured in the resolved `system/sources.
 
 ## Repo-Internal References
 
-The shared session store and Chats surface are the canonical hydration and turn-state owners; Operations only maps the already-served catalog values.
+`CockpitShell`/`catalogPoll` hydrate the shared session store, and Operations `LifecycleList` maps
+those already-served values through this component. The full-page `SessionRail` is a peer renderer of
+the same normalized catalog, not this component's hydration or rendering owner.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The canonical Chats rail renders the same normalized session-state catalog used here. | SessionRail source and panels overview | [SessionRail.tsx](session-cockpit/SessionRail.tsx); [panels overview](overview.md) |
+| `CockpitShell` is the sole catalog driver/reconciler owner for the shared store. | L366-L370 | [Cockpit.tsx](../cockpit/Cockpit.tsx); [catalogPoll.ts](../data/catalogPoll.ts) |
+| `LifecycleList` is this component's sole production consumer. | L42-L46; L341 | [LifecycleList.tsx](LifecycleList.tsx) |
+| `SessionRail` is a peer renderer of the same normalized session-state catalog. | L442-L463 | [SessionRail.tsx](session-cockpit/SessionRail.tsx) |
 | Focused tests cover mapping, exact-leaf-first identity, lifecycle fallback, precedence, missing classification, and omission. | L22-L117 | [ChatActivityIndicator.test.tsx](ChatActivityIndicator.test.tsx) |
 
 ## Cross-Repo References
@@ -65,5 +70,11 @@ No meaningful cross-repository boundary exists; the component is inside the agen
 | No cross-repo reference. | — | — |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3 / missing FEUI-L8 history repair: replaced retired Chats
+  hydration ownership with `CockpitShell`/`catalogPoll`, named `LifecycleList` as the sole production
+  consumer, and kept `SessionRail` as a peer catalog renderer only. This explicitly repairs the
+  FEUI-L8 body/reference edit that had no matching history entry. Verified against code commit
+  `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-12T17:50 — 260712-TRH-L6: created onboarding for the new chat-activity join and indicator. Records exact-leaf-first and unclaimed-lifecycle fallback, deterministic multi-seat precedence, shared Chats hydration ownership, omission of missing/terminal seats, and reviewer residuals F1/F2/F4/F5/F6. Candidate source remains uncommitted; metadata is pinned to the current code HEAD until closeout.

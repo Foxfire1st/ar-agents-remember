@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/grammar/RankBadge.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-18T16:02+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -30,8 +30,9 @@ carry no insignia anywhere).
 
 One component, `RankBadge({ tier, size = "row" })`. The glyphs are crisp inline SVG on fixed
 viewBoxes — `0 0 16 17` for orchestration (pip + 3 chevrons), `0 0 16 12` for management (2
-chevrons) — with only the rendered `width`/`height` changing per size: `row` is 16px wide (task
-rows), `sm` ~13px (the Chats group headers / rail-scale use), via the `DIMENSIONS` table. A Panda
+chevrons) — with only the rendered `width`/`height` changing per size: `row` is 16px wide and is the
+sole production size today; `sm` is the still-supported, test-pinned ~13px dimension with no current
+production caller. Both resolve through the `DIMENSIONS` table. A Panda
 `cva` keys the tier colour (`color: gold` / `color: purple` tokens, L14 palette additions) plus a
 soft `drop-shadow` glow mixed from the same token; chevron paths stroke `currentColor` (the cva
 base sets `fill:none`, `strokeWidth:1.9`, round caps/joins on `& path`), while the pip carries an
@@ -43,9 +44,9 @@ the stylesheet's `fill:none` path rule.
 Presentational and `aria-hidden` (the surrounding row/header text carries the meaning);
 `data-rank-tier` / `data-rank-size` are the test + styling hooks. The glyph anatomy is the
 contract with the approved L14 sketch (`l14-sketches.html`, V4): pip + three chevrons vs two
-chevrons — do not restyle per call-site; consumers pick only `tier` and `size`. Both the tasks
-list (`LifecycleList`, size `row`) and the Chats command tree (`SessionList` group headers, size
-`sm`) must render rank through this one component.
+chevrons — do not restyle per call-site; consumers pick only `tier` and `size`. `LifecycleList` is
+the sole production consumer and renders `size="row"`. Neither `SessionRail` nor any retired
+`SessionList` surface imports this component; `sm` remains a supported/tested option only.
 
 ## Docs References
 
@@ -63,8 +64,8 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The gold/purple tier tokens (+dim/ghost) this badge colours by. | theme.tokens.colors | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
 | Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`. | render body + `commandFacts` | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
-| The canonical Chats rail renders rank treatment for orchestration/management rows. | role/master headers | [SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx) |
-| Glyph-anatomy and sizing tests. | all cases | [RankBadge.test.tsx](RankBadge.test.tsx) |
+| Import census confirms `LifecycleList` is the sole production consumer; the session rail does not import `RankBadge`. | L38; L336 | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
+| Glyph-anatomy and both-size tests keep `sm` supported even though production currently uses only `row`. | L11-L50 | [RankBadge.test.tsx](RankBadge.test.tsx) |
 
 ## Cross-Repo References
 
@@ -76,6 +77,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3 / missing FEUI-L8 history repair: recorded the landed
+  retirement of the Chats/`SessionList` rank consumer. `LifecycleList` is now the sole production
+  owner at `row`; `sm` remains supported and test-pinned with no production caller. This explicitly
+  repairs the FEUI-L8 body/reference edit that had no matching history entry. Verified against code
+  commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-06T23:56:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): created — the V4 chevron
   rank insignia (gold 3-chevron + pip orchestration tier, purple 2-chevron management tier; `row`

@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T15:22+02:00 |
+| lastUpdated | 2026-07-18T16:02+02:00 |
 | lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
 | lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-Unit tests for the `sessions` store (slice 6e-4): they pin the registry contract the Chats view
-depends on — `add` labels by lowest available per-prefix ordinal and activates, `close` forgets and
+Unit tests for the `sessions` store (slice 6e-4): they pin the registry contract consumed by the
+canonical session cockpit, contextual `RailChat`, highlight delivery, and gate routing — `add`
+labels by lowest available per-prefix ordinal and activates, `close` forgets and
 clears the active pointer only when the closed id was active, `setActive` repoints.
 The reopened-L6 pass pins `pasteDraftToSession`'s confirmed-delivery contract under fake timers:
 `"delivered"` only once the fake connection's `lastOutputAt` advances (the draft echo) with one paste
@@ -111,9 +112,10 @@ Vanilla-store testing — exercise `getState()` actions and assert the next stat
 ### Invariants And Boundaries
 
 Pure state tests; no DOM, no real backend. `BroadcastChannel` and `fetch` are stubbed when catalog-sync
-or opener behavior is under test. The terminal-persistence behavior (mounted-but-hidden layers) is
-covered in `panels/Chats.test.tsx`, not here. The draft-paste regression stays at the connection seam,
-where the suite can prove no submit input was appended.
+or opener behavior is under test. Mounted-but-hidden terminal persistence is covered by
+`session-cockpit/PtySurface.test.tsx`, `session-cockpit/SessionsView.test.tsx`, and the Cockpit S5
+route test; the deleted `panels/Chats.test.tsx` is not a current coverage owner. The draft-paste
+regression stays at the connection seam, where the suite can prove no submit input was appended.
 
 ### Todos
 
@@ -138,7 +140,9 @@ the reviewed task evidence for any current behavioral claim.
 | The catalog-sync test now receives a remote `"leaf"` event and ignores the sender tab's own broadcast. | L315-L336 | [sessions.test.ts](sessions.test.ts) |
 | The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths. | L433-L459 | [data/sessions.ts](sessions.ts) |
 | The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior. | L364-L417 | [sessions.test.ts](sessions.test.ts) |
-| View-level keep-alive and transient-handoff persistence coverage. | — | [PtySurface.test.tsx](../panels/session-cockpit/PtySurface.test.tsx) |
+| `PtySurface` pins visited-pane identity and hidden keep-alive behavior across focus changes and transient handoff. | L87-L160 | [PtySurface.test.tsx](../panels/session-cockpit/PtySurface.test.tsx) |
+| `SessionsView` pins the full cockpit composition, hidden keyboard boundary, and focus/inspection handoff. | L65-L108; L279-L319; L647-L674 | [SessionsView.test.tsx](../panels/session-cockpit/SessionsView.test.tsx) |
+| Cockpit S5 pins the one persistent `sessions-view` owner behind the Chats product label. | L640-L667 | [Cockpit.test.tsx](../cockpit/Cockpit.test.tsx) |
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact
 
@@ -157,6 +161,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: replaced the deleted Chats test/view ownership with the
+  current session-cockpit consumers and the `PtySurface`, `SessionsView`, and Cockpit S5 keep-alive
+  coverage chain. Verified against code commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: added exact accepted-row creation and the zero-ghost
   failure table, including the Round 1 contradictory raw harness/control response; no failed open
