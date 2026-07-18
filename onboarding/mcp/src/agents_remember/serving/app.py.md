@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f` |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T14:16+02:00 |
+| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3` |
+| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,6 +47,15 @@ slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 and `detected`. It no longer calls `protocol_adapter_status` or emits `control`, because no session
 adapter process exists before open. Runtime session/control evidence remains on its existing
 post-open authorities; this endpoint is deliberately narrow.
+
+### MX-FIX-1 Atomic Folded-State Stream Boundary
+
+`stream_events()` no longer performs an app-owned `current()` read followed by a later subscription.
+It opens exactly one `Projector.subscribe()` iterator, whose queue is already registered when its
+current snapshot is captured. The app remains wire-only: it aliases/serializes each projector event,
+adds `servingBuild` and `supervisorHeartbeat` to every `snapshot` event (initial or first-recovery),
+and preserves the existing event name, sequence id, and `retry=2000` framing. The iterator is wrapped
+in `contextlib.aclosing()` so disconnect/cancellation closes the inner subscription immediately.
 
 ### Logic
 
@@ -218,7 +227,9 @@ otherwise-unchanged projection look changed.
   revision only advances on stable-content change (delta.py's volatile-age-free diff), so a
   poller of an unchanged projection pays a header exchange instead of a ~780 KB parse.
 - `GET /api/stream` (`response_class=EventSourceResponse`) delegates to the module-level
-  `stream_events(projector, build=build)` so the sequence is unit-testable without an HTTP client.
+  `stream_events(projector, build=build, supervisor_heartbeat=...)`. That helper consumes one atomic
+  projector subscription; it does not read current state separately. Initial and failed-prime
+  recovery snapshots receive the same boot/heartbeat decoration before reaching the browser.
 - `GET /api/events` (`response_class=EventSourceResponse`) delegates to
   `serving.events.stream_raw_events(config, last_event_id=…)`, reading the `Last-Event-ID`
   header via `Annotated[str | None, Header()]` for exact byte-offset resume. It is a *separate*
@@ -380,12 +391,15 @@ otherwise-unchanged projection look changed.
   `GET /api/notes/{list,read}` coordination-notes routes after the change-set routes and still
   **before** `mount_static`. The handlers live in `serving/notes.py`.
 
-`stream_events(projector, *, build=None)` yields an `event:snapshot` with the full projection on
-connect — carrying `servingBuild` (the boot-time stamp from `serving/build_info.py`, resolved once
-in `create_app`; 260703-L15 stale-server visibility) when `build` is passed — then per-entity
-delta events from `projector.subscribe()`. `_encode` dumps projection nodes by alias (camelCase,
-`exclude_none`) and passes removal markers (`{key: id}`) through as-is. SSE uses built-in
-`fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`, auto keep-alive).
+`stream_events(projector, *, build=None, supervisor_heartbeat=None)` owns one atomic projector
+subscription. It serializes the initial current snapshot when available; if `prime()` left no
+projection, the same connected iterator waits and serializes the projector's first successful full
+recovery snapshot. Every snapshot is decorated identically with the optional boot-time
+`servingBuild` and connect-time `supervisorHeartbeat`; ordinary later events remain per-entity
+deltas. `_encode` dumps projection nodes by alias (camelCase, `exclude_none`) and passes removal
+markers (`{key: id}`) through as-is. `contextlib.aclosing()` explicitly closes the inner generator
+when the consumer disconnects or is cancelled. SSE uses built-in `fastapi.sse`
+(`EventSourceResponse`/`ServerSentEvent`, auto keep-alive).
 
 ### 260712-TRH-L7 refresher lifecycle wiring
 
@@ -415,6 +429,11 @@ this app.
   *enforcement* — the mutating MCP tools bind it.
 - **Two SSE channels, two resume models:** the `state` channel re-snapshots on reconnect; the
   raw `event` channel resumes by exact byte offset (`Last-Event-ID`). They stay separate.
+- **The state channel has one subscription owner:** `Projector.subscribe()` owns registration plus
+  current-snapshot capture; `app.py` only decorates and serializes its events. A state mutation
+  therefore cannot fall between an app snapshot read and subscriber registration. A failed-prime
+  recovery snapshot is wire-equivalent to an initial snapshot, and explicit iterator closure
+  releases the projector queue on disconnect/cancellation.
 - **The `/api/state` ETag is a content fingerprint, not a byte fingerprint (260703-L15):** two
   200 bodies under one revision can differ in `generatedAt` and volatile ages (recomputed at
   request time) — that is exactly the change-gating semantics, hence the WEAK ETag form. The
@@ -491,7 +510,8 @@ pass was available for this update.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The shared tick/fan-out loop the app drives (with the `now`/`before_tick` seams) + the ETag revision. | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| The shared projector owns atomic registration/snapshot capture, publish-before-notify ordering, first-recovery snapshots, and the ETag revision. | L135-L178; L207-L269 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| Deterministic serving regressions force the former handoff mutation, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The live change watcher `create_app` injects when `watch_changes` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
 | The boot-time serving build stamp injected on `/api/state` + the SSE snapshot. | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
 | The raw `event` channel `/api/events` delegates to. | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
@@ -540,6 +560,10 @@ inbox-backed bridge, and surface adapter interactions without making pane or log
 
 ## Update History
 
+- 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: documented the removal of the app-owned
+  snapshot/subscription seam, identical initial/recovery snapshot decoration, preserved SSE wire
+  contract, and explicit iterator closure on disconnect/cancellation. Verification metadata remains
+  pinned until closeout stamps the candidate commit.
 - 2026-07-18T12:43+02:00 — FEUI-L9R: documented removal of fictitious pre-session adapter state
   from the harness discovery endpoint; verification metadata remains pinned pending closeout.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the daemon's dynamic advertise,

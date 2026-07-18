@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T14:16+02:00                           |
+| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3`       |
+| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 `test_serving.py` covers the dashboard serving layer (slice 04, commits 4a + 4b): the pure
 per-entity projection diff, the shared projector's prime/current/subscribe fan-out, the SSE
-event sequence (snapshot then deltas), the FastAPI app endpoints via `TestClient`, the raw event
+event sequence (atomic current snapshot, failed-prime recovery snapshot, then deltas), explicit
+subscriber cleanup, the FastAPI app endpoints via `TestClient`, the raw event
 channel's byte-offset tail + cursor resume + heartbeat filtering + inactivity-based fresh-connect retention, sim-mode load/replay/determinism, the POST action
 skeleton, the trusted dashboard external-inbox endpoint, the shipped static-bundle resolver, and the
 umbrella `agents-remember dashboard` CLI.
@@ -36,6 +37,16 @@ build payload carries the packaged `dashboardBuild` fingerprint. Raw-event tests
 workspace mid-record realignment, malformed JSON and invalid UTF-8 advancing without retry, every
 non-object JSON family advancing without emission, beyond-EOF settling, successor streaming, exact
 cursor progression, and ready-after-valid-object ordering.
+
+### MX-FIX-1 Atomic Folded-State Stream Regressions
+
+Three async regressions pin the repaired authority boundary without timing luck. The handoff case
+pauses after the initial snapshot while the subscriber queue is already registered, publishes a
+lifecycle mutation before the next read, and requires that exact delta plus zero subscribers after
+closure. The failed-prime case registers a waiting stream while no projection exists, publishes the
+first successful state, requires one build-decorated snapshot at id `1`, republishes the identical
+state without a duplicate, then requires the next ordinary lifecycle delta at id `2`. The
+cancellation case cancels a waiting no-snapshot stream and requires immediate queue removal.
 
 ### Logic
 
@@ -56,7 +67,10 @@ latest projection — pinning `latest.version == 2` (slice 5e bumped the project
 from 1 to 2) — `subscribe()` receives a broadcast, and Task 31 proves an injected provider refresher
 runs before projection. `StreamEventsTests` (async) assert
 `stream_events` emits an `event:snapshot` then a per-entity delta, and (L15 S3) that the snapshot
-carries the injected `servingBuild` payload when a `ServingBuild` is passed. `AppTests` use `TestClient`
+carries the injected `servingBuild` payload when a `ServingBuild` is passed. MX-FIX-1 adds forced
+handoff publication, failed-prime recovery/non-duplication/later-delta, and cancellation-cleanup
+cases; each asserts the subscriber set directly so generator ownership cannot regress silently.
+`AppTests` use `TestClient`
 (lifespan-triggered prime) for `/api/state` (asserting `body["version"] == 2`, the same bumped
 schema version) and `/` (now the shipped React bundle, not the slice-04 placeholder); `StaticTests`
 assert `dashboard_static_dir`.
@@ -166,6 +180,11 @@ exercising the branch. Daemon dispatch itself is covered in `test_dashboard_daem
 The suite requires poison records to advance without emission, accepted events to remain objects,
 HTML-only revalidation, and absent build evidence to stay omitted rather than fabricated.
 
+For the folded-state stream, publication must be observed either in the already-captured snapshot
+or in the already-registered queue. First recovery must be one full build-decorated snapshot;
+identical recovery emits nothing; later content changes use normal deltas; closing or cancelling a
+consumer must leave no subscriber queue behind.
+
 ### Todos
 
 No task-independent technical debt was identified during FEUI-L9R review.
@@ -185,8 +204,9 @@ are proven by repository source and the test suite itself.
 | --- | --- | --- |
 | The pure diff under test. | — | [serving/delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
 | The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The projector (with `now`/`before_tick`) under test. | — | [serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| The app + `stream_events` + `/api/events` + `/api/actions` under test. | — | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | L135-L178; L207-L269 | [serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| The app consumes one projector iterator, decorates every snapshot, preserves SSE framing, and explicitly closes the subscription. | L181-L203; L702-L707 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The raw event tail under test. | L125-L277 | [serving/events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
 | The inactivity-based raw event retention helper under test. | — | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
 | The raw retention regressions: dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | — | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
@@ -213,6 +233,10 @@ No meaningful cross-repository implementation source governs this repository-loc
 
 ## Update History
 
+- 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: documented deterministic coverage for the
+  atomic snapshot/subscription handoff, failed-prime first-recovery snapshot plus build identity,
+  identical-state non-duplication, ordinary later delta, and close/cancellation queue cleanup.
+  Verification metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-18T12:43+02:00 — FEUI-L9R: captured HTML/build-identity assertions and the complete raw
   event cursor/invalid-record/non-object stream matrix; verification metadata remains pinned pending
   candidate closeout.

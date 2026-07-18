@@ -5,25 +5,34 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-12T20:24+02:00                         |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`     |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-18T14:16+02:00                         |
+| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3`     |
+| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
 | governingOverview      | `overview.md`                                  |
+
+## Governing Overview
+
+[serving route overview](overview.md)
 
 ## Purpose
 
 `projector.py` is the single shared projection loop fanned out to every SSE client: it ticks
-`project_and_write`, diffs each new projection against the last on their *stable forms*
-(260703-L15), and broadcasts per-entity deltas. N clients cost one re-projection per tick — what
-makes the single multiplexed EventSource scale. Two seams (`now`, `before_tick`) keep it generic
-across live and sim (4b). Because the diff ignores volatile ages, the sequence counter only
-advances on real content changes — making `revision` a truthful `/api/state` ETag fingerprint.
-Since **260712-PTS-L3** the pacemaker is adaptive: with an injected `change_watcher` the loop wakes
-on debounced input changes or an idle heartbeat instead of an unconditional `sleep(interval)` — a
-quiet daemon idles near zero CPU (py-spy 2026-07-12 had `_tick_sync` at 11.1s of a 15s sample under
-the old 1s always-tick) while the tick body stays byte-identical.
+`project_and_write`, derives snapshot or per-entity events from each successful projection, commits
+the `(sequence, projection)` authority, and only then notifies every registered SSE subscriber. N
+clients still cost one re-projection per tick. The subscriber boundary is now atomic as well:
+registration and current-snapshot capture happen with no await between them, so a transition is
+either present in the captured snapshot or queued for that subscriber, never lost between two
+owners. If `prime()` failed, the first successful tick publishes one full recovery snapshot before
+ordinary stable-form deltas resume; an identical later projection emits nothing.
+
+Two seams (`now`, `before_tick`) keep the loop generic across live and sim. Because the stable-form
+diff ignores volatile ages, the sequence advances only on real content changes and remains a
+truthful `/api/state` ETag component. Since **260712-PTS-L3** an injected `change_watcher` wakes the
+loop on debounced input changes or an idle heartbeat; without one, fixed-interval pacing remains.
 
 ## Code Commentary
+
+### Logic
 
 `Projector(config, *, interval=1.0, heartbeat=None, now=None, before_tick=None,
 provider_refresher=None, landing_refresher=None, change_watcher=None)` holds the
@@ -42,11 +51,10 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
   `heartbeat` when not `None`, else `DEFAULT_HEARTBEAT_SECONDS`; the wait's return value lands in
   `last_wake_reason`),
   otherwise the exact legacy `await sleep(interval)` — then `_tick_sync(self._now())` in a worker
-  thread, compute the new tick's `stable_projection_state` ONCE, `diff_projection` against the
-  previous with both cached stable forms, bump the sequence per delta and `_broadcast`, then
-  publish `(seq, current)` as ONE tuple. A broad `except` around the tick keeps one bad read
-  from killing the loop; `projection_count` increments per successful projection (R7 tests + ops
-  instrumentation, alongside `last_wake_reason`: `"change"`/`"heartbeat"`/`"interval"`).
+  thread and hand the successful projection to `_publish_projection()`. A broad `except` around the
+  tick keeps one bad read from killing the loop; `projection_count` increments per successful
+  projection (R7 tests + ops instrumentation, alongside `last_wake_reason`:
+  `"change"`/`"heartbeat"`/`"interval"`).
 - **Watch-task lifecycle (260712-PTS-L3)** mirrors the landing-refresher task: `run()` starts
   `self._change_watcher.run(self._pacer)` as a task, and shutdown cancels-and-awaits both through
   the shared `_shutdown_task` helper (a stored exception from an already-dead task is logged, never
@@ -60,22 +68,38 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
   previous snapshot would hand a poller a stale body under a fresh ETag).
 - `_tick_sync(moment)` (off the loop thread) runs `before_tick(moment)` if set, then returns
   `project_and_write(config, now=moment, provider_refresher=...)`.
-- `current()` returns the published `(seq, latest)` for a new connection's snapshot.
+- `_publish_projection(current)` is the only successful-tick publication boundary. It computes the
+  stable state and event batch first, emits a full `snapshot` only when prior authority is absent,
+  increments sequence numbers, commits `_latest_stable` and `_published`, then broadcasts the
+  prepared items. Because the method contains no await, a subscription cannot interleave between
+  commit and notification.
+- `current()` returns the atomically published `(seq, latest)` for `/api/state` and revision reads.
 - `revision(seq)` returns `"{boot_id}-{seq}"` — the opaque content fingerprint `/api/state`
   serves as its weak ETag. The boot nonce (`uuid4().hex[:12]`) exists because seq restarts at 0
   on every process start: without it a client holding `"…-0"` from the previous process would
   304 against different content.
-- `subscribe()` is an async generator: it registers a fresh queue, yields `(seq, delta)` items,
-  and discards the queue in `finally` when the consumer stops.
+- `subscribe()` is the complete SSE subscription authority: it registers a fresh queue and captures
+  `_published` in the same event-loop activation, yields the captured projection as a `snapshot`
+  when present, then drains queued events. Its `finally` discards exactly that queue when the
+  consumer closes or is cancelled.
 
 ### 260712-TRH-L7 projector/observer boundary
 
 `Projector.run` starts the bounded refresher once, passes its current snapshot into each local projection tick, and cancels it during shutdown. A stored refresher exception is logged rather than replacing the projector cancellation path.
 
-## Invariants And Boundaries
+### Invariants And Boundaries
 
 - **One re-projection per tick**, regardless of client count (fan-out, not per-connection
   projection); since L15 also **one stable dump per tick** (the previous tick's is cached).
+- **No snapshot/subscription handoff gap.** Queue registration precedes `_published` capture with no
+  await, so each state transition is observed exactly through the captured snapshot or that queue.
+- **First recovery is full authority, not an empty diff.** A successful tick after failed `prime()`
+  emits one full snapshot; publishing the identical recovered state emits nothing, and later real
+  changes return to named deltas.
+- **Publish before notify.** `_latest_stable` and `_published` commit before any subscriber queue is
+  notified, keeping `/api/state`, later subscribers, and existing subscribers on one authority.
+- **Subscriber cleanup is explicit.** The generator's `finally` removes the exact queue on ordinary
+  close or cancellation; the app owns outer closure with `contextlib.aclosing()`.
 - **seq advances only on content change** — the stable-form diff makes the sequence a content
   revision; volatile-age-only ticks broadcast nothing and mint no new revision.
 - **Reads only through `McpRuntimeConfig`** (NS #5) — `project_and_write` owns path resolution;
@@ -93,18 +117,54 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
   LOUDLY to the legacy fixed-interval ticking — fail-open, never fail-silent, never a crash.
 - The diff lives in `delta.py` (pure); this module only orchestrates, caches, and broadcasts.
 
+### Conventions
+
+Projection/event computation stays synchronous after the off-loop read so subscription activation
+and publication each have one non-interleavable event-loop boundary. Per-subscriber queues are
+unbounded under the existing local fan-out contract; `_broadcast()` therefore remains a
+non-awaiting notification step rather than a second publication owner.
+
+### Todos
+
+No task-independent follow-up was identified during MX-FIX-1 review.
+
+## Docs References
+
+The resolved Domain Documentation registry has no entries. This module's atomicity and recovery
+contracts are repository-owned and are proven by source plus deterministic tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation was available for this repository-local projector update. | — | — |
+
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The tick entry it drives (read → fold → atomic write), accepting the `now` seam. | [observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The pure stable-form diff it broadcasts + the volatile field set. | [delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
-| The change-driven pacing pieces (260712-PTS-L3): the `ChangePacer` this loop awaits, the `ChangeWatch` protocol seam, and the live `ProjectionInputWatcher`. | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| The adaptive-projector regressions (L212-L387): heartbeat-only quiet world, debounce-bounded change latency, burst coalescing, loud degrade on missing wheel/crashed watcher, watch-task lifecycle ownership, and legacy pacing without a watcher. | [test_change_watcher.py](agents-remember/mcp/tests/test_change_watcher.py) |
-| The app that starts/stops the loop, subscribes connections, and serves `revision` as the ETag. | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The sim clock + feeder that drive the `now`/`before_tick` seams. | [sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
+The projector sits between the observer read/fold and the app's wire decoration. The source and
+regression suite below prove the ordering rather than relying on timing observations.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | L149-L178; L207-L234 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | L253-L269 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. | L181-L203 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | L1-L216 | [delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
+| The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | L1-L184 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| Change-driven pacing remains owned by `ChangePacer`/`ChangeWatch`; it changes wake timing, not publication semantics. | L1-L345 | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
+
+## Cross-Repo References
+
+No neighboring repository or external service governs this in-process publication boundary.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reviewed projector, app, and tests are wholly repository-local. | — | — |
 
 ## Update History
+- 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: documented the single-owner atomic
+  subscribe-and-snapshot boundary, compute-then-publish-then-notify ordering, one full first-recovery
+  snapshot, identical-recovery suppression, ordinary later deltas, and explicit cancellation
+  cleanup. Verification metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: the unconditional `sleep(interval)` pacemaker became
   change-or-heartbeat waking when a `change_watcher` is injected (`ChangePacer` built with
   `heartbeat` when not `None`, else `DEFAULT_HEARTBEAT_SECONDS`; no watcher ⇒ exact legacy pacing,

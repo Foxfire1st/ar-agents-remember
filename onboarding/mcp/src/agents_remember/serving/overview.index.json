@@ -179,7 +179,7 @@
     "launch"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L9 establishes structure rather than a live endpoint path: consumers validate hostile normalized products through `conversation/models.py`; future active and library implementations must satisfy their separate read ports and cursor purposes; future mutations stay on the control router. The root composition is mounted once beside existing harness-control routes. The locked repository helper and redacted installed-runtime fixtures are compatibility evidence only and may not promote a capability by being present. 260715-FEUI-L5 reliable submission enters one bridge-generation autho...",
+    "summary": "For folded-state stream convergence, start at `projector.py::_publish_projection` and `Projector.subscribe`, then follow `app.py::stream_events` into `test_serving.py::StreamEventsTests`. Publication commits before notification, subscription registers before snapshot capture, failed-prime recovery emits one full snapshot, and iterator closure owns subscriber cleanup. 260715-FEUI-L9 establishes structure rather than a live endpoint path: consumers validate hostile normalized products through `conversation/models.py`; future active and library implementations must satisfy their separate read...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/conversation",

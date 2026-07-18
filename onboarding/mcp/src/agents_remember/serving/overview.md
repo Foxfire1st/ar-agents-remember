@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T14:16+02:00 |
+| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3`|
+| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -24,6 +24,16 @@ discovery to `id`/`name`/`detected`. Raw event cursors realign to server-owned r
 advance past malformed, undecodable, blank, heartbeat, and non-object records; accepted top-level
 objects are parsed once and reused by SSE. Dashboard-owned tmux clients strip inherited tmux
 identity and force the browser PTY grammar while preserving unrelated environment settings.
+
+### Current MX-FIX-1 folded-state stream repair
+
+The state SSE channel now has one projector-owned activation and publication contract.
+`Projector.subscribe()` registers a queue before capturing current authority, so a concurrent
+projection is either in that snapshot or in the registered queue. `_publish_projection()` computes
+the event batch, commits stable/current state, then notifies subscribers; the first successful tick
+after failed `prime()` emits one full snapshot, an identical recovered state emits nothing, and
+later changes use ordinary named deltas. `app.stream_events()` only decorates/serializes that stream
+and explicitly closes the subscription on disconnect or cancellation.
 
 ### Current L9 structured-conversation contract
 
@@ -146,6 +156,12 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+For folded-state stream convergence, start at `projector.py::_publish_projection` and
+`Projector.subscribe`, then follow `app.py::stream_events` into
+`test_serving.py::StreamEventsTests`. Publication commits before notification, subscription
+registers before snapshot capture, failed-prime recovery emits one full snapshot, and iterator
+closure owns subscriber cleanup.
 
 260715-FEUI-L9 establishes structure rather than a live endpoint path: consumers validate hostile
 normalized products through `conversation/models.py`; future active and library implementations
@@ -290,10 +306,11 @@ body-free for task documents.
 `project_and_write` — since **260712-PTS-L3** on change-or-heartbeat wakes when the live change
 watcher is healthy (`--interval` is the fast-path cadence floor a busy world still ticks at;
 `--heartbeat`, default 15s, is the quiet-world refresh) and on the legacy fixed `--interval`
-under `--sim` or a degraded watcher — refreshing provider current-state first in live mode, then diffs each
-projection against the last
-(`serving.delta.diff_projection`), and fans **per-entity deltas** out to every SSE
-client. Beside the projector task, the same lifespan runs the **provider containment
+under `--sim` or a degraded watcher — refreshing provider current-state first in live mode, then
+hands each successful projection to one publication boundary. That boundary derives either a
+first-recovery snapshot or `serving.delta.diff_projection` events, commits stable/current
+authority, and only then fans events out to every registered SSE client. Beside the projector task,
+the same lifespan runs the **provider containment
 metrics sampler** (260707-HFX-L1, containment R4): every 30s
 (`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the projection tick)
 it snapshots labeled provider containers read-only
@@ -306,8 +323,10 @@ iteration, in the same exception-tolerant `try` block, now also calls
 record — no separate task, no separate cadence; the degradation detector's durable
 events/state/inbox-alerts/critical-failsafe live entirely in `providers/degradation.py` (governed
 by the `mcp/` package overview), this route's `app.py` only wires the one extra call into the
-loop it already owns. `GET /api/stream` emits `event:snapshot` then per-entity `lifecycle`/`enclosure`/
-`provider`/`metrics`/`analytics` (and `*.removed`) events; `GET /api/state` returns the
+loop it already owns. `GET /api/stream` consumes one atomic projector subscription: it emits the
+captured current `event:snapshot`, or waits for one full first-recovery snapshot when prime failed,
+then per-entity `lifecycle`/`enclosure`/`provider`/`metrics`/`analytics` (and `*.removed`) events;
+`GET /api/state` returns the
 projection once; `GET /api/events` tails the raw `ar-observer-event/v1` log with physical byte-offset
 resume for lifecycle sources and lock-consistent virtual byte offsets for the live-compacted workspace
 source (`serving.events`), doing one retained-backlog scan per connect,
@@ -417,7 +436,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `If-None-Match` weak-matches → `304` empty-body via `_if_none_match_matches`, and the body
   carries the boot-time `servingBuild` stamp),
   `GET /api/stream` (the `state` SSE endpoint, delegating to the testable
-  `stream_events(projector, build=…)` — the snapshot carries `servingBuild` too),
+  `stream_events(projector, build=…)` — it consumes one atomic projector subscription, decorates
+  both initial and first-recovery snapshots with `servingBuild`/supervisor identity, preserves
+  delta framing, and explicitly closes the iterator on disconnect/cancellation),
   `GET /api/events` (the raw channel, delegating to `stream_raw_events`; fresh
   connections start from lifecycle-aware retained offsets while valid
   `Last-Event-ID` cursors still resume exactly and emit a backend `ready` event after retained replay),
@@ -493,9 +514,13 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   settings key) never pulls the serving stack into MCP startup.
 - `projector.py` — `Projector`: owns the atomically-published `(seq, projection)` tuple, the
   previous tick's stable form, a boot nonce, and the subscriber fan-out. `prime()`, `run()`
-  (tick: re-project → ONE stable dump → stable diff → broadcast → publish), `current()`,
+  (tick: re-project → compute snapshot/delta batch → commit stable/current authority → notify),
+  `_publish_projection()`, `current()`,
   `revision(seq)` (the `"{boot}-{seq}"` content fingerprint behind the `/api/state` ETag — seq
-  only advances on stable-content change since L15), `subscribe()`. The `now`/`before_tick`
+  only advances on stable-content change since L15), `subscribe()` (register queue and capture the
+  current snapshot without an await, then drain that queue with `finally` cleanup). A failed
+  `prime()` recovers by sending one full snapshot to already-connected subscribers; identical
+  recovery does not duplicate and later changes return to ordinary deltas. The `now`/`before_tick`
   seams + `_tick_sync(moment)` keep one loop generic across live and sim. Live projectors can
   pass a provider refresher into the observer store; sim projectors keep fixture state
   deterministic by omitting it. One re-projection per tick regardless of client count.
@@ -871,6 +896,12 @@ current hosted-session authority.
   valid cursor, while fresh connections do one retained-backlog scan, stream that bounded backlog in
   chunks (heartbeats filtered, no whole-history materialization) instead of replaying every
   historical raw row, and then emit a `ready` marker. They stay separate.
+- **One atomic activation/publication owner for folded state.** The projector registers each
+  subscriber before capturing its current snapshot, computes each successful tick's event batch
+  before mutation, commits `_latest_stable`/`_published` before notification, and removes the exact
+  queue on close/cancellation. A failed-prime `None → success` transition emits one full snapshot;
+  an identical recovered state emits nothing; later content changes use the normal delta grammar.
+  The app decorates this authority but never performs a second current-state handoff.
 - **Sim is a seam, not a fork.** Only `now` + `coordination_root` differ from live, so the
   SSE output is byte-identical and replay is deterministic.
 - **Containment metrics are observation, not control (260707-HFX-L1 R4).** The lifespan's
@@ -941,6 +972,14 @@ neighboring repository governs this route.
 | Three owned child routers compose beneath one stable root and one explicit registration function. | L1-L24 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The existing harness-control application factory mounts the conversation root once. | L1-L396 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 
+### Current MX-FIX-1 folded-state evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Projector publication computes events, commits authority, and then notifies; subscription activation registers before snapshot capture and cleans up in `finally`. | L207-L269 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| App streaming consumes one iterator, decorates every snapshot, preserves event/id/retry framing, and owns explicit closure. | L181-L203 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| Deterministic regressions force handoff publication, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+
 ### Legacy route map
 
 | Finding | Source Path |
@@ -995,6 +1034,12 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: refreshed the serving route for one atomic
+  projector subscription/publication owner, publish-before-notify ordering, one full failed-prime
+  recovery snapshot with identical-state silence, ordinary later deltas, and explicit iterator/
+  subscriber cleanup. Root and `mcp/` ancestors were inspected and remain accurate at their
+  public-surface granularity. Verification metadata remains pinned until closeout stamps the
+  candidate commit.
 - 2026-07-18T12:43+02:00 — FEUI-L9R: added packaged-client identity, HTML revalidation, narrow
   pre-session discovery, record-safe raw cursor semantics, and owned tmux-client environment.
   Verification metadata remains pinned pending candidate closeout.
