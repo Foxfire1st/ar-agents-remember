@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-18T10:55+02:00 |
+| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
+| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,8 @@
 Defines the harness-neutral daemon request/response boundary for pre-session advertise,
 complete-pair launch selection, exact-session capability reads and model/effort sets, reliable
 whole-message submit, and same-request reconciliation. It freezes the server contract later UI and
-settings work may consume without implementing those surfaces here.
+settings work may consume without implementing those surfaces here. FEUI-L9 also makes this the
+single global mounting seam for the independently owned structured-conversation child routers.
 
 ## Code Commentary
 
@@ -35,6 +36,11 @@ Live routes first require a catalog row that is running and still alive, then re
 control endpoint. Capability and setter calls go through the exact-session client. Submit sends the
 entire message plus caller request id through `submit_control_prompt`; reconcile queries the same id.
 Setter domain outcomes remain HTTP 200 as normalized `SetResult` evidence.
+
+Before defining its harness-control endpoints, the registration function mounts the one composed
+structured-conversation root. The root owns active, native-library, and control child routers; all
+three are behavior-empty in L9. This two-line import/call is the only shared application
+registration edit, so later child owners do not collide in `app.py` or this module.
 
 Submit and reconciliation use public serializers that retain normalized correlation, timestamps,
 acceptance/state, and detail while omitting adapter-private `raw`. Transport/discovery unavailability
@@ -58,6 +64,8 @@ already uses them (`requestId`). Vendor-specific response shapes never cross thi
   auth payloads.
 - This module has no vendor branching, UI code, settings mutation, ACP transport, or Toad host.
 - Existing role-based spawn and durable inter-agent bus routes remain separate and intact.
+- Structured-conversation child routes mount exactly once through the package root; this module
+  does not implement their projector, native-history, control, or renderer behavior.
 
 ### Todos
 
@@ -84,6 +92,8 @@ boundaries rather than duplicating their policy.
 | Public serializers deliberately omit the internal raw evidence mapping. | L251-L296 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The app registers these routes and feeds complete launch selection into the one shared opener. | L946-L1049; L1337-L1348 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | L103-L252 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| The structured-conversation root composes active, library, and control ownership behind one registration function. | L7-L24 | [conversation/router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
+| The foundation suite pins this file as the sole global conversation registration seam. | L50-L60 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 
 ## Cross-Repo References
 
@@ -102,6 +112,10 @@ conflicts return 409 before lifecycle disclosure; only the exact pre-dispatch ce
 retry-safe 503, while possible-write loss remains unknown. The prior frontend-submit todo is closed.
 
 ## Update History
+
+- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the single structured-conversation
+  root registration seam and the intentional absence of child behavior. Existing source
+  verification remains pinned to committed truth; closeout owns the candidate stamp.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented authority/status/withdraw routes, epoch/privacy
   gates, 64-id bounds, conflicts, and the sole retry-safe certificate.

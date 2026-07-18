@@ -15,6 +15,11 @@
       "index": "mcp/tests/overview.index.json"
     },
     {
+      "route": "mcp/native_helpers/conversation_library",
+      "overview": "mcp/native_helpers/conversation_library/overview.md",
+      "index": "mcp/native_helpers/conversation_library/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/controllers",
       "overview": "mcp/src/agents_remember/controllers/overview.md",
       "index": "mcp/src/agents_remember/controllers/overview.index.json"
@@ -235,9 +240,9 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 654,
+    "sourceFilesInScope": 674,
     "fileSidecars": 142,
-    "childRoutes": 16
+    "childRoutes": 17
   },
   "routingTerms": [
     "adopt",
@@ -287,6 +292,7 @@
     "controllers",
     "controlplane",
     "conversation",
+    "conversation_library",
     "coordination",
     "coordination_context",
     "coordination_context_resolver",
@@ -318,14 +324,14 @@
     "facts",
     "file",
     "files",
-    "filesystem",
-    "findings"
+    "filesystem"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L5 routes exact-session submit/reconcile/status/withdraw through the daemon and private IPC into one epoch-bound authority. Async adapter preflight precedes a lock-linearized final write claim; Codex, Claude, and Pi dispatch now without native queues. Direct exact-ref completion reaches authority before coalesced publication, early terminal truth can dominate unknown, and bounded retention never evicts live/active/unknown work. Public responses remain cockpit-only/raw-free; post-write loss remains ambiguous and reconciles under the same request id. 260714-ACPUI-L4 freezes the pa...",
+    "summary": "260715-FEUI-L9 is a contract/foundation path, not yet a runtime projection path. Python consumers validate normalized products and address separate active/library cursors through the new serving route. The repository-only native helper and three installed-runtime fixtures supply redacted, non-enabling evidence. Hostile contract tests and topology tests fail closed on provenance, identity, generation, contradictory status/capability state, router drift, helper path drift, and fixture promotion. 260715-FEUI-L5 routes exact-session submit/reconcile/status/withdraw through the daemon and privat...",
     "candidateHints": [
       "mcp",
       "mcp/tests",
+      "mcp/native_helpers/conversation_library",
       "mcp/src/agents_remember/controllers",
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/memory_quality",
@@ -346,8 +352,7 @@
       "mcp/requirements.txt",
       "mcp/src/agents_remember/benchmarks",
       "mcp/src/agents_remember/benchmarks/runner.py",
-      "mcp/src/agents_remember/cli",
-      "mcp/src/agents_remember/cli/__main__.py"
+      "mcp/src/agents_remember/cli"
     ],
     "anchorHints": [
       "README.md",

@@ -3,15 +3,28 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| sourceRoute | mcp/tests |
-| doc_type | route-local-overview |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| sourceRoute | `mcp/tests/` |
+| doc_type | `route-local-overview` |
+| lastUpdated | 2026-07-18T10:55+02:00 |
+| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
+| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
+| governingOverview | `../overview.md` |
+
+## Governing Overview
+
+[mcp overview](../overview.md)
 
 ## Purpose
 
 L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
+
+260715-FEUI-L9 adds the stable structured-conversation contract gate. The contract suite uses
+hostile sibling-product matrices to pin purpose-bound cursors, exact provenance, canonical status,
+evidence-backed capabilities, operation identity/rollback, authoritative queued withdrawal
+recovery, attachments, metrics, and fixture non-promotion. The foundation suite separately pins
+exactly two read ports, three behavior-empty owned child routers, one global registration seam,
+repository-only native-helper resolution, and redacted installed-runtime fixtures. These tests do
+not claim a projector, native-history implementation, control service, or renderer exists.
 
 260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
@@ -66,6 +79,12 @@ without the injected snapshot, cache retention bounded to live contracts, chmod-
 utime-pinned-rewrite invalidation via ctime, and parse failures retried every build.
 
 ## Hot Path Summary
+
+260715-FEUI-L9 centers `test_conversation_contracts.py` for semantic authority and
+`test_conversation_foundation.py` for package/router/helper/fixture topology. The three
+`fixtures/conversation_runtime/*.json` files are allow-listed installed observations with
+`enablesCapabilities:false`; exact versions and observed counts are evidence, never maintained
+feature declarations. Helper protocol behavior is also covered in its own Node test package.
 
 260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness,
 dispatch/withdraw races, early terminal completion, full-ref id reuse, ordering, idempotency/source-
@@ -166,15 +185,39 @@ L4 regression coverage proves exact-session readiness and dispatch, catalog writ
   raw-free and terminal records do not retain full prompt text.
 - Live smokes are credential-safe, explicit opt-in evidence for installed harnesses. Deterministic
   protocol truth remains in fake/stdio tests.
+- Structured-conversation tests preserve separate active/library cursors and ports, exact
+  authorization/identity/generation binding, and fail closed on contradictory state products.
+- Runtime fixtures and locked helper packages are evidence surfaces only; neither enables history
+  or control capability without a production-seam pass.
+
+## Docs References
+
+The resolved Domain Documentation registry has no entries. This route uses direct repository code,
+fixtures, and tests and makes no external behavioral claim from dependency names alone.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation was available for this test-route update. | — | — |
+
+## Cross-Repo References
+
+The structured-conversation contract and helper/fixture tests execute entirely inside
+`agents-remember`; no neighboring repository governs them.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
-| Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Public API epoch/conflict/certificate/privacy/status matrix. | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Native adapter exact-operation coverage. | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py); [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py); [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
+| Foundation coverage pins two ports, three empty child routers, one registration seam, exact helper resolution, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | L1-L687 | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
+| Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | L1-L1180 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Public API epoch/conflict/certificate/privacy/status matrix. | L1-L700 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Native adapter exact-operation coverage is split by harness. | L1-L1 | [Claude tests](agents-remember/mcp/tests/test_harness_control_claude.py); [Codex tests](agents-remember/mcp/tests/test_codex_app_server_adapter.py); [Pi tests](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
 
 ### 260713-PHA-L5 Route Contract Review
 
@@ -184,6 +227,10 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the hostile normalized-contract
+  matrix, exact two-port/three-router topology, repository-only helper resolution, and redacted
+  non-enabling runtime fixtures. Added current governing/reference structure; verification remains
+  pinned to committed source truth until closeout stamps the candidate.
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: added the authoritative submit/withdraw
   adversarial matrix, exact-ref and early-completion proofs, safe-retry/first-byte split, raw-free
   status/API bounds, native no-queue guarded-write semantics, and retention/privacy invariants after

@@ -8,7 +8,13 @@
   "sourceScope": [
     "mcp/src/agents_remember/serving/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/serving/conversation",
+      "overview": "mcp/src/agents_remember/serving/conversation/overview.md",
+      "index": "mcp/src/agents_remember/serving/conversation/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "mcp/src/agents_remember/serving/__init__.py",
     "mcp/src/agents_remember/serving/actions.py",
@@ -86,9 +92,9 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 74,
+    "sourceFilesInScope": 84,
     "fileSidecars": 74,
-    "childRoutes": 0
+    "childRoutes": 1
   },
   "routingTerms": [
     "actions",
@@ -127,6 +133,7 @@
     "codex_app_server_state",
     "configuration",
     "control",
+    "conversation",
     "daemon",
     "delivery",
     "delta",
@@ -169,13 +176,13 @@
     "interactions",
     "ipc",
     "landing",
-    "launch",
-    "leaf"
+    "launch"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L5 reliable submission enters one bridge-generation authority. Async native preflight is followed by a lifecycle-lock claim and final adapter write guard; a queued withdrawal and dispatch compete at that exact point. Each prompt/model/effort operation is identified by epoch + monotonic sequence + id + kind. Direct adapter completion reaches authority before coalesced publication and can dominate a later unknown receipt when the ref is exact. Cockpit status/withdraw are raw-free, epoch-gated, and batched to 64 ids. Timeline/duplicate retention is bounded (64/256 defaults) without...",
+    "summary": "260715-FEUI-L9 establishes structure rather than a live endpoint path: consumers validate hostile normalized products through `conversation/models.py`; future active and library implementations must satisfy their separate read ports and cursor purposes; future mutations stay on the control router. The root composition is mounted once beside existing harness-control routes. The locked repository helper and redacted installed-runtime fixtures are compatibility evidence only and may not promote a capability by being present. 260715-FEUI-L5 reliable submission enters one bridge-generation autho...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
+      "mcp/src/agents_remember/serving/conversation",
       "mcp/src/agents_remember/serving/__init__.py",
       "mcp/src/agents_remember/serving/actions.py",
       "mcp/src/agents_remember/serving/app.py",
@@ -197,8 +204,7 @@
       "mcp/src/agents_remember/serving/delta.py",
       "mcp/src/agents_remember/serving/dispatch_brief.py",
       "mcp/src/agents_remember/serving/events.py",
-      "mcp/src/agents_remember/serving/files.py",
-      "mcp/src/agents_remember/serving/harness_adapters.py"
+      "mcp/src/agents_remember/serving/files.py"
     ],
     "anchorHints": [
       "__init__.py",
