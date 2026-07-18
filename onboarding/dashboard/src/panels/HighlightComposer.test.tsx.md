@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/HighlightComposer.test.tsx`|
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -21,28 +21,32 @@ the box); clicking it opens the composer; then the target rule — open chats + 
 harness; Enter sends to the default (an open chat, or the first detected harness — not a shell). Task 11
 adds selected-lifecycle target filtering/tagging coverage. L8 (as corrected by L8-r1) covers the direct
 leaf-chat branch as a pill-click behavior: the pill stays visible and nothing pastes on selection alone;
-clicking it draft-pastes into the matching leaf session without showing the generic picker, an
-unconfirmed direct paste opens the composer, and off-leaf selections still fall back to the picker.
+clicking it reliably submits to the matching leaf session without showing the generic picker, a
+non-accepted result opens/retains the composer, and off-leaf selections still fall back to the picker.
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Failed-Create Regression
+
+Create mocks now return an accepted server-row result rather than a bare id. The added network
+failure case proves visible `session open network` copy and zero readiness or submit calls, so a
+failed create cannot be treated as a deliverable target.
 
 ### Logic
 
 `vi.mock("../data/selection")` feeds a fixed `useSelectionCapture` (`{ selection, clear }`, or `null`);
 `vi.mock("../data/sessions")` keeps the real `sessionStore`/`useSessions` but spies
-`createSession`/`deliverToSession`; `vi.mock("../data/terminal")` stubs `fetchHarnesses` (claude+codex
+`createSession`; `vi.mock("../data/submitClient")` controls readiness, submit, retry, and reconcile;
+`vi.mock("../data/terminal")` stubs `fetchHarnesses` (claude+codex
 detected, pi not). Seeds the store per case, renders `<HighlightComposer>`, and asserts: nothing renders
 without a selection; a selection raises the **Add to chat** pill, then clicking it opens the composer;
-the target control offers a create option per *detected* harness (＋ Claude Code / ＋ Codex / ＋ Terminal,
-not pi); with **no** chat open Enter creates the default detected harness
-(`createSession("Claude Code","harness","claude")`) and sends; picking ＋ Codex targets `codex`; with a
-chat open Enter sends to it (and `setActive`s + `clear`s). Task 11 cases assert that a create target
-receives the selected lifecycle id and that open-chat targets are filtered to the selected lifecycle.
-L8 cases mock `pasteDraftToSession`, hydrate a leaf-keyed session, and assert that matching
-`selection.leafKey` + `viewedLeafKey` + `leafChatActive` bypasses `deliverToSession`, hides
-`highlight-add-to-chat`, draft-pastes the context block, and clears only after confirmation. A paired
-mismatch case proves the generic composer remains available when selected text belongs to another leaf.
-The package arg is asserted via `stringContaining` the selection text.
+the target control offers a create option per *detected* harness (＋ Claude Code / ＋ Codex, not pi or
+a raw terminal); with **no** chat open Enter creates the default detected harness, waits for submission
+readiness, and submits with `source: "highlight"`; picking ＋ Codex targets `codex`; an existing chat
+submits directly. Task 11 cases assert lifecycle-tagged creation and target filtering. Direct-branch
+cases hydrate a leaf-keyed harness, assert the pill click calls `submitSessionText` with the context
+package, and prove only accepted/queued truth clears and routes; rejected, route-error, and unresolved
+endgame states preserve prior route, selection, and operator draft.
 
 ### Conventions
 
@@ -54,6 +58,10 @@ is reset in `beforeEach`/`afterEach`.
 
 Logic + render only — no real selection, no xterm, no backend (the session effects are spies). The
 pure selection rules live in `data/selection.test.ts`.
+
+### Todos
+
+No task-independent technical debt was identified during MX-FIX-2 review.
 
 ## Docs References
 
@@ -68,7 +76,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The composer under test. | — | [HighlightComposer.tsx](HighlightComposer.tsx) |
-| The mocked inject seam, draft-paste seam, and create helper. | — | [data/sessions.ts](../data/sessions.ts) |
+| The accepted-row create helper and routed session store. | — | [data/sessions.ts](../data/sessions.ts) |
+| The mocked reliable readiness, submission, retry, and reconcile seam. | — | [data/submitClient.ts](../data/submitClient.ts) |
 
 ## Cross-Repo References
 
@@ -92,6 +101,10 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: updated create mocks to the authoritative result and
+  pinned visible failed-create handling with no readiness wait or submission. Verification metadata
+  remains pinned until closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

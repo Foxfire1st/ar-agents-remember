@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,12 +20,19 @@ The browser half of Mode B2 (slice 6e): a thin, **xterm-agnostic** WebSocket cli
 terminal bridge at `/api/terminal/{session}`. It writes raw PTY bytes into an injected
 `TerminalSink` and never imports xterm, so the protocol logic unit-tests against a fake socket —
 the mirror of the backend's pure `_apply_terminal_input`. `panels/Terminal.tsx` owns the actual
-xterm rendering. It also carries the terminal opener, durable-session hydration, explicit
-termination, and compatibility harness-fetch facades. Strict pre-session harness validation and
+xterm rendering. It re-exports the sole terminal opener from `terminalOpen.ts`, and carries
+durable-session hydration, explicit termination, and compatibility harness-fetch facades. Strict pre-session harness validation and
 result classification now belong to `harnessCatalog.ts`; the chooser's request lifetime belongs to
 `useHarnessCatalogRead.ts`.
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Authoritative Open Split
+
+The old boolean, best-effort opener and its dev-bench fail-open comment were removed. This module
+now re-exports `openTerminalSession`, its discriminated result/failure types, and stable failure copy
+from `terminalOpen.ts`; it does not retain a second POST implementation. Transport/WebSocket,
+catalog reads, attach, terminate, and cleanup responsibilities remain here unchanged.
 
 ### FEUI-L9R Reviewed Candidate Delta
 
@@ -78,19 +85,17 @@ page/dashboard refresh without treating the session list as projected lifecycle 
 `fetchTerminalSessionsOrNull(base)` uses the same endpoint but returns `null` on non-ok/network failure;
 `Chats` uses that variant for cross-tab refresh so a successful empty catalog can clear remote-ended rows
 without a transient fetch failure wiping local state.
-`openTerminalSession(id, kind, base, harness?, options?)` (slice 6e-2a/6e-2b) is a best-effort
-`POST /api/terminal/{id}` asking the server to **spawn + own** the session (the command is
-server-resolved from `kind` + the `harness` id, never sent — `kind="harness"` posts `{kind,harness}`);
-the optional `options` object sends the friendly label, `lifecycleId`, and (slice L5) `leafKey` so the
-backend catalog can persist the same identity the store will hydrate later — `leafKey` claims a leaf at
-open (the opener returns `409` when a different running chat already owns it). The caller then opens the
-socket — best-effort because the dev bench has no backend yet renders its mock.
+`openTerminalSession(id, kind, base, harness?, options?)` is re-exported from `terminalOpen.ts`, the
+sole `POST /api/terminal/{id}` authority. It returns a discriminated opened/failed result, validates
+the exact id/kind/harness identity, and exposes the accepted server row; callers may not open a
+socket or materialize local state from request truth alone. The dev bench answers that same HTTP
+contract through its explicit injector rather than selecting a local-success fallback.
 **(260715-FEUI-L3 R5)** `OpenTerminalOptions` also carries the launch pair — optional `model` +
 `effort` threaded into the POST body: a COMPLETE pair or neither knob (a partial pair is refused
 synchronously by the server as `400 launch-selection-invalid`; catalog validity is NOT checked at
 open time — a bad-but-complete pair opens 200/'starting' and fails asynchronously on every native
-harness). The launch flow itself uses the classifying client (`data/launchFlow.ts`
-`openHostedSession`); this boolean-result path stays for legacy callers.
+harness). The launch flow's `openHostedSession` delegates to the same opener and maps its result into
+the established launch outcome grammar.
 `terminateTerminalSession(id, base)` POSTs
 `/api/terminal/{id}/terminate` and returns success/failure for the destructive UI action.
 `cleanupLandedTerminalSessions(sessionIds, base)` POSTs `/api/terminal/landed-cleanup` and returns
@@ -182,6 +187,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: removed the boolean fail-open implementation and
+  documented this module as the compatibility facade over `terminalOpen.ts`, with one POST,
+  discriminated failure, exact response identity, and no dev/production local-success path.
+  Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: corrected current transport truth: close is dropped-only,
   server exit is durable termination, explicit reattach consumes one serving-boot identity and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,6 +43,14 @@ this tab's own catalog broadcast remains ignored by subscribers.
 
 ## Code Commentary
 
+### FEUI MX-FIX-2 Zero-Ghost Regression Matrix
+
+The create suite now returns an accepted server row rather than a boolean and proves exact-one
+materialization/broadcast on success. Network, HTTP, harness-refusal, missing-body, malformed-body,
+and contradictory raw-harness responses each leave `sessions=[]`, `activeId=null`, and the catalog
+broadcast list empty. The Round 1 identity correction is pinned at the store boundary as well as in
+the parser suite.
+
 ### FEUI-L9R Reviewed Candidate Delta
 
 The local `TerminalConnection` fake now supplies the additive `reattach()` interface and returns
@@ -74,11 +82,10 @@ Task 22 cases assert `hydrate` preserves a preferred live active id
 and updates `count`, exited rows do not resolve through `findSessionForLifecycle`, `setStatus` moves
 focus away from an exited active session, terminated rows release their chat labels after local removal,
 `fromTerminalSessionInfo` maps API rows to store rows, and `createSession` POSTs the generated
-label/lifecycle before registering a running
-session. The catalog-sync suite stubs `BroadcastChannel` with `FakeBroadcastChannel`, asserts subscribers
+label/lifecycle before registering only the accepted server-owned running row. The catalog-sync suite stubs `BroadcastChannel` with `FakeBroadcastChannel`, asserts subscribers
 receive another tab's L9 `"leaf"` event with its `sessionId` while ignoring this tab's own `"create"`
-broadcast, and asserts `createSession` broadcasts `"create"` with the generated id only when
-`openTerminalSession` reports backend persistence. A
+broadcast, and asserts `createSession` broadcasts `"create"` only after an accepted result; the
+MX-FIX-2 table proves every failure class leaves registry, active id, and broadcasts empty. A
 second suite
 (slice 6f) covers the **connection
 registry + delivery**: with a controllable fake `TerminalConnection`, `sendToSession` queues into
@@ -150,6 +157,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: added exact accepted-row creation and the zero-ghost
+  failure table, including the Round 1 contradictory raw harness/control response; no failed open
+  can mutate, activate, or advertise. Verification metadata remains pinned until closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: documented the inert fake connection seam for the new explicit
   reattach method; verification metadata remains pinned pending candidate closeout.

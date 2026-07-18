@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,15 @@ paste, confirmation of the echoing attempt without further sends, `false` past t
 and never a `\r` on any path.
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Open-Authority Matrix
+
+The opener suite now consumes real `Response` bodies and pins both directions of the authority
+contract. Exact raw and harness responses open with the server-owned row. Network, non-OK HTTP,
+harness refusal, empty success, malformed JSON, and mismatched id/kind/harness become explicit
+failures. The same-reviewer Round 1 correction adds the raw-identity matrix: absent or null
+`harness`/`controlState` is accepted, while harness text (including `""`) or a control state is a
+protocol contradiction.
 
 ### FEUI-L9R Reviewed Candidate Delta
 
@@ -46,9 +55,9 @@ retaining `409`/network result classification.
 `{type:stdin|resize}` frames, suppresses sends when `readyState !== OPEN`, fires `onExit` exactly
 once for an authoritative exit frame, reports an unexpected close as dropped-only, and after
 `dispose()` closes the socket without echoing either signal. The reattach cases cover one socket per
-boot identity and stale-callback rejection. The `openTerminalSession` suite (slice 6e-2a) stubs `fetch` to
-assert the POST shape (`/api/terminal/{id}`, `{kind}` body), label/lifecycle metadata, and `true`/`false` on ok / non-ok / error,
-plus (6e-2b) a `{kind:"harness",harness}` body when a harness id is passed. Task 22 adds
+boot identity and stale-callback rejection. The `openTerminalSession` suite stubs `fetch` with real
+`Response` bodies to assert the exact POST shape and accepted server row, then separately pins
+network/HTTP/harness/protocol/missing-response failures and raw-versus-harness identity. Task 22 adds
 `fetchTerminalSessions` coverage for `GET /api/terminal/sessions` success and failure fallbacks, plus
 `fetchTerminalSessionsOrNull` coverage proving empty success stays `[]` while non-ok/network failures
 return `null`, and `terminateTerminalSession` coverage for the terminate POST. The `fetchHarnesses` suite
@@ -105,6 +114,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: replaced boolean opener assertions with real-response
+  success/failure classification, exact server identity, and Round 1 raw harness/control
+  contradiction regressions; absent/null raw fields remain accepted. Verification metadata remains
+  pinned until closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: captured transport-drop versus durable-exit and exact
   once-per-boot reattach regressions; verification metadata remains pinned pending closeout.

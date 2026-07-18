@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/launchFlow.test.ts`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,13 @@ fixture, with POST-body assertions from both directions (complete pair present; 
 absent).
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Delegation Fixture Update
+
+The hosted-open tests now provide real `Response` text bodies so they exercise the canonical
+opener's read/parse boundary. Complete-pair and vendor-defaults requests retain the same one-POST
+body assertions and outcome grammar; the fixture change ensures these tests cannot accidentally
+pass through the removed direct `response.json()` implementation.
 
 ### Logic
 
@@ -58,6 +65,10 @@ The partial-pair throws, the no-reorder pin, the bare-Pi-id refusal, and the ven
 key-ABSENCE assertion are the launch-rule regression net — each fails loudly if a default is ever
 invented, a menu is sorted, a key is normalized, or a lone knob rides the wire.
 
+### Todos
+
+No task-independent technical debt was identified during MX-FIX-2 review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -86,6 +97,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: moved complete-pair, vendor-defaults, and thrown-fetch
+  client cases onto the shared authoritative opener response path without changing launch-selection
+  or F9 reconciliation expectations. Verification metadata remains pinned until closeout.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

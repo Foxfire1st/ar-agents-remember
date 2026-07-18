@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/launchFlow.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated | 2026-07-18T15:22+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,14 @@ provider-qualified `provider/id` form is never stripped); no default is ever inv
 The UI shell that renders these machines is `panels/session-cockpit/LaunchFlow.tsx`.
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Sole-Opener Delegation
+
+`openHostedSession` no longer performs its own fetch or JSON read. It delegates the complete
+harness request to `terminalOpen.openTerminalSession`: accepted server row facts map to `opened`,
+recognized HTTP/harness refusals retain the existing launch classifier grammar, and
+network/protocol/missing-response failures map to the existing `outcome-unknown` reconciliation
+path. This preserves the caller-minted-id catalog watch without creating a second opener.
 
 ### Logic
 
@@ -51,11 +59,16 @@ The UI shell that renders these machines is `panels/session-cockpit/LaunchFlow.t
 - `classifyOpenResponse(httpStatus, body)` (L130-L178) — the pure classifier; `httpStatus: null`
   = the fetch threw. Unrecognized 200s/409s/5xx all fall through to `outcome-unknown` with an
   honest detail line.
-- `openHostedSession(sessionId, request, base)` (L192-L222) — POSTs
-  `/api/terminal/{id}` with `kind: "harness"` + `launchSelectionBody(selection)` (+ optional
-  label/leafKey/lifecycleId) and classifies every response path. The session id is
+- `openHostedSession(sessionId, request, base)` — delegates to the sole opener with
+  `kind: "harness"` + `launchSelectionBody(selection)` (+ optional label/leafKey/lifecycleId),
+  then maps its typed result into the established launch response paths. The session id is
   **CALLER-minted**, so an unknown outcome reconciles against the catalog BY ID (does the row
   exist on a later poll) — never a blind re-POST with a fresh id.
+
+### Conventions
+
+State transitions remain pure and table-testable. The open adapter preserves canonical launch copy
+while delegating transport and accepted-row validation to `terminalOpen.ts`.
 
 ### Invariants And Boundaries
 
@@ -68,6 +81,10 @@ The UI shell that renders these machines is `panels/session-cockpit/LaunchFlow.t
   200/'starting' and fails asynchronously; that path belongs to the tier machine + banner.
 - On `outcome-unknown` the caller keeps the selection and the minted id; resolution is the
   ordinary catalog poll (F9).
+
+### Todos
+
+No task-independent technical debt was identified during MX-FIX-2 review.
 
 ## Docs References
 
@@ -101,6 +118,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: removed the second browser POST and delegated hosted
+  launch to the sole discriminated opener while preserving recognized refusal and unknown-outcome
+  reconciliation semantics. Verification metadata remains pinned until closeout.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

@@ -106,7 +106,7 @@
     "workingline"
   ],
   "hotPath": {
-    "summary": "1. Shell reconciliation hydrates catalog rows and the persistent Chats layer. 2. `SessionsView` resolves deliberate/smart focus and live action ownership, then derives one rail model/attention rollup for rail and palette. 3. `SessionRail` selects a row; the stage keeps visited inspectable PTYs alive and shows ended-state overview when no terminal exists. 4. Composer, interaction, attach, set, terminate, cleanup, and bus actions cross their own authority routes and project results back into shared stores. 5. Palette/keymap, status, inspector, and live regions expose the same evidence without...",
+    "summary": "1. A create gesture crosses the shared opener; only an accepted server row reaches the registry and the context bar's focus callback. 2. Shell reconciliation hydrates catalog rows and the persistent Chats layer. 3. `SessionsView` resolves deliberate/smart focus and live action ownership, then derives one rail model/attention rollup for rail and palette. 4. `SessionRail` selects a row; the stage keeps visited inspectable PTYs alive and shows ended-state overview when no terminal exists. 5. Composer, interaction, attach, set, terminate, cleanup, and bus actions cross their own authority route...",
     "candidateHints": [
       "dashboard/src/panels/session-cockpit",
       "dashboard/src/panels/session-cockpit/AcceptanceChip.tsx",

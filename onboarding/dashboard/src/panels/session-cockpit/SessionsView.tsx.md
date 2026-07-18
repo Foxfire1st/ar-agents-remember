@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-18T15:22+02:00                           |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -29,6 +29,13 @@ controls/composer to live rows; and hosts landed-cleanup recovery outside the ra
 rail/attention once from the shared data plane and never owns a second catalog.
 
 ## Code Commentary
+
+### FEUI MX-FIX-2 Accepted-Only Focus Delegation
+
+The route no longer owns a parallel raw-terminal create callback. `ChatContextBar` performs the
+authority check and invokes `focusSession` through `onSessionOpened` only after acceptance. This
+keeps SessionsView as the focus/composition owner without letting a caller-minted id bypass the
+visible duty-bar failure state.
 
 ### FEUI-L9R Reviewed Candidate Delta
 
@@ -272,6 +279,10 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: removed the view-level raw opener and delegated accepted
+  server-id focus from ChatContextBar, eliminating focus on failed or contradictory opens.
+  Verification metadata remains pinned until closeout.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: documented the empty-narrow rail exception and collapsed
   accessibility semantics; verification metadata remains pinned pending candidate closeout.

@@ -327,7 +327,7 @@
     "filesystem"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L9R crosses `mcp/` through the existing `agents_remember.serving` route and the shipped dashboard boundary. Serving resolves the optional packaged dashboard fingerprint into `build.dashboardBuild`, revalidates entry HTML while leaving content-hashed assets on ordinary static caching, keeps pre-session `GET /api/harnesses` rows to `id`/`name`/`detected`, treats raw event offsets as untrusted hints and emits only server-aligned top-level-object records parsed once, and gives every dashboard-owned tmux client a clean tmux identity with `TERM=xterm-256color`. Product mismatch/reatta...",
+    "summary": "FEUI-MX-FIX-2 changes no MCP package source contract. Its `package_data/dashboard/` index, fingerprint, and content-hashed assets are synchronized shipped output from the reviewed `dashboard/src/` build. They are deliberately excluded from one-to-one onboarding: browser open authority is documented under the dashboard source cards and overviews, while `scripts/sync-dashboard.py --check` proves package parity. The generated rollover must land as one complete add/delete set; it is not a second implementation route. 260715-FEUI-L9R crosses `mcp/` through the existing `agents_remember.serving`...",
     "candidateHints": [
       "mcp",
       "mcp/tests",
