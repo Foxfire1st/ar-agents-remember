@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-18T14:16+02:00 |
-| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3` |
-| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
+| lastUpdated            | 2026-07-19T00:06+02:00 |
+| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1` |
+| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -56,6 +56,15 @@ current snapshot is captured. The app remains wire-only: it aliases/serializes e
 adds `servingBuild` and `supervisorHeartbeat` to every `snapshot` event (initial or first-recovery),
 and preserves the existing event name, sequence id, and `retry=2000` framing. The iterator is wrapped
 in `contextlib.aclosing()` so disconnect/cancellation closes the inner subscription immediately.
+
+### 260718-CHATS-L0 Conversation Runtime Composition
+
+The single `register_harness_control_routes(...)` call now also passes
+`coordination_root=config.coordination_root` so the harness-control seam can construct the one
+immutable `ConversationRuntime` (scope = workspace + coordination roots) and install it on
+`app.state` exactly once. This remains the app's only conversation-composition edit: no
+`register_conversation_routes` or `include_router` call appears in this file, and later child
+leaves add behavior without touching `create_app`.
 
 ### Logic
 
@@ -560,6 +569,11 @@ inbox-backed bridge, and surface adapter interactions without making pane or log
 
 ## Update History
 
+- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-line composition edit —
+  `register_harness_control_routes` now receives `coordination_root=config.coordination_root` so
+  the harness-control seam constructs the immutable conversation runtime scope; the registration
+  remains the app's only conversation seam. Verification metadata remains pinned until closeout
+  stamps the candidate commit.
 - 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: documented the removal of the app-owned
   snapshot/subscription seam, identical initial/recovery snapshot decoration, preserved SSE wire
   contract, and explicit iterator closure on disconnect/cancellation. Verification metadata remains

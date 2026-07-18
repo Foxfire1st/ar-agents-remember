@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T14:16+02:00 |
-| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3`|
-| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
+| lastUpdated            | 2026-07-19T00:06+02:00 |
+| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
+| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -45,6 +45,15 @@ history/control implementations or a renderer already exist. Exactly two read po
 active and library seams. Three behavior-empty owned child routers (`active`, `library`, `control`)
 compose under one root router, registered exactly once by `harness_control_api.py`, so later leaves
 can add behavior without restructuring the serving route.
+
+260718-CHATS-L0 repairs the missing production composition boundary under that roof: the same
+single registration now constructs and installs one immutable app-scoped `ConversationRuntime`
+(scope, terminal catalog/host, effective harness registry, liveness clock/config, capability
+evidence, and a server-resolved local-operator authorization resolver) on `app.state` exactly
+once. Child leaves consume it through two narrow request dependencies and never edit
+`conversation/router.py`, `harness_control_api.py`, or `app.py` again. Authorization is the
+server-resolved local single-user ruling: loopback-only at request time, no browser-supplied
+principal/tenant channel, fail closed otherwise.
 
 ### Current L5 hosted-session contract
 
@@ -1034,6 +1043,11 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the conversation runtime
+  composition repair — one immutable app-scoped `ConversationRuntime` installed once through the
+  existing harness-control registration, the server-resolved local-operator authorization ruling,
+  and the two request dependencies that keep child leaves out of the shared composition files.
+  Verification metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: refreshed the serving route for one atomic
   projector subscription/publication owner, publish-before-notify ordering, one full failed-prime
   recovery snapshot with identical-state silence, ordinary later deltas, and explicit iterator/

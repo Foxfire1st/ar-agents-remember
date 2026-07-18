@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-18T20:03+02:00 |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`                    |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastUpdated            | 2026-07-19T00:06+02:00 |
+| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`                    |
+| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -18,7 +18,10 @@
 
 Defines the shared typed error family for Agents Remember. It distinguishes route-index census
 failures from authority failures while retaining the harness-control contract, adapter disconnect,
-Codex protocol, and client-side first-byte ambiguity families.
+Codex protocol, and client-side first-byte ambiguity families. 260718-CHATS-L0 adds the
+conversation-composition family: `ConversationCompositionError` marks a violated app-scoped
+conversation runtime composition contract, kept distinct from `AuthorityError`, which remains the
+type for identity/authorization refusals such as the conversation resolver's loopback ruling.
 
 ## Code Commentary
 
@@ -31,7 +34,10 @@ reconciled under the same request id. `HarnessAdapterDisconnectedError` carries 
 native-adapter ambiguity plus optional vendor correlation. Codex-specific subclasses preserve
 app-server method/code evidence. `RouteIndexCensusError` identifies a validated-root census failure
 without conflating it with `AuthorityError`, which remains the type for a root mismatch or missing
-write authority.
+write authority. `ConversationCompositionError` identifies a conversation runtime composition bug —
+retrieval before installation, a second install, a foreign object on the reserved state key, or
+construction missing a required authority — that must fail at startup or request entry, never
+silently at first use.
 
 ### Conventions
 
@@ -55,6 +61,9 @@ an explicit constructor argument, not inferred later from exception text.
 - Route-index root/official-settings refusal remains `AuthorityError`; Git record, command, or path
   classification failure after authority is established remains `RouteIndexCensusError` with the
   original cause attached.
+- Conversation composition failures (missing/duplicate/foreign/missing-member runtime binding)
+  remain `ConversationCompositionError`; identity and cross-principal refusals in the same route
+  remain `AuthorityError` — the two families are never interchangeable.
 
 ### Todos
 
@@ -78,6 +87,7 @@ The blocking client uses the new stage evidence; the bridge/queue keep the nativ
 | The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | L237-L280 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The ordered queue converts native disconnect evidence into rejected or unknown receipts without blind resend. | L340-L365 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
 | The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
+| The conversation runtime raises `ConversationCompositionError` for missing/duplicate/foreign/missing-member bindings; the resolver raises `AuthorityError` for identity refusals. | L73-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
 
 ## Cross-Repo References
 
@@ -95,6 +105,10 @@ certified pre-dispatch condition may advertise retry safety; possible-write fail
 
 ## Update History
 
+- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented `ConversationCompositionError` as
+  the typed conversation runtime composition failure, distinct from the identity/authorization
+  `AuthorityError` family. Verification metadata remains pinned until closeout stamps the
+  candidate commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: documented `RouteIndexCensusError` as the typed
   post-authority census failure, distinct from root and official-settings `AuthorityError`.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented typed busy certificate, id-conflict, and epoch-

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-18T20:03+02:00 |
-| lastVerifiedCommitHash | `522959ce7dac7402b8085089c1835310adee858b` |
-| lastVerifiedCommitDate | 2026-07-18T21:21:15+02:00|
+| lastUpdated            | 2026-07-19T00:37+02:00 |
+| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1` |
+| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -23,6 +23,18 @@ behavior. Under `native_helpers/conversation_library/`, a locked private Node he
 repository-resolved harness observations into redacted evidence; it is not a second server, store,
 or capability authority. The existing harness-control application factory registers the new root
 once. L9 does not yet claim a native-history projector, control implementation, or Chats renderer.
+
+260718-CHATS-L0 repairs the production composition boundary under that contract roof. The same
+single harness-control registration now constructs and installs one immutable app-scoped
+`ConversationRuntime` — workspace/coordination scope, terminal catalog/host, effective harness
+registry, liveness clock/config, and capability evidence — plus a server-resolved local-operator
+authorization resolver on the app exactly once, with `create_app` passing `coordination_root` for
+the scope. Child leaves consume the runtime only through two narrow request dependencies
+(`get_conversation_runtime`, `resolve_conversation_authorization`) and never edit the shared
+registration again; the local-operator ruling is loopback-only with no browser principal/tenant
+channel. The shared error family gains `ConversationCompositionError` for missing, duplicate,
+foreign, or missing-member composition failures. The route remains behavior-free: no projector,
+native-history service, control implementation, or renderer.
 
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
@@ -876,6 +888,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T00:37+02:00 — 260718-CHATS-L0 curator: documented the conversation runtime
+  composition repair at package granularity — the install-once immutable `ConversationRuntime`
+  and server-resolved local-operator resolver bound through the existing harness-control
+  registration, the `coordination_root` scope wiring, the two child-facing request dependencies,
+  and the `ConversationCompositionError` family. Verification metadata remains pinned until
+  closeout stamps the candidate commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: documented the one-snapshot Git/path-rule route-index
   boundary, explicit caller authority, typed census failures, and fail-closed official-memory
   carryover settings preflight. The kernel and memory folders remain governed by this package
