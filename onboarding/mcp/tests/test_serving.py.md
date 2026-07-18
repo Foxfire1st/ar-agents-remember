@@ -5,10 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
-| governingOverview      | `../overview.md`                              |
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[mcp tests overview](overview.md)
 
 ## Purpose
 
@@ -24,6 +28,14 @@ umbrella `agents-remember dashboard` CLI.
 Serving tests cover the real app lifespan with a dead landing refresher, asserting the failure is logged and `TerminalHost.shutdown()` still runs exactly once. Projector tests also pin startup, cancellation, and network-free tick integration.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+Serving regressions now pin three runtime-truth boundaries. Static HTML carries `no-cache`, and the
+build payload carries the packaged `dashboardBuild` fingerprint. Raw-event tests cover lifecycle and
+workspace mid-record realignment, malformed JSON and invalid UTF-8 advancing without retry, every
+non-object JSON family advancing without emission, beyond-EOF settling, successor streaming, exact
+cursor progression, and ready-after-valid-object ordering.
 
 ### Logic
 
@@ -149,31 +161,61 @@ so the fixtures stay
 in lock-step with `dashboard.run()` reading those attrs; a missing attr would raise instead of
 exercising the branch. Daemon dispatch itself is covered in `test_dashboard_daemon.py`, not here.
 
+### Invariants And Boundaries
+
+The suite requires poison records to advance without emission, accepted events to remain objects,
+HTML-only revalidation, and absent build evidence to stay omitted rather than fabricated.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
+## Docs References
+
+No relevant documentation was found after checking the configured sources; the regression claims
+are proven by repository source and the test suite itself.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external or domain documentation was found for this repository-local test module. | Source discovery checked | — |
+
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The pure diff under test. | [serving/delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
-| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The projector (with `now`/`before_tick`) under test. | [serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| The app + `stream_events` + `/api/events` + `/api/actions` under test. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The raw event tail under test. | [serving/events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
-| The inactivity-based raw event retention helper under test. | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| The raw retention regressions: dormant pruning without a terminal event (a recent heartbeat doesn't save it), heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The pure diff under test. | — | [serving/delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
+| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| The projector (with `now`/`before_tick`) under test. | — | [serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| The app + `stream_events` + `/api/events` + `/api/actions` under test. | — | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The raw event tail under test. | L125-L277 | [serving/events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
+| The inactivity-based raw event retention helper under test. | — | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
+| The raw retention regressions: dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | — | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | L994-L1074 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | L5 retention exemption: a protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The `protected_lifecycle_ids` parameter under test, and the series-retention set it carries. | `prune_expired_lifecycle_event_logs`, `series_retained_lifecycle_ids` | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
 | Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | L1085-L1124 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The sim load/replay under test. | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
-| The action evaluation under test. | [serving/actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
-| The gate write-path the `/api/actions` gate verbs drive (slice 6b). | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| The compact attention acknowledgement store asserted by `ActionDismissTests`. | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
+| The sim load/replay under test. | — | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
+| The action evaluation under test. | — | [serving/actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
+| The gate write-path the `/api/actions` gate verbs drive (slice 6b). | — | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
+| The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | — | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| The compact attention acknowledgement store asserted by `ActionDismissTests`. | — | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 | Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | L558-L616; L662-L674 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The CLI dispatcher + dashboard adapter under test. | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
-| The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
+| The CLI dispatcher + dashboard adapter under test. | — | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
+| The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | — | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
+
+## Cross-Repo References
+
+No meaningful cross-repository implementation source governs this repository-local test module.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: captured HTML/build-identity assertions and the complete raw
+  event cursor/invalid-record/non-object stream matrix; verification metadata remains pinned pending
+  candidate closeout.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: `StateEtagTests` builds its app with
   `watch_changes=False` (a mocked `project_and_write` is watcher-invisible, so the tick loop must
   stay interval-paced), and the CLI fixtures/assertions gained the new `heartbeat: None` key

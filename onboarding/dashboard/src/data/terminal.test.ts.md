@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,13 @@ and never a `\r` on any path.
 
 ## Code Commentary
 
+### FEUI-L9R Reviewed Candidate Delta
+
+The fake-socket matrix now proves that transport close reports `dropped` without ending the durable
+terminal, while an explicit server `exit` remains authoritative. It pins one replacement per
+serving-boot identity, resize-before-input replay, superseding stale CONNECTING and OPEN sockets,
+inert stale callbacks, first-observed-boot adoption, silence on dispose, and refusal after exit.
+
 ### 260707-HFX2-L17 Attach Payload Regression
 
 The request test now proves `attachSessionToLeaf` sends both `leafKey` and the selected role while
@@ -37,8 +44,9 @@ retaining `409`/network result classification.
 `FakeSocket` (records `send`, lets the test push binary/text frames + close): it sets
 `binaryType="arraybuffer"`, writes binary frames verbatim into the sink, emits the
 `{type:stdin|resize}` frames, suppresses sends when `readyState !== OPEN`, fires `onExit` exactly
-once across an exit-frame-then-close, fires it on an unexpected close, and after `dispose()` closes
-the socket without echoing `onExit`. The `openTerminalSession` suite (slice 6e-2a) stubs `fetch` to
+once for an authoritative exit frame, reports an unexpected close as dropped-only, and after
+`dispose()` closes the socket without echoing either signal. The reattach cases cover one socket per
+boot identity and stale-callback rejection. The `openTerminalSession` suite (slice 6e-2a) stubs `fetch` to
 assert the POST shape (`/api/terminal/{id}`, `{kind}` body), label/lifecycle metadata, and `true`/`false` on ok / non-ok / error,
 plus (6e-2b) a `{kind:"harness",harness}` body when a harness id is passed. Task 22 adds
 `fetchTerminalSessions` coverage for `GET /api/terminal/sessions` success and failure fallbacks, plus
@@ -62,6 +70,15 @@ vitest (`describe`/`it`/`expect`). The injected `socketFactory` returns the `Fak
 `WebSocket`, so the global `WebSocket` is never referenced — matching the production split where the
 real socket is built lazily.
 
+### Invariants And Boundaries
+
+Tests keep durable session exit, socket transport state, and explicit boot-owned reattach as three
+separate authorities; fakes must not collapse them into one close signal.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -70,7 +87,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for this file. | Source discovery checked | — |
 
 ## Repo-Internal References
 
@@ -88,6 +105,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: captured transport-drop versus durable-exit and exact
+  once-per-boot reattach regressions; verification metadata remains pinned pending closeout.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

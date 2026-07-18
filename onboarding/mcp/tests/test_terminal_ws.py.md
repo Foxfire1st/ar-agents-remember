@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`       |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -22,6 +22,12 @@ the complete native model/effort launch-selection contract (no real PTY or vendo
 
 ## Code Commentary
 
+### FEUI-L9R Reviewed Candidate Delta
+
+The harness endpoint regression still pins detected availability for Claude, Codex, and Pi, and now
+also requires that every pre-session row omit `control`. This makes the test prove the narrow
+discovery boundary rather than inventing adapter process state before any session is opened.
+
 ### 260707-HFX2-L17 HTTP Pair Attach Regressions
 
 HTTP tests send explicit role, assert role-required behavior for untyped hand-opened sessions,
@@ -30,12 +36,12 @@ in successful attach responses.
 
 ### Logic
 
-### 260713-PHA-L1 control projection coverage
+### Pre-session discovery and post-open control projection
 
-The final serving tests cover additive control fields on `GET /api/harnesses` and terminal-open
-responses while preserving legacy terminal WebSocket behavior. The bridge-era control modules are
-tested separately by `test_harness_control.py`; this route suite pins only the app/catalog projection
-boundary and the absence of production vendor registration.
+The final serving tests require `GET /api/harnesses` to remain narrow discovery
+(`id`/`name`/`detected`, no `control`) while terminal-open and live catalog responses retain their
+separate post-open control evidence. Bridge-era control modules are tested separately by
+`test_harness_control.py`; this route suite pins the HTTP/catalog boundary.
 
 ### 260714-ACPUI-L4 launch-selection and reopen coverage
 
@@ -177,6 +183,9 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: replaced the stale pre-session control assertion with exact
+  field-absence coverage; verification metadata remains pinned pending candidate closeout.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the complete native launch-pair
   request, pre-spawn partial/non-native refusal, same-pair live reopen, changed-pair 409 with actual
   truth, fresh dead replacement, and the HTTP boundary from direct concurrent/role opener coverage;

@@ -3,11 +3,11 @@
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/`                            |
+| sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`       |
-| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -26,6 +26,17 @@ FEUI-L8 makes this overview the strategic owner for the data plane so the root a
 overviews can remain compact. It also records the retirement of the legacy `sessionGroups` model:
 role/spawn hierarchy and attention are now derived by `railModel.ts`, while product-facing grouping
 and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
+
+## FEUI-L9R Runtime Identity And Recovery
+
+- `buildIdentity.ts` owns the executing bundle fingerprint and a pure tri-state comparison with the
+  server's optional shipped-dashboard identity; it never reloads the page itself.
+- `harnessCatalog.ts` validates the narrow pre-session `id`/`name`/`detected` envelope and preserves
+  network, HTTP, protocol, valid-empty, and ready distinctions. Request timeout, cancellation, and
+  Retry belong to the dialog-local hook rather than a global store or poller.
+- `terminal.ts` separates WebSocket transport loss from durable terminal exit. Only an explicit
+  server exit ends the session; a boot-owned reattach consumes each identity once, rejects stale
+  callbacks, and replays resize before buffered input without a timer loop.
 
 ## Route Model
 
@@ -127,6 +138,9 @@ code must not use them as ordinary recovery APIs.
 | Reliable submit and withdrawal | [submitClient.ts](submitClient.ts.md) · [submissionLifecycleClient.ts](submissionLifecycleClient.ts.md) |
 | Control/capability truth | [capabilityCatalog.ts](capabilityCatalog.ts.md) · [setClient.ts](setClient.ts.md) |
 | Role/spawn rail derivation | [railModel.ts](railModel.ts.md) |
+| Runtime bundle identity | [buildIdentity.ts](buildIdentity.ts.md) |
+| Strict pre-session harness discovery | [harnessCatalog.ts](harnessCatalog.ts.md) |
+| Durable terminal transport | [terminal.ts](terminal.ts.md) · [terminal.test.ts](terminal.test.ts.md) |
 
 ## Docs References
 
@@ -137,7 +151,7 @@ same-repository history pack.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for the L8 data route. | `system/sources.md` checked during curation | — |
+| No relevant domain documentation was found for the data route. | Source discovery checked | — |
 
 ## Cross-Repo References
 
@@ -171,6 +185,10 @@ the UI composition owner. Detailed legacy grouping knowledge was preserved here 
 session-cockpit overview before the six obsolete sidecars were removed.
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: added browser build identity, strict harness discovery, and
+  explicit durable-terminal recovery ownership. Verification metadata remains pinned pending
+  candidate closeout.
 
 - 2026-07-18T07:22+02:00 — Created during 260715-FEUI-L8 curation to own catalog/session state,
   reliable submit and withdrawal, lifecycle cleanup, control-authority boundaries, and the

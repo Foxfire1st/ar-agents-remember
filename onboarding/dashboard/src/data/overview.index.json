@@ -20,6 +20,7 @@
     "dashboard/src/data/actions.ts",
     "dashboard/src/data/announcer.test.ts",
     "dashboard/src/data/announcer.ts",
+    "dashboard/src/data/buildIdentity.ts",
     "dashboard/src/data/capabilityCatalog.test.ts",
     "dashboard/src/data/capabilityCatalog.ts",
     "dashboard/src/data/catalogPoll.test.ts",
@@ -30,6 +31,7 @@
     "dashboard/src/data/commands.ts",
     "dashboard/src/data/files.test.ts",
     "dashboard/src/data/files.ts",
+    "dashboard/src/data/harnessCatalog.ts",
     "dashboard/src/data/interactionAnswer.test.ts",
     "dashboard/src/data/interactionAnswer.ts",
     "dashboard/src/data/launchEvidence.test.ts",
@@ -93,13 +95,14 @@
     "dashboard/src/data/useTaskDocumentBody.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 83,
-    "fileSidecars": 75,
+    "sourceFilesInScope": 85,
+    "fileSidecars": 77,
     "childRoutes": 1
   },
   "routingTerms": [
     "actions",
     "announcer",
+    "buildidentity",
     "capabilitycatalog",
     "catalogpoll",
     "changeset",
@@ -107,6 +110,7 @@
     "dashboard",
     "data",
     "files",
+    "harnesscatalog",
     "interactionanswer",
     "keymap",
     "launchevidence",
@@ -153,6 +157,7 @@
       "dashboard/src/data/actions.ts",
       "dashboard/src/data/announcer.test.ts",
       "dashboard/src/data/announcer.ts",
+      "dashboard/src/data/buildIdentity.ts",
       "dashboard/src/data/capabilityCatalog.test.ts",
       "dashboard/src/data/capabilityCatalog.ts",
       "dashboard/src/data/catalogPoll.test.ts",
@@ -163,14 +168,13 @@
       "dashboard/src/data/commands.ts",
       "dashboard/src/data/files.test.ts",
       "dashboard/src/data/files.ts",
+      "dashboard/src/data/harnessCatalog.ts",
       "dashboard/src/data/interactionAnswer.test.ts",
       "dashboard/src/data/interactionAnswer.ts",
       "dashboard/src/data/launchEvidence.test.ts",
       "dashboard/src/data/launchEvidence.ts",
       "dashboard/src/data/launchFlow.test.ts",
-      "dashboard/src/data/launchFlow.ts",
-      "dashboard/src/data/notes.test.ts",
-      "dashboard/src/data/notes.ts"
+      "dashboard/src/data/launchFlow.ts"
     ],
     "anchorHints": [
       "actions.test.ts",
@@ -181,6 +185,8 @@
       "announcer.test",
       "announcer.ts",
       "announcer",
+      "buildIdentity.ts",
+      "buildIdentity",
       "capabilityCatalog.test.ts",
       "capabilityCatalog.test",
       "capabilityCatalog.ts",
@@ -201,6 +207,8 @@
       "files.test",
       "files.ts",
       "files",
+      "harnessCatalog.ts",
+      "harnessCatalog",
       "interactionAnswer.test.ts",
       "interactionAnswer.test",
       "interactionAnswer.ts",
@@ -216,11 +224,7 @@
       "notes.test.ts",
       "notes.test",
       "notes.ts",
-      "notes",
-      "operatorInbox.test.ts",
-      "operatorInbox.test",
-      "operatorInbox.ts",
-      "operatorInbox"
+      "notes"
     ]
   },
   "fallback": {

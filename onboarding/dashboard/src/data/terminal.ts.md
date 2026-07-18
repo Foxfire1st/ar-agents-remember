@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastUpdated | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,13 +20,22 @@ The browser half of Mode B2 (slice 6e): a thin, **xterm-agnostic** WebSocket cli
 terminal bridge at `/api/terminal/{session}`. It writes raw PTY bytes into an injected
 `TerminalSink` and never imports xterm, so the protocol logic unit-tests against a fake socket —
 the mirror of the backend's pure `_apply_terminal_input`. `panels/Terminal.tsx` owns the actual
-xterm rendering. It also carries the small Mode B2 control-plane fetches the Chats view needs — the
-`openTerminalSession` opener, durable-session hydration (`fetchTerminalSessions`), explicit session
-termination (`terminateTerminalSession`), and (slice 6e-2b) the `fetchHarnesses` detection helper
-(260715-FEUI-L3: plus the failure-distinguishing `fetchHarnessesOrNull` and the launch-pair knobs
-on the opener body).
+xterm rendering. It also carries the terminal opener, durable-session hydration, explicit
+termination, and compatibility harness-fetch facades. Strict pre-session harness validation and
+result classification now belong to `harnessCatalog.ts`; the chooser's request lifetime belongs to
+`useHarnessCatalogRead.ts`.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+The current connection contract separates a dropped WebSocket transport from durable terminal
+exit. A close reports `dropped` but does not call `sink.onExit`; only the server's `{type:"exit"}`
+control frame ends the session. `TerminalConnection.reattach()` is an explicit, once-per-serving-
+boot action that may supersede stale CONNECTING or OPEN sockets, reports `reconnecting`, replays the
+latest resize before buffered input, and ignores callbacks from superseded sockets. There is no
+timer-driven reconnect loop. Harness validation now belongs to `harnessCatalog.ts`; its narrow
+pre-session row is only `id`/`name`/`detected`, with no invented adapter `control` state.
 
 ### 260707-HFX2-L17 Role-Carrying Attach Transport
 
@@ -38,9 +47,10 @@ same leaf-role pair rather than any chat on the leaf.
 
 `connectTerminal(sessionId, sink, options)` opens a `WebSocket` (via an injectable
 `socketFactory`, default `new WebSocket`), sets `binaryType="arraybuffer"`, and pumps it: **binary**
-frames → `sink.write(Uint8Array)` (raw VT bytes), a `{type:"exit"}` text frame or a socket close →
-`sink.onExit()` **exactly once** (an `ended` guard; `dispose()` pre-sets it so an intentional close
-doesn't echo `onExit`). It returns a `TerminalConnection` whose `sendInput`/`sendResize` emit the
+frames → `sink.write(Uint8Array)` (raw VT bytes); only a `{type:"exit"}` text frame calls
+`sink.onExit()` **exactly once**. A socket close is transport loss and reports `dropped` without
+ending the durable session; `dispose()` intentionally reports neither. It returns a
+`TerminalConnection` whose `sendInput`/`sendResize` emit the
 `{type:"stdin"|"resize"}` text frames the backend parses — gated on `readyState === 1` (`WS_OPEN`, a
 literal so tests need no real `WebSocket`). `sendResize` also **buffers the latest winsize** and
 `socket.onopen` replays it once OPEN, so the first `fit()` — which fires before the WS handshake
@@ -90,21 +100,17 @@ rows that are still `status:"landed"` when the backend rechecks them.
 to claim a leaf for an **existing** session (enclosure-free, no respawn): the server is the uniqueness
 arbiter, so it maps `200 → "ok"` (bound), `409 → "leaf-taken"` (another running chat owns it), and any
 other status / network failure → `"error"` (the `AttachLeafResult` union the Chats page surfaces).
-`fetchHarnesses(base)` (slice 6e-2b) GETs `/api/harnesses` → the `HarnessInfo[]`
-(id/name/detected, plus — 260715-FEUI-L3 — an optional `control` word: the native
-protocol-adapter status `protocol_adapter_status`, absent on older servers, rendered verbatim in
-the launch flow's harness buttons) the Chats strip turns into a button per *detected* harness;
-`[]` on any failure. `fetchHarnessesOrNull(base)` (260715-FEUI-L3) is the same read but
-failure-distinguishing (`null` = failed): the launch flow must render a fetch failure loudly
-rather than an empty — and therefore lying — harness list; `fetchHarnesses` now delegates to it.
+Legacy `fetchHarnesses(base)` remains a compatibility wrapper, but current harness discovery lives
+in `harnessCatalog.ts`: the validated pre-session row contains only id/name/detected and the reader
+distinguishes network, HTTP, protocol, empty, and ready results. LaunchFlow consumes that reader via
+its request-owning hook rather than projecting adapter process state before a session exists.
 `TerminalSocketContext` is the dev/test seam — a provider supplies a fake factory (the bench mock);
 `null` in production ⇒ a real same-origin socket.
 **`ConnectTerminalOptions.onSocketState`** (260715-FEUI-L6, R15 freshness wiring, L36-L43) is an
 additive hook reporting the socket's OWN truth: `"connected"` fires from `socket.onopen` (the
 real handshake), `"dropped"` from the shared `end()` path (a non-deliberate close/exit). A
-deliberate `dispose()` pre-sets the `ended` guard, so it reports NOTHING — a removed pane is not
-a dropped one. There is no auto-reconnect anywhere in this client, so `"reconnecting"` never
-fires — the wire stays honest. The cockpit routes it into
+deliberate `dispose()` reports NOTHING — a removed pane is not a dropped one. `"reconnecting"`
+fires only for an explicit boot-owned `reattach`; no timer or background retry exists. The cockpit routes it into
 `sessionCockpitStore.setPtyWs` (per-pane `freshness.ptyWs`).
 `bracketedPaste(text)` (slice 6e-3) is a pure helper wrapping text in `ESC[200~…ESC[201~` so a TUI
 treats composer-injected context as one paste (used by `Chats`; typed keystrokes stay raw).
@@ -127,6 +133,15 @@ by itself; it only reports catalog rows and POSTs explicit open/terminate intent
 imported here (keeps it jsdom-safe + unit-testable); the heavy emulator is code-split behind
 `panels/Terminal`.
 
+### Conventions
+
+WebSocket constants remain numeric literals for jsdom tests, connection callbacks are identity
+gated, and all retry/reattach initiation is caller-owned.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -135,7 +150,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for this file. | Source discovery checked | — |
 
 ## Repo-Internal References
 
@@ -147,7 +162,8 @@ the reviewed task evidence for any current behavioral claim.
 | The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
 | The freshness consumers: Terminal forwards `onSocketState`, PtySurface routes it into the cockpit store. | L127; L224 | [panels/Terminal.tsx](../panels/Terminal.tsx) |
 | The per-pane `freshness.ptyWs` field this hook feeds. | L67 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| The launch flow consuming `fetchHarnessesOrNull` + `HarnessInfo.control` (adapter word rendered verbatim). | — | [../panels/session-cockpit/LaunchFlow.tsx](../panels/session-cockpit/LaunchFlow.tsx) |
+| The launch flow consumes the narrow catalog reader through an explicit request-owning hook. | L191-L204 | [../panels/session-cockpit/LaunchFlow.tsx](../panels/session-cockpit/LaunchFlow.tsx) |
+| The typed narrow harness reader distinguishes transport, protocol, empty, and ready results. | L1-L74 | [harnessCatalog.ts](harnessCatalog.ts) |
 | The classifying open client the launch flow uses instead of this module's boolean opener. | L192-L222 | [launchFlow.ts](launchFlow.ts) |
 
 ### 260713-PHA-L5 Protocol Catalog Fields
@@ -166,6 +182,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: corrected current transport truth: close is dropped-only,
+  server exit is durable termination, explicit reattach consumes one serving-boot identity and
+  rejects stale socket callbacks, and pre-session harness discovery moved to the narrow reader.
+  Verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

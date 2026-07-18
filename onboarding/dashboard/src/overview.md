@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -27,6 +27,15 @@ FEUI-L8 deliberately separates strategic ownership:
 - [panels overview](panels/overview.md) — shared panel composition.
 - [session-cockpit overview](panels/session-cockpit/overview.md) — the sole full-page Chats product.
 - Existing focused child overviews under panels, grammar, cockpit, dev, and data own their routes.
+
+## FEUI-L9R Runtime Truth Repair
+
+Runtime identity crosses this route in three separate ways. The server advertises the fingerprint
+of its shipped dashboard while the executing bundle carries its own build-time fingerprint; only a
+definite mismatch offers an explicit reload, and absence remains unknown. A new serving boot may
+cause exactly one chooser catalog reread and one explicit terminal-socket reattach, but neither is
+coupled to SSE loss or a background retry loop. Reattach preserves the mounted xterm and durable
+tmux session; transport close alone is not terminal exit.
 
 ## Layered Architecture
 
@@ -107,6 +116,7 @@ must not recreate that coupling.
 | `grammar/` | [Grammar](grammar/overview.md) |
 | `cockpit/` | File cards governed by this overview; shell ownership starts at [Cockpit.tsx](cockpit/Cockpit.tsx.md). |
 | `dev/` | File cards governed by this overview; dev scenario authority starts at [cockpitScenarios.ts](dev/cockpitScenarios.ts.md). |
+| root ambient types | [vite-env.d.ts](vite-env.d.ts.md) declares the dashboard build fingerprint consumed by the data layer. |
 
 ## Docs References
 
@@ -116,7 +126,7 @@ the recovered same-repository history pack.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for `dashboard/src`. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for `dashboard/src`. | Source discovery checked | — |
 
 ## Cross-Repo References
 
@@ -138,6 +148,10 @@ references informed product framing only; current code truth stays in agents-rem
 | Dev scenario authority and end-to-end states. | [dev/cockpitScenarios.ts](dev/cockpitScenarios.ts) |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: added bundle comparison, bounded boot-owned reread/reattach,
+  explicit reload, and durable-session transport boundaries. Verification metadata remains pinned
+  pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — 260715-FEUI-L8 strategic refactor: split data authority and canonical
   Chats detail into focused child overviews, recorded one Chats/Operations-default product truth,

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -23,14 +23,25 @@ fix-round regression nets (dismiss ends the watch; reopen starts clean).
 
 ## Code Commentary
 
+### FEUI-L9R Reviewed Candidate Delta
+
+The suite now proves first-read failure and operator retry, held-read timeout/abort, malformed-200
+protocol errors, honest empty state, one replacement read per changed or first-observed serving boot,
+rejection of a late superseded completion, close-time abort, and independence from SSE loss. A stale
+legacy `control: "starting"` field is explicitly not rendered because no adapter process exists
+before open.
+
 ### Logic
 
 - **Dynamic-only (R1/R4)** (L85-L165) — the gated-promise case proves ZERO model options exist
   BEFORE the daemon answers (the capability response is held behind an unresolved promise while
   the loading state is asserted), then the released envelope populates the five Claude rows in
-  advertised order; an undetected harness is disabled AND its adapter word renders as visible
-  text (review finding 6, L119-L129); a hidden codex row never renders (L131-L138); a 503 renders
+  advertised order; an undetected harness is disabled and stale pre-session adapter text is absent
+  (L151-L162); a hidden codex row never renders; a 503 renders
   the VERBATIM `control-unavailable: …` detail with a working retry (L140-L164).
+- **Harness-catalog recovery (L200-L370)** — failure, timeout, protocol error, honest empty,
+  operator Retry, close/supersession abort, boot-owned replacement, stale completion rejection, and
+  SSE-loss independence are separate asserted states.
 - **Cost honesty (R2)** (L167-L190) — miss-loading and the explicit refresh carry the SAME
   `capabilityCostNote` naming; the loaded state names the cache truth ("cache miss …same
   short-lived native discovery as a refresh").
@@ -67,6 +78,10 @@ before the daemon answers, not merely if options eventually differ); the vendor-
 pins wire-level key ABSENCE; the two F9 cases are the fix-round nets and fail against pre-fix
 code in exactly the reviewed failure modes.
 
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -75,7 +90,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for this file. | Source discovery checked | — |
 
 ## Repo-Internal References
 
@@ -104,6 +119,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: replaced the retired adapter-word claim with the complete
+  catalog timeout/abort/retry/boot-replacement regression matrix; verification metadata remains
+  pinned pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

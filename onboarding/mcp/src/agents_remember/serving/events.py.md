@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/serving/events.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`  |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`  |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -28,6 +28,15 @@ the loop before the first byte. It powers the future event-log panel + sim scrub
 
 ## Code Commentary
 
+### FEUI-L9R Reviewed Candidate Delta
+
+Raw-event reads now treat byte offsets as untrusted resume hints while the server owns record
+boundaries. A nonzero mid-record cursor advances to the next newline; an offset beyond EOF settles
+at current EOF; partial trailing records remain unread. Cursor progress is committed before UTF-8
+decode and JSON classification, so invalid UTF-8, malformed JSON, blanks, all five non-object JSON
+families, and filtered heartbeats are skipped without retry. Each accepted top-level object is
+parsed once into `RawEvent.payload`, and the SSE stream reuses that object rather than parsing again.
+
 ### 260707-HFX2-L13 Virtual Workspace Cursors
 
 Lifecycle sources continue to use physical byte offsets. Workspace reads take the shared river lock,
@@ -45,22 +54,18 @@ testable without an HTTP client:
 
 - `read_new_events(root, offsets, *, limit=None)` walks every source in a fixed order —
   `lifecycles/*` sorted, then `workspace` last (`_discover_sources`) — seeks each `events.jsonl`
-  past its recorded byte offset (`_read_lines_from`: binary seek + complete-line split) and emits one
-  `RawEvent(source, data, cursor)` per complete line. `lifecycle.heartbeat` lines are **filtered** via
-  `_is_heartbeat_line` — the offset still advances past them, but they are never emitted (liveness, not
-  activity). When `limit` is set the read returns early after that many emitted events (offsets just past
-  the last consumed line), so a caller can drain a large backlog in bounded chunks. A trailing partial
-  line (no terminating newline) is left unconsumed so a half-written append is never emitted.
-- `_is_heartbeat_line(text)` is the filter: the compact on-disk wire form (`model_dump_json`, no spaces)
-  matches the `_HEARTBEAT_MARKER` substring on the fast path; a tolerant `json.loads` fallback catches
-  alternate spacing so a heartbeat can never slip into the river; lines without the `_HEARTBEAT_KIND`
-  text are never parsed.
-- `RawEvent.data` is the verbatim JSONL line (the camelCase wire form on disk); it is parsed to an
-  object at the SSE boundary — `stream_raw_events` yields `ServerSentEvent(data=json.loads(line))` —
-  so the wire is **single-encoded** like the state channel, not the double-encoded `data: "{…}"` that
-  passing the pre-serialized string produced (every client would otherwise have to `JSON.parse`
-  twice). `RawEvent.cursor` is the per-source offset map **after** that event, i.e. the
-  `Last-Event-ID` to resume the whole stream from that point.
+  from a server-owned boundary (`_read_lines_from` realigns a nonzero mid-record cursor and clamps
+  beyond EOF) and advances the offset after each complete byte record before decoding it. Invalid
+  UTF-8, blank text, malformed JSON, and valid non-object JSON are skipped with that progress
+  retained. Accepted top-level objects produce `RawEvent(source, data, payload, cursor)`; heartbeat
+  objects are filtered by `_is_heartbeat_event`. When `limit` is set, only emitted objects count
+  toward the batch. A trailing partial line remains unconsumed.
+- `_is_heartbeat_event(payload)` reads the already-parsed object's `kind`; heartbeat filtering does
+  not parse event text again.
+- `RawEvent.data` retains the verbatim JSONL object text for diagnostics/tests, while
+  `RawEvent.payload` retains the same record parsed exactly once. `stream_raw_events` passes that
+  payload directly to `ServerSentEvent`, preserving the single-encoded wire. `RawEvent.cursor` is
+  the per-source offset map after the accepted object's record.
 - `encode_cursor` / `decode_cursor` carry the offset map opaquely in the SSE `id` as base64url
   JSON (newline-free); `decode_cursor` returns `{}` for an absent or malformed cursor, and the stream
   treats that as a fresh retained-offset connection rather than replaying every historical row.
@@ -81,9 +86,9 @@ testable without an HTTP client:
 - **Pure tail** — `read_new_events` / `encode_cursor` / `decode_cursor` have no HTTP dependency.
 - **Reads only through `observer.paths.observer_root`** (NS #5) — no host paths; sim points the
   same root at a fixture so the raw channel replays identically.
-- **Single-encoded wire** — each line is parsed and emitted as a JSON object (like `/api/stream`),
-  not the pre-serialized string (`ServerSentEvent` would double-encode that); the layer adds no
-  interpretation beyond the parse.
+- **Single-encoded object wire** — each complete record is parsed once, admitted only when its top
+  level is an object, and emitted from the retained payload. Invalid/non-object records advance but
+  never cross the SSE boundary.
 - **Heartbeats never reach the river** — `read_new_events` filters `lifecycle.heartbeat` (liveness already
   lives in the projection status file); the offset still advances past a heartbeat so a resume never
   re-reads it.
@@ -99,6 +104,35 @@ testable without an HTTP client:
 - **Readiness is explicit:** a cursorless fresh connection can legitimately receive zero retained rows;
   the separate `ready` event tells clients that the window-bounded backlog has finished hydrating.
 
+### Logic
+
+The reader discovers lifecycle/workspace sources, translates their cursor coordinates, realigns
+untrusted offsets, advances complete records, admits only parsed top-level objects, and streams the
+retained payload with its post-record composite cursor.
+
+### Conventions
+
+Lifecycle offsets remain physical; workspace offsets retain the compaction base. Complete records
+are handled as bytes until record boundaries are established.
+
+### Invariants And Boundaries
+
+Incomplete trailing records remain unread, poison records advance without emission, heartbeat rows
+are liveness rather than activity, and accepted event text is parsed exactly once.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
+## Docs References
+
+No relevant documentation was found after checking the configured sources; cursor and event-stream
+claims are proven by repository source and tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external or domain documentation was found for this repository-local event tail. | Source discovery checked | — |
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -108,11 +142,23 @@ testable without an HTTP client:
 | The one read/path abstraction (NS #5). | — | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
 | The app that mounts this as `GET /api/events`. | — | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | L36-L94 | [event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| `read_new_events` filters heartbeat lines (`_is_heartbeat_line`) and bounds a batch via `limit`. | L143-L185 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
+| `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | L125-L225 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
 | `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | L188-L231 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
 | Raw-event tests cover heartbeat skipping, limit batches, dormant pruning without a terminal event, bounded active replay, and no-heartbeat streaming. | L994-L1124 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 
+## Cross-Repo References
+
+No meaningful cross-repository implementation source governs this repository-local event tail.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: documented server-owned record realignment, exact skip/cursor
+  semantics, top-level-object admission, and one-parse payload reuse; verification metadata remains
+  pinned pending candidate closeout.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3: moved workspace `/api/events` resume to locked
   virtual offsets over the compacted physical river while leaving lifecycle cursors physical.

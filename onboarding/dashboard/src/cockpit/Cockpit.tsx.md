@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -28,6 +28,14 @@ the other existing routes retain their established ownership. The dev lifecycle-
 outside production navigation.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+`ServingBuildStamp` now compares the executing bundle fingerprint with
+`servingBuild.dashboardBuild`. It exposes unknown, matching, or mismatching diagnostic evidence;
+only a definite mismatch renders the explicit `reload client` button. Reload remains operator-owned
+because a stateful terminal tab may contain drafts or interaction. An older server without the
+optional fingerprint remains neutral rather than falsely stale.
 
 ### Logic
 
@@ -126,7 +134,8 @@ via `cx` for tests/structure; `shell__body` carries `data-fullbleed` for the rai
 
 ### Invariants And Boundaries
 
-Read-only; selection state is local + lifted. The shell pins to `100vh` + `overflow:hidden` so the
+Server authority is read-only; selection state is local + lifted. The one browser mutation is the
+operator's explicit reload on a proven bundle mismatch. The shell pins to `100vh` + `overflow:hidden` so the
 rails/viewport scroll internally and the bars stay fixed. The master-caution lives in the always-visible
 top bar; full-bleed only hides the rails, never the alarm summary (§4.1). The `EffectsToggle` is the only
 writer of `html[data-effects]` from the UI (vs the `?effects=off` URL param / `calm-cockpit` flag
@@ -137,6 +146,10 @@ must derive it through the task-identity helper.
 false "stale" alarm — the same "absence is not evidence of a problem" posture `servingBuild` already
 follows for a pre-L15 server.
 
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -145,16 +158,16 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No relevant domain documentation was found for this file. | Source discovery checked | — |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | `fullBleed` rails-hide + `bodyGrid` `bleed` variant + gated rail fade. | L194-L252 | [Cockpit.tsx](Cockpit.tsx) |
-| The visible view registry no longer includes `flow`; full-bleed views are Engine Room, Topology, Chats, and — 260715-FEUI-L1 — Sessions. | L52-L71; L379-L386 | [Cockpit.tsx](Cockpit.tsx) |
-| The sessions keep-alive layer: `sessionsLayer = chatsLayer`, display/aria-hidden toggle, `active` gating. | L317-L323; L528-L541 | [Cockpit.tsx](Cockpit.tsx) |
-| The sessions cockpit view the shell mounts once. | — | [panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
+| The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | L59-L76; L379-L386 | [Cockpit.tsx](Cockpit.tsx) |
+| The Chats keep-alive layer preserves the one internal `sessions-view` implementation and toggles display/aria-hidden without remount. | L317-L323; L528-L541 | [Cockpit.tsx](Cockpit.tsx) |
+| The canonical Chats session cockpit the shell mounts once. | L858-L958 | [panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
 | `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | — | [Cockpit.tsx](Cockpit.tsx) |
 | The boot-time effects flag it persists to. | — | [main.tsx](../main.tsx) |
 | The honest-motion gate the rail transition + the toggle drive. | — | [panels/engine-room/useShouldAnimate.ts](../panels/engine-room/useShouldAnimate.ts) |
@@ -187,6 +200,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded the running-bundle comparison and explicit reload
+  boundary; verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

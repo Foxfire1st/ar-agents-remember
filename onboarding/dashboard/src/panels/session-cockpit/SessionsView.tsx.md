@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -29,6 +29,14 @@ controls/composer to live rows; and hosts landed-cleanup recovery outside the ra
 rail/attention once from the shared data plane and never owns a second catalog.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+Responsive collapse now preserves the sole chat-creation entrance: an empty narrow cockpit expands
+the rail rather than applying ordinary auto-collapse, while populated cockpits keep the established
+edge-based policy. A collapsed rail is both visually hidden and `aria-hidden`, so off-screen controls
+do not remain in the accessibility tree. LaunchFlow remains outside the collapsible panel without
+becoming a second entrance.
 
 ### 260715-FEUI-L7 Inspector And Status Composition
 
@@ -199,6 +207,10 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 - Model/effort palette commands and the header trigger must share one popover; queued hints,
   toasts, rail attention, and live regions must derive from the same cockpit evidence.
 
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
 ## Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
@@ -260,6 +272,9 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: documented the empty-narrow rail exception and collapsed
+  accessibility semantics; verification metadata remains pinned pending candidate closeout.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-18T07:43+02:00 |
-| lastVerifiedCommitHash | `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b` |
-| lastVerifiedCommitDate | 2026-07-18T11:10:09+02:00|
+| lastUpdated            | 2026-07-18T13:04+02:00 |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f` |
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 
 > **Status:** active baseline
 
@@ -134,6 +134,17 @@ chat once for the successful bind. Detail lives in the `observer/`, `serving/`, 
 overviews.
 
 ## Hot Path Summary
+
+260715-FEUI-L9R repairs runtime truth across the established dashboard/serving split. Start at the
+`dashboard/src/` overview for browser build-identity comparison, operator-owned reload, pre-session
+harness-catalog request ownership, and terminal reattach behavior; its data, panels, and
+session-cockpit governors own the detailed client state machines. Start at the
+`mcp/src/agents_remember/serving/` overview for shipped build identity, HTML revalidation, raw-event
+record boundaries, the pre-session harness wire shape, and dashboard-owned tmux client identity;
+the `mcp/tests/` overview owns the cross-boundary proof. The `mcp/` overview remains the package
+boundary, and `package_data/dashboard/` remains synchronized generated output rather than a second
+frontend source route. This repository overview routes that cross-cutting seam without duplicating
+the focused governors' implementation detail.
 
 260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound
 request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic
@@ -512,6 +523,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-18T13:04+02:00 — 260715-FEUI-L9R ancestor route repair: added the repository-level
+  dashboard/serving routing boundary for browser build identity and recovery, pre-session harness
+  discovery, raw-event record handling, HTML revalidation, and tmux client identity. Detailed
+  client behavior stays under `dashboard/src/`; server behavior and proof stay under
+  `mcp/src/agents_remember/serving/` and `mcp/tests/`; synchronized dashboard package data remains
+  generated output rather than a competing source authority.
 - 2026-07-18T07:43+02:00 — 260715-FEUI-L8 route impact: added the repository-level canonical Chats
   cockpit feature and its root `dashboard/` test/config boundary. One Chats destination now owns the
   session cockpit, Operations remains default, RailChat remains contextual, and the toggleable inspector

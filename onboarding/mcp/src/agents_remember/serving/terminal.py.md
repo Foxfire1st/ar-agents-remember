@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T23:45+02:00                           |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-18T12:43+02:00                           |
+| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
+| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -27,6 +27,14 @@ plus per-WebSocket tmux-client attachment so multiple browser tabs can share one
 racing one PTY fd.
 
 ## Code Commentary
+
+### FEUI-L9R Reviewed Candidate Delta
+
+Every dashboard-owned tmux client now receives an owned terminal environment: inherited `TMUX` and
+`TMUX_PANE` are removed, `TERM` is forced to `xterm-256color`, and unrelated environment entries are
+preserved. The same helper is applied to session probe, kill, detached create, mouse enable,
+copy-mode cancel, pane-mode probe, and the attached PTY spawn. This prevents the daemon's launcher
+tmux identity or `TERM=dumb` from contaminating child client behavior.
 
 ### Logic
 
@@ -147,15 +155,33 @@ so a fake spawner can back a session with any process object.
 - **Backend-only.** No FastAPI import here — `app.py` wires the WebSocket endpoint over
   this host in 6d-2; the xterm.js viewport is 6e.
 
+### Conventions
+
+All dashboard-owned tmux subprocesses receive the same copied environment helper; unrelated parent
+variables are retained and the caller's environment mapping is never mutated.
+
+### Todos
+
+No task-independent technical debt was identified during FEUI-L9R review.
+
+## Docs References
+
+No relevant documentation was found after checking the configured sources; terminal-host behavior
+is proven by repository source and tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external or domain documentation was found for this repository-local terminal host. | Source discovery checked | — |
+
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The serving layer this host joins (transport; localhost posture). | [serving/overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
-| The FastAPI app that wires the WebSocket bridge over this host (slice 6d-2). | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The serving layer this host joins (transport; localhost posture). | Current FEUI-L9R runtime-truth repair | [serving overview](overview.md) |
+| The FastAPI app that wires the WebSocket bridge over this host. | L809-L881 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The catalog rows that persist tmux name, command, cwd, lifecycle, and status across dashboard restarts. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
 | The shared opener that seeds this host's `env` at `ensure` (the L2 knob-injection call site). | L137-L146 | [terminal_opener.py](terminal_opener.py) |
-| The slice authority (Mode B2 = embedded real TUI, render-not-scrape, tmux persistence). | [tasks/260610_task6-control-plane/task.md](agents-remember/../tasks/agents-remember/260610_task6-control-plane/task.md) |
+| The environment and real-tmux regressions that prove current client identity. | L134-L181; L549-L600 | [test_terminal.py](../../../tests/test_terminal.py) |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -168,7 +194,19 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## Cross-Repo References
+
+No meaningful cross-repository implementation source governs this repository-local terminal host.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+
 ## Update History
+
+- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded owned tmux-client terminal identity across all six
+  administrative clients and attached PTY spawn; verification metadata remains pinned pending
+  candidate closeout.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
