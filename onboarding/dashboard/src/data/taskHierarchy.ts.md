@@ -5,9 +5,9 @@
 | repository             | agents-remember                           |
 | path                   | `dashboard/src/data/taskHierarchy.ts`     |
 | doc_type               | `file-level-onboarding`                   |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                           `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                           2026-07-07T05:26:14+02:00|
+| lastUpdated | 2026-07-18T16:02+02:00 |
+| lastVerifiedCommitHash |                                           `31f58834f86c0d98e26b0896e099a2403a8729ee`|
+| lastVerifiedCommitDate |                                           2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,8 +22,9 @@ uses creation order for placement while preserving the leaf document's own task 
 builds parent selection keys, and exposes path helpers used for task-document/enclosure matching.
 Since 260703-L14 it also owns the **orchestration-command relation**: an orchestration task is a
 `kind:"master"` doc carrying a non-empty top-level `orchestrates` list (the owner data-model ruling
-— no new task kind), and these helpers decide which masters it commands for both the tasks tab and
-the Chats command tree.
+— no new task kind), and `LifecycleList` uses these helpers to derive the current Operations command
+tiers and parent rows. The retired Chats grouping modules no longer consume this relation; the Chats
+session rail derives its role hierarchy through `railModel.ts` instead.
 
 ## Code Commentary
 
@@ -89,7 +90,8 @@ navigation aligned with the master task reader.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The helper finds a parent series ref, keeps the authored child task id as the display number, builds hierarchy labels, and returns parent navigation keys. | L15-L58; L73-L88 | [taskHierarchy.ts](taskHierarchy.ts) |
-| The L14 orchestration-command helpers consumed by the tasks tab (`commandFacts`/`seriesRow`) and the Chats grouping (`groupSessions`). | `isOrchestrationDoc`; `masterCommandNames`; `orchestratorParentKey` | [taskHierarchy.ts](taskHierarchy.ts) |
+| The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows. | L68-L99; `commandFacts`; `seriesRow` | [taskHierarchy.ts](taskHierarchy.ts); [LifecycleList.tsx](../panels/LifecycleList.tsx) |
+| The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer. | L131-L205 | [railModel.ts](railModel.ts) |
 | The `TaskDocNode.orchestrates?` mirror these helpers read. | `TaskDocNode` | [projection.ts](../types/projection.ts) |
 | Operations uses the helper for numbered task labels, parent row keys, and BY REPO hierarchy rendering. | L15-L20; L252-L312; L358-L390 | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
 | DetailPanel uses the helper to render a parent link for directly opened leaf task documents and active leaf lifecycle documents. | L337-L361; L453-L487 | [DetailPanel.tsx](../panels/DetailPanel.tsx) |
@@ -104,6 +106,11 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is involved. | — | — |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: restricted the orchestration-command helpers' current
+  consumer to Operations `LifecycleList` and recorded `railModel` as the separate canonical Chats
+  hierarchy owner; retired `groupSessions` is historical only. Verified against code commit
+  `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

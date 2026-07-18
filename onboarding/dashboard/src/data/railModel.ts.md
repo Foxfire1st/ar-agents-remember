@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/railModel.ts`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated | 2026-07-18T16:02+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,10 +20,11 @@ The **session-rail model** (260715-FEUI-L2 S4) — pure, React-free derivations 
 role-driven hierarchy (spec §1.6b, ruled 2026-07-16): architect / orchestrator / manager render as
 a FLAT command spine (never spawn-edge nesting); only leaf agents indent, clustered per leaf under
 their manager, base order worker → reviewer → curator with the ACTIVE seat sorted to the top;
-completed seats fold into a per-master collapsed folder (R17). It consumes the
-260713_chat-rail-role-hierarchy analysis (the landed spawn-edge forest in
-`SessionList.orderedVisibleMembers` is the diagnosed defect) — that master's formal roll-in stays
-pending the developer's call. Also owns the fleet-attention rollup (R12), the projection joins for
+completed seats fold into a per-master collapsed folder (R17). The earlier
+260713_chat-rail-role-hierarchy analysis diagnosed the spawn-edge forest rendered by the now-retired
+`SessionList`; FEUI-L8 superseded that surface. The landed `buildRailModel` derivation is the
+canonical hierarchy composed once by `SessionsView` and passed into `SessionRail`. This module also
+owns the fleet-attention rollup (R12), the projection joins for
 gates (R13) / brief column (R8) / critical bus (F11), smart-default focus (R9), and question
 triage (R16).
 
@@ -113,6 +114,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: moved the `SessionList` comparison into explicit
+  historical provenance and recorded the landed `buildRailModel` → `SessionsView` → `SessionRail`
+  ownership chain. Verified against code commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

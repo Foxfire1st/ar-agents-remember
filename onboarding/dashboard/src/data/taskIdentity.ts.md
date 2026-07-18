@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/taskIdentity.ts`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated | 2026-07-18T16:02+02:00 |
+| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
+| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,9 +47,12 @@ resolves the leaf key (a `series` selection has no single leaf → `undefined`).
 is the master and a drilled sub-task shows a different leaf. `leafKeyForSelection` remains exported in this
 file but **has no live caller** — left in place rather than deleted. `leafTitleForKey(taskDocuments,
 leafKey)` resolves the bound leaf's display title (the matching doc's `title`, else `undefined`), and
-`leafIdFromKey(leafKey)` returns the last path segment — the name-label fallback when no doc title resolves.
-Both stay in use (the Chats page / `SessionList` / `RailChat`), as does `qualifiedLeafKey`, which
-`DetailPanel` now calls directly on the displayed leaf doc.
+`leafIdFromKey(leafKey)` returns the last path segment — the name-label fallback when no doc title
+resolves. `ChatContextBar` uses the title helper; the id fallback is consumed by `RailChat`,
+`ChatContextBar`, `SessionRail`, `HeaderStrip`, `StatusLine`, `FailedLaunchBanner`, and
+`lifecycleCopy`. `qualifiedLeafKey` is consumed by `RailChat`, `DetailPanel`, `LifecycleList`, and
+`railModel` (and internally by this module's tree/title helpers). No retired `Chats` or `SessionList`
+consumer remains.
 
 `groupEnclosuresByLifecycle` builds a `lifecycleId -> EnclosureNode` lookup from projected enclosures.
 `findLifecycleEnclosure` first respects `lifecycle.enclosure` when the lifecycle already points at a
@@ -94,19 +97,25 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Typed Operations keys and selection parsing live beside lifecycle/enclosure identity helpers. | L17-L45 | [taskIdentity.ts](agents-remember/dashboard/src/data/taskIdentity.ts) |
-| Lifecycle labels prefer enclosure metadata when present and fall back through direct task-document titles before raw ids. | L77-L108 | [taskIdentity.ts](agents-remember/dashboard/src/data/taskIdentity.ts) |
-| The Operations list creates `taskdoc:` / `series:` / `lifecycle:` row keys from these helpers. | — | [LifecycleList.tsx](agents-remember/dashboard/src/panels/LifecycleList.tsx) |
-| The detail panel resolves the selected entity with `parseTaskSelection` before rendering by document kind. | — | [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
-| Cockpit derives the chat/highlight lifecycle attachment through `lifecycleIdForSelection`; the rail-chat leaf key now comes from `DetailPanel.onViewLeaf` (via `qualifiedLeafKey`), superseding `leafKeyForSelection` (still exported here, no live caller). | — | [Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
-| The session store binds the qualified `leafKey` these helpers mint, and `Chats`/`SessionList`/`RailChat` resolve leaf names via `leafTitleForKey` / `leafIdFromKey`. | — | [sessions.ts](agents-remember/dashboard/src/data/sessions.ts) |
-| Event River imports `taskDocumentLabel` so history rows without live lifecycle projection can still render the task document title. | L1-L15; L296-L331 | [eventSummary.ts](agents-remember/dashboard/src/panels/eventSummary.ts) |
+| Typed Operations keys and selection parsing live beside lifecycle/enclosure identity helpers. | L17-L45 | [taskIdentity.ts](taskIdentity.ts) |
+| Lifecycle labels prefer enclosure metadata when present and fall back through direct task-document titles before raw ids. | L178-L248 | [taskIdentity.ts](taskIdentity.ts) |
+| The Operations list creates typed row keys and uses `qualifiedLeafKey` for row chat activity. | L22-L35; L555; L655 | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
+| The detail panel resolves typed selections and reports the displayed leaf through `qualifiedLeafKey`. | L1-L15; L402; L1300 | [DetailPanel.tsx](../panels/DetailPanel.tsx) |
+| Cockpit derives chat/highlight lifecycle attachment through `lifecycleIdForSelection`; its displayed-leaf state supersedes `leafKeyForSelection` (still exported here, no live caller). | L22-L26; L366-L427 | [Cockpit.tsx](../cockpit/Cockpit.tsx) |
+| Current leaf label/id consumers span RailChat and the full session-cockpit bar, rail, header, status, failure, and lifecycle-copy surfaces. | Import/call sites | [RailChat.tsx](../panels/RailChat.tsx); [ChatContextBar.tsx](../panels/session-cockpit/ChatContextBar.tsx); [SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx); [HeaderStrip.tsx](../panels/session-cockpit/HeaderStrip.tsx); [StatusLine.tsx](../panels/session-cockpit/StatusLine.tsx); [FailedLaunchBanner.tsx](../panels/session-cockpit/FailedLaunchBanner.tsx); [lifecycleCopy.ts](../panels/session-cockpit/lifecycleCopy.ts) |
+| `railModel`, `LifecycleList`, `DetailPanel`, and `RailChat` consume `qualifiedLeafKey`; `leafKeyForSelection` has no live import. | Import/call sites | [railModel.ts](railModel.ts); [LifecycleList.tsx](../panels/LifecycleList.tsx); [DetailPanel.tsx](../panels/DetailPanel.tsx); [RailChat.tsx](../panels/RailChat.tsx) |
+| Event River imports `taskDocumentLabel` so history rows without live lifecycle projection can still render the task document title. | L1-L15; L296-L331 | [eventSummary.ts](../panels/eventSummary.ts) |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
 ## Update History
+
+- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: replaced retired Chats/`SessionList` consumers with the
+  exact landed leaf-title/id and `qualifiedLeafKey` import inventory while preserving the no-live-caller
+  status of `leafKeyForSelection`. Verified against code commit
+  `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
