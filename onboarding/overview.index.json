@@ -54,7 +54,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1693,
+    "sourceFilesInScope": 859,
     "fileSidecars": 6,
     "childRoutes": 7
   },
@@ -79,7 +79,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "FEUI-MX-FIX-2 routes all dashboard session creation through one accepted-response authority. Start at `dashboard/src/data/terminalOpen.ts` for exact identity and failure classification, then `sessions.ts` for accepted-row-only registry mutation, and the data/panels/session-cockpit overviews for caller behavior and zero-ghost focus/delivery gates. Request-matched dev fixtures exercise the same client seam. The synchronized index, fingerprint, and hashed files under `mcp/.../package_data/dashboard/` are generated shipped evidence only; they have no file cards and must remain in parity through...",
+    "summary": "FEUI-MX-FIX-5 preserves Vite's generated JavaScript bytes as the semantic authority. Vite recreates `dashboard/dist`; `scripts/sync-dashboard.py` raw-copies and hashes that tree into the shipped package, so a generic end-of-line strip would corrupt CodeMirror completion indentation and break byte parity. Root `.gitattributes` therefore disables only `blank-at-eol` for direct shipped `mcp/src/agents_remember/package_data/dashboard/assets/*.js`. Generated CSS, nested or unrelated JavaScript, authored source/test/configuration, `blank-at-eof`, and `space-before-tab` remain strict. The `mcp/tes...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -115,15 +115,22 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
-      "dashboard/src/data/terminalOpen.ts",
-      "sessions.ts",
-      "mcp/.../package_data/dashboard/",
+      "dashboard/dist",
+      "scripts/sync-dashboard.py",
+      "gitattributes",
+      "blank-at-eol",
+      "mcp/src/agents_remember/package_data/dashboard/assets/*.js",
+      "blank-at-eof",
+      "space-before-tab",
       "FEUI",
       "FIX",
-      "terminalOpen",
+      "JavaScript",
+      "CodeMirror",
+      "agents_remember",
       "package_data",
+      "CSS",
       "repo-overview",
-      "7ca29c3b6dd2c0184253e2690f1ebe78c511573b",
+      "522959ce7dac7402b8085089c1835310adee858b",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -137,14 +144,7 @@
       "task_reopen",
       "c-10-adopt-memory-baseline",
       "memory.md",
-      "providers/runners/",
-      "providers/data/",
-      "logs/mcp/",
-      "logs/providers/",
-      "providers/_bin/",
-      "providers/_venvs/",
-      "onboarding/",
-      "c-05-create-or-update-onboarding-files"
+      "providers/runners/"
     ]
   },
   "fallback": {

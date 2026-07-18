@@ -157,7 +157,7 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 146,
+    "sourceFilesInScope": 138,
     "fileSidecars": 145,
     "childRoutes": 0
   },
@@ -244,7 +244,7 @@
     "git"
   ],
   "hotPath": {
-    "summary": "For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census and byte-convergence matrix, then `test_carryover.py` for full-apply zero-mutation refusals and parser-equivalent positive controls. Use `test_worktree_support.py` for closeout caller wiring. For folded-state transport changes, begin at `test_serving.py::StreamEventsTests`: the MX-FIX-1 cases pin atomic activation, first-recovery snapshot semantics, later-delta continuity, and close/cancellation cleanup against the production `Projector` and `stream_events` seam. 260715-FEUI-L9 centers `test_...",
+    "summary": "For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git generated-positive/authored-negative regression. Use `dashboard/package.json` and `dashboard/vite.config.ts` for Vite ownership, and `scripts/sync-dashboard.py` for raw copy/digest parity. Do not route this seam through generated asset file cards or a generic normalizer. For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census and byte-convergence matrix,...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-18T20:03+02:00 |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`|
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastUpdated | 2026-07-18T21:05+02:00 |
+| lastVerifiedCommitHash | `522959ce7dac7402b8085089c1835310adee858b`|
+| lastVerifiedCommitDate | 2026-07-18T21:21:15+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,32 @@ preflight agrees with the typed settings parser rather than creating a second se
 fixtures, while `conftest.py` imports the production selector inventory so tests cannot drift from
 the Git boundary they exercise.
 
+## MX-FIX-5 Generated Bundle Whitespace Policy Gate
+
+`test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` exercises the repository's real
+Git attribute in an isolated temporary repository. It stages a direct shipped dashboard JavaScript
+asset whose tab-only line is semantic template-literal content beside an authored
+`dashboard/src/main.tsx` file with ordinary trailing spaces. The actual
+`git diff --cached --check` result must omit the generated asset and retain the exact authored-source
+diagnostic, so the exception cannot silently become a source-wide relaxation.
+
+Vite owns and recreates the generated `dashboard/dist` bytes; `scripts/sync-dashboard.py` copies and
+hashes those bytes without transformation. Generic end-of-line normalization is rejected because
+the generated tab is CodeMirror Python-completion indentation and removing it changes the runtime
+string. The root policy therefore targets only direct shipped
+`mcp/src/agents_remember/package_data/dashboard/assets/*.js` and disables only `blank-at-eol`.
+Generated CSS, nested or unrelated JavaScript, authored source/test/configuration,
+`blank-at-eof`, and `space-before-tab` remain strict. Two clean build/sync passes produced identical
+dist/package bytes and the same source/package fingerprint, confirming the exception survives
+content-hash regeneration without manual asset edits.
+
 ## Hot Path Summary
+
+For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset
+scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git
+generated-positive/authored-negative regression. Use `dashboard/package.json` and
+`dashboard/vite.config.ts` for Vite ownership, and `scripts/sync-dashboard.py` for raw copy/digest
+parity. Do not route this seam through generated asset file cards or a generic normalizer.
 
 For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census
 and byte-convergence matrix, then `test_carryover.py` for full-apply zero-mutation refusals and
@@ -238,6 +263,9 @@ L4 regression coverage proves exact-session readiness and dispatch, catalog writ
   counts and covered-file membership must come from the same frozen Git/path-rule snapshot.
 - Carryover authority refusals assert official HEAD, status, non-Git bytes, source bytes, and
   route-index absence so parser-default authority cannot mutate any official-memory surface.
+- Generated dashboard whitespace coverage must exercise Git's real attribute resolution. Only direct
+  shipped `assets/*.js` may suppress `blank-at-eol`; authored source and generated near misses remain
+  strict, and semantic JavaScript string bytes must remain identical through sync.
 
 ## Docs References
 
@@ -271,6 +299,10 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Route-index regressions cover ignored/generated exclusion, symlink/sparse/gitlink/non-UTF-8 identity, ambient selectors, typed failures, and repeat convergence. | L199-L911 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 | Carryover full-apply regressions compare raw JSON/Markdown authority with typed parser semantics and prove exact zero mutation for every refusal. | L374-L1268 | [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
 | Worktree fixtures install explicit supported external-memory storage settings so closeout tests exercise real write authority. | L224-L252 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| The generated-whitespace test copies the real attribute into a temp repository and proves the direct generated JavaScript allowance together with strict authored TSX behavior. | L216-L247 | [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
+| The root attribute narrows the exception to direct shipped dashboard JavaScript assets and only the `blank-at-eol` check. | L1-L3 | [.gitattributes](agents-remember/.gitattributes) |
+| The sync helper copies and compares raw dist/package bytes; it does not introduce or normalize emitted whitespace. | L59-L68; L133-L172 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
+| The production build runs Vite and recreates `dashboard/dist`, making Vite the physical-byte owner. | package L6-L10; config L61-L67 | [dashboard/package.json](agents-remember/dashboard/package.json); [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
 
 ### 260713-PHA-L5 Route Contract Review
 
@@ -281,6 +313,11 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-18T21:05+02:00 — FEUI-MX-FIX-5 added the real-Git generated-positive/authored-negative
+  whitespace regression, the direct shipped-JavaScript `blank-at-eol` boundary, Vite/raw-sync byte
+  ownership, the rejected-normalization rationale, retained near-miss checks, and the two-build
+  byte/fingerprint determinism proof. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: added the deterministic Git/path-rule census matrix,
   regular/linked/contaminated byte-convergence proof, typed failure coverage, and full-apply
   JSON/Markdown carryover-authority refusal/retention matrix with exact zero-mutation assertions.
