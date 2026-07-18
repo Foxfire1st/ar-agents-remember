@@ -1,53 +1,86 @@
 # mcp/src/agents_remember/controllers/memory_tools.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/controllers/memory_tools.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
-| governingOverview      | `overview.md`                              |
+| Field                  | Value                                                      |
+| ---------------------- | ---------------------------------------------------------- |
+| repository             | agents-remember                                            |
+| path                   | `mcp/src/agents_remember/controllers/memory_tools.py`       |
+| doc_type               | `file-level-onboarding`                                    |
+| lastUpdated            | 2026-07-18T20:03+02:00                                     |
+| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`                 |
+| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| governingOverview      | `overview.md`                                              |
+
+## Governing Overview
+
+[Controllers overview](overview.md)
 
 ## Purpose
 
-`memory_tools.py` is the controller surface for drift checks, memory quality,
-route-index refresh, memory initialization, memory baseline, and memory
-carryover MCP tools.
+`memory_tools.py` is the typed controller surface for onboarding drift, memory quality, route-index
+refresh, memory initialization, baseline adoption, and memory carryover MCP operations.
 
 ## Code Commentary
 
-The module resolves target repositories through MCP settings, builds
-coordination-contained paths, and delegates to memory quality, route index,
-memory init, baseline, and carryover services. Repo resolution and
-path confinement use the shared `_guards` helpers (`require_repo`,
-`require_within_coordination`) so the security boundary lives in one place.
-Drift checks use the onboarding drift summary path; closeout quality checks
-use the broader memory quality gate. `memory_baseline_status_tool` reports
-`ok=False` when the baseline state is `blocked-drift`.
+### Logic
 
-## Invariants And Boundaries
+The module resolves repository authority through `McpRuntimeConfig` and coordination context, then
+delegates to package services. `route_index_refresh_tool` passes both
+`context.code_repository_name` and the resolved `context.storage` into `build_route_indexes`; the
+builder therefore receives the exact repository identity and path-rule authority already selected
+by the resolver. Drift artifacts stay under the coordination temp root. Baseline and carryover
+controllers preserve their separate service contracts.
 
-- Memory tool repo IDs must be allowed by MCP settings; disallowed IDs and
-  paths escaping `coordination_root` raise `AuthorityError` (via the `_guards`
-  helpers).
-- Drift report artifacts remain temporary coordination artifacts, not durable
-  onboarding content.
-- Baseline and carryover logic belongs in the memory service modules, not in
-  MCP transport wiring.
-- The effectful controllers (`route_index_refresh_tool`, `memory_init_tool`,
-  `memory_baseline_adopt_tool`) default `dry_run=False` (act-by-default);
-  `dry_run=true` previews. Carryover uses explicit plan/apply tools (no flag).
+### Conventions
+
+Controllers translate validated tool arguments into service calls and JSON-compatible payloads.
+Path confinement and repository authorization use the shared `_guards` helpers rather than local
+filesystem checks.
+
+### Invariants And Boundaries
+
+- Tool callers cannot supply arbitrary source, onboarding, coordination, or storage roots.
+- Route-index refresh must forward resolver-owned repository and storage authority explicitly; it
+  must not reconstruct path rules from directory layout or parser defaults.
+- Drift reports are temporary coordination artifacts, not durable onboarding content.
+- Effectful refresh/init/baseline operations act by default and expose `dry_run` for preview;
+  carryover remains an explicit plan/apply operation.
+
+### Todos
+
+None known for the MX-FIX-4 controller boundary.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository; this card is grounded in the
+package controller and resolver contracts.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Memory response models cover drift, quality, route-index, init, baseline, and carryover tools. | [memory.py](agents-remember/mcp/src/agents_remember/models/memory.py) |
-| Route index generation is owned by the kernel route-index module. | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The controller resolves context and forwards repository/storage authority to the route-index builder. | L80-L110 | [memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py) |
+| The builder requires explicit repository and `StorageSettings` arguments. | L101-L123 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
+| Coordination context is the repository and storage authority consumed by the controller. | context resolver | [coordination context overview](../kernel/coordination_context/overview.md) |
+
+## Cross-Repo References
+
+The controller can target configured sibling repositories, but no external implementation governs
+this package-local dispatch contract.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
-- 2026-05-31T12:30+02:00 — Repo/path guards moved to shared `_guards` (require_repo/require_within_coordination) raising AuthorityError, and memory_baseline_status now returns ok=False on blocked-drift (1.0.0 review remediation).
-- 2026-05-28T19:52+02:00: Created when memory/onboarding MCP controllers moved into their own domain module.
+- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: documented explicit resolved repository/storage
+  authority at the route-index controller boundary.
+- 2026-05-31T12:30+02:00 — Repo/path guards moved to shared `_guards`
+  (`require_repo`/`require_within_coordination`) raising `AuthorityError`, and
+  `memory_baseline_status` now returns `ok=False` on blocked drift (1.0.0 review remediation).
+- 2026-05-28T19:52+02:00 — Created when memory/onboarding MCP controllers moved into their own
+  domain module.

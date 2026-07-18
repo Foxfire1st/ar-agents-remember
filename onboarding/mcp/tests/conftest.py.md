@@ -2,66 +2,88 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
+| repository             | agents-remember                            |
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
-| governingOverview      | `../overview.md`                              |
+| lastUpdated            | 2026-07-18T20:03+02:00                     |
+| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
+| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[MCP tests overview](overview.md)
 
 ## Purpose
 
-Session-wide pytest setup that keeps the whole test suite hermetic and safe to
-run from any environment. It is the single guard that prevents the
-temporary-git-repo fixtures from ever committing into a real repository.
+`conftest.py` provides session-wide pytest bootstrap that pins imports to the candidate checkout,
+scrubs ambient Git repository selection before fixtures run, and supplies fallback commit identity
+for throwaway repositories.
 
 ## Code Commentary
 
-**260707-HFX2-L15 checkout-source pin.** The test bootstrap removes any previously imported
-`agents_remember` modules and places this worktree's `mcp/src` first on `sys.path`. Re-verifiers
-therefore test the candidate checkout instead of the official repo's editable-installed package.
+### Logic
 
-At conftest import time (before any test is collected or run) the module mutates
-`os.environ`:
+At collection time the bootstrap removes previously imported `agents_remember` modules and places
+the current worktree's `mcp/src` first on `sys.path`. It imports
+`GIT_REPOSITORY_SELECTOR_ENV` from production `kernel.git_command` and removes every selector from
+the process environment before a fixture can spawn Git. It then uses `setdefault` for test-only
+author/committer identity so an explicit caller identity remains authoritative.
 
-- It pops git's repo-pointer / object-store variables — `GIT_DIR`,
-  `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
-  `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`,
-  `GIT_PREFIX`. The worktree/closeout/conformance fixtures run `git` with
-  `cwd=<temp repo>` but inherit the process environment; any of these variables,
-  if present, redirect those `git` subprocesses onto whatever repository they
-  point at instead of the temp dir. They are commonly set when the suite runs
-  inside a `git` hook (git exports `GIT_DIR` to hooks) or under a parent process
-  with `GIT_DIR` set.
-- It then `setdefault`s a fallback commit identity
-  (`GIT_AUTHOR_*`/`GIT_COMMITTER_*` = "Agents Remember Tests") so the committing
-  fixtures never fail with "Author identity unknown" on a machine with no
-  configured git user; an already-exported identity is respected.
+### Conventions
 
-## Invariants And Boundaries
+The production selector tuple is the sole inventory. Tests must import it rather than maintaining a
+parallel list that could omit a newly supported selector.
 
-- This guard must run at import (module level), before any fixture spawns a
-  `git` subprocess, so the cleaned environment is inherited by every test.
-- Fixture `git` calls deliberately rely on `cwd` for repo selection; this file
-  exists so an ambient `GIT_DIR` cannot override that and hijack a real repo.
-- The fallback identity only affects throwaway fixture commits in temp dirs,
-  never real repository commits.
+### Invariants And Boundaries
+
+- Selector cleanup runs at module import before fixture construction or test collection can execute
+  repository commands.
+- Fixture Git calls use explicit temporary `cwd`; ambient selectors may not redirect them into a
+  real repository.
+- Checkout-source pinning ensures verification exercises the candidate, not a sibling editable
+  installation.
+- Fallback identity applies only to temporary fixture commits and never overwrites an exported
+  identity.
+
+### Todos
+
+None known for the MX-FIX-4 test bootstrap.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository; the bootstrap mirrors production
+Git isolation directly.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Worktree fixtures run `git` with `cwd=<temp repo>` and inherit the environment, so they depend on this guard. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Conformance fixtures also shell out to `git` for temp-repo setup. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
-| The pre-push hook runs the suite via the quality wrapper, the original trigger of the ambient-`GIT_DIR` clobber. | [pre-push](agents-remember/.githooks/pre-push) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Production owns the eight-selector inventory and scrubbed Git environment. | L9-L42 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Route-index tests independently contaminate each selector and require identical output. | L595-L644 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| Worktree fixtures create and commit temporary code/memory repositories. | fixture setup | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+
+## Cross-Repo References
+
+No sibling repository defines the pytest bootstrap contract.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: replaced the duplicated Git selector list with the
+  production `GIT_REPOSITORY_SELECTOR_ENV` inventory and corrected the nearest governing overview.
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added the worktree-local source/import pin so pytest
-  cannot silently exercise a sibling editable install. Verification metadata remains pinned until
-  closeout stamps the eventual L15 code commit.
-
-- 2026-07-03T02:58+02:00 — No content impact: L13 reopen drill second cycle extended the marker comment; the reopened leaf ran under its original id with a fresh lifecycle.
-- 2026-07-03T02:40+02:00 — No content impact: L13 reopen drill appended a marker comment at the end of conftest.py (no fixtures, env handling, or behavior touched); the drill exercises task_reopen mechanics, not this file.
-- 2026-05-30T23:59+02:00: Created with `mcp/tests/conftest.py` (commit `36d74c5`). Added after the worktree fixtures clobbered the project repo when the suite ran with an inherited `GIT_DIR` (a git pre-push hook firing, and a concurrent evaluation run). The guard strips git's repo-pointer env and sets a fallback identity so no runner can redirect the fixtures onto a real repo.
+  cannot silently exercise a sibling editable install. Verification remains pinned until closeout.
+- 2026-07-03T02:58+02:00 — No content impact: L13 reopen drill second cycle extended the marker
+  comment; the reopened leaf ran under its original id with a fresh lifecycle.
+- 2026-07-03T02:40+02:00 — No content impact: L13 reopen drill appended a marker comment; the drill
+  exercised task-reopen mechanics, not fixture behavior.
+- 2026-05-30T23:59+02:00 — Created after inherited `GIT_DIR` redirected temporary fixture commands;
+  the import-time guard strips repository selectors and supplies fallback identity.

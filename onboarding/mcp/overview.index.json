@@ -123,6 +123,7 @@
     "mcp/src/agents_remember/kernel/memory_ledger.py",
     "mcp/src/agents_remember/kernel/onboarding_doc.py",
     "mcp/src/agents_remember/kernel/route_index.py",
+    "mcp/src/agents_remember/kernel/route_index_census.py",
     "mcp/src/agents_remember/kernel/sidecar_pairing.py",
     "mcp/src/agents_remember/mcp/__init__.py",
     "mcp/src/agents_remember/mcp/command_capture.py",
@@ -133,6 +134,7 @@
     "mcp/src/agents_remember/mcp/tool_reports.py",
     "mcp/src/agents_remember/memory/baseline.py",
     "mcp/src/agents_remember/memory/carryover.py",
+    "mcp/src/agents_remember/memory/carryover_authority.py",
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md",
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md",
     "mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md",
@@ -240,8 +242,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 674,
-    "fileSidecars": 142,
+    "sourceFilesInScope": 676,
+    "fileSidecars": 144,
     "childRoutes": 17
   },
   "routingTerms": [
@@ -255,6 +257,7 @@
     "and",
     "architect",
     "assets",
+    "authority",
     "baseline",
     "benchmarks",
     "block",
@@ -266,7 +269,9 @@
     "capture",
     "card",
     "carryover",
+    "carryover_authority",
     "catalog",
+    "census",
     "cgc",
     "cgcignore",
     "check",
@@ -321,10 +326,7 @@
     "errors",
     "evidence",
     "examples",
-    "facts",
-    "file",
-    "files",
-    "filesystem"
+    "facts"
   ],
   "hotPath": {
     "summary": "FEUI-MX-FIX-2 changes no MCP package source contract. Its `package_data/dashboard/` index, fingerprint, and content-hashed assets are synchronized shipped output from the reviewed `dashboard/src/` build. They are deliberately excluded from one-to-one onboarding: browser open authority is documented under the dashboard source cards and overviews, while `scripts/sync-dashboard.py --check` proves package parity. The generated rollover must land as one complete add/delete set; it is not a second implementation route. 260715-FEUI-L9R crosses `mcp/` through the existing `agents_remember.serving`...",

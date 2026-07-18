@@ -1,84 +1,83 @@
 # mcp/src/agents_remember/kernel/git_command.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/git_command.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                         |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| Field                  | Value                                                    |
+| ---------------------- | -------------------------------------------------------- |
+| repository             | agents-remember                                          |
+| path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
+| doc_type               | `file-level-onboarding`                                  |
+| lastUpdated            | 2026-07-18T20:03+02:00                                   |
+| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`               |
+| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
 
-[mcp/overview.md](../../../overview.md)
+[MCP overview](../../../overview.md)
 
 ## Purpose
 
-`git_command.py` is the shared low-level git command runner for kernel modules.
-It consolidates the previously duplicated `cross_repo.run_git` and
-`git_facts._run_git` helpers (F14) into a single `run_git()` entry point so the
-git invocation flags, isolation, and timeout are defined in exactly one place.
+`git_command.py` is the shared low-level Git subprocess boundary for package kernel and memory
+services. It fixes command isolation, decoding, stdin, and timeout behavior in one place.
 
 ## Code Commentary
 
 ### Logic
 
-`run_git(repo_root, args)` shells out to `git` through `subprocess.run` and
-returns the `CompletedProcess[str]` for the caller to inspect. It injects
-`-c safe.directory=<repo_root>` before the caller's arguments, runs with
-`cwd=repo_root`, captures stdout and stderr as text, detaches stdin via
-`DEVNULL`, and enforces a 5-second timeout. It never raises on a non-zero git
-exit (`check=False`); callers read `returncode`, `stdout`, and `stderr`
-themselves.
+`git_environment()` copies the process environment and removes all eight repository-selection
+variables: `GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
+`GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, and `GIT_PREFIX`.
+`run_git()` injects `safe.directory`, runs at the supplied repository root with `stdin=DEVNULL`,
+captures output as UTF-8 with `surrogateescape`, applies the scrubbed environment, enforces a
+five-second timeout, and returns non-zero outcomes for typed interpretation by its caller.
 
 ### Conventions
 
-`repo_root` is rendered with `as_posix()` for the `safe.directory` value so the
-config string is forward-slashed and stable across platforms. The module keeps
-to the standard library only and stays deliberately tiny.
+The selector tuple is production authority and is imported by tests instead of copied. Repository
+paths are rendered with `as_posix()` for stable Git configuration values. The module stays standard-
+library-only and does not interpret Git records.
 
 ### Invariants And Boundaries
 
-- `check=False` is intentional: this runner reports git outcomes rather than
-  raising, so callers must branch on `returncode` / `stderr`.
-- The 5-second `timeout` is the single shared bound; a slow or hung git call
-  surfaces as `subprocess.TimeoutExpired` to the caller.
-- `safe.directory` is always set to `repo_root`, keeping invocations isolated
-  to the target repository regardless of ambient git ownership state.
-- This is the low-level runner only. It does not interpret git output, decode
-  facts, or enforce repository/memory containment; those concerns belong to the
-  callers (`git_facts.py`, `coordination_context/cross_repo.py`).
+- Ambient repository selectors must never redirect a command away from the explicit `repo_root`.
+- UTF-8 `surrogateescape` is required so NUL-delimited Git records retain non-UTF-8 path identity.
+- `check=False` is intentional: callers translate return codes and stderr into their domain's typed
+  failure without losing evidence.
+- The timeout and `stdin=DEVNULL` are process-boundary requirements, not speculative fallback paths.
+- Root validation, census parsing, and containment belong to callers such as
+  `route_index_census.py`; this runner only executes the bounded command.
+
+### Todos
+
+None known for the MX-FIX-4 Git command boundary.
 
 ## Docs References
 
-No external documentation is needed for this standard-library subprocess wrapper.
+No Domain Documentation source is configured for this repository. Git behavior is verified by the
+package's production-path regression matrix.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No relevant external documentation is needed for the shared git command runner. | n/a | n/a |
+| No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-The two F14 consolidation consumers are the direct evidence for this shared
-runner.
-
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `git_facts.py` imports `run_git` and uses it for its git facts (e.g. work-tree and commit probes) instead of its former private `_run_git`. | imports `run_git` | [git_facts.py](agents-remember/mcp/src/agents_remember/kernel/git_facts.py) |
-| `coordination_context/cross_repo.py` imports `run_git`, re-exports it in `__all__`, and uses it for branch and HEAD lookups, preserving the old `cross_repo.run_git` call site. | imports and re-exports `run_git` | [cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py) |
+| The deterministic route-index census consumes NUL-delimited output from this runner and preserves typed causes. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
+| Carryover uses the same scrubbed environment for its separate input-bearing Git adapter. | Git runner | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py) |
+| Tests import the production selector inventory and cover every selector. | L34-L39; L595-L644 | [conftest.py](agents-remember/mcp/tests/conftest.py); [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 
 ## Cross-Repo References
 
-The runner operates on whatever `repo_root` it is given, including sibling and
-external-memory repositories, but the implementation contract is local to this
-file and its kernel callers.
+The runner can execute against configured code or external-memory repositories, but no sibling
+repository defines this implementation.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: added the authoritative selector scrub and
+  surrogate-preserving output boundary used by deterministic route-index census and carryover.
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

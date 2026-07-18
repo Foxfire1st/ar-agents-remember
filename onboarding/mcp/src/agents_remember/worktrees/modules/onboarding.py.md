@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-12T19:06+02:00|
-| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
-| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
+| lastUpdated            | 2026-07-18T20:03+02:00|
+| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
+| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[Worktree modules overview](overview.md)
 
 ## Purpose
 
@@ -76,20 +80,62 @@ and `memory_verified_commit` plumbed from the worktree wrapper) before the code
 commit. New overview files absent from the verified baseline pass without
 classification.
 
+MX-FIX-4 keeps route-index authority attached to that same resolved context:
+both preview and apply pass `context.storage` explicitly to
+`build_route_indexes()`. Closeout therefore cannot generate derived memory
+using a different path-rule interpretation from the refresh plan it validated.
+
+### Conventions
+
+This module owns closeout orchestration and classification; shared Markdown
+parsing stays in `kernel/onboarding_doc.py`, deterministic source census stays
+in `kernel/route_index_census.py`, and rendering stays in
+`kernel/route_index.py`.
+
+### Invariants And Boundaries
+
+- Sidecar and nearest-governing overview body/history gates run before code
+  commit; ancestor overviews are reported but do not become false blockers.
+- Working-tree missing onboarding blocks, while transported committed-range
+  gaps remain explicitly reported as `unonboarded`.
+- Route-index preview and apply must use the exact `context.storage` authority
+  resolved for the refresh plan; no builder default may replace it.
+- Generated indexes and entity fingerprints are derived after their owning
+  authored bodies are validated.
+
+### Todos
+
+None known for the MX-FIX-4 closeout caller boundary.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
+
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
-| Route index refresh is delegated to the generated route index builder. | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
-| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprint refresh. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | drift integrity | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
+| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | L345-L363 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py); [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
+| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, entity fingerprints, and explicit initialized-memory storage authority. | L224-L252 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+
+## Cross-Repo References
+
+Closeout can coordinate code and external-memory worktrees, but no external
+implementation governs this module.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: route-index preview and apply now pass the resolved
+  `context.storage` authority explicitly into deterministic generation.
 - 2026-06-12T19:06+02:00 — Issue #83: two-tier plan split via `working_paths` (blocking `missing`/`unsupported` scoped to working paths, committed-range gaps collected as non-blocking `unonboarded`), body gates re-baselined on `contract_memory_verified_commit` via `commit_text_or_none` with `_changed_memory_paths` membership, and `_joined_sample` capping gate error joins.
 - 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added the route-overview body gate (`_nearest_governing_route`, `classify_route_overview_updates`, `require_updated_route_overview_content` with the `No route impact:` marker) wired into `validate_route_overview_refresh_plan_for_context`; ancestor matches report as `stamped_without_body_review` instead of failing.
 - 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: moved shared metadata/route helpers to `kernel/onboarding_doc.py` (facade re-exports kept) and rebuilt the content gate as the four-case body/history classification (`classify_sidecar_updates` + `require_updated_sidecar_content` returning marker-attested paths): untraced body edits and unmarked history-only edits now fail; `No content impact:` entries pass and are surfaced.

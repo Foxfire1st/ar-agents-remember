@@ -65,7 +65,7 @@
     "worktree_tools"
   ],
   "hotPath": {
-    "summary": "Use `context_packet.py` for compact `ContextPacketV2` assembly, `coordination_tools.py` for resolver calls, `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover operations, `provider_tools.py` for provider status/diagnostics/watchers and GrepAI/CGC operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree operations including the terminal `lifecycle_finalize_task` path, `benchmark_tools.py` for Codex benchmark prepare/run, `runtime_install.py` for runtime install, `skill_tools.py` for skill installation, `task_doc_tools.py` for JSON-pr...",
+    "summary": "Use `context_packet.py` for compact `ContextPacketV2` assembly, `coordination_tools.py` for resolver calls, `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover operations. Its route-index refresh resolves coordination context first and forwards the exact `code_repository_name` plus `StorageSettings`, so controller transport cannot silently replace repository/path-rule authority, `provider_tools.py` for provider status/diagnostics/watchers and GrepAI/CGC operations, `worktree_tools.py` for `c-09-git-worktree-manager` skill worktree operations including the...",
     "candidateHints": [
       "mcp/src/agents_remember/controllers",
       "mcp/src/agents_remember/controllers/__init__.py",
@@ -107,17 +107,18 @@
       "worktree_tools.py",
       "worktree_tools",
       "ContextPacketV2",
+      "code_repository_name",
+      "StorageSettings",
       "c-09-git-worktree-manager",
-      "lifecycle_finalize_task",
       "GrepAI",
       "CGC",
-      "JSON",
       "mcp/src/agents_remember/controllers/",
       "route-local-overview",
-      "0d5ce6784930aa4e9006ab4bbf2b788a3296abce",
+      "7ca29c3b6dd2c0184253e2690f1ebe78c511573b",
       "/../../overview.md",
       "controllers/",
       "task_reopen_tool",
+      "lifecycle_finalize_task",
       "read_ar_files",
       "GET /api/files",
       "parent_task",
@@ -128,8 +129,7 @@
       "worktree_integrate_tool",
       "lifecycle_finalize_task_tool",
       "config.retirement.auto_land_on_integration",
-      "auto_land_on_finalize",
-      "_auto_land_completed_seats"
+      "auto_land_on_finalize"
     ]
   },
   "fallback": {
