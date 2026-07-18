@@ -244,7 +244,7 @@
     "git"
   ],
   "hotPath": {
-    "summary": "260715-FEUI-L9 centers `test_conversation_contracts.py` for semantic authority and `test_conversation_foundation.py` for package/router/helper/fixture topology. The three `fixtures/conversation_runtime/*.json` files are allow-listed installed observations with `enablesCapabilities:false`; exact versions and observed counts are evidence, never maintained feature declarations. Helper protocol behavior is also covered in its own Node test package. 260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness, dispatch/withdraw races, early terminal completion, full...",
+    "summary": "For folded-state transport changes, begin at `test_serving.py::StreamEventsTests`: the MX-FIX-1 cases pin atomic activation, first-recovery snapshot semantics, later-delta continuity, and close/cancellation cleanup against the production `Projector` and `stream_events` seam. 260715-FEUI-L9 centers `test_conversation_contracts.py` for semantic authority and `test_conversation_foundation.py` for package/router/helper/fixture topology. The three `fixtures/conversation_runtime/*.json` files are allow-listed installed observations with `enablesCapabilities:false`; exact versions and observed cou...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_scaling.py",

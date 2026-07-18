@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated | 2026-07-18T14:16+02:00 |
+| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3`|
+| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,20 @@ HTML revalidation; raw-event record realignment and invalid/non-object cursor pr
 tmux client environment under contaminated launcher state; and omission of fictitious pre-session
 adapter control. Integration coverage skips only when tmux itself is absent.
 
+## MX-FIX-1 Atomic Folded-State Stream Gate
+
+`test_serving.py` now forces both formerly lost state paths. One case publishes while the initial
+snapshot generator is suspended but already subscribed and requires the exact next delta. One case
+registers before failed-prime recovery, requires one full build-decorated snapshot, proves the
+identical state is not duplicated, and then requires an ordinary later delta. A third case cancels a
+waiting stream and proves immediate subscriber removal. These are synchronization-driven assertions,
+not sleep-based race probabilities.
+
 ## Hot Path Summary
+
+For folded-state transport changes, begin at `test_serving.py::StreamEventsTests`: the MX-FIX-1
+cases pin atomic activation, first-recovery snapshot semantics, later-delta continuity, and
+close/cancellation cleanup against the production `Projector` and `stream_events` seam.
 
 260715-FEUI-L9 centers `test_conversation_contracts.py` for semantic authority and
 `test_conversation_foundation.py` for package/router/helper/fixture topology. The three
@@ -196,6 +209,10 @@ L4 regression coverage proves exact-session readiness and dispatch, catalog writ
   authorization/identity/generation binding, and fail closed on contradictory state products.
 - Runtime fixtures and locked helper packages are evidence surfaces only; neither enables history
   or control capability without a production-seam pass.
+- Folded-state race regressions force ordering through explicit generator/task boundaries; timing
+  sleeps alone are not accepted as proof of snapshot/subscription convergence.
+- First recovery is exactly one full snapshot with boot identity, identical state is silent, later
+  content uses the normal delta grammar, and every closed/cancelled consumer releases its queue.
 
 ## Docs References
 
@@ -225,6 +242,7 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | L1-L1180 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Public API epoch/conflict/certificate/privacy/status matrix. | L1-L700 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
 | Native adapter exact-operation coverage is split by harness. | L1-L1 | [Claude tests](agents-remember/mcp/tests/test_harness_control_claude.py); [Codex tests](agents-remember/mcp/tests/test_codex_app_server_adapter.py); [Pi tests](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
+| Folded-state stream regressions force the handoff mutation, failed-prime snapshot/non-duplication/later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 
 ### 260713-PHA-L5 Route Contract Review
 
@@ -235,6 +253,10 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: added route-level coverage for deterministic
+  snapshot/subscription handoff, first-recovery full snapshot with build identity, identical-state
+  silence, later named delta, and explicit close/cancellation subscriber cleanup. Verification
+  metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-18T12:43+02:00 — FEUI-L9R: recorded the build/static, raw-event, tmux-environment, and
   narrow harness-discovery regression matrix. Verification metadata remains pinned pending
   candidate closeout.
