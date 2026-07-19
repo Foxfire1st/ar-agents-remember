@@ -92,7 +92,7 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 100,
+    "sourceFilesInScope": 112,
     "fileSidecars": 74,
     "childRoutes": 1
   },
@@ -179,7 +179,7 @@
     "launch"
   ],
   "hotPath": {
-    "summary": "For the native conversation library (260718-CHATS-L2), start at `conversation/library/api.py` (five routes plus the O4 error-status ladder), then `conversation/library/service.py` (per-call re-authorization), `conversation/library/open_service.py` (idempotent exact open and bounded ledger), `conversation/library/cursor.py` (signed token authority), `conversation/library/gates.py` (live capability gates), and the three dormant ports `conversation/library/codex.py`, `claude.py`, `pi.py` with `helper_host.py` for the locked Node helpers. The six focused suites plus the installed-runtime suite...",
+    "summary": "For the active conversation serving (260718-CHATS-L1), start at `conversation/active/api.py` (the two routes plus the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`; the...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/conversation",

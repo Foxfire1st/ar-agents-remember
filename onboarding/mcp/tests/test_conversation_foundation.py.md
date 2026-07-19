@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_foundation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-19T18:25+02:00 |
+| lastVerifiedCommitHash |  `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
+| lastVerifiedCommitDate |  2026-07-19T19:12:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,10 +17,10 @@
 ## Purpose
 
 Pins the cross-route foundation of structured Chats: exact two-port shape, three owned child
-routers (the library child now carrying exactly its five L2 behavior routes while active and
-control stay behavior-empty), one global registration seam, repository-owned helper dependency
-resolution with the exact helper source set, and allow-listed installed-runtime fixtures that
-cannot enable capabilities.
+routers (the active child carrying exactly its two L1 GET routes and the library child exactly
+its five L2 routes; control stays behavior-empty), one global registration seam,
+repository-owned helper dependency resolution with the exact helper source set, and allow-listed
+installed-runtime fixtures that cannot enable capabilities.
 
 ## Code Commentary
 
@@ -32,10 +32,14 @@ prove one registration call — since 260718-CHATS-L0 pinning the exact
 through the same single seam — parses the helper manifest/lock to prove exact pins, scans production
 helper TypeScript for forbidden ambient resolution, validates all three runtime fixtures through
 the production Pydantic contract, and rejects raw secret/path/conversation material by pattern.
-Since 260718-CHATS-L2 the child-router assertion pins the library child's exact five-route surface
-(GET list, GET read, POST open/open-status/open-reconcile) by method+path while active and control
-remain behavior-empty, and the helper-source listing expects exactly `claude.ts`, `pi.ts`,
-`protocol.ts`, and `protocol.test.ts`.
+Since 260718-CHATS-L1 the child-router assertion
+(`test_root_composes_three_owned_child_routers`) also pins exactly the two owned active
+production routes — `GET /api/terminal/{ar_session_id}/conversation` and `GET
+…/conversation/events` — and since 260718-CHATS-L2 it pins the library child's exact five-route
+surface (GET list, GET read, POST open/open-status/open-reconcile) by method+path, while the
+control child router stays behavior-empty (both are the same class of legitimate assertion
+update L0 recorded for its call-shape change); the helper-source listing expects exactly
+`claude.ts`, `pi.ts`, `protocol.ts`, and `protocol.test.ts`.
 
 ### Conventions
 
@@ -46,8 +50,9 @@ expectations wholesale.
 ### Invariants And Boundaries
 
 - Exactly two conversation read ports; no native control port.
-- Child ownership stays disjoint at this gate: only the library child carries behavior routes
-  (exactly its five), and all three mount through one root seam.
+- Child ownership stays disjoint at this gate: the active child carries exactly its two L1 GET
+  routes, the library child exactly its five L2 routes, the control child stays behavior-empty,
+  and all three mount through one root seam.
 - Helper dependencies resolve only from this repository package/lock, and production helper source
   contains no incidental module resolution.
 - All runtime fixtures are allow-listed, redacted, and explicitly non-enabling.
@@ -56,8 +61,9 @@ expectations wholesale.
 
 ### Todos
 
-Later leaves should replace behavior-empty assertions for the active/control children only when
-they own and test the corresponding production endpoints.
+Later leaves should replace behavior-empty assertions for the control child only when they own and
+test the corresponding production endpoints (the active child's routes are owned and pinned since
+260718-CHATS-L1, the library child's since 260718-CHATS-L2).
 
 ## Docs References
 
@@ -73,6 +79,7 @@ contract are direct evidence.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Root conversation composition defines the exact child tuple and single registration function. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
+| The active child's two owned GET routes pinned by the child-router assertion. | L56-L59; L121-L160 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
 | The library child owns exactly the five L2 routes this suite pins by method and path. | L93-L198 | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
 | The helper manifest owns the exact direct runtime dependencies checked against the lock. | L1-L22 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
 | Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | L1233-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
@@ -87,6 +94,16 @@ No neighboring repository participates in this topology suite.
 
 ## Update History
 
+- 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
+  sidecar with the L1 update after the master memory branch advanced — the child-router pin now
+  documents both the active child's exact two L1 routes and the library child's exact five L2
+  routes with control behavior-empty, the L2 helper-source-set listing, and both reference rows.
+  Verification metadata stays pinned at the L2 code commit until L1 closeout stamps the L1
+  candidate commit.
+- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the renamed child-router pin
+  (`test_root_composes_three_owned_child_routers`) asserting exactly the two owned active GET
+  routes (page + events) — the same class of legitimate assertion update L0 recorded.
+  Verification metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the renamed
   `test_root_composes_three_owned_child_routers` pin — the library child now asserts exactly its
   five owned routes while active/control stay behavior-empty — and the helper-source listing

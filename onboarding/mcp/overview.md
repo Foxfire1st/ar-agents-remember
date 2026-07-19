@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash | `67cad9bcdc736de70168ea9c153a0f12319a7263` |
-| lastVerifiedCommitDate | 2026-07-19T17:19:21+02:00|
+| lastUpdated            | 2026-07-19T18:25+02:00 |
+| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2` |
+| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -15,6 +15,24 @@
 [overview.md](../overview.md)
 
 ## Purpose
+
+260718-CHATS-L1 implements the active conversation serving the structured Chats architecture
+assigned to the active child. Under `serving/conversation/active/`, the two authorized
+production routes (native-hydrated page plus resumable SSE events) project the exact running
+Codex/Claude/Pi conversations behind the L0 composition — HMAC-signed purpose-branded cursors
+re-bound per wire, epoch verified against the live authority per request, a bounded
+reconstructable-projector LRU per app — while `serving/conversation/projectors/` holds the pure
+per-harness frame grammars (codex thread items/notifications, claude stream-json plus the exact
+submission echo, pi durable entries/live tool upserts) with stable native identity and
+unknown-vendor preservation. Hydration re-pages native authority only (never the flattened
+transcript deque); the idempotent store unions tool-call blocks (review F1); established streams
+fail as one typed gap + close (review F2/F3); the canonical `ConversationStatusService` is now
+the single classification both Chats and orchestration consume
+(`hosted_control_projection.snapshot_turn_state` delegates); capabilities stay fixture-gated
+(claude `unverified` at installed 2.1.214 vs locked 2.1.211; codex historical tool loss
+visible). The L0 composition, wire grammar, and library/control shells are untouched. The
+`mcp/tests/` regression set gains four focused suites, and the foundation pin asserts the active
+child's exact two routes.
 
 260718-CHATS-L2 implements the dormant native conversation library inside the L9 contract roof.
 Under `serving/conversation/library/`, five authorized routes expose each normalized harness's
@@ -25,8 +43,8 @@ after exact catalog proof. Live production-path gates decide capability honesty 
 installed-executable fingerprint; a per-app HMAC-signed cursor/key authority binds scope,
 purpose, and content-derived catalog generations; the bounded open ledger keys one stable
 requestId/fingerprint, and record-spawned failures retire honestly while absorbed foreign
-sessions are never disturbed. The L0 composition, wire grammar, and active/control shells are
-untouched. The `mcp/tests/` regression set gains six focused suites plus the opt-in
+sessions are never disturbed. The L0 composition and wire grammar are untouched. The
+`mcp/tests/` regression set gains six focused suites plus the opt-in
 installed-runtime gates, and the foundation pin asserts the library child's exact five routes.
 
 260718-CHATS-L0E lands the additive, read-only native evidence and resume substrate inside the
@@ -915,6 +933,20 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
+  package-granularity paragraph and history with the L1 active-serving paragraph after the
+  master memory branch advanced; both implemented slices are documented, routed to the
+  `serving/`, `conversation/`, `conversation/active/`, `conversation/projectors/`,
+  `conversation/library/`, and `mcp/tests/` governors for detail. Verification metadata remains
+  pinned until L1 closeout stamps the candidate commit.
+- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the implemented active
+  conversation serving at package granularity — the two authorized active routes, signed cursor
+  authority, bounded service/projector engines, idempotent store with the review-F1 block
+  union, the canonical status service now backing orchestration's seat projection, fixture-gated
+  capabilities, and the pure per-harness mapper grammars — routed to the `serving/`,
+  `conversation/`, `conversation/active/`, `conversation/projectors/`, and `mcp/tests/`
+  governors for detail. Verification metadata remains pinned until closeout stamps the
+  candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the implemented native
   conversation library at package granularity — the five authorized library routes and three
   dormant ports (Codex direct, Claude/Pi through the newly implemented locked helper entries),

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash | `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate | 2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-19T18:25+02:00 |
+| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
+| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -26,14 +26,25 @@ exactly two read ports, three behavior-empty owned child routers, one global reg
 repository-only native-helper resolution, and redacted installed-runtime fixtures. These tests do
 not claim a projector, native-history implementation, control service, or renderer exists.
 
+260718-CHATS-L1 adds the active conversation serving regression set. Four focused suites cover
+the implemented slice — canonical status classification/revision discipline with full-product
+orchestration parity, per-harness mapper grammars with hostile shapes, the projector engine and
+store (hydration, ordering, idempotence, provenance, rehydration, tool convergence, overflow and
+zipper gap mechanics), and the production routes over a REAL composition (bridge + IPC server on
+a real socket, real catalog row, L0 route registration, HTTP over loopback uvicorn) proving
+native identity, cursor forgery refusals, dual-cursor agreement, epoch-flip gap+close,
+provenance through the real authority, orchestration parity, and absence of PTY/runner-log/
+fixture production authority. The foundation pin asserts the active child's exact two-route
+surface.
+
 260718-CHATS-L2 adds the native conversation library regression set. Six focused suites cover the
 implemented slice on doubled boundaries — ASGI routes with the exact O4 status ladder, cursor/key
 and scope contracts, live gate demotion rules, port normalization with hostile shapes, and the
 open service's idempotence/race/ownership arms — while the opt-in installed-runtime suite proves
 the live Codex and Pi gates, both real end-to-end opens, and the Claude version-mismatch
-fail-closed posture. The foundation pin now asserts the library child's exact five-route surface
-(active/control stay behavior-empty) and the extended helper source set; the three runtime
-fixtures record observed (never enabling) gate/open rows.
+fail-closed posture. The foundation pin asserts the library child's exact five-route surface and
+the extended helper source set; the three runtime fixtures record observed (never enabling)
+gate/open rows.
 
 260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
@@ -160,6 +171,14 @@ close/cancellation cleanup against the production `Projector` and `stream_events
 `fixtures/conversation_runtime/*.json` files are allow-listed installed observations with
 `enablesCapabilities:false`; exact versions and observed counts are evidence, never maintained
 feature declarations. Helper protocol behavior is also covered in its own Node test package.
+
+260718-CHATS-L1 centers four focused suites: `test_conversation_active_status.py` (canonical
+classification, revision discipline, full-product orchestration parity),
+`test_conversation_active_projectors.py` (per-harness mapper identity/blocks/tools/provenance),
+`test_conversation_active_service.py` (engine hydration/ordering/idempotence plus the F1/F2/F3
+fix pins), and `test_conversation_active_api.py` (production routes over a real socket, incl.
+the live epoch-flip gap and the no-PTY source scan). The foundation pin asserts the active
+child's exact two routes; fixture rows stay evidence-not-enablement.
 
 260718-CHATS-L2 centers six focused suites: `test_conversation_library_api.py` (real-ASGI routes
 and the O4 status ladder), `test_conversation_library_cursor.py` (signed token and scope
@@ -324,7 +343,8 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
-| Foundation coverage pins two ports, child ownership (the library child's exact five L2 routes; active/control empty), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Foundation coverage pins two ports, child ownership (the active child's exact two L1 routes and the library child's exact five L2 routes; control empty), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Active serving coverage pins canonical status/parity, per-harness mapper grammars, engine/store mechanics, and the real-socket production routes with the no-PTY source scan. | L362-L865 | [test_conversation_active_api.py](agents-remember/mcp/tests/test_conversation_active_api.py) |
 | Library coverage pins the ASGI status ladder, cursor/scope contracts, gate demotion, hostile port normalization, open idempotence/race/ownership, and the opt-in live gates and real opens. | L1-L9 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | Composition contract coverage pins install-once, fail-closed binding shapes, per-app isolation, no singleton, and no injected identity or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | Authorization contract coverage pins local-operator identity, loopback-only resolution, no identity channel, ignored browser claims, and cross-principal rejection. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
@@ -352,6 +372,17 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
+  library regression-set content with the L1 active regression-set content after the master
+  memory branch advanced — both suite families, the merged foundation-pin coverage (active two
+  routes + library five routes; control empty), and both reference rows survive. Verification
+  metadata remains pinned until L1 closeout stamps the candidate commit.
+- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: added the active conversation serving
+  regression set — four focused suites (canonical status/parity, mapper grammars, engine/store
+  with the F1/F2/F3 fix pins, and the real-socket production routes proving identity, cursor
+  refusals, epoch-flip gap+close, provenance, parity, and no-PTY authority) plus the foundation
+  pin's exact two-route active-child assertion. Verification metadata remains pinned until
+  closeout stamps the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: added the native conversation library
   regression set — six focused suites over doubled boundaries (ASGI status ladder, cursor/scope,
   gates, ports, open arms) plus the opt-in installed-runtime suite proving the live Codex/Pi

@@ -1,0 +1,202 @@
+# Active Conversation Projectors Route Overview
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| doc_type | `route-local-overview` |
+| sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
+| onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
+| parentOverview | [`conversation/overview.md`](../overview.md) |
+| lastUpdated | 2026-07-19T17:35+02:00 |
+| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
+| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+
+## What This Area Is
+
+This route is the per-harness active projector slice landed by 260718-CHATS-L1: the pure frame
+grammars that map each harness's native frames — live evidence frames and native-history page
+frames — into normalized conversation mapping outputs for the engine in the sibling `active/`
+route. Mappers are schema-strict and vendor-honest: every item type with exact field evidence
+maps to a typed item, and every other shape becomes `unknown-vendor` evidence with its native
+id/turn parent preserved and its raw payload kept server-side.
+
+The slice is deliberately pure. Mappers hold no IO, no clock, no engine state; the engine
+assigns ordinals, revisions, provenance resolution, envelopes, and unknown-vendor evidence
+handles. One protocol (`HarnessProjector`) plus channel flags is the only engine-facing
+surface, so the engine never special-cases a harness.
+
+## Hot Path Summary
+
+Start with `__init__.py` for the `HarnessProjector` protocol, channel flags, and registry.
+`common.py` holds the strict parsing primitives, the four mapper output types, and the honest
+provenance builders. `codex.py` maps thread items and notifications (items/blocks/tools/
+deltas/turn results), `claude.py` maps stream-json frames (text/thinking/tools/results plus the
+exact submission echo), and `pi.py` maps durable entries and live RPC events (messages/tools/
+notices/outcomes anchored on native entry identity).
+
+## What Belongs Here
+
+| Path | Role |
+| --- | --- |
+| `__init__.py` | The engine-facing protocol, per-harness channel bindings, and the `PROJECTORS` registry. |
+| `common.py` | Strict schema parsing, mapper output types, provenance builders. |
+| `codex.py` | Codex thread items + notifications → items/blocks/tools/deltas/turn results. |
+| `claude.py` | Claude stream-json frames → items/thinking/tools/results; exact submission echo. |
+| `pi.py` | Pi durable entries → items/tools/notices/outcomes; live tool upserts. |
+
+## What Does Not Belong Here
+
+| Nearby Thing | Belongs Instead In |
+| --- | --- |
+| Ordinals, revisions, retention, envelopes, cursor minting, gap mechanics | `mcp/src/agents_remember/serving/conversation/active/` (the engine route). |
+| Strict wire grammar and provenance validation | `mcp/src/agents_remember/serving/conversation/models.py` (the parent contract route). |
+| Native evidence emission and the IPC seam | `serving/harness_control_*.py` and the native adapters (L0E; consumed). |
+| Dormant native list/read normalization | `mcp/src/agents_remember/serving/conversation/library/` (the L2 leaf). |
+
+## Structures Found Here
+
+- A `HarnessProjector` protocol with four channel flags (`uses_native_pages`,
+  `uses_transcript_echo`, `eager_native_continuation`, `harness_id`) the engine reads to choose
+  hydration, zipper, and continuation behavior.
+- Parse-by-schema primitives (`required_object`/`required_list`/`required_text`) whose
+  `UnmappableShape` failure becomes preserved unknown-vendor evidence at the engine — malformed
+  known shapes never kill the stream and never guess semantics.
+- Four frozen mapper output types: `MappedItem`, `MappedBlockDelta`, `MappedTurnOutcome`,
+  `MappedUnknownVendor`.
+- Stable native identity per harness: codex item ids (turn parent on `nativeParentId`), claude
+  message uuids / `tool_use` ids / replay correlation uuids, pi durable entry ids and native
+  `toolCallId`s. No content hashes, timestamps, or array indices anywhere.
+- Split tool items (invocation first, result later) keyed by one stable id, converged by the
+  store's block union; codex full-item re-maps are identical under union.
+- Honest user-input provenance: `unknown-input` with request correlation where the harness
+  carries one (codex `clientId`, claude echo request id), always unknown-input for pi (no native
+  correlation exists); the engine's provenance batch resolves exact sources exactly once.
+
+## Operating Model
+
+1. The engine feeds a native-history page frame or a live evidence frame to the harness mapper
+   with an opaque evidence ref.
+2. The mapper parses the frame against its documented schema with exact required keys and emits
+   mapping outputs; unrecognized shapes return `MappedUnknownVendor` with a safe summary.
+3. Turn settlements emit `MappedTurnOutcome`, which the engine feeds to the canonical status
+   service as exact terminal evidence.
+4. Channels a harness does not have raise `NotImplementedError` through the bound protocol
+   (claude native pages fail closed stream/replay-only; codex/pi have no echo channel).
+
+## Main Flows
+
+### Native history mapping (codex, pi)
+
+1. Codex `thread/read` items map by type (user/agent message, plan, reasoning, command
+   execution, file change, MCP tool call); turn results mint `turn-result` items plus outcomes.
+2. Pi durable entries map by type (messages by role, compaction/model/thinking notices);
+   assistant `toolCall` parts and `toolResult` messages converge on the native `toolCallId`.
+
+### Live frame mapping
+
+1. Codex notifications discriminate by (event kind, schema-disjoint params keys); bare deltas
+   resolve their target block through the item kind at the engine.
+2. Claude assistant frames split text/thinking and mint stable-ID tool items; `tool_result`
+   carriers upsert the same item; result frames classify terminal outcomes.
+3. Pi `tool_execution_*` events upsert live tool items by `toolCallId`; `message_end`/
+   `message_update` mint nothing — completed messages mint from durable entries.
+
+### Claude submission echo
+
+1. User submissions arrive through the adapter's exact submission echo (original text, exact
+   request id, replay uuid), mapped to user items keyed by the replay uuid.
+2. Replayed user frames on the evidence channel are refused here so no item is ever double-
+   minted; the engine zips echoes and frames by strict turn order.
+
+## Load-Bearing Files
+
+| File | Role | Why It Matters | Onboarding |
+| --- | --- | --- | --- |
+| `__init__.py` | protocol/registry | The only engine-facing surface; a harness without a projector fails closed typed. | covered |
+| `common.py` | shared primitives | One parsing/provenance home so the three mappers cannot drift apart. | covered |
+| `codex.py` | codex grammar | Native identity, tool/diff blocks, deltas, and honest historical tool loss. | covered |
+| `claude.py` | claude grammar | Stream-json mapping plus the exact submission echo; no native page exists. | covered |
+| `pi.py` | pi grammar | Entry-anchored identity, live tool upserts, honest unknown-input users. | covered |
+
+## Local Invariants And Traps
+
+- A mapper never assigns ordinals/revisions/envelopes and never performs IO — purity is what
+  makes rehydration byte-identical.
+- Unknown shapes are preserved with native coordinates, never dropped and never guessed; raw
+  payloads never reach public items.
+- User-role items never gain a default producer; absent provenance records stay unknown-input.
+- Claude replayed user frames must raise `UnmappableShape` here — the echo channel owns them.
+- Pi live text is completion-anchored: no provisional identity is ever minted from an id-less
+  `message_end` frame.
+- Turn-result items mint only where a native settlement exists (codex/claude always; pi only
+  for failed/aborted turns).
+
+## Repo-Internal References
+
+The engine route drives these mappers and owns everything stateful; the strict contract
+validates every emitted product; the L0E substrate defines the frame products; the runtime
+fixtures record which shapes are gate-observed. The mapper suite pins every grammar.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The engine consumes channel flags and converts `UnmappableShape` to preserved evidence. | L387-L396; L453-L472 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
+| The store converges the split tool items these mappers emit. | L123-L126; L303-L319 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
+| The evidence/native frame products the mappers parse. | L310-L350 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The runtime fixtures record the observed (never enabling) shapes per harness. | L34-L58 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
+| The mapper suite pins identity, blocks, tools, provenance, and preservation for all three. | L49-L553 | [test_conversation_active_projectors.py](agents-remember/mcp/tests/test_conversation_active_projectors.py) |
+
+## Cross-Repo References
+
+No cross-repository implementation participates in this route. All three harnesses are local
+subprocesses reached through this repository's own adapters.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant cross-repo evidence found. | — | — |
+
+## Docs References
+
+The resolved `Domain Documentation` registry has no entries. Each mapper names its schema
+authority (the codex app-server v2 generated protocol, the locked claude stream-json fixtures,
+the locked Pi RPC documentation); those are repository-owned and cited in the file sidecars.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation was available for this projector gate. | — | — |
+
+## File-Level Onboarding Map
+
+| Source File | Onboarding File | Status | Reason |
+| --- | --- | --- | --- |
+| `__init__.py` | [`__init__.py.md`](__init__.py.md) | covered | Protocol, channel bindings, registry. |
+| `common.py` | [`common.py.md`](common.py.md) | covered | Strict parsing, output types, provenance builders. |
+| `codex.py` | [`codex.py.md`](codex.py.md) | covered | Codex frame grammar. |
+| `claude.py` | [`claude.py.md`](claude.py.md) | covered | Claude frame grammar + submission echo. |
+| `pi.py` | [`pi.py.md`](pi.py.md) | covered | Pi entry/event grammar. |
+
+## Child Overviews
+
+None. The five modules form one coherent mapper slice; per-harness detail lives in the file
+sidecars, not in nested overviews.
+
+## How To Use This Area
+
+Read this overview and the exact file sidecar first. Any grammar change requires the mapper
+suite plus the engine suite (tool convergence pins), and belongs behind the fixture gate:
+shapes without installed-runtime fixture evidence stay `unverified` in capabilities even when
+they map correctly.
+
+## Needs Verification
+
+- Codex reasoning/diffs/MCP shapes, claude's whole surface (installed 2.1.214 ≠ locked
+  2.1.211), and pi thinking/tool-execution shapes stay capability-`unverified` until
+  installed-runtime fixtures observe them through the production seam.
+
+## Update History
+
+- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the governing overview for the
+  per-harness active projectors — the pure mapper protocol/registry, shared strict-parsing and
+  provenance primitives, and the codex/claude/pi frame grammars with native identity and
+  unknown-vendor preservation — after same-reviewer PASS-WITH-NOTES closed findings F1–F3.
+  Verification is blank because the new source route is uncommitted; closeout owns its first
+  source stamp.
