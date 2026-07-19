@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastUpdated | 2026-07-19T16:04+02:00 |
+| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
+| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
 
 ## What This Area Is
 
@@ -26,6 +26,13 @@ explicit server-resolved local-operator authorization resolver, installed exactl
 through the stable root registration. Child leaves consume it only through two narrow request
 dependencies; they never edit the shared composition again.
 
+Since 260718-CHATS-L2 the `library/` child is an implemented subsystem with its own route-local
+overview: the authorized dormant native list/read routes, live capability gates, the signed
+cursor/key authority, and the idempotent exact open/status/reconcile service landed inside the
+library ownership seam without touching this contract, the composition, or the active/control
+shells. This overview stays the contract and composition governor; the library overview governs
+the implemented slice.
+
 This is deliberately a contract and composition route. It does not project vendor events, read a
 native history store, implement control actions, persist a duplicate conversation database, or
 render a UI.
@@ -36,8 +43,9 @@ Start with `models.py` for identity, cursor, status, capability, operation, atta
 withdrawal grammar; use `ports.py` to see the only two read boundaries. `runtime.py` defines the
 immutable app-scoped authority bundle, `authorization.py` the server-resolved local-operator
 ruling, and `dependencies.py` the two request seams children consume. `router.py` installs the
-runtime once and composes the behavior-empty `active`, `library`, and `control` routers, mounted
-once through `harness_control_api.register_harness_control_routes`.
+runtime once and composes the `active`, `library`, and `control` child routers, mounted
+once through `harness_control_api.register_harness_control_routes`. The implemented library
+slice is governed by `library/overview.md`.
 
 ## What Belongs Here
 
@@ -50,7 +58,7 @@ once through `harness_control_api.register_harness_control_routes`.
 | `dependencies.py` | The two narrow request dependencies child leaves consume. |
 | `router.py` | One root composition seam for three disjoint child routers plus the runtime install. |
 | `active/` | Current exact-session route ownership shell. |
-| `library/` | Dormant native list/read/resume route ownership shell. |
+| `library/` | Implemented dormant native library slice (L2), governed by its own route-local overview. |
 | `control/` | Structured control and operation-projection route ownership shell. |
 
 ## What Does Not Belong Here
@@ -72,7 +80,9 @@ once through `harness_control_api.register_harness_control_routes`.
   DTOs.
 - `ActiveConversationPort` and `ConversationLibraryPort`; lifecycle/control authority is explicitly
   not a third port.
-- Three behavior-empty child routers with separate prefixes and one root registration function.
+- Three child routers with separate prefixes and one root registration function; `active` and
+  `control` remain behavior-empty ownership shells, while `library` carries exactly its five L2
+  routes inside its owned seam.
 - Frozen `ConversationScope`/`ConversationRuntime` composition types with fail-closed install and
   retrieval (`ConversationCompositionError` on missing, duplicate, foreign, or missing-member
   bindings); no module-level instance exists.
@@ -134,7 +144,7 @@ once through `harness_control_api.register_harness_control_routes`.
 | `dependencies.py` | consumption seam | Keeps child leaves off `app.state` and the composition; the only request fact used is the TCP peer. | covered |
 | `router.py` | composition | Owns the single registration seam (runtime install plus root mount) and isolates later leaf ownership. | covered |
 | `active/api.py` | route shell | Reserves the exact current-conversation URL without implementing behavior early. | covered |
-| `library/api.py` | route shell | Reserves the native library URL without claiming history support. | covered |
+| `library/api.py` | implemented routes | Owns the five L2 native-library routes and the O4 error-status ladder inside its seam. | covered |
 | `control/api.py` | route shell | Reserves exact-session control ownership without duplicating existing authority. | covered |
 
 ## Local Invariants And Traps
@@ -150,8 +160,9 @@ once through `harness_control_api.register_harness_control_routes`.
   while identity-bearing failures require catalog proof and the phase-matching rollback state.
 - Withdrawal raw recovery is a successful-response-only privacy boundary. Lists and failures stay
   raw-free.
-- The child API modules are intentionally behavior-empty in this contract leaf. Do not treat their
-  prefixes as implemented features.
+- The `active` and `control` child API modules are intentionally behavior-empty in this contract
+  route. The `library` child implemented its five routes in L2 inside its own overview's
+  governance; do not treat the active/control prefixes as implemented features.
 - `models.py` is intentionally declaration-heavy. Add behavior in focused services rather than
   turning the contract module into a projector or store.
 - Exactly one `ConversationRuntime` exists per app; it binds only existing authorities and adds no
@@ -177,7 +188,7 @@ composition and authorization contract suites.
 | The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. | L48-L105 | [authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
 | The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
 | The production composition constructs the one runtime from existing authorities and installs it exactly once. | L144-L162 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| The foundation suite verifies two-port topology, empty child ownership, one registration seam, exact helper pins, and fixture non-promotion. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The foundation suite verifies two-port topology, child ownership (the library child's exact five L2 routes; active/control empty), one registration seam, exact helper pins, and fixture non-promotion. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
 
@@ -214,28 +225,53 @@ external citation.
 | `active/__init__.py` | [`active/__init__.py.md`](active/__init__.py.md) | covered | Active route package marker. |
 | `active/api.py` | [`active/api.py.md`](active/api.py.md) | covered | Current-conversation ownership shell. |
 | `library/__init__.py` | [`library/__init__.py.md`](library/__init__.py.md) | covered | Library route package marker. |
-| `library/api.py` | [`library/api.py.md`](library/api.py.md) | covered | Native history ownership shell. |
+| `library/api.py` | [`library/api.py.md`](library/api.py.md) | covered | Five L2 native-library routes plus the O4 mapping authority. |
+| `library/service.py` | [`library/service.py.md`](library/service.py.md) | covered | List/read re-authorization orchestration (L2). |
+| `library/open_service.py` | [`library/open_service.py.md`](library/open_service.py.md) | covered | Idempotent exact open ledger/service (L2). |
+| `library/cursor.py` | [`library/cursor.py.md`](library/cursor.py.md) | covered | Signed cursor/key/resume-target authority (L2). |
+| `library/scope.py` | [`library/scope.py.md`](library/scope.py.md) | covered | Narrow-only canonical scope authority (L2). |
+| `library/gates.py` | [`library/gates.py.md`](library/gates.py.md) | covered | Live production-path capability gates (L2). |
+| `library/factories.py` | [`library/factories.py.md`](library/factories.py.md) | covered | Per-app shared bundle and caller-bound builders (L2). |
+| `library/helper_host.py` | [`library/helper_host.py.md`](library/helper_host.py.md) | covered | Locked helper process host (L2). |
+| `library/codex.py` | [`library/codex.py.md`](library/codex.py.md) | covered | Direct Codex app-server port (L2). |
+| `library/codex_normalize.py` | [`library/codex_normalize.py.md`](library/codex_normalize.py.md) | covered | Codex thread-item normalization (L2). |
+| `library/claude.py` | [`library/claude.py.md`](library/claude.py.md) | covered | Helper-backed Claude port (L2). |
+| `library/pi.py` | [`library/pi.py.md`](library/pi.py.md) | covered | Helper-backed Pi port (L2). |
+| `library/normalize_common.py` | [`library/normalize_common.py.md`](library/normalize_common.py.md) | covered | Shared normalization primitives (L2). |
+| `library/errors.py` | [`library/errors.py.md`](library/errors.py.md) | covered | Leaf-local typed error family (L2). |
 | `control/__init__.py` | [`control/__init__.py.md`](control/__init__.py.md) | covered | Control route package marker. |
 | `control/api.py` | [`control/api.py.md`](control/api.py.md) | covered | Structured control ownership shell. |
 
 ## Child Overviews
 
-None. The three child directories are currently behavior-empty ownership shells, so separate
-overviews would add routing burden without adding a coherent implemented subsystem.
+| Child Route | Overview | Why It Exists |
+| --- | --- | --- |
+| `library/` | [`library/overview.md`](library/overview.md) | The L2-implemented dormant native library: authorized list/read, live gates, signed token authority, and idempotent exact open — a coherent implemented subsystem. |
+
+The `active/` and `control/` directories remain behavior-empty ownership shells, so separate
+overviews there would add routing burden without adding a coherent implemented subsystem.
 
 ## How To Use This Area
 
 When changing this route, read this overview and the exact file sidecar first. Changes to public
 models require the hostile contract matrix; changes to route/port shape require the foundation
-topology suite. Do not infer production capability from fixture existence or an empty router.
+topology suite. Do not infer production capability from fixture existence or an empty router;
+the implemented library slice is documented by `library/overview.md`.
 
 ## Needs Verification
 
-- Production active projection, native library interoperability, exact resume, control settlement,
-  attachments, telemetry, and browser rendering remain separately gated implementations.
+- Production active projection, control settlement, attachments, telemetry, and browser rendering
+  remain separately gated implementations. The library slice landed in L2; Claude library support
+  stays `unverified` until a real installed 2.1.211 history passes the replay gate.
 
 ## Update History
 
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the library child's transition
+  from behavior-empty shell to the implemented L2 slice governed by the new
+  `library/overview.md` — five owned routes, live gates, signed token authority, and the
+  idempotent exact open — with the active/control shells, wire grammar, two-port split,
+  composition, and public prefixes unchanged. Verification metadata remains pinned until
+  closeout stamps the candidate commit.
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-time runtime composition
   repair — the immutable app-scoped `ConversationRuntime` authority, the server-resolved
   local-operator authorization ruling, the two child-facing request dependencies, and the

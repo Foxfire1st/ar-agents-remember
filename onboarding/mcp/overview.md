@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated            | 2026-07-19T16:04+02:00 |
+| lastVerifiedCommitHash | `67cad9bcdc736de70168ea9c153a0f12319a7263` |
+| lastVerifiedCommitDate | 2026-07-19T17:19:21+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -15,6 +15,19 @@
 [overview.md](../overview.md)
 
 ## Purpose
+
+260718-CHATS-L2 implements the dormant native conversation library inside the L9 contract roof.
+Under `serving/conversation/library/`, five authorized routes expose each normalized harness's
+native catalog/history (Codex direct app-server; Claude/Pi through the repository-locked Node
+helpers gained operation entries `claude.ts`/`pi.ts` plus protocol serve/probe/sign/page
+primitives) and open a selected native identity as a new idempotently tracked AR session only
+after exact catalog proof. Live production-path gates decide capability honesty per
+installed-executable fingerprint; a per-app HMAC-signed cursor/key authority binds scope,
+purpose, and content-derived catalog generations; the bounded open ledger keys one stable
+requestId/fingerprint, and record-spawned failures retire honestly while absorbed foreign
+sessions are never disturbed. The L0 composition, wire grammar, and active/control shells are
+untouched. The `mcp/tests/` regression set gains six focused suites plus the opt-in
+installed-runtime gates, and the foundation pin asserts the library child's exact five routes.
 
 260718-CHATS-L0E lands the additive, read-only native evidence and resume substrate inside the
 existing hosted harness-control family. Per-harness mappers stop dropping native frames by placing
@@ -902,6 +915,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the implemented native
+  conversation library at package granularity — the five authorized library routes and three
+  dormant ports (Codex direct, Claude/Pi through the newly implemented locked helper entries),
+  live capability gates, the per-app signed token authority, and the idempotent exact open with
+  honest retirement — routed to the `serving/`, `conversation/`, `conversation/library/`,
+  `native_helpers/conversation_library/`, and `mcp/tests/` governors for detail. Verification
+  metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the native evidence and resume
   substrate at package granularity — reserved-key evidence diversion into the bounded bridge
   buffer with byte-identical projections, the three additive epoch-scoped IPC reads across

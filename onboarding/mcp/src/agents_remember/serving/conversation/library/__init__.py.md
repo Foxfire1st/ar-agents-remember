@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/library/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T10:55+02:00 |
+| lastUpdated | 2026-07-19T16:04+02:00 |
 | lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
 | lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
-| governingOverview | `../overview.md` |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Structured conversation contract overview](../overview.md)
+[Native conversation library overview](overview.md)
 
 ## Purpose
 
@@ -61,5 +61,8 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: re-pointed the governing overview link to
+  the new library route-local overview created for the implemented slice. The source marker is
+  unchanged, so no other content change was needed. Verification metadata remains pinned.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the package-marker sidecar.
   Verification is blank until closeout commits and stamps the new source.

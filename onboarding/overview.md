@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated            | 2026-07-19T16:04+02:00 |
+| lastVerifiedCommitHash | `67cad9bcdc736de70168ea9c153a0f12319a7263` |
+| lastVerifiedCommitDate | 2026-07-19T17:19:21+02:00|
 
 > **Status:** active baseline
 
@@ -174,6 +174,20 @@ without duplicating detail: the `mcp/` overview owns the package boundary, the
 `mcp/src/agents_remember/serving/` and `mcp/src/agents_remember/serving/conversation/` overviews
 own the composition and authorization facts, and the `mcp/tests/` overview owns the contract-suite
 proof. No feature surface, MCP tool, or public doc is added, renamed, or removed.
+
+260718-CHATS-L2 implements the dormant native conversation library the structured Chats
+architecture assigned to the library child: five authorized routes expose each normalized
+harness's native catalog/history through live production-path capability gates and a per-app
+HMAC-signed cursor/key authority (Codex direct app-server, Claude/Pi through the
+repository-locked Node helpers), and open a selected native identity as a new idempotently
+tracked AR session only after exact catalog proof, retiring record-spawned failures honestly and
+never disturbing absorbed foreign sessions. The L0 composition, wire grammar, and active/control
+shells are untouched. This repository overview routes the seam without duplicating detail: the
+`mcp/src/agents_remember/serving/` and `conversation/` overviews own the serving placement, the
+new `conversation/library/overview.md` owns the implemented slice, the
+`native_helpers/conversation_library/` overview owns the helper entries, and the `mcp/tests/`
+overview owns the six focused suites plus the installed-runtime proof. No public route, MCP
+tool, or doc surface changes beyond the leaf's owned library seam.
 
 260718-CHATS-L0E lands the additive, read-only native evidence and resume substrate the blocked
 conversation leaves were waiting on: per-harness mappers forward full native frames under one
@@ -563,6 +577,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: reviewed the root body against the leaf diff
+  and added the repository-level ancestor routing for the implemented native conversation
+  library — authorized list/read routes, live capability gates, the per-app signed token
+  authority, and the idempotent exact open with honest retirement — with detail routed to the
+  `serving/`, `conversation/`, `conversation/library/`, `native_helpers/conversation_library/`,
+  `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
+  remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: reviewed the root body against the leaf diff
   and added the repository-level ancestor routing for the native evidence and resume substrate —
   reserved-key evidence diversion with byte-identical projections, the three additive epoch-scoped

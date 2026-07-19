@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/native_helpers/conversation_library/src/protocol.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
+| lastUpdated | 2026-07-19T16:04+02:00 |
+| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
+| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-Defines the versioned JSON-lines contract and fail-closed admission/privacy shell shared by the
-future Python host and repository-locked Claude/Pi native helpers.
+Defines the versioned JSON-lines contract shared by the Python host and the repository-locked
+Claude/Pi native helpers, and — since 260718-CHATS-L2 — the serve loop, version probing,
+signing, and paging primitives the two helper entries implement list/read/resolve with.
 
 ## Code Commentary
 
@@ -31,23 +32,36 @@ future Python host and repository-locked Claude/Pi native helpers.
   operation, then reconstructs the request from an exact operation-specific key set.
 - Page operations require string-or-null cursors and positive safe-integer limits.
 - `redactHelperError` intentionally ignores raw detail and returns one fixed allow-listed string.
+- L2 adds the execution seam: `serveJsonLines` runs one correlated request/response loop over
+  stdin/stdout (parse failures answer `invalid-request`, handler failures the typed vocabulary);
+  `failureFor`/`raiseHelperError` map helper failures onto the four typed errors with
+  allow-listed detail; `probeRuntimeVersion` observes an installed runtime's `--version` (first
+  semver token); `observedDependencyVersion` reads the helper's own locked dependency version
+  through the standard ESM resolver from inside this package; `signatureOf` is the deterministic
+  SHA-256 native-store signature; `pageByOffset`/`windowByOrdinal` are the list and newest-window
+  paging primitives with decimal cursor validation.
 
 ### Conventions
 
 All request operations are explicit discriminated unions. Exact-key lists and reconstructed return
-objects are intentional protocol authority, not compatibility scaffolding.
+objects are intentional protocol authority, not compatibility scaffolding. Every line gets exactly
+one correlated response so the Python host's request/response pairing can never drift.
 
 ### Invariants And Boundaries
 
 - Never accept unknown or operation-inapplicable fields.
 - Never promote a version mismatch to ready.
-- Never expose raw helper error detail, regardless of its secret/path syntax.
-- Never add ambient module resolution or operation behavior to this contract shell.
-- The request-byte bound protects the helper process before JSON parsing.
+- Never expose raw helper error detail, regardless of its secret/path syntax: operation failures
+  may carry allow-listed helper-supplied copy, everything else is the fixed redaction.
+- Never add ambient module resolution: `observedDependencyVersion` resolves only through the
+  declared lockfile dependency, never an npm cache, checkout, or global install.
+- The request-byte bound protects the helper process before JSON parsing; read cursors must name
+  an ordinal above the first item.
 
 ### Todos
 
-List/read/resume execution is intentionally absent until the production native-library leaf.
+None — list/read/resolve execution landed in L2; resume replay remains gated at the runtime
+level by the locked versions.
 
 ## Docs References
 
@@ -60,11 +74,16 @@ contract evidence.
 
 ## Repo-Internal References
 
+The helper entries implement the operations this module frames; the Python host correlates
+against this exact contract; the helper suite covers the admission and privacy matrix.
+
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The private manifest and lock select the exact dependency versions represented by the protocol constants. | L1-L22 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
 | Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details. | L14-L210 | [protocol.test.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.test.ts) |
-| Python foundation tests forbid incidental resolution in production helper source. | L80-L99 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Python foundation tests forbid incidental resolution in production helper source. | L102-L120 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The Python host spawns this contract's entries and correlates handshake plus one operation per process. | L100-L148 | [helper_host.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/helper_host.py) |
+| The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives. | L3-L22; L4-L17 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts), [pi.ts](agents-remember/mcp/native_helpers/conversation_library/src/pi.ts) |
 
 ## Cross-Repo References
 
@@ -76,6 +95,10 @@ No neighboring workspace repository participates in the helper process boundary.
 
 ## Update History
 
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the added execution seam — the
+  correlated JSONL serve loop, typed failure mapping, runtime/dependency version probing,
+  store signature, and offset/ordinal paging primitives the two new helper entries consume.
+  Verification stays pinned at the L9 commit until closeout stamps the candidate commit.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the JSONL protocol/privacy sidecar
   after same-reviewer PASS closed raw-error and exact-shape findings. Verification is blank until
   closeout commits and stamps the new source.
