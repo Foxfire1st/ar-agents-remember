@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash | `67cad9bcdc736de70168ea9c153a0f12319a7263` |
-| lastVerifiedCommitDate | 2026-07-19T17:19:21+02:00|
+| lastUpdated            | 2026-07-19T18:25+02:00 |
+| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2` |
+| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
 
 > **Status:** active baseline
 
@@ -175,14 +175,33 @@ without duplicating detail: the `mcp/` overview owns the package boundary, the
 own the composition and authorization facts, and the `mcp/tests/` overview owns the contract-suite
 proof. No feature surface, MCP tool, or public doc is added, renamed, or removed.
 
+260718-CHATS-L1 implements the active conversation serving the structured Chats architecture
+assigned to the active child: the two authorized production routes (native-hydrated page plus
+resumable SSE events) project the exact running Codex/Claude/Pi conversations behind the L0
+composition — HMAC-signed purpose-branded cursors re-bound per wire, bridge epoch verified
+against the live authority per request, bounded reconstructable projectors hydrating from
+native authority only — with the pure per-harness mapper grammars in a new
+`conversation/projectors/` route, an idempotent projection store whose tool-call upserts union
+blocks, one typed gap + close per established-stream failure class, the canonical
+`ConversationStatusService` now single-sourcing both Chats and orchestration's seat projection,
+and fixture-gated capability honesty (claude `unverified` at the installed-vs-locked version
+mismatch; codex historical tool loss visible). The L0 composition, wire grammar, and
+library/control shells are untouched. This repository overview routes the seam without
+duplicating detail: the `mcp/` overview owns the package boundary, the
+`mcp/src/agents_remember/serving/` and `conversation/` overviews own the serving placement, the
+new `conversation/active/overview.md` and `conversation/projectors/overview.md` own the
+implemented slices, and the `mcp/tests/` overview owns the four focused suites plus the
+real-socket production proof. No public route outside the owned child seam, MCP tool, or doc
+surface is added, renamed, or removed.
+
 260718-CHATS-L2 implements the dormant native conversation library the structured Chats
 architecture assigned to the library child: five authorized routes expose each normalized
 harness's native catalog/history through live production-path capability gates and a per-app
 HMAC-signed cursor/key authority (Codex direct app-server, Claude/Pi through the
 repository-locked Node helpers), and open a selected native identity as a new idempotently
 tracked AR session only after exact catalog proof, retiring record-spawned failures honestly and
-never disturbing absorbed foreign sessions. The L0 composition, wire grammar, and active/control
-shells are untouched. This repository overview routes the seam without duplicating detail: the
+never disturbing absorbed foreign sessions. The L0 composition and wire grammar are untouched.
+This repository overview routes the seam without duplicating detail: the
 `mcp/src/agents_remember/serving/` and `conversation/` overviews own the serving placement, the
 new `conversation/library/overview.md` owns the implemented slice, the
 `native_helpers/conversation_library/` overview owns the helper entries, and the `mcp/tests/`
@@ -577,6 +596,21 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
+  ancestor routing with the L1 active-serving routing after the master memory branch advanced;
+  both implemented slices are routed at repository level — detail to the `serving/`,
+  `conversation/`, `conversation/active/`, `conversation/projectors/`, `conversation/library/`,
+  `native_helpers/conversation_library/`, `mcp/`, and `mcp/tests/` governors. No
+  feature-inventory surface changed. Verification metadata remains pinned until L1 closeout
+  stamps the candidate commit.
+- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: reviewed the root body against the leaf diff
+  and added the repository-level ancestor routing for the implemented active conversation
+  serving — the two authorized routes, signed cursor authority, bounded projectors over native
+  authority, the canonical status service single-sourcing Chats and orchestration, and the pure
+  per-harness mapper grammars — with detail routed to the `serving/`, `conversation/`,
+  `conversation/active/`, `conversation/projectors/`, `mcp/`, and `mcp/tests/` governors. No
+  feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: reviewed the root body against the leaf diff
   and added the repository-level ancestor routing for the implemented native conversation
   library — authorized list/read routes, live capability gates, the per-app signed token

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash | `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate | 2026-07-19T17:19:21+02:00|
+| lastUpdated            | 2026-07-19T18:25+02:00 |
+| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
+| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -55,6 +55,22 @@ once. Child leaves consume it through two narrow request dependencies and never 
 server-resolved local single-user ruling: loopback-only at request time, no browser-supplied
 principal/tenant channel, fail closed otherwise.
 
+260718-CHATS-L1 implements the active child inside its owned seam as
+`serving/conversation/active/` plus the per-harness mapper grammars in
+`serving/conversation/projectors/`: the two registered production wires (authorized native-
+hydrated page and resumable SSE events) behind the L0 composition, HMAC-signed purpose-branded
+page/event cursors re-bound against the authorized identity on every wire, a per-app service
+holding a bounded reconstructable-projector LRU, per-session engines that hydrate from native
+authority (codex persisted-thread pages, pi durable entries, the bounded live evidence window —
+never the flattened transcript deque) and mint totally ordered envelopes with one typed gap per
+established-stream failure class, an idempotent projection store whose tool-call upserts union
+blocks by `block_id`, the canonical `ConversationStatusService` whose one evidence
+classification both Chats and orchestration consume (`hosted_control_projection.snapshot_turn_state`
+now delegates to it), and fixture-gated per-session capabilities (claude honestly `unverified`
+at installed 2.1.214 vs locked 2.1.211; codex historical tool loss visible). The shared
+composition, router, wire grammar, and library/control shells are untouched; the slices are
+governed by `conversation/active/overview.md` and `conversation/projectors/overview.md`.
+
 260718-CHATS-L2 implements the library child inside its owned seam as
 `serving/conversation/library/`: authorized dormant native list/read routes over each normalized
 harness's catalog/history (Codex direct app-server, Claude/Pi through the repository-locked Node
@@ -63,8 +79,8 @@ per-app HMAC-signed cursor/key authority with content-derived catalog generation
 canonical project scope, and an idempotent exact open/status/reconcile service that launches a
 NEW tracked session through the existing opener (codex through the landed L0E
 `resume_thread_id` channel), proves exact catalog identity, and retires record-spawned failures
-honestly. The shared composition, router, wire grammar, and active/control shells are untouched;
-the slice is governed by `conversation/library/overview.md`.
+honestly. The shared composition, router, and wire grammar are untouched; the slice is governed
+by `conversation/library/overview.md`.
 
 ### Current L5 hosted-session contract
 
@@ -193,6 +209,16 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+For the active conversation serving (260718-CHATS-L1), start at
+`conversation/active/api.py` (the two routes plus the O4 error ladder), then
+`conversation/active/service.py` (epoch/cursor checks, atomic page+cursor),
+`conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics),
+`conversation/active/store.py` (idempotence, tool block union),
+`conversation/active/cursor.py` (signed cursor authority), and
+`conversation/active/status.py` (the canonical classification orchestration shares). The
+per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`; the four focused
+suites pin the slice, the API suite over a real socket.
 
 For the native conversation library (260718-CHATS-L2), start at
 `conversation/library/api.py` (five routes plus the O4 error-status ladder), then
@@ -1102,6 +1128,21 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
+  library paragraph/hot-path/history with the L1 active-serving content after the master memory
+  branch advanced; both implemented slices are documented under the L9/L0 contract section with
+  detail routed to `conversation/overview.md` and the `conversation/active/`,
+  `conversation/projectors/`, `conversation/library/` governors. Verification metadata remains
+  pinned until L1 closeout stamps the candidate commit.
+- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the implemented active
+  conversation serving under `serving/conversation/active/` and the per-harness mappers under
+  `serving/conversation/projectors/` — the two authorized production routes, signed cursor
+  authority, the bounded per-app service and projector engines, the idempotent store with the
+  review-F1 tool block union, the canonical status service now also backing orchestration's
+  seat projection, and fixture-gated capabilities — consumed from the untouched L0 composition
+  and L9 contract; detail routed to `conversation/overview.md` and the new
+  `conversation/active/overview.md` + `conversation/projectors/overview.md`. Verification
+  metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the implemented native
   conversation library under `serving/conversation/library/` — authorized list/read routes,
   live capability gates, the per-app signed cursor/key authority, narrow-only scope, the
