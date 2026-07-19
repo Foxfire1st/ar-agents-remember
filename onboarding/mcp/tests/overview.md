@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04`|
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-19T16:04+02:00 |
+| lastVerifiedCommitHash | `67cad9bcdc736de70168ea9c153a0f12319a7263`|
+| lastVerifiedCommitDate | 2026-07-19T17:19:21+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,15 @@ recovery, attachments, metrics, and fixture non-promotion. The foundation suite 
 exactly two read ports, three behavior-empty owned child routers, one global registration seam,
 repository-only native-helper resolution, and redacted installed-runtime fixtures. These tests do
 not claim a projector, native-history implementation, control service, or renderer exists.
+
+260718-CHATS-L2 adds the native conversation library regression set. Six focused suites cover the
+implemented slice on doubled boundaries — ASGI routes with the exact O4 status ladder, cursor/key
+and scope contracts, live gate demotion rules, port normalization with hostile shapes, and the
+open service's idempotence/race/ownership arms — while the opt-in installed-runtime suite proves
+the live Codex and Pi gates, both real end-to-end opens, and the Claude version-mismatch
+fail-closed posture. The foundation pin now asserts the library child's exact five-route surface
+(active/control stay behavior-empty) and the extended helper source set; the three runtime
+fixtures record observed (never enabling) gate/open rows.
 
 260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
@@ -151,6 +160,14 @@ close/cancellation cleanup against the production `Projector` and `stream_events
 `fixtures/conversation_runtime/*.json` files are allow-listed installed observations with
 `enablesCapabilities:false`; exact versions and observed counts are evidence, never maintained
 feature declarations. Helper protocol behavior is also covered in its own Node test package.
+
+260718-CHATS-L2 centers six focused suites: `test_conversation_library_api.py` (real-ASGI routes
+and the O4 status ladder), `test_conversation_library_cursor.py` (signed token and scope
+contracts), `test_conversation_library_gates.py` (capability demotion rules),
+`test_conversation_library_ports.py` (hostile normalization), `test_conversation_library_open.py`
+(idempotent exact open arms), and `test_conversation_library_installed.py` (opt-in live gates and
+both real opens). The foundation pin asserts the library child's exact five routes and the
+four-file helper source set; fixture rows stay evidence-not-enablement.
 
 260718-CHATS-L0 adds `test_conversation_runtime_composition.py` and
 `test_conversation_authorization.py` for the runtime composition repair: single install-once
@@ -307,7 +324,8 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
-| Foundation coverage pins two ports, three empty child routers, one registration seam, exact helper resolution, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Foundation coverage pins two ports, child ownership (the library child's exact five L2 routes; active/control empty), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Library coverage pins the ASGI status ladder, cursor/scope contracts, gate demotion, hostile port normalization, open idempotence/race/ownership, and the opt-in live gates and real opens. | L1-L9 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | Composition contract coverage pins install-once, fail-closed binding shapes, per-app isolation, no singleton, and no injected identity or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | Authorization contract coverage pins local-operator identity, loopback-only resolution, no identity channel, ignored browser claims, and cross-principal rejection. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
 | Evidence contract coverage pins per-harness round-trips, no-leak, bounds, continuation, cross-domain/epoch rejection, provenance, and the resume channel. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
@@ -334,6 +352,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: added the native conversation library
+  regression set — six focused suites over doubled boundaries (ASGI status ladder, cursor/scope,
+  gates, ports, open arms) plus the opt-in installed-runtime suite proving the live Codex/Pi
+  gates, both real end-to-end opens, and the Claude version-mismatch posture — the foundation
+  pin's exact five-route library assertion and helper source set, and the observed
+  evidence-not-enablement fixture rows. Verification metadata remains pinned until closeout
+  stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: added the native evidence contract suite and
   the opt-in installed-runtime capture — per-harness round-trips with no-leak proofs, buffer and
   continuation bounds, cross-domain/epoch typed rejection, the provenance matrix, the codex resume

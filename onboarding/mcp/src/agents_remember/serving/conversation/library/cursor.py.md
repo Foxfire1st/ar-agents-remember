@@ -1,0 +1,91 @@
+# mcp/src/agents_remember/serving/conversation/library/cursor.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/serving/conversation/library/cursor.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-07-19T16:04+02:00 |
+| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
+| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Native conversation library overview](overview.md)
+
+## Purpose
+
+The one mint/verify boundary for every library opaque token — list cursors, read cursors,
+conversation keys, and server-private native resume targets — plus the identity digests and
+content-derived catalog generations those tokens bind.
+
+## Code Commentary
+
+### Logic
+
+`LibraryCursorAuthority` holds one random per-application HMAC-SHA256 signing key (minted by
+`mint_signing_key`, never persisted). Every token is a purpose-branded base64url JSON payload
+closed by a MAC over the canonical serialized body: list/read cursors carry a
+`LibraryCursorBinding` (scope, purpose, generation, schema version) plus the native position;
+conversation keys carry a `LibraryKeyBinding` plus the vendor identity; resume targets add the
+launch material and stay server-private. `identity_digest` is the server-issued stale-open check
+token recomputed from native identity; `catalog_generation` folds one native catalog signature
+into a positive wire integer, so the generation changes exactly when the store observable
+changes without any server-side counter or index.
+
+### Conventions
+
+Verification is fail-closed at every step: wrong purpose prefix, undecodable envelope,
+unsupported schema version, bad MAC, invalid binding model, or wrong cursor purpose each raise
+`InvalidLibraryCursorError`. A server restart invalidates outstanding tokens honestly; the
+caller re-lists from native authority.
+
+### Invariants And Boundaries
+
+- Possession of a token is never authorization: services re-resolve the caller binding and
+  re-check scope, purpose, and generation on every call (design section 6.8).
+- Resume targets must never appear on any wire model, log, or diagnostic; review O1 records
+  that the purpose prefix itself is not MAC-covered, accepted hardening while targets stay
+  server-private.
+- Native cursor positions are text-or-integer only (bools rejected); read positions must name
+  an ordinal above the first item where the port requires it.
+- The signing key is per app lifetime and at least 32 bytes; no token content is authoritative
+  beyond the local operator posture it is issued to.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured for this internal token authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation was available. | — | — |
+
+## Repo-Internal References
+
+The cursor suite round-trips every token family and probes tamper, wrong-purpose, and garbage
+rejection; the contract module owns the branded token types this authority mints.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| List/read cursors round-trip and reject tampering and wrong-purpose use. | L37-L68 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
+| Conversation keys and resume targets round-trip and reject garbage/foreign signatures. | L69-L112 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
+| Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive. | L113-L130 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
+| The purpose-branded token types and binding models are declared in the parent contract. | L315-L403 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+
+## Cross-Repo References
+
+No meaningful cross-repo boundary exists for this local token authority.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
+
+## Update History
+
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the signed cursor/key authority
+  sidecar. Verification is blank until closeout commits and stamps the new source.

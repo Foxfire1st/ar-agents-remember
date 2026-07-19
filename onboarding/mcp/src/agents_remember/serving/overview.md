@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04`|
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated            | 2026-07-19T16:04+02:00 |
+| lastVerifiedCommitHash | `67cad9bcdc736de70168ea9c153a0f12319a7263`|
+| lastVerifiedCommitDate | 2026-07-19T17:19:21+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -54,6 +54,17 @@ once. Child leaves consume it through two narrow request dependencies and never 
 `conversation/router.py`, `harness_control_api.py`, or `app.py` again. Authorization is the
 server-resolved local single-user ruling: loopback-only at request time, no browser-supplied
 principal/tenant channel, fail closed otherwise.
+
+260718-CHATS-L2 implements the library child inside its owned seam as
+`serving/conversation/library/`: authorized dormant native list/read routes over each normalized
+harness's catalog/history (Codex direct app-server, Claude/Pi through the repository-locked Node
+helpers), live production-path capability gates cached per installed-executable fingerprint, a
+per-app HMAC-signed cursor/key authority with content-derived catalog generations, narrow-only
+canonical project scope, and an idempotent exact open/status/reconcile service that launches a
+NEW tracked session through the existing opener (codex through the landed L0E
+`resume_thread_id` channel), proves exact catalog identity, and retires record-spawned failures
+honestly. The shared composition, router, wire grammar, and active/control shells are untouched;
+the slice is governed by `conversation/library/overview.md`.
 
 ### Current L5 hosted-session contract
 
@@ -182,6 +193,15 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+For the native conversation library (260718-CHATS-L2), start at
+`conversation/library/api.py` (five routes plus the O4 error-status ladder), then
+`conversation/library/service.py` (per-call re-authorization),
+`conversation/library/open_service.py` (idempotent exact open and bounded ledger),
+`conversation/library/cursor.py` (signed token authority), `conversation/library/gates.py`
+(live capability gates), and the three dormant ports `conversation/library/codex.py`,
+`claude.py`, `pi.py` with `helper_host.py` for the locked Node helpers. The six focused suites
+plus the installed-runtime suite pin the slice.
 
 For the native evidence and resume substrate (260718-CHATS-L0E), start at
 `harness_control_bridge.py::_run_events` (the single diversion point) and
@@ -1082,6 +1102,13 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the implemented native
+  conversation library under `serving/conversation/library/` — authorized list/read routes,
+  live capability gates, the per-app signed cursor/key authority, narrow-only scope, the
+  locked-helper and direct app-server ports, and the idempotent exact open/status/reconcile
+  service with honest retirement — consumed from the untouched L0 composition and L9 contract;
+  detail routed to `conversation/overview.md` and the new `conversation/library/overview.md`.
+  Verification metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive native evidence and
   resume substrate — reserved-key diversion into the bounded bridge evidence deque with byte-
   identical projections, the three epoch-scoped additive IPC reads across two disjoint coordinate

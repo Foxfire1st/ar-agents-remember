@@ -49,6 +49,12 @@
     "mcp/tests/test_conversation_authorization.py",
     "mcp/tests/test_conversation_contracts.py",
     "mcp/tests/test_conversation_foundation.py",
+    "mcp/tests/test_conversation_library_api.py",
+    "mcp/tests/test_conversation_library_cursor.py",
+    "mcp/tests/test_conversation_library_gates.py",
+    "mcp/tests/test_conversation_library_installed.py",
+    "mcp/tests/test_conversation_library_open.py",
+    "mcp/tests/test_conversation_library_ports.py",
     "mcp/tests/test_conversation_runtime_composition.py",
     "mcp/tests/test_crap_calculator.py",
     "mcp/tests/test_dashboard_daemon.py",
@@ -161,8 +167,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 142,
-    "fileSidecars": 149,
+    "sourceFilesInScope": 148,
+    "fileSidecars": 155,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -229,6 +235,7 @@
     "crap",
     "cs6",
     "current",
+    "cursor",
     "daemon",
     "dashboard",
     "degradation",
@@ -244,8 +251,7 @@
     "files",
     "finalize",
     "fixture",
-    "fixtures",
-    "foundation"
+    "fixtures"
   ],
   "hotPath": {
     "summary": "For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git generated-positive/authored-negative regression. Use `dashboard/package.json` and `dashboard/vite.config.ts` for Vite ownership, and `scripts/sync-dashboard.py` for raw copy/digest parity. Do not route this seam through generated asset file cards or a generic normalizer. For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census and byte-convergence matrix,...",

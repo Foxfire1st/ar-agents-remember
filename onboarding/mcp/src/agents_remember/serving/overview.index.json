@@ -92,7 +92,7 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 87,
+    "sourceFilesInScope": 100,
     "fileSidecars": 74,
     "childRoutes": 1
   },
@@ -179,7 +179,7 @@
     "launch"
   ],
   "hotPath": {
-    "summary": "For the native evidence and resume substrate (260718-CHATS-L0E), start at `harness_control_bridge.py::_run_events` (the single diversion point) and `harness_control_models.py` (evidence DTOs, reserved key, clip/window helpers), then the three IPC actions in `harness_control_ipc.py` and the validated reads in `harness_control_client.py`. Per-harness forwarding lives in `codex_app_server_adapter.py`, `claude_stream_state.py`, and `pi_rpc_events.py`; native pages in the codex/pi adapters; provenance in `harness_submission_authority.py`; the resume channel runs `terminal_opener.py` \u2192 `harness_c...",
+    "summary": "For the native conversation library (260718-CHATS-L2), start at `conversation/library/api.py` (five routes plus the O4 error-status ladder), then `conversation/library/service.py` (per-call re-authorization), `conversation/library/open_service.py` (idempotent exact open and bounded ledger), `conversation/library/cursor.py` (signed token authority), `conversation/library/gates.py` (live capability gates), and the three dormant ports `conversation/library/codex.py`, `claude.py`, `pi.py` with `helper_host.py` for the locked Node helpers. The six focused suites plus the installed-runtime suite...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/conversation",

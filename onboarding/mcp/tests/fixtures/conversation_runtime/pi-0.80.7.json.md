@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash |  `ca9dd05a295ef5f24c479e2231fdcd174b372e04`|
-| lastVerifiedCommitDate |  2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-19T16:04+02:00 |
+| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
+| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -17,22 +17,26 @@
 ## Purpose
 
 Records redacted allow-listed evidence observed through installed Pi 0.80.7 discovery while
-keeping dormant session discovery/resolution and structured messages/events/controls unverified.
-260718-CHATS-L0E appends `substrate-evidence/*` rows observed through the production evidence
-seam: live frames, the `get_entries` native page, and submission provenance.
+keeping structured messages/events/controls unverified. 260718-CHATS-L0E appends
+`substrate-evidence/*` rows observed through the production evidence seam: live frames, the
+`get_entries` native page, and submission provenance. 260718-CHATS-L2 flips
+`locked-helper/list-listAll-resolve` to `observed`: the locked helper handshakes `ready` against
+installed 0.80.7 and `SessionManager` list/branch-read/session-file resolution passed through the
+production helper seam, with the exact `--session` open proven end-to-end.
 
 ## Code Commentary
 
 ### Logic
 
 The fixture records the matching runtime/helper tuple, safe model-count and selected-model/effort
-presence from the production RPC adapter, and `not-exercised` observations for native-library and
-message/control behavior. It fixes `enablesCapabilities` to false. The L0E rows record
-`substrate-evidence/live-frames-page` (transcript and `pi:message_update` frames with the full
-`message_end` frame, bridge epoch, and `snapshot.raw.arEvidence` absent),
-`substrate-evidence/native-page-get-entries` (typed native identity over durable entries), and
-`substrate-evidence/submission-provenance` (cockpit source with epoch scoping) — all `observed`,
-all shape descriptors only.
+presence from the production RPC adapter, and `not-exercised` observations for message/control
+behavior. It fixes `enablesCapabilities` to false. The L0E rows record
+`substrate-evidence/live-frames-page`, `substrate-evidence/native-page-get-entries`, and
+`substrate-evidence/submission-provenance` — all `observed`, all shape descriptors only. The L2
+row records `locked-helper/list-listAll-resolve` (`handshake/ready`, `SessionManager.list`,
+`SessionManager.open+getBranch`, `resolve/sessionFile` shapes; the production gate passed and a
+real end-to-end open proved exact catalog identity through the tracked opener) — `observed`,
+evidence-not-enablement.
 
 ### Conventions
 
@@ -41,7 +45,8 @@ session files, native ids, paths, raw frames, prompts, and secrets are discarded
 
 ### Invariants And Boundaries
 
-- The 0.80.7 dependency pin does not prove dormant session list/read/resume.
+- The 0.80.7 dependency pin does not prove dormant session list/read/resume; the observed L2 row
+  records the production-seam proof without enabling a capability.
 - Messages, entries, cursors, tools, images, abort, stats, compaction, retry, steer, and follow-up
   remain independent production gates.
 - Fixture presence never enables a capability.
@@ -50,7 +55,8 @@ session files, native ids, paths, raw frames, prompts, and secrets are discarded
 
 ### Todos
 
-Update observations only after the named Pi production seams pass with the same redaction policy.
+Update remaining `not-exercised` observations only after the named Pi production seams pass with
+the same redaction policy.
 
 ## Docs References
 
@@ -68,6 +74,7 @@ direct evidence.
 | Foundation tests require this exact runtime/helper tuple, false enablement, and raw-free fixture set. | L102-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The helper manifest pins the Pi package version named by this fixture. | L13-L16 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
 | The opt-in installed suite captures these `substrate-evidence/*` rows through the production seam and asserts their shapes. | L273-L340 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
+| The L2 installed-runtime suite produces the live helper gate and real Pi open evidence this row records. | L215-L262; L360-L479 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 
 ## Cross-Repo References
 
@@ -79,6 +86,11 @@ No neighboring repository is involved.
 
 ## Update History
 
+- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the flipped
+  `locked-helper/list-listAll-resolve` row (`observed` through the locked-helper production gate
+  plus the real end-to-end `--session` open); `enablesCapabilities` stays false and the fixture
+  remains evidence-not-enablement. Verification metadata stays pinned until closeout stamps the
+  candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the appended redacted
   `substrate-evidence/*` rows (live frames page, get_entries native page, submission provenance);
   `enablesCapabilities` stays false and no L1/L2 row flipped. Verification metadata stays pinned
