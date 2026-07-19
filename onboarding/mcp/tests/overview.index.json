@@ -76,6 +76,8 @@
     "mcp/tests/test_harness_control_client.py",
     "mcp/tests/test_harness_control_evidence.py",
     "mcp/tests/test_harness_control_evidence_installed.py",
+    "mcp/tests/test_harness_control_plane.py",
+    "mcp/tests/test_harness_control_plane_installed.py",
     "mcp/tests/test_harness_control_runner.py",
     "mcp/tests/test_harness_launch.py",
     "mcp/tests/test_harness_logs.py",
@@ -171,8 +173,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 152,
-    "fileSidecars": 159,
+    "sourceFilesInScope": 154,
+    "fileSidecars": 161,
     "childRoutes": 0
   },
   "routingTerms": [

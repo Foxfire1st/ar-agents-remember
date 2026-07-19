@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-19T18:25+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb`|
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,18 @@ the live Codex and Pi gates, both real end-to-end opens, and the Claude version-
 fail-closed posture. The foundation pin asserts the library child's exact five-route surface and
 the extended helper source set; the three runtime fixtures record observed (never enabling)
 gate/open rows.
+
+260718-CHATS-L2E adds the native control-plane regression set. The contract suite
+(`test_harness_control_plane.py`, 25 tests + 35 subtests) pins the interrupt write/ack/replay-once
+with exact-turn and expected-operation guards plus the successor zero-write refusal, the paged
+never-bodies timeline (all sources/kinds, union completeness, eviction-floor honesty, the full
+256-record budget edge, epoch-flip typed), the asset channel (schema/traversal/verification
+batteries, native construction with zero-write rejection, unsupported receipt, asset-conditional
+digest), the once-only withdrawal recovery with byte-preserved tombstone/`cockpit_only`, and the
+strict client validators. The opt-in installed suite (`test_harness_control_plane_installed.py`)
+captures the same seams live against pinned codex 0.144.5 and pi 0.80.7 and enforces the Claude
+version-honesty rows; the three runtime fixtures gain redacted `control-plane/*` rows with
+`enablesCapabilities: false` — evidence, never enablement.
 
 260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
@@ -205,6 +217,16 @@ queue delegation; and the codex resume channel end-to-end with pre-spawn refusal
 (opt-in, version-locked) into redacted `substrate-evidence/*` fixture rows, keeping the
 version-mismatched Claude row honestly `not-exercised` and `enablesCapabilities` false everywhere.
 
+260718-CHATS-L2E centers `test_harness_control_plane.py` for the control-plane contract suite:
+the interrupt batteries (bridge epoch guard, codex exact-turn, pi expected-operation guard,
+successor zero-write refusal, content-less `message_end` honesty), the timeline batteries
+(all-sources/kinds union, eviction floor, the 256-record budget edge), the asset batteries
+(schema/traversal/verification/construction/digest/unsupported), the recovery battery, and the
+client validation battery. `test_harness_control_plane_installed.py` captures the same seams live
+against pinned codex 0.144.5 and pi 0.80.7 (opt-in, version-locked) into redacted
+`control-plane/*` fixture rows, with the Claude version-honesty test keeping those rows
+`not-exercised` and `enablesCapabilities` false everywhere.
+
 260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness,
 dispatch/withdraw races, early terminal completion, full-ref id reuse, ordering, idempotency/source-
 payload conflicts, certified pre-dispatch retry, impossible safe retry after possible bytes, epoch
@@ -350,6 +372,8 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Authorization contract coverage pins local-operator identity, loopback-only resolution, no identity channel, ignored browser claims, and cross-principal rejection. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
 | Evidence contract coverage pins per-harness round-trips, no-leak, bounds, continuation, cross-domain/epoch rejection, provenance, and the resume channel. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | Installed-runtime coverage captures the redacted `substrate-evidence/*` fixture rows through the production seam with version-locked honesty. | L115-L362 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
+| Control-plane contract coverage pins the interrupt guards/replay, the paged never-bodies timeline with the 256-record budget edge, the asset schema/traversal/verification/construction batteries, the once-only recovery, and the strict client validators. | L252-L1575 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
+| Installed-runtime control-plane coverage captures the redacted `control-plane/*` fixture rows through the production seam and enforces the Claude version-honesty posture. | L126-L384 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
 | Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | L1-L687 | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
 | Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | L1-L1180 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Public API epoch/conflict/certificate/privacy/status matrix. | L1-L700 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
@@ -372,6 +396,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: added the native control-plane regression
+  set — the contract suite `test_harness_control_plane.py` (interrupt/timeline/asset/recovery and
+  client-validation batteries, 25 tests + 35 subtests), the opt-in version-locked installed
+  capture `test_harness_control_plane_installed.py`, and the redacted `control-plane/*` fixture
+  rows with `enablesCapabilities: false`. Verification metadata remains pinned until closeout
+  stamps the candidate commit.
 - 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
   library regression-set content with the L1 active regression-set content after the master
   memory branch advanced — both suite families, the merged foundation-pin coverage (active two

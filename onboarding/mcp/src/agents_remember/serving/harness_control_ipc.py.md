@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,7 +20,9 @@ Provides user-private Unix-domain-socket IPC for one exact-session bridge, with 
 requests and explicit snapshot, live advertise, model/effort set, submit, respond, reconcile,
 transcript, and stop actions. 260718-CHATS-L0E adds exactly three additive read actions —
 `evidence`, `evidence-native-page`, and `submission-provenance` — under the unchanged
-`ar-harness-control/v1` protocol.
+`ar-harness-control/v1` protocol. 260718-CHATS-L2E adds two more additive actions — `interrupt`
+and `operation-timeline` — plus the additive optional `assets` key on `submit` with schema
+validation, resolve-and-verify spool confinement, and digest verification at admission.
 
 ## Code Commentary
 
@@ -39,6 +41,19 @@ pages harness-native history through the bridge with an opaque `cursor` and a se
 requires `expectedBridgeEpoch` plus 1..64 unique `requestIds` and returns the authority's batch.
 Every response in both evidence domains carries `bridgeEpoch`; the 14 pre-existing actions and the
 one-request-per-connection model are byte-preserved, and unknown actions still fail typed.
+
+The L2E actions follow the same additive posture (the set is now 20 actions). `interrupt` requires
+`expectedBridgeEpoch` and forwards the optional `turnId`/`expectedOperationId` guards to the
+bridge's epoch-guarded dispatch. `operation-timeline` pages the authority's retained ledger with
+`afterSequence`/`limit` bounded by `MAX_OPERATION_TIMELINE_PAGE`. The `assets` key on `submit` is
+validated before any bridge dispatch: `_submit_asset_schema` enforces the count limit, MIME
+allow-list, per-asset byte limit, sha256 shape, and unique ids; `_confined_asset_path` then builds
+the convention path `<endpoint-root>/assets/<requestId>/<assetId>` under the request-independent
+resolved assets anchor (never caller-supplied), banning empty/over-255-byte components, dot
+segments, and separators in either component, resolving and verifying containment before any
+filesystem touch (NUL/invalid paths translate to typed refusals); `_verify_staged_asset` finally
+checks existence, size, and sha256 against the staged bytes. Asset bytes never cross the wire —
+only verified references ride submit.
 
 ### Conventions
 
@@ -61,6 +76,15 @@ normalized camel-case names. The socket transports commands but does not decide 
   user text) and never reach `snapshot.raw` or any public projection.
 - Deque-sequence and native-cursor coordinate domains stay disjoint at the wire boundary; both
   evidence reads and the provenance batch are epoch-scoped.
+- Asset bytes never cross the socket: only schema-validated references ride `submit`, the spool
+  path is constructed by convention under the request-independent resolved
+  `<endpoint-root>/assets` anchor, containment is verified before any filesystem touch, and
+  size/sha256 are re-checked against the staged bytes at admission.
+- The interrupt write and timeline read cross only this user-private socket, epoch-guarded; the
+  timeline never carries bodies, and the recovery body crosses only inside the already
+  `cockpit_only` withdrawal response.
+- The 18 pre-L2E actions stay byte-preserved; the two additive actions and the optional `assets`
+  key keep the protocol at `ar-harness-control/v1` and unknown actions still fail typed.
 
 ### Todos
 
@@ -81,10 +105,13 @@ The bridge supplies ordered native truth and the blocking client applies first-b
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The bridge exposes live advertise and ordered setter operations only while running. | L158-L202 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | L58-L88; L205-L280 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| The bridge exposes live advertise and ordered setter operations only while running. | L390-L401 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | L179-L325; L452-L560 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | L988-L1285 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Evidence contract tests pin the three additive actions over a real socket: pages, continuation, cross-domain typed rejection, epoch mismatch, and provenance. | L463-L791 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | L75-L88; L332-L366 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | L241-L290 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| Contract tests pin the asset schema/traversal/verification batteries, the two actions end-to-end over a real socket, and the typed confinement refusals. | L1025-L1268; L864-L959 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
 
 ## Cross-Repo References
 
@@ -103,6 +130,12 @@ errors retain their meaning across the private socket boundary.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the two additive actions
+  (`interrupt`, `operation-timeline`) and the additive `assets` submit key — schema validation,
+  resolve-and-verify confinement under the request-independent assets anchor with the lexical
+  separator/dot-segment ban and NUL translation, and admission-time size/sha256 verification —
+  with the action set now 20 under the unchanged v1 protocol. Verification metadata stays pinned
+  until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the three additive read actions
   (`evidence`, `evidence-native-page`, `submission-provenance`), their bounds and epoch scoping,
   and the byte-preserved 14-action/protocol baseline. Verification metadata stays pinned until

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,12 @@ reconciliation, transcript entries, and shutdown mode. L4 adds deliberately raw-
 for the daemon's public submit and reconciliation responses. 260718-CHATS-L0E adds the additive,
 read-only native evidence family: deque-domain and native-domain evidence pages, submission
 provenance, the reserved `arEvidence` raw key, byte-bounded clip/window helpers, and the structural
-`NativePageReader` protocol.
+`NativePageReader` protocol. 260718-CHATS-L2E adds the additive control-plane family: the
+`InterruptResult` acknowledgement, the paged never-bodies `OperationTimeline{,Item}` enumeration,
+`AssetReference` (runner-local `spool_path` never serialized), `WithdrawalRecovery`, the additive
+optional `PromptRequest.assets` and `WithdrawalResult.recovery` fields, all `*_json` serializers,
+the `operation_timeline_item_wire_bytes` budget measurer, and the shared typed `read_asset_bytes`
+spool reader.
 
 ## Code Commentary
 
@@ -49,6 +54,22 @@ page, clipping a single oversized frame so every page makes progress. The runtim
 `NativePageReader` structural protocol lets concrete adapters opt into native paging without editing
 `HarnessProtocolAdapter`.
 
+The L2E control-plane family is purely additive as well. `MAX_OPERATION_TIMELINE_PAGE = 256` (the
+retained ledger's own bound), `MAX_SUBMIT_ASSETS = 4`, `MAX_SUBMIT_ASSET_BYTES = 5 MiB`, the
+`SUBMIT_ASSET_MIME_TYPES` image allow-list, and the `InterruptAcknowledgement` literal fix the
+channel bounds and vocabulary. `InterruptResult` carries the acknowledgement, a bridge-stamped
+epoch, the operation ref, vendor correlation, and raw boundary evidence — settlement stays with the
+completion path, never this DTO. `OperationTimelineItem` exposes exactly ten identity keys
+(operationId, kind, source|None, state, sequence, submittedAt, updatedAt, acceptedAt,
+payloadDigestPresent, vendorCorrelationId) — never bodies, never setter values;
+`OperationTimeline` adds `bridgeEpoch`, `latestSequence`, `evictedBeforeSequence`, `truncated`, and
+the page items, and `operation_timeline_item_wire_bytes` measures one item against the shared
+`EVIDENCE_PAGE_BYTE_BUDGET`. `AssetReference` is the verified staged-asset identity; its
+`spool_path` is runner-local and `asset_reference_json` never serializes it. `WithdrawalRecovery`
+carries the exact pre-tombstone body; `withdrawal_result_json` appends the `recovery` key only when
+it is non-None, so replayed withdrawals stay byte-identical to before. `read_asset_bytes` is the
+shared typed read+digest helper both the IPC admission and the native constructors use.
+
 ### Conventions
 
 Internal serializers preserve additive vendor evidence; public serializers are separate named
@@ -67,6 +88,14 @@ Wire names are camel-case.
 - Evidence frames are evidence, not authority; deep history stays with the native read APIs.
 - Deque-sequence and native-cursor coordinates are disjoint domains; `bridgeEpoch` rides every
   evidence response so a mid-paging bridge restart fails detectably.
+- The control-plane family is additive-only: existing DTOs change shape only through optional
+  fields with empty/None defaults (`PromptRequest.assets`, `WithdrawalResult.recovery`), and
+  `withdrawal_result_json` omits the `recovery` key entirely when it is None.
+- Timeline items never carry bodies: identity, source, kind, sequence, state, timestamps, and a
+  digest-presence boolean only — no prompt text, no setter values.
+- `AssetReference.spool_path` is runner-local and never serialized onto the wire.
+- The interrupt acknowledgement is never settlement; the operation still settles through the
+  landed completion path.
 
 ### Todos
 
@@ -92,9 +121,13 @@ validated client reads.
 | The daemon submit and reconcile routes select the public raw-free serializers. | L173-L210 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 | Private IPC still serializes full receipts and reconciliation evidence for exact-session peers. | L180-L227 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | Public route tests seed sensitive-looking raw mappings and prove they do not cross the boundary. | L166-L219 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| The bridge diverts `arEvidence` payloads into its bounded deque and stamps the epoch on every evidence page. | L85-L88; L168-L232; L440-L471 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The three additive IPC actions serialize these evidence/provenance DTOs onto the private socket. | L198-L203; L286-L313 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The bridge diverts `arEvidence` payloads into its bounded deque and stamps the epoch on every evidence page. | L93; L176-L240; L445-L530 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The three additive IPC actions serialize these evidence/provenance DTOs onto the private socket. | L206-L211; L381-L410 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | Contract tests pin the evidence round-trips, bounds, no-leak guarantee, continuation, and provenance matrix over these DTOs. | L268-L1460 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| The L2E control-plane DTOs and serializers: channel constants, `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, and the typed spool reader. | L75-L88; L184-L204; L314-L366; L768-L830 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The interrupt/operation-timeline IPC actions and the submit-asset admission serialize these DTOs over the same private socket. | L212-L215; L231-L325; L449-L490 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The authority pages the retained ledger into `OperationTimeline`, captures the pre-tombstone recovery, and extends the idempotence digest over canonical asset identity only when assets ride. | L436-L485; L515-L531; L1053-L1073 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| Contract tests pin the interrupt/timeline/asset/recovery round-trips, bounds, and validation battery over these DTOs. | L252-L1575 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
 
 ## Cross-Repo References
 
@@ -113,6 +146,13 @@ smaller than vendor evidence and sufficient for monotonic cockpit rendering.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive control-plane
+  family — `InterruptResult`, paged never-bodies `OperationTimeline{,Item}` with the shared
+  budget measurer, `AssetReference` (runner-local `spool_path` never serialized),
+  `WithdrawalRecovery` (key omitted on replay), the additive `PromptRequest.assets`/
+  `WithdrawalResult.recovery` optionals, the channel constants, and the typed `read_asset_bytes`
+  helper; refreshed the bridge/IPC citation ranges for the shifted sources. Verification metadata
+  stays pinned to the last committed source until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive native evidence
   family — the reserved `arEvidence` raw key, deque-domain `EvidenceFrame`/`EvidencePage`,
   native-domain `NativeEvidenceFrame`/`NativeEvidencePage` with typed identity and opaque

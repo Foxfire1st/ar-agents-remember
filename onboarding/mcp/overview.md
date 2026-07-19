@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-19T18:25+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2` |
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated            | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -60,6 +60,24 @@ disjoint coordinate domains. A codex-only `resume_thread_id` launch channel ride
 runner payload → factory path into the sole `CodexAppServerSettings` site, refusing non-codex or
 malformed values before any spawn. The substrate enables no feature; it is the closed baseline
 later conversation leaves consume without editing shared harness-control seams.
+
+260718-CHATS-L2E lands the additive native control-plane substrate inside the same hosted
+harness-control family. A native interrupt write dispatches bridge-side through a structural
+`InterruptCapableAdapter` sub-protocol — epoch-guarded and bridge-stamped, codex exact-active-turn
+`turn/interrupt`, pi expected-operation-guarded RPC `abort`, replay-once per pair, claude
+fail-closed typed, settlement untouched on the landed completion path. A paged never-bodies
+operation-timeline enumeration reads the authority's retained ledger (all prompt sources plus
+set-model/set-effort identity) under a count cap and the shared 48 KiB-class budget with
+latestSequence/eviction-floor/truncated/epoch on every page, delegated authority → queue →
+bridge → IPC → validated client. An asset channel rides submit as digest-verified references only
+— resolve-and-verify confinement under the endpoint's own assets root, admission plus
+construction-time sha256 verification, codex `localImage` and pi base64 native forms, unsupported
+receipts on non-capable adapters — and the withdrawal-recovery payload crosses the exact
+pre-tombstone body once inside the already `cockpit_only` response. Two additive IPC actions keep
+`ar-harness-control/v1` (now 20 actions) with every pre-existing action, DTO, consumer, deque,
+and snapshot reduction byte-preserved; redacted `control-plane/*` fixture rows record the
+installed-runtime proof without enabling anything. The `mcp/tests/` regression set gains the
+contract suite plus the opt-in installed-runtime capture.
 
 260715-FEUI-L9 adds two deliberately bounded package routes. Under `serving/conversation/`, strict
 wire models, exactly two read ports, and three behavior-empty child routers establish the stable
@@ -933,6 +951,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive native control-plane
+  substrate at package granularity — the interrupt write, paged never-bodies timeline,
+  digest-verified asset channel, and once-only withdrawal recovery inside the hosted
+  harness-control family, with the regression set routed to `mcp/tests/overview.md` and detail to
+  the `serving/` governor. Verification metadata remains pinned until closeout stamps the
+  candidate commit.
 - 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
   package-granularity paragraph and history with the L1 active-serving paragraph after the
   master memory branch advanced; both implemented slices are documented, routed to the

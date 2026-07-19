@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,7 +20,10 @@ Synchronous exact-session client for the Unix control socket owned by a hosted h
 is the serving boundary for live advertise, honest model/effort set, correlated whole-message
 submission, reconciliation, interaction responses, transcript reads, and stop. 260718-CHATS-L0E
 adds strictly validated reads for the evidence family: `read_control_evidence`,
-`read_control_native_page`, and `read_submission_provenance`.
+`read_control_native_page`, and `read_submission_provenance`. 260718-CHATS-L2E adds the
+epoch-guarded `interrupt_control` write, the paged `read_operation_timeline` read with strict
+monotonicity/epoch/coherence validation, additive `assets` on `submit_control_prompt`, and strict
+withdrawal-recovery parsing.
 
 ## Code Commentary
 
@@ -47,6 +50,17 @@ continue the last frame) under the dedicated `EVIDENCE_PAGE_TIMEOUT_SECONDS = 35
 Every evidence response carries `bridgeEpoch`; a caller-supplied expected epoch that mismatches
 raises `HarnessBridgeEpochMismatchError`, so cross-restart continuation fails detectably.
 
+The L2E helpers hold the same strict posture. `interrupt_control` sends the epoch-guarded write
+under the setter-class timeout and validates the acknowledgement enum, epoch continuity
+(`_evidence_bridge_epoch`), and the `ControlOperationRef` round-trip. `read_operation_timeline`
+rejects opaque string cursors typed before I/O, then validates shape, kind/source enums, positive
+strictly increasing sequences, `evictedBeforeSequence ≤ latestSequence`, boolean `truncated` (an
+empty page can never be truncated), `latestSequence ≥ last item`, and epoch continuity across
+pages. `_withdrawal_recovery`/`_asset_reference` parse the additive recovery payload strictly when
+present. `submit_control_prompt`'s additive `assets` argument is shape-checked by `_submit_payload`
+(a sequence of objects, never a string) while asset-free payloads keep their exact previous key
+order.
+
 ### Conventions
 
 The client is blocking because its FastAPI and MCP callers are synchronous. It validates the
@@ -65,6 +79,13 @@ protocol bound, not an invented acceptance result.
   the deque domain and adapter sequences never enter the native domain.
 - Evidence page/native page/provenance responses must be internally coherent (monotonicity,
   uniqueness, continuation, exact counts) or the read fails with a typed client error.
+- Timeline pages must additionally be coherent across the read: strictly increasing sequences,
+  floor ≤ high-water, non-truncated empty pages, `latestSequence` covering the last item, and one
+  continuous epoch; opaque cursor coordinates are rejected typed before any I/O.
+- The interrupt acknowledgement is validated (enum, epoch continuity, operation round-trip) and is
+  never treated as settlement.
+- Asset-free submit payloads keep their exact previous key order; `assets` rides only as a
+  sequence of objects.
 
 ### Todos
 
@@ -86,11 +107,13 @@ unknown/reconcile contract without a second submission.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The private server dispatches advertise/set/submit/reconcile against one bridge identity. | L127-L227 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The queue treats request id as an idempotency key and returns retained reconciliation truth. | L114-L145; L378-L411 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| The private server dispatches advertise/set/submit/reconcile against one bridge identity. | L150-L250 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The queue facade treats request id as an idempotency key and returns retained reconciliation truth through the authority. | L93-L197 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
 | Client tests pin pre-first-byte versus post-first-byte ambiguity and unknown setter/submission mapping. | L61-L145 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
 | Real socket and durable-inbox regressions prove lost responses converge by same-id reconciliation without native resend. | L1036-L1153 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Contract tests pin the strict page/native-page/provenance validators, cross-domain typed rejection, and epoch-continuity failure exercised through this client. | L463-L1309 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| The IPC server answers the two additive actions and verifies staged assets before dispatch, so this client's references and reads stay reference-only and strictly shaped. | L212-L215; L252-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| Contract tests pin the strict interrupt/timeline/recovery validators, the cross-domain cursor rejection, and the epoch-flip typed failure through this client. | L1475-L1575; L918-L959 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
 
 ## Cross-Repo References
 
@@ -109,6 +132,12 @@ transport loss is returned as ambiguous, never reclassified into retry safety.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented `interrupt_control`, the paged
+  `read_operation_timeline` (monotonicity, floor-vs-high-water, truncated/latest coherence,
+  cross-page epoch continuity, cross-domain cursor rejection), additive `assets` on
+  `submit_control_prompt` with byte-stable asset-free payloads, and the strict
+  recovery/asset-reference validators. Verification metadata stays pinned until closeout stamps
+  the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the three validated evidence reads,
   the 35-second native-page timeout precedent, cross-domain typed coordinate rejection,
   continuation/native-id coherence checks, exact provenance count/order validation, and

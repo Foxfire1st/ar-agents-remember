@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,7 +20,10 @@ Composes Pi's native RPC process/protocol/event seams into the normalized hosted
 provider-qualified native model/thinking launch flags, echo-verified startup, live capability
 advertisement, bounded catalog-coherent mid-session mutation, transient prompt-free discovery,
 session delivery, interactions, reconnect, and durable no-resend reconciliation. 260718-CHATS-L0E
-adds a `get_entries`-backed native history page with typed entry identity.
+adds a `get_entries`-backed native history page with typed entry identity. 260718-CHATS-L2E
+implements the structural `InterruptCapableAdapter`/`AssetSubmitCapable` seams: an RPC `abort`
+guarded pre-write by the caller's expected active-operation identity with replay-once, and
+verified base64 image content on the prompt command.
 
 ## Code Commentary
 
@@ -42,6 +45,18 @@ its typed `(id, parentId, type)` identity and honest optional timestamp, and a r
 fails closed rather than silently overlapping or skipping across pages. The shared window helper
 bounds the fresh read (called with `cursor=None`, since the native branch already applied the
 cursor), so `nextCursor` is always minted from the current native branch.
+
+L2E's `interrupt` writes one native RPC `abort` guarded pre-write by AR operation identity: pi
+has no turn identity, so a caller `turn_id` is refused typed, a missing active operation fails
+typed, and a caller `expected_operation_id` unequal to the current `active_operation.operation_id`
+fails typed before any native bytes — a stale reconcile can never abort a successor operation.
+The acknowledgement replays once per (expected, active) pair with no second write, and a native
+failure crosses as a `rejected` acknowledgement; settlement still flows through the normal settle
+path (the abort is asynchronous in effect). `submit_with_assets` pre-verifies staged bytes before
+any native write — a verification failure returns a clean `rejected` receipt with zero prompt
+commands — and `_image_content` attaches verified base64 `images[]` content
+(`{type:"image", mimeType, data}`) to the prompt command, re-verifying sha256/size at
+construction. Receipt raw gains additive `assetIds` only when assets ride.
 
 ### Conventions
 
@@ -70,6 +85,11 @@ no-RPC; discovery is asynchronous because it owns a transient Pi process.
 - Native entry paging requires exact per-entry identity: an entry without id/type fails parsing and
   a duplicate id fails closed; timestamps are reported only when the entry schema carries them.
 - No pane/log fallback, ACP transport, Toad host, or composer-paste capability change is present.
+- The abort write is guarded pre-write by the caller's expected active-operation identity —
+  mismatch, no-active, or any `turn_id` fails typed before native bytes — and replays once per
+  (expected, active) pair, so a stale reconcile writes nothing into a successor operation.
+- Asset bytes are re-verified (sha256/size) at construction before base64 image content crosses;
+  a verification failure is a clean `rejected` receipt with zero prompt commands.
 
 ### Todos
 
@@ -98,6 +118,10 @@ rules; process/event modules remain transport and event boundaries.
 | The event mapper owns normalized state, settlement, and extension interaction projections. | L41-L170 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
 | Entry identity/timestamp helpers keep native paging coordinates honest. | L264-L288 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
 | Contract tests pin the entries native page, message_update/message_end evidence forwarding, and the installed 0.80.7 production-seam capture. | L1033-L1179 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| The content-less `message_end` evidence mapping that keeps a real abort from failing the bridge. | L226-L244 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
+| The control-plane contract suite pins the guarded abort, replay-once per pair, the successor stale-reconcile typed refusal with zero writes, and the image content construction. | L641-L752; L1336-L1395 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
+| The installed-runtime suite captures the live 0.80.7 abort, timeline, and asset evidence behind the fixture rows. | L262-L364 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
+| The fixture records the redacted `control-plane/*` observed rows this adapter produced through the production seam. | — | [pi-0.80.7.json](agents-remember/mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json) |
 
 ## Cross-Repo References
 
@@ -116,6 +140,12 @@ active barrier until exact resolution, so native queue state never becomes a sec
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the `InterruptCapableAdapter`
+  implementation (RPC `abort` guarded pre-write by the expected active-operation identity,
+  `turn_id` refused typed, replay-once per pair, native failure → `rejected` acknowledgement) and
+  the `AssetSubmitCapable` implementation (verified base64 `images[]` content on the prompt
+  command, construction-time re-verification, additive receipt `assetIds`). Verification metadata
+  stays pinned until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the `get_entries(since)`-backed
   `read_native_page` — native cursor continuation, typed entry id/parentId/type identity,
   duplicate-id fail-closed, honest optional timestamps, and window minting from the current native

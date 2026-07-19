@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,9 @@
 
 Owns the vendor-neutral protocol-adapter boundary, the separate capability-discovery and progressive
 capability ports, explicit adapter registration/unsupported behavior, and normalized event reduction
-used by hosted control bridges.
+used by hosted control bridges. 260718-CHATS-L2E adds two runtime-checkable structural sub-protocols
+— `InterruptCapableAdapter` (the native interrupt write) and `AssetSubmitCapable` (asset-carrying
+submit) — so adapters opt into the new seams without any base-contract member.
 
 ## Code Commentary
 
@@ -32,6 +34,16 @@ start, snapshot, subscription, correlated submit/respond/reconcile, and shutdown
 returns a concrete unsupported adapter when no factory exists; that adapter returns explicit
 `unsupported` setter results instead of fabricating a built-in path. The reducer still enforces
 identity plus monotonic event sequence while preserving additive raw event detail.
+
+The two L2E sub-protocols are `runtime_checkable` structural ports: `InterruptCapableAdapter.interrupt(*,
+turn_id, expected_operation_id)` carries the caller's identity guards with the write — `turn_id` is
+the codex native active-turn identity, `expected_operation_id` the AR active-operation identity a
+turn-less harness (Pi) must match before any native bytes — and a repeat naming the same
+(expected, active) pair replays the first acknowledgement with no second write.
+`AssetSubmitCapable.submit_with_assets(request)` is dispatched by the authority only when assets
+ride. The base `HarnessProtocolAdapter` stays byte-compatible: neither sub-protocol adds a member
+to it, and the bridge/authority detect capability structurally (`isinstance`) so unsupported
+harnesses fail closed typed naming the adapter.
 
 ### Conventions
 
@@ -50,6 +62,12 @@ discovery is asynchronous because it owns a transient protocol process. Built-in
 - Capability/protocol/identity mismatches fail before state adoption.
 - Possible-send disconnects remain ambiguous and never authorize automatic duplicate submission.
 - Durable inbox acceptance and explicit consumption remain distinct from adapter delivery evidence.
+- The L2E sub-protocols stay structural and additive: the base protocol gains no member, capability
+  is detected by `isinstance`, and a harness without the seam fails closed typed naming the adapter
+  rather than guessing an interrupt or asset path.
+- Interrupt identity guards travel with the write (`turn_id` for codex, `expected_operation_id`
+  for turn-less Pi); a repeat of the same (expected, active) pair replays the first
+  acknowledgement without a second native write.
 
 ### Todos
 
@@ -73,7 +91,10 @@ separate consumer of the adapter protocol.
 | --- | --- | --- |
 | Normalized model/effort catalogs, ACP-style options, owned launch knobs, exact acceptance values, and set evidence are declared separately. | L13-L159 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
 | The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. | L152-L191 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue. | L85-L104; L186-L192 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue. | L118-L145; L394-L401 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch. | L241-L268 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The authority routes asset-carrying submissions to `submit_with_assets` and fails non-capable adapters closed with an unsupported receipt. | L210-L217; L694-L712 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| Codex and Pi implement both sub-protocols: exact-active-turn/expected-operation interrupt writes with replay-once, and verified asset construction. | L276-L342 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py); [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) L393-L477 |
 
 ## Cross-Repo References
 
@@ -92,6 +113,12 @@ by FIFO or request id alone.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the two runtime-checkable
+  structural sub-protocols — `InterruptCapableAdapter.interrupt` (identity guards ride the write;
+  replay-once per (expected, active) pair) and `AssetSubmitCapable.submit_with_assets` — with the
+  base protocol byte-compatible and structural capability detection failing unsupported harnesses
+  closed typed. Verification metadata stays pinned to the last committed source until closeout
+  stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented op-aware setter/prompt ports, async preflight, final
   guarded claim, and exact completion refs.
 
