@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,7 +21,9 @@ contract, including cached model/effort advertisement, transient token-free cata
 settings-resolved initial configuration, and ordered same-thread model/effort switching.
 260718-CHATS-L0E stops the adapter dropping native frames: full notification/item/usage params now
 ride the reserved `arEvidence` key into the bridge's evidence buffer, and a `thread/read`-backed
-native history page exposes persisted threads.
+native history page exposes persisted threads. 260718-CHATS-L2E implements the structural
+`InterruptCapableAdapter`/`AssetSubmitCapable` seams: a native `turn/interrupt` write against the
+exact active turn with replay-once, and verified `localImage` asset construction on `turn/start`.
 
 ## Code Commentary
 
@@ -49,6 +51,18 @@ session, requires the echoed thread id to match the adapter's own, flattens item
 raise as typed `CodexAppServerError`, and ephemeral threads' native `includeTurns` refusal crosses
 typed with the native reason rather than a guessed page. Reconcile, submission, and interaction
 behavior is byte-preserved.
+
+L2E's `interrupt` writes one native `turn/interrupt(threadId, turnId)` against the exact active
+turn: a missing active turn or a caller `turn_id` mismatching it fails typed before any write
+(`expected_operation_id` is result evidence, never a guard input — the codex guard is the native
+turn identity), and the write parameters use the captured active id so a completion interleaving
+can never redirect the write into a successor turn. The acknowledgement is replayed once per
+(turn_id-or-active, active) pair with no second native write, and an RPC failure crosses as a
+`rejected` acknowledgement; the bridge stamps the epoch. `submit_with_assets` pre-verifies every
+staged asset before any native write — a verification failure returns a clean `rejected` receipt
+with zero `turn/start` requests — and `_turn_input` appends verified `localImage{path}` blocks
+after the text block, with sha256/size re-verified at construction (`_verified_asset_path`).
+Receipt raw gains additive `assetIds` only when assets ride.
 
 ### Conventions
 
@@ -82,6 +96,12 @@ reports `codex-app-server:<opaque negotiated version>`.
   any projection itself and never mints `bridgeEpoch`.
 - Native pages are for persisted threads: a native refusal (e.g. ephemeral `includeTurns`) crosses
   typed with its reason instead of being retried into a less truthful shape.
+- The interrupt write targets only the exact active turn (native `turnId` guard, no-active typed)
+  and replays once per (expected, active) pair; it never settles the operation — settlement stays
+  with the landed completion path, and a post-settlement interrupt fails typed.
+- Asset bytes are re-verified (sha256/size) at construction before the native process sees a
+  `localImage` path; a verification failure is a clean `rejected` receipt with zero native writes,
+  and unknown/unverified native shapes are never guessed.
 
 ### Todos
 
@@ -110,6 +130,10 @@ policy.
 | Model pages preserve display/description metadata and model-local reasoning effort options. | L142-L213 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
 | The thread flatten helper enforces unique typed item identity for native paging. | L378-L415 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
 | Contract tests pin the evidence round-trip, unknown-vendor pass-through, thread/read paging, and the installed 0.144.5 production-seam capture. | L791-L1033 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| The structural sub-protocols this adapter implements; the caller's identity guards ride the write. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
+| The control-plane contract suite pins the interrupt write/replay/turnId guard/no-active typed refusal and the `localImage` construction with zero-write rejection. | L454-L522; L1270-L1335 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
+| The installed-runtime suite captures the live 0.144.5 interrupt, timeline, asset, and withdrawal-recovery evidence behind the fixture rows. | L126-L261 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
+| The fixture records the redacted `control-plane/*` observed rows this adapter produced through the production seam. | — | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
 
 ## Cross-Repo References
 
@@ -130,6 +154,12 @@ or turn-id reuse cannot release a successor.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the `InterruptCapableAdapter`
+  implementation (native `turn/interrupt` on the exact active turn, no-active/mismatch typed,
+  replay-once per pair, RPC failure → `rejected` acknowledgement) and the `AssetSubmitCapable`
+  implementation (pre-verified `localImage{path}` blocks on `turn/start`, construction-time
+  sha256 re-verification, additive receipt `assetIds`, zero native writes on verification
+  failure). Verification metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented stop-dropping `arEvidence`
   forwarding at the six emit sites and the `thread/read`-backed `read_native_page` with thread-id
   echo check, duplicate-id fail-closed, and typed ephemeral `includeTurns` refusal. Verification

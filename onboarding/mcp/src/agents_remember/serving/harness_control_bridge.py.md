@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,7 +20,9 @@ Hosts one exact harness identity, validates adapter handshake/capabilities, seri
 interactions, reconciliation, and model/effort mutations through one bounded queue, and publishes
 normalized snapshots/transcripts. 260718-CHATS-L0E adds a bounded per-session native evidence
 buffer beside the untouched transcript path, plus deque-domain/native-domain evidence page reads
-and the submission-provenance batch read.
+and the submission-provenance batch read. 260718-CHATS-L2E adds the epoch-guarded native
+`interrupt` write dispatch (bridge-stamped epoch, adapter-mint epoch refused, settlement untouched)
+and the `operation_timeline` read delegation.
 
 ## Code Commentary
 
@@ -47,6 +49,16 @@ support it) and stamps the bridge epoch itself — an adapter-minted epoch is re
 bridge→authority path. The evidence sequence is the adapter event sequence and non-monotonic input
 fails visibly.
 
+The L2E `interrupt` dispatch is a single native write, never a queue entry: `_require_epoch`
+compares the caller's expected epoch with the authority's and raises
+`HarnessBridgeEpochMismatchError` on mismatch, `_require_running` gates lifecycle, and a structural
+`isinstance(adapter, InterruptCapableAdapter)` check refuses unsupported harnesses typed, naming
+the adapter type. The adapter returns an `InterruptResult`; a non-empty adapter-minted
+`bridge_epoch` is refused and the bridge stamps its own epoch via `replace`. Settlement is
+deliberately untouched — the interrupted operation still settles through the landed completion
+path. `operation_timeline` delegates the epoch-checked paged read to the command queue under
+`_require_running`, bounded by `MAX_OPERATION_TIMELINE_PAGE` and `EVIDENCE_PAGE_BYTE_BUDGET`.
+
 ### Conventions
 
 The bridge is a lifecycle/state publisher; harness-specific set evidence belongs to the adapter and
@@ -67,6 +79,11 @@ generic evidence validation/ordering belongs to the queue.
   point and only the redacted event reaches reduction, the authority, the transcript, and
   subscribers.
 - The bridge alone stamps `bridgeEpoch` on evidence responses; adapters never mint it.
+- The interrupt write is epoch-guarded, bridge-stamped, and adapter-mint-epoch-refused; it never
+  enters the prompt FIFO and never settles the operation — settlement stays with the landed
+  completion path.
+- A harness without the structural `InterruptCapableAdapter` seam is refused typed with the
+  adapter named; the fail-closed posture is bridge-side (claude needs no edits).
 
 ### Todos
 
@@ -87,11 +104,15 @@ The protocol owns vendor-specific setters; the queue owns order and result valid
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | L31-L48; L157-L173 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The command queue serializes both setters and validates every returned `SetResult`. | L73-L180; L301-L386; L476-L508 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
-| Private IPC exposes bridge advertise/set actions under the same exact identity. | L127-L178 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The evidence DTOs, reserved key, clip/window helpers, and structural native-page protocol live in the models module. | L57-L72; L310-L384; L494-L583 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | L33-L79; L151-L180 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
+| The queue facade serializes both setters and the timeline read through the authority. | L93-L197 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| Private IPC exposes bridge advertise/set actions under the same exact identity. | L150-L170; L220-L229 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The evidence DTOs, reserved key, clip/window helpers, and structural native-page protocol live in the models module. | L57-L72; L385-L470; L569-L660 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | Contract tests pin diversion no-leak, buffer bounds, continuation, epoch mismatch, and the provenance delegation through this bridge. | L268-L791 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| The structural interrupt sub-protocol this bridge dispatches against, with identity guards riding the write. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
+| The IPC server dispatches the interrupt and operation-timeline actions to this bridge over the private socket. | L212-L215; L302-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The validated client drives `interrupt_control`/`read_operation_timeline` with strict response validation against this bridge's stamps. | L398-L450 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| Contract tests pin the epoch guard, structural refusal naming the adapter, adapter-mint-epoch refusal, and the bridge-stamped epoch. | L252-L346 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
 
 ## Cross-Repo References
 
@@ -116,6 +137,13 @@ active operation. Startup failure and graceful stop clean the same authority ins
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the epoch-guarded native
+  `interrupt` dispatch (`_require_epoch` mismatch typed, structural `InterruptCapableAdapter`
+  refusal naming the adapter, adapter-mint-epoch refusal, bridge-stamped epoch, settlement
+  untouched on the landed completion path) and the `operation_timeline` read delegation; refreshed
+  the adapter/queue/models/IPC citation ranges for the shifted sources (the queue row's pre-facade
+  ranges were legacy-stale and now cite the current facade). Verification metadata stays pinned
+  until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the bounded per-session evidence
   deque with reserved-key diversion at `_run_events` (redacted event to every existing consumer),
   the deque-domain `evidence()` page with eviction-floor honesty, the structural `native_page()`

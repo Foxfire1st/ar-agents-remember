@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-19T18:25+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2` |
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated            | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 
 > **Status:** active baseline
 
@@ -218,6 +218,17 @@ launch path. This repository overview routes the seam without duplicating detail
 `mcp/src/agents_remember/serving/` overview owns the substrate contract, the `mcp/` overview owns
 the package boundary, and the `mcp/tests/` overview owns the contract and installed-runtime proof.
 No feature is enabled and no public route, MCP tool, or doc surface changes.
+
+260718-CHATS-L2E lands the additive native control-plane substrate the L3 control API was blocked
+on: a native interrupt write (bridge-dispatched through a structural sub-protocol, epoch-guarded,
+codex exact-turn and pi expected-operation guarded, replay-once, claude fail-closed), a paged
+never-bodies operation-timeline enumeration of the submission authority's retained ledger, a
+digest-verified asset reference channel riding submit to native codex/pi acceptance, and the
+once-only withdrawal-recovery payload inside the already `cockpit_only` response. This repository
+overview routes the seam without duplicating detail: the `mcp/src/agents_remember/serving/`
+overview owns the substrate contract, the `mcp/` overview owns the package boundary, and the
+`mcp/tests/` overview owns the contract and installed-runtime proof. No feature is enabled and no
+public route, MCP tool, or doc surface changes.
 
 260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound
 request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic
@@ -596,6 +607,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: reviewed the root body against the leaf diff
+  and added the ancestor-routing paragraph for the additive native control-plane substrate
+  (interrupt write, paged never-bodies timeline, digest-verified asset channel, once-only
+  withdrawal recovery); detail routes to the `serving/`, `mcp/`, and `mcp/tests/` governors and no
+  feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
 - 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
   ancestor routing with the L1 active-serving routing after the master memory branch advanced;
   both implemented slices are routed at repository level — detail to the `serving/`,

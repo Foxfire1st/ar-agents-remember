@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-19T18:25+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated            | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb`|
+| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -115,6 +115,32 @@ counts. The codex-only `resume_thread_id` channel rides opener → `RunnerConfig
 kwarg → the sole `CodexAppServerSettings` site, refusing non-codex or malformed values before any
 spawn. No existing action, DTO, consumer, deque, or snapshot reduction changed shape; unknown
 native shapes cross as unknown-vendor evidence with raw preserved and semantics never guessed.
+
+**260718-CHATS-L2E lands the additive native control-plane substrate inside the same family.** A
+native interrupt write rides a runtime-checkable structural `InterruptCapableAdapter` sub-protocol
+(base protocol byte-compatible): the bridge dispatch is epoch-guarded and bridge-stamped
+(adapter-mint epochs refused), codex writes `turn/interrupt` against the exact active turn with
+its native `turnId` guard, pi writes RPC `abort` guarded pre-write by the caller's expected
+active-operation identity, both replay the first acknowledgement once per (expected, active) pair,
+claude/unsupported fail closed typed naming the adapter, and settlement stays with the landed
+completion path (a pi aborted turn's content-less `message_end` now crosses evidence-only instead
+of killing the bridge). The operation timeline is a paged never-bodies enumeration of the
+authority's retained ledger — all three prompt sources plus set-model/set-effort identity under a
+page count cap and the shared 48 KiB-class budget, every page carrying `latestSequence`,
+`evictedBeforeSequence` (tracked at the sole pop site), `truncated`, and `bridgeEpoch`, with
+completeness as the union of pages and an epoch flip failing typed at the validated client; the
+delegation runs authority → queue → bridge → IPC → validated client exactly like L0E provenance.
+The asset channel rides submit with references only: schema validation, resolve-and-verify
+confinement under the request-independent `<endpoint-root>/assets` anchor (lexical
+separator/dot-segment ban, ≤255-byte components, NUL translated to a typed refusal), size/sha256
+verification at admission and re-verification at native construction (codex `localImage{path}`,
+pi base64 `images[]`), an asset-conditional idempotence digest extension (asset-free digests
+byte-identical), an `unsupported` terminal receipt on non-capable adapters, and additive receipt
+`assetIds`. Withdrawal recovery captures the exact pre-tombstone body once inside the already
+`cockpit_only` response at the true transition; replays carry none and the tombstone timing/class
+is byte-preserved. Two additive IPC actions (`interrupt`, `operation-timeline`) keep the protocol
+at `ar-harness-control/v1` (now 20 actions); daemon-side bounded recovery retention stays L3's
+obligation.
 
 `serving/` is the **local dashboard serving layer** (slice 04 of the 3.0
 browser-dashboard series): a FastAPI app over the observer projection read side. It
@@ -238,6 +264,18 @@ Per-harness forwarding lives in `codex_app_server_adapter.py`, `claude_stream_st
 `harness_submission_authority.py`; the resume channel runs `terminal_opener.py` →
 `harness_control_runner.py` → `harness_control_factories.py`. `test_harness_control_evidence.py`
 pins the whole seam.
+
+For the native control-plane substrate (260718-CHATS-L2E), start at
+`harness_control_bridge.py::interrupt` (epoch guard, structural dispatch, bridge-stamped epoch),
+then the adapter writes `codex_app_server_adapter.py::interrupt` (exact active turn) and
+`pi_rpc_adapter.py::interrupt` (expected-operation guard), the authority read
+`harness_submission_authority.py::operation_timeline` (paged never-bodies, eviction floor), the
+IPC admission `harness_control_ipc.py::_submit_assets`/`_confined_asset_path` (schema +
+resolve-and-verify), the native asset constructors `_turn_input`/`_image_content`, the recovery
+capture in `harness_submission_authority.py::withdraw`, and the validated reads
+`harness_control_client.py::interrupt_control`/`read_operation_timeline`.
+`test_harness_control_plane.py` pins the whole seam; `test_harness_control_plane_installed.py`
+captures it live.
 
 For folded-state stream convergence, start at `projector.py::_publish_projection` and
 `Projector.subscribe`, then follow `app.py::stream_events` into
@@ -1057,6 +1095,21 @@ neighboring repository governs this route.
 | The codex resume channel threads opener → runner payload → factory → the sole settings site with pre-spawn refusals. | L611-L621; L88-L105; L41-L58 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py); [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py); [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
 | Contract and installed-runtime suites pin the whole seam including no-leak, continuation, provenance, and resume. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py); [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
 
+### Current L2E control-plane substrate
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The control-plane DTOs/constants and serializers: `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, the additive optionals, and the typed spool reader. | L75-L88; L184-L204; L314-L366; L768-L830 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The structural sub-protocols adapters opt into without a base-contract member. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
+| The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | L241-L290 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The authority's paged never-bodies enumeration, eviction floor, pre-tombstone recovery capture, capability gate, and asset-conditional digest. | L436-L485; L515-L531; L1036-L1073 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The two additive IPC actions and the submit-asset schema/confinement/verification admission under the endpoint's own assets root. | L212-L215; L252-L325; L449-L490 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The validated client helpers: `interrupt_control`, `read_operation_timeline` coherence/monotonicity/epoch validation, recovery parsing, additive submit assets. | L398-L450; L667-L790 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| Codex exact-active-turn `turn/interrupt` with replay-once and verified `localImage` construction. | L276-L342; L796-L818 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Pi expected-operation-guarded `abort` with replay-once and verified base64 image content. | L393-L477 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
+| The content-less `message_end` evidence-only mapping (the abort's own shape) with preserved role strictness. | L226-L244 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
+| Contract and installed-runtime suites pin the whole seam; the fixtures record redacted `control-plane/*` rows without enabling anything. | L252-L1575; L126-L384 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py); [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
+
 ### Current L9 evidence
 
 | Finding | Citations | Source Path |
@@ -1128,6 +1181,13 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive native control-plane
+  substrate — the structural-sub-protocol interrupt write (bridge epoch guard, codex exact-turn,
+  pi expected-operation guard, replay-once, claude fail-closed, settlement untouched), the paged
+  never-bodies operation-timeline enumeration with eviction-floor honesty, the digest-verified
+  asset channel with resolve-and-verify spool confinement and native codex/pi construction, and
+  the once-only withdrawal-recovery payload — plus a hot-path entry and a Current-L2E reference
+  section. Verification metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
   library paragraph/hot-path/history with the L1 active-serving content after the master memory
   branch advanced; both implemented slices are documented under the L9/L0 contract section with

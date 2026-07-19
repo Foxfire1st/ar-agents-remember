@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-20T00:08+02:00 |
+| lastVerifiedCommitHash |  `22562e0f2161c2d980385a462275dc370deb72eb`|
+| lastVerifiedCommitDate |  2026-07-20T00:45:01+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,11 @@ discovery seam without claiming active projector capability. 260718-CHATS-L0E ap
 `thread/read` native page, the resume channel, and submission provenance. 260718-CHATS-L2 flips
 `native-history/list-read-resume` to `observed` (the live production gate passed through the
 direct app-server seam) and appends the `observed` `native-history/open-exact-resume` row for the
-real end-to-end codex open through the landed L0E channel.
+real end-to-end codex open through the landed L0E channel. 260718-CHATS-L2E appends four
+`control-plane/*` rows observed through the production control seam on the same installed
+0.144.5: the interrupt write/ack with interrupted settlement, the paged operation timeline, the
+`localImage` asset submit, and the once-only withdrawal recovery — all `observed`, all
+evidence-not-enablement.
 
 ## Code Commentary
 
@@ -38,7 +42,14 @@ rows record `native-history/list-read-resume` (`thread/list`, `thread/read`,
 historical tool/command completeness honestly partial) and `native-history/open-exact-resume`
 (`open_terminal_session/resumeThreadId`, `thread/resume`, `catalog/vendorSessionId`,
 `submission-authority/bridgeEpoch` shapes; the held-open fix round's real open, idempotent
-replay, and leak-free retirement) — both `observed`, both evidence-not-enablement.
+replay, and leak-free retirement) — both `observed`, both evidence-not-enablement. The L2E rows
+record `control-plane/interrupt-write-ack` (`turn/interrupt(threadId,turnId)`, accepted
+acknowledgement, `vendorCorrelationId[turn]`, `turn/completed status[interrupted]`, settled
+re-interrupt refused-typed), `control-plane/operation-timeline` (item kind/source/sequence,
+`payloadDigestPresent`, `bridgeEpoch`), `control-plane/asset-local-image-submit` (`localImage`
+input path, receipt raw `assetIds`, spool sha256 verification), and
+`control-plane/withdrawal-recovery` (exact recovery text once, replay absent, tombstone timing
+byte-preserved) — all `observed`, all shape descriptors only.
 
 ### Conventions
 
@@ -55,6 +66,9 @@ frames, prompts, paths, credentials, and conversation material are discarded.
   as a typed honesty boundary, not a failure.
 - The L2 `native-history/*` rows record observed production-gate shapes only; `enablesCapabilities`
   stays false and capability support remains the live gate's decision.
+- The L2E `control-plane/*` rows record observed interrupt/timeline/asset/recovery shapes only;
+  they never enable the interrupt write, the timeline read, or the asset channel, and the settled
+  re-interrupt refusal is recorded as a typed honesty boundary.
 
 ### Todos
 
@@ -78,6 +92,7 @@ direct evidence.
 | The runtime-fixture model requires allowlist-v1, at least one observation, and literal false enablement. | L1233-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The opt-in installed suite captures these `substrate-evidence/*` rows through the production seam and asserts their shapes. | L115-L273 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
 | The L2 installed-runtime suite produces the live gate and codex open evidence the `native-history/*` rows record. | L134-L214; L480-L539 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The L2E installed-runtime suite captures these `control-plane/*` rows through the production control seam and asserts their shapes. | L126-L261 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
 
 ## Cross-Repo References
 
@@ -89,6 +104,12 @@ No neighboring repository is involved.
 
 ## Update History
 
+- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the four appended
+  `control-plane/*` rows (interrupt write/ack with interrupted settlement and the settled
+  typed refusal, the paged operation timeline, the `localImage` asset submit, the once-only
+  withdrawal recovery); `enablesCapabilities` stays false, pre-existing rows are byte-preserved,
+  and the fixture remains evidence-not-enablement. Verification metadata stays pinned until
+  closeout stamps the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the flipped
   `native-history/list-read-resume` row (`observed` through the direct app-server production
   gate with the exact locked CLI version) and the appended `native-history/open-exact-resume`
