@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/pi_rpc_protocol.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T20:05+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 Defines Pi's strict native RPC wire contract: JSONL framing, launch/session argv transforms,
 response/state/model/entry parsing, activity vocabulary, content extraction, and extension UI
-response shapes.
+response shapes. 260718-CHATS-L0E adds honest entry identity and timestamp helpers for native
+evidence paging.
 
 ## Code Commentary
 
@@ -31,6 +32,11 @@ provider-qualified current model, and retains only safe model identity fields. `
 maps the auth-filtered live catalog to normalized model rows and delegates each model's thinking
 menu to `_pi_effort_options`. Remaining helpers validate response correlation, entries, messages,
 queue counts, and method-specific dialog responses.
+
+L0E's `pi_entry_identity` returns an entry's durable `(id, parentId, type)` coordinates — the only
+honest Pi paging identity — failing closed when id or type is missing rather than skipping the
+entry and silently gapping a native page. `pi_entry_created_at` reports the entry's own
+`timestamp` only when the schema carries non-empty text and never invents one.
 
 ### Conventions
 
@@ -49,6 +55,8 @@ null, while `xhigh` and `max` are included only when the model's own map explici
 - LF is the delimiter; U+2028/U+2029 remain JSON content, and generic framing recovery is forbidden.
 - L1 launch transformation adds only `--mode rpc`; model/thinking launch flags belong to L2.
 - Exact package versions remain fixture/smoke evidence rather than production compatibility gates.
+- Entry identity is the sole native paging coordinate; missing identity fails closed and timestamps
+  are never fabricated.
 
 ### Todos
 
@@ -84,6 +92,10 @@ No external repository boundary is implemented by this protocol parser.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented `pi_entry_identity` (fail-closed
+  durable id/parentId/type coordinates) and `pi_entry_created_at` (honest optional timestamp) as
+  the native evidence paging helpers. Verification metadata stays pinned until closeout stamps the
+  candidate commit.
 - 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented provider-qualified live catalog
   parsing, per-model thinking rules, current-state identity, and explicit provider-header credential
   exclusion; recorded the L1/L2 launch boundary and unconfigured documentation status.

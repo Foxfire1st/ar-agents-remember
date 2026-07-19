@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-19T00:37+02:00 |
-| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1` |
-| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
+| lastUpdated            | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 
 > **Status:** active baseline
 
@@ -174,6 +174,17 @@ without duplicating detail: the `mcp/` overview owns the package boundary, the
 `mcp/src/agents_remember/serving/` and `mcp/src/agents_remember/serving/conversation/` overviews
 own the composition and authorization facts, and the `mcp/tests/` overview owns the contract-suite
 proof. No feature surface, MCP tool, or public doc is added, renamed, or removed.
+
+260718-CHATS-L0E lands the additive, read-only native evidence and resume substrate the blocked
+conversation leaves were waiting on: per-harness mappers forward full native frames under one
+reserved event key, the control bridge diverts them into a bounded per-session evidence buffer
+while every existing projection stays byte-identical, three epoch-scoped additive reads (deque
+evidence pages, native history pages, the submission-provenance batch) cross only the user-private
+control socket, and a codex-only resume channel rides the existing opener → runner → factory
+launch path. This repository overview routes the seam without duplicating detail: the
+`mcp/src/agents_remember/serving/` overview owns the substrate contract, the `mcp/` overview owns
+the package boundary, and the `mcp/tests/` overview owns the contract and installed-runtime proof.
+No feature is enabled and no public route, MCP tool, or doc surface changes.
 
 260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound
 request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic
@@ -552,6 +563,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: reviewed the root body against the leaf diff
+  and added the repository-level ancestor routing for the native evidence and resume substrate —
+  reserved-key evidence diversion with byte-identical projections, the three additive epoch-scoped
+  private-socket reads, and the codex-only resume channel — with detail routed to the `serving/`,
+  `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
+  remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T00:37+02:00 — 260718-CHATS-L0 curator: reviewed the root body against the leaf diff
   and added the repository-level ancestor routing for the conversation runtime composition repair
   — install-once immutable runtime plus server-resolved local-operator ruling under the existing

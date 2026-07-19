@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,9 @@
 
 Hosts one exact harness identity, validates adapter handshake/capabilities, serializes prompts,
 interactions, reconciliation, and model/effort mutations through one bounded queue, and publishes
-normalized snapshots/transcripts.
+normalized snapshots/transcripts. 260718-CHATS-L0E adds a bounded per-session native evidence
+buffer beside the untouched transcript path, plus deque-domain/native-domain evidence page reads
+and the submission-provenance batch read.
 
 ## Code Commentary
 
@@ -31,6 +33,19 @@ as prompt submission, interaction response, reconciliation, and stop. Submission
 distinct from terminal completion; reconciliation and explicit unknown resolution handle ambiguous
 sends. Event reduction and transcript retention are bounded. Unexpected queue failures publish a
 loud failed state, resolve active callers, and drain queued commands.
+
+The L0E evidence buffer is a bounded per-session deque (default 2000 frames, per-frame 32 KiB clip)
+fed at the single `_run_events` event-consumption point: when an adapter event carries the reserved
+`arEvidence` raw key, `_divert_evidence` appends an `EvidenceFrame(sequence, kind, created_at,
+clipped payload)` and the redacted event (raw minus `arEvidence`) flows to reduce/observe/transcript/
+publish, so `snapshot.raw`, catalog `control_raw`, SSE projections, and every existing consumer stay
+byte-identical. `evidence()` pages the deque domain with count+byte bounds and reports
+`latestSequence`, `evictedBeforeSequence`, `truncated`, and `bridgeEpoch`; `native_page()` dispatches
+through the structural `NativePageReader` protocol (fail-closed typed where the adapter does not
+support it) and stamps the bridge epoch itself — an adapter-minted epoch is refused;
+`submission_provenance()` delegates the epoch-checked batch to the command queue, the sole
+bridge→authority path. The evidence sequence is the adapter event sequence and non-monotonic input
+fails visibly.
 
 ### Conventions
 
@@ -46,6 +61,12 @@ generic evidence validation/ordering belongs to the queue.
   bridge.
 - No automatic resend follows a disconnect after a possible send.
 - Unsupported receipts use the bounded submission ledger and remain explicitly unsupported.
+- The evidence buffer is evidence, not authority: it is a hot window with an explicit frame-count
+  bound and an honest eviction floor on every page; deep history stays with the native read APIs.
+- Evidence never rides the shared raw merge: the reserved key is diverted at the one consumption
+  point and only the redacted event reaches reduction, the authority, the transcript, and
+  subscribers.
+- The bridge alone stamps `bridgeEpoch` on evidence responses; adapters never mint it.
 
 ### Todos
 
@@ -69,6 +90,8 @@ The protocol owns vendor-specific setters; the queue owns order and result valid
 | The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | L31-L48; L157-L173 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The command queue serializes both setters and validates every returned `SetResult`. | L73-L180; L301-L386; L476-L508 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
 | Private IPC exposes bridge advertise/set actions under the same exact identity. | L127-L178 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The evidence DTOs, reserved key, clip/window helpers, and structural native-page protocol live in the models module. | L57-L72; L310-L384; L494-L583 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| Contract tests pin diversion no-leak, buffer bounds, continuation, epoch mismatch, and the provenance delegation through this bridge. | L268-L791 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 
 ## Cross-Repo References
 
@@ -93,6 +116,11 @@ active operation. Startup failure and graceful stop clean the same authority ins
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the bounded per-session evidence
+  deque with reserved-key diversion at `_run_events` (redacted event to every existing consumer),
+  the deque-domain `evidence()` page with eviction-floor honesty, the structural `native_page()`
+  dispatch with bridge-stamped epoch, and the `submission_provenance()` delegation. Verification
+  metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented the sole authority facade, exact operation routing,
   event-before-publish completion, and lifecycle cleanup.
 

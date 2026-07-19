@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_factories.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T23:16+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 Constructs the three built-in launchable protocol adapters from one optional settings-resolved
 selection and that adapter's own launch knobs. Unknown or settings-only ids remain explicitly
-unsupported.
+unsupported. 260718-CHATS-L0E adds one additive codex-only `resume_thread_id` kwarg feeding the
+sole `CodexAppServerSettings` construction site.
 
 ## Code Commentary
 
@@ -32,6 +33,12 @@ model or effort so its session derives the authenticated catalog default and tha
 effort. Runtime environment remains on `LaunchSpec`; ambient `AR_SPAWN_MODEL` and
 `AR_SPAWN_EFFORT` are ignored here as selection authority.
 
+L0E's `resume_thread_id` kwarg is codex-only: any other harness id, an empty value, or outer
+whitespace raises `HarnessControlError` before any adapter is constructed or spawned. A well-formed
+value is threaded into the sole `CodexAppServerSettings` construction site, whose
+`resume_thread_id` field the adapter already honors at start (`thread/resume`). Omitting the kwarg
+preserves the pre-L0E construction behavior exactly.
+
 ### Conventions
 
 Built-in ids are exactly `claude`, `codex`, and `pi`. Factory inputs are already normalized by the
@@ -44,6 +51,8 @@ runner; vendor-specific argv/config production remains on the adapter's `launch_
 - Custom/unknown harnesses receive the truthful unsupported adapter; no pane, regex, paste, or
   static native-catalog compatibility path is invented.
 - Native Codex initial configuration is app-server thread config, never `CODEX_CONFIG`.
+- The resume channel can never target a harness that lacks the semantics: non-codex or malformed
+  `resume_thread_id` fails closed at this boundary before any spawn.
 
 ### Todos
 
@@ -79,6 +88,11 @@ No external repository boundary is implemented by this factory.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the codex-only `resume_thread_id`
+  kwarg — fail-closed refusal for non-codex harnesses and malformed values before construction,
+  threading into the sole `CodexAppServerSettings` site, and exact absent-kwarg behavior
+  preservation. Verification metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented paired typed selection/launch
   knobs, expected-launch evidence injection, the roleless Codex dynamic-default boundary, and the
   rule that ambient role env is provenance rather than selection authority. Final audit restored

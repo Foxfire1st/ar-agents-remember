@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash |  `ca9dd05a295ef5f24c479e2231fdcd174b372e04`|
+| lastVerifiedCommitDate |  2026-07-19T10:04:45+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,9 @@
 ## Purpose
 
 Records redacted allow-listed evidence observed through the installed Codex 0.144.5 production
-discovery seam without claiming native history or active projector capability.
+discovery seam without claiming native history or active projector capability. 260718-CHATS-L0E
+appends `substrate-evidence/*` rows observed through the production evidence seam: live frames,
+the `thread/read` native page, the resume channel, and submission provenance.
 
 ## Code Commentary
 
@@ -25,7 +27,13 @@ discovery seam without claiming native history or active projector capability.
 
 The fixture identifies Codex 0.144.5, records only model/effort count and selected-field presence
 from adapter discovery, marks native history list/read/resume and active projector items/events as
-`not-exercised`, and fixes `enablesCapabilities` to false.
+`not-exercised`, and fixes `enablesCapabilities` to false. The L0E rows record
+`substrate-evidence/live-frames-page` (evidence frames with kinds, item id/type presence, bridge
+epoch, and `snapshot.raw.arEvidence` absent), `substrate-evidence/native-page-thread-read` (typed
+native identity on a persisted thread plus the typed ephemeral `includeTurns` refusal),
+`substrate-evidence/resume-thread-channel` (opener→runner→factory→settings and the exact resumed
+thread id), and `substrate-evidence/submission-provenance` (cockpit source with epoch scoping) —
+all `observed`, all shape descriptors only.
 
 ### Conventions
 
@@ -37,6 +45,9 @@ frames, prompts, paths, credentials, and conversation material are discarded.
 - Fixture presence never enables a capability.
 - Installed version/count observations are evidence for this capture, not maintained product enums.
 - History and active projection remain separately gated.
+- `substrate-evidence/*` rows retain only allow-listed counts, kinds, and field presence captured
+  through the production adapter→bridge→IPC→client seam; ephemeral native-page refusal is recorded
+  as a typed honesty boundary, not a failure.
 
 ### Todos
 
@@ -57,6 +68,7 @@ direct evidence.
 | --- | --- | --- |
 | Foundation tests parse this exact version tuple, require non-enablement, and scan all fixtures for raw secrets/paths/conversation material. | L102-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The runtime-fixture model requires allowlist-v1, at least one observation, and literal false enablement. | L1233-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The opt-in installed suite captures these `substrate-evidence/*` rows through the production seam and asserts their shapes. | L115-L273 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
 
 ## Cross-Repo References
 
@@ -68,5 +80,9 @@ No neighboring repository is involved.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the appended redacted
+  `substrate-evidence/*` rows (live frames page, thread/read native page with the typed ephemeral
+  refusal, resume channel, submission provenance); `enablesCapabilities` stays false and no L1/L2
+  row flipped. Verification metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the Codex installed-runtime fixture
   sidecar. Verification is blank until closeout commits and stamps the new source.

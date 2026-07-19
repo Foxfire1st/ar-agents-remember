@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,8 @@
 Composes Pi's native RPC process/protocol/event seams into the normalized hosted adapter, including
 provider-qualified native model/thinking launch flags, echo-verified startup, live capability
 advertisement, bounded catalog-coherent mid-session mutation, transient prompt-free discovery,
-session delivery, interactions, reconnect, and durable no-resend reconciliation.
+session delivery, interactions, reconnect, and durable no-resend reconciliation. 260718-CHATS-L0E
+adds a `get_entries`-backed native history page with typed entry identity.
 
 ## Code Commentary
 
@@ -34,6 +35,13 @@ state and catalog together only after correlation, requested postcondition, and 
 pass. Thus an incoherent model, clamp token, disappearing row, timeout, or lost readback leaves the
 previous advertised snapshot callable. Existing prompt delivery, settlement, interactions,
 reconnect, and post-cursor reconciliation remain intact.
+
+L0E's `read_native_page` implements the structural native-page protocol over the durable entry
+read: `get_entries(since=cursor)` performs the continuation natively, each entry is flattened with
+its typed `(id, parentId, type)` identity and honest optional timestamp, and a repeated entry id
+fails closed rather than silently overlapping or skipping across pages. The shared window helper
+bounds the fresh read (called with `cursor=None`, since the native branch already applied the
+cursor), so `nextCursor` is always minted from the current native branch.
 
 ### Conventions
 
@@ -59,6 +67,8 @@ no-RPC; discovery is asynchronous because it owns a transient Pi process.
 - `get_state` governs readiness/activity and corroborates settlement; reconnect preserves exact
   session identity.
 - Ambiguous submissions remain unresolved without durable post-cursor evidence and are never resent.
+- Native entry paging requires exact per-entry identity: an entry without id/type fails parsing and
+  a duplicate id fails closed; timestamps are reported only when the entry schema carries them.
 - No pane/log fallback, ACP transport, Toad host, or composer-paste capability change is present.
 
 ### Todos
@@ -86,6 +96,8 @@ rules; process/event modules remain transport and event boundaries.
 | The launch validator requires exact Pi catalog keys and model-local launch effort before the configured process starts. | L78-L119 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
 | The subprocess boundary correlates requests, reclaims cancellation state, and ignores valid late responses without tombstones. | L28-L98; L177-L199 | [pi_rpc_process.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_process.py) |
 | The event mapper owns normalized state, settlement, and extension interaction projections. | L41-L170 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
+| Entry identity/timestamp helpers keep native paging coordinates honest. | L264-L288 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
+| Contract tests pin the entries native page, message_update/message_end evidence forwarding, and the installed 0.80.7 production-seam capture. | L1033-L1179 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 
 ## Cross-Repo References
 
@@ -104,6 +116,10 @@ active barrier until exact resolution, so native queue state never becomes a sec
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the `get_entries(since)`-backed
+  `read_native_page` — native cursor continuation, typed entry id/parentId/type identity,
+  duplicate-id fail-closed, honest optional timestamps, and window minting from the current native
+  branch. Verification metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented no-native-queue dispatch, fresh-state/token guards,
   exact binding, and settled-plus-idle completion.
 

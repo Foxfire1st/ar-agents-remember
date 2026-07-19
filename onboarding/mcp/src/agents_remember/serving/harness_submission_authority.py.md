@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 Owns the FEUI-L5 authoritative, epoch-bound prompt/setter timeline for one live harness bridge. It
 is the only component allowed to admit queued prompts, linearize withdrawal against dispatch, bind
-exact adapter operations, and retain normalized lifecycle truth.
+exact adapter operations, and retain normalized lifecycle truth. 260718-CHATS-L0E adds one
+additive read-only provenance batch over its existing per-operation records.
 
 ## Code Commentary
 
@@ -40,6 +41,13 @@ identity/digest truth. Full-ref completion dedupe prevents a reused request id o
 from releasing a successor. Certified pre-dispatch busy may requeue safely; possible-first-byte
 loss remains unknown and blocks later ordered work until exact resolution.
 
+L0E's `provenance(expected_bridge_epoch, request_ids)` is a read-only batch over those same
+records: epoch-checked before disclosure, 1..64 unique request ids, and never origin-filtered —
+each found id reports its exact `source` (`cockpit`/`terminal`/`durable`), `state`, submitted/
+updated/accepted timestamps, and vendor correlation from the record; unknown ids answer an honest
+`not-found` rather than a guessed row. The read holds the lifecycle lock only over normalized
+record fields and mutates nothing.
+
 ### Invariants And Boundaries
 
 - There is exactly one prompt/setter authority per bridge generation. Native queues, browser
@@ -51,6 +59,9 @@ loss remains unknown and blocks later ordered work until exact resolution.
 - Completion must carry the full operation ref. Id-only or FIFO completion is forbidden.
 - Public status is cockpit-only, raw-free, and bounded; private authority may retain internal
   correlation but not unbounded terminal text.
+- The provenance batch discloses submission source only to the exact-session daemon peer over the
+  private socket; it is a read, never a mutation channel, and never infers a source the record
+  does not carry.
 
 ### Todos
 
@@ -74,6 +85,7 @@ repository-owned.
 | The bridge wires direct adapter events here before coalesced publication. | — | [harness_control_bridge.py](harness_control_bridge.py) |
 | The API exposes raw-free authority/status/withdrawal projections. | — | [harness_control_api.py](harness_control_api.py) |
 | Dedicated tests exercise races, early completion, full-ref reuse, bounds, privacy, and epochs. | — | [../../../tests/test_harness_submission_authority.py](../../../tests/test_harness_submission_authority.py) |
+| The evidence contract suite exercises the provenance batch end-to-end through bridge → queue → authority → IPC → validated client, including all three sources, not-found, epoch mismatch, and the 1..64 uniqueness bound. | L463-L791 | [test_harness_control_evidence.py](../../../tests/test_harness_control_evidence.py) |
 
 ## Cross-Repo References
 
@@ -85,6 +97,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive read-only
+  `provenance` batch — epoch-checked disclosure of exact source/state/timestamps/vendor-correlation
+  for all three submission sources from the existing records, 1..64 unique ids, honest not-found,
+  and no mutation surface. Verification metadata stays pinned until closeout stamps the candidate
+  commit.
 - 2026-07-17T21:39+02:00 — Created for 260715-FEUI-L5 after canonical review PASS; documented the
   sole epoch-bound prompt/setter timeline, atomic dispatch/withdrawal, full operation references,
   early-completion dominance, safe-retry certificate boundary, bounded privacy-aware retention, and

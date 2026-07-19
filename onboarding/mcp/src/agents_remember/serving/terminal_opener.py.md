@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ tool. It resolves the server-owned base command, preserves role/lineage provenan
 live seat per leaf-role pair, and carries a typed native launch selection into the exact-session
 control runner without creating a parallel spawn path. It also treats an already-live process as
 immutable launch truth, so an idempotent reopen cannot rewrite model/effort or control provenance.
+260718-CHATS-L0E adds one additive optional `resume_thread_id` parameter threaded into the runner
+payload for the codex harness only.
 
 ## Code Commentary
 
@@ -48,6 +50,13 @@ spawn role, free-form inputs, resolved model/effort, and endpoint from this gene
 roles may coexist on one leaf; a live same-role owner returns `leaf-taken` without process or
 catalog mutation.
 
+L0E's `resume_thread_id` is a codex-only native-identity selector in the `launch_args` authority
+class: `open_terminal_session` returns `bad-kind` before any spawn when the value targets a
+non-codex harness/kind or is empty/outer-whitespace, and otherwise threads it unchanged through
+`_open_terminal_transaction` → `_session_command` → `RunnerConfig`. The opener never validates or
+authorizes the resume target; target authorization stays with the later re-authorization seam
+before launch. Omitting the parameter preserves the pre-L0E open behavior exactly.
+
 ### Conventions
 
 The opener consumes settings-resolved inputs but does not read or mutate settings. The namespaced
@@ -70,6 +79,8 @@ their callers; this module returns `opened`, `launch-conflict`, `leaf-taken`, or
   is validated/applied by the own adapter.
 - Explicit session commands remain user/settings-authored free-form material and are not synthesized
   from normalized native model/effort.
+- `resume_thread_id` refuses codex-incompatible kinds/harnesses and malformed shapes with `bad-kind`
+  before `TerminalHost.ensure` or any spawn; it is never validated or authorized here.
 - Legacy raw-TUI rows remain explicit legacy state; unsupported custom ids do not receive a native
   compatibility fallback.
 
@@ -101,6 +112,7 @@ and caller-specific response shaping.
 | The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | L946-L1049 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The agent-facing spawn tool resolves role settings, calls this opener, and maps live launch conflict to its existing launch-selection refusal. | L474-L628 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 | Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | L271-L407 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
+| Resume-channel contract tests pin the opener `bad-kind` refusals with zero host interactions and the codex pass-through into the runner payload. | L1409-L1460 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 
 ## Cross-Repo References
 
@@ -112,6 +124,11 @@ dashboard terminal catalog.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive codex-only
+  `resume_thread_id` pass-through — `bad-kind` refusal for non-codex/malformed values before any
+  spawn, unchanged threading into the runner payload, the `launch_args`-class no-validation
+  authority posture, and exact absent-parameter behavior preservation. Verification metadata stays
+  pinned until closeout stamps the candidate commit.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented live-process launch truth,
   selectionless/same-pair idempotence, explicit conflicting-pair refusal, dead-generation reset,
   and the cross-thread/process batch fence around read, probe, ensure, and upsert.
