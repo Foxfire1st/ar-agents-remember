@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:19+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,6 +18,7 @@
 
 Contains strict Codex app-server model, thread, state, interaction, submission-ledger, activity,
 terminal, transcript, and reconciliation parsing helpers used by the native adapter/session pair.
+260718-CHATS-L0E adds the `thread/read` → native-evidence-frame flatten helper.
 
 ## Code Commentary
 
@@ -31,6 +32,12 @@ Thread parsing verifies echoed effective effort. `SubmissionEvidence` now captur
 `CodexModelCapability` and effort selected when a prompt is reserved, and the bounded ledger stores
 that immutable selection epoch beside request state/turn identity. The remaining helpers map
 structured activity and terminal statuses, transcript items, and stable server requests.
+
+L0E's `native_evidence_frames_from_thread` flattens one `thread/read` thread into typed
+`NativeEvidenceFrame` rows in stored order: every turn contributes its id as the item's
+`nativeParentId`, every item must carry a unique `id` and a `type`, and a repeated id raises
+`CodexAppServerError` instead of manufacturing a cursor that could overlap or skip items across
+pages. Item payloads cross whole as the frame `raw`; `created_at` stays `None` rather than invented.
 
 ### Conventions
 
@@ -47,6 +54,8 @@ requests are explicitly enumerated; `item/tool/requestUserInput` remains rejecte
 - A queued prompt carries its own model/effort pair; later desired-state changes cannot rewrite the
   selection under which that work entered the adapter.
 - Submission and interaction state is bounded and saturates loudly.
+- Native evidence identity is exact: missing item id/type fails parsing and duplicate ids fail
+  closed; paging never proceeds without per-item uniqueness.
 
 ### Todos
 
@@ -81,6 +90,10 @@ No external repository boundary is implemented by this parser module.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the stored-order
+  `native_evidence_frames_from_thread` flatten — typed item id/type, turn parent identity,
+  duplicate-id fail-closed, and whole-item raw payloads. Verification metadata stays pinned until
+  closeout stamps the candidate commit.
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented model/effort selection epochs on
   bounded prompt evidence so later setters cannot retroactively rewrite queued work.
 - 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented retained display/description

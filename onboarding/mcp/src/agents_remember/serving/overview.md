@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
+| lastUpdated            | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04`|
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -71,6 +71,23 @@ dispatch claim, exact full-operation-ref completion, early-terminal dominance, r
 raw-free cockpit status, and bounded privacy-aware retention. `HarnessControlQueue` is now only a
 compatibility facade. Codex, Claude, and Pi are dispatch-now adapters with guarded first-byte seams;
 none may create a native/adapter queue or release work by FIFO/id alone.
+
+**260718-CHATS-L0E adds the additive, read-only native evidence and resume substrate.** Mappers
+place full native frames under the single reserved `arEvidence` raw key on events they already emit;
+the bridge diverts each payload at its one `_run_events` consumption point into a bounded
+per-session evidence deque (2,000 frames, 32 KiB clip with a visible marker, monotonic adapter-event
+sequence, honest eviction floor) and reduces/publishes the redacted event, so `snapshot.raw`,
+catalog `control_raw`, SSE projections, and every existing consumer stay byte-identical. Three
+additive IPC reads cross only the user-private socket: `evidence` (deque-domain page),
+`evidence-native-page` (native-domain page with typed identity and an opaque `nextCursor`, codex
+`thread/read` and pi `get_entries(since)`; claude fails closed typed), and `submission-provenance`
+(epoch-checked batch over all three sources through the sole bridge → queue → authority delegation).
+Every evidence response carries `bridgeEpoch`, the two coordinate domains are disjoint and rejected
+cross-typed, and the validated client enforces monotonicity, continuation coherence, and exact
+counts. The codex-only `resume_thread_id` channel rides opener → `RunnerConfig` payload → factory
+kwarg → the sole `CodexAppServerSettings` site, refusing non-codex or malformed values before any
+spawn. No existing action, DTO, consumer, deque, or snapshot reduction changed shape; unknown
+native shapes cross as unknown-vendor evidence with raw preserved and semantics never guessed.
 
 `serving/` is the **local dashboard serving layer** (slice 04 of the 3.0
 browser-dashboard series): a FastAPI app over the observer projection read side. It
@@ -165,6 +182,16 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+For the native evidence and resume substrate (260718-CHATS-L0E), start at
+`harness_control_bridge.py::_run_events` (the single diversion point) and
+`harness_control_models.py` (evidence DTOs, reserved key, clip/window helpers), then the three IPC
+actions in `harness_control_ipc.py` and the validated reads in `harness_control_client.py`.
+Per-harness forwarding lives in `codex_app_server_adapter.py`, `claude_stream_state.py`, and
+`pi_rpc_events.py`; native pages in the codex/pi adapters; provenance in
+`harness_submission_authority.py`; the resume channel runs `terminal_opener.py` →
+`harness_control_runner.py` → `harness_control_factories.py`. `test_harness_control_evidence.py`
+pins the whole seam.
 
 For folded-state stream convergence, start at `projector.py::_publish_projection` and
 `Projector.subscribe`, then follow `app.py::stream_events` into
@@ -972,6 +999,18 @@ neighboring repository governs this route.
 
 ## Repo-Internal References
 
+### Current L0E evidence substrate
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reserved `arEvidence` key, evidence DTOs, clip/window helpers, and structural native-page protocol define the substrate. | L57-L72; L310-L384; L494-L583 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page. | L85-L88; L168-L232; L440-L471 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| Three additive read actions cross only the private socket under the unchanged v1 protocol. | L198-L203; L286-L313 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| Strict client validation enforces disjoint coordinate domains, continuation coherence, and epoch continuity. | L286-L358; L576-L730 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| The provenance batch reads the authority's existing records epoch-checked through the sole queue delegation. | L375-L412 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The codex resume channel threads opener → runner payload → factory → the sole settings site with pre-spawn refusals. | L611-L621; L88-L105; L41-L58 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py); [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py); [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
+| Contract and installed-runtime suites pin the whole seam including no-leak, continuation, provenance, and resume. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py); [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
+
 ### Current L9 evidence
 
 | Finding | Citations | Source Path |
@@ -1043,6 +1082,12 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive native evidence and
+  resume substrate — reserved-key diversion into the bounded bridge evidence deque with byte-
+  identical projections, the three epoch-scoped additive IPC reads across two disjoint coordinate
+  domains, per-harness stop-dropping forwarding and codex/pi native pages (claude honestly
+  fail-closed), the sole-path submission-provenance batch, and the codex-only resume launch
+  channel. Verification metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the conversation runtime
   composition repair — one immutable app-scoped `ConversationRuntime` installed once through the
   existing harness-control registration, the server-resolved local-operator authorization ruling,

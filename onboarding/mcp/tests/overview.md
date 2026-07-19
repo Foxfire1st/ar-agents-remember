@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04`|
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -159,6 +159,16 @@ per-app child isolation over real HTTP, no import-time singleton, no production 
 or fixture/PTY/browser-identity reliance, server-resolved local-operator identity, loopback-only
 resolution, and cross-principal rejection in both directions through an injected seam double.
 
+260718-CHATS-L0E adds `test_harness_control_evidence.py` for the native evidence and resume
+substrate: per-harness reserved-key round-trips with the no-leak guarantee across `snapshot.raw`,
+projected `control_raw`, and subscriber snapshots; unknown-vendor pass-through; buffer bounds and
+clip visibility at two sizes; native-page continuation without overlap/gap, null-terminated, with
+typed cross-domain rejection and epoch-mismatch detection; the provenance matrix through the sole
+queue delegation; and the codex resume channel end-to-end with pre-spawn refusals.
+`test_harness_control_evidence_installed.py` captures the same seam against installed runtimes
+(opt-in, version-locked) into redacted `substrate-evidence/*` fixture rows, keeping the
+version-mismatched Claude row honestly `not-exercised` and `enablesCapabilities` false everywhere.
+
 260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness,
 dispatch/withdraw races, early terminal completion, full-ref id reuse, ordering, idempotency/source-
 payload conflicts, certified pre-dispatch retry, impossible safe retry after possible bytes, epoch
@@ -300,6 +310,8 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Foundation coverage pins two ports, three empty child routers, one registration seam, exact helper resolution, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | Composition contract coverage pins install-once, fail-closed binding shapes, per-app isolation, no singleton, and no injected identity or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | Authorization contract coverage pins local-operator identity, loopback-only resolution, no identity channel, ignored browser claims, and cross-principal rejection. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
+| Evidence contract coverage pins per-harness round-trips, no-leak, bounds, continuation, cross-domain/epoch rejection, provenance, and the resume channel. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| Installed-runtime coverage captures the redacted `substrate-evidence/*` fixture rows through the production seam with version-locked honesty. | L115-L362 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
 | Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | L1-L687 | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
 | Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | L1-L1180 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Public API epoch/conflict/certificate/privacy/status matrix. | L1-L700 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
@@ -322,6 +334,11 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: added the native evidence contract suite and
+  the opt-in installed-runtime capture — per-harness round-trips with no-leak proofs, buffer and
+  continuation bounds, cross-domain/epoch typed rejection, the provenance matrix, the codex resume
+  channel, and the redacted version-locked `substrate-evidence/*` fixture rows. Verification
+  metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: added the conversation runtime composition
   and authorization contract suites — install-once/fail-closed composition shapes, per-app
   isolation, no-singleton and no-injected-identity proofs, loopback-only local-operator resolution,

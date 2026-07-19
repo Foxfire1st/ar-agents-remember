@@ -179,7 +179,7 @@
     "launch"
   ],
   "hotPath": {
-    "summary": "For folded-state stream convergence, start at `projector.py::_publish_projection` and `Projector.subscribe`, then follow `app.py::stream_events` into `test_serving.py::StreamEventsTests`. Publication commits before notification, subscription registers before snapshot capture, failed-prime recovery emits one full snapshot, and iterator closure owns subscriber cleanup. 260715-FEUI-L9 establishes structure rather than a live endpoint path: consumers validate hostile normalized products through `conversation/models.py`; future active and library implementations must satisfy their separate read...",
+    "summary": "For the native evidence and resume substrate (260718-CHATS-L0E), start at `harness_control_bridge.py::_run_events` (the single diversion point) and `harness_control_models.py` (evidence DTOs, reserved key, clip/window helpers), then the three IPC actions in `harness_control_ipc.py` and the validated reads in `harness_control_client.py`. Per-harness forwarding lives in `codex_app_server_adapter.py`, `claude_stream_state.py`, and `pi_rpc_events.py`; native pages in the codex/pi adapters; provenance in `harness_submission_authority.py`; the resume channel runs `terminal_opener.py` \u2192 `harness_c...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/conversation",

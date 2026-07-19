@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,7 @@
 Provides the legacy `HarnessControlQueue` surface as a thin lifecycle/runner facade over
 `HarnessSubmissionAuthority`. FEUI-L5 removes its former independent command queue, prompt ledger,
 and execution-order authority so one bridge has exactly one prompt/setter timeline.
+260718-CHATS-L0E adds one additive read-only provenance delegation through the same facade.
 
 ## Code Commentary
 
@@ -29,7 +30,9 @@ ledger bounds. Submit, response, model/effort set, status, reconcile, resolve-op
 methods delegate to that authority. The facade retains bridge start/stop and adapter lifecycle
 compatibility, but it neither admits its own prompt FIFO nor stores a competing receipt ledger.
 Authority events and exact operation references flow through the bridge to the same underlying
-instance.
+instance. L0E adds `provenance(expected_bridge_epoch, request_ids)`, a read-only delegation shaped
+on the status delegation that is the sole bridge→authority path for the submission-provenance
+batch; the facade holds the authority privately and admits no bypass.
 
 ### Conventions
 
@@ -85,6 +88,10 @@ historical and must not be read as current architecture.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive read-only
+  `provenance` delegation — epoch-checked, the sole bridge→authority path for the
+  submission-provenance batch, with no independent facade state. Verification metadata stays
+  pinned until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: rewrote current purpose/logic/invariants for the thin facade
   and removed the obsolete second-queue/ledger authority claim.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,9 @@
 Adapts one native Codex app-server session and JSON-RPC transport to the normalized hosted adapter
 contract, including cached model/effort advertisement, transient token-free catalog discovery,
 settings-resolved initial configuration, and ordered same-thread model/effort switching.
+260718-CHATS-L0E stops the adapter dropping native frames: full notification/item/usage params now
+ride the reserved `arEvidence` key into the bridge's evidence buffer, and a `thread/read`-backed
+native history page exposes persisted threads.
 
 ## Code Commentary
 
@@ -34,6 +37,18 @@ prompt and retain the prior effective selection plus pending fresh-turn barrier.
 `thread/settings/updated` is supplementary evidence, while unrelated drift fails loudly.
 Launch-knob ownership, token-free discovery, interactions, events, and bounded reconciliation remain
 on their existing native paths.
+
+L0E forwarding places the full `params` of each previously trimmed emit under the reserved
+`arEvidence` raw key at six sites — the notification fallback (item/started, deltas, rate-limit and
+compaction shapes), `thread/status/changed`, `thread/settings/updated`, `turn/completed`, and both
+`item/completed` paths — while every pre-existing raw key (`codexMethod`, `turnId`) keeps its exact
+shape; the bridge diverts the payload so no projection changes. `read_native_page` implements the
+structural native-page protocol over `thread/read` with `includeTurns`: it reconnects a disconnected
+session, requires the echoed thread id to match the adapter's own, flattens items through
+`native_evidence_frames_from_thread`, and windows them with an opaque cursor; native window errors
+raise as typed `CodexAppServerError`, and ephemeral threads' native `includeTurns` refusal crosses
+typed with the native reason rather than a guessed page. Reconcile, submission, and interaction
+behavior is byte-preserved.
 
 ### Conventions
 
@@ -63,6 +78,10 @@ reports `codex-app-server:<opaque negotiated version>`.
 - No blind resend follows an ambiguous send; retention remains bounded.
 - Completion metadata does not consume durable inbox state, and queued state requires an actual
   replacement.
+- Evidence payloads ride only the reserved `arEvidence` key; the adapter never merges that key into
+  any projection itself and never mints `bridgeEpoch`.
+- Native pages are for persisted threads: a native refusal (e.g. ephemeral `includeTurns`) crosses
+  typed with its reason instead of being retried into a less truthful shape.
 
 ### Todos
 
@@ -89,6 +108,8 @@ policy.
 | The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. | L93-L108; L220-L250 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
 | The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | L149-L226 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
 | Model pages preserve display/description metadata and model-local reasoning effort options. | L142-L213 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
+| The thread flatten helper enforces unique typed item identity for native paging. | L378-L415 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
+| Contract tests pin the evidence round-trip, unknown-vendor pass-through, thread/read paging, and the installed 0.144.5 production-seam capture. | L791-L1033 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 
 ## Cross-Repo References
 
@@ -109,6 +130,10 @@ or turn-id reuse cannot release a successor.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented stop-dropping `arEvidence`
+  forwarding at the six emit sites and the `thread/read`-backed `read_native_page` with thread-id
+  echo check, duplicate-id fail-closed, and typed ephemeral `includeTurns` refusal. Verification
+  metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: replaced adapter-queue/steer semantics with guarded fresh-turn
   dispatch, exact turn-operation binding, once-only completion, and bounded correlation maps.
 

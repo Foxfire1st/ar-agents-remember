@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/pi_rpc_events.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -15,7 +15,8 @@
 
 ## Purpose
 Maps documented Pi RPC frames into the normalized L1 adapter event and snapshot vocabulary while
-retaining bounded dialogs and transcript entries.
+retaining bounded dialogs and transcript entries. 260718-CHATS-L0E forwards full native frames
+under the reserved `arEvidence` key into the bridge evidence buffer.
 
 ## Code Commentary
 `PiRpcEventMapper` applies `get_state` activity, translates start/end/retry/compaction/queue/
@@ -24,11 +25,20 @@ by an idle state. Dialog methods become durable pending interactions; fire-and-f
 become notices. Event/transcript sequences, raw Pi detail, and bounded interaction retention are
 maintained locally.
 
+L0E's optional `evidence` parameter on `_next_event` places the full native frame under the
+reserved `arEvidence` raw key at two sites: `message_end` (the complete frame with native message
+identity, beside the byte-identical flattened transcript entry) and the `pi:<type>` fallback
+(message_update text/thinking/tool-call deltas, tool execution lifecycle, and unknown events, whose
+raw crosses with semantics never guessed). The status-quo `piEvent` key keeps its exact current
+shape for snapshot consumers; only the bridge sees and diverts the reserved key.
+
 ## Invariants And Boundaries
 - Event raw evidence records the structured Pi protocol and cursor without fabricating a package
   version. Mapping remains responsible only for normalized state/events, not compatibility guesses.
 - Retry and compaction remain settling; `agent_end` is not sufficient for terminal idle.
 - Dialog responses are correlated; fire-and-forget UI events do not solicit responses.
+- The `piEvent` raw key stays byte-identical; full frames ride only the reserved `arEvidence` key,
+  which the bridge diverts before any projection.
 - Mapping does not launch processes, reconnect sessions, or register vendors.
 
 ## Docs References
@@ -61,6 +71,10 @@ is insufficient and stale events cannot release the successor.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the reserved-key `arEvidence`
+  forwarding at `message_end` and the `pi:<type>` fallback — full frames with native identity cross
+  into the evidence buffer while `piEvent` stays byte-identical. Verification metadata stays
+  pinned until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented exact-ref event translation and fresh-idle terminal
   evidence.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed version fabrication from mapped Pi event evidence and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-19T00:37+02:00 |
-| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1` |
-| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
+| lastUpdated            | 2026-07-19T09:15+02:00 |
+| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
+| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -15,6 +15,20 @@
 [overview.md](../overview.md)
 
 ## Purpose
+
+260718-CHATS-L0E lands the additive, read-only native evidence and resume substrate inside the
+existing hosted harness-control family. Per-harness mappers stop dropping native frames by placing
+full payloads under one reserved `arEvidence` event key; the control bridge diverts them at its
+single consumption point into a bounded per-session evidence deque and publishes redacted events,
+so every existing snapshot/catalog/SSE projection stays byte-identical. Three additive
+epoch-scoped IPC reads — deque-domain evidence pages, native-domain history pages with typed
+identity and opaque continuation (codex `thread/read`, pi `get_entries`; claude honestly
+fail-closed), and the all-sources submission-provenance batch — cross only the user-private
+control socket under the unchanged v1 protocol, with strictly validated client reads across two
+disjoint coordinate domains. A codex-only `resume_thread_id` launch channel rides the opener →
+runner payload → factory path into the sole `CodexAppServerSettings` site, refusing non-codex or
+malformed values before any spawn. The substrate enables no feature; it is the closed baseline
+later conversation leaves consume without editing shared harness-control seams.
 
 260715-FEUI-L9 adds two deliberately bounded package routes. Under `serving/conversation/`, strict
 wire models, exactly two read ports, and three behavior-empty child routers establish the stable
@@ -888,6 +902,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the native evidence and resume
+  substrate at package granularity — reserved-key evidence diversion into the bounded bridge
+  buffer with byte-identical projections, the three additive epoch-scoped IPC reads across
+  disjoint coordinate domains, per-harness native pages (claude fail-closed), the sole-path
+  provenance batch, and the codex-only resume channel — routed to the `serving/` and `mcp/tests/`
+  governors for detail. Verification metadata remains pinned until closeout stamps the candidate
+  commit.
 - 2026-07-19T00:37+02:00 — 260718-CHATS-L0 curator: documented the conversation runtime
   composition repair at package granularity — the install-once immutable `ConversationRuntime`
   and server-resolved local-operator resolver bound through the existing harness-control
