@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04`|
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastUpdated | 2026-07-20T15:10+02:00 |
+| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b`|
+| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,14 @@ Contract suite for the 260718-CHATS-L0E native evidence and resume substrate (le
 no-leak guarantee, native-page continuation correctness, the submission-provenance batch, the
 codex resume launch channel, and zero regression of existing IPC semantics — all through the
 production mapper → reserved key → bridge buffer → IPC → validated client seam.
+
+260718-CHATS-L3E extends this suite with the evidence-truncation settlement coverage (leaf R1–R6):
+it proves the clip envelope preserves a clipped frame's terminal-identity enums (frame `type`, pi
+`message.stopReason`, codex `turn.id` + `turn.status`) at their original payload paths while no
+other content crosses, both at the byte level (`ClipHelperTests`) and end-to-end through the real
+bridge clip at the production 32 KiB budget plus the real `read_control_evidence` IPC surface the L3
+settlement consumers read (`EvidenceTruncationSettlementIpcTests`), so oversized-frame interrupt
+settlement stays honest.
 
 ## Code Commentary
 
@@ -47,7 +55,34 @@ without leaking into the adapter's own snapshot raw. `ResumeChannelTests` and `R
 pin the `resumeThreadId` payload round-trip, legacy field-less parse, malformed rejection, codex-only
 factory construction with pre-spawn refusal for non-codex harnesses, the opener `bad-kind` refusals
 with zero host interactions, and absent-field behavior preservation. `ClipHelperTests` covers the
-clip helper's small-payload passthrough, visible marker, and non-serializable rejection.
+clip helper's small-payload passthrough, visible marker, and non-serializable rejection, plus the
+L3E byte-level terminal-identity preservation: a clipped pi `message_end` keeps exactly `type` +
+`message.stopReason` (and no `role`/`content`), a clipped codex `turn/completed` keeps exactly
+`turn.id` + `turn.status` and drops the large items body, an absent terminal identity is never
+invented (a big blob keeps only the truncation-notice fields; a `message_end` with no `stopReason`
+keeps `type` only), and a giant (>256-char) identity scalar in any of the four preserved paths is
+dropped WHOLE at the production 32 KiB budget without raising or leaking, with an explicit 256-kept /
+257-dropped boundary check. Each proves no content crosses via exact top-level key-sets, an absent
+tail-leak sentinel, and a bounded body-char count.
+
+`EvidenceTruncationSettlementIpcTests` (260718-CHATS-L3E R6/R8) drives oversized (>32 KiB)
+production terminal-frame shapes end-to-end through the REAL evidence path — the real bridge clip at
+the production budget plus the real `read_control_evidence` IPC surface interrupt settlement
+consumes — and asserts the frame is actually `arEvidenceTruncated` yet the tiny identity/status
+enums survive to the exact reads the L3 settlement code performs: an oversized pi content-ful
+`message_end` settles `stop` and `aborted` (facet a — no permanent `pending`), a small mid-turn
+frame (crosses whole, unclipped) followed by an oversized final abort settles `aborted` under the
+latest-wins scan (facet b — never mis-settling `already-settled`), and an oversized codex
+`turn/completed` with a large items body keeps `turn.id` + `turn.status`. Its
+`_pi_latest_stop_reason` / `_codex_terminal_status` scan helpers mirror
+`control.operations._pi_stop_reason` / `_codex_terminal_outcome` verbatim, so a green run is the
+in-leaf acceptance proxy for L3's settlement reads (the definitive check remains L3's unmodified
+`probe_l3_delta.py` after base sync). Two new `_EvidenceAdapter` helpers mirror the production
+mappers exactly so the regressions drive real frame shapes: `emit_pi_content_ful_message_end`
+mirrors `pi_rpc_events._message_event` (a `transcript` event + minted `TranscriptEntry` + the full
+frame under `AR_EVIDENCE_KEY`, with `filler_chars` inflating the content past the clip budget) and
+`complete_with_codex_turn` mirrors `codex_app_server_adapter._handle_turn_completed` (a `completed`
+event bound to the exact operation ref, native turn params under `AR_EVIDENCE_KEY`).
 
 ### Conventions
 
@@ -66,6 +101,16 @@ imports only the production seam it pins — no fixture-only production authorit
 - The resume channel refuses non-codex harnesses and malformed values before any spawn.
 - Existing IPC semantics stay green unmodified; this suite adds coverage without editing prior
   suites.
+- The L3E settlement regressions replicate each L3 consumer's read expression verbatim against the
+  real `read_control_evidence` surface; a green run proves the preserved paths satisfy
+  `_pi_stop_reason` / `_codex_terminal_outcome` unchanged (the codex helper matches `turn.id` before
+  reading `turn.status`, so a status-only envelope would fail the correlation).
+- The L3E no-content proof is structural, not zero-bytes: exact top-level key-sets, a tail-leak
+  sentinel absent from the serialized envelope, and a bounded body-char count — the pre-existing
+  bounded `preview` prefix is the L0E truncation-notice field and is expected to carry a capped
+  content head.
+- A giant identity scalar in a preserved path drops whole and never collapses the clip into a
+  raise; the boundary is exact (256 kept, 257 dropped), driven at the production 32 KiB budget.
 
 ### Todos
 
@@ -102,6 +147,14 @@ No neighboring repository participates in this contract suite.
 
 ## Update History
 
+- 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: added the evidence-truncation settlement
+  coverage — three byte-level clip terminal-identity preservation tests plus one giant-scalar
+  drop-whole regression (256/257 boundary) in `ClipHelperTests`, and the new
+  `EvidenceTruncationSettlementIpcTests` (four end-to-end oversized-frame regressions through the
+  real bridge clip + `read_control_evidence`, mirroring the L3 `_pi_stop_reason` /
+  `_codex_terminal_outcome` reads) plus the two production-mapper-mirroring `_EvidenceAdapter`
+  helpers (`emit_pi_content_ful_message_end`, `complete_with_codex_turn`). Verification metadata
+  stays pinned to the last committed source until closeout stamps the candidate commit.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: created the evidence contract suite sidecar
   (32 tests + 6 subtests covering R12 (i)–(viii)). Verification is blank because the new source
   file is uncommitted; closeout owns its first source stamp.
