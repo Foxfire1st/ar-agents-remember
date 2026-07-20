@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `0be0099744bf1287805acf0b95072127b70f7104` |
-| lastVerifiedCommitDate | 2026-07-20T15:34:11+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00 |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 
 > **Status:** active baseline
 
@@ -64,7 +64,7 @@ onboarding pass.
 | Daemon harness capability and control API | The serving daemon exposes the own-adapter contract without ACP transport: dynamic token-free pre-session catalogs use an install-aware bounded cache with explicit auth refresh; terminal open accepts an optional complete native model/effort pair; exact live sessions advertise and return honest model/effort `SetResult` evidence; whole-message submit and same-id reconciliation use the native control socket with no paste fallback. Live reopen reports immutable process truth or conflicts, failed refresh quarantines stale data, duplicate request ids are idempotent, public responses omit adapter-private raw payloads, and liveness is established before 404/409 support classification. | `serving.harness_capability_catalog`, `serving.harness_control_api`, `serving.harness_control_client`, `serving.terminal_opener`, `serving.app` |
 | Reliable controlled-session submission (260715-FEUI-L5) | One `HarnessSubmissionAuthority` per bridge generation owns prompt/model/effort ordering, immutable request/source/payload idempotency, atomic queued-withdraw versus dispatch, exact full-operation-ref completion, early-terminal dominance, raw-free status, and bounded privacy-aware retention. The dashboard's shared CodeMirror composer keeps one epoch/id/text through retry/reconcile, treats only the exact pre-dispatch certificate as retry-safe, and implements authoritative Alt+Up pop-back with revision-CAS recovery. Claude, Codex, and Pi dispatch now under guarded write seams; no adapter/native queue or PTY-paste fallback is authority. | `serving.harness_submission_authority`, `serving.harness_control_{api,bridge,client,models,queue}`, `dashboard/src/data/{submitMachine,submitClient,submissionLifecycleClient,submitRetention}.ts`, `dashboard/src/panels/SessionComposer.tsx` |
 | Sessions inspector and status integration (260715-FEUI-L7) | The Sessions cockpit completes its end-to-end operator audit with stable-mounted accessible Evidence / Capabilities / Bus tabs and a persistent StatusLine. Evidence retains explicit-mark-seen set outcomes and terminate/retire residuals after source-row removal; exact-session capability truth stays separate from pre-session launch catalogs; the fleet-global pending Bus preserves entry-keyed reply state across filters, virtualization, and hidden tabs, and reverse replies address only the projected sender without consuming the source. The status footer keeps its contractual fact order and literal empty UA-5 context/cost slot rather than inventing telemetry. | `dashboard/src/panels/session-cockpit/{SeatInspector,EvidencePane,CapabilitiesPane,BusPane,BusDeveloperReply,VirtualizedInspectorList,StatusLine}.tsx`, `dashboard/src/panels/session-cockpit/` overview |
-| Canonical Chats cockpit and hardening (260715-FEUI-L8) | One product-facing `Chats` destination now uses the keep-alive session cockpit; the old Chats component, session-list grouping, and separate Sessions navigation are retired. Operations remains the default and RailChat remains contextual. The inspector defaults closed, is toggleable and responsive without losing deliberate intent; authoritative launch, attach, highlight routing, landed cleanup, ended/restored states, accessibility, scenario coverage, and performance/fetch tripwires are pinned end to end. Controlled sessions still expose the runner line-log in xterm because UA-1 structured transcript/history authority is not implemented; the UI does not relabel that stream as a conversation model. | `dashboard/src/panels/session-cockpit/` overview, `dashboard/src/data/` overview, `docs/design/dashboard/{scenario-catalog,session-cockpit-upstream-register,session-cockpit-closeout-evidence}.md` |
+| Canonical Chats cockpit and hardening (260715-FEUI-L8) | One product-facing `Chats` destination now uses the keep-alive session cockpit; the old Chats component, session-list grouping, and separate Sessions navigation are retired. Operations remains the default and RailChat remains contextual. The inspector defaults closed, is toggleable and responsive without losing deliberate intent; authoritative launch, attach, highlight routing, landed cleanup, ended/restored states, accessibility, scenario coverage, and performance/fetch tripwires are pinned end to end. At FEUI-L8 controlled sessions still exposed the runner line-log in xterm because UA-1 structured transcript/history authority was not yet implemented; **260718-CHATS-L4 supersedes that** — controlled sessions now default to the structured conversation surface and the line-log is demoted to a read-only diagnostics drawer (see the 260718-CHATS-L4 narrative below). | `dashboard/src/panels/session-cockpit/` overview, `dashboard/src/data/` overview, `docs/design/dashboard/{scenario-catalog,session-cockpit-upstream-register,session-cockpit-closeout-evidence}.md` |
 | Agent orchestration communications | Durable agent-to-agent inbox messages address orchestrator/manager/worker roles, carry message-kind and artifact metadata, and remain pollable while also attempting hosted-session stdin push through the echo-confirmed paste seam. Consume is a monotonic terminal snapshot: a concurrent in-flight delivery may append stale physical evidence but cannot resurrect pending/redelivery state. Turn reports and master handovers have typed artifact helpers/templates; inactivity or missing report nudges are rate-limited, logged as `orchestration.nudge`, and delivered to manager inboxes. | `operator_inbox_*`, `orchestration_nudge_manager`, `serving.inbox_delivery`, `controlplane/orchestration_artifacts.py`, `controlplane/orchestration_nudges.py`, `l-01-agent-lifecycles` templates |
 | Event River lifecycle task labels | Event River readable history rows translate lifecycle-bound activity into task-facing context. When a retained event still has a lifecycle id but its live lifecycle projection is gone, the formatter uses projected task documents to show the task title before falling back to raw enclosure or lifecycle ids. The panel waits for raw-stream hydration before showing an empty feed and renders all retained rows it receives; backend lifecycle retention owns the cutoff. | `dashboard/src/panels/eventSummary.ts`, `dashboard/src/data/taskIdentity.ts`, `dashboard/src/panels/EventRiver.test.tsx` |
 | Authoritative browser session open | Every dashboard raw or harness create entrance crosses one `POST /api/terminal` client, validates exact request/response identity, and materializes only the accepted server row. Network, HTTP, protocol, identity, or server-declared failure creates no registry row, focus change, readiness/submit transition, or dependent context delivery. | `dashboard/src/data/terminalOpen.ts`, `dashboard/src/data/sessions.ts`, dashboard data/panels/session-cockpit overviews |
@@ -241,6 +241,26 @@ epoch) ledgers. This repository overview routes the seam without duplicating det
 `conversation/control/overview.md` governs the implemented slice, the `serving/` and `mcp/`
 overviews carry the package placement, and the `mcp/tests/` overview owns the regression and
 installed-runtime proof. Browser rendering remains the separately gated L4 work.
+
+260718-CHATS-L4 lands that browser rendering: the real one-roof **structured Chats renderer** in the
+dashboard cockpit (reviewer FINAL PASS, 26/26 findings closed across three fix rounds). The
+controlled-session stage retires the unconditional runner-line-log PtySurface body and defaults to a
+structured `ConversationSurface` — a virtualized `role="feed"` timeline over a harness-neutral block
+grammar, with full-inline thinking, stable-ID tools/diffs/interactions/results, required image labels,
+ambient evidence-bound telemetry, and unknown-vendor events preserved as labeled evidence. Two
+deliberately separate **reconstructable** browser projections (`dashboard/src/data/conversation/` and
+`dashboard/src/data/conversation-library/`) are rebuilt purely from the landed L1/L2/L3 server
+contracts — no IndexedDB/localStorage/SQLite conversation index and no optimistic durable item
+authority; reload/pages/events reconstruct them. The exact-turn interrupt rides the WorkingLine as a
+collision-audited rebindable `conversation.stop` chord, gated attempt-and-reflect on the L3 routes'
+evidence (never the stale L1 page view) with the turn id correlated from projector item evidence when
+the hosted-codex status omits it. History open focuses a new rail row only on exact `opened` catalog
+proof; the read-only PTY survives as a default-off, inert-when-closed terminal-diagnostics drawer and
+as the legacy-raw body. The renderer is governed by the `dashboard/src/data/{conversation,
+conversation-library}/` and `dashboard/src/panels/session-cockpit/{conversation,conversation-library}/`
+overviews, which carry the L5-Facing Register (retention-gap tolerance, capability gating, the
+measured scale baseline, and the pre-existing E1/E2 backend faults L5 must harden). No backend or MCP
+source changed; the shipped `package_data/dashboard/` bundle is regenerated output only.
 
 260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound
 request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic
@@ -619,6 +639,17 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: added the ancestor-routing narrative paragraph
+  for the landed structured Chats renderer (reviewer FINAL PASS, 26/26 closed) and amended the stale
+  260715-FEUI-L8 feature-inventory clause — controlled sessions no longer expose the runner line-log
+  as the primary body; the structured `ConversationSurface` over two reconstructable browser
+  projections is the controlled default, the interrupt rides the WorkingLine `conversation.stop`
+  chord, and the read-only PTY is a default-off diagnostics drawer. Detail routes to the new
+  `dashboard/src/data/{conversation,conversation-library}/` and
+  `dashboard/src/panels/session-cockpit/{conversation,conversation-library}/` overviews (which carry
+  the L5-Facing Register). No backend/MCP source changed — the `package_data/dashboard/` bundle is
+  regenerated output. Verification metadata stays pinned to the L3 tip (`0be0099`) until L4 closeout
+  stamps the candidate commit.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: reviewed the root body against the leaf diff and
   added the ancestor-routing paragraph for the implemented authoritative control API (seventeen
   routes — interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments,

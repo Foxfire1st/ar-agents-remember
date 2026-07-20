@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00                           |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -24,8 +24,19 @@ Sessions destination.
 
 The route composes a role/spawn rail, persistent stage, default-closed toggleable inspector,
 CodeMirror reliable composer, command/key reference palette, status line, interaction and lifecycle
-notices, and real PTY panes. It projects the shared data plane documented by the
+notices, and — since 260718-CHATS-L4 — the **structured conversation surface** that is now the
+controlled-session stage default. It projects the shared data plane documented by the
 [data overview](../../data/overview.md); it does not own a second session catalog or delivery ledger.
+
+Since 260718-CHATS-L4 the controlled-session stage body is `ChatsStageBody.tsx`, which defaults to
+the structured `ConversationSurface` (the reconstructable
+[data/conversation](../../data/conversation/overview.md) projection rendered by the harness-neutral
+grammar in [conversation/](conversation/overview.md)) and hosts the previous-conversation
+[conversation-library/](conversation-library/overview.md) browser in-stage. The runner-line-log
+`PtySurface` is no longer the controlled-session body: it survives only as the default-off,
+read-only **terminal-diagnostics drawer** and as the primary body of a legacy-raw (`unsupported`)
+session. Any earlier claim that this route mounts an unconditional PTY body for controlled sessions
+is superseded.
 
 ## FEUI-L9R Chooser And Continuity Contract
 
@@ -47,6 +58,25 @@ raw opener: its callback focuses the accepted row produced by the shared session
 path reaches the same `terminalOpen.ts` authority through `LaunchFlow`, so raw and harness creates
 share one parser and one zero-ghost invariant.
 
+## 260718-CHATS-L4 Structured Conversation Roof
+
+`ChatsStageBody.tsx` is the thin controlled-session stage body: it selects between the default
+structured `ConversationSurface`, the in-stage `ConversationLibrarySurface` history browser, and the
+legacy-raw PTY, and it owns the default-off `TerminalDiagnosticsDrawer`. It copies no panel's state —
+the composer, InteractionBar, QueuePreview, HeaderStrip, and StatusLine remain their own authorities,
+rendered by `SessionsView` around this body, and QueuePreview stays inside `SessionComposer` between
+interaction and composer. It resolves the bridge epoch by REUSING `readSubmissionAuthority` (no second
+submission authority) with one bounded auto-retry before the fail-loud projection-failed banner.
+
+The renderer is a harness-neutral grammar (`conversation/`): a virtualized `role="feed"` timeline with
+server-ordinal articles, full-inline thinking, stable-ID tools/diffs/interactions/results, required
+image labels rendered without an `<img>` fetch, ambient evidence-bound telemetry (absent-not-zero),
+and unknown-vendor events preserved as labeled evidence — no vendor-clone skins. The exact-turn
+**interrupt** is wired into `WorkingLine` (its §4.1 home) through `useConversationControls`, gated on
+real turn+capability evidence and registered as the `conversation.stop` chord/palette command.
+History open focuses a new rail row only on exact `opened` catalog proof; every other outcome leaves
+the current draft/focus/scroll intact.
+
 ## Route Model
 
 ### One Product Roof
@@ -66,15 +96,17 @@ share one parser and one zero-ghost invariant.
 
 ### Stage And PTY Continuity
 
-- `PtySurface.tsx` owns keep-alive panes. A visited inspectable terminal stays mounted across focus
-  switches and across the transient removed-focus render before smart handoff, preserving the exact
-  xterm node, socket, and scrollback.
-- Running controlled seats show a runner line-log; legacy raw seats may host a vendor TUI. Landed
-  panes remain read-only inspectable. Exited/retired rows render `EndedSessionState.tsx` and create no
-  terminal/socket.
-- This line-log/PTY surface is **not** the requested structured conversation UI. FEUI-L8 establishes
-  the visual/product roof and interaction mechanics but does not claim adapter-normalized message
-  rendering, history index, or resume support.
+- Controlled seats default to the structured `ConversationSurface`, NOT a PTY body (260718-CHATS-L4).
+  `PtySurface.tsx` still owns keep-alive panes, but for a controlled seat it now appears only inside
+  the default-off read-only `TerminalDiagnosticsDrawer` (its new `readOnly` prop disables input);
+  legacy-raw (`unsupported`) seats keep the interactive `PtySurface` as their primary body, honestly
+  labeled `legacy terminal · structured conversation unavailable`. A visited inspectable terminal
+  still stays mounted across focus switches, preserving the exact xterm node, socket, and scrollback.
+- Landed panes remain read-only inspectable. Exited/retired rows render `EndedSessionState.tsx` and
+  create no terminal/socket.
+- The structured surface — not the line-log — is now the requested one-roof conversation UI. It
+  consumes the landed L1/L2/L3 adapter-normalized page/library/control contracts (history index and
+  exact-open resume included); the read-only PTY drawer is a diagnostic, not the message renderer.
 
 ### Reliable Composition And Interaction
 
@@ -116,17 +148,23 @@ This is a true source retirement, not a loss of product duties. Historical sidec
 folded into this map, the data overview, and the current replacement file cards before obsolete
 one-to-one sidecars were deleted.
 
-## Future One-Roof Conversation Contract
+## One-Roof Conversation Contract (realized in 260718-CHATS-L4)
 
-Recovered project history requires one shared visual message roof across Claude, Codex, and Pi while
-showing which harness supplies each session and preserving harness-specific behavior through adapters.
-Two capabilities remain distinct: the active conversation transcript and the previous-conversation
-library/index. The preferred architecture asks adapters for normalized history/index/resume rather
-than duplicating vendor history in browser state; the browser may project/cache authoritative results.
+The one shared visual message roof across Claude, Codex, and Pi is now landed. The two distinct
+capabilities are both served: the **active conversation transcript** by the reconstructable
+[data/conversation](../../data/conversation/overview.md) projection + the `conversation/` grammar, and
+the **previous-conversation library/index** by [data/conversation-library](../../data/conversation-library/overview.md)
++ the `conversation-library/` browser. Both consume adapter-normalized history/index/resume from the
+landed L1/L2/L3 server contracts and hold only a projection/cache — no durable browser conversation
+database (R1). Visible harness identity and capability reasons are surfaced honestly; harness-specific
+behavior stays in the adapters.
 
-UA-1 capability is absent in FEUI-L8. No current component should claim structured conversation
-rendering, previous-chat navigation, or adapter history transmission until that contract is proven.
-The existing PTY remains a useful fallback/diagnostic surface, not the final message renderer.
+UA-1 is no longer absent: controlled sessions render the structured surface by default. The PTY
+survives only as the read-only terminal-diagnostics drawer and the legacy-raw body. Two forward
+constraints remain: interrupt capability gating is attempt-and-reflect on the L3 routes' evidence
+until a control-capabilities GET or an L1-view refresh lands (a clean proactive gate), and the
+measured virtualization/scale baseline plus the E1/E2 environmental faults are L5 hardening
+(see the L5-Facing Register in the `conversation/` overviews).
 
 ## Invariants And Boundaries
 
@@ -137,8 +175,13 @@ The existing PTY remains a useful fallback/diagnostic surface, not the final mes
   toggleable/reopenable. Responsive collapse cannot erase deliberate operator intent.
 - Cockpit focus and the live action route are separate: a landed row may remain focused while a live
   row owns launch/gate/composer actions and reload preference.
-- The PTY owner is unconditional inside the persistent route. A one-render focus gap must not dispose
-  unrelated visited terminals.
+- Controlled seats default to the structured surface; the PTY is NOT the controlled-session body. The
+  keep-alive PTY owner still exists (read-only diagnostics drawer + legacy-raw body) and a one-render
+  focus gap must not dispose unrelated visited terminals.
+- The structured surface holds only a reconstructable projection: no IndexedDB/localStorage/SQLite
+  conversation index and no optimistic durable item authority; the only persisted UI bit is the
+  hide-thinking boolean. Diagnostics and hidden stages are `inert`+`aria-hidden` and mount no PTY
+  when closed.
 - Ended rows do not receive live controls, composer, interaction bar, or a socket. Landed rows remain
   read-only until authoritative cleanup.
 - Reliable submit/withdrawal, interaction answer, agent bus, and control commands never fall back to
@@ -162,7 +205,12 @@ The existing PTY remains a useful fallback/diagnostic surface, not the final mes
 
 ## Child Route Onboarding Map
 
-No deeper child route exists below `session-cockpit/`; each source has a one-to-one file card and
+| Child route | Governing overview | Responsibility |
+| --- | --- | --- |
+| `session-cockpit/conversation/` | [structured conversation renderer](conversation/overview.md) | The harness-neutral grammar: feed timeline, item/block components, telemetry, interrupt hook, reconnect. |
+| `session-cockpit/conversation-library/` | [in-stage history browser](conversation-library/overview.md) | The previous-conversation library surface, list, read-only preview, and the sole exact-open resume action. |
+
+The other `session-cockpit/` sources (including `ChatsStageBody.tsx`) have one-to-one file cards and
 this overview is their governing pillar.
 
 ## File Onboarding Map
@@ -170,8 +218,11 @@ this overview is their governing pillar.
 | Responsibility | File onboarding |
 | --- | --- |
 | Full-route composition | [SessionsView.tsx](SessionsView.tsx.md) |
+| Structured stage body composition | [ChatsStageBody.tsx](ChatsStageBody.tsx.md) |
+| Structured renderer grammar | [conversation/ overview](conversation/overview.md) |
+| In-stage history browser | [conversation-library/ overview](conversation-library/overview.md) |
 | Rail and product-duty bar | [SessionRail.tsx](SessionRail.tsx.md) · [ChatContextBar.tsx](ChatContextBar.tsx.md) |
-| PTY and ended presentation | [PtySurface.tsx](PtySurface.tsx.md) · [EndedSessionState.tsx](EndedSessionState.tsx.md) |
+| PTY (diagnostics/legacy-raw) and ended presentation | [PtySurface.tsx](PtySurface.tsx.md) · [EndedSessionState.tsx](EndedSessionState.tsx.md) |
 | Cleanup/lifecycle copy | [LandedCleanupNotice.tsx](LandedCleanupNotice.tsx.md) · [lifecycleCopy.ts](lifecycleCopy.ts.md) |
 | Palette and keyboard binding | [CommandPalette.tsx](CommandPalette.tsx.md) · [useKeyboardZones.ts](useKeyboardZones.ts.md) |
 | Launch chooser and request ownership | [LaunchFlow.tsx](LaunchFlow.tsx.md) · [useHarnessCatalogRead.ts](useHarnessCatalogRead.ts.md) |
@@ -208,6 +259,19 @@ references, not imported governing implementations, so no cross-repository sourc
 | Dev end-to-end scenario authority. | [../../dev/cockpitScenarios.ts](../../dev/cockpitScenarios.ts) |
 
 ## Update History
+
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator (structured Chats renderer, reviewer FINAL PASS,
+  26/26 findings closed): recorded the composition change from the unconditional controlled-session
+  PtySurface body to `ChatsStageBody` (structured `ConversationSurface` is the controlled-session
+  default; PTY demoted to the default-off read-only terminal-diagnostics drawer + legacy-raw body),
+  the two new child routes `conversation/` (harness-neutral grammar + interrupt hook) and
+  `conversation-library/` (in-stage history browser + sole exact-open resume), the realized one-roof
+  conversation contract (both active transcript and previous-conversation library served from the
+  landed L1/L2/L3 adapter-normalized contracts as a reconstructable projection — no durable browser
+  index), the `WorkingLine` interrupt prop / `conversation.stop` chord, and the corrected
+  PTY-not-unconditional invariant. Superseded the FEUI-L8 "controlled sessions still expose the runner
+  line-log because UA-1 is absent" claim. Verification metadata remains pinned to the FEUI-MX-FIX-2
+  base because the reviewed L4 candidate is uncommitted; closeout owns candidate stamping.
 
 - 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded ChatContextBar as the raw-create gesture owner,
   SessionsView as accepted-row-only focus, shared raw/harness parsing through LaunchFlow, and the

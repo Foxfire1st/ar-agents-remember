@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00                           |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -141,8 +141,26 @@ Pins the L8 canonical Chats contract end to end: default-closed/toggleable inspe
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
+## 260718-CHATS-L4 Reviewed Candidate Delta
+
+Six cases are updated from the pre-L4 unconditional-PTY architecture to the new `ChatsStageBody`
+composition (Deviation 3; reviewer-accepted — 5-of-6 faithful re-targets, the sixth's keep-alive
+assertion class retired to the `data/conversation/store.test.ts` suite): the empty-stage case asserts
+the pick-a-session identity; the keyboard-zone cases seed a legacy-raw session (the remaining real
+`pty` zone host) and target the real PTY host; the landed-cleanup case keeps its focus-handoff subject
+and drops the PTY-scrollback assertions; the L6 composition case now proves the structured default plus
+the read-only diagnostics drawer (R2/R7). No test intent was silently dropped.
+
+The reviewed candidate is uncommitted; existing verification hash/date remain pinned; closeout owns
+commit stamping.
+
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: recorded the six SessionsView test updates from the
+  pre-L4 unconditional-PTY architecture to the `ChatsStageBody` composition (Deviation 3), including the
+  structured-default + read-only-diagnostic L6 case and the keep-alive assertion class relocating to the
+  conversation store suite. Verification metadata remains pinned to the leaf base until closeout stamps
+  the L4 commit.
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: updated raw-terminal integration to a complete accepted
   server row so lifecycle inheritance and focus are proven behind the authority gate. Verification
   metadata remains pinned until closeout.

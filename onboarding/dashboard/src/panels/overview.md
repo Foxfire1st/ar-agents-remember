@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00 |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -62,8 +62,11 @@ in the [session-cockpit overview](session-cockpit/overview.md).
 
 ### Shared Interactive Panels
 
-- Terminal.tsx is the xterm/socket wrapper. Controlled sessions expose a runner line-log; legacy raw
-  sessions may host a vendor TUI. It is not a structured conversation renderer.
+- Terminal.tsx is the xterm/socket wrapper. Since 260718-CHATS-L4 a controlled session's runner
+  line-log appears only inside the read-only terminal-diagnostics drawer (the structured
+  `ConversationSurface` is the controlled-session default); legacy raw sessions still host a vendor
+  TUI. Terminal.tsx is not the structured conversation renderer — that lives in the
+  [session-cockpit](session-cockpit/overview.md) `conversation/` grammar.
 - SessionComposer.tsx is the shared CodeMirror reliable-submit surface. It consumes effective
   keymap/profile state and uses authoritative withdrawal for pop-back.
 - HighlightComposer.tsx sends a selected context package only after acceptance; selection and target
@@ -81,11 +84,13 @@ the Chats refactor does not move those routes.
 - Exactly one full-page Chats destination; no legacy Chats layer and no Sessions navigation item.
 - Operations is initial. The Chats inspector is supplementary, default closed, and toggleable.
 - Shared panels consume canonical data stores and authority clients; they do not create private
-  session catalogs, conversation indexes, or submission ledgers.
+  session catalogs, conversation indexes, or submission ledgers. The 260718-CHATS-L4 structured
+  surface holds only a reconstructable projection — no durable browser conversation index.
 - Create-dependent panel actions proceed only after the shared opener returns an accepted server
   row; visible failure precedes readiness, focus, and delivery.
-- PTY output remains a line-log/vendor fallback, not the future adapter-normalized conversation and
-  history UI. UA-1 history/index/resume support is absent.
+- The structured conversation surface (260718-CHATS-L4) is the controlled-session default and
+  consumes adapter-normalized history/index/resume from the landed L1/L2/L3 contracts; the PTY
+  line-log is now the read-only diagnostics drawer + legacy-raw body, not the message renderer.
 - Reliable submit, withdrawal, interaction answers, bus replies, and control actions remain separate
   channels and never fall back to shared paste.
 - No Domain Documentation source is configured; direct same-repository source, tests, reviewed task
@@ -129,6 +134,16 @@ inside agents-remember.
 | Shared terminal, composer, selection-send, and contextual chat. | [Terminal.tsx](Terminal.tsx) · [SessionComposer.tsx](SessionComposer.tsx) · [HighlightComposer.tsx](HighlightComposer.tsx) · [RailChat.tsx](RailChat.tsx) |
 | Operations task navigation and reader. | [LifecycleList.tsx](LifecycleList.tsx) · [DetailPanel.tsx](DetailPanel.tsx) |
 ## Update History
+
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer, reviewer FINAL
+  PASS): corrected the stale shared-panel claims — the controlled-session runner line-log is now the
+  read-only terminal-diagnostics drawer + legacy-raw body (the structured `ConversationSurface` is the
+  controlled default), and UA-1 history/index/resume is landed as a reconstructable projection with no
+  durable browser conversation index. The two new `conversation/` and `conversation-library/`
+  grandchild routes are governed by the [session-cockpit](session-cockpit/overview.md) overview; this
+  compact parent's route inventory is otherwise unchanged. `SessionComposer.tsx`'s L4 change is a
+  presentation-only hint-line regrouping (no authority change). Verification metadata remains pinned
+  pending L4 candidate closeout.
 
 - 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded visible create failures and accepted-row gates
   for HighlightComposer and RailChat, including zero context delivery and zero private row/focus

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionComposer.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00                           |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -84,8 +84,22 @@ CodeMirror now consumes the effective keymap through compartments and reconfigur
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
+## 260718-CHATS-L4 Reviewed Candidate Delta (composer hint restructure, F7)
+
+Presentation-only blank-fill (no authority change): the composer hint line was restructured to close
+developer visual-finding A3 (finding F7). It now groups by concern with ONE interpunct separator
+(`markdown · emacs keys · draft saved · reliable submit · text only`) and moves the honest-boundary
+transport wall (`receipts + reconcile; terminal lines join the same queue without receipts …`) into a
+`reliable submit` tooltip (progressive disclosure) instead of a mixed-separator wall. The reliable
+submit / receipt / reconcile / withdrawal authorities are unchanged. The reviewed L4 candidate is
+uncommitted; verification stays pinned to the FEUI-L8 base until closeout.
+
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
+  the presentation-only composer-hint restructure (F7/A3) — grouped by concern with one interpunct
+  separator, the honest-boundary wall moved into a `reliable submit` tooltip; no submit/authority
+  change. Verification metadata remains pinned to the leaf base until closeout.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

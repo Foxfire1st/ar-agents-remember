@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00                           |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -67,8 +67,27 @@ theater NEVER renders per rail row.
 | The view passing `workingLine` + the same-predicate `turn.stop` palette command. | L322-L336, L622-L626 | [SessionsView.tsx](SessionsView.tsx) |
 | The jsdom suite (6 cases) + 2 view-level cases. | L33-L95 | [WorkingLine.test.tsx](WorkingLine.test.tsx) |
 
+## 260718-CHATS-L4 Reviewed Candidate Delta
+
+An optional `interrupt` prop (the `ConversationInterrupt` from `useConversationControls`) is added,
+backward-compatible: absent (the pre-L4 tests, RailChat) → the existing disabled placeholder with
+`STOP_TURN_DISABLED_REASON`; present → an actionable stop gated on real turn + capability evidence.
+The enabled control carries `aria-keyshortcuts` DERIVED from the effective keymap (review F25), rests at
+demoted destructive weight (muted border, amber only on hover/focus — A6), and its tooltip is an honest
+action tooltip (`Stop the current turn · <effective chord>`) — the known-stale L1 capability reason is
+never surfaced (F24). The not-working / catalog-lag placeholder falls back to the honest pre-L4 constant
+rather than the stale L1 text. The welded ⏹ position and the working-only render gate are unchanged.
+
+The reviewed candidate is uncommitted; existing verification hash/date remain pinned; closeout owns
+commit stamping.
+
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: recorded the optional `interrupt` prop — absent
+  keeps the pre-L4 disabled placeholder (existing tests unchanged); present renders an evidence-gated
+  actionable stop with keymap-derived `aria-keyshortcuts` (F25), demoted weight (A6), and an honest
+  action tooltip that never leaks the stale L1 reason (F24). Verification metadata remains pinned to the
+  leaf base until closeout stamps the L4 commit.
 - 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R6: the single-home turn theater in L2's
   reserved stage slot — grammar-gated render (the same predicate as the `turn.stop` palette
   command after review finding 3), real-or-plain activity form (typed seam, never whimsy),

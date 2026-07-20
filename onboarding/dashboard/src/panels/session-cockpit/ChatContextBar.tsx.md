@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
-| lastVerifiedCommitDate |  2026-07-18T15:41:39+02:00|
+| lastUpdated | 2026-07-20T22:30+02:00 |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
+| lastVerifiedCommitDate |  2026-07-20T22:32:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,8 +88,21 @@ The bar composes repository-local task/session helpers and same-origin terminal 
 | Canonical host and sole-launch-path composition. | L928-L958 | [SessionsView.tsx](SessionsView.tsx) |
 | Session patch/broadcast and server leaf route. | L1-L80 | [../../data/sessions.ts](../../data/sessions.ts) · [../../data/terminal.ts](../../data/terminal.ts) |
 
+## 260718-CHATS-L4 Reviewed Candidate Delta (Browse history)
+
+Additive (+14): an optional `onBrowseHistory` callback and a `Browse history` action, offered ONLY for
+a controlled harness session. It opens the in-stage previous-conversation library (the `SessionsView`
+`chats.browseHistory` stage mode / `ConversationLibrarySurface`); it does not create a session, mint a
+focus id, or add a second launch path. The sole-launch-entrance and accepted-row-only invariants are
+unchanged. The reviewed L4 candidate is uncommitted; verification stays pinned to the FEUI-MX-FIX-2
+base until closeout.
+
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
+  the additive optional `onBrowseHistory` callback + controlled-session `Browse history` action that
+  opens the in-stage history library; no new launch path or focus authority. Verification metadata
+  remains pinned to the leaf base until closeout.
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: moved raw creation into the duty bar, surfaced typed
   failures locally, and emitted a focus callback only for the accepted server id. Verification
   metadata remains pinned until closeout.

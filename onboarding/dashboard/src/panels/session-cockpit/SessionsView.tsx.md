@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00                           |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -278,8 +278,41 @@ This is now the canonical Chats composition seam. It separates live action routi
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
+## 260718-CHATS-L4 Reviewed Candidate Delta (structured Chats renderer)
+
+The stage body composition changed: the previously **unconditional** `PtySurface` body is replaced by
+`<ChatsStageBody>` for the focused seat (+77/−8). SUPERSEDES the FEUI-L8 "keeps `PtySurface`
+unconditional" claim above — a controlled seat now defaults to the structured `ConversationSurface`,
+and `PtySurface` survives only inside the default-off read-only terminal-diagnostics drawer and as the
+legacy-raw primary body (both composed by `ChatsStageBody`, not this file). The keep-alive/handoff
+discipline still holds for whichever PTY does mount.
+
+New view-owned wiring:
+- **Stage-mode state** — `libraryOpen` (browse-history) and `diagnosticsOpen` state threaded into
+  `ChatsStageBody`; `onSessionOpened` focuses a newly-opened history session.
+- **Focus-return tokens** — `toggleChatsDiagnostics` captures a focus-return token on open and restores
+  it on close (F9), and the library close/back path consumes the same token idiom (F16), so neither
+  drops focus to `<body>`.
+- **Palette commands** — `chats.browseHistory` (opens the in-stage library, controlled sessions) and
+  `chats.terminalDiagnostics` (toggles the drawer) join the registry, plus `conversation.backToChat`
+  (when-gated on library open).
+- **Interrupt** — the `conversation.stop` registry chord/palette command replaces the stale L6
+  `turn.stop` registration (F2), and the interrupt hook (`useConversationInterrupt`) is fed to
+  `WorkingLine` as its `interrupt` prop, which renders the actionable, capability-gated stop.
+
+This is an additive composition change; QueuePreview/InteractionBar/HeaderStrip/StatusLine authorities
+and the `data-kbzone`/`data-region` focus model are unchanged. The reviewed L4 candidate is
+uncommitted; verification stays pinned to the FEUI-MX-FIX-2 base until closeout stamps the L4 commit.
+
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
+  the composition change from the unconditional `PtySurface` body to `ChatsStageBody` (structured
+  surface default; PTY demoted to the read-only diagnostics drawer + legacy-raw body — supersedes the
+  FEUI-L8 unconditional-PTY claim), the browse-history/diagnostics stage-mode state and focus-return
+  tokens (F9/F16), the new `chats.browseHistory`/`chats.terminalDiagnostics`/`conversation.backToChat`
+  palette commands, and the `conversation.stop` chord + `WorkingLine` interrupt-hook feed replacing the
+  stale `turn.stop` (F2). Verification metadata remains pinned to the leaf base until closeout.
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: removed the view-level raw opener and delegated accepted
   server-id focus from ChatContextBar, eliminating focus on failed or contradictory opens.
   Verification metadata remains pinned until closeout.

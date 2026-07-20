@@ -8,7 +8,18 @@
   "sourceScope": [
     "dashboard/src/panels/session-cockpit/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "dashboard/src/panels/session-cockpit/conversation",
+      "overview": "dashboard/src/panels/session-cockpit/conversation/overview.md",
+      "index": "dashboard/src/panels/session-cockpit/conversation/overview.index.json"
+    },
+    {
+      "route": "dashboard/src/panels/session-cockpit/conversation-library",
+      "overview": "dashboard/src/panels/session-cockpit/conversation-library/overview.md",
+      "index": "dashboard/src/panels/session-cockpit/conversation-library/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "dashboard/src/panels/session-cockpit/AcceptanceChip.tsx",
     "dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx",
@@ -18,6 +29,7 @@
     "dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx",
     "dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx",
     "dashboard/src/panels/session-cockpit/ChatContextBar.tsx",
+    "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx",
     "dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx",
     "dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx",
     "dashboard/src/panels/session-cockpit/CommandPalette.tsx",
@@ -61,9 +73,9 @@
     "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 49,
-    "fileSidecars": 49,
-    "childRoutes": 0
+    "sourceFilesInScope": 73,
+    "fileSidecars": 50,
+    "childRoutes": 2
   },
   "routingTerms": [
     "acceptancechip",
@@ -71,9 +83,11 @@
     "buspane",
     "capabilitiespane",
     "chatcontextbar",
+    "chatsstagebody",
     "cockpit",
     "cockpitliveregions",
     "commandpalette",
+    "conversation",
     "dashboard",
     "endedsessionstate",
     "evidencepane",
@@ -83,6 +97,7 @@
     "interactionbar",
     "landedcleanupnotice",
     "launchflow",
+    "library",
     "lifecyclecopy",
     "modeleffortcontrol",
     "panels",
@@ -109,6 +124,8 @@
     "summary": "1. A create gesture crosses the shared opener; only an accepted server row reaches the registry and the context bar's focus callback. 2. Shell reconciliation hydrates catalog rows and the persistent Chats layer. 3. `SessionsView` resolves deliberate/smart focus and live action ownership, then derives one rail model/attention rollup for rail and palette. 4. `SessionRail` selects a row; the stage keeps visited inspectable PTYs alive and shows ended-state overview when no terminal exists. 5. Composer, interaction, attach, set, terminate, cleanup, and bus actions cross their own authority route...",
     "candidateHints": [
       "dashboard/src/panels/session-cockpit",
+      "dashboard/src/panels/session-cockpit/conversation",
+      "dashboard/src/panels/session-cockpit/conversation-library",
       "dashboard/src/panels/session-cockpit/AcceptanceChip.tsx",
       "dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx",
       "dashboard/src/panels/session-cockpit/BusPane.test.tsx",
@@ -117,6 +134,7 @@
       "dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx",
       "dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx",
       "dashboard/src/panels/session-cockpit/ChatContextBar.tsx",
+      "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx",
       "dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx",
       "dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx",
       "dashboard/src/panels/session-cockpit/CommandPalette.tsx",
@@ -128,10 +146,7 @@
       "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx",
       "dashboard/src/panels/session-cockpit/HeaderStrip.tsx",
       "dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx",
-      "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx",
-      "dashboard/src/panels/session-cockpit/InteractionBar.tsx",
-      "dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx",
-      "dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx"
+      "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
     ],
     "anchorHints": [
       "AcceptanceChip.tsx",
@@ -150,6 +165,8 @@
       "ChatContextBar.test",
       "ChatContextBar.tsx",
       "ChatContextBar",
+      "ChatsStageBody.tsx",
+      "ChatsStageBody",
       "CockpitLiveRegions.test.tsx",
       "CockpitLiveRegions.test",
       "CockpitLiveRegions.tsx",
@@ -179,9 +196,7 @@
       "LandedCleanupNotice.tsx",
       "LandedCleanupNotice",
       "LaunchFlow.test.tsx",
-      "LaunchFlow.test",
-      "LaunchFlow.tsx",
-      "LaunchFlow"
+      "LaunchFlow.test"
     ]
   },
   "fallback": {
