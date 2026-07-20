@@ -15,6 +15,11 @@
       "index": "mcp/src/agents_remember/serving/conversation/active/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/serving/conversation/control",
+      "overview": "mcp/src/agents_remember/serving/conversation/control/overview.md",
+      "index": "mcp/src/agents_remember/serving/conversation/control/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/serving/conversation/library",
       "overview": "mcp/src/agents_remember/serving/conversation/library/overview.md",
       "index": "mcp/src/agents_remember/serving/conversation/library/overview.index.json"
@@ -28,8 +33,6 @@
   "coveredFiles": [
     "mcp/src/agents_remember/serving/conversation/__init__.py",
     "mcp/src/agents_remember/serving/conversation/authorization.py",
-    "mcp/src/agents_remember/serving/conversation/control/__init__.py",
-    "mcp/src/agents_remember/serving/conversation/control/api.py",
     "mcp/src/agents_remember/serving/conversation/dependencies.py",
     "mcp/src/agents_remember/serving/conversation/models.py",
     "mcp/src/agents_remember/serving/conversation/ports.py",
@@ -37,15 +40,14 @@
     "mcp/src/agents_remember/serving/conversation/runtime.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 38,
-    "fileSidecars": 9,
-    "childRoutes": 3
+    "sourceFilesInScope": 50,
+    "fileSidecars": 7,
+    "childRoutes": 4
   },
   "routingTerms": [
     "active",
     "agents",
     "agents_remember",
-    "api",
     "authorization",
     "control",
     "conversation",
@@ -68,13 +70,11 @@
     "candidateHints": [
       "mcp/src/agents_remember/serving/conversation",
       "mcp/src/agents_remember/serving/conversation/active",
+      "mcp/src/agents_remember/serving/conversation/control",
       "mcp/src/agents_remember/serving/conversation/library",
       "mcp/src/agents_remember/serving/conversation/projectors",
       "mcp/src/agents_remember/serving/conversation/__init__.py",
       "mcp/src/agents_remember/serving/conversation/authorization.py",
-      "mcp/src/agents_remember/serving/conversation/control",
-      "mcp/src/agents_remember/serving/conversation/control/__init__.py",
-      "mcp/src/agents_remember/serving/conversation/control/api.py",
       "mcp/src/agents_remember/serving/conversation/dependencies.py",
       "mcp/src/agents_remember/serving/conversation/models.py",
       "mcp/src/agents_remember/serving/conversation/ports.py",
@@ -86,8 +86,6 @@
       "__init__",
       "authorization.py",
       "authorization",
-      "api.py",
-      "api",
       "dependencies.py",
       "dependencies",
       "models.py",
@@ -99,9 +97,9 @@
       "runtime.py",
       "runtime",
       "active",
+      "control",
       "library",
       "projectors",
-      "control",
       "harness_control_api.register_harness_control_routes",
       "harness_control_api",
       "register_harness_control_routes",
@@ -109,15 +107,16 @@
       "mcp/src/agents_remember/serving/conversation/",
       "mcp/src/agents_remember/serving/conversation/overview.md",
       "serving/overview.md",
-      "41b2fd6452ee572799fa10c4f9c820ab549ec3d2",
+      "0be0099744bf1287805acf0b95072127b70f7104",
       "ConversationRuntime",
       "active/",
       "projectors/",
       "active/overview.md",
       "projectors/overview.md",
       "library/",
-      "library/overview.md",
       "control/",
+      "library/overview.md",
+      "control/overview.md",
       "mcp/src/agents_remember/serving/",
       "mcp/src/agents_remember/controlplane/",
       "dashboard/src/",
@@ -129,7 +128,8 @@
       "ConversationAuthorizationResolver",
       "LocalOperatorAuthorizationResolver",
       "require",
-      "get_conversation_runtime"
+      "get_conversation_runtime",
+      "resolve_conversation_authorization"
     ]
   },
   "fallback": {

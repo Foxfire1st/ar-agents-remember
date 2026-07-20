@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T15:10+02:00 |
-| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b`|
-| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
+| lastUpdated            | 2026-07-20T15:45+02:00 |
+| lastVerifiedCommitHash | `0be0099744bf1287805acf0b95072127b70f7104`|
+| lastVerifiedCommitDate | 2026-07-20T15:34:11+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -81,6 +81,20 @@ NEW tracked session through the existing opener (codex through the landed L0E
 `resume_thread_id` channel), proves exact catalog identity, and retires record-spawned failures
 honestly. The shared composition, router, and wire grammar are untouched; the slice is governed
 by `conversation/library/overview.md`.
+
+260718-CHATS-L3 implements the control child inside its owned seam as
+`serving/conversation/control/`, filling the last behavior-empty conversation router: seventeen
+registered routes for exact-turn interrupt (idempotent request/status/reconcile, acknowledgement
+never equal to settlement), the complete source-aware never-bodies operation queue with cockpit-only
+withdrawal and a bounded authorization-bound 900 s recovery lease, typed attachment stage/rebind/
+submit through the L2E asset channel into a confined 0700/0600 spool, read-only effective policy with
+no mutation surface, and evidence-bound telemetry (codex cumulative token usage). Opaque control
+references are HMAC-signed, purpose-branded, and re-bound per wire; a per-app control service holds
+bounded per-(session, epoch) ledgers with per-session serialization above the L2E replay cache; the
+pi settlement reads the L3E-preserved evidence terminal identity. It consumes the closed L2E
+control-plane substrate (native interrupt write, paged never-bodies operation timeline, asset
+channel, pre-tombstone recovery payload) read-only and touches neither the shared composition, the
+router, nor the wire grammar; the slice is governed by `conversation/control/overview.md`.
 
 ### Current L5 hosted-session contract
 
@@ -947,8 +961,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   historical store, control service, or renderer.
 - Active-transcript and conversation-library cursors are purpose-bound and non-interchangeable;
   status, capability, operation, attachment, and metric claims require their modeled evidence.
-- The route owns exactly two read ports and three behavior-empty child routers. Production behavior
-  must land in the owning child without creating a second root registration seam.
+- The route owns exactly two read ports and three owned child routers — all now implemented (active
+  L1, library L2, control L3), none behavior-empty. Production behavior lands in the owning child
+  without creating a second root registration seam.
 - Runtime observations and the locked native helper are evidence boundaries. Their versions and
   observed counts do not become feature flags or maintained capability declarations.
 - Protocol adapter snapshots, bridge receipts, reconciliation, and normalized transcript entries
@@ -1181,6 +1196,14 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: added the "260718-CHATS-L3 implements the control
+  child" paragraph to the structured-conversation contract section — the seventeen control routes
+  (interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments, read-only
+  policy, evidence-bound telemetry) over the closed L2E/L3E substrate, routed to
+  `conversation/control/overview.md` — and corrected the L5-authority-boundary invariant from "three
+  behavior-empty child routers" to the now-implemented reality (active L1, library L2, control L3).
+  The substrate contracts, hot paths, and route model are unchanged. Verification metadata stays
+  pinned until L3 closeout stamps the candidate commit.
 - 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: No route impact: the L3E clip-envelope
   terminal-identity preservation is a file-level additive refinement of `clip_evidence_payload`
   (documented in the `harness_control_models.py` sidecar); the route overview's L0E "32 KiB clip

@@ -1,0 +1,96 @@
+# mcp/src/agents_remember/serving/conversation/control/capabilities.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/serving/conversation/control/capabilities.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-07-20T15:45+02:00 |
+| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
+| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Structured conversation control overview](overview.md)
+
+## Purpose
+
+The control routes' own exact-session capability gate (interrupt, typed attachments per kind,
+policyRead, telemetry per metric). A feature is `supported` only with landed installed-runtime
+fixture evidence captured through the production seam (the L2E `control-plane/*` rows); native
+evidence without a passed gate is `unverified`; a contract the harness cannot provide on this
+surface is `unavailable`. An observed runtime/helper version that differs from the capability
+evidence demotes the feature to `unverified` at read time.
+
+## Code Commentary
+
+### Logic
+
+Per-harness fixture ids and version pins are module constants (L37-L47): codex
+`0.144.5`/`codex-0.144.5-installed-20260718`, claude `2.1.211` locked, pi `0.80.7`. `_fixture`
+(L57), `_adapter` (L78), `_unavailable` (L87), and `_image_capability` (L91) build the typed
+`FeatureCapability`/`AttachmentCapability` products; `_no_asset_kind` (L118) reports a kind the
+harness cannot stage. `_codex_controls`/`_claude_controls`/`_pi_controls` (L132/L164/L192) and the
+telemetry builders (L222/L249/L262) assemble the static per-harness control/telemetry capability
+sets, keyed in `_CONTROLS` (L288) and `_TELEMETRY` (L294). `control_capabilities_for` (L301) and
+`telemetry_capabilities_for` (L317) select by `HarnessId`, then demote every feature against the
+live snapshot: `_observed_version` (L335) reads the installed runtime, and `_demote_attachments`/
+`_demote_attachment` (L343/L351) apply the shared `FeatureCapability.for_observed_runtime` rule so a
+version mismatch turns a `supported` feature `unverified`. Claude's `_CLAUDE_MISMATCH` reason (L49)
+is the installed-vs-locked note; the attachment MIME allow-list is `_ATTACHMENT_MIME_TYPES` (L54),
+sorted from the L2E `SUBMIT_ASSET_MIME_TYPES`.
+
+### Conventions
+
+Nothing enables a feature from documentation or changelog text; only fixture evidence captured
+through the production seam does. This is a distinct authority from L1's `active/capabilities.py`
+page-level view — that view stays conservative pre-L2E and its reasons name this leaf; the control
+routes gate on this module (see the L4-facing note in the governing overview).
+
+### Invariants And Boundaries
+
+- `supported`/`partial` requires exact runtime-fixture evidence; a mismatched observed version
+  demotes to `unverified` and the metric/action stays off.
+- Feature limits (MIME allow-list, count, byte cap) are read from the L2E asset constants, never
+  re-declared here.
+- The capability set is the gate every control route consults before any native call; a refused
+  capability fails typed (422) before dispatch.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured; capability evidence is fixture/seam-bound.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured domain documentation was available. | — | — |
+
+## Repo-Internal References
+
+The capability DTOs and the shared demotion rule live in the contract module; the fixture rows and
+asset limits come from the L2E substrate; the L1 page-level view is the conservative sibling.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `FeatureCapability.for_observed_runtime`, `ControlCapabilities`, `AttachmentCapabilities`, `TelemetryCapabilities` DTOs. | L406-L678 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The L2E asset MIME/count/byte constants and `control-plane/*` fixture discipline. | L1-L60 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The L1 conservative page-level control/telemetry view (stale post-L2E; L4 gates on this module instead). | L152-L165 | [active/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/capabilities.py) |
+
+## Cross-Repo References
+
+No meaningful cross-repo references found.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
+
+## Update History
+
+- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the control-domain
+  capability gate — per-harness fixture-bound interrupt/attachment/policyRead/telemetry states with
+  observed-runtime demotion, distinct from the L1 page-level view. Verification is blank because the
+  new source file is uncommitted; closeout owns its first source stamp.

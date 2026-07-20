@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-20T15:10+02:00 |
-| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b`|
-| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
+| lastUpdated | 2026-07-20T15:45+02:00 |
+| lastVerifiedCommitHash | `0be0099744bf1287805acf0b95072127b70f7104`|
+| lastVerifiedCommitDate | 2026-07-20T15:34:11+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,25 @@ strict client validators. The opt-in installed suite (`test_harness_control_plan
 captures the same seams live against pinned codex 0.144.5 and pi 0.80.7 and enforces the Claude
 version-honesty rows; the three runtime fixtures gain redacted `control-plane/*` rows with
 `enablesCapabilities: false` — evidence, never enablement.
+
+260718-CHATS-L3 adds the authoritative control-API regression set. A shared topology
+(`_control_plane.py`) runs the real bridge + IPC server on a real socket, the real submission
+authority, and the L0 route composition with only the harness adapter doubled, plus the manager-
+authorized `NOW`-anchored control service seeded into the `_SERVICES` memo so lease arithmetic is
+time-consistent. Four focused service/route suites drive it: `test_conversation_control_operations.py`
+(interrupt ledger — ack≠settlement, fingerprint idempotence with native-write counting, lost-response
+reconcile, the guard battery, and both the Finding 1 content-ful and Finding 2 oversized/clipped pi
+settlement regressions, each proven non-vacuous), `test_conversation_control_queue.py` (never-bodies
+queue truth, the queued→dispatching race, the bounded recovery lease with an untouched frozen-clock
+expiry proof, and the forgery battery), `test_conversation_control_attachments.py` (boundary-exact
+limit refusals, one-use exact-receipt submit, recoverable-under-lease rebind with on-disk deletion,
+timeline-driven reconcile, GET-only policy, and absent-not-zero telemetry), and
+`test_conversation_control_api.py` (the seventeen routes over a real uvicorn wire with O4 mapping,
+remote-peer 403, policy 405s, and the no-paste/no-substitution source scan). The opt-in
+`test_conversation_control_installed.py` proves live codex/pi interrupt ack+settlement, queue truth,
+withdrawal recovery, typed attachment submit, and telemetry through the registered routes plus the
+Claude version-honesty gate. The foundation pin asserts the control child's exact seventeen-route
+surface.
 
 260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
@@ -199,6 +218,17 @@ contracts), `test_conversation_library_gates.py` (capability demotion rules),
 (idempotent exact open arms), and `test_conversation_library_installed.py` (opt-in live gates and
 both real opens). The foundation pin asserts the library child's exact five routes and the
 four-file helper source set; fixture rows stay evidence-not-enablement.
+
+260718-CHATS-L3 centers four focused suites plus a shared topology and an installed proof:
+`_control_plane.py` (the real bridge/IPC/authority/L0 seam with only the harness adapter doubled and
+the `NOW`-anchored control service), `test_conversation_control_operations.py` (interrupt ledger,
+Finding 1/Finding 2 pi settlement regressions), `test_conversation_control_queue.py` (never-bodies
+queue truth, withdrawal race, bounded recovery lease + frozen-clock expiry, forgery battery),
+`test_conversation_control_attachments.py` (limit refusals, one-use submit, recoverable-lease rebind,
+policy/telemetry), and `test_conversation_control_api.py` (the seventeen routes over a real uvicorn
+wire, O4 mapping, no-paste source scan), with `test_conversation_control_installed.py` the opt-in
+version-locked live proof. The foundation pin asserts the control child's exact seventeen routes;
+fixture rows stay evidence-not-enablement.
 
 260718-CHATS-L0 adds `test_conversation_runtime_composition.py` and
 `test_conversation_authorization.py` for the runtime composition repair: single install-once
@@ -375,9 +405,10 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
-| Foundation coverage pins two ports, child ownership (the active child's exact two L1 routes and the library child's exact five L2 routes; control empty), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Foundation coverage pins two ports, child ownership (the active child's exact two L1 routes, the library child's exact five L2 routes, and the control child's exact seventeen L3 routes), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | Active serving coverage pins canonical status/parity, per-harness mapper grammars, engine/store mechanics, and the real-socket production routes with the no-PTY source scan. | L362-L865 | [test_conversation_active_api.py](agents-remember/mcp/tests/test_conversation_active_api.py) |
 | Library coverage pins the ASGI status ladder, cursor/scope contracts, gate demotion, hostile port normalization, open idempotence/race/ownership, and the opt-in live gates and real opens. | L1-L9 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| Control coverage pins the interrupt ledger (ack≠settlement, idempotence, Finding 1/2 pi settlement), never-bodies queue truth with cockpit-only withdrawal recovery, the typed attachment lifecycle with on-disk spool proofs, read-only policy, evidence-bound telemetry, and the seventeen routes over a real wire — all over the shared `_control_plane.py` topology. | L1-L381 | [test_conversation_control_api.py](agents-remember/mcp/tests/test_conversation_control_api.py) |
 | Composition contract coverage pins install-once, fail-closed binding shapes, per-app isolation, no singleton, and no injected identity or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | Authorization contract coverage pins local-operator identity, loopback-only resolution, no identity channel, ignored browser claims, and cross-principal rejection. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
 | Evidence contract coverage pins per-harness round-trips, no-leak, bounds, continuation, cross-domain/epoch rejection, provenance, and the resume channel. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
@@ -406,6 +437,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: added the authoritative control-API regression
+  set — the shared `_control_plane.py` topology (real bridge/IPC/authority/L0 seam, `NOW`-anchored
+  service), the four focused suites (operations incl. Finding 1/2 pi settlement regressions; queue
+  incl. the frozen-clock expiry proof; attachments incl. on-disk spool deletion; the seventeen-route
+  API over a real wire), and the opt-in installed proof — plus the seventeen-route foundation pin, a
+  control coverage reference row, and the corrected "control empty" claim. Verification metadata stays
+  pinned until L3 closeout stamps the candidate commit.
 - 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: added the evidence-truncation settlement
   coverage to the `test_harness_control_evidence.py` description — the `ClipHelperTests` byte-level
   terminal-identity preservation tests plus the giant-scalar drop-whole (256/257 boundary)
