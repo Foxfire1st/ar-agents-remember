@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/keymap/preferences.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate |  2026-07-18T07:47:42+02:00|
+| lastUpdated | 2026-07-20T22:30+02:00 |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
+| lastVerifiedCommitDate |  2026-07-20T22:32:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,20 @@ The preference module imports only repository-local keymap definitions and brows
 | Global dispatcher consumer. | [useKeyboardZones.ts](../../panels/session-cockpit/useKeyboardZones.ts) |
 | Composer and reference UI consumers. | [SessionComposer.tsx](../../panels/SessionComposer.tsx) · [CommandPalette.tsx](../../panels/session-cockpit/CommandPalette.tsx) |
 
+## 260718-CHATS-L4 Reviewed Candidate Delta (ariaKeyshortcuts helper)
+
+Added the pure **`ariaKeyshortcuts(chord)`** helper: it renders a validated tinykeys chord as the
+WAI-ARIA `aria-keyshortcuts` token (`Control+Shift+Period` → `Control+Shift+.`). The interrupt hook
+(`conversation/useConversationControls.ts`) reads `bindingFor(useEffectiveKeymap(), "conversation.stop")?.chord`
+and converts it through this helper, so a rebind of the stop chord through the `cockpit.sessions.keymap.v1`
+seam keeps the assistive-tech advertisement truthful (F25) — replacing a hardcoded default constant.
+Additive to the effective-keymap boundary; verification stays pinned to the FEUI-L8 base until closeout.
+
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
+  the pure `ariaKeyshortcuts(chord)` helper that renders a validated chord as the WAI-ARIA token, so
+  the interrupt control's derived `aria-keyshortcuts` follows a rebind of `conversation.stop` (F25).
+  Verification metadata remains pinned to the leaf base until closeout.
 - 2026-07-18T07:22+02:00 — Created for FEUI-L8 keymap preferences. Candidate metadata is blank
   because the source is new and uncommitted; closeout owns verification stamping.

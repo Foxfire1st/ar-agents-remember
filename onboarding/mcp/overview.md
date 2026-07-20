@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `0be0099744bf1287805acf0b95072127b70f7104` |
-| lastVerifiedCommitDate | 2026-07-20T15:34:11+02:00|
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -964,6 +964,16 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T22:30+02:00 — No route impact: the only governed change under `mcp/` for 260718-CHATS-L4
+  (structured Chats renderer, reviewer FINAL PASS) is the regenerated `package_data/dashboard/` bundle
+  assets + `dashboard.fingerprint`, a generated artifact mirroring `dashboard/src`; the route's own
+  claims are unaffected — shipped output produced by
+  `scripts/sync-dashboard.py` from `dashboard/dist/`, exactly the sync mechanism this overview already
+  documents; no mcp source, wire contract, route, or capability changed (backend diff-verified empty
+  every review round; pytest 2741 passed unchanged). The renderer itself lives in `dashboard/src/` and
+  is governed by the dashboard overviews; the "package presence does not imply a renderer" invariant
+  and the leaf-scoped L9/L0 "no renderer yet" narrative remain accurate about the mcp package's Python
+  contract. Verification metadata unchanged.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: documented the implemented authoritative control
   child at package granularity — the seventeen control routes (interrupt, source-aware queue with
   cockpit-only withdrawal recovery, typed attachments, read-only policy, evidence-bound telemetry)

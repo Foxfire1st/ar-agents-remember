@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/src/panels/session-cockpit/conversation-library",
+  "overview": "dashboard/src/panels/session-cockpit/conversation-library/overview.md",
+  "index": "dashboard/src/panels/session-cockpit/conversation-library/overview.index.json",
+  "sourceScope": [
+    "dashboard/src/panels/session-cockpit/conversation-library/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx",
+    "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx",
+    "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx",
+    "dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "cockpit",
+    "conversation",
+    "conversationhistorypreview",
+    "conversationlibrarylist",
+    "conversationlibrarysurface",
+    "dashboard",
+    "library",
+    "openconversationaction",
+    "panels",
+    "session",
+    "src",
+    "tsx"
+  ],
+  "hotPath": {
+    "summary": "1. `ChatsStageBody` mounts `ConversationLibrarySurface` when the browse-history stage mode is on for a controlled harness session; the surface reads the `data/conversation-library` store. 2. `ConversationLibraryList` renders the native rows (truncated title + full value, humanized age, completeness); selecting one previews it read-only in the same grammar (`ConversationHistoryPreview`). 3. `OpenConversationAction` dispatches an exact open under a stable `requestId`; on `opened` catalog proof it hands the new `arSessionId` up to focus a live rail row; any other outcome is surfaced in place....",
+    "candidateHints": [
+      "dashboard/src/panels/session-cockpit/conversation-library",
+      "dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx",
+      "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx",
+      "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx",
+      "dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx"
+    ],
+    "anchorHints": [
+      "ConversationHistoryPreview.tsx",
+      "ConversationHistoryPreview",
+      "ConversationLibraryList.tsx",
+      "ConversationLibraryList",
+      "ConversationLibrarySurface.tsx",
+      "ConversationLibrarySurface",
+      "OpenConversationAction.tsx",
+      "OpenConversationAction",
+      "ChatsStageBody",
+      "data/conversation-library",
+      "requestId",
+      "opened",
+      "arSessionId",
+      "dashboard/src/panels/session-cockpit/conversation-library/",
+      "route-local-overview",
+      "9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd",
+      "/overview.md",
+      "session-cockpit/conversation-library/",
+      "onBack",
+      "columns",
+      "nowrap",
+      "min-height:0",
+      "@container (max-width:640px",
+      "container-type:inline-size",
+      "overflow:hidden",
+      "title",
+      "humanizeAge",
+      "Load more",
+      "history preview \u00b7 not active",
+      "phase=\"opened\" && outcome=\"opened",
+      "unsupported",
+      "stale-identity",
+      "timeout-unknown",
+      "launch-failed",
+      "identity-mismatch",
+      "request-conflict",
+      "dispatching",
+      "conversation-library/",
+      "system/sources.md",
+      "0be0099",
+      "/../../data/conversation-library/overview.md",
+      "/conversation/overview.md",
+      "4.4",
+      "12.1",
+      "F23/L4.R5",
+      "L2.3",
+      "L4.R5",
+      "sourceRoute"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/src/panels/session-cockpit/conversation-library/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

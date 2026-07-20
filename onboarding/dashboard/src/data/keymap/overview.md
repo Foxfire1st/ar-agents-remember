@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/keymap/`                     |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00 |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -43,13 +43,19 @@ exactly the bound reserved set; no bare-Esc sequence is ever claimed).
 - `chords.ts` — the chrome/composer chord tables (`CHROME_CHORDS`, `COMPOSER_CHORDS`) with
   per-chord zone lists. Chrome Alt+↑/↓ retains session cycling; composer Alt+Up owns FEUI-L5
   authoritative pop-back. PTY receives both unchanged because only its explicit reserved set is
-  intercepted.
+  intercepted. 260718-CHATS-L4 adds the `conversation.stop` chord (default `Control+Shift+Period`,
+  chrome+composer zones, PTY-excluded — the R6 rebindable non-Escape stop, collision-audited as the
+  sole `Control+Shift` entry) and removes the stale `turn.stop` binding.
 - `focus.ts` — the F6 region cycle (rail → stage → inspector → statusline, collapsed panels drop
   out) + the region/stage-header/PTY-host focus selectors.
 - `preferences.ts` — strict `cockpit.sessions.keymap.v1` persistence, same-tab external-store and
   cross-tab storage subscription, user overrides, Emacs/Vim composer profile, CodeMirror chord
   conversion, and the effective signature used for live reconfiguration. Browser-reserved,
   printable-composer, collision, and F6-removal/rebind attempts fall back with visible issues.
+  260718-CHATS-L4 adds the pure `ariaKeyshortcuts(chord)` helper — it renders a validated tinykeys
+  chord as the WAI-ARIA `aria-keyshortcuts` token (`Control+Shift+Period` → `Control+Shift+.`), so the
+  interrupt control's advertised shortcut (`bindingFor(effective, "conversation.stop")`) follows a
+  rebind and stays truthful to assistive technology.
 - `zones.test.ts` / `focus.test.ts` — the contract suites (PTY passthrough invariants,
   reserved-set hygiene, printable suppression, region cycle).
 - `preferences.test.ts` — effective-map parsing, validation, profile, immutable-F6, Meta/browser
@@ -117,6 +123,14 @@ no cross-repository implementation source is imported or treated as governing co
 | The live CodeMirror surface that consumes profile and chord reconfiguration. | [SessionComposer.tsx](../../panels/SessionComposer.tsx) |
 
 ## Update History
+
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer, reviewer FINAL
+  PASS): recorded the two fix-round-2 additions to this route's governed sources — the
+  `conversation.stop` registry chord in `chords.ts` (default `Control+Shift+Period`, chrome+composer,
+  PTY-excluded, collision-audited; stale `turn.stop` removed) and the pure `ariaKeyshortcuts(chord)`
+  helper in `preferences.ts` (renders a validated chord as the WAI-ARIA token so the interrupt
+  control's derived `aria-keyshortcuts` follows a rebind — F25). Verification metadata remains pinned
+  to the leaf base pending closeout.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8: added the versioned effective-keymap preference layer,
   browser/Meta safety, immutable F6, same-/cross-tab updates, and Emacs/Vim CodeMirror profiles;

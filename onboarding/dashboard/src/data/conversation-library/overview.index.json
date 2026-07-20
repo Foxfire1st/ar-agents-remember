@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/src/data/conversation-library",
+  "overview": "dashboard/src/data/conversation-library/overview.md",
+  "index": "dashboard/src/data/conversation-library/overview.index.json",
+  "sourceScope": [
+    "dashboard/src/data/conversation-library/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "dashboard/src/data/conversation-library/client.ts",
+    "dashboard/src/data/conversation-library/store.test.ts",
+    "dashboard/src/data/conversation-library/store.ts",
+    "dashboard/src/data/conversation-library/types.ts"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "client",
+    "conversation",
+    "dashboard",
+    "data",
+    "library",
+    "src",
+    "store",
+    "test",
+    "types"
+  ],
+  "hotPath": {
+    "summary": "1. `loadLibraryList` pages the native list for a harness/scope (append on cursor); `loadLibraryPreview` reads one conversation's read-only historical page and drops the result if the selection moved on. 2. `beginOpen` POSTs one exact-open under a caller-stable requestId with `dispatching` set from dispatch; while pending/timeout-unknown it re-drives open-status/open-reconcile under the same id until terminal. 3. On terminal `opened`/`opened`, `openedForFocus` flips true and the caller (OpenConversationAction \u2192 ChatsStageBody) focuses the new live row; every other outcome leaves the current...",
+    "candidateHints": [
+      "dashboard/src/data/conversation-library",
+      "dashboard/src/data/conversation-library/client.ts",
+      "dashboard/src/data/conversation-library/store.test.ts",
+      "dashboard/src/data/conversation-library/store.ts",
+      "dashboard/src/data/conversation-library/types.ts"
+    ],
+    "anchorHints": [
+      "client.ts",
+      "client",
+      "store.test.ts",
+      "store.test",
+      "store.ts",
+      "store",
+      "types.ts",
+      "types",
+      "loadLibraryList",
+      "loadLibraryPreview",
+      "beginOpen",
+      "dispatching",
+      "opened",
+      "openedForFocus",
+      "POSTs",
+      "requestId",
+      "OpenConversationAction",
+      "ChatsStageBody",
+      "dashboard/src/data/conversation-library/",
+      "route-local-overview",
+      "9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd",
+      "/overview.md",
+      "data/conversation-library/",
+      "phase=\"opened\" && outcome=\"opened",
+      "library/api.py",
+      "models.py",
+      "exclude_none",
+      "nextCursor",
+      "olderCursor",
+      "safeNativeIdSuffix",
+      "lastActivityAt",
+      "null",
+      "ConversationLibraryRow",
+      "OpenConversationOperation",
+      "OpenPhase",
+      "OpenOutcome",
+      "OpenResult",
+      "phase",
+      "outcome",
+      "conversationLibraryStore",
+      "arSessionId",
+      "unsupported",
+      "stale-identity",
+      "timeout-unknown",
+      "launch-failed",
+      "identity-mismatch",
+      "request-conflict",
+      "reconcileOpen"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/src/data/conversation-library/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

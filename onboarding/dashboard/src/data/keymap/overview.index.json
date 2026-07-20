@@ -78,7 +78,7 @@
       "PageDown",
       "dashboard/src/data/keymap/",
       "route-local-overview",
-      "e3f94568a0f5f78efc5ce7c26d94e6d103caae5f",
+      "9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd",
       "/overview.md",
       "data/keymap/",
       "panels/session-cockpit/useKeyboardZones.ts",
@@ -89,15 +89,15 @@
       "isEditableTarget",
       "isPrintable",
       "slashOpensPalette",
+      "conversation.stop",
+      "Control+Shift+Period",
+      "Control+Shift",
+      "turn.stop",
       "cockpit.sessions.keymap.v1",
-      "\\x1b\\x1b",
-      "5;7~",
-      "6;7~",
-      "composer.popBack",
-      "nextRegion",
-      "system/sources.md",
-      "data-region",
-      "ZoneChord.printable"
+      "ariaKeyshortcuts(chord",
+      "aria-keyshortcuts",
+      "Control+Shift+",
+      "bindingFor(effective, \"conversation.stop"
     ]
   },
   "fallback": {

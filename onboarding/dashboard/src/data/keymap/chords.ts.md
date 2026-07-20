@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/keymap/chords.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00 |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -82,8 +82,25 @@ Alt+Up is now zone-sensitive: the composer owns authoritative pop-back, while ch
 `session.prev`. The keymap records both bindings explicitly so global navigation cannot intercept a
 withdrawal gesture inside CodeMirror and the composer cannot steal the chord outside its zone.
 
+## 260718-CHATS-L4 Reviewed Candidate Delta (conversation.stop chord)
+
+The chord table gained the real **`conversation.stop`** interrupt chord — `Control+Shift+Period`,
+scoped to the chrome+composer zones and excluded from the raw-PTY zone (interception there routes only
+through `reserved.ts`) — replacing the stale L6 `turn.stop` registration (finding F2). It is the sole
+`Control+Shift` entry, so it is collision-clear; the `preferences.ts` validation makes it rebindable
+through the documented `cockpit.sessions.keymap.v1` seam, and the enabled control advertises the
+EFFECTIVE assignment via `preferences.ts`'s `ariaKeyshortcuts` (never a phantom — F25). The chord
+dispatches the id only when the palette `when`-gate reports the turn is interruptible. Additive to the
+zone-scoping contract; the reviewed L4 candidate is uncommitted, verification stays pinned to the
+FEUI-L1 base until closeout.
+
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
+  the new `conversation.stop` chord (`Control+Shift+Period`, chrome+composer, pty-excluded,
+  collision-audited) replacing the stale `turn.stop` (F2); the effective assignment drives the
+  derived `aria-keyshortcuts` (F25). Verification metadata remains pinned to the leaf base until
+  closeout.
 - 2026-07-17T21:39+02:00 — FEUI-L5: recorded the composer/chrome Alt+Up ownership split.
 
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4: the chrome/composer chord tables with

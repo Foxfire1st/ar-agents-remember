@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00                           |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -93,6 +93,21 @@ and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
 - Exited and retired rows are catalog evidence rather than live PTYs. Landed rows remain read-only
   inspectable until authoritative cleanup removes them.
 
+### Structured Conversation Projection (260718-CHATS-L4)
+
+- [data/conversation](conversation/overview.md) owns the **reconstructable active-conversation
+  projection**: a pure authority reducer (cursor-ordered apply, eventId+cursor dedupe, block-delta
+  revision gating, L1.4/L1.5 gap→re-page, same-revision→reset, replace-page rehydrate — never an
+  optimistic durable item) plus a thin store orchestrating page/stream/recovery/LRU. It holds only a
+  browser projection rebuilt from the landed L1 page/stream contract and the L3 control routes.
+- [data/conversation-library](conversation-library/overview.md) owns the **reconstructable
+  previous-conversation library projection**: list/preview and the exact-open flow whose focus fires
+  only on `opened` catalog proof, with the caller-stable requestId reconciled under one id.
+- Both are separate, reconstructable stores (R1): reload/pages/events rebuild them from server/native
+  authority; there is no IndexedDB/localStorage/SQLite conversation index and no durable browser item
+  authority (the only persisted UI bit is the hide-thinking boolean). The renderer consuming them is
+  the [session-cockpit/conversation](../panels/session-cockpit/conversation/overview.md) grammar.
+
 ### Controls, Keymaps, And Accessibility
 
 - `capabilityCatalog.ts`, `setClient.ts`, and the set/launch helpers separate pre-session envelope
@@ -123,10 +138,14 @@ code must not use them as ordinary recovery APIs.
 - Reliable submit and withdrawal preserve request identity. Never resend blindly after an ambiguous
   boundary and never implement pop-back as a local-only deletion.
 - Operator text, agent-bus messages, lifecycle control, and adapter interaction answers remain
-  distinct authority channels. A future structured conversation UI must consume adapter-normalized
-  history/resume capabilities rather than scrape or duplicate vendor TUIs.
-- Controlled PTY output is currently a runner line-log, not the requested structured conversation
-  transcript. UA-1 history/index/resume capability is not implemented by FEUI-L8.
+  distinct authority channels. The structured conversation UI (260718-CHATS-L4) consumes
+  adapter-normalized history/resume from the landed L1/L2/L3 server contracts; it never scrapes or
+  duplicates vendor TUIs, and it holds only a reconstructable projection — no durable browser
+  conversation index and no optimistic durable item authority.
+- Controlled sessions default to the structured `ConversationSurface`. The runner line-log survives
+  only as the default-off read-only terminal-diagnostics drawer and the legacy-raw body. UA-1
+  history/index/resume is now served by the `conversation/` and `conversation-library/` projections
+  documented above.
 
 ## Hot Path Summary
 
@@ -147,6 +166,8 @@ code must not use them as ordinary recovery APIs.
 | Child route | Governing overview | Responsibility |
 | --- | --- | --- |
 | `dashboard/src/data/keymap/` | [keymap overview](keymap/overview.md) | Static/effective keyboard bindings, focus zones, browser safety, and composer profiles. |
+| `dashboard/src/data/conversation/` | [conversation overview](conversation/overview.md) | Reconstructable active-conversation projection: pure reducer, resumable stream, store/LRU, formats. |
+| `dashboard/src/data/conversation-library/` | [conversation-library overview](conversation-library/overview.md) | Reconstructable previous-conversation library projection and the exact-open resume flow. |
 
 ## File Onboarding Map
 
@@ -206,6 +227,15 @@ the UI composition owner. Detailed legacy grouping knowledge was preserved here 
 session-cockpit overview before the six obsolete sidecars were removed.
 
 ## Update History
+
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator (structured Chats renderer, reviewer FINAL PASS):
+  added the two child routes `conversation/` (reconstructable active-conversation projection — pure
+  reducer + resumable stream + store/LRU) and `conversation-library/` (reconstructable
+  previous-conversation projection + exact-open flow), the Structured Conversation Projection route-
+  model section, and corrected the stale invariants — the structured conversation UI is now landed and
+  consumes adapter-normalized history/resume as a reconstructable projection (no durable browser
+  index), and controlled sessions default to the structured surface with the line-log demoted to a
+  read-only diagnostics drawer. Verification metadata remains pinned pending L4 candidate closeout.
 
 - 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: documented `terminalOpen.ts` as the sole browser open
   authority, accepted-server-row-only registry mutation, raw-response contradiction checks, shared

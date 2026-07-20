@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00 |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -77,11 +77,15 @@ a second full-page chat destination.
 FEUI-L8 removes the legacy Chats/SessionList path and the separate Sessions navigation concept.
 CockpitShell exposes one Chats item backed by the persistent session-cockpit layer. That layer keeps
 the mechanics built through L1–L7 — role/spawn rail, reliable composer and authoritative pop-back,
-interaction answers, persistent PTYs, lifecycle controls, evidence/capabilities/bus, and status —
-while adding L8 hardening, accessibility, scenarios, and product-duty transfer.
+interaction answers, lifecycle controls, evidence/capabilities/bus, and status — while adding L8
+hardening, accessibility, scenarios, and product-duty transfer.
 
-The inspector is supplementary evidence, closed by default, toggleable, and responsive without
-overwriting deliberate user intent. The stage is the primary space.
+Since 260718-CHATS-L4 the controlled-session stage body is the structured `ConversationSurface`, not
+a PTY: `ChatsStageBody` selects the structured surface (default), the in-stage history library, or
+the legacy-raw PTY, and owns the default-off read-only terminal-diagnostics drawer. The exact-turn
+interrupt is wired into the WorkingLine as the `conversation.stop` chord. The inspector is
+supplementary evidence, closed by default, toggleable, and responsive without overwriting deliberate
+user intent. The stage is the primary space.
 
 ### Other Full-Page Surfaces
 
@@ -89,18 +93,24 @@ Detail/Operations takeovers, Engine Room, File Viewer, Notes Reader, Change-Set 
 design/bench routes retain their existing focused overviews. The L8 split does not introduce another
 production view.
 
-## Product Truth And Future Conversation Boundary
+## Product Truth And Conversation Boundary (structured renderer landed in 260718-CHATS-L4)
 
-The current canonical Chats stage renders controlled runner line-logs and legacy raw vendor TUIs
-through xterm. It now offers a coherent single visual roof and end-to-end interaction mechanics, but
-it is not yet the requested structured conversation renderer.
+The canonical Chats stage now renders the **structured conversation surface** for controlled
+sessions: a harness-neutral grammar over a reconstructable browser projection of the landed L1/L2/L3
+adapter-normalized contracts. The controlled runner line-log survives only as the default-off
+read-only terminal-diagnostics drawer; legacy raw sessions still host the vendor TUI. This is the one
+shared visual message roof across Claude, Codex, and Pi, with visible harness identity and
+capability reasons.
 
-Recovered project history requires one shared visual message model across Claude, Codex, and Pi,
-with visible harness identity and adapter-mapped behavior. Active transcript and previous-conversation
-library/index are separate capabilities. The preferred architecture obtains normalized history,
-index, and resume from adapters and uses browser state as a projection/cache instead of duplicating
-vendor history. UA-1 capability is absent in FEUI-L8, so no dashboard component may claim those
-features yet.
+The two capabilities are both served and stay distinct: the **active transcript**
+([data/conversation](data/conversation/overview.md) + the `conversation/` grammar) and the
+**previous-conversation library/index** ([data/conversation-library](data/conversation-library/overview.md)
++ the `conversation-library/` browser). Both obtain normalized history/index/resume from the server
+contracts and hold only a projection/cache — no durable browser conversation database (R1). UA-1 is
+no longer absent. Two forward constraints remain L5 hardening: interrupt capability gating is
+attempt-and-reflect on the L3 evidence until a control-capabilities GET or L1-view refresh lands, and
+the measured virtualization/scale baseline plus the E1/E2 environmental faults are enumerated in the
+`conversation/` L5-Facing Register.
 
 User submissions, agent-to-agent bus messages, lifecycle/control commands, and adapter-interaction
 answers remain distinct paths. The original orchestration failure mode was collisions caused by
@@ -164,6 +174,20 @@ references informed product framing only; current code truth stays in agents-rem
 | Dev scenario authority and end-to-end states. | [dev/cockpitScenarios.ts](dev/cockpitScenarios.ts) |
 
 ## Update History
+
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer; reviewer FINAL
+  PASS, 26/26 findings closed): `data/` gains the reconstructable `conversation/` and
+  `conversation-library/` projection child routes; `panels/session-cockpit/` gains `ChatsStageBody`
+  and the `conversation/` + `conversation-library/` grandchild renderer routes (structured
+  `ConversationSurface` is the controlled-session default; the runner line-log is demoted to the
+  default-off read-only terminal-diagnostics drawer + legacy-raw body; the exact-turn interrupt rides
+  the WorkingLine as the `conversation.stop` chord). Rewrote the Product-Truth/Conversation-Boundary
+  and Chats sections: UA-1 history/index/resume is now landed as a reconstructable projection with no
+  durable browser conversation index. Additive edits also touched `SessionsView`/`WorkingLine`/
+  `ChatContextBar`/`PtySurface`/`SessionComposer`/`data/keymap` (detail in those sidecars). The
+  synchronized `package_data/dashboard/` bundle is regenerated shipped output governed by the mcp
+  overview's sync mechanism, not an mcp source contract. Verification metadata remains pinned pending
+  L4 candidate closeout.
 
 - 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded the sole authoritative browser opener,
   accepted-server-row-only materialization, contradiction handling, and request-matched dev fixture

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/PtySurface.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-20T22:30+02:00                           |
+| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
+| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -116,8 +116,25 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## 260718-CHATS-L4 Reviewed Candidate Delta
+
+An optional `readOnly` prop (default `false`) is added so the L4 terminal-diagnostics drawer can host
+the controlled runner line-log input-disabled (design §12.6): when true the surface renders the same
+keep-alive pane but declines keystrokes. The legacy-raw and landed call sites are unchanged (default
+`false`). Note the broader L4 composition change this prop serves: for a CONTROLLED seat this surface is
+no longer the primary stage body — `ChatsStageBody` makes it a default-off, read-only diagnostics drawer
+(the `TerminalDiagnosticsDrawer`), while a legacy-raw seat keeps its interactive PTY as the primary body.
+
+The reviewed candidate is uncommitted; existing verification hash/date remain pinned; closeout owns
+commit stamping.
+
 ## Update History
 
+- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: recorded the optional `readOnly` prop (default
+  false) that lets the terminal-diagnostics drawer host the controlled runner PTY input-disabled
+  (§12.6), and noted that for a controlled seat this surface is now a default-off read-only diagnostic
+  rather than the primary stage body. Verification metadata remains pinned to the leaf base until
+  closeout stamps the L4 commit.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 
