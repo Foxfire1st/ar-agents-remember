@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb`|
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastUpdated            | 2026-07-20T15:10+02:00 |
+| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b`|
+| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -1181,6 +1181,12 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: No route impact: the L3E clip-envelope
+  terminal-identity preservation is a file-level additive refinement of `clip_evidence_payload`
+  (documented in the `harness_control_models.py` sidecar); the route overview's L0E "32 KiB clip
+  with a visible marker" description and the L2E content-less `message_end` note both remain
+  accurate and complete for the clip semantics this route describes. Verification metadata remains
+  pinned until closeout stamps the candidate commit.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive native control-plane
   substrate — the structural-sub-protocol interrupt write (bridge epoch guard, codex exact-turn,
   pi expected-operation guard, replay-once, claude fail-closed, settlement untouched), the paged

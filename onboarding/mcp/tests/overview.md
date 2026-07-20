@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb`|
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastUpdated | 2026-07-20T15:10+02:00 |
+| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b`|
+| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -217,6 +217,16 @@ queue delegation; and the codex resume channel end-to-end with pre-spawn refusal
 (opt-in, version-locked) into redacted `substrate-evidence/*` fixture rows, keeping the
 version-mismatched Claude row honestly `not-exercised` and `enablesCapabilities` false everywhere.
 
+260718-CHATS-L3E extends `test_harness_control_evidence.py` with the evidence-truncation settlement
+coverage: `ClipHelperTests` gains three byte-level clip terminal-identity preservation tests (a
+clipped pi `message_end` keeps only `type` + `message.stopReason`; a clipped codex `turn/completed`
+keeps only `turn.id` + `turn.status`; absent identity is never invented) plus a giant-scalar
+drop-whole regression with a 256/257 boundary check, and the new
+`EvidenceTruncationSettlementIpcTests` drives oversized (>32 KiB) production pi/codex terminal frames
+end-to-end through the real bridge clip and the real `read_control_evidence` IPC surface, asserting
+the preserved enums survive to scan helpers that mirror L3's `_pi_stop_reason` /
+`_codex_terminal_outcome` reads verbatim (the in-leaf acceptance proxy for `probe_l3_delta.py`).
+
 260718-CHATS-L2E centers `test_harness_control_plane.py` for the control-plane contract suite:
 the interrupt batteries (bridge epoch guard, codex exact-turn, pi expected-operation guard,
 successor zero-write refusal, content-less `message_end` honesty), the timeline batteries
@@ -396,6 +406,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: added the evidence-truncation settlement
+  coverage to the `test_harness_control_evidence.py` description — the `ClipHelperTests` byte-level
+  terminal-identity preservation tests plus the giant-scalar drop-whole (256/257 boundary)
+  regression, and the new `EvidenceTruncationSettlementIpcTests` oversized-frame end-to-end
+  regressions mirroring L3's `_pi_stop_reason` / `_codex_terminal_outcome` reads. Verification
+  metadata remains pinned until closeout stamps the candidate commit.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: added the native control-plane regression
   set — the contract suite `test_harness_control_plane.py` (interrupt/timeline/asset/recovery and
   client-validation batteries, 25 tests + 35 subtests), the opt-in version-locked installed
