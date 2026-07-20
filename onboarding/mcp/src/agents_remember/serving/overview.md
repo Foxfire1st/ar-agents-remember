@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate | 2026-07-20T15:34:11+02:00|
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -832,7 +832,20 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `catalog.record_turn_state`; `TerminalLivenessObservation.turn_state_changed` is true only on an
   actual transition, and `TerminalCatalogLivenessSweeper` gained an `on_turn_state_change` callback
   (wired in `app.py`'s `create_app` to `seat_events.log_turn_state_change_event`) fired only for
-  those transitioning rows, never per sweep tick.
+  those transitioning rows, never per sweep tick. **260718-CHATS-L5 (H1/F2)** quarantines the
+  `on_control_snapshot` observer (the hosted-interaction synchronizer wired in `create_app`) as a
+  per-entry side effect: `_observe_alive` routes it through `_observe_control_snapshot`, which
+  records any failure fail-loud on that ONE row's `control_raw["interactionSyncError"]` and lets the
+  sweep continue. Before this, a single orphan-`vendorCorrelationId` completion raised
+  `HarnessControlError` out of the per-entry comprehension inside `catalog.batch()`, aborting the
+  whole sweep and 500-ing `GET /api/terminal/sessions` for EVERY row (the developer's stuck-loading
+  rail). Load-bearing fact: an orphan `vendorCorrelationId` is the NORMAL steady state of every
+  cockpit-driven hosted (`+ Chat`) codex chat, so this quarantine path is HOT, not exceptional; F2
+  bounds the warning to state changes (first occurrence / heal) while the per-sweep marker keeps the
+  wire honestly degraded. Availability hardening only — the completion-correlation contract in
+  `hosted_interactions.py` is untouched (F3 is a required master-exit disposition; the F8
+  phantom-transition re-warn on non-observer `control_raw` rebuilds is a Low residual). Detail in the
+  file sidecar.
 - `retire_policy.py` — the **260707-HFX-L8** server-side retire authority policy: `SeatRef`,
   `master_of(leaf_key)` (the qualified leaf key's 2nd path segment — uniform for a leaf-level or
   master-level `leaf_key`), `check_retire_authority(actor, target)` (owner-never-self-retires
@@ -1196,6 +1209,16 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: extended the `terminal_liveness.py` bullet with
+  the H1/F2 hosted-interaction synchronizer quarantine — `_observe_control_snapshot` contains a
+  poisoned `on_control_snapshot` failure fail-loud on its own row instead of aborting the whole
+  catalog sweep + 500-ing `/api/terminal/sessions`, with the load-bearing fact that an orphan
+  `vendorCorrelationId` is the normal steady state of cockpit-driven hosted chats (so this path is
+  hot) and F2's log-on-state-change bound; the completion-correlation contract is unchanged (F3
+  master-exit, F8 residual). The twin-projection + input-authority-pin fixes land inside the active
+  conversation slice, whose detail is routed to `conversation/overview.md` and its child governors,
+  leaving this route's conversation paragraph accurate. Verification metadata stays pinned until L5
+  closeout stamps the candidate commit.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: added the "260718-CHATS-L3 implements the control
   child" paragraph to the structured-conversation contract section — the seventeen control routes
   (interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments, read-only

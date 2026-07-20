@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4` |
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 
 > **Status:** active baseline
 
@@ -639,6 +639,17 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E gate plus
+  bounded hardening (the terminal-liveness per-row synchronizer quarantine, the conversation
+  projection-store input-authority pin, the projector's disjoint-id-namespace twin suppression, and
+  new/extended regression suites incl. the installed F1 real-wire regression and the 10k renderer
+  tripwire) against the repo body. No repo-level feature inventory changed — L5 hardens the
+  already-landed structured Chats surfaces (L0–L4) against their proven production faults rather than
+  adding a product surface; detail routes to the `serving/`, `conversation/`, `conversation/active/`,
+  `conversation/projectors/`, `mcp/tests/`, and `dashboard/…/session-cockpit/conversation/` governors.
+  Master-exit carries recorded by the reviewer: the F3 completion-correlation disposition, the L3.7
+  IPC-flake investigation, and the R5.1 ≥12-session real-browser residual. Verification metadata
+  unchanged.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: added the ancestor-routing narrative paragraph
   for the landed structured Chats renderer (reviewer FINAL PASS, 26/26 closed) and amended the stale
   260715-FEUI-L8 feature-inventory clause — controlled sessions no longer expose the runner line-log

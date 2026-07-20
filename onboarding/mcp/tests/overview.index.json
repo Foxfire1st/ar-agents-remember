@@ -34,6 +34,7 @@
     "mcp/tests/test_cgc_seed_bundle_path.py",
     "mcp/tests/test_cgc_watch_guard.py",
     "mcp/tests/test_change_watcher.py",
+    "mcp/tests/test_chats_l5_hardening.py",
     "mcp/tests/test_claude_stream_transport.py",
     "mcp/tests/test_cleanup_carryover.py",
     "mcp/tests/test_cli_discovery.py",
@@ -179,8 +180,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 160,
-    "fileSidecars": 167,
+    "sourceFilesInScope": 161,
+    "fileSidecars": 168,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -220,6 +221,7 @@
     "cgc",
     "change",
     "changeset",
+    "chats",
     "check",
     "claude",
     "claude_stream_json",
@@ -262,8 +264,7 @@
     "drift",
     "escalation",
     "evidence",
-    "expectation",
-    "files"
+    "expectation"
   ],
   "hotPath": {
     "summary": "For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git generated-positive/authored-negative regression. Use `dashboard/package.json` and `dashboard/vite.config.ts` for Vite ownership, and `scripts/sync-dashboard.py` for raw copy/digest parity. Do not route this seam through generated asset file cards or a generic normalizer. For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census and byte-convergence matrix,...",
@@ -336,12 +337,12 @@
       "test_cgc_watch_guard",
       "test_change_watcher.py",
       "test_change_watcher",
+      "test_chats_l5_hardening.py",
+      "test_chats_l5_hardening",
       "test_claude_stream_transport.py",
       "test_claude_stream_transport",
       "test_cleanup_carryover.py",
-      "test_cleanup_carryover",
-      "test_cli_discovery.py",
-      "test_cli_discovery"
+      "test_cleanup_carryover"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-21T11:00+02:00 |
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4` |
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,19 @@ grammar.
   message is not (badge only when origin changes interpretation).
 - **`TerminalDiagnosticsDrawer` — default off (R2/R7)** (L120-L130): closed by default →
   `data-open="false"`, `aria-hidden="true"`, `inert`, and NO PTY frame mounted (the R7 negative proof).
-- **axe** (L132-L152): `axe.run` over a small feed + closed drawer with `color-contrast`/`region`
+- **`ConversationTimeline` — 10k tool-heavy DOM/interaction baseline (R5.2/R5.10, L4.4)** (added by
+  260718-CHATS-L5, L132-L217): mounts 10,000 rotating message/thinking/tool-call/tool-result items
+  through the landed L4 renderer + `@tanstack/react-virtual`. The load-bearing invariant is that the
+  mounted DOM is virtualized by stable item and stays BOUNDED regardless of history depth — the
+  standing tripwire asserts the `[data-conversation-item]` count `> 0`, `< 80`, AND `< total/100`, so
+  the feed can never degrade into a 10k-node tree; `aria-posinset` still rides the 1-based server
+  `globalOrdinal` (never the array index), `aria-setsize="10000"` is the honest total, and
+  `aria-live="off"` rides the row. A generous `mount < 3000 ms` ceiling is an interaction tripwire
+  for shared-runner jitter (recorded 260718-CHATS-L5: 10 mounted articles / ~42–55 ms). A second
+  `it` runs `axe.run` over the 10k feed (contrast/region disabled) and asserts zero violations at
+  depth. This is the L4.4 artifact L4 explicitly deferred ("the measured DOM/interaction baseline is
+  an L5 artifact").
+- **axe** (final describe): `axe.run` over a small feed + closed drawer with `color-contrast`/`region`
   disabled (jsdom has no rendered geometry) asserts zero structural violations.
 
 ### Invariants And Boundaries
@@ -48,6 +60,10 @@ grammar.
 - `aria-posinset` is the server ordinal, not the array index; `aria-setsize` appears only with an
   honest total; the clamp count is exact — these are the R5 honesty assertions.
 - The diagnostics drawer mounts NO content when closed — the R7 default-off proof.
+- The 10k baseline's guarded invariant is DOM-boundedness (mounted `< 80` AND `< total/100`), not the
+  ms figure; degrading virtualization fails it loudly. The `mount < 3000 ms` ceiling and the recorded
+  ~42–55 ms are jsdom tripwires only, not a hardware ranking — a real-layout supersede is a recorded
+  second-half item (L5.R4).
 - The axe pass is structural only (contrast/region disabled) because jsdom cannot lay out geometry.
 
 ## Docs References
@@ -81,6 +97,12 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the 10k tool-heavy DOM/interaction
+  baseline + axe tripwire this leaf added (the L4.4 artifact L4 deferred) — the bounded-mounted-DOM
+  invariant (`< 80` and `< total/100`), the honest 1-based posinset / `aria-setsize="10000"` /
+  `aria-live="off"`, the `mount < 3000 ms` jsdom interaction ceiling, and axe-clean at depth;
+  recorded baseline 10 mounted rows / ~42–55 ms. Verification stays pinned at the leaf base
+  (`9e6c15d`) because the L5 change to this file is uncommitted; closeout owns its source stamp.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the rendered-grammar
   negative-proof suite — feed posinset=server-ordinal / honest setsize / `total unknown`, image
   alt+provenance with no fabricated fetch URL (F11), exact-count clamp button, source-badge rule,

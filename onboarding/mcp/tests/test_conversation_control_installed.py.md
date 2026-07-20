@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_control_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastUpdated | 2026-07-21T11:00+02:00 |
+| lastVerifiedCommitHash |  `68b3205526dae210cd902eef39d93c4f4352c2d4`|
+| lastVerifiedCommitDate |  2026-07-21T01:12:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,20 @@ polls to `interrupted`; stale expected identity after settlement → 422 rejecte
 `ClaudeInstalledHonestyTests` (L432): the control gate stays `unverified` at the installed-vs-locked
 version mismatch (a plain `TestCase`, no live harness needed).
 
+### 260718-CHATS-L5 F1 — installed twin-suppression regression (real codex wire)
+
+`CodexInstalledControlApiTests::test_settled_live_turn_projects_once_on_the_conversation_page` is the
+reviewer-required real-wire proof of the projector's F1 disjoint-id-namespace fix (opt-in
+`AR_RUN_CONTROL_INSTALLED=1`, isolated `CODEX_HOME`, persisted thread). It opens the conversation
+page, drives two real codex 0.144.5 turns to settlement, re-reads
+`GET /api/terminal/{id}/conversation`, and asserts each settled turn's user message projects EXACTLY
+once (2/2 turns). Before/after is faithful on the wire: **1 passed** (~21–23 s) with the fix;
+**`AssertionError: 2 != 1`** on stashed `projector.py`, dumping both twins — the live UUID item
+(`operator`/`cockpit-composer`/`exact`) and the `item-1` `unknown-input`/`native-history` twin
+sharing one `turnId`+`requestId`. No prior (P) suite asserted post-settlement page uniqueness (the
+scripted B-tier bridges reuse one id namespace across channels, so the twin cannot appear there);
+this is the installed companion to the always-run F1 tests in `test_conversation_active_service.py`.
+
 ### Conventions
 
 The installed suite does not use the fake `ControlHarness` (it drives the real routes unseeded, so it
@@ -49,6 +63,9 @@ pi 0.80.7; without the opt-in flag the live classes skip with exact reasons.
 - Interrupt acknowledgement and settlement are both proven live (codex `interrupted`, pi polled
   `interrupted` + stale-identity 422).
 - Claude honesty holds at the version mismatch (control gate stays `unverified`).
+- A settled live codex turn projects exactly once on the re-read conversation page (L5 F1): the
+  installed regression asserts post-settlement page uniqueness (2/2 turns), which no prior installed
+  suite did, and fails `2 != 1` on stashed `projector.py`.
 
 ### Todos
 
@@ -82,6 +99,12 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the reviewer-required F1 installed
+  regression `test_settled_live_turn_projects_once_on_the_conversation_page` — opens the page, drives
+  two real codex turns to settlement, re-reads the conversation, and asserts each settled turn
+  projects exactly once (2/2); before/after faithful on the real wire (1 passed vs stashed
+  `AssertionError: 2 != 1` dumping both disjoint-namespace twins). Verification metadata stays pinned
+  until L5 closeout stamps the candidate commit.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the opt-in installed-
   runtime proof — live codex/pi interrupt ack+settlement, queue truth, withdrawal recovery, typed
   attachment submit, and telemetry through the registered routes, plus the Claude version-honesty gate.

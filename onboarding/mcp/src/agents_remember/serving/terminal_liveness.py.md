@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`                                             |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-21T11:00+02:00 |
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`                                             |
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -98,6 +98,48 @@ wires this to `log_turn_state_change_event`). `refresh()` now collects the full 
 before returning entries, so it can fan the turn-state-change callback out over all of them in one
 pass, still inside the sweeper's rate-limited/non-overlapping cadence.
 
+### 260718-CHATS-L5 H1/F2 — hosted-interaction synchronizer quarantine
+
+`_observe_alive` wires the app's `on_control_snapshot` observer (the `HostedInteractionSynchronizer`
+built in `app.py`'s `create_app`) — a DOWNSTREAM durable projection (agent-question gates +
+operator-inbox completion rows), NOT part of computing this row's liveness/control state, which
+`catalog.upsert(projected)` has already committed BEFORE the observer runs. L5 routes that call
+through the new `_observe_control_snapshot(catalog, entry, snapshot, observer, *,
+previous_sync_error)`, which **quarantines the per-entry side effect**: on ANY exception it records
+the failure loudly on that one row (`control_raw["interactionSyncError"] = str(exc)`, re-`upsert`,
+and — F2 — a `warning` log only on STATE CHANGE) and returns the quarantined entry, so the sweep
+continues over the rest of the catalog.
+
+Before this guard the observer call sat unguarded inside the sweep's per-entry list comprehension,
+INSIDE `with self._catalog.batch()`: a single `HarnessControlError` (a hosted completion whose
+`vendorCorrelationId` matches no accepted inbox row) propagated out, aborted the whole batch, and
+500-ed `GET /api/terminal/sessions` for EVERY row (the developer's stuck-loading rail — H1 / L4
+verdict E1). The broad `except Exception` is deliberate: a broken-pipe/disk failure in the same
+durable side effect must equally not fail the catalog; it is fail-loud (row marker + log + standing
+regressions in `test_chats_l5_hardening.py`), never swallowed. The completion-correlation contract
+that raised (`hosted_interactions.py`) is left untouched — this is availability hardening, not a
+correlation redesign.
+
+**Load-bearing steady state.** An orphan `vendorCorrelationId` is the NORMAL steady state of every
+cockpit-driven hosted (`+ Chat`) codex chat — a cockpit turn's terminal result carries a correlation
+id that matches no operator-inbox row because it never was an inbox delivery — so this quarantine
+path is HOT, not an edge corruption, and re-fires on every ~10 s sweep for the affected row
+indefinitely (reviewer observed it live on an ordinary chat). F2 bounds the resulting log spam to
+state changes (first occurrence / a changed error / heal) while still refreshing the per-sweep wire
+marker so the row stays honestly degraded on every read; `_observe_control_snapshot` logs `info`
+once on heal and drops the marker (the marker is rebuilt from the snapshot each sweep, so it
+self-heals when the fault stops). F3 — the root completion-correlation contract that treats every
+terminal result as inbox-correlated and aborts at the first orphan (so a later legitimate inbox
+completion never records for that row) — is a REQUIRED master-exit disposition (recommended: a
+non-inbox completion is a normal skip, not an error), explicitly outside this leaf's bounded scope.
+
+**Residual (L5 delta-verify F8, Low, second-half-eligible).** Re-warns still occur on PHANTOM state
+changes: a `control_raw` rebuild on a non-observer path (a transient bridge-error sweep, or the
+WS-attach path that runs `observe_terminal_liveness` with no observer) drops the marker, so the next
+failing sweep sees no previous marker and warns again, and no intermediate `recovered` line is
+emitted for that transition. Correction not taken here: carry `interactionSyncError` through
+`control_raw` rebuilds on non-observer paths, or log the intermediate transitions symmetrically.
+
 ### Conventions
 
 Pure orchestration over injected seams: catalog writes stay in `terminal_catalog.py`, probe
@@ -107,6 +149,13 @@ pane_capturer, on_turn_state_change) is constructor-injected so tests run fake-d
 
 ### Invariants And Boundaries
 
+- The `on_control_snapshot` hosted-interaction synchronizer runs as a QUARANTINED per-entry side
+  effect (L5 H1): its correctness is independent of the row's liveness/control projection, which is
+  already committed, so one row's synchronizer failure records fail-loud on that row's
+  `interactionSyncError` and NEVER aborts the catalog sweep. An orphan-`vendorCorrelationId`
+  completion is the normal steady state of cockpit-driven hosted chats, so this path is hot; the
+  marker refreshes every sweep and self-heals when the fault clears (F2 bounds the log to state
+  changes; F8 phantom re-warns on non-observer `control_raw` rebuilds remain a Low residual).
 - Hosted activity and turn state are adapter-derived; pane/log/copy-mode observations are
   diagnostics-only and cannot drive readiness, delivery, completion, or supervisor action.
 - The sweeper remains rate-limited and non-overlapping, and process-liveness failures remain
@@ -179,6 +228,15 @@ adapter snapshot. Bridge failures remain explicit disconnected/unknown states; p
 stored only as diagnostics and cannot produce supervisor actions.
 
 ## Update History
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: documented the H1 hosted-interaction
+  synchronizer quarantine (`_observe_control_snapshot`: per-entry fail-loud `interactionSyncError`,
+  the sweep survives; the broad `except Exception` justified because a pipe/disk failure in the same
+  durable side effect must equally not 500 the catalog; the load-bearing fact that orphan
+  `vendorCorrelationId`s are the NORMAL steady state of cockpit-driven hosted chats, so this path is
+  hot, not exceptional), the F2 log-on-state-change bound, the F3 master-exit disposition for the
+  untouched completion-correlation contract, and the F8 phantom-transition re-warn residual.
+  Availability hardening only; the completion-correlation contract in `hosted_interactions.py` is
+  unchanged. Verification metadata stays pinned until L5 closeout stamps the candidate commit.
 - 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled normative liveness/activity to adapter snapshots and marked
   pane, log, copy-mode, and turn classifiers diagnostic-only.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented adapter-derived liveness and diagnostic-only pane signals.

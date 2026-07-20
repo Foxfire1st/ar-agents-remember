@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/projector.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-21T11:00+02:00 |
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,6 +60,49 @@ next page reports the session truth. Projectors idle-stop with no subscribers
 (`CONSUMER_TTL_SECONDS` L101) and `matches()` (L195-L203) keys replacement on
 session+epoch+vendor identity.
 
+### 260718-CHATS-L5 F1 — live-settled-natives filter (disjoint-id-namespace twin suppression)
+
+On a hosted codex `+ Chat` thread the two projection channels use DISJOINT id namespaces for the
+same settled turn: the live notification channel emits UUID/`msg_*` item ids while `thread/read`
+returns positional `item-N` ids. `ProjectionStore.apply_item` dedupes by item id, so the two can
+NEVER converge, and `_refresh_native_tip`'s post-turn native re-walk (`_walk_native_pages` from
+`cursor=None`) re-projected every settled turn as a SECOND `unknown-input`/`native-history` twin
+(L4 verdict F1, deterministic 2/2 turns on the real wire; the user twin rendered as an
+authority-downgraded `unknown-input` row beside its resolved live twin).
+
+Fix (path (a) — correlate native frames to already-projected live turns; the codex lazy-native path
+only, since pi shares one id namespace across channels and claude has no native pages). As each live
+evidence frame settles, `_record_live_turn(outputs)` records the turn ids it settled
+(`_live_turn_ids`) and the user `clientId`s it submitted (`_live_request_ids`). `_walk_native_pages`
+then filters each native frame's mapped outputs through `_drop_live_settled_natives(outputs,
+live_native_turns)`: a native output is dropped when its `turn_id ∈ _live_turn_ids` (live-by-turn),
+OR when its native user frame carries a `request_id ∈ _live_request_ids` (live-by-client — the
+clientId is our own submitted request id and survives verbatim into `thread/read`, so this holds
+even if the hosted thread RENUMBERS turn ids), OR when its turn was already anchored earlier in this
+walk (live-by-sibling via the walk-scoped `live_native_turns` set — codex stores a turn's items
+user-first, so the user frame anchors the turn and its harness siblings drop too). Dropped frames
+still advance `_native_cursor`.
+
+Untouched pre-live hydration path (LOAD-BEARING). `_rebuild` CLEARS both live sets before the
+hydration walk, and the native walk runs BEFORE the first evidence poll, so at hydration both sets
+are empty by construction — a resumed thread hydrates its FULL prior-session native history
+(`item-1..item-N`, genuine history, never seen live). Nothing is merged across ids: duplicates are
+only SUPPRESSED when the live turn already carries them, never fabricated; L4.R1's item-evidence
+turn correlation stays the production path (the fix keys off the same shared `turnId`+`clientId`
+evidence, never a guessed identity), the exact-native-id identity rules hold, and no optimistic item
+is invented. The H2 store pin operates WITHIN one item id and never crosses these namespaces, so the
+two fixes are disjoint. Proven before/after on the real codex 0.144.5 wire (installed regression:
+the settled turn projects once; stashed `projector.py` fails `2 != 1`) and on the resumed-thread
+mixed prior-history + live-turns edge.
+
+Recorded-not-hardened boundary (L5.R6, medium). The F1 suppression is scoped to turns settled live
+in THIS projector run. A distinct, un-observed path — a FRESH projector hydrating MID-SESSION whose
+bounded live-evidence buffer still replays turns already persisted in `thread/read` — could in
+principle overlap at the single hydration walk (where both live sets are empty). That was not the
+proven failure, was not observed by the reviewer, and a complete fix (evidence-before-native
+reordering) would disturb native/live chronological ordering; it is left as a recorded second-half
+consideration. Invalidation signal: a live capture of that overlap on a real reconnect.
+
 ### Conventions
 
 Native pages are history authority where they exist (codex persisted threads, pi entries); the
@@ -74,6 +117,15 @@ evidence pages, 200-frame native pages, 1000-envelope retention, 256-deep subscr
 - Recovery re-pages native authority: hydration rebuilds from native pages/evidence reads,
   never from event retention; rehydration reproduces the identical projection with a new cursor
   generation.
+- Hosted codex live notifications and `thread/read` history use DISJOINT id namespaces (live
+  UUID/`msg_*` vs positional `item-N`) for the same settled turn, so id-keyed dedupe can never
+  converge them (L5 F1). The native-tip re-walk drops any native output whose turn was already
+  settled live — matched by turn id, by submitted `clientId` (renumber-robust), or by an
+  already-anchored sibling — so a live turn is never re-projected as an `unknown-input`/
+  `native-history` twin. Suppression only; nothing is merged across ids or fabricated. At hydration
+  both live sets are empty (`_rebuild` clears them, the native walk precedes the first poll), so
+  prior-session native history hydrates in full. The mid-session hydration-overlap path is a
+  recorded, un-hardened boundary (L5.R6).
 - The established stream gets exactly one typed gap (`requiresRepage`, `closeAfterEvent`) per
   failure class — never silent loss, never an HTTP reset.
 - No raw native payload reaches any public item: unknown shapes carry a safe summary and an
@@ -118,6 +170,16 @@ No cross-repository implementation participates in this engine.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: documented the F1 live-settled-natives filter —
+  the disjoint-id-namespace truth (hosted codex live UUID/`msg_*` ids vs `thread/read` positional
+  `item-N`), `_record_live_turn` recording settled turn ids + submitted `clientId`s and
+  `_drop_live_settled_natives` suppressing the native-tip re-walk's twins (turn-id match, clientId
+  anchoring that survives a turn-id renumber, walk-scoped sibling anchoring), the untouched pre-live
+  hydration path (`_rebuild` clears both live sets, native walk precedes the first poll, so
+  prior-session history hydrates in full), and the L5.R6 mid-session hydration-overlap
+  recorded-not-hardened boundary. Suppression only — nothing merged across ids or fabricated;
+  proven before/after on the real codex 0.144.5 wire. Verification metadata stays pinned until L5
+  closeout stamps the candidate commit.
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the projector
   engine — native hydration, bounded polls, the Claude echo zipper, total-order envelopes,
   bounded retention/fan-out, review-F2/F3 gap mechanics. Verification is blank because the new
