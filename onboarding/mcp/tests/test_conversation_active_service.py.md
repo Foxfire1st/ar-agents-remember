@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-21T11:00+02:00 |
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,26 @@ finding F3): an advancing eviction floor raises `ZipperEvidenceEvicted` for the 
 projector (mapped to one ordering-fault gap), does NOT gap the codex projector (totals clear
 honestly), and a fresh claude projector rehydrates from the remaining window without raising.
 
+### 260718-CHATS-L5 additions (H2 + F1 projector-tier regressions)
+
+Two proven-failure families extend `CodexEngineTests`, both driving the REAL L1 poll path and
+re-validating every emitted item — the surface the intermittent active-page 500 and the native
+twins actually reach:
+
+- **H2** — `test_native_remap_after_resolution_stays_model_valid`: a resolved user item re-mapped by
+  a native frame must stay model-valid; before the store's `_preserved_input_authority` pin this
+  raised the exact E2 `ValidationError: unknown-input cannot claim exact or correlated provenance`
+  when `UpsertItemMutation` re-validated the split authority triple. The pre-existing
+  `test_provenance_resolution_exact_then_unknown` resolved provenance but never re-mapped afterward —
+  the coverage gap that let E2 through.
+- **F1** — `test_settled_live_turns_project_once_when_native_ids_disjoint` and
+  `…_when_hosted_renumbers_turn_ids`: after settling live turns, the native-tip re-walk must project
+  each settled turn ONCE; on stashed `projector.py` they fail with the exact 4 / 2 `item-N` native
+  twins and pass with `_drop_live_settled_natives`. `test_prior_session_native_history_survives_live_turns`
+  proves genuine prior-session native history (both live sets empty at hydration) is untouched. These
+  are the always-run (no opt-in) companions to the installed F1 real-wire regression in
+  `test_conversation_control_installed.py`.
+
 ### Conventions
 
 Engine tests run on `IsolatedAsyncioTestCase` with injected reader callables — no socket, no
@@ -58,6 +78,9 @@ parameters) is asserted too.
 - Gap assertions always require exactly one typed gap with the exact reason and the close
   sentinel — never silent loss.
 - Rehydration must reproduce items, revisions, and ordinals identically.
+- A resolved user item re-mapped by a native frame must stay model-valid (H2), and a live-settled
+  turn must project exactly once through the native re-walk (F1) — the L5 regressions drive the real
+  poll path and re-validate every emitted item, non-vacuous on stashed source.
 
 ### Todos
 
@@ -90,6 +113,14 @@ No cross-repository implementation participates in this suite.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the H2 and F1 projector-tier
+  regressions added by L5 — `test_native_remap_after_resolution_stays_model_valid` (H2, drives the
+  real poll path, pre-fix raises the exact E2 `ValidationError`) and the three F1 tests
+  (`…_project_once_when_native_ids_disjoint`, `…_when_hosted_renumbers_turn_ids`, and
+  `…prior_session_native_history_survives_live_turns`) that fail on stashed `projector.py` with the
+  exact native twins and pass with `_drop_live_settled_natives`. Always-run companions to the
+  installed F1 real-wire regression. Verification metadata stays pinned until L5 closeout stamps the
+  candidate commit.
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the engine/store
   suite — hydration/ordering/idempotence/provenance/rehydration plus the F1/F2/F3 fix pins (19
   tests). Verification is blank because the new source file is uncommitted; closeout owns its

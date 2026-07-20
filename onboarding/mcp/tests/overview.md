@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate | 2026-07-20T15:34:11+02:00|
+| lastUpdated | 2026-07-21T11:00+02:00 |
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -76,6 +76,18 @@ remote-peer 403, policy 405s, and the no-paste/no-substitution source scan). The
 withdrawal recovery, typed attachment submit, and telemetry through the registered routes plus the
 Claude version-honesty gate. The foundation pin asserts the control child's exact seventeen-route
 surface.
+
+260718-CHATS-L5 adds the evidence-backed hardening regression set for the production-E2E gate. The
+new `test_chats_l5_hardening.py` pins the two master hardening obligations at their origin, each
+non-vacuous on stashed source: H1 (the hosted-interaction synchronizer 500 that aborted the whole
+terminal-catalog sweep — now quarantined fail-loud per row, with F2 logging only on state change) and
+H2 (the unknown-input provenance-validator 500 from a native re-map splitting a resolved user item's
+authority triple — now pinned, with F4's identical re-map a true no-op). `test_conversation_active_service.py`
+gains the projector-tier companions (the H2 model-valid re-map and the three F1 twin-suppression
+tests, driving the real poll path), and the opt-in `test_conversation_control_installed.py` gains the
+F1 installed regression proving a settled live codex turn projects EXACTLY once on the re-read
+conversation page (`2 != 1` on stashed `projector.py`). The 10,000-item DOM/interaction baseline + axe
+tripwire (L4.4) lands in the dashboard test tree (`renderer.test.tsx`), not here.
 
 260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
@@ -437,6 +449,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: added the evidence-backed hardening regression
+  narrative — the new `test_chats_l5_hardening.py` (H1 catalog-sweep quarantine + F2, H2
+  authority-pin + F4), the projector-tier H2/F1 companions in `test_conversation_active_service.py`,
+  and the F1 installed regression in `test_conversation_control_installed.py` — and noted the 10k
+  renderer DOM/interaction baseline lands in the dashboard test tree, not here. New file card
+  `test_chats_l5_hardening.py.md` registered in the route index. Verification metadata stays pinned
+  until L5 closeout stamps the candidate commit.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: added the authoritative control-API regression
   set — the shared `_control_plane.py` topology (real bridge/IPC/authority/L0 seam, `NOW`-anchored
   service), the four focused suites (operations incl. Finding 1/2 pi settlement regressions; queue

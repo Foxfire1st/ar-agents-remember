@@ -84,7 +84,7 @@
       "mcp/src/agents_remember/serving/conversation/active/",
       "mcp/src/agents_remember/serving/conversation/active/overview.md",
       "conversation/overview.md",
-      "41b2fd6452ee572799fa10c4f9c820ab549ec3d2",
+      "68b3205526dae210cd902eef39d93c4f4352c2d4",
       "expectedBridgeEpoch",
       "projectors/",
       "ConversationStatusService",
@@ -102,12 +102,12 @@
       "Last-Event-ID",
       "resume-replay",
       "ordering-fault",
-      "totalItems",
-      "ready",
-      "asyncio.to_thread",
-      "Domain Documentation",
-      "__init__.py.md",
-      "api.py.md"
+      "thread/read",
+      "msg_*",
+      "item-N",
+      "clientId",
+      "unknown-input",
+      "native-history"
     ]
   },
   "fallback": {

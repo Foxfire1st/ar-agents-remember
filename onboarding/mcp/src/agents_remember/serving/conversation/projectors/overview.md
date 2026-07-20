@@ -7,7 +7,7 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-19T17:35+02:00 |
+| lastUpdated | 2026-07-21T11:00+02:00 |
 | lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
 | lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
 
@@ -130,6 +130,12 @@ notices/outcomes anchored on native entry identity).
   `message_end` frame.
 - Turn-result items mint only where a native settlement exists (codex/claude always; pi only
   for failed/aborted turns).
+- Codex's live notification channel and its `thread/read` native pages emit DISJOINT id namespaces
+  for the SAME settled turn (live UUID/`msg_*` item ids vs positional `item-N`). The mapper faithfully
+  emits both and correlates NO channels (purity), so the native-history twin can only arise on this
+  codex hosted topology; the ENGINE, not the mapper, suppresses the twin of an already-live turn
+  (L5 F1, in `active/projector.py`, keyed on the shared `turnId`/`clientId`). Pi shares one namespace
+  across channels and claude has no native pages, so neither can produce the twin.
 
 ## Repo-Internal References
 
@@ -194,6 +200,13 @@ they map correctly.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: added the durable disjoint-id-namespace invariant
+  (no mapper source changed) — codex's live notification channel emits UUID/`msg_*` ids while
+  `thread/read` returns positional `item-N` for the same settled turn, so the native-history twin the
+  engine's F1 filter suppresses can only arise on the codex hosted topology; the mappers stay pure and
+  correlate no channels (pi shares one namespace, claude has no native pages). The suppression itself
+  lives in `active/projector.py`, not here. Verification metadata stays pinned until L5 closeout
+  stamps the candidate commit.
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the governing overview for the
   per-harness active projectors — the pure mapper protocol/registry, shared strict-parsing and
   provenance primitives, and the codex/claude/pi frame grammars with native identity and

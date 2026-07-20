@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-21T11:00+02:00 |
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 
 ## What This Area Is
 
@@ -150,6 +150,21 @@ in the sibling `projectors/` route.
   voids the zipper and gaps `ordering-fault` — review F3).
 - Tool-call upserts union blocks by `block_id`; whole-item replacement would silently discard
   the invocation (review F1).
+- Hosted codex live notifications and `thread/read` history use DISJOINT id namespaces (live
+  UUID/`msg_*` vs positional `item-N`) for the same settled turn, so id-keyed dedupe can never
+  converge them; the projector's native-tip re-walk drops any native output whose turn was already
+  settled live — matched by turn id, submitted `clientId` (renumber-robust), or an already-anchored
+  sibling — so a live turn is never re-projected as an `unknown-input`/`native-history` twin (L5 F1,
+  proven before/after on the real codex wire). Suppression only; nothing merged across ids or
+  fabricated. At hydration both live sets are empty (native walk precedes the first poll), so
+  prior-session native history hydrates in full; mid-session hydration-overlap is a recorded,
+  un-hardened boundary (L5.R6).
+- A `role=="user"` item's input-authority triple (`lane` + `source` + `provenance`) is ONE resolved
+  unit: the store preserves it intact across a native re-map (`_preserved_input_authority`), and only
+  `apply_provenance` resolves it. Splitting it (a re-map adopting the candidate `unknown-input` lane
+  while keeping the resolved `exact` provenance) violates `preserve_input_authority` but is stored
+  SILENTLY because `model_copy(update=…)` skips validation, 500-ing only at route/SSE re-validation —
+  which is exactly why the triple stays coupled (L5 H2/F4).
 - A full subscriber queue still receives exactly one retained overflow gap + close; the gap
   consumes a sequence so the chain stays hole-free for all consumers (review F2).
 - `totalItems` is emitted only when the native walk completed and the evidence window never
@@ -233,6 +248,16 @@ capability from fixture existence.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the two production-E2E hardening truths
+  landed in this slice — the projector's F1 live-settled-natives filter (disjoint live vs
+  `thread/read` id namespaces, twin suppression by turn-id / submitted `clientId` / walk-scoped
+  sibling, full prior-session hydration because both live sets are empty at the hydration walk, and
+  the L5.R6 mid-session-overlap recorded boundary) and the store's H2/F4 input-authority pin (the
+  `lane`+`source`+`provenance` triple stays coupled for user items across a native re-map; the silent
+  `model_copy` split that 500-ed the active page only at re-validation). Both proven before/after (F1
+  on the real codex 0.144.5 wire). The two routes, cursor authority, per-app service, and status
+  contract are unchanged. Verification metadata stays pinned until L5 closeout stamps the candidate
+  commit.
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the governing overview for the
   implemented active conversation serving slice — the two authorized routes, cursor authority,
   per-app service, projector engine, idempotent store, canonical status, capability evidence,

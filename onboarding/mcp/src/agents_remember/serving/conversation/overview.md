@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastVerifiedCommitHash |  `68b3205526dae210cd902eef39d93c4f4352c2d4`|
+| lastVerifiedCommitDate |  2026-07-21T01:12:04+02:00|
 
 ## What This Area Is
 
@@ -322,6 +322,14 @@ the implemented slices are documented by `active/overview.md`, `projectors/overv
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E hardening
+  (three source edits) against this contract/composition route — the wire grammar, two-port split,
+  `ConversationRuntime` composition, local-operator authorization ruling, and the three child
+  prefixes are all unchanged. The projector twin-projection fix (F1 disjoint-id-namespace
+  suppression) and the store input-authority pin (H2/F4) land inside the `active/` slice; the codex
+  disjoint-namespace truth is a `projectors/` grammar property; the terminal-liveness H1 quarantine
+  is a `serving/` change. Detail is routed to `active/overview.md`, `projectors/overview.md`, and the
+  `serving/` governor. Verification metadata unchanged.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: documented the `control/` child's
   shell→implemented transition — the seventeen registered routes, the opaque signed reference
   authority, the per-app service with bounded ledgers and per-session locks, and the R1–R6 owning

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated            | 2026-07-20T22:30+02:00                                       |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`                  |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated            | 2026-07-21T11:00+02:00                                       |
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`                  |
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -130,11 +130,18 @@ it never writes conversation authority and never scrapes a vendor TUI.
   pointer-unreachable. The reliable idiom is single-line (`nowrap`) flex + `min-height:0` columns +
   per-column interior scrollers + `@container` stacking. (This bites the sibling `conversation-library/`
   surface; recorded here because it is the renderer-wide layout lesson.)
-- **Virtualization DOM-boundedness at 10k items and the E1/E2 environmental faults are L5 hardening
-  (L4.4 / L4.R2).** The measured DOM/interaction baseline is not captured in the unit env; the two
-  pre-existing backend 500s (E1 hosted-interactions vendor-correlation, E2 L1 unknown-input provenance)
-  reproduce under ordinary hosted-codex chatting and gate L5/half-time — the surface handles both
-  fail-loud but production E2E cannot pass over them.
+- **Virtualization DOM-boundedness at 10k items and the E1/E2 environmental faults — DELIVERED by
+  260718-CHATS-L5 (was L4.4 / L4.R2).** The 10k tool-heavy DOM/interaction baseline + axe tripwire now
+  lives in `renderer.test.tsx` (mounted rows bounded `< 80` AND `< total/100`; recorded 10 rows /
+  ~42–55 ms; the ms is a jsdom tripwire, a real-layout supersede is a second-half item — L5.R4). E1
+  (hosted-interactions vendor-correlation 500) is quarantined per row in `terminal_liveness.py` — the
+  orphan `vendorCorrelationId` is the NORMAL steady state of cockpit-driven hosted chats — and E2 (L1
+  unknown-input provenance 500) is closed by the store's input-authority pin. NEW L5 finding **F1**:
+  on the hosted codex `+ Chat` topology the live and `thread/read` channels use disjoint id namespaces,
+  so every settled turn was projected TWICE — a resolved live twin beside an authority-downgraded
+  `unknown-input`/`native-history` twin in THIS feed; the projector's live-settled-natives filter now
+  suppresses the native twin (proven once-only on the real codex wire). F3 (completion-correlation
+  contract) and the substrate IPC flake register are master-exit carries.
 
 ## Child Route Onboarding Map
 
@@ -187,6 +194,14 @@ cross-repository implementation source governs it.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: updated the L5-Facing Register's
+  virtualization/E1/E2 bullet to DELIVERED — the 10k DOM/interaction baseline + axe tripwire landed in
+  `renderer.test.tsx` (its file card refreshed), E1 is quarantined and E2 authority-pinned in the
+  backend, and the NEW F1 disjoint-id-namespace twin (which rendered as a duplicate `unknown-input`
+  native-history row in this feed) is now suppressed in the projector, proven once-only on the real
+  codex wire. No renderer component source changed this leaf beyond the added `renderer.test.tsx`
+  baseline. Verification stays pinned at the leaf base (`9e6c15d`) until closeout stamps the candidate
+  commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the governing pillar for the harness-neutral
   structured conversation renderer — the single honest `role="feed"` (server-ordinal posinset, honest
   setsize), the one block grammar (no vendor skins), the replay-silent announcers, the inert default-off

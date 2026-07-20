@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4` |
+| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -964,6 +964,16 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E hardening
+  (three source edits — the `terminal_liveness.py` per-entry hosted-interaction-synchronizer
+  quarantine, the active projection-store input-authority pin, and the active projector's
+  disjoint-id-namespace twin filter — plus new/extended regression suites) against this package
+  overview. No package-level structure, route, wire contract, or capability changed, and the
+  `serving.terminal_liveness` service-domain summary still holds (the module still owns the
+  rate-limited sweep; H1 only contains a downstream side-effect failure per row rather than 500-ing
+  the catalog). The conversation-slice hardening lands inside `conversation/active/` and
+  `conversation/projectors/`, already routed to their governors and to the `serving/` and
+  `mcp/tests/` overviews; detail lives there. Verification metadata unchanged.
 - 2026-07-20T22:30+02:00 — No route impact: the only governed change under `mcp/` for 260718-CHATS-L4
   (structured Chats renderer, reviewer FINAL PASS) is the regenerated `package_data/dashboard/` bundle
   assets + `dashboard.fingerprint`, a generated artifact mirroring `dashboard/src`; the route's own
