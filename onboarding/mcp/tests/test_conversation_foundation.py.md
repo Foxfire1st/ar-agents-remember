@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_foundation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T18:25+02:00 |
-| lastVerifiedCommitHash |  `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate |  2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-20T15:45+02:00 |
+| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
+| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,11 +16,11 @@
 
 ## Purpose
 
-Pins the cross-route foundation of structured Chats: exact two-port shape, three owned child
-routers (the active child carrying exactly its two L1 GET routes and the library child exactly
-its five L2 routes; control stays behavior-empty), one global registration seam,
-repository-owned helper dependency resolution with the exact helper source set, and allow-listed
-installed-runtime fixtures that cannot enable capabilities.
+Pins the cross-route foundation of structured Chats: exact two-port shape, three owned child routers
+(the active child carrying exactly its two L1 GET routes, the library child exactly its five L2
+routes, and — since 260718-CHATS-L3 — the control child carrying exactly its seventeen owned routes),
+one global registration seam, repository-owned helper dependency resolution with the exact helper
+source set, and allow-listed installed-runtime fixtures that cannot enable capabilities.
 
 ## Code Commentary
 
@@ -33,26 +33,31 @@ through the same single seam — parses the helper manifest/lock to prove exact 
 helper TypeScript for forbidden ambient resolution, validates all three runtime fixtures through
 the production Pydantic contract, and rejects raw secret/path/conversation material by pattern.
 Since 260718-CHATS-L1 the child-router assertion
-(`test_root_composes_three_owned_child_routers`) also pins exactly the two owned active
-production routes — `GET /api/terminal/{ar_session_id}/conversation` and `GET
-…/conversation/events` — and since 260718-CHATS-L2 it pins the library child's exact five-route
-surface (GET list, GET read, POST open/open-status/open-reconcile) by method+path, while the
-control child router stays behavior-empty (both are the same class of legitimate assertion
-update L0 recorded for its call-shape change); the helper-source listing expects exactly
-`claude.ts`, `pi.ts`, `protocol.ts`, and `protocol.test.ts`.
+(`test_root_composes_three_owned_child_routers`) pins exactly the two owned active production routes
+(GET page, GET events); since 260718-CHATS-L2 it pins the library child's exact five-route surface;
+and since 260718-CHATS-L3 it pins the control child's exact **seventeen** owned routes by
+method+path (interrupt/interrupt-status/interrupt-reconcile; GET operation-queue; withdraw/
+withdraw-status/withdraw-reconcile; GET pending-withdrawal-recoveries; withdraw-recovery/
+withdraw-recovery-ack; attachments/attachments-rebind; GET+POST attachments/{request_id} status+
+reconcile; submit; GET policy; GET telemetry) — GET-only on policy/telemetry/queue/pending. The
+control-router prefix `/api/terminal/{ar_session_id}` and the exact path set are asserted (L40, L54-
+L82). The helper-source listing expects exactly `claude.ts`, `pi.ts`, `protocol.ts`, and
+`protocol.test.ts`.
 
 ### Conventions
 
-Source-level topology checks are intentional because this leaf establishes ownership and absence of
-behavior as part of the contract. Runtime fixtures are parsed data, not snapshots copied into test
-expectations wholesale.
+Source-level topology checks are intentional because this leaf establishes ownership and the exact
+route surface as part of the contract. Filling the control shell with its seventeen routes is the
+same class of legitimate assertion update L0/L1/L2 recorded for their call-shape/route-surface
+changes. Runtime fixtures are parsed data, not snapshots copied into test expectations wholesale.
 
 ### Invariants And Boundaries
 
-- Exactly two conversation read ports; no native control port.
+- Exactly two conversation read ports; no native control port (the control routes are a mutation/
+  projection surface, not a third read port).
 - Child ownership stays disjoint at this gate: the active child carries exactly its two L1 GET
-  routes, the library child exactly its five L2 routes, the control child stays behavior-empty,
-  and all three mount through one root seam.
+  routes, the library child exactly its five L2 routes, the control child exactly its seventeen L3
+  routes, and all three mount through one root seam.
 - Helper dependencies resolve only from this repository package/lock, and production helper source
   contains no incidental module resolution.
 - All runtime fixtures are allow-listed, redacted, and explicitly non-enabling.
@@ -61,9 +66,8 @@ expectations wholesale.
 
 ### Todos
 
-Later leaves should replace behavior-empty assertions for the control child only when they own and
-test the corresponding production endpoints (the active child's routes are owned and pinned since
-260718-CHATS-L1, the library child's since 260718-CHATS-L2).
+The active/library/control children are now all owned and pinned (since 260718-CHATS-L1/L2/L3); later
+leaves replace behavior-empty assertions only when they own and test new production endpoints.
 
 ## Docs References
 
@@ -81,6 +85,7 @@ contract are direct evidence.
 | Root conversation composition defines the exact child tuple and single registration function. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The active child's two owned GET routes pinned by the child-router assertion. | L56-L59; L121-L160 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
 | The library child owns exactly the five L2 routes this suite pins by method and path. | L93-L198 | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
+| The control child owns exactly the seventeen L3 routes this suite pins by method and path. | L57-L570 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
 | The helper manifest owns the exact direct runtime dependencies checked against the lock. | L1-L22 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
 | Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | L1233-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
@@ -94,6 +99,11 @@ No neighboring repository participates in this topology suite.
 
 ## Update History
 
+- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: documented the child-router pin now asserting the
+  control child's exact seventeen owned routes (GET-only on policy/telemetry/queue/pending) alongside
+  the active two and library five — the same class of legitimate route-surface assertion update
+  L0/L1/L2 recorded — and added the control/api.py reference row. Verification metadata stays pinned
+  at the L1 code commit until L3 closeout stamps the candidate commit.
 - 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
   sidecar with the L1 update after the master memory branch advanced — the child-router pin now
   documents both the active child's exact two L1 routes and the library child's exact five L2

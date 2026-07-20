@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b` |
-| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
+| lastUpdated            | 2026-07-20T15:45+02:00 |
+| lastVerifiedCommitHash | `0be0099744bf1287805acf0b95072127b70f7104` |
+| lastVerifiedCommitDate | 2026-07-20T15:34:11+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -78,6 +78,19 @@ pre-tombstone body once inside the already `cockpit_only` response. Two additive
 and snapshot reduction byte-preserved; redacted `control-plane/*` fixture rows record the
 installed-runtime proof without enabling anything. The `mcp/tests/` regression set gains the
 contract suite plus the opt-in installed-runtime capture.
+
+260718-CHATS-L3 implements the authoritative control child over that L2E substrate, filling the
+last behavior-empty conversation router. Under `serving/conversation/control/`, seventeen registered
+routes deliver exact-turn interrupt (idempotent request/status/reconcile with acknowledgement never
+equal to settlement), the complete source-aware never-bodies operation queue with cockpit-only
+withdrawal and a bounded authorization-bound 900 s recovery lease, typed attachment stage/rebind/
+submit through the L2E asset channel into a confined 0700/0600 spool, read-only effective policy
+with no mutation surface, and evidence-bound telemetry (codex cumulative token usage). Opaque
+control references are HMAC-signed, purpose-branded, and re-bound per wire; the per-app service holds
+bounded per-(session, epoch) ledgers with per-session serialization above the L2E replay cache; the
+pi settlement reads the L3E-preserved evidence terminal identity. The `mcp/tests/` regression set
+gains four focused service/route suites, a shared control topology, and an opt-in installed-runtime
+proof; the slice is governed by `conversation/control/overview.md`.
 
 260715-FEUI-L9 adds two deliberately bounded package routes. Under `serving/conversation/`, strict
 wire models, exactly two read ports, and three behavior-empty child routers establish the stable
@@ -911,7 +924,7 @@ implementation governs its hash rollover or static mount.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The serving conversation route owns strict normalized products, exactly two read ports, and three behavior-empty child routers beneath one root. | L1-L1270; L1-L87; L1-L24 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py); [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py); [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
+| The serving conversation route owns strict normalized products, exactly two read ports, and three owned child routers beneath one root — all now implemented (active L1, library L2, control L3), none behavior-empty. | L1-L1270; L1-L87; L1-L24 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py); [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py); [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The private locked helper normalizes redacted observations and validates its protocol without becoming a runtime server or store. | L1-L272 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
 | Foundation tests pin helper resolution, fixture redaction/non-promotion, two ports, three routers, and one registration seam. | L1-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | Hostile normalized-product matrices pin semantic authority and contradiction rejection. | L1-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
@@ -951,6 +964,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: documented the implemented authoritative control
+  child at package granularity — the seventeen control routes (interrupt, source-aware queue with
+  cockpit-only withdrawal recovery, typed attachments, read-only policy, evidence-bound telemetry)
+  over the closed L2E/L3E substrate, the opaque signed reference authority, and the per-app control
+  service — routed to the new `conversation/control/overview.md` and the `mcp/tests/` governor, and
+  corrected the "three behavior-empty child routers" evidence row to the now-implemented reality.
+  Verification metadata stays pinned until L3 closeout stamps the candidate commit.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive native control-plane
   substrate at package granularity — the interrupt write, paged never-bodies timeline,
   digest-verified asset channel, and once-only withdrawal recovery inside the hosted

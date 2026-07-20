@@ -10,6 +10,7 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
+    "mcp/tests/_control_plane.py",
     "mcp/tests/_scaling.py",
     "mcp/tests/conftest.py",
     "mcp/tests/fixtures/build_rich_sim.py",
@@ -52,6 +53,11 @@
     "mcp/tests/test_conversation_active_status.py",
     "mcp/tests/test_conversation_authorization.py",
     "mcp/tests/test_conversation_contracts.py",
+    "mcp/tests/test_conversation_control_api.py",
+    "mcp/tests/test_conversation_control_attachments.py",
+    "mcp/tests/test_conversation_control_installed.py",
+    "mcp/tests/test_conversation_control_operations.py",
+    "mcp/tests/test_conversation_control_queue.py",
     "mcp/tests/test_conversation_foundation.py",
     "mcp/tests/test_conversation_library_api.py",
     "mcp/tests/test_conversation_library_cursor.py",
@@ -173,8 +179,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 154,
-    "fileSidecars": 161,
+    "sourceFilesInScope": 160,
+    "fileSidecars": 167,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -193,6 +199,7 @@
     "app",
     "assignment",
     "async",
+    "attachments",
     "attribution",
     "authority",
     "authorization",
@@ -235,6 +242,7 @@
     "contract",
     "contracts",
     "control",
+    "control_plane",
     "controller",
     "controlplane",
     "conversation",
@@ -255,14 +263,13 @@
     "escalation",
     "evidence",
     "expectation",
-    "files",
-    "finalize",
-    "fixture"
+    "files"
   ],
   "hotPath": {
     "summary": "For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git generated-positive/authored-negative regression. Use `dashboard/package.json` and `dashboard/vite.config.ts` for Vite ownership, and `scripts/sync-dashboard.py` for raw copy/digest parity. Do not route this seam through generated asset file cards or a generic normalizer. For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census and byte-convergence matrix,...",
     "candidateHints": [
       "mcp/tests",
+      "mcp/tests/_control_plane.py",
       "mcp/tests/_scaling.py",
       "mcp/tests/conftest.py",
       "mcp/tests/fixtures",
@@ -284,10 +291,11 @@
       "mcp/tests/fixtures/pi_rpc/0.80.6-capabilities.json",
       "mcp/tests/fixtures/pi_rpc/activity.jsonl",
       "mcp/tests/test_agentic_settings.py",
-      "mcp/tests/test_benchmark_analysis.py",
-      "mcp/tests/test_carryover.py"
+      "mcp/tests/test_benchmark_analysis.py"
     ],
     "anchorHints": [
+      "_control_plane.py",
+      "_control_plane",
       "_scaling.py",
       "_scaling",
       "conftest.py",
@@ -333,9 +341,7 @@
       "test_cleanup_carryover.py",
       "test_cleanup_carryover",
       "test_cli_discovery.py",
-      "test_cli_discovery",
-      "test_code_quality_check.py",
-      "test_code_quality_check"
+      "test_cli_discovery"
     ]
   },
   "fallback": {

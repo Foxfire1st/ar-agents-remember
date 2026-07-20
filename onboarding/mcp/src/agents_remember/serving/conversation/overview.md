@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-19T18:25+02:00 |
-| lastVerifiedCommitHash |  `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate |  2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-20T15:45+02:00 |
+| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
+| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
 
 ## What This Area Is
 
@@ -43,6 +43,17 @@ library ownership seam without touching this contract, the composition, or the a
 shells. This overview stays the contract and composition governor; the library overview governs
 the implemented slice.
 
+Since 260718-CHATS-L3 the `control/` child is an implemented subsystem with its own route-local
+overview: the authoritative human control surface — seventeen registered routes for exact-turn
+interrupt, the source-aware operation queue with cockpit-only withdrawal and bounded recovery, typed
+attachment stage/rebind/submit, read-only effective policy, and evidence-bound telemetry — landed
+inside the control ownership seam without touching this contract, the composition, or the
+active/library slices. It consumes the closed L2E control-plane substrate (native interrupt write,
+paged never-bodies operation timeline, asset channel, pre-tombstone recovery payload) and the
+L3E-preserved evidence terminal identity read-only. This overview stays the contract and composition
+governor; the control overview governs the implemented slice. All three child routers (`active`,
+`library`, `control`) are now implemented subsystems; none is a behavior-empty shell.
+
 This is deliberately a contract and composition route. It does not project vendor events, read a
 native history store, implement control actions, persist a duplicate conversation database, or
 render a UI.
@@ -56,7 +67,8 @@ ruling, and `dependencies.py` the two request seams children consume. `router.py
 runtime once and composes the `active`, `library`, and `control` child routers, mounted
 once through `harness_control_api.register_harness_control_routes`. The implemented active
 serving slice is governed by `active/overview.md`, the per-harness mapper grammars by
-`projectors/overview.md`, and the implemented library slice by `library/overview.md`.
+`projectors/overview.md`, the implemented library slice by `library/overview.md`, and the
+implemented control slice by `control/overview.md`.
 
 ## What Belongs Here
 
@@ -71,7 +83,7 @@ serving slice is governed by `active/overview.md`, the per-harness mapper gramma
 | `active/` | Implemented active conversation serving slice (L1), governed by its own route-local overview. |
 | `projectors/` | Per-harness active mapper grammars (L1), governed by their own route-local overview. |
 | `library/` | Implemented dormant native library slice (L2), governed by its own route-local overview. |
-| `control/` | Structured control and operation-projection route ownership shell. |
+| `control/` | Implemented authoritative control and operation-projection slice (L3), governed by its own route-local overview. |
 
 ## What Does Not Belong Here
 
@@ -92,9 +104,9 @@ serving slice is governed by `active/overview.md`, the per-harness mapper gramma
   DTOs.
 - `ActiveConversationPort` and `ConversationLibraryPort`; lifecycle/control authority is explicitly
   not a third port.
-- Three child routers with separate prefixes and one root registration function; `control`
-  remains a behavior-empty ownership shell, while `active` carries exactly its two L1 routes and
-  `library` its five L2 routes inside their owned seams.
+- Three child routers with separate prefixes and one root registration function, all implemented
+  inside their owned seams: `active` carries exactly its two L1 routes, `library` its five L2
+  routes, and `control` its seventeen L3 routes.
 - Frozen `ConversationScope`/`ConversationRuntime` composition types with fail-closed install and
   retrieval (`ConversationCompositionError` on missing, duplicate, foreign, or missing-member
   bindings); no module-level instance exists.
@@ -157,7 +169,7 @@ serving slice is governed by `active/overview.md`, the per-harness mapper gramma
 | `router.py` | composition | Owns the single registration seam (runtime install plus root mount) and isolates later leaf ownership. | covered |
 | `active/api.py` | implemented routes | Owns the two L1 active production routes (page + resumable events) and the O4 typed-error ladder inside its seam. | covered |
 | `library/api.py` | implemented routes | Owns the five L2 native-library routes and the O4 error-status ladder inside its seam. | covered |
-| `control/api.py` | route shell | Reserves exact-session control ownership without duplicating existing authority. | covered |
+| `control/api.py` | implemented routes | Owns the seventeen L3 control routes (interrupt, queue/withdrawal recovery, attachments, policy, telemetry) and the O4 error ladder inside its seam. | covered |
 
 ## Local Invariants And Traps
 
@@ -172,10 +184,10 @@ serving slice is governed by `active/overview.md`, the per-harness mapper gramma
   while identity-bearing failures require catalog proof and the phase-matching rollback state.
 - Withdrawal raw recovery is a successful-response-only privacy boundary. Lists and failures stay
   raw-free.
-- The `control` child API module is intentionally behavior-empty in this contract route. The
-  `active` child implemented its two routes in L1 and the `library` child its five routes in L2,
-  each inside its own overview's governance; do not treat the control prefix as an implemented
-  feature.
+- All three child API modules are implemented inside their own overview's governance: the `active`
+  child's two routes (L1), the `library` child's five routes (L2), and the `control` child's
+  seventeen routes (L3). Add or change behavior only inside the assigned child module; this contract
+  route stays the grammar/composition governor and gains no endpoints of its own.
 - `models.py` is intentionally declaration-heavy. Add behavior in focused services rather than
   turning the contract module into a projector or store.
 - Exactly one `ConversationRuntime` exists per app; it binds only existing authorities and adds no
@@ -201,7 +213,7 @@ composition and authorization contract suites.
 | The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. | L48-L105 | [authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
 | The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
 | The production composition constructs the one runtime from existing authorities and installs it exactly once. | L144-L162 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| The foundation suite verifies two-port topology, child ownership (the active child's exact two L1 routes and the library child's exact five L2 routes; control empty), one registration seam, exact helper pins, and fixture non-promotion. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The foundation suite verifies two-port topology, child ownership (the active child's exact two L1 routes, the library child's exact five L2 routes, and the control child's exact seventeen L3 routes), one registration seam, exact helper pins, and fixture non-promotion. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
 
@@ -265,7 +277,19 @@ external citation.
 | `library/normalize_common.py` | [`library/normalize_common.py.md`](library/normalize_common.py.md) | covered | Shared normalization primitives (L2). |
 | `library/errors.py` | [`library/errors.py.md`](library/errors.py.md) | covered | Leaf-local typed error family (L2). |
 | `control/__init__.py` | [`control/__init__.py.md`](control/__init__.py.md) | covered | Control route package marker. |
-| `control/api.py` | [`control/api.py.md`](control/api.py.md) | covered | Structured control ownership shell. |
+| `control/api.py` | [`control/api.py.md`](control/api.py.md) | covered | The seventeen L3 control routes plus the O4 mapping authority. |
+| `control/service.py` | [`control/service.py.md`](control/service.py.md) | covered | Per-app control service authority (L3). |
+| `control/refs.py` | [`control/refs.py.md`](control/refs.py.md) | covered | Opaque signed control-reference authority (L3). |
+| `control/capabilities.py` | [`control/capabilities.py.md`](control/capabilities.py.md) | covered | Control-domain capability gate (L3). |
+| `control/operations.py` | [`control/operations.py.md`](control/operations.py.md) | covered | Exact-turn interrupt ledger (L3, R1). |
+| `control/queue_projection.py` | [`control/queue_projection.py.md`](control/queue_projection.py.md) | covered | Source-aware queue projection (L3, R2). |
+| `control/previews.py` | [`control/previews.py.md`](control/previews.py.md) | covered | Preview/digest transforms (L3). |
+| `control/withdrawals.py` | [`control/withdrawals.py.md`](control/withdrawals.py.md) | covered | Cockpit-only withdrawal + bounded recovery (L3, R3). |
+| `control/recovery_assembly.py` | [`control/recovery_assembly.py.md`](control/recovery_assembly.py.md) | covered | Recovery content/digest/ref assembly (L3, R3). |
+| `control/attachments.py` | [`control/attachments.py.md`](control/attachments.py.md) | covered | Typed attachment lifecycle (L3, R4). |
+| `control/asset_spool.py` | [`control/asset_spool.py.md`](control/asset_spool.py.md) | covered | Confined staged-bytes filesystem boundary (L3, R4). |
+| `control/policy.py` | [`control/policy.py.md`](control/policy.py.md) | covered | Read-only effective-policy projection (L3, R5). |
+| `control/telemetry.py` | [`control/telemetry.py.md`](control/telemetry.py.md) | covered | Evidence-bound telemetry (L3, R6). |
 
 ## Child Overviews
 
@@ -274,28 +298,39 @@ external citation.
 | `active/` | [`active/overview.md`](active/overview.md) | The L1-implemented active conversation serving: the two authorized routes, signed cursor authority, per-app service and projector engines, idempotent store, canonical status, capabilities, factory — a coherent implemented subsystem. |
 | `projectors/` | [`projectors/overview.md`](projectors/overview.md) | The L1 per-harness active mapper grammars: protocol/registry, shared primitives, codex/claude/pi mappers — a coherent implemented subsystem. |
 | `library/` | [`library/overview.md`](library/overview.md) | The L2-implemented dormant native library: authorized list/read, live gates, signed token authority, and idempotent exact open — a coherent implemented subsystem. |
+| `control/` | [`control/overview.md`](control/overview.md) | The L3-implemented authoritative control surface: seventeen routes, the opaque signed reference authority, the per-app service with bounded ledgers, and the R1–R6 owning modules over the closed L2E/L3E substrate — a coherent implemented subsystem. |
 
-The `control/` directory remains a behavior-empty ownership shell, so a separate overview there
-would add routing burden without adding a coherent implemented subsystem.
+All three child directories are now implemented subsystems governed by their own route-local
+overviews; none remains a behavior-empty ownership shell.
 
 ## How To Use This Area
 
 When changing this route, read this overview and the exact file sidecar first. Changes to public
 models require the hostile contract matrix; changes to route/port shape require the foundation
 topology suite. Do not infer production capability from fixture existence or an empty router;
-the implemented slices are documented by `active/overview.md`, `projectors/overview.md`, and
-`library/overview.md`.
+the implemented slices are documented by `active/overview.md`, `projectors/overview.md`,
+`library/overview.md`, and `control/overview.md`.
 
 ## Needs Verification
 
-- Control settlement, attachments, telemetry, and browser rendering remain separately gated
-  implementations. The active slice is implemented in L1 (pending its closeout) and the library
-  slice landed in L2; Claude library support stays `unverified` until a real installed 2.1.211
-  history passes the replay gate, and Claude's active surface stays `unverified` at the same
-  installed-vs-locked version mismatch.
+- Control settlement, attachments, telemetry, queue truth, and cockpit-only withdrawal recovery are
+  now implemented by the L3 control slice (pending its closeout); only browser rendering remains a
+  separately gated L4 implementation. The active slice is implemented in L1 and the library slice in
+  L2; Claude library, active, and control/telemetry surfaces stay `unverified` until a real installed
+  2.1.211 session passes the replay/version gate, and only codex cumulative token usage is a landed
+  supported telemetry metric.
 
 ## Update History
 
+- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: documented the `control/` child's
+  shell→implemented transition — the seventeen registered routes, the opaque signed reference
+  authority, the per-app service with bounded ledgers and per-session locks, and the R1–R6 owning
+  modules over the closed L2E/L3E substrate — with child-overview governance routed to the new
+  `control/overview.md`, all fourteen control file-map rows, the filled `control/api.py`
+  load-bearing row, the seventeen-route foundation pin, and the "all three children implemented"
+  invariant. The wire grammar, two-port split, composition, and public prefixes are unchanged.
+  Verification metadata stays pinned at the L1 code commit until L3 closeout stamps the candidate
+  commit.
 - 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
   library content with the L1 active/projectors content after the master memory branch advanced
   (`fbc6907` → `900a7da`). Both implemented-slice descriptions, both child-overview rows, and

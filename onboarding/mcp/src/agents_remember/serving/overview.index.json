@@ -92,7 +92,7 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 112,
+    "sourceFilesInScope": 124,
     "fileSidecars": 74,
     "childRoutes": 1
   },

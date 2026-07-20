@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b` |
-| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
+| lastUpdated            | 2026-07-20T15:45+02:00 |
+| lastVerifiedCommitHash | `0be0099744bf1287805acf0b95072127b70f7104` |
+| lastVerifiedCommitDate | 2026-07-20T15:34:11+02:00|
 
 > **Status:** active baseline
 
@@ -229,6 +229,18 @@ overview routes the seam without duplicating detail: the `mcp/src/agents_remembe
 overview owns the substrate contract, the `mcp/` overview owns the package boundary, and the
 `mcp/tests/` overview owns the contract and installed-runtime proof. No feature is enabled and no
 public route, MCP tool, or doc surface changes.
+
+260718-CHATS-L3 implements the authoritative control API over that L2E substrate, filling the last
+behavior-empty conversation child (`serving/conversation/control/`): seventeen routes for exact-turn
+interrupt (acknowledgement never equal to settlement), the complete source-aware never-bodies
+operation queue with cockpit-only withdrawal and a bounded authorization-bound 900 s recovery lease,
+typed attachment stage/rebind/submit through the L2E asset channel into a confined spool, read-only
+effective policy with no mutation surface, and evidence-bound telemetry — behind HMAC-signed
+purpose-branded control references re-bound per wire and a per-app service with bounded per-(session,
+epoch) ledgers. This repository overview routes the seam without duplicating detail: the new
+`conversation/control/overview.md` governs the implemented slice, the `serving/` and `mcp/`
+overviews carry the package placement, and the `mcp/tests/` overview owns the regression and
+installed-runtime proof. Browser rendering remains the separately gated L4 work.
 
 260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound
 request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic
@@ -607,6 +619,13 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: reviewed the root body against the leaf diff and
+  added the ancestor-routing paragraph for the implemented authoritative control API (seventeen
+  routes — interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments,
+  read-only policy, evidence-bound telemetry — over the closed L2E/L3E substrate); detail routes to
+  the new `conversation/control/overview.md` and the `serving/`, `mcp/`, and `mcp/tests/` governors,
+  and no feature-inventory surface changed. Verification metadata stays pinned until L3 closeout
+  stamps the candidate commit.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: reviewed the root body against the leaf diff
   and added the ancestor-routing paragraph for the additive native control-plane substrate
   (interrupt write, paged never-bodies timeline, digest-verified asset channel, once-only
