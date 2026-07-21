@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/conversation/store.ts`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00                           |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -41,6 +41,17 @@ session's projection; it is simply rehydrated on refocus — history authority i
   runtime, bumps a `generation`, enforces the LRU, then `hydrateAndStream` fetches the page (guarded by
   `disposed`/generation), applies it initial, and `startStream` opens the SSE with `getResumeCursor`
   reading the store's `eventCursor`; `onEnvelope` ingests then, if the reducer set `recovery`, triggers
+- **R10 initial-hydrate boot-race retry (260718-CHATS-L5F, audit V13):** `hydrateAndStream` is now a
+  bounded retry loop over the first page fetch (`INITIAL_CONNECT_ATTEMPTS=8`,
+  `INITIAL_CONNECT_RETRY_MS=400`). A fresh chat's first fetch races the runner/bridge boot (the seat row
+  appears before the bridge is listening; the diagnosis saw a 503 during codex boot), and the L4 stream
+  auto-retry covers only a DROPPED live stream, not this first-connect race — so a healthy launch used to
+  flash the fail-loud `projection-failed` strip until a manual retry. Now, while the fetch fails
+  TRANSIENTLY (`isTransientBootFailure`: `error === null` transport drop, `httpStatus === 0`, or
+  `httpStatus >= 500`), the loop stays on the quiet `connecting` phase and waits `INITIAL_CONNECT_RETRY_MS`
+  between tries, escalating to `failStream` only when the window exhausts. A hard 4xx — 409 epoch/cursor,
+  404 unknown session — is a real terminal answer and `failStream`s IMMEDIATELY (never masked). The strip
+  is deferred, never hidden.
   `handleRecovery` (stop the stream, re-page native authority, `applyPage` initial which clears
   recovery/fault and re-establishes the resume cursor, then resume). `disconnectConversation` disposes
   and stops but KEEPS the projection (keep-alive). `loadOlderConversation` prepends one older page.
@@ -59,6 +70,11 @@ session's projection; it is simply rehydrated on refocus — history authority i
   lives outside the store; generation + `disposed` guards discard results owned by a superseded connect.
 - **First-connect failure renders honestly.** `failStream` with no projection still records the typed
   reason so the surface shows it (never a silent blank).
+- **R10 transient-only retry never masks a real failure.** Only a `null`/transport-drop, `httpStatus === 0`,
+  or `>= 500` first-connect result is treated as the boot race and retried quietly; every 4xx fails loud
+  immediately, and the retry window is bounded so a genuinely broken session still escalates to the honest
+  strip. This hardens ONLY the initial hydrate — the epoch-resolve/repage path in `ChatsStageBody` is a
+  separate, pre-existing cried-wolf class this leaf did not touch (routed as a product follow-on).
 
 ## Docs References
 
@@ -77,7 +93,7 @@ reviewed task evidence for any current behavioral claim.
 | The pure reducer whose page/event/recovery this store drives. | L19-L26 | [reducer.ts](reducer.ts) |
 | The page/telemetry/interrupt client this store fetches through. | L15-L18 | [client.ts](client.ts) |
 | The SSE controller this store opens/reconnects/stops. | L27 | [stream.ts](stream.ts) |
-| The store-level keep-alive + LRU-eviction suite (F4). | — | [store.test.ts](store.test.ts) |
+| The store-level keep-alive + LRU-eviction suite (F4), plus the R10 pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. | — | [store.test.ts](store.test.ts) |
 | The stage body that connects/disconnects on focus + epoch resolution. | L71-L102 | [../../panels/session-cockpit/ChatsStageBody.tsx](../../panels/session-cockpit/ChatsStageBody.tsx) |
 | The house vanilla-zustand store idiom this matches. | — | [../store.ts](../store.ts) · [../sessionCockpitStore.ts](../sessionCockpitStore.ts) |
 
@@ -92,6 +108,13 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R10 (audit V13) initial-hydrate
+  boot-race retry. `hydrateAndStream` is now a bounded loop (`INITIAL_CONNECT_ATTEMPTS=8`,
+  `INITIAL_CONNECT_RETRY_MS=400`) that stays on the quiet `connecting` phase while the first page fetch
+  fails transiently (`isTransientBootFailure`: null drop / `httpStatus === 0` / `>= 500`) and escalates
+  to `failStream` only when the window exhausts; a hard 4xx (409/404) still fails loud immediately, so
+  the codex launch cried-wolf strip is deferred, never masked. Noted the epoch-resolve/repage path as a
+  separate pre-existing class (product follow-on). Source uncommitted; closeout re-stamps verification.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the reconstructable
   active-conversation store — the no-durable-index projection (R1), the connect/recovery/older-page
   orchestration that resumes only from a fresh cursor (§6.8), the keep-alive-on-disconnect + bounded

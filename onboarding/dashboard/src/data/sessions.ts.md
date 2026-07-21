@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00                           |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -57,6 +57,12 @@ the catalog. 260703-L14 adds
 it is a legacy fallback behind current `seatRole`; `railModel.ts` derives the canonical Chats
 hierarchy and `SessionRail.tsx` renders binding-first role identity. `fromTerminalSessionInfo` maps
 both fields only when present, like `leafKey`.
+260718-CHATS-L5F (R9) adds `OpenSession.liveTurnWorking?` — a UI-only flag, **not a catalog field
+and never mapped by `fromTerminalSessionInfo`**. It reports that the focused seat's conversation
+projection sees a turn actively streaming right now, fresher than the sweep-bounded `turnState`;
+`SessionsView` sets it (focused seat only) from the projection status and `stateGrammar.seatVisualState`
+prefers it over a lagging catalog `turn-ended`. Non-focused rows never carry it (they keep the
+catalog turn-state), so it stays a stage-authority signal, not stored session truth.
 `add(prefix, id, lifecycleId?)` appends a session labelled with the lowest available live ordinal for
 that prefix, optionally tags it with a lifecycle, updates the tracked ordinal, and makes it active.
 `upsert(session, activate=true)` inserts/replaces a server-owned session row while clearing any older
@@ -227,6 +233,13 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 UI-only field
+  `OpenSession.liveTurnWorking?` — the focused seat's conversation-projection live-turn signal that
+  `stateGrammar.seatVisualState` prefers over the lagging catalog `turnState`. Documented that it is
+  NOT a catalog field, is never mapped by `fromTerminalSessionInfo`, is set only by `SessionsView`
+  for the focused seat, and non-focused rows keep catalog turn-state. Source uncommitted; closeout
+  re-stamps verification.
 
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: replaced retired `<Chats>` connection/create/PTY
   ownership with the landed split: `RailChat` alone registers raw connections; `RailChat`,

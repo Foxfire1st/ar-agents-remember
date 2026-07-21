@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/library/pi.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,8 +40,11 @@ session file through the helper, and mints the server-private argv target
 ### Conventions
 
 Constructed per request with the caller's server-resolved authorization binding; the port never
-authorizes. Pi native append-only entries are the complete session line, tool records included,
-so historical and tool completeness are honest `supported` once the production gate passes.
+authorizes. The helper handshake reports observed runtime/helper versions as informational evidence
+only — since 260718-CHATS-L5F R4 the contract is the only gate: the native `list`/`getBranch`
+operation succeeding is the proof, never a version-string comparison. Pi native append-only entries
+are the complete session line, tool records included, so historical and tool completeness are honest
+`supported` once that production contract probe passes.
 
 ### Invariants And Boundaries
 
@@ -51,6 +54,8 @@ so historical and tool completeness are honest `supported` once the production g
   mismatches fail closed as typed errors.
 - Unknown entry types keep `phase: "unknown"` with safe summaries; nothing is flattened into
   guessed semantics.
+- The contract is the only gate: a runtime/helper version drift never demotes the surface; the
+  succeeding native `list`/`getBranch` operation is the proof (L5F R4).
 
 ### Todos
 
@@ -86,5 +91,10 @@ No meaningful cross-repo boundary exists for this local port.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — recorded the
+  contract-only gate doctrine now stated in the docstring: the helper handshake reports observed
+  runtime/helper versions as informational evidence only, and the succeeding native `list`/`getBranch`
+  operation is the sole proof (never a version-string comparison; a drift never demotes the surface).
+  Change uncommitted; closeout re-stamps verification.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the helper-backed Pi port sidecar.
   Verification is blank until closeout commits and stamps the new source.

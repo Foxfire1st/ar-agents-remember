@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,9 @@ ride the reserved `arEvidence` key into the bridge's evidence buffer, and a `thr
 native history page exposes persisted threads. 260718-CHATS-L2E implements the structural
 `InterruptCapableAdapter`/`AssetSubmitCapable` seams: a native `turn/interrupt` write against the
 exact active turn with replay-once, and verified `localImage` asset construction on `turn/start`.
+260718-CHATS-L5F R1 additionally carries each notification's native method under the reserved
+`AR_EVIDENCE_METHOD_KEY` so the codex projector recognizes the 0.144.5 startup burst instead of
+re-guessing it from params shape and flooding one unknown-vendor row per MCP server.
 
 ## Code Commentary
 
@@ -44,7 +47,13 @@ L0E forwarding places the full `params` of each previously trimmed emit under th
 `arEvidence` raw key at six sites — the notification fallback (item/started, deltas, rate-limit and
 compaction shapes), `thread/status/changed`, `thread/settings/updated`, `turn/completed`, and both
 `item/completed` paths — while every pre-existing raw key (`codexMethod`, `turnId`) keeps its exact
-shape; the bridge diverts the payload so no projection changes. `read_native_page` implements the
+shape; the bridge diverts the payload so no projection changes. 260718-CHATS-L5F R1 additionally
+sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit (L598-L601) and on the
+`item/completed` evidence emit (L667-L670), so the notification's native method reaches the
+projector as typed evidence rather than being stripped with the trimmed event; the bridge preserves
+it onto `EvidenceFrame.native_method` and strips the reserved key, keeping the redacted snapshot
+byte-identical. `codexMethod` still rides for diagnostics; the method-carry key is the discriminator
+the projector reads. `read_native_page` implements the
 structural native-page protocol over `thread/read` with `includeTurns`: it reconnects a disconnected
 session, requires the echoed thread id to match the adapter's own, flattens items through
 `native_evidence_frames_from_thread`, and windows them with an opaque cursor; native window errors
@@ -94,6 +103,9 @@ reports `codex-app-server:<opaque negotiated version>`.
   replacement.
 - Evidence payloads ride only the reserved `arEvidence` key; the adapter never merges that key into
   any projection itself and never mints `bridgeEpoch`.
+- The native notification method rides the reserved `AR_EVIDENCE_METHOD_KEY` beside the `arEvidence`
+  payload (R1); the adapter only emits it and never reads or merges it — the bridge alone diverts it
+  onto the frame and strips it from the republished event.
 - Native pages are for persisted threads: a native refusal (e.g. ephemeral `includeTurns`) crosses
   typed with its reason instead of being retried into a less truthful shape.
 - The interrupt write targets only the exact active turn (native `turnId` guard, no-active typed)
@@ -154,6 +166,11 @@ or turn-id reuse cannot release a successor.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the native-method carry: the
+  `codex-notification` (L598-L601) and `item/completed` (L667-L670) emits now set
+  `AR_EVIDENCE_METHOD_KEY: method` so the codex projector recognizes the 0.144.5 startup burst by
+  method instead of re-guessing from params shape; added the emit-only invariant. Verification
+  metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the `InterruptCapableAdapter`
   implementation (native `turn/interrupt` on the exact active turn, no-active/mismatch typed,
   replay-once per pair, RPC failure → `rejected` acknowledgement) and the `AssetSubmitCapable`

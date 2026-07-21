@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `68b3205526dae210cd902eef39d93c4f4352c2d4`|
-| lastVerifiedCommitDate |  2026-07-21T01:12:04+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 
 ## What This Area Is
 
@@ -123,7 +123,10 @@ implemented control slice by `control/overview.md`.
 2. Active readers use exact AR session plus bridge-epoch identity and active-only cursors.
 3. Dormant history readers use authorization/project scope, library-only cursors and keys, and a
    server-private native resume target.
-4. Capability support is fixture/evidence-bound and demotes on runtime/helper mismatch.
+4. Capability support is fixture/evidence-bound and, since 260718-CHATS-L5F, demotes only on failed
+   or never-run **contract verification** against the running harness — never on a runtime/helper
+   version comparison. Version strings survive as informational metadata only; no version-string
+   comparison gates a capability anywhere in this route (grep-proven at the seven former gate sites).
 5. Control implementations publish revisioned operation products; contradictory phase/outcome,
    identity/rollback, acknowledgement/settlement, or recovery states fail validation.
 6. The harness-control composition constructs the one `ConversationRuntime` from authorities it
@@ -316,12 +319,25 @@ the implemented slices are documented by `active/overview.md`, `projectors/overv
 - Control settlement, attachments, telemetry, queue truth, and cockpit-only withdrawal recovery are
   now implemented by the L3 control slice (pending its closeout); only browser rendering remains a
   separately gated L4 implementation. The active slice is implemented in L1 and the library slice in
-  L2; Claude library, active, and control/telemetry surfaces stay `unverified` until a real installed
-  2.1.211 session passes the replay/version gate, and only codex cumulative token usage is a landed
+  L2; Claude library, active, and control/telemetry surfaces stay `unverified` because their
+  frame/history contract has never been probed through a captured production fixture — a
+  never-probed contract reason, not a version gate (260718-CHATS-L5F removed all version gating).
+  Capturing a claude 2.1.216 runtime fixture and promoting those surfaces to `supported` is the
+  honest follow-on now that the gate is gone; only codex cumulative token usage is a landed
   supported telemetry metric.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected this route's capability doctrine to
+  the landed contract-verification rule (developer ruling 04:55, R4). The Operating Model's
+  "demotes on runtime/helper mismatch" clause and the Needs-Verification "passes the replay/version
+  gate" clause were both FALSE after the version-gate removal — a capability is now supported when
+  its contract probe verifies against the running harness and demotes only on failed or never-run
+  verification; version strings are informational metadata only; no version-string comparison gates
+  a capability at any of the seven former sites (grep-proven). Claude's `unverified` surfaces now
+  carry a never-probed contract reason, not a version reason. The wire grammar, two-port split,
+  `ConversationRuntime` composition, and child prefixes are unchanged. Verification metadata stays
+  pinned until closeout stamps the candidate commit.
 - 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E hardening
   (three source edits) against this contract/composition route — the wire grammar, two-port split,
   `ConversationRuntime` composition, local-operator authorization ruling, and the three child

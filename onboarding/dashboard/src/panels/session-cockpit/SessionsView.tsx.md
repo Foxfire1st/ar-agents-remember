@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00                           |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -263,6 +263,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | The shared poll driver subscription. | L60-L77 | [../../data/catalogPoll.ts](../../data/catalogPoll.ts) |
 | The L3 launch dialog this view opens (palette command / corrected-launch prefill). | L165-L613 | [LaunchFlow.tsx](LaunchFlow.tsx) |
 | The L3 failed-launch banner mounted above the pty placeholder for a failed focused seat. | L70-L182 | [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
+| R9: the conversation projection store this view reads to compute the focused seat's `liveTurnWorking`. | L296-L318 | [../../data/conversation/store.ts](../../data/conversation/store.ts) |
+| R9: the seat-state grammar that prefers `liveTurnWorking` over the lagging catalog turn-state. | L106-L115 | [../../data/stateGrammar.ts](../../data/stateGrammar.ts) |
 
 ## Cross-Repo References
 
@@ -312,8 +314,32 @@ This is an additive composition change; QueuePreview/InteractionBar/HeaderStrip/
 and the `data-kbzone`/`data-region` focus model are unchanged. The reviewed L4 candidate is
 uncommitted; verification stays pinned to the FEUI-MX-FIX-2 base until closeout stamps the L4 commit.
 
+## 260718-CHATS-L5F R9 Delta (streaming turn-state honesty — audit V5)
+
+The route now imports `useActiveConversation` (`data/conversation/store`) and computes
+`focusedLiveTurnWorking` for the FOCUSED seat only (L296-L318): it reads that seat's conversation
+projection and returns true only when `projection.stream === "live"`, the status exists and its
+`freshness.state !== "stale"`, and `status.turn.state ∈ {working, settling, retrying, compacting}`.
+`focused` is then the base session row merged with `{ liveTurnWorking: true }` when that holds,
+otherwise the plain base row. That flag flows through `stateGrammar.seatVisualState` (which prefers
+it over the sweep-lagging catalog `turnState` but only below the terminal/fault/blocked/wait guards)
+into the stage authorities — HeaderStrip StateDot, StatusLine, WorkingLine — so a live streaming
+turn stops reading a settled-green `turn-ended`. This is the honest display-preference: a
+stale/disconnected projection is never trusted, and a real terminal/fault/blocked catalog state
+still wins. **Recorded remainder (durable):** only the focused stage seat is covered here; the rail
+chip is a separate store-driven per-row derivation (`SessionRail`), and wiring the projection signal
+into non-focused rail rows is left as a follow-on — the stage (the surface in the developer's
+screenshots) is covered, the rail chip is not.
+
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 (audit V5) focused-seat
+  live-turn merge. The view imports `useActiveConversation` and computes `focusedLiveTurnWorking`
+  from the focused seat's projection (`stream === "live"`, non-stale freshness, `turn.state ∈
+  {working,settling,retrying,compacting}`), merging `{ liveTurnWorking: true }` into `focused` so
+  `seatVisualState` shows a working stage over the lagging catalog `turn-ended`. Documented the
+  honest fallbacks and the recorded remainder (rail chip left to a follow-on). Source uncommitted;
+  closeout re-stamps verification.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded V11 (collapsed rail aside `display:none`,
   removing the ~21px residual sliver; drag min stays 12%) and R6 (the focus-handoff banner remembers the
   focused seat's human label via `lastFocusRef.label`, falling back to `shortId(previous.id)` — never a

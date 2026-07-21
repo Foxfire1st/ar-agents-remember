@@ -77,7 +77,7 @@
       "mcp/native_helpers/conversation_library/",
       "mcp/native_helpers/conversation_library/overview.md",
       "mcp/overview.md",
-      "67cad9bcdc736de70168ea9c153a0f12319a7263",
+      "38c3fd81bdf851dce96e9b2b14e2bff741e7b383",
       "SessionManager",
       "mcp/src/agents_remember/serving/conversation/",
       "mcp/src/agents_remember/serving/conversation/active/",
@@ -101,7 +101,7 @@
       "src/",
       "npm run typecheck",
       "npm test",
-      "unverified"
+      "buildHandshake"
     ]
   },
   "fallback": {

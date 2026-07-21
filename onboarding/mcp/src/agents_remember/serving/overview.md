@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -67,7 +67,9 @@ established-stream failure class, an idempotent projection store whose tool-call
 blocks by `block_id`, the canonical `ConversationStatusService` whose one evidence
 classification both Chats and orchestration consume (`hosted_control_projection.snapshot_turn_state`
 now delegates to it), and fixture-gated per-session capabilities (claude honestly `unverified`
-at installed 2.1.214 vs locked 2.1.211; codex historical tool loss visible). The shared
+for a never-probed contract reason — since 260718-CHATS-L5F R4 THE CONTRACT IS THE ONLY GATE and
+no version-string comparison demotes any capability, so the prior "installed 2.1.214 vs locked
+2.1.211" version demotion is removed; codex historical tool loss visible). The shared
 composition, router, wire grammar, and library/control shells are untouched; the slices are
 governed by `conversation/active/overview.md` and `conversation/projectors/overview.md`.
 
@@ -1209,6 +1211,19 @@ must remain synchronized.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional fixes across
+  the conversation slice (detail in the `conversation/` sub-overviews). R4 version-gate REMOVAL
+  (developer ruling 2026-07-21): THE CONTRACT IS THE ONLY GATE — no version-string comparison gates or
+  demotes any capability at any of the seven former sites (grep-proven); observed runtime/helper
+  versions are informational metadata only; corrected the L1 capability line's now-false "installed
+  2.1.214 vs locked 2.1.211" version-demotion wording to the never-probed contract reason. Also landed
+  in this leaf: R1 codex notification identity (`EvidenceFrame.native_method` carried; the codex
+  projector drops the known 0.144.5 startup burst by method, names truly-unknown methods), R2 claude
+  acceptance (requested-alias-wins-on-resolved-model), R3 claude 2.1.216 frame contracts
+  (`command_lifecycle`/`rate_limit_event`), R5 per-session bounds/release (`_locks`/`queue_rows`
+  bounded; dormant projector idle-release; `release_session` unwired — F1 accepted-bounding), R6 the
+  honest control-socket exit note + the bounded `providers/metrics.py` docker-ps timeout, and the
+  durable `dashboard/e2e-chats/` opt-in suite (R7). Verification stays pinned until L5F closeout.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: extended the `terminal_liveness.py` bullet with
   the H1/F2 hosted-interaction synchronizer quarantine — `_observe_control_snapshot` contains a
   poisoned `on_control_snapshot` failure fail-loud on its own row instead of aborting the whole

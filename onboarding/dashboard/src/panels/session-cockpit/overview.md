@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -293,7 +293,14 @@ references, not imported governing implementations, so no cross-repository sourc
 
 ## Update History
 
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator (cockpit chrome visual polish, PASS-WITH-NOTES):
+- 2026-07-21T11:30+02:00 — No route impact: 260718-CHATS-L5F (half-time functional fixes,
+  PASS-WITH-NOTES) touched one governed file — `SessionsView.tsx` gained the R9 (audit V5)
+  focused-seat live-turn merge (`useActiveConversation` → `focusedLiveTurnWorking` →
+  `{ liveTurnWorking: true }` on the focused row). The route's composition, keep-alive, focus, and
+  authority model are unchanged: the state-preference rule itself lives in the `data/` route's
+  `stateGrammar.ts` (`seatVisualState`, terminal/fault/blocked/wait guards first) and the change is
+  recorded in the [SessionsView.tsx sidecar](SessionsView.tsx.md) and the data overview's Catalog
+  And Session Identity section. Verification metadata advances with closeout stamping only.
   added the "Cockpit chrome conventions" section recording the durable cross-file design truths this
   dashboard-only leaf established — the FB7 terminal well + gutter grammar, the RV-2 responsive rail-row
   grammar, collapse-or-explain chrome (StatusLine/HeaderStrip/top-bar, UA-5 slot removed), the

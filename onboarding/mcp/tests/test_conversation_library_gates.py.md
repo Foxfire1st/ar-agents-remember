@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_gates.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,19 +17,24 @@
 ## Purpose
 
 Live capability gate registry tests for 260718-CHATS-L2 with doubled native boundaries: proves
-the version-match/mismatch demotion rules, probe-failure honesty, missing-binary posture, and
+the CONTRACT-PROBE gate rules (the connect+list/read probe is the only gate; version drift stays
+informational — 260718-CHATS-L5F R4), probe-failure honesty, missing-binary posture, and
 helper-preflight gates without touching real harness processes.
 
 ## Code Commentary
 
 ### Logic
 
-Seven async tests drive `LibraryGateRegistry` with injected codex probes, `which` resolvers,
-and environments: exact Codex version match enables list/read/resume with honestly `partial`
-completeness; a version mismatch demotes the whole surface to `unverified` with the
-observed-versus-locked reason; a failed probe is `unverified` (never `unavailable`); missing
-binaries and unknown harnesses are `unavailable`; helper success enables Pi with full
-completeness; helper failure and missing locked dependencies are `unverified`.
+The async tests drive `LibraryGateRegistry` with injected codex probes, `which` resolvers,
+and environments: a passing Codex connect+list/read probe enables list/read/resume with honestly
+`partial` completeness, and (260718-CHATS-L5F R4)
+`test_version_drift_still_enables_codex_when_the_probe_passes` proves a drifted CLI version STILL
+enables the surface as long as the contract probe passes — the observed version rides as
+informational evidence, no longer a demotion gate; a failed probe is `unverified` (never
+`unavailable`); missing binaries and unknown harnesses are `unavailable`; helper success enables Pi
+with full completeness; helper failure and missing locked dependencies are `unverified`. The former
+"version mismatch demotes the whole surface" case is removed — version equality no longer gates a
+capability anywhere.
 
 ### Conventions
 
@@ -38,9 +43,12 @@ as in production; all native boundaries stay doubled (the installed suite covers
 
 ### Invariants And Boundaries
 
-- No test may produce `supported` without injected runtime-fixture evidence at the locked
-  versions — mirroring the model-enforced honesty rule.
-- Demotion reasons must carry the exact observed-versus-locked detail.
+- No test may produce `supported` without a passing contract probe through the production seam —
+  mirroring the model-enforced honesty rule; runtime-fixture evidence records the shapes, never a
+  version equality.
+- A capability demotes only on a failed or never-run contract probe; a version difference alone
+  never demotes (260718-CHATS-L5F R4), and demotion reasons carry the contract-verification detail,
+  not an observed-versus-locked version comparison.
 
 ### Todos
 
@@ -71,5 +79,11 @@ No neighboring repository participates in this gate suite.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the version-gate language for the R4
+  removal — the suite now proves the CONTRACT PROBE is the only gate
+  (`test_version_drift_still_enables_codex_when_the_probe_passes`: a drifted CLI version still enables
+  codex when the connect+list probe passes; observed version rides as informational evidence). Removed
+  the false "version mismatch demotes the whole surface" description and the observed-versus-locked
+  demotion invariant. Verification metadata stays pinned (uncommitted); closeout re-stamps.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the capability gate registry suite
   sidecar. Verification is blank until closeout commits and stamps the new source.

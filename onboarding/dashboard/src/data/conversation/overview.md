@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/conversation/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00                           |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -120,6 +120,12 @@ side-effect-free core the store, the stream, and the tests all share, so the aut
    `reducer.applyEvent` (cursor-ordered, deduped, revision-gated).
 3. A reducer `recovery` signal (`gap`/`reset`) stops the stream, re-pages native authority, and resumes
    from the fresh cursor; a typed page failure sets `errorBySession` and marks `projection-failed`.
+   Since 260718-CHATS-L5F R10 the INITIAL hydrate (`hydrateAndStream`) no longer fails loud on the first
+   page fetch: a TRANSIENT boot failure (`httpStatus === 0` or `>= 500`) retries quietly on the
+   `connecting` phase across a bounded window (8 × 400ms) before escalating to `projection-failed`,
+   while a hard 4xx (409 epoch-rolled, 404) still fails loud immediately — closing the codex launch
+   "cried-wolf" red strip (audit V13) without ever masking a real failure. The epoch-resolve/repage
+   path in `ChatsStageBody` is NOT hardened by this leaf (pre-existing, recorded follow-on).
 4. The renderer reads `orderedItems`/`status`/`capabilities`/`stream` through `useActiveConversation`;
    the interrupt hook reads the same projection for turn id + capability evidence.
 
@@ -171,6 +177,13 @@ package's serving endpoints; no cross-repository implementation source governs i
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R10 initial-hydrate cried-wolf fix
+  in the Hot Path Summary — `hydrateAndStream` now retries transient (network / 5xx) first-page
+  failures quietly on the `connecting` phase across a bounded window before marking `projection-failed`,
+  while a hard 4xx still fails loud immediately, so a healthy codex launch on a slow bridge no longer
+  flashes the false "structured surface unavailable" red strip (audit V13). Noted the epoch-resolve
+  repage path stays un-hardened (recorded follow-on). Governs `conversation/store.ts`; verification
+  metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the `format.ts` widening — `humanizeDuration`
   is now the single duration authority across the cockpit chrome and a new `shortId` (R6) was added; the
   reducer/store/stream authority contracts are unchanged (presentation-only). Verification pinned to this

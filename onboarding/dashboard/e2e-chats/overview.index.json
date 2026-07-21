@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/e2e-chats",
+  "overview": "dashboard/e2e-chats/overview.md",
+  "index": "dashboard/e2e-chats/overview.index.json",
+  "sourceScope": [
+    "dashboard/e2e-chats/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [],
+  "coverageCounts": {
+    "sourceFilesInScope": 0,
+    "fileSidecars": 0,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "chats",
+    "dashboard",
+    "e2e"
+  ],
+  "hotPath": {
+    "summary": "Start at `support/gate.ts` (the opt-in skip) and `support/daemon.ts::bootDaemon` (the isolated real daemon: free port + scratch coordination root + by-construction `CODEX_HOME`). The shared drivers and the sharp assertions live in `support/drive.ts` (`openChat` with its cried-wolf retry-recovery, `driveTurn`, `interruptTurn`, `assertNoUnknownVendorRows`, `assertAcceptanceValidated`, `assertNoVersionMismatchDemotion`, `assertNoProjectionAlarm`, `assertWorkingStateSeenDuringTurn`, `assertSingleTurnResultInvariants`, `sampleHeapBytes`). The four `*.chats.spec.ts` drive per-harness and composed...",
+    "candidateHints": [
+      "dashboard/e2e-chats"
+    ],
+    "anchorHints": [
+      "support/gate.ts",
+      "support/daemon.ts::bootDaemon",
+      "CODEX_HOME",
+      "support/drive.ts",
+      "openChat",
+      "driveTurn",
+      "interruptTurn",
+      "assertNoUnknownVendorRows",
+      "assertAcceptanceValidated",
+      "assertNoVersionMismatchDemotion",
+      "assertNoProjectionAlarm",
+      "assertWorkingStateSeenDuringTurn",
+      "assertSingleTurnResultInvariants",
+      "sampleHeapBytes",
+      "*.chats.spec.ts",
+      "support/daemon.ts",
+      "bootDaemon",
+      "dashboard/e2e-chats/",
+      "route-local-overview",
+      "38c3fd81bdf851dce96e9b2b14e2bff741e7b383",
+      "/../overview.md",
+      "e2e-chats/",
+      "dashboard/src/",
+      "e2e-production/",
+      "support/gate.ts::gateChatsE2E",
+      "test.beforeEach",
+      "test.skip",
+      "AR_RUN_CHATS_E2E=1",
+      "workers: 1",
+      "timeout: 180s",
+      "AR_CHATS_E2E_PYTHON",
+      "python3",
+      "AR_CHATS_E2E_HARNESSES",
+      "codex,claude,pi",
+      "AR_CHATS_E2E_SKIP_BUILD=1",
+      "package_data",
+      "agents_remember.cli dashboard",
+      "8871",
+      "freePort",
+      "0",
+      "mkdtemp",
+      "runtime/harness-control",
+      "ar-coordination/runtime/harness-control",
+      "codex-home",
+      "~/.codex/auth.json",
+      "~/.codex",
+      "CLAUDE_CONFIG_DIR",
+      "buildAndSyncBundle"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/e2e-chats/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

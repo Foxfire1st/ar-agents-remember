@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/metrics.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -78,8 +78,15 @@ fail the whole command and blind every pressure number (review follow-up), so
 stopped containers appear in the snapshot without stats instead. Dockerless
 hosts (a `ContextProviderError` from `docker_command`) and a
 failed `docker ps` yield an error-annotated empty snapshot, never a crash or a
-launch — status must stay legal while providers are disabled. A failed
-`docker stats` costs only the mem/cpu numbers, never the sample.
+launch — status must stay legal while providers are disabled. Since
+260718-CHATS-L5F R6, a `docker ps` that TIMES OUT (a slow or hung docker daemon)
+is bounded the same way: the call passes `allow_timeout=True` (L252) and the
+`timedOut` branch (L254-L259) returns an error-annotated empty `MetricsSnapshot`
+("docker ps timed out after {timeout}s") instead of letting a
+`subprocess.TimeoutExpired` escape and dump a full traceback into the daemon's
+30s `metrics_loop` every sampling interval (the developer's image1 log noise). A
+failed `docker stats` costs only the mem/cpu numbers, never the sample (its
+timeout is not yet bounded — reviewer F5, a small recorded follow-on).
 
 The parsers absorb docker's text formats: `_json_rows` keys a
 `--format {{json .}}` line stream and skips bad lines; `_parse_labels` splits
@@ -109,6 +116,11 @@ each docker call.
 - One `docker ps` plus at most one `docker stats` pass per sample; stats is
   fed only running names so a stopped container can never fail it, and a stats
   failure degrades the numbers, not the snapshot.
+- A `docker ps` timeout is bounded (`allow_timeout=True`): a slow/hung daemon
+  returns an error-annotated empty snapshot, never a `TimeoutExpired` traceback
+  in the daemon's per-interval metrics loop. The sibling `docker stats` timeout
+  is not yet bounded (reviewer F5); the sampler still catches its non-timeout
+  failures.
 - The store lives under the observer root (`logs/observer/providers/`); the
   sampling cadence belongs to the serving daemon, not this module.
 
@@ -126,6 +138,12 @@ each docker call.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R6 — `sample_provider_containers` now passes
+  `allow_timeout=True` for `docker ps` and returns an error-annotated empty `MetricsSnapshot` on the
+  `timedOut` branch, so a slow/hung docker daemon no longer lets a `subprocess.TimeoutExpired` escape
+  and dump a full traceback into the daemon's 30s metrics loop every interval. Recorded the sibling
+  `docker stats` timeout as still-unbounded (reviewer F5, small follow-on). Change uncommitted;
+  closeout re-stamps verification.
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-07-07T20:45+02:00 — 260707-HFX-L2 review follow-up: added `read_recent_index_states`
   (newest index-lifecycle rows oldest-first, schema-filtered from the shared log) — the read

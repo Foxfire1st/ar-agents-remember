@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:10+02:00 |
-| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b` |
-| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,11 @@ spool reader. 260718-CHATS-L3E adds terminal-identity preservation to the trunca
 `type`, pi `message.stopReason`, codex `turn.id` + `turn.status`) at their original payload paths
 via `_preserved_evidence_identity` + `_bounded_identity_scalar` under the new
 `MAX_PRESERVED_EVIDENCE_SCALAR_CHARS = 256` drop-whole ceiling, so oversized-frame interrupt
-settlement stays honest while no other content crosses the clip boundary.
+settlement stays honest while no other content crosses the clip boundary. 260718-CHATS-L5F R1 adds
+one reserved key `AR_EVIDENCE_METHOD_KEY = "arEvidenceMethod"` and one optional typed field
+`EvidenceFrame.native_method`, with `evidence_frame_json` serializing it as `nativeMethod` only when
+present, so a diverted notification's native method name survives to the projector as typed
+metadata instead of being stripped at the bridge.
 
 ## Code Commentary
 
@@ -97,6 +101,15 @@ or the frame is skipped. `turn.id` is preserved beyond the master decision's lit
 precisely because the codex consumer correlates on it first; a status-only envelope would be
 unmatchable and re-stall.
 
+The 260718-CHATS-L5F R1 native-method carry is additive metadata on the same evidence frame.
+`AR_EVIDENCE_METHOD_KEY` (`"arEvidenceMethod"`, L66) is a second reserved `AdapterEvent.raw` key,
+disjoint from `AR_EVIDENCE_KEY`: a mapper that already knows its native notification method sets it
+beside the `arEvidence` payload. `EvidenceFrame.native_method` (L416-L420) carries it verbatim so a
+projector switches on the real method rather than re-guessing meaning from params shape, and
+`evidence_frame_json` writes the `nativeMethod` wire key only when the field is non-None
+(L547-L548). The field defaults None, so every evidence frame, page, and serialization stays
+byte-identical when no method is carried; the bridge, not this module, strips the reserved raw key.
+
 The 256-char ceiling is a fail-safe, not a formatting bound. Every preserved field is a protocol
 enum (pi `stopReason`, codex turn `status`), a frame-type name, or a vendor turn id — a handful of
 characters in every legitimate shape — so 256 is orders of magnitude above any real value while four
@@ -124,6 +137,9 @@ Wire names are camel-case.
 - The evidence family is additive and read-only: no existing DTO or serializer changes shape or
   semantics, and unknown native shapes cross as unknown-vendor evidence with raw preserved and
   semantics never guessed.
+- `EvidenceFrame.native_method` (R1) is an optional discriminator hint, never authority: it defaults
+  None, `nativeMethod` serializes only when present, and the reserved `AR_EVIDENCE_METHOD_KEY` is a
+  raw-key convention the bridge diverts — this module never reads or promotes it from a snapshot.
 - Evidence frames are evidence, not authority; deep history stays with the native read APIs.
 - Deque-sequence and native-cursor coordinates are disjoint domains; `bridgeEpoch` rides every
   evidence response so a mid-paging bridge restart fails detectably.
@@ -198,6 +214,11 @@ smaller than vendor evidence and sufficient for monotonic cockpit rendering.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the additive native-method
+  carry: reserved key `AR_EVIDENCE_METHOD_KEY` (`"arEvidenceMethod"`, L66), the optional
+  `EvidenceFrame.native_method` field (L416-L420), and `evidence_frame_json`'s `nativeMethod`
+  serialization when present (L547-L548), with the additive/optional invariant. Verification
+  metadata stays pinned to the last committed source until closeout stamps the candidate commit.
 - 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: documented the clip-envelope terminal-identity
   preservation — `clip_evidence_payload` now re-carries `type`/`message.stopReason`/`turn.id`/
   `turn.status` at their original payload paths (`_preserved_evidence_identity` +

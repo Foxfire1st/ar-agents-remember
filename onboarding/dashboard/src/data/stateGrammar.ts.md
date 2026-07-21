@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/stateGrammar.ts`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,12 +38,21 @@ tracked outside this leaf).
   alarm PULSE · starting = cyan steady · ready = mint, NO chip · turn-ended = mint ·
   stale/landed/retired/exited = muted/dormant steady · unclassified = `—`, no chip. `chip` is the
   rail status-chip label — the status vocabulary ONLY, never the model (R6); absent ⇒ no chip.
-- **`seatVisualState(input)`** (L88-L106) — precedence: terminal statuses first
+- **`seatVisualState(input)`** (L88-L115) — precedence: terminal statuses first
   (landed/terminated→retired/exited never look alive) → `controlState==="failed"` → blocked-on-human
   (`controlPendingInteraction` OR `turnState==="awaiting-input"`) → the declared `waitingReason`
-  (word `waiting(<reason>)`, chip `waiting: <reason>`) → live turn-state (working/turn-ended/stale)
-  → control lifecycle (starting/ready) → `unclassified`. Server truth mirrored — an unclassified
-  row renders as unclassified, never a fabricated state.
+  (word `waiting(<reason>)`, chip `waiting: <reason>`) → **`liveTurnWorking` (260718-CHATS-L5F R9)**
+  → live turn-state (working/turn-ended/stale) → control lifecycle (starting/ready) →
+  `unclassified`. Server truth mirrored — an unclassified row renders as unclassified, never a
+  fabricated state.
+- **`liveTurnWorking` — the R9 fresher-liveness input** (260718-CHATS-L5F, audit V5): a new optional
+  `SeatStateInput` field carrying the conversation projection's OWN live turn signal (its SSE knows
+  a streaming turn sub-second; the sweep-bounded catalog `turnState` lags ~10 s and reads a settled
+  `turn-ended`). When true, `seatVisualState` returns `working` — but the guard is slotted **below**
+  the terminal/fault/blocked-on-human/wait guards, so it can NEVER fake liveness over a real end
+  state, a fault, a human block, or a declared wait. Undefined/false is the honest fallback to the
+  catalog truth (old behavior); no wire field populates it directly — `SessionsView` computes it for
+  the focused seat only (see repo-internal refs).
 - **`waiting(reason)`** (L19, L96-L99) — the AEO reserved word, implemented RENDERED-READY with an
   explicit `waitingReason` input that NO wire field populates yet (UA-gated) — exactly the
   reserved-word posture the leaf demands.
@@ -78,7 +87,8 @@ the reviewed task evidence for any current behavioral claim.
 | The ONLY renderer of these visuals (Panda literal pinned to `PULSE_ANIMATION`). | L8-L49 | [../panels/session-cockpit/StateDot.tsx](../panels/session-cockpit/StateDot.tsx) |
 | The `pulseSlow` keyframe + the effects-off freeze that governs it. | L91-L98 | [../index.css](../index.css) |
 | The server classifier whose words this mirrors (turn state, sweep cadence). | — | [serving/turn_state.py](../../../mcp/src/agents_remember/serving/turn_state.py) |
-| The unit suite: per-state mapping, precedence, waiting(reason), the no-steps pulse ruling. | L14-L103 | [stateGrammar.test.ts](stateGrammar.test.ts) |
+| The SOLE producer of `liveTurnWorking` (R9): computed for the focused seat from the conversation projection status and merged into `focused`. | L296-L318 | [../panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
+| The unit suite: per-state mapping, precedence, waiting(reason), the no-steps pulse ruling, and the R9 override winning only below terminal/fault/blocked. | L14-L103 | [stateGrammar.test.ts](stateGrammar.test.ts) |
 
 ## Cross-Repo References
 
@@ -90,6 +100,13 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 (audit V5) fresher-liveness
+  input. `SeatStateInput` gains optional `liveTurnWorking`, a display-preference over the
+  sweep-lagging catalog `turnState` that renders `working` — slotted BELOW the
+  terminal/fault/blocked-on-human/wait guards so it can never fake liveness over a real end state
+  (honest fallback when unset). Documented `SessionsView` as its sole producer (focused seat only)
+  and refreshed the test-suite reference. Source is uncommitted; closeout re-stamps verification.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

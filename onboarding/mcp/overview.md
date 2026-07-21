@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -29,8 +29,10 @@ transcript deque); the idempotent store unions tool-call blocks (review F1); est
 fail as one typed gap + close (review F2/F3); the canonical `ConversationStatusService` is now
 the single classification both Chats and orchestration consume
 (`hosted_control_projection.snapshot_turn_state` delegates); capabilities stay fixture-gated
-(claude `unverified` at installed 2.1.214 vs locked 2.1.211; codex historical tool loss
-visible). The L0 composition, wire grammar, and library/control shells are untouched. The
+(claude `unverified` for a never-probed contract reason — since 260718-CHATS-L5F R4 THE CONTRACT
+IS THE ONLY GATE and no version-string comparison demotes any capability, so the prior "installed
+2.1.214 vs locked 2.1.211" version demotion is removed; codex historical tool loss visible). The
+L0 composition, wire grammar, and library/control shells are untouched. The
 `mcp/tests/` regression set gains four focused suites, and the foundation pin asserts the active
 child's exact two routes.
 
@@ -970,6 +972,14 @@ only. Dashboard and packaged projections remain additive and synchronized.
   `sync-dashboard.py` mechanism; `--check` confirmed the bundle matches `dashboard/dist`. This is shipped
   build output, not an `mcp/` source contract — zero backend `.py` edits (`ruff check mcp/src` clean).
   No package structure, route, wire contract, or capability changed. Verification metadata unchanged.
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the package overview's L1 capability
+  line — since 260718-CHATS-L5F R4 (developer ruling 2026-07-21) THE CONTRACT IS THE ONLY GATE, so the
+  "claude `unverified` at installed 2.1.214 vs locked 2.1.211" version-demotion wording was FALSE and is
+  now the never-probed contract reason (no version-string comparison demotes any capability). The
+  detailed half-time functional truths (R1 codex notification identity, R2 claude acceptance, R3 claude
+  frame contracts, R5 per-session bounds/release, R6 exit-note + metrics timeout, R7 durable E2E) live
+  in the `serving/` and `serving/conversation/` overviews. No package-level structure changed.
+  Verification stays pinned until L5F closeout stamps the candidate commit.
 - 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E hardening
   (three source edits — the `terminal_liveness.py` per-entry hosted-interaction-synchronizer
   quarantine, the active projection-store input-authority pin, and the active projector's

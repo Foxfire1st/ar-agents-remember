@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/projector.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,9 +41,14 @@ status mutation only on revision advance. Channels: `_poll_evidence` (L359-L385)
 bounded evidence window and raises `ZipperEvidenceEvicted` (L109-L117) when an advancing
 eviction floor voids the echo zipper's turn-order guarantee (review finding F3 — one
 `ordering-fault` gap + close; non-echo harnesses just clear totals honestly);
-`_poll_transcript_echo` (L398-L447) is the Claude echo zipper — the adapter accepts one turn at
-a time, so echoes and frames merge by strict turn order without timestamps, flushing a turn's
-frames through its result before the next user item; `_poll_native_continuation` (L474-L496)
+`_poll_transcript_echo` (L476-L533) is the Claude echo zipper — it consumes ONLY `role == "user"`
+transcript entries as submission echoes; assistant/result entries (claude_stream_state emits
+`role="assistant"`/`"result"`) are advanced past by recording their sequence and continuing, never
+fed to the user-only echo mapper (feeding them was what minted the spurious `claude:echo:
+unrecognized submission echo shape` rows in the developer's image3 — 260718-CHATS-L5F R3). For a
+user echo the adapter accepts one turn at a time, so echoes and frames merge by strict turn order
+without timestamps, flushing a turn's frames through its result before the next user item;
+`_poll_native_continuation` (L474-L496)
 eagerly re-reads pi entries so live items always carry native identity; `_resolve_provenance`
 (L498-L511) batches pending user items through the real submission-provenance authority.
 Malformed known shapes become preserved unknown-vendor evidence (L453-L472), never stream
@@ -56,9 +61,13 @@ sequence hole-free for all consumers) and delivers exactly one gap + close senti
 good retained cursor (L695-L698). The poll loop (L738-L777) maps epoch mismatch to a
 `generation-changed` gap, zipper/validation failures to `ordering-fault`, and sustained
 authority loss (5 consecutive read failures, L102) to a final `generation-changed` gap — the
-next page reports the session truth. Projectors idle-stop with no subscribers
-(`CONSUMER_TTL_SECONDS` L101) and `matches()` (L195-L203) keys replacement on
-session+epoch+vendor identity.
+next page reports the session truth. Projectors idle-stop with no subscribers past
+`CONSUMER_TTL_SECONDS` (L101); at that idle-break `_release_dormant_state` (L873-L888) now CLEARS
+the full heavy projection — a fresh `ProjectionStore`, the L5 `_live_turn_ids`/`_live_request_ids`,
+the retained SSE envelopes (`_retention`), the retention floor, and any pending frames — and sets
+`_closed`, so a dead session's memory is freed immediately instead of lingering as a registered
+tombstone until 32-LRU eviction (260718-CHATS-L5F R5); `matches()` (L195-L203) returns False while
+closed, so the next access re-creates a fresh projector keyed on session+epoch+vendor identity.
 
 ### 260718-CHATS-L5 F1 — live-settled-natives filter (disjoint-id-namespace twin suppression)
 
@@ -132,6 +141,14 @@ evidence pages, 200-frame native pages, 1000-envelope retention, 256-deep subscr
   opaque coordinate evidence ref (`ar-ev:`/`ar-native:`/`ar-echo:`, L781-L788) only.
 - Unknown evidence never becomes `ready`; terminal outcomes feed canonical status from native
   evidence only (via `MappedTurnOutcome` → `TurnTerminalEvidence`).
+- Only `role == "user"` transcript entries are consumed as Claude submission echoes; assistant/
+  result entries are advanced past (their sequence recorded) and never fed to the user-only echo
+  mapper, so no spurious `claude:echo` unknown-vendor row is minted (L5F R3).
+- A projector that goes dormant (no subscribers past the consumer TTL) releases its heavy
+  projection at the idle-break and marks itself closed; it must never be re-driven after
+  `_release_dormant_state` — the next access re-creates a fresh projector rather than reviving the
+  emptied one. Nothing else may hold a live reference to a released projection's `ProjectionStore`
+  or id-sets (L5F R5).
 
 ### Todos
 
@@ -170,6 +187,15 @@ No cross-repository implementation participates in this engine.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded R3 + R5-active. R3: `_poll_transcript_echo`
+  now consumes ONLY `role == "user"` transcript entries as echoes and advances past assistant/result
+  entries (their sequence recorded), so the spurious `claude:echo: unrecognized submission echo shape`
+  rows from image3 no longer mint. R5: the dormant idle-break now calls `_release_dormant_state`, which
+  clears the full heavy projection (fresh ProjectionStore, the L5 `_live_turn_ids`/`_live_request_ids`,
+  the retained SSE envelopes, retention floor, pending frames) and sets `_closed`, freeing a dead
+  session's memory immediately instead of holding it resident as a registered tombstone until 32-LRU
+  eviction (`matches()` returns False while closed → next access re-creates a fresh projector).
+  Verification metadata stays pinned until L5F closeout stamps the candidate commit.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: documented the F1 live-settled-natives filter —
   the disjoint-id-namespace truth (hosted codex live UUID/`msg_*` ids vs `thread/read` positional
   `item-N`), `_record_live_turn` recording settled turn ids + submitted `clientId`s and

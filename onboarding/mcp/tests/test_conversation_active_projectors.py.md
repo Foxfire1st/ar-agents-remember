@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_projectors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,6 +40,23 @@ assistant entries split blocks and tools; `toolResult` messages converge by `too
 aborted assistants mint the in-place turn-result; compaction/model entries are notices; unknown
 entry types keep their native id; live tool-execution events upsert by `toolCallId`;
 `message_end`/`message_update`/`agent_end` mint no live items.
+
+### 260718-CHATS-L5F additions (R1 codex notification identity + R3 claude frame contracts)
+
+`CodexMapperTests` gains the R1 notification-identity coverage now that the native method name is
+carried onto the evidence frame instead of stripped: `test_fresh_open_startup_burst_mints_zero_unknown_vendor_rows`
+(the stock codex 0.144.5 open burst — `mcpServer/startupStatus/updated`, `thread/started`,
+`remoteControl/status/changed`, `warning`, `configWarning` — each maps to `[]` by method through the
+`_SILENT_NOTIFICATION_METHODS` drop-set, so an open produces zero unknown-vendor rows),
+`test_item_notification_still_maps_when_method_is_carried` (a real item-bearing frame still reaches
+the shape branches — the drop-set is method-specific and item-less), and
+`test_truly_unknown_notification_names_the_method` (a genuinely novel method still falls to
+unknown-vendor but WITH the method named, `codex:notification:<method>`). `ClaudeMapperTests` gains
+the R3 frame-contract coverage: `test_command_lifecycle_is_recognized_and_mints_no_unknown_vendor`
+(the 3-state queued/started/completed lifecycle is validated first-class and mints no timeline row),
+`test_command_lifecycle_unknown_state_surfaces_as_drift` (a drifted state raises `UnmappableShape` →
+a VISIBLE malformed row, never silent tolerance), and `test_rate_limit_event_mints_no_items`
+(`rate_limit_event` is shape-validated then dropped as telemetry).
 
 ### Conventions
 
@@ -86,6 +103,11 @@ No cross-repository implementation participates in this suite.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R1/R3 mapper regressions this
+  leaf added — the codex startup-burst-mints-zero, method-carried-still-maps, and truly-unknown-names-the-method
+  identity tests (`CodexMapperTests`), and the claude command_lifecycle recognized/drift and
+  rate_limit_event drop tests (`ClaudeMapperTests`). Verification metadata stays pinned (the L5F
+  change is uncommitted); closeout re-stamps the candidate commit.
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the per-harness
   mapper suite — identity/blocks/tools/provenance/outcomes/unknown preservation (26 tests).
   Verification is blank because the new source file is uncommitted; closeout owns its first

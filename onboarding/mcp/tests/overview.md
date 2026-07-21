@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-07-21T12:00+02:00 |
-| lastVerifiedCommitHash | `352d5cd0e9a35afca41aeca4987612338a131365`|
-| lastVerifiedCommitDate | 2026-07-21T01:33:09+02:00|
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -88,6 +88,26 @@ tests, driving the real poll path), and the opt-in `test_conversation_control_in
 F1 installed regression proving a settled live codex turn projects EXACTLY once on the re-read
 conversation page (`2 != 1` on stashed `projector.py`). The 10,000-item DOM/interaction baseline + axe
 tripwire (L4.4) lands in the dashboard test tree (`renderer.test.tsx`), not here.
+
+260718-CHATS-L5F adds the half-time functional regression set. The NEW `test_chats_l5f_leaks.py`
+pins the R5 per-session bounds (`SessionLockLeakTests`: `release_session` drops the lock + every
+epoch channel; `_locks` bounded evicting idle-first; a held lock is never evicted; and
+`QueueRowsBoundTests`: `queue_rows` capped with oldest eviction). `test_conversation_active_projectors.py`
+gains the R1 codex startup-burst-mints-zero-unknown-vendor / method-carried-mapping /
+truly-unknown-names-the-method tests plus the R3 claude `command_lifecycle` recognized-and-drift and
+`rate_limit_event` drop tests; `test_conversation_active_service.py` gains the R3 non-user-echo-skip
+and the R5 `DormantReleaseTests` (heavy-projection release + shell retire).
+`test_conversation_contracts.py` pins R4 (`FeatureCapability` has no `for_observed_runtime` predicate
+— the contract is the only gate), `test_conversation_control_operations.py` pins the unverified
+refusal now carries a contract reason (not a version comparison), and
+`test_conversation_library_gates.py`/`test_conversation_library_installed.py` pin that a version drift
+still ENABLES when the contract probe passes (the reviewer F8 codex/pi exact-identity installed skips
+on drift are recorded conservatism). `test_harness_control_evidence.py` pins R1 (native method carried
+onto the frame + stripped from the byte-identical snapshot + IPC round trip),
+`test_harness_control_client.py` pins R6 (a refused control socket yields the honest note and unlinks
+the stale socket), `test_harness_launch.py` pins R2 (accepts an alias collapsed onto the default
+resolved model; still refuses a genuinely different model), and `test_provider_containment.py` pins R6
+(the docker-ps timeout is bounded into an error-annotated sample).
 
 260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
@@ -457,6 +477,14 @@ only. Dashboard and packaged projections remain additive and synchronized.
   route's hardening-regression enumeration (H1 quarantine + F2, H2 authority-pin + F4, the projector-tier
   and installed companions, the 10k baseline) is UNAFFECTED and stands as written. No body change;
   verification metadata advanced to `352d5cd` (the enumeration was reviewed this cycle).
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: added the half-time functional regression
+  narrative — the NEW `test_chats_l5f_leaks.py` (R5 `SessionLockLeakTests` + `QueueRowsBoundTests`) and
+  the R1-R6/R4 additions across `test_conversation_active_projectors.py`, `..._active_service.py`,
+  `..._contracts.py`, `..._control_operations.py`, `..._library_gates.py`, `..._library_installed.py`,
+  `test_harness_control_evidence.py`, `test_harness_control_client.py`, `test_harness_launch.py`, and
+  `test_provider_containment.py`. Corrected no version-lock language in this route's narrative (the R4
+  contract-only gate is captured in each test sidecar). The new-file sidecar's verification is blank
+  (uncommitted); route index refresh registers it. Verification stays pinned until L5F closeout.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: added the evidence-backed hardening regression
   narrative — the new `test_chats_l5_hardening.py` (H1 catalog-sweep quarantine + F2, H2
   authority-pin + F4), the projector-tier H2/F1 companions in `test_conversation_active_service.py`,

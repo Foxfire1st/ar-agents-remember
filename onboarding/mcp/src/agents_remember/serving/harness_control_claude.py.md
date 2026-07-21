@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,10 @@ mutation, normalized state/events, interactions, reconciliation, and shutdown.
 `launch_knobs` produces native `--model <key> --effort <level>` argv and declares both flags as
 adapter-owned. `start` applies the stream-json protocol flags to the caller launch unchanged,
 negotiates structured initialization, and retains the live catalog before constructing the
-steady-state reader. `discover` copies the `LaunchSpec`, replaces only that transient copy's argv
+steady-state reader; since 260718-CHATS-L5F R2 it passes the expected launch's requested model key
+(`expected_launch.model_key`) into `negotiate_claude_catalog` so that when the running harness echoes
+a resolved id shared by several catalog rows, current-model selection resolves to the requested alias
+and the effective-launch echo compares like-for-like (the claude `opus[1m]` refused-pair fix). `discover` copies the `LaunchSpec`, replaces only that transient copy's argv
 through `build_claude_discovery_argv`, invokes the same startup/catalog negotiation, returns the
 advertisement, and forces the transient adapter down in `finally`. It does not mutate the original
 launch or create a second startup implementation.
@@ -69,8 +72,10 @@ flags.
 - The cached catalog is tied to the same native process/session whose `system/init` supplied the
   current model; it is not a hardcoded or cross-session cache.
 - Unsupported or stopped state cannot advertise stale capabilities.
-- A successful expected launch must echo the selected model; mismatch is launch failure with exact
-  runner evidence, while genuine startup/protocol incompatibility remains `unsupported`.
+- A successful expected launch must echo the selected model; a mismatch is launch failure with exact
+  runner evidence, EXCEPT that a requested alias and the echoed key resolving to the same underlying
+  model now validate (R2, resolved via the threaded requested key + `verify_effective_launch`'s
+  `_resolves_to_same_model`); genuine startup/protocol incompatibility remains `unsupported`.
 - Claude effort acceptance is not fabricated: stream-json has no effective-effort echo.
 - Mid-session selection changes only after exact terminal echo; replay alone and near-match model
   labels cannot promote the capability snapshot.
@@ -126,6 +131,11 @@ authority barrier until exact resolution; it is not released merely because a ca
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R2 — `start` now passes the expected launch's
+  requested model key into `negotiate_claude_catalog`, so a resolved-model collision (e.g. `opus[1m]`
+  and `default` sharing `claude-opus-4-8[1m]`) resolves the current model to the requested alias and
+  `verify_effective_launch` validates the natively-succeeding launch instead of refusing it. Verification
+  metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented op-aware Claude control and the exact unknown-
   setter barrier.
 

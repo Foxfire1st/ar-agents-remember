@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/native_helpers/conversation_library/` |
 | onboardingRoute | `mcp/native_helpers/conversation_library/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../overview.md) |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 
 ## What This Area Is
 
@@ -183,15 +183,25 @@ installed-runtime suite on machines with the harnesses to prove the production s
 
 ## Needs Verification
 
-- Installed Claude 2.1.211 plus SDK 0.3.207 list/read/resume interoperability remains unproven on
-  this machine: the installed 2.1.214 runtime handshakes `incompatible` against the locked
-  2.1.211 gate, so every Claude library capability stays `unverified` with the exact
-  observed-versus-locked reason.
+- Installed Claude library capability is decided by the live helper CONTRACT probe, not a version
+  comparison (260718-CHATS-L5F R4, developer ruling 2026-07-21): `buildHandshake` is always `ready`
+  once the wire protocol version matches and reports the observed runtime/helper versions as
+  informational evidence — it never handshakes `incompatible` on a version drift. The real gate is
+  whether the subsequent `list`/`read` operation succeeds against the installed runtime; a failing
+  operation fails closed with the exact contract reason, and an auto-updated claude that answers
+  `list` enables the surface.
 - Installed Pi 0.80.7 list/read/resolve passed through the production helper seam (260718-CHATS-L2
   installed-runtime gate).
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
+  2026-07-21, R4) in `protocol.ts::buildHandshake`. Corrected the now-false Needs-Verification claim
+  that the installed 2.1.214 runtime handshakes `incompatible` against a locked 2.1.211 gate: the
+  handshake is ready-by-contract, reports observed runtime/helper versions as informational evidence,
+  and never compares to a locked constant; the live `list`/`read` operation is the only gate. Helper
+  framing, typed error vocabulary, and paging primitives unchanged. Verification stays pinned until
+  L5F closeout stamps the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: extended the helper overview for the two
   locked operation entries (`claude.ts`, `pi.ts`) and the protocol's added serve-loop, version
   probing, signing, and paging primitives; the package is no longer behavior-empty, while the

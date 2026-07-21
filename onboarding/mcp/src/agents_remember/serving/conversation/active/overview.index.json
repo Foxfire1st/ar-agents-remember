@@ -84,7 +84,7 @@
       "mcp/src/agents_remember/serving/conversation/active/",
       "mcp/src/agents_remember/serving/conversation/active/overview.md",
       "conversation/overview.md",
-      "68b3205526dae210cd902eef39d93c4f4352c2d4",
+      "38c3fd81bdf851dce96e9b2b14e2bff741e7b383",
       "expectedBridgeEpoch",
       "projectors/",
       "ConversationStatusService",
@@ -95,6 +95,8 @@
       "serving/harness_control_*.py",
       "/api/terminal/{ar_session_id}/conversation",
       "StreamingResponse",
+      "capabilities_for",
+      "unverified",
       "gap {requiresRepage, closeAfterEvent",
       "block_id",
       "before",
@@ -102,12 +104,10 @@
       "Last-Event-ID",
       "resume-replay",
       "ordering-fault",
-      "thread/read",
-      "msg_*",
-      "item-N",
-      "clientId",
-      "unknown-input",
-      "native-history"
+      "role==\"user",
+      "claude:echo: unrecognized submission echo shape",
+      "projector._release_dormant_state",
+      "_live_turn_ids"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:10+02:00 |
-| lastVerifiedCommitHash | `c07121fbab43672329bc3b86f9189d4d73ce5f1b`|
-| lastVerifiedCommitDate | 2026-07-20T14:14:49+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,6 +84,14 @@ frame under `AR_EVIDENCE_KEY`, with `filler_chars` inflating the content past th
 `complete_with_codex_turn` mirrors `codex_app_server_adapter._handle_turn_completed` (a `completed`
 event bound to the exact operation ref, native turn params under `AR_EVIDENCE_KEY`).
 
+The 260718-CHATS-L5F R1 addition,
+`test_native_method_is_carried_onto_the_frame_and_stripped_from_snapshot`, pins the notification-identity
+fix end to end: an adapter emit carrying the reserved `AR_EVIDENCE_METHOD_KEY` surfaces the native
+method on the typed `EvidenceFrame.native_method` across the bridge divert and the IPC round trip,
+while the reserved key is stripped from the republished event so `snapshot.raw` stays byte-identical —
+so the codex projector can classify by method instead of shape-guessing, and no method name leaks
+into a public snapshot.
+
 ### Conventions
 
 Tests are `unittest.IsolatedAsyncioTestCase` classes over in-process fakes and real Unix-socket
@@ -99,6 +107,9 @@ imports only the production seam it pins — no fixture-only production authorit
 - Continuation must be exact: no overlap, no gap, null-terminated, and an epoch flip mid-paging
   raises `HarnessBridgeEpochMismatchError`.
 - The resume channel refuses non-codex harnesses and malformed values before any spawn.
+- The native method carried under the reserved `AR_EVIDENCE_METHOD_KEY` reaches
+  `EvidenceFrame.native_method` and the IPC round trip, and is stripped from `snapshot.raw` so the
+  redacted snapshot stays byte-identical (260718-CHATS-L5F R1).
 - Existing IPC semantics stay green unmodified; this suite adds coverage without editing prior
   suites.
 - The L3E settlement regressions replicate each L3 consumer's read expression verbatim against the
@@ -147,6 +158,11 @@ No neighboring repository participates in this contract suite.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R1 notification-identity round-trip
+  test (`test_native_method_is_carried_onto_the_frame_and_stripped_from_snapshot`) — the native method
+  reaches `EvidenceFrame.native_method` across the bridge divert + IPC while the reserved key is
+  stripped so `snapshot.raw` stays byte-identical. Verification metadata stays pinned (uncommitted);
+  closeout re-stamps the candidate commit.
 - 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: added the evidence-truncation settlement
   coverage — three byte-level clip terminal-identity preservation tests plus one giant-scalar
   drop-whole regression (256/257 boundary) in `ClipHelperTests`, and the new

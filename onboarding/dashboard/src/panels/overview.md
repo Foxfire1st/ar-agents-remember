@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -135,7 +135,11 @@ inside agents-remember.
 | Operations task navigation and reader. | [LifecycleList.tsx](LifecycleList.tsx) · [DetailPanel.tsx](DetailPanel.tsx) |
 ## Update History
 
-- 2026-07-21T05:30+02:00 — No route impact: the `dashboard/src/panels` route model is unchanged by
+- 2026-07-21T11:30+02:00 — No route impact: the `dashboard/src/panels` route model is unchanged by
+  260718-CHATS-L5F (half-time functional fixes, PASS-WITH-NOTES). No DIRECT `panels/` child changed;
+  the leaf's single panels-tree edit is `session-cockpit/SessionsView.tsx` (the R9 focused-seat
+  live-turn merge), governed by the [session-cockpit/](session-cockpit/overview.md) child route and
+  recorded there and in its sidecar. Verification metadata advances with closeout stamping only.
   260718-CHATS-L5P (cockpit chrome visual polish, PASS-WITH-NOTES; dashboard-only, zero backend edits).
   Two DIRECT `panels/` children got styling polish captured in their own sidecars, not this route body:
   `SessionComposer.tsx` — the editor frame joins the terminal `well` (FB7.1) + gains a `:focus-within`

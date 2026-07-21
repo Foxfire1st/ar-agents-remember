@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/tests/test_harness_launch.py` |
 | doc_type               | `file-level-onboarding`            |
-| lastUpdated            | 2026-07-15T23:16+02:00             |
-| lastVerifiedCommitHash |                                    `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate |                                    2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00             |
+| lastVerifiedCommitHash |                                    `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |                                    2026-07-21T11:31:07+02:00|
 | governingOverview      | `overview.md`                      |
 
 ## Governing Overview
@@ -35,6 +35,17 @@ inserted without losing fixed argv or environment, then enumerates every install
 `-c`/`--config` spelling owned by the adapter. Those spellings refuse as duplicate authority while
 unrelated config and sandbox arguments pass unchanged.
 
+The 260718-CHATS-L5F group (R2) pins effective-launch acceptance on resolved-model identity, not the
+catalog key. `test_effective_launch_accepts_alias_collapsed_onto_default_resolved_model` is the
+opus[1m] regression pin: when the requested alias and the harness-reported key resolve to the SAME
+underlying model, `verify_effective_launch` accepts (via `_resolves_to_same_model`) instead of
+refusing a natively-succeeding launch; `test_effective_launch_still_refuses_a_genuinely_different_model`
+holds the strict direction (a genuinely different or absent resolved model still fails); and
+`test_select_current_model_prefers_requested_alias_over_default_collapse` proves
+`_select_current_model(requested_key=…)` returns the requested alias rather than collapsing onto the
+is-default row when several rows share one `resolved_model`. The codex exact-key and pi exact-key
+guards are unchanged.
+
 ### Conventions
 
 Keep this suite protocol-neutral and synchronous. Vendor discovery framing belongs in each adapter
@@ -47,6 +58,9 @@ parser forms.
 - Settings-resolved native launches require both model and effort.
 - Effort is validated under the selected model; there is no global effort list.
 - Pi accepts only the exact provider-qualified dynamic catalog key.
+- Effective-launch acceptance is by resolved-model identity: an alias whose `resolved_model` matches
+  the reported key's is accepted, a genuinely different/absent resolved model still refuses, and the
+  requested alias wins over a default collapse when rows share one `resolved_model` (260718-CHATS-L5F R2).
 - Duplicate adapter-owned argv or config authority refuses before launch preparation proceeds.
 - Echo verification never invents evidence when a protocol cannot report effort.
 - No test in this file submits a prompt, starts a turn, or uses composer paste.
@@ -89,6 +103,11 @@ covered through adapter and live-matrix evidence rather than a cross-repository 
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: added the R2 resolved-identity acceptance
+  coverage — the opus[1m] regression pin (alias collapsed onto the default's `resolved_model` now
+  validates via `_resolves_to_same_model`), the still-refuses-a-genuinely-different-model direction,
+  and `_select_current_model` preferring the requested alias over the default collapse. Verification
+  metadata stays pinned (uncommitted); closeout re-stamps the candidate commit.
 - 2026-07-15T23:16+02:00 — Created for 260714-ACPUI-L2 with complete selection, dynamic
   model-gated validation, Pi identity, echo verification, duplicate-selector census, and
   unrelated-argument preservation coverage; final-audited the no-configured-domain-source evidence.
